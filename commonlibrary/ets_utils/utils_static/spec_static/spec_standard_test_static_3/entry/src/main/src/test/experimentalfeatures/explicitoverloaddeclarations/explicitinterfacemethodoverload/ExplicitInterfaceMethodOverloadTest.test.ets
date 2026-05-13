@@ -1925,6 +1925,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(a.foo4(1)).assertEqual('short');
       expect(a.foo4<byte>(1 as byte)).assertEqual('GEN');
     });
+    
     /**
      * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_6000
      * @tc.name      testExplicitInterfaceMethodOverload0060
@@ -1972,6 +1973,1328 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(a.foo4(1.0)).assertEqual('float');
       expect(a.foo4<float>(1f)).assertEqual('GEN');
     });
+    
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_6100
+     * @tc.name      testExplicitInterfaceMethodOverload0061
+     * @tc.desc      'Explicit interface method overload allows declaring a name for a set of interface
+    methods.
+    An overloaded entity in an explicit overload declaration can be generic.
+    If type arguments are provided explicitly in a call of an overloaded entity,
+    then only entities with an equal number of type parameters and type arguments
+    are considered during Overload Resolution.
+    If type arguments are not provided explicitly, then consideration is given to all
+    entities.
+    Overloaded default interface methods, numeric parameters.'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
 
+    it("testExplicitInterfaceMethodOverload0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: I22 = {};
+      expect(a.m1(1 as byte)).assertEqual('short');
+      expect(a.m1(1 as short)).assertEqual('short');
+      expect(a.m1(1 as int)).assertEqual('int');
+      expect(a.m1(1)).assertEqual('short');
+      expect(a.m1<int>(1 as int)).assertEqual('GEN');
+
+      expect(a.m3(1 as byte)).assertEqual('int');
+      expect(a.m3(1 as short)).assertEqual('int');
+      expect(a.m3(1 as int)).assertEqual('int');
+      expect(a.m3(1)).assertEqual('int');
+      expect(a.m3<int>(1 as int)).assertEqual('GEN');
+
+      expect(a.m2(1 as byte)).assertEqual('GEN');
+      expect(a.m2(1 as short)).assertEqual('GEN');
+      expect(a.m2(1 as int)).assertEqual('GEN');
+      expect(a.m2(1)).assertEqual('GEN');
+      expect(a.m2<byte>(1 as byte)).assertEqual('GEN');
+    });
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_6200
+     * @tc.name      testExplicitInterfaceMethodOverload0062
+     * @tc.desc      'Explicit interface method overload allows declaring a name for a set of interface
+    methods.
+    An overloaded entity in an explicit overload declaration can be generic.
+    If type arguments are provided explicitly in a call of an overloaded entity,
+    then only entities with an equal number of type parameters and type arguments
+    are considered during Overload Resolution.
+    If type arguments are not provided explicitly, then consideration is given to all
+    entities.
+    Overloaded default interface methods, numeric parameters.'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+
+    it("testExplicitInterfaceMethodOverload0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: I23 = {};
+      expect(a.m2(1f)).assertEqual('GEN2');
+      expect(a.m2(1 as number)).assertEqual('GEN2');
+      expect(a.m2(1 as long)).assertEqual('GEN2');
+      expect(a.m2(1)).assertEqual('GEN2');
+      expect(a.m2(1.0)).assertEqual('GEN2');
+      expect(a.m2<long>(1 as long)).assertEqual('GEN2');
+
+      expect(a.m3(1f)).assertEqual('GEN1');
+      expect(a.m3(1 as number)).assertEqual('GEN1');
+      expect(a.m3(1 as long)).assertEqual('GEN1');
+      expect(a.m3(1)).assertEqual('GEN1');
+      expect(a.m3(1.0)).assertEqual('GEN1');
+      expect(a.m3<long>(1 as long)).assertEqual('GEN1');
+
+      expect(a.m1(1f)).assertEqual('GEN2');
+      expect(a.m1(1 as number)).assertEqual('GEN2');
+      expect(a.m1(1 as long)).assertEqual('long');
+      expect(a.m1(1)).assertEqual('long');
+      expect(a.m1(1.0)).assertEqual('GEN2');
+      expect(a.m1<float>(1f)).assertEqual('GEN2');
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_6300
+     * @tc.name      testExplicitInterfaceMethodOverload0063
+     * @tc.desc      'Explicit interface method overload allows declaring a name for a set of interface
+    methods.
+    Overloaded default interface methods, numeric parameters.'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+
+    it("testExplicitInterfaceMethodOverload0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: I24 = {};
+      expect(a.foo1(1 as byte)).assertEqual('short');
+      expect(a.foo1(1 as short)).assertEqual('short');
+      expect(a.foo1(1 as int)).assertEqual('int');
+      expect(a.foo1(1)).assertEqual('short');
+
+      expect(a.foo2(1 as byte)).assertEqual('int');
+      expect(a.foo2(1 as short)).assertEqual('int');
+      expect(a.foo2(1 as int)).assertEqual('int');
+      expect(a.foo2(1)).assertEqual('int');
+
+      expect(a.foo3(1 as byte)).assertEqual('byte');
+      expect(a.foo3(1 as short)).assertEqual('short');
+      expect(a.foo3(1 as int)).assertEqual('int');
+      expect(a.foo3(1)).assertEqual('byte');
+
+      expect(a.foo4(1 as byte)).assertEqual('short');
+      expect(a.foo4(1 as short)).assertEqual('short');
+      expect(a.foo4(1 as int)).assertEqual('int');
+      expect(a.foo4(1)).assertEqual('short');
+
+      expect(a.foo5(1 as byte)).assertEqual('int');
+      expect(a.foo5(1 as short)).assertEqual('int');
+      expect(a.foo5(1 as int)).assertEqual('int');
+      expect(a.foo5(1)).assertEqual('int');
+
+      expect(a.foo6(1 as byte)).assertEqual('byte');
+      expect(a.foo6(1 as short)).assertEqual('int');
+      expect(a.foo6(1 as int)).assertEqual('int');
+      expect(a.foo6(1)).assertEqual('byte');
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_6400
+     * @tc.name      testExplicitInterfaceMethodOverload0064
+     * @tc.desc      'Explicit interface method overload allows declaring a name for a set of interface
+    methods.
+    Overloaded default interface methods, numeric parameters.'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+
+    it("testExplicitInterfaceMethodOverload0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: I25 = {};
+      expect(a.foo1(1f)).assertEqual('float');
+      expect(a.foo1(1 as number)).assertEqual('number');
+      expect(a.foo1(1 as long)).assertEqual('float');
+      expect(a.foo1(1)).assertEqual('float');
+      expect(a.foo1(1.0)).assertEqual('float');
+
+      expect(a.foo2(1f)).assertEqual('number');
+      expect(a.foo2(1 as number)).assertEqual('number');
+      expect(a.foo2(1 as long)).assertEqual('number');
+      expect(a.foo2(1)).assertEqual('number');
+      expect(a.foo2(1.0)).assertEqual('number');
+
+      expect(a.foo3(1f)).assertEqual('float');
+      expect(a.foo3(1 as number)).assertEqual('number');
+      expect(a.foo3(1 as long)).assertEqual('long');
+      expect(a.foo3(1)).assertEqual('long');
+      expect(a.foo3(1.0)).assertEqual('float');
+
+      expect(a.foo4(1f)).assertEqual('float');
+      expect(a.foo4(1 as number)).assertEqual('number');
+      expect(a.foo4(1 as long)).assertEqual('float');
+      expect(a.foo4(1)).assertEqual('float');
+      expect(a.foo4(1.0)).assertEqual('float');
+
+      expect(a.foo5(1f)).assertEqual('number');
+      expect(a.foo5(1 as number)).assertEqual('number');
+      expect(a.foo5(1 as long)).assertEqual('number');
+      expect(a.foo5(1)).assertEqual('number');
+      expect(a.foo5(1.0)).assertEqual('number');
+
+      expect(a.foo6(1f)).assertEqual('number');
+      expect(a.foo6(1 as number)).assertEqual('number');
+      expect(a.foo6(1 as long)).assertEqual('long');
+      expect(a.foo6(1)).assertEqual('long');
+      expect(a.foo6(1.0)).assertEqual('number');
+    });
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_6500
+     * @tc.name      testExplicitInterfaceMethodOverload0065
+     * @tc.desc      'Explicit interface method overload allows declaring a name for a set of interface
+    methods.
+    Overloaded default interface methods, numeric parameters.'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+
+    it("testExplicitInterfaceMethodOverload0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: I26 = {};
+      expect(a.m1(1 as byte)).assertEqual('short');
+      expect(a.m1(1 as short)).assertEqual('short');
+      expect(a.m1(1 as int)).assertEqual('int');
+      expect(a.m1(1)).assertEqual('short');
+
+      expect(a.m3(1 as byte)).assertEqual('int');
+      expect(a.m3(1 as short)).assertEqual('int');
+      expect(a.m3(1 as int)).assertEqual('int');
+      expect(a.m3(1)).assertEqual('int');
+
+      expect(a.m2(1 as byte)).assertEqual('byte');
+      expect(a.m2(1 as short)).assertEqual('int');
+      expect(a.m2(1 as int)).assertEqual('int');
+      expect(a.m2(1)).assertEqual('byte');
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_6600
+     * @tc.name      testExplicitInterfaceMethodOverload0066
+     * @tc.desc      'Explicit interface method overload allows declaring a name for a set of interface
+    methods.
+    Overloaded default interface methods, numeric parameters.'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+
+    it("testExplicitInterfaceMethodOverload0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: I27 = {};
+      expect(a.m2(1f)).assertEqual('number');
+      expect(a.m2(1 as number)).assertEqual('number');
+      expect(a.m2(1 as long)).assertEqual('number');
+      expect(a.m2(1)).assertEqual('number');
+      expect(a.m2(1.0)).assertEqual('number');
+
+      expect(a.m3(1f)).assertEqual('float');
+      expect(a.m3(1 as number)).assertEqual('number');
+      expect(a.m3(1 as long)).assertEqual('float');
+      expect(a.m3(1)).assertEqual('float');
+      expect(a.m3(1.0)).assertEqual('float');
+
+      expect(a.m1(1f)).assertEqual('number');
+      expect(a.m1(1 as number)).assertEqual('number');
+      expect(a.m1(1 as long)).assertEqual('long');
+      expect(a.m1(1)).assertEqual('long');
+      expect(a.m1(1.0)).assertEqual('number');
+    });
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_6700
+     * @tc.name      testExplicitInterfaceMethodOverload0067
+     * @tc.desc      'An explicit overload defined in a superinterface can be overridden
+    in a subinterface. In this case, the overload declaration of the
+    subinterface must contain all methods overloaded in superinterface.
+    An overloaded entity in an explicit overload declaration can be generic.
+    If type arguments are provided explicitly in a call of an overloaded entity,
+    then only entities with an equal number of type parameters and type arguments
+    are considered during Overload Resolution.
+    If type arguments are not provided explicitly, then consideration is given to all
+    entities.
+    Overloaded interface methods, numeric parameters.'
+
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+
+    it("testExplicitInterfaceMethodOverload0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: I29 = {};
+      expect(a.foo1(1 as byte)).assertEqual('short');
+      expect(a.foo1(1 as short)).assertEqual('short');
+      expect(a.foo1(1 as int)).assertEqual('GEN');
+      expect(a.foo1(1)).assertEqual('short');
+      expect(a.foo1<short>(1 as short)).assertEqual('GEN');
+
+      expect(a.foo2(1 as byte)).assertEqual('GEN');
+      expect(a.foo2(1 as short)).assertEqual('GEN');
+      expect(a.foo2(1 as int)).assertEqual('GEN');
+      expect(a.foo2(1)).assertEqual('GEN');
+      expect(a.foo2<byte>(1 as byte)).assertEqual('GEN');
+
+      expect(a.foo3(1 as byte)).assertEqual('byte');
+      expect(a.foo3(1 as short)).assertEqual('short');
+      expect(a.foo3(1 as int)).assertEqual('GEN');
+      expect(a.foo3(1)).assertEqual('byte');
+      expect(a.foo3<byte>(1 as byte)).assertEqual('GEN');
+
+      expect(a.foo4(1 as byte)).assertEqual('short');
+      expect(a.foo4(1 as short)).assertEqual('short');
+      expect(a.foo4(1 as int)).assertEqual('GEN');
+      expect(a.foo4(1)).assertEqual('short');
+      expect(a.foo4<short>(1 as short)).assertEqual('GEN');
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_6800
+     * @tc.name      testExplicitInterfaceMethodOverload0068
+     * @tc.desc      'An explicit overload defined in a superinterface can be overridden
+    in a subinterface. In this case, the overload declaration of the
+    subinterface must contain all methods overloaded in superinterface.
+    An overloaded entity in an explicit overload declaration can be generic.
+    If type arguments are provided explicitly in a call of an overloaded entity,
+    then only entities with an equal number of type parameters and type arguments
+    are considered during Overload Resolution.
+    If type arguments are not provided explicitly, then consideration is given to all
+    entities.
+    Overloaded interface methods, numeric parameters.'
+
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+
+    it("testExplicitInterfaceMethodOverload0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: I31 = {};
+      expect(a.foo1(1f)).assertEqual('float');
+      expect(a.foo1(1 as number)).assertEqual('number');
+      expect(a.foo1(1 as long)).assertEqual('float');
+      expect(a.foo1(1)).assertEqual('float');
+      expect(a.foo1(1.0)).assertEqual('float');
+      expect(a.foo1<long>(1 as long)).assertEqual('GEN');
+
+      expect(a.foo2(1f)).assertEqual('number');
+      expect(a.foo2(1 as number)).assertEqual('number');
+      expect(a.foo2(1 as long)).assertEqual('number');
+      expect(a.foo2(1)).assertEqual('number');
+      expect(a.foo2(1.0)).assertEqual('number');
+      expect(a.foo2<float>(1f)).assertEqual('GEN');
+
+      expect(a.foo3(1f)).assertEqual('GEN');
+      expect(a.foo3(1 as number)).assertEqual('GEN');
+      expect(a.foo3(1 as long)).assertEqual('GEN');
+      expect(a.foo3(1)).assertEqual('GEN');
+      expect(a.foo3(1.0)).assertEqual('GEN');
+      expect(a.foo3<float>(1f)).assertEqual('GEN');
+
+      expect(a.foo4(1f)).assertEqual('float');
+      expect(a.foo4(1 as number)).assertEqual('GEN');
+      expect(a.foo4(1 as long)).assertEqual('float');
+      expect(a.foo4(1)).assertEqual('float');
+      expect(a.foo4(1.0)).assertEqual('float');
+      expect(a.foo4<number>(1.0)).assertEqual('GEN');
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_7600
+     * @tc.name      testExplicitInterfaceMethodOverload0076
+     * @tc.desc      'An explicit overload defined in a superinterface can be overridden
+    in a subinterface. In this case, the overload declaration of the
+    subinterface must contain all methods overloaded in superinterface.
+    Overloaded interface methods, numeric parameters.'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+
+    it("testExplicitInterfaceMethodOverload0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: I47 = {};
+      expect(a.foo1(1 as byte)).assertEqual('short');
+      expect(a.foo1(1 as short)).assertEqual('short');
+      expect(a.foo1(1 as int)).assertEqual('int');
+      expect(a.foo1(1)).assertEqual('short');
+
+      expect(a.foo2(1 as byte)).assertEqual('int');
+      expect(a.foo2(1 as short)).assertEqual('int');
+      expect(a.foo2(1 as int)).assertEqual('int');
+      expect(a.foo2(1)).assertEqual('int');
+
+      expect(a.foo3(1 as byte)).assertEqual('byte');
+      expect(a.foo3(1 as short)).assertEqual('short');
+      expect(a.foo3(1 as int)).assertEqual('int');
+      expect(a.foo3(1)).assertEqual('byte');
+
+      expect(a.foo4(1 as byte)).assertEqual('short');
+      expect(a.foo4(1 as short)).assertEqual('short');
+      expect(a.foo4(1 as int)).assertEqual('int');
+      expect(a.foo4(1)).assertEqual('short');
+
+      expect(a.foo5(1 as byte)).assertEqual('int');
+      expect(a.foo5(1 as short)).assertEqual('int');
+      expect(a.foo5(1 as int)).assertEqual('int');
+      expect(a.foo5(1)).assertEqual('int');
+
+      expect(a.foo6(1 as byte)).assertEqual('byte');
+      expect(a.foo6(1 as short)).assertEqual('int');
+      expect(a.foo6(1 as int)).assertEqual('int');
+      expect(a.foo6(1)).assertEqual('byte');
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_7700
+     * @tc.name      testExplicitInterfaceMethodOverload0077
+     * @tc.desc      'An explicit overload defined in a superinterface can be overridden
+    in a subinterface. In this case, the overload declaration of the
+    subinterface must contain all methods overloaded in superinterface.
+    Overloaded interface methods, numeric parameters.'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+
+    it("testExplicitInterfaceMethodOverload0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: I49 = {};
+      expect(a.foo1(1f)).assertEqual('float');
+      expect(a.foo1(1 as number)).assertEqual('number');
+      expect(a.foo1(1 as long)).assertEqual('float');
+      expect(a.foo1(1)).assertEqual('float');
+      expect(a.foo1(1.0)).assertEqual('float');
+
+      expect(a.foo2(1f)).assertEqual('number');
+      expect(a.foo2(1 as number)).assertEqual('number');
+      expect(a.foo2(1 as long)).assertEqual('number');
+      expect(a.foo2(1)).assertEqual('number');
+      expect(a.foo2(1.0)).assertEqual('number');
+
+      expect(a.foo3(1f)).assertEqual('float');
+      expect(a.foo3(1 as number)).assertEqual('number');
+      expect(a.foo3(1 as long)).assertEqual('long');
+      expect(a.foo3(1)).assertEqual('long');
+      expect(a.foo3(1.0)).assertEqual('float');
+
+      expect(a.foo4(1f)).assertEqual('float');
+      expect(a.foo4(1 as number)).assertEqual('number');
+      expect(a.foo4(1 as long)).assertEqual('float');
+      expect(a.foo4(1)).assertEqual('float');
+      expect(a.foo4(1.0)).assertEqual('float');
+
+      expect(a.foo5(1f)).assertEqual('number');
+      expect(a.foo5(1 as number)).assertEqual('number');
+      expect(a.foo5(1 as long)).assertEqual('number');
+      expect(a.foo5(1)).assertEqual('number');
+      expect(a.foo5(1.0)).assertEqual('number');
+
+      expect(a.foo6(1f)).assertEqual('number');
+      expect(a.foo6(1 as number)).assertEqual('number');
+      expect(a.foo6(1 as long)).assertEqual('long');
+      expect(a.foo6(1)).assertEqual('long');
+      expect(a.foo6(1.0)).assertEqual('number');
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_7800
+     * @tc.name      testExplicitInterfaceMethodOverload0078
+     * @tc.desc      'An explicit overload defined in a superinterface can be overridden
+    in a subinterface. In this case, the overload declaration of the
+    subinterface must contain all methods overloaded in superinterface.
+    Overloaded interface methods, numeric parameters.'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+
+    it("testExplicitInterfaceMethodOverload0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: I51 = {};
+      expect(a.foo1(1 as byte)).assertEqual('short');
+      expect(a.foo1(1 as short)).assertEqual('short');
+      expect(a.foo1(1 as int)).assertEqual('int');
+      expect(a.foo1(1)).assertEqual('short');
+
+      expect(a.foo2(1 as byte)).assertEqual('int');
+      expect(a.foo2(1 as short)).assertEqual('int');
+      expect(a.foo2(1 as int)).assertEqual('int');
+      expect(a.foo2(1)).assertEqual('int');
+
+      expect(a.foo3(1 as byte)).assertEqual('byte');
+      expect(a.foo3(1 as short)).assertEqual('short');
+      expect(a.foo3(1 as int)).assertEqual('int');
+      expect(a.foo3(1)).assertEqual('byte');
+
+      expect(a.foo4(1 as byte)).assertEqual('short');
+      expect(a.foo4(1 as short)).assertEqual('short');
+      expect(a.foo4(1 as int)).assertEqual('int');
+      expect(a.foo4(1)).assertEqual('short');
+
+      expect(a.foo5(1 as byte)).assertEqual('int');
+      expect(a.foo5(1 as short)).assertEqual('int');
+      expect(a.foo5(1 as int)).assertEqual('int');
+      expect(a.foo5(1)).assertEqual('int');
+
+      expect(a.foo6(1 as byte)).assertEqual('byte');
+      expect(a.foo6(1 as short)).assertEqual('int');
+      expect(a.foo6(1 as int)).assertEqual('int');
+      expect(a.foo6(1)).assertEqual('byte');
+    });
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_7900
+     * @tc.name      testExplicitInterfaceMethodOverload0079
+     * @tc.desc      'An explicit overload defined in a superinterface can be overridden
+    in a subinterface. In this case, the overload declaration of the
+    subinterface must contain all methods overloaded in superinterface.
+    Overloaded interface methods, numeric parameters.'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+
+    it("testExplicitInterfaceMethodOverload0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: I53 = {};
+      expect(a.foo1(1f)).assertEqual('float');
+      expect(a.foo1(1 as number)).assertEqual('number');
+      expect(a.foo1(1 as long)).assertEqual('float');
+      expect(a.foo1(1)).assertEqual('float');
+      expect(a.foo1(1.0)).assertEqual('float');
+
+      expect(a.foo2(1f)).assertEqual('number');
+      expect(a.foo2(1 as number)).assertEqual('number');
+      expect(a.foo2(1 as long)).assertEqual('number');
+      expect(a.foo2(1)).assertEqual('number');
+      expect(a.foo2(1.0)).assertEqual('number');
+
+      expect(a.foo3(1f)).assertEqual('float');
+      expect(a.foo3(1 as number)).assertEqual('number');
+      expect(a.foo3(1 as long)).assertEqual('long');
+      expect(a.foo3(1)).assertEqual('long');
+      expect(a.foo3(1.0)).assertEqual('float');
+
+      expect(a.foo4(1f)).assertEqual('float');
+      expect(a.foo4(1 as number)).assertEqual('number');
+      expect(a.foo4(1 as long)).assertEqual('float');
+      expect(a.foo4(1)).assertEqual('float');
+      expect(a.foo4(1.0)).assertEqual('float');
+
+      expect(a.foo5(1f)).assertEqual('number');
+      expect(a.foo5(1 as number)).assertEqual('number');
+      expect(a.foo5(1 as long)).assertEqual('number');
+      expect(a.foo5(1)).assertEqual('number');
+      expect(a.foo5(1.0)).assertEqual('number');
+
+      expect(a.foo6(1f)).assertEqual('number');
+      expect(a.foo6(1 as number)).assertEqual('number');
+      expect(a.foo6(1 as long)).assertEqual('long');
+      expect(a.foo6(1)).assertEqual('long');
+      expect(a.foo6(1.0)).assertEqual('number');
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_8100
+     * @tc.name      testExplicitInterfaceMethodOverload0081
+     * @tc.desc      'An explicit overload defined in a superinterface can be overridden
+    in a subinterface. In this case, the overload declaration of the
+    subinterface must contain all methods overloaded in superinterface.
+    Overloaded interface methods, numeric parameters.'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+
+    it("testExplicitInterfaceMethodOverload0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: I57 = {};
+      expect(a.m1(1f)).assertEqual('number');
+      expect(a.m1(1 as number)).assertEqual('number');
+      expect(a.m1(1 as long)).assertEqual('number');
+      expect(a.m1(1)).assertEqual('number');
+      expect(a.m1(1.0)).assertEqual('number');
+
+      expect(a.m2(1f)).assertEqual('float');
+      expect(a.m2(1 as number)).assertEqual('number');
+      expect(a.m2(1 as long)).assertEqual('float');
+      expect(a.m2(1)).assertEqual('float');
+      expect(a.m2(1.0)).assertEqual('float');
+
+      expect(a.m3(1f)).assertEqual('number');
+      expect(a.m3(1 as number)).assertEqual('number');
+      expect(a.m3(1 as long)).assertEqual('long');
+      expect(a.m3(1)).assertEqual('long');
+      expect(a.m3(1.0)).assertEqual('number');
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_8200
+     * @tc.name      testExplicitInterfaceMethodOverload0082
+     * @tc.desc      A method is defined in a subinterface with the same name as the method in the
+    superinterface. If signatures are override-compatible (see Override-Compatible Signatures),
+    then overriding is used. Otherwise, overloading is used.
+
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+
+    it("testExplicitInterfaceMethodOverload0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A58 = new A58();
+      expect(a.foo(1 as int)).assertEqual(2.1);
+      expect(a.foo(1 as byte)).assertEqual("str");
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_8400
+     * @tc.name      testExplicitInterfaceMethodOverload0084
+     * @tc.desc      A method is defined in a subinterface with the same name as the method in the
+    superinterface. If signatures are override-compatible (see Override-Compatible Signatures),
+    then overriding is used. Otherwise, overloading is used.
+
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+
+    it("testExplicitInterfaceMethodOverload0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a = new A60();
+      expect(a.foo(1.1 as number) == 1).assertTrue();
+      expect(a.foo("some string") == 2).assertTrue();
+    });
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_8500
+     * @tc.name      testExplicitInterfaceMethodOverload0085
+     * @tc.desc      A method is defined in a subinterface with the same name as the method in the
+    superinterface. If signatures are override-compatible (see Override-Compatible Signatures),
+    then overriding is used. Otherwise, overloading is used.
+
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+
+    it("testExplicitInterfaceMethodOverload0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a = new A61();
+      expect(a.foo(1.1 as number) == 1).assertTrue();
+      expect(a.foo("some string") == 2).assertTrue();
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_8600
+     * @tc.name      testExplicitInterfaceMethodOverload0086
+     * @tc.desc      An explicit overload defined in a superinterface can be overridden in a subinterface.
+    An explicit interface overload can be overridden in a class. Check that explicit
+    overload can be overridden in a subinterface. No implicit overloading. Overload
+    'foo' is new name.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+
+    it("testExplicitInterfaceMethodOverload0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let j: J39 = ((): J39 => new A62)()
+      expect(j.foo(new C3)).assertEqual('A.1')
+      expect(j.foo(new C2)).assertEqual('A.1')
+      expect(j.foo(new C1)).assertEqual('A.1')
+
+      let k: K32 = ((): K32 => new A62)()
+      expect(k.foo(new C3)).assertEqual('A.3')
+      expect(k.foo(new C2)).assertEqual('A.1')
+      expect(k.foo(new C1)).assertEqual('A.1')
+
+      let a: A62 = ((): A62 => new A62)()
+      expect(a.foo(new C3)).assertEqual('A.3')
+      expect(a.foo(new C2)).assertEqual('A.1')
+      expect(a.foo(new C1)).assertEqual('A.1')
+    });
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_8700
+     * @tc.name      testExplicitInterfaceMethodOverload0087
+     * @tc.desc      An explicit overload defined in a superinterface can be overridden in a subinterface.
+    An explicit interface overload can be overridden in a class. Check that explicit
+    overload can be overridden in a subinterface. No implicit overloading. Overload
+    'foo' is new name.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+
+    it("testExplicitInterfaceMethodOverload0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let j: J40 = ((): J40 => new A63)()
+      expect(j.foo(new C3)).assertEqual('A.3')
+      expect(j.foo(new C2)).assertEqual('A.1')
+      expect(j.foo(new C1)).assertEqual('A.1')
+
+      let m: M16 = ((): M16 => new A63)()
+      expect(m.foo(new C3)).assertEqual('A.3')
+      expect(m.foo(new C2)).assertEqual('A.2')
+      expect(m.foo(new C1)).assertEqual('A.1')
+
+      let a: A63 = ((): A63 => new A63)()
+      expect(a.foo(new C3)).assertEqual('A.3')
+      expect(a.foo(new C2)).assertEqual('A.2')
+      expect(a.foo(new C1)).assertEqual('A.1')
+    });
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_8800
+     * @tc.name      testExplicitInterfaceMethodOverload0088
+     * @tc.desc      An explicit overload defined in a superinterface can be overridden in a subinterface.
+    An explicit interface overload can be overridden in a class. Check that explicit
+    overload can be overridden in a subinterface. No implicit overloading. Overload
+    'foo' is new name.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+
+    it("testExplicitInterfaceMethodOverload0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let j: J41 = ((): J41 => new A64)()
+      expect(j.foo(new C3)).assertEqual('A.3')
+      expect(j.foo(new C2)).assertEqual('A.2')
+
+      let k: K34 = ((): K34 => new A64)()
+      expect(k.foo(new C3)).assertEqual('A.3')
+      expect(k.foo(new C2)).assertEqual('A.2')
+
+      let m: M17 = ((): M17 => new A64)()
+      expect(m.foo(new C3)).assertEqual('A.3')
+      expect(m.foo(new C2)).assertEqual('A.2')
+
+      let l: L8 = ((): L8 => new A64)()
+      expect(l.foo(new C3)).assertEqual('A.3')
+      expect(l.foo(new C2)).assertEqual('A.2')
+      expect(l.foo(new C1)).assertEqual('A.1')
+
+      let a: A64 = ((): A64 => new A64)()
+      expect(a.foo(new C3)).assertEqual('A.3')
+      expect(a.foo(new C2)).assertEqual('A.2')
+      expect(a.foo(new C1)).assertEqual('A.1')
+    });
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_8900
+     * @tc.name      testExplicitInterfaceMethodOverload0089
+     * @tc.desc      An explicit overload defined in a superinterface can be overridden in a subinterface.
+    An explicit interface overload can be overridden in a class. Check that explicit
+    overload can be overridden in a subinterface. No implicit overloading. Overload
+    'foo' is new name.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+
+    it("testExplicitInterfaceMethodOverload0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let j: J42 = {}
+      expect(j.foo(new C3)).assertEqual('J.1')
+      expect(j.foo(new C2)).assertEqual('J.1')
+      expect(j.foo(new C1)).assertEqual('J.1')
+
+      let k: K35 = {}
+      expect(k.foo(new C3)).assertEqual('K.3')
+      expect(k.foo(new C2)).assertEqual('J.1')
+      expect(k.foo(new C1)).assertEqual('J.1')
+
+      let a: A65 = {}
+      expect(a.foo(new C3)).assertEqual('A.3')
+      expect(a.foo(new C2)).assertEqual('A.1')
+      expect(a.foo(new C1)).assertEqual('A.1')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_9500
+     * @tc.name      testExplicitInterfaceMethodOverload0095
+     * @tc.desc      An explicit overload defined in a superinterface can be overridden in a subinterface.
+    An explicit interface overload can be overridden in a class. Check that explicit
+    overload can be overridden in a subinterface. No implicit overloading. Overload
+    'foo' is new name.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+
+    it("testExplicitInterfaceMethodOverload0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let j: J48 = ((): J48 => new A71)()
+      expect(j.foo(new C3)).assertEqual('A.2')
+      expect(j.foo(new C2)).assertEqual('A.2')
+      expect(j.foo(new C1)).assertEqual('A.1')
+
+      let m: M20 = ((): M20 => new A71)()
+      expect(m.foo(new C3)).assertEqual('A.3')
+      expect(m.foo(new C2)).assertEqual('A.2')
+      expect(m.foo(new C1)).assertEqual('A.1')
+
+      let a: A71 = ((): A71 => new A71)()
+      expect(a.foo(new C3)).assertEqual('A.3')
+      expect(a.foo(new C2)).assertEqual('A.2')
+      expect(a.foo(new C1)).assertEqual('A.1')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_11000
+     * @tc.name      testExplicitInterfaceMethodOverload0110
+     * @tc.desc      An explicit overload defined in a superinterface can be overridden in a subinterface.
+    An explicit interface overload can be overridden in a class. Check that explicit
+    overload can be overridden in a subinterface. No implicit overloading. Overload
+    'foo' is new name.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+
+    it("testExplicitInterfaceMethodOverload0110", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let j: J63 = ((): J63 => new A86)()
+      expect(j.foo(new C3)).assertEqual('A.1')
+      expect(j.foo(new C2)).assertEqual('A.1')
+      expect(j.foo(new C1)).assertEqual('A.1')
+
+      let k: K56 = ((): K56 => new A86)()
+      expect(k.foo(new C3)).assertEqual('A.3')
+      expect(k.foo(new C2)).assertEqual('A.3')
+      expect(k.foo(new C1)).assertEqual('A.1')
+
+      let a: A86 = ((): A86 => new A86)()
+      expect(a.foo(new C3)).assertEqual('A.3')
+      expect(a.foo(new C2)).assertEqual('A.3')
+      expect(a.foo(new C1)).assertEqual('A.3')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_11100
+     * @tc.name      testExplicitInterfaceMethodOverload0111
+     * @tc.desc      An explicit overload defined in a superinterface can be overridden in a subinterface.
+    An explicit interface overload can be overridden in a class. Check that explicit
+    overload can be overridden in a subinterface. No implicit overloading. Overload
+    'foo' is new name.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+
+    it("testExplicitInterfaceMethodOverload0111", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let j: J64 = ((): J64 => new A87)()
+      expect(j.foo(new C3)).assertEqual('A.3')
+      expect(j.foo(new C2)).assertEqual('A.2')
+
+      let m: M28 = ((): M28 => new A87)()
+      expect(m.foo(new C3)).assertEqual('A.3')
+      expect(m.foo(new C2)).assertEqual('A.3')
+      expect(m.foo(new C1)).assertEqual('A.2')
+
+      let a: A87 = ((): A87 => new A87)()
+      expect(a.foo(new C3)).assertEqual('A.3')
+      expect(a.foo(new C2)).assertEqual('A.3')
+      expect(a.foo(new C1)).assertEqual('A.2')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_11300
+     * @tc.name      testExplicitInterfaceMethodOverload0113
+     * @tc.desc      An explicit overload defined in a superinterface can be overridden in a subinterface.
+    An explicit interface overload can be overridden in a class. Check that explicit
+    overload can be overridden in a subinterface. No implicit overloading. Overload
+    'foo' is new name.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+
+    it("testExplicitInterfaceMethodOverload0113", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let j: J66 = {}
+      expect(j.foo(new C3)).assertEqual('J.1')
+      expect(j.foo(new C2)).assertEqual('J.1')
+      expect(j.foo(new C1)).assertEqual('J.1')
+
+      let k: K59 = {}
+      expect(k.foo(new C3)).assertEqual('K.2')
+      expect(k.foo(new C2)).assertEqual('K.2')
+      expect(k.foo(new C1)).assertEqual('J.1')
+
+      let a: A89 = {}
+      expect(a.foo(new C3)).assertEqual('A.3')
+      expect(a.foo(new C2)).assertEqual('A.3')
+      expect(a.foo(new C1)).assertEqual('A.3')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_11800
+     * @tc.name      testExplicitInterfaceMethodOverload0118
+     * @tc.desc      Test cases when explicit overload name is shadowed by a method name and vice
+    versa.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExplicitInterfaceMethodOverload0118", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let i1: I62 = ((): I62 => new A94)()
+      expect(i1.m1(1)).assertEqual(1)
+      expect(i1.m2(1)).assertEqual(2)
+      expect(i1.foo('abc')).assertEqual(3)
+
+      let i2: I63 = ((): I63 => new A94)()
+      expect(i2.m1(1)).assertEqual(1)
+      expect(i2.m2(1)).assertEqual(2)
+      expect(i2.foo(1 as int)).assertEqual(1)
+      expect(i2.foo(1 as long)).assertEqual(2)
+    });
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_11900
+     * @tc.name      testExplicitInterfaceMethodOverload0119
+     * @tc.desc      Test cases when explicit overload name is shadowed by a method name and vice
+    versa.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExplicitInterfaceMethodOverload0119", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let i1: I64 = ((): I64 => new A95)()
+      expect(i1.m1(1)).assertEqual(1)
+      expect(i1.m2(1)).assertEqual(2)
+      expect(i1.foo(1 as int)).assertEqual(1)
+      expect(i1.foo(1 as long)).assertEqual(2)
+
+      let i2: I65 = ((): I65 => new A95)()
+      expect(i2.m1(1)).assertEqual(1)
+      expect(i2.m2(1)).assertEqual(2)
+      expect(i2.foo('abc')).assertEqual(3)
+      expect(i2.foo(1 as int)).assertEqual(4)
+      expect(i2.foo(1 as long)).assertEqual(2)
+    });
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_12000
+     * @tc.name      testExplicitInterfaceMethodOverload0120
+     * @tc.desc      Interface method overload declaration allows declaring an overload alias as
+    an interface member for a set of interface methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExplicitInterfaceMethodOverload0120", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      new A96<String, Number>();
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_12100
+     * @tc.name      testExplicitInterfaceMethodOverload0121
+     * @tc.desc      Interface method overload declaration allows declaring an overload alias as
+    an interface member for a set of interface methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExplicitInterfaceMethodOverload0121", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      new A97<Byte>();
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_12200
+     * @tc.name      testExplicitInterfaceMethodOverload0122
+     * @tc.desc      desc: Interface method overload declaration allows declaring an overload alias as
+    an interface member for a set of interface methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExplicitInterfaceMethodOverload0122", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      new A98<Boolean>();
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_12300
+     * @tc.name      testExplicitInterfaceMethodOverload0123
+     * @tc.desc      desc: Interface method overload declaration allows declaring an overload alias as
+    an interface member for a set of interface methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExplicitInterfaceMethodOverload0123", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      new A99();
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_12400
+     * @tc.name      testExplicitInterfaceMethodOverload0124
+     * @tc.desc      desc: Interface method overload declaration allows declaring an overload alias as
+    an interface member for a set of interface methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExplicitInterfaceMethodOverload0124", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      new A100();
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_12500
+     * @tc.name      testExplicitInterfaceMethodOverload0125
+     * @tc.desc      Interface method overload declaration allows declaring an overload alias as
+    an interface member for a set of interface methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExplicitInterfaceMethodOverload0125", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      new A101();
+    });
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_12600
+     * @tc.name      testExplicitInterfaceMethodOverload0126
+     * @tc.desc      Interface method overload declaration allows declaring an overload alias as
+    an interface member for a set of interface methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExplicitInterfaceMethodOverload0126", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a = new Derived<Number, String>();
+      let b = new Base<Number, String>();
+      let c: TPL = [false, 1.2f];
+
+      b.foo();
+      expect(res == 100 + 1).assertTrue();
+
+      a.foo();
+      expect(res == 200 + 1).assertTrue();
+    });
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_12700
+     * @tc.name      testExplicitInterfaceMethodOverload0127
+     * @tc.desc      Interface method overload declaration allows declaring an overload alias as
+    an interface member for a set of interface methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExplicitInterfaceMethodOverload0127", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a = new Derived1<Number, String>();
+      let b = new Base<Number, String>();
+      let c: TPL = [false, 1.2f];
+
+      b.foo(1 as byte);
+      expect(res == 100 + 15).assertTrue();
+
+      a.foo(1 as byte);
+      expect(res == 200 + 15).assertTrue();
+    });
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_12800
+     * @tc.name      testExplicitInterfaceMethodOverload0128
+     * @tc.desc      Interface method overload declaration allows declaring an overload alias as
+    an interface member for a set of interface methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExplicitInterfaceMethodOverload128", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a = new Derived2<Number, String>();
+      let b = new Base<Number, String>();
+      let c: TPL = [false, 1.2f];
+
+      b.foo(1 as short);
+      expect(res == 100 + 2).assertTrue();
+
+      a.foo(1 as short);
+      expect(res == 200 + 2).assertTrue();
+    });
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_12900
+     * @tc.name      testExplicitInterfaceMethodOverload0129
+     * @tc.desc      Interface method overload declaration allows declaring an overload alias as
+    an interface member for a set of interface methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExplicitInterfaceMethodOverload0129", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a = new Derived3<Number, String>();
+      let b = new Base<Number, String>();
+      let c: TPL = [false, 1.2f];
+
+      b.foo(c'x');
+      expect(res == 100 + 12).assertTrue();
+
+      a.foo(c'x');
+      expect(res == 200 + 12).assertTrue();
+    });
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_13000
+     * @tc.name      testExplicitInterfaceMethodOverload0130
+     * @tc.desc      Interface method overload declaration allows declaring an overload alias as
+    an interface member for a set of interface methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExplicitInterfaceMethodOverload0130", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a = new Derived4<Number, String>();
+      let b = new Base<Number, String>();
+      let c: TPL = [false, 1.2f];
+
+      b.foo(1 as int);
+      expect(res == 100 + 4).assertTrue();
+
+      a.foo(1 as int);
+      expect(res == 200 + 4).assertTrue();
+    });
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_13100
+     * @tc.name      testExplicitInterfaceMethodOverload0131
+     * @tc.desc      Interface method overload declaration allows declaring an overload alias as
+    an interface member for a set of interface methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExplicitInterfaceMethodOverload0131", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a = new Derived5<Number, String>();
+      let b = new Base<Number, String>();
+      let c: TPL = [false, 1.2f];
+
+      b.foo(1 as long);
+      expect(res == 100 + 6).assertTrue();
+
+      a.foo(1 as long);
+      expect(res == 200 + 6).assertTrue();
+    });
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_13200
+     * @tc.name      testExplicitInterfaceMethodOverload0132
+     * @tc.desc      Interface method overload declaration allows declaring an overload alias as
+    an interface member for a set of interface methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExplicitInterfaceMethodOverload0132", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a = new Derived6<Number, String>();
+      let b = new Base<Number, String>();
+      let c: TPL = [false, 1.2f];
+
+      b.foo(1.1f);
+      expect(res == 100 + 8).assertTrue();
+
+      a.foo(1.1f);
+      expect(res == 200 + 8).assertTrue();
+    });
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_13300
+     * @tc.name      testExplicitInterfaceMethodOverload0133
+     * @tc.desc      Interface method overload declaration allows declaring an overload alias as
+    an interface member for a set of interface methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExplicitInterfaceMethodOverload0133", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a = new Derived7<Number, String>();
+      let b = new Base<Number, String>();
+      let c: TPL = [false, 1.2f];
+
+      b.foo(1.2);
+      expect(res == 100 + 10).assertTrue();
+
+      a.foo(1.2);
+      expect(res == 200 + 10).assertTrue();
+    });
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_13400
+     * @tc.name      testExplicitInterfaceMethodOverload0134
+     * @tc.desc      Interface method overload declaration allows declaring an overload alias as
+    an interface member for a set of interface methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExplicitInterfaceMethodOverload0134", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a = new Derived8<Number, String>();
+      let b = new Base<Number, String>();
+      let c: TPL = [false, 1.2f];
+
+      b.foo(new String());
+      expect(res == 100 + 14).assertTrue();
+
+      a.foo(new String());
+      expect(res == 200 + 14).assertTrue();
+    });
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_13500
+     * @tc.name      testExplicitInterfaceMethodOverload0135
+     * @tc.desc      Interface method overload declaration allows declaring an overload alias as
+    an interface member for a set of interface methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExplicitInterfaceMethodOverload0135", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a = new Derived9<Number, String>();
+      let b = new Base<Number, String>();
+      let c: TPL = [false, 1.2f];
+
+      b.foo(false);
+      expect(res == 100 + 17).assertTrue();
+
+      a.foo(false);
+      expect(res == 200 + 17).assertTrue();
+    });
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_13600
+     * @tc.name      testExplicitInterfaceMethodOverload0136
+     * @tc.desc      Interface method overload declaration allows declaring an overload alias as
+    an interface member for a set of interface methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExplicitInterfaceMethodOverload0136", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a = new Derived10<Number, String>();
+      let b = new Base<Number, String>();
+      let c: TPL = [false, 1.2f];
+
+      b.foo(1 as int, 2 as int);
+      expect(res == 100 + 19).assertTrue();
+
+      a.foo(1 as int, 2 as int);
+      expect(res == 200 + 19).assertTrue();
+    });
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_13700
+     * @tc.name      testExplicitInterfaceMethodOverload0137
+     * @tc.desc      Interface method overload declaration allows declaring an overload alias as
+    an interface member for a set of interface methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExplicitInterfaceMethodOverload0137", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a = new Derived11<Number, String>();
+      let b = new Base<Number, String>();
+      let c: TPL = [false, 1.2f];
+
+      b.foo(new Gen<Number>());
+      expect(res == 100 + 20).assertTrue();
+
+      a.foo(new Gen<Number>());
+      expect(res == 200 + 20).assertTrue();
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_13800
+     * @tc.name      testExplicitInterfaceMethodOverload0138
+     * @tc.desc      Interface method overload declaration allows declaring an overload alias as
+    an interface member for a set of interface methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExplicitInterfaceMethodOverload0138", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a = new Derived12<Number, String>();
+      let b = new Base<Number, String>();
+      let c: TPL = [false, 1.2f];
+
+      b.foo(new Gen2<Number, String>());
+      expect(res == 100 + 21).assertTrue();
+
+      a.foo(new Gen2<Number, String>());
+      expect(res == 200 + 21).assertTrue();
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_13900
+     * @tc.name      testExplicitInterfaceMethodOverload0139
+     * @tc.desc      Interface method overload declaration allows declaring an overload alias as
+    an interface member for a set of interface methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExplicitInterfaceMethodOverload0139", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a = new Derived13<Number, String>();
+      let b = new Base<Number, String>();
+      let c: TPL = [false, 1.2f];
+
+      b.foo(undefined);
+      expect(res == 100 + 22).assertTrue();
+
+      a.foo(undefined);
+      expect(res == 200 + 22).assertTrue();
+    });
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_14000
+     * @tc.name      testExplicitInterfaceMethodOverload0140
+     * @tc.desc      Interface method overload declaration allows declaring an overload alias as
+    an interface member for a set of interface methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExplicitInterfaceMethodOverload0140", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a = new Derived14<Number, String>();
+      let b = new Base<Number, String>();
+      let c: TPL = [false, 1.2f];
+
+      b.foo(1, new Number());
+      expect(res == 100 + 23).assertTrue();
+
+      a.foo(1, new Number());
+      expect(res == 200 + 23).assertTrue();
+    });
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_14100
+     * @tc.name      testExplicitInterfaceMethodOverload0141
+     * @tc.desc      Interface method overload declaration allows declaring an overload alias as
+    an interface member for a set of interface methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExplicitInterfaceMethodOverload0141", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a = new Derived15<Number, String>();
+      let b = new Base<Number, String>();
+      let c: TPL = [false, 1.2f];
+
+      b.foo(() => { return true; });
+      expect(res == 100 + 24).assertTrue();
+
+      a.foo(() => { return true; });
+      expect(res == 200 + 24).assertTrue();
+    });
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_14200
+     * @tc.name      testExplicitInterfaceMethodOverload0142
+     * @tc.desc      Interface method overload declaration allows declaring an overload alias as
+    an interface member for a set of interface methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExplicitInterfaceMethodOverload0142", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a = new Derived16<Number, String>();
+      let b = new Base<Number, String>();
+      let c: TPL = [false, 1.2f];
+
+      b.foo(c);
+      expect(res == 100 + 25).assertTrue();
+
+      a.foo(c);
+      expect(res == 200 + 25).assertTrue();
+    });
+    /**
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_14300
+     * @tc.name      testExplicitInterfaceMethodOverload143
+     * @tc.desc      Interface method overload declaration allows declaring an overload alias as
+    an interface member for a set of interface methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExplicitInterfaceMethodOverload143", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a = new Derived17<Number, String>();
+      let b = new Base<Number, String>();
+      let c: TPL = [false, 1.2f];
+
+      b.foo([ c'A', c'B' ]);
+      expect(res == 100 + 26).assertTrue();
+
+      a.foo([ c'A', c'B' ]);
+      expect(res == 200 + 26).assertTrue();
+    });
   })
 }
