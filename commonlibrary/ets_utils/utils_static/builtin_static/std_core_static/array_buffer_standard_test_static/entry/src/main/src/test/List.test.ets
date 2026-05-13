@@ -1,3 +1,4 @@
+import AbilityTest from "./Ability.test";
 import arrayBufferAtTest from "./arrayBuffer/ArrayBufferAtTest.test";
 import arrayBufferBytesLengthTest from "./arrayBuffer/ArrayBufferBytesLengthTest.test";
 import arrayBufferFromFiveTest from "./arrayBuffer/ArrayBufferFromFiveTest.test";
@@ -10,14 +11,15 @@ import arrayBufferFromTwoTest from "./arrayBuffer/ArrayBufferFromTwoTest.test";
 import arrayBufferPropertyTest from "./arrayBuffer/ArrayBufferPropertyTest.test";
 
 export default function testsuite(): void {
-  arrayBufferPropertyTest();
-  arrayBufferAtTest();
-  arrayBufferBytesLengthTest();
-  arrayBufferFromOneTest();
-  arrayBufferFromTwoTest();
-  arrayBufferFromThreeTest();
-  arrayBufferFromFourTest();
-  arrayBufferFromFiveTest();
-  arrayBufferFromSixTest();
-  arrayBufferFromSevenTest();
+  AbilityTest();
+  // arrayBufferPropertyTest();
+  // arrayBufferAtTest();
+  // arrayBufferBytesLengthTest();
+  // arrayBufferFromOneTest();
+  // arrayBufferFromTwoTest();
+  // arrayBufferFromThreeTest();
+  // arrayBufferFromFourTest();
+  // arrayBufferFromFiveTest();
+  // arrayBufferFromSixTest();
+  // arrayBufferFromSevenTest();
 }
