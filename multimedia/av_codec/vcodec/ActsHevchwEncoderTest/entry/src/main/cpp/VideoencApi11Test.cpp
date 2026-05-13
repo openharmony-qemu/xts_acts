@@ -422,6 +422,7 @@ uint32_t VEncAPI11Sample::ReadOneFrameYUV420SP(uint8_t *dst)
         return 0;
     }
     uint8_t *start = dst;
+    int32_t heighTwo;
     for (uint32_t i = 0; i < defaultHeight; i++) {
         inFile_->read(reinterpret_cast<char*>(dst), defaultWidth);
         if (inFile_->gcount() != defaultWidth) {
@@ -429,7 +430,7 @@ uint32_t VEncAPI11Sample::ReadOneFrameYUV420SP(uint8_t *dst)
         }
         dst += stride_;
     }
-    for (uint32_t i = 0; i < defaultHeight / 2; i++) {
+    for (uint32_t i = 0; i < defaultHeight / heighTwo; i++) {
         inFile_->read(reinterpret_cast<char*>(dst), defaultWidth);
         if (inFile_->gcount() != defaultWidth) {
             return 0;
