@@ -1344,7 +1344,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0091
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_9100
-     * @tc.desc Verify resize with negative length throws RangeError.
+     * @tc.desc Verify resize with negative length throws RangeError. OH throws std.core.RangeError; ERROR_CODE.01 uses Utils.assertThrownErrorCodeIsNumber (numeric code when present, else strict std.core simple type name via Class.getName).
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1355,7 +1355,8 @@ export default function arrayBufferPropertyTest(): void {
         buffer.resize(-1)
         expect(true).assertFail()
       } catch (error) {
-        expect(error != null).assertTrue()
+        expect(error !== null && error !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(error as object)
       }
     });
     return;

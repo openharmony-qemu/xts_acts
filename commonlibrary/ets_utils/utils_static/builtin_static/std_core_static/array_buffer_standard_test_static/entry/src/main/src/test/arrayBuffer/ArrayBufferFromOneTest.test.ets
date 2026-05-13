@@ -270,7 +270,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_1700
-     * @tc.desc Mindmap boolean is not ValueArray<byte>; runtime verifies ValueArray path instead with same observable assertions as mindmap positive case intent.
+     * @tc.desc 布尔值不作为Array<byte>处理；运行时验证ValueArray路径，并应用与正向案例相同的可观察断言。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

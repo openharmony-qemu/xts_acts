@@ -488,7 +488,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0035
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_3500
-     * @tc.desc Verify ArrayBuffer_from5 mindmap-ordered case 35; align STA from overloads and ArkTS constraints.
+     * @tc.desc Verify ArrayBuffer_from5 mindmap-ordered case 35; align STA from overloads and ArkTS constraints. OH throws IllegalArgumentError for unknown encoding; ERROR_CODE.01 uses Utils.assertThrownErrorCodeIsNumber (numeric code when present, else strict std.core simple type name).
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -498,7 +498,8 @@ export default function arrayBufferFromFiveTest(): void {
         ArrayBuffer.from('ABC', 'not_a_real_encoding_xyz')
         expect(true).assertFail()
       } catch (e) {
-        expect(e != null).assertTrue()
+        expect(e !== null && e !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(e as object)
       }
     });
 

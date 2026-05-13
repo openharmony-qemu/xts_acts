@@ -28,7 +28,8 @@ function arrayBufferFromSevenFromOrThrowsElseMatchesSlice(
     out = ArrayBuffer.from(buf, byteOffset, length)
   } catch (e) {
     threw = true
-    expect(e != null).assertTrue()
+    expect(e !== null && e !== undefined).assertTrue()
+    Utils.assertThrownErrorCodeIsNumber(e as object)
   }
   if (!threw) {
     if (out === null) {
