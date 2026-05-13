@@ -441,7 +441,7 @@ export default function TextEnumTest() {
      */
     it('SUB_ARKUI_OH_ArkUI_LineHeightStyle_SetLineHeight_3000', Level.LEVEL1, async () => {
       console.info('SUB_ARKUI_OH_ArkUI_LineHeightStyle_SetLineHeight_3000 START');
-      expect(nativeFunc.TextEnumTest_030().assertEqual(0)
+      expect(nativeFunc.TextEnumTest_030()).assertEqual(0)
       console.info('SUB_ARKUI_OH_ArkUI_LineHeightStyle_SetLineHeight_3000 END');
     });
 

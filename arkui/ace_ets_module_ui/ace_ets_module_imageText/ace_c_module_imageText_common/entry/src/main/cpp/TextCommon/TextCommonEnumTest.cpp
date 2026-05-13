@@ -217,7 +217,7 @@ static napi_value TextEnumTest_016(napi_env env, napi_callback_info info)
     NAPI_START(text, ARKUI_NODE_TEXT);
     OH_ArkUI_LineSpacingStyle *lineSpacingStyle = OH_ArkUI_LineSpacingStyle_Create();
     ASSERT_EQ((lineSpacingStyle != nullptr), true);
-    
+
     OH_ArkUI_LineSpacingStyle_SetLineSpacing(lineSpacingStyle, FLOAT_30);
     OH_ArkUI_LineSpacingStyle_SetOnlyBetweenLines(lineSpacingStyle, g_onlyBetweenLines);
 
@@ -354,7 +354,7 @@ static napi_value TextEnumTest_025(napi_env env, napi_callback_info info)
 
 static napi_value TextEnumTest_026(napi_env env, napi_callback_info info)
 {
-    NAPI_START(text, ARKUI_NODE_TEXT);   
+    NAPI_START(text, ARKUI_NODE_TEXT);
     OH_ArkUI_SpanStyle *spanStyle = OH_ArkUI_SpanStyle_Create();
     OH_ArkUI_SpanStyle_SetStart(spanStyle, PARAM_0);
     OH_ArkUI_SpanStyle_SetLength(spanStyle, PARAM_12);
@@ -374,7 +374,7 @@ static napi_value TextEnumTest_026(napi_env env, napi_callback_info info)
 
 static napi_value TextEnumTest_027(napi_env env, napi_callback_info info)
 {
-    NAPI_START(text, ARKUI_NODE_TEXT);   
+    NAPI_START(text, ARKUI_NODE_TEXT);
     auto result_27 = OH_ArkUI_SpanStyle_SetLineSpacingStyle(nullptr, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result_27 TextEnumTest_027 result=%{public}d", result_27);
@@ -455,7 +455,7 @@ static napi_value TextEnumTest_031(napi_env env, napi_callback_info info)
 
 static napi_value TextEnumTest_032(napi_env env, napi_callback_info info)
 {
-    NAPI_START(text, ARKUI_NODE_TEXT);   
+    NAPI_START(text, ARKUI_NODE_TEXT);
     const OH_ArkUI_SpanStyle *spanStyle = OH_ArkUI_SpanStyle_Create();
     auto result_32 = OH_ArkUI_SpanStyle_GetLineSpacingStyle(spanStyle, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
@@ -473,7 +473,7 @@ static napi_value TextEnumTest_032(napi_env env, napi_callback_info info)
 
 static napi_value TextEnumTest_033(napi_env env, napi_callback_info info)
 {
-    NAPI_START(text, ARKUI_NODE_TEXT);   
+    NAPI_START(text, ARKUI_NODE_TEXT);
     OH_ArkUI_LineSpacingStyle *lineSpacingStyle = OH_ArkUI_LineSpacingStyle_Create();
     ASSERT_EQ((lineSpacingStyle != nullptr), true);
 
@@ -490,7 +490,7 @@ static napi_value TextEnumTest_033(napi_env env, napi_callback_info info)
 
 static napi_value TextEnumTest_034(napi_env env, napi_callback_info info)
 {
-    NAPI_START(text, ARKUI_NODE_TEXT);   
+    NAPI_START(text, ARKUI_NODE_TEXT);
     auto result_34 = OH_ArkUI_SpanStyle_GetLineSpacingStyle(nullptr, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result_34 TextEnumTest_034 result=%{public}d", result_34);
