@@ -417,23 +417,24 @@ uint32_t VEncAPI11Sample::ReadOneFrameYUV420SP(uint8_t *dst)
         cout << "ReadOneFrameYUV420SP: Input file not open" << endl;
         return 0;
     }
-    
-    uint8_t *start = dst;
-    // copy Y - 使用紧凑布局，不使用stride_
-    for (uint32_t i = 0; i < defaultHeight; i++) {
-        inFile_->read(reinterpret_cast<char *>(dst), defaultWidth);
-        if (!ReturnZeroIfEOS(defaultWidth)) {
-            return 0;
-        }
-        dst += defaultWidth;
+    if (stride_ == 0) {
+        cout << "stride_ is zero, call GetStride() first" << endl;
+        return 0;
     }
-    // copy UV - 使用紧凑布局，不使用stride_
-    for (uint32_t i = 0; i < defaultHeight / sampleRatio; i++) {
-        inFile_->read(reinterpret_cast<char *>(dst), defaultWidth);
-        if (!ReturnZeroIfEOS(defaultWidth)) {
+    uint8_t *start = dst;
+    for (uint32_t i = 0; i < defaultHeight; i++) {
+        inFile_->read(reinterpret_cast<char*>(dst), defaultWidth);
+        if (inFile_->gcount() != defaultWidth) {
             return 0;
         }
-        dst += defaultWidth;
+        dst += stride_;
+    }
+    for (uint32_t i = 0; i < defaultHeight / 2; i++) {
+        inFile_->read(reinterpret_cast<char*>(dst), defaultWidth);
+        if (inFile_->gcount() != defaultWidth) {
+            return 0;
+        }
+        dst += stride_;
     }
     return dst - start;
 }
