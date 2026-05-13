@@ -1,4 +1,4 @@
-# Copyright (c) 2023 Huawei Device Co., Ltd.
+# Copyright (C) 2025 Huawei Device Co., Ltd.
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -13,11 +13,13 @@
 
 import("//test/xts/tools/build/suite.gni")
 
-ohos_js_app_static_suite("ActsAceEtsModuleXNodeNoWearApi12Test") {
-  #test_hap = true
+ohos_js_app_static_suite("ActsArrayStaticTest") {
+#   test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "XTS_DEMO"
-  part_name = "XTS_DEMO"
-  subsystem_name = "XTS_DEMO"
+  hap_name = "ActsArrayStaticTest"
+  part_name = "ets_utils"
+  subsystem_name = "commonlibrary"
 }
+
+
