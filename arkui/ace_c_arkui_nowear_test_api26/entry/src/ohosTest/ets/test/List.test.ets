@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 import RenderNodeUtilsSetRectShapeOptionValueTest from "./renderNode/RenderNodeUtilsSetRectShapeOptionValueTest.test"
+import RenderNodeBlurStyleOptionTest from "./renderNode/RenderNodeBlurStyleOptionTest.test"
 
 export default function testsuite() {
+  RenderNodeBlurStyleOptionTest(); // 此条特殊用例请放在首行，勿动
   RenderNodeUtilsSetRectShapeOptionValueTest();
 }

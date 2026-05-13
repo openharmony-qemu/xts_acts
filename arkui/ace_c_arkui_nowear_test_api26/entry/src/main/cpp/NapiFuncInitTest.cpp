@@ -14,6 +14,7 @@
  */
 #include "common/common.h"
 #include "renderNode/RenderNodeUtilsSetRectShapeOptionValue.cpp"
+#include "renderNode/RenderNodeBlurStyleOptionTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -28,6 +29,36 @@ static napi_value Init(napi_env env, napi_value exports)
         {"RenderNodeUtils_001", nullptr, RenderNodeUtils_001, nullptr, nullptr, nullptr, 
                 napi_default, nullptr},
         {"RenderNodeUtils_002", nullptr, RenderNodeUtils_002, nullptr, nullptr, nullptr, 
+                napi_default, nullptr},
+        {"TestRenderNodeBlurStyleOption001", nullptr, TestRenderNodeBlurStyleOption001, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestRenderNodeBlurStyleOption002", nullptr, TestRenderNodeBlurStyleOption002, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestRenderNodeBlurStyleOption003", nullptr, TestRenderNodeBlurStyleOption003, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestRenderNodeBlurStyleOption004", nullptr, TestRenderNodeBlurStyleOption004, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestRenderNodeBlurStyleOption005", nullptr, TestRenderNodeBlurStyleOption005, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestRenderNodeBlurStyleOption006", nullptr, TestRenderNodeBlurStyleOption006, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestRenderNodeBlurStyleOption007", nullptr, TestRenderNodeBlurStyleOption007, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestRenderNodeBlurStyleOption008", nullptr, TestRenderNodeBlurStyleOption008, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestRenderNodeBlurStyleOption009", nullptr, TestRenderNodeBlurStyleOption009, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestRenderNodeBlurStyleOption010", nullptr, TestRenderNodeBlurStyleOption010, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestRenderNodeBlurStyleOption011", nullptr, TestRenderNodeBlurStyleOption011, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestRenderNodeBlurStyleOption012", nullptr, TestRenderNodeBlurStyleOption012, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestRenderNodeBlurStyleOption013", nullptr, TestRenderNodeBlurStyleOption013, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestRenderNodeBlurStyleOption014", nullptr, TestRenderNodeBlurStyleOption014, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+        {"TestRenderNodeBlurStyleOption015", nullptr, TestRenderNodeBlurStyleOption015, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
