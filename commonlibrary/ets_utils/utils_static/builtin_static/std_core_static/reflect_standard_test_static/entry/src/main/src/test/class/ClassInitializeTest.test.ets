@@ -200,6 +200,7 @@ export default function ClassInitializeTest(): void {
     it('testClassInitialize001', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<MyClass001>();
         cls.initialize(); // 正确调用，无参数
+        expect(cls.getName().length).assertLarger(0);
     });
 
     /**
@@ -278,6 +279,7 @@ export default function ClassInitializeTest(): void {
       let cls = Class.from<MyClass006>();
         cls.initialize(); // 第一次初始化
         cls.initialize(); // 第二次调用，应幂等或无副作用
+        expect(cls.getName()).assertEqual("MyClass006");
     });
 
     /**
@@ -535,8 +537,9 @@ export default function ClassInitializeTest(): void {
         let cls = Class.from<MyClass022>();
         let task1: () => void = (): void => { cls.initialize(); };
         let task2: () => void = (): void => { cls.initialize(); };
-        // 并发执行任务
-        // 验证MyClass.initCount为1
+        task1();
+        task2();
+        expect(MyClass022.initCount).assertEqual(1);
     });
 
     /**

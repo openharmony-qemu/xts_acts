@@ -130,6 +130,7 @@ export default function ConstructorGetParametersNumTest(): void {
       let cls = Class.from<MyClass001>();
         let constructors = cls.getConstructors();
         let num = constructors[0].getParametersNum();
+        expect(num).assertEqual(2);
     });
 
     /**
@@ -141,7 +142,7 @@ export default function ConstructorGetParametersNumTest(): void {
      * @tc.level Level 2
      */
     it('testConstructorGetParametersNum002', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      Class.from<MyClass001>().getConstructors()[0].getParametersNum();
+      expect(Class.from<MyClass001>().getConstructors()[0].getParametersNum()).assertEqual(2);
     });
 
     /**

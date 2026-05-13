@@ -90,7 +90,7 @@ abstract class AbstractClass012 {
       public abstract method(): void;
   }
 
-final class FinalClass013 {
+class FinalClass013 {
       public constructor() {}
   }
 
@@ -439,7 +439,7 @@ class Serializable078 {
 class Factory079 {
       public static createInstance<T>(cls: Class, id?: int): T {
           let ctors = cls.getConstructors() as Array<reflect.Constructor>;
-          if (id != undefined) {
+          if (id !== undefined) {
               return ctors[0].createInstance([id]) as T;
           }
           return ctors[0].createInstance() as T;
@@ -479,7 +479,7 @@ export default function ClassGetConstructorsTest(): void {
     it('testClassGetConstructors001', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<MyClass001>();
         let constructors = constructorsToArray(cls);
-        expect(constructors != null).assertTrue();
+        expect(constructors !== null).assertTrue();
     });
 
     /**
@@ -568,7 +568,7 @@ export default function ClassGetConstructorsTest(): void {
         let ctor = constructors[0];
         expect(ctor.getName()).assertEqual('constructor');
         expect(ctor.getOwner()).assertEqual(cls);
-        expect(ctor.getParameterTypes() != null).assertTrue();
+        expect(ctor.getParameterTypes() !== null).assertTrue();
     });
 
     /**
@@ -613,7 +613,7 @@ export default function ClassGetConstructorsTest(): void {
     it('testClassGetConstructors010', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<TestClass010>();
         let constructors = constructorsToArray(cls);
-        expect(constructors.length != undefined).assertTrue(); // FixedArray有固定length
+        expect(constructors.length !== undefined).assertTrue(); // FixedArray有固定length
     });
 
     /**
@@ -1061,7 +1061,7 @@ export default function ClassGetConstructorsTest(): void {
         expect(constructors.length).assertEqual(1);
         for (let i = 0; i < constructors.length; i++) {
             let ctor = constructors[i];
-            expect(ctor != null).assertTrue();
+            expect(ctor !== null).assertTrue();
             expect(ctor.getName()).assertEqual('constructor');
         }
     });
@@ -1230,7 +1230,7 @@ export default function ClassGetConstructorsTest(): void {
       let cls = Class.from<TestClass052>();
         let constructors = constructorsToArray(cls);
         let paramType = constructors[0].getParameterType(0);
-        expect(paramType != null).assertTrue();
+        expect(paramType !== null).assertTrue();
         expect(paramType!.getName()).assertEqual('i32');
     });
 
@@ -1246,7 +1246,7 @@ export default function ClassGetConstructorsTest(): void {
       let cls = Class.from<TestClass053>();
         let constructors = constructorsToArray(cls);
         let paramType = constructors[0].getParameterType(1);
-        expect(paramType != null).assertTrue();
+        expect(paramType !== null).assertTrue();
         expect(paramType!.getName()).assertEqual('std.core.String');
     });
 
@@ -1455,7 +1455,7 @@ export default function ClassGetConstructorsTest(): void {
         expect(constructors.length).assertLarger(0);
         let foundTwoParam: boolean = false;
         for (let i = 0; i < constructors.length; i++) {
-            if (constructors[i].getParametersNum() == 2) {
+            if (constructors[i].getParametersNum() === 2) {
                 let instance = constructors[i].createInstance(['Bob', 25]) as OverloadedClass067;
                 expect(instance.name).assertEqual('Bob');
                 expect(instance.age).assertEqual(25);
@@ -1627,7 +1627,7 @@ export default function ClassGetConstructorsTest(): void {
       let cls = Class.from<Service077>();
         let constructors = constructorsToArray(cls);
         expect(constructors.length).assertEqual(1);
-        expect(constructors[0] != null).assertTrue();
+        expect(constructors[0] !== null).assertTrue();
     });
 
     /**
@@ -1646,12 +1646,12 @@ export default function ClassGetConstructorsTest(): void {
         let stringCtor: reflect.Constructor | undefined;
         for (let i = 0; i < constructors.length; i++) {
             let params = constructors[i].getParameterTypes();
-            if (params.length == 1 && params[0].isSubtypeOf(Class.from<string>())) {
+            if (params.length === 1 && params[0].isSubtypeOf(Class.from<string>())) {
                 stringCtor = constructors[i];
                 break;
             }
         }
-        expect(stringCtor != null).assertTrue();
+        expect(stringCtor !== null).assertTrue();
         let instance = stringCtor!.createInstance(['serialized data']) as Serializable078;
         expect(instance.data).assertEqual('serialized data');
     });

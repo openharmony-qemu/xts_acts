@@ -19,7 +19,7 @@ import Utils from '../Util.test';
 
 class MyClass {}
 
-final class FinalClass007 {}
+class FinalClass007 {}
 
 abstract class AbstractClass007 {
     public abstract test(): void;
@@ -493,7 +493,7 @@ export default function ClassIsPrimitiveTest(): void {
       let cls = Class.from<boolean>();
         try {
           let result = cls.isPrimitive();
-          expect(result != null).assertTrue();
+          expect(result !== null).assertTrue();
         } catch (error) {
           expect().assertFail(); // 不应该抛出异常
         }
@@ -606,7 +606,7 @@ export default function ClassIsPrimitiveTest(): void {
     it('testClassIsPrimitive028', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let obj: Any = undefined;
         let cls = Class.ofAny(obj);
-        if (cls != undefined) {
+        if (cls !== undefined) {
           let result = cls.isPrimitive();
           expect(result).assertFalse();
         }
@@ -631,7 +631,7 @@ export default function ClassIsPrimitiveTest(): void {
         // 结合getDescriptor()
         if (cls.isPrimitive()) {
           let descriptor = cls.getDescriptor();
-          expect(descriptor != null).assertTrue();
+          expect(descriptor !== null).assertTrue();
         }
     });
 
@@ -670,6 +670,8 @@ export default function ClassIsPrimitiveTest(): void {
     it('testClassIsPrimitive031', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       processClass031(Class.PRIMITIVE_INT); // 处理基本类型
         processClass031(Class.from<MyClass>()); // 处理非基本类型
+        expect(Class.PRIMITIVE_INT.isPrimitive()).assertTrue();
+        expect(Class.from<MyClass>().isPrimitive()).assertFalse();
     });
 
     /**

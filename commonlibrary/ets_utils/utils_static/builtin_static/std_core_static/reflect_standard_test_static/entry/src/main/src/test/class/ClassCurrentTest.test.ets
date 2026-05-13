@@ -82,7 +82,7 @@ class GrandParent009 {
       }
   }
 
-final class FinalClass010 {
+class FinalClass010 {
       public getClass(): Class {
           return Class.current();
       }
@@ -386,7 +386,7 @@ class TestClass044 {
       public testAPIVersion(): void {
           // current()从API version 24开始支持
           let cls = Class.current();
-          expect(cls != null).assertTrue();
+          expect(cls !== null).assertTrue();
       }
   }
 
@@ -522,7 +522,7 @@ class TestClass055 {
       public regressionTest(): void {
           let cls = Class.current();
           // 验证之前问题的修复
-          expect(cls != null).assertTrue();
+          expect(cls !== null).assertTrue();
           expect(cls.getName() !== "").assertTrue();
       }
   }
@@ -532,7 +532,7 @@ class TestClass056 {
           let cls = Class.current();
           // 验证旧版本的行为仍然保持
           expect(cls.getName()).assertEqual("TestClass056");
-          expect(cls.getSuper() != null).assertTrue();
+          expect(cls.getSuper() !== null).assertTrue();
       }
   }
 
@@ -573,7 +573,7 @@ export default function ClassCurrentTest(): void {
      */
     it('testClassCurrent002', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let result = testGetCurrent002();
-        expect(result != null).assertTrue();
+        expect(result !== null).assertTrue();
         expect(result.getName().length > 0).assertTrue();
     });
 
@@ -601,7 +601,7 @@ export default function ClassCurrentTest(): void {
     it('testClassCurrent004', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let obj = new MyClass004();
         let cls = obj.getClass();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName()).assertEqual("MyClass004");
     });
 
@@ -616,7 +616,7 @@ export default function ClassCurrentTest(): void {
     it('testClassCurrent005', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let obj = new TestClass005();
         let cls = obj.getAndVerifyType();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName()).assertEqual("TestClass005");
     });
 
@@ -770,7 +770,7 @@ export default function ClassCurrentTest(): void {
      */
     it('testClassCurrent016', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let globalClass = Class.current();
-        expect(globalClass != null).assertTrue();
+        expect(globalClass !== null).assertTrue();
         expect(globalClass.getName().length > 0).assertTrue();
     });
 
@@ -797,7 +797,7 @@ export default function ClassCurrentTest(): void {
      */
     it('testClassCurrent018', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let obj = new TestClass018();
-        expect(obj != null).assertTrue();
+        expect(obj !== null).assertTrue();
         expect(Class.from<TestClass018>().getName()).assertEqual("TestClass018");
     });
 
@@ -1099,11 +1099,11 @@ export default function ClassCurrentTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    // it('testClassCurrent039', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-    //   let obj = new TestClass039();
-    //     obj.performanceTest();
-    //     expect(Class.from<TestClass039>().getName()).assertEqual("TestClass039");
-    // });
+    it('testClassCurrent039', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+      let obj = new TestClass039();
+        obj.performanceTest();
+        expect(Class.from<TestClass039>().getName()).assertEqual("TestClass039");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_4000
@@ -1113,11 +1113,11 @@ export default function ClassCurrentTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    // it('testClassCurrent040', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-    //   let obj = new TestClass040();
-    //     obj.comparePerformance();
-    //     expect(Class.from<TestClass040>().getName()).assertEqual("TestClass040");
-    // });
+    it('testClassCurrent040', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+      let obj = new TestClass040();
+        obj.comparePerformance();
+        expect(Class.from<TestClass040>().getName()).assertEqual("TestClass040");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_4100
@@ -1141,11 +1141,11 @@ export default function ClassCurrentTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    // it('testClassCurrent042', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-    //   let obj = new TestClass042();
-    //     obj.memoryLeakTest();
-    //     expect(Class.from<TestClass042>().getName()).assertEqual("TestClass042");
-    // });
+    it('testClassCurrent042', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+      let obj = new TestClass042();
+        obj.memoryLeakTest();
+        expect(Class.from<TestClass042>().getName()).assertEqual("TestClass042");
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_4300

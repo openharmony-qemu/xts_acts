@@ -421,6 +421,7 @@ export default function ClassGetStaticFieldsTest(): void {
       // 假设getStaticFields被标记为废弃
         let cls = Class.from<MyClass001>();
         let fields = asStaticFieldArray(cls.getStaticFields()); // 应显示弃用警告
+        expect(fields !== null).assertTrue();
     });
 
     /**
@@ -435,7 +436,7 @@ export default function ClassGetStaticFieldsTest(): void {
       // 不需要await
         let cls = Class.from<MyClass001>();
         let fields = asStaticFieldArray(cls.getStaticFields()); // 同步调用
-        expect(fields != null).assertTrue();
+        expect(fields !== null).assertTrue();
     });
 
     /**
@@ -503,7 +504,7 @@ export default function ClassGetStaticFieldsTest(): void {
             break;
           }
         }
-        expect(readonlyField != undefined).assertTrue();
+        expect(readonlyField !== undefined).assertTrue();
         expect(readonlyField!.isReadonly()).assertTrue();
     });
 
@@ -571,10 +572,10 @@ export default function ClassGetStaticFieldsTest(): void {
             computedField = fields[i];
           }
         }
-        expect(initField != undefined).assertTrue();
+        expect(initField !== undefined).assertTrue();
         expect((initField!.getValue(cls) as string)).assertEqual('value');
         
-        expect(computedField != undefined).assertTrue();
+        expect(computedField !== undefined).assertTrue();
         expect((computedField!.getValue(cls) as int)).assertEqual(100);
     });
 

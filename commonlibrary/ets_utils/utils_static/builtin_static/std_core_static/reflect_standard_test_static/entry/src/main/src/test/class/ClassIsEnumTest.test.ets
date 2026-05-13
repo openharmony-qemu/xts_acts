@@ -61,7 +61,7 @@ abstract class AbstractClass016 {
       public abstract method(): void;
   }
 
-final class FinalClass017 {
+class FinalClass017 {
       public name: string = "test";
   }
 
@@ -210,7 +210,7 @@ enum TestEnum042 {
 
 function isEnumValue042(value: Any): boolean {
       let cls = Class.ofAny(value);
-      if (cls != undefined) {
+      if (cls !== undefined) {
           return cls.isEnum();
       }
       return false;
@@ -255,7 +255,7 @@ export default function ClassIsEnumTest(): void {
     it('testClassIsEnum001', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<TestEnum001>();
         let result = cls.isEnum();
-        console.info(result); // true
+        expect(result).assertTrue();
     });
 
     /**
@@ -271,6 +271,7 @@ export default function ClassIsEnumTest(): void {
         // 以下代码应编译错误
         // let result = cls.isEnum("invalid");
         // let result = cls.isEnum(123);
+        expect(cls.isEnum()).assertTrue();
     });
 
     /**
@@ -503,6 +504,7 @@ export default function ClassIsEnumTest(): void {
     it('testClassIsEnum018', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       // 以下代码应编译错误：类不能继承枚举
         // class ChildClass extends BaseEnum018 {}
+        expect(Class.from<BaseEnum018>().isEnum()).assertTrue();
     });
 
     /**
@@ -545,7 +547,7 @@ export default function ClassIsEnumTest(): void {
     it('testClassIsEnum021', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let enumValue: Any = TestEnum021.METHOD;
         let cls = Class.ofAny(enumValue);
-        if (cls != undefined) {
+        if (cls !== undefined) {
             let result = cls.isEnum();
             expect(result).assertEqual(true);
         }
@@ -781,7 +783,7 @@ export default function ClassIsEnumTest(): void {
       let arr: Array<TestEnum036> = [TestEnum036.CLASS, TestEnum036.METHOD];
         let arrCls = Class.of(arr);
         let componentCls = arrCls.getFixedArrayComponentType();
-        if (componentCls != undefined) {
+        if (componentCls !== undefined) {
             let result = componentCls.isEnum();
             expect(result).assertEqual(true);
         }
@@ -835,7 +837,7 @@ export default function ClassIsEnumTest(): void {
       let cls = Class.from<TestEnum039>();
         expect(cls.isEnum()).assertEqual(true);
         let superCls = cls.getSuper();
-        if (superCls != undefined) {
+        if (superCls !== undefined) {
             console.info(`Enum superclass: ${superCls.getName()}`);
             expect(superCls.isEnum()).assertEqual(false); // 父类不是枚举
         }

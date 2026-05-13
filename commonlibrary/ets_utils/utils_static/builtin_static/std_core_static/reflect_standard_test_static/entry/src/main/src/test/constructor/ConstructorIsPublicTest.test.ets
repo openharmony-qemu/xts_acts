@@ -120,6 +120,7 @@ export default function ConstructorIsPublicTest(): void {
       let cls = Class.from<MyClass001>();
         let constructors = cls.getConstructors();
         let isPublic = constructors[0].isPublic();
+        expect(isPublic).assertTrue();
     });
 
     /**
@@ -131,7 +132,7 @@ export default function ConstructorIsPublicTest(): void {
      * @tc.level Level 2
      */
     it('testConstructorIsPublic002', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      Class.from<MyClass001>().getConstructors()[0].isPublic();
+      expect(Class.from<MyClass001>().getConstructors()[0].isPublic()).assertTrue();
     });
 
     /**
@@ -191,7 +192,7 @@ export default function ConstructorIsPublicTest(): void {
     it('testConstructorIsPublic006', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let ctorRef = Class.from<MyClass006>().getConstructors()[0];
         let isPublic = ctorRef.isPublic();
-        // 默认访问级别的行为取决于语言规范
+        expect(isPublic).assertTrue();
     });
 
     /**

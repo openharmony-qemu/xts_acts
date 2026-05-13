@@ -365,7 +365,7 @@ export default function ClassCreateInstanceTest(): void {
     it('testClassCreateInstance001', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<MyClass001>();
         let obj = cls.createInstance() as MyClass001;
-        expect(obj != null).assertTrue();
+        expect(obj !== null).assertTrue();
         expect(obj.name).assertEqual('test');
     });
 
@@ -455,7 +455,7 @@ export default function ClassCreateInstanceTest(): void {
     it('testClassCreateInstance007', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<MyClass007>();
         let obj = cls.createInstance() as MyClass007;
-        expect(obj != null).assertTrue();
+        expect(obj !== null).assertTrue();
         expect(obj instanceof MyClass007).assertTrue();
         expect(obj.name).assertEqual('default');
         expect(obj.age).assertEqual(0);
@@ -583,7 +583,7 @@ export default function ClassCreateInstanceTest(): void {
     it('testClassCreateInstance015', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<OuterClass015>();
         let obj = cls.createInstance() as OuterClass015;
-        expect(obj.inner != null).assertTrue();
+        expect(obj.inner !== null).assertTrue();
         expect(obj.inner.value).assertEqual('inner');
         expect(obj.name).assertEqual('outer');
     });
@@ -840,7 +840,7 @@ export default function ClassCreateInstanceTest(): void {
         try {
           let obj = cls.createInstance();
           // 如果成功创建则验证对象
-          expect(obj != null).assertTrue();
+          expect(obj !== null).assertTrue();
         } catch (error) {
           // 可能抛出OutOfMemoryError
           expect(error !== null).assertTrue();
@@ -1014,7 +1014,7 @@ export default function ClassCreateInstanceTest(): void {
     it('testClassCreateInstance039', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<EmptyClass039>();
         let obj = cls.createInstance() as EmptyClass039;
-        expect(obj != null).assertTrue();
+        expect(obj !== null).assertTrue();
         expect(obj instanceof EmptyClass039).assertTrue();
     });
 
@@ -1092,7 +1092,7 @@ export default function ClassCreateInstanceTest(): void {
         cls.initialize();
         expect(TestClass044.initialized).assertTrue();
         let obj = cls.createInstance() as TestClass044;
-        expect(obj != null).assertTrue();
+        expect(obj !== null).assertTrue();
     });
 
     /**
@@ -1138,7 +1138,7 @@ export default function ClassCreateInstanceTest(): void {
     it('testClassCreateInstance047', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let childCls = Class.from<ChildClass047>();
         let parentCls = childCls.getSuper();
-        expect(parentCls != null).assertTrue();
+        expect(parentCls !== null).assertTrue();
         expect(parentCls!.getName()).assertEqual('ParentClass047');
         let obj = childCls.createInstance() as ChildClass047;
         expect(obj.parentData).assertEqual('parent data');

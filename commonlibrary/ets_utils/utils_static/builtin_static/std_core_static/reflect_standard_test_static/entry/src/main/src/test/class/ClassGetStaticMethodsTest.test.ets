@@ -817,7 +817,7 @@ export default function ClassGetStaticMethodsTest(): void {
     it('testClassGetStaticMethods024', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let childCls = Class.from<ChildClass024>();
         let superCls = childCls.getSuper();
-        expect(superCls != null).assertTrue();
+        expect(superCls !== null).assertTrue();
         let superMethods = superCls!.getStaticMethods();
         expect(superMethods.length).assertEqual(1);
         expect(superMethods[0].getName()).assertEqual("parentMethod");
@@ -884,7 +884,7 @@ export default function ClassGetStaticMethodsTest(): void {
         for (let i = 0; i < methods.length; i++) {
             let method = methods[i];
             let returnType = method.getReturnType();
-            expect(returnType != null).assertTrue();
+            expect(returnType !== null).assertTrue();
             expect(typeof returnType.getName).assertEqual("function");
         }
     });
@@ -925,7 +925,7 @@ export default function ClassGetStaticMethodsTest(): void {
                 break;
             }
         }
-        expect(addMethod != undefined).assertTrue();
+        expect(addMethod !== undefined).assertTrue();
 
         let result = addMethod!.invoke([3, 5]);
         expect(result as int).assertEqual(8);
@@ -1085,7 +1085,7 @@ export default function ClassGetStaticMethodsTest(): void {
         let allMethods = cls.getStaticMethods();
         let method2 = cls.getStaticMethod("method2");
         expect(allMethods.length).assertEqual(2);
-        expect(method2 != undefined).assertTrue();
+        expect(method2 !== undefined).assertTrue();
         expect(method2!.getName()).assertEqual("method2");
     });
 

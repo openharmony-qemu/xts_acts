@@ -41,7 +41,7 @@ class ParentClass008 {
     public parentField: string = "parent"
   }
 
-final class FinalClass009 {
+class FinalClass009 {
     public value: int = 100
   }
 
@@ -188,7 +188,7 @@ export default function ClassGetLinkerTest(): void {
     it('testClassGetLinker001', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<MyClass001>()
         let linker = cls.getLinker()
-        expect(linker != null).assertTrue()
+        expect(linker !== null).assertTrue()
     });
 
     /**
@@ -203,7 +203,7 @@ export default function ClassGetLinkerTest(): void {
       let cls = Class.from<MyClass002>()
         // 以下代码应该在编译期报错
         // let linker = cls.getLinker("invalid_param")
-        expect(cls.getLinker() != null).assertTrue()
+        expect(cls.getLinker() !== null).assertTrue()
     });
 
     /**
@@ -217,7 +217,7 @@ export default function ClassGetLinkerTest(): void {
     it('testClassGetLinker003', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<MyClass003>()
         let linker = cls.getLinker()
-        expect(linker != null).assertTrue()
+        expect(linker !== null).assertTrue()
         expect(typeof linker).assertEqual("object")
     });
 
@@ -232,7 +232,7 @@ export default function ClassGetLinkerTest(): void {
     it('testClassGetLinker004', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<GenericClass004<int>>()
         let linker = cls.getLinker()
-        expect(linker != null).assertTrue()
+        expect(linker !== null).assertTrue()
     });
 
     /**
@@ -246,7 +246,7 @@ export default function ClassGetLinkerTest(): void {
     it('testClassGetLinker005', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<MyInterface005>()
         let linker = cls.getLinker()
-        expect(linker != null).assertTrue()
+        expect(linker !== null).assertTrue()
     });
 
     /**
@@ -260,15 +260,15 @@ export default function ClassGetLinkerTest(): void {
     it('testClassGetLinker006', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let mapCls = Class.from<Map<int, string>>()
         let mapLinker = mapCls.getLinker()
-        expect(mapLinker != null).assertTrue()
+        expect(mapLinker !== null).assertTrue()
 
         let setCls = Class.from<Set<int>>()
         let setLinker = setCls.getLinker()
-        expect(setLinker != null).assertTrue()
+        expect(setLinker !== null).assertTrue()
 
         let arrCls = Class.from<Array<int>>()
         let arrLinker = arrCls.getLinker()
-        expect(arrLinker != null).assertTrue()
+        expect(arrLinker !== null).assertTrue()
     });
 
     /**
@@ -281,13 +281,13 @@ export default function ClassGetLinkerTest(): void {
      */
     it('testClassGetLinker007', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let boolLinker = Class.PRIMITIVE_BOOLEAN.getLinker()
-        expect(boolLinker != null).assertTrue()
+        expect(boolLinker !== null).assertTrue()
 
         let intLinker = Class.PRIMITIVE_INT.getLinker()
-        expect(intLinker != null).assertTrue()
+        expect(intLinker !== null).assertTrue()
 
         let doubleLinker = Class.PRIMITIVE_DOUBLE.getLinker()
-        expect(doubleLinker != null).assertTrue()
+        expect(doubleLinker !== null).assertTrue()
     });
 
     /**
@@ -305,8 +305,8 @@ export default function ClassGetLinkerTest(): void {
         let childCls = Class.from<ChildClass008>()
         let childLinker = childCls.getLinker()
 
-        expect(parentLinker != null).assertTrue()
-        expect(childLinker != null).assertTrue()
+        expect(parentLinker !== null).assertTrue()
+        expect(childLinker !== null).assertTrue()
         // 验证父子类的RuntimeLinker关系
     });
 
@@ -321,7 +321,7 @@ export default function ClassGetLinkerTest(): void {
     it('testClassGetLinker009', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<FinalClass009>()
         let linker = cls.getLinker()
-        expect(linker != null).assertTrue()
+        expect(linker !== null).assertTrue()
     });
 
     /**
@@ -335,7 +335,7 @@ export default function ClassGetLinkerTest(): void {
     it('testClassGetLinker010', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<AbstractClass010>()
         let linker = cls.getLinker()
-        expect(linker != null).assertTrue()
+        expect(linker !== null).assertTrue()
     });
 
     /**
@@ -349,7 +349,7 @@ export default function ClassGetLinkerTest(): void {
     it('testClassGetLinker011', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<TestEnum011>()
         let linker = cls.getLinker()
-        expect(linker != null).assertTrue()
+        expect(linker !== null).assertTrue()
     });
 
     /**
@@ -363,7 +363,7 @@ export default function ClassGetLinkerTest(): void {
     it('testClassGetLinker012', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<int | string | boolean>()
         let linker = cls.getLinker()
-        expect(linker != null).assertTrue()
+        expect(linker !== null).assertTrue()
     });
 
     /**
@@ -378,7 +378,7 @@ export default function ClassGetLinkerTest(): void {
       let arr: FixedArray<int> = [1, 2, 3]
         let cls = Class.of(arr)
         let linker = cls.getLinker()
-        expect(linker != null).assertTrue()
+        expect(linker !== null).assertTrue()
     });
 
     /**
@@ -392,7 +392,7 @@ export default function ClassGetLinkerTest(): void {
     it('testClassGetLinker014', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<TestClass014>()
         let linker = cls.getLinker()
-        expect(linker != null).assertTrue()
+        expect(linker !== null).assertTrue()
     });
 
     /**
@@ -407,7 +407,7 @@ export default function ClassGetLinkerTest(): void {
       let obj = new TestClass015()
         let cls = Class.of(obj)
         let linker = cls.getLinker()
-        expect(linker != null).assertTrue()
+        expect(linker !== null).assertTrue()
     });
 
     /**
@@ -422,7 +422,7 @@ export default function ClassGetLinkerTest(): void {
       let obj: Any = new Map<int, string>()
         let cls = Class.ofAny(obj)!
         let linker = cls.getLinker()
-        expect(linker != null).assertTrue()
+        expect(linker !== null).assertTrue()
     });
 
     /**
@@ -436,7 +436,7 @@ export default function ClassGetLinkerTest(): void {
     it('testClassGetLinker017', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let obj = new TestClass017()
         let linker = obj.getMyClassLinker()
-        expect(linker != null).assertTrue()
+        expect(linker !== null).assertTrue()
     });
 
     /**
@@ -450,8 +450,8 @@ export default function ClassGetLinkerTest(): void {
     it('testClassGetLinker018', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<MyClass018>()
         let linker = cls.getLinker()
-        expect(linker != null).assertTrue()
-        expect(linker != undefined).assertTrue()
+        expect(linker !== null).assertTrue()
+        expect(linker !== undefined).assertTrue()
     });
 
     /**
@@ -497,8 +497,8 @@ export default function ClassGetLinkerTest(): void {
         let cls2 = Class.from<Class2021>()
         let linker1 = cls1.getLinker()
         let linker2 = cls2.getLinker()
-        expect(linker1 != null).assertTrue()
-        expect(linker2 != null).assertTrue()
+        expect(linker1 !== null).assertTrue()
+        expect(linker2 !== null).assertTrue()
         expect(typeof linker1).assertEqual("object")
         expect(typeof linker2).assertEqual("object")
     });
@@ -515,7 +515,7 @@ export default function ClassGetLinkerTest(): void {
       let cls = Class.from<MyClass022>()
         let linker = cls.getLinker()
         let loadedClass = linker.loadClass('std.core.Map')
-        expect(loadedClass != null).assertTrue()
+        expect(loadedClass !== null).assertTrue()
         expect(loadedClass!.getName()).assertEqual("std.core.Map")
     });
 
@@ -532,13 +532,13 @@ export default function ClassGetLinkerTest(): void {
         let linker = cls.getLinker()
 
         let mapClass = linker.loadClass('std.core.Map')
-        expect(mapClass != null).assertTrue()
+        expect(mapClass !== null).assertTrue()
 
         let setClass = linker.loadClass('std.core.Set')
-        expect(setClass != null).assertTrue()
+        expect(setClass !== null).assertTrue()
 
         let arrayClass = linker.loadClass('std.core.Array')
-        expect(arrayClass != null).assertTrue()
+        expect(arrayClass !== null).assertTrue()
     });
 
     /**
@@ -554,9 +554,9 @@ export default function ClassGetLinkerTest(): void {
 
         let cls = Class.from<MyClass024>()
         let linker = cls.getLinker()
-        expect(linker != null).assertTrue()
+        expect(linker !== null).assertTrue()
         let mapClass = linker.loadClass('std.core.Map')
-        expect(mapClass != null).assertTrue()
+        expect(mapClass !== null).assertTrue()
         expect(mapClass!.getName()).assertEqual("std.core.Map")
     });
 
@@ -585,7 +585,7 @@ export default function ClassGetLinkerTest(): void {
      */
     it('testClassGetLinker026', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let linker = Class.PRIMITIVE_VOID.getLinker()
-        expect(linker != null).assertTrue()
+        expect(linker !== null).assertTrue()
     });
 
     /**
@@ -601,9 +601,9 @@ export default function ClassGetLinkerTest(): void {
         // import { ExternalClass } from 'module'
         // let cls = Class.from<ExternalClass>()
         // let linker = cls.getLinker()
-        // expect(linker != null).assertTrue()
+        // expect(linker !== null).assertTrue()
         let cls = Class.from<MyClass001>()
-        expect(cls.getLinker() != null).assertTrue()
+        expect(cls.getLinker() !== null).assertTrue()
     });
 
     /**
@@ -617,7 +617,7 @@ export default function ClassGetLinkerTest(): void {
     it('testClassGetLinker028', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.of(null)
         let linker = cls.getLinker()
-        expect(linker != null).assertTrue()
+        expect(linker !== null).assertTrue()
     });
 
     /**
@@ -631,7 +631,7 @@ export default function ClassGetLinkerTest(): void {
     it('testClassGetLinker029', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<UninitializedClass029>()
         let linker = cls.getLinker()
-        expect(linker != null).assertTrue()
+        expect(linker !== null).assertTrue()
         // 此时类可能未初始化，但getLinker应该正常工作
     });
 
@@ -646,7 +646,7 @@ export default function ClassGetLinkerTest(): void {
     it('testClassGetLinker030', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<EmptyClass030>()
         let linker = cls.getLinker()
-        expect(linker != null).assertTrue()
+        expect(linker !== null).assertTrue()
     });
 
     /**
@@ -660,7 +660,7 @@ export default function ClassGetLinkerTest(): void {
     it('testClassGetLinker031', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<PrivateOnlyClass031>()
         let linker = cls.getLinker()
-        expect(linker != null).assertTrue()
+        expect(linker !== null).assertTrue()
     });
 
     /**
@@ -674,7 +674,7 @@ export default function ClassGetLinkerTest(): void {
     it('testClassGetLinker032', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<Child032>()
         let linker = cls.getLinker()
-        expect(linker != null).assertTrue()
+        expect(linker !== null).assertTrue()
     });
 
     /**
@@ -691,7 +691,7 @@ export default function ClassGetLinkerTest(): void {
         // 多次调用
         for (let i = 0; i < 1000; i++) {
           let linker = cls.getLinker()
-          expect(linker != null).assertTrue()
+          expect(linker !== null).assertTrue()
         }
     });
 
@@ -709,7 +709,7 @@ export default function ClassGetLinkerTest(): void {
 
           let cls = Class.from<DynamicClass034>()
           let linker = cls.getLinker()
-          expect(linker != null).assertTrue()
+          expect(linker !== null).assertTrue()
         }
     });
 
@@ -740,8 +740,8 @@ export default function ClassGetLinkerTest(): void {
         let linker = cls.getLinker()
         let descriptor = cls.getDescriptor()
         // 使用RuntimeLinker验证描述符
-        expect(linker != null).assertTrue()
-        expect(descriptor != null).assertTrue()
+        expect(linker !== null).assertTrue()
+        expect(descriptor !== null).assertTrue()
     });
 
     /**
@@ -756,7 +756,7 @@ export default function ClassGetLinkerTest(): void {
       let cls = Class.from<MyClass037>()
         let linker = cls.getLinker()
         let instance = cls.createInstance() as MyClass037
-        expect(linker != null).assertTrue()
+        expect(linker !== null).assertTrue()
         expect(instance.name).assertEqual("test")
     });
 
@@ -772,7 +772,7 @@ export default function ClassGetLinkerTest(): void {
       let cls = Class.from<MyClass038>()
         let linker = cls.getLinker()
         let methods = cls.getInstanceMethods()
-        expect(linker != null).assertTrue()
+        expect(linker !== null).assertTrue()
         expect(methods.length).assertEqual(2)
     });
 
@@ -790,8 +790,8 @@ export default function ClassGetLinkerTest(): void {
         let interfaces = [Class.from<Target039>()] as FixedArray<Class>
         let proxyObj = reflect.Proxy.create(linker, interfaces, handler)
 
-        expect(linker != null).assertTrue()
-        expect(proxyObj != null).assertTrue()
+        expect(linker !== null).assertTrue()
+        expect(proxyObj !== null).assertTrue()
     });
 
     /**
@@ -807,7 +807,7 @@ export default function ClassGetLinkerTest(): void {
 
         let cls = Class.from<MyClass040>()
         let linker = cls.getLinker()
-        expect(linker != null).assertTrue()
+        expect(linker !== null).assertTrue()
     });
 
     /**
@@ -821,7 +821,7 @@ export default function ClassGetLinkerTest(): void {
     it('testClassGetLinker041', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let clazz = Class.from<MyClass041>()
         let linker = clazz.getLinker()
-        console.info(linker != undefined) // true
+        console.info(linker !== undefined) // true
         let cls = linker!.loadClass('std.core.Map')
         console.info(cls!.getName())
         

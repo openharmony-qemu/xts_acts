@@ -128,6 +128,7 @@ export default function ConstructorIsProtectedTest(): void {
       let cls = Class.from<MyClass001>();
         let constructors = cls.getConstructors();
         let isProtected = constructors[0].isProtected();
+        expect(isProtected).assertTrue();
     });
 
     /**
@@ -139,7 +140,7 @@ export default function ConstructorIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testConstructorIsProtected002', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      Class.from<MyClass001>().getConstructors()[0].isProtected();
+      expect(Class.from<MyClass001>().getConstructors()[0].isProtected()).assertTrue();
     });
 
     /**
@@ -199,7 +200,7 @@ export default function ConstructorIsProtectedTest(): void {
     it('testConstructorIsProtected006', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let ctorRef = Class.from<MyClass006>().getConstructors()[0];
         let isProtected = ctorRef.isProtected();
-        // 默认访问级别的行为取决于语言规范
+        expect(isProtected).assertFalse();
     });
 
     /**

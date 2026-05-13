@@ -125,6 +125,7 @@ export default function ConstructorGetOwnerTest(): void {
       let cls = Class.from<MyClass001>();
         let constructors = cls.getConstructors();
         let owner = constructors[0].getOwner();
+        expect(owner.getName()).assertEqual("MyClass001");
     });
 
     /**
@@ -136,7 +137,7 @@ export default function ConstructorGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testConstructorGetOwner002', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      Class.from<MyClass001>().getConstructors()[0].getOwner();
+      expect(Class.from<MyClass001>().getConstructors()[0].getOwner().getName()).assertEqual("MyClass001");
     });
 
     /**
@@ -151,7 +152,7 @@ export default function ConstructorGetOwnerTest(): void {
       let cls = Class.from<MyClass003>();
         let constructors = cls.getConstructors();
         let owner = constructors[0].getOwner();
-        expect(owner != null).assertTrue();
+        expect(owner !== null).assertTrue();
         expect(owner.getName()).assertEqual("MyClass003");
     });
 
@@ -225,7 +226,7 @@ export default function ConstructorGetOwnerTest(): void {
         let constructors = cls.getConstructors();
         let owner = constructors[0].getOwner();
         expect(typeof owner).assertEqual("object");
-        expect(owner.getName != null).assertTrue();
+        expect(owner.getName !== null).assertTrue();
     });
 
     /**
@@ -239,10 +240,10 @@ export default function ConstructorGetOwnerTest(): void {
     it('testConstructorGetOwner009', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let ctor = Class.from<MyClass001>().getConstructors()[0];
         let owner = ctor.getOwner();
-        expect(owner.getName() != null).assertTrue();
-        expect(owner.getSuper != null).assertTrue();
-        expect(owner.isSubtypeOf != null).assertTrue();
-        expect(owner.getConstructors != null).assertTrue();
+        expect(owner.getName() !== null).assertTrue();
+        expect(owner.getSuper !== null).assertTrue();
+        expect(owner.isSubtypeOf !== null).assertTrue();
+        expect(owner.getConstructors !== null).assertTrue();
     });
 
     /**
@@ -395,7 +396,7 @@ export default function ConstructorGetOwnerTest(): void {
         let owner = ctorRef.getOwner();
 
         expect(owner.getName()).assertEqual("MyClass019");
-        expect(owner.getSuper() != null).assertTrue();
+        expect(owner.getSuper() !== null).assertTrue();
         expect(owner.getStaticMethods().length).assertLarger(0);
     });
 

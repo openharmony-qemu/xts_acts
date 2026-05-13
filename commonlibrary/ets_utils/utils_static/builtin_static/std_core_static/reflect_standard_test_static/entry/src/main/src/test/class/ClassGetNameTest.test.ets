@@ -485,8 +485,8 @@ export default function ClassGetNameTest(): void {
     it('testClassGetName021', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let clazz = Class.from<TestClass021>();
         let name = clazz.getName();
-        expect(name != null).assertTrue();
-        expect(name != undefined).assertTrue();
+        expect(name !== null).assertTrue();
+        expect(name !== undefined).assertTrue();
     });
 
     /**
@@ -602,8 +602,8 @@ export default function ClassGetNameTest(): void {
 
         let userCtrl = ControllerRegistry029.get("UserController029");
         let productCtrl = ControllerRegistry029.get("ProductController029");
-        expect(userCtrl != undefined).assertTrue();
-        expect(productCtrl != undefined).assertTrue();
+        expect(userCtrl !== undefined).assertTrue();
+        expect(productCtrl !== undefined).assertTrue();
     });
 
     /**
@@ -689,7 +689,7 @@ export default function ClassGetNameTest(): void {
         let superClazz = childClazz.getSuper();
 
         expect(childName).assertEqual("ChildClass034");
-        expect(superClazz != undefined).assertTrue();
+        expect(superClazz !== undefined).assertTrue();
         expect(superClazz!.getName()).assertEqual("ParentClass034");
     });
 

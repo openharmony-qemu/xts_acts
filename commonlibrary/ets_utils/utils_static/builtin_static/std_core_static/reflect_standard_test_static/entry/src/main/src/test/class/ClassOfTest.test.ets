@@ -223,7 +223,7 @@ export default function ClassOfTest(): void {
     it('testClassOf001', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let obj = new Map<int, string>();
         let cls = Class.of(obj);
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
     });
 
     /**
@@ -235,7 +235,7 @@ export default function ClassOfTest(): void {
      * @tc.level Level 2
      */
     it('testClassOf002', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      expect(Class.of(new Map<int, string>()) != null).assertTrue();
+      expect(Class.of(new Map<int, string>()) !== null).assertTrue();
     });
 
     /**
@@ -250,7 +250,7 @@ export default function ClassOfTest(): void {
       try {
           let obj = new Map<int, string>();
           let cls = Class.of(obj);
-          expect(cls != null).assertTrue();
+          expect(cls !== null).assertTrue();
         } catch (error) {
           expect(error !== null).assertTrue();
         }
@@ -392,7 +392,7 @@ export default function ClassOfTest(): void {
      */
     it('testClassOf013', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.of(null);
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
     });
 
     /**
@@ -405,7 +405,7 @@ export default function ClassOfTest(): void {
      */
     it('testClassOf014', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.of(null);
-        expect(cls != undefined).assertTrue();
+        expect(cls !== undefined).assertTrue();
     });
 
     /**
@@ -420,11 +420,11 @@ export default function ClassOfTest(): void {
       // Object类型
         let obj = new Array<int>();
         let cls1 = Class.of(obj);
-        expect(cls1 != null).assertTrue();
+        expect(cls1 !== null).assertTrue();
 
         // null类型
         let cls2 = Class.of(null);
-        expect(cls2 != null).assertTrue();
+        expect(cls2 !== null).assertTrue();
     });
 
     /**
@@ -438,7 +438,7 @@ export default function ClassOfTest(): void {
     it('testClassOf016', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       try {
           let cls = Class.of(undefined as Object);
-          expect(cls != null).assertTrue();
+          expect(cls !== null).assertTrue();
         } catch (error) {
           expect(error !== null).assertTrue();
         }
@@ -540,7 +540,7 @@ export default function ClassOfTest(): void {
     it('testClassOf022', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let obj = new Map<int, string>();
         let cls = Class.of(obj);
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls!.getName()).assertContain("Map");
     });
 
@@ -585,7 +585,7 @@ export default function ClassOfTest(): void {
       let obj = new ChildClass025();
         let cls = Class.of(obj);
         let superCls = cls.getSuper();
-        expect(superCls != null).assertTrue();
+        expect(superCls !== null).assertTrue();
         expect(superCls!.getName()).assertEqual("ParentClass025");
     });
 
@@ -734,7 +734,7 @@ export default function ClassOfTest(): void {
     it('testClassOf035', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let obj = new Map<int, string>();
         let cls: Class = Class.of(obj);
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName().length > 0).assertTrue();
     });
 
@@ -752,7 +752,7 @@ export default function ClassOfTest(): void {
         let obj2: Object | null = null;
         let cls2 = Class.of(obj2);
         expect(cls1.getName()).assertContain("Map");
-        expect(cls2 != null).assertTrue();
+        expect(cls2 !== null).assertTrue();
         expect(cls2!.getName()).assertEqual(Class.of(null).getName());
     });
 
@@ -860,7 +860,7 @@ export default function ClassOfTest(): void {
         expect(cls.isFixedArray()).assertTrue();
 
         let componentType = cls.getFixedArrayComponentType();
-        expect(componentType != null).assertTrue();
+        expect(componentType !== null).assertTrue();
         expect(componentType!.getName()).assertEqual("i32");
     });
 
@@ -901,7 +901,7 @@ export default function ClassOfTest(): void {
      */
     it('testClassOf045', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.of(myFunction045);
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
     });
 
     /**
@@ -1008,7 +1008,7 @@ export default function ClassOfTest(): void {
     it('testClassOf052', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let obj = new LargeClass052();
         let cls = Class.of(obj);
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
     });
 
     /**
@@ -1088,7 +1088,7 @@ export default function ClassOfTest(): void {
         }
         for (let obj of objects) {
           let cls = Class.of(obj);
-          expect(cls != null).assertTrue();
+          expect(cls !== null).assertTrue();
         }
     });
 
@@ -1267,7 +1267,7 @@ export default function ClassOfTest(): void {
      */
     it('testClassOf069', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let result = safeGetClass069(null);
-        expect(result != null).assertTrue();
+        expect(result !== null).assertTrue();
     });
 
   });

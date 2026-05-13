@@ -133,7 +133,7 @@ export default function ConstructorEqualsTest(): void {
       let cls = Class.from<MyClass001>();
         let ctor1 = asCtorList(cls)[0];
         let ctor2 = asCtorList(cls)[0];
-        ctor1.equals(ctor2);
+        expect(ctor1.equals(ctor2)).assertTrue();
     });
 
     /**
@@ -422,7 +422,7 @@ export default function ConstructorEqualsTest(): void {
       let cls = Class.from<MyClass001>();
         let ctor1 = asCtorList(cls)[0];
         let ctor2 = asCtorList(cls)[0];
-        ctor1.equals(ctor2);
+        expect(ctor1.equals(ctor2)).assertTrue();
     });
 
     /**

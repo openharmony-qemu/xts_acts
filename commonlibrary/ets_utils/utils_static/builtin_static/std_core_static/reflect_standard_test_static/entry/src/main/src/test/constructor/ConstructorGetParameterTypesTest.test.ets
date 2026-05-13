@@ -122,6 +122,7 @@ export default function ConstructorGetParameterTypesTest(): void {
       let cls = Class.from<MyClass001>();
         let constructors = cls.getConstructors();
         let paramTypes = constructors[0].getParameterTypes();
+        expect(paramTypes.length).assertEqual(2);
     });
 
     /**
@@ -133,7 +134,7 @@ export default function ConstructorGetParameterTypesTest(): void {
      * @tc.level Level 2
      */
     it('testConstructorGetParameterTypes002', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      Class.from<MyClass001>().getConstructors()[0].getParameterTypes();
+      expect(Class.from<MyClass001>().getConstructors()[0].getParameterTypes().length).assertEqual(2);
     });
 
     /**
@@ -265,7 +266,7 @@ export default function ConstructorGetParameterTypesTest(): void {
         let constructors = cls.getConstructors();
         let paramTypes = constructors[0].getParameterTypes();
         expect(Array.isArray(paramTypes)).assertTrue();
-        expect(paramTypes.length != null).assertTrue();
+        expect(paramTypes.length !== null).assertTrue();
     });
 
     /**
@@ -280,9 +281,9 @@ export default function ConstructorGetParameterTypesTest(): void {
       let ctor = Class.from<MyClass001>().getConstructors()[0];
         let paramTypes = ctor.getParameterTypes();
         for (let i = 0; i < paramTypes.length; i++) {
-          expect(paramTypes[i].getName != null).assertTrue();
-          expect(paramTypes[i].isPrimitive != null).assertTrue();
-          expect(paramTypes[i].isInterface != null).assertTrue();
+          expect(paramTypes[i].getName !== null).assertTrue();
+          expect(paramTypes[i].isPrimitive !== null).assertTrue();
+          expect(paramTypes[i].isInterface !== null).assertTrue();
         }
     });
 

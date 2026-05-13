@@ -123,6 +123,7 @@ export default function ConstructorGetReturnTypeTest(): void {
       let cls = Class.from<MyClass001>();
         let constructors = cls.getConstructors();
         let returnType = constructors[0].getReturnType();
+        expect(returnType.getName()).assertEqual("void");
     });
 
     /**
@@ -135,7 +136,7 @@ export default function ConstructorGetReturnTypeTest(): void {
      */
     it('testConstructorGetReturnType002', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let ctor = Class.from<MyClass003>().getConstructors()[0];
-        ctor.getReturnType();
+        expect(ctor.getReturnType().getName()).assertEqual("void");
     });
 
     /**
@@ -220,7 +221,7 @@ export default function ConstructorGetReturnTypeTest(): void {
       let constructors = Class.from<MyClass005>().getConstructors();
         let returnType = constructors[0].getReturnType();
         expect(typeof returnType).assertEqual("object");
-        expect(returnType.getName != null).assertTrue();
+        expect(returnType.getName !== null).assertTrue();
     });
 
     /**
@@ -249,10 +250,10 @@ export default function ConstructorGetReturnTypeTest(): void {
     it('testConstructorGetReturnType010', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let ctor = Class.from<MyClass005>().getConstructors()[0];
         let returnType = ctor.getReturnType();
-        expect(returnType.getName() != null).assertTrue();
-        expect(returnType.isPrimitive() != null).assertTrue();
-        expect(returnType.isInterface() != null).assertTrue();
-        expect(returnType.isFinal() != null).assertTrue();
+        expect(returnType.getName() !== null).assertTrue();
+        expect(returnType.isPrimitive() !== null).assertTrue();
+        expect(returnType.isInterface() !== null).assertTrue();
+        expect(returnType.isFinal() !== null).assertTrue();
     });
 
     /**
@@ -320,6 +321,7 @@ export default function ConstructorGetReturnTypeTest(): void {
     it('testConstructorGetReturnType015', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let ctor = Class.from<MyClass005>().getConstructors()[0];
         let returnType = ctor.getReturnType();
+        expect(returnType.getName()).assertEqual("void");
     });
 
     /**

@@ -44,7 +44,7 @@ abstract class AbstractClass020 {
     public abstract method(): void;
   }
 
-final class FinalClass021 {
+class FinalClass021 {
     public value: int = 0;
   }
 
@@ -301,7 +301,7 @@ export default function ClassGetDescriptorTest(): void {
     it('testClassGetDescriptor012', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<Set<string>>();
         let descriptor = cls.getDescriptor();
-        expect(descriptor != "").assertTrue();
+        expect(descriptor !== "").assertTrue();
         expect(descriptor.length).assertLarger(2);
     });
 
@@ -320,7 +320,7 @@ export default function ClassGetDescriptorTest(): void {
         let desc1 = cls1.getDescriptor();
         let desc2 = cls2.getDescriptor();
         
-        expect(desc1 != desc2).assertTrue();
+        expect(desc1 !== desc2).assertTrue();
     });
 
     /**
@@ -418,7 +418,7 @@ export default function ClassGetDescriptorTest(): void {
       let cls = Class.from<CustomClass>();
         // 类尚未初始化
         let descriptor = cls.getDescriptor();
-        expect(descriptor != "").assertTrue();
+        expect(descriptor !== "").assertTrue();
         
         cls.initialize();  // 初始化类
         let descriptor2 = cls.getDescriptor();
@@ -673,7 +673,7 @@ export default function ClassGetDescriptorTest(): void {
         expect(descriptor).assertEqual("Lstd/core/Set;");
         
         // 描述符不是简单的名称转换
-        expect(descriptor != name).assertTrue();
+        expect(descriptor !== name).assertTrue();
     });
 
     /**

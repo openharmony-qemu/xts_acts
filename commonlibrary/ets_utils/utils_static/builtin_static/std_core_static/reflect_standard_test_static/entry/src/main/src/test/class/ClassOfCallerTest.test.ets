@@ -44,7 +44,7 @@ class StaticCaller007 {
 class ConstructorCaller008 {
       public constructor() {
           let callerClass = Class.ofCaller()
-          expect(callerClass != null).assertTrue()
+          expect(callerClass !== null).assertTrue()
           expect(callerClass!.getName()).assertEqual("ConstructorCaller008")
       }
   }
@@ -282,7 +282,7 @@ class VersionTest029 {
       public testCompatibility(): void {
           let callerClass = Class.ofCaller()
           // 验证行为符合API版本规范
-          expect(callerClass != null).assertTrue()
+          expect(callerClass !== null).assertTrue()
       }
   }
 
@@ -343,7 +343,7 @@ class C033 {
 
 class B033 {
       public testCaller(): boolean {
-          if (Class.ofCaller() == Class.from<A033>()) {
+          if (Class.ofCaller() === Class.from<A033>()) {
               return true
           } else {
               return false
@@ -465,7 +465,7 @@ export default function ClassOfCallerTest(): void {
     it('testClassOfCaller004', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let obj = new CallerClass004()
         let result = obj.test()
-        expect(result != null).assertTrue()
+        expect(result !== null).assertTrue()
         expect(result!.getName()).assertEqual("CallerClass004")
     });
 
@@ -507,7 +507,7 @@ export default function ClassOfCallerTest(): void {
      */
     it('testClassOfCaller007', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let result = StaticCaller007.getCaller()
-        expect(result != null).assertTrue()
+        expect(result !== null).assertTrue()
         expect(result!.getName()).assertEqual("StaticCaller007")
     });
 
@@ -521,7 +521,7 @@ export default function ClassOfCallerTest(): void {
      */
     it('testClassOfCaller008', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let obj = new ConstructorCaller008();
-        expect(obj != null).assertTrue();
+        expect(obj !== null).assertTrue();
         expect(Class.from<ConstructorCaller008>().getName()).assertEqual("ConstructorCaller008");
     });
 
@@ -712,7 +712,7 @@ export default function ClassOfCallerTest(): void {
      */
     it('testClassOfCaller021', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let db = new DatabaseService021();
-        expect(db.dep != null).assertTrue();
+        expect(db.dep !== null).assertTrue();
         expect((db.dep as InjectorDep021).connection).assertEqual("db-connection");
     });
 
@@ -833,7 +833,7 @@ export default function ClassOfCallerTest(): void {
     it('testClassOfCaller030', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let m2 = new Module2Class030();
         let caller = m2.testCrossModule();
-        expect(caller != null).assertTrue();
+        expect(caller !== null).assertTrue();
         expect(caller!.getName()).assertEqual("Module1Class030");
     });
 

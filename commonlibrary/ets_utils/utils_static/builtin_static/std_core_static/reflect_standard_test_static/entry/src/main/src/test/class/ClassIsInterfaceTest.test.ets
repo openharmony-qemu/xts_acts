@@ -44,7 +44,7 @@ abstract class AbstractClass008 {
     public abstract method(): void;
   }
 
-final class FinalClass009 {
+class FinalClass009 {
     public value: int = 0;
   }
 
@@ -111,7 +111,7 @@ enum TestEnum034 { A, B }
 
 abstract class AbstractClass035 { }
 
-final class FinalClass036 { }
+class FinalClass036 { }
 
 class MyClass040 implements MyInterface040 { }
 

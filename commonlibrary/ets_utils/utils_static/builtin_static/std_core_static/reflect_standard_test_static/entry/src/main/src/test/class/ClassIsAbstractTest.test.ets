@@ -74,7 +74,7 @@ class StaticClass013 {
     public static func(): void {}
   }
 
-final class FinalClass014 {}
+class FinalClass014 {}
 
 interface MyInterface015 {
     method(): void;
@@ -136,7 +136,7 @@ interface MyInterface033 {}
 
 abstract class AbstractClass033 {}
 
-final class FinalClass034 {}
+class FinalClass034 {}
 
 abstract class AbstractClass034 {}
 
@@ -348,7 +348,7 @@ export default function ClassIsAbstractTest(): void {
     it('testClassIsAbstract005', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let anyObj: Any = null as Object;
         let cls = Class.ofAny(anyObj);
-        if (cls != undefined) {
+        if (cls !== undefined) {
           expect(cls.isAbstract()).assertTrue();
         }
     });
@@ -566,7 +566,7 @@ export default function ClassIsAbstractTest(): void {
     it('testClassIsAbstract021', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<MyClass021>();
         let objSuper = cls.getSuper();
-        if (objSuper != undefined) {
+        if (objSuper !== undefined) {
           expect(objSuper.isAbstract()).assertFalse();
         }
     });
@@ -798,7 +798,7 @@ export default function ClassIsAbstractTest(): void {
       let cls = Class.from<ConcreteClass037>();
         expect(cls.isAbstract()).assertFalse();
         let obj = cls.createInstance();
-        expect(obj != null).assertTrue();
+        expect(obj !== null).assertTrue();
     });
 
     /**
@@ -813,7 +813,7 @@ export default function ClassIsAbstractTest(): void {
       let childCls = Class.from<ConcreteChild038>();
         let parentCls = childCls.getSuper();
         expect(childCls.isAbstract()).assertFalse();
-        if (parentCls != undefined) {
+        if (parentCls !== undefined) {
           expect(parentCls.isAbstract()).assertTrue();
         }
     });

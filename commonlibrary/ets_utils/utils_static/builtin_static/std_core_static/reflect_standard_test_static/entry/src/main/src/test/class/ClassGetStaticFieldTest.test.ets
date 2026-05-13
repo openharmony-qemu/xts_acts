@@ -166,7 +166,7 @@ export default function ClassGetStaticFieldTest(): void {
 
         let cls = Class.from<MyClass001>();
         let field = cls.getStaticField('name');
-        expect(field != null).assertTrue();
+        expect(field !== null).assertTrue();
     });
 
     /**
@@ -252,13 +252,13 @@ export default function ClassGetStaticFieldTest(): void {
     it('testClassGetStaticField006', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<SpecialClass006>();
         let field1 = cls.getStaticField('fieldHyphen');
-        expect(field1 != null).assertTrue();
+        expect(field1 !== null).assertTrue();
         
         let field2 = cls.getStaticField('field_name');
-        expect(field2 != null).assertTrue();
+        expect(field2 !== null).assertTrue();
         
         let field3 = cls.getStaticField('fieldZh');
-        expect(field3 != null).assertTrue();
+        expect(field3 !== null).assertTrue();
     });
 
     /**
@@ -272,7 +272,7 @@ export default function ClassGetStaticFieldTest(): void {
     it('testClassGetStaticField007', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<UnicodeClass007>();
         let field = cls.getStaticField('mingzi');
-        expect(field != null).assertTrue();
+        expect(field !== null).assertTrue();
     });
 
     /**
@@ -360,7 +360,7 @@ export default function ClassGetStaticFieldTest(): void {
       let cls = Class.from<TestClass012>();
         let field = cls.getStaticField('myField');
         
-        expect(field != null).assertTrue();
+        expect(field !== null).assertTrue();
         expect(field instanceof reflect.StaticField).assertTrue();
         expect(field!.getName()).assertEqual('myField');
     });
@@ -378,9 +378,9 @@ export default function ClassGetStaticFieldTest(): void {
         let field = cls.getStaticField('myField');
         
         // 验证StaticField的方法可用
-        expect(field!.getName() != null).assertTrue();
-        expect(field!.getType() != null).assertTrue();
-        expect(field!.getOwner() != null).assertTrue();
+        expect(field!.getName() !== null).assertTrue();
+        expect(field!.getType() !== null).assertTrue();
+        expect(field!.getOwner() !== null).assertTrue();
         expect(typeof field!.isPublic()).assertEqual('boolean');
     });
 
@@ -446,7 +446,7 @@ export default function ClassGetStaticFieldTest(): void {
     it('testClassGetStaticField017', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<PrivateTest017>();
         let field1 = cls.getStaticField('publicField');
-        expect(field1 != null).assertTrue();
+        expect(field1 !== null).assertTrue();
         
         let field2 = cls.getStaticField('privateField');
         expect(field2 === undefined).assertTrue();
@@ -477,7 +477,7 @@ export default function ClassGetStaticFieldTest(): void {
     it('testClassGetStaticField019', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<ConstClass019>();
         let field = cls.getStaticField('MAX_VALUE');
-        expect(field != null).assertTrue();
+        expect(field !== null).assertTrue();
         expect(field!.isReadonly()).assertTrue();
     });
 
@@ -494,7 +494,7 @@ export default function ClassGetStaticFieldTest(): void {
         
         // 可以找到子类静态字段
         let nameField = cls.getStaticField('name');
-        expect(nameField != null).assertTrue();
+        expect(nameField !== null).assertTrue();
         
         // 找不到父类静态字段
         let ageField = cls.getStaticField('age');
@@ -502,7 +502,7 @@ export default function ClassGetStaticFieldTest(): void {
         
         // 通过父类Class对象查找
         let parentAgeField = cls.getSuper()!.getStaticField('age');
-        expect(parentAgeField != null).assertTrue();
+        expect(parentAgeField !== null).assertTrue();
         expect(parentAgeField!.getName()).assertEqual('age');
     });
 
@@ -518,18 +518,18 @@ export default function ClassGetStaticFieldTest(): void {
       let childCls = Class.from<Child021>();
         
         // 子类只能找到自己的静态字段
-        expect(childCls.getStaticField('c') != null).assertTrue();
+        expect(childCls.getStaticField('c') !== null).assertTrue();
         expect(childCls.getStaticField('b') === undefined).assertTrue();
         expect(childCls.getStaticField('a') === undefined).assertTrue();
         
         // 通过父类查找
         let parentCls = childCls.getSuper()!;
-        expect(parentCls.getStaticField('b') != null).assertTrue();
+        expect(parentCls.getStaticField('b') !== null).assertTrue();
         expect(parentCls.getStaticField('a') === undefined).assertTrue();
         
         // 通过祖父类查找
         let grandParentCls = parentCls.getSuper()!;
-        expect(grandParentCls.getStaticField('a') != null).assertTrue();
+        expect(grandParentCls.getStaticField('a') !== null).assertTrue();
     });
 
     /**
@@ -545,13 +545,13 @@ export default function ClassGetStaticFieldTest(): void {
         
         // 子类只能看到自己的data
         let childField = childCls.getStaticField('data');
-        expect(childField != null).assertTrue();
+        expect(childField !== null).assertTrue();
         expect(childField!.getOwner().getName()).assertEqual('Child022');
         expect(childField!.getValue(childCls) as string).assertEqual('child');
         
         // 父类的data需要通过父类Class对象
         let parentField = childCls.getSuper()!.getStaticField('data');
-        expect(parentField != null).assertTrue();
+        expect(parentField !== null).assertTrue();
         expect(parentField!.getOwner().getName()).assertEqual('Parent022');
         expect(parentField!.getValue(childCls.getSuper()!) as string).assertEqual('parent');
     });
@@ -611,6 +611,8 @@ export default function ClassGetStaticFieldTest(): void {
         // 可能需要先initialize
         cls.initialize();
         let field = cls.getStaticField('name');
+        expect(field !== null).assertTrue();
+        expect(field!.getName()).assertEqual('name');
     });
 
     /**
@@ -624,7 +626,7 @@ export default function ClassGetStaticFieldTest(): void {
     it('testClassGetStaticField026', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<MyClass001>();
         let field = cls.getStaticField('name');
-        expect(field != null).assertTrue();
+        expect(field !== null).assertTrue();
     });
 
     /**
@@ -638,7 +640,7 @@ export default function ClassGetStaticFieldTest(): void {
     it('testClassGetStaticField027', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<MyClass001>();
         let field = cls.getStaticField('name');
-        expect(field != null).assertTrue();
+        expect(field !== null).assertTrue();
     });
 
     /**
@@ -670,9 +672,9 @@ export default function ClassGetStaticFieldTest(): void {
         let field2 = cls.getStaticField('kwFunction');
         let field3 = cls.getStaticField('kwReturn');
         
-        expect(field1 != null).assertTrue();
-        expect(field2 != null).assertTrue();
-        expect(field3 != null).assertTrue();
+        expect(field1 !== null).assertTrue();
+        expect(field2 !== null).assertTrue();
+        expect(field3 !== null).assertTrue();
     });
 
     /**
@@ -739,11 +741,11 @@ export default function ClassGetStaticFieldTest(): void {
       let cls = Class.from<ModifierClass033>();
         
         let field1 = cls.getStaticField('CONSTANT');
-        expect(field1 != null).assertTrue();
+        expect(field1 !== null).assertTrue();
         expect(field1!.isReadonly()).assertTrue();
         
         let field2 = cls.getStaticField('variable');
-        expect(field2 != null).assertTrue();
+        expect(field2 !== null).assertTrue();
         expect(field2!.isReadonly()).assertFalse();
     });
 
@@ -777,11 +779,11 @@ export default function ClassGetStaticFieldTest(): void {
       let cls = Class.from<SameName035>();
         
         let staticField = cls.getStaticField('data');
-        expect(staticField != null).assertTrue();
+        expect(staticField !== null).assertTrue();
         expect(staticField!.getValue(cls) as string).assertEqual('static');
         
         let instanceField = cls.getInstanceField('data');
-        expect(instanceField != null).assertTrue();
+        expect(instanceField !== null).assertTrue();
     });
 
   });

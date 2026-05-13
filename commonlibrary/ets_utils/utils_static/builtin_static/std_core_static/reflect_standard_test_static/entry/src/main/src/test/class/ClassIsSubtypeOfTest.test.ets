@@ -1165,7 +1165,8 @@ export default function ClassIsSubtypeOfTest(): void {
         // class B extends A {}
         
         // 如果运行时存在循环继承，isSubtypeOf应该能正确处理
-      return;
+      expect(Class.from<Subtype052_L7>().isSubtypeOf(Class.from<Subtype052_Root>())).assertTrue();
+        expect(Class.from<Subtype052_Root>().isSubtypeOf(Class.from<Subtype052_L7>())).assertFalse();
     });
 
     /**
@@ -1442,7 +1443,7 @@ export default function ClassIsSubtypeOfTest(): void {
     it('testClassIsSubtypeOf067', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let dog = new Dog067();
         let result = safeCast067<Dog067>(dog, Class.from<Dog067>());
-        expect(result != null).assertTrue();
+        expect(result !== null).assertTrue();
     });
 
     /**

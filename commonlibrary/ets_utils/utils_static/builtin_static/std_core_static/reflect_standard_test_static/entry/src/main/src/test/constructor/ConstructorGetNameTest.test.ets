@@ -124,6 +124,7 @@ export default function ConstructorGetNameTest(): void {
       let cls = Class.from<MyClass001>();
         let constructors = cls.getConstructors();
         let name = constructors[0].getName();
+        expect(name).assertEqual("constructor");
     });
 
     /**
@@ -135,7 +136,7 @@ export default function ConstructorGetNameTest(): void {
      * @tc.level Level 2
      */
     it('testConstructorGetName002', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      Class.from<MyClass003>().getConstructors()[0].getName();
+      expect(Class.from<MyClass003>().getConstructors()[0].getName()).assertEqual("constructor");
     });
 
     /**

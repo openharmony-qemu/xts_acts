@@ -73,7 +73,7 @@ export default function ClassIsUnionTest(): void {
     it('testClassIsUnion001', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<int | string>();
         let result = cls.isUnion();
-        console.info(result);
+        expect(result).assertTrue();
     });
 
     /**
@@ -102,10 +102,8 @@ export default function ClassIsUnionTest(): void {
         // 此测试点验证of获取的Class对象调用isUnion()
         let obj: int | string = 42;
         let cls = Class.ofAny(obj);
-        if (cls !== undefined) {
-          let result = cls.isUnion();
-          console.info(result);
-        }
+        expect(cls !== undefined).assertTrue();
+        expect(typeof cls!.isUnion()).assertEqual("boolean");
     });
 
     /**

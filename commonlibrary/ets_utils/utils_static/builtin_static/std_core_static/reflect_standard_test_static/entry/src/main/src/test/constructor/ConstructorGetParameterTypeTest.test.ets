@@ -54,7 +54,7 @@ class MyClass022 {
     public constructor(param?: int | string | boolean) {}
   }
 
-final class FinalClass023 {
+class FinalClass023 {
     public constructor(x: boolean) {}
   }
 

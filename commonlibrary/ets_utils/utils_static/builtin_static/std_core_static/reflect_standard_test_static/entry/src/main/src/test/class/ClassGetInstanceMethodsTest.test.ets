@@ -305,7 +305,7 @@ abstract class AbstractClass038 {
       private privateMethod(): void {}
   }
 
-final class FinalClass039 {
+class FinalClass039 {
       public method1(): void {}
       public method2(): string { return "test"; }
   }
@@ -1432,8 +1432,8 @@ export default function ClassGetInstanceMethodsTest(): void {
         let method2 = cls.getInstanceMethod("method2", []);
         
         expect(allMethods.length).assertEqual(2);
-        expect(method1 != null).assertTrue();
-        expect(method2 != null).assertTrue();
+        expect(method1 !== null).assertTrue();
+        expect(method2 !== null).assertTrue();
         
         // 验证方法是相同的（通过equals）
         let found1 = false;
@@ -1509,7 +1509,7 @@ export default function ClassGetInstanceMethodsTest(): void {
             let method = methods[i];
             // 获取方法名
             let name = method.getName();
-            expect(name != null).assertTrue();
+            expect(name !== null).assertTrue();
             
             // 获取参数数量
             let paramCount = method.getParametersNum();
@@ -1517,7 +1517,7 @@ export default function ClassGetInstanceMethodsTest(): void {
             
             // 获取返回类型
             let returnType = method.getReturnType();
-            expect(returnType != null).assertTrue();
+            expect(returnType !== null).assertTrue();
         }
     });
 

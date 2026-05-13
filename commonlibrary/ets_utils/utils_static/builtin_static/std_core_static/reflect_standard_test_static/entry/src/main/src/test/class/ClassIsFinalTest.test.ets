@@ -573,6 +573,7 @@ export default function ClassIsFinalTest(): void {
 
         // 编译错误: Cannot extend a final class
         // class Child extends FinalBase021 {}
+        expect(Class.from<FinalBase021>().isFinal()).assertTrue();
     });
 
     /**
@@ -662,7 +663,9 @@ export default function ClassIsFinalTest(): void {
 // 此测试仅用于验证未捕获异常的行为，跳过执行
         // 以下代码应该在编译时报错
         // final abstract class InvalidClass {} // 编译错误
-      return;
+      let cls = Class.from<AbstractClass011>();
+        expect(cls.isAbstract()).assertTrue();
+        expect(cls.isFinal()).assertFalse();
     });
 
     /**
@@ -954,6 +957,10 @@ export default function ClassIsFinalTest(): void {
      */
     it('testClassIsFinal047', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       // 使用TaskPool测试并发访问
+        let cls = Class.from<FinalClass001>();
+        for (let i = 0; i < 50; i++) {
+          expect(cls.isFinal()).assertTrue();
+        }
     });
 
     /**
@@ -968,7 +975,7 @@ export default function ClassIsFinalTest(): void {
 // 此测试仅用于验证未捕获异常的行为，跳过执行
         // 所有Class.from<T>()和Class.of()返回的对象都是有效的Class实例
         // 不存在无效Class对象的情况
-      return;
+      expect(Class.from<TestClass020>().isFinal()).assertFalse();
     });
 
     /**
@@ -984,6 +991,7 @@ export default function ClassIsFinalTest(): void {
 
         // 编译错误: Cannot extend a final class
         // final class FinalChild extends FinalBase049 {}
+        expect(Class.from<FinalBase049>().isFinal()).assertTrue();
     });
 
     /**

@@ -336,6 +336,7 @@ export default function ClassGetInstanceFieldsTest(): void {
       // 假设getInstanceFields被标记为废弃
         let cls = Class.from<MyClass001>();
         let fields = asInstanceFieldArray(cls.getInstanceFields()); // 应显示弃用警告
+        expect(fields !== null).assertTrue();
     });
 
     /**
@@ -350,7 +351,7 @@ export default function ClassGetInstanceFieldsTest(): void {
       // 不需要await
         let cls = Class.from<MyClass001>();
         let fields = asInstanceFieldArray(cls.getInstanceFields()); // 同步调用
-        expect(fields != null).assertTrue();
+        expect(fields !== null).assertTrue();
     });
 
     /**
@@ -418,7 +419,7 @@ export default function ClassGetInstanceFieldsTest(): void {
             break;
           }
         }
-        expect(readonlyField != undefined).assertTrue();
+        expect(readonlyField !== undefined).assertTrue();
         expect(readonlyField!.isReadonly()).assertTrue();
     });
 

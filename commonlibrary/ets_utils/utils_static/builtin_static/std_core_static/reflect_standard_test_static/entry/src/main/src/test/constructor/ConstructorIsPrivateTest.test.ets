@@ -126,6 +126,7 @@ export default function ConstructorIsPrivateTest(): void {
       let cls = Class.from<MyClass001>();
         let constructors = cls.getConstructors();
         let isPrivate = constructors[0].isPrivate();
+        expect(isPrivate).assertTrue();
     });
 
     /**
@@ -137,7 +138,7 @@ export default function ConstructorIsPrivateTest(): void {
      * @tc.level Level 2
      */
     it('testConstructorIsPrivate002', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      Class.from<MyClass001>().getConstructors()[0].isPrivate();
+      expect(Class.from<MyClass001>().getConstructors()[0].isPrivate()).assertTrue();
     });
 
     /**
@@ -197,7 +198,7 @@ export default function ConstructorIsPrivateTest(): void {
     it('testConstructorIsPrivate006', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let ctorRef = Class.from<MyClass006>().getConstructors()[0];
         let isPrivate = ctorRef.isPrivate();
-        // 默认访问级别的行为取决于语言规范
+        expect(isPrivate).assertFalse();
     });
 
     /**

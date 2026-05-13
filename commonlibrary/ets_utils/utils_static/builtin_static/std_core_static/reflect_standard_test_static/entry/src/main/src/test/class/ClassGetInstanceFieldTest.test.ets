@@ -141,7 +141,7 @@ export default function ClassGetInstanceFieldTest(): void {
 
         let cls = Class.from<MyClass001>();
         let field = cls.getInstanceField('name');
-        expect(field != null).assertTrue();
+        expect(field !== null).assertTrue();
     });
 
     /**
@@ -227,13 +227,13 @@ export default function ClassGetInstanceFieldTest(): void {
     it('testClassGetInstanceField006', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<SpecialClass006>();
         let field1 = cls.getInstanceField('fieldHyphen');
-        expect(field1 != null).assertTrue();
+        expect(field1 !== null).assertTrue();
         
         let field2 = cls.getInstanceField('field_name');
-        expect(field2 != null).assertTrue();
+        expect(field2 !== null).assertTrue();
         
         let field3 = cls.getInstanceField('fieldZh');
-        expect(field3 != null).assertTrue();
+        expect(field3 !== null).assertTrue();
     });
 
     /**
@@ -247,7 +247,7 @@ export default function ClassGetInstanceFieldTest(): void {
     it('testClassGetInstanceField007', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<UnicodeClass007>();
         let field = cls.getInstanceField('mingzi');
-        expect(field != null).assertTrue();
+        expect(field !== null).assertTrue();
     });
 
     /**
@@ -335,7 +335,7 @@ export default function ClassGetInstanceFieldTest(): void {
       let cls = Class.from<TestClass012>();
         let field = cls.getInstanceField('myField');
         
-        expect(field != null).assertTrue();
+        expect(field !== null).assertTrue();
         expect(field instanceof reflect.InstanceField).assertTrue();
         expect(field!.getName()).assertEqual('myField');
     });
@@ -353,9 +353,9 @@ export default function ClassGetInstanceFieldTest(): void {
         let field = cls.getInstanceField('myField');
         
         // 验证InstanceField的方法可用
-        expect(field!.getName() != null).assertTrue();
-        expect(field!.getType() != null).assertTrue();
-        expect(field!.getOwner() != null).assertTrue();
+        expect(field!.getName() !== null).assertTrue();
+        expect(field!.getType() !== null).assertTrue();
+        expect(field!.getOwner() !== null).assertTrue();
         expect(typeof field!.isPublic()).assertEqual('boolean');
     });
 
@@ -404,7 +404,7 @@ export default function ClassGetInstanceFieldTest(): void {
     it('testClassGetInstanceField016', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<PrivateTest016>();
         let field1 = cls.getInstanceField('publicField');
-        expect(field1 != null).assertTrue();
+        expect(field1 !== null).assertTrue();
         
         let field2 = cls.getInstanceField('privateField');
         expect(field2 === undefined).assertTrue();
@@ -437,7 +437,7 @@ export default function ClassGetInstanceFieldTest(): void {
         
         // 可以找到子类字段
         let nameField = cls.getInstanceField('name');
-        expect(nameField != null).assertTrue();
+        expect(nameField !== null).assertTrue();
         
         // 找不到父类字段
         let ageField = cls.getInstanceField('age');
@@ -445,7 +445,7 @@ export default function ClassGetInstanceFieldTest(): void {
         
         // 通过父类Class对象查找
         let parentAgeField = cls.getSuper()!.getInstanceField('age');
-        expect(parentAgeField != null).assertTrue();
+        expect(parentAgeField !== null).assertTrue();
         expect(parentAgeField!.getName()).assertEqual('age');
     });
 
@@ -461,18 +461,18 @@ export default function ClassGetInstanceFieldTest(): void {
       let childCls = Class.from<Child019>();
         
         // 子类只能找到自己的字段
-        expect(childCls.getInstanceField('c') != null).assertTrue();
+        expect(childCls.getInstanceField('c') !== null).assertTrue();
         expect(childCls.getInstanceField('b') === undefined).assertTrue();
         expect(childCls.getInstanceField('a') === undefined).assertTrue();
         
         // 通过父类查找
         let parentCls = childCls.getSuper()!;
-        expect(parentCls.getInstanceField('b') != null).assertTrue();
+        expect(parentCls.getInstanceField('b') !== null).assertTrue();
         expect(parentCls.getInstanceField('a') === undefined).assertTrue();
         
         // 通过祖父类查找
         let grandParentCls = parentCls.getSuper()!;
-        expect(grandParentCls.getInstanceField('a') != null).assertTrue();
+        expect(grandParentCls.getInstanceField('a') !== null).assertTrue();
     });
 
     /**
@@ -488,12 +488,12 @@ export default function ClassGetInstanceFieldTest(): void {
         
         // 子类只能看到自己的data
         let childField = childCls.getInstanceField('data');
-        expect(childField != null).assertTrue();
+        expect(childField !== null).assertTrue();
         expect(childField!.getOwner().getName()).assertEqual('Child020');
         
         // 父类的data需要通过父类Class对象
         let parentField = childCls.getSuper()!.getInstanceField('data');
-        expect(parentField != null).assertTrue();
+        expect(parentField !== null).assertTrue();
         expect(parentField!.getOwner().getName()).assertEqual('Parent020');
     });
 
@@ -552,6 +552,8 @@ export default function ClassGetInstanceFieldTest(): void {
         // 可能需要先initialize
         cls.initialize();
         let field = cls.getInstanceField('name');
+        expect(field !== null).assertTrue();
+        expect(field!.getName()).assertEqual('name');
     });
 
     /**
@@ -565,7 +567,7 @@ export default function ClassGetInstanceFieldTest(): void {
     it('testClassGetInstanceField024', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<MyClass001>();
         let field = cls.getInstanceField('name');
-        expect(field != null).assertTrue();
+        expect(field !== null).assertTrue();
     });
 
     /**
@@ -579,7 +581,7 @@ export default function ClassGetInstanceFieldTest(): void {
     it('testClassGetInstanceField025', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<MyClass001>();
         let field = cls.getInstanceField('name');
-        expect(field != null).assertTrue();
+        expect(field !== null).assertTrue();
     });
 
     /**
@@ -611,9 +613,9 @@ export default function ClassGetInstanceFieldTest(): void {
         let field2 = cls.getInstanceField('kwFunction');
         let field3 = cls.getInstanceField('kwReturn');
         
-        expect(field1 != null).assertTrue();
-        expect(field2 != null).assertTrue();
-        expect(field3 != null).assertTrue();
+        expect(field1 !== null).assertTrue();
+        expect(field2 !== null).assertTrue();
+        expect(field3 !== null).assertTrue();
     });
 
     /**
@@ -628,11 +630,11 @@ export default function ClassGetInstanceFieldTest(): void {
       let cls = Class.from<ModifierClass028>();
         
         let field1 = cls.getInstanceField('readonlyPublic');
-        expect(field1 != null).assertTrue();
+        expect(field1 !== null).assertTrue();
         expect(field1!.isReadonly()).assertTrue();
         
         let field2 = cls.getInstanceField('mutablePublic');
-        expect(field2 != null).assertTrue();
+        expect(field2 !== null).assertTrue();
         expect(field2!.isReadonly()).assertFalse();
     });
 

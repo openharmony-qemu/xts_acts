@@ -182,7 +182,7 @@ export default function ClassOfAnyTest(): void {
     it('testClassOfAny001', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let obj: Any = new MyClass()
         let cls = Class.ofAny(obj)
-        expect(cls != null).assertTrue()
+        expect(cls !== null).assertTrue()
     });
 
     /**
@@ -280,7 +280,7 @@ export default function ClassOfAnyTest(): void {
     it('testClassOfAny008', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let obj: Any = 'hello'
         let cls = Class.ofAny(obj)
-        expect(cls != null).assertTrue()
+        expect(cls !== null).assertTrue()
     });
 
     /**
@@ -294,7 +294,7 @@ export default function ClassOfAnyTest(): void {
     it('testClassOfAny009', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let obj: Any = 123
         let cls = Class.ofAny(obj)
-        expect(cls != null).assertTrue()
+        expect(cls !== null).assertTrue()
     });
 
     /**
@@ -308,7 +308,7 @@ export default function ClassOfAnyTest(): void {
     it('testClassOfAny010', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let obj: Any = true
         let cls = Class.ofAny(obj)
-        expect(cls != null).assertTrue()
+        expect(cls !== null).assertTrue()
     });
 
     /**
@@ -352,7 +352,7 @@ export default function ClassOfAnyTest(): void {
       let obj: Any = new Object() as Any
         let cls = Class.ofAny(obj)
         // 空对象字面量可能返回undefined或Object的Class
-        expect(cls != null).assertTrue()
+        expect(cls !== null).assertTrue()
     });
 
     /**
@@ -381,7 +381,7 @@ export default function ClassOfAnyTest(): void {
     it('testClassOfAny015', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let obj: Any = new FixedArray<int>(3)
         let cls = Class.ofAny(obj)
-        expect(cls != null).assertTrue()
+        expect(cls !== null).assertTrue()
         expect(cls!.isFixedArray()).assertTrue()
     });
 
@@ -397,7 +397,7 @@ export default function ClassOfAnyTest(): void {
       let obj: Any = TestEnum016.CLASS
         let cls = Class.ofAny(obj)
         // 枚举值可能返回对应的Class或undefined
-        expect(cls != null).assertTrue()
+        expect(cls !== null).assertTrue()
     });
 
     /**
@@ -411,7 +411,7 @@ export default function ClassOfAnyTest(): void {
     it('testClassOfAny017', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let obj: Any = myFunc017
         let cls = Class.ofAny(obj)
-        expect(cls != null).assertTrue()
+        expect(cls !== null).assertTrue()
     });
 
     /**
@@ -426,7 +426,7 @@ export default function ClassOfAnyTest(): void {
       let arrowFunc = () => {}
         let obj: Any = arrowFunc
         let cls = Class.ofAny(obj)
-        expect(cls != null).assertTrue()
+        expect(cls !== null).assertTrue()
     });
 
     /**
@@ -441,7 +441,7 @@ export default function ClassOfAnyTest(): void {
       let asyncFunc = async (): Promise<void> => {}
         let obj: Any = asyncFunc
         let cls = Class.ofAny(obj)
-        expect(cls != null).assertTrue()
+        expect(cls !== null).assertTrue()
     });
 
     /**
@@ -455,7 +455,7 @@ export default function ClassOfAnyTest(): void {
     it('testClassOfAny020', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let clsObj: Any = new MyClass()
         let cls = Class.ofAny(clsObj)
-        expect(cls != null).assertTrue()
+        expect(cls !== null).assertTrue()
     });
 
     /**
@@ -472,7 +472,7 @@ export default function ClassOfAnyTest(): void {
         let interfaces = [Class.from<Target021>()] as FixedArray<Class>
         let proxyObj = reflect.Proxy.create(linker, interfaces, handler)
         let cls = Class.ofAny(proxyObj)
-        expect(cls != null).assertTrue()
+        expect(cls !== null).assertTrue()
         expect(reflect.Proxy.isProxyClass(cls!)).assertTrue()
     });
 
@@ -487,7 +487,7 @@ export default function ClassOfAnyTest(): void {
     it('testClassOfAny022', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let obj: Any = new TestClass022()
         let cls = Class.ofAny(obj)
-        expect(cls != null).assertTrue()
+        expect(cls !== null).assertTrue()
         expect(cls!.getName()).assertEqual('TestClass022')
     });
 
@@ -518,7 +518,7 @@ export default function ClassOfAnyTest(): void {
         let cls = Class.ofAny(obj)
         // 链式调用getSuper()
         let superCls = cls!.getSuper()
-        expect(superCls != null).assertTrue()
+        expect(superCls !== null).assertTrue()
         expect(superCls!.getName()).assertEqual('BaseClass024')
     });
 
@@ -580,7 +580,7 @@ export default function ClassOfAnyTest(): void {
         if (cls !== undefined) {
           expect(typeof cls).assertEqual('object')
           // 验证是Class实例
-          expect(cls.getName != null).assertTrue()
+          expect(cls.getName !== null).assertTrue()
         }
     });
 
@@ -597,8 +597,8 @@ export default function ClassOfAnyTest(): void {
         let cls = Class.ofAny(obj)
         if (cls !== undefined) {
           // 验证返回的对象是Class类型
-          expect(cls.getSuper != null).assertTrue()
-          expect(cls.getName != null).assertTrue()
+          expect(cls.getSuper !== null).assertTrue()
+          expect(cls.getName !== null).assertTrue()
         }
     });
 
@@ -615,10 +615,10 @@ export default function ClassOfAnyTest(): void {
         let cls = Class.ofAny(obj)
         if (cls !== undefined) {
           // 验证Class对象的完整性
-          expect(cls.getName != null).assertTrue()
-          expect(cls.getSuper != null).assertTrue()
-          expect(cls.isSubtypeOf != null).assertTrue()
-          expect(cls.getInterfaces != null).assertTrue()
+          expect(cls.getName !== null).assertTrue()
+          expect(cls.getSuper !== null).assertTrue()
+          expect(cls.isSubtypeOf !== null).assertTrue()
+          expect(cls.getInterfaces !== null).assertTrue()
         }
     });
 
@@ -634,8 +634,8 @@ export default function ClassOfAnyTest(): void {
       let obj: Any = new MyClass()
         let cls1 = Class.ofAny(obj)
         let cls2 = Class.ofAny(obj)
-        expect(cls1 != null).assertTrue()
-        expect(cls2 != null).assertTrue()
+        expect(cls1 !== null).assertTrue()
+        expect(cls2 !== null).assertTrue()
         expect(cls1!.getName()).assertEqual(cls2!.getName())
     });
 
@@ -710,7 +710,7 @@ export default function ClassOfAnyTest(): void {
         node2.next = node1
         let obj: Any = node1
         let cls = Class.ofAny(obj)
-        expect(cls != null).assertTrue()
+        expect(cls !== null).assertTrue()
     });
 
     /**
@@ -741,7 +741,7 @@ export default function ClassOfAnyTest(): void {
       // 正确的静态方法调用
         let obj: Any = new MyClass()
         let cls = Class.ofAny(obj)
-        expect(cls != null).assertTrue()
+        expect(cls !== null).assertTrue()
     });
 
     /**
@@ -757,6 +757,7 @@ export default function ClassOfAnyTest(): void {
         let obj: Any = instance
         // 以下调用应当编译错误
         // let cls = instance.ofAny(obj)
+        expect(Class.ofAny(obj)!.getName()).assertEqual("MyClass");
     });
 
     /**
@@ -771,12 +772,12 @@ export default function ClassOfAnyTest(): void {
       // ofAny可以接受Any类型
         let anyObj: Any = new MyClass()
         let cls1 = Class.ofAny(anyObj)
-        expect(cls1 != null).assertTrue()
+        expect(cls1 !== null).assertTrue()
 
         // of只能接受Object|null
         let obj: Object = new MyClass()
         let cls2 = Class.of(obj)
-        expect(cls2 != null).assertTrue()
+        expect(cls2 !== null).assertTrue()
     });
 
     /**
@@ -795,7 +796,7 @@ export default function ClassOfAnyTest(): void {
 
         // of总是返回Class（即使是null也返回void的Class）
         let result2 = Class.of(null)
-        expect(result2 != null).assertTrue()
+        expect(result2 !== null).assertTrue()
     });
 
     /**
@@ -816,8 +817,8 @@ export default function ClassOfAnyTest(): void {
         let testObj: Any = new MyClass()
         let cls1 = getClassFromAny040(testObj)
         let cls2 = getClassFromObject040(testObj as Object)
-        expect(cls1 != null).assertTrue()
-        expect(cls2 != null).assertTrue()
+        expect(cls1 !== null).assertTrue()
+        expect(cls2 !== null).assertTrue()
     });
 
     /**
@@ -869,7 +870,7 @@ export default function ClassOfAnyTest(): void {
     it('testClassOfAny043', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let obj: Any = new GenericClass043<int>(100)
         let cls = Class.ofAny(obj)
-        expect(cls != null).assertTrue()
+        expect(cls !== null).assertTrue()
         // 获取泛型参数类型
         expect(cls!.getName()).assertContain('GenericClass043')
     });
@@ -1003,7 +1004,7 @@ export default function ClassOfAnyTest(): void {
         let startTime = Date.now()
         for (let obj of objects) {
           let cls = Class.ofAny(obj)
-          expect(cls != null).assertTrue()
+          expect(cls !== null).assertTrue()
         }
         let endTime = Date.now()
 
@@ -1043,7 +1044,7 @@ export default function ClassOfAnyTest(): void {
     it('testClassOfAny053', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let obj: Any = new LargeClass053()
         let cls = Class.ofAny(obj)
-        expect(cls != null).assertTrue()
+        expect(cls !== null).assertTrue()
     });
 
     /**
@@ -1072,7 +1073,7 @@ export default function ClassOfAnyTest(): void {
       let obj: Any = new MyClass()
         for (let i = 0; i < 10; i++) {
           let cls = Class.ofAny(obj)
-          expect(cls != null).assertTrue()
+          expect(cls !== null).assertTrue()
         }
     });
 

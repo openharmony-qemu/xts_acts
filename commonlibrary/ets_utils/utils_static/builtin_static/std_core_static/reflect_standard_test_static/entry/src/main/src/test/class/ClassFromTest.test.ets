@@ -341,7 +341,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom001', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<boolean>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName()).assertEqual("boolean");
     });
 
@@ -355,7 +355,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom002', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<byte>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName()).assertEqual("byte");
     });
 
@@ -369,7 +369,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom003', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<char>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName()).assertEqual("char");
     });
 
@@ -383,7 +383,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom004', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<short>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName()).assertEqual("short");
     });
 
@@ -397,7 +397,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom005', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<int>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName()).assertEqual("int");
     });
 
@@ -411,7 +411,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom006', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<long>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName()).assertEqual("long");
     });
 
@@ -425,7 +425,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom007', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<float>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName()).assertEqual("float");
     });
 
@@ -439,7 +439,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom008', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<double>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName()).assertEqual("double");
     });
 
@@ -453,7 +453,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom009', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<number>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName()).assertEqual("number");
     });
 
@@ -467,7 +467,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom010', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<void>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName()).assertEqual("void");
     });
 
@@ -481,7 +481,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom011', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<string>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName()).assertEqual("std.core.String");
     });
 
@@ -495,7 +495,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom012', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<String>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName()).assertEqual("std.core.String");
     });
 
@@ -509,7 +509,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom013', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<Array<int>>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName()).assertEqual("std.core.Array");
     });
 
@@ -523,7 +523,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom014', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<Array<string>>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName()).assertEqual("std.core.Array");
     });
 
@@ -537,7 +537,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom015', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<Array<Array<int>>>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName()).assertEqual("std.core.Array");
     });
 
@@ -551,7 +551,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom016', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<FixedArray<int>>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.isFixedArray()).assertTrue();
     });
 
@@ -565,7 +565,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom017', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<Map<int, string>>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName()).assertEqual("std.core.Map");
     });
 
@@ -579,7 +579,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom018', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<Map<string, int>>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName()).assertEqual("std.core.Map");
     });
 
@@ -593,7 +593,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom019', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<Set<int>>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName()).assertEqual("std.core.Set");
     });
 
@@ -607,7 +607,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom020', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<Set<int>>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName()).assertEqual("std.core.Set");
     });
 
@@ -621,7 +621,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom021', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<MyClass021>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName()).assertEqual("MyClass021");
     });
 
@@ -635,7 +635,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom022', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<ChildClass022>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName()).assertEqual("ChildClass022");
     });
 
@@ -649,7 +649,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom023', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<GenericClass023<int>>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName()).assertEqual("GenericClass023");
     });
 
@@ -663,7 +663,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom024', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<MultiGenericClass024<string, int>>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName()).assertEqual("MultiGenericClass024");
     });
 
@@ -677,7 +677,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom025', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<AbstractClass025>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.isAbstract()).assertTrue();
         expect(cls.getName()).assertEqual("AbstractClass025");
     });
@@ -692,7 +692,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom026', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<ConcreteClass026>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.isAbstract()).assertFalse();
     });
 
@@ -706,7 +706,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom027', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<FinalClass027>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.isFinal()).assertTrue();
         expect(cls.getName()).assertEqual("FinalClass027");
     });
@@ -721,7 +721,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom028', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<MyInterface028>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.isInterface()).assertTrue();
         expect(cls.getName()).assertEqual("MyInterface028");
     });
@@ -736,7 +736,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom029', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<GenericInterface029<int>>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.isInterface()).assertTrue();
     });
 
@@ -750,7 +750,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom030', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<ArrayLike<int>>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.isInterface()).assertTrue();
         expect(cls.getName()).assertEqual("std.core.ArrayLike");
     });
@@ -765,7 +765,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom031', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<JsonSerializable>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.isInterface()).assertTrue();
         expect(cls.getName()).assertEqual("std.core.JsonSerializable");
     });
@@ -780,7 +780,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom032', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<MultiInterfaceClass032>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         let interfaces = cls.getInterfaces();
         expect(interfaces.length).assertEqual(2);
     });
@@ -795,7 +795,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom033', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<TestEnum033>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.isEnum()).assertTrue();
         expect(cls.getName()).assertEqual("TestEnum033");
     });
@@ -810,7 +810,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom034', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<StringEnum034>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.isEnum()).assertTrue();
     });
 
@@ -824,7 +824,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom035', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<int | string>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.isUnion()).assertTrue();
         expect(cls.getName()).assertContain("{U");
     });
@@ -839,7 +839,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom036', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<int | string | boolean>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.isUnion()).assertTrue();
         let constituentTypes = cls.getUnionConstituentTypes()!;
         expect(constituentTypes.length).assertEqual(3);
@@ -855,7 +855,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom037', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<TypeA037 | TypeB037>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.isUnion()).assertTrue();
     });
 
@@ -869,7 +869,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom038', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<Array<double> | string>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.isUnion()).assertTrue();
         let constituentTypes = cls.getUnionConstituentTypes()!;
         expect(constituentTypes.length).assertEqual(2);
@@ -885,7 +885,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom039', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<Map<int, Array<string>>>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName()).assertEqual("std.core.Map");
     });
 
@@ -899,7 +899,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom040', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<Set<FixedArray<int>>>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName()).assertEqual("std.core.Set");
     });
 
@@ -913,7 +913,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom041', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<Object>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName()).assertEqual("std.core.Object");
     });
 
@@ -927,7 +927,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom042', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<Any>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
     });
 
     /**
@@ -941,7 +941,7 @@ export default function ClassFromTest(): void {
     it('testClassFrom043', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       // 首次访问，类未初始化
         let cls = Class.from<UninitializedClass043>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName()).assertEqual("UninitializedClass043");
     });
 
@@ -955,7 +955,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom044', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<boolean>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
     });
 
     /**
@@ -983,7 +983,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom046', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<Node046>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName()).assertEqual("Node046");
     });
 
@@ -997,7 +997,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom047', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<ConstrainedClass047<Item047ForConstrained>>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName()).assertEqual("ConstrainedClass047");
     });
 
@@ -1011,7 +1011,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom048', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<int | null>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.isUnion()).assertTrue();
     });
 
@@ -1025,7 +1025,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom049', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<MyClass049 | null>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.isUnion()).assertTrue();
     });
 
@@ -1039,7 +1039,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom050', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<int>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(typeof cls).assertEqual("object");
     });
 
@@ -1081,7 +1081,7 @@ export default function ClassFromTest(): void {
     it('testClassFrom053', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<ChildClass053>();
         let superCls = cls.getSuper();
-        expect(superCls != null).assertTrue();
+        expect(superCls !== null).assertTrue();
         expect(superCls!.getName()).assertEqual("std.core.Object");
     });
 
@@ -1110,7 +1110,7 @@ export default function ClassFromTest(): void {
     it('testClassFrom055', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<int>();
         let linker = cls.getLinker();
-        expect(linker != null).assertTrue();
+        expect(linker !== null).assertTrue();
     });
 
     /**
@@ -1341,7 +1341,7 @@ export default function ClassFromTest(): void {
     it('testClassFrom072', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<FixedArray<int>>();
         let componentType = cls.getFixedArrayComponentType();
-        expect(componentType != null).assertTrue();
+        expect(componentType !== null).assertTrue();
         expect(componentType!.getName()).assertEqual("i32");
     });
 
@@ -1369,7 +1369,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom074', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<Map<int, Map<string, Map<int, string>>>>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
     });
 
     /**
@@ -1382,7 +1382,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom075', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<MultiGeneric075<int, string, boolean, double, char>>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
     });
 
     /**
@@ -1487,7 +1487,7 @@ export default function ClassFromTest(): void {
         // let cls = Class.from("string");
         // 正确用法
         let cls = Class.from<string>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
     });
 
     /**
@@ -1500,7 +1500,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom083', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<void>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName()).assertEqual("void");
     });
 
@@ -1515,7 +1515,7 @@ export default function ClassFromTest(): void {
     it('testClassFrom084', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       // 首次from会触发初始化
         let cls = Class.from<LazyClass084>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(LazyClass084.value).assertEqual(100);
     });
 
@@ -1530,7 +1530,7 @@ export default function ClassFromTest(): void {
     it('testClassFrom085', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       expect(StaticInitClass085.initialized).assertFalse();
         let cls = Class.from<StaticInitClass085>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         // from可能触发初始化
     });
 
@@ -1544,7 +1544,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom086', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<never>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
     });
 
     /**
@@ -1557,7 +1557,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom087', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<Object>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
     });
 
     /**
@@ -1571,7 +1571,7 @@ export default function ClassFromTest(): void {
     it('testClassFrom088', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       for (let i = 0; i < 1000; i++) {
           let cls = Class.from<int>();
-          expect(cls != null).assertTrue();
+          expect(cls !== null).assertTrue();
           expect(cls.getName()).assertEqual("int");
         }
     });
@@ -1585,13 +1585,13 @@ export default function ClassFromTest(): void {
      * @tc.level Level 2
      */
     it('testClassFrom089', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      expect(Class.from<int>() != null).assertTrue();
-        expect(Class.from<string>() != null).assertTrue();
-        expect(Class.from<boolean>() != null).assertTrue();
-        expect(Class.from<double>() != null).assertTrue();
-        expect(Class.from<Array<int>>() != null).assertTrue();
-        expect(Class.from<Map<string, int>>() != null).assertTrue();
-        expect(Class.from<Set<double>>() != null).assertTrue();
+      expect(Class.from<int>() !== null).assertTrue();
+        expect(Class.from<string>() !== null).assertTrue();
+        expect(Class.from<boolean>() !== null).assertTrue();
+        expect(Class.from<double>() !== null).assertTrue();
+        expect(Class.from<Array<int>>() !== null).assertTrue();
+        expect(Class.from<Map<string, int>>() !== null).assertTrue();
+        expect(Class.from<Set<double>>() !== null).assertTrue();
     });
 
     /**
@@ -1635,12 +1635,12 @@ export default function ClassFromTest(): void {
     it('testClassFrom092', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       // from不需要实例
         let cls1 = Class.from<MyClass092>();
-        expect(cls1 != null).assertTrue();
+        expect(cls1 !== null).assertTrue();
         
         // of需要实例
         let obj = new MyClass092();
         let cls2 = Class.of(obj);
-        expect(cls2 != null).assertTrue();
+        expect(cls2 !== null).assertTrue();
         
         // 两者返回同一Class对象
         expect(cls1 === cls2).assertTrue();
@@ -1659,11 +1659,11 @@ export default function ClassFromTest(): void {
         
         // ofAny：运行时获取类型
         let cls1 = Class.ofAny(obj);
-        expect(cls1 != null).assertTrue();
+        expect(cls1 !== null).assertTrue();
         
         // from：编译时指定类型
         let cls2 = Class.from<Map<int, string>>();
-        expect(cls2 != null).assertTrue();
+        expect(cls2 !== null).assertTrue();
         
         // 结果相同
         expect(cls1!.getName() === cls2.getName()).assertTrue();
@@ -1679,7 +1679,7 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom094', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<Array<int>>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName()).assertEqual("std.core.Array");
     });
 
@@ -1699,7 +1699,7 @@ export default function ClassFromTest(): void {
         
         // 获取父类
         let superCls = cls.getSuper();
-        expect(superCls != null).assertTrue();
+        expect(superCls !== null).assertTrue();
         
         // 获取实例字段
         let fields = cls.getInstanceFields();
@@ -1728,12 +1728,12 @@ export default function ClassFromTest(): void {
      */
     it('testClassFrom096', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<GenericClass096<string, int>>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         expect(cls.getName()).assertEqual("GenericClass096");
         
         // 创建实例
         let obj = cls.createInstance() as GenericClass096<string, int>;
-        expect(obj != null).assertTrue();
+        expect(obj !== null).assertTrue();
     });
 
     /**
@@ -1778,6 +1778,7 @@ export default function ClassFromTest(): void {
       let manager = new PluginManager099();
         manager.register<PluginA099>(Class.from<PluginA099>());
         manager.executeAll();
+        expect(Class.from<PluginA099>().getName()).assertEqual("PluginA099");
     });
 
     /**
@@ -1791,7 +1792,7 @@ export default function ClassFromTest(): void {
     it('testClassFrom100', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       // 正确：返回Class对象
         let cls = Class.from<MyClass100>();
-        expect(cls != null).assertTrue();
+        expect(cls !== null).assertTrue();
         
         // 编译器确保类型正确
         let instance = cls.createInstance() as MyClass100;
@@ -1829,8 +1830,8 @@ export default function ClassFromTest(): void {
         
         let obj1 = createInstance102();
         let obj2 = createInstance102();
-        expect(obj1 != null).assertTrue();
-        expect(obj2 != null).assertTrue();
+        expect(obj1 !== null).assertTrue();
+        expect(obj2 !== null).assertTrue();
     });
 
     /**
@@ -1845,12 +1846,14 @@ export default function ClassFromTest(): void {
       // 不好的做法：循环中重复from
         for (let i = 0; i < 100; i++) {
           let cls = Class.from<MyClass103>(); // 每次都from
+          expect(cls.getName()).assertEqual("MyClass103");
         }
         
         // 好的做法：from一次，多次使用
         let cls = Class.from<MyClass103>();
         for (let i = 0; i < 100; i++) {
           let obj = cls.createInstance() as MyClass103;
+          expect(obj !== null).assertTrue();
         }
     });
 
@@ -1882,12 +1885,12 @@ export default function ClassFromTest(): void {
     it('testClassFrom105', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       // from：编译时已知类型
         let cls1 = Class.from<MyClass105>();
-        expect(cls1 != null).assertTrue();
+        expect(cls1 !== null).assertTrue();
         
         // ofAny：运行时获取类型
         let obj: Any = new MyClass105();
         let cls2 = Class.ofAny(obj);
-        expect(cls2 != null).assertTrue();
+        expect(cls2 !== null).assertTrue();
         
         // 结果一致
         expect(cls1 === cls2).assertTrue();

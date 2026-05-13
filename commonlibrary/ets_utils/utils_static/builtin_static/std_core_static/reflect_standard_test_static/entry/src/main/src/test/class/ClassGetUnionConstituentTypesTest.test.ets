@@ -66,7 +66,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
       (): void => {
         let cls = Class.from<int | string | Array<double>>();
         let types = asUnionConstituentTypes(cls.getUnionConstituentTypes() as Object);
-        expect(types != null).assertTrue();
+        expect(types !== null).assertTrue();
       });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_0200
@@ -80,7 +80,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
       (): void => {
         let cls = Class.from<int | string>();
         let types = asUnionConstituentTypes(cls.getUnionConstituentTypes() as Object);
-        expect(types != null).assertTrue();
+        expect(types !== null).assertTrue();
         expect(types.length).assertEqual(2);
       });
     /**
@@ -95,7 +95,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
       (): void => {
         let cls = Class.from<int | string | boolean>();
         let types = asUnionConstituentTypes(cls.getUnionConstituentTypes() as Object);
-        expect(types != null).assertTrue();
+        expect(types !== null).assertTrue();
         expect(types.length).assertEqual(3);
       });
     /**
@@ -396,7 +396,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
         for (let i = 0; i < types.length; i++) {
           let type = types[i];
           // 验证Class方法可用
-          expect(type.getName() != null).assertTrue();
+          expect(type.getName() !== null).assertTrue();
           expect(type.isPrimitive()).assertTrue(); // int和string都是原始类型
           // 对于基础类型，某些方法可能返回特定值
           if (type.getName() === 'i32' || type.getName() === 'std.core.Int') {
@@ -418,7 +418,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
       (): void => {
         let cls = Class.from<int | string>();
         let types = asUnionConstituentTypes(cls.getUnionConstituentTypes() as Object);
-        expect(types != null).assertTrue();
+        expect(types !== null).assertTrue();
       });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_1900
@@ -433,7 +433,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
         let cls = Class.from<int | string>();
         // 通常不需要initialize即可获取联合类型信息
         let types = asUnionConstituentTypes(cls.getUnionConstituentTypes() as Object);
-        expect(types != null).assertTrue();
+        expect(types !== null).assertTrue();
       });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_2000
@@ -463,7 +463,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
         // 不需要await
         let cls = Class.from<int | string>();
         let types = asUnionConstituentTypes(cls.getUnionConstituentTypes() as Object); // 同步调用
-        expect(types != null).assertTrue();
+        expect(types !== null).assertTrue();
       });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_2200
@@ -627,7 +627,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
         let cls1 = Class.from<int | string>();
         expect(cls1.isUnion()).assertTrue();
         let types1 = cls1.getUnionConstituentTypes();
-        expect(types1 != null).assertTrue();
+        expect(types1 !== null).assertTrue();
         let cls2 = Class.from<int>();
         expect(cls2.isUnion()).assertFalse();
         let types2 = cls2.getUnionConstituentTypes();
