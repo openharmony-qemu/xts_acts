@@ -125,7 +125,7 @@ export default function geolocationTest_geo8() {
             console.info('afterAll case');
             await changedLocationMode();
             done();
-        })
+        });
 
 
 
@@ -534,13 +534,13 @@ export default function geolocationTest_geo8() {
                     }
                     done();
                 }).catch((err) => {
-                    console.info('[lbs_js] SUB_Location_findMatchingWlan_promiss_0100 error: ' + JSON.stringify(err));
+                    console.info('[lbs_js] SUB_Location_findMatchingWlan_promiss_0100 err: ' + JSON.stringify(err));
                     expect(err.code === 801).assertTrue();
                     done();
                 });
             } catch (error) {
-                console.info('[lbs_js] SUB_Location_findMatchingWlan_promiss_0100 try err: ' + JSON.stringify(error));
-                expect(err.code === 801).assertTrue();
+                console.info('[lbs_js] SUB_Location_findMatchingWlan_promiss_0100 try error: ' + JSON.stringify(error));
+                expect(error.code === 801).assertTrue();
                 done();
             }
         });
@@ -634,7 +634,7 @@ export default function geolocationTest_geo8() {
                 expect(error.code === 801).assertTrue();
                 done();
             }
-        })
+        });
 
         /**
      * @tc.name   SUB_Location_findMatchingWlan_promiss_0500
@@ -676,8 +676,8 @@ export default function geolocationTest_geo8() {
             expect().assertFail()
             done();
         }
-    })
+    });
 
-    })
+    });
 }
 
