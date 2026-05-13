@@ -1962,3 +1962,413 @@ export default function FieldInitializationTestThree(): void {
       expect(a.field instanceof string).assertTrue()
       expect(a.field).assertEqual("efg")
     })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0373
+     * @tc.name      testFieldInit0373
+     * @tc.desc      Checking for initialization from constructor.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0373", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F373 = new A_F373()
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'a')
+      a.field = c'b'
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'b')
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0374
+     * @tc.name      testFieldInit0374
+     * @tc.desc      Checking for initialization from constructor.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0374", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F374 = new A_F374()
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(false)
+      a.field = true
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(true)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0375
+     * @tc.name      testFieldInit0375
+     * @tc.desc      Checking for initialization from constructor.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0375", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F375 = new A_F375()
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0376
+     * @tc.name      testFieldInit0376
+     * @tc.desc      Checking for initialization from constructor.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0376", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F376 = new A_F376()
+      expect(a.field instanceof Object | undefined).assertTrue()
+      expect(a.field).assertEqual(undefined)
+      a.field = 5
+      expect(a.field instanceof Object | undefined).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0377
+     * @tc.name      testFieldInit0377
+     * @tc.desc      Checking for initialization from constructor.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0377", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F377 = new A_F377()
+      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0378
+     * @tc.name      testFieldInit0378
+     * @tc.desc      Checking for initialization from constructor.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0378", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F378 = new A_F378()
+      expect(a.field instanceof Any).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof Any).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0379
+     * @tc.name      testFieldInit0379
+     * @tc.desc      Checking for initialization from constructor.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0379", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F379 = new A_F379()
+      expect(a.field instanceof long).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof long).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0380
+     * @tc.name      testFieldInit0380
+     * @tc.desc      Checking for initialization from constructor.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0380", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F380 = new A_F380()
+      expect(a.field instanceof int).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof int).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0381
+     * @tc.name      testFieldInit0381
+     * @tc.desc      Checking for initialization from constructor.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0381", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F381 = new A_F381()
+      expect(a.field instanceof byte).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof byte).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0382
+     * @tc.name      testFieldInit0382
+     * @tc.desc      Checking for initialization from constructor.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0382", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F382 = new A_F382()
+      expect(a.field instanceof short).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof short).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0383
+     * @tc.name      testFieldInit0383
+     * @tc.desc      Checking for initialization from constructor.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0383", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F383 = new A_F383()
+      expect(a.field instanceof double).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 7.3
+      expect(a.field instanceof double).assertTrue()
+      expect(a.field).assertEqual(7.3)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0384
+     * @tc.name      testFieldInit0384
+     * @tc.desc      Checking for initialization from constructor.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0384", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F384 = new A_F384()
+      expect(a.field instanceof number).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof number).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0385
+     * @tc.name      testFieldInit0385
+     * @tc.desc      Checking for initialization from constructor.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0385", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F385 = new A_F385()
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(4.5f)
+      a.field = 7.3f
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(7.3f)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0386
+     * @tc.name      testFieldInit0386
+     * @tc.desc      Checking for initialization from constructor.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0386", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F386 = new A_F386()
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(4n)
+      a.field = 5n
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(5n)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0387
+     * @tc.name      testFieldInit0387
+     * @tc.desc      Checking for initialization from constructor.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0387", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F387 = new A_F387()
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("abc")
+      a.field = "efg"
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("efg")
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0388
+     * @tc.name      testFieldInit0388
+     * @tc.desc      Checking for initialization from constructor.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0388", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F388 = new A_F388()
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'a')
+      a.field = c'b'
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'b')
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0389
+     * @tc.name      testFieldInit0389
+     * @tc.desc      Checking for initialization from constructor.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0389", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F389 = new A_F389()
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(false)
+      a.field = true
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(true)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0390
+     * @tc.name      testFieldInit0390
+     * @tc.desc      Checking for initialization from constructor.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0390", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F390 = new A_F390()
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0391
+     * @tc.name      testFieldInit0391
+     * @tc.desc      Checking for initialization from constructor.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0391", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F391 = new A_F391()
+      expect(a.field instanceof Object | undefined).assertTrue()
+      expect(a.field).assertEqual(undefined)
+      a.field = 5
+      expect(a.field instanceof Object | undefined).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0392
+     * @tc.name      testFieldInit0392
+     * @tc.desc      Checking for initialization from constructor.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0392", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F392 = new A_F392()
+      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0393
+     * @tc.name      testFieldInit0393
+     * @tc.desc      Checking for initialization from constructor.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0393", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F393 = new A_F393()
+      expect(a.field instanceof Any).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof Any).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0394
+     * @tc.name      testFieldInit0394
+     * @tc.desc      Checking for initialization from constructor.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0394", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F394 = new A_F394()
+      expect(a.field instanceof long).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof long).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0395
+     * @tc.name      testFieldInit0395
+     * @tc.desc      Checking for initialization from constructor.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0395", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F395 = new A_F395()
+      expect(a.field instanceof int).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof int).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0396
+     * @tc.name      testFieldInit0396
+     * @tc.desc      Checking for initialization from constructor.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0396", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F396 = new A_F396()
+      expect(a.field instanceof byte).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof byte).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+  })
+}
