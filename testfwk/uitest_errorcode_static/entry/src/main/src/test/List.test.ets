@@ -17,10 +17,12 @@ import uitestDriverErrorTest from './UitestDriverErrorCode.test'
 import uitestUiWindowErrorTest from './UitestUiWindowErrorCode.test'
 import uitest_Api22ErrorTest from './UitestApi22ErrorCode.test'
 import uitestAPI20ErrorCode from './UitestAPI20ErrorCode.test'
-export default function testsuite() {
+import uitestApi26ErrorTest from './UitestApi26ErrorCode.test'
+export default function testsuite(): void {
   uitest_Api22ErrorTest();
   uitestAPI20ErrorCode();
   uitestComponentErrorTest();
   uitestDriverErrorTest();
   uitestUiWindowErrorTest();
+  uitestApi26ErrorTest();
 }
