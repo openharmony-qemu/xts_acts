@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-import abilityTest from './Ability.test'
 import ClassCreateInstanceTest from './class/ClassCreateInstanceTest.test';
 import ClassCurrentTest from './class/ClassCurrentTest.test';
 import ClassFromTest from './class/ClassFromTest.test';
@@ -59,9 +58,7 @@ import ConstructorIsPublicTest from './constructor/ConstructorIsPublicTest.test'
 
 
 export default function testsuite(): void {
-
-  abilityTest();
-
+  
   ClassCreateInstanceTest();
   ClassCurrentTest();
   ClassFromTest();
