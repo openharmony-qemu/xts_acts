@@ -76,7 +76,7 @@ export default function ReuseV2Test0030() {
       for (let index = 0; index < 2; index++) {
         let btn = await driver.findComponent(ON.id("btnReuseV20030Change"));
         await (btn?.click() as Promise<void>);
-        await CommonFunc.sleep(1000);
+        await CommonFunc.sleep(5000);
       }
       let obj1 = JSON.parseJsonElement(inspector.getInspectorByKey('tvChildReuseV20030'));
       console.info("[ReuseV2Test0030_001] component obj1 is: " + JSON.stringify(obj1));
