@@ -78,6 +78,8 @@ void addColorSpaceNameTest(std::vector<napi_property_descriptor>& descData)
         nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"OHCreateColorSpaceFromNameCUSTOM", nullptr, OHCreateColorSpaceFromNameCUSTOM,
         nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"OHCreateColorSpaceFromNameADOBERGB", nullptr, OHCreateColorSpaceFromNameADOBERGB,
+        nullptr, nullptr, nullptr, napi_default, nullptr});
 }
 napi_value OHCreateColorSpaceFromNameDCIP3(napi_env env, napi_callback_info info)
 {
@@ -408,6 +410,18 @@ napi_value OHCreateColorSpaceFromNameCUSTOM(napi_env env, napi_callback_info inf
     napi_value result = nullptr;
     OH_NativeColorSpaceManager *nativeColorSpace = nullptr;
     ColorSpaceName colorSpaceName = ColorSpaceName::CUSTOM;
+    nativeColorSpace = OH_NativeColorSpaceManager_CreateFromName(colorSpaceName);
+    colorSpaceName = static_cast<ColorSpaceName>(OH_NativeColorSpaceManager_GetColorSpaceName(nativeColorSpace));
+    OH_NativeColorSpaceManager_Destroy(nativeColorSpace);
+    napi_create_int32(env, colorSpaceName, &result);
+    return result;
+}
+
+napi_value OHCreateColorSpaceFromNameADOBERGB(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_NativeColorSpaceManager *nativeColorSpace = nullptr;
+    ColorSpaceName colorSpaceName = ColorSpaceName::ADOBE_RGB;
     nativeColorSpace = OH_NativeColorSpaceManager_CreateFromName(colorSpaceName);
     colorSpaceName = static_cast<ColorSpaceName>(OH_NativeColorSpaceManager_GetColorSpaceName(nativeColorSpace));
     OH_NativeColorSpaceManager_Destroy(nativeColorSpace);
