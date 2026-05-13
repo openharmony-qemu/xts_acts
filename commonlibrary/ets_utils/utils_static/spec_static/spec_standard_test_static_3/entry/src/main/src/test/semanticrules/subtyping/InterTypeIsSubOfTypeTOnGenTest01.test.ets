@@ -1,0 +1,1146 @@
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
+  from '../../../../../hypium/index';
+async function sleep(time: int): Promise<int> {
+  return new Promise<int>((resolve, reject) => {
+    setTimeout(() => {
+      resolve(0);
+    }, time);
+  });
+}
+class Neg<T extends number> {
+  constructor (x: T) {}
+}
+
+class Pos<T extends number> {
+  constructor (x: T) {}
+}
+
+namespace testNS1_3 {
+  abstract class A_3<U, V> {}
+  abstract class B1_3<U, V> extends A_3<U, V> {}
+  class B2_3<U=bigint, V=undefined> extends A_3<U, V> {
+    b2_v: U | V
+    constructor (p: U | V) {
+      this.b2_v = p
+    }
+  }
+  class C1_3<U = int, V = null> extends B1_3<U, V> {
+    c1_v: U | V
+    constructor (p: U | V) {
+      this.c1_v = p
+    }
+  }
+  class C2_3<U = number, V = string> extends B1_3<U, V> {
+    c2_v: U | V
+    constructor (p: U | V) {
+      this.c2_v = p
+    }
+  }
+  class Other_3<T = string> {
+    other_v: T
+    constructor (p: T) {
+      this.other_v = p
+    }
+  }
+  function check_C1_3(a: Any) {
+    expect(a instanceof C1_3).assertTrue()
+    expect((a as C1_3).c1_v as int).assertEqual(321)
+  }
+  function check_C2_3(a: Any) {
+    expect(a instanceof C2_3).assertTrue()
+    expect((a as C2_3).c2_v as number).assertEqual(6.7)
+  }
+  function check_B2_3(a: Any) {
+    expect(a instanceof B2_3).assertTrue()
+    expect((a as B2_3).b2_v as bigint).assertEqual(123n)
+  }
+  function check_Other_3(a: Any) {
+    expect(a instanceof Other_3).assertTrue()
+    expect((a as Other_3).other_v as string).assertEqual("other")
+  }
+  function check_bigint_3(a: Any) {
+    expect(a instanceof bigint).assertTrue()
+    expect(a as bigint).assertEqual(5n)
+  }
+  function check_value_3(v: Any, v_id: int): void {
+    if (v_id == 1) {
+      check_C1_3(v)
+      check_C1_3(v as C1_3 | C2_3| B2_3 | Other_3)
+      check_C1_3(v as B1_3<int, null> | B1_3<number, string> | Other_3 | bigint)
+    }
+    else if (v_id == 2) {
+      check_B2_3(v)
+      check_B2_3(v as C1_3 | C2_3| B2_3 | Other_3)
+    }
+    else {
+      check_bigint_3(v)
+      check_bigint_3(v as B1_3<int, null> | B1_3<number, string> | Other_3 | bigint)
+    }
+  }
+  function check_value_as_type_T_3(v: C1_3 | C2_3 | B2_3 | Other_3 | number, v_id: int): void {
+    expect(v instanceof C1_3 | C2_3 | B2_3 | Other_3 ||
+      v instanceof B1_3 | Other_3 | bigint).assertTrue()
+    check_value_3(v, v_id)
+  }
+  function check_is_in_T_type_3(v: C1_3 | C2_3| B2_3 | Other_3 | B1_3<int, null> | B1_3<number, string> | Other_3 | bigint,
+    v_id: int): boolean {
+    check_value_3(v, v_id)
+    if (v instanceof C1_3 | C2_3 | B2_3 | Other_3) {
+      check_value_3(v, v_id)
+      if (v instanceof B1_3 | Other_3 | bigint) {
+        expect(v_id).assertEqual(1)
+        check_value_3(v, v_id)
+        expect(v instanceof C1_3 | C2_3 | B2_3 | Other_3).assertTrue()
+        expect(v instanceof C1_3 | C2_3 | B2_3 | Other_3 | number).assertTrue()
+        if (v instanceof C1_3 | C2_3 | B2_3 | Other_3 | number) {
+          check_value_as_type_T_3(v as C1_3 | C2_3 | B2_3 | Other_3 | number, v_id)
+          return true
+        } else {
+          return false
+        }
+      }
+      else {
+        expect(v_id).assertEqual(2)
+        check_value_3(v, v_id)
+        if (v instanceof C1_3 | C2_3 | B2_3 | Other_3 | number) {
+          check_value_as_type_T_3(v as C1_3 | C2_3 | B2_3 | Other_3 | number, v_id)
+          return true
+        } else {
+          return false
+        }
+      }
+    }
+    else {
+      expect(v_id).assertEqual(3)
+      check_value_3(v, v_id)
+      if (v instanceof C1_3 | C2_3 | B2_3 | Other_3 | number) {
+        check_value_as_type_T_3(v as C1_3 | C2_3 | B2_3 | Other_3 | number, v_id)
+        return true
+      } else {
+        return false
+      }
+    }
+  }
+
+  export function runTest_3(): boolean {
+    let res1: boolean = check_is_in_T_type_3(
+      new C1_3(321), 1)
+    let res2: boolean = check_is_in_T_type_3(
+      new B2_3(123n), 2)
+    let res3: boolean = check_is_in_T_type_3(
+      5n, 3)
+    expect(res1 && (res2 || res3)).assertTrue()
+    return true
+  }
+}
+
+namespace testNS2_3 {
+  abstract class A_3<U, V> {}
+  abstract class B1_3<U, V> extends A_3<U, V> {}
+  class B2_3<U=bigint, V=undefined> extends A_3<U, V> {
+    b2_v: U | V
+    constructor (p: U | V) {
+      this.b2_v = p
+    }
+  }
+  class C1_3<U = int, V = null> extends B1_3<U, V> {
+    c1_v: U | V
+    constructor (p: U | V) {
+      this.c1_v = p
+    }
+  }
+  class C2_3<U = number, V = string> extends B1_3<U, V> {
+    c2_v: U | V
+    constructor (p: U | V) {
+      this.c2_v = p
+    }
+  }
+  class Other_3<T = string> {
+    other_v: T
+    constructor (p: T) {
+      this.other_v = p
+    }
+  }
+  function check_C1_3(a: Any) {
+    expect(a instanceof C1_3).assertTrue()
+    expect((a as C1_3).c1_v as int).assertEqual(321)
+  }
+  function check_C2_3(a: Any) {
+    expect(a instanceof C2_3).assertTrue()
+    expect((a as C2_3).c2_v as number).assertEqual(6.7)
+  }
+  function check_B2_3(a: Any) {
+    expect(a instanceof B2_3).assertTrue()
+    expect((a as B2_3).b2_v as bigint).assertEqual(123n)
+  }
+  function check_Other_3(a: Any) {
+    expect(a instanceof Other_3).assertTrue()
+    expect((a as Other_3).other_v as string).assertEqual("other")
+  }
+  function check_bigint_3(a: Any) {
+    expect(a instanceof bigint).assertTrue()
+    expect(a as bigint).assertEqual(5n)
+  }
+  function check_value_3(v: Any, v_id: int): void {
+    if (v_id == 1) {
+      check_C2_3(v)
+      check_C2_3(v as C1_3 | C2_3| B2_3 | Other_3)
+      check_C2_3(v as B1_3<int, null> | B1_3<number, string> | Other_3 | bigint)
+    }
+    else if (v_id == 2) {
+      check_B2_3(v)
+      check_B2_3(v as C1_3 | C2_3| B2_3 | Other_3)
+    }
+    else {
+      check_bigint_3(v)
+      check_bigint_3(v as B1_3<int, null> | B1_3<number, string> | Other_3 | bigint)
+    }
+  }
+  function check_value_as_type_T_3(v: B1_3<int, null> | B1_3<number, string> | B2_3 | Other_3, v_id: int): void {
+    expect(v instanceof C1_3 | C2_3 | B2_3 | Other_3 ||
+      v instanceof B1_3 | Other_3 | bigint).assertTrue()
+    check_value_3(v, v_id)
+  }
+  function check_is_in_T_type_3(v: C1_3 | C2_3| B2_3 | Other_3 | B1_3<int, null> | B1_3<number, string> | Other_3 | bigint,
+    v_id: int): boolean {
+    check_value_3(v, v_id)
+    if (v instanceof C1_3 | C2_3 | B2_3 | Other_3) {
+      check_value_3(v, v_id)
+      if (v instanceof B1_3 | Other_3 | bigint) {
+        expect(v_id).assertEqual(1)
+        check_value_3(v, v_id)
+        expect(v instanceof C1_3 | C2_3 | B2_3 | Other_3).assertTrue()
+        expect(v instanceof B1_3 | B2_3 | Other_3).assertTrue()
+        if (v instanceof B1_3 | B2_3 | Other_3) {
+          check_value_as_type_T_3(v as B1_3<int, null> | B1_3<number, string> | B2_3 | Other_3, v_id)
+          return true
+        } else {
+          return false
+        }
+      }
+      else {
+        expect(v_id).assertEqual(2)
+        check_value_3(v, v_id)
+        if (v instanceof B1_3 | B2_3 | Other_3) {
+          check_value_as_type_T_3(v as B1_3<int, null> | B1_3<number, string> | B2_3 | Other_3, v_id)
+          return true
+        } else {
+          return false
+        }
+      }
+    }
+    else {
+      expect(v_id).assertEqual(3)
+      check_value_3(v, v_id)
+      if (v instanceof B1_3 | B2_3 | Other_3) {
+        check_value_as_type_T_3(v as B1_3<int, null> | B1_3<number, string> | B2_3 | Other_3, v_id)
+        return true
+      } else {
+        return false
+      }
+    }
+  }
+
+  export function runTest_3(): boolean {
+    let res1: boolean = check_is_in_T_type_3(
+      new C2_3(6.7), 1)
+    let res2: boolean = check_is_in_T_type_3(
+      new B2_3(123n), 2)
+    let res3: boolean = check_is_in_T_type_3(
+      5n, 3)
+    expect(res1 && (res2 || res3)).assertTrue()
+    return true
+  }
+}
+
+namespace testNS3_3 {
+  abstract class A_3<U, V> {}
+  abstract class B1_3<U, V> extends A_3<U, V> {}
+  class B2_3<U=bigint, V=undefined> extends A_3<U, V> {
+    b2_v: U | V
+    constructor (p: U | V) {
+      this.b2_v = p
+    }
+  }
+  class C1_3<U = int, V = null> extends B1_3<U, V> {
+    c1_v: U | V
+    constructor (p: U | V) {
+      this.c1_v = p
+    }
+  }
+  class C2_3<U = number, V = string> extends B1_3<U, V> {
+    c2_v: U | V
+    constructor (p: U | V) {
+      this.c2_v = p
+    }
+  }
+  class Other_3<T = string> {
+    other_v: T
+    constructor (p: T) {
+      this.other_v = p
+    }
+  }
+  function check_C1_3(a: Any) {
+    expect(a instanceof C1_3).assertTrue()
+    expect((a as C1_3).c1_v as int).assertEqual(321)
+  }
+  function check_C2_3(a: Any) {
+    expect(a instanceof C2_3).assertTrue()
+    expect((a as C2_3).c2_v as number).assertEqual(6.7)
+  }
+  function check_B2_3(a: Any) {
+    expect(a instanceof B2_3).assertTrue()
+    expect((a as B2_3).b2_v as bigint).assertEqual(123n)
+  }
+  function check_Other_3(a: Any) {
+    expect(a instanceof Other_3).assertTrue()
+    expect((a as Other_3).other_v as string).assertEqual("other")
+  }
+  function check_bigint_3(a: Any) {
+    expect(a instanceof bigint).assertTrue()
+    expect(a as bigint).assertEqual(5n)
+  }
+  function check_value_3(v: Any, v_id: int): void {
+    if (v_id == 1) {
+      check_Other_3(v)
+      check_Other_3(v as C1_3 | C2_3| B2_3 | Other_3)
+      check_Other_3(v as B1_3<int, null> | B1_3<number, string> | Other_3 | bigint)
+    }
+    else if (v_id == 2) {
+      check_B2_3(v)
+      check_B2_3(v as C1_3 | C2_3| B2_3 | Other_3)
+    }
+    else {
+      check_bigint_3(v)
+      check_bigint_3(v as B1_3<int, null> | B1_3<number, string> | Other_3 | bigint)
+    }
+  }
+  function check_value_as_type_T_3(v: A_3<int, null> | A_3<number, string> | A_3<bigint, undefined> | Other_3, v_id: int): void {
+    expect(v instanceof C1_3 | C2_3 | B2_3 | Other_3 ||
+      v instanceof B1_3 | Other_3 | bigint).assertTrue()
+    check_value_3(v, v_id)
+  }
+  function check_is_in_T_type_3(v: C1_3 | C2_3| B2_3 | Other_3 | B1_3<int, null> | B1_3<number, string> | Other_3 | bigint,
+    v_id: int): boolean {
+    check_value_3(v, v_id)
+    if (v instanceof C1_3 | C2_3 | B2_3 | Other_3) {
+      check_value_3(v, v_id)
+      if (v instanceof B1_3 | Other_3 | bigint) {
+        expect(v_id).assertEqual(1)
+        check_value_3(v, v_id)
+        expect(v instanceof C1_3 | C2_3 | B2_3 | Other_3).assertTrue()
+        expect(v instanceof A_3 | Other_3).assertTrue()
+        if (v instanceof A_3 | Other_3) {
+          check_value_as_type_T_3(v as A_3<int, null> | A_3<number, string> | A_3<bigint, undefined> | Other_3, v_id)
+          return true
+        } else {
+          return false
+        }
+      }
+      else {
+        expect(v_id).assertEqual(2)
+        check_value_3(v, v_id)
+        if (v instanceof A_3 | Other_3) {
+          check_value_as_type_T_3(v as A_3<int, null> | A_3<number, string> | A_3<bigint, undefined> | Other_3, v_id)
+          return true
+        } else {
+          return false
+        }
+      }
+    }
+    else {
+      expect(v_id).assertEqual(3)
+      check_value_3(v, v_id)
+      if (v instanceof A_3 | Other_3) {
+        check_value_as_type_T_3(v as A_3<int, null> | A_3<number, string> | A_3<bigint, undefined> | Other_3, v_id)
+        return true
+      } else {
+        return false
+      }
+    }
+  }
+
+  export function runTest_3(): boolean {
+    let res1: boolean = check_is_in_T_type_3(
+      new Other_3("other"), 1)
+    let res2: boolean = check_is_in_T_type_3(
+      new B2_3(123n), 2)
+    let res3: boolean = check_is_in_T_type_3(
+      5n, 3)
+    expect(res1 && (res2 || res3)).assertTrue()
+    return true
+  }
+}
+
+namespace testNS4_3 {
+  abstract class A_3<U, V> {}
+  abstract class B1_3<U, V> extends A_3<U, V> {}
+  class B2_3<U=bigint, V=undefined> extends A_3<U, V> {
+    b2_v: U | V
+    constructor (p: U | V) {
+      this.b2_v = p
+    }
+  }
+  class C1_3<U = int, V = null> extends B1_3<U, V> {
+    c1_v: U | V
+    constructor (p: U | V) {
+      this.c1_v = p
+    }
+  }
+  class C2_3<U = number, V = string> extends B1_3<U, V> {
+    c2_v: U | V
+    constructor (p: U | V) {
+      this.c2_v = p
+    }
+  }
+  class Other_3<T = string> {
+    other_v: T
+    constructor (p: T) {
+      this.other_v = p
+    }
+  }
+  function check_C1_3(a: Any) {
+    expect(a instanceof C1_3).assertTrue()
+    expect((a as C1_3).c1_v as int).assertEqual(321)
+  }
+  function check_C2_3(a: Any) {
+    expect(a instanceof C2_3).assertTrue()
+    expect((a as C2_3).c2_v as number).assertEqual(6.7)
+  }
+  function check_B2_3(a: Any) {
+    expect(a instanceof B2_3).assertTrue()
+    expect((a as B2_3).b2_v as bigint).assertEqual(123n)
+  }
+  function check_Other_3(a: Any) {
+    expect(a instanceof Other_3).assertTrue()
+    expect((a as Other_3).other_v as string).assertEqual("other")
+  }
+  function check_bigint_3(a: Any) {
+    expect(a instanceof bigint).assertTrue()
+    expect(a as bigint).assertEqual(5n)
+  }
+  function check_value_3(v: Any, v_id: int): void {
+    if (v_id == 1) {
+      check_C1_3(v)
+      check_C1_3(v as C1_3 | C2_3| B2_3 | Other_3)
+      check_C1_3(v as B1_3<int, null> | B1_3<number, string> | Other_3 | bigint)
+    }
+    else if (v_id == 2) {
+      check_B2_3(v)
+      check_B2_3(v as C1_3 | C2_3| B2_3 | Other_3)
+    }
+    else {
+      check_bigint_3(v)
+      check_bigint_3(v as B1_3<int, null> | B1_3<number, string> | Other_3 | bigint)
+    }
+  }
+  function check_value_as_type_T_3(v: B1_3<int, null> | B1_3<number, string> | Other_3 | bigint | number, v_id: int): void {
+    expect(v instanceof C1_3 | C2_3 | B2_3 | Other_3 ||
+      v instanceof B1_3 | Other_3 | bigint).assertTrue()
+    check_value_3(v, v_id)
+  }
+  function check_is_in_T_type_3(v: C1_3 | C2_3| B2_3 | Other_3 | B1_3<int, null> | B1_3<number, string> | Other_3 | bigint,
+    v_id: int): boolean {
+    check_value_3(v, v_id)
+    if (v instanceof C1_3 | C2_3 | B2_3 | Other_3) {
+      check_value_3(v, v_id)
+      if (v instanceof B1_3 | Other_3 | bigint) {
+        expect(v_id).assertEqual(1)
+        check_value_3(v, v_id)
+        expect(v instanceof C1_3 | C2_3 | B2_3 | Other_3).assertTrue()
+        expect(v instanceof B1_3 | Other_3 | bigint | number).assertTrue()
+        if (v instanceof B1_3 | Other_3 | bigint | number) {
+          check_value_as_type_T_3(v as B1_3<int, null> | B1_3<number, string> | Other_3 | bigint | number, v_id)
+          return true
+        } else {
+          return false
+        }
+      }
+      else {
+        expect(v_id).assertEqual(2)
+        check_value_3(v, v_id)
+        if (v instanceof B1_3 | Other_3 | bigint | number) {
+          check_value_as_type_T_3(v as B1_3<int, null> | B1_3<number, string> | Other_3 | bigint | number, v_id)
+          return true
+        } else {
+          return false
+        }
+      }
+    }
+    else {
+      expect(v_id).assertEqual(3)
+      check_value_3(v, v_id)
+      if (v instanceof B1_3 | Other_3 | bigint | number) {
+        check_value_as_type_T_3(v as B1_3<int, null> | B1_3<number, string> | Other_3 | bigint | number, v_id)
+        return true
+      } else {
+        return false
+      }
+    }
+  }
+
+  export function runTest_3(): boolean {
+    let res1: boolean = check_is_in_T_type_3(
+      new C1_3(321), 1)
+    let res2: boolean = check_is_in_T_type_3(
+      new B2_3(123n), 2)
+    let res3: boolean = check_is_in_T_type_3(
+      5n, 3)
+    expect(res1 && (res2 || res3)).assertTrue()
+    return true
+  }
+}
+
+namespace testNS5_3 {
+  abstract class A_3<U, V> {}
+  abstract class B1_3<U, V> extends A_3<U, V> {}
+  class B2_3<U=bigint, V=undefined> extends A_3<U, V> {
+    b2_v: U | V
+    constructor (p: U | V) {
+      this.b2_v = p
+    }
+  }
+  class C1_3<U = int, V = null> extends B1_3<U, V> {
+    c1_v: U | V
+    constructor (p: U | V) {
+      this.c1_v = p
+    }
+  }
+  class C2_3<U = number, V = string> extends B1_3<U, V> {
+    c2_v: U | V
+    constructor (p: U | V) {
+      this.c2_v = p
+    }
+  }
+  class Other_3<T = string> {
+    other_v: T
+    constructor (p: T) {
+      this.other_v = p
+    }
+  }
+  function check_C1_3(a: Any) {
+    expect(a instanceof C1_3).assertTrue()
+    expect((a as C1_3).c1_v as int).assertEqual(321)
+  }
+  function check_C2_3(a: Any) {
+    expect(a instanceof C2_3).assertTrue()
+    expect((a as C2_3).c2_v as number).assertEqual(6.7)
+  }
+  function check_B2_3(a: Any) {
+    expect(a instanceof B2_3).assertTrue()
+    expect((a as B2_3).b2_v as bigint).assertEqual(123n)
+  }
+  function check_Other_3(a: Any) {
+    expect(a instanceof Other_3).assertTrue()
+    expect((a as Other_3).other_v as string).assertEqual("other")
+  }
+  function check_bigint_3(a: Any) {
+    expect(a instanceof bigint).assertTrue()
+    expect(a as bigint).assertEqual(5n)
+  }
+  function check_value_3(v: Any, v_id: int): void {
+    if (v_id == 1) {
+      check_C2_3(v)
+      check_C2_3(v as C1_3 | C2_3| B2_3 | Other_3)
+      check_C2_3(v as B1_3<int, null> | B1_3<number, string> | Other_3 | bigint)
+    }
+    else if (v_id == 2) {
+      check_B2_3(v)
+      check_B2_3(v as C1_3 | C2_3| B2_3 | Other_3)
+    }
+    else {
+      check_bigint_3(v)
+      check_bigint_3(v as B1_3<int, null> | B1_3<number, string> | Other_3 | bigint)
+    }
+  }
+  function check_value_as_type_T_3(v: A_3<int, null> | A_3<number, string> | Other_3 | bigint, v_id: int): void {
+    expect(v instanceof C1_3 | C2_3 | B2_3 | Other_3 ||
+      v instanceof B1_3 | Other_3 | bigint).assertTrue()
+    check_value_3(v, v_id)
+  }
+  function check_is_in_T_type_3(v: C1_3 | C2_3| B2_3 | Other_3 | B1_3<int, null> | B1_3<number, string> | Other_3 | bigint,
+    v_id: int): boolean {
+    check_value_3(v, v_id)
+    if (v instanceof C1_3 | C2_3 | B2_3 | Other_3) {
+      check_value_3(v, v_id)
+      if (v instanceof B1_3 | Other_3 | bigint) {
+        expect(v_id).assertEqual(1)
+        check_value_3(v, v_id)
+        expect(v instanceof C1_3 | C2_3 | B2_3 | Other_3).assertTrue()
+        expect(v instanceof A_3 | Other_3 | bigint).assertTrue()
+        if (v instanceof A_3 | Other_3 | bigint) {
+          check_value_as_type_T_3(v as A_3<int, null> | A_3<number, string> | Other_3 | bigint, v_id)
+          return true
+        } else {
+          return false
+        }
+      }
+      else {
+        expect(v_id).assertEqual(2)
+        check_value_3(v, v_id)
+        if (v instanceof A_3 | Other_3 | bigint) {
+          check_value_as_type_T_3(v as A_3<int, null> | A_3<number, string> | Other_3 | bigint, v_id)
+          return true
+        } else {
+          return false
+        }
+      }
+    }
+    else {
+      expect(v_id).assertEqual(3)
+      check_value_3(v, v_id)
+      if (v instanceof A_3 | Other_3 | bigint) {
+        check_value_as_type_T_3(v as A_3<int, null> | A_3<number, string> | Other_3 | bigint, v_id)
+        return true
+      } else {
+        return false
+      }
+    }
+  }
+
+  export function runTest_3(): boolean {
+    let res1: boolean = check_is_in_T_type_3(
+      new C2_3(6.7), 1)
+    let res2: boolean = check_is_in_T_type_3(
+      new B2_3(123n), 2)
+    let res3: boolean = check_is_in_T_type_3(
+      5n, 3)
+    expect(res1 && (res2 || res3)).assertTrue()
+    return true
+  }
+}
+
+abstract class A_3<U, V> {}
+abstract class B1_3<U, V> extends A_3<U, V> {}
+class B2_3<U=bigint, V=undefined> extends A_3<U, V> {
+  b2_v: U | V
+  constructor (p: U | V) {
+    this.b2_v = p
+  }
+}
+class C1_3<U = int, V = null> extends B1_3<U, V> {
+  c1_v: U | V
+  constructor (p: U | V) {
+    this.c1_v = p
+  }
+}
+class C2_3<U = number, V = string> extends B1_3<U, V> {
+  c2_v: U | V
+  constructor (p: U | V) {
+    this.c2_v = p
+  }
+}
+class Other_3<T = string> {
+  other_v: T
+  constructor (p: T) {
+    this.other_v = p
+  }
+}
+function check_C1_3(a: Any) {
+  expect(a instanceof C1_3).assertTrue()
+  expect((a as C1_3).c1_v as int).assertEqual(321)
+}
+function check_C2_3(a: Any) {
+  expect(a instanceof C2_3).assertTrue()
+  expect((a as C2_3).c2_v as number).assertEqual(6.7)
+}
+function check_B2_3(a: Any) {
+  expect(a instanceof B2_3).assertTrue()
+  expect((a as B2_3).b2_v as bigint).assertEqual(123n)
+}
+function check_Other_3(a: Any) {
+  expect(a instanceof Other_3).assertTrue()
+  expect((a as Other_3).other_v as string).assertEqual("other")
+}
+function check_bigint_3(a: Any) {
+  expect(a instanceof bigint).assertTrue()
+  expect(a as bigint).assertEqual(5n)
+}
+function check_value_3(v: Any, v_id: int): void {
+  if (v_id == 1) {
+    check_C1_3(v)
+    check_C1_3(v as C1_3 | C2_3| B2_3 | Other_3)
+    check_C1_3(v as B1_3<int, null> | B1_3<number, string> | Other_3 | bigint)
+  }
+  else if (v_id == 2) {
+    check_B2_3(v)
+    check_B2_3(v as C1_3 | C2_3| B2_3 | Other_3)
+  }
+  else {
+    check_bigint_3(v)
+    check_bigint_3(v as B1_3<int, null> | B1_3<number, string> | Other_3 | bigint)
+  }
+}
+function check_value_as_type_T_3(v: C1_3 | C2_3 | B2_3 | Other_3 | number, v_id: int): void {
+  expect(v instanceof C1_3 | C2_3 | B2_3 | Other_3 ||
+    v instanceof B1_3 | Other_3 | bigint).assertTrue()
+  check_value_3(v, v_id)
+}
+function check_is_in_T_type_3(v: C1_3 | C2_3| B2_3 | Other_3 | B1_3<int, null> | B1_3<number, string> | Other_3 | bigint,
+  v_id: int): boolean {
+  check_value_3(v, v_id)
+  if (v instanceof C1_3 | C2_3 | B2_3 | Other_3) {
+    check_value_3(v, v_id)
+    if (v instanceof B1_3 | Other_3 | bigint) {
+      expect(v_id).assertEqual(1)
+      check_value_3(v, v_id)
+      expect(v instanceof C1_3 | C2_3 | B2_3 | Other_3).assertTrue()
+      expect(v instanceof C1_3 | C2_3 | B2_3 | Other_3 | number).assertTrue()
+      if (v instanceof C1_3 | C2_3 | B2_3 | Other_3 | number) {
+        check_value_as_type_T_3(v as C1_3 | C2_3 | B2_3 | Other_3 | number, v_id)
+        return true
+      } else {
+        return false
+      }
+    }
+    else {
+      expect(v_id).assertEqual(2)
+      check_value_3(v, v_id)
+      if (v instanceof C1_3 | C2_3 | B2_3 | Other_3 | number) {
+        check_value_as_type_T_3(v as C1_3 | C2_3 | B2_3 | Other_3 | number, v_id)
+        return true
+      } else {
+        return false
+      }
+    }
+  }
+  else {
+    expect(v_id).assertEqual(3)
+    check_value_3(v, v_id)
+    if (v instanceof C1_3 | C2_3 | B2_3 | Other_3 | number) {
+      check_value_as_type_T_3(v as C1_3 | C2_3 | B2_3 | Other_3 | number, v_id)
+      return true
+    } else {
+      return false
+    }
+  }
+}
+
+namespace testNS1_4 {
+  abstract class A_4<U, V> {}
+  abstract class B1_4<U, V> extends A_4<U, V> {}
+  class B2_4<U=bigint, V=undefined> extends A_4<U, V> {
+    b2_v: U | V
+    constructor (p: U | V) {
+      this.b2_v = p
+    }
+  }
+  class C1_4<U = int, V = null> extends B1_4<U, V> {
+    c1_v: U | V
+    constructor (p: U | V) {
+      this.c1_v = p
+    }
+  }
+  class C2_4<U = number, V = string> extends B1_4<U, V> {
+    c2_v: U | V
+    constructor (p: U | V) {
+      this.c2_v = p
+    }
+  }
+  class Other_4<T = string> {
+    other_v: T
+    constructor (p: T) {
+      this.other_v = p
+    }
+  }
+  function check_C1_4(a: Any) {
+    expect(a instanceof C1_4).assertTrue()
+    expect((a as C1_4).c1_v as int).assertEqual(321)
+  }
+  function check_C2_4(a: Any) {
+    expect(a instanceof C2_4).assertTrue()
+    expect((a as C2_4).c2_v as number).assertEqual(6.7)
+  }
+  function check_B2_4(a: Any) {
+    expect(a instanceof B2_4).assertTrue()
+    expect((a as B2_4).b2_v as bigint).assertEqual(123n)
+  }
+  function check_Other_4(a: Any) {
+    expect(a instanceof Other_4).assertTrue()
+    expect((a as Other_4).other_v as string).assertEqual("other")
+  }
+  function check_bigint_4(a: Any) {
+    expect(a instanceof bigint).assertTrue()
+    expect(a as bigint).assertEqual(5n)
+  }
+  function check_value_4(v: Any, v_id: int): void {
+    if (v_id == 1) {
+      check_C1_4(v)
+      check_C1_4(v as C1_4 | C2_4| B2_4 | Other_4)
+      check_C1_4(v as B1_4<int, null> | B1_4<number, string> | Other_4 | bigint)
+    }
+    else if (v_id == 2) {
+      check_B2_4(v)
+      check_B2_4(v as C1_4 | C2_4| B2_4 | Other_4)
+    }
+    else {
+      check_bigint_4(v)
+      check_bigint_4(v as B1_4<int, null> | B1_4<number, string> | Other_4 | bigint)
+    }
+  }
+  function check_value_as_type_T_4(v: Any, v_id: int): void {
+    expect(v instanceof C1_4 | C2_4 | B2_4 | Other_4 ||
+      v instanceof B1_4 | Other_4 | bigint).assertTrue()
+    check_value_4(v, v_id)
+  }
+  function check_is_in_T_type_4(v: C1_4 | C2_4| B2_4 | Other_4 | B1_4<int, null> | B1_4<number, string> | Other_4 | bigint,
+    v_id: int): boolean {
+    check_value_4(v, v_id)
+    if (v instanceof C1_4 | C2_4 | B2_4 | Other_4) {
+      check_value_4(v, v_id)
+      if (v instanceof B1_4 | Other_4 | bigint) {
+        expect(v_id).assertEqual(1)
+        check_value_4(v, v_id)
+        expect(v instanceof C1_4 | C2_4 | B2_4 | Other_4).assertTrue()
+        expect(v instanceof Any).assertTrue()
+        if (v instanceof Any) {
+          check_value_as_type_T_4(v as Any, v_id)
+          return true
+        } else {
+          return false
+        }
+      }
+      else {
+        expect(v_id).assertEqual(2)
+        check_value_4(v, v_id)
+        if (v instanceof Any) {
+          check_value_as_type_T_4(v as Any, v_id)
+          return true
+        } else {
+          return false
+        }
+      }
+    }
+    else {
+      expect(v_id).assertEqual(3)
+      check_value_4(v, v_id)
+      if (v instanceof Any) {
+        check_value_as_type_T_4(v as Any, v_id)
+        return true
+      } else {
+        return false
+      }
+    }
+  }
+
+  export function runTest_4(): boolean {
+    let res1: boolean = check_is_in_T_type_4(
+      new C1_4(321), 1)
+    let res2: boolean = check_is_in_T_type_4(
+      new B2_4(123n), 2)
+    let res3: boolean = check_is_in_T_type_4(
+      5n, 3)
+    expect(res1 && (res2 || res3)).assertTrue()
+    return true
+  }
+}
+
+namespace testNS2_4 {
+  abstract class A_4<U, V> {}
+  abstract class B1_4<U, V> extends A_4<U, V> {}
+  class B2_4<U=bigint, V=undefined> extends A_4<U, V> {
+    b2_v: U | V
+    constructor (p: U | V) {
+      this.b2_v = p
+    }
+  }
+  class C1_4<U = int, V = null> extends B1_4<U, V> {
+    c1_v: U | V
+    constructor (p: U | V) {
+      this.c1_v = p
+    }
+  }
+  class C2_4<U = number, V = string> extends B1_4<U, V> {
+    c2_v: U | V
+    constructor (p: U | V) {
+      this.c2_v = p
+    }
+  }
+  class Other_4<T = string> {
+    other_v: T
+    constructor (p: T) {
+      this.other_v = p
+    }
+  }
+  function check_C1_4(a: Any) {
+    expect(a instanceof C1_4).assertTrue()
+    expect((a as C1_4).c1_v as int).assertEqual(321)
+  }
+  function check_C2_4(a: Any) {
+    expect(a instanceof C2_4).assertTrue()
+    expect((a as C2_4).c2_v as number).assertEqual(6.7)
+  }
+  function check_B2_4(a: Any) {
+    expect(a instanceof B2_4).assertTrue()
+    expect((a as B2_4).b2_v as bigint).assertEqual(123n)
+  }
+  function check_Other_4(a: Any) {
+    expect(a instanceof Other_4).assertTrue()
+    expect((a as Other_4).other_v as string).assertEqual("other")
+  }
+  function check_bigint_4(a: Any) {
+    expect(a instanceof bigint).assertTrue()
+    expect(a as bigint).assertEqual(5n)
+  }
+  function check_value_4(v: Any, v_id: int): void {
+    if (v_id == 1) {
+      check_C2_4(v)
+      check_C2_4(v as C1_4 | C2_4| B2_4 | Other_4)
+      check_C2_4(v as B1_4<int, null> | B1_4<number, string> | Other_4 | bigint)
+    }
+    else if (v_id == 2) {
+      check_B2_4(v)
+      check_B2_4(v as C1_4 | C2_4| B2_4 | Other_4)
+    }
+    else {
+      check_bigint_4(v)
+      check_bigint_4(v as B1_4<int, null> | B1_4<number, string> | Other_4 | bigint)
+    }
+  }
+  function check_value_as_type_T_4(v: Any, v_id: int): void {
+    expect(v instanceof C1_4 | C2_4 | B2_4 | Other_4 ||
+      v instanceof B1_4 | Other_4 | bigint).assertTrue()
+    check_value_4(v, v_id)
+  }
+  function check_is_in_T_type_4(v: C1_4 | C2_4| B2_4 | Other_4 | B1_4<int, null> | B1_4<number, string> | Other_4 | bigint,
+    v_id: int): boolean {
+    check_value_4(v, v_id)
+    if (v instanceof C1_4 | C2_4 | B2_4 | Other_4) {
+      check_value_4(v, v_id)
+      if (v instanceof B1_4 | Other_4 | bigint) {
+        expect(v_id).assertEqual(1)
+        check_value_4(v, v_id)
+        expect(v instanceof C1_4 | C2_4 | B2_4 | Other_4).assertTrue()
+        expect(v instanceof Any).assertTrue()
+        if (v instanceof Any) {
+          check_value_as_type_T_4(v as Any, v_id)
+          return true
+        } else {
+          return false
+        }
+      }
+      else {
+        expect(v_id).assertEqual(2)
+        check_value_4(v, v_id)
+        if (v instanceof Any) {
+          check_value_as_type_T_4(v as Any, v_id)
+          return true
+        } else {
+          return false
+        }
+      }
+    }
+    else {
+      expect(v_id).assertEqual(3)
+      check_value_4(v, v_id)
+      if (v instanceof Any) {
+        check_value_as_type_T_4(v as Any, v_id)
+        return true
+      } else {
+        return false
+      }
+    }
+  }
+
+  export function runTest_4(): boolean {
+    let res1: boolean = check_is_in_T_type_4(
+      new C2_4(6.7), 1)
+    let res2: boolean = check_is_in_T_type_4(
+      new B2_4(123n), 2)
+    let res3: boolean = check_is_in_T_type_4(
+      5n, 3)
+    expect(res1 && (res2 || res3)).assertTrue()
+    return true
+  }
+}
+
+abstract class A_4<U, V> {}
+abstract class B1_4<U, V> extends A_4<U, V> {}
+class B2_4<U=bigint, V=undefined> extends A_4<U, V> {
+  b2_v: U | V
+  constructor (p: U | V) {
+    this.b2_v = p
+  }
+}
+class C1_4<U = int, V = null> extends B1_4<U, V> {
+  c1_v: U | V
+  constructor (p: U | V) {
+    this.c1_v = p
+  }
+}
+class C2_4<U = number, V = string> extends B1_4<U, V> {
+  c2_v: U | V
+  constructor (p: U | V) {
+    this.c2_v = p
+  }
+}
+class Other_4<T = string> {
+  other_v: T
+  constructor (p: T) {
+    this.other_v = p
+  }
+}
+function check_C1_4(a: Any) {
+  expect(a instanceof C1_4).assertTrue()
+  expect((a as C1_4).c1_v as int).assertEqual(321)
+}
+function check_C2_4(a: Any) {
+  expect(a instanceof C2_4).assertTrue()
+  expect((a as C2_4).c2_v as number).assertEqual(6.7)
+}
+function check_B2_4(a: Any) {
+  expect(a instanceof B2_4).assertTrue()
+  expect((a as B2_4).b2_v as bigint).assertEqual(123n)
+}
+function check_Other_4(a: Any) {
+  expect(a instanceof Other_4).assertTrue()
+  expect((a as Other_4).other_v as string).assertEqual("other")
+}
+function check_bigint_4(a: Any) {
+  expect(a instanceof bigint).assertTrue()
+  expect(a as bigint).assertEqual(5n)
+}
+function check_value_4(v: Any, v_id: int): void {
+  if (v_id == 1) {
+    check_C1_4(v)
+    check_C1_4(v as C1_4 | C2_4| B2_4 | Other_4)
+    check_C1_4(v as B1_4<int, null> | B1_4<number, string> | Other_4 | bigint)
+  }
+  else if (v_id == 2) {
+    check_B2_4(v)
+    check_B2_4(v as C1_4 | C2_4| B2_4 | Other_4)
+  }
+  else {
+    check_bigint_4(v)
+    check_bigint_4(v as B1_4<int, null> | B1_4<number, string> | Other_4 | bigint)
+  }
+}
+function check_value_as_type_T_4(v: Any, v_id: int): void {
+  expect(v instanceof C1_4 | C2_4 | B2_4 | Other_4 ||
+    v instanceof B1_4 | Other_4 | bigint).assertTrue()
+  check_value_4(v, v_id)
+}
+function check_is_in_T_type_4(v: C1_4 | C2_4| B2_4 | Other_4 | B1_4<int, null> | B1_4<number, string> | Other_4 | bigint,
+  v_id: int): boolean {
+  check_value_4(v, v_id)
+  if (v instanceof C1_4 | C2_4 | B2_4 | Other_4) {
+    check_value_4(v, v_id)
+    if (v instanceof B1_4 | Other_4 | bigint) {
+      expect(v_id).assertEqual(1)
+      check_value_4(v, v_id)
+      expect(v instanceof C1_4 | C2_4 | B2_4 | Other_4).assertTrue()
+      expect(v instanceof Any).assertTrue()
+      if (v instanceof Any) {
+        check_value_as_type_T_4(v as Any, v_id)
+        return true
+      } else {
+        return false
+      }
+    }
+    else {
+      expect(v_id).assertEqual(2)
+      check_value_4(v, v_id)
+      if (v instanceof Any) {
+        check_value_as_type_T_4(v as Any, v_id)
+        return true
+      } else {
+        return false
+      }
+    }
+  }
+  else {
+    expect(v_id).assertEqual(3)
+    check_value_4(v, v_id)
+    if (v instanceof Any) {
+      check_value_as_type_T_4(v as Any, v_id)
+      return true
+    } else {
+      return false
+    }
+  }
+}
+
+export default function InterTypeIsSubOfTypeTOnGenTest01(): void {
+  describe('InterTypeIsSubOfTypeTOnGenTest01', () => {
+    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
+    beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
+    })
+
+    beforeEach(async () => {
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
+      await sleep(30);
+    })
+
+    afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
+    })
+
+    afterAll(() => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
+    })
+
+    /**
+     * @tc.number    SUB_INTER_TYPE_IS_SUB_OF_TYPE_T_ON_GEN_0300
+     * @tc.name      testInterTypeIsSubOfTypeTOnGen0003
+     * @tc.desc      Checking that intersection type I (defined as I1 & I2) is a subtype of type
+     *               T if Ii is a subtype of T for some i in case of usage instanceof on generic custom
+     *               types
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testInterTypeIsSubOfTypeTOnGen0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testInterTypeIsSubOfTypeTOnGen0003';
+      
+
+      let res1: boolean = check_is_in_T_type_3(
+        new C1_3(321), 1)
+      let res2: boolean = check_is_in_T_type_3(
+        new B2_3(123n), 2)
+      let res3: boolean = check_is_in_T_type_3(
+        5n, 3)
+      expect(res1 && (res2 || res3)).assertTrue()
+
+      expect(testNS1_3.runTest_3()).assertTrue()
+      expect(testNS2_3.runTest_3()).assertTrue()
+      expect(testNS3_3.runTest_3()).assertTrue()
+      expect(testNS4_3.runTest_3()).assertTrue()
+      expect(testNS5_3.runTest_3()).assertTrue()
+
+    });
+
+    /**
+     * @tc.number    SUB_INTER_TYPE_IS_SUB_OF_TYPE_T_ON_GEN_0400
+     * @tc.name      testInterTypeIsSubOfTypeTOnGen0004
+     * @tc.desc      Checking that intersection type I (defined as I1 & I2) is a subtype of type
+     *               T if Ii is a subtype of T for some i in case of usage instanceof on generic custom
+     *               types
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testInterTypeIsSubOfTypeTOnGen0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testInterTypeIsSubOfTypeTOnGen0004';
+      
+
+      let res1: boolean = check_is_in_T_type_4(
+        new C1_4(321), 1)
+      let res2: boolean = check_is_in_T_type_4(
+        new B2_4(123n), 2)
+      let res3: boolean = check_is_in_T_type_4(
+        5n, 3)
+      expect(res1 && (res2 || res3)).assertTrue()
+
+      expect(testNS1_4.runTest_4()).assertTrue()
+      expect(testNS2_4.runTest_4()).assertTrue()
+
+    });
+  })
+}
