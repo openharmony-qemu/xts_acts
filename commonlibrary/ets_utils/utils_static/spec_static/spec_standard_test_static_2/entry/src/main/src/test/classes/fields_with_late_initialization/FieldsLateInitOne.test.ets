@@ -1902,3 +1902,576 @@ export default function FieldsLateInitTestOne(): void {
         expect(res instanceof double).assertTrue()
         expect(res).assertEqual(7.3)
     })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0164
+     * @tc.name      testFieldsLateInit0164
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0164", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F164 = new A_F164()
+        a.field = a.foo_F164()
+        expect(a.field instanceof Promise).assertTrue()
+        let res = waitForCompletion(async () => a.field)
+        expect(res instanceof number).assertTrue()
+        expect(res).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0165
+     * @tc.name      testFieldsLateInit0165
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0165", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F165 = new A_F165()
+        a.field = a.foo_F165()
+        expect(a.field instanceof Promise).assertTrue()
+        let res = waitForCompletion(async () => a.field)
+        expect(res instanceof float).assertTrue()
+        expect(res).assertEqual(7.3f)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0166
+     * @tc.name      testFieldsLateInit0166
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0166", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F166 = new A_F166()
+        a.field = a.foo_F166()
+        expect(a.field instanceof Promise).assertTrue()
+        let res = waitForCompletion(async () => a.field)
+        expect(res instanceof bigint).assertTrue()
+        expect(res).assertEqual(5n)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0167
+     * @tc.name      testFieldsLateInit0167
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0167", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F167 = new A_F167()
+        a.field = a.foo_F167()
+        expect(a.field instanceof Promise).assertTrue()
+        let res = waitForCompletion(async () => a.field)
+        expect(res instanceof string).assertTrue()
+        expect(res).assertEqual("abc")
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0168
+     * @tc.name      testFieldsLateInit0168
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0168", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F168 = new A_F168()
+        a.field = a.foo_F168()
+        expect(a.field instanceof Promise).assertTrue()
+        let res = waitForCompletion(async () => a.field)
+        expect(res instanceof char).assertTrue()
+        expect(res).assertEqual(c'a')
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0169
+     * @tc.name      testFieldsLateInit0169
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0169", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F169 = new A_F169()
+        a.field = a.foo_F169()
+        expect(a.field instanceof Promise).assertTrue()
+        let res = waitForCompletion(async () => a.field)
+        expect(res instanceof boolean).assertTrue()
+        expect(res).assertEqual(false)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0170
+     * @tc.name      testFieldsLateInit0170
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0170", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F170 = new A_F170()
+        a.field = a.foo_F170()
+        expect(a.field instanceof Promise).assertTrue()
+        let res = waitForCompletion(async () => a.field)
+        expect(res instanceof Object).assertTrue()
+        expect(res).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0171
+     * @tc.name      testFieldsLateInit0171
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0171", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F171 = new A_F171()
+        a.field = a.foo_F171()
+        expect(a.field instanceof Promise).assertTrue()
+        let res = waitForCompletion(async () => a.field)
+        expect(res instanceof C_F171).assertTrue()
+        expect(res.data instanceof int).assertTrue()
+        expect(res.data).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0172
+     * @tc.name      testFieldsLateInit0172
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0172", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F172 = new A_F172()
+        waitForCompletion(a.foo_F172)
+        expect(a.field instanceof long).assertTrue()
+        expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0173
+     * @tc.name      testFieldsLateInit0173
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0173", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F173 = new A_F173()
+        waitForCompletion(a.foo_F173)
+        expect(a.field instanceof int).assertTrue()
+        expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0174
+     * @tc.name      testFieldsLateInit0174
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0174", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F174 = new A_F174()
+        waitForCompletion(a.foo_F174)
+        expect(a.field instanceof byte).assertTrue()
+        expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0175
+     * @tc.name      testFieldsLateInit0175
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0175", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F175 = new A_F175()
+        waitForCompletion(a.foo_F175)
+        expect(a.field instanceof short).assertTrue()
+        expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0176
+     * @tc.name      testFieldsLateInit0176
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0176", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F176 = new A_F176()
+        waitForCompletion(a.foo_F176)
+        expect(a.field instanceof double).assertTrue()
+        expect(a.field).assertEqual(7.3)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0177
+     * @tc.name      testFieldsLateInit0177
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0177", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F177 = new A_F177()
+        waitForCompletion(a.foo_F177)
+        expect(a.field instanceof number).assertTrue()
+        expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0178
+     * @tc.name      testFieldsLateInit0178
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0178", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F178 = new A_F178()
+        waitForCompletion(a.foo_F178)
+        expect(a.field instanceof float).assertTrue()
+        expect(a.field).assertEqual(7.3f)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0179
+     * @tc.name      testFieldsLateInit0179
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0179", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F179 = new A_F179()
+        waitForCompletion(a.foo_F179)
+        expect(a.field instanceof bigint).assertTrue()
+        expect(a.field).assertEqual(5n)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0180
+     * @tc.name      testFieldsLateInit0180
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0180", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F180 = new A_F180()
+        waitForCompletion(a.foo_F180)
+        expect(a.field instanceof string).assertTrue()
+        expect(a.field).assertEqual("abc")
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0181
+     * @tc.name      testFieldsLateInit0181
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0181", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F181 = new A_F181()
+        waitForCompletion(a.foo_F181)
+        expect(a.field instanceof char).assertTrue()
+        expect(a.field).assertEqual(c'a')
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0182
+     * @tc.name      testFieldsLateInit0182
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0182", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F182 = new A_F182()
+        waitForCompletion(a.foo_F182)
+        expect(a.field instanceof boolean).assertTrue()
+        expect(a.field).assertEqual(false)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0183
+     * @tc.name      testFieldsLateInit0183
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0183", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F183 = new A_F183()
+        waitForCompletion(a.foo_F183)
+        expect(a.field instanceof Object).assertTrue()
+        expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0184
+     * @tc.name      testFieldsLateInit0184
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0184", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F184 = new A_F184()
+        let res = waitForCompletion(async () => a.foo_F184().then((): long => a.field))
+        expect(res instanceof long).assertTrue()
+        expect(res).assertEqual(5)
+        expect(a.field instanceof long).assertTrue()
+        expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0185
+     * @tc.name      testFieldsLateInit0185
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0185", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F185 = new A_F185()
+        let res = waitForCompletion(async () => a.foo_F185().then((): int => a.field))
+        expect(res instanceof int).assertTrue()
+        expect(res).assertEqual(5)
+        expect(a.field instanceof int).assertTrue()
+        expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0186
+     * @tc.name      testFieldsLateInit0186
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0186", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F186 = new A_F186()
+        let res = waitForCompletion(async () => a.foo_F186().then((): byte => a.field))
+        expect(res instanceof byte).assertTrue()
+        expect(res).assertEqual(5)
+        expect(a.field instanceof byte).assertTrue()
+        expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0187
+     * @tc.name      testFieldsLateInit0187
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0187", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F187 = new A_F187()
+        let res = waitForCompletion(async () => a.foo_F187().then((): short => a.field))
+        expect(res instanceof short).assertTrue()
+        expect(res).assertEqual(5)
+        expect(a.field instanceof short).assertTrue()
+        expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0188
+     * @tc.name      testFieldsLateInit0188
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0188", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F188 = new A_F188()
+        let res = waitForCompletion(async () => a.foo_F188().then((): double => a.field))
+        expect(res instanceof double).assertTrue()
+        expect(res).assertEqual(7.3)
+        expect(a.field instanceof double).assertTrue()
+        expect(a.field).assertEqual(7.3)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0189
+     * @tc.name      testFieldsLateInit0189
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0189", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F189 = new A_F189()
+        let res = waitForCompletion(async () => a.foo_F189().then((): number => a.field))
+        expect(res instanceof number).assertTrue()
+        expect(res).assertEqual(5)
+        expect(a.field instanceof number).assertTrue()
+        expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0190
+     * @tc.name      testFieldsLateInit0190
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0190", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F190 = new A_F190()
+        let res = waitForCompletion(async () => a.foo_F190().then((): float => a.field))
+        expect(res instanceof float).assertTrue()
+        expect(res).assertEqual(7.3f)
+        expect(a.field instanceof float).assertTrue()
+        expect(a.field).assertEqual(7.3f)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0191
+     * @tc.name      testFieldsLateInit0191
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0191", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F191 = new A_F191()
+        let res = waitForCompletion(async () => a.foo_F191().then((): bigint => a.field))
+        expect(res instanceof bigint).assertTrue()
+        expect(res).assertEqual(5n)
+        expect(a.field instanceof bigint).assertTrue()
+        expect(a.field).assertEqual(5n)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0192
+     * @tc.name      testFieldsLateInit0192
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0192", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F192 = new A_F192()
+        let res = waitForCompletion(async () => a.foo_F192().then((): string => a.field))
+        expect(res instanceof string).assertTrue()
+        expect(res).assertEqual("abc")
+        expect(a.field instanceof string).assertTrue()
+        expect(a.field).assertEqual("abc")
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0193
+     * @tc.name      testFieldsLateInit0193
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0193", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F193 = new A_F193()
+        let res = waitForCompletion(async () => a.foo_F193().then((): char => a.field))
+        expect(res instanceof char).assertTrue()
+        expect(res).assertEqual(c'a')
+        expect(a.field instanceof char).assertTrue()
+        expect(a.field).assertEqual(c'a')
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0194
+     * @tc.name      testFieldsLateInit0194
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0194", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F194 = new A_F194()
+        let res = waitForCompletion(async () => a.foo_F194().then((): boolean => a.field))
+        expect(res instanceof boolean).assertTrue()
+        expect(res).assertEqual(false)
+        expect(a.field instanceof boolean).assertTrue()
+        expect(a.field).assertEqual(false)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0195
+     * @tc.name      testFieldsLateInit0195
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0195", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F195 = new A_F195()
+        let res = waitForCompletion(async () => a.foo_F195().then((): Object => a.field))
+        expect(res instanceof Object).assertTrue()
+        expect(res).assertEqual(5)
+        expect(a.field instanceof Object).assertTrue()
+        expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0196
+     * @tc.name      testFieldsLateInit0196
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0196", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F196 = new A_F196()
+        waitForCompletion(a.foo_F196)
+        expect(a.field instanceof C_F196).assertTrue()
+        expect(a.field.data instanceof int).assertTrue()
+        expect(a.field.data).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0197
+     * @tc.name      testFieldsLateInit0197
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0197", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F197 = new A_F197()
+        let res = waitForCompletion(async () => a.foo_F197().then((): C_F197 => a.field))
+        expect(res instanceof C_F197).assertTrue()
+        expect(res.data instanceof int).assertTrue()
+        expect(res.data).assertEqual(5)
+        expect(a.field instanceof C_F197).assertTrue()
+        expect(a.field.data instanceof int).assertTrue()
+        expect(a.field.data).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0198
+     * @tc.name      testFieldsLateInit0198
+     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0198", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F198 = new A_F198()
+        waitForCompletion(a.foo_F198)
+        expect(a.field instanceof long).assertTrue()
+        expect(a.field).assertEqual(5)
+    })
+  })
+}
