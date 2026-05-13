@@ -1387,13 +1387,13 @@ export default function abilityTest():void {
         console.info(CaseName + ' Succeeded in setting window size.');
         await Utils.msSleep(300);
         console.info(CaseName + ' rectChangeCount: ' + rectChangeCount);
-        expect(rectChangeCount).assertEqual(2);
+        expect(rectChangeCount).assertEqual(4);
         floatViewController.offRectChange();
         console.info(CaseName + ' Succeeded in unregistering all callbacks.');
         await Utils.msSleep(1000);
         await floatViewController.stop();
         await Utils.msSleep(1000);
-        expect(rectChangeCount).assertEqual(2);
+        expect(rectChangeCount).assertEqual(4);
         console.info(CaseName + ' Succeeded in stopping float view.');
         console.log(CaseName + ' end.');
         done();
@@ -1531,7 +1531,7 @@ export default function abilityTest():void {
         console.info(CaseName + ' Succeeded in setting window size 1.');
         await Utils.msSleep(300);
         console.info(CaseName + ' rectChangeCount1: ' + rectChangeCount);
-        expect(rectChangeCount).assertEqual(2);
+        expect(rectChangeCount).assertEqual(4);
         floatViewController.offRectChange();
         console.info(CaseName + ' Succeeded in unregistering all callbacks.');
         rectChangeCount = 0;

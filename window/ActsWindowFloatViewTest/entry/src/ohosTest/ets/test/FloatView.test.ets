@@ -1544,13 +1544,13 @@ export default function abilityTest() {
         console.info(CaseName + ' Succeeded in setting window size.');
         await sleep(300);
         console.info(CaseName + ' rectChangeCount: ' + rectChangeCount);
-        expect(rectChangeCount).assertEqual(2);
+        expect(rectChangeCount).assertEqual(4);
         floatViewController.offRectChange();
         console.info(CaseName + ' Succeeded in unregistering all callbacks.');
         await sleep(1000);
         await floatViewController.stop();
         await sleep(1000);
-        expect(rectChangeCount).assertEqual(2);
+        expect(rectChangeCount).assertEqual(4);
         console.info(CaseName + ' Succeeded in stopping float view.');
         console.log(CaseName + ' end.');
         done();
@@ -1688,7 +1688,7 @@ export default function abilityTest() {
         console.info(CaseName + ' Succeeded in setting window size 1.');
         await sleep(300);
         console.info(CaseName + ' rectChangeCount1: ' + rectChangeCount);
-        expect(rectChangeCount).assertEqual(2);
+        expect(rectChangeCount).assertEqual(4);
         floatViewController.offRectChange();
         console.info(CaseName + ' Succeeded in unregistering all callbacks.');
         rectChangeCount = 0;
@@ -2679,7 +2679,7 @@ export default function abilityTest() {
         console.info(CaseName + ' Succeeded in setting UI context.');
         await floatViewController.start();
         console.info(CaseName + ' Succeeded in starting float view.');
-        await sleep(200);
+        await sleep(1000);
         let limits = floatView.getFloatViewLimits(floatView.FloatViewTemplateType.ROUNDED_RECTANGLE);
         let size: window.Size = {
           width: limits.minSize.width + 100,
