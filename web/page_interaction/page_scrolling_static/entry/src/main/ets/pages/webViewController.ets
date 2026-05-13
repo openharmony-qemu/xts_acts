@@ -91,7 +91,6 @@ struct webViewController {
           switch (this.stringObj.str) {
             case 'testOnOverScroll001': {
               try {
-                this.controller.loadUrl('https://www.example.com/');
                 Utils.emitEvent(this.onOverScrollCallBack, 31038)
 			        	this.onOverScrollCallBack = false
               } catch (error) {
@@ -104,7 +103,6 @@ struct webViewController {
 
             case 'testOnOverScroll002': {
               try {
-                this.controller.loadUrl('https://www.example.com/');
                 Utils.emitEvent(this.onOverScrollCallBack, 100034)
 				        this.onOverScrollCallBack = false
               } catch (error) {
@@ -117,7 +115,6 @@ struct webViewController {
 
             case 'testOnOverScroll003': {
               try {
-                this.controller.loadUrl('https://www.example.com/');
                 Utils.emitEvent(this.onOverScrollCallBack, 100035)
 				        this.onOverScrollCallBack = false
               } catch (error) {
@@ -130,7 +127,6 @@ struct webViewController {
 
             case 'testOnOverScroll004': {
               try {
-                this.controller.loadUrl('https://www.example.com/');
                 Utils.emitEvent(this.onOverScrollCallBack, 100036)
                 this.onOverScrollCallBack = false
               } catch (error) {
@@ -143,7 +139,6 @@ struct webViewController {
 
             case 'testOnOverScroll005': {
               try {
-                this.controller.loadUrl('https://www.example.com/');
                   if(this.XTag < 0){
                     Utils.emitEvent(true, 310383191)
                   }
@@ -161,7 +156,6 @@ struct webViewController {
 
             case 'testOnOverScroll006': {
               try {
-                this.controller.loadUrl('https://www.example.com/');
                 if(this.YTag > 0){
                   Utils.emitEvent(true, 310383192)
                 }

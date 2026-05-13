@@ -17,10 +17,12 @@ import getCameraManagerTest from './camera/getCameraManager.test';
 import colorManagementTest from './ColorManagement/colorManagementTest.test';
 import cameraOutPutTest from './CameraOutPut/cameraOutPut.test';
 import colorManagementQueryTest from  './ColorManagementQuery/colorManagementQuery.test';
+import CameraManagerTest from './CameraManager/CameraManager.test';
 
 export default function testsuite() {
   getCameraManagerTest();
   colorManagementTest();
   cameraOutPutTest();
   colorManagementQueryTest();
+  CameraManagerTest();
 }

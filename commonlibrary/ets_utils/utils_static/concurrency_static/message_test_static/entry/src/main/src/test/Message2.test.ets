@@ -1490,7 +1490,7 @@ export default function MessageTest2() {
           for (const obj of samples) {
             const msg = new concurrency.Message(0, obj, h);
             expect(h.sendMessage(msg)).assertTrue();
-            expect(msg.getObject()).assertEqual(obj);
+            expect(msg.getObject() as Object).assertEqual(obj);
           }
           while (!flag) {
             await Utils.msSleep(100)
@@ -1583,7 +1583,7 @@ export default function MessageTest2() {
           let message1 = new concurrency.Message(1, 1, handler1);
           message1.sendToTarget();
           expect(message1.getWhat()).assertEqual(1)
-          expect(message1.getObject()).assertEqual(1)
+          expect(message1.getObject() as int).assertEqual(1)
           while (!flag) {
             await Utils.msSleep(100);
           }
@@ -1677,7 +1677,7 @@ export default function MessageTest2() {
           }, worker)
           let msg = new concurrency.Message(1, 1 as int, handler);
           handler.sendMessage(msg);
-          expect(msg.getObject()).assertEqual(1);
+          expect(msg.getObject() as int).assertEqual(1);
           while (!flag) {
             await Utils.msSleep(100);
           }
@@ -1719,7 +1719,7 @@ export default function MessageTest2() {
           }, worker)
           let msg = new concurrency.Message(1, 1, handler);
           handler.sendMessage(msg);
-          expect(msg.getObject()).assertEqual(1);
+          expect(msg.getObject() as int).assertEqual(1);
           while (!flag) {
             await Utils.msSleep(100);
           }
@@ -1761,7 +1761,7 @@ export default function MessageTest2() {
           }, worker)
           let msg = new concurrency.Message(1, 1 as short, handler);
           handler.sendMessage(msg);
-          expect(msg.getObject()).assertEqual(1);
+          expect(msg.getObject() as int).assertEqual(1);
           while (!flag) {
             await Utils.msSleep(100);
           }
@@ -1803,7 +1803,7 @@ export default function MessageTest2() {
           }, worker)
           let msg = new concurrency.Message(1, true, handler);
           handler.sendMessage(msg);
-          expect(msg.getObject()).assertEqual(true);
+          expect(msg.getObject() as Boolean).assertEqual(true);
           while (!flag) {
             await Utils.msSleep(100);
           }
@@ -1845,7 +1845,7 @@ export default function MessageTest2() {
           }, worker)
           let msg = new concurrency.Message(1, '1', handler);
           handler.sendMessage(msg);
-          expect(msg.getObject()).assertEqual('1');
+          expect(msg.getObject() as string).assertEqual('1');
           while (!flag) {
             await Utils.msSleep(100);
           }
@@ -1887,7 +1887,8 @@ export default function MessageTest2() {
           }, worker)
           let msg = new concurrency.Message(1, [1, 2], handler);
           handler.sendMessage(msg);
-          expect(msg.getObject()!.toString()).assertEqual('1,2');
+          const msgObj = msg.getObject()! as Object;
+          expect(msgObj.toString()).assertEqual('1,2');
           while (!flag) {
             await Utils.msSleep(100);
           }

@@ -28,7 +28,7 @@ const InvisibleErrorCode: int = 17000004;
 const CapabilityCode: int = 801;
 const ErrorCode: int = 401;
 
-export default function uitestDriverErrorTest() {
+export default function uitestDriverErrorTest() : void {
   describe('uitest_Api20ErrorTest', (): void => {
     let driver: Driver | undefined;
     beforeAll(async () : Promise<void> => {

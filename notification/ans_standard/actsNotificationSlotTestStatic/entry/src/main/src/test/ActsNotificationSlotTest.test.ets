@@ -61,7 +61,14 @@ export default function ActsNotificationSlotTest() {
 
     beforeEach(async (): Promise<void> => {
       console.info(`${TAG} afterEach START`)
-      await notificationManager.removeAllSlots()
+      notificationManager.removeAllSlots((e: Error | null) => {
+        if (e) {
+          let err :BusinessError = e as BusinessError
+          console.info(`${TAG} removeAllSlots AsyncCallback err: ${err}, errMes: ${err.message}`)
+        } else {
+          console.info(`${TAG} removeAllSlots AsyncCallback success`)
+        }
+      })
       await Utils.msSleep(500)
       console.info(`${TAG} afterEach END`)
     })

@@ -1385,12 +1385,14 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
           let encCipher: cryptoFramework.Cipher = cryptoFramework.createCipher(cipherName);
           try {
             await encCipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, poly1305Params);
+            expect(null).assertFail();
           } catch (error) {
             expect(error.code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
           }
           try {
             poly1305Params.iv = iv_lt;
             await encCipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, poly1305Params);
+            expect(null).assertFail();
           } catch (error) {
             expect(error.code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
           }
@@ -1429,12 +1431,14 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
           let encCipher: cryptoFramework.Cipher = cryptoFramework.createCipher(algName);
           try {
             await encCipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, poly1305Params);
+            expect(null).assertFail();
           } catch (error) {
             expect(error.code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
           }
           try {
             poly1305Params.iv = iv_lt;
             await encCipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, poly1305Params);
+            expect(null).assertFail();
           } catch (error) {
             expect(error.code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
           }

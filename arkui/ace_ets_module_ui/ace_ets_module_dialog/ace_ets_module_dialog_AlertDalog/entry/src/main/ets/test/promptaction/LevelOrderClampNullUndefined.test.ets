@@ -85,6 +85,10 @@
  	       await Utils.sleep(200);
  	       await btn.click()
  	       expect(AppStorage.get('setLevelOrderUndefined')).assertEqual(true)
+		   await Utils.sleep(1000);
+		   let closeBtn = await driver.findComponent(ON.id('closeToast'));
+ 	       await closeBtn.click()
+		   await Utils.sleep(1000);
  	       console.log('LevelOrderClampNullUndefinedTest_002 END')
  	       done();
  	     });

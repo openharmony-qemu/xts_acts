@@ -576,6 +576,7 @@ int VideoEncodeApi0600Test()
         index = signal_->inIdxQueue_.front();
         ASSERT_EQ(AV_ERR_INVALID_STATE, OH_VideoEncoder_PushInputData(venc_, index, attr));
         signal_->inIdxQueue_.pop();
+        lock.unlock();
         OH_VideoEncoder_Stop(venc_);
         OH_VideoEncoder_Destroy(venc_);
         venc_ = nullptr;

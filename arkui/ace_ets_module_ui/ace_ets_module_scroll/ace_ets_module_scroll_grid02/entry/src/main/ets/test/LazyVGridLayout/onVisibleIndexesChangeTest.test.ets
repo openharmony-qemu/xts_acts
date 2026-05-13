@@ -53,7 +53,7 @@ export default function onVisibleIndexesChangeTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('onVisibleIndexesChangeTest_0100', Level.LEVEL0, async () => {
+    it('onVisibleIndexesChangeTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[onVisibleIndexesChangeTest_0100] START');
 
       let strJson: string = getInspectorByKey('lazyVGridLayout_on1');
@@ -65,6 +65,7 @@ export default function onVisibleIndexesChangeTest() {
       expect(obj.$type).assertEqual('LazyVGridLayout');
 
       console.info('[onVisibleIndexesChangeTest_0100] END');
+      done();
     })
 
     /**
@@ -77,7 +78,7 @@ export default function onVisibleIndexesChangeTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('onVisibleIndexesChangeTest_0200', Level.LEVEL0, async () => {
+    it('onVisibleIndexesChangeTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[onVisibleIndexesChangeTest_0200] START');
 
       let strJson: string = getInspectorByKey('text_visible_start');
@@ -88,6 +89,7 @@ export default function onVisibleIndexesChangeTest() {
       console.info("[onVisibleIndexesChangeTest_0200] content: " + content);
       expect(content).assertContain('Start: 0');
       console.info('[onVisibleIndexesChangeTest_0200] END');
+      done();
     })
 
     /**
@@ -100,7 +102,7 @@ export default function onVisibleIndexesChangeTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('onVisibleIndexesChangeTest_0300', Level.LEVEL0, async () => {
+    it('onVisibleIndexesChangeTest_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[onVisibleIndexesChangeTest_0300] START');
 
       let strJson: string = getInspectorByKey('text_visible_end');
@@ -111,6 +113,7 @@ export default function onVisibleIndexesChangeTest() {
       console.info("[onVisibleIndexesChangeTest_0300] content: " + content);
       expect(content).assertContain('End: 5');
       console.info('[onVisibleIndexesChangeTest_0300] END');
+      done();
     })
 
     /**
@@ -123,7 +126,7 @@ export default function onVisibleIndexesChangeTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('onVisibleIndexesChangeTest_0400', Level.LEVEL0, async () => {
+    it('onVisibleIndexesChangeTest_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[onVisibleIndexesChangeTest_0400] START');
       let driver = Driver.create();
       let scrollColumn = await driver.findComponent(ON.type('Scroll'));
@@ -144,6 +147,7 @@ export default function onVisibleIndexesChangeTest() {
       expect(content2).assertContain('End: -1');
 
       console.info('[onVisibleIndexesChangeTest_0400] END');
+      done();
     })
 
     /**
@@ -156,7 +160,7 @@ export default function onVisibleIndexesChangeTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('onVisibleIndexesChangeTest_0500', Level.LEVEL0, async () => {
+    it('onVisibleIndexesChangeTest_0500', Level.LEVEL0, async (done: Function) => {
       console.info('[onVisibleIndexesChangeTest_0500] START');
 
       let strJsonStart: string = getInspectorByKey('text_visible_start');
@@ -174,6 +178,7 @@ export default function onVisibleIndexesChangeTest() {
 
       expect(startIndex <= endIndex).assertTrue();
       console.info('[onVisibleIndexesChangeTest_0500] END');
+      done();
     })
   })
 }

@@ -497,6 +497,7 @@ export default function dataShareConfigDeleteTest() {
         expect().assertFail();
       }
     });
+
     /**
      * @tc.name   dataShareConfigDeleteTest015
      * @tc.number SUB_DistributedData_DataShare_SDK_Expansion_1100
@@ -594,7 +595,6 @@ export default function dataShareConfigDeleteTest() {
         expect().assertFail();
       }
     });
-
 
     /**
      * @tc.name   dataShareConfigDeleteTest018
@@ -804,7 +804,6 @@ export default function dataShareConfigDeleteTest() {
       }
     });
 
-
     /**
      * @tc.name   dataShareConfigDeleteTest024
      * @tc.number SUB_DistributedData_DataShare_SDK_Expansion_2000
@@ -913,6 +912,23 @@ export default function dataShareConfigDeleteTest() {
       } catch (err) {
         console.error(TAG + "[DataShareProvider] dataShareConfigDeleteTest026 failed.code =" + err.code + ",message=" + err.message);
         expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   dataShareConfigDeleteTest027
+     * @tc.number SUB_DistributedData_DataShare_SDK_DeleteAll_0200
+     * @tc.desc   Delete All
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigDeleteTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        await g_handle!.delete(null);
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigDeleteTest027 failed.code =" + err.code + ",message=" + err.message);
+        expect(err.code).assertEqual("401");
       }
     });
   })
