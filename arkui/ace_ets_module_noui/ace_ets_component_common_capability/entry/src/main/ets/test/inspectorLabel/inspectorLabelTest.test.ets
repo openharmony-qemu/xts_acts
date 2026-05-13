@@ -56,17 +56,17 @@ export default function inspectorLabelTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('inspectorLabel_valid_001', Level.LEVEL0, async () => {
-      console.info('[inspectorLabel_valid_001] START');
+    it('SUB_ARKUI_INSPECTORLABEL_PARAM_VALID_001', Level.LEVEL0, async () => {
+      console.info('[SUB_ARKUI_INSPECTORLABEL_PARAM_VALID_001] START');
 
       let strJson: string = getInspectorByKey('text_inspectorLabel_valid');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
 
-      console.info("[inspectorLabel_valid_001] obj is: " + JSON.stringify(obj.$attrs));
+      console.info("[SUB_ARKUI_INSPECTORLABEL_PARAM_VALID_001] obj is: " + JSON.stringify(obj.$attrs));
 
       let inspectorLabelValue: ESObject = obj.$attrs.inspectorLabel;
       expect(inspectorLabelValue === 'TEST_LABEL').assertTrue();
-      console.info('[inspectorLabel_valid_001] END');
+      console.info('[SUB_ARKUI_INSPECTORLABEL_PARAM_VALID_001] END');
     });
 
     /**
@@ -77,17 +77,17 @@ export default function inspectorLabelTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('inspectorLabel_null_001', Level.LEVEL0, async () => {
-      console.info('[inspectorLabel_null_001] START');
+    it('SUB_ARKUI_INSPECTORLABEL_PARAM_NULL_001', Level.LEVEL0, async () => {
+      console.info('[SUB_ARKUI_INSPECTORLABEL_PARAM_NULL_001] START');
 
       let strJson: string = getInspectorByKey('text_inspectorLabel_null');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
 
-      console.info("[inspectorLabel_null_001] obj is: " + JSON.stringify(obj.$attrs));
+      console.info("[inspectorLabel_nSUB_ARKUI_INSPECTORLABEL_PARAM_NULL_001ull_001] obj is: " + JSON.stringify(obj.$attrs));
 
       let inspectorLabelValue: ESObject = obj.$attrs.inspectorLabel;
       expect(inspectorLabelValue === '').assertTrue();
-      console.info('[inspectorLabel_null_001] END');
+      console.info('[SUB_ARKUI_INSPECTORLABEL_PARAM_NULL_001] END');
     });
 
     /**
@@ -98,17 +98,17 @@ export default function inspectorLabelTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('inspectorLabel_undefined_001', Level.LEVEL0, async () => {
-      console.info('[inspectorLabel_undefined_001] START');
+    it('SUB_ARKUI_INSPECTORLABEL_PARAM_UNDEFINED_001', Level.LEVEL0, async () => {
+      console.info('[SUB_ARKUI_INSPECTORLABEL_PARAM_UNDEFINED_001] START');
 
       let strJson: string = getInspectorByKey('text_inspectorLabel_undefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
 
-      console.info("[inspectorLabel_undefined_001] obj is: " + JSON.stringify(obj.$attrs));
+      console.info("[SUB_ARKUI_INSPECTORLABEL_PARAM_UNDEFINED_001] obj is: " + JSON.stringify(obj.$attrs));
 
       let inspectorLabelValue: ESObject = obj.$attrs.inspectorLabel;
       expect(inspectorLabelValue === '').assertTrue();
-      console.info('[inspectorLabel_undefined_001] END');
+      console.info('[SUB_ARKUI_INSPECTORLABEL_PARAM_UNDEFINED_001] END');
     });
 
     /**
@@ -119,17 +119,17 @@ export default function inspectorLabelTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('inspectorLabel_empty_001', Level.LEVEL0, async () => {
-      console.info('[inspectorLabel_empty_001] START');
+    it('SUB_ARKUI_INSPECTORLABEL_PARAM_EMPTY_001', Level.LEVEL0, async () => {
+      console.info('[SUB_ARKUI_INSPECTORLABEL_PARAM_EMPTY_001] START');
 
       let strJson: string = getInspectorByKey('text_inspectorLabel_empty');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
 
-      console.info("[inspectorLabel_empty_001] obj is: " + JSON.stringify(obj.$attrs));
+      console.info("[SUB_ARKUI_INSPECTORLABEL_PARAM_EMPTY_001] obj is: " + JSON.stringify(obj.$attrs));
 
       let inspectorLabelValue: ESObject = obj.$attrs.inspectorLabel;
       expect(inspectorLabelValue === '').assertTrue();
-      console.info('[inspectorLabel_empty_001] END');
+      console.info('[SUB_ARKUI_INSPECTORLABEL_PARAM_EMPTY_001] END');
     });
   });
 }
