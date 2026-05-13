@@ -1959,6 +1959,1971 @@ export default function ExplicitClassMethodOverloadTest(): void {
       arktest.assertEQ('two', a.publicFoo('Hello!'));
     });
 
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_1800
+     * @tc.name      testExplicitClassMethodOverload0018
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A17 = new A17();
+
+      arktest.assertEQ('one', a.publicFoo(12.6));
+      arktest.assertEQ('two', a.publicFoo('Hello!'));
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_1900
+     * @tc.name      testExplicitClassMethodOverload0019
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A18 = new A18();
+
+      arktest.assertEQ('one', a.publicFoo(12.6));
+      arktest.assertEQ('two', a.publicFoo('Hello!'));
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_2000
+     * @tc.name      testExplicitClassMethodOverload0020
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A19 = new A19();
+
+      arktest.assertEQ('one', a.publicFoo(12.6));
+      arktest.assertEQ('two', a.publicFoo('Hello!'));
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_2100
+     * @tc.name      testExplicitClassMethodOverload0021
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A20 = new A20();
+
+      arktest.assertEQ('one', a.publicFoo(12.6));
+      arktest.assertEQ('two', a.publicFoo('Hello!'));
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_2200
+     * @tc.name      testExplicitClassMethodOverload0022
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A21 = new A21();
+
+      arktest.assertEQ('one', a.publicFoo(12.6));
+      arktest.assertEQ('two', a.publicFoo('Hello!'));
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_2300
+     * @tc.name      testExplicitClassMethodOverload0023
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A22 = new A22();
+
+      arktest.assertEQ('one', a.publicFoo(12.6));
+      arktest.assertEQ('two', a.publicFoo('Hello!'));
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_2400
+     * @tc.name      testExplicitClassMethodOverload0024
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A23 = new A23();
+
+      arktest.assertEQ('one', a.publicFoo(12.6));
+      arktest.assertEQ('two', a.publicFoo('Hello!'));
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_2500
+     * @tc.name      testExplicitClassMethodOverload0025
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A24 = new A24();
+
+      arktest.assertEQ('one', a.publicFoo(12.6));
+      arktest.assertEQ('two', a.publicFoo('Hello!'));
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_2600
+     * @tc.name      testExplicitClassMethodOverload0026
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A25 = new A25();
+
+      arktest.assertEQ('one', a.publicFoo(12.6));
+      arktest.assertEQ('two', a.publicFoo('Hello!'));
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_2700
+     * @tc.name      testExplicitClassMethodOverload0027
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A26 = new A26();
+
+      arktest.assertEQ('one', a.publicFoo(12.6));
+      arktest.assertEQ('two', a.publicFoo('Hello!'));
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_2800
+     * @tc.name      testExplicitClassMethodOverload0028
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A27 = new A27();
+
+      arktest.assertEQ('one', a.publicFoo(12.6));
+      arktest.assertEQ('two', a.publicFoo('Hello!'));
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_2900
+     * @tc.name      testExplicitClassMethodOverload0029
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A28 = new A28();
+
+      arktest.assertEQ('one', a.publicFoo(12.6));
+      arktest.assertEQ('two', a.publicFoo('Hello!'));
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_3000
+     * @tc.name      testExplicitClassMethodOverload0030
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A29 = new A29();
+
+      arktest.assertEQ('one', a.publicFoo(12.6));
+      arktest.assertEQ('two', a.publicFoo('Hello!'));
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_3100
+     * @tc.name      testExplicitClassMethodOverload0031
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A30 = new A30();
+
+      arktest.assertEQ('one', a.publicFoo(12.6));
+      arktest.assertEQ('two', a.publicFoo('Hello!'));
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_3200
+     * @tc.name      testExplicitClassMethodOverload0032
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A31 = new A31();
+
+      arktest.assertEQ('one', a.publicFoo(12.6));
+      arktest.assertEQ('two', a.publicFoo('Hello!'));
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_3300
+     * @tc.name      testExplicitClassMethodOverload0033
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A32 = new A32();
+
+      arktest.assertEQ('one', a.publicFoo(12.6));
+      arktest.assertEQ('two', a.publicFoo('Hello!'));
+    });
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_3400
+     * @tc.name      testExplicitClassMethodOverload0034
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let b: B33 = new B33();
+      arktest.assertEQ('f1f2f3', b.test());
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_3500
+     * @tc.name      testExplicitClassMethodOverload0035
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let b: B34 = new B34();
+      arktest.assertEQ('f1f2f3', b.test());
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_3600
+     * @tc.name      testExplicitClassMethodOverload0036
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let b: B35 = new B35();
+      arktest.assertEQ('f1f2f3', b.test());
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_3700
+     * @tc.name      testExplicitClassMethodOverload0037
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let b: B36 = new B36();
+      arktest.assertEQ('f1f2f3', b.test());
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_3800
+     * @tc.name      testExplicitClassMethodOverload0038
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let b: B37 = new B37();
+      arktest.assertEQ('f1f2f3', b.test());
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_3900
+     * @tc.name      testExplicitClassMethodOverload0039
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let b: B38 = new B38();
+      arktest.assertEQ('f1f2f3', b.test());
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_4000
+     * @tc.name      testExplicitClassMethodOverload0040
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let b: B39 = new B39();
+      arktest.assertEQ('f1f2f3', b.test());
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_4100
+     * @tc.name      testExplicitClassMethodOverload0041
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let b: B40 = new B40();
+      arktest.assertEQ('f1f2f3', b.test());
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_4200
+     * @tc.name      testExplicitClassMethodOverload0042
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let b: B41 = new B41();
+      arktest.assertEQ('f1f2f3', b.test());
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_4300
+     * @tc.name      testExplicitClassMethodOverload0043
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let b: B42 = new B42();
+      arktest.assertEQ('f1f2f3', b.test());
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_4400
+     * @tc.name      testExplicitClassMethodOverload0044
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let b: B43 = new B43();
+      arktest.assertEQ('f1f2f3', b.test());
+    });
+//编译器报protected overload cannot have private methods错误，暂时注释保留
+/*    *//**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_4500
+     * @tc.name      testExplicitClassMethodOverload0045
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     *//*
+    it('testExplicitClassMethodOverload0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let b: B44 = new B44();
+      arktest.assertEQ('f1f2f3', b.test());
+    });*/
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_4600
+     * @tc.name      testExplicitClassMethodOverload0046
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let b: B45 = new B45();
+      arktest.assertEQ('f1f2f3', b.test());
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_4700
+     * @tc.name      testExplicitClassMethodOverload0047
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let b: B46 = new B46();
+      arktest.assertEQ('f1f2f3', b.test());
+    });
+//注释原因上面已说
+/*    *//**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_4800
+     * @tc.name      testExplicitClassMethodOverload0048
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     *//*
+    it('testExplicitClassMethodOverload0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let b: B47 = new B47();
+      arktest.assertEQ('f1f2f3', b.test());
+    });*/
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_4900
+     * @tc.name      testExplicitClassMethodOverload0049
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let b: B48 = new B48();
+      arktest.assertEQ('f1f2f3', b.test());
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_5000
+     * @tc.name      testExplicitClassMethodOverload0050
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let b: B49 = new B49();
+      arktest.assertEQ('f1f2f3', b.test());
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_5100
+     * @tc.name      testExplicitClassMethodOverload0051
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let b: B50 = new B50();
+      arktest.assertEQ('f1f2f3', b.test());
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_5200
+     * @tc.name      testExplicitClassMethodOverload0052
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let b: B51 = new B51();
+      arktest.assertEQ('f1f2f3', b.test());
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_5300
+     * @tc.name      testExplicitClassMethodOverload0053
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let b: B52 = new B52();
+      arktest.assertEQ('f1f2f3', b.test());
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_5400
+     * @tc.name      testExplicitClassMethodOverload0054
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let b: B53 = new B53();
+      arktest.assertEQ('f1f2f3', b.test());
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_5500
+     * @tc.name      testExplicitClassMethodOverload0055
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let b: B54 = new B54();
+      arktest.assertEQ('f1f2f3', b.test());
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_5600
+     * @tc.name      testExplicitClassMethodOverload0056
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let b: B55 = new B55();
+      arktest.assertEQ('f1f2f3', b.test());
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_5700
+     * @tc.name      testExplicitClassMethodOverload0057
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let b: B56 = new B56();
+      arktest.assertEQ('f1f2f3', b.test());
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_5800
+     * @tc.name      testExplicitClassMethodOverload0058
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let b: B57 = new B57();
+      arktest.assertEQ('f1f2f3', b.test());
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_5900
+     * @tc.name      testExplicitClassMethodOverload0059
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let b: B58 = new B58();
+      arktest.assertEQ('f1f2f3', b.test());
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_6000
+     * @tc.name      testExplicitClassMethodOverload0060
+     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let b: B59 = new B59();
+      arktest.assertEQ('f1f2f3', b.test());
+    });
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_6100
+     * @tc.name      testExplicitClassMethodOverload0061
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let g = G1(1);
+      arktest.assertEQ('Hi 1!', g.greeting);
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_6200
+     * @tc.name      testExplicitClassMethodOverload0062
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let g = G3("Kim");
+      arktest.assertEQ('Hey Kim!', g.greeting);
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_6300
+     * @tc.name      testExplicitClassMethodOverload0063
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let g = G6(10);
+      arktest.assertEQ('Hi 10!', g.greeting);
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_6400
+     * @tc.name      testExplicitClassMethodOverload0064
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let g = G8("Mao");
+      arktest.assertEQ('Hey Mao!', g.greeting);
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_6500
+     * @tc.name      testExplicitClassMethodOverload0065
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let g = G10(true);
+      arktest.assertEQ('Hi!', g.greeting);
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_6600
+     * @tc.name      testExplicitClassMethodOverload0066
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let g = G12(false);
+      arktest.assertEQ('Bye!', g.greeting);
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_6700
+     * @tc.name      testExplicitClassMethodOverload0067
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_invoke'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      arktest.assertEQ('Hi 1!', G13(1));
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_6800
+     * @tc.name      testExplicitClassMethodOverload0068
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_invoke'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      arktest.assertEQ('Hey Kim!', G15("Kim"));
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_6900
+     * @tc.name      testExplicitClassMethodOverload0069
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_invoke'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      arktest.assertEQ('Hi 10!', G18(10));
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_7000
+     * @tc.name      testExplicitClassMethodOverload0070
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_invoke'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      arktest.assertEQ('Hey Mao!', G20("Mao"));
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_7100
+     * @tc.name      testExplicitClassMethodOverload0071
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_invoke'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      arktest.assertEQ('Hi!', G22(true));
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_7200
+     * @tc.name      testExplicitClassMethodOverload0072
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_invoke'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      arktest.assertEQ('Bye!', G24(false));
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_7300
+     * @tc.name      testExplicitClassMethodOverload0073
+     * @tc.desc      Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let c = new C();
+
+      c[0] = 1;
+      c[1] = 10;
+      c['a'] = 20;
+      c[''] = 30;
+
+      arktest.assertEQ(1, c[0]);
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_7400
+     * @tc.name      testExplicitClassMethodOverload0074
+     * @tc.desc      Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let c = new C1();
+
+      c[0] = 1;
+      c[1] = 10;
+      c['a'] = 20;
+      c[''] = 30;
+
+      arktest.assertEQ(10, c[1]);
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_7500
+     * @tc.name      testExplicitClassMethodOverload0075
+     * @tc.desc      Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let c = new C2();
+
+      c[0] = 1;
+      c[1] = 10;
+      c['a'] = 20;
+      c[''] = 30;
+
+      arktest.assertEQ(20, c['a']);
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_7600
+     * @tc.name      testExplicitClassMethodOverload0076
+     * @tc.desc      Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let c = new C3();
+
+      c[0] = 1;
+      c[1] = 10;
+      c['a'] = 20;
+      c[''] = 30;
+
+      arktest.assertEQ(30, c['']);
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_7700
+     * @tc.name      testExplicitClassMethodOverload0077
+     * @tc.desc      Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let c = new C4();
+
+      c[0] = 1;
+      c[1] = 10;
+      c['a'] = 20;
+      c[''] = 30;
+
+      arktest.assertEQ(undefined, c[3]);
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_7800
+     * @tc.name      testExplicitClassMethodOverload0078
+     * @tc.desc      Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let c = new C5();
+
+      c[0] = 1;
+      c[1] = 10;
+      c['a'] = 20;
+      c[''] = 30;
+
+      arktest.assertEQ(undefined, c['b']);
+    });
+
+/*    *//**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_7900
+     * @tc.name      testExplicitClassMethodOverload0079
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     *//*
+    it('testExplicitClassMethodOverload0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A60 = new A60();
+      arktest.assertEQ('f1', a.foo(1));
+    });
+
+    *//**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_8000
+     * @tc.name      testExplicitClassMethodOverload0080
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     *//*
+    it('testExplicitClassMethodOverload0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A61 = new A61();
+      arktest.assertEQ('f2', a.foo(true));
+    });
+
+    *//**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_8100
+     * @tc.name      testExplicitClassMethodOverload0081
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     *//*
+    it('testExplicitClassMethodOverload0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A62 = new A62();
+      arktest.assertEQ('f3', a.foo(2.5));
+    });
+
+    *//**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_8200
+     * @tc.name      testExplicitClassMethodOverload0082
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     *//*
+    it('testExplicitClassMethodOverload0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A63 = new A63();
+      arktest.assertEQ('f4', a.foo("Kim"));
+    });
+
+    *//**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_8300
+     * @tc.name      testExplicitClassMethodOverload0083
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     *//*
+    it('testExplicitClassMethodOverload0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A64 = new A64();
+      arktest.assertEQ('f5', a.foo(8, 12));
+    });
+
+    *//**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_8400
+     * @tc.name      testExplicitClassMethodOverload0084
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     *//*
+    it('testExplicitClassMethodOverload0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A65 = new A65();
+      arktest.assertEQ('f2', a.foo(true));
+    });
+
+    *//**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_8500
+     * @tc.name      testExplicitClassMethodOverload0085
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     *//*
+    it('testExplicitClassMethodOverload0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A66 = new A66();
+      arktest.assertEQ('f3', a.foo(2.5));
+    });
+
+    *//**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_8600
+     * @tc.name      testExplicitClassMethodOverload0086
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     *//*
+    it('testExplicitClassMethodOverload0086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A67 = new A67();
+      arktest.assertEQ('f1', a.foo(15));
+    });
+
+    *//**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_8700
+     * @tc.name      testExplicitClassMethodOverload0087
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     *//*
+    it('testExplicitClassMethodOverload0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A68 = new A68();
+      arktest.assertEQ('f5', a.foo(8, 12));
+    });
+
+    *//**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_8800
+     * @tc.name      testExplicitClassMethodOverload0088
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     *//*
+    it('testExplicitClassMethodOverload0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A69 = new A69();
+      arktest.assertEQ('f2', a.foo(true));
+    });
+
+    *//**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_8900
+     * @tc.name      testExplicitClassMethodOverload0089
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     *//*
+    it('testExplicitClassMethodOverload0089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A70 = new A70();
+      arktest.assertEQ('f4', a.foo("Kim"));
+    });
+
+    *//**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_9000
+     * @tc.name      testExplicitClassMethodOverload0090
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     *//*
+    it('testExplicitClassMethodOverload0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A71 = new A71();
+      arktest.assertEQ('f5', a.foo(8, 12));
+    });
+
+    *//**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_9100
+     * @tc.name      testExplicitClassMethodOverload0091
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     *//*
+    it('testExplicitClassMethodOverload0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A72 = new A72();
+      arktest.assertEQ('f4', a.foo("Kim"));
+    });
+
+    *//**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_9200
+     * @tc.name      testExplicitClassMethodOverload0092
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     *//*
+    //注释理由在数据定义部分已说明
+*//*    it('testExplicitClassMethodOverload0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A73 = new A73();
+      arktest.assertEQ('f3', a.foo(12));
+    });*//*
+
+    *//**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_9300
+     * @tc.name      testExplicitClassMethodOverload0093
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     *//*
+    it('testExplicitClassMethodOverload0093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A74 = new A74();
+      arktest.assertEQ('f5', a.foo(8, 12));
+    });
+
+    *//**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_9400
+     * @tc.name      testExplicitClassMethodOverload0094
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     *//*
+    it('testExplicitClassMethodOverload0094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A75 = new A75();
+      arktest.assertEQ('f1', a.foo(1));
+    });
+
+    *//**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_9500
+     * @tc.name      testExplicitClassMethodOverload0095
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     *//*
+    it('testExplicitClassMethodOverload0095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A76 = new A76();
+      arktest.assertEQ('f2', a.foo(true));
+    });
+    *//**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_9600
+     * @tc.name      testExplicitClassMethodOverload0096
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     *//*
+    it('testExplicitClassMethodOverload0096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A77 = new A77();
+      arktest.assertEQ('f5', a.foo(8, 12));
+    });
+
+    *//**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_9700
+     * @tc.name      testExplicitClassMethodOverload0097
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     *//*
+    it('testExplicitClassMethodOverload0097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A78 = new A78();
+      arktest.assertEQ('f4', a.foo("Kim"));
+    });
+
+    *//**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_9800
+     * @tc.name      testExplicitClassMethodOverload0098
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     *//*
+    it('testExplicitClassMethodOverload0098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A79 = new A79();
+      arktest.assertEQ('f1', a.foo(1));
+    });
+
+    *//**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_9900
+     * @tc.name      testExplicitClassMethodOverload0099
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     *//*
+    it('testExplicitClassMethodOverload0099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A80 = new A80();
+      arktest.assertEQ('f5', a.foo(8, 12));
+    });
+
+    *//**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_10000
+     * @tc.name      testExplicitClassMethodOverload0100
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     *//*
+    it('testExplicitClassMethodOverload0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A81 = new A81();
+      arktest.assertEQ('f3', a.foo(10.5));
+    });
+
+    *//**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_10100
+     * @tc.name      testExplicitClassMethodOverload0101
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     *//*
+    //注释理由在数据定义部分已说明
+*//*    it('testExplicitClassMethodOverload0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A82 = new A82();
+      arktest.assertEQ('f3', a.foo(15));
+    });*//*
+
+    *//**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_10200
+     * @tc.name      testExplicitClassMethodOverload0102
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     *//*
+    it('testExplicitClassMethodOverload0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A83 = new A83();
+      arktest.assertEQ('f2', a.foo(false));
+    });*/
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_10300
+     * @tc.name      testExplicitClassMethodOverload0103
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A84 = new A84();
+      arktest.assertEQ('f3', a.foo(10.5));
+    });
+
+/*    *//**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_10400
+     * @tc.name      testExplicitClassMethodOverload0104
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     *//*
+    it('testExplicitClassMethodOverload0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A85 = new A85();
+      arktest.assertEQ('f2', a.foo(true));
+    });*/
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_10500
+     * @tc.name      testExplicitClassMethodOverload0105
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A86 = new A86();
+      arktest.assertEQ('f1', a.foo(15));
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_10600
+     * @tc.name      testExplicitClassMethodOverload0106
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A87 = new A87();
+      arktest.assertEQ('f2', a.foo(false));
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_10700
+     * @tc.name      testExplicitClassMethodOverload0107
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A88 = new A88();
+      arktest.assertEQ('f3', a.foo(10.5));
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_10800
+     * @tc.name      testExplicitClassMethodOverload0108
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A89 = new A89();
+      arktest.assertEQ('f4', a.foo("Mao"));
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_10900
+     * @tc.name      testExplicitClassMethodOverload0109
+     * @tc.desc      'Methods with special names (see Indexable Types, Iterable Types, and Callable Types) can be overloaded like ordinary methods. Callable Types: $_instantiate'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A90 = new A90();
+      arktest.assertEQ('f5', a.foo(8, 12));
+    });
+    /*
+     * Temporarily commented out.
+     * Corresponds to source case: cm_iterable_types_0.ets
+     * Reason:
+     * Current compiler reports ESE4002:
+     * "Cannot assign to a readonly field value"
+     * when constructing IteratorResult<T> via object literal in next().
+     * Keep this case commented out for traceability, do not delete.
+     */
+    /*
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_11000
+     * @tc.name      testExplicitClassMethodOverload0110
+     * @tc.desc      Methods with special names (see Indexable Types, Iterable Types, and Callable
+     *               Types) can be overloaded like ordinary methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     *\/
+    it('testExplicitClassMethodOverload0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let c = new C6();
+      let res: string = "";
+      for (let x of c) {
+        res += x;
+      }
+
+      arktest.assertEQ("abc", res);
+    });
+    */
+
+    /*
+     * Temporarily commented out.
+     * Corresponds to source case: cm_iterable_types_1.ets
+     * Reason:
+     * Current compiler reports ESE4002:
+     * "Cannot assign to a readonly field value"
+     * when constructing IteratorResult<T> via object literal in next().
+     * Keep this case commented out for traceability, do not delete.
+     */
+    /*
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_11100
+     * @tc.name      testExplicitClassMethodOverload0111
+     * @tc.desc      Methods with special names (see Indexable Types, Iterable Types, and Callable
+     *               Types) can be overloaded like ordinary methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     *\/
+    it('testExplicitClassMethodOverload0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let c = new C7();
+      let res: int = 0;
+      for (let x of c) {
+        res += x;
+      }
+
+      arktest.assertEQ(65, res);
+    });
+    */
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_11200
+     * @tc.name      testExplicitClassMethodOverload0112
+     * @tc.desc      Async and static method modifiers can be applied to overload methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 12.6;
+      let y: string = 'Hello!';
+      let a: A91 = new A91();
+
+      a.foo(x);
+      a.foo(y);
+
+      arktest.assertEQ(x, A91.num);
+      arktest.assertEQ(y, A91.str);
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_11300
+     * @tc.name      testExplicitClassMethodOverload0113
+     * @tc.desc      Async and static method modifiers can be applied to overload methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 12.6;
+      let y: string = 'Hello!';
+      let a: A92 = new A92();
+
+      a.foo(x);
+      a.foo(y);
+
+      arktest.assertEQ(x, A92.num);
+      arktest.assertEQ(y, A92.str);
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_11400
+     * @tc.name      testExplicitClassMethodOverload0114
+     * @tc.desc      Async and static method modifiers can be applied to overload methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 12.6;
+      let y: string = 'Hello!';
+      let a: A93 = new A93();
+
+      A93.foo(x);
+      A93.foo(y);
+
+      arktest.assertEQ(x, A93.num);
+      arktest.assertEQ(y, A93.str);
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_11500
+     * @tc.name      testExplicitClassMethodOverload0115
+     * @tc.desc      Async and static method modifiers can be applied to overload methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 12.6;
+      let y: string = 'Hello!';
+      let a: A94 = new A94();
+
+      A94.foo(x);
+      A94.foo(y);
+
+      arktest.assertEQ(x, A94.num);
+      arktest.assertEQ(y, A94.str);
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_11600
+     * @tc.name      testExplicitClassMethodOverload0116
+     * @tc.desc      Async and static method modifiers can be applied to overload methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let x: number = 12.6;
+      let y: string = 'Hello!';
+      let a: A95 = new A95();
+
+      A95.foo(x);
+      A95.foo(y);
+
+      arktest.assertEQ(x, A95.num);
+      arktest.assertEQ(y, A95.str);
+    });
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_11700
+     * @tc.name      testExplicitClassMethodOverload0117
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth(new Object()), 'object')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_11800
+     * @tc.name      testExplicitClassMethodOverload0118
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth(new Byte(-1)), 'byte')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_11900
+     * @tc.name      testExplicitClassMethodOverload0119
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth(new Short(-1)), 'short')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_12000
+     * @tc.name      testExplicitClassMethodOverload0120
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth(new Int(-1)), 'int')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_12100
+     * @tc.name      testExplicitClassMethodOverload0121
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth(new Long(-1)), 'long')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_12200
+     * @tc.name      testExplicitClassMethodOverload0122
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth(new Boolean(false)), 'boolean')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_12300
+     * @tc.name      testExplicitClassMethodOverload0123
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth(true), 'boolean')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_12400
+     * @tc.name      testExplicitClassMethodOverload0124
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth(false), 'boolean')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_12500
+     * @tc.name      testExplicitClassMethodOverload0125
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth(new Float(3.14f)), 'float')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_12600
+     * @tc.name      testExplicitClassMethodOverload0126
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth(new Double(3.14)), 'double')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_12700
+     * @tc.name      testExplicitClassMethodOverload0127
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth(-1 as long), 'long')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_12800
+     * @tc.name      testExplicitClassMethodOverload0128
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth(-1 as int), 'int')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_12900
+     * @tc.name      testExplicitClassMethodOverload0129
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth(-1), 'byte')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_13000
+     * @tc.name      testExplicitClassMethodOverload0130
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth(-1 as short), 'short')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_13100
+     * @tc.name      testExplicitClassMethodOverload0131
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth(-1 as byte), 'byte')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_13200
+     * @tc.name      testExplicitClassMethodOverload0132
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth(3.14), 'double')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_13300
+     * @tc.name      testExplicitClassMethodOverload0133
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth(3.14f), 'float')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_13400
+     * @tc.name      testExplicitClassMethodOverload0134
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth("abc"), 'string')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_13500
+     * @tc.name      testExplicitClassMethodOverload0135
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    // 1.2兼容性问题：非显式类型枚举参与 overload 决议时，优先命中基础数值类型重载(byte)，
+    // 未命中枚举类型重载(Color)，暂时注释。
+/*    it('testExplicitClassMethodOverload0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth(Color.Red), 'Color')
+    });*/
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_13600
+     * @tc.name      testExplicitClassMethodOverload0136
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    // 1.2兼容性问题：字符串值枚举 Size1 参与 overload 决议时，
+    // 实际优先命中 string 重载，而未命中 Size1 重载，暂时注释。
+/*    it('testExplicitClassMethodOverload0136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth(Size1.L), 'Size')
+    });*/
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_13700
+     * @tc.name      testExplicitClassMethodOverload0137
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth([3.14, "abc"] as T), 'T')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_13800
+     * @tc.name      testExplicitClassMethodOverload0138
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth([3.14, false] as R), 'R')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_13900
+     * @tc.name      testExplicitClassMethodOverload0139
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth(["abc"]), 'FA:string')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_14000
+     * @tc.name      testExplicitClassMethodOverload0140
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth([(-1).toByte()]), 'FA:byte')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_14100
+     * @tc.name      testExplicitClassMethodOverload0141
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth([(-1).toShort()]), 'FA:short')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_14200
+     * @tc.name      testExplicitClassMethodOverload0142
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth([(-1).toInt()]), 'FA:int')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_14300
+     * @tc.name      testExplicitClassMethodOverload0143
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth([(-1).toLong()]), 'FA:long')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_14400
+     * @tc.name      testExplicitClassMethodOverload0144
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth([false]), 'FA:boolean')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_14500
+     * @tc.name      testExplicitClassMethodOverload0145
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth([3.14f]), 'FA:float')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_14600
+     * @tc.name      testExplicitClassMethodOverload0146
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth([3.14]), 'FA:double')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_14700
+     * @tc.name      testExplicitClassMethodOverload0147
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth([new Object()]), 'FA:object')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_14800
+     * @tc.name      testExplicitClassMethodOverload0148
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth([Color.Red]), 'FA:Color')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_14900
+     * @tc.name      testExplicitClassMethodOverload0149
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    // 1.2兼容性问题：字符串值枚举 Size1 参与 overload 决议时，
+    // 实际优先命中 string 重载，而未命中 Size1 重载，暂时注释。
+/*    it('testExplicitClassMethodOverload0149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth([Size1.M]), 'FA:Size')
+    });*/
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_15000
+     * @tc.name      testExplicitClassMethodOverload0150
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth(new FixedArray<A96>(1)), 'FA:A')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_15100
+     * @tc.name      testExplicitClassMethodOverload0151
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth([3.14, 3.14]), 'FA:double')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_15200
+     * @tc.name      testExplicitClassMethodOverload0152
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth(["abc", "xyz"]), 'FA:string')
+    });
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_15300
+     * @tc.name      testExplicitClassMethodOverload0153
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth(10, 20), 'i+i')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_15400
+     * @tc.name      testExplicitClassMethodOverload0154
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth("a?", 1), 's+d')
+    });
+
+    /**
+     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_15500
+     * @tc.name      testExplicitClassMethodOverload0155
+     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
+     *               for a set of static or instance methods.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testExplicitClassMethodOverload0155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A96 = new A96();
+      arktest.assertEQ(a.meth("a?", 2.1), 's+d')
+    });
 
   })
 }
