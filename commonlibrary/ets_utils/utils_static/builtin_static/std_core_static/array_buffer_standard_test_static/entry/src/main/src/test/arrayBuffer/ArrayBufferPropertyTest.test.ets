@@ -1319,7 +1319,8 @@ export default function arrayBufferPropertyTest(): void {
         let buffer = new ArrayBuffer(8, 4)
         expect(true).assertFail()
       } catch (error) {
-        expect(error != null).assertTrue()
+        expect(error !== null && error !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(error as object)
       }
     });
 

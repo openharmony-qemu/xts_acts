@@ -464,7 +464,8 @@ export default function arrayBufferFromFiveTest(): void {
         ArrayBuffer.from('ABC', 'not_a_real_encoding_xyz')
         expect(true).assertFail()
       } catch (e) {
-        expect(e != null).assertTrue()
+        expect(e !== null && e !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(e as object)
       }
     });
 
