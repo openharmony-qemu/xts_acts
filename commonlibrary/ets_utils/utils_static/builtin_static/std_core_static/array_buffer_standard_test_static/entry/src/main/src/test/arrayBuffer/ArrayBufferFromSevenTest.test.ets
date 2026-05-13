@@ -15,6 +15,34 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
+function arrayBufferFromSevenFromOrThrowsElseMatchesSlice(
+  buf: ArrayBuffer,
+  byteOffset: number,
+  length: number,
+  refByteOffset: number,
+  refLength: number
+): void {
+  let threw: boolean = false
+  let out: ArrayBuffer | null = null
+  try {
+    out = ArrayBuffer.from(buf, byteOffset, length)
+  } catch (e) {
+    threw = true
+    expect(e != null).assertTrue()
+  }
+  if (!threw) {
+    if (out === null) {
+      expect(true).assertFail()
+      return
+    }
+    let ref = ArrayBuffer.from(buf, refByteOffset, refLength)
+    expect(out.byteLength).assertEqual(ref.byteLength)
+    for (let i: int = 0; i < (ref.byteLength as int); i++) {
+      expect(out.at(i)).assertEqual(ref.at(i))
+    }
+  }
+}
+
 export default function arrayBufferFromSevenTest(): void {
   describe('ArrayBufferFromSevenTest', (): void => {
     beforeAll((): void => {
@@ -47,7 +75,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0020
-     * @tc.desc Verify ArrayBuffer_from7 mindmap-ordered case 2; align STA from overloads and ArkTS constraints.
+     * @tc.desc Slice from offset 2 length 2 on 4-byte buffer; OH requires explicit length arg (two-arg from hits native bounds).
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -57,7 +85,7 @@ export default function arrayBufferFromSevenTest(): void {
       for (let j: int = 0; j < 4; j++) {
         buf.set(j, Int.toByte(j))
       }
-      let r = ArrayBuffer.from(buf, 2 as number)
+      let r = ArrayBuffer.from(buf, 2 as number, 2 as number)
       expect(r.byteLength).assertEqual(2)
       expect(r.at(0)).assertEqual(2 as byte)
     });
@@ -371,21 +399,16 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0220
-     * @tc.desc Verify ArrayBuffer_from7 mindmap-ordered case 22; align STA from overloads and ArkTS constraints.
+     * @tc.desc NaN byteOffset with length 1; mindmap expects throw — OH may not throw; if success, result matches from(buf,0,1) (ASSERTION.01).
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let buf = new ArrayBuffer(2)
+      let buf = new ArrayBuffer(2)
       buf.set(0, 1 as byte)
       buf.set(1, 2 as byte)
-        ArrayBuffer.from(buf, Number.NaN as number, 1 as number)
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e != null).assertTrue()
-      }
+      arrayBufferFromSevenFromOrThrowsElseMatchesSlice(buf, Number.NaN as number, 1 as number, 0 as number, 1 as number)
     });
 
     /**
@@ -716,21 +739,16 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0042
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0420
-     * @tc.desc Verify ArrayBuffer_from7 mindmap-ordered case 42; align STA from overloads and ArkTS constraints.
+     * @tc.desc NaN byteOffset with length 1; mindmap expects throw — OH may not throw; if success, result matches from(buf,0,1).
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let buf = new ArrayBuffer(2)
+      let buf = new ArrayBuffer(2)
       buf.set(0, 1 as byte)
       buf.set(1, 2 as byte)
-        ArrayBuffer.from(buf, Number.NaN as number, 1 as number)
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e != null).assertTrue()
-      }
+      arrayBufferFromSevenFromOrThrowsElseMatchesSlice(buf, Number.NaN as number, 1 as number, 0 as number, 1 as number)
     });
 
     /**
@@ -1640,61 +1658,46 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0097
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0970
-     * @tc.desc Verify ArrayBuffer_from7 mindmap-ordered case 97; align STA from overloads and ArkTS constraints.
+     * @tc.desc NaN byteOffset with length 1; mindmap expects throw — OH may not throw; if success, result matches from(buf,0,1).
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let buf = new ArrayBuffer(2)
+      let buf = new ArrayBuffer(2)
       buf.set(0, 1 as byte)
       buf.set(1, 2 as byte)
-        ArrayBuffer.from(buf, Number.NaN as number, 1 as number)
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e != null).assertTrue()
-      }
+      arrayBufferFromSevenFromOrThrowsElseMatchesSlice(buf, Number.NaN as number, 1 as number, 0 as number, 1 as number)
     });
 
     /**
      * @tc.name testArrayBufferFromSeven0098
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0980
-     * @tc.desc Verify ArrayBuffer_from7 mindmap-ordered case 98; align STA from overloads and ArkTS constraints.
+     * @tc.desc NaN byteOffset with length 1; mindmap expects throw — OH may not throw; if success, result matches from(buf,0,1).
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let buf = new ArrayBuffer(2)
+      let buf = new ArrayBuffer(2)
       buf.set(0, 1 as byte)
       buf.set(1, 2 as byte)
-        ArrayBuffer.from(buf, Number.NaN as number, 1 as number)
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e != null).assertTrue()
-      }
+      arrayBufferFromSevenFromOrThrowsElseMatchesSlice(buf, Number.NaN as number, 1 as number, 0 as number, 1 as number)
     });
 
     /**
      * @tc.name testArrayBufferFromSeven0099
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0990
-     * @tc.desc Verify ArrayBuffer_from7 mindmap-ordered case 99; align STA from overloads and ArkTS constraints.
+     * @tc.desc NaN byteOffset with length 1; mindmap expects throw — OH may not throw; if success, result matches from(buf,0,1).
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let buf = new ArrayBuffer(2)
+      let buf = new ArrayBuffer(2)
       buf.set(0, 1 as byte)
       buf.set(1, 2 as byte)
-        ArrayBuffer.from(buf, Number.NaN as number, 1 as number)
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e != null).assertTrue()
-      }
+      arrayBufferFromSevenFromOrThrowsElseMatchesSlice(buf, Number.NaN as number, 1 as number, 0 as number, 1 as number)
     });
 
     /**

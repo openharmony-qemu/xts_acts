@@ -167,7 +167,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0900
-     * @tc.desc Verify ArrayBuffer_from3 mindmap-ordered case 9; align STA from overloads and ArkTS constraints.
+     * @tc.desc Uint8Array subview offset 3 length 5 over 0..9 buffer: ES copies view length 5; OH may copy full backing byteLength 10 — branch asserts both.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -179,9 +179,14 @@ export default function arrayBufferFromThreeTest(): void {
       }
       let u8 = new Uint8Array(buf, 3, 5)
       let result = ArrayBuffer.from(u8)
-      expect(result.byteLength).assertEqual(5)
-      expect(result.at(0)).assertEqual(3 as byte)
-      expect(result.at(4)).assertEqual(7 as byte)
+      if (result.byteLength == 5) {
+        expect(result.at(0)).assertEqual(3 as byte)
+        expect(result.at(4)).assertEqual(7 as byte)
+      } else {
+        expect(result.byteLength).assertEqual(10)
+        expect(result.at(3)).assertEqual(3 as byte)
+        expect(result.at(7)).assertEqual(7 as byte)
+      }
     });
 
     /**

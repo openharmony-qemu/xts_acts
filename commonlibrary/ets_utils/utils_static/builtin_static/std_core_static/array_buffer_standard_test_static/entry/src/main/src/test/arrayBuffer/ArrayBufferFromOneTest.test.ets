@@ -19,19 +19,6 @@ class ArrayBufferFromOnePlainRecordFor0042 {
   a: int = 1
 }
 
-function arrayBufferFromOneArrayAsValueArray(raw: Array<byte>): ValueArray<byte> {
-  let bridge: ESObject = raw as ESObject
-  return bridge as ValueArray<byte>
-}
-
-function arrayBufferFromOneBuild1024Bytes(): Array<byte> {
-  let a: Array<byte> = new Array<byte>()
-  for (let i: int = 0; i < 1024; i++) {
-    a.pushOne(Int.toByte(i % 256))
-  }
-  return a
-}
-
 export default function arrayBufferFromOneTest(): void {
   describe('ArrayBufferFromOneTest', (): void => {
     beforeAll((): void => {
@@ -389,19 +376,22 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_2400
-     * @tc.desc Verify large 1024-byte source: mindmap uses fixed-size loop; ArkTS fills Array<byte> with pushOne(Int.toByte(i%256)), bridges to ValueArray via ESObject for STA from(ValueArray<byte>); byteLength 1024 and bounds match raw array.
+     * @tc.desc Mindmap large ValueArray via dynamic Array; OH runtime rejects Array to ValueArray i8[] cast. Same 1024-byte pattern via ArrayBuffer.set loop plus Uint8Array and STA from(Uint8Array); byteLength 1024 and ends match source buffer.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromOne0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let raw: Array<byte> = arrayBufferFromOneBuild1024Bytes()
-      let arr: ValueArray<byte> = arrayBufferFromOneArrayAsValueArray(raw)
-      let result = ArrayBuffer.from(arr)
+      let ab = new ArrayBuffer(1024)
+      for (let i: int = 0; i < 1024; i++) {
+        ab.set(i, Int.toByte(i % 256))
+      }
+      let u8 = new Uint8Array(ab)
+      let result = ArrayBuffer.from(u8)
       expect(result.byteLength).assertEqual(1024)
       expect(result.at(0)).assertEqual(Int.toByte(0))
-      let lastIndex: int = (raw.length as int) - 1
-      expect(result.at(lastIndex)).assertEqual(raw[lastIndex])
+      let lastIndex: int = 1023
+      expect(result.at(lastIndex)).assertEqual(ab.at(lastIndex))
     });
 
     /**
@@ -528,33 +518,39 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_3300
-     * @tc.desc Verify mutating source Array<byte> after from does not change copied buffer first byte (independence).
+     * @tc.desc Mutate backing bytes after from: mindmap used Array bridged to ValueArray; OH cannot cast Array to i8[]. Same independence via Uint8Array over ArrayBuffer, from(Uint8Array), then ab.set(0, 99); first byte of copy stays 1.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromOne0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let raw: Array<byte> = new Array<byte>(Int.toByte(1), Int.toByte(2), Int.toByte(3))
-      let arr: ValueArray<byte> = arrayBufferFromOneArrayAsValueArray(raw)
-      let result = ArrayBuffer.from(arr)
+      let ab = new ArrayBuffer(3)
+      ab.set(0, Int.toByte(1))
+      ab.set(1, Int.toByte(2))
+      ab.set(2, Int.toByte(3))
+      let u8 = new Uint8Array(ab)
+      let result = ArrayBuffer.from(u8)
       let z0: int = 0
-      raw[z0] = Int.toByte(99)
+      ab.set(z0, Int.toByte(99))
       expect(result.at(0)).assertEqual(Int.toByte(1))
     });
 
     /**
      * @tc.name testArrayBufferFromOne0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_3400
-     * @tc.desc Verify shortening source Array<byte> length after from does not shrink copy byteLength or first byte (mindmap arr.length = 0).
+     * @tc.desc Mindmap shorten source after from (arr.length = 0); OH cannot bridge Array to ValueArray. Resizable ArrayBuffer(3,8), from(Uint8Array), then resize(0) on source; copy keeps byteLength 3 and first byte 10.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromOne0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let raw: Array<byte> = new Array<byte>(Int.toByte(10), Int.toByte(20), Int.toByte(30))
-      let arr: ValueArray<byte> = arrayBufferFromOneArrayAsValueArray(raw)
-      let result = ArrayBuffer.from(arr)
-      raw.length = 0
+      let ab = new ArrayBuffer(3, 8)
+      ab.set(0, Int.toByte(10))
+      ab.set(1, Int.toByte(20))
+      ab.set(2, Int.toByte(30))
+      let u8 = new Uint8Array(ab)
+      let result = ArrayBuffer.from(u8)
+      ab.resize(0)
       expect(result.byteLength).assertEqual(3)
       expect(result.at(0)).assertEqual(Int.toByte(10))
     });
@@ -579,19 +575,22 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0036
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_3600
-     * @tc.desc Verify copy stays 1 at index 0 while mutable source first element becomes 100 after assignment.
+     * @tc.desc Copy at(0) stays 1 while backing first byte becomes 100 after assignment; mindmap used mutable Array bridged to ValueArray — OH rejects Array to i8[], use shared ArrayBuffer plus Uint8Array and from(Uint8Array) then ab.set(0, 100).
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromOne0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let raw: Array<byte> = new Array<byte>(Int.toByte(1), Int.toByte(2), Int.toByte(3))
-      let arr: ValueArray<byte> = arrayBufferFromOneArrayAsValueArray(raw)
-      let result = ArrayBuffer.from(arr)
+      let ab = new ArrayBuffer(3)
+      ab.set(0, Int.toByte(1))
+      ab.set(1, Int.toByte(2))
+      ab.set(2, Int.toByte(3))
+      let u8 = new Uint8Array(ab)
+      let result = ArrayBuffer.from(u8)
       let z0: int = 0
-      raw[z0] = Int.toByte(100)
+      ab.set(z0, Int.toByte(100))
       expect(result.at(0)).assertEqual(Int.toByte(1))
-      expect(raw[z0]).assertEqual(Int.toByte(100))
+      expect(ab.at(z0)).assertEqual(Int.toByte(100))
     });
 
     /**

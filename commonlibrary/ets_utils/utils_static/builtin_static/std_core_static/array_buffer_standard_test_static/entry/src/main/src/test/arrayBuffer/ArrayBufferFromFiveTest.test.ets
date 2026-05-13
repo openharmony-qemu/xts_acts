@@ -505,26 +505,26 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0036
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_3600
-     * @tc.desc Verify ArrayBuffer_from5 mindmap-ordered case 36; align STA from overloads and ArkTS constraints.
+     * @tc.desc Verify from(string, encoding) for ASCII ABC; OH rejects uppercase UTF8 alias, use utf8 (same as other from5 cases).
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r = ArrayBuffer.from('ABC', 'UTF8')
+      let r = ArrayBuffer.from('ABC', 'utf8')
       expect(r.byteLength).assertEqual(3)
     });
 
     /**
      * @tc.name testArrayBufferFromFive0037
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_3700
-     * @tc.desc Verify ArrayBuffer_from5 mindmap-ordered case 37; align STA from overloads and ArkTS constraints.
+     * @tc.desc Verify from(string, encoding) duplicate case 37; OH rejects uppercase UTF8 alias, use utf8.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r = ArrayBuffer.from('ABC', 'UTF8')
+      let r = ArrayBuffer.from('ABC', 'utf8')
       expect(r.byteLength).assertEqual(3)
     });
 
