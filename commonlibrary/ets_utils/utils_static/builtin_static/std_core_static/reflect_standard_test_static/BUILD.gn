@@ -13,11 +13,11 @@
 
 import("//test/xts/tools/build/suite.gni")
 
-ohos_js_app_static_suite("reflectStaticMethodTest") {
+ohos_js_app_static_suite("ActsReflectStaticMethodTest") {
   #test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "reflectStaticMethodTest"
+  hap_name = "ActsReflectStaticMethodTest"
   part_name = "ets_utils"
   subsystem_name = "commonlibrary"
 }

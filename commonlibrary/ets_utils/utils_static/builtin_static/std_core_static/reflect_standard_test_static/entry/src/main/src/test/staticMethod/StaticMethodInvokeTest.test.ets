@@ -282,7 +282,7 @@ export default function StaticMethodInvokeTest(): void {
         method!.invoke(['string instead of int']);
         expect().assertFail();
       } catch (error) {
-        expect(error != null).assertTrue();
+        expect(error !== null).assertTrue();
       }
       return;
     });
@@ -302,7 +302,7 @@ export default function StaticMethodInvokeTest(): void {
         method!.invoke([1]);
         expect().assertFail();
       } catch (error) {
-        expect(error != null).assertTrue();
+        expect(error !== null).assertTrue();
       }
       return;
     });
@@ -322,7 +322,7 @@ export default function StaticMethodInvokeTest(): void {
         method!.invoke([1, 2]);
         expect().assertFail();
       } catch (error) {
-        expect(error != null).assertTrue();
+        expect(error !== null).assertTrue();
       }
       return;
     });
@@ -556,7 +556,7 @@ export default function StaticMethodInvokeTest(): void {
         method!.invoke(['string']);
         expect().assertFail();
       } catch (error) {
-        expect(error != null).assertTrue();
+        expect(error !== null).assertTrue();
       }
       return;
     });
@@ -576,7 +576,7 @@ export default function StaticMethodInvokeTest(): void {
         method!.invoke([1]);
         expect().assertFail();
       } catch (error) {
-        expect(error != null).assertTrue();
+        expect(error !== null).assertTrue();
       }
       return;
     });
@@ -596,7 +596,7 @@ export default function StaticMethodInvokeTest(): void {
         method!.invoke();
         expect().assertFail();
       } catch (error) {
-        expect(error != null).assertTrue();
+        expect(error !== null).assertTrue();
       }
       return;
     });

@@ -449,9 +449,15 @@ export default function StaticMethodIsNativeTest(): void {
     it('testStaticMethodIsNative019', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls: Class = Class.from<Array<int>>();
       let methods = cls.getStaticMethods();
+      expect(methods.length).assertLarger(0);
+      let validCount: int = 0;
       for (let i: int = 0; i < methods.length; i++) {
         let isNative: boolean = methods[i].isNative();
+        if (isNative == true || isNative == false) {
+          validCount++;
+        }
       }
+      expect(validCount).assertEqual(methods.length);
       return;
     });
 
