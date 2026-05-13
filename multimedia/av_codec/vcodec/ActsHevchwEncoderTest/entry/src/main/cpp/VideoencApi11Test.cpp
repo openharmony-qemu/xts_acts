@@ -525,9 +525,7 @@ void VEncAPI11Sample::InputFuncSurface()
             isParamSetSurface = true;
         }
         inputframeCount++;
-        if (sleepOnFPS) {
-            usleep(FRAME_INTERVAL);
-        }
+        usleep(FRAME_INTERVAL);
     }
 }
 
