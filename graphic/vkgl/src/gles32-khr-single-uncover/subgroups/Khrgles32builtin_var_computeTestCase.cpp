@@ -16,25 +16,25 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles32BaseFunc.h"
-#include "../ActsKhrgles320001TestSuite.h"
+#include "../ActsGles32KhrSingleUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000003,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000003,
         "KHR-Single-GLES32.subgroups.builti",
         "n_var.compute.subgroupsize_compute");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000004,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000004,
         "KHR-Single-GLES32.subgroups.builtin_va",
         "r.compute.subgroupinvocationid_compute");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000005,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000005,
         "KHR-Single-GLES32.subgroups.bu",
         "iltin_var.compute.numsubgroups");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000006,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000006,
         "KHR-Single-GLES32.subgroups.b",
         "uiltin_var.compute.subgroupid");

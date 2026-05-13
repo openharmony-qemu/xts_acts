@@ -16,41 +16,41 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles32BaseFunc.h"
-#include "../ActsKhrgles320001TestSuite.h"
+#include "../ActsGles32KhrSingleUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000007,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000007,
         "KHR-Single-GLES32.subgroups.builtin",
         "_var.framebuffer.subgroupsize_vertex");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000008,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000008,
         "KHR-Single-GLES32.subgroups.builtin_v",
         "ar.framebuffer.subgroupsize_tess_eval");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000009,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000009,
         "KHR-Single-GLES32.subgroups.builtin_va",
         "r.framebuffer.subgroupsize_tess_control");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000010,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000010,
         "KHR-Single-GLES32.subgroups.builtin_",
         "var.framebuffer.subgroupsize_geometry");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000011,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000011,
         "KHR-Single-GLES32.subgroups.builtin_var",
         ".framebuffer.subgroupinvocationid_vertex");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000012,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000012,
         "KHR-Single-GLES32.subgroups.builtin_var.f",
         "ramebuffer.subgroupinvocationid_tess_eval");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000013,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000013,
         "KHR-Single-GLES32.subgroups.builtin_var.fr",
         "amebuffer.subgroupinvocationid_tess_control");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000014,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000014,
         "KHR-Single-GLES32.subgroups.builtin_var.",
         "framebuffer.subgroupinvocationid_geometry");

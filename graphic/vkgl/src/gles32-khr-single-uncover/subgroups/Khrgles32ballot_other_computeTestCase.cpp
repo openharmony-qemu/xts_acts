@@ -16,37 +16,37 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles32BaseFunc.h"
-#include "../ActsKhrgles320001TestSuite.h"
+#include "../ActsGles32KhrSingleUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000487,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000487,
         "KHR-Single-GLES32.subgroups.ballot_",
         "other.compute.subgroupinverseballot");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000488,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000488,
         "KHR-Single-GLES32.subgroups.ballot_o",
         "ther.compute.subgroupballotbitextract");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000489,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000489,
         "KHR-Single-GLES32.subgroups.ballot_",
         "other.compute.subgroupballotbitcount");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000490,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000490,
         "KHR-Single-GLES32.subgroups.ballot_other",
         ".compute.subgroupballotinclusivebitcount");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000491,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000491,
         "KHR-Single-GLES32.subgroups.ballot_other",
         ".compute.subgroupballotexclusivebitcount");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000492,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000492,
         "KHR-Single-GLES32.subgroups.ballot_",
         "other.compute.subgroupballotfindlsb");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000493,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000493,
         "KHR-Single-GLES32.subgroups.ballot_",
         "other.compute.subgroupballotfindmsb");

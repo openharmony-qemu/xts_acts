@@ -16,29 +16,29 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles32BaseFunc.h"
-#include "../ActsKhrgles320001TestSuite.h"
+#include "../ActsGles32KhrSingleUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000020,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000020,
         "KHR-Single-GLES32.subgroups.built",
         "in_mask_var.compute.subgroupeqmask");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000021,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000021,
         "KHR-Single-GLES32.subgroups.built",
         "in_mask_var.compute.subgroupgemask");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000022,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000022,
         "KHR-Single-GLES32.subgroups.built",
         "in_mask_var.compute.subgroupgtmask");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000023,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000023,
         "KHR-Single-GLES32.subgroups.built",
         "in_mask_var.compute.subgrouplemask");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000024,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000024,
         "KHR-Single-GLES32.subgroups.built",
         "in_mask_var.compute.subgroupltmask");

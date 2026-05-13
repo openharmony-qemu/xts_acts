@@ -16,121 +16,121 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles32BaseFunc.h"
-#include "../ActsKhrgles320001TestSuite.h"
+#include "../ActsGles32KhrSingleUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000494,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000494,
         "KHR-Single-GLES32.subgroups.ballot_other",
         ".framebuffer.subgroupinverseballot_vertex");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000495,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000495,
         "KHR-Single-GLES32.subgroups.ballot_other.f",
         "ramebuffer.subgroupinverseballot_tess_eval");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000496,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000496,
         "KHR-Single-GLES32.subgroups.ballot_other.fr",
         "amebuffer.subgroupinverseballot_tess_control");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000497,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000497,
         "KHR-Single-GLES32.subgroups.ballot_other.",
         "framebuffer.subgroupinverseballot_geometry");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000498,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000498,
         "KHR-Single-GLES32.subgroups.ballot_other.f",
         "ramebuffer.subgroupballotbitextract_vertex");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000499,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000499,
         "KHR-Single-GLES32.subgroups.ballot_other.fr",
         "amebuffer.subgroupballotbitextract_tess_eval");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000500,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000500,
         "KHR-Single-GLES32.subgroups.ballot_other.fram",
         "ebuffer.subgroupballotbitextract_tess_control");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000501,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000501,
         "KHR-Single-GLES32.subgroups.ballot_other.fr",
         "amebuffer.subgroupballotbitextract_geometry");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000502,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000502,
         "KHR-Single-GLES32.subgroups.ballot_other.",
         "framebuffer.subgroupballotbitcount_vertex");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000503,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000503,
         "KHR-Single-GLES32.subgroups.ballot_other.f",
         "ramebuffer.subgroupballotbitcount_tess_eval");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000504,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000504,
         "KHR-Single-GLES32.subgroups.ballot_other.fra",
         "mebuffer.subgroupballotbitcount_tess_control");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000505,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000505,
         "KHR-Single-GLES32.subgroups.ballot_other.f",
         "ramebuffer.subgroupballotbitcount_geometry");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000506,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000506,
         "KHR-Single-GLES32.subgroups.ballot_other.fram",
         "ebuffer.subgroupballotinclusivebitcount_vertex");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000507,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000507,
         "KHR-Single-GLES32.subgroups.ballot_other.frameb",
         "uffer.subgroupballotinclusivebitcount_tess_eval");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000508,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000508,
         "KHR-Single-GLES32.subgroups.ballot_other.framebu",
         "ffer.subgroupballotinclusivebitcount_tess_control");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000509,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000509,
         "KHR-Single-GLES32.subgroups.ballot_other.frame",
         "buffer.subgroupballotinclusivebitcount_geometry");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000510,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000510,
         "KHR-Single-GLES32.subgroups.ballot_other.fram",
         "ebuffer.subgroupballotexclusivebitcount_vertex");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000511,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000511,
         "KHR-Single-GLES32.subgroups.ballot_other.frameb",
         "uffer.subgroupballotexclusivebitcount_tess_eval");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000512,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000512,
         "KHR-Single-GLES32.subgroups.ballot_other.framebu",
         "ffer.subgroupballotexclusivebitcount_tess_control");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000513,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000513,
         "KHR-Single-GLES32.subgroups.ballot_other.frame",
         "buffer.subgroupballotexclusivebitcount_geometry");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000514,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000514,
         "KHR-Single-GLES32.subgroups.ballot_other",
         ".framebuffer.subgroupballotfindlsb_vertex");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000515,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000515,
         "KHR-Single-GLES32.subgroups.ballot_other.f",
         "ramebuffer.subgroupballotfindlsb_tess_eval");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000516,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000516,
         "KHR-Single-GLES32.subgroups.ballot_other.fr",
         "amebuffer.subgroupballotfindlsb_tess_control");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000517,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000517,
         "KHR-Single-GLES32.subgroups.ballot_other.",
         "framebuffer.subgroupballotfindlsb_geometry");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000518,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000518,
         "KHR-Single-GLES32.subgroups.ballot_other",
         ".framebuffer.subgroupballotfindmsb_vertex");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000519,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000519,
         "KHR-Single-GLES32.subgroups.ballot_other.f",
         "ramebuffer.subgroupballotfindmsb_tess_eval");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000520,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000520,
         "KHR-Single-GLES32.subgroups.ballot_other.fr",
         "amebuffer.subgroupballotfindmsb_tess_control");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000521,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000521,
         "KHR-Single-GLES32.subgroups.ballot_other.",
         "framebuffer.subgroupballotfindmsb_geometry");
