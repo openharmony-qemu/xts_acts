@@ -562,7 +562,7 @@ export default function windowMaximizeTest() {
               }
             });
           } catch (err) {
-            if (err.code == 801) {
+            if (err.code === 801) {
               console.info(`${message} The device type is not support`);
               done();
             } else {
