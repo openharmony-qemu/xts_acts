@@ -219,9 +219,6 @@ int VIDEO_HW_ENCODE_ROI_FUNC_006()
     if (!isSupported) {
         return 0;
     }
-    if (access("/system/lib64/media/", 0) != 0) {
-        return 0;
-    }
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
@@ -270,9 +267,6 @@ int VIDEO_HW_ENCODE_ROI_FUNC_008()
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capHevc, BITRATE_MODE_CBR);
     if (!isSupported) {
-        return 0;
-    }
-    if (access("/system/lib64/media/", 0) != 0) {
         return 0;
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();

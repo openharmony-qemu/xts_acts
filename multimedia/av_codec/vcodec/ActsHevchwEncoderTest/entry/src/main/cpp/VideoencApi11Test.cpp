@@ -72,6 +72,10 @@ VEncAPI11Sample::~VEncAPI11Sample()
         OH_NativeWindow_DestroyNativeWindow(nativeWindow);
         nativeWindow = nullptr;
     }
+    if (g_encSample == this) {
+        g_encSample = nullptr;
+    }
+    roiInfo = nullptr;   
     Release();
 }
 
