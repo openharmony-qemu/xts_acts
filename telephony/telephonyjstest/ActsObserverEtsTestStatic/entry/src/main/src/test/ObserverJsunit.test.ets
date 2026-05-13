@@ -470,60 +470,6 @@ export default function ObserverJsunit() {
       hilog.info(domain, tag, '%{public}s', '************* Telephony_observer_observer_off_CCallStateChange_0100 Test end *************');
     })
 
-    /**
-     * @tc.name   Telephony_observer_observer_on_signalInfoChange_0200
-     * @tc.number Telephony_observer_observer_on_signalInfoChange_0200
-     * @tc.desc   call the on method of signalInfoChange
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('Telephony_observer_observer_on_signalInfoChange_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', '************* Telephony_observer_observer_on_signalInfoChange_0200 Test start *************');
-      try {
-        let callback = (SignalInformation:Array<radio.SignalInformation>) => {
-          hilog.info(domain, tag, '%{public}s', 'on signalInfoChange, SignalInformation:'+JSON.stringify(SignalInformation));
-          expect(typeof SignalInformation === undefined).assertFalse();
-        }
-        observer.on('signalInfoChange', {
-          slotId: 0
-        }, callback);
-        done();
-      } catch (err) {
-        expect(false).assertTrue();
-        done();
-      }
-      observer.off('signalInfoChange');
-      hilog.info(domain, tag, '%{public}s', '************* Telephony_observer_observer_on_signalInfoChange_0200 Test end *************');
-    })
-
-    /**
-     * @tc.name   Telephony_observer_observer_off_signalInfoChange_0100
-     * @tc.number Telephony_observer_observer_off_signalInfoChange_0100
-     * @tc.desc   call the off method of signalInfoChange
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('Telephony_observer_observer_off_signalInfoChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', '************* Telephony_observer_observer_off_signalInfoChange_0100 Test start *************');
-      try {
-        let callback = (SignalInformation:Array<radio.SignalInformation>) => {
-          hilog.info(domain, tag, '%{public}s', 'on signalInfoChange, SignalInformation:'+JSON.stringify(SignalInformation));
-          expect(typeof SignalInformation === undefined).assertFalse();
-        }
-        observer.on('signalInfoChange', callback);
-        // 可以指定传入on中的callback取消一个订阅，也可以不指定callback清空所有订阅。
-        observer.off('signalInfoChange', callback);
-        observer.off('signalInfoChange');
-        done();
-      } catch (err) {
-        expect(false).assertTrue();
-        done();
-      }
-      hilog.info(domain, tag, '%{public}s', '************* Telephony_observer_observer_off_signalInfoChange_0100 Test end *************');
-    })
-
     hilog.info(domain, tag, '%{public}s', '************* Observer Test end *************');
   })
 }

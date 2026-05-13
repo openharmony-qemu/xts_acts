@@ -14,6 +14,7 @@
  */
 
 import ObserverJsunit from "./ObserverJsunit.test";
+import ObserverRadioJsunit from "./ObserverRadioJsunit.test";
 import ObserverSimJsunit from "./ObserverSimJsunit.test";
 import sim from '@ohos.telephony.sim';
 import EmptyTest from './Empty.test';
@@ -24,6 +25,7 @@ export default function testsuite() {
   if (sim.getMaxSimCount() != 0 && simState != sim.SimState.SIM_STATE_UNKNOWN) {
     if (sim.hasSimCardSync(0)) {
       ObserverJsunit();
+      ObserverRadioJsunit();
       ObserverSimJsunit();
     } else {
       EmptyTest();
