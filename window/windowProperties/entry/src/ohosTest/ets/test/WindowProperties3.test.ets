@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 import window from '@ohos.window';
+import display from '@ohos.display';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -1097,6 +1098,98 @@ export default function windowPropertiesTest3() {
           expect().assertFail();
           done();
         }
+      }
+    });
+
+    // ==================== @Env(SystemProperties.WINDOW_SYSTEM_DENSITY) 测试用例 ====================
+
+    /**
+     * @tc.name   testEnvSystemDensity
+     * @tc.number SUB_WINDOW_ENV_SYSTEM_DENSITY_0100
+     * @tc.desc   验证@Env(SystemProperties.WINDOW_SYSTEM_DENSITY)获取的SystemDensity与getWindowDensityInfo查询结果一致
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testEnvSystemDensity', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let message = 'testEnvSystemDensity';
+      console.info(`${message} begin`);
+      
+      try {
+        let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+        console.info(`${message} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+        
+        let envSystemDensity = AppStorage.get('SystemDensity') as number;
+        console.info(`${message} envSystemDensity from page: ${envSystemDensity}`);
+        
+        let densityInfo = mainWindowClass.getWindowDensityInfo();
+        console.info(`${message} densityInfo: ${JSON.stringify(densityInfo)}`);
+        let systemDensityFromApi = densityInfo.systemDensity;
+        console.info(`${message} systemDensity from getWindowDensityInfo: ${systemDensityFromApi}`);
+        
+        expect(envSystemDensity).assertEqual(systemDensityFromApi);
+        console.info(`${message} Succeeded. envSystemDensity equals systemDensity from API.`);
+        
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+        if (exception.code === 801) {
+          if (!canIUseRes) {
+            console.info(`${message} Capability not supported and canIUse is false.`);
+            expect(exception.code).assertEqual(801);
+            done();
+          } else {
+            console.info(`${message} Capability not supported but canIUse is true.`);
+            expect().assertFail();
+            done();
+          }
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    // ==================== @Env(SystemProperties.WINDOW_DISPLAY_ID) 测试用例 ====================
+
+    /**
+     * @tc.name   testEnvDisplayId
+     * @tc.number SUB_WINDOW_ENV_DISPLAY_ID_0100
+     * @tc.desc   验证@Env(SystemProperties.WINDOW_DISPLAY_ID)获取的DisplayId与getDefaultDisplaySync查询结果一致
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testEnvDisplayId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let message = 'testEnvDisplayId';
+      console.info(`${message} begin`);
+      
+      try {
+        await mainWindowClass.setUIContent('testability/pages/Index');
+        await sleep(500);
+        
+        let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+        console.info(`${message} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+        
+        let envDisplayId = AppStorage.get('DisplayId') as number;
+        console.info(`${message} envDisplayId from page: ${envDisplayId}`);
+        
+        let displayInfo = display.getDefaultDisplaySync();
+        console.info(`${message} displayInfo: ${JSON.stringify(displayInfo)}`);
+        let displayIdFromApi = displayInfo.id;
+        console.info(`${message} displayId from getDefaultDisplaySync: ${displayIdFromApi}`);
+        
+        expect(envDisplayId).assertEqual(displayIdFromApi);
+        console.info(`${message} Succeeded. envDisplayId equals displayId from API.`);
+        
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        expect().assertFail();
+        done();
       }
     });
   });

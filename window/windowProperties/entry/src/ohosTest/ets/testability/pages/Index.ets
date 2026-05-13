@@ -17,10 +17,20 @@ import router from '@ohos.router';
 @Entry
 @Component
 struct Index {
+  @Env(SystemProperties.WINDOW_SYSTEM_DENSITY) SystemDensity: number;
+  @Env(SystemProperties.WINDOW_DISPLAY_ID) DisplayId: number;
+  
   aboutToAppear() {
-    console.info('TestAbility index aboutToAppear')
+    console.info('TestAbility index aboutToAppear');
+    console.info('Index page SystemDensity: ' + this.SystemDensity);
+    console.info('Index page DisplayId: ' + this.DisplayId);
+    
+    AppStorage.setOrCreate('SystemDensity', this.SystemDensity);
+    AppStorage.setOrCreate('DisplayId', this.DisplayId);
   }
+  
   @State message: string = 'Hello World'
+  
   build() {
     Row() {
       Column() {

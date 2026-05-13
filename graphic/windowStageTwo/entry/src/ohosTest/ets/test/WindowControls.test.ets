@@ -16,14 +16,49 @@ import hilog from '@ohos.hilog';
 import window from '@ohos.window';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , TestType, Size, Level} from '@ohos/hypium';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@kit.BasicServicesKit';
+import { BusinessError, deviceInfo } from '@kit.BasicServicesKit';
 import { Driver, ON } from '@kit.TestKit';
 import settings from '@ohos.settings';
 import { ColorMetrics } from '@kit.ArkUI';
 import { StartOptions } from '@kit.AbilityKit';
 import type Want from '@ohos.app.ability.Want';
+import { image } from '@kit.ImageKit';
+
 
 let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
+async function startAbility(caseName: string, context: common.UIAbilityContext, options?: StartOptions) {
+  let startNum = (AppStorage.get('startNum') ? AppStorage.get('startNum') : 0) as number
+  let want: Want = {
+    bundleName: 'com.example.myapplication',
+    abilityName: 'StartAbility'
+  };
+  if (options) {
+    await context.startAbility(want, options).then(() => {
+      console.error(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.error(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  } else {
+    await context.startAbility(want).then(() => {
+      console.error(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.error(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  }
+  await sleep(1000)
+  AppStorage.setOrCreate('startNum', startNum + 1)
+  let windowStageStart = AppStorage.get('windowStageStart') as window.WindowStage;
+  return windowStageStart
+}
+async function terminateAbility(msgStr: string) {
+  let pageContext = AppStorage.get('contextStart') as common.UIAbilityContext
+  await pageContext.terminateSelf().then(() => {
+    console.log(`${msgStr} terminateSelf success`);
+  }).catch((err: BusinessError) => {
+    console.error(`${msgStr} terminateSelf fail, err: ${JSON.stringify(err)}`);
+  });
+  await sleep(900);
+}
 
 async function startAbility3(caseName: string, context: common.UIAbilityContext, options?: StartOptions) {
   let want: Want = {
@@ -167,7 +202,7 @@ export default function windowControlsTest() {
             expect(err.code).assertEqual(1300003)
             done();
           }
-          
+
         });
       } catch (err) {
         console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
@@ -307,6 +342,341 @@ export default function windowControlsTest() {
         done();
       }
     });
+
+    /**
+     * @tc.name   setImageForRecent_1300016
+     * @tc.number SUB_BASIC_WMS_setImageForRecent_0200
+     * @tc.desc   setImageForRecent_1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('setImageForRecent_1300016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let caseName = 'setImageForRecent_1300016';
+      console.log( caseName +' begin');
+      if (deviceInfo.deviceType == '2in1') {
+        let color = new ArrayBuffer(512 * 512 * 4); // 创建一个ArrayBuffer对象，用于存储图像像素。该对象的大小为（height * width * 4）字节。
+        let pixelMap: image.PixelMap;
+        let bufferArr = new Uint8Array(color);
+        for (let i = 0; i < bufferArr.length; i += 4) {
+          bufferArr[i] = 255;
+          bufferArr[i+1] = 0;
+          bufferArr[i+2] = 122;
+          bufferArr[i+3] = 255;
+        }
+        image.createPixelMap(color, {
+          editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 512, width: 512 }
+        }).then((data:image.PixelMap) => {
+          pixelMap = data;
+          console.info(caseName +` Succeeded in creating pixelMap`);
+          try {
+            let promise = windowStage.setImageForRecent(pixelMap, 17);
+            promise.then(() => {
+              console.info(caseName +` Succeeded in setting image for recent`);
+              expect(false).assertTrue();
+              done()
+            }).catch((err: BusinessError) => {
+              console.error(caseName +` Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}`);
+              expect(false).assertTrue();
+              done()
+            });
+          } catch (exception) {
+            console.error(caseName +` Failed to set image for recent.`+exception.code+','+exception.message);
+            expect(exception.code).assertEqual(1300016);
+            expect(exception.message).assertEqual('Parameter validation error. Possible causes: 1.The value of the parameter is out of the allowed range;2.The length of the parameter exceeds the allowed length;3.The parameter format is incorrect.')
+            done();
+
+          }
+        })
+      } else {
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   setImageForRecent_1300002
+     * @tc.number SUB_BASIC_WMS_setImageForRecent_0300
+     * @tc.desc   setImageForRecent_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('setImageForRecent_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let caseName = 'setImageForRecent_1300002';
+      console.log( caseName +' begin');
+      let color = new ArrayBuffer(512 * 512 * 4); // 创建一个ArrayBuffer对象，用于存储图像像素。该对象的大小为（height * width * 4）字节。
+      let pixelMap: image.PixelMap;
+      let bufferArr = new Uint8Array(color);
+      for (let i = 0; i < bufferArr.length; i += 4) {
+        bufferArr[i] = 255;
+        bufferArr[i+1] = 0;
+        bufferArr[i+2] = 122;
+        bufferArr[i+3] = 255;
+      }
+      let windowStart = await startAbility(caseName,context);
+      await terminateAbility(caseName);
+      image.createPixelMap(color, {
+        editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 512, width: 512 }
+      }).then((data:image.PixelMap) => {
+        pixelMap = data;
+        console.info(caseName +` Succeeded in creating pixelMap`);
+        try {
+          let promise = windowStart.setImageForRecent(pixelMap, ImageFit.Fill);
+          promise.then(() => {
+            console.info(caseName +` Succeeded in setting image for recent`);
+            expect(false).assertTrue();
+            done()
+          }).catch((err: BusinessError) => {
+            console.error(caseName +` Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(1300002);
+            expect(err.message).assertEqual('This window state is abnormal. Possible causes: The window is not created or destroyed.')
+            done()
+          });
+        } catch (exception) {
+          console.error(caseName +` Failed to set image for recent.`+exception.code+','+exception.message);
+          expect(false).assertTrue();
+          done()
+
+        }
+      })
+    })
+    /**
+     * @tc.name   testsetImageForRecent
+     * @tc.number SUB_BASIC_WMS_setImageForRecent_0400
+     * @tc.desc   testsetImageForRecent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testsetImageForRecent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+      let caseName = 'testsetImageForRecent';
+      console.log( caseName +' begin');
+      if (deviceInfo.deviceType == '2in1') {
+        let color = new ArrayBuffer(512 * 512 * 4); // 创建一个ArrayBuffer对象，用于存储图像像素。该对象的大小为（height * width * 4）字节。
+        let pixelMap: image.PixelMap;
+        let bufferArr = new Uint8Array(color);
+        for (let i = 0; i < bufferArr.length; i += 4) {
+          bufferArr[i] = 255;
+          bufferArr[i+1] = 0;
+          bufferArr[i+2] = 122;
+          bufferArr[i+3] = 255;
+        }
+        image.createPixelMap(color, {
+          editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 512, width: 512 }
+        }).then((data:image.PixelMap) => {
+          pixelMap = data;
+          console.info(caseName +` Succeeded in creating pixelMap`);
+          try {
+            let promise = windowStage.setImageForRecent(pixelMap, ImageFit.Fill);
+            promise.then(() => {
+              console.info(caseName +` Succeeded in setting image for recent`);
+              done()
+            }).catch((err: BusinessError) => {
+              console.error(caseName +` Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}`);
+              expect(false).assertTrue();
+              done();
+            });
+          } catch (exception) {
+            console.error(caseName +` Failed to set image for recent.`);
+            expect(false).assertTrue();
+            done()
+          }
+        })
+      } else {
+        console.info(caseName +` Unsupported devices.`);
+        done();
+      }
+
+    })
+
+    /**
+     * @tc.name   removeImageForRecent_1300002
+     * @tc.number SUB_BASIC_WMS_removeImageForRecent_0200
+     * @tc.desc   removeImageForRecent_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('removeImageForRecent_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let caseName = 'removeImageForRecent_1300002';
+      console.log( caseName +' begin');
+      let windowStart = await startAbility(caseName,context);
+      await terminateAbility(caseName);
+      try {
+        let promise = windowStart.removeImageForRecent();
+        promise.then(() => {
+          console.info(caseName +` Succeeded in setting image for recent`);
+          expect(false).assertTrue();
+          done()
+        }).catch((err: BusinessError) => {
+          console.error(caseName +` Failed to remove image for recent. Cause code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(1300002);
+          expect(err.message).assertEqual('This window state is abnormal. Possible causes: The window is not created or destroyed.')
+          done()
+        });
+      } catch (exception) {
+        console.error(caseName +` Failed to remove image for recent.`+exception.code+','+exception.message);
+        expect(false).assertTrue();
+        done()
+
+      }
+    })
+    /**
+     * @tc.name   testremoveImageForRecent
+     * @tc.number SUB_BASIC_WMS_removeImageForRecent_0300
+     * @tc.desc   testremoveImageForRecent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testremoveImageForRecent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+      let caseName = 'testremoveImageForRecent';
+      console.log( caseName +' begin');
+      if (deviceInfo.deviceType == '2in1') {
+        try {
+          let promise = windowStage.removeImageForRecent();
+          promise.then(() => {
+            console.info(caseName +` Succeeded in setting image for recent`);
+            done()
+          }).catch((err: BusinessError) => {
+            console.error(caseName +` Failed to remove image for recent. Cause code: ${err.code}, message: ${err.message}`);
+            expect(false).assertTrue();
+            done();
+          });
+        } catch (exception) {
+          console.error(caseName +` Failed to remove image for recent.`);
+          expect(false).assertTrue();
+          done()
+        }
+      } else {
+        console.info(caseName +` Unsupported devices.`);
+        done();
+      }
+
+    })
+
+    /**
+     * @tc.name   testsetImageForRecent_801_0100
+     * @tc.number SUB_BASIC_WMS_setImageForRecent_0500
+     * @tc.desc   testsetImageForRecent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testsetImageForRecent_801_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let caseName = 'testsetImageForRecent_801_0100';
+      console.log( caseName +' begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      let color = new ArrayBuffer(512 * 512 * 4); // 创建一个ArrayBuffer对象，用于存储图像像素。该对象的大小为（height * width * 4）字节。
+      let pixelMap: image.PixelMap;
+      let bufferArr = new Uint8Array(color);
+      for (let i = 0; i < bufferArr.length; i += 4) {
+        bufferArr[i] = 255;
+        bufferArr[i+1] = 0;
+        bufferArr[i+2] = 122;
+        bufferArr[i+3] = 255;
+      }
+      image.createPixelMap(color, {
+        editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 512, width: 512 }
+      }).then((data:image.PixelMap) => {
+        pixelMap = data;
+        console.info(caseName +` Succeeded in creating pixelMap`);
+        try {
+          let promise = windowStage.setImageForRecent(pixelMap, ImageFit.Fill);
+          promise.then(() => {
+            console.info(caseName +` Succeeded in setting image for recent`);
+            if (deviceInfo.deviceType === '2in1') {
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          }).catch((err: BusinessError) => {
+            console.error(caseName +` Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}`);
+            if (!canIUseRes) {
+              if (err.code === 801) {
+                done();
+              } else {
+                expect(false).assertTrue();
+                done();
+              }
+            } else {
+              if (deviceInfo.deviceType !== '2in1') {
+                if (err.code === 201) {
+                  done();
+                } else {
+                  expect(false).assertTrue();
+                  done();
+                }
+              } else {
+                expect(false).assertTrue();
+                done();
+              }
+
+            }
+          });
+        } catch (exception) {
+          console.error(caseName +` Failed to set image for recent.`);
+          expect(false).assertTrue();
+          done()
+        }
+      })
+    })
+
+    /**
+     * @tc.name   testremoveImageForRecent_801_0100
+     * @tc.number SUB_BASIC_WMS_removeImageForRecent_0400
+     * @tc.desc   testremoveImageForRecent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testremoveImageForRecent_801_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let caseName = 'testremoveImageForRecent_801_0100';
+      console.log( caseName +' begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      try {
+        let promise = windowStage.removeImageForRecent();
+        promise.then(() => {
+          console.info(caseName +` Succeeded in setting image for recent`);
+          if (deviceInfo.deviceType === '2in1') {
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+          done()
+        }).catch((err: BusinessError) => {
+          console.error(caseName +` Failed to remove image for recent. Cause code: ${err.code}, message: ${err.message}`);
+          if (!canIUseRes) {
+            if (err.code === 801) {
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          } else {
+            if (deviceInfo.deviceType !== '2in1') {
+              if (err.code === 201) {
+                done();
+              } else {
+                expect(false).assertTrue();
+                done();
+              }
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          }
+        });
+      } catch (exception) {
+        console.error(caseName +` Failed to remove image for recent.`);
+        expect(false).assertTrue();
+        done()
+      }
+    })
 
   })
 }

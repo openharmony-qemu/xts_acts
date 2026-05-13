@@ -65,10 +65,10 @@ export async function getPermission(name?: Permissions): Promise<void> {
     hilog.info(domain, tag, '%{public}s', '  beforeAll waitForComponent');
     for (let i = 0; i < arr.length; i++) {
       let dr = Driver.create();
-      let power = await dr.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
-      if (power != null) {
-        await power.click();
-      }
+      let power1 = await dr.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
+      let power2 = await dr.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), 500);
+      await power1?.click();
+      await power2?.click();
     }
     await Utils.msSleep(2000);
     console.info('  abilityTest beforeAll end');

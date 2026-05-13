@@ -76,11 +76,15 @@ let driveAllow = async () => {
   console.info(`come in driveFn`);
   let dr = Driver.create();
   await sleep(2000);
-  let power: ESObject;
+  let power1: ESObject;
+  let power2: ESObject;
   for (let i = 0; i < permission.length; i++) {
-    power = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
-    await power?.click();
-    power = null;
+    power1 = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
+    power2 = await dr?.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), 500);
+    await power1?.click();
+    await power2?.click();
+    power1 = null;
+    power2 = null;
     await sleep(500);
   }
 }

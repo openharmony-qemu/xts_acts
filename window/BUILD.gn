@@ -41,6 +41,7 @@ group("window") {
     "ActsWindowImmersiveTestStatic:ActsWindowImmersiveTestStaticTest",
     "ActsWindowLayoutTestStatic:ActsWindowLayoutTestStaticTest",
     "ActsWindowFloatViewTestStatic:ActsWindowFloatViewTestStaticTest",
+    "windowEvent:ActsWindowEventTest",
     "WindowKeyBorad:ActsWindowKeyBoradTest" 
   ]
 }
