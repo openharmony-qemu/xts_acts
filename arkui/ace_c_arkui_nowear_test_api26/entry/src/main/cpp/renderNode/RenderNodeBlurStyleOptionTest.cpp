@@ -29,6 +29,7 @@ static napi_value TestRenderNodeBlurStyleOption001(napi_env env, napi_callback_i
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN,
                  "Manager", "TestRenderNodeBlurStyleOption001 ret=%{public}d", ret);
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_CAPI_INIT_ERROR);
+    NAPI_END;
 }
 
 static napi_value TestRenderNodeBlurStyleOption002(napi_env env, napi_callback_info info)
@@ -38,6 +39,7 @@ static napi_value TestRenderNodeBlurStyleOption002(napi_env env, napi_callback_i
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN,
                  "Manager", "TestRenderNodeBlurStyleOption002 ret=%{public}d", ret);
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_CAPI_INIT_ERROR);
+    NAPI_END;
 }
 
 static napi_value TestRenderNodeBlurStyleOption003(napi_env env, napi_callback_info info)
@@ -48,6 +50,7 @@ static napi_value TestRenderNodeBlurStyleOption003(napi_env env, napi_callback_i
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN,
                  "Manager", "TestRenderNodeBlurStyleOption003 ret=%{public}d", ret);
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_CAPI_INIT_ERROR);
+    NAPI_END;
 }
 
 static napi_value TestRenderNodeBlurStyleOption004(napi_env env, napi_callback_info info)
@@ -57,6 +60,7 @@ static napi_value TestRenderNodeBlurStyleOption004(napi_env env, napi_callback_i
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN,
                  "Manager", "TestRenderNodeBlurStyleOption004 ret=%{public}d", ret);
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_CAPI_INIT_ERROR);
+    NAPI_END;
 }
 
 static napi_value TestRenderNodeBlurStyleOption005(napi_env env, napi_callback_info info)
@@ -67,6 +71,7 @@ static napi_value TestRenderNodeBlurStyleOption005(napi_env env, napi_callback_i
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN,
                  "Manager", "TestRenderNodeBlurStyleOption005 ret=%{public}d", ret);
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_CAPI_INIT_ERROR);
+    NAPI_END;
 }
 
 static napi_value TestRenderNodeBlurStyleOption006(napi_env env, napi_callback_info info)
@@ -76,6 +81,7 @@ static napi_value TestRenderNodeBlurStyleOption006(napi_env env, napi_callback_i
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN,
                  "Manager", "TestRenderNodeBlurStyleOption006 ret=%{public}d", ret);
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_CAPI_INIT_ERROR);
+    NAPI_END;
 }
 
 static napi_value TestRenderNodeBlurStyleOption007(napi_env env, napi_callback_info info)
