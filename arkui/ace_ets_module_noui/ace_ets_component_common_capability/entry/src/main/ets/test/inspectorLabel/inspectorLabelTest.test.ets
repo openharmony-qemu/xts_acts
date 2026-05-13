@@ -86,7 +86,7 @@ export default function inspectorLabelTest() {
       console.info("[SUB_ARKUI_INSPECTORLABEL_PARAM_NULL_0200] obj is: " + JSON.stringify(obj.$attrs));
 
       let inspectorLabelValue: ESObject = obj.$attrs.inspectorLabel;
-      expect(inspectorLabelValue === '').assertTrue();
+      expect(inspectorLabelValue).assertNull();
       console.info('[SUB_ARKUI_INSPECTORLABEL_PARAM_NULL_0200] END');
     });
 
@@ -107,7 +107,7 @@ export default function inspectorLabelTest() {
       console.info("[SUB_ARKUI_INSPECTORLABEL_PARAM_UNDEFINED_0300] obj is: " + JSON.stringify(obj.$attrs));
 
       let inspectorLabelValue: ESObject = obj.$attrs.inspectorLabel;
-      expect(inspectorLabelValue === '').assertTrue();
+      expect(inspectorLabelValue).assertNull();
       console.info('[SUB_ARKUI_INSPECTORLABEL_PARAM_UNDEFINED_0300] END');
     });
 
@@ -128,7 +128,7 @@ export default function inspectorLabelTest() {
       console.info("[SUB_ARKUI_INSPECTORLABEL_PARAM_EMPTY_0400] obj is: " + JSON.stringify(obj.$attrs));
 
       let inspectorLabelValue: ESObject = obj.$attrs.inspectorLabel;
-      expect(inspectorLabelValue === '').assertTrue();
+      expect(inspectorLabelValue).assertNull();
       console.info('[SUB_ARKUI_INSPECTORLABEL_PARAM_EMPTY_0400] END');
     });
   });
