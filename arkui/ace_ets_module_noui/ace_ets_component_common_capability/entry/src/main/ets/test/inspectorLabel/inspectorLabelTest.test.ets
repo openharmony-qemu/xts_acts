@@ -49,87 +49,87 @@ export default function inspectorLabelTest() {
     });
 
     /**
-     * @tc.name   inspectorLabel_valid_001
-     * @tc.number SUB_ARKUI_INSPECTORLABEL_PARAM_VALID_001
+     * @tc.name   SUB_ARKUI_INSPECTORLABEL_PARAM_VALID_0100
+     * @tc.number SUB_ARKUI_INSPECTORLABEL_PARAM_VALID_0100
      * @tc.desc   测试 inspectorLabel 正常入参
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_INSPECTORLABEL_PARAM_VALID_001', Level.LEVEL0, async () => {
-      console.info('[SUB_ARKUI_INSPECTORLABEL_PARAM_VALID_001] START');
+    it('SUB_ARKUI_INSPECTORLABEL_PARAM_VALID_0100', Level.LEVEL0, async () => {
+      console.info('[SUB_ARKUI_INSPECTORLABEL_PARAM_VALID_0100] START');
 
       let strJson: string = getInspectorByKey('text_inspectorLabel_valid');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
 
-      console.info("[SUB_ARKUI_INSPECTORLABEL_PARAM_VALID_001] obj is: " + JSON.stringify(obj.$attrs));
+      console.info("[SUB_ARKUI_INSPECTORLABEL_PARAM_VALID_0100] obj is: " + JSON.stringify(obj.$attrs));
 
       let inspectorLabelValue: ESObject = obj.$attrs.inspectorLabel;
       expect(inspectorLabelValue === 'TEST_LABEL').assertTrue();
-      console.info('[SUB_ARKUI_INSPECTORLABEL_PARAM_VALID_001] END');
+      console.info('[SUB_ARKUI_INSPECTORLABEL_PARAM_VALID_0100] END');
     });
 
     /**
-     * @tc.name   inspectorLabel_null_001
-     * @tc.number SUB_ARKUI_INSPECTORLABEL_PARAM_NULL_001
+     * @tc.name   SUB_ARKUI_INSPECTORLABEL_PARAM_NULL_0200
+     * @tc.number SUB_ARKUI_INSPECTORLABEL_PARAM_NULL_0200
      * @tc.desc   测试 inspectorLabel null 参数，应为空字符串
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_INSPECTORLABEL_PARAM_NULL_001', Level.LEVEL0, async () => {
-      console.info('[SUB_ARKUI_INSPECTORLABEL_PARAM_NULL_001] START');
+    it('SUB_ARKUI_INSPECTORLABEL_PARAM_NULL_0200', Level.LEVEL0, async () => {
+      console.info('[SUB_ARKUI_INSPECTORLABEL_PARAM_NULL_0200] START');
 
       let strJson: string = getInspectorByKey('text_inspectorLabel_null');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
 
-      console.info("[inspectorLabel_nSUB_ARKUI_INSPECTORLABEL_PARAM_NULL_001ull_001] obj is: " + JSON.stringify(obj.$attrs));
+      console.info("[SUB_ARKUI_INSPECTORLABEL_PARAM_NULL_0200] obj is: " + JSON.stringify(obj.$attrs));
 
       let inspectorLabelValue: ESObject = obj.$attrs.inspectorLabel;
       expect(inspectorLabelValue === '').assertTrue();
-      console.info('[SUB_ARKUI_INSPECTORLABEL_PARAM_NULL_001] END');
+      console.info('[SUB_ARKUI_INSPECTORLABEL_PARAM_NULL_0200] END');
     });
 
     /**
-     * @tc.name   inspectorLabel_undefined_001
-     * @tc.number SUB_ARKUI_INSPECTORLABEL_PARAM_UNDEFINED_001
+     * @tc.name   SUB_ARKUI_INSPECTORLABEL_PARAM_UNDEFINED_0300
+     * @tc.number SUB_ARKUI_INSPECTORLABEL_PARAM_UNDEFINED_0300
      * @tc.desc   测试 inspectorLabel undefined 参数，应为空字符串
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_INSPECTORLABEL_PARAM_UNDEFINED_001', Level.LEVEL0, async () => {
-      console.info('[SUB_ARKUI_INSPECTORLABEL_PARAM_UNDEFINED_001] START');
+    it('SUB_ARKUI_INSPECTORLABEL_PARAM_UNDEFINED_0300', Level.LEVEL0, async () => {
+      console.info('[SUB_ARKUI_INSPECTORLABEL_PARAM_UNDEFINED_0300] START');
 
       let strJson: string = getInspectorByKey('text_inspectorLabel_undefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
 
-      console.info("[SUB_ARKUI_INSPECTORLABEL_PARAM_UNDEFINED_001] obj is: " + JSON.stringify(obj.$attrs));
+      console.info("[SUB_ARKUI_INSPECTORLABEL_PARAM_UNDEFINED_0300] obj is: " + JSON.stringify(obj.$attrs));
 
       let inspectorLabelValue: ESObject = obj.$attrs.inspectorLabel;
       expect(inspectorLabelValue === '').assertTrue();
-      console.info('[SUB_ARKUI_INSPECTORLABEL_PARAM_UNDEFINED_001] END');
+      console.info('[SUB_ARKUI_INSPECTORLABEL_PARAM_UNDEFINED_0300] END');
     });
 
     /**
-     * @tc.name   inspectorLabel_empty_001
-     * @tc.number SUB_ARKUI_INSPECTORLABEL_PARAM_EMPTY_001
+     * @tc.name   SUB_ARKUI_INSPECTORLABEL_PARAM_EMPTY_0400
+     * @tc.number SUB_ARKUI_INSPECTORLABEL_PARAM_EMPTY_0400
      * @tc.desc   测试 inspectorLabel 空字符串参数
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_INSPECTORLABEL_PARAM_EMPTY_001', Level.LEVEL0, async () => {
-      console.info('[SUB_ARKUI_INSPECTORLABEL_PARAM_EMPTY_001] START');
+    it('SUB_ARKUI_INSPECTORLABEL_PARAM_EMPTY_0400', Level.LEVEL0, async () => {
+      console.info('[SUB_ARKUI_INSPECTORLABEL_PARAM_EMPTY_0400] START');
 
       let strJson: string = getInspectorByKey('text_inspectorLabel_empty');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
 
-      console.info("[SUB_ARKUI_INSPECTORLABEL_PARAM_EMPTY_001] obj is: " + JSON.stringify(obj.$attrs));
+      console.info("[SUB_ARKUI_INSPECTORLABEL_PARAM_EMPTY_0400] obj is: " + JSON.stringify(obj.$attrs));
 
       let inspectorLabelValue: ESObject = obj.$attrs.inspectorLabel;
       expect(inspectorLabelValue === '').assertTrue();
-      console.info('[SUB_ARKUI_INSPECTORLABEL_PARAM_EMPTY_001] END');
+      console.info('[SUB_ARKUI_INSPECTORLABEL_PARAM_EMPTY_0400] END');
     });
   });
 }
