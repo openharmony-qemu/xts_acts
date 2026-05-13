@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-import abilityTest from "./Ability.test";
 import StaticMethodEqualsTest from "./staticMethod/StaticMethodEqualsTest.test";
 import StaticMethodGetNameTest from "./staticMethod/StaticMethodGetNameTest.test";
 import StaticMethodGetOwnerTest from "./staticMethod/StaticMethodGetOwnerTest.test";
