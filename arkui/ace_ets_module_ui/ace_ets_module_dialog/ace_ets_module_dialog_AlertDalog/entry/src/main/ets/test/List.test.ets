@@ -42,6 +42,7 @@ import AlertDialogSystemMaterialTest from './dialogSystemMaterial/AlertDialogSys
 import BaseDialogOptionsSystemMaterialTest from './dialogSystemMaterial/BaseDialogOptionsSystemMaterial.test';
 import CustomDialogControllerOptionsSystemMaterialTest from './dialogSystemMaterial/CustomDialogControllerOptionsSystemMaterial.test';
 import ShowDialogOptionsSystemMaterialTest from './dialogSystemMaterial/ShowDialogOptionsSystemMaterial.test';
+import ShowToastOptionsTest from './dialogSystemMaterial/ShowToastOptions.test';
 
 export default function testsuite() {
   AlertDialogAJsunit();
@@ -73,5 +74,5 @@ export default function testsuite() {
   BaseDialogOptionsSystemMaterialTest();
   CustomDialogControllerOptionsSystemMaterialTest();
   ShowDialogOptionsSystemMaterialTest();
-  
+  ShowToastOptionsTest();
 }
