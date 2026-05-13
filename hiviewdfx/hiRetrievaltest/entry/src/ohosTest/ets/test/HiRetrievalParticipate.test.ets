@@ -42,7 +42,8 @@ export default function HiRetrievalParticipateTest() {
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(0x0000, 'testTag', 'error code: %{public}d', err.code);
-                expect(err.code === 36000001).assertTrue();
+                let res:number = (typeof err.code === 'number') ? err.code : Number(err.code) 
+                expect(res === 36000001).assertTrue();
             }
             hilog.info(0x0000, 'testTag', '*********** testHiRetrievalParticipate_0200 Test end***********');
         });
@@ -204,7 +205,8 @@ export default function HiRetrievalParticipateTest() {
                 hilog.info(0x0000, 'testTag', '*********** testHiRetrievalParticipate_0700 Test end***********');
             } catch (err) {
                 hilog.error(0x0000, 'testTag', '%{public}s', JSON.stringify(err));
-                expect(err.code === 401).assertTrue();
+                let res:number = (typeof err.code === 'number') ? err.code : Number(err.code) 
+                expect(res === 401).assertTrue();
             }
         });
 
@@ -225,7 +227,8 @@ export default function HiRetrievalParticipateTest() {
                 hilog.info(0x0000, 'testTag', '*********** testHiRetrievalParticipate_0800 Test end***********');
             } catch (err) {
                 hilog.error(0x0000, 'testTag', '%{public}s', JSON.stringify(err));
-                expect(err.code === 401).assertTrue();
+                let res:number = (typeof err.code === 'number') ? err.code : Number(err.code) 
+                expect(res === 401).assertTrue();
             }
         });
     })
