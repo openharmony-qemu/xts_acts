@@ -89,82 +89,6 @@ export default function actsNotificationAnsThreePartyWatchStaticWithInAbilityTes
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_ThreePartyWatch_Static_1057
-     * @tc.number Sub_Notification_Ans_ThreePartyWatch_Static_1057
-     * @tc.desc   [getUserGrantedEnabledBundles-public] Unauthorized App. The interface returns a null value
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('Sub_Notification_Ans_ThreePartyWatch_Static_1057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
-      const testNum = 'Sub_Notification_Ans_ThreePartyWatch_Static_1057';
-      let num:int=0
-      try {
-        notificationExtensionSubscription.getUserGrantedEnabledBundles().then((data: notificationExtensionSubscription.GrantedBundleInfo[]) => {
-          num++
-          console.info(testNum+num+`getUserGrantedEnabledBundles successfully. Data: ${JSON.stringify(data)}`);
-          expect(num).assertEqual(1)
-          done()
-        }).catch((error: Error) => {
-          let err = error as BusinessError
-          console.error(testNum+`getUserGrantedEnabledBundles fail: ${JSON.stringify(err)}`);
-          done()
-        });
-      } catch (err) {
-        hilog.error(0x0000, 'testTag', `${testNum}restart failed: ${err.code}, ${err.message},${testNum}`);
-        expect(err).assertEqual(0)
-        done();
-      }
-    })
-
-    /**
-     * @tc.name   Sub_Notification_Ans_ThreePartyWatch_Static_1001
-     * @tc.number Sub_Notification_Ans_ThreePartyWatch_Static_1001
-     * @tc.desc   [openSubscriptionSeetings] Error 1600018 is reported when the notification window is started and the interface is requested again
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('Sub_Notification_Ans_ThreePartyWatch_Static_1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
-      const testNum = 'Sub_Notification_Ans_ThreePartyWatch_Static_1001';
-      let testContext: common.UIAbilityContext= AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
-      try {
-          await notificationExtensionSubscription.openSubscriptionSettings(testContext).then(() => {
-            console.info(`${testNum}openSubscriberSettings1 success`);
-          }).catch((e:Error) => {
-            let error = e as BusinessError
-            console.error(`${testNum}failed to call openSubscriptionSettings1 ${JSON.stringify(error)}`)
-            done()
-          });
-          await Utils.msSleep(1000)
-          await notificationExtensionSubscription.openSubscriptionSettings(testContext).then(() => {
-            console.info(`${testNum}openSubscriberSettings2 success`);
-            done()
-          }).catch((e:Error) => {
-            let error = e as BusinessError
-            console.error(`${testNum}failed to call openSubscriptionSettings2 ${error.code}, ${error.message}`)
-            if (error?.code === 801) {
-              expect(error.code).assertEqual(801);
-              done();
-            }else if(error?.code === 201){
-              expect(error.code).assertEqual(201);
-              done();
-            }else if(error?.code === 1600018){
-              expect(error.code).assertEqual(1600018)
-              done()
-            }else{
-              expect(false).assertTrue();
-              done();
-            }
-          });
-      } catch (err) {
-        hilog.error(0x0000, 'testTag', `${testNum}restart failed: ${err.code}, ${err.message},${testNum}`);
-        expect(err).assertEqual(0)
-        done();
-      }
-    })
-
-    /**
      * @tc.name   SUB_Notification_Ans_ThreePartyWatch_Static_0200
      * @tc.number SUB_Notification_Ans_ThreePartyWatch_Static_0200
      * @tc.desc   [subscribe] The `info` parameter passes multiple sets of elements, and the subscription is successful
@@ -538,6 +462,82 @@ export default function actsNotificationAnsThreePartyWatchStaticWithInAbilityTes
           }
         }
       })
+
+      /**
+     * @tc.name   Sub_Notification_Ans_ThreePartyWatch_Static_1057
+     * @tc.number Sub_Notification_Ans_ThreePartyWatch_Static_1057
+     * @tc.desc   [getUserGrantedEnabledBundles-public] Unauthorized App. The interface returns a null value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Notification_Ans_ThreePartyWatch_Static_1057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
+      const testNum = 'Sub_Notification_Ans_ThreePartyWatch_Static_1057';
+      let num:int=0
+      try {
+        notificationExtensionSubscription.getUserGrantedEnabledBundles().then((data: notificationExtensionSubscription.GrantedBundleInfo[]) => {
+          num++
+          console.info(testNum+num+`getUserGrantedEnabledBundles successfully. Data: ${JSON.stringify(data)}`);
+          expect(num).assertEqual(1)
+          done()
+        }).catch((error: Error) => {
+          let err = error as BusinessError
+          console.error(testNum+`getUserGrantedEnabledBundles fail: ${JSON.stringify(err)}`);
+          done()
+        });
+      } catch (err) {
+        hilog.error(0x0000, 'testTag', `${testNum}restart failed: ${err.code}, ${err.message},${testNum}`);
+        expect(err).assertEqual(0)
+        done();
+      }
+    })
+
+     /**
+     * @tc.name   Sub_Notification_Ans_ThreePartyWatch_Static_1001
+     * @tc.number Sub_Notification_Ans_ThreePartyWatch_Static_1001
+     * @tc.desc   [openSubscriptionSeetings] Error 1600018 is reported when the notification window is started and the interface is requested again
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('Sub_Notification_Ans_ThreePartyWatch_Static_1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
+      const testNum = 'Sub_Notification_Ans_ThreePartyWatch_Static_1001';
+      let testContext: common.UIAbilityContext= AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+      try {
+          await notificationExtensionSubscription.openSubscriptionSettings(testContext).then(() => {
+            console.info(`${testNum}openSubscriberSettings1 success`);
+          }).catch((e:Error) => {
+            let error = e as BusinessError
+            console.error(`${testNum}failed to call openSubscriptionSettings1 ${JSON.stringify(error)}`)
+            done()
+          });
+          await Utils.msSleep(1000)
+          await notificationExtensionSubscription.openSubscriptionSettings(testContext).then(() => {
+            console.info(`${testNum}openSubscriberSettings2 success`);
+            done()
+          }).catch((e:Error) => {
+            let error = e as BusinessError
+            console.error(`${testNum}failed to call openSubscriptionSettings2 ${error.code}, ${error.message}`)
+            if (error?.code === 801) {
+              expect(error.code).assertEqual(801);
+              done();
+            }else if(error?.code === 201){
+              expect(error.code).assertEqual(201);
+              done();
+            }else if(error?.code === 1600018){
+              expect(error.code).assertEqual(1600018)
+              done()
+            }else{
+              expect(false).assertTrue();
+              done();
+            }
+          });
+      } catch (err) {
+        hilog.error(0x0000, 'testTag', `${testNum}restart failed: ${err.code}, ${err.message},${testNum}`);
+        expect(err).assertEqual(0)
+        done();
+      }
+    })
     
   })
 }
