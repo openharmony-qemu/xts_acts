@@ -429,8 +429,6 @@ static napi_value TextEnumTest_031(napi_env env, napi_callback_info info)
         "result_31_1 TextEnumTest_031 result=%{public}d", result_31_1);
     ASSERT_EQ(result_31_1, ARKUI_ERROR_CODE_NO_ERROR);
 
-    const OH_ArkUI_SpanStyle *spanStyle2 = OH_ArkUI_SpanStyle_Create();
-    // spanStyle2->styledKey = OH_ArkUI_StyledStringKey::OH_ARKUI_STYLEDSTRINGKEY_LINE_SPACING;
     auto result_31_2 = OH_ArkUI_SpanStyle_GetLineSpacingStyle(spanStyle, lineSpacingStyle);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result_31_2 TextEnumTest_031 result=%{public}d", result_31_2);
@@ -464,19 +462,19 @@ static napi_value TextEnumTest_032(napi_env env, napi_callback_info info)
     OH_ArkUI_SpanStyle *spanStyle = OH_ArkUI_SpanStyle_Create();
     OH_ArkUI_SpanStyle_SetStart(spanStyle, PARAM_0);
     OH_ArkUI_SpanStyle_SetLength(spanStyle, PARAM_12);
-    auto result_31_1 = OH_ArkUI_SpanStyle_SetLineSpacingStyle(spanStyle, lineSpacingStyle);
+    auto result_32_1 = OH_ArkUI_SpanStyle_SetLineSpacingStyle(spanStyle, lineSpacingStyle);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "result_31_1 TextEnumTest_031 result=%{public}d", result_31_1);
-    ASSERT_EQ(result_31_1, ARKUI_ERROR_CODE_NO_ERROR);
+        "result_32_1 TextEnumTest_032 result=%{public}d", result_32_1);
+    ASSERT_EQ(result_32_1, ARKUI_ERROR_CODE_NO_ERROR);
 
     const OH_ArkUI_SpanStyle *spanStyles[] = {spanStyle};
     ArkUI_StyledString_Descriptor *styledString =
         OH_ArkUI_StyledString_Descriptor_CreateWithString("行间距样式示例\n段落内容", spanStyles, PARAM_1);
-    
-    auto result_31_2 = OH_ArkUI_SpanStyle_GetLineSpacingStyle(spanStyles[0], lineSpacingStyle);
+
+    auto result_32_2 = OH_ArkUI_SpanStyle_GetLineSpacingStyle(spanStyles[0], lineSpacingStyle);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "result_31_2 TextEnumTest_031 result=%{public}d", result_31_2);
-    ASSERT_EQ(result_31_2, ARKUI_ERROR_CODE_NO_ERROR);    
+        "result_32_2 TextEnumTest_032 result=%{public}d", result_32_2);
+    ASSERT_EQ(result_32_2, ARKUI_ERROR_CODE_NO_ERROR);
 
     OH_ArkUI_SpanStyle_Destroy(spanStyle);
     OH_ArkUI_LineSpacingStyle_Destroy(lineSpacingStyle);
