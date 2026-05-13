@@ -1916,3 +1916,552 @@ export default function FieldsLateInitTestTwo(): void {
         expect(a.field instanceof byte).assertTrue()
         expect(a.field).assertEqual(5)
     })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0263
+     * @tc.name      testFieldsLateInit0263
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0263", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: Base_F263 = new A_F263()
+        a.field = 5
+        expect(a.field instanceof short).assertTrue()
+        expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0264
+     * @tc.name      testFieldsLateInit0264
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0264", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: Base_F264 = new A_F264()
+        a.field = 7.3
+        expect(a.field instanceof double).assertTrue()
+        expect(a.field).assertEqual(7.3)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0265
+     * @tc.name      testFieldsLateInit0265
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0265", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: Base_F265 = new A_F265()
+        a.field = 5
+        expect(a.field instanceof number).assertTrue()
+        expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0266
+     * @tc.name      testFieldsLateInit0266
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0266", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: Base_F266 = new A_F266()
+        a.field = 7.3f
+        expect(a.field instanceof float).assertTrue()
+        expect(a.field).assertEqual(7.3f)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0267
+     * @tc.name      testFieldsLateInit0267
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0267", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: Base_F267 = new A_F267()
+        a.field = 5n
+        expect(a.field instanceof bigint).assertTrue()
+        expect(a.field).assertEqual(5n)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0268
+     * @tc.name      testFieldsLateInit0268
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0268", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: Base_F268 = new A_F268()
+        a.field = "abc"
+        expect(a.field instanceof string).assertTrue()
+        expect(a.field).assertEqual("abc")
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0269
+     * @tc.name      testFieldsLateInit0269
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0269", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: Base_F269 = new A_F269()
+        a.field = c'a'
+        expect(a.field instanceof char).assertTrue()
+        expect(a.field).assertEqual(c'a')
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0270
+     * @tc.name      testFieldsLateInit0270
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0270", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: Base_F270 = new A_F270()
+        a.field = true
+        expect(a.field instanceof boolean).assertTrue()
+        expect(a.field).assertEqual(true)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0271
+     * @tc.name      testFieldsLateInit0271
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0271", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: Base_F271 = new A_F271()
+        a.field = 5
+        expect(a.field instanceof Object).assertTrue()
+        expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0272
+     * @tc.name      testFieldsLateInit0272
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0272", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F272 = new A_F272()
+        expect(a.field instanceof long).assertTrue()
+        expect(a.field).assertEqual(3)
+        a.field = 5
+        expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0273
+     * @tc.name      testFieldsLateInit0273
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0273", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F273 = new A_F273()
+        expect(a.field instanceof int).assertTrue()
+        expect(a.field).assertEqual(3)
+        a.field = 5
+        expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0274
+     * @tc.name      testFieldsLateInit0274
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0274", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F274 = new A_F274()
+        expect(a.field instanceof byte).assertTrue()
+        expect(a.field).assertEqual(3)
+        a.field = 5
+        expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0275
+     * @tc.name      testFieldsLateInit0275
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0275", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F275 = new A_F275()
+        expect(a.field instanceof short).assertTrue()
+        expect(a.field).assertEqual(3)
+        a.field = 5
+        expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0276
+     * @tc.name      testFieldsLateInit0276
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0276", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F276 = new A_F276()
+        expect(a.field instanceof double).assertTrue()
+        expect(a.field).assertEqual(3)
+        a.field = 7.3
+        expect(a.field).assertEqual(7.3)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0277
+     * @tc.name      testFieldsLateInit0277
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0277", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F277 = new A_F277()
+        expect(a.field instanceof number).assertTrue()
+        expect(a.field).assertEqual(3)
+        a.field = 5
+        expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0278
+     * @tc.name      testFieldsLateInit0278
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0278", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F278 = new A_F278()
+        expect(a.field instanceof float).assertTrue()
+        expect(a.field).assertEqual(3)
+        a.field = 7.3f
+        expect(a.field).assertEqual(7.3f)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0279
+     * @tc.name      testFieldsLateInit0279
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0279", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F279 = new A_F279()
+        expect(a.field instanceof bigint).assertTrue()
+        expect(a.field).assertEqual(3n)
+        a.field = 5n
+        expect(a.field).assertEqual(5n)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0280
+     * @tc.name      testFieldsLateInit0280
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0280", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F280 = new A_F280()
+        expect(a.field instanceof string).assertTrue()
+        expect(a.field).assertEqual("ab")
+        a.field = "abc"
+        expect(a.field).assertEqual("abc")
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0281
+     * @tc.name      testFieldsLateInit0281
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0281", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F281 = new A_F281()
+        expect(a.field instanceof char).assertTrue()
+        expect(a.field).assertEqual(c'b')
+        a.field = c'a'
+        expect(a.field).assertEqual(c'a')
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0282
+     * @tc.name      testFieldsLateInit0282
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0282", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F282 = new A_F282()
+        expect(a.field instanceof boolean).assertTrue()
+        expect(a.field).assertEqual(false)
+        a.field = true
+        expect(a.field).assertEqual(true)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0283
+     * @tc.name      testFieldsLateInit0283
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0283", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F283 = new A_F283()
+        expect(a.field instanceof Object).assertTrue()
+        expect(a.field).assertEqual(3)
+        a.field = 5
+        expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0284
+     * @tc.name      testFieldsLateInit0284
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0284", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: Base_F284 = new A_F284()
+        expect(a.field instanceof long).assertTrue()
+        expect(a.field).assertEqual(3)
+        a.field = 5
+        expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0285
+     * @tc.name      testFieldsLateInit0285
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0285", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: Base_F285 = new A_F285()
+        expect(a.field instanceof int).assertTrue()
+        expect(a.field).assertEqual(3)
+        a.field = 5
+        expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0286
+     * @tc.name      testFieldsLateInit0286
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0286", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: Base_F286 = new A_F286()
+        expect(a.field instanceof byte).assertTrue()
+        expect(a.field).assertEqual(3)
+        a.field = 5
+        expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0287
+     * @tc.name      testFieldsLateInit0287
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0287", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: Base_F287 = new A_F287()
+        expect(a.field instanceof short).assertTrue()
+        expect(a.field).assertEqual(3)
+        a.field = 5
+        expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0288
+     * @tc.name      testFieldsLateInit0288
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0288", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: Base_F288 = new A_F288()
+        expect(a.field instanceof double).assertTrue()
+        expect(a.field).assertEqual(3)
+        a.field = 7.3
+        expect(a.field).assertEqual(7.3)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0289
+     * @tc.name      testFieldsLateInit0289
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0289", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: Base_F289 = new A_F289()
+        expect(a.field instanceof number).assertTrue()
+        expect(a.field).assertEqual(3)
+        a.field = 5
+        expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0290
+     * @tc.name      testFieldsLateInit0290
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0290", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: Base_F290 = new A_F290()
+        expect(a.field instanceof float).assertTrue()
+        expect(a.field).assertEqual(3)
+        a.field = 7.3f
+        expect(a.field).assertEqual(7.3f)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0291
+     * @tc.name      testFieldsLateInit0291
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0291", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: Base_F291 = new A_F291()
+        expect(a.field instanceof bigint).assertTrue()
+        expect(a.field).assertEqual(3n)
+        a.field = 5n
+        expect(a.field).assertEqual(5n)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0292
+     * @tc.name      testFieldsLateInit0292
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0292", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: Base_F292 = new A_F292()
+        expect(a.field instanceof string).assertTrue()
+        expect(a.field).assertEqual("ab")
+        a.field = "abc"
+        expect(a.field).assertEqual("abc")
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0293
+     * @tc.name      testFieldsLateInit0293
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0293", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: Base_F293 = new A_F293()
+        expect(a.field instanceof char).assertTrue()
+        expect(a.field).assertEqual(c'b')
+        a.field = c'a'
+        expect(a.field).assertEqual(c'a')
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0294
+     * @tc.name      testFieldsLateInit0294
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0294", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: Base_F294 = new A_F294()
+        expect(a.field instanceof boolean).assertTrue()
+        expect(a.field).assertEqual(false)
+        a.field = true
+        expect(a.field).assertEqual(true)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0295
+     * @tc.name      testFieldsLateInit0295
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0295", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: Base_F295 = new A_F295()
+        expect(a.field instanceof Object).assertTrue()
+        expect(a.field).assertEqual(3)
+        a.field = 5
+        expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0296
+     * @tc.name      testFieldsLateInit0296
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0296", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F296 = new A_F296()
+        expect(a.field instanceof long).assertTrue()
+        expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0297
+     * @tc.name      testFieldsLateInit0297
+     * @tc.desc      Checking for initialization with overriding usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldsLateInit0297", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F297 = new A_F297()
+        expect(a.field instanceof int).assertTrue()
+        expect(a.field).assertEqual(5)
+    })
+  })
+}
