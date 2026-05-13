@@ -503,10 +503,8 @@ void VEncAPI11Sample::InputFuncSurface()
             continue;
         }
         if (!ReadOneFrameYUV420SP(dst)) {
-            err = OH_VideoEncoder_NotifyEndOfStream(venc_);
-            if (err != 0) {
-                cout << "OH_VideoEncoder_NotifyEndOfStream failed" << endl;
-            }
+            OH_NativeWindow_NativeWindowAbortBuffer(nativeWindow, ohNativeWindowBuffer);
+            OH_VideoEncoder_NotifyEndOfStream(venc_);
             g_flagValue = false;
             break;
         }
