@@ -415,7 +415,7 @@ export default function windowImmersiveTest() {
 
     /**
      * @tc.name   testIsImmersiveLayoutwithMaximize
-     * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0900
+     * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_1500
      * @tc.desc   验证maximize后调用IsImmersiveLayout
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2251,31 +2251,21 @@ export default function windowImmersiveTest() {
         let windowClass = windowStage.getMainWindowSync();
         await windowClass.setFullScreen(true);
         console.info(`${caseName} Succeeded in enabling the full-screen mode.`);
-        windowClass.setSpecificSystemBarEnabled('status', false).then(async () => {
-          console.log(`${caseName} Succeeded in setting the status bar to be invisible.`);
-          await sleep(100);
-        }).catch((error: BusinessError) => {
-          console.error(`${caseName} Failed to set the status bar to be invisible. Cause: ${JSON.stringify(error)}`);
-          expect().assertFail();
+        await windowClass.setSpecificSystemBarEnabled('status', false)
+        console.log(`${caseName} Succeeded in setting the status bar to be invisible.`);
+        await sleep(100);
+        await windowClass.setSpecificSystemBarEnabled('status', true)
+        console.log(`${caseName} Succeeded in setting the status bar to be visible.`);
+        await sleep(100);
+        let avoidArea = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM);
+        console.info(`${caseName} Get Window Avoid Area: ${JSON.stringify(avoidArea)}`);
+        if(isFreeWindowMode || deviceType == 'wearable' || deviceType == 'tv'){
+          expect(avoidArea.topRect.height).assertEqual(0);
           done();
-        });
-        windowClass.setSpecificSystemBarEnabled('status', true).then(async () => {
-          console.log(`${caseName} Succeeded in setting the status bar to be invisible.`);
-          await sleep(100);
-          let avoidArea = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM);
-          console.info(`${caseName} Get Window Avoid Area: ${JSON.stringify(avoidArea)}`);
-          if(isFreeWindowMode || deviceType == 'wearable' || deviceType == 'tv'){
-            expect(avoidArea.topRect.height).assertEqual(0);
-            done();
-          }else{
-            expect(avoidArea.topRect.height).assertLarger(0);
-            done();
-          }
-        }).catch((error: BusinessError) => {
-          console.error(`${caseName} Failed to set the status bar to be invisible. Cause: ${JSON.stringify(error)}`);
-          expect().assertFail();
+        }else{
+          expect(avoidArea.topRect.height).assertLarger(0);
           done();
-        });
+        }
       } catch (exception) {
         console.error(`${caseName} Failed to set the system bar to be invisible. Cause code: ${exception.code}, message: ${exception.message}`);
         expect().assertFail();
@@ -3157,7 +3147,7 @@ export default function windowImmersiveTest() {
 
     /**
      * @tc.name   testIsImmersiveLayoutwithDialogWindowDefaultState
-     * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0400
+     * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0700
      * @tc.desc   验证dialog窗创建后默认为非沉浸式状态
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3276,39 +3266,6 @@ export default function windowImmersiveTest() {
       }
     });
 
-    /**
-     * @tc.name   testIsImmersiveLayoutwithMiniMize
-     * @tc.number testIsImmersiveLayoutwithMiniMize
-     * @tc.desc   testIsImmersiveLayoutwithMiniMize
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    // it('testIsImmersiveLayoutwithMiniMize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-    //   let caseName = 'testIsImmersiveLayoutwithMiniMize';
-    //   // 1、拉起另一个Abllity主窗
-    //   let windowStageStart = await startAbility(caseName, context);
-    //   let windowClassTest = windowStageStart.getMainWindowSync();
-    //   try {
-    //     await windowClassTest.minimize();
-    //     await sleep(200);
-    //     let res = windowClassTest.isImmersiveLayout();
-    //     console.log(`${caseName} isImmersiveLayout: ${res}.`);
-    //     expect(res).assertEqual(false);
-    //     await terminateAbility(caseName);
-    //     await sleep(200)
-    //     done();
-    //   } catch (e) {
-    //     console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-    //     await terminateAbility(caseName);
-    //     if (e.code === 801) {
-    //       done();
-    //     } else {
-    //       expect().assertFail();
-    //       done();
-    //     }
-    //   }
-    // });
 
     /**
      * @tc.name   testIsImmersiveLayoutwithDestroySubWindow
@@ -3566,7 +3523,7 @@ export default function windowImmersiveTest() {
 
     /**
      * @tc.name   testIsImmersiveLayoutwithSubWindowDefaultStateAdapt001
-     * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0200
+     * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_1600
      * @tc.desc   验证子窗创建后默认为沉浸式状态
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3598,7 +3555,7 @@ export default function windowImmersiveTest() {
 
     /**
      * @tc.name   testIsImmersiveLayoutwithFloatWindowDefaultState
-     * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0300
+     * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_1700
      * @tc.desc   验证悬浮窗创建后默认为非沉浸式状态
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3688,7 +3645,7 @@ export default function windowImmersiveTest() {
 
     /**
      * @tc.name   testIsImmersiveLayoutwithImmersiveModeAdapt001
-     * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0500
+     * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0900
      * @tc.desc   验证非2in1设备setImmersiveModeEnabledState后IsImmersiveLayout
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3724,7 +3681,7 @@ export default function windowImmersiveTest() {
 
     /**
      * @tc.name   testIsImmersiveLayoutwithWindowLayoutFullScreenAdapt001
-     * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0600
+     * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_1000
      * @tc.desc   验证非2in1setWindowLayoutFullScreen后IsImmersiveLayout
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3760,43 +3717,10 @@ export default function windowImmersiveTest() {
       }
     });
 
-    /**
-     * @tc.name   testIsImmersiveLayoutwithMiniMizeAdapt001
-     * @tc.number testIsImmersiveLayoutwithMiniMize
-     * @tc.desc   testIsImmersiveLayoutwithMiniMize
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    // it('testIsImmersiveLayoutwithMiniMizeAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-    //   let caseName = 'testIsImmersiveLayoutwithMiniMize';
-    //   // 1、拉起另一个Abllity主窗
-    //   let windowStageStart = await startAbility(caseName, context);
-    //   let windowClassTest = windowStageStart.getMainWindowSync();
-    //   try {
-    //     await windowClassTest.minimize();
-    //     await sleep(200);
-    //     let res = windowClassTest.isImmersiveLayout();
-    //     console.log(`${caseName} isImmersiveLayout: ${res}.`);
-    //     expect(res).assertEqual(false);
-    //     await terminateAbility(caseName);
-    //     await sleep(200)
-    //     done();
-    //   } catch (e) {
-    //     console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-    //     await terminateAbility(caseName);
-    //     if (e.code === 801) {
-    //       done();
-    //     } else {
-    //       expect().assertFail();
-    //       done();
-    //     }
-    //   }
-    // });
 
     /**
      * @tc.name   testIsImmersiveLayoutwithDestroySubWindowAdapt001
-     * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_0800
+     * @tc.number SUB_BASIC_WMS_WINDOW_ISIMMERSIVELAYOUT_1800
      * @tc.desc   验证销毁后调用IsImmersiveLayout
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
