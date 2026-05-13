@@ -308,3 +308,38 @@ napi_value DrawingMatrixPart3(napi_env env, napi_callback_info info)
         return resultValue;
     });
 }
+
+// Canvas Part6 related functions
+napi_value DrawingCanvasDrawGlyphs(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        static const std::array<DrawingNativeFn, CANVAS_PART6_DRAW_GLYPHS_HANDLER_COUNT> handlers = {
+            OHOS::Rosen::Drawing::TestCanvasDrawGlyphsNormal,
+            OHOS::Rosen::Drawing::TestCanvasDrawGlyphsNull,
+            OHOS::Rosen::Drawing::TestCanvasDrawGlyphsAbnormal,
+            OHOS::Rosen::Drawing::TestCanvasDrawGlyphsMultipleCalls
+        };
+        int result = DispatchByCaseNum(caseNum, handlers);
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
+
+// Canvas Part6 related functions
+napi_value DrawingCanvasIsOpaque(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        static const std::array<DrawingNativeFn, CANVAS_PART6_IS_OPAQUE_HANDLER_COUNT> handlers = {
+            OHOS::Rosen::Drawing::TestCanvasIsOpaqueNormal,
+            OHOS::Rosen::Drawing::TestCanvasIsOpaqueNull,
+            OHOS::Rosen::Drawing::TestCanvasIsOpaqueMultipleCalls
+        };
+        int result = DispatchByCaseNum(caseNum, handlers);
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}

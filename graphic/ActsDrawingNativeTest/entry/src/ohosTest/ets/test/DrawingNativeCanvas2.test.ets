@@ -1549,5 +1549,96 @@ export default function DrawingNativeCanvas2Test() {
       const result = libDrawingNative.DrawingCanvasResetClip(2);
       expect(result).assertEqual(0);
     })
+
+    /**
+     * @tc.name   testCanvasDrawGlyphsNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingCanvasDrawGlyphs_0100
+     * @tc.desc   test for testCanvasDrawGlyphsNormal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCanvasDrawGlyphsNormal', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingCanvasDrawGlyphs(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawGlyphsNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingCanvasDrawGlyphs_0200
+     * @tc.desc   test for testCanvasDrawGlyphsNull
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testCanvasDrawGlyphsNull', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawGlyphs(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawGlyphsAbnormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingCanvasDrawGlyphs_0300
+     * @tc.desc   test for testCanvasDrawGlyphsAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testCanvasDrawGlyphsAbnormal', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawGlyphs(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasDrawGlyphsMultipleCalls
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingCanvasDrawGlyphs_0400
+     * @tc.desc   test for testCanvasDrawGlyphsMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testCanvasDrawGlyphsMultipleCalls', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasDrawGlyphs(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasIsOpaqueNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingCanvasIsOpaque_0100
+     * @tc.desc   test for testCanvasIsOpaqueNormal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCanvasIsOpaqueNormal', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasIsOpaque(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasIsOpaqueNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingCanvasIsOpaque_0200
+     * @tc.desc   test for testCanvasIsOpaqueNull
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testCanvasIsOpaqueNull', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasIsOpaque(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasIsOpaqueMultipleCalls
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingCanvasIsOpaque_0300
+     * @tc.desc   test for testCanvasIsOpaqueMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testCanvasIsOpaqueMultipleCalls', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasIsOpaque(2);
+      expect(result).assertEqual(0);
+    })
   })
 }
