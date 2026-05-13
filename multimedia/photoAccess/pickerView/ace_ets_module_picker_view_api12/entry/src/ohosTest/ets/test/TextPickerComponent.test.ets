@@ -84,8 +84,10 @@ interface DialogCreationExTestCase {
 async function driveFn() {
   let dr = Driver.create();
   await CommonFunc.sleep(100);
-  let power = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 3000);
-  await power?.click();
+  let power1 = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 3000);
+  let power2 = await dr?.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), 3000);
+  await power1?.click();
+  await power2?.click();
   await CommonFunc.sleep(1000);
 }
 

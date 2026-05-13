@@ -128,9 +128,11 @@ export function photoFetchOption(testName: string, key: string,
 export async function driveFn() {
   let dr = Driver.create();
   await sleep(1000);
-  let power = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
+  let power1 = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
+  let power2 = await dr?.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), 500);
   await sleep(1000);
-  await power?.click();
+  await power1?.click();
+  await power2?.click();
 }
 
 export async function getCameraPermission(): Promise<void> {

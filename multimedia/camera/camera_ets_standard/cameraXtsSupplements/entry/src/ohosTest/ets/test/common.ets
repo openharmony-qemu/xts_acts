@@ -70,12 +70,17 @@ export function sleep(ms: number): Promise<string> {
 export async function driveFn() {
   let dr = Driver.create();
   await sleep(COMMON_WAIT_DURATION);
-  let power = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), COMMON_WAIT_DURATION);
-  while (power) {
+  let power1 = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), COMMON_WAIT_DURATION);
+  console.info('power1 is ' + power1);
+  let power2 = await dr?.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), COMMON_WAIT_DURATION);
+  console.info('power2 is ' + power2);
+  while (power1 || power2) {
     await sleep(COMMON_WAIT_DURATION);
-    await power?.click();
+    await power1?.click();
+    await power2?.click();
     await sleep(COMMON_WAIT_DURATION);
-    power = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), COMMON_WAIT_DURATION);
+    power1 = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), COMMON_WAIT_DURATION);
+    power2 = await dr?.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), COMMON_WAIT_DURATION);
   }
 }
 
