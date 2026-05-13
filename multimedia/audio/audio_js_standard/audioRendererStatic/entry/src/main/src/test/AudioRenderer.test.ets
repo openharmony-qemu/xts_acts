@@ -1809,7 +1809,7 @@ export default function audioRendererTest() {
       }
       console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      let samplingRate: audio.AudioSamplingRate | undefined;
+      let samplingRate: audio.AudioSamplingRate | int = 0;
       try {
         let audioParamsGet = await audioRen!.getStreamInfo();
         console.info(`${TagFrmwkRender}: Renderer getStreamInfo: ${JSON.stringify(audioParamsGet)}`);
@@ -1868,7 +1868,13 @@ export default function audioRendererTest() {
       console.info(`${TagFrmwkRender}: File size : Removing header: ${totalSize}`);
       await Utils.msSleep(100);
       let waitTime: int;
-      switch (samplingRate!.valueOf()) {
+      let samplingRateValue: int;
+      if (samplingRate instanceof audio.AudioSamplingRate) {
+        samplingRateValue = samplingRate.valueOf();
+      } else if (samplingRate instanceof int) {
+        samplingRateValue = samplingRate as int;
+      }
+      switch (samplingRateValue) {
         case 44100:
           waitTime = 45;
           break;
