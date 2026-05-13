@@ -10153,7 +10153,7 @@ export default function ConnectionPublicTest() {
     /**
      * @tc.name   testNetworkMgrConnectionTraceRoute1200
      * @tc.number SUB_NetworkMgr_Connection_TraceRoute_1200
-     * @tc.desc   Test the destination is "198.197.196.195"
+     * @tc.desc   Test the destination is "100.103.236.46"
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -10162,7 +10162,7 @@ export default function ConnectionPublicTest() {
       const caseName: string = "testNetworkMgrConnectionTraceRoute1200";
       console.info(`${caseName} test Start`);
       try {
-        let destination = "198.197.196.195";
+        let destination = "100.103.236.46";
         let option: connection.TraceRouteOptions = {
           maxJumpNumber: 30,
           packetsType: connection.PacketsType.NETCONN_PACKETS_ICMP,
@@ -10170,7 +10170,7 @@ export default function ConnectionPublicTest() {
         connection.queryTraceRoute(destination, option).then((TraceRouteInfo: connection.TraceRouteInfo[]) => {
           console.info(`${caseName} TraceRouteInfo: ${JSON.stringify(TraceRouteInfo)}`);
           console.info(`${caseName} TraceRouteInfo rtt: ${JSON.stringify(TraceRouteInfo[0].rtt)}`);
-          let rtt_max: number = TraceRouteInfo[0].rtt[2];
+          let rtt_max: number = TraceRouteInfo[1].rtt[2];
           ExpectTrue(rtt_max === 1000);
           console.info(`${caseName}---End`);
           done();
