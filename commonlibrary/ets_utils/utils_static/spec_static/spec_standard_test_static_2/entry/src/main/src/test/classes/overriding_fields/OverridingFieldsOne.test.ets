@@ -3729,3 +3729,1443 @@ export default function OverridingFieldsTestOne(): void {
         expect(get_prop_I2(a)).assertEqual(c'z')
         expect(get_prop_I3(a)).assertEqual(c'z')
     })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0141
+     * @tc.name      testOverridingFields0141
+     * @tc.desc      A property can be implemented as a field in different combinations
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0141", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F141 = new A_F141()
+        expect(a instanceof A_F141).assertTrue()
+        expect(a instanceof I1_F141).assertTrue()
+        expect(a instanceof I2_F141).assertTrue()
+        expect(a.f instanceof boolean).assertTrue()
+        expect(a.f).assertEqual(false)
+        expect(get_prop_I1(a)).assertEqual(false)
+        expect(get_prop_I2(a)).assertEqual(false)
+        expect(get_prop_I3(a)).assertEqual(false)
+        set_prop_I1(a, true)
+        expect(a.f).assertEqual(true)
+        expect(get_prop_I1(a)).assertEqual(true)
+        expect(get_prop_I2(a)).assertEqual(true)
+        expect(get_prop_I3(a)).assertEqual(true)
+        set_prop_I2(a, false)
+        expect(a.f).assertEqual(false)
+        expect(get_prop_I1(a)).assertEqual(false)
+        expect(get_prop_I2(a)).assertEqual(false)
+        expect(get_prop_I3(a)).assertEqual(false)
+        set_prop_I3(a, true)
+        expect(a.f).assertEqual(true)
+        expect(get_prop_I1(a)).assertEqual(true)
+        expect(get_prop_I2(a)).assertEqual(true)
+        expect(get_prop_I3(a)).assertEqual(true)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0142
+     * @tc.name      testOverridingFields0142
+     * @tc.desc      Providing implementation for the interface property in the form of a field with
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0142", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: D_F142 = new D_F142()
+        expect(a instanceof D_F142).assertTrue()
+        expect(a instanceof C_F142).assertTrue()
+        expect(a instanceof I_F142).assertTrue()
+        expect(a.f instanceof Any).assertTrue()
+        expect(a.f).assertEqual(7)
+        expect(get_prop(a)).assertEqual(7)
+        expect(get_field(a)).assertEqual(7)
+        set_field(a, "abc")
+        expect(a.f).assertEqual("abc")
+        expect(get_prop(a)).assertEqual("abc")
+        expect(get_field(a)).assertEqual("abc")
+        set_prop(a, 7)
+        expect(a.f).assertEqual(7)
+        expect(get_prop(a)).assertEqual(7)
+        expect(get_field(a)).assertEqual(7)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0143
+     * @tc.name      testOverridingFields0143
+     * @tc.desc      Providing implementation for the interface property in the form of a field with
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0143", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: D_F143 = new D_F143()
+        expect(a instanceof D_F143).assertTrue()
+        expect(a instanceof C_F143).assertTrue()
+        expect(a instanceof I_F143).assertTrue()
+        expect(a.f instanceof Object).assertTrue()
+        expect(a.f).assertEqual("abc")
+        expect(get_prop(a)).assertEqual("abc")
+        expect(get_field(a)).assertEqual("abc")
+        set_field(a, 7)
+        expect(a.f).assertEqual(7)
+        expect(get_prop(a)).assertEqual(7)
+        expect(get_field(a)).assertEqual(7)
+        set_prop(a, "abc")
+        expect(a.f).assertEqual("abc")
+        expect(get_prop(a)).assertEqual("abc")
+        expect(get_field(a)).assertEqual("abc")
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0144
+     * @tc.name      testOverridingFields0144
+     * @tc.desc      Providing implementation for the interface property in the form of a field with
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0144", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: D_F144 = new D_F144()
+        expect(a instanceof D_F144).assertTrue()
+        expect(a instanceof C_F144).assertTrue()
+        expect(a instanceof I_F144).assertTrue()
+        expect(a.f instanceof number).assertTrue()
+        expect(a.f).assertEqual(6.7)
+        expect(get_prop(a)).assertEqual(6.7)
+        expect(get_field(a)).assertEqual(6.7)
+        set_field(a, 13)
+        expect(a.f).assertEqual(13)
+        expect(get_prop(a)).assertEqual(13)
+        expect(get_field(a)).assertEqual(13)
+        set_prop(a, 6.7)
+        expect(a.f).assertEqual(6.7)
+        expect(get_prop(a)).assertEqual(6.7)
+        expect(get_field(a)).assertEqual(6.7)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0145
+     * @tc.name      testOverridingFields0145
+     * @tc.desc      Providing implementation for the interface property in the form of a field with
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0145", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: D_F145 = new D_F145()
+        expect(a instanceof D_F145).assertTrue()
+        expect(a instanceof C_F145).assertTrue()
+        expect(a instanceof I_F145).assertTrue()
+        expect(a.f instanceof double).assertTrue()
+        expect(a.f).assertEqual(5.0)
+        expect(get_prop(a)).assertEqual(5.0)
+        expect(get_field(a)).assertEqual(5.0)
+        set_field(a, 15)
+        expect(a.f).assertEqual(15)
+        expect(get_prop(a)).assertEqual(15)
+        expect(get_field(a)).assertEqual(15)
+        set_prop(a, 5.0)
+        expect(a.f).assertEqual(5.0)
+        expect(get_prop(a)).assertEqual(5.0)
+        expect(get_field(a)).assertEqual(5.0)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0146
+     * @tc.name      testOverridingFields0146
+     * @tc.desc      Providing implementation for the interface property in the form of a field with
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0146", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: D_F146 = new D_F146()
+        expect(a instanceof D_F146).assertTrue()
+        expect(a instanceof C_F146).assertTrue()
+        expect(a instanceof I_F146).assertTrue()
+        expect(a.f instanceof float).assertTrue()
+        expect(a.f).assertEqual(7.3f)
+        expect(get_prop(a)).assertEqual(7.3f)
+        expect(get_field(a)).assertEqual(7.3f)
+        set_field(a, 9.8f)
+        expect(a.f).assertEqual(9.8f)
+        expect(get_prop(a)).assertEqual(9.8f)
+        expect(get_field(a)).assertEqual(9.8f)
+        set_prop(a, 7.3f)
+        expect(a.f).assertEqual(7.3f)
+        expect(get_prop(a)).assertEqual(7.3f)
+        expect(get_field(a)).assertEqual(7.3f)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0147
+     * @tc.name      testOverridingFields0147
+     * @tc.desc      Providing implementation for the interface property in the form of a field with
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0147", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: D_F147 = new D_F147()
+        expect(a instanceof D_F147).assertTrue()
+        expect(a instanceof C_F147).assertTrue()
+        expect(a instanceof I_F147).assertTrue()
+        expect(a.f instanceof long).assertTrue()
+        expect(a.f).assertEqual(78945)
+        expect(get_prop(a)).assertEqual(78945)
+        expect(get_field(a)).assertEqual(78945)
+        set_field(a, 9223372036854775000)
+        expect(a.f).assertEqual(9223372036854775000)
+        expect(get_prop(a)).assertEqual(9223372036854775000)
+        expect(get_field(a)).assertEqual(9223372036854775000)
+        set_prop(a, 78945)
+        expect(a.f).assertEqual(78945)
+        expect(get_prop(a)).assertEqual(78945)
+        expect(get_field(a)).assertEqual(78945)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0148
+     * @tc.name      testOverridingFields0148
+     * @tc.desc      Providing implementation for the interface property in the form of a field with
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0148", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: D_F148 = new D_F148()
+        expect(a instanceof D_F148).assertTrue()
+        expect(a instanceof C_F148).assertTrue()
+        expect(a instanceof I_F148).assertTrue()
+        expect(a.f instanceof int).assertTrue()
+        expect(a.f).assertEqual(321)
+        expect(get_prop(a)).assertEqual(321)
+        expect(get_field(a)).assertEqual(321)
+        set_field(a, 321321)
+        expect(a.f).assertEqual(321321)
+        expect(get_prop(a)).assertEqual(321321)
+        expect(get_field(a)).assertEqual(321321)
+        set_prop(a, 321)
+        expect(a.f).assertEqual(321)
+        expect(get_prop(a)).assertEqual(321)
+        expect(get_field(a)).assertEqual(321)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0149
+     * @tc.name      testOverridingFields0149
+     * @tc.desc      Providing implementation for the interface property in the form of a field with
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0149", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: D_F149 = new D_F149()
+        expect(a instanceof D_F149).assertTrue()
+        expect(a instanceof C_F149).assertTrue()
+        expect(a instanceof I_F149).assertTrue()
+        expect(a.f instanceof short).assertTrue()
+        expect(a.f).assertEqual(253)
+        expect(get_prop(a)).assertEqual(253)
+        expect(get_field(a)).assertEqual(253)
+        set_field(a, 536)
+        expect(a.f).assertEqual(536)
+        expect(get_prop(a)).assertEqual(536)
+        expect(get_field(a)).assertEqual(536)
+        set_prop(a, 253)
+        expect(a.f).assertEqual(253)
+        expect(get_prop(a)).assertEqual(253)
+        expect(get_field(a)).assertEqual(253)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0150
+     * @tc.name      testOverridingFields0150
+     * @tc.desc      Providing implementation for the interface property in the form of a field with
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0150", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: D_F150 = new D_F150()
+        expect(a instanceof D_F150).assertTrue()
+        expect(a instanceof C_F150).assertTrue()
+        expect(a instanceof I_F150).assertTrue()
+        expect(a.f instanceof byte).assertTrue()
+        expect(a.f).assertEqual(78)
+        expect(get_prop(a)).assertEqual(78)
+        expect(get_field(a)).assertEqual(78)
+        set_field(a, 15)
+        expect(a.f).assertEqual(15)
+        expect(get_prop(a)).assertEqual(15)
+        expect(get_field(a)).assertEqual(15)
+        set_prop(a, 78)
+        expect(a.f).assertEqual(78)
+        expect(get_prop(a)).assertEqual(78)
+        expect(get_field(a)).assertEqual(78)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0151
+     * @tc.name      testOverridingFields0151
+     * @tc.desc      Providing implementation for the interface property in the form of a field with
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0151", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: D_F151 = new D_F151()
+        expect(a instanceof D_F151).assertTrue()
+        expect(a instanceof C_F151).assertTrue()
+        expect(a instanceof I_F151).assertTrue()
+        expect(a.f instanceof string).assertTrue()
+        expect(a.f).assertEqual("defg")
+        expect(get_prop(a)).assertEqual("defg")
+        expect(get_field(a)).assertEqual("defg")
+        set_field(a, "hijk")
+        expect(a.f).assertEqual("hijk")
+        expect(get_prop(a)).assertEqual("hijk")
+        expect(get_field(a)).assertEqual("hijk")
+        set_prop(a, "defg")
+        expect(a.f).assertEqual("defg")
+        expect(get_prop(a)).assertEqual("defg")
+        expect(get_field(a)).assertEqual("defg")
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0152
+     * @tc.name      testOverridingFields0152
+     * @tc.desc      Providing implementation for the interface property in the form of a field with
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0152", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: D_F152 = new D_F152()
+        expect(a instanceof D_F152).assertTrue()
+        expect(a instanceof C_F152).assertTrue()
+        expect(a instanceof I_F152).assertTrue()
+        expect(a.f instanceof bigint).assertTrue()
+        expect(a.f).assertEqual(5556423623465n)
+        expect(get_prop(a)).assertEqual(5556423623465n)
+        expect(get_field(a)).assertEqual(5556423623465n)
+        set_field(a, 123123n)
+        expect(a.f).assertEqual(123123n)
+        expect(get_prop(a)).assertEqual(123123n)
+        expect(get_field(a)).assertEqual(123123n)
+        set_prop(a, 5556423623465n)
+        expect(a.f).assertEqual(5556423623465n)
+        expect(get_prop(a)).assertEqual(5556423623465n)
+        expect(get_field(a)).assertEqual(5556423623465n)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0153
+     * @tc.name      testOverridingFields0153
+     * @tc.desc      Providing implementation for the interface property in the form of a field with
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0153", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: D_F153 = new D_F153()
+        expect(a instanceof D_F153).assertTrue()
+        expect(a instanceof C_F153).assertTrue()
+        expect(a instanceof I_F153).assertTrue()
+        expect(a.f instanceof char).assertTrue()
+        expect(a.f).assertEqual(c'z')
+        expect(get_prop(a)).assertEqual(c'z')
+        expect(get_field(a)).assertEqual(c'z')
+        set_field(a, c'x')
+        expect(a.f).assertEqual(c'x')
+        expect(get_prop(a)).assertEqual(c'x')
+        expect(get_field(a)).assertEqual(c'x')
+        set_prop(a, c'z')
+        expect(a.f).assertEqual(c'z')
+        expect(get_prop(a)).assertEqual(c'z')
+        expect(get_field(a)).assertEqual(c'z')
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0154
+     * @tc.name      testOverridingFields0154
+     * @tc.desc      Providing implementation for the interface property in the form of a field with
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0154", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: D_F154 = new D_F154()
+        expect(a instanceof D_F154).assertTrue()
+        expect(a instanceof C_F154).assertTrue()
+        expect(a instanceof I_F154).assertTrue()
+        expect(a.f instanceof boolean).assertTrue()
+        expect(a.f).assertEqual(true)
+        expect(get_prop(a)).assertEqual(true)
+        expect(get_field(a)).assertEqual(true)
+        set_field(a, false)
+        expect(a.f).assertEqual(false)
+        expect(get_prop(a)).assertEqual(false)
+        expect(get_field(a)).assertEqual(false)
+        set_prop(a, true)
+        expect(a.f).assertEqual(true)
+        expect(get_prop(a)).assertEqual(true)
+        expect(get_field(a)).assertEqual(true)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0155
+     * @tc.name      testOverridingFields0155
+     * @tc.desc      Overriding interface property
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0155", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F155 = new A_F155()
+        let b: B_F155 = new B_F155()
+        expect(a instanceof A_F155).assertTrue()
+        expect(a instanceof II_F155).assertTrue()
+        expect(a instanceof I_F155).assertTrue()
+        expect(a.f instanceof Any).assertTrue()
+        expect(a.f).assertEqual(null)
+        expect(get_prop_II(a)).assertEqual(null)
+        expect(get_prop_I(a)).assertEqual(null)
+        set_prop_II(a, "abc")
+        expect(a.f).assertEqual("abc")
+        expect(get_prop_II(a)).assertEqual("abc")
+        expect(get_prop_I(a)).assertEqual("abc")
+        set_prop_I(a, null)
+        expect(a.f).assertEqual(null)
+        expect(get_prop_II(a)).assertEqual(null)
+        expect(get_prop_I(a)).assertEqual(null)
+        expect(b instanceof B_F155).assertTrue()
+        expect(b instanceof I_F155).assertTrue()
+        expect(b.f instanceof Any).assertTrue()
+        expect(b.f).assertEqual(7)
+        expect(get_prop_I(b)).assertEqual(7)
+        set_prop_I(b, "abc")
+        expect(b.f).assertEqual("abc")
+        expect(get_prop_I(b)).assertEqual("abc")
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0156
+     * @tc.name      testOverridingFields0156
+     * @tc.desc      Overriding interface property
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0156", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F156 = new A_F156()
+        let b: B_F156 = new B_F156()
+        expect(a instanceof A_F156).assertTrue()
+        expect(a instanceof II_F156).assertTrue()
+        expect(a instanceof I_F156).assertTrue()
+        expect(a.f instanceof Object).assertTrue()
+        expect(a.f).assertEqual(5)
+        expect(get_prop_II(a)).assertEqual(5)
+        expect(get_prop_I(a)).assertEqual(5)
+        set_prop_II(a, 7)
+        expect(a.f).assertEqual(7)
+        expect(get_prop_II(a)).assertEqual(7)
+        expect(get_prop_I(a)).assertEqual(7)
+        set_prop_I(a, 5)
+        expect(a.f).assertEqual(5)
+        expect(get_prop_II(a)).assertEqual(5)
+        expect(get_prop_I(a)).assertEqual(5)
+        expect(b instanceof B_F156).assertTrue()
+        expect(b instanceof I_F156).assertTrue()
+        expect(b.f instanceof Object).assertTrue()
+        expect(b.f).assertEqual("abc")
+        expect(get_prop_I(b)).assertEqual("abc")
+        set_prop_I(b, 7)
+        expect(b.f).assertEqual(7)
+        expect(get_prop_I(b)).assertEqual(7)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0157
+     * @tc.name      testOverridingFields0157
+     * @tc.desc      Overriding interface property
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0157", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F157 = new A_F157()
+        let b: B_F157 = new B_F157()
+        expect(a instanceof A_F157).assertTrue()
+        expect(a instanceof II_F157).assertTrue()
+        expect(a instanceof I_F157).assertTrue()
+        expect(a.f instanceof number).assertTrue()
+        expect(a.f).assertEqual(3)
+        expect(get_prop_II(a)).assertEqual(3)
+        expect(get_prop_I(a)).assertEqual(3)
+        set_prop_II(a, 13)
+        expect(a.f).assertEqual(13)
+        expect(get_prop_II(a)).assertEqual(13)
+        expect(get_prop_I(a)).assertEqual(13)
+        set_prop_I(a, 3)
+        expect(a.f).assertEqual(3)
+        expect(get_prop_II(a)).assertEqual(3)
+        expect(get_prop_I(a)).assertEqual(3)
+        expect(b instanceof B_F157).assertTrue()
+        expect(b instanceof I_F157).assertTrue()
+        expect(b.f instanceof number).assertTrue()
+        expect(b.f).assertEqual(6.7)
+        expect(get_prop_I(b)).assertEqual(6.7)
+        set_prop_I(b, 13)
+        expect(b.f).assertEqual(13)
+        expect(get_prop_I(b)).assertEqual(13)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0158
+     * @tc.name      testOverridingFields0158
+     * @tc.desc      Overriding interface property
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0158", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F158 = new A_F158()
+        let b: B_F158 = new B_F158()
+        expect(a instanceof A_F158).assertTrue()
+        expect(a instanceof II_F158).assertTrue()
+        expect(a instanceof I_F158).assertTrue()
+        expect(a.f instanceof double).assertTrue()
+        expect(a.f).assertEqual(3.4)
+        expect(get_prop_II(a)).assertEqual(3.4)
+        expect(get_prop_I(a)).assertEqual(3.4)
+        set_prop_II(a, 15)
+        expect(a.f).assertEqual(15)
+        expect(get_prop_II(a)).assertEqual(15)
+        expect(get_prop_I(a)).assertEqual(15)
+        set_prop_I(a, 3.4)
+        expect(a.f).assertEqual(3.4)
+        expect(get_prop_II(a)).assertEqual(3.4)
+        expect(get_prop_I(a)).assertEqual(3.4)
+        expect(b instanceof B_F158).assertTrue()
+        expect(b instanceof I_F158).assertTrue()
+        expect(b.f instanceof double).assertTrue()
+        expect(b.f).assertEqual(5.0)
+        expect(get_prop_I(b)).assertEqual(5.0)
+        set_prop_I(b, 15)
+        expect(b.f).assertEqual(15)
+        expect(get_prop_I(b)).assertEqual(15)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0159
+     * @tc.name      testOverridingFields0159
+     * @tc.desc      Overriding interface property
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0159", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F159 = new A_F159()
+        let b: B_F159 = new B_F159()
+        expect(a instanceof A_F159).assertTrue()
+        expect(a instanceof II_F159).assertTrue()
+        expect(a instanceof I_F159).assertTrue()
+        expect(a.f instanceof float).assertTrue()
+        expect(a.f).assertEqual(6.7f)
+        expect(get_prop_II(a)).assertEqual(6.7f)
+        expect(get_prop_I(a)).assertEqual(6.7f)
+        set_prop_II(a, 9.8f)
+        expect(a.f).assertEqual(9.8f)
+        expect(get_prop_II(a)).assertEqual(9.8f)
+        expect(get_prop_I(a)).assertEqual(9.8f)
+        set_prop_I(a, 6.7f)
+        expect(a.f).assertEqual(6.7f)
+        expect(get_prop_II(a)).assertEqual(6.7f)
+        expect(get_prop_I(a)).assertEqual(6.7f)
+        expect(b instanceof B_F159).assertTrue()
+        expect(b instanceof I_F159).assertTrue()
+        expect(b.f instanceof float).assertTrue()
+        expect(b.f).assertEqual(7.3f)
+        expect(get_prop_I(b)).assertEqual(7.3f)
+        set_prop_I(b, 9.8f)
+        expect(b.f).assertEqual(9.8f)
+        expect(get_prop_I(b)).assertEqual(9.8f)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0160
+     * @tc.name      testOverridingFields0160
+     * @tc.desc      Overriding interface property
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0160", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F160 = new A_F160()
+        let b: B_F160 = new B_F160()
+        expect(a instanceof A_F160).assertTrue()
+        expect(a instanceof II_F160).assertTrue()
+        expect(a instanceof I_F160).assertTrue()
+        expect(a.f instanceof long).assertTrue()
+        expect(a.f).assertEqual(9223372036854775807)
+        expect(get_prop_II(a)).assertEqual(9223372036854775807)
+        expect(get_prop_I(a)).assertEqual(9223372036854775807)
+        set_prop_II(a, 9223372036854775000)
+        expect(a.f).assertEqual(9223372036854775000)
+        expect(get_prop_II(a)).assertEqual(9223372036854775000)
+        expect(get_prop_I(a)).assertEqual(9223372036854775000)
+        set_prop_I(a, 9223372036854775807)
+        expect(a.f).assertEqual(9223372036854775807)
+        expect(get_prop_II(a)).assertEqual(9223372036854775807)
+        expect(get_prop_I(a)).assertEqual(9223372036854775807)
+        expect(b instanceof B_F160).assertTrue()
+        expect(b instanceof I_F160).assertTrue()
+        expect(b.f instanceof long).assertTrue()
+        expect(b.f).assertEqual(78945)
+        expect(get_prop_I(b)).assertEqual(78945)
+        set_prop_I(b, 9223372036854775000)
+        expect(b.f).assertEqual(9223372036854775000)
+        expect(get_prop_I(b)).assertEqual(9223372036854775000)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0161
+     * @tc.name      testOverridingFields0161
+     * @tc.desc      Overriding interface property
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0161", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F161 = new A_F161()
+        let b: B_F161 = new B_F161()
+        expect(a instanceof A_F161).assertTrue()
+        expect(a instanceof II_F161).assertTrue()
+        expect(a instanceof I_F161).assertTrue()
+        expect(a.f instanceof int).assertTrue()
+        expect(a.f).assertEqual(123)
+        expect(get_prop_II(a)).assertEqual(123)
+        expect(get_prop_I(a)).assertEqual(123)
+        set_prop_II(a, 321321)
+        expect(a.f).assertEqual(321321)
+        expect(get_prop_II(a)).assertEqual(321321)
+        expect(get_prop_I(a)).assertEqual(321321)
+        set_prop_I(a, 123)
+        expect(a.f).assertEqual(123)
+        expect(get_prop_II(a)).assertEqual(123)
+        expect(get_prop_I(a)).assertEqual(123)
+        expect(b instanceof B_F161).assertTrue()
+        expect(b instanceof I_F161).assertTrue()
+        expect(b.f instanceof int).assertTrue()
+        expect(b.f).assertEqual(321)
+        expect(get_prop_I(b)).assertEqual(321)
+        set_prop_I(b, 321321)
+        expect(b.f).assertEqual(321321)
+        expect(get_prop_I(b)).assertEqual(321321)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0162
+     * @tc.name      testOverridingFields0162
+     * @tc.desc      Overriding interface property
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0162", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F162 = new A_F162()
+        let b: B_F162 = new B_F162()
+        expect(a instanceof A_F162).assertTrue()
+        expect(a instanceof II_F162).assertTrue()
+        expect(a instanceof I_F162).assertTrue()
+        expect(a.f instanceof short).assertTrue()
+        expect(a.f).assertEqual(325)
+        expect(get_prop_II(a)).assertEqual(325)
+        expect(get_prop_I(a)).assertEqual(325)
+        set_prop_II(a, 536)
+        expect(a.f).assertEqual(536)
+        expect(get_prop_II(a)).assertEqual(536)
+        expect(get_prop_I(a)).assertEqual(536)
+        set_prop_I(a, 325)
+        expect(a.f).assertEqual(325)
+        expect(get_prop_II(a)).assertEqual(325)
+        expect(get_prop_I(a)).assertEqual(325)
+        expect(b instanceof B_F162).assertTrue()
+        expect(b instanceof I_F162).assertTrue()
+        expect(b.f instanceof short).assertTrue()
+        expect(b.f).assertEqual(253)
+        expect(get_prop_I(b)).assertEqual(253)
+        set_prop_I(b, 536)
+        expect(b.f).assertEqual(536)
+        expect(get_prop_I(b)).assertEqual(536)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0163
+     * @tc.name      testOverridingFields0163
+     * @tc.desc      Overriding interface property
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0163", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F163 = new A_F163()
+        let b: B_F163 = new B_F163()
+        expect(a instanceof A_F163).assertTrue()
+        expect(a instanceof II_F163).assertTrue()
+        expect(a instanceof I_F163).assertTrue()
+        expect(a.f instanceof byte).assertTrue()
+        expect(a.f).assertEqual(127)
+        expect(get_prop_II(a)).assertEqual(127)
+        expect(get_prop_I(a)).assertEqual(127)
+        set_prop_II(a, 15)
+        expect(a.f).assertEqual(15)
+        expect(get_prop_II(a)).assertEqual(15)
+        expect(get_prop_I(a)).assertEqual(15)
+        set_prop_I(a, 127)
+        expect(a.f).assertEqual(127)
+        expect(get_prop_II(a)).assertEqual(127)
+        expect(get_prop_I(a)).assertEqual(127)
+        expect(b instanceof B_F163).assertTrue()
+        expect(b instanceof I_F163).assertTrue()
+        expect(b.f instanceof byte).assertTrue()
+        expect(b.f).assertEqual(78)
+        expect(get_prop_I(b)).assertEqual(78)
+        set_prop_I(b, 15)
+        expect(b.f).assertEqual(15)
+        expect(get_prop_I(b)).assertEqual(15)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0164
+     * @tc.name      testOverridingFields0164
+     * @tc.desc      Overriding interface property
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0164", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F164 = new A_F164()
+        let b: B_F164 = new B_F164()
+        expect(a instanceof A_F164).assertTrue()
+        expect(a instanceof II_F164).assertTrue()
+        expect(a instanceof I_F164).assertTrue()
+        expect(a.f instanceof string).assertTrue()
+        expect(a.f).assertEqual("abc")
+        expect(get_prop_II(a)).assertEqual("abc")
+        expect(get_prop_I(a)).assertEqual("abc")
+        set_prop_II(a, "hijk")
+        expect(a.f).assertEqual("hijk")
+        expect(get_prop_II(a)).assertEqual("hijk")
+        expect(get_prop_I(a)).assertEqual("hijk")
+        set_prop_I(a, "abc")
+        expect(a.f).assertEqual("abc")
+        expect(get_prop_II(a)).assertEqual("abc")
+        expect(get_prop_I(a)).assertEqual("abc")
+        expect(b instanceof B_F164).assertTrue()
+        expect(b instanceof I_F164).assertTrue()
+        expect(b.f instanceof string).assertTrue()
+        expect(b.f).assertEqual("defg")
+        expect(get_prop_I(b)).assertEqual("defg")
+        set_prop_I(b, "hijk")
+        expect(b.f).assertEqual("hijk")
+        expect(get_prop_I(b)).assertEqual("hijk")
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0165
+     * @tc.name      testOverridingFields0165
+     * @tc.desc      Overriding interface property
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0165", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F165 = new A_F165()
+        let b: B_F165 = new B_F165()
+        expect(a instanceof A_F165).assertTrue()
+        expect(a instanceof II_F165).assertTrue()
+        expect(a instanceof I_F165).assertTrue()
+        expect(a.f instanceof bigint).assertTrue()
+        expect(a.f).assertEqual(12345678901234567890n)
+        expect(get_prop_II(a)).assertEqual(12345678901234567890n)
+        expect(get_prop_I(a)).assertEqual(12345678901234567890n)
+        set_prop_II(a, 123123n)
+        expect(a.f).assertEqual(123123n)
+        expect(get_prop_II(a)).assertEqual(123123n)
+        expect(get_prop_I(a)).assertEqual(123123n)
+        set_prop_I(a, 12345678901234567890n)
+        expect(a.f).assertEqual(12345678901234567890n)
+        expect(get_prop_II(a)).assertEqual(12345678901234567890n)
+        expect(get_prop_I(a)).assertEqual(12345678901234567890n)
+        expect(b instanceof B_F165).assertTrue()
+        expect(b instanceof I_F165).assertTrue()
+        expect(b.f instanceof bigint).assertTrue()
+        expect(b.f).assertEqual(5556423623465n)
+        expect(get_prop_I(b)).assertEqual(5556423623465n)
+        set_prop_I(b, 123123n)
+        expect(b.f).assertEqual(123123n)
+        expect(get_prop_I(b)).assertEqual(123123n)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0166
+     * @tc.name      testOverridingFields0166
+     * @tc.desc      Overriding interface property
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0166", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F166 = new A_F166()
+        let b: B_F166 = new B_F166()
+        expect(a instanceof A_F166).assertTrue()
+        expect(a instanceof II_F166).assertTrue()
+        expect(a instanceof I_F166).assertTrue()
+        expect(a.f instanceof char).assertTrue()
+        expect(a.f).assertEqual(c'\u2028')
+        expect(get_prop_II(a)).assertEqual(c'\u2028')
+        expect(get_prop_I(a)).assertEqual(c'\u2028')
+        set_prop_II(a, c'x')
+        expect(a.f).assertEqual(c'x')
+        expect(get_prop_II(a)).assertEqual(c'x')
+        expect(get_prop_I(a)).assertEqual(c'x')
+        set_prop_I(a, c'\u2028')
+        expect(a.f).assertEqual(c'\u2028')
+        expect(get_prop_II(a)).assertEqual(c'\u2028')
+        expect(get_prop_I(a)).assertEqual(c'\u2028')
+        expect(b instanceof B_F166).assertTrue()
+        expect(b instanceof I_F166).assertTrue()
+        expect(b.f instanceof char).assertTrue()
+        expect(b.f).assertEqual(c'z')
+        expect(get_prop_I(b)).assertEqual(c'z')
+        set_prop_I(b, c'x')
+        expect(b.f).assertEqual(c'x')
+        expect(get_prop_I(b)).assertEqual(c'x')
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0167
+     * @tc.name      testOverridingFields0167
+     * @tc.desc      Overriding interface property
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0167", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F167 = new A_F167()
+        let b: B_F167 = new B_F167()
+        expect(a instanceof A_F167).assertTrue()
+        expect(a instanceof II_F167).assertTrue()
+        expect(a instanceof I_F167).assertTrue()
+        expect(a.f instanceof boolean).assertTrue()
+        expect(a.f).assertEqual(false)
+        expect(get_prop_II(a)).assertEqual(false)
+        expect(get_prop_I(a)).assertEqual(false)
+        set_prop_II(a, false)
+        expect(a.f).assertEqual(false)
+        expect(get_prop_II(a)).assertEqual(false)
+        expect(get_prop_I(a)).assertEqual(false)
+        set_prop_I(a, false)
+        expect(a.f).assertEqual(false)
+        expect(get_prop_II(a)).assertEqual(false)
+        expect(get_prop_I(a)).assertEqual(false)
+        expect(b instanceof B_F167).assertTrue()
+        expect(b instanceof I_F167).assertTrue()
+        expect(b.f instanceof boolean).assertTrue()
+        expect(b.f).assertEqual(true)
+        expect(get_prop_I(b)).assertEqual(true)
+        set_prop_I(b, false)
+        expect(b.f).assertEqual(false)
+        expect(get_prop_I(b)).assertEqual(false)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0168
+     * @tc.name      testOverridingFields0168
+     * @tc.desc      Providing implementation for the interface property in the form of a field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0168", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F168 = new A_F168()
+        expect(a instanceof A_F168).assertTrue()
+        expect(a instanceof I_F168).assertTrue()
+        expect(a.f instanceof Any).assertTrue()
+        expect(a.f).assertEqual(null)
+        expect(get_prop(a)).assertEqual(null)
+        set_prop(a, 7)
+        expect(a.f).assertEqual(7)
+        expect(get_prop(a)).assertEqual(7)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0169
+     * @tc.name      testOverridingFields0169
+     * @tc.desc      Providing implementation for the interface property in the form of a field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0169", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F169 = new A_F169()
+        expect(a instanceof A_F169).assertTrue()
+        expect(a instanceof I_F169).assertTrue()
+        expect(a.f instanceof Object).assertTrue()
+        expect(a.f).assertEqual(5)
+        expect(get_prop(a)).assertEqual(5)
+        set_prop(a, "abc")
+        expect(a.f).assertEqual("abc")
+        expect(get_prop(a)).assertEqual("abc")
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0170
+     * @tc.name      testOverridingFields0170
+     * @tc.desc      Providing implementation for the interface property in the form of a field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0170", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F170 = new A_F170()
+        expect(a instanceof A_F170).assertTrue()
+        expect(a instanceof I_F170).assertTrue()
+        expect(a.f instanceof number).assertTrue()
+        expect(a.f).assertEqual(3)
+        expect(get_prop(a)).assertEqual(3)
+        set_prop(a, 6.7)
+        expect(a.f).assertEqual(6.7)
+        expect(get_prop(a)).assertEqual(6.7)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0171
+     * @tc.name      testOverridingFields0171
+     * @tc.desc      Providing implementation for the interface property in the form of a field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0171", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F171 = new A_F171()
+        expect(a instanceof A_F171).assertTrue()
+        expect(a instanceof I_F171).assertTrue()
+        expect(a.f instanceof double).assertTrue()
+        expect(a.f).assertEqual(3.4)
+        expect(get_prop(a)).assertEqual(3.4)
+        set_prop(a, 5.0)
+        expect(a.f).assertEqual(5.0)
+        expect(get_prop(a)).assertEqual(5.0)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0172
+     * @tc.name      testOverridingFields0172
+     * @tc.desc      Providing implementation for the interface property in the form of a field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0172", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F172 = new A_F172()
+        expect(a instanceof A_F172).assertTrue()
+        expect(a instanceof I_F172).assertTrue()
+        expect(a.f instanceof float).assertTrue()
+        expect(a.f).assertEqual(6.7f)
+        expect(get_prop(a)).assertEqual(6.7f)
+        set_prop(a, 7.3f)
+        expect(a.f).assertEqual(7.3f)
+        expect(get_prop(a)).assertEqual(7.3f)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0173
+     * @tc.name      testOverridingFields0173
+     * @tc.desc      Providing implementation for the interface property in the form of a field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0173", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F173 = new A_F173()
+        expect(a instanceof A_F173).assertTrue()
+        expect(a instanceof I_F173).assertTrue()
+        expect(a.f instanceof long).assertTrue()
+        expect(a.f).assertEqual(9223372036854775807)
+        expect(get_prop(a)).assertEqual(9223372036854775807)
+        set_prop(a, 78945)
+        expect(a.f).assertEqual(78945)
+        expect(get_prop(a)).assertEqual(78945)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0174
+     * @tc.name      testOverridingFields0174
+     * @tc.desc      Providing implementation for the interface property in the form of a field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0174", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F174 = new A_F174()
+        expect(a instanceof A_F174).assertTrue()
+        expect(a instanceof I_F174).assertTrue()
+        expect(a.f instanceof int).assertTrue()
+        expect(a.f).assertEqual(123)
+        expect(get_prop(a)).assertEqual(123)
+        set_prop(a, 321)
+        expect(a.f).assertEqual(321)
+        expect(get_prop(a)).assertEqual(321)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0175
+     * @tc.name      testOverridingFields0175
+     * @tc.desc      Providing implementation for the interface property in the form of a field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0175", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F175 = new A_F175()
+        expect(a instanceof A_F175).assertTrue()
+        expect(a instanceof I_F175).assertTrue()
+        expect(a.f instanceof short).assertTrue()
+        expect(a.f).assertEqual(325)
+        expect(get_prop(a)).assertEqual(325)
+        set_prop(a, 253)
+        expect(a.f).assertEqual(253)
+        expect(get_prop(a)).assertEqual(253)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0176
+     * @tc.name      testOverridingFields0176
+     * @tc.desc      Providing implementation for the interface property in the form of a field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0176", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F176 = new A_F176()
+        expect(a instanceof A_F176).assertTrue()
+        expect(a instanceof I_F176).assertTrue()
+        expect(a.f instanceof byte).assertTrue()
+        expect(a.f).assertEqual(127)
+        expect(get_prop(a)).assertEqual(127)
+        set_prop(a, 78)
+        expect(a.f).assertEqual(78)
+        expect(get_prop(a)).assertEqual(78)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0177
+     * @tc.name      testOverridingFields0177
+     * @tc.desc      Providing implementation for the interface property in the form of a field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0177", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F177 = new A_F177()
+        expect(a instanceof A_F177).assertTrue()
+        expect(a instanceof I_F177).assertTrue()
+        expect(a.f instanceof string).assertTrue()
+        expect(a.f).assertEqual("abc")
+        expect(get_prop(a)).assertEqual("abc")
+        set_prop(a, "defg")
+        expect(a.f).assertEqual("defg")
+        expect(get_prop(a)).assertEqual("defg")
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0178
+     * @tc.name      testOverridingFields0178
+     * @tc.desc      Providing implementation for the interface property in the form of a field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0178", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F178 = new A_F178()
+        expect(a instanceof A_F178).assertTrue()
+        expect(a instanceof I_F178).assertTrue()
+        expect(a.f instanceof bigint).assertTrue()
+        expect(a.f).assertEqual(12345678901234567890n)
+        expect(get_prop(a)).assertEqual(12345678901234567890n)
+        set_prop(a, 5556423623465n)
+        expect(a.f).assertEqual(5556423623465n)
+        expect(get_prop(a)).assertEqual(5556423623465n)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0179
+     * @tc.name      testOverridingFields0179
+     * @tc.desc      Providing implementation for the interface property in the form of a field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0179", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F179 = new A_F179()
+        expect(a instanceof A_F179).assertTrue()
+        expect(a instanceof I_F179).assertTrue()
+        expect(a.f instanceof char).assertTrue()
+        expect(a.f).assertEqual(c'\u2028')
+        expect(get_prop(a)).assertEqual(c'\u2028')
+        set_prop(a, c'z')
+        expect(a.f).assertEqual(c'z')
+        expect(get_prop(a)).assertEqual(c'z')
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0180
+     * @tc.name      testOverridingFields0180
+     * @tc.desc      Providing implementation for the interface property in the form of a field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0180", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F180 = new A_F180()
+        expect(a instanceof A_F180).assertTrue()
+        expect(a instanceof I_F180).assertTrue()
+        expect(a.f instanceof boolean).assertTrue()
+        expect(a.f).assertEqual(false)
+        expect(get_prop(a)).assertEqual(false)
+        set_prop(a, true)
+        expect(a.f).assertEqual(true)
+        expect(get_prop(a)).assertEqual(true)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0181
+     * @tc.name      testOverridingFields0181
+     * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0181", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F181 = new A_F181()
+        expect(a.field instanceof Any).assertTrue()
+        expect(a.field).assertEqual(7)
+        expect(get_field(a)).assertEqual(7)
+        set_field(a, "abc")
+        expect(a.field).assertEqual("abc")
+        expect(get_field(a)).assertEqual("abc")
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0182
+     * @tc.name      testOverridingFields0182
+     * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0182", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F182 = new A_F182()
+        expect(a.field instanceof Object).assertTrue()
+        expect(a.field).assertEqual("abc")
+        expect(get_field(a)).assertEqual("abc")
+        set_field(a, 7)
+        expect(a.field).assertEqual(7)
+        expect(get_field(a)).assertEqual(7)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0183
+     * @tc.name      testOverridingFields0183
+     * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0183", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F183 = new A_F183()
+        expect(a.field instanceof number).assertTrue()
+        expect(a.field).assertEqual(6.7)
+        expect(get_field(a)).assertEqual(6.7)
+        set_field(a, 13)
+        expect(a.field).assertEqual(13)
+        expect(get_field(a)).assertEqual(13)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0184
+     * @tc.name      testOverridingFields0184
+     * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0184", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F184 = new A_F184()
+        expect(a.field instanceof double).assertTrue()
+        expect(a.field).assertEqual(5.0)
+        expect(get_field(a)).assertEqual(5.0)
+        set_field(a, 15)
+        expect(a.field).assertEqual(15)
+        expect(get_field(a)).assertEqual(15)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0185
+     * @tc.name      testOverridingFields0185
+     * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0185", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F185 = new A_F185()
+        expect(a.field instanceof float).assertTrue()
+        expect(a.field).assertEqual(7.3f)
+        expect(get_field(a)).assertEqual(7.3f)
+        set_field(a, 9.8f)
+        expect(a.field).assertEqual(9.8f)
+        expect(get_field(a)).assertEqual(9.8f)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0186
+     * @tc.name      testOverridingFields0186
+     * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0186", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F186 = new A_F186()
+        expect(a.field instanceof long).assertTrue()
+        expect(a.field).assertEqual(78945)
+        expect(get_field(a)).assertEqual(78945)
+        set_field(a, 9223372036854775000)
+        expect(a.field).assertEqual(9223372036854775000)
+        expect(get_field(a)).assertEqual(9223372036854775000)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0187
+     * @tc.name      testOverridingFields0187
+     * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0187", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F187 = new A_F187()
+        expect(a.field instanceof int).assertTrue()
+        expect(a.field).assertEqual(321)
+        expect(get_field(a)).assertEqual(321)
+        set_field(a, 321321)
+        expect(a.field).assertEqual(321321)
+        expect(get_field(a)).assertEqual(321321)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0188
+     * @tc.name      testOverridingFields0188
+     * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0188", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F188 = new A_F188()
+        expect(a.field instanceof short).assertTrue()
+        expect(a.field).assertEqual(253)
+        expect(get_field(a)).assertEqual(253)
+        set_field(a, 536)
+        expect(a.field).assertEqual(536)
+        expect(get_field(a)).assertEqual(536)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0189
+     * @tc.name      testOverridingFields0189
+     * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0189", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F189 = new A_F189()
+        expect(a.field instanceof byte).assertTrue()
+        expect(a.field).assertEqual(78)
+        expect(get_field(a)).assertEqual(78)
+        set_field(a, 15)
+        expect(a.field).assertEqual(15)
+        expect(get_field(a)).assertEqual(15)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0190
+     * @tc.name      testOverridingFields0190
+     * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0190", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F190 = new A_F190()
+        expect(a.field instanceof string).assertTrue()
+        expect(a.field).assertEqual("defg")
+        expect(get_field(a)).assertEqual("defg")
+        set_field(a, "hijk")
+        expect(a.field).assertEqual("hijk")
+        expect(get_field(a)).assertEqual("hijk")
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0191
+     * @tc.name      testOverridingFields0191
+     * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0191", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F191 = new A_F191()
+        expect(a.field instanceof bigint).assertTrue()
+        expect(a.field).assertEqual(5556423623465n)
+        expect(get_field(a)).assertEqual(5556423623465n)
+        set_field(a, 123123n)
+        expect(a.field).assertEqual(123123n)
+        expect(get_field(a)).assertEqual(123123n)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0192
+     * @tc.name      testOverridingFields0192
+     * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0192", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F192 = new A_F192()
+        expect(a.field instanceof char).assertTrue()
+        expect(a.field).assertEqual(c'z')
+        expect(get_field(a)).assertEqual(c'z')
+        set_field(a, c'x')
+        expect(a.field).assertEqual(c'x')
+        expect(get_field(a)).assertEqual(c'x')
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0193
+     * @tc.name      testOverridingFields0193
+     * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0193", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F193 = new A_F193()
+        expect(a.field instanceof boolean).assertTrue()
+        expect(a.field).assertEqual(true)
+        expect(get_field(a)).assertEqual(true)
+        set_field(a, false)
+        expect(a.field).assertEqual(false)
+        expect(get_field(a)).assertEqual(false)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0194
+     * @tc.name      testOverridingFields0194
+     * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0194", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F194 = new A_F194()
+        expect(a.field instanceof Any).assertTrue()
+        expect(a.field).assertEqual(7)
+        expect(get_field(a)).assertEqual(7)
+        set_field(a, "abc")
+        expect(a.field).assertEqual("abc")
+        expect(get_field(a)).assertEqual("abc")
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0195
+     * @tc.name      testOverridingFields0195
+     * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0195", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F195 = new A_F195()
+        expect(a.field instanceof Object).assertTrue()
+        expect(a.field).assertEqual("abc")
+        expect(get_field(a)).assertEqual("abc")
+        set_field(a, 7)
+        expect(a.field).assertEqual(7)
+        expect(get_field(a)).assertEqual(7)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0196
+     * @tc.name      testOverridingFields0196
+     * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0196", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F196 = new A_F196()
+        expect(a.field instanceof number).assertTrue()
+        expect(a.field).assertEqual(6.7)
+        expect(get_field(a)).assertEqual(6.7)
+        set_field(a, 13)
+        expect(a.field).assertEqual(13)
+        expect(get_field(a)).assertEqual(13)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0197
+     * @tc.name      testOverridingFields0197
+     * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0197", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F197 = new A_F197()
+        expect(a.field instanceof double).assertTrue()
+        expect(a.field).assertEqual(5.0)
+        expect(get_field(a)).assertEqual(5.0)
+        set_field(a, 15)
+        expect(a.field).assertEqual(15)
+        expect(get_field(a)).assertEqual(15)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0198
+     * @tc.name      testOverridingFields0198
+     * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFields0198", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F198 = new A_F198()
+        expect(a.field instanceof float).assertTrue()
+        expect(a.field).assertEqual(7.3f)
+        expect(get_field(a)).assertEqual(7.3f)
+        set_field(a, 9.8f)
+        expect(a.field).assertEqual(9.8f)
+        expect(get_field(a)).assertEqual(9.8f)
+    })
+  })
+}
