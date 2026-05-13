@@ -16,25 +16,25 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles3BaseFunc.h"
-#include "../ActsKhrgles30001TestSuite.h"
+#include "../ActsGles3KhrMainUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000001,
+static SHRINK_HWTEST_F(ActsGles3KhrMainUncover0001TestSuite, TestCase_000001,
         "KHR-GLES3.shaders.function.l",
         "ocal_variable_aliasing_vertex");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000002,
+static SHRINK_HWTEST_F(ActsGles3KhrMainUncover0001TestSuite, TestCase_000002,
         "KHR-GLES3.shaders.function.lo",
         "cal_variable_aliasing_fragment");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000003,
+static SHRINK_HWTEST_F(ActsGles3KhrMainUncover0001TestSuite, TestCase_000003,
         "KHR-GLES3.shaders.function.gl",
         "obal_variable_aliasing_vertex");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000004,
+static SHRINK_HWTEST_F(ActsGles3KhrMainUncover0001TestSuite, TestCase_000004,
         "KHR-GLES3.shaders.function.glo",
         "bal_variable_aliasing_fragment");
