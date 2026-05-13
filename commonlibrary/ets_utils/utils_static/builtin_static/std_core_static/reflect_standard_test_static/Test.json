@@ -5,7 +5,7 @@
         "test-timeout": "800000",
         "shell-timeout": "800000",
         "testcase-timeout": "15000",
-        "bundle-name": "com.reflect.standard.static",
+        "bundle-name": "com.example.staticMethod",
         "module-name": "entry"
     },
     "kits": [

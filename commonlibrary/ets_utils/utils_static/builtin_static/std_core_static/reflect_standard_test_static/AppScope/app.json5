@@ -1,7 +1,7 @@
 {
   "app": {
-    "bundleName": "com.reflect.StaticMethod.static",
-    "vendor": "example",
+    "bundleName": "com.example.staticMethod",
+    "vendor": "staticMethod",
     "versionCode": 1000000,
     "versionName": "1.0.0",
     "icon": "$media:app_icon",
