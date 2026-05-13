@@ -379,13 +379,6 @@ static napi_value TextEnumTest_027(napi_env env, napi_callback_info info)
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result_27 TextEnumTest_027 result=%{public}d", result_27);
     ASSERT_EQ(result_27, ARKUI_ERROR_CODE_PARAM_INVALID);
-
-    const OH_ArkUI_SpanStyle *spanStyles[] = {spanStyle};
-    ArkUI_StyledString_Descriptor *styledString =
-        OH_ArkUI_StyledString_Descriptor_CreateWithString("行间距样式示例\n段落内容", spanStyles, PARAM_1);
-
-    OH_ArkUI_SpanStyle_Destroy(spanStyle);
-    OH_ArkUI_StyledString_Descriptor_Destroy(styledString);
     NAPI_END(text);
 }
 
@@ -447,7 +440,6 @@ static napi_value TextEnumTest_031(napi_env env, napi_callback_info info)
         OH_ArkUI_StyledString_Descriptor_CreateWithString("行间距样式示例\n段落内容", spanStyles, PARAM_1);
 
     OH_ArkUI_SpanStyle_Destroy(spanStyle);
-    OH_ArkUI_SpanStyle_Destroy(spanStyle2);
     OH_ArkUI_LineSpacingStyle_Destroy(lineSpacingStyle);
     OH_ArkUI_StyledString_Descriptor_Destroy(styledString);
     NAPI_END(text);
@@ -461,13 +453,6 @@ static napi_value TextEnumTest_032(napi_env env, napi_callback_info info)
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result_32 TextEnumTest_032 result=%{public}d", result_32);
     ASSERT_EQ(result_32, ARKUI_ERROR_CODE_PARAM_INVALID);
-
-    const OH_ArkUI_SpanStyle *spanStyles[] = {spanStyle};
-    ArkUI_StyledString_Descriptor *styledString =
-        OH_ArkUI_StyledString_Descriptor_CreateWithString("行间距样式示例\n段落内容", spanStyles, PARAM_1);
-
-    OH_ArkUI_SpanStyle_Destroy(spanStyle);
-    OH_ArkUI_StyledString_Descriptor_Destroy(styledString);
     NAPI_END(text);
 }
 
