@@ -336,6 +336,19 @@ export default function ApiCoverTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityConstant_2250
+     * @tc.number SUB_Ability_AbilityBase_AbilityConstant_2250
+     * @tc.desc   Test abilityConstant WindowMode.WINDOW_MODE_SPLIT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_AbilityConstant_2250', Level.LEVEL0, async (done: Function) => {
+      expect(105).assertEqual(abilityConstant.WindowMode.WINDOW_MODE_SPLIT);
+      done();
+    })
+
+    /**
      * @tc.name   SUB_Ability_AbilityBase_AbilityConstant_2300
      * @tc.number SUB_Ability_AbilityBase_AbilityConstant_2300
      * @tc.desc   Test abilityConstant StateType.CONTINUATION.

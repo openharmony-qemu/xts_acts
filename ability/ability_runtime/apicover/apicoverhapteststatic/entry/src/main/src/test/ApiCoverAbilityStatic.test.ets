@@ -116,12 +116,14 @@ export default function ApiCoverStaticTest() {
           windowWidth: 100,
           windowHeight: 100,
           windowFocused: true,
-          windowCreateParams: windowParam
+          windowCreateParams: windowParam,
+          splitRatio: window.SplitRatioPreference.PRIMARY_DOMINANT
         }
         let startWant: Want = {
           bundleName: "com.example.apicoverhaptest.static",
           abilityName: "EntryAbility",
         }
+        expect(1).assertEqual(window.SplitRatioPreference.PRIMARY_DOMINANT);
         expect('0').assertEqual(insightIntent.ExecuteMode.UI_ABILITY_FOREGROUND + '');
         hilog.info(0x0000, 'SUB_AA_FMS_AbilityStage_0100', insightIntent.ExecuteMode.UI_EXTENSION_ABILITY + '');
         try {
