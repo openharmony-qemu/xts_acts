@@ -1,4 +1,20 @@
 'use static'
+
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import {
   Entry,
   Text,
@@ -9,6 +25,7 @@ import {
   Shape,
   Margin,
   Rect,
+  ColumnOptions,
   Ellipse,
   Path,
   Color,
@@ -139,9 +156,119 @@ struct ShapeEventPage {
   } as ViewportRect;
 
   build() {
-    Column() {
+    Column({space:5} as ColumnOptions) {
+      Row() {
+        Button('isStroke : ' + this.modifier.isStroke)
+          .id('ShapeM_stroke')
+          .height(15)
+          .onClick((e: ClickEvent) => {
+            this.modifier.isStroke = !this.modifier.isStroke;
+          })
+        Button('isAntiAlias : ' + this.modifier.isAntiAlias)
+          .id('ShapeM_antiAlias')
+          .height(15)
+          .onClick((e: ClickEvent) => {
+            this.modifier.isAntiAlias = !this.modifier.isAntiAlias;
+          })
+      }
+
+      Row() {
+        Button('isStrokeDashOffset : ' + this.modifier.isStrokeDashOffset)
+          .id('ShapeM_strokeDashOffset')
+          .height(15)
+          .onClick((e: ClickEvent) => {
+            this.modifier.isStrokeDashOffset = !this.modifier.isStrokeDashOffset;
+          })
+        Button('isStrokeWidth : ' + this.modifier.isStrokeWidth)
+          .id('ShapeM_strokeWidth')
+          .height(15)
+          .onClick((e: ClickEvent) => {
+            this.modifier.isStrokeWidth = !this.modifier.isStrokeWidth;
+          })
+      }
+
+      Row() {
+        Button('isStrokeMiterLimit : ' + this.modifier.isStrokeMiterLimit)
+          .id('ShapeM_strokeMiterLimit')
+          .height(15)
+          .onClick((e: ClickEvent) => {
+            this.modifier.isStrokeMiterLimit = !this.modifier.isStrokeMiterLimit;
+          })
+        Button('isStrokeLineCap : ' + this.modifier.isStrokeLineCap)
+          .id('ShapeM_strokeLineCap')
+          .height(15)
+          .onClick((e: ClickEvent) => {
+            this.modifier.isStrokeLineCap = !this.modifier.isStrokeLineCap;
+          })
+      }
+
+      Row() {
+        Button('isStrokeDashArray : ' + this.modifier.isStrokeDashArray)
+          .id('ShapeM_strokeDashArray')
+          .height(15)
+          .onClick((e: ClickEvent) => {
+            this.modifier.isStrokeDashArray = !this.modifier.isStrokeDashArray;
+          })
+        Button('isStrokeOpacity : ' + this.modifier.isStrokeOpacity)
+          .id('ShapeM_strokeOpacity')
+          .height(15)
+          .onClick((e: ClickEvent) => {
+            this.modifier.isStrokeOpacity = !this.modifier.isStrokeOpacity;
+          })
+      }
+
+      Row() {
+        Button('isStrokeLineJoin : ' + this.modifier.isStrokeLineJoin)
+          .id('ShapeM_strokeLineJoin')
+          .height(15)
+          .onClick((e: ClickEvent) => {
+            this.modifier.isStrokeLineJoin = !this.modifier.isStrokeLineJoin;
+          })
+        Button('isFill : ' + this.modifier.isFill)
+          .id('ShapeM_fill')
+          .height(15)
+          .onClick((e: ClickEvent) => {
+            this.modifier.isFill = !this.modifier.isFill;
+          })
+      }
+
+      Row() {
+        Button('isFillOpacity : ' + this.modifier.isFillOpacity)
+          .id('ShapeM_fillOpacity')
+          .height(15)
+          .onClick((e: ClickEvent) => {
+            this.modifier.isFillOpacity = !this.modifier.isFillOpacity;
+          })
+        Button('isValue: ' + this.modifier3.isValue)
+          .id('ShapeM3_mesh')
+          .height(15)
+          .onClick((e: ClickEvent) => {
+            this.modifier3.isValue = !this.modifier3.isValue
+          })
+        Button('isValue: ' + this.modifier4.isValue)
+          .id('ShapeM4_mesh')
+          .height(15)
+          .onClick((e: ClickEvent) => {
+            this.modifier4.isValue = !this.modifier4.isValue
+          })
+      }
+
+      Row() {
+        Button('isViewPort: ' + this.modifier2.isViewPort)
+          .id('ShapeM_viewPort')
+          .height(15)
+          .onClick((e: ClickEvent) => {
+            this.modifier2.isViewPort = !this.modifier2.isViewPort
+          })
+        Button('isShow: ' + this.isShow) //是否创建组件
+          .id('ShapeM_show')
+          .height(15)
+          .onClick((e: ClickEvent) => {
+            this.isShow = !this.isShow
+          })
+      }
       Shape() {
-        Path().width(200).height(60).commands('M0 0 L400 0 L400 150 Z')
+        Path().width(200).height(30).commands('M0 0 L400 0 L400 150 Z')
       }
       .id('ShapeM')
       .attributeModifier(this.modifier)
@@ -176,102 +303,7 @@ struct ShapeEventPage {
           .attributeModifier(this.modifier4)
       }
 
-      Row() {
-        Button('isStroke : ' + this.modifier.isStroke)
-          .id('ShapeM_stroke')
-          .onClick((e: ClickEvent) => {
-            this.modifier.isStroke = !this.modifier.isStroke;
-          })
-        Button('isAntiAlias : ' + this.modifier.isAntiAlias)
-          .id('ShapeM_antiAlias')
-          .onClick((e: ClickEvent) => {
-            this.modifier.isAntiAlias = !this.modifier.isAntiAlias;
-          })
-      }
 
-      Row() {
-        Button('isStrokeDashOffset : ' + this.modifier.isStrokeDashOffset)
-          .id('ShapeM_strokeDashOffset')
-          .onClick((e: ClickEvent) => {
-            this.modifier.isStrokeDashOffset = !this.modifier.isStrokeDashOffset;
-          })
-        Button('isStrokeWidth : ' + this.modifier.isStrokeWidth)
-          .id('ShapeM_strokeWidth')
-          .onClick((e: ClickEvent) => {
-            this.modifier.isStrokeWidth = !this.modifier.isStrokeWidth;
-          })
-      }
-
-      Row() {
-        Button('isStrokeMiterLimit : ' + this.modifier.isStrokeMiterLimit)
-          .id('ShapeM_strokeMiterLimit')
-          .onClick((e: ClickEvent) => {
-            this.modifier.isStrokeMiterLimit = !this.modifier.isStrokeMiterLimit;
-          })
-        Button('isStrokeLineCap : ' + this.modifier.isStrokeLineCap)
-          .id('ShapeM_strokeLineCap')
-          .onClick((e: ClickEvent) => {
-            this.modifier.isStrokeLineCap = !this.modifier.isStrokeLineCap;
-          })
-      }
-
-      Row() {
-        Button('isStrokeDashArray : ' + this.modifier.isStrokeDashArray)
-          .id('ShapeM_strokeDashArray')
-          .onClick((e: ClickEvent) => {
-            this.modifier.isStrokeDashArray = !this.modifier.isStrokeDashArray;
-          })
-        Button('isStrokeOpacity : ' + this.modifier.isStrokeOpacity)
-          .id('ShapeM_strokeOpacity')
-          .onClick((e: ClickEvent) => {
-            this.modifier.isStrokeOpacity = !this.modifier.isStrokeOpacity;
-          })
-      }
-
-      Row() {
-        Button('isStrokeLineJoin : ' + this.modifier.isStrokeLineJoin)
-          .id('ShapeM_strokeLineJoin')
-          .onClick((e: ClickEvent) => {
-            this.modifier.isStrokeLineJoin = !this.modifier.isStrokeLineJoin;
-          })
-        Button('isFill : ' + this.modifier.isFill)
-          .id('ShapeM_fill')
-          .onClick((e: ClickEvent) => {
-            this.modifier.isFill = !this.modifier.isFill;
-          })
-      }
-
-      Row() {
-        Button('isFillOpacity : ' + this.modifier.isFillOpacity)
-          .id('ShapeM_fillOpacity')
-          .onClick((e: ClickEvent) => {
-            this.modifier.isFillOpacity = !this.modifier.isFillOpacity;
-          })
-        Button('isValue: ' + this.modifier3.isValue)
-          .id('ShapeM3_mesh')
-          .onClick((e: ClickEvent) => {
-            this.modifier3.isValue = !this.modifier3.isValue
-          })
-        Button('isValue: ' + this.modifier4.isValue)
-          .id('ShapeM4_mesh')
-          .onClick((e: ClickEvent) => {
-            this.modifier4.isValue = !this.modifier4.isValue
-          })
-      }
-
-      Row() {
-        Button('isViewPort: ' + this.modifier2.isViewPort)
-          .id('ShapeM_viewPort')
-          .onClick((e: ClickEvent) => {
-            this.modifier2.isViewPort = !this.modifier2.isViewPort
-          })
-        Button('isShow: ' + this.isShow) //是否创建组件
-          .id('ShapeM_show')
-          .onClick((e: ClickEvent) => {
-            this.isShow = !this.isShow
-          })
-      }
-
-    }.width('100%').margin({ top: 15 } as Margin)
+    }.width('100%').height('100%')
   }
 }
