@@ -22,4 +22,3 @@ ohos_js_app_static_suite("ActsArrayCaseStaticTest") {
   subsystem_name = "commonlibrary"
 }
 
-
