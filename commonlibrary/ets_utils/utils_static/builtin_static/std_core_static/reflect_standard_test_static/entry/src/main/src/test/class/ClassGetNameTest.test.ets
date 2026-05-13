@@ -40,7 +40,7 @@ abstract class AbstractClass008 {
       public abstract method(): void;
   }
 
-final class FinalClass009 {}
+class FinalClass009 {}
 
 interface MyInterface010 {
       name: string;
