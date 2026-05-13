@@ -81,7 +81,6 @@ void SetUpTestCase()
         CODEC_HEVC = OH_AVCapability_GetName(g_capHevc);
         cout << "codecname_hevc: " << CODEC_HEVC << endl;
     }
-
 }
 void TearDown()
 {
