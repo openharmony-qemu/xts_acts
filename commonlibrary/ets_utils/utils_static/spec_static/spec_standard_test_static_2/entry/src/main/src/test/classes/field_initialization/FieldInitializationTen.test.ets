@@ -1655,3 +1655,1358 @@ export default function FieldInitializationTestTen(): void {
       expect(A_F1017.field instanceof int).assertTrue()
       expect(A_F1017.field).assertEqual(4)
     })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1018
+     * @tc.name      testFieldInit1018
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1018.field instanceof byte).assertTrue()
+      expect(A_F1018.field).assertEqual(4)
+          A_F1018.field = 5
+      expect(A_F1018.field instanceof byte).assertTrue()
+      expect(A_F1018.field).assertEqual(5)
+          A_F1018.field = 4
+      expect(A_F1018.field instanceof byte).assertTrue()
+      expect(A_F1018.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1019
+     * @tc.name      testFieldInit1019
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1019.field instanceof short).assertTrue()
+      expect(A_F1019.field).assertEqual(4)
+          A_F1019.field = 5
+      expect(A_F1019.field instanceof short).assertTrue()
+      expect(A_F1019.field).assertEqual(5)
+          A_F1019.field = 4
+      expect(A_F1019.field instanceof short).assertTrue()
+      expect(A_F1019.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1020
+     * @tc.name      testFieldInit1020
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1020.field instanceof double).assertTrue()
+      expect(A_F1020.field).assertEqual(4)
+          A_F1020.field = 7.3
+      expect(A_F1020.field instanceof double).assertTrue()
+      expect(A_F1020.field).assertEqual(7.3)
+          A_F1020.field = 4
+      expect(A_F1020.field instanceof double).assertTrue()
+      expect(A_F1020.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1021
+     * @tc.name      testFieldInit1021
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1021.field instanceof number).assertTrue()
+      expect(A_F1021.field).assertEqual(4)
+          A_F1021.field = 5
+      expect(A_F1021.field instanceof number).assertTrue()
+      expect(A_F1021.field).assertEqual(5)
+          A_F1021.field = 4
+      expect(A_F1021.field instanceof number).assertTrue()
+      expect(A_F1021.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1022
+     * @tc.name      testFieldInit1022
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1022.field instanceof float).assertTrue()
+      expect(A_F1022.field).assertEqual(4.5f)
+          A_F1022.field = 7.3f
+      expect(A_F1022.field instanceof float).assertTrue()
+      expect(A_F1022.field).assertEqual(7.3f)
+          A_F1022.field = 4.5f
+      expect(A_F1022.field instanceof float).assertTrue()
+      expect(A_F1022.field).assertEqual(4.5f)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1023
+     * @tc.name      testFieldInit1023
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1023.field instanceof bigint).assertTrue()
+      expect(A_F1023.field).assertEqual(4n)
+          A_F1023.field = 5n
+      expect(A_F1023.field instanceof bigint).assertTrue()
+      expect(A_F1023.field).assertEqual(5n)
+          A_F1023.field = 4n
+      expect(A_F1023.field instanceof bigint).assertTrue()
+      expect(A_F1023.field).assertEqual(4n)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1024
+     * @tc.name      testFieldInit1024
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1024.field instanceof string).assertTrue()
+      expect(A_F1024.field).assertEqual("abc")
+          A_F1024.field = "efg"
+      expect(A_F1024.field instanceof string).assertTrue()
+      expect(A_F1024.field).assertEqual("efg")
+          A_F1024.field = "abc"
+      expect(A_F1024.field instanceof string).assertTrue()
+      expect(A_F1024.field).assertEqual("abc")
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1025
+     * @tc.name      testFieldInit1025
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1025.field instanceof char).assertTrue()
+      expect(A_F1025.field).assertEqual(c'a')
+          A_F1025.field = c'b'
+      expect(A_F1025.field instanceof char).assertTrue()
+      expect(A_F1025.field).assertEqual(c'b')
+          A_F1025.field = c'a'
+      expect(A_F1025.field instanceof char).assertTrue()
+      expect(A_F1025.field).assertEqual(c'a')
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1026
+     * @tc.name      testFieldInit1026
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1026.field instanceof boolean).assertTrue()
+      expect(A_F1026.field).assertEqual(false)
+          A_F1026.field = true
+      expect(A_F1026.field instanceof boolean).assertTrue()
+      expect(A_F1026.field).assertEqual(true)
+          A_F1026.field = false
+      expect(A_F1026.field instanceof boolean).assertTrue()
+      expect(A_F1026.field).assertEqual(false)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1027
+     * @tc.name      testFieldInit1027
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1027.field instanceof Object).assertTrue()
+      expect(A_F1027.field).assertEqual(4)
+          A_F1027.field = 5
+      expect(A_F1027.field instanceof Object).assertTrue()
+      expect(A_F1027.field).assertEqual(5)
+          A_F1027.field = 4
+      expect(A_F1027.field instanceof Object).assertTrue()
+      expect(A_F1027.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1028
+     * @tc.name      testFieldInit1028
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1028.field instanceof Object | undefined).assertTrue()
+      expect(A_F1028.field).assertEqual(undefined)
+          A_F1028.field = 5
+      expect(A_F1028.field instanceof Object | undefined).assertTrue()
+      expect(A_F1028.field).assertEqual(5)
+          A_F1028.field = undefined
+      expect(A_F1028.field instanceof Object | undefined).assertTrue()
+      expect(A_F1028.field).assertEqual(undefined)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1029
+     * @tc.name      testFieldInit1029
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1029.field instanceof Object | undefined | null).assertTrue()
+      expect(A_F1029.field).assertEqual(4)
+          A_F1029.field = 5
+      expect(A_F1029.field instanceof Object | undefined | null).assertTrue()
+      expect(A_F1029.field).assertEqual(5)
+          A_F1029.field = 4
+      expect(A_F1029.field instanceof Object | undefined | null).assertTrue()
+      expect(A_F1029.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1030
+     * @tc.name      testFieldInit1030
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1030.field instanceof Any).assertTrue()
+      expect(A_F1030.field).assertEqual(4)
+          A_F1030.field = 5
+      expect(A_F1030.field instanceof Any).assertTrue()
+      expect(A_F1030.field).assertEqual(5)
+          A_F1030.field = 4
+      expect(A_F1030.field instanceof Any).assertTrue()
+      expect(A_F1030.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1031
+     * @tc.name      testFieldInit1031
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1031.field instanceof long).assertTrue()
+      expect(A_F1031.field).assertEqual(4)
+          A_F1031.field = 5
+      expect(A_F1031.field instanceof long).assertTrue()
+      expect(A_F1031.field).assertEqual(5)
+          A_F1031.field = 4
+      expect(A_F1031.field instanceof long).assertTrue()
+      expect(A_F1031.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1032
+     * @tc.name      testFieldInit1032
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1032.field instanceof int).assertTrue()
+      expect(A_F1032.field).assertEqual(4)
+          A_F1032.field = 5
+      expect(A_F1032.field instanceof int).assertTrue()
+      expect(A_F1032.field).assertEqual(5)
+          A_F1032.field = 4
+      expect(A_F1032.field instanceof int).assertTrue()
+      expect(A_F1032.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1033
+     * @tc.name      testFieldInit1033
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1033.field instanceof byte).assertTrue()
+      expect(A_F1033.field).assertEqual(4)
+          A_F1033.field = 5
+      expect(A_F1033.field instanceof byte).assertTrue()
+      expect(A_F1033.field).assertEqual(5)
+          A_F1033.field = 4
+      expect(A_F1033.field instanceof byte).assertTrue()
+      expect(A_F1033.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1034
+     * @tc.name      testFieldInit1034
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1034.field instanceof short).assertTrue()
+      expect(A_F1034.field).assertEqual(4)
+          A_F1034.field = 5
+      expect(A_F1034.field instanceof short).assertTrue()
+      expect(A_F1034.field).assertEqual(5)
+          A_F1034.field = 4
+      expect(A_F1034.field instanceof short).assertTrue()
+      expect(A_F1034.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1035
+     * @tc.name      testFieldInit1035
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1035.field instanceof double).assertTrue()
+      expect(A_F1035.field).assertEqual(4)
+          A_F1035.field = 7.3
+      expect(A_F1035.field instanceof double).assertTrue()
+      expect(A_F1035.field).assertEqual(7.3)
+          A_F1035.field = 4
+      expect(A_F1035.field instanceof double).assertTrue()
+      expect(A_F1035.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1036
+     * @tc.name      testFieldInit1036
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1036.field instanceof number).assertTrue()
+      expect(A_F1036.field).assertEqual(4)
+          A_F1036.field = 5
+      expect(A_F1036.field instanceof number).assertTrue()
+      expect(A_F1036.field).assertEqual(5)
+          A_F1036.field = 4
+      expect(A_F1036.field instanceof number).assertTrue()
+      expect(A_F1036.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1037
+     * @tc.name      testFieldInit1037
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1037.field instanceof float).assertTrue()
+      expect(A_F1037.field).assertEqual(4.5f)
+          A_F1037.field = 7.3f
+      expect(A_F1037.field instanceof float).assertTrue()
+      expect(A_F1037.field).assertEqual(7.3f)
+          A_F1037.field = 4.5f
+      expect(A_F1037.field instanceof float).assertTrue()
+      expect(A_F1037.field).assertEqual(4.5f)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1038
+     * @tc.name      testFieldInit1038
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1038.field instanceof bigint).assertTrue()
+      expect(A_F1038.field).assertEqual(4n)
+          A_F1038.field = 5n
+      expect(A_F1038.field instanceof bigint).assertTrue()
+      expect(A_F1038.field).assertEqual(5n)
+          A_F1038.field = 4n
+      expect(A_F1038.field instanceof bigint).assertTrue()
+      expect(A_F1038.field).assertEqual(4n)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1039
+     * @tc.name      testFieldInit1039
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1039.field instanceof string).assertTrue()
+      expect(A_F1039.field).assertEqual("abc")
+          A_F1039.field = "efg"
+      expect(A_F1039.field instanceof string).assertTrue()
+      expect(A_F1039.field).assertEqual("efg")
+          A_F1039.field = "abc"
+      expect(A_F1039.field instanceof string).assertTrue()
+      expect(A_F1039.field).assertEqual("abc")
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1040
+     * @tc.name      testFieldInit1040
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1040.field instanceof char).assertTrue()
+      expect(A_F1040.field).assertEqual(c'a')
+          A_F1040.field = c'b'
+      expect(A_F1040.field instanceof char).assertTrue()
+      expect(A_F1040.field).assertEqual(c'b')
+          A_F1040.field = c'a'
+      expect(A_F1040.field instanceof char).assertTrue()
+      expect(A_F1040.field).assertEqual(c'a')
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1041
+     * @tc.name      testFieldInit1041
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1041.field instanceof boolean).assertTrue()
+      expect(A_F1041.field).assertEqual(false)
+          A_F1041.field = true
+      expect(A_F1041.field instanceof boolean).assertTrue()
+      expect(A_F1041.field).assertEqual(true)
+          A_F1041.field = false
+      expect(A_F1041.field instanceof boolean).assertTrue()
+      expect(A_F1041.field).assertEqual(false)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1042
+     * @tc.name      testFieldInit1042
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1042.field instanceof Object).assertTrue()
+      expect(A_F1042.field).assertEqual(4)
+          A_F1042.field = 5
+      expect(A_F1042.field instanceof Object).assertTrue()
+      expect(A_F1042.field).assertEqual(5)
+          A_F1042.field = 4
+      expect(A_F1042.field instanceof Object).assertTrue()
+      expect(A_F1042.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1043
+     * @tc.name      testFieldInit1043
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1043.field instanceof Object | undefined).assertTrue()
+      expect(A_F1043.field).assertEqual(undefined)
+          A_F1043.field = 5
+      expect(A_F1043.field instanceof Object | undefined).assertTrue()
+      expect(A_F1043.field).assertEqual(5)
+          A_F1043.field = undefined
+      expect(A_F1043.field instanceof Object | undefined).assertTrue()
+      expect(A_F1043.field).assertEqual(undefined)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1044
+     * @tc.name      testFieldInit1044
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1044.field instanceof Object | undefined | null).assertTrue()
+      expect(A_F1044.field).assertEqual(4)
+          A_F1044.field = 5
+      expect(A_F1044.field instanceof Object | undefined | null).assertTrue()
+      expect(A_F1044.field).assertEqual(5)
+          A_F1044.field = 4
+      expect(A_F1044.field instanceof Object | undefined | null).assertTrue()
+      expect(A_F1044.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1045
+     * @tc.name      testFieldInit1045
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1045.field instanceof Any).assertTrue()
+      expect(A_F1045.field).assertEqual(4)
+          A_F1045.field = 5
+      expect(A_F1045.field instanceof Any).assertTrue()
+      expect(A_F1045.field).assertEqual(5)
+          A_F1045.field = 4
+      expect(A_F1045.field instanceof Any).assertTrue()
+      expect(A_F1045.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1046
+     * @tc.name      testFieldInit1046
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1046.field instanceof long).assertTrue()
+      expect(A_F1046.field).assertEqual(4)
+          A_F1046.field = 5
+      expect(A_F1046.field instanceof long).assertTrue()
+      expect(A_F1046.field).assertEqual(5)
+          A_F1046.field = 4
+      expect(A_F1046.field instanceof long).assertTrue()
+      expect(A_F1046.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1047
+     * @tc.name      testFieldInit1047
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1047.field instanceof int).assertTrue()
+      expect(A_F1047.field).assertEqual(4)
+          A_F1047.field = 5
+      expect(A_F1047.field instanceof int).assertTrue()
+      expect(A_F1047.field).assertEqual(5)
+          A_F1047.field = 4
+      expect(A_F1047.field instanceof int).assertTrue()
+      expect(A_F1047.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1048
+     * @tc.name      testFieldInit1048
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1048.field instanceof byte).assertTrue()
+      expect(A_F1048.field).assertEqual(4)
+          A_F1048.field = 5
+      expect(A_F1048.field instanceof byte).assertTrue()
+      expect(A_F1048.field).assertEqual(5)
+          A_F1048.field = 4
+      expect(A_F1048.field instanceof byte).assertTrue()
+      expect(A_F1048.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1049
+     * @tc.name      testFieldInit1049
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1049.field instanceof short).assertTrue()
+      expect(A_F1049.field).assertEqual(4)
+          A_F1049.field = 5
+      expect(A_F1049.field instanceof short).assertTrue()
+      expect(A_F1049.field).assertEqual(5)
+          A_F1049.field = 4
+      expect(A_F1049.field instanceof short).assertTrue()
+      expect(A_F1049.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1050
+     * @tc.name      testFieldInit1050
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1050.field instanceof double).assertTrue()
+      expect(A_F1050.field).assertEqual(4)
+          A_F1050.field = 7.3
+      expect(A_F1050.field instanceof double).assertTrue()
+      expect(A_F1050.field).assertEqual(7.3)
+          A_F1050.field = 4
+      expect(A_F1050.field instanceof double).assertTrue()
+      expect(A_F1050.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1051
+     * @tc.name      testFieldInit1051
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1051.field instanceof number).assertTrue()
+      expect(A_F1051.field).assertEqual(4)
+          A_F1051.field = 5
+      expect(A_F1051.field instanceof number).assertTrue()
+      expect(A_F1051.field).assertEqual(5)
+          A_F1051.field = 4
+      expect(A_F1051.field instanceof number).assertTrue()
+      expect(A_F1051.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1052
+     * @tc.name      testFieldInit1052
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1052.field instanceof float).assertTrue()
+      expect(A_F1052.field).assertEqual(4.5f)
+          A_F1052.field = 7.3f
+      expect(A_F1052.field instanceof float).assertTrue()
+      expect(A_F1052.field).assertEqual(7.3f)
+          A_F1052.field = 4.5f
+      expect(A_F1052.field instanceof float).assertTrue()
+      expect(A_F1052.field).assertEqual(4.5f)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1053
+     * @tc.name      testFieldInit1053
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1053.field instanceof bigint).assertTrue()
+      expect(A_F1053.field).assertEqual(4n)
+          A_F1053.field = 5n
+      expect(A_F1053.field instanceof bigint).assertTrue()
+      expect(A_F1053.field).assertEqual(5n)
+          A_F1053.field = 4n
+      expect(A_F1053.field instanceof bigint).assertTrue()
+      expect(A_F1053.field).assertEqual(4n)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1054
+     * @tc.name      testFieldInit1054
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1054.field instanceof string).assertTrue()
+      expect(A_F1054.field).assertEqual("abc")
+          A_F1054.field = "efg"
+      expect(A_F1054.field instanceof string).assertTrue()
+      expect(A_F1054.field).assertEqual("efg")
+          A_F1054.field = "abc"
+      expect(A_F1054.field instanceof string).assertTrue()
+      expect(A_F1054.field).assertEqual("abc")
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1055
+     * @tc.name      testFieldInit1055
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1055.field instanceof char).assertTrue()
+      expect(A_F1055.field).assertEqual(c'a')
+          A_F1055.field = c'b'
+      expect(A_F1055.field instanceof char).assertTrue()
+      expect(A_F1055.field).assertEqual(c'b')
+          A_F1055.field = c'a'
+      expect(A_F1055.field instanceof char).assertTrue()
+      expect(A_F1055.field).assertEqual(c'a')
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1056
+     * @tc.name      testFieldInit1056
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1056.field instanceof boolean).assertTrue()
+      expect(A_F1056.field).assertEqual(false)
+          A_F1056.field = true
+      expect(A_F1056.field instanceof boolean).assertTrue()
+      expect(A_F1056.field).assertEqual(true)
+          A_F1056.field = false
+      expect(A_F1056.field instanceof boolean).assertTrue()
+      expect(A_F1056.field).assertEqual(false)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1057
+     * @tc.name      testFieldInit1057
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1057.field instanceof Object).assertTrue()
+      expect(A_F1057.field).assertEqual(4)
+          A_F1057.field = 5
+      expect(A_F1057.field instanceof Object).assertTrue()
+      expect(A_F1057.field).assertEqual(5)
+          A_F1057.field = 4
+      expect(A_F1057.field instanceof Object).assertTrue()
+      expect(A_F1057.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1058
+     * @tc.name      testFieldInit1058
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1058.field instanceof Object | undefined).assertTrue()
+      expect(A_F1058.field).assertEqual(undefined)
+          A_F1058.field = 5
+      expect(A_F1058.field instanceof Object | undefined).assertTrue()
+      expect(A_F1058.field).assertEqual(5)
+          A_F1058.field = undefined
+      expect(A_F1058.field instanceof Object | undefined).assertTrue()
+      expect(A_F1058.field).assertEqual(undefined)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1059
+     * @tc.name      testFieldInit1059
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1059.field instanceof Object | undefined | null).assertTrue()
+      expect(A_F1059.field).assertEqual(4)
+          A_F1059.field = 5
+      expect(A_F1059.field instanceof Object | undefined | null).assertTrue()
+      expect(A_F1059.field).assertEqual(5)
+          A_F1059.field = 4
+      expect(A_F1059.field instanceof Object | undefined | null).assertTrue()
+      expect(A_F1059.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1060
+     * @tc.name      testFieldInit1060
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1060.field instanceof Any).assertTrue()
+      expect(A_F1060.field).assertEqual(4)
+          A_F1060.field = 5
+      expect(A_F1060.field instanceof Any).assertTrue()
+      expect(A_F1060.field).assertEqual(5)
+          A_F1060.field = 4
+      expect(A_F1060.field instanceof Any).assertTrue()
+      expect(A_F1060.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1061
+     * @tc.name      testFieldInit1061
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1061.field instanceof long).assertTrue()
+      expect(A_F1061.field).assertEqual(4)
+          A_F1061.field = 5
+      expect(A_F1061.field instanceof long).assertTrue()
+      expect(A_F1061.field).assertEqual(5)
+          A_F1061.field = 4
+      expect(A_F1061.field instanceof long).assertTrue()
+      expect(A_F1061.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1062
+     * @tc.name      testFieldInit1062
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1062.field instanceof int).assertTrue()
+      expect(A_F1062.field).assertEqual(4)
+          A_F1062.field = 5
+      expect(A_F1062.field instanceof int).assertTrue()
+      expect(A_F1062.field).assertEqual(5)
+          A_F1062.field = 4
+      expect(A_F1062.field instanceof int).assertTrue()
+      expect(A_F1062.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1063
+     * @tc.name      testFieldInit1063
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1063.field instanceof byte).assertTrue()
+      expect(A_F1063.field).assertEqual(4)
+          A_F1063.field = 5
+      expect(A_F1063.field instanceof byte).assertTrue()
+      expect(A_F1063.field).assertEqual(5)
+          A_F1063.field = 4
+      expect(A_F1063.field instanceof byte).assertTrue()
+      expect(A_F1063.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1064
+     * @tc.name      testFieldInit1064
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1064.field instanceof short).assertTrue()
+      expect(A_F1064.field).assertEqual(4)
+          A_F1064.field = 5
+      expect(A_F1064.field instanceof short).assertTrue()
+      expect(A_F1064.field).assertEqual(5)
+          A_F1064.field = 4
+      expect(A_F1064.field instanceof short).assertTrue()
+      expect(A_F1064.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1065
+     * @tc.name      testFieldInit1065
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1065.field instanceof double).assertTrue()
+      expect(A_F1065.field).assertEqual(4)
+          A_F1065.field = 7.3
+      expect(A_F1065.field instanceof double).assertTrue()
+      expect(A_F1065.field).assertEqual(7.3)
+          A_F1065.field = 4
+      expect(A_F1065.field instanceof double).assertTrue()
+      expect(A_F1065.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1066
+     * @tc.name      testFieldInit1066
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1066.field instanceof number).assertTrue()
+      expect(A_F1066.field).assertEqual(4)
+          A_F1066.field = 5
+      expect(A_F1066.field instanceof number).assertTrue()
+      expect(A_F1066.field).assertEqual(5)
+          A_F1066.field = 4
+      expect(A_F1066.field instanceof number).assertTrue()
+      expect(A_F1066.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1067
+     * @tc.name      testFieldInit1067
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1067.field instanceof float).assertTrue()
+      expect(A_F1067.field).assertEqual(4.5f)
+          A_F1067.field = 7.3f
+      expect(A_F1067.field instanceof float).assertTrue()
+      expect(A_F1067.field).assertEqual(7.3f)
+          A_F1067.field = 4.5f
+      expect(A_F1067.field instanceof float).assertTrue()
+      expect(A_F1067.field).assertEqual(4.5f)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1068
+     * @tc.name      testFieldInit1068
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1068.field instanceof bigint).assertTrue()
+      expect(A_F1068.field).assertEqual(4n)
+          A_F1068.field = 5n
+      expect(A_F1068.field instanceof bigint).assertTrue()
+      expect(A_F1068.field).assertEqual(5n)
+          A_F1068.field = 4n
+      expect(A_F1068.field instanceof bigint).assertTrue()
+      expect(A_F1068.field).assertEqual(4n)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1069
+     * @tc.name      testFieldInit1069
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1069.field instanceof string).assertTrue()
+      expect(A_F1069.field).assertEqual("abc")
+          A_F1069.field = "efg"
+      expect(A_F1069.field instanceof string).assertTrue()
+      expect(A_F1069.field).assertEqual("efg")
+          A_F1069.field = "abc"
+      expect(A_F1069.field instanceof string).assertTrue()
+      expect(A_F1069.field).assertEqual("abc")
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1070
+     * @tc.name      testFieldInit1070
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1070.field instanceof char).assertTrue()
+      expect(A_F1070.field).assertEqual(c'a')
+          A_F1070.field = c'b'
+      expect(A_F1070.field instanceof char).assertTrue()
+      expect(A_F1070.field).assertEqual(c'b')
+          A_F1070.field = c'a'
+      expect(A_F1070.field instanceof char).assertTrue()
+      expect(A_F1070.field).assertEqual(c'a')
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1071
+     * @tc.name      testFieldInit1071
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1071.field instanceof boolean).assertTrue()
+      expect(A_F1071.field).assertEqual(false)
+          A_F1071.field = true
+      expect(A_F1071.field instanceof boolean).assertTrue()
+      expect(A_F1071.field).assertEqual(true)
+          A_F1071.field = false
+      expect(A_F1071.field instanceof boolean).assertTrue()
+      expect(A_F1071.field).assertEqual(false)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1072
+     * @tc.name      testFieldInit1072
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1072.field instanceof Object).assertTrue()
+      expect(A_F1072.field).assertEqual(4)
+          A_F1072.field = 5
+      expect(A_F1072.field instanceof Object).assertTrue()
+      expect(A_F1072.field).assertEqual(5)
+          A_F1072.field = 4
+      expect(A_F1072.field instanceof Object).assertTrue()
+      expect(A_F1072.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1073
+     * @tc.name      testFieldInit1073
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1073.field instanceof Object | undefined).assertTrue()
+      expect(A_F1073.field).assertEqual(undefined)
+          A_F1073.field = 5
+      expect(A_F1073.field instanceof Object | undefined).assertTrue()
+      expect(A_F1073.field).assertEqual(5)
+          A_F1073.field = undefined
+      expect(A_F1073.field instanceof Object | undefined).assertTrue()
+      expect(A_F1073.field).assertEqual(undefined)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1074
+     * @tc.name      testFieldInit1074
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1074.field instanceof Object | undefined | null).assertTrue()
+      expect(A_F1074.field).assertEqual(4)
+          A_F1074.field = 5
+      expect(A_F1074.field instanceof Object | undefined | null).assertTrue()
+      expect(A_F1074.field).assertEqual(5)
+          A_F1074.field = 4
+      expect(A_F1074.field instanceof Object | undefined | null).assertTrue()
+      expect(A_F1074.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1075
+     * @tc.name      testFieldInit1075
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1075.field instanceof Any).assertTrue()
+      expect(A_F1075.field).assertEqual(4)
+          A_F1075.field = 5
+      expect(A_F1075.field instanceof Any).assertTrue()
+      expect(A_F1075.field).assertEqual(5)
+          A_F1075.field = 4
+      expect(A_F1075.field instanceof Any).assertTrue()
+      expect(A_F1075.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1076
+     * @tc.name      testFieldInit1076
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1076.field instanceof C_F1076).assertTrue()
+      expect(A_F1076.field.data instanceof int).assertTrue()
+      expect(A_F1076.field.data).assertEqual(4)
+          A_F1076.field = {data: 5}
+      expect(A_F1076.field instanceof C_F1076).assertTrue()
+      expect(A_F1076.field.data instanceof int).assertTrue()
+      expect(A_F1076.field.data).assertEqual(5)
+          A_F1076.field = {data: 4}
+      expect(A_F1076.field instanceof C_F1076).assertTrue()
+      expect(A_F1076.field.data instanceof int).assertTrue()
+      expect(A_F1076.field.data).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1077
+     * @tc.name      testFieldInit1077
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1077.field instanceof C_F1077).assertTrue()
+      expect(A_F1077.field.data instanceof int).assertTrue()
+      expect(A_F1077.field.data).assertEqual(4)
+          A_F1077.field = {data: 5}
+      expect(A_F1077.field instanceof C_F1077).assertTrue()
+      expect(A_F1077.field.data instanceof int).assertTrue()
+      expect(A_F1077.field.data).assertEqual(5)
+          A_F1077.field = {data: 4}
+      expect(A_F1077.field instanceof C_F1077).assertTrue()
+      expect(A_F1077.field.data instanceof int).assertTrue()
+      expect(A_F1077.field.data).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1078
+     * @tc.name      testFieldInit1078
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1078.field instanceof C_F1078).assertTrue()
+      expect(A_F1078.field.data instanceof int).assertTrue()
+      expect(A_F1078.field.data).assertEqual(4)
+          A_F1078.field = {data: 5}
+      expect(A_F1078.field instanceof C_F1078).assertTrue()
+      expect(A_F1078.field.data instanceof int).assertTrue()
+      expect(A_F1078.field.data).assertEqual(5)
+          A_F1078.field = {data: 4}
+      expect(A_F1078.field instanceof C_F1078).assertTrue()
+      expect(A_F1078.field.data instanceof int).assertTrue()
+      expect(A_F1078.field.data).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1079
+     * @tc.name      testFieldInit1079
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1079.field instanceof C_F1079).assertTrue()
+      expect(A_F1079.field.data instanceof int).assertTrue()
+      expect(A_F1079.field.data).assertEqual(4)
+          A_F1079.field = {data: 5}
+      expect(A_F1079.field instanceof C_F1079).assertTrue()
+      expect(A_F1079.field.data instanceof int).assertTrue()
+      expect(A_F1079.field.data).assertEqual(5)
+          A_F1079.field = {data: 4}
+      expect(A_F1079.field instanceof C_F1079).assertTrue()
+      expect(A_F1079.field.data instanceof int).assertTrue()
+      expect(A_F1079.field.data).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1080
+     * @tc.name      testFieldInit1080
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1080.field instanceof C_F1080).assertTrue()
+      expect(A_F1080.field.data instanceof int).assertTrue()
+      expect(A_F1080.field.data).assertEqual(4)
+          A_F1080.field = {data: 5}
+      expect(A_F1080.field instanceof C_F1080).assertTrue()
+      expect(A_F1080.field.data instanceof int).assertTrue()
+      expect(A_F1080.field.data).assertEqual(5)
+          A_F1080.field = {data: 4}
+      expect(A_F1080.field instanceof C_F1080).assertTrue()
+      expect(A_F1080.field.data instanceof int).assertTrue()
+      expect(A_F1080.field.data).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1081
+     * @tc.name      testFieldInit1081
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1081.field instanceof C_F1081).assertTrue()
+      expect(A_F1081.field.data instanceof int).assertTrue()
+      expect(A_F1081.field.data).assertEqual(4)
+          A_F1081.field = {data: 5}
+      expect(A_F1081.field instanceof C_F1081).assertTrue()
+      expect(A_F1081.field.data instanceof int).assertTrue()
+      expect(A_F1081.field.data).assertEqual(5)
+          A_F1081.field = {data: 4}
+      expect(A_F1081.field instanceof C_F1081).assertTrue()
+      expect(A_F1081.field.data instanceof int).assertTrue()
+      expect(A_F1081.field.data).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1082
+     * @tc.name      testFieldInit1082
+     * @tc.desc      Checking for initialization with field initializer.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1082.field instanceof C_F1082).assertTrue()
+      expect(A_F1082.field.data instanceof int).assertTrue()
+      expect(A_F1082.field.data).assertEqual(4)
+          A_F1082.field = {data: 5}
+      expect(A_F1082.field instanceof C_F1082).assertTrue()
+      expect(A_F1082.field.data instanceof int).assertTrue()
+      expect(A_F1082.field.data).assertEqual(5)
+          A_F1082.field = {data: 4}
+      expect(A_F1082.field instanceof C_F1082).assertTrue()
+      expect(A_F1082.field.data instanceof int).assertTrue()
+      expect(A_F1082.field.data).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1083
+     * @tc.name      testFieldInit1083
+     * @tc.desc      Checking for initialization with different covariant subtype values usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(C_F1083.field instanceof Animal_F1083).assertTrue()
+      expect(C_F1083.field.name).assertEqual("")
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1084
+     * @tc.name      testFieldInit1084
+     * @tc.desc      Checking for initialization with different covariant subtype values usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(C_F1084.field instanceof Dog_F1084).assertTrue()
+      expect(C_F1084.field.name).assertEqual("dog")
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1085
+     * @tc.name      testFieldInit1085
+     * @tc.desc      Checking for initialization with different covariant subtype values usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(C_F1085.field instanceof Cat_F1085).assertTrue()
+      expect(C_F1085.field.name).assertEqual("cat")
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1086
+     * @tc.name      testFieldInit1086
+     * @tc.desc      Checking for initialization with different covariant function subtype values
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(C_F1086.field instanceof HandlerNothing_F1086).assertTrue()
+      expect(C_F1086.field(new B_F1086, 7).v).assertEqual(-567)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1087
+     * @tc.name      testFieldInit1087
+     * @tc.desc      Checking for initialization with different covariant function subtype values
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(C_F1087.field instanceof HandlerA_F1087).assertTrue()
+      expect(C_F1087.field(new B_F1087, 7).v).assertEqual(13)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1088
+     * @tc.name      testFieldInit1088
+     * @tc.desc      Checking for initialization with different covariant function subtype values
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(C_F1088.field instanceof HandlerAInt_F1088).assertTrue()
+      expect(C_F1088.field(new B_F1088, 7).v).assertEqual(-20)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1089
+     * @tc.name      testFieldInit1089
+     * @tc.desc      Checking for changing the value from static block.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(A_F1089.field instanceof long).assertTrue()
+      expect(A_F1089.field).assertEqual(4)
+          A_F1089.field = 5
+      expect(A_F1089.field instanceof long).assertTrue()
+      expect(A_F1089.field).assertEqual(5)
+          A_F1089.field = 4
+      expect(A_F1089.field instanceof long).assertTrue()
+      expect(A_F1089.field).assertEqual(4)
+    })
+  })
+}
