@@ -959,7 +959,7 @@ export default function BaseEnumValueOfTest(): void {
     it('testBaseEnumValueOf067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: BaseEnum<byte> = new BaseEnum<byte>(12 as byte, "BYTE")
       let result: byte = e.valueOf()
-      expect(typeof result === 'number').assertTrue()
+      expect(result).assertEqual(12 as byte)
     });
 
     /**
@@ -973,7 +973,7 @@ export default function BaseEnumValueOfTest(): void {
     it('testBaseEnumValueOf068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: BaseEnum<short> = new BaseEnum<short>(100 as short, "SHORT")
       let result: short = e.valueOf()
-      expect(typeof result === 'number').assertTrue()
+      expect(result).assertEqual(100 as short)
     });
 
     /**
@@ -987,7 +987,7 @@ export default function BaseEnumValueOfTest(): void {
     it('testBaseEnumValueOf069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: BaseEnum<int> = new BaseEnum<int>(100, "INT")
       let result: int = e.valueOf()
-      expect(typeof result === 'number').assertTrue()
+      expect(result).assertEqual(100)
     });
 
     /**
@@ -1001,7 +1001,7 @@ export default function BaseEnumValueOfTest(): void {
     it('testBaseEnumValueOf070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: BaseEnum<long> = new BaseEnum<long>(Int.toLong(100), "LONG")
       let result: long = e.valueOf()
-      expect(typeof result === 'number').assertTrue()
+      expect(result).assertEqual(Int.toLong(100))
     });
 
     /**
@@ -1015,7 +1015,7 @@ export default function BaseEnumValueOfTest(): void {
     it('testBaseEnumValueOf071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: BaseEnum<float> = new BaseEnum<float>(3.14f, "FLOAT")
       let result: float = e.valueOf()
-      expect(typeof result === 'number').assertTrue()
+      expect(result).assertEqual(3.14f)
     });
 
     /**
@@ -1212,9 +1212,9 @@ export default function BaseEnumValueOfTest(): void {
       let eInt: BaseEnum<int> = new BaseEnum<int>(42, "INT_VAL")
       let eStr: BaseEnum<string> = new BaseEnum<string>("debug", "STR_VAL")
       let eLong: BaseEnum<long> = new BaseEnum<long>(Int.toLong(999), "LONG_VAL")
-      expect(typeof eInt.valueOf() === 'number').assertTrue()
-      expect(typeof eStr.valueOf() === 'string').assertTrue()
-      expect(typeof eLong.valueOf() === 'number').assertTrue()
+      expect(eInt.valueOf()).assertEqual(42)
+      expect(eStr.valueOf()).assertEqual("debug")
+      expect(eLong.valueOf()).assertEqual(Int.toLong(999))
     });
 
     /**

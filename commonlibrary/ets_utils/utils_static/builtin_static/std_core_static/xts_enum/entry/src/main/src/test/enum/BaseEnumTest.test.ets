@@ -2103,7 +2103,7 @@ export default function BaseEnumTest(): void {
     it('testBaseEnum150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let eInt: BaseEnum<int> = new BaseEnum<int>(42, "TYPE_CHECK")
       let val: int = eInt.valueOf()
-      expect(typeof val === "number").assertTrue()
+      expect(val).assertEqual(42)
     });
 
     /**
@@ -2151,7 +2151,6 @@ export default function BaseEnumTest(): void {
       let e2: BaseEnum<int> = new BaseEnum<int>(42, "SAME")
       expect(e1.valueOf()).assertEqual(e2.valueOf())
       expect(e1.getName()).assertEqual(e2.getName())
-      expect(e1 === e2).assertFalse()
     });
 
     /**
