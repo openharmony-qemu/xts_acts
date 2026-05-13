@@ -557,7 +557,7 @@ export default function ClassIsFinalTest(): void {
     it('testClassIsFinal020', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<TestClass020>()
         let result = cls.isFinal()
-        expect(result === true || result === false).assertEqual(true)
+        expect(result).assertEqual(false)
     });
 
     /**

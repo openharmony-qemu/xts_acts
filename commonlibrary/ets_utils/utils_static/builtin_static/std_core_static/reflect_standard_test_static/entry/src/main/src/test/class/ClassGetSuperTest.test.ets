@@ -593,8 +593,8 @@ export default function ClassGetSuperTest(): void {
       let clazz = Class.from<MyClass020>()
         try {
           let superClazz = clazz.getSuper()
-          // 不应该抛出异常
-          expect(true).assertTrue()
+          expect(clazz.isUnion()).assertFalse()
+          expect(superClazz != null).assertTrue()
         } catch (error) {
           expect().assertFail()
         }

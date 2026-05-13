@@ -16,7 +16,7 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
-import { looseReflect } from '../voidFn';
+import { looseReflect } from './VoidFn.test';
 
 class MyClass001 {}
 
@@ -216,7 +216,7 @@ export default function ClassInitializeTest(): void {
           looseReflect(cls as Object).initialize("invalid" as string); // 类型错误
           expect().assertFail();
         } catch (error) {
-          expect(error != null).assertTrue();
+          expect(error !== null).assertTrue();
         }
     });
 
@@ -229,7 +229,9 @@ export default function ClassInitializeTest(): void {
      * @tc.level Level 2
      */
     it('testClassInitialize003', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-expect(true).assertTrue();
+      let cls = Class.from<MyClass004>();
+      let result: void = cls.initialize();
+      expect(result).assertUndefined();
     });
 
     /**
@@ -258,7 +260,7 @@ expect(true).assertTrue();
       let cls = Class.from<MyClass005>();
         try {
           cls.initialize();
-          expect(true).assertEqual(true);
+          expect(cls.getName().length).assertLarger(0);
         } catch (error) {
           expect().assertFail();
         }
@@ -321,7 +323,7 @@ expect(true).assertTrue();
           cls!.initialize();
           expect().assertFail();
         } catch (error) {
-          expect(error != null).assertTrue();
+          expect(error !== null).assertTrue();
         }
     });
 
@@ -339,7 +341,7 @@ expect(true).assertTrue();
           cls!.initialize();
           expect().assertFail();
         } catch (error) {
-          expect(error != null).assertTrue();
+          expect(error !== null).assertTrue();
         }
     });
 
@@ -357,7 +359,7 @@ expect(true).assertTrue();
           cls.initialize();
           expect().assertFail();
         } catch (error) {
-          expect(error != null).assertTrue();
+          expect(error !== null).assertTrue();
         }
     });
 
@@ -374,7 +376,7 @@ expect(true).assertTrue();
         try {
           clsA.initialize();
         } catch (error) {
-          expect(error != null).assertTrue();
+          expect(error !== null).assertTrue();
         }
     });
 
@@ -392,7 +394,7 @@ expect(true).assertTrue();
           cls.initialize();
           expect().assertFail();
         } catch (error) {
-          expect(error != null).assertTrue();
+          expect(error !== null).assertTrue();
         }
     });
 
@@ -467,7 +469,7 @@ expect(true).assertTrue();
           cls.initialize();
           // 接口初始化行为需根据实现验证
         } catch (error) {
-          expect(error != null).assertTrue();
+          expect(error !== null).assertTrue();
         }
     });
 
@@ -485,7 +487,7 @@ expect(true).assertTrue();
           cls.initialize();
           // 基本类型初始化行为需根据实现验证
         } catch (error) {
-          expect(error != null).assertTrue();
+          expect(error !== null).assertTrue();
         }
     });
 
@@ -596,7 +598,7 @@ expect(true).assertTrue();
       let cls = Class.from<EmptyClass026>();
         try {
           cls.initialize();
-          expect(true).assertEqual(true); // 应正常完成
+          expect(cls.getName().length).assertLarger(0);
         } catch (error) {
           expect().assertFail();
         }

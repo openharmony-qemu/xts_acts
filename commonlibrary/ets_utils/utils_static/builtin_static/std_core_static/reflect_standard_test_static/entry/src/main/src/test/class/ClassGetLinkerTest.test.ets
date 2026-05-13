@@ -203,6 +203,7 @@ export default function ClassGetLinkerTest(): void {
       let cls = Class.from<MyClass002>()
         // 以下代码应该在编译期报错
         // let linker = cls.getLinker("invalid_param")
+        expect(cls.getLinker() != null).assertTrue()
     });
 
     /**
@@ -496,7 +497,10 @@ export default function ClassGetLinkerTest(): void {
         let cls2 = Class.from<Class2021>()
         let linker1 = cls1.getLinker()
         let linker2 = cls2.getLinker()
-        // 验证是否为同一个RuntimeLinker实例（取决于实现）
+        expect(linker1 != null).assertTrue()
+        expect(linker2 != null).assertTrue()
+        expect(typeof linker1).assertEqual("object")
+        expect(typeof linker2).assertEqual("object")
     });
 
     /**
@@ -550,8 +554,10 @@ export default function ClassGetLinkerTest(): void {
 
         let cls = Class.from<MyClass024>()
         let linker = cls.getLinker()
-        // 尝试加载自定义类（需要知道完整的类名）
-        // let customClass = linker.loadClass('module.CustomClass')
+        expect(linker != null).assertTrue()
+        let mapClass = linker.loadClass('std.core.Map')
+        expect(mapClass != null).assertTrue()
+        expect(mapClass!.getName()).assertEqual("std.core.Map")
     });
 
     /**
@@ -591,13 +597,13 @@ export default function ClassGetLinkerTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetLinker027', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-// 此测试仅用于验证未捕获异常的行为，跳过执行
-        // 假设从其他模块导入类
+      // 外部模块类示例见注释；此处用本模块类占位验证 getLinker
         // import { ExternalClass } from 'module'
         // let cls = Class.from<ExternalClass>()
         // let linker = cls.getLinker()
         // expect(linker != null).assertTrue()
-      return;
+        let cls = Class.from<MyClass001>()
+        expect(cls.getLinker() != null).assertTrue()
     });
 
     /**

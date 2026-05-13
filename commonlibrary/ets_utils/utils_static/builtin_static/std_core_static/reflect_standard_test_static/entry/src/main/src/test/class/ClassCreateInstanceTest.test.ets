@@ -16,7 +16,7 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
-import { looseReflect } from '../voidFn';
+import { looseReflect } from './VoidFn.test';
 
 class MyClass001 {
     public name = 'test';
@@ -383,7 +383,7 @@ export default function ClassCreateInstanceTest(): void {
           let obj = looseReflect(cls as Object).createInstance(['extra']) as MyClass002;
           expect().assertFail();
         } catch (error) {
-          expect(error != null).assertTrue();
+          expect(error !== null).assertTrue();
         }
     });
 
@@ -823,7 +823,7 @@ export default function ClassCreateInstanceTest(): void {
           expect().assertFail();
         } catch (error) {
           // 根据实际环境可能抛出OutOfMemoryError或其他错误
-          expect(error != null).assertTrue();
+          expect(error !== null).assertTrue();
         }
     });
 
@@ -843,7 +843,7 @@ export default function ClassCreateInstanceTest(): void {
           expect(obj != null).assertTrue();
         } catch (error) {
           // 可能抛出OutOfMemoryError
-          expect(error != null).assertTrue();
+          expect(error !== null).assertTrue();
         }
     });
 
@@ -1256,7 +1256,7 @@ export default function ClassCreateInstanceTest(): void {
           let value = obj.fieldB;
           expect().assertFail();
         } catch (error) {
-          expect(error != null).assertTrue();
+          expect(error !== null).assertTrue();
         }
     });
 

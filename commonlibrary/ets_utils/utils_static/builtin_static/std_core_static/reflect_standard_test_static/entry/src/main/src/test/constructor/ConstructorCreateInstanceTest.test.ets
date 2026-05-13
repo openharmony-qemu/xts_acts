@@ -328,7 +328,7 @@ export default function ConstructorCreateInstanceTest(): void {
           ctor.createInstance(["string instead of int"]);
           expect().assertFail();
         } catch (error) {
-          expect(error != null).assertTrue();
+          expect(error !== null).assertTrue();
         }
     });
 
@@ -346,7 +346,7 @@ export default function ConstructorCreateInstanceTest(): void {
           ctor.createInstance([1]); // 参数不足
           expect().assertFail();
         } catch (error) {
-          expect(error != null).assertTrue();
+          expect(error !== null).assertTrue();
         }
     });
 
@@ -364,7 +364,7 @@ export default function ConstructorCreateInstanceTest(): void {
           ctor.createInstance([1, 2]); // 参数过多
           expect().assertFail();
         } catch (error) {
-          expect(error != null).assertTrue();
+          expect(error !== null).assertTrue();
         }
     });
 
@@ -525,7 +525,7 @@ export default function ConstructorCreateInstanceTest(): void {
           ctor.createInstance(["string"]);
           expect().assertFail();
         } catch (error) {
-          expect(error != null).assertTrue();
+          expect(error !== null).assertTrue();
         }
     });
 
@@ -543,7 +543,7 @@ export default function ConstructorCreateInstanceTest(): void {
           ctor.createInstance([1]); // 缺少参数
           expect().assertFail();
         } catch (error) {
-          expect(error != null).assertTrue();
+          expect(error !== null).assertTrue();
         }
     });
 
@@ -561,7 +561,7 @@ export default function ConstructorCreateInstanceTest(): void {
           ctor.createInstance();
           expect().assertFail();
         } catch (error) {
-          expect(error != null).assertTrue();
+          expect(error !== null).assertTrue();
         }
     });
 

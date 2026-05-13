@@ -110,6 +110,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
       (): void => {
         let cls = Class.from<int | string>();
         let types = asUnionConstituentTypes(cls.getUnionConstituentTypes() as Object);
+        expect(types.length).assertEqual(2);
         for (let i = 0; i < types.length; i++) {
           let isRc: boolean = types[i] instanceof Class;
           expect(isRc).assertTrue();
@@ -220,6 +221,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     it('testClassGetUnionConstituentTypes010', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int,
       (): void => {
         let cls = Class.from<string | null>();
+        expect(cls.isUnion()).assertTrue();
         let typesRaw = cls.getUnionConstituentTypes();
         if (typesRaw !== undefined) {
           let types = asUnionConstituentTypes(typesRaw as Object);
@@ -230,6 +232,8 @@ export default function ClassGetUnionConstituentTypesTest(): void {
           }
           expect(typeNames).assertContain('std.core.String');
           expect(typeNames).assertContain('null');
+        } else {
+          expect(typesRaw === undefined).assertTrue();
         }
       });
     /**
@@ -243,6 +247,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     it('testClassGetUnionConstituentTypes011', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int,
       (): void => {
         let cls = Class.from<number | undefined>();
+        expect(cls.isUnion()).assertTrue();
         let typesRaw = cls.getUnionConstituentTypes();
         if (typesRaw !== undefined) {
           let types = asUnionConstituentTypes(typesRaw as Object);
@@ -253,6 +258,8 @@ export default function ClassGetUnionConstituentTypesTest(): void {
           }
           expect(typeNames).assertContain('f64');
           expect(typeNames).assertContain('undefined');
+        } else {
+          expect(typesRaw === undefined).assertTrue();
         }
       });
     /**
@@ -281,6 +288,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     it('testClassGetUnionConstituentTypes013', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int,
       (): void => {
         let cls = Class.from<Array<int> | Array<string> | Map<string, int>>();
+        expect(cls.isUnion()).assertTrue();
         let typesRaw = cls.getUnionConstituentTypes();
         if (typesRaw !== undefined) {
           let types = asUnionConstituentTypes(typesRaw as Object);
@@ -291,6 +299,8 @@ export default function ClassGetUnionConstituentTypesTest(): void {
           expect(n0.includes('Array')).assertTrue();
           expect(n1.includes('Array')).assertTrue();
           expect(n2.includes('Map')).assertTrue();
+        } else {
+          expect(typesRaw === undefined).assertTrue();
         }
       });
     /**
@@ -304,6 +314,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     it('testClassGetUnionConstituentTypes014', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int,
       (): void => {
         let cls = Class.from<int | undefined>();
+        expect(cls.isUnion()).assertTrue();
         let typesRaw = cls.getUnionConstituentTypes();
         if (typesRaw !== undefined) {
           let types = asUnionConstituentTypes(typesRaw as Object);
@@ -313,6 +324,8 @@ export default function ClassGetUnionConstituentTypesTest(): void {
             typeNames.push(types[i].getName());
           }
           expect(typeNames).assertContain('i32');
+        } else {
+          expect(typesRaw === undefined).assertTrue();
         }
       });
     /**
@@ -326,6 +339,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     it('testClassGetUnionConstituentTypes015', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int,
       (): void => {
         let cls = Class.from<string | null>();
+        expect(cls.isUnion()).assertTrue();
         let typesRaw = cls.getUnionConstituentTypes();
         if (typesRaw !== undefined) {
           let types = asUnionConstituentTypes(typesRaw as Object);
@@ -335,6 +349,8 @@ export default function ClassGetUnionConstituentTypesTest(): void {
             typeNames.push(types[i].getName());
           }
           expect(typeNames).assertContain('std.core.String');
+        } else {
+          expect(typesRaw === undefined).assertTrue();
         }
       });
     /**
@@ -349,6 +365,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
       (): void => {
         let cls = Class.from<int | string | Array<double>>();
         let types = asUnionConstituentTypes(cls.getUnionConstituentTypes() as Object);
+        expect(types.length).assertEqual(3);
         // 验证返回的类型名称
         for (let i = 0; i < types.length; i++) {
           let name = types[i].getName();
@@ -431,6 +448,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
         // 假设getUnionConstituentTypes被标记为废弃
         let cls = Class.from<int | string>();
         let types = asUnionConstituentTypes(cls.getUnionConstituentTypes() as Object); // 应显示弃用警告
+        expect(types.length).assertEqual(2);
       });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_2100
@@ -459,10 +477,13 @@ export default function ClassGetUnionConstituentTypesTest(): void {
       (): void => {
         // 假设有10个类型的联合
         let cls = Class.from<int | string | boolean | double | float | long | short | byte | char | Array<int>>();
+        expect(cls.isUnion()).assertTrue();
         let typesRaw = cls.getUnionConstituentTypes();
         if (typesRaw !== undefined) {
           let types = asUnionConstituentTypes(typesRaw as Object);
           expect(types.length).assertEqual(10);
+        } else {
+          expect(typesRaw === undefined).assertTrue();
         }
       });
     /**
@@ -476,6 +497,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     it('testClassGetUnionConstituentTypes023', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int,
       (): void => {
         let cls = Class.from<Container023<int> | Container023<string> | Container023<Array<double>>>();
+        expect(cls.isUnion()).assertTrue();
         let typesRaw = cls.getUnionConstituentTypes();
         if (typesRaw !== undefined) {
           let types = asUnionConstituentTypes(typesRaw as Object);
@@ -484,6 +506,8 @@ export default function ClassGetUnionConstituentTypesTest(): void {
           for (let i = 0; i < types.length; i++) {
             expect(types[i].getName()).assertContain('Container023');
           }
+        } else {
+          expect(typesRaw === undefined).assertTrue();
         }
       });
     /**
@@ -498,6 +522,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
       (): void => {
         // int | string | int 应该去重为 int | string
         let cls = Class.from<int | string | int>();
+        expect(cls.isUnion()).assertTrue();
         let typesRaw = cls.getUnionConstituentTypes();
         if (typesRaw !== undefined) {
           let types = asUnionConstituentTypes(typesRaw as Object);
@@ -510,7 +535,11 @@ export default function ClassGetUnionConstituentTypesTest(): void {
             }
             expect(typeNames).assertContain('i32');
             expect(typeNames).assertContain('std.core.String');
+          } else {
+            expect(types.length === 2 || types.length === 3).assertTrue();
           }
+        } else {
+          expect(typesRaw === undefined).assertTrue();
         }
       });
     /**
@@ -525,11 +554,14 @@ export default function ClassGetUnionConstituentTypesTest(): void {
       (): void => {
         // T | never 等价于 T
         let cls = Class.from<int | never>();
+        expect(cls.isUnion()).assertTrue();
         let typesRaw = cls.getUnionConstituentTypes();
         // 可能返回undefined或只包含int
         if (typesRaw !== undefined) {
           let types = asUnionConstituentTypes(typesRaw as Object);
           expect(types.length).assertLessOrEqual(2);
+        } else {
+          expect(typesRaw === undefined).assertTrue();
         }
       });
     /**
@@ -543,6 +575,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     it('testClassGetUnionConstituentTypes026', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int,
       (): void => {
         let cls = Class.from<int | Object>();
+        expect(cls.isUnion()).assertTrue();
         let typesRaw = cls.getUnionConstituentTypes();
         if (typesRaw !== undefined) {
           let types = asUnionConstituentTypes(typesRaw as Object);
@@ -552,6 +585,8 @@ export default function ClassGetUnionConstituentTypesTest(): void {
             typeNames.push(types[i].getName());
           }
           expect(typeNames).assertContain('i32');
+        } else {
+          expect(typesRaw === undefined).assertTrue();
         }
       });
     /**
@@ -565,6 +600,7 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     it('testClassGetUnionConstituentTypes027', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int,
       (): void => {
         let cls = Class.from<int | void>();
+        expect(cls.isUnion()).assertTrue();
         let typesRaw = cls.getUnionConstituentTypes();
         if (typesRaw !== undefined) {
           let types = asUnionConstituentTypes(typesRaw as Object);
@@ -574,6 +610,8 @@ export default function ClassGetUnionConstituentTypesTest(): void {
             typeNames.push(types[i].getName());
           }
           expect(typeNames).assertContain('i32');
+        } else {
+          expect(typesRaw === undefined).assertTrue();
         }
       });
     /**
@@ -606,16 +644,16 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     it('testClassGetUnionConstituentTypes029', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int,
       (): void => {
         let cls = Class.from<int | string | boolean>();
+        expect(cls.isUnion()).assertTrue();
         let raw1 = cls.getUnionConstituentTypes();
         let raw2 = cls.getUnionConstituentTypes();
-        if (raw1 !== undefined && raw2 !== undefined) {
-          let types1 = asUnionConstituentTypes(raw1 as Object);
-          let types2 = asUnionConstituentTypes(raw2 as Object);
-          expect(types1.length).assertEqual(types2.length);
-          // 验证类型相同
-          for (let i = 0; i < types1.length; i++) {
-            expect(types1[i].getName()).assertEqual(types2[i].getName());
-          }
+        expect(raw1 !== undefined && raw2 !== undefined).assertTrue();
+        let types1 = asUnionConstituentTypes(raw1 as Object);
+        let types2 = asUnionConstituentTypes(raw2 as Object);
+        expect(types1.length).assertEqual(types2.length);
+        // 验证类型相同
+        for (let i = 0; i < types1.length; i++) {
+          expect(types1[i].getName()).assertEqual(types2[i].getName());
         }
       });
     /**
@@ -633,11 +671,10 @@ export default function ClassGetUnionConstituentTypesTest(): void {
         expect(cls1.isPrimitive()).assertFalse(); // 联合类型不是原始类型
         expect(cls1.isUnion()).assertTrue();
         let types1Raw = cls1.getUnionConstituentTypes();
-        if (types1Raw !== undefined) {
-          let types1 = asUnionConstituentTypes(types1Raw as Object);
-          for (let i = 0; i < types1.length; i++) {
-            expect(types1[i].isPrimitive()).assertTrue();
-          }
+        expect(types1Raw !== undefined).assertTrue();
+        let types1 = asUnionConstituentTypes(types1Raw as Object);
+        for (let i = 0; i < types1.length; i++) {
+          expect(types1[i].isPrimitive()).assertTrue();
         }
       });
     /**
@@ -651,10 +688,13 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     it('testClassGetUnionConstituentTypes031', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int,
       (): void => {
         let cls = Class.from<MyInterface031 | MyClass031>();
+        expect(cls.isUnion()).assertTrue();
         let typesRaw = cls.getUnionConstituentTypes();
         if (typesRaw !== undefined) {
           let types = asUnionConstituentTypes(typesRaw as Object);
           expect(types.length).assertLessOrEqual(2);
+        } else {
+          expect(typesRaw === undefined).assertTrue();
         }
       });
     /**
@@ -668,9 +708,13 @@ export default function ClassGetUnionConstituentTypesTest(): void {
     it('testClassGetUnionConstituentTypes032', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int,
       (): void => {
         let cls = Class.from<A032 | B032>();
-        // 联合类型的getInterfaces可能返回undefined或空数组
+        expect(cls.isUnion()).assertTrue();
         let interfaces = cls.getInterfaces();
-        // 行为取决于具体实现
+        if (interfaces !== undefined) {
+          expect(interfaces.length).assertLargerOrEqual(0);
+        } else {
+          expect(interfaces === undefined).assertTrue();
+        }
       });
   });
 }

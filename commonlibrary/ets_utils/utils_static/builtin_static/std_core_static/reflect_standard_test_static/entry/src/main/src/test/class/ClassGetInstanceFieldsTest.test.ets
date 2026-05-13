@@ -16,7 +16,7 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
-import { looseReflect } from '../voidFn';
+import { looseReflect } from './VoidFn.test';
 
 function asInstanceFieldArray(o: Object): Array<reflect.InstanceField> {
   return o as Array<reflect.InstanceField>;
@@ -144,7 +144,7 @@ export default function ClassGetInstanceFieldsTest(): void {
             let fields = looseReflect(cls as Object).getInstanceFields('invalid');
             expect().assertFail();
         } catch (e) {
-            expect(e != null).assertTrue();
+            expect(e !== null).assertTrue();
         }
     });
 

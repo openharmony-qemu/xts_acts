@@ -16,7 +16,7 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
-import { looseConstructor } from '../voidFn';
+import { looseConstructor } from '../class/VoidFn.test';
 
 function asCtorList(cls: Class): Array<reflect.Constructor> {
   return cls.getConstructors() as Array<reflect.Constructor>;

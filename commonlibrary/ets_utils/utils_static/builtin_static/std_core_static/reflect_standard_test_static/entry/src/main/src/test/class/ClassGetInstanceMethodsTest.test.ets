@@ -683,11 +683,10 @@ export default function ClassGetInstanceMethodsTest(): void {
     it('testClassGetInstanceMethods011', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<MyClass011>();
         let methods = cls.getInstanceMethods();
-        if (methods.length > 0) {
-            let method = methods[0];
-            expect(method.getName()).assertEqual("testMethod");
-            expect(method.getOwner().getName()).assertEqual("MyClass011");
-        }
+        expect(methods.length).assertLarger(0);
+        let method = methods[0];
+        expect(method.getName()).assertEqual("testMethod");
+        expect(method.getOwner().getName()).assertEqual("MyClass011");
     });
 
     /**
@@ -1219,7 +1218,9 @@ export default function ClassGetInstanceMethodsTest(): void {
     it('testClassGetInstanceMethods040', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let interfaceCls = Class.from<TestInterface040>();
         let methods = interfaceCls.getInstanceMethods();
-        // 接口的方法实现取决于具体实现类
+        expect(interfaceCls.isInterface()).assertTrue();
+        expect(methods.length).assertEqual(1);
+        expect(methods[0].getName()).assertEqual("interfaceMethod");
     });
 
     /**
@@ -1335,7 +1336,7 @@ export default function ClassGetInstanceMethodsTest(): void {
     it('testClassGetInstanceMethods047', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<OwnerClass047>();
         let methods = cls.getInstanceMethods();
-        
+        expect(methods.length).assertEqual(1);
         for (let i = 0; i < methods.length; i++) {
             expect(methods[i].getOwner().getName()).assertEqual("OwnerClass047");
         }
@@ -1352,7 +1353,7 @@ export default function ClassGetInstanceMethodsTest(): void {
     it('testClassGetInstanceMethods048', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<MixedClass048>();
         let methods = cls.getInstanceMethods();
-        
+        expect(methods.length).assertEqual(2);
         for (let i = 0; i < methods.length; i++) {
             // 所有返回的方法都应该是public或protected
             expect(methods[i].isPublic() || methods[i].isProtected()).assertTrue();
@@ -1503,7 +1504,7 @@ export default function ClassGetInstanceMethodsTest(): void {
     it('testClassGetInstanceMethods054', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<TraverseClass054>();
         let methods = cls.getInstanceMethods();
-        
+        expect(methods.length).assertEqual(3);
         for (let i = 0; i < methods.length; i++) {
             let method = methods[i];
             // 获取方法名
@@ -1631,6 +1632,8 @@ export default function ClassGetInstanceMethodsTest(): void {
       // 编译时错误：不能在非Class对象上调用
         let notAClass = "test";
         // notAClass.getInstanceMethods(); // ❌ 编译错误
+        expect(typeof notAClass).assertEqual('string');
+        expect(Class.from<TestClass003>().getInstanceMethods().length).assertEqual(1);
     });
 
     /**
@@ -1642,11 +1645,11 @@ export default function ClassGetInstanceMethodsTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetInstanceMethods060', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-// 此测试仅用于验证未捕获异常的行为，跳过执行
+      // 此测试仅用于验证未捕获异常的行为，跳过执行
         // 编译时错误：类型不存在
         // let cls = Class.from<NonExistentType>();
         // let methods = cls.getInstanceMethods();
-      return;
+        expect(Class.from<TestClass003>().getInstanceMethods().length).assertEqual(1);
     });
 
     /**
@@ -1803,7 +1806,9 @@ export default function ClassGetInstanceMethodsTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetInstanceMethods067', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-expect(true).assertTrue();
+        let cls = Class.from<Object>();
+        let methods = cls.getInstanceMethods();
+        expect(methods.length).assertLargerOrEqual(0);
     });
 
   });

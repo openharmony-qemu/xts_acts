@@ -673,7 +673,7 @@ export default function ClassOfAnyTest(): void {
             expect().assertFail()
           }
         } catch (error) {
-          expect(error != null).assertTrue()
+          expect(error !== null).assertTrue()
         }
     });
 
@@ -691,7 +691,7 @@ export default function ClassOfAnyTest(): void {
           let obj: Any = new LargeClass053()
           let cls = Class.ofAny(obj)
         } catch (error) {
-          expect(error != null).assertTrue()
+          expect(error !== null).assertTrue()
         }
     });
 

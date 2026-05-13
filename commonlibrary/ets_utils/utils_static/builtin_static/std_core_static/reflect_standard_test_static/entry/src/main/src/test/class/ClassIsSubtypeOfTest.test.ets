@@ -477,6 +477,7 @@ export default function ClassIsSubtypeOfTest(): void {
         // let result1 = cls.isSubtypeOf({} as Class);
         // let result2 = cls.isSubtypeOf("string" as Class);
         // let result3 = cls.isSubtypeOf(123 as Class);
+        expect(cls.isSubtypeOf(cls)).assertTrue();
     });
 
     /**
@@ -495,6 +496,7 @@ export default function ClassIsSubtypeOfTest(): void {
         
         let primitiveInt = Class.PRIMITIVE_INT;
         let result2 = primitiveInt.isSubtypeOf(primitiveNumber);
+        expect(result2).assertTrue();
     });
 
     /**
@@ -692,7 +694,8 @@ export default function ClassIsSubtypeOfTest(): void {
         let primitiveNum = Class.PRIMITIVE_NUMBER;
         let result1 = numClass.isSubtypeOf(primitiveNum);
         let result2 = primitiveNum.isSubtypeOf(numClass);
-        // 根据ArkTS规范验证结果
+        expect(result1).assertFalse();
+        expect(result2).assertFalse();
     });
 
     /**
@@ -708,6 +711,8 @@ export default function ClassIsSubtypeOfTest(): void {
         let primitiveBool = Class.PRIMITIVE_BOOLEAN;
         let result1 = boolClass.isSubtypeOf(primitiveBool);
         let result2 = primitiveBool.isSubtypeOf(boolClass);
+        expect(result1).assertFalse();
+        expect(result2).assertFalse();
     });
 
     /**
@@ -782,7 +787,8 @@ export default function ClassIsSubtypeOfTest(): void {
         let normalArr = Class.from<Array<int>>();
         let result1 = fixedArr.isSubtypeOf(normalArr);
         let result2 = normalArr.isSubtypeOf(fixedArr);
-        // 根据ArkTS规范验证结果
+        expect(result1).assertFalse();
+        expect(result2).assertFalse();
     });
 
     /**
@@ -875,7 +881,7 @@ export default function ClassIsSubtypeOfTest(): void {
       let containerB = Class.from<Container032<B032>>();
         let containerA = Class.from<Container032<A032>>();
         let result = containerB.isSubtypeOf(containerA);
-        // 根据ArkTS泛型协变规范验证
+        expect(result).assertFalse();
     });
 
     /**
@@ -890,7 +896,7 @@ export default function ClassIsSubtypeOfTest(): void {
       let printerDoc = Class.from<Printer033<Doc033>>();
         let printable = Class.from<Printable033>();
         let result = printerDoc.isSubtypeOf(printable);
-        // 根据规范验证结果
+        expect(result).assertFalse();
     });
 
     /**
@@ -1340,7 +1346,7 @@ export default function ClassIsSubtypeOfTest(): void {
         
         // 验证基本类型之间的关系
         let result = Class.PRIMITIVE_INT.isSubtypeOf(Class.PRIMITIVE_NUMBER);
-        // 根据ArkTS规范验证结果
+        expect(result).assertTrue();
     });
 
     /**
@@ -1355,6 +1361,7 @@ export default function ClassIsSubtypeOfTest(): void {
       let cls = Class.from<MyClass001>();
         try {
           let result = cls.isSubtypeOf(null as Class);
+          expect(result).assertFalse();
         } catch (error) {
           expect(error instanceof TypeError).assertTrue();
         }
@@ -1372,6 +1379,7 @@ export default function ClassIsSubtypeOfTest(): void {
       let cls = Class.from<MyClass001>();
         try {
           let result = cls.isSubtypeOf(undefined as Class);
+          expect(result).assertFalse();
         } catch (error) {
           expect(error instanceof TypeError).assertTrue();
         }
@@ -1390,8 +1398,9 @@ export default function ClassIsSubtypeOfTest(): void {
         let invalidClass = {} as Class;
         try {
           let result = cls.isSubtypeOf(invalidClass);
+          expect(result).assertFalse();
         } catch (error) {
-          expect(error != null).assertTrue();
+          expect(error !== null).assertTrue();
         }
     });
 

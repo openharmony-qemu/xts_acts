@@ -16,7 +16,7 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
-import { looseReflect } from '../voidFn';
+import { looseReflect } from './VoidFn.test';
 
 class MyClass001 {
       public test(): string {
@@ -690,7 +690,7 @@ export default function ClassGetInstanceMethodTest002(): void {
             expect(method != null).assertTrue();
         } catch (error) {
             // 如果系统不支持复杂嵌套类型，应该有合理的错误处理
-            expect(error != null).assertTrue();
+            expect(error !== null).assertTrue();
         }
     });
 
@@ -739,6 +739,7 @@ export default function ClassGetInstanceMethodTest002(): void {
      */
     it('testClassGetInstanceMethod085', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<MyClass085>();
+        expect(cls.getInstanceMethod('test') != null).assertTrue();
         let methods: Array<reflect.InstanceMethod> = new Array<reflect.InstanceMethod>();
         for (let i = 0; i < 100; i++) {
             let method = cls.getInstanceMethod('test');
@@ -746,6 +747,7 @@ export default function ClassGetInstanceMethodTest002(): void {
                 methods.push(method);
             }
         }
+        expect(methods.length).assertEqual(100);
         for (let i = 1; i < methods.length; i++) {
             expect(methods[0].equals(methods[i])).assertEqual(true);
         }
@@ -933,7 +935,7 @@ export default function ClassGetInstanceMethodTest002(): void {
             method!.invoke(new MyClass096());
             expect().assertFail();
         } catch (error) {
-            expect(error != null).assertTrue();
+            expect(error !== null).assertTrue();
         }
     });
 

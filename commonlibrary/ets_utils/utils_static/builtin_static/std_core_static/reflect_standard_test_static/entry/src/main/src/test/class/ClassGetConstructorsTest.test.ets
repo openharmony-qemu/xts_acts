@@ -564,12 +564,11 @@ export default function ClassGetConstructorsTest(): void {
     it('testClassGetConstructors007', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<TestClass007>();
         let constructors = constructorsToArray(cls);
-        if (constructors.length > 0) {
-            let ctor = constructors[0];
-            expect(ctor.getName()).assertEqual('constructor');
-            expect(ctor.getOwner()).assertEqual(cls);
-            expect(ctor.getParameterTypes() != null).assertTrue();
-        }
+        expect(constructors.length).assertEqual(1);
+        let ctor = constructors[0];
+        expect(ctor.getName()).assertEqual('constructor');
+        expect(ctor.getOwner()).assertEqual(cls);
+        expect(ctor.getParameterTypes() != null).assertTrue();
     });
 
     /**
@@ -583,6 +582,7 @@ export default function ClassGetConstructorsTest(): void {
     it('testClassGetConstructors008', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<TestClass008>();
         let constructors = constructorsToArray(cls);
+        expect(constructors.length).assertEqual(1);
         for (let i = 0; i < constructors.length; i++) {
             expect(constructors[i].getName()).assertEqual('constructor');
         }
@@ -1058,6 +1058,7 @@ export default function ClassGetConstructorsTest(): void {
     it('testClassGetConstructors041', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<TestClass041>();
         let constructors = constructorsToArray(cls);
+        expect(constructors.length).assertEqual(1);
         for (let i = 0; i < constructors.length; i++) {
             let ctor = constructors[i];
             expect(ctor != null).assertTrue();
@@ -1105,6 +1106,7 @@ export default function ClassGetConstructorsTest(): void {
     it('testClassGetConstructors044', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<TestClass044>();
         let constructors = constructorsToArray(cls);
+        expect(constructors.length).assertEqual(1);
         for (let i = 0; i < constructors.length; i++) {
             expect(constructors[i].getName()).assertEqual('constructor');
         }
@@ -1345,6 +1347,7 @@ export default function ClassGetConstructorsTest(): void {
     it('testClassGetConstructors060', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<AllPublic060>();
         let constructors = constructorsToArray(cls);
+        expect(constructors.length).assertEqual(1);
         for (let i = 0; i < constructors.length; i++) {
             expect(constructors[i].isPublic()).assertTrue();
         }
@@ -1449,14 +1452,18 @@ export default function ClassGetConstructorsTest(): void {
     it('testClassGetConstructors067', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<OverloadedClass067>();
         let constructors = constructorsToArray(cls);
-        // 找到双参数构造函数
+        expect(constructors.length).assertLarger(0);
+        let foundTwoParam: boolean = false;
         for (let i = 0; i < constructors.length; i++) {
             if (constructors[i].getParametersNum() == 2) {
                 let instance = constructors[i].createInstance(['Bob', 25]) as OverloadedClass067;
                 expect(instance.name).assertEqual('Bob');
                 expect(instance.age).assertEqual(25);
+                foundTwoParam = true;
+                break;
             }
         }
+        expect(foundTwoParam).assertTrue();
     });
 
     /**
@@ -1557,6 +1564,7 @@ export default function ClassGetConstructorsTest(): void {
         for (let i = 0; i < 10; i++) {
             results.push(cls.getConstructors().length);
         }
+        expect(results.length).assertEqual(10);
         for (let i = 1; i < results.length; i++) {
             expect(results[0]).assertEqual(results[i]);
         }
@@ -1633,6 +1641,7 @@ export default function ClassGetConstructorsTest(): void {
     it('testClassGetConstructors078', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<Serializable078>();
         let constructors = constructorsToArray(cls);
+        expect(constructors.length).assertLarger(0);
         // 查找接受string参数的构造函数
         let stringCtor: reflect.Constructor | undefined;
         for (let i = 0; i < constructors.length; i++) {

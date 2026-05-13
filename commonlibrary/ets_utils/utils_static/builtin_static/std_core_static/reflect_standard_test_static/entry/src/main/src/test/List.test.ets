@@ -58,7 +58,7 @@ import ConstructorIsPublicTest from './constructor/ConstructorIsPublicTest.test'
 
 
 export default function testsuite(): void {
-  
+
   ClassCreateInstanceTest();
   ClassCurrentTest();
   ClassFromTest();

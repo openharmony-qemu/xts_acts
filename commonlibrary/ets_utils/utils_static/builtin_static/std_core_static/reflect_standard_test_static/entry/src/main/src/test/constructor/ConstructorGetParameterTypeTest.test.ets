@@ -16,7 +16,7 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
-import { looseConstructor } from '../voidFn';
+import { looseConstructor } from '../class/VoidFn.test';
 
 class MyClass001 {
     public constructor(name: string, age: int) {}
@@ -102,6 +102,8 @@ export default function ConstructorGetParameterTypeTest(): void {
       let cls = Class.from<MyClass001>();
         let constructors = cls.getConstructors();
         let paramType = constructors[0].getParameterType(0);
+        expect(paramType !== null).assertTrue();
+        expect(paramType!.getName()).assertEqual("std.core.String");
     });
 
     /**
@@ -114,7 +116,7 @@ export default function ConstructorGetParameterTypeTest(): void {
      */
     it('testConstructorGetParameterType002', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let paramType = ctorMyClass001().getParameterType(0);
-        expect(paramType != null).assertTrue();
+        expect(paramType !== null).assertTrue();
         expect(paramType!.getName()).assertEqual("std.core.String");
     });
 
@@ -195,7 +197,7 @@ export default function ConstructorGetParameterTypeTest(): void {
       try {
           ctorMyClass001().getParameterType(null as int);
         } catch (error) {
-          expect(error != null).assertTrue();
+          expect(error !== null).assertTrue();
         }
     });
 
@@ -211,7 +213,7 @@ export default function ConstructorGetParameterTypeTest(): void {
         try {
           looseConstructor(ctorMyClass001() as Object).getParameterType(undefined as Object);
         } catch (error) {
-          expect(error != null).assertTrue();
+          expect(error !== null).assertTrue();
         }
     });
 
@@ -224,8 +226,12 @@ export default function ConstructorGetParameterTypeTest(): void {
      * @tc.level Level 2
      */
     it('testConstructorGetParameterType010', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      looseConstructor(ctorMyClass001() as Object).getParameterType(1.5 as Object);
-        // 可能转换为1或抛出错误
+      try {
+          let pt = looseConstructor(ctorMyClass001() as Object).getParameterType(1.5 as Object);
+          expect(pt !== null).assertTrue();
+        } catch (error) {
+          expect(error !== null).assertTrue();
+        }
     });
 
     /**
@@ -240,7 +246,7 @@ export default function ConstructorGetParameterTypeTest(): void {
       let cls = Class.from<MyClass011>();
         let constructors = cls.getConstructors();
         let paramType = constructors[0].getParameterType(0);
-        expect(paramType != null).assertTrue();
+        expect(paramType !== null).assertTrue();
         expect(paramType!.getName()).assertEqual("i32");
         expect(paramType!.isPrimitive()).assertTrue();
     });
@@ -313,7 +319,7 @@ export default function ConstructorGetParameterTypeTest(): void {
       let paramType = ctorMyClass001().getParameterType(0);
         if (paramType !== undefined) {
           expect(typeof paramType).assertEqual("object");
-          expect(paramType.getName != null).assertTrue();
+          expect(paramType.getName !== null).assertTrue();
         }
     });
 
@@ -327,10 +333,10 @@ export default function ConstructorGetParameterTypeTest(): void {
      */
     it('testConstructorGetParameterType017', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let paramType = ctorMyClass001().getParameterType(0);
-        expect(paramType!.getName() != null).assertTrue();
-        expect(paramType!.isPrimitive() != null).assertTrue();
-        expect(paramType!.isInterface() != null).assertTrue();
-        expect(paramType!.isFinal() != null).assertTrue();
+        expect(paramType!.getName() !== null).assertTrue();
+        expect(paramType!.isPrimitive() !== null).assertTrue();
+        expect(paramType!.isInterface() !== null).assertTrue();
+        expect(paramType!.isFinal() !== null).assertTrue();
     });
 
     /**
@@ -383,7 +389,8 @@ export default function ConstructorGetParameterTypeTest(): void {
      */
     it('testConstructorGetParameterType021', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let paramType = ctorMyClass001().getParameterType(0);
-        // 正常情况不抛出异常
+        expect(paramType !== null).assertTrue();
+        expect(paramType!.getName()).assertEqual("std.core.String");
     });
 
     /**
@@ -399,7 +406,7 @@ export default function ConstructorGetParameterTypeTest(): void {
         let constructors = cls.getConstructors();
         for (let i = 0; i < constructors.length; i++) {
           let paramType = constructors[i].getParameterType(0);
-          expect(paramType != null).assertTrue();
+          expect(paramType !== null).assertTrue();
         }
     });
 
@@ -431,8 +438,8 @@ export default function ConstructorGetParameterTypeTest(): void {
         let paramNum = ctorRef.getParametersNum();
         for (let i = 0; i < paramNum; i++) {
           let paramType = ctorRef.getParameterType(i);
-          expect(paramType != null).assertTrue();
-          expect(paramType!.getName() != null).assertTrue();
+          expect(paramType !== null).assertTrue();
+          expect(paramType!.getName() !== null).assertTrue();
         }
     });
 
@@ -469,8 +476,8 @@ export default function ConstructorGetParameterTypeTest(): void {
         let type1 = constructors[0].getParameterType(0);
         let type2 = constructors[1].getParameterType(0);
 
-        expect(type1!.getName() != null).assertTrue();
-        expect(type2!.getName() != null).assertTrue();
+        expect(type1!.getName() !== null).assertTrue();
+        expect(type2!.getName() !== null).assertTrue();
         // type1是i32，type2是std.core.String
     });
 

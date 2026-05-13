@@ -16,7 +16,7 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
-import { looseReflect } from '../voidFn';
+import { looseReflect } from './VoidFn.test';
 
 class MyClass001 {
       public name: string = 'test';

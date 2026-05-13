@@ -817,11 +817,10 @@ export default function ClassGetStaticMethodsTest(): void {
     it('testClassGetStaticMethods024', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let childCls = Class.from<ChildClass024>();
         let superCls = childCls.getSuper();
-        if (superCls) {
-            let superMethods = superCls.getStaticMethods();
-            expect(superMethods.length).assertEqual(1);
-            expect(superMethods[0].getName()).assertEqual("parentMethod");
-        }
+        expect(superCls != null).assertTrue();
+        let superMethods = superCls!.getStaticMethods();
+        expect(superMethods.length).assertEqual(1);
+        expect(superMethods[0].getName()).assertEqual("parentMethod");
     });
 
     /**
@@ -861,6 +860,7 @@ export default function ClassGetStaticMethodsTest(): void {
     it('testClassGetStaticMethods026', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<MyClass026>();
         let methods = cls.getStaticMethods();
+        expect(methods.length).assertLarger(0);
         for (let i = 0; i < methods.length; i++) {
             let method = methods[i];
             let name = method.getName();
@@ -880,6 +880,7 @@ export default function ClassGetStaticMethodsTest(): void {
     it('testClassGetStaticMethods027', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<MyClass027>();
         let methods = cls.getStaticMethods();
+        expect(methods.length).assertLarger(0);
         for (let i = 0; i < methods.length; i++) {
             let method = methods[i];
             let returnType = method.getReturnType();
@@ -899,6 +900,7 @@ export default function ClassGetStaticMethodsTest(): void {
     it('testClassGetStaticMethods028', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<MyClass028>();
         let methods = cls.getStaticMethods();
+        expect(methods.length).assertLarger(0);
         for (let i = 0; i < methods.length; i++) {
             let method = methods[i];
             expect(method.getParametersNum()).assertLargerOrEqual(0);
@@ -1048,6 +1050,7 @@ export default function ClassGetStaticMethodsTest(): void {
             expect(methods.length).assertLarger(0);
         }
         let endTime = Date.now();
+        expect(endTime >= startTime).assertTrue();
         console.info("获取1000次静态方法耗时: " + (endTime - startTime) + "ms");
     });
 

@@ -474,7 +474,7 @@ export default function ClassIsInterfaceTest(): void {
     it('testClassIsInterface022', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<ArrayLike<int>>();
         let result = cls.isInterface();
-        expect(result === true || result === false).assertTrue();
+        expect(result).assertTrue();
     });
 
     /**
@@ -929,7 +929,7 @@ export default function ClassIsInterfaceTest(): void {
       try {
           let cls = Class.from<ArrayLike<int>>();
           let result = cls.isInterface();
-          expect(true).assertTrue(); // 未抛出异常
+          expect(result).assertTrue();
         } catch (error) {
           expect().assertFail(); // 不应该进入这里
         }

@@ -16,7 +16,7 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
-import { looseReflect } from '../voidFn';
+import { looseReflect } from './VoidFn.test';
 
 function asStaticMethodArray(o: Object): Array<reflect.StaticMethod> {
   return o as Array<reflect.StaticMethod>;
@@ -477,8 +477,12 @@ export default function ClassGetStaticMethodTest(): void {
      */
     it('testClassGetStaticMethod003', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<MyClass001>();
-        // 额外参数应被忽略或报错
-        let method = looseReflect(cls as Object).getStaticMethod('test', [Class.from<string>()] as Object, Class.from<number>() as Object);
+        try {
+          let method = looseReflect(cls as Object).getStaticMethod('test', [Class.from<string>()] as Object, Class.from<number>() as Object);
+          expect(method != null).assertTrue();
+        } catch (error) {
+          expect(error !== null).assertTrue();
+        }
     });
 
     /**
@@ -606,7 +610,13 @@ export default function ClassGetStaticMethodTest(): void {
     it('testClassGetStaticMethod012', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<MyClass001>();
         // 应该在编译时报错，但测试运行时行为
-        let method = looseReflect(cls as Object).getStaticMethod(123 as Object);
+        try {
+          looseReflect(cls as Object).getStaticMethod(123 as Object);
+          expect().assertFail();
+        } catch (error) {
+          expect(error !== null).assertTrue();
+        }
+        expect(cls.getStaticMethod('test') != null).assertTrue();
     });
 
     /**
@@ -663,6 +673,8 @@ export default function ClassGetStaticMethodTest(): void {
       let cls = Class.from<MyClass001>();
         let emptyArray: FixedArray<Class> = [];
         let method = cls.getStaticMethod('test', emptyArray);
+        expect(method != null).assertTrue();
+        expect(method!.invoke() as string).assertEqual('no param');
     });
 
     /**
@@ -740,7 +752,12 @@ export default function ClassGetStaticMethodTest(): void {
      */
     it('testClassGetStaticMethod021', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<MyClass001>();
-        let method = cls.getStaticMethod('test', null as FixedArray<Class>);
+        try {
+          let method = cls.getStaticMethod('test', null as FixedArray<Class>);
+          expect(method).assertNull();
+        } catch (error) {
+          expect(error !== null).assertTrue();
+        }
     });
 
     /**
@@ -788,7 +805,7 @@ export default function ClassGetStaticMethodTest(): void {
             let method = cls.getStaticMethod('test');
             expect().assertFail(); // 应该抛出Error
         } catch (error) {
-            expect(error != null).assertTrue();
+            expect(error !== null).assertTrue();
         }
     });
 
@@ -955,9 +972,8 @@ export default function ClassGetStaticMethodTest(): void {
       // 假设有一个包含native方法的类
         let cls = Class.from<SystemClass>();
         let method = cls.getStaticMethod('nativeMethod');
-        if (method) {
-            expect(method.isNative()).assertFalse();
-        }
+        expect(method != null).assertTrue();
+        expect(method!.isNative()).assertFalse();
     });
 
     /**
@@ -1032,10 +1048,9 @@ export default function ClassGetStaticMethodTest(): void {
     it('testClassGetStaticMethod040', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<MyClass001>();
         let method = cls.getStaticMethod('test');
-        if (method !== undefined) {
-            let isSm: boolean = method instanceof reflect.StaticMethod;
-            expect(isSm).assertTrue();
-        }
+        expect(method != null).assertTrue();
+        let isSm: boolean = method instanceof reflect.StaticMethod;
+        expect(isSm).assertTrue();
     });
 
     /**
@@ -1134,8 +1149,8 @@ export default function ClassGetStaticMethodTest(): void {
             expect().assertFail();
         } catch (error) {
             expect(error.name).assertEqual('Error');
-            expect(error.message != null).assertTrue();
-            expect(error.stack != null).assertTrue();
+            expect(error.message !== null).assertTrue();
+            expect(error.stack !== null).assertTrue();
         }
     });
 
@@ -1381,7 +1396,12 @@ export default function ClassGetStaticMethodTest(): void {
         let initMethod = pluginCls.getStaticMethod('initialize');
         let execMethod = pluginCls.getStaticMethod('execute', [Class.from<Object>()]);
         let cleanupMethod = pluginCls.getStaticMethod('cleanup');
-        
+        expect(initMethod != null).assertTrue();
+        expect(execMethod != null).assertTrue();
+        expect(cleanupMethod != null).assertTrue();
+        expect(initMethod!.getName()).assertEqual('initialize');
+        expect(execMethod!.getName()).assertEqual('execute');
+        expect(cleanupMethod!.getName()).assertEqual('cleanup');
         initMethod!.invoke();
         execMethod!.invoke([{} as Object]);
         cleanupMethod!.invoke();

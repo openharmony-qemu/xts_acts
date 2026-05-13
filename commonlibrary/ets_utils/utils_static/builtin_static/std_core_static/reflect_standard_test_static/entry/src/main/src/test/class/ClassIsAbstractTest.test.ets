@@ -307,7 +307,8 @@ export default function ClassIsAbstractTest(): void {
      * @tc.level Level 2
      */
     it('testClassIsAbstract002', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-expect(true).assertTrue();
+      let cls = Class.from<NormalClass010>();
+      expect(cls.isAbstract()).assertFalse();
     });
 
     /**
@@ -781,7 +782,7 @@ expect(true).assertTrue();
           cls.createInstance();
           expect().assertFail();
         } catch (error) {
-          expect(error != null).assertTrue();
+          expect(error !== null).assertTrue();
         }
     });
 

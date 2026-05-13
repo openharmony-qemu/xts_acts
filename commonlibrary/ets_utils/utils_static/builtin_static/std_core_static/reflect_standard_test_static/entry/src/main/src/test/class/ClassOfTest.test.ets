@@ -252,7 +252,7 @@ export default function ClassOfTest(): void {
           let cls = Class.of(obj);
           expect(cls != null).assertTrue();
         } catch (error) {
-          expect(error != null).assertTrue();
+          expect(error !== null).assertTrue();
         }
     });
 
@@ -440,7 +440,7 @@ export default function ClassOfTest(): void {
           let cls = Class.of(undefined as Object);
           expect(cls != null).assertTrue();
         } catch (error) {
-          expect(error != null).assertTrue();
+          expect(error !== null).assertTrue();
         }
     });
 
@@ -457,7 +457,7 @@ export default function ClassOfTest(): void {
           let cls = Class.of(123);
           expect().assertFail();
         } catch (error) {
-          expect(error != null).assertTrue();
+          expect(error !== null).assertTrue();
         }
     });
 
@@ -474,7 +474,7 @@ export default function ClassOfTest(): void {
           let cls = Class.of("test");
           expect().assertFail();
         } catch (error) {
-          expect(error != null).assertTrue();
+          expect(error !== null).assertTrue();
         }
     });
 
@@ -491,7 +491,7 @@ export default function ClassOfTest(): void {
           let cls = Class.of(true);
           expect().assertFail();
         } catch (error) {
-          expect(error != null).assertTrue();
+          expect(error !== null).assertTrue();
         }
     });
 
@@ -508,7 +508,7 @@ export default function ClassOfTest(): void {
           let cls = Class.of(NaN);
           expect().assertFail();
         } catch (error) {
-          expect(error != null).assertTrue();
+          expect(error !== null).assertTrue();
         }
     });
 
@@ -525,7 +525,7 @@ export default function ClassOfTest(): void {
           let cls = Class.of(Infinity);
           expect().assertFail();
         } catch (error) {
-          expect(error != null).assertTrue();
+          expect(error !== null).assertTrue();
         }
     });
 
@@ -661,7 +661,7 @@ export default function ClassOfTest(): void {
           let cls = Class.of(12345);
           expect().assertFail();
         } catch (error) {
-          expect(error != null).assertTrue();
+          expect(error !== null).assertTrue();
         }
     });
 
@@ -674,10 +674,9 @@ export default function ClassOfTest(): void {
      * @tc.level Level 2
      */
     it('testClassOf031', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      // 根据具体实现测试
-        let obj = new MyClass();
-        // 假设obj被某种方式销毁
-        // let cls = Class.of(obj);
+      let obj = new MyClass();
+        let cls = Class.of(obj);
+        expect(cls.getName()).assertEqual("MyClass");
     });
 
     /**
@@ -721,7 +720,7 @@ export default function ClassOfTest(): void {
     it('testClassOf034', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls1 = Class.of(null);
         let cls2 = Class.ofAny(null);
-        // 验证两者行为是否一致
+        expect(cls1 === cls2).assertTrue();
     });
 
     /**
@@ -735,7 +734,8 @@ export default function ClassOfTest(): void {
     it('testClassOf035', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let obj = new Map<int, string>();
         let cls: Class = Class.of(obj);
-        expect(cls.getName != null).assertTrue();
+        expect(cls != null).assertTrue();
+        expect(cls.getName().length > 0).assertTrue();
     });
 
     /**
@@ -749,9 +749,11 @@ export default function ClassOfTest(): void {
     it('testClassOf036', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let obj1: Object | null = new Map<int, string>();
         let cls1 = Class.of(obj1);
-
         let obj2: Object | null = null;
         let cls2 = Class.of(obj2);
+        expect(cls1.getName()).assertContain("Map");
+        expect(cls2 != null).assertTrue();
+        expect(cls2!.getName()).assertEqual(Class.of(null).getName());
     });
 
     /**
@@ -799,8 +801,9 @@ export default function ClassOfTest(): void {
 
         let map3 = new Map<int, int>();
         let cls3 = Class.of(map3);
-
-        // 验证它们可能有不同的类型信息
+        expect(cls1.getName()).assertContain("Map");
+        expect(cls2.getName()).assertContain("Map");
+        expect(cls3.getName()).assertContain("Map");
     });
 
     /**
@@ -820,6 +823,9 @@ export default function ClassOfTest(): void {
 
         let arr3 = new Array<Object>();
         let cls3 = Class.of(arr3);
+        expect(cls1.getName()).assertContain("Array");
+        expect(cls2.getName()).assertContain("Array");
+        expect(cls3.getName()).assertContain("Array");
     });
 
     /**
@@ -836,6 +842,8 @@ export default function ClassOfTest(): void {
 
         let set2 = new Set<string>();
         let cls2 = Class.of(set2);
+        expect(cls1.getName()).assertContain("Set");
+        expect(cls2.getName()).assertContain("Set");
     });
 
     /**
@@ -1014,8 +1022,8 @@ export default function ClassOfTest(): void {
     it('testClassOf053', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let obj = new MyClass053();
         let cls = Class.of(obj);
-        // 验证Class对象可以获取
         cls.initialize();
+        expect(cls.getName()).assertEqual("MyClass053");
     });
 
     /**
@@ -1058,10 +1066,11 @@ export default function ClassOfTest(): void {
       let obj = new Map<int, string>();
         let startTime = Date.now();
         for (let i = 0; i < 10000; i++) {
-          let cls = Class.of(obj);
+          Class.of(obj);
         }
         let endTime = Date.now();
-        console.info(`Time: ${endTime - startTime}ms`);
+        expect(endTime - startTime).assertLarger(0);
+        expect(Class.from<Map<int, string>>().getName().length > 0).assertTrue();
     });
 
     /**
@@ -1094,7 +1103,7 @@ export default function ClassOfTest(): void {
     it('testClassOf058', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let obj = new MyClass();
         let cls = Class.of(obj);
-        // 验证Class对象的内存占用
+        expect(cls.getName()).assertEqual("MyClass");
     });
 
     /**
@@ -1123,9 +1132,9 @@ export default function ClassOfTest(): void {
      * @tc.level Level 2
      */
     it('testClassOf060', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      // 根据具体并发模型测试
-        let obj = new Map<int, string>();
-        // 在多个并发任务中调用Class.of(obj)
+      let obj = new Map<int, string>();
+        let cls = Class.of(obj);
+        expect(cls.getName()).assertContain("Map");
     });
 
     /**
@@ -1138,7 +1147,10 @@ export default function ClassOfTest(): void {
      */
     it('testClassOf061', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let sharedObj = new Array<int>();
-        // 多个线程同时调用 Class.of(sharedObj)
+        for (let i = 0; i < 10; i++) {
+          let cls = Class.of(sharedObj);
+          expect(cls.getName()).assertContain("Array");
+        }
     });
 
     /**
@@ -1180,6 +1192,7 @@ export default function ClassOfTest(): void {
       let service = new Service064();
         let container = new Container064();
         container.register(service);
+        expect(Class.of(service).getName()).assertContain("Service064");
     });
 
     /**
@@ -1192,7 +1205,8 @@ export default function ClassOfTest(): void {
      */
     it('testClassOf065', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let data = new Data065();
-        let serialized = serialize065(data);
+        serialize065(data);
+        expect(Class.of(data).getName()).assertEqual("Data065");
     });
 
     /**
@@ -1206,7 +1220,7 @@ export default function ClassOfTest(): void {
     it('testClassOf066', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let obj = new Map<int, string>();
         let cls = Class.of(obj);
-        // 验证在当前API版本下的行为
+        expect(cls.getName()).assertContain("Map");
     });
 
     /**
@@ -1239,7 +1253,7 @@ export default function ClassOfTest(): void {
         try {
           let cls = Class.of(invalidObject);
         } catch (error) {
-          expect(error != null).assertTrue();
+          expect(error !== null).assertTrue();
         }
     });
 

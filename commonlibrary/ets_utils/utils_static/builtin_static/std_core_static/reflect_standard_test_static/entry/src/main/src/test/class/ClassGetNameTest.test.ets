@@ -16,7 +16,7 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
-import { looseReflect } from '../voidFn';
+import { looseReflect } from './VoidFn.test';
 
 class MyClass001 {}
 
@@ -191,7 +191,8 @@ export default function ClassGetNameTest(): void {
      */
     it('testClassGetName002', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let clazz = Class.from<MyClass002>();
-        let name = looseReflect(clazz as Object).getName("invalid"); // 编译错误
+        looseReflect(clazz as Object).getName("invalid");
+        expect(clazz.getName()).assertEqual("MyClass002");
     });
 
     /**
@@ -249,11 +250,10 @@ export default function ClassGetNameTest(): void {
     it('testClassGetName006', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let clazz1 = Class.from<GenericClass006<int>>();
         let name1 = clazz1.getName();
-        console.info(name1); // "GenericClass006" 或 "GenericClass006<int>" 取决于实现
-
         let clazz2 = Class.from<GenericClass006<string>>();
         let name2 = clazz2.getName();
-        console.info(name2); // "GenericClass006" 或 "GenericClass006<string>"
+        expect(name1).assertContain("GenericClass006");
+        expect(name2).assertContain("GenericClass006");
     });
 
     /**
@@ -346,7 +346,8 @@ export default function ClassGetNameTest(): void {
       let arr = new Array<int>();
         let clazz = Class.of(arr);
         let name = clazz.getName();
-        console.info(name); // "std.core.Array" 或类似
+        expect(name.length > 0).assertTrue();
+        expect(name).assertContain("Array");
     });
 
     /**
@@ -361,7 +362,8 @@ export default function ClassGetNameTest(): void {
       let map = new Map<string, int>();
         let clazz = Class.of(map);
         let name = clazz.getName();
-        console.info(name); // "std.core.Map"
+        expect(name.length > 0).assertTrue();
+        expect(name).assertContain("Map");
     });
 
     /**
@@ -376,7 +378,8 @@ export default function ClassGetNameTest(): void {
       let set = new Set<int>();
         let clazz = Class.of(set);
         let name = clazz.getName();
-        console.info(name); // "std.core.Set"
+        expect(name.length > 0).assertTrue();
+        expect(name).assertContain("Set");
     });
 
     /**
@@ -390,7 +393,7 @@ export default function ClassGetNameTest(): void {
     it('testClassGetName015', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
         let clazz = Class.from<NestedClassForName015>();
         let name = clazz.getName();
-        console.info(name);
+        expect(name).assertEqual("NestedClassForName015");
     });
 
     /**
@@ -420,7 +423,8 @@ export default function ClassGetNameTest(): void {
       let arr: FixedArray<int> = [1, 2, 3];
         let clazz = Class.of(arr);
         let name = clazz.getName();
-        console.info(name); // 包含定长数组标识
+        expect(name.length > 0).assertTrue();
+        expect(name).assertContain("Array");
     });
 
     /**
@@ -537,10 +541,8 @@ export default function ClassGetNameTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetName025', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-// 此测试仅用于验证未捕获异常的行为，跳过执行
-        // 以下代码可能编译错误
-        // class 123InvalidClass {}
-      return;
+      let clazz = Class.from<MyClass001>();
+        expect(clazz.getName()).assertEqual("MyClass001");
     });
 
     /**
@@ -554,7 +556,8 @@ export default function ClassGetNameTest(): void {
     it('testClassGetName026', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let clazz = Class.from<My类026>();
         let name = clazz.getName();
-        console.info(name); // "My类026"
+        expect(name.length > 0).assertTrue();
+        expect(name).assertContain("026");
     });
 
     /**
@@ -567,7 +570,8 @@ export default function ClassGetNameTest(): void {
      */
     it('testClassGetName027', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let service = new UserService027();
-        Logger027.logClassName(service); // "Object class: UserService027"
+        Logger027.logClassName(service);
+        expect(Class.from<UserService027>().getName()).assertEqual("UserService027");
     });
 
     /**
@@ -613,7 +617,8 @@ export default function ClassGetNameTest(): void {
     it('testClassGetName030', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let configClass = Class.from<Config030>();
         let serialized = Serializer030.serializeClass(configClass);
-        console.info(serialized); // {"class":"Config030","type":"Class"}
+        expect(serialized).assertContain("Config030");
+        expect(serialized).assertContain("Class");
     });
 
     /**
@@ -627,6 +632,7 @@ export default function ClassGetNameTest(): void {
     it('testClassGetName031', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let data = new TestData031();
         DebugHelper031.dumpClassInfo(data);
+        expect(Class.from<TestData031>().getName()).assertEqual("TestData031");
     });
 
     /**
@@ -698,11 +704,10 @@ export default function ClassGetNameTest(): void {
     it('testClassGetName035', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let interfaceClazz = Class.from<MyInterface035>();
         let classClazz = Class.from<MyClass035>();
-
-        console.info("Interface name: " + interfaceClazz.getName());
-        console.info("Class name: " + classClazz.getName());
-        console.info("Is interface?: " + interfaceClazz.isInterface()); // true
-        console.info("Is interface?: " + classClazz.isInterface()); // false
+        expect(interfaceClazz.getName().length > 0).assertTrue();
+        expect(classClazz.getName()).assertEqual("MyClass035");
+        expect(interfaceClazz.isInterface()).assertTrue();
+        expect(classClazz.isInterface()).assertFalse();
     });
 
     /**
@@ -716,12 +721,10 @@ export default function ClassGetNameTest(): void {
     it('testClassGetName036', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let myClassClazz = Class.from<MyClass036>();
         let intClazz = Class.PRIMITIVE_INT;
-
-        console.info("MyClass036 name: " + myClassClazz.getName());
-        console.info("Is primitive?: " + myClassClazz.isPrimitive()); // false
-
-        console.info("int name: " + intClazz.getName());
-        console.info("Is primitive?: " + intClazz.isPrimitive()); // true
+        expect(myClassClazz.getName()).assertEqual("MyClass036");
+        expect(myClassClazz.isPrimitive()).assertFalse();
+        expect(intClazz.getName()).assertEqual("int");
+        expect(intClazz.isPrimitive()).assertTrue();
     });
 
     /**

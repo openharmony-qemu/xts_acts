@@ -820,7 +820,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
         expect(name.length).assertLarger(0);
 
         let isPrim = componentType!.isPrimitive();
-        expect(isPrim === true || isPrim === false).assertTrue();
+        expect(isPrim).assertTrue();
 
         let superCls = componentType!.getSuper();
         expect(superCls !== undefined).assertTrue();

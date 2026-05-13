@@ -142,6 +142,7 @@ export default function ClassGetDescriptorTest(): void {
       let cls = Class.from<Set<string>>();
         // cls.getDescriptor("invalid")  // ❌ 编译错误
         // cls.getDescriptor(null)       // ❌ 编译错误
+        expect(cls.getDescriptor().length).assertLarger(0);
     });
 
     /**
@@ -399,7 +400,7 @@ export default function ClassGetDescriptorTest(): void {
       try {
           let cls = Class.from<Set<string>>();
           let descriptor = cls.getDescriptor();
-          expect(true).assertTrue();  // 成功执行
+          expect(descriptor.length).assertLarger(0);
         } catch (error) {
           expect().assertFail();  // 不应该抛出异常
         }

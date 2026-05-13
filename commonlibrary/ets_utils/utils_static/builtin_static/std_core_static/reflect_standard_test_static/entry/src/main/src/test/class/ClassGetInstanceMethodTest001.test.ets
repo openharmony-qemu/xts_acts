@@ -16,7 +16,7 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
-import { looseReflect } from '../voidFn';
+import { looseReflect } from './VoidFn.test';
 
 class MyClass001 {
       public test(): string {
@@ -912,7 +912,7 @@ export default function ClassGetInstanceMethodTest001(): void {
             let method = cls.getInstanceMethod(null as string);
             expect().assertFail();
         } catch (error) {
-            expect(error != null).assertTrue();
+            expect(error !== null).assertTrue();
         }
     });
 
@@ -930,7 +930,7 @@ export default function ClassGetInstanceMethodTest001(): void {
             let method = cls.getInstanceMethod(undefined as string);
             expect().assertFail();
         } catch (error) {
-            expect(error != null).assertTrue();
+            expect(error !== null).assertTrue();
         }
     });
 
@@ -948,7 +948,7 @@ export default function ClassGetInstanceMethodTest001(): void {
             let method = looseReflect(cls as Object).getInstanceMethod(123 as Object);
             expect().assertFail();
         } catch (error) {
-            expect(error != null).assertTrue();
+            expect(error !== null).assertTrue();
         }
     });
 
@@ -966,7 +966,7 @@ export default function ClassGetInstanceMethodTest001(): void {
             let method = looseReflect(cls as Object).getInstanceMethod({} as Object);
             expect().assertFail();
         } catch (error) {
-            expect(error != null).assertTrue();
+            expect(error !== null).assertTrue();
         }
     });
 
@@ -985,7 +985,7 @@ export default function ClassGetInstanceMethodTest001(): void {
             let method = looseReflect(cls as Object).getInstanceMethod(badArg);
             expect().assertFail();
         } catch (error) {
-            expect(error != null).assertTrue();
+            expect(error !== null).assertTrue();
         }
     });
 
@@ -1134,7 +1134,7 @@ export default function ClassGetInstanceMethodTest001(): void {
             let method = looseReflect(cls as Object).getInstanceMethod('test', null as Object);
             expect().assertFail();
         } catch (error) {
-            expect(error != null).assertTrue();
+            expect(error !== null).assertTrue();
         }
     });
 
@@ -1167,7 +1167,7 @@ export default function ClassGetInstanceMethodTest001(): void {
             let method = looseReflect(cls as Object).getInstanceMethod('test', ['string' as Object]);
             expect().assertFail();
         } catch (error) {
-            expect(error != null).assertTrue();
+            expect(error !== null).assertTrue();
         }
     });
 
@@ -1185,7 +1185,7 @@ export default function ClassGetInstanceMethodTest001(): void {
             let method = looseReflect(cls as Object).getInstanceMethod('test', Class.from<string>() as Object);
             expect().assertFail();
         } catch (error) {
-            expect(error != null).assertTrue();
+            expect(error !== null).assertTrue();
         }
     });
 
@@ -1269,7 +1269,7 @@ export default function ClassGetInstanceMethodTest001(): void {
             let method = cls.getInstanceMethod('test');
             expect().assertFail(); // 应该抛出Error
         } catch (error) {
-            expect(error != null).assertTrue();
+            expect(error !== null).assertTrue();
             expect(error instanceof Error).assertEqual(true);
         }
     });
@@ -1418,7 +1418,8 @@ export default function ClassGetInstanceMethodTest001(): void {
     it('testClassGetInstanceMethod047', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let cls = Class.from<MyClass047>();
         let method = cls.getInstanceMethod('constructor');
-        // 构造函数可能不属于实例方法，需要验证实际行为
+        expect(method === undefined || method === null).assertTrue();
+        expect(cls.getConstructors().length).assertLarger(0);
     });
 
     /**
@@ -1838,7 +1839,7 @@ export default function ClassGetInstanceMethodTest001(): void {
             expect().assertFail();
         } catch (error) {
             expect(error.name).assertEqual('Error');
-            expect(error.message != null).assertTrue();
+            expect(error.message !== null).assertTrue();
             expect(typeof error.message).assertEqual('string');
         }
     });
@@ -1859,7 +1860,7 @@ export default function ClassGetInstanceMethodTest001(): void {
                 let ok: boolean = method === undefined || method === null;
                 expect(ok).assertTrue();
             } catch (error) {
-                expect(error != null).assertTrue();
+                expect(error !== null).assertTrue();
             }
         };
         tryBadName(null as string);
@@ -1883,7 +1884,7 @@ export default function ClassGetInstanceMethodTest001(): void {
             let method = looseReflect(cls as Object).getInstanceMethod('test', 'invalid' as Object);
             expect().assertFail();
         } catch (error) {
-            expect(error != null).assertTrue();
+            expect(error !== null).assertTrue();
         }
     });
 
@@ -1901,7 +1902,7 @@ export default function ClassGetInstanceMethodTest001(): void {
             let method = looseReflect(cls as Object).getInstanceMethod('test', ['string' as Object, 123 as Object]);
             expect().assertFail();
         } catch (error) {
-            expect(error != null).assertTrue();
+            expect(error !== null).assertTrue();
         }
     });
 
@@ -1936,9 +1937,10 @@ export default function ClassGetInstanceMethodTest001(): void {
       let cls = Class.from<MyClass079>();
         try {
             cls.getInstanceMethod('test');
+            expect().assertFail();
         } catch (error) {
-            expect(error != null).assertTrue();
-            expect(error.stack != null).assertTrue(); // Error对象应该有stack属性
+            expect(error !== null).assertTrue();
+            expect(error.stack !== null).assertTrue(); // Error对象应该有stack属性
         }
     });
 
