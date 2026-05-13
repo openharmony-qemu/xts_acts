@@ -430,6 +430,7 @@ static napi_value TextEnumTest_031(napi_env env, napi_callback_info info)
     ASSERT_EQ(result_31_1, ARKUI_ERROR_CODE_NO_ERROR);
 
     const OH_ArkUI_SpanStyle *spanStyle2 = OH_ArkUI_SpanStyle_Create();
+    spanStyle2->styledKey = OH_ArkUI_StyledStringKey::OH_ARKUI_STYLEDSTRINGKEY_LINE_SPACING;
     auto result_31_2 = OH_ArkUI_SpanStyle_GetLineSpacingStyle(spanStyle2, lineSpacingStyle);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result_31_2 TextEnumTest_031 result=%{public}d", result_31_2);
