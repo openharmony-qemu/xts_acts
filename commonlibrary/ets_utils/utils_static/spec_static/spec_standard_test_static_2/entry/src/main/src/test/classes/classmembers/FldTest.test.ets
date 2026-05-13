@@ -97,8 +97,8 @@ export default function FldTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testAcc0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAcc0003';
+    it("testFld0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testFld0003';
       expect(new B1(42).foo).assertEqual(44)
     });
   })

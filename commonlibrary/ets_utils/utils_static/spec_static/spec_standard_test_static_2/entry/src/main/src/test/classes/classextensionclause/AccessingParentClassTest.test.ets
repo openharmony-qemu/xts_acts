@@ -981,7 +981,7 @@ export default function AccessingParentClassTest():void {
     })
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_0100
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_0100
      * @tc.name      testAccessingParentClass0001
      * @tc.desc      Subclasses accessing the initialization boolean[] of parent class members
      * @tc.size      MediumTest
@@ -996,7 +996,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_0200
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_0200
      * @tc.name      testAccessingParentClass0002
      * @tc.desc      Subclasses accessing the initialization readonly boolean[] of parent class members
      * @tc.size      MediumTest
@@ -1011,7 +1011,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_0300
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_0300
      * @tc.name      testAccessingParentClass0003
      * @tc.desc      Subclasses accessing the initialization User[] of parent class members
      * @tc.size      MediumTest
@@ -1026,7 +1026,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_0400
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_0400
      * @tc.name      testAccessingParentClass0004
      * @tc.desc      Subclasses accessing the initialization User[] of parent class members
      * @tc.size      MediumTest
@@ -1041,7 +1041,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_0500
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_0500
      * @tc.name      testAccessingParentClass0005
      * @tc.desc      Subclasses accessing the initialization Date of parent class members
      * @tc.size      MediumTest
@@ -1056,7 +1056,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_0600
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_0600
      * @tc.name      testAccessingParentClass0006
      * @tc.desc      Subclasses accessing the initialization readonly Date of parent class members
      * @tc.size      MediumTest
@@ -1071,7 +1071,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_0700
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_0700
      * @tc.name      testAccessingParentClass0007
      * @tc.desc      Subclasses accessing the initialization function of parent class members
      * @tc.size      MediumTest
@@ -1086,7 +1086,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_0800
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_0800
      * @tc.name      testAccessingParentClass0008
      * @tc.desc      Subclasses accessing the initialization readonly function of parent class members
      * @tc.size      MediumTest
@@ -1101,7 +1101,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_0900
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_0900
      * @tc.name      testAccessingParentClass0009
      * @tc.desc      Subclasses accessing the initialization int of parent class members
      * @tc.size      MediumTest
@@ -1116,7 +1116,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_1000
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_1000
      * @tc.name      testAccessingParentClass0010
      * @tc.desc      Subclasses accessing the initialization readonly int of parent class members
      * @tc.size      MediumTest
@@ -1131,7 +1131,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_1100
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_1100
      * @tc.name      testAccessingParentClass0011
      * @tc.desc      Subclasses accessing the initialization null of parent class members
      * @tc.size      MediumTest
@@ -1142,11 +1142,11 @@ export default function AccessingParentClassTest():void {
       const TAG = 'testAccessingParentClass0011';
       const instanceB = new Sub9();
       instanceB.checkAccess();
-      expect(check_value8).assertNull;
+      expect(check_value8).assertNull();
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_1200
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_1200
      * @tc.name      testAccessingParentClass0012
      * @tc.desc      Subclasses accessing the initialization readonly null of parent class members
      * @tc.size      MediumTest
@@ -1161,7 +1161,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_1300
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_1300
      * @tc.name      testAccessingParentClass0013
      * @tc.desc      Subclasses accessing the initialization number of parent class members
      * @tc.size      MediumTest
@@ -1176,7 +1176,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_1400
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_1400
      * @tc.name      testAccessingParentClass0014
      * @tc.desc      Subclasses accessing the initialization readonly number of parent class members
      * @tc.size      MediumTest
@@ -1191,7 +1191,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_1500
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_1500
      * @tc.name      testAccessingParentClass0015
      * @tc.desc      Subclasses accessing the initialization string of parent class members
      * @tc.size      MediumTest
@@ -1206,7 +1206,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_1600
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_1600
      * @tc.name      testAccessingParentClass0016
      * @tc.desc      Subclasses accessing the initialization readonly string of parent class members
      * @tc.size      MediumTest
@@ -1221,7 +1221,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_1700
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_1700
      * @tc.name      testAccessingParentClass0017
      * @tc.desc      Subclasses accessing the initialization undefined of parent class members
      * @tc.size      MediumTest
@@ -1236,7 +1236,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_1800
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_1800
      * @tc.name      testAccessingParentClass0018
      * @tc.desc      Subclasses accessing the initialization readonly undefined of parent class members
      * @tc.size      MediumTest
@@ -1251,7 +1251,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_1900
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_1900
      * @tc.name      testAccessingParentClass0019
      * @tc.desc      Subclasses accessing the initialization boolean[] of parent class members
      * @tc.size      MediumTest
@@ -1266,7 +1266,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_2000
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_2000
      * @tc.name      testAccessingParentClass0020
      * @tc.desc      Subclasses accessing the initialization readonly boolean[] of parent class members
      * @tc.size      MediumTest
@@ -1281,7 +1281,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_2100
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_2100
      * @tc.name      testAccessingParentClass0021
      * @tc.desc      Subclasses accessing the initialization User[] of parent class members
      * @tc.size      MediumTest
@@ -1296,7 +1296,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_2200
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_2200
      * @tc.name      testAccessingParentClass0022
      * @tc.desc      Subclasses accessing the initialization readonly User[] of parent class members
      * @tc.size      MediumTest
@@ -1311,7 +1311,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_2300
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_2300
      * @tc.name      testAccessingParentClass0023
      * @tc.desc      Subclasses accessing the initialization Date[] of parent class members
      * @tc.size      MediumTest
@@ -1326,7 +1326,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_2400
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_2400
      * @tc.name      testAccessingParentClass0024
      * @tc.desc      Subclasses accessing the initialization readonly Date[] of parent class members
      * @tc.size      MediumTest
@@ -1341,7 +1341,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_2500
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_2500
      * @tc.name      testAccessingParentClass0025
      * @tc.desc      Subclasses accessing the initialization interface[] of parent class members
      * @tc.size      MediumTest
@@ -1356,7 +1356,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_2600
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_2600
      * @tc.name      testAccessingParentClass0026
      * @tc.desc      Subclasses accessing the initialization readonly SomeInterface[] of parent class members
      * @tc.size      MediumTest
@@ -1371,7 +1371,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_2700
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_2700
      * @tc.name      testAccessingParentClass0027
      * @tc.desc      Subclasses accessing the initialization number[] of parent class members
      * @tc.size      MediumTest
@@ -1386,7 +1386,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_2800
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_2800
      * @tc.name      testAccessingParentClass0028
      * @tc.desc      Subclasses accessing the initialization readonly number[] of parent class members
      * @tc.size      MediumTest
@@ -1401,7 +1401,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_2900
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_2900
      * @tc.name      testAccessingParentClass0029
      * @tc.desc      Subclasses accessing the initialization string[] of parent class members
      * @tc.size      MediumTest
@@ -1416,7 +1416,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_3000
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_3000
      * @tc.name      testAccessingParentClass0030
      * @tc.desc      Subclasses accessing the initialization readonly string[] of parent class members
      * @tc.size      MediumTest
@@ -1431,7 +1431,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_3100
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_3100
      * @tc.name      testAccessingParentClass0031
      * @tc.desc      Subclasses accessing the initialization boolean of parent class members
      * @tc.size      MediumTest
@@ -1446,7 +1446,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_3200
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_3200
      * @tc.name      testAccessingParentClass0032
      * @tc.desc      Subclasses accessing the initialization readonly boolean of parent class members
      * @tc.size      MediumTest
@@ -1461,7 +1461,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_3300
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_3300
      * @tc.name      testAccessingParentClass0033
      * @tc.desc      Subclasses accessing the initialization UserClass of parent class members
      * @tc.size      MediumTest
@@ -1476,7 +1476,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_3400
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_3400
      * @tc.name      testAccessingParentClass0034
      * @tc.desc      Subclasses accessing the initialization readonly UserClass of parent class members
      * @tc.size      MediumTest
@@ -1491,7 +1491,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_3500
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_3500
      * @tc.name      testAccessingParentClass0035
      * @tc.desc      Subclasses accessing the initialization Date of parent class members
      * @tc.size      MediumTest
@@ -1506,7 +1506,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_3600
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_3600
      * @tc.name      testAccessingParentClass0036
      * @tc.desc      Subclasses accessing the initialization readonly Date of parent class members
      * @tc.size      MediumTest
@@ -1521,7 +1521,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_3700
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_3700
      * @tc.name      testAccessingParentClass0037
      * @tc.desc      Subclasses accessing the initialization function of parent class members
      * @tc.size      MediumTest
@@ -1536,7 +1536,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_3800
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_3800
      * @tc.name      testAccessingParentClass0038
      * @tc.desc      Subclasses accessing the initialization readonly function of parent class members
      * @tc.size      MediumTest
@@ -1551,7 +1551,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_3900
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_3900
      * @tc.name      testAccessingParentClass0039
      * @tc.desc      Subclasses accessing the initialization int of parent class members
      * @tc.size      MediumTest
@@ -1566,7 +1566,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_4000
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_4000
      * @tc.name      testAccessingParentClass0040
      * @tc.desc      Subclasses accessing the initialization readonly int of parent class members
      * @tc.size      MediumTest
@@ -1581,7 +1581,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_4100
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_4100
      * @tc.name      testAccessingParentClass0041
      * @tc.desc      Subclasses accessing the initialization null of parent class members
      * @tc.size      MediumTest
@@ -1596,7 +1596,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_4200
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_4200
      * @tc.name      testAccessingParentClass0042
      * @tc.desc      Subclasses accessing the initialization readonly null of parent class members
      * @tc.size      MediumTest
@@ -1611,7 +1611,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_4300
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_4300
      * @tc.name      testAccessingParentClass0043
      * @tc.desc      Subclasses accessing the initialization number of parent class members
      * @tc.size      MediumTest
@@ -1626,7 +1626,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_4400
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_4400
      * @tc.name      testAccessingParentClass0044
      * @tc.desc      Subclasses accessing the initialization readonly number of parent class members
      * @tc.size      MediumTest
@@ -1641,7 +1641,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_4500
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_4500
      * @tc.name      testAccessingParentClass0045
      * @tc.desc      Subclasses accessing the initialization string of parent class members
      * @tc.size      MediumTest
@@ -1656,7 +1656,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_4600
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_4600
      * @tc.name      testAccessingParentClass0046
      * @tc.desc      Subclasses accessing the initialization readonly string of parent class members
      * @tc.size      MediumTest
@@ -1671,7 +1671,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_4700
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_4700
      * @tc.name      testAccessingParentClass0047
      * @tc.desc      Subclasses accessing the initialization undefined of parent class members
      * @tc.size      MediumTest
@@ -1686,7 +1686,7 @@ export default function AccessingParentClassTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSING_PARENT_CLASSTEST_4800
+     * @tc.number    SUB_ACCESSING_PARENT_CLASS_4800
      * @tc.name      testAccessingParentClass0048
      * @tc.desc      Subclasses accessing the initialization readonly undefined of parent class members
      * @tc.size      MediumTest

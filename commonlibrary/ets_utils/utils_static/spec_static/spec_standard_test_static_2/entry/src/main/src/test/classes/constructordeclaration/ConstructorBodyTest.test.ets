@@ -2313,10 +2313,13 @@ export default function ConstructorBodyTest():void {
     it("testConstructorBody0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0020'
       let a: A19 = new A19('x')
+      expect(a.f00).assertEqual(null)
+      expect(a.f03).assertEqual(3)
       arktest.expectError(() => { a = new A19('1') }, '1')
       arktest.expectError(() => { a = new A19('2') }, '2')
       arktest.expectError(() => { a = new A19('3') }, '3')
       a = new A19('x', 1)
+      expect(a.f08).assertEqual('3.14')
       arktest.expectError(() => { a = new A19('1', 1) }, '1')
       arktest.expectError(() => { a = new A19('2', 1) }, '2')
       arktest.expectError(() => { a = new A19('3', 1) }, '3')
@@ -2335,10 +2338,13 @@ export default function ConstructorBodyTest():void {
     it("testConstructorBody0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0021'
       let b: B16 = new B16('x')
+      expect(b.f00).assertEqual(null)
+      expect(b.f03).assertEqual(3)
       arktest.expectError(() => { b = new B16('1') }, '1')
       arktest.expectError(() => { b = new B16('2') }, '2')
       arktest.expectError(() => { b = new B16('3') }, '3')
       b = new B16('x', 1)
+      expect(b.f08).assertEqual('3.14')
       arktest.expectError(() => { b = new B16('1', 1) }, '1')
       arktest.expectError(() => { b = new B16('2', 1) }, '2')
       arktest.expectError(() => { b = new B16('3', 1) }, '3')
@@ -2357,10 +2363,13 @@ export default function ConstructorBodyTest():void {
     it("testConstructorBody0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0022'
       let b: B17 = new B17('x')
+      expect(b.f00).assertEqual(null)
+      expect(b.f03).assertEqual(3)
       arktest.expectError(() => { b = new B17('1') }, '1')
       arktest.expectError(() => { b = new B17('2') }, '2')
       arktest.expectError(() => { b = new B17('3') }, '3')
       b = new B17('x', 1)
+      expect(b.f08).assertEqual('3.14')
       arktest.expectError(() => { b = new B17('1', 1) }, '1')
       arktest.expectError(() => { b = new B17('2', 1) }, '2')
       arktest.expectError(() => { b = new B17('3', 1) }, '3')
@@ -2379,10 +2388,13 @@ export default function ConstructorBodyTest():void {
     it("testConstructorBody0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0023'
       let b: B18 = new B18('x')
+      expect(b.f00).assertEqual(null)
+      expect(b.f03).assertEqual(3)
       arktest.expectError(() => { b = new B18('1') }, '1')
       arktest.expectError(() => { b = new B18('2') }, '2')
       arktest.expectError(() => { b = new B18('3') }, '3')
       b = new B18('1', 1)
+      expect(b.f08).assertEqual('3.14')
       arktest.expectError(() => { b = new B18('4', 1) }, '4')
       arktest.expectError(() => { b = new B18('5', 1) }, '5')
       arktest.expectError(() => { b = new B18('6', 1) }, '6')
@@ -2399,10 +2411,13 @@ export default function ConstructorBodyTest():void {
     it("testConstructorBody0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0024'
       let b: B19 = new B19('x')
+      expect(b.f00).assertEqual(null)
+      expect(b.f03).assertEqual(3)
       arktest.expectError(() => { b = new B19('1') }, '1')
       arktest.expectError(() => { b = new B19('2') }, '2')
       arktest.expectError(() => { b = new B19('3') }, '3')
       b = new B19('x', 1)
+      expect(b.f08).assertEqual('3.14')
       arktest.expectError(() => { b = new B19('4', 1) }, '4')
       arktest.expectError(() => { b = new B19('5', 1) }, '5')
       arktest.expectError(() => { b = new B19('6', 1) }, '6')

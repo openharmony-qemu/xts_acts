@@ -333,8 +333,8 @@ export default function MembersTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testInterfaceChildConstVer0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInterfaceChildConstVer0001';
+    it("testMembers0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMembers0001';
       const animal = new Animal("Generic");
       expect(animal.name).assertEqual("Generic");
     });
