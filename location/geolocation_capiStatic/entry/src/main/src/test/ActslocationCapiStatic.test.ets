@@ -1243,9 +1243,9 @@ export default function actslocationTest() {
                         geoLocationManager.addGnssGeofence(gnssGeofenceRequest).then((id) => {
                         console.info("addGnssGeofence_0600 success, fence id: " + id);
                         expect(true).assertEqual(id!=null);
-                        }).catch((err:Object|null|undefined) => {
+                        }).catch((err) => {
                         console.error("addGnssGeofence_0600 failed, promise errCode:" + (err as BusinessError).code +",errMessage:" + (err as BusinessError).message);
-                        expect((err as BusinessError).code).assertEqual(3301601);
+                        expect(err.code).assertEqual(3301601);
                         });
                         done();
                     } catch (error) {
