@@ -24,5 +24,4 @@ export default function testsuite() {
     uriTest2();
     uriTest3();
     uriEmojiTest();
-   
 }

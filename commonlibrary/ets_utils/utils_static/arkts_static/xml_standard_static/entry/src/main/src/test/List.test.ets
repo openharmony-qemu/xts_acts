@@ -27,5 +27,4 @@ export default function testsuite() {
   dynamicXmlTest2();
   actsXml3Test();
   actsXml4Test();
-
 }

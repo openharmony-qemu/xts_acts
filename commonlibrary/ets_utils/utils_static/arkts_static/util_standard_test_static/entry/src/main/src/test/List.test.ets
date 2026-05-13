@@ -20,5 +20,4 @@ import Util2Test from './util/UtilInterface2.test';
 export default function testsuite() {
   UtilTest();
   Util2Test();
-
 }
