@@ -1191,7 +1191,8 @@ export default function arrayBufferPropertyTest(): void {
         buffer.at(8)
         expect(true).assertFail()
       } catch (error) {
-        expect(error != null).assertTrue()
+        expect(error !== null && error !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(error as object)
       }
       expect(buffer.byteLength).assertEqual(8)
     });
@@ -1226,7 +1227,8 @@ export default function arrayBufferPropertyTest(): void {
         buffer.resize(8)
         expect(true).assertFail()
       } catch (error) {
-        expect(error != null).assertTrue()
+        expect(error !== null && error !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(error as object)
       }
     });
 
@@ -1245,7 +1247,8 @@ export default function arrayBufferPropertyTest(): void {
         buffer.at(8)
         expect(true).assertFail()
       } catch (error) {
-        expect(error != null).assertTrue()
+        expect(error !== null && error !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(error as object)
       }
       expect(buffer.byteLength).assertEqual(8)
       expect(buffer.at(0)).assertEqual(65 as byte)
@@ -1265,7 +1268,8 @@ export default function arrayBufferPropertyTest(): void {
         buffer.set(8, 65 as byte)
         expect(true).assertFail()
       } catch (error) {
-        expect(error != null).assertTrue()
+        expect(error !== null && error !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(error as object)
       }
       expect(buffer.byteLength).assertEqual(8)
     });

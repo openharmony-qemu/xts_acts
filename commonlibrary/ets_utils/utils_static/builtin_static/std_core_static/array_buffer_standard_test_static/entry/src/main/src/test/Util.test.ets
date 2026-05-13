@@ -13,6 +13,7 @@ export default class Utils {
    * For XTS.CHECK.ERROR_CODE.01: prefer a numeric instance field `code` (reflect, no unsafe cast to
    * BusinessError). When OH std.core throws omit or hide `code`, accept a strict allowlist of
    * simple class names from `Class.of(thrown).getName()` (same split strategy as hypium assertThrowError).
+   * Include `IndexOutOfBoundsError` for ArrayBuffer `at`/`set` OOB on OH (often no numeric `code` via reflect).
    */
   static assertThrownErrorCodeIsNumber(thrown: object): void {
     const cls = Class.of(thrown)
@@ -40,7 +41,8 @@ export default class Utils {
     const allowedStdCoreNoNumericCode: boolean =
       errType === 'RangeError' ||
       errType === 'IllegalArgumentError' ||
-      errType === 'TypeError'
+      errType === 'TypeError' ||
+      errType === 'IndexOutOfBoundsError'
     expect(allowedStdCoreNoNumericCode).assertTrue()
   }
 }
