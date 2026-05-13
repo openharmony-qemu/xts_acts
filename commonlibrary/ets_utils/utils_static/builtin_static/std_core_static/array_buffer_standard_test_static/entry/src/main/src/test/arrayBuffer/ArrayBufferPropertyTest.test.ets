@@ -1337,7 +1337,8 @@ export default function arrayBufferPropertyTest(): void {
         buffer.resize(16)
         expect(true).assertFail()
       } catch (error) {
-        expect(error != null).assertTrue()
+        expect(error !== null && error !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(error as object)
       }
     });
 
