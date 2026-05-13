@@ -1936,3 +1936,676 @@ export default function FieldInitializationTestThirteen(): void {
       expect(a.field instanceof short).assertTrue()
       expect(a.field).assertEqual(4)
     })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1348
+     * @tc.name      testFieldInit1348
+     * @tc.desc      Checking the implementation of interface readonly field.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1348", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F1348 = {field: 7.3}
+      expect(a.field instanceof double).assertTrue()
+      expect(a.field).assertEqual(7.3)
+      a.field = 4
+      expect(a.field instanceof double).assertTrue()
+      expect(a.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1349
+     * @tc.name      testFieldInit1349
+     * @tc.desc      Checking the implementation of interface readonly field.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1349", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F1349 = {field: 5}
+      expect(a.field instanceof number).assertTrue()
+      expect(a.field).assertEqual(5)
+      a.field = 4
+      expect(a.field instanceof number).assertTrue()
+      expect(a.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1350
+     * @tc.name      testFieldInit1350
+     * @tc.desc      Checking the implementation of interface readonly field.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1350", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F1350 = {field: 7.3f}
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(7.3f)
+      a.field = 4.5f
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(4.5f)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1351
+     * @tc.name      testFieldInit1351
+     * @tc.desc      Checking the implementation of interface readonly field.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1351", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F1351 = {field: 5n}
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(5n)
+      a.field = 4n
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(4n)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1352
+     * @tc.name      testFieldInit1352
+     * @tc.desc      Checking the implementation of interface readonly field.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1352", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F1352 = {field: "efg"}
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("efg")
+      a.field = "abc"
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("abc")
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1353
+     * @tc.name      testFieldInit1353
+     * @tc.desc      Checking the implementation of interface readonly field.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1353", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F1353 = {field: c'b'}
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'b')
+      a.field = c'a'
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'a')
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1354
+     * @tc.name      testFieldInit1354
+     * @tc.desc      Checking the implementation of interface readonly field.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1354", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F1354 = {field: true}
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(true)
+      a.field = false
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(false)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1355
+     * @tc.name      testFieldInit1355
+     * @tc.desc      Checking the implementation of interface readonly field.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1355", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F1355 = {field: 5}
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(5)
+      a.field = 4
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1356
+     * @tc.name      testFieldInit1356
+     * @tc.desc      Checking the implementation of interface readonly field.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1356", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F1356 = {field: 5}
+      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field).assertEqual(5)
+      a.field = 4
+      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1357
+     * @tc.name      testFieldInit1357
+     * @tc.desc      Checking the implementation of interface readonly field.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1357", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F1357 = {field: 5}
+      expect(a.field instanceof Any).assertTrue()
+      expect(a.field).assertEqual(5)
+      a.field = 4
+      expect(a.field instanceof Any).assertTrue()
+      expect(a.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1358
+     * @tc.name      testFieldInit1358
+     * @tc.desc      Checking the implementation of interface readonly field.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1358", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F1358 = new A_F1358()
+      expect(a.field instanceof C_F1358).assertTrue()
+      expect(a.field.data instanceof int).assertTrue()
+      expect(a.field.data).assertEqual(4)
+      a.field = {data: 5}
+      expect(a.field instanceof C_F1358).assertTrue()
+      expect(a.field.data instanceof int).assertTrue()
+      expect(a.field.data).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1359
+     * @tc.name      testFieldInit1359
+     * @tc.desc      Checking the implementation of interface readonly field.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1359", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F1359 = new A_F1359()
+      expect(a.field instanceof C_F1359).assertTrue()
+      expect(a.field.data instanceof int).assertTrue()
+      expect(a.field.data).assertEqual(4)
+      a.field = {data: 5}
+      expect(a.field instanceof C_F1359).assertTrue()
+      expect(a.field.data instanceof int).assertTrue()
+      expect(a.field.data).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1360
+     * @tc.name      testFieldInit1360
+     * @tc.desc      Checking the implementation of interface readonly field.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1360", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F1360 = {field: {data: 4}}
+      expect(a.field instanceof C_F1360).assertTrue()
+      expect(a.field.data instanceof int).assertTrue()
+      expect(a.field.data).assertEqual(4)
+      a.field = {data: 5}
+      expect(a.field instanceof C_F1360).assertTrue()
+      expect(a.field.data instanceof int).assertTrue()
+      expect(a.field.data).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1361
+     * @tc.name      testFieldInit1361
+     * @tc.desc      Checking the implementation of interface readonly field.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1361", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F1361 = {field: {data: 4}}
+      expect(a.field instanceof C_F1361).assertTrue()
+      expect(a.field.data instanceof int).assertTrue()
+      expect(a.field.data).assertEqual(4)
+      a.field = {data: 5}
+      expect(a.field instanceof C_F1361).assertTrue()
+      expect(a.field.data instanceof int).assertTrue()
+      expect(a.field.data).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1362
+     * @tc.name      testFieldInit1362
+     * @tc.desc      Checking creation interface object with field.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1362", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: I_F1362 = {field: 4}
+      expect(a.field instanceof long).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof long).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1363
+     * @tc.name      testFieldInit1363
+     * @tc.desc      Checking creation interface object with field.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1363", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: I_F1363 = {field: 4}
+      expect(a.field instanceof int).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof int).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1364
+     * @tc.name      testFieldInit1364
+     * @tc.desc      Checking creation interface object with field.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1364", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: I_F1364 = {field: 4}
+      expect(a.field instanceof byte).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof byte).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1365
+     * @tc.name      testFieldInit1365
+     * @tc.desc      Checking creation interface object with field.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1365", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: I_F1365 = {field: 4}
+      expect(a.field instanceof short).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof short).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1366
+     * @tc.name      testFieldInit1366
+     * @tc.desc      Checking creation interface object with field.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1366", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: I_F1366 = {field: 4}
+      expect(a.field instanceof double).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 7.3
+      expect(a.field instanceof double).assertTrue()
+      expect(a.field).assertEqual(7.3)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1367
+     * @tc.name      testFieldInit1367
+     * @tc.desc      Checking creation interface object with field.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1367", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: I_F1367 = {field: 4}
+      expect(a.field instanceof number).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof number).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1368
+     * @tc.name      testFieldInit1368
+     * @tc.desc      Checking creation interface object with field.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1368", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: I_F1368 = {field: 4.5f}
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(4.5f)
+      a.field = 7.3f
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(7.3f)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1369
+     * @tc.name      testFieldInit1369
+     * @tc.desc      Checking creation interface object with field.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1369", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: I_F1369 = {field: 4n}
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(4n)
+      a.field = 5n
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(5n)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1370
+     * @tc.name      testFieldInit1370
+     * @tc.desc      Checking creation interface object with field.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1370", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: I_F1370 = {field: "abc"}
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("abc")
+      a.field = "efg"
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("efg")
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1371
+     * @tc.name      testFieldInit1371
+     * @tc.desc      Checking creation interface object with field.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1371", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: I_F1371 = {field: c'a'}
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'a')
+      a.field = c'b'
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'b')
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1372
+     * @tc.name      testFieldInit1372
+     * @tc.desc      Checking creation interface object with field.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1372", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: I_F1372 = {field: false}
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(false)
+      a.field = true
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(true)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1373
+     * @tc.name      testFieldInit1373
+     * @tc.desc      Checking creation interface object with field.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1373", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: I_F1373 = {field: 4}
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1374
+     * @tc.name      testFieldInit1374
+     * @tc.desc      Checking creation interface object with field.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1374", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: I_F1374 = {field: 4}
+      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1375
+     * @tc.name      testFieldInit1375
+     * @tc.desc      Checking creation interface object with field.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1375", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: I_F1375 = {field: 4}
+      expect(a.field instanceof Any).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof Any).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1376
+     * @tc.name      testFieldInit1376
+     * @tc.desc      Checking the implementation of interface in namespace.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1376", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: ns.A_F1376 = new ns.A_F1376()
+      expect(a.field instanceof long).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.foo()
+      expect(a.field instanceof long).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1377
+     * @tc.name      testFieldInit1377
+     * @tc.desc      Checking the implementation of interface in namespace.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1377", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: ns.A_F1377 = new ns.A_F1377()
+      expect(a.field instanceof int).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.foo()
+      expect(a.field instanceof int).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1378
+     * @tc.name      testFieldInit1378
+     * @tc.desc      Checking the implementation of interface in namespace.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1378", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: ns.A_F1378 = new ns.A_F1378()
+      expect(a.field instanceof byte).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.foo()
+      expect(a.field instanceof byte).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1379
+     * @tc.name      testFieldInit1379
+     * @tc.desc      Checking the implementation of interface in namespace.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1379", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: ns.A_F1379 = new ns.A_F1379()
+      expect(a.field instanceof short).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.foo()
+      expect(a.field instanceof short).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1380
+     * @tc.name      testFieldInit1380
+     * @tc.desc      Checking the implementation of interface in namespace.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1380", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: ns.A_F1380 = new ns.A_F1380()
+      expect(a.field instanceof double).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.foo()
+      expect(a.field instanceof double).assertTrue()
+      expect(a.field).assertEqual(7.3)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1381
+     * @tc.name      testFieldInit1381
+     * @tc.desc      Checking the implementation of interface in namespace.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1381", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: ns.A_F1381 = new ns.A_F1381()
+      expect(a.field instanceof number).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.foo()
+      expect(a.field instanceof number).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1382
+     * @tc.name      testFieldInit1382
+     * @tc.desc      Checking the implementation of interface in namespace.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1382", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: ns.A_F1382 = new ns.A_F1382()
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(4.5f)
+      a.foo()
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(7.3f)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1383
+     * @tc.name      testFieldInit1383
+     * @tc.desc      Checking the implementation of interface in namespace.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1383", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: ns.A_F1383 = new ns.A_F1383()
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(4n)
+      a.foo()
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(5n)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1384
+     * @tc.name      testFieldInit1384
+     * @tc.desc      Checking the implementation of interface in namespace.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1384", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: ns.A_F1384 = new ns.A_F1384()
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("abc")
+      a.foo()
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("efg")
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1385
+     * @tc.name      testFieldInit1385
+     * @tc.desc      Checking the implementation of interface in namespace.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1385", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: ns.A_F1385 = new ns.A_F1385()
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'a')
+      a.foo()
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'b')
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_1386
+     * @tc.name      testFieldInit1386
+     * @tc.desc      Checking the implementation of interface in namespace.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit1386", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: ns.A_F1386 = new ns.A_F1386()
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(false)
+      a.foo()
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(true)
+    })
+  })
+}
