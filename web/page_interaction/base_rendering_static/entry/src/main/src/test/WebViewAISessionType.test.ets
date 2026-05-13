@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { beforeAll, describe, it, TestType, Size, Level, expect } from '../../../hypium/index';
+import { beforeAll, describe, it, TestType, Size, Level } from '../../../hypium/index';
 import Utils from '../../src/test/Util.test';
 import inspector from '@ohos.arkui.inspector';
 
@@ -40,8 +40,7 @@ export default function webViewAISessionTypeJsunit() {
       await Utils.msSleep(2000)
       Utils.registerEvent("testAiSessionOptionsStatic00", true, 2026060100, done);
       inspector.sendEventByKey('WebViewAISessionTypeButton', 10, '');
-      const sleepResult = await Utils.msSleep(2000);
-      expect(sleepResult).assertEqual(0);
+      await Utils.msSleep(2000);
       done();
     })
 
@@ -58,8 +57,7 @@ export default function webViewAISessionTypeJsunit() {
       await Utils.msSleep(2000)
       Utils.registerEvent("testAiSessionTypeStatic01", 2, 2026060101, done);
       inspector.sendEventByKey('WebViewAISessionTypeButton', 10, '');
-      const sleepResult = await Utils.msSleep(2000);
-      expect(sleepResult).assertEqual(0);
+      await Utils.msSleep(2000);
       done();
     })
 
@@ -76,8 +74,7 @@ export default function webViewAISessionTypeJsunit() {
       await Utils.msSleep(2000)
       Utils.registerEvent("testAiSessionTypeStatic02", 3, 2026060102, done);
       inspector.sendEventByKey('WebViewAISessionTypeButton', 10, '');
-      const sleepResult = await Utils.msSleep(2000);
-      expect(sleepResult).assertEqual(0);
+      await Utils.msSleep(2000);
       done();
     })
 
@@ -94,8 +91,7 @@ export default function webViewAISessionTypeJsunit() {
       await Utils.msSleep(2000)
       Utils.registerEvent("testAiSessionTypeStatic03", 4, 2026060103, done);
       inspector.sendEventByKey('WebViewAISessionTypeButton', 10, '');
-      const sleepResult = await Utils.msSleep(2000);
-      expect(sleepResult).assertEqual(0);
+      await Utils.msSleep(2000);
       done();
     })
 
@@ -112,8 +108,7 @@ export default function webViewAISessionTypeJsunit() {
       await Utils.msSleep(2000)
       Utils.registerEvent("testAiSessionTypeStatic04", 5, 2026060104, done);
       inspector.sendEventByKey('WebViewAISessionTypeButton', 10, '');
-      const sleepResult = await Utils.msSleep(2000);
-      expect(sleepResult).assertEqual(0);
+      await Utils.msSleep(2000);
       done();
     })
 
@@ -130,8 +125,7 @@ export default function webViewAISessionTypeJsunit() {
       await Utils.msSleep(2000)
       Utils.registerEvent("testAiSessionTypeStatic05", 6, 2026060105, done);
       inspector.sendEventByKey('WebViewAISessionTypeButton', 10, '');
-      const sleepResult = await Utils.msSleep(2000);
-      expect(sleepResult).assertEqual(0);
+      await Utils.msSleep(2000);
       done();
     })
 
@@ -148,8 +142,7 @@ export default function webViewAISessionTypeJsunit() {
       await Utils.msSleep(2000)
       Utils.registerEvent("testAiSessionTypeStatic06", 7, 2026060106, done);
       inspector.sendEventByKey('WebViewAISessionTypeButton', 10, '');
-      const sleepResult = await Utils.msSleep(2000);
-      expect(sleepResult).assertEqual(0);
+      await Utils.msSleep(2000);
       done();
     })
 
@@ -166,8 +159,7 @@ export default function webViewAISessionTypeJsunit() {
       await Utils.msSleep(2000)
       Utils.registerEvent("testAiSessionResultTypeStatic07", 0, 2026060107, done);
       inspector.sendEventByKey('WebViewAISessionTypeButton', 10, '');
-      const sleepResult = await Utils.msSleep(2000);
-      expect(sleepResult).assertEqual(0);
+      await Utils.msSleep(2000);
       done();
     })
 
@@ -184,8 +176,7 @@ export default function webViewAISessionTypeJsunit() {
       await Utils.msSleep(2000)
       Utils.registerEvent("testAiSessionResultTypeStatic08", 1, 2026060108, done);
       inspector.sendEventByKey('WebViewAISessionTypeButton', 10, '');
-      const sleepResult = await Utils.msSleep(2000);
-      expect(sleepResult).assertEqual(0);
+      await Utils.msSleep(2000);
       done();
     })
 
@@ -202,8 +193,7 @@ export default function webViewAISessionTypeJsunit() {
       await Utils.msSleep(2000)
       Utils.registerEvent("testAiSessionResultTypeStatic09", 2, 2026060109, done);
       inspector.sendEventByKey('WebViewAISessionTypeButton', 10, '');
-      const sleepResult = await Utils.msSleep(2000);
-      expect(sleepResult).assertEqual(0);
+      await Utils.msSleep(2000);
       done();
     })
 
@@ -220,8 +210,7 @@ export default function webViewAISessionTypeJsunit() {
       await Utils.msSleep(2000)
       Utils.registerEvent("testAiSessionEventStatic10", true, 2026060110, done);
       inspector.sendEventByKey('WebViewAISessionTypeButton', 10, '');
-      const sleepResult = await Utils.msSleep(2000);
-      expect(sleepResult).assertEqual(0);
+      await Utils.msSleep(2000);
       done();
     })
 
@@ -238,8 +227,7 @@ export default function webViewAISessionTypeJsunit() {
       await Utils.msSleep(2000)
       Utils.registerEvent("testAiSessionEventStatic11", true, 2026060111, done);
       inspector.sendEventByKey('WebViewAISessionTypeButton', 10, '');
-      const sleepResult = await Utils.msSleep(2000);
-      expect(sleepResult).assertEqual(0);
+      await Utils.msSleep(2000);
       done();
     })
 
@@ -256,8 +244,7 @@ export default function webViewAISessionTypeJsunit() {
       await Utils.msSleep(2000)
       Utils.registerEvent("testAiSessionEventStatic12", true, 2026060112, done);
       inspector.sendEventByKey('WebViewAISessionTypeButton', 10, '');
-      const sleepResult = await Utils.msSleep(2000);
-      expect(sleepResult).assertEqual(0);
+      await Utils.msSleep(2000);
       done();
     })
 
@@ -274,8 +261,7 @@ export default function webViewAISessionTypeJsunit() {
       await Utils.msSleep(2000)
       Utils.registerEvent("testAiSessionEventStatic13", true, 2026060113, done);
       inspector.sendEventByKey('WebViewAISessionTypeButton', 10, '');
-      const sleepResult = await Utils.msSleep(2000);
-      expect(sleepResult).assertEqual(0);
+      await Utils.msSleep(2000);
       done();
     })
   })

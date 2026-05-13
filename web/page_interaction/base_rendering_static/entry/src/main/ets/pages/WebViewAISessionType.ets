@@ -14,7 +14,8 @@
  * limitations under the License.
  */
 
-import { Entry, Component, Column, Row, Button, ClickEvent, Web, AISessionEvent, AISessionType, AISessionResultType, OnAISessionCallback, State } from '@kit.ArkUI'
+import { Entry, Component, Column, Row, Button, ClickEvent, Web, AISessionEvent, AISessionType, AISessionResultType, OnAISessionCallback } from '@ohos.arkui.component'
+import { State } from '@ohos.arkui.stateManagement'
 import web_webview from '@ohos.web.webview';
 import Utils from '../../src/test/Util.test';
 import { BusinessError, RecordData } from '@ohos.base';
@@ -139,7 +140,7 @@ struct WebViewAISessionType {
             }
           })
       }
-      Web({ src: 'about:blank', controller: this.controller })
+      Web({ src: 'https://www.baidu.com', controller: this.controller })
         .aiSessionOptions(this.hasAiSessions ? [this.promptSession] : undefined)
         .javaScriptAccess(true)
     }.width('100%').height('100%')

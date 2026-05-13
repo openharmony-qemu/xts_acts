@@ -3,7 +3,7 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  */
 
-import { beforeAll, describe, it, TestType, Size, Level, expect } from '../../../hypium/index';
+import { beforeAll, describe, it, TestType, Size, Level } from '../../../hypium/index';
 import Utils from './Util.test';
 import inspector from '@ohos.arkui.inspector';
 
@@ -29,8 +29,7 @@ export default function WebScrollDirectionalLockTest(): void {
       await Utils.msSleep(1000);
       Utils.registerEvent('testScrollDirectionalLock001', true, 185010, done);
       inspector.sendEventByKey('WebScrollDirectionalLockButton', 10, '');
-      const sleepResult = await Utils.msSleep(1500);
-      expect(sleepResult).assertEqual(0);
+      await Utils.msSleep(1500);
       done();
     })
 
@@ -47,8 +46,7 @@ export default function WebScrollDirectionalLockTest(): void {
       await Utils.msSleep(1000);
       Utils.registerEvent('testScrollDirectionalLock002', true, 185020, done);
       inspector.sendEventByKey('WebScrollDirectionalLockButton', 10, '');
-      const sleepResult = await Utils.msSleep(1500);
-      expect(sleepResult).assertEqual(0);
+      await Utils.msSleep(1500);
       done();
     })
   })

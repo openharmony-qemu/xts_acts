@@ -3,7 +3,7 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  */
 
-import { beforeAll, describe, it, TestType, Size, Level, expect } from '../../../hypium/index';
+import { beforeAll, describe, it, TestType, Size, Level } from '../../../hypium/index';
 import Utils from './Util.test';
 import inspector from '@ohos.arkui.inspector';
 
@@ -26,8 +26,7 @@ export default function WebScrollbarLayoutPolicyTest(): void {
       await Utils.msSleep(1000);
       Utils.registerEvent('testScrollbarLayoutPolicy001', true, 184010, done);
       inspector.sendEventByKey('ScrollbarLayoutPolicyButton', 10, '');
-      const sleepResult = await Utils.msSleep(1500);
-      expect(sleepResult).assertEqual(0);
+      await Utils.msSleep(1500);
       done();
     })
 
@@ -44,8 +43,7 @@ export default function WebScrollbarLayoutPolicyTest(): void {
       await Utils.msSleep(1000);
       Utils.registerEvent('testScrollbarLayoutPolicy002', true, 184020, done);
       inspector.sendEventByKey('ScrollbarLayoutPolicyButton', 10, '');
-      const sleepResult = await Utils.msSleep(1500);
-      expect(sleepResult).assertEqual(0);
+      await Utils.msSleep(1500);
       done();
     })
   })
