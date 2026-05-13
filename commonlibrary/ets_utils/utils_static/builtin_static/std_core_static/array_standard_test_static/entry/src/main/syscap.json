@@ -1,11 +1,10 @@
 {
     "devices": {
-        "general": ["default"],
+        "general": [],
         "custom": [
             {
                 "xts": [
-                    "SystemCapability.Startup.SystemInfo",
-                    "SystemCapability.HiviewDFX.Hilog"
+                    "SystemCapability.Startup.SystemInfo"
                 ]
             }
         ]
