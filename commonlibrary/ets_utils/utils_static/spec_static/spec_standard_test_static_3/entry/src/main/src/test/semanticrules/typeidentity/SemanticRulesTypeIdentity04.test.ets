@@ -1,3 +1,18 @@
+/*
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the 'License')
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an 'AS IS' BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
   from '../../../../../hypium/index';
 
@@ -1970,6 +1985,744 @@ export default function SemanticRulesTypeIdentity04(): void {
         expect(testNS188.runTest()).assertTrue();
       });
 
+    /**
+     * @tc.number    SUB_SEMANTIC_RULES_TYPE_IDENTITYTEST_5200
+     * @tc.name      testSemanticRulesTypeIdentity0052
+     * @tc.desc      Checking for Array types A[] and Array<B> for Union types A and B are identical
+     *               on predefined types on assign operations.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testSemanticRulesTypeIdentity0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
+      , (): void => {
+        const TAG = 'testSemanticRulesTypeIdentity0052';
 
+        let a: (Object | undefined)[] = [5n, undefined, "abc"];
+        let b: Array<undefined | Object> = foo(a);
+
+        expect(a instanceof Array).assertTrue();
+        expect(b instanceof Array).assertTrue();
+        expect(b.length).assertEqual(3);
+
+        expect(b[0] instanceof Object || b[0] === undefined).assertTrue();
+        expect(b[0] === undefined || b[0] instanceof Object).assertTrue();
+        expect(b[0]).assertEqual(5n);
+
+        expect(b[1] instanceof Object || b[1] === undefined).assertTrue();
+        expect(b[1] === undefined || b[1] instanceof Object).assertTrue();
+        expect(b[1]).assertEqual(undefined);
+
+        expect(b[2] instanceof Object || b[2] === undefined).assertTrue();
+        expect(b[2] === undefined || b[2] instanceof Object).assertTrue();
+        expect(b[2]).assertEqual("abc");
+
+        a = b;
+        expect(a instanceof Array).assertTrue();
+        expect(a.length).assertEqual(3);
+
+        expect(a[0] instanceof Object || a[0] === undefined).assertTrue();
+        expect(a[0] === undefined || a[0] instanceof Object).assertTrue();
+        expect(a[0]).assertEqual(5n);
+
+        expect(a[1] instanceof Object || a[1] === undefined).assertTrue();
+        expect(a[1] === undefined || a[1] instanceof Object).assertTrue();
+        expect(a[1]).assertEqual(undefined);
+
+        expect(a[2] instanceof Object || a[2] === undefined).assertTrue();
+        expect(a[2] === undefined || a[2] instanceof Object).assertTrue();
+        expect(a[2]).assertEqual("abc");
+
+        expect(testNS189.runTest()).assertTrue();
+        expect(testNS190.runTest()).assertTrue();
+        expect(testNS191.runTest()).assertTrue();
+        expect(testNS192.runTest()).assertTrue();
+        expect(testNS193.runTest()).assertTrue();
+      });
+
+    /**
+     * @tc.number    SUB_SEMANTIC_RULES_TYPE_IDENTITYTEST_5300
+     * @tc.name      testSemanticRulesTypeIdentity0053
+     * @tc.desc      Checking for Array types A[] and Array<B> for Union types A and B are identical
+     *               on predefined types on assign operations.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testSemanticRulesTypeIdentity0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
+      , (): void => {
+        const TAG = 'testSemanticRulesTypeIdentity0053';
+
+        let a: (Object | undefined)[] = [5n, undefined, "abc"];
+        let b: Array<undefined | Object> = foo(a);
+        expect(a instanceof Array).assertTrue();
+        expect(b instanceof Array).assertTrue();
+        expect(b.length).assertEqual(3);
+        expect(b[0]).assertEqual(5n);
+        expect(b[1]).assertEqual(undefined);
+        expect(b[2]).assertEqual("abc");
+        a = b;
+        expect(a instanceof Array).assertTrue();
+        expect(a.length).assertEqual(3);
+        expect(a[0]).assertEqual(5n);
+        expect(a[1]).assertEqual(undefined);
+        expect(a[2]).assertEqual("abc");
+
+        expect(testNS194.runTest()).assertTrue();
+        expect(testNS195.runTest()).assertTrue();
+        expect(testNS196.runTest()).assertTrue();
+        expect(testNS197.runTest()).assertTrue();
+        expect(testNS198.runTest()).assertTrue();
+      });
+
+    /**
+     * @tc.number    SUB_SEMANTIC_RULES_TYPE_IDENTITYTEST_5400
+     * @tc.name      testSemanticRulesTypeIdentity0054
+     * @tc.desc      Checking for Array types A[] and Array<B> for Union types A and B are identical
+     *               on predefined types on assign operations.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testSemanticRulesTypeIdentity0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
+      , (): void => {
+        const TAG = 'testSemanticRulesTypeIdentity0054';
+        let a: Array<Object | undefined> = [5n, undefined, "abc"]
+        let b: (undefined | Object)[] = foo18(a)
+        expect(a instanceof Array).assertTrue();
+        expect(b instanceof Array).assertTrue();
+        expect(b.length).assertEqual(3);
+        expect(b[0]).assertEqual(5n);
+        expect(b[1]).assertEqual(undefined);
+        expect(b[2]).assertEqual("abc");
+        a = b
+        expect(a instanceof Array).assertTrue();
+        expect(a.length).assertEqual(3);
+        expect(a[0]).assertEqual(5n);
+        expect(a[1]).assertEqual(undefined);
+        expect(a[2]).assertEqual("abc");
+
+        expect(testNS199.runTest()).assertTrue();
+        expect(testNS200.runTest()).assertTrue();
+        expect(testNS201.runTest()).assertTrue();
+        expect(testNS202.runTest()).assertTrue();
+        expect(testNS203.runTest()).assertTrue();
+      });
+
+    /**
+     * @tc.number    SUB_SEMANTIC_RULES_TYPE_IDENTITYTEST_5500
+     * @tc.name      testSemanticRulesTypeIdentity0055
+     * @tc.desc      Checking for Array types A[] and Array<B> for Union types A and B are identical
+     *               on predefined types on assign operations.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testSemanticRulesTypeIdentity0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
+      , (): void => {
+        const TAG = 'testSemanticRulesTypeIdentity0055';
+        let a: (Cat19 | Dog19 | Frog19 | number)[] = [new Cat19(), 7.8, new Dog19(), new Frog19()]
+        let b: Array<number | Dog19 | Cat19 | Frog19> = foo19(a)
+
+        expect(a instanceof Array).assertTrue();
+        expect(b instanceof Array).assertTrue();
+        expect(b.length).assertEqual(4);
+
+        expect(b[0] instanceof Cat19).assertTrue();
+        check_cat19(b[0])
+
+        expect(typeof b[1]).assertEqual("number");
+        expect(b[1] as number).assertEqual(7.8);
+
+        expect(b[2] instanceof Dog19).assertTrue();
+        check_dog19(b[2])
+
+        expect(b[3] instanceof Frog19).assertTrue();
+        check_frog19(b[3])
+
+        a = b
+
+        expect(a instanceof Array).assertTrue();
+        expect(a.length).assertEqual(4);
+
+        expect(a[0] instanceof Cat19).assertTrue();
+        check_cat19(a[0])
+
+        expect(typeof a[1]).assertEqual("number");
+        expect(a[1] as number).assertEqual(7.8);
+
+        expect(a[2] instanceof Dog19).assertTrue();
+        check_dog19(a[2])
+
+        expect(a[3] instanceof Frog19).assertTrue();
+        check_frog19(a[3])
+
+        expect(testNS204.runTest()).assertTrue();
+      })
+
+    /**
+     * @tc.number    SUB_SEMANTIC_RULES_TYPE_IDENTITYTEST_5600
+     * @tc.name      testSemanticRulesTypeIdentity0056
+     * @tc.desc      Checking for Array types A[] and Array<B> for Union types A and B are identical
+     *               on predefined types on assign operations.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testSemanticRulesTypeIdentity0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
+      , (): void => {
+        const TAG = 'testSemanticRulesTypeIdentity0056';
+        let a: Array<Cat20 | Dog20 | Frog20 | number> = [new Cat20(), 7.8, new Dog20(), new Frog20()]
+        let b: (number | Dog20 | Cat20 | Frog20)[] = foo20(a)
+
+        expect(a instanceof Array).assertTrue();
+        expect(b instanceof Array).assertTrue();
+        expect(b.length).assertEqual(4);
+
+        expect(b[0] instanceof Cat20).assertTrue();
+        check_cat20(b[0])
+
+        expect(typeof b[1]).assertEqual("number");
+        expect(b[1] as number).assertEqual(7.8);
+
+        expect(b[2] instanceof Dog20).assertTrue();
+        check_dog20(b[2])
+
+        expect(b[3] instanceof Frog20).assertTrue();
+        check_frog20(b[3])
+
+        a = b
+
+        expect(a instanceof Array).assertTrue();
+        expect(a.length).assertEqual(4);
+
+        expect(a[0] instanceof Cat20).assertTrue();
+        check_cat20(a[0])
+
+        expect(typeof a[1]).assertEqual("number");
+        expect(a[1] as number).assertEqual(7.8);
+
+        expect(a[2] instanceof Dog20).assertTrue();
+        check_dog20(a[2])
+
+        expect(a[3] instanceof Frog20).assertTrue();
+        check_frog20(a[3])
+
+        expect(testNS205.runTest()).assertTrue();
+      })
+
+
+    /**
+     * @tc.number    SUB_SEMANTIC_RULES_TYPE_IDENTITYTEST_5700
+     * @tc.name      testSemanticRulesTypeIdentity0057
+     * @tc.desc      Checking for Array types A[] and Array<B> for Union types A and B are identical
+     *               on predefined types on assign operations.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testSemanticRulesTypeIdentity0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
+      , (): void => {
+        const TAG = 'testSemanticRulesTypeIdentity0057';
+        let a: (Cat21 | Dog21 | Frog21 | number)[] = [new Cat21(), 7.8, new Dog21(), new Frog21()]
+        let b: Array<number | Dog21 | Cat21 | Frog21> = foo21(a)
+
+        expect(a instanceof Array).assertTrue();
+        expect(b instanceof Array).assertTrue();
+        expect(b.length).assertEqual(4);
+
+        expect(b[0] instanceof Cat21).assertTrue();
+        check_cat21(b[0])
+
+        expect(typeof b[1]).assertEqual("number");
+        expect(b[1] as number).assertEqual(7.8);
+
+        expect(b[2] instanceof Dog21).assertTrue();
+        check_dog21(b[2])
+
+        expect(b[3] instanceof Frog21).assertTrue();
+        check_frog21(b[3])
+
+        a = b
+
+        expect(a instanceof Array).assertTrue();
+        expect(a.length).assertEqual(4);
+
+        expect(a[0] instanceof Cat21).assertTrue();
+        check_cat21(a[0])
+
+        expect(typeof a[1]).assertEqual("number");
+        expect(a[1] as number).assertEqual(7.8);
+
+        expect(a[2] instanceof Dog21).assertTrue();
+        check_dog21(a[2])
+
+        expect(a[3] instanceof Frog21).assertTrue();
+        check_frog21(a[3])
+
+        expect(testNS206.runTest()).assertTrue();
+      })
+
+    /**
+     * @tc.number    SUB_SEMANTIC_RULES_TYPE_IDENTITYTEST_5800
+     * @tc.name      testSemanticRulesTypeIdentity0058
+     * @tc.desc      Checking for Array types A[] and Array<B> for Union types A and B are identical
+     *               on predefined types on assign operations.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testSemanticRulesTypeIdentity0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
+      , (): void => {
+        const TAG = 'testSemanticRulesTypeIdentity0058';
+        let a: Array<Cat22 | Dog22 | Frog22 | number> = [new Cat22(), 7.8, new Dog22(), new Frog22()]
+        let b: (number | Dog22 | Cat22 | Frog22)[] = foo22(a)
+
+        expect(a instanceof Array).assertTrue();
+        expect(b instanceof Array).assertTrue();
+        expect(b.length).assertEqual(4);
+
+        expect(b[0] instanceof Cat22).assertTrue();
+        check_cat22(b[0])
+
+        expect(typeof b[1]).assertEqual("number");
+        expect(b[1] as number).assertEqual(7.8);
+
+        expect(b[2] instanceof Dog22).assertTrue();
+        check_dog22(b[2])
+
+        expect(b[3] instanceof Frog22).assertTrue();
+        check_frog22(b[3])
+
+        a = b
+
+        expect(a instanceof Array).assertTrue();
+        expect(a.length).assertEqual(4);
+
+        expect(a[0] instanceof Cat22).assertTrue();
+        check_cat22(a[0])
+
+        expect(typeof a[1]).assertEqual("number");
+        expect(a[1] as number).assertEqual(7.8);
+
+        expect(a[2] instanceof Dog22).assertTrue();
+        check_dog22(a[2])
+
+        expect(a[3] instanceof Frog22).assertTrue();
+        check_frog22(a[3])
+
+        expect(testNS207.runTest()).assertTrue();
+      })
+
+    /**
+     * @tc.number    SUB_SEMANTIC_RULES_TYPE_IDENTITYTEST_5900
+     * @tc.name      testSemanticRulesTypeIdentity0059
+     * @tc.desc      Checking for Array types A[] and Array<B> for Union types A and B are identical
+     *               on predefined types on assign operations.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testSemanticRulesTypeIdentity0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
+      , (): void => {
+        const TAG = 'testSemanticRulesTypeIdentity0059';
+        let a: (Cat23 | Dog23 | Frog23 | number)[] = [new Cat23(), 7.8, new Dog23(), new Frog23()]
+        let b: Array<number | Dog23 | Cat23 | Frog23> = foo23(a)
+
+        expect(a instanceof Array).assertTrue();
+        expect(b instanceof Array).assertTrue();
+        expect(b.length).assertEqual(4);
+
+        expect(b[0] instanceof Cat23).assertTrue();
+        check_cat23(b[0])
+
+        expect(typeof b[1]).assertEqual("number");
+        expect(b[1] as number).assertEqual(7.8);
+
+        expect(b[2] instanceof Dog23).assertTrue();
+        check_dog23(b[2])
+
+        expect(b[3] instanceof Frog23).assertTrue();
+        check_frog23(b[3])
+
+        a = b
+
+        expect(a instanceof Array).assertTrue();
+        expect(a.length).assertEqual(4);
+
+        expect(a[0] instanceof Cat23).assertTrue();
+        check_cat23(a[0])
+
+        expect(typeof a[1]).assertEqual("number");
+        expect(a[1] as number).assertEqual(7.8);
+
+        expect(a[2] instanceof Dog23).assertTrue();
+        check_dog23(a[2])
+
+        expect(a[3] instanceof Frog23).assertTrue();
+        check_frog23(a[3])
+
+        expect(testNS208.runTest()).assertTrue();
+      })
+
+    /**
+     * @tc.number    SUB_SEMANTIC_RULES_TYPE_IDENTITYTEST_6000
+     * @tc.name      testSemanticRulesTypeIdentity0060
+     * @tc.desc      Checking for Array types A[] and Array<B> for Union types A and B are identical
+     *               on predefined types on assign operations.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testSemanticRulesTypeIdentity0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
+      , (): void => {
+        const TAG = 'testSemanticRulesTypeIdentity0060';
+        let a: Array<Cat24 | Dog24 | Frog24 | number> = [new Cat24(), 7.8, new Dog24(), new Frog24()]
+        let b: (number | Dog24 | Cat24 | Frog24)[] = foo24(a)
+
+        expect(a instanceof Array).assertTrue();
+        expect(b instanceof Array).assertTrue();
+        expect(b.length).assertEqual(4);
+
+        expect(b[0] instanceof Cat24).assertTrue();
+        check_cat24(b[0])
+
+        expect(typeof b[1]).assertEqual("number");
+        expect(b[1] as number).assertEqual(7.8);
+
+        expect(b[2] instanceof Dog24).assertTrue();
+        check_dog24(b[2])
+
+        expect(b[3] instanceof Frog24).assertTrue();
+        check_frog24(b[3])
+
+        a = b
+
+        expect(a instanceof Array).assertTrue();
+        expect(a.length).assertEqual(4);
+
+        expect(a[0] instanceof Cat24).assertTrue();
+        check_cat24(a[0])
+
+        expect(typeof a[1]).assertEqual("number");
+        expect(a[1] as number).assertEqual(7.8);
+
+        expect(a[2] instanceof Dog24).assertTrue();
+        check_dog24(a[2])
+
+        expect(a[3] instanceof Frog24).assertTrue();
+        check_frog24(a[3])
+
+        expect(testNS209.runTest()).assertTrue();
+      })
+
+    /**
+     * @tc.number    SUB_SEMANTIC_RULES_TYPE_IDENTITYTEST_6100
+     * @tc.name      testSemanticRulesTypeIdentity0061
+     * @tc.desc      Checking for Array types A[] and Array<B> for Union types A and B are identical
+     *               on predefined types on assign operations.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testSemanticRulesTypeIdentity0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
+      , (): void => {
+        const TAG = 'testSemanticRulesTypeIdentity0061';
+        let a: (Cat25 | Dog25 | Frog25 | number)[] = [new Cat25(), 7.8, new Dog25(), new Frog25()]
+        let b: Array<number | Dog25 | Cat25 | Frog25> = foo25(a)
+
+        expect(a instanceof Array).assertTrue();
+        expect(b instanceof Array).assertTrue();
+        expect(b.length).assertEqual(4);
+
+        expect(b[0] instanceof Cat25).assertTrue();
+        check_cat25(b[0])
+
+        expect(typeof b[1]).assertEqual("number");
+        expect(b[1] as number).assertEqual(7.8);
+
+        expect(b[2] instanceof Dog25).assertTrue();
+        check_dog25(b[2])
+
+        expect(b[3] instanceof Frog25).assertTrue();
+        check_frog25(b[3])
+
+        a = b
+
+        expect(a instanceof Array).assertTrue();
+        expect(a.length).assertEqual(4);
+
+        expect(a[0] instanceof Cat25).assertTrue();
+        check_cat25(a[0])
+
+        expect(typeof a[1]).assertEqual("number");
+        expect(a[1] as number).assertEqual(7.8);
+
+        expect(a[2] instanceof Dog25).assertTrue();
+        check_dog25(a[2])
+
+        expect(a[3] instanceof Frog25).assertTrue();
+        check_frog25(a[3])
+
+        expect(testNS210.runTest()).assertTrue();
+      })
+
+    /**
+     * @tc.number    SUB_SEMANTIC_RULES_TYPE_IDENTITYTEST_6200
+     * @tc.name      testSemanticRulesTypeIdentity0062
+     * @tc.desc      Checking for Array types A[] and Array<B> for Union types A and B are identical
+     *               on predefined types on assign operations.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testSemanticRulesTypeIdentity0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
+      , (): void => {
+        const TAG = 'testSemanticRulesTypeIdentity0062';
+        let a: Array<Cat26 | Dog26 | Frog26 | number> = [new Cat26(), 7.8, new Dog26(), new Frog26()]
+        let b: (number | Dog26 | Cat26 | Frog26)[] = foo26(a)
+
+        expect(a instanceof Array).assertTrue();
+        expect(b instanceof Array).assertTrue();
+        expect(b.length).assertEqual(4);
+
+        expect(b[0] instanceof Cat26).assertTrue();
+        check_cat26(b[0])
+
+        expect(typeof b[1]).assertEqual("number");
+        expect(b[1] as number).assertEqual(7.8);
+
+        expect(b[2] instanceof Dog26).assertTrue();
+        check_dog26(b[2])
+
+        expect(b[3] instanceof Frog26).assertTrue();
+        check_frog26(b[3])
+
+        a = b
+
+        expect(a instanceof Array).assertTrue();
+        expect(a.length).assertEqual(4);
+
+        expect(a[0] instanceof Cat26).assertTrue();
+        check_cat26(a[0])
+
+        expect(typeof a[1]).assertEqual("number");
+        expect(a[1] as number).assertEqual(7.8);
+
+        expect(a[2] instanceof Dog26).assertTrue();
+        check_dog26(a[2])
+
+        expect(a[3] instanceof Frog26).assertTrue();
+        check_frog26(a[3])
+
+        expect(testNS211.runTest()).assertTrue();
+      })
+
+    /**
+     * @tc.number    SUB_SEMANTIC_RULES_TYPE_IDENTITYTEST_6300
+     * @tc.name      testSemanticRulesTypeIdentity0063
+     * @tc.desc      Checking for Array types A[] and Array<B> for Union types A and B are identical
+     *               on predefined types on assign operations.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testSemanticRulesTypeIdentity0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
+      , (): void => {
+        const TAG = 'testSemanticRulesTypeIdentity0063';
+
+        let a: (Cat27 | Dog27 | Frog27 | number)[] = [new Cat27(), 7.8, new Dog27(), new Frog27()]
+        let b: Array<number | Dog27 | Cat27 | Frog27> = foo27(a)
+
+        expect(a instanceof Array).assertTrue();
+        expect(b instanceof Array).assertTrue();
+        expect(b.length).assertEqual(4);
+
+        expect(b[0] instanceof Cat27).assertTrue();
+        check_cat27(b[0])
+
+        expect(typeof b[1]).assertEqual("number");
+        expect(b[1] as number).assertEqual(7.8);
+
+        expect(b[2] instanceof Dog27).assertTrue();
+        check_dog27(b[2])
+
+        expect(b[3] instanceof Frog27).assertTrue();
+        check_frog27(b[3])
+
+        a = b
+
+        expect(a instanceof Array).assertTrue();
+        expect(a.length).assertEqual(4);
+
+        expect(a[0] instanceof Cat27).assertTrue();
+        check_cat27(a[0])
+
+        expect(typeof a[1]).assertEqual("number");
+        expect(a[1] as number).assertEqual(7.8);
+
+        expect(a[2] instanceof Dog27).assertTrue();
+        check_dog27(a[2])
+
+        expect(a[3] instanceof Frog27).assertTrue();
+        check_frog27(a[3])
+
+        expect(testNS212.runTest()).assertTrue();
+      })
+
+    /**
+     * @tc.number    SUB_SEMANTIC_RULES_TYPE_IDENTITYTEST_6400
+     * @tc.name      testSemanticRulesTypeIdentity0064
+     * @tc.desc      Checking for Array types A[] and Array<B> for Union types A and B are identical
+     *               on predefined types on assign operations.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testSemanticRulesTypeIdentity0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
+      , (): void => {
+        const TAG = 'testSemanticRulesTypeIdentity0064';
+
+        let a: Array<Cat28 | Dog28 | Frog28 | number> = [new Cat28(), 7.8, new Dog28(), new Frog28()]
+        let b: (number | Dog28 | Cat28 | Frog28)[] = foo28(a)
+
+        expect(a instanceof Array).assertTrue();
+        expect(b instanceof Array).assertTrue();
+        expect(b.length).assertEqual(4);
+
+        expect(b[0] instanceof Cat28).assertTrue();
+        check_cat28(b[0])
+
+        expect(typeof b[1]).assertEqual("number");
+        expect(b[1] as number).assertEqual(7.8);
+
+        expect(b[2] instanceof Dog28).assertTrue();
+        check_dog28(b[2])
+
+        expect(b[3] instanceof Frog28).assertTrue();
+        check_frog28(b[3])
+
+        a = b
+
+        expect(a instanceof Array).assertTrue();
+        expect(a.length).assertEqual(4);
+
+        expect(a[0] instanceof Cat28).assertTrue();
+        check_cat28(a[0])
+
+        expect(typeof a[1]).assertEqual("number");
+        expect(a[1] as number).assertEqual(7.8);
+
+        expect(a[2] instanceof Dog28).assertTrue();
+        check_dog28(a[2])
+
+        expect(a[3] instanceof Frog28).assertTrue();
+        check_frog28(a[3])
+
+        expect(testNS213.runTest()).assertTrue();
+      })
+
+    /**
+     * @tc.number    SUB_SEMANTIC_RULES_TYPE_IDENTITYTEST_6500
+     * @tc.name      testSemanticRulesTypeIdentity0065
+     * @tc.desc      Checking for Array types A[] and Array<B> for Union types A and B are identical
+     *               on predefined types on assign operations.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testSemanticRulesTypeIdentity0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
+      , (): void => {
+        const TAG = 'testSemanticRulesTypeIdentity0065';
+        let a: (Cat29 | Dog29 | Frog29 | number)[] = [new Cat29(), 7.8, new Dog29(), new Frog29()]
+        let b: Array<number | Dog29 | Cat29 | Frog29> = foo40(a)
+
+        expect(a instanceof Array).assertTrue();
+        expect(b instanceof Array).assertTrue();
+        expect(b.length).assertEqual(4);
+
+        expect(b[0] instanceof Cat29).assertTrue();
+        check_cat29(b[0])
+
+        expect(typeof b[1]).assertEqual("number");
+        expect(b[1] as number).assertEqual(7.8);
+
+        expect(b[2] instanceof Dog29).assertTrue();
+        check_dog29(b[2])
+
+        expect(b[3] instanceof Frog29).assertTrue();
+        check_frog29(b[3])
+
+        a = b
+
+        expect(a instanceof Array).assertTrue();
+        expect(a.length).assertEqual(4);
+
+        expect(a[0] instanceof Cat29).assertTrue();
+        check_cat29(a[0])
+
+        expect(typeof a[1]).assertEqual("number");
+        expect(a[1] as number).assertEqual(7.8);
+
+        expect(a[2] instanceof Dog29).assertTrue();
+        check_dog29(a[2])
+
+        expect(a[3] instanceof Frog29).assertTrue();
+        check_frog29(a[3])
+
+        expect(testNS214.runTest()).assertTrue();
+      })
+
+    /**
+     * @tc.number    SUB_SEMANTIC_RULES_TYPE_IDENTITYTEST_6600
+     * @tc.name      testSemanticRulesTypeIdentity0066
+     * @tc.desc      Checking for Array types A[] and Array<B> for Union types A and B are identical
+     *               on predefined types on assign operations.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testSemanticRulesTypeIdentity0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
+      , (): void => {
+        const TAG = 'testSemanticRulesTypeIdentity0066';
+
+        let a: Array<Cat30 | Dog30 | Frog30 | number> = [new Cat30(), 7.8, new Dog30(), new Frog30()]
+        let b: (number | Dog30 | Cat30 | Frog30)[] = foo30(a)
+
+        expect(a instanceof Array).assertTrue();
+        expect(b instanceof Array).assertTrue();
+        expect(b.length).assertEqual(4);
+
+        expect(b[0] instanceof Cat30).assertTrue();
+        check_cat30(b[0])
+
+        expect(typeof b[1]).assertEqual("number");
+        expect(b[1] as number).assertEqual(7.8);
+
+        expect(b[2] instanceof Dog30).assertTrue();
+        check_dog30(b[2])
+
+        expect(b[3] instanceof Frog30).assertTrue();
+        check_frog30(b[3])
+
+        a = b
+
+        expect(a instanceof Array).assertTrue();
+        expect(a.length).assertEqual(4);
+
+        expect(a[0] instanceof Cat30).assertTrue();
+        check_cat30(a[0])
+
+        expect(typeof a[1]).assertEqual("number");
+        expect(a[1] as number).assertEqual(7.8);
+
+        expect(a[2] instanceof Dog30).assertTrue();
+        check_dog30(a[2])
+
+        expect(a[3] instanceof Frog30).assertTrue();
+        check_frog30(a[3])
+
+        expect(testNS215.runTest()).assertTrue();
+      })
   });
 }
