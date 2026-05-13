@@ -42,6 +42,8 @@ group("bundlemanager") {
       "actsbmsmetadatatest:ActsBmsMetaDataTest",
       "actsbmsorientationetstest:ActsBmsOrientationTest",
       "actsbmsorientationetsteststatic:ActsBmsOrientationStaticTest",
+      "actsbmssetalternateicontest:ActsBmsSetAlternateIconTest",
+      "actsbmssetalternateiconteststatic:ActsBmsSetAlternateIconStaticTest",
       "actsbmssetshortcutvisibletest:ActsBmsSetShortcutVisibleTest",
       "actsbmssetshortcutvisibleteststatic:ActsBmsSetShortcutVisibleStaticTest",
       "actsbundlegetmainelementnametest:ActsBundleGetMainElementNameTest",
