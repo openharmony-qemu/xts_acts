@@ -74,26 +74,26 @@ export default function ArrayInvoke1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_0100
-     * @tc.name testArrayInvoke1001
+     * @tc.name testArrayInvoke001
      * @tc.desc Verify this invoke overload accepts no parameters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>();
       expect(arr.length).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_0200
-     * @tc.name testArrayInvoke1002
+     * @tc.name testArrayInvoke002
      * @tc.desc Verify passing parameters selects other array overloads
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<string>();
       expect(arr1.length).assertEqual(0);
 
@@ -106,13 +106,13 @@ export default function ArrayInvoke1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_0300
-     * @tc.name testArrayInvoke1003
+     * @tc.name testArrayInvoke003
      * @tc.desc Verify array invoke returns a new empty array instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>();
       expect(arr instanceof Array).assertTrue();
       expect(arr.length).assertEqual(0);
@@ -120,13 +120,13 @@ export default function ArrayInvoke1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_0400
-     * @tc.name testArrayInvoke1004
+     * @tc.name testArrayInvoke004
      * @tc.desc Verify array invoke returns empty arrays for different generic types
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const numArr = new Array<int>();
       const strArr = new Array<string>();
       const boolArr = new Array<boolean>();
@@ -142,26 +142,26 @@ export default function ArrayInvoke1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_0500
-     * @tc.name testArrayInvoke1005
+     * @tc.name testArrayInvoke005
      * @tc.desc Verify the return value is an array instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>();
       expect(arr instanceof Array).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_0600
-     * @tc.name testArrayInvoke1006
+     * @tc.name testArrayInvoke006
      * @tc.desc Verify the generic array keeps the expected element type usage
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const numArr = new Array<int>();
       const strArr = new Array<string>();
       let numVal: int = 0;
@@ -179,26 +179,26 @@ export default function ArrayInvoke1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_0700
-     * @tc.name testArrayInvoke1007
+     * @tc.name testArrayInvoke007
      * @tc.desc Verify the static invoke form can be reached through array construction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>();
       expect(arr1.length).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_0800
-     * @tc.name testArrayInvoke1008
+     * @tc.name testArrayInvoke008
      * @tc.desc Verify explicit generic syntax creates empty arrays as objects
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const numArr = new Array<int>();
       const strArr = new Array<string>();
       const boolArr = new Array<boolean>();
@@ -210,26 +210,26 @@ export default function ArrayInvoke1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_0900
-     * @tc.name testArrayInvoke1009
+     * @tc.name testArrayInvoke009
      * @tc.desc Verify a newly created array starts with length zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>();
       expect(arr.length).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_1000
-     * @tc.name testArrayInvoke1010
+     * @tc.name testArrayInvoke010
      * @tc.desc Verify empty array element access keeps safe behavior
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int | undefined>();
       try {
         const val = arr[0];
@@ -241,13 +241,13 @@ export default function ArrayInvoke1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_1100
-     * @tc.name testArrayInvoke1011
+     * @tc.name testArrayInvoke011
      * @tc.desc Verify push can add elements into an empty array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>();
       expect(arr.length).assertEqual(0);
 
@@ -262,13 +262,13 @@ export default function ArrayInvoke1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_1200
-     * @tc.name testArrayInvoke1012
+     * @tc.name testArrayInvoke012
      * @tc.desc Verify unshift inserts elements at the beginning of an empty array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>();
       arr.unshift(10);
       expect(arr.length).assertEqual(1);
@@ -282,13 +282,13 @@ export default function ArrayInvoke1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_1300
-     * @tc.name testArrayInvoke1013
+     * @tc.name testArrayInvoke013
      * @tc.desc Verify an empty array can grow dynamically by push operations
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>();
 
       for (let i = 0; i < 10; i++) {
@@ -303,13 +303,13 @@ export default function ArrayInvoke1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_1400
-     * @tc.name testArrayInvoke1014
+     * @tc.name testArrayInvoke014
      * @tc.desc Verify an empty number array can be created and used
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>();
       expect(arr.length).assertEqual(0);
 
@@ -319,13 +319,13 @@ export default function ArrayInvoke1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_1500
-     * @tc.name testArrayInvoke1015
+     * @tc.name testArrayInvoke015
      * @tc.desc Verify an empty string array can be created and used
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>();
       expect(arr.length).assertEqual(0);
 
@@ -335,13 +335,13 @@ export default function ArrayInvoke1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_1600
-     * @tc.name testArrayInvoke1016
+     * @tc.name testArrayInvoke016
      * @tc.desc Verify an empty boolean array can be created and used
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<boolean>();
       expect(arr.length).assertEqual(0);
 
@@ -351,13 +351,13 @@ export default function ArrayInvoke1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_1700
-     * @tc.name testArrayInvoke1017
+     * @tc.name testArrayInvoke017
      * @tc.desc Verify an empty array of a custom class type can be created
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<Item017>();
       expect(arr.length).assertEqual(0);
 
@@ -367,13 +367,13 @@ export default function ArrayInvoke1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_1800
-     * @tc.name testArrayInvoke1018
+     * @tc.name testArrayInvoke018
      * @tc.desc Verify an empty interface typed array can be created
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<Point018>();
       expect(arr.length).assertEqual(0);
 
@@ -384,13 +384,13 @@ export default function ArrayInvoke1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_1900
-     * @tc.name testArrayInvoke1019
+     * @tc.name testArrayInvoke019
      * @tc.desc Verify an empty union typed array can be created
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int | string>();
       expect(arr.length).assertEqual(0);
 
@@ -405,13 +405,13 @@ export default function ArrayInvoke1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_2000
-     * @tc.name testArrayInvoke1020
+     * @tc.name testArrayInvoke020
      * @tc.desc Verify an empty nested array can be created
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<Array<int>>();
       expect(arr.length).assertEqual(0);
 
@@ -425,13 +425,13 @@ export default function ArrayInvoke1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_2100
-     * @tc.name testArrayInvoke1021
+     * @tc.name testArrayInvoke021
      * @tc.desc Verify an empty array supports unknown size collection scenarios
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = new Array<int>();
 
       for (let i = 0; i < 10; i++) {
@@ -447,13 +447,13 @@ export default function ArrayInvoke1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_2200
-     * @tc.name testArrayInvoke1022
+     * @tc.name testArrayInvoke022
      * @tc.desc Verify an empty array can be used as a temporary container
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = processItems1022();
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual(100);
@@ -461,13 +461,13 @@ export default function ArrayInvoke1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_2300
-     * @tc.name testArrayInvoke1023
+     * @tc.name testArrayInvoke023
      * @tc.desc Verify an empty array can be passed into a function and filled
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>();
       fillArray1023(arr, 5);
 
@@ -478,13 +478,13 @@ export default function ArrayInvoke1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_2400
-     * @tc.name testArrayInvoke1024
+     * @tc.name testArrayInvoke024
      * @tc.desc Verify common methods behave correctly on an empty array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>();
 
       arr.pushOne(1);
@@ -503,13 +503,13 @@ export default function ArrayInvoke1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_2500
-     * @tc.name testArrayInvoke1025
+     * @tc.name testArrayInvoke025
      * @tc.desc Verify iterator style methods behave correctly on an empty array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>();
 
       let count = 0;
@@ -537,13 +537,13 @@ export default function ArrayInvoke1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_2600
-     * @tc.name testArrayInvoke1026
+     * @tc.name testArrayInvoke026
      * @tc.desc Verify search methods behave correctly on an empty array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>();
 
       expect(arr.indexOf(1)).assertEqual(-1);
@@ -555,13 +555,13 @@ export default function ArrayInvoke1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_2700
-     * @tc.name testArrayInvoke1027
+     * @tc.name testArrayInvoke027
      * @tc.desc Verify predicate methods behave correctly on an empty array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>();
       expect(arr.every((v: int): boolean => v > 0)).assertTrue();
       expect(arr.some((v: int): boolean => v > 0)).assertFalse();
@@ -569,13 +569,13 @@ export default function ArrayInvoke1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_2800
-     * @tc.name testArrayInvoke1028
+     * @tc.name testArrayInvoke028
      * @tc.desc Verify invoke without parameters matches constructor behavior
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<string>();
       expect(arr1.length).assertEqual(0);
 
@@ -585,13 +585,13 @@ export default function ArrayInvoke1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_2900
-     * @tc.name testArrayInvoke1029
+     * @tc.name testArrayInvoke029
      * @tc.desc Verify parameter count selects the expected array overload
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<string>();
       expect(arr1.length).assertEqual(0);
 
@@ -604,13 +604,13 @@ export default function ArrayInvoke1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_3000
-     * @tc.name testArrayInvoke1030
+     * @tc.name testArrayInvoke030
      * @tc.desc Verify explicit usage supports expected type inference scenarios
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>();
       arr1.pushOne(1);
 
@@ -622,13 +622,13 @@ export default function ArrayInvoke1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_3100
-     * @tc.name testArrayInvoke1031
+     * @tc.name testArrayInvoke031
      * @tc.desc Verify sequential push operations can start from an empty array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>();
       arr.pushOne(1);
       arr.pushOne(2);
@@ -639,13 +639,13 @@ export default function ArrayInvoke1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_3200
-     * @tc.name testArrayInvoke1032
+     * @tc.name testArrayInvoke032
      * @tc.desc Verify empty arrays can be created repeatedly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       for (let i = 0; i < 100; i++) {
         const arr = new Array<int>();
         expect(arr.length).assertEqual(0);
@@ -656,13 +656,13 @@ export default function ArrayInvoke1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_3300
-     * @tc.name testArrayInvoke1033
+     * @tc.name testArrayInvoke033
      * @tc.desc Verify an empty array keeps the smallest initialized length state
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const emptyArr = new Array<int>();
       const sizedArr = new Array<int>(100);
 
@@ -672,13 +672,13 @@ export default function ArrayInvoke1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_3400
-     * @tc.name testArrayInvoke1034
+     * @tc.name testArrayInvoke034
      * @tc.desc Verify the native invoke path creates a usable empty array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>();
       expect(arr.length).assertEqual(0);
 
@@ -688,13 +688,13 @@ export default function ArrayInvoke1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_3500
-     * @tc.name testArrayInvoke1035
+     * @tc.name testArrayInvoke035
      * @tc.desc Verify number arrays accept matching generic values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const numArr = new Array<int>();
       numArr.pushOne(123);
       expect(numArr[0]).assertEqual(123);
@@ -702,13 +702,13 @@ export default function ArrayInvoke1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_3600
-     * @tc.name testArrayInvoke1036
+     * @tc.name testArrayInvoke036
      * @tc.desc Verify empty array operations remain safe at runtime
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int | undefined>();
 
       expect(arr.length).assertEqual(0);
@@ -724,13 +724,13 @@ export default function ArrayInvoke1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_3700
-     * @tc.name testArrayInvoke1037
+     * @tc.name testArrayInvoke037
      * @tc.desc Verify new Array with no arguments behaves like invoke with no arguments
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>();
       expect(arr.length).assertEqual(0);
 
@@ -740,13 +740,13 @@ export default function ArrayInvoke1Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_3800
-     * @tc.name testArrayInvoke1038
+     * @tc.name testArrayInvoke038
      * @tc.desc Verify empty array construction suits dynamic and temporary container scenarios
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke1038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const dynamicArr = new Array<int>();
       for (let i = 0; i < 100; i++) {
         dynamicArr.pushOne(i);

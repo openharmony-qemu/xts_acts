@@ -49,13 +49,13 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_0100
-     * @tc.name testArrayInvoke2001
+     * @tc.name testArrayInvoke001
      * @tc.desc Verify arrayLength is optional for this invoke overload
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>();
       expect(arr1.length).assertEqual(0);
 
@@ -65,78 +65,78 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_0200
-     * @tc.name testArrayInvoke2002
+     * @tc.name testArrayInvoke002
      * @tc.desc Verify array construction accepts a normal length value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(5);
       expect(arr.length).assertEqual(5);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_0300
-     * @tc.name testArrayInvoke2003
+     * @tc.name testArrayInvoke003
      * @tc.desc Verify default construction uses length zero when no argument is provided
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>();
       expect(arr.length).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_0400
-     * @tc.name testArrayInvoke2004
+     * @tc.name testArrayInvoke004
      * @tc.desc Verify array construction supports an explicit zero length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(0);
       expect(arr.length).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_0500
-     * @tc.name testArrayInvoke2005
+     * @tc.name testArrayInvoke005
      * @tc.desc Verify array construction supports a length of one
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(1);
       expect(arr.length).assertEqual(1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_0600
-     * @tc.name testArrayInvoke2006
+     * @tc.name testArrayInvoke006
      * @tc.desc Verify array construction supports a larger length value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(1000);
       expect(arr.length).assertEqual(1000);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_0700
-     * @tc.name testArrayInvoke2007
+     * @tc.name testArrayInvoke007
      * @tc.desc Verify extremely large length input is handled safely by the runtime
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const arr = new Array<int>(Number.MAX_SAFE_INTEGER.toInt());
         expect(arr.length >= 0).assertTrue();
@@ -147,13 +147,13 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_0800
-     * @tc.name testArrayInvoke2008
+     * @tc.name testArrayInvoke008
      * @tc.desc Verify array construction rejects a negative length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const arr = new Array<int>(-1);
         expect().assertFail();
@@ -164,13 +164,13 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_0900
-     * @tc.name testArrayInvoke2009
+     * @tc.name testArrayInvoke009
      * @tc.desc Verify array construction rejects null passed as the length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // ArkTS rejects null-to-number length conversion at compile time.
       const documentedInvalidCase = ['null-length'];
       expect(documentedInvalidCase.length).assertEqual(1);
@@ -178,13 +178,13 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_1000
-     * @tc.name testArrayInvoke2010
+     * @tc.name testArrayInvoke010
      * @tc.desc Verify an undefined optional length path falls back to default construction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const optionalLength: int | undefined = undefined;
       let arr = new Array<int>();
       if (optionalLength != undefined) {
@@ -195,13 +195,13 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_1100
-     * @tc.name testArrayInvoke2011
+     * @tc.name testArrayInvoke011
      * @tc.desc Verify floating-point length is not preserved as an exact array size
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const floatLength: number = 5.5;
       try {
         const arr = new Array<int>(floatLength.toInt());
@@ -213,13 +213,13 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_1200
-     * @tc.name testArrayInvoke2012
+     * @tc.name testArrayInvoke012
      * @tc.desc Verify scientific notation length works after explicit integer normalization
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const scientificLength = (1e1).toInt();
       const arr = new Array<int>(scientificLength);
       expect(arr.length).assertEqual(10);
@@ -227,39 +227,39 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_1300
-     * @tc.name testArrayInvoke2013
+     * @tc.name testArrayInvoke013
      * @tc.desc Verify array construction accepts a hexadecimal length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(0x0A);
       expect(arr.length).assertEqual(10);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_1400
-     * @tc.name testArrayInvoke2014
+     * @tc.name testArrayInvoke014
      * @tc.desc Verify string to number length mismatch is rejected at compile time in ArkTS
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // ArkTS rejects string-to-number length mismatches at compile time.
       expect('string-length'.endsWith('length')).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_1500
-     * @tc.name testArrayInvoke2015
+     * @tc.name testArrayInvoke015
      * @tc.desc Verify array construction returns a new array with the requested length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(5);
       expect(arr instanceof Array).assertTrue();
       expect(arr.length).assertEqual(5);
@@ -267,13 +267,13 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_1600
-     * @tc.name testArrayInvoke2016
+     * @tc.name testArrayInvoke016
      * @tc.desc Verify array construction returns arrays of different generic types
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const numArr = new Array<int>(5);
       const strArr = new Array<string>(5);
       const boolArr = new Array<boolean>(5);
@@ -288,13 +288,13 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_1700
-     * @tc.name testArrayInvoke2017
+     * @tc.name testArrayInvoke017
      * @tc.desc Verify array elements remain uninitialized right after length-based construction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(5);
       expect(arr.length).assertEqual(5);
 
@@ -308,13 +308,13 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_1800
-     * @tc.name testArrayInvoke2018
+     * @tc.name testArrayInvoke018
      * @tc.desc Verify elements can be initialized and used safely after construction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(5);
 
       for (let i = 0; i < arr.length; i++) {
@@ -327,26 +327,26 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_1900
-     * @tc.name testArrayInvoke2019
+     * @tc.name testArrayInvoke019
      * @tc.desc Verify this static invoke overload is reached through new Array syntax
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10);
       expect(arr.length).assertEqual(10);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_2000
-     * @tc.name testArrayInvoke2020
+     * @tc.name testArrayInvoke020
      * @tc.desc Verify explicit generic syntax works with typed array construction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const numArr = new Array<int>(5);
       const strArr = new Array<string>(5);
 
@@ -359,13 +359,13 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_2100
-     * @tc.name testArrayInvoke2021
+     * @tc.name testArrayInvoke021
      * @tc.desc Verify omitting the argument uses the default length of zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>();
       const arr2 = new Array<int>(0);
       expect(arr.length).assertEqual(0);
@@ -374,26 +374,26 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_2200
-     * @tc.name testArrayInvoke2022
+     * @tc.name testArrayInvoke022
      * @tc.desc Verify providing a length argument creates an array of that size
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(100);
       expect(arr.length).assertEqual(100);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_2300
-     * @tc.name testArrayInvoke2023
+     * @tc.name testArrayInvoke023
      * @tc.desc Verify argument count selects the expected invoke overload
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<string>();
       const arr2 = new Array<int>(10);
       const arr3 = new Array<string>('a', 'b', 'c');
@@ -406,13 +406,13 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_2400
-     * @tc.name testArrayInvoke2024
+     * @tc.name testArrayInvoke024
      * @tc.desc Verify a number generic array can be created with a preset length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(5);
       for (let i = 0; i < arr.length; i++) {
         arr[i] = i;
@@ -422,13 +422,13 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_2500
-     * @tc.name testArrayInvoke2025
+     * @tc.name testArrayInvoke025
      * @tc.desc Verify a string generic array can be created with a preset length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>(3);
       arr[0] = 'hello';
       arr[1] = 'world';
@@ -438,13 +438,13 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_2600
-     * @tc.name testArrayInvoke2026
+     * @tc.name testArrayInvoke026
      * @tc.desc Verify a boolean generic array can be created with a preset length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<boolean>(2);
       arr[0] = true;
       arr[1] = false;
@@ -454,13 +454,13 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_2700
-     * @tc.name testArrayInvoke2027
+     * @tc.name testArrayInvoke027
      * @tc.desc Verify a custom class array can be created and populated
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<Item027>(3);
       arr[0] = new Item027(1);
       arr[1] = new Item027(2);
@@ -470,13 +470,13 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_2800
-     * @tc.name testArrayInvoke2028
+     * @tc.name testArrayInvoke028
      * @tc.desc Verify an interface typed array can be created and used
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<Point028>(2);
       arr[0] = { x: 1, y: 2 };
       arr[1] = { x: 3, y: 4 };
@@ -486,13 +486,13 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_2900
-     * @tc.name testArrayInvoke2029
+     * @tc.name testArrayInvoke029
      * @tc.desc Verify a union typed array can be created and hold mixed values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int | string>(5);
       arr[0] = 1;
       arr[1] = 'two';
@@ -505,13 +505,13 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_3000
-     * @tc.name testArrayInvoke2030
+     * @tc.name testArrayInvoke030
      * @tc.desc Verify uninitialized elements after length construction keep runtime-safe behavior
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(5);
 
       try {
@@ -524,13 +524,13 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_3100
-     * @tc.name testArrayInvoke2031
+     * @tc.name testArrayInvoke031
      * @tc.desc Verify arrays can be initialized by loop fill and Array.create usage
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(5);
       for (let i = 0; i < arr.length; i++) {
         arr[i] = 0;
@@ -549,13 +549,13 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_3200
-     * @tc.name testArrayInvoke2032
+     * @tc.name testArrayInvoke032
      * @tc.desc Verify initialized arrays support normal read write and push operations
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10);
       for (let i = 0; i < arr.length; i++) {
         arr[i] = i * 10;
@@ -575,13 +575,13 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_3300
-     * @tc.name testArrayInvoke2033
+     * @tc.name testArrayInvoke033
      * @tc.desc Verify preset length construction suits known-size preallocation scenarios
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(100);
       for (let i = 0; i < arr.length; i++) {
         arr[i] = i * i;
@@ -594,13 +594,13 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_3400
-     * @tc.name testArrayInvoke2034
+     * @tc.name testArrayInvoke034
      * @tc.desc Verify preset length arrays support batch data processing
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const size = 1000;
       const arr = new Array<int>(size);
       for (let i = 0; i < size; i++) {
@@ -618,13 +618,13 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_3500
-     * @tc.name testArrayInvoke2035
+     * @tc.name testArrayInvoke035
      * @tc.desc Verify arrays created with preset length can be resized dynamically
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10);
       for (let i = 0; i < arr.length; i++) {
         arr[i] = i;
@@ -642,13 +642,13 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_3600
-     * @tc.name testArrayInvoke2036
+     * @tc.name testArrayInvoke036
      * @tc.desc Verify this invoke overload behaves the same as constructor-style array creation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>(5);
       const arr2 = new Array<int>(5);
       expect(arr1.length).assertEqual(arr2.length);
@@ -656,13 +656,13 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_3700
-     * @tc.name testArrayInvoke2037
+     * @tc.name testArrayInvoke037
      * @tc.desc Verify Array.create initializes elements while length construction leaves them uninitialized
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>(5);
       try {
         const val = arr1[0];
@@ -678,13 +678,13 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_3800
-     * @tc.name testArrayInvoke2038
+     * @tc.name testArrayInvoke038
      * @tc.desc Verify overload selection follows the number of constructor arguments
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<string>();
       const arr2 = new Array<int>(10);
       const arr3 = new Array<int>(1, 2, 3);
@@ -697,13 +697,13 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_3900
-     * @tc.name testArrayInvoke2039
+     * @tc.name testArrayInvoke039
      * @tc.desc Verify zero-length arrays behave the same with explicit and default construction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(0);
       const arr2 = new Array<int>();
       expect(arr.length).assertEqual(0);
@@ -712,13 +712,13 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_4000
-     * @tc.name testArrayInvoke2040
+     * @tc.name testArrayInvoke040
      * @tc.desc Verify single-element arrays can be initialized and read correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(1);
       expect(arr.length).assertEqual(1);
 
@@ -728,13 +728,13 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_4100
-     * @tc.name testArrayInvoke2041
+     * @tc.name testArrayInvoke041
      * @tc.desc Verify large arrays can be created initialized and read correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10000);
       expect(arr.length).assertEqual(10000);
 
@@ -747,13 +747,13 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_4200
-     * @tc.name testArrayInvoke2042
+     * @tc.name testArrayInvoke042
      * @tc.desc Verify preallocated arrays can produce the same results as dynamically grown arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>(1000);
       for (let i = 0; i < 1000; i++) {
         arr1[i] = i;
@@ -771,13 +771,13 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_4300
-     * @tc.name testArrayInvoke2043
+     * @tc.name testArrayInvoke043
      * @tc.desc Verify invalid length arguments are rejected for negative and compile-time mismatched inputs
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const arr = new Array<int>(-1);
         expect().assertFail();
@@ -788,13 +788,13 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_4400
-     * @tc.name testArrayInvoke2044
+     * @tc.name testArrayInvoke044
      * @tc.desc Verify generic array construction supports matching runtime values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const numArr = new Array<int>(5);
       numArr.pushOne(123);
       expect(numArr[5]).assertEqual(123);
@@ -805,13 +805,13 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_4500
-     * @tc.name testArrayInvoke2045
+     * @tc.name testArrayInvoke045
      * @tc.desc Verify arrays can be initialized immediately and consumed by reduce
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10);
       arr.fill(0);
       const sum = arr.reduce((acc: int, v: int): int => acc + v, 0);
@@ -820,13 +820,13 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_4600
-     * @tc.name testArrayInvoke2046
+     * @tc.name testArrayInvoke046
      * @tc.desc Verify fill supports chained initialization before pushOne usage
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10);
       const newLength = arr.fill(-1).pushOne(100);
 
@@ -837,13 +837,13 @@ export default function ArrayInvoke2Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_4700
-     * @tc.name testArrayInvoke2047
+     * @tc.name testArrayInvoke047
      * @tc.desc Verify the native invoke overload creates a usable array instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke2047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(100);
       expect(arr.length).assertEqual(100);
 
