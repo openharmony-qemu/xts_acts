@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,36 +45,36 @@ class D extends C {
   d: string = "d"
 }
 
-class A1 {
+class A_1 {
   a: string = 'a'
 }
-type MyAwaited = Awaited<Promise<A1>>
+type MyAwaited = Awaited<Promise<A_1>>
 
-class C1 extends MyAwaited {}
+class C_1 extends MyAwaited {}
 
-class D1 extends C1 {
+class D_1 extends C_1 {
   d: string = "d"
 }
 
-class A2 {
+class A_2 {
   a: string = 'a'
 }
-type X = A2 | null | undefined
+type X = A_2 | null | undefined
 type NN = NonNullable<X>
 
-class C2 extends NN {}
+class C_2 extends NN {}
 
-class D2 extends C2 {
+class D_2 extends C_2 {
   d: string = "d"
 }
 
 
-class D3 {
+class D_3 {
   value: number = 11
 }
-class F extends D3 {}
+class F extends D_3 {}
 
-class A3<T> {
+class A_3<T> {
   value: T;
 
   constructor(value: T) {
@@ -90,18 +90,18 @@ class A3<T> {
   }
 }
 
-class B extends A3<number> {
+class B extends A_3<number> {
   constructor(value: number) {
     super(value);
   }
 }
 
-class D4 {
+class D_4 {
   value: number = 11
 }
-class F1 extends D4 {}
+class F_1 extends D_4 {}
 
-class A4<T> {
+class A_4<T> {
   value: T;
 
   constructor(value: T) {
@@ -117,18 +117,18 @@ class A4<T> {
   }
 }
 
-class B1<T> extends A4<T> {
+class B_1<T> extends A_4<T> {
   constructor(value: T) {
     super(value);
   }
 }
 
-class D5 {
+class D_5 {
   value: number = 11
 }
-class F2 extends D5 {}
+class F_2 extends D_5 {}
 
-class A5<T> {
+class A_5<T> {
   value: T;
 
   constructor(value: T) {
@@ -144,18 +144,18 @@ class A5<T> {
   }
 }
 
-class B2<T extends number> extends A5<T> {
+class B_2<T extends number> extends A_5<T> {
   constructor(value: T) {
     super(value);
   }
 }
 
-class D6 {
+class D_6 {
   value: number = 11
 }
-class F3 extends D6 {}
+class F_3 extends D_6 {}
 
-class A6<T> {
+class A_6<T> {
   value: T;
 
   constructor(value: T) {
@@ -171,18 +171,18 @@ class A6<T> {
   }
 }
 
-class B3<T extends D6> extends A6<T> {
+class B_3<T extends D_6> extends A_6<T> {
   constructor(value: T) {
     super(value);
   }
 }
 
-class D7 {
+class D_7 {
   value: number = 11
 }
-class F4 extends D7 {}
+class F_4 extends D_7 {}
 
-class A7<T1,T2> {
+class A_7<T1,T2> {
   value: T1;
 
   constructor(value: T1) {
@@ -198,18 +198,18 @@ class A7<T1,T2> {
   }
 }
 
-class B4<T extends D7> extends A7<T,number> {
+class B_4<T extends D_7> extends A_7<T,number> {
   constructor(value: T) {
     super(value);
   }
 }
 
-class D8 {
+class D_8 {
   value: number = 11
 }
-class F5 extends D8 {}
+class F_5 extends D_8 {}
 
-class A8<T1,out T2 extends T1> {
+class A_8<T1,out T2 extends T1> {
   value: T1;
 
   constructor(value: T2) {
@@ -225,18 +225,18 @@ class A8<T1,out T2 extends T1> {
   }
 }
 
-class B5<T extends D8> extends A8<D8,F5> {
-  constructor(value: F5) {
+class B_5<T extends D_8> extends A_8<D_8,F_5> {
+  constructor(value: F_5) {
     super(value);
   }
 }
 
-class D9 {
+class D_9 {
   value: number = 11
 }
-class F6 extends D9 {}
+class F_6 extends D_9 {}
 
-class A9<in T1 extends T2,T2> {
+class A_9<in T1 extends T2,T2> {
   value: T2;
 
   constructor(value: T2) {
@@ -252,8 +252,8 @@ class A9<in T1 extends T2,T2> {
   }
 }
 
-class B6<T extends D9> extends A9<T,D9> {
-  constructor(value: D9) {
+class B_6<T extends D_9> extends A_9<T,D_9> {
+  constructor(value: D_9) {
     super(value);
   }
 }
@@ -310,7 +310,7 @@ export default function ExtensionClausePositiveTest():void {
      */
     it("testExtensionClausePositive0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testExtensionClausePositive0002';
-      const d: D1 = new D1
+      const d: D_1 = new D_1
       expect(d.a).assertEqual('a')
       expect(d.d).assertEqual('d')
     });
@@ -325,7 +325,7 @@ export default function ExtensionClausePositiveTest():void {
      */
     it("testExtensionClausePositive0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testExtensionClausePositive0003';
-      const d: D2 = new D2
+      const d: D_2 = new D_2
       expect(d.a).assertEqual('a')
       expect(d.d).assertEqual('d')
     });
@@ -354,7 +354,7 @@ export default function ExtensionClausePositiveTest():void {
      */
     it("testExtensionClausePositive0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testExtensionClausePositive0005';
-      let b: B1<number> = new B1<number>(10)
+      let b: B_1<number> = new B_1<number>(10)
       expect(b.value).assertEqual(10)
     });
 
@@ -368,7 +368,7 @@ export default function ExtensionClausePositiveTest():void {
      */
     it("testExtensionClausePositive0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testExtensionClausePositive0006';
-      let b: B2<number> = new B2<number>(10)
+      let b: B_2<number> = new B_2<number>(10)
       expect(b.value).assertEqual(10)
     });
 
@@ -382,7 +382,7 @@ export default function ExtensionClausePositiveTest():void {
      */
     it("testExtensionClausePositive0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testExtensionClausePositive0007';
-      let b: B3<D6> = new B3<D6>(new F3())
+      let b: B_3<D_6> = new B_3<D_6>(new F_3())
       expect(b.value.value).assertEqual(11)
     });
 
@@ -396,7 +396,7 @@ export default function ExtensionClausePositiveTest():void {
      */
     it("testExtensionClausePositive0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testExtensionClausePositive0008';
-      let b: B4<D7> = new B4<D7>(new F4())
+      let b: B_4<D_7> = new B_4<D_7>(new F_4())
       expect(b.value.value).assertEqual(11)
     });
 
@@ -410,7 +410,7 @@ export default function ExtensionClausePositiveTest():void {
      */
     it("testExtensionClausePositive0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testExtensionClausePositive0008';
-      let b: B5<D8> = new B5<D8>(new F5())
+      let b: B_5<D_8> = new B_5<D_8>(new F_5())
       expect(b.value.value).assertEqual(11)
     });
 
@@ -424,7 +424,7 @@ export default function ExtensionClausePositiveTest():void {
      */
     it("testExtensionClausePositive0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testExtensionClausePositive0008';
-      let b: B6<D9> = new B6<D9>(new F6())
+      let b: B_6<D_9> = new B_6<D_9>(new F_6())
       expect(b.value.value).assertEqual(11)
     });
   })

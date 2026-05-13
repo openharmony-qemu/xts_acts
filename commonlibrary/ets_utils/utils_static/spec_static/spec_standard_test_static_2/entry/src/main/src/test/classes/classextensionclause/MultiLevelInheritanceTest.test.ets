@@ -59,7 +59,7 @@ class C extends B {
   }
 }
 
-class A1 {
+class A_1 {
   public _publicVar: number;
 
   constructor() {
@@ -68,13 +68,13 @@ class A1 {
   }
 }
 
-class B1 extends A1 {
+class B_1 extends A_1 {
   constructor() {
     super();
   }
 }
 
-class C1 extends B1 {
+class C_1 extends B_1 {
   constructor() {
     super();
   }
@@ -84,7 +84,7 @@ class C1 extends B1 {
   }
 }
 
-class A2 {
+class A_2 {
   public _publicVar: number;
 
   constructor() {
@@ -92,7 +92,7 @@ class A2 {
   }
 }
 
-class B2 extends A2 {
+class B_2 extends A_2 {
   constructor() {
     super();
   }
@@ -102,7 +102,7 @@ class B2 extends A2 {
   }
 }
 
-class A3 {
+class A_3 {
   public _publicVar: number;
 
   constructor() {
@@ -110,13 +110,13 @@ class A3 {
   }
 }
 
-class B3 extends A3 {
+class B_3 extends A_3 {
   constructor() {
     super();
   }
 }
 
-class C2 extends B3 {
+class C_2 extends B_3 {
   constructor() {
     super();
   }
@@ -126,10 +126,10 @@ class C2 extends B3 {
   }
 }
 
-class A4 {
+class A_4 {
 }
 
-class B4 extends A4 {
+class B_4 extends A_4 {
   public _publicVar: number;
 
   constructor() {
@@ -137,41 +137,41 @@ class B4 extends A4 {
   }
 }
 
-class C3 extends B4 {
+class C_3 extends B_4 {
 
 }
 
-class D extends C3 {
+class D extends C_3 {
   test() {
     expect(this._publicVar).assertEqual(2);
   }
 }
 
-class A5 {
+class A_5 {
   public _publicVar: number;
 }
 
-class B5 extends A5 {
+class B_5 extends A_5 {
   constructor() {
     this._publicVar = 2;
   }
 }
 
-class C4 extends B5 {
+class C_4 extends B_5 {
 
 }
 
-class D1 extends C4 {
+class D_1 extends C_4 {
   constructor() {
     this._publicVar = 20;
   }
 }
 
-class E extends D1 {
+class E extends D_1 {
 
 }
 
-class A6 {
+class A_6 {
   public _publicVar: number;
 
   constructor() {
@@ -179,27 +179,27 @@ class A6 {
   }
 }
 
-class B6 extends A6 {
+class B_6 extends A_6 {
 
 }
 
-class C5 extends B6 {
+class C_5 extends B_6 {
 
 }
 
-class D2 extends C5 {
+class D_2 extends C_5 {
 
 }
 
-class E1 extends D2 {
+class E_1 extends D_2 {
 
 }
 
-class F extends E1 {
+class F extends E_1 {
 
 }
 
-class A7 {
+class A_7 {
   public _publicVar: string;
 
   constructor() {
@@ -207,7 +207,7 @@ class A7 {
   }
 }
 
-class B7 extends A7 {
+class B_7 extends A_7 {
   constructor() {
     super();
   }
@@ -217,7 +217,7 @@ class B7 extends A7 {
   }
 }
 
-class A8 {
+class A_8 {
   public _publicVar: string;
 
   constructor() {
@@ -225,13 +225,13 @@ class A8 {
   }
 }
 
-class B8 extends A8 {
+class B_8 extends A_8 {
   constructor() {
     super();
   }
 }
 
-class C6 extends B8 {
+class C_6 extends B_8 {
   constructor() {
     super();
   }
@@ -241,10 +241,10 @@ class C6 extends B8 {
   }
 }
 
-class A9 {
+class A_9 {
 }
 
-class B9 extends A9 {
+class B_9 extends A_9 {
   public _publicVar: string;
 
   constructor() {
@@ -252,17 +252,17 @@ class B9 extends A9 {
   }
 }
 
-class C7 extends B9 {
+class C_7 extends B_9 {
 
 }
 
-class D3 extends C7 {
+class D_3 extends C_7 {
   test() {
     expect(this._publicVar).assertEqual('Multi-level inheritance');
   }
 }
 
-class A10 {
+class A_10 {
   public _publicVar: string;
 
   constructor() {
@@ -270,52 +270,52 @@ class A10 {
   }
 }
 
-class B10 extends A10 {
+class B_10 extends A_10 {
 
 }
 
-class C8 extends B10 {
+class C_8 extends B_10 {
 
 }
 
-class D4 extends C8 {
+class D_4 extends C_8 {
   constructor() {
     this._publicVar = 'aaa';
   }
 }
 
-class E2 extends D4 {
+class E_2 extends D_4 {
 
 }
 
-class A11 {
+class A_11 {
   public _publicVar: string;
   constructor() {
     this._publicVar = 'Multi-level inheritance';
   }
 }
 
-class B11 extends A11 {
+class B_11 extends A_11 {
 
 }
 
-class C9 extends B11 {
+class C_9 extends B_11 {
 
 }
 
-class D5 extends C9 {
+class D_5 extends C_9 {
 
 }
 
-class E3 extends D5 {
+class E_3 extends D_5 {
 
 }
 
-class F1 extends E3 {
+class F_1 extends E_3 {
 
 }
 
-class A12 {
+class A_12 {
   public _publicVar: null;
 
   constructor() {
@@ -323,7 +323,7 @@ class A12 {
   }
 }
 
-class B12 extends A12 {
+class B_12 extends A_12 {
   constructor() {
     super();
   }
@@ -333,20 +333,20 @@ class B12 extends A12 {
   }
 }
 
-class A13 {
+class A_13 {
   public _publicVar: null;
   constructor() {
     this._publicVar = null;
   }
 }
 
-class B13 extends A13 {
+class B_13 extends A_13 {
   constructor() {
     super();
   }
 }
 
-class C10 extends B13 {
+class C_10 extends B_13 {
   constructor() {
     super();
   }
@@ -356,11 +356,11 @@ class C10 extends B13 {
   }
 }
 
-class A14 {
+class A_14 {
 
 }
 
-class B14 extends A14 {
+class B_14 extends A_14 {
   public _publicVar: null;
 
   constructor() {
@@ -368,17 +368,17 @@ class B14 extends A14 {
   }
 }
 
-class C11 extends B14 {
+class C_11 extends B_14 {
 
 }
 
-class D6 extends C11 {
+class D_6 extends C_11 {
   test() {
     expect(this._publicVar).assertEqual(null);
   }
 }
 
-class A15 {
+class A_15 {
   public _publicVar: null;
 
   constructor() {
@@ -386,25 +386,25 @@ class A15 {
   }
 }
 
-class B15 extends A15 {
+class B_15 extends A_15 {
 
 }
 
-class C12 extends B15 {
+class C_12 extends B_15 {
 
 }
 
-class D7 extends C12 {
+class D_7 extends C_12 {
   constructor() {
     this._publicVar = null;
   }
 }
 
-class E4 extends D7 {
+class E_4 extends D_7 {
 
 }
 
-class A16 {
+class A_16 {
   public _publicVar: null;
 
   constructor() {
@@ -412,27 +412,27 @@ class A16 {
   }
 }
 
-class B16 extends A16 {
+class B_16 extends A_16 {
 
 }
 
-class C13 extends B16 {
+class C_13 extends B_16 {
 
 }
 
-class D8 extends C13 {
+class D_8 extends C_13 {
 
 }
 
-class E5 extends D8 {
+class E_5 extends D_8 {
 
 }
 
-class F2 extends E5 {
+class F_2 extends E_5 {
 
 }
 
-class A17 {
+class A_17 {
   public _publicVar:boolean;
 
   constructor() {
@@ -440,7 +440,7 @@ class A17 {
   }
 }
 
-class B17 extends A17 {
+class B_17 extends A_17 {
   constructor() {
     super();
   }
@@ -450,20 +450,20 @@ class B17 extends A17 {
   }
 }
 
-class A18 {
+class A_18 {
   public _publicVar: boolean;
   constructor() {
     this._publicVar = true;
   }
 }
 
-class B18 extends A18 {
+class B_18 extends A_18 {
   constructor() {
     super();
   }
 }
 
-class C14 extends B18 {
+class C_14 extends B_18 {
   constructor() {
     super();
   }
@@ -473,11 +473,11 @@ class C14 extends B18 {
   }
 }
 
-class A19 {
+class A_19 {
 
 }
 
-class B19 extends A19 {
+class B_19 extends A_19 {
   public _publicVar: boolean;
 
   constructor() {
@@ -485,67 +485,67 @@ class B19 extends A19 {
   }
 }
 
-class C15 extends B19 {
+class C_15 extends B_19 {
 
 }
 
-class D9 extends C15 {
+class D_9 extends C_15 {
   test() {
     expect(this._publicVar).assertEqual(true);
   }
 }
 
-class A20 {
+class A_20 {
   public _publicVar: boolean;
   constructor() {
     this._publicVar = true;
   }
 }
 
-class B20 extends A20 {
+class B_20 extends A_20 {
 
 }
 
-class C16 extends B20 {
+class C_16 extends B_20 {
 
 }
 
-class D10 extends C16 {
+class D_10 extends C_16 {
   constructor() {
     this._publicVar = false;
   }
 }
 
-class E6 extends D10 {
+class E_6 extends D_10 {
 
 }
 
-class A21 {
+class A_21 {
   public _publicVar: boolean;
   constructor() {
     this._publicVar = true;
   }
 }
 
-class B21 extends A21 {
+class B_21 extends A_21 {
 
 }
 
-class C17 extends B21 {
+class C_17 extends B_21 {
 
 }
 
-class D11 extends C17 {
+class D_11 extends C_17 {
   constructor() {
     this._publicVar = false;
   }
 }
 
-class E7 extends D11 {
+class E_7 extends D_11 {
 
 }
 
-class A22 {
+class A_22 {
   public _publicVar: boolean;
 
   constructor() {
@@ -553,27 +553,27 @@ class A22 {
   }
 }
 
-class B22 extends A22 {
+class B_22 extends A_22 {
 
 }
 
-class C18 extends B22 {
+class C_18 extends B_22 {
 
 }
 
-class D12 extends C18 {
+class D_12 extends C_18 {
 
 }
 
-class E8 extends D12 {
+class E_8 extends D_12 {
 
 }
 
-class F3 extends E8 {
+class F_3 extends E_8 {
 
 }
 
-class A23 {
+class A_23 {
   public _publicVar: number[];
 
   constructor() {
@@ -581,7 +581,7 @@ class A23 {
   }
 }
 
-class B23 extends A23 {
+class B_23 extends A_23 {
   constructor() {
     super();
   }
@@ -591,7 +591,7 @@ class B23 extends A23 {
   }
 }
 
-class A24 {
+class A_24 {
   public _publicVar: number[];
 
   constructor() {
@@ -599,13 +599,13 @@ class A24 {
   }
 }
 
-class B24 extends A24 {
+class B_24 extends A_24 {
   constructor() {
     super();
   }
 }
 
-class C19 extends B24 {
+class C_19 extends B_24 {
   constructor() {
     super();
   }
@@ -615,11 +615,11 @@ class C19 extends B24 {
   }
 }
 
-class A25 {
+class A_25 {
 
 }
 
-class B25 extends A25 {
+class B_25 extends A_25 {
   public _publicVar: number[];
 
   constructor() {
@@ -627,17 +627,17 @@ class B25 extends A25 {
   }
 }
 
-class C20 extends B25 {
+class C_20 extends B_25 {
 
 }
 
-class D13 extends C20 {
+class D_13 extends C_20 {
   test() {
     expect(this._publicVar[0]).assertEqual(1);
   }
 }
 
-class A26 {
+class A_26 {
   public _publicVar: number[];
 
   constructor() {
@@ -645,25 +645,25 @@ class A26 {
   }
 }
 
-class B26 extends A26 {
+class B_26 extends A_26 {
 
 }
 
-class C21 extends B26 {
+class C_21 extends B_26 {
 
 }
 
-class D14 extends C21 {
+class D_14 extends C_21 {
   constructor() {
     this._publicVar = [0];
   }
 }
 
-class E9 extends D14 {
+class E_9 extends D_14 {
 
 }
 
-class A27 {
+class A_27 {
   public _publicVar: number[];
 
   constructor() {
@@ -671,27 +671,27 @@ class A27 {
   }
 }
 
-class B27 extends A27 {
+class B_27 extends A_27 {
 
 }
 
-class C22 extends B27 {
+class C_22 extends B_27 {
 
 }
 
-class D15 extends C22 {
+class D_15 extends C_22 {
 
 }
 
-class E10 extends D15 {
+class E_10 extends D_15 {
 
 }
 
-class F4 extends E10 {
+class F_4 extends E_10 {
 
 }
 
-class A28 {
+class A_28 {
   public _publicVar: number[];
 
   constructor() {
@@ -699,7 +699,7 @@ class A28 {
   }
 }
 
-class B28 extends A28 {
+class B_28 extends A_28 {
   constructor() {
     super();
   }
@@ -709,7 +709,7 @@ class B28 extends A28 {
   }
 }
 
-class A29 {
+class A_29 {
   public _publicVar: number[];
 
   constructor() {
@@ -717,13 +717,13 @@ class A29 {
   }
 }
 
-class B29 extends A29 {
+class B_29 extends A_29 {
   constructor() {
     super();
   }
 }
 
-class C23 extends B29 {
+class C_23 extends B_29 {
   constructor() {
     super();
   }
@@ -733,10 +733,10 @@ class C23 extends B29 {
   }
 }
 
-class A30 {
+class A_30 {
 }
 
-class B30 extends A30 {
+class B_30 extends A_30 {
   public _publicVar: number[];
 
   constructor() {
@@ -744,17 +744,17 @@ class B30 extends A30 {
   }
 }
 
-class C24 extends B30 {
+class C_24 extends B_30 {
 
 }
 
-class D16 extends C24 {
+class D_16 extends C_24 {
   test() {
     expect(this._publicVar[0]).assertEqual(1);
   }
 }
 
-class A31 {
+class A_31 {
   public _publicVar: number[];
 
   constructor() {
@@ -762,21 +762,21 @@ class A31 {
   }
 }
 
-class B31 extends A31 {
+class B_31 extends A_31 {
 
 }
 
-class C25 extends B31 {
+class C_25 extends B_31 {
 
 }
 
-class D17 extends C25 {
+class D_17 extends C_25 {
   constructor() {
     this._publicVar = [0];
   }
 }
 
-class E11 extends D17 {
+class E_11 extends D_17 {
   constructor() {
   }
 
@@ -785,7 +785,7 @@ class E11 extends D17 {
   }
 }
 
-class A32 {
+class A_32 {
   public _publicVar: number[];
 
   constructor() {
@@ -793,23 +793,23 @@ class A32 {
   }
 }
 
-class B32 extends A32 {
+class B_32 extends A_32 {
 
 }
 
-class C26 extends B32 {
+class C_26 extends B_32 {
 
 }
 
-class D18 extends C26 {
+class D_18 extends C_26 {
 
 }
 
-class E12 extends D18 {
+class E_12 extends D_18 {
 
 }
 
-class F5 extends E12 {
+class F_5 extends E_12 {
   constructor() {
     this._publicVar
     expect(this._publicVar[0]).assertEqual(1);
@@ -819,7 +819,7 @@ class F5 extends E12 {
   }
 }
 
-class A33 {
+class A_33 {
   public _publicVar: boolean;
 
   constructor() {
@@ -827,7 +827,7 @@ class A33 {
   }
 }
 
-class B33 extends A33 {
+class B_33 extends A_33 {
   constructor() {
     super();
   }
@@ -837,7 +837,7 @@ class B33 extends A33 {
   }
 }
 
-class A34 {
+class A_34 {
   public _publicVar: boolean;
 
   constructor() {
@@ -845,13 +845,13 @@ class A34 {
   }
 }
 
-class B34 extends A34 {
+class B_34 extends A_34 {
   constructor() {
     super();
   }
 }
 
-class C27 extends B34 {
+class C_27 extends B_34 {
   constructor() {
     super();
   }
@@ -861,10 +861,10 @@ class C27 extends B34 {
   }
 }
 
-class A35 {
+class A_35 {
 }
 
-class B35 extends A35 {
+class B_35 extends A_35 {
   public _publicVar: boolean;
 
   constructor() {
@@ -872,17 +872,17 @@ class B35 extends A35 {
   }
 }
 
-class C28 extends B35 {
+class C_28 extends B_35 {
 
 }
 
-class D19 extends C28 {
+class D_19 extends C_28 {
   test() {
     expect(this._publicVar).assertEqual(true);
   }
 }
 
-class A36 {
+class A_36 {
   public _publicVar: boolean;
 
   constructor() {
@@ -890,21 +890,21 @@ class A36 {
   }
 }
 
-class B36 extends A36 {
+class B_36 extends A_36 {
 
 }
 
-class C29 extends B36 {
+class C_29 extends B_36 {
 
 }
 
-class D20 extends C29 {
+class D_20 extends C_29 {
   constructor() {
     this._publicVar = false;
   }
 }
 
-class E13 extends D20 {
+class E_13 extends D_20 {
   constructor() {
     expect(this._publicVar).assertEqual(false);
   }
@@ -914,7 +914,7 @@ class E13 extends D20 {
   }
 }
 
-class A37 {
+class A_37 {
   public _publicVar: boolean;
 
   constructor() {
@@ -922,23 +922,23 @@ class A37 {
   }
 }
 
-class B37 extends A37 {
+class B_37 extends A_37 {
 
 }
 
-class C30 extends B37 {
+class C_30 extends B_37 {
 
 }
 
-class D21 extends C30 {
+class D_21 extends C_30 {
 
 }
 
-class E14 extends D21 {
+class E_14 extends D_21 {
 
 }
 
-class F6 extends E14 {
+class F_6 extends E_14 {
   constructor() {
     expect(this._publicVar).assertEqual(true);
   }
@@ -948,7 +948,7 @@ class F6 extends E14 {
   }
 }
 
-class A38 {
+class A_38 {
   public _publicVar: number;
 
   constructor() {
@@ -957,13 +957,13 @@ class A38 {
   }
 }
 
-class B38 extends A38 {
+class B_38 extends A_38 {
   constructor() {
     super();
   }
 }
 
-class C31 extends B38 {
+class C_31 extends B_38 {
   constructor() {
     super();
   }
@@ -974,7 +974,7 @@ class C31 extends B38 {
   }
 }
 
-class A39 {
+class A_39 {
   public _publicVar: null;
 
   constructor() {
@@ -982,7 +982,7 @@ class A39 {
   }
 }
 
-class B39 extends A39 {
+class B_39 extends A_39 {
   constructor() {
     super();
   }
@@ -992,7 +992,7 @@ class B39 extends A39 {
   }
 }
 
-class A40 {
+class A_40 {
   public _publicVar: null;
 
   constructor() {
@@ -1000,13 +1000,13 @@ class A40 {
   }
 }
 
-class B40 extends A40 {
+class B_40 extends A_40 {
   constructor() {
     super();
   }
 }
 
-class C32 extends B40 {
+class C_32 extends B_40 {
   constructor() {
     super();
   }
@@ -1016,11 +1016,11 @@ class C32 extends B40 {
   }
 }
 
-class A41 {
+class A_41 {
 
 }
 
-class B41 extends A41 {
+class B_41 extends A_41 {
   public _publicVar: null;
 
   constructor() {
@@ -1028,17 +1028,17 @@ class B41 extends A41 {
   }
 }
 
-class C33 extends B41 {
+class C_33 extends B_41 {
 
 }
 
-class D22 extends C33 {
+class D_22 extends C_33 {
   test() {
     expect(this._publicVar).assertEqual(null);
   }
 }
 
-class A42 {
+class A_42 {
   public _publicVar: null;
 
   constructor() {
@@ -1046,27 +1046,27 @@ class A42 {
   }
 }
 
-class B42 extends A42 {
+class B_42 extends A_42 {
 
 }
 
-class C34 extends B42 {
+class C_34 extends B_42 {
 
 }
 
-class D23 extends C34 {
+class D_23 extends C_34 {
   constructor() {
     this._publicVar = null;
   }
 }
 
-class E15 extends D23 {
+class E_15 extends D_23 {
   test() {
     expect(this._publicVar).assertEqual(null);
   }
 }
 
-class A43 {
+class A_43 {
   public _publicVar: null;
 
   constructor() {
@@ -1075,29 +1075,29 @@ class A43 {
 
 }
 
-class B43 extends A43 {
+class B_43 extends A_43 {
 
 }
 
-class C35 extends B43 {
+class C_35 extends B_43 {
 
 }
 
-class D24 extends C35 {
+class D_24 extends C_35 {
 
 }
 
-class E16 extends D24 {
+class E_16 extends D_24 {
 
 }
 
-class F7 extends E16 {
+class F_7 extends E_16 {
   test() {
     expect(this._publicVar).assertEqual(null);
   }
 }
 
-class A44 {
+class A_44 {
   public _publicVar: string;
 
   constructor() {
@@ -1105,7 +1105,7 @@ class A44 {
   }
 }
 
-class B44 extends A44 {
+class B_44 extends A_44 {
   constructor() {
     super();
   }
@@ -1115,7 +1115,7 @@ class B44 extends A44 {
   }
 }
 
-class A45 {
+class A_45 {
   public _publicVar: string;
 
   constructor() {
@@ -1123,13 +1123,13 @@ class A45 {
   }
 }
 
-class B45 extends A45 {
+class B_45 extends A_45 {
   constructor() {
     super();
   }
 }
 
-class C36 extends B45 {
+class C_36 extends B_45 {
   constructor() {
     super();
   }
@@ -1139,11 +1139,11 @@ class C36 extends B45 {
   }
 }
 
-class A46 {
+class A_46 {
 
 }
 
-class B46 extends A46 {
+class B_46 extends A_46 {
   public _publicVar: string;
 
   constructor() {
@@ -1151,17 +1151,17 @@ class B46 extends A46 {
   }
 }
 
-class C37 extends B46 {
+class C_37 extends B_46 {
 
 }
 
-class D25 extends C37 {
+class D_25 extends C_37 {
   test() {
     expect(this._publicVar).assertEqual('Multi-level inheritance');
   }
 }
 
-class A47 {
+class A_47 {
   public _publicVar: string;
 
   constructor() {
@@ -1169,27 +1169,27 @@ class A47 {
   }
 }
 
-class B47 extends A47 {
+class B_47 extends A_47 {
 
 }
 
-class C38 extends B47 {
+class C_38 extends B_47 {
 
 }
 
-class D26 extends C38 {
+class D_26 extends C_38 {
   constructor() {
     this._publicVar = 'aaa';
   }
 }
 
-class E17 extends D26 {
+class E_17 extends D_26 {
   test() {
     expect(this._publicVar).assertEqual('aaa');
   }
 }
 
-class A48 {
+class A_48 {
   public _publicVar: string;
 
   constructor() {
@@ -1198,29 +1198,29 @@ class A48 {
 
 }
 
-class B48 extends A48 {
+class B_48 extends A_48 {
 
 }
 
-class C39 extends B48 {
+class C_39 extends B_48 {
 
 }
 
-class D27 extends C39 {
+class D_27 extends C_39 {
 
 }
 
-class E18 extends D27 {
+class E_18 extends D_27 {
 
 }
 
-class F8 extends E18 {
+class F_8 extends E_18 {
   test() {
     expect(this._publicVar).assertEqual('Multi-level inheritance');
   }
 }
 
-class A49 {
+class A_49 {
   public _publicVar: number;
 
   constructor() {
@@ -1228,7 +1228,7 @@ class A49 {
   }
 }
 
-class B49 extends A49 {
+class B_49 extends A_49 {
   constructor() {
     super();
   }
@@ -1238,7 +1238,7 @@ class B49 extends A49 {
   }
 }
 
-class A50 {
+class A_50 {
   public _publicVar: number;
 
   constructor() {
@@ -1246,13 +1246,13 @@ class A50 {
   }
 }
 
-class B50 extends A50 {
+class B_50 extends A_50 {
   constructor() {
     super();
   }
 }
 
-class C40 extends B50 {
+class C_40 extends B_50 {
   constructor() {
     super();
   }
@@ -1262,11 +1262,11 @@ class C40 extends B50 {
   }
 }
 
-class A51 {
+class A_51 {
 
 }
 
-class B51 extends A51 {
+class B_51 extends A_51 {
   public _publicVar: number;
 
   constructor() {
@@ -1274,43 +1274,43 @@ class B51 extends A51 {
   }
 }
 
-class C41 extends B51 {
+class C_41 extends B_51 {
 
 }
 
-class D28 extends C41 {
+class D_28 extends C_41 {
   test() {
     expect(this._publicVar).assertEqual(2);
   }
 }
 
-class A52 {
+class A_52 {
   public _publicVar: number;
 }
 
-class B52 extends A52 {
+class B_52 extends A_52 {
   constructor() {
     this._publicVar = 2;
   }
 }
 
-class C42 extends B52 {
+class C_42 extends B_52 {
 
 }
 
-class D29 extends C42 {
+class D_29 extends C_42 {
   constructor() {
     this._publicVar = 20;
   }
 }
 
-class E19 extends D29 {
+class E_19 extends D_29 {
   test() {
     expect(this._publicVar).assertEqual(20);
   }
 }
 
-class A53 {
+class A_53 {
   public _publicVar: number;
 
   constructor() {
@@ -1319,23 +1319,23 @@ class A53 {
 
 }
 
-class B53 extends A53 {
+class B_53 extends A_53 {
 
 }
 
-class C43 extends B53 {
+class C_43 extends B_53 {
 
 }
 
-class D30 extends C43 {
+class D_30 extends C_43 {
 
 }
 
-class E20 extends D30 {
+class E_20 extends D_30 {
 
 }
 
-class F9 extends E20 {
+class F_9 extends E_20 {
   test() {
     expect(this._publicVar).assertEqual(2)
   }
@@ -1368,767 +1368,767 @@ export default function MultiLevelInheritanceTest():void {
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_0100
-     * @tc.name      tesMultiLevelInheritance0001
+     * @tc.name      testMultiLevelInheritance0001
      * @tc.desc      Verify that class C inherits public variable _publicVar with value 3 from class A through class B
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testInterfaceChildConstVer0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInterfaceChildConstVer0001';
+    it("testMultiLevelInheritance0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0001';
       let test: C = new C();
       expect(test._publicVar).assertEqual(3);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_0200
-     * @tc.name      tesMultiLevelInheritance0002
+     * @tc.name      testMultiLevelInheritance0002
      * @tc.desc      Test whether class c can correctly obtain the initial value of the public variable _publicVar
      * in class a after indirectly inheriting class a from class b
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0002';
-      let test: C1 = new C1();
+    it("testMultiLevelInheritance0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0002';
+      let test: C_1 = new C_1();
       expect(test._publicVar).assertEqual(3);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_0300
-     * @tc.name      tesMultiLevelInheritance0003
-     * @tc.desc      Verify that class C1 inherits public variable _publicVar with value 3 from class A1 through class B1
+     * @tc.name      testMultiLevelInheritance0003
+     * @tc.desc      Verify that class C_1 inherits public variable _publicVar with value 3 from class A_1 through class B_1
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0003';
-      let test: B2 = new B2();
+    it("testMultiLevelInheritance0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0003';
+      let test: B_2 = new B_2();
       expect(test._publicVar).assertEqual(2);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_0400
-     * @tc.name      tesMultiLevelInheritance0004
+     * @tc.name      testMultiLevelInheritance0004
      * @tc.desc      To verify whether the instance of class c can accurately obtain the initial value of the public
      * variable _publicVar in class a after class c indirectly inherits class a through class b
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0004';
-      let test: C2 = new C2();
+    it("testMultiLevelInheritance0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0004';
+      let test: C_2 = new C_2();
       expect(test._publicVar).assertEqual(2);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_0500
-     * @tc.name      tesMultiLevelInheritance0005
+     * @tc.name      testMultiLevelInheritance0005
      * @tc.desc      Test whether class d indirectly inherits class b through class c to correctly obtain the initial
      * value of the public variable _publicVar in class b
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0005';
+    it("testMultiLevelInheritance0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0005';
       let test: D = new D();
       expect(test._publicVar).assertEqual(2);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_0600
-     * @tc.name      tesMultiLevelInheritance0006
-     * @tc.desc      Verify that class E inherits overridden _publicVar with value 20 from class D1 in multi-level inheritance
+     * @tc.name      testMultiLevelInheritance0006
+     * @tc.desc      Verify that class E inherits overridden _publicVar with value 20 from class D_1 in multi-level inheritance
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0006';
+    it("testMultiLevelInheritance0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0006';
       let test: E = new E();
       expect(test._publicVar).assertEqual(20);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_0700
-     * @tc.name      tesMultiLevelInheritance0007
+     * @tc.name      testMultiLevelInheritance0007
      * @tc.desc      Check whether the instance of class f can accurately obtain the initial value of the public
      * variable _publicVar in class a after multiple layers of inheritance
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0007';
+    it("testMultiLevelInheritance0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0007';
       let test: F = new F();
       expect(test._publicVar).assertEqual(2);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_0800
-     * @tc.name      tesMultiLevelInheritance0008
+     * @tc.name      testMultiLevelInheritance0008
      * @tc.desc      Verify that the instance of class b inherits from class a can correctly obtain the initial string
      * value of the public variable _publicVar in class a
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0008';
-      let test: B7 = new B7();
+    it("testMultiLevelInheritance0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0008';
+      let test: B_7 = new B_7();
       expect(test._publicVar).assertEqual('Multi-level inheritance');
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_0900
-     * @tc.name      tesMultiLevelInheritance0009
+     * @tc.name      testMultiLevelInheritance0009
      * @tc.desc      Multi-level inheritance verifies that the public member variable _publicVar in class a is passed
      * correctly in subclass c and maintains its initial value
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0009';
-      let test: C6 = new C6();
+    it("testMultiLevelInheritance0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0009';
+      let test: C_6 = new C_6();
       expect(test._publicVar).assertEqual('Multi-level inheritance');
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_1000
-     * @tc.name      tesMultiLevelInheritance0010
+     * @tc.name      testMultiLevelInheritance0010
      * @tc.desc      Multi-level inheritance verifies that the public member variable _publicVar in class b is
      * correctly initialized to a specific string value in subclass d
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0010';
-      let test: D3 = new D3();
+    it("testMultiLevelInheritance0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0010';
+      let test: D_3 = new D_3();
       expect(test._publicVar).assertEqual('Multi-level inheritance');
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_1100
-     * @tc.name      tesMultiLevelInheritance0011
-     * @tc.desc      Verify that class E2 inherits overridden _publicVar with value 'aaa' from class D4
+     * @tc.name      testMultiLevelInheritance0011
+     * @tc.desc      Verify that class E_2 inherits overridden _publicVar with value 'aaa' from class D_4
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0011';
-      let test: E2 = new E2();
+    it("testMultiLevelInheritance0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0011';
+      let test: E_2 = new E_2();
       expect(test._publicVar).assertEqual('aaa');
     });
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_1200
-     * @tc.name      tesMultiLevelInheritance0012
-     * @tc.desc      Verify that class F1 inherits _publicVar with value 'Multi-level inheritance' through 4-level inheritance chain
+     * @tc.name      testMultiLevelInheritance0012
+     * @tc.desc      Verify that class F_1 inherits _publicVar with value 'Multi-level inheritance' through 4-level inheritance chain
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0012';
-      let test: F1 = new F1();
+    it("testMultiLevelInheritance0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0012';
+      let test: F_1 = new F_1();
       expect(test._publicVar).assertEqual('Multi-level inheritance');
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_1300
-     * @tc.name      tesMultiLevelInheritance0013
-     * @tc.desc      Verify that class B12 inherits _publicVar initialized to null from class A12
+     * @tc.name      testMultiLevelInheritance0013
+     * @tc.desc      Verify that class B_12 inherits _publicVar initialized to null from class A_12
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0013';
-      let test: B12 = new B12();
+    it("testMultiLevelInheritance0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0013';
+      let test: B_12 = new B_12();
       expect(test._publicVar).assertEqual(null);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_1400
-     * @tc.name      tesMultiLevelInheritance0014
+     * @tc.name      testMultiLevelInheritance0014
      * @tc.desc      Verify that the public member variable _publicVar inherited from class a is correctly initialized
      * to null in subclass c
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0014';
-      let test: C10 = new C10();
+    it("testMultiLevelInheritance0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0014';
+      let test: C_10 = new C_10();
       expect(test._publicVar).assertEqual(null);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_1500
-     * @tc.name      tesMultiLevelInheritance0015
+     * @tc.name      testMultiLevelInheritance0015
      * @tc.desc      Class d inherits class c and indirectly inherits class b can the actual instance correctly obtain
      * the initial null value of the public variable _publicVar in class b
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0015';
-      let test: D6 = new D6();
+    it("testMultiLevelInheritance0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0015';
+      let test: D_6 = new D_6();
       expect(test._publicVar).assertEqual(null);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_1600
-     * @tc.name      tesMultiLevelInheritance0016
+     * @tc.name      testMultiLevelInheritance0016
      * @tc.desc      Verify that the instance of class e can correctly obtain the null value of the variable after
      * multiple layers of inheritance and class d resets the value of the inherited variable
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0016';
-      let test: E4 = new E4();
+    it("testMultiLevelInheritance0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0016';
+      let test: E_4 = new E_4();
       expect(test._publicVar).assertEqual(null);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_1800
-     * @tc.name      tesMultiLevelInheritance0018
+     * @tc.name      testMultiLevelInheritance0018
      * @tc.desc      Check whether the instance of class b inherits class a and class b can accurately obtain the
      * initial value of the public variable _publicVar in class a
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0018';
-      let test: B17 = new B17();
+    it("testMultiLevelInheritance0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0018';
+      let test: B_17 = new B_17();
       expect(test._publicVar).assertEqual(true);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_1900
-     * @tc.name      tesMultiLevelInheritance0019
+     * @tc.name      testMultiLevelInheritance0019
      * @tc.desc      To verify that class c indirectly inherits class a from class b and can correctly obtain the
      * initial value of the public variable _publicVar defined by class a
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0019';
-      let test: C14 = new C14();
+    it("testMultiLevelInheritance0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0019';
+      let test: C_14 = new C_14();
       expect(test._publicVar).assertEqual(true);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_2000
-     * @tc.name      tesMultiLevelInheritance0020
+     * @tc.name      testMultiLevelInheritance0020
      * @tc.desc      Test whether class d can correctly obtain the initial value of the public variable _publicVar
      * defined in class b by inheriting class C
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0020';
-      let test: D9 = new D9();
+    it("testMultiLevelInheritance0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0020';
+      let test: D_9 = new D_9();
       expect(test._publicVar).assertEqual(true);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_2100
-     * @tc.name      tesMultiLevelInheritance0021
+     * @tc.name      testMultiLevelInheritance0021
      * @tc.desc      Test whether the instance of class e can obtain the overridden value of the variable _public_var
      * inherited from class a by overriding the multi-layer inheritance class d
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0021';
-      let test: E7 = new E7();
+    it("testMultiLevelInheritance0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0021';
+      let test: E_7 = new E_7();
       expect(test._publicVar).assertEqual(false);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_2200
-     * @tc.name      tesMultiLevelInheritance0022
+     * @tc.name      testMultiLevelInheritance0022
      * @tc.desc      Verify that the instance of the multi-layer inheritance class f can correctly access and obtain
      * the initial value of the public boolean variable _publicVar defined in class a
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0022';
-      let test: F3 = new F3();
+    it("testMultiLevelInheritance0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0022';
+      let test: F_3 = new F_3();
       expect(test._publicVar).assertEqual(true);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_2300
-     * @tc.name      tesMultiLevelInheritance0023
+     * @tc.name      testMultiLevelInheritance0023
      * @tc.desc      Test whether class b can correctly access the public variable _publicVar defined in class a and
      * obtain the value of its first element after inheriting class a
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0023';
-      let test: B23 = new B23();
+    it("testMultiLevelInheritance0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0023';
+      let test: B_23 = new B_23();
       expect(test._publicVar[0]).assertEqual(1);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_2400
-     * @tc.name      tesMultiLevelInheritance0024
+     * @tc.name      testMultiLevelInheritance0024
      * @tc.desc      Test whether class c can correctly access the public variable _publicVar defined in class a and
      * obtain the value of its first element after inheriting class b and indirectly inheriting class a
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0024';
-      let test: C19 = new C19();
+    it("testMultiLevelInheritance0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0024';
+      let test: C_19 = new C_19();
       expect(test._publicVar[0]).assertEqual(1);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_2500
-     * @tc.name      tesMultiLevelInheritance0025
+     * @tc.name      testMultiLevelInheritance0025
      * @tc.desc      Test whether class d can correctly access the public variable _publicVar defined in class b and
      * obtain the value of its first element after inheriting from class b
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0025';
-      let test: D13 = new D13();
+    it("testMultiLevelInheritance0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0025';
+      let test: D_13 = new D_13();
       expect(test._publicVar[0]).assertEqual(1);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_2600
-     * @tc.name      tesMultiLevelInheritance0026
-     * @tc.desc      Verify that class E9 inherits overridden _publicVar with first element 0 from class D14
+     * @tc.name      testMultiLevelInheritance0026
+     * @tc.desc      Verify that class E_9 inherits overridden _publicVar with first element 0 from class D_14
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0026';
-      let test: E9 = new E9();
+    it("testMultiLevelInheritance0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0026';
+      let test: E_9 = new E_9();
       expect(test._publicVar[0]).assertEqual(0);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_2700
-     * @tc.name      tesMultiLevelInheritance0027
-     * @tc.desc      Verify that class F5 inherits public _publicVar with first element 1 from class A28 through 4-level chain
+     * @tc.name      testMultiLevelInheritance0027
+     * @tc.desc      Verify that class F_5 inherits public _publicVar with first element 1 from class A_28 through 4-level chain
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0027';
-      let test: F4 = new F4();
+    it("testMultiLevelInheritance0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0027';
+      let test: F_4 = new F_4();
       expect(test._publicVar[0]).assertEqual(1);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_2800
-     * @tc.name      tesMultiLevelInheritance0028
-     * @tc.desc      Verify that class B28 inherits public _publicVar with first element 1 from class A28
+     * @tc.name      testMultiLevelInheritance0028
+     * @tc.desc      Verify that class B_28 inherits public _publicVar with first element 1 from class A_28
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0028';
-      let b: B28 = new B28();
+    it("testMultiLevelInheritance0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0028';
+      let b: B_28 = new B_28();
       expect(b._publicVar[0]).assertEqual(1);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_2900
-     * @tc.name      tesMultiLevelInheritance0029
-     * @tc.desc      Verify that class C23 inherits public _publicVar with first element 1 from class A29 through class B29
+     * @tc.name      testMultiLevelInheritance0029
+     * @tc.desc      Verify that class C_23 inherits public _publicVar with first element 1 from class A_29 through class B_29
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0029';
-      let c: C23 = new C23();
+    it("testMultiLevelInheritance0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0029';
+      let c: C_23 = new C_23();
       expect(c._publicVar[0]).assertEqual(1);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_3000
-     * @tc.name      tesMultiLevelInheritance0030
-     * @tc.desc      Verify that class D16 inherits public _publicVar with first element 1 from class A30 through class B30 and class C24
+     * @tc.name      testMultiLevelInheritance0030
+     * @tc.desc      Verify that class D_16 inherits public _publicVar with first element 1 from class A_30 through class B_30 and class C_24
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0030';
-      let d: D16 = new D16();
+    it("testMultiLevelInheritance0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0030';
+      let d: D_16 = new D_16();
       expect(d._publicVar[0]).assertEqual(1);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_3100
-     * @tc.name      tesMultiLevelInheritance0031
-     * @tc.desc      Verify that class E11 inherits overridden public _publicVar with first element 0 from class D17
+     * @tc.name      testMultiLevelInheritance0031
+     * @tc.desc      Verify that class E_11 inherits overridden public _publicVar with first element 0 from class D_17
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0031';
-      let e: E11 = new E11();
+    it("testMultiLevelInheritance0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0031';
+      let e: E_11 = new E_11();
       expect(e._publicVar[0]).assertEqual(0);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_3200
-     * @tc.name      tesMultiLevelInheritance0032
-     * @tc.desc      Verify that class F5 inherits public _publicVar with first element 1 from class A28 through 5-level chain
+     * @tc.name      testMultiLevelInheritance0032
+     * @tc.desc      Verify that class F_5 inherits public _publicVar with first element 1 from class A_28 through 5-level chain
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0032';
-      let f: F5 = new F5();
+    it("testMultiLevelInheritance0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0032';
+      let f: F_5 = new F_5();
       expect(f._publicVar[0]).assertEqual(1);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_3300
-     * @tc.name      tesMultiLevelInheritance0033
-     * @tc.desc      Verify that class B33 inherits public _publicVar with value true from class A33
+     * @tc.name      testMultiLevelInheritance0033
+     * @tc.desc      Verify that class B_33 inherits public _publicVar with value true from class A_33
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0033';
-      let b: B33 = new B33();
+    it("testMultiLevelInheritance0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0033';
+      let b: B_33 = new B_33();
       expect(b._publicVar).assertEqual(true);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_3400
-     * @tc.name      tesMultiLevelInheritance0034
+     * @tc.name      testMultiLevelInheritance0034
      * @tc.desc      Make sure that the public member variable _publicVar is properly initialized in base class a and
      * that the value remains unchanged in the lowest subclass c
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0034';
-      let c: C27 = new C27();
+    it("testMultiLevelInheritance0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0034';
+      let c: C_27 = new C_27();
       expect(c._publicVar).assertEqual(true);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_3500
-     * @tc.name      tesMultiLevelInheritance0035
-     * @tc.desc      Verify that class D19 inherits public _publicVar with value true from class B35 through class C28
+     * @tc.name      testMultiLevelInheritance0035
+     * @tc.desc      Verify that class D_19 inherits public _publicVar with value true from class B_35 through class C_28
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0035';
-      let d: D19 = new D19();
+    it("testMultiLevelInheritance0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0035';
+      let d: D_19 = new D_19();
       expect(d._publicVar).assertEqual(true);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_3600
-     * @tc.name      tesMultiLevelInheritance0036
-     * @tc.desc      Verify that class E13 inherits overridden _publicVar with value false from class D20
+     * @tc.name      testMultiLevelInheritance0036
+     * @tc.desc      Verify that class E_13 inherits overridden _publicVar with value false from class D_20
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0036';
-      let e: E13 = new E13();
+    it("testMultiLevelInheritance0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0036';
+      let e: E_13 = new E_13();
       expect(e._publicVar).assertEqual(false);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_3700
-     * @tc.name      tesMultiLevelInheritance0037
-     * @tc.desc      Verify that class F6 inherits public _publicVar with value true from class A21 through 4-level chain
+     * @tc.name      testMultiLevelInheritance0037
+     * @tc.desc      Verify that class F_6 inherits public _publicVar with value true from class A_21 through 4-level chain
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0037';
-      let f: F6 = new F6();
+    it("testMultiLevelInheritance0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0037';
+      let f: F_6 = new F_6();
       expect(f._publicVar).assertEqual(true);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_3800
-     * @tc.name      tesMultiLevelInheritance0038
-     * @tc.desc      Verify that class C31 inherits public _publicVar with value 2 and public _publicVar with value 3 from class A38 through class B38
+     * @tc.name      testMultiLevelInheritance0038
+     * @tc.desc      Verify that class C_31 inherits public _publicVar with value 2 and public _publicVar with value 3 from class A_38 through class B_38
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0038';
-      let c: C31 = new C31();
+    it("testMultiLevelInheritance0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0038';
+      let c: C_31 = new C_31();
       expect(c._publicVar).assertEqual(3);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_3900
-     * @tc.name      tesMultiLevelInheritance0039
+     * @tc.name      testMultiLevelInheritance0039
      * @tc.desc      Verify that the public member variable _public_var, inherited from the parent class a,
      * is correctly initialized to null
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0039';
-      let test: B39 = new B39;
+    it("testMultiLevelInheritance0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0039';
+      let test: B_39 = new B_39;
       expect(test._publicVar).assertEqual(null);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_4000
-     * @tc.name      tesMultiLevelInheritance0040
+     * @tc.name      testMultiLevelInheritance0040
      * @tc.desc      Create an inheritance chain a -> b -> c and verify that the public property _public_var
      * inherited from class a is null in the test method of class c
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0040';
-      let test: C32 = new C32();
+    it("testMultiLevelInheritance0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0040';
+      let test: C_32 = new C_32();
       expect(test._publicVar).assertEqual(null);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_4100
-     * @tc.name      tesMultiLevelInheritance0041
+     * @tc.name      testMultiLevelInheritance0041
      * @tc.desc      Verify that class d inherits from class c and accesses the public property _public_var with a
      * value of null through class b
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0041';
-      let test: D22 = new D22();
+    it("testMultiLevelInheritance0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0041';
+      let test: D_22 = new D_22();
       expect(test._publicVar).assertEqual(null);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_4200
-     * @tc.name      tesMultiLevelInheritance0042
+     * @tc.name      testMultiLevelInheritance0042
      * @tc.desc      Verify that class e inherits from class d and accesses the public property _public_var through
      * the inheritance chain to be null
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0042';
-      let test: E15 = new E15;
+    it("testMultiLevelInheritance0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0042';
+      let test: E_15 = new E_15;
       expect(test._publicVar).assertEqual(null);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_4300
-     * @tc.name      tesMultiLevelInheritance0043
+     * @tc.name      testMultiLevelInheritance0043
      * @tc.desc      Whether the public member variable _public_var passed from class a to class f through a
      * multi-level inheritance chain is correctly initialized to null
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0043';
-      let test: F7 = new F7;
+    it("testMultiLevelInheritance0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0043';
+      let test: F_7 = new F_7;
       expect(test._publicVar).assertEqual(null);
     });
 
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_4400
-     * @tc.name      tesMultiLevelInheritance0044
+     * @tc.name      testMultiLevelInheritance0044
      * @tc.desc       Verify that the public member variable _public_var, which is inherited from the parent class a,
      * is correctly initialized to the string'multi-level inheritance'
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0044';
-      let test: B44 = new B44;
+    it("testMultiLevelInheritance0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0044';
+      let test: B_44 = new B_44;
       expect(test._publicVar).assertEqual('Multi-level inheritance');
     });
 
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_4500
-     * @tc.name      tesMultiLevelInheritance0045
+     * @tc.name      testMultiLevelInheritance0045
      * @tc.desc      Verify that the public property _public_var inherited from class a is'multi-level inheritance'
      * in the test method of class c
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0045';
-      let test: C36 = new C36;
+    it("testMultiLevelInheritance0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0045';
+      let test: C_36 = new C_36;
       expect(test._publicVar).assertEqual('Multi-level inheritance');
     });
 
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_4600
-     * @tc.name      tesMultiLevelInheritance0046
+     * @tc.name      testMultiLevelInheritance0046
      * @tc.desc      Whether the public member variable _public_var passed from class b to class d in the multi-level
      * inheritance chain is correctly initialized to the string'multi-level inheritance'
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0046';
-      let test: D25 = new D25();
+    it("testMultiLevelInheritance0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0046';
+      let test: D_25 = new D_25();
       expect(test._publicVar).assertEqual('Multi-level inheritance');
     });
 
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_4700
-     * @tc.name      tesMultiLevelInheritance0047
+     * @tc.name      testMultiLevelInheritance0047
      * @tc.desc      Change the public property _public_var inherited from class a to'aa' in class d, and verify
      * that the property value is'aa' in the test method of class e
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0047';
-      let test: E17 = new E17;
+    it("testMultiLevelInheritance0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0047';
+      let test: E_17 = new E_17;
       expect(test._publicVar).assertEqual('aaa');
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_4800
-     * @tc.name      tesMultiLevelInheritance0048
+     * @tc.name      testMultiLevelInheritance0048
      * @tc.desc      Verify that the public member variable _public_var inherited from class a to class f is
      * correctly initialized to the string'multi-level inheritance' after multi-level inheritance
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0048';
-      let test: F8 = new F8;
+    it("testMultiLevelInheritance0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0048';
+      let test: F_8 = new F_8;
       expect(test._publicVar).assertEqual('Multi-level inheritance');
     });
 
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_4900
-     * @tc.name      tesMultiLevelInheritance0049
+     * @tc.name      testMultiLevelInheritance0049
      * @tc.desc      Verify that the public property _public_var inherited from class a is two in the test method
      * of class b
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0049';
-      let test: B49 = new B49;
+    it("testMultiLevelInheritance0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0049';
+      let test: B_49 = new B_49;
       expect(test._publicVar).assertEqual(2);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_5000
-     * @tc.name      tesMultiLevelInheritance0050
+     * @tc.name      testMultiLevelInheritance0050
      * @tc.desc      Verify that the public member variable _public_var, inherited from the parent class a,
      * is correctly initialized to the value two
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0042';
-      let test: C40 = new C40;
+    it("testMultiLevelInheritance0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0042';
+      let test: C_40 = new C_40;
       expect(test._publicVar).assertEqual(2);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_5100
-     * @tc.name      tesMultiLevelInheritance0051
+     * @tc.name      testMultiLevelInheritance0051
      * @tc.desc      Whether the public member variable _public_var passed from class b to class d through a
      * multi-level inheritance chain is correctly initialized to the value two
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0051';
-      let test: D28 = new D28;
+    it("testMultiLevelInheritance0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0051';
+      let test: D_28 = new D_28;
       expect(test._publicVar).assertEqual(2);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_5200
-     * @tc.name      tesMultiLevelInheritance0052
+     * @tc.name      testMultiLevelInheritance0052
      * @tc.desc      This test scenario verifies that subclasses d and e correctly reinitialize the public member
      * variable _public_var to the number 20 in a multi-level inheritance chain
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0052';
-      let test: E19 = new E19;
+    it("testMultiLevelInheritance0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0052';
+      let test: E_19 = new E_19;
       expect(test._publicVar).assertEqual(20);
     });
 
     /**
      * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_5300
-     * @tc.name      tesMultiLevelInheritance0053
+     * @tc.name      testMultiLevelInheritance0053
      * @tc.desc      Verify that the public property _public_var inherited from class a is two
     in the test method of class f
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("tesMultiLevelInheritance0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'tesMultiLevelInheritance0053';
-      let test: F9 = new F9;
+    it("testMultiLevelInheritance0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMultiLevelInheritance0053';
+      let test: F_9 = new F_9;
       expect(test._publicVar).assertEqual(2);
     });
   })
