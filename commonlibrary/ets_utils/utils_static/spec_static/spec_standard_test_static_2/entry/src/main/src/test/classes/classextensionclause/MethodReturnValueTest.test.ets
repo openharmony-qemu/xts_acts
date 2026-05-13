@@ -57,7 +57,6 @@ class Parent1 {
 }
 
 class Child1 extends Parent1 {
-
   protected getValue(): number {
     return 200;
   }
@@ -200,7 +199,8 @@ class Parent9 {
   }
 }
 
-class Child9 extends Parent9 {}
+class Child9 extends Parent9 {
+}
 
 class Parent10 {
   public getValue(): string {
@@ -208,7 +208,8 @@ class Parent10 {
   }
 }
 
-class Child10 extends Parent10 {}
+class Child10 extends Parent10 {
+}
 
 class Parent11 {
   public getValue(): byte {
@@ -216,7 +217,8 @@ class Parent11 {
   }
 }
 
-class Child11 extends Parent11 {}
+class Child11 extends Parent11 {
+}
 
 class Parent12 {
   public getValue(): short {
@@ -224,7 +226,8 @@ class Parent12 {
   }
 }
 
-class Child12 extends Parent12 {}
+class Child12 extends Parent12 {
+}
 
 class Parent13 {
   public getValue(): int {
@@ -232,7 +235,8 @@ class Parent13 {
   }
 }
 
-class Child13 extends Parent13 {}
+class Child13 extends Parent13 {
+}
 
 class Parent14 {
   public getValue(): long {
@@ -240,7 +244,8 @@ class Parent14 {
   }
 }
 
-class Child14 extends Parent14 {}
+class Child14 extends Parent14 {
+}
 
 class Parent15 {
   public getValue(): double {
@@ -248,7 +253,8 @@ class Parent15 {
   }
 }
 
-class Child15 extends Parent15 {}
+class Child15 extends Parent15 {
+}
 
 class Parent16 {
   public getValue(): float {
@@ -256,7 +262,8 @@ class Parent16 {
   }
 }
 
-class Child16 extends Parent16 {}
+class Child16 extends Parent16 {
+}
 
 
 class Parent17 {
@@ -265,7 +272,8 @@ class Parent17 {
   }
 }
 
-class Child17 extends Parent17 {}
+class Child17 extends Parent17 {
+}
 
 class Parent18 {
   public getValue(): char {
@@ -273,7 +281,8 @@ class Parent18 {
   }
 }
 
-class Child18 extends Parent18 {}
+class Child18 extends Parent18 {
+}
 
 class Parent19 {
   public getValue(): boolean {
@@ -281,7 +290,8 @@ class Parent19 {
   }
 }
 
-class Child19 extends Parent19 {}
+class Child19 extends Parent19 {
+}
 
 class Parent20 {
   public getValue(): [] {
@@ -289,7 +299,8 @@ class Parent20 {
   }
 }
 
-class Child20 extends Parent20 {}
+class Child20 extends Parent20 {
+}
 
 interface Person {
   name: string;
@@ -307,7 +318,8 @@ class Parent21 {
   }
 }
 
-class Child21 extends Parent21 {}
+class Child21 extends Parent21 {
+}
 
 class Parent22 {
   public getValue(): bigint {
@@ -315,10 +327,12 @@ class Parent22 {
   }
 }
 
-class Child22 extends Parent22 {}
+class Child22 extends Parent22 {
+}
 
 class Parent23 {
   private isExecuted = false;
+
   public getValue(): void {
     console.log("some operations");
     this.isExecuted = true;
@@ -329,10 +343,11 @@ class Parent23 {
   }
 }
 
-class Child23 extends Parent23 {}
+class Child23 extends Parent23 {
+}
 
 
-export default function MethodReturnValueTest():void {
+export default function MethodReturnValueTest(): void {
   describe('MethodReturnValueTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -356,7 +371,7 @@ export default function MethodReturnValueTest():void {
     })
 
     /**
-     * @tc.number    SUB_METHOD_RETURN_VALUETEST_0100
+     * @tc.number    SUB_METHOD_RETURN_VALUE_0100
      * @tc.name      testMethodReturnValue0001
      * @tc.desc      The method returns a value of number and the modifier is public to verify that the rewrite works
      * correctly
@@ -375,7 +390,7 @@ export default function MethodReturnValueTest():void {
     });
 
     /**
-     * @tc.number    SUB_METHOD_RETURN_VALUETEST_0200
+     * @tc.number    SUB_METHOD_RETURN_VALUE_0200
      * @tc.name      testMethodReturnValue0002
      * @tc.desc      The method returns a value of number and the modifier is protected to verify that the rewrite
      * works correctly
@@ -394,7 +409,7 @@ export default function MethodReturnValueTest():void {
     });
 
     /**
-     * @tc.number    SUB_METHOD_RETURN_VALUETEST_0300
+     * @tc.number    SUB_METHOD_RETURN_VALUE_0300
      * @tc.name      testMethodReturnValue0003
      * @tc.desc      In multi-layer inheritance, the return value of the method is number, and the modifier is public.
      * Verify that the rewrite works correctly
@@ -416,7 +431,7 @@ export default function MethodReturnValueTest():void {
     });
 
     /**
-     * @tc.number    SUB_METHOD_RETURN_VALUETEST_0400
+     * @tc.number    SUB_METHOD_RETURN_VALUE_0400
      * @tc.name      testMethodReturnValue0004
      * @tc.desc       In multi-layer inheritance, the parent class method is called in the subclass method method,
      * with the modifier public, to verify that the rewrite works correctly
@@ -438,7 +453,7 @@ export default function MethodReturnValueTest():void {
     });
 
     /**
-     * @tc.number    SUB_METHOD_RETURN_VALUETEST_0500
+     * @tc.number    SUB_METHOD_RETURN_VALUE_0500
      * @tc.name      testMethodReturnValue0005
      * @tc.desc      In multi-layer inheritance, the return value of the method is number, and the modifier is
      * protected. Verify that the rewrite works correctly
@@ -460,7 +475,7 @@ export default function MethodReturnValueTest():void {
     });
 
     /**
-     * @tc.number    SUB_METHOD_RETURN_VALUETEST_0600
+     * @tc.number    SUB_METHOD_RETURN_VALUE_0600
      * @tc.name      testMethodReturnValue0006
      * @tc.desc      The method returns a value of number and the modifier is internal to verify that the rewrite
      * works correctly
@@ -479,7 +494,7 @@ export default function MethodReturnValueTest():void {
     });
 
     /**
-     * @tc.number    SUB_METHOD_RETURN_VALUETEST_0700
+     * @tc.number    SUB_METHOD_RETURN_VALUE_0700
      * @tc.name      testMethodReturnValue0007
      * @tc.desc       In multi-layer inheritance, the return value of the method is number, and the modifier is
      * internal. Verify that the rewrite works correctly
@@ -501,7 +516,7 @@ export default function MethodReturnValueTest():void {
     });
 
     /**
-     * @tc.number    SUB_METHOD_RETURN_VALUETEST_0800
+     * @tc.number    SUB_METHOD_RETURN_VALUE_0800
      * @tc.name      testMethodReturnValue0008
      * @tc.desc      In multi-layer inheritance, the parent class method is called in the subclass method method,
      * and the modifier is internal. Verify that the rewrite works correctly
@@ -523,7 +538,7 @@ export default function MethodReturnValueTest():void {
     });
 
     /**
-     * @tc.number    SUB_METHOD_RETURN_VALUETEST_0900
+     * @tc.number    SUB_METHOD_RETURN_VALUE_0900
      * @tc.name      testMethodReturnValue0009
      * @tc.desc      The method returns a value of number and the modifier is public to verify that the rewrite works
      * correctly
@@ -538,7 +553,7 @@ export default function MethodReturnValueTest():void {
     });
 
     /**
-     * @tc.number    SUB_METHOD_RETURN_VALUETEST_1000
+     * @tc.number    SUB_METHOD_RETURN_VALUE_1000
      * @tc.name      testMethodReturnValue0010
      * @tc.desc      The return value of the method is number, and the modifier is public
      * @tc.size      MediumTest
@@ -556,7 +571,7 @@ export default function MethodReturnValueTest():void {
     });
 
     /**
-     * @tc.number    SUB_METHOD_RETURN_VALUETEST_1100
+     * @tc.number    SUB_METHOD_RETURN_VALUE_1100
      * @tc.name      testMethodReturnValue0011
      * @tc.desc      The return value of the method is string, and the modifier is public
      * @tc.size      MediumTest
@@ -574,7 +589,7 @@ export default function MethodReturnValueTest():void {
     });
 
     /**
-     * @tc.number    SUB_METHOD_RETURN_VALUETEST_1200
+     * @tc.number    SUB_METHOD_RETURN_VALUE_1200
      * @tc.name      testMethodReturnValue0012
      * @tc.desc      The return value of the method is byte, and the modifier is public
      * @tc.size      MediumTest
@@ -592,7 +607,7 @@ export default function MethodReturnValueTest():void {
     });
 
     /**
-     * @tc.number    SUB_METHOD_RETURN_VALUETEST_1300
+     * @tc.number    SUB_METHOD_RETURN_VALUE_1300
      * @tc.name      testMethodReturnValue0013
      * @tc.desc      The return value of the method is short, and the modifier is public
      * @tc.size      MediumTest
@@ -610,7 +625,7 @@ export default function MethodReturnValueTest():void {
     });
 
     /**
-     * @tc.number    SUB_METHOD_RETURN_VALUETEST_1400
+     * @tc.number    SUB_METHOD_RETURN_VALUE_1400
      * @tc.name      testMethodReturnValue0014
      * @tc.desc      The return value of the method is int, and the modifier is public
      * @tc.size      MediumTest
@@ -628,7 +643,7 @@ export default function MethodReturnValueTest():void {
     });
 
     /**
-     * @tc.number    SUB_METHOD_RETURN_VALUETEST_1500
+     * @tc.number    SUB_METHOD_RETURN_VALUE_1500
      * @tc.name      testMethodReturnValue0015
      * @tc.desc      The return value of the method is long, and the modifier is public
      * @tc.size      MediumTest
@@ -646,7 +661,7 @@ export default function MethodReturnValueTest():void {
     });
 
     /**
-     * @tc.number    SUB_METHOD_RETURN_VALUETEST_1600
+     * @tc.number    SUB_METHOD_RETURN_VALUE_1600
      * @tc.name      testMethodReturnValue0016
      * @tc.desc      The return value of the method is double, and the modifier is public
      * @tc.size      MediumTest
@@ -664,7 +679,7 @@ export default function MethodReturnValueTest():void {
     });
 
     /**
-     * @tc.number    SUB_METHOD_RETURN_VALUETEST_1700
+     * @tc.number    SUB_METHOD_RETURN_VALUE_1700
      * @tc.name      testMethodReturnValue0017
      * @tc.desc      The return value of the method is float, and the modifier is public
      * @tc.size      MediumTest
@@ -682,7 +697,7 @@ export default function MethodReturnValueTest():void {
     });
 
     /**
-     * @tc.number    SUB_METHOD_RETURN_VALUETEST_1800
+     * @tc.number    SUB_METHOD_RETURN_VALUE_1800
      * @tc.name      testMethodReturnValue0018
      * @tc.desc      The return value of the method is never, and the modifier is public
      * @tc.size      MediumTest
@@ -696,7 +711,7 @@ export default function MethodReturnValueTest():void {
         let parentValue: never = parent.getValue();
       } catch (error) {
         if (error instanceof Error) {
-      expect(error.message).assertEqual('This method always throws an error');
+          expect(error.message).assertEqual('This method always throws an error');
         } else {
           throw new Error('Unexpected error type');
         }
@@ -706,7 +721,7 @@ export default function MethodReturnValueTest():void {
         let childValue: never = child.getValue();
       } catch (error) {
         if (error instanceof Error) {
-      expect(error.message).assertEqual('This method always throws an error');
+          expect(error.message).assertEqual('This method always throws an error');
         } else {
           throw new Error('Unexpected error type');
         }
@@ -714,7 +729,7 @@ export default function MethodReturnValueTest():void {
     });
 
     /**
-     * @tc.number    SUB_METHOD_RETURN_VALUETEST_2000
+     * @tc.number    SUB_METHOD_RETURN_VALUE_2000
      * @tc.name      testMethodReturnValue0020
      * @tc.desc      The return value of the method is boolean, and the modifier is public
      * @tc.size      MediumTest
@@ -732,7 +747,7 @@ export default function MethodReturnValueTest():void {
     });
 
     /**
-     * @tc.number    SUB_METHOD_RETURN_VALUETEST_2100
+     * @tc.number    SUB_METHOD_RETURN_VALUE_2100
      * @tc.name      testMethodReturnValue0021
      * @tc.desc      The return value of the method is [], and the modifier is public
      * @tc.size      MediumTest
@@ -750,7 +765,7 @@ export default function MethodReturnValueTest():void {
     });
 
     /**
-     * @tc.number    SUB_METHOD_RETURN_VALUETEST_2200
+     * @tc.number    SUB_METHOD_RETURN_VALUE_2200
      * @tc.name      testMethodReturnValue0022
      * @tc.desc      The return value of the method is [], and the modifier is public
      * @tc.size      MediumTest
@@ -764,7 +779,7 @@ export default function MethodReturnValueTest():void {
       expect(obj1.name).assertEqual("John");
       expect(obj1.age).assertEqual(30);
       expect(obj1.hobbies[0]).assertEqual("reading");
-      expect(obj1.hobbies[1]).assertEqual( "swimming");
+      expect(obj1.hobbies[1]).assertEqual("swimming");
       let child = new Child21();
       let obj2: Person = child.createGenericObject();
       expect(obj2.name).assertEqual("John");
@@ -774,7 +789,7 @@ export default function MethodReturnValueTest():void {
     });
 
     /**
-     * @tc.number    SUB_METHOD_RETURN_VALUETEST_2300
+     * @tc.number    SUB_METHOD_RETURN_VALUE_2300
      * @tc.name      testMethodReturnValue0023
      * @tc.desc      The return value of the method is bigint, and the modifier is public
      * @tc.size      MediumTest
@@ -792,7 +807,7 @@ export default function MethodReturnValueTest():void {
     });
 
     /**
-     * @tc.number    SUB_METHOD_RETURN_VALUETEST_2400
+     * @tc.number    SUB_METHOD_RETURN_VALUE_2400
      * @tc.name      testMethodReturnValue0024
      * @tc.desc      The return value of the method is void, and the modifier is public
      * @tc.size      MediumTest
