@@ -242,7 +242,6 @@ static napi_value FdsanExchangeOwnerTagMismatch(napi_env env, napi_callback_info
     }
     uint64_t tagA = fdsan_create_owner_tag(FDSAN_OWNER_TYPE_FILE, 0xA);
     uint64_t tagB = fdsan_create_owner_tag(FDSAN_OWNER_TYPE_FILE, 0xB);
-
     if (tagA == 0 || tagB == 0) {
         close(fd);
         fd = -1;
