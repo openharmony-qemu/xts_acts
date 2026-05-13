@@ -17,7 +17,7 @@ group("std_core_static") {
   testonly = true
   if (is_standard_system) {
     deps = [
-      "array_standard_test_static:ActsArrayStaticTest",
+      "array_case_standard_test_static:ActsArrayCaseStaticTest",
     ]
   }
 }
