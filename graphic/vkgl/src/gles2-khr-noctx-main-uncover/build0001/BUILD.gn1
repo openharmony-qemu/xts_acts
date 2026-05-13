@@ -131,11 +131,11 @@ ohos_static_library("libkhrgles2func0001") {
   configs = [ ":deqp_platform_ohos_config" ]
 }
 
-ohos_moduletest_suite("ActsKhrgles2TestSuite0001") {
+ohos_moduletest_suite("ActsGles2KhrNoctxMainUncoverTestSuite0001") {
   subsystem_name = "graphic"
   part_name = "graphic_2d"
   sources = [ 
-    "../ActsKhrgles20001TestSuite.cpp",
+    "../ActsGles2KhrNoctxMainUncover0001TestSuite.cpp",
     "../es2/Khrgles2no_error_create_contextTestCase.cpp", ]
 
   include_dirs = common_include

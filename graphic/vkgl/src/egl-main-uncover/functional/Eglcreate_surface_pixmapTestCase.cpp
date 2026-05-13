@@ -16,29 +16,29 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../EglBaseFunc.h"
-#include "../ActsEgl0001TestSuite.h"
+#include "../ActsEglMainUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000022,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000022,
         "dEQP-EGL.functional.create_surface",
         ".pixmap.rgb565_no_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000023,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000023,
         "dEQP-EGL.functional.create_surface",
         ".pixmap.rgb888_no_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000024,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000024,
         "dEQP-EGL.functional.create_surface.",
         "pixmap.rgba4444_no_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000025,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000025,
         "dEQP-EGL.functional.create_surface.",
         "pixmap.rgba5551_no_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000026,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000026,
         "dEQP-EGL.functional.create_surface.",
         "pixmap.rgba8888_no_depth_no_stencil");

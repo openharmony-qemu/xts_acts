@@ -16,89 +16,89 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../EglBaseFunc.h"
-#include "../ActsEgl0001TestSuite.h"
+#include "../ActsEglMainUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000058,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000058,
         "dEQP-EGL.functional.create_surface.platf",
         "orm_ext_pixmap.rgb565_no_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000059,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000059,
         "dEQP-EGL.functional.create_surface.plat",
         "form_ext_pixmap.rgb565_no_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000060,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000060,
         "dEQP-EGL.functional.create_surface.plat",
         "form_ext_pixmap.rgb565_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000061,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000061,
         "dEQP-EGL.functional.create_surface.pl",
         "atform_ext_pixmap.rgb565_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000062,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000062,
         "dEQP-EGL.functional.create_surface.platf",
         "orm_ext_pixmap.rgb888_no_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000063,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000063,
         "dEQP-EGL.functional.create_surface.plat",
         "form_ext_pixmap.rgb888_no_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000064,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000064,
         "dEQP-EGL.functional.create_surface.plat",
         "form_ext_pixmap.rgb888_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000065,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000065,
         "dEQP-EGL.functional.create_surface.pl",
         "atform_ext_pixmap.rgb888_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000066,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000066,
         "dEQP-EGL.functional.create_surface.platfo",
         "rm_ext_pixmap.rgba4444_no_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000067,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000067,
         "dEQP-EGL.functional.create_surface.platf",
         "orm_ext_pixmap.rgba4444_no_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000068,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000068,
         "dEQP-EGL.functional.create_surface.platf",
         "orm_ext_pixmap.rgba4444_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000069,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000069,
         "dEQP-EGL.functional.create_surface.pla",
         "tform_ext_pixmap.rgba4444_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000070,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000070,
         "dEQP-EGL.functional.create_surface.platfo",
         "rm_ext_pixmap.rgba5551_no_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000071,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000071,
         "dEQP-EGL.functional.create_surface.platf",
         "orm_ext_pixmap.rgba5551_no_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000072,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000072,
         "dEQP-EGL.functional.create_surface.platf",
         "orm_ext_pixmap.rgba5551_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000073,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000073,
         "dEQP-EGL.functional.create_surface.pla",
         "tform_ext_pixmap.rgba5551_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000074,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000074,
         "dEQP-EGL.functional.create_surface.platfo",
         "rm_ext_pixmap.rgba8888_no_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000075,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000075,
         "dEQP-EGL.functional.create_surface.platf",
         "orm_ext_pixmap.rgba8888_no_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000076,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000076,
         "dEQP-EGL.functional.create_surface.platf",
         "orm_ext_pixmap.rgba8888_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000077,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000077,
         "dEQP-EGL.functional.create_surface.pla",
         "tform_ext_pixmap.rgba8888_depth_stencil");
