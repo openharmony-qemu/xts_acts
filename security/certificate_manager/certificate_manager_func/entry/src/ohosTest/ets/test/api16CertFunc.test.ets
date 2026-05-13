@@ -284,6 +284,7 @@ export default function api16CertFuncTestUnit() {
       if (keyUri != undefined) {
         let signHandle:certManager.CMHandle = await signVerifyCallback.initProcess(keyUri,signSpec);
         expect(signHandle != null).assertTrue();
+		expect(signHandle.handle !=null).assertTrue();
         await certManager.uninstallPrivateCertificate(keyUri);
       } else {
         console.error("Security_CertManager_InstallPrivateCertificate_Func_0010 keyUri is undefined!");
