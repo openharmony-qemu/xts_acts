@@ -1284,7 +1284,8 @@ export default function arrayBufferPropertyTest(): void {
         let buffer = new ArrayBuffer(badLen)
         expect(true).assertFail()
       } catch (error) {
-        expect(error != null).assertTrue()
+        expect(error !== null && error !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(error as object)
       }
     });
 
@@ -1302,7 +1303,8 @@ export default function arrayBufferPropertyTest(): void {
         let buffer = new ArrayBuffer(4, badMax)
         expect(true).assertFail()
       } catch (error) {
-        expect(error != null).assertTrue()
+        expect(error !== null && error !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(error as object)
       }
     });
 

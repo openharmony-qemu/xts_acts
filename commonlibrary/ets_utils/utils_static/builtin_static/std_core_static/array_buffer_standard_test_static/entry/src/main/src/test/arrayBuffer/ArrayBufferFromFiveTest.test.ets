@@ -326,7 +326,8 @@ export default function arrayBufferFromFiveTest(): void {
         let r = ArrayBuffer.from('你好', 'utf16le')
         expect(r.byteLength > 0).assertTrue()
       } catch (e) {
-        expect(e != null).assertTrue()
+        expect(e !== null && e !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(e as object)
       }
     });
 
@@ -382,7 +383,8 @@ export default function arrayBufferFromFiveTest(): void {
         let r = ArrayBuffer.from('A', 'utf16le')
         expect(r.byteLength > 0).assertTrue()
       } catch (e) {
-        expect(e != null).assertTrue()
+        expect(e !== null && e !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(e as object)
       }
     });
 
