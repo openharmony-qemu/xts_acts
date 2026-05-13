@@ -81,12 +81,6 @@ interface MyInterface018 {
     name: string;
   }
 
-class ChildClass020 extends ParentClass020 {
-    static {
-      ChildClass020.order.push("child");
-    }
-  }
-
 class ParentClass020 {
     public static order: Array<string> = [];
     static {
@@ -94,15 +88,9 @@ class ParentClass020 {
     }
   }
 
-class Child021 extends Parent021 {
+class ChildClass020 extends ParentClass020 {
     static {
-      Child021.order.push("child");
-    }
-  }
-
-class Parent021 extends GrandParent021 {
-    static {
-      Parent021.order.push("parent");
+      ParentClass020.order.push("child");
     }
   }
 
@@ -110,6 +98,18 @@ class GrandParent021 {
     public static order: Array<string> = [];
     static {
       GrandParent021.order.push("grandparent");
+    }
+  }
+
+class Parent021 extends GrandParent021 {
+    static {
+      GrandParent021.order.push("parent");
+    }
+  }
+
+class Child021 extends Parent021 {
+    static {
+      GrandParent021.order.push("child");
     }
   }
 
@@ -177,8 +177,8 @@ class LargeClass030 {
 class MyClass031 {}
 
 
-export default function ClassInitializeTest(): void {
-  describe('ClassInitializeTest', () => {
+export default function runClassInitializeTest(): void {
+  describe('ClassInitializeTest', (): void => {
     beforeAll(() => {
     });
     beforeEach(async () => {
@@ -504,8 +504,8 @@ export default function ClassInitializeTest(): void {
     it('testClassInitialize020', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let childCls = Class.from<ChildClass020>();
         childCls.initialize();
-        expect(ChildClass020.order[0]).assertEqual("parent");
-        expect(ChildClass020.order[1]).assertEqual("child");
+        expect(ParentClass020.order[0]).assertEqual("parent");
+        expect(ParentClass020.order[1]).assertEqual("child");
     });
 
     /**
@@ -519,9 +519,9 @@ export default function ClassInitializeTest(): void {
     it('testClassInitialize021', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let childCls = Class.from<Child021>();
         childCls.initialize();
-        expect(Child021.order[0]).assertEqual("grandparent");
-        expect(Child021.order[1]).assertEqual("parent");
-        expect(Child021.order[2]).assertEqual("child");
+        expect(GrandParent021.order[0]).assertEqual("grandparent");
+        expect(GrandParent021.order[1]).assertEqual("parent");
+        expect(GrandParent021.order[2]).assertEqual("child");
     });
 
     /**

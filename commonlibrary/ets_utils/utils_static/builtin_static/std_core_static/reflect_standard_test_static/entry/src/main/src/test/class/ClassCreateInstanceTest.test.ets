@@ -327,7 +327,7 @@ class AllFieldsClass055 {
     public field1: string = 'field1';
     public field2: int = 2;
     public field3: boolean = true;
-    public field4: float = 3.14;
+    public field4: double = 3.14;
     public field5: Array<int> = [1, 2, 3];
   }
 
