@@ -95,8 +95,8 @@ async function permissionClick() {
         await delegator.executeShellCommand(cmd);
     }
     await sleep(100);
-    await button1.click();
-    await button2.click();
+    await button1?.click();
+    await button2?.click();
     await sleep(1000);
 }
 
