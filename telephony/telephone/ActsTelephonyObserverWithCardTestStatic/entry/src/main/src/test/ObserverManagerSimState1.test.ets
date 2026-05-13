@@ -324,7 +324,7 @@ export default function observerManagerSimStateTest1() {
       try {
         let slotId: int = 0;
         let num: int = 0;
-        await sim.deactivateSim(slotId);
+        await sim.activateSim(slotId);
         observer.onGetSimActiveState(slotId, (data: boolean | undefined) => {
           console.info(`${caseName} data: ${data}`);
           num++;
@@ -336,7 +336,6 @@ export default function observerManagerSimStateTest1() {
         ExpectFail();
         done();
       }
-      await sim.activateSim(0);
       console.info(`${caseName} test end`);
     });
 
@@ -443,17 +442,15 @@ export default function observerManagerSimStateTest1() {
           observer.offGetSimActiveState(callback);
           done();
         }
+        await sim.activateSim(slotId);
         observer.onGetSimActiveState(slotId, callback);
-        await sim.deactivateSim(slotId);
+        await sim.activateSim(slotId);
         console.info(`${caseName} slotId: ${slotId}`);
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}` + error);
         ExpectFail();
         done();
       }
-      console.info(`${caseName} 3333`);
-      await sim.activateSim(0);
-      console.info(`${caseName} 44444`);
       console.info(`${caseName} test end`);
     });
 
