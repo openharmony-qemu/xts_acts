@@ -1990,3 +1990,871 @@ export default function FieldInitializationTestTwo(): void {
       expect(a.field instanceof double).assertTrue()
       expect(a.field).assertEqual(7.3)
     })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0250
+     * @tc.name      testFieldInit0250
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0250", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F250 = new A_F250()
+      expect(a.field instanceof number).assertTrue()
+      expect(a.field).assertEqual(4)
+          let res = waitForCompletion(() => a.foo().then((): number => a.field))
+      expect(res instanceof number).assertTrue()
+      expect(res).assertEqual(5)
+      expect(a.field instanceof number).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0251
+     * @tc.name      testFieldInit0251
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0251", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F251 = new A_F251()
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(4.5f)
+          let res = waitForCompletion(() => a.foo().then((): float => a.field))
+      expect(res instanceof float).assertTrue()
+      expect(res).assertEqual(7.3f)
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(7.3f)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0252
+     * @tc.name      testFieldInit0252
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0252", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F252 = new A_F252()
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(4n)
+          let res = waitForCompletion(() => a.foo().then((): bigint => a.field))
+      expect(res instanceof bigint).assertTrue()
+      expect(res).assertEqual(5n)
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(5n)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0253
+     * @tc.name      testFieldInit0253
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0253", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F253 = new A_F253()
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("abc")
+          let res = waitForCompletion(() => a.foo().then((): string => a.field))
+      expect(res instanceof string).assertTrue()
+      expect(res).assertEqual("efg")
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("efg")
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0254
+     * @tc.name      testFieldInit0254
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0254", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F254 = new A_F254()
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'a')
+          let res = waitForCompletion(() => a.foo().then((): char => a.field))
+      expect(res instanceof char).assertTrue()
+      expect(res).assertEqual(c'b')
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'b')
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0255
+     * @tc.name      testFieldInit0255
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0255", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F255 = new A_F255()
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(false)
+          let res = waitForCompletion(() => a.foo().then((): boolean => a.field))
+      expect(res instanceof boolean).assertTrue()
+      expect(res).assertEqual(true)
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(true)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0256
+     * @tc.name      testFieldInit0256
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0256", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F256 = new A_F256()
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(4)
+          let res = waitForCompletion(() => a.foo().then((): Object => a.field))
+      expect(res instanceof Object).assertTrue()
+      expect(res).assertEqual(5)
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0257
+     * @tc.name      testFieldInit0257
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0257", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F257 = new A_F257()
+      expect(a.field instanceof Object | undefined).assertTrue()
+      expect(a.field).assertEqual(undefined)
+          let res = waitForCompletion(() => a.foo().then((): Object | undefined => a.field))
+      expect(res instanceof Object | undefined).assertTrue()
+      expect(res).assertEqual(5)
+      expect(a.field instanceof Object | undefined).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0258
+     * @tc.name      testFieldInit0258
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0258", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F258 = new A_F258()
+      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field).assertEqual(4)
+          let res = waitForCompletion(() => a.foo().then((): Object | undefined | null => a.field))
+      expect(res instanceof Object | undefined | null).assertTrue()
+      expect(res).assertEqual(5)
+      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0259
+     * @tc.name      testFieldInit0259
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0259", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F259 = new A_F259()
+      expect(a.field instanceof Any).assertTrue()
+      expect(a.field).assertEqual(4)
+          let res = waitForCompletion(() => a.foo().then((): Any => a.field))
+      expect(res instanceof Any).assertTrue()
+      expect(res).assertEqual(5)
+      expect(a.field instanceof Any).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0260
+     * @tc.name      testFieldInit0260
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0260", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F260 = new A_F260()
+      expect(a.field instanceof long).assertTrue()
+      expect(a.field).assertEqual(4)
+          waitForCompletion(a.foo)
+      expect(a.field instanceof long).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0261
+     * @tc.name      testFieldInit0261
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0261", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F261 = new A_F261()
+      expect(a.field instanceof int).assertTrue()
+      expect(a.field).assertEqual(4)
+          waitForCompletion(a.foo)
+      expect(a.field instanceof int).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0262
+     * @tc.name      testFieldInit0262
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0262", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F262 = new A_F262()
+      expect(a.field instanceof byte).assertTrue()
+      expect(a.field).assertEqual(4)
+          waitForCompletion(a.foo)
+      expect(a.field instanceof byte).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0263
+     * @tc.name      testFieldInit0263
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0263", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F263 = new A_F263()
+      expect(a.field instanceof short).assertTrue()
+      expect(a.field).assertEqual(4)
+          waitForCompletion(a.foo)
+      expect(a.field instanceof short).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0264
+     * @tc.name      testFieldInit0264
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0264", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F264 = new A_F264()
+      expect(a.field instanceof double).assertTrue()
+      expect(a.field).assertEqual(4)
+          waitForCompletion(a.foo)
+      expect(a.field instanceof double).assertTrue()
+      expect(a.field).assertEqual(7.3)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0265
+     * @tc.name      testFieldInit0265
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0265", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F265 = new A_F265()
+      expect(a.field instanceof number).assertTrue()
+      expect(a.field).assertEqual(4)
+          waitForCompletion(a.foo)
+      expect(a.field instanceof number).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0266
+     * @tc.name      testFieldInit0266
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0266", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F266 = new A_F266()
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(4.5f)
+          waitForCompletion(a.foo)
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(7.3f)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0267
+     * @tc.name      testFieldInit0267
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0267", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F267 = new A_F267()
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(4n)
+          waitForCompletion(a.foo)
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(5n)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0268
+     * @tc.name      testFieldInit0268
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0268", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F268 = new A_F268()
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("abc")
+          waitForCompletion(a.foo)
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("efg")
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0269
+     * @tc.name      testFieldInit0269
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0269", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F269 = new A_F269()
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'a')
+          waitForCompletion(a.foo)
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'b')
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0270
+     * @tc.name      testFieldInit0270
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0270", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F270 = new A_F270()
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(false)
+          waitForCompletion(a.foo)
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(true)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0271
+     * @tc.name      testFieldInit0271
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0271", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F271 = new A_F271()
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(4)
+          waitForCompletion(a.foo)
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0272
+     * @tc.name      testFieldInit0272
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0272", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F272 = new A_F272()
+      expect(a.field instanceof Object | undefined).assertTrue()
+      expect(a.field).assertEqual(undefined)
+          waitForCompletion(a.foo)
+      expect(a.field instanceof Object | undefined).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0273
+     * @tc.name      testFieldInit0273
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0273", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F273 = new A_F273()
+      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field).assertEqual(4)
+          waitForCompletion(a.foo)
+      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0274
+     * @tc.name      testFieldInit0274
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0274", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F274 = new A_F274()
+      expect(a.field instanceof Any).assertTrue()
+      expect(a.field).assertEqual(4)
+          waitForCompletion(a.foo)
+      expect(a.field instanceof Any).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0275
+     * @tc.name      testFieldInit0275
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0275", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F275 = new A_F275()
+      expect(a.field instanceof long).assertTrue()
+      expect(a.field).assertEqual(4)
+          let res = waitForCompletion(() => a.foo().then((): long => a.field))
+      expect(res instanceof long).assertTrue()
+      expect(res).assertEqual(5)
+      expect(a.field instanceof long).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0276
+     * @tc.name      testFieldInit0276
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0276", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F276 = new A_F276()
+      expect(a.field instanceof int).assertTrue()
+      expect(a.field).assertEqual(4)
+          let res = waitForCompletion(() => a.foo().then((): int => a.field))
+      expect(res instanceof int).assertTrue()
+      expect(res).assertEqual(5)
+      expect(a.field instanceof int).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0277
+     * @tc.name      testFieldInit0277
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0277", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F277 = new A_F277()
+      expect(a.field instanceof byte).assertTrue()
+      expect(a.field).assertEqual(4)
+          let res = waitForCompletion(() => a.foo().then((): byte => a.field))
+      expect(res instanceof byte).assertTrue()
+      expect(res).assertEqual(5)
+      expect(a.field instanceof byte).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0278
+     * @tc.name      testFieldInit0278
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0278", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F278 = new A_F278()
+      expect(a.field instanceof short).assertTrue()
+      expect(a.field).assertEqual(4)
+          let res = waitForCompletion(() => a.foo().then((): short => a.field))
+      expect(res instanceof short).assertTrue()
+      expect(res).assertEqual(5)
+      expect(a.field instanceof short).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0279
+     * @tc.name      testFieldInit0279
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0279", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F279 = new A_F279()
+      expect(a.field instanceof double).assertTrue()
+      expect(a.field).assertEqual(4)
+          let res = waitForCompletion(() => a.foo().then((): double => a.field))
+      expect(res instanceof double).assertTrue()
+      expect(res).assertEqual(7.3)
+      expect(a.field instanceof double).assertTrue()
+      expect(a.field).assertEqual(7.3)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0280
+     * @tc.name      testFieldInit0280
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0280", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F280 = new A_F280()
+      expect(a.field instanceof number).assertTrue()
+      expect(a.field).assertEqual(4)
+          let res = waitForCompletion(() => a.foo().then((): number => a.field))
+      expect(res instanceof number).assertTrue()
+      expect(res).assertEqual(5)
+      expect(a.field instanceof number).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0281
+     * @tc.name      testFieldInit0281
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0281", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F281 = new A_F281()
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(4.5f)
+          let res = waitForCompletion(() => a.foo().then((): float => a.field))
+      expect(res instanceof float).assertTrue()
+      expect(res).assertEqual(7.3f)
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(7.3f)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0282
+     * @tc.name      testFieldInit0282
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0282", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F282 = new A_F282()
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(4n)
+          let res = waitForCompletion(() => a.foo().then((): bigint => a.field))
+      expect(res instanceof bigint).assertTrue()
+      expect(res).assertEqual(5n)
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(5n)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0283
+     * @tc.name      testFieldInit0283
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0283", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F283 = new A_F283()
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("abc")
+          let res = waitForCompletion(() => a.foo().then((): string => a.field))
+      expect(res instanceof string).assertTrue()
+      expect(res).assertEqual("efg")
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("efg")
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0284
+     * @tc.name      testFieldInit0284
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0284", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F284 = new A_F284()
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'a')
+          let res = waitForCompletion(() => a.foo().then((): char => a.field))
+      expect(res instanceof char).assertTrue()
+      expect(res).assertEqual(c'b')
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'b')
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0285
+     * @tc.name      testFieldInit0285
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0285", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F285 = new A_F285()
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(false)
+          let res = waitForCompletion(() => a.foo().then((): boolean => a.field))
+      expect(res instanceof boolean).assertTrue()
+      expect(res).assertEqual(true)
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(true)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0286
+     * @tc.name      testFieldInit0286
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0286", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F286 = new A_F286()
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(4)
+          let res = waitForCompletion(() => a.foo().then((): Object => a.field))
+      expect(res instanceof Object).assertTrue()
+      expect(res).assertEqual(5)
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0287
+     * @tc.name      testFieldInit0287
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0287", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F287 = new A_F287()
+      expect(a.field instanceof Object | undefined).assertTrue()
+      expect(a.field).assertEqual(undefined)
+          let res = waitForCompletion(() => a.foo().then((): Object | undefined => a.field))
+      expect(res instanceof Object | undefined).assertTrue()
+      expect(res).assertEqual(5)
+      expect(a.field instanceof Object | undefined).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0288
+     * @tc.name      testFieldInit0288
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0288", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F288 = new A_F288()
+      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field).assertEqual(4)
+          let res = waitForCompletion(() => a.foo().then((): Object | undefined | null => a.field))
+      expect(res instanceof Object | undefined | null).assertTrue()
+      expect(res).assertEqual(5)
+      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0289
+     * @tc.name      testFieldInit0289
+     * @tc.desc      Checking for changing the value with asynchronous API usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0289", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F289 = new A_F289()
+      expect(a.field instanceof Any).assertTrue()
+      expect(a.field).assertEqual(4)
+          let res = waitForCompletion(() => a.foo().then((): Any => a.field))
+      expect(res instanceof Any).assertTrue()
+      expect(res).assertEqual(5)
+      expect(a.field instanceof Any).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0290
+     * @tc.name      testFieldInit0290
+     * @tc.desc      Checking for changing the value from outside of generic class.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0290", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F290<long> = new A_F290<long>(4)
+      expect(a.field instanceof long).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof long).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0291
+     * @tc.name      testFieldInit0291
+     * @tc.desc      Checking for changing the value from outside of generic class.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0291", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F291<int> = new A_F291<int>(4)
+      expect(a.field instanceof int).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof int).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0292
+     * @tc.name      testFieldInit0292
+     * @tc.desc      Checking for changing the value from outside of generic class.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0292", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F292<byte> = new A_F292<byte>(4)
+      expect(a.field instanceof byte).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof byte).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0293
+     * @tc.name      testFieldInit0293
+     * @tc.desc      Checking for changing the value from outside of generic class.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0293", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F293<short> = new A_F293<short>(4)
+      expect(a.field instanceof short).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof short).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0294
+     * @tc.name      testFieldInit0294
+     * @tc.desc      Checking for changing the value from outside of generic class.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0294", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F294<double> = new A_F294<double>(4)
+      expect(a.field instanceof double).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 7.3
+      expect(a.field instanceof double).assertTrue()
+      expect(a.field).assertEqual(7.3)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0295
+     * @tc.name      testFieldInit0295
+     * @tc.desc      Checking for changing the value from outside of generic class.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0295", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F295<number> = new A_F295<number>(4)
+      expect(a.field instanceof number).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof number).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0296
+     * @tc.name      testFieldInit0296
+     * @tc.desc      Checking for changing the value from outside of generic class.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0296", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F296<float> = new A_F296<float>(4.5f)
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(4.5f)
+      a.field = 7.3f
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(7.3f)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0297
+     * @tc.name      testFieldInit0297
+     * @tc.desc      Checking for changing the value from outside of generic class.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0297", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F297<bigint> = new A_F297<bigint>(4n)
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(4n)
+      a.field = 5n
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(5n)
+    })
+  })
+}
