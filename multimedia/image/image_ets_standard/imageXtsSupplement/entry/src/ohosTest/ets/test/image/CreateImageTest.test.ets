@@ -1481,6 +1481,8 @@ export default function CrateImageSupp() {
           imageSourceIncrementalSApi = image.CreateIncrementalSource(
             new ArrayBuffer(imageData[2].byteLength), sourceOptions
           );
+          await imageSourceIncrementalSApi.updateData(imageData[0], false, 0, imageData[0].byteLength); 
+          await imageSourceIncrementalSApi.updateData(imageData[1], true, 0, imageData[1].byteLength);
           console.warn(TAG, testName, `Testing format ${format} succeeded`,imageSourceIncrementalSApi.getImageInfoSync().pixelFormat);
           expect(imageSourceIncrementalSApi.getImageInfoSync().pixelFormat == format).assertTrue();
         } catch (error) {
