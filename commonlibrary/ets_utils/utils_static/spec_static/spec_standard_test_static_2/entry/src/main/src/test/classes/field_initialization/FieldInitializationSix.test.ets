@@ -521,37 +521,37 @@ let v_F622: long = 5
     return res
   }
   class A_F623 {
-    field: long = foo_F623()
+    field: long = foo_F622()
   }
 
 let v_F623: int = 5
   function foo_F623(): int {
     let res = v_F623
     v_F623 += 1
-    return Int(res)
+    return res
   }
   class A_F624 {
-    field: int = int(foo_F624())
+    field: int = foo_F623()
   }
 
 let v_F624: byte = 5
   function foo_F624(): byte {
     let res = v_F624
     v_F624 += 1
-    return Byte(res)
+    return res
   }
   class A_F625 {
-    field: byte = byte(foo_F625())
+    field: byte = foo_F624()
   }
 
 let v_F625: short = 5
   function foo_F625(): short {
     let res = v_F625
     v_F625 += 1
-    return Short(res)
+    return res
   }
   class A_F626 {
-    field: short = short(foo_F626())
+    field: short = foo_F625()
   }
 
 let v_F626: double = 5
@@ -561,7 +561,7 @@ let v_F626: double = 5
     return res
   }
   class A_F627 {
-    field: double = foo_F627()
+    field: double = foo_F626()
   }
 
 let v_F627: int = 5
@@ -571,7 +571,7 @@ let v_F627: int = 5
     return res
   }
   class A_F628 {
-    field: number = foo_F628()
+    field: number = foo_F627()
   }
 
 let v_F628: float = 5.0f
@@ -581,77 +581,77 @@ let v_F628: float = 5.0f
     return res
   }
   class A_F629 {
-    field: float = foo_F629()
+    field: float = foo_F628()
   }
 
 let v_F629: bigint = 5n
   function foo_F629(): bigint {
     let res = v_F629
     v_F629 = v_F629 + BigInt(1)
-    return BigInt(res)
+    return res
   }
   class A_F630 {
-    field: bigint = bigint(foo_F630())
+    field: bigint = foo_F629()
   }
 
 let v_F630: string = "v"
   function foo_F630(): string {
     let res = v_F630
     v_F630 += "n"
-    return String(res)
+    return res
   }
   class A_F631 {
-    field: string = string(foo_F631())
+    field: string = foo_F630()
   }
 
 let v_F631: int = 5
   function foo_F631(): int {
     let res = v_F631
     v_F631 += 1
-    return Int(res)
+    return res
   }
   class A_F632 {
-    field: Object = foo_F632()
+    field: Object = foo_F631()
   }
 
 let v_F632: int = 5
   function foo_F632(): int {
     let res = v_F632
     v_F632 += 1
-    return Int(res)
+    return res
   }
   class A_F633 {
-    field: Object | null = foo_F633()
+    field: Object | null = foo_F632()
   }
 
 let v_F633: int = 5
   function foo_F633(): int {
     let res = v_F633
     v_F633 += 1
-    return Int(res)
+    return res
   }
   class A_F634 {
-    field: Object | undefined = foo_F634()
+    field: Object | undefined = foo_F633()
   }
 
 let v_F634: int = 5
   function foo_F634(): int {
     let res = v_F634
     v_F634 += 1
-    return Int(res)
+    return res
   }
   class A_F635 {
-    field: Object | undefined | null = foo_F635()
+    field: Object | undefined | null = foo_F634()
   }
 
 let v_F635: int = 5
   function foo_F635(): int {
     let res = v_F635
     v_F635 += 1
-    return Int(res)
+    return res
   }
   class A_F636 {
-    field: Any = foo_F636()
+    field: Any = foo_F635()
   }
 
 let v_F636: long = 5
@@ -663,7 +663,7 @@ let v_F636: long = 5
   class A_F637 {
     field: long
     constructor () {
-      this.field = foo_F637()
+      this.field = foo_F636()
     }
   }
 
@@ -671,12 +671,12 @@ let v_F637: int = 5
   function foo_F637(): int {
     let res = v_F637
     v_F637 += 1
-    return Int(res)
+    return res
   }
   class A_F638 {
     field: int
     constructor () {
-      this.field = foo_F638()
+      this.field = foo_F637()
     }
   }
 
@@ -684,12 +684,12 @@ let v_F638: byte = 5
   function foo_F638(): byte {
     let res = v_F638
     v_F638 += 1
-    return Byte(res)
+    return res
   }
   class A_F639 {
     field: byte
     constructor () {
-      this.field = foo_F639()
+      this.field = foo_F638()
     }
   }
 
@@ -697,12 +697,12 @@ let v_F639: short = 5
   function foo_F639(): short {
     let res = v_F639
     v_F639 += 1
-    return Short(res)
+    return res
   }
   class A_F640 {
     field: short
     constructor () {
-      this.field = foo_F640()
+      this.field = foo_F639()
     }
   }
 
@@ -715,7 +715,7 @@ let v_F640: double = 5
   class A_F641 {
     field: double
     constructor () {
-      this.field = foo_F641()
+      this.field = foo_F640()
     }
   }
 
@@ -728,7 +728,7 @@ let v_F641: int = 5
   class A_F642 {
     field: number
     constructor () {
-      this.field = foo_F642()
+      this.field = foo_F641()
     }
   }
 
@@ -741,7 +741,7 @@ let v_F642: float = 5.0f
   class A_F643 {
     field: float
     constructor () {
-      this.field = foo_F643()
+      this.field = foo_F642()
     }
   }
 
@@ -749,12 +749,12 @@ let v_F643: bigint = 5n
   function foo_F643(): bigint {
     let res = v_F643
     v_F643 = v_F643 + BigInt(1)
-    return BigInt(res)
+    return res
   }
   class A_F644 {
     field: bigint
     constructor () {
-      this.field = foo_F644()
+      this.field = foo_F643()
     }
   }
 
@@ -762,12 +762,12 @@ let v_F644: string = "v"
   function foo_F644(): string {
     let res = v_F644
     v_F644 += "n"
-    return String(res)
+    return res
   }
   class A_F645 {
     field: string
     constructor () {
-      this.field = foo_F645()
+      this.field = foo_F644()
     }
   }
 
@@ -775,12 +775,12 @@ let v_F645: int = 5
   function foo_F645(): int {
     let res = v_F645
     v_F645 += 1
-    return Int(res)
+    return res
   }
   class A_F646 {
     field: Object
     constructor () {
-      this.field = foo_F646()
+      this.field = foo_F645()
     }
   }
 
@@ -788,12 +788,12 @@ let v_F646: int = 5
   function foo_F646(): int {
     let res = v_F646
     v_F646 += 1
-    return Int(res)
+    return res
   }
   class A_F647 {
     field: Object | null
     constructor () {
-      this.field = foo_F647()
+      this.field = foo_F646()
     }
   }
 
@@ -801,12 +801,12 @@ let v_F647: int = 5
   function foo_F647(): int {
     let res = v_F647
     v_F647 += 1
-    return Int(res)
+    return res
   }
   class A_F648 {
     field: Object | undefined
     constructor () {
-      this.field = foo_F648()
+      this.field = foo_F647()
     }
   }
 
@@ -814,12 +814,12 @@ let v_F648: int = 5
   function foo_F648(): int {
     let res = v_F648
     v_F648 += 1
-    return Int(res)
+    return res
   }
   class A_F649 {
     field: Object | undefined | null
     constructor () {
-      this.field = foo_F649()
+      this.field = foo_F648()
     }
   }
 
@@ -827,12 +827,12 @@ let v_F649: int = 5
   function foo_F649(): int {
     let res = v_F649
     v_F649 += 1
-    return Int(res)
+    return res
   }
   class A_F650 {
     field: Any
     constructor () {
-      this.field = foo_F650()
+      this.field = foo_F649()
     }
   }
 
@@ -845,7 +845,7 @@ let v_F650: long = 5
   class A_F651 {
     field: long = 5
     constructor () {
-      this.field = foo_F651()
+      this.field = foo_F650()
     }
   }
 
@@ -853,12 +853,12 @@ let v_F651: int = 5
   function foo_F651(): int {
     let res = v_F651
     v_F651 += 1
-    return Int(res)
+    return res
   }
   class A_F652 {
     field: int = 5
     constructor () {
-      this.field = foo_F652()
+      this.field = foo_F651()
     }
   }
 
@@ -866,12 +866,12 @@ let v_F652: byte = 5
   function foo_F652(): byte {
     let res = v_F652
     v_F652 += 1
-    return Byte(res)
+    return res
   }
   class A_F653 {
     field: byte = 5
     constructor () {
-      this.field = foo_F653()
+      this.field = foo_F652()
     }
   }
 
@@ -879,12 +879,12 @@ let v_F653: short = 5
   function foo_F653(): short {
     let res = v_F653
     v_F653 += 1
-    return Short(res)
+    return res
   }
   class A_F654 {
     field: short = 5
     constructor () {
-      this.field = foo_F654()
+      this.field = foo_F653()
     }
   }
 
@@ -897,7 +897,7 @@ let v_F654: double = 5
   class A_F655 {
     field: double = 5
     constructor () {
-      this.field = foo_F655()
+      this.field = foo_F654()
     }
   }
 
@@ -910,7 +910,7 @@ let v_F655: int = 5
   class A_F656 {
     field: number = 5
     constructor () {
-      this.field = foo_F656()
+      this.field = foo_F655()
     }
   }
 
@@ -923,7 +923,7 @@ let v_F656: float = 5.0f
   class A_F657 {
     field: float = 5.0f
     constructor () {
-      this.field = foo_F657()
+      this.field = foo_F656()
     }
   }
 
@@ -931,12 +931,12 @@ let v_F657: bigint = 5n
   function foo_F657(): bigint {
     let res = v_F657
     v_F657 = v_F657 + BigInt(1)
-    return BigInt(res)
+    return res
   }
   class A_F658 {
     field: bigint = 5n
     constructor () {
-      this.field = foo_F658()
+      this.field = foo_F657()
     }
   }
 
@@ -944,12 +944,12 @@ let v_F658: string = "v"
   function foo_F658(): string {
     let res = v_F658
     v_F658 += "n"
-    return String(res)
+    return res
   }
   class A_F659 {
     field: string = "v"
     constructor () {
-      this.field = foo_F659()
+      this.field = foo_F658()
     }
   }
 
@@ -957,12 +957,12 @@ let v_F659: int = 5
   function foo_F659(): int {
     let res = v_F659
     v_F659 += 1
-    return Int(res)
+    return res
   }
   class A_F660 {
     field: Object = 5
     constructor () {
-      this.field = foo_F660()
+      this.field = foo_F659()
     }
   }
 
@@ -970,12 +970,12 @@ let v_F660: int = 5
   function foo_F660(): int {
     let res = v_F660
     v_F660 += 1
-    return Int(res)
+    return res
   }
   class A_F661 {
     field: Object | null = 5
     constructor () {
-      this.field = foo_F661()
+      this.field = foo_F660()
     }
   }
 
@@ -983,12 +983,12 @@ let v_F661: int = 5
   function foo_F661(): int {
     let res = v_F661
     v_F661 += 1
-    return Int(res)
+    return res
   }
   class A_F662 {
     field: Object | undefined = 5
     constructor () {
-      this.field = foo_F662()
+      this.field = foo_F661()
     }
   }
 
@@ -996,12 +996,12 @@ let v_F662: int = 5
   function foo_F662(): int {
     let res = v_F662
     v_F662 += 1
-    return Int(res)
+    return res
   }
   class A_F663 {
     field: Object | undefined | null = 5
     constructor () {
-      this.field = foo_F663()
+      this.field = foo_F662()
     }
   }
 
@@ -1009,13 +1009,16 @@ let v_F663: int = 5
   function foo_F663(): int {
     let res = v_F663
     v_F663 += 1
-    return Int(res)
+    return res
   }
   class A_F664 {
     field: Any = 5
     constructor () {
-      this.field = foo_F664()
+      this.field = foo_F663()
     }
+  }
+function foo_F664(): Any {
+    return 5
   }
 
 namespace ns {
@@ -1761,7 +1764,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v = 5
+          v_F622 = 5
     })
 
     /**
@@ -1781,7 +1784,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v = 5
+          v_F623 = 5
     })
 
     /**
@@ -1801,7 +1804,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v = 5
+          v_F624 = 5
     })
 
     /**
@@ -1821,7 +1824,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v = 5
+          v_F625 = 5
     })
 
     /**
@@ -1841,7 +1844,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v = 5
+          v_F626 = 5
     })
 
     /**
@@ -1861,7 +1864,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v = 5
+          v_F627 = 5
     })
 
     /**
@@ -1881,7 +1884,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1.0f
           }
-          v = 5.0f
+          v_F628 = 5.0f
     })
 
     /**
@@ -1901,7 +1904,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1n
           }
-          v = 5n
+          v_F629 = 5n
     })
 
     /**
@@ -1921,7 +1924,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += "n"
           }
-          v = "v"
+          v_F630 = "v"
     })
 
     /**
@@ -1941,7 +1944,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v = 5
+          v_F631 = 5
     })
 
     /**
@@ -1961,7 +1964,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v = 5
+          v_F632 = 5
     })
 
     /**
@@ -1981,7 +1984,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v = 5
+          v_F633 = 5
     })
 
     /**
@@ -2001,7 +2004,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v = 5
+          v_F634 = 5
     })
 
     /**
@@ -2021,7 +2024,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v = 5
+          v_F635 = 5
     })
 
     /**
@@ -2041,7 +2044,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v = 5
+          v_F636 = 5
     })
 
     /**
@@ -2061,7 +2064,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v = 5
+          v_F637 = 5
     })
 
     /**
@@ -2081,7 +2084,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v = 5
+          v_F638 = 5
     })
 
     /**
@@ -2101,7 +2104,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v = 5
+          v_F639 = 5
     })
 
     /**
@@ -2121,7 +2124,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v = 5
+          v_F640 = 5
     })
 
     /**
@@ -2141,7 +2144,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v = 5
+          v_F641 = 5
     })
 
     /**
@@ -2161,7 +2164,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1.0f
           }
-          v = 5.0f
+          v_F642 = 5.0f
     })
 
     /**
@@ -2181,7 +2184,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1n
           }
-          v = 5n
+          v_F643 = 5n
     })
 
     /**
@@ -2201,7 +2204,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += "n"
           }
-          v = "v"
+          v_F644 = "v"
     })
 
     /**
@@ -2221,7 +2224,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v = 5
+          v_F645 = 5
     })
 
     /**
@@ -2241,7 +2244,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v = 5
+          v_F646 = 5
     })
 
     /**
@@ -2261,7 +2264,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v = 5
+          v_F647 = 5
     })
 
     /**
@@ -2281,7 +2284,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v = 5
+          v_F648 = 5
     })
 
     /**
@@ -2301,7 +2304,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v = 5
+          v_F649 = 5
     })
 
     /**
@@ -2321,7 +2324,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v = 5
+          v_F650 = 5
     })
 
     /**
@@ -2341,7 +2344,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v = 5
+          v_F651 = 5
     })
 
     /**
@@ -2361,7 +2364,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v = 5
+          v_F652 = 5
     })
 
     /**
@@ -2381,7 +2384,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v = 5
+          v_F653 = 5
     })
 
     /**
@@ -2401,7 +2404,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v = 5
+          v_F654 = 5
     })
 
     /**
@@ -2421,7 +2424,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v = 5
+          v_F655 = 5
     })
 
     /**
@@ -2441,7 +2444,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1.0f
           }
-          v = 5.0f
+          v_F656 = 5.0f
     })
 
     /**
@@ -2461,7 +2464,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1n
           }
-          v = 5n
+          v_F657 = 5n
     })
 
     /**
@@ -2481,7 +2484,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += "n"
           }
-          v = "v"
+          v_F658 = "v"
     })
 
     /**
@@ -2501,7 +2504,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v = 5
+          v_F659 = 5
     })
 
     /**
@@ -2521,7 +2524,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v = 5
+          v_F660 = 5
     })
 
     /**
@@ -2541,7 +2544,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v = 5
+          v_F661 = 5
     })
 
     /**
@@ -2561,7 +2564,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v = 5
+          v_F662 = 5
     })
 
     /**
@@ -2581,7 +2584,7 @@ export default function FieldInitializationTestSix(): void {
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v = 5
+          v_F663 = 5
     })
 
     /**

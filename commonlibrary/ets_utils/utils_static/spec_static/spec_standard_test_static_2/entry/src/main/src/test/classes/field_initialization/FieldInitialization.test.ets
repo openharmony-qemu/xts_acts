@@ -37,105 +37,105 @@ async function sleep(time: int): Promise<int> {
 
 class A_F001 {
     field: long = 4
-    foo_F001(): void {
+    foo(): void {
       this.field = 5
     }
   }
 
 class A_F002 {
     field: int = 4
-    foo_F002(): void {
+    foo(): void {
       this.field = 5
     }
   }
 
 class A_F003 {
     field: byte = 4
-    foo_F003(): void {
+    foo(): void {
       this.field = 5
     }
   }
 
 class A_F004 {
     field: short = 4
-    foo_F004(): void {
+    foo(): void {
       this.field = 5
     }
   }
 
 class A_F005 {
     field: double = 4
-    foo_F005(): void {
+    foo(): void {
       this.field = 7.3
     }
   }
 
 class A_F006 {
     field: number = 4
-    foo_F006(): void {
+    foo(): void {
       this.field = 5
     }
   }
 
 class A_F007 {
     field: float = 4.5f
-    foo_F007(): void {
+    foo(): void {
       this.field = 7.3f
     }
   }
 
 class A_F008 {
     field: bigint = 4n
-    foo_F008(): void {
+    foo(): void {
       this.field = 5n
     }
   }
 
 class A_F009 {
     field: string = "abc"
-    foo_F009(): void {
+    foo(): void {
       this.field = "efg"
     }
   }
 
 class A_F010 {
     field: char = c'a'
-    foo_F010(): void {
+    foo(): void {
       this.field = c'b'
     }
   }
 
 class A_F011 {
     field: boolean = false
-    foo_F011(): void {
+    foo(): void {
       this.field = true
     }
   }
 
 class A_F012 {
     field: Object = 4
-    foo_F012(): void {
+    foo(): void {
       this.field = 5
     }
   }
 
 class A_F013 {
     field: Object | undefined = undefined
-    foo_F013(): void {
+    foo(): void {
       this.field = 5
     }
   }
 
 class A_F014 {
     field: Object | undefined | null = 4
-    foo_F014(): void {
+    foo(): void {
       this.field = 5
     }
   }
 
 class A_F015 {
     field: Any = 4
-    foo_F015(): void {
+    foo(): void {
       this.field = 5
     }
   }
@@ -1783,7 +1783,7 @@ export default function FieldInitializationTest(): void {
       let a: A_F061 = new A_F061()
       expect(a.field instanceof long).assertTrue()
       expect(a.field).assertEqual(4)
-          foo(a)
+          foo_F061(a)
       expect(a.field instanceof long).assertTrue()
       expect(a.field).assertEqual(5)
     })
@@ -1800,7 +1800,7 @@ export default function FieldInitializationTest(): void {
       let a: A_F062 = new A_F062()
       expect(a.field instanceof int).assertTrue()
       expect(a.field).assertEqual(4)
-          foo(a)
+          foo_F062(a)
       expect(a.field instanceof int).assertTrue()
       expect(a.field).assertEqual(5)
     })
@@ -1817,7 +1817,7 @@ export default function FieldInitializationTest(): void {
       let a: A_F063 = new A_F063()
       expect(a.field instanceof byte).assertTrue()
       expect(a.field).assertEqual(4)
-          foo(a)
+          foo_F063(a)
       expect(a.field instanceof byte).assertTrue()
       expect(a.field).assertEqual(5)
     })
@@ -1834,7 +1834,7 @@ export default function FieldInitializationTest(): void {
       let a: A_F064 = new A_F064()
       expect(a.field instanceof short).assertTrue()
       expect(a.field).assertEqual(4)
-          foo(a)
+          foo_F064(a)
       expect(a.field instanceof short).assertTrue()
       expect(a.field).assertEqual(5)
     })
@@ -1851,7 +1851,7 @@ export default function FieldInitializationTest(): void {
       let a: A_F065 = new A_F065()
       expect(a.field instanceof double).assertTrue()
       expect(a.field).assertEqual(4)
-          foo(a)
+          foo_F065(a)
       expect(a.field instanceof double).assertTrue()
       expect(a.field).assertEqual(7.3)
     })
@@ -1868,7 +1868,7 @@ export default function FieldInitializationTest(): void {
       let a: A_F066 = new A_F066()
       expect(a.field instanceof number).assertTrue()
       expect(a.field).assertEqual(4)
-          foo(a)
+          foo_F066(a)
       expect(a.field instanceof number).assertTrue()
       expect(a.field).assertEqual(5)
     })
@@ -1885,7 +1885,7 @@ export default function FieldInitializationTest(): void {
       let a: A_F067 = new A_F067()
       expect(a.field instanceof float).assertTrue()
       expect(a.field).assertEqual(4.5f)
-          foo(a)
+          foo_F067(a)
       expect(a.field instanceof float).assertTrue()
       expect(a.field).assertEqual(7.3f)
     })
@@ -1902,7 +1902,7 @@ export default function FieldInitializationTest(): void {
       let a: A_F068 = new A_F068()
       expect(a.field instanceof bigint).assertTrue()
       expect(a.field).assertEqual(4n)
-          foo(a)
+          foo_F068(a)
       expect(a.field instanceof bigint).assertTrue()
       expect(a.field).assertEqual(5n)
     })
@@ -1919,7 +1919,7 @@ export default function FieldInitializationTest(): void {
       let a: A_F069 = new A_F069()
       expect(a.field instanceof string).assertTrue()
       expect(a.field).assertEqual("abc")
-          foo(a)
+          foo_F069(a)
       expect(a.field instanceof string).assertTrue()
       expect(a.field).assertEqual("efg")
     })
@@ -1936,7 +1936,7 @@ export default function FieldInitializationTest(): void {
       let a: A_F070 = new A_F070()
       expect(a.field instanceof char).assertTrue()
       expect(a.field).assertEqual(c'a')
-          foo(a)
+          foo_F070(a)
       expect(a.field instanceof char).assertTrue()
       expect(a.field).assertEqual(c'b')
     })
@@ -1953,7 +1953,7 @@ export default function FieldInitializationTest(): void {
       let a: A_F071 = new A_F071()
       expect(a.field instanceof boolean).assertTrue()
       expect(a.field).assertEqual(false)
-          foo(a)
+          foo_F071(a)
       expect(a.field instanceof boolean).assertTrue()
       expect(a.field).assertEqual(true)
     })
@@ -1970,7 +1970,7 @@ export default function FieldInitializationTest(): void {
       let a: A_F072 = new A_F072()
       expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(4)
-          foo(a)
+          foo_F072(a)
       expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(5)
     })
@@ -1987,7 +1987,7 @@ export default function FieldInitializationTest(): void {
       let a: A_F073 = new A_F073()
       expect(a.field instanceof Object | undefined).assertTrue()
       expect(a.field).assertEqual(undefined)
-          foo(a)
+          foo_F073(a)
       expect(a.field instanceof Object | undefined).assertTrue()
       expect(a.field).assertEqual(5)
     })
@@ -2004,7 +2004,7 @@ export default function FieldInitializationTest(): void {
       let a: A_F074 = new A_F074()
       expect(a.field instanceof Object | undefined | null).assertTrue()
       expect(a.field).assertEqual(4)
-          foo(a)
+          foo_F074(a)
       expect(a.field instanceof Object | undefined | null).assertTrue()
       expect(a.field).assertEqual(5)
     })
@@ -2021,7 +2021,7 @@ export default function FieldInitializationTest(): void {
       let a: A_F075 = new A_F075()
       expect(a.field instanceof Any).assertTrue()
       expect(a.field).assertEqual(4)
-          foo(a)
+          foo_F075(a)
       expect(a.field instanceof Any).assertTrue()
       expect(a.field).assertEqual(5)
     })
@@ -2041,7 +2041,7 @@ export default function FieldInitializationTest(): void {
           }
       expect(a.field instanceof long).assertTrue()
       expect(a.field).assertEqual(4)
-          foo(lambda)
+          foo_F076(lambda)
       expect(a.field instanceof long).assertTrue()
       expect(a.field).assertEqual(5)
     })
@@ -2061,7 +2061,7 @@ export default function FieldInitializationTest(): void {
           }
       expect(a.field instanceof int).assertTrue()
       expect(a.field).assertEqual(4)
-          foo(lambda)
+          foo_F077(lambda)
       expect(a.field instanceof int).assertTrue()
       expect(a.field).assertEqual(5)
     })
@@ -2081,7 +2081,7 @@ export default function FieldInitializationTest(): void {
           }
       expect(a.field instanceof byte).assertTrue()
       expect(a.field).assertEqual(4)
-          foo(lambda)
+          foo_F078(lambda)
       expect(a.field instanceof byte).assertTrue()
       expect(a.field).assertEqual(5)
     })
@@ -2101,7 +2101,7 @@ export default function FieldInitializationTest(): void {
           }
       expect(a.field instanceof short).assertTrue()
       expect(a.field).assertEqual(4)
-          foo(lambda)
+          foo_F079(lambda)
       expect(a.field instanceof short).assertTrue()
       expect(a.field).assertEqual(5)
     })
@@ -2121,7 +2121,7 @@ export default function FieldInitializationTest(): void {
           }
       expect(a.field instanceof double).assertTrue()
       expect(a.field).assertEqual(4)
-          foo(lambda)
+          foo_F080(lambda)
       expect(a.field instanceof double).assertTrue()
       expect(a.field).assertEqual(7.3)
     })
@@ -2141,7 +2141,7 @@ export default function FieldInitializationTest(): void {
           }
       expect(a.field instanceof number).assertTrue()
       expect(a.field).assertEqual(4)
-          foo(lambda)
+          foo_F081(lambda)
       expect(a.field instanceof number).assertTrue()
       expect(a.field).assertEqual(5)
     })
@@ -2161,7 +2161,7 @@ export default function FieldInitializationTest(): void {
           }
       expect(a.field instanceof float).assertTrue()
       expect(a.field).assertEqual(4.5f)
-          foo(lambda)
+          foo_F082(lambda)
       expect(a.field instanceof float).assertTrue()
       expect(a.field).assertEqual(7.3f)
     })
@@ -2181,7 +2181,7 @@ export default function FieldInitializationTest(): void {
           }
       expect(a.field instanceof bigint).assertTrue()
       expect(a.field).assertEqual(4n)
-          foo(lambda)
+          foo_F083(lambda)
       expect(a.field instanceof bigint).assertTrue()
       expect(a.field).assertEqual(5n)
     })
@@ -2201,7 +2201,7 @@ export default function FieldInitializationTest(): void {
           }
       expect(a.field instanceof string).assertTrue()
       expect(a.field).assertEqual("abc")
-          foo(lambda)
+          foo_F084(lambda)
       expect(a.field instanceof string).assertTrue()
       expect(a.field).assertEqual("efg")
     })
@@ -2221,7 +2221,7 @@ export default function FieldInitializationTest(): void {
           }
       expect(a.field instanceof char).assertTrue()
       expect(a.field).assertEqual(c'a')
-          foo(lambda)
+          foo_F085(lambda)
       expect(a.field instanceof char).assertTrue()
       expect(a.field).assertEqual(c'b')
     })
@@ -2241,7 +2241,7 @@ export default function FieldInitializationTest(): void {
           }
       expect(a.field instanceof boolean).assertTrue()
       expect(a.field).assertEqual(false)
-          foo(lambda)
+          foo_F086(lambda)
       expect(a.field instanceof boolean).assertTrue()
       expect(a.field).assertEqual(true)
     })
@@ -2261,7 +2261,7 @@ export default function FieldInitializationTest(): void {
           }
       expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(4)
-          foo(lambda)
+          foo_F087(lambda)
       expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(5)
     })
@@ -2281,7 +2281,7 @@ export default function FieldInitializationTest(): void {
           }
       expect(a.field instanceof Object | undefined).assertTrue()
       expect(a.field).assertEqual(undefined)
-          foo(lambda)
+          foo_F088(lambda)
       expect(a.field instanceof Object | undefined).assertTrue()
       expect(a.field).assertEqual(5)
     })
@@ -2301,7 +2301,7 @@ export default function FieldInitializationTest(): void {
           }
       expect(a.field instanceof Object | undefined | null).assertTrue()
       expect(a.field).assertEqual(4)
-          foo(lambda)
+          foo_F089(lambda)
       expect(a.field instanceof Object | undefined | null).assertTrue()
       expect(a.field).assertEqual(5)
     })
@@ -2321,7 +2321,7 @@ export default function FieldInitializationTest(): void {
           }
       expect(a.field instanceof Any).assertTrue()
       expect(a.field).assertEqual(4)
-          foo(lambda)
+          foo_F090(lambda)
       expect(a.field instanceof Any).assertTrue()
       expect(a.field).assertEqual(5)
     })
@@ -2383,7 +2383,7 @@ export default function FieldInitializationTest(): void {
       expect(a instanceof Dog_F093).assertTrue()
       expect(a.field instanceof number).assertTrue()
       expect(a.field).assertEqual(5)
-          foo(a)
+          foo_F092(a)
       expect(a instanceof Dog_F093).assertTrue()
       expect(a.field instanceof number).assertTrue()
       expect(a.field).assertEqual(3)
@@ -2402,7 +2402,7 @@ export default function FieldInitializationTest(): void {
       expect(a instanceof Dog_F094).assertTrue()
       expect(a.field instanceof number).assertTrue()
       expect(a.field).assertEqual(5)
-          foo(a)
+          foo_F092_2(a)
       expect(a instanceof Dog_F094).assertTrue()
       expect(a.field instanceof number).assertTrue()
       expect(a.field).assertEqual(3)

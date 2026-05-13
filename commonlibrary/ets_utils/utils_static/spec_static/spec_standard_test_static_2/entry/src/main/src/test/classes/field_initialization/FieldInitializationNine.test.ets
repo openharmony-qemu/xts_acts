@@ -217,7 +217,7 @@ function foo_F916(): long {
   }
   class A_F917 {
     static v: long = 5
-    field: long = foo_F917()
+    field: long = foo_F916()
   }
 
 function foo_F917(): int {
@@ -227,7 +227,7 @@ function foo_F917(): int {
   }
   class A_F918 {
     static v: int = 5
-    field: int = int(foo_F918())
+    field: int = foo_F917()
   }
 
 function foo_F918(): byte {
@@ -237,7 +237,7 @@ function foo_F918(): byte {
   }
   class A_F919 {
     static v: byte = 5
-    field: byte = byte(foo_F919())
+    field: byte = foo_F918()
   }
 
 function foo_F919(): short {
@@ -247,7 +247,7 @@ function foo_F919(): short {
   }
   class A_F920 {
     static v: short = 5
-    field: short = short(foo_F920())
+    field: short = foo_F919()
   }
 
 function foo_F920(): double {
@@ -257,7 +257,7 @@ function foo_F920(): double {
   }
   class A_F921 {
     static v: double = 5
-    field: double = foo_F921()
+    field: double = foo_F920()
   }
 
 function foo_F921(): number {
@@ -267,7 +267,7 @@ function foo_F921(): number {
   }
   class A_F922 {
     static v: number = 5
-    field: number = foo_F922()
+    field: number = foo_F921()
   }
 
 function foo_F922(): float {
@@ -277,7 +277,7 @@ function foo_F922(): float {
   }
   class A_F923 {
     static v: float = 5.0f
-    field: float = foo_F923()
+    field: float = foo_F922()
   }
 
 function foo_F923(): bigint {
@@ -287,7 +287,7 @@ function foo_F923(): bigint {
   }
   class A_F924 {
     static v: bigint = 5n
-    field: bigint = bigint(foo_F924())
+    field: bigint = foo_F923()
   }
 
 function foo_F924(): string {
@@ -297,7 +297,7 @@ function foo_F924(): string {
   }
   class A_F925 {
     static v: string = "v"
-    field: string = string(foo_F925())
+    field: string = foo_F924()
   }
 
 function foo_F925(): int {
@@ -307,7 +307,7 @@ function foo_F925(): int {
   }
   class A_F926 {
     static v: int = 5
-    field: Object = foo_F926()
+    field: Object = foo_F925()
   }
 
 function foo_F926(): int {
@@ -317,7 +317,7 @@ function foo_F926(): int {
   }
   class A_F927 {
     static v: int = 5
-    field: Object | null = foo_F927()
+    field: Object | null = foo_F926()
   }
 
 function foo_F927(): int {
@@ -327,7 +327,7 @@ function foo_F927(): int {
   }
   class A_F928 {
     static v: int = 5
-    field: Object | undefined = foo_F928()
+    field: Object | undefined = foo_F927()
   }
 
 function foo_F928(): int {
@@ -337,7 +337,7 @@ function foo_F928(): int {
   }
   class A_F929 {
     static v: int = 5
-    field: Object | undefined | null = foo_F929()
+    field: Object | undefined | null = foo_F928()
   }
 
 function foo_F929(): int {
@@ -347,7 +347,12 @@ function foo_F929(): int {
   }
   class A_F930 {
     static v: int = 5
-    field: Any = foo_F930()
+    field: Any = foo_F929()
+  }
+function foo_F930(): int {
+    let res = A_F930.v
+    A_F930.v += 1
+    return res
   }
 
 class A_F931 {

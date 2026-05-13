@@ -712,7 +712,7 @@ namespace ns {
       return 4
     }
     export class A_F1172 {
-      static field: long = foo_F1172()
+      static field: long = foo_F1171()
     }
   }
 
@@ -721,7 +721,7 @@ namespace ns {
       return 4
     }
     export class A_F1173 {
-      static field: int = int(foo_F1173())
+      static field: int = foo_F1172()
     }
   }
 
@@ -730,7 +730,7 @@ namespace ns {
       return 4
     }
     export class A_F1174 {
-      static field: byte = byte(foo_F1174())
+      static field: byte = foo_F1173()
     }
   }
 
@@ -739,7 +739,7 @@ namespace ns {
       return 4
     }
     export class A_F1175 {
-      static field: short = short(foo_F1175())
+      static field: short = foo_F1174()
     }
   }
 
@@ -748,7 +748,7 @@ namespace ns {
       return 4
     }
     export class A_F1176 {
-      static field: double = foo_F1176()
+      static field: double = foo_F1175()
     }
   }
 
@@ -757,7 +757,7 @@ namespace ns {
       return 4
     }
     export class A_F1177 {
-      static field: number = foo_F1177()
+      static field: number = foo_F1176()
     }
   }
 
@@ -766,7 +766,7 @@ namespace ns {
       return 4.5f
     }
     export class A_F1178 {
-      static field: float = foo_F1178()
+      static field: float = foo_F1177()
     }
   }
 
@@ -775,7 +775,7 @@ namespace ns {
       return 4n
     }
     export class A_F1179 {
-      static field: bigint = bigint(foo_F1179())
+      static field: bigint = foo_F1178()
     }
   }
 
@@ -784,7 +784,7 @@ namespace ns {
       return "abc"
     }
     export class A_F1180 {
-      static field: string = string(foo_F1180())
+      static field: string = foo_F1179()
     }
   }
 
@@ -793,7 +793,7 @@ namespace ns {
       return c'a'
     }
     export class A_F1181 {
-      static field: char = char(foo_F1181())
+      static field: char = foo_F1180()
     }
   }
 
@@ -802,7 +802,7 @@ namespace ns {
       return false
     }
     export class A_F1182 {
-      static field: boolean = boolean(foo_F1182())
+      static field: boolean = foo_F1181()
     }
   }
 
@@ -811,7 +811,7 @@ namespace ns {
       return 4
     }
     export class A_F1183 {
-      static field: Object = foo_F1183()
+      static field: Object = foo_F1182()
     }
   }
 
@@ -820,7 +820,7 @@ namespace ns {
       return 4
     }
     export class A_F1184 {
-      static field: Object | undefined | null = foo_F1184()
+      static field: Object | undefined | null = foo_F1183()
     }
   }
 
@@ -829,7 +829,10 @@ namespace ns {
       return 4
     }
     export class A_F1185 {
-      static field: Any = foo_F1185()
+      static field: Any = foo_F1184()
+    }
+function foo_F1185(): Any {
+      return 5
     }
   }
 
