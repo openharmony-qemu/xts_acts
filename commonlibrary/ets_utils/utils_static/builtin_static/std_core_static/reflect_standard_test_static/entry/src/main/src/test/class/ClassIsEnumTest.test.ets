@@ -46,6 +46,11 @@ enum MixedEnum005 {
       THIRD = 3
   }
 
+enum ConstEnum006 {
+    A = 1,
+    B = 2
+  }
+
 enum EmptyEnum007 {
   }
 
@@ -325,11 +330,7 @@ export default function ClassIsEnumTest(): void {
      * @tc.level Level 2
      */
     it('testClassIsEnum006', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      const enum ConstEnum {
-            A = 1,
-            B = 2
-        }
-        let cls = Class.from<ConstEnum>();
+      let cls = Class.from<ConstEnum006>();
         let result = cls.isEnum();
         expect(result).assertEqual(true);
     });
