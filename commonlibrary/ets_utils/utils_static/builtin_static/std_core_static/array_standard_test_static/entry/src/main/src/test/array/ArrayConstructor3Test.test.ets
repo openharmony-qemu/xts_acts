@@ -13,7 +13,10 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll, afterEach, beforeAll, beforeEach, describe,
+  expect, it, Level, Size, TestType
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 class Item013 {
@@ -652,7 +655,12 @@ export default function ArrayConstructor3Test(): void {
      * @tc.level Level 2
      */
     it('testArrayConstructor3040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<Array<Array<number>>>(new Array<Array<number>>(new Array<number>(1, 2), new Array<number>(3, 4)));
+      const arr = new Array<Array<Array<number>>>(
+        new Array<Array<number>>(
+          new Array<number>(1, 2),
+          new Array<number>(3, 4)
+        )
+      );
       expect(arr[0][0][0]).assertEqual(1);
       expect(arr[0][1][1]).assertEqual(4);
     });
@@ -727,7 +735,8 @@ export default function ArrayConstructor3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_4500
      * @tc.name testArrayConstructor3045
-     * @tc.desc Verify a single numeric argument selects the length overload while multiple numeric arguments select element initialization
+     * @tc.desc Verify a single numeric argument selects the length overload while multiple
+     * numeric arguments select element initialization
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

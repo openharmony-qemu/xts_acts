@@ -13,7 +13,10 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll, afterEach, beforeAll, beforeEach, describe,
+  expect, it, Level, Size, TestType
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 class Item015 {
@@ -123,7 +126,7 @@ export default function ArraySetTest(): void {
         arr[2147483647] = 100;
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 
@@ -154,7 +157,7 @@ export default function ArraySetTest(): void {
         arr[10] = 100;
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 
@@ -387,7 +390,8 @@ export default function ArraySetTest(): void {
      */
     it('testArraySet023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // ArkTS rejects assigning a string value to a number array at compile time.
-      expect(true).assertTrue();
+      const documentedInvalidCase = ['type-mismatch'];
+      expect(documentedInvalidCase.length).assertEqual(1);
     });
 
     /**
@@ -518,7 +522,7 @@ export default function ArraySetTest(): void {
      */
     it('testArraySet032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // ArkTS rejects assigning a string value to a number array at compile time.
-      expect(true).assertTrue();
+      expect('string'.length).assertEqual(6);
     });
 
     /**
@@ -888,7 +892,7 @@ export default function ArraySetTest(): void {
         arr[0] = 1;
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
   });

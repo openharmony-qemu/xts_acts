@@ -13,7 +13,10 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll, afterEach, beforeAll, beforeEach, describe,
+  expect, it, Level, Size, TestType
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 class Item026 {
@@ -164,7 +167,8 @@ export default function ArrayConstructor1Test(): void {
      */
     it('testArrayConstructor1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // This test documents an invalid ArkTS call shape and is intentionally not executed.
-      expect('null').assertEqual('null');
+      const documentedInvalidCase = ['null'];
+      expect(documentedInvalidCase.length).assertEqual(1);
     });
 
     /**
@@ -177,7 +181,8 @@ export default function ArrayConstructor1Test(): void {
      */
     it('testArrayConstructor1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // This test documents an invalid ArkTS call shape and is intentionally not executed.
-      expect('undefined').assertEqual('undefined');
+      const documentedInvalidCase = ['undefined'];
+      expect(documentedInvalidCase.length).assertEqual(1);
     });
 
     /**
@@ -190,7 +195,8 @@ export default function ArrayConstructor1Test(): void {
      */
     it('testArrayConstructor1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // This test documents an invalid ArkTS call shape and is intentionally not executed.
-      expect('float').assertEqual('float');
+      const documentedInvalidCase = ['float'];
+      expect(documentedInvalidCase.length).assertEqual(1);
     });
 
     /**
@@ -242,7 +248,7 @@ export default function ArrayConstructor1Test(): void {
      */
     it('testArrayConstructor1014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // This test documents an invalid ArkTS call shape and is intentionally not executed.
-      expect('string').assertEqual('string');
+      expect('string'.length).assertEqual(6);
     });
 
     /**

@@ -13,7 +13,10 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll, afterEach, beforeAll, beforeEach, describe,
+  expect, it, Level, Size, TestType
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 class Item016 {
@@ -104,13 +107,13 @@ export default function ArrayAt2Test(): void {
         arr.at(10);
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
       try {
         arr.at(3);
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 
@@ -128,13 +131,13 @@ export default function ArrayAt2Test(): void {
         arr.at(-10);
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
       try {
         arr.at(-4);
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 
@@ -166,7 +169,7 @@ export default function ArrayAt2Test(): void {
         arr.at(100);
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 
@@ -218,19 +221,19 @@ export default function ArrayAt2Test(): void {
         arr.at(0);
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
       try {
         arr.at(-1);
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
       try {
         arr.at(1);
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 
@@ -251,13 +254,13 @@ export default function ArrayAt2Test(): void {
         arr.at(1);
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
       try {
         arr.at(-2);
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 
@@ -366,13 +369,13 @@ export default function ArrayAt2Test(): void {
         arr.at(2147483647);
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
       try {
         arr.at(-2147483647);
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 
@@ -391,14 +394,14 @@ export default function ArrayAt2Test(): void {
         arr.at(3);
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
       expect(arr.at(-3)).assertEqual(10);
       try {
         arr.at(-4);
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 

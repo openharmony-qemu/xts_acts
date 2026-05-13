@@ -13,7 +13,10 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll, afterEach, beforeAll, beforeEach, describe,
+  expect, it, Level, Size, TestType
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 class Item017 {
@@ -232,7 +235,7 @@ export default function ArrayInvoke1Test(): void {
         const val = arr[0];
         expect(val).assertUndefined();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 
@@ -525,7 +528,7 @@ export default function ArrayInvoke1Test(): void {
         arr.reduce((acc: int, v: int): int => acc + v);
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
 
       const sum = arr.reduce((acc: int, v: int): int => acc + v, 0);
@@ -715,7 +718,7 @@ export default function ArrayInvoke1Test(): void {
         const val = arr[0];
         expect(val).assertUndefined();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 

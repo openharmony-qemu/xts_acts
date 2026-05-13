@@ -13,7 +13,10 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll, afterEach, beforeAll, beforeEach, describe,
+  expect, it, Level, Size, TestType
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 class Item025 {
@@ -118,7 +121,7 @@ export default function ArrayGetTest(): void {
       try {
         const val = arr[2147483647];
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 
@@ -162,7 +165,7 @@ export default function ArrayGetTest(): void {
         const val = arr[10];
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 
@@ -431,7 +434,7 @@ export default function ArrayGetTest(): void {
         const val = arr[0];
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 
@@ -464,7 +467,7 @@ export default function ArrayGetTest(): void {
         const val = arr[5];
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 
@@ -678,7 +681,7 @@ export default function ArrayGetTest(): void {
         const val = arr[3];
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 

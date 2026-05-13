@@ -4,13 +4,13 @@
       {
         "name": "default",
         "material": {
-          "certpath": "C:/Users/Administrator/.ohos/config/openharmony/default_xts_demo_array_eY1sIOoosHWqQ8vzz-w3GVVZa3dCAX8Ya1GGXEfnbt8=.cer",
+          "certpath": "C:/Users/Administrator/.ohos/config/openharmony/default_array_standard_test_static_HG0DaT114H_hmHs0lv9ZPAfy2KGPw50QhV9Ozd0N55I=.cer",
           "keyAlias": "debugKey",
-          "keyPassword": "0000001A1703DFBF1159BCFFA994ED94385F5AE96F6D76F9D061ED569829B7429E105A38D758F38F6B65",
-          "profile": "C:/Users/Administrator/.ohos/config/openharmony/default_xts_demo_array_eY1sIOoosHWqQ8vzz-w3GVVZa3dCAX8Ya1GGXEfnbt8=.p7b",
+          "keyPassword": "0000001BAF9E9B28A040E47D7E985BD34F515DD92A000C825E66222EB2580E07652BC4D7171561A5EBBC54",
+          "profile": "C:/Users/Administrator/.ohos/config/openharmony/default_array_standard_test_static_HG0DaT114H_hmHs0lv9ZPAfy2KGPw50QhV9Ozd0N55I=.p7b",
           "signAlg": "SHA256withECDSA",
-          "storeFile": "C:/Users/Administrator/.ohos/config/openharmony/default_xts_demo_array_eY1sIOoosHWqQ8vzz-w3GVVZa3dCAX8Ya1GGXEfnbt8=.p12",
-          "storePassword": "0000001A1952F53906AF2AA8BD0F7ACCE7E5EF5BA795AA94B98392BE33E5064074EFA5717236B193254C"
+          "storeFile": "C:/Users/Administrator/.ohos/config/openharmony/default_array_standard_test_static_HG0DaT114H_hmHs0lv9ZPAfy2KGPw50QhV9Ozd0N55I=.p12",
+          "storePassword": "0000001B59CE27E1E4D0EEB8ABA0582257CA681D6A31D94B2CA145DD9BBD3DD855AA321BCD7EA89E242CB8"
         }
       }
     ],

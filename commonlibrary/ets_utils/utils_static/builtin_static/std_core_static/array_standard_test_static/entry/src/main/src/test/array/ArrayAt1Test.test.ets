@@ -13,7 +13,10 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll, afterEach, beforeAll, beforeEach, describe,
+  expect, it, Level, Size, TestType
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 class Person026 {
@@ -98,7 +101,7 @@ export default function ArrayAt1Test(): void {
         arr.at(10);
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 
@@ -116,7 +119,7 @@ export default function ArrayAt1Test(): void {
         arr.at(-10);
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 
@@ -166,7 +169,7 @@ export default function ArrayAt1Test(): void {
         arr.at(largeIndex);
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 
@@ -185,7 +188,7 @@ export default function ArrayAt1Test(): void {
         arr.at(largeNegativeIndex);
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 
@@ -217,7 +220,7 @@ export default function ArrayAt1Test(): void {
         arr.at(100);
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 
@@ -325,7 +328,7 @@ export default function ArrayAt1Test(): void {
         arr.at(arr.length);
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 
@@ -343,7 +346,7 @@ export default function ArrayAt1Test(): void {
         arr.at(-arr.length - 1);
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 
@@ -361,19 +364,19 @@ export default function ArrayAt1Test(): void {
         arr.at(0);
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
       try {
         arr.at(-1);
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
       try {
         arr.at(1);
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 
@@ -698,7 +701,7 @@ export default function ArrayAt1Test(): void {
         arr.at(100);
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 
@@ -733,13 +736,13 @@ export default function ArrayAt1Test(): void {
         arr.at(hugeIndex1);
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
       try {
         arr.at(hugeIndex2);
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 
@@ -760,7 +763,7 @@ export default function ArrayAt1Test(): void {
         arr.at(normalizedMinSafeIndex);
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 
@@ -827,11 +830,11 @@ export default function ArrayAt1Test(): void {
         if (value !== undefined) {
           expect().assertFail();
         } else {
-          expect(true).assertTrue();
+          expect(value).assertUndefined();
         }
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 

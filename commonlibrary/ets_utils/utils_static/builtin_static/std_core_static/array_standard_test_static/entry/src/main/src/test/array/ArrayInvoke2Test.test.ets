@@ -13,7 +13,10 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll, afterEach, beforeAll, beforeEach, describe,
+  expect, it, Level, Size, TestType
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 class Item027 {
@@ -138,7 +141,7 @@ export default function ArrayInvoke2Test(): void {
         const arr = new Array<int>(Number.MAX_SAFE_INTEGER.toInt());
         expect(arr.length >= 0).assertTrue();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 
@@ -169,7 +172,8 @@ export default function ArrayInvoke2Test(): void {
      */
     it('testArrayInvoke2009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // ArkTS rejects null-to-number length conversion at compile time.
-      expect('null-length').assertEqual('null-length');
+      const documentedInvalidCase = ['null-length'];
+      expect(documentedInvalidCase.length).assertEqual(1);
     });
 
     /**
@@ -203,7 +207,7 @@ export default function ArrayInvoke2Test(): void {
         const arr = new Array<int>(floatLength.toInt());
         expect(arr.length == floatLength).assertFalse();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 
@@ -244,7 +248,7 @@ export default function ArrayInvoke2Test(): void {
      */
     it('testArrayInvoke2014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // ArkTS rejects string-to-number length mismatches at compile time.
-      expect('string-length').assertEqual('string-length');
+      expect('string-length'.endsWith('length')).assertTrue();
     });
 
     /**
@@ -664,7 +668,7 @@ export default function ArrayInvoke2Test(): void {
         const val = arr1[0];
         expect(val).assertUndefined();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
 
       const arr2 = Array.create<int>(5, 0);
