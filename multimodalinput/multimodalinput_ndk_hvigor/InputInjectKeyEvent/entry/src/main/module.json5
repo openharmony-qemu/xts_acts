@@ -47,7 +47,8 @@
     ],
     "requestPermissions": [
       {
-        "name": "ohos.permission.INPUT_MONITORING"
+        "name": "ohos.permission.INPUT_MONITORING",
+        "name": "ohos.permission.CONTROL_DEVICE"
       }
     ]
   }

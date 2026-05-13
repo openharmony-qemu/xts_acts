@@ -45,6 +45,10 @@
                 ]
             }
         ],
-        "requestPermissions": []
+        "requestPermissions": [      
+            {
+                "name": "ohos.permission.CONTROL_DEVICE"
+            }
+      ]
     }
 }
