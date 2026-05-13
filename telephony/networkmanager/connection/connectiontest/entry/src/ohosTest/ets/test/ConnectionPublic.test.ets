@@ -10153,7 +10153,7 @@ export default function ConnectionPublicTest() {
     /**
      * @tc.name   testNetworkMgrConnectionTraceRoute1200
      * @tc.number SUB_NetworkMgr_Connection_TraceRoute_1200
-     * @tc.desc   Test the destination is "100.192.192.192"
+     * @tc.desc   Test the destination is "198.197.196.195"
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -10162,7 +10162,7 @@ export default function ConnectionPublicTest() {
       const caseName: string = "testNetworkMgrConnectionTraceRoute1200";
       console.info(`${caseName} test Start`);
       try {
-        let destination = "100.192.192.192";
+        let destination = "198.197.196.195";
         let option: connection.TraceRouteOptions = {
           maxJumpNumber: 30,
           packetsType: connection.PacketsType.NETCONN_PACKETS_ICMP,
@@ -10356,6 +10356,7 @@ export default function ConnectionPublicTest() {
         connection.queryTraceRoute(destination, option).then((TraceRouteInfo: connection.TraceRouteInfo[]) => {
           console.info(`${caseName} TraceRouteInfo: ${JSON.stringify(TraceRouteInfo)}`);
           console.info(`${caseName} TraceRouteInfo rtt: ${JSON.stringify(TraceRouteInfo[0].rtt)}`);
+          ExpectTrue(TraceRouteInfo.length > 0);
           let jumpNo: number = TraceRouteInfo[0].jumpNo;
           ExpectTrue(jumpNo === 1);
           console.info(`${caseName}---End`);
@@ -10477,6 +10478,39 @@ export default function ConnectionPublicTest() {
         }).catch((error: BusinessError) => {
           console.info(`${caseName} queryTraceRoute: err-> ${JSON.stringify(error)}`);
           ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionTraceRoute2300
+     * @tc.number SUB_NetworkMgr_Connection_TraceRoute_2300
+     * @tc.desc   Test the option is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionTraceRoute2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionTraceRoute2300";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = "www.baidu.com";;
+        connection.queryTraceRoute(destination, undefined).then((TraceRouteInfo: connection.TraceRouteInfo[]) => {
+          console.info(`${caseName} TraceRouteInfo: ${JSON.stringify(TraceRouteInfo)}`);
+          console.info(`${caseName} TraceRouteInfo rtt: ${JSON.stringify(TraceRouteInfo[0].rtt)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} queryTraceRoute: err-> ${JSON.stringify(error)}`);
+          ExpectTrue(error.code === 401);
           console.info(`${caseName}---End`);
           done();
         });
