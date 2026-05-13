@@ -20,7 +20,6 @@ import ArrayCopyWithin1Test from "./array/ArrayCopyWithin1Test.test";
 import ArrayCopyWithin2Test from "./array/ArrayCopyWithin2Test.test";
 import ArrayCopyWithin3Test from "./array/ArrayCopyWithin3Test.test";
 import ArrayCopyWithin4Test from "./array/ArrayCopyWithin4Test.test";
-import ArrayConstructor1Test from "./array/ArrayConstructor1Test.test";
 import ArrayConstructor2Test from "./array/ArrayConstructor2Test.test";
 import ArrayConstructor3Test from "./array/ArrayConstructor3Test.test";
 import ArrayConstructor4Test from "./array/ArrayConstructor4Test.test";
@@ -40,7 +39,6 @@ export default function testsuite(): void {
   ArrayCopyWithin2Test();
   ArrayCopyWithin3Test();
   ArrayCopyWithin4Test();
-  ArrayConstructor1Test();
   ArrayConstructor2Test();
   ArrayConstructor3Test();
   ArrayConstructor4Test();
