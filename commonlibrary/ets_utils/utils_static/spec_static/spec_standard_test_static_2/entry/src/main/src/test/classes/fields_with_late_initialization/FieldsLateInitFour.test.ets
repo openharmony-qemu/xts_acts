@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -641,8 +641,8 @@ class A_F446 {
   }
 }
 
-export default function FieldsLateInitTestFour(): void {
-  describe("FieldsLateInitTestFour", () => {
+export default function FieldsLateInitFourTest(): void {
+  describe("FieldsLateInitFourTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -665,280 +665,280 @@ export default function FieldsLateInitTestFour(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0397
-     * @tc.name      testFieldsLateInit0397
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_0100
+     * @tc.name      testFieldsLateInitFour0001
      * @tc.desc      Checking for initialization from constructor with private access modifier.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0397", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F397 = new A_F397()
         expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0398
-     * @tc.name      testFieldsLateInit0398
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_0200
+     * @tc.name      testFieldsLateInitFour0002
      * @tc.desc      Checking for initialization from constructor with private access modifier.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0398", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F398 = new A_F398()
         expect(a.field instanceof double).assertTrue()
         expect(a.field).assertEqual(7.3)
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0399
-     * @tc.name      testFieldsLateInit0399
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_0300
+     * @tc.name      testFieldsLateInitFour0003
      * @tc.desc      Checking for initialization from constructor with private access modifier.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0399", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F399 = new A_F399()
         expect(a.field instanceof string).assertTrue()
         expect(a.field).assertEqual("abc")
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0400
-     * @tc.name      testFieldsLateInit0400
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_0400
+     * @tc.name      testFieldsLateInitFour0004
      * @tc.desc      Checking for initialization from constructor with private access modifier.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F400 = new A_F400()
         expect(a.field instanceof Object).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0401
-     * @tc.name      testFieldsLateInit0401
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_0500
+     * @tc.name      testFieldsLateInitFour0005
      * @tc.desc      Checking for initialization from constructor with private access modifier.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0401", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F401 = new A_F401()
         expect(a.field instanceof long).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0402
-     * @tc.name      testFieldsLateInit0402
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_0600
+     * @tc.name      testFieldsLateInitFour0006
      * @tc.desc      Checking for initialization from constructor with private access modifier.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0402", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F402 = new A_F402()
         expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0403
-     * @tc.name      testFieldsLateInit0403
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_0700
+     * @tc.name      testFieldsLateInitFour0007
      * @tc.desc      Checking for initialization from constructor with private access modifier.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0403", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F403 = new A_F403()
         expect(a.field instanceof double).assertTrue()
         expect(a.field).assertEqual(7.3)
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0404
-     * @tc.name      testFieldsLateInit0404
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_0800
+     * @tc.name      testFieldsLateInitFour0008
      * @tc.desc      Checking for initialization from constructor with private access modifier.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0404", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F404 = new A_F404()
         expect(a.field instanceof string).assertTrue()
         expect(a.field).assertEqual("abc")
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0405
-     * @tc.name      testFieldsLateInit0405
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_0900
+     * @tc.name      testFieldsLateInitFour0009
      * @tc.desc      Checking for initialization from constructor with private access modifier.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0405", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F405 = new A_F405()
         expect(a.field instanceof Object).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0406
-     * @tc.name      testFieldsLateInit0406
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_1000
+     * @tc.name      testFieldsLateInitFour0010
      * @tc.desc      Checking for initialization from constructor with private access modifier.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0406", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F406 = new A_F406()
         expect(a.field instanceof long).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0407
-     * @tc.name      testFieldsLateInit0407
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_1100
+     * @tc.name      testFieldsLateInitFour0011
      * @tc.desc      Checking for initialization from constructor with private access modifier.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0407", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F407 = new A_F407()
         expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0408
-     * @tc.name      testFieldsLateInit0408
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_1200
+     * @tc.name      testFieldsLateInitFour0012
      * @tc.desc      Checking for initialization from constructor with private access modifier.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0408", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F408 = new A_F408()
         expect(a.field instanceof double).assertTrue()
         expect(a.field).assertEqual(7.3)
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0409
-     * @tc.name      testFieldsLateInit0409
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_1300
+     * @tc.name      testFieldsLateInitFour0013
      * @tc.desc      Checking for initialization from constructor with private access modifier.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0409", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F409 = new A_F409()
         expect(a.field instanceof string).assertTrue()
         expect(a.field).assertEqual("abc")
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0410
-     * @tc.name      testFieldsLateInit0410
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_1400
+     * @tc.name      testFieldsLateInitFour0014
      * @tc.desc      Checking for initialization from constructor with private access modifier.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0410", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F410 = new A_F410()
         expect(a.field instanceof Object).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0411
-     * @tc.name      testFieldsLateInit0411
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_1500
+     * @tc.name      testFieldsLateInitFour0015
      * @tc.desc      Checking for initialization from constructor with private access modifier.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0411", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F411 = new A_F411()
         expect(a.field instanceof long).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0412
-     * @tc.name      testFieldsLateInit0412
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_1600
+     * @tc.name      testFieldsLateInitFour0016
      * @tc.desc      Checking for initialization from constructor with private access modifier.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0412", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F412 = new A_F412()
         expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0413
-     * @tc.name      testFieldsLateInit0413
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_1700
+     * @tc.name      testFieldsLateInitFour0017
      * @tc.desc      Checking for initialization from constructor with private access modifier.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0413", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F413 = new A_F413()
         expect(a.field instanceof double).assertTrue()
         expect(a.field).assertEqual(7.3)
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0414
-     * @tc.name      testFieldsLateInit0414
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_1800
+     * @tc.name      testFieldsLateInitFour0018
      * @tc.desc      Checking for initialization from constructor with private access modifier.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0414", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F414 = new A_F414()
         expect(a.field instanceof string).assertTrue()
         expect(a.field).assertEqual("abc")
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0415
-     * @tc.name      testFieldsLateInit0415
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_1900
+     * @tc.name      testFieldsLateInitFour0019
      * @tc.desc      Checking for initialization from constructor with private access modifier.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0415", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F415 = new A_F415()
         expect(a.field instanceof Object).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0416
-     * @tc.name      testFieldsLateInit0416
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_2000
+     * @tc.name      testFieldsLateInitFour0020
      * @tc.desc      Checking for initialization from outside of constructor with private access
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0416", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F416 = new A_F416()
         a.field = 4
         expect(a.field instanceof long).assertTrue()
@@ -946,14 +946,14 @@ export default function FieldsLateInitTestFour(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0417
-     * @tc.name      testFieldsLateInit0417
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_2100
+     * @tc.name      testFieldsLateInitFour0021
      * @tc.desc      Checking for initialization from outside of constructor with private access
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0417", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F417 = new A_F417()
         a.field = 4
         expect(a.field instanceof int).assertTrue()
@@ -961,14 +961,14 @@ export default function FieldsLateInitTestFour(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0418
-     * @tc.name      testFieldsLateInit0418
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_2200
+     * @tc.name      testFieldsLateInitFour0022
      * @tc.desc      Checking for initialization from outside of constructor with private access
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0418", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F418 = new A_F418()
         a.field = 4
         expect(a.field instanceof double).assertTrue()
@@ -976,14 +976,14 @@ export default function FieldsLateInitTestFour(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0419
-     * @tc.name      testFieldsLateInit0419
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_2300
+     * @tc.name      testFieldsLateInitFour0023
      * @tc.desc      Checking for initialization from outside of constructor with private access
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0419", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F419 = new A_F419()
         a.field = 4n
         expect(a.field instanceof bigint).assertTrue()
@@ -991,14 +991,14 @@ export default function FieldsLateInitTestFour(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0420
-     * @tc.name      testFieldsLateInit0420
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_2400
+     * @tc.name      testFieldsLateInitFour0024
      * @tc.desc      Checking for initialization from outside of constructor with private access
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0420", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F420 = new A_F420()
         a.field = "ab"
         expect(a.field instanceof string).assertTrue()
@@ -1006,14 +1006,14 @@ export default function FieldsLateInitTestFour(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0421
-     * @tc.name      testFieldsLateInit0421
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_2500
+     * @tc.name      testFieldsLateInitFour0025
      * @tc.desc      As all other fields, a field with late initialization must be initialized before
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0421", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F421 = new A_F421()
         let expectedError = (e: Error): boolean => {
             return (e instanceof Error)
@@ -1024,14 +1024,14 @@ export default function FieldsLateInitTestFour(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0422
-     * @tc.name      testFieldsLateInit0422
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_2600
+     * @tc.name      testFieldsLateInitFour0026
      * @tc.desc      As all other fields, a field with late initialization must be initialized before
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0422", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F422 = new A_F422()
         let expectedError = (e: Error): boolean => {
             return (e instanceof Error)
@@ -1042,14 +1042,14 @@ export default function FieldsLateInitTestFour(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0423
-     * @tc.name      testFieldsLateInit0423
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_2700
+     * @tc.name      testFieldsLateInitFour0027
      * @tc.desc      As all other fields, a field with late initialization must be initialized before
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0423", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F423 = new A_F423()
         let expectedError = (e: Error): boolean => {
             return (e instanceof Error)
@@ -1060,14 +1060,14 @@ export default function FieldsLateInitTestFour(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0424
-     * @tc.name      testFieldsLateInit0424
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_2800
+     * @tc.name      testFieldsLateInitFour0028
      * @tc.desc      As all other fields, a field with late initialization must be initialized before
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0424", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F424 = new A_F424()
         let expectedError = (e: Error): boolean => {
             return (e instanceof Error)
@@ -1078,14 +1078,14 @@ export default function FieldsLateInitTestFour(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0425
-     * @tc.name      testFieldsLateInit0425
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_2900
+     * @tc.name      testFieldsLateInitFour0029
      * @tc.desc      As all other fields, a field with late initialization must be initialized before
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0425", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F425 = new A_F425()
         let expectedError = (e: Error): boolean => {
             return (e instanceof Error)
@@ -1096,14 +1096,14 @@ export default function FieldsLateInitTestFour(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0426
-     * @tc.name      testFieldsLateInit0426
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_3000
+     * @tc.name      testFieldsLateInitFour0030
      * @tc.desc      As all other fields, a field with late initialization must be initialized before
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0426", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F426 = new A_F426()
         let expectedError = (e: Error): boolean => {
             return (e instanceof Error)
@@ -1114,14 +1114,14 @@ export default function FieldsLateInitTestFour(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0427
-     * @tc.name      testFieldsLateInit0427
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_3100
+     * @tc.name      testFieldsLateInitFour0031
      * @tc.desc      As all other fields, a field with late initialization must be initialized before
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0427", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F427 = new A_F427()
         let expectedError = (e: Error): boolean => {
             return (e instanceof Error)
@@ -1132,14 +1132,14 @@ export default function FieldsLateInitTestFour(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0428
-     * @tc.name      testFieldsLateInit0428
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_3200
+     * @tc.name      testFieldsLateInitFour0032
      * @tc.desc      As all other fields, a field with late initialization must be initialized before
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0428", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F428 = new A_F428()
         let expectedError = (e: Error): boolean => {
             return (e instanceof Error)
@@ -1150,14 +1150,14 @@ export default function FieldsLateInitTestFour(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0429
-     * @tc.name      testFieldsLateInit0429
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_3300
+     * @tc.name      testFieldsLateInitFour0033
      * @tc.desc      As all other fields, a field with late initialization must be initialized before
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0429", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F429 = new A_F429()
         let expectedError = (e: Error): boolean => {
             return (e instanceof Error)
@@ -1168,14 +1168,14 @@ export default function FieldsLateInitTestFour(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0430
-     * @tc.name      testFieldsLateInit0430
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_3400
+     * @tc.name      testFieldsLateInitFour0034
      * @tc.desc      As all other fields, a field with late initialization must be initialized before
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0430", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F430 = new A_F430()
         let expectedError = (e: Error): boolean => {
             return (e instanceof Error)
@@ -1186,14 +1186,14 @@ export default function FieldsLateInitTestFour(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0431
-     * @tc.name      testFieldsLateInit0431
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_3500
+     * @tc.name      testFieldsLateInitFour0035
      * @tc.desc      As all other fields, a field with late initialization must be initialized before
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0431", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F431 = new A_F431()
         let expectedError = (e: Error): boolean => {
             return (e instanceof Error)
@@ -1204,14 +1204,14 @@ export default function FieldsLateInitTestFour(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0432
-     * @tc.name      testFieldsLateInit0432
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_3600
+     * @tc.name      testFieldsLateInitFour0036
      * @tc.desc      As all other fields, a field with late initialization must be initialized before
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0432", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F432 = new A_F432()
         let expectedError = (e: Error): boolean => {
             return (e instanceof Error)
@@ -1222,14 +1222,14 @@ export default function FieldsLateInitTestFour(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0433
-     * @tc.name      testFieldsLateInit0433
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_3700
+     * @tc.name      testFieldsLateInitFour0037
      * @tc.desc      As all other fields, a field with late initialization must be initialized before
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0433", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F433 = new A_F433()
         let expectedError = (e: Error): boolean => {
             return (e instanceof Error)
@@ -1240,14 +1240,14 @@ export default function FieldsLateInitTestFour(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0434
-     * @tc.name      testFieldsLateInit0434
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_3800
+     * @tc.name      testFieldsLateInitFour0038
      * @tc.desc      As all other fields, a field with late initialization must be initialized before
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0434", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F434 = new A_F434()
         expect(a.res).assertFalse()
         waitForCompletion(a.foo)
@@ -1255,14 +1255,14 @@ export default function FieldsLateInitTestFour(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0435
-     * @tc.name      testFieldsLateInit0435
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_3900
+     * @tc.name      testFieldsLateInitFour0039
      * @tc.desc      As all other fields, a field with late initialization must be initialized before
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0435", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F435 = new A_F435()
         expect(a.res).assertFalse()
         waitForCompletion(a.foo)
@@ -1270,14 +1270,14 @@ export default function FieldsLateInitTestFour(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0436
-     * @tc.name      testFieldsLateInit0436
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_4000
+     * @tc.name      testFieldsLateInitFour0040
      * @tc.desc      As all other fields, a field with late initialization must be initialized before
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0436", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F436 = new A_F436()
         expect(a.res).assertFalse()
         waitForCompletion(a.foo)
@@ -1285,14 +1285,14 @@ export default function FieldsLateInitTestFour(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0437
-     * @tc.name      testFieldsLateInit0437
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_4100
+     * @tc.name      testFieldsLateInitFour0041
      * @tc.desc      As all other fields, a field with late initialization must be initialized before
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0437", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F437 = new A_F437()
         expect(a.res).assertFalse()
         waitForCompletion(a.foo)
@@ -1300,14 +1300,14 @@ export default function FieldsLateInitTestFour(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0438
-     * @tc.name      testFieldsLateInit0438
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_4200
+     * @tc.name      testFieldsLateInitFour0042
      * @tc.desc      As all other fields, a field with late initialization must be initialized before
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0438", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F438 = new A_F438()
         expect(a.res).assertFalse()
         waitForCompletion(a.foo)
@@ -1315,14 +1315,14 @@ export default function FieldsLateInitTestFour(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0439
-     * @tc.name      testFieldsLateInit0439
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_4300
+     * @tc.name      testFieldsLateInitFour0043
      * @tc.desc      As all other fields, a field with late initialization must be initialized before
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0439", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F439 = new A_F439()
         expect(a.res).assertFalse()
         waitForCompletion(a.foo)
@@ -1330,14 +1330,14 @@ export default function FieldsLateInitTestFour(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0440
-     * @tc.name      testFieldsLateInit0440
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_4400
+     * @tc.name      testFieldsLateInitFour0044
      * @tc.desc      As all other fields, a field with late initialization must be initialized before
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0440", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F440 = new A_F440()
         expect(a.res).assertFalse()
         waitForCompletion(a.foo)
@@ -1345,14 +1345,14 @@ export default function FieldsLateInitTestFour(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0441
-     * @tc.name      testFieldsLateInit0441
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_4500
+     * @tc.name      testFieldsLateInitFour0045
      * @tc.desc      As all other fields, a field with late initialization must be initialized before
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0441", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F441 = new A_F441()
         expect(a.res).assertFalse()
         waitForCompletion(a.foo)
@@ -1360,14 +1360,14 @@ export default function FieldsLateInitTestFour(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0442
-     * @tc.name      testFieldsLateInit0442
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_4600
+     * @tc.name      testFieldsLateInitFour0046
      * @tc.desc      As all other fields, a field with late initialization must be initialized before
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0442", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F442 = new A_F442()
         expect(a.res).assertFalse()
         waitForCompletion(a.foo)
@@ -1375,14 +1375,14 @@ export default function FieldsLateInitTestFour(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0443
-     * @tc.name      testFieldsLateInit0443
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_4700
+     * @tc.name      testFieldsLateInitFour0047
      * @tc.desc      As all other fields, a field with late initialization must be initialized before
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0443", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F443 = new A_F443()
         expect(a.res).assertFalse()
         waitForCompletion(a.foo)
@@ -1390,14 +1390,14 @@ export default function FieldsLateInitTestFour(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0444
-     * @tc.name      testFieldsLateInit0444
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_4800
+     * @tc.name      testFieldsLateInitFour0048
      * @tc.desc      As all other fields, a field with late initialization must be initialized before
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0444", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F444 = new A_F444()
         expect(a.res).assertFalse()
         waitForCompletion(a.foo)
@@ -1405,14 +1405,14 @@ export default function FieldsLateInitTestFour(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0445
-     * @tc.name      testFieldsLateInit0445
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_4900
+     * @tc.name      testFieldsLateInitFour0049
      * @tc.desc      As all other fields, a field with late initialization must be initialized before
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0445", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F445 = new A_F445()
         expect(a.res).assertFalse()
         waitForCompletion(a.foo)
@@ -1420,14 +1420,14 @@ export default function FieldsLateInitTestFour(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0446
-     * @tc.name      testFieldsLateInit0446
+     * @tc.number    SUB_FIELDS_LATE_INIT_FOUR_5000
+     * @tc.name      testFieldsLateInitFour0050
      * @tc.desc      As all other fields, a field with late initialization must be initialized before
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0446", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitFour0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F446 = new A_F446()
         expect(a.res).assertFalse()
         waitForCompletion(a.foo)

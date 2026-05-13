@@ -905,8 +905,8 @@ class A_F297 extends Base_F297 {
   override field: int = 5
 }
 
-export default function FieldsLateInitTestTwo(): void {
-  describe("FieldsLateInitTestTwo", () => {
+export default function FieldsLateInitTwoTest(): void {
+  describe("FieldsLateInitTwoTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -929,14 +929,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0199
-     * @tc.name      testFieldsLateInit0199
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_0100
+     * @tc.name      testFieldsLateInitTwo0001
      * @tc.desc      Checking for initialization with asynchronous API usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0199", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F199 = new A_F199()
         waitForCompletion(a.foo)
         expect(a.field instanceof int).assertTrue()
@@ -944,14 +944,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0200
-     * @tc.name      testFieldsLateInit0200
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_0200
+     * @tc.name      testFieldsLateInitTwo0002
      * @tc.desc      Checking for initialization with asynchronous API usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F200 = new A_F200()
         waitForCompletion(a.foo)
         expect(a.field instanceof byte).assertTrue()
@@ -959,14 +959,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0201
-     * @tc.name      testFieldsLateInit0201
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_0300
+     * @tc.name      testFieldsLateInitTwo0003
      * @tc.desc      Checking for initialization with asynchronous API usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0201", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F201 = new A_F201()
         waitForCompletion(a.foo)
         expect(a.field instanceof short).assertTrue()
@@ -974,14 +974,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0202
-     * @tc.name      testFieldsLateInit0202
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_0400
+     * @tc.name      testFieldsLateInitTwo0004
      * @tc.desc      Checking for initialization with asynchronous API usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0202", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F202 = new A_F202()
         waitForCompletion(a.foo)
         expect(a.field instanceof double).assertTrue()
@@ -989,14 +989,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0203
-     * @tc.name      testFieldsLateInit0203
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_0500
+     * @tc.name      testFieldsLateInitTwo0005
      * @tc.desc      Checking for initialization with asynchronous API usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0203", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F203 = new A_F203()
         waitForCompletion(a.foo)
         expect(a.field instanceof number).assertTrue()
@@ -1004,14 +1004,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0204
-     * @tc.name      testFieldsLateInit0204
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_0600
+     * @tc.name      testFieldsLateInitTwo0006
      * @tc.desc      Checking for initialization with asynchronous API usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0204", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F204 = new A_F204()
         waitForCompletion(a.foo)
         expect(a.field instanceof float).assertTrue()
@@ -1019,14 +1019,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0205
-     * @tc.name      testFieldsLateInit0205
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_0700
+     * @tc.name      testFieldsLateInitTwo0007
      * @tc.desc      Checking for initialization with asynchronous API usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0205", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F205 = new A_F205()
         waitForCompletion(a.foo)
         expect(a.field instanceof bigint).assertTrue()
@@ -1034,14 +1034,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0206
-     * @tc.name      testFieldsLateInit0206
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_0800
+     * @tc.name      testFieldsLateInitTwo0008
      * @tc.desc      Checking for initialization with asynchronous API usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0206", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F206 = new A_F206()
         waitForCompletion(a.foo)
         expect(a.field instanceof string).assertTrue()
@@ -1049,14 +1049,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0207
-     * @tc.name      testFieldsLateInit0207
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_0900
+     * @tc.name      testFieldsLateInitTwo0009
      * @tc.desc      Checking for initialization with asynchronous API usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0207", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F207 = new A_F207()
         waitForCompletion(a.foo)
         expect(a.field instanceof char).assertTrue()
@@ -1064,14 +1064,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0208
-     * @tc.name      testFieldsLateInit0208
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_1000
+     * @tc.name      testFieldsLateInitTwo0010
      * @tc.desc      Checking for initialization with asynchronous API usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0208", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F208 = new A_F208()
         waitForCompletion(a.foo)
         expect(a.field instanceof boolean).assertTrue()
@@ -1079,14 +1079,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0209
-     * @tc.name      testFieldsLateInit0209
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_1100
+     * @tc.name      testFieldsLateInitTwo0011
      * @tc.desc      Checking for initialization with asynchronous API usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0209", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F209 = new A_F209()
         waitForCompletion(a.foo)
         expect(a.field instanceof Object).assertTrue()
@@ -1094,14 +1094,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0210
-     * @tc.name      testFieldsLateInit0210
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_1200
+     * @tc.name      testFieldsLateInitTwo0012
      * @tc.desc      Checking for initialization with asynchronous API usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0210", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F210 = new A_F210()
         let res = waitForCompletion(async () => a.foo().then((): long => a.field))
         expect(res instanceof long).assertTrue()
@@ -1111,14 +1111,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0211
-     * @tc.name      testFieldsLateInit0211
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_1300
+     * @tc.name      testFieldsLateInitTwo0013
      * @tc.desc      Checking for initialization with asynchronous API usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0211", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F211 = new A_F211()
         let res = waitForCompletion(async () => a.foo().then((): int => a.field))
         expect(res instanceof int).assertTrue()
@@ -1128,14 +1128,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0212
-     * @tc.name      testFieldsLateInit0212
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_1400
+     * @tc.name      testFieldsLateInitTwo0014
      * @tc.desc      Checking for initialization with asynchronous API usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0212", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F212 = new A_F212()
         let res = waitForCompletion(async () => a.foo().then((): byte => a.field))
         expect(res instanceof byte).assertTrue()
@@ -1145,14 +1145,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0213
-     * @tc.name      testFieldsLateInit0213
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_1500
+     * @tc.name      testFieldsLateInitTwo0015
      * @tc.desc      Checking for initialization with asynchronous API usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0213", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F213 = new A_F213()
         let res = waitForCompletion(async () => a.foo().then((): short => a.field))
         expect(res instanceof short).assertTrue()
@@ -1162,14 +1162,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0214
-     * @tc.name      testFieldsLateInit0214
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_1600
+     * @tc.name      testFieldsLateInitTwo0016
      * @tc.desc      Checking for initialization with asynchronous API usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0214", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F214 = new A_F214()
         let res = waitForCompletion(async () => a.foo().then((): double => a.field))
         expect(res instanceof double).assertTrue()
@@ -1179,14 +1179,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0215
-     * @tc.name      testFieldsLateInit0215
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_1700
+     * @tc.name      testFieldsLateInitTwo0017
      * @tc.desc      Checking for initialization with asynchronous API usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0215", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F215 = new A_F215()
         let res = waitForCompletion(async () => a.foo().then((): number => a.field))
         expect(res instanceof number).assertTrue()
@@ -1196,14 +1196,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0216
-     * @tc.name      testFieldsLateInit0216
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_1800
+     * @tc.name      testFieldsLateInitTwo0018
      * @tc.desc      Checking for initialization with asynchronous API usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0216", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F216 = new A_F216()
         let res = waitForCompletion(async () => a.foo().then((): float => a.field))
         expect(res instanceof float).assertTrue()
@@ -1213,14 +1213,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0217
-     * @tc.name      testFieldsLateInit0217
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_1900
+     * @tc.name      testFieldsLateInitTwo0019
      * @tc.desc      Checking for initialization with asynchronous API usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0217", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F217 = new A_F217()
         let res = waitForCompletion(async () => a.foo().then((): bigint => a.field))
         expect(res instanceof bigint).assertTrue()
@@ -1230,14 +1230,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0218
-     * @tc.name      testFieldsLateInit0218
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_2000
+     * @tc.name      testFieldsLateInitTwo0020
      * @tc.desc      Checking for initialization with asynchronous API usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0218", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F218 = new A_F218()
         let res = waitForCompletion(async () => a.foo().then((): string => a.field))
         expect(res instanceof string).assertTrue()
@@ -1247,14 +1247,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0219
-     * @tc.name      testFieldsLateInit0219
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_2100
+     * @tc.name      testFieldsLateInitTwo0021
      * @tc.desc      Checking for initialization with asynchronous API usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0219", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F219 = new A_F219()
         let res = waitForCompletion(async () => a.foo().then((): char => a.field))
         expect(res instanceof char).assertTrue()
@@ -1264,14 +1264,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0220
-     * @tc.name      testFieldsLateInit0220
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_2200
+     * @tc.name      testFieldsLateInitTwo0022
      * @tc.desc      Checking for initialization with asynchronous API usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0220", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F220 = new A_F220()
         let res = waitForCompletion(async () => a.foo().then((): boolean => a.field))
         expect(res instanceof boolean).assertTrue()
@@ -1281,14 +1281,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0221
-     * @tc.name      testFieldsLateInit0221
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_2300
+     * @tc.name      testFieldsLateInitTwo0023
      * @tc.desc      Checking for initialization with asynchronous API usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0221", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F221 = new A_F221()
         let res = waitForCompletion(async () => a.foo().then((): Object => a.field))
         expect(res instanceof Object).assertTrue()
@@ -1298,14 +1298,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0222
-     * @tc.name      testFieldsLateInit0222
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_2400
+     * @tc.name      testFieldsLateInitTwo0024
      * @tc.desc      Checking for initialization with asynchronous API usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0222", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F222 = new A_F222()
         waitForCompletion(a.foo)
         expect(a.field instanceof C_F222).assertTrue()
@@ -1314,14 +1314,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0223
-     * @tc.name      testFieldsLateInit0223
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_2500
+     * @tc.name      testFieldsLateInitTwo0025
      * @tc.desc      Checking for initialization with asynchronous API usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0223", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F223 = new A_F223()
         let res = waitForCompletion(async () => a.foo().then((): C_F223 => a.field))
         expect(res instanceof C_F223).assertTrue()
@@ -1333,14 +1333,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0224
-     * @tc.name      testFieldsLateInit0224
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_2600
+     * @tc.name      testFieldsLateInitTwo0026
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0224", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F224 = new A_F224()
         a.field = 5
         expect(a.field instanceof long).assertTrue()
@@ -1348,14 +1348,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0225
-     * @tc.name      testFieldsLateInit0225
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_2700
+     * @tc.name      testFieldsLateInitTwo0027
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0225", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F225 = new A_F225()
         a.field = 5
         expect(a.field instanceof int).assertTrue()
@@ -1363,14 +1363,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0226
-     * @tc.name      testFieldsLateInit0226
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_2800
+     * @tc.name      testFieldsLateInitTwo0028
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0226", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F226 = new A_F226()
         a.field = 5
         expect(a.field instanceof byte).assertTrue()
@@ -1378,14 +1378,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0227
-     * @tc.name      testFieldsLateInit0227
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_2900
+     * @tc.name      testFieldsLateInitTwo0029
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0227", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F227 = new A_F227()
         a.field = 5
         expect(a.field instanceof short).assertTrue()
@@ -1393,14 +1393,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0228
-     * @tc.name      testFieldsLateInit0228
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_3000
+     * @tc.name      testFieldsLateInitTwo0030
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0228", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F228 = new A_F228()
         a.field = 7.3
         expect(a.field instanceof double).assertTrue()
@@ -1408,14 +1408,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0229
-     * @tc.name      testFieldsLateInit0229
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_3100
+     * @tc.name      testFieldsLateInitTwo0031
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0229", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F229 = new A_F229()
         a.field = 5
         expect(a.field instanceof number).assertTrue()
@@ -1423,14 +1423,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0230
-     * @tc.name      testFieldsLateInit0230
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_3200
+     * @tc.name      testFieldsLateInitTwo0032
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0230", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F230 = new A_F230()
         a.field = 7.3f
         expect(a.field instanceof float).assertTrue()
@@ -1438,14 +1438,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0231
-     * @tc.name      testFieldsLateInit0231
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_3300
+     * @tc.name      testFieldsLateInitTwo0033
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0231", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F231 = new A_F231()
         a.field = 5n
         expect(a.field instanceof bigint).assertTrue()
@@ -1453,14 +1453,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0232
-     * @tc.name      testFieldsLateInit0232
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_3400
+     * @tc.name      testFieldsLateInitTwo0034
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0232", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F232 = new A_F232()
         a.field = "abc"
         expect(a.field instanceof string).assertTrue()
@@ -1468,14 +1468,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0233
-     * @tc.name      testFieldsLateInit0233
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_3500
+     * @tc.name      testFieldsLateInitTwo0035
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0233", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F233 = new A_F233()
         a.field = c'a'
         expect(a.field instanceof char).assertTrue()
@@ -1483,14 +1483,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0234
-     * @tc.name      testFieldsLateInit0234
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_3600
+     * @tc.name      testFieldsLateInitTwo0036
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0234", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F234 = new A_F234()
         a.field = true
         expect(a.field instanceof boolean).assertTrue()
@@ -1498,14 +1498,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0235
-     * @tc.name      testFieldsLateInit0235
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_3700
+     * @tc.name      testFieldsLateInitTwo0037
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0235", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F235 = new A_F235()
         a.field = 5
         expect(a.field instanceof Object).assertTrue()
@@ -1513,14 +1513,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0236
-     * @tc.name      testFieldsLateInit0236
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_3800
+     * @tc.name      testFieldsLateInitTwo0038
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0236", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F236 = new A_F236()
         a.field = 5
         expect(a.field instanceof long).assertTrue()
@@ -1528,14 +1528,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0237
-     * @tc.name      testFieldsLateInit0237
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_3900
+     * @tc.name      testFieldsLateInitTwo0039
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0237", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F237 = new A_F237()
         a.field = 5
         expect(a.field instanceof int).assertTrue()
@@ -1543,14 +1543,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0238
-     * @tc.name      testFieldsLateInit0238
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_4000
+     * @tc.name      testFieldsLateInitTwo0040
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0238", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F238 = new A_F238()
         a.field = 5
         expect(a.field instanceof byte).assertTrue()
@@ -1558,14 +1558,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0239
-     * @tc.name      testFieldsLateInit0239
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_4100
+     * @tc.name      testFieldsLateInitTwo0041
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0239", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F239 = new A_F239()
         a.field = 5
         expect(a.field instanceof short).assertTrue()
@@ -1573,14 +1573,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0240
-     * @tc.name      testFieldsLateInit0240
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_4200
+     * @tc.name      testFieldsLateInitTwo0042
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0240", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F240 = new A_F240()
         a.field = 7.3
         expect(a.field instanceof double).assertTrue()
@@ -1588,14 +1588,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0241
-     * @tc.name      testFieldsLateInit0241
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_4300
+     * @tc.name      testFieldsLateInitTwo0043
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0241", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F241 = new A_F241()
         a.field = 5
         expect(a.field instanceof number).assertTrue()
@@ -1603,14 +1603,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0242
-     * @tc.name      testFieldsLateInit0242
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_4400
+     * @tc.name      testFieldsLateInitTwo0044
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0242", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F242 = new A_F242()
         a.field = 7.3f
         expect(a.field instanceof float).assertTrue()
@@ -1618,14 +1618,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0243
-     * @tc.name      testFieldsLateInit0243
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_4500
+     * @tc.name      testFieldsLateInitTwo0045
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0243", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F243 = new A_F243()
         a.field = 5n
         expect(a.field instanceof bigint).assertTrue()
@@ -1633,14 +1633,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0244
-     * @tc.name      testFieldsLateInit0244
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_4600
+     * @tc.name      testFieldsLateInitTwo0046
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0244", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F244 = new A_F244()
         a.field = "abc"
         expect(a.field instanceof string).assertTrue()
@@ -1648,14 +1648,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0245
-     * @tc.name      testFieldsLateInit0245
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_4700
+     * @tc.name      testFieldsLateInitTwo0047
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0245", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F245 = new A_F245()
         a.field = c'a'
         expect(a.field instanceof char).assertTrue()
@@ -1663,14 +1663,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0246
-     * @tc.name      testFieldsLateInit0246
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_4800
+     * @tc.name      testFieldsLateInitTwo0048
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0246", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F246 = new A_F246()
         a.field = true
         expect(a.field instanceof boolean).assertTrue()
@@ -1678,14 +1678,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0247
-     * @tc.name      testFieldsLateInit0247
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_4900
+     * @tc.name      testFieldsLateInitTwo0049
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0247", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F247 = new A_F247()
         a.field = 5
         expect(a.field instanceof Object).assertTrue()
@@ -1693,14 +1693,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0248
-     * @tc.name      testFieldsLateInit0248
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_5000
+     * @tc.name      testFieldsLateInitTwo0050
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0248", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F248 = new A_F248()
         a.field = 5
         expect(a.field instanceof long).assertTrue()
@@ -1708,14 +1708,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0249
-     * @tc.name      testFieldsLateInit0249
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_5100
+     * @tc.name      testFieldsLateInitTwo0051
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0249", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F249 = new A_F249()
         a.field = 5
         expect(a.field instanceof int).assertTrue()
@@ -1723,14 +1723,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0250
-     * @tc.name      testFieldsLateInit0250
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_5200
+     * @tc.name      testFieldsLateInitTwo0052
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0250", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F250 = new A_F250()
         a.field = 5
         expect(a.field instanceof byte).assertTrue()
@@ -1738,14 +1738,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0251
-     * @tc.name      testFieldsLateInit0251
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_5300
+     * @tc.name      testFieldsLateInitTwo0053
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0251", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F251 = new A_F251()
         a.field = 5
         expect(a.field instanceof short).assertTrue()
@@ -1753,14 +1753,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0252
-     * @tc.name      testFieldsLateInit0252
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_5400
+     * @tc.name      testFieldsLateInitTwo0054
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0252", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F252 = new A_F252()
         a.field = 7.3
         expect(a.field instanceof double).assertTrue()
@@ -1768,14 +1768,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0253
-     * @tc.name      testFieldsLateInit0253
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_5500
+     * @tc.name      testFieldsLateInitTwo0055
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0253", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F253 = new A_F253()
         a.field = 5
         expect(a.field instanceof number).assertTrue()
@@ -1783,14 +1783,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0254
-     * @tc.name      testFieldsLateInit0254
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_5600
+     * @tc.name      testFieldsLateInitTwo0056
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0254", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F254 = new A_F254()
         a.field = 7.3f
         expect(a.field instanceof float).assertTrue()
@@ -1798,14 +1798,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0255
-     * @tc.name      testFieldsLateInit0255
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_5700
+     * @tc.name      testFieldsLateInitTwo0057
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0255", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F255 = new A_F255()
         a.field = 5n
         expect(a.field instanceof bigint).assertTrue()
@@ -1813,14 +1813,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0256
-     * @tc.name      testFieldsLateInit0256
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_5800
+     * @tc.name      testFieldsLateInitTwo0058
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0256", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F256 = new A_F256()
         a.field = "abc"
         expect(a.field instanceof string).assertTrue()
@@ -1828,14 +1828,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0257
-     * @tc.name      testFieldsLateInit0257
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_5900
+     * @tc.name      testFieldsLateInitTwo0059
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0257", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F257 = new A_F257()
         a.field = c'a'
         expect(a.field instanceof char).assertTrue()
@@ -1843,14 +1843,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0258
-     * @tc.name      testFieldsLateInit0258
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_6000
+     * @tc.name      testFieldsLateInitTwo0060
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0258", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F258 = new A_F258()
         a.field = true
         expect(a.field instanceof boolean).assertTrue()
@@ -1858,14 +1858,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0259
-     * @tc.name      testFieldsLateInit0259
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_6100
+     * @tc.name      testFieldsLateInitTwo0061
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0259", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F259 = new A_F259()
         a.field = 5
         expect(a.field instanceof Object).assertTrue()
@@ -1873,14 +1873,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0260
-     * @tc.name      testFieldsLateInit0260
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_6200
+     * @tc.name      testFieldsLateInitTwo0062
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0260", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F260 = new A_F260()
         a.field = 5
         expect(a.field instanceof long).assertTrue()
@@ -1888,14 +1888,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0261
-     * @tc.name      testFieldsLateInit0261
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_6300
+     * @tc.name      testFieldsLateInitTwo0063
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0261", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F261 = new A_F261()
         a.field = 5
         expect(a.field instanceof int).assertTrue()
@@ -1903,14 +1903,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0262
-     * @tc.name      testFieldsLateInit0262
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_6400
+     * @tc.name      testFieldsLateInitTwo0064
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0262", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F262 = new A_F262()
         a.field = 5
         expect(a.field instanceof byte).assertTrue()
@@ -1918,14 +1918,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0263
-     * @tc.name      testFieldsLateInit0263
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_6500
+     * @tc.name      testFieldsLateInitTwo0065
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0263", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F263 = new A_F263()
         a.field = 5
         expect(a.field instanceof short).assertTrue()
@@ -1933,14 +1933,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0264
-     * @tc.name      testFieldsLateInit0264
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_6600
+     * @tc.name      testFieldsLateInitTwo0066
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0264", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F264 = new A_F264()
         a.field = 7.3
         expect(a.field instanceof double).assertTrue()
@@ -1948,14 +1948,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0265
-     * @tc.name      testFieldsLateInit0265
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_6700
+     * @tc.name      testFieldsLateInitTwo0067
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0265", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F265 = new A_F265()
         a.field = 5
         expect(a.field instanceof number).assertTrue()
@@ -1963,14 +1963,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0266
-     * @tc.name      testFieldsLateInit0266
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_6800
+     * @tc.name      testFieldsLateInitTwo0068
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0266", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F266 = new A_F266()
         a.field = 7.3f
         expect(a.field instanceof float).assertTrue()
@@ -1978,14 +1978,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0267
-     * @tc.name      testFieldsLateInit0267
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_6900
+     * @tc.name      testFieldsLateInitTwo0069
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0267", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F267 = new A_F267()
         a.field = 5n
         expect(a.field instanceof bigint).assertTrue()
@@ -1993,14 +1993,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0268
-     * @tc.name      testFieldsLateInit0268
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_7000
+     * @tc.name      testFieldsLateInitTwo0070
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0268", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F268 = new A_F268()
         a.field = "abc"
         expect(a.field instanceof string).assertTrue()
@@ -2008,14 +2008,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0269
-     * @tc.name      testFieldsLateInit0269
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_7100
+     * @tc.name      testFieldsLateInitTwo0071
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0269", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F269 = new A_F269()
         a.field = c'a'
         expect(a.field instanceof char).assertTrue()
@@ -2023,14 +2023,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0270
-     * @tc.name      testFieldsLateInit0270
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_7200
+     * @tc.name      testFieldsLateInitTwo0072
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0270", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F270 = new A_F270()
         a.field = true
         expect(a.field instanceof boolean).assertTrue()
@@ -2038,14 +2038,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0271
-     * @tc.name      testFieldsLateInit0271
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_7300
+     * @tc.name      testFieldsLateInitTwo0073
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0271", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F271 = new A_F271()
         a.field = 5
         expect(a.field instanceof Object).assertTrue()
@@ -2053,14 +2053,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0272
-     * @tc.name      testFieldsLateInit0272
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_7400
+     * @tc.name      testFieldsLateInitTwo0074
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0272", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F272 = new A_F272()
         expect(a.field instanceof long).assertTrue()
         expect(a.field).assertEqual(3)
@@ -2069,14 +2069,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0273
-     * @tc.name      testFieldsLateInit0273
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_7500
+     * @tc.name      testFieldsLateInitTwo0075
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0273", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F273 = new A_F273()
         expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(3)
@@ -2085,14 +2085,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0274
-     * @tc.name      testFieldsLateInit0274
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_7600
+     * @tc.name      testFieldsLateInitTwo0076
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0274", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F274 = new A_F274()
         expect(a.field instanceof byte).assertTrue()
         expect(a.field).assertEqual(3)
@@ -2101,14 +2101,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0275
-     * @tc.name      testFieldsLateInit0275
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_7700
+     * @tc.name      testFieldsLateInitTwo0077
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0275", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F275 = new A_F275()
         expect(a.field instanceof short).assertTrue()
         expect(a.field).assertEqual(3)
@@ -2117,14 +2117,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0276
-     * @tc.name      testFieldsLateInit0276
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_7800
+     * @tc.name      testFieldsLateInitTwo0078
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0276", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F276 = new A_F276()
         expect(a.field instanceof double).assertTrue()
         expect(a.field).assertEqual(3)
@@ -2133,14 +2133,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0277
-     * @tc.name      testFieldsLateInit0277
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_7900
+     * @tc.name      testFieldsLateInitTwo0079
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0277", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F277 = new A_F277()
         expect(a.field instanceof number).assertTrue()
         expect(a.field).assertEqual(3)
@@ -2149,14 +2149,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0278
-     * @tc.name      testFieldsLateInit0278
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_8000
+     * @tc.name      testFieldsLateInitTwo0080
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0278", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F278 = new A_F278()
         expect(a.field instanceof float).assertTrue()
         expect(a.field).assertEqual(3)
@@ -2165,14 +2165,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0279
-     * @tc.name      testFieldsLateInit0279
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_8100
+     * @tc.name      testFieldsLateInitTwo0081
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0279", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F279 = new A_F279()
         expect(a.field instanceof bigint).assertTrue()
         expect(a.field).assertEqual(3n)
@@ -2181,14 +2181,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0280
-     * @tc.name      testFieldsLateInit0280
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_8200
+     * @tc.name      testFieldsLateInitTwo0082
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0280", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F280 = new A_F280()
         expect(a.field instanceof string).assertTrue()
         expect(a.field).assertEqual("ab")
@@ -2197,14 +2197,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0281
-     * @tc.name      testFieldsLateInit0281
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_8300
+     * @tc.name      testFieldsLateInitTwo0083
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0281", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F281 = new A_F281()
         expect(a.field instanceof char).assertTrue()
         expect(a.field).assertEqual(c'b')
@@ -2213,14 +2213,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0282
-     * @tc.name      testFieldsLateInit0282
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_8400
+     * @tc.name      testFieldsLateInitTwo0084
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0282", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F282 = new A_F282()
         expect(a.field instanceof boolean).assertTrue()
         expect(a.field).assertEqual(false)
@@ -2229,14 +2229,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0283
-     * @tc.name      testFieldsLateInit0283
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_8500
+     * @tc.name      testFieldsLateInitTwo0085
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0283", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F283 = new A_F283()
         expect(a.field instanceof Object).assertTrue()
         expect(a.field).assertEqual(3)
@@ -2245,14 +2245,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0284
-     * @tc.name      testFieldsLateInit0284
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_8600
+     * @tc.name      testFieldsLateInitTwo0086
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0284", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F284 = new A_F284()
         expect(a.field instanceof long).assertTrue()
         expect(a.field).assertEqual(3)
@@ -2261,14 +2261,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0285
-     * @tc.name      testFieldsLateInit0285
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_8700
+     * @tc.name      testFieldsLateInitTwo0087
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0285", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F285 = new A_F285()
         expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(3)
@@ -2277,14 +2277,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0286
-     * @tc.name      testFieldsLateInit0286
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_8800
+     * @tc.name      testFieldsLateInitTwo0088
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0286", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F286 = new A_F286()
         expect(a.field instanceof byte).assertTrue()
         expect(a.field).assertEqual(3)
@@ -2293,14 +2293,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0287
-     * @tc.name      testFieldsLateInit0287
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_8900
+     * @tc.name      testFieldsLateInitTwo0089
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0287", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F287 = new A_F287()
         expect(a.field instanceof short).assertTrue()
         expect(a.field).assertEqual(3)
@@ -2309,14 +2309,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0288
-     * @tc.name      testFieldsLateInit0288
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_9000
+     * @tc.name      testFieldsLateInitTwo0090
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0288", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F288 = new A_F288()
         expect(a.field instanceof double).assertTrue()
         expect(a.field).assertEqual(3)
@@ -2325,14 +2325,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0289
-     * @tc.name      testFieldsLateInit0289
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_9100
+     * @tc.name      testFieldsLateInitTwo0091
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0289", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F289 = new A_F289()
         expect(a.field instanceof number).assertTrue()
         expect(a.field).assertEqual(3)
@@ -2341,14 +2341,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0290
-     * @tc.name      testFieldsLateInit0290
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_9200
+     * @tc.name      testFieldsLateInitTwo0092
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0290", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F290 = new A_F290()
         expect(a.field instanceof float).assertTrue()
         expect(a.field).assertEqual(3)
@@ -2357,14 +2357,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0291
-     * @tc.name      testFieldsLateInit0291
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_9300
+     * @tc.name      testFieldsLateInitTwo0093
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0291", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F291 = new A_F291()
         expect(a.field instanceof bigint).assertTrue()
         expect(a.field).assertEqual(3n)
@@ -2373,14 +2373,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0292
-     * @tc.name      testFieldsLateInit0292
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_9400
+     * @tc.name      testFieldsLateInitTwo0094
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0292", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F292 = new A_F292()
         expect(a.field instanceof string).assertTrue()
         expect(a.field).assertEqual("ab")
@@ -2389,14 +2389,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0293
-     * @tc.name      testFieldsLateInit0293
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_9500
+     * @tc.name      testFieldsLateInitTwo0095
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0293", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F293 = new A_F293()
         expect(a.field instanceof char).assertTrue()
         expect(a.field).assertEqual(c'b')
@@ -2405,14 +2405,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0294
-     * @tc.name      testFieldsLateInit0294
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_9600
+     * @tc.name      testFieldsLateInitTwo0096
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0294", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F294 = new A_F294()
         expect(a.field instanceof boolean).assertTrue()
         expect(a.field).assertEqual(false)
@@ -2421,14 +2421,14 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0295
-     * @tc.name      testFieldsLateInit0295
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_9700
+     * @tc.name      testFieldsLateInitTwo0097
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0295", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_F295 = new A_F295()
         expect(a.field instanceof Object).assertTrue()
         expect(a.field).assertEqual(3)
@@ -2437,28 +2437,28 @@ export default function FieldsLateInitTestTwo(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0296
-     * @tc.name      testFieldsLateInit0296
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_9800
+     * @tc.name      testFieldsLateInitTwo0098
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0296", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F296 = new A_F296()
         expect(a.field instanceof long).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
     /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TEST_0297
-     * @tc.name      testFieldsLateInit0297
+     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_9900
+     * @tc.name      testFieldsLateInitTwo0099
      * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInit0297", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitTwo0099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F297 = new A_F297()
         expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(5)

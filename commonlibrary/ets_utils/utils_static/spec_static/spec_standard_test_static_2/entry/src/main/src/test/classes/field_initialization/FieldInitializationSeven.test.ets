@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1406,8 +1406,8 @@ class A_F792 {
     static field: int
   }
 
-export default function FieldInitializationTestSeven(): void {
-  describe("FieldInitializationTestSeven", () => {
+export default function FieldInitializationSevenTest(): void {
+  describe("FieldInitializationSevenTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -1430,14 +1430,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0694
-     * @tc.name      testFieldInit0694
+     * @tc.number    SUB_FIELD_INIT_SEVEN_0100
+     * @tc.name      testFieldInitSeven0001
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0694", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F694 = new ns.A_F694()
       expect(a.field instanceof int).assertTrue()
       expect(a.field).assertEqual(4)
@@ -1447,14 +1447,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0695
-     * @tc.name      testFieldInit0695
+     * @tc.number    SUB_FIELD_INIT_SEVEN_0200
+     * @tc.name      testFieldInitSeven0002
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0695", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F695 = new ns.A_F695()
       expect(a.field instanceof byte).assertTrue()
       expect(a.field).assertEqual(4)
@@ -1464,14 +1464,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0696
-     * @tc.name      testFieldInit0696
+     * @tc.number    SUB_FIELD_INIT_SEVEN_0300
+     * @tc.name      testFieldInitSeven0003
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0696", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F696 = new ns.A_F696()
       expect(a.field instanceof short).assertTrue()
       expect(a.field).assertEqual(4)
@@ -1481,14 +1481,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0697
-     * @tc.name      testFieldInit0697
+     * @tc.number    SUB_FIELD_INIT_SEVEN_0400
+     * @tc.name      testFieldInitSeven0004
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0697", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F697 = new ns.A_F697()
       expect(a.field instanceof double).assertTrue()
       expect(a.field).assertEqual(4)
@@ -1498,14 +1498,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0698
-     * @tc.name      testFieldInit0698
+     * @tc.number    SUB_FIELD_INIT_SEVEN_0500
+     * @tc.name      testFieldInitSeven0005
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0698", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F698 = new ns.A_F698()
       expect(a.field instanceof number).assertTrue()
       expect(a.field).assertEqual(4)
@@ -1515,14 +1515,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0699
-     * @tc.name      testFieldInit0699
+     * @tc.number    SUB_FIELD_INIT_SEVEN_0600
+     * @tc.name      testFieldInitSeven0006
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0699", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F699 = new ns.A_F699()
       expect(a.field instanceof float).assertTrue()
       expect(a.field).assertEqual(4.5f)
@@ -1532,14 +1532,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0700
-     * @tc.name      testFieldInit0700
+     * @tc.number    SUB_FIELD_INIT_SEVEN_0700
+     * @tc.name      testFieldInitSeven0007
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F700 = new ns.A_F700()
       expect(a.field instanceof bigint).assertTrue()
       expect(a.field).assertEqual(4n)
@@ -1549,14 +1549,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0701
-     * @tc.name      testFieldInit0701
+     * @tc.number    SUB_FIELD_INIT_SEVEN_0800
+     * @tc.name      testFieldInitSeven0008
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0701", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F701 = new ns.A_F701()
       expect(a.field instanceof string).assertTrue()
       expect(a.field).assertEqual("abc")
@@ -1566,14 +1566,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0702
-     * @tc.name      testFieldInit0702
+     * @tc.number    SUB_FIELD_INIT_SEVEN_0900
+     * @tc.name      testFieldInitSeven0009
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0702", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F702 = new ns.A_F702()
       expect(a.field instanceof char).assertTrue()
       expect(a.field).assertEqual(c'a')
@@ -1583,14 +1583,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0703
-     * @tc.name      testFieldInit0703
+     * @tc.number    SUB_FIELD_INIT_SEVEN_1000
+     * @tc.name      testFieldInitSeven0010
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0703", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F703 = new ns.A_F703()
       expect(a.field instanceof boolean).assertTrue()
       expect(a.field).assertEqual(false)
@@ -1600,14 +1600,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0704
-     * @tc.name      testFieldInit0704
+     * @tc.number    SUB_FIELD_INIT_SEVEN_1100
+     * @tc.name      testFieldInitSeven0011
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0704", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F704 = new ns.A_F704()
       expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(4)
@@ -1617,14 +1617,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0705
-     * @tc.name      testFieldInit0705
+     * @tc.number    SUB_FIELD_INIT_SEVEN_1200
+     * @tc.name      testFieldInitSeven0012
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0705", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F705 = new ns.A_F705()
       expect(a.field instanceof Object | undefined | null).assertTrue()
       expect(a.field).assertEqual(4)
@@ -1634,14 +1634,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0706
-     * @tc.name      testFieldInit0706
+     * @tc.number    SUB_FIELD_INIT_SEVEN_1300
+     * @tc.name      testFieldInitSeven0013
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0706", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F706 = new ns.A_F706()
       expect(a.field instanceof Any).assertTrue()
       expect(a.field).assertEqual(4)
@@ -1651,14 +1651,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0707
-     * @tc.name      testFieldInit0707
+     * @tc.number    SUB_FIELD_INIT_SEVEN_1400
+     * @tc.name      testFieldInitSeven0014
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0707", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F707 = new ns.A_F707()
       expect(a.field instanceof long).assertTrue()
       expect(a.field).assertEqual(4)
@@ -1668,14 +1668,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0708
-     * @tc.name      testFieldInit0708
+     * @tc.number    SUB_FIELD_INIT_SEVEN_1500
+     * @tc.name      testFieldInitSeven0015
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0708", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F708 = new ns.A_F708()
       expect(a.field instanceof int).assertTrue()
       expect(a.field).assertEqual(4)
@@ -1685,14 +1685,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0709
-     * @tc.name      testFieldInit0709
+     * @tc.number    SUB_FIELD_INIT_SEVEN_1600
+     * @tc.name      testFieldInitSeven0016
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0709", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F709 = new ns.A_F709()
       expect(a.field instanceof byte).assertTrue()
       expect(a.field).assertEqual(4)
@@ -1702,14 +1702,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0710
-     * @tc.name      testFieldInit0710
+     * @tc.number    SUB_FIELD_INIT_SEVEN_1700
+     * @tc.name      testFieldInitSeven0017
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0710", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F710 = new ns.A_F710()
       expect(a.field instanceof short).assertTrue()
       expect(a.field).assertEqual(4)
@@ -1719,14 +1719,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0711
-     * @tc.name      testFieldInit0711
+     * @tc.number    SUB_FIELD_INIT_SEVEN_1800
+     * @tc.name      testFieldInitSeven0018
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0711", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F711 = new ns.A_F711()
       expect(a.field instanceof double).assertTrue()
       expect(a.field).assertEqual(4)
@@ -1736,14 +1736,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0712
-     * @tc.name      testFieldInit0712
+     * @tc.number    SUB_FIELD_INIT_SEVEN_1900
+     * @tc.name      testFieldInitSeven0019
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0712", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F712 = new ns.A_F712()
       expect(a.field instanceof number).assertTrue()
       expect(a.field).assertEqual(4)
@@ -1753,14 +1753,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0713
-     * @tc.name      testFieldInit0713
+     * @tc.number    SUB_FIELD_INIT_SEVEN_2000
+     * @tc.name      testFieldInitSeven0020
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0713", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F713 = new ns.A_F713()
       expect(a.field instanceof float).assertTrue()
       expect(a.field).assertEqual(4.5f)
@@ -1770,14 +1770,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0714
-     * @tc.name      testFieldInit0714
+     * @tc.number    SUB_FIELD_INIT_SEVEN_2100
+     * @tc.name      testFieldInitSeven0021
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0714", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F714 = new ns.A_F714()
       expect(a.field instanceof bigint).assertTrue()
       expect(a.field).assertEqual(4n)
@@ -1787,14 +1787,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0715
-     * @tc.name      testFieldInit0715
+     * @tc.number    SUB_FIELD_INIT_SEVEN_2200
+     * @tc.name      testFieldInitSeven0022
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0715", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F715 = new ns.A_F715()
       expect(a.field instanceof string).assertTrue()
       expect(a.field).assertEqual("abc")
@@ -1804,14 +1804,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0716
-     * @tc.name      testFieldInit0716
+     * @tc.number    SUB_FIELD_INIT_SEVEN_2300
+     * @tc.name      testFieldInitSeven0023
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0716", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F716 = new ns.A_F716()
       expect(a.field instanceof char).assertTrue()
       expect(a.field).assertEqual(c'a')
@@ -1821,14 +1821,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0717
-     * @tc.name      testFieldInit0717
+     * @tc.number    SUB_FIELD_INIT_SEVEN_2400
+     * @tc.name      testFieldInitSeven0024
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0717", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F717 = new ns.A_F717()
       expect(a.field instanceof boolean).assertTrue()
       expect(a.field).assertEqual(false)
@@ -1838,14 +1838,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0718
-     * @tc.name      testFieldInit0718
+     * @tc.number    SUB_FIELD_INIT_SEVEN_2500
+     * @tc.name      testFieldInitSeven0025
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0718", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F718 = new ns.A_F718()
       expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(4)
@@ -1855,14 +1855,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0719
-     * @tc.name      testFieldInit0719
+     * @tc.number    SUB_FIELD_INIT_SEVEN_2600
+     * @tc.name      testFieldInitSeven0026
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0719", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F719 = new ns.A_F719()
       expect(a.field instanceof Object | undefined | null).assertTrue()
       expect(a.field).assertEqual(4)
@@ -1872,14 +1872,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0720
-     * @tc.name      testFieldInit0720
+     * @tc.number    SUB_FIELD_INIT_SEVEN_2700
+     * @tc.name      testFieldInitSeven0027
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0720", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F720 = new ns.A_F720()
       expect(a.field instanceof Any).assertTrue()
       expect(a.field).assertEqual(4)
@@ -1889,14 +1889,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0721
-     * @tc.name      testFieldInit0721
+     * @tc.number    SUB_FIELD_INIT_SEVEN_2800
+     * @tc.name      testFieldInitSeven0028
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0721", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F721 = new ns.A_F721()
       expect(a.field instanceof long).assertTrue()
       expect(a.field).assertEqual(4)
@@ -1906,14 +1906,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0722
-     * @tc.name      testFieldInit0722
+     * @tc.number    SUB_FIELD_INIT_SEVEN_2900
+     * @tc.name      testFieldInitSeven0029
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0722", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F722 = new ns.A_F722()
       expect(a.field instanceof int).assertTrue()
       expect(a.field).assertEqual(4)
@@ -1923,14 +1923,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0723
-     * @tc.name      testFieldInit0723
+     * @tc.number    SUB_FIELD_INIT_SEVEN_3000
+     * @tc.name      testFieldInitSeven0030
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0723", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F723 = new ns.A_F723()
       expect(a.field instanceof byte).assertTrue()
       expect(a.field).assertEqual(4)
@@ -1940,14 +1940,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0724
-     * @tc.name      testFieldInit0724
+     * @tc.number    SUB_FIELD_INIT_SEVEN_3100
+     * @tc.name      testFieldInitSeven0031
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0724", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F724 = new ns.A_F724()
       expect(a.field instanceof short).assertTrue()
       expect(a.field).assertEqual(4)
@@ -1957,14 +1957,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0725
-     * @tc.name      testFieldInit0725
+     * @tc.number    SUB_FIELD_INIT_SEVEN_3200
+     * @tc.name      testFieldInitSeven0032
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0725", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F725 = new ns.A_F725()
       expect(a.field instanceof double).assertTrue()
       expect(a.field).assertEqual(4)
@@ -1974,14 +1974,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0726
-     * @tc.name      testFieldInit0726
+     * @tc.number    SUB_FIELD_INIT_SEVEN_3300
+     * @tc.name      testFieldInitSeven0033
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0726", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F726 = new ns.A_F726()
       expect(a.field instanceof number).assertTrue()
       expect(a.field).assertEqual(4)
@@ -1991,14 +1991,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0727
-     * @tc.name      testFieldInit0727
+     * @tc.number    SUB_FIELD_INIT_SEVEN_3400
+     * @tc.name      testFieldInitSeven0034
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0727", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F727 = new ns.A_F727()
       expect(a.field instanceof float).assertTrue()
       expect(a.field).assertEqual(4.5f)
@@ -2008,14 +2008,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0728
-     * @tc.name      testFieldInit0728
+     * @tc.number    SUB_FIELD_INIT_SEVEN_3500
+     * @tc.name      testFieldInitSeven0035
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0728", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F728 = new ns.A_F728()
       expect(a.field instanceof bigint).assertTrue()
       expect(a.field).assertEqual(4n)
@@ -2025,14 +2025,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0729
-     * @tc.name      testFieldInit0729
+     * @tc.number    SUB_FIELD_INIT_SEVEN_3600
+     * @tc.name      testFieldInitSeven0036
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0729", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F729 = new ns.A_F729()
       expect(a.field instanceof string).assertTrue()
       expect(a.field).assertEqual("abc")
@@ -2042,14 +2042,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0730
-     * @tc.name      testFieldInit0730
+     * @tc.number    SUB_FIELD_INIT_SEVEN_3700
+     * @tc.name      testFieldInitSeven0037
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0730", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F730 = new ns.A_F730()
       expect(a.field instanceof char).assertTrue()
       expect(a.field).assertEqual(c'a')
@@ -2059,14 +2059,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0731
-     * @tc.name      testFieldInit0731
+     * @tc.number    SUB_FIELD_INIT_SEVEN_3800
+     * @tc.name      testFieldInitSeven0038
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0731", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F731 = new ns.A_F731()
       expect(a.field instanceof boolean).assertTrue()
       expect(a.field).assertEqual(false)
@@ -2076,14 +2076,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0732
-     * @tc.name      testFieldInit0732
+     * @tc.number    SUB_FIELD_INIT_SEVEN_3900
+     * @tc.name      testFieldInitSeven0039
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0732", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F732 = new ns.A_F732()
       expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2093,14 +2093,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0733
-     * @tc.name      testFieldInit0733
+     * @tc.number    SUB_FIELD_INIT_SEVEN_4000
+     * @tc.name      testFieldInitSeven0040
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0733", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F733 = new ns.A_F733()
       expect(a.field instanceof Object | undefined | null).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2110,14 +2110,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0734
-     * @tc.name      testFieldInit0734
+     * @tc.number    SUB_FIELD_INIT_SEVEN_4100
+     * @tc.name      testFieldInitSeven0041
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0734", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F734 = new ns.A_F734()
       expect(a.field instanceof Any).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2127,14 +2127,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0735
-     * @tc.name      testFieldInit0735
+     * @tc.number    SUB_FIELD_INIT_SEVEN_4200
+     * @tc.name      testFieldInitSeven0042
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0735", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F735 = new ns.A_F735()
       expect(a.field instanceof long).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2144,14 +2144,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0736
-     * @tc.name      testFieldInit0736
+     * @tc.number    SUB_FIELD_INIT_SEVEN_4300
+     * @tc.name      testFieldInitSeven0043
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0736", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F736 = new ns.A_F736()
       expect(a.field instanceof int).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2161,14 +2161,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0737
-     * @tc.name      testFieldInit0737
+     * @tc.number    SUB_FIELD_INIT_SEVEN_4400
+     * @tc.name      testFieldInitSeven0044
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0737", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F737 = new ns.A_F737()
       expect(a.field instanceof byte).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2178,14 +2178,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0738
-     * @tc.name      testFieldInit0738
+     * @tc.number    SUB_FIELD_INIT_SEVEN_4500
+     * @tc.name      testFieldInitSeven0045
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0738", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F738 = new ns.A_F738()
       expect(a.field instanceof short).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2195,14 +2195,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0739
-     * @tc.name      testFieldInit0739
+     * @tc.number    SUB_FIELD_INIT_SEVEN_4600
+     * @tc.name      testFieldInitSeven0046
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0739", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F739 = new ns.A_F739()
       expect(a.field instanceof double).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2212,14 +2212,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0740
-     * @tc.name      testFieldInit0740
+     * @tc.number    SUB_FIELD_INIT_SEVEN_4700
+     * @tc.name      testFieldInitSeven0047
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0740", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F740 = new ns.A_F740()
       expect(a.field instanceof number).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2229,14 +2229,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0741
-     * @tc.name      testFieldInit0741
+     * @tc.number    SUB_FIELD_INIT_SEVEN_4800
+     * @tc.name      testFieldInitSeven0048
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0741", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F741 = new ns.A_F741()
       expect(a.field instanceof float).assertTrue()
       expect(a.field).assertEqual(4.5f)
@@ -2246,14 +2246,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0742
-     * @tc.name      testFieldInit0742
+     * @tc.number    SUB_FIELD_INIT_SEVEN_4900
+     * @tc.name      testFieldInitSeven0049
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0742", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F742 = new ns.A_F742()
       expect(a.field instanceof bigint).assertTrue()
       expect(a.field).assertEqual(4n)
@@ -2263,14 +2263,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0743
-     * @tc.name      testFieldInit0743
+     * @tc.number    SUB_FIELD_INIT_SEVEN_5000
+     * @tc.name      testFieldInitSeven0050
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0743", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F743 = new ns.A_F743()
       expect(a.field instanceof string).assertTrue()
       expect(a.field).assertEqual("abc")
@@ -2280,14 +2280,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0744
-     * @tc.name      testFieldInit0744
+     * @tc.number    SUB_FIELD_INIT_SEVEN_5100
+     * @tc.name      testFieldInitSeven0051
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0744", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F744 = new ns.A_F744()
       expect(a.field instanceof char).assertTrue()
       expect(a.field).assertEqual(c'a')
@@ -2297,14 +2297,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0745
-     * @tc.name      testFieldInit0745
+     * @tc.number    SUB_FIELD_INIT_SEVEN_5200
+     * @tc.name      testFieldInitSeven0052
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0745", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F745 = new ns.A_F745()
       expect(a.field instanceof boolean).assertTrue()
       expect(a.field).assertEqual(false)
@@ -2314,14 +2314,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0746
-     * @tc.name      testFieldInit0746
+     * @tc.number    SUB_FIELD_INIT_SEVEN_5300
+     * @tc.name      testFieldInitSeven0053
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0746", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F746 = new ns.A_F746()
       expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2331,14 +2331,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0747
-     * @tc.name      testFieldInit0747
+     * @tc.number    SUB_FIELD_INIT_SEVEN_5400
+     * @tc.name      testFieldInitSeven0054
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0747", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F747 = new ns.A_F747()
       expect(a.field instanceof Object | undefined | null).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2348,14 +2348,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0748
-     * @tc.name      testFieldInit0748
+     * @tc.number    SUB_FIELD_INIT_SEVEN_5500
+     * @tc.name      testFieldInitSeven0055
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0748", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F748 = new ns.A_F748()
       expect(a.field instanceof Any).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2365,14 +2365,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0749
-     * @tc.name      testFieldInit0749
+     * @tc.number    SUB_FIELD_INIT_SEVEN_5600
+     * @tc.name      testFieldInitSeven0056
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0749", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F749 = new ns.A_F749()
       expect(a.field instanceof long).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2382,14 +2382,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0750
-     * @tc.name      testFieldInit0750
+     * @tc.number    SUB_FIELD_INIT_SEVEN_5700
+     * @tc.name      testFieldInitSeven0057
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0750", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F750 = new ns.A_F750()
       expect(a.field instanceof int).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2399,14 +2399,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0751
-     * @tc.name      testFieldInit0751
+     * @tc.number    SUB_FIELD_INIT_SEVEN_5800
+     * @tc.name      testFieldInitSeven0058
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0751", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F751 = new ns.A_F751()
       expect(a.field instanceof byte).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2416,14 +2416,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0752
-     * @tc.name      testFieldInit0752
+     * @tc.number    SUB_FIELD_INIT_SEVEN_5900
+     * @tc.name      testFieldInitSeven0059
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0752", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F752 = new ns.A_F752()
       expect(a.field instanceof short).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2433,14 +2433,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0753
-     * @tc.name      testFieldInit0753
+     * @tc.number    SUB_FIELD_INIT_SEVEN_6000
+     * @tc.name      testFieldInitSeven0060
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0753", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F753 = new ns.A_F753()
       expect(a.field instanceof double).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2450,14 +2450,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0754
-     * @tc.name      testFieldInit0754
+     * @tc.number    SUB_FIELD_INIT_SEVEN_6100
+     * @tc.name      testFieldInitSeven0061
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0754", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F754 = new ns.A_F754()
       expect(a.field instanceof number).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2467,14 +2467,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0755
-     * @tc.name      testFieldInit0755
+     * @tc.number    SUB_FIELD_INIT_SEVEN_6200
+     * @tc.name      testFieldInitSeven0062
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0755", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F755 = new ns.A_F755()
       expect(a.field instanceof float).assertTrue()
       expect(a.field).assertEqual(4.5f)
@@ -2484,14 +2484,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0756
-     * @tc.name      testFieldInit0756
+     * @tc.number    SUB_FIELD_INIT_SEVEN_6300
+     * @tc.name      testFieldInitSeven0063
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0756", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F756 = new ns.A_F756()
       expect(a.field instanceof bigint).assertTrue()
       expect(a.field).assertEqual(4n)
@@ -2501,14 +2501,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0757
-     * @tc.name      testFieldInit0757
+     * @tc.number    SUB_FIELD_INIT_SEVEN_6400
+     * @tc.name      testFieldInitSeven0064
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0757", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F757 = new ns.A_F757()
       expect(a.field instanceof string).assertTrue()
       expect(a.field).assertEqual("abc")
@@ -2518,14 +2518,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0758
-     * @tc.name      testFieldInit0758
+     * @tc.number    SUB_FIELD_INIT_SEVEN_6500
+     * @tc.name      testFieldInitSeven0065
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0758", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F758 = new ns.A_F758()
       expect(a.field instanceof char).assertTrue()
       expect(a.field).assertEqual(c'a')
@@ -2535,14 +2535,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0759
-     * @tc.name      testFieldInit0759
+     * @tc.number    SUB_FIELD_INIT_SEVEN_6600
+     * @tc.name      testFieldInitSeven0066
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0759", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F759 = new ns.A_F759()
       expect(a.field instanceof boolean).assertTrue()
       expect(a.field).assertEqual(false)
@@ -2552,14 +2552,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0760
-     * @tc.name      testFieldInit0760
+     * @tc.number    SUB_FIELD_INIT_SEVEN_6700
+     * @tc.name      testFieldInitSeven0067
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0760", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F760 = new ns.A_F760()
       expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2569,14 +2569,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0761
-     * @tc.name      testFieldInit0761
+     * @tc.number    SUB_FIELD_INIT_SEVEN_6800
+     * @tc.name      testFieldInitSeven0068
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0761", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F761 = new ns.A_F761()
       expect(a.field instanceof Object | undefined | null).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2586,14 +2586,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0762
-     * @tc.name      testFieldInit0762
+     * @tc.number    SUB_FIELD_INIT_SEVEN_6900
+     * @tc.name      testFieldInitSeven0069
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0762", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F762 = new ns.A_F762()
       expect(a.field instanceof Any).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2603,14 +2603,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0763
-     * @tc.name      testFieldInit0763
+     * @tc.number    SUB_FIELD_INIT_SEVEN_7000
+     * @tc.name      testFieldInitSeven0070
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0763", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F763 = new ns.A_F763()
       expect(a.field instanceof long).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2620,14 +2620,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0764
-     * @tc.name      testFieldInit0764
+     * @tc.number    SUB_FIELD_INIT_SEVEN_7100
+     * @tc.name      testFieldInitSeven0071
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0764", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F764 = new ns.A_F764()
       expect(a.field instanceof int).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2637,14 +2637,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0765
-     * @tc.name      testFieldInit0765
+     * @tc.number    SUB_FIELD_INIT_SEVEN_7200
+     * @tc.name      testFieldInitSeven0072
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0765", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F765 = new ns.A_F765()
       expect(a.field instanceof byte).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2654,14 +2654,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0766
-     * @tc.name      testFieldInit0766
+     * @tc.number    SUB_FIELD_INIT_SEVEN_7300
+     * @tc.name      testFieldInitSeven0073
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0766", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F766 = new ns.A_F766()
       expect(a.field instanceof short).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2671,14 +2671,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0767
-     * @tc.name      testFieldInit0767
+     * @tc.number    SUB_FIELD_INIT_SEVEN_7400
+     * @tc.name      testFieldInitSeven0074
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0767", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F767 = new ns.A_F767()
       expect(a.field instanceof double).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2688,14 +2688,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0768
-     * @tc.name      testFieldInit0768
+     * @tc.number    SUB_FIELD_INIT_SEVEN_7500
+     * @tc.name      testFieldInitSeven0075
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0768", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F768 = new ns.A_F768()
       expect(a.field instanceof number).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2705,14 +2705,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0769
-     * @tc.name      testFieldInit0769
+     * @tc.number    SUB_FIELD_INIT_SEVEN_7600
+     * @tc.name      testFieldInitSeven0076
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0769", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F769 = new ns.A_F769()
       expect(a.field instanceof float).assertTrue()
       expect(a.field).assertEqual(4.5f)
@@ -2722,14 +2722,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0770
-     * @tc.name      testFieldInit0770
+     * @tc.number    SUB_FIELD_INIT_SEVEN_7700
+     * @tc.name      testFieldInitSeven0077
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0770", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F770 = new ns.A_F770()
       expect(a.field instanceof bigint).assertTrue()
       expect(a.field).assertEqual(4n)
@@ -2739,14 +2739,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0771
-     * @tc.name      testFieldInit0771
+     * @tc.number    SUB_FIELD_INIT_SEVEN_7800
+     * @tc.name      testFieldInitSeven0078
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0771", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F771 = new ns.A_F771()
       expect(a.field instanceof string).assertTrue()
       expect(a.field).assertEqual("abc")
@@ -2756,14 +2756,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0772
-     * @tc.name      testFieldInit0772
+     * @tc.number    SUB_FIELD_INIT_SEVEN_7900
+     * @tc.name      testFieldInitSeven0079
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0772", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F772 = new ns.A_F772()
       expect(a.field instanceof char).assertTrue()
       expect(a.field).assertEqual(c'a')
@@ -2773,14 +2773,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0773
-     * @tc.name      testFieldInit0773
+     * @tc.number    SUB_FIELD_INIT_SEVEN_8000
+     * @tc.name      testFieldInitSeven0080
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0773", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F773 = new ns.A_F773()
       expect(a.field instanceof boolean).assertTrue()
       expect(a.field).assertEqual(false)
@@ -2790,14 +2790,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0774
-     * @tc.name      testFieldInit0774
+     * @tc.number    SUB_FIELD_INIT_SEVEN_8100
+     * @tc.name      testFieldInitSeven0081
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0774", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F774 = new ns.A_F774()
       expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2807,14 +2807,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0775
-     * @tc.name      testFieldInit0775
+     * @tc.number    SUB_FIELD_INIT_SEVEN_8200
+     * @tc.name      testFieldInitSeven0082
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0775", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F775 = new ns.A_F775()
       expect(a.field instanceof Object | undefined | null).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2824,14 +2824,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0776
-     * @tc.name      testFieldInit0776
+     * @tc.number    SUB_FIELD_INIT_SEVEN_8300
+     * @tc.name      testFieldInitSeven0083
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0776", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F776 = new ns.A_F776()
       expect(a.field instanceof Any).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2841,14 +2841,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0777
-     * @tc.name      testFieldInit0777
+     * @tc.number    SUB_FIELD_INIT_SEVEN_8400
+     * @tc.name      testFieldInitSeven0084
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0777", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F777 = new ns.A_F777()
       expect(a.field instanceof long).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2858,14 +2858,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0778
-     * @tc.name      testFieldInit0778
+     * @tc.number    SUB_FIELD_INIT_SEVEN_8500
+     * @tc.name      testFieldInitSeven0085
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0778", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F778 = new ns.A_F778()
       expect(a.field instanceof int).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2875,14 +2875,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0779
-     * @tc.name      testFieldInit0779
+     * @tc.number    SUB_FIELD_INIT_SEVEN_8600
+     * @tc.name      testFieldInitSeven0086
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0779", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F779 = new ns.A_F779()
       expect(a.field instanceof byte).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2892,14 +2892,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0780
-     * @tc.name      testFieldInit0780
+     * @tc.number    SUB_FIELD_INIT_SEVEN_8700
+     * @tc.name      testFieldInitSeven0087
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0780", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F780 = new ns.A_F780()
       expect(a.field instanceof short).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2909,14 +2909,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0781
-     * @tc.name      testFieldInit0781
+     * @tc.number    SUB_FIELD_INIT_SEVEN_8800
+     * @tc.name      testFieldInitSeven0088
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0781", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F781 = new ns.A_F781()
       expect(a.field instanceof double).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2926,14 +2926,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0782
-     * @tc.name      testFieldInit0782
+     * @tc.number    SUB_FIELD_INIT_SEVEN_8900
+     * @tc.name      testFieldInitSeven0089
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0782", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F782 = new ns.A_F782()
       expect(a.field instanceof number).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2943,14 +2943,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0783
-     * @tc.name      testFieldInit0783
+     * @tc.number    SUB_FIELD_INIT_SEVEN_9000
+     * @tc.name      testFieldInitSeven0090
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0783", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F783 = new ns.A_F783()
       expect(a.field instanceof float).assertTrue()
       expect(a.field).assertEqual(4.5f)
@@ -2960,14 +2960,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0784
-     * @tc.name      testFieldInit0784
+     * @tc.number    SUB_FIELD_INIT_SEVEN_9100
+     * @tc.name      testFieldInitSeven0091
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0784", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F784 = new ns.A_F784()
       expect(a.field instanceof bigint).assertTrue()
       expect(a.field).assertEqual(4n)
@@ -2977,14 +2977,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0785
-     * @tc.name      testFieldInit0785
+     * @tc.number    SUB_FIELD_INIT_SEVEN_9200
+     * @tc.name      testFieldInitSeven0092
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0785", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F785 = new ns.A_F785()
       expect(a.field instanceof string).assertTrue()
       expect(a.field).assertEqual("abc")
@@ -2994,14 +2994,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0786
-     * @tc.name      testFieldInit0786
+     * @tc.number    SUB_FIELD_INIT_SEVEN_9300
+     * @tc.name      testFieldInitSeven0093
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0786", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F786 = new ns.A_F786()
       expect(a.field instanceof char).assertTrue()
       expect(a.field).assertEqual(c'a')
@@ -3011,14 +3011,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0787
-     * @tc.name      testFieldInit0787
+     * @tc.number    SUB_FIELD_INIT_SEVEN_9400
+     * @tc.name      testFieldInitSeven0094
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0787", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F787 = new ns.A_F787()
       expect(a.field instanceof boolean).assertTrue()
       expect(a.field).assertEqual(false)
@@ -3028,14 +3028,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0788
-     * @tc.name      testFieldInit0788
+     * @tc.number    SUB_FIELD_INIT_SEVEN_9500
+     * @tc.name      testFieldInitSeven0095
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0788", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F788 = new ns.A_F788()
       expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(4)
@@ -3045,14 +3045,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0789
-     * @tc.name      testFieldInit0789
+     * @tc.number    SUB_FIELD_INIT_SEVEN_9600
+     * @tc.name      testFieldInitSeven0096
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0789", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F789 = new ns.A_F789()
       expect(a.field instanceof Object | undefined | null).assertTrue()
       expect(a.field).assertEqual(4)
@@ -3062,14 +3062,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0790
-     * @tc.name      testFieldInit0790
+     * @tc.number    SUB_FIELD_INIT_SEVEN_9700
+     * @tc.name      testFieldInitSeven0097
      * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0790", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F790 = new ns.A_F790()
       expect(a.field instanceof Any).assertTrue()
       expect(a.field).assertEqual(4)
@@ -3079,14 +3079,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0791
-     * @tc.name      testFieldInit0791
+     * @tc.number    SUB_FIELD_INIT_SEVEN_9800
+     * @tc.name      testFieldInitSeven0098
      * @tc.desc      Checking for changing the value from outside of class.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0791", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(A_F791.field instanceof long).assertTrue()
       expect(A_F791.field).assertEqual(0)
           A_F791.field = 5
@@ -3098,14 +3098,14 @@ export default function FieldInitializationTestSeven(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_0792
-     * @tc.name      testFieldInit0792
+     * @tc.number    SUB_FIELD_INIT_SEVEN_9900
+     * @tc.name      testFieldInitSeven0099
      * @tc.desc      Checking for changing the value from outside of class.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit0792", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSeven0099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(A_F792.field instanceof int).assertTrue()
       expect(A_F792.field).assertEqual(0)
           A_F792.field = 5

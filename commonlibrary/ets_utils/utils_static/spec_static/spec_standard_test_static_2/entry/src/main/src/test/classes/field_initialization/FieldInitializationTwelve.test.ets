@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1058,8 +1058,8 @@ interface I_F1287 {
     }
   }
 
-export default function FieldInitializationTestTwelve(): void {
-  describe("FieldInitializationTestTwelve", () => {
+export default function FieldInitializationTwelveTest(): void {
+  describe("FieldInitializationTwelveTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -1082,14 +1082,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1189
-     * @tc.name      testFieldInit1189
+     * @tc.number    SUB_FIELD_INIT_TWELVE_0100
+     * @tc.name      testFieldInitTwelve0001
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1189", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1189.field instanceof short).assertTrue()
       expect(ns.A_F1189.field).assertEqual(4)
           ns.A_F1189.field = 5
@@ -1101,14 +1101,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1190
-     * @tc.name      testFieldInit1190
+     * @tc.number    SUB_FIELD_INIT_TWELVE_0200
+     * @tc.name      testFieldInitTwelve0002
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1190", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1190.field instanceof double).assertTrue()
       expect(ns.A_F1190.field).assertEqual(4)
           ns.A_F1190.field = 7.3
@@ -1120,14 +1120,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1191
-     * @tc.name      testFieldInit1191
+     * @tc.number    SUB_FIELD_INIT_TWELVE_0300
+     * @tc.name      testFieldInitTwelve0003
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1191", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1191.field instanceof number).assertTrue()
       expect(ns.A_F1191.field).assertEqual(4)
           ns.A_F1191.field = 5
@@ -1139,14 +1139,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1192
-     * @tc.name      testFieldInit1192
+     * @tc.number    SUB_FIELD_INIT_TWELVE_0400
+     * @tc.name      testFieldInitTwelve0004
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1192", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1192.field instanceof float).assertTrue()
       expect(ns.A_F1192.field).assertEqual(4.5f)
           ns.A_F1192.field = 7.3f
@@ -1158,14 +1158,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1193
-     * @tc.name      testFieldInit1193
+     * @tc.number    SUB_FIELD_INIT_TWELVE_0500
+     * @tc.name      testFieldInitTwelve0005
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1193", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1193.field instanceof bigint).assertTrue()
       expect(ns.A_F1193.field).assertEqual(4n)
           ns.A_F1193.field = 5n
@@ -1177,14 +1177,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1194
-     * @tc.name      testFieldInit1194
+     * @tc.number    SUB_FIELD_INIT_TWELVE_0600
+     * @tc.name      testFieldInitTwelve0006
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1194", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1194.field instanceof string).assertTrue()
       expect(ns.A_F1194.field).assertEqual("abc")
           ns.A_F1194.field = "efg"
@@ -1196,14 +1196,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1195
-     * @tc.name      testFieldInit1195
+     * @tc.number    SUB_FIELD_INIT_TWELVE_0700
+     * @tc.name      testFieldInitTwelve0007
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1195", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1195.field instanceof char).assertTrue()
       expect(ns.A_F1195.field).assertEqual(c'a')
           ns.A_F1195.field = c'b'
@@ -1215,14 +1215,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1196
-     * @tc.name      testFieldInit1196
+     * @tc.number    SUB_FIELD_INIT_TWELVE_0800
+     * @tc.name      testFieldInitTwelve0008
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1196", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1196.field instanceof boolean).assertTrue()
       expect(ns.A_F1196.field).assertEqual(false)
           ns.A_F1196.field = true
@@ -1234,14 +1234,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1197
-     * @tc.name      testFieldInit1197
+     * @tc.number    SUB_FIELD_INIT_TWELVE_0900
+     * @tc.name      testFieldInitTwelve0009
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1197", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1197.field instanceof Object).assertTrue()
       expect(ns.A_F1197.field).assertEqual(4)
           ns.A_F1197.field = 5
@@ -1253,14 +1253,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1198
-     * @tc.name      testFieldInit1198
+     * @tc.number    SUB_FIELD_INIT_TWELVE_1000
+     * @tc.name      testFieldInitTwelve0010
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1198", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1198.field instanceof Object | undefined | null).assertTrue()
       expect(ns.A_F1198.field).assertEqual(4)
           ns.A_F1198.field = 5
@@ -1272,14 +1272,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1199
-     * @tc.name      testFieldInit1199
+     * @tc.number    SUB_FIELD_INIT_TWELVE_1100
+     * @tc.name      testFieldInitTwelve0011
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1199", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1199.field instanceof Any).assertTrue()
       expect(ns.A_F1199.field).assertEqual(4)
           ns.A_F1199.field = 5
@@ -1291,14 +1291,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1200
-     * @tc.name      testFieldInit1200
+     * @tc.number    SUB_FIELD_INIT_TWELVE_1200
+     * @tc.name      testFieldInitTwelve0012
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1200.field instanceof long).assertTrue()
       expect(ns.A_F1200.field).assertEqual(4)
           ns.A_F1200.field = 5
@@ -1310,14 +1310,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1201
-     * @tc.name      testFieldInit1201
+     * @tc.number    SUB_FIELD_INIT_TWELVE_1300
+     * @tc.name      testFieldInitTwelve0013
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1201", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1201.field instanceof int).assertTrue()
       expect(ns.A_F1201.field).assertEqual(4)
           ns.A_F1201.field = 5
@@ -1329,14 +1329,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1202
-     * @tc.name      testFieldInit1202
+     * @tc.number    SUB_FIELD_INIT_TWELVE_1400
+     * @tc.name      testFieldInitTwelve0014
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1202", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1202.field instanceof byte).assertTrue()
       expect(ns.A_F1202.field).assertEqual(4)
           ns.A_F1202.field = 5
@@ -1348,14 +1348,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1203
-     * @tc.name      testFieldInit1203
+     * @tc.number    SUB_FIELD_INIT_TWELVE_1500
+     * @tc.name      testFieldInitTwelve0015
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1203", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1203.field instanceof short).assertTrue()
       expect(ns.A_F1203.field).assertEqual(4)
           ns.A_F1203.field = 5
@@ -1367,14 +1367,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1204
-     * @tc.name      testFieldInit1204
+     * @tc.number    SUB_FIELD_INIT_TWELVE_1600
+     * @tc.name      testFieldInitTwelve0016
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1204", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1204.field instanceof double).assertTrue()
       expect(ns.A_F1204.field).assertEqual(4)
           ns.A_F1204.field = 7.3
@@ -1386,14 +1386,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1205
-     * @tc.name      testFieldInit1205
+     * @tc.number    SUB_FIELD_INIT_TWELVE_1700
+     * @tc.name      testFieldInitTwelve0017
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1205", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1205.field instanceof number).assertTrue()
       expect(ns.A_F1205.field).assertEqual(4)
           ns.A_F1205.field = 5
@@ -1405,14 +1405,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1206
-     * @tc.name      testFieldInit1206
+     * @tc.number    SUB_FIELD_INIT_TWELVE_1800
+     * @tc.name      testFieldInitTwelve0018
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1206", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1206.field instanceof float).assertTrue()
       expect(ns.A_F1206.field).assertEqual(4.5f)
           ns.A_F1206.field = 7.3f
@@ -1424,14 +1424,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1207
-     * @tc.name      testFieldInit1207
+     * @tc.number    SUB_FIELD_INIT_TWELVE_1900
+     * @tc.name      testFieldInitTwelve0019
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1207", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1207.field instanceof bigint).assertTrue()
       expect(ns.A_F1207.field).assertEqual(4n)
           ns.A_F1207.field = 5n
@@ -1443,14 +1443,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1208
-     * @tc.name      testFieldInit1208
+     * @tc.number    SUB_FIELD_INIT_TWELVE_2000
+     * @tc.name      testFieldInitTwelve0020
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1208", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1208.field instanceof string).assertTrue()
       expect(ns.A_F1208.field).assertEqual("abc")
           ns.A_F1208.field = "efg"
@@ -1462,14 +1462,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1209
-     * @tc.name      testFieldInit1209
+     * @tc.number    SUB_FIELD_INIT_TWELVE_2100
+     * @tc.name      testFieldInitTwelve0021
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1209", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1209.field instanceof char).assertTrue()
       expect(ns.A_F1209.field).assertEqual(c'a')
           ns.A_F1209.field = c'b'
@@ -1481,14 +1481,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1210
-     * @tc.name      testFieldInit1210
+     * @tc.number    SUB_FIELD_INIT_TWELVE_2200
+     * @tc.name      testFieldInitTwelve0022
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1210", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1210.field instanceof boolean).assertTrue()
       expect(ns.A_F1210.field).assertEqual(false)
           ns.A_F1210.field = true
@@ -1500,14 +1500,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1211
-     * @tc.name      testFieldInit1211
+     * @tc.number    SUB_FIELD_INIT_TWELVE_2300
+     * @tc.name      testFieldInitTwelve0023
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1211", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1211.field instanceof Object).assertTrue()
       expect(ns.A_F1211.field).assertEqual(4)
           ns.A_F1211.field = 5
@@ -1519,14 +1519,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1212
-     * @tc.name      testFieldInit1212
+     * @tc.number    SUB_FIELD_INIT_TWELVE_2400
+     * @tc.name      testFieldInitTwelve0024
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1212", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1212.field instanceof Object | undefined | null).assertTrue()
       expect(ns.A_F1212.field).assertEqual(4)
           ns.A_F1212.field = 5
@@ -1538,14 +1538,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1213
-     * @tc.name      testFieldInit1213
+     * @tc.number    SUB_FIELD_INIT_TWELVE_2500
+     * @tc.name      testFieldInitTwelve0025
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1213", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1213.field instanceof Any).assertTrue()
       expect(ns.A_F1213.field).assertEqual(4)
           ns.A_F1213.field = 5
@@ -1557,14 +1557,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1214
-     * @tc.name      testFieldInit1214
+     * @tc.number    SUB_FIELD_INIT_TWELVE_2600
+     * @tc.name      testFieldInitTwelve0026
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1214", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1214.field instanceof long).assertTrue()
       expect(ns.A_F1214.field).assertEqual(4)
           ns.A_F1214.field = 5
@@ -1576,14 +1576,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1215
-     * @tc.name      testFieldInit1215
+     * @tc.number    SUB_FIELD_INIT_TWELVE_2700
+     * @tc.name      testFieldInitTwelve0027
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1215", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1215.field instanceof int).assertTrue()
       expect(ns.A_F1215.field).assertEqual(4)
           ns.A_F1215.field = 5
@@ -1595,14 +1595,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1216
-     * @tc.name      testFieldInit1216
+     * @tc.number    SUB_FIELD_INIT_TWELVE_2800
+     * @tc.name      testFieldInitTwelve0028
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1216", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1216.field instanceof byte).assertTrue()
       expect(ns.A_F1216.field).assertEqual(4)
           ns.A_F1216.field = 5
@@ -1614,14 +1614,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1217
-     * @tc.name      testFieldInit1217
+     * @tc.number    SUB_FIELD_INIT_TWELVE_2900
+     * @tc.name      testFieldInitTwelve0029
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1217", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1217.field instanceof short).assertTrue()
       expect(ns.A_F1217.field).assertEqual(4)
           ns.A_F1217.field = 5
@@ -1633,14 +1633,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1218
-     * @tc.name      testFieldInit1218
+     * @tc.number    SUB_FIELD_INIT_TWELVE_3000
+     * @tc.name      testFieldInitTwelve0030
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1218", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1218.field instanceof double).assertTrue()
       expect(ns.A_F1218.field).assertEqual(4)
           ns.A_F1218.field = 7.3
@@ -1652,14 +1652,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1219
-     * @tc.name      testFieldInit1219
+     * @tc.number    SUB_FIELD_INIT_TWELVE_3100
+     * @tc.name      testFieldInitTwelve0031
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1219", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1219.field instanceof number).assertTrue()
       expect(ns.A_F1219.field).assertEqual(4)
           ns.A_F1219.field = 5
@@ -1671,14 +1671,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1220
-     * @tc.name      testFieldInit1220
+     * @tc.number    SUB_FIELD_INIT_TWELVE_3200
+     * @tc.name      testFieldInitTwelve0032
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1220", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1220.field instanceof float).assertTrue()
       expect(ns.A_F1220.field).assertEqual(4.5f)
           ns.A_F1220.field = 7.3f
@@ -1690,14 +1690,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1221
-     * @tc.name      testFieldInit1221
+     * @tc.number    SUB_FIELD_INIT_TWELVE_3300
+     * @tc.name      testFieldInitTwelve0033
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1221", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1221.field instanceof bigint).assertTrue()
       expect(ns.A_F1221.field).assertEqual(4n)
           ns.A_F1221.field = 5n
@@ -1709,14 +1709,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1222
-     * @tc.name      testFieldInit1222
+     * @tc.number    SUB_FIELD_INIT_TWELVE_3400
+     * @tc.name      testFieldInitTwelve0034
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1222", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1222.field instanceof string).assertTrue()
       expect(ns.A_F1222.field).assertEqual("abc")
           ns.A_F1222.field = "efg"
@@ -1728,14 +1728,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1223
-     * @tc.name      testFieldInit1223
+     * @tc.number    SUB_FIELD_INIT_TWELVE_3500
+     * @tc.name      testFieldInitTwelve0035
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1223", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1223.field instanceof char).assertTrue()
       expect(ns.A_F1223.field).assertEqual(c'a')
           ns.A_F1223.field = c'b'
@@ -1747,14 +1747,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1224
-     * @tc.name      testFieldInit1224
+     * @tc.number    SUB_FIELD_INIT_TWELVE_3600
+     * @tc.name      testFieldInitTwelve0036
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1224", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1224.field instanceof boolean).assertTrue()
       expect(ns.A_F1224.field).assertEqual(false)
           ns.A_F1224.field = true
@@ -1766,14 +1766,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1225
-     * @tc.name      testFieldInit1225
+     * @tc.number    SUB_FIELD_INIT_TWELVE_3700
+     * @tc.name      testFieldInitTwelve0037
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1225", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1225.field instanceof Object).assertTrue()
       expect(ns.A_F1225.field).assertEqual(4)
           ns.A_F1225.field = 5
@@ -1785,14 +1785,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1226
-     * @tc.name      testFieldInit1226
+     * @tc.number    SUB_FIELD_INIT_TWELVE_3800
+     * @tc.name      testFieldInitTwelve0038
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1226", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1226.field instanceof Object | undefined | null).assertTrue()
       expect(ns.A_F1226.field).assertEqual(4)
           ns.A_F1226.field = 5
@@ -1804,14 +1804,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1227
-     * @tc.name      testFieldInit1227
+     * @tc.number    SUB_FIELD_INIT_TWELVE_3900
+     * @tc.name      testFieldInitTwelve0039
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1227", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1227.field instanceof Any).assertTrue()
       expect(ns.A_F1227.field).assertEqual(4)
           ns.A_F1227.field = 5
@@ -1823,14 +1823,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1228
-     * @tc.name      testFieldInit1228
+     * @tc.number    SUB_FIELD_INIT_TWELVE_4000
+     * @tc.name      testFieldInitTwelve0040
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1228", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1228.field instanceof long).assertTrue()
       expect(ns.A_F1228.field).assertEqual(4)
           ns.A_F1228.field = 5
@@ -1842,14 +1842,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1229
-     * @tc.name      testFieldInit1229
+     * @tc.number    SUB_FIELD_INIT_TWELVE_4100
+     * @tc.name      testFieldInitTwelve0041
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1229", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1229.field instanceof int).assertTrue()
       expect(ns.A_F1229.field).assertEqual(4)
           ns.A_F1229.field = 5
@@ -1861,14 +1861,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1230
-     * @tc.name      testFieldInit1230
+     * @tc.number    SUB_FIELD_INIT_TWELVE_4200
+     * @tc.name      testFieldInitTwelve0042
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1230", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1230.field instanceof byte).assertTrue()
       expect(ns.A_F1230.field).assertEqual(4)
           ns.A_F1230.field = 5
@@ -1880,14 +1880,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1231
-     * @tc.name      testFieldInit1231
+     * @tc.number    SUB_FIELD_INIT_TWELVE_4300
+     * @tc.name      testFieldInitTwelve0043
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1231", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1231.field instanceof short).assertTrue()
       expect(ns.A_F1231.field).assertEqual(4)
           ns.A_F1231.field = 5
@@ -1899,14 +1899,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1232
-     * @tc.name      testFieldInit1232
+     * @tc.number    SUB_FIELD_INIT_TWELVE_4400
+     * @tc.name      testFieldInitTwelve0044
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1232", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1232.field instanceof double).assertTrue()
       expect(ns.A_F1232.field).assertEqual(4)
           ns.A_F1232.field = 7.3
@@ -1918,14 +1918,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1233
-     * @tc.name      testFieldInit1233
+     * @tc.number    SUB_FIELD_INIT_TWELVE_4500
+     * @tc.name      testFieldInitTwelve0045
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1233", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1233.field instanceof number).assertTrue()
       expect(ns.A_F1233.field).assertEqual(4)
           ns.A_F1233.field = 5
@@ -1937,14 +1937,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1234
-     * @tc.name      testFieldInit1234
+     * @tc.number    SUB_FIELD_INIT_TWELVE_4600
+     * @tc.name      testFieldInitTwelve0046
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1234", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1234.field instanceof float).assertTrue()
       expect(ns.A_F1234.field).assertEqual(4.5f)
           ns.A_F1234.field = 7.3f
@@ -1956,14 +1956,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1235
-     * @tc.name      testFieldInit1235
+     * @tc.number    SUB_FIELD_INIT_TWELVE_4700
+     * @tc.name      testFieldInitTwelve0047
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1235", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1235.field instanceof bigint).assertTrue()
       expect(ns.A_F1235.field).assertEqual(4n)
           ns.A_F1235.field = 5n
@@ -1975,14 +1975,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1236
-     * @tc.name      testFieldInit1236
+     * @tc.number    SUB_FIELD_INIT_TWELVE_4800
+     * @tc.name      testFieldInitTwelve0048
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1236", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1236.field instanceof string).assertTrue()
       expect(ns.A_F1236.field).assertEqual("abc")
           ns.A_F1236.field = "efg"
@@ -1994,14 +1994,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1237
-     * @tc.name      testFieldInit1237
+     * @tc.number    SUB_FIELD_INIT_TWELVE_4900
+     * @tc.name      testFieldInitTwelve0049
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1237", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1237.field instanceof char).assertTrue()
       expect(ns.A_F1237.field).assertEqual(c'a')
           ns.A_F1237.field = c'b'
@@ -2013,14 +2013,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1238
-     * @tc.name      testFieldInit1238
+     * @tc.number    SUB_FIELD_INIT_TWELVE_5000
+     * @tc.name      testFieldInitTwelve0050
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1238", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1238.field instanceof boolean).assertTrue()
       expect(ns.A_F1238.field).assertEqual(false)
           ns.A_F1238.field = true
@@ -2032,14 +2032,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1239
-     * @tc.name      testFieldInit1239
+     * @tc.number    SUB_FIELD_INIT_TWELVE_5100
+     * @tc.name      testFieldInitTwelve0051
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1239", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1239.field instanceof Object).assertTrue()
       expect(ns.A_F1239.field).assertEqual(4)
           ns.A_F1239.field = 5
@@ -2051,14 +2051,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1240
-     * @tc.name      testFieldInit1240
+     * @tc.number    SUB_FIELD_INIT_TWELVE_5200
+     * @tc.name      testFieldInitTwelve0052
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1240", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1240.field instanceof Object | undefined | null).assertTrue()
       expect(ns.A_F1240.field).assertEqual(4)
           ns.A_F1240.field = 5
@@ -2070,14 +2070,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1241
-     * @tc.name      testFieldInit1241
+     * @tc.number    SUB_FIELD_INIT_TWELVE_5300
+     * @tc.name      testFieldInitTwelve0053
      * @tc.desc      Checking for initialization with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1241", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1241.field instanceof Any).assertTrue()
       expect(ns.A_F1241.field).assertEqual(4)
           ns.A_F1241.field = 5
@@ -2089,14 +2089,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1242
-     * @tc.name      testFieldInit1242
+     * @tc.number    SUB_FIELD_INIT_TWELVE_5400
+     * @tc.name      testFieldInitTwelve0054
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1242", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1242 = new A_F1242()
       expect(a.field instanceof long).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2106,14 +2106,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1243
-     * @tc.name      testFieldInit1243
+     * @tc.number    SUB_FIELD_INIT_TWELVE_5500
+     * @tc.name      testFieldInitTwelve0055
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1243", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1243 = new A_F1243()
       expect(a.field instanceof int).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2123,14 +2123,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1244
-     * @tc.name      testFieldInit1244
+     * @tc.number    SUB_FIELD_INIT_TWELVE_5600
+     * @tc.name      testFieldInitTwelve0056
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1244", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1244 = new A_F1244()
       expect(a.field instanceof byte).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2140,14 +2140,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1245
-     * @tc.name      testFieldInit1245
+     * @tc.number    SUB_FIELD_INIT_TWELVE_5700
+     * @tc.name      testFieldInitTwelve0057
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1245", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1245 = new A_F1245()
       expect(a.field instanceof short).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2157,14 +2157,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1246
-     * @tc.name      testFieldInit1246
+     * @tc.number    SUB_FIELD_INIT_TWELVE_5800
+     * @tc.name      testFieldInitTwelve0058
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1246", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1246 = new A_F1246()
       expect(a.field instanceof double).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2174,14 +2174,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1247
-     * @tc.name      testFieldInit1247
+     * @tc.number    SUB_FIELD_INIT_TWELVE_5900
+     * @tc.name      testFieldInitTwelve0059
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1247", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1247 = new A_F1247()
       expect(a.field instanceof number).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2191,14 +2191,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1248
-     * @tc.name      testFieldInit1248
+     * @tc.number    SUB_FIELD_INIT_TWELVE_6000
+     * @tc.name      testFieldInitTwelve0060
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1248", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1248 = new A_F1248()
       expect(a.field instanceof float).assertTrue()
       expect(a.field).assertEqual(4.5f)
@@ -2208,14 +2208,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1249
-     * @tc.name      testFieldInit1249
+     * @tc.number    SUB_FIELD_INIT_TWELVE_6100
+     * @tc.name      testFieldInitTwelve0061
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1249", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1249 = new A_F1249()
       expect(a.field instanceof bigint).assertTrue()
       expect(a.field).assertEqual(4n)
@@ -2225,14 +2225,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1250
-     * @tc.name      testFieldInit1250
+     * @tc.number    SUB_FIELD_INIT_TWELVE_6200
+     * @tc.name      testFieldInitTwelve0062
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1250", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1250 = new A_F1250()
       expect(a.field instanceof string).assertTrue()
       expect(a.field).assertEqual("abc")
@@ -2242,14 +2242,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1251
-     * @tc.name      testFieldInit1251
+     * @tc.number    SUB_FIELD_INIT_TWELVE_6300
+     * @tc.name      testFieldInitTwelve0063
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1251", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1251 = new A_F1251()
       expect(a.field instanceof char).assertTrue()
       expect(a.field).assertEqual(c'a')
@@ -2259,14 +2259,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1252
-     * @tc.name      testFieldInit1252
+     * @tc.number    SUB_FIELD_INIT_TWELVE_6400
+     * @tc.name      testFieldInitTwelve0064
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1252", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1252 = new A_F1252()
       expect(a.field instanceof boolean).assertTrue()
       expect(a.field).assertEqual(false)
@@ -2276,14 +2276,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1253
-     * @tc.name      testFieldInit1253
+     * @tc.number    SUB_FIELD_INIT_TWELVE_6500
+     * @tc.name      testFieldInitTwelve0065
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1253", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1253 = new A_F1253()
       expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2293,14 +2293,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1254
-     * @tc.name      testFieldInit1254
+     * @tc.number    SUB_FIELD_INIT_TWELVE_6600
+     * @tc.name      testFieldInitTwelve0066
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1254", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1254 = new A_F1254()
       expect(a.field instanceof Object | undefined | null).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2310,14 +2310,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1255
-     * @tc.name      testFieldInit1255
+     * @tc.number    SUB_FIELD_INIT_TWELVE_6700
+     * @tc.name      testFieldInitTwelve0067
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1255", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1255 = new A_F1255()
       expect(a.field instanceof Any).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2327,14 +2327,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1256
-     * @tc.name      testFieldInit1256
+     * @tc.number    SUB_FIELD_INIT_TWELVE_6800
+     * @tc.name      testFieldInitTwelve0068
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1256", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1256 = new A_F1256()
       expect(a.field instanceof long).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2344,14 +2344,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1257
-     * @tc.name      testFieldInit1257
+     * @tc.number    SUB_FIELD_INIT_TWELVE_6900
+     * @tc.name      testFieldInitTwelve0069
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1257", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1257 = new A_F1257()
       expect(a.field instanceof int).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2361,14 +2361,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1258
-     * @tc.name      testFieldInit1258
+     * @tc.number    SUB_FIELD_INIT_TWELVE_7000
+     * @tc.name      testFieldInitTwelve0070
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1258", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1258 = new A_F1258()
       expect(a.field instanceof byte).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2378,14 +2378,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1259
-     * @tc.name      testFieldInit1259
+     * @tc.number    SUB_FIELD_INIT_TWELVE_7100
+     * @tc.name      testFieldInitTwelve0071
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1259", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1259 = new A_F1259()
       expect(a.field instanceof short).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2395,14 +2395,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1260
-     * @tc.name      testFieldInit1260
+     * @tc.number    SUB_FIELD_INIT_TWELVE_7200
+     * @tc.name      testFieldInitTwelve0072
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1260", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1260 = new A_F1260()
       expect(a.field instanceof double).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2412,14 +2412,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1261
-     * @tc.name      testFieldInit1261
+     * @tc.number    SUB_FIELD_INIT_TWELVE_7300
+     * @tc.name      testFieldInitTwelve0073
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1261", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1261 = new A_F1261()
       expect(a.field instanceof number).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2429,14 +2429,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1262
-     * @tc.name      testFieldInit1262
+     * @tc.number    SUB_FIELD_INIT_TWELVE_7400
+     * @tc.name      testFieldInitTwelve0074
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1262", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1262 = new A_F1262()
       expect(a.field instanceof float).assertTrue()
       expect(a.field).assertEqual(4.5f)
@@ -2446,14 +2446,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1263
-     * @tc.name      testFieldInit1263
+     * @tc.number    SUB_FIELD_INIT_TWELVE_7500
+     * @tc.name      testFieldInitTwelve0075
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1263", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1263 = new A_F1263()
       expect(a.field instanceof bigint).assertTrue()
       expect(a.field).assertEqual(4n)
@@ -2463,14 +2463,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1264
-     * @tc.name      testFieldInit1264
+     * @tc.number    SUB_FIELD_INIT_TWELVE_7600
+     * @tc.name      testFieldInitTwelve0076
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1264", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1264 = new A_F1264()
       expect(a.field instanceof string).assertTrue()
       expect(a.field).assertEqual("abc")
@@ -2480,14 +2480,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1265
-     * @tc.name      testFieldInit1265
+     * @tc.number    SUB_FIELD_INIT_TWELVE_7700
+     * @tc.name      testFieldInitTwelve0077
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1265", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1265 = new A_F1265()
       expect(a.field instanceof char).assertTrue()
       expect(a.field).assertEqual(c'a')
@@ -2497,14 +2497,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1266
-     * @tc.name      testFieldInit1266
+     * @tc.number    SUB_FIELD_INIT_TWELVE_7800
+     * @tc.name      testFieldInitTwelve0078
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1266", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1266 = new A_F1266()
       expect(a.field instanceof boolean).assertTrue()
       expect(a.field).assertEqual(false)
@@ -2514,14 +2514,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1267
-     * @tc.name      testFieldInit1267
+     * @tc.number    SUB_FIELD_INIT_TWELVE_7900
+     * @tc.name      testFieldInitTwelve0079
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1267", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1267 = new A_F1267()
       expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2531,14 +2531,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1268
-     * @tc.name      testFieldInit1268
+     * @tc.number    SUB_FIELD_INIT_TWELVE_8000
+     * @tc.name      testFieldInitTwelve0080
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1268", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1268 = new A_F1268()
       expect(a.field instanceof Object | undefined | null).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2548,14 +2548,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1269
-     * @tc.name      testFieldInit1269
+     * @tc.number    SUB_FIELD_INIT_TWELVE_8100
+     * @tc.name      testFieldInitTwelve0081
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1269", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1269 = new A_F1269()
       expect(a.field instanceof Any).assertTrue()
       expect(a.field).assertEqual(4)
@@ -2565,14 +2565,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1270
-     * @tc.name      testFieldInit1270
+     * @tc.number    SUB_FIELD_INIT_TWELVE_8200
+     * @tc.name      testFieldInitTwelve0082
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1270", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1270 = {field: 5}
       expect(a.field instanceof long).assertTrue()
       expect(a.field).assertEqual(5)
@@ -2582,14 +2582,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1271
-     * @tc.name      testFieldInit1271
+     * @tc.number    SUB_FIELD_INIT_TWELVE_8300
+     * @tc.name      testFieldInitTwelve0083
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1271", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1271 = {field: 5}
       expect(a.field instanceof int).assertTrue()
       expect(a.field).assertEqual(5)
@@ -2599,14 +2599,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1272
-     * @tc.name      testFieldInit1272
+     * @tc.number    SUB_FIELD_INIT_TWELVE_8400
+     * @tc.name      testFieldInitTwelve0084
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1272", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1272 = {field: 5}
       expect(a.field instanceof byte).assertTrue()
       expect(a.field).assertEqual(5)
@@ -2616,14 +2616,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1273
-     * @tc.name      testFieldInit1273
+     * @tc.number    SUB_FIELD_INIT_TWELVE_8500
+     * @tc.name      testFieldInitTwelve0085
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1273", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1273 = {field: 5}
       expect(a.field instanceof short).assertTrue()
       expect(a.field).assertEqual(5)
@@ -2633,14 +2633,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1274
-     * @tc.name      testFieldInit1274
+     * @tc.number    SUB_FIELD_INIT_TWELVE_8600
+     * @tc.name      testFieldInitTwelve0086
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1274", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1274 = {field: 7.3}
       expect(a.field instanceof double).assertTrue()
       expect(a.field).assertEqual(7.3)
@@ -2650,14 +2650,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1275
-     * @tc.name      testFieldInit1275
+     * @tc.number    SUB_FIELD_INIT_TWELVE_8700
+     * @tc.name      testFieldInitTwelve0087
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1275", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1275 = {field: 5}
       expect(a.field instanceof number).assertTrue()
       expect(a.field).assertEqual(5)
@@ -2667,14 +2667,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1276
-     * @tc.name      testFieldInit1276
+     * @tc.number    SUB_FIELD_INIT_TWELVE_8800
+     * @tc.name      testFieldInitTwelve0088
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1276", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1276 = {field: 7.3f}
       expect(a.field instanceof float).assertTrue()
       expect(a.field).assertEqual(7.3f)
@@ -2684,14 +2684,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1277
-     * @tc.name      testFieldInit1277
+     * @tc.number    SUB_FIELD_INIT_TWELVE_8900
+     * @tc.name      testFieldInitTwelve0089
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1277", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1277 = {field: 5n}
       expect(a.field instanceof bigint).assertTrue()
       expect(a.field).assertEqual(5n)
@@ -2701,14 +2701,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1278
-     * @tc.name      testFieldInit1278
+     * @tc.number    SUB_FIELD_INIT_TWELVE_9000
+     * @tc.name      testFieldInitTwelve0090
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1278", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1278 = {field: "efg"}
       expect(a.field instanceof string).assertTrue()
       expect(a.field).assertEqual("efg")
@@ -2718,14 +2718,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1279
-     * @tc.name      testFieldInit1279
+     * @tc.number    SUB_FIELD_INIT_TWELVE_9100
+     * @tc.name      testFieldInitTwelve0091
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1279", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1279 = {field: c'b'}
       expect(a.field instanceof char).assertTrue()
       expect(a.field).assertEqual(c'b')
@@ -2735,14 +2735,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1280
-     * @tc.name      testFieldInit1280
+     * @tc.number    SUB_FIELD_INIT_TWELVE_9200
+     * @tc.name      testFieldInitTwelve0092
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1280", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1280 = {field: true}
       expect(a.field instanceof boolean).assertTrue()
       expect(a.field).assertEqual(true)
@@ -2752,14 +2752,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1281
-     * @tc.name      testFieldInit1281
+     * @tc.number    SUB_FIELD_INIT_TWELVE_9300
+     * @tc.name      testFieldInitTwelve0093
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1281", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1281 = {field: 5}
       expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(5)
@@ -2769,14 +2769,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1282
-     * @tc.name      testFieldInit1282
+     * @tc.number    SUB_FIELD_INIT_TWELVE_9400
+     * @tc.name      testFieldInitTwelve0094
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1282", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1282 = {field: 5}
       expect(a.field instanceof Object | undefined | null).assertTrue()
       expect(a.field).assertEqual(5)
@@ -2786,14 +2786,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1283
-     * @tc.name      testFieldInit1283
+     * @tc.number    SUB_FIELD_INIT_TWELVE_9500
+     * @tc.name      testFieldInitTwelve0095
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1283", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1283 = {field: 5}
       expect(a.field instanceof Any).assertTrue()
       expect(a.field).assertEqual(5)
@@ -2803,14 +2803,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1284
-     * @tc.name      testFieldInit1284
+     * @tc.number    SUB_FIELD_INIT_TWELVE_9600
+     * @tc.name      testFieldInitTwelve0096
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1284", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1284 = {field: 5}
       expect(a.field instanceof long).assertTrue()
       expect(a.field).assertEqual(5)
@@ -2820,14 +2820,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1285
-     * @tc.name      testFieldInit1285
+     * @tc.number    SUB_FIELD_INIT_TWELVE_9700
+     * @tc.name      testFieldInitTwelve0097
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1285", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1285 = {field: 5}
       expect(a.field instanceof int).assertTrue()
       expect(a.field).assertEqual(5)
@@ -2837,14 +2837,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1286
-     * @tc.name      testFieldInit1286
+     * @tc.number    SUB_FIELD_INIT_TWELVE_9800
+     * @tc.name      testFieldInitTwelve0098
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1286", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1286 = {field: 5}
       expect(a.field instanceof byte).assertTrue()
       expect(a.field).assertEqual(5)
@@ -2854,14 +2854,14 @@ export default function FieldInitializationTestTwelve(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TEST_1287
-     * @tc.name      testFieldInit1287
+     * @tc.number    SUB_FIELD_INIT_TWELVE_9900
+     * @tc.name      testFieldInitTwelve0099
      * @tc.desc      Checking the implementation of interface field.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInit1287", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1287 = {field: 5}
       expect(a.field instanceof short).assertTrue()
       expect(a.field).assertEqual(5)

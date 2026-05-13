@@ -1388,8 +1388,8 @@ class Derived_F391 extends Base1_F391 implements Base2_F391 {
     field: Base1_F391 = new Derived_F391(); // overriding 'field' and providing new initial value
 }
 
-export default function OverridingFieldsTestThree(): void {
-  describe("OverridingFieldsTestThree", () => {
+export default function OverridingFieldsThreeTest(): void {
+  describe("OverridingFieldsThreeTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -1412,1717 +1412,1717 @@ export default function OverridingFieldsTestThree(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0298
-     * @tc.name      testOverridingFields0298
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_0100
+     * @tc.name      testOverridingFieldsThree0001
      * @tc.desc      Overriding in first and second derived class
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0298", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Derived_F298 = new Derived_F298()
         let b: D_F298 = new D_F298()
-        expect(a.field instanceof char).assertTrue()
-        expect(a.field).assertEqual(c'y')
-        expect(get_field(a)).assertEqual(c'y')
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'y')
+      expect(get_field(a)).assertEqual(c'y')
         set_field(a, c'z')
-        expect(a.field).assertEqual(c'z')
-        expect(get_field(a)).assertEqual(c'z')
-        expect(b.field instanceof char).assertTrue()
-        expect(b.field).assertEqual(c'x')
-        expect(get_field(b)).assertEqual(c'x')
+      expect(a.field).assertEqual(c'z')
+      expect(get_field(a)).assertEqual(c'z')
+      expect(b.field instanceof char).assertTrue()
+      expect(b.field).assertEqual(c'x')
+      expect(get_field(b)).assertEqual(c'x')
         set_field(b, c'z')
-        expect(b.field).assertEqual(c'z')
-        expect(get_field(b)).assertEqual(c'z')
+      expect(b.field).assertEqual(c'z')
+      expect(get_field(b)).assertEqual(c'z')
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0299
-     * @tc.name      testOverridingFields0299
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_0200
+     * @tc.name      testOverridingFieldsThree0002
      * @tc.desc      Overriding in first and second derived class
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0299", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Derived_F299 = new Derived_F299()
         let b: D_F299 = new D_F299()
-        expect(a.field instanceof boolean).assertTrue()
-        expect(a.field).assertEqual(false)
-        expect(get_field(a)).assertEqual(false)
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(false)
+      expect(get_field(a)).assertEqual(false)
         set_field(a, true)
-        expect(a.field).assertEqual(true)
-        expect(get_field(a)).assertEqual(true)
-        expect(b.field instanceof boolean).assertTrue()
-        expect(b.field).assertEqual(true)
-        expect(get_field(b)).assertEqual(true)
+      expect(a.field).assertEqual(true)
+      expect(get_field(a)).assertEqual(true)
+      expect(b.field instanceof boolean).assertTrue()
+      expect(b.field).assertEqual(true)
+      expect(get_field(b)).assertEqual(true)
         set_field(b, true)
-        expect(b.field).assertEqual(true)
-        expect(get_field(b)).assertEqual(true)
+      expect(b.field).assertEqual(true)
+      expect(get_field(b)).assertEqual(true)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0300
-     * @tc.name      testOverridingFields0300
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_0300
+     * @tc.name      testOverridingFieldsThree0003
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: B_F300 = new B_F300()
         let b: A_F300 = new A_F300()
-        expect(a.field instanceof Any).assertTrue()
-        expect(a.field).assertEqual("abc")
-        expect(get_field(a)).assertEqual("abc")
+      expect(a.field instanceof Any).assertTrue()
+      expect(a.field).assertEqual("abc")
+      expect(get_field(a)).assertEqual("abc")
         set_field(a, 5.7)
-        expect(a.field).assertEqual(5.7)
-        expect(get_field(a)).assertEqual(5.7)
-        expect(b.field instanceof Any).assertTrue()
-        expect(b.field).assertEqual(7)
-        expect(get_field(b)).assertEqual(7)
+      expect(a.field).assertEqual(5.7)
+      expect(get_field(a)).assertEqual(5.7)
+      expect(b.field instanceof Any).assertTrue()
+      expect(b.field).assertEqual(7)
+      expect(get_field(b)).assertEqual(7)
         set_field(b, 5.7)
-        expect(b.field).assertEqual(5.7)
-        expect(get_field(b)).assertEqual(5.7)
+      expect(b.field).assertEqual(5.7)
+      expect(get_field(b)).assertEqual(5.7)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0301
-     * @tc.name      testOverridingFields0301
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_0400
+     * @tc.name      testOverridingFieldsThree0004
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0301", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: B_F301 = new B_F301()
         let b: A_F301 = new A_F301()
-        expect(a.field instanceof Object).assertTrue()
-        expect(a.field).assertEqual(7)
-        expect(get_field(a)).assertEqual(7)
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(7)
+      expect(get_field(a)).assertEqual(7)
         set_field(a, 7.8)
-        expect(a.field).assertEqual(7.8)
-        expect(get_field(a)).assertEqual(7.8)
-        expect(b.field instanceof Object).assertTrue()
-        expect(b.field).assertEqual("abc")
-        expect(get_field(b)).assertEqual("abc")
+      expect(a.field).assertEqual(7.8)
+      expect(get_field(a)).assertEqual(7.8)
+      expect(b.field instanceof Object).assertTrue()
+      expect(b.field).assertEqual("abc")
+      expect(get_field(b)).assertEqual("abc")
         set_field(b, 7.8)
-        expect(b.field).assertEqual(7.8)
-        expect(get_field(b)).assertEqual(7.8)
+      expect(b.field).assertEqual(7.8)
+      expect(get_field(b)).assertEqual(7.8)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0302
-     * @tc.name      testOverridingFields0302
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_0500
+     * @tc.name      testOverridingFieldsThree0005
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0302", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: B_F302 = new B_F302()
         let b: A_F302 = new A_F302()
-        expect(a.field instanceof number).assertTrue()
-        expect(a.field).assertEqual(13)
-        expect(get_field(a)).assertEqual(13)
+      expect(a.field instanceof number).assertTrue()
+      expect(a.field).assertEqual(13)
+      expect(get_field(a)).assertEqual(13)
         set_field(a, 15.6)
-        expect(a.field).assertEqual(15.6)
-        expect(get_field(a)).assertEqual(15.6)
-        expect(b.field instanceof number).assertTrue()
-        expect(b.field).assertEqual(6.7)
-        expect(get_field(b)).assertEqual(6.7)
+      expect(a.field).assertEqual(15.6)
+      expect(get_field(a)).assertEqual(15.6)
+      expect(b.field instanceof number).assertTrue()
+      expect(b.field).assertEqual(6.7)
+      expect(get_field(b)).assertEqual(6.7)
         set_field(b, 15.6)
-        expect(b.field).assertEqual(15.6)
-        expect(get_field(b)).assertEqual(15.6)
+      expect(b.field).assertEqual(15.6)
+      expect(get_field(b)).assertEqual(15.6)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0303
-     * @tc.name      testOverridingFields0303
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_0600
+     * @tc.name      testOverridingFieldsThree0006
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0303", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: B_F303 = new B_F303()
         let b: A_F303 = new A_F303()
-        expect(a.field instanceof double).assertTrue()
-        expect(a.field).assertEqual(15)
-        expect(get_field(a)).assertEqual(15)
+      expect(a.field instanceof double).assertTrue()
+      expect(a.field).assertEqual(15)
+      expect(get_field(a)).assertEqual(15)
         set_field(a, 17.3)
-        expect(a.field).assertEqual(17.3)
-        expect(get_field(a)).assertEqual(17.3)
-        expect(b.field instanceof double).assertTrue()
-        expect(b.field).assertEqual(5.0)
-        expect(get_field(b)).assertEqual(5.0)
+      expect(a.field).assertEqual(17.3)
+      expect(get_field(a)).assertEqual(17.3)
+      expect(b.field instanceof double).assertTrue()
+      expect(b.field).assertEqual(5.0)
+      expect(get_field(b)).assertEqual(5.0)
         set_field(b, 17.3)
-        expect(b.field).assertEqual(17.3)
-        expect(get_field(b)).assertEqual(17.3)
+      expect(b.field).assertEqual(17.3)
+      expect(get_field(b)).assertEqual(17.3)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0304
-     * @tc.name      testOverridingFields0304
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_0700
+     * @tc.name      testOverridingFieldsThree0007
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0304", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: B_F304 = new B_F304()
         let b: A_F304 = new A_F304()
-        expect(a.field instanceof float).assertTrue()
-        expect(a.field).assertEqual(9.8f)
-        expect(get_field(a)).assertEqual(9.8f)
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(9.8f)
+      expect(get_field(a)).assertEqual(9.8f)
         set_field(a, 3.4f)
-        expect(a.field).assertEqual(3.4f)
-        expect(get_field(a)).assertEqual(3.4f)
-        expect(b.field instanceof float).assertTrue()
-        expect(b.field).assertEqual(7.3f)
-        expect(get_field(b)).assertEqual(7.3f)
+      expect(a.field).assertEqual(3.4f)
+      expect(get_field(a)).assertEqual(3.4f)
+      expect(b.field instanceof float).assertTrue()
+      expect(b.field).assertEqual(7.3f)
+      expect(get_field(b)).assertEqual(7.3f)
         set_field(b, 3.4f)
-        expect(b.field).assertEqual(3.4f)
-        expect(get_field(b)).assertEqual(3.4f)
+      expect(b.field).assertEqual(3.4f)
+      expect(get_field(b)).assertEqual(3.4f)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0305
-     * @tc.name      testOverridingFields0305
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_0800
+     * @tc.name      testOverridingFieldsThree0008
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0305", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: B_F305 = new B_F305()
         let b: A_F305 = new A_F305()
-        expect(a.field instanceof long).assertTrue()
-        expect(a.field).assertEqual(357)
-        expect(get_field(a)).assertEqual(357)
+      expect(a.field instanceof long).assertTrue()
+      expect(a.field).assertEqual(357)
+      expect(get_field(a)).assertEqual(357)
         set_field(a, 127)
-        expect(a.field).assertEqual(127)
-        expect(get_field(a)).assertEqual(127)
-        expect(b.field instanceof long).assertTrue()
-        expect(b.field).assertEqual(78945)
-        expect(get_field(b)).assertEqual(78945)
+      expect(a.field).assertEqual(127)
+      expect(get_field(a)).assertEqual(127)
+      expect(b.field instanceof long).assertTrue()
+      expect(b.field).assertEqual(78945)
+      expect(get_field(b)).assertEqual(78945)
         set_field(b, 127)
-        expect(b.field).assertEqual(127)
-        expect(get_field(b)).assertEqual(127)
+      expect(b.field).assertEqual(127)
+      expect(get_field(b)).assertEqual(127)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0306
-     * @tc.name      testOverridingFields0306
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_0900
+     * @tc.name      testOverridingFieldsThree0009
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0306", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: B_F306 = new B_F306()
         let b: A_F306 = new A_F306()
-        expect(a.field instanceof int).assertTrue()
-        expect(a.field).assertEqual(321321)
-        expect(get_field(a)).assertEqual(321321)
+      expect(a.field instanceof int).assertTrue()
+      expect(a.field).assertEqual(321321)
+      expect(get_field(a)).assertEqual(321321)
         set_field(a, 753)
-        expect(a.field).assertEqual(753)
-        expect(get_field(a)).assertEqual(753)
-        expect(b.field instanceof int).assertTrue()
-        expect(b.field).assertEqual(321)
-        expect(get_field(b)).assertEqual(321)
+      expect(a.field).assertEqual(753)
+      expect(get_field(a)).assertEqual(753)
+      expect(b.field instanceof int).assertTrue()
+      expect(b.field).assertEqual(321)
+      expect(get_field(b)).assertEqual(321)
         set_field(b, 753)
-        expect(b.field).assertEqual(753)
-        expect(get_field(b)).assertEqual(753)
+      expect(b.field).assertEqual(753)
+      expect(get_field(b)).assertEqual(753)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0307
-     * @tc.name      testOverridingFields0307
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_1000
+     * @tc.name      testOverridingFieldsThree0010
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0307", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: B_F307 = new B_F307()
         let b: A_F307 = new A_F307()
-        expect(a.field instanceof short).assertTrue()
-        expect(a.field).assertEqual(536)
-        expect(get_field(a)).assertEqual(536)
+      expect(a.field instanceof short).assertTrue()
+      expect(a.field).assertEqual(536)
+      expect(get_field(a)).assertEqual(536)
         set_field(a, 537)
-        expect(a.field).assertEqual(537)
-        expect(get_field(a)).assertEqual(537)
-        expect(b.field instanceof short).assertTrue()
-        expect(b.field).assertEqual(253)
-        expect(get_field(b)).assertEqual(253)
+      expect(a.field).assertEqual(537)
+      expect(get_field(a)).assertEqual(537)
+      expect(b.field instanceof short).assertTrue()
+      expect(b.field).assertEqual(253)
+      expect(get_field(b)).assertEqual(253)
         set_field(b, 537)
-        expect(b.field).assertEqual(537)
-        expect(get_field(b)).assertEqual(537)
+      expect(b.field).assertEqual(537)
+      expect(get_field(b)).assertEqual(537)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0308
-     * @tc.name      testOverridingFields0308
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_1100
+     * @tc.name      testOverridingFieldsThree0011
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0308", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: B_F308 = new B_F308()
         let b: A_F308 = new A_F308()
-        expect(a.field instanceof byte).assertTrue()
-        expect(a.field).assertEqual(15)
-        expect(get_field(a)).assertEqual(15)
+      expect(a.field instanceof byte).assertTrue()
+      expect(a.field).assertEqual(15)
+      expect(get_field(a)).assertEqual(15)
         set_field(a, 117)
-        expect(a.field).assertEqual(117)
-        expect(get_field(a)).assertEqual(117)
-        expect(b.field instanceof byte).assertTrue()
-        expect(b.field).assertEqual(78)
-        expect(get_field(b)).assertEqual(78)
+      expect(a.field).assertEqual(117)
+      expect(get_field(a)).assertEqual(117)
+      expect(b.field instanceof byte).assertTrue()
+      expect(b.field).assertEqual(78)
+      expect(get_field(b)).assertEqual(78)
         set_field(b, 117)
-        expect(b.field).assertEqual(117)
-        expect(get_field(b)).assertEqual(117)
+      expect(b.field).assertEqual(117)
+      expect(get_field(b)).assertEqual(117)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0309
-     * @tc.name      testOverridingFields0309
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_1200
+     * @tc.name      testOverridingFieldsThree0012
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0309", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: B_F309 = new B_F309()
         let b: A_F309 = new A_F309()
-        expect(a.field instanceof string).assertTrue()
-        expect(a.field).assertEqual("ijk")
-        expect(get_field(a)).assertEqual("ijk")
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("ijk")
+      expect(get_field(a)).assertEqual("ijk")
         set_field(a, "lmn")
-        expect(a.field).assertEqual("lmn")
-        expect(get_field(a)).assertEqual("lmn")
-        expect(b.field instanceof string).assertTrue()
-        expect(b.field).assertEqual("efg")
-        expect(get_field(b)).assertEqual("efg")
+      expect(a.field).assertEqual("lmn")
+      expect(get_field(a)).assertEqual("lmn")
+      expect(b.field instanceof string).assertTrue()
+      expect(b.field).assertEqual("efg")
+      expect(get_field(b)).assertEqual("efg")
         set_field(b, "lmn")
-        expect(b.field).assertEqual("lmn")
-        expect(get_field(b)).assertEqual("lmn")
+      expect(b.field).assertEqual("lmn")
+      expect(get_field(b)).assertEqual("lmn")
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0310
-     * @tc.name      testOverridingFields0310
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_1300
+     * @tc.name      testOverridingFieldsThree0013
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0310", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: B_F310 = new B_F310()
         let b: A_F310 = new A_F310()
-        expect(a.field instanceof bigint).assertTrue()
-        expect(a.field).assertEqual(123n)
-        expect(get_field(a)).assertEqual(123n)
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(123n)
+      expect(get_field(a)).assertEqual(123n)
         set_field(a, 321n)
-        expect(a.field).assertEqual(321n)
-        expect(get_field(a)).assertEqual(321n)
-        expect(b.field instanceof bigint).assertTrue()
-        expect(b.field).assertEqual(555642n)
-        expect(get_field(b)).assertEqual(555642n)
+      expect(a.field).assertEqual(321n)
+      expect(get_field(a)).assertEqual(321n)
+      expect(b.field instanceof bigint).assertTrue()
+      expect(b.field).assertEqual(555642n)
+      expect(get_field(b)).assertEqual(555642n)
         set_field(b, 321n)
-        expect(b.field).assertEqual(321n)
-        expect(get_field(b)).assertEqual(321n)
+      expect(b.field).assertEqual(321n)
+      expect(get_field(b)).assertEqual(321n)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0311
-     * @tc.name      testOverridingFields0311
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_1400
+     * @tc.name      testOverridingFieldsThree0014
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0311", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: B_F311 = new B_F311()
         let b: A_F311 = new A_F311()
-        expect(a.field instanceof char).assertTrue()
-        expect(a.field).assertEqual(c'y')
-        expect(get_field(a)).assertEqual(c'y')
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'y')
+      expect(get_field(a)).assertEqual(c'y')
         set_field(a, c'z')
-        expect(a.field).assertEqual(c'z')
-        expect(get_field(a)).assertEqual(c'z')
-        expect(b.field instanceof char).assertTrue()
-        expect(b.field).assertEqual(c'x')
-        expect(get_field(b)).assertEqual(c'x')
+      expect(a.field).assertEqual(c'z')
+      expect(get_field(a)).assertEqual(c'z')
+      expect(b.field instanceof char).assertTrue()
+      expect(b.field).assertEqual(c'x')
+      expect(get_field(b)).assertEqual(c'x')
         set_field(b, c'z')
-        expect(b.field).assertEqual(c'z')
-        expect(get_field(b)).assertEqual(c'z')
+      expect(b.field).assertEqual(c'z')
+      expect(get_field(b)).assertEqual(c'z')
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0312
-     * @tc.name      testOverridingFields0312
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_1500
+     * @tc.name      testOverridingFieldsThree0015
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0312", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: B_F312 = new B_F312()
         let b: A_F312 = new A_F312()
-        expect(a.field instanceof boolean).assertTrue()
-        expect(a.field).assertEqual(false)
-        expect(get_field(a)).assertEqual(false)
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(false)
+      expect(get_field(a)).assertEqual(false)
         set_field(a, true)
-        expect(a.field).assertEqual(true)
-        expect(get_field(a)).assertEqual(true)
-        expect(b.field instanceof boolean).assertTrue()
-        expect(b.field).assertEqual(true)
-        expect(get_field(b)).assertEqual(true)
+      expect(a.field).assertEqual(true)
+      expect(get_field(a)).assertEqual(true)
+      expect(b.field instanceof boolean).assertTrue()
+      expect(b.field).assertEqual(true)
+      expect(get_field(b)).assertEqual(true)
         set_field(b, true)
-        expect(b.field).assertEqual(true)
-        expect(get_field(b)).assertEqual(true)
+      expect(b.field).assertEqual(true)
+      expect(get_field(b)).assertEqual(true)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0313
-     * @tc.name      testOverridingFields0313
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_1600
+     * @tc.name      testOverridingFieldsThree0016
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0313", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F313 = new B_F313()
-        expect(a.field instanceof Any).assertTrue()
-        expect(a.field).assertEqual(7)
-        expect(get_field(a)).assertEqual(7)
+      expect(a.field instanceof Any).assertTrue()
+      expect(a.field).assertEqual(7)
+      expect(get_field(a)).assertEqual(7)
         set_field(a, "abc")
-        expect(a.field).assertEqual("abc")
-        expect(get_field(a)).assertEqual("abc")
+      expect(a.field).assertEqual("abc")
+      expect(get_field(a)).assertEqual("abc")
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0314
-     * @tc.name      testOverridingFields0314
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_1700
+     * @tc.name      testOverridingFieldsThree0017
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0314", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F314 = new B_F314()
-        expect(a.field instanceof Object).assertTrue()
-        expect(a.field).assertEqual("abc")
-        expect(get_field(a)).assertEqual("abc")
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual("abc")
+      expect(get_field(a)).assertEqual("abc")
         set_field(a, 7)
-        expect(a.field).assertEqual(7)
-        expect(get_field(a)).assertEqual(7)
+      expect(a.field).assertEqual(7)
+      expect(get_field(a)).assertEqual(7)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0315
-     * @tc.name      testOverridingFields0315
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_1800
+     * @tc.name      testOverridingFieldsThree0018
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0315", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F315 = new B_F315()
-        expect(a.field instanceof number).assertTrue()
-        expect(a.field).assertEqual(6.7)
-        expect(get_field(a)).assertEqual(6.7)
+      expect(a.field instanceof number).assertTrue()
+      expect(a.field).assertEqual(6.7)
+      expect(get_field(a)).assertEqual(6.7)
         set_field(a, 13)
-        expect(a.field).assertEqual(13)
-        expect(get_field(a)).assertEqual(13)
+      expect(a.field).assertEqual(13)
+      expect(get_field(a)).assertEqual(13)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0316
-     * @tc.name      testOverridingFields0316
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_1900
+     * @tc.name      testOverridingFieldsThree0019
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0316", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F316 = new B_F316()
-        expect(a.field instanceof double).assertTrue()
-        expect(a.field).assertEqual(5.0)
-        expect(get_field(a)).assertEqual(5.0)
+      expect(a.field instanceof double).assertTrue()
+      expect(a.field).assertEqual(5.0)
+      expect(get_field(a)).assertEqual(5.0)
         set_field(a, 15)
-        expect(a.field).assertEqual(15)
-        expect(get_field(a)).assertEqual(15)
+      expect(a.field).assertEqual(15)
+      expect(get_field(a)).assertEqual(15)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0317
-     * @tc.name      testOverridingFields0317
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_2000
+     * @tc.name      testOverridingFieldsThree0020
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0317", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F317 = new B_F317()
-        expect(a.field instanceof float).assertTrue()
-        expect(a.field).assertEqual(7.3f)
-        expect(get_field(a)).assertEqual(7.3f)
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(7.3f)
+      expect(get_field(a)).assertEqual(7.3f)
         set_field(a, 9.8f)
-        expect(a.field).assertEqual(9.8f)
-        expect(get_field(a)).assertEqual(9.8f)
+      expect(a.field).assertEqual(9.8f)
+      expect(get_field(a)).assertEqual(9.8f)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0318
-     * @tc.name      testOverridingFields0318
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_2100
+     * @tc.name      testOverridingFieldsThree0021
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0318", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F318 = new B_F318()
-        expect(a.field instanceof long).assertTrue()
-        expect(a.field).assertEqual(78945)
-        expect(get_field(a)).assertEqual(78945)
+      expect(a.field instanceof long).assertTrue()
+      expect(a.field).assertEqual(78945)
+      expect(get_field(a)).assertEqual(78945)
         set_field(a, 9223372036854775000)
-        expect(a.field).assertEqual(9223372036854775000)
-        expect(get_field(a)).assertEqual(9223372036854775000)
+      expect(a.field).assertEqual(9223372036854775000)
+      expect(get_field(a)).assertEqual(9223372036854775000)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0319
-     * @tc.name      testOverridingFields0319
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_2200
+     * @tc.name      testOverridingFieldsThree0022
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0319", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F319 = new B_F319()
-        expect(a.field instanceof int).assertTrue()
-        expect(a.field).assertEqual(321)
-        expect(get_field(a)).assertEqual(321)
+      expect(a.field instanceof int).assertTrue()
+      expect(a.field).assertEqual(321)
+      expect(get_field(a)).assertEqual(321)
         set_field(a, 321321)
-        expect(a.field).assertEqual(321321)
-        expect(get_field(a)).assertEqual(321321)
+      expect(a.field).assertEqual(321321)
+      expect(get_field(a)).assertEqual(321321)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0320
-     * @tc.name      testOverridingFields0320
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_2300
+     * @tc.name      testOverridingFieldsThree0023
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0320", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F320 = new B_F320()
-        expect(a.field instanceof short).assertTrue()
-        expect(a.field).assertEqual(253)
-        expect(get_field(a)).assertEqual(253)
+      expect(a.field instanceof short).assertTrue()
+      expect(a.field).assertEqual(253)
+      expect(get_field(a)).assertEqual(253)
         set_field(a, 536)
-        expect(a.field).assertEqual(536)
-        expect(get_field(a)).assertEqual(536)
+      expect(a.field).assertEqual(536)
+      expect(get_field(a)).assertEqual(536)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0321
-     * @tc.name      testOverridingFields0321
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_2400
+     * @tc.name      testOverridingFieldsThree0024
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0321", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F321 = new B_F321()
-        expect(a.field instanceof byte).assertTrue()
-        expect(a.field).assertEqual(78)
-        expect(get_field(a)).assertEqual(78)
+      expect(a.field instanceof byte).assertTrue()
+      expect(a.field).assertEqual(78)
+      expect(get_field(a)).assertEqual(78)
         set_field(a, 15)
-        expect(a.field).assertEqual(15)
-        expect(get_field(a)).assertEqual(15)
+      expect(a.field).assertEqual(15)
+      expect(get_field(a)).assertEqual(15)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0322
-     * @tc.name      testOverridingFields0322
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_2500
+     * @tc.name      testOverridingFieldsThree0025
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0322", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F322 = new B_F322()
-        expect(a.field instanceof string).assertTrue()
-        expect(a.field).assertEqual("defg")
-        expect(get_field(a)).assertEqual("defg")
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("defg")
+      expect(get_field(a)).assertEqual("defg")
         set_field(a, "hijk")
-        expect(a.field).assertEqual("hijk")
-        expect(get_field(a)).assertEqual("hijk")
+      expect(a.field).assertEqual("hijk")
+      expect(get_field(a)).assertEqual("hijk")
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0323
-     * @tc.name      testOverridingFields0323
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_2600
+     * @tc.name      testOverridingFieldsThree0026
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0323", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F323 = new B_F323()
-        expect(a.field instanceof bigint).assertTrue()
-        expect(a.field).assertEqual(5556423623465n)
-        expect(get_field(a)).assertEqual(5556423623465n)
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(5556423623465n)
+      expect(get_field(a)).assertEqual(5556423623465n)
         set_field(a, 123123n)
-        expect(a.field).assertEqual(123123n)
-        expect(get_field(a)).assertEqual(123123n)
+      expect(a.field).assertEqual(123123n)
+      expect(get_field(a)).assertEqual(123123n)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0324
-     * @tc.name      testOverridingFields0324
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_2700
+     * @tc.name      testOverridingFieldsThree0027
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0324", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F324 = new B_F324()
-        expect(a.field instanceof char).assertTrue()
-        expect(a.field).assertEqual(c'z')
-        expect(get_field(a)).assertEqual(c'z')
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'z')
+      expect(get_field(a)).assertEqual(c'z')
         set_field(a, c'x')
-        expect(a.field).assertEqual(c'x')
-        expect(get_field(a)).assertEqual(c'x')
+      expect(a.field).assertEqual(c'x')
+      expect(get_field(a)).assertEqual(c'x')
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0325
-     * @tc.name      testOverridingFields0325
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_2800
+     * @tc.name      testOverridingFieldsThree0028
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0325", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F325 = new B_F325()
-        expect(a.field instanceof boolean).assertTrue()
-        expect(a.field).assertEqual(true)
-        expect(get_field(a)).assertEqual(true)
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(true)
+      expect(get_field(a)).assertEqual(true)
         set_field(a, false)
-        expect(a.field).assertEqual(false)
-        expect(get_field(a)).assertEqual(false)
+      expect(a.field).assertEqual(false)
+      expect(get_field(a)).assertEqual(false)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0326
-     * @tc.name      testOverridingFields0326
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_2900
+     * @tc.name      testOverridingFieldsThree0029
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0326", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F326 = new A_F326()
-        expect(a.field instanceof Any).assertTrue()
-        expect(a.field).assertEqual(7)
-        expect(get_field(a)).assertEqual(7)
+      expect(a.field instanceof Any).assertTrue()
+      expect(a.field).assertEqual(7)
+      expect(get_field(a)).assertEqual(7)
         set_field(a, "abc")
-        expect(a.field).assertEqual("abc")
-        expect(get_field(a)).assertEqual("abc")
+      expect(a.field).assertEqual("abc")
+      expect(get_field(a)).assertEqual("abc")
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0327
-     * @tc.name      testOverridingFields0327
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_3000
+     * @tc.name      testOverridingFieldsThree0030
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0327", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F327 = new A_F327()
-        expect(a.field instanceof Object).assertTrue()
-        expect(a.field).assertEqual("abc")
-        expect(get_field(a)).assertEqual("abc")
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual("abc")
+      expect(get_field(a)).assertEqual("abc")
         set_field(a, 7)
-        expect(a.field).assertEqual(7)
-        expect(get_field(a)).assertEqual(7)
+      expect(a.field).assertEqual(7)
+      expect(get_field(a)).assertEqual(7)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0328
-     * @tc.name      testOverridingFields0328
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_3100
+     * @tc.name      testOverridingFieldsThree0031
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0328", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F328 = new A_F328()
-        expect(a.field instanceof number).assertTrue()
-        expect(a.field).assertEqual(6.7)
-        expect(get_field(a)).assertEqual(6.7)
+      expect(a.field instanceof number).assertTrue()
+      expect(a.field).assertEqual(6.7)
+      expect(get_field(a)).assertEqual(6.7)
         set_field(a, 13)
-        expect(a.field).assertEqual(13)
-        expect(get_field(a)).assertEqual(13)
+      expect(a.field).assertEqual(13)
+      expect(get_field(a)).assertEqual(13)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0329
-     * @tc.name      testOverridingFields0329
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_3200
+     * @tc.name      testOverridingFieldsThree0032
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0329", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F329 = new A_F329()
-        expect(a.field instanceof double).assertTrue()
-        expect(a.field).assertEqual(5.0)
-        expect(get_field(a)).assertEqual(5.0)
+      expect(a.field instanceof double).assertTrue()
+      expect(a.field).assertEqual(5.0)
+      expect(get_field(a)).assertEqual(5.0)
         set_field(a, 15)
-        expect(a.field).assertEqual(15)
-        expect(get_field(a)).assertEqual(15)
+      expect(a.field).assertEqual(15)
+      expect(get_field(a)).assertEqual(15)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0330
-     * @tc.name      testOverridingFields0330
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_3300
+     * @tc.name      testOverridingFieldsThree0033
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0330", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F330 = new A_F330()
-        expect(a.field instanceof float).assertTrue()
-        expect(a.field).assertEqual(7.3f)
-        expect(get_field(a)).assertEqual(7.3f)
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(7.3f)
+      expect(get_field(a)).assertEqual(7.3f)
         set_field(a, 9.8f)
-        expect(a.field).assertEqual(9.8f)
-        expect(get_field(a)).assertEqual(9.8f)
+      expect(a.field).assertEqual(9.8f)
+      expect(get_field(a)).assertEqual(9.8f)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0331
-     * @tc.name      testOverridingFields0331
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_3400
+     * @tc.name      testOverridingFieldsThree0034
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0331", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F331 = new A_F331()
-        expect(a.field instanceof long).assertTrue()
-        expect(a.field).assertEqual(78945)
-        expect(get_field(a)).assertEqual(78945)
+      expect(a.field instanceof long).assertTrue()
+      expect(a.field).assertEqual(78945)
+      expect(get_field(a)).assertEqual(78945)
         set_field(a, 9223372036854775000)
-        expect(a.field).assertEqual(9223372036854775000)
-        expect(get_field(a)).assertEqual(9223372036854775000)
+      expect(a.field).assertEqual(9223372036854775000)
+      expect(get_field(a)).assertEqual(9223372036854775000)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0332
-     * @tc.name      testOverridingFields0332
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_3500
+     * @tc.name      testOverridingFieldsThree0035
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0332", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F332 = new A_F332()
-        expect(a.field instanceof int).assertTrue()
-        expect(a.field).assertEqual(321)
-        expect(get_field(a)).assertEqual(321)
+      expect(a.field instanceof int).assertTrue()
+      expect(a.field).assertEqual(321)
+      expect(get_field(a)).assertEqual(321)
         set_field(a, 321321)
-        expect(a.field).assertEqual(321321)
-        expect(get_field(a)).assertEqual(321321)
+      expect(a.field).assertEqual(321321)
+      expect(get_field(a)).assertEqual(321321)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0333
-     * @tc.name      testOverridingFields0333
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_3600
+     * @tc.name      testOverridingFieldsThree0036
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0333", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F333 = new A_F333()
-        expect(a.field instanceof short).assertTrue()
-        expect(a.field).assertEqual(253)
-        expect(get_field(a)).assertEqual(253)
+      expect(a.field instanceof short).assertTrue()
+      expect(a.field).assertEqual(253)
+      expect(get_field(a)).assertEqual(253)
         set_field(a, 536)
-        expect(a.field).assertEqual(536)
-        expect(get_field(a)).assertEqual(536)
+      expect(a.field).assertEqual(536)
+      expect(get_field(a)).assertEqual(536)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0334
-     * @tc.name      testOverridingFields0334
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_3700
+     * @tc.name      testOverridingFieldsThree0037
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0334", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F334 = new A_F334()
-        expect(a.field instanceof byte).assertTrue()
-        expect(a.field).assertEqual(78)
-        expect(get_field(a)).assertEqual(78)
+      expect(a.field instanceof byte).assertTrue()
+      expect(a.field).assertEqual(78)
+      expect(get_field(a)).assertEqual(78)
         set_field(a, 15)
-        expect(a.field).assertEqual(15)
-        expect(get_field(a)).assertEqual(15)
+      expect(a.field).assertEqual(15)
+      expect(get_field(a)).assertEqual(15)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0335
-     * @tc.name      testOverridingFields0335
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_3800
+     * @tc.name      testOverridingFieldsThree0038
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0335", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F335 = new A_F335()
-        expect(a.field instanceof string).assertTrue()
-        expect(a.field).assertEqual("defg")
-        expect(get_field(a)).assertEqual("defg")
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("defg")
+      expect(get_field(a)).assertEqual("defg")
         set_field(a, "hijk")
-        expect(a.field).assertEqual("hijk")
-        expect(get_field(a)).assertEqual("hijk")
+      expect(a.field).assertEqual("hijk")
+      expect(get_field(a)).assertEqual("hijk")
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0336
-     * @tc.name      testOverridingFields0336
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_3900
+     * @tc.name      testOverridingFieldsThree0039
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0336", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F336 = new A_F336()
-        expect(a.field instanceof bigint).assertTrue()
-        expect(a.field).assertEqual(5556423623465n)
-        expect(get_field(a)).assertEqual(5556423623465n)
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(5556423623465n)
+      expect(get_field(a)).assertEqual(5556423623465n)
         set_field(a, 123123n)
-        expect(a.field).assertEqual(123123n)
-        expect(get_field(a)).assertEqual(123123n)
+      expect(a.field).assertEqual(123123n)
+      expect(get_field(a)).assertEqual(123123n)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0337
-     * @tc.name      testOverridingFields0337
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_4000
+     * @tc.name      testOverridingFieldsThree0040
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0337", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F337 = new A_F337()
-        expect(a.field instanceof char).assertTrue()
-        expect(a.field).assertEqual(c'z')
-        expect(get_field(a)).assertEqual(c'z')
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'z')
+      expect(get_field(a)).assertEqual(c'z')
         set_field(a, c'x')
-        expect(a.field).assertEqual(c'x')
-        expect(get_field(a)).assertEqual(c'x')
+      expect(a.field).assertEqual(c'x')
+      expect(get_field(a)).assertEqual(c'x')
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0338
-     * @tc.name      testOverridingFields0338
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_4100
+     * @tc.name      testOverridingFieldsThree0041
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0338", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F338 = new A_F338()
-        expect(a.field instanceof boolean).assertTrue()
-        expect(a.field).assertEqual(true)
-        expect(get_field(a)).assertEqual(true)
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(true)
+      expect(get_field(a)).assertEqual(true)
         set_field(a, false)
-        expect(a.field).assertEqual(false)
-        expect(get_field(a)).assertEqual(false)
+      expect(a.field).assertEqual(false)
+      expect(get_field(a)).assertEqual(false)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0339
-     * @tc.name      testOverridingFields0339
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_4200
+     * @tc.name      testOverridingFieldsThree0042
      * @tc.desc      Overriding readonly field
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0339", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F339 = new A_F339()
-        expect(a.field instanceof Any).assertTrue()
-        expect(a.field).assertEqual(7)
-        expect(get_field(a)).assertEqual(7)
+      expect(a.field instanceof Any).assertTrue()
+      expect(a.field).assertEqual(7)
+      expect(get_field(a)).assertEqual(7)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0340
-     * @tc.name      testOverridingFields0340
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_4300
+     * @tc.name      testOverridingFieldsThree0043
      * @tc.desc      Overriding readonly field
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0340", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F340 = new A_F340()
-        expect(a.field instanceof Object).assertTrue()
-        expect(a.field).assertEqual("abc")
-        expect(get_field(a)).assertEqual("abc")
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual("abc")
+      expect(get_field(a)).assertEqual("abc")
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0341
-     * @tc.name      testOverridingFields0341
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_4400
+     * @tc.name      testOverridingFieldsThree0044
      * @tc.desc      Overriding readonly field
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0341", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F341 = new A_F341()
-        expect(a.field instanceof number).assertTrue()
-        expect(a.field).assertEqual(6.7)
-        expect(get_field(a)).assertEqual(6.7)
+      expect(a.field instanceof number).assertTrue()
+      expect(a.field).assertEqual(6.7)
+      expect(get_field(a)).assertEqual(6.7)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0342
-     * @tc.name      testOverridingFields0342
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_4500
+     * @tc.name      testOverridingFieldsThree0045
      * @tc.desc      Overriding readonly field
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0342", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F342 = new A_F342()
-        expect(a.field instanceof double).assertTrue()
-        expect(a.field).assertEqual(5.0)
-        expect(get_field(a)).assertEqual(5.0)
+      expect(a.field instanceof double).assertTrue()
+      expect(a.field).assertEqual(5.0)
+      expect(get_field(a)).assertEqual(5.0)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0343
-     * @tc.name      testOverridingFields0343
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_4600
+     * @tc.name      testOverridingFieldsThree0046
      * @tc.desc      Overriding readonly field
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0343", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F343 = new A_F343()
-        expect(a.field instanceof float).assertTrue()
-        expect(a.field).assertEqual(7.3f)
-        expect(get_field(a)).assertEqual(7.3f)
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(7.3f)
+      expect(get_field(a)).assertEqual(7.3f)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0344
-     * @tc.name      testOverridingFields0344
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_4700
+     * @tc.name      testOverridingFieldsThree0047
      * @tc.desc      Overriding readonly field
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0344", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F344 = new A_F344()
-        expect(a.field instanceof long).assertTrue()
-        expect(a.field).assertEqual(78945)
-        expect(get_field(a)).assertEqual(78945)
+      expect(a.field instanceof long).assertTrue()
+      expect(a.field).assertEqual(78945)
+      expect(get_field(a)).assertEqual(78945)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0345
-     * @tc.name      testOverridingFields0345
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_4800
+     * @tc.name      testOverridingFieldsThree0048
      * @tc.desc      Overriding readonly field
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0345", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F345 = new A_F345()
-        expect(a.field instanceof int).assertTrue()
-        expect(a.field).assertEqual(321)
-        expect(get_field(a)).assertEqual(321)
+      expect(a.field instanceof int).assertTrue()
+      expect(a.field).assertEqual(321)
+      expect(get_field(a)).assertEqual(321)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0346
-     * @tc.name      testOverridingFields0346
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_4900
+     * @tc.name      testOverridingFieldsThree0049
      * @tc.desc      Overriding readonly field
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0346", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F346 = new A_F346()
-        expect(a.field instanceof short).assertTrue()
-        expect(a.field).assertEqual(253)
-        expect(get_field(a)).assertEqual(253)
+      expect(a.field instanceof short).assertTrue()
+      expect(a.field).assertEqual(253)
+      expect(get_field(a)).assertEqual(253)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0347
-     * @tc.name      testOverridingFields0347
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_5000
+     * @tc.name      testOverridingFieldsThree0050
      * @tc.desc      Overriding readonly field
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0347", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F347 = new A_F347()
-        expect(a.field instanceof byte).assertTrue()
-        expect(a.field).assertEqual(78)
-        expect(get_field(a)).assertEqual(78)
+      expect(a.field instanceof byte).assertTrue()
+      expect(a.field).assertEqual(78)
+      expect(get_field(a)).assertEqual(78)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0348
-     * @tc.name      testOverridingFields0348
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_5100
+     * @tc.name      testOverridingFieldsThree0051
      * @tc.desc      Overriding readonly field
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0348", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F348 = new A_F348()
-        expect(a.field instanceof string).assertTrue()
-        expect(a.field).assertEqual("defg")
-        expect(get_field(a)).assertEqual("defg")
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("defg")
+      expect(get_field(a)).assertEqual("defg")
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0349
-     * @tc.name      testOverridingFields0349
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_5200
+     * @tc.name      testOverridingFieldsThree0052
      * @tc.desc      Overriding readonly field
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0349", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F349 = new A_F349()
-        expect(a.field instanceof bigint).assertTrue()
-        expect(a.field).assertEqual(5556423623465n)
-        expect(get_field(a)).assertEqual(5556423623465n)
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(5556423623465n)
+      expect(get_field(a)).assertEqual(5556423623465n)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0350
-     * @tc.name      testOverridingFields0350
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_5300
+     * @tc.name      testOverridingFieldsThree0053
      * @tc.desc      Overriding readonly field
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0350", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F350 = new A_F350()
-        expect(a.field instanceof char).assertTrue()
-        expect(a.field).assertEqual(c'z')
-        expect(get_field(a)).assertEqual(c'z')
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'z')
+      expect(get_field(a)).assertEqual(c'z')
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0351
-     * @tc.name      testOverridingFields0351
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_5400
+     * @tc.name      testOverridingFieldsThree0054
      * @tc.desc      Overriding readonly field
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0351", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F351 = new A_F351()
-        expect(a.field instanceof boolean).assertTrue()
-        expect(a.field).assertEqual(true)
-        expect(get_field(a)).assertEqual(true)
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(true)
+      expect(get_field(a)).assertEqual(true)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0352
-     * @tc.name      testOverridingFields0352
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_5500
+     * @tc.name      testOverridingFieldsThree0055
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0352", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F352 = new A_F352()
-        expect(a.field instanceof Any).assertTrue()
-        expect(a.field).assertEqual(null)
-        expect(get_field(a)).assertEqual(null)
+      expect(a.field instanceof Any).assertTrue()
+      expect(a.field).assertEqual(null)
+      expect(get_field(a)).assertEqual(null)
         set_field(a, 7)
-        expect(a.field).assertEqual(7)
-        expect(get_field(a)).assertEqual(7)
+      expect(a.field).assertEqual(7)
+      expect(get_field(a)).assertEqual(7)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0353
-     * @tc.name      testOverridingFields0353
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_5600
+     * @tc.name      testOverridingFieldsThree0056
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0353", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F353 = new A_F353()
-        expect(a.field instanceof Object).assertTrue()
-        expect(a.field).assertEqual(5)
-        expect(get_field(a)).assertEqual(5)
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(5)
+      expect(get_field(a)).assertEqual(5)
         set_field(a, "abc")
-        expect(a.field).assertEqual("abc")
-        expect(get_field(a)).assertEqual("abc")
+      expect(a.field).assertEqual("abc")
+      expect(get_field(a)).assertEqual("abc")
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0354
-     * @tc.name      testOverridingFields0354
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_5700
+     * @tc.name      testOverridingFieldsThree0057
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0354", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F354 = new A_F354()
-        expect(a.field instanceof number).assertTrue()
-        expect(a.field).assertEqual(3)
-        expect(get_field(a)).assertEqual(3)
+      expect(a.field instanceof number).assertTrue()
+      expect(a.field).assertEqual(3)
+      expect(get_field(a)).assertEqual(3)
         set_field(a, 6.7)
-        expect(a.field).assertEqual(6.7)
-        expect(get_field(a)).assertEqual(6.7)
+      expect(a.field).assertEqual(6.7)
+      expect(get_field(a)).assertEqual(6.7)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0355
-     * @tc.name      testOverridingFields0355
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_5800
+     * @tc.name      testOverridingFieldsThree0058
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0355", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F355 = new A_F355()
-        expect(a.field instanceof double).assertTrue()
-        expect(a.field).assertEqual(3.4)
-        expect(get_field(a)).assertEqual(3.4)
+      expect(a.field instanceof double).assertTrue()
+      expect(a.field).assertEqual(3.4)
+      expect(get_field(a)).assertEqual(3.4)
         set_field(a, 5.0)
-        expect(a.field).assertEqual(5.0)
-        expect(get_field(a)).assertEqual(5.0)
+      expect(a.field).assertEqual(5.0)
+      expect(get_field(a)).assertEqual(5.0)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0356
-     * @tc.name      testOverridingFields0356
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_5900
+     * @tc.name      testOverridingFieldsThree0059
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0356", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F356 = new A_F356()
-        expect(a.field instanceof float).assertTrue()
-        expect(a.field).assertEqual(6.7f)
-        expect(get_field(a)).assertEqual(6.7f)
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(6.7f)
+      expect(get_field(a)).assertEqual(6.7f)
         set_field(a, 7.3f)
-        expect(a.field).assertEqual(7.3f)
-        expect(get_field(a)).assertEqual(7.3f)
+      expect(a.field).assertEqual(7.3f)
+      expect(get_field(a)).assertEqual(7.3f)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0357
-     * @tc.name      testOverridingFields0357
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_6000
+     * @tc.name      testOverridingFieldsThree0060
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0357", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F357 = new A_F357()
-        expect(a.field instanceof long).assertTrue()
-        expect(a.field).assertEqual(9223372036854775807)
-        expect(get_field(a)).assertEqual(9223372036854775807)
+      expect(a.field instanceof long).assertTrue()
+      expect(a.field).assertEqual(9223372036854775807)
+      expect(get_field(a)).assertEqual(9223372036854775807)
         set_field(a, 78945)
-        expect(a.field).assertEqual(78945)
-        expect(get_field(a)).assertEqual(78945)
+      expect(a.field).assertEqual(78945)
+      expect(get_field(a)).assertEqual(78945)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0358
-     * @tc.name      testOverridingFields0358
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_6100
+     * @tc.name      testOverridingFieldsThree0061
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0358", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F358 = new A_F358()
-        expect(a.field instanceof int).assertTrue()
-        expect(a.field).assertEqual(123)
-        expect(get_field(a)).assertEqual(123)
+      expect(a.field instanceof int).assertTrue()
+      expect(a.field).assertEqual(123)
+      expect(get_field(a)).assertEqual(123)
         set_field(a, 321)
-        expect(a.field).assertEqual(321)
-        expect(get_field(a)).assertEqual(321)
+      expect(a.field).assertEqual(321)
+      expect(get_field(a)).assertEqual(321)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0359
-     * @tc.name      testOverridingFields0359
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_6200
+     * @tc.name      testOverridingFieldsThree0062
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0359", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F359 = new A_F359()
-        expect(a.field instanceof short).assertTrue()
-        expect(a.field).assertEqual(325)
-        expect(get_field(a)).assertEqual(325)
+      expect(a.field instanceof short).assertTrue()
+      expect(a.field).assertEqual(325)
+      expect(get_field(a)).assertEqual(325)
         set_field(a, 253)
-        expect(a.field).assertEqual(253)
-        expect(get_field(a)).assertEqual(253)
+      expect(a.field).assertEqual(253)
+      expect(get_field(a)).assertEqual(253)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0360
-     * @tc.name      testOverridingFields0360
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_6300
+     * @tc.name      testOverridingFieldsThree0063
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0360", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F360 = new A_F360()
-        expect(a.field instanceof byte).assertTrue()
-        expect(a.field).assertEqual(127)
-        expect(get_field(a)).assertEqual(127)
+      expect(a.field instanceof byte).assertTrue()
+      expect(a.field).assertEqual(127)
+      expect(get_field(a)).assertEqual(127)
         set_field(a, 78)
-        expect(a.field).assertEqual(78)
-        expect(get_field(a)).assertEqual(78)
+      expect(a.field).assertEqual(78)
+      expect(get_field(a)).assertEqual(78)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0361
-     * @tc.name      testOverridingFields0361
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_6400
+     * @tc.name      testOverridingFieldsThree0064
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0361", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F361 = new A_F361()
-        expect(a.field instanceof string).assertTrue()
-        expect(a.field).assertEqual("abc")
-        expect(get_field(a)).assertEqual("abc")
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("abc")
+      expect(get_field(a)).assertEqual("abc")
         set_field(a, "defg")
-        expect(a.field).assertEqual("defg")
-        expect(get_field(a)).assertEqual("defg")
+      expect(a.field).assertEqual("defg")
+      expect(get_field(a)).assertEqual("defg")
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0362
-     * @tc.name      testOverridingFields0362
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_6500
+     * @tc.name      testOverridingFieldsThree0065
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0362", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F362 = new A_F362()
-        expect(a.field instanceof bigint).assertTrue()
-        expect(a.field).assertEqual(12345678901234567890n)
-        expect(get_field(a)).assertEqual(12345678901234567890n)
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(12345678901234567890n)
+      expect(get_field(a)).assertEqual(12345678901234567890n)
         set_field(a, 5556423623465n)
-        expect(a.field).assertEqual(5556423623465n)
-        expect(get_field(a)).assertEqual(5556423623465n)
+      expect(a.field).assertEqual(5556423623465n)
+      expect(get_field(a)).assertEqual(5556423623465n)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0363
-     * @tc.name      testOverridingFields0363
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_6600
+     * @tc.name      testOverridingFieldsThree0066
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0363", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F363 = new A_F363()
-        expect(a.field instanceof char).assertTrue()
-        expect(a.field).assertEqual(c'\u2028')
-        expect(get_field(a)).assertEqual(c'\u2028')
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'\u2028')
+      expect(get_field(a)).assertEqual(c'\u2028')
         set_field(a, c'z')
-        expect(a.field).assertEqual(c'z')
-        expect(get_field(a)).assertEqual(c'z')
+      expect(a.field).assertEqual(c'z')
+      expect(get_field(a)).assertEqual(c'z')
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0364
-     * @tc.name      testOverridingFields0364
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_6700
+     * @tc.name      testOverridingFieldsThree0067
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0364", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F364 = new A_F364()
-        expect(a.field instanceof boolean).assertTrue()
-        expect(a.field).assertEqual(false)
-        expect(get_field(a)).assertEqual(false)
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(false)
+      expect(get_field(a)).assertEqual(false)
         set_field(a, true)
-        expect(a.field).assertEqual(true)
-        expect(get_field(a)).assertEqual(true)
+      expect(a.field).assertEqual(true)
+      expect(get_field(a)).assertEqual(true)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0365
-     * @tc.name      testOverridingFields0365
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_6800
+     * @tc.name      testOverridingFieldsThree0068
      * @tc.desc      Checking instance field declaration in derived class with same name and same
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0365", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F365 = new A_F365()
-        expect(a.field instanceof Any).assertTrue()
-        expect(a.field).assertEqual(7)
-        expect(Base_F365.field instanceof Any).assertTrue()
-        expect(Base_F365.field).assertEqual(null)
-        expect(Base_F365.field instanceof Any).assertTrue()
-        expect(Base_F365.field).assertEqual(null)
+      expect(a.field instanceof Any).assertTrue()
+      expect(a.field).assertEqual(7)
+      expect(Base_F365.field instanceof Any).assertTrue()
+      expect(Base_F365.field).assertEqual(null)
+      expect(Base_F365.field instanceof Any).assertTrue()
+      expect(Base_F365.field).assertEqual(null)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0366
-     * @tc.name      testOverridingFields0366
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_6900
+     * @tc.name      testOverridingFieldsThree0069
      * @tc.desc      Checking instance field declaration in derived class with same name and same
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0366", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F366 = new A_F366()
-        expect(a.field instanceof Object).assertTrue()
-        expect(a.field).assertEqual("abc")
-        expect(Base_F366.field instanceof Object).assertTrue()
-        expect(Base_F366.field).assertEqual(5)
-        expect(Base_F366.field instanceof Object).assertTrue()
-        expect(Base_F366.field).assertEqual(5)
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual("abc")
+      expect(Base_F366.field instanceof Object).assertTrue()
+      expect(Base_F366.field).assertEqual(5)
+      expect(Base_F366.field instanceof Object).assertTrue()
+      expect(Base_F366.field).assertEqual(5)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0367
-     * @tc.name      testOverridingFields0367
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_7000
+     * @tc.name      testOverridingFieldsThree0070
      * @tc.desc      Checking instance field declaration in derived class with same name and same
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0367", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F367 = new A_F367()
-        expect(a.field instanceof number).assertTrue()
-        expect(a.field).assertEqual(6.7)
-        expect(Base_F367.field instanceof number).assertTrue()
-        expect(Base_F367.field).assertEqual(3)
-        expect(Base_F367.field instanceof number).assertTrue()
-        expect(Base_F367.field).assertEqual(3)
+      expect(a.field instanceof number).assertTrue()
+      expect(a.field).assertEqual(6.7)
+      expect(Base_F367.field instanceof number).assertTrue()
+      expect(Base_F367.field).assertEqual(3)
+      expect(Base_F367.field instanceof number).assertTrue()
+      expect(Base_F367.field).assertEqual(3)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0368
-     * @tc.name      testOverridingFields0368
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_7100
+     * @tc.name      testOverridingFieldsThree0071
      * @tc.desc      Checking instance field declaration in derived class with same name and same
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0368", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F368 = new A_F368()
-        expect(a.field instanceof double).assertTrue()
-        expect(a.field).assertEqual(5.0)
-        expect(Base_F368.field instanceof double).assertTrue()
-        expect(Base_F368.field).assertEqual(3.4)
-        expect(Base_F368.field instanceof double).assertTrue()
-        expect(Base_F368.field).assertEqual(3.4)
+      expect(a.field instanceof double).assertTrue()
+      expect(a.field).assertEqual(5.0)
+      expect(Base_F368.field instanceof double).assertTrue()
+      expect(Base_F368.field).assertEqual(3.4)
+      expect(Base_F368.field instanceof double).assertTrue()
+      expect(Base_F368.field).assertEqual(3.4)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0369
-     * @tc.name      testOverridingFields0369
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_7200
+     * @tc.name      testOverridingFieldsThree0072
      * @tc.desc      Checking instance field declaration in derived class with same name and same
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0369", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F369 = new A_F369()
-        expect(a.field instanceof float).assertTrue()
-        expect(a.field).assertEqual(7.3f)
-        expect(Base_F369.field instanceof float).assertTrue()
-        expect(Base_F369.field).assertEqual(6.7f)
-        expect(Base_F369.field instanceof float).assertTrue()
-        expect(Base_F369.field).assertEqual(6.7f)
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(7.3f)
+      expect(Base_F369.field instanceof float).assertTrue()
+      expect(Base_F369.field).assertEqual(6.7f)
+      expect(Base_F369.field instanceof float).assertTrue()
+      expect(Base_F369.field).assertEqual(6.7f)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0370
-     * @tc.name      testOverridingFields0370
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_7300
+     * @tc.name      testOverridingFieldsThree0073
      * @tc.desc      Checking instance field declaration in derived class with same name and same
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0370", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F370 = new A_F370()
-        expect(a.field instanceof long).assertTrue()
-        expect(a.field).assertEqual(78945)
-        expect(Base_F370.field instanceof long).assertTrue()
-        expect(Base_F370.field).assertEqual(9223372036854775807)
-        expect(Base_F370.field instanceof long).assertTrue()
-        expect(Base_F370.field).assertEqual(9223372036854775807)
+      expect(a.field instanceof long).assertTrue()
+      expect(a.field).assertEqual(78945)
+      expect(Base_F370.field instanceof long).assertTrue()
+      expect(Base_F370.field).assertEqual(9223372036854775807)
+      expect(Base_F370.field instanceof long).assertTrue()
+      expect(Base_F370.field).assertEqual(9223372036854775807)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0371
-     * @tc.name      testOverridingFields0371
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_7400
+     * @tc.name      testOverridingFieldsThree0074
      * @tc.desc      Checking instance field declaration in derived class with same name and same
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0371", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F371 = new A_F371()
-        expect(a.field instanceof int).assertTrue()
-        expect(a.field).assertEqual(321)
-        expect(Base_F371.field instanceof int).assertTrue()
-        expect(Base_F371.field).assertEqual(123)
-        expect(Base_F371.field instanceof int).assertTrue()
-        expect(Base_F371.field).assertEqual(123)
+      expect(a.field instanceof int).assertTrue()
+      expect(a.field).assertEqual(321)
+      expect(Base_F371.field instanceof int).assertTrue()
+      expect(Base_F371.field).assertEqual(123)
+      expect(Base_F371.field instanceof int).assertTrue()
+      expect(Base_F371.field).assertEqual(123)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0372
-     * @tc.name      testOverridingFields0372
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_7500
+     * @tc.name      testOverridingFieldsThree0075
      * @tc.desc      Checking instance field declaration in derived class with same name and same
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0372", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F372 = new A_F372()
-        expect(a.field instanceof short).assertTrue()
-        expect(a.field).assertEqual(253)
-        expect(Base_F372.field instanceof short).assertTrue()
-        expect(Base_F372.field).assertEqual(325)
-        expect(Base_F372.field instanceof short).assertTrue()
-        expect(Base_F372.field).assertEqual(325)
+      expect(a.field instanceof short).assertTrue()
+      expect(a.field).assertEqual(253)
+      expect(Base_F372.field instanceof short).assertTrue()
+      expect(Base_F372.field).assertEqual(325)
+      expect(Base_F372.field instanceof short).assertTrue()
+      expect(Base_F372.field).assertEqual(325)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0373
-     * @tc.name      testOverridingFields0373
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_7600
+     * @tc.name      testOverridingFieldsThree0076
      * @tc.desc      Checking instance field declaration in derived class with same name and same
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0373", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F373 = new A_F373()
-        expect(a.field instanceof byte).assertTrue()
-        expect(a.field).assertEqual(78)
-        expect(Base_F373.field instanceof byte).assertTrue()
-        expect(Base_F373.field).assertEqual(127)
-        expect(Base_F373.field instanceof byte).assertTrue()
-        expect(Base_F373.field).assertEqual(127)
+      expect(a.field instanceof byte).assertTrue()
+      expect(a.field).assertEqual(78)
+      expect(Base_F373.field instanceof byte).assertTrue()
+      expect(Base_F373.field).assertEqual(127)
+      expect(Base_F373.field instanceof byte).assertTrue()
+      expect(Base_F373.field).assertEqual(127)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0374
-     * @tc.name      testOverridingFields0374
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_7700
+     * @tc.name      testOverridingFieldsThree0077
      * @tc.desc      Checking instance field declaration in derived class with same name and same
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0374", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F374 = new A_F374()
-        expect(a.field instanceof string).assertTrue()
-        expect(a.field).assertEqual("defg")
-        expect(Base_F374.field instanceof string).assertTrue()
-        expect(Base_F374.field).assertEqual("abc")
-        expect(Base_F374.field instanceof string).assertTrue()
-        expect(Base_F374.field).assertEqual("abc")
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("defg")
+      expect(Base_F374.field instanceof string).assertTrue()
+      expect(Base_F374.field).assertEqual("abc")
+      expect(Base_F374.field instanceof string).assertTrue()
+      expect(Base_F374.field).assertEqual("abc")
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0375
-     * @tc.name      testOverridingFields0375
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_7800
+     * @tc.name      testOverridingFieldsThree0078
      * @tc.desc      Checking instance field declaration in derived class with same name and same
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0375", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F375 = new A_F375()
-        expect(a.field instanceof bigint).assertTrue()
-        expect(a.field).assertEqual(5556423623465n)
-        expect(Base_F375.field instanceof bigint).assertTrue()
-        expect(Base_F375.field).assertEqual(12345678901234567890n)
-        expect(Base_F375.field instanceof bigint).assertTrue()
-        expect(Base_F375.field).assertEqual(12345678901234567890n)
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(5556423623465n)
+      expect(Base_F375.field instanceof bigint).assertTrue()
+      expect(Base_F375.field).assertEqual(12345678901234567890n)
+      expect(Base_F375.field instanceof bigint).assertTrue()
+      expect(Base_F375.field).assertEqual(12345678901234567890n)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0376
-     * @tc.name      testOverridingFields0376
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_7900
+     * @tc.name      testOverridingFieldsThree0079
      * @tc.desc      Checking instance field declaration in derived class with same name and same
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0376", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F376 = new A_F376()
-        expect(a.field instanceof char).assertTrue()
-        expect(a.field).assertEqual(c'z')
-        expect(Base_F376.field instanceof char).assertTrue()
-        expect(Base_F376.field).assertEqual(c'\u2028')
-        expect(Base_F376.field instanceof char).assertTrue()
-        expect(Base_F376.field).assertEqual(c'\u2028')
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'z')
+      expect(Base_F376.field instanceof char).assertTrue()
+      expect(Base_F376.field).assertEqual(c'\u2028')
+      expect(Base_F376.field instanceof char).assertTrue()
+      expect(Base_F376.field).assertEqual(c'\u2028')
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0377
-     * @tc.name      testOverridingFields0377
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_8000
+     * @tc.name      testOverridingFieldsThree0080
      * @tc.desc      Checking instance field declaration in derived class with same name and same
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0377", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F377 = new A_F377()
-        expect(a.field instanceof boolean).assertTrue()
-        expect(a.field).assertEqual(true)
-        expect(Base_F377.field instanceof boolean).assertTrue()
-        expect(Base_F377.field).assertEqual(false)
-        expect(Base_F377.field instanceof boolean).assertTrue()
-        expect(Base_F377.field).assertEqual(false)
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(true)
+      expect(Base_F377.field instanceof boolean).assertTrue()
+      expect(Base_F377.field).assertEqual(false)
+      expect(Base_F377.field instanceof boolean).assertTrue()
+      expect(Base_F377.field).assertEqual(false)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0378
-     * @tc.name      testOverridingFields0378
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_8100
+     * @tc.name      testOverridingFieldsThree0081
      * @tc.desc      Checking static field declaration in derived class with same name and same type
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0378", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F378 = new A_F378()
-        expect(a.field instanceof Any).assertTrue()
-        expect(a.field).assertEqual(null)
-        expect(A_F378.field instanceof Any).assertTrue()
-        expect(A_F378.field).assertEqual(7)
+      expect(a.field instanceof Any).assertTrue()
+      expect(a.field).assertEqual(null)
+      expect(A_F378.field instanceof Any).assertTrue()
+      expect(A_F378.field).assertEqual(7)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0379
-     * @tc.name      testOverridingFields0379
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_8200
+     * @tc.name      testOverridingFieldsThree0082
      * @tc.desc      Checking static field declaration in derived class with same name and same type
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0379", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F379 = new A_F379()
-        expect(a.field instanceof Object).assertTrue()
-        expect(a.field).assertEqual(5)
-        expect(A_F379.field instanceof Object).assertTrue()
-        expect(A_F379.field).assertEqual("abc")
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(5)
+      expect(A_F379.field instanceof Object).assertTrue()
+      expect(A_F379.field).assertEqual("abc")
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0380
-     * @tc.name      testOverridingFields0380
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_8300
+     * @tc.name      testOverridingFieldsThree0083
      * @tc.desc      Checking static field declaration in derived class with same name and same type
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0380", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F380 = new A_F380()
-        expect(a.field instanceof number).assertTrue()
-        expect(a.field).assertEqual(3)
-        expect(A_F380.field instanceof number).assertTrue()
-        expect(A_F380.field).assertEqual(6.7)
+      expect(a.field instanceof number).assertTrue()
+      expect(a.field).assertEqual(3)
+      expect(A_F380.field instanceof number).assertTrue()
+      expect(A_F380.field).assertEqual(6.7)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0381
-     * @tc.name      testOverridingFields0381
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_8400
+     * @tc.name      testOverridingFieldsThree0084
      * @tc.desc      Checking static field declaration in derived class with same name and same type
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0381", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F381 = new A_F381()
-        expect(a.field instanceof double).assertTrue()
-        expect(a.field).assertEqual(3.4)
-        expect(A_F381.field instanceof double).assertTrue()
-        expect(A_F381.field).assertEqual(5.0)
+      expect(a.field instanceof double).assertTrue()
+      expect(a.field).assertEqual(3.4)
+      expect(A_F381.field instanceof double).assertTrue()
+      expect(A_F381.field).assertEqual(5.0)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0382
-     * @tc.name      testOverridingFields0382
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_8500
+     * @tc.name      testOverridingFieldsThree0085
      * @tc.desc      Checking static field declaration in derived class with same name and same type
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0382", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F382 = new A_F382()
-        expect(a.field instanceof float).assertTrue()
-        expect(a.field).assertEqual(6.7f)
-        expect(A_F382.field instanceof float).assertTrue()
-        expect(A_F382.field).assertEqual(7.3f)
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(6.7f)
+      expect(A_F382.field instanceof float).assertTrue()
+      expect(A_F382.field).assertEqual(7.3f)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0383
-     * @tc.name      testOverridingFields0383
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_8600
+     * @tc.name      testOverridingFieldsThree0086
      * @tc.desc      Checking static field declaration in derived class with same name and same type
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0383", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F383 = new A_F383()
-        expect(a.field instanceof long).assertTrue()
-        expect(a.field).assertEqual(9223372036854775807)
-        expect(A_F383.field instanceof long).assertTrue()
-        expect(A_F383.field).assertEqual(78945)
+      expect(a.field instanceof long).assertTrue()
+      expect(a.field).assertEqual(9223372036854775807)
+      expect(A_F383.field instanceof long).assertTrue()
+      expect(A_F383.field).assertEqual(78945)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0384
-     * @tc.name      testOverridingFields0384
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_8700
+     * @tc.name      testOverridingFieldsThree0087
      * @tc.desc      Checking static field declaration in derived class with same name and same type
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0384", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F384 = new A_F384()
-        expect(a.field instanceof int).assertTrue()
-        expect(a.field).assertEqual(123)
-        expect(A_F384.field instanceof int).assertTrue()
-        expect(A_F384.field).assertEqual(321)
+      expect(a.field instanceof int).assertTrue()
+      expect(a.field).assertEqual(123)
+      expect(A_F384.field instanceof int).assertTrue()
+      expect(A_F384.field).assertEqual(321)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0385
-     * @tc.name      testOverridingFields0385
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_8800
+     * @tc.name      testOverridingFieldsThree0088
      * @tc.desc      Checking static field declaration in derived class with same name and same type
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0385", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F385 = new A_F385()
-        expect(a.field instanceof short).assertTrue()
-        expect(a.field).assertEqual(325)
-        expect(A_F385.field instanceof short).assertTrue()
-        expect(A_F385.field).assertEqual(253)
+      expect(a.field instanceof short).assertTrue()
+      expect(a.field).assertEqual(325)
+      expect(A_F385.field instanceof short).assertTrue()
+      expect(A_F385.field).assertEqual(253)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0386
-     * @tc.name      testOverridingFields0386
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_8900
+     * @tc.name      testOverridingFieldsThree0089
      * @tc.desc      Checking static field declaration in derived class with same name and same type
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0386", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F386 = new A_F386()
-        expect(a.field instanceof byte).assertTrue()
-        expect(a.field).assertEqual(127)
-        expect(A_F386.field instanceof byte).assertTrue()
-        expect(A_F386.field).assertEqual(78)
+      expect(a.field instanceof byte).assertTrue()
+      expect(a.field).assertEqual(127)
+      expect(A_F386.field instanceof byte).assertTrue()
+      expect(A_F386.field).assertEqual(78)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0387
-     * @tc.name      testOverridingFields0387
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_9000
+     * @tc.name      testOverridingFieldsThree0090
      * @tc.desc      Checking static field declaration in derived class with same name and same type
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0387", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F387 = new A_F387()
-        expect(a.field instanceof string).assertTrue()
-        expect(a.field).assertEqual("abc")
-        expect(A_F387.field instanceof string).assertTrue()
-        expect(A_F387.field).assertEqual("defg")
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("abc")
+      expect(A_F387.field instanceof string).assertTrue()
+      expect(A_F387.field).assertEqual("defg")
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0388
-     * @tc.name      testOverridingFields0388
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_9100
+     * @tc.name      testOverridingFieldsThree0091
      * @tc.desc      Checking static field declaration in derived class with same name and same type
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0388", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F388 = new A_F388()
-        expect(a.field instanceof bigint).assertTrue()
-        expect(a.field).assertEqual(12345678901234567890n)
-        expect(A_F388.field instanceof bigint).assertTrue()
-        expect(A_F388.field).assertEqual(5556423623465n)
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(12345678901234567890n)
+      expect(A_F388.field instanceof bigint).assertTrue()
+      expect(A_F388.field).assertEqual(5556423623465n)
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0389
-     * @tc.name      testOverridingFields0389
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_9200
+     * @tc.name      testOverridingFieldsThree0092
      * @tc.desc      Checking static field declaration in derived class with same name and same type
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0389", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F389 = new A_F389()
-        expect(a.field instanceof char).assertTrue()
-        expect(a.field).assertEqual(c'\u2028')
-        expect(A_F389.field instanceof char).assertTrue()
-        expect(A_F389.field).assertEqual(c'z')
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'\u2028')
+      expect(A_F389.field instanceof char).assertTrue()
+      expect(A_F389.field).assertEqual(c'z')
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_TEST_0390
-     * @tc.name      testOverridingFields0390
+     * @tc.number    SUB_OVERRIDING_FIELDS_THREE_9300
+     * @tc.name      testOverridingFieldsThree0093
      * @tc.desc      Checking static field declaration in derived class with same name and same type
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFields0390", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsThree0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F390 = new A_F390()
-        expect(a.field instanceof boolean).assertTrue()
-        expect(a.field).assertEqual(false)
-        expect(A_F390.field instanceof boolean).assertTrue()
-        expect(A_F390.field).assertEqual(true)
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(false)
+      expect(A_F390.field instanceof boolean).assertTrue()
+      expect(A_F390.field).assertEqual(true)
     })
   })
 }
