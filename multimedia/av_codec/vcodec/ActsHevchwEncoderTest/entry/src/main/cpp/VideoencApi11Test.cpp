@@ -75,7 +75,7 @@ VEncAPI11Sample::~VEncAPI11Sample()
     if (g_encSample == this) {
         g_encSample = nullptr;
     }
-    roiInfo = nullptr;   
+    roiInfo = nullptr;
     Release();
 }
 
