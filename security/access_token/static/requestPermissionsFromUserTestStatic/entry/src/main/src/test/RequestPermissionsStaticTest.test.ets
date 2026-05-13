@@ -359,7 +359,9 @@ export default function requestPermissionsStaticTest() {
             }
           });
           await Utils.msSleep(2000);
-          clickRequest(driver, '允许');
+          if(!clickRequest(driver, '允许')){
+            clickRequest(driver, '始终允许');
+          }
         } catch (error) {
           hilog.info(domain, tag, "Test_requestPermissionsFromUser_008 catch err " + JSON.stringify(error));
           expect(false).assertFail();

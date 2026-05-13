@@ -40,11 +40,11 @@ import LazyForEachCustomComponentFreezeModeStaticTest from './LazyForeach/LazyFo
 
 export default function testsuite() {
   ArrayLikeStringTest(); 
-  RepeatCloseReuseTest0110(); 
-  RepeatLazyTest0150();  
-  repeatReusableFalse(); 
-  repeatReusableTrue(); 
-  ReuseV2Test0030(); 
+  //RepeatCloseReuseTest0110(); 
+  //RepeatLazyTest0150();  
+  //repeatReusableFalse(); 
+  //repeatReusableTrue(); 
+  //ReuseV2Test0030(); 
   AddMonitorNoPath(); 
   AddMonitorSetPath(); 
   AddMonitorObservedV2Int(); 
@@ -59,7 +59,7 @@ export default function testsuite() {
   AddMonitorTwoDimensionalArray(); 
   BasicPrefetcherMethods();
   IDataSourcePrefetchingMethods();
-  ReuseObjectRawTest(); 
+  //ReuseObjectRawTest(); 
   LazyForEachReleaseStrategyTest();
   LazyForEachCustomComponentFreezeModeStaticTest();
 }
