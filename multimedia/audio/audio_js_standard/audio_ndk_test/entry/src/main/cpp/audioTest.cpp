@@ -10057,6 +10057,87 @@ static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTUREVOICEREAPTED_0100(napi_env en
     return res;
 }
 
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_SetCapturerLoopbackEffectEnabled(nullptr, true);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0100 result: %{public}d", result);
+    if (result == AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0100 fail");
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0200(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder* builder = CreateCapturerBuilder();
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_SetCapturerLoopbackEffectEnabled(builder, true);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0200 result: %{public}d", result);
+    OH_AudioStreamBuilder_Destroy(builder);
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0200 fail");
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0300(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder* builder = CreateCapturerBuilder();
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_SetCapturerLoopbackEffectEnabled(builder, false);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0300 result: %{public}d", result);
+    OH_AudioStreamBuilder_Destroy(builder);
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0300 fail");
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_RETURN_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder* builder = CreateCapturerBuilder();
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_SetCapturerLoopbackEffectEnabled(builder, true);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_RETURN_0100 result: %{public}d", result);
+    OH_AudioStreamBuilder_Destroy(builder);
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_RETURN_0100 fail");
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_RETURN_0200(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_SetCapturerLoopbackEffectEnabled(nullptr, false);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_RETURN_0200 result: %{public}d", result);
+    if (result == AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_RETURN_0200 fail");
+    return res;
+}
+
 static int32_t PreferredOutputDeviceChangedCallback(
     OH_AudioDeviceDescriptorArray *audioDeviceDescriptorArray)
 {
@@ -11371,6 +11452,21 @@ napi_property_descriptor desc3[] = {
         SUB_MULTIMEDIA_AUDIO_AUDIOCAPTUREVOICEREAPTED_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"SUB_MULTIMEDIA_AUDIO_ADUIOSESSIONMANAGERVOICEREAPTED_0100", nullptr,
         SUB_MULTIMEDIA_AUDIO_ADUIOSESSIONMANAGERVOICEREAPTED_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0200,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0300", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0300,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_RETURN_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_RETURN_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_RETURN_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_RETURN_0200,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 static napi_value Init(napi_env env, napi_value exports)
 {
