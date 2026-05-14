@@ -520,7 +520,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_3100
-     * @tc.desc After shrink then resize(0), resizable remains true; constructor ceiling not exposed asLength on type surface — observe byteLength transitions only.
+     * @tc.desc After shrink then resize(0), resizable remains true; constructor ceiling as length on ArrayBuffer type — observe byteLength transitions only.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -770,7 +770,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0044
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_4400
-     * @tc.desc ES transfer() not on standard ArrayBuffer surface; use slice(0, byteLength) copy plus resize(0 resizable source — source stays resizable and can grow again within ceiling.
+     * @tc.desc ES transfer() not on standard ArrayBuffer interface; use slice0, byteLength) copy plus resize(0) for resizable source - source remains resizable and can grow again within ceiling.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
