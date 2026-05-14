@@ -452,8 +452,6 @@ static napi_value TextEnumTest_032(napi_env env, napi_callback_info info)
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result_32 TextEnumTest_032 result=%{public}d", result_32);
     ASSERT_EQ(result_32, ARKUI_ERROR_CODE_PARAM_INVALID);
-
-    OH_ArkUI_SpanStyle_Destroy(spanStyle);
     NAPI_END(text);
 }
 
