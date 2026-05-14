@@ -20,9 +20,9 @@ import {
 import Utils from '../Util.test';
 
 class Item026 {
-  value: int;
+  value: number;
 
-  constructor(v: int) {
+  constructor(v: number) {
     this.value = v;
   }
 }
