@@ -28,8 +28,8 @@ struct transform3DDemo {
     '2.点击FOLLOW_SYSTEM和DARK按钮,点击下方Menu,观察弹出菜单颜色\n' +
     '3.点击FOLLOW_TARGET和LIGHT按钮,点击下方Menu,观察弹出菜单颜色\n' +
     '4.点击FOLLOW_TARGET和DARK按钮,点击下方Menu,观察弹出菜单颜色\n' +
-    '预期结果：\n' + '1.弹出菜单为白色背景\n' + '2.弹出菜单为白色背景\n' +
-    '3.弹出菜单为白色背景\n' + '4.弹出菜单为黑色背景\n'
+    '预期结果：\n' + '1.弹出菜单为浅色背景\n' + '2.弹出菜单为浅色背景\n' +
+    '3.弹出菜单为浅色背景\n' + '4.弹出菜单为深色背景\n'
 
   @State isOk: boolean = false;
   @State intervalNum: number = 0;
