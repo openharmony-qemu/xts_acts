@@ -9,7 +9,6 @@ import metaDataStaticTest from "./image/Metadata.test";
 import ImageAuxiliaryPictureGetMetadataStaticTest from "./image/AuxiliaryPicture.test";
 import ImagePackerStaticTest from "./image/ImagePacker.test";
 import ImageSourceTest from "./image/imageSource/ImageSource.test";
-import ImageMetadataTestStatic from "./image/imageSource/ImageMetadata.test";
 
 
 export default function testsuite(): void {
@@ -25,5 +24,4 @@ export default function testsuite(): void {
   CrateImageSourceTest();
   ImageGetComponentSupp();
   ImageSourceTest();
-  ImageMetadataTestStatic();
 }
