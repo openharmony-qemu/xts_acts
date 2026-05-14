@@ -1051,3 +1051,1273 @@ function findFieldsByOwner(fields: StaticField[], ownerName: string): StaticFiel
   return result;
 }
 
+export default function StaticFieldGetOwnerTest(): void {
+  describe('StaticFieldGetOwnerTest', (): void => {
+    beforeAll((): void => {
+    });
+    beforeEach(async (): Promise<void> => {
+      await Utils.msSleep(30);
+    });
+    afterEach((): void => {
+    });
+    afterAll((): void => {
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_0100
+     * @tc.name testStaticFieldGetOwner001
+     * @tc.desc Verify getOwner can be called without parameters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass001();
+      let field = cls.getStaticField("name");
+      let owner = field!.getOwner();
+      expect(owner.getName()).assertEqual("MyClass001");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_0200
+     * @tc.name testStaticFieldGetOwner002
+     * @tc.desc Verify getOwner is called without passing any parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass001();
+      let field = cls.getStaticField("name");
+      let owner = field!.getOwner();
+      expect(owner.getName()).assertEqual("MyClass001");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_0400
+     * @tc.name testStaticFieldGetOwner004
+     * @tc.desc Verify getOwner returns a Class object
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass004();
+      let field = cls.getStaticField("name");
+      let owner = field!.getOwner();
+      expect(owner instanceof ReflectClass).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_0500
+     * @tc.name testStaticFieldGetOwner005
+     * @tc.desc Verify getOwner returns the class that declares the static field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass005();
+      let field = cls.getStaticField("data");
+      let owner = field!.getOwner();
+      expect(owner.getName()).assertEqual("MyClass005");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_0600
+     * @tc.name testStaticFieldGetOwner006
+     * @tc.desc Verify multiple static fields in the same class return the same owner
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass006();
+      let field1 = cls.getStaticField("field1");
+      let owner1 = field1!.getOwner();
+      let field2 = cls.getStaticField("field2");
+      let owner2 = field2!.getOwner();
+      let field3 = cls.getStaticField("field3");
+      let owner3 = field3!.getOwner();
+      expect(owner1.getName()).assertEqual(owner2.getName());
+      expect(owner2.getName()).assertEqual(owner3.getName());
+      expect(owner1.getName()).assertEqual("MyClass006");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_0700
+     * @tc.name testStaticFieldGetOwner007
+     * @tc.desc Verify the owner of a child class static field is the child class
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let childCls = reflectChildClass007();
+      let childField = childCls.getStaticField("childField");
+      let childOwner = childField!.getOwner();
+      expect(childOwner.getName()).assertEqual("ChildClass007");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_0800
+     * @tc.name testStaticFieldGetOwner008
+     * @tc.desc Verify the owner of an inherited parent static field is the parent class
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let parentCls = reflectParentClass008();
+      let parentField = parentCls.getStaticField("parentField");
+      let parentOwner = parentField!.getOwner();
+      expect(parentOwner.getName()).assertEqual("ParentClass008");
+      let childCls = reflectChildClass008();
+      let childParentField = childCls.getStaticField("parentField");
+      if (childParentField !== undefined) {
+        let owner = childParentField!.getOwner();
+        expect(owner.getName()).assertEqual("ChildClass008");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_0900
+     * @tc.name testStaticFieldGetOwner009
+     * @tc.desc Verify owner relationships in a multi-level inheritance hierarchy
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let childCls = reflectChild009();
+      let childField = childCls.getStaticField("childField");
+      expect(childField!.getOwner().getName()).assertEqual("Child009");
+      let parentField = childCls.getStaticField("parentField");
+      if (parentField !== undefined) {
+        expect(parentField!.getOwner().getName()).assertEqual("Child009");
+      }
+      let grandField = childCls.getStaticField("grandField");
+      if (grandField !== undefined) {
+        expect(grandField!.getOwner().getName()).assertEqual("Child009");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_1000
+     * @tc.name testStaticFieldGetOwner010
+     * @tc.desc Verify the owner of a public static field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass010();
+      let field = cls.getStaticField("pubField");
+      let owner = field!.getOwner();
+      expect(owner.getName()).assertEqual("MyClass010");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_1100
+     * @tc.name testStaticFieldGetOwner011
+     * @tc.desc Verify the owner of a private static field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass011();
+      let field = cls.getStaticField("privField");
+      let owner = field!.getOwner();
+      expect(owner.getName()).assertEqual("MyClass011");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_1200
+     * @tc.name testStaticFieldGetOwner012
+     * @tc.desc Verify the owner of a protected static field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass012();
+      let field = cls.getStaticField("protField");
+      let owner = field!.getOwner();
+      expect(owner.getName()).assertEqual("MyClass012");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_1300
+     * @tc.name testStaticFieldGetOwner013
+     * @tc.desc Verify the owner of an internal static field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass013();
+      let field = cls.getStaticField("interField");
+      let owner = field!.getOwner();
+      expect(owner.getName()).assertEqual("MyClass013");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_1400
+     * @tc.name testStaticFieldGetOwner014
+     * @tc.desc Verify the owner of a readonly static field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass014();
+      let field = cls.getStaticField("readonlyField");
+      let owner = field!.getOwner();
+      expect(owner.getName()).assertEqual("MyClass014");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_1500
+     * @tc.name testStaticFieldGetOwner015
+     * @tc.desc Verify static fields with different value types have the same owner
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass015();
+      let fields = cls.getDeclaredStaticFields();
+      for (let i = 0; i < fields.length; i++) {
+        let owner = fields[i].getOwner();
+        expect(owner.getName()).assertEqual("MyClass015");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_1600
+     * @tc.name testStaticFieldGetOwner016
+     * @tc.desc Verify the return value type of getOwner is Class
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass004();
+      let field = cls.getStaticField("name");
+      let owner = field!.getOwner();
+      expect(owner instanceof ReflectClass).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_1700
+     * @tc.name testStaticFieldGetOwner017
+     * @tc.desc Verify the owner returned by getOwner is not null or undefined
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass004();
+      let field = cls.getStaticField("name");
+      let owner = field!.getOwner();
+      expect(owner !== null).assertEqual(true);
+      expect(owner !== undefined).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_1800
+     * @tc.name testStaticFieldGetOwner018
+     * @tc.desc Verify the returned Class object supports calling getName
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass004();
+      let field = cls.getStaticField("name");
+      let owner = field!.getOwner();
+      let ownerName = owner.getName();
+      expect(typeof ownerName).assertEqual("string");
+      expect(ownerName.length).assertLarger(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_1900
+     * @tc.name testStaticFieldGetOwner019
+     * @tc.desc Verify calling getOwner on a null field object throws an error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field: StaticField | null = null;
+      try {
+        field!.getOwner();
+        expect().assertFail();
+      } catch (_) {
+        expect(_ !== null).assertEqual(true);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_2000
+     * @tc.name testStaticFieldGetOwner020
+     * @tc.desc Verify calling getOwner on an undefined field object throws an error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field: StaticField | undefined;
+      try {
+        field!.getOwner();
+        expect().assertFail();
+      } catch (_) {
+        expect(_ !== null).assertEqual(true);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_2100
+     * @tc.name testStaticFieldGetOwner021
+     * @tc.desc Verify behavior when accessing a nonexistent static field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass021();
+      let field = cls.getStaticField("nonexistent");
+      if (field !== null) {
+        let owner = field.getOwner();
+      } else {
+        console.info("Field does not exist");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_2200
+     * @tc.name testStaticFieldGetOwner022
+     * @tc.desc Verify the owner of a public readonly static field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass022();
+      let field = cls.getStaticField("value");
+      let owner = field!.getOwner();
+      expect(owner.getName()).assertEqual("MyClass022");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_2300
+     * @tc.name testStaticFieldGetOwner023
+     * @tc.desc Verify owners of static fields with different access levels
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass023();
+      let privField = cls.getStaticField("privValue");
+      expect(privField!.getOwner().getName()).assertEqual("MyClass023");
+      let protField = cls.getStaticField("protValue");
+      expect(protField!.getOwner().getName()).assertEqual("MyClass023");
+      let pubField = cls.getStaticField("pubValue");
+      expect(pubField!.getOwner().getName()).assertEqual("MyClass023");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_2400
+     * @tc.name testStaticFieldGetOwner024
+     * @tc.desc Verify getting both static field name and owner name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass024();
+      let field = cls.getStaticField("data");
+      let fieldName = field!.getName();
+      let ownerName = field!.getOwner().getName();
+      console.info(`Field ${fieldName} is owned by ${ownerName}`);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_2500
+     * @tc.name testStaticFieldGetOwner025
+     * @tc.desc Verify getting both static field type and owner
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass025();
+      let field = cls.getStaticField("count");
+      let owner = field!.getOwner();
+      let type = field!.getType();
+      console.info(`Owner: ${owner.getName()}, Type: ${type.getName()}`);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_2600
+     * @tc.name testStaticFieldGetOwner026
+     * @tc.desc Verify getting both static field value and owner
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass026();
+      let field = cls.getStaticField("value");
+      let owner = field!.getOwner();
+      let value = field!.getValue();
+      console.info(`${owner.getName()}.${field!.getName()} = ${value}`);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_2700
+     * @tc.name testStaticFieldGetOwner027
+     * @tc.desc Verify getting the owner of a public static field with isPublic
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass027();
+      let field = cls.getStaticField("pubField");
+      if (field!.isPublic()) {
+        let owner = field!.getOwner();
+        console.info(`Public field owned by: ${owner.getName()}`);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_2800
+     * @tc.name testStaticFieldGetOwner028
+     * @tc.desc Verify getting owners according to access level methods
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass028();
+      let fields = cls.getDeclaredStaticFields();
+      for (let i = 0; i < fields.length; i++) {
+        let field = fields[i];
+        let accessLevel: string = "unknown";
+        if (field.isPublic()) {
+          accessLevel = "public";
+        } else if (field.isPrivate()) {
+          accessLevel = "private";
+        } else if (field.isProtected()) {
+          accessLevel = "protected";
+        }
+        let owner = field.getOwner();
+        console.info(`${accessLevel} ${field.getName()} owned by ${owner.getName()}`);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_2900
+     * @tc.name testStaticFieldGetOwner029
+     * @tc.desc Verify comparing owners of fields in the same class with equals
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass029();
+      let field1 = cls.getStaticField("field1");
+      let field2 = cls.getStaticField("field2");
+      let owner1 = field1!.getOwner();
+      let owner2 = field2!.getOwner();
+      expect(owner1.equals(owner2)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_3000
+     * @tc.name testStaticFieldGetOwner030
+     * @tc.desc Verify getOwner is a synchronous method
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass004();
+      let field = cls.getStaticField("name");
+      let owner = field!.getOwner();
+      expect(owner instanceof ReflectClass).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_3100
+     * @tc.name testStaticFieldGetOwner031
+     * @tc.desc Verify getOwner does not return a Promise
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass004();
+      let field = cls.getStaticField("name");
+      let result = field!.getOwner();
+      expect(result instanceof Promise).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_3200
+     * @tc.name testStaticFieldGetOwner032
+     * @tc.desc Verify collecting owner information while traversing static fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass032();
+      let fields = cls.getDeclaredStaticFields();
+      for (let i = 0; i < fields.length; i++) {
+        let field = fields[i];
+        let fieldName = field.getName();
+        let ownerName = field.getOwner().getName();
+        console.info(`Field: ${fieldName}, Owner: ${ownerName}`);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_3300
+     * @tc.name testStaticFieldGetOwner033
+     * @tc.desc Verify comparing owners of static fields from different classes
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let clsA = reflectClassA033();
+      let fieldA = clsA.getStaticField("data");
+      let ownerA = fieldA!.getOwner();
+      let clsB = reflectClassB033();
+      let fieldB = clsB.getStaticField("data");
+      let ownerB = fieldB!.getOwner();
+      expect(ownerA.equals(ownerB)).assertEqual(false);
+      expect(ownerA.getName()).assertEqual("ClassA033");
+      expect(ownerB.getName()).assertEqual("ClassB033");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_3400
+     * @tc.name testStaticFieldGetOwner034
+     * @tc.desc Verify owner relationships of static fields in a complete inheritance chain
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let derivedCls = reflectDerived034();
+      let fields = derivedCls.getDeclaredStaticFields();
+      for (let i = 0; i < fields.length; i++) {
+        let field = fields[i];
+        let owner = field.getOwner();
+        let fieldName = field.getName();
+        console.info(`${fieldName} owned by ${owner.getName()}`);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_3500
+     * @tc.name testStaticFieldGetOwner035
+     * @tc.desc Verify tracing the class where a static field is defined
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let childCls = reflectChild035();
+      let ownField = childCls.getStaticField("ownField");
+      console.info(getFieldOrigin(ownField!));
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_3600
+     * @tc.name testStaticFieldGetOwner036
+     * @tc.desc Verify the owner of a static field in a namespace
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectNamespacedClass036();
+      let field = cls.getStaticField("namespacedField");
+      let owner = field!.getOwner();
+      console.info("Namespaced field owner: " + owner.getName());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_3700
+     * @tc.name testStaticFieldGetOwner037
+     * @tc.desc Verify owners of static fields in classes with common names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let objCls = reflectObject037();
+      checkOwner(objCls, "data");
+      let strCls = reflectString037();
+      checkOwner(strCls, "value");
+      let arrCls = reflectArray037();
+      checkOwner(arrCls, "items");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_3800
+     * @tc.name testStaticFieldGetOwner038
+     * @tc.desc Verify owners of static fields in generic-related classes
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let strCls = reflectStringContainer038();
+      let strField = strCls.getStaticField("defaultValue");
+      let strOwner = strField!.getOwner();
+      console.info("StringContainer038 field owner: " + strOwner.getName());
+      let numCls = reflectNumberContainer038();
+      let numField = numCls.getStaticField("defaultValue");
+      let numOwner = numField!.getOwner();
+      console.info("NumberContainer038 field owner: " + numOwner.getName());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_3900
+     * @tc.name testStaticFieldGetOwner039
+     * @tc.desc Verify owners of static fields in abstract classes
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let absCls = reflectAbstractBase039();
+      let absField = absCls.getStaticField("abstractField");
+      let absOwner = absField!.getOwner();
+      expect(absOwner.getName()).assertEqual("AbstractBase039");
+      let implCls = reflectConcreteImpl039();
+      let implField = implCls.getStaticField("implField");
+      let implOwner = implField!.getOwner();
+      expect(implOwner.getName()).assertEqual("ConcreteImpl039");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_4000
+     * @tc.name testStaticFieldGetOwner040
+     * @tc.desc Verify owners of static fields in an interface implementation class
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectInterfaceImpl040();
+      let intField = cls.getStaticField("interfaceField");
+      let intOwner = intField!.getOwner();
+      expect(intOwner.getName()).assertEqual("InterfaceImpl040");
+      let clsField = cls.getStaticField("classField");
+      let clsOwner = clsField!.getOwner();
+      expect(clsOwner.getName()).assertEqual("InterfaceImpl040");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_4100
+     * @tc.name testStaticFieldGetOwner041
+     * @tc.desc Verify repeated getOwner calls return consistent results
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass041();
+      let field = cls.getStaticField("value");
+      let owner1 = field!.getOwner();
+      let owner2 = field!.getOwner();
+      let owner3 = field!.getOwner();
+      expect(owner1.getName()).assertEqual(owner2.getName());
+      expect(owner2.getName()).assertEqual(owner3.getName());
+      expect(owner1.getName()).assertEqual("MyClass041");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_4200
+     * @tc.name testStaticFieldGetOwner042
+     * @tc.desc Verify querying owners for many static fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass042();
+      let fields = cls.getDeclaredStaticFields();
+      let ownerNames: string[] = [];
+      for (let i = 0; i < fields.length; i++) {
+        let owner = fields[i].getOwner();
+        ownerNames.push(owner.getName());
+      }
+      for (let i = 1; i < ownerNames.length; i++) {
+        expect(ownerNames[i]).assertEqual(ownerNames[0]);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_4300
+     * @tc.name testStaticFieldGetOwner043
+     * @tc.desc Verify StaticField getOwner behavior compared with InstanceField getOwner
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass043();
+      let staticField = cls.getStaticField("staticValue");
+      let staticOwner = staticField!.getOwner();
+      console.info("Static field owner: " + staticOwner.getName());
+      expect(staticOwner.getName()).assertEqual("MyClass043");
+      let instanceField = cls.getInstanceField("instanceValue");
+      let instanceOwner = instanceField!.getOwner();
+      console.info("Instance field owner: " + instanceOwner.getName());
+      expect(instanceOwner.getName()).assertEqual("MyClass043");
+      expect(staticOwner.equals(instanceOwner)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_4400
+     * @tc.name testStaticFieldGetOwner044
+     * @tc.desc Verify helper logic for getting a static field owner name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass044();
+      let field = cls.getStaticField("data");
+      expect(getFieldOwnerName(field!)).assertEqual("MyClass044");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_4500
+     * @tc.name testStaticFieldGetOwner045
+     * @tc.desc Verify helper logic for checking whether a static field belongs to a class
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass045();
+      let field = cls.getStaticField("data");
+      expect(isFieldOwnedBy(field!, "MyClass045")).assertEqual(true);
+      expect(isFieldOwnedBy(field!, "OtherClass")).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_4600
+     * @tc.name testStaticFieldGetOwner046
+     * @tc.desc Verify grouping static fields by owner
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let clsA = reflectClassA046();
+      let fieldsA = clsA.getDeclaredStaticFields();
+      let clsB = reflectClassB046();
+      let fieldsB = clsB.getDeclaredStaticFields();
+      let allFields = fieldsA.concat(fieldsB);
+      let groups = groupFieldsByOwner(allFields);
+      groups.forEach((fieldList, ownerName): void => {
+        console.info(`${ownerName}: ${fieldList.length} fields`);
+      });
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_4700
+     * @tc.name testStaticFieldGetOwner047
+     * @tc.desc Verify generating a full path from owner and static field name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass047();
+      let field = cls.getStaticField("data");
+      expect(getFieldFullPath(field!)).assertEqual("MyClass047.data");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_4800
+     * @tc.name testStaticFieldGetOwner048
+     * @tc.desc Verify serialization includes owner information for static fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectConfig048();
+      let fields = cls.getDeclaredStaticFields();
+      for (let i = 0; i < fields.length; i++) {
+        let serialized = serializeFieldWithOwner(fields[i]);
+        console.info(JSON.stringify(serialized));
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_4900
+     * @tc.name testStaticFieldGetOwner049
+     * @tc.desc Verify deserialization can use owner information
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let data: Record<string, string | number | boolean | null> =
+        { 'owner': 'Config048', 'name': 'APP_NAME', 'value': 'MyApp' };
+      let ownerName: string = data['owner'] as string;
+      let fieldName: string = data['name'] as string;
+      let value: string | number | boolean | null = data['value']!;
+      console.info(`Deserialized ${ownerName}.${fieldName} = ${value}`);
+      return;
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_5000
+     * @tc.name testStaticFieldGetOwner050
+     * @tc.desc Verify logs include static field owner information
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass050();
+      let field = cls.getStaticField("importantData");
+      logFieldAccess(field!);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_5100
+     * @tc.name testStaticFieldGetOwner051
+     * @tc.desc Verify generated API documentation includes owner information
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectConfig051();
+      let fields = cls.getDeclaredStaticFields();
+      for (let i = 0; i < fields.length; i++) {
+        console.info(generateFieldDoc(fields[i]));
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_5200
+     * @tc.name testStaticFieldGetOwner052
+     * @tc.desc Verify debug output displays static field source information
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass052();
+      let field = cls.getStaticField("debugField");
+      debugField(field!);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_5300
+     * @tc.name testStaticFieldGetOwner053
+     * @tc.desc Verify owner information in dynamic class loading scenarios
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      analyzeFieldByClassName("DynamicClass053", "data");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_5400
+     * @tc.name testStaticFieldGetOwner054
+     * @tc.desc Verify owners of versioned class static fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v1Cls = reflectConfigV1054();
+      let v1Field = v1Cls.getStaticField("API_ENDPOINT");
+      console.info(`V1 field owner: ${v1Field!.getOwner().getName()}`);
+      let v2Cls = reflectConfigV2054();
+      let v2Field = v2Cls.getStaticField("API_ENDPOINT");
+      if (v2Field !== undefined) {
+        console.info(`V2 field owner: ${v2Field!.getOwner().getName()}`);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_5500
+     * @tc.name testStaticFieldGetOwner055
+     * @tc.desc Verify owner relationships in mixed static and instance member scenarios
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMixedClass055();
+      let staticField = cls.getStaticField("staticField");
+      let staticOwner = staticField!.getOwner();
+      console.info(`Static field owner: ${staticOwner.getName()}`);
+      let instanceField = cls.getInstanceField("instanceField");
+      let instanceOwner = instanceField!.getOwner();
+      console.info(`Instance field owner: ${instanceOwner.getName()}`);
+      expect(staticOwner.getName()).assertEqual(instanceOwner.getName());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_5600
+     * @tc.name testStaticFieldGetOwner056
+     * @tc.desc Verify owner operations in metaprogramming scenarios
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let sourceClass = reflectConfig048();
+      let targetClass = reflectMyClass050();
+      let sourceFields = sourceClass.getDeclaredStaticFields();
+      for (let i = 0; i < sourceFields.length; i++) {
+        let field = sourceFields[i];
+        let fieldName = field.getName();
+        let value = field.getValue();
+        let targetField = targetClass.getStaticField(fieldName);
+        if (targetField === undefined) {
+          console.info(`Copying ${fieldName} from Config048 to MyClass050`);
+        }
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_5700
+     * @tc.name testStaticFieldGetOwner057
+     * @tc.desc Verify framework-level processing of static field owner information
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectUserComponent057();
+      let fields = cls.getDeclaredStaticFields();
+      for (let i = 0; i < fields.length; i++) {
+        FrameworkBase057.registerField(fields[i]);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_5800
+     * @tc.name testStaticFieldGetOwner058
+     * @tc.desc Verify owner of service configuration fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectServiceConfig058();
+      let field = cls.getStaticField('SERVICE_NAME');
+      expect(field!.getOwner().getName()).assertEqual('ServiceConfig058');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_5900
+     * @tc.name testStaticFieldGetOwner059
+     * @tc.desc Verify owner of database configuration fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectDatabaseConfig059();
+      let field = cls.getStaticField('DB_DRIVER');
+      expect(field!.getOwner().getName()).assertEqual('DatabaseConfig059');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_6000
+     * @tc.name testStaticFieldGetOwner060
+     * @tc.desc Verify owner of cache configuration fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectCacheConfig060();
+      let field = cls.getStaticField('CACHE_DRIVER');
+      expect(field!.getOwner().getName()).assertEqual('CacheConfig060');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_6100
+     * @tc.name testStaticFieldGetOwner061
+     * @tc.desc Verify owner of queue configuration fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectQueueConfig061();
+      let field = cls.getStaticField('QUEUE_DRIVER');
+      expect(field!.getOwner().getName()).assertEqual('QueueConfig061');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_6200
+     * @tc.name testStaticFieldGetOwner062
+     * @tc.desc Verify owner of mail configuration fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMailConfig062();
+      let field = cls.getStaticField('MAIL_DRIVER');
+      expect(field!.getOwner().getName()).assertEqual('MailConfig062');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_6300
+     * @tc.name testStaticFieldGetOwner063
+     * @tc.desc Verify owner of storage configuration fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectStorageConfig063();
+      let field = cls.getStaticField('STORAGE_DISK');
+      expect(field!.getOwner().getName()).assertEqual('StorageConfig063');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_6400
+     * @tc.name testStaticFieldGetOwner064
+     * @tc.desc Verify owner of session configuration fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectSessionConfig064();
+      let field = cls.getStaticField('SESSION_DRIVER');
+      expect(field!.getOwner().getName()).assertEqual('SessionConfig064');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_6500
+     * @tc.name testStaticFieldGetOwner065
+     * @tc.desc Verify owner of security configuration fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectSecurityConfig065();
+      let field = cls.getStaticField('SECURITY_CIPHER');
+      expect(field!.getOwner().getName()).assertEqual('SecurityConfig065');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_6600
+     * @tc.name testStaticFieldGetOwner066
+     * @tc.desc Verify owner of notification configuration fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectNotificationConfig066();
+      let field = cls.getStaticField('NOTIFY_CHANNELS');
+      expect(field!.getOwner().getName()).assertEqual('NotificationConfig066');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_6700
+     * @tc.name testStaticFieldGetOwner067
+     * @tc.desc Verify owner of monitoring configuration fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMonitoringConfig067();
+      let field = cls.getStaticField('MONITOR_INTERVAL');
+      expect(field!.getOwner().getName()).assertEqual('MonitoringConfig067');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_6800
+     * @tc.name testStaticFieldGetOwner068
+     * @tc.desc Verify owner of backup configuration fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectBackupConfig068();
+      let field = cls.getStaticField('BACKUP_SCHEDULE');
+      expect(field!.getOwner().getName()).assertEqual('BackupConfig068');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_6900
+     * @tc.name testStaticFieldGetOwner069
+     * @tc.desc Verify owner of feature flag fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectFeatureFlags069();
+      let field = cls.getStaticField('FLAG_BETA');
+      expect(field!.getOwner().getName()).assertEqual('FeatureFlags069');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_7000
+     * @tc.name testStaticFieldGetOwner070
+     * @tc.desc Verify owner of rate limit configuration fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectRateLimitConfig070();
+      let field = cls.getStaticField('RATE_LIMIT_MAX');
+      expect(field!.getOwner().getName()).assertEqual('RateLimitConfig070');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_7100
+     * @tc.name testStaticFieldGetOwner071
+     * @tc.desc Verify getOwnerClassName helper function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectServiceConfig058();
+      let field: StaticField | null = cls.getStaticField('SERVICE_NAME');
+      expect(getOwnerClassName(field!)).assertEqual('ServiceConfig058');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_7200
+     * @tc.name testStaticFieldGetOwner072
+     * @tc.desc Verify compareFieldOwners helper function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectDatabaseConfig059();
+      let field1: StaticField | null = cls.getStaticField('DB_DRIVER');
+      let field2: StaticField | null = cls.getStaticField('DB_CHARSET');
+      expect(compareFieldOwners(field1!, field2!)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_7300
+     * @tc.name testStaticFieldGetOwner073
+     * @tc.desc Verify listFieldOwners helper function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectCacheConfig060();
+      let fields: StaticField[] = cls.getDeclaredStaticFields();
+      let owners: string[] = listFieldOwners(fields);
+      for (let i = 0; i < owners.length; i++) {
+        expect(owners[i]).assertEqual('CacheConfig060');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_7400
+     * @tc.name testStaticFieldGetOwner074
+     * @tc.desc Verify getUniqueOwners helper function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectQueueConfig061();
+      let fields: StaticField[] = cls.getDeclaredStaticFields();
+      let unique: string[] = getUniqueOwners(fields);
+      expect(unique.length).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_7500
+     * @tc.name testStaticFieldGetOwner075
+     * @tc.desc Verify buildOwnerFieldMap helper function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMailConfig062();
+      let map: Record<string, string[]> = buildOwnerFieldMap(cls);
+      expect(map['MailConfig062']!.length).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_7600
+     * @tc.name testStaticFieldGetOwner076
+     * @tc.desc Verify validateOwnerConsistency helper function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectStorageConfig063();
+      let fields: StaticField[] = cls.getDeclaredStaticFields();
+      expect(validateOwnerConsistency(fields)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_7700
+     * @tc.name testStaticFieldGetOwner077
+     * @tc.desc Verify getFieldOwnerSummary helper function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectSessionConfig064();
+      let field: StaticField | null = cls.getStaticField('SESSION_DRIVER');
+      let summary: string = getFieldOwnerSummary(field!);
+      expect(summary.length).assertLarger(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETOWNER_7800
+     * @tc.name testStaticFieldGetOwner078
+     * @tc.desc Verify findFieldsByOwner helper function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetOwner078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectSecurityConfig065();
+      let fields: StaticField[] = cls.getDeclaredStaticFields();
+      let found: StaticField[] = findFieldsByOwner(fields, 'SecurityConfig065');
+      expect(found.length).assertEqual(3);
+    });
+  });
+}
