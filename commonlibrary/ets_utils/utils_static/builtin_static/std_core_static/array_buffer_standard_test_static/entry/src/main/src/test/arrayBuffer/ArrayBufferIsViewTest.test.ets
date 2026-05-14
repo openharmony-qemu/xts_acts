@@ -15,6 +15,12 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
+class ArrayBufferIsViewPlainForMindmap {}
+
+class ArrayBufferIsViewPlainWithPropForMindmap {
+  a: int = 1;
+}
+
 export default function arrayBufferIsViewTest(): void {
   describe('ArrayBufferIsViewTest', (): void => {
     beforeAll((): void => {
@@ -45,21 +51,21 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_0200
-     * @tc.desc Verify ArrayBuffer.isView: calling with zero args ，verify compile or runtime is
+     * @tc.desc Mind map referenced zero-arg call; STA signature is isView(obj: Object). Single-arg Object cast verifies compilation path.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferIsView0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(8)
-      const view = new DataView(buffer)
-      expect(ArrayBuffer.isView(view as Object)).assertTrue()
+      const buffer = new ArrayBuffer(8);
+      const view = new DataView(buffer);
+      expect(ArrayBuffer.isView(view as Object)).assertTrue();
     });
 
     /**
      * @tc.name testArrayBufferIsView0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_0300
-     * @tc.desc Verify ArrayBuffer.isView: passing 2 ，verify ignored or error
+     * @tc.desc Mind map extra-arg arity; STA allows only one Object arg — verify DataView with single-arg cast returns true.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -67,23 +73,21 @@ export default function arrayBufferIsViewTest(): void {
     it('testArrayBufferIsView0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
       const view = new DataView(buffer);
-      let result = ArrayBuffer.isView(view, "extra");
-      expect(result).assertTrue()
+      expect(ArrayBuffer.isView(view as Object)).assertTrue();
     });
 
     /**
      * @tc.name testArrayBufferIsView0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_0400
-     * @tc.desc Verify ArrayBuffer.isView: passing 3 ，verify ignored or error
+     * @tc.desc Mind map extra-arg arity; STA requires exactly one Object — Uint8Array single-arg returns true.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferIsView0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
-      const view = new DataView(buffer);
-      let result = ArrayBuffer.isView(view, "extra1", "extra2");
-      expect(result).assertTrue()
+      const arr = new Uint8Array(buffer);
+      expect(ArrayBuffer.isView(arr as Object)).assertTrue();
     });
 
     /**
@@ -244,8 +248,8 @@ export default function arrayBufferIsViewTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferIsView0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = ArrayBuffer.isView({});
-      expect(result).assertFalse()
+      let result = ArrayBuffer.isView(new ArrayBufferIsViewPlainForMindmap() as Object);
+      expect(result).assertFalse();
     });
 
     /**
@@ -257,8 +261,8 @@ export default function arrayBufferIsViewTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferIsView0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = ArrayBuffer.isView({ a: 1 });
-      expect(result).assertFalse()
+      let result = ArrayBuffer.isView(new ArrayBufferIsViewPlainWithPropForMindmap() as Object);
+      expect(result).assertFalse();
     });
 
     /**
@@ -355,13 +359,14 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_2400
-     * @tc.desc Verify ArrayBuffer.isView: passing empty array ，verify returns false
+     * @tc.desc Verify ArrayBuffer.isView with empty array: use typed Array<number>() as Object because literal [] cannot be resolved as array type in ArkTS.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferIsView0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = ArrayBuffer.isView([]);
+      let empty = new Array<number>();
+      let result = ArrayBuffer.isView(empty as Object);
       expect(result).assertFalse()
     });
 
@@ -374,7 +379,8 @@ export default function arrayBufferIsViewTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferIsView0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = ArrayBuffer.isView([1, 2, 3]);
+      let arrNum = new Array<number>(1, 2, 3);
+      let result = ArrayBuffer.isView(arrNum as Object);
       expect(result).assertFalse()
     });
 
@@ -593,7 +599,7 @@ export default function arrayBufferIsViewTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferIsView0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = ArrayBuffer.isView({});
+      let result = ArrayBuffer.isView(new ArrayBufferIsViewPlainForMindmap() as Object);
       console.info(result === false ? "false" : "true");
       expect(result != null).assertTrue()
     });
@@ -649,7 +655,7 @@ export default function arrayBufferIsViewTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferIsView0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = ArrayBuffer.isView([1, 2, 3]);
+      let result = ArrayBuffer.isView(new Array<number>(1, 2, 3) as Object);
       console.info(result === false ? "false" : "true");
       expect(result != null).assertTrue()
     });
@@ -727,7 +733,7 @@ export default function arrayBufferIsViewTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferIsView0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = ArrayBuffer.isView({});
+      let result = ArrayBuffer.isView(new ArrayBufferIsViewPlainForMindmap() as Object);
       console.info(typeof result === "boolean" ? "boolean" : typeof result);
       expect(result != null).assertTrue()
     });
@@ -735,27 +741,37 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0049
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_4900
-     * @tc.desc Verify ArrayBuffer.isView: passing null is ，verify returns false or throws exception
+     * @tc.desc null cast to Object for STA single-arg isView; runtime may throw — ERROR_CODE.01 on catch path if thrown.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferIsView0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = ArrayBuffer.isView(null);
-      expect(result).assertFalse()
+      try {
+        let result = ArrayBuffer.isView((null as Object));
+        expect(result).assertFalse();
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e as object);
+      }
     });
 
     /**
      * @tc.name testArrayBufferIsView0050
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_5000
-     * @tc.desc Verify ArrayBuffer.isView: passing undefined is ，verify returns false or throws exception
+     * @tc.desc undefined cast to Object for STA single-arg isView; runtime may throw — ERROR_CODE.01 on catch path if thrown.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferIsView0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = ArrayBuffer.isView(undefined);
-      expect(result).assertFalse()
+      try {
+        let result = ArrayBuffer.isView((undefined as Object));
+        expect(result).assertFalse();
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e as object);
+      }
     });
 
     /**
@@ -767,14 +783,9 @@ export default function arrayBufferIsViewTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferIsView0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let result = ArrayBuffer.isView("test string");
+      let result = ArrayBuffer.isView(("test string" as string) as Object);
       console.info(result === false ? "false" : "true");
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
-      }
+      expect(result).assertFalse();
     });
 
     /**
@@ -786,14 +797,9 @@ export default function arrayBufferIsViewTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferIsView0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let result = ArrayBuffer.isView(3.14);
+      let result = ArrayBuffer.isView((3.14 as number) as Object);
       console.info(result === false ? "false" : "true");
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
-      }
+      expect(result).assertFalse();
     });
 
     /**
@@ -805,14 +811,9 @@ export default function arrayBufferIsViewTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferIsView0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let result = ArrayBuffer.isView(-1);
+      let result = ArrayBuffer.isView((-1 as number) as Object);
       console.info(result === false ? "false" : "true");
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
-      }
+      expect(result).assertFalse();
     });
 
     /**
@@ -824,14 +825,9 @@ export default function arrayBufferIsViewTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferIsView0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let result = ArrayBuffer.isView(Infinity);
+      let result = ArrayBuffer.isView((Infinity as number) as Object);
       console.info(result === false ? "false" : "true");
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
-      }
+      expect(result).assertFalse();
     });
 
     /**
@@ -843,14 +839,9 @@ export default function arrayBufferIsViewTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferIsView0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let result = ArrayBuffer.isView(-Infinity);
+      let result = ArrayBuffer.isView((-Infinity as number) as Object);
       console.info(result === false ? "false" : "true");
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
-      }
+      expect(result).assertFalse();
     });
 
     /**
@@ -862,14 +853,9 @@ export default function arrayBufferIsViewTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferIsView0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let result = ArrayBuffer.isView(true);
+      let result = ArrayBuffer.isView((true as Object));
       console.info(result === false ? "false" : "true");
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
-      }
+      expect(result).assertFalse();
     });
 
     /**

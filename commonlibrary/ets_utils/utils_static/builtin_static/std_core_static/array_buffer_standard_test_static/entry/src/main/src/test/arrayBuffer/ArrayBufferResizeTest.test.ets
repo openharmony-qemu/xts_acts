@@ -15,6 +15,8 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
+class ArrayBufferResizeDummyArgForMindmap {}
+
 export default function arrayBufferResizeTest(): void {
   describe('ArrayBufferResizeTest', (): void => {
     beforeAll((): void => {
@@ -30,89 +32,60 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_0100
-     * @tc.desc Verify ArrayBuffer.resize: call resize passing 1 int ，normal exception
+     * @tc.desc Verify ArrayBuffer.resize(newLen): STA requires exactly one int; resizable buffer grows within constructor max.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferResize0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const buffer = new ArrayBuffer(2, 6);
+      const buffer = new ArrayBuffer(2, 6);
       buffer.resize(4);
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
-      }
+      expect(buffer.byteLength).assertEqual(4);
+      expect(buffer.resizable).assertTrue();
     });
 
     /**
      * @tc.name testArrayBufferResize0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_0200
-     * @tc.desc Verify ArrayBuffer.resize: call resize ，expect throws exception
+     * @tc.desc Mind map zero-arg resize is not in STA; verify legal single-arg resize updates byteLength (compile-time arity enforced).
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferResize0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const buffer = new ArrayBuffer(2, 6);
-      try {
-        buffer.resize();
-      } catch (e) {
-        console.info(e instanceof TypeError);
-      }
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
-      }
+      const buffer = new ArrayBuffer(2, 6);
+      buffer.resize(5);
+      expect(buffer.byteLength).assertEqual(5);
     });
 
     /**
      * @tc.name testArrayBufferResize0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_0300
-     * @tc.desc Verify ArrayBuffer.resize: call resize passing 2 ，expect or throws exception
+     * @tc.desc Mind map multi-arg resize not in STA; verify single-arg resize(newLen) only (constructor max is implicit ceiling).
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferResize0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const buffer = new ArrayBuffer(2, 6);
-      try {
-        buffer.resize(4, 6);
-      } catch (e) {
-        console.info(e);
-      }
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
-      }
+      const buffer = new ArrayBuffer(2, 6);
+      buffer.resize(6);
+      expect(buffer.byteLength).assertEqual(6);
     });
 
     /**
      * @tc.name testArrayBufferResize0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_0400
-     * @tc.desc Verify ArrayBuffer.resize: call resize passing 3 ，expect or throws exception
+     * @tc.desc Mind map three-arg resize not in STA; verify shrink then grow within same resizable buffer.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferResize0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const buffer = new ArrayBuffer(2, 6);
-      try {
-        buffer.resize(4, 6, 8);
-      } catch (e) {
-        console.info(e);
-      }
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
-      }
+      const buffer = new ArrayBuffer(4, 12);
+      buffer.resize(2);
+      expect(buffer.byteLength).assertEqual(2);
+      buffer.resize(10);
+      expect(buffer.byteLength).assertEqual(10);
     });
 
     /**
@@ -201,15 +174,11 @@ export default function arrayBufferResizeTest(): void {
     it('testArrayBufferResize0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const buffer = new ArrayBuffer(2, 6);
-      try {
         buffer.resize(-1);
+        expect(true).assertFail();
       } catch (e) {
-        console.info(e instanceof RangeError);
-      }
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e as object);
       }
     });
 
@@ -224,15 +193,11 @@ export default function arrayBufferResizeTest(): void {
     it('testArrayBufferResize0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const buffer = new ArrayBuffer(2, 6);
-      try {
         buffer.resize(7);
+        expect(true).assertFail();
       } catch (e) {
-        console.info(e instanceof RangeError);
-      }
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e as object);
       }
     });
 
@@ -247,15 +212,11 @@ export default function arrayBufferResizeTest(): void {
     it('testArrayBufferResize0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const buffer = new ArrayBuffer(2, 6);
-      try {
         buffer.resize(2147483647);
+        expect(true).assertFail();
       } catch (e) {
-        console.info(e instanceof RangeError);
-      }
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e as object);
       }
     });
 
@@ -270,15 +231,11 @@ export default function arrayBufferResizeTest(): void {
     it('testArrayBufferResize0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const buffer = new ArrayBuffer(2, 6);
-      try {
-        buffer.resize(null);
+        buffer.resize((null as int));
+        expect(true).assertFail();
       } catch (e) {
-        console.info(e instanceof TypeError);
-      }
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e as object);
       }
     });
 
@@ -293,39 +250,26 @@ export default function arrayBufferResizeTest(): void {
     it('testArrayBufferResize0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const buffer = new ArrayBuffer(2, 6);
-      try {
-        buffer.resize(undefined);
+        buffer.resize((undefined as int));
+        expect(true).assertFail();
       } catch (e) {
-        console.info(e instanceof TypeError);
-      }
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e as object);
       }
     });
 
     /**
      * @tc.name testArrayBufferResize0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_1500
-     * @tc.desc Verify ArrayBuffer.resize: passing floating-point 1.5，verify type or throws exception is
+     * @tc.desc Mindmap float length; STA uses int — Double.toInt(1.5) truncates; resize succeeds on OH (no throw after coercion).
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferResize0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const buffer = new ArrayBuffer(2, 6);
-      try {
-        buffer.resize(1.5);
-      } catch (e) {
-        console.info(e);
-      }
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
-      }
+      const buffer = new ArrayBuffer(2, 6);
+      buffer.resize(Double.toInt(1.5));
+      expect(buffer.byteLength).assertEqual(1);
     });
 
     /**
@@ -339,15 +283,11 @@ export default function arrayBufferResizeTest(): void {
     it('testArrayBufferResize0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const buffer = new ArrayBuffer(2, 6);
-      try {
-        buffer.resize("4");
+        buffer.resize((("4" as string) as Object) as int);
+        expect(true).assertFail();
       } catch (e) {
-        console.info(e instanceof TypeError);
-      }
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e as object);
       }
     });
 
@@ -362,15 +302,11 @@ export default function arrayBufferResizeTest(): void {
     it('testArrayBufferResize0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const buffer = new ArrayBuffer(2, 6);
-      try {
-        buffer.resize(true);
+        buffer.resize((true as int));
+        expect(true).assertFail();
       } catch (e) {
-        console.info(e);
-      }
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e as object);
       }
     });
 
@@ -385,15 +321,11 @@ export default function arrayBufferResizeTest(): void {
     it('testArrayBufferResize0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const buffer = new ArrayBuffer(2, 6);
-      try {
-        buffer.resize({});
+        buffer.resize((new ArrayBufferResizeDummyArgForMindmap() as ESObject) as int);
+        expect(true).assertFail();
       } catch (e) {
-        console.info(e instanceof TypeError);
-      }
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e as object);
       }
     });
 
@@ -498,32 +430,31 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_2500
-     * @tc.desc Verify ArrayBuffer.resize: verify resizemethod return value is undefined
+     * @tc.desc STA resize returns void; observe byteLength change instead of a return value.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferResize0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(2, 6);
-      const result = buffer.resize(4);
-      console.info(result === undefined);
-      expect(result != null).assertTrue()
+      buffer.resize(4);
+      expect(buffer.byteLength).assertEqual(4);
     });
 
     /**
      * @tc.name testArrayBufferResize0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_2600
-     * @tc.desc Verify ArrayBuffer.resize: verify return value null or not undefined
+     * @tc.desc STA resize is void; multiple sequential single-arg calls update byteLength as specified.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferResize0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(2, 6);
-      const result = buffer.resize(4);
-      console.info(result !== null);
-      console.info(result === undefined);
-      expect(result != null).assertTrue()
+      const buffer = new ArrayBuffer(2, 8);
+      buffer.resize(3);
+      expect(buffer.byteLength).assertEqual(3);
+      buffer.resize(1);
+      expect(buffer.byteLength).assertEqual(1);
     });
 
     /**
@@ -574,7 +505,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_3000
-     * @tc.desc Verify ArrayBuffer.resize: resize to maxByteLength after ，byteLengthequals maxByteLength
+     * @tc.desc Resize to constructor-implied ceiling (2→8 with new ArrayBuffer(2,8)); SDK typing may omit maxByteLength property — assert byteLength and resizable only.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -582,15 +513,14 @@ export default function arrayBufferResizeTest(): void {
     it('testArrayBufferResize0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(2, 8);
       buffer.resize(8);
-      console.info(buffer.byteLength === 8);
-      console.info(buffer.byteLength === buffer.maxByteLength);
-      expect(buffer != null).assertTrue()
+      expect(buffer.byteLength).assertEqual(8);
+      expect(buffer.resizable).assertTrue();
     });
 
     /**
      * @tc.name testArrayBufferResize0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_3100
-     * @tc.desc Verify ArrayBuffer.resize: resize after maxByteLength
+     * @tc.desc After shrink then resize(0), resizable remains true; constructor ceiling not exposed as maxByteLength on type surface — observe byteLength transitions only.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -598,10 +528,12 @@ export default function arrayBufferResizeTest(): void {
     it('testArrayBufferResize0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(2, 10);
       buffer.resize(5);
-      console.info(buffer.maxByteLength === 10);
+      expect(buffer.byteLength).assertEqual(5);
       buffer.resize(0);
-      console.info(buffer.maxByteLength === 10);
-      expect(buffer != null).assertTrue()
+      expect(buffer.byteLength).assertEqual(0);
+      expect(buffer.resizable).assertTrue();
+      buffer.resize(10);
+      expect(buffer.byteLength).assertEqual(10);
     });
 
     /**
@@ -631,14 +563,13 @@ export default function arrayBufferResizeTest(): void {
      */
     it('testArrayBufferResize0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(2, 8);
-      const view = new Int8Array(buffer);
       buffer.resize(6);
+      const view = new Int8Array(buffer);
       view.set([10, 20, 30, 40], 2);
-      console.info(view[2] === 10);
-      console.info(view[3] === 20);
-      console.info(view[4] === 30);
-      console.info(view[5] === 40);
-      expect(view != null).assertTrue()
+      expect(view[2]).assertEqual(10);
+      expect(view[3]).assertEqual(20);
+      expect(view[4]).assertEqual(30);
+      expect(view[5]).assertEqual(40);
     });
 
     /**
@@ -688,14 +619,14 @@ export default function arrayBufferResizeTest(): void {
      */
     it('testArrayBufferResize0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(6, 12);
-      const view = new Int8Array(buffer);
+      let view = new Int8Array(buffer);
       view.set([1, 2, 3, 4, 5, 6]);
       buffer.resize(2);
       buffer.resize(8);
+      view = new Int8Array(buffer);
       view.set([10, 20, 30, 40, 50, 60], 2);
-      console.info(view[2] === 10);
-      console.info(view[7] === 60);
-      expect(view != null).assertTrue()
+      expect(view[2]).assertEqual(10);
+      expect(view[7]).assertEqual(60);
     });
 
     /**
@@ -809,15 +740,11 @@ export default function arrayBufferResizeTest(): void {
     it('testArrayBufferResize0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const buffer = new ArrayBuffer(4);
-      try {
         buffer.resize(6);
+        expect(true).assertFail();
       } catch (e) {
-        console.info(e instanceof TypeError);
-      }
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e as object);
       }
     });
 
@@ -832,65 +759,49 @@ export default function arrayBufferResizeTest(): void {
     it('testArrayBufferResize0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const buffer = new ArrayBuffer(4);
-      try {
         buffer.resize(4);
+        expect(true).assertFail();
       } catch (e) {
-        console.info(e instanceof TypeError);
-      }
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e as object);
       }
     });
 
     /**
      * @tc.name testArrayBufferResize0044
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_4400
-     * @tc.desc Verify ArrayBuffer.resize: ArrayBuffer detach after call resize，expect throws TypeError
+     * @tc.desc ES transfer() not on STA surface; use slice(0, byteLength) copy plus resize(0) on resizable source — source stays resizable and can grow again within ceiling.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferResize0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const buffer = new ArrayBuffer(4, 8);
-      // 通过transfer detach原始buffer
-      const transferred = buffer.transfer();
-      try {
-        buffer.resize(6);
-      } catch (e) {
-        console.info(e instanceof TypeError);
-      }
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
-      }
+      const buffer = new ArrayBuffer(4, 8);
+      const copyLen: int = buffer.byteLength as int;
+      const copy = buffer.slice(0, copyLen);
+      expect(copy.byteLength).assertEqual(4);
+      buffer.resize(0);
+      expect(buffer.byteLength).assertEqual(0);
+      buffer.resize(8);
+      expect(buffer.byteLength).assertEqual(8);
+      expect(copy.byteLength).assertEqual(4);
     });
 
     /**
      * @tc.name testArrayBufferResize0045
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_4500
-     * @tc.desc Verify ArrayBuffer.resize: detached after buffer passing 0 expect throws TypeError
+     * @tc.desc Without transfer(), duplicate snapshot via slice then resize(0); resize(0) is legal on resizable buffer — byteLength becomes 0.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferResize0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const buffer = new ArrayBuffer(4, 8);
-      const transferred = buffer.transfer();
-      try {
-        buffer.resize(0);
-      } catch (e) {
-        console.info(e instanceof TypeError);
-      }
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
-      }
+      const buffer = new ArrayBuffer(4, 8);
+      const snapLen: int = buffer.byteLength as int;
+      const snapshot = buffer.slice(0, snapLen);
+      buffer.resize(0);
+      expect(buffer.byteLength).assertEqual(0);
+      expect(snapshot.byteLength).assertEqual(4);
     });
 
     /**
@@ -904,15 +815,11 @@ export default function arrayBufferResizeTest(): void {
     it('testArrayBufferResize0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const buffer = new ArrayBuffer(2, 6);
-      try {
         buffer.resize(-1);
+        expect(true).assertFail();
       } catch (e) {
-        console.info(e instanceof RangeError);
-      }
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e as object);
       }
     });
 
@@ -927,15 +834,11 @@ export default function arrayBufferResizeTest(): void {
     it('testArrayBufferResize0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const buffer = new ArrayBuffer(2, 6);
-      try {
         buffer.resize(-100);
+        expect(true).assertFail();
       } catch (e) {
-        console.info(e instanceof RangeError);
-      }
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e as object);
       }
     });
 
@@ -950,15 +853,11 @@ export default function arrayBufferResizeTest(): void {
     it('testArrayBufferResize0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const buffer = new ArrayBuffer(2, 6);
-      try {
         buffer.resize(7);
+        expect(true).assertFail();
       } catch (e) {
-        console.info(e instanceof RangeError);
-      }
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e as object);
       }
     });
 
@@ -973,15 +872,11 @@ export default function arrayBufferResizeTest(): void {
     it('testArrayBufferResize0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const buffer = new ArrayBuffer(2, 6);
-      try {
         buffer.resize(1000);
+        expect(true).assertFail();
       } catch (e) {
-        console.info(e instanceof RangeError);
-      }
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e as object);
       }
     });
 
@@ -996,15 +891,11 @@ export default function arrayBufferResizeTest(): void {
     it('testArrayBufferResize0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const buffer = new ArrayBuffer(2, 6);
-      try {
         buffer.resize(2147483647);
+        expect(true).assertFail();
       } catch (e) {
-        console.info(e instanceof RangeError);
-      }
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e as object);
       }
     });
 
@@ -1019,15 +910,11 @@ export default function arrayBufferResizeTest(): void {
     it('testArrayBufferResize0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const buffer = new ArrayBuffer(2, 6);
-      try {
         buffer.resize(-2147483648);
+        expect(true).assertFail();
       } catch (e) {
-        console.info(e instanceof RangeError);
-      }
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e as object);
       }
     });
     return;

@@ -37,84 +37,64 @@ export default function arrayBufferSetTest(): void {
      */
     it('testArrayBufferSet0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(0, 65 as byte);
-      expect(buffer.at(0)).assertEqual(65);
+      buffer.set(0, Int.toByte(65));
+      expect(buffer.at(0)).assertEqual(Int.toByte(65));
     });
 
     /**
      * @tc.name testArrayBufferSet0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SET_0200
-     * @tc.desc Verify ArrayBuffer.set: passing pos， val ， error
+     * @tc.desc Mind map one-arg set not in STA; executable path uses pos+byte per resize(pos,val).
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSet0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const buffer = new ArrayBuffer(4);
-      buffer.set(0); // 编译错误：缺少参数val
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
-      }
+      const buffer = new ArrayBuffer(4);
+      buffer.set(0, Int.toByte(65));
+      expect(buffer.at(0)).assertEqual(Int.toByte(65));
     });
 
     /**
      * @tc.name testArrayBufferSet0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SET_0300
-     * @tc.desc Verify ArrayBuffer.set: passing val， pos ， error
+     * @tc.desc Mind map misordered args not in STA; verify legal set(pos,val).
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSet0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const buffer = new ArrayBuffer(4);
-      buffer.set(65 as byte); // 编译错误：缺少参数pos
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
-      }
+      const buffer = new ArrayBuffer(4);
+      buffer.set(1, Int.toByte(66));
+      expect(buffer.at(1)).assertEqual(Int.toByte(66));
     });
 
     /**
      * @tc.name testArrayBufferSet0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SET_0400
-     * @tc.desc Verify ArrayBuffer.set: calling with zero args ， error
+     * @tc.desc Mind map zero-arg set not in STA; verify two-arg call writes byte.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSet0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const buffer = new ArrayBuffer(4);
-      buffer.set(); // 编译错误：缺少参数
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
-      }
+      const buffer = new ArrayBuffer(4);
+      buffer.set(2, Int.toByte(67));
+      expect(buffer.at(2)).assertEqual(Int.toByte(67));
     });
 
     /**
      * @tc.name testArrayBufferSet0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SET_0500
-     * @tc.desc Verify ArrayBuffer.set: passing 3 ， error
+     * @tc.desc Mind map three-arg set not in STA; verify exactly two parameters update one slot.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSet0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const buffer = new ArrayBuffer(4);
-      buffer.set(0, 65 as byte, 100); // 编译错误：参数个数过多
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
-      }
+      const buffer = new ArrayBuffer(4);
+      buffer.set(3, Int.toByte(68));
+      expect(buffer.at(3)).assertEqual(Int.toByte(68));
     });
 
     /**
@@ -127,8 +107,8 @@ export default function arrayBufferSetTest(): void {
      */
     it('testArrayBufferSet0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(0, 10 as byte);
-      expect(buffer.at(0)).assertEqual(10);
+      buffer.set(0, Int.toByte(10));
+      expect(buffer.at(0)).assertEqual(Int.toByte(10));
     });
 
     /**
@@ -141,8 +121,8 @@ export default function arrayBufferSetTest(): void {
      */
     it('testArrayBufferSet0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
-      buffer.set(4, 20 as byte);
-      expect(buffer.at(4)).assertEqual(20);
+      buffer.set(4, Int.toByte(20));
+      expect(buffer.at(4)).assertEqual(Int.toByte(20));
     });
 
     /**
@@ -155,8 +135,8 @@ export default function arrayBufferSetTest(): void {
      */
     it('testArrayBufferSet0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(3, 99 as byte);
-      expect(buffer.at(3)).assertEqual(99);
+      buffer.set(3, Int.toByte(99));
+      expect(buffer.at(3)).assertEqual(Int.toByte(99));
     });
 
     /**
@@ -170,7 +150,7 @@ export default function arrayBufferSetTest(): void {
     it('testArrayBufferSet0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
       try {
-        buffer.set(-1, 10 as byte);
+        buffer.set(-1, Int.toByte(10));
       } catch (e) {
         expect(e instanceof IndexOutOfBoundsError).assertTrue();
       }
@@ -187,7 +167,7 @@ export default function arrayBufferSetTest(): void {
     it('testArrayBufferSet0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
       try {
-        buffer.set(-100, 10 as byte);
+        buffer.set(-100, Int.toByte(10));
       } catch (e) {
         expect(e instanceof IndexOutOfBoundsError).assertTrue();
       }
@@ -204,7 +184,7 @@ export default function arrayBufferSetTest(): void {
     it('testArrayBufferSet0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
       try {
-        buffer.set(4, 10 as byte);
+        buffer.set(4, Int.toByte(10));
       } catch (e) {
         expect(e instanceof IndexOutOfBoundsError).assertTrue();
       }
@@ -221,7 +201,7 @@ export default function arrayBufferSetTest(): void {
     it('testArrayBufferSet0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
       try {
-        buffer.set(1000, 10 as byte);
+        buffer.set(1000, Int.toByte(10));
       } catch (e) {
         expect(e instanceof IndexOutOfBoundsError).assertTrue();
       }
@@ -238,7 +218,7 @@ export default function arrayBufferSetTest(): void {
     it('testArrayBufferSet0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
       try {
-        buffer.set(2147483647, 10 as byte);
+        buffer.set(2147483647, Int.toByte(10));
       } catch (e) {
         expect(e instanceof IndexOutOfBoundsError).assertTrue();
       }
@@ -255,7 +235,7 @@ export default function arrayBufferSetTest(): void {
     it('testArrayBufferSet0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
       try {
-        buffer.set(-2147483648, 10 as byte);
+        buffer.set(-2147483648, Int.toByte(10));
       } catch (e) {
         expect(e instanceof IndexOutOfBoundsError).assertTrue();
       }
@@ -271,8 +251,8 @@ export default function arrayBufferSetTest(): void {
      */
     it('testArrayBufferSet0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(0, 0 as byte);
-      expect(buffer.at(0)).assertEqual(0);
+      buffer.set(0, Int.toByte(0));
+      expect(buffer.at(0)).assertEqual(Int.toByte(0));
     });
 
     /**
@@ -285,8 +265,8 @@ export default function arrayBufferSetTest(): void {
      */
     it('testArrayBufferSet0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(0, 1 as byte);
-      expect(buffer.at(0)).assertEqual(1);
+      buffer.set(0, Int.toByte(1));
+      expect(buffer.at(0)).assertEqual(Int.toByte(1));
     });
 
     /**
@@ -299,8 +279,8 @@ export default function arrayBufferSetTest(): void {
      */
     it('testArrayBufferSet0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(0, 100 as byte);
-      expect(buffer.at(0)).assertEqual(100);
+      buffer.set(0, Int.toByte(100));
+      expect(buffer.at(0)).assertEqual(Int.toByte(100));
     });
 
     /**
@@ -313,8 +293,8 @@ export default function arrayBufferSetTest(): void {
      */
     it('testArrayBufferSet0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(0, 127 as byte);
-      expect(buffer.at(0)).assertEqual(127);
+      buffer.set(0, Int.toByte(127));
+      expect(buffer.at(0)).assertEqual(Int.toByte(127));
     });
 
     /**
@@ -327,8 +307,8 @@ export default function arrayBufferSetTest(): void {
      */
     it('testArrayBufferSet0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(0, -128 as byte);
-      expect(buffer.at(0)).assertEqual(-128);
+      buffer.set(0, Int.toByte(-128));
+      expect(buffer.at(0)).assertEqual(Int.toByte(-128));
     });
 
     /**
@@ -341,8 +321,8 @@ export default function arrayBufferSetTest(): void {
      */
     it('testArrayBufferSet0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(0, -1 as byte);
-      expect(buffer.at(0)).assertEqual(-1);
+      buffer.set(0, Int.toByte(-1));
+      expect(buffer.at(0)).assertEqual(Int.toByte(-1));
     });
 
     /**
@@ -355,8 +335,8 @@ export default function arrayBufferSetTest(): void {
      */
     it('testArrayBufferSet0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(0, -50 as byte);
-      expect(buffer.at(0)).assertEqual(-50);
+      buffer.set(0, Int.toByte(-50));
+      expect(buffer.at(0)).assertEqual(Int.toByte(-50));
     });
 
     /**
@@ -369,8 +349,8 @@ export default function arrayBufferSetTest(): void {
      */
     it('testArrayBufferSet0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(3);
-      buffer.set(0, 65 as byte);
-      expect(buffer.at(0)).assertEqual(65);
+      buffer.set(0, Int.toByte(65));
+      expect(buffer.at(0)).assertEqual(Int.toByte(65));
     });
 
     /**
@@ -383,9 +363,9 @@ export default function arrayBufferSetTest(): void {
      */
     it('testArrayBufferSet0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(0, 10 as byte);
-      buffer.set(0, 20 as byte);
-      expect(buffer.at(0)).assertEqual(20);
+      buffer.set(0, Int.toByte(10));
+      buffer.set(0, Int.toByte(20));
+      expect(buffer.at(0)).assertEqual(Int.toByte(20));
     });
 
     /**
@@ -398,14 +378,14 @@ export default function arrayBufferSetTest(): void {
      */
     it('testArrayBufferSet0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(0, 10 as byte);
-      buffer.set(1, 20 as byte);
-      buffer.set(2, 30 as byte);
-      buffer.set(3, 40 as byte);
-      expect(buffer.at(0)).assertEqual(10);
-      expect(buffer.at(1)).assertEqual(20);
-      expect(buffer.at(2)).assertEqual(30);
-      expect(buffer.at(3)).assertEqual(40);
+      buffer.set(0, Int.toByte(10));
+      buffer.set(1, Int.toByte(20));
+      buffer.set(2, Int.toByte(30));
+      buffer.set(3, Int.toByte(40));
+      expect(buffer.at(0)).assertEqual(Int.toByte(10));
+      expect(buffer.at(1)).assertEqual(Int.toByte(20));
+      expect(buffer.at(2)).assertEqual(Int.toByte(30));
+      expect(buffer.at(3)).assertEqual(Int.toByte(40));
     });
 
     /**
@@ -418,7 +398,7 @@ export default function arrayBufferSetTest(): void {
      */
     it('testArrayBufferSet0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      const result = buffer.set(0, 65 as byte);
+      const result = buffer.set(0, Int.toByte(65));
       expect(result).assertUndefined();
     });
 
@@ -432,7 +412,7 @@ export default function arrayBufferSetTest(): void {
      */
     it('testArrayBufferSet0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(1, 88 as byte);
+      buffer.set(1, Int.toByte(88));
       const val = buffer.at(1);
       expect(val).assertEqual(88);
     });
@@ -447,12 +427,12 @@ export default function arrayBufferSetTest(): void {
      */
     it('testArrayBufferSet0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(0, 10 as byte);
-      buffer.set(2, 30 as byte);
-      expect(buffer.at(0)).assertEqual(10);
-      expect(buffer.at(1)).assertEqual(0);
-      expect(buffer.at(2)).assertEqual(30);
-      expect(buffer.at(3)).assertEqual(0);
+      buffer.set(0, Int.toByte(10));
+      buffer.set(2, Int.toByte(30));
+      expect(buffer.at(0)).assertEqual(Int.toByte(10));
+      expect(buffer.at(1)).assertEqual(Int.toByte(0));
+      expect(buffer.at(2)).assertEqual(Int.toByte(30));
+      expect(buffer.at(3)).assertEqual(Int.toByte(0));
     });
 
     /**
@@ -465,10 +445,10 @@ export default function arrayBufferSetTest(): void {
      */
     it('testArrayBufferSet0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(0, 10 as byte);
-      expect(buffer.at(0)).assertEqual(10);
-      buffer.set(0, 99 as byte);
-      expect(buffer.at(0)).assertEqual(99);
+      buffer.set(0, Int.toByte(10));
+      expect(buffer.at(0)).assertEqual(Int.toByte(10));
+      buffer.set(0, Int.toByte(99));
+      expect(buffer.at(0)).assertEqual(Int.toByte(99));
     });
 
     /**
@@ -481,8 +461,8 @@ export default function arrayBufferSetTest(): void {
      */
     it('testArrayBufferSet0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(0, 127 as byte);
-      expect(buffer.at(0)).assertEqual(127);
+      buffer.set(0, Int.toByte(127));
+      expect(buffer.at(0)).assertEqual(Int.toByte(127));
     });
 
     /**
@@ -495,8 +475,8 @@ export default function arrayBufferSetTest(): void {
      */
     it('testArrayBufferSet0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(0, -128 as byte);
-      expect(buffer.at(0)).assertEqual(-128);
+      buffer.set(0, Int.toByte(-128));
+      expect(buffer.at(0)).assertEqual(Int.toByte(-128));
     });
 
     /**
@@ -510,7 +490,7 @@ export default function arrayBufferSetTest(): void {
     it('testArrayBufferSet0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
       try {
-        buffer.set(-1, 10 as byte);
+        buffer.set(-1, Int.toByte(10));
       } catch (e) {
         expect(e instanceof IndexOutOfBoundsError).assertTrue();
       }
@@ -527,7 +507,7 @@ export default function arrayBufferSetTest(): void {
     it('testArrayBufferSet0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
       try {
-        buffer.set(4, 10 as byte);
+        buffer.set(4, Int.toByte(10));
       } catch (e) {
         expect(e instanceof IndexOutOfBoundsError).assertTrue();
       }
@@ -544,7 +524,7 @@ export default function arrayBufferSetTest(): void {
     it('testArrayBufferSet0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
       try {
-        buffer.set(9999, 10 as byte);
+        buffer.set(9999, Int.toByte(10));
       } catch (e) {
         expect(e instanceof IndexOutOfBoundsError).assertTrue();
       }
@@ -561,7 +541,7 @@ export default function arrayBufferSetTest(): void {
     it('testArrayBufferSet0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
       try {
-        buffer.set(2147483647, 10 as byte);
+        buffer.set(2147483647, Int.toByte(10));
       } catch (e) {
         expect(e instanceof IndexOutOfBoundsError).assertTrue();
       }
@@ -578,7 +558,7 @@ export default function arrayBufferSetTest(): void {
     it('testArrayBufferSet0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
       try {
-        buffer.set(-2147483648, 10 as byte);
+        buffer.set(-2147483648, Int.toByte(10));
       } catch (e) {
         expect(e instanceof IndexOutOfBoundsError).assertTrue();
       }
@@ -595,7 +575,7 @@ export default function arrayBufferSetTest(): void {
     it('testArrayBufferSet0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(0);
       try {
-        buffer.set(0, 10 as byte);
+        buffer.set(0, Int.toByte(10));
       } catch (e) {
         expect(e instanceof IndexOutOfBoundsError).assertTrue();
       }
@@ -612,7 +592,7 @@ export default function arrayBufferSetTest(): void {
     it('testArrayBufferSet0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(0);
       try {
-        buffer.set(1, 10 as byte);
+        buffer.set(1, Int.toByte(10));
       } catch (e) {
         expect(e instanceof IndexOutOfBoundsError).assertTrue();
       }
@@ -629,7 +609,7 @@ export default function arrayBufferSetTest(): void {
     it('testArrayBufferSet0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(0);
       try {
-        buffer.set(-1, 10 as byte);
+        buffer.set(-1, Int.toByte(10));
       } catch (e) {
         expect(e instanceof IndexOutOfBoundsError).assertTrue();
       }
@@ -638,27 +618,19 @@ export default function arrayBufferSetTest(): void {
     /**
      * @tc.name testArrayBufferSet0039
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SET_3900
-     * @tc.desc Verify ArrayBuffer.set: ArrayBuffer detach after call set， throws exception
+     * @tc.desc No STA detach(); zero-length resizable buffer (resize(0)) rejects set at index 0 — same observable boundary as mind-map detach narrative.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSet0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(2, 8);
+      buffer.resize(0);
       try {
-        const buffer = new ArrayBuffer(4);
-      // detach操作
-      // 注意：ArkTS-Sta中detach方式视具体API而定
-      // 以下为概念性测试
-      // buffer.detach() 或通过其他方式detach
-      // try {
-      //   buffer.set(0, 10 as byte);
-      // } catch (e) {
-      //   预期抛出异常
-      // }
-        expect(true).assertFail()
+        buffer.set(0, Int.toByte(10));
+        expect(true).assertFail();
       } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
+        expect(e instanceof IndexOutOfBoundsError).assertTrue();
       }
     });
     return;

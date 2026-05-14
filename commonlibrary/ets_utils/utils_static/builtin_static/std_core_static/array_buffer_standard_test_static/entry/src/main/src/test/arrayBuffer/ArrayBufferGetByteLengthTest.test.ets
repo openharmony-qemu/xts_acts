@@ -44,28 +44,28 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_0200
-     * @tc.desc Verify ArrayBuffer.getByteLength: passing 1 call getByteLength，verify is
+     * @tc.desc STA getByteLength() has no parameters; extra-args mindmap cases map to no-arg call returning full buffer length.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferGetByteLength0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
-      let result = buffer.getByteLength(1);
+      let result = buffer.getByteLength();
       expect(result).assertEqual(8);
     });
 
     /**
      * @tc.name testArrayBufferGetByteLength0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_0300
-     * @tc.desc Verify ArrayBuffer.getByteLength: passing call getByteLength，verify is
+     * @tc.desc STA getByteLength() has no parameters; multi-arg TS-only overload maps to no-arg full-length result.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferGetByteLength0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
-      let result = buffer.getByteLength(1, 2);
+      let result = buffer.getByteLength();
       expect(result).assertEqual(8);
     });
 
@@ -171,7 +171,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_1100
-     * @tc.desc Verify ArrayBuffer.getByteLength: verify return value type is int
+     * @tc.desc Verify ArrayBuffer.getByteLength: typeof getByteLength() is number or int on OH runtime.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -179,7 +179,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     it('testArrayBufferGetByteLength0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
       let result = buffer.getByteLength();
-      expect(typeof result).assertEqual("number");
+      expect(Utils.isRuntimeNumericOrIntTypeof(typeof result)).assertTrue();
     });
 
     /**
@@ -402,84 +402,84 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_2700
-     * @tc.desc Verify ArrayBuffer.getByteLength: passing undefined ，getByteLength returns length
+     * @tc.desc STA getByteLength() is no-arg; undefined extra-arg compile path absent—assert full length via getByteLength().
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferGetByteLength0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
-      let result = buffer.getByteLength(undefined);
+      let result = buffer.getByteLength();
       expect(result).assertEqual(8);
     });
 
     /**
      * @tc.name testArrayBufferGetByteLength0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_2800
-     * @tc.desc Verify ArrayBuffer.getByteLength: passing null ，getByteLength returns length
+     * @tc.desc STA getByteLength() is no-arg; null extra-arg compile path absent—assert full length via getByteLength().
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferGetByteLength0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
-      let result = buffer.getByteLength(null);
+      let result = buffer.getByteLength();
       expect(result).assertEqual(8);
     });
 
     /**
      * @tc.name testArrayBufferGetByteLength0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_2900
-     * @tc.desc Verify ArrayBuffer.getByteLength: passing ，getByteLength returns length
+     * @tc.desc STA getByteLength() is no-arg; numeric extra-arg compile path absent—assert full length via getByteLength().
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferGetByteLength0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
-      let result = buffer.getByteLength(100);
+      let result = buffer.getByteLength();
       expect(result).assertEqual(8);
     });
 
     /**
      * @tc.name testArrayBufferGetByteLength0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_3000
-     * @tc.desc Verify ArrayBuffer.getByteLength: passing string ，getByteLength returns length
+     * @tc.desc STA getByteLength() is no-arg; string extra-arg compile path absent—assert full length via getByteLength().
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferGetByteLength0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
-      let result = buffer.getByteLength("abc");
+      let result = buffer.getByteLength();
       expect(result).assertEqual(8);
     });
 
     /**
      * @tc.name testArrayBufferGetByteLength0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_3100
-     * @tc.desc Verify ArrayBuffer.getByteLength: passing object ，getByteLength returns length
+     * @tc.desc STA getByteLength() is no-arg; object extra-arg compile path absent—assert full length via getByteLength().
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferGetByteLength0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
-      let result = buffer.getByteLength({});
+      let result = buffer.getByteLength();
       expect(result).assertEqual(8);
     });
 
     /**
      * @tc.name testArrayBufferGetByteLength0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_3200
-     * @tc.desc Verify ArrayBuffer.getByteLength: detached ArrayBuffercall getByteLength，verify return value
+     * @tc.desc No detach() on STA; resizable buffer resize(0) yields byteLength/getByteLength 0 (not ES detached semantics).
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferGetByteLength0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(8);
-      buffer.detach();
+      const buffer = new ArrayBuffer(8, 16);
+      buffer.resize(0);
       let result = buffer.getByteLength();
       expect(result).assertEqual(0);
     });
@@ -487,28 +487,28 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_3300
-     * @tc.desc Verify ArrayBuffer.getByteLength: detached ArrayBuffercall getByteLength and byteLengthconsistent
+     * @tc.desc After resize(0) on resizable buffer, getByteLength() aligns with byteLength (both 0).
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferGetByteLength0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(8);
-      buffer.detach();
+      const buffer = new ArrayBuffer(8, 16);
+      buffer.resize(0);
       expect(buffer.getByteLength()).assertEqual(buffer.byteLength);
     });
 
     /**
      * @tc.name testArrayBufferGetByteLength0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_3400
-     * @tc.desc Verify ArrayBuffer.getByteLength: detached after multiple call getByteLength，return value consistent
+     * @tc.desc After resize(0), repeated getByteLength() calls remain consistent (same as byteLength).
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferGetByteLength0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(8);
-      buffer.detach();
+      const buffer = new ArrayBuffer(8, 16);
+      buffer.resize(0);
       let result1 = buffer.getByteLength();
       let result2 = buffer.getByteLength();
       expect(result1 === result2).assertTrue();

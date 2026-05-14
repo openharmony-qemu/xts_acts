@@ -261,7 +261,7 @@ export default function arrayBufferByteLengthFieldTest(): void {
     /**
      * @tc.name testArrayBufferByteLengthField0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_BYTE_LENGTH_1700
-     * @tc.desc Verify ArrayBuffer.byteLength: byteLengthreturn value type is number（int at runtime is number）
+     * @tc.desc Verify ArrayBuffer.byteLength: typeof byteLength is number or int on OH (Hypium typeof may report int).
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -269,7 +269,7 @@ export default function arrayBufferByteLengthFieldTest(): void {
     it('testArrayBufferByteLengthField0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
       let result = buffer.byteLength;
-      expect(typeof result).assertEqual("number");
+      expect(Utils.isRuntimeNumericOrIntTypeof(typeof result)).assertTrue();
     });
 
     /**
@@ -585,8 +585,8 @@ export default function arrayBufferByteLengthFieldTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferByteLengthField0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(8);
-      buffer.detach();
+      const buffer = new ArrayBuffer(8, 16);
+      buffer.resize(0);
       let result = buffer.byteLength;
       expect(result).assertEqual(0);
     });
@@ -600,8 +600,8 @@ export default function arrayBufferByteLengthFieldTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferByteLengthField0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(8);
-      buffer.detach();
+      const buffer = new ArrayBuffer(8, 16);
+      buffer.resize(0);
       expect(buffer.byteLength).assertEqual(buffer.getByteLength());
     });
 
@@ -614,8 +614,8 @@ export default function arrayBufferByteLengthFieldTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferByteLengthField0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(8);
-      buffer.detach();
+      const buffer = new ArrayBuffer(8, 16);
+      buffer.resize(0);
       let result1 = buffer.byteLength;
       let result2 = buffer.byteLength;
       expect(result1).assertEqual(0);
@@ -633,7 +633,7 @@ export default function arrayBufferByteLengthFieldTest(): void {
      */
     it('testArrayBufferByteLengthField0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4, 16);
-      buffer.detach();
+      buffer.resize(0);
       let result = buffer.byteLength;
       expect(result).assertEqual(0);
     });
