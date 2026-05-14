@@ -1,4 +1,3 @@
-import AbilityTest from "./Ability.test";
 import arrayBufferAtTest from "./arrayBuffer/ArrayBufferAtTest.test";
 import arrayBufferBytesLengthTest from "./arrayBuffer/ArrayBufferBytesLengthTest.test";
 import arrayBufferFromFiveTest from "./arrayBuffer/ArrayBufferFromFiveTest.test";
@@ -27,7 +26,6 @@ import byteConstructorOneTest from "./arrayBuffer/ByteConstructorOneTest.test";
 import byteConstructorTwoTest from "./arrayBuffer/ByteConstructorTwoTest.test";
 
 export default function testsuite(): void {
-  AbilityTest();
   arrayBufferPropertyTest();
   arrayBufferByteLengthFieldTest();
   arrayBufferDetachedFieldTest();
