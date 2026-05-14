@@ -113,7 +113,7 @@ export default function StaticMethodEqualsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_0100
      * @tc.name testStaticMethodEquals001
      * @tc.desc Verify equals method accepts one parameter
      * @tc.size MediumTest
@@ -131,7 +131,7 @@ export default function StaticMethodEqualsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_0200
      * @tc.name testStaticMethodEquals002
      * @tc.desc Verify same static method from same class returns true
      * @tc.size MediumTest
@@ -148,7 +148,7 @@ export default function StaticMethodEqualsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_0300
      * @tc.name testStaticMethodEquals003
      * @tc.desc Verify different static methods return false
      * @tc.size MediumTest
@@ -165,7 +165,7 @@ export default function StaticMethodEqualsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_0400
      * @tc.name testStaticMethodEquals004
      * @tc.desc Verify static methods with same name from different classes return false
      * @tc.size MediumTest
@@ -181,7 +181,7 @@ export default function StaticMethodEqualsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_0500
      * @tc.name testStaticMethodEquals005
      * @tc.desc Verify equals returns boolean type for standard return value
      * @tc.size MediumTest
@@ -201,7 +201,7 @@ export default function StaticMethodEqualsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_0600
      * @tc.name testStaticMethodEquals006
      * @tc.desc Verify reflexivity - same object reference equals itself
      * @tc.size MediumTest
@@ -216,7 +216,7 @@ export default function StaticMethodEqualsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_0700
      * @tc.name testStaticMethodEquals007
      * @tc.desc Verify overloaded methods with different parameter types return false
      * @tc.size MediumTest
@@ -231,7 +231,7 @@ export default function StaticMethodEqualsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_0800
      * @tc.name testStaticMethodEquals008
      * @tc.desc Verify overloaded methods with different parameter counts return false
      * @tc.size MediumTest
@@ -246,7 +246,7 @@ export default function StaticMethodEqualsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_0900
      * @tc.name testStaticMethodEquals009
      * @tc.desc Verify methods with different return types return false
      * @tc.size MediumTest
@@ -263,7 +263,7 @@ export default function StaticMethodEqualsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_1000
      * @tc.name testStaticMethodEquals010
      * @tc.desc Verify return type is boolean
      * @tc.size MediumTest
@@ -284,7 +284,7 @@ export default function StaticMethodEqualsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_1100
      * @tc.name testStaticMethodEquals011
      * @tc.desc Verify return value has binary nature (true or false)
      * @tc.size MediumTest
@@ -303,7 +303,7 @@ export default function StaticMethodEqualsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_1200
      * @tc.name testStaticMethodEquals012
      * @tc.desc Verify reflexivity - x.equals(x) returns true
      * @tc.size MediumTest
@@ -318,7 +318,7 @@ export default function StaticMethodEqualsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_1300
      * @tc.name testStaticMethodEquals013
      * @tc.desc Verify symmetry - x.equals(y) equals y.equals(x)
      * @tc.size MediumTest
@@ -337,7 +337,7 @@ export default function StaticMethodEqualsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_1400
      * @tc.name testStaticMethodEquals014
      * @tc.desc Verify transitivity - if x.equals(y) and y.equals(z) then x.equals(z)
      * @tc.size MediumTest
@@ -361,7 +361,7 @@ export default function StaticMethodEqualsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_1500
      * @tc.name testStaticMethodEquals015
      * @tc.desc Verify consistency - multiple calls return same result
      * @tc.size MediumTest
@@ -380,7 +380,7 @@ export default function StaticMethodEqualsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_1600
      * @tc.name testStaticMethodEquals016
      * @tc.desc Verify equals method does not throw exception
      * @tc.size MediumTest
@@ -403,7 +403,7 @@ export default function StaticMethodEqualsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_1700
      * @tc.name testStaticMethodEquals017
      * @tc.desc Verify sync and async method comparison returns false
      * @tc.size MediumTest
@@ -421,7 +421,7 @@ export default function StaticMethodEqualsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_1800
      * @tc.name testStaticMethodEquals018
      * @tc.desc Verify abstract class static method equals
      * @tc.size MediumTest
@@ -437,7 +437,7 @@ export default function StaticMethodEqualsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_1900
      * @tc.name testStaticMethodEquals019
      * @tc.desc Verify final class static method equals
      * @tc.size MediumTest
@@ -453,7 +453,7 @@ export default function StaticMethodEqualsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_2000
      * @tc.name testStaticMethodEquals020
      * @tc.desc Verify getter/setter method equals comparison
      * @tc.size MediumTest
@@ -472,7 +472,7 @@ export default function StaticMethodEqualsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_2100
      * @tc.name testStaticMethodEquals021
      * @tc.desc Verify method list comparison
      * @tc.size MediumTest
@@ -492,7 +492,7 @@ export default function StaticMethodEqualsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_2200
      * @tc.name testStaticMethodEquals022
      * @tc.desc Verify deduplication using equals
      * @tc.size MediumTest
@@ -518,7 +518,7 @@ export default function StaticMethodEqualsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_2300
      * @tc.name testStaticMethodEquals023
      * @tc.desc Verify set operations (intersection) using equals
      * @tc.size MediumTest

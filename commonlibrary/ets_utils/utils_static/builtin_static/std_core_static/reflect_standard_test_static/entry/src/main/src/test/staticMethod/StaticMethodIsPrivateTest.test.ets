@@ -156,7 +156,7 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_0100
      * @tc.name testStaticMethodIsPrivate001
      * @tc.desc Verify isPrivate() call with no parameters
      * @tc.size MediumTest
@@ -172,7 +172,7 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_0200
      * @tc.name testStaticMethodIsPrivate002
      * @tc.desc Verify isPrivate() returns true for private static method
      * @tc.size MediumTest
@@ -188,7 +188,7 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_0300
      * @tc.name testStaticMethodIsPrivate003
      * @tc.desc Verify isPrivate() returns false for public static method
      * @tc.size MediumTest
@@ -205,7 +205,7 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_0400
      * @tc.name testStaticMethodIsPrivate004
      * @tc.desc Verify isPrivate() returns false for protected static method
      * @tc.size MediumTest
@@ -221,7 +221,7 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_0500
      * @tc.name testStaticMethodIsPrivate005
      * @tc.desc Verify isPrivate() for private async static method
      * @tc.size MediumTest
@@ -236,7 +236,7 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_0600
      * @tc.name testStaticMethodIsPrivate006
      * @tc.desc Verify isPrivate() for private final static method
      * @tc.size MediumTest
@@ -251,7 +251,7 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_0700
      * @tc.name testStaticMethodIsPrivate007
      * @tc.desc Verify isPrivate() for abstract class private method
      * @tc.size MediumTest
@@ -266,7 +266,7 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_0800
      * @tc.name testStaticMethodIsPrivate008
      * @tc.desc Verify isPrivate() for final class private method
      * @tc.size MediumTest
@@ -281,7 +281,7 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_0900
      * @tc.name testStaticMethodIsPrivate009
      * @tc.desc Verify isPrivate() return type is boolean
      * @tc.size MediumTest
@@ -300,7 +300,7 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_1000
      * @tc.name testStaticMethodIsPrivate010
      * @tc.desc Verify isPrivate() returns only true or false
      * @tc.size MediumTest
@@ -317,7 +317,7 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_1100
      * @tc.name testStaticMethodIsPrivate011
      * @tc.desc Verify mutual exclusivity between isPrivate, isPublic, and isProtected
      * @tc.size MediumTest
@@ -335,7 +335,7 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_1200
      * @tc.name testStaticMethodIsPrivate012
      * @tc.desc Verify isPrivate() for multiple private methods in same class
      * @tc.size MediumTest
@@ -351,7 +351,7 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_1300
      * @tc.name testStaticMethodIsPrivate013
      * @tc.desc Verify isPrivate() for method with default access level
      * @tc.size MediumTest
@@ -367,7 +367,7 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_1400
      * @tc.name testStaticMethodIsPrivate014
      * @tc.desc Verify isPrivate() does not throw exception
      * @tc.size MediumTest
@@ -383,7 +383,7 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_1500
      * @tc.name testStaticMethodIsPrivate015
      * @tc.desc Verify isPrivate() for private+final modifier combination
      * @tc.size MediumTest
@@ -398,7 +398,7 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_1600
      * @tc.name testStaticMethodIsPrivate016
      * @tc.desc Verify isPrivate() for private+async modifier combination
      * @tc.size MediumTest
@@ -413,7 +413,7 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_1700
      * @tc.name testStaticMethodIsPrivate017
      * @tc.desc Verify isPrivate() for Deprecated private method
      * @tc.size MediumTest
@@ -428,7 +428,7 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_1800
      * @tc.name testStaticMethodIsPrivate018
      * @tc.desc Verify isPrivate() for async private method
      * @tc.size MediumTest
@@ -443,7 +443,7 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_1900
      * @tc.name testStaticMethodIsPrivate019
      * @tc.desc Verify isPrivate() comparison between async public and async private methods
      * @tc.size MediumTest
@@ -463,7 +463,7 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_2000
      * @tc.name testStaticMethodIsPrivate020
      * @tc.desc Verify isPrivate() for normal, abstract, and final class private methods
      * @tc.size MediumTest
@@ -482,7 +482,7 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_2100
      * @tc.name testStaticMethodIsPrivate021
      * @tc.desc Verify isPrivate() for private factory method
      * @tc.size MediumTest
@@ -497,7 +497,7 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_2200
      * @tc.name testStaticMethodIsPrivate022
      * @tc.desc Verify isPrivate() for private utility method
      * @tc.size MediumTest
@@ -512,7 +512,7 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_2300
      * @tc.name testStaticMethodIsPrivate023
      * @tc.desc Verify isPrivate() counts private methods in a class with mixed access levels
      * @tc.size MediumTest
@@ -535,7 +535,7 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_2400
      * @tc.name testStaticMethodIsPrivate024
      * @tc.desc Verify isPrivate() combined with other method property checks
      * @tc.size MediumTest
@@ -553,7 +553,7 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_2500
      * @tc.name testStaticMethodIsPrivate025
      * @tc.desc Verify filtering private methods from all static methods
      * @tc.size MediumTest
@@ -576,7 +576,7 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_2600
      * @tc.name testStaticMethodIsPrivate026
      * @tc.desc Verify access level statistics across all methods in a class
      * @tc.size MediumTest

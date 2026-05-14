@@ -139,7 +139,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_RETURN_TYPE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_RETURN_TYPE_0100
      * @tc.name testStaticMethodGetReturnType001
      * @tc.desc Verify getReturnType() call with no parameters
      * @tc.size MediumTest
@@ -155,7 +155,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_RETURN_TYPE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_RETURN_TYPE_0200
      * @tc.name testStaticMethodGetReturnType002
      * @tc.desc Verify getReturnType() returns correct types for basic return types
      * @tc.size MediumTest
@@ -177,7 +177,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_RETURN_TYPE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_RETURN_TYPE_0300
      * @tc.name testStaticMethodGetReturnType003
      * @tc.desc Verify getReturnType() returns void for void method
      * @tc.size MediumTest
@@ -193,7 +193,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_RETURN_TYPE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_RETURN_TYPE_0400
      * @tc.name testStaticMethodGetReturnType004
      * @tc.desc Verify getReturnType() for object return types
      * @tc.size MediumTest
@@ -212,7 +212,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_RETURN_TYPE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_RETURN_TYPE_0500
      * @tc.name testStaticMethodGetReturnType005
      * @tc.desc Verify getReturnType() for array return types
      * @tc.size MediumTest
@@ -231,7 +231,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_RETURN_TYPE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_RETURN_TYPE_0600
      * @tc.name testStaticMethodGetReturnType006
      * @tc.desc Verify getReturnType() for generic return type
      * @tc.size MediumTest
@@ -248,7 +248,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_RETURN_TYPE_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_RETURN_TYPE_0700
      * @tc.name testStaticMethodGetReturnType007
      * @tc.desc Verify getReturnType() for union return type
      * @tc.size MediumTest
@@ -265,7 +265,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_RETURN_TYPE_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_RETURN_TYPE_0800
      * @tc.name testStaticMethodGetReturnType008
      * @tc.desc Verify getReturnType() for Promise return type contains Promise in name
      * @tc.size MediumTest
@@ -282,7 +282,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_RETURN_TYPE_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_RETURN_TYPE_0900
      * @tc.name testStaticMethodGetReturnType009
      * @tc.desc Verify getReturnType() for nullable and undefinable return types
      * @tc.size MediumTest
@@ -301,7 +301,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_RETURN_TYPE_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_RETURN_TYPE_1000
      * @tc.name testStaticMethodGetReturnType010
      * @tc.desc Verify getReturnType() return type is object with getName method
      * @tc.size MediumTest
@@ -319,7 +319,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_RETURN_TYPE_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_RETURN_TYPE_1100
      * @tc.name testStaticMethodGetReturnType011
      * @tc.desc Verify getReturnType() returned Class object has complete method set
      * @tc.size MediumTest
@@ -339,7 +339,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_RETURN_TYPE_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_RETURN_TYPE_1200
      * @tc.name testStaticMethodGetReturnType012
      * @tc.desc Verify getReturnType() for all primitive return types
      * @tc.size MediumTest
@@ -361,7 +361,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_RETURN_TYPE_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_RETURN_TYPE_1300
      * @tc.name testStaticMethodGetReturnType013
      * @tc.desc Verify getReturnType() for this return type
      * @tc.size MediumTest
@@ -377,7 +377,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_RETURN_TYPE_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_RETURN_TYPE_1400
      * @tc.name testStaticMethodGetReturnType014
      * @tc.desc Verify getReturnType() does not throw exception
      * @tc.size MediumTest
@@ -393,7 +393,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_RETURN_TYPE_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_RETURN_TYPE_1500
      * @tc.name testStaticMethodGetReturnType015
      * @tc.desc Verify getReturnType() for methods with different modifiers
      * @tc.size MediumTest
@@ -415,7 +415,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_RETURN_TYPE_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_RETURN_TYPE_1600
      * @tc.name testStaticMethodGetReturnType016
      * @tc.desc Verify getReturnType() for async methods returns Promise types
      * @tc.size MediumTest
@@ -436,7 +436,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_RETURN_TYPE_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_RETURN_TYPE_1700
      * @tc.name testStaticMethodGetReturnType017
      * @tc.desc Verify getReturnType() for abstract and final class static methods
      * @tc.size MediumTest
@@ -454,7 +454,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_RETURN_TYPE_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_RETURN_TYPE_1800
      * @tc.name testStaticMethodGetReturnType018
      * @tc.desc Verify getReturnType() for getter and setter methods
      * @tc.size MediumTest
@@ -473,7 +473,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_RETURN_TYPE_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_RETURN_TYPE_1900
      * @tc.name testStaticMethodGetReturnType019
      * @tc.desc Verify getReturnType() for multiple static methods in same class
      * @tc.size MediumTest

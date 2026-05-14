@@ -157,7 +157,7 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_ASYNC_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_0100
      * @tc.name testStaticMethodIsAsync001
      * @tc.desc Verify isAsync() call with no parameters
      * @tc.size MediumTest
@@ -173,7 +173,7 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_ASYNC_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_0200
      * @tc.name testStaticMethodIsAsync002
      * @tc.desc Verify isAsync() returns true for async static method
      * @tc.size MediumTest
@@ -191,7 +191,7 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_ASYNC_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_0300
      * @tc.name testStaticMethodIsAsync003
      * @tc.desc Verify isAsync() returns false for sync static method
      * @tc.size MediumTest
@@ -208,7 +208,7 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_ASYNC_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_0400
      * @tc.name testStaticMethodIsAsync004
      * @tc.desc Verify isAsync() for public async static method
      * @tc.size MediumTest
@@ -224,7 +224,7 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_ASYNC_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_0500
      * @tc.name testStaticMethodIsAsync005
      * @tc.desc Verify isAsync() for private async static method
      * @tc.size MediumTest
@@ -238,7 +238,7 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_ASYNC_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_0600
      * @tc.name testStaticMethodIsAsync006
      * @tc.desc Verify isAsync() for protected async static method
      * @tc.size MediumTest
@@ -252,7 +252,7 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_ASYNC_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_0700
      * @tc.name testStaticMethodIsAsync007
      * @tc.desc Verify isAsync() returns true for async methods returning different types
      * @tc.size MediumTest
@@ -268,7 +268,7 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_ASYNC_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_0800
      * @tc.name testStaticMethodIsAsync008
      * @tc.desc Verify isAsync() return type is boolean
      * @tc.size MediumTest
@@ -286,7 +286,7 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_ASYNC_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_0900
      * @tc.name testStaticMethodIsAsync009
      * @tc.desc Verify isAsync() returns only true or false
      * @tc.size MediumTest
@@ -303,7 +303,7 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_ASYNC_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_1000
      * @tc.name testStaticMethodIsAsync010
      * @tc.desc Verify async method return type contains Promise
      * @tc.size MediumTest
@@ -323,7 +323,7 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_ASYNC_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_1100
      * @tc.name testStaticMethodIsAsync011
      * @tc.desc Verify isAsync() for abstract class async static method
      * @tc.size MediumTest
@@ -338,7 +338,7 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_ASYNC_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_1200
      * @tc.name testStaticMethodIsAsync012
      * @tc.desc Verify isAsync() for final class async static method
      * @tc.size MediumTest
@@ -353,7 +353,7 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_ASYNC_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_1300
      * @tc.name testStaticMethodIsAsync013
      * @tc.desc Verify isAsync() does not throw exception
      * @tc.size MediumTest
@@ -369,7 +369,7 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_ASYNC_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_1400
      * @tc.name testStaticMethodIsAsync014
      * @tc.desc Verify isAsync() with async+public modifier combination
      * @tc.size MediumTest
@@ -385,7 +385,7 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_ASYNC_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_1500
      * @tc.name testStaticMethodIsAsync015
      * @tc.desc Verify isAsync() with async+private modifier combination
      * @tc.size MediumTest
@@ -399,7 +399,7 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_ASYNC_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_1600
      * @tc.name testStaticMethodIsAsync016
      * @tc.desc Verify isAsync() for Deprecated async method
      * @tc.size MediumTest
@@ -414,7 +414,7 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_ASYNC_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_1700
      * @tc.name testStaticMethodIsAsync017
      * @tc.desc Verify isAsync() async method characteristics
      * @tc.size MediumTest
@@ -431,7 +431,7 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_ASYNC_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_1800
      * @tc.name testStaticMethodIsAsync018
      * @tc.desc Verify isAsync() for async method with parameters
      * @tc.size MediumTest
@@ -447,7 +447,7 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_ASYNC_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_1900
      * @tc.name testStaticMethodIsAsync019
      * @tc.desc Verify isAsync() for normal, abstract, and final class async methods
      * @tc.size MediumTest
@@ -468,7 +468,7 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_ASYNC_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_2000
      * @tc.name testStaticMethodIsAsync020
      * @tc.desc Verify isAsync() for async factory method
      * @tc.size MediumTest
@@ -483,7 +483,7 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_ASYNC_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_2100
      * @tc.name testStaticMethodIsAsync021
      * @tc.desc Verify isAsync() counts async methods in a class correctly
      * @tc.size MediumTest
@@ -504,7 +504,7 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_ASYNC_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_2200
      * @tc.name testStaticMethodIsAsync022
      * @tc.desc Verify isAsync() combined with other method property checks
      * @tc.size MediumTest
@@ -523,7 +523,7 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_ASYNC_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_2300
      * @tc.name testStaticMethodIsAsync023
      * @tc.desc Verify filtering async methods from all static methods
      * @tc.size MediumTest
@@ -544,7 +544,7 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_ASYNC_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_2400
      * @tc.name testStaticMethodIsAsync024
      * @tc.desc Verify isAsync() comparison between sync and async methods
      * @tc.size MediumTest
@@ -565,7 +565,7 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_ASYNC_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_2500
      * @tc.name testStaticMethodIsAsync025
      * @tc.desc Verify isAsync() returns false for method returning Promise without async keyword
      * @tc.size MediumTest

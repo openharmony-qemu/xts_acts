@@ -171,7 +171,7 @@ export default function StaticMethodIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PROTECTED_0100
      * @tc.name testStaticMethodIsProtected001
      * @tc.desc Verify isProtected() call with no parameters
      * @tc.size MediumTest
@@ -187,7 +187,7 @@ export default function StaticMethodIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PROTECTED_0200
      * @tc.name testStaticMethodIsProtected002
      * @tc.desc Verify isProtected() returns true for protected static method
      * @tc.size MediumTest
@@ -203,7 +203,7 @@ export default function StaticMethodIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PROTECTED_0300
      * @tc.name testStaticMethodIsProtected003
      * @tc.desc Verify isProtected() returns false for public static method
      * @tc.size MediumTest
@@ -220,7 +220,7 @@ export default function StaticMethodIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PROTECTED_0400
      * @tc.name testStaticMethodIsProtected004
      * @tc.desc Verify isProtected() returns false for private static method
      * @tc.size MediumTest
@@ -236,7 +236,7 @@ export default function StaticMethodIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PROTECTED_0500
      * @tc.name testStaticMethodIsProtected005
      * @tc.desc Verify isProtected() for protected async static method
      * @tc.size MediumTest
@@ -251,7 +251,7 @@ export default function StaticMethodIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PROTECTED_0600
      * @tc.name testStaticMethodIsProtected006
      * @tc.desc Verify isProtected() for protected final static method
      * @tc.size MediumTest
@@ -266,7 +266,7 @@ export default function StaticMethodIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PROTECTED_0700
      * @tc.name testStaticMethodIsProtected007
      * @tc.desc Verify isProtected() for abstract class protected method
      * @tc.size MediumTest
@@ -281,7 +281,7 @@ export default function StaticMethodIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PROTECTED_0800
      * @tc.name testStaticMethodIsProtected008
      * @tc.desc Verify isProtected() for final class protected method
      * @tc.size MediumTest
@@ -296,7 +296,7 @@ export default function StaticMethodIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PROTECTED_0900
      * @tc.name testStaticMethodIsProtected009
      * @tc.desc Verify isProtected() return type is boolean
      * @tc.size MediumTest
@@ -315,7 +315,7 @@ export default function StaticMethodIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PROTECTED_1000
      * @tc.name testStaticMethodIsProtected010
      * @tc.desc Verify isProtected() returns only true or false
      * @tc.size MediumTest
@@ -332,7 +332,7 @@ export default function StaticMethodIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PROTECTED_1100
      * @tc.name testStaticMethodIsProtected011
      * @tc.desc Verify mutual exclusivity between isProtected, isPublic, and isPrivate
      * @tc.size MediumTest
@@ -350,7 +350,7 @@ export default function StaticMethodIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PROTECTED_1200
      * @tc.name testStaticMethodIsProtected012
      * @tc.desc Verify isProtected() for multiple protected methods in same class
      * @tc.size MediumTest
@@ -366,7 +366,7 @@ export default function StaticMethodIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PROTECTED_1300
      * @tc.name testStaticMethodIsProtected013
      * @tc.desc Verify isProtected() for method with default access level
      * @tc.size MediumTest
@@ -382,7 +382,7 @@ export default function StaticMethodIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PROTECTED_1400
      * @tc.name testStaticMethodIsProtected014
      * @tc.desc Verify isProtected() for protected methods in inheritance relationship
      * @tc.size MediumTest
@@ -399,7 +399,7 @@ export default function StaticMethodIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PROTECTED_1500
      * @tc.name testStaticMethodIsProtected015
      * @tc.desc Verify isProtected() does not throw exception
      * @tc.size MediumTest
@@ -415,7 +415,7 @@ export default function StaticMethodIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PROTECTED_1600
      * @tc.name testStaticMethodIsProtected016
      * @tc.desc Verify isProtected() for protected+final modifier combination
      * @tc.size MediumTest
@@ -430,7 +430,7 @@ export default function StaticMethodIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PROTECTED_1700
      * @tc.name testStaticMethodIsProtected017
      * @tc.desc Verify isProtected() for protected+async modifier combination
      * @tc.size MediumTest
@@ -445,7 +445,7 @@ export default function StaticMethodIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PROTECTED_1800
      * @tc.name testStaticMethodIsProtected018
      * @tc.desc Verify isProtected() for Deprecated protected method
      * @tc.size MediumTest
@@ -460,7 +460,7 @@ export default function StaticMethodIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PROTECTED_1900
      * @tc.name testStaticMethodIsProtected019
      * @tc.desc Verify isProtected() for async protected method
      * @tc.size MediumTest
@@ -475,7 +475,7 @@ export default function StaticMethodIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PROTECTED_2000
      * @tc.name testStaticMethodIsProtected020
      * @tc.desc Verify isProtected() comparison between async public and async protected
      * @tc.size MediumTest
@@ -495,7 +495,7 @@ export default function StaticMethodIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PROTECTED_2100
      * @tc.name testStaticMethodIsProtected021
      * @tc.desc Verify isProtected() for normal, abstract, and final class protected methods
      * @tc.size MediumTest
@@ -514,7 +514,7 @@ export default function StaticMethodIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PROTECTED_2200
      * @tc.name testStaticMethodIsProtected022
      * @tc.desc Verify isProtected() for protected utility and helper methods
      * @tc.size MediumTest
@@ -531,7 +531,7 @@ export default function StaticMethodIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PROTECTED_2300
      * @tc.name testStaticMethodIsProtected023
      * @tc.desc Verify isProtected() counts protected methods in class with mixed access levels
      * @tc.size MediumTest
@@ -554,7 +554,7 @@ export default function StaticMethodIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PROTECTED_2400
      * @tc.name testStaticMethodIsProtected024
      * @tc.desc Verify isProtected() combined with other method property checks
      * @tc.size MediumTest
@@ -572,7 +572,7 @@ export default function StaticMethodIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PROTECTED_2500
      * @tc.name testStaticMethodIsProtected025
      * @tc.desc Verify filtering protected methods from all static methods
      * @tc.size MediumTest
@@ -595,7 +595,7 @@ export default function StaticMethodIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PROTECTED_2600
      * @tc.name testStaticMethodIsProtected026
      * @tc.desc Verify access level statistics across all methods in a class
      * @tc.size MediumTest
@@ -626,7 +626,7 @@ export default function StaticMethodIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PROTECTED_2700
      * @tc.name testStaticMethodIsProtected027
      * @tc.desc Verify each method has exactly one access level
      * @tc.size MediumTest

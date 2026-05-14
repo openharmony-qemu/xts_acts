@@ -196,7 +196,7 @@ export default function StaticMethodIsSetterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SETTER_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_SETTER_0100
      * @tc.name testStaticMethodIsSetter001
      * @tc.desc Verify isSetter() call with no parameters
      * @tc.size MediumTest
@@ -212,7 +212,7 @@ export default function StaticMethodIsSetterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SETTER_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_SETTER_0200
      * @tc.name testStaticMethodIsSetter002
      * @tc.desc Verify isSetter() returns true for setter method
      * @tc.size MediumTest
@@ -230,7 +230,7 @@ export default function StaticMethodIsSetterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SETTER_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_SETTER_0300
      * @tc.name testStaticMethodIsSetter003
      * @tc.desc Verify isSetter() returns false for normal method
      * @tc.size MediumTest
@@ -247,7 +247,7 @@ export default function StaticMethodIsSetterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SETTER_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_SETTER_0400
      * @tc.name testStaticMethodIsSetter004
      * @tc.desc Verify isSetter() returns false for getter method
      * @tc.size MediumTest
@@ -263,7 +263,7 @@ export default function StaticMethodIsSetterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SETTER_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_SETTER_0500
      * @tc.name testStaticMethodIsSetter005
      * @tc.desc Verify isSetter() for public setter
      * @tc.size MediumTest
@@ -279,7 +279,7 @@ export default function StaticMethodIsSetterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SETTER_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_SETTER_0600
      * @tc.name testStaticMethodIsSetter006
      * @tc.desc Verify isSetter() for private setter
      * @tc.size MediumTest
@@ -293,7 +293,7 @@ export default function StaticMethodIsSetterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SETTER_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_SETTER_0700
      * @tc.name testStaticMethodIsSetter007
      * @tc.desc Verify isSetter() for protected setter
      * @tc.size MediumTest
@@ -307,7 +307,7 @@ export default function StaticMethodIsSetterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SETTER_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_SETTER_0800
      * @tc.name testStaticMethodIsSetter008
      * @tc.desc Verify isSetter() for setters accepting different parameter types
      * @tc.size MediumTest
@@ -323,7 +323,7 @@ export default function StaticMethodIsSetterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SETTER_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_SETTER_0900
      * @tc.name testStaticMethodIsSetter009
      * @tc.desc Verify isSetter() for write-only property with only setter
      * @tc.size MediumTest
@@ -338,7 +338,7 @@ export default function StaticMethodIsSetterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SETTER_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_SETTER_1000
      * @tc.name testStaticMethodIsSetter010
      * @tc.desc Verify isSetter() return type is boolean
      * @tc.size MediumTest
@@ -356,7 +356,7 @@ export default function StaticMethodIsSetterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SETTER_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_SETTER_1100
      * @tc.name testStaticMethodIsSetter011
      * @tc.desc Verify isSetter() returns only true or false
      * @tc.size MediumTest
@@ -373,7 +373,7 @@ export default function StaticMethodIsSetterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SETTER_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_SETTER_1200
      * @tc.name testStaticMethodIsSetter012
      * @tc.desc Verify setter method has exactly one parameter
      * @tc.size MediumTest
@@ -389,7 +389,7 @@ export default function StaticMethodIsSetterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SETTER_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_SETTER_1300
      * @tc.name testStaticMethodIsSetter013
      * @tc.desc Verify setter method returns void type
      * @tc.size MediumTest
@@ -405,7 +405,7 @@ export default function StaticMethodIsSetterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SETTER_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_SETTER_1400
      * @tc.name testStaticMethodIsSetter014
      * @tc.desc Verify setter and getter are mutually exclusive
      * @tc.size MediumTest
@@ -424,7 +424,7 @@ export default function StaticMethodIsSetterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SETTER_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_SETTER_1500
      * @tc.name testStaticMethodIsSetter015
      * @tc.desc Verify isSetter() for abstract class setter
      * @tc.size MediumTest
@@ -439,7 +439,7 @@ export default function StaticMethodIsSetterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SETTER_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_SETTER_1600
      * @tc.name testStaticMethodIsSetter016
      * @tc.desc Verify isSetter() for final class setter
      * @tc.size MediumTest
@@ -454,7 +454,7 @@ export default function StaticMethodIsSetterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SETTER_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_SETTER_1700
      * @tc.name testStaticMethodIsSetter017
      * @tc.desc Verify setter method name starts with %%set- prefix
      * @tc.size MediumTest
@@ -470,7 +470,7 @@ export default function StaticMethodIsSetterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SETTER_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_SETTER_1800
      * @tc.name testStaticMethodIsSetter018
      * @tc.desc Verify isSetter() does not throw exception
      * @tc.size MediumTest
@@ -486,7 +486,7 @@ export default function StaticMethodIsSetterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SETTER_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_SETTER_1900
      * @tc.name testStaticMethodIsSetter019
      * @tc.desc Verify isSetter() for public setter with annotation
      * @tc.size MediumTest
@@ -502,7 +502,7 @@ export default function StaticMethodIsSetterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SETTER_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_SETTER_2000
      * @tc.name testStaticMethodIsSetter020
      * @tc.desc Verify isSetter() for normal, abstract, and final class setters
      * @tc.size MediumTest
@@ -523,7 +523,7 @@ export default function StaticMethodIsSetterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SETTER_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_SETTER_2100
      * @tc.name testStaticMethodIsSetter021
      * @tc.desc Verify isSetter() counts setters in a class correctly
      * @tc.size MediumTest
@@ -544,7 +544,7 @@ export default function StaticMethodIsSetterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SETTER_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_SETTER_2200
      * @tc.name testStaticMethodIsSetter022
      * @tc.desc Verify isSetter() combined with other method property checks
      * @tc.size MediumTest
@@ -562,7 +562,7 @@ export default function StaticMethodIsSetterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SETTER_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_SETTER_2300
      * @tc.name testStaticMethodIsSetter023
      * @tc.desc Verify filtering setter methods from all static methods
      * @tc.size MediumTest
@@ -583,7 +583,7 @@ export default function StaticMethodIsSetterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SETTER_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_SETTER_2400
      * @tc.name testStaticMethodIsSetter024
      * @tc.desc Verify setter and getter pairing — some properties may have only setter
      * @tc.size MediumTest
@@ -608,7 +608,7 @@ export default function StaticMethodIsSetterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SETTER_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_SETTER_2500
      * @tc.name testStaticMethodIsSetter025
      * @tc.desc Verify setter parameter type matches corresponding getter return type
      * @tc.size MediumTest

@@ -136,7 +136,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETER_TYPE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_0100
      * @tc.name testStaticMethodGetParameterType001
      * @tc.desc Verify getParameterType() accepts single index parameter
      * @tc.size MediumTest
@@ -152,7 +152,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETER_TYPE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_0200
      * @tc.name testStaticMethodGetParameterType002
      * @tc.desc Verify getParameterType() with valid index returns correct type
      * @tc.size MediumTest
@@ -170,7 +170,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETER_TYPE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_0300
      * @tc.name testStaticMethodGetParameterType003
      * @tc.desc Verify getParameterType(0) returns first parameter type
      * @tc.size MediumTest
@@ -187,7 +187,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETER_TYPE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_0400
      * @tc.name testStaticMethodGetParameterType004
      * @tc.desc Verify getParameterType() with last parameter index
      * @tc.size MediumTest
@@ -204,7 +204,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETER_TYPE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_0500
      * @tc.name testStaticMethodGetParameterType005
      * @tc.desc Verify method exists and valid parameter access works (negative index throws TypeError at runtime)
      * @tc.size MediumTest
@@ -219,7 +219,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETER_TYPE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_0600
      * @tc.name testStaticMethodGetParameterType006
      * @tc.desc Verify method exists and valid parameter access works (out-of-range index throws TypeError at runtime)
      * @tc.size MediumTest
@@ -234,7 +234,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETER_TYPE_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_0700
      * @tc.name testStaticMethodGetParameterType007
      * @tc.desc Verify method exists and valid parameter access works (max int index throws TypeError at runtime)
      * @tc.size MediumTest
@@ -249,7 +249,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETER_TYPE_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_0800
      * @tc.name testStaticMethodGetParameterType008
      * @tc.desc Verify getParameterType() returns Class object with usable methods
      * @tc.size MediumTest
@@ -268,7 +268,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETER_TYPE_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_0900
      * @tc.name testStaticMethodGetParameterType009
      * @tc.desc Verify getParameterType() returns correct types for different parameter positions
      * @tc.size MediumTest
@@ -287,7 +287,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETER_TYPE_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_1000
      * @tc.name testStaticMethodGetParameterType010
      * @tc.desc Verify method exists and getParameterType throws for no-parameter method (runtime validates index)
      * @tc.size MediumTest
@@ -302,7 +302,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETER_TYPE_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_1100
      * @tc.name testStaticMethodGetParameterType011
      * @tc.desc Verify method exists and valid parameter access works (index 100 throws TypeError at runtime)
      * @tc.size MediumTest
@@ -317,7 +317,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETER_TYPE_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_1200
      * @tc.name testStaticMethodGetParameterType012
      * @tc.desc Verify getParameterType() for special parameter types like Map and union
      * @tc.size MediumTest
@@ -336,7 +336,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETER_TYPE_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_1300
      * @tc.name testStaticMethodGetParameterType013
      * @tc.desc Verify getParameterType() return type is object with getName method
      * @tc.size MediumTest
@@ -356,7 +356,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETER_TYPE_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_1400
      * @tc.name testStaticMethodGetParameterType014
      * @tc.desc Verify getParameterType() returned Class object has complete method set
      * @tc.size MediumTest
@@ -376,7 +376,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETER_TYPE_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_1500
      * @tc.name testStaticMethodGetParameterType015
      * @tc.desc Verify getParameterType(0) returns first parameter type
      * @tc.size MediumTest
@@ -391,7 +391,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETER_TYPE_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_1600
      * @tc.name testStaticMethodGetParameterType016
      * @tc.desc Verify getParameterType() returns last valid parameter type
      * @tc.size MediumTest
@@ -406,7 +406,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETER_TYPE_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_1700
      * @tc.name testStaticMethodGetParameterType017
      * @tc.desc Verify getParameterType() for single-parameter method
      * @tc.size MediumTest
@@ -421,7 +421,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETER_TYPE_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_1800
      * @tc.name testStaticMethodGetParameterType018
      * @tc.desc Verify getParameterType() does not throw exception
      * @tc.size MediumTest
@@ -437,7 +437,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETER_TYPE_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_1900
      * @tc.name testStaticMethodGetParameterType019
      * @tc.desc Verify getParameterType() for methods with different modifiers
      * @tc.size MediumTest
@@ -459,7 +459,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETER_TYPE_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_2000
      * @tc.name testStaticMethodGetParameterType020
      * @tc.desc Verify getParameterType() for async static method parameters
      * @tc.size MediumTest
@@ -476,7 +476,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETER_TYPE_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_2100
      * @tc.name testStaticMethodGetParameterType021
      * @tc.desc Verify getParameterType() for abstract and final class static methods
      * @tc.size MediumTest
@@ -494,7 +494,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETER_TYPE_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_2200
      * @tc.name testStaticMethodGetParameterType022
      * @tc.desc Verify getParameterType() for setter method parameter type
      * @tc.size MediumTest
@@ -511,7 +511,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETER_TYPE_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_2300
      * @tc.name testStaticMethodGetParameterType023
      * @tc.desc Verify getParameterType() iterating all parameters by index
      * @tc.size MediumTest
@@ -532,7 +532,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETER_TYPE_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_2400
      * @tc.name testStaticMethodGetParameterType024
      * @tc.desc Verify getParameterType() results consistent with getParameterTypes()
      * @tc.size MediumTest
