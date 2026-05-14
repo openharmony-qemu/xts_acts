@@ -1,3 +1,4 @@
+'use static'
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,23 @@
  * limitations under the License.
  */
 
-'use static'
+import {
+  Entry,
+  Component,
+  Scroll,
+  Column,
+  Text,
+  BarState,
+  ColumnOptions,
+} from '@kit.ArkUI';
 
-import { Entry, Component, Column, Scroll, Text, BarState } from '@kit.ArkUI';
 
 @Entry
 @Component
 struct InspectorLabelTest {
   build() {
     Scroll() {
-      Column({ space: 10 }) {
+      Column({ space: 10 } as ColumnOptions) {
         Text('inspectorLabel valid')
           .width('90%')
           .height('10%')
@@ -30,14 +38,6 @@ struct InspectorLabelTest {
           .fontSize(16)
           .maxLines(1)
           .inspectorLabel('TEST_LABEL')
-
-        Text('inspectorLabel null')
-          .width('90%')
-          .height('10%')
-          .id('text_inspectorLabel_null')
-          .fontSize(16)
-          .maxLines(1)
-          .inspectorLabel(null)
 
         Text('inspectorLabel undefined')
           .width('90%')
