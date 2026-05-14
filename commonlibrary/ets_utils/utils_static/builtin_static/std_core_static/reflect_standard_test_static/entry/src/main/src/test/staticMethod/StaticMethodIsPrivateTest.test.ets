@@ -168,7 +168,6 @@ export default function StaticMethodIsPrivateTest(): void {
       let methods = cls.getStaticMethods();
       // ArkTS 1.2: getStaticMethods() 不返回 private 方法
       expect(methods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -184,7 +183,6 @@ export default function StaticMethodIsPrivateTest(): void {
       let methods = cls.getStaticMethods();
       // ArkTS 1.2: getStaticMethods() 不返回 private 方法
       expect(methods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -201,7 +199,6 @@ export default function StaticMethodIsPrivateTest(): void {
       expect(method != undefined).assertTrue();
       let isPrivate: boolean = method!.isPrivate();
       expect(isPrivate).assertFalse();
-      return;
     });
 
     /**
@@ -217,7 +214,6 @@ export default function StaticMethodIsPrivateTest(): void {
       let methods = cls.getStaticMethods();
       // ArkTS 1.2: getStaticMethods() 不返回 protected 方法
       expect(methods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -232,7 +228,6 @@ export default function StaticMethodIsPrivateTest(): void {
       let methods = Class.from<MyClass005>().getStaticMethods();
       // ArkTS 1.2: getStaticMethods() 不返回 private async 方法
       expect(methods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -247,7 +242,6 @@ export default function StaticMethodIsPrivateTest(): void {
       let methods = Class.from<MyClass006>().getStaticMethods();
       // ArkTS 1.2: getStaticMethods() 不返回 private final 方法
       expect(methods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -262,7 +256,6 @@ export default function StaticMethodIsPrivateTest(): void {
       let methods = Class.from<AbstractClass007>().getStaticMethods();
       // ArkTS 1.2: getStaticMethods() 不返回抽象类的 private 方法
       expect(methods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -277,7 +270,6 @@ export default function StaticMethodIsPrivateTest(): void {
       let methods = Class.from<FinalClass008>().getStaticMethods();
       // ArkTS 1.2: getStaticMethods() 不返回 final 类的 private 方法
       expect(methods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -296,7 +288,6 @@ export default function StaticMethodIsPrivateTest(): void {
       let isPrivate: boolean = method!.isPrivate();
       expect(typeof isPrivate).assertEqual('boolean');
       expect(isPrivate === true || isPrivate === false).assertTrue();
-      return;
     });
 
     /**
@@ -313,7 +304,6 @@ export default function StaticMethodIsPrivateTest(): void {
       expect(method != undefined).assertTrue();
       let isPrivate: boolean = method!.isPrivate();
       expect(isPrivate === true || isPrivate === false).assertTrue();
-      return;
     });
 
     /**
@@ -331,7 +321,6 @@ export default function StaticMethodIsPrivateTest(): void {
       // ArkTS 1.2: getStaticMethods() 只返回 public 方法，用 public 方法验证互斥关系
       expect(!method!.isPrivate() && method!.isPublic()).assertTrue();
       expect(method!.isProtected()).assertFalse();
-      return;
     });
 
     /**
@@ -347,7 +336,6 @@ export default function StaticMethodIsPrivateTest(): void {
       let methods = cls.getStaticMethods();
       // ArkTS 1.2: getStaticMethods() 不返回 private 方法
       expect(methods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -363,7 +351,6 @@ export default function StaticMethodIsPrivateTest(): void {
       let method = cls.getStaticMethod('defaultMethod');
       expect(method != undefined).assertTrue();
       let isPrivate: boolean = method!.isPrivate();
-      return;
     });
 
     /**
@@ -379,7 +366,6 @@ export default function StaticMethodIsPrivateTest(): void {
       let method = Class.from<MyClass003>().getStaticMethod('publicMethod');
       expect(method != undefined).assertTrue();
       let isPrivate: boolean = method!.isPrivate();
-      return;
     });
 
     /**
@@ -394,7 +380,6 @@ export default function StaticMethodIsPrivateTest(): void {
       let methods = Class.from<MyClass015>().getStaticMethods();
       // ArkTS 1.2: getStaticMethods() 不返回 private final 方法
       expect(methods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -409,7 +394,6 @@ export default function StaticMethodIsPrivateTest(): void {
       let methods = Class.from<MyClass016>().getStaticMethods();
       // ArkTS 1.2: getStaticMethods() 不返回 private async 方法
       expect(methods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -424,7 +408,6 @@ export default function StaticMethodIsPrivateTest(): void {
       let methods = Class.from<MyClass017>().getStaticMethods();
       // ArkTS 1.2: getStaticMethods() 不返回 private 方法
       expect(methods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -439,7 +422,6 @@ export default function StaticMethodIsPrivateTest(): void {
       let methods = Class.from<MyClass018>().getStaticMethods();
       // ArkTS 1.2: getStaticMethods() 不返回 private async 方法
       expect(methods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -459,7 +441,6 @@ export default function StaticMethodIsPrivateTest(): void {
       // ArkTS 1.2: 类有 public 方法时，getStaticMethods() 返回所有方法(含 private)
       let methods = cls.getStaticMethods();
       expect(methods.length).assertEqual(2);
-      return;
     });
 
     /**
@@ -478,7 +459,6 @@ export default function StaticMethodIsPrivateTest(): void {
       expect(m1Methods.length).assertEqual(0);
       expect(m2Methods.length).assertEqual(0);
       expect(m3Methods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -493,7 +473,6 @@ export default function StaticMethodIsPrivateTest(): void {
       let methods = Class.from<MyClass021>().getStaticMethods();
       // ArkTS 1.2: getStaticMethods() 不返回 private 方法
       expect(methods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -508,7 +487,6 @@ export default function StaticMethodIsPrivateTest(): void {
       let methods = Class.from<MyClass022>().getStaticMethods();
       // ArkTS 1.2: getStaticMethods() 不返回 private 方法
       expect(methods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -531,7 +509,6 @@ export default function StaticMethodIsPrivateTest(): void {
         }
       }
       expect(privateCount).assertEqual(0);
-      return;
     });
 
     /**
@@ -549,7 +526,6 @@ export default function StaticMethodIsPrivateTest(): void {
       expect(method!.isPrivate()).assertFalse();
       expect(method!.isPublic()).assertTrue();
       expect(method!.isProtected()).assertFalse();
-      return;
     });
 
     /**
@@ -572,7 +548,6 @@ export default function StaticMethodIsPrivateTest(): void {
         }
       }
       expect(privateMethods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -603,7 +578,6 @@ export default function StaticMethodIsPrivateTest(): void {
       expect(publicCount).assertEqual(2);
       expect(privateCount).assertEqual(0);
       expect(protectedCount).assertEqual(0);
-      return;
     });
   });
 }

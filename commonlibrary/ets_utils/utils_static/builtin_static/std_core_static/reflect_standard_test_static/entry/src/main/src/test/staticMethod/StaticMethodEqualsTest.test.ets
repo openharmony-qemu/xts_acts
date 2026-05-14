@@ -58,7 +58,6 @@ class StaticMethodEqualsDifferentReturnClass006 {
 class StaticMethodEqualsSyncAsyncClass007 {
   public static syncMethod(): void {}
   public static async asyncMethod(): Promise<void> {
-    return;
   }
 }
 

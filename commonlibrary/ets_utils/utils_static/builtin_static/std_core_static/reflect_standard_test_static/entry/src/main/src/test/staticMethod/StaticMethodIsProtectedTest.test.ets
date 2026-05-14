@@ -183,7 +183,6 @@ export default function StaticMethodIsProtectedTest(): void {
       let methods = cls.getStaticMethods();
       // ArkTS 1.2: getStaticMethods() 不返回 protected 方法
       expect(methods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -199,7 +198,6 @@ export default function StaticMethodIsProtectedTest(): void {
       let methods = cls.getStaticMethods();
       // ArkTS 1.2: getStaticMethods() 不返回 protected 方法
       expect(methods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -216,7 +214,6 @@ export default function StaticMethodIsProtectedTest(): void {
       expect(method != undefined).assertTrue();
       let isProtected: boolean = method!.isProtected();
       expect(isProtected).assertFalse();
-      return;
     });
 
     /**
@@ -232,7 +229,6 @@ export default function StaticMethodIsProtectedTest(): void {
       let methods = cls.getStaticMethods();
       // ArkTS 1.2: getStaticMethods() 不返回 private 方法
       expect(methods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -247,7 +243,6 @@ export default function StaticMethodIsProtectedTest(): void {
       let methods = Class.from<MyClass005>().getStaticMethods();
       // ArkTS 1.2: getStaticMethods() 不返回 protected async 方法
       expect(methods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -262,7 +257,6 @@ export default function StaticMethodIsProtectedTest(): void {
       let methods = Class.from<MyClass006>().getStaticMethods();
       // ArkTS 1.2: getStaticMethods() 不返回 protected final 方法
       expect(methods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -277,7 +271,6 @@ export default function StaticMethodIsProtectedTest(): void {
       let methods = Class.from<AbstractClass007>().getStaticMethods();
       // ArkTS 1.2: getStaticMethods() 不返回抽象类的 protected 方法
       expect(methods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -292,7 +285,6 @@ export default function StaticMethodIsProtectedTest(): void {
       let methods = Class.from<FinalClass008>().getStaticMethods();
       // ArkTS 1.2: getStaticMethods() 不返回 final 类的 protected 方法
       expect(methods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -311,7 +303,6 @@ export default function StaticMethodIsProtectedTest(): void {
       let isProtected: boolean = method!.isProtected();
       expect(typeof isProtected).assertEqual('boolean');
       expect(isProtected === true || isProtected === false).assertTrue();
-      return;
     });
 
     /**
@@ -328,7 +319,6 @@ export default function StaticMethodIsProtectedTest(): void {
       expect(method != undefined).assertTrue();
       let isProtected: boolean = method!.isProtected();
       expect(isProtected === true || isProtected === false).assertTrue();
-      return;
     });
 
     /**
@@ -346,7 +336,6 @@ export default function StaticMethodIsProtectedTest(): void {
       // ArkTS 1.2: getStaticMethods() 只返回 public 方法，用 public 方法验证互斥关系
       expect(!method!.isProtected() && method!.isPublic()).assertTrue();
       expect(method!.isPrivate()).assertFalse();
-      return;
     });
 
     /**
@@ -362,7 +351,6 @@ export default function StaticMethodIsProtectedTest(): void {
       let methods = cls.getStaticMethods();
       // ArkTS 1.2: getStaticMethods() 不返回 protected 方法
       expect(methods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -378,7 +366,6 @@ export default function StaticMethodIsProtectedTest(): void {
       let method = cls.getStaticMethod('defaultMethod');
       expect(method != undefined).assertTrue();
       let isProtected: boolean = method!.isProtected();
-      return;
     });
 
     /**
@@ -395,7 +382,6 @@ export default function StaticMethodIsProtectedTest(): void {
       let childMethods = Class.from<ChildClass014>().getStaticMethods();
       expect(parentMethods.length).assertEqual(0);
       expect(childMethods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -411,7 +397,6 @@ export default function StaticMethodIsProtectedTest(): void {
       let method = Class.from<MyClass003>().getStaticMethod('publicMethod');
       expect(method != undefined).assertTrue();
       let isProtected: boolean = method!.isProtected();
-      return;
     });
 
     /**
@@ -426,7 +411,6 @@ export default function StaticMethodIsProtectedTest(): void {
       let methods = Class.from<MyClass016>().getStaticMethods();
       // ArkTS 1.2: getStaticMethods() 不返回 protected final 方法
       expect(methods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -441,7 +425,6 @@ export default function StaticMethodIsProtectedTest(): void {
       let methods = Class.from<MyClass017>().getStaticMethods();
       // ArkTS 1.2: getStaticMethods() 不返回 protected async 方法
       expect(methods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -456,7 +439,6 @@ export default function StaticMethodIsProtectedTest(): void {
       let methods = Class.from<MyClass018>().getStaticMethods();
       // ArkTS 1.2: getStaticMethods() 不返回 protected 方法
       expect(methods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -471,7 +453,6 @@ export default function StaticMethodIsProtectedTest(): void {
       let methods = Class.from<MyClass019>().getStaticMethods();
       // ArkTS 1.2: getStaticMethods() 不返回 protected async 方法
       expect(methods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -491,7 +472,6 @@ export default function StaticMethodIsProtectedTest(): void {
       // ArkTS 1.2: 类有 public 方法时，getStaticMethods() 返回所有方法(含 protected)
       let methods = cls.getStaticMethods();
       expect(methods.length).assertEqual(2);
-      return;
     });
 
     /**
@@ -510,7 +490,6 @@ export default function StaticMethodIsProtectedTest(): void {
       expect(m1Methods.length).assertEqual(0);
       expect(m2Methods.length).assertEqual(0);
       expect(m3Methods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -527,7 +506,6 @@ export default function StaticMethodIsProtectedTest(): void {
       let m2Methods = Class.from<MyClass023>().getStaticMethods();
       expect(m1Methods.length).assertEqual(0);
       expect(m2Methods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -550,7 +528,6 @@ export default function StaticMethodIsProtectedTest(): void {
         }
       }
       expect(protectedCount).assertEqual(0);
-      return;
     });
 
     /**
@@ -568,7 +545,6 @@ export default function StaticMethodIsProtectedTest(): void {
       expect(method!.isProtected()).assertFalse();
       expect(method!.isPublic()).assertTrue();
       expect(method!.isPrivate()).assertFalse();
-      return;
     });
 
     /**
@@ -591,7 +567,6 @@ export default function StaticMethodIsProtectedTest(): void {
         }
       }
       expect(protectedMethods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -622,7 +597,6 @@ export default function StaticMethodIsProtectedTest(): void {
       expect(publicCount).assertEqual(2);
       expect(privateCount).assertEqual(0);
       expect(protectedCount).assertEqual(0);
-      return;
     });
 
     /**
@@ -646,7 +620,6 @@ export default function StaticMethodIsProtectedTest(): void {
         if (method.isProtected()) count++;
         expect(count).assertEqual(1);
       }
-      return;
     });
   });
 }

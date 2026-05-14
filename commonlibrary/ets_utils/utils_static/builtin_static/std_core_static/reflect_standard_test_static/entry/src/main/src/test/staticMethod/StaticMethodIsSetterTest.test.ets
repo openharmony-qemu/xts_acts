@@ -208,7 +208,6 @@ export default function StaticMethodIsSetterTest(): void {
       let method = cls.getStaticMethod('%%set-name');
       expect(method != undefined).assertTrue();
       let isSetter: boolean = method!.isSetter();
-      return;
     });
 
     /**
@@ -226,7 +225,6 @@ export default function StaticMethodIsSetterTest(): void {
       let isSetter: boolean = method!.isSetter();
       expect(isSetter).assertTrue();
       expect(typeof isSetter).assertEqual('boolean');
-      return;
     });
 
     /**
@@ -243,7 +241,6 @@ export default function StaticMethodIsSetterTest(): void {
       expect(method != undefined).assertTrue();
       let isSetter: boolean = method!.isSetter();
       expect(isSetter).assertFalse();
-      return;
     });
 
     /**
@@ -259,7 +256,6 @@ export default function StaticMethodIsSetterTest(): void {
       expect(method != undefined).assertTrue();
       expect(method!.isSetter()).assertFalse();
       expect(method!.isGetter()).assertTrue();
-      return;
     });
 
     /**
@@ -275,7 +271,6 @@ export default function StaticMethodIsSetterTest(): void {
       expect(method != undefined).assertTrue();
       expect(method!.isSetter()).assertTrue();
       expect(method!.isPublic()).assertTrue();
-      return;
     });
 
     /**
@@ -289,7 +284,6 @@ export default function StaticMethodIsSetterTest(): void {
     it('testStaticMethodIsSetter006', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let method = Class.from<MyClass006>().getStaticMethod('%%set-name');
       expect(method == undefined).assertTrue();
-      return;
     });
 
     /**
@@ -303,7 +297,6 @@ export default function StaticMethodIsSetterTest(): void {
     it('testStaticMethodIsSetter007', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let method = Class.from<MyClass007>().getStaticMethod('%%set-name');
       expect(method == undefined).assertTrue();
-      return;
     });
 
     /**
@@ -319,7 +312,6 @@ export default function StaticMethodIsSetterTest(): void {
       expect(cls.getStaticMethod('%%set-strProp')!.isSetter()).assertTrue();
       expect(cls.getStaticMethod('%%set-numProp')!.isSetter()).assertTrue();
       expect(cls.getStaticMethod('%%set-boolProp')!.isSetter()).assertTrue();
-      return;
     });
 
     /**
@@ -334,7 +326,6 @@ export default function StaticMethodIsSetterTest(): void {
       let method = Class.from<MyClass009>().getStaticMethod('%%set-writeOnlyValue');
       expect(method != undefined).assertTrue();
       expect(method!.isSetter()).assertTrue();
-      return;
     });
 
     /**
@@ -352,7 +343,6 @@ export default function StaticMethodIsSetterTest(): void {
       let isSetter: boolean = method!.isSetter();
       expect(typeof isSetter).assertEqual('boolean');
       expect(isSetter === true || isSetter === false).assertTrue();
-      return;
     });
 
     /**
@@ -369,7 +359,6 @@ export default function StaticMethodIsSetterTest(): void {
       expect(method != undefined).assertTrue();
       let isSetter: boolean = method!.isSetter();
       expect(isSetter === true || isSetter === false).assertTrue();
-      return;
     });
 
     /**
@@ -385,7 +374,6 @@ export default function StaticMethodIsSetterTest(): void {
       expect(method != undefined).assertTrue();
       expect(method!.isSetter()).assertTrue();
       expect(method!.getParametersNum()).assertEqual(1);
-      return;
     });
 
     /**
@@ -401,7 +389,6 @@ export default function StaticMethodIsSetterTest(): void {
       expect(method != undefined).assertTrue();
       expect(method!.isSetter()).assertTrue();
       expect(method!.getReturnType().getName()).assertEqual('void');
-      return;
     });
 
     /**
@@ -420,7 +407,6 @@ export default function StaticMethodIsSetterTest(): void {
       expect(setter != undefined).assertTrue();
       expect(setter!.isSetter() && !setter!.isGetter()).assertTrue();
       expect(getter!.isGetter() && !getter!.isSetter()).assertTrue();
-      return;
     });
 
     /**
@@ -435,7 +421,6 @@ export default function StaticMethodIsSetterTest(): void {
       let method = Class.from<AbstractClass015>().getStaticMethod('%%set-value');
       expect(method != undefined).assertTrue();
       expect(method!.isSetter()).assertTrue();
-      return;
     });
 
     /**
@@ -450,7 +435,6 @@ export default function StaticMethodIsSetterTest(): void {
       let method = Class.from<FinalClass016>().getStaticMethod('%%set-value');
       expect(method != undefined).assertTrue();
       expect(method!.isSetter()).assertTrue();
-      return;
     });
 
     /**
@@ -466,7 +450,6 @@ export default function StaticMethodIsSetterTest(): void {
       expect(method != null).assertTrue();
       expect(method!.getName()).assertEqual('%%set-myProp');
       expect(method!.isSetter()).assertTrue();
-      return;
     });
 
     /**
@@ -482,7 +465,6 @@ export default function StaticMethodIsSetterTest(): void {
       let method = cls.getStaticMethod('%%set-name');
       expect(method != undefined).assertTrue();
       let isSetter: boolean = method!.isSetter();
-      return;
     });
 
     /**
@@ -498,7 +480,6 @@ export default function StaticMethodIsSetterTest(): void {
       expect(method != undefined).assertTrue();
       expect(method!.isSetter()).assertTrue();
       expect(method!.isPublic()).assertTrue();
-      return;
     });
 
     /**
@@ -519,7 +500,6 @@ export default function StaticMethodIsSetterTest(): void {
       expect(m1!.isSetter()).assertTrue();
       expect(m2!.isSetter()).assertTrue();
       expect(m3!.isSetter()).assertTrue();
-      return;
     });
 
     /**
@@ -540,7 +520,6 @@ export default function StaticMethodIsSetterTest(): void {
         }
       }
       expect(setterCount).assertEqual(3);
-      return;
     });
 
     /**
@@ -558,7 +537,6 @@ export default function StaticMethodIsSetterTest(): void {
       expect(method!.isGetter()).assertFalse();
       expect(method!.getParametersNum()).assertEqual(1);
       expect(method!.getReturnType().getName()).assertEqual('void');
-      return;
     });
 
     /**
@@ -579,7 +557,6 @@ export default function StaticMethodIsSetterTest(): void {
         }
       }
       expect(setters.length).assertEqual(2);
-      return;
     });
 
     /**
@@ -604,7 +581,6 @@ export default function StaticMethodIsSetterTest(): void {
       expect(nameSetter!.isSetter()).assertTrue();
       expect(ageSetter!.isSetter()).assertTrue();
       expect(ageGetter == null).assertTrue();
-      return;
     });
 
     /**
@@ -625,7 +601,6 @@ export default function StaticMethodIsSetterTest(): void {
       expect(setter!.isSetter()).assertTrue();
       expect(getter!.getReturnType().getName()).assertEqual('std.core.String');
       expect(setter!.getParameterType(0)!.getName()).assertEqual('std.core.String');
-      return;
     });
   });
 }

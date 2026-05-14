@@ -143,7 +143,6 @@ export default function StaticMethodGetOwnerTest(): void {
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
       let owner: Class = method!.getOwner();
-      return;
     });
 
     /**
@@ -161,7 +160,6 @@ export default function StaticMethodGetOwnerTest(): void {
       let owner: Class = method!.getOwner();
       expect(owner!= null).assertTrue();
       expect(owner.getName().includes('MyClass002')).assertTrue();
-      return;
     });
 
     /**
@@ -179,7 +177,6 @@ export default function StaticMethodGetOwnerTest(): void {
       expect(methodB != undefined).assertTrue();
       expect(methodA!.getOwner().getName().includes('ClassA003')).assertTrue();
       expect(methodB!.getOwner().getName().includes('ClassB003')).assertTrue();
-      return;
     });
 
     /**
@@ -197,7 +194,6 @@ export default function StaticMethodGetOwnerTest(): void {
       expect(childMethod != undefined).assertTrue();
       expect(parentMethod!.getOwner().getName().includes('ParentClass004')).assertTrue();
       expect(childMethod!.getOwner().getName().includes('ChildClass004')).assertTrue();
-      return;
     });
 
     /**
@@ -213,7 +209,6 @@ export default function StaticMethodGetOwnerTest(): void {
       let cls2: Class = Class.from<$SpecialClass005>();
       expect(cls1.getStaticMethod('test')!.getOwner().getName().includes('_PrivateClass005')).assertTrue();
       expect(cls2.getStaticMethod('test')!.getOwner().getName().includes('$SpecialClass005')).assertTrue();
-      return;
     });
 
     /**
@@ -231,7 +226,6 @@ export default function StaticMethodGetOwnerTest(): void {
       let owner: Class = method!.getOwner();
       expect(typeof owner).assertEqual('object');
       expect(owner.getName!= null).assertTrue();
-      return;
     });
 
     /**
@@ -250,7 +244,6 @@ export default function StaticMethodGetOwnerTest(): void {
       expect(owner.getName()!= null).assertTrue();
       expect(owner.getSuper!= null).assertTrue();
       expect(owner.isSubtypeOf!= null).assertTrue();
-      return;
     });
 
     /**
@@ -266,7 +259,6 @@ export default function StaticMethodGetOwnerTest(): void {
       let method = cls.getStaticMethod('staticMethod');
       expect(method != undefined).assertTrue();
       expect(method!.getOwner().getName().includes('GenericClass008')).assertTrue();
-      return;
     });
 
     /**
@@ -282,7 +274,6 @@ export default function StaticMethodGetOwnerTest(): void {
       let method = cls.getStaticMethod('ownMethod');
       expect(method != undefined).assertTrue();
       expect(method!.getOwner().getName().includes('MyClass009')).assertTrue();
-      return;
     });
 
     /**
@@ -298,7 +289,6 @@ export default function StaticMethodGetOwnerTest(): void {
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
       let owner: Class = method!.getOwner();
-      return;
     });
 
     /**
@@ -320,7 +310,6 @@ export default function StaticMethodGetOwnerTest(): void {
       expect(m1!.getOwner().getName().includes('MyClass011')).assertTrue();
       expect(m2!.getOwner().getName().includes('MyClass011')).assertTrue();
       expect(m3!.getOwner().getName().includes('MyClass011')).assertTrue();
-      return;
     });
 
     /**
@@ -336,7 +325,6 @@ export default function StaticMethodGetOwnerTest(): void {
       let method = cls.getStaticMethod('fetchData');
       expect(method != undefined).assertTrue();
       expect(method!.getOwner().getName().includes('MyClass012')).assertTrue();
-      return;
     });
 
     /**
@@ -357,7 +345,6 @@ export default function StaticMethodGetOwnerTest(): void {
       expect(m1!.getOwner().getName().includes('AbstractClass013')).assertTrue();
       expect(m2!.getOwner().getName().includes('FinalClass013')).assertTrue();
       expect(m3!.getOwner().getName().includes('NormalClass013')).assertTrue();
-      return;
     });
 
     /**
@@ -376,7 +363,6 @@ export default function StaticMethodGetOwnerTest(): void {
       expect(setter != undefined).assertTrue();
       expect(getter!.getOwner().getName().includes('MyClass014')).assertTrue();
       expect(setter!.getOwner().getName().includes('MyClass014')).assertTrue();
-      return;
     });
 
     /**
@@ -394,7 +380,6 @@ export default function StaticMethodGetOwnerTest(): void {
       for (let i: int = 0; i < methods.length; i++) {
         expect(methods[i].getOwner().getName()).assertEqual(ownerName);
       }
-      return;
     });
   });
 }

@@ -136,7 +136,6 @@ export default function StaticMethodIsNativeTest(): void {
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
       let isNative: boolean = method!.isNative();
-      return;
     });
 
     /**
@@ -154,7 +153,6 @@ export default function StaticMethodIsNativeTest(): void {
       let isNative: boolean = method!.isNative();
       expect(isNative).assertFalse();
       expect(typeof isNative).assertEqual('boolean');
-      return;
     });
 
     /**
@@ -170,7 +168,6 @@ export default function StaticMethodIsNativeTest(): void {
       let method = cls.getStaticMethod('userMethod');
       expect(method != undefined).assertTrue();
       expect(method!.isNative()).assertFalse();
-      return;
     });
 
     /**
@@ -185,7 +182,6 @@ export default function StaticMethodIsNativeTest(): void {
       let method = Class.from<AbstractClass004>().getStaticMethod('abstractMethod');
       expect(method != undefined).assertTrue();
       expect(method!.isNative()).assertFalse();
-      return;
     });
 
     /**
@@ -200,7 +196,6 @@ export default function StaticMethodIsNativeTest(): void {
       let method = Class.from<FinalClass005>().getStaticMethod('finalMethod');
       expect(method != undefined).assertTrue();
       expect(method!.isNative()).assertFalse();
-      return;
     });
 
     /**
@@ -215,7 +210,6 @@ export default function StaticMethodIsNativeTest(): void {
       let method = Class.from<MyClass006>().getStaticMethod('asyncMethod');
       expect(method != undefined).assertTrue();
       expect(method!.isNative()).assertFalse();
-      return;
     });
 
     /**
@@ -234,7 +228,6 @@ export default function StaticMethodIsNativeTest(): void {
       expect(setter != undefined).assertTrue();
       expect(getter!.isNative()).assertFalse();
       expect(setter!.isNative()).assertFalse();
-      return;
     });
 
     /**
@@ -252,7 +245,6 @@ export default function StaticMethodIsNativeTest(): void {
       let isNative: boolean = method!.isNative();
       expect(typeof isNative).assertEqual('boolean');
       expect(isNative === true || isNative === false).assertTrue();
-      return;
     });
 
     /**
@@ -269,7 +261,6 @@ export default function StaticMethodIsNativeTest(): void {
       expect(method != undefined).assertTrue();
       let isNative: boolean = method!.isNative();
       expect(isNative === true || isNative === false).assertTrue();
-      return;
     });
 
     /**
@@ -287,7 +278,6 @@ export default function StaticMethodIsNativeTest(): void {
       let m1 = cls.getStaticMethod('publicMethod');
       expect(m1 != undefined).assertTrue();
       expect(m1!.isNative()).assertFalse();
-      return;
     });
 
     /**
@@ -306,7 +296,6 @@ export default function StaticMethodIsNativeTest(): void {
       expect(m2 != undefined).assertTrue();
       expect(m1!.isNative()).assertFalse();
       expect(m2!.isNative()).assertFalse();
-      return;
     });
 
     /**
@@ -322,7 +311,6 @@ export default function StaticMethodIsNativeTest(): void {
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
       let isNative: boolean = method!.isNative();
-      return;
     });
 
     /**
@@ -344,7 +332,6 @@ export default function StaticMethodIsNativeTest(): void {
       expect(m1!.isNative()).assertFalse();
       expect(m2!.isNative()).assertFalse();
       expect(m3!.isNative()).assertFalse();
-      return;
     });
 
     /**
@@ -360,7 +347,6 @@ export default function StaticMethodIsNativeTest(): void {
       let method = cls.getStaticMethod('fetchData');
       expect(method != undefined).assertTrue();
       expect(method!.isNative()).assertFalse();
-      return;
     });
 
     /**
@@ -381,7 +367,6 @@ export default function StaticMethodIsNativeTest(): void {
       expect(m1!.isNative()).assertFalse();
       expect(m2!.isNative()).assertFalse();
       expect(m3!.isNative()).assertFalse();
-      return;
     });
 
     /**
@@ -400,7 +385,6 @@ export default function StaticMethodIsNativeTest(): void {
       expect(setter != undefined).assertTrue();
       expect(getter!.isNative()).assertFalse();
       expect(setter!.isNative()).assertFalse();
-      return;
     });
 
     /**
@@ -418,7 +402,6 @@ export default function StaticMethodIsNativeTest(): void {
         let isNative: boolean = methods[i].isNative();
         expect(isNative).assertFalse();
       }
-      return;
     });
 
     /**
@@ -435,7 +418,6 @@ export default function StaticMethodIsNativeTest(): void {
       expect(method!.isNative()).assertFalse();
       expect(method!.isPublic()).assertTrue();
       expect(method!.isAsync()).assertFalse();
-      return;
     });
 
     /**
@@ -458,7 +440,6 @@ export default function StaticMethodIsNativeTest(): void {
         }
       }
       expect(validCount).assertEqual(methods.length);
-      return;
     });
 
     /**
@@ -478,7 +459,6 @@ export default function StaticMethodIsNativeTest(): void {
       for (let i: int = 0; i < arrayMethods.length; i++) {
         let isNative: boolean = arrayMethods[i].isNative();
       }
-      return;
     });
   });
 }

@@ -158,7 +158,6 @@ export default function StaticMethodIsPublicTest(): void {
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
       let isPublic: boolean = method!.isPublic();
-      return;
     });
 
     /**
@@ -176,7 +175,6 @@ export default function StaticMethodIsPublicTest(): void {
       let isPublic: boolean = method!.isPublic();
       expect(isPublic).assertTrue();
       expect(typeof isPublic).assertEqual('boolean');
-      return;
     });
 
     /**
@@ -191,7 +189,6 @@ export default function StaticMethodIsPublicTest(): void {
       let cls: Class = Class.from<MyClass003>();
       let methods = cls.getStaticMethods();
       expect(methods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -206,7 +203,6 @@ export default function StaticMethodIsPublicTest(): void {
       let cls: Class = Class.from<MyClass004>();
       let methods = cls.getStaticMethods();
       expect(methods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -222,7 +218,6 @@ export default function StaticMethodIsPublicTest(): void {
       let method = cls.getStaticMethod('defaultMethod');
       expect(method != undefined).assertTrue();
       let isPublic: boolean = method!.isPublic();
-      return;
     });
 
     /**
@@ -238,7 +233,6 @@ export default function StaticMethodIsPublicTest(): void {
       expect(method != undefined).assertTrue();
       expect(method!.isPublic()).assertTrue();
       expect(method!.isAsync()).assertTrue();
-      return;
     });
 
     /**
@@ -253,7 +247,6 @@ export default function StaticMethodIsPublicTest(): void {
       let method = Class.from<MyClass007>().getStaticMethod('finalMethod');
       expect(method != undefined).assertTrue();
       expect(method!.isPublic()).assertTrue();
-      return;
     });
 
     /**
@@ -267,7 +260,6 @@ export default function StaticMethodIsPublicTest(): void {
     it('testStaticMethodIsPublic008', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let methods = Class.from<MyClass008>().getStaticMethods();
       expect(methods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -285,7 +277,6 @@ export default function StaticMethodIsPublicTest(): void {
       let isPublic: boolean = method!.isPublic();
       expect(typeof isPublic).assertEqual('boolean');
       expect(isPublic === true || isPublic === false).assertTrue();
-      return;
     });
 
     /**
@@ -302,7 +293,6 @@ export default function StaticMethodIsPublicTest(): void {
       expect(method != undefined).assertTrue();
       let isPublic: boolean = method!.isPublic();
       expect(isPublic === true || isPublic === false).assertTrue();
-      return;
     });
 
     /**
@@ -320,7 +310,6 @@ export default function StaticMethodIsPublicTest(): void {
       let m1 = cls.getStaticMethod('publicMethod');
       expect(m1 != undefined).assertTrue();
       expect(m1!.isPublic() && !m1!.isPrivate() && !m1!.isProtected()).assertTrue();
-      return;
     });
 
     /**
@@ -335,7 +324,6 @@ export default function StaticMethodIsPublicTest(): void {
       let method = Class.from<AbstractClass012>().getStaticMethod('abstractMethod');
       expect(method != undefined).assertTrue();
       expect(method!.isPublic()).assertTrue();
-      return;
     });
 
     /**
@@ -350,7 +338,6 @@ export default function StaticMethodIsPublicTest(): void {
       let method = Class.from<FinalClass013>().getStaticMethod('finalMethod');
       expect(method != undefined).assertTrue();
       expect(method!.isPublic()).assertTrue();
-      return;
     });
 
     /**
@@ -369,7 +356,6 @@ export default function StaticMethodIsPublicTest(): void {
       expect(setter != undefined).assertTrue();
       expect(getter!.isPublic()).assertTrue();
       expect(setter!.isPublic()).assertTrue();
-      return;
     });
 
     /**
@@ -385,7 +371,6 @@ export default function StaticMethodIsPublicTest(): void {
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
       let isPublic: boolean = method!.isPublic();
-      return;
     });
 
     /**
@@ -400,7 +385,6 @@ export default function StaticMethodIsPublicTest(): void {
       let method = Class.from<MyClass016>().getStaticMethod('publicFinalMethod');
       expect(method != undefined).assertTrue();
       expect(method!.isPublic()).assertTrue();
-      return;
     });
 
     /**
@@ -416,7 +400,6 @@ export default function StaticMethodIsPublicTest(): void {
       expect(method != undefined).assertTrue();
       expect(method!.isPublic()).assertTrue();
       expect(method!.isAsync()).assertTrue();
-      return;
     });
 
     /**
@@ -431,7 +414,6 @@ export default function StaticMethodIsPublicTest(): void {
       let method = Class.from<MyClass018>().getStaticMethod('deprecatedMethod');
       expect(method != undefined).assertTrue();
       expect(method!.isPublic()).assertTrue();
-      return;
     });
 
     /**
@@ -447,7 +429,6 @@ export default function StaticMethodIsPublicTest(): void {
       expect(method != undefined).assertTrue();
       expect(method!.isPublic()).assertTrue();
       expect(method!.isAsync()).assertTrue();
-      return;
     });
 
     /**
@@ -461,7 +442,6 @@ export default function StaticMethodIsPublicTest(): void {
     it('testStaticMethodIsPublic020', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let methods = Class.from<MyClass020>().getStaticMethods();
       expect(methods.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -482,7 +462,6 @@ export default function StaticMethodIsPublicTest(): void {
       expect(m1!.isPublic()).assertTrue();
       expect(m2!.isPublic()).assertTrue();
       expect(m3!.isPublic()).assertTrue();
-      return;
     });
 
     /**
@@ -497,7 +476,6 @@ export default function StaticMethodIsPublicTest(): void {
       let method = Class.from<MyClass022>().getStaticMethod('factoryMethod');
       expect(method != undefined).assertTrue();
       expect(method!.isPublic()).assertTrue();
-      return;
     });
 
     /**
@@ -518,7 +496,6 @@ export default function StaticMethodIsPublicTest(): void {
         }
       }
       expect(publicCount).assertLarger(0);
-      return;
     });
 
     /**
@@ -537,7 +514,6 @@ export default function StaticMethodIsPublicTest(): void {
       expect(method!.isProtected()).assertFalse();
       expect(method!.isNative()).assertFalse();
       expect(method!.isAsync()).assertFalse();
-      return;
     });
 
     /**
@@ -558,7 +534,6 @@ export default function StaticMethodIsPublicTest(): void {
         }
       }
       expect(publicMethods.length).assertEqual(2);
-      return;
     });
   });
 }

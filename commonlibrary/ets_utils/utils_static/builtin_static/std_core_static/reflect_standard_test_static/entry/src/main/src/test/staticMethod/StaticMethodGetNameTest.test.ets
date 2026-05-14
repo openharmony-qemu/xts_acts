@@ -133,7 +133,6 @@ export default function StaticMethodGetNameTest(): void {
       let name: string = method!.getName();
       expect(name).assertEqual('test');
       expect(typeof name).assertEqual('string');
-      return;
     });
 
     /**
@@ -150,7 +149,6 @@ export default function StaticMethodGetNameTest(): void {
       expect(cls.getStaticMethod('method2')!.getName()).assertEqual('method2');
       expect(cls.getStaticMethod('methodName')!.getName()).assertEqual('methodName');
       expect(cls.getStaticMethod('_privateMethod')!.getName()).assertEqual('_privateMethod');
-      return;
     });
 
     /**
@@ -169,7 +167,6 @@ export default function StaticMethodGetNameTest(): void {
       expect(setter != undefined).assertTrue();
       expect(getter!.getName()).assertEqual('%%get-name');
       expect(setter!.getName()).assertEqual('%%set-name');
-      return;
     });
 
     /**
@@ -186,7 +183,6 @@ export default function StaticMethodGetNameTest(): void {
       expect(method != undefined).assertTrue();
       let name: string = method!.getName();
       expect(typeof name === 'string').assertTrue();
-      return;
     });
 
     /**
@@ -203,7 +199,6 @@ export default function StaticMethodGetNameTest(): void {
       expect(method != undefined).assertTrue();
       let name: string = method!.getName();
       expect(name.length).assertLarger(0);
-      return;
     });
 
     /**
@@ -220,7 +215,6 @@ export default function StaticMethodGetNameTest(): void {
       expect(method != undefined).assertTrue();
       expect(method!.getName()).assertEqual('a');
       expect(method!.getName().length).assertEqual(1);
-      return;
     });
 
     /**
@@ -236,7 +230,6 @@ export default function StaticMethodGetNameTest(): void {
       let method = cls.getStaticMethod('veryLongMethodNameWithManyCharacters');
       expect(method != undefined).assertTrue();
       expect(method!.getName()).assertEqual('veryLongMethodNameWithManyCharacters');
-      return;
     });
 
     /**
@@ -252,7 +245,6 @@ export default function StaticMethodGetNameTest(): void {
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
       let name: string = method!.getName();
-      return;
     });
 
     /**
@@ -268,7 +260,6 @@ export default function StaticMethodGetNameTest(): void {
       expect(cls.getStaticMethod('publicMethod')!.getName()).assertEqual('publicMethod');
       expect(cls.getStaticMethod('asyncMethod')!.getName()).assertEqual('asyncMethod');
       expect(cls.getStaticMethod('finalMethod')!.getName()).assertEqual('finalMethod');
-      return;
     });
 
     /**
@@ -284,7 +275,6 @@ export default function StaticMethodGetNameTest(): void {
       let method = cls.getStaticMethod('fetchData');
       expect(method != undefined).assertTrue();
       expect(method!.getName()).assertEqual('fetchData');
-      return;
     });
 
     /**
@@ -302,7 +292,6 @@ export default function StaticMethodGetNameTest(): void {
       expect(methodB != undefined).assertTrue();
       expect(methodA!.getName()).assertEqual('methodA');
       expect(methodB!.getName()).assertEqual('methodB');
-      return;
     });
 
     /**
@@ -320,7 +309,6 @@ export default function StaticMethodGetNameTest(): void {
       expect(childMethod != undefined).assertTrue();
       expect(parentMethod!.getName()).assertEqual('parentMethod');
       expect(childMethod!.getName()).assertEqual('childMethod');
-      return;
     });
   });
 }

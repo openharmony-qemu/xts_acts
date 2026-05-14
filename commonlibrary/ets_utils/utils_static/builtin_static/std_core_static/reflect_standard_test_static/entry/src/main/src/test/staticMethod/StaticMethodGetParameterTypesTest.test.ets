@@ -144,7 +144,6 @@ export default function StaticMethodGetParameterTypesTest(): void {
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
-      return;
     });
 
     /**
@@ -163,7 +162,6 @@ export default function StaticMethodGetParameterTypesTest(): void {
       expect(paramTypes.length).assertEqual(2);
       expect(paramTypes[0].getName()).assertEqual('i32');
       expect(paramTypes[1].getName()).assertEqual('std.core.String');
-      return;
     });
 
     /**
@@ -180,7 +178,6 @@ export default function StaticMethodGetParameterTypesTest(): void {
       expect(method != undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
       expect(paramTypes.length).assertEqual(0);
-      return;
     });
 
     /**
@@ -198,7 +195,6 @@ export default function StaticMethodGetParameterTypesTest(): void {
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
       expect(paramTypes.length).assertEqual(1);
       expect(paramTypes[0].getName()).assertEqual('i32');
-      return;
     });
 
     /**
@@ -219,7 +215,6 @@ export default function StaticMethodGetParameterTypesTest(): void {
       expect(paramTypes[1].getName()).assertEqual('std.core.String');
       expect(paramTypes[2].getName()).assertEqual('u1');
       expect(paramTypes[3].getName()).assertEqual('f32');
-      return;
     });
 
     /**
@@ -238,7 +233,6 @@ export default function StaticMethodGetParameterTypesTest(): void {
       expect(paramTypes.length).assertEqual(2);
       expect(paramTypes[0].getName()).assertEqual('i32');
       expect(paramTypes[1].getName()).assertEqual('std.core.String');
-      return;
     });
 
     /**
@@ -257,7 +251,6 @@ export default function StaticMethodGetParameterTypesTest(): void {
       expect(paramTypes.length).assertEqual(2);
       expect(paramTypes[0].getName()).assertEqual('std.core.Map');
       expect(paramTypes[1].getName()).assertEqual('std.core.Array');
-      return;
     });
 
     /**
@@ -275,7 +268,6 @@ export default function StaticMethodGetParameterTypesTest(): void {
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
       expect(paramTypes.length).assertEqual(1);
       expect(paramTypes[0].getName()).assertEqual('std.core.Array');
-      return;
     });
 
     /**
@@ -293,7 +285,6 @@ export default function StaticMethodGetParameterTypesTest(): void {
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
       expect(paramTypes.length).assertEqual(1);
       expect(paramTypes[0].isUnion()).assertTrue();
-      return;
     });
 
     /**
@@ -314,7 +305,6 @@ export default function StaticMethodGetParameterTypesTest(): void {
       let p2: FixedArray<Class> = m2!.getParameterTypes();
       expect(p1[0].getName().includes('MyClass010')).assertTrue();
       expect(p2[0].isInterface()).assertTrue();
-      return;
     });
 
     /**
@@ -331,7 +321,6 @@ export default function StaticMethodGetParameterTypesTest(): void {
       expect(method != undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
       expect(paramTypes.length != null).assertTrue();
-      return;
     });
 
     /**
@@ -352,7 +341,6 @@ export default function StaticMethodGetParameterTypesTest(): void {
         expect(paramTypes[i].isPrimitive != null).assertTrue();
         expect(paramTypes[i].isInterface != null).assertTrue();
       }
-      return;
     });
 
     /**
@@ -378,7 +366,6 @@ export default function StaticMethodGetParameterTypesTest(): void {
       expect(paramTypes[6].getName()).assertEqual('f64');
       expect(paramTypes[7].getName()).assertEqual('u1');
       expect(paramTypes[8].getName()).assertEqual('u16');
-      return;
     });
 
     /**
@@ -398,7 +385,6 @@ export default function StaticMethodGetParameterTypesTest(): void {
       for (let i: int = 0; i < 10; i++) {
         expect(paramTypes[i].getName()).assertEqual('i32');
       }
-      return;
     });
 
     /**
@@ -414,7 +400,6 @@ export default function StaticMethodGetParameterTypesTest(): void {
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
-      return;
     });
 
     /**
@@ -436,7 +421,6 @@ export default function StaticMethodGetParameterTypesTest(): void {
       expect(m1!.getParameterTypes()[0].getName()).assertEqual('i32');
       expect(m2!.getParameterTypes()[0].getName()).assertEqual('std.core.String');
       expect(m3!.getParameterTypes()[0].getName()).assertEqual('u1');
-      return;
     });
 
     /**
@@ -455,7 +439,6 @@ export default function StaticMethodGetParameterTypesTest(): void {
       expect(paramTypes.length).assertEqual(2);
       expect(paramTypes[0].getName()).assertEqual('std.core.String');
       expect(paramTypes[1].getName()).assertEqual('i32');
-      return;
     });
 
     /**
@@ -480,7 +463,6 @@ export default function StaticMethodGetParameterTypesTest(): void {
       expect(p2[0].getName()).assertEqual('u1');
       expect(p2[1].getName()).assertEqual('f32');
       expect(p2[2].getName()).assertEqual('f64');
-      return;
     });
 
     /**
@@ -503,7 +485,6 @@ export default function StaticMethodGetParameterTypesTest(): void {
       expect(p2.length).assertEqual(1);
       expect(p1[0].getName()).assertEqual('std.core.String');
       expect(p2[0].getName()).assertEqual('i32');
-      return;
     });
 
     /**
@@ -522,7 +503,6 @@ export default function StaticMethodGetParameterTypesTest(): void {
         let paramTypes: FixedArray<Class> = methods[i].getParameterTypes();
         expect(paramTypes.length).assertEqual(expectedLengths[i]);
       }
-      return;
     });
   });
 }

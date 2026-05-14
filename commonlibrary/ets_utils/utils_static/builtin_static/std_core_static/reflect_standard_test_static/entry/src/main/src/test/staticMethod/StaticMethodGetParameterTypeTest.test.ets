@@ -148,7 +148,6 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
       let paramType =method!.getParameterType(0);
-      return;
     });
 
     /**
@@ -166,7 +165,6 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let paramType =method!.getParameterType(0);
       expect(paramType!= null).assertTrue();
       expect(paramType!.getName()).assertEqual('i32');
-      return;
     });
 
     /**
@@ -183,7 +181,6 @@ export default function StaticMethodGetParameterTypeTest(): void {
       expect(method != undefined).assertTrue();
       let paramType =method!.getParameterType(0);
       expect(paramType!.getName()).assertEqual('i32');
-      return;
     });
 
     /**
@@ -200,7 +197,6 @@ export default function StaticMethodGetParameterTypeTest(): void {
       expect(method != undefined).assertTrue();
       let paramType =method!.getParameterType(1);
       expect(paramType!.getName()).assertEqual('std.core.String');
-      return;
     });
 
     /**
@@ -215,7 +211,6 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<MyClass005>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      return;
     });
 
     /**
@@ -230,7 +225,6 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<MyClass006>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      return;
     });
 
     /**
@@ -245,7 +239,6 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<MyClass007>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      return;
     });
 
     /**
@@ -264,7 +257,6 @@ export default function StaticMethodGetParameterTypeTest(): void {
       expect(paramType!= null).assertTrue();
       expect(paramType!.getName()).assertEqual('i32');
       expect(paramType!.isPrimitive()).assertTrue();
-      return;
     });
 
     /**
@@ -283,7 +275,6 @@ export default function StaticMethodGetParameterTypeTest(): void {
       expect(method!.getParameterType(1)!.getName()).assertEqual('std.core.String');
       expect(method!.getParameterType(2)!.getName()).assertEqual('u1');
       expect(method!.getParameterType(3)!.getName()).assertEqual('f32');
-      return;
     });
 
     /**
@@ -298,7 +289,6 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<MyClass010>();
       let method = cls.getStaticMethod('noParam');
       expect(method != undefined).assertTrue();
-      return;
     });
 
     /**
@@ -313,7 +303,6 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<MyClass011>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      return;
     });
 
     /**
@@ -332,7 +321,6 @@ export default function StaticMethodGetParameterTypeTest(): void {
       expect(m2 != undefined).assertTrue();
       expect(m1!.getParameterType(0)!.getName()).assertEqual('std.core.Map');
       expect(m2!.getParameterType(0)!.isUnion()).assertTrue();
-      return;
     });
 
     /**
@@ -352,7 +340,6 @@ export default function StaticMethodGetParameterTypeTest(): void {
         expect(typeof paramType).assertEqual('object');
         expect(paramType.getName!= null).assertTrue();
       }
-      return;
     });
 
     /**
@@ -372,7 +359,6 @@ export default function StaticMethodGetParameterTypeTest(): void {
       expect(paramType!.isPrimitive()!= null).assertTrue();
       expect(paramType!.isInterface()!= null).assertTrue();
       expect(paramType!.isFinal()!= null).assertTrue();
-      return;
     });
 
     /**
@@ -387,7 +373,6 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let method = Class.from<MyClass015>().getStaticMethod('test');
       expect(method != undefined).assertTrue();
       expect(method!.getParameterType(0)!.getName()).assertEqual('i32');
-      return;
     });
 
     /**
@@ -402,7 +387,6 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let method = Class.from<MyClass016>().getStaticMethod('test');
       expect(method != undefined).assertTrue();
       expect(method!.getParameterType(2)!.getName()).assertEqual('u1');
-      return;
     });
 
     /**
@@ -417,7 +401,6 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let method = Class.from<MyClass017>().getStaticMethod('singleParam');
       expect(method != undefined).assertTrue();
       expect(method!.getParameterType(0)!.getName()).assertEqual('i32');
-      return;
     });
 
     /**
@@ -433,7 +416,6 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
       let paramType =method!.getParameterType(0);
-      return;
     });
 
     /**
@@ -455,7 +437,6 @@ export default function StaticMethodGetParameterTypeTest(): void {
       expect(m1!.getParameterType(0)!.getName()).assertEqual('i32');
       expect(m2!.getParameterType(0)!.getName()).assertEqual('std.core.String');
       expect(m3!.getParameterType(0)!.getName()).assertEqual('u1');
-      return;
     });
 
     /**
@@ -472,7 +453,6 @@ export default function StaticMethodGetParameterTypeTest(): void {
       expect(method != undefined).assertTrue();
       expect(method!.getParameterType(0)!.getName()).assertEqual('std.core.String');
       expect(method!.getParameterType(1)!.getName()).assertEqual('i32');
-      return;
     });
 
     /**
@@ -490,7 +470,6 @@ export default function StaticMethodGetParameterTypeTest(): void {
       expect(m2 != undefined).assertTrue();
       expect(m1!.getParameterType(0)!.getName()).assertEqual('std.core.String');
       expect(m2!.getParameterType(0)!.getName()).assertEqual('u1');
-      return;
     });
 
     /**
@@ -507,7 +486,6 @@ export default function StaticMethodGetParameterTypeTest(): void {
       expect(setter != undefined).assertTrue();
       let paramType =setter!.getParameterType(0);
       expect(paramType!.getName()).assertEqual('std.core.String');
-      return;
     });
 
     /**
@@ -528,7 +506,6 @@ export default function StaticMethodGetParameterTypeTest(): void {
         expect(paramType!= null).assertTrue();
         expect(paramType!.getName()!= null).assertTrue();
       }
-      return;
     });
 
     /**
@@ -548,7 +525,6 @@ export default function StaticMethodGetParameterTypeTest(): void {
         let paramType =method!.getParameterType(i);
         expect(paramType!.getName()).assertEqual(paramTypes[i].getName());
       }
-      return;
     });
   });
 }
