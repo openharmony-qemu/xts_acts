@@ -114,7 +114,8 @@ export default function StaticMethodGetNameTest(): void {
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
       let name: string = method!.getName();
-      return;
+      expect(name).assertEqual('test');
+      expect(typeof name).assertEqual('string');
     });
 
     /**
