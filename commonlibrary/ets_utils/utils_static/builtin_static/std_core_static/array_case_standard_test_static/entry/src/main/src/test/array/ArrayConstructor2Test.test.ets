@@ -602,8 +602,10 @@ export default function ArrayConstructor2Test(): void {
      */
     it('testArrayConstructor029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const emptyArr = new Array<number>();
-      const sizedArr = new Array<number>(...buildSequentialNumbers015(100));
-
+      const sizedArr = new Array<number>(100);
+      for (let i = 0; i < 100; i++) {
+        sizedArr[i] = i;
+      }
       expect(emptyArr.length).assertEqual(0);
       expect(sizedArr.length).assertEqual(100);
     });
@@ -642,7 +644,10 @@ export default function ArrayConstructor2Test(): void {
         dynamicArr.pushOne(i);
       }
 
-      const fixedArr = new Array<number>(...buildSequentialNumbers015(100));
+      const fixedArr = new Array<number>(100);
+      for (let i = 0; i < 100; i++) {
+        fixedArr[i] = i;
+      }
 
       const initArr = new Array<number>(1, 2, 3, 4, 5);
       expect(dynamicArr.length).assertEqual(100);
