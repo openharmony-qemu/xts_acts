@@ -993,10 +993,12 @@ export default function ArrayConstructor4Test(): void {
      */
     it('testArrayConstructor057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<number>(1000, (index) => index);
+
       const arr2 = new Array<number>(1000);
-      for (let i = 0; i < count; i++) {
+      for (let i = 0; i < arr2.length; i++) {
         arr2[i] = i;
       }
+
       for (let i = 0; i < 1000; i++) {
         expect(arr1[i]).assertEqual(arr2[i]);
       }
