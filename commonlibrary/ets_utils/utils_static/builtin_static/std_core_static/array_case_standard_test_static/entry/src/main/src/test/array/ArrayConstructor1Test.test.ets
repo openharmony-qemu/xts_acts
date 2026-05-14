@@ -432,11 +432,11 @@ export default function ArrayConstructor1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayConstructor026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<Item026>(3);
-      arr[0] = new Item026(1);
-      arr[1] = new Item026(2);
-      arr[2] = new Item026(3);
+      const arr = new Array<Item026>(new Item026(1), new Item026(2), new Item026(3));
+      expect(arr.length).assertEqual(3);
       expect(arr[0].value).assertEqual(1);
+      expect(arr[1].value).assertEqual(2);
+      expect(arr[2].value).assertEqual(3);
     });
 
     /**
