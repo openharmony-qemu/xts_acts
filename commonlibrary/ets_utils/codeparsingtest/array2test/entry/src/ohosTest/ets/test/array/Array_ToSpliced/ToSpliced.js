@@ -40,8 +40,7 @@ function tsp(target, ...args) {
   return Array.prototype.toSpliced.apply(target, args);
 }
 
-function runCase(id) {
-  const idx = id - 100;
+function runCasePart1(idx) {
   const cases = [
     () => same(tsp([1, 2, 3, 4, 5], 2, 1), [1, 2, 4, 5]),
     () => same(tsp([1, 2, 3, 4, 5], 0, 2), [3, 4, 5]),
@@ -80,6 +79,15 @@ function runCase(id) {
   return same(r, [1, 2, 3]) && r !== a;
 },
     () => same(tsp([1, 2, 3], NaN, 1), [2, 3]),
+  ];
+  const fn = cases[idx];
+  if (!fn) return false;
+  return safeExec(fn);
+}
+
+function runCasePart2(idx) {
+  const localIdx = idx - 25;
+  const cases = [
     () => same(tsp([1, 2, 3], Infinity, 0, 9), [1, 2, 3, 9]),
     () => same(tsp([1, 2, 3], -Infinity, 1, 9), [9, 2, 3]),
     () => same(tsp([1, 2, 3], 1.7, 1, 9), [1, 9, 3]),
@@ -111,6 +119,15 @@ function runCase(id) {
   const r = tsp([0], 0, 1, [1, 2]);
   return Array.isArray(r[0]) && r[0][0] === 1 && r[0][1] === 2;
 },
+  ];
+  const fn = cases[localIdx];
+  if (!fn) return false;
+  return safeExec(fn);
+}
+
+function runCasePart3(idx) {
+  const localIdx = idx - 50;
+  const cases = [
     () => same(tsp([1, 2], 1, 0, undefined), [1, undefined, 2]),
     () => same(tsp([1, 2], 1, 0, null), [1, null, 2]),
     () => same(tsp([1, 2], 1, 0, true), [1, true, 2]),
@@ -158,6 +175,15 @@ function runCase(id) {
 },
     () => tsp([1, 2, 3], 1, 1, 9).length === 3,
     () => Array.isArray(tsp([1, 2, 3], 1, 1, 9)),
+  ];
+  const fn = cases[localIdx];
+  if (!fn) return false;
+  return safeExec(fn);
+}
+
+function runCasePart4(idx) {
+  const localIdx = idx - 67;
+  const cases = [
     () => same(tsp([1, 2, 3, 4], 1, 2, 9), [1, 9, 4]),
     () => {
   const a = [3, 1, 2];
@@ -200,6 +226,15 @@ function runCase(id) {
   const r = tsp(a, 0, 0);
   return r[1] === undefined && Object.prototype.hasOwnProperty.call(r, '1');
 },
+  ];
+  const fn = cases[localIdx];
+  if (!fn) return false;
+  return safeExec(fn);
+}
+
+function runCasePart5(idx) {
+  const localIdx = idx - 75;
+  const cases = [
     () => {
   const a = [1, , 3];
   const r = tsp(a, 0, 0);
@@ -248,6 +283,15 @@ function runCase(id) {
   const r = tsp([1, 'a'], 1, 0, null, false, 3n);
   return r.length === 5;
 },
+  ];
+  const fn = cases[localIdx];
+  if (!fn) return false;
+  return safeExec(fn);
+}
+
+function runCasePart6(idx) {
+  const localIdx = idx - 88;
+  const cases = [
     () => {
   const a = Array.from({ length: 500 }, (_, i) => i);
   const r = tsp(a, 100, 50);
@@ -297,13 +341,20 @@ function runCase(id) {
   return same(tsp(obj, 1, 1, 'X'), ['a', 'X']);
 },
     () => same(tsp({ length: -1, 0: 'a', 1: 'b' }, 0, 0, 'new'), ['new']),
-
   ];
-  const fn = cases[idx];
-  if (!fn) {
-    return false;
-  }
+  const fn = cases[localIdx];
+  if (!fn) return false;
   return safeExec(fn);
+}
+
+function runCase(id) {
+  const idx = id - 100;
+  if (idx < 25) return runCasePart1(idx);
+  if (idx < 50) return runCasePart2(idx);
+  if (idx < 67) return runCasePart3(idx);
+  if (idx < 75) return runCasePart4(idx);
+  if (idx < 88) return runCasePart5(idx);
+  return runCasePart6(idx);
 }
 
 export function ToSplicedJs_0100() {

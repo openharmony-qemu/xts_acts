@@ -78,8 +78,7 @@ function isNonDecreasingNumber(arr) {
   return true;
 }
 
-function runCase(id) {
-  const idx = id - 100;
+function runCasePart01(idx) {
   const cases = [
     () => ts(['Mar', 'Jan', 'Feb', 'Dec']).join(',') === 'Dec,Feb,Jan,Mar',
     () => ts([1, 10, 21, 2], (a, b) => a - b).join(',') === '1,2,10,21',
@@ -88,6 +87,15 @@ function runCase(id) {
     () => ts([5, 5, 5, 5]).join(',') === '5,5,5,5',
     () => ts([1, 2, 3, 4, 5], (a, b) => a - b).join(',') === '1,2,3,4,5',
     () => ts([5, 4, 3, 2, 1], (a, b) => a - b).join(',') === '1,2,3,4,5',
+  ];
+  const fn = cases[idx];
+  if (!fn) return false;
+  return safeExec(fn);
+}
+
+function runCasePart02(idx) {
+  const localIdx = idx - 7;
+  const cases = [
     () => ts([3, 1, 2, 3, 1], (a, b) => a - b).join(',') === '1,1,2,3,3',
     () => {
       const pairs = [];
@@ -105,6 +113,15 @@ function runCase(id) {
       const r = ts([3, 1, 2], () => NaN);
       return r.length === 3 && (r.join(',') === '3,1,2' || r.join(',') === '1,2,3');
     },
+  ];
+  const fn = cases[localIdx];
+  if (!fn) return false;
+  return safeExec(fn);
+}
+
+function runCasePart03(idx) {
+  const localIdx = idx - 14;
+  const cases = [
     () => {
       const r = ts([1, 2, 3], (a, b) => (a === 1 ? -Infinity : Infinity));
       return r[0] === 1 && r.length === 3;
@@ -152,6 +169,15 @@ function runCase(id) {
       }
     },
     () => ts([10, 1, 21, 2], undefined).join(',') === '1,10,2,21',
+  ];
+  const fn = cases[localIdx];
+  if (!fn) return false;
+  return safeExec(fn);
+}
+
+function runCasePart04(idx) {
+  const localIdx = idx - 21;
+  const cases = [
     () => {
       const r = ts([3, 1, 4, 1, 5], (a) => a - 3);
       return r.length === 5 && r.join(',').split(',').length === 5;
@@ -187,6 +213,15 @@ function runCase(id) {
       const arr = [1, 2, 3];
       return ts(arr) !== arr;
     },
+  ];
+  const fn = cases[localIdx];
+  if (!fn) return false;
+  return safeExec(fn);
+}
+
+function runCasePart05(idx) {
+  const localIdx = idx - 28;
+  const cases = [
     () => {
       const r = ts([3, 1, 2]);
       return Array.isArray(r) && r instanceof Array;
@@ -211,6 +246,15 @@ function runCase(id) {
     () => ts([10, 5, 8, 1, 7], (a, b) => a - b).join(',') === '1,5,7,8,10',
     () => ts([1, 5, 3, 2, 4], (a, b) => b - a).join(',') === '5,4,3,2,1',
     () => ts([3.14, 1.41, 2.72, 0.58], (a, b) => a - b).join(',') === '0.58,1.41,2.72,3.14',
+  ];
+  const fn = cases[localIdx];
+  if (!fn) return false;
+  return safeExec(fn);
+}
+
+function runCasePart06(idx) {
+  const localIdx = idx - 35;
+  const cases = [
     () => ts([3, -1, 0, -5, 2], (a, b) => a - b).join(',') === '-5,-1,0,2,3',
     () => ts([Infinity, 1, -Infinity, 0], (a, b) => a - b).join(',') === '-Infinity,0,1,Infinity',
     () => {
@@ -226,6 +270,15 @@ function runCase(id) {
       const r = ts(['张三', '李四', '王五']);
       return r.length === 3 && r.join(',').length > 0;
     },
+  ];
+  const fn = cases[localIdx];
+  if (!fn) return false;
+  return safeExec(fn);
+}
+
+function runCasePart07(idx) {
+  const localIdx = idx - 42;
+  const cases = [
     () => {
       const arr = [
         { name: 'C', age: 30 },
@@ -259,6 +312,15 @@ function runCase(id) {
       const r = ts([d1, d2, d3], (a, b) => a - b);
       return r[0].getTime() === d2.getTime() && r[2].getTime() === d1.getTime();
     },
+  ];
+  const fn = cases[localIdx];
+  if (!fn) return false;
+  return safeExec(fn);
+}
+
+function runCasePart08(idx) {
+  const localIdx = idx - 49;
+  const cases = [
     () => ts([]).length === 0,
     () => {
       const arr = [42];
@@ -286,6 +348,15 @@ function runCase(id) {
       const r = ts(arr);
       return r.length === 3 && r.every((v) => v === undefined);
     },
+  ];
+  const fn = cases[localIdx];
+  if (!fn) return false;
+  return safeExec(fn);
+}
+
+function runCasePart09(idx) {
+  const localIdx = idx - 56;
+  const cases = [
     () => {
       const arr = [, undefined, 'a', 'b'];
       const r = ts(arr);
@@ -333,6 +404,15 @@ function runCase(id) {
       const r = ts(arr, (a, b) => a - b);
       return r[0] === 0 && r[499] === 499 && isNonDecreasingNumber(r);
     },
+  ];
+  const fn = cases[localIdx];
+  if (!fn) return false;
+  return safeExec(fn);
+}
+
+function runCasePart10(idx) {
+  const localIdx = idx - 63;
+  const cases = [
     () => {
       const r = ts([
         [3, 1],
@@ -365,6 +445,15 @@ function runCase(id) {
     () => ts({ length: 0, 0: 1, 1: 2 }).length === 0,
     () => ts({ length: -1, 0: 1, 1: 2 }).length === 0,
     () => ts({ length: 2.7, 0: 3, 1: 1, 2: 2 }, (a, b) => a - b).join(',') === '1,3',
+  ];
+  const fn = cases[localIdx];
+  if (!fn) return false;
+  return safeExec(fn);
+}
+
+function runCasePart11(idx) {
+  const localIdx = idx - 70;
+  const cases = [
     () => ts({ length: NaN, 0: 1, 1: 2 }).length === 0,
     () => {
       try {
@@ -388,6 +477,15 @@ function runCase(id) {
       const al = { length: 3, 0: 3, 1: 1, 2: 2 };
       return ts(al, (a, b) => a - b).join(',') === '1,2,3';
     },
+  ];
+  const fn = cases[localIdx];
+  if (!fn) return false;
+  return safeExec(fn);
+}
+
+function runCasePart12(idx) {
+  const localIdx = idx - 77;
+  const cases = [
     () => {
       const al = { length: 3, 0: 3, 1: 1, 2: 2 };
       const bound = Array.prototype.toSorted.bind(al, (a, b) => a - b);
@@ -424,6 +522,15 @@ function runCase(id) {
       }
     },
     () => ts([3, 1, 2], (a, b) => a - b).join(',') === '1,2,3',
+  ];
+  const fn = cases[localIdx];
+  if (!fn) return false;
+  return safeExec(fn);
+}
+
+function runCasePart13(idx) {
+  const localIdx = idx - 84;
+  const cases = [
     () => {
       function comparatorWithBase(base, a, b) {
         return a - base - (b - base);
@@ -458,6 +565,15 @@ function runCase(id) {
         return e instanceof RangeError || e instanceof TypeError;
       }
     },
+  ];
+  const fn = cases[localIdx];
+  if (!fn) return false;
+  return safeExec(fn);
+}
+
+function runCasePart14(idx) {
+  const localIdx = idx - 90;
+  const cases = [
     () => ts({ length: 'abc', 0: 1, 1: 2 }).length === 0,
     () => {
       try {
@@ -516,6 +632,15 @@ function runCase(id) {
       arr2.sort((a, b) => a - b);
       return arraysEqual(sorted1, arr2);
     },
+  ];
+  const fn = cases[localIdx];
+  if (!fn) return false;
+  return safeExec(fn);
+}
+
+function runCasePart15(idx) {
+  const localIdx = idx - 96;
+  const cases = [
     () => {
       const arr1 = [3, 1, 2];
       const arr2 = [3, 1, 2];
@@ -547,215 +672,29 @@ function runCase(id) {
       const r = ts(arr, (a, b) => a - b).with(0, 99);
       return r[0] === 99 && r[1] === 2 && r[2] === 3;
     },
-    () => {
-      const arr = [1, 2, 3];
-      if (typeof arr.toReversed !== 'function') {
-        return true;
-      }
-      const r = arr.toReversed().toSorted((a, b) => a - b);
-      return r.join(',') === '1,2,3';
-    },
-    () => ts([3, 1, 2], (a, b) => a - b).map((x) => x * 2).join(',') === '2,4,6',
-    () => ts([5, 3, 8, 1, 4].filter((x) => x > 2), (a, b) => a - b).join(',') === '3,4,5,8',
-    () => {
-      const max = ts([3, 1, 4, 1, 5], (a, b) => a - b).reduce((acc, cur) => (cur > acc ? cur : acc), 0);
-      return max === 5;
-    },
-    () => {
-      const sorted = ts([5, 3, 8, 1, 4], (a, b) => a - b);
-      return sorted.find((x) => x > 3) === 4;
-    },
-    () => ts([5, 3, 8, 1, 4], (a, b) => a - b).slice(0, 3).join(',') === '1,3,4',
-    () => ts(['banana', 'apple', 'cherry']).join(', ') === 'apple, banana, cherry',
-    () => ts([[3, 1], [2, 4]].flat(), (a, b) => a - b).join(',') === '1,2,3,4',
-    () => {
-      const obj = { c: 3, a: 1, b: 2 };
-      const keys = Object.keys(obj).toSorted();
-      const entries = Object.entries(obj).toSorted((a, b) => a[1] - b[1]);
-      return keys.join(',') === 'a,b,c' && entries[0][0] === 'a';
-    },
-    () => {
-      const arr = [3, 1, 2];
-      const r1 = ts(arr, (a, b) => a - b);
-      const r2 = ts(arr, (a, b) => b - a);
-      const r3 = ts(arr);
-      return r1 !== r2 && r1 !== arr && r2 !== arr && r3 !== arr;
-    },
-    () => {
-      const arr = [3, 1, 2];
-      const r1 = ts(arr, (a, b) => a - b);
-      const r2 = r1.toSorted((a, b) => a - b);
-      return r1 !== r2 && r2.join(',') === '1,2,3';
-    },
-    () => {
-      const arr = [
-        { v: 1, id: 1 },
-        { v: 2, id: 2 },
-        { v: 1, id: 3 }
-      ];
-      const r = ts(arr, (a, b) => a.v - b.v);
-      return r[0].id === 1 && r[1].id === 3 && r[2].id === 2;
-    },
-    () => ts([3, 1, 4, 1, 5], () => 0).join(',') === '3,1,4,1,5',
-    () => {
-      const arr = ['Mar', 'Jan', 'Feb', 'Dec'];
-      const r1 = ts(arr);
-      const r2 = ts(arr);
-      return r1.join(',') === r2.join(',');
-    },
-    () => {
-      const arr = [3, 1, 4, 1, 5, 9, 2, 6];
-      const r1 = ts(arr, (a, b) => a - b);
-      const r2 = ts(arr, (a, b) => a - b);
-      return r1.join(',') === r2.join(',');
-    },
-    () => {
-      const arr1 = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5];
-      const arr2 = [...arr1];
-      const sorted1 = ts(arr1, (a, b) => a - b);
-      arr2.sort((a, b) => a - b);
-      return arraysEqual(sorted1, arr2);
-    },
-    () => {
-      const arr = Array.from({ length: 300 }, () => Math.floor(Math.random() * 10000));
-      const r = ts(arr, (a, b) => a - b);
-      return isNonDecreasingNumber(r);
-    },
-    () => {
-      const arr = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5];
-      const r = ts(arr, (a, b) => a - b);
-      const orig = [...arr].sort((a, b) => a - b);
-      return arraysEqual(r, orig);
-    },
-    () => {
-      const arr = ['café', 'apple', 'cafe', 'éclair', 'banana'];
-      const r1 = ts(arr);
-      const r2 = ts(arr);
-      return r1.join(',') === r2.join(',');
-    },
-    () => {
-      const strArr = ['10', '2', '1', '21'];
-      const numArr = [10, 2, 1, 21];
-      return ts(strArr).join(',') === '1,10,2,21' && ts(numArr, (a, b) => a - b).join(',') === '1,2,10,21';
-    },
-    () => {
-      const arr = [3, 1, 2];
-      const proxy = new Proxy(arr, {});
-      return ts(proxy, (a, b) => a - b).join(',') === '1,2,3';
-    },
-    () => {
-      const arr = ['réservé', 'premier', 'Cliché', 'communiqué', 'café', 'Adieu'];
-      const r = ts(arr, (a, b) => a.localeCompare(b));
-      if (r.length !== 6) {
-        return false;
-      }
-      for (let i = 1; i < r.length; i++) {
-        if (r[i].localeCompare(r[i - 1]) < 0) {
-          return false;
-        }
-      }
-      return true;
-    },
-    () => {
-      const arr = ['Österreich', 'Oesterreich', 'Austria'];
-      const r = ts(arr, (a, b) => a.localeCompare(b, 'de'));
-      return r.length === 3;
-    },
-    () => {
-      const arr = ['Banana', 'apple', 'Cherry', 'date'];
-      const r = ts(arr, (a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
-      return r.length === 4;
-    },
-    () => ts(['banana', 'apple', 'cherry', 'date'], (a, b) => a.length - b.length).join(',') === 'date,apple,banana,cherry',
-    () => {
-      const arr = [
-        { name: 'Alice', age: 30 },
-        { name: 'Bob', age: 25 },
-        { name: 'Alice', age: 25 }
-      ];
-      const r = ts(arr, (a, b) => {
-        if (a.name !== b.name) {
-          return a.name.localeCompare(b.name);
-        }
-        return a.age - b.age;
-      });
-      return r[0].name === 'Alice' && r[1].name === 'Alice' && r[2].name === 'Bob';
-    },
-    () => {
-      const arr = [{ info: { score: 85 } }, { info: { score: 92 } }, { info: { score: 78 } }];
-      const r = ts(arr, (a, b) => a.info.score - b.info.score);
-      return r[0].info.score === 78 && r[2].info.score === 92;
-    },
-    () => {
-      const arr = ['张三', '李四', '王五', '赵六'];
-      const r = ts(arr, (a, b) => a.localeCompare(b, 'zh-CN'));
-      return r.length === 4;
-    },
-    () => {
-      const r = ts([1, 2, 3, 4, 5], () => Math.random() - 0.5);
-      return r.length === 5;
-    },
-    () => {
-      const arr = [3, 1, 2];
-      const r = ts(
-        arr,
-        function (a, b) {
-          return a - b;
-        }.bind({ factor: 10 })
-      );
-      return r.join(',') === '1,2,3';
-    },
-    () => {
-      const order = 'desc';
-      const r = ts([3, 1, 2], (a, b) => (order === 'desc' ? b - a : a - b));
-      return r.join(',') === '3,2,1';
-    },
-    () => ts([3, 1, 2], (a = 0, b = 0) => a - b).join(',') === '1,2,3',
-    () => {
-      try {
-        ts([3, 1, 2], function* () {
-          yield 0;
-        });
-        return false;
-      } catch (e) {
-        return e instanceof TypeError || e instanceof Error;
-      }
-    },
-    () => {
-      const r = ts([{ v: 3 }, { v: 1 }, { v: 2 }], ({ v: va }, { v: vb }) => va - vb);
-      return r[0].v === 1 && r[2].v === 3;
-    },
-    () => {
-      if (typeof Intl === 'undefined' || typeof Intl.Collator === 'undefined') {
-        return true;
-      }
-      const arr = ['Z', 'a', 'ä', 'z', 'A'];
-      const collator = new Intl.Collator('de', { sensitivity: 'base' });
-      const r = ts(arr, collator.compare);
-      return r.length === 5;
-    },
-    () => {
-      const weights = { low: 1, medium: 2, high: 3, critical: 4 };
-      const arr = ['medium', 'critical', 'low', 'high'];
-      const r = ts(arr, (a, b) => weights[a] - weights[b]);
-      return r.join(',') === 'low,medium,high,critical';
-    },
-    () => ts([1, 2, 3], (a, b) => (a - b) * Number.MAX_SAFE_INTEGER).join(',') === '1,2,3',
-    () => {
-      const arr = [{ v: 3 }, { v: 1 }, { v: 2 }];
-      const r = ts(arr, (a, b) => {
-        a.v = 0;
-        return a.v - b.v;
-      });
-      return r.length === 3;
-    }
   ];
-
-  const fn = cases[idx];
-  if (!fn) {
-    return false;
-  }
+  const fn = cases[localIdx];
+  if (!fn) return false;
   return safeExec(fn);
+}
+
+function runCase(id) {
+  const idx = id - 100;
+  if (idx < 7) return runCasePart01(idx);
+  if (idx < 14) return runCasePart02(idx);
+  if (idx < 21) return runCasePart03(idx);
+  if (idx < 28) return runCasePart04(idx);
+  if (idx < 35) return runCasePart05(idx);
+  if (idx < 42) return runCasePart06(idx);
+  if (idx < 49) return runCasePart07(idx);
+  if (idx < 56) return runCasePart08(idx);
+  if (idx < 63) return runCasePart09(idx);
+  if (idx < 70) return runCasePart10(idx);
+  if (idx < 77) return runCasePart11(idx);
+  if (idx < 84) return runCasePart12(idx);
+  if (idx < 90) return runCasePart13(idx);
+  if (idx < 96) return runCasePart14(idx);
+  return runCasePart15(idx);
 }
 
 export function ToSortedJs_0100() {

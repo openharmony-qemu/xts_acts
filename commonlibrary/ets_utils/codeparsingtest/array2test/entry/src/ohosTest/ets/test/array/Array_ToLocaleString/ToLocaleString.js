@@ -29,8 +29,7 @@ function safeExec(fn) {
   }
 }
 
-function runCase(id) {
-  const idx = id - 100;
+function runCasePart1(idx) {
   const cases = [
     () => [].toLocaleString() === '',
     () => [42].toLocaleString() === '42',
@@ -72,6 +71,15 @@ function runCase(id) {
     () => { const arr = [1, 2]; arr.length = 5; return arr.toLocaleString() === '1,2,,,'; },
     () => [1, , 3].toLocaleString() === '1,,3',
     () => new Array(5).toLocaleString() === ',,,,',
+  ];
+  const fn = cases[idx];
+  if (!fn) return false;
+  return safeExec(fn);
+}
+
+function runCasePart2(idx) {
+  const localIdx = idx - 40;
+  const cases = [
     () => [1, , , , 5].toLocaleString() === '1,,,,5',
     () => { const arr = [1, 2, 3]; delete arr[1]; return arr.toLocaleString() === '1,,3'; },
     () => [1234567.89].toLocaleString('en-US').length > 0,
@@ -113,6 +121,15 @@ function runCase(id) {
     () => [''].toLocaleString() === '',
     () => ['x', 'y', 'z'].toLocaleString() === 'x,y,z',
     () => { const arr = [1, 2, 3]; arr[1] = undefined; return arr.toLocaleString() === '1,,3'; },
+  ];
+  const fn = cases[localIdx];
+  if (!fn) return false;
+  return safeExec(fn);
+}
+
+function runCasePart3(idx) {
+  const localIdx = idx - 80;
+  const cases = [
     () => { const arr = [1, 2, 3]; arr[1] = null; return arr.toLocaleString() === '1,,3'; },
     () => [1.1, 2.2, 3.3].toLocaleString().length > 0,
     () => [-1, -2, -3].toLocaleString().indexOf('-') >= 0,
@@ -141,12 +158,16 @@ function runCase(id) {
     () => { const arr = [new Date(0), new Date(8640000000000000)]; return safeExec(() => isString(arr.toLocaleString())); },
     () => { const arr = [1,2,3]; const desc = Object.getOwnPropertyDescriptor(Array.prototype, 'toLocaleString'); return !!desc && typeof desc.value === 'function' && isString(arr.toLocaleString()); }
   ];
-
-  const fn = cases[idx];
-  if (!fn) {
-    return false;
-  }
+  const fn = cases[localIdx];
+  if (!fn) return false;
   return safeExec(fn);
+}
+
+function runCase(id) {
+  const idx = id - 100;
+  if (idx < 40) return runCasePart1(idx);
+  if (idx < 80) return runCasePart2(idx);
+  return runCasePart3(idx);
 }
 
 export function ToLocaleStringJs_0100() {

@@ -49,8 +49,7 @@ function toReversedCompat(receiver) {
   return result;
 }
 
-function runCase(id) {
-  const idx = id - 100;
+function runCasePart1(idx) {
   const cases = [
     () => { const a = [1, 2, 3]; const b = toReversedCompat(a); return b.join(',') === '3,2,1'; },
     () => { const a = [1, 2, 3]; const b = toReversedCompat(a); return a.join(',') === '1,2,3'; },
@@ -92,6 +91,15 @@ function runCase(id) {
     () => { const arr = [1,2,3]; const p = new Proxy(arr, {}); const b = toReversedCompat(p); return b.join(',') === '3,2,1'; },
     () => { const arr = [1,2,3]; const p = new Proxy(arr, { get(t,pn,r){ if (pn === '1') return 9; return Reflect.get(t,pn,r);} }); const b = toReversedCompat(p); return b.length === 3 && b[2] === 1 && (b[1] === 9 || b.join(',') === '3,9,1' || b.join(',') === '3,2,1'); },
     () => { const obj = { get 0(){return 'a';}, get 1(){return 'b';}, length:2 }; const b = toReversedCompat(obj); return b.join(',') === 'b,a'; },
+  ];
+  const fn = cases[idx];
+  if (!fn) return false;
+  return safeExec(fn);
+}
+
+function runCasePart2(idx) {
+  const localIdx = idx - 40;
+  const cases = [
     () => { const obj = { get 0(){ throw new Error('x'); }, length:1 }; try { toReversedCompat(obj); } catch (e) { return e instanceof Error; } return false; },
     () => { try { toReversedCompat(null); } catch (e) { return e instanceof TypeError; } return false; },
     () => { try { toReversedCompat(undefined); } catch (e) { return e instanceof TypeError; } return false; },
@@ -132,6 +140,15 @@ function runCase(id) {
     () => { const arr = [1,2,3]; const b = toReversedCompat(arr); b.copyWithin(1,0,1); return b.join(',') === '3,3,1'; },
     () => { const arr = [1,2,3,4]; const b = toReversedCompat(arr); return b.flatMap((x)=>[x]).join(',') === '4,3,2,1'; },
     () => { const arr = [[1],[2],[3]]; const b = toReversedCompat(arr); return b.flat().join(',') === '3,2,1'; },
+  ];
+  const fn = cases[localIdx];
+  if (!fn) return false;
+  return safeExec(fn);
+}
+
+function runCasePart3(idx) {
+  const localIdx = idx - 80;
+  const cases = [
     () => { const arr = [1,2,3]; const b = toReversedCompat(arr); return b.keys().next().value === 0; },
     () => { const arr = [1,2,3]; const b = toReversedCompat(arr); return b.values().next().value === 3; },
     () => { const arr = [1,2,3]; const b = toReversedCompat(arr); return b.entries().next().value[1] === 3; },
@@ -163,12 +180,16 @@ function runCase(id) {
     () => { const arr = [1,2,3]; const b = toReversedCompat(arr); return b[0] === 3 && b[2] === 1 && arr[0] === 1; },
     () => { const desc = Object.getOwnPropertyDescriptor(Array.prototype, 'toReversed'); return desc === undefined || typeof desc.value === 'function'; },
   ];
-
-  const fn = cases[idx];
-  if (!fn) {
-    return false;
-  }
+  const fn = cases[localIdx];
+  if (!fn) return false;
   return safeExec(fn);
+}
+
+function runCase(id) {
+  const idx = id - 100;
+  if (idx < 40) return runCasePart1(idx);
+  if (idx < 80) return runCasePart2(idx);
+  return runCasePart3(idx);
 }
 
 export function ToReversedJs_0100() {
