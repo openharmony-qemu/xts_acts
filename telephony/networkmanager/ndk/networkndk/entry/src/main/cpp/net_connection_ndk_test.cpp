@@ -991,7 +991,7 @@ static napi_property_descriptor net_group[] = {
     {"OHNetConnRegisterCustomDnsResolver", nullptr, OHNetConnRegisterCustomDnsResolver, nullptr, nullptr, nullptr,
      napi_default, nullptr},
     {"OHNetConnUnregisterCustomDnsResolver", nullptr, OHNetConnUnregisterCustomDnsResolver, nullptr, nullptr, nullptr,
-     napi_default, nullptr},     
+     napi_default, nullptr},
     {"OHNetConnBindSocket", nullptr, OHNetConnBindSocket, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"OHNetConnSetAppHttpProxy", nullptr, OHNetConnSetAppHttpProxy, nullptr, nullptr, nullptr, napi_default,
      nullptr},
