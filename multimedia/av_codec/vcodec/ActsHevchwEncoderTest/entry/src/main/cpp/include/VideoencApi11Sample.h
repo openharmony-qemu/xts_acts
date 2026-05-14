@@ -84,6 +84,10 @@ public:
     bool modeEnableRun = false;
     bool enablePTSBasedRateControl = false;
     bool maxbframesEnable = false;
+    bool enableRepeat = false;
+    bool enableSeekEos = false;
+    bool setMaxCount = false;
+    uint32_t inCount = 0;
     uint32_t defaultBitrateMode = CBR;
     OH_AVPixelFormat DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     uint32_t defaultKeyFrameInterval = 1000;

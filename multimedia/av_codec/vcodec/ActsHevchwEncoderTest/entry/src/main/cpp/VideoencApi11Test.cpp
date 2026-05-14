@@ -417,25 +417,23 @@ uint32_t VEncAPI11Sample::ReadOneFrameYUV420SP(uint8_t *dst)
         cout << "ReadOneFrameYUV420SP: Input file not open" << endl;
         return 0;
     }
-    if (stride_ == 0) {
-        cout << "stride_ is zero, call GetStride() first" << endl;
-        return 0;
-    }
+    
     uint8_t *start = dst;
-    int32_t heighTwo;
+    // copy Y - 使用紧凑布局，不使用stride_
     for (uint32_t i = 0; i < defaultHeight; i++) {
-        inFile_->read(reinterpret_cast<char*>(dst), defaultWidth);
-        if (inFile_->gcount() != defaultWidth) {
+        inFile_->read(reinterpret_cast<char *>(dst), defaultWidth);
+        if (!ReturnZeroIfEOS(defaultWidth)) {
             return 0;
         }
-        dst += stride_;
+        dst += defaultWidth;
     }
-    for (uint32_t i = 0; i < defaultHeight / heighTwo; i++) {
-        inFile_->read(reinterpret_cast<char*>(dst), defaultWidth);
-        if (inFile_->gcount() != defaultWidth) {
+    // copy UV - 使用紧凑布局，不使用stride_
+    for (uint32_t i = 0; i < defaultHeight / sampleRatio; i++) {
+        inFile_->read(reinterpret_cast<char *>(dst), defaultWidth);
+        if (!ReturnZeroIfEOS(defaultWidth)) {
             return 0;
         }
-        dst += stride_;
+        dst += defaultWidth;
     }
     return dst - start;
 }
@@ -526,6 +524,29 @@ void VEncAPI11Sample::InputFuncSurface()
         }
         inputframeCount++;
         usleep(FRAME_INTERVAL);
+        if (enableRoi) {
+            InputEnableRepeatSleep();
+        }
+        
+    }
+}
+
+void VEncAPI11Sample::InputEnableRepeatSleep()
+{
+    inCount = inCount + 1;
+    int32_t inCountNum = 15;
+    if (enableRepeat && inCount == inCountNum) {
+        if (setMaxCount) {
+            int32_t sleepTimeMaxCount = 730000;
+            usleep(sleepTimeMaxCount);
+        } else {
+            int32_t sleepTime = 1000000;
+            usleep(sleepTime);
+        }
+        if (enableSeekEos) {
+            inFile_->clear();
+            inFile_->seekg(-1, ios::beg);
+        }
     }
 }
 
