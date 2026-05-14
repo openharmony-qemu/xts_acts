@@ -1735,7 +1735,7 @@ napi_value OHDrawingGetTypographyStyleAttributeDoubleArray0100(napi_env env, nap
  * @tc.desc   test OH_Drawing_SetTypographyStyleAttributeDoubleArray with nullptr style
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
+ * @tc.level  LEVEL0
  */
 napi_value OHDrawingSetTypographyStyleAttributeDoubleArray0200(napi_env env, napi_callback_info info)
 {
@@ -1744,7 +1744,7 @@ napi_value OHDrawingSetTypographyStyleAttributeDoubleArray0200(napi_env env, nap
     double indentValues[THREE] = {10.0, 20.0, 30.0};
     OH_Drawing_ErrorCode errorCode = OH_Drawing_SetTypographyStyleAttributeDoubleArray(nullptr,
         TYPOGRAPHY_STYLE_ATTR_DA_LINE_HEAD_INDENT, indentValues, arrayLen);
-    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_ERROR_INVALID_PARAMETER);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "SetTypographyStyleAttributeDoubleArray0200",
         "nullptr style returns errorCode: %{public}d", errorCode);
     napi_create_int32(env, SUCCESS, &result);
@@ -1757,7 +1757,7 @@ napi_value OHDrawingSetTypographyStyleAttributeDoubleArray0200(napi_env env, nap
  * @tc.desc   test OH_Drawing_GetTypographyStyleAttributeDoubleArray with nullptr style
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
+ * @tc.level  LEVEL0
  */
 napi_value OHDrawingGetTypographyStyleAttributeDoubleArray0200(napi_env env, napi_callback_info info)
 {
@@ -1766,7 +1766,7 @@ napi_value OHDrawingGetTypographyStyleAttributeDoubleArray0200(napi_env env, nap
     size_t getLen = 0;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_GetTypographyStyleAttributeDoubleArray(nullptr,
         TYPOGRAPHY_STYLE_ATTR_DA_LINE_HEAD_INDENT, &getArray, &getLen);
-    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_ERROR_INVALID_PARAMETER);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "GetTypographyStyleAttributeDoubleArray0200",
         "nullptr style returns errorCode: %{public}d", errorCode);
     napi_create_int32(env, SUCCESS, &result);
@@ -1983,7 +1983,7 @@ napi_value OHDrawingGetTypographyStyleAttributeDoubleArray0600(napi_env env, nap
  * @tc.desc   test OH_Drawing_GetTypographyStyleAttributeDoubleArray with nullptr arrayValue out param
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
+ * @tc.level  LEVEL0
  */
 napi_value OHDrawingGetTypographyStyleAttributeDoubleArray0700(napi_env env, napi_callback_info info)
 {
@@ -2000,7 +2000,7 @@ napi_value OHDrawingGetTypographyStyleAttributeDoubleArray0700(napi_env env, nap
         TYPOGRAPHY_STYLE_ATTR_DA_LINE_HEAD_INDENT, nullptr, &getLen);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "GetTypographyStyleAttributeDoubleArray0700",
         "nullptr arrayValue returns errorCode: %{public}d", errorCode);
-    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_ERROR_INVALID_PARAMETER);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     OH_Drawing_DestroyTypographyStyle(typoStyle);
     typoStyle = nullptr;
     napi_create_int32(env, SUCCESS, &result);
@@ -2013,7 +2013,7 @@ napi_value OHDrawingGetTypographyStyleAttributeDoubleArray0700(napi_env env, nap
  * @tc.desc   test OH_Drawing_GetTypographyStyleAttributeDoubleArray with nullptr arrayLength out param
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
+ * @tc.level  LEVEL0
  */
 napi_value OHDrawingGetTypographyStyleAttributeDoubleArray0800(napi_env env, napi_callback_info info)
 {
@@ -2030,7 +2030,7 @@ napi_value OHDrawingGetTypographyStyleAttributeDoubleArray0800(napi_env env, nap
         TYPOGRAPHY_STYLE_ATTR_DA_LINE_HEAD_INDENT, &getArray, nullptr);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "GetTypographyStyleAttributeDoubleArray0800",
         "nullptr arrayLength returns errorCode: %{public}d", errorCode);
-    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_ERROR_INVALID_PARAMETER);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     OH_Drawing_DestroyTypographyStyle(typoStyle);
     typoStyle = nullptr;
     napi_create_int32(env, SUCCESS, &result);
@@ -2043,7 +2043,7 @@ napi_value OHDrawingGetTypographyStyleAttributeDoubleArray0800(napi_env env, nap
  * @tc.desc   test OH_Drawing_GetTypographyStyleAttributeDoubleArray with both out params nullptr
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
- * @tc.level  LEVEL1
+ * @tc.level  LEVEL0
  */
 napi_value OHDrawingGetTypographyStyleAttributeDoubleArray0900(napi_env env, napi_callback_info info)
 {
@@ -2054,7 +2054,7 @@ napi_value OHDrawingGetTypographyStyleAttributeDoubleArray0900(napi_env env, nap
         TYPOGRAPHY_STYLE_ATTR_DA_LINE_HEAD_INDENT, nullptr, nullptr);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "GetTypographyStyleAttributeDoubleArray0900",
         "both out params nullptr returns errorCode: %{public}d", errorCode);
-    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_ERROR_INVALID_PARAMETER);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     OH_Drawing_DestroyTypographyStyle(typoStyle);
     typoStyle = nullptr;
     napi_create_int32(env, SUCCESS, &result);
