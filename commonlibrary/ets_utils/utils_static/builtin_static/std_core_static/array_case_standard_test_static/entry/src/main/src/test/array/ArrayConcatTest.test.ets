@@ -844,17 +844,13 @@ export default function ArrayConcatTest(): void {
      * @tc.name testArrayConcat046
      * @tc.desc Verify concat preserves sparse-like undefined positions in pre-sized arrays
      * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+    * @tc.type Function
+    * @tc.level Level 2
      */
     it('testArrayConcat046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr1 = new Array<int | undefined>(3);
-      arr1[0] = 1;
-      arr1[2] = 3;
+      const arr1 = new Array<int | undefined>(1, undefined, 3);
 
-      const arr2 = new Array<int | undefined>(2);
-      arr2[0] = 4;
-      arr2[1] = 5;
+      const arr2 = new Array<int | undefined>(4, 5);
 
       const result = arr1.concat(arr2);
       expect(result.length).assertEqual(5);

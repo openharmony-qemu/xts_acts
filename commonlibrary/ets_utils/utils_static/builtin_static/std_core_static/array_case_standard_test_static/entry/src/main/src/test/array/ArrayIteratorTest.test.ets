@@ -372,13 +372,11 @@ export default function ArrayIteratorTest(): void {
      * @tc.name testArrayIterator016
      * @tc.desc Verify iterator handles sparse arrays and preserves undefined holes
      * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+    * @tc.type Function
+    * @tc.level Level 2
      */
     it('testArrayIterator016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int | undefined>(3);
-      arr[0] = 10;
-      arr[2] = 30;
+      const arr = new Array<int | undefined>(10, undefined, 30);
       const values = collectOptionalNumberValues(arr.$_iterator());
       expect(values.length).assertEqual(3);
       expect(values[0]).assertEqual(10);

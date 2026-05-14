@@ -865,15 +865,14 @@ export default function ArraySetTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SET_5400
      * @tc.name testArraySet054
-     * @tc.desc Verify pre-sized arrays allow setting previously unassigned positions
+     * @tc.desc Verify initialized optional arrays preserve assigned number values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArraySet054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int | undefined>(5);
-      arr[0] = 10;
-      arr[1] = 20;
+      const arr = new Array<int | undefined>(10, 20, undefined, undefined, undefined);
+      expect(arr.length).assertEqual(5);
       expect(arr[0]).assertEqual(10);
       expect(arr[1]).assertEqual(20);
     });

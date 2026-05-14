@@ -448,10 +448,12 @@ export default function ArrayConstructor1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayConstructor027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<Point027>(2);
-      arr[0] = { x: 1, y: 2 };
-      arr[1] = { x: 3, y: 4 };
+      const arr = new Array<Point027>({ x: 1, y: 2 }, { x: 3, y: 4 });
+      expect(arr.length).assertEqual(2);
       expect(arr[0].x).assertEqual(1);
+      expect(arr[0].y).assertEqual(2);
+      expect(arr[1].x).assertEqual(3);
+      expect(arr[1].y).assertEqual(4);
     });
 
     /**
@@ -463,12 +465,11 @@ export default function ArrayConstructor1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayConstructor028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int | string>(3);
-      arr[0] = 1;
-      arr[1] = 'two';
-      arr[2] = 3;
+      const arr = new Array<int | string>(1, 'two', 3);
+      expect(arr.length).assertEqual(3);
       expect(arr[0] == 1).assertTrue();
       expect(arr[1]).assertEqual('two');
+      expect(arr[2]).assertEqual(3);
     });
 
     /**
@@ -480,12 +481,11 @@ export default function ArrayConstructor1Test(): void {
      * @tc.level Level 2
      */
     it('testArrayConstructor029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<Array<int>>(3);
-      arr[0] = new Array<int>(1, 2);
-      arr[1] = new Array<int>(3, 4);
-      arr[2] = new Array<int>(5, 6);
+      const arr = new Array<Array<int>>(new Array<int>(1, 2), new Array<int>(3, 4), new Array<int>(5, 6));
+      expect(arr.length).assertEqual(3);
       expect(arr[0][0]).assertEqual(1);
       expect(arr[1][1]).assertEqual(4);
+      expect(arr[2][0]).assertEqual(5);
     });
 
     /**
