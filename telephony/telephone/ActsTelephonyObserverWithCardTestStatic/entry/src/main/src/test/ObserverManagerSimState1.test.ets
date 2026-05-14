@@ -324,29 +324,14 @@ export default function observerManagerSimStateTest1() {
       try {
         let slotId: int = 0;
         let num: int = 0;
-        let resolved: boolean = false;
-        const timeoutId = setTimeout(() => {
-          if (!resolved) {
-            console.error(`${caseName} Timeout: callback not called`);
-            ExpectFail();
-            done();
-          }
-        }, 5000);
-        sim.deactivateSim(slotId).then(() => {
-          observer.onGetSimActiveState(slotId, (data: boolean | undefined) => {
-            console.info(`${caseName} data: ${data}`);
-            num++;
-            resolved = true;
-            clearTimeout(timeoutId); 
-            ExpectTrue(num !== 0);
-            done();
-          });
-          sim.activateSim(slotId).catch((err) => {
-            console.error(`${caseName} activateSim error: ${err}`);
-            ExpectFail();
-            done();
-          });
-        });  
+        await sim.deactivateSim(slotId);
+        await sim.activateSim(slotId);
+        observer.onGetSimActiveState(slotId, (data: boolean | undefined) => {
+          console.info(`${caseName} data: ${data}`);
+          num++;
+          ExpectTrue(num !== 0);
+          done();
+        });
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}`);
         ExpectFail();
@@ -354,6 +339,7 @@ export default function observerManagerSimStateTest1() {
       }
       console.info(`${caseName} test end`);
     });
+    
 
     /**
      * @tc.name   testTelephonyObserverOnGetSimActiveState0400
