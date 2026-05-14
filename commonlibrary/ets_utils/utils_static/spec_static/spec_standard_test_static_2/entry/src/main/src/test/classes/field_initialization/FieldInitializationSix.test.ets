@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -650,9 +650,6 @@ let v_F635: int = 5
     v_F635 += 1
     return res
   }
-  class A_F636 {
-    field: Any = foo_F635()
-  }
 
 let v_F636: long = 5
   function foo_F636(): long {
@@ -828,12 +825,6 @@ let v_F649: int = 5
     let res = v_F649
     v_F649 += 1
     return res
-  }
-  class A_F650 {
-    field: Any
-    constructor () {
-      this.field = foo_F649()
-    }
   }
 
 let v_F650: long = 5
@@ -1011,15 +1002,6 @@ let v_F663: int = 5
     v_F663 += 1
     return res
   }
-  class A_F664 {
-    field: Any = 5
-    constructor () {
-      this.field = foo_F663()
-    }
-  }
-function foo_F664(): Any {
-    return 5
-  }
 
 namespace ns {
     export class A_F665 {
@@ -1138,14 +1120,6 @@ namespace ns {
     }
   }
 
-namespace ns {
-    export class A_F678 {
-      field: Any
-      constructor () {
-        this.field = 4
-      }
-    }
-  }
 
 namespace ns {
     export class A_F679 {
@@ -1264,23 +1238,6 @@ namespace ns {
     }
   }
 
-namespace ns {
-    export class A_F692 {
-      field: Any
-      constructor (arg: Any = 4) {
-        this.field = arg
-      }
-    }
-  }
-
-namespace ns {
-    export class A_F693 {
-      field: long
-      constructor (...args: Any[]) {
-        this.field = 4
-      }
-    }
-  }
 
 export default function FieldInitializationSixTest(): void {
   describe("FieldInitializationSixTest", () => {
@@ -1730,32 +1687,17 @@ export default function FieldInitializationSixTest(): void {
       expect(a.field).assertEqual(5)
     })
 
+
+
     /**
      * @tc.number    SUB_FIELD_INIT_SIX_2800
      * @tc.name      testFieldInitSix0028
-     * @tc.desc      Checking for initialization field in generic class.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldInitSix0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F622<Any> = new A_F622<Any>(4)
-      expect(a.field instanceof Any).assertTrue()
-      expect(a.field).assertEqual(4)
-      a.field = 5
-      expect(a.field instanceof Any).assertTrue()
-      expect(a.field).assertEqual(5)
-    })
-
-    /**
-     * @tc.number    SUB_FIELD_INIT_SIX_2900
-     * @tc.name      testFieldInitSix0029
      * @tc.desc      The assignment is performed each time an instance of the class is created.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInitSix0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSix0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: long = 5
           for (let i: int = 0; i < 5; i++) {
             let a: A_F623 = new A_F623()
@@ -1768,14 +1710,14 @@ export default function FieldInitializationSixTest(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_SIX_3000
-     * @tc.name      testFieldInitSix0030
+     * @tc.number    SUB_FIELD_INIT_SIX_2900
+     * @tc.name      testFieldInitSix0029
      * @tc.desc      The assignment is performed each time an instance of the class is created.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInitSix0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSix0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: int = 5
           for (let i: int = 0; i < 5; i++) {
             let a: A_F624 = new A_F624()
@@ -1788,14 +1730,14 @@ export default function FieldInitializationSixTest(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_SIX_3100
-     * @tc.name      testFieldInitSix0031
+     * @tc.number    SUB_FIELD_INIT_SIX_3000
+     * @tc.name      testFieldInitSix0030
      * @tc.desc      The assignment is performed each time an instance of the class is created.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInitSix0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSix0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: byte = 5
           for (let i: int = 0; i < 5; i++) {
             let a: A_F625 = new A_F625()
@@ -1808,14 +1750,14 @@ export default function FieldInitializationSixTest(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_SIX_3200
-     * @tc.name      testFieldInitSix0032
+     * @tc.number    SUB_FIELD_INIT_SIX_3100
+     * @tc.name      testFieldInitSix0031
      * @tc.desc      The assignment is performed each time an instance of the class is created.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInitSix0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSix0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: short = 5
           for (let i: int = 0; i < 5; i++) {
             let a: A_F626 = new A_F626()
@@ -1828,14 +1770,14 @@ export default function FieldInitializationSixTest(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_SIX_3300
-     * @tc.name      testFieldInitSix0033
+     * @tc.number    SUB_FIELD_INIT_SIX_3200
+     * @tc.name      testFieldInitSix0032
      * @tc.desc      The assignment is performed each time an instance of the class is created.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInitSix0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSix0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: double = 5
           for (let i: int = 0; i < 5; i++) {
             let a: A_F627 = new A_F627()
@@ -1848,14 +1790,14 @@ export default function FieldInitializationSixTest(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_SIX_3400
-     * @tc.name      testFieldInitSix0034
+     * @tc.number    SUB_FIELD_INIT_SIX_3300
+     * @tc.name      testFieldInitSix0033
      * @tc.desc      The assignment is performed each time an instance of the class is created.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInitSix0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSix0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: int = 5
           for (let i: int = 0; i < 5; i++) {
             let a: A_F628 = new A_F628()
@@ -1868,14 +1810,14 @@ export default function FieldInitializationSixTest(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_SIX_3500
-     * @tc.name      testFieldInitSix0035
+     * @tc.number    SUB_FIELD_INIT_SIX_3400
+     * @tc.name      testFieldInitSix0034
      * @tc.desc      The assignment is performed each time an instance of the class is created.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInitSix0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSix0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: float = 5.0f
           for (let i: int = 0; i < 5; i++) {
             let a: A_F629 = new A_F629()
@@ -1888,14 +1830,14 @@ export default function FieldInitializationSixTest(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_SIX_3600
-     * @tc.name      testFieldInitSix0036
+     * @tc.number    SUB_FIELD_INIT_SIX_3500
+     * @tc.name      testFieldInitSix0035
      * @tc.desc      The assignment is performed each time an instance of the class is created.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInitSix0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSix0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: bigint = 5n
           for (let i: int = 0; i < 5; i++) {
             let a: A_F630 = new A_F630()
@@ -1908,14 +1850,14 @@ export default function FieldInitializationSixTest(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_SIX_3700
-     * @tc.name      testFieldInitSix0037
+     * @tc.number    SUB_FIELD_INIT_SIX_3600
+     * @tc.name      testFieldInitSix0036
      * @tc.desc      The assignment is performed each time an instance of the class is created.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInitSix0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSix0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: string = "v"
           for (let i: int = 0; i < 5; i++) {
             let a: A_F631 = new A_F631()
@@ -1925,6 +1867,26 @@ export default function FieldInitializationSixTest(): void {
             val += "n"
           }
           v_F630 = "v"
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_SIX_3700
+     * @tc.name      testFieldInitSix0037
+     * @tc.desc      The assignment is performed each time an instance of the class is created.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInitSix0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let val: int = 5
+          for (let i: int = 0; i < 5; i++) {
+            let a: A_F632 = new A_F632()
+        expect(a.field instanceof Object).assertTrue()
+        expect(a.field instanceof int).assertTrue()
+        expect(a.field).assertEqual(val)
+            val += 1
+          }
+          v_F631 = 5
     })
 
     /**
@@ -1938,13 +1900,13 @@ export default function FieldInitializationSixTest(): void {
     it("testFieldInitSix0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: int = 5
           for (let i: int = 0; i < 5; i++) {
-            let a: A_F632 = new A_F632()
-        expect(a.field instanceof Object).assertTrue()
+            let a: A_F633 = new A_F633()
+        expect(a.field instanceof Object | null).assertTrue()
         expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v_F631 = 5
+          v_F632 = 5
     })
 
     /**
@@ -1958,13 +1920,13 @@ export default function FieldInitializationSixTest(): void {
     it("testFieldInitSix0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: int = 5
           for (let i: int = 0; i < 5; i++) {
-            let a: A_F633 = new A_F633()
-        expect(a.field instanceof Object | null).assertTrue()
+            let a: A_F634 = new A_F634()
+        expect(a.field instanceof Object | undefined).assertTrue()
         expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v_F632 = 5
+          v_F633 = 5
     })
 
     /**
@@ -1978,13 +1940,13 @@ export default function FieldInitializationSixTest(): void {
     it("testFieldInitSix0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: int = 5
           for (let i: int = 0; i < 5; i++) {
-            let a: A_F634 = new A_F634()
-        expect(a.field instanceof Object | undefined).assertTrue()
+            let a: A_F635 = new A_F635()
+        expect(a.field instanceof Object | undefined | null).assertTrue()
         expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v_F633 = 5
+          v_F634 = 5
     })
 
     /**
@@ -1996,15 +1958,15 @@ export default function FieldInitializationSixTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitSix0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val: int = 5
+      let val: long = 5
           for (let i: int = 0; i < 5; i++) {
-            let a: A_F635 = new A_F635()
-        expect(a.field instanceof Object | undefined | null).assertTrue()
-        expect(a.field instanceof int).assertTrue()
+            let a: A_F637 = new A_F637()
+        expect(a.field instanceof long).assertTrue()
+        expect(a.field instanceof long).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v_F634 = 5
+          v_F636 = 5
     })
 
     /**
@@ -2018,13 +1980,13 @@ export default function FieldInitializationSixTest(): void {
     it("testFieldInitSix0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: int = 5
           for (let i: int = 0; i < 5; i++) {
-            let a: A_F636 = new A_F636()
-        expect(a.field instanceof Any).assertTrue()
+            let a: A_F638 = new A_F638()
+        expect(a.field instanceof int).assertTrue()
         expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v_F635 = 5
+          v_F637 = 5
     })
 
     /**
@@ -2036,46 +1998,6 @@ export default function FieldInitializationSixTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitSix0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val: long = 5
-          for (let i: int = 0; i < 5; i++) {
-            let a: A_F637 = new A_F637()
-        expect(a.field instanceof long).assertTrue()
-        expect(a.field instanceof long).assertTrue()
-        expect(a.field).assertEqual(val)
-            val += 1
-          }
-          v_F636 = 5
-    })
-
-    /**
-     * @tc.number    SUB_FIELD_INIT_SIX_4400
-     * @tc.name      testFieldInitSix0044
-     * @tc.desc      The assignment is performed each time an instance of the class is created.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldInitSix0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val: int = 5
-          for (let i: int = 0; i < 5; i++) {
-            let a: A_F638 = new A_F638()
-        expect(a.field instanceof int).assertTrue()
-        expect(a.field instanceof int).assertTrue()
-        expect(a.field).assertEqual(val)
-            val += 1
-          }
-          v_F637 = 5
-    })
-
-    /**
-     * @tc.number    SUB_FIELD_INIT_SIX_4500
-     * @tc.name      testFieldInitSix0045
-     * @tc.desc      The assignment is performed each time an instance of the class is created.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldInitSix0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: byte = 5
           for (let i: int = 0; i < 5; i++) {
             let a: A_F639 = new A_F639()
@@ -2088,14 +2010,14 @@ export default function FieldInitializationSixTest(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_SIX_4600
-     * @tc.name      testFieldInitSix0046
+     * @tc.number    SUB_FIELD_INIT_SIX_4400
+     * @tc.name      testFieldInitSix0044
      * @tc.desc      The assignment is performed each time an instance of the class is created.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInitSix0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSix0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: short = 5
           for (let i: int = 0; i < 5; i++) {
             let a: A_F640 = new A_F640()
@@ -2108,14 +2030,14 @@ export default function FieldInitializationSixTest(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_SIX_4700
-     * @tc.name      testFieldInitSix0047
+     * @tc.number    SUB_FIELD_INIT_SIX_4500
+     * @tc.name      testFieldInitSix0045
      * @tc.desc      The assignment is performed each time an instance of the class is created.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInitSix0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSix0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: double = 5
           for (let i: int = 0; i < 5; i++) {
             let a: A_F641 = new A_F641()
@@ -2128,14 +2050,14 @@ export default function FieldInitializationSixTest(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_SIX_4800
-     * @tc.name      testFieldInitSix0048
+     * @tc.number    SUB_FIELD_INIT_SIX_4600
+     * @tc.name      testFieldInitSix0046
      * @tc.desc      The assignment is performed each time an instance of the class is created.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInitSix0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSix0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: int = 5
           for (let i: int = 0; i < 5; i++) {
             let a: A_F642 = new A_F642()
@@ -2148,14 +2070,14 @@ export default function FieldInitializationSixTest(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_SIX_4900
-     * @tc.name      testFieldInitSix0049
+     * @tc.number    SUB_FIELD_INIT_SIX_4700
+     * @tc.name      testFieldInitSix0047
      * @tc.desc      The assignment is performed each time an instance of the class is created.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInitSix0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSix0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: float = 5.0f
           for (let i: int = 0; i < 5; i++) {
             let a: A_F643 = new A_F643()
@@ -2168,14 +2090,14 @@ export default function FieldInitializationSixTest(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_SIX_5000
-     * @tc.name      testFieldInitSix0050
+     * @tc.number    SUB_FIELD_INIT_SIX_4800
+     * @tc.name      testFieldInitSix0048
      * @tc.desc      The assignment is performed each time an instance of the class is created.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInitSix0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSix0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: bigint = 5n
           for (let i: int = 0; i < 5; i++) {
             let a: A_F644 = new A_F644()
@@ -2188,14 +2110,14 @@ export default function FieldInitializationSixTest(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_SIX_5100
-     * @tc.name      testFieldInitSix0051
+     * @tc.number    SUB_FIELD_INIT_SIX_4900
+     * @tc.name      testFieldInitSix0049
      * @tc.desc      The assignment is performed each time an instance of the class is created.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInitSix0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSix0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: string = "v"
           for (let i: int = 0; i < 5; i++) {
             let a: A_F645 = new A_F645()
@@ -2205,6 +2127,46 @@ export default function FieldInitializationSixTest(): void {
             val += "n"
           }
           v_F644 = "v"
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_SIX_5000
+     * @tc.name      testFieldInitSix0050
+     * @tc.desc      The assignment is performed each time an instance of the class is created.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInitSix0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let val: int = 5
+          for (let i: int = 0; i < 5; i++) {
+            let a: A_F646 = new A_F646()
+        expect(a.field instanceof Object).assertTrue()
+        expect(a.field instanceof int).assertTrue()
+        expect(a.field).assertEqual(val)
+            val += 1
+          }
+          v_F645 = 5
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_SIX_5100
+     * @tc.name      testFieldInitSix0051
+     * @tc.desc      The assignment is performed each time an instance of the class is created.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInitSix0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let val: int = 5
+          for (let i: int = 0; i < 5; i++) {
+            let a: A_F647 = new A_F647()
+        expect(a.field instanceof Object | null).assertTrue()
+        expect(a.field instanceof int).assertTrue()
+        expect(a.field).assertEqual(val)
+            val += 1
+          }
+          v_F646 = 5
     })
 
     /**
@@ -2218,13 +2180,13 @@ export default function FieldInitializationSixTest(): void {
     it("testFieldInitSix0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: int = 5
           for (let i: int = 0; i < 5; i++) {
-            let a: A_F646 = new A_F646()
-        expect(a.field instanceof Object).assertTrue()
+            let a: A_F648 = new A_F648()
+        expect(a.field instanceof Object | undefined).assertTrue()
         expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v_F645 = 5
+          v_F647 = 5
     })
 
     /**
@@ -2238,13 +2200,13 @@ export default function FieldInitializationSixTest(): void {
     it("testFieldInitSix0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: int = 5
           for (let i: int = 0; i < 5; i++) {
-            let a: A_F647 = new A_F647()
-        expect(a.field instanceof Object | null).assertTrue()
+            let a: A_F649 = new A_F649()
+        expect(a.field instanceof Object | undefined | null).assertTrue()
         expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v_F646 = 5
+          v_F648 = 5
     })
 
     /**
@@ -2256,15 +2218,15 @@ export default function FieldInitializationSixTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitSix0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val: int = 5
+      let val: long = 5
           for (let i: int = 0; i < 5; i++) {
-            let a: A_F648 = new A_F648()
-        expect(a.field instanceof Object | undefined).assertTrue()
-        expect(a.field instanceof int).assertTrue()
+            let a: A_F651 = new A_F651()
+        expect(a.field instanceof long).assertTrue()
+        expect(a.field instanceof long).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v_F647 = 5
+          v_F650 = 5
     })
 
     /**
@@ -2278,13 +2240,13 @@ export default function FieldInitializationSixTest(): void {
     it("testFieldInitSix0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: int = 5
           for (let i: int = 0; i < 5; i++) {
-            let a: A_F649 = new A_F649()
-        expect(a.field instanceof Object | undefined | null).assertTrue()
+            let a: A_F652 = new A_F652()
+        expect(a.field instanceof int).assertTrue()
         expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
           }
-          v_F648 = 5
+          v_F651 = 5
     })
 
     /**
@@ -2296,66 +2258,6 @@ export default function FieldInitializationSixTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitSix0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val: int = 5
-          for (let i: int = 0; i < 5; i++) {
-            let a: A_F650 = new A_F650()
-        expect(a.field instanceof Any).assertTrue()
-        expect(a.field instanceof int).assertTrue()
-        expect(a.field).assertEqual(val)
-            val += 1
-          }
-          v_F649 = 5
-    })
-
-    /**
-     * @tc.number    SUB_FIELD_INIT_SIX_5700
-     * @tc.name      testFieldInitSix0057
-     * @tc.desc      The assignment is performed each time an instance of the class is created.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldInitSix0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val: long = 5
-          for (let i: int = 0; i < 5; i++) {
-            let a: A_F651 = new A_F651()
-        expect(a.field instanceof long).assertTrue()
-        expect(a.field instanceof long).assertTrue()
-        expect(a.field).assertEqual(val)
-            val += 1
-          }
-          v_F650 = 5
-    })
-
-    /**
-     * @tc.number    SUB_FIELD_INIT_SIX_5800
-     * @tc.name      testFieldInitSix0058
-     * @tc.desc      The assignment is performed each time an instance of the class is created.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldInitSix0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val: int = 5
-          for (let i: int = 0; i < 5; i++) {
-            let a: A_F652 = new A_F652()
-        expect(a.field instanceof int).assertTrue()
-        expect(a.field instanceof int).assertTrue()
-        expect(a.field).assertEqual(val)
-            val += 1
-          }
-          v_F651 = 5
-    })
-
-    /**
-     * @tc.number    SUB_FIELD_INIT_SIX_5900
-     * @tc.name      testFieldInitSix0059
-     * @tc.desc      The assignment is performed each time an instance of the class is created.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldInitSix0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: byte = 5
           for (let i: int = 0; i < 5; i++) {
             let a: A_F653 = new A_F653()
@@ -2368,14 +2270,14 @@ export default function FieldInitializationSixTest(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_SIX_6000
-     * @tc.name      testFieldInitSix0060
+     * @tc.number    SUB_FIELD_INIT_SIX_5700
+     * @tc.name      testFieldInitSix0057
      * @tc.desc      The assignment is performed each time an instance of the class is created.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInitSix0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSix0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: short = 5
           for (let i: int = 0; i < 5; i++) {
             let a: A_F654 = new A_F654()
@@ -2388,14 +2290,14 @@ export default function FieldInitializationSixTest(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_SIX_6100
-     * @tc.name      testFieldInitSix0061
+     * @tc.number    SUB_FIELD_INIT_SIX_5800
+     * @tc.name      testFieldInitSix0058
      * @tc.desc      The assignment is performed each time an instance of the class is created.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInitSix0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSix0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: double = 5
           for (let i: int = 0; i < 5; i++) {
             let a: A_F655 = new A_F655()
@@ -2408,14 +2310,14 @@ export default function FieldInitializationSixTest(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_SIX_6200
-     * @tc.name      testFieldInitSix0062
+     * @tc.number    SUB_FIELD_INIT_SIX_5900
+     * @tc.name      testFieldInitSix0059
      * @tc.desc      The assignment is performed each time an instance of the class is created.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInitSix0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSix0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: int = 5
           for (let i: int = 0; i < 5; i++) {
             let a: A_F656 = new A_F656()
@@ -2428,14 +2330,14 @@ export default function FieldInitializationSixTest(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_SIX_6300
-     * @tc.name      testFieldInitSix0063
+     * @tc.number    SUB_FIELD_INIT_SIX_6000
+     * @tc.name      testFieldInitSix0060
      * @tc.desc      The assignment is performed each time an instance of the class is created.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInitSix0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSix0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: float = 5.0f
           for (let i: int = 0; i < 5; i++) {
             let a: A_F657 = new A_F657()
@@ -2448,14 +2350,14 @@ export default function FieldInitializationSixTest(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_SIX_6400
-     * @tc.name      testFieldInitSix0064
+     * @tc.number    SUB_FIELD_INIT_SIX_6100
+     * @tc.name      testFieldInitSix0061
      * @tc.desc      The assignment is performed each time an instance of the class is created.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInitSix0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSix0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: bigint = 5n
           for (let i: int = 0; i < 5; i++) {
             let a: A_F658 = new A_F658()
@@ -2468,14 +2370,14 @@ export default function FieldInitializationSixTest(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_SIX_6500
-     * @tc.name      testFieldInitSix0065
+     * @tc.number    SUB_FIELD_INIT_SIX_6200
+     * @tc.name      testFieldInitSix0062
      * @tc.desc      The assignment is performed each time an instance of the class is created.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInitSix0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitSix0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: string = "v"
           for (let i: int = 0; i < 5; i++) {
             let a: A_F659 = new A_F659()
@@ -2485,6 +2387,66 @@ export default function FieldInitializationSixTest(): void {
             val += "n"
           }
           v_F658 = "v"
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_SIX_6300
+     * @tc.name      testFieldInitSix0063
+     * @tc.desc      The assignment is performed each time an instance of the class is created.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInitSix0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let val: int = 5
+          for (let i: int = 0; i < 5; i++) {
+            let a: A_F660 = new A_F660()
+        expect(a.field instanceof Object).assertTrue()
+        expect(a.field instanceof int).assertTrue()
+        expect(a.field).assertEqual(val)
+            val += 1
+          }
+          v_F659 = 5
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_SIX_6400
+     * @tc.name      testFieldInitSix0064
+     * @tc.desc      The assignment is performed each time an instance of the class is created.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInitSix0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let val: int = 5
+          for (let i: int = 0; i < 5; i++) {
+            let a: A_F661 = new A_F661()
+        expect(a.field instanceof Object | null).assertTrue()
+        expect(a.field instanceof int).assertTrue()
+        expect(a.field).assertEqual(val)
+            val += 1
+          }
+          v_F660 = 5
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_SIX_6500
+     * @tc.name      testFieldInitSix0065
+     * @tc.desc      The assignment is performed each time an instance of the class is created.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInitSix0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let val: int = 5
+          for (let i: int = 0; i < 5; i++) {
+            let a: A_F662 = new A_F662()
+        expect(a.field instanceof Object | undefined).assertTrue()
+        expect(a.field instanceof int).assertTrue()
+        expect(a.field).assertEqual(val)
+            val += 1
+          }
+          v_F661 = 5
     })
 
     /**
@@ -2498,66 +2460,6 @@ export default function FieldInitializationSixTest(): void {
     it("testFieldInitSix0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let val: int = 5
           for (let i: int = 0; i < 5; i++) {
-            let a: A_F660 = new A_F660()
-        expect(a.field instanceof Object).assertTrue()
-        expect(a.field instanceof int).assertTrue()
-        expect(a.field).assertEqual(val)
-            val += 1
-          }
-          v_F659 = 5
-    })
-
-    /**
-     * @tc.number    SUB_FIELD_INIT_SIX_6700
-     * @tc.name      testFieldInitSix0067
-     * @tc.desc      The assignment is performed each time an instance of the class is created.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldInitSix0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val: int = 5
-          for (let i: int = 0; i < 5; i++) {
-            let a: A_F661 = new A_F661()
-        expect(a.field instanceof Object | null).assertTrue()
-        expect(a.field instanceof int).assertTrue()
-        expect(a.field).assertEqual(val)
-            val += 1
-          }
-          v_F660 = 5
-    })
-
-    /**
-     * @tc.number    SUB_FIELD_INIT_SIX_6800
-     * @tc.name      testFieldInitSix0068
-     * @tc.desc      The assignment is performed each time an instance of the class is created.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldInitSix0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val: int = 5
-          for (let i: int = 0; i < 5; i++) {
-            let a: A_F662 = new A_F662()
-        expect(a.field instanceof Object | undefined).assertTrue()
-        expect(a.field instanceof int).assertTrue()
-        expect(a.field).assertEqual(val)
-            val += 1
-          }
-          v_F661 = 5
-    })
-
-    /**
-     * @tc.number    SUB_FIELD_INIT_SIX_6900
-     * @tc.name      testFieldInitSix0069
-     * @tc.desc      The assignment is performed each time an instance of the class is created.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldInitSix0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val: int = 5
-          for (let i: int = 0; i < 5; i++) {
             let a: A_F663 = new A_F663()
         expect(a.field instanceof Object | undefined | null).assertTrue()
         expect(a.field instanceof int).assertTrue()
@@ -2568,23 +2470,71 @@ export default function FieldInitializationSixTest(): void {
     })
 
     /**
+     * @tc.number    SUB_FIELD_INIT_SIX_6700
+     * @tc.name      testFieldInitSix0067
+     * @tc.desc      Checking for initialization from constructor with namespace usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInitSix0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: ns.A_F665 = new ns.A_F665()
+      expect(a.field instanceof long).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof long).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_SIX_6800
+     * @tc.name      testFieldInitSix0068
+     * @tc.desc      Checking for initialization from constructor with namespace usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInitSix0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: ns.A_F666 = new ns.A_F666()
+      expect(a.field instanceof int).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof int).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_SIX_6900
+     * @tc.name      testFieldInitSix0069
+     * @tc.desc      Checking for initialization from constructor with namespace usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInitSix0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: ns.A_F667 = new ns.A_F667()
+      expect(a.field instanceof byte).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof byte).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
      * @tc.number    SUB_FIELD_INIT_SIX_7000
      * @tc.name      testFieldInitSix0070
-     * @tc.desc      The assignment is performed each time an instance of the class is created.
+     * @tc.desc      Checking for initialization from constructor with namespace usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testFieldInitSix0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val: int = 5
-          for (let i: int = 0; i < 5; i++) {
-            let a: A_F664 = new A_F664()
-        expect(a.field instanceof Any).assertTrue()
-        expect(a.field instanceof int).assertTrue()
-        expect(a.field).assertEqual(val)
-            val += 1
-          }
-          v_F663 = 5
+      let a: ns.A_F668 = new ns.A_F668()
+      expect(a.field instanceof short).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof short).assertTrue()
+      expect(a.field).assertEqual(5)
     })
 
     /**
@@ -2596,12 +2546,12 @@ export default function FieldInitializationSixTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitSix0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: ns.A_F665 = new ns.A_F665()
-      expect(a.field instanceof long).assertTrue()
+      let a: ns.A_F669 = new ns.A_F669()
+      expect(a.field instanceof double).assertTrue()
       expect(a.field).assertEqual(4)
-      a.field = 5
-      expect(a.field instanceof long).assertTrue()
-      expect(a.field).assertEqual(5)
+      a.field = 7.3
+      expect(a.field instanceof double).assertTrue()
+      expect(a.field).assertEqual(7.3)
     })
 
     /**
@@ -2613,11 +2563,11 @@ export default function FieldInitializationSixTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitSix0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: ns.A_F666 = new ns.A_F666()
-      expect(a.field instanceof int).assertTrue()
+      let a: ns.A_F670 = new ns.A_F670()
+      expect(a.field instanceof number).assertTrue()
       expect(a.field).assertEqual(4)
       a.field = 5
-      expect(a.field instanceof int).assertTrue()
+      expect(a.field instanceof number).assertTrue()
       expect(a.field).assertEqual(5)
     })
 
@@ -2630,12 +2580,12 @@ export default function FieldInitializationSixTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitSix0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: ns.A_F667 = new ns.A_F667()
-      expect(a.field instanceof byte).assertTrue()
-      expect(a.field).assertEqual(4)
-      a.field = 5
-      expect(a.field instanceof byte).assertTrue()
-      expect(a.field).assertEqual(5)
+      let a: ns.A_F671 = new ns.A_F671()
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(4.5f)
+      a.field = 7.3f
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(7.3f)
     })
 
     /**
@@ -2647,12 +2597,12 @@ export default function FieldInitializationSixTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitSix0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: ns.A_F668 = new ns.A_F668()
-      expect(a.field instanceof short).assertTrue()
-      expect(a.field).assertEqual(4)
-      a.field = 5
-      expect(a.field instanceof short).assertTrue()
-      expect(a.field).assertEqual(5)
+      let a: ns.A_F672 = new ns.A_F672()
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(4n)
+      a.field = 5n
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(5n)
     })
 
     /**
@@ -2664,12 +2614,12 @@ export default function FieldInitializationSixTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitSix0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: ns.A_F669 = new ns.A_F669()
-      expect(a.field instanceof double).assertTrue()
-      expect(a.field).assertEqual(4)
-      a.field = 7.3
-      expect(a.field instanceof double).assertTrue()
-      expect(a.field).assertEqual(7.3)
+      let a: ns.A_F673 = new ns.A_F673()
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("abc")
+      a.field = "efg"
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("efg")
     })
 
     /**
@@ -2681,12 +2631,12 @@ export default function FieldInitializationSixTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitSix0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: ns.A_F670 = new ns.A_F670()
-      expect(a.field instanceof number).assertTrue()
-      expect(a.field).assertEqual(4)
-      a.field = 5
-      expect(a.field instanceof number).assertTrue()
-      expect(a.field).assertEqual(5)
+      let a: ns.A_F674 = new ns.A_F674()
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'a')
+      a.field = c'b'
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'b')
     })
 
     /**
@@ -2698,12 +2648,12 @@ export default function FieldInitializationSixTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitSix0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: ns.A_F671 = new ns.A_F671()
-      expect(a.field instanceof float).assertTrue()
-      expect(a.field).assertEqual(4.5f)
-      a.field = 7.3f
-      expect(a.field instanceof float).assertTrue()
-      expect(a.field).assertEqual(7.3f)
+      let a: ns.A_F675 = new ns.A_F675()
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(false)
+      a.field = true
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(true)
     })
 
     /**
@@ -2715,12 +2665,12 @@ export default function FieldInitializationSixTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitSix0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: ns.A_F672 = new ns.A_F672()
-      expect(a.field instanceof bigint).assertTrue()
-      expect(a.field).assertEqual(4n)
-      a.field = 5n
-      expect(a.field instanceof bigint).assertTrue()
-      expect(a.field).assertEqual(5n)
+      let a: ns.A_F676 = new ns.A_F676()
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(5)
     })
 
     /**
@@ -2732,13 +2682,14 @@ export default function FieldInitializationSixTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitSix0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: ns.A_F673 = new ns.A_F673()
-      expect(a.field instanceof string).assertTrue()
-      expect(a.field).assertEqual("abc")
-      a.field = "efg"
-      expect(a.field instanceof string).assertTrue()
-      expect(a.field).assertEqual("efg")
+      let a: ns.A_F677 = new ns.A_F677()
+      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field).assertEqual(5)
     })
+
 
     /**
      * @tc.number    SUB_FIELD_INIT_SIX_8000
@@ -2749,12 +2700,12 @@ export default function FieldInitializationSixTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitSix0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: ns.A_F674 = new ns.A_F674()
-      expect(a.field instanceof char).assertTrue()
-      expect(a.field).assertEqual(c'a')
-      a.field = c'b'
-      expect(a.field instanceof char).assertTrue()
-      expect(a.field).assertEqual(c'b')
+      let a: ns.A_F679 = new ns.A_F679()
+      expect(a.field instanceof long).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof long).assertTrue()
+      expect(a.field).assertEqual(5)
     })
 
     /**
@@ -2766,12 +2717,12 @@ export default function FieldInitializationSixTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitSix0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: ns.A_F675 = new ns.A_F675()
-      expect(a.field instanceof boolean).assertTrue()
-      expect(a.field).assertEqual(false)
-      a.field = true
-      expect(a.field instanceof boolean).assertTrue()
-      expect(a.field).assertEqual(true)
+      let a: ns.A_F680 = new ns.A_F680()
+      expect(a.field instanceof int).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof int).assertTrue()
+      expect(a.field).assertEqual(5)
     })
 
     /**
@@ -2783,11 +2734,11 @@ export default function FieldInitializationSixTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitSix0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: ns.A_F676 = new ns.A_F676()
-      expect(a.field instanceof Object).assertTrue()
+      let a: ns.A_F681 = new ns.A_F681()
+      expect(a.field instanceof byte).assertTrue()
       expect(a.field).assertEqual(4)
       a.field = 5
-      expect(a.field instanceof Object).assertTrue()
+      expect(a.field instanceof byte).assertTrue()
       expect(a.field).assertEqual(5)
     })
 
@@ -2800,11 +2751,11 @@ export default function FieldInitializationSixTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitSix0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: ns.A_F677 = new ns.A_F677()
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      let a: ns.A_F682 = new ns.A_F682()
+      expect(a.field instanceof short).assertTrue()
       expect(a.field).assertEqual(4)
       a.field = 5
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof short).assertTrue()
       expect(a.field).assertEqual(5)
     })
 
@@ -2817,12 +2768,12 @@ export default function FieldInitializationSixTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitSix0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: ns.A_F678 = new ns.A_F678()
-      expect(a.field instanceof Any).assertTrue()
+      let a: ns.A_F683 = new ns.A_F683()
+      expect(a.field instanceof double).assertTrue()
       expect(a.field).assertEqual(4)
-      a.field = 5
-      expect(a.field instanceof Any).assertTrue()
-      expect(a.field).assertEqual(5)
+      a.field = 7.3
+      expect(a.field instanceof double).assertTrue()
+      expect(a.field).assertEqual(7.3)
     })
 
     /**
@@ -2834,11 +2785,11 @@ export default function FieldInitializationSixTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitSix0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: ns.A_F679 = new ns.A_F679()
-      expect(a.field instanceof long).assertTrue()
+      let a: ns.A_F684 = new ns.A_F684()
+      expect(a.field instanceof number).assertTrue()
       expect(a.field).assertEqual(4)
       a.field = 5
-      expect(a.field instanceof long).assertTrue()
+      expect(a.field instanceof number).assertTrue()
       expect(a.field).assertEqual(5)
     })
 
@@ -2851,12 +2802,12 @@ export default function FieldInitializationSixTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitSix0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: ns.A_F680 = new ns.A_F680()
-      expect(a.field instanceof int).assertTrue()
-      expect(a.field).assertEqual(4)
-      a.field = 5
-      expect(a.field instanceof int).assertTrue()
-      expect(a.field).assertEqual(5)
+      let a: ns.A_F685 = new ns.A_F685()
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(4.5f)
+      a.field = 7.3f
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(7.3f)
     })
 
     /**
@@ -2868,12 +2819,12 @@ export default function FieldInitializationSixTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitSix0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: ns.A_F681 = new ns.A_F681()
-      expect(a.field instanceof byte).assertTrue()
-      expect(a.field).assertEqual(4)
-      a.field = 5
-      expect(a.field instanceof byte).assertTrue()
-      expect(a.field).assertEqual(5)
+      let a: ns.A_F686 = new ns.A_F686()
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(4n)
+      a.field = 5n
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(5n)
     })
 
     /**
@@ -2885,12 +2836,12 @@ export default function FieldInitializationSixTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitSix0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: ns.A_F682 = new ns.A_F682()
-      expect(a.field instanceof short).assertTrue()
-      expect(a.field).assertEqual(4)
-      a.field = 5
-      expect(a.field instanceof short).assertTrue()
-      expect(a.field).assertEqual(5)
+      let a: ns.A_F687 = new ns.A_F687()
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("abc")
+      a.field = "efg"
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("efg")
     })
 
     /**
@@ -2902,12 +2853,12 @@ export default function FieldInitializationSixTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitSix0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: ns.A_F683 = new ns.A_F683()
-      expect(a.field instanceof double).assertTrue()
-      expect(a.field).assertEqual(4)
-      a.field = 7.3
-      expect(a.field instanceof double).assertTrue()
-      expect(a.field).assertEqual(7.3)
+      let a: ns.A_F688 = new ns.A_F688()
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'a')
+      a.field = c'b'
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'b')
     })
 
     /**
@@ -2919,12 +2870,12 @@ export default function FieldInitializationSixTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitSix0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: ns.A_F684 = new ns.A_F684()
-      expect(a.field instanceof number).assertTrue()
-      expect(a.field).assertEqual(4)
-      a.field = 5
-      expect(a.field instanceof number).assertTrue()
-      expect(a.field).assertEqual(5)
+      let a: ns.A_F689 = new ns.A_F689()
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(false)
+      a.field = true
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(true)
     })
 
     /**
@@ -2936,12 +2887,12 @@ export default function FieldInitializationSixTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitSix0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: ns.A_F685 = new ns.A_F685()
-      expect(a.field instanceof float).assertTrue()
-      expect(a.field).assertEqual(4.5f)
-      a.field = 7.3f
-      expect(a.field instanceof float).assertTrue()
-      expect(a.field).assertEqual(7.3f)
+      let a: ns.A_F690 = new ns.A_F690()
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(5)
     })
 
     /**
@@ -2953,130 +2904,11 @@ export default function FieldInitializationSixTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitSix0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: ns.A_F686 = new ns.A_F686()
-      expect(a.field instanceof bigint).assertTrue()
-      expect(a.field).assertEqual(4n)
-      a.field = 5n
-      expect(a.field instanceof bigint).assertTrue()
-      expect(a.field).assertEqual(5n)
-    })
-
-    /**
-     * @tc.number    SUB_FIELD_INIT_SIX_9300
-     * @tc.name      testFieldInitSix0093
-     * @tc.desc      Checking for initialization from constructor with namespace usage.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldInitSix0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: ns.A_F687 = new ns.A_F687()
-      expect(a.field instanceof string).assertTrue()
-      expect(a.field).assertEqual("abc")
-      a.field = "efg"
-      expect(a.field instanceof string).assertTrue()
-      expect(a.field).assertEqual("efg")
-    })
-
-    /**
-     * @tc.number    SUB_FIELD_INIT_SIX_9400
-     * @tc.name      testFieldInitSix0094
-     * @tc.desc      Checking for initialization from constructor with namespace usage.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldInitSix0094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: ns.A_F688 = new ns.A_F688()
-      expect(a.field instanceof char).assertTrue()
-      expect(a.field).assertEqual(c'a')
-      a.field = c'b'
-      expect(a.field instanceof char).assertTrue()
-      expect(a.field).assertEqual(c'b')
-    })
-
-    /**
-     * @tc.number    SUB_FIELD_INIT_SIX_9500
-     * @tc.name      testFieldInitSix0095
-     * @tc.desc      Checking for initialization from constructor with namespace usage.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldInitSix0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: ns.A_F689 = new ns.A_F689()
-      expect(a.field instanceof boolean).assertTrue()
-      expect(a.field).assertEqual(false)
-      a.field = true
-      expect(a.field instanceof boolean).assertTrue()
-      expect(a.field).assertEqual(true)
-    })
-
-    /**
-     * @tc.number    SUB_FIELD_INIT_SIX_9600
-     * @tc.name      testFieldInitSix0096
-     * @tc.desc      Checking for initialization from constructor with namespace usage.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldInitSix0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: ns.A_F690 = new ns.A_F690()
-      expect(a.field instanceof Object).assertTrue()
-      expect(a.field).assertEqual(4)
-      a.field = 5
-      expect(a.field instanceof Object).assertTrue()
-      expect(a.field).assertEqual(5)
-    })
-
-    /**
-     * @tc.number    SUB_FIELD_INIT_SIX_9700
-     * @tc.name      testFieldInitSix0097
-     * @tc.desc      Checking for initialization from constructor with namespace usage.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldInitSix0097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F691 = new ns.A_F691()
       expect(a.field instanceof Object | undefined | null).assertTrue()
       expect(a.field).assertEqual(4)
       a.field = 5
       expect(a.field instanceof Object | undefined | null).assertTrue()
-      expect(a.field).assertEqual(5)
-    })
-
-    /**
-     * @tc.number    SUB_FIELD_INIT_SIX_9800
-     * @tc.name      testFieldInitSix0098
-     * @tc.desc      Checking for initialization from constructor with namespace usage.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldInitSix0098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: ns.A_F692 = new ns.A_F692()
-      expect(a.field instanceof Any).assertTrue()
-      expect(a.field).assertEqual(4)
-      a.field = 5
-      expect(a.field instanceof Any).assertTrue()
-      expect(a.field).assertEqual(5)
-    })
-
-    /**
-     * @tc.number    SUB_FIELD_INIT_SIX_9900
-     * @tc.name      testFieldInitSix0099
-     * @tc.desc      Checking for initialization from constructor with namespace usage.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldInitSix0099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: ns.A_F693 = new ns.A_F693()
-      expect(a.field instanceof long).assertTrue()
-      expect(a.field).assertEqual(4)
-      a.field = 5
-      expect(a.field instanceof long).assertTrue()
       expect(a.field).assertEqual(5)
     })
   })

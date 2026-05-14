@@ -26,7 +26,6 @@ import {
   Level
 } from "../../../../../hypium";
 
-
 async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {
     setTimeout(() => {
@@ -117,26 +116,6 @@ function get_field(a: Base_F102): boolean {
 
 function set_field(a: Base_F102, value: boolean) {
   a.f = value
-}
-
-interface I_F103 {
-  f: Any
-}
-
-class Base_F103 {
-  f: Any = null
-}
-
-class Derived_F103 extends Base_F103 implements I_F103 {
-  override f: Any = null
-}
-
-function get_prop(i: I_F103): Any {
-  return i.f
-}
-
-function set_prop(i: I_F103, value: Any) {
-  i.f = value
 }
 
 interface I_F104 {
@@ -376,32 +355,6 @@ function get_prop(i: I_F115): boolean {
 }
 
 function set_prop(i: I_F115, value: boolean) {
-  i.f = value
-}
-
-interface I1_F116 {
-  f: Any
-}
-interface I2_F116 {
-  f: Any
-}
-class A_F116 implements I1_F116, I2_F116 {
-  f: Any = null
-}
-
-function get_prop_I1(i: I1_F116): Any {
-  return i.f
-}
-
-function set_prop_I1(i: I1_F116, value: Any) {
-  i.f = value
-}
-
-function get_prop_I2(i: I2_F116): Any {
-  return i.f
-}
-
-function set_prop_I2(i: I2_F116, value: Any) {
   i.f = value
 }
 
@@ -714,42 +667,6 @@ function get_prop_I2(i: I2_F128): boolean {
 }
 
 function set_prop_I2(i: I2_F128, value: boolean) {
-  i.f = value
-}
-
-interface I1_F129 {
-  f: Any
-}
-interface I2_F129 {
-  f: Any
-}
-interface I3_F129 extends I2_F129 {
-}
-class A_F129 implements I1_F129, I3_F129 {
-  f: Any = null
-}
-
-function get_prop_I1(i: I1_F129): Any {
-  return i.f
-}
-
-function set_prop_I1(i: I1_F129, value: Any) {
-  i.f = value
-}
-
-function get_prop_I2(i: I2_F129): Any {
-  return i.f
-}
-
-function set_prop_I2(i: I2_F129, value: Any) {
-  i.f = value
-}
-
-function get_prop_I3(i: I3_F129): Any {
-  return i.f
-}
-
-function set_prop_I3(i: I3_F129, value: Any) {
   i.f = value
 }
 
@@ -1185,34 +1102,6 @@ function set_prop_I3(i: I3_F141, value: boolean) {
   i.f = value
 }
 
-class C_F142 {
-  f: Any = null
-}
-
-interface I_F142 {
-  f: Any
-}
-
-class D_F142 extends C_F142 implements I_F142 {
-  f: Any = 7
-}
-
-function get_prop(i: I_F142): Any {
-  return i.f
-}
-
-function set_prop(i: I_F142, value: Any) {
-  i.f = value
-}
-
-function get_field(a: C_F142): Any {
-  return a.f
-}
-
-function set_field(a: C_F142, value: Any) {
-  a.f = value
-}
-
 class C_F143 {
   f: Object = 5
 }
@@ -1547,38 +1436,6 @@ function get_field(a: C_F154): boolean {
 
 function set_field(a: C_F154, value: boolean) {
   a.f = value
-}
-
-interface I_F155 {
-  f: Any
-}
-
-interface II_F155 extends I_F155 {
-  f: Any
-}
-
-class A_F155 implements II_F155 {
-  f: Any = null
-}
-
-class B_F155 implements I_F155 {
-  f: Any = 7
-}
-
-function get_prop_I(i: I_F155): Any {
-  return i.f
-}
-
-function set_prop_I(i: I_F155, value: Any) {
-  i.f = value
-}
-
-function get_prop_II(i: I_F155): Any {
-  return i.f
-}
-
-function set_prop_II(i: I_F155, value: Any) {
-  i.f = value
 }
 
 interface I_F156 {
@@ -1965,22 +1822,6 @@ function set_prop_II(i: I_F167, value: boolean) {
   i.f = value
 }
 
-interface I_F168 {
-  f: Any
-}
-
-class A_F168 implements I_F168 {
-  f: Any = null
-}
-
-function get_prop(i: I_F168): Any {
-  return i.f
-}
-
-function set_prop(i: I_F168, value: Any) {
-  i.f = value
-}
-
 interface I_F169 {
   f: Object
 }
@@ -2171,29 +2012,6 @@ function get_prop(i: I_F180): boolean {
 
 function set_prop(i: I_F180, value: boolean) {
   i.f = value
-}
-
-class Base_F181 {
-  field: Any
-  constructor() {
-    this.field = null
-  }
-}
-
-class A_F181 extends Base_F181 {
-  field: Any
-  constructor() {
-    super()
-    this.field = 7
-  }
-}
-
-function get_field(a: Base_F181): Any {
-  return a.field
-}
-
-function set_field(a: Base_F181, value: Any) {
-  a.field = value
 }
 
 class Base_F182 {
@@ -2472,28 +2290,6 @@ function set_field(a: Base_F193, value: boolean) {
   a.field = value
 }
 
-class Base_F194 {
-  field: Any = Base_F194.init()
-  private static init(): Any {
-    return null
-  }
-}
-
-class A_F194 extends Base_F194 {
-  field: Any = A_F194.init()
-  private static init(): Any {
-    return 7
-  }
-}
-
-function get_field(a: Base_F194): Any {
-  return a.field
-}
-
-function set_field(a: Base_F194, value: Any) {
-  a.field = value
-}
-
 class Base_F195 {
   field: Object = Base_F195.init()
   private static init(): Object {
@@ -2695,27 +2491,6 @@ export default function OverridingFieldsOneTest(): void {
      * @tc.level     Level 2
      */
     it("testOverridingFieldsOne0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Derived_F103 = new Derived_F103()
-        expect(a instanceof Derived_F103).assertTrue()
-        expect(a instanceof Base_F103).assertTrue()
-        expect(a instanceof I_F103).assertTrue()
-        expect(a.f instanceof Any).assertTrue()
-        expect(a.f).assertEqual(null)
-        expect(get_prop(a)).assertEqual(null)
-        set_prop(a, 7)
-        expect(a.f).assertEqual(7)
-        expect(get_prop(a)).assertEqual(7)
-    })
-
-    /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_0500
-     * @tc.name      testOverridingFieldsOne0005
-     * @tc.desc      A property can be implemented as a field in different combinations
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testOverridingFieldsOne0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Derived_F104 = new Derived_F104()
         expect(a instanceof Derived_F104).assertTrue()
         expect(a instanceof Base_F104).assertTrue()
@@ -2729,14 +2504,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_0600
-     * @tc.name      testOverridingFieldsOne0006
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_0500
+     * @tc.name      testOverridingFieldsOne0005
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Derived_F105 = new Derived_F105()
         expect(a instanceof Derived_F105).assertTrue()
         expect(a instanceof Base_F105).assertTrue()
@@ -2750,14 +2525,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_0700
-     * @tc.name      testOverridingFieldsOne0007
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_0600
+     * @tc.name      testOverridingFieldsOne0006
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Derived_F106 = new Derived_F106()
         expect(a instanceof Derived_F106).assertTrue()
         expect(a instanceof Base_F106).assertTrue()
@@ -2771,14 +2546,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_0800
-     * @tc.name      testOverridingFieldsOne0008
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_0700
+     * @tc.name      testOverridingFieldsOne0007
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Derived_F107 = new Derived_F107()
         expect(a instanceof Derived_F107).assertTrue()
         expect(a instanceof Base_F107).assertTrue()
@@ -2792,14 +2567,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_0900
-     * @tc.name      testOverridingFieldsOne0009
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_0800
+     * @tc.name      testOverridingFieldsOne0008
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Derived_F108 = new Derived_F108()
         expect(a instanceof Derived_F108).assertTrue()
         expect(a instanceof Base_F108).assertTrue()
@@ -2813,14 +2588,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_1000
-     * @tc.name      testOverridingFieldsOne0010
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_0900
+     * @tc.name      testOverridingFieldsOne0009
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Derived_F109 = new Derived_F109()
         expect(a instanceof Derived_F109).assertTrue()
         expect(a instanceof Base_F109).assertTrue()
@@ -2834,14 +2609,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_1100
-     * @tc.name      testOverridingFieldsOne0011
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_1000
+     * @tc.name      testOverridingFieldsOne0010
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Derived_F110 = new Derived_F110()
         expect(a instanceof Derived_F110).assertTrue()
         expect(a instanceof Base_F110).assertTrue()
@@ -2855,14 +2630,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_1200
-     * @tc.name      testOverridingFieldsOne0012
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_1100
+     * @tc.name      testOverridingFieldsOne0011
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Derived_F111 = new Derived_F111()
         expect(a instanceof Derived_F111).assertTrue()
         expect(a instanceof Base_F111).assertTrue()
@@ -2876,14 +2651,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_1300
-     * @tc.name      testOverridingFieldsOne0013
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_1200
+     * @tc.name      testOverridingFieldsOne0012
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Derived_F112 = new Derived_F112()
         expect(a instanceof Derived_F112).assertTrue()
         expect(a instanceof Base_F112).assertTrue()
@@ -2897,14 +2672,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_1400
-     * @tc.name      testOverridingFieldsOne0014
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_1300
+     * @tc.name      testOverridingFieldsOne0013
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Derived_F113 = new Derived_F113()
         expect(a instanceof Derived_F113).assertTrue()
         expect(a instanceof Base_F113).assertTrue()
@@ -2918,14 +2693,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_1500
-     * @tc.name      testOverridingFieldsOne0015
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_1400
+     * @tc.name      testOverridingFieldsOne0014
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Derived_F114 = new Derived_F114()
         expect(a instanceof Derived_F114).assertTrue()
         expect(a instanceof Base_F114).assertTrue()
@@ -2939,14 +2714,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_1600
-     * @tc.name      testOverridingFieldsOne0016
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_1500
+     * @tc.name      testOverridingFieldsOne0015
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Derived_F115 = new Derived_F115()
         expect(a instanceof Derived_F115).assertTrue()
         expect(a instanceof Base_F115).assertTrue()
@@ -2960,41 +2735,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_1700
-     * @tc.name      testOverridingFieldsOne0017
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_1600
+     * @tc.name      testOverridingFieldsOne0016
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F116 = new A_F116()
-        expect(a instanceof A_F116).assertTrue()
-        expect(a instanceof I1_F116).assertTrue()
-        expect(a instanceof I2_F116).assertTrue()
-        expect(a.f instanceof Any).assertTrue()
-        expect(a.f).assertEqual(null)
-        expect(get_prop_I1(a)).assertEqual(null)
-        expect(get_prop_I2(a)).assertEqual(null)
-        set_prop_I1(a, 7)
-        expect(a.f).assertEqual(7)
-        expect(get_prop_I1(a)).assertEqual(7)
-        expect(get_prop_I2(a)).assertEqual(7)
-        set_prop_I2(a, null)
-        expect(a.f).assertEqual(null)
-        expect(get_prop_I1(a)).assertEqual(null)
-        expect(get_prop_I2(a)).assertEqual(null)
-    })
-
-    /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_1800
-     * @tc.name      testOverridingFieldsOne0018
-     * @tc.desc      A property can be implemented as a field in different combinations
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testOverridingFieldsOne0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F117 = new A_F117()
         expect(a instanceof A_F117).assertTrue()
         expect(a instanceof I1_F117).assertTrue()
@@ -3014,14 +2762,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_1900
-     * @tc.name      testOverridingFieldsOne0019
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_1700
+     * @tc.name      testOverridingFieldsOne0017
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F118 = new A_F118()
         expect(a instanceof A_F118).assertTrue()
         expect(a instanceof I1_F118).assertTrue()
@@ -3041,14 +2789,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_2000
-     * @tc.name      testOverridingFieldsOne0020
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_1800
+     * @tc.name      testOverridingFieldsOne0018
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F119 = new A_F119()
         expect(a instanceof A_F119).assertTrue()
         expect(a instanceof I1_F119).assertTrue()
@@ -3068,14 +2816,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_2100
-     * @tc.name      testOverridingFieldsOne0021
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_1900
+     * @tc.name      testOverridingFieldsOne0019
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F120 = new A_F120()
         expect(a instanceof A_F120).assertTrue()
         expect(a instanceof I1_F120).assertTrue()
@@ -3095,14 +2843,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_2200
-     * @tc.name      testOverridingFieldsOne0022
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_2000
+     * @tc.name      testOverridingFieldsOne0020
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F121 = new A_F121()
         expect(a instanceof A_F121).assertTrue()
         expect(a instanceof I1_F121).assertTrue()
@@ -3122,14 +2870,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_2300
-     * @tc.name      testOverridingFieldsOne0023
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_2100
+     * @tc.name      testOverridingFieldsOne0021
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F122 = new A_F122()
         expect(a instanceof A_F122).assertTrue()
         expect(a instanceof I1_F122).assertTrue()
@@ -3149,14 +2897,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_2400
-     * @tc.name      testOverridingFieldsOne0024
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_2200
+     * @tc.name      testOverridingFieldsOne0022
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F123 = new A_F123()
         expect(a instanceof A_F123).assertTrue()
         expect(a instanceof I1_F123).assertTrue()
@@ -3176,14 +2924,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_2500
-     * @tc.name      testOverridingFieldsOne0025
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_2300
+     * @tc.name      testOverridingFieldsOne0023
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F124 = new A_F124()
         expect(a instanceof A_F124).assertTrue()
         expect(a instanceof I1_F124).assertTrue()
@@ -3203,14 +2951,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_2600
-     * @tc.name      testOverridingFieldsOne0026
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_2400
+     * @tc.name      testOverridingFieldsOne0024
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F125 = new A_F125()
         expect(a instanceof A_F125).assertTrue()
         expect(a instanceof I1_F125).assertTrue()
@@ -3230,14 +2978,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_2700
-     * @tc.name      testOverridingFieldsOne0027
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_2500
+     * @tc.name      testOverridingFieldsOne0025
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F126 = new A_F126()
         expect(a instanceof A_F126).assertTrue()
         expect(a instanceof I1_F126).assertTrue()
@@ -3257,14 +3005,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_2800
-     * @tc.name      testOverridingFieldsOne0028
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_2600
+     * @tc.name      testOverridingFieldsOne0026
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F127 = new A_F127()
         expect(a instanceof A_F127).assertTrue()
         expect(a instanceof I1_F127).assertTrue()
@@ -3284,14 +3032,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_2900
-     * @tc.name      testOverridingFieldsOne0029
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_2700
+     * @tc.name      testOverridingFieldsOne0027
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F128 = new A_F128()
         expect(a instanceof A_F128).assertTrue()
         expect(a instanceof I1_F128).assertTrue()
@@ -3311,49 +3059,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_3000
-     * @tc.name      testOverridingFieldsOne0030
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_2800
+     * @tc.name      testOverridingFieldsOne0028
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F129 = new A_F129()
-        expect(a instanceof A_F129).assertTrue()
-        expect(a instanceof I1_F129).assertTrue()
-        expect(a instanceof I2_F129).assertTrue()
-        expect(a.f instanceof Any).assertTrue()
-        expect(a.f).assertEqual(null)
-        expect(get_prop_I1(a)).assertEqual(null)
-        expect(get_prop_I2(a)).assertEqual(null)
-        expect(get_prop_I3(a)).assertEqual(null)
-        set_prop_I1(a, 7)
-        expect(a.f).assertEqual(7)
-        expect(get_prop_I1(a)).assertEqual(7)
-        expect(get_prop_I2(a)).assertEqual(7)
-        expect(get_prop_I3(a)).assertEqual(7)
-        set_prop_I2(a, null)
-        expect(a.f).assertEqual(null)
-        expect(get_prop_I1(a)).assertEqual(null)
-        expect(get_prop_I2(a)).assertEqual(null)
-        expect(get_prop_I3(a)).assertEqual(null)
-        set_prop_I3(a, 7)
-        expect(a.f).assertEqual(7)
-        expect(get_prop_I1(a)).assertEqual(7)
-        expect(get_prop_I2(a)).assertEqual(7)
-        expect(get_prop_I3(a)).assertEqual(7)
-    })
-
-    /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_3100
-     * @tc.name      testOverridingFieldsOne0031
-     * @tc.desc      A property can be implemented as a field in different combinations
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testOverridingFieldsOne0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F130 = new A_F130()
         expect(a instanceof A_F130).assertTrue()
         expect(a instanceof I1_F130).assertTrue()
@@ -3381,14 +3094,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_3200
-     * @tc.name      testOverridingFieldsOne0032
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_2900
+     * @tc.name      testOverridingFieldsOne0029
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F131 = new A_F131()
         expect(a instanceof A_F131).assertTrue()
         expect(a instanceof I1_F131).assertTrue()
@@ -3416,14 +3129,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_3300
-     * @tc.name      testOverridingFieldsOne0033
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_3000
+     * @tc.name      testOverridingFieldsOne0030
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F132 = new A_F132()
         expect(a instanceof A_F132).assertTrue()
         expect(a instanceof I1_F132).assertTrue()
@@ -3451,14 +3164,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_3400
-     * @tc.name      testOverridingFieldsOne0034
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_3100
+     * @tc.name      testOverridingFieldsOne0031
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F133 = new A_F133()
         expect(a instanceof A_F133).assertTrue()
         expect(a instanceof I1_F133).assertTrue()
@@ -3486,14 +3199,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_3500
-     * @tc.name      testOverridingFieldsOne0035
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_3200
+     * @tc.name      testOverridingFieldsOne0032
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F134 = new A_F134()
         expect(a instanceof A_F134).assertTrue()
         expect(a instanceof I1_F134).assertTrue()
@@ -3521,14 +3234,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_3600
-     * @tc.name      testOverridingFieldsOne0036
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_3300
+     * @tc.name      testOverridingFieldsOne0033
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F135 = new A_F135()
         expect(a instanceof A_F135).assertTrue()
         expect(a instanceof I1_F135).assertTrue()
@@ -3556,14 +3269,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_3700
-     * @tc.name      testOverridingFieldsOne0037
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_3400
+     * @tc.name      testOverridingFieldsOne0034
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F136 = new A_F136()
         expect(a instanceof A_F136).assertTrue()
         expect(a instanceof I1_F136).assertTrue()
@@ -3591,14 +3304,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_3800
-     * @tc.name      testOverridingFieldsOne0038
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_3500
+     * @tc.name      testOverridingFieldsOne0035
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F137 = new A_F137()
         expect(a instanceof A_F137).assertTrue()
         expect(a instanceof I1_F137).assertTrue()
@@ -3626,14 +3339,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_3900
-     * @tc.name      testOverridingFieldsOne0039
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_3600
+     * @tc.name      testOverridingFieldsOne0036
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F138 = new A_F138()
         expect(a instanceof A_F138).assertTrue()
         expect(a instanceof I1_F138).assertTrue()
@@ -3661,14 +3374,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_4000
-     * @tc.name      testOverridingFieldsOne0040
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_3700
+     * @tc.name      testOverridingFieldsOne0037
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F139 = new A_F139()
         expect(a instanceof A_F139).assertTrue()
         expect(a instanceof I1_F139).assertTrue()
@@ -3696,14 +3409,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_4100
-     * @tc.name      testOverridingFieldsOne0041
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_3800
+     * @tc.name      testOverridingFieldsOne0038
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F140 = new A_F140()
         expect(a instanceof A_F140).assertTrue()
         expect(a instanceof I1_F140).assertTrue()
@@ -3731,14 +3444,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_4200
-     * @tc.name      testOverridingFieldsOne0042
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_3900
+     * @tc.name      testOverridingFieldsOne0039
      * @tc.desc      A property can be implemented as a field in different combinations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F141 = new A_F141()
         expect(a instanceof A_F141).assertTrue()
         expect(a instanceof I1_F141).assertTrue()
@@ -3766,41 +3479,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_4300
-     * @tc.name      testOverridingFieldsOne0043
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_4000
+     * @tc.name      testOverridingFieldsOne0040
      * @tc.desc      Providing implementation for the interface property in the form of a field with
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: D_F142 = new D_F142()
-        expect(a instanceof D_F142).assertTrue()
-        expect(a instanceof C_F142).assertTrue()
-        expect(a instanceof I_F142).assertTrue()
-        expect(a.f instanceof Any).assertTrue()
-        expect(a.f).assertEqual(7)
-        expect(get_prop(a)).assertEqual(7)
-        expect(get_field(a)).assertEqual(7)
-        set_field(a, "abc")
-        expect(a.f).assertEqual("abc")
-        expect(get_prop(a)).assertEqual("abc")
-        expect(get_field(a)).assertEqual("abc")
-        set_prop(a, 7)
-        expect(a.f).assertEqual(7)
-        expect(get_prop(a)).assertEqual(7)
-        expect(get_field(a)).assertEqual(7)
-    })
-
-    /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_4400
-     * @tc.name      testOverridingFieldsOne0044
-     * @tc.desc      Providing implementation for the interface property in the form of a field with
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testOverridingFieldsOne0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: D_F143 = new D_F143()
         expect(a instanceof D_F143).assertTrue()
         expect(a instanceof C_F143).assertTrue()
@@ -3820,14 +3506,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_4500
-     * @tc.name      testOverridingFieldsOne0045
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_4100
+     * @tc.name      testOverridingFieldsOne0041
      * @tc.desc      Providing implementation for the interface property in the form of a field with
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: D_F144 = new D_F144()
         expect(a instanceof D_F144).assertTrue()
         expect(a instanceof C_F144).assertTrue()
@@ -3847,14 +3533,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_4600
-     * @tc.name      testOverridingFieldsOne0046
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_4200
+     * @tc.name      testOverridingFieldsOne0042
      * @tc.desc      Providing implementation for the interface property in the form of a field with
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: D_F145 = new D_F145()
         expect(a instanceof D_F145).assertTrue()
         expect(a instanceof C_F145).assertTrue()
@@ -3874,14 +3560,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_4700
-     * @tc.name      testOverridingFieldsOne0047
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_4300
+     * @tc.name      testOverridingFieldsOne0043
      * @tc.desc      Providing implementation for the interface property in the form of a field with
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: D_F146 = new D_F146()
         expect(a instanceof D_F146).assertTrue()
         expect(a instanceof C_F146).assertTrue()
@@ -3901,14 +3587,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_4800
-     * @tc.name      testOverridingFieldsOne0048
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_4400
+     * @tc.name      testOverridingFieldsOne0044
      * @tc.desc      Providing implementation for the interface property in the form of a field with
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: D_F147 = new D_F147()
         expect(a instanceof D_F147).assertTrue()
         expect(a instanceof C_F147).assertTrue()
@@ -3928,14 +3614,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_4900
-     * @tc.name      testOverridingFieldsOne0049
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_4500
+     * @tc.name      testOverridingFieldsOne0045
      * @tc.desc      Providing implementation for the interface property in the form of a field with
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: D_F148 = new D_F148()
         expect(a instanceof D_F148).assertTrue()
         expect(a instanceof C_F148).assertTrue()
@@ -3955,14 +3641,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_5000
-     * @tc.name      testOverridingFieldsOne0050
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_4600
+     * @tc.name      testOverridingFieldsOne0046
      * @tc.desc      Providing implementation for the interface property in the form of a field with
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: D_F149 = new D_F149()
         expect(a instanceof D_F149).assertTrue()
         expect(a instanceof C_F149).assertTrue()
@@ -3982,14 +3668,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_5100
-     * @tc.name      testOverridingFieldsOne0051
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_4700
+     * @tc.name      testOverridingFieldsOne0047
      * @tc.desc      Providing implementation for the interface property in the form of a field with
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: D_F150 = new D_F150()
         expect(a instanceof D_F150).assertTrue()
         expect(a instanceof C_F150).assertTrue()
@@ -4009,14 +3695,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_5200
-     * @tc.name      testOverridingFieldsOne0052
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_4800
+     * @tc.name      testOverridingFieldsOne0048
      * @tc.desc      Providing implementation for the interface property in the form of a field with
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: D_F151 = new D_F151()
         expect(a instanceof D_F151).assertTrue()
         expect(a instanceof C_F151).assertTrue()
@@ -4036,14 +3722,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_5300
-     * @tc.name      testOverridingFieldsOne0053
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_4900
+     * @tc.name      testOverridingFieldsOne0049
      * @tc.desc      Providing implementation for the interface property in the form of a field with
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: D_F152 = new D_F152()
         expect(a instanceof D_F152).assertTrue()
         expect(a instanceof C_F152).assertTrue()
@@ -4063,14 +3749,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_5400
-     * @tc.name      testOverridingFieldsOne0054
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_5000
+     * @tc.name      testOverridingFieldsOne0050
      * @tc.desc      Providing implementation for the interface property in the form of a field with
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: D_F153 = new D_F153()
         expect(a instanceof D_F153).assertTrue()
         expect(a instanceof C_F153).assertTrue()
@@ -4090,14 +3776,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_5500
-     * @tc.name      testOverridingFieldsOne0055
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_5100
+     * @tc.name      testOverridingFieldsOne0051
      * @tc.desc      Providing implementation for the interface property in the form of a field with
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: D_F154 = new D_F154()
         expect(a instanceof D_F154).assertTrue()
         expect(a instanceof C_F154).assertTrue()
@@ -4117,50 +3803,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_5600
-     * @tc.name      testOverridingFieldsOne0056
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_5200
+     * @tc.name      testOverridingFieldsOne0052
      * @tc.desc      Overriding interface property
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F155 = new A_F155()
-        let b: B_F155 = new B_F155()
-        expect(a instanceof A_F155).assertTrue()
-        expect(a instanceof II_F155).assertTrue()
-        expect(a instanceof I_F155).assertTrue()
-        expect(a.f instanceof Any).assertTrue()
-        expect(a.f).assertEqual(null)
-        expect(get_prop_II(a)).assertEqual(null)
-        expect(get_prop_I(a)).assertEqual(null)
-        set_prop_II(a, "abc")
-        expect(a.f).assertEqual("abc")
-        expect(get_prop_II(a)).assertEqual("abc")
-        expect(get_prop_I(a)).assertEqual("abc")
-        set_prop_I(a, null)
-        expect(a.f).assertEqual(null)
-        expect(get_prop_II(a)).assertEqual(null)
-        expect(get_prop_I(a)).assertEqual(null)
-        expect(b instanceof B_F155).assertTrue()
-        expect(b instanceof I_F155).assertTrue()
-        expect(b.f instanceof Any).assertTrue()
-        expect(b.f).assertEqual(7)
-        expect(get_prop_I(b)).assertEqual(7)
-        set_prop_I(b, "abc")
-        expect(b.f).assertEqual("abc")
-        expect(get_prop_I(b)).assertEqual("abc")
-    })
-
-    /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_5700
-     * @tc.name      testOverridingFieldsOne0057
-     * @tc.desc      Overriding interface property
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testOverridingFieldsOne0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F156 = new A_F156()
         let b: B_F156 = new B_F156()
         expect(a instanceof A_F156).assertTrue()
@@ -4189,14 +3839,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_5800
-     * @tc.name      testOverridingFieldsOne0058
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_5300
+     * @tc.name      testOverridingFieldsOne0053
      * @tc.desc      Overriding interface property
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F157 = new A_F157()
         let b: B_F157 = new B_F157()
         expect(a instanceof A_F157).assertTrue()
@@ -4225,14 +3875,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_5900
-     * @tc.name      testOverridingFieldsOne0059
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_5400
+     * @tc.name      testOverridingFieldsOne0054
      * @tc.desc      Overriding interface property
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F158 = new A_F158()
         let b: B_F158 = new B_F158()
         expect(a instanceof A_F158).assertTrue()
@@ -4261,14 +3911,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_6000
-     * @tc.name      testOverridingFieldsOne0060
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_5500
+     * @tc.name      testOverridingFieldsOne0055
      * @tc.desc      Overriding interface property
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F159 = new A_F159()
         let b: B_F159 = new B_F159()
         expect(a instanceof A_F159).assertTrue()
@@ -4297,14 +3947,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_6100
-     * @tc.name      testOverridingFieldsOne0061
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_5600
+     * @tc.name      testOverridingFieldsOne0056
      * @tc.desc      Overriding interface property
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F160 = new A_F160()
         let b: B_F160 = new B_F160()
         expect(a instanceof A_F160).assertTrue()
@@ -4333,14 +3983,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_6200
-     * @tc.name      testOverridingFieldsOne0062
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_5700
+     * @tc.name      testOverridingFieldsOne0057
      * @tc.desc      Overriding interface property
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F161 = new A_F161()
         let b: B_F161 = new B_F161()
         expect(a instanceof A_F161).assertTrue()
@@ -4369,14 +4019,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_6300
-     * @tc.name      testOverridingFieldsOne0063
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_5800
+     * @tc.name      testOverridingFieldsOne0058
      * @tc.desc      Overriding interface property
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F162 = new A_F162()
         let b: B_F162 = new B_F162()
         expect(a instanceof A_F162).assertTrue()
@@ -4405,14 +4055,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_6400
-     * @tc.name      testOverridingFieldsOne0064
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_5900
+     * @tc.name      testOverridingFieldsOne0059
      * @tc.desc      Overriding interface property
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F163 = new A_F163()
         let b: B_F163 = new B_F163()
         expect(a instanceof A_F163).assertTrue()
@@ -4441,14 +4091,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_6500
-     * @tc.name      testOverridingFieldsOne0065
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_6000
+     * @tc.name      testOverridingFieldsOne0060
      * @tc.desc      Overriding interface property
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F164 = new A_F164()
         let b: B_F164 = new B_F164()
         expect(a instanceof A_F164).assertTrue()
@@ -4477,14 +4127,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_6600
-     * @tc.name      testOverridingFieldsOne0066
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_6100
+     * @tc.name      testOverridingFieldsOne0061
      * @tc.desc      Overriding interface property
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F165 = new A_F165()
         let b: B_F165 = new B_F165()
         expect(a instanceof A_F165).assertTrue()
@@ -4513,14 +4163,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_6700
-     * @tc.name      testOverridingFieldsOne0067
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_6200
+     * @tc.name      testOverridingFieldsOne0062
      * @tc.desc      Overriding interface property
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F166 = new A_F166()
         let b: B_F166 = new B_F166()
         expect(a instanceof A_F166).assertTrue()
@@ -4549,14 +4199,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_6800
-     * @tc.name      testOverridingFieldsOne0068
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_6300
+     * @tc.name      testOverridingFieldsOne0063
      * @tc.desc      Overriding interface property
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F167 = new A_F167()
         let b: B_F167 = new B_F167()
         expect(a instanceof A_F167).assertTrue()
@@ -4585,34 +4235,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_6900
-     * @tc.name      testOverridingFieldsOne0069
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_6400
+     * @tc.name      testOverridingFieldsOne0064
      * @tc.desc      Providing implementation for the interface property in the form of a field
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F168 = new A_F168()
-        expect(a instanceof A_F168).assertTrue()
-        expect(a instanceof I_F168).assertTrue()
-        expect(a.f instanceof Any).assertTrue()
-        expect(a.f).assertEqual(null)
-        expect(get_prop(a)).assertEqual(null)
-        set_prop(a, 7)
-        expect(a.f).assertEqual(7)
-        expect(get_prop(a)).assertEqual(7)
-    })
-
-    /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_7000
-     * @tc.name      testOverridingFieldsOne0070
-     * @tc.desc      Providing implementation for the interface property in the form of a field
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testOverridingFieldsOne0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F169 = new A_F169()
         expect(a instanceof A_F169).assertTrue()
         expect(a instanceof I_F169).assertTrue()
@@ -4625,14 +4255,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_7100
-     * @tc.name      testOverridingFieldsOne0071
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_6500
+     * @tc.name      testOverridingFieldsOne0065
      * @tc.desc      Providing implementation for the interface property in the form of a field
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F170 = new A_F170()
         expect(a instanceof A_F170).assertTrue()
         expect(a instanceof I_F170).assertTrue()
@@ -4645,14 +4275,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_7200
-     * @tc.name      testOverridingFieldsOne0072
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_6600
+     * @tc.name      testOverridingFieldsOne0066
      * @tc.desc      Providing implementation for the interface property in the form of a field
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F171 = new A_F171()
         expect(a instanceof A_F171).assertTrue()
         expect(a instanceof I_F171).assertTrue()
@@ -4665,14 +4295,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_7300
-     * @tc.name      testOverridingFieldsOne0073
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_6700
+     * @tc.name      testOverridingFieldsOne0067
      * @tc.desc      Providing implementation for the interface property in the form of a field
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F172 = new A_F172()
         expect(a instanceof A_F172).assertTrue()
         expect(a instanceof I_F172).assertTrue()
@@ -4685,14 +4315,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_7400
-     * @tc.name      testOverridingFieldsOne0074
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_6800
+     * @tc.name      testOverridingFieldsOne0068
      * @tc.desc      Providing implementation for the interface property in the form of a field
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F173 = new A_F173()
         expect(a instanceof A_F173).assertTrue()
         expect(a instanceof I_F173).assertTrue()
@@ -4705,14 +4335,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_7500
-     * @tc.name      testOverridingFieldsOne0075
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_6900
+     * @tc.name      testOverridingFieldsOne0069
      * @tc.desc      Providing implementation for the interface property in the form of a field
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F174 = new A_F174()
         expect(a instanceof A_F174).assertTrue()
         expect(a instanceof I_F174).assertTrue()
@@ -4725,14 +4355,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_7600
-     * @tc.name      testOverridingFieldsOne0076
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_7000
+     * @tc.name      testOverridingFieldsOne0070
      * @tc.desc      Providing implementation for the interface property in the form of a field
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F175 = new A_F175()
         expect(a instanceof A_F175).assertTrue()
         expect(a instanceof I_F175).assertTrue()
@@ -4745,14 +4375,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_7700
-     * @tc.name      testOverridingFieldsOne0077
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_7100
+     * @tc.name      testOverridingFieldsOne0071
      * @tc.desc      Providing implementation for the interface property in the form of a field
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F176 = new A_F176()
         expect(a instanceof A_F176).assertTrue()
         expect(a instanceof I_F176).assertTrue()
@@ -4765,14 +4395,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_7800
-     * @tc.name      testOverridingFieldsOne0078
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_7200
+     * @tc.name      testOverridingFieldsOne0072
      * @tc.desc      Providing implementation for the interface property in the form of a field
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F177 = new A_F177()
         expect(a instanceof A_F177).assertTrue()
         expect(a instanceof I_F177).assertTrue()
@@ -4785,14 +4415,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_7900
-     * @tc.name      testOverridingFieldsOne0079
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_7300
+     * @tc.name      testOverridingFieldsOne0073
      * @tc.desc      Providing implementation for the interface property in the form of a field
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F178 = new A_F178()
         expect(a instanceof A_F178).assertTrue()
         expect(a instanceof I_F178).assertTrue()
@@ -4805,14 +4435,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_8000
-     * @tc.name      testOverridingFieldsOne0080
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_7400
+     * @tc.name      testOverridingFieldsOne0074
      * @tc.desc      Providing implementation for the interface property in the form of a field
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F179 = new A_F179()
         expect(a instanceof A_F179).assertTrue()
         expect(a instanceof I_F179).assertTrue()
@@ -4825,14 +4455,14 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_8100
-     * @tc.name      testOverridingFieldsOne0081
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_7500
+     * @tc.name      testOverridingFieldsOne0075
      * @tc.desc      Providing implementation for the interface property in the form of a field
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingFieldsOne0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testOverridingFieldsOne0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F180 = new A_F180()
         expect(a instanceof A_F180).assertTrue()
         expect(a instanceof I_F180).assertTrue()
@@ -4845,6 +4475,114 @@ export default function OverridingFieldsOneTest(): void {
     })
 
     /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_7600
+     * @tc.name      testOverridingFieldsOne0076
+     * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFieldsOne0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F182 = new A_F182()
+        expect(a.field instanceof Object).assertTrue()
+        expect(a.field).assertEqual("abc")
+        expect(get_field(a)).assertEqual("abc")
+        set_field(a, 7)
+        expect(a.field).assertEqual(7)
+        expect(get_field(a)).assertEqual(7)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_7700
+     * @tc.name      testOverridingFieldsOne0077
+     * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFieldsOne0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F183 = new A_F183()
+        expect(a.field instanceof number).assertTrue()
+        expect(a.field).assertEqual(6.7)
+        expect(get_field(a)).assertEqual(6.7)
+        set_field(a, 13)
+        expect(a.field).assertEqual(13)
+        expect(get_field(a)).assertEqual(13)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_7800
+     * @tc.name      testOverridingFieldsOne0078
+     * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFieldsOne0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F184 = new A_F184()
+        expect(a.field instanceof double).assertTrue()
+        expect(a.field).assertEqual(5.0)
+        expect(get_field(a)).assertEqual(5.0)
+        set_field(a, 15)
+        expect(a.field).assertEqual(15)
+        expect(get_field(a)).assertEqual(15)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_7900
+     * @tc.name      testOverridingFieldsOne0079
+     * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFieldsOne0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F185 = new A_F185()
+        expect(a.field instanceof float).assertTrue()
+        expect(a.field).assertEqual(7.3f)
+        expect(get_field(a)).assertEqual(7.3f)
+        set_field(a, 9.8f)
+        expect(a.field).assertEqual(9.8f)
+        expect(get_field(a)).assertEqual(9.8f)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_8000
+     * @tc.name      testOverridingFieldsOne0080
+     * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFieldsOne0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F186 = new A_F186()
+        expect(a.field instanceof long).assertTrue()
+        expect(a.field).assertEqual(78945)
+        expect(get_field(a)).assertEqual(78945)
+        set_field(a, 9223372036854775000)
+        expect(a.field).assertEqual(9223372036854775000)
+        expect(get_field(a)).assertEqual(9223372036854775000)
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_8100
+     * @tc.name      testOverridingFieldsOne0081
+     * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingFieldsOne0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F187 = new A_F187()
+        expect(a.field instanceof int).assertTrue()
+        expect(a.field).assertEqual(321)
+        expect(get_field(a)).assertEqual(321)
+        set_field(a, 321321)
+        expect(a.field).assertEqual(321321)
+        expect(get_field(a)).assertEqual(321321)
+    })
+
+    /**
      * @tc.number    SUB_OVERRIDING_FIELDS_ONE_8200
      * @tc.name      testOverridingFieldsOne0082
      * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
@@ -4853,13 +4591,13 @@ export default function OverridingFieldsOneTest(): void {
      * @tc.level     Level 2
      */
     it("testOverridingFieldsOne0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F181 = new A_F181()
-        expect(a.field instanceof Any).assertTrue()
-        expect(a.field).assertEqual(7)
-        expect(get_field(a)).assertEqual(7)
-        set_field(a, "abc")
-        expect(a.field).assertEqual("abc")
-        expect(get_field(a)).assertEqual("abc")
+      let a: A_F188 = new A_F188()
+        expect(a.field instanceof short).assertTrue()
+        expect(a.field).assertEqual(253)
+        expect(get_field(a)).assertEqual(253)
+        set_field(a, 536)
+        expect(a.field).assertEqual(536)
+        expect(get_field(a)).assertEqual(536)
     })
 
     /**
@@ -4871,13 +4609,13 @@ export default function OverridingFieldsOneTest(): void {
      * @tc.level     Level 2
      */
     it("testOverridingFieldsOne0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F182 = new A_F182()
-        expect(a.field instanceof Object).assertTrue()
-        expect(a.field).assertEqual("abc")
-        expect(get_field(a)).assertEqual("abc")
-        set_field(a, 7)
-        expect(a.field).assertEqual(7)
-        expect(get_field(a)).assertEqual(7)
+      let a: A_F189 = new A_F189()
+        expect(a.field instanceof byte).assertTrue()
+        expect(a.field).assertEqual(78)
+        expect(get_field(a)).assertEqual(78)
+        set_field(a, 15)
+        expect(a.field).assertEqual(15)
+        expect(get_field(a)).assertEqual(15)
     })
 
     /**
@@ -4889,13 +4627,13 @@ export default function OverridingFieldsOneTest(): void {
      * @tc.level     Level 2
      */
     it("testOverridingFieldsOne0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F183 = new A_F183()
-        expect(a.field instanceof number).assertTrue()
-        expect(a.field).assertEqual(6.7)
-        expect(get_field(a)).assertEqual(6.7)
-        set_field(a, 13)
-        expect(a.field).assertEqual(13)
-        expect(get_field(a)).assertEqual(13)
+      let a: A_F190 = new A_F190()
+        expect(a.field instanceof string).assertTrue()
+        expect(a.field).assertEqual("defg")
+        expect(get_field(a)).assertEqual("defg")
+        set_field(a, "hijk")
+        expect(a.field).assertEqual("hijk")
+        expect(get_field(a)).assertEqual("hijk")
     })
 
     /**
@@ -4907,13 +4645,13 @@ export default function OverridingFieldsOneTest(): void {
      * @tc.level     Level 2
      */
     it("testOverridingFieldsOne0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F184 = new A_F184()
-        expect(a.field instanceof double).assertTrue()
-        expect(a.field).assertEqual(5.0)
-        expect(get_field(a)).assertEqual(5.0)
-        set_field(a, 15)
-        expect(a.field).assertEqual(15)
-        expect(get_field(a)).assertEqual(15)
+      let a: A_F191 = new A_F191()
+        expect(a.field instanceof bigint).assertTrue()
+        expect(a.field).assertEqual(5556423623465n)
+        expect(get_field(a)).assertEqual(5556423623465n)
+        set_field(a, 123123n)
+        expect(a.field).assertEqual(123123n)
+        expect(get_field(a)).assertEqual(123123n)
     })
 
     /**
@@ -4925,13 +4663,13 @@ export default function OverridingFieldsOneTest(): void {
      * @tc.level     Level 2
      */
     it("testOverridingFieldsOne0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F185 = new A_F185()
-        expect(a.field instanceof float).assertTrue()
-        expect(a.field).assertEqual(7.3f)
-        expect(get_field(a)).assertEqual(7.3f)
-        set_field(a, 9.8f)
-        expect(a.field).assertEqual(9.8f)
-        expect(get_field(a)).assertEqual(9.8f)
+      let a: A_F192 = new A_F192()
+        expect(a.field instanceof char).assertTrue()
+        expect(a.field).assertEqual(c'z')
+        expect(get_field(a)).assertEqual(c'z')
+        set_field(a, c'x')
+        expect(a.field).assertEqual(c'x')
+        expect(get_field(a)).assertEqual(c'x')
     })
 
     /**
@@ -4943,13 +4681,13 @@ export default function OverridingFieldsOneTest(): void {
      * @tc.level     Level 2
      */
     it("testOverridingFieldsOne0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F186 = new A_F186()
-        expect(a.field instanceof long).assertTrue()
-        expect(a.field).assertEqual(78945)
-        expect(get_field(a)).assertEqual(78945)
-        set_field(a, 9223372036854775000)
-        expect(a.field).assertEqual(9223372036854775000)
-        expect(get_field(a)).assertEqual(9223372036854775000)
+      let a: A_F193 = new A_F193()
+        expect(a.field instanceof boolean).assertTrue()
+        expect(a.field).assertEqual(true)
+        expect(get_field(a)).assertEqual(true)
+        set_field(a, false)
+        expect(a.field).assertEqual(false)
+        expect(get_field(a)).assertEqual(false)
     })
 
     /**
@@ -4961,13 +4699,13 @@ export default function OverridingFieldsOneTest(): void {
      * @tc.level     Level 2
      */
     it("testOverridingFieldsOne0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F187 = new A_F187()
-        expect(a.field instanceof int).assertTrue()
-        expect(a.field).assertEqual(321)
-        expect(get_field(a)).assertEqual(321)
-        set_field(a, 321321)
-        expect(a.field).assertEqual(321321)
-        expect(get_field(a)).assertEqual(321321)
+      let a: A_F195 = new A_F195()
+        expect(a.field instanceof Object).assertTrue()
+        expect(a.field).assertEqual("abc")
+        expect(get_field(a)).assertEqual("abc")
+        set_field(a, 7)
+        expect(a.field).assertEqual(7)
+        expect(get_field(a)).assertEqual(7)
     })
 
     /**
@@ -4979,13 +4717,13 @@ export default function OverridingFieldsOneTest(): void {
      * @tc.level     Level 2
      */
     it("testOverridingFieldsOne0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F188 = new A_F188()
-        expect(a.field instanceof short).assertTrue()
-        expect(a.field).assertEqual(253)
-        expect(get_field(a)).assertEqual(253)
-        set_field(a, 536)
-        expect(a.field).assertEqual(536)
-        expect(get_field(a)).assertEqual(536)
+      let a: A_F196 = new A_F196()
+        expect(a.field instanceof number).assertTrue()
+        expect(a.field).assertEqual(6.7)
+        expect(get_field(a)).assertEqual(6.7)
+        set_field(a, 13)
+        expect(a.field).assertEqual(13)
+        expect(get_field(a)).assertEqual(13)
     })
 
     /**
@@ -4997,10 +4735,10 @@ export default function OverridingFieldsOneTest(): void {
      * @tc.level     Level 2
      */
     it("testOverridingFieldsOne0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F189 = new A_F189()
-        expect(a.field instanceof byte).assertTrue()
-        expect(a.field).assertEqual(78)
-        expect(get_field(a)).assertEqual(78)
+      let a: A_F197 = new A_F197()
+        expect(a.field instanceof double).assertTrue()
+        expect(a.field).assertEqual(5.0)
+        expect(get_field(a)).assertEqual(5.0)
         set_field(a, 15)
         expect(a.field).assertEqual(15)
         expect(get_field(a)).assertEqual(15)
@@ -5015,150 +4753,6 @@ export default function OverridingFieldsOneTest(): void {
      * @tc.level     Level 2
      */
     it("testOverridingFieldsOne0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F190 = new A_F190()
-        expect(a.field instanceof string).assertTrue()
-        expect(a.field).assertEqual("defg")
-        expect(get_field(a)).assertEqual("defg")
-        set_field(a, "hijk")
-        expect(a.field).assertEqual("hijk")
-        expect(get_field(a)).assertEqual("hijk")
-    })
-
-    /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_9200
-     * @tc.name      testOverridingFieldsOne0092
-     * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testOverridingFieldsOne0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F191 = new A_F191()
-        expect(a.field instanceof bigint).assertTrue()
-        expect(a.field).assertEqual(5556423623465n)
-        expect(get_field(a)).assertEqual(5556423623465n)
-        set_field(a, 123123n)
-        expect(a.field).assertEqual(123123n)
-        expect(get_field(a)).assertEqual(123123n)
-    })
-
-    /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_9300
-     * @tc.name      testOverridingFieldsOne0093
-     * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testOverridingFieldsOne0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F192 = new A_F192()
-        expect(a.field instanceof char).assertTrue()
-        expect(a.field).assertEqual(c'z')
-        expect(get_field(a)).assertEqual(c'z')
-        set_field(a, c'x')
-        expect(a.field).assertEqual(c'x')
-        expect(get_field(a)).assertEqual(c'x')
-    })
-
-    /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_9400
-     * @tc.name      testOverridingFieldsOne0094
-     * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testOverridingFieldsOne0094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F193 = new A_F193()
-        expect(a.field instanceof boolean).assertTrue()
-        expect(a.field).assertEqual(true)
-        expect(get_field(a)).assertEqual(true)
-        set_field(a, false)
-        expect(a.field).assertEqual(false)
-        expect(get_field(a)).assertEqual(false)
-    })
-
-    /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_9500
-     * @tc.name      testOverridingFieldsOne0095
-     * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testOverridingFieldsOne0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F194 = new A_F194()
-        expect(a.field instanceof Any).assertTrue()
-        expect(a.field).assertEqual(7)
-        expect(get_field(a)).assertEqual(7)
-        set_field(a, "abc")
-        expect(a.field).assertEqual("abc")
-        expect(get_field(a)).assertEqual("abc")
-    })
-
-    /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_9600
-     * @tc.name      testOverridingFieldsOne0096
-     * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testOverridingFieldsOne0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F195 = new A_F195()
-        expect(a.field instanceof Object).assertTrue()
-        expect(a.field).assertEqual("abc")
-        expect(get_field(a)).assertEqual("abc")
-        set_field(a, 7)
-        expect(a.field).assertEqual(7)
-        expect(get_field(a)).assertEqual(7)
-    })
-
-    /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_9700
-     * @tc.name      testOverridingFieldsOne0097
-     * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testOverridingFieldsOne0097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F196 = new A_F196()
-        expect(a.field instanceof number).assertTrue()
-        expect(a.field).assertEqual(6.7)
-        expect(get_field(a)).assertEqual(6.7)
-        set_field(a, 13)
-        expect(a.field).assertEqual(13)
-        expect(get_field(a)).assertEqual(13)
-    })
-
-    /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_9800
-     * @tc.name      testOverridingFieldsOne0098
-     * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testOverridingFieldsOne0098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F197 = new A_F197()
-        expect(a.field instanceof double).assertTrue()
-        expect(a.field).assertEqual(5.0)
-        expect(get_field(a)).assertEqual(5.0)
-        set_field(a, 15)
-        expect(a.field).assertEqual(15)
-        expect(get_field(a)).assertEqual(15)
-    })
-
-    /**
-     * @tc.number    SUB_OVERRIDING_FIELDS_ONE_9900
-     * @tc.name      testOverridingFieldsOne0099
-     * @tc.desc      When extending a class, an instance field declared in a superclass can be overridden
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testOverridingFieldsOne0099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F198 = new A_F198()
         expect(a.field instanceof float).assertTrue()
         expect(a.field).assertEqual(7.3f)

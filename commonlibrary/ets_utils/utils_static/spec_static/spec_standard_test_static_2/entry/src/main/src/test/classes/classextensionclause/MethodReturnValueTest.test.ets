@@ -729,14 +729,14 @@ export default function MethodReturnValueTest(): void {
     });
 
     /**
-     * @tc.number    SUB_METHOD_RETURN_VALUE_2000
-     * @tc.name      testMethodReturnValue0020
+     * @tc.number    SUB_METHOD_RETURN_VALUE_1900
+     * @tc.name      testMethodReturnValue0019
      * @tc.desc      The return value of the method is boolean, and the modifier is public
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testMethodReturnValue0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testMethodReturnValue0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testMethodReturnValue0020';
       let parent = new Parent19();
       let parentValue: boolean = parent.getValue();
@@ -744,6 +744,24 @@ export default function MethodReturnValueTest(): void {
       let child = new Child19();
       let childValue: boolean = child.getValue();
       expect(childValue).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_METHOD_RETURN_VALUE_2000
+     * @tc.name      testMethodReturnValue0020
+     * @tc.desc      The return value of the method is [], and the modifier is public
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testMethodReturnValue0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMethodReturnValue0021';
+      let parent = new Parent20();
+      let parentValue: [] = parent.getValue();
+      expect(parentValue.toString()).assertEqual("");
+      let child = new Child20();
+      let childValue: [] = child.getValue();
+      expect(childValue.toString()).assertEqual("");
     });
 
     /**
@@ -755,24 +773,6 @@ export default function MethodReturnValueTest(): void {
      * @tc.level     Level 2
      */
     it("testMethodReturnValue0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodReturnValue0021';
-      let parent = new Parent20();
-      let parentValue: [] = parent.getValue();
-      expect(parentValue.toString()).assertEqual("");
-      let child = new Child20();
-      let childValue: [] = child.getValue();
-      expect(childValue.toString()).assertEqual("");
-    });
-
-    /**
-     * @tc.number    SUB_METHOD_RETURN_VALUE_2200
-     * @tc.name      testMethodReturnValue0022
-     * @tc.desc      The return value of the method is [], and the modifier is public
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testMethodReturnValue0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testMethodReturnValue0022';
       let parent = new Parent21();
       let obj1: Person = parent.createGenericObject();
@@ -789,14 +789,14 @@ export default function MethodReturnValueTest(): void {
     });
 
     /**
-     * @tc.number    SUB_METHOD_RETURN_VALUE_2300
-     * @tc.name      testMethodReturnValue0023
+     * @tc.number    SUB_METHOD_RETURN_VALUE_2200
+     * @tc.name      testMethodReturnValue0022
      * @tc.desc      The return value of the method is bigint, and the modifier is public
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testMethodReturnValue0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testMethodReturnValue0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testMethodReturnValue0023';
       let parent = new Parent22();
       let parentValue: bigint = parent.getValue();
@@ -807,14 +807,14 @@ export default function MethodReturnValueTest(): void {
     });
 
     /**
-     * @tc.number    SUB_METHOD_RETURN_VALUE_2400
-     * @tc.name      testMethodReturnValue0024
+     * @tc.number    SUB_METHOD_RETURN_VALUE_2300
+     * @tc.name      testMethodReturnValue0023
      * @tc.desc      The return value of the method is void, and the modifier is public
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testMethodReturnValue0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testMethodReturnValue0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testMethodReturnValue0024';
       let parent = new Parent23();
       parent.getValue();

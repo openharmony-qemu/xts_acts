@@ -385,45 +385,45 @@ export default function StaticMethodsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_STATIC_METHODS_TEST_0500
-     * @tc.name      testStaticMethods0005
+     * @tc.number    SUB_STATIC_METHODS_TEST_0400
+     * @tc.name      testStaticMethods0004
      * @tc.desc      Class static methods may access protected or private members of the same class type or derived one
      * represented as parameters or local variables Access protected field
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testStaticMethods0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testStaticMethods0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStaticMethods0005';
       let c: C = new C(2)
       expect(C.getCount(c)).assertEqual(2)
     });
 
     /**
-     * @tc.number    SUB_STATIC_METHODS_TEST_0600
-     * @tc.name      testStaticMethods0006
+     * @tc.number    SUB_STATIC_METHODS_TEST_0500
+     * @tc.name      testStaticMethods0005
      * @tc.desc      Class static methods may access protected or private members of the same class type or derived
      * one represented as parameters or local variables Access inherited protected field
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testStaticMethods0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testStaticMethods0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStaticMethods0006';
       let c: C1 = new C1(2)
       expect(C1.getCount(c)).assertEqual(2)
     });
 
     /**
-     * @tc.number    SUB_STATIC_METHODS_TEST_0700
-     * @tc.name      testStaticMethods0007
+     * @tc.number    SUB_STATIC_METHODS_TEST_0600
+     * @tc.name      testStaticMethods0006
      * @tc.desc      Class static methods may access protected or private members of the same class type or derived one
      * represented as parameters or local variables Access derived protected field
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testStaticMethods0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testStaticMethods0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStaticMethods0007';
       let b: B2 = new B2(1)
       let c: C2 = new C2(2)
@@ -433,44 +433,44 @@ export default function StaticMethodsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_STATIC_METHODS_TEST_0800
-     * @tc.name      testStaticMethods0008
+     * @tc.number    SUB_STATIC_METHODS_TEST_0700
+     * @tc.name      testStaticMethods0007
      * @tc.desc      Class static methods may access protected or private members of the same class type or derived one
      * represented as parameters or local variables Access protected field from local variable
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testStaticMethods0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testStaticMethods0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStaticMethods0008';
       expect(C3.getCount(2)).assertEqual(3)
     });
 
     /**
-     * @tc.number    SUB_STATIC_METHODS_TEST_1000
-     * @tc.name      testStaticMethods0010
+     * @tc.number    SUB_STATIC_METHODS_TEST_0800
+     * @tc.name      testStaticMethods0008
      * @tc.desc      Class static methods may access protected or private members of the same class type or derived one
      * represented as parameters or local variables Access private field
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testStaticMethods0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testStaticMethods0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStaticMethods0010';
       let c: C5 = new C5(2)
       expect(C5.getCount(c)).assertEqual(2)
     });
 
     /**
-     * @tc.number    SUB_STATIC_METHODS_TEST_1100
-     * @tc.name      testStaticMethods0011
+     * @tc.number    SUB_STATIC_METHODS_TEST_0900
+     * @tc.name      testStaticMethods0009
      * @tc.desc      Class static methods may access protected or private members of the same class type or derived one
      * represented as parameters or local variables Access private field by derived class instance
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testStaticMethods0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testStaticMethods0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStaticMethods0011';
       let b: B4 = new B4(1)
       let c: C6 = new C6(2)
@@ -478,19 +478,64 @@ export default function StaticMethodsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_STATIC_METHODS_TEST_1200
-     * @tc.name      testStaticMethods0012
+     * @tc.number    SUB_STATIC_METHODS_TEST_1000
+     * @tc.name      testStaticMethods0010
      * @tc.desc      Class static methods may access protected or private members of the same class type or derived
      * one represented as parameters or local variables Access private field from local variable
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testStaticMethods0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testStaticMethods0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStaticMethods0012';
       expect(C7.getCount(2)).assertEqual(3)
 
 
+    });
+
+    /**
+     * @tc.number    SUB_STATIC_METHODS_TEST_1100
+     * @tc.name      testStaticMethods0011
+     * @tc.desc      Class static methods may access protected or private members of the same class type or derived one
+     * represented as parameters or local variables Access protected method from local variable
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStaticMethods0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testStaticMethods0014';
+      let c: C9 = new C9()
+      expect(C9.getCount(c)).assertEqual(1)
+    });
+
+    /**
+     * @tc.number    SUB_STATIC_METHODS_TEST_1200
+     * @tc.name      testStaticMethods0012
+     * @tc.desc      Class static methods may access protected or private members of the same class type or derived one
+     * represented as parameters or local variables Access inherited protected method
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStaticMethods0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testStaticMethods0015';
+      let c: C10 = new C10()
+      expect(C10.getCount(c)).assertEqual(1)
+    });
+
+    /**
+     * @tc.number    SUB_STATIC_METHODS_TEST_1300
+     * @tc.name      testStaticMethods0013
+     * @tc.desc      Class static methods may access protected or private members of the same class type or derived one
+     * represented as parameters or local variables Access derived protected method
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testStaticMethods0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testStaticMethods0016';
+      let c: C11 = new C11()
+      expect(B7.getCount(c)).assertEqual(1)
     });
 
     /**
@@ -503,80 +548,35 @@ export default function StaticMethodsTest(): void {
      * @tc.level     Level 2
      */
     it("testStaticMethods0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStaticMethods0014';
-      let c: C9 = new C9()
-      expect(C9.getCount(c)).assertEqual(1)
-    });
-
-    /**
-     * @tc.number    SUB_STATIC_METHODS_TEST_1500
-     * @tc.name      testStaticMethods0015
-     * @tc.desc      Class static methods may access protected or private members of the same class type or derived one
-     * represented as parameters or local variables Access inherited protected method
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testStaticMethods0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStaticMethods0015';
-      let c: C10 = new C10()
-      expect(C10.getCount(c)).assertEqual(1)
-    });
-
-    /**
-     * @tc.number    SUB_STATIC_METHODS_TEST_1600
-     * @tc.name      testStaticMethods0016
-     * @tc.desc      Class static methods may access protected or private members of the same class type or derived one
-     * represented as parameters or local variables Access derived protected method
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testStaticMethods0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStaticMethods0016';
-      let c: C11 = new C11()
-      expect(B7.getCount(c)).assertEqual(1)
-    });
-
-    /**
-     * @tc.number    SUB_STATIC_METHODS_TEST_1700
-     * @tc.name      testStaticMethods0017
-     * @tc.desc      Class static methods may access protected or private members of the same class type or derived one
-     * represented as parameters or local variables Access protected method from local variable
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testStaticMethods0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStaticMethods0017';
       expect(C12.getCount(2)).assertEqual(3)
     });
 
     /**
-     * @tc.number    SUB_STATIC_METHODS_TEST_1900
-     * @tc.name      testStaticMethods0019
+     * @tc.number    SUB_STATIC_METHODS_TEST_1500
+     * @tc.name      testStaticMethods0015
      * @tc.desc      Class static methods may access protected or private members of the same class type or derived
      * one represented as parameters or local variables Access private method
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testStaticMethods0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testStaticMethods0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStaticMethods0019';
       let c: C14 = new C14()
       expect(C14.getCount(c)).assertEqual(1)
     });
 
     /**
-     * @tc.number    SUB_STATIC_METHODS_TEST_2100
-     * @tc.name      testStaticMethods0021
+     * @tc.number    SUB_STATIC_METHODS_TEST_1600
+     * @tc.name      testStaticMethods0016
      * @tc.desc      Class static methods may access protected or private members of the same class type or derived one
      * represented as parameters or local variables Access private method from local variable
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testStaticMethods0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testStaticMethods0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStaticMethods0021';
       expect(C16.getCount(2)).assertEqual(3)
     });

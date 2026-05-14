@@ -34,23 +34,6 @@ async function sleep(time: int): Promise<int> {
     });
 }
 
-class A {
-    p1: Object
-    p2: Any
-    constructor(p1: Object, p2: Any) {
-        this.p1 = p1
-        this.p2 = p2
-    }
-}
-
-class B extends A {
-    constructor(p: int) { super(p, p + 1) }
-    constructor(p: long) { super(p, p + 2) }
-    constructor(p: float) { super(p, p + 3f) }
-    constructor(p: Error) { super(p, null) }
-    constructor(p: [Object, Any]) { super(p[0], p[1]) }
-}
-
 class A1 {
     fld: Object[]
     constructor(p: string, ...q: Object[]) {
@@ -165,16 +148,6 @@ abstract class B6 extends A8 {
         super(
             p === undefined ? '' :
                 (typeof p === 'number' ? (Number(p) + 1) : String(p))
-        )
-    }
-}
-
-class C extends B6 {
-    constructor(p: Any) {
-        super(
-            (typeof p === 'string' || typeof p === 'number') ?
-                (p as string | number) :
-                undefined
         )
     }
 }
@@ -813,6 +786,7 @@ export default function ExplicitConstructorCallTest():void {
             // This API supports only one parameter: clear action function.
         })
 
+
         /**
          * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_0100
          * @tc.name      testExplicitConstructorCall0001
@@ -822,37 +796,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0001'
-
-            let b = new B(1)
-        expect(String(b.p1)).assertEqual('1')
-        expect(String(b.p2)).assertEqual('2')
-
-            b = new B(1 as long)
-        expect(String(b.p1)).assertEqual('1')
-        expect(String(b.p2)).assertEqual('3')
-
-            b = new B(1f)
-        expect(String(b.p1)).assertEqual('1')
-        expect(String(b.p2)).assertEqual('4')
-
-            b = new B(new Error)
-        expect(b.p1 instanceof Error).assertTrue()
-        expect(String(b.p2)).assertEqual('null')
-
-            b = new B(['abc', undefined])
-        expect(String(b.p1)).assertEqual('abc')
-        expect(String(b.p2)).assertEqual('undefined')
-        });
-        /**
-         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_0200
-         * @tc.name      testExplicitConstructorCall0002
-         * @tc.desc      Semantic check for a super call is performed in accordance with "Compatibility of Call Arguments".
-         * @tc.size      MediumTest
-         * @tc.type      Function
-         * @tc.level     Level 2
-         */
-        it("testExplicitConstructorCall0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const TAG = 'testExplicitConstructorCall0002';
 
             let b = new B1(1)
@@ -883,14 +826,14 @@ export default function ExplicitConstructorCallTest():void {
         expect(b.fld[3]).assertEqual(2f)
         });
         /**
-         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_0300
-         * @tc.name      testExplicitConstructorCall0003
+         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_0200
+         * @tc.name      testExplicitConstructorCall0002
          * @tc.desc      Semantic check for a super call is performed in accordance with "Compatibility of Call Arguments".
          * @tc.size      MediumTest
          * @tc.type      Function
          * @tc.level     Level 2
          */
-        it("testExplicitConstructorCall0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it("testExplicitConstructorCall0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const TAG = 'testExplicitConstructorCall0003';
 
             let t: [string, Object, int, boolean] = ['a', 'b', 1, true]
@@ -913,14 +856,14 @@ export default function ExplicitConstructorCallTest():void {
         expect(b.fld[3]).assertEqual(true)
         });
         /**
-         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_0400
-         * @tc.name      testExplicitConstructorCall0004
+         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_0300
+         * @tc.name      testExplicitConstructorCall0003
          * @tc.desc      Semantic check for a super call is performed in accordance with "Compatibility of Call Arguments".
          * @tc.size      MediumTest
          * @tc.type      Function
          * @tc.level     Level 2
          */
-        it("testExplicitConstructorCall0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it("testExplicitConstructorCall0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const TAG = 'testExplicitConstructorCall0004';
 
             let b = new B3(1)
@@ -930,14 +873,14 @@ export default function ExplicitConstructorCallTest():void {
         expect(b.fld[3]).assertEqual(1)
         });
         /**
-         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_0500
-         * @tc.name      testExplicitConstructorCall0005
+         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_0400
+         * @tc.name      testExplicitConstructorCall0004
          * @tc.desc      Semantic check for a super call is performed in accordance with "Compatibility of Call Arguments".
          * @tc.size      MediumTest
          * @tc.type      Function
          * @tc.level     Level 2
          */
-        it("testExplicitConstructorCall0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it("testExplicitConstructorCall0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const TAG = 'testExplicitConstructorCall0005';
 
             let b = new B4(1)
@@ -945,6 +888,24 @@ export default function ExplicitConstructorCallTest():void {
         expect(b.fld[1]).assertEqual('b')
         expect(b.fld[2]).assertEqual(1)
         expect(b.fld[3]).assertEqual(11)
+
+        });
+        /**
+         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_0500
+         * @tc.name      testExplicitConstructorCall0005
+         * @tc.desc      'There are two kinds of explicit constructor calls: - Superclass constructor
+         *               calls (used to call a constructor from the direct superclass) that begin with the
+         *               keyword super. - Other constructor calls that begin with the keyword this (used
+         *               to call another same-class constructor).'
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 2
+         */
+        it("testExplicitConstructorCall0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+            const TAG = 'testExplicitConstructorCall0006';
+
+        expect(new A5('abc').fld).assertEqual('abc')
+        expect(new A5().fld).assertEqual('hello')
 
         });
         /**
@@ -959,11 +920,11 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0006';
+            const TAG = 'testExplicitConstructorCall0007';
 
-        expect(new A5('abc').fld).assertEqual('abc')
-        expect(new A5().fld).assertEqual('hello')
-
+        expect(new A6('abc').fld).assertEqual('abc')
+        expect(new A6().fld).assertEqual('42')
+        expect(new A6(3.14).fld).assertEqual('3.14')
         });
         /**
          * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_0700
@@ -977,12 +938,13 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0007';
+            const TAG = 'testExplicitConstructorCall0008';
 
-        expect(new A6('abc').fld).assertEqual('abc')
-        expect(new A6().fld).assertEqual('42')
-        expect(new A6(3.14).fld).assertEqual('3.14')
+        expect(new B5().fld).assertEqual('0')
+        expect(new B5(42.0).fld).assertEqual('42')
+        expect(B5.withInt(12345).fld).assertEqual('12346')
         });
+
         /**
          * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_0800
          * @tc.name      testExplicitConstructorCall0008
@@ -995,45 +957,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0008';
-
-        expect(new B5().fld).assertEqual('0')
-        expect(new B5(42.0).fld).assertEqual('42')
-        expect(B5.withInt(12345).fld).assertEqual('12346')
-        });
-        /**
-         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_0900
-         * @tc.name      testExplicitConstructorCall0009
-         * @tc.desc      'There are two kinds of explicit constructor calls: - Superclass constructor
-         *               calls (used to call a constructor from the direct superclass) that begin with the
-         *               keyword super. - Other constructor calls that begin with the keyword this (used
-         *               to call another same-class constructor).'
-         * @tc.size      MediumTest
-         * @tc.type      Function
-         * @tc.level     Level 2
-         */
-        it("testExplicitConstructorCall0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0009';
-
-        expect(new C(null).fld).assertEqual('')
-        expect(new C(undefined).fld).assertEqual('')
-        expect(new C(true).fld).assertEqual('')
-        expect(new C('abc').fld).assertEqual('abc')
-        expect(new C(42.0).fld).assertEqual('43')
-
-        });
-        /**
-         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_1000
-         * @tc.name      testExplicitConstructorCall0010
-         * @tc.desc      'There are two kinds of explicit constructor calls: - Superclass constructor
-         *               calls (used to call a constructor from the direct superclass) that begin with the
-         *               keyword super. - Other constructor calls that begin with the keyword this (used
-         *               to call another same-class constructor).'
-         * @tc.size      MediumTest
-         * @tc.type      Function
-         * @tc.level     Level 2
-         */
-        it("testExplicitConstructorCall0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const TAG = 'testExplicitConstructorCall0010';
 
             let b = new B7()
@@ -1054,8 +977,8 @@ export default function ExplicitConstructorCallTest():void {
 
         });
         /**
-         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_1100
-         * @tc.name      testExplicitConstructorCall0011
+         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_0900
+         * @tc.name      testExplicitConstructorCall0009
          * @tc.desc      'There are two kinds of explicit constructor calls: - Superclass constructor
          *               calls (used to call a constructor from the direct superclass) that begin with the
          *               keyword super. - Other constructor calls that begin with the keyword this (used
@@ -1064,7 +987,7 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.type      Function
          * @tc.level     Level 2
          */
-        it("testExplicitConstructorCall0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it("testExplicitConstructorCall0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const TAG = 'testExplicitConstructorCall0011';
 
             let b = new B8()
@@ -1085,8 +1008,8 @@ export default function ExplicitConstructorCallTest():void {
 
         });
         /**
-         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_1200
-         * @tc.name      testExplicitConstructorCall0012
+         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_1000
+         * @tc.name      testExplicitConstructorCall0010
          * @tc.desc      'There are two kinds of explicit constructor calls: - Superclass constructor
          *               calls (used to call a constructor from the direct superclass) that begin with the
          *               keyword super. - Other constructor calls that begin with the keyword this (used
@@ -1095,7 +1018,7 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.type      Function
          * @tc.level     Level 2
          */
-        it("testExplicitConstructorCall0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it("testExplicitConstructorCall0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const TAG = 'testExplicitConstructorCall0012';
 
             let b = new B9()
@@ -1115,8 +1038,8 @@ export default function ExplicitConstructorCallTest():void {
         expect(b.s[2]).assertEqual('c')
         });
         /**
-         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_1300
-         * @tc.name      testExplicitConstructorCall0013
+         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_1100
+         * @tc.name      testExplicitConstructorCall0011
          * @tc.desc      'There are two kinds of explicit constructor calls: - Superclass constructor
          *               calls (used to call a constructor from the direct superclass) that begin with the
          *               keyword super. - Other constructor calls that begin with the keyword this (used
@@ -1125,7 +1048,7 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.type      Function
          * @tc.level     Level 2
          */
-        it("testExplicitConstructorCall0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it("testExplicitConstructorCall0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const TAG = 'testExplicitConstructorCall0013';
 
             let b = new B10('a', 'b')
@@ -1135,8 +1058,8 @@ export default function ExplicitConstructorCallTest():void {
 
         });
         /**
-         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_1400
-         * @tc.name      testExplicitConstructorCall0014
+         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_1200
+         * @tc.name      testExplicitConstructorCall0012
          * @tc.desc      'There are two kinds of explicit constructor calls: - Superclass constructor
          *               calls (used to call a constructor from the direct superclass) that begin with the
          *               keyword super. - Other constructor calls that begin with the keyword this (used
@@ -1145,7 +1068,7 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.type      Function
          * @tc.level     Level 2
          */
-        it("testExplicitConstructorCall0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it("testExplicitConstructorCall0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const TAG = 'testExplicitConstructorCall0014';
 
             let b = new B11('a')
@@ -1165,8 +1088,8 @@ export default function ExplicitConstructorCallTest():void {
 
         });
         /**
-         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_1500
-         * @tc.name      testExplicitConstructorCall0015
+         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_1300
+         * @tc.name      testExplicitConstructorCall0013
          * @tc.desc      'There are two kinds of explicit constructor calls: - Superclass constructor
          *               calls (used to call a constructor from the direct superclass) that begin with the
          *               keyword super. - Other constructor calls that begin with the keyword this (used
@@ -1175,7 +1098,7 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.type      Function
          * @tc.level     Level 2
          */
-        it("testExplicitConstructorCall0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it("testExplicitConstructorCall0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const TAG = 'testExplicitConstructorCall0015';
 
             let b = new B12()
@@ -1194,6 +1117,48 @@ export default function ExplicitConstructorCallTest():void {
         expect(b.s[1]).assertEqual('z')
         });
         /**
+         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_1400
+         * @tc.name      testExplicitConstructorCall0014
+         * @tc.desc      'There are two kinds of explicit constructor calls: - Superclass constructor
+         *               calls (used to call a constructor from the direct superclass) that begin with the
+         *               keyword super. - Other constructor calls that begin with the keyword this (used
+         *               to call another same-class constructor).'
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 2
+         */
+        it("testExplicitConstructorCall0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+            const TAG = 'testExplicitConstructorCall0016';
+
+            let b = new B13('a', 'b')
+        expect(b.s.length).assertEqual(2)
+        expect(b.s[0]).assertEqual('a')
+        expect(b.s[1]).assertEqual('b')
+
+        });
+        /**
+         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_1500
+         * @tc.name      testExplicitConstructorCall0015
+         * @tc.desc      'There are two kinds of explicit constructor calls: - Superclass constructor
+         *               calls (used to call a constructor from the direct superclass) that begin with the
+         *               keyword super. - Other constructor calls that begin with the keyword this (used
+         *               to call another same-class constructor).'
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 2
+         */
+        it("testExplicitConstructorCall0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+            const TAG = 'testExplicitConstructorCall0017';
+
+            let b = new B14()
+        expect(b.s.length).assertEqual(0)
+
+            b = new B14('a', 'b', 'c')
+        expect(b.s[0]).assertEqual('a')
+        expect(b.s[1]).assertEqual('b')
+        expect(b.s[2]).assertEqual('c')
+        });
+        /**
          * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_1600
          * @tc.name      testExplicitConstructorCall0016
          * @tc.desc      'There are two kinds of explicit constructor calls: - Superclass constructor
@@ -1205,13 +1170,14 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0016';
+            const TAG = 'testExplicitConstructorCall0018';
 
-            let b = new B13('a', 'b')
-        expect(b.s.length).assertEqual(2)
-        expect(b.s[0]).assertEqual('a')
-        expect(b.s[1]).assertEqual('b')
-
+            let b = new B15('a', 'b', 'c')
+        expect(b.p1.length).assertEqual(3)
+        expect(b.p2.length).assertEqual(0)
+            b = new B15()
+        expect(b.p1.length).assertEqual(0)
+        expect(b.p2.length).assertEqual(0)
         });
         /**
          * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_1700
@@ -1225,16 +1191,17 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0017';
+            const TAG = 'testExplicitConstructorCall0019';
 
-            let b = new B14()
-        expect(b.s.length).assertEqual(0)
+            let b = new B16('a', 'b', 'c')
+        expect(b.p1.length).assertEqual(3)
+        expect(b.p2.length).assertEqual(0)
+            b = new B16()
 
-            b = new B14('a', 'b', 'c')
-        expect(b.s[0]).assertEqual('a')
-        expect(b.s[1]).assertEqual('b')
-        expect(b.s[2]).assertEqual('c')
+        expect(b.p1.length).assertEqual(0)
+        expect(b.p2.length).assertEqual(0)
         });
+
         /**
          * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_1800
          * @tc.name      testExplicitConstructorCall0018
@@ -1247,12 +1214,13 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0018';
+            const TAG = 'testExplicitConstructorCall0020';
 
-            let b = new B15('a', 'b', 'c')
-        expect(b.p1.length).assertEqual(3)
-        expect(b.p2.length).assertEqual(0)
-            b = new B15()
+            let b = new B17('a', 'b', 'c')
+        expect(b.p1.length).assertEqual(0)
+        expect(b.p2.length).assertEqual(3)
+
+            b = new B17()
         expect(b.p1.length).assertEqual(0)
         expect(b.p2.length).assertEqual(0)
         });
@@ -1268,17 +1236,15 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0019';
+            const TAG = 'testExplicitConstructorCall0021';
 
-            let b = new B16('a', 'b', 'c')
-        expect(b.p1.length).assertEqual(3)
-        expect(b.p2.length).assertEqual(0)
-            b = new B16()
-
-        expect(b.p1.length).assertEqual(0)
-        expect(b.p2.length).assertEqual(0)
+            let a1 = new A20('1', '2', '3')
+        expect(a1.k1).assertEqual('1')
+        expect(a1.k2).assertEqual('2')
+        expect(a1.k3).assertEqual('3')
+        expect(a1.lambda1).assertEqual(undefined)
+        expect(a1.lambda2).assertEqual(undefined);
         });
-
         /**
          * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_2000
          * @tc.name      testExplicitConstructorCall0020
@@ -1291,15 +1257,16 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0020';
+            const TAG = 'testExplicitConstructorCall0022';
 
-            let b = new B17('a', 'b', 'c')
-        expect(b.p1.length).assertEqual(0)
-        expect(b.p2.length).assertEqual(3)
-
-            b = new B17()
-        expect(b.p1.length).assertEqual(0)
-        expect(b.p2.length).assertEqual(0)
+            let x = ''
+            let a1 = new A21(1, 2, 3, undefined, () => { x = 'x' })
+        expect(a1.k1).assertEqual('1')
+        expect(a1.k2).assertEqual('2')
+        expect(a1.k3).assertEqual('3')
+        expect(a1.lambda1).assertEqual(undefined)
+            a1.lambda2!()
+        expect(x).assertEqual('x');
         });
         /**
          * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_2100
@@ -1313,50 +1280,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0021';
-
-            let a1 = new A20('1', '2', '3')
-        expect(a1.k1).assertEqual('1')
-        expect(a1.k2).assertEqual('2')
-        expect(a1.k3).assertEqual('3')
-        expect(a1.lambda1).assertEqual(undefined)
-        expect(a1.lambda2).assertEqual(undefined);
-        });
-        /**
-         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_2200
-         * @tc.name      testExplicitConstructorCall0022
-         * @tc.desc      'There are two kinds of explicit constructor calls: - Superclass constructor
-         *               calls (used to call a constructor from the direct superclass) that begin with the
-         *               keyword super. - Other constructor calls that begin with the keyword this (used
-         *               to call another same-class constructor).'
-         * @tc.size      MediumTest
-         * @tc.type      Function
-         * @tc.level     Level 2
-         */
-        it("testExplicitConstructorCall0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0022';
-
-            let x = ''
-            let a1 = new A21(1, 2, 3, undefined, () => { x = 'x' })
-        expect(a1.k1).assertEqual('1')
-        expect(a1.k2).assertEqual('2')
-        expect(a1.k3).assertEqual('3')
-        expect(a1.lambda1).assertEqual(undefined)
-            a1.lambda2!()
-        expect(x).assertEqual('x');
-        });
-        /**
-         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_2300
-         * @tc.name      testExplicitConstructorCall0023
-         * @tc.desc      'There are two kinds of explicit constructor calls: - Superclass constructor
-         *               calls (used to call a constructor from the direct superclass) that begin with the
-         *               keyword super. - Other constructor calls that begin with the keyword this (used
-         *               to call another same-class constructor).'
-         * @tc.size      MediumTest
-         * @tc.type      Function
-         * @tc.level     Level 2
-         */
-        it("testExplicitConstructorCall0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const TAG = 'testExplicitConstructorCall0023';
 
             let x: string = ''
@@ -1370,8 +1293,8 @@ export default function ExplicitConstructorCallTest():void {
         expect(b1.lambda2).assertEqual(undefined)
         });
         /**
-         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_2400
-         * @tc.name      testExplicitConstructorCall0024
+         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_2200
+         * @tc.name      testExplicitConstructorCall0022
          * @tc.desc      'There are two kinds of explicit constructor calls: - Superclass constructor
          *               calls (used to call a constructor from the direct superclass) that begin with the
          *               keyword super. - Other constructor calls that begin with the keyword this (used
@@ -1380,7 +1303,7 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.type      Function
          * @tc.level     Level 2
          */
-        it("testExplicitConstructorCall0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it("testExplicitConstructorCall0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const TAG = 'testExplicitConstructorCall0024';
 
             let a1: A23|undefined;
@@ -1406,8 +1329,8 @@ export default function ExplicitConstructorCallTest():void {
         expect(v1).assertEqual('lambda2lambda3lambda1')
         });
         /**
-         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_2500
-         * @tc.name      testExplicitConstructorCall0025
+         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_2300
+         * @tc.name      testExplicitConstructorCall0023
          * @tc.desc      'There are two kinds of explicit constructor calls: - Superclass constructor
          *               calls (used to call a constructor from the direct superclass) that begin with the
          *               keyword super. - Other constructor calls that begin with the keyword this (used
@@ -1416,7 +1339,7 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.type      Function
          * @tc.level     Level 2
          */
-        it("testExplicitConstructorCall0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it("testExplicitConstructorCall0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const TAG = 'testExplicitConstructorCall0025';
 
             let a1: A24|undefined;
@@ -1439,8 +1362,8 @@ export default function ExplicitConstructorCallTest():void {
         expect(v1).assertEqual('lambda1')
         });
         /**
-         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_2600
-         * @tc.name      testExplicitConstructorCall0026
+         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_2400
+         * @tc.name      testExplicitConstructorCall0024
          * @tc.desc      'There are two kinds of explicit constructor calls: - Superclass constructor
          *               calls (used to call a constructor from the direct superclass) that begin with the
          *               keyword super. - Other constructor calls that begin with the keyword this (used
@@ -1449,7 +1372,7 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.type      Function
          * @tc.level     Level 2
          */
-        it("testExplicitConstructorCall0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it("testExplicitConstructorCall0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const TAG = 'testExplicitConstructorCall0026';
 
             let a1: A25|undefined;
@@ -1479,8 +1402,8 @@ export default function ExplicitConstructorCallTest():void {
         });
 
         /**
-         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_2700
-         * @tc.name      testExplicitConstructorCall0027
+         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_2500
+         * @tc.name      testExplicitConstructorCall0025
          * @tc.desc      'There are two kinds of explicit constructor calls: - Superclass constructor
          *               calls (used to call a constructor from the direct superclass) that begin with the
          *               keyword super. - Other constructor calls that begin with the keyword this (used
@@ -1489,7 +1412,7 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.type      Function
          * @tc.level     Level 2
          */
-        it("testExplicitConstructorCall0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it("testExplicitConstructorCall0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const TAG = 'testExplicitConstructorCall0027';
 
             let s: string = ''
@@ -1524,8 +1447,8 @@ export default function ExplicitConstructorCallTest():void {
         expect(a.p10).assertEqual(Color.Blue)
         });
         /**
-         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_2800
-         * @tc.name      testExplicitConstructorCall0028
+         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_2600
+         * @tc.name      testExplicitConstructorCall0026
          * @tc.desc      'There are two kinds of explicit constructor calls: - Superclass constructor
          *               calls (used to call a constructor from the direct superclass) that begin with the
          *               keyword super. - Other constructor calls that begin with the keyword this (used
@@ -1534,7 +1457,7 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.type      Function
          * @tc.level     Level 2
          */
-        it("testExplicitConstructorCall0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it("testExplicitConstructorCall0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const TAG = 'testExplicitConstructorCall0028';
 
             let s: string = ''
@@ -1567,8 +1490,8 @@ export default function ExplicitConstructorCallTest():void {
         expect(a.p10).assertEqual(Color.Blue);
         });
         /**
-         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_2900
-         * @tc.name      testExplicitConstructorCall0029
+         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_2700
+         * @tc.name      testExplicitConstructorCall0027
          * @tc.desc      There are two kinds of explicit constructor calls: - Superclass constructor
          *               calls (used to call a constructor from the direct superclass) that begin with the
          *               keyword super. - Other constructor calls that begin with the keyword this (used
@@ -1577,7 +1500,7 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.type      Function
          * @tc.level     Level 2
          */
-        it("testExplicitConstructorCall0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it("testExplicitConstructorCall0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const TAG = 'testExplicitConstructorCall0029';
 
             let s: string = ''
@@ -1614,8 +1537,8 @@ export default function ExplicitConstructorCallTest():void {
         expect(b.p10!).assertEqual(Color.Blue);
         });
         /**
-         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_3000
-         * @tc.name      testExplicitConstructorCall0030
+         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_2800
+         * @tc.name      testExplicitConstructorCall0028
          * @tc.desc      There are two kinds of explicit constructor calls: - Superclass constructor
          *               calls (used to call a constructor from the direct superclass) that begin with the
          *               keyword super. - Other constructor calls that begin with the keyword this (used
@@ -1624,7 +1547,7 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.type      Function
          * @tc.level     Level 2
          */
-        it("testExplicitConstructorCall0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it("testExplicitConstructorCall0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const TAG = 'testExplicitConstructorCall0030';
 
             let a = new A29(
@@ -1665,8 +1588,8 @@ export default function ExplicitConstructorCallTest():void {
         expect(a.p5!.reduce((acc: string, curr: string) => acc + curr, '')).assertEqual('abc');
         });
         /**
-         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_3100
-         * @tc.name      testExplicitConstructorCall0031
+         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_2900
+         * @tc.name      testExplicitConstructorCall0029
          * @tc.desc      There are two kinds of explicit constructor calls: - Superclass constructor
          *               calls (used to call a constructor from the direct superclass) that begin with the
          *               keyword super. - Other constructor calls that begin with the keyword this (used
@@ -1675,7 +1598,7 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.type      Function
          * @tc.level     Level 2
          */
-        it("testExplicitConstructorCall0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it("testExplicitConstructorCall0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const TAG = 'testExplicitConstructorCall0031';
 
             let a = new A30('a', 'b', 'c', 'd')
@@ -1687,8 +1610,8 @@ export default function ExplicitConstructorCallTest():void {
 
         });
         /**
-         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_3200
-         * @tc.name      testExplicitConstructorCall0032
+         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_3000
+         * @tc.name      testExplicitConstructorCall0030
          * @tc.desc      There are two kinds of explicit constructor calls: - Superclass constructor
          *               calls (used to call a constructor from the direct superclass) that begin with the
          *               keyword super. - Other constructor calls that begin with the keyword this (used
@@ -1697,7 +1620,7 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.type      Function
          * @tc.level     Level 2
          */
-        it("testExplicitConstructorCall0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it("testExplicitConstructorCall0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const TAG = 'testExplicitConstructorCall0032';
 
             let b = new B21('a', 'b', 'c', 'd')
@@ -1708,8 +1631,8 @@ export default function ExplicitConstructorCallTest():void {
         expect(b.p5!.reduce((acc: string, curr: string) => acc + curr, '')).assertEqual('abcd');
         });
         /**
-         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_3300
-         * @tc.name      testExplicitConstructorCall0033
+         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_3100
+         * @tc.name      testExplicitConstructorCall0031
          * @tc.desc      There are two kinds of explicit constructor calls: - Superclass constructor
          *               calls (used to call a constructor from the direct superclass) that begin with the
          *               keyword super. - Other constructor calls that begin with the keyword this (used
@@ -1718,7 +1641,7 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.type      Function
          * @tc.level     Level 2
          */
-        it("testExplicitConstructorCall0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it("testExplicitConstructorCall0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const TAG = 'testExplicitConstructorCall0033';
 
             let b = new B22('a', 'b', 'c', 'd')
@@ -1730,15 +1653,15 @@ export default function ExplicitConstructorCallTest():void {
         });
 
         /**
-         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_3400
-         * @tc.name      testExplicitConstructorCall0034
+         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_3200
+         * @tc.name      testExplicitConstructorCall0032
          * @tc.desc      Superclass constructor calls (used to call a direct superclass constructor),called Unqualified
          *               superclass constructor calls that start with the keyword super
          * @tc.size      MediumTest
          * @tc.type      Function
          * @tc.level     Level 2
          */
-        it("testExplicitConstructorCall0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it("testExplicitConstructorCall0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const TAG = 'testExplicitConstructorCall0034';
 
             let i1: B23 = new B23();
@@ -1749,14 +1672,14 @@ export default function ExplicitConstructorCallTest():void {
         });
 
         /**
-         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_3500
-         * @tc.name      testExplicitConstructorCall0035
+         * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_3300
+         * @tc.name      testExplicitConstructorCall0033
          * @tc.desc      Alternate constructor calls that begin with the keyword this
          * @tc.size      MediumTest
          * @tc.type      Function
          * @tc.level     Level 2
          */
-        it("testExplicitConstructorCall0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it("testExplicitConstructorCall0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const TAG = 'testExplicitConstructorCall0035';
 
             let i1: A34 = new A34();

@@ -562,6 +562,36 @@ export default function ClassInitializerTest():void {
     })
 
     /**
+     * @tc.number    SUB_CLASS_INITIALIZER_TEST_1800
+     * @tc.name      testClassInitializer0018
+     * @tc.desc      When a class is initialized, the class initializer declared in the class is executed along with
+     * all class initializers of all superclasses.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testClassInitializer0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testClassInitializer0020';
+      expect(E1.e).assertEqual(5);
+      expect(res1).assertEqual("E");
+    })
+
+    /**
+     * @tc.number    SUB_CLASS_INITIALIZER_TEST_1900
+     * @tc.name      testClassInitializer0019
+     * @tc.desc      When a class is initialized, the class initializer declared in the class is executed along with
+     * all class initializers of all superclasses.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testClassInitializer0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testClassInitializer0021';
+      expect(F1.f).assertEqual(6);
+      expect(res1).assertEqual("EF");
+    })
+
+    /**
      * @tc.number    SUB_CLASS_INITIALIZER_TEST_2000
      * @tc.name      testClassInitializer0020
      * @tc.desc      When a class is initialized, the class initializer declared in the class is executed along with
@@ -571,36 +601,6 @@ export default function ClassInitializerTest():void {
      * @tc.level     Level 2
      */
     it("testClassInitializer0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInitializer0020';
-      expect(E1.e).assertEqual(5);
-      expect(res1).assertEqual("E");
-    })
-
-    /**
-     * @tc.number    SUB_CLASS_INITIALIZER_TEST_2100
-     * @tc.name      testClassInitializer0021
-     * @tc.desc      When a class is initialized, the class initializer declared in the class is executed along with
-     * all class initializers of all superclasses.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testClassInitializer0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInitializer0021';
-      expect(F1.f).assertEqual(6);
-      expect(res1).assertEqual("EF");
-    })
-
-    /**
-     * @tc.number    SUB_CLASS_INITIALIZER_TEST_2200
-     * @tc.name      testClassInitializer0022
-     * @tc.desc      When a class is initialized, the class initializer declared in the class is executed along with
-     * all class initializers of all superclasses.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testClassInitializer0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testClassInitializer0022';
       expect(G1.g).assertEqual(7);
       expect(res1).assertEqual("EFG");

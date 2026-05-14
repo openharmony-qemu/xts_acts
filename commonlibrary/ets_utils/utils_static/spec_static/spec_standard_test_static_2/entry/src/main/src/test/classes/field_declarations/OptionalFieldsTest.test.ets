@@ -96,10 +96,6 @@ class A14 {
   a?: Function
 }
 
-class A15 {
-  a?: Any
-}
-
 class A16 {
   a?: null
 }
@@ -366,6 +362,20 @@ export default function OptionalFieldsTest(): void {
     });
 
     /**
+     * @tc.number    SUB_OPTIONAL_FIELDS_TEST_1600
+     * @tc.name      testOptionalFields0016
+     * @tc.desc      Optional class fields should be undefined
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOptionalFields0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testOptionalFields0017'
+      let a16 = new A16()
+      expect(a16.a).assertEqual(undefined)
+    });
+
+    /**
      * @tc.number    SUB_OPTIONAL_FIELDS_TEST_1700
      * @tc.name      testOptionalFields0017
      * @tc.desc      Optional class fields should be undefined
@@ -374,9 +384,9 @@ export default function OptionalFieldsTest(): void {
      * @tc.level     Level 2
      */
     it("testOptionalFields0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOptionalFields0017'
-      let a16 = new A16()
-      expect(a16.a).assertEqual(undefined)
+      const TAG = 'testOptionalFields0018'
+      let a17 = new A17()
+      expect(a17.a).assertEqual(undefined)
     });
 
     /**
@@ -388,9 +398,9 @@ export default function OptionalFieldsTest(): void {
      * @tc.level     Level 2
      */
     it("testOptionalFields0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOptionalFields0018'
-      let a17 = new A17()
-      expect(a17.a).assertEqual(undefined)
+      const TAG = 'testOptionalFields0019'
+      let a18 = new A18()
+      expect(a18.a).assertEqual(undefined)
     });
 
     /**
@@ -402,9 +412,9 @@ export default function OptionalFieldsTest(): void {
      * @tc.level     Level 2
      */
     it("testOptionalFields0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOptionalFields0019'
-      let a18 = new A18()
-      expect(a18.a).assertEqual(undefined)
+      const TAG = 'testOptionalFields0020'
+      let a19 = new A19()
+      expect(a19.a).assertEqual(undefined)
     });
 
     /**
@@ -416,9 +426,9 @@ export default function OptionalFieldsTest(): void {
      * @tc.level     Level 2
      */
     it("testOptionalFields0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOptionalFields0020'
-      let a19 = new A19()
-      expect(a19.a).assertEqual(undefined)
+      const TAG = 'testOptionalFields0021'
+      let a20 = new A20()
+      expect(a20.a).assertEqual(undefined)
     });
 
     /**
@@ -430,9 +440,9 @@ export default function OptionalFieldsTest(): void {
      * @tc.level     Level 2
      */
     it("testOptionalFields0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOptionalFields0021'
-      let a20 = new A20()
-      expect(a20.a).assertEqual(undefined)
+      const TAG = 'testOptionalFields0022'
+      let a21 = new A21()
+      expect(a21.a).assertEqual(undefined)
     });
 
     /**
@@ -444,9 +454,9 @@ export default function OptionalFieldsTest(): void {
      * @tc.level     Level 2
      */
     it("testOptionalFields0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOptionalFields0022'
-      let a21 = new A21()
-      expect(a21.a).assertEqual(undefined)
+      const TAG = 'testOptionalFields0023'
+      let a22 = new A22()
+      expect(a22.a).assertEqual(undefined)
     });
 
     /**
@@ -458,20 +468,6 @@ export default function OptionalFieldsTest(): void {
      * @tc.level     Level 2
      */
     it("testOptionalFields0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOptionalFields0023'
-      let a22 = new A22()
-      expect(a22.a).assertEqual(undefined)
-    });
-
-    /**
-     * @tc.number    SUB_OPTIONAL_FIELDS_TEST_2400
-     * @tc.name      testOptionalFields0024
-     * @tc.desc      Optional class fields should be undefined
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testOptionalFields0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testOptionalFields0024'
       let a23 = new A23()
       expect(a23.a).assertEqual(undefined)
