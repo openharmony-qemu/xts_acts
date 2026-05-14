@@ -141,7 +141,7 @@ static void onEncInputParam(OH_AVCodec *codec, uint32_t index, OH_AVFormat *para
         if (!parameter || !userData) {
             return;
         }
-        OH_VideoEncoder_PushInputParameter(codec, index);  
+        OH_VideoEncoder_PushInputParameter(codec, index);
     }
 }
 
