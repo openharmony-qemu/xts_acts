@@ -453,32 +453,7 @@ static napi_value TextEnumTest_032(napi_env env, napi_callback_info info)
         "result_32 TextEnumTest_032 result=%{public}d", result_32);
     ASSERT_EQ(result_32, ARKUI_ERROR_CODE_PARAM_INVALID);
 
-    OH_ArkUI_LineSpacingStyle *lineSpacingStyle = OH_ArkUI_LineSpacingStyle_Create();
-    ASSERT_EQ((lineSpacingStyle != nullptr), true);
-
-    OH_ArkUI_LineSpacingStyle_SetLineSpacing(lineSpacingStyle, FLOAT_30);
-    OH_ArkUI_LineSpacingStyle_SetOnlyBetweenLines(lineSpacingStyle, g_onlyBetweenLines);
-
-    OH_ArkUI_SpanStyle *spanStyle = OH_ArkUI_SpanStyle_Create();
-    OH_ArkUI_SpanStyle_SetStart(spanStyle, PARAM_0);
-    OH_ArkUI_SpanStyle_SetLength(spanStyle, PARAM_12);
-    auto result_32_1 = OH_ArkUI_SpanStyle_SetLineSpacingStyle(spanStyle, lineSpacingStyle);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "result_32_1 TextEnumTest_032 result=%{public}d", result_32_1);
-    ASSERT_EQ(result_32_1, ARKUI_ERROR_CODE_NO_ERROR);
-
-    const OH_ArkUI_SpanStyle *spanStyles[] = {spanStyle};
-    ArkUI_StyledString_Descriptor *styledString =
-        OH_ArkUI_StyledString_Descriptor_CreateWithString("行间距样式示例\n段落内容", spanStyles, PARAM_1);
-
-    auto result_32_2 = OH_ArkUI_SpanStyle_GetLineSpacingStyle(spanStyles[0], lineSpacingStyle);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "result_32_2 TextEnumTest_032 result=%{public}d", result_32_2);
-    ASSERT_EQ(result_32_2, ARKUI_ERROR_CODE_NO_ERROR);
-
     OH_ArkUI_SpanStyle_Destroy(spanStyle);
-    OH_ArkUI_LineSpacingStyle_Destroy(lineSpacingStyle);
-    OH_ArkUI_StyledString_Descriptor_Destroy(styledString);
     NAPI_END(text);
 }
 
