@@ -30,6 +30,11 @@ const ERROR_CODE_401 = 401;
 const ERROR_CODE_2100002 = 2100002;
 // 回调不存在
 const ERROR_CODE_2101007 = 2101007;
+// 解析器已存在
+const ERROR_CODE_2101008 = 2101008;
+// 内部错误
+const ERROR_CODE_2100003 = 2100003;
+
 
 export default function NetConnectionNDKTest() {
 
