@@ -346,6 +346,7 @@ export default function observerManagerSimStateTest1() {
             ExpectFail();
             done();
           });
+        });  
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}`);
         ExpectFail();
