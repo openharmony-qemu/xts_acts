@@ -40,7 +40,7 @@ import {
 struct FlexWrapReverse_fixedParentChildVisibility {
   @State test1Width: number = 150;
   @State test2Width: number = 300;
-  @State testVisibility: number = Visibility.Visible;
+  @State testVisibility: Visibility = Visibility.Visible;
   messageManager: MessageManager<number> = new MessageManager<number>();
   private content: string = "FlexWrapReverse_fixedParentChildVisibility Page";
 

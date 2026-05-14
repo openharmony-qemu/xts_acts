@@ -286,7 +286,7 @@ export default function smsTextNoCardPublic() {
       sms.createMessage(rawArray, '3gpp').then((shortMessage: sms.ShortMessage|undefined) => {
         expect(shortMessage?.visibleMessageBody == "Aa").assertTrue();
         expect(shortMessage?.visibleRawAddress.length !== 0).assertTrue();
-        expect(Number(shortMessage?.messageClass) !== -1).assertTrue();
+        expect(shortMessage?.messageClass !== sms.ShortMessageClass.UNKNOWN).assertTrue();
         expect(shortMessage?.protocolId !== -1).assertTrue();
         expect(shortMessage?.scAddress.length !== 0).assertTrue();
         expect(shortMessage?.scTimestamp !== 0).assertTrue();
@@ -329,7 +329,7 @@ export default function smsTextNoCardPublic() {
         }
         expect(shortMessage?.visibleMessageBody == "Aa").assertTrue();
         expect(shortMessage?.visibleRawAddress.length !== 0).assertTrue();
-        expect(Number(shortMessage?.messageClass) !== -1).assertTrue();
+        expect(shortMessage?.messageClass !== sms.ShortMessageClass.UNKNOWN).assertTrue();
         expect(shortMessage?.protocolId !== -1).assertTrue();
         expect(shortMessage?.scAddress.length !== 0).assertTrue();
         expect(shortMessage?.scTimestamp !== 0).assertTrue();
