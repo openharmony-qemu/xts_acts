@@ -352,6 +352,70 @@ static napi_value OHNetConnUnregisterDnsResolver(napi_env env, napi_callback_inf
     return result;
 }
 
+static napi_value OHNetConnRegisterCustomDnsResolver(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t index;
+    napi_get_value_int32(env, args[PARAM_INDEX_0], &index);
+
+    int ret = -1;
+    if (index == CASE_INDEX_1) {
+        OH_NetConn_CustomDnsResolver customResolver = MyCustomDnsResolver;
+        ret = OH_NetConn_RegisterCustomDnsResolver(customResolver);
+    } else if (index == CASE_INDEX_2) {
+        ret = OH_NetConn_RegisterCustomDnsResolver(nullptr);
+    } else if (index == CASE_INDEX_3) {
+        OH_NetConn_CustomDnsResolver customResolver = MyCustomDnsResolver;
+        ret = OH_NetConn_RegisterCustomDnsResolver(customResolver);
+        ret = OH_NetConn_RegisterCustomDnsResolver(customResolver);
+    } else if (index == CASE_INDEX_4) {
+        OH_NetConn_CustomDnsResolver customResolver = MyCustomDnsResolver;
+        ret = OH_NetConn_RegisterCustomDnsResolver(customResolver);
+        OH_NetConn_UnregisterCustomDnsResolver();
+        ret = OH_NetConn_RegisterCustomDnsResolver(customResolver);
+    }
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value OHNetConnUnregisterCustomDnsResolver(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t index;
+    napi_get_value_int32(env, args[PARAM_INDEX_0], &index);
+
+    int ret = -1;
+    if (index == CASE_INDEX_1) {
+        OH_NetConn_CustomDnsResolver customResolver = MyCustomDnsResolver;
+        ret = OH_NetConn_RegisterCustomDnsResolver(customResolver);
+        ret = OH_NetConn_UnregisterCustomDnsResolver();
+    } else if (index == CASE_INDEX_2) {
+        ret = OH_NetConn_RegisterCustomDnsResolver(nullptr);
+        ret = OH_NetConn_UnregisterCustomDnsResolver();
+    } else if (index == CASE_INDEX_3) {
+        ret = OH_NetConn_UnregisterCustomDnsResolver();
+    } else if (index == CASE_INDEX_4) {
+        OH_NetConn_CustomDnsResolver customResolver = MyCustomDnsResolver;
+        OH_NetConn_RegisterCustomDnsResolver(customResolver);
+        OH_NetConn_UnregisterCustomDnsResolver();
+        ret = OH_NetConn_UnregisterCustomDnsResolver();
+    } else if (index == CASE_INDEX_5) {
+        OH_NetConn_CustomDnsResolver customResolver = MyCustomDnsResolver;
+        ret = OH_NetConn_RegisterCustomDnsResolver(customResolver);
+        OH_NetConn_UnregisterCustomDnsResolver();
+        ret = OH_NetConn_RegisterCustomDnsResolver(customResolver);
+        OH_NetConn_UnregisterCustomDnsResolver();
+    }
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
 static napi_value OHNetConnBindSocket(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
