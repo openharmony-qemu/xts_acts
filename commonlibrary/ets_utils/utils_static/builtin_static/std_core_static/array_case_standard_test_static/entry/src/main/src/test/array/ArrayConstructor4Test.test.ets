@@ -60,14 +60,6 @@ function alphaAt(index: int): string {
   return letters[index];
 }
 
-function buildSequentialNumbers045(count: number): Array<number> {
-  const values = new Array<number>();
-  for (let i = 0; i < count; i++) {
-    values.pushOne(i);
-  }
-  return values;
-}
-
 export default function ArrayConstructor4Test(): void {
   describe('ArrayConstructor4Test', (): void => {
     beforeAll((): void => {
@@ -1003,7 +995,7 @@ export default function ArrayConstructor4Test(): void {
       const arr1 = new Array<number>(1000, (index) => index);
       const arr2 = new Array<number>(1000);
       for (let i = 0; i < count; i++) {
-        arr2.pushOne(i);
+        arr2[i] = i;
       }
       for (let i = 0; i < 1000; i++) {
         expect(arr1[i]).assertEqual(arr2[i]);
