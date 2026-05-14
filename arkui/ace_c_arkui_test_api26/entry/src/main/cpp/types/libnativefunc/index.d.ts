@@ -34,3 +34,7 @@ export const ListBackBehaviorTest_004: () => number;
 export const InspectorLabelTest_001: () => number;
 export const InspectorLabelTest_002: () => number;
 export const InspectorLabelTest_003: () => number;
+export const AccessibilityNextFocusIdTest_001: () => number;
+export const AccessibilityNextFocusIdTest_002: () => number;
+export const AccessibilityDefaultFocusTest_001: () => number;
+export const AccessibilityDefaultFocusTest_002: () => number;
