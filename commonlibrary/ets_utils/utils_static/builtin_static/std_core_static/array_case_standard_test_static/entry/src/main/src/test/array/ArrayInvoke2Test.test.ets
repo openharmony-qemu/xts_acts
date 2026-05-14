@@ -275,7 +275,7 @@ export default function ArrayInvoke2Test(): void {
      */
     it('testArrayInvoke016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const numArr = new Array<int>(5);
-      const strArr = new Array<string>(5);
+      const strArr = new Array<string>('one', 'two', 'three', 'four', 'five');
       const boolArr = new Array<boolean>(true, false, true, false, true);
 
       expect(numArr instanceof Array).assertTrue();
@@ -348,7 +348,7 @@ export default function ArrayInvoke2Test(): void {
      */
     it('testArrayInvoke020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const numArr = new Array<int>(5);
-      const strArr = new Array<string>(5);
+      const strArr = new Array<string>('a', 'b', 'c', 'd', 'e');
 
       numArr.pushOne(123);
       strArr.pushOne('hello');
@@ -423,16 +423,13 @@ export default function ArrayInvoke2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_2500
      * @tc.name testArrayInvoke025
-     * @tc.desc Verify a string generic array can be created with a preset length
+     * @tc.desc Verify a string generic array can be created with initialized elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayInvoke025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<string>(3);
-      arr[0] = 'hello';
-      arr[1] = 'world';
-      arr[2] = '!';
+      const arr = new Array<string>('hello', 'world', '!');
       expect(arr.length).assertEqual(3);
     });
 

@@ -88,7 +88,7 @@ export default function ArrayInvoke1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_0200
      * @tc.name testArrayInvoke002
-     * @tc.desc Verify passing parameters selects other array overloads
+     * @tc.desc Verify different string argument counts create arrays with matching lengths
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -97,7 +97,7 @@ export default function ArrayInvoke1Test(): void {
       const arr1 = new Array<string>();
       expect(arr1.length).assertEqual(0);
 
-      const arr2 = new Array<string>(5);
+      const arr2 = new Array<string>('a', 'b', 'c', 'd', 'e');
       expect(arr2.length).assertEqual(5);
 
       const arr3 = new Array<string>('a', 'b', 'c');

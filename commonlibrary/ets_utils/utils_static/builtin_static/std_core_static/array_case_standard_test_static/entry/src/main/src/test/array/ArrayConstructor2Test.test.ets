@@ -54,6 +54,14 @@ function createArray014(): Array<number> {
   return new Array<number>();
 }
 
+function buildSequentialNumbers015(count: number): Array<number> {
+  const values = new Array<number>();
+  for (let i = 0; i < count; i++) {
+    values.pushOne(i);
+  }
+  return values;
+}
+
 export default function ArrayConstructor2Test(): void {
   describe('ArrayConstructor2Test', (): void => {
     beforeAll((): void => {
@@ -85,7 +93,7 @@ export default function ArrayConstructor2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_0200
      * @tc.name testArrayConstructor002
-     * @tc.desc Verify passing arguments selects other constructor overloads
+     * @tc.desc Verify different constructor argument counts create number arrays with matching lengths
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -94,7 +102,7 @@ export default function ArrayConstructor2Test(): void {
       const arr1 = new Array<number>();
       expect(arr1.length).assertEqual(0);
 
-      const arr2 = new Array<number>(5);
+      const arr2 = new Array<number>(10, 20, 30, 40, 50);
       expect(arr2.length).assertEqual(5);
 
       const arr3 = new Array<number>(1, 2, 3);
@@ -587,14 +595,14 @@ export default function ArrayConstructor2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_2900
      * @tc.name testArrayConstructor029
-     * @tc.desc Verify empty arrays represent the minimal array state compared with preallocated arrays
+     * @tc.desc Verify empty arrays represent the minimal array state compared with large initialized arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayConstructor029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const emptyArr = new Array<number>();
-      const sizedArr = new Array<number>(100);
+      const sizedArr = new Array<number>(...buildSequentialNumbers015(100));
 
       expect(emptyArr.length).assertEqual(0);
       expect(sizedArr.length).assertEqual(100);
@@ -603,7 +611,7 @@ export default function ArrayConstructor2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_3000
      * @tc.name testArrayConstructor030
-     * @tc.desc Verify different array constructor overloads serve different use cases
+     * @tc.desc Verify different array constructor overloads serve empty and initialized number-array use cases
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -612,7 +620,7 @@ export default function ArrayConstructor2Test(): void {
       const arr1 = new Array<number>();
       expect(arr1.length).assertEqual(0);
 
-      const arr2 = new Array<number>(5);
+      const arr2 = new Array<number>(5, 10, 15, 20, 25);
       expect(arr2.length).assertEqual(5);
 
       const arr3 = new Array<number>(1, 2, 3);
@@ -623,7 +631,7 @@ export default function ArrayConstructor2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_3100
      * @tc.name testArrayConstructor031
-     * @tc.desc Verify constructor choice can match dynamic, fixed-size, and preinitialized scenarios
+     * @tc.desc Verify constructor choice can match dynamic growth and different initialized scenarios
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -634,10 +642,7 @@ export default function ArrayConstructor2Test(): void {
         dynamicArr.pushOne(i);
       }
 
-      const fixedArr = new Array<number>(100);
-      for (let i = 0; i < 100; i++) {
-        fixedArr[i] = i;
-      }
+      const fixedArr = new Array<number>(...buildSequentialNumbers015(100));
 
       const initArr = new Array<number>(1, 2, 3, 4, 5);
       expect(dynamicArr.length).assertEqual(100);

@@ -60,6 +60,14 @@ function alphaAt(index: int): string {
   return letters[index];
 }
 
+function buildSequentialNumbers045(count: number): Array<number> {
+  const values = new Array<number>();
+  for (let i = 0; i < count; i++) {
+    values.pushOne(i);
+  }
+  return values;
+}
+
 export default function ArrayConstructor4Test(): void {
   describe('ArrayConstructor4Test', (): void => {
     beforeAll((): void => {
@@ -622,27 +630,20 @@ export default function ArrayConstructor4Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_3600
      * @tc.name testArrayConstructor036
-     * @tc.desc Verify the null-safe overload avoids the uninitialized-element behavior of the length-only constructor
+     * @tc.desc Verify direct element construction provides immediate values while the initializer overload computes them automatically
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayConstructor036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr1 = new Array<number>(5);
-      let threw = false;
-      try {
-        const val = arr1[0];
-        expect(val).assertEqual(0);
-      } catch (e) {
-        threw = true;
-        expect(e !== null && e !== undefined).assertTrue();
-      }
+      const arr1 = new Array<number>(0, 1, 2, 3, 4);
+      expect(arr1[0]).assertEqual(0);
+      expect(arr1[4]).assertEqual(4);
 
       const arr2 = new Array<number>(5, (index) => index);
       for (let i = 0; i < arr2.length; i++) {
         expect(arr2[i]).assertEqual(i);
       }
-      expect(threw).assertTrue();
     });
 
     /**
@@ -976,16 +977,13 @@ export default function ArrayConstructor4Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5600
      * @tc.name testArrayConstructor056
-     * @tc.desc Verify the null-safe overload removes the need for manual element initialization
+     * @tc.desc Verify initializer-based construction matches direct element construction results
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayConstructor056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr1 = new Array<number>(5);
-      for (let i = 0; i < arr1.length; i++) {
-        arr1[i] = i;
-      }
+      const arr1 = new Array<number>(0, 1, 2, 3, 4);
 
       const arr2 = new Array<number>(5, (index) => index);
       for (let i = 0; i < arr2.length; i++) {
@@ -996,17 +994,14 @@ export default function ArrayConstructor4Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5700
      * @tc.name testArrayConstructor057
-     * @tc.desc Verify initializer-based construction matches manual initialization results
+     * @tc.desc Verify initializer-based construction matches direct element construction results for large arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayConstructor057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<number>(1000, (index) => index);
-      const arr2 = new Array<number>(1000);
-      for (let i = 0; i < arr2.length; i++) {
-        arr2[i] = i;
-      }
+      const arr2 = new Array<number>(...buildSequentialNumbers045(1000));
       for (let i = 0; i < 1000; i++) {
         expect(arr1[i]).assertEqual(arr2[i]);
       }

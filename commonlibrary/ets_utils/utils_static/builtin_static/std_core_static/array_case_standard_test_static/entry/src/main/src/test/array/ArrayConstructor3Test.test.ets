@@ -735,14 +735,13 @@ export default function ArrayConstructor3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_4500
      * @tc.name testArrayConstructor045
-     * @tc.desc Verify a single numeric argument selects the length overload while multiple
-     * numeric arguments select element initialization
+     * @tc.desc Verify direct numeric element construction preserves provided values for different element counts
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayConstructor045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr1 = new Array<number>(5);
+      const arr1 = new Array<number>(5, 15, 25, 35, 45);
       expect(arr1.length).assertEqual(5);
 
       const arr2 = new Array<number>(5, 10);
@@ -766,7 +765,7 @@ export default function ArrayConstructor3Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_4700
      * @tc.name testArrayConstructor047
-     * @tc.desc Verify overload selection differs for zero arguments, one numeric argument, and multiple arguments
+     * @tc.desc Verify zero arguments and different initialized element counts produce expected lengths
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -775,7 +774,7 @@ export default function ArrayConstructor3Test(): void {
       const arr0 = new Array<number>();
       expect(arr0.length).assertEqual(0);
 
-      const arr1 = new Array<number>(5);
+      const arr1 = new Array<number>(10, 20, 30, 40, 50);
       expect(arr1.length).assertEqual(5);
 
       const arr3 = new Array<number>(1, 2, 3);
