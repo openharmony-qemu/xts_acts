@@ -37,7 +37,7 @@ export default function ObjectStoreJsunitV9Ets(): void {
       done();
     })
 
-    beforeEach(async (): void => {
+    beforeEach(async (): Promise<void> => {
       console.info(TAG + 'beforeEach');
       context = context;
     })
