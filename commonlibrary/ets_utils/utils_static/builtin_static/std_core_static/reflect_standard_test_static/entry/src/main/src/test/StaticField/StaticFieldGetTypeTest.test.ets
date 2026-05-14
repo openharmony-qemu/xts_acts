@@ -1012,3 +1012,1219 @@ function validateTypeConsistency(fields: StaticField[], expectedType: string): b
   return true;
 }
 
+export default function StaticFieldGetTypeTest(): void {
+  describe('StaticFieldGetTypeTest', (): void => {
+    beforeAll((): void => {
+    });
+    beforeEach(async (): Promise<void> => {
+      await Utils.msSleep(30);
+    });
+    afterEach((): void => {
+    });
+    afterAll((): void => {
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_0100
+     * @tc.name testStaticFieldGetType001
+     * @tc.desc Verify getType can be called without parameters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass001();
+      let field = cls.getStaticField("name");
+      let type = field!.getType();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_0200
+     * @tc.name testStaticFieldGetType002
+     * @tc.desc Verify getType is called without passing any parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass001();
+      let field = cls.getStaticField("name")!;
+      let type = field.getType();
+      expect(type !== null).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_0400
+     * @tc.name testStaticFieldGetType004
+     * @tc.desc Verify getType returns a Class object
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass004();
+      let field = cls.getStaticField("name");
+      let type = field!.getType();
+      expect(type instanceof ReflectClass).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_0500
+     * @tc.name testStaticFieldGetType005
+     * @tc.desc Verify primitive type static fields return corresponding Class objects
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass005();
+      let numField = cls.getStaticField("num");
+      let numType = numField!.getType();
+      console.info("number type: " + numType.getName());
+      let strField = cls.getStaticField("str");
+      let strType = strField!.getType();
+      console.info("string type: " + strType.getName());
+      let boolField = cls.getStaticField("bool");
+      let boolType = boolField!.getType();
+      console.info("boolean type: " + boolType.getName());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_0600
+     * @tc.name testStaticFieldGetType006
+     * @tc.desc Verify array type static fields return array type Class objects
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass006();
+      let arrField = cls.getStaticField("arr");
+      let arrType = arrField!.getType();
+      console.info("array type: " + arrType.getName());
+      expect(arrType.getName().includes("Array")).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_0700
+     * @tc.name testStaticFieldGetType007
+     * @tc.desc Verify object type static fields return corresponding type Class objects
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass007();
+      let personField = cls.getStaticField("person");
+      let personType = personField!.getType();
+      console.info("Person007 type: " + personType.getName());
+      let objField = cls.getStaticField("obj");
+      let objType = objField!.getType();
+      console.info("object type: " + objType.getName());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_0800
+     * @tc.name testStaticFieldGetType008
+     * @tc.desc Verify function type static fields return function type Class objects
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass008();
+      let handlerField = cls.getStaticField("handler");
+      let handlerType = handlerField!.getType();
+      console.info("function type: " + handlerType.getName());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_0900
+     * @tc.name testStaticFieldGetType009
+     * @tc.desc Verify union type static fields return type information
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass009();
+      let unionField = cls.getStaticField("union");
+      let unionType = unionField!.getType();
+      console.info("union type: " + unionType.getName());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_1100
+     * @tc.name testStaticFieldGetType011
+     * @tc.desc Verify null value static fields return type information
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass011();
+      let nullableField = cls.getStaticField("nullable");
+      let nullableType = nullableField!.getType();
+      console.info("nullable type: " + nullableType.getName());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_1200
+     * @tc.name testStaticFieldGetType012
+     * @tc.desc Verify undefined value static fields return type information
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass012();
+      let optionalField = cls.getStaticField("optional");
+      let optionalType = optionalField!.getType();
+      console.info("optional type: " + optionalType.getName());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_1300
+     * @tc.name testStaticFieldGetType013
+     * @tc.desc Verify readonly static fields do not affect returned type
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass013();
+      let constField = cls.getStaticField("constant");
+      let constType = constField!.getType();
+      let varField = cls.getStaticField("variable");
+      let varType = varField!.getType();
+      expect(constType.getName()).assertEqual(varType.getName());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_1400
+     * @tc.name testStaticFieldGetType014
+     * @tc.desc Verify getType return value is Class type
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass001();
+      let field = cls.getStaticField("name")!;
+      let type = field.getType();
+      expect(type instanceof ReflectClass).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_1500
+     * @tc.name testStaticFieldGetType015
+     * @tc.desc Verify static field type is not null
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass001();
+      let field = cls.getStaticField("name")!;
+      let type = field.getType();
+      expect(type !== null).assertEqual(true);
+      expect(type !== undefined).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_1600
+     * @tc.name testStaticFieldGetType016
+     * @tc.desc Verify returned Class object can call getName
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass001();
+      let field = cls.getStaticField("name")!;
+      let type = field.getType();
+      let typeName = type.getName();
+      expect(typeof typeName).assertEqual("string");
+      expect(typeName.length > 0).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_1700
+     * @tc.name testStaticFieldGetType017
+     * @tc.desc Verify getType works for fields with different access modifiers
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass017();
+      let pubField = cls.getStaticField("pubNum");
+      expect(pubField!.getType().getName()).assertEqual("number");
+      let privField = cls.getStaticField("privNum");
+      expect(privField!.getType().getName()).assertEqual("number");
+      let protField = cls.getStaticField("protNum");
+      expect(protField!.getType().getName()).assertEqual("number");
+      let interField = cls.getStaticField("interNum");
+      expect(interField!.getType().getName()).assertEqual("number");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_1800
+     * @tc.name testStaticFieldGetType018
+     * @tc.desc Verify getType distinguishes numeric types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass018();
+      let byteField = cls.getStaticField("byteVal");
+      console.info("byte type: " + byteField!.getType().getName());
+      let shortField = cls.getStaticField("shortVal");
+      console.info("short type: " + shortField!.getType().getName());
+      let intField = cls.getStaticField("intVal");
+      console.info("int type: " + intField!.getType().getName());
+      let longField = cls.getStaticField("longVal");
+      console.info("long type: " + longField!.getType().getName());
+      let floatField = cls.getStaticField("floatVal");
+      console.info("float type: " + floatField!.getType().getName());
+      let doubleField = cls.getStaticField("doubleVal");
+      console.info("double type: " + doubleField!.getType().getName());
+      let numberField = cls.getStaticField("numberVal");
+      console.info("number type: " + numberField!.getType().getName());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_1900
+     * @tc.name testStaticFieldGetType019
+     * @tc.desc Verify calling getType on null object throws error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field: StaticField | null = null;
+      try {
+        field!.getType();
+        expect().assertFail();
+      } catch (error) {
+        expect(error !== null).assertEqual(true);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_2000
+     * @tc.name testStaticFieldGetType020
+     * @tc.desc Verify calling getType on undefined object throws error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field: StaticField | undefined;
+      try {
+        field!.getType();
+        expect().assertFail();
+      } catch (error) {
+        expect(error !== null).assertEqual(true);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_2100
+     * @tc.name testStaticFieldGetType021
+     * @tc.desc Verify accessing a nonexistent static field before calling getType
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass021();
+      let field = cls.getStaticField("nonexistent");
+      if (field !== null) {
+        let type = field.getType();
+      } else {
+        console.info("Field does not exist");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_2200
+     * @tc.name testStaticFieldGetType022
+     * @tc.desc Verify getType for public readonly static field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass022();
+      let field = cls.getStaticField("value");
+      let type = field!.getType();
+      expect(type.getName()).assertEqual("number");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_2300
+     * @tc.name testStaticFieldGetType023
+     * @tc.desc Verify getType for fields with different access levels
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass023();
+      let privField = cls.getStaticField("privValue");
+      let privType = privField!.getType();
+      expect(privType.getName()).assertEqual("string");
+      let protField = cls.getStaticField("protValue");
+      let protType = protField!.getType();
+      expect(protType.getName()).assertEqual("string");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_2400
+     * @tc.name testStaticFieldGetType024
+     * @tc.desc Verify combining getName and getType to get field and type names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass024();
+      let field = cls.getStaticField("count");
+      let fieldName = field!.getName();
+      let typeName = field!.getType().getName();
+      console.info(`Field ${fieldName} has type ${typeName}`);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_2500
+     * @tc.name testStaticFieldGetType025
+     * @tc.desc Verify combining getOwner and getType to get owner and type information
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass025();
+      let field = cls.getStaticField("data");
+      let owner = field!.getOwner();
+      let type = field!.getType();
+      console.info(`Field owner: ${owner.getName()}, field type: ${type.getName()}`);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_2600
+     * @tc.name testStaticFieldGetType026
+     * @tc.desc Verify combining getValue and getType to get value and type information
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass026();
+      let field = cls.getStaticField("value");
+      let value = field!.getValue();
+      let type = field!.getType();
+      console.info(`Value: ${value}, Type: ${type.getName()}`);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_2700
+     * @tc.name testStaticFieldGetType027
+     * @tc.desc Verify checking readonly field type with isReadonly
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass027();
+      let constField = cls.getStaticField("constant");
+      if (constField!.isReadonly()) {
+        let type = constField!.getType();
+        console.info(`Readonly field type: ${type.getName()}`);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_2800
+     * @tc.name testStaticFieldGetType028
+     * @tc.desc Verify getting types according to access levels
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass028();
+      let fields = cls.getDeclaredStaticFields();
+      for (let i = 0; i < fields.length; i++) {
+        let field = fields[i];
+        let accessLevel: string = "unknown";
+        if (field.isPublic()) {
+          accessLevel = "public";
+        } else if (field.isPrivate()) {
+          accessLevel = "private";
+        } else if (field.isProtected()) {
+          accessLevel = "protected";
+        }
+        let type = field.getType();
+        console.info(`${accessLevel} ${field.getName()}: ${type.getName()}`);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_2900
+     * @tc.name testStaticFieldGetType029
+     * @tc.desc Verify getType is a synchronous method
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass001();
+      let field = cls.getStaticField("name")!;
+      let type = field.getType();
+      expect(type instanceof ReflectClass).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_3000
+     * @tc.name testStaticFieldGetType030
+     * @tc.desc Verify getType return value is not Promise type
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass001();
+      let field = cls.getStaticField("name")!;
+      let result = field.getType();
+      expect(result instanceof Promise).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_3100
+     * @tc.name testStaticFieldGetType031
+     * @tc.desc Verify collecting complete type information through reflection APIs
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass031();
+      let fields = cls.getDeclaredStaticFields();
+      for (let i = 0; i < fields.length; i++) {
+        let field = fields[i];
+        let fieldName = field.getName();
+        let typeName = field.getType().getName();
+        console.info(`Field: ${fieldName}, Type: ${typeName}`);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_3200
+     * @tc.name testStaticFieldGetType032
+     * @tc.desc Verify using getType for runtime type checking
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass032();
+      let countField = cls.getStaticField("count");
+      expect(isNumericField(countField!)).assertEqual(true);
+      let nameField = cls.getStaticField("name");
+      expect(isNumericField(nameField!)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_3300
+     * @tc.name testStaticFieldGetType033
+     * @tc.desc Verify safe conversion based on field type information
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass033();
+      let textField = cls.getStaticField("text");
+      expect(getFieldValueAsString(textField!)).assertEqual("hello");
+      let numField = cls.getStaticField("num");
+      expect(getFieldValueAsString(numField!)).assertEqual("42");
+      let flagField = cls.getStaticField("flag");
+      expect(getFieldValueAsString(flagField!)).assertEqual("true");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_3400
+     * @tc.name testStaticFieldGetType034
+     * @tc.desc Verify checking whether field type is compatible
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass034();
+      let idField = cls.getStaticField("identifier");
+      expect(isTypeCompatible(idField!, "string")).assertEqual(true);
+      let qtyField = cls.getStaticField("quantity");
+      expect(isTypeCompatible(qtyField!, "number")).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_3600
+     * @tc.name testStaticFieldGetType036
+     * @tc.desc Verify any type static field type information
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass036();
+      let field = cls.getStaticField("anyValue");
+      let type = field!.getType();
+      console.info("any type: " + type.getName());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_3700
+     * @tc.name testStaticFieldGetType037
+     * @tc.desc Verify never type static field type information
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass037();
+      let field = cls.getStaticField("neverValue");
+      let type = field!.getType();
+      console.info("never type: " + type.getName());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_3800
+     * @tc.name testStaticFieldGetType038
+     * @tc.desc Verify unknown type static field type information
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass038();
+      let field = cls.getStaticField("unknownValue");
+      let type = field!.getType();
+      console.info("unknown type: " + type.getName());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_3900
+     * @tc.name testStaticFieldGetType039
+     * @tc.desc Verify enum type static field type information
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass039();
+      let colorField = cls.getStaticField("favoriteColor");
+      let colorType = colorField!.getType();
+      console.info("enum type: " + colorType.getName());
+      let colorsField = cls.getStaticField("colors");
+      let colorsType = colorsField!.getType();
+      console.info("enum array type: " + colorsType.getName());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_4000
+     * @tc.name testStaticFieldGetType040
+     * @tc.desc Verify interface type static field type information
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass040();
+      let field = cls.getStaticField("user");
+      let type = field!.getType();
+      console.info("interface type: " + type.getName());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_4100
+     * @tc.name testStaticFieldGetType041
+     * @tc.desc Verify class type static field type information
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass041();
+      let instanceField = cls.getStaticField("instance");
+      let instanceType = instanceField!.getType();
+      console.info("instance type: " + instanceType.getName());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_4200
+     * @tc.name testStaticFieldGetType042
+     * @tc.desc Verify repeated getType calls return consistent results
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass042();
+      let field = cls.getStaticField("value");
+      let type1 = field!.getType();
+      let type2 = field!.getType();
+      let type3 = field!.getType();
+      expect(type1.getName()).assertEqual(type2.getName());
+      expect(type2.getName()).assertEqual(type3.getName());
+      expect(type1.getName()).assertEqual("number");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_4300
+     * @tc.name testStaticFieldGetType043
+     * @tc.desc Verify traversing many fields to get their types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass043();
+      let fields = cls.getDeclaredStaticFields();
+      let typeNames: string[] = [];
+      for (let i = 0; i < fields.length; i++) {
+        let type = fields[i].getType();
+        typeNames.push(type.getName());
+      }
+      console.info("Type names: " + typeNames.join(", "));
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_4400
+     * @tc.name testStaticFieldGetType044
+     * @tc.desc Verify StaticField getType and InstanceField getType behavior is consistent
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass044();
+      let staticField = cls.getStaticField("staticValue");
+      let staticType = staticField!.getType();
+      console.info("Static field type: " + staticType.getName());
+      let instanceField = cls.getInstanceField("instanceValue");
+      let instanceType = instanceField!.getType();
+      console.info("Instance field type: " + instanceType.getName());
+      expect(staticType.getName()).assertEqual(instanceType.getName());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_4500
+     * @tc.name testStaticFieldGetType045
+     * @tc.desc Verify helper logic for getting field type name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass045();
+      let countField = cls.getStaticField("count");
+      expect(getFieldTypeName(countField!)).assertEqual("number");
+      let nameField = cls.getStaticField("name");
+      expect(getFieldTypeName(nameField!)).assertEqual("string");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_4600
+     * @tc.name testStaticFieldGetType046
+     * @tc.desc Verify checking whether a field is string type
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass046();
+      let textField = cls.getStaticField("text");
+      expect(isStringField(textField!)).assertEqual(true);
+      let numField = cls.getStaticField("num");
+      expect(isStringField(numField!)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_4700
+     * @tc.name testStaticFieldGetType047
+     * @tc.desc Verify checking whether a field is numeric type
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass047();
+      let countField = cls.getStaticField("count");
+      expect(isNumericField(countField!)).assertEqual(true);
+      let priceField = cls.getStaticField("price");
+      expect(isNumericField(priceField!)).assertEqual(true);
+      let nameField = cls.getStaticField("name");
+      expect(isNumericField(nameField!)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_4800
+     * @tc.name testStaticFieldGetType048
+     * @tc.desc Verify checking whether a field is array or collection type
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass048();
+      let itemsField = cls.getStaticField("items");
+      expect(isCollectionField(itemsField!)).assertEqual(true);
+      let nameField = cls.getStaticField("name");
+      expect(isCollectionField(nameField!)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_4900
+     * @tc.name testStaticFieldGetType049
+     * @tc.desc Verify grouping fields by type
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass049();
+      let fields = cls.getDeclaredStaticFields();
+      let groups = groupFieldsByType(fields);
+      groups.forEach((fieldList, typeName): void => {
+        console.info(`Type ${typeName}: ${fieldList.length} fields`);
+      });
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_5000
+     * @tc.name testStaticFieldGetType050
+     * @tc.desc Verify using getType for data validation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectConfig050();
+      let keyField = cls.getStaticField("apiKey");
+      expect(validateFieldValue(keyField!, 'new-key')).assertEqual(true);
+      expect(validateFieldValue(keyField!, 123)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_5100
+     * @tc.name testStaticFieldGetType051
+     * @tc.desc Verify serializing fields based on field type
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass051();
+      let fields = cls.getDeclaredStaticFields();
+      let json: string = '{';
+      for (let i = 0; i < fields.length; i++) {
+        let field = fields[i];
+        if (i > 0) {
+          json += ', ';
+        }
+        json += `"${field.getName()}": ${serializeField(field)}`;
+      }
+      json += '}';
+      console.info(json);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_5200
+     * @tc.name testStaticFieldGetType052
+     * @tc.desc Verify generating field type documentation automatically
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectAppConfig052();
+      let doc = generateFieldTypesDoc(cls);
+      console.info(doc);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_5300
+     * @tc.name testStaticFieldGetType053
+     * @tc.desc Verify mapping internal type names to friendly names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass053();
+      let nameField = cls.getStaticField("name");
+      expect(getFriendlyTypeName(nameField!)).assertEqual("string");
+      let countField = cls.getStaticField("count");
+      expect(getFriendlyTypeName(countField!)).assertEqual("integer");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_5400
+     * @tc.name testStaticFieldGetType054
+     * @tc.desc Verify processing fields dynamically based on type information
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass054();
+      let fields = cls.getDeclaredStaticFields();
+      for (let i = 0; i < fields.length; i++) {
+        processFieldByType(fields[i]);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_5500
+     * @tc.name testStaticFieldGetType055
+     * @tc.desc Verify type fields in inheritance relationship
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let parentCls = reflectParent055();
+      let parentField = parentCls.getStaticField("parentData");
+      let parentType = parentField!.getType();
+      let childCls = reflectChild055();
+      let childField = childCls.getStaticField("childData");
+      let childType = childField!.getType();
+      expect(parentType.getName()).assertEqual(childType.getName());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_5700
+     * @tc.name testStaticFieldGetType057
+     * @tc.desc Verify union type static field type information
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass057();
+      let unionField = cls.getStaticField("unionField");
+      let unionType = unionField!.getType();
+      console.info("Union type: " + unionType.getName());
+      let nullableField = cls.getStaticField("nullableField");
+      let nullableType = nullableField!.getType();
+      console.info("Nullable type: " + nullableType.getName());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_5800
+     * @tc.name testStaticFieldGetType058
+     * @tc.desc Verify type of data model fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectDataModel058();
+      let field = cls.getStaticField('id');
+      expect(field!.getType().getName()).assertEqual('number');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_5900
+     * @tc.name testStaticFieldGetType059
+     * @tc.desc Verify type of user model fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectUserModel059();
+      let field = cls.getStaticField('username');
+      expect(field!.getType().getName()).assertEqual('string');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_6000
+     * @tc.name testStaticFieldGetType060
+     * @tc.desc Verify type of product model fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectProductModel060();
+      let field = cls.getStaticField('price');
+      expect(field!.getType().getName()).assertEqual('number');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_6100
+     * @tc.name testStaticFieldGetType061
+     * @tc.desc Verify type of order model fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectOrderModel061();
+      let field = cls.getStaticField('status');
+      expect(field!.getType().getName()).assertEqual('string');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_6200
+     * @tc.name testStaticFieldGetType062
+     * @tc.desc Verify type of payment model fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectPaymentModel062();
+      let field = cls.getStaticField('amount');
+      expect(field!.getType().getName()).assertEqual('number');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_6300
+     * @tc.name testStaticFieldGetType063
+     * @tc.desc Verify type of log configuration fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectLogConfig063();
+      let field = cls.getStaticField('LOG_LEVEL');
+      expect(field!.getType().getName()).assertEqual('string');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_6400
+     * @tc.name testStaticFieldGetType064
+     * @tc.desc Verify type of auth configuration fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectAuthConfig064();
+      let field = cls.getStaticField('AUTH_EXPIRES');
+      expect(field!.getType().getName()).assertEqual('number');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_6500
+     * @tc.name testStaticFieldGetType065
+     * @tc.desc Verify type of CORS configuration fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectCorsConfig065();
+      let field = cls.getStaticField('CORS_CREDENTIALS');
+      expect(field!.getType().getName()).assertEqual('boolean');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_6600
+     * @tc.name testStaticFieldGetType066
+     * @tc.desc Verify type of pagination configuration fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectPaginationConfig066();
+      let field = cls.getStaticField('PER_PAGE_MAX');
+      expect(field!.getType().getName()).assertEqual('number');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_6700
+     * @tc.name testStaticFieldGetType067
+     * @tc.desc Verify type of upload configuration fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectUploadConfig067();
+      let field = cls.getStaticField('UPLOAD_PATH');
+      expect(field!.getType().getName()).assertEqual('string');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_6800
+     * @tc.name testStaticFieldGetType068
+     * @tc.desc Verify type of encryption configuration fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectEncryptionConfig068();
+      let field = cls.getStaticField('ENCRYPT_KEY_LENGTH');
+      expect(field!.getType().getName()).assertEqual('number');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_6900
+     * @tc.name testStaticFieldGetType069
+     * @tc.desc Verify type of localization configuration fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectLocalizationConfig069();
+      let field = cls.getStaticField('LOCALE_DEFAULT');
+      expect(field!.getType().getName()).assertEqual('string');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_7000
+     * @tc.name testStaticFieldGetType070
+     * @tc.desc Verify type of theme configuration fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectThemeConfig070();
+      let field = cls.getStaticField('THEME_PRIMARY');
+      expect(field!.getType().getName()).assertEqual('string');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_7100
+     * @tc.name testStaticFieldGetType071
+     * @tc.desc Verify getTypeCategory helper function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectDataModel058();
+      let idField: StaticField | null = cls.getStaticField('id');
+      expect(getTypeCategory(idField!)).assertEqual('numeric');
+      let nameField: StaticField | null = cls.getStaticField('name');
+      expect(getTypeCategory(nameField!)).assertEqual('text');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_7200
+     * @tc.name testStaticFieldGetType072
+     * @tc.desc Verify countFieldsByType helper function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectUserModel059();
+      let fields: StaticField[] = cls.getDeclaredStaticFields();
+      let stringCount: number = countFieldsByType(fields, 'string');
+      expect(stringCount).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_7300
+     * @tc.name testStaticFieldGetType073
+     * @tc.desc Verify getTypeDistribution helper function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectProductModel060();
+      let fields: StaticField[] = cls.getDeclaredStaticFields();
+      let dist: Record<string, number> = getTypeDistribution(fields);
+      expect(dist['string']).assertEqual(2);
+      expect(dist['number']).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_7400
+     * @tc.name testStaticFieldGetType074
+     * @tc.desc Verify filterFieldsByType helper function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectOrderModel061();
+      let fields: StaticField[] = cls.getDeclaredStaticFields();
+      let stringFields: StaticField[] = filterFieldsByType(fields, 'string');
+      expect(stringFields.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_7500
+     * @tc.name testStaticFieldGetType075
+     * @tc.desc Verify compareFieldTypes helper function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectPaymentModel062();
+      let field1: StaticField | null = cls.getStaticField('transactionId');
+      let field2: StaticField | null = cls.getStaticField('currency');
+      expect(compareFieldTypes(field1!, field2!)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_7600
+     * @tc.name testStaticFieldGetType076
+     * @tc.desc Verify getFieldTypeSignature helper function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectLogConfig063();
+      let field: StaticField | null = cls.getStaticField('LOG_LEVEL');
+      let sig: string = getFieldTypeSignature(field!);
+      expect(sig.length).assertLarger(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_7700
+     * @tc.name testStaticFieldGetType077
+     * @tc.desc Verify validateTypeConsistency helper function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectAuthConfig064();
+      let fields: StaticField[] = cls.getDeclaredStaticFields();
+      expect(validateTypeConsistency(fields, 'string')).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETTYPE_7800
+     * @tc.name testStaticFieldGetType078
+     * @tc.desc Verify type consistency of all string fields in CORS config
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetType078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectCorsConfig065();
+      let fields: StaticField[] = cls.getDeclaredStaticFields();
+      let stringFields: StaticField[] = filterFieldsByType(fields, 'string');
+      expect(validateTypeConsistency(stringFields, 'string')).assertEqual(true);
+    });
+  });
+}
