@@ -26,11 +26,11 @@ struct Index5 {
   build() {
     Row() {
       Column() {
-        Text(`${this.isFocused``})
+        Text(`${this.isFocused`})
         .id('EnvSystemPropertiesIsFocused')
           .fontSize(50)
           .fontWeight(FontWeight.Bold)
-        Text(`${this.isHighlighted}``)
+        Text(`${this.isHighlighted}`)
         .id('EnvSystemPropertiesIsHighlighted')
           .fontSize(50)
           .fontWeight(FontWeight.Bold)
