@@ -1228,7 +1228,7 @@ export default function ArraySortMindMapTest() {
 
     /**
      * @tc.name testArraySortTest0199
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_10000
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_9999
      * @tc.desc MindMap sort 功能点 100
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST

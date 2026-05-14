@@ -1131,7 +1131,7 @@ export default function ArrayToSortedMindMapTest() {
     });
     /**
      * @tc.name   testToSortedTest0199
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_10000
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_9999
      * @tc.desc   与with()链式调用
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

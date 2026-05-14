@@ -1230,7 +1230,7 @@ export default function ArrayToLocaleStringMindMapTest() {
 
     /**
      * @tc.name   testToLocaleStringTest0199
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_10000
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_9999
      * @tc.desc   Verify js scenario 0199
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

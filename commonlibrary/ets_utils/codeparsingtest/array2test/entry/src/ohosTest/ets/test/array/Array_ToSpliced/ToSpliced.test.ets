@@ -1131,7 +1131,7 @@ export default function ArrayToSplicedMindMapTest() {
     });
     /**
      * @tc.name   testToSplicedTest0199
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_10000
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_9999
      * @tc.desc   8.2.4 length为负数的对象
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

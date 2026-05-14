@@ -1121,7 +1121,7 @@ export default function ArrayUnshiftMindMapTest() {
     });
     /**
      * @tc.name   testUnshiftTest0199
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_UNSHIFT_SUPPLEMENT_TEST_10000
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_UNSHIFT_SUPPLEMENT_TEST_9999
      * @tc.desc   对象的数字索引有 getter 时 unshift 的行为
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
