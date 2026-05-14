@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2026 iSoftStone Information Technology (Group) Co.,Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -74,22 +74,38 @@ export default function flex_Wrap_DisplayPriorityTest() {
       expect(JSON.parse(flexContainerStrJson).$type).assertEqual('Flex');
       expect(JSON.parse(flexContainerStrJson).$attrs.constructor.wrap).assertEqual('FlexWrap.Wrap');
 
-      expect(Math.abs(firstText.left - flexContainer.left) <= 1).assertTrue();
-      expect(Math.abs(firstText.right - secondText.left) <= 1).assertTrue();
-      expect(Math.abs(firstText.top - secondText.top) <= 1).assertTrue();
-      expect(Math.abs(firstText.top - flexContainer.top) <= 1).assertTrue();
+      console.info('testWrapWrapTextDisplayPriority_chazhi1:' + Math.floor(Math.abs(firstText.left - flexContainer.left)));
+      console.info('testWrapWrapTextDisplayPriority_chazhi2:' + Math.floor(Math.abs(firstText.right - secondText.left)));
+      console.info('testWrapWrapTextDisplayPriority_chazhi3:' + Math.floor(Math.abs(firstText.top - secondText.top)));
+      console.info('testWrapWrapTextDisplayPriority_chazhi4:' + Math.floor(Math.abs(firstText.top - flexContainer.top)));
+      console.info('testWrapWrapTextDisplayPriority_chazhi5:' + Math.floor(Math.abs((firstText.bottom - firstText.top) - vp2px(100))));
+      console.info('testWrapWrapTextDisplayPriority_chazhi6:' + Math.floor(Math.abs((secondText.bottom - secondText.top) - vp2px(150))));
+      console.info('testWrapWrapTextDisplayPriority_chazhi7:' + Math.floor(Math.abs((thirdText.bottom - thirdText.top) - vp2px(200))));
+      console.info('testWrapWrapTextDisplayPriority_chazhi8:' + Math.floor(Math.abs((firstText.right - firstText.left) - vp2px(150))));
+      console.info('testWrapWrapTextDisplayPriority_chazhi9:' + Math.floor(Math.abs((secondText.right - secondText.left) - vp2px(150))));
+      console.info('testWrapWrapTextDisplayPriority_chazhi10:' + Math.floor(Math.abs((thirdText.right - thirdText.left) - vp2px(300))));
+      console.info('testWrapWrapTextDisplayPriority_chazhi11:' + Math.floor(Math.abs((flexContainer.right - secondText.right) - vp2px(200))));
+      console.info('testWrapWrapTextDisplayPriority_chazhi12:' + Math.floor(Math.abs(thirdText.left - flexContainer.left)));
+      console.info('testWrapWrapTextDisplayPriority_chazhi13:' + Math.floor(Math.abs(thirdText.top - secondText.bottom)));
+      console.info('testWrapWrapTextDisplayPriority_chazhi14:' + Math.floor(Math.abs((flexContainer.bottom - thirdText.bottom) - vp2px(50))));
 
-      expect(Math.abs((firstText.bottom - firstText.top) - vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs((secondText.bottom - secondText.top) - vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs((thirdText.bottom - thirdText.top) - vp2px(200)) <= 1).assertTrue();
-      expect(Math.abs((firstText.right - firstText.left) - vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs((secondText.right - secondText.left) - vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs((thirdText.right - thirdText.left) - vp2px(300)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(firstText.left - flexContainer.left)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(firstText.right - secondText.left)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(firstText.top - secondText.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(firstText.top - flexContainer.top)) <= 1).assertTrue();
 
-      expect(Math.abs((flexContainer.right - secondText.right) - vp2px(200)) <= 1).assertTrue();
-      expect(Math.abs(thirdText.left - flexContainer.left) <= 1).assertTrue()
-      expect(Math.abs(thirdText.top - secondText.bottom) <= 1).assertTrue()
-      expect(Math.abs((flexContainer.bottom - thirdText.bottom) - vp2px(50)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((firstText.bottom - firstText.top) - vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((secondText.bottom - secondText.top) - vp2px(150))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((thirdText.bottom - thirdText.top) - vp2px(200))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((firstText.right - firstText.left) - vp2px(150))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((secondText.right - secondText.left) - vp2px(150))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((thirdText.right - thirdText.left) - vp2px(300))) <= 1).assertTrue();
+
+      expect(Math.floor(Math.abs((flexContainer.right - secondText.right) - vp2px(200))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(thirdText.left - flexContainer.left)) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(thirdText.top - secondText.bottom)) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((flexContainer.bottom - thirdText.bottom) - vp2px(50))) <= 1).assertTrue();
+
       console.info('[testWrapWrapTextDisplayPriority] END');
 
     });

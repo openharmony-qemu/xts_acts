@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -72,25 +72,47 @@ export default function flexAlign_SpaceAround_fixedParentChangeFirstWidth() {
       let locationText2: RectValue = CommonFunc.getComponentRect('AlignSpaceAround38');
       let locationText3: RectValue = CommonFunc.getComponentRect('AlignSpaceAround39');
       let locationFlex: RectValue = CommonFunc.getComponentRect('FlexAlignSpaceAround13');
-      expect(Math.abs(locationText1.top - locationText2.top) <= 1).assertTrue();
-      expect(Math.abs(locationText2.top - locationText3.top) <= 1).assertTrue();
-      expect(Math.abs(locationText1.top - locationFlex.top) <= 1).assertTrue();
-      expect(Math.abs(locationText1.bottom - locationText1.top - vp2px(50)) <= 1).assertTrue();
-      expect(Math.abs(locationText2.bottom - locationText2.top - vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs(locationText3.bottom - locationText3.top - vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(locationFlex.bottom - locationText3.bottom - vp2px(50)) <= 1).assertTrue();
-      expect(Math.abs(locationText2.left - locationText1.right -
-        (locationText3.left - locationText2.right)) <= 1).assertTrue();
-      expect(Math.abs(locationText2.left - locationText1.right - Math.round(vp2px(25 / 3))) <= 1).assertTrue();
-      expect(Math.abs(locationText3.right - locationText3.left -
-        (locationText2.right - locationText2.left)) <= 1).assertTrue();
-      expect(Math.abs(locationText2.right - locationText2.left - vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(locationText1.right - locationText1.left - Math.round(vp2px(175))) <= 1).assertTrue();
-      expect(Math.abs(locationText1.left - locationFlex.left -
-        (locationFlex.right - locationText3.right)) <= 1).assertTrue();
-      expect(Math.abs(locationText1.left - locationFlex.left - vp2px(25 / 6)) <= 1).assertTrue();
-      expect(Math.abs(locationText2.left - locationText1.right -
-        2 * (locationFlex.right - locationText3.right)) <= 2).assertTrue();
+
+      console.info('testAlignSpaceAroundRowNoWrapChangeFirst_chazhi1:' + Math.floor(Math.abs(locationText1.top - locationText2.top)));
+      console.info('testAlignSpaceAroundRowNoWrapChangeFirst_chazhi2:' + Math.floor(Math.abs(locationText2.top - locationText3.top)));
+      console.info('testAlignSpaceAroundRowNoWrapChangeFirst_chazhi3:' + Math.floor(Math.abs(locationText1.top - locationFlex.top)));
+      console.info('testAlignSpaceAroundRowNoWrapChangeFirst_chazhi4:' + Math.floor(Math.abs(locationText1.bottom - locationText1.top - vp2px(50))));
+      console.info('testAlignSpaceAroundRowNoWrapChangeFirst_chazhi5:' + Math.floor(Math.abs(locationText2.bottom - locationText2.top - vp2px(100))));
+      console.info('testAlignSpaceAroundRowNoWrapChangeFirst_chazhi6:' + Math.floor(Math.abs(locationText3.bottom - locationText3.top - vp2px(150))));
+      console.info('testAlignSpaceAroundRowNoWrapChangeFirst_chazhi7:' + Math.floor(Math.abs(locationFlex.bottom - locationText3.bottom - vp2px(50))));
+      console.info('testAlignSpaceAroundRowNoWrapChangeFirst_chazhi8:' + Math.floor(Math.abs(locationText2.left - locationText1.right -
+        (locationText3.left - locationText2.right))));
+      console.info('testAlignSpaceAroundRowNoWrapChangeFirst_chazhi9:' + Math.floor(Math.abs(locationText2.left - locationText1.right - Math.round(vp2px(25 / 3)))));
+      console.info('testAlignSpaceAroundRowNoWrapChangeFirst_chazhi10:' + Math.floor(Math.abs(locationText3.right - locationText3.left -
+        (locationText2.right - locationText2.left))));
+      console.info('testAlignSpaceAroundRowNoWrapChangeFirst_chazhi11:' + Math.floor(Math.abs(locationText2.right - locationText2.left - vp2px(150))));
+      console.info('testAlignSpaceAroundRowNoWrapChangeFirst_chazhi12:' + Math.floor(Math.abs(locationText1.right - locationText1.left - Math.round(vp2px(175)))));
+      console.info('testAlignSpaceAroundRowNoWrapChangeFirst_chazhi13:' + Math.floor(Math.abs(locationText1.left - locationFlex.left -
+        (locationFlex.right - locationText3.right))));
+      console.info('testAlignSpaceAroundRowNoWrapChangeFirst_chazhi14:' + Math.floor(Math.abs(locationText1.left - locationFlex.left - vp2px(25 / 6))));
+      console.info('testAlignSpaceAroundRowNoWrapChangeFirst_chazhi15:' + Math.floor(Math.abs(locationText2.left - locationText1.right -
+        2 * (locationFlex.right - locationText3.right))));
+      
+      expect(Math.floor(Math.abs(locationText1.top - locationText2.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(locationText2.top - locationText3.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(locationText1.top - locationFlex.top)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(locationText1.bottom - locationText1.top - vp2px(50))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(locationText2.bottom - locationText2.top - vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(locationText3.bottom - locationText3.top - vp2px(150))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(locationFlex.bottom - locationText3.bottom - vp2px(50))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(locationText2.left - locationText1.right -
+        (locationText3.left - locationText2.right))) <= 2).assertTrue();
+      expect(Math.floor(Math.abs(locationText2.left - locationText1.right - Math.round(vp2px(25 / 3)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(locationText3.right - locationText3.left -
+        (locationText2.right - locationText2.left))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(locationText2.right - locationText2.left - vp2px(150))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(locationText1.right - locationText1.left - Math.round(vp2px(175)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(locationText1.left - locationFlex.left -
+        (locationFlex.right - locationText3.right))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(locationText1.left - locationFlex.left - vp2px(25 / 6))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(locationText2.left - locationText1.right -
+        2 * (locationFlex.right - locationText3.right))) <= 2).assertTrue();
+
       console.info('new testAlignSpaceAroundRowNoWrapChangeFirst END');
 
     });

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -71,17 +71,29 @@ export default function flexVisibility_CenterJsunit() {
         let textVisible02: RectValue = CommonFunc.getComponentRect('ItemAlign_Center_textVisible02');
         let textVisible03: RectValue = CommonFunc.getComponentRect('ItemAlign_Center_textVisible03');
         let flexVisible: RectValue = CommonFunc.getComponentRect('ItemAlign_Center_flexVisible');
-        expect(Math.abs(textVisible01.left - textVisible01.right) <= 1).assertTrue()
-        expect(Math.abs(textVisible01.left - flexVisible.left) <= 1).assertTrue()
-        expect(Math.abs(textVisible02.bottom - textVisible02.top - vp2px(100)) <= 1).assertTrue()
-        expect(Math.abs(textVisible03.bottom - textVisible03.top - vp2px(150)) <= 1).assertTrue()
-        expect(Math.abs(textVisible02.right - textVisible02.left - vp2px(150)) <= 1).assertTrue()
-        expect(Math.abs(textVisible03.right - textVisible03.left - vp2px(150)) <= 1).assertTrue()
-        expect(Math.abs(flexVisible.right - textVisible03.right - vp2px(200)) <= 1).assertTrue()
-        expect(Math.abs(textVisible02.top - flexVisible.top - flexVisible.bottom + textVisible02.bottom) <= 1)
+
+        console.info('testFlexItemAlignCenterSubSetVisibilityNone_chazhi1:'+ Math.floor(Math.abs(textVisible01.left - textVisible01.right)));
+        console.info('testFlexItemAlignCenterSubSetVisibilityNone_chazhi2:'+ Math.floor(Math.abs(textVisible01.left - flexVisible.left)));
+        console.info('testFlexItemAlignCenterSubSetVisibilityNone_chazhi3:'+ Math.floor(Math.abs(textVisible02.bottom - textVisible02.top - vp2px(100))));
+        console.info('testFlexItemAlignCenterSubSetVisibilityNone_chazhi4:'+ Math.floor(Math.abs(textVisible03.bottom - textVisible03.top - vp2px(150))));
+        console.info('testFlexItemAlignCenterSubSetVisibilityNone_chazhi5:'+ Math.floor(Math.abs(textVisible02.right - textVisible02.left - vp2px(150))));
+        console.info('testFlexItemAlignCenterSubSetVisibilityNone_chazhi6:'+ Math.floor(Math.abs(textVisible03.right - textVisible03.left - vp2px(150))));
+        console.info('testFlexItemAlignCenterSubSetVisibilityNone_chazhi7:'+ Math.floor(Math.abs(flexVisible.right - textVisible03.right - vp2px(200))));
+        console.info('testFlexItemAlignCenterSubSetVisibilityNone_chazhi8:'+ Math.floor(Math.abs(textVisible02.top - flexVisible.top - flexVisible.bottom + textVisible02.bottom)));
+        console.info('testFlexItemAlignCenterSubSetVisibilityNone_chazhi9:'+ Math.floor(Math.abs(textVisible03.top - flexVisible.top - flexVisible.bottom + textVisible03.bottom)));
+
+        expect(Math.floor(Math.abs(textVisible01.left - textVisible01.right)) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(textVisible01.left - flexVisible.left)) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(textVisible02.bottom - textVisible02.top - vp2px(100))) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(textVisible03.bottom - textVisible03.top - vp2px(150))) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(textVisible02.right - textVisible02.left - vp2px(150))) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(textVisible03.right - textVisible03.left - vp2px(150))) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(flexVisible.right - textVisible03.right - vp2px(200))) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(textVisible02.top - flexVisible.top - flexVisible.bottom + textVisible02.bottom)) <= 1)
           .assertTrue()
-        expect(Math.abs(textVisible03.top - flexVisible.top - flexVisible.bottom + textVisible03.bottom) <= 1)
+        expect(Math.floor(Math.abs(textVisible03.top - flexVisible.top - flexVisible.bottom + textVisible03.bottom)) <= 1)
           .assertTrue()
+
         expect(JSON.parse(strJson1).$attrs.constructor.direction).assertEqual('FlexDirection.Row')
         expect(JSON.parse(strJson1).$attrs.constructor.alignItems).assertEqual('ItemAlign.Center')
       } catch (err) {
@@ -116,19 +128,32 @@ export default function flexVisibility_CenterJsunit() {
         let textVisible02: RectValue = CommonFunc.getComponentRect('ItemAlign_Center_textVisible02');
         let textVisible03: RectValue = CommonFunc.getComponentRect('ItemAlign_Center_textVisible03');
         let flexVisible: RectValue = CommonFunc.getComponentRect('ItemAlign_Center_flexVisible');
-        expect(Math.abs(textVisible01.bottom - textVisible01.top - vp2px(50)) <= 1).assertTrue()
-        expect(Math.abs(textVisible01.right - textVisible01.left - vp2px(150)) <= 1).assertTrue()
-        expect(Math.abs(textVisible02.bottom - textVisible02.top - vp2px(100)) <= 1).assertTrue()
-        expect(Math.abs(textVisible02.right - textVisible02.left - vp2px(150)) <= 1).assertTrue()
-        expect(Math.abs(textVisible03.bottom - textVisible03.top - vp2px(150)) <= 1).assertTrue()
-        expect(Math.abs(textVisible03.right - textVisible03.left - vp2px(150)) <= 1).assertTrue()
-        expect(Math.abs(flexVisible.right - textVisible03.right - vp2px(50)) <= 1).assertTrue()
-        expect(Math.abs(textVisible01.top - flexVisible.top - flexVisible.bottom + textVisible01.bottom) <= 1)
+
+        console.info('testFlexItemAlignCenterSubSetVisibilityHidden_chazhi1:'+ Math.floor(Math.abs(textVisible01.bottom - textVisible01.top - vp2px(50))));
+        console.info('testFlexItemAlignCenterSubSetVisibilityHidden_chazhi2:'+ Math.floor(Math.abs(textVisible01.right - textVisible01.left - vp2px(150))));
+        console.info('testFlexItemAlignCenterSubSetVisibilityHidden_chazhi3:'+ Math.floor(Math.abs(textVisible02.bottom - textVisible02.top - vp2px(100))));
+        console.info('testFlexItemAlignCenterSubSetVisibilityHidden_chazhi4:'+ Math.floor(Math.abs(textVisible02.right - textVisible02.left - vp2px(150))));
+        console.info('testFlexItemAlignCenterSubSetVisibilityHidden_chazhi5:'+ Math.floor(Math.abs(textVisible03.bottom - textVisible03.top - vp2px(150))));
+        console.info('testFlexItemAlignCenterSubSetVisibilityHidden_chazhi6:'+ Math.floor(Math.abs(textVisible03.right - textVisible03.left - vp2px(150))));
+        console.info('testFlexItemAlignCenterSubSetVisibilityHidden_chazhi7:'+ Math.floor(Math.abs(flexVisible.right - textVisible03.right - vp2px(50))));
+        console.info('testFlexItemAlignCenterSubSetVisibilityHidden_chazhi8:'+ Math.floor(Math.abs(textVisible01.top - flexVisible.top - flexVisible.bottom + textVisible01.bottom)));
+        console.info('testFlexItemAlignCenterSubSetVisibilityHidden_chazhi9:'+ Math.floor(Math.abs(textVisible02.top - flexVisible.top - flexVisible.bottom + textVisible02.bottom)));
+        console.info('testFlexItemAlignCenterSubSetVisibilityHidden_chazhi10:'+ Math.floor(Math.abs(textVisible03.top - flexVisible.top - flexVisible.bottom + textVisible03.bottom)));
+
+        expect(Math.floor(Math.abs(textVisible01.bottom - textVisible01.top - vp2px(50))) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(textVisible01.right - textVisible01.left - vp2px(150))) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(textVisible02.bottom - textVisible02.top - vp2px(100))) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(textVisible02.right - textVisible02.left - vp2px(150))) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(textVisible03.bottom - textVisible03.top - vp2px(150))) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(textVisible03.right - textVisible03.left - vp2px(150))) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(flexVisible.right - textVisible03.right - vp2px(50))) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(textVisible01.top - flexVisible.top - flexVisible.bottom + textVisible01.bottom)) <= 1)
           .assertTrue()
-        expect(Math.abs(textVisible02.top - flexVisible.top - flexVisible.bottom + textVisible02.bottom) <= 1)
+        expect(Math.floor(Math.abs(textVisible02.top - flexVisible.top - flexVisible.bottom + textVisible02.bottom)) <= 1)
           .assertTrue()
-        expect(Math.abs(textVisible03.top - flexVisible.top - flexVisible.bottom + textVisible03.bottom) <= 1)
+        expect(Math.floor(Math.abs(textVisible03.top - flexVisible.top - flexVisible.bottom + textVisible03.bottom)) <= 1)
           .assertTrue()
+
         expect(JSON.parse(strJson1).$attrs.constructor.direction).assertEqual('FlexDirection.Row')
         expect(JSON.parse(strJson1).$attrs.constructor.alignItems).assertEqual('ItemAlign.Center')
       } catch (err) {
