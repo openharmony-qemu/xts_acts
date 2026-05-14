@@ -20,6 +20,7 @@ import ComponentNodeWithNativeParametersTest from './XComponentTest/ComponentNod
 import ComponentNodeDefaultTest from './XComponentTest/ComponentNodeDefaultTest.test';
 import XComponentHdrBrightnessTest from './XComponentHdrBrightnessTest/XComponentHdrBrightness.test';
 import ComponentContentApiTest from './ComponentContentApiTest/ComponentContentApi.test';
+import InspectorLabelTest from './InspectorLabelTest/InspectorLabel.test';
 
 export default function testsuite() {
   XComponentTest();
@@ -28,4 +29,5 @@ export default function testsuite() {
   ComponentNodeDefaultTest();
   XComponentHdrBrightnessTest();
   ComponentContentApiTest();
+  InspectorLabelTest();
 }
