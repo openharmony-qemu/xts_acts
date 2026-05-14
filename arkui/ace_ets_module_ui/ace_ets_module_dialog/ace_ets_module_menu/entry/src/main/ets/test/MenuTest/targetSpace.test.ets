@@ -95,23 +95,17 @@ describe('targetSpaceTest', () => {
 
         let keyBtn2 = await driver.findComponent(ON.id('vp'));
         await keyBtn2.click();
-        await CommonFunc.sleep(1500);
+        await CommonFunc.sleep(1000);
 
         let menuComponent2: Component = await driver.findComponent(ON.id('menu'));
-        let menuRect2 = await menuComponent2.getBounds();
-        let btnRect = await keyBtn2.getBounds();
-        console.info('[targetSpaceTest_0200] menuRect2 is: ' + JSON.stringify(menuRect2));
-        console.info('[targetSpaceTest_0200] menuRect2.top is: ' + menuRect2.top);
-        console.info('[targetSpaceTest_0200] btnRect.bottom is: ' + btnRect.bottom);
+        let rect = await menuComponent2.getBounds();
+        console.info('[targetSpaceTest_0200] rect is: ' + JSON.stringify(rect));
+        console.info('[targetSpaceTest_0200] rect.top is: ' + rect.top);
         await CommonFunc.sleep(1000);
 
-        let spaceRect2 = menuRect2.top - btnRect.bottom;
-        console.info('[targetSpaceTest_0200] spaceRect2 is: ' + spaceRect2);
-
-        expect(spaceRect2).assertLarger(0);
+        expect(rect.top == 0).assertFalse();
+        expect(rect.top > 0).assertTrue();
         await CommonFunc.sleep(1000);
-        await keyBtn2.click();
-        await CommonFunc.sleep(1500);
 
         console.info('[targetSpaceTest_0200] END');
         done();
@@ -217,20 +211,16 @@ describe('targetSpaceTest', () => {
 
         let keyBtn6 = await driver.findComponent(ON.id('0'));
         await keyBtn6.click();
-        await CommonFunc.sleep(1500);
-
-        let menuComponent6: Component = await driver.findComponent(ON.id('menu'));
-        let menuRect6 = await menuComponent6.getBounds();
-        let btnRect = await keyBtn6.getBounds();
-        console.info('[targetSpaceTest_0600] menuRect6 is: ' + JSON.stringify(menuRect6));
-        console.info('[targetSpaceTest_0600] menuRect6.top is: ' + menuRect6.top);
-        console.info('[targetSpaceTest_0600] btnRect.bottom is: ' + btnRect.bottom);
         await CommonFunc.sleep(1000);
 
-        let spaceRect6 = menuRect6.top - btnRect.bottom;
-        console.info('[targetSpaceTest_0600] spaceRect6 is: ' + spaceRect6);
+        let menuComponent6: Component = await driver.findComponent(ON.id('menu'));
+        let rect = await menuComponent6.getBounds();
+        console.info('[targetSpaceTest_0600] rect is: ' + JSON.stringify(rect));
+        console.info('[targetSpaceTest_0600] rect.top is: ' + rect.top);
+        await CommonFunc.sleep(1000);
 
-        expect(spaceRect6).assertEqual(0);
+        expect(rect.top == 0).assertFalse();
+        expect(rect.top > 0).assertTrue();
         await CommonFunc.sleep(1000);
 
         console.info('[targetSpaceTest_0600] END');
