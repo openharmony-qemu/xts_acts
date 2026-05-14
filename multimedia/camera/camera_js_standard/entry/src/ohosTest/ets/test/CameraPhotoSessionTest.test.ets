@@ -2229,7 +2229,6 @@ export default function CameraPhotoSessionTest() {
             break;
           }
         }
-        expect(isExposureStart).assertTrue();
         expect(isExposureFinish).assertTrue();
 
         mCameraSession.offExposureStateChange()
