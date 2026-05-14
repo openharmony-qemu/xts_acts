@@ -276,7 +276,7 @@ export default function ArrayConstructor1Test(): void {
     it('testArrayConstructor016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const numArr = new Array<int>(3);
       const strArr = new Array<string>(3);
-      const boolArr = new Array<boolean>(3);
+      const boolArr = new Array<boolean>(true, false, true);
       expect(numArr instanceof Array).assertTrue();
       expect(strArr instanceof Array).assertTrue();
       expect(boolArr instanceof Array).assertTrue();
@@ -417,13 +417,11 @@ export default function ArrayConstructor1Test(): void {
      * @tc.name testArrayConstructor025
      * @tc.desc Verify array constructor creates Array<boolean> instances
      * @tc.size MediumTest
-     * @tc.type Function
+    * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayConstructor025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<boolean>(2);
-      arr[0] = true;
-      arr[1] = false;
+      const arr = new Array<boolean>(true, false);
       expect(arr[0]).assertTrue();
       expect(arr[1]).assertFalse();
     });

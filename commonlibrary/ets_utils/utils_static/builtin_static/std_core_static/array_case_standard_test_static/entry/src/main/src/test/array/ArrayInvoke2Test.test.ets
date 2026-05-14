@@ -276,7 +276,7 @@ export default function ArrayInvoke2Test(): void {
     it('testArrayInvoke016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const numArr = new Array<int>(5);
       const strArr = new Array<string>(5);
-      const boolArr = new Array<boolean>(5);
+      const boolArr = new Array<boolean>(true, false, true, false, true);
 
       expect(numArr instanceof Array).assertTrue();
       expect(strArr instanceof Array).assertTrue();
@@ -439,15 +439,13 @@ export default function ArrayInvoke2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_2600
      * @tc.name testArrayInvoke026
-     * @tc.desc Verify a boolean generic array can be created with a preset length
+     * @tc.desc Verify a boolean generic array can be created with initialized elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayInvoke026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<boolean>(2);
-      arr[0] = true;
-      arr[1] = false;
+      const arr = new Array<boolean>(true, false);
       expect(arr[0]).assertTrue();
       expect(arr[1]).assertFalse();
     });
