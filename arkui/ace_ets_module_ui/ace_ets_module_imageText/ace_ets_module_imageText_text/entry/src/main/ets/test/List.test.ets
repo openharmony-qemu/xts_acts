@@ -151,6 +151,7 @@ import TextLayoutManagerMethodsTest from './TextTest/TextLayoutManagerMethods.te
 import TextOrphanCharOptimizationTest from './TextTest/TextOrphanCharOptimization.test';
 import OrphanCharOptimizationTest from './TextTest/OrphanCharOptimizationTest.test';
 import TextFontVariationsTest from './TextTest/TextFontVariations.test';
+import OrphanCharOptimizationnullTest from './TextTest/OrphanCharOptimization_null.test';
 
 
 
@@ -294,4 +295,5 @@ export default function testsuite() {
   TextOrphanCharOptimizationTest();
   OrphanCharOptimizationTest();
   TextFontVariationsTest();
+  OrphanCharOptimizationnullTest();
 }

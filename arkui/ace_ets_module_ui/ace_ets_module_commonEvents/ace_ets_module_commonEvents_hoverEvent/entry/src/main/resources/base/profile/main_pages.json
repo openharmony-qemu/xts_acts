@@ -15,6 +15,8 @@
         "MainAbility/pages/UICommonEvent/SetOnMouse/SetOnMouseNullAndUndefined",
         "MainAbility/pages/UICommonEvent/SetOnSizeChange/SetOnSizeChangeNullAndUndefined",
         "MainAbility/pages/setCustomCursor/setCustomCursor_null",
-         "MainAbility/pages/setCustomCursor/setCustomCursor_undefined"
+        "MainAbility/pages/setCustomCursor/setCustomCursor_undefined",
+        "MainAbility/pages/shouldRecognizerParallelWith/shouldRecognizerParallelWith",
+        "MainAbility/pages/shouldRecognizerParallelWith/shouldRecognizerParallelWith_undefined"
     ]
 }

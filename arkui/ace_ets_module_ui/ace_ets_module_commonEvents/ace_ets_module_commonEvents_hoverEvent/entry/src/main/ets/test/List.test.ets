@@ -28,6 +28,8 @@ import setOnMouseNullAndUndefinedTest from './UICommonEvent/SetOnMouse/setOnMous
 import setOnSizeChangeNullAndUndefinedTest from './UICommonEvent/SetOnSizeChange/setOnSizeChangeNullAndUndefinedTest.test';
 import setCustomCursornull from './setCustomCursor/setCustomCursor_null.test';
 import setCustomCursorundefined from './setCustomCursor/setCustomCursor_undefined.test';
+import shouldRecognizerParallelWith from './shouldRecognizerParallelWith/shouldRecognizerParallelWith.test';
+import shouldRecognizerParallelWith_undefined from './shouldRecognizerParallelWith/shouldRecognizerParallelWith.test';
 
 
 export default function testsuite() {
@@ -46,4 +48,6 @@ export default function testsuite() {
   setOnSizeChangeNullAndUndefinedTest();
   setCustomCursornull();
   setCustomCursorundefined();
+  shouldRecognizerParallelWith();
+  shouldRecognizerParallelWith_undefined();
 }
