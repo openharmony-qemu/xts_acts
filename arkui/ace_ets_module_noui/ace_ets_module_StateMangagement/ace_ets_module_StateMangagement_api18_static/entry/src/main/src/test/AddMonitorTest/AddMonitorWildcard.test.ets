@@ -132,7 +132,7 @@ export default function AddMonitorWildcard() {
 
     /**
      * @tc.number SUB_ARKUI_API_AddMonitorWildcard_0300
-     * @tc.name   testClearMonitor
+     * @tc.name   SUB_ARKUI_API_AddMonitorWildcard_0300
      * @tc.desc   Test clearMonitor to cancel monitoring - callback should not trigger after clear
      * @tc.size   MediumTest
      * @tc.type   Function
