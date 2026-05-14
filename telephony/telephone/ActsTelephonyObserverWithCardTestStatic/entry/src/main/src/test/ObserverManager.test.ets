@@ -147,6 +147,8 @@ export default function ObserverManagerTest() {
         let callback: (data: observer.DataConnectionStateInfo) => void = (data: observer.DataConnectionStateInfo) => {
           hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
           ExpectTrue(data !== null && data !== undefined);
+          ExpectTrue(data.state !== null && data.state !== undefined);
+          ExpectTrue(data.network !== null && data.network !== undefined);
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         };
         observer.onCellularDataConnectionStateChange(callback);
@@ -156,6 +158,35 @@ export default function ObserverManagerTest() {
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(false);
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverCellularDataConnectionStateChangeOff_static_0600
+     * @tc.number SUB_Telephony_Observer_CellularDataConnectionStateChangeOff_0600
+     * @tc.desc   test error code 8300001 of onCellularDataConnectionStateChange.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyObserverCellularDataConnectionStateChangeOff_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyObserverCellularDataConnectionStateChangeOff_static_0600';
+      hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+      try {
+        let options: observer.ObserverOptions = {
+          slotId: 3
+        };
+        observer.onCellularDataConnectionStateChange(options, (data: observer.DataConnectionStateInfo) => {
+          hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
+          ExpectTrue(false);
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+          done();
+        });
+      } catch (error) {
+        hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
+        ExpectTrue((error as BusinessError).code === 8300001);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
       }
@@ -277,6 +308,67 @@ export default function ObserverManagerTest() {
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(false);
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverCellularDataFlowChangeOff_static_0600
+     * @tc.number SUB_Telephony_Observer_CellularDataFlowChangeOff_0600
+     * @tc.desc   Remove the uplink and downlink data flow status of subscribed cellular data services.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyObserverCellularDataFlowChangeOff_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyObserverCellularDataFlowChangeOff_static_0600';
+      hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+      try {
+        let options: observer.ObserverOptions = {
+          slotId: 0
+        };
+        observer.onCellularDataFlowChange(options, (data: observer.DataFlowType) => {
+          hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
+          ExpectTrue(data === 0 || data === 4);
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+          done();
+        });
+        observer.offCellularDataFlowChange();
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        done();
+      } catch (error) {
+        hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
+        ExpectTrue(false);
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverCellularDataFlowChangeOff_static_0700
+     * @tc.number SUB_Telephony_Observer_CellularDataFlowChangeOff_0700
+     * @tc.desc   test error code 8300001 of onCellularDataFlowChange.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyObserverCellularDataFlowChangeOff_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyObserverCellularDataFlowChangeOff_static_0700';
+      hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+      try {
+        let options: observer.ObserverOptions = {
+          slotId: 3
+        };
+        observer.onCellularDataFlowChange(options, (data: observer.DataFlowType) => {
+          hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
+          ExpectTrue(false);
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+          done();
+        });
+      } catch (error) {
+        hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
+        ExpectTrue((error as BusinessError).code === 8300001);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
       }
