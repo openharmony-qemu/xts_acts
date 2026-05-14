@@ -782,7 +782,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     /**
      * @tc.name   SUB_Security_CertManager_OpenInstallCertDialog_Func_0100
      * @tc.number SUB_Security_CertManager_OpenInstallCertDialog_Func_0100
-     * @tc.desc   Call openInstallCertificateDialog with certType CREDENTIAL_USER, certScope GLOBAL_USER. Return error code CertificateDialogErrorCode.ERROR_GENERIC.
+     * @tc.desc   Call openInstallCertificateDialog with certType CREDENTIAL_USER, certScope GLOBAL_USER. Return error code 29700005.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -799,7 +799,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
           expect(null).assertFail();
         } catch (err) {
           console.error(`SUB_Security_CertManager_OpenInstallCertDialog_Func_0100 failed. Code: ${err.code}, message: ${err.message}`);
-          expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_GENERIC);
+          expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_NOT_COMPLY_SECURITY_POLICY);
         }
       } else {
         console.info('SUB_Security_CertManager_OpenInstallCertDialog_Func_0100 device not support CertificateManagerDialog');
@@ -869,7 +869,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     /**
      * @tc.name   SUB_Security_CertManager_OpenInstallCertDialog_Func_0400
      * @tc.number SUB_Security_CertManager_OpenInstallCertDialog_Func_0400
-     * @tc.desc   Call openInstallCertificateDialog with certType CREDENTIAL_SYSTEM, certScope CURRENT_USER. Return error code 29700001.
+     * @tc.desc   Call openInstallCertificateDialog with certType CREDENTIAL_SYSTEM, certScope CURRENT_USER. Return error code 29700005.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -878,7 +878,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
       console.info('SUB_Security_CertManager_OpenInstallCertDialog_Func_0400 start');
       const context: common.Context = GlobalContext.getContext();
       let certType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CREDENTIAL_SYSTEM;
-      let certScope: certManagerDialog.CertificateScope = certManagerDialog.CertificateScope.CURRENT_USER;
+      let certScope: certManagerDialog.CertificateScope = certManagerDialog.CertificateScope.GLOBAL_USER;
       let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
       if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
         try {
@@ -886,7 +886,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
           expect(null).assertFail();
         } catch (err) {
           console.error(`SUB_Security_CertManager_OpenInstallCertDialog_Func_0400 failed. Code: ${err.code}, message: ${err.message}`);
-          expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_GENERIC);
+          expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_NOT_COMPLY_SECURITY_POLICY);
         }
       } else {
         console.info('SUB_Security_CertManager_OpenInstallCertDialog_Func_0400 device not support CertificateManagerDialog');
@@ -898,7 +898,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     /**
      * @tc.name   SUB_Security_CertManager_OpenInstallCertDialog_Func_0500
      * @tc.number SUB_Security_CertManager_OpenInstallCertDialog_Func_0500
-     * @tc.desc   Call openInstallCertificateDialog with certType CA_CERT, certScope NOT_SPECIFIED. Return error code 29700004 if PC device is supported, otherwise return error code 29700001.
+     * @tc.desc   Call openInstallCertificateDialog with certType CA_CERT, certScope NOT_SPECIFIED. Return error code 29700003 if PC device is supported, otherwise return error code 29700004.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -917,7 +917,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
         } catch (err) {
           if (isSupport) {
             console.error(`SUB_Security_CertManager_OpenInstallCertDialog_Func_0500: the device supports CA dialog. Code: ${err.code}, message: ${err.message}`);
-            expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_GENERIC);
+            expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_OPERATION_FAILED);
           } else {
             console.error(`SUB_Security_CertManager_OpenInstallCertDialog_Func_0500: the device don't support CA dialog. Code: ${err.code}, message: ${err.message}`);
             expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_DEVICE_NOT_SUPPORTED);
