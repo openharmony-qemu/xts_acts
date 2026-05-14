@@ -1160,3 +1160,1187 @@ class FeatureFlags072 {
   public static BETA_FEATURES: boolean = false;
 }
 
+export default function StaticFieldGetNameTest(): void {
+  describe('StaticFieldGetNameTest', (): void => {
+    beforeAll((): void => {
+    });
+    beforeEach(async (): Promise<void> => {
+      await Utils.msSleep(30);
+    });
+    afterEach((): void => {
+    });
+    afterAll((): void => {
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_0100
+     * @tc.name testStaticFieldGetName001
+     * @tc.desc Verify getName does not require any parameters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass001();
+      let field = cls.getStaticField("name");
+      let fieldName = field!.getName();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_0200
+     * @tc.name testStaticFieldGetName002
+     * @tc.desc Verify getName returns string type without passing any parameters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass001();
+      let field = cls.getStaticField("name");
+      let fieldName = field!.getName();
+      expect(typeof fieldName).assertEqual("string");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_0400
+     * @tc.name testStaticFieldGetName004
+     * @tc.desc Verify getName returns string type field name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass004();
+      let field = cls.getStaticField("data");
+      let name = field!.getName();
+      expect(typeof name).assertEqual("string");
+      expect(name).assertEqual("data");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_0500
+     * @tc.name testStaticFieldGetName005
+     * @tc.desc Verify getName returns correct name for conventionally named fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass005();
+      let field1 = cls.getStaticField("fieldName");
+      expect(field1!.getName()).assertEqual("fieldName");
+      let field2 = cls.getStaticField("_privateField");
+      expect(field2!.getName()).assertEqual("_privateField");
+      let field3 = cls.getStaticField("$decorated");
+      expect(field3!.getName()).assertEqual("$decorated");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_0600
+     * @tc.name testStaticFieldGetName006
+     * @tc.desc Verify getName with numeric prefix field name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass006();
+      let field = cls.getStaticField("field123");
+      if (field !== null) {
+        expect(field!.getName()).assertEqual("field123");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_0700
+     * @tc.name testStaticFieldGetName007
+     * @tc.desc Verify getName with Unicode field names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass007();
+      let field1 = cls.getStaticField("用户名");
+      expect(field1!.getName()).assertEqual("用户名");
+      let field2 = cls.getStaticField("données");
+      expect(field2!.getName()).assertEqual("données");
+      let field3 = cls.getStaticField("データ");
+      expect(field3!.getName()).assertEqual("データ");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_0800
+     * @tc.name testStaticFieldGetName008
+     * @tc.desc Verify getName with field name containing spaces
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass008();
+      let field = cls.getStaticField("fieldWithSpace");
+      if (field !== null) {
+        let name = field!.getName();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_1000
+     * @tc.name testStaticFieldGetName010
+     * @tc.desc Verify getName with extremely long field name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass010();
+      let field = cls.getStaticField("veryVeryVeryVeryVeryVeryVeryLongFieldName");
+      let name = field!.getName();
+      expect(name.length).assertLarger(0);
+      expect(name).assertEqual("veryVeryVeryVeryVeryVeryVeryLongFieldName");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_1100
+     * @tc.name testStaticFieldGetName011
+     * @tc.desc Verify getName with special character field names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass011();
+      let field1 = cls.getStaticField("field_name");
+      expect(field1!.getName()).assertEqual("field_name");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_1200
+     * @tc.name testStaticFieldGetName012
+     * @tc.desc Verify getName return value type is string
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass004();
+      let field = cls.getStaticField("data");
+      let name = field!.getName();
+      expect(typeof name).assertEqual("string");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_1300
+     * @tc.name testStaticFieldGetName013
+     * @tc.desc Verify getName return value is not null or undefined
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass004();
+      let field = cls.getStaticField("data");
+      let name = field!.getName();
+      expect(name !== null).assertEqual(true);
+      expect(name !== undefined).assertEqual(true);
+      return;
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_1400
+     * @tc.name testStaticFieldGetName014
+     * @tc.desc Verify getName return value is non-empty
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass004();
+      let field = cls.getStaticField("data");
+      let name = field!.getName();
+      expect(name.length).assertLarger(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_1500
+     * @tc.name testStaticFieldGetName015
+     * @tc.desc Verify getName with single character field names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass015();
+      let field1 = cls.getStaticField("a");
+      expect(field1!.getName().length).assertEqual(1);
+      let field2 = cls.getStaticField("_");
+      expect(field2!.getName().length).assertEqual(1);
+      let field3 = cls.getStaticField("$");
+      expect(field3!.getName().length).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_1600
+     * @tc.name testStaticFieldGetName016
+     * @tc.desc Verify getName with different access modifier field names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass016();
+      let pubField = cls.getStaticField("pubField");
+      expect(pubField!.getName()).assertEqual("pubField");
+      let privField = cls.getStaticField("privField");
+      expect(privField!.getName()).assertEqual("privField");
+      let protField = cls.getStaticField("protField");
+      expect(protField!.getName()).assertEqual("protField");
+      let interField = cls.getStaticField("interField");
+      expect(interField!.getName()).assertEqual("interField");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_1700
+     * @tc.name testStaticFieldGetName017
+     * @tc.desc Verify getName with different data type field names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass017();
+      let fields = ["strField", "numField", "boolField", "arrField", "objField"];
+      for (let i = 0; i < fields.length; i++) {
+        let field = cls.getStaticField(fields[i]);
+        expect(field!.getName()).assertEqual(fields[i]);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_1800
+     * @tc.name testStaticFieldGetName018
+     * @tc.desc Verify calling getName on null object throws error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field: StaticField | null = null;
+      try {
+        field!.getName();
+        expect().assertFail();
+      } catch (error) {
+        expect(error !== null).assertEqual(true);
+      }
+      return;
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_1900
+     * @tc.name testStaticFieldGetName019
+     * @tc.desc Verify calling getName on undefined object throws error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field: StaticField | undefined;
+      try {
+        field!.getName();
+        expect().assertFail();
+      } catch (error) {
+        expect(error !== null).assertEqual(true);
+      }
+      return;
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_2000
+     * @tc.name testStaticFieldGetName020
+     * @tc.desc Verify getName on non-existent static field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass020();
+      let field = cls.getStaticField("nonexistent");
+      if (field !== null) {
+        let name = field.getName();
+      } else {
+        console.info("Field does not exist");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_2100
+     * @tc.name testStaticFieldGetName021
+     * @tc.desc Verify getName with public readonly field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass021();
+      let field = cls.getStaticField("readonlyField");
+      expect(field!.getName()).assertEqual("readonlyField");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_2200
+     * @tc.name testStaticFieldGetName022
+     * @tc.desc Verify getName with different access level field names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass022();
+      let privField = cls.getStaticField("privValue");
+      expect(privField!.getName()).assertEqual("privValue");
+      let protField = cls.getStaticField("protValue");
+      expect(protField!.getName()).assertEqual("protValue");
+      let pubField = cls.getStaticField("pubValue");
+      expect(pubField!.getName()).assertEqual("pubValue");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_2300
+     * @tc.name testStaticFieldGetName023
+     * @tc.desc Verify getName combined with getOwner
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass023();
+      let field = cls.getStaticField("data");
+      let fieldName = field!.getName();
+      let ownerName = field!.getOwner().getName();
+      console.info(`${ownerName}.${fieldName}`);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_2400
+     * @tc.name testStaticFieldGetName024
+     * @tc.desc Verify getName combined with getType
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass024();
+      let field = cls.getStaticField("count");
+      let fieldName = field!.getName();
+      let typeName = field!.getType().getName();
+      console.info(`Field ${fieldName} has type ${typeName}`);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_2500
+     * @tc.name testStaticFieldGetName025
+     * @tc.desc Verify getName combined with getValue
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass025();
+      let field = cls.getStaticField("value");
+      let fieldName = field!.getName();
+      let fieldValue = field!.getValue();
+      console.info(`${fieldName} = ${fieldValue}`);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_2600
+     * @tc.name testStaticFieldGetName026
+     * @tc.desc Verify getName combined with equals for field name comparison
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass026();
+      let field1 = cls.getStaticField("field1");
+      let field2 = cls.getStaticField("field2");
+      expect(field1!.getName() !== field2!.getName()).assertEqual(true);
+      expect(field1!.equals(field2!)).assertEqual(false);
+      return;
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_2700
+     * @tc.name testStaticFieldGetName027
+     * @tc.desc Verify getName with access modifier methods
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass027();
+      let fields = cls.getDeclaredStaticFields();
+      for (let i = 0; i < fields.length; i++) {
+        let field = fields[i];
+        let accessLevel = "unknown";
+        if (field.isPublic()) {
+          accessLevel = "public";
+        } else if (field.isPrivate()) {
+          accessLevel = "private";
+        } else if (field.isProtected()) {
+          accessLevel = "protected";
+        }
+        console.info(`${accessLevel} ${field.getName()}`);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_2800
+     * @tc.name testStaticFieldGetName028
+     * @tc.desc Verify getName is a synchronous method
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass004();
+      let field = cls.getStaticField("data");
+      let name = field!.getName();
+      expect(typeof name).assertEqual("string");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_2900
+     * @tc.name testStaticFieldGetName029
+     * @tc.desc Verify getName return value is not a Promise type
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass004();
+      let field = cls.getStaticField("data");
+      let result = field!.getName();
+      expect(result instanceof Promise).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_3000
+     * @tc.name testStaticFieldGetName030
+     * @tc.desc Verify complete field name collection via reflection API
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass030();
+      let fields = cls.getDeclaredStaticFields();
+      for (let i = 0; i < fields.length; i++) {
+        let fieldName = fields[i].getName();
+        console.info(`Field: ${fieldName}`);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_3100
+     * @tc.name testStaticFieldGetName031
+     * @tc.desc Verify pattern matching using getName
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass031();
+      let userFields = findFieldsByPattern(cls, "user");
+      for (let i = 0; i < userFields.length; i++) {
+        console.info("Found: " + userFields[i].getName());
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_3200
+     * @tc.name testStaticFieldGetName032
+     * @tc.desc Verify sorting fields by getName result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass032();
+      let fields = cls.getDeclaredStaticFields();
+      fields.sort((a, b) => {
+        let nameA = a.getName();
+        let nameB = b.getName();
+        return nameA.localeCompare(nameB);
+      });
+      for (let i = 0; i < fields.length; i++) {
+        console.info(fields[i].getName());
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_3300
+     * @tc.name testStaticFieldGetName033
+     * @tc.desc Verify detecting duplicate field names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass033();
+      checkDuplicateFieldNames(cls);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_3400
+     * @tc.name testStaticFieldGetName034
+     * @tc.desc Verify field name format conversion
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass034();
+      let fields = cls.getDeclaredStaticFields();
+      for (let i = 0; i < fields.length; i++) {
+        let originalName = fields[i].getName();
+        let camelName = toCamelCase(originalName);
+        let snakeName = toSnakeCase(originalName);
+        console.info(`${originalName} -> Camel: ${camelName}, Snake: ${snakeName}`);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_3500
+     * @tc.name testStaticFieldGetName035
+     * @tc.desc Verify getName with Hungarian notation field names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass035();
+      let field1 = cls.getStaticField("strUserName");
+      expect(field1!.getName()).assertEqual("strUserName");
+      let field2 = cls.getStaticField("nAge");
+      expect(field2!.getName()).assertEqual("nAge");
+      let field3 = cls.getStaticField("bIsActive");
+      expect(field3!.getName()).assertEqual("bIsActive");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_3600
+     * @tc.name testStaticFieldGetName036
+     * @tc.desc Verify getName with camelCase field names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass036();
+      let field1 = cls.getStaticField("userName");
+      expect(field1!.getName()).assertEqual("userName");
+      let field2 = cls.getStaticField("firstName");
+      expect(field2!.getName()).assertEqual("firstName");
+      let field3 = cls.getStaticField("isActive");
+      expect(field3!.getName()).assertEqual("isActive");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_3700
+     * @tc.name testStaticFieldGetName037
+     * @tc.desc Verify getName with PascalCase field names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass037();
+      let field1 = cls.getStaticField("UserName");
+      expect(field1!.getName()).assertEqual("UserName");
+      let field2 = cls.getStaticField("FirstName");
+      expect(field2!.getName()).assertEqual("FirstName");
+      let field3 = cls.getStaticField("IsActive");
+      expect(field3!.getName()).assertEqual("IsActive");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_3800
+     * @tc.name testStaticFieldGetName038
+     * @tc.desc Verify getName with snake_case field names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass038();
+      let field1 = cls.getStaticField("user_name");
+      expect(field1!.getName()).assertEqual("user_name");
+      let field2 = cls.getStaticField("first_name");
+      expect(field2!.getName()).assertEqual("first_name");
+      let field3 = cls.getStaticField("is_active");
+      expect(field3!.getName()).assertEqual("is_active");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_4000
+     * @tc.name testStaticFieldGetName040
+     * @tc.desc Verify getName with reserved words as field names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass040();
+      let field1 = cls.getStaticField("classField");
+      if (field1 !== null) {
+        expect(field1!.getName()).assertEqual("classField");
+      }
+      let field2 = cls.getStaticField("functionField");
+      if (field2 !== null) {
+        expect(field2!.getName()).assertEqual("functionField");
+      }
+      let field3 = cls.getStaticField("returnField");
+      if (field3 !== null) {
+        expect(field3!.getName()).assertEqual("returnField");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_4100
+     * @tc.name testStaticFieldGetName041
+     * @tc.desc Verify getName with emoji field names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass041();
+      let field1 = cls.getStaticField("smileEmoji");
+      expect(field1!.getName()).assertEqual("smileEmoji");
+      let field2 = cls.getStaticField("fireEmoji");
+      expect(field2!.getName()).assertEqual("fireEmoji");
+      let field3 = cls.getStaticField("hundredEmoji");
+      expect(field3!.getName()).assertEqual("hundredEmoji");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_4200
+     * @tc.name testStaticFieldGetName042
+     * @tc.desc Verify multiple calls to getName return consistent results
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass042();
+      let field = cls.getStaticField("value");
+      let name1 = field!.getName();
+      let name2 = field!.getName();
+      let name3 = field!.getName();
+      expect(name1).assertEqual(name2);
+      expect(name2).assertEqual(name3);
+      expect(name1).assertEqual("value");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_4300
+     * @tc.name testStaticFieldGetName043
+     * @tc.desc Verify getName with large number of fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass043();
+      let fields = cls.getDeclaredStaticFields();
+      let names: string[] = [];
+      for (let i = 0; i < fields.length; i++) {
+        names.push(fields[i].getName());
+      }
+      console.info("Field names: " + names.join(", "));
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_4400
+     * @tc.name testStaticFieldGetName044
+     * @tc.desc Verify performance of getName result comparison
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass044();
+      let fields = cls.getDeclaredStaticFields();
+      for (let i = 0; i < fields.length; i++) {
+        if (fields[i].getName() === "targetField") {
+          console.info("Found target field");
+        }
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_4500
+     * @tc.name testStaticFieldGetName045
+     * @tc.desc Verify StaticField getName and InstanceField getName behave consistently
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass045();
+      let staticField = cls.getStaticField("staticValue");
+      let staticName = staticField!.getName();
+      console.info("Static field name: " + staticName);
+      expect(staticName).assertEqual("staticValue");
+      let instanceField = cls.getInstanceField("instanceValue");
+      let instanceName = instanceField!.getName();
+      console.info("Instance field name: " + instanceName);
+      expect(instanceName).assertEqual("instanceValue");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_4600
+     * @tc.name testStaticFieldGetName046
+     * @tc.desc Verify extracting all field names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass046();
+      let names = getFieldNames(cls);
+      console.info("Field names: " + names.join(", "));
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_4700
+     * @tc.name testStaticFieldGetName047
+     * @tc.desc Verify creating field name to field mapping
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass047();
+      let fieldMap = createFieldMap(cls);
+      let field = fieldMap.get("data");
+      if (field !== undefined) {
+        console.info("Found field: " + field.getName());
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_4800
+     * @tc.name testStaticFieldGetName048
+     * @tc.desc Verify checking if a field name exists in class
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass048();
+      expect(hasFieldWithName(cls, "data")).assertEqual(true);
+      expect(hasFieldWithName(cls, "nonexistent")).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_4900
+     * @tc.name testStaticFieldGetName049
+     * @tc.desc Verify filtering fields by name prefix
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectConfig049();
+      let apiFields = filterFieldsByPrefix(cls, "API_");
+      for (let i = 0; i < apiFields.length; i++) {
+        console.info("API config: " + apiFields[i].getName());
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_5000
+     * @tc.name testStaticFieldGetName050
+     * @tc.desc Verify mapping field names to config keys
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectAppConfig050();
+      let config = getConfigMap(cls);
+      config.forEach((value: string, key: string): void => {
+        console.info(`${key} = ${value}`);
+      });
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_5100
+     * @tc.name testStaticFieldGetName051
+     * @tc.desc Verify using field names as keys during serialization
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectDataModel051();
+      let json = serializeFields(cls);
+      console.info(json);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_5200
+     * @tc.name testStaticFieldGetName052
+     * @tc.desc Verify logging field access with field name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass052();
+      let field = cls.getStaticField("importantData");
+      logFieldAccess(field!);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_5300
+     * @tc.name testStaticFieldGetName053
+     * @tc.desc Verify generating field list documentation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass053();
+      let doc = generateFieldsDoc(cls);
+      console.info(doc);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_5400
+     * @tc.name testStaticFieldGetName054
+     * @tc.desc Verify data validation using field names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass054();
+      let required = ["USERNAME", "EMAIL", "PASSWORD"];
+      expect(validateRequiredFields(cls, required)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_5500
+     * @tc.name testStaticFieldGetName055
+     * @tc.desc Verify dynamic field access by name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass055();
+      let value = getFieldValueByName(cls, "dynamicField");
+      console.info("Dynamic value: " + value);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_5600
+     * @tc.name testStaticFieldGetName056
+     * @tc.desc Verify normalizing field name format
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass056();
+      let normalizedNames = getFieldNamesNormalized(cls);
+      console.info("Normalized: " + normalizedNames.join(", "));
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_5700
+     * @tc.name testStaticFieldGetName057
+     * @tc.desc Verify detecting conflicting field names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass057();
+      let conflicts = findConflictingFieldNames(cls);
+      if (conflicts.length > 0) {
+        console.info("Potential conflicts found:");
+        for (let i = 0; i < conflicts.length; i++) {
+          console.info("  " + conflicts[i].join(", "));
+        }
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_5800
+     * @tc.name testStaticFieldGetName058
+     * @tc.desc Verify handling multilingual field names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass058();
+      let zhFields = getLocalizedFieldName(cls, 'zh');
+      let enFields = getLocalizedFieldName(cls, 'en');
+      console.info("Chinese fields: " + zhFields.join(", "));
+      console.info("English fields: " + enFields.join(", "));
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_5900
+     * @tc.name testStaticFieldGetName059
+     * @tc.desc Verify deserializing data to fields using field names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass059();
+      let jsonData: Record<string, string | number | boolean> = {
+        'TIMEOUT': 5000,
+        'RETRY_COUNT': 3
+      };
+      deserializeToFields(cls, jsonData);
+      console.info(`Config.TIMEOUT = ${MyClass059.TIMEOUT}`);
+      console.info(`Config.RETRY_COUNT = ${MyClass059.RETRY_COUNT}`);
+      return;
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_6000
+     * @tc.name testStaticFieldGetName060
+     * @tc.desc Verify getName with service configuration field names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectServiceConfig060();
+      let field = cls.getStaticField('SERVICE_NAME');
+      expect(field!.getName()).assertEqual('SERVICE_NAME');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_6100
+     * @tc.name testStaticFieldGetName061
+     * @tc.desc Verify getName with database configuration field names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectDatabaseConfig061();
+      let field = cls.getStaticField('DB_HOST');
+      expect(field!.getName()).assertEqual('DB_HOST');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_6200
+     * @tc.name testStaticFieldGetName062
+     * @tc.desc Verify getName with Redis configuration field names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectRedisConfig062();
+      let field = cls.getStaticField('REDIS_PORT');
+      expect(field!.getName()).assertEqual('REDIS_PORT');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_6300
+     * @tc.name testStaticFieldGetName063
+     * @tc.desc Verify getName with cache configuration field names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectCacheConfig063();
+      let field = cls.getStaticField('CACHE_TTL');
+      expect(field!.getName()).assertEqual('CACHE_TTL');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_6400
+     * @tc.name testStaticFieldGetName064
+     * @tc.desc Verify getName with queue configuration field names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectQueueConfig064();
+      let field = cls.getStaticField('QUEUE_CONNECTION');
+      expect(field!.getName()).assertEqual('QUEUE_CONNECTION');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_6500
+     * @tc.name testStaticFieldGetName065
+     * @tc.desc Verify getName with mail configuration field names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMailConfig065();
+      let field = cls.getStaticField('MAIL_FROM');
+      expect(field!.getName()).assertEqual('MAIL_FROM');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_6600
+     * @tc.name testStaticFieldGetName066
+     * @tc.desc Verify getName with filesystem configuration field names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectFilesystemConfig066();
+      let field = cls.getStaticField('FILESYSTEM_DEFAULT');
+      expect(field!.getName()).assertEqual('FILESYSTEM_DEFAULT');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_6700
+     * @tc.name testStaticFieldGetName067
+     * @tc.desc Verify getName with broadcast configuration field names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectBroadcastConfig067();
+      let field = cls.getStaticField('BROADCAST_DRIVER');
+      expect(field!.getName()).assertEqual('BROADCAST_DRIVER');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_6800
+     * @tc.name testStaticFieldGetName068
+     * @tc.desc Verify getName with hashing configuration field names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectHashingConfig068();
+      let field = cls.getStaticField('HASHING_DRIVER');
+      expect(field!.getName()).assertEqual('HASHING_DRIVER');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_6900
+     * @tc.name testStaticFieldGetName069
+     * @tc.desc Verify getName with session configuration field names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectSessionConfig069();
+      let field = cls.getStaticField('SESSION_LIFETIME');
+      expect(field!.getName()).assertEqual('SESSION_LIFETIME');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_7000
+     * @tc.name testStaticFieldGetName070
+     * @tc.desc Verify getName with view configuration field names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectViewConfig070();
+      let field = cls.getStaticField('VIEW_PATHS');
+      expect(field!.getName()).assertEqual('VIEW_PATHS');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_7100
+     * @tc.name testStaticFieldGetName071
+     * @tc.desc Verify getName with logging configuration field names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectLoggingConfig071();
+      let field = cls.getStaticField('LOG_CHANNEL');
+      expect(field!.getName()).assertEqual('LOG_CHANNEL');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_7200
+     * @tc.name testStaticFieldGetName072
+     * @tc.desc Verify getName with feature flag field names
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectFeatureFlags072();
+      let field = cls.getStaticField('NEW_UI');
+      expect(field!.getName()).assertEqual('NEW_UI');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_7300
+     * @tc.name testStaticFieldGetName073
+     * @tc.desc Verify countFieldsByNamePattern helper function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectDatabaseConfig061();
+      let count = countFieldsByNamePattern(cls, 'DB_');
+      expect(count).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_7400
+     * @tc.name testStaticFieldGetName074
+     * @tc.desc Verify getLongestFieldName and getShortestFieldName helper functions
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMailConfig065();
+      let longest = getLongestFieldName(cls);
+      let shortest = getShortestFieldName(cls);
+      expect(longest).assertEqual('MAIL_FROM_NAME');
+      expect(shortest).assertEqual('MAIL_FROM');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_7500
+     * @tc.name testStaticFieldGetName075
+     * @tc.desc Verify getFieldsBySuffix helper function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldGetName075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectSessionConfig069();
+      let driverFields = getFieldsBySuffix(cls, '_DRIVER');
+      expect(driverFields.length).assertEqual(1);
+      expect(driverFields[0].getName()).assertEqual('SESSION_DRIVER');
+    });
+  });
+}
