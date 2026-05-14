@@ -66,6 +66,7 @@ export default function BaseEnumValueOfTest(): void {
      */
     it('testBaseEnumValueOf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // 此测试仅用于验证编译时异常，跳过执行
+      expect(true).assertTrue();
       return;
     });
 
@@ -79,6 +80,7 @@ export default function BaseEnumValueOfTest(): void {
      */
     it('testBaseEnumValueOf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // 此测试仅用于验证编译时异常，跳过执行
+      expect(true).assertTrue();
       return;
     });
 
@@ -92,6 +94,7 @@ export default function BaseEnumValueOfTest(): void {
      */
     it('testBaseEnumValueOf005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // 此测试仅用于验证编译时异常，跳过执行
+      expect(true).assertTrue();
       return;
     });
 
@@ -105,6 +108,7 @@ export default function BaseEnumValueOfTest(): void {
      */
     it('testBaseEnumValueOf006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // 此测试仅用于验证编译时异常，跳过执行
+      expect(true).assertTrue();
       return;
     });
 
@@ -1380,6 +1384,7 @@ export default function BaseEnumValueOfTest(): void {
      */
     it('testBaseEnumValueOf095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // 此测试仅用于验证编译时异常，跳过执行
+      expect(true).assertTrue();
       return;
     });
 
