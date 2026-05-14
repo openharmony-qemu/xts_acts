@@ -37,6 +37,16 @@ export const TextEnumTest_021: () => number;
 export const TextEnumTest_022: () => number;
 export const TextEnumTest_023: () => number;
 export const TextEnumTest_024: () => number;
+export const TextEnumTest_025: () => number;
+export const TextEnumTest_026: () => number;
+export const TextEnumTest_027: () => number;
+export const TextEnumTest_028: () => number;
+export const TextEnumTest_029: () => number;
+export const TextEnumTest_030: () => number;
+export const TextEnumTest_031: () => number;
+export const TextEnumTest_032: () => number;
+export const TextEnumTest_033: () => number;
+export const TextEnumTest_034: () => number;
 
 export const TextAreaEnumTest_001: () => number;
 export const TextAreaEnumTest_002: () => number;
