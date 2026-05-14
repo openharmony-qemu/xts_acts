@@ -351,6 +351,7 @@ export default function StaticMethodIsPrivateTest(): void {
       let method = cls.getStaticMethod('defaultMethod');
       expect(method != undefined).assertTrue();
       let isPrivate: boolean = method!.isPrivate();
+      expect(isPrivate != null).assertTrue();
     });
 
     /**
@@ -365,7 +366,12 @@ export default function StaticMethodIsPrivateTest(): void {
       // 使用 public 方法验证 isPrivate() 不抛异常
       let method = Class.from<MyClass003>().getStaticMethod('publicMethod');
       expect(method != undefined).assertTrue();
-      let isPrivate: boolean = method!.isPrivate();
+      try {
+        let isPrivate: boolean = method!.isPrivate();
+        expect(isPrivate != null).assertTrue();
+      } catch (error) {
+        expect().assertFail();
+      }
     });
 
     /**

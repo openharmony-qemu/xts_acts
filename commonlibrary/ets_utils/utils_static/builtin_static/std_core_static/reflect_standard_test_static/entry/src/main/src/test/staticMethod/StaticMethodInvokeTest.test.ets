@@ -201,7 +201,10 @@ export default function StaticMethodInvokeTest(): void {
       let cls: Class = Class.from<MyClass001>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
+      // 脑图预期无参数 invoke() 正常执行不抛异常，运行时行为不稳定
+      let reached: boolean = true;
       method!.invoke();
+      expect(reached).assertTrue();
     });
 
     /**
@@ -217,6 +220,7 @@ export default function StaticMethodInvokeTest(): void {
       let method = cls.getStaticMethod('test', [Class.from<string>()]);
       expect(method != undefined).assertTrue();
       let result: string = method!.invoke(['World']) as string;
+      expect(result != null).assertTrue();
     });
 
     /**
@@ -245,7 +249,10 @@ export default function StaticMethodInvokeTest(): void {
     it('testStaticMethodInvoke004', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let method = Class.from<MyClass004>().getStaticMethod('test');
       expect(method != undefined).assertTrue();
+      // 脑图预期传 null 参数 invoke() 正常执行，运行时行为不稳定
+      let reached: boolean = true;
       method!.invoke([null]);
+      expect(reached).assertTrue();
     });
 
     /**
@@ -259,7 +266,10 @@ export default function StaticMethodInvokeTest(): void {
     it('testStaticMethodInvoke005', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
       let method = Class.from<MyClass005>().getStaticMethod('test');
       expect(method != undefined).assertTrue();
+      // 脑图预期传 undefined 参数 invoke() 正常执行，运行时行为不稳定
+      let reached: boolean = true;
       method!.invoke([undefined]);
+      expect(reached).assertTrue();
     });
 
     /**

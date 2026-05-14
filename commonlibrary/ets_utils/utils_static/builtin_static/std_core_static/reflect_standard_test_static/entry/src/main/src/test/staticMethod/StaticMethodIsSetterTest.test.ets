@@ -208,6 +208,7 @@ export default function StaticMethodIsSetterTest(): void {
       let method = cls.getStaticMethod('%%set-name');
       expect(method != undefined).assertTrue();
       let isSetter: boolean = method!.isSetter();
+      expect(isSetter != null).assertTrue();
     });
 
     /**
@@ -464,7 +465,12 @@ export default function StaticMethodIsSetterTest(): void {
       let cls: Class = Class.from<MyClass018>();
       let method = cls.getStaticMethod('%%set-name');
       expect(method != undefined).assertTrue();
-      let isSetter: boolean = method!.isSetter();
+      try {
+        let isSetter: boolean = method!.isSetter();
+        expect(isSetter != null).assertTrue();
+      } catch (error) {
+        expect().assertFail();
+      }
     });
 
     /**

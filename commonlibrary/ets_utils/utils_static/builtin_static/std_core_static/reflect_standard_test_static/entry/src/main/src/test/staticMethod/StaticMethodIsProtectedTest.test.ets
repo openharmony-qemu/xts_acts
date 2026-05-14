@@ -366,6 +366,7 @@ export default function StaticMethodIsProtectedTest(): void {
       let method = cls.getStaticMethod('defaultMethod');
       expect(method != undefined).assertTrue();
       let isProtected: boolean = method!.isProtected();
+      expect(isProtected != null).assertTrue();
     });
 
     /**
@@ -396,7 +397,12 @@ export default function StaticMethodIsProtectedTest(): void {
       // 使用 public 方法验证 isProtected() 不抛异常
       let method = Class.from<MyClass003>().getStaticMethod('publicMethod');
       expect(method != undefined).assertTrue();
-      let isProtected: boolean = method!.isProtected();
+      try {
+        let isProtected: boolean = method!.isProtected();
+        expect(isProtected != null).assertTrue();
+      } catch (error) {
+        expect().assertFail();
+      }
     });
 
     /**

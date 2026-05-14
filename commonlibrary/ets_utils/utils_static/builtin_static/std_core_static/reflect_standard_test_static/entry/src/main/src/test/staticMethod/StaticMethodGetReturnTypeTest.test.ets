@@ -151,6 +151,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
       let returnType: Class = method!.getReturnType();
+      expect(returnType != null).assertTrue();
     });
 
     /**
@@ -375,7 +376,12 @@ export default function StaticMethodGetReturnTypeTest(): void {
       let cls: Class = Class.from<MyClass014>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      let returnType: Class = method!.getReturnType();
+      try {
+        let returnType: Class = method!.getReturnType();
+        expect(returnType != null).assertTrue();
+      } catch (error) {
+        expect().assertFail();
+      }
     });
 
     /**

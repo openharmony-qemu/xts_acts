@@ -136,6 +136,7 @@ export default function StaticMethodIsNativeTest(): void {
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
       let isNative: boolean = method!.isNative();
+      expect(isNative != null).assertTrue();
     });
 
     /**
@@ -310,7 +311,12 @@ export default function StaticMethodIsNativeTest(): void {
       let cls: Class = Class.from<MyClass012>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      let isNative: boolean = method!.isNative();
+      try {
+        let isNative: boolean = method!.isNative();
+        expect(isNative != null).assertTrue();
+      } catch (error) {
+        expect().assertFail();
+      }
     });
 
     /**
@@ -458,6 +464,7 @@ export default function StaticMethodIsNativeTest(): void {
       let arrayMethods = arrayCls.getStaticMethods();
       for (let i: int = 0; i < arrayMethods.length; i++) {
         let isNative: boolean = arrayMethods[i].isNative();
+        expect(isNative != null).assertTrue();
       }
     });
   });

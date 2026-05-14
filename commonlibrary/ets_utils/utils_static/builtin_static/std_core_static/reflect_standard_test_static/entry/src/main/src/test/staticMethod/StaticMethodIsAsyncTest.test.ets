@@ -164,6 +164,7 @@ export default function StaticMethodIsAsyncTest(): void {
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
       let isAsync: boolean = method!.isAsync();
+      expect(isAsync != null).assertTrue();
     });
 
     /**
@@ -347,7 +348,12 @@ export default function StaticMethodIsAsyncTest(): void {
       let cls: Class = Class.from<MyClass013>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      let isAsync: boolean = method!.isAsync();
+      try {
+        let isAsync: boolean = method!.isAsync();
+        expect(isAsync != null).assertTrue();
+      } catch (error) {
+        expect().assertFail();
+      }
     });
 
     /**

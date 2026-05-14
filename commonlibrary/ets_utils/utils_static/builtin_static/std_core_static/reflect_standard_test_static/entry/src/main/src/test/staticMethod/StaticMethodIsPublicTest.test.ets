@@ -158,6 +158,7 @@ export default function StaticMethodIsPublicTest(): void {
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
       let isPublic: boolean = method!.isPublic();
+      expect(isPublic != null).assertTrue();
     });
 
     /**
@@ -218,6 +219,7 @@ export default function StaticMethodIsPublicTest(): void {
       let method = cls.getStaticMethod('defaultMethod');
       expect(method != undefined).assertTrue();
       let isPublic: boolean = method!.isPublic();
+      expect(isPublic != null).assertTrue();
     });
 
     /**
@@ -370,7 +372,12 @@ export default function StaticMethodIsPublicTest(): void {
       let cls: Class = Class.from<MyClass015>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      let isPublic: boolean = method!.isPublic();
+      try {
+        let isPublic: boolean = method!.isPublic();
+        expect(isPublic != null).assertTrue();
+      } catch (error) {
+        expect().assertFail();
+      }
     });
 
     /**

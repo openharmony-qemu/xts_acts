@@ -244,7 +244,12 @@ export default function StaticMethodGetNameTest(): void {
       let cls: Class = Class.from<MyClass009>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      let name: string = method!.getName();
+      try {
+        let name: string = method!.getName();
+        expect(name != null).assertTrue();
+      } catch (error) {
+        expect().assertFail();
+      }
     });
 
     /**

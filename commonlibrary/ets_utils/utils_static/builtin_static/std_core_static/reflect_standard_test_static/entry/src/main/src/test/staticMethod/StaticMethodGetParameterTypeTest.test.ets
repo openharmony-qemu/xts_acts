@@ -148,6 +148,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
       let paramType =method!.getParameterType(0);
+      expect(paramType != null).assertTrue();
     });
 
     /**
@@ -415,7 +416,12 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<MyClass018>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      let paramType =method!.getParameterType(0);
+      try {
+        let paramType =method!.getParameterType(0);
+        expect(paramType != null).assertTrue();
+      } catch (error) {
+        expect().assertFail();
+      }
     });
 
     /**
