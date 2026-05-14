@@ -131,6 +131,7 @@ public:
     int32_t ReadMultiFilesFunc();
     int32_t GetBframes(OH_AVFormat *format);
     int32_t InitBuffer(OHNativeWindowBuffer *&ohNativeWindowBuffer, OH_NativeBuffer *&nativeBuffer, uint8_t *&dst);
+    void InputEnableRepeatSleep();
     struct EncoderConfig {
         uint32_t width = 0;             // 视频宽度（默认值）
         uint32_t height = 0;            // 视频高度（默认值）
