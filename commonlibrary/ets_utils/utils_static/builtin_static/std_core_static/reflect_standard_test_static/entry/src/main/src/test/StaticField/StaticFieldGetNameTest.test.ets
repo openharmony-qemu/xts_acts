@@ -1,0 +1,1162 @@
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
+import Utils from '../Util.test';
+import { StaticField, ReflectClass, createReflectClass } from './StaticFieldReflect';
+
+function reflectMyClass001(): ReflectClass {
+  let cls = createReflectClass('MyClass001');
+  cls.addStaticField('name', createReflectClass('string'), 'test', true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass004(): ReflectClass {
+  let cls = createReflectClass('MyClass004');
+  cls.addStaticField('data', createReflectClass('string'), 'value', true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass005(): ReflectClass {
+  let cls = createReflectClass('MyClass005');
+  cls.addStaticField('fieldName', createReflectClass('string'), 'test', true, false, false, false);
+  cls.addStaticField('_privateField', createReflectClass('string'), 'private', true, false, false, false);
+  cls.addStaticField('$decorated', createReflectClass('string'), 'decorated', true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass006(): ReflectClass {
+  let cls = createReflectClass('MyClass006');
+  cls.addStaticField('field123', createReflectClass('string'), 'numeric', true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass007(): ReflectClass {
+  let cls = createReflectClass('MyClass007');
+  cls.addStaticField('用户名', createReflectClass('string'), 'username', true, false, false, false);
+  cls.addStaticField('données', createReflectClass('string'), 'data', true, false, false, false);
+  cls.addStaticField('データ', createReflectClass('string'), 'data', true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass008(): ReflectClass {
+  let cls = createReflectClass('MyClass008');
+  cls.addStaticField('fieldWithSpace', createReflectClass('string'), 'value', true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass010(): ReflectClass {
+  let cls = createReflectClass('MyClass010');
+  cls.addStaticField('veryVeryVeryVeryVeryVeryVeryLongFieldName', createReflectClass('string'), 'long', true, false,
+    false, false);
+  return cls;
+}
+
+function reflectMyClass011(): ReflectClass {
+  let cls = createReflectClass('MyClass011');
+  cls.addStaticField('field_name', createReflectClass('string'), 'underscore', true, false, false, false);
+  cls.addStaticField('field_name2', createReflectClass('string'), 'hyphen', true, false, false, false);
+  cls.addStaticField('field_name3', createReflectClass('string'), 'at', true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass015(): ReflectClass {
+  let cls = createReflectClass('MyClass015');
+  cls.addStaticField('a', createReflectClass('int'), 1, true, false, false, false);
+  cls.addStaticField('_', createReflectClass('int'), 2, true, false, false, false);
+  cls.addStaticField('$', createReflectClass('int'), 3, true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass016(): ReflectClass {
+  let cls = createReflectClass('MyClass016');
+  cls.addStaticField('pubField', createReflectClass('string'), 'public', true, false, false, false);
+  cls.addStaticField('privField', createReflectClass('string'), 'private', false, true, false, false);
+  cls.addStaticField('protField', createReflectClass('string'), 'protected', false, false, true, false);
+  cls.addStaticField('interField', createReflectClass('string'), 'internal', true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass017(): ReflectClass {
+  let cls = createReflectClass('MyClass017');
+  cls.addStaticField('strField', createReflectClass('string'), 'text', true, false, false, false);
+  cls.addStaticField('numField', createReflectClass('int'), 100, true, false, false, false);
+  cls.addStaticField('boolField', createReflectClass('boolean'), true, true, false, false, false);
+  cls.addStaticField('arrField', createReflectClass('array'), '[1,2,3]', true, false, false, false);
+  cls.addStaticField('objField', createReflectClass('object'), '{}', true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass020(): ReflectClass {
+  let cls = createReflectClass('MyClass020');
+  cls.addStaticField('name', createReflectClass('string'), 'test', true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass021(): ReflectClass {
+  let cls = createReflectClass('MyClass021');
+  cls.addStaticField('readonlyField', createReflectClass('string'), 'value', true, false, false, true);
+  return cls;
+}
+
+function reflectMyClass022(): ReflectClass {
+  let cls = createReflectClass('MyClass022');
+  cls.addStaticField('privValue', createReflectClass('string'), 'private', false, true, false, false);
+  cls.addStaticField('protValue', createReflectClass('string'), 'protected', false, false, true, false);
+  cls.addStaticField('pubValue', createReflectClass('string'), 'public', true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass023(): ReflectClass {
+  let cls = createReflectClass('MyClass023');
+  cls.addStaticField('data', createReflectClass('string'), 'test', true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass024(): ReflectClass {
+  let cls = createReflectClass('MyClass024');
+  cls.addStaticField('count', createReflectClass('int'), 0, true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass025(): ReflectClass {
+  let cls = createReflectClass('MyClass025');
+  cls.addStaticField('value', createReflectClass('int'), 100, true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass026(): ReflectClass {
+  let cls = createReflectClass('MyClass026');
+  cls.addStaticField('field1', createReflectClass('string'), 'test1', true, false, false, false);
+  cls.addStaticField('field2', createReflectClass('string'), 'test2', true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass027(): ReflectClass {
+  let cls = createReflectClass('MyClass027');
+  cls.addStaticField('pubNum', createReflectClass('int'), 1, true, false, false, false);
+  cls.addStaticField('privNum', createReflectClass('int'), 2, false, true, false, false);
+  cls.addStaticField('protNum', createReflectClass('int'), 3, false, false, true, false);
+  return cls;
+}
+
+function reflectMyClass030(): ReflectClass {
+  let cls = createReflectClass('MyClass030');
+  cls.addStaticField('name', createReflectClass('string'), 'test', true, false, false, false);
+  cls.addStaticField('age', createReflectClass('int'), 25, true, false, false, false);
+  cls.addStaticField('active', createReflectClass('boolean'), true, true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass031(): ReflectClass {
+  let cls = createReflectClass('MyClass031');
+  cls.addStaticField('userName', createReflectClass('string'), 'user', true, false, false, false);
+  cls.addStaticField('userEmail', createReflectClass('string'), 'email@example.com', true, false, false, false);
+  cls.addStaticField('userId', createReflectClass('int'), 123, true, false, false, false);
+  cls.addStaticField('data', createReflectClass('string'), 'other', true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass032(): ReflectClass {
+  let cls = createReflectClass('MyClass032');
+  cls.addStaticField('zebra', createReflectClass('string'), 'last', true, false, false, false);
+  cls.addStaticField('apple', createReflectClass('string'), 'first', true, false, false, false);
+  cls.addStaticField('banana', createReflectClass('string'), 'middle', true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass033(): ReflectClass {
+  let cls = createReflectClass('MyClass033');
+  cls.addStaticField('data', createReflectClass('string'), 'value', true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass034(): ReflectClass {
+  let cls = createReflectClass('MyClass034');
+  cls.addStaticField('user_name', createReflectClass('string'), 'value', true, false, false, false);
+  cls.addStaticField('firstName', createReflectClass('string'), 'name', true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass035(): ReflectClass {
+  let cls = createReflectClass('MyClass035');
+  cls.addStaticField('strUserName', createReflectClass('string'), 'user', true, false, false, false);
+  cls.addStaticField('nAge', createReflectClass('int'), 25, true, false, false, false);
+  cls.addStaticField('bIsActive', createReflectClass('boolean'), true, true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass036(): ReflectClass {
+  let cls = createReflectClass('MyClass036');
+  cls.addStaticField('userName', createReflectClass('string'), 'user', true, false, false, false);
+  cls.addStaticField('firstName', createReflectClass('string'), 'first', true, false, false, false);
+  cls.addStaticField('isActive', createReflectClass('boolean'), true, true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass037(): ReflectClass {
+  let cls = createReflectClass('MyClass037');
+  cls.addStaticField('UserName', createReflectClass('string'), 'user', true, false, false, false);
+  cls.addStaticField('FirstName', createReflectClass('string'), 'first', true, false, false, false);
+  cls.addStaticField('IsActive', createReflectClass('boolean'), true, true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass038(): ReflectClass {
+  let cls = createReflectClass('MyClass038');
+  cls.addStaticField('user_name', createReflectClass('string'), 'user', true, false, false, false);
+  cls.addStaticField('first_name', createReflectClass('string'), 'first', true, false, false, false);
+  cls.addStaticField('is_active', createReflectClass('boolean'), true, true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass040(): ReflectClass {
+  let cls = createReflectClass('MyClass040');
+  cls.addStaticField('classField', createReflectClass('string'), 'value', true, false, false, false);
+  cls.addStaticField('functionField', createReflectClass('string'), 'func', true, false, false, false);
+  cls.addStaticField('returnField', createReflectClass('string'), 'ret', true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass041(): ReflectClass {
+  let cls = createReflectClass('MyClass041');
+  cls.addStaticField('smileEmoji', createReflectClass('string'), 'smile', true, false, false, false);
+  cls.addStaticField('fireEmoji', createReflectClass('string'), 'fire', true, false, false, false);
+  cls.addStaticField('hundredEmoji', createReflectClass('string'), '100', true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass042(): ReflectClass {
+  let cls = createReflectClass('MyClass042');
+  cls.addStaticField('value', createReflectClass('int'), 100, true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass043(): ReflectClass {
+  let cls = createReflectClass('MyClass043');
+  cls.addStaticField('field1', createReflectClass('int'), 1, true, false, false, false);
+  cls.addStaticField('field2', createReflectClass('string'), '2', true, false, false, false);
+  cls.addStaticField('field3', createReflectClass('boolean'), true, true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass044(): ReflectClass {
+  let cls = createReflectClass('MyClass044');
+  cls.addStaticField('targetField', createReflectClass('string'), 'target', true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass045(): ReflectClass {
+  let cls = createReflectClass('MyClass045');
+  cls.addStaticField('staticValue', createReflectClass('string'), 'static', true, false, false, false);
+  cls.addInstanceField('instanceValue', createReflectClass('string'), true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass046(): ReflectClass {
+  let cls = createReflectClass('MyClass046');
+  cls.addStaticField('name', createReflectClass('string'), 'test', true, false, false, false);
+  cls.addStaticField('age', createReflectClass('int'), 25, true, false, false, false);
+  cls.addStaticField('active', createReflectClass('boolean'), true, true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass047(): ReflectClass {
+  let cls = createReflectClass('MyClass047');
+  cls.addStaticField('data', createReflectClass('string'), 'value', true, false, false, false);
+  cls.addStaticField('count', createReflectClass('int'), 0, true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass048(): ReflectClass {
+  let cls = createReflectClass('MyClass048');
+  cls.addStaticField('data', createReflectClass('string'), 'value', true, false, false, false);
+  return cls;
+}
+
+function reflectConfig049(): ReflectClass {
+  let cls = createReflectClass('Config049');
+  cls.addStaticField('API_KEY', createReflectClass('string'), 'key', true, false, false, false);
+  cls.addStaticField('API_SECRET', createReflectClass('string'), 'secret', true, false, false, false);
+  cls.addStaticField('API_ENDPOINT', createReflectClass('string'), 'url', true, false, false, false);
+  cls.addStaticField('TIMEOUT', createReflectClass('int'), 30000, true, false, false, false);
+  return cls;
+}
+
+function reflectAppConfig050(): ReflectClass {
+  let cls = createReflectClass('AppConfig050');
+  cls.addStaticField('APP_NAME', createReflectClass('string'), 'MyApp', true, false, false, false);
+  cls.addStaticField('APP_VERSION', createReflectClass('string'), '1.0.0', true, false, false, false);
+  cls.addStaticField('DEBUG_MODE', createReflectClass('boolean'), false, true, false, false, false);
+  return cls;
+}
+
+function reflectDataModel051(): ReflectClass {
+  let cls = createReflectClass('DataModel051');
+  cls.addStaticField('id', createReflectClass('int'), 1, true, false, false, false);
+  cls.addStaticField('name', createReflectClass('string'), 'Test', true, false, false, false);
+  cls.addStaticField('active', createReflectClass('boolean'), true, true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass052(): ReflectClass {
+  let cls = createReflectClass('MyClass052');
+  cls.addStaticField('importantData', createReflectClass('string'), 'critical', true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass053(): ReflectClass {
+  let cls = createReflectClass('MyClass053');
+  cls.addStaticField('TIMEOUT', createReflectClass('int'), 30000, true, false, false, false);
+  cls.addStaticField('API_KEY', createReflectClass('string'), 'secret', false, true, false, false);
+  return cls;
+}
+
+function reflectMyClass054(): ReflectClass {
+  let cls = createReflectClass('MyClass054');
+  cls.addStaticField('USERNAME', createReflectClass('string'), 'user', true, false, false, false);
+  cls.addStaticField('EMAIL', createReflectClass('string'), 'user@example.com', true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass055(): ReflectClass {
+  let cls = createReflectClass('MyClass055');
+  cls.addStaticField('dynamicField', createReflectClass('string'), 'value', true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass056(): ReflectClass {
+  let cls = createReflectClass('MyClass056');
+  cls.addStaticField('user_name', createReflectClass('string'), 'user', true, false, false, false);
+  cls.addStaticField('first_name', createReflectClass('string'), 'first', true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass057(): ReflectClass {
+  let cls = createReflectClass('MyClass057');
+  cls.addStaticField('UserName', createReflectClass('string'), 'user1', true, false, false, false);
+  cls.addStaticField('username', createReflectClass('string'), 'user2', true, false, false, false);
+  cls.addStaticField('USERNAME', createReflectClass('string'), 'user3', true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass058(): ReflectClass {
+  let cls = createReflectClass('MyClass058');
+  cls.addStaticField('用户名', createReflectClass('string'), 'username_zh', true, false, false, false);
+  cls.addStaticField('username', createReflectClass('string'), 'username_en', true, false, false, false);
+  cls.addStaticField('nom_d_utilisateur', createReflectClass('string'), 'username_fr', true, false, false, false);
+  return cls;
+}
+
+function reflectMyClass059(): ReflectClass {
+  let cls = createReflectClass('MyClass059');
+  cls.addStaticField('TIMEOUT', createReflectClass('int'), 0, true, false, false, false);
+  cls.addStaticField('RETRY_COUNT', createReflectClass('int'), 0, true, false, false, false);
+  return cls;
+}
+
+function reflectServiceConfig060(): ReflectClass {
+  let cls = createReflectClass('ServiceConfig060');
+  cls.addStaticField('SERVICE_NAME', createReflectClass('string'), 'UserService', true, false, false, false);
+  cls.addStaticField('SERVICE_PORT', createReflectClass('int'), 8080, true, false, false, false);
+  cls.addStaticField('SERVICE_HOST', createReflectClass('string'), '0.0.0.0', true, false, false, false);
+  return cls;
+}
+
+function reflectDatabaseConfig061(): ReflectClass {
+  let cls = createReflectClass('DatabaseConfig061');
+  cls.addStaticField('DB_HOST', createReflectClass('string'), '127.0.0.1', true, false, false, false);
+  cls.addStaticField('DB_PORT', createReflectClass('int'), 5432, true, false, false, false);
+  cls.addStaticField('DB_NAME', createReflectClass('string'), 'app_db', true, false, false, false);
+  cls.addStaticField('DB_USER', createReflectClass('string'), 'admin', true, false, false, false);
+  return cls;
+}
+
+function reflectRedisConfig062(): ReflectClass {
+  let cls = createReflectClass('RedisConfig062');
+  cls.addStaticField('REDIS_HOST', createReflectClass('string'), '127.0.0.1', true, false, false, false);
+  cls.addStaticField('REDIS_PORT', createReflectClass('int'), 6379, true, false, false, false);
+  cls.addStaticField('REDIS_DB', createReflectClass('int'), 0, true, false, false, false);
+  cls.addStaticField('REDIS_PASSWORD', createReflectClass('string'), '', true, false, false, false);
+  return cls;
+}
+
+function reflectCacheConfig063(): ReflectClass {
+  let cls = createReflectClass('CacheConfig063');
+  cls.addStaticField('CACHE_ENABLED', createReflectClass('boolean'), true, true, false, false, false);
+  cls.addStaticField('CACHE_TTL', createReflectClass('int'), 3600, true, false, false, false);
+  cls.addStaticField('CACHE_PREFIX', createReflectClass('string'), 'app:', true, false, false, false);
+  return cls;
+}
+
+function reflectQueueConfig064(): ReflectClass {
+  let cls = createReflectClass('QueueConfig064');
+  cls.addStaticField('QUEUE_CONNECTION', createReflectClass('string'), 'redis', true, false, false, false);
+  cls.addStaticField('QUEUE_DEFAULT', createReflectClass('string'), 'default', true, false, false, false);
+  cls.addStaticField('QUEUE_RETRY_AFTER', createReflectClass('int'), 90, true, false, false, false);
+  return cls;
+}
+
+function reflectMailConfig065(): ReflectClass {
+  let cls = createReflectClass('MailConfig065');
+  cls.addStaticField('MAIL_MAILER', createReflectClass('string'), 'smtp', true, false, false, false);
+  cls.addStaticField('MAIL_FROM', createReflectClass('string'), 'noreply@example.com', true, false, false, false);
+  cls.addStaticField('MAIL_FROM_NAME', createReflectClass('string'), 'App Notifications', true, false, false, false);
+  return cls;
+}
+
+function reflectFilesystemConfig066(): ReflectClass {
+  let cls = createReflectClass('FilesystemConfig066');
+  cls.addStaticField('FILESYSTEM_DEFAULT', createReflectClass('string'), 'local', true, false, false, false);
+  cls.addStaticField('FILESYSTEM_DISKS', createReflectClass('string'), 'local,public,s3', true, false, false, false);
+  return cls;
+}
+
+function reflectBroadcastConfig067(): ReflectClass {
+  let cls = createReflectClass('BroadcastConfig067');
+  cls.addStaticField('BROADCAST_DRIVER', createReflectClass('string'), 'log', true, false, false, false);
+  cls.addStaticField('BROADCAST_DEFAULT', createReflectClass('string'), 'pusher', true, false, false, false);
+  return cls;
+}
+
+function reflectHashingConfig068(): ReflectClass {
+  let cls = createReflectClass('HashingConfig068');
+  cls.addStaticField('HASHING_DRIVER', createReflectClass('string'), 'bcrypt', true, false, false, false);
+  cls.addStaticField('HASHING_ROUNDS', createReflectClass('int'), 12, true, false, false, false);
+  return cls;
+}
+
+function reflectSessionConfig069(): ReflectClass {
+  let cls = createReflectClass('SessionConfig069');
+  cls.addStaticField('SESSION_DRIVER', createReflectClass('string'), 'file', true, false, false, false);
+  cls.addStaticField('SESSION_LIFETIME', createReflectClass('int'), 120, true, false, false, false);
+  cls.addStaticField('SESSION_COOKIE', createReflectClass('string'), 'app_session', true, false, false, false);
+  return cls;
+}
+
+function reflectViewConfig070(): ReflectClass {
+  let cls = createReflectClass('ViewConfig070');
+  cls.addStaticField('VIEW_PATHS', createReflectClass('string'), 'resources/views', true, false, false, false);
+  cls.addStaticField('VIEW_COMPILED', createReflectClass('string'), 'storage/views', true, false, false, false);
+  return cls;
+}
+
+function reflectLoggingConfig071(): ReflectClass {
+  let cls = createReflectClass('LoggingConfig071');
+  cls.addStaticField('LOG_CHANNEL', createReflectClass('string'), 'stack', true, false, false, false);
+  cls.addStaticField('LOG_LEVEL', createReflectClass('string'), 'debug', true, false, false, false);
+  cls.addStaticField('LOG_PATH', createReflectClass('string'), 'storage/logs', true, false, false, false);
+  return cls;
+}
+
+function reflectFeatureFlags072(): ReflectClass {
+  let cls = createReflectClass('FeatureFlags072');
+  cls.addStaticField('NEW_UI', createReflectClass('boolean'), false, true, false, false, false);
+  cls.addStaticField('DARK_MODE', createReflectClass('boolean'), false, true, false, false, false);
+  cls.addStaticField('BETA_FEATURES', createReflectClass('boolean'), false, true, false, false, false);
+  return cls;
+}
+
+function findFieldsByPattern(cls: ReflectClass, pattern: string): StaticField[] {
+  let fields = cls.getDeclaredStaticFields();
+  let matchedFields: StaticField[] = [];
+  for (let i = 0; i < fields.length; i++) {
+    let fieldName = fields[i].getName();
+    if (fieldName.includes(pattern)) {
+      matchedFields.push(fields[i]);
+    }
+  }
+  return matchedFields;
+}
+
+function checkDuplicateFieldNames(cls: ReflectClass): void {
+  let fields = cls.getDeclaredStaticFields();
+  let nameSet = new Set<string>();
+  let duplicates: string[] = [];
+  for (let i = 0; i < fields.length; i++) {
+    let fieldName = fields[i].getName();
+    if (nameSet.has(fieldName)) {
+      duplicates.push(fieldName);
+    } else {
+      nameSet.add(fieldName);
+    }
+  }
+  if (duplicates.length > 0) {
+    console.info("Duplicate fields found: " + duplicates.join(", "));
+  } else {
+    console.info("No duplicate fields");
+  }
+}
+
+function toCamelCase(fieldName: string): string {
+  let result: string = '';
+  let upperNext: boolean = false;
+  for (let i = 0; i < fieldName.length; i++) {
+    let ch: string = fieldName[i];
+    if (ch === '_') {
+      upperNext = true;
+    } else if (upperNext) {
+      result += ch.toUpperCase();
+      upperNext = false;
+    } else {
+      result += ch;
+    }
+  }
+  return result;
+}
+
+function toSnakeCase(fieldName: string): string {
+  let result: string = '';
+  for (let i = 0; i < fieldName.length; i++) {
+    let ch: string = fieldName[i];
+    if (ch >= 'A' && ch <= 'Z') {
+      result += '_' + ch.toLowerCase();
+    } else {
+      result += ch;
+    }
+  }
+  return result;
+}
+
+function getFieldNames(cls: ReflectClass): string[] {
+  let fields = cls.getDeclaredStaticFields();
+  let names: string[] = [];
+  for (let i = 0; i < fields.length; i++) {
+    names.push(fields[i].getName());
+  }
+  return names;
+}
+
+function createFieldMap(cls: ReflectClass): Map<string, StaticField> {
+  let fields = cls.getDeclaredStaticFields();
+  let fieldMap = new Map<string, StaticField>();
+  for (let i = 0; i < fields.length; i++) {
+    let fieldName = fields[i].getName();
+    fieldMap.set(fieldName, fields[i]);
+  }
+  return fieldMap;
+}
+
+function hasFieldWithName(cls: ReflectClass, fieldName: string): boolean {
+  let fields = cls.getDeclaredStaticFields();
+  for (let i = 0; i < fields.length; i++) {
+    if (fields[i].getName() === fieldName) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function filterFieldsByPrefix(cls: ReflectClass, prefix: string): StaticField[] {
+  let fields = cls.getDeclaredStaticFields();
+  let filtered: StaticField[] = [];
+  for (let i = 0; i < fields.length; i++) {
+    let fieldName = fields[i].getName();
+    if (fieldName.startsWith(prefix)) {
+      filtered.push(fields[i]);
+    }
+  }
+  return filtered;
+}
+
+function getConfigMap(cls: ReflectClass): Map<string, string> {
+  let fields = cls.getDeclaredStaticFields();
+  let configMap = new Map<string, string>();
+  for (let i = 0; i < fields.length; i++) {
+    let fieldName = fields[i].getName();
+    let value = fields[i].getValue();
+    configMap.set(fieldName, String(value));
+  }
+  return configMap;
+}
+
+function serializeFields(cls: ReflectClass): string {
+  let fields = cls.getDeclaredStaticFields();
+  let obj: Record<string, string> = {};
+  for (let i = 0; i < fields.length; i++) {
+    let fieldName = fields[i].getName();
+    let value = fields[i].getValue();
+    obj[fieldName] = String(value);
+  }
+  return JSON.stringify(obj);
+}
+
+function logFieldAccess(field: StaticField): void {
+  let fieldName = field.getName();
+  let ownerName = field.getOwner().getName();
+  let timestamp = new Date().toISOString();
+  console.info(`[${timestamp}] Accessed ${ownerName}.${fieldName}`);
+}
+
+function generateFieldsDoc(cls: ReflectClass): string {
+  let fields = cls.getDeclaredStaticFields();
+  let doc = `# Static Fields\n\n`;
+  for (let i = 0; i < fields.length; i++) {
+    let field = fields[i];
+    let fieldName = field.getName();
+    let typeName = field.getType().getName();
+    let access = field.isPublic() ? 'public' : (field.isPrivate() ? 'private' : 'protected');
+    doc += `- **${fieldName}** (${access} ${typeName})\n`;
+  }
+  return doc;
+}
+
+function validateRequiredFields(cls: ReflectClass, requiredFields: string[]): boolean {
+  let fieldNames = new Set<string>();
+  let fields = cls.getDeclaredStaticFields();
+  for (let i = 0; i < fields.length; i++) {
+    fieldNames.add(fields[i].getName());
+  }
+  for (let i = 0; i < requiredFields.length; i++) {
+    if (!fieldNames.has(requiredFields[i])) {
+      console.info(`Missing required field: ${requiredFields[i]}`);
+      return false;
+    }
+  }
+  return true;
+}
+
+function getFieldValueByName(cls: ReflectClass, fieldName: string): string | null {
+  let fields = cls.getDeclaredStaticFields();
+  for (let i = 0; i < fields.length; i++) {
+    if (fields[i].getName() === fieldName) {
+      return String(fields[i].getValue());
+    }
+  }
+  return null;
+}
+
+function normalizeFieldName(fieldName: string): string {
+  let result: string = '';
+  let upperNext: boolean = false;
+  for (let i = 0; i < fieldName.length; i++) {
+    let ch: string = fieldName[i];
+    if ((ch === '_' || ch === '-') && i + 1 < fieldName.length) {
+      upperNext = true;
+    } else if (upperNext) {
+      result += ch.toUpperCase();
+      upperNext = false;
+    } else {
+      result += ch;
+    }
+  }
+  return result;
+}
+
+function getFieldNamesNormalized(cls: ReflectClass): string[] {
+  let fields = cls.getDeclaredStaticFields();
+  let names: string[] = [];
+  for (let i = 0; i < fields.length; i++) {
+    let originalName = fields[i].getName();
+    let normalizedName = normalizeFieldName(originalName);
+    names.push(normalizedName);
+  }
+  return names;
+}
+
+function findConflictingFieldNames(cls: ReflectClass): string[][] {
+  let fields = cls.getDeclaredStaticFields();
+  let nameMap = new Map<string, string[]>();
+  for (let i = 0; i < fields.length; i++) {
+    let originalName = fields[i].getName();
+    let lowerName = originalName.toLowerCase();
+    if (!nameMap.has(lowerName)) {
+      nameMap.set(lowerName, []);
+    }
+    let existingNames: string[] | undefined = nameMap.get(lowerName);
+    if (existingNames !== undefined) {
+      existingNames.push(originalName);
+    }
+  }
+  let conflicts: string[][] = [];
+  let keys: string[] = [];
+  nameMap.forEach((names: string[], key: string): void => {
+    keys.push(key);
+  });
+  for (let i = 0; i < keys.length; i++) {
+    let key: string = keys[i];
+    let names: string[] | undefined = nameMap.get(key);
+    if (names !== undefined && names.length > 1) {
+      conflicts.push(names);
+    }
+  }
+  return conflicts;
+}
+
+function getLocalizedFieldName(cls: ReflectClass, locale: string): string[] {
+  let fields = cls.getDeclaredStaticFields();
+  let localizedNames: string[] = [];
+  for (let i = 0; i < fields.length; i++) {
+    let fieldName = fields[i].getName();
+    if (locale === 'zh') {
+      let hasChinese: boolean = false;
+      for (let j = 0; j < fieldName.length; j++) {
+        let code: number = fieldName.charCodeAt(j);
+        if (code >= 0x4E00 && code <= 0x9FA5) {
+          hasChinese = true;
+          break;
+        }
+      }
+      if (hasChinese) {
+        localizedNames.push(fieldName);
+      }
+    } else if (locale === 'en') {
+      let isAlpha: boolean = true;
+      for (let j = 0; j < fieldName.length; j++) {
+        let ch: string = fieldName[j];
+        if (!((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'))) {
+          isAlpha = false;
+          break;
+        }
+      }
+      if (isAlpha) {
+        localizedNames.push(fieldName);
+      }
+    }
+  }
+  return localizedNames;
+}
+
+function deserializeToFields(cls: ReflectClass, data: Record<string, string | number | boolean>): void {
+  let fields = cls.getDeclaredStaticFields();
+  let fieldMap = new Map<string, StaticField>();
+  for (let i = 0; i < fields.length; i++) {
+    fieldMap.set(fields[i].getName(), fields[i]);
+  }
+  let keys = Object.keys(data);
+  for (let i = 0; i < keys.length; i++) {
+    let key = keys[i];
+    let field = fieldMap.get(key);
+    if (field !== undefined) {
+      let value: string | number | boolean = data[key] as string | number | boolean;
+      field.setValue(value);
+      console.info(`Deserialized ${key}: ${value}`);
+    }
+  }
+}
+
+function countFieldsByNamePattern(cls: ReflectClass, pattern: string): number {
+  let fields = cls.getDeclaredStaticFields();
+  let count: number = 0;
+  for (let i = 0; i < fields.length; i++) {
+    if (fields[i].getName().includes(pattern)) {
+      count++;
+    }
+  }
+  return count;
+}
+
+function getFieldNameLengths(cls: ReflectClass): Map<string, number> {
+  let fields = cls.getDeclaredStaticFields();
+  let lengths = new Map<string, number>();
+  for (let i = 0; i < fields.length; i++) {
+    lengths.set(fields[i].getName(), fields[i].getName().length);
+  }
+  return lengths;
+}
+
+function getLongestFieldName(cls: ReflectClass): string {
+  let fields = cls.getDeclaredStaticFields();
+  let longest: string = '';
+  for (let i = 0; i < fields.length; i++) {
+    let name = fields[i].getName();
+    if (name.length > longest.length) {
+      longest = name;
+    }
+  }
+  return longest;
+}
+
+function getShortestFieldName(cls: ReflectClass): string {
+  let fields = cls.getDeclaredStaticFields();
+  let shortest: string = '';
+  for (let i = 0; i < fields.length; i++) {
+    let name = fields[i].getName();
+    if (shortest === '' || name.length < shortest.length) {
+      shortest = name;
+    }
+  }
+  return shortest;
+}
+
+function getFieldsBySuffix(cls: ReflectClass, suffix: string): StaticField[] {
+  let fields = cls.getDeclaredStaticFields();
+  let result: StaticField[] = [];
+  for (let i = 0; i < fields.length; i++) {
+    if (fields[i].getName().endsWith(suffix)) {
+      result.push(fields[i]);
+    }
+  }
+  return result;
+}
+
+function toUpperCaseNames(cls: ReflectClass): string[] {
+  let fields = cls.getDeclaredStaticFields();
+  let names: string[] = [];
+  for (let i = 0; i < fields.length; i++) {
+    names.push(fields[i].getName().toUpperCase());
+  }
+  return names;
+}
+
+function toLowerCaseNames(cls: ReflectClass): string[] {
+  let fields = cls.getDeclaredStaticFields();
+  let names: string[] = [];
+  for (let i = 0; i < fields.length; i++) {
+    names.push(fields[i].getName().toLowerCase());
+  }
+  return names;
+}
+
+class MyClass001 {
+  public static name: string = 'test';
+}
+
+class MyClass004 {
+  public static data: string = 'value';
+}
+
+class MyClass005 {
+  public static fieldName: string = 'test';
+  public static _privateField: string = 'private';
+  public static $decorated: string = 'decorated';
+}
+
+class MyClass006 {
+  public static field123: string = 'numeric';
+}
+
+class MyClass007 {
+  public static 用户名: string = 'username';
+  public static données: string = 'data';
+  public static データ: string = 'data';
+}
+
+class MyClass008 {
+  public static fieldWithSpace: string = 'value';
+}
+
+class MyClass010 {
+  public static veryVeryVeryVeryVeryVeryVeryLongFieldName: string = 'long';
+}
+
+class MyClass011 {
+  public static field_name: string = 'underscore';
+  public static field_name2: string = 'hyphen';
+  public static field_name3: string = 'at';
+}
+
+class MyClass015 {
+  public static a: number = 1;
+  public static _: number = 2;
+  public static $: number = 3;
+}
+
+class MyClass016 {
+  public static pubField: string = 'public';
+  private static privField: string = 'private';
+  protected static protField: string = 'protected';
+  public static interField: string = 'internal';
+}
+
+class MyClass017 {
+  public static strField: string = 'text';
+  public static numField: number = 100;
+  public static boolField: boolean = true;
+  public static arrField: number[] = [1, 2, 3];
+  public static objField: object = {};
+}
+
+class MyClass020 {
+  public static name: string = 'test';
+}
+
+class MyClass021 {
+  public static readonly readonlyField: string = 'value';
+}
+
+class MyClass022 {
+  private static privValue: string = 'private';
+  protected static protValue: string = 'protected';
+  public static pubValue: string = 'public';
+}
+
+class MyClass023 {
+  public static data: string = 'test';
+}
+
+class MyClass024 {
+  public static count: number = 0;
+}
+
+class MyClass025 {
+  public static value: number = 100;
+}
+
+class MyClass026 {
+  public static field1: string = 'test1';
+  public static field2: string = 'test2';
+}
+
+class MyClass027 {
+  public static pubNum: number = 1;
+  private static privNum: number = 2;
+  protected static protNum: number = 3;
+}
+
+class MyClass030 {
+  public static name: string = 'test';
+  public static age: number = 25;
+  public static active: boolean = true;
+}
+
+class MyClass031 {
+  public static userName: string = 'user';
+  public static userEmail: string = 'email@example.com';
+  public static userId: number = 123;
+  public static data: string = 'other';
+}
+
+class MyClass032 {
+  public static zebra: string = 'last';
+  public static apple: string = 'first';
+  public static banana: string = 'middle';
+}
+
+class MyClass033 {
+  public static data: string = 'value';
+}
+
+class MyClass034 {
+  public static user_name: string = 'value';
+  public static firstName: string = 'name';
+}
+
+class MyClass035 {
+  public static strUserName: string = 'user';
+  public static nAge: number = 25;
+  public static bIsActive: boolean = true;
+}
+
+class MyClass036 {
+  public static userName: string = 'user';
+  public static firstName: string = 'first';
+  public static isActive: boolean = true;
+}
+
+class MyClass037 {
+  public static UserName: string = 'user';
+  public static FirstName: string = 'first';
+  public static IsActive: boolean = true;
+}
+
+class MyClass038 {
+  public static user_name: string = 'user';
+  public static first_name: string = 'first';
+  public static is_active: boolean = true;
+}
+
+class MyClass040 {
+  public static classField: string = 'value';
+  public static functionField: string = 'func';
+  public static returnField: string = 'ret';
+}
+
+class MyClass041 {
+  public static smileEmoji: string = 'smile';
+  public static fireEmoji: string = 'fire';
+  public static hundredEmoji: string = '100';
+}
+
+class MyClass042 {
+  public static value: number = 100;
+}
+
+class MyClass043 {
+  public static field1: number = 1;
+  public static field2: string = '2';
+  public static field3: boolean = true;
+}
+
+class MyClass044 {
+  public static targetField: string = 'target';
+}
+
+class MyClass045 {
+  public static staticValue: string = 'static';
+  public instanceValue: string = 'instance';
+}
+
+class MyClass046 {
+  public static name: string = 'test';
+  public static age: number = 25;
+  public static active: boolean = true;
+}
+
+class MyClass047 {
+  public static data: string = 'value';
+  public static count: number = 0;
+}
+
+class MyClass048 {
+  public static data: string = 'value';
+}
+
+class Config049 {
+  public static API_KEY: string = 'key';
+  public static API_SECRET: string = 'secret';
+  public static API_ENDPOINT: string = 'url';
+  public static TIMEOUT: number = 30000;
+}
+
+class AppConfig050 {
+  public static APP_NAME: string = 'MyApp';
+  public static APP_VERSION: string = '1.0.0';
+  public static DEBUG_MODE: boolean = false;
+}
+
+class DataModel051 {
+  public static id: number = 1;
+  public static name: string = 'Test';
+  public static active: boolean = true;
+}
+
+class MyClass052 {
+  public static importantData: string = 'critical';
+}
+
+class MyClass053 {
+  public static TIMEOUT: number = 30000;
+  private static API_KEY: string = 'secret';
+}
+
+class MyClass054 {
+  public static USERNAME: string = 'user';
+  public static EMAIL: string = 'user@example.com';
+}
+
+class MyClass055 {
+  public static dynamicField: string = 'value';
+}
+
+class MyClass056 {
+  public static user_name: string = 'user';
+  public static first_name: string = 'first';
+}
+
+class MyClass057 {
+  public static UserName: string = 'user1';
+  public static username: string = 'user2';
+  public static USERNAME: string = 'user3';
+}
+
+class MyClass058 {
+  public static 用户名: string = 'username_zh';
+  public static username: string = 'username_en';
+  public static nom_d_utilisateur: string = 'username_fr';
+}
+
+class MyClass059 {
+  public static TIMEOUT: number = 0;
+  public static RETRY_COUNT: number = 0;
+}
+
+class ServiceConfig060 {
+  public static SERVICE_NAME: string = 'UserService';
+  public static SERVICE_PORT: number = 8080;
+  public static SERVICE_HOST: string = '0.0.0.0';
+}
+
+class DatabaseConfig061 {
+  public static DB_HOST: string = '127.0.0.1';
+  public static DB_PORT: number = 5432;
+  public static DB_NAME: string = 'app_db';
+  public static DB_USER: string = 'admin';
+}
+
+class RedisConfig062 {
+  public static REDIS_HOST: string = '127.0.0.1';
+  public static REDIS_PORT: number = 6379;
+  public static REDIS_DB: number = 0;
+  public static REDIS_PASSWORD: string = '';
+}
+
+class CacheConfig063 {
+  public static CACHE_ENABLED: boolean = true;
+  public static CACHE_TTL: number = 3600;
+  public static CACHE_PREFIX: string = 'app:';
+}
+
+class QueueConfig064 {
+  public static QUEUE_CONNECTION: string = 'redis';
+  public static QUEUE_DEFAULT: string = 'default';
+  public static QUEUE_RETRY_AFTER: number = 90;
+}
+
+class MailConfig065 {
+  public static MAIL_MAILER: string = 'smtp';
+  public static MAIL_FROM: string = 'noreply@example.com';
+  public static MAIL_FROM_NAME: string = 'App Notifications';
+}
+
+class FilesystemConfig066 {
+  public static FILESYSTEM_DEFAULT: string = 'local';
+  public static FILESYSTEM_DISKS: string = 'local,public,s3';
+}
+
+class BroadcastConfig067 {
+  public static BROADCAST_DRIVER: string = 'log';
+  public static BROADCAST_DEFAULT: string = 'pusher';
+}
+
+class HashingConfig068 {
+  public static HASHING_DRIVER: string = 'bcrypt';
+  public static HASHING_ROUNDS: number = 12;
+}
+
+class SessionConfig069 {
+  public static SESSION_DRIVER: string = 'file';
+  public static SESSION_LIFETIME: number = 120;
+  public static SESSION_COOKIE: string = 'app_session';
+}
+
+class ViewConfig070 {
+  public static VIEW_PATHS: string = 'resources/views';
+  public static VIEW_COMPILED: string = 'storage/views';
+}
+
+class LoggingConfig071 {
+  public static LOG_CHANNEL: string = 'stack';
+  public static LOG_LEVEL: string = 'debug';
+  public static LOG_PATH: string = 'storage/logs';
+}
+
+class FeatureFlags072 {
+  public static NEW_UI: boolean = false;
+  public static DARK_MODE: boolean = false;
+  public static BETA_FEATURES: boolean = false;
+}
+
