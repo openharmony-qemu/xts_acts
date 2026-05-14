@@ -51,7 +51,8 @@ async function driveFn() {
   await sleep(100);
   console.info(`UiDriver start`);
   let button = await driver.waitForComponent(ON.text('允许'), 5000);
-  if (button == null) {
+  let button2 = await driver.waitForComponent(ON.text('始终允许'), 500);
+  if (button == null && button2 == null) {
     let delegator = abilityDelegatorRegistry.getAbilityDelegator();
     let cmd = "hidumper -s WindowManagerService -a'-a'"
     await delegator.executeShellCommand(cmd);
@@ -59,6 +60,7 @@ async function driveFn() {
   console.info(`button is ${JSON.stringify(button)}`);
   await sleep(500);
   await button.click();
+  await button2.click();
 }
 
 export default function testsuite() {

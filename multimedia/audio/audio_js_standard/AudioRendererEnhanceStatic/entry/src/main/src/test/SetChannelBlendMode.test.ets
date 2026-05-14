@@ -50,9 +50,13 @@ export default function audioRendererTest() {
         let driver = Driver.create();
         await Utils.msSleep(1000);
         let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 2000);
+        let permissionButton2 = await driver.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), 2000);
         await Utils.msSleep(1000);
         if (permissionButton != null) {
           await permissionButton.click();
+        }
+        if (permissionButton2 != null) {
+          await permissionButton2.click();
         }
       } catch (err) {
         console.error('beforeAll failed, err: ' + err);
