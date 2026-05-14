@@ -176,5 +176,166 @@ export default function GraphicParagraphTest() {
         }
       })
 
+    /**
+     * @tc.name   testPunctuationOverflowTrue
+     * @tc.number SUB_GRAPHIC_Paragraph_punctuationOverflowTrue_0100
+     * @tc.desc   Test ParagraphStyle punctuationOverflow property set to true and verify via getParagraphStyle.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPunctuationOverflowTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testPunctuationOverflowTrue===="
+        console.info(msgStr + ' begin');
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            wordBreak: text.WordBreak.BREAK_WORD,
+            punctuationOverflow: true
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('测试标点溢出功能启用');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(300);
+
+          let resultStyle: text.ParagraphStyle = paragraph.getParagraphStyle();
+          expect(resultStyle.punctuationOverflow).assertTrue();
+          console.info(msgStr + ' punctuationOverflow is true');
+          console.info(msgStr + ' end');
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testPunctuationOverflowFalse
+     * @tc.number SUB_GRAPHIC_Paragraph_punctuationOverflowFalse_0200
+     * @tc.desc   Test ParagraphStyle punctuationOverflow property set to false and verify via getParagraphStyle.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPunctuationOverflowFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testPunctuationOverflowFalse===="
+        console.info(msgStr + ' begin');
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            wordBreak: text.WordBreak.BREAK_WORD,
+            punctuationOverflow: false
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('测试标点溢出功能禁用');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(300);
+
+          let resultStyle: text.ParagraphStyle = paragraph.getParagraphStyle();
+          expect(resultStyle.punctuationOverflow).assertFalse();
+          console.info(msgStr + ' punctuationOverflow is false');
+          console.info(msgStr + ' end');
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testPunctuationOverflowUndefined
+     * @tc.number SUB_GRAPHIC_Paragraph_punctuationOverflowUndefined_0300
+     * @tc.desc   Test ParagraphStyle punctuationOverflow property with undefined value and verify via getParagraphStyle.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPunctuationOverflowUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testPunctuationOverflowUndefined===="
+        console.info(msgStr + ' begin');
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            wordBreak: text.WordBreak.BREAK_WORD
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('测试标点溢出功能未设置');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(300);
+
+          let resultStyle: text.ParagraphStyle = paragraph.getParagraphStyle();
+          console.info(msgStr + ' punctuationOverflow is undefined', resultStyle.punctuationOverflow);
+          expect(resultStyle.punctuationOverflow).assertEqual(false);
+          console.info(msgStr + ' punctuationOverflow is undefined');
+          console.info(msgStr + ' end');
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testPunctuationOverflowExplicitUndefined
+     * @tc.number SUB_GRAPHIC_Paragraph_punctuationOverflowExplicitUndefined_0400
+     * @tc.desc   Test ParagraphStyle punctuationOverflow property explicitly set to undefined and verify via getParagraphStyle.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPunctuationOverflowExplicitUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testPunctuationOverflowExplicitUndefined===="
+        console.info(msgStr + ' begin');
+        let zhHansTextStyle: text.TextStyle = {
+          color: { alpha: 255, red: 0, green: 0, blue: 0 },
+          fontSize: 16.0
+        };
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: zhHansTextStyle,
+            wordBreak: text.WordBreak.BREAK_WORD,
+            punctuationOverflow: undefined
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('测试标点溢出功能显式设置为undefined');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(300);
+
+          let resultStyle: text.ParagraphStyle = paragraph.getParagraphStyle();
+          console.info(msgStr + ' punctuationOverflow is undefined', resultStyle.punctuationOverflow);
+          expect(resultStyle.punctuationOverflow).assertEqual(false);
+          console.info(msgStr + ' punctuationOverflow is explicitly set to undefined');
+          console.info(msgStr + ' end');
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
   })
 }
