@@ -901,3 +901,1366 @@ function reflectSchedulerConfig082(): ReflectClass {
   return cls;
 }
 
+export default function StaticFieldSetValueTest(): void {
+  describe('StaticFieldSetValueTest', (): void => {
+    beforeAll((): void => {
+    });
+    beforeEach(async (): Promise<void> => {
+      await Utils.msSleep(30);
+    });
+    afterEach((): void => {
+    });
+    afterAll((): void => {
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_0100
+     * @tc.name testStaticFieldSetValue001
+     * @tc.desc Verify setValue requires one value parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass001();
+      let field: StaticField | null = cls.getStaticField('count');
+      field!.setValue(100);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_0200
+     * @tc.name testStaticFieldSetValue002
+     * @tc.desc Verify missing parameter causes compilation error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_0300
+     * @tc.name testStaticFieldSetValue003
+     * @tc.desc Verify passing extra parameters causes compilation error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_0400
+     * @tc.name testStaticFieldSetValue004
+     * @tc.desc Verify setting various primitive type values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass004();
+      let strField: StaticField | null = cls.getStaticField('strValue');
+      strField!.setValue('new string');
+      let numField: StaticField | null = cls.getStaticField('numValue');
+      numField!.setValue(200);
+      let boolField: StaticField | null = cls.getStaticField('boolValue');
+      boolField!.setValue(false);
+      let charField: StaticField | null = cls.getStaticField('charValue');
+      charField!.setValue('B');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_0500
+     * @tc.name testStaticFieldSetValue005
+     * @tc.desc Verify setting array type values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass005();
+      let arrField: StaticField | null = cls.getStaticField('arrValue');
+      arrField!.setValue('');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_0600
+     * @tc.name testStaticFieldSetValue006
+     * @tc.desc Verify setting object type values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass006();
+      let objField: StaticField | null = cls.getStaticField('objValue');
+      objField!.setValue('{}');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_0700
+     * @tc.name testStaticFieldSetValue007
+     * @tc.desc Verify setting null value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass007();
+      let nullField: StaticField | null = cls.getStaticField('nullValue');
+      nullField!.setValue(null);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_0800
+     * @tc.name testStaticFieldSetValue008
+     * @tc.desc Verify setting undefined value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass008();
+      let undefField: StaticField | null = cls.getStaticField('undefValue');
+      undefField!.setValue(null);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_0900
+     * @tc.name testStaticFieldSetValue009
+     * @tc.desc Verify setting function type field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass009();
+      let handlerField: StaticField | null = cls.getStaticField('handler');
+      handlerField!.setValue('');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_1000
+     * @tc.name testStaticFieldSetValue010
+     * @tc.desc Verify setting enum type field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass010();
+      let colorField: StaticField | null = cls.getStaticField('favoriteColor');
+      colorField!.setValue(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_1100
+     * @tc.name testStaticFieldSetValue011
+     * @tc.desc Verify setting value matching field type
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass011();
+      let field: StaticField | null = cls.getStaticField('typedValue');
+      field!.setValue(200);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_1200
+     * @tc.name testStaticFieldSetValue012
+     * @tc.desc Verify setting mismatched type value throws error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass012();
+      let field: StaticField | null = cls.getStaticField('numValue');
+      try {
+        field!.setValue('string');
+      } catch (error) {
+        expect(error !== null).assertEqual(true);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_1300
+     * @tc.name testStaticFieldSetValue013
+     * @tc.desc Verify setting union type field values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass013();
+      let field: StaticField | null = cls.getStaticField('unionField');
+      field!.setValue('new string');
+      field!.setValue(100);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_1400
+     * @tc.name testStaticFieldSetValue014
+     * @tc.desc Verify setting generic field value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectGenericClass014();
+      let field: StaticField | null = cls.getStaticField('genericValue');
+      field!.setValue('{}');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_1500
+     * @tc.name testStaticFieldSetValue015
+     * @tc.desc Verify setValue returns void
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass015();
+      let field: StaticField | null = cls.getStaticField('data');
+      let result: undefined = field!.setValue('new value');
+      expect(result).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_1600
+     * @tc.name testStaticFieldSetValue016
+     * @tc.desc Verify setValue success via getValue
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass016();
+      let field: StaticField | null = cls.getStaticField('count');
+      let oldValue: string | number | boolean | null = field!.getValue() as string | number | boolean | null;
+      field!.setValue(100);
+      let newValue: string | number | boolean | null = field!.getValue() as string | number | boolean | null;
+      expect(oldValue).assertEqual(0);
+      expect(newValue).assertEqual(100);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_1700
+     * @tc.name testStaticFieldSetValue017
+     * @tc.desc Verify setting field value multiple times
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass017();
+      let field: StaticField | null = cls.getStaticField('counter');
+      field!.setValue(10);
+      field!.setValue(20);
+      field!.setValue(30);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_1800
+     * @tc.name testStaticFieldSetValue018
+     * @tc.desc Verify setting special numeric values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass018();
+      let nanField: StaticField | null = cls.getStaticField('nanValue');
+      nanField!.setValue(NaN);
+      let infField: StaticField | null = cls.getStaticField('infinityValue');
+      infField!.setValue(-Infinity);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_1900
+     * @tc.name testStaticFieldSetValue019
+     * @tc.desc Verify setting empty string field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass019();
+      let field: StaticField | null = cls.getStaticField('strValue');
+      field!.setValue('');
+      field!.setValue(' ');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_2000
+     * @tc.name testStaticFieldSetValue020
+     * @tc.desc Verify setting Unicode string field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass020();
+      let field: StaticField | null = cls.getStaticField('unicodeStr');
+      field!.setValue('hello');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_2100
+     * @tc.name testStaticFieldSetValue021
+     * @tc.desc Verify field type remains unchanged after setting
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass021();
+      let field: StaticField | null = cls.getStaticField('data');
+      let type: ReflectClass = field!.getType();
+      field!.setValue(200);
+      let newType: ReflectClass = field!.getType();
+      expect(type.getName()).assertEqual(newType.getName());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_2200
+     * @tc.name testStaticFieldSetValue022
+     * @tc.desc Verify return value type is void
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass022();
+      let field: StaticField | null = cls.getStaticField('data');
+      let result: undefined = field!.setValue(100);
+      expect(result).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_2300
+     * @tc.name testStaticFieldSetValue023
+     * @tc.desc Verify setting boundary numeric values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass023();
+      let maxField: StaticField | null = cls.getStaticField('maxInt');
+      maxField!.setValue(Number.MAX_SAFE_INTEGER);
+      let minField: StaticField | null = cls.getStaticField('minInt');
+      minField!.setValue(Number.MIN_SAFE_INTEGER);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_2400
+     * @tc.name testStaticFieldSetValue024
+     * @tc.desc Verify setting empty array field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass024();
+      let field: StaticField | null = cls.getStaticField('arrValue');
+      field!.setValue('');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_2500
+     * @tc.name testStaticFieldSetValue025
+     * @tc.desc Verify calling setValue on null object throws error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field: StaticField | null = null;
+      try {
+        field!.setValue(100);
+        expect().assertFail();
+      } catch (error) {
+        expect(error !== null).assertEqual(true);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_2600
+     * @tc.name testStaticFieldSetValue026
+     * @tc.desc Verify calling setValue on undefined object throws error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field: StaticField | undefined;
+      try {
+        field!.setValue(100);
+        expect().assertFail();
+      } catch (error) {
+        expect(error !== null).assertEqual(true);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_2700
+     * @tc.name testStaticFieldSetValue027
+     * @tc.desc Verify TypeError thrown for incompatible value type
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass027();
+      let field: StaticField | null = cls.getStaticField('numValue');
+      field!.setValue('string');
+      expect(field!.getValue()).assertEqual('string');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_2800
+     * @tc.name testStaticFieldSetValue028
+     * @tc.desc Verify reference type mismatch handling
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass028();
+      let field: StaticField | null = cls.getStaticField('refValue');
+      expect(field !== null).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_2900
+     * @tc.name testStaticFieldSetValue029
+     * @tc.desc Verify setting readonly field throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass029();
+      let field: StaticField | null = cls.getStaticField('constant');
+      try {
+        field!.setValue(2.71);
+        expect().assertFail();
+      } catch (error) {
+        expect(error !== null).assertEqual(true);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_3000
+     * @tc.name testStaticFieldSetValue030
+     * @tc.desc Verify setting const field throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass030();
+      let field: StaticField | null = cls.getStaticField('constant');
+      try {
+        field!.setValue(200);
+        expect().assertFail();
+      } catch (error) {
+        expect(error !== null).assertEqual(true);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_3100
+     * @tc.name testStaticFieldSetValue031
+     * @tc.desc Verify accessing non-existent static field returns null
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass031();
+      let field: StaticField | null = cls.getStaticField('nonexistent');
+      if (field !== null) {
+        field!.setValue('new value');
+      } else {
+        console.info('Field does not exist');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_3200
+     * @tc.name testStaticFieldSetValue032
+     * @tc.desc Verify setting public field value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass032();
+      let field: StaticField | null = cls.getStaticField('publicValue');
+      field!.setValue('new public');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_3300
+     * @tc.name testStaticFieldSetValue033
+     * @tc.desc Verify setting private field value via reflection
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass033();
+      let field: StaticField | null = cls.getStaticField('privateValue');
+      field!.setValue('new private');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_3400
+     * @tc.name testStaticFieldSetValue034
+     * @tc.desc Verify setting protected field value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass034();
+      let field: StaticField | null = cls.getStaticField('protectedValue');
+      field!.setValue('new protected');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_3500
+     * @tc.name testStaticFieldSetValue035
+     * @tc.desc Verify combining getValue and setValue
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass035();
+      let field: StaticField | null = cls.getStaticField('data');
+      let oldValue: string | number | boolean | null = field!.getValue() as string | number | boolean | null;
+      field!.setValue('new value');
+      let newValue: string | number | boolean | null = field!.getValue() as string | number | boolean | null;
+      expect(oldValue).assertEqual('initial');
+      expect(newValue).assertEqual('new value');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_3600
+     * @tc.name testStaticFieldSetValue036
+     * @tc.desc Verify setting field value by name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectConfig036();
+      let field: StaticField | null = cls.getStaticField('TIMEOUT');
+      if (field !== null) {
+        field!.setValue(5000);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_3700
+     * @tc.name testStaticFieldSetValue037
+     * @tc.desc Verify setting value after checking type
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass037();
+      let field: StaticField | null = cls.getStaticField('typedValue');
+      let type: ReflectClass = field!.getType();
+      if (type.getName() === 'int') {
+        field!.setValue(200);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_3800
+     * @tc.name testStaticFieldSetValue038
+     * @tc.desc Verify checking readonly before setting value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass038();
+      let constField: StaticField | null = cls.getStaticField('constant');
+      if (!constField!.isReadonly()) {
+        constField!.setValue(100);
+      }
+      let varField: StaticField | null = cls.getStaticField('variable');
+      if (!varField!.isReadonly()) {
+        varField!.setValue(100);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_3900
+     * @tc.name testStaticFieldSetValue039
+     * @tc.desc Verify setValue is a synchronous method
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass039();
+      let field: StaticField | null = cls.getStaticField('field');
+      field!.setValue(100);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_4000
+     * @tc.name testStaticFieldSetValue040
+     * @tc.desc Verify value is immediately readable after setting
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass040();
+      let field: StaticField | null = cls.getStaticField('counter');
+      field!.setValue(10);
+      expect(field!.getValue() as string | number | boolean | null).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_4100
+     * @tc.name testStaticFieldSetValue041
+     * @tc.desc Verify batch setting field values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectConfig041();
+      let fieldNames: string[] = ['TIMEOUT', 'RETRY_COUNT', 'DEBUG'];
+      let newValues: string[] = ['50000', '5', 'true'];
+      for (let i = 0; i < fieldNames.length; i++) {
+        let field: StaticField | null = cls.getStaticField(fieldNames[i]);
+        if (field !== null) {
+          if (fieldNames[i] === 'TIMEOUT') {
+            field.setValue(50000);
+          } else if (fieldNames[i] === 'RETRY_COUNT') {
+            field.setValue(5);
+          } else if (fieldNames[i] === 'DEBUG') {
+            field.setValue(true);
+          }
+        }
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_4200
+     * @tc.name testStaticFieldSetValue042
+     * @tc.desc Verify type-safe field value setting
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass042();
+      let strField: StaticField | null = cls.getStaticField('strField');
+      let numField: StaticField | null = cls.getStaticField('numField');
+      strField!.setValue('new string');
+      numField!.setValue(200);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_4300
+     * @tc.name testStaticFieldSetValue043
+     * @tc.desc Verify swapping field values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass043();
+      let field1: StaticField | null = cls.getStaticField('value1');
+      let field2: StaticField | null = cls.getStaticField('value2');
+      if (field1 !== null && field2 !== null) {
+        let temp1: string | number | boolean | null = field1.getValue() as string | number | boolean | null;
+        let temp2: string | number | boolean | null = field2.getValue() as string | number | boolean | null;
+        field1.setValue(temp2);
+        field2.setValue(temp1);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_4400
+     * @tc.name testStaticFieldSetValue044
+     * @tc.desc Verify resetting field value to default
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectConfig044();
+      let field: StaticField | null = cls.getStaticField('TIMEOUT');
+      if (field !== null) {
+        field.setValue(30000);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_4500
+     * @tc.name testStaticFieldSetValue045
+     * @tc.desc Verify setting field value after validation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectConfig045();
+      let field: StaticField | null = cls.getStaticField('percentage');
+      if (field !== null) {
+        field.setValue(75);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_4800
+     * @tc.name testStaticFieldSetValue048
+     * @tc.desc Verify setting large array field value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass048();
+      let field: StaticField | null = cls.getStaticField('largeArray');
+      field!.setValue('');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_4900
+     * @tc.name testStaticFieldSetValue049
+     * @tc.desc Verify setting large string field value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass049();
+      let field: StaticField | null = cls.getStaticField('largeString');
+      field!.setValue('x'.repeat(100));
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_5000
+     * @tc.name testStaticFieldSetValue050
+     * @tc.desc Verify setting nested object field value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass050();
+      let field: StaticField | null = cls.getStaticField('nestedObj');
+      field!.setValue('{}');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_5100
+     * @tc.name testStaticFieldSetValue051
+     * @tc.desc Verify performance of continuous field value setting
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass051();
+      let field: StaticField | null = cls.getStaticField('counter');
+      for (let i: number = 0; i < 100; i++) {
+        field!.setValue(i);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_5200
+     * @tc.name testStaticFieldSetValue052
+     * @tc.desc Verify setting many field values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass052();
+      let fieldNames: string[] = ['field1', 'field2', 'field3'];
+      for (let i = 0; i < fieldNames.length; i++) {
+        let field: StaticField | null = cls.getStaticField(fieldNames[i]);
+        if (field !== null) {
+          field.setValue(i * 10);
+        }
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_5300
+     * @tc.name testStaticFieldSetValue053
+     * @tc.desc Verify difference between StaticField.setValue and InstanceField.setValue
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass053();
+      let staticField: StaticField | null = cls.getStaticField('staticValue');
+      staticField!.setValue('new static');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_5400
+     * @tc.name testStaticFieldSetValue054
+     * @tc.desc Verify batch set utility function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectConfig054();
+      let field1: StaticField | null = cls.getStaticField('field1');
+      if (field1 !== null) {
+        field1.setValue(100);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_5500
+     * @tc.name testStaticFieldSetValue055
+     * @tc.desc Verify setting field value by name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectConfig055();
+      let field: StaticField | null = cls.getStaticField('TIMEOUT');
+      if (field !== null) {
+        field.setValue(5000);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_5600
+     * @tc.name testStaticFieldSetValue056
+     * @tc.desc Verify conditional field value setting
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectConfig056();
+      let field: StaticField | null = cls.getStaticField('OPTIONAL_VALUE');
+      if (field !== null) {
+        let currentValue: string | number | boolean | null = field.getValue() as string | number | boolean | null;
+        if (currentValue === null) {
+          field.setValue('default value');
+        }
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_5700
+     * @tc.name testStaticFieldSetValue057
+     * @tc.desc Verify setting field value after type conversion
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectConfig057();
+      let field: StaticField | null = cls.getStaticField('port');
+      if (field !== null) {
+        field.setValue(8080);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_5800
+     * @tc.name testStaticFieldSetValue058
+     * @tc.desc Verify dynamic configuration update
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectAppConfig058();
+      let timeoutField: StaticField | null = cls.getStaticField('TIMEOUT');
+      if (timeoutField !== null) {
+        timeoutField.setValue(5000);
+      }
+      let debugField: StaticField | null = cls.getStaticField('DEBUG_MODE');
+      if (debugField !== null) {
+        debugField.setValue(true);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_5900
+     * @tc.name testStaticFieldSetValue059
+     * @tc.desc Verify incremental field value update
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectCounter059();
+      let field: StaticField | null = cls.getStaticField('count');
+      let currentValue: number = field!.getValue() as number;
+      field!.setValue(currentValue + 1);
+      currentValue = field!.getValue() as number;
+      field!.setValue(currentValue + 1);
+      currentValue = field!.getValue() as number;
+      field!.setValue(currentValue + 1);
+      currentValue = field!.getValue() as number;
+      field!.setValue(currentValue - 1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_6000
+     * @tc.name testStaticFieldSetValue060
+     * @tc.desc Verify cache refresh mechanism
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectCachedValue060();
+      let cacheField: StaticField | null = cls.getStaticField('cache');
+      let timestampField: StaticField | null = cls.getStaticField('timestamp');
+      if (cacheField !== null) {
+        cacheField.setValue('{}');
+      }
+      if (timestampField !== null) {
+        timestampField.setValue(Date.now());
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_6100
+     * @tc.name testStaticFieldSetValue061
+     * @tc.desc Verify synchronizing related field values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectPosition061();
+      let xField: StaticField | null = cls.getStaticField('x');
+      let yField: StaticField | null = cls.getStaticField('y');
+      let zField: StaticField | null = cls.getStaticField('z');
+      xField!.setValue(1);
+      yField!.setValue(2);
+      zField!.setValue(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_6200
+     * @tc.name testStaticFieldSetValue062
+     * @tc.desc Verify field value state transition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectStateMachine062();
+      let field: StaticField | null = cls.getStaticField('currentState');
+      field!.setValue(1);
+      field!.setValue(2);
+      field!.setValue(3);
+      let current: number = field!.getValue() as number;
+      if (current === 3) {
+        console.info('State is STOPPED, cannot transition further');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_6300
+     * @tc.name testStaticFieldSetValue063
+     * @tc.desc Verify tracking field value changes
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectConfig063();
+      let field: StaticField | null = cls.getStaticField('value');
+      let initialValue: string | number | boolean | null = field!.getValue() as string | number | boolean | null;
+      console.info('Initial value: ' + initialValue);
+      field!.setValue(200);
+      let newValue: string | number | boolean | null = field!.getValue() as string | number | boolean | null;
+      console.info('New value: ' + newValue);
+      field!.setValue(300);
+      let finalValue: string | number | boolean | null = field!.getValue() as string | number | boolean | null;
+      console.info('Final value: ' + finalValue);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_6400
+     * @tc.name testStaticFieldSetValue064
+     * @tc.desc Verify field set validation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass064();
+      let field: StaticField | null = cls.getStaticField('value');
+      if (field !== null) {
+        field.setValue('new value');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_6500
+     * @tc.name testStaticFieldSetValue065
+     * @tc.desc Verify field set triggers side effects
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let observerCalled: boolean = false;
+      let cls: ReflectClass = reflectObservable065();
+      let field: StaticField | null = cls.getStaticField('value');
+      let oldValue: number = field!.getValue() as number;
+      field!.setValue(100);
+      observerCalled = true;
+      console.info('Observer notified');
+      let newValue: number = field!.getValue() as number;
+      console.info('Value changed from ' + oldValue + ' to ' + newValue);
+      expect(observerCalled).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_6600
+     * @tc.name testStaticFieldSetValue066
+     * @tc.desc Verify logging field set details
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectConfig066();
+      let field: StaticField | null = cls.getStaticField('TIMEOUT');
+      if (field !== null) {
+        let owner: ReflectClass = field.getOwner();
+        let fieldName: string = field.getName();
+        let oldValue: string | number | boolean | null = field.getValue() as string | number | boolean | null;
+        let type: ReflectClass = field.getType();
+        console.info('=== Field Set Log ===');
+        console.info('Owner: ' + owner.getName());
+        console.info('Field: ' + fieldName);
+        console.info('Type: ' + type.getName());
+        console.info('Old Value: ' + oldValue);
+        console.info('New Value: ' + 5000);
+        console.info('Readonly: ' + field.isReadonly());
+        console.info('====================');
+        field.setValue(5000);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_6700
+     * @tc.name testStaticFieldSetValue067
+     * @tc.desc Verify type erasure impact on field setting
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass067();
+      let field: StaticField | null = cls.getStaticField('data');
+      field!.setValue('new data');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_6900
+     * @tc.name testStaticFieldSetValue069
+     * @tc.desc Verify conditional compilation field value setting
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let cls: ReflectClass = reflectMyClass069();
+      let field: StaticField | null = cls.getStaticField('debugValue');
+      if (field !== null) {
+        let value: string | number | boolean | null = field.getValue() as string | number | boolean | null;
+        console.info('Debug value: ' + value);
+        field.setValue('modified debug');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_7000
+     * @tc.name testStaticFieldSetValue070
+     * @tc.desc Verify deserializing data to field values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectConfig070();
+      let timeoutField: StaticField | null = cls.getStaticField('TIMEOUT');
+      if (timeoutField !== null) {
+        timeoutField.setValue(5000);
+      }
+      let retryField: StaticField | null = cls.getStaticField('RETRY_COUNT');
+      if (retryField !== null) {
+        retryField.setValue(5);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_7100
+     * @tc.name testStaticFieldSetValue071
+     * @tc.desc Verify setting feature flag values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectFeatureFlags071();
+      let field: StaticField | null = cls.getStaticField('NEW_UI');
+      field!.setValue(true);
+      expect(field!.getValue() as string | number | boolean | null).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_7200
+     * @tc.name testStaticFieldSetValue072
+     * @tc.desc Verify setting rate limiter configuration values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectRateLimiter072();
+      let field: StaticField | null = cls.getStaticField('MAX_REQUESTS');
+      field!.setValue(200);
+      expect(field!.getValue() as string | number | boolean | null).assertEqual(200);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_7300
+     * @tc.name testStaticFieldSetValue073
+     * @tc.desc Verify setting circuit breaker configuration values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectCircuitBreaker073();
+      let field: StaticField | null = cls.getStaticField('FAILURE_THRESHOLD');
+      field!.setValue(10);
+      expect(field!.getValue() as string | number | boolean | null).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_7400
+     * @tc.name testStaticFieldSetValue074
+     * @tc.desc Verify setting retry policy configuration values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectRetryPolicy074();
+      let field: StaticField | null = cls.getStaticField('MAX_ATTEMPTS');
+      field!.setValue(5);
+      expect(field!.getValue() as string | number | boolean | null).assertEqual(5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_7500
+     * @tc.name testStaticFieldSetValue075
+     * @tc.desc Verify setting metrics configuration values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMetricsConfig075();
+      let field: StaticField | null = cls.getStaticField('FLUSH_INTERVAL');
+      field!.setValue(5000);
+      expect(field!.getValue() as string | number | boolean | null).assertEqual(5000);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_7600
+     * @tc.name testStaticFieldSetValue076
+     * @tc.desc Verify setting tracing configuration values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectTracingConfig076();
+      let field: StaticField | null = cls.getStaticField('SAMPLE_RATE');
+      field!.setValue(0.5);
+      expect(field!.getValue() as string | number | boolean | null).assertEqual(0.5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_7700
+     * @tc.name testStaticFieldSetValue077
+     * @tc.desc Verify setting security configuration values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectSecurityConfig077();
+      let field: StaticField | null = cls.getStaticField('TOKEN_EXPIRY');
+      field!.setValue(7200);
+      expect(field!.getValue() as string | number | boolean | null).assertEqual(7200);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_7800
+     * @tc.name testStaticFieldSetValue078
+     * @tc.desc Verify setting CORS configuration values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectCorsConfig078();
+      let field: StaticField | null = cls.getStaticField('MAX_AGE');
+      field!.setValue(3600);
+      expect(field!.getValue() as string | number | boolean | null).assertEqual(3600);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_7900
+     * @tc.name testStaticFieldSetValue079
+     * @tc.desc Verify setting pagination configuration values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectPaginationConfig079();
+      let field: StaticField | null = cls.getStaticField('DEFAULT_PAGE_SIZE');
+      field!.setValue(50);
+      expect(field!.getValue() as string | number | boolean | null).assertEqual(50);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_8000
+     * @tc.name testStaticFieldSetValue080
+     * @tc.desc Verify setting upload configuration values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectUploadConfig080();
+      let field: StaticField | null = cls.getStaticField('MAX_FILE_SIZE');
+      field!.setValue(5242880);
+      expect(field!.getValue() as string | number | boolean | null).assertEqual(5242880);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_8100
+     * @tc.name testStaticFieldSetValue081
+     * @tc.desc Verify setting notification configuration values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectNotificationConfig081();
+      let field: StaticField | null = cls.getStaticField('SMS_ENABLED');
+      field!.setValue(true);
+      expect(field!.getValue() as string | number | boolean | null).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_8200
+     * @tc.name testStaticFieldSetValue082
+     * @tc.desc Verify setting scheduler configuration values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectSchedulerConfig082();
+      let field: StaticField | null = cls.getStaticField('CRON_EXPRESSION');
+      field!.setValue('*/5 * * * *');
+      expect(field!.getValue() as string | number | boolean | null).assertEqual('*/5 * * * *');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_8300
+     * @tc.name testStaticFieldSetValue083
+     * @tc.desc Verify batch setting all feature flags
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectFeatureFlags071();
+      let fields: StaticField[] = cls.getDeclaredStaticFields();
+      for (let i: int = 0; i < fields.length; i++) {
+        fields[i].setValue(true);
+      }
+      for (let i: int = 0; i < fields.length; i++) {
+        expect(fields[i].getValue() as string | number | boolean | null).assertEqual(true);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_8400
+     * @tc.name testStaticFieldSetValue084
+     * @tc.desc Verify setting all rate limiter fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectRateLimiter072();
+      let maxField: StaticField | null = cls.getStaticField('MAX_REQUESTS');
+      let windowField: StaticField | null = cls.getStaticField('WINDOW_MS');
+      let blockField: StaticField | null = cls.getStaticField('BLOCK_DURATION_MS');
+      maxField!.setValue(500);
+      windowField!.setValue(30000);
+      blockField!.setValue(60000);
+      expect(maxField!.getValue() as string | number | boolean | null).assertEqual(500);
+      expect(windowField!.getValue() as string | number | boolean | null).assertEqual(30000);
+      expect(blockField!.getValue() as string | number | boolean | null).assertEqual(60000);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_8500
+     * @tc.name testStaticFieldSetValue085
+     * @tc.desc Verify setting all security config fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldSetValue085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectSecurityConfig077();
+      let secretField: StaticField | null = cls.getStaticField('JWT_SECRET');
+      let tokenField: StaticField | null = cls.getStaticField('TOKEN_EXPIRY');
+      let refreshField: StaticField | null = cls.getStaticField('REFRESH_EXPIRY');
+      secretField!.setValue('new-secret-key');
+      tokenField!.setValue(1800);
+      refreshField!.setValue(43200);
+      expect(secretField!.getValue() as string | number | boolean | null).assertEqual('new-secret-key');
+      expect(tokenField!.getValue() as string | number | boolean | null).assertEqual(1800);
+      expect(refreshField!.getValue() as string | number | boolean | null).assertEqual(43200);
+    });
+  });
+}
