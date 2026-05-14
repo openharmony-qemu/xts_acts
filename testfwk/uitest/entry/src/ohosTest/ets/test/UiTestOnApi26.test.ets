@@ -19,6 +19,7 @@ import { startAbility, stopApplication } from './Util.test'
 
 const waitUiReadyMs: number = 1000;
 const TestTag = 'UiTest_TAG';
+const DeviceErrorCode = 17000005;
 
 export default function uitestOnApi26Test() {
   describe('UitestOnApi26Test', () => {
@@ -59,6 +60,31 @@ export default function uitestOnApi26Test() {
     });
 
     /**
+     * @tc.name   testOnIsBeforeComponentInvalid
+     * @tc.number SUB_testfwk_UITEST_ON_ISBEFORE_COMPONENT_PARAM_0101
+     * @tc.desc   Test On.isBefore(com: Component) with invalid Component parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOnIsBeforeComponentInvalid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(`testOnIsBeforeComponentInvalid start`);
+      try {
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+        await driver.delayMs(waitUiReadyMs);
+        let text2 = await driver.findComponent(ON.text('dialog'));
+        await stopApplication('com.uitestScene.acts');
+        await driver.delayMs(waitUiReadyMs);
+        ON.isBefore(text2);
+        expect().assertFail();
+      } catch (error) {
+        console.info(`testOnIsBeforeComponentInvalid,error.code, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(DeviceErrorCode);
+      }
+      console.info(`testOnIsBeforeComponentValid over`);
+    });
+
+    /**
      * @tc.name   testOnIsAfterComponentValid
      * @tc.number SUB_testfwk_UITEST_ON_ISBEFORE_COMPONENT_PARAM_0200
      * @tc.desc   Test On.isAfter(com: Component) with valid Component parameter
@@ -78,6 +104,32 @@ export default function uitestOnApi26Test() {
       expect(text3).assertNull();
       await stopApplication('com.uitestScene.acts');
       console.info(TestTag + 'testOnIsAfterComponentValid over');
+    });
+
+    /**
+     * @tc.name   testOnIsAfterComponentInvalid
+     * @tc.number SUB_testfwk_UITEST_ON_ISBEFORE_COMPONENT_PARAM_0201
+     * @tc.desc   Test On.isAfter(com: Component) with invalid Component parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOnIsAfterComponentInvalid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(`testOnIsAfterComponentInvalid start`);
+      try {
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+        await driver.delayMs(waitUiReadyMs);
+        let text2 = await driver.findComponent(ON.text('dialog'));
+        await driver.delayMs(waitUiReadyMs);
+        await stopApplication('com.uitestScene.acts');
+        await driver.delayMs(waitUiReadyMs);
+        ON.isAfter(text2);
+        expect().assertFail();
+      } catch (error) {
+        console.info(`testOnIsAfterComponentInvalid,error.code, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(DeviceErrorCode);
+      }
+      console.info(`testOnIsAfterComponentInvalid over`);
     });
 
     /**
@@ -102,5 +154,30 @@ export default function uitestOnApi26Test() {
       console.info(TestTag + 'testOnWithinComponentValid over');
     });
 
+    /**
+     * @tc.name   testOnWithinComponentInvalid
+     * @tc.number SUB_testfwk_UITEST_ON_ISBEFORE_COMPONENT_PARAM_0301
+     * @tc.desc   Test On.isAfter(com: Component) with invalid Component parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOnWithinComponentInvalid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(`testOnWithinComponentInvalid start`);
+      try {
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+        await driver.delayMs(waitUiReadyMs);
+        let scroller = await driver.findComponent(ON.type('Scroll'));
+        await driver.delayMs(waitUiReadyMs);
+        await stopApplication('com.uitestScene.acts');
+        await driver.delayMs(waitUiReadyMs);
+        ON.within(scroller)
+        expect().assertFail();
+      } catch (error) {
+        console.info(`testOnWithinComponentInvalid,error.code, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(DeviceErrorCode);
+      }
+      console.info(`testOnWithinComponentInvalid over`);
+    });
   })
 }
