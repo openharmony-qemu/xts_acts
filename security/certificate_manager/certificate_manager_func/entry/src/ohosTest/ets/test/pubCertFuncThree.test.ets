@@ -15,7 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import certManager from '@ohos.security.certManager';
-import common from '@ohos.app.ability.common';
+import type common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import certManagerDialog from '@ohos.security.certManagerDialog';
 import * as commonParameter from './utils/common/common_parameter';
@@ -812,7 +812,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     /**
      * @tc.name   SUB_Security_CertManager_OpenInstallCertDialog_Func_0200
      * @tc.number SUB_Security_CertManager_OpenInstallCertDialog_Func_0200
-     * @tc.desc   Call openInstallCertificateDialog with certType CREDENTIAL_APP, certScope CURRENT_USER. Return uri on success, or error code 401(CM_ERROR_INVALID_PARAMS) on failure.
+     * @tc.desc   Call openInstallCertificateDialog with certType CREDENTIAL_APP, certScope CURRENT_USER. Return error code 401(CM_ERROR_INVALID_PARAMS).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -826,8 +826,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
       if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
         try {
           let uri: string = await certManagerDialog.openInstallCertificateDialog(context, certType, certScope, certData);
-          console.info(`SUB_Security_CertManager_OpenInstallCertDialog_Func_0200 succeeded, uri: ${uri}`);
-          expect(uri != null).assertTrue();
+          expect(null).assertFail();
         } catch (err) {
           console.error(`SUB_Security_CertManager_OpenInstallCertDialog_Func_0200 failed. Code: ${err.code}, message: ${err.message}`);
           expect(err.code).assertEqual(401);
@@ -842,7 +841,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     /**
      * @tc.name   SUB_Security_CertManager_OpenInstallCertDialog_Func_0300
      * @tc.number SUB_Security_CertManager_OpenInstallCertDialog_Func_0300
-     * @tc.desc   Call openInstallCertificateDialog with certType CREDENTIAL_UKEY, certScope CURRENT_USER. Return uri on success, or error code 401(CM_ERROR_INVALID_PARAMS) on failure.
+     * @tc.desc   Call openInstallCertificateDialog with certType CREDENTIAL_UKEY, certScope CURRENT_USER. Return error code 401(CM_ERROR_INVALID_PARAMS).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -856,8 +855,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
       if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
         try {
           let uri: string = await certManagerDialog.openInstallCertificateDialog(context, certType, certScope, certData);
-          console.info(`SUB_Security_CertManager_OpenInstallCertDialog_Func_0300 succeeded, uri: ${uri}`);
-          expect(uri != null).assertTrue();
+          expect(null).assertFail();
         } catch (err) {
           console.error(`SUB_Security_CertManager_OpenInstallCertDialog_Func_0300 failed. Code: ${err.code}, message: ${err.message}`);
           expect(err.code).assertEqual(401);
@@ -872,7 +870,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     /**
      * @tc.name   SUB_Security_CertManager_OpenInstallCertDialog_Func_0400
      * @tc.number SUB_Security_CertManager_OpenInstallCertDialog_Func_0400
-     * @tc.desc   Call openInstallCertificateDialog with certType CREDENTIAL_SYSTEM, certScope CURRENT_USER. Return uri on success, or error code CertificateDialogErrorCode.ERROR_GENERIC on failure.
+     * @tc.desc   Call openInstallCertificateDialog with certType CREDENTIAL_SYSTEM, certScope CURRENT_USER. Return error code 29700001.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -886,8 +884,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
       if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
         try {
           let uri: string = await certManagerDialog.openInstallCertificateDialog(context, certType, certScope, certData);
-          console.info(`SUB_Security_CertManager_OpenInstallCertDialog_Func_0400 succeeded, uri: ${uri}`);
-          expect(uri != null).assertTrue();
+          expect(null).assertFail();
         } catch (err) {
           console.error(`SUB_Security_CertManager_OpenInstallCertDialog_Func_0400 failed. Code: ${err.code}, message: ${err.message}`);
           expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_GENERIC);
@@ -912,15 +909,20 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
       const context: common.Context = GlobalContext.getContext();
       let certType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CA_CERT;
       let certScope: certManagerDialog.CertificateScope = certManagerDialog.CertificateScope.NOT_SPECIFIED;
+      let isSupport: boolean = certManagerDialog.supportsCACertDialog();
       let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
       if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
         try {
           let uri: string = await certManagerDialog.openInstallCertificateDialog(context, certType, certScope, certData);
-          console.info(`SUB_Security_CertManager_OpenInstallCertDialog_Func_0500 succeeded, uri: ${uri}`);
-          expect(uri != null).assertTrue();
+          expect(null).assertFail();
         } catch (err) {
-          console.error(`SUB_Security_CertManager_OpenInstallCertDialog_Func_0500 failed. Code: ${err.code}, message: ${err.message}`);
-          expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_DEVICE_NOT_SUPPORTED);
+          if (isSupport) {
+            console.error(`SUB_Security_CertManager_OpenInstallCertDialog_Func_0500: the device supports CA dialog. Code: ${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_GENERIC);
+          } else {
+            console.error(`SUB_Security_CertManager_OpenInstallCertDialog_Func_0500: the device don't support CA dialog. Code: ${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_DEVICE_NOT_SUPPORTED);
+          }
         }
       } else {
         console.info('SUB_Security_CertManager_OpenInstallCertDialog_Func_0500 device not support CertificateManagerDialog');
