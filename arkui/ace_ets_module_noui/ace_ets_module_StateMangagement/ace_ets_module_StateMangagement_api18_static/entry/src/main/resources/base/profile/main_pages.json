@@ -27,6 +27,10 @@
     "MainAbility/pages/SyncMonitor/SyncMonitorNotWildcards",
     "MainAbility/pages/SyncMonitor/SyncMonitorWildcards",
     "MainAbility/pages/PersistentStorage/PersistentStorageApi",
-    "MainAbility/pages/PersistenceV2/PersistenceV2Api"
+    "MainAbility/pages/PersistenceV2/PersistenceV2Api",
+    "MainAbility/pages/PersistenceV2/PersistenceV2NotifyOnErrorTest",
+    "MainAbility/pages/Monitor/MonitorWildcards",
+    "MainAbility/pages/AddMonitor/AddMonitorWildcard",
+    "MainAbility/pages/AddMonitor/AddMonitorWildcardUnerfined"
   ]
 }
