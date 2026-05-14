@@ -28,8 +28,8 @@ export default class Utils {
   }
 
   /**
-   * For XTS.CHECK.ERROR_CODE.01: prefer a numeric instance field `code` (reflect, no unsafe cast to
-   * BusinessError). Treat `code` as numeric when `typeof` is `number` or `int` (OH may surface int).
+   * For XTS.CHECK.ERROR_CODE.0 prefer a numeric instance field `code` (reflect, no unsafe cast to
+   * BusinessError). Treat `code` as numeric when `typeof` isnumber` or `int` (OH may expose it as int).
    * When OH std.core throws omit or hide `code`, accept a strict allowlist of
    * simple class names from `Class.of(thrown).getName()` (same split strategy as hypium assertThrowError).
    * Include `IndexOutOfBoundsError` for ArrayBuffer `at`/`set` OOB on OH (often no numeric `code` via reflect).
