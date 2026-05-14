@@ -1646,7 +1646,7 @@ export default function OverridingFieldsTest(): void {
      * @tc.level     Level 2
      */
     it("testOverridingFields0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(A_F028.field instanceof Object).assertTrue()
+      expect(A_F028.field instanceof Object).assertFalse()
         expect(A_F028.field).assertEqual(undefined)
         expect(Base_F028.field instanceof Object).assertTrue()
         expect(Base_F028.field).assertEqual(5)

@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,7 +72,6 @@ export default function AccTest():void {
      * @tc.level     Level 2
      */
     it("testAcc0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAcc0001';
 
       // separate module, positive case with public accessor
       let a = new A
@@ -89,7 +88,6 @@ export default function AccTest():void {
      * @tc.level     Level 2
      */
     it("testAcc0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAcc0002';
       let b = new B
       b.foo = 42
       expect(b.foo).assertEqual(44)
@@ -104,7 +102,6 @@ export default function AccTest():void {
      * @tc.level     Level 2
      */
     it("testAcc0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAcc0003';
       let b = new B1
       b.foo = 42
       expect(b.foo).assertEqual(44)

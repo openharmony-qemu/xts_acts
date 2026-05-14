@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -128,7 +128,6 @@ export default function ClassRewritingTest():void {
      * @tc.level     Level 2
      */
     it("testClassRewriting0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassRewriting0001';
       let myDog = new Dog();
       let sound = myDog.speak();
       expect(sound).assertEqual('Woof!');
@@ -143,7 +142,6 @@ export default function ClassRewritingTest():void {
      * @tc.level     Level 2
      */
     it("testClassRewriting0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassRewriting0002';
       let myDog = new Dog1();
       let sound = myDog.speak();
       expect(sound).assertEqual(20);
@@ -158,7 +156,6 @@ export default function ClassRewritingTest():void {
      * @tc.level     Level 2
      */
     it("testClassRewriting0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassRewriting0003';
       let myDog = new Dog2();
       let sound = myDog.speak();
       expect(sound).assertEqual(2);
@@ -173,7 +170,6 @@ export default function ClassRewritingTest():void {
      * @tc.level     Level 2
      */
     it("testClassRewriting0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassRewriting0004';
       let myDog = new Dog3();
       let sound = myDog.speak();
       expect(sound).assertEqual(false);
@@ -188,7 +184,6 @@ export default function ClassRewritingTest():void {
      * @tc.level     Level 2
      */
     it("testClassRewriting0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassRewriting0005';
       let cat = new Cat();
       let result = cat.speak();
       let result1 = cat.speak();

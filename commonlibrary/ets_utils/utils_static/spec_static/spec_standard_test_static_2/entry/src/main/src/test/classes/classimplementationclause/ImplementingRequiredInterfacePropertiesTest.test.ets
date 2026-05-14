@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,7 +84,6 @@ export default function ImplementingRequiredInterfacePropertiesTest():void {
      * @tc.level     Level 2
      */
     it("testImplementingRequiredInterfaceProperties0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testImplementingRequiredInterfaceProperties0001';
       let instance: B = new B();
       instance.text = "text";
       expect(instance.text).assertEqual("text");

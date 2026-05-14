@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -128,7 +128,6 @@ export default function RequirementsInOverridingAndHidingTest():void {
      * @tc.level     Level 2
      */
     it("testRequirementsInOverridingAndHiding0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testRequirementsInOverridingAndHiding0001';
       let c = new C()
       expect(c.test()).assertEqual(5)
     });
@@ -142,7 +141,6 @@ export default function RequirementsInOverridingAndHidingTest():void {
      * @tc.level     Level 2
      */
     it("testRequirementsInOverridingAndHiding0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testRequirementsInOverridingAndHiding0002';
       let c = new C1()
       expect(c.test()).assertEqual(5)
     });
@@ -156,7 +154,6 @@ export default function RequirementsInOverridingAndHidingTest():void {
      * @tc.level     Level 2
      */
     it("testRequirementsInOverridingAndHiding0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testRequirementsInOverridingAndHiding0003';
       let c = new C2()
       expect(c.test()).assertEqual(5)
     });
@@ -170,7 +167,6 @@ export default function RequirementsInOverridingAndHidingTest():void {
      * @tc.level     Level 2
      */
     it("testRequirementsInOverridingAndHiding0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testRequirementsInOverridingAndHiding0004';
       let c = new C3()
       expect(c.test()).assertEqual(5)
     });

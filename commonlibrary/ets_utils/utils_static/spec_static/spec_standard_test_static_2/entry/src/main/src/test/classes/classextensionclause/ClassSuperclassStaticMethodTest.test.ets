@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -136,8 +136,6 @@ export default function ClassSuperclassStaticMethodTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassStaticMethod0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassStaticMethod0001';
-      console.log(TAG + ' start');
       expect(Child.callParentStaticMethod()).assertEqual("Parent static method");
     });
 
@@ -150,8 +148,6 @@ export default function ClassSuperclassStaticMethodTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassStaticMethod0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassStaticMethod0002';
-      console.log(TAG + ' start');
       expect(Child1.staticMethod()).assertEqual("Child static method calling Parent static method");
     });
 
@@ -164,8 +160,6 @@ export default function ClassSuperclassStaticMethodTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassStaticMethod0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassStaticMethod0003';
-      console.log(TAG + ' start');
       const childInstance = new Child2();
       expect(childInstance.callParentStaticMethod()).assertEqual("Parent static method");
     });
@@ -180,8 +174,6 @@ export default function ClassSuperclassStaticMethodTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassStaticMethod0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassStaticMethod0004';
-      console.log(TAG + ' start');
       const childInstance = new Child3();
       expect(Child3.callParentStaticMethod()).assertEqual("Parent static property");
     });
@@ -196,8 +188,6 @@ export default function ClassSuperclassStaticMethodTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassStaticMethod0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassStaticMethod0005';
-      console.log(TAG + ' start');
       expect(Child4.callParentStaticMethod()).assertEqual("Child static property");
     });
 
@@ -210,8 +200,6 @@ export default function ClassSuperclassStaticMethodTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassStaticMethod0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassStaticMethod0006';
-      console.log(TAG + ' start');
       const result = Child5.callParentStaticMethod();
       expect(result).assertEqual("Parent static Parent static Parent");
     });

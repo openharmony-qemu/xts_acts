@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -260,7 +260,6 @@ export default function AccessorDeclarationsTest():void {
      * @tc.level     Level 2
      */
     it("testAccessorDeclarations0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessorDeclarations0001';
       let d: Derived = new Derived()
       d.field = new Derived
       let b: Base = d.field
@@ -277,7 +276,6 @@ export default function AccessorDeclarationsTest():void {
      * @tc.level     Level 2
      */
     it("testAccessorDeclarations0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessorDeclarations0002';
       let instance: A = new A();
       try {
         let a = instance.age;
@@ -296,7 +294,6 @@ export default function AccessorDeclarationsTest():void {
      * @tc.level     Level 2
      */
     it("testAccessorDeclarations0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessorDeclarations0003';
       let instance: B = new B();
       expect(instance.age).assertEqual( 5 );
     })
@@ -310,7 +307,6 @@ export default function AccessorDeclarationsTest():void {
      * @tc.level     Level 2
      */
     it("testAccessorDeclarations0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessorDeclarations0004';
       let instance: B1 = new B1();
       expect( instance.age).assertEqual(10 );
       let instance2: A2 = new B1();
@@ -326,7 +322,6 @@ export default function AccessorDeclarationsTest():void {
      * @tc.level     Level 2
      */
     it("testAccessorDeclarations0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessorDeclarations0005';
       let instance: A3 = new A3();
       expect( instance.getAge()).assertEqual(5);
     })
@@ -340,7 +335,6 @@ export default function AccessorDeclarationsTest():void {
      * @tc.level     Level 2
      */
     it("testAccessorDeclarations0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessorDeclarations0006';
       let instance: A4 = new A4();
       instance.age = 15;
       expect( instance.age).assertEqual(15 );
@@ -355,7 +349,6 @@ export default function AccessorDeclarationsTest():void {
      * @tc.level     Level 2
      */
     it("testAccessorDeclarations0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessorDeclarations0007';
       expect( A5.age).assertEqual(5);
     })
 
@@ -368,7 +361,6 @@ export default function AccessorDeclarationsTest():void {
      * @tc.level     Level 2
      */
     it("testAccessorDeclarations0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessorDeclarations0008';
       let instance: B2 = new B2();
       expect( instance.obj instanceof A6 ).assertTrue();
     })
@@ -382,7 +374,6 @@ export default function AccessorDeclarationsTest():void {
      * @tc.level     Level 2
      */
     it("testAccessorDeclarations0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessorDeclarations0009';
       let instance: A7 = new A7();
       expect(instance.age).assertEqual(0);
     })
@@ -396,7 +387,6 @@ export default function AccessorDeclarationsTest():void {
      * @tc.level     Level 2
      */
     it("testAccessorDeclarations0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessorDeclarations0010';
       let instance: A8 = new A8();
       try {
         instance.age = -5;
@@ -415,7 +405,6 @@ export default function AccessorDeclarationsTest():void {
      * @tc.level     Level 2
      */
     it("testAccessorDeclarations0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessorDeclarations0011';
       let instance: B3 = new B3();
       instance.age = 5;
       expect( instance.getAge()).assertEqual(10 );
@@ -433,7 +422,6 @@ export default function AccessorDeclarationsTest():void {
      * @tc.level     Level 2
      */
     it("testAccessorDeclarations0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessorDeclarations0012';
       let instance: A10 = new A10();
       instance.setAge(5);
       expect( instance.getAge()).assertEqual(5 );
@@ -448,7 +436,6 @@ export default function AccessorDeclarationsTest():void {
      * @tc.level     Level 2
      */
     it("testAccessorDeclarations0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessorDeclarations0013';
       A11.age = 5;
       expect( A11.getAge()).assertEqual(5 );
     })
@@ -462,7 +449,6 @@ export default function AccessorDeclarationsTest():void {
      * @tc.level     Level 2
      */
     it("testAccessorDeclarations0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessorDeclarations0014';
       let instance: B4 = new B4();
       instance.obj = new A12();
       expect( instance.obj instanceof A12 ).assertTrue();
@@ -477,7 +463,6 @@ export default function AccessorDeclarationsTest():void {
      * @tc.level     Level 2
      */
     it("testAccessorDeclarations0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessorDeclarations0015';
       let instance: A13 = new A13();
       instance.age = 10;
       expect( instance.age).assertEqual(10 );

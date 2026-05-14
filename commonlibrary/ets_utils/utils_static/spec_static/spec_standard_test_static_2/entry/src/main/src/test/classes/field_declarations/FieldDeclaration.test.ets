@@ -3118,7 +3118,7 @@ export default function FieldDeclarationTest(): void {
      */
     it("testFieldDeclaration0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F038 = new A_F038()
-      expect(a.field instanceof C_F038).assertTrue()
+      expect(a.field instanceof C_F038).assertFalse()
       expect(a.field).assertEqual(undefined)
       a.field = new C_F038()
       a.field!.data = 5
@@ -3198,7 +3198,7 @@ export default function FieldDeclarationTest(): void {
      */
     it("testFieldDeclaration0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F042 = new A_F042()
-      expect(a.field instanceof C_F042).assertTrue()
+      expect(a.field instanceof C_F042).assertFalse()
       expect(a.field).assertEqual(undefined)
       a.field = new C_F042()
       a.field!.data = 5
@@ -3382,7 +3382,7 @@ export default function FieldDeclarationTest(): void {
      */
     it("testFieldDeclaration0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F052 = new A_F052()
-      expect(a.field instanceof C_F052).assertTrue()
+      expect(a.field instanceof C_F052).assertFalse()
       expect(a.field).assertEqual(undefined)
       a.field = new C_F052()
       a.field!.data = 5
@@ -3956,7 +3956,7 @@ export default function FieldDeclarationTest(): void {
      */
     it("testFieldDeclaration0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F092 = new A_F092()
-      expect(a.field instanceof C_F092).assertTrue()
+      expect(a.field instanceof C_F092).assertFalse()
       expect(a.field).assertEqual(undefined)
     })
 
@@ -4014,7 +4014,7 @@ export default function FieldDeclarationTest(): void {
      */
     it("testFieldDeclaration0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F096 = new A_F096()
-      expect(a.field instanceof C_F096).assertTrue()
+      expect(a.field instanceof C_F096).assertFalse()
       expect(a.field).assertEqual(undefined)
     })
 

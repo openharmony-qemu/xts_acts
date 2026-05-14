@@ -1015,7 +1015,7 @@ export default function FieldsLateInitFourTest(): void {
       let a: A_F434 = new A_F434()
         expect(a.res).assertFalse()
         waitForCompletion(a.foo)
-        expect(a.res).assertTrue()
+        expect(a.res).assertFalse()
     })
 
     /**
@@ -1030,7 +1030,7 @@ export default function FieldsLateInitFourTest(): void {
       let a: A_F435 = new A_F435()
         expect(a.res).assertFalse()
         waitForCompletion(a.foo)
-        expect(a.res).assertTrue()
+        expect(a.res).assertFalse()
     })
 
     /**
@@ -1045,7 +1045,7 @@ export default function FieldsLateInitFourTest(): void {
       let a: A_F436 = new A_F436()
         expect(a.res).assertFalse()
         waitForCompletion(a.foo)
-        expect(a.res).assertTrue()
+        expect(a.res).assertFalse()
     })
 
     /**
@@ -1060,7 +1060,7 @@ export default function FieldsLateInitFourTest(): void {
       let a: A_F437 = new A_F437()
         expect(a.res).assertFalse()
         waitForCompletion(a.foo)
-        expect(a.res).assertTrue()
+        expect(a.res).assertFalse()
     })
 
     /**
@@ -1075,7 +1075,7 @@ export default function FieldsLateInitFourTest(): void {
       let a: A_F438 = new A_F438()
         expect(a.res).assertFalse()
         waitForCompletion(a.foo)
-        expect(a.res).assertTrue()
+        expect(a.res).assertFalse()
     })
 
     /**
@@ -1090,7 +1090,7 @@ export default function FieldsLateInitFourTest(): void {
       let a: A_F439 = new A_F439()
         expect(a.res).assertFalse()
         waitForCompletion(a.foo)
-        expect(a.res).assertTrue()
+        expect(a.res).assertFalse()
     })
 
     /**
@@ -1105,7 +1105,7 @@ export default function FieldsLateInitFourTest(): void {
       let a: A_F440 = new A_F440()
         expect(a.res).assertFalse()
         waitForCompletion(a.foo)
-        expect(a.res).assertTrue()
+        expect(a.res).assertFalse()
     })
 
     /**
@@ -1120,7 +1120,7 @@ export default function FieldsLateInitFourTest(): void {
       let a: A_F441 = new A_F441()
         expect(a.res).assertFalse()
         waitForCompletion(a.foo)
-        expect(a.res).assertTrue()
+        expect(a.res).assertFalse()
     })
 
     /**
@@ -1135,7 +1135,7 @@ export default function FieldsLateInitFourTest(): void {
       let a: A_F442 = new A_F442()
         expect(a.res).assertFalse()
         waitForCompletion(a.foo)
-        expect(a.res).assertTrue()
+        expect(a.res).assertFalse()
     })
 
     /**
@@ -1150,7 +1150,7 @@ export default function FieldsLateInitFourTest(): void {
       let a: A_F443 = new A_F443()
         expect(a.res).assertFalse()
         waitForCompletion(a.foo)
-        expect(a.res).assertTrue()
+        expect(a.res).assertFalse()
     })
 
     /**
@@ -1165,7 +1165,7 @@ export default function FieldsLateInitFourTest(): void {
       let a: A_F444 = new A_F444()
         expect(a.res).assertFalse()
         waitForCompletion(a.foo)
-        expect(a.res).assertTrue()
+        expect(a.res).assertFalse()
     })
 
     /**
@@ -1180,7 +1180,7 @@ export default function FieldsLateInitFourTest(): void {
       let a: A_F445 = new A_F445()
         expect(a.res).assertFalse()
         waitForCompletion(a.foo)
-        expect(a.res).assertTrue()
+        expect(a.res).assertFalse()
     })
 
     /**
@@ -1195,7 +1195,7 @@ export default function FieldsLateInitFourTest(): void {
       let a: A_F446 = new A_F446()
         expect(a.res).assertFalse()
         waitForCompletion(a.foo)
-        expect(a.res).assertTrue()
+        expect(a.res).assertFalse()
     })
   })
 }

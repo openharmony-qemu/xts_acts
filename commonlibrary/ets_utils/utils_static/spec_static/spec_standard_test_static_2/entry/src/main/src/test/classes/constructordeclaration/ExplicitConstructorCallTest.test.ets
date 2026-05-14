@@ -796,7 +796,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0001';
 
             let b = new B1(1)
         expect(b.fld.length).assertEqual(4)
@@ -834,7 +833,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0002';
 
             let t: [string, Object, int, boolean] = ['a', 'b', 1, true]
             let b = new B2(1, t)
@@ -864,7 +862,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0003';
 
             let b = new B3(1)
         expect(b.fld[0]).assertEqual('a')
@@ -881,7 +878,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0004';
 
             let b = new B4(1)
         expect(b.fld[0]).assertEqual('a')
@@ -902,7 +898,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0005';
 
         expect(new A5('abc').fld).assertEqual('abc')
         expect(new A5().fld).assertEqual('hello')
@@ -920,7 +915,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0006';
 
         expect(new A6('abc').fld).assertEqual('abc')
         expect(new A6().fld).assertEqual('42')
@@ -938,7 +932,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0007';
 
         expect(new B5().fld).assertEqual('0')
         expect(new B5(42.0).fld).assertEqual('42')
@@ -957,7 +950,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0008';
 
             let b = new B7()
         expect(b.p).assertEqual(undefined)
@@ -988,7 +980,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0009';
 
             let b = new B8()
         expect(b.p).assertEqual(undefined)
@@ -1019,7 +1010,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0010';
 
             let b = new B9()
         expect(b.p).assertEqual('super')
@@ -1049,7 +1039,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0011';
 
             let b = new B10('a', 'b')
         expect(b.s.length).assertEqual(2)
@@ -1069,7 +1058,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0012';
 
             let b = new B11('a')
         expect(b.s.length).assertEqual(2)
@@ -1099,7 +1087,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0013';
 
             let b = new B12()
         expect(b.s.length).assertEqual(2)
@@ -1128,7 +1115,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0014';
 
             let b = new B13('a', 'b')
         expect(b.s.length).assertEqual(2)
@@ -1148,7 +1134,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0015';
 
             let b = new B14()
         expect(b.s.length).assertEqual(0)
@@ -1170,7 +1155,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0016';
 
             let b = new B15('a', 'b', 'c')
         expect(b.p1.length).assertEqual(3)
@@ -1191,7 +1175,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0017';
 
             let b = new B16('a', 'b', 'c')
         expect(b.p1.length).assertEqual(3)
@@ -1214,7 +1197,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0018';
 
             let b = new B17('a', 'b', 'c')
         expect(b.p1.length).assertEqual(0)
@@ -1236,7 +1218,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0019';
 
             let a1 = new A20('1', '2', '3')
         expect(a1.k1).assertEqual('1')
@@ -1257,7 +1238,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0020';
 
             let x = ''
             let a1 = new A21(1, 2, 3, undefined, () => { x = 'x' })
@@ -1280,7 +1260,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0021';
 
             let x: string = ''
             let b1 = new B18('0', '1', '2', '3', () => { x = 'x' })
@@ -1304,7 +1283,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0022';
 
             let a1: A23|undefined;
             let v1: string = ''
@@ -1340,7 +1318,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0023';
 
             let a1: A24|undefined;
 
@@ -1373,7 +1350,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0024';
 
             let a1: A25|undefined;
 
@@ -1413,7 +1389,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0025';
 
             let s: string = ''
             let a = new A26(
@@ -1458,7 +1433,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0026';
 
             let s: string = ''
             let a = new A27(
@@ -1501,7 +1475,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0027';
 
             let s: string = ''
             let b = new B20(
@@ -1548,7 +1521,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0028';
 
             let a = new A29(
                 [() => 'abc']
@@ -1599,7 +1571,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0029';
 
             let a = new A30('a', 'b', 'c', 'd')
         expect(a.p1).assertEqual(undefined)
@@ -1621,7 +1592,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0030';
 
             let b = new B21('a', 'b', 'c', 'd')
         expect(b.p1).assertEqual(undefined)
@@ -1642,7 +1612,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0031';
 
             let b = new B22('a', 'b', 'c', 'd')
         expect(b.s[0]).assertEqual('aa')
@@ -1662,7 +1631,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0032';
 
             let i1: B23 = new B23();
         expect(i1.x).assertEqual(8)
@@ -1680,7 +1648,6 @@ export default function ExplicitConstructorCallTest():void {
          * @tc.level     Level 2
          */
         it("testExplicitConstructorCall0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testExplicitConstructorCall0033';
 
             let i1: A34 = new A34();
         expect(i1.x).assertEqual(8)

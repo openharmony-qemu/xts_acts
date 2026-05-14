@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,7 +91,6 @@ export default function AbstractMethodsTest():void {
      * @tc.level     Level 2
      */
     it("testAbstractMethods0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAbstractMethods0001';
       let y: Y = new Y();
       expect(y.foo()).assertEqual(11);
       let x: X = y;

@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -185,7 +185,6 @@ export default function MethodsDeclarationsTest():void {
      * @tc.level     Level 2
      */
     it("testMethodsDeclarations0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodsDeclarations0001';
       let instance: A = new A();
       expect(instance.run()).assertEqual(5);
     });
@@ -199,7 +198,6 @@ export default function MethodsDeclarationsTest():void {
      * @tc.level     Level 2
      */
     it("testMethodsDeclarations0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodsDeclarations0002';
       let instance: FilledRectangle = new FilledRectangle(5, 5, "color");
       expect( instance.draw()).assertEqual(true );
     });
@@ -213,7 +211,6 @@ export default function MethodsDeclarationsTest():void {
      * @tc.level     Level 2
      */
     it("testMethodsDeclarations0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodsDeclarations0003';
       let instance: FilledRectangle1 = new FilledRectangle1(5, 5, "color");
       expect( instance.draw()).assertEqual(true );
     });
@@ -229,7 +226,6 @@ export default function MethodsDeclarationsTest():void {
      * @tc.level     Level 2
      */
     it("testMethodsDeclarations0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodsDeclarations0004';
       let a = new A1
       expect(a.meth(['x'], [42.0])).assertEqual('x42')
       expect(a.meth(['x'])).assertEqual('x1')
@@ -250,7 +246,6 @@ export default function MethodsDeclarationsTest():void {
      * @tc.level     Level 2
      */
     it("testMethodsDeclarations0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodsDeclarations0005';
       let b = new B
       expect(b.meth(['x'], [42.0])).assertEqual('x42')
       expect(b.meth(['x'])).assertEqual('x1')
@@ -271,7 +266,6 @@ export default function MethodsDeclarationsTest():void {
      * @tc.level     Level 2
      */
     it("testMethodsDeclarations0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodsDeclarations0006';
       let flag: boolean | undefined
       let test: TA = new TA
       expect(test.foo('', '', '', ((): boolean | undefined => flag)() ? undefined : () => {}, undefined, undefined,
@@ -289,7 +283,6 @@ export default function MethodsDeclarationsTest():void {
      * @tc.level     Level 2
      */
     it("testMethodsDeclarations0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodsDeclarations0007';
       let flag: boolean | undefined
       const test: TwoOptionalLambdasInMethod = new TwoOptionalLambdasInMethod();
       expect(test.foo('', '', '', flag ? undefined : () => {}, undefined)).assertTrue();
@@ -304,7 +297,6 @@ export default function MethodsDeclarationsTest():void {
      * @tc.level     Level 2
      */
     it("testMethodsDeclarations0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodsDeclarations0008';
       let flag: boolean | undefined
       expect(TA1.foo('', '', '', flag ? undefined : () => {}, undefined)).assertTrue();
     });
@@ -318,7 +310,6 @@ export default function MethodsDeclarationsTest():void {
      * @tc.level     Level 2
      */
     it("testMethodsDeclarations0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodsDeclarations0009';
       let flag: boolean | undefined
       expect(TA1.foo('', '', '',  ((): boolean | undefined => flag)() ? undefined : () => {}, undefined)).assertTrue();
     });

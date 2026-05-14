@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,7 +72,6 @@ export default function MetTest():void {
      * @tc.level     Level 2
      */
     it("testMet0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMet0001';
       expect(new A().foo(42)).assertEqual(84)
     });
 
@@ -85,7 +84,6 @@ export default function MetTest():void {
      * @tc.level     Level 2
      */
     it("testMet0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMet0002';
       expect(new B().foo(42)).assertEqual(126)
     });
 
@@ -98,7 +96,6 @@ export default function MetTest():void {
      * @tc.level     Level 2
      */
     it("testMet0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMet0003';
       expect(new B1().foo(42)).assertEqual(126)
     });
   })

@@ -1663,7 +1663,7 @@ export default function FieldInitializationSixTest(): void {
      */
     it("testFieldInitSix0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F620<Object | undefined> = new A_F620<Object | undefined>(undefined)
-      expect(a.field instanceof Object).assertTrue()
+      expect(a.field instanceof Object).assertFalse()
       expect(a.field).assertEqual(undefined)
       a.field = 5
       expect(a.field instanceof Object).assertTrue()

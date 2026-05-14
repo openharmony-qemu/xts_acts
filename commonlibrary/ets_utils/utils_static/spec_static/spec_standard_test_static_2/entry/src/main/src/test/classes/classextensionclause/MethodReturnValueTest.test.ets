@@ -380,7 +380,6 @@ export default function MethodReturnValueTest(): void {
      * @tc.level     Level 2
      */
     it("testMethodReturnValue0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodReturnValue0001';
       let parent = new Parent();
       let parentValue: number = parent.getValue();
       expect(parentValue).assertEqual(100);
@@ -399,7 +398,6 @@ export default function MethodReturnValueTest(): void {
      * @tc.level     Level 2
      */
     it("testMethodReturnValue0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodReturnValue0002';
       let parent = new Parent1();
       let parentValue: number = parent.getParentValue();
       expect(parentValue).assertEqual(100);
@@ -418,7 +416,6 @@ export default function MethodReturnValueTest(): void {
      * @tc.level     Level 2
      */
     it("testMethodReturnValue0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodReturnValue0003';
       let grandParent = new GrandParent();
       let grandParentValue: number = grandParent.getValue();
       expect(grandParentValue).assertEqual(100);
@@ -440,7 +437,6 @@ export default function MethodReturnValueTest(): void {
      * @tc.level     Level 2
      */
     it("testMethodReturnValue0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodReturnValue0004';
       let grandParent = new GrandParent2();
       let grandParentValue: number = grandParent.getValue();
       expect(grandParentValue).assertEqual(100);
@@ -462,7 +458,6 @@ export default function MethodReturnValueTest(): void {
      * @tc.level     Level 2
      */
     it("testMethodReturnValue0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodReturnValue0005';
       let grandParent = new GrandParent3();
       let grandParentValue: number = grandParent.getGrandParentValue();
       expect(grandParentValue).assertEqual(100);
@@ -484,7 +479,6 @@ export default function MethodReturnValueTest(): void {
      * @tc.level     Level 2
      */
     it("testMethodReturnValue0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodReturnValue0006';
       let parent = new Parent5();
       let parentValue: number = parent.getValue();
       expect(parentValue).assertEqual(100);
@@ -503,7 +497,6 @@ export default function MethodReturnValueTest(): void {
      * @tc.level     Level 2
      */
     it("testMethodReturnValue0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodReturnValue0007';
       let grandParent = new GrandParent4();
       let grandParentValue: number = grandParent.getValue();
       expect(grandParentValue,).assertEqual(100);
@@ -525,7 +518,6 @@ export default function MethodReturnValueTest(): void {
      * @tc.level     Level 2
      */
     it("testMethodReturnValue0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodReturnValue0008';
       let grandParent = new GrandParent5();
       let grandParentValue: number = grandParent.getValue();
       expect(grandParentValue).assertEqual(100);
@@ -547,7 +539,6 @@ export default function MethodReturnValueTest(): void {
      * @tc.level     Level 2
      */
     it("testMethodReturnValue0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodReturnValue0009';
       expect(Parent8.staticMethod()).assertEqual("Parent's static method");
       expect(Child8.staticMethod()).assertEqual("Parent's static method and Child's additional logic");
     });
@@ -561,7 +552,6 @@ export default function MethodReturnValueTest(): void {
      * @tc.level     Level 2
      */
     it("testMethodReturnValue0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodReturnValue0010';
       let parent = new Parent9();
       let parentValue: number = parent.getValue();
       expect(parentValue).assertEqual(100);
@@ -579,7 +569,6 @@ export default function MethodReturnValueTest(): void {
      * @tc.level     Level 2
      */
     it("testMethodReturnValue0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodReturnValue0011';
       let parent = new Parent10();
       let parentValue: string = parent.getValue();
       expect(parentValue).assertEqual("100");
@@ -597,7 +586,6 @@ export default function MethodReturnValueTest(): void {
      * @tc.level     Level 2
      */
     it("testMethodReturnValue0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodReturnValue0012';
       let parent = new Parent11();
       let parentValue: byte = parent.getValue();
       expect(parentValue).assertEqual(100);
@@ -615,7 +603,6 @@ export default function MethodReturnValueTest(): void {
      * @tc.level     Level 2
      */
     it("testMethodReturnValue0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodReturnValue0013';
       let parent = new Parent12();
       let parentValue: short = parent.getValue();
       expect(parentValue).assertEqual(100);
@@ -633,7 +620,6 @@ export default function MethodReturnValueTest(): void {
      * @tc.level     Level 2
      */
     it("testMethodReturnValue0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodReturnValue0014';
       let parent = new Parent13();
       let parentValue: int = parent.getValue();
       expect(parentValue).assertEqual(100);
@@ -651,7 +637,6 @@ export default function MethodReturnValueTest(): void {
      * @tc.level     Level 2
      */
     it("testMethodReturnValue0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodReturnValue0015';
       let parent = new Parent14();
       let parentValue: long = parent.getValue();
       expect(parentValue).assertEqual(100);
@@ -669,7 +654,6 @@ export default function MethodReturnValueTest(): void {
      * @tc.level     Level 2
      */
     it("testMethodReturnValue0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodReturnValue0016';
       let parent = new Parent15();
       let parentValue: double = parent.getValue();
       expect(parentValue).assertEqual(100);
@@ -687,7 +671,6 @@ export default function MethodReturnValueTest(): void {
      * @tc.level     Level 2
      */
     it("testMethodReturnValue0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodReturnValue0017';
       let parent = new Parent16();
       let parentValue: float = parent.getValue();
       expect(parentValue).assertEqual(100);
@@ -705,7 +688,6 @@ export default function MethodReturnValueTest(): void {
      * @tc.level     Level 2
      */
     it("testMethodReturnValue0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodReturnValue0018';
       let parent = new Parent17();
       try {
         let parentValue: never = parent.getValue();
@@ -737,7 +719,6 @@ export default function MethodReturnValueTest(): void {
      * @tc.level     Level 2
      */
     it("testMethodReturnValue0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodReturnValue0019';
       let parent = new Parent19();
       let parentValue: boolean = parent.getValue();
       expect(parentValue).assertEqual(true);
@@ -755,7 +736,6 @@ export default function MethodReturnValueTest(): void {
      * @tc.level     Level 2
      */
     it("testMethodReturnValue0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodReturnValue0020';
       let parent = new Parent20();
       let parentValue: [] = parent.getValue();
       expect(parentValue.toString()).assertEqual("");
@@ -773,7 +753,6 @@ export default function MethodReturnValueTest(): void {
      * @tc.level     Level 2
      */
     it("testMethodReturnValue0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodReturnValue0021';
       let parent = new Parent21();
       let obj1: Person = parent.createGenericObject();
       expect(obj1.name).assertEqual("John");
@@ -797,7 +776,6 @@ export default function MethodReturnValueTest(): void {
      * @tc.level     Level 2
      */
     it("testMethodReturnValue0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodReturnValue0022';
       let parent = new Parent22();
       let parentValue: bigint = parent.getValue();
       expect(parentValue).assertEqual(123n);
@@ -815,7 +793,6 @@ export default function MethodReturnValueTest(): void {
      * @tc.level     Level 2
      */
     it("testMethodReturnValue0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodReturnValue0023';
       let parent = new Parent23();
       parent.getValue();
       expect(parent.wasExecuted()).assertEqual(true);

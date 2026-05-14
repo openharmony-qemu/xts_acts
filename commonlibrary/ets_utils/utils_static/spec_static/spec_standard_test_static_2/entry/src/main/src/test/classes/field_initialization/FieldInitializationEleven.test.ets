@@ -584,7 +584,7 @@ export default function FieldInitializationElevenTest(): void {
       expect(ns.A_F1128.field instanceof Object).assertTrue()
       expect(ns.A_F1128.field).assertEqual(5)
           ns.A_F1128.field = null
-      expect(ns.A_F1128.field instanceof Object).assertTrue()
+      expect(ns.A_F1128.field instanceof Object).assertFalse()
       expect(ns.A_F1128.field).assertEqual(null)
     })
 
@@ -799,13 +799,13 @@ export default function FieldInitializationElevenTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitEleven0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(A_F1098.field instanceof Object).assertTrue()
+      expect(A_F1098.field instanceof Object).assertFalse()
       expect(A_F1098.field).assertEqual(undefined)
           A_F1098.field = 5
       expect(A_F1098.field instanceof Object).assertTrue()
       expect(A_F1098.field).assertEqual(5)
           A_F1098.field = undefined
-      expect(A_F1098.field instanceof Object).assertTrue()
+      expect(A_F1098.field instanceof Object).assertFalse()
       expect(A_F1098.field).assertEqual(undefined)
     })
 
@@ -1068,7 +1068,7 @@ export default function FieldInitializationElevenTest(): void {
       expect(A_F1113.field instanceof Object).assertTrue()
       expect(A_F1113.field).assertEqual(5)
           A_F1113.field = undefined
-      expect(A_F1113.field instanceof Object).assertTrue()
+      expect(A_F1113.field instanceof Object).assertFalse()
       expect(A_F1113.field).assertEqual(undefined)
           A_F1113.field = 5
       expect(A_F1113.field instanceof Object).assertTrue()

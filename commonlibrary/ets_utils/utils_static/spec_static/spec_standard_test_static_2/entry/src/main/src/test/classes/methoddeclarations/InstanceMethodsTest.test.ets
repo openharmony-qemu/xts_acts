@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -89,7 +89,6 @@ export default function InstanceMethodsTest():void {
      * @tc.level     Level 2
      */
     it("testInstanceMethods0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInstanceMethods0001';
       let instance: A = new A();
       expect( instance.foo()).assertEqual(5);
     });
@@ -104,7 +103,6 @@ export default function InstanceMethodsTest():void {
      * @tc.level     Level 2
      */
     it("testInstanceMethods0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInstanceMethods0002';
       let p1: Point = new Point(0, 0);
       let p2: Point = new Point(3, 4);
 

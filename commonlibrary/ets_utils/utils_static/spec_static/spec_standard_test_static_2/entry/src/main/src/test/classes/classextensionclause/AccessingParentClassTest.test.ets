@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -989,7 +989,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0001';
       const instanceB = new Sub();
       instanceB.checkAccess();
       expect(check_value).assertTrue()
@@ -1004,7 +1003,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0002';
       const instanceB = new Sub1();
       instanceB.checkAccess();
       expect(check_value1).assertTrue()
@@ -1019,7 +1017,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0003';
       const instanceB = new Sub2();
       instanceB.checkAccess();
       expect(check_value2!.name).assertEqual("test_name");
@@ -1034,7 +1031,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0004';
       const instanceB = new Sub3();
       instanceB.checkAccess();
       expect(check_value3!.name).assertEqual("test_name");
@@ -1049,7 +1045,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0005';
       const instanceB = new Sub4();
       instanceB.checkAccess();
       expect(check_value4).assertEqual(date);
@@ -1064,7 +1059,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0006';
       const instanceB = new Sub5();
       instanceB.checkAccess();
       expect(check_value5).assertEqual(date);
@@ -1079,7 +1073,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0007';
       const instanceB = new Sub6();
       instanceB.checkAccess();
       expect(instanceB.value).assertEqual(2);
@@ -1094,7 +1087,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0008';
       const instanceB = new Sub6();
       instanceB.checkAccess();
       expect(instanceB.value).assertEqual(2);
@@ -1109,7 +1101,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0009';
       const instanceB = new Sub7();
       instanceB.checkAccess();
       expect(check_value6).assertEqual(10);
@@ -1124,7 +1115,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0010';
       const instanceB = new Sub8();
       instanceB.checkAccess();
       expect(check_value7).assertEqual(10);
@@ -1139,7 +1129,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0011';
       const instanceB = new Sub9();
       instanceB.checkAccess();
       expect(check_value8).assertNull();
@@ -1154,7 +1143,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0012';
       const instanceB = new Sub10();
       instanceB.checkAccess();
       expect(check_value9).assertEqual(null);
@@ -1169,7 +1157,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0013';
       const instanceB = new Sub11();
       instanceB.checkAccess();
       expect(check_value10).assertEqual(10);
@@ -1184,7 +1171,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0014';
       const instanceB = new Sub12();
       instanceB.checkAccess();
       expect(check_value11).assertEqual(10);
@@ -1199,7 +1185,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0015';
       const instanceB = new Sub13();
       instanceB.checkAccess();
       expect(check_value12).assertEqual("hello,world");
@@ -1214,7 +1199,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0016';
       const instanceB = new Sub14();
       instanceB.checkAccess();
       expect(check_value13).assertEqual("hello,world");
@@ -1229,7 +1213,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0017';
       const instanceB = new Sub15();
       instanceB.checkAccess();
       expect(check_value14).assertEqual(undefined);
@@ -1244,7 +1227,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0018';
       const instanceB = new Sub16();
       instanceB.checkAccess();
       expect(check_value15).assertEqual(undefined);
@@ -1259,7 +1241,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0019';
       const instanceB = new Sub17();
       instanceB.checkAccess();
       expect(check_value16).assertTrue();
@@ -1274,7 +1255,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0020';
       const instanceB = new Sub18();
       instanceB.checkAccess();
       expect(check_value17).assertTrue();
@@ -1289,7 +1269,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0021';
       const instanceB = new Sub19();
       instanceB.checkAccess();
       expect(check_value18!.name).assertEqual("test_name");
@@ -1304,7 +1283,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0022';
       const instanceB = new Sub20();
       instanceB.checkAccess();
       expect(check_value19!.name).assertEqual("test_name");
@@ -1319,7 +1297,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0023';
       const instanceB = new Sub21();
       instanceB.checkAccess();
       expect(check_value20).assertEqual(date);
@@ -1334,7 +1311,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0024';
       const instanceB = new Sub22();
       instanceB.checkAccess();
       expect(check_value21).assertEqual(date);
@@ -1349,7 +1325,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0025';
       const instanceB = new Sub23();
       instanceB.checkAccess();
       expect(check_value22!.name).assertEqual("Object1");
@@ -1364,7 +1339,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0026';
       const instanceB = new Sub24();
       instanceB.checkAccess();
       expect(check_value23!.name).assertEqual("Object1");
@@ -1379,7 +1353,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0027';
       const instanceB = new Sub25();
       instanceB.checkAccess();
       expect(check_value24).assertEqual(1);
@@ -1394,7 +1367,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0028';
       const instanceB = new Sub26();
       instanceB.checkAccess();
       expect(check_value25).assertEqual(1);
@@ -1409,7 +1381,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0029';
       const instanceB = new Sub27();
       instanceB.checkAccess();
       expect(check_value26).assertEqual("a");
@@ -1424,7 +1395,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0030';
       const instanceB = new Sub28();
       instanceB.checkAccess();
       expect(check_value27).assertEqual("a");
@@ -1439,7 +1409,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0031';
       const instanceB = new Sub29();
       instanceB.checkAccess();
       expect(check_value28).assertTrue();
@@ -1454,7 +1423,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0032';
       const instanceB = new Sub30();
       instanceB.checkAccess();
       expect(check_value29).assertTrue();
@@ -1469,7 +1437,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0033';
       const instanceB = new Sub31();
       instanceB.checkAccess();
       expect(check_value30!.name).assertEqual("test_name");
@@ -1484,7 +1451,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0034';
       const instanceB = new Sub32();
       instanceB.checkAccess();
       expect(check_value31!.name).assertEqual("test_name");
@@ -1499,7 +1465,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0035';
       const instanceB = new Sub33();
       instanceB.checkAccess();
       expect(check_value32).assertEqual(date);
@@ -1514,7 +1479,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0036';
       const instanceB = new Sub34();
       instanceB.checkAccess();
       expect(check_value33).assertEqual(date);
@@ -1529,7 +1493,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0037';
       const instanceB = new Sub35();
       instanceB.checkAccess();
       expect(instanceB.value).assertEqual(2);
@@ -1544,7 +1507,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0038';
       const instanceB = new Sub36();
       instanceB.checkAccess();
       expect(instanceB.value1).assertEqual(1);
@@ -1559,7 +1521,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0039';
       const instanceB = new Sub37();
       instanceB.checkAccess();
       expect(check_value34).assertEqual(10);
@@ -1574,7 +1535,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0040';
       const instanceB = new Sub38();
       instanceB.checkAccess();
       expect(check_value35).assertEqual(10);
@@ -1589,7 +1549,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0041';
       const instanceB = new Sub39();
       instanceB.checkAccess();
       expect(check_value36).assertEqual(null);
@@ -1604,7 +1563,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0042';
       const instanceB = new Sub40();
       instanceB.checkAccess();
       expect(check_value37).assertEqual(null);
@@ -1619,7 +1577,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0043';
       const instanceB = new Sub41();
       instanceB.checkAccess();
       expect(check_value38).assertEqual(10);
@@ -1634,7 +1591,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0044';
       const instanceB = new Sub42();
       instanceB.checkAccess();
       expect(check_value39).assertEqual(10);
@@ -1649,7 +1605,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0045';
       const instanceB = new Sub43();
       instanceB.checkAccess();
       expect(check_value40).assertEqual("hello,world");
@@ -1664,7 +1619,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0046';
       const instanceB = new Sub44();
       instanceB.checkAccess();
       expect(check_value41).assertEqual("hello,world");
@@ -1679,7 +1633,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0047';
       const instanceB = new Sub45();
       instanceB.checkAccess();
       expect(check_value42).assertEqual(undefined);
@@ -1694,7 +1647,6 @@ export default function AccessingParentClassTest():void {
      * @tc.level     Level 2
      */
     it("testAccessingParentClass0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAccessingParentClass0048';
       const instanceB = new Sub46();
       instanceB.checkAccess();
       expect(check_value43).assertEqual(undefined);

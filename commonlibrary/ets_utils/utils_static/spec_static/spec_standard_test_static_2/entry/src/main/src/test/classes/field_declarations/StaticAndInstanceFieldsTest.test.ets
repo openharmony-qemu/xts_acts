@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -122,7 +122,6 @@ export default function StaticAndInstanceFieldsTest():void {
      * @tc.level     Level 2
      */
     it("testStaticAndInstanceFields0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStaticAndInstanceFields0001';
 
       A.x = 42;
       expect(A.x).assertEqual(42);
@@ -147,7 +146,6 @@ export default function StaticAndInstanceFieldsTest():void {
      * @tc.level     Level 2
      */
     it("testStaticAndInstanceFields0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStaticAndInstanceFields0002';
       expect(A1.b1 === theInstance).assertTrue();
       let i1: A1 = new A1();
       let i2: A1 = new A1();
@@ -167,7 +165,6 @@ export default function StaticAndInstanceFieldsTest():void {
      * @tc.level     Level 2
      */
     it("testStaticAndInstanceFields0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStaticAndInstanceFields0003';
 
       B1.y = 10;
       B1.setX(5);
@@ -193,7 +190,6 @@ export default function StaticAndInstanceFieldsTest():void {
      * @tc.level     Level 2
      */
     it("testStaticAndInstanceFields0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStaticAndInstanceFields0004';
       let a1 = new A3();
       a1.setF((p: number): number => { return p + 33; });
       let f1: Func = a1.getF();

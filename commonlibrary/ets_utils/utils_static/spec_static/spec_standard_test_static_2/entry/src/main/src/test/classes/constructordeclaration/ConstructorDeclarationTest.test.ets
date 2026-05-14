@@ -754,7 +754,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0001'
       let a = new A(Color.Blue, Country.fr)
       expect(a.color).assertEqual(Color.Blue)
       expect(a.country).assertEqual(Country.fr)
@@ -770,7 +769,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0002'
       let a = new A1(Color.Blue, Country.fr) // implicit conversion
       expect(a.color).assertEqual(2)
       expect(a.country).assertEqual('France')
@@ -786,7 +784,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0003'
       let a = new A2()
       expect(a.p).assertEqual(undefined)
       let aq = a.q
@@ -816,7 +813,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0004'
       let a = new A3()
       expect(a.fld.length).assertEqual(0)
       a = new A3(1, 2.0, '3', [false])
@@ -836,7 +832,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0005'
       let a = new A4()
       expect(a.fld.length).assertEqual(0)
       a = new A4(['abc', 'def'])
@@ -854,7 +849,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0006'
       let a = new A5()
       expect(a.fld.length).assertEqual(0)
       a = new A5(1, 2.0, '3', [false])
@@ -874,7 +868,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0007'
       let a = new A6()
       expect(a.fld.length).assertEqual(0)
       a = new A6(['abc', 'def'])
@@ -892,7 +885,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0008'
       let a = new A7()
       expect(a.fld.length).assertEqual(0)
       a = new A7(1, 2.0, '3', null)
@@ -912,7 +904,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0009'
       let a = new A8()
       expect(a.fld.length).assertEqual(0)
       a = new A8(['abc', 'def'])
@@ -930,7 +921,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0010'
       let a = new A9('abc', (p: boolean): string => 'result = ' + p)
       expect(a.fld[0]).assertEqual('abc')
       expect(a.fld[1](true)).assertEqual('result = true')
@@ -946,7 +936,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0011'
       let a = new A10('abc', null)
       expect(a.fld[0]).assertEqual('abc')
       expect(a.fld[1]).assertEqual(null)
@@ -962,7 +951,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0012'
       let a = new A11(...arr)
       expect(a.p[0]).assertEqual(0)
       expect(a.p[1]).assertEqual(1)
@@ -979,7 +967,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0013'
       let a = new A12(arr1)
       expect(a.fld[0]!(42.0)).assertEqual(43.0)
       expect(a.fld[1]).assertEqual(null)
@@ -995,7 +982,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0014'
       let a = new A13(1, ...arr2)
       expect(a.p[0][0]).assertEqual(Country.us)
       expect(a.p[0][1]).assertEqual(Country.ru)
@@ -1014,7 +1000,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0015'
       let a = new A14('d', ...((): Array<string | number> => ['a', 'b', 'c'])())
       expect(a.q[0]).assertEqual('a')
       expect(a.q[1]).assertEqual('b')
@@ -1032,7 +1017,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0016'
       let a = new A15(...((p: int): FixedArray<int> => [p, p, p])(5))
       expect(a.fld.length).assertEqual(3)
       expect(a.fld[0]).assertEqual(5)
@@ -1050,7 +1034,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0017'
       let a = new A16(...arr3)
       expect(a.p[0]).assertEqual(0.0)
       expect(a.p[1]).assertEqual(1.0)
@@ -1067,7 +1050,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0018'
       let a = new A17(...tup)
       expect(a.tup[0]()).assertEqual(true)
       expect(a.tup[1]()).assertEqual('abc')
@@ -1084,7 +1066,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0019'
       let a = new A18(12.0, ...([13.0, 14.0] as FixedArray<number>))
       expect(a.fld.length).assertEqual(3)
       expect(a.fld[0]).assertEqual(12.0)
@@ -1102,7 +1083,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0020'
       let a = new A19(tup1)
       expect(a.fld[1]('hello')[0]).assertEqual('hello')
       expect(a.fld).assertEqual(tup1)
@@ -1118,7 +1098,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0021'
       let a = new A20(true, (p: boolean) => p ? 'T' : 'F')
       expect(a.p).assertEqual(true)
       expect(a.q!(true)).assertEqual('T')
@@ -1143,7 +1122,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0022'
       let a = new A21(['a', 'b', 'c'])
       expect(a.p![0]).assertEqual('a')
       expect(a.p![2]).assertEqual('c')
@@ -1163,7 +1141,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0023'
       let a = new A22(b, b, b) // with implicit widening conversion
       expect(a.fld[0]).assertEqual(1)
       expect(a.fld[1]).assertEqual(1)
@@ -1200,7 +1177,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0024'
 
       expect(new A23().fld).assertEqual(undefined)
       expect(new A23(undefined).fld).assertEqual(undefined)
@@ -1217,7 +1193,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0025'
       let a = new A24(
         (p: int) => 'Z' + p,
         (p: number) => 'A' + p
@@ -1241,7 +1216,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0026'
       let a = new A25()
       expect(a.p).assertEqual('A')
       expect(a.q).assertEqual(1.0)
@@ -1270,7 +1244,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0027'
       let a = new A26<Color, Country>(Color.Blue, Country.fr)
       expect(a.color).assertEqual(Color.Blue)
       expect(a.country).assertEqual(Country.fr)
@@ -1286,7 +1259,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0028'
       let a = new A27<int, string>(Color.Blue, Country.fr) // implicit conversion
       expect(a.color).assertEqual(2)
       expect(a.country).assertEqual('France')
@@ -1302,7 +1274,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0029'
 
       expect(new A28<Object>().fld.length).assertEqual(0)
       let a = new A28<string>(['abc', 'def'])
@@ -1320,7 +1291,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0030'
 
       expect(new A29<int>().fld.length).assertEqual(0)
       let a = new A29<int>(1, 2.0, '3', [false])
@@ -1340,7 +1310,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0031'
 
       expect(new A30<int>().fld.length).assertEqual(0)
       let a = new A30<string>(['abc', 'def'])
@@ -1358,7 +1327,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0032'
 
       expect(new A31<string>().fld.length).assertEqual(0)
       let a = new A31<Object>(1, 2.0, '3', null)
@@ -1378,7 +1346,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0033'
       let a = new A32<string>(['abc', 'def'] as FixedArray<string>)
       expect(a.fld.length).assertEqual(1)
       expect(a.fld[0][0]).assertEqual('abc')
@@ -1394,7 +1361,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0034'
       let a = new A33<(p: boolean) => string>('abc', (p: boolean): string => 'result = ' + p)
       expect(a.fld[0]).assertEqual('abc')
       expect(a.fld[1](true)).assertEqual('result = true')
@@ -1410,7 +1376,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0035'
       let a = new A34<string, null, boolean>('abc', null);
       expect(a.fld[0]).assertEqual('abc');
       expect(a.fld[1]).assertEqual(null);
@@ -1426,7 +1391,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0036'
       let a = new A35<int>(...arr4);
       expect(a.p[0]).assertEqual(0);
       expect(a.p[1]).assertEqual(1);
@@ -1443,7 +1407,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0037'
       let a = new A36<FixedArray<string | Country>>(1, ...arr5)
       expect(a.p[0][0]).assertEqual(Country.us)
       expect(a.p[0][1]).assertEqual(Country.ru)
@@ -1462,7 +1425,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0038'
       let a = new A37<string, number>('d', ...((): Array<string | number> => ['a', 'b', 'c'])())
       expect(a.q[0]).assertEqual('a')
       expect(a.q[1]).assertEqual('b')
@@ -1480,7 +1442,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0039'
       let a = new A38<null | (p: number) => number>(arr6)
       expect(a.fld[0]!(42.0)).assertEqual(43.0)
       expect(a.fld[1]).assertEqual(null)
@@ -1496,7 +1457,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0040'
       let a = new A39<int>(...((p: int): FixedArray<int> => [p, p, p])(5))
       expect(a.fld.length).assertEqual(3)
       expect(a.fld[0]).assertEqual(5)
@@ -1514,7 +1474,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0041'
       let a = new A40<Object>(...arr7)
       expect(a.p[0]).assertEqual(0.0)
       expect(a.p[1]).assertEqual(1.0)
@@ -1531,7 +1490,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0042'
       let a = new A41<boolean, string, number>(...tup2)
       expect(a.tup2[0]()).assertEqual(true)
       expect(a.tup2[1]()).assertEqual('abc')
@@ -1548,7 +1506,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0043'
       let a = new A42<string>('a', ...(['b', 'c'] as FixedArray<string>))
       expect(a.fld.length).assertEqual(3)
       expect(a.fld[0]).assertEqual('a')
@@ -1566,7 +1523,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0044'
       let a = new A43<string>(tup3)
       expect(a.fld[1]('hello')[0]).assertEqual('hello')
       expect(a.fld).assertEqual(tup3)
@@ -1582,7 +1538,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0045'
       let a = new A44<boolean>(true, (p: boolean) => p ? 'T' : 'F')
       expect(a.p).assertEqual(true)
       expect(a.q!(true)).assertEqual('T')
@@ -1607,7 +1562,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0046'
       let a = new A45<string>(['a', 'b', 'c'])
       expect(a.p![0]).assertEqual('a')
       expect(a.p![2]).assertEqual('c')
@@ -1625,7 +1579,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0047'
       let a1 = new A46<byte, short, int>(b1, b1, b1) // with implicit widening conversion
       expect(a1.fld[0]).assertEqual(1)
       expect(a1.fld[1]).assertEqual(1)
@@ -1662,7 +1615,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0048'
 
       expect(new A47<number | string | Error>().fld).assertEqual(undefined)
       expect(new A47<number | string | Error>(undefined).fld).assertEqual(undefined)
@@ -1679,7 +1631,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0049'
       let a1 = new A48<number>(
         (p: int) => 'Z' + p,
         (p: number) => 'A' + p
@@ -1703,7 +1654,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0050'
 
       expect(new A49<byte>().fld.length).assertEqual(0)
       let a = new A49<Object>(1, 2.0, '3', [false])
@@ -1723,7 +1673,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0051'
       let v = B.fromInt(42);
       expect(v.p1).assertEqual(42);
       expect(v.q1).assertEqual(undefined);
@@ -1751,7 +1700,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0052'
       let v = new B1()
       expect(v.p1).assertEqual(false)
       expect(v.q1).assertEqual(undefined)
@@ -1793,7 +1741,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0053'
 
       expect(A52.create().x).assertEqual(5)
     });
@@ -1808,7 +1755,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0054'
 
       expect(A53.create().x).assertEqual(5)
     });
@@ -1822,7 +1768,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0055'
       let b = new B2(42)
       expect(b.fld).assertEqual(42)
     });
@@ -1836,7 +1781,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0056'
       let b = new B3(42)
       expect(b.fld).assertEqual(42)
     });
@@ -1851,7 +1795,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0057'
       let a = A56.getInstance("Hello!")
       expect(a instanceof A56).assertTrue()
       expect(a.tag).assertEqual("Hello!")
@@ -1870,7 +1813,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0058'
       let a = A57.getInstance("Hello!")
       expect(a instanceof A57).assertTrue()
       expect(a.tag).assertEqual("Hello!")
@@ -1889,7 +1831,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0059'
       let a = A58.getInstance()
       expect(a instanceof A58).assertTrue()
       let b = A58.getInstance()
@@ -1906,7 +1847,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0060'
       let a = A59.getInstance("Hello!")
       expect(a instanceof A59).assertTrue()
       expect(a.tag).assertEqual("Hello!")
@@ -1925,7 +1865,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0061'
       let a = A60.getInstance("Hello!")
       expect(a instanceof A60).assertTrue()
       expect(a.tag).assertEqual("Hello!")
@@ -1943,7 +1882,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0062'
       let a = new A61<string, boolean>("hello", true)
       expect(a.x).assertEqual("hello")
       expect(a.y).assertEqual(true)
@@ -1958,7 +1896,6 @@ export default function ConstructorDeclarationTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorDeclaration0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorDeclaration0063'
       let a = new A62<string, boolean>("hello", true);
       expect(a.x).assertEqual("hello");
       expect(a.y).assertEqual(true);

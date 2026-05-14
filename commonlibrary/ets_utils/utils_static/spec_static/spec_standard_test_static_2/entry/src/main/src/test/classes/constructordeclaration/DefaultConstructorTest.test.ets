@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -358,7 +358,6 @@ export default function DefaultConstructorTest(): void {
      * @tc.level     Level 2
      */
     it("testDefaultConstructor0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDefaultConstructor0001';
       let a: A = new A();
       let b: B = new B();
       let c: C = new C();
@@ -375,7 +374,6 @@ export default function DefaultConstructorTest(): void {
      * @tc.level     Level 2
      */
     it("testDefaultConstructor0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDefaultConstructor0002';
       let a: A1 = new A1();
       expect(a instanceof A1).assertTrue();
     });
@@ -388,7 +386,6 @@ export default function DefaultConstructorTest(): void {
      * @tc.level     Level 2
      */
     it("testDefaultConstructor0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDefaultConstructor0003';
       let a: A2 = new A2();
       expect(a instanceof A2).assertTrue();
     });
@@ -401,7 +398,6 @@ export default function DefaultConstructorTest(): void {
      * @tc.level     Level 2
      */
     it("testDefaultConstructor0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDefaultConstructor0004';
       let d: Derived = new Derived();
       expect(-1).assertEqual(d.count);
     });
@@ -414,7 +410,6 @@ export default function DefaultConstructorTest(): void {
      * @tc.level     Level 2
      */
     it("testDefaultConstructor0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDefaultConstructor0005';
       let d: Derived1 = new Derived1();
       expect(-1).assertEqual(d.count);
     });
@@ -427,7 +422,6 @@ export default function DefaultConstructorTest(): void {
      * @tc.level     Level 2
      */
     it("testDefaultConstructor0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDefaultConstructor0006';
       let d: Derived2 = new Derived2();
       expect(-1).assertEqual(d.count);
     });
@@ -440,7 +434,6 @@ export default function DefaultConstructorTest(): void {
      * @tc.level     Level 2
      */
     it("testDefaultConstructor0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDefaultConstructor0007';
       let d: Derived3 = new Derived3();
       expect(-1).assertEqual(d.count);
     });
@@ -453,7 +446,6 @@ export default function DefaultConstructorTest(): void {
      * @tc.level     Level 2
      */
     it("testDefaultConstructor0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDefaultConstructor0008';
       let d: Derived4 = new Derived4();
       expect(-1).assertEqual(d.count);
     });
@@ -466,7 +458,6 @@ export default function DefaultConstructorTest(): void {
      * @tc.level     Level 2
      */
     it("testDefaultConstructor0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDefaultConstructor0009';
       let d: Derived5 = new Derived5();
       expect(-1).assertEqual(d.count);
     });
@@ -479,7 +470,6 @@ export default function DefaultConstructorTest(): void {
      * @tc.level     Level 2
      */
     it("testDefaultConstructor0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDefaultConstructor0010';
       let d: Derived6 = new Derived6();
       expect(5).assertEqual(d.count);
     });
@@ -492,7 +482,6 @@ export default function DefaultConstructorTest(): void {
      * @tc.level     Level 2
      */
     it("testDefaultConstructor0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDefaultConstructor0011';
       let d: Derived7 = new Derived7();
       expect(5).assertEqual(d.count);
     });
@@ -505,7 +494,6 @@ export default function DefaultConstructorTest(): void {
      * @tc.level     Level 2
      */
     it("testDefaultConstructor0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDefaultConstructor0012';
       let d: Derived8 = new Derived8();
       expect(5).assertEqual(d.count);
     });
@@ -518,7 +506,6 @@ export default function DefaultConstructorTest(): void {
      * @tc.level     Level 2
      */
     it("testDefaultConstructor0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDefaultConstructor0013';
       let d: Derived9 = new Derived9();
       expect(5).assertEqual(d.count);
     });
@@ -531,7 +518,6 @@ export default function DefaultConstructorTest(): void {
      * @tc.level     Level 2
      */
     it("testDefaultConstructor0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDefaultConstructor0014';
       let d: Derived10 = new Derived10();
       expect(5).assertEqual(d.count);
     });
@@ -544,7 +530,6 @@ export default function DefaultConstructorTest(): void {
      * @tc.level     Level 2
      */
     it("testDefaultConstructor0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDefaultConstructor0015';
       let d: Derived11 = new Derived11();
       expect(5).assertEqual(d.count);
     });
@@ -557,7 +542,6 @@ export default function DefaultConstructorTest(): void {
      * @tc.level     Level 2
      */
     it("testDefaultConstructor0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDefaultConstructor0016';
       let b: B1 = new B1();
       expect(b.isCalled).assertTrue();
     });
@@ -570,7 +554,6 @@ export default function DefaultConstructorTest(): void {
      * @tc.level     Level 2
      */
     it("testDefaultConstructor0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDefaultConstructor0017';
       let b: B2 = new B2();
       expect(b.isCalled).assertTrue();
     });
@@ -583,7 +566,6 @@ export default function DefaultConstructorTest(): void {
      * @tc.level     Level 2
      */
     it("testDefaultConstructor0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDefaultConstructor0018';
       let b: B3 = new B3();
       expect(b.isCalled).assertTrue();
     });
@@ -596,7 +578,6 @@ export default function DefaultConstructorTest(): void {
      * @tc.level     Level 2
      */
     it("testDefaultConstructor0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDefaultConstructor0019';
       let instance: A6 = new A6();
       expect(instance.x).assertEqual(0);
       expect(instance.b1).assertEqual(undefined);
@@ -611,7 +592,6 @@ export default function DefaultConstructorTest(): void {
      * @tc.level     Level 2
      */
     it("testDefaultConstructor0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDefaultConstructor0020';
 
       let b: Base12 = new Base12();
       let d: Derived12 = new Derived12();
@@ -627,7 +607,6 @@ export default function DefaultConstructorTest(): void {
      * @tc.level     Level 2
      */
     it("testDefaultConstructor0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDefaultConstructor0021';
       let instance: B5 = new B5();
       expect(instance.x).assertEqual(0);
       expect(instance.b1).assertEqual(undefined);
@@ -642,7 +621,6 @@ export default function DefaultConstructorTest(): void {
      * @tc.level     Level 2
      */
     it("testDefaultConstructor0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDefaultConstructor0022';
       recoil = ''
       let ot = new OT;
       expect('Test').assertEqual(recoil);
@@ -656,7 +634,6 @@ export default function DefaultConstructorTest(): void {
      * @tc.level     Level 2
      */
     it("testDefaultConstructor0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDefaultConstructor0023';
       recoil = ''
       let ot = new OT1;
       expect('Test').assertEqual(recoil);

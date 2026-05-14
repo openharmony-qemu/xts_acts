@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -210,7 +210,6 @@ export default function PublicAccessModifierTest():void {
      * @tc.level     Level 2
      */
     it("testPublicAccessModifier0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPublicAccessModifier0001';
       let instance: A = new A(2);
       expect(instance.x).assertEqual(2);
       expect(instance.y).assertEqual(1);
@@ -225,7 +224,6 @@ export default function PublicAccessModifierTest():void {
      * @tc.level     Level 2
      */
     it("testPublicAccessModifier0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPublicAccessModifier0002';
       expect(new A1().foo()).assertEqual(1)
     })
 
@@ -238,7 +236,6 @@ export default function PublicAccessModifierTest():void {
      * @tc.level     Level 2
      */
     it("testPublicAccessModifier0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPublicAccessModifier0003';
       expect(new A2().foo()).assertEqual(1)
     })
 
@@ -251,7 +248,6 @@ export default function PublicAccessModifierTest():void {
      * @tc.level     Level 2
      */
     it("testPublicAccessModifier0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPublicAccessModifier0004';
       expect(new A3().foo()).assertEqual(1)
     })
 
@@ -264,7 +260,6 @@ export default function PublicAccessModifierTest():void {
      * @tc.level     Level 2
      */
     it("testPublicAccessModifier0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPublicAccessModifier0005';
       expect(new A4().foo()).assertEqual(1)
     })
 
@@ -277,7 +272,6 @@ export default function PublicAccessModifierTest():void {
      * @tc.level     Level 2
      */
     it("testPublicAccessModifier0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPublicAccessModifier0006';
       expect(new A5().foo()).assertEqual(1)
     })
 
@@ -290,7 +284,6 @@ export default function PublicAccessModifierTest():void {
      * @tc.level     Level 2
      */
     it("testPublicAccessModifier0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPublicAccessModifier0007';
       expect(new A6().foo()).assertEqual(1)
     })
 
@@ -303,7 +296,6 @@ export default function PublicAccessModifierTest():void {
      * @tc.level     Level 2
      */
     it("testPublicAccessModifier0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPublicAccessModifier0008';
       expect(new A7().foo()).assertEqual(1)
     })
 
@@ -316,7 +308,6 @@ export default function PublicAccessModifierTest():void {
      * @tc.level     Level 2
      */
     it("testPublicAccessModifier0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPublicAccessModifier0009';
       expect(new A8().foo()).assertEqual(1)
     })
 
@@ -329,7 +320,6 @@ export default function PublicAccessModifierTest():void {
      * @tc.level     Level 2
      */
     it("testPublicAccessModifier0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPublicAccessModifier0010';
       expect(new A9().x).assertEqual(1)
     })
 
@@ -342,7 +332,6 @@ export default function PublicAccessModifierTest():void {
      * @tc.level     Level 2
      */
     it("testPublicAccessModifier0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPublicAccessModifier0011';
       expect(A10.x).assertEqual(1)
     })
 
@@ -355,7 +344,6 @@ export default function PublicAccessModifierTest():void {
      * @tc.level     Level 2
      */
     it("testPublicAccessModifier0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPublicAccessModifier0012';
       expect(new A11().getValue()).assertEqual(1)
     })
 
@@ -368,7 +356,6 @@ export default function PublicAccessModifierTest():void {
      * @tc.level     Level 2
      */
     it("testPublicAccessModifier0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPublicAccessModifier0013';
       expect(A12.getValue()).assertEqual(1)
     })
 
@@ -381,7 +368,6 @@ export default function PublicAccessModifierTest():void {
      * @tc.level     Level 2
      */
     it("testPublicAccessModifier0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPublicAccessModifier0014';
       expect(new A13().val).assertEqual(1)
     })
 
@@ -394,7 +380,6 @@ export default function PublicAccessModifierTest():void {
      * @tc.level     Level 2
      */
     it("testPublicAccessModifier0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPublicAccessModifier0015';
       expect(A14.val).assertEqual(1)
     })
 
@@ -407,7 +392,6 @@ export default function PublicAccessModifierTest():void {
      * @tc.level     Level 2
      */
     it("testPublicAccessModifier0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPublicAccessModifier0016';
       let a: A15 = new A15()
       a.val = 1
       expect(a._val).assertEqual(1)
@@ -422,7 +406,6 @@ export default function PublicAccessModifierTest():void {
      * @tc.level     Level 2
      */
     it("testPublicAccessModifier0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPublicAccessModifier0017';
       A16.val = 1
       expect(A16._val).assertEqual(1)
     })

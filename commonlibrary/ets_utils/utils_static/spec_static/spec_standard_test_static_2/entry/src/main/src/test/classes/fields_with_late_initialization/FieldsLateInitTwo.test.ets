@@ -936,386 +936,361 @@ export default function FieldsLateInitTwoTest(): void {
     /**
      * @tc.number    SUB_FIELDS_LATE_INIT_TWO_0100
      * @tc.name      testFieldsLateInitTwo0001
-     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F199 = new A_F199()
-        waitForCompletion(a.foo)
-        expect(a.field instanceof int).assertTrue()
+      let a: A_F224 = new A_F224()
+        a.field = 5
+        expect(a.field instanceof long).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
     /**
      * @tc.number    SUB_FIELDS_LATE_INIT_TWO_0200
      * @tc.name      testFieldsLateInitTwo0002
-     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F200 = new A_F200()
-        waitForCompletion(a.foo)
-        expect(a.field instanceof byte).assertTrue()
+      let a: A_F225 = new A_F225()
+        a.field = 5
+        expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
     /**
      * @tc.number    SUB_FIELDS_LATE_INIT_TWO_0300
      * @tc.name      testFieldsLateInitTwo0003
-     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F201 = new A_F201()
-        waitForCompletion(a.foo)
-        expect(a.field instanceof short).assertTrue()
+      let a: A_F226 = new A_F226()
+        a.field = 5
+        expect(a.field instanceof byte).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
     /**
      * @tc.number    SUB_FIELDS_LATE_INIT_TWO_0400
      * @tc.name      testFieldsLateInitTwo0004
-     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F202 = new A_F202()
-        waitForCompletion(a.foo)
-        expect(a.field instanceof double).assertTrue()
-        expect(a.field).assertEqual(7.3)
+      let a: A_F227 = new A_F227()
+        a.field = 5
+        expect(a.field instanceof short).assertTrue()
+        expect(a.field).assertEqual(5)
     })
 
     /**
      * @tc.number    SUB_FIELDS_LATE_INIT_TWO_0500
      * @tc.name      testFieldsLateInitTwo0005
-     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F203 = new A_F203()
-        waitForCompletion(a.foo)
-        expect(a.field instanceof number).assertTrue()
-        expect(a.field).assertEqual(5)
+      let a: A_F228 = new A_F228()
+        a.field = 7.3
+        expect(a.field instanceof double).assertTrue()
+        expect(a.field).assertEqual(7.3)
     })
 
     /**
      * @tc.number    SUB_FIELDS_LATE_INIT_TWO_0600
      * @tc.name      testFieldsLateInitTwo0006
-     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F204 = new A_F204()
-        waitForCompletion(a.foo)
-        expect(a.field instanceof float).assertTrue()
-        expect(a.field).assertEqual(7.3f)
+      let a: A_F229 = new A_F229()
+        a.field = 5
+        expect(a.field instanceof number).assertTrue()
+        expect(a.field).assertEqual(5)
     })
 
     /**
      * @tc.number    SUB_FIELDS_LATE_INIT_TWO_0700
      * @tc.name      testFieldsLateInitTwo0007
-     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F205 = new A_F205()
-        waitForCompletion(a.foo)
-        expect(a.field instanceof bigint).assertTrue()
-        expect(a.field).assertEqual(5n)
+      let a: A_F230 = new A_F230()
+        a.field = 7.3f
+        expect(a.field instanceof float).assertTrue()
+        expect(a.field).assertEqual(7.3f)
     })
 
     /**
      * @tc.number    SUB_FIELDS_LATE_INIT_TWO_0800
      * @tc.name      testFieldsLateInitTwo0008
-     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F206 = new A_F206()
-        waitForCompletion(a.foo)
-        expect(a.field instanceof string).assertTrue()
-        expect(a.field).assertEqual("abc")
+      let a: A_F231 = new A_F231()
+        a.field = 5n
+        expect(a.field instanceof bigint).assertTrue()
+        expect(a.field).assertEqual(5n)
     })
 
     /**
      * @tc.number    SUB_FIELDS_LATE_INIT_TWO_0900
      * @tc.name      testFieldsLateInitTwo0009
-     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F207 = new A_F207()
-        waitForCompletion(a.foo)
-        expect(a.field instanceof char).assertTrue()
-        expect(a.field).assertEqual(c'a')
+      let a: A_F232 = new A_F232()
+        a.field = "abc"
+        expect(a.field instanceof string).assertTrue()
+        expect(a.field).assertEqual("abc")
     })
 
     /**
      * @tc.number    SUB_FIELDS_LATE_INIT_TWO_1000
      * @tc.name      testFieldsLateInitTwo0010
-     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F208 = new A_F208()
-        waitForCompletion(a.foo)
-        expect(a.field instanceof boolean).assertTrue()
-        expect(a.field).assertEqual(false)
+      let a: A_F233 = new A_F233()
+        a.field = c'a'
+        expect(a.field instanceof char).assertTrue()
+        expect(a.field).assertEqual(c'a')
     })
 
     /**
      * @tc.number    SUB_FIELDS_LATE_INIT_TWO_1100
      * @tc.name      testFieldsLateInitTwo0011
-     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F209 = new A_F209()
-        waitForCompletion(a.foo)
-        expect(a.field instanceof Object).assertTrue()
-        expect(a.field).assertEqual(5)
+      let a: A_F234 = new A_F234()
+        a.field = true
+        expect(a.field instanceof boolean).assertTrue()
+        expect(a.field).assertEqual(true)
     })
 
     /**
      * @tc.number    SUB_FIELDS_LATE_INIT_TWO_1200
      * @tc.name      testFieldsLateInitTwo0012
-     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F210 = new A_F210()
-        let res = waitForCompletion(() => a.foo().then((): long => a.field))
-        expect(res instanceof long).assertTrue()
-        expect(res).assertEqual(5)
-        expect(a.field instanceof long).assertTrue()
+      let a: A_F235 = new A_F235()
+        a.field = 5
+        expect(a.field instanceof Object).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
     /**
      * @tc.number    SUB_FIELDS_LATE_INIT_TWO_1300
      * @tc.name      testFieldsLateInitTwo0013
-     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F211 = new A_F211()
-        let res = waitForCompletion(() => a.foo().then((): int => a.field))
-        expect(res instanceof int).assertTrue()
-        expect(res).assertEqual(5)
-        expect(a.field instanceof int).assertTrue()
+      let a: A_F236 = new A_F236()
+        a.field = 5
+        expect(a.field instanceof long).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
     /**
      * @tc.number    SUB_FIELDS_LATE_INIT_TWO_1400
      * @tc.name      testFieldsLateInitTwo0014
-     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F212 = new A_F212()
-        let res = waitForCompletion(() => a.foo().then((): byte => a.field))
-        expect(res instanceof byte).assertTrue()
-        expect(res).assertEqual(5)
-        expect(a.field instanceof byte).assertTrue()
+      let a: A_F237 = new A_F237()
+        a.field = 5
+        expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
     /**
      * @tc.number    SUB_FIELDS_LATE_INIT_TWO_1500
      * @tc.name      testFieldsLateInitTwo0015
-     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F213 = new A_F213()
-        let res = waitForCompletion(() => a.foo().then((): short => a.field))
-        expect(res instanceof short).assertTrue()
-        expect(res).assertEqual(5)
-        expect(a.field instanceof short).assertTrue()
+      let a: A_F238 = new A_F238()
+        a.field = 5
+        expect(a.field instanceof byte).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
     /**
      * @tc.number    SUB_FIELDS_LATE_INIT_TWO_1600
      * @tc.name      testFieldsLateInitTwo0016
-     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F214 = new A_F214()
-        let res = waitForCompletion(() => a.foo().then((): double => a.field))
-        expect(res instanceof double).assertTrue()
-        expect(res).assertEqual(7.3)
-        expect(a.field instanceof double).assertTrue()
-        expect(a.field).assertEqual(7.3)
+      let a: A_F239 = new A_F239()
+        a.field = 5
+        expect(a.field instanceof short).assertTrue()
+        expect(a.field).assertEqual(5)
     })
 
     /**
      * @tc.number    SUB_FIELDS_LATE_INIT_TWO_1700
      * @tc.name      testFieldsLateInitTwo0017
-     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F215 = new A_F215()
-        let res = waitForCompletion(() => a.foo().then((): number => a.field))
-        expect(res instanceof number).assertTrue()
-        expect(res).assertEqual(5)
-        expect(a.field instanceof number).assertTrue()
-        expect(a.field).assertEqual(5)
+      let a: A_F240 = new A_F240()
+        a.field = 7.3
+        expect(a.field instanceof double).assertTrue()
+        expect(a.field).assertEqual(7.3)
     })
 
     /**
      * @tc.number    SUB_FIELDS_LATE_INIT_TWO_1800
      * @tc.name      testFieldsLateInitTwo0018
-     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F216 = new A_F216()
-        let res = waitForCompletion(() => a.foo().then((): float => a.field))
-        expect(res instanceof float).assertTrue()
-        expect(res).assertEqual(7.3f)
-        expect(a.field instanceof float).assertTrue()
-        expect(a.field).assertEqual(7.3f)
+      let a: A_F241 = new A_F241()
+        a.field = 5
+        expect(a.field instanceof number).assertTrue()
+        expect(a.field).assertEqual(5)
     })
 
     /**
      * @tc.number    SUB_FIELDS_LATE_INIT_TWO_1900
      * @tc.name      testFieldsLateInitTwo0019
-     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F217 = new A_F217()
-        let res = waitForCompletion(() => a.foo().then((): bigint => a.field))
-        expect(res instanceof bigint).assertTrue()
-        expect(res).assertEqual(5n)
-        expect(a.field instanceof bigint).assertTrue()
-        expect(a.field).assertEqual(5n)
+      let a: A_F242 = new A_F242()
+        a.field = 7.3f
+        expect(a.field instanceof float).assertTrue()
+        expect(a.field).assertEqual(7.3f)
     })
 
     /**
      * @tc.number    SUB_FIELDS_LATE_INIT_TWO_2000
      * @tc.name      testFieldsLateInitTwo0020
-     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F218 = new A_F218()
-        let res = waitForCompletion(() => a.foo().then((): string => a.field))
-        expect(res instanceof string).assertTrue()
-        expect(res).assertEqual("abc")
-        expect(a.field instanceof string).assertTrue()
-        expect(a.field).assertEqual("abc")
+      let a: A_F243 = new A_F243()
+        a.field = 5n
+        expect(a.field instanceof bigint).assertTrue()
+        expect(a.field).assertEqual(5n)
     })
 
     /**
      * @tc.number    SUB_FIELDS_LATE_INIT_TWO_2100
      * @tc.name      testFieldsLateInitTwo0021
-     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F219 = new A_F219()
-        let res = waitForCompletion(() => a.foo().then((): char => a.field))
-        expect(res instanceof char).assertTrue()
-        expect(res).assertEqual(c'a')
-        expect(a.field instanceof char).assertTrue()
-        expect(a.field).assertEqual(c'a')
+      let a: A_F244 = new A_F244()
+        a.field = "abc"
+        expect(a.field instanceof string).assertTrue()
+        expect(a.field).assertEqual("abc")
     })
 
     /**
      * @tc.number    SUB_FIELDS_LATE_INIT_TWO_2200
      * @tc.name      testFieldsLateInitTwo0022
-     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F220 = new A_F220()
-        let res = waitForCompletion(() => a.foo().then((): boolean => a.field))
-        expect(res instanceof boolean).assertTrue()
-        expect(res).assertEqual(false)
-        expect(a.field instanceof boolean).assertTrue()
-        expect(a.field).assertEqual(false)
+      let a: A_F245 = new A_F245()
+        a.field = c'a'
+        expect(a.field instanceof char).assertTrue()
+        expect(a.field).assertEqual(c'a')
     })
 
     /**
      * @tc.number    SUB_FIELDS_LATE_INIT_TWO_2300
      * @tc.name      testFieldsLateInitTwo0023
-     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F221 = new A_F221()
-        let res = waitForCompletion(() => a.foo().then((): Object => a.field))
-        expect(res instanceof Object).assertTrue()
-        expect(res).assertEqual(5)
-        expect(a.field instanceof Object).assertTrue()
-        expect(a.field).assertEqual(5)
+      let a: A_F246 = new A_F246()
+        a.field = true
+        expect(a.field instanceof boolean).assertTrue()
+        expect(a.field).assertEqual(true)
     })
 
     /**
      * @tc.number    SUB_FIELDS_LATE_INIT_TWO_2400
      * @tc.name      testFieldsLateInitTwo0024
-     * @tc.desc      Checking for initialization with asynchronous API usage.
+     * @tc.desc      Checking for initialization with overriding usage.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F222 = new A_F222()
-        waitForCompletion(a.foo)
-        expect(a.field instanceof C_F222).assertTrue()
-        expect(a.field.data instanceof int).assertTrue()
-        expect(a.field.data).assertEqual(5)
+      let a: A_F247 = new A_F247()
+        a.field = 5
+        expect(a.field instanceof Object).assertTrue()
+        expect(a.field).assertEqual(5)
     })
 
     /**
@@ -1327,7 +1302,7 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F224 = new A_F224()
+      let a: Base_F248 = new A_F248()
         a.field = 5
         expect(a.field instanceof long).assertTrue()
         expect(a.field).assertEqual(5)
@@ -1342,7 +1317,7 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F225 = new A_F225()
+      let a: Base_F249 = new A_F249()
         a.field = 5
         expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(5)
@@ -1357,7 +1332,7 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F226 = new A_F226()
+      let a: Base_F250 = new A_F250()
         a.field = 5
         expect(a.field instanceof byte).assertTrue()
         expect(a.field).assertEqual(5)
@@ -1372,7 +1347,7 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F227 = new A_F227()
+      let a: Base_F251 = new A_F251()
         a.field = 5
         expect(a.field instanceof short).assertTrue()
         expect(a.field).assertEqual(5)
@@ -1387,7 +1362,7 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F228 = new A_F228()
+      let a: Base_F252 = new A_F252()
         a.field = 7.3
         expect(a.field instanceof double).assertTrue()
         expect(a.field).assertEqual(7.3)
@@ -1402,7 +1377,7 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F229 = new A_F229()
+      let a: Base_F253 = new A_F253()
         a.field = 5
         expect(a.field instanceof number).assertTrue()
         expect(a.field).assertEqual(5)
@@ -1417,7 +1392,7 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F230 = new A_F230()
+      let a: Base_F254 = new A_F254()
         a.field = 7.3f
         expect(a.field instanceof float).assertTrue()
         expect(a.field).assertEqual(7.3f)
@@ -1432,7 +1407,7 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F231 = new A_F231()
+      let a: Base_F255 = new A_F255()
         a.field = 5n
         expect(a.field instanceof bigint).assertTrue()
         expect(a.field).assertEqual(5n)
@@ -1447,7 +1422,7 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F232 = new A_F232()
+      let a: Base_F256 = new A_F256()
         a.field = "abc"
         expect(a.field instanceof string).assertTrue()
         expect(a.field).assertEqual("abc")
@@ -1462,7 +1437,7 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F233 = new A_F233()
+      let a: Base_F257 = new A_F257()
         a.field = c'a'
         expect(a.field instanceof char).assertTrue()
         expect(a.field).assertEqual(c'a')
@@ -1477,7 +1452,7 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F234 = new A_F234()
+      let a: Base_F258 = new A_F258()
         a.field = true
         expect(a.field instanceof boolean).assertTrue()
         expect(a.field).assertEqual(true)
@@ -1492,7 +1467,7 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F235 = new A_F235()
+      let a: Base_F259 = new A_F259()
         a.field = 5
         expect(a.field instanceof Object).assertTrue()
         expect(a.field).assertEqual(5)
@@ -1507,7 +1482,7 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F236 = new A_F236()
+      let a: Base_F260 = new A_F260()
         a.field = 5
         expect(a.field instanceof long).assertTrue()
         expect(a.field).assertEqual(5)
@@ -1522,7 +1497,7 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F237 = new A_F237()
+      let a: Base_F261 = new A_F261()
         a.field = 5
         expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(5)
@@ -1537,7 +1512,7 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F238 = new A_F238()
+      let a: Base_F262 = new A_F262()
         a.field = 5
         expect(a.field instanceof byte).assertTrue()
         expect(a.field).assertEqual(5)
@@ -1552,7 +1527,7 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F239 = new A_F239()
+      let a: Base_F263 = new A_F263()
         a.field = 5
         expect(a.field instanceof short).assertTrue()
         expect(a.field).assertEqual(5)
@@ -1567,7 +1542,7 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F240 = new A_F240()
+      let a: Base_F264 = new A_F264()
         a.field = 7.3
         expect(a.field instanceof double).assertTrue()
         expect(a.field).assertEqual(7.3)
@@ -1582,7 +1557,7 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F241 = new A_F241()
+      let a: Base_F265 = new A_F265()
         a.field = 5
         expect(a.field instanceof number).assertTrue()
         expect(a.field).assertEqual(5)
@@ -1597,7 +1572,7 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F242 = new A_F242()
+      let a: Base_F266 = new A_F266()
         a.field = 7.3f
         expect(a.field instanceof float).assertTrue()
         expect(a.field).assertEqual(7.3f)
@@ -1612,7 +1587,7 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F243 = new A_F243()
+      let a: Base_F267 = new A_F267()
         a.field = 5n
         expect(a.field instanceof bigint).assertTrue()
         expect(a.field).assertEqual(5n)
@@ -1627,7 +1602,7 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F244 = new A_F244()
+      let a: Base_F268 = new A_F268()
         a.field = "abc"
         expect(a.field instanceof string).assertTrue()
         expect(a.field).assertEqual("abc")
@@ -1642,7 +1617,7 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F245 = new A_F245()
+      let a: Base_F269 = new A_F269()
         a.field = c'a'
         expect(a.field instanceof char).assertTrue()
         expect(a.field).assertEqual(c'a')
@@ -1657,7 +1632,7 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F246 = new A_F246()
+      let a: Base_F270 = new A_F270()
         a.field = true
         expect(a.field instanceof boolean).assertTrue()
         expect(a.field).assertEqual(true)
@@ -1672,7 +1647,7 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F247 = new A_F247()
+      let a: Base_F271 = new A_F271()
         a.field = 5
         expect(a.field instanceof Object).assertTrue()
         expect(a.field).assertEqual(5)
@@ -1687,9 +1662,10 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F248 = new A_F248()
-        a.field = 5
+      let a: A_F272 = new A_F272()
         expect(a.field instanceof long).assertTrue()
+        expect(a.field).assertEqual(3)
+        a.field = 5
         expect(a.field).assertEqual(5)
     })
 
@@ -1702,9 +1678,10 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F249 = new A_F249()
-        a.field = 5
+      let a: A_F273 = new A_F273()
         expect(a.field instanceof int).assertTrue()
+        expect(a.field).assertEqual(3)
+        a.field = 5
         expect(a.field).assertEqual(5)
     })
 
@@ -1717,9 +1694,10 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F250 = new A_F250()
-        a.field = 5
+      let a: A_F274 = new A_F274()
         expect(a.field instanceof byte).assertTrue()
+        expect(a.field).assertEqual(3)
+        a.field = 5
         expect(a.field).assertEqual(5)
     })
 
@@ -1732,9 +1710,10 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F251 = new A_F251()
-        a.field = 5
+      let a: A_F275 = new A_F275()
         expect(a.field instanceof short).assertTrue()
+        expect(a.field).assertEqual(3)
+        a.field = 5
         expect(a.field).assertEqual(5)
     })
 
@@ -1747,9 +1726,10 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F252 = new A_F252()
-        a.field = 7.3
+      let a: A_F276 = new A_F276()
         expect(a.field instanceof double).assertTrue()
+        expect(a.field).assertEqual(3)
+        a.field = 7.3
         expect(a.field).assertEqual(7.3)
     })
 
@@ -1762,9 +1742,10 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F253 = new A_F253()
-        a.field = 5
+      let a: A_F277 = new A_F277()
         expect(a.field instanceof number).assertTrue()
+        expect(a.field).assertEqual(3)
+        a.field = 5
         expect(a.field).assertEqual(5)
     })
 
@@ -1777,9 +1758,10 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F254 = new A_F254()
-        a.field = 7.3f
+      let a: A_F278 = new A_F278()
         expect(a.field instanceof float).assertTrue()
+        expect(a.field).assertEqual(3)
+        a.field = 7.3f
         expect(a.field).assertEqual(7.3f)
     })
 
@@ -1792,9 +1774,10 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F255 = new A_F255()
-        a.field = 5n
+      let a: A_F279 = new A_F279()
         expect(a.field instanceof bigint).assertTrue()
+        expect(a.field).assertEqual(3n)
+        a.field = 5n
         expect(a.field).assertEqual(5n)
     })
 
@@ -1807,9 +1790,10 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F256 = new A_F256()
-        a.field = "abc"
+      let a: A_F280 = new A_F280()
         expect(a.field instanceof string).assertTrue()
+        expect(a.field).assertEqual("ab")
+        a.field = "abc"
         expect(a.field).assertEqual("abc")
     })
 
@@ -1822,9 +1806,10 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F257 = new A_F257()
-        a.field = c'a'
+      let a: A_F281 = new A_F281()
         expect(a.field instanceof char).assertTrue()
+        expect(a.field).assertEqual(c'b')
+        a.field = c'a'
         expect(a.field).assertEqual(c'a')
     })
 
@@ -1837,9 +1822,10 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F258 = new A_F258()
-        a.field = true
+      let a: A_F282 = new A_F282()
         expect(a.field instanceof boolean).assertTrue()
+        expect(a.field).assertEqual(false)
+        a.field = true
         expect(a.field).assertEqual(true)
     })
 
@@ -1852,9 +1838,10 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F259 = new A_F259()
-        a.field = 5
+      let a: A_F283 = new A_F283()
         expect(a.field instanceof Object).assertTrue()
+        expect(a.field).assertEqual(3)
+        a.field = 5
         expect(a.field).assertEqual(5)
     })
 
@@ -1867,9 +1854,10 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F260 = new A_F260()
-        a.field = 5
+      let a: Base_F284 = new A_F284()
         expect(a.field instanceof long).assertTrue()
+        expect(a.field).assertEqual(3)
+        a.field = 5
         expect(a.field).assertEqual(5)
     })
 
@@ -1882,9 +1870,10 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F261 = new A_F261()
-        a.field = 5
+      let a: Base_F285 = new A_F285()
         expect(a.field instanceof int).assertTrue()
+        expect(a.field).assertEqual(3)
+        a.field = 5
         expect(a.field).assertEqual(5)
     })
 
@@ -1897,9 +1886,10 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F262 = new A_F262()
-        a.field = 5
+      let a: Base_F286 = new A_F286()
         expect(a.field instanceof byte).assertTrue()
+        expect(a.field).assertEqual(3)
+        a.field = 5
         expect(a.field).assertEqual(5)
     })
 
@@ -1912,9 +1902,10 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F263 = new A_F263()
-        a.field = 5
+      let a: Base_F287 = new A_F287()
         expect(a.field instanceof short).assertTrue()
+        expect(a.field).assertEqual(3)
+        a.field = 5
         expect(a.field).assertEqual(5)
     })
 
@@ -1927,9 +1918,10 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F264 = new A_F264()
-        a.field = 7.3
+      let a: Base_F288 = new A_F288()
         expect(a.field instanceof double).assertTrue()
+        expect(a.field).assertEqual(3)
+        a.field = 7.3
         expect(a.field).assertEqual(7.3)
     })
 
@@ -1942,9 +1934,10 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F265 = new A_F265()
-        a.field = 5
+      let a: Base_F289 = new A_F289()
         expect(a.field instanceof number).assertTrue()
+        expect(a.field).assertEqual(3)
+        a.field = 5
         expect(a.field).assertEqual(5)
     })
 
@@ -1957,9 +1950,10 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F266 = new A_F266()
-        a.field = 7.3f
+      let a: Base_F290 = new A_F290()
         expect(a.field instanceof float).assertTrue()
+        expect(a.field).assertEqual(3)
+        a.field = 7.3f
         expect(a.field).assertEqual(7.3f)
     })
 
@@ -1972,9 +1966,10 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F267 = new A_F267()
-        a.field = 5n
+      let a: Base_F291 = new A_F291()
         expect(a.field instanceof bigint).assertTrue()
+        expect(a.field).assertEqual(3n)
+        a.field = 5n
         expect(a.field).assertEqual(5n)
     })
 
@@ -1987,9 +1982,10 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F268 = new A_F268()
-        a.field = "abc"
+      let a: Base_F292 = new A_F292()
         expect(a.field instanceof string).assertTrue()
+        expect(a.field).assertEqual("ab")
+        a.field = "abc"
         expect(a.field).assertEqual("abc")
     })
 
@@ -2002,9 +1998,10 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F269 = new A_F269()
-        a.field = c'a'
+      let a: Base_F293 = new A_F293()
         expect(a.field instanceof char).assertTrue()
+        expect(a.field).assertEqual(c'b')
+        a.field = c'a'
         expect(a.field).assertEqual(c'a')
     })
 
@@ -2017,9 +2014,10 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F270 = new A_F270()
-        a.field = true
+      let a: Base_F294 = new A_F294()
         expect(a.field instanceof boolean).assertTrue()
+        expect(a.field).assertEqual(false)
+        a.field = true
         expect(a.field).assertEqual(true)
     })
 
@@ -2032,9 +2030,10 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F271 = new A_F271()
-        a.field = 5
+      let a: Base_F295 = new A_F295()
         expect(a.field instanceof Object).assertTrue()
+        expect(a.field).assertEqual(3)
+        a.field = 5
         expect(a.field).assertEqual(5)
     })
 
@@ -2047,10 +2046,8 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F272 = new A_F272()
+      let a: A_F296 = new A_F296()
         expect(a.field instanceof long).assertTrue()
-        expect(a.field).assertEqual(3)
-        a.field = 5
         expect(a.field).assertEqual(5)
     })
 
@@ -2063,388 +2060,6 @@ export default function FieldsLateInitTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitTwo0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F273 = new A_F273()
-        expect(a.field instanceof int).assertTrue()
-        expect(a.field).assertEqual(3)
-        a.field = 5
-        expect(a.field).assertEqual(5)
-    })
-
-    /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_7500
-     * @tc.name      testFieldsLateInitTwo0075
-     * @tc.desc      Checking for initialization with overriding usage.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldsLateInitTwo0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F274 = new A_F274()
-        expect(a.field instanceof byte).assertTrue()
-        expect(a.field).assertEqual(3)
-        a.field = 5
-        expect(a.field).assertEqual(5)
-    })
-
-    /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_7600
-     * @tc.name      testFieldsLateInitTwo0076
-     * @tc.desc      Checking for initialization with overriding usage.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldsLateInitTwo0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F275 = new A_F275()
-        expect(a.field instanceof short).assertTrue()
-        expect(a.field).assertEqual(3)
-        a.field = 5
-        expect(a.field).assertEqual(5)
-    })
-
-    /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_7700
-     * @tc.name      testFieldsLateInitTwo0077
-     * @tc.desc      Checking for initialization with overriding usage.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldsLateInitTwo0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F276 = new A_F276()
-        expect(a.field instanceof double).assertTrue()
-        expect(a.field).assertEqual(3)
-        a.field = 7.3
-        expect(a.field).assertEqual(7.3)
-    })
-
-    /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_7800
-     * @tc.name      testFieldsLateInitTwo0078
-     * @tc.desc      Checking for initialization with overriding usage.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldsLateInitTwo0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F277 = new A_F277()
-        expect(a.field instanceof number).assertTrue()
-        expect(a.field).assertEqual(3)
-        a.field = 5
-        expect(a.field).assertEqual(5)
-    })
-
-    /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_7900
-     * @tc.name      testFieldsLateInitTwo0079
-     * @tc.desc      Checking for initialization with overriding usage.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldsLateInitTwo0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F278 = new A_F278()
-        expect(a.field instanceof float).assertTrue()
-        expect(a.field).assertEqual(3)
-        a.field = 7.3f
-        expect(a.field).assertEqual(7.3f)
-    })
-
-    /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_8000
-     * @tc.name      testFieldsLateInitTwo0080
-     * @tc.desc      Checking for initialization with overriding usage.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldsLateInitTwo0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F279 = new A_F279()
-        expect(a.field instanceof bigint).assertTrue()
-        expect(a.field).assertEqual(3n)
-        a.field = 5n
-        expect(a.field).assertEqual(5n)
-    })
-
-    /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_8100
-     * @tc.name      testFieldsLateInitTwo0081
-     * @tc.desc      Checking for initialization with overriding usage.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldsLateInitTwo0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F280 = new A_F280()
-        expect(a.field instanceof string).assertTrue()
-        expect(a.field).assertEqual("ab")
-        a.field = "abc"
-        expect(a.field).assertEqual("abc")
-    })
-
-    /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_8200
-     * @tc.name      testFieldsLateInitTwo0082
-     * @tc.desc      Checking for initialization with overriding usage.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldsLateInitTwo0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F281 = new A_F281()
-        expect(a.field instanceof char).assertTrue()
-        expect(a.field).assertEqual(c'b')
-        a.field = c'a'
-        expect(a.field).assertEqual(c'a')
-    })
-
-    /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_8300
-     * @tc.name      testFieldsLateInitTwo0083
-     * @tc.desc      Checking for initialization with overriding usage.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldsLateInitTwo0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F282 = new A_F282()
-        expect(a.field instanceof boolean).assertTrue()
-        expect(a.field).assertEqual(false)
-        a.field = true
-        expect(a.field).assertEqual(true)
-    })
-
-    /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_8400
-     * @tc.name      testFieldsLateInitTwo0084
-     * @tc.desc      Checking for initialization with overriding usage.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldsLateInitTwo0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F283 = new A_F283()
-        expect(a.field instanceof Object).assertTrue()
-        expect(a.field).assertEqual(3)
-        a.field = 5
-        expect(a.field).assertEqual(5)
-    })
-
-    /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_8500
-     * @tc.name      testFieldsLateInitTwo0085
-     * @tc.desc      Checking for initialization with overriding usage.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldsLateInitTwo0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F284 = new A_F284()
-        expect(a.field instanceof long).assertTrue()
-        expect(a.field).assertEqual(3)
-        a.field = 5
-        expect(a.field).assertEqual(5)
-    })
-
-    /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_8600
-     * @tc.name      testFieldsLateInitTwo0086
-     * @tc.desc      Checking for initialization with overriding usage.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldsLateInitTwo0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F285 = new A_F285()
-        expect(a.field instanceof int).assertTrue()
-        expect(a.field).assertEqual(3)
-        a.field = 5
-        expect(a.field).assertEqual(5)
-    })
-
-    /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_8700
-     * @tc.name      testFieldsLateInitTwo0087
-     * @tc.desc      Checking for initialization with overriding usage.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldsLateInitTwo0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F286 = new A_F286()
-        expect(a.field instanceof byte).assertTrue()
-        expect(a.field).assertEqual(3)
-        a.field = 5
-        expect(a.field).assertEqual(5)
-    })
-
-    /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_8800
-     * @tc.name      testFieldsLateInitTwo0088
-     * @tc.desc      Checking for initialization with overriding usage.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldsLateInitTwo0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F287 = new A_F287()
-        expect(a.field instanceof short).assertTrue()
-        expect(a.field).assertEqual(3)
-        a.field = 5
-        expect(a.field).assertEqual(5)
-    })
-
-    /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_8900
-     * @tc.name      testFieldsLateInitTwo0089
-     * @tc.desc      Checking for initialization with overriding usage.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldsLateInitTwo0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F288 = new A_F288()
-        expect(a.field instanceof double).assertTrue()
-        expect(a.field).assertEqual(3)
-        a.field = 7.3
-        expect(a.field).assertEqual(7.3)
-    })
-
-    /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_9000
-     * @tc.name      testFieldsLateInitTwo0090
-     * @tc.desc      Checking for initialization with overriding usage.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldsLateInitTwo0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F289 = new A_F289()
-        expect(a.field instanceof number).assertTrue()
-        expect(a.field).assertEqual(3)
-        a.field = 5
-        expect(a.field).assertEqual(5)
-    })
-
-    /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_9100
-     * @tc.name      testFieldsLateInitTwo0091
-     * @tc.desc      Checking for initialization with overriding usage.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldsLateInitTwo0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F290 = new A_F290()
-        expect(a.field instanceof float).assertTrue()
-        expect(a.field).assertEqual(3)
-        a.field = 7.3f
-        expect(a.field).assertEqual(7.3f)
-    })
-
-    /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_9200
-     * @tc.name      testFieldsLateInitTwo0092
-     * @tc.desc      Checking for initialization with overriding usage.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldsLateInitTwo0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F291 = new A_F291()
-        expect(a.field instanceof bigint).assertTrue()
-        expect(a.field).assertEqual(3n)
-        a.field = 5n
-        expect(a.field).assertEqual(5n)
-    })
-
-    /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_9300
-     * @tc.name      testFieldsLateInitTwo0093
-     * @tc.desc      Checking for initialization with overriding usage.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldsLateInitTwo0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F292 = new A_F292()
-        expect(a.field instanceof string).assertTrue()
-        expect(a.field).assertEqual("ab")
-        a.field = "abc"
-        expect(a.field).assertEqual("abc")
-    })
-
-    /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_9400
-     * @tc.name      testFieldsLateInitTwo0094
-     * @tc.desc      Checking for initialization with overriding usage.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldsLateInitTwo0094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F293 = new A_F293()
-        expect(a.field instanceof char).assertTrue()
-        expect(a.field).assertEqual(c'b')
-        a.field = c'a'
-        expect(a.field).assertEqual(c'a')
-    })
-
-    /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_9500
-     * @tc.name      testFieldsLateInitTwo0095
-     * @tc.desc      Checking for initialization with overriding usage.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldsLateInitTwo0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F294 = new A_F294()
-        expect(a.field instanceof boolean).assertTrue()
-        expect(a.field).assertEqual(false)
-        a.field = true
-        expect(a.field).assertEqual(true)
-    })
-
-    /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_9600
-     * @tc.name      testFieldsLateInitTwo0096
-     * @tc.desc      Checking for initialization with overriding usage.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldsLateInitTwo0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Base_F295 = new A_F295()
-        expect(a.field instanceof Object).assertTrue()
-        expect(a.field).assertEqual(3)
-        a.field = 5
-        expect(a.field).assertEqual(5)
-    })
-
-    /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_9700
-     * @tc.name      testFieldsLateInitTwo0097
-     * @tc.desc      Checking for initialization with overriding usage.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldsLateInitTwo0097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F296 = new A_F296()
-        expect(a.field instanceof long).assertTrue()
-        expect(a.field).assertEqual(5)
-    })
-
-    /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_TWO_9800
-     * @tc.name      testFieldsLateInitTwo0098
-     * @tc.desc      Checking for initialization with overriding usage.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldsLateInitTwo0098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F297 = new A_F297()
         expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(5)

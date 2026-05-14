@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -209,7 +209,6 @@ export default function ClassMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassMembers0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassMembers0001';
       let x: B = new B();
       expect( x.fee()).assertEqual( 5 );
     });
@@ -223,7 +222,6 @@ export default function ClassMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassMembers0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassMembers0002';
       let x: B1 = new B1();
       expect( x.fee()).assertEqual( 5 );
     });
@@ -237,7 +235,6 @@ export default function ClassMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassMembers0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassMembers0003';
       let x: B2 = new B2();
       expect( x.fee()).assertEqual( 5 );
     });
@@ -251,7 +248,6 @@ export default function ClassMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassMembers0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassMembers0004';
       let x: B3 = new B3();
       expect( x.fee()).assertEqual( 5 );
     });
@@ -265,7 +261,6 @@ export default function ClassMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassMembers0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassMembers0005';
       let x: B4 = new B4();
       expect( x.fee()).assertEqual( 5 );
     });
@@ -279,7 +274,6 @@ export default function ClassMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassMembers0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassMembers0006';
       let x: B5 = new B5();
       expect( x.fee()).assertEqual( 5 );
     });
@@ -293,7 +287,6 @@ export default function ClassMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassMembers0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassMembers0007';
       let x: B6 = new B6();
       expect( x.fee()).assertEqual( 0 );
     });
@@ -307,7 +300,6 @@ export default function ClassMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassMembers0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassMembers0008';
       let x: B7 = new B7();
       expect( x.fee()).assertEqual( 1 );
     });
@@ -321,7 +313,6 @@ export default function ClassMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassMembers0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassMembers0009';
       let x: C = new C();
       expect( x.foo() == 5).assertTrue();
     });
@@ -335,7 +326,6 @@ export default function ClassMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassMembers0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassMembers0010';
       let x: C1 = new C1();
       x.foo = 3;
       expect( x.foo == 3).assertTrue();
@@ -350,7 +340,6 @@ export default function ClassMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassMembers0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassMembers0011';
       let y: C2 = new C2();
       expect(y.f == 2).assertTrue();
     });
@@ -364,7 +353,6 @@ export default function ClassMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassMembers0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassMembers0012';
       let y: C3 = new C3();
       y.F = 10;
       expect(y.F == 10).assertTrue();
@@ -379,7 +367,6 @@ export default function ClassMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassMembers0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassMembers0013';
       let a = new CB();
       expect( a.f).assertEqual( 6 );
     });
@@ -393,7 +380,6 @@ export default function ClassMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassMembers0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassMembers0014';
 
       if (iteration_number < 1) {
         expect(CA1.f).assertEqual(3);
@@ -415,7 +401,6 @@ export default function ClassMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassMembers0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassMembers0015';
       let i: A8 = new A8();
       expect( i.foo).assertEqual(2);
       expect( A8.foo()).assertEqual(1);

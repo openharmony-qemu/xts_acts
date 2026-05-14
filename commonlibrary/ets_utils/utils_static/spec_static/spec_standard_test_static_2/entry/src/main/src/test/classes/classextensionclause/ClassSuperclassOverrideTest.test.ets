@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -464,7 +464,6 @@ export default function ClassSuperclassOverrideTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassOverride0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassOverride0001';
       let parent = new Parent();
       let child = new Child();
       expect(parent.greet()).assertEqual("Hello from Parent");
@@ -480,7 +479,6 @@ export default function ClassSuperclassOverrideTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassOverride0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassOverride0002';
       let child = new Child1();
       expect(child.greet()).assertEqual("Hello from Parent and Hello from Child");
     });
@@ -494,7 +492,6 @@ export default function ClassSuperclassOverrideTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassOverride0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassOverride0003';
       let child = new Child2();
       expect(child.greet()).assertEqual("Hello from Parent");
     });
@@ -508,7 +505,6 @@ export default function ClassSuperclassOverrideTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassOverride0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassOverride0004';
       let child = new Child3();
       expect(child.greet()).assertEqual("Hello from Child");
       expect(child.newMethod()).assertEqual("This is a new method in Child");
@@ -523,7 +519,6 @@ export default function ClassSuperclassOverrideTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassOverride0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassOverride0005';
       let child = new Child4();
       expect(child.greet()).assertEqual("Hello from Parent and Hello from Child");
     });
@@ -537,7 +532,6 @@ export default function ClassSuperclassOverrideTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassOverride0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassOverride0006';
       let child = new Child5();
       expect(child.greet()).assertEqual("Hello from Child");
     });
@@ -551,7 +545,6 @@ export default function ClassSuperclassOverrideTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassOverride0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassOverride0007';
       let child = new Child6();
       expect(child.greet()).assertEqual("Hello from Parent and Hello from Child");
     });
@@ -565,7 +558,6 @@ export default function ClassSuperclassOverrideTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassOverride0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassOverride0008';
       let child = new Child7();
       expect(child.greet()).assertEqual("Hello from Child");
     });
@@ -579,7 +571,6 @@ export default function ClassSuperclassOverrideTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassOverride0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassOverride0009';
       let child = new Child8("Hello from Parent");
       expect(child.greet()).assertEqual("Hello from Parent and Hello from Child");
     });
@@ -593,7 +584,6 @@ export default function ClassSuperclassOverrideTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassOverride0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassOverride0010';
       let child = new Child9();
       expect(child.greet()).assertEqual("Hello from Parent (static) and Hello from Child");
     });
@@ -607,7 +597,6 @@ export default function ClassSuperclassOverrideTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassOverride0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassOverride0011';
       let child = new Child10();
       expect(child.greet()).assertEqual("Hello from Parent (protected) and Hello from Child");
     });
@@ -622,7 +611,6 @@ export default function ClassSuperclassOverrideTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassOverride0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassOverride0012';
       let child = new Child11("Hello from Parent");
       expect(child.greet()).assertEqual("Hello from Parent and Hello from Child");
     });
@@ -636,7 +624,6 @@ export default function ClassSuperclassOverrideTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassOverride0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassOverride0013';
       let parent = new Parent6();
       let child = new Child12();
       expect(parent.greet()).assertEqual("Hello from Parent");
@@ -653,7 +640,6 @@ export default function ClassSuperclassOverrideTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassOverride0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassOverride0014';
       let child = new Child13();
       expect(child.greet()).assertEqual("Hello from Parent (static) and Hello from Child");
     });
@@ -667,7 +653,6 @@ export default function ClassSuperclassOverrideTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassOverride0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassOverride0015';
       let child = new Child14();
       expect(child.greet()).assertEqual("Hello from Parent and Hello from Child");
     });
@@ -681,7 +666,6 @@ export default function ClassSuperclassOverrideTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassOverride0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassOverride0016';
       let child = new Child15();
       expect(child.greet()).assertEqual("Hello from Parent and Hello from Child");
     });
@@ -696,7 +680,6 @@ export default function ClassSuperclassOverrideTest():void {
      */
     it("testClassSuperclassOverride0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void):
       Promise<void> => {
-      const TAG = 'testClassSuperclassOverride0017';
       let child = new Child16();
       expect(await child.greet()).assertEqual("Hello from Parent and Hello from Child");
       done();
@@ -711,7 +694,6 @@ export default function ClassSuperclassOverrideTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassOverride0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassOverride0018';
       let child = new Child17();
       expect(child.greet()).assertEqual("Hello from Parent and Hello from Child")
       expect(child.greet("Parent")).assertEqual("Hello from Parent and Hello from Child");
@@ -727,7 +709,6 @@ export default function ClassSuperclassOverrideTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassOverride0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassOverride0019';
       let child = new Child18();
       expect(child.greet().getValue()).assertEqual("Hello from Parent and Hello from Child");
     });
@@ -742,7 +723,6 @@ export default function ClassSuperclassOverrideTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassOverride0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassOverride0020';
       let child = new Child19();
       expect(child.greet()).assertEqual("Hello from Parent and Hello from Child");
     });
@@ -756,7 +736,6 @@ export default function ClassSuperclassOverrideTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassOverride0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassOverride0021';
       let parent: Parent = new Parent();
       let child: Parent = new Child();
       expect(parent.greet()).assertEqual("Hello from Parent")
@@ -772,7 +751,6 @@ export default function ClassSuperclassOverrideTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassOverride0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassOverride0022';
       const child = new Child20();
       console.log(child.greet("Default Message"));
       expect(child.greet("Test Message")).
@@ -788,7 +766,6 @@ export default function ClassSuperclassOverrideTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassOverride0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassOverride0023';
       let test = new Test1();
       expect(test.foo(new Base1())).assertEqual(2);
       expect(test.foo(new Base2())).assertEqual(2);

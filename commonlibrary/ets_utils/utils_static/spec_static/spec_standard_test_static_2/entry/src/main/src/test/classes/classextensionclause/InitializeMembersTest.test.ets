@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -845,7 +845,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0001';
       const myDog = new Dog("Buddy", 5, "Golden Retriever");
       expect(myDog.name).assertEqual("Buddy");
       expect(myDog.age).assertEqual(5);
@@ -861,7 +860,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0002';
       const myAnimal = new Animal1('def');
       expect(myAnimal.value).assertEqual('def');
       const myDog = new Dog1('abc');
@@ -879,7 +877,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0003';
       let child = new Child();
       let x: string = child.constructorPublicVar;
       expect(x).assertEqual('abc');
@@ -896,7 +893,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0004';
       const y : number[] = [1, 2, 3];
       let child = new Child1(y);
       let x: number[] = child.constructorPublicVar;
@@ -914,7 +910,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0005';
       let child = new Child2(undefined);
       let x: undefined = child.constructorPublicVar;
       expect(x).assertEqual(undefined);
@@ -931,7 +926,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0006';
       const y : boolean[] = [true, false, true];
       let child = new Child3(y);
       let x: boolean[] = child.constructorPublicVar;
@@ -948,7 +942,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0007';
       const myChild = new Child4(1);
       expect(myChild.value).assertEqual(1);
     });
@@ -963,7 +956,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0008';
       const myChild = new Child5([1, 2, 3]);
       expect(myChild.value[0]).assertEqual(1);
       expect(myChild.value[1]).assertEqual(2);
@@ -980,7 +972,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0009';
       const myChild = new Child6(['a', 'b', 'c']);
       expect(myChild.value[0]).assertEqual('a');
       expect(myChild.value[1]).assertEqual('b');
@@ -997,7 +988,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0010';
       const myChild = new Child7(undefined);
       expect(myChild.value).assertEqual(undefined);
     });
@@ -1011,7 +1001,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0011';
       const myChild = new Child8([true, false, true]);
       expect(myChild.value[0]).assertEqual(true);
       expect(myChild.value[1]).assertEqual(false);
@@ -1027,7 +1016,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0012';
       const myChild = new Child9(null);
       expect(myChild.value).assertEqual(null);
     });
@@ -1041,7 +1029,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0013';
       const myChild = new Child10(3.14);
       expect(myChild.value).assertEqual(3.14);
     });
@@ -1055,7 +1042,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0014';
       const myChild = new Child11([date1, date2]);
       expect(myChild.value[0]).assertEqual(date1);
       expect(myChild.value[1]).assertEqual(date2);
@@ -1071,7 +1057,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0015';
       const users: User[] = [new User(), new User()];
       const myChild = new Child12(users);
       expect(myChild.value[0].name).assertEqual("User");
@@ -1088,7 +1073,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0016';
       const interface1: SomeInterface[] = [obj1, obj2];
       const myChild = new Child13(interface1);
       expect(myChild.value[0].name).assertEqual("Object1");
@@ -1104,7 +1088,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0017';
       const myChild = new Child14(true);
       expect(myChild.value).assertEqual(true);
     });
@@ -1118,7 +1101,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0018';
       const myChild = new Child15(date);
       expect(myChild.value).assertEqual(date);
     });
@@ -1132,7 +1114,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0019';
       const myChild = new Child16(new UserClass());
       expect(myChild.value.name).assertEqual("User");
     });
@@ -1146,7 +1127,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0020';
       let child = new Child17();
       let x : number = child.constructorPublicVar;
       expect(x).assertEqual(100);
@@ -1162,7 +1142,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0021';
       let child = new Child18();
       let x: number = child.constructorPublicVar;
       expect(x).assertEqual(100);
@@ -1178,7 +1157,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0022';
       let child = new Child19();
       let x: number = child.constructorPublicVar;
       expect(x).assertEqual(100);
@@ -1194,7 +1172,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0023';
       let child = new Child20();
       let x: number = child.getProtectedValueFromChild();
       expect(x).assertEqual(100);
@@ -1210,7 +1187,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0024';
       let child = new Child21();
       let x: number = child.getProtectedValueFromChild();
       expect(x).assertEqual(100);
@@ -1226,7 +1202,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0025';
       let child = new Child22();
       let x: number = child.showPrivateVar();
       expect(x).assertEqual(100);
@@ -1242,7 +1217,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0026';
       let child = new Child23();
       let x: number = child.showPrivateVar();
       expect(x).assertEqual(100);
@@ -1258,7 +1232,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0027';
       let child = new Child24();
       let x: number = child.constructorPublicVar;
       expect(x).assertEqual(100);
@@ -1274,7 +1247,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0028';
       let child = new Child25();
       let x: number = child.constructorPublicVar;
       expect(x).assertEqual(100);
@@ -1290,7 +1262,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0029';
       let child = new Child26();
       let x: number = child.constructorPublicVar;
       expect(x).assertEqual(100);
@@ -1306,7 +1277,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0030';
       let child = new Child27();
       let x: number = child.constructorPublicVar;
       expect(x).assertEqual(100);
@@ -1322,7 +1292,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0031';
       let child = new Child28();
       let x: number = child.constructorPublicVar;
       expect(x).assertEqual(100);
@@ -1338,7 +1307,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0032';
       let child = new Child29();
       let x: number = child.constructorPublicVar;
       expect(x).assertEqual(100);
@@ -1354,7 +1322,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0033';
       let child = new Child30();
       let x: number = child.childField1;
       expect(x).assertEqual(200);
@@ -1370,7 +1337,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0034';
       let child = new Child31();
       let x: number = child.childField1;
       expect(x).assertEqual(200);
@@ -1386,7 +1352,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0035';
       let child = new Child32();
       let x: number = child.constructorPublicVar;
       expect(x).assertEqual(200);
@@ -1402,7 +1367,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0036';
       let child = new Child33();
       let x: number = child.constructorPublicVar;
       expect(x).assertEqual(200);
@@ -1418,7 +1382,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0037';
       let child = new Child34();
       let x: number = child.constructorPublicVar;
       expect(x).assertEqual(200);
@@ -1434,7 +1397,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0038';
       let child = new Child35();
       let x: number = child.constructorPublicVar;
       expect(x).assertEqual(200);
@@ -1450,7 +1412,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0039';
       let child = new Child36();
       let x: number = child.constructorPublicVar;
       expect(x).assertEqual(200);
@@ -1466,7 +1427,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0040';
       let child = new Child37();
       let x: number = child.constructorPublicVar;
       expect(x).assertEqual(100);
@@ -1482,7 +1442,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0041';
       let child = new Child38();
       let x: number = child.getProtectedValueFromChild();
       expect(x).assertEqual(100);
@@ -1498,7 +1457,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0042';
       let child = new Child39();
       let x: number = child.getProtectedValueFromChild();
       expect(x).assertEqual(100);
@@ -1514,7 +1472,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0043';
       let child = new Child40();
       let x: number = child.getProtectedValueFromChild();
       expect(x).assertEqual(100);
@@ -1530,7 +1487,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0044';
       let child = new Child41();
       let x: number = child.getProtectedValueFromChild();
       expect(x).assertEqual(200);
@@ -1546,7 +1502,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0045';
       let child = new Child42();
       let x: number = child.getProtectedValueFromChild();
       expect(x).assertEqual(200);
@@ -1562,7 +1517,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0046';
       let child = new Child43();
       let x: number = child.getProtectedValueFromChild();
       expect(x).assertEqual(200);
@@ -1578,7 +1532,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0047';
       let child = new Child44();
       let x: number = child.constructorPublicVar;
       expect(x).assertEqual(200);
@@ -1594,7 +1547,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0048';
       let child = new Child45();
       let x: number = child.getProtectedValueFromChild();
       expect(x).assertEqual(200);
@@ -1611,7 +1563,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0049';
       let child = new Child46();
       let x: number = child.getProtectedValueFromChild();
       expect(x).assertEqual(200);
@@ -1627,7 +1578,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0050';
       let child = new Child47();
       let x: number = child.getProtectedValueFromChild();
       expect(x).assertEqual(100);
@@ -1643,7 +1593,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0051';
       let child = new Child48();
       let x: number = child.showPrivateVar();
       expect(x).assertEqual(100);
@@ -1659,7 +1608,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0052';
       let child = new Child49();
       let x: number = child.getProtectedValueFromChild();
       expect(x).assertEqual(100);
@@ -1675,7 +1623,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0053';
       let child = new Child50();
       let x: number = child.getProtectedValueFromChild();
       expect(x).assertEqual(100);
@@ -1691,7 +1638,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0054';
       let child = new Child51();
       let x: number = child.getProtectedValueFromChild();
       expect(x).assertEqual(100);
@@ -1707,7 +1653,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0055';
       let child = new Child52();
       let x: number = child.getProtectedValueFromChild();
       expect(x).assertEqual(100);
@@ -1723,7 +1668,6 @@ export default function InitializeMembersTest():void {
      * @tc.level     Level 2
      */
     it("testInitializeMembers0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInitializeMembers0056';
       let child = new Child53();
       let x: number = child.constructorPublicVar;
       expect(x).assertEqual(200);

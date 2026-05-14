@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,7 +72,6 @@ export default function FldTest():void {
      * @tc.level     Level 2
      */
     it("testFld0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testFld0001';;
       expect(new A(42).fld).assertEqual(43)
     });
 
@@ -85,7 +84,6 @@ export default function FldTest():void {
      * @tc.level     Level 2
      */
     it("testFld0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testFld0002';
       expect(new B(42).foo).assertEqual(44)
     });
 
@@ -98,7 +96,6 @@ export default function FldTest():void {
      * @tc.level     Level 2
      */
     it("testFld0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testFld0003';
       expect(new B1(42).foo).assertEqual(44)
     });
   })

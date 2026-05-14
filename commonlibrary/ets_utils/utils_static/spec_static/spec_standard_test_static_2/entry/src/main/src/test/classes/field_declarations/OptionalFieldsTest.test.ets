@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -160,7 +160,6 @@ export default function OptionalFieldsTest(): void {
      * @tc.level     Level 2
      */
     it("testOptionalFields0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOptionalFields0001'
       let a = new A()
       expect(a.a).assertEqual(undefined)
     });
@@ -174,7 +173,6 @@ export default function OptionalFieldsTest(): void {
      * @tc.level     Level 2
      */
     it("testOptionalFields0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOptionalFields0002'
       let a1 = new A1()
       expect(a1.a).assertEqual(undefined)
     });
@@ -188,7 +186,6 @@ export default function OptionalFieldsTest(): void {
      * @tc.level     Level 2
      */
     it("testOptionalFields0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOptionalFields0003'
       let a2 = new A2()
       expect(a2.a).assertEqual(undefined)
     });
@@ -202,7 +199,6 @@ export default function OptionalFieldsTest(): void {
      * @tc.level     Level 2
      */
     it("testOptionalFields0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOptionalFields0004'
       let a3 = new A3()
       expect(a3.a).assertEqual(undefined)
     });
@@ -216,7 +212,6 @@ export default function OptionalFieldsTest(): void {
      * @tc.level     Level 2
      */
     it("testOptionalFields0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOptionalFields0005'
       let a4 = new A4()
       expect(a4.a).assertEqual(undefined)
     });
@@ -230,7 +225,6 @@ export default function OptionalFieldsTest(): void {
      * @tc.level     Level 2
      */
     it("testOptionalFields0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOptionalFields0006'
       let a5 = new A5()
       expect(a5.a).assertEqual(undefined)
     });
@@ -244,7 +238,6 @@ export default function OptionalFieldsTest(): void {
      * @tc.level     Level 2
      */
     it("testOptionalFields0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOptionalFields0007'
       let a6 = new A6()
       expect(a6.a).assertEqual(undefined)
     });
@@ -258,7 +251,6 @@ export default function OptionalFieldsTest(): void {
      * @tc.level     Level 2
      */
     it("testOptionalFields0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOptionalFields0008'
       let a7 = new A7()
       expect(a7.a).assertEqual(undefined)
     });
@@ -272,7 +264,6 @@ export default function OptionalFieldsTest(): void {
      * @tc.level     Level 2
      */
     it("testOptionalFields0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOptionalFields0009'
       let a8 = new A8()
       expect(a8.a).assertEqual(undefined)
     });
@@ -286,7 +277,6 @@ export default function OptionalFieldsTest(): void {
      * @tc.level     Level 2
      */
     it("testOptionalFields0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOptionalFields0010'
       let a9 = new A9()
       expect(a9.a).assertEqual(undefined)
     });
@@ -300,7 +290,6 @@ export default function OptionalFieldsTest(): void {
      * @tc.level     Level 2
      */
     it("testOptionalFields0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOptionalFields0011'
       let a10 = new A10()
       expect(a10.a).assertEqual(undefined)
     });
@@ -314,7 +303,6 @@ export default function OptionalFieldsTest(): void {
      * @tc.level     Level 2
      */
     it("testOptionalFields0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOptionalFields0012'
       let a11 = new A11()
       expect(a11.a).assertEqual(undefined)
     });
@@ -328,7 +316,6 @@ export default function OptionalFieldsTest(): void {
      * @tc.level     Level 2
      */
     it("testOptionalFields0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOptionalFields0013'
       let a12 = new A12()
       expect(a12.a).assertEqual(undefined)
     });
@@ -342,7 +329,6 @@ export default function OptionalFieldsTest(): void {
      * @tc.level     Level 2
      */
     it("testOptionalFields0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOptionalFields0014'
       let a13 = new A13()
       expect(a13.a).assertEqual(undefined)
     });
@@ -356,7 +342,6 @@ export default function OptionalFieldsTest(): void {
      * @tc.level     Level 2
      */
     it("testOptionalFields0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOptionalFields0015'
       let a14 = new A14()
       expect(a14.a).assertEqual(undefined)
     });
@@ -370,7 +355,6 @@ export default function OptionalFieldsTest(): void {
      * @tc.level     Level 2
      */
     it("testOptionalFields0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOptionalFields0017'
       let a16 = new A16()
       expect(a16.a).assertEqual(undefined)
     });
@@ -384,7 +368,6 @@ export default function OptionalFieldsTest(): void {
      * @tc.level     Level 2
      */
     it("testOptionalFields0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOptionalFields0018'
       let a17 = new A17()
       expect(a17.a).assertEqual(undefined)
     });
@@ -398,7 +381,6 @@ export default function OptionalFieldsTest(): void {
      * @tc.level     Level 2
      */
     it("testOptionalFields0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOptionalFields0019'
       let a18 = new A18()
       expect(a18.a).assertEqual(undefined)
     });
@@ -412,7 +394,6 @@ export default function OptionalFieldsTest(): void {
      * @tc.level     Level 2
      */
     it("testOptionalFields0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOptionalFields0020'
       let a19 = new A19()
       expect(a19.a).assertEqual(undefined)
     });
@@ -426,7 +407,6 @@ export default function OptionalFieldsTest(): void {
      * @tc.level     Level 2
      */
     it("testOptionalFields0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOptionalFields0021'
       let a20 = new A20()
       expect(a20.a).assertEqual(undefined)
     });
@@ -440,7 +420,6 @@ export default function OptionalFieldsTest(): void {
      * @tc.level     Level 2
      */
     it("testOptionalFields0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOptionalFields0022'
       let a21 = new A21()
       expect(a21.a).assertEqual(undefined)
     });
@@ -454,7 +433,6 @@ export default function OptionalFieldsTest(): void {
      * @tc.level     Level 2
      */
     it("testOptionalFields0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOptionalFields0023'
       let a22 = new A22()
       expect(a22.a).assertEqual(undefined)
     });
@@ -468,7 +446,6 @@ export default function OptionalFieldsTest(): void {
      * @tc.level     Level 2
      */
     it("testOptionalFields0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOptionalFields0024'
       let a23 = new A23()
       expect(a23.a).assertEqual(undefined)
     });

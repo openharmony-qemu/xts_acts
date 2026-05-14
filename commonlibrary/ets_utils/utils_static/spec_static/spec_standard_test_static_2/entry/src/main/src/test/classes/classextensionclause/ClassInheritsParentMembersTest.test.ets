@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -396,7 +396,6 @@ export default function ClassInheritsParentMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassInheritsParentMembers0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInheritsParentMembers0001';
       let instance = new Derived();
       expect(instance.value[0].name).assertEqual("User");
       expect(instance.value[1].name).assertEqual("User");
@@ -412,7 +411,6 @@ export default function ClassInheritsParentMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassInheritsParentMembers0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInheritsParentMembers0002';
       let instance = new Derived1();
       expect(instance.value1[0]).assertEqual(1);
       expect(instance.value1[1]).assertEqual(2);
@@ -429,7 +427,6 @@ export default function ClassInheritsParentMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassInheritsParentMembers0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInheritsParentMembers0003';
       let instance = new Derived2();
       expect(instance.value1).assertEqual(10);
     });
@@ -444,7 +441,6 @@ export default function ClassInheritsParentMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassInheritsParentMembers0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInheritsParentMembers0004';
       let instance = new Derived3();
       expect(instance.value1).assertEqual(undefined);
     });
@@ -459,7 +455,6 @@ export default function ClassInheritsParentMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassInheritsParentMembers0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInheritsParentMembers0005';
       let instance = new Derived4();
       expect(instance.value1).assertEqual(null);
     });
@@ -474,7 +469,6 @@ export default function ClassInheritsParentMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassInheritsParentMembers0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInheritsParentMembers0006';
       let instance = new Derived5();
       expect(instance.value1).assertEqual(3.14);
     });
@@ -489,7 +483,6 @@ export default function ClassInheritsParentMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassInheritsParentMembers0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInheritsParentMembers0007';
       let instance = new Derived6();
       expect(instance.value).assertEqual(date);
     });
@@ -504,7 +497,6 @@ export default function ClassInheritsParentMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassInheritsParentMembers0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInheritsParentMembers0008';
       let instance = new Derived7();
       expect(instance.value).assertEqual("Hello");
     });
@@ -519,7 +511,6 @@ export default function ClassInheritsParentMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassInheritsParentMembers0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInheritsParentMembers0009';
       let instance = new Derived8();
       expect(instance.value1).assertEqual("Hello");
     });
@@ -534,7 +525,6 @@ export default function ClassInheritsParentMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassInheritsParentMembers0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInheritsParentMembers0010';
       let instance = new Derived9();
       expect(instance.value1[0].name).assertEqual("Object1");
       expect(instance.value1[1].name).assertEqual("Object2");
@@ -550,7 +540,6 @@ export default function ClassInheritsParentMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassInheritsParentMembers0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInheritsParentMembers0011';
       let instance = new Derived10();
       expect(instance.value1[0]).assertEqual(date1);
       expect(instance.value1[1]).assertEqual(date2);
@@ -566,7 +555,6 @@ export default function ClassInheritsParentMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassInheritsParentMembers0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInheritsParentMembers0012';
       let instance = new Derived11();
       expect(instance.value[0]).assertEqual("a");
       expect(instance.value[1]).assertEqual("b");
@@ -583,7 +571,6 @@ export default function ClassInheritsParentMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassInheritsParentMembers0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInheritsParentMembers0013';
       let instance = new Derived12();
       expect(instance.value1[0]).assertEqual("a");
       expect(instance.value1[1]).assertEqual("b");
@@ -600,7 +587,6 @@ export default function ClassInheritsParentMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassInheritsParentMembers0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInheritsParentMembers0014';
       let instance = new Derived13();
       expect(instance.value).assertEqual(10);
     });
@@ -615,7 +601,6 @@ export default function ClassInheritsParentMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassInheritsParentMembers0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInheritsParentMembers0015';
       let instance = new Derived14();
       expect(instance.value.name).assertEqual("User");
     });
@@ -630,7 +615,6 @@ export default function ClassInheritsParentMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassInheritsParentMembers0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInheritsParentMembers0016';
       let instance = new Derived15();
       expect(instance.value[0]).assertEqual(1);
       expect(instance.value[1]).assertEqual(2);
@@ -647,7 +631,6 @@ export default function ClassInheritsParentMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassInheritsParentMembers0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInheritsParentMembers0017';
       let instance = new Derived16();
       expect(instance.value[0]).assertEqual(date1);
       expect(instance.value[1]).assertEqual(date2);
@@ -663,7 +646,6 @@ export default function ClassInheritsParentMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassInheritsParentMembers0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInheritsParentMembers0018';
       let instance = new Derived17();
       expect(instance.value1).assertEqual(date);
     });
@@ -678,7 +660,6 @@ export default function ClassInheritsParentMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassInheritsParentMembers0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInheritsParentMembers0019';
       let instance = new Derived18();
       expect(instance.value[0].name).assertEqual("Object1");
       expect(instance.value[1].name).assertEqual("Object2");
@@ -694,7 +675,6 @@ export default function ClassInheritsParentMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassInheritsParentMembers0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInheritsParentMembers0020';
       let instance = new Derived19();
       expect(instance.value1.name).assertEqual("User");
     });
@@ -709,7 +689,6 @@ export default function ClassInheritsParentMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassInheritsParentMembers0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInheritsParentMembers0021';
       let instance = new Derived20();
       expect(instance.value[0]).assertEqual(true);
       expect(instance.value[1]).assertEqual(false);
@@ -726,7 +705,6 @@ export default function ClassInheritsParentMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassInheritsParentMembers0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInheritsParentMembers0022';
       let instance = new Derived21();
       expect(instance.value1[0]).assertEqual(true);
       expect(instance.value1[1]).assertEqual(false);
@@ -743,7 +721,6 @@ export default function ClassInheritsParentMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassInheritsParentMembers0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInheritsParentMembers0023';
       let instance = new Derived22();
       expect(instance.value1).assertEqual(true);
     });
@@ -758,7 +735,6 @@ export default function ClassInheritsParentMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassInheritsParentMembers0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInheritsParentMembers0024';
       let instance = new Derived23();
       expect(instance.value).assertEqual(3.14);
     });
@@ -773,7 +749,6 @@ export default function ClassInheritsParentMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassInheritsParentMembers0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInheritsParentMembers0025';
       let instance = new Derived24();
       expect(instance.value).assertEqual(true);
     });
@@ -788,7 +763,6 @@ export default function ClassInheritsParentMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassInheritsParentMembers0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInheritsParentMembers0026';
       let instance = new Derived25();
       expect(instance.value1[0].name).assertEqual("User");
       expect(instance.value1[1].name).assertEqual("User");
@@ -804,7 +778,6 @@ export default function ClassInheritsParentMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassInheritsParentMembers0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInheritsParentMembers0027';
       let instance = new Derived26();
       expect(instance.value).assertEqual(null);
     });
@@ -819,7 +792,6 @@ export default function ClassInheritsParentMembersTest():void {
      * @tc.level     Level 2
      */
     it("testClassInheritsParentMembers0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInheritsParentMembers0028';
       let instance = new Derived27();
       expect(instance.value).assertEqual(undefined);
     });

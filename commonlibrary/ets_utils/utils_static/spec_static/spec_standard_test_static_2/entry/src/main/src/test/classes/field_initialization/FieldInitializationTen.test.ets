@@ -1225,13 +1225,13 @@ export default function FieldInitializationTenTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTen0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(A_F998.field instanceof Object).assertTrue()
+      expect(A_F998.field instanceof Object).assertFalse()
       expect(A_F998.field).assertEqual(undefined)
           A_F998.field = 5
       expect(A_F998.field instanceof Object).assertTrue()
       expect(A_F998.field).assertEqual(5)
           A_F998.field = undefined
-      expect(A_F998.field instanceof Object).assertTrue()
+      expect(A_F998.field instanceof Object).assertFalse()
       expect(A_F998.field).assertEqual(undefined)
     })
 
@@ -1491,13 +1491,13 @@ export default function FieldInitializationTenTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTen0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(A_F1013.field instanceof Object).assertTrue()
+      expect(A_F1013.field instanceof Object).assertFalse()
       expect(A_F1013.field).assertEqual(undefined)
           A_F1013.field = 5
       expect(A_F1013.field instanceof Object).assertTrue()
       expect(A_F1013.field).assertEqual(5)
           A_F1013.field = undefined
-      expect(A_F1013.field instanceof Object).assertTrue()
+      expect(A_F1013.field instanceof Object).assertFalse()
       expect(A_F1013.field).assertEqual(undefined)
     })
 
@@ -1757,13 +1757,13 @@ export default function FieldInitializationTenTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTen0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(A_F1028.field instanceof Object).assertTrue()
+      expect(A_F1028.field instanceof Object).assertFalse()
       expect(A_F1028.field).assertEqual(undefined)
           A_F1028.field = 5
       expect(A_F1028.field instanceof Object).assertTrue()
       expect(A_F1028.field).assertEqual(5)
           A_F1028.field = undefined
-      expect(A_F1028.field instanceof Object).assertTrue()
+      expect(A_F1028.field instanceof Object).assertFalse()
       expect(A_F1028.field).assertEqual(undefined)
     })
 
@@ -2023,13 +2023,13 @@ export default function FieldInitializationTenTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTen0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(A_F1043.field instanceof Object).assertTrue()
+      expect(A_F1043.field instanceof Object).assertFalse()
       expect(A_F1043.field).assertEqual(undefined)
           A_F1043.field = 5
       expect(A_F1043.field instanceof Object).assertTrue()
       expect(A_F1043.field).assertEqual(5)
           A_F1043.field = undefined
-      expect(A_F1043.field instanceof Object).assertTrue()
+      expect(A_F1043.field instanceof Object).assertFalse()
       expect(A_F1043.field).assertEqual(undefined)
     })
 
@@ -2289,13 +2289,13 @@ export default function FieldInitializationTenTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTen0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(A_F1058.field instanceof Object).assertTrue()
+      expect(A_F1058.field instanceof Object).assertFalse()
       expect(A_F1058.field).assertEqual(undefined)
           A_F1058.field = 5
       expect(A_F1058.field instanceof Object).assertTrue()
       expect(A_F1058.field).assertEqual(5)
           A_F1058.field = undefined
-      expect(A_F1058.field instanceof Object).assertTrue()
+      expect(A_F1058.field instanceof Object).assertFalse()
       expect(A_F1058.field).assertEqual(undefined)
     })
 
@@ -2555,13 +2555,13 @@ export default function FieldInitializationTenTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTen0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(A_F1073.field instanceof Object).assertTrue()
+      expect(A_F1073.field instanceof Object).assertFalse()
       expect(A_F1073.field).assertEqual(undefined)
           A_F1073.field = 5
       expect(A_F1073.field instanceof Object).assertTrue()
       expect(A_F1073.field).assertEqual(5)
           A_F1073.field = undefined
-      expect(A_F1073.field instanceof Object).assertTrue()
+      expect(A_F1073.field instanceof Object).assertFalse()
       expect(A_F1073.field).assertEqual(undefined)
     })
 

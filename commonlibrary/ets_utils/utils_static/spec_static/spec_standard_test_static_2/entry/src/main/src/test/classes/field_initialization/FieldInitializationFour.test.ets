@@ -1217,7 +1217,7 @@ export default function FieldInitializationFourTest(): void {
      */
     it("testFieldInitFour0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F406 = new A_F406()
-      expect(a.field instanceof Object).assertTrue()
+      expect(a.field instanceof Object).assertFalse()
       expect(a.field).assertEqual(undefined)
       a.field = 5
       expect(a.field instanceof Object).assertTrue()
@@ -1455,7 +1455,7 @@ export default function FieldInitializationFourTest(): void {
      */
     it("testFieldInitFour0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F421 = new A_F421()
-      expect(a.field instanceof Object).assertTrue()
+      expect(a.field instanceof Object).assertFalse()
       expect(a.field).assertEqual(undefined)
       a.field = 5
       expect(a.field instanceof Object).assertTrue()
@@ -1693,7 +1693,7 @@ export default function FieldInitializationFourTest(): void {
      */
     it("testFieldInitFour0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F436 = new A_F436()
-      expect(a.field instanceof Object).assertTrue()
+      expect(a.field instanceof Object).assertFalse()
       expect(a.field).assertEqual(undefined)
       a.field = 5
       expect(a.field instanceof Object).assertTrue()
@@ -1931,7 +1931,7 @@ export default function FieldInitializationFourTest(): void {
      */
     it("testFieldInitFour0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F451 = new A_F451()
-      expect(a.field instanceof Object).assertTrue()
+      expect(a.field instanceof Object).assertFalse()
       expect(a.field).assertEqual(undefined)
       a.field = 5
       expect(a.field instanceof Object).assertTrue()
@@ -2169,7 +2169,7 @@ export default function FieldInitializationFourTest(): void {
      */
     it("testFieldInitFour0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F466 = new A_F466()
-      expect(a.field instanceof Object).assertTrue()
+      expect(a.field instanceof Object).assertFalse()
       expect(a.field).assertEqual(undefined)
       a.field = 5
       expect(a.field instanceof Object).assertTrue()

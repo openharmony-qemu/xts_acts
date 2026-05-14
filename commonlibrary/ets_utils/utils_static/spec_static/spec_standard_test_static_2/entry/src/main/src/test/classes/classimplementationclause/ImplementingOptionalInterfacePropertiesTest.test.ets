@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -136,7 +136,6 @@ export default function ImplementingOptionalInterfacePropertiesTest():void {
      * @tc.level     Level 2
      */
     it("testImplementingOptionalInterfaceProperties0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testImplementingOptionalInterfaceProperties0001';
       let c = new C()
       expect(c.n).assertEqual(undefined)
     });
@@ -151,7 +150,6 @@ export default function ImplementingOptionalInterfacePropertiesTest():void {
      * @tc.level     Level 2
      */
     it("testImplementingOptionalInterfaceProperties0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testImplementingOptionalInterfaceProperties0002';
       let c = new C1()
       expect(c.n).assertEqual(42)
       c.n = 43
@@ -170,7 +168,6 @@ export default function ImplementingOptionalInterfacePropertiesTest():void {
      * @tc.level     Level 2
      */
     it("testImplementingOptionalInterfaceProperties0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testImplementingOptionalInterfaceProperties0003';
       let c = new C2()
       try {
         c.n = 1
@@ -191,7 +188,6 @@ export default function ImplementingOptionalInterfacePropertiesTest():void {
      * @tc.level     Level 2
      */
     it("testImplementingOptionalInterfaceProperties0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testImplementingOptionalInterfaceProperties0004';
       expect(new C3().n).assertEqual(42)
 
 
@@ -207,7 +203,6 @@ export default function ImplementingOptionalInterfacePropertiesTest():void {
      * @tc.level     Level 2
      */
     it("testImplementingOptionalInterfaceProperties0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testImplementingOptionalInterfaceProperties0005';
       let a: C4 = new C4()
       expect(a.n).assertEqual(1)
       a.n = 41
@@ -224,7 +219,6 @@ export default function ImplementingOptionalInterfacePropertiesTest():void {
      * @tc.level     Level 2
      */
     it("testImplementingOptionalInterfaceProperties0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testImplementingOptionalInterfaceProperties0006';
       expect(new C5().n).assertEqual(42)
 
 
@@ -240,7 +234,6 @@ export default function ImplementingOptionalInterfacePropertiesTest():void {
      * @tc.level     Level 2
      */
     it("testImplementingOptionalInterfaceProperties0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testImplementingOptionalInterfaceProperties0007';
       let a: C6 = new C6()
       expect(a.n).assertEqual(undefined)
       try {
@@ -261,7 +254,6 @@ export default function ImplementingOptionalInterfacePropertiesTest():void {
      * @tc.level     Level 2
      */
     it("testImplementingOptionalInterfaceProperties0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testImplementingOptionalInterfaceProperties0008';
       let a: C7 = new C7()
       expect(a.n).assertEqual(1)
       a.n = 41

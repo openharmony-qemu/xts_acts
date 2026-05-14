@@ -887,7 +887,7 @@ export default function FieldInitializationTest(): void {
      */
     it("testFieldInit0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F013 = new A_F013()
-      expect(a.field instanceof Object).assertTrue()
+      expect(a.field instanceof Object).assertFalse()
       expect(a.field).assertEqual(undefined)
       a.foo()
       expect(a.field instanceof Object).assertTrue()
@@ -1125,7 +1125,7 @@ export default function FieldInitializationTest(): void {
      */
     it("testFieldInit0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F028 = new A_F028()
-      expect(a.field instanceof Object).assertTrue()
+      expect(a.field instanceof Object).assertFalse()
       expect(a.field).assertEqual(undefined)
       a.foo()
       expect(a.field instanceof Object).assertTrue()
@@ -1363,7 +1363,7 @@ export default function FieldInitializationTest(): void {
      */
     it("testFieldInit0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F043 = new A_F043()
-      expect(a.field instanceof Object).assertTrue()
+      expect(a.field instanceof Object).assertFalse()
       expect(a.field).assertEqual(undefined)
       a.field = 5
       expect(a.field instanceof Object).assertTrue()
@@ -1640,7 +1640,7 @@ export default function FieldInitializationTest(): void {
           const lambda = () => {
         a.field = 5
           }
-      expect(a.field instanceof Object).assertTrue()
+      expect(a.field instanceof Object).assertFalse()
       expect(a.field).assertEqual(undefined)
           lambda()
       expect(a.field instanceof Object).assertTrue()
@@ -1881,7 +1881,7 @@ export default function FieldInitializationTest(): void {
      */
     it("testFieldInit0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F073 = new A_F073()
-      expect(a.field instanceof Object).assertTrue()
+      expect(a.field instanceof Object).assertFalse()
       expect(a.field).assertEqual(undefined)
           foo_F073(a)
       expect(a.field instanceof Object).assertTrue()
@@ -2158,7 +2158,7 @@ export default function FieldInitializationTest(): void {
           const lambda = () => {
         a.field = 5
           }
-      expect(a.field instanceof Object).assertTrue()
+      expect(a.field instanceof Object).assertFalse()
       expect(a.field).assertEqual(undefined)
           foo_F088(lambda)
       expect(a.field instanceof Object).assertTrue()

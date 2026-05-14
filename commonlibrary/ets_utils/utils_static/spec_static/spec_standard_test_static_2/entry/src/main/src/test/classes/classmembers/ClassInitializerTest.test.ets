@@ -345,7 +345,6 @@ export default function ClassInitializerTest():void {
      * @tc.level     Level 2
      */
     it("testClassInitializer0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInitializer0001';
       expect( A.a).assertEqual(5);
     });
 
@@ -358,7 +357,6 @@ export default function ClassInitializerTest():void {
      * @tc.level     Level 2
      */
     it("testClassInitializer0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInitializer0002';
       expect(A1.a).assertEqual(45);
     });
 
@@ -371,7 +369,6 @@ export default function ClassInitializerTest():void {
      * @tc.level     Level 2
      */
     it("testClassInitializer0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInitializer0003';
       expect(A2.a).assertEqual(1);
     });
 
@@ -384,7 +381,6 @@ export default function ClassInitializerTest():void {
      * @tc.level     Level 2
      */
     it("testClassInitializer0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInitializer0004';
       expect(A3.a).assertEqual(5);
     });
 
@@ -397,7 +393,6 @@ export default function ClassInitializerTest():void {
      * @tc.level     Level 2
      */
     it("testClassInitializer0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInitializer0005';
       expect(A4.a).assertEqual(6);
     });
 
@@ -410,7 +405,6 @@ export default function ClassInitializerTest():void {
      * @tc.level     Level 2
      */
     it("testClassInitializer0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInitializer0006';
       expect(A5.a).assertEqual(55);
     });
 
@@ -423,7 +417,6 @@ export default function ClassInitializerTest():void {
      * @tc.level     Level 2
      */
     it("testClassInitializer0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInitializer0007';
       expect(A6.a).assertEqual(5);
     });
 
@@ -436,7 +429,6 @@ export default function ClassInitializerTest():void {
      * @tc.level     Level 2
      */
     it("testClassInitializer0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInitializer0008';
       expect(A7.a).assertEqual(1);
     });
 
@@ -449,7 +441,6 @@ export default function ClassInitializerTest():void {
      * @tc.level     Level 2
      */
     it("testClassInitializer0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInitializer0009';
       expect(A8.x).assertEqual(5);
     });
 
@@ -462,7 +453,6 @@ export default function ClassInitializerTest():void {
      * @tc.level     Level 2
      */
     it("testClassInitializer0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInitializer0010';
       expect(A9.a).assertEqual(4);
     });
 
@@ -475,7 +465,6 @@ export default function ClassInitializerTest():void {
      * @tc.level     Level 2
      */
     it("testClassInitializer0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInitializer0011';
       expect(A10.a).assertEqual(45);
     });
 
@@ -488,7 +477,6 @@ export default function ClassInitializerTest():void {
      * @tc.level     Level 2
      */
     it("testClassInitializer0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInitializer0012';
       expect(A11.a).assertEqual(1);
     });
 
@@ -501,7 +489,6 @@ export default function ClassInitializerTest():void {
      * @tc.level     Level 2
      */
     it("testClassInitializer0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInitializer0013';
       expect(A12.a).assertEqual(5);
     })
 
@@ -514,7 +501,6 @@ export default function ClassInitializerTest():void {
      * @tc.level     Level 2
      */
     it("testClassInitializer0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInitializer0014';
       expect(A13.a).assertEqual(6);
     })
 
@@ -527,7 +513,6 @@ export default function ClassInitializerTest():void {
      * @tc.level     Level 2
      */
     it("testClassInitializer0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInitializer0015';
       expect(A14.a).assertEqual(55);
     })
 
@@ -541,7 +526,6 @@ export default function ClassInitializerTest():void {
      * @tc.level     Level 2
      */
     it("testClassInitializer0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInitializer0016';
       expect(B.b).assertEqual(2);
       expect(res).assertEqual("AB");
     })
@@ -556,7 +540,6 @@ export default function ClassInitializerTest():void {
      * @tc.level     Level 2
      */
     it("testClassInitializer0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInitializer0017';
       expect(B.b).assertEqual(2);
       expect(res).assertEqual("AB");
     })
@@ -571,7 +554,6 @@ export default function ClassInitializerTest():void {
      * @tc.level     Level 2
      */
     it("testClassInitializer0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInitializer0018';
       expect(E1.e).assertEqual(5);
       expect(res1).assertEqual("E");
     })
@@ -586,7 +568,6 @@ export default function ClassInitializerTest():void {
      * @tc.level     Level 2
      */
     it("testClassInitializer0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInitializer0019';
       expect(F1.f).assertEqual(6);
       expect(res1).assertEqual("EF");
     })
@@ -601,7 +582,6 @@ export default function ClassInitializerTest():void {
      * @tc.level     Level 2
      */
     it("testClassInitializer0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInitializer0020';
       expect(G1.g).assertEqual(7);
       expect(res1).assertEqual("EFG");
     })

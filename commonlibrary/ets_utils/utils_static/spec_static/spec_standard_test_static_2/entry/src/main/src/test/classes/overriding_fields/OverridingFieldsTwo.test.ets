@@ -2395,7 +2395,7 @@ export default function OverridingFieldsTwoTest(): void {
      */
     it("testOverridingFieldsTwo0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F236 = new A_F236()
-      expect(a.field instanceof Object).assertTrue()
+      expect(a.field instanceof Object).assertFalse()
       expect(a.field).assertEqual(undefined)
       expect(get_field(a)).assertEqual(undefined)
       set_field(a, 7)

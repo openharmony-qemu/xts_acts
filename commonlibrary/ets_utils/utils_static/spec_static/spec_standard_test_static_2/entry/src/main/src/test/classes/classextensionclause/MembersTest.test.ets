@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -334,7 +334,6 @@ export default function MembersTest():void {
      * @tc.level     Level 2
      */
     it("testMembers0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMembers0001';
       const animal = new Animal("Generic");
       expect(animal.name).assertEqual("Generic");
     });
@@ -349,7 +348,6 @@ export default function MembersTest():void {
      * @tc.level     Level 2
      */
     it("testMembers0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMembers0002';
       const dog = new Dog1("Buddy", "Golden Retriever");
       expect(dog.name).assertEqual("Buddy");
       expect(dog.breed).assertEqual("Golden Retriever");
@@ -365,7 +363,6 @@ export default function MembersTest():void {
      * @tc.level     Level 2
      */
     it("testMembers0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMembers0003';
       const animal: Animal2 = new Dog2("Max", "Labrador");
       expect(animal.speak()).assertEqual("Dog speak");
     });
@@ -380,7 +377,6 @@ export default function MembersTest():void {
      * @tc.level     Level 2
      */
     it("testMembers0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMembers0004';
       const animal: Animal3 = new Dog3("Max", "Labrador");
       expect((animal as Dog3).breed).assertEqual("Labrador");
     });
@@ -395,7 +391,6 @@ export default function MembersTest():void {
      * @tc.level     Level 2
      */
     it("testMembers0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMembers0005';
       const animal: Animal4 = new Fish("Dory", "Saltwater")
       expect((animal as Fish).getWaterType()).assertEqual("Saltwater");
     });
@@ -410,7 +405,6 @@ export default function MembersTest():void {
      * @tc.level     Level 2
      */
     it("testMembers0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMembers0006';
       const animal: Animal5 = new Fish2("Dory", "Saltwater");
       expect((animal as Fish2).getWaterType()).assertEqual("Saltwater");
     });
@@ -425,7 +419,6 @@ export default function MembersTest():void {
      * @tc.level     Level 2
      */
     it("testMembers0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMembers0007';
       const animal: Animal6 = new Lion("Mufasa");
       expect(animal.speak()).assertEqual("Roar!");
       expect((animal as Lion).furColor).assertEqual("Golden");
@@ -441,7 +434,6 @@ export default function MembersTest():void {
      * @tc.level     Level 2
      */
     it("testMembers0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMembers0008';
       const animal: Animal7 = new Dolphin("Dolly");
       expect((animal as Dolphin).swim()).assertEqual("Dolphin is swimming");
     });
@@ -456,7 +448,6 @@ export default function MembersTest():void {
      * @tc.level     Level 2
      */
     it("testMembers0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMembers0009';
       const animal: Animal8 = new Eagle("Sky");
       expect("Eagle is flying").assertEqual((animal as Eagle).fly());
     });
@@ -471,7 +462,6 @@ export default function MembersTest():void {
      * @tc.level     Level 2
      */
     it("testMembers0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMembers0010';
       const animal: Animal9 = new Wolf("Luna", 3);
       expect((animal as Wolf).packSize).assertEqual(3);
       expect((animal as Wolf).name).assertEqual("Luna");
@@ -487,7 +477,6 @@ export default function MembersTest():void {
      * @tc.level     Level 2
      */
     it("testMembers0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMembers0011';
       const dog = new Dog4(5);
       expect(dog.age).assertEqual(35);
       const animal: Animal10 = new Dog4(5);

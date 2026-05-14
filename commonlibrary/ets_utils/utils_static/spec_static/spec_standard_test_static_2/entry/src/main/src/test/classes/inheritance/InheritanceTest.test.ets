@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -400,7 +400,6 @@ export default function InheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testInheritance0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInheritance0001';
 
       const c: C = new C()
       const e: E = c.a(new K())
@@ -417,7 +416,6 @@ export default function InheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testInheritance0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInheritance0002';
 
       const c: C1 = new C1()
       const e: E = c.a(new K())
@@ -434,7 +432,6 @@ export default function InheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testInheritance0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInheritance0003';
 
       const c: C2 = new C2()
       const e: E = c.a(new K())
@@ -451,7 +448,6 @@ export default function InheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testInheritance0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInheritance0004';
 
       const c: C2 = new C2()
       const e: E = c.a(new F())
@@ -468,7 +464,6 @@ export default function InheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testInheritance0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInheritance0005';
 
       const c: C3 = new C3()
       const e: E = c.a(new K())
@@ -485,7 +480,6 @@ export default function InheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testInheritance0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInheritance0006';
 
       const c: C4 = new C4()
       const e: E = c.a(new E())
@@ -502,7 +496,6 @@ export default function InheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testInheritance0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInheritance0007';
 
       const c: C5 = new C5()
       const e: E = c.a(new K())
@@ -519,7 +512,6 @@ export default function InheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testInheritance0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInheritance0008';
 
       const c: C6 = new C6()
       const e: E = c.a(new K())
@@ -536,7 +528,6 @@ export default function InheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testInheritance0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInheritance0009';
 
       const c: C7 = new C7()
       const e: E = c.a(new K())
@@ -553,7 +544,6 @@ export default function InheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testInheritance0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInheritance0010';
 
       const c: C7 = new C7()
       const e: E = c.a(new F())
@@ -570,7 +560,6 @@ export default function InheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testInheritance0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInheritance0011';
 
       const c: C8 = new C8()
       const e: E = c.a(new K())
@@ -587,7 +576,6 @@ export default function InheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testInheritance0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInheritance0012';
 
       const c: C9 = new C9()
       const e: E = c.a(new E())
@@ -604,7 +592,6 @@ export default function InheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testInheritance0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInheritance0013';
 
       const c: C10 = new C10()
       const e: E1 = c.a(new K1())
@@ -621,7 +608,6 @@ export default function InheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testInheritance0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInheritance0014';
 
       const c: C11 = new C11()
       const e: E1 = c.a(new K1())
@@ -638,7 +624,6 @@ export default function InheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testInheritance0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInheritance0015';
 
       const c: C12 = new C12()
       const e: E1 = c.a(new K1())
@@ -655,7 +640,6 @@ export default function InheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testInheritance0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInheritance0016';
 
       const c: C12 = new C12()
       const e: E1 = c.a(new F1())
@@ -672,7 +656,6 @@ export default function InheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testInheritance0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInheritance0017';
 
       const c: C13 = new C13()
       const e: E1 = c.a(new K1())
@@ -689,7 +672,6 @@ export default function InheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testInheritance0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInheritance0018';
 
       const c: C14 = new C14()
       const e: E1 = c.a(new E1())
@@ -706,7 +688,6 @@ export default function InheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testInheritance0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInheritance0019';
 
       const c: C15 = new C15()
       const e: E1 = c.a(new K1())
@@ -723,7 +704,6 @@ export default function InheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testInheritance0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInheritance0020';
 
       const c: C15 = new C15()
       const e: E1 = c.a(new K1())
@@ -740,7 +720,6 @@ export default function InheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testInheritance0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInheritance0021';
 
       const c: C16 = new C16()
       const e: E1 = c.a(new K1())
@@ -757,7 +736,6 @@ export default function InheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testInheritance0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInheritance0022';
 
       const c: C16 = new C16()
       const e: E1 = c.a(new F1())
@@ -774,7 +752,6 @@ export default function InheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testInheritance0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInheritance0023';
 
       const c: C17 = new C17()
       const e: E1 = c.a(new K1())
@@ -791,7 +768,6 @@ export default function InheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testInheritance0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInheritance0024';
 
       const c: C18 = new C18()
       const e: E1 = c.a(new E1())
@@ -808,7 +784,6 @@ export default function InheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testInheritance0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInheritance0025';
       let instance: B12 = new B12();
       expect( instance.fee()).assertEqual(2);
     });
@@ -822,7 +797,6 @@ export default function InheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testInheritance0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInheritance0026';
       let instance: C19 = new C19();
       expect( instance.fee()).assertEqual(1);
     });
@@ -836,7 +810,6 @@ export default function InheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testInheritance0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInheritance0027';
       let instance: B14 = new B14();
       expect( instance.fee()).assertEqual(1);
     });
@@ -850,7 +823,6 @@ export default function InheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testInheritance0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInheritance0028';
       let instance: B15 = new B15();
       expect( instance.fee()).assertEqual(1);
     });
@@ -864,7 +836,6 @@ export default function InheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testInheritance0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInheritance0029';
       let instance: B16 = new B16();
       expect( instance.fee()).assertEqual(1);
     });
@@ -878,7 +849,6 @@ export default function InheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testInheritance0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInheritance0030';
       let instance: B17 = new B17();
       expect( instance.fee()).assertEqual(1);
     });

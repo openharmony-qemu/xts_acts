@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -187,7 +187,6 @@ export default function ClassImplementationClauseTest():void {
      * @tc.level     Level 2
      */
     it("testClassImplementationClause0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassImplementationClause0001';
       expect(new C().foo()).assertEqual(1)
     });
 
@@ -201,7 +200,6 @@ export default function ClassImplementationClauseTest():void {
      * @tc.level     Level 2
      */
     it("testClassImplementationClause0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassImplementationClause0002';
       expect(new C1().foo()).assertEqual(2)
     });
 
@@ -214,7 +212,6 @@ export default function ClassImplementationClauseTest():void {
      * @tc.level     Level 2
      */
     it("testClassImplementationClause0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassImplementationClause0003';
       let i: I1 = new C1()
       expect(i.foo()).assertEqual(2)
     });
@@ -228,7 +225,6 @@ export default function ClassImplementationClauseTest():void {
      * @tc.level     Level 2
      */
     it("testClassImplementationClause0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassImplementationClause0004';
       let c: A2 = new A2();
       let b: A2 = new A2();
       expect(c.foo()).assertEqual(5);
@@ -244,7 +240,6 @@ export default function ClassImplementationClauseTest():void {
      * @tc.level     Level 2
      */
     it("testClassImplementationClause0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassImplementationClause0005';
       let a: A3 = new A3();
       expect(a.foo()).assertEqual(5);
     });
@@ -258,7 +253,6 @@ export default function ClassImplementationClauseTest():void {
      * @tc.level     Level 2
      */
     it("testClassImplementationClause0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassImplementationClause0006';
       let c: D = new D();
       let b: D = new D();
       expect(c.foo()).assertEqual(5);
@@ -274,7 +268,6 @@ export default function ClassImplementationClauseTest():void {
      * @tc.level     Level 2
      */
     it("testClassImplementationClause0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassImplementationClause0007';
       let c: C5 = new D1();
       let b: B2 = new D1();
       expect(c.foo()).assertEqual(5);
@@ -290,7 +283,6 @@ export default function ClassImplementationClauseTest():void {
      * @tc.level     Level 2
      */
     it("testClassImplementationClause0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassImplementationClause0008';
       let a: A6 = new A6()
 
       expect(a.foo()).assertEqual(10);
@@ -305,7 +297,6 @@ export default function ClassImplementationClauseTest():void {
      * @tc.level     Level 2
      */
     it("testClassImplementationClause0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassImplementationClause0009';
       let a: A7 = new A7();
       expect(a.foo()).assertEqual(5);
       expect(a.bar()).assertEqual(7);

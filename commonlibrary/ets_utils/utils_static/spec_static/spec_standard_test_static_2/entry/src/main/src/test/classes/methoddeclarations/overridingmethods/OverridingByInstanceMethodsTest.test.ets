@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -141,7 +141,6 @@ export default function OverridingByInstanceMethodsTest():void {
      * @tc.level     Level 2
      */
     it("testOverridingByInstanceMethods0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOverridingByInstanceMethods0001';
       let b: A = new B();
       expect(b.run()).assertEqual(10);
     });
@@ -155,7 +154,6 @@ export default function OverridingByInstanceMethodsTest():void {
      * @tc.level     Level 2
      */
     it("testOverridingByInstanceMethods0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOverridingByInstanceMethods0002';
       let instance: C = new C();
       expect( instance.m() == 5 ).assertTrue();
       expect( instance.superm() == 1 ).assertTrue();
@@ -170,7 +168,6 @@ export default function OverridingByInstanceMethodsTest():void {
      * @tc.level     Level 2
      */
     it("testOverridingByInstanceMethods0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOverridingByInstanceMethods0003';
       let instance: A2 = new C1() as A2;
       expect( instance.m() == 5 ).assertTrue();
     });
@@ -184,7 +181,6 @@ export default function OverridingByInstanceMethodsTest():void {
      * @tc.level     Level 2
      */
     it("testOverridingByInstanceMethods0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOverridingByInstanceMethods0004';
       let instance: C2 = new C2();
       expect( instance.m() == 5 ).assertTrue();
     });
@@ -198,7 +194,6 @@ export default function OverridingByInstanceMethodsTest():void {
      * @tc.level     Level 2
      */
     it("testOverridingByInstanceMethods0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOverridingByInstanceMethods0005';
       let instance: C3 = new C3();
       expect( instance.m() == 5 ).assertTrue();
     });
@@ -212,7 +207,6 @@ export default function OverridingByInstanceMethodsTest():void {
      * @tc.level     Level 2
      */
     it("testOverridingByInstanceMethods0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOverridingByInstanceMethods0006';
       let instance: C4 = new C4();
       expect( instance.m() == 5 ).assertTrue();
     });

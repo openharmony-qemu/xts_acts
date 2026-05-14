@@ -291,7 +291,6 @@ export default function ExtensionClausePositiveTest():void {
      * @tc.level     Level 2
      */
     it("testExtensionClausePositive0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testExtensionClausePositive0001';
       const d: D = new D
       d['a1'] = {a: "1"}
       d['a2'] = {a: "2"}
@@ -309,7 +308,6 @@ export default function ExtensionClausePositiveTest():void {
      * @tc.level     Level 2
      */
     it("testExtensionClausePositive0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testExtensionClausePositive0002';
       const d: D_1 = new D_1
       expect(d.a).assertEqual('a')
       expect(d.d).assertEqual('d')
@@ -324,7 +322,6 @@ export default function ExtensionClausePositiveTest():void {
      * @tc.level     Level 2
      */
     it("testExtensionClausePositive0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testExtensionClausePositive0003';
       const d: D_2 = new D_2
       expect(d.a).assertEqual('a')
       expect(d.d).assertEqual('d')
@@ -339,7 +336,6 @@ export default function ExtensionClausePositiveTest():void {
      * @tc.level     Level 2
      */
     it("testExtensionClausePositive0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testExtensionClausePositive0004';
       let b: B = new B(10)
       expect(b.value).assertEqual(10)
     });
@@ -353,7 +349,6 @@ export default function ExtensionClausePositiveTest():void {
      * @tc.level     Level 2
      */
     it("testExtensionClausePositive0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testExtensionClausePositive0005';
       let b: B_1<number> = new B_1<number>(10)
       expect(b.value).assertEqual(10)
     });
@@ -367,7 +362,6 @@ export default function ExtensionClausePositiveTest():void {
      * @tc.level     Level 2
      */
     it("testExtensionClausePositive0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testExtensionClausePositive0006';
       let b: B_2<number> = new B_2<number>(10)
       expect(b.value).assertEqual(10)
     });
@@ -381,7 +375,6 @@ export default function ExtensionClausePositiveTest():void {
      * @tc.level     Level 2
      */
     it("testExtensionClausePositive0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testExtensionClausePositive0007';
       let b: B_3<D_6> = new B_3<D_6>(new F_3())
       expect(b.value.value).assertEqual(11)
     });
@@ -395,7 +388,6 @@ export default function ExtensionClausePositiveTest():void {
      * @tc.level     Level 2
      */
     it("testExtensionClausePositive0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testExtensionClausePositive0008';
       let b: B_4<D_7> = new B_4<D_7>(new F_4())
       expect(b.value.value).assertEqual(11)
     });
@@ -409,7 +401,6 @@ export default function ExtensionClausePositiveTest():void {
      * @tc.level     Level 2
      */
     it("testExtensionClausePositive0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testExtensionClausePositive0009';
       let b: B_5<D_8> = new B_5<D_8>(new F_5())
       expect(b.value.value).assertEqual(11)
     });
@@ -423,7 +414,6 @@ export default function ExtensionClausePositiveTest():void {
      * @tc.level     Level 2
      */
     it("testExtensionClausePositive0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testExtensionClausePositive0010';
       let b: B_6<D_9> = new B_6<D_9>(new F_6())
       expect(b.value.value).assertEqual(11)
     });

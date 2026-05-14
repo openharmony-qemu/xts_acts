@@ -824,25 +824,6 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ns.A_F1223.field instanceof char).assertTrue()
-      expect(ns.A_F1223.field).assertEqual(c'\u0000')
-          ns.A_F1223.field = c'b'
-      expect(ns.A_F1223.field instanceof char).assertTrue()
-      expect(ns.A_F1223.field).assertEqual(c'b')
-          ns.A_F1223.field = c'\u0000'
-      expect(ns.A_F1223.field instanceof char).assertTrue()
-      expect(ns.A_F1223.field).assertEqual(c'\u0000')
-    })
-
-    /**
-     * @tc.number    SUB_FIELD_INIT_TWELVE_1100
-     * @tc.name      testFieldInitTwelve0011
-     * @tc.desc      Checking for changing the value from outside of class.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldInitTwelve0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1224.field instanceof boolean).assertTrue()
       expect(ns.A_F1224.field).assertEqual(false)
           ns.A_F1224.field = true
@@ -854,6 +835,22 @@ export default function FieldInitializationTwelveTest(): void {
     })
 
     /**
+     * @tc.number    SUB_FIELD_INIT_TWELVE_1100
+     * @tc.name      testFieldInitTwelve0011
+     * @tc.desc      Checking for changing the value from outside of class.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInitTwelve0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(ns.A_F1225.field instanceof Object).assertTrue()
+      expect(ns.A_F1225.field).assertEqual(4)
+          ns.A_F1225.field = 5
+      expect(ns.A_F1225.field instanceof Object).assertTrue()
+      expect(ns.A_F1225.field).assertEqual(5)
+    })
+
+    /**
      * @tc.number    SUB_FIELD_INIT_TWELVE_1200
      * @tc.name      testFieldInitTwelve0012
      * @tc.desc      Checking for changing the value from outside of class.
@@ -862,11 +859,14 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ns.A_F1225.field instanceof Object).assertTrue()
-      expect(ns.A_F1225.field).assertEqual(4)
-          ns.A_F1225.field = 5
-      expect(ns.A_F1225.field instanceof Object).assertTrue()
-      expect(ns.A_F1225.field).assertEqual(5)
+      expect(ns.A_F1226.field instanceof Object).assertTrue()
+      expect(ns.A_F1226.field).assertEqual(4)
+          ns.A_F1226.field = 5
+      expect(ns.A_F1226.field instanceof Object).assertTrue()
+      expect(ns.A_F1226.field).assertEqual(5)
+          ns.A_F1226.field = null
+      expect(ns.A_F1226.field instanceof Object).assertFalse()
+      expect(ns.A_F1226.field).assertEqual(null)
     })
 
     /**
@@ -878,25 +878,6 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ns.A_F1226.field instanceof Object).assertTrue()
-      expect(ns.A_F1226.field).assertEqual(4)
-          ns.A_F1226.field = 5
-      expect(ns.A_F1226.field instanceof Object).assertTrue()
-      expect(ns.A_F1226.field).assertEqual(5)
-          ns.A_F1226.field = null
-      expect(ns.A_F1226.field instanceof Object).assertTrue()
-      expect(ns.A_F1226.field).assertEqual(null)
-    })
-
-    /**
-     * @tc.number    SUB_FIELD_INIT_TWELVE_1400
-     * @tc.name      testFieldInitTwelve0014
-     * @tc.desc      Checking for changing the value from outside of class.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldInitTwelve0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1228.field instanceof long).assertTrue()
       expect(ns.A_F1228.field).assertEqual(4)
           ns.A_F1228.field = 5
@@ -908,14 +889,14 @@ export default function FieldInitializationTwelveTest(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TWELVE_1500
-     * @tc.name      testFieldInitTwelve0015
+     * @tc.number    SUB_FIELD_INIT_TWELVE_1400
+     * @tc.name      testFieldInitTwelve0014
      * @tc.desc      Checking for changing the value from outside of class.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInitTwelve0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1229.field instanceof int).assertTrue()
       expect(ns.A_F1229.field).assertEqual(4)
           ns.A_F1229.field = 5
@@ -927,14 +908,14 @@ export default function FieldInitializationTwelveTest(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TWELVE_1600
-     * @tc.name      testFieldInitTwelve0016
+     * @tc.number    SUB_FIELD_INIT_TWELVE_1500
+     * @tc.name      testFieldInitTwelve0015
      * @tc.desc      Checking for changing the value from outside of class.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInitTwelve0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1230.field instanceof byte).assertTrue()
       expect(ns.A_F1230.field).assertEqual(4)
           ns.A_F1230.field = 5
@@ -946,14 +927,14 @@ export default function FieldInitializationTwelveTest(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TWELVE_1700
-     * @tc.name      testFieldInitTwelve0017
+     * @tc.number    SUB_FIELD_INIT_TWELVE_1600
+     * @tc.name      testFieldInitTwelve0016
      * @tc.desc      Checking for changing the value from outside of class.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInitTwelve0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1231.field instanceof short).assertTrue()
       expect(ns.A_F1231.field).assertEqual(4)
           ns.A_F1231.field = 5
@@ -965,14 +946,14 @@ export default function FieldInitializationTwelveTest(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TWELVE_1800
-     * @tc.name      testFieldInitTwelve0018
+     * @tc.number    SUB_FIELD_INIT_TWELVE_1700
+     * @tc.name      testFieldInitTwelve0017
      * @tc.desc      Checking for changing the value from outside of class.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInitTwelve0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1232.field instanceof double).assertTrue()
       expect(ns.A_F1232.field).assertEqual(4)
           ns.A_F1232.field = 7.3
@@ -984,14 +965,14 @@ export default function FieldInitializationTwelveTest(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TWELVE_1900
-     * @tc.name      testFieldInitTwelve0019
+     * @tc.number    SUB_FIELD_INIT_TWELVE_1800
+     * @tc.name      testFieldInitTwelve0018
      * @tc.desc      Checking for changing the value from outside of class.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInitTwelve0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1233.field instanceof number).assertTrue()
       expect(ns.A_F1233.field).assertEqual(4)
           ns.A_F1233.field = 5
@@ -1003,14 +984,14 @@ export default function FieldInitializationTwelveTest(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TWELVE_2000
-     * @tc.name      testFieldInitTwelve0020
+     * @tc.number    SUB_FIELD_INIT_TWELVE_1900
+     * @tc.name      testFieldInitTwelve0019
      * @tc.desc      Checking for changing the value from outside of class.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInitTwelve0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1234.field instanceof float).assertTrue()
       expect(ns.A_F1234.field).assertEqual(4.5f)
           ns.A_F1234.field = 7.3f
@@ -1022,14 +1003,14 @@ export default function FieldInitializationTwelveTest(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TWELVE_2100
-     * @tc.name      testFieldInitTwelve0021
+     * @tc.number    SUB_FIELD_INIT_TWELVE_2000
+     * @tc.name      testFieldInitTwelve0020
      * @tc.desc      Checking for changing the value from outside of class.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInitTwelve0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1235.field instanceof bigint).assertTrue()
       expect(ns.A_F1235.field).assertEqual(4n)
           ns.A_F1235.field = 5n
@@ -1041,14 +1022,14 @@ export default function FieldInitializationTwelveTest(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TWELVE_2200
-     * @tc.name      testFieldInitTwelve0022
+     * @tc.number    SUB_FIELD_INIT_TWELVE_2100
+     * @tc.name      testFieldInitTwelve0021
      * @tc.desc      Checking for changing the value from outside of class.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInitTwelve0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1236.field instanceof string).assertTrue()
       expect(ns.A_F1236.field).assertEqual("abc")
           ns.A_F1236.field = "efg"
@@ -1060,14 +1041,14 @@ export default function FieldInitializationTwelveTest(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TWELVE_2300
-     * @tc.name      testFieldInitTwelve0023
+     * @tc.number    SUB_FIELD_INIT_TWELVE_2200
+     * @tc.name      testFieldInitTwelve0022
      * @tc.desc      Checking for changing the value from outside of class.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInitTwelve0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1237.field instanceof char).assertTrue()
       expect(ns.A_F1237.field).assertEqual(c'a')
           ns.A_F1237.field = c'b'
@@ -1079,14 +1060,14 @@ export default function FieldInitializationTwelveTest(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TWELVE_2400
-     * @tc.name      testFieldInitTwelve0024
+     * @tc.number    SUB_FIELD_INIT_TWELVE_2300
+     * @tc.name      testFieldInitTwelve0023
      * @tc.desc      Checking for changing the value from outside of class.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInitTwelve0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1238.field instanceof boolean).assertTrue()
       expect(ns.A_F1238.field).assertEqual(false)
           ns.A_F1238.field = true
@@ -1098,14 +1079,14 @@ export default function FieldInitializationTwelveTest(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TWELVE_2500
-     * @tc.name      testFieldInitTwelve0025
+     * @tc.number    SUB_FIELD_INIT_TWELVE_2400
+     * @tc.name      testFieldInitTwelve0024
      * @tc.desc      Checking for changing the value from outside of class.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInitTwelve0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1239.field instanceof Object).assertTrue()
       expect(ns.A_F1239.field).assertEqual(4)
           ns.A_F1239.field = 5
@@ -1114,24 +1095,41 @@ export default function FieldInitializationTwelveTest(): void {
     })
 
     /**
-     * @tc.number    SUB_FIELD_INIT_TWELVE_2600
-     * @tc.name      testFieldInitTwelve0026
+     * @tc.number    SUB_FIELD_INIT_TWELVE_2500
+     * @tc.name      testFieldInitTwelve0025
      * @tc.desc      Checking for changing the value from outside of class.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldInitTwelve0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldInitTwelve0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ns.A_F1240.field instanceof Object).assertTrue()
       expect(ns.A_F1240.field).assertEqual(4)
           ns.A_F1240.field = 5
       expect(ns.A_F1240.field instanceof Object).assertTrue()
       expect(ns.A_F1240.field).assertEqual(5)
           ns.A_F1240.field = null
-      expect(ns.A_F1240.field instanceof Object).assertTrue()
+      expect(ns.A_F1240.field instanceof Object).assertFalse()
       expect(ns.A_F1240.field).assertEqual(null)
     })
 
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TWELVE_2600
+     * @tc.name      testFieldInitTwelve0026
+     * @tc.desc      Checking the implementation of interface field.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInitTwelve0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F1242 = new A_F1242()
+      expect(a.field instanceof long).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof long).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
 
     /**
      * @tc.number    SUB_FIELD_INIT_TWELVE_2700
@@ -1142,11 +1140,11 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1242 = new A_F1242()
-      expect(a.field instanceof long).assertTrue()
+      let a: A_F1243 = new A_F1243()
+      expect(a.field instanceof int).assertTrue()
       expect(a.field).assertEqual(4)
       a.field = 5
-      expect(a.field instanceof long).assertTrue()
+      expect(a.field instanceof int).assertTrue()
       expect(a.field).assertEqual(5)
     })
 
@@ -1159,11 +1157,11 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1243 = new A_F1243()
-      expect(a.field instanceof int).assertTrue()
+      let a: A_F1244 = new A_F1244()
+      expect(a.field instanceof byte).assertTrue()
       expect(a.field).assertEqual(4)
       a.field = 5
-      expect(a.field instanceof int).assertTrue()
+      expect(a.field instanceof byte).assertTrue()
       expect(a.field).assertEqual(5)
     })
 
@@ -1176,11 +1174,11 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1244 = new A_F1244()
-      expect(a.field instanceof byte).assertTrue()
+      let a: A_F1245 = new A_F1245()
+      expect(a.field instanceof short).assertTrue()
       expect(a.field).assertEqual(4)
       a.field = 5
-      expect(a.field instanceof byte).assertTrue()
+      expect(a.field instanceof short).assertTrue()
       expect(a.field).assertEqual(5)
     })
 
@@ -1193,12 +1191,12 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1245 = new A_F1245()
-      expect(a.field instanceof short).assertTrue()
+      let a: A_F1246 = new A_F1246()
+      expect(a.field instanceof double).assertTrue()
       expect(a.field).assertEqual(4)
-      a.field = 5
-      expect(a.field instanceof short).assertTrue()
-      expect(a.field).assertEqual(5)
+      a.field = 7.3
+      expect(a.field instanceof double).assertTrue()
+      expect(a.field).assertEqual(7.3)
     })
 
     /**
@@ -1210,12 +1208,12 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1246 = new A_F1246()
-      expect(a.field instanceof double).assertTrue()
+      let a: A_F1247 = new A_F1247()
+      expect(a.field instanceof number).assertTrue()
       expect(a.field).assertEqual(4)
-      a.field = 7.3
-      expect(a.field instanceof double).assertTrue()
-      expect(a.field).assertEqual(7.3)
+      a.field = 5
+      expect(a.field instanceof number).assertTrue()
+      expect(a.field).assertEqual(5)
     })
 
     /**
@@ -1227,12 +1225,12 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1247 = new A_F1247()
-      expect(a.field instanceof number).assertTrue()
-      expect(a.field).assertEqual(4)
-      a.field = 5
-      expect(a.field instanceof number).assertTrue()
-      expect(a.field).assertEqual(5)
+      let a: A_F1248 = new A_F1248()
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(4.5f)
+      a.field = 7.3f
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(7.3f)
     })
 
     /**
@@ -1244,12 +1242,12 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1248 = new A_F1248()
-      expect(a.field instanceof float).assertTrue()
-      expect(a.field).assertEqual(4.5f)
-      a.field = 7.3f
-      expect(a.field instanceof float).assertTrue()
-      expect(a.field).assertEqual(7.3f)
+      let a: A_F1249 = new A_F1249()
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(4n)
+      a.field = 5n
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(5n)
     })
 
     /**
@@ -1261,12 +1259,12 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1249 = new A_F1249()
-      expect(a.field instanceof bigint).assertTrue()
-      expect(a.field).assertEqual(4n)
-      a.field = 5n
-      expect(a.field instanceof bigint).assertTrue()
-      expect(a.field).assertEqual(5n)
+      let a: A_F1250 = new A_F1250()
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("abc")
+      a.field = "efg"
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("efg")
     })
 
     /**
@@ -1278,12 +1276,12 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1250 = new A_F1250()
-      expect(a.field instanceof string).assertTrue()
-      expect(a.field).assertEqual("abc")
-      a.field = "efg"
-      expect(a.field instanceof string).assertTrue()
-      expect(a.field).assertEqual("efg")
+      let a: A_F1251 = new A_F1251()
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'a')
+      a.field = c'b'
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'b')
     })
 
     /**
@@ -1295,12 +1293,12 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1251 = new A_F1251()
-      expect(a.field instanceof char).assertTrue()
-      expect(a.field).assertEqual(c'a')
-      a.field = c'b'
-      expect(a.field instanceof char).assertTrue()
-      expect(a.field).assertEqual(c'b')
+      let a: A_F1252 = new A_F1252()
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(false)
+      a.field = true
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(true)
     })
 
     /**
@@ -1312,12 +1310,12 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1252 = new A_F1252()
-      expect(a.field instanceof boolean).assertTrue()
-      expect(a.field).assertEqual(false)
-      a.field = true
-      expect(a.field instanceof boolean).assertTrue()
-      expect(a.field).assertEqual(true)
+      let a: A_F1253 = new A_F1253()
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(5)
     })
 
     /**
@@ -1329,7 +1327,7 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1253 = new A_F1253()
+      let a: A_F1254 = new A_F1254()
       expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(4)
       a.field = 5
@@ -1346,11 +1344,11 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1254 = new A_F1254()
-      expect(a.field instanceof Object).assertTrue()
+      let a: A_F1256 = new A_F1256()
+      expect(a.field instanceof long).assertTrue()
       expect(a.field).assertEqual(4)
       a.field = 5
-      expect(a.field instanceof Object).assertTrue()
+      expect(a.field instanceof long).assertTrue()
       expect(a.field).assertEqual(5)
     })
 
@@ -1363,11 +1361,11 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1256 = new A_F1256()
-      expect(a.field instanceof long).assertTrue()
+      let a: A_F1257 = new A_F1257()
+      expect(a.field instanceof int).assertTrue()
       expect(a.field).assertEqual(4)
       a.field = 5
-      expect(a.field instanceof long).assertTrue()
+      expect(a.field instanceof int).assertTrue()
       expect(a.field).assertEqual(5)
     })
 
@@ -1380,11 +1378,11 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1257 = new A_F1257()
-      expect(a.field instanceof int).assertTrue()
+      let a: A_F1258 = new A_F1258()
+      expect(a.field instanceof byte).assertTrue()
       expect(a.field).assertEqual(4)
       a.field = 5
-      expect(a.field instanceof int).assertTrue()
+      expect(a.field instanceof byte).assertTrue()
       expect(a.field).assertEqual(5)
     })
 
@@ -1397,11 +1395,11 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1258 = new A_F1258()
-      expect(a.field instanceof byte).assertTrue()
+      let a: A_F1259 = new A_F1259()
+      expect(a.field instanceof short).assertTrue()
       expect(a.field).assertEqual(4)
       a.field = 5
-      expect(a.field instanceof byte).assertTrue()
+      expect(a.field instanceof short).assertTrue()
       expect(a.field).assertEqual(5)
     })
 
@@ -1414,12 +1412,12 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1259 = new A_F1259()
-      expect(a.field instanceof short).assertTrue()
+      let a: A_F1260 = new A_F1260()
+      expect(a.field instanceof double).assertTrue()
       expect(a.field).assertEqual(4)
-      a.field = 5
-      expect(a.field instanceof short).assertTrue()
-      expect(a.field).assertEqual(5)
+      a.field = 7.3
+      expect(a.field instanceof double).assertTrue()
+      expect(a.field).assertEqual(7.3)
     })
 
     /**
@@ -1431,12 +1429,12 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1260 = new A_F1260()
-      expect(a.field instanceof double).assertTrue()
+      let a: A_F1261 = new A_F1261()
+      expect(a.field instanceof number).assertTrue()
       expect(a.field).assertEqual(4)
-      a.field = 7.3
-      expect(a.field instanceof double).assertTrue()
-      expect(a.field).assertEqual(7.3)
+      a.field = 5
+      expect(a.field instanceof number).assertTrue()
+      expect(a.field).assertEqual(5)
     })
 
     /**
@@ -1448,12 +1446,12 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1261 = new A_F1261()
-      expect(a.field instanceof number).assertTrue()
-      expect(a.field).assertEqual(4)
-      a.field = 5
-      expect(a.field instanceof number).assertTrue()
-      expect(a.field).assertEqual(5)
+      let a: A_F1262 = new A_F1262()
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(4.5f)
+      a.field = 7.3f
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(7.3f)
     })
 
     /**
@@ -1465,12 +1463,12 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1262 = new A_F1262()
-      expect(a.field instanceof float).assertTrue()
-      expect(a.field).assertEqual(4.5f)
-      a.field = 7.3f
-      expect(a.field instanceof float).assertTrue()
-      expect(a.field).assertEqual(7.3f)
+      let a: A_F1263 = new A_F1263()
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(4n)
+      a.field = 5n
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(5n)
     })
 
     /**
@@ -1482,12 +1480,12 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1263 = new A_F1263()
-      expect(a.field instanceof bigint).assertTrue()
-      expect(a.field).assertEqual(4n)
-      a.field = 5n
-      expect(a.field instanceof bigint).assertTrue()
-      expect(a.field).assertEqual(5n)
+      let a: A_F1264 = new A_F1264()
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("abc")
+      a.field = "efg"
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("efg")
     })
 
     /**
@@ -1499,12 +1497,12 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1264 = new A_F1264()
-      expect(a.field instanceof string).assertTrue()
-      expect(a.field).assertEqual("abc")
-      a.field = "efg"
-      expect(a.field instanceof string).assertTrue()
-      expect(a.field).assertEqual("efg")
+      let a: A_F1265 = new A_F1265()
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'a')
+      a.field = c'b'
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'b')
     })
 
     /**
@@ -1516,12 +1514,12 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1265 = new A_F1265()
-      expect(a.field instanceof char).assertTrue()
-      expect(a.field).assertEqual(c'a')
-      a.field = c'b'
-      expect(a.field instanceof char).assertTrue()
-      expect(a.field).assertEqual(c'b')
+      let a: A_F1266 = new A_F1266()
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(false)
+      a.field = true
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(true)
     })
 
     /**
@@ -1533,12 +1531,12 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1266 = new A_F1266()
-      expect(a.field instanceof boolean).assertTrue()
-      expect(a.field).assertEqual(false)
-      a.field = true
-      expect(a.field instanceof boolean).assertTrue()
-      expect(a.field).assertEqual(true)
+      let a: A_F1267 = new A_F1267()
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(5)
     })
 
     /**
@@ -1550,7 +1548,7 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1267 = new A_F1267()
+      let a: A_F1268 = new A_F1268()
       expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(4)
       a.field = 5
@@ -1567,12 +1565,12 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1268 = new A_F1268()
-      expect(a.field instanceof Object).assertTrue()
-      expect(a.field).assertEqual(4)
-      a.field = 5
-      expect(a.field instanceof Object).assertTrue()
+      let a: A_F1270 = {field: 5}
+      expect(a.field instanceof long).assertTrue()
       expect(a.field).assertEqual(5)
+      a.field = 4
+      expect(a.field instanceof long).assertTrue()
+      expect(a.field).assertEqual(4)
     })
 
     /**
@@ -1584,11 +1582,11 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1270 = {field: 5}
-      expect(a.field instanceof long).assertTrue()
+      let a: A_F1271 = {field: 5}
+      expect(a.field instanceof int).assertTrue()
       expect(a.field).assertEqual(5)
       a.field = 4
-      expect(a.field instanceof long).assertTrue()
+      expect(a.field instanceof int).assertTrue()
       expect(a.field).assertEqual(4)
     })
 
@@ -1601,11 +1599,11 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1271 = {field: 5}
-      expect(a.field instanceof int).assertTrue()
+      let a: A_F1272 = {field: 5}
+      expect(a.field instanceof byte).assertTrue()
       expect(a.field).assertEqual(5)
       a.field = 4
-      expect(a.field instanceof int).assertTrue()
+      expect(a.field instanceof byte).assertTrue()
       expect(a.field).assertEqual(4)
     })
 
@@ -1618,11 +1616,11 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1272 = {field: 5}
-      expect(a.field instanceof byte).assertTrue()
+      let a: A_F1273 = {field: 5}
+      expect(a.field instanceof short).assertTrue()
       expect(a.field).assertEqual(5)
       a.field = 4
-      expect(a.field instanceof byte).assertTrue()
+      expect(a.field instanceof short).assertTrue()
       expect(a.field).assertEqual(4)
     })
 
@@ -1635,11 +1633,11 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1273 = {field: 5}
-      expect(a.field instanceof short).assertTrue()
-      expect(a.field).assertEqual(5)
+      let a: A_F1274 = {field: 7.3}
+      expect(a.field instanceof double).assertTrue()
+      expect(a.field).assertEqual(7.3)
       a.field = 4
-      expect(a.field instanceof short).assertTrue()
+      expect(a.field instanceof double).assertTrue()
       expect(a.field).assertEqual(4)
     })
 
@@ -1652,11 +1650,11 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1274 = {field: 7.3}
-      expect(a.field instanceof double).assertTrue()
-      expect(a.field).assertEqual(7.3)
+      let a: A_F1275 = {field: 5}
+      expect(a.field instanceof number).assertTrue()
+      expect(a.field).assertEqual(5)
       a.field = 4
-      expect(a.field instanceof double).assertTrue()
+      expect(a.field instanceof number).assertTrue()
       expect(a.field).assertEqual(4)
     })
 
@@ -1669,12 +1667,12 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1275 = {field: 5}
-      expect(a.field instanceof number).assertTrue()
-      expect(a.field).assertEqual(5)
-      a.field = 4
-      expect(a.field instanceof number).assertTrue()
-      expect(a.field).assertEqual(4)
+      let a: A_F1276 = {field: 7.3f}
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(7.3f)
+      a.field = 4.5f
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(4.5f)
     })
 
     /**
@@ -1686,12 +1684,12 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1276 = {field: 7.3f}
-      expect(a.field instanceof float).assertTrue()
-      expect(a.field).assertEqual(7.3f)
-      a.field = 4.5f
-      expect(a.field instanceof float).assertTrue()
-      expect(a.field).assertEqual(4.5f)
+      let a: A_F1277 = {field: 5n}
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(5n)
+      a.field = 4n
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(4n)
     })
 
     /**
@@ -1703,12 +1701,12 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1277 = {field: 5n}
-      expect(a.field instanceof bigint).assertTrue()
-      expect(a.field).assertEqual(5n)
-      a.field = 4n
-      expect(a.field instanceof bigint).assertTrue()
-      expect(a.field).assertEqual(4n)
+      let a: A_F1278 = {field: "efg"}
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("efg")
+      a.field = "abc"
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("abc")
     })
 
     /**
@@ -1720,12 +1718,12 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1278 = {field: "efg"}
-      expect(a.field instanceof string).assertTrue()
-      expect(a.field).assertEqual("efg")
-      a.field = "abc"
-      expect(a.field instanceof string).assertTrue()
-      expect(a.field).assertEqual("abc")
+      let a: A_F1279 = {field: c'b'}
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'b')
+      a.field = c'a'
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'a')
     })
 
     /**
@@ -1737,12 +1735,12 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1279 = {field: c'b'}
-      expect(a.field instanceof char).assertTrue()
-      expect(a.field).assertEqual(c'b')
-      a.field = c'a'
-      expect(a.field instanceof char).assertTrue()
-      expect(a.field).assertEqual(c'a')
+      let a: A_F1280 = {field: true}
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(true)
+      a.field = false
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(false)
     })
 
     /**
@@ -1754,12 +1752,12 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1280 = {field: true}
-      expect(a.field instanceof boolean).assertTrue()
-      expect(a.field).assertEqual(true)
-      a.field = false
-      expect(a.field instanceof boolean).assertTrue()
-      expect(a.field).assertEqual(false)
+      let a: A_F1281 = {field: 5}
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(5)
+      a.field = 4
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(4)
     })
 
     /**
@@ -1771,7 +1769,7 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1281 = {field: 5}
+      let a: A_F1282 = {field: 5}
       expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(5)
       a.field = 4
@@ -1788,11 +1786,11 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1282 = {field: 5}
-      expect(a.field instanceof Object).assertTrue()
+      let a: A_F1284 = {field: 5}
+      expect(a.field instanceof long).assertTrue()
       expect(a.field).assertEqual(5)
       a.field = 4
-      expect(a.field instanceof Object).assertTrue()
+      expect(a.field instanceof long).assertTrue()
       expect(a.field).assertEqual(4)
     })
 
@@ -1805,11 +1803,11 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1284 = {field: 5}
-      expect(a.field instanceof long).assertTrue()
+      let a: A_F1285 = {field: 5}
+      expect(a.field instanceof int).assertTrue()
       expect(a.field).assertEqual(5)
       a.field = 4
-      expect(a.field instanceof long).assertTrue()
+      expect(a.field instanceof int).assertTrue()
       expect(a.field).assertEqual(4)
     })
 
@@ -1822,11 +1820,11 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1285 = {field: 5}
-      expect(a.field instanceof int).assertTrue()
+      let a: A_F1286 = {field: 5}
+      expect(a.field instanceof byte).assertTrue()
       expect(a.field).assertEqual(5)
       a.field = 4
-      expect(a.field instanceof int).assertTrue()
+      expect(a.field instanceof byte).assertTrue()
       expect(a.field).assertEqual(4)
     })
 
@@ -1839,23 +1837,6 @@ export default function FieldInitializationTwelveTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitTwelve0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_F1286 = {field: 5}
-      expect(a.field instanceof byte).assertTrue()
-      expect(a.field).assertEqual(5)
-      a.field = 4
-      expect(a.field instanceof byte).assertTrue()
-      expect(a.field).assertEqual(4)
-    })
-
-    /**
-     * @tc.number    SUB_FIELD_INIT_TWELVE_6900
-     * @tc.name      testFieldInitTwelve0069
-     * @tc.desc      Checking the implementation of interface field.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldInitTwelve0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1287 = {field: 5}
       expect(a.field instanceof short).assertTrue()
       expect(a.field).assertEqual(5)

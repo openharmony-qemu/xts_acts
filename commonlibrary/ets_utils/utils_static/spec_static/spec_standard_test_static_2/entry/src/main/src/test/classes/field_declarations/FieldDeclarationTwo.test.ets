@@ -2604,7 +2604,7 @@ export default function FieldDeclarationTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldDeclarationTwo0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(A_F217.field instanceof C_F217).assertTrue()
+      expect(A_F217.field instanceof C_F217).assertFalse()
       expect(A_F217.field).assertEqual(undefined)
     })
 

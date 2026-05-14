@@ -1938,7 +1938,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0001'
       res = 0
       let a = new A(true)
       expect(a.fld).assertEqual(1)
@@ -1959,7 +1958,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0002'
       res1 = 0
       let b = new B(true)
       expect(b.fld).assertEqual(1)
@@ -1980,7 +1978,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0003'
 
       res2 = 0
       let b = new B1(true)
@@ -2002,7 +1999,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0004'
 
       res3 = 0
       let b = new B2(true)
@@ -2024,7 +2020,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0005'
 
       res4 = 0
       let b = new B3(true)
@@ -2046,7 +2041,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0006'
       cnt = 0
       let a = new A5('x')
       expect(a.f00).assertEqual(0)
@@ -2065,7 +2059,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0007'
       cnt1 = 0
       let a = new A6()
       expect(a.f00).assertEqual(0)
@@ -2084,7 +2077,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0008'
       cnt2 = 0
       let b = new B4('x')
       expect(b.f00).assertEqual(0)
@@ -2103,7 +2095,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0009'
       cnt3 = 0
       let b = new B5('x')
       expect(b.f00).assertEqual(5)
@@ -2122,7 +2113,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0010'
       cnt4 = 0
       let b = new B6('x')
       expect(b.f00).assertEqual(0)
@@ -2141,7 +2131,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0011'
       cnt5 = 0
       let b = new B7()
       expect(b.f00).assertEqual(0)
@@ -2160,7 +2149,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0012'
       cnt6 = 0
       let b = new B8()
       expect(b.f00).assertEqual(5)
@@ -2179,7 +2167,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0013'
       cnt7 = 0
       let b = new B9()
       expect(b.f00).assertEqual(0)
@@ -2198,7 +2185,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0014'
       cnt8 = 0
       let b = new B10('x')
       expect(b.f00).assertEqual(0)
@@ -2217,7 +2203,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0015'
       cnt9 = 0
       let b = new B11('x')
       expect(b.f00).assertEqual(5)
@@ -2236,7 +2221,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0016'
       cnt10 = 0
       let b = new B12('x')
       expect(b.f00).assertEqual(0)
@@ -2255,7 +2239,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0017'
       cnt11 = 0
       let b = new B13()
       expect(b.f00).assertEqual(0)
@@ -2274,7 +2257,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0018'
       cnt12 = 0
       let b = new B14()
       expect(b.f00).assertEqual(5)
@@ -2293,7 +2275,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0019'
       cnt13 = 0
       let b = new B15()
       expect(b.f00).assertEqual(0)
@@ -2312,7 +2293,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0020'
       let a: A19 = new A19('x')
       expect(a.f00).assertEqual(null)
       expect(a.f03).assertEqual(3)
@@ -2337,7 +2317,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0021'
       let b: B16 = new B16('x')
       expect(b.f00).assertEqual(null)
       expect(b.f03).assertEqual(3)
@@ -2362,7 +2341,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0022'
       let b: B17 = new B17('x')
       expect(b.f00).assertEqual(null)
       expect(b.f03).assertEqual(3)
@@ -2387,7 +2365,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0023'
       let b: B18 = new B18('x')
       expect(b.f00).assertEqual(null)
       expect(b.f03).assertEqual(3)
@@ -2410,7 +2387,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0024'
       let b: B19 = new B19('x')
       expect(b.f00).assertEqual(null)
       expect(b.f03).assertEqual(3)
@@ -2434,7 +2410,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0025'
       expect(new A24(Color.Red).x).assertEqual(11)
       expect(new A24(Color.Green).x).assertEqual(22)
       expect(new A24(Color.Blue).x).assertEqual(0)
@@ -2450,7 +2425,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0026'
       expect(new A25(42).x).assertEqual(43)
       expect(new A25(0).x).assertEqual(0)
     });
@@ -2465,7 +2439,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0027'
       expect(new X().res).assertEqual(0)
       expect(new X(new A26()).res).assertEqual(4)
     });
@@ -2479,7 +2452,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0028'
       let instance: B20 = new B20();
       expect(instance.x).assertEqual(5);
     });
@@ -2493,7 +2465,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0029'
       expect(new A28().x).assertEqual(5);
       expect(A28.fromInt(1).x).assertEqual(1);
     });
@@ -2507,7 +2478,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0030'
       expect(new A29().x).assertEqual(5)
       expect(new A29(1).x).assertEqual(1)
     });
@@ -2521,7 +2491,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0031'
       expect(new A30(42).x).assertEqual(42)
       expect(new B21().x).assertEqual(5)
       let b: B21 = {}
@@ -2537,7 +2506,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0032'
       expect(new A31(42).x).assertEqual(42)
       expect(new B22(33).x).assertEqual(33)
       expect(new B22().x).assertEqual(5)
@@ -2556,7 +2524,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0033'
       expect(new B23().x).assertEqual(43);
       expect(new B23(5).x).assertEqual(7);
       expect(B23.fromInt(5).x).assertEqual(7);
@@ -2573,7 +2540,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0034'
       expect(new B24().x).assertEqual(43)
       expect(new B24(5).x).assertEqual(7)
       let b: B24 = {}
@@ -2591,7 +2557,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0035'
       let c: C = {}
       c = new C();
       expect(c.x).assertEqual(46)
@@ -2608,7 +2573,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0036'
       let c: C1 = {}
       expect(c.x).assertEqual(45)
       c = new C1(1)
@@ -2626,7 +2590,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0037'
       let c: C2;
       c = C2.fromInt(1);
       expect(c.x).assertEqual(4);
@@ -2646,7 +2609,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0038'
       let b: B28
       expect(() => { b = new B28('') }).assertThrow('empty');
       b = new B28('1')
@@ -2666,7 +2628,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0039'
       res5 = 0
       let b: B29
       expect(() => { b = new B29('') }).assertThrow('empty');
@@ -2689,7 +2650,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0040'
       res6 = 0
       let b = new B30(1)
       expect(res6).assertEqual(1)
@@ -2715,7 +2675,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0041'
       let b: B31;
       expect(() => {
         new B31(0);
@@ -2738,7 +2697,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0042'
       let b = new B32()
       expect(b.x).assertEqual('a')
       expect(b.y).assertEqual('b')
@@ -2755,7 +2713,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0043'
       let b: B33 = { y: 'b' }
       expect(b.x).assertEqual('a')
       expect(b.y).assertEqual('b')
@@ -2772,7 +2729,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0044'
       let b: A43 | undefined
       arktest.expectThrow(() => { b = new B34 })
       arktest.expectThrow(() => { res9 = b!.toString() })
@@ -2789,7 +2745,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0045'
       let b = new B35()
       expect(b.x).assertEqual('a')
       expect(b.y).assertEqual('b')
@@ -2806,7 +2761,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0046'
       let b: B36 = { y: 'b' }
       expect(b.x).assertEqual('a')
       expect(b.y).assertEqual('b')
@@ -2823,7 +2777,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0047'
       let b: A46 | undefined
       arktest.expectThrow(() => { b = new B37() })
       arktest.expectThrow(() => { res12 = b!.toString() })
@@ -2840,7 +2793,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0048'
       let b: B38
       arktest.expectError(() => { b = new B38(0) }, 'zero')
       b = new B38(1)
@@ -2860,7 +2812,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0049'
       let b: B39
       expect(() => { b = B39.fromInt(0) }).assertThrow('zero');
       b = B39.fromInt(1)
@@ -2880,7 +2831,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0050'
       let b: B40
       expect(() => { b = new B40(0) }).assertThrow('zero');
       b = new B40(1)
@@ -2901,7 +2851,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0051'
       let b: B41
       expect(() => { b = B41.fromInt(0) }).assertThrow('zero');
       b =  B41.fromInt(1)
@@ -2922,7 +2871,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0052'
       let b = B42.fromInt(1)
       expect(b.fldA).assertEqual('e1')
       b = B42.fromInt(2)
@@ -2943,7 +2891,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0053'
       let b = B43.fromInt(1)
       expect(b.fldA).assertEqual('e1')
       b = B43.fromInt(2)
@@ -2964,7 +2911,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0054'
       let b = B44.fromInt(0)
       expect(b.fldA).assertEqual('valid color = Red')
       b = B44.fromInt(1)
@@ -2985,7 +2931,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0055'
       let b =  B45.fromInt(0)
       expect(b.fldA).assertEqual('valid color = Red')
       b =  B45.fromInt(1)
@@ -3006,7 +2951,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0056'
       let black = new BWPoint(1.0, 11.0, true)
       expect(black instanceof BWPoint).assertTrue()
       expect(black.color).assertEqual(1)
@@ -3029,7 +2973,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0057'
       let black = ColoredPoint1.zero(ColoredPoint1.BLACK);
       expect(black instanceof ColoredPoint1).assertTrue();
       expect(black.color).assertEqual(1);
@@ -3052,7 +2995,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0058'
       let b: Base = new Base()
       expect(b.x.toString() instanceof string).assertTrue();
     });
@@ -3067,7 +3009,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0059'
       expect(new A55().n).assertEqual(4)
       expect(new A55().s).assertEqual('abcd')
     });
@@ -3082,7 +3023,6 @@ export default function ConstructorBodyTest():void {
      * @tc.level     Level 2
      */
     it("testConstructorBody0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testConstructorBody0060'
       expect(new A56().n).assertEqual(6)
       expect(new A56().s).assertEqual('a')
     });

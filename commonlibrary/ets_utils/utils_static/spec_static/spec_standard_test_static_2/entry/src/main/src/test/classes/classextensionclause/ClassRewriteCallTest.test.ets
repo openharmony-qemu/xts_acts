@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -123,7 +123,6 @@ export default function ClassRewriteCallTest():void {
      * @tc.level     Level 2
      */
     it("testClassRewriteCall0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassRewriteCall0001';
       let myDog1 = new Dog();
       let myDog2 = new Dog();
       let sound = myDog1.speak();
@@ -139,7 +138,6 @@ export default function ClassRewriteCallTest():void {
      * @tc.level     Level 2
      */
     it("testClassRewriteCall0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassRewriteCall0002';
       let myPet: Animal1 = new Cat();
       let sound = myPet.speak();
       expect(sound).assertEqual(2);
@@ -154,7 +152,6 @@ export default function ClassRewriteCallTest():void {
      * @tc.level     Level 2
      */
     it("testClassRewriteCall0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassRewriteCall0003';
       let myPet: Animal2 = new Dog1();
       let sound = myPet.speak();
       expect(sound).assertEqual('Woof!');
@@ -169,7 +166,6 @@ export default function ClassRewriteCallTest():void {
      * @tc.level     Level 2
      */
     it("testClassRewriteCall0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassRewriteCall0004';
       let myDog = new Dog2();
       let sound = myDog.speak();
       expect(sound).assertEqual('Some generic animal sound');
@@ -184,7 +180,6 @@ export default function ClassRewriteCallTest():void {
      * @tc.level     Level 2
      */
     it("testClassRewriteCall0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassRewriteCall0005';
       let vehicle: Vehicle = new Car();
       let movement = vehicle.move();
       expect(movement).assertEqual('The car is moving on the road.');

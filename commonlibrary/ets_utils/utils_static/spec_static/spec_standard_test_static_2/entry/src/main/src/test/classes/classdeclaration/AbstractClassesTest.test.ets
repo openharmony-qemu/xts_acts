@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -197,7 +197,6 @@ export default function AbstractClassesTest():void {
      * @tc.level     Level 2
      */
     it("testAbstractClasses0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAbstractClasses0001';
       let d: Derived = new Derived();
       expect(d.field).assertEqual(15);
     });
@@ -211,7 +210,6 @@ export default function AbstractClassesTest():void {
      * @tc.level     Level 2
      */
     it("testAbstractClasses0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAbstractClasses0002';
       let c: C = {
         c1: 2,
         c2: 'c2'
@@ -230,7 +228,6 @@ export default function AbstractClassesTest():void {
      * @tc.level     Level 2
      */
     it("testAbstractClasses0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAbstractClasses0003';
       let c: C1 = {
         c1: { a: 'aa'},
         c2: { a: 'aaa', b: 'bb'}
@@ -251,7 +248,6 @@ export default function AbstractClassesTest():void {
      * @tc.level     Level 2
      */
     it("testAbstractClasses0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAbstractClasses0004';
       expect(A2.a1).assertEqual(1);
       expect(A2.a2).assertEqual('a2');
       expect(B2.a1).assertEqual(2);
@@ -267,7 +263,6 @@ export default function AbstractClassesTest():void {
      * @tc.level     Level 2
      */
     it("testAbstractClasses0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAbstractClasses0005';
       expect(A3.foo()).assertEqual(1);
       expect(A3.bar(1)).assertEqual(2);
       expect(B3.foo()).assertEqual(3);
@@ -283,7 +278,6 @@ export default function AbstractClassesTest():void {
      * @tc.level     Level 2
      */
     it("testAbstractClasses0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAbstractClasses0006';
       expect(A4.a1).assertEqual(1);
       expect(A4.a2).assertEqual('a2');
       expect(B4.a1).assertEqual('a1');
@@ -299,7 +293,6 @@ export default function AbstractClassesTest():void {
      * @tc.level     Level 2
      */
     it("testAbstractClasses0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAbstractClasses0007';
       expect(A5.foo()).assertEqual(1);
       expect(A5.bar(1)).assertEqual(2);
       expect(B5.foo()).assertEqual('a1');
@@ -318,7 +311,6 @@ export default function AbstractClassesTest():void {
      * @tc.level     Level 2
      */
     it("testAbstractClasses0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAbstractClasses0008';
       let c: B6 = new B6();
       expect(c.f1).assertEqual(5);
     });

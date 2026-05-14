@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -768,7 +768,6 @@ export default function ClassSuperclassNonPrivateTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassNonPrivate0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassNonPrivate0001';
       const child = new Child();
       expect(child.callParentGreet()).assertEqual("Hello");
     });
@@ -782,7 +781,6 @@ export default function ClassSuperclassNonPrivateTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassNonPrivate0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassNonPrivate0002';
       const child = new Child1();
       expect(child.callParentGreet()).assertEqual("Hello");
       expect(child.greet()).assertEqual("Word");
@@ -797,7 +795,6 @@ export default function ClassSuperclassNonPrivateTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassNonPrivate0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassNonPrivate0003';
       const child = new Child2();
       expect(child.callParentMethods()).assertEqual("Hello Word");
     });
@@ -812,7 +809,6 @@ export default function ClassSuperclassNonPrivateTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassNonPrivate0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassNonPrivate0004';
       const child = new Child3("Alice");
       expect(child.callParentGreet()).assertEqual("Hello, my name is Alice!");
     });
@@ -826,7 +822,6 @@ export default function ClassSuperclassNonPrivateTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassNonPrivate0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassNonPrivate0005';
       const child = new Child4();
       const result = child.callParentCreateObject();
       expect(result.key).assertEqual("example");
@@ -842,7 +837,6 @@ export default function ClassSuperclassNonPrivateTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassNonPrivate0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassNonPrivate0006';
       const child = new Child5();
       expect(child.callParentGreet()).assertEqual("Hello from Child!");
     });
@@ -857,7 +851,6 @@ export default function ClassSuperclassNonPrivateTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassNonPrivate0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassNonPrivate0007';
       const child = new Child6();
       expect(child.callParentFarewell()).assertEqual("Hello from Child! Goodbye from Parent!");
     });
@@ -872,7 +865,6 @@ export default function ClassSuperclassNonPrivateTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassNonPrivate0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassNonPrivate0008';
       const child = new Child7();
       expect(child.callParentFarewell()).assertEqual("Custom Hello from Child! Goodbye from Parent!");
     });
@@ -887,7 +879,6 @@ export default function ClassSuperclassNonPrivateTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassNonPrivate0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassNonPrivate0009';
       const child = new Child8();
       expect(child.callParentFarewell()).assertEqual("Custom Hello from Child! Goodbye from Parent!");
     });
@@ -902,7 +893,6 @@ export default function ClassSuperclassNonPrivateTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassNonPrivate0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassNonPrivate0010';
       const child = new Child9();
       expect(child.callParentFarewell()).assertEqual("Custom Hello from Child! Goodbye from Parent!");
     });
@@ -916,7 +906,6 @@ export default function ClassSuperclassNonPrivateTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassNonPrivate0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassNonPrivate0011';
       const child = new Child10();
       expect(child.callParentChain()).assertEqual("Step 1 from Parent -> Step 2 from Parent");
     });
@@ -931,7 +920,6 @@ export default function ClassSuperclassNonPrivateTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassNonPrivate0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassNonPrivate0012';
       const child = new Child11();
       expect(child.callParentChain()).assertEqual("Step 1 from Child -> Step 2 from Parent");
     });
@@ -945,7 +933,6 @@ export default function ClassSuperclassNonPrivateTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassNonPrivate0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassNonPrivate0013';
       const child = new Child12();
       expect(child.callParentChain()).assertEqual("Custom Step from Child -> Step 2 from Parent");
     });
@@ -960,7 +947,6 @@ export default function ClassSuperclassNonPrivateTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassNonPrivate0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassNonPrivate0014';
       const child = new Child13();
       expect(child.callParentFarewell()).assertEqual("Custom Hello from Child! Goodbye from Parent!");
     });
@@ -975,7 +961,6 @@ export default function ClassSuperclassNonPrivateTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassNonPrivate0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassNonPrivate0015';
       const child = new Child14();
       expect(child.callParentFarewell()).assertEqual("Custom Hello from Child! Goodbye from Parent!");
     });
@@ -990,7 +975,6 @@ export default function ClassSuperclassNonPrivateTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassNonPrivate0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassNonPrivate0016';
       const child = new Child15();
       expect(child.callParentGreet()).assertEqual("Static Method from Parent");
     });
@@ -1005,7 +989,6 @@ export default function ClassSuperclassNonPrivateTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassNonPrivate0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassNonPrivate0017';
       const child = new Child16();
       expect(child.callParentFarewell()).assertEqual("Custom Static Method from Child Goodbye from Parent!");
     });
@@ -1020,7 +1003,6 @@ export default function ClassSuperclassNonPrivateTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassNonPrivate0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassNonPrivate0018';
       const child = new Child17("Hello from Child!");
       expect(child.callParentGreet()).assertEqual("Modified: Hello from Child!");
     });
@@ -1035,7 +1017,6 @@ export default function ClassSuperclassNonPrivateTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassNonPrivate0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassNonPrivate0019';
       const child = new Child18("Hello from Parent!", "And Hello from Child!");
       expect(child.callParentGreet()).assertEqual("Hello from Parent! And Hello from Child!");
     });
@@ -1050,7 +1031,6 @@ export default function ClassSuperclassNonPrivateTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassNonPrivate0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassNonPrivate0020';
       const child = new Child19();
       expect(child.callParentGreet()).assertEqual("Hello from Child!");
     });
@@ -1065,7 +1045,6 @@ export default function ClassSuperclassNonPrivateTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassNonPrivate0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassNonPrivate0021';
       const child = new Child20();
       expect(child.callParentFarewell()).assertEqual("Custom Hello from Child! Goodbye from Parent!");
     });
@@ -1080,7 +1059,6 @@ export default function ClassSuperclassNonPrivateTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassNonPrivate0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassNonPrivate0022';
       const child = new Child21();
       expect(child.callParentFarewell()).assertEqual("Custom: Hello from Child! Goodbye from Parent!");
     });
@@ -1095,7 +1073,6 @@ export default function ClassSuperclassNonPrivateTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassNonPrivate0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassNonPrivate0023';
       const child = new Child22();
       expect(child.callParentGreet()).assertEqual("Static Message from Parent");
     });
@@ -1110,7 +1087,6 @@ export default function ClassSuperclassNonPrivateTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassNonPrivate0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassNonPrivate0024';
       const child = new Child23();
       expect(child.callParentFarewell()).assertEqual("Custom Static Message from Child Goodbye from Parent!");
     });
@@ -1125,7 +1101,6 @@ export default function ClassSuperclassNonPrivateTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassNonPrivate0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassNonPrivate0025';
       const child = new Child24("Hello from Child!");
       expect(child.callParentGreet()).assertEqual("Modified: Hello from Child!");
     });
@@ -1140,7 +1115,6 @@ export default function ClassSuperclassNonPrivateTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassNonPrivate0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassNonPrivate0026';
       const child = new Child25("Hello from Parent!", "And Hello from Child!");
       expect(child.callParentGreet()).assertEqual("Hello from Parent! And Hello from Child!");
     });
@@ -1156,7 +1130,6 @@ export default function ClassSuperclassNonPrivateTest():void {
      */
     it("testClassSuperclassNonPrivate0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-      const TAG = 'testClassSuperclassNonPrivate0027';
       const child = new Child26();
       expect(await child.callParentGreet()).assertEqual("Hello from Child!");
       done();
@@ -1173,7 +1146,6 @@ export default function ClassSuperclassNonPrivateTest():void {
      */
     it("testClassSuperclassNonPrivate0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-      const TAG = 'testClassSuperclassNonPrivate0028';
       const child = new Child27();
       expect(await child.callParentFarewell()).assertEqual("Custom Hello from Child! Goodbye from Parent!");
       done();
@@ -1189,7 +1161,6 @@ export default function ClassSuperclassNonPrivateTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassNonPrivate0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassNonPrivate0029';
       const child = new Child28();
       expect(child.callParentReveal()).assertEqual("Secret from Parent!");
     });
@@ -1204,7 +1175,6 @@ export default function ClassSuperclassNonPrivateTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassNonPrivate0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassNonPrivate0030';
       const child = new Child29();
       expect(child.callParentFarewell()).assertEqual("Custom Secret from Child! Goodbye from Parent!");
     });
@@ -1219,7 +1189,6 @@ export default function ClassSuperclassNonPrivateTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassNonPrivate0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassNonPrivate0031';
       const child = new Child30();
       expect(child.callParentGreet()).assertEqual("Protected Method from Child!");
     });
@@ -1234,7 +1203,6 @@ export default function ClassSuperclassNonPrivateTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassNonPrivate0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassNonPrivate0032';
       const child = new Child31();
       expect(child.callParentFarewell()).assertEqual("Custom Protected Method from Child! Goodbye from Parent!");
     });
@@ -1248,7 +1216,6 @@ export default function ClassSuperclassNonPrivateTest():void {
      * @tc.level     Level 2
      */
     it("testClassSuperclassNonPrivate0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassSuperclassNonPrivate0033';
       const child = new Child32();
       expect(child.callGrandParentGreet()).assertEqual("Hello from GrandParent! And Hello from Parent!");
     });

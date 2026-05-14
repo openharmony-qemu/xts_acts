@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -107,7 +107,6 @@ export default function ClassCallRewriteTest():void {
      * @tc.level     Level 2
      */
     it("testClassCallRewrite0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassCallRewrite0001';
       let animal: Animal = new Dog();
       let a = animal.introduce();
       let b = animal.name;
@@ -124,7 +123,6 @@ export default function ClassCallRewriteTest():void {
      * @tc.level     Level 2
      */
     it("testClassCallRewrite0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassCallRewrite0002';
       let aInstance: A = new A();
       let a = aInstance.method();
       expect(a).assertEqual("Method from A");
@@ -139,7 +137,6 @@ export default function ClassCallRewriteTest():void {
      * @tc.level     Level 2
      */
     it("testClassCallRewrite0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassCallRewrite0003';
       let bInstance: A = new B();
       let b = bInstance.method();
       expect(b).assertEqual("Method from B");
@@ -154,7 +151,6 @@ export default function ClassCallRewriteTest():void {
      * @tc.level     Level 2
      */
     it("testClassCallRewrite0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassCallRewrite0004';
       let cInstance: A = new C();
       let c = cInstance.method();
       expect(c).assertEqual("Method from C");
@@ -169,7 +165,6 @@ export default function ClassCallRewriteTest():void {
      * @tc.level     Level 2
      */
     it("testClassCallRewrite0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassCallRewrite0005';
       let bInstance: A = new B1();
       let b = bInstance.method();
       expect(b).assertEqual("Method from A and B");

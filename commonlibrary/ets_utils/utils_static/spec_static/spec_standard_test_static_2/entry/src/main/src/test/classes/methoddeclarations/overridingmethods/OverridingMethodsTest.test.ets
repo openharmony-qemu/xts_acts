@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -172,7 +172,6 @@ export default function OverridingMethodsTest():void {
      * @tc.level     Level 2
      */
     it("testOverridingMethods0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOverridingMethods0001';
       let instance: A = getB();
       expect(instance.foo()).assertEqual(5);
     });
@@ -186,7 +185,6 @@ export default function OverridingMethodsTest():void {
      * @tc.level     Level 2
      */
     it("testOverridingMethods0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOverridingMethods0002';
       let a: A1 = (() => new B1)()
       expect(a.foo()).assertEqual(5)
     });
@@ -200,7 +198,6 @@ export default function OverridingMethodsTest():void {
      * @tc.level     Level 2
      */
     it("testOverridingMethods0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOverridingMethods0003';
       let b: A2 = new B2()
       expect(b.foo()).assertEqual(2)
     });
@@ -214,7 +211,6 @@ export default function OverridingMethodsTest():void {
      * @tc.level     Level 2
      */
     it("testOverridingMethods0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOverridingMethods0004';
       let b: A3 = new B3()
       expect(b.foo(5)).assertEqual(5)
     });
@@ -228,7 +224,6 @@ export default function OverridingMethodsTest():void {
      * @tc.level     Level 2
      */
     it("testOverridingMethods0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOverridingMethods0005';
       let b: A4 = new B4()
       expect(b.foo()).assertEqual(undefined)
     });
@@ -242,7 +237,6 @@ export default function OverridingMethodsTest():void {
      * @tc.level     Level 2
      */
     it("testOverridingMethods0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOverridingMethods0006';
       let b: A4 = new B4()
       expect(b.foo(5)).assertEqual(5)
     });
@@ -256,7 +250,6 @@ export default function OverridingMethodsTest():void {
      * @tc.level     Level 2
      */
     it("testOverridingMethods0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOverridingMethods0007';
       let b: A5 = new B5()
       expect(b.foo()).assertEqual(undefined)
     });
@@ -270,7 +263,6 @@ export default function OverridingMethodsTest():void {
      * @tc.level     Level 2
      */
     it("testOverridingMethods0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOverridingMethods0008';
       let b: A6 = new B6()
       expect(b.foo()).assertEqual(undefined)
     });
@@ -284,7 +276,6 @@ export default function OverridingMethodsTest():void {
      * @tc.level     Level 2
      */
     it("testOverridingMethods0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOverridingMethods0009';
       let instance: A7 = getB1()
       expect(instance.foo()).assertEqual(5)
     });
