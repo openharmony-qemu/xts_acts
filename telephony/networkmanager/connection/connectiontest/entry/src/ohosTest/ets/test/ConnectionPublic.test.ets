@@ -10501,7 +10501,7 @@ export default function ConnectionPublicTest() {
       const caseName: string = "testNetworkMgrConnectionTraceRoute2300";
       console.info(`${caseName} test Start`);
       try {
-        let destination = "www.baidu.com";;
+        let destination = "www.baidu.com";
         connection.queryTraceRoute(destination, undefined).then((TraceRouteInfo: connection.TraceRouteInfo[]) => {
           console.info(`${caseName} TraceRouteInfo: ${JSON.stringify(TraceRouteInfo)}`);
           console.info(`${caseName} TraceRouteInfo rtt: ${JSON.stringify(TraceRouteInfo[0].rtt)}`);
