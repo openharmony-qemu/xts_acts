@@ -888,6 +888,7 @@ export default function StaticFieldIsProtectedTest(): void {
       let cls: ReflectClass = reflectMyClass001();
       let field: StaticField | null = cls.getStaticField('name');
       let result: boolean = field!.isProtected();
+      expect(result).assertEqual(true);
     });
 
     /**
@@ -914,6 +915,10 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass001();
+      let field: StaticField | null = cls.getStaticField('name');
+      let result: boolean = field!.isProtected();
+      expect(result).assertEqual(true);
     });
 
     /**
@@ -1054,6 +1059,7 @@ export default function StaticFieldIsProtectedTest(): void {
       } else {
         console.info('This is a non-protected field');
       }
+      expect(field!.isProtected()).assertEqual(true);
     });
 
     /**
@@ -1123,8 +1129,10 @@ export default function StaticFieldIsProtectedTest(): void {
       let field: StaticField | null = cls.getStaticField('nonexistent');
       if (field !== null) {
         let result: boolean = field.isProtected();
+        expect(result).assertEqual(true);
       } else {
         console.info('Field does not exist');
+        expect(field).assertEqual(null);
       }
     });
 
@@ -1223,6 +1231,7 @@ export default function StaticFieldIsProtectedTest(): void {
       if (field!.isProtected()) {
         console.info('Protected field type: ' + field!.getType().getName());
       }
+      expect(field!.isProtected()).assertEqual(true);
     });
 
     /**
@@ -1239,6 +1248,7 @@ export default function StaticFieldIsProtectedTest(): void {
       if (field!.isProtected()) {
         console.info('Protected field name: ' + field!.getName());
       }
+      expect(field!.isProtected()).assertEqual(true);
     });
 
     /**
@@ -1255,7 +1265,9 @@ export default function StaticFieldIsProtectedTest(): void {
       if (field!.isProtected()) {
         let value: string | number | boolean | null = field!.getValue() as string | number | boolean | null;
         console.info('Protected field value: ' + value);
+        expect(value !== null && value !== undefined).assertEqual(true);
       }
+      expect(field!.isProtected()).assertEqual(true);
     });
 
     /**
@@ -1272,7 +1284,9 @@ export default function StaticFieldIsProtectedTest(): void {
       if (field!.isProtected()) {
         field!.setValue(100);
         console.info('Protected field updated: ' + field!.getValue());
+        expect(field!.getValue()).assertEqual(100);
       }
+      expect(field!.isProtected()).assertEqual(true);
     });
 
     /**
@@ -1357,6 +1371,12 @@ export default function StaticFieldIsProtectedTest(): void {
           console.info(field.getName() + ': ' + level);
         }
       }
+      let protField: StaticField | null = cls.getStaticField('protectedField');
+      expect(protField!.isProtected()).assertEqual(true);
+      let pubField: StaticField | null = cls.getStaticField('publicField');
+      expect(pubField!.isProtected()).assertEqual(false);
+      let privField: StaticField | null = cls.getStaticField('privateField');
+      expect(privField!.isProtected()).assertEqual(false);
     });
 
     /**
@@ -1519,6 +1539,7 @@ export default function StaticFieldIsProtectedTest(): void {
         }
       }
       console.info('Protected fields count: ' + protectedCount);
+      expect(protectedCount).assertLarger(0);
     });
 
     /**
@@ -1604,6 +1625,10 @@ export default function StaticFieldIsProtectedTest(): void {
           console.info(field.getName() + ': ' + level);
         }
       }
+      let protField: StaticField | null = cls.getStaticField('prot');
+      expect(protField!.isProtected()).assertEqual(true);
+      let pubField: StaticField | null = cls.getStaticField('pub');
+      expect(pubField!.isProtected()).assertEqual(false);
     });
 
     /**
@@ -1627,6 +1652,8 @@ export default function StaticFieldIsProtectedTest(): void {
           }
         }
       }
+      let apiKeyField: StaticField | null = cls.getStaticField('apiKey');
+      expect(apiKeyField!.isProtected()).assertEqual(true);
     });
 
     /**
@@ -1740,7 +1767,9 @@ export default function StaticFieldIsProtectedTest(): void {
         let value: string | number | boolean | null = field.getValue() as string | number | boolean | null;
         console.info('Protected value: ' + value);
         field.setValue('new value');
+        expect(field.getValue()).assertEqual('new value');
       }
+      expect(field!.isProtected()).assertEqual(true);
     });
 
     /**
@@ -1761,7 +1790,7 @@ export default function StaticFieldIsProtectedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_5000
      * @tc.name testStaticFieldIsProtected050
-     * @tc.desc Verify protected field design intent for inheritance hierarchy
+     * @tc.desc Verify protected field design in inheritance hierarchy scenarios
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

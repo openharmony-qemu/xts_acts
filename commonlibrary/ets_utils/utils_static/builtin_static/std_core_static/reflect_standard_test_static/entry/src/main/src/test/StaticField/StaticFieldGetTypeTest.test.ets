@@ -1036,6 +1036,7 @@ export default function StaticFieldGetTypeTest(): void {
       let cls = reflectMyClass001();
       let field = cls.getStaticField("name");
       let type = field!.getType();
+      expect(type.getName()).assertEqual('string');
     });
 
     /**
@@ -1081,12 +1082,15 @@ export default function StaticFieldGetTypeTest(): void {
       let numField = cls.getStaticField("num");
       let numType = numField!.getType();
       console.info("number type: " + numType.getName());
+      expect(numType.getName()).assertEqual('number');
       let strField = cls.getStaticField("str");
       let strType = strField!.getType();
       console.info("string type: " + strType.getName());
+      expect(strType.getName()).assertEqual('string');
       let boolField = cls.getStaticField("bool");
       let boolType = boolField!.getType();
       console.info("boolean type: " + boolType.getName());
+      expect(boolType.getName()).assertEqual('boolean');
     });
 
     /**
@@ -1118,9 +1122,11 @@ export default function StaticFieldGetTypeTest(): void {
       let personField = cls.getStaticField("person");
       let personType = personField!.getType();
       console.info("Person007 type: " + personType.getName());
+      expect(personType.getName()).assertEqual('Person007');
       let objField = cls.getStaticField("obj");
       let objType = objField!.getType();
       console.info("object type: " + objType.getName());
+      expect(objType.getName()).assertEqual('object');
     });
 
     /**
@@ -1136,6 +1142,7 @@ export default function StaticFieldGetTypeTest(): void {
       let handlerField = cls.getStaticField("handler");
       let handlerType = handlerField!.getType();
       console.info("function type: " + handlerType.getName());
+      expect(handlerType.getName()).assertEqual('function');
     });
 
     /**
@@ -1151,6 +1158,7 @@ export default function StaticFieldGetTypeTest(): void {
       let unionField = cls.getStaticField("union");
       let unionType = unionField!.getType();
       console.info("union type: " + unionType.getName());
+      expect(unionType.getName()).assertEqual('string');
     });
 
     /**
@@ -1166,6 +1174,7 @@ export default function StaticFieldGetTypeTest(): void {
       let nullableField = cls.getStaticField("nullable");
       let nullableType = nullableField!.getType();
       console.info("nullable type: " + nullableType.getName());
+      expect(nullableType.getName()).assertEqual('string');
     });
 
     /**
@@ -1181,6 +1190,7 @@ export default function StaticFieldGetTypeTest(): void {
       let optionalField = cls.getStaticField("optional");
       let optionalType = optionalField!.getType();
       console.info("optional type: " + optionalType.getName());
+      expect(optionalType.getName()).assertEqual('string');
     });
 
     /**
@@ -1280,18 +1290,25 @@ export default function StaticFieldGetTypeTest(): void {
       let cls = reflectMyClass018();
       let byteField = cls.getStaticField("byteVal");
       console.info("byte type: " + byteField!.getType().getName());
+      expect(byteField!.getType().getName()).assertEqual('number');
       let shortField = cls.getStaticField("shortVal");
       console.info("short type: " + shortField!.getType().getName());
+      expect(shortField!.getType().getName()).assertEqual('number');
       let intField = cls.getStaticField("intVal");
       console.info("int type: " + intField!.getType().getName());
+      expect(intField!.getType().getName()).assertEqual('number');
       let longField = cls.getStaticField("longVal");
       console.info("long type: " + longField!.getType().getName());
+      expect(longField!.getType().getName()).assertEqual('number');
       let floatField = cls.getStaticField("floatVal");
       console.info("float type: " + floatField!.getType().getName());
+      expect(floatField!.getType().getName()).assertEqual('number');
       let doubleField = cls.getStaticField("doubleVal");
       console.info("double type: " + doubleField!.getType().getName());
+      expect(doubleField!.getType().getName()).assertEqual('number');
       let numberField = cls.getStaticField("numberVal");
       console.info("number type: " + numberField!.getType().getName());
+      expect(numberField!.getType().getName()).assertEqual('number');
     });
 
     /**
@@ -1345,6 +1362,7 @@ export default function StaticFieldGetTypeTest(): void {
         let type = field.getType();
       } else {
         console.info("Field does not exist");
+        expect(field).assertEqual(null);
       }
     });
 
@@ -1395,6 +1413,7 @@ export default function StaticFieldGetTypeTest(): void {
       let fieldName = field!.getName();
       let typeName = field!.getType().getName();
       console.info(`Field ${fieldName} has type ${typeName}`);
+      expect(typeName).assertEqual('number');
     });
 
     /**
@@ -1411,6 +1430,7 @@ export default function StaticFieldGetTypeTest(): void {
       let owner = field!.getOwner();
       let type = field!.getType();
       console.info(`Field owner: ${owner.getName()}, field type: ${type.getName()}`);
+      expect(type.getName()).assertEqual('string');
     });
 
     /**
@@ -1427,6 +1447,7 @@ export default function StaticFieldGetTypeTest(): void {
       let value = field!.getValue();
       let type = field!.getType();
       console.info(`Value: ${value}, Type: ${type.getName()}`);
+      expect(type.getName()).assertEqual('number');
     });
 
     /**
@@ -1443,6 +1464,7 @@ export default function StaticFieldGetTypeTest(): void {
       if (constField!.isReadonly()) {
         let type = constField!.getType();
         console.info(`Readonly field type: ${type.getName()}`);
+        expect(type.getName()).assertEqual('number');
       }
     });
 
@@ -1469,6 +1491,7 @@ export default function StaticFieldGetTypeTest(): void {
         }
         let type = field.getType();
         console.info(`${accessLevel} ${field.getName()}: ${type.getName()}`);
+        expect(type.getName()).assertEqual('number');
       }
     });
 
@@ -1519,6 +1542,7 @@ export default function StaticFieldGetTypeTest(): void {
         let typeName = field.getType().getName();
         console.info(`Field: ${fieldName}, Type: ${typeName}`);
       }
+      expect(fields.length).assertEqual(4);
     });
 
     /**
@@ -1584,6 +1608,7 @@ export default function StaticFieldGetTypeTest(): void {
       let field = cls.getStaticField("anyValue");
       let type = field!.getType();
       console.info("any type: " + type.getName());
+      expect(type.getName()).assertEqual('string');
     });
 
     /**
@@ -1599,6 +1624,7 @@ export default function StaticFieldGetTypeTest(): void {
       let field = cls.getStaticField("neverValue");
       let type = field!.getType();
       console.info("never type: " + type.getName());
+      expect(type.getName()).assertEqual('string');
     });
 
     /**
@@ -1614,6 +1640,7 @@ export default function StaticFieldGetTypeTest(): void {
       let field = cls.getStaticField("unknownValue");
       let type = field!.getType();
       console.info("unknown type: " + type.getName());
+      expect(type.getName()).assertEqual('string');
     });
 
     /**
@@ -1629,9 +1656,11 @@ export default function StaticFieldGetTypeTest(): void {
       let colorField = cls.getStaticField("favoriteColor");
       let colorType = colorField!.getType();
       console.info("enum type: " + colorType.getName());
+      expect(colorType.getName()).assertEqual('Color039');
       let colorsField = cls.getStaticField("colors");
       let colorsType = colorsField!.getType();
       console.info("enum array type: " + colorsType.getName());
+      expect(colorsType.getName()).assertEqual('Color039[]');
     });
 
     /**
@@ -1647,6 +1676,7 @@ export default function StaticFieldGetTypeTest(): void {
       let field = cls.getStaticField("user");
       let type = field!.getType();
       console.info("interface type: " + type.getName());
+      expect(type.getName()).assertEqual('IUser040');
     });
 
     /**
@@ -1662,6 +1692,7 @@ export default function StaticFieldGetTypeTest(): void {
       let instanceField = cls.getStaticField("instance");
       let instanceType = instanceField!.getType();
       console.info("instance type: " + instanceType.getName());
+      expect(instanceType.getName()).assertEqual('InnerClass041');
     });
 
     /**
@@ -1700,6 +1731,7 @@ export default function StaticFieldGetTypeTest(): void {
         typeNames.push(type.getName());
       }
       console.info("Type names: " + typeNames.join(", "));
+      expect(typeNames.length).assertEqual(3);
     });
 
     /**
@@ -1802,6 +1834,9 @@ export default function StaticFieldGetTypeTest(): void {
       groups.forEach((fieldList, typeName): void => {
         console.info(`Type ${typeName}: ${fieldList.length} fields`);
       });
+      expect(groups.has('string')).assertEqual(true);
+      expect(groups.has('number')).assertEqual(true);
+      expect(groups.has('boolean')).assertEqual(true);
     });
 
     /**
@@ -1840,6 +1875,7 @@ export default function StaticFieldGetTypeTest(): void {
       }
       json += '}';
       console.info(json);
+      expect(fields.length).assertEqual(3);
     });
 
     /**
@@ -1854,6 +1890,7 @@ export default function StaticFieldGetTypeTest(): void {
       let cls = reflectAppConfig052();
       let doc = generateFieldTypesDoc(cls);
       console.info(doc);
+      expect(doc.length > 0).assertEqual(true);
     });
 
     /**
@@ -1886,6 +1923,7 @@ export default function StaticFieldGetTypeTest(): void {
       for (let i = 0; i < fields.length; i++) {
         processFieldByType(fields[i]);
       }
+      expect(fields.length).assertEqual(3);
     });
 
     /**
@@ -1919,9 +1957,11 @@ export default function StaticFieldGetTypeTest(): void {
       let unionField = cls.getStaticField("unionField");
       let unionType = unionField!.getType();
       console.info("Union type: " + unionType.getName());
+      expect(unionType.getName()).assertEqual('string');
       let nullableField = cls.getStaticField("nullableField");
       let nullableType = nullableField!.getType();
       console.info("Nullable type: " + nullableType.getName());
+      expect(nullableType.getName()).assertEqual('string');
     });
 
     /**

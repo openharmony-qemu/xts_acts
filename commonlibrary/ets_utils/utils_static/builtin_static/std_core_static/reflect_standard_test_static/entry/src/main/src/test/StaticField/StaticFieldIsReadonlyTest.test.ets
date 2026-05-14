@@ -807,6 +807,7 @@ export default function StaticFieldIsReadonlyTest(): void {
       let cls: ReflectClass = reflectMyClass001();
       let field: StaticField | null = cls.getStaticField('name');
       let result: boolean = field!.isReadonly();
+      expect(result).assertEqual(true);
     });
 
     /**
@@ -833,6 +834,10 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass001();
+      let field: StaticField | null = cls.getStaticField('name');
+      let result: boolean = field!.isReadonly();
+      expect(result).assertEqual(true);
     });
 
     /**
@@ -916,6 +921,7 @@ export default function StaticFieldIsReadonlyTest(): void {
       } else {
         console.info('This is a mutable field');
       }
+      expect(field!.isReadonly()).assertEqual(true);
     });
 
     /**
@@ -985,8 +991,10 @@ export default function StaticFieldIsReadonlyTest(): void {
       let field: StaticField | null = cls.getStaticField('nonexistent');
       if (field !== null) {
         let result: boolean = field.isReadonly();
+        expect(result).assertEqual(true);
       } else {
         console.info('Field does not exist');
+        expect(field).assertEqual(null);
       }
     });
 
@@ -1063,6 +1071,7 @@ export default function StaticFieldIsReadonlyTest(): void {
       if (field!.isPublic() && field!.isReadonly()) {
         console.info('Public readonly field');
       }
+      expect(field!.isReadonly()).assertEqual(true);
     });
 
     /**
@@ -1079,6 +1088,7 @@ export default function StaticFieldIsReadonlyTest(): void {
       if (field!.isPrivate() && field!.isReadonly()) {
         console.info('Private readonly field');
       }
+      expect(field!.isReadonly()).assertEqual(true);
     });
 
     /**
@@ -1095,6 +1105,7 @@ export default function StaticFieldIsReadonlyTest(): void {
       if (field!.isProtected() && field!.isReadonly()) {
         console.info('Protected readonly field');
       }
+      expect(field!.isReadonly()).assertEqual(true);
     });
 
     /**
@@ -1111,6 +1122,7 @@ export default function StaticFieldIsReadonlyTest(): void {
       if (field!.isReadonly()) {
         console.info('Readonly field type: ' + field!.getType().getName());
       }
+      expect(field!.isReadonly()).assertEqual(true);
     });
 
     /**
@@ -1127,6 +1139,7 @@ export default function StaticFieldIsReadonlyTest(): void {
       if (field!.isReadonly()) {
         console.info('Readonly field name: ' + field!.getName());
       }
+      expect(field!.isReadonly()).assertEqual(true);
     });
 
     /**
@@ -1143,7 +1156,9 @@ export default function StaticFieldIsReadonlyTest(): void {
       if (field!.isReadonly()) {
         let value: string | number | boolean | null = field!.getValue() as string | number | boolean | null;
         console.info('Readonly constant value: ' + value);
+        expect(value !== null && value !== undefined).assertEqual(true);
       }
+      expect(field!.isReadonly()).assertEqual(true);
     });
 
     /**
@@ -1195,6 +1210,8 @@ export default function StaticFieldIsReadonlyTest(): void {
           console.info('Field: ' + fieldName + ', Readonly: ' + isReadonly);
         }
       }
+      let appNameField: StaticField | null = cls.getStaticField('APP_NAME');
+      expect(appNameField!.isReadonly()).assertEqual(true);
     });
 
     /**
@@ -1219,6 +1236,10 @@ export default function StaticFieldIsReadonlyTest(): void {
           }
         }
       }
+      let constField: StaticField | null = cls.getStaticField('constant');
+      expect(constField!.isReadonly()).assertEqual(true);
+      let varField: StaticField | null = cls.getStaticField('variable');
+      expect(varField!.isReadonly()).assertEqual(false);
     });
 
     /**
@@ -1362,6 +1383,7 @@ export default function StaticFieldIsReadonlyTest(): void {
         }
       }
       console.info('Readonly fields count: ' + readonlyCount);
+      expect(readonlyCount).assertLarger(0);
     });
 
     /**

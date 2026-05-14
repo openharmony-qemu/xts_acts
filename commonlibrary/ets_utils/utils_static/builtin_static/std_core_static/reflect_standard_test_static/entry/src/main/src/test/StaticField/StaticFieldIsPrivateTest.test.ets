@@ -526,6 +526,7 @@ export default function StaticFieldIsPrivateTest(): void {
       cls.addStaticField('name', createReflectClass('string'), 'test', false, true, false, false);
       let field: StaticField | null = cls.getStaticField('name');
       let result: boolean = field!.isPrivate();
+      expect(result).assertEqual(true);
     });
 
     /**
@@ -542,17 +543,6 @@ export default function StaticFieldIsPrivateTest(): void {
       let field: StaticField | null = cls.getStaticField('name');
       let result: boolean = field!.isPrivate();
       expect(result).assertEqual(true);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPRIVATE_0300
-     * @tc.name testStaticFieldIsPrivate003
-     * @tc.desc Verify passing extra parameters to isPrivate causes compile error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testStaticFieldIsPrivate003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
     });
 
     /**
@@ -708,6 +698,7 @@ export default function StaticFieldIsPrivateTest(): void {
       } else {
         console.info('This is a non-private field');
       }
+      expect(field!.isPrivate()).assertEqual(true);
     });
 
     /**
@@ -787,6 +778,7 @@ export default function StaticFieldIsPrivateTest(): void {
       } else {
         console.info('Field does not exist');
       }
+      expect(field).assertEqual(null);
     });
 
     /**
@@ -1279,6 +1271,9 @@ export default function StaticFieldIsPrivateTest(): void {
           console.info(field.getName() + ': ' + field.getValue());
         }
       }
+      expect(cls.getStaticField('apiKey')!.isPrivate()).assertEqual(false);
+      expect(cls.getStaticField('secretKey')!.isPrivate()).assertEqual(true);
+      expect(cls.getStaticField('internalId')!.isPrivate()).assertEqual(true);
     });
 
     /**
@@ -1367,6 +1362,8 @@ export default function StaticFieldIsPrivateTest(): void {
       cls.addStaticField('ENCRYPTION_KEY', createReflectClass('string'), 'key', false, true, false, false);
       let publicConfig: Record<string, string | number | boolean | null> = exportPublicConfig(cls);
       console.info(JSON.stringify(publicConfig));
+      expect(publicConfig['APP_NAME']).assertEqual('MyApp');
+      expect(publicConfig['DB_PASSWORD']).assertEqual(undefined);
     });
 
     /**
@@ -1429,7 +1426,8 @@ export default function StaticFieldIsPrivateTest(): void {
       cls.addStaticField('apiToken', createReflectClass('string'), 'secret-token', false, true, false, false);
       cls.addStaticField('passwordHash', createReflectClass('string'), 'hash', true, false, false, false);
       cls.addStaticField('encryptionKey', createReflectClass('string'), 'key', false, true, false, false);
-      auditSensitiveFields(cls);
+      let result = auditSensitiveFields(cls);
+      expect(result).assertEqual(true);
     });
 
     /**

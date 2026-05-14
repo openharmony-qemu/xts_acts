@@ -1198,6 +1198,7 @@ export default function StaticFieldEqualsTest(): void {
       let cls = reflectMyClass001();
       let field = cls.getStaticField("name");
       let result = field!.equals(field!);
+      expect(result).assertEqual(true);
     });
 
     /**
@@ -1618,6 +1619,7 @@ export default function StaticFieldEqualsTest(): void {
       groups.forEach((fieldList, typeName) => {
         console.info(`Type ${typeName}: ${fieldList.length} fields`);
       });
+      expect(groups.size).assertLarger(0);
     });
 
     /**
@@ -1636,6 +1638,7 @@ export default function StaticFieldEqualsTest(): void {
       if (field1!.equals(field2!)) {
         console.info("Fields are equal, hash codes should be equal");
       }
+      expect(field1!.equals(field2!)).assertEqual(true);
     });
 
     /**
@@ -1664,6 +1667,7 @@ export default function StaticFieldEqualsTest(): void {
       let endTime = Date.now();
       console.info(`Performed ${fields.length * fields.length} comparisons in ${endTime - startTime}ms`);
       console.info(`Equal field pairs: ${count}`);
+      expect(count).assertLarger(0);
     });
 
     /**
@@ -1693,6 +1697,7 @@ export default function StaticFieldEqualsTest(): void {
 
       console.info(`Reference comparison: ${time1}ms`);
       console.info(`equals comparison: ${time2}ms`);
+      expect(time2 >= 0).assertEqual(true);
     });
 
     /**
@@ -1778,7 +1783,8 @@ export default function StaticFieldEqualsTest(): void {
       let oldCls = reflectOldConfig037();
       let newCls = reflectNewConfig037();
 
-      compareConfigFields(oldCls, newCls);
+      let result = compareConfigFields(oldCls, newCls);
+      expect(result).assertEqual(true);
     });
 
     /**
@@ -1796,28 +1802,6 @@ export default function StaticFieldEqualsTest(): void {
       let value1 = getExpensiveFieldValue(field!);
       let value2 = getExpensiveFieldValue(field!);
       expect(value1 === value2).assertEqual(true);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_3900
-     * @tc.name testStaticFieldEquals039
-     * @tc.desc Verify field collection union, intersection, difference operations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testStaticFieldEquals039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_4000
-     * @tc.name testStaticFieldEquals040
-     * @tc.desc Verify using equals as key in field mapping
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testStaticFieldEquals040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
     });
 
     /**
@@ -1928,7 +1912,8 @@ export default function StaticFieldEqualsTest(): void {
       let field1 = cls.getStaticField("data");
       let field2 = cls.getStaticField("data");
 
-      compareFieldsWithLog(field1!, field2!);
+      let result = compareFieldsWithLog(field1!, field2!);
+      expect(result).assertEqual(true);
     });
 
     /**

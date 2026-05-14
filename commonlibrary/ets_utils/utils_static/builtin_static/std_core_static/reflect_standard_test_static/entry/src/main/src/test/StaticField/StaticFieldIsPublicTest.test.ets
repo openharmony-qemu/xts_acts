@@ -638,6 +638,7 @@ export default function StaticFieldIsPublicTest(): void {
       cls.addStaticField('name', createReflectClass('string'), 'test', true, false, false, false);
       let field: StaticField | null = cls.getStaticField('name');
       let result: boolean = field!.isPublic();
+      expect(result).assertEqual(true);
     });
 
     /**
@@ -654,17 +655,6 @@ export default function StaticFieldIsPublicTest(): void {
       let field: StaticField | null = cls.getStaticField('name');
       let result: boolean = field!.isPublic();
       expect(result).assertEqual(true);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPUBLIC_0300
-     * @tc.name testStaticFieldIsPublic003
-     * @tc.desc Verify passing extra parameters to isPublic causes compile error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testStaticFieldIsPublic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
     });
 
     /**
@@ -810,6 +800,7 @@ export default function StaticFieldIsPublicTest(): void {
       } else {
         console.info('This is a non-public field');
       }
+      expect(field!.isPublic()).assertEqual(true);
     });
 
     /**
@@ -889,6 +880,7 @@ export default function StaticFieldIsPublicTest(): void {
       } else {
         console.info('Field does not exist');
       }
+      expect(field).assertEqual(null);
     });
 
     /**
@@ -1445,6 +1437,7 @@ export default function StaticFieldIsPublicTest(): void {
           console.info(fields[i].getName() + ': [HIDDEN]');
         }
       }
+      expect(fields.length).assertLarger(0);
     });
 
     /**
@@ -1459,6 +1452,7 @@ export default function StaticFieldIsPublicTest(): void {
       let cls: ReflectClass = reflectAPI046();
       let doc: string = generatePublicAPIDoc(cls);
       console.info(doc);
+      expect(doc.length).assertLarger(0);
     });
 
     /**
