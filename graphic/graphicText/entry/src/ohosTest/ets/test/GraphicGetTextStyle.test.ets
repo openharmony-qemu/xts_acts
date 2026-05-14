@@ -828,5 +828,157 @@ export default function GraphicGetTextStyle() {
         }
       })
 
+    /**
+     * @tc.name   testFontTypefacesSet
+     * @tc.number SUB_GRAPHIC_Paragraph_fontTypefacesSet_0100
+     * @tc.desc   Test TextStyle fontTypefaces property set with valid typeface array and verify via getTextStyle.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFontTypefacesSet', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testFontTypefacesSet===="
+        console.info(msgStr + ' begin');
+        let fontFamilies: Array<string> = ["fontTypefaces_test"];
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          fontCollection.loadFontSync('fontTypefaces_test', $rawfile('test.ttf'));
+          const typeface = drawing.Typeface.makeFromRawFile($rawfile('test.ttf')) as drawing.Typeface;
+          console.info(msgStr + ' begin 111');
+          let textStyle: text.TextStyle = {
+            fontFamilies: fontFamilies,
+            fontSize: 16.0,
+            fontTypefaces: [typeface]
+          };
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: textStyle,
+            wordBreak: text.WordBreak.BREAK_WORD
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.pushStyle(textStyle)
+          paragraphBuilder.addText('测试字体类型面设置');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(300);
+
+          let textLines: Array<text.TextLine> = paragraph.getTextLines();
+
+          expect(textLines.length).assertLarger(0);
+          let runs: Array<text.Run> = textLines[0].getGlyphRuns();
+          expect(runs.length).assertLarger(0);
+
+          let runTextStyle: text.TextStyle = runs[0].getTextStyle();
+          expect(runTextStyle.fontTypefaces != undefined).assertTrue();
+          expect(runTextStyle.fontTypefaces!.length).assertEqual(1);
+          console.info(msgStr + ' fontTypefaces is set with length: ' + runTextStyle.fontTypefaces!.length);
+          console.info(msgStr + ' end');
+          fontCollection.unloadFontSync('fontTypefaces_test');
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testFontTypefacesUndefined
+     * @tc.number SUB_GRAPHIC_Paragraph_fontTypefacesUndefined_0200
+     * @tc.desc   Test TextStyle fontTypefaces property with undefined value and verify via getTextStyle.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFontTypefacesUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testFontTypefacesUndefined===="
+        console.info(msgStr + ' begin');
+        let fontFamilies: Array<string> = ["fontTypefaces_undef_test"];
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          fontCollection.loadFontSync('fontTypefaces_undef_test', $rawfile('test.ttf'));
+
+          let textStyle: text.TextStyle = {
+            fontFamilies: fontFamilies,
+            fontSize: 16.0
+          };
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: textStyle,
+            wordBreak: text.WordBreak.BREAK_WORD
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('测试字体类型面未设置');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(300);
+
+          let textLines: Array<text.TextLine> = paragraph.getTextLines();
+          expect(textLines.length).assertLarger(0);
+          let runs: Array<text.Run> = textLines[0].getGlyphRuns();
+          expect(runs.length).assertLarger(0);
+
+          let runTextStyle: text.TextStyle = runs[0].getTextStyle();
+          expect(runTextStyle.fontTypefaces!.length).assertEqual(0);
+          console.info(msgStr + ' fontTypefaces is []');
+          console.info(msgStr + ' end');
+          fontCollection.unloadFontSync('fontTypefaces_undef_test');
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testFontTypefacesEmptyArray
+     * @tc.number SUB_GRAPHIC_Paragraph_fontTypefacesEmptyArray_0300
+     * @tc.desc   Test TextStyle fontTypefaces property set with empty array and verify via getTextStyle.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFontTypefacesEmptyArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = "====www data testFontTypefacesEmptyArray===="
+        console.info(msgStr + ' begin');
+        let fontFamilies: Array<string> = ["fontTypefaces_empty_test"];
+        try {
+          let fontCollection: text.FontCollection = new text.FontCollection();
+          fontCollection.loadFontSync('fontTypefaces_empty_test', $rawfile('test.ttf'));
+          console.info(msgStr + ' begin');
+
+          let textStyle: text.TextStyle = {
+            fontFamilies: fontFamilies,
+            fontSize: 16.0,
+            fontTypefaces: []
+          };
+          let paragraphStyle: text.ParagraphStyle = {
+            textStyle: textStyle,
+            wordBreak: text.WordBreak.BREAK_WORD
+          };
+          let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(paragraphStyle, fontCollection);
+          paragraphBuilder.addText('测试字体类型面空数组');
+          let paragraph: text.Paragraph = paragraphBuilder.build();
+          await paragraph.layout(300);
+
+          let textLines: Array<text.TextLine> = paragraph.getTextLines();
+          expect(textLines.length).assertLarger(0);
+          let runs: Array<text.Run> = textLines[0].getGlyphRuns();
+          expect(runs.length).assertLarger(0);
+
+          let runTextStyle: text.TextStyle = runs[0].getTextStyle();
+          expect(runTextStyle.fontTypefaces != undefined).assertTrue();
+          expect(runTextStyle.fontTypefaces!.length).assertEqual(0);
+          console.info(msgStr + ' fontTypefaces is empty array with length: ' + runTextStyle.fontTypefaces!.length);
+          console.info(msgStr + ' end');
+          fontCollection.unloadFontSync('fontTypefaces_empty_test');
+          done();
+        } catch (err) {
+          console.error(msgStr + ' error: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
   })
 }
