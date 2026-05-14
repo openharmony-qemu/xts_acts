@@ -435,7 +435,7 @@ export default function Font3Test() {
      * @tc.level  LEVEL0
      */
     it('testOHDrawingSetTypographyStyleAttributeDoubleArray0200',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeFontNdk.ohDrawingSetTypographyStyleAttributeDoubleArray0200();
       expect(result).assertEqual(0);
       done();
@@ -450,7 +450,7 @@ export default function Font3Test() {
      * @tc.level  LEVEL0
      */
     it('testOHDrawingGetTypographyStyleAttributeDoubleArray0200',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeFontNdk.ohDrawingGetTypographyStyleAttributeDoubleArray0200();
       expect(result).assertEqual(0);
       done();
@@ -540,7 +540,7 @@ export default function Font3Test() {
      * @tc.level  LEVEL0
      */
     it('testOHDrawingGetTypographyStyleAttributeDoubleArray0700',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeFontNdk.ohDrawingGetTypographyStyleAttributeDoubleArray0700();
       expect(result).assertEqual(0);
       done();
@@ -555,7 +555,7 @@ export default function Font3Test() {
      * @tc.level  LEVEL0
      */
     it('testOHDrawingGetTypographyStyleAttributeDoubleArray0800',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeFontNdk.ohDrawingGetTypographyStyleAttributeDoubleArray0800();
       expect(result).assertEqual(0);
       done();
@@ -570,7 +570,7 @@ export default function Font3Test() {
      * @tc.level  LEVEL0
      */
     it('testOHDrawingGetTypographyStyleAttributeDoubleArray0900',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: number = nativeFontNdk.ohDrawingGetTypographyStyleAttributeDoubleArray0900();
       expect(result).assertEqual(0);
       done();
