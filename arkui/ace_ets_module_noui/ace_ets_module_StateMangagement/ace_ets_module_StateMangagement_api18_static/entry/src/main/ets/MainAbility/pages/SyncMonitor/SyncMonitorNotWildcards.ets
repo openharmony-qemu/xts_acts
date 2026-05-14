@@ -33,6 +33,7 @@ struct SyncMonitorComponentV2 {
         .height('5%')
       Button('change string')
         .id('componentV2Button')
+        .height('5%')
         .onClick(() => {
           this.message += '!';
         })
@@ -66,6 +67,7 @@ struct SyncMonitorObservedV2 {
         .height('5%')
       Button('change name')
         .id('observedV2Button')
+        .height('5%')
         .onClick(() => {
           this.info.name = 'Jack'; // 能够触发onNameChange方法
         })
@@ -101,6 +103,7 @@ struct SyncMonitorObservedV2Arr {
         .height('5%')
       Button('Change dimensionTwo')
         .id('arrButton')
+        .height('5%')
         .onClick(() => {
           // 能够触发onDimensionTwoChange方法
           this.arrMonitor.dimensionTwo[0][0]++;

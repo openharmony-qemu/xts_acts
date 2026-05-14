@@ -50,25 +50,31 @@ struct PersistenceV2Api {
     Column() {
       Text(`Connect Value: ${this.person.userName}`)
         .id('text_connect')
+        .height('5%')
  
       Text(`GlobalConnect Value: ${this.person2.userName}`)
         .id('text_global_connect')
+        .height('5%')
  
       Text(`Keys Result: ${this.keysResult}`)
         .id('text_keys_result')
+        .height('5%')
  
       Text(`Error Message: ${this.errorMessage}`)
         .id('text_error_message')
+        .height('5%')
  
       Row() {
         Button('Change Person')
           .id('button_change_person')
+          .height('5%')
           .onClick((e: ClickEvent) => {
             this.person.userName += 'A';
           })
  
         Button('Save Person')
           .id('button_save_person')
+          .height('5%')
           .onClick((e: ClickEvent) => {
             PersistenceV2.save('Person');
           })
@@ -77,6 +83,7 @@ struct PersistenceV2Api {
       Row() {
         Button('Get Keys')
           .id('button_get_keys')
+          .height('5%')
           .onClick((e: ClickEvent) => {
             let keys = PersistenceV2.keys();
             this.keysResult = keys.join(',');
@@ -84,6 +91,7 @@ struct PersistenceV2Api {
  
         Button('Remove')
           .id('button_remove')
+          .height('5%')
           .onClick((e: ClickEvent) => {
             PersistenceV2.remove('Person');
           })
@@ -91,6 +99,7 @@ struct PersistenceV2Api {
  
       Button('Change Person2')
         .id('button_change_person2')
+        .height('5%')
         .onClick((e: ClickEvent) => {
           this.person2.userName += 'B';
         })

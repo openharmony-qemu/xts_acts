@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -40,6 +40,10 @@ import LazyForEachCustomComponentFreezeModeStaticTest from './LazyForeach/LazyFo
 import SyncMonitorNotWildcardsTest from './SyncMonitor/SyncMonitorNotWildcards.test';
 import PersistentStorageApiTest from './PersistentStorage/PersistentStorageApi.test';
 import PersistenceV2ApiTest from './PersistenceV2/PersistenceV2Api.test';
+import AddMonitorWildcard from './AddMonitorTest/AddMonitorWildcard.test';
+import AddMonitorWildcardUnerfined from './AddMonitorTest/AddMonitorWildcardUnerfined.test';
+import MonitorWildcards from './Monitor/MonitorWildcards.test';
+import PersistenceV2NotifyOnErrorTest from './PersistenceV2/PersistenceV2NotifyOnErrorTest.test';
 
 export default function testsuite() {
   ArrayLikeStringTest(); 
@@ -68,4 +72,9 @@ export default function testsuite() {
   SyncMonitorNotWildcardsTest();
   PersistentStorageApiTest();
   PersistenceV2ApiTest();
+  PersistenceV2NotifyOnErrorTest();
+  AddMonitorWildcard();
+  MonitorWildcards();
+  AddMonitorWildcardUnerfined();
+
 }
