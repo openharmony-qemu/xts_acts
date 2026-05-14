@@ -782,7 +782,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     /**
      * @tc.name   SUB_Security_CertManager_OpenInstallCertDialog_Func_0100
      * @tc.number SUB_Security_CertManager_OpenInstallCertDialog_Func_0100
-     * @tc.desc   Call openInstallCertificateDialog with certType CREDENTIAL_USER, certScope GLOBAL_USER. Return uri on success, or error code CertificateDialogErrorCode.ERROR_GENERIC on failure.
+     * @tc.desc   Call openInstallCertificateDialog with certType CREDENTIAL_USER, certScope GLOBAL_USER. Return error code CertificateDialogErrorCode.ERROR_GENERIC.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -796,8 +796,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
       if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
         try {
           let uri: string = await certManagerDialog.openInstallCertificateDialog(context, certType, certScope, certData);
-          console.info(`SUB_Security_CertManager_OpenInstallCertDialog_Func_0100 succeeded, uri: ${uri}`);
-          expect(uri != null).assertTrue();
+          expect(null).assertFail();
         } catch (err) {
           console.error(`SUB_Security_CertManager_OpenInstallCertDialog_Func_0100 failed. Code: ${err.code}, message: ${err.message}`);
           expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_GENERIC);
