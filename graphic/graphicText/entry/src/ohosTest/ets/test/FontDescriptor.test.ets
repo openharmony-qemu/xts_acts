@@ -16,9 +16,9 @@
 import { describe, it, expect, TestType, Size, Level, beforeAll } from "@ohos/hypium";
 import text from "@ohos.graphics.text";
 
-export default function FontDescriptorTest() {
+export default function FontDescriptorTest26() {
 
-  describe('FontDescriptorTest', () => {
+  describe('FontDescriptorTest26', () => {
 
     /**
      * @tc.name   testLanguagesValidArray
