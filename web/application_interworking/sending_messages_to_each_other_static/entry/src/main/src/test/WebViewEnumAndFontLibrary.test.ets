@@ -44,7 +44,7 @@ export default function webViewEnumAndFontLibrary() {
       async (done: () => void): Promise<void> => {
       Utils.emitEvent("emitMessageLevelDebug", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testMessageLevelStatic001", '0', 601, done);
+      Utils.registerEvent("testMessageLevelStatic001", '1', 601, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('buttonEnumAndFontLibrary', 10, '');
       await Utils.msSleep(6000);
@@ -82,7 +82,7 @@ export default function webViewEnumAndFontLibrary() {
       async (done: () => void): Promise<void> => {
       Utils.emitEvent("emitMessageLevelWarn", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testMessageLevelStatic003", '4', 603, done);
+      Utils.registerEvent("testMessageLevelStatic003", '3', 603, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('buttonEnumAndFontLibrary', 10, '');
       await Utils.msSleep(6000);
@@ -101,7 +101,7 @@ export default function webViewEnumAndFontLibrary() {
       async (done: () => void): Promise<void> => {
       Utils.emitEvent("emitMessageLevelError", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testMessageLevelStatic004", '1', 604, done);
+      Utils.registerEvent("testMessageLevelStatic004", '4', 604, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('buttonEnumAndFontLibrary', 10, '');
       await Utils.msSleep(6000);
