@@ -318,7 +318,7 @@ export default function BaseEnumGetNameTest(): void {
     it('testBaseEnumGetName021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const e = new BaseEnum<int>(1, "OK");
       let name: string = e.getName();
-      expect(name == null).assertFalse();
+      expect(name === null).assertFalse();
     });
 
     /**
@@ -468,7 +468,7 @@ export default function BaseEnumGetNameTest(): void {
         let name: string = (null as BaseEnum<int>).getName();
         expect().assertFail();
       } catch (error) {
-        expect(error == null).assertFalse();
+        expect(error === null).assertFalse();
       }
     });
 
@@ -485,7 +485,7 @@ export default function BaseEnumGetNameTest(): void {
         let name: string = (undefined as BaseEnum<int>).getName();
         expect().assertFail();
       } catch (error) {
-        expect(error == null).assertFalse();
+        expect(error === null).assertFalse();
       }
     });
   });

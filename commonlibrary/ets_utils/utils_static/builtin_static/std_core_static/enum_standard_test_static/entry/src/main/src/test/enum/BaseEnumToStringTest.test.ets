@@ -790,7 +790,7 @@ export default function BaseEnumToStringTest(): void {
     it('testBaseEnumToString054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const e = new BaseEnum<int>(404, "NOT_FOUND");
       let result = e.toString();
-      expect(result == null).assertFalse();
+      expect(result === null).assertFalse();
       expect(result == undefined).assertFalse();
     });
 

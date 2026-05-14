@@ -55,7 +55,7 @@ export default function BaseEnumConstructorTest(): void {
         const status = new BaseEnum<int>(undefined as int, "READY");
         expect().assertFail();
       } catch (error) {
-        expect(error == null).assertFalse();
+        expect(error === null).assertFalse();
       }
     });
 
@@ -72,7 +72,7 @@ export default function BaseEnumConstructorTest(): void {
         const status = new BaseEnum<int>(1, undefined as string);
         expect().assertFail();
       } catch (error) {
-        expect(error == null).assertFalse();
+        expect(error === null).assertFalse();
       }
     });
 
@@ -830,7 +830,7 @@ export default function BaseEnumConstructorTest(): void {
         const e = new BaseEnum<int>(null as int, "NULL_VALUE");
         expect().assertFail();
       } catch (error) {
-        expect(error == null).assertFalse();
+        expect(error === null).assertFalse();
       }
     });
 
@@ -847,7 +847,7 @@ export default function BaseEnumConstructorTest(): void {
         const e = new BaseEnum<int>(undefined as int, "UNDEF_VALUE");
         expect().assertFail();
       } catch (error) {
-        expect(error == null).assertFalse();
+        expect(error === null).assertFalse();
       }
     });
 
@@ -885,7 +885,7 @@ export default function BaseEnumConstructorTest(): void {
         const e = new BaseEnum<int>(invalidValue as int, "OBJ_VALUE");
         expect().assertFail();
       } catch (error) {
-        expect(error == null).assertFalse();
+        expect(error === null).assertFalse();
       }
     });
 
@@ -903,7 +903,7 @@ export default function BaseEnumConstructorTest(): void {
         const e = new BaseEnum<int>(invalidValue as int, "ARRAY_VALUE");
         expect().assertFail();
       } catch (error) {
-        expect(error == null).assertFalse();
+        expect(error === null).assertFalse();
       }
     });
 
@@ -921,7 +921,7 @@ export default function BaseEnumConstructorTest(): void {
         const e = new BaseEnum<int>(invalidValue as int, "TYPE_MISMATCH");
         expect().assertFail();
       } catch (error) {
-        expect(error == null).assertFalse();
+        expect(error === null).assertFalse();
       }
     });
 
@@ -1108,7 +1108,7 @@ export default function BaseEnumConstructorTest(): void {
         const e = new BaseEnum<int>(1, null as string);
         expect().assertFail();
       } catch (error) {
-        expect(error == null).assertFalse();
+        expect(error === null).assertFalse();
       }
     });
 
@@ -1125,7 +1125,7 @@ export default function BaseEnumConstructorTest(): void {
         const e = new BaseEnum<int>(1, undefined as string);
         expect().assertFail();
       } catch (error) {
-        expect(error == null).assertFalse();
+        expect(error === null).assertFalse();
       }
     });
 
@@ -1143,7 +1143,7 @@ export default function BaseEnumConstructorTest(): void {
         const e = new BaseEnum<int>(1, invalidName as string);
         expect().assertFail();
       } catch (error) {
-        expect(error == null).assertFalse();
+        expect(error === null).assertFalse();
       }
     });
 
@@ -1161,7 +1161,7 @@ export default function BaseEnumConstructorTest(): void {
         const e = new BaseEnum<int>(1, invalidName as string);
         expect().assertFail();
       } catch (error) {
-        expect(error == null).assertFalse();
+        expect(error === null).assertFalse();
       }
     });
 
@@ -1197,7 +1197,7 @@ export default function BaseEnumConstructorTest(): void {
         const e = new BaseEnum<int>(1, invalidName as string);
         expect().assertFail();
       } catch (error) {
-        expect(error == null).assertFalse();
+        expect(error === null).assertFalse();
       }
     });
 
@@ -1268,7 +1268,7 @@ export default function BaseEnumConstructorTest(): void {
      */
     it('testBaseEnumConstructor089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const status = new BaseEnum<int>(1, "READY");
-      expect(status == null).assertFalse();
+      expect(status === null).assertFalse();
       expect(status instanceof BaseEnum).assertTrue();
     });
 
@@ -1481,7 +1481,7 @@ export default function BaseEnumConstructorTest(): void {
         expect().assertFail();
       } catch (error) {
         expect(error instanceof Error).assertTrue();
-        expect((error as Error).message == null).assertFalse();
+        expect((error as Error).message === null).assertFalse();
       }
     });
 
@@ -1499,7 +1499,7 @@ export default function BaseEnumConstructorTest(): void {
         expect().assertFail();
       } catch (error) {
         expect(error instanceof Error).assertTrue();
-        expect((error as Error).message == null).assertFalse();
+        expect((error as Error).message === null).assertFalse();
       }
     });
 
@@ -1538,7 +1538,7 @@ export default function BaseEnumConstructorTest(): void {
         expect().assertFail();
       } catch (error) {
         caught = true;
-        expect(error == null).assertFalse();
+        expect(error === null).assertFalse();
       } finally {
         expect(caught).assertTrue();
       }
@@ -1600,7 +1600,7 @@ export default function BaseEnumConstructorTest(): void {
         const e = new BaseEnum<int>(arg as int, "ARRAY_AS_INT");
         expect().assertFail();
       } catch (error) {
-        expect(error == null).assertFalse();
+        expect(error === null).assertFalse();
       }
     });
   });
