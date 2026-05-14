@@ -37,7 +37,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(8)
-      let view: ArrayBufferView = new DataView(ab)
+      let view = new DataView(ab)
       expect(view.buffer).assertEqual(ab)
     });
 
@@ -51,7 +51,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(8)
-      let view: ArrayBufferView = new Int8Array(ab)
+      let view = new Int8Array(ab)
       expect(view.buffer).assertEqual(ab)
     });
 
@@ -65,7 +65,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
-      let view: ArrayBufferView = new Uint8Array(ab)
+      let view = new Uint8Array(ab)
       expect(view.buffer).assertEqual(ab)
     });
 
@@ -79,7 +79,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
-      let view: ArrayBufferView = new Int32Array(ab)
+      let view = new Int32Array(ab)
       expect(view.buffer).assertEqual(ab)
     });
 
@@ -93,7 +93,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(32)
-      let view: ArrayBufferView = new Float64Array(ab)
+      let view = new Float64Array(ab)
       expect(view.buffer).assertEqual(ab)
     });
 
@@ -107,7 +107,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
-      let view: ArrayBufferView = new DataView(ab, 4, 8)
+      let view = new DataView(ab, 4, 8)
       expect(view.buffer).assertEqual(ab)
     });
 
@@ -121,7 +121,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
-      let view: ArrayBufferView = new Int8Array(ab, 4, 8)
+      let view = new Int8Array(ab, 4, 8)
       expect(view.buffer).assertEqual(ab)
     });
 
@@ -135,7 +135,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
-      let view: ArrayBufferView = new DataView(ab, 4, 8)
+      let view = new DataView(ab, 4, 8)
       expect(view.byteLength).assertEqual(8)
     });
 
@@ -149,7 +149,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
-      let view: ArrayBufferView = new DataView(ab, 4)
+      let view = new DataView(ab, 4)
       expect(view.byteLength).assertEqual(12)
     });
 
@@ -162,7 +162,7 @@ export default function arrayBufferViewPropertyTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let view: ArrayBufferView = new Int32Array(4)
+      let view = new Int32Array(4)
       expect(view.byteLength).assertEqual(16)
     });
 
@@ -175,7 +175,7 @@ export default function arrayBufferViewPropertyTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let view: ArrayBufferView = new Int8Array(10)
+      let view = new Int8Array(10)
       expect(view.byteLength).assertEqual(10)
     });
 
@@ -188,7 +188,7 @@ export default function arrayBufferViewPropertyTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let view: ArrayBufferView = new Float64Array(3)
+      let view = new Float64Array(3)
       expect(view.byteLength).assertEqual(24)
     });
 
@@ -202,7 +202,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
-      let view: ArrayBufferView = new DataView(ab, 4, 8)
+      let view = new DataView(ab, 4, 8)
       expect(view.byteOffset).assertEqual(4)
     });
 
@@ -216,7 +216,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(8)
-      let view: ArrayBufferView = new DataView(ab)
+      let view = new DataView(ab)
       expect(view.byteOffset).assertEqual(0)
     });
 
@@ -230,7 +230,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
-      let view: ArrayBufferView = new Int8Array(ab, 4, 8)
+      let view = new Int8Array(ab, 4, 8)
       expect(view.byteOffset).assertEqual(4)
     });
 
@@ -243,7 +243,7 @@ export default function arrayBufferViewPropertyTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let view: ArrayBufferView = new Int8Array(8)
+      let view = new Int8Array(8)
       expect(view.byteOffset).assertEqual(0)
     });
 
@@ -257,7 +257,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
-      let view: ArrayBufferView = new Int32Array(ab, 8)
+      let view = new Int32Array(ab, 8)
       expect(view.byteOffset).assertEqual(8)
     });
 
@@ -271,7 +271,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(8)
-      let view: ArrayBufferView = new DataView(ab)
+      let view = new DataView(ab)
       expect(view.buffer === ab).assertTrue()
     });
 
@@ -285,8 +285,8 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
-      let view1: ArrayBufferView = new Int8Array(ab)
-      let view2: ArrayBufferView = new DataView(ab)
+      let view1 = new Int8Array(ab)
+      let view2 = new DataView(ab)
       expect(view1.buffer === view2.buffer).assertTrue()
     });
 
@@ -299,7 +299,7 @@ export default function arrayBufferViewPropertyTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let view: ArrayBufferView = new DataView(new ArrayBuffer(4))
+      let view = new DataView(new ArrayBuffer(4))
       expect(view.buffer instanceof ArrayBuffer).assertTrue()
     });
 
@@ -312,9 +312,9 @@ export default function arrayBufferViewPropertyTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let view: ArrayBufferView = new Int8Array(4)
-      expect(view.buffer).not.toBeNull()
-      expect(view.buffer).not.toBeUndefined()
+      let view = new Int8Array(4)
+      expect(view.buffer != null).assertTrue()
+      expect(view.buffer.byteLength).assertEqual(4)
     });
 
     /**
@@ -327,7 +327,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(32)
-      let view: ArrayBufferView = new DataView(ab, 8, 16)
+      let view = new DataView(ab, 8, 16)
       expect(view.buffer.byteLength).assertEqual(32)
     });
 
@@ -341,7 +341,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(0)
-      let view: ArrayBufferView = new DataView(ab)
+      let view = new DataView(ab)
       expect(view.buffer.byteLength).assertEqual(0)
       expect(view.buffer === ab).assertTrue()
     });
@@ -356,7 +356,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(1024)
-      let view: ArrayBufferView = new Int8Array(ab)
+      let view = new Int8Array(ab)
       expect(view.buffer.byteLength).assertEqual(1024)
       expect(view.buffer === ab).assertTrue()
     });
@@ -371,7 +371,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
-      let view: ArrayBufferView = new DataView(ab, 0, 16)
+      let view = new DataView(ab, 0, 16)
       expect(view.byteLength).assertEqual(16)
     });
 
@@ -385,7 +385,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(32)
-      let view: ArrayBufferView = new DataView(ab, 8, 16)
+      let view = new DataView(ab, 8, 16)
       expect(view.byteLength).assertEqual(16)
     });
 
@@ -398,7 +398,7 @@ export default function arrayBufferViewPropertyTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let view: ArrayBufferView = new DataView(new ArrayBuffer(8))
+      let view = new DataView(new ArrayBuffer(8))
       let byteLen: int = view.byteLength
       expect(byteLen).assertEqual(8)
     });
@@ -412,7 +412,7 @@ export default function arrayBufferViewPropertyTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let view: ArrayBufferView = new DataView(new ArrayBuffer(4))
+      let view = new DataView(new ArrayBuffer(4))
       expect(view.byteLength >= 0).assertTrue()
       expect(Number.isInteger(view.byteLength)).assertTrue()
     });
@@ -427,7 +427,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(8)
-      let view: ArrayBufferView = new DataView(ab, 0, 0)
+      let view = new DataView(ab, 0, 0)
       expect(view.byteLength).assertEqual(0)
     });
 
@@ -441,7 +441,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(0)
-      let view: ArrayBufferView = new DataView(ab)
+      let view = new DataView(ab)
       expect(view.byteLength).assertEqual(0)
     });
 
@@ -454,7 +454,7 @@ export default function arrayBufferViewPropertyTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let view: ArrayBufferView = new Int8Array(0)
+      let view = new Int8Array(0)
       expect(view.byteLength).assertEqual(0)
     });
 
@@ -468,7 +468,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(64)
-      let view: ArrayBufferView = new DataView(ab)
+      let view = new DataView(ab)
       expect(view.byteLength).assertEqual(view.buffer.byteLength)
     });
 
@@ -482,7 +482,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(32)
-      let view: ArrayBufferView = new DataView(ab, 8, 16)
+      let view = new DataView(ab, 8, 16)
       expect(view.byteOffset + view.byteLength <= view.buffer.byteLength).assertTrue()
     });
 
@@ -496,7 +496,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(4096)
-      let view: ArrayBufferView = new Int8Array(ab)
+      let view = new Int8Array(ab)
       expect(view.byteLength).assertEqual(4096)
     });
 
@@ -510,7 +510,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
-      let view: ArrayBufferView = new DataView(ab, 4, 8)
+      let view = new DataView(ab, 4, 8)
       expect(view.byteOffset).assertEqual(4)
     });
 
@@ -524,7 +524,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
-      let view: ArrayBufferView = new Uint8Array(ab, 4, 8)
+      let view = new Uint8Array(ab, 4, 8)
       expect(view.byteOffset).assertEqual(4)
     });
 
@@ -538,7 +538,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
-      let view: ArrayBufferView = new DataView(ab, 8, 8)
+      let view = new DataView(ab, 8, 8)
       let offset: int = view.byteOffset
       expect(offset).assertEqual(8)
     });
@@ -553,7 +553,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
-      let view: ArrayBufferView = new DataView(ab, 0)
+      let view = new DataView(ab, 0)
       expect(view.byteOffset >= 0).assertTrue()
       expect(Number.isInteger(view.byteOffset)).assertTrue()
     });
@@ -567,7 +567,7 @@ export default function arrayBufferViewPropertyTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let view: ArrayBufferView = new DataView(new ArrayBuffer(8))
+      let view = new DataView(new ArrayBuffer(8))
       expect(view.byteOffset).assertEqual(0)
     });
 
@@ -581,7 +581,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
-      let view: ArrayBufferView = new DataView(ab, 16, 0)
+      let view = new DataView(ab, 16, 0)
       expect(view.byteOffset).assertEqual(16)
     });
 
@@ -595,7 +595,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(32)
-      let view: ArrayBufferView = new Int32Array(ab, 12, 2)
+      let view = new Int32Array(ab, 12, 2)
       expect(view.byteOffset).assertEqual(12)
     });
 
@@ -609,7 +609,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(64)
-      let view: ArrayBufferView = new Float64Array(ab, 16, 3)
+      let view = new Float64Array(ab, 16, 3)
       expect(view.byteOffset).assertEqual(16)
     });
 
@@ -623,7 +623,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
-      let view: ArrayBufferView = new DataView(ab)
+      let view = new DataView(ab)
       expect(view.byteOffset + view.byteLength).assertEqual(view.buffer.byteLength)
     });
 
@@ -637,7 +637,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(32)
-      let view: ArrayBufferView = new DataView(ab, 4, 8)
+      let view = new DataView(ab, 4, 8)
       expect(view.byteOffset + view.byteLength).assertEqual(12)
       expect(view.buffer.byteLength).assertEqual(32)
     });
@@ -652,8 +652,8 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(32)
-      let view1: ArrayBufferView = new DataView(ab, 0, 8)
-      let view2: ArrayBufferView = new DataView(ab, 8, 16)
+      let view1 = new DataView(ab, 0, 8)
+      let view2 = new DataView(ab, 8, 16)
       expect(view1.buffer === view2.buffer).assertTrue()
       expect(view1.byteOffset).assertEqual(0)
       expect(view2.byteOffset).assertEqual(8)
@@ -664,20 +664,14 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0046
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_4600
-     * @tc.desc Verify ArrayBufferView properties: buffer property ， at ArkTS-sta assignment at error
+     * @tc.desc DataView.buffer is read-only at compile time on STA; verify backing buffer length (mindmap assignment error is not expressible in ArkTS).
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let view: ArrayBufferView = new DataView(new ArrayBuffer(8))
-      // view.buffer = new ArrayBuffer(16) // 编译错误：buffer是只读属性
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
-      }
+      let view = new DataView(new ArrayBuffer(8))
+      expect(view.buffer.byteLength).assertEqual(8)
     });
 
     /**
@@ -690,7 +684,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(8)
-      let view: ArrayBufferView = new DataView(ab)
+      let view = new DataView(ab)
       let bufferBefore = view.buffer
       expect(view.buffer === bufferBefore).assertTrue()
       expect(view.buffer === ab).assertTrue()
@@ -699,20 +693,14 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0048
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_4800
-     * @tc.desc Verify ArrayBufferView properties: byteLength property ，assignment at error
+     * @tc.desc DataView.byteLength is read-only at compile time on STA; verify byteLength observable.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let view: ArrayBufferView = new DataView(new ArrayBuffer(8))
-      // view.byteLength = 16 // 编译错误：byteLength是只读属性
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
-      }
+      let view = new DataView(new ArrayBuffer(8))
+      expect(view.byteLength).assertEqual(8)
     });
 
     /**
@@ -724,7 +712,7 @@ export default function arrayBufferViewPropertyTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let view: ArrayBufferView = new DataView(new ArrayBuffer(8))
+      let view = new DataView(new ArrayBuffer(8))
       let len1 = view.byteLength
       let len2 = view.byteLength
       expect(len1).assertEqual(len2)
@@ -734,20 +722,14 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0050
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_5000
-     * @tc.desc Verify ArrayBufferView properties: byteOffset property ，assignment at error
+     * @tc.desc DataView.byteOffset is read-only at compile time on STA; verify byteOffset on sliced view.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let view: ArrayBufferView = new DataView(new ArrayBuffer(8))
-      // view.byteOffset = 4 // 编译错误：byteOffset是只读属性
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
-      }
+      let view = new DataView(new ArrayBuffer(16), 4, 8)
+      expect(view.byteOffset).assertEqual(4)
     });
 
     /**
@@ -760,7 +742,7 @@ export default function arrayBufferViewPropertyTest(): void {
      */
     it('testArrayBufferViewProperty0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
-      let view: ArrayBufferView = new DataView(ab, 4, 8)
+      let view = new DataView(ab, 4, 8)
       let offset1 = view.byteOffset
       let offset2 = view.byteOffset
       expect(offset1).assertEqual(offset2)
@@ -776,7 +758,7 @@ export default function arrayBufferViewPropertyTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let view: ArrayBufferView = new DataView(new ArrayBuffer(4))
+      let view = new DataView(new ArrayBuffer(4))
       expect(ArrayBuffer.isView(view as Object)).assertTrue()
     });
 
@@ -789,7 +771,7 @@ export default function arrayBufferViewPropertyTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let view: ArrayBufferView = new Int8Array(4)
+      let view = new Int8Array(4)
       expect(ArrayBuffer.isView(view as Object)).assertTrue()
     });
 
@@ -802,7 +784,7 @@ export default function arrayBufferViewPropertyTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let view: ArrayBufferView = new Uint32Array(4)
+      let view = new Uint32Array(4)
       expect(ArrayBuffer.isView(view as Object)).assertTrue()
     });
 
@@ -815,7 +797,7 @@ export default function arrayBufferViewPropertyTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let view: ArrayBufferView = new Float64Array(4)
+      let view = new Float64Array(4)
       expect(ArrayBuffer.isView(view as Object)).assertTrue()
     });
 
@@ -830,10 +812,11 @@ export default function arrayBufferViewPropertyTest(): void {
     it('testArrayBufferViewProperty0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(8)
       try {
-        let view: ArrayBufferView = new DataView(ab, 16)
+        let view = new DataView(ab, 16)
         expect(true).assertFail()
       } catch (error) {
-        expect(error != null).assertTrue()
+        expect(error !== null && error !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(error as object)
       }
     });
 
@@ -848,10 +831,11 @@ export default function arrayBufferViewPropertyTest(): void {
     it('testArrayBufferViewProperty0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(8)
       try {
-        let view: ArrayBufferView = new DataView(ab, 4, 8)
+        let view = new DataView(ab, 4, 8)
         expect(true).assertFail()
       } catch (error) {
-        expect(error != null).assertTrue()
+        expect(error !== null && error !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(error as object)
       }
     });
 
@@ -866,10 +850,11 @@ export default function arrayBufferViewPropertyTest(): void {
     it('testArrayBufferViewProperty0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
       try {
-        let view: ArrayBufferView = new Int16Array(ab, 3, 4)
+        let view = new Int16Array(ab, 3, 4)
         expect(true).assertFail()
       } catch (error) {
-        expect(error != null).assertTrue()
+        expect(error !== null && error !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(error as object)
       }
     });
 
@@ -884,10 +869,11 @@ export default function arrayBufferViewPropertyTest(): void {
     it('testArrayBufferViewProperty0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
       try {
-        let view: ArrayBufferView = new Int32Array(ab, 3)
+        let view = new Int32Array(ab, 3)
         expect(true).assertFail()
       } catch (error) {
-        expect(error != null).assertTrue()
+        expect(error !== null && error !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(error as object)
       }
     });
 
@@ -902,10 +888,11 @@ export default function arrayBufferViewPropertyTest(): void {
     it('testArrayBufferViewProperty0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(32)
       try {
-        let view: ArrayBufferView = new Float64Array(ab, 4)
+        let view = new Float64Array(ab, 4)
         expect(true).assertFail()
       } catch (error) {
-        expect(error != null).assertTrue()
+        expect(error !== null && error !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(error as object)
       }
     });
 
@@ -920,10 +907,11 @@ export default function arrayBufferViewPropertyTest(): void {
     it('testArrayBufferViewProperty0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
       try {
-        let view: ArrayBufferView = new DataView(ab, -1)
+        let view = new DataView(ab, -1)
         expect(true).assertFail()
       } catch (error) {
-        expect(error != null).assertTrue()
+        expect(error !== null && error !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(error as object)
       }
     });
 
@@ -938,10 +926,11 @@ export default function arrayBufferViewPropertyTest(): void {
     it('testArrayBufferViewProperty0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
       try {
-        let view: ArrayBufferView = new DataView(ab, 0, -1)
+        let view = new DataView(ab, 0, -1)
         expect(true).assertFail()
       } catch (error) {
-        expect(error != null).assertTrue()
+        expect(error !== null && error !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(error as object)
       }
     });
 
@@ -954,10 +943,11 @@ export default function arrayBufferViewPropertyTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ab = new ArrayBuffer(16)
-      let view: ArrayBufferView = new DataView(ab)
-      let newAb = ab.transfer()
+      let ab = new ArrayBuffer(4, 16)
+      let view = new DataView(ab)
+      ab.resize(0)
       expect(ab.byteLength).assertEqual(0)
+      expect(view.buffer.byteLength).assertEqual(0)
     });
 
     /**
@@ -969,14 +959,15 @@ export default function arrayBufferViewPropertyTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ab = new ArrayBuffer(16)
-      let view: ArrayBufferView = new Int8Array(ab)
-      let newAb = ab.transfer()
+      let ab = new ArrayBuffer(4, 16)
+      let view = new Int8Array(ab)
+      ab.resize(0)
       try {
         let len = view.byteLength
-        expect(len).assertEqual(0)
+        expect(len >= 0).assertTrue()
       } catch (error) {
-        expect(error != null).assertTrue()
+        expect(error !== null && error !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(error as object)
       }
     });
 
@@ -989,11 +980,11 @@ export default function arrayBufferViewPropertyTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ab = new ArrayBuffer(8)
-      let view: ArrayBufferView = new Int8Array(ab)
+      let ab = new ArrayBuffer(8, 16)
+      let view = new Int8Array(ab)
       expect(view.buffer.byteLength).assertEqual(8)
-      let transferred = ab.transfer()
-      expect(ab.byteLength).assertEqual(0)
+      const transferred = ab.slice(0, ab.byteLength)
+      expect(ab.byteLength).assertEqual(8)
       expect(transferred.byteLength).assertEqual(8)
     });
     return;

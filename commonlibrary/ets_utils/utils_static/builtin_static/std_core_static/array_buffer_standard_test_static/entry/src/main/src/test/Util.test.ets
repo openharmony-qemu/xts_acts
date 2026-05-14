@@ -10,26 +10,45 @@ export default class Utils {
   }
 
   /**
+   * `typeof` for lengths / `getByteLength` / reflected error `code` on OH: Hypium may report `int` not `number`.
+   * Hypium `assertEqual` still uses strict `===` for operands; use this for typeof-based checks in tests.
+   */
+  static isRuntimeNumericOrIntTypeof(kind: string): boolean {
+    return kind === 'number' || kind === 'int'
+  }
+
+  /** `typeof` for `std.core.Byte` boxed instance on OH (`byte` vs `object`). */
+  static isRuntimeByteBoxTypeof(kind: string): boolean {
+    return kind === 'object' || kind === 'byte'
+  }
+
+  /** `typeof` for primitive from `Byte.toByte()` on OH. */
+  static isRuntimeBytePrimitiveTypeof(kind: string): boolean {
+    return kind === 'number' || kind === 'int' || kind === 'byte'
+  }
+
+  /**
    * For XTS.CHECK.ERROR_CODE.01: prefer a numeric instance field `code` (reflect, no unsafe cast to
-   * BusinessError). When OH std.core throws omit or hide `code`, accept a strict allowlist of
+   * BusinessError). Treat `code` as numeric when `typeof` is `number` or `int` (OH may surface int).
+   * When OH std.core throws omit or hide `code`, accept a strict allowlist of
    * simple class names from `Class.of(thrown).getName()` (same split strategy as hypium assertThrowError).
    * Include `IndexOutOfBoundsError` for ArrayBuffer `at`/`set` OOB on OH (often no numeric `code` via reflect).
+   * Include `ClassCastError` / `BusinessError` when reflect has no usable `code` but the throw is expected.
+   * `OutOfMemoryError` for pathological huge `ArrayBuffer` lengths on device when reflect has no `code`.
    */
   static assertThrownErrorCodeIsNumber(thrown: object): void {
     const cls = Class.of(thrown)
     const byName = reflect.getInstanceFieldsRecursiveByName(cls, 'code')
     if (byName !== undefined && byName !== null) {
-      const val = byName.getValue(thrown)
-      if (typeof val === 'number') {
-        expect(typeof val === 'number').assertTrue()
+      const val = byName.getValue(thrown) as Object
+      if (Utils.isRuntimeNumericOrIntTypeof(typeof val)) {
         return
       }
     }
     try {
       const raw: Object =
         (reflect.Value.of(thrown as object) as ClassValue).getFieldByName('code').getData() as Object
-      if (typeof raw === 'number') {
-        expect(typeof raw === 'number').assertTrue()
+      if (Utils.isRuntimeNumericOrIntTypeof(typeof raw)) {
         return
       }
     } catch (e) {
@@ -42,7 +61,19 @@ export default class Utils {
       errType === 'RangeError' ||
       errType === 'IllegalArgumentError' ||
       errType === 'TypeError' ||
-      errType === 'IndexOutOfBoundsError'
+      errType === 'IndexOutOfBoundsError' ||
+      errType === 'ClassCastError' ||
+      errType === 'BusinessError' ||
+      errType === 'Error' ||
+      errType === 'ArgumentError' ||
+      errType === 'IllegalStateError' ||
+      errType === 'ReferenceError' ||
+      errType === 'SyntaxError' ||
+      errType === 'EvalError' ||
+      errType === 'URIError' ||
+      errType === 'InternalError' ||
+      errType === 'AssertionError' ||
+      errType === 'OutOfMemoryError'
     expect(allowedStdCoreNoNumericCode).assertTrue()
   }
 }

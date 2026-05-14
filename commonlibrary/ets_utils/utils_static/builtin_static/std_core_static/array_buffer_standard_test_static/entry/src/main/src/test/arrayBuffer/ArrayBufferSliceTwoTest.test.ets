@@ -37,7 +37,7 @@ export default function arrayBufferSliceTwoTest(): void {
      */
     it('testArrayBufferSliceTwo0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(8);
-      let result = buffer.slice();
+      let result = buffer.slice(0);
       expect(result != null).assertTrue()
     });
 
@@ -95,7 +95,7 @@ export default function arrayBufferSliceTwoTest(): void {
       let buffer = new ArrayBuffer(8);
       let int8 = new Int8Array(buffer);
       int8[0] = 1; int8[1] = 2; int8[2] = 3; int8[3] = 4;
-      let result = buffer.slice(1, 4, 99, 100);
+      let result = buffer.slice(1, 4);
       console.log(result.byteLength.toString());
       let resultView = new Int8Array(result);
       console.log(resultView[0].toString());
@@ -614,8 +614,8 @@ export default function arrayBufferSliceTwoTest(): void {
     it('testArrayBufferSliceTwo0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(8);
       let result = buffer.slice(0, 4);
-      console.log((result.constructor === ArrayBuffer).toString());
-      expect(result != null).assertTrue()
+      expect(result.byteLength).assertEqual(4);
+      expect(result instanceof ArrayBuffer).assertTrue();
     });
 
     /**
@@ -1050,21 +1050,10 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let buffer = new ArrayBuffer(8);
-      let int8 = new Int8Array(buffer);
-      int8[0] = 1; int8[1] = 2;
-      let detached = buffer.transfer();
-      try {
-        buffer.slice(0, 2);
-      } catch (e) {
-        console.log("Error on detached buffer");
-      }
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
-      }
+      let buffer = new ArrayBuffer(8, 16);
+      buffer.resize(0);
+      let copy = buffer.slice(0, 0);
+      expect(copy.byteLength).assertEqual(0);
     });
 
     /**
@@ -1076,10 +1065,11 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let detached = buffer.transfer();
-      console.log(buffer.byteLength.toString());
-      expect(detached != null).assertTrue()
+      let buffer = new ArrayBuffer(8, 16);
+      let detached = buffer.slice(0, 8);
+      buffer.resize(0);
+      expect(buffer.byteLength).assertEqual(0);
+      expect(detached.byteLength).assertEqual(8);
     });
     return;
   });

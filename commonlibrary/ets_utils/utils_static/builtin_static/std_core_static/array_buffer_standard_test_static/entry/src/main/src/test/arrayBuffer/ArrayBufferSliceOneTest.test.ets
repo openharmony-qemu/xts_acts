@@ -76,14 +76,10 @@ export default function arrayBufferSliceOneTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const buffer = new ArrayBuffer(4);
-      buffer.slice(); // 编译错误：缺少参数begin
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
-      }
+      const buffer = new ArrayBuffer(4);
+      buffer.set(0, 1 as byte);
+      const copied = buffer.slice(0);
+      expect(copied.byteLength).assertEqual(4);
     });
 
     /**
@@ -95,14 +91,11 @@ export default function arrayBufferSliceOneTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const buffer = new ArrayBuffer(4);
-      buffer.slice(0, 2, 3); // 编译错误：参数个数过多
-        expect(true).assertFail()
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(e as object)
-      }
+      const buffer = new ArrayBuffer(4);
+      buffer.set(0, 10 as byte);
+      buffer.set(1, 20 as byte);
+      const copied = buffer.slice(0, 2);
+      expect(copied.byteLength).assertEqual(2);
     });
 
     /**
@@ -495,7 +488,7 @@ export default function arrayBufferSliceOneTest(): void {
     it('testArrayBufferSliceOne0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
       const copied = buffer.slice(0, 2);
-      expect(copied).assertNotNull();
+      expect(copied != null).assertTrue();
     });
 
     /**
@@ -625,16 +618,12 @@ export default function arrayBufferSliceOneTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(4);
+      const buffer = new ArrayBuffer(4, 16);
       buffer.set(0, 10 as byte);
       buffer.set(1, 20 as byte);
-      buffer.detach();
-      try {
-          buffer.slice(0, 2);
-          expect(false).assertTrue();
-      } catch (e) {
-          expect(e instanceof TypeError).assertTrue();
-      }
+      buffer.resize(0);
+      const copied = buffer.slice(0, 0);
+      expect(copied.byteLength).assertEqual(0);
     });
 
     /**
@@ -646,14 +635,10 @@ export default function arrayBufferSliceOneTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(4);
-      buffer.detach();
-      try {
-          buffer.slice(0);
-          expect(false).assertTrue();
-      } catch (e) {
-          expect(e instanceof TypeError).assertTrue();
-      }
+      const buffer = new ArrayBuffer(4, 16);
+      buffer.resize(0);
+      const copied = buffer.slice(0);
+      expect(copied.byteLength).assertEqual(0);
     });
 
     /**
@@ -665,20 +650,10 @@ export default function arrayBufferSliceOneTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(4);
-      buffer.detach();
-      try {
-          buffer.slice(0, 2);
-          expect(false).assertTrue();
-      } catch (e) {
-          expect(e instanceof TypeError).assertTrue();
-      }
-      try {
-          buffer.slice(-1);
-          expect(false).assertTrue();
-      } catch (e) {
-          expect(e instanceof TypeError).assertTrue();
-      }
+      const buffer = new ArrayBuffer(4, 16);
+      buffer.resize(0);
+      const copied = buffer.slice(0, 2);
+      expect(copied.byteLength).assertEqual(0);
     });
 
     /**

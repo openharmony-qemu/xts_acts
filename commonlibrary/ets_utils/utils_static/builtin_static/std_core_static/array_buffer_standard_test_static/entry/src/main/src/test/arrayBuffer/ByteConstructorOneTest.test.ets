@@ -227,14 +227,14 @@ export default function byteConstructorOneTest(): void {
     /**
      * @tc.name testByteConstructorOne0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_1600
-     * @tc.desc Verify Byte no-arg constructor: constructor create Byteobject ，valueOf()return value is 0
+     * @tc.desc STA Byte has no valueOf; verify toByte() returns 0 for new Byte()
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testByteConstructorOne0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let b: Byte = new Byte()
-      expect(b.valueOf()).assertEqual(0)
+      expect(b.toByte()).assertEqual(0)
     });
 
     /**
@@ -264,25 +264,26 @@ export default function byteConstructorOneTest(): void {
     /**
      * @tc.name testByteConstructorOne0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_1900
-     * @tc.desc Verify Byte no-arg constructor: verify Byte.SIZE Byte
+     * @tc.desc STA Byte has no SIZE; observe signed byte distinct value count via MIN_VALUE and MAX_VALUE
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testByteConstructorOne0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Byte.SIZE).assertEqual(8)
+      expect(Byte.MAX_VALUE - Byte.MIN_VALUE + 1).assertEqual(256)
     });
 
     /**
      * @tc.name testByteConstructorOne0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_2000
-     * @tc.desc Verify Byte no-arg constructor: verify Byte.BYTES Byte byte
+     * @tc.desc STA Byte has no BYTES; verify constructor round-trip for boundary bytes via Int.toByte
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testByteConstructorOne0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Byte.BYTES).assertEqual(1)
+      expect(new Byte(Int.toByte(Byte.MAX_VALUE)).toByte()).assertEqual(127)
+      expect(new Byte(Int.toByte(Byte.MIN_VALUE)).toByte()).assertEqual(-128)
     });
 
     /**
