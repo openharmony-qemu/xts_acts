@@ -15,10 +15,11 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import certManager from '@ohos.security.certManager';
-import type common from '@ohos.app.ability.common';
+import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import certManagerDialog from '@ohos.security.certManagerDialog';
 import * as commonParameter from './utils/common/common_parameter';
+import { GlobalContext } from '../../../../src/main/ets/pages/HomePage';
 function generateString(len: number){
   let str: string = 'a';
   return str.repeat(len);
@@ -775,6 +776,156 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
         }
       }
       console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_1700 end');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_OpenInstallCertDialog_Func_0100
+     * @tc.number SUB_Security_CertManager_OpenInstallCertDialog_Func_0100
+     * @tc.desc   Call openInstallCertificateDialog with certType CREDENTIAL_USER, certScope GLOBAL_USER. Return uri on success, or error code CertificateDialogErrorCode.ERROR_GENERIC on failure.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_CertManager_OpenInstallCertDialog_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info('SUB_Security_CertManager_OpenInstallCertDialog_Func_0100 start');
+      const context: common.Context = GlobalContext.getContext();
+      let certType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CREDENTIAL_USER;
+      let certScope: certManagerDialog.CertificateScope = certManagerDialog.CertificateScope.GLOBAL_USER;
+      let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
+      if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+        try {
+          let uri: string = await certManagerDialog.openInstallCertificateDialog(context, certType, certScope, certData);
+          console.info(`SUB_Security_CertManager_OpenInstallCertDialog_Func_0100 succeeded, uri: ${uri}`);
+          expect(uri != null).assertTrue();
+        } catch (err) {
+          console.error(`SUB_Security_CertManager_OpenInstallCertDialog_Func_0100 failed. Code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_GENERIC);
+        }
+      } else {
+        console.info('SUB_Security_CertManager_OpenInstallCertDialog_Func_0100 device not support CertificateManagerDialog');
+      }
+      console.info('SUB_Security_CertManager_OpenInstallCertDialog_Func_0100 end');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_OpenInstallCertDialog_Func_0200
+     * @tc.number SUB_Security_CertManager_OpenInstallCertDialog_Func_0200
+     * @tc.desc   Call openInstallCertificateDialog with certType CREDENTIAL_APP, certScope CURRENT_USER. Return uri on success, or error code 401(CM_ERROR_INVALID_PARAMS) on failure.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_CertManager_OpenInstallCertDialog_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info('SUB_Security_CertManager_OpenInstallCertDialog_Func_0200 start');
+      const context: common.Context = GlobalContext.getContext();
+      let certType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CREDENTIAL_APP;
+      let certScope: certManagerDialog.CertificateScope = certManagerDialog.CertificateScope.CURRENT_USER;
+      let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
+      if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+        try {
+          let uri: string = await certManagerDialog.openInstallCertificateDialog(context, certType, certScope, certData);
+          console.info(`SUB_Security_CertManager_OpenInstallCertDialog_Func_0200 succeeded, uri: ${uri}`);
+          expect(uri != null).assertTrue();
+        } catch (err) {
+          console.error(`SUB_Security_CertManager_OpenInstallCertDialog_Func_0200 failed. Code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(401);
+        }
+      } else {
+        console.info('SUB_Security_CertManager_OpenInstallCertDialog_Func_0200 device not support CertificateManagerDialog');
+      }
+      console.info('SUB_Security_CertManager_OpenInstallCertDialog_Func_0200 end');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_OpenInstallCertDialog_Func_0300
+     * @tc.number SUB_Security_CertManager_OpenInstallCertDialog_Func_0300
+     * @tc.desc   Call openInstallCertificateDialog with certType CREDENTIAL_UKEY, certScope CURRENT_USER. Return uri on success, or error code 401(CM_ERROR_INVALID_PARAMS) on failure.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_CertManager_OpenInstallCertDialog_Func_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info('SUB_Security_CertManager_OpenInstallCertDialog_Func_0300 start');
+      const context: common.Context = GlobalContext.getContext();
+      let certType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CREDENTIAL_UKEY;
+      let certScope: certManagerDialog.CertificateScope = certManagerDialog.CertificateScope.CURRENT_USER;
+      let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
+      if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+        try {
+          let uri: string = await certManagerDialog.openInstallCertificateDialog(context, certType, certScope, certData);
+          console.info(`SUB_Security_CertManager_OpenInstallCertDialog_Func_0300 succeeded, uri: ${uri}`);
+          expect(uri != null).assertTrue();
+        } catch (err) {
+          console.error(`SUB_Security_CertManager_OpenInstallCertDialog_Func_0300 failed. Code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(401);
+        }
+      } else {
+        console.info('SUB_Security_CertManager_OpenInstallCertDialog_Func_0300 device not support CertificateManagerDialog');
+      }
+      console.info('SUB_Security_CertManager_OpenInstallCertDialog_Func_0300 end');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_OpenInstallCertDialog_Func_0400
+     * @tc.number SUB_Security_CertManager_OpenInstallCertDialog_Func_0400
+     * @tc.desc   Call openInstallCertificateDialog with certType CREDENTIAL_SYSTEM, certScope CURRENT_USER. Return uri on success, or error code CertificateDialogErrorCode.ERROR_GENERIC on failure.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_CertManager_OpenInstallCertDialog_Func_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info('SUB_Security_CertManager_OpenInstallCertDialog_Func_0400 start');
+      const context: common.Context = GlobalContext.getContext();
+      let certType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CREDENTIAL_SYSTEM;
+      let certScope: certManagerDialog.CertificateScope = certManagerDialog.CertificateScope.CURRENT_USER;
+      let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
+      if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+        try {
+          let uri: string = await certManagerDialog.openInstallCertificateDialog(context, certType, certScope, certData);
+          console.info(`SUB_Security_CertManager_OpenInstallCertDialog_Func_0400 succeeded, uri: ${uri}`);
+          expect(uri != null).assertTrue();
+        } catch (err) {
+          console.error(`SUB_Security_CertManager_OpenInstallCertDialog_Func_0400 failed. Code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_GENERIC);
+        }
+      } else {
+        console.info('SUB_Security_CertManager_OpenInstallCertDialog_Func_0400 device not support CertificateManagerDialog');
+      }
+      console.info('SUB_Security_CertManager_OpenInstallCertDialog_Func_0400 end');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_OpenInstallCertDialog_Func_0500
+     * @tc.number SUB_Security_CertManager_OpenInstallCertDialog_Func_0500
+     * @tc.desc   Call openInstallCertificateDialog with certType CA_CERT, certScope NOT_SPECIFIED. Return error code 29700004 if PC device is supported, otherwise return error code 29700001.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_CertManager_OpenInstallCertDialog_Func_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info('SUB_Security_CertManager_OpenInstallCertDialog_Func_0500 start');
+      const context: common.Context = GlobalContext.getContext();
+      let certType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CA_CERT;
+      let certScope: certManagerDialog.CertificateScope = certManagerDialog.CertificateScope.NOT_SPECIFIED;
+      let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
+      if (canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+        try {
+          let uri: string = await certManagerDialog.openInstallCertificateDialog(context, certType, certScope, certData);
+          console.info(`SUB_Security_CertManager_OpenInstallCertDialog_Func_0500 succeeded, uri: ${uri}`);
+          expect(uri != null).assertTrue();
+        } catch (err) {
+          console.error(`SUB_Security_CertManager_OpenInstallCertDialog_Func_0500 failed. Code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_DEVICE_NOT_SUPPORTED);
+        }
+      } else {
+        console.info('SUB_Security_CertManager_OpenInstallCertDialog_Func_0500 device not support CertificateManagerDialog');
+      }
+      console.info('SUB_Security_CertManager_OpenInstallCertDialog_Func_0500 end');
       done();
     });
   })
