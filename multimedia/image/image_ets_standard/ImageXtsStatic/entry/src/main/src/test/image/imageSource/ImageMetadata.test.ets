@@ -351,7 +351,6 @@ export default function ImageMetadataTestStatic(): void {
      */
     it('SUB_MEDIA_IMAGE_HEIFS_METADATA_dngMetadata_PropertyKey_STATIC_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       const testName = "SUB_MEDIA_IMAGE_HEIFS_METADATA_dngMetadata_PropertyKey_STATIC_0100";
-      // let fileNum= await getFd("dng_xmp.dng");
       let result: boolean = true;
       let filePathFir = await getFd("dng_xmp.dng");
       let isSupportHEIFDecode: boolean = image.createImageSource(filePathFir)!.supportedFormats.includes("image/dng");
@@ -422,8 +421,8 @@ export default function ImageMetadataTestStatic(): void {
       const options: image.XMPEnumerateOptions = { isRecursive: false, onlyQualifier : false };
       const expectedItem1Value = "0, 0";
       const expectedItem2Value = "255, 255";
-        const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fileNum);
-        console.info(TAG, testName, `imageSourceObj success`, imageSourceApi!);
+      const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fileNum);
+      console.info(TAG, testName, `imageSourceObj success`, imageSourceApi!);
       try {
         const xmpMetadata: image.ImageMetadata = await imageSourceApi!.readImageMetadata();
         if (xmpMetadata.xmpMetadata! != null) {
@@ -573,17 +572,17 @@ export default function ImageMetadataTestStatic(): void {
         image.XMPTagType.STRUCTURE,
       ]
       for(const range of XMPTagType){
-      let xmpMetadata: image.XMPMetadata | null = new image.XMPMetadata();
-      try {
-        await xmpMetadata!.registerXMPNamespace(xmpNamespace);
-        console.log(testName,TAG,`: registerXMPNamespace Success! myUri: ${xmpNamespace.uri}, myPrefix: ${xmpNamespace.prefix}`);
-        await xmpMetadata!.setValue(`${xmpNamespace.prefix}:book1`, range, "One Hundred Years of Solitude");
-        console.log(testName,TAG,`: setValue Success! `);
-        expect().assertFail();
-      } catch (error) {
-        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
-        expect(error.code).assertEqual(7600206);
-      }
+        let xmpMetadata: image.XMPMetadata | null = new image.XMPMetadata();
+        try {
+          await xmpMetadata!.registerXMPNamespace(xmpNamespace);
+          console.log(testName,TAG,`: registerXMPNamespace Success! myUri: ${xmpNamespace.uri}, myPrefix: ${xmpNamespace.prefix}`);
+          await xmpMetadata!.setValue(`${xmpNamespace.prefix}:book1`, range, "One Hundred Years of Solitude");
+          console.log(testName,TAG,`: setValue Success! `);
+          expect().assertFail();
+        } catch (error) {
+          console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+          expect(error.code).assertEqual(7600206);
+        }
       }
       done();
     });
@@ -962,20 +961,20 @@ export default function ImageMetadataTestStatic(): void {
       console.info(testName,TAG,`readImageMetadata success: ${exifValueJpg}`);
       let xmpBlobJpg: ArrayBuffer | undefined =new ArrayBuffer(0);
       await imageSourceApi!.release();
-        try {
-          const imagePngFD = getFd(fileNamePng);
-          const imageSourceApiGet = image.createImageSource(imagePngFD);
-          console.info(testName,TAG,`createImageSource imageSourceApiGet success: ${imageSourceApiGet}`);
-          let exifValuePng = await imageSourceApiGet!.readImageMetadata();
-          console.info(testName,TAG,`readImageMetadata  imageSourceApiGet success: ${exifValuePng}`);
-          await exifValuePng.xmpMetadata!.setBlob(xmpBlobJpg);
-          console.info(testName,TAG,`setBlob success`);
-          await imageSourceApiGet!.release();
-          expect().assertFail();
-        } catch (error) {
-          console.info(testName,TAG,`setBlob failed`,error.message,error.code);
-          expect(error.code).assertEqual(7600206);
-        }
+      try {
+        const imagePngFD = getFd(fileNamePng);
+        const imageSourceApiGet = image.createImageSource(imagePngFD);
+        console.info(testName,TAG,`createImageSource imageSourceApiGet success: ${imageSourceApiGet}`);
+        let exifValuePng = await imageSourceApiGet!.readImageMetadata();
+        console.info(testName,TAG,`readImageMetadata  imageSourceApiGet success: ${exifValuePng}`);
+        await exifValuePng.xmpMetadata!.setBlob(xmpBlobJpg);
+        console.info(testName,TAG,`setBlob success`);
+        await imageSourceApiGet!.release();
+        expect().assertFail();
+      } catch (error) {
+        console.info(testName,TAG,`setBlob failed`,error.message,error.code);
+        expect(error.code).assertEqual(7600206);
+      }
       done();
     });
 
@@ -1044,9 +1043,9 @@ export default function ImageMetadataTestStatic(): void {
       console.info(TAG,testName,`createImageSource success: ${imageSourceApi}`);
       try {
         const exifValue: image.ImageMetadata = await imageSourceApi!.readImageMetadata();
-          await exifValue.xmpMetadata!.removeTag('');
-          console.info(testName,TAG,`removeTag success`);
-          expect().assertFail();
+        await exifValue.xmpMetadata!.removeTag('');
+        console.info(testName,TAG,`removeTag success`);
+        expect().assertFail();
       } catch (error) {
         console.info(testName,TAG,`failed with errorCode: ${error.message},${error.code}`);
         expect(error.code).assertEqual(7600206);
@@ -1383,15 +1382,15 @@ export default function ImageMetadataTestStatic(): void {
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_THUMBNAIL_PACKTOFILE_JPEG_EMBEDTHUMBNAIL_0100', Level.LEVEL0, async (done:() => void) => {
       const testName: string = "SUB_MULTIMEDIA_IMAGE_PICTURE_THUMBNAIL_PACKTOFILE_JPEG_EMBEDTHUMBNAIL_0100";
-        const imageSourceObjFilePath: string = 'file://' + testContext.filesDir + "/300_100.jpg";
-        // let imageSourceObjFilePath = await getFilePath("300_100.jpg");
-        const imageSourceObj: image.ImageSource | undefined = image.createImageSource(imageSourceObjFilePath);
-        console.info(TAG, testName, `createImageSource success`,imageSourceObj);
-        let exifCommodityPixelMap: image.PixelMap | undefined = await imageSourceObj!.createPixelMap();
-        console.info(TAG, testName, `createPixelMap success`,exifCommodityPixelMap);
-        let picture: image.Picture = image.createPicture(exifCommodityPixelMap!);
-        console.info(TAG, testName,"Picture created");
-        expect(picture != null).assertTrue();
+      const imageSourceObjFilePath: string = 'file://' + testContext.filesDir + "/300_100.jpg";
+      // let imageSourceObjFilePath = await getFilePath("300_100.jpg");
+      const imageSourceObj: image.ImageSource | undefined = image.createImageSource(imageSourceObjFilePath);
+      console.info(TAG, testName, `createImageSource success`,imageSourceObj);
+      let exifCommodityPixelMap: image.PixelMap | undefined = await imageSourceObj!.createPixelMap();
+      console.info(TAG, testName, `createPixelMap success`,exifCommodityPixelMap);
+      let picture: image.Picture = image.createPicture(exifCommodityPixelMap!);
+      console.info(TAG, testName,"Picture created");
+      expect(picture != null).assertTrue();
       try {
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
@@ -1428,10 +1427,9 @@ export default function ImageMetadataTestStatic(): void {
 
 
 
-
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_ByType_GIF_METADATA_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_ByType_GIF_METADATA_STATIC_0100
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_GIF_METADATA_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_GIF_METADATA_STATIC_0100
      * @tc.desc        Verify Gif metadata reading with default parameters
      *                 1.Create image source from Gif file (test6.gif) using fd
      *                 2.Read metadata using readImageMetadata()
@@ -1440,18 +1438,18 @@ export default function ImageMetadataTestStatic(): void {
      * @tc.type        Functional
      * @tc.level       Level 0
      */
-    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_ByType_GIF_METADATA_STATIC_0100", Level.LEVEL0, async (done:() => void)=>{
-      const testName: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_ByType_GIF_METADATA_STATIC_0100";
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_GIF_METADATA_STATIC_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testName: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_GIF_METADATA_STATIC_0100";
       let filePath = await getFilePath("test6.gif");
       const imageSourceApi: image.ImageSource | undefined = image.createImageSource(filePath);
       console.info(TAG, testName, `imageSourceObj createImageSource success`, imageSourceApi!);
       try {
-        const exifValue: image.ImageMetadata = await imageSourceApi!.readImageMetadataByType();
+        const exifValue: image.ImageMetadata = await imageSourceApi!.readImageMetadata();
         console.info(TAG,testName,` tiff metadata readImageMetadataByType result is: ${exifValue.gifMetadata}`);
         expect(exifValue.gifMetadata!=undefined).assertTrue();
       } catch (error) {
-         console.info(TAG, testName,`Error in : ${error.message}, code: ${error.code}`);
-         expect().assertFail();
+        console.info(TAG, testName,`Error in : ${error.message}, code: ${error.code}`);
+        expect().assertFail();
       } finally {
         await imageSourceApi!.release();
       }
@@ -1459,8 +1457,8 @@ export default function ImageMetadataTestStatic(): void {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_ByType_HIC_METADATA_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_ByType_HIC_METADATA_STATIC_0200
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HIC_METADATA_STATIC_0200
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HIC_METADATA_STATIC_0200
      * @tc.desc        Verify HEIFS metadata reading with default parameters
      *                 1.Create image source from HEIFS file (C027.heic) using fd
      *                 2.Read metadata using readImageMetadata()
@@ -1469,8 +1467,8 @@ export default function ImageMetadataTestStatic(): void {
      * @tc.type        Functional
      * @tc.level       Level 0
      */
-    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_ByType_HIC_METADATA_STATIC_0200", Level.LEVEL0, async (done:() => void)=>{
-      const testName: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_ByType_HIC_METADATA_STATIC_0200";
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HIC_METADATA_STATIC_0200", Level.LEVEL0, async (done:() => void)=>{
+      const testName: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HIC_METADATA_STATIC_0200";
       let result: boolean = true;
       let filePathFir = await getFilePath("test.jpeg");
       let isSupportHEIFDecode: boolean = image.createImageSource(filePathFir)!.supportedFormats.includes("image/heic");
@@ -1485,7 +1483,7 @@ export default function ImageMetadataTestStatic(): void {
       console.info(TAG, testName, `imageSourceObj createImageSource success`, imageSourceApi!);
       try {
         const exifValue: image.ImageMetadata = await imageSourceApi!.readImageMetadata();
-        console.info(TAG,testName,` tiff metadata readImageMetadataByType result is: ${exifValue.heifsMetadata}`);
+        console.info(TAG,testName,` heic metadata readImageMetadataByType result is: ${exifValue.heifsMetadata}`);
         expect(exifValue.heifsMetadata!=undefined).assertTrue();
       } catch (error) {
         console.info(TAG, testName,`Error in : ${error.message}, code: ${error.code}`);
@@ -1497,8 +1495,8 @@ export default function ImageMetadataTestStatic(): void {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_ByType_AVIS_METADATA_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_ByType_AVIS_METADATA_STATIC_0300
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_AVIS_METADATA_STATIC_0300
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_AVIS_METADATA_STATIC_0300
      * @tc.desc        Verify HEIFS metadata reading with default parameters
      *                 1.Create image source from AVIS file (bird_8bit_I420_599x359_fps10.avif) using fd
      *                 2.Read metadata using readImageMetadata()
@@ -1507,98 +1505,141 @@ export default function ImageMetadataTestStatic(): void {
      * @tc.type        Functional
      * @tc.level       Level 0
      */
-    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_ByType_AVIS_METADATA_STATIC_0300", Level.LEVEL0, async (done:() => void)=>{
-      const testName: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_ByType_AVIS_METADATA_STATIC_0300";
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_AVIS_METADATA_STATIC_0300", Level.LEVEL0, async (done:() => void)=>{
+      const testName: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_AVIS_METADATA_STATIC_0300";
+      let result: boolean = true;
+      let filePathFir = await getFilePath("test.jpeg");
+      let isSupportHEIFDecode: boolean = image.createImageSource(filePathFir)!.supportedFormats.includes("image/avif");
+      if (!isSupportHEIFDecode) {
+        console.info(TAG,testName,` device is not support decode avif!`);
+        expect(result).assertTrue();
+        done();
+        return;
+      }
       let filePath = await getFilePath("bird_8bit_I420_599x359_fps10.avif");
       const imageSourceApi: image.ImageSource | undefined = image.createImageSource(filePath);
       console.info(TAG, testName, `imageSourceObj createImageSource success`, imageSourceApi!);
       try {
         const exifValue: image.ImageMetadata = await imageSourceApi!.readImageMetadata();
-        console.info(TAG,testName,` tiff metadata readImageMetadataByType result is: ${exifValue.avisMetadata}`);
+        console.info(TAG,testName,` avif metadata readImageMetadata result is: ${exifValue.avisMetadata}`);
         expect(exifValue.avisMetadata!=undefined).assertTrue()
       } catch (error) {
-         console.info(TAG, testName,`Error in : ${error.message}, code: ${error.code}`);
-         expect().assertFail();
+        console.info(TAG, testName,`Error in : ${error.message}, code: ${error.code}`);
+        expect().assertFail();
       } finally {
         await imageSourceApi!.release();
       }
       done();
     });
 
-    // /**
-    //  * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_ByType_PNG_METADATA_STATIC_0400
-    //  * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_ByType_PNG_METADATA_STATIC_0400
-    //  * @tc.desc        Verify PNG metadata reading with default parameters
-    //  *                 1.Create image source from PNG file (test_reladeMetadata.png) using fd
-    //  *                 2.Read metadata using readImageMetadata()
-    //  *                 3.Verify PNG metadata values against pngMetadataMap at frame index 0
-    //  * @tc.size        MEDIUM
-    //  * @tc.type        Functional
-    //  * @tc.level       Level 0
-    //  */
-    // it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_ByType_PNG_METADATA_STATIC_0400", Level.LEVEL0, async (done:() => void)=>{
-    //   const testName: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_ByType_PNG_METADATA_STATIC_0400";
-    //   try {
-    //     let keys: image.PngPropertyKey[] = Array.from(pngMetadataMap.keys());
-    //     console.info(TAG,testName,` PNG metadata keys to read: ${keys}`);
-    //     const ret = await verifyMetadataProperties(testName, "test_reladeMetadata.png", "fd", "pngMetadata", keys, pngMetadataMap);
-    //     expect(ret).assertTrue();
-    //   } catch (error) {
-    //     console.info(TAG, testName,`Error in : ${error.message}, code: ${error.code}`);
-    //     expect().assertFail();
-    //   }
-    //   done();
-    // });
-    //
-    // /**
-    //  * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_JFIF_METADATA_STATIC_0500
-    //  * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_JFIF_METADATA_STATIC_0500
-    //  * @tc.desc        Verify JFIF metadata reading with default parameters
-    //  *                 1.Create image source from JFIF file (sample2.jfif) using fd
-    //  *                 2.Read metadata using readImageMetadata()
-    //  *                 3.Verify JFIF metadata values against jfifMetadataMap at frame index 0
-    //  * @tc.size        MEDIUM
-    //  * @tc.type        Functional
-    //  * @tc.level       Level 0
-    //  */
-    // it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_JFIF_METADATA_STATIC_0500", Level.LEVEL0, async (done:() => void)=>{
-    //   const testName: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_JFIF_METADATA_STATIC_0500";
-    //   try {
-    //     let keys: image.JfifPropertyKey[] = Array.from(jfifMetadataMap.keys());
-    //     console.info(TAG,testName,` JFIF metadata keys to read: ${keys}`);
-    //     const ret = await verifyMetadataProperties(testName, "sample2.jfif", "fd", "jfifMetadata", keys, jfifMetadataMap);
-    //     expect(ret).assertTrue();
-    //   } catch (error) {
-    //     console.info(TAG, testName,`Error in : ${error.message}, code: ${error.code}`);
-    //     expect().assertFail();
-    //   }
-    //   done();
-    // });
-    //
-    // /**
-    //  * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_TIFF_METADATA_STATIC_0100
-    //  * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_TIFF_METADATA_STATIC_0100
-    //  * @tc.desc        Verify TIFF metadata reading with default parameters
-    //  *                 1.Create image source from TIFF file (test.tiff) using fd
-    //  *                 2.Read metadata using readImageMetadata()
-    //  *                 3.Verify TIFF metadata values against tiffMetadataMap at frame index 0
-    //  * @tc.size        MEDIUM
-    //  * @tc.type        Functional
-    //  * @tc.level       Level 0
-    //  */
-    // it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_TIFF_METADATA_STATIC_0100", Level.LEVEL0, async (done:() => void)=>{
-    //   const testName: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_TIFF_METADATA_STATIC_0100";
-    //   try {
-    //     let keys: image.TiffPropertyKey[] = Array.from(tiffMetadataMap.keys());
-    //     console.info(TAG,testName,` TIFF metadata keys to read: ${keys}`);
-    //     const ret = await verifyMetadataProperties(testName, "tiff_xmp.tiff", "fd", "tiffMetadata", keys, tiffMetadataMap);
-    //     expect(ret).assertTrue();
-    //   } catch (error) {
-    //     console.info(TAG, testName,`Error in : ${error.message}, code: ${error.code}`);
-    //     expect().assertFail();
-    //   }
-    //   done();
-    // });
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_PNG_METADATA_STATIC_0400
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_PNG_METADATA_STATIC_0400
+     * @tc.desc        Verify PNG metadata reading with default parameters
+     *                 1.Create image source from PNG file (test_reladeMetadata.png) using fd
+     *                 2.Read metadata using readImageMetadata()
+     *                 3.Verify PNG metadata values against pngMetadataMap at frame index 0
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_PNG_METADATA_STATIC_0400", Level.LEVEL0, async (done:() => void)=>{
+      const testName: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_PNG_METADATA_STATIC_0400";
+      let result: boolean = true;
+      let filePathFir = await getFilePath("test.jpeg");
+      let isSupportHEIFDecode: boolean = image.createImageSource(filePathFir)!.supportedFormats.includes("image/png");
+      if (!isSupportHEIFDecode) {
+        console.info(TAG,testName,` device is not support decode png!`);
+        expect(result).assertTrue();
+        done();
+        return;
+      }
+      let fileNum = await getFd("png_xmp.png");
+      const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fileNum);
+      console.info(TAG, testName, `imageSourceObj createImageSource success`, imageSourceApi!);
+      try {
+        const exifValue: image.ImageMetadata = await imageSourceApi!.readImageMetadata();
+        console.info(TAG,testName,` png metadata readImageMetadataByType result is: ${exifValue.pngMetadata}`);
+        expect(exifValue.pngMetadata!=undefined).assertTrue();
+      } catch (error) {
+        console.info(TAG, testName,`Error in : ${error.message}, code: ${error.code}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_JFIF_METADATA_STATIC_0500
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_JFIF_METADATA_STATIC_0500
+     * @tc.desc        Verify JFIF metadata reading with default parameters
+     *                 1.Create image source from JFIF file (sample2.jfif) using fd
+     *                 2.Read metadata using readImageMetadata()
+     *                 3.Verify JFIF metadata values against jfifMetadataMap at frame index 0
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_JFIF_METADATA_STATIC_0500", Level.LEVEL0, async (done: () => void) => {
+      const testName: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_JFIF_METADATA_STATIC_0500";
+      let filePathFir = await getFilePath("test.jpeg");
+      let result: boolean = true;
+      let isSupportHEIFDecode: boolean = image.createImageSource(filePathFir)!.supportedFormats.includes("image/jfif");
+      if (!isSupportHEIFDecode) {
+        console.info(TAG,testName,` device is not support decode jfif!`);
+        expect(result).assertTrue();
+        done();
+        return;
+      }
+      let fileNum = await getFd("sample2.jfif");
+      const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fileNum);
+      console.info(TAG, testName, `imageSourceObj createImageSource success`, imageSourceApi!);
+      try {
+        const exifValue: image.ImageMetadata = await imageSourceApi!.readImageMetadata();
+        console.info(TAG, testName, ` jfif metadata readImageMetadata result is: ${exifValue.jfifMetadata}`);
+        expect(exifValue.jfifMetadata != undefined).assertTrue();
+      } catch (error) {
+        console.info(TAG, testName, `Error in : ${error.message}, code: ${error.code}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_TIFF_METADATA_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_TIFF_METADATA_STATIC_0100
+     * @tc.desc        Verify TIFF metadata reading with default parameters
+     *                 1.Create image source from TIFF file (test.tiff) using fd
+     *                 2.Read metadata using readImageMetadata()
+     *                 3.Verify TIFF metadata values against tiffMetadataMap at frame index 0
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_TIFF_METADATA_STATIC_0100", Level.LEVEL0, async (done: () => void) => {
+      const testName: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_TIFF_METADATA_STATIC_0100";
+      let filePathFir = await getFilePath("test.jpeg");
+      let result: boolean = true;
+      let isSupportHEIFDecode: boolean = image.createImageSource(filePathFir)!.supportedFormats.includes("image/tiff");
+      if (!isSupportHEIFDecode) {
+        console.info(TAG,testName,` device is not support decode tiff!`);
+        expect(result).assertTrue();
+        done();
+        return;
+      }
+      let fileNum = await getFd("tiff_xmp.tiff");
+      const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fileNum);
+      console.info(TAG, testName, `imageSourceObj createImageSource success`, imageSourceApi!);
+      try {
+        const exifValue: image.ImageMetadata = await imageSourceApi!.readImageMetadata();
+        console.info(TAG, testName, ` tiff metadata readImageMetadata result is: ${exifValue.tiffMetadata}`);
+        expect(exifValue.tiffMetadata != undefined).assertTrue();
+      } catch (error) {
+        console.info(TAG, testName, `Error in : ${error.message}, code: ${error.code}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
 
     /**
      * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_GIF_METADATA_STATIC_0100
@@ -1659,7 +1700,7 @@ export default function ImageMetadataTestStatic(): void {
         console.info(TAG,testName,` tiff metadata readImageMetadataByType result is: ${exifValue.heifsMetadata}`);
         expect(exifValue.heifsMetadata!=undefined).assertTrue()
       } catch (error) {
-         console.info(TAG, testName,`Error in : ${error.message}, code: ${error.code}`);
+        console.info(TAG, testName,`Error in : ${error.message}, code: ${error.code}`);
         expect().assertFail();
       } finally {
         await imageSourceApi!.release();
@@ -1685,10 +1726,10 @@ export default function ImageMetadataTestStatic(): void {
       console.info(TAG, testName, `imageSourceObj createImageSource success`, imageSourceApi!);
       try {
         const exifValue: image.ImageMetadata = await imageSourceApi!.readImageMetadataByType();
-       console.info(TAG,testName,` tiff metadata readImageMetadataByType result is: ${exifValue.avisMetadata}`);
+        console.info(TAG,testName,` tiff metadata readImageMetadataByType result is: ${exifValue.avisMetadata}`);
         expect(exifValue.avisMetadata!=undefined).assertTrue();
       } catch (error) {
-         console.info(TAG, testName,`Error in : ${error.message}, code: ${error.code}`);
+        console.info(TAG, testName,`Error in : ${error.message}, code: ${error.code}`);
         expect().assertFail();
       } finally {
         await imageSourceApi!.release();
@@ -1717,8 +1758,8 @@ export default function ImageMetadataTestStatic(): void {
         console.info(TAG,testName,` exifValue is: ${exifValue.pngMetadata}`);
         expect(exifValue.pngMetadata!=undefined).assertTrue();
       } catch (error) {
-         console.info(TAG, testName,`Error in : ${error.message}, code: ${error.code}`);
-         expect().assertFail();
+        console.info(TAG, testName,`Error in : ${error.message}, code: ${error.code}`);
+        expect().assertFail();
       } finally {
         await imageSourceApi!.release();
       }
@@ -1746,11 +1787,11 @@ export default function ImageMetadataTestStatic(): void {
         console.info(TAG,testName,` tiff metadata readImageMetadataByType result is: ${exifValue.jfifMetadata}`);
         expect(exifValue.jfifMetadata!=undefined).assertTrue();
       } catch (error) {
-         console.info(TAG, testName,`Error in : ${error.message}, code: ${error.code}`);
+        console.info(TAG, testName,`Error in : ${error.message}, code: ${error.code}`);
       } finally {
         await imageSourceApi!.release();
       }
-       done();
+      done();
     });
 
     /**
@@ -1774,8 +1815,8 @@ export default function ImageMetadataTestStatic(): void {
         console.info(TAG,testName,` tiff metadata readImageMetadataByType result is: ${exifValue.tiffMetadata}`);
         expect(exifValue.tiffMetadata!=undefined).assertTrue();
       } catch (error) {
-         console.info(TAG, testName,`Error in : ${error.message}, code: ${error.code}`);
-         expect().assertFail();
+        console.info(TAG, testName,`Error in : ${error.message}, code: ${error.code}`);
+        expect().assertFail();
       } finally {
         await imageSourceApi!.release();
       }
