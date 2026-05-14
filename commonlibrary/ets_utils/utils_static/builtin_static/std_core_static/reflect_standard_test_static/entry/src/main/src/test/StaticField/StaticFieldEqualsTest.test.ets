@@ -1174,3 +1174,1140 @@ function symmetricEquals(field1: StaticField, field2: StaticField): boolean {
   return result1 === result2;
 }
 
+export default function StaticFieldEqualsTest(): void {
+  describe('StaticFieldEqualsTest', () => {
+    beforeAll((): void => {
+    });
+    beforeEach(async (): Promise<void> => {
+      await Utils.msSleep(30);
+    });
+    afterEach((): void => {
+    });
+    afterAll((): void => {
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_0100
+     * @tc.name testStaticFieldEquals001
+     * @tc.desc Verify equals requires one StaticField parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass001();
+      let field = cls.getStaticField("name");
+      let result = field!.equals(field!);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_0400
+     * @tc.name testStaticFieldEquals004
+     * @tc.desc Verify equals with StaticField type parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass004();
+      let field1 = cls.getStaticField("data");
+      let field2 = cls.getStaticField("data");
+      let result = field1!.equals(field2!);
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_0500
+     * @tc.name testStaticFieldEquals005
+     * @tc.desc Verify equals returns false when passing null parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass005();
+      let field = cls.getStaticField("data");
+      let result = field!.equals(null);
+      expect(result).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_0600
+     * @tc.name testStaticFieldEquals006
+     * @tc.desc Verify equals returns false when passing undefined parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass006();
+      let field = cls.getStaticField("data");
+      let result = field!.equals(undefined);
+      expect(result).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_0800
+     * @tc.name testStaticFieldEquals008
+     * @tc.desc Verify equals with InstanceField type parameter returns false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass008();
+      let staticField = cls.getStaticField("staticData");
+      let instanceField = cls.getInstanceField("instanceData");
+      let result = staticField!.equals(instanceField as StaticField);
+      expect(result).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_0900
+     * @tc.name testStaticFieldEquals009
+     * @tc.desc Verify two references of the same field return true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass009();
+      let field1 = cls.getStaticField("name");
+      let field2 = cls.getStaticField("name");
+      expect(field1!.equals(field2!)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_1000
+     * @tc.name testStaticFieldEquals010
+     * @tc.desc Verify field comparing with itself returns true
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass010();
+      let field = cls.getStaticField("data");
+      expect(field!.equals(field!)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_1100
+     * @tc.name testStaticFieldEquals011
+     * @tc.desc Verify different fields comparison returns false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass011();
+      let field1 = cls.getStaticField("field1");
+      let field2 = cls.getStaticField("field2");
+      expect(field1!.equals(field2!)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_1200
+     * @tc.name testStaticFieldEquals012
+     * @tc.desc Verify fields with same name from different classes return false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let clsA = reflectClassA012();
+      let clsB = reflectClassB012();
+      let fieldA = clsA.getStaticField("data");
+      let fieldB = clsB.getStaticField("data");
+      expect(fieldA!.equals(fieldB!)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_1300
+     * @tc.name testStaticFieldEquals013
+     * @tc.desc Verify difference between equals and strict reference comparison
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass013();
+      let field1 = cls.getStaticField("name");
+      let field2 = cls.getStaticField("name");
+
+      expect(field1!.equals(field2!)).assertEqual(true);
+
+      expect(field1! === field2!).assertEqual(true);
+      console.info("equals比较的是字段内容，而非引用");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_1400
+     * @tc.name testStaticFieldEquals014
+     * @tc.desc Verify fields with same name but different access modifiers return false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls1 = reflectMyClass014();
+      let cls2 = reflectOtherClass014();
+      let field1 = cls1.getStaticField("data");
+      let field2 = cls2.getStaticField("data");
+      expect(field1!.equals(field2!)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_1500
+     * @tc.name testStaticFieldEquals015
+     * @tc.desc Verify return type is boolean
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass014();
+      let field = cls.getStaticField("data");
+      let otherField = cls.getStaticField("data");
+      let result = field!.equals(otherField!);
+      expect(typeof result).assertEqual("boolean");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_1600
+     * @tc.name testStaticFieldEquals016
+     * @tc.desc Verify return value is always boolean type
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass014();
+      let field = cls.getStaticField("data");
+      let otherField = cls.getStaticField("data");
+      let result = field!.equals(otherField!);
+      expect(result === null).assertEqual(false);
+      expect(result === undefined).assertEqual(false);
+      expect(typeof result).assertEqual("boolean");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_1700
+     * @tc.name testStaticFieldEquals017
+     * @tc.desc Verify comparing a large number of fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass017();
+      let fields: StaticField[] = cls.getDeclaredStaticFields();
+
+      for (let i = 0; i < fields.length; i++) {
+        for (let j = i; j < fields.length; j++) {
+          let isEqual = fields[i].equals(fields[j]);
+          if (i === j) {
+            expect(isEqual).assertEqual(true);
+          }
+        }
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_1800
+     * @tc.name testStaticFieldEquals018
+     * @tc.desc Verify comparing fields of different types returns false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass018();
+      let strField = cls.getStaticField("strField");
+      let numField = cls.getStaticField("numField");
+      expect(strField!.equals(numField!)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_1900
+     * @tc.name testStaticFieldEquals019
+     * @tc.desc Verify calling equals on null object throws error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field: StaticField | null = null;
+      let otherField: StaticField | null = null;
+      try {
+        field!.equals(otherField!);
+        expect().assertFail();
+      } catch (_) {
+        expect(_ !== null).assertEqual(true);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_2000
+     * @tc.name testStaticFieldEquals020
+     * @tc.desc Verify calling equals on undefined object throws error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field: StaticField | undefined;
+      let otherField: StaticField | undefined;
+      try {
+        field!.equals(otherField!);
+        expect().assertFail();
+      } catch (_) {
+        expect(_ !== null).assertEqual(true);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_2100
+     * @tc.name testStaticFieldEquals021
+     * @tc.desc Verify passing null parameter returns false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass021();
+      let field = cls.getStaticField("data");
+      let result = field!.equals(null);
+      expect(result).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_2200
+     * @tc.name testStaticFieldEquals022
+     * @tc.desc Verify combining field name comparison and equals result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass022();
+      let field1 = cls.getStaticField("data");
+      let field2 = cls.getStaticField("data");
+
+      if (field1!.getName() === field2!.getName()) {
+        expect(field1!.equals(field2!)).assertEqual(true);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_2300
+     * @tc.name testStaticFieldEquals023
+     * @tc.desc Verify comparing fields of the same type
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass023();
+      let field1 = cls.getStaticField("value1");
+      let field2 = cls.getStaticField("value2");
+
+      expect(field1!.getType().getName()).assertEqual(field2!.getType().getName());
+      expect(field1!.equals(field2!)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_2400
+     * @tc.name testStaticFieldEquals024
+     * @tc.desc Verify comparing fields from the same class
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass024();
+      let field1 = cls.getStaticField("field1");
+      let field2 = cls.getStaticField("field2");
+
+      expect(field1!.getOwner().equals(field2!.getOwner())).assertEqual(true);
+      expect(field1!.equals(field2!)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_2500
+     * @tc.name testStaticFieldEquals025
+     * @tc.desc Verify comparing fields with the same value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let cls = reflectMyClass025();
+      let field1 = cls.getStaticField("value1");
+      let field2 = cls.getStaticField("value2");
+
+      expect(field1!.getValue() as string | number | boolean | null)
+        .assertEqual(field2!.getValue() as string | number | boolean | null);
+      expect(field1!.equals(field2!)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_2600
+     * @tc.name testStaticFieldEquals026
+     * @tc.desc Verify removing duplicate fields using equals
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass026();
+      let field1 = cls.getStaticField("data");
+      let field2 = cls.getStaticField("data");
+
+      let duplicated = [field1!, field2!];
+      let unique = uniqueFields(duplicated);
+      expect(unique.length).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_2700
+     * @tc.name testStaticFieldEquals027
+     * @tc.desc Verify finding target field in field list using equals
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass027();
+      let targetField = cls.getStaticField("data");
+      let allFields: StaticField[] = cls.getDeclaredStaticFields();
+
+      let found = findField(allFields, targetField!);
+      expect(found !== null).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_2800
+     * @tc.name testStaticFieldEquals028
+     * @tc.desc Verify field collection equality comparison
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass028();
+      let fields1: StaticField[] = cls.getDeclaredStaticFields();
+      let fields2: StaticField[] = cls.getDeclaredStaticFields();
+
+      expect(fieldsEquals(fields1, fields2)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_2900
+     * @tc.name testStaticFieldEquals029
+     * @tc.desc Verify grouping fields by type using equals
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass029();
+      let fields: StaticField[] = cls.getDeclaredStaticFields();
+      let groups = groupFieldsByType(fields);
+
+      groups.forEach((fieldList, typeName) => {
+        console.info(`Type ${typeName}: ${fieldList.length} fields`);
+      });
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_3000
+     * @tc.name testStaticFieldEquals030
+     * @tc.desc Verify consistency between hash code and equals
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass030();
+      let field1 = cls.getStaticField("data");
+      let field2 = cls.getStaticField("data");
+
+      if (field1!.equals(field2!)) {
+        console.info("Fields are equal, hash codes should be equal");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_3100
+     * @tc.name testStaticFieldEquals031
+     * @tc.desc Verify equals method performance
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass031();
+      let fields: StaticField[] = cls.getDeclaredStaticFields();
+
+      let startTime = Date.now();
+      let count = 0;
+
+      for (let i = 0; i < fields.length; i++) {
+        for (let j = 0; j < fields.length; j++) {
+          if (fields[i].equals(fields[j])) {
+            count++;
+          }
+        }
+      }
+
+      let endTime = Date.now();
+      console.info(`Performed ${fields.length * fields.length} comparisons in ${endTime - startTime}ms`);
+      console.info(`Equal field pairs: ${count}`);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_3200
+     * @tc.name testStaticFieldEquals032
+     * @tc.desc Verify performance comparison between strict reference and equals
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass032();
+      let field1 = cls.getStaticField("data");
+      let field2 = cls.getStaticField("data");
+
+      let start1 = Date.now();
+      for (let i = 0; i < 10000; i++) {
+        let result = field1! === field2!;
+      }
+      let time1 = Date.now() - start1;
+
+      let start2 = Date.now();
+      for (let i = 0; i < 10000; i++) {
+        let result = field1!.equals(field2!);
+      }
+      let time2 = Date.now() - start2;
+
+      console.info(`Reference comparison: ${time1}ms`);
+      console.info(`equals comparison: ${time2}ms`);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_3300
+     * @tc.name testStaticFieldEquals033
+     * @tc.desc Verify StaticField and InstanceField equals behavior consistency
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass033();
+
+      let staticField1 = cls.getStaticField("staticValue");
+      let staticField2 = cls.getStaticField("staticValue");
+      expect(staticField1!.equals(staticField2!)).assertEqual(true);
+
+      let instanceField1 = cls.getInstanceField("instanceValue");
+      let instanceField2 = cls.getInstanceField("instanceValue");
+      expect(instanceField1!.equals(instanceField2!)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_3400
+     * @tc.name testStaticFieldEquals034
+     * @tc.desc Verify checking if field is in collection
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass034();
+      let fields: StaticField[] = cls.getDeclaredStaticFields();
+      let targetField = cls.getStaticField("data");
+
+      expect(containsField(fields, targetField!)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_3500
+     * @tc.name testStaticFieldEquals035
+     * @tc.desc Verify calculating intersection of two field collections
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls1 = reflectMyClass035();
+      let cls2 = reflectOtherClass035();
+      let fields1: StaticField[] = cls1.getDeclaredStaticFields();
+      let fields2: StaticField[] = cls2.getDeclaredStaticFields();
+
+      let intersection = intersectFields(fields1, fields2);
+      expect(intersection.length).assertEqual(1);
+      expect(intersection[0].getName()).assertEqual("common");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_3600
+     * @tc.name testStaticFieldEquals036
+     * @tc.desc Verify calculating difference of two field collections
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass031();
+      let fields: StaticField[] = cls.getDeclaredStaticFields();
+
+      let diff = differenceFields(fields, fields);
+      expect(diff.length).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_3700
+     * @tc.name testStaticFieldEquals037
+     * @tc.desc Verify configuration change detection
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let oldCls = reflectOldConfig037();
+      let newCls = reflectNewConfig037();
+
+      compareConfigFields(oldCls, newCls);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_3800
+     * @tc.name testStaticFieldEquals038
+     * @tc.desc Verify field caching using equals
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass038();
+      let field = cls.getStaticField("expensiveField");
+
+      let value1 = getExpensiveFieldValue(field!);
+      let value2 = getExpensiveFieldValue(field!);
+      expect(value1 === value2).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_3900
+     * @tc.name testStaticFieldEquals039
+     * @tc.desc Verify field collection union, intersection, difference operations
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_4000
+     * @tc.name testStaticFieldEquals040
+     * @tc.desc Verify using equals as key in field mapping
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_4100
+     * @tc.name testStaticFieldEquals041
+     * @tc.desc Verify field comparison based on multiple attributes
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass041();
+      let field1 = cls.getStaticField("data");
+      let field2 = cls.getStaticField("data");
+
+      expect(fieldsAreDeepEqual(field1!, field2!)).assertEqual(true);
+      expect(field1!.equals(field2!)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_4200
+     * @tc.name testStaticFieldEquals042
+     * @tc.desc Verify handling possible circular references
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass042();
+      let dataField = cls.getStaticField("data");
+      let selfRefField = cls.getStaticField("selfRef");
+
+      expect(dataField!.equals(selfRefField!)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_4300
+     * @tc.name testStaticFieldEquals043
+     * @tc.desc Verify comparing fields with special values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass043();
+      let nullField = cls.getStaticField("nullValue");
+      let undefField = cls.getStaticField("undefinedValue");
+
+      expect(nullField!.equals(undefField!)).assertEqual(false);
+
+      expect(nullField!.equals(nullField!)).assertEqual(true);
+      expect(undefField!.equals(undefField!)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_4400
+     * @tc.name testStaticFieldEquals044
+     * @tc.desc Verify comparing fields with same name in parent-child class hierarchy
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let parentCls = reflectParentClass044();
+      let childCls = reflectChildClass044();
+
+      let parentField = parentCls.getStaticField("data");
+      let childField = childCls.getStaticField("data");
+
+      expect(parentField!.equals(childField!)).assertEqual(false);
+
+      expect(parentField!.equals(parentField!)).assertEqual(true);
+      expect(childField!.equals(childField!)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_4500
+     * @tc.name testStaticFieldEquals045
+     * @tc.desc Verify equals in concurrent scenario
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass045();
+      let field = cls.getStaticField("sharedField");
+
+      let results: boolean[] = [];
+      for (let i = 0; i < 100; i++) {
+        results.push(field!.equals(field!));
+      }
+
+      for (let i = 0; i < results.length; i++) {
+        expect(results[i]).assertEqual(true);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_4600
+     * @tc.name testStaticFieldEquals046
+     * @tc.desc Verify detailed field comparison log output
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass046();
+      let field1 = cls.getStaticField("data");
+      let field2 = cls.getStaticField("data");
+
+      compareFieldsWithLog(field1!, field2!);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_4700
+     * @tc.name testStaticFieldEquals047
+     * @tc.desc Verify equals with version configuration fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass047();
+      let versionField = cls.getStaticField('VERSION');
+      let buildField = cls.getStaticField('BUILD_NUMBER');
+      expect(versionField!.equals(buildField!)).assertEqual(false);
+      expect(versionField!.equals(versionField!)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_4800
+     * @tc.name testStaticFieldEquals048
+     * @tc.desc Verify equals with API configuration fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass048();
+      let urlField = cls.getStaticField('API_URL');
+      let timeoutField = cls.getStaticField('API_TIMEOUT');
+      expect(urlField!.equals(timeoutField!)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_4900
+     * @tc.name testStaticFieldEquals049
+     * @tc.desc Verify equals with database configuration fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass049();
+      let hostField = cls.getStaticField('DB_HOST');
+      let portField = cls.getStaticField('DB_PORT');
+      expect(hostField!.equals(portField!)).assertEqual(false);
+      expect(hostField!.equals(hostField!)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_5000
+     * @tc.name testStaticFieldEquals050
+     * @tc.desc Verify equals with cache configuration fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass050();
+      let ttlField = cls.getStaticField('CACHE_TTL');
+      let sizeField = cls.getStaticField('CACHE_SIZE');
+      expect(ttlField!.equals(sizeField!)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_5100
+     * @tc.name testStaticFieldEquals051
+     * @tc.desc Verify equals with logging configuration fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass051();
+      let levelField = cls.getStaticField('LOG_LEVEL');
+      let formatField = cls.getStaticField('LOG_FORMAT');
+      expect(levelField!.equals(formatField!)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_5200
+     * @tc.name testStaticFieldEquals052
+     * @tc.desc Verify equals with protected auth fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass052();
+      let tokenField = cls.getStaticField('AUTH_TOKEN');
+      let typeField = cls.getStaticField('AUTH_TYPE');
+      expect(tokenField!.equals(typeField!)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_5300
+     * @tc.name testStaticFieldEquals053
+     * @tc.desc Verify equals with max limit configuration fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass053();
+      let connField = cls.getStaticField('MAX_CONNECTIONS');
+      let reqField = cls.getStaticField('MAX_REQUESTS');
+      expect(connField!.equals(reqField!)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_5400
+     * @tc.name testStaticFieldEquals054
+     * @tc.desc Verify equals with feature flag fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass054();
+      let featureA = cls.getStaticField('FEATURE_A');
+      let featureC = cls.getStaticField('FEATURE_C');
+      expect(featureA!.equals(featureC!)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_5500
+     * @tc.name testStaticFieldEquals055
+     * @tc.desc Verify equals with threshold fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass055();
+      let minField = cls.getStaticField('THRESHOLD_MIN');
+      let maxField = cls.getStaticField('THRESHOLD_MAX');
+      expect(minField!.equals(maxField!)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_5600
+     * @tc.name testStaticFieldEquals056
+     * @tc.desc Verify equals with environment fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass056();
+      let devField = cls.getStaticField('ENV_DEV');
+      let prodField = cls.getStaticField('ENV_PROD');
+      expect(devField!.equals(prodField!)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_5700
+     * @tc.name testStaticFieldEquals057
+     * @tc.desc Verify equals with region fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass057();
+      let usField = cls.getStaticField('REGION_US');
+      let euField = cls.getStaticField('REGION_EU');
+      expect(usField!.equals(euField!)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_5800
+     * @tc.name testStaticFieldEquals058
+     * @tc.desc Verify equals with metric fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass058();
+      let cpuField = cls.getStaticField('METRIC_CPU');
+      let memField = cls.getStaticField('METRIC_MEM');
+      expect(cpuField!.equals(memField!)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_5900
+     * @tc.name testStaticFieldEquals059
+     * @tc.desc Verify equals with HTTP status code fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass059();
+      let okField = cls.getStaticField('STATUS_OK');
+      let errField = cls.getStaticField('STATUS_ERROR');
+      expect(okField!.equals(errField!)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_6000
+     * @tc.name testStaticFieldEquals060
+     * @tc.desc Verify equals with rate limit fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass060();
+      let rateField = cls.getStaticField('LIMIT_RATE');
+      let burstField = cls.getStaticField('LIMIT_BURST');
+      expect(rateField!.equals(burstField!)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_6100
+     * @tc.name testStaticFieldEquals061
+     * @tc.desc Verify equals with priority fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass061();
+      let highField = cls.getStaticField('PRIORITY_HIGH');
+      let lowField = cls.getStaticField('PRIORITY_LOW');
+      expect(highField!.equals(lowField!)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_6200
+     * @tc.name testStaticFieldEquals062
+     * @tc.desc Verify equals with content type fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass062();
+      let jsonField = cls.getStaticField('FORMAT_JSON');
+      let xmlField = cls.getStaticField('FORMAT_XML');
+      expect(jsonField!.equals(xmlField!)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_6300
+     * @tc.name testStaticFieldEquals063
+     * @tc.desc Verify equals with file mode fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass063();
+      let readField = cls.getStaticField('MODE_READ');
+      let writeField = cls.getStaticField('MODE_WRITE');
+      expect(readField!.equals(writeField!)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_6400
+     * @tc.name testStaticFieldEquals064
+     * @tc.desc Verify equals with scope fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass064();
+      let globalField = cls.getStaticField('SCOPE_GLOBAL');
+      let localField = cls.getStaticField('SCOPE_LOCAL');
+      expect(globalField!.equals(localField!)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_6500
+     * @tc.name testStaticFieldEquals065
+     * @tc.desc Verify equals with type definition fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass065();
+      let strField = cls.getStaticField('TYPE_STRING');
+      let intField = cls.getStaticField('TYPE_INT');
+      expect(strField!.equals(intField!)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_6600
+     * @tc.name testStaticFieldEquals066
+     * @tc.desc Verify findFieldByName helper function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass047();
+      let fields: StaticField[] = cls.getDeclaredStaticFields();
+      let found: StaticField | null = findFieldByName(fields, 'VERSION');
+      expect(found !== null).assertEqual(true);
+      expect(found!.getName()).assertEqual('VERSION');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_6700
+     * @tc.name testStaticFieldEquals067
+     * @tc.desc Verify countEqualFields helper function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass053();
+      let fields: StaticField[] = cls.getDeclaredStaticFields();
+      let count: number = countEqualFields(fields, fields);
+      expect(count).assertEqual(fields.length);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_6800
+     * @tc.name testStaticFieldEquals068
+     * @tc.desc Verify areAllFieldsEqual helper function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass046();
+      let field1 = cls.getStaticField('data');
+      let field2 = cls.getStaticField('data');
+      let fields: StaticField[] = [field1!, field2!];
+      expect(areAllFieldsEqual(fields)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_7000
+     * @tc.name testStaticFieldEquals070
+     * @tc.desc Verify validateEqualityProperties helper function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass048();
+      let field: StaticField | null = cls.getStaticField('API_URL');
+      expect(validateEqualityProperties(field!)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_7100
+     * @tc.name testStaticFieldEquals071
+     * @tc.desc Verify compareFieldCollections helper function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls1 = reflectMyClass047();
+      let cls2 = reflectMyClass048();
+      let result: Record<string, string> = compareFieldCollections(cls1, cls2);
+      expect(result['VERSION']).assertEqual('only_in_first');
+      expect(result['API_URL']).assertEqual('only_in_second');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_7300
+     * @tc.name testStaticFieldEquals073
+     * @tc.desc Verify symmetricEquals helper function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldEquals073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = reflectMyClass046();
+      let field1 = cls.getStaticField('data');
+      let field2 = cls.getStaticField('data');
+      expect(symmetricEquals(field1!, field2!)).assertEqual(true);
+    });
+  });
+}
