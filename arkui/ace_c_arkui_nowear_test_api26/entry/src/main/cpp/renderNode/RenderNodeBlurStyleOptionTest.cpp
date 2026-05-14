@@ -94,7 +94,7 @@ static napi_value TestRenderNodeBlurStyleOption_007(napi_env env, napi_callback_
     ArkUI_RenderBlurStyleOption* option = OH_ArkUI_RenderNodeUtils_CreateBlurStyleOption();
     auto result = OH_ArkUI_RenderNodeUtils_SetBackgroundBlurOption(adoptRSNode, option);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN,
-                 "Manager", "TestRenderNodeBlurStyleOption_006 result=%{public}d", result);
+                 "Manager", "TestRenderNodeBlurStyleOption_007 result=%{public}d", result);
     OH_ArkUI_RenderNodeUtils_DisposeBlurStyleOption(option);
     ASSERT_EQ(result, ARKUI_ERROR_CODE_RENDER_IS_FROM_FRAME_NODE);
     NAPI_END;
