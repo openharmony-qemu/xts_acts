@@ -38,10 +38,46 @@ static tcu::TestPackage* createGL42Package(tcu::TestContext& testCtx)
     return new gl4cts::GL42TestPackage(testCtx, "KHR-GL42");
 }
 
+static tcu::TestPackage* createDeqpgles2Package(tcu::TestContext& testCtx)
+{
+    return new deqp::gles2::TestPackage(testCtx);
+}
+
+static tcu::TestPackage* createDeqpgles3Package(tcu::TestContext& testCtx)
+{
+    return new deqp::gles3::TestPackage(testCtx);
+}
+
+static tcu::TestPackage* createDeqpgles31Package(tcu::TestContext& testCtx)
+{
+    return new deqp::gles31::TestPackage(testCtx);
+}
+
+static tcu::TestPackage* createDeqpgles32Package(tcu::TestContext& testCtx)
+{
+    return new deqp::gles32::TestPackage(testCtx);
+}
+
+
+static tcu::TestPackage* createKhrgles2Package(tcu::TestContext& testCtx)
+{
+    return new es2cts::TestPackage(testCtx, "KHR-GLES2");
+}
+
+static tcu::TestPackage* createKhrgles3Package(tcu::TestContext& testCtx)
+{
+    return new es3cts::ES30TestPackage(testCtx, "KHR-GLES3");
+}
+
+static tcu::TestPackage* createKhrgles31Package(tcu::TestContext& testCtx)
+{
+    return new es31cts::ES31TestPackage(testCtx, "KHR-GLES31");
+}
+
 void RegistPackage(void)
 {
     tcu::TestPackageRegistry *registry = tcu::TestPackageRegistry::getSingleton();
-    registry->registerPackage("KHR-GL42", createGL42Package);
+    registry->registerPackage("KHR-GLES31", createKhrgles31Package);
 }
 
 // extern tcu::TestLog tcutestlog;

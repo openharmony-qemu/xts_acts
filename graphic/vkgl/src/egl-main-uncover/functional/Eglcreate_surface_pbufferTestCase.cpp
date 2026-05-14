@@ -16,53 +16,53 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../EglBaseFunc.h"
-#include "../ActsEgl0001TestSuite.h"
+#include "../ActsEglMainUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000027,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000027,
         "dEQP-EGL.functional.create_surface",
         ".pbuffer.rgb565_no_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000028,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000028,
         "dEQP-EGL.functional.create_surface",
         ".pbuffer.rgb888_no_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000029,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000029,
         "dEQP-EGL.functional.create_surface.",
         "pbuffer.rgba4444_no_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000030,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000030,
         "dEQP-EGL.functional.create_surface",
         ".pbuffer.rgba4444_no_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000031,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000031,
         "dEQP-EGL.functional.create_surface",
         ".pbuffer.rgba4444_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000032,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000032,
         "dEQP-EGL.functional.create_surface.",
         "pbuffer.rgba5551_no_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000033,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000033,
         "dEQP-EGL.functional.create_surface",
         ".pbuffer.rgba5551_no_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000034,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000034,
         "dEQP-EGL.functional.create_surface",
         ".pbuffer.rgba5551_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000035,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000035,
         "dEQP-EGL.functional.create_surface.",
         "pbuffer.rgba8888_no_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000036,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000036,
         "dEQP-EGL.functional.create_surface",
         ".pbuffer.rgba8888_no_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000037,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000037,
         "dEQP-EGL.functional.create_surface",
         ".pbuffer.rgba8888_depth_no_stencil");

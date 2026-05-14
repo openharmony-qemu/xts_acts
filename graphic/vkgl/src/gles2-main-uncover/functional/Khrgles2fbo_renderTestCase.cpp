@@ -16,369 +16,369 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles2BaseFunc.h"
-#include "../ActsKhrgles20001TestSuite.h"
+#include "../ActsGles2MainUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000553,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000553,
         "dEQP-GLES2.functional.fbo.r",
         "ender.color_clear.tex2d_bgra");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000554,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000554,
         "dEQP-GLES2.functional.fbo.render.co",
         "lor_clear.tex2d_bgra_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000555,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000555,
         "dEQP-GLES2.functional.fbo.render.col",
         "or_clear.tex2d_bgra_depth_component16");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000556,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000556,
         "dEQP-GLES2.functional.fbo.render.color_clear",
         ".tex2d_bgra_depth_component16_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000557,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000557,
         "dEQP-GLES2.functional.fbo.",
         "render.color_clear.rbo_bgra");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000558,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000558,
         "dEQP-GLES2.functional.fbo.render.c",
         "olor_clear.rbo_bgra_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000559,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000559,
         "dEQP-GLES2.functional.fbo.render.co",
         "lor_clear.rbo_bgra_depth_component16");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000560,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000560,
         "dEQP-GLES2.functional.fbo.render.color_clea",
         "r.rbo_bgra_depth_component16_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000561,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000561,
         "dEQP-GLES2.functional.fbo.render.ste",
         "ncil_clear.tex2d_bgra_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000562,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000562,
         "dEQP-GLES2.functional.fbo.render.stencil_clea",
         "r.tex2d_bgra_depth_component16_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000563,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000563,
         "dEQP-GLES2.functional.fbo.render.st",
         "encil_clear.rbo_bgra_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000564,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000564,
         "dEQP-GLES2.functional.fbo.render.stencil_cle",
         "ar.rbo_bgra_depth_component16_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000565,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000565,
         "dEQP-GLES2.functional.fbo.",
         "render.color.mix_tex2d_bgra");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000566,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000566,
         "dEQP-GLES2.functional.fbo.render.co",
         "lor.mix_tex2d_bgra_depth_component16");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000567,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000567,
         "dEQP-GLES2.functional.fbo.ren",
         "der.color.mix_npot_tex2d_bgra");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000568,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000568,
         "dEQP-GLES2.functional.fbo.render.color",
         ".mix_npot_tex2d_bgra_depth_component16");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000569,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000569,
         "dEQP-GLES2.functional.fbo.r",
         "ender.color.blend_tex2d_bgra");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000570,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000570,
         "dEQP-GLES2.functional.fbo.render.col",
         "or.blend_tex2d_bgra_depth_component16");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000571,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000571,
         "dEQP-GLES2.functional.fbo.",
         "render.color.blend_rbo_bgra");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000572,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000572,
         "dEQP-GLES2.functional.fbo.render.co",
         "lor.blend_rbo_bgra_depth_component16");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000573,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000573,
         "dEQP-GLES2.functional.fbo.rend",
         "er.color.blend_npot_tex2d_bgra");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000574,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000574,
         "dEQP-GLES2.functional.fbo.render.color.",
         "blend_npot_tex2d_bgra_depth_component16");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000575,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000575,
         "dEQP-GLES2.functional.fbo.ren",
         "der.color.blend_npot_rbo_bgra");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000576,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000576,
         "dEQP-GLES2.functional.fbo.render.color",
         ".blend_npot_rbo_bgra_depth_component16");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000577,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000577,
         "dEQP-GLES2.functional.fbo.render.",
         "depth.tex2d_bgra_depth_component16");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000578,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000578,
         "dEQP-GLES2.functional.fbo.render",
         ".depth.rbo_bgra_depth_component16");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000579,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000579,
         "dEQP-GLES2.functional.fbo.render.dep",
         "th.npot_tex2d_bgra_depth_component16");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000580,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000580,
         "dEQP-GLES2.functional.fbo.render.de",
         "pth.npot_rbo_bgra_depth_component16");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000581,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000581,
         "dEQP-GLES2.functional.fbo.render.",
         "stencil.tex2d_bgra_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000582,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000582,
         "dEQP-GLES2.functional.fbo.render.stencil.t",
         "ex2d_bgra_depth_component16_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000583,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000583,
         "dEQP-GLES2.functional.fbo.render",
         ".stencil.rbo_bgra_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000584,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000584,
         "dEQP-GLES2.functional.fbo.render.stencil.",
         "rbo_bgra_depth_component16_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000585,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000585,
         "dEQP-GLES2.functional.fbo.render.st",
         "encil.npot_tex2d_bgra_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000586,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000586,
         "dEQP-GLES2.functional.fbo.render.stencil.npo",
         "t_tex2d_bgra_depth_component16_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000587,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000587,
         "dEQP-GLES2.functional.fbo.render.s",
         "tencil.npot_rbo_bgra_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000588,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000588,
         "dEQP-GLES2.functional.fbo.render.stencil.np",
         "ot_rbo_bgra_depth_component16_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000589,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000589,
         "dEQP-GLES2.functional.fbo.render.s",
         "hared_colorbuffer_clear.tex2d_bgra");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000590,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000590,
         "dEQP-GLES2.functional.fbo.render.",
         "shared_colorbuffer_clear.rbo_bgra");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000591,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000591,
         "dEQP-GLES2.functional.fbo.rende",
         "r.shared_colorbuffer.tex2d_bgra");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000592,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000592,
         "dEQP-GLES2.functional.fbo.render.share",
         "d_colorbuffer.tex2d_bgra_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000593,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000593,
         "dEQP-GLES2.functional.fbo.render.shared_",
         "colorbuffer.tex2d_bgra_depth_component16");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000594,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000594,
         "dEQP-GLES2.functional.fbo.render.shared_colorbu",
         "ffer.tex2d_bgra_depth_component16_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000595,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000595,
         "dEQP-GLES2.functional.fbo.rend",
         "er.shared_colorbuffer.rbo_bgra");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000596,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000596,
         "dEQP-GLES2.functional.fbo.render.shar",
         "ed_colorbuffer.rbo_bgra_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000597,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000597,
         "dEQP-GLES2.functional.fbo.render.shared",
         "_colorbuffer.rbo_bgra_depth_component16");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000598,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000598,
         "dEQP-GLES2.functional.fbo.render.shared_colorb",
         "uffer.rbo_bgra_depth_component16_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000599,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000599,
         "dEQP-GLES2.functional.fbo.render.shared_",
         "depthbuffer.tex2d_bgra_depth_component16");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000600,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000600,
         "dEQP-GLES2.functional.fbo.render.shared_depthbu",
         "ffer.tex2d_bgra_depth_component16_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000601,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000601,
         "dEQP-GLES2.functional.fbo.render.shared",
         "_depthbuffer.rbo_bgra_depth_component16");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000602,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000602,
         "dEQP-GLES2.functional.fbo.render.shared_depthb",
         "uffer.rbo_bgra_depth_component16_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000603,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000603,
         "dEQP-GLES2.functional.fbo",
         ".render.resize.tex2d_bgra");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000604,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000604,
         "dEQP-GLES2.functional.fbo.render",
         ".resize.tex2d_bgra_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000605,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000605,
         "dEQP-GLES2.functional.fbo.render.r",
         "esize.tex2d_bgra_depth_component16");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000606,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000606,
         "dEQP-GLES2.functional.fbo.render.resize.t",
         "ex2d_bgra_depth_component16_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000607,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000607,
         "dEQP-GLES2.functional.fb",
         "o.render.resize.rbo_bgra");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000608,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000608,
         "dEQP-GLES2.functional.fbo.rende",
         "r.resize.rbo_bgra_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000609,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000609,
         "dEQP-GLES2.functional.fbo.render.",
         "resize.rbo_bgra_depth_component16");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000610,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000610,
         "dEQP-GLES2.functional.fbo.render.resize.",
         "rbo_bgra_depth_component16_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000611,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000611,
         "dEQP-GLES2.functional.fbo.render.re",
         "create_colorbuffer.rebind_tex2d_bgra");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000612,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000612,
         "dEQP-GLES2.functional.fbo.render.recreate_c",
         "olorbuffer.rebind_tex2d_bgra_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000613,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000613,
         "dEQP-GLES2.functional.fbo.render.recreate_co",
         "lorbuffer.rebind_tex2d_bgra_depth_component16");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000614,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000614,
         "dEQP-GLES2.functional.fbo.render.recreate_colorbuffe",
         "r.rebind_tex2d_bgra_depth_component16_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000615,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000615,
         "dEQP-GLES2.functional.fbo.render.r",
         "ecreate_colorbuffer.rebind_rbo_bgra");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000616,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000616,
         "dEQP-GLES2.functional.fbo.render.recreate_",
         "colorbuffer.rebind_rbo_bgra_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000617,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000617,
         "dEQP-GLES2.functional.fbo.render.recreate_c",
         "olorbuffer.rebind_rbo_bgra_depth_component16");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000618,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000618,
         "dEQP-GLES2.functional.fbo.render.recreate_colorbuff",
         "er.rebind_rbo_bgra_depth_component16_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000619,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000619,
         "dEQP-GLES2.functional.fbo.render.recr",
         "eate_colorbuffer.no_rebind_tex2d_bgra");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000620,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000620,
         "dEQP-GLES2.functional.fbo.render.recreate_co",
         "lorbuffer.no_rebind_tex2d_bgra_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000621,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000621,
         "dEQP-GLES2.functional.fbo.render.recreate_colo",
         "rbuffer.no_rebind_tex2d_bgra_depth_component16");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000622,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000622,
         "dEQP-GLES2.functional.fbo.render.recreate_colorbuffer",
         ".no_rebind_tex2d_bgra_depth_component16_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000623,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000623,
         "dEQP-GLES2.functional.fbo.render.rec",
         "reate_colorbuffer.no_rebind_rbo_bgra");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000624,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000624,
         "dEQP-GLES2.functional.fbo.render.recreate_c",
         "olorbuffer.no_rebind_rbo_bgra_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000625,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000625,
         "dEQP-GLES2.functional.fbo.render.recreate_col",
         "orbuffer.no_rebind_rbo_bgra_depth_component16");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000626,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000626,
         "dEQP-GLES2.functional.fbo.render.recreate_colorbuffe",
         "r.no_rebind_rbo_bgra_depth_component16_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000627,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000627,
         "dEQP-GLES2.functional.fbo.render.recreate_de",
         "pthbuffer.rebind_tex2d_bgra_depth_component16");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000628,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000628,
         "dEQP-GLES2.functional.fbo.render.recreate_depthbuffe",
         "r.rebind_tex2d_bgra_depth_component16_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000629,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000629,
         "dEQP-GLES2.functional.fbo.render.recreate_d",
         "epthbuffer.rebind_rbo_bgra_depth_component16");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000630,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000630,
         "dEQP-GLES2.functional.fbo.render.recreate_depthbuff",
         "er.rebind_rbo_bgra_depth_component16_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000631,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000631,
         "dEQP-GLES2.functional.fbo.render.recreate_dept",
         "hbuffer.no_rebind_tex2d_bgra_depth_component16");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000632,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000632,
         "dEQP-GLES2.functional.fbo.render.recreate_depthbuffer",
         ".no_rebind_tex2d_bgra_depth_component16_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000633,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000633,
         "dEQP-GLES2.functional.fbo.render.recreate_dep",
         "thbuffer.no_rebind_rbo_bgra_depth_component16");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000634,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000634,
         "dEQP-GLES2.functional.fbo.render.recreate_depthbuffe",
         "r.no_rebind_rbo_bgra_depth_component16_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000635,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000635,
         "dEQP-GLES2.functional.fbo.render.recreate_st",
         "encilbuffer.rebind_tex2d_bgra_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000636,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000636,
         "dEQP-GLES2.functional.fbo.render.recreate_stencilbuff",
         "er.rebind_tex2d_bgra_depth_component16_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000637,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000637,
         "dEQP-GLES2.functional.fbo.render.recreate_s",
         "tencilbuffer.rebind_rbo_bgra_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000638,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000638,
         "dEQP-GLES2.functional.fbo.render.recreate_stencilbuf",
         "fer.rebind_rbo_bgra_depth_component16_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000639,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000639,
         "dEQP-GLES2.functional.fbo.render.recreate_ste",
         "ncilbuffer.no_rebind_tex2d_bgra_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000640,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000640,
         "dEQP-GLES2.functional.fbo.render.recreate_stencilbuffe",
         "r.no_rebind_tex2d_bgra_depth_component16_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000641,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000641,
         "dEQP-GLES2.functional.fbo.render.recreate_st",
         "encilbuffer.no_rebind_rbo_bgra_stencil_index8");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000642,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000642,
         "dEQP-GLES2.functional.fbo.render.recreate_stencilbuff",
         "er.no_rebind_rbo_bgra_depth_component16_stencil_index8");

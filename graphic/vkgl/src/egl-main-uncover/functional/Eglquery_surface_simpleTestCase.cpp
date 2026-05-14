@@ -16,261 +16,261 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../EglBaseFunc.h"
-#include "../ActsEgl0001TestSuite.h"
+#include "../ActsEglMainUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000120,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000120,
         "dEQP-EGL.functional.query_surface.sim",
         "ple.window.rgb565_no_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000121,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000121,
         "dEQP-EGL.functional.query_surface.s",
         "imple.window.rgb565_no_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000122,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000122,
         "dEQP-EGL.functional.query_surface.s",
         "imple.window.rgb565_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000123,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000123,
         "dEQP-EGL.functional.query_surface.",
         "simple.window.rgb565_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000124,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000124,
         "dEQP-EGL.functional.query_surface.sim",
         "ple.window.rgb888_no_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000125,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000125,
         "dEQP-EGL.functional.query_surface.s",
         "imple.window.rgb888_no_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000126,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000126,
         "dEQP-EGL.functional.query_surface.s",
         "imple.window.rgb888_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000127,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000127,
         "dEQP-EGL.functional.query_surface.",
         "simple.window.rgb888_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000128,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000128,
         "dEQP-EGL.functional.query_surface.simp",
         "le.window.rgba4444_no_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000129,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000129,
         "dEQP-EGL.functional.query_surface.si",
         "mple.window.rgba4444_no_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000130,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000130,
         "dEQP-EGL.functional.query_surface.si",
         "mple.window.rgba4444_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000131,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000131,
         "dEQP-EGL.functional.query_surface.s",
         "imple.window.rgba4444_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000132,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000132,
         "dEQP-EGL.functional.query_surface.simp",
         "le.window.rgba5551_no_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000133,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000133,
         "dEQP-EGL.functional.query_surface.si",
         "mple.window.rgba5551_no_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000134,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000134,
         "dEQP-EGL.functional.query_surface.si",
         "mple.window.rgba5551_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000135,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000135,
         "dEQP-EGL.functional.query_surface.s",
         "imple.window.rgba5551_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000136,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000136,
         "dEQP-EGL.functional.query_surface.simp",
         "le.window.rgba8888_no_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000137,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000137,
         "dEQP-EGL.functional.query_surface.si",
         "mple.window.rgba8888_no_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000138,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000138,
         "dEQP-EGL.functional.query_surface.si",
         "mple.window.rgba8888_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000139,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000139,
         "dEQP-EGL.functional.query_surface.s",
         "imple.window.rgba8888_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000140,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000140,
         "dEQP-EGL.functional.query_",
         "surface.simple.window.other");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000141,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000141,
         "dEQP-EGL.functional.query_surface.sim",
         "ple.pixmap.rgb565_no_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000142,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000142,
         "dEQP-EGL.functional.query_surface.s",
         "imple.pixmap.rgb565_no_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000143,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000143,
         "dEQP-EGL.functional.query_surface.s",
         "imple.pixmap.rgb565_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000144,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000144,
         "dEQP-EGL.functional.query_surface.",
         "simple.pixmap.rgb565_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000145,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000145,
         "dEQP-EGL.functional.query_surface.sim",
         "ple.pixmap.rgb888_no_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000146,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000146,
         "dEQP-EGL.functional.query_surface.s",
         "imple.pixmap.rgb888_no_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000147,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000147,
         "dEQP-EGL.functional.query_surface.s",
         "imple.pixmap.rgb888_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000148,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000148,
         "dEQP-EGL.functional.query_surface.",
         "simple.pixmap.rgb888_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000149,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000149,
         "dEQP-EGL.functional.query_surface.simp",
         "le.pixmap.rgba4444_no_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000150,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000150,
         "dEQP-EGL.functional.query_surface.si",
         "mple.pixmap.rgba4444_no_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000151,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000151,
         "dEQP-EGL.functional.query_surface.si",
         "mple.pixmap.rgba4444_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000152,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000152,
         "dEQP-EGL.functional.query_surface.s",
         "imple.pixmap.rgba4444_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000153,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000153,
         "dEQP-EGL.functional.query_surface.simp",
         "le.pixmap.rgba5551_no_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000154,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000154,
         "dEQP-EGL.functional.query_surface.si",
         "mple.pixmap.rgba5551_no_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000155,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000155,
         "dEQP-EGL.functional.query_surface.si",
         "mple.pixmap.rgba5551_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000156,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000156,
         "dEQP-EGL.functional.query_surface.s",
         "imple.pixmap.rgba5551_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000157,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000157,
         "dEQP-EGL.functional.query_surface.simp",
         "le.pixmap.rgba8888_no_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000158,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000158,
         "dEQP-EGL.functional.query_surface.si",
         "mple.pixmap.rgba8888_no_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000159,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000159,
         "dEQP-EGL.functional.query_surface.si",
         "mple.pixmap.rgba8888_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000160,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000160,
         "dEQP-EGL.functional.query_surface.s",
         "imple.pixmap.rgba8888_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000161,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000161,
         "dEQP-EGL.functional.query_",
         "surface.simple.pixmap.other");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000162,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000162,
         "dEQP-EGL.functional.query_surface.sim",
         "ple.pbuffer.rgb565_no_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000163,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000163,
         "dEQP-EGL.functional.query_surface.si",
         "mple.pbuffer.rgb565_no_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000164,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000164,
         "dEQP-EGL.functional.query_surface.si",
         "mple.pbuffer.rgb565_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000165,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000165,
         "dEQP-EGL.functional.query_surface.",
         "simple.pbuffer.rgb565_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000166,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000166,
         "dEQP-EGL.functional.query_surface.sim",
         "ple.pbuffer.rgb888_no_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000167,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000167,
         "dEQP-EGL.functional.query_surface.si",
         "mple.pbuffer.rgb888_no_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000168,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000168,
         "dEQP-EGL.functional.query_surface.si",
         "mple.pbuffer.rgb888_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000169,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000169,
         "dEQP-EGL.functional.query_surface.",
         "simple.pbuffer.rgb888_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000170,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000170,
         "dEQP-EGL.functional.query_surface.simp",
         "le.pbuffer.rgba4444_no_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000171,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000171,
         "dEQP-EGL.functional.query_surface.sim",
         "ple.pbuffer.rgba4444_no_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000172,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000172,
         "dEQP-EGL.functional.query_surface.sim",
         "ple.pbuffer.rgba4444_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000173,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000173,
         "dEQP-EGL.functional.query_surface.s",
         "imple.pbuffer.rgba4444_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000174,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000174,
         "dEQP-EGL.functional.query_surface.simp",
         "le.pbuffer.rgba5551_no_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000175,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000175,
         "dEQP-EGL.functional.query_surface.sim",
         "ple.pbuffer.rgba5551_no_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000176,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000176,
         "dEQP-EGL.functional.query_surface.sim",
         "ple.pbuffer.rgba5551_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000177,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000177,
         "dEQP-EGL.functional.query_surface.s",
         "imple.pbuffer.rgba5551_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000178,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000178,
         "dEQP-EGL.functional.query_surface.simp",
         "le.pbuffer.rgba8888_no_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000179,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000179,
         "dEQP-EGL.functional.query_surface.sim",
         "ple.pbuffer.rgba8888_no_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000180,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000180,
         "dEQP-EGL.functional.query_surface.sim",
         "ple.pbuffer.rgba8888_depth_no_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000181,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000181,
         "dEQP-EGL.functional.query_surface.s",
         "imple.pbuffer.rgba8888_depth_stencil");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000182,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000182,
         "dEQP-EGL.functional.query_s",
         "urface.simple.pbuffer.other");

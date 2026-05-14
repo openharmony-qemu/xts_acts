@@ -16,81 +16,81 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles3BaseFunc.h"
-#include "../ActsKhrgles30001TestSuite.h"
+#include "../ActsGles3MainUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000304,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000304,
         "dEQP-GLES3.functional.draw_buffers_indexed.",
         "overwrite_common.common_enable_buffer_enable");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000305,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000305,
         "dEQP-GLES3.functional.draw_buffers_indexed.o",
         "verwrite_common.common_disable_buffer_disable");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000306,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000306,
         "dEQP-GLES3.functional.draw_buffers_indexed.o",
         "verwrite_common.common_disable_buffer_enable");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000307,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000307,
         "dEQP-GLES3.functional.draw_buffers_indexed.o",
         "verwrite_common.common_enable_buffer_disable");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000308,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000308,
         "dEQP-GLES3.functional.draw_buffers_indexed.ov",
         "erwrite_common.common_blend_eq_buffer_blend_eq");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000309,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000309,
         "dEQP-GLES3.functional.draw_buffers_indexed.overwri",
         "te_common.common_blend_eq_buffer_separate_blend_eq");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000310,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000310,
         "dEQP-GLES3.functional.draw_buffers_indexed.overwri",
         "te_common.common_blend_eq_buffer_advanced_blend_eq");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000311,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000311,
         "dEQP-GLES3.functional.draw_buffers_indexed.overwri",
         "te_common.common_separate_blend_eq_buffer_blend_eq");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000312,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000312,
         "dEQP-GLES3.functional.draw_buffers_indexed.overwrite_c",
         "ommon.common_separate_blend_eq_buffer_separate_blend_eq");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000313,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000313,
         "dEQP-GLES3.functional.draw_buffers_indexed.overwrite_c",
         "ommon.common_separate_blend_eq_buffer_advanced_blend_eq");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000314,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000314,
         "dEQP-GLES3.functional.draw_buffers_indexed.overwri",
         "te_common.common_advanced_blend_eq_buffer_blend_eq");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000315,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000315,
         "dEQP-GLES3.functional.draw_buffers_indexed.overwrite_c",
         "ommon.common_advanced_blend_eq_buffer_separate_blend_eq");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000316,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000316,
         "dEQP-GLES3.functional.draw_buffers_indexed.overwrite_c",
         "ommon.common_advanced_blend_eq_buffer_advanced_blend_eq");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000317,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000317,
         "dEQP-GLES3.functional.draw_buffers_indexed.over",
         "write_common.common_blend_func_buffer_blend_func");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000318,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000318,
         "dEQP-GLES3.functional.draw_buffers_indexed.overwrite",
         "_common.common_blend_func_buffer_separate_blend_func");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000319,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000319,
         "dEQP-GLES3.functional.draw_buffers_indexed.overwrite",
         "_common.common_separate_blend_func_buffer_blend_func");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000320,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000320,
         "dEQP-GLES3.functional.draw_buffers_indexed.overwrite_com",
         "mon.common_separate_blend_func_buffer_separate_blend_func");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000321,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000321,
         "dEQP-GLES3.functional.draw_buffers_indexed.over",
         "write_common.common_color_mask_buffer_color_mask");

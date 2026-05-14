@@ -16,13 +16,13 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../EglBaseFunc.h"
-#include "../ActsEgl0001TestSuite.h"
+#include "../ActsEglInternalApiTestsUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000001,
+static SHRINK_HWTEST_F(ActsEglInternalApiTestsUncover0001TestSuite, TestCase_000001,
         "dEQP-EGL.functional.im",
         "age.*.*and1roid_native*");

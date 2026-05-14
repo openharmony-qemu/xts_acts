@@ -16,17 +16,17 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles3BaseFunc.h"
-#include "../ActsKhrgles30001TestSuite.h"
+#include "../ActsGles3MainUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000289,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000289,
         "dEQP-GLES3.functional.negative_ap",
         "i.shader.redeclaring_gl_frag_depth");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000290,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000290,
         "dEQP-GLES3.functional.negative_api.shader.re",
         "declaring_gl_frag_depth_extension_not_enabled");

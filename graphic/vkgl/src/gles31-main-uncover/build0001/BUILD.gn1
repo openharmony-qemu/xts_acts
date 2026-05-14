@@ -131,11 +131,11 @@ ohos_static_library("libkhrgles31func0001") {
   configs = [ ":deqp_platform_ohos_config" ]
 }
 
-ohos_moduletest_suite("ActsKhrgles31TestSuite0001") {
+ohos_moduletest_suite("ActsGles31MainUncoverTestSuite0001") {
   subsystem_name = "graphic"
   part_name = "graphic_2d"
   sources = [ 
-    "../ActsKhrgles310001TestSuite.cpp",
+    "../ActsGles31MainUncover0001TestSuite.cpp",
     "../functional/Khrgles31shaders_framebuffer_fetchTestCase.cpp",
     "../functional/Khrgles31image_load_store_2dTestCase.cpp",
     "../functional/Khrgles31image_load_store_cubeTestCase.cpp",

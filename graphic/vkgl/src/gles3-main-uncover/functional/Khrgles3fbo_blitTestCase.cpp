@@ -16,113 +16,113 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles3BaseFunc.h"
-#include "../ActsKhrgles30001TestSuite.h"
+#include "../ActsGles3MainUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000263,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000263,
         "dEQP-GLES3.functional.fbo.blit.rect.",
         "nearest_consistency_out_of_bounds_mag");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000264,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000264,
         "dEQP-GLES3.functional.fbo.blit.rect.nearest",
         "_consistency_out_of_bounds_mag_reverse_src_x");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000265,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000265,
         "dEQP-GLES3.functional.fbo.blit.rect.nearest",
         "_consistency_out_of_bounds_mag_reverse_src_y");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000266,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000266,
         "dEQP-GLES3.functional.fbo.blit.rect.nearest",
         "_consistency_out_of_bounds_mag_reverse_dst_x");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000267,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000267,
         "dEQP-GLES3.functional.fbo.blit.rect.nearest",
         "_consistency_out_of_bounds_mag_reverse_dst_y");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000268,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000268,
         "dEQP-GLES3.functional.fbo.blit.rect.nearest_c",
         "onsistency_out_of_bounds_mag_reverse_src_dst_x");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000269,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000269,
         "dEQP-GLES3.functional.fbo.blit.rect.nearest_c",
         "onsistency_out_of_bounds_mag_reverse_src_dst_y");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000270,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000270,
         "dEQP-GLES3.functional.fbo.blit.rect.",
         "nearest_consistency_out_of_bounds_min");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000271,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000271,
         "dEQP-GLES3.functional.fbo.blit.rect.nearest",
         "_consistency_out_of_bounds_min_reverse_src_x");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000272,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000272,
         "dEQP-GLES3.functional.fbo.blit.rect.nearest",
         "_consistency_out_of_bounds_min_reverse_src_y");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000273,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000273,
         "dEQP-GLES3.functional.fbo.blit.rect.nearest",
         "_consistency_out_of_bounds_min_reverse_dst_x");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000274,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000274,
         "dEQP-GLES3.functional.fbo.blit.rect.nearest",
         "_consistency_out_of_bounds_min_reverse_dst_y");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000275,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000275,
         "dEQP-GLES3.functional.fbo.blit.rect.nearest_c",
         "onsistency_out_of_bounds_min_reverse_src_dst_x");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000276,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000276,
         "dEQP-GLES3.functional.fbo.blit.rect.nearest_c",
         "onsistency_out_of_bounds_min_reverse_src_dst_y");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000277,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000277,
         "dEQP-GLES3.functional.fbo.blit.depth_stenc",
         "il.depth_component32f_stencil_index8_basic");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000278,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000278,
         "dEQP-GLES3.functional.fbo.blit.depth_stenc",
         "il.depth_component32f_stencil_index8_scale");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000279,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000279,
         "dEQP-GLES3.functional.fbo.blit.depth_stencil",
         ".depth_component32f_stencil_index8_depth_only");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000280,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000280,
         "dEQP-GLES3.functional.fbo.blit.depth_stencil.",
         "depth_component32f_stencil_index8_stencil_only");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000281,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000281,
         "dEQP-GLES3.functional.fbo.blit.depth_sten",
         "cil.depth_component24_stencil_index8_basic");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000282,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000282,
         "dEQP-GLES3.functional.fbo.blit.depth_sten",
         "cil.depth_component24_stencil_index8_scale");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000283,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000283,
         "dEQP-GLES3.functional.fbo.blit.depth_stencil",
         ".depth_component24_stencil_index8_depth_only");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000284,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000284,
         "dEQP-GLES3.functional.fbo.blit.depth_stencil.",
         "depth_component24_stencil_index8_stencil_only");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000285,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000285,
         "dEQP-GLES3.functional.fbo.blit.depth_sten",
         "cil.depth_component16_stencil_index8_basic");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000286,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000286,
         "dEQP-GLES3.functional.fbo.blit.depth_sten",
         "cil.depth_component16_stencil_index8_scale");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000287,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000287,
         "dEQP-GLES3.functional.fbo.blit.depth_stencil",
         ".depth_component16_stencil_index8_depth_only");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000288,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000288,
         "dEQP-GLES3.functional.fbo.blit.depth_stencil.",
         "depth_component16_stencil_index8_stencil_only");
