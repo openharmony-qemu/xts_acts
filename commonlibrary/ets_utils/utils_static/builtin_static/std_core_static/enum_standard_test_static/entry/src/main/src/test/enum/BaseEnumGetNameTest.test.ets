@@ -30,7 +30,7 @@ export default function BaseEnumGetNameTest(): void {
 
     /**
      * @tc.name testBaseEnumGetName001
-     * @tc.number SUB_BASEENUM_GETNAME_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_GETNAME_0100
      * @tc.desc Verify BaseEnum getName with no arguments returns correct name
      * @tc.type Function
      * @tc.size MediumTest
@@ -44,7 +44,7 @@ export default function BaseEnumGetNameTest(): void {
 
     /**
      * @tc.name testBaseEnumGetName002
-     * @tc.number SUB_BASEENUM_GETNAME_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_GETNAME_0200
      * @tc.desc Verify BaseEnum getName compile-time safety for extra parameters
      * @tc.type Function
      * @tc.size MediumTest
@@ -58,7 +58,7 @@ export default function BaseEnumGetNameTest(): void {
 
     /**
      * @tc.name testBaseEnumGetName003
-     * @tc.number SUB_BASEENUM_GETNAME_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_GETNAME_0300
      * @tc.desc Verify BaseEnum getName returns correct standard name
      * @tc.type Function
      * @tc.size MediumTest
@@ -72,7 +72,7 @@ export default function BaseEnumGetNameTest(): void {
 
     /**
      * @tc.name testBaseEnumGetName004
-     * @tc.number SUB_BASEENUM_GETNAME_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_GETNAME_0400
      * @tc.desc Verify BaseEnum getName works correctly for int generic type
      * @tc.type Function
      * @tc.size MediumTest
@@ -85,7 +85,7 @@ export default function BaseEnumGetNameTest(): void {
 
     /**
      * @tc.name testBaseEnumGetName005
-     * @tc.number SUB_BASEENUM_GETNAME_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_GETNAME_0500
      * @tc.desc Verify BaseEnum getName works correctly for byte generic type
      * @tc.type Function
      * @tc.size MediumTest
@@ -98,7 +98,7 @@ export default function BaseEnumGetNameTest(): void {
 
     /**
      * @tc.name testBaseEnumGetName006
-     * @tc.number SUB_BASEENUM_GETNAME_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_GETNAME_0600
      * @tc.desc Verify BaseEnum getName works correctly for short generic type
      * @tc.type Function
      * @tc.size MediumTest
@@ -111,7 +111,7 @@ export default function BaseEnumGetNameTest(): void {
 
     /**
      * @tc.name testBaseEnumGetName007
-     * @tc.number SUB_BASEENUM_GETNAME_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_GETNAME_0700
      * @tc.desc Verify BaseEnum getName works correctly for long generic type
      * @tc.type Function
      * @tc.size MediumTest
@@ -124,7 +124,7 @@ export default function BaseEnumGetNameTest(): void {
 
     /**
      * @tc.name testBaseEnumGetName008
-     * @tc.number SUB_BASEENUM_GETNAME_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_GETNAME_0800
      * @tc.desc Verify BaseEnum getName works correctly for float generic type
      * @tc.type Function
      * @tc.size MediumTest
@@ -137,7 +137,7 @@ export default function BaseEnumGetNameTest(): void {
 
     /**
      * @tc.name testBaseEnumGetName009
-     * @tc.number SUB_BASEENUM_GETNAME_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_GETNAME_0900
      * @tc.desc Verify BaseEnum getName works correctly for double generic type
      * @tc.type Function
      * @tc.size MediumTest
@@ -150,7 +150,7 @@ export default function BaseEnumGetNameTest(): void {
 
     /**
      * @tc.name testBaseEnumGetName010
-     * @tc.number SUB_BASEENUM_GETNAME_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_GETNAME_1000
      * @tc.desc Verify BaseEnum getName works correctly for string generic type
      * @tc.type Function
      * @tc.size MediumTest
@@ -163,7 +163,7 @@ export default function BaseEnumGetNameTest(): void {
 
     /**
      * @tc.name testBaseEnumGetName011
-     * @tc.number SUB_BASEENUM_GETNAME_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_GETNAME_1100
      * @tc.desc Verify BaseEnum getName returns empty string when name is empty
      * @tc.type Function
      * @tc.size MediumTest
@@ -178,7 +178,7 @@ export default function BaseEnumGetNameTest(): void {
 
     /**
      * @tc.name testBaseEnumGetName012
-     * @tc.number SUB_BASEENUM_GETNAME_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_GETNAME_1200
      * @tc.desc Verify BaseEnum getName returns single character name
      * @tc.type Function
      * @tc.size MediumTest
@@ -192,7 +192,7 @@ export default function BaseEnumGetNameTest(): void {
 
     /**
      * @tc.name testBaseEnumGetName013
-     * @tc.number SUB_BASEENUM_GETNAME_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_GETNAME_1300
      * @tc.desc Verify BaseEnum getName handles names with leading, trailing, and middle spaces
      * @tc.type Function
      * @tc.size MediumTest
@@ -209,7 +209,7 @@ export default function BaseEnumGetNameTest(): void {
 
     /**
      * @tc.name testBaseEnumGetName014
-     * @tc.number SUB_BASEENUM_GETNAME_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_GETNAME_1400
      * @tc.desc Verify BaseEnum getName handles names with special characters
      * @tc.type Function
      * @tc.size MediumTest
@@ -222,7 +222,7 @@ export default function BaseEnumGetNameTest(): void {
 
     /**
      * @tc.name testBaseEnumGetName015
-     * @tc.number SUB_BASEENUM_GETNAME_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_GETNAME_1500
      * @tc.desc Verify BaseEnum getName handles names with escape characters
      * @tc.type Function
      * @tc.size MediumTest
@@ -235,7 +235,7 @@ export default function BaseEnumGetNameTest(): void {
 
     /**
      * @tc.name testBaseEnumGetName016
-     * @tc.number SUB_BASEENUM_GETNAME_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_GETNAME_1600
      * @tc.desc Verify BaseEnum getName handles Unicode names
      * @tc.type Function
      * @tc.size MediumTest
@@ -252,7 +252,7 @@ export default function BaseEnumGetNameTest(): void {
 
     /**
      * @tc.name testBaseEnumGetName017
-     * @tc.number SUB_BASEENUM_GETNAME_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_GETNAME_1700
      * @tc.desc Verify BaseEnum getName handles names with numeric characters
      * @tc.type Function
      * @tc.size MediumTest
@@ -267,7 +267,7 @@ export default function BaseEnumGetNameTest(): void {
 
     /**
      * @tc.name testBaseEnumGetName018
-     * @tc.number SUB_BASEENUM_GETNAME_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_GETNAME_1800
      * @tc.desc Verify BaseEnum getName handles long string names (1000 characters)
      * @tc.type Function
      * @tc.size MediumTest
@@ -282,7 +282,7 @@ export default function BaseEnumGetNameTest(): void {
 
     /**
      * @tc.name testBaseEnumGetName019
-     * @tc.number SUB_BASEENUM_GETNAME_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_GETNAME_1900
      * @tc.desc Verify BaseEnum getName handles names with zero-width space
      * @tc.type Function
      * @tc.size MediumTest
@@ -295,7 +295,7 @@ export default function BaseEnumGetNameTest(): void {
 
     /**
      * @tc.name testBaseEnumGetName020
-     * @tc.number SUB_BASEENUM_GETNAME_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_GETNAME_2000
      * @tc.desc Verify BaseEnum getName return value type is string
      * @tc.type Function
      * @tc.size MediumTest
@@ -309,7 +309,7 @@ export default function BaseEnumGetNameTest(): void {
 
     /**
      * @tc.name testBaseEnumGetName021
-     * @tc.number SUB_BASEENUM_GETNAME_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_GETNAME_2100
      * @tc.desc Verify BaseEnum getName return value is not null
      * @tc.type Function
      * @tc.size MediumTest
@@ -323,7 +323,7 @@ export default function BaseEnumGetNameTest(): void {
 
     /**
      * @tc.name testBaseEnumGetName022
-     * @tc.number SUB_BASEENUM_GETNAME_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_GETNAME_2200
      * @tc.desc Verify BaseEnum getName return value is not undefined
      * @tc.type Function
      * @tc.size MediumTest
@@ -337,7 +337,7 @@ export default function BaseEnumGetNameTest(): void {
 
     /**
      * @tc.name testBaseEnumGetName023
-     * @tc.number SUB_BASEENUM_GETNAME_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_GETNAME_2300
      * @tc.desc Verify BaseEnum getName returns consistent value on multiple calls
      * @tc.type Function
      * @tc.size MediumTest
@@ -355,7 +355,7 @@ export default function BaseEnumGetNameTest(): void {
 
     /**
      * @tc.name testBaseEnumGetName024
-     * @tc.number SUB_BASEENUM_GETNAME_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_GETNAME_2400
      * @tc.desc Verify BaseEnum getName returns independent values for different instances
      * @tc.type Function
      * @tc.size MediumTest
@@ -372,7 +372,7 @@ export default function BaseEnumGetNameTest(): void {
 
     /**
      * @tc.name testBaseEnumGetName025
-     * @tc.number SUB_BASEENUM_GETNAME_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_GETNAME_2500
      * @tc.desc Verify BaseEnum getName returns same name across different generic types
      * @tc.type Function
      * @tc.size MediumTest
@@ -389,7 +389,7 @@ export default function BaseEnumGetNameTest(): void {
 
     /**
      * @tc.name testBaseEnumGetName026
-     * @tc.number SUB_BASEENUM_GETNAME_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_GETNAME_2600
      * @tc.desc Verify BaseEnum getName returns different names for same value with different names
      * @tc.type Function
      * @tc.size MediumTest
@@ -404,7 +404,7 @@ export default function BaseEnumGetNameTest(): void {
 
     /**
      * @tc.name testBaseEnumGetName027
-     * @tc.number SUB_BASEENUM_GETNAME_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_GETNAME_2700
      * @tc.desc Verify BaseEnum getName remains immutable after construction
      * @tc.type Function
      * @tc.size MediumTest
@@ -419,7 +419,7 @@ export default function BaseEnumGetNameTest(): void {
 
     /**
      * @tc.name testBaseEnumGetName028
-     * @tc.number SUB_BASEENUM_GETNAME_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_GETNAME_2800
      * @tc.desc Verify BaseEnum getName does not throw exception in normal case
      * @tc.type Function
      * @tc.size MediumTest
@@ -437,7 +437,7 @@ export default function BaseEnumGetNameTest(): void {
 
     /**
      * @tc.name testBaseEnumGetName029
-     * @tc.number SUB_BASEENUM_GETNAME_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_GETNAME_2900
      * @tc.desc Verify BaseEnum getName in try-catch-finally does not enter catch
      * @tc.type Function
      * @tc.size MediumTest
@@ -457,7 +457,7 @@ export default function BaseEnumGetNameTest(): void {
 
     /**
      * @tc.name testBaseEnumGetName030
-     * @tc.number SUB_BASEENUM_GETNAME_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_GETNAME_3000
      * @tc.desc Verify BaseEnum getName throws when called on null reference
      * @tc.type Function
      * @tc.size MediumTest
@@ -474,7 +474,7 @@ export default function BaseEnumGetNameTest(): void {
 
     /**
      * @tc.name testBaseEnumGetName031
-     * @tc.number SUB_BASEENUM_GETNAME_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_GETNAME_3100
      * @tc.desc Verify BaseEnum getName throws when called on undefined reference
      * @tc.type Function
      * @tc.size MediumTest

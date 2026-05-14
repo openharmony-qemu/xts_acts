@@ -30,7 +30,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf001
-     * @tc.number SUB_BASEENUM_VALUEOF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_0100
      * @tc.desc Verify valueOf normal call without parameters returns underlying value
      * @tc.type Function
      * @tc.size MediumTest
@@ -44,7 +44,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf002
-     * @tc.number SUB_BASEENUM_VALUEOF_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_0200
      * @tc.desc Verify valueOf no-argument call for string type returns correct value
      * @tc.type Function
      * @tc.size MediumTest
@@ -58,7 +58,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf003
-     * @tc.number SUB_BASEENUM_VALUEOF_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_0300
      * @tc.desc Verify method handles extra parameters gracefully or throws error
      * @tc.type Function
      * @tc.size MediumTest
@@ -71,7 +71,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf004
-     * @tc.number SUB_BASEENUM_VALUEOF_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_0400
      * @tc.desc Verify method handles multiple extra parameters gracefully or throws error
      * @tc.type Function
      * @tc.size MediumTest
@@ -84,7 +84,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf005
-     * @tc.number SUB_BASEENUM_VALUEOF_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_0500
      * @tc.desc Verify method behavior when passing null as argument
      * @tc.type Function
      * @tc.size MediumTest
@@ -97,7 +97,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf006
-     * @tc.number SUB_BASEENUM_VALUEOF_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_0600
      * @tc.desc Verify method behavior when passing undefined as argument
      * @tc.type Function
      * @tc.size MediumTest
@@ -110,7 +110,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf007
-     * @tc.number SUB_BASEENUM_VALUEOF_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_0700
      * @tc.desc Verify valueOf returns correct normal value for byte type
      * @tc.type Function
      * @tc.size MediumTest
@@ -124,7 +124,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf008
-     * @tc.number SUB_BASEENUM_VALUEOF_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_0800
      * @tc.desc Verify valueOf returns zero value for byte type
      * @tc.type Function
      * @tc.size MediumTest
@@ -138,7 +138,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf009
-     * @tc.number SUB_BASEENUM_VALUEOF_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_0900
      * @tc.desc Verify valueOf returns negative value for byte type
      * @tc.type Function
      * @tc.size MediumTest
@@ -152,7 +152,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf010
-     * @tc.number SUB_BASEENUM_VALUEOF_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_1000
      * @tc.desc Verify valueOf returns hexadecimal value for byte type
      * @tc.type Function
      * @tc.size MediumTest
@@ -166,7 +166,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf011
-     * @tc.number SUB_BASEENUM_VALUEOF_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_1100
      * @tc.desc Verify valueOf returns maximum value 127 for byte type
      * @tc.type Function
      * @tc.size MediumTest
@@ -180,7 +180,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf012
-     * @tc.number SUB_BASEENUM_VALUEOF_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_1200
      * @tc.desc Verify valueOf returns minimum value -128 for byte type
      * @tc.type Function
      * @tc.size MediumTest
@@ -194,7 +194,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf013
-     * @tc.number SUB_BASEENUM_VALUEOF_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_1300
      * @tc.desc Verify valueOf returns correct normal value for short type
      * @tc.type Function
      * @tc.size MediumTest
@@ -208,7 +208,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf014
-     * @tc.number SUB_BASEENUM_VALUEOF_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_1400
      * @tc.desc Verify valueOf returns zero value for short type
      * @tc.type Function
      * @tc.size MediumTest
@@ -222,7 +222,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf015
-     * @tc.number SUB_BASEENUM_VALUEOF_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_1500
      * @tc.desc Verify valueOf returns hexadecimal value for short type
      * @tc.type Function
      * @tc.size MediumTest
@@ -236,7 +236,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf016
-     * @tc.number SUB_BASEENUM_VALUEOF_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_1600
      * @tc.desc Verify valueOf returns negative value for short type
      * @tc.type Function
      * @tc.size MediumTest
@@ -250,7 +250,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf017
-     * @tc.number SUB_BASEENUM_VALUEOF_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_1700
      * @tc.desc Verify valueOf returns maximum value 32767 for short type
      * @tc.type Function
      * @tc.size MediumTest
@@ -264,7 +264,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf018
-     * @tc.number SUB_BASEENUM_VALUEOF_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_1800
      * @tc.desc Verify valueOf returns minimum value -32768 for short type
      * @tc.type Function
      * @tc.size MediumTest
@@ -278,7 +278,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf019
-     * @tc.number SUB_BASEENUM_VALUEOF_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_1900
      * @tc.desc Verify valueOf returns correct normal value for int type
      * @tc.type Function
      * @tc.size MediumTest
@@ -292,7 +292,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf020
-     * @tc.number SUB_BASEENUM_VALUEOF_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_2000
      * @tc.desc Verify valueOf returns zero value for int type
      * @tc.type Function
      * @tc.size MediumTest
@@ -306,7 +306,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf021
-     * @tc.number SUB_BASEENUM_VALUEOF_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_2100
      * @tc.desc Verify valueOf returns hexadecimal value for int type
      * @tc.type Function
      * @tc.size MediumTest
@@ -320,7 +320,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf022
-     * @tc.number SUB_BASEENUM_VALUEOF_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_2200
      * @tc.desc Verify valueOf returns octal value for int type
      * @tc.type Function
      * @tc.size MediumTest
@@ -334,7 +334,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf023
-     * @tc.number SUB_BASEENUM_VALUEOF_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_2300
      * @tc.desc Verify valueOf returns binary value for int type
      * @tc.type Function
      * @tc.size MediumTest
@@ -348,7 +348,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf024
-     * @tc.number SUB_BASEENUM_VALUEOF_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_2400
      * @tc.desc Verify valueOf returns negative value for int type
      * @tc.type Function
      * @tc.size MediumTest
@@ -362,7 +362,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf025
-     * @tc.number SUB_BASEENUM_VALUEOF_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_2500
      * @tc.desc Verify valueOf returns maximum value 2147483647 for int type
      * @tc.type Function
      * @tc.size MediumTest
@@ -376,7 +376,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf026
-     * @tc.number SUB_BASEENUM_VALUEOF_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_2600
      * @tc.desc Verify valueOf returns minimum value -2147483648 for int type
      * @tc.type Function
      * @tc.size MediumTest
@@ -390,7 +390,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf027
-     * @tc.number SUB_BASEENUM_VALUEOF_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_2700
      * @tc.desc Verify valueOf returns correct normal value for long type
      * @tc.type Function
      * @tc.size MediumTest
@@ -404,7 +404,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf028
-     * @tc.number SUB_BASEENUM_VALUEOF_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_2800
      * @tc.desc Verify valueOf returns zero value for long type
      * @tc.type Function
      * @tc.size MediumTest
@@ -418,7 +418,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf029
-     * @tc.number SUB_BASEENUM_VALUEOF_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_2900
      * @tc.desc Verify valueOf returns hexadecimal value for long type
      * @tc.type Function
      * @tc.size MediumTest
@@ -432,7 +432,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf030
-     * @tc.number SUB_BASEENUM_VALUEOF_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_3000
      * @tc.desc Verify valueOf returns negative value for long type
      * @tc.type Function
      * @tc.size MediumTest
@@ -446,7 +446,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf031
-     * @tc.number SUB_BASEENUM_VALUEOF_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_3100
      * @tc.desc Verify valueOf returns large business number value for long type
      * @tc.type Function
      * @tc.size MediumTest
@@ -460,7 +460,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf032
-     * @tc.number SUB_BASEENUM_VALUEOF_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_3200
      * @tc.desc Verify valueOf returns maximum value for long type
      * @tc.type Function
      * @tc.size MediumTest
@@ -474,7 +474,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf033
-     * @tc.number SUB_BASEENUM_VALUEOF_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_3300
      * @tc.desc Verify valueOf returns minimum value for long type
      * @tc.type Function
      * @tc.size MediumTest
@@ -488,7 +488,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf034
-     * @tc.number SUB_BASEENUM_VALUEOF_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_3400
      * @tc.desc Verify valueOf returns correct normal value for float type
      * @tc.type Function
      * @tc.size MediumTest
@@ -502,7 +502,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf035
-     * @tc.number SUB_BASEENUM_VALUEOF_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_3500
      * @tc.desc Verify valueOf returns zero value for float type
      * @tc.type Function
      * @tc.size MediumTest
@@ -516,7 +516,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf036
-     * @tc.number SUB_BASEENUM_VALUEOF_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_3600
      * @tc.desc Verify valueOf returns negative value for float type
      * @tc.type Function
      * @tc.size MediumTest
@@ -530,7 +530,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf037
-     * @tc.number SUB_BASEENUM_VALUEOF_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_3700
      * @tc.desc Verify valueOf returns scientific notation value for float type
      * @tc.type Function
      * @tc.size MediumTest
@@ -544,7 +544,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf038
-     * @tc.number SUB_BASEENUM_VALUEOF_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_3800
      * @tc.desc Verify valueOf returns hexadecimal float value for float type
      * @tc.type Function
      * @tc.size MediumTest
@@ -558,7 +558,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf039
-     * @tc.number SUB_BASEENUM_VALUEOF_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_3900
      * @tc.desc Verify valueOf returns Float.MAX_VALUE for float type
      * @tc.type Function
      * @tc.size MediumTest
@@ -572,7 +572,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf040
-     * @tc.number SUB_BASEENUM_VALUEOF_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_4000
      * @tc.desc Verify valueOf returns Float.MIN_VALUE minimum positive for float type
      * @tc.type Function
      * @tc.size MediumTest
@@ -586,7 +586,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf041
-     * @tc.number SUB_BASEENUM_VALUEOF_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_4100
      * @tc.desc Verify valueOf returns correct normal value for double type
      * @tc.type Function
      * @tc.size MediumTest
@@ -600,7 +600,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf042
-     * @tc.number SUB_BASEENUM_VALUEOF_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_4200
      * @tc.desc Verify valueOf returns zero value for double type
      * @tc.type Function
      * @tc.size MediumTest
@@ -614,7 +614,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf043
-     * @tc.number SUB_BASEENUM_VALUEOF_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_4300
      * @tc.desc Verify valueOf returns negative value for double type
      * @tc.type Function
      * @tc.size MediumTest
@@ -628,7 +628,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf044
-     * @tc.number SUB_BASEENUM_VALUEOF_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_4400
      * @tc.desc Verify valueOf returns scientific notation value for double type
      * @tc.type Function
      * @tc.size MediumTest
@@ -642,7 +642,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf045
-     * @tc.number SUB_BASEENUM_VALUEOF_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_4500
      * @tc.desc Verify valueOf returns hexadecimal float value for double type
      * @tc.type Function
      * @tc.size MediumTest
@@ -656,7 +656,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf046
-     * @tc.number SUB_BASEENUM_VALUEOF_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_4600
      * @tc.desc Verify valueOf returns Double.MAX_VALUE for double type
      * @tc.type Function
      * @tc.size MediumTest
@@ -670,7 +670,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf047
-     * @tc.number SUB_BASEENUM_VALUEOF_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_4700
      * @tc.desc Verify valueOf returns Double.MIN_VALUE minimum positive for double type
      * @tc.type Function
      * @tc.size MediumTest
@@ -684,7 +684,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf048
-     * @tc.number SUB_BASEENUM_VALUEOF_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_4800
      * @tc.desc Verify valueOf returns correct normal string value
      * @tc.type Function
      * @tc.size MediumTest
@@ -698,7 +698,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf049
-     * @tc.number SUB_BASEENUM_VALUEOF_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_4900
      * @tc.desc Verify valueOf returns Chinese characters string
      * @tc.type Function
      * @tc.size MediumTest
@@ -712,7 +712,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf050
-     * @tc.number SUB_BASEENUM_VALUEOF_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_5000
      * @tc.desc Verify valueOf returns numeric string
      * @tc.type Function
      * @tc.size MediumTest
@@ -726,7 +726,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf051
-     * @tc.number SUB_BASEENUM_VALUEOF_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_5100
      * @tc.desc Verify valueOf returns special characters string
      * @tc.type Function
      * @tc.size MediumTest
@@ -740,7 +740,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf052
-     * @tc.number SUB_BASEENUM_VALUEOF_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_5200
      * @tc.desc Verify valueOf returns empty string
      * @tc.type Function
      * @tc.size MediumTest
@@ -754,7 +754,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf053
-     * @tc.number SUB_BASEENUM_VALUEOF_5300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_5300
      * @tc.desc Verify valueOf returns space character string
      * @tc.type Function
      * @tc.size MediumTest
@@ -768,7 +768,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf054
-     * @tc.number SUB_BASEENUM_VALUEOF_5400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_5400
      * @tc.desc Verify valueOf returns Unicode string
      * @tc.type Function
      * @tc.size MediumTest
@@ -782,7 +782,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf055
-     * @tc.number SUB_BASEENUM_VALUEOF_5500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_5500
      * @tc.desc Verify valueOf returns emoji string
      * @tc.type Function
      * @tc.size MediumTest
@@ -796,7 +796,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf056
-     * @tc.number SUB_BASEENUM_VALUEOF_5600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_5600
      * @tc.desc Verify valueOf returns multilingual string
      * @tc.type Function
      * @tc.size MediumTest
@@ -810,7 +810,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf057
-     * @tc.number SUB_BASEENUM_VALUEOF_5700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_5700
      * @tc.desc Verify valueOf returns zero-width space string
      * @tc.type Function
      * @tc.size MediumTest
@@ -824,7 +824,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf058
-     * @tc.number SUB_BASEENUM_VALUEOF_5800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_5800
      * @tc.desc Verify valueOf handles XSS script string safely
      * @tc.type Function
      * @tc.size MediumTest
@@ -838,7 +838,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf059
-     * @tc.number SUB_BASEENUM_VALUEOF_5900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_5900
      * @tc.desc Verify valueOf returns Float.NaN which does not equal itself
      * @tc.type Function
      * @tc.size MediumTest
@@ -852,7 +852,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf060
-     * @tc.number SUB_BASEENUM_VALUEOF_6000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_6000
      * @tc.desc Verify valueOf returns Float.POSITIVE_INFINITY
      * @tc.type Function
      * @tc.size MediumTest
@@ -866,7 +866,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf061
-     * @tc.number SUB_BASEENUM_VALUEOF_6100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_6100
      * @tc.desc Verify valueOf returns Float.NEGATIVE_INFINITY
      * @tc.type Function
      * @tc.size MediumTest
@@ -880,7 +880,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf062
-     * @tc.number SUB_BASEENUM_VALUEOF_6200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_6200
      * @tc.desc Verify valueOf returns negative zero -0.0f for float type
      * @tc.type Function
      * @tc.size MediumTest
@@ -894,7 +894,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf063
-     * @tc.number SUB_BASEENUM_VALUEOF_6300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_6300
      * @tc.desc Verify valueOf returns Double.NaN which does not equal itself
      * @tc.type Function
      * @tc.size MediumTest
@@ -908,7 +908,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf064
-     * @tc.number SUB_BASEENUM_VALUEOF_6400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_6400
      * @tc.desc Verify valueOf returns Double.POSITIVE_INFINITY
      * @tc.type Function
      * @tc.size MediumTest
@@ -922,7 +922,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf065
-     * @tc.number SUB_BASEENUM_VALUEOF_6500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_6500
      * @tc.desc Verify valueOf returns Double.NEGATIVE_INFINITY
      * @tc.type Function
      * @tc.size MediumTest
@@ -936,7 +936,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf066
-     * @tc.number SUB_BASEENUM_VALUEOF_6600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_6600
      * @tc.desc Verify valueOf returns negative zero -0.0 for double type
      * @tc.type Function
      * @tc.size MediumTest
@@ -950,7 +950,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf067
-     * @tc.number SUB_BASEENUM_VALUEOF_6700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_6700
      * @tc.desc Verify valueOf return value type for byte type
      * @tc.type Function
      * @tc.size MediumTest
@@ -964,7 +964,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf068
-     * @tc.number SUB_BASEENUM_VALUEOF_6800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_6800
      * @tc.desc Verify valueOf return value type for short type
      * @tc.type Function
      * @tc.size MediumTest
@@ -978,7 +978,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf069
-     * @tc.number SUB_BASEENUM_VALUEOF_6900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_6900
      * @tc.desc Verify valueOf return value type for int type
      * @tc.type Function
      * @tc.size MediumTest
@@ -992,7 +992,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf070
-     * @tc.number SUB_BASEENUM_VALUEOF_7000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_7000
      * @tc.desc Verify valueOf return value type for long type
      * @tc.type Function
      * @tc.size MediumTest
@@ -1006,7 +1006,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf071
-     * @tc.number SUB_BASEENUM_VALUEOF_7100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_7100
      * @tc.desc Verify valueOf return value type for float type
      * @tc.type Function
      * @tc.size MediumTest
@@ -1020,7 +1020,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf072
-     * @tc.number SUB_BASEENUM_VALUEOF_7200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_7200
      * @tc.desc Verify valueOf return value type for double type
      * @tc.type Function
      * @tc.size MediumTest
@@ -1034,7 +1034,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf073
-     * @tc.number SUB_BASEENUM_VALUEOF_7300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_7300
      * @tc.desc Verify valueOf return value type for string type
      * @tc.type Function
      * @tc.size MediumTest
@@ -1048,7 +1048,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf074
-     * @tc.number SUB_BASEENUM_VALUEOF_7400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_7400
      * @tc.desc Verify valueOf return value equals constructor value parameter for int type
      * @tc.type Function
      * @tc.size MediumTest
@@ -1062,7 +1062,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf075
-     * @tc.number SUB_BASEENUM_VALUEOF_7500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_7500
      * @tc.desc Verify valueOf return value equals constructor value parameter for string type
      * @tc.type Function
      * @tc.size MediumTest
@@ -1076,7 +1076,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf076
-     * @tc.number SUB_BASEENUM_VALUEOF_7600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_7600
      * @tc.desc Verify valueOf return value equals constructor value parameter for long type
      * @tc.type Function
      * @tc.size MediumTest
@@ -1090,7 +1090,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf077
-     * @tc.number SUB_BASEENUM_VALUEOF_7700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_7700
      * @tc.desc Verify valueOf return value equals constructor value parameter for float type
      * @tc.type Function
      * @tc.size MediumTest
@@ -1104,7 +1104,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf078
-     * @tc.number SUB_BASEENUM_VALUEOF_7800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_7800
      * @tc.desc Verify valueOf return value equals constructor value parameter for double type
      * @tc.type Function
      * @tc.size MediumTest
@@ -1118,7 +1118,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf079
-     * @tc.number SUB_BASEENUM_VALUEOF_7900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_7900
      * @tc.desc Verify valueOf returns consistent value on multiple calls for int type
      * @tc.type Function
      * @tc.size MediumTest
@@ -1136,7 +1136,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf080
-     * @tc.number SUB_BASEENUM_VALUEOF_8000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_8000
      * @tc.desc Verify valueOf returns consistent value on multiple calls for string type
      * @tc.type Function
      * @tc.size MediumTest
@@ -1154,7 +1154,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf081
-     * @tc.number SUB_BASEENUM_VALUEOF_8100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_8100
      * @tc.desc Verify valueOf returns consistent NaN on multiple calls for float type
      * @tc.type Function
      * @tc.size MediumTest
@@ -1170,7 +1170,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf082
-     * @tc.number SUB_BASEENUM_VALUEOF_8200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_8200
      * @tc.desc Verify valueOf returns consistent value on multiple calls for long type
      * @tc.type Function
      * @tc.size MediumTest
@@ -1186,7 +1186,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf083
-     * @tc.number SUB_BASEENUM_VALUEOF_8300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_8300
      * @tc.desc Verify valueOf returns independent values for different int instances
      * @tc.type Function
      * @tc.size MediumTest
@@ -1202,7 +1202,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf084
-     * @tc.number SUB_BASEENUM_VALUEOF_8400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_8400
      * @tc.desc Verify valueOf returns different types for different generic type instances
      * @tc.type Function
      * @tc.size MediumTest
@@ -1219,7 +1219,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf085
-     * @tc.number SUB_BASEENUM_VALUEOF_8500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_8500
      * @tc.desc Verify valueOf returns same value for instances with same value different names
      * @tc.type Function
      * @tc.size MediumTest
@@ -1234,7 +1234,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf086
-     * @tc.number SUB_BASEENUM_VALUEOF_8600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_8600
      * @tc.desc Verify modifying one instance does not affect another instance valueOf
      * @tc.type Function
      * @tc.size MediumTest
@@ -1251,7 +1251,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf087
-     * @tc.number SUB_BASEENUM_VALUEOF_8700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_8700
      * @tc.desc Verify valueOf precision for very small positive float value
      * @tc.type Function
      * @tc.size MediumTest
@@ -1266,7 +1266,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf088
-     * @tc.number SUB_BASEENUM_VALUEOF_8800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_8800
      * @tc.desc Verify valueOf precision for very small positive double value
      * @tc.type Function
      * @tc.size MediumTest
@@ -1281,7 +1281,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf089
-     * @tc.number SUB_BASEENUM_VALUEOF_8900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_8900
      * @tc.desc Verify valueOf returns complete long string value
      * @tc.type Function
      * @tc.size MediumTest
@@ -1296,7 +1296,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf090
-     * @tc.number SUB_BASEENUM_VALUEOF_9000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_9000
      * @tc.desc Verify valueOf precision for large long number value
      * @tc.type Function
      * @tc.size MediumTest
@@ -1310,7 +1310,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf091
-     * @tc.number SUB_BASEENUM_VALUEOF_9100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_9100
      * @tc.desc Verify valueOf returns boundary value -1 for int type
      * @tc.type Function
      * @tc.size MediumTest
@@ -1323,7 +1323,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf092
-     * @tc.number SUB_BASEENUM_VALUEOF_9200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_9200
      * @tc.desc Verify valueOf returns boundary value -1 for byte type
      * @tc.type Function
      * @tc.size MediumTest
@@ -1336,7 +1336,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf093
-     * @tc.number SUB_BASEENUM_VALUEOF_9300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_9300
      * @tc.desc Verify valueOf does not throw exception for int type
      * @tc.type Function
      * @tc.size MediumTest
@@ -1354,7 +1354,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf094
-     * @tc.number SUB_BASEENUM_VALUEOF_9400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_9400
      * @tc.desc Verify valueOf does not throw exception for string type
      * @tc.type Function
      * @tc.size MediumTest
@@ -1372,7 +1372,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf095
-     * @tc.number SUB_BASEENUM_VALUEOF_9500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_9500
      * @tc.desc Verify valueOf throws error when called with illegal argument type
      * @tc.type Function
      * @tc.size MediumTest
@@ -1385,7 +1385,7 @@ export default function BaseEnumValueOfTest(): void {
 
     /**
      * @tc.name testBaseEnumValueOf096
-     * @tc.number SUB_BASEENUM_VALUEOF_9600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_9600
      * @tc.desc Verify valueOf does not produce UncaughtExceptionError in normal usage
      * @tc.type Function
      * @tc.size MediumTest
