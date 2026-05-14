@@ -1007,10 +1007,10 @@ export default function FieldInitializationThirteenTest(): void {
      */
     it("testFieldInitThirteen0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1296 = {field: 5}
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(5)
       a.field = 4
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(4)
     })
 
@@ -1304,10 +1304,10 @@ export default function FieldInitializationThirteenTest(): void {
      */
     it("testFieldInitThirteen0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1314 = new A_F1314()
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(4)
       a.field = 5
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(5)
     })
 
@@ -1525,10 +1525,10 @@ export default function FieldInitializationThirteenTest(): void {
      */
     it("testFieldInitThirteen0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1328 = new A_F1328()
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(4)
       a.field = 5
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(5)
     })
 
@@ -1746,10 +1746,10 @@ export default function FieldInitializationThirteenTest(): void {
      */
     it("testFieldInitThirteen0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1342 = {field: 5}
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(5)
       a.field = 4
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(4)
     })
 
@@ -1967,10 +1967,10 @@ export default function FieldInitializationThirteenTest(): void {
      */
     it("testFieldInitThirteen0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F1356 = {field: 5}
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(5)
       a.field = 4
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(4)
     })
 
@@ -2264,10 +2264,10 @@ export default function FieldInitializationThirteenTest(): void {
      */
     it("testFieldInitThirteen0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: I_F1374 = {field: 4}
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(4)
       a.field = 5
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(5)
     })
 

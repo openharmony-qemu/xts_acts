@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1217,10 +1217,10 @@ export default function FieldInitializationFourTest(): void {
      */
     it("testFieldInitFour0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F406 = new A_F406()
-      expect(a.field instanceof Object | undefined).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(undefined)
       a.field = 5
-      expect(a.field instanceof Object | undefined).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(5)
     })
 
@@ -1234,10 +1234,10 @@ export default function FieldInitializationFourTest(): void {
      */
     it("testFieldInitFour0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F407 = new A_F407()
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(4)
       a.field = 5
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(5)
     })
 
@@ -1455,10 +1455,10 @@ export default function FieldInitializationFourTest(): void {
      */
     it("testFieldInitFour0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F421 = new A_F421()
-      expect(a.field instanceof Object | undefined).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(undefined)
       a.field = 5
-      expect(a.field instanceof Object | undefined).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(5)
     })
 
@@ -1472,10 +1472,10 @@ export default function FieldInitializationFourTest(): void {
      */
     it("testFieldInitFour0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F422 = new A_F422()
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(4)
       a.field = 5
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(5)
     })
 
@@ -1693,10 +1693,10 @@ export default function FieldInitializationFourTest(): void {
      */
     it("testFieldInitFour0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F436 = new A_F436()
-      expect(a.field instanceof Object | undefined).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(undefined)
       a.field = 5
-      expect(a.field instanceof Object | undefined).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(5)
     })
 
@@ -1710,10 +1710,10 @@ export default function FieldInitializationFourTest(): void {
      */
     it("testFieldInitFour0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F437 = new A_F437()
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(4)
       a.field = 5
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(5)
     })
 
@@ -1931,10 +1931,10 @@ export default function FieldInitializationFourTest(): void {
      */
     it("testFieldInitFour0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F451 = new A_F451()
-      expect(a.field instanceof Object | undefined).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(undefined)
       a.field = 5
-      expect(a.field instanceof Object | undefined).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(5)
     })
 
@@ -1948,10 +1948,10 @@ export default function FieldInitializationFourTest(): void {
      */
     it("testFieldInitFour0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F452 = new A_F452()
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(4)
       a.field = 5
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(5)
     })
 
@@ -2169,10 +2169,10 @@ export default function FieldInitializationFourTest(): void {
      */
     it("testFieldInitFour0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F466 = new A_F466()
-      expect(a.field instanceof Object | undefined).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(undefined)
       a.field = 5
-      expect(a.field instanceof Object | undefined).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(5)
     })
 
@@ -2186,10 +2186,10 @@ export default function FieldInitializationFourTest(): void {
      */
     it("testFieldInitFour0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F467 = new A_F467()
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(4)
       a.field = 5
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(5)
     })
 

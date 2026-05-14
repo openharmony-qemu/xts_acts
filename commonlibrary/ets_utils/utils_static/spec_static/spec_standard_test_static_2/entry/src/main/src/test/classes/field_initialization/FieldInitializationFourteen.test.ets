@@ -290,10 +290,10 @@ export default function FieldInitializationFourteenTest(): void {
      */
     it("testFieldInitFourteen0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = new ns.A_F1388()
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(4)
       a.foo()
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(5)
     })
 
@@ -511,10 +511,10 @@ export default function FieldInitializationFourteenTest(): void {
      */
     it("testFieldInitFourteen0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = new ns.A_F1402()
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(4)
       a.foo()
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(5)
     })
 

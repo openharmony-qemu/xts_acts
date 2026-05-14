@@ -409,7 +409,7 @@ export default function ExtensionClausePositiveTest():void {
      * @tc.level     Level 2
      */
     it("testExtensionClausePositive0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testExtensionClausePositive0008';
+      const TAG = 'testExtensionClausePositive0009';
       let b: B_5<D_8> = new B_5<D_8>(new F_5())
       expect(b.value.value).assertEqual(11)
     });
@@ -423,7 +423,7 @@ export default function ExtensionClausePositiveTest():void {
      * @tc.level     Level 2
      */
     it("testExtensionClausePositive0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testExtensionClausePositive0008';
+      const TAG = 'testExtensionClausePositive0010';
       let b: B_6<D_9> = new B_6<D_9>(new F_6())
       expect(b.value.value).assertEqual(11)
     });

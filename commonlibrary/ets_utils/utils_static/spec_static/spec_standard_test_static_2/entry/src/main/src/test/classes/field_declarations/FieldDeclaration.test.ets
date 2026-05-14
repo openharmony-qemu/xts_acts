@@ -3118,11 +3118,11 @@ export default function FieldDeclarationTest(): void {
      */
     it("testFieldDeclaration0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F038 = new A_F038()
-      expect(a.field instanceof C_F038 | undefined).assertTrue()
+      expect(a.field instanceof C_F038).assertTrue()
       expect(a.field).assertEqual(undefined)
       a.field = new C_F038()
       a.field!.data = 5
-      expect(a.field instanceof C_F038 | undefined).assertTrue()
+      expect(a.field instanceof C_F038).assertTrue()
       expect(typeof a.field!!.data).assertEqual('int')
       expect(a.field!.data).assertEqual(5)
     })
@@ -3139,12 +3139,12 @@ export default function FieldDeclarationTest(): void {
       let a: A_F039 = new A_F039()
       a.field = new C_F039()
       a.field!.data = 4
-      expect(a.field instanceof C_F039 | undefined).assertTrue()
+      expect(a.field instanceof C_F039).assertTrue()
       expect(typeof a.field!!.data).assertEqual('int')
       expect(a.field!.data).assertEqual(4)
       a.field = new C_F039()
       a.field!.data = 5
-      expect(a.field instanceof C_F039 | undefined).assertTrue()
+      expect(a.field instanceof C_F039).assertTrue()
       expect(typeof a.field!!.data).assertEqual('int')
       expect(a.field!.data).assertEqual(5)
     })
@@ -3161,12 +3161,12 @@ export default function FieldDeclarationTest(): void {
       let a: A_F040 = new A_F040()
       a.field = new C_F040()
       a.field!.data = 4
-      expect(a.field instanceof C_F040 | undefined).assertTrue()
+      expect(a.field instanceof C_F040).assertTrue()
       expect(typeof a.field!!.data).assertEqual('int')
       expect(a.field!.data).assertEqual(4)
       a.field = new C_F040()
       a.field!.data = 5
-      expect(a.field instanceof C_F040 | undefined).assertTrue()
+      expect(a.field instanceof C_F040).assertTrue()
       expect(typeof a.field!!.data).assertEqual('int')
       expect(a.field!.data).assertEqual(5)
     })
@@ -3198,11 +3198,11 @@ export default function FieldDeclarationTest(): void {
      */
     it("testFieldDeclaration0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F042 = new A_F042()
-      expect(a.field instanceof C_F042 | undefined).assertTrue()
+      expect(a.field instanceof C_F042).assertTrue()
       expect(a.field).assertEqual(undefined)
       a.field = new C_F042()
       a.field!.data = 5
-      expect(a.field instanceof C_F042 | undefined).assertTrue()
+      expect(a.field instanceof C_F042).assertTrue()
       expect(typeof a.field!!.data).assertEqual('int')
       expect(a.field!.data).assertEqual(5)
     })
@@ -3251,12 +3251,12 @@ export default function FieldDeclarationTest(): void {
      */
     it("testFieldDeclaration0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F045 = new A_F045()
-      expect(a.field instanceof C_F045 | undefined).assertTrue()
+      expect(a.field instanceof C_F045).assertTrue()
       expect(typeof a.field!!.data).assertEqual('int')
       expect(a.field!.data).assertEqual(4)
       a.field = new C_F045()
       a.field!.data = 5
-      expect(a.field instanceof C_F045 | undefined).assertTrue()
+      expect(a.field instanceof C_F045).assertTrue()
       expect(typeof a.field!!.data).assertEqual('int')
       expect(a.field!.data).assertEqual(5)
     })
@@ -3271,12 +3271,12 @@ export default function FieldDeclarationTest(): void {
      */
     it("testFieldDeclaration0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F046 = new A_F046()
-      expect(a.field instanceof C_F046 | undefined).assertTrue()
+      expect(a.field instanceof C_F046).assertTrue()
       expect(typeof a.field!!.data).assertEqual('int')
       expect(a.field!.data).assertEqual(0)
       a.field = new C_F046()
       a.field!.data = 5
-      expect(a.field instanceof C_F046 | undefined).assertTrue()
+      expect(a.field instanceof C_F046).assertTrue()
       expect(typeof a.field!!.data).assertEqual('int')
       expect(a.field!.data).assertEqual(5)
     })
@@ -3325,12 +3325,12 @@ export default function FieldDeclarationTest(): void {
      */
     it("testFieldDeclaration0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F049 = new A_F049()
-      expect(a.field instanceof C_F049 | undefined).assertTrue()
+      expect(a.field instanceof C_F049).assertTrue()
       expect(typeof a.field!!.data).assertEqual('int')
       expect(a.field!.data).assertEqual(4)
       a.field = new C_F049()
       a.field!.data = 5
-      expect(a.field instanceof C_F049 | undefined).assertTrue()
+      expect(a.field instanceof C_F049).assertTrue()
       expect(typeof a.field!!.data).assertEqual('int')
       expect(a.field!.data).assertEqual(5)
     })
@@ -3345,12 +3345,12 @@ export default function FieldDeclarationTest(): void {
      */
     it("testFieldDeclaration0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F050 = new A_F050()
-      expect(a.field instanceof C_F050 | undefined).assertTrue()
+      expect(a.field instanceof C_F050).assertTrue()
       expect(typeof a.field!!.data).assertEqual('int')
       expect(a.field!.data).assertEqual(0)
       a.field = new C_F050()
       a.field!.data = 5
-      expect(a.field instanceof C_F050 | undefined).assertTrue()
+      expect(a.field instanceof C_F050).assertTrue()
       expect(typeof a.field!!.data).assertEqual('int')
       expect(a.field!.data).assertEqual(5)
     })
@@ -3382,11 +3382,11 @@ export default function FieldDeclarationTest(): void {
      */
     it("testFieldDeclaration0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F052 = new A_F052()
-      expect(a.field instanceof C_F052 | undefined).assertTrue()
+      expect(a.field instanceof C_F052).assertTrue()
       expect(a.field).assertEqual(undefined)
       a.field = new C_F052()
       a.field!.data = 5
-      expect(a.field instanceof C_F052 | undefined).assertTrue()
+      expect(a.field instanceof C_F052).assertTrue()
       expect(typeof a.field!!.data).assertEqual('int')
       expect(a.field!.data).assertEqual(5)
     })
@@ -3469,11 +3469,11 @@ export default function FieldDeclarationTest(): void {
      */
     it("testFieldDeclaration0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F057 = new A_F057()
-      expect(a.field instanceof C_F057 | undefined).assertTrue()
+      expect(a.field instanceof C_F057).assertTrue()
       expect(typeof a.field!!.data).assertEqual('int')
       expect(a.field!.data).assertEqual(4)
       a.field = new C_F057(5)
-      expect(a.field instanceof C_F057 | undefined).assertTrue()
+      expect(a.field instanceof C_F057).assertTrue()
       expect(typeof a.field!!.data).assertEqual('int')
       expect(a.field!.data).assertEqual(5)
     })
@@ -3488,11 +3488,11 @@ export default function FieldDeclarationTest(): void {
      */
     it("testFieldDeclaration0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F059 = new A_F059()
-      expect(a.field instanceof C_F059 | undefined).assertTrue()
+      expect(a.field instanceof C_F059).assertTrue()
       expect(typeof a.field!!.data).assertEqual('int')
       expect(a.field!.data).assertEqual(4)
       a.field = new C_F059(5)
-      expect(a.field instanceof C_F059 | undefined).assertTrue()
+      expect(a.field instanceof C_F059).assertTrue()
       expect(typeof a.field!!.data).assertEqual('int')
       expect(a.field!.data).assertEqual(5)
     })
@@ -3541,11 +3541,11 @@ export default function FieldDeclarationTest(): void {
      */
     it("testFieldDeclaration0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F063 = new A_F063()
-      expect(a.field instanceof C_F063 | undefined).assertTrue()
+      expect(a.field instanceof C_F063).assertTrue()
       expect(typeof a.field!!.data).assertEqual('int')
       expect(a.field!.data).assertEqual(4)
       a.field = new C_F063(5)
-      expect(a.field instanceof C_F063 | undefined).assertTrue()
+      expect(a.field instanceof C_F063).assertTrue()
       expect(typeof a.field!!.data).assertEqual('int')
       expect(a.field!.data).assertEqual(5)
     })
@@ -3956,7 +3956,7 @@ export default function FieldDeclarationTest(): void {
      */
     it("testFieldDeclaration0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F092 = new A_F092()
-      expect(a.field instanceof C_F092 | undefined).assertTrue()
+      expect(a.field instanceof C_F092).assertTrue()
       expect(a.field).assertEqual(undefined)
     })
 
@@ -3970,7 +3970,7 @@ export default function FieldDeclarationTest(): void {
      */
     it("testFieldDeclaration0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F093 = new A_F093()
-      expect(a.field instanceof C_F093 | undefined).assertTrue()
+      expect(a.field instanceof C_F093).assertTrue()
       expect(typeof a.field!!.data).assertEqual('int')
       expect(a.field!.data).assertEqual(4)
     })
@@ -3985,7 +3985,7 @@ export default function FieldDeclarationTest(): void {
      */
     it("testFieldDeclaration0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F094 = new A_F094()
-      expect(a.field instanceof C_F094 | undefined).assertTrue()
+      expect(a.field instanceof C_F094).assertTrue()
       expect(typeof a.field!!.data).assertEqual('int')
       expect(a.field!.data).assertEqual(0)
     })
@@ -4014,7 +4014,7 @@ export default function FieldDeclarationTest(): void {
      */
     it("testFieldDeclaration0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F096 = new A_F096()
-      expect(a.field instanceof C_F096 | undefined).assertTrue()
+      expect(a.field instanceof C_F096).assertTrue()
       expect(a.field).assertEqual(undefined)
     })
 
@@ -4056,7 +4056,7 @@ export default function FieldDeclarationTest(): void {
      */
     it("testFieldDeclaration0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F099 = new A_F099()
-      expect(a.field instanceof C_F099 | undefined).assertTrue()
+      expect(a.field instanceof C_F099).assertTrue()
       expect(typeof a.field!!.data).assertEqual('int')
       expect(a.field!.data).assertEqual(4)
     })
@@ -4071,7 +4071,7 @@ export default function FieldDeclarationTest(): void {
      */
     it("testFieldDeclaration0097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F100 = new A_F100()
-      expect(a.field instanceof C_F100 | undefined).assertTrue()
+      expect(a.field instanceof C_F100).assertTrue()
       expect(typeof a.field!!.data).assertEqual('int')
       expect(a.field!.data).assertEqual(0)
     })

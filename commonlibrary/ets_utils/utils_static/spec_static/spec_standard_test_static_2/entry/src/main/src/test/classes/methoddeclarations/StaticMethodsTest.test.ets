@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -394,7 +394,7 @@ export default function StaticMethodsTest(): void {
      * @tc.level     Level 2
      */
     it("testStaticMethods0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStaticMethods0005';
+      const TAG = 'testStaticMethods0004';
       let c: C = new C(2)
       expect(C.getCount(c)).assertEqual(2)
     });
@@ -409,7 +409,7 @@ export default function StaticMethodsTest(): void {
      * @tc.level     Level 2
      */
     it("testStaticMethods0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStaticMethods0006';
+      const TAG = 'testStaticMethods0005';
       let c: C1 = new C1(2)
       expect(C1.getCount(c)).assertEqual(2)
     });
@@ -424,7 +424,7 @@ export default function StaticMethodsTest(): void {
      * @tc.level     Level 2
      */
     it("testStaticMethods0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStaticMethods0007';
+      const TAG = 'testStaticMethods0006';
       let b: B2 = new B2(1)
       let c: C2 = new C2(2)
       expect(B2.getCount(c)).assertEqual(2)
@@ -442,7 +442,7 @@ export default function StaticMethodsTest(): void {
      * @tc.level     Level 2
      */
     it("testStaticMethods0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStaticMethods0008';
+      const TAG = 'testStaticMethods0007';
       expect(C3.getCount(2)).assertEqual(3)
     });
 
@@ -456,7 +456,7 @@ export default function StaticMethodsTest(): void {
      * @tc.level     Level 2
      */
     it("testStaticMethods0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStaticMethods0010';
+      const TAG = 'testStaticMethods0008';
       let c: C5 = new C5(2)
       expect(C5.getCount(c)).assertEqual(2)
     });
@@ -471,7 +471,7 @@ export default function StaticMethodsTest(): void {
      * @tc.level     Level 2
      */
     it("testStaticMethods0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStaticMethods0011';
+      const TAG = 'testStaticMethods0009';
       let b: B4 = new B4(1)
       let c: C6 = new C6(2)
       expect(B4.getCount(c)).assertEqual(2)
@@ -487,7 +487,7 @@ export default function StaticMethodsTest(): void {
      * @tc.level     Level 2
      */
     it("testStaticMethods0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStaticMethods0012';
+      const TAG = 'testStaticMethods0010';
       expect(C7.getCount(2)).assertEqual(3)
 
 
@@ -503,7 +503,7 @@ export default function StaticMethodsTest(): void {
      * @tc.level     Level 2
      */
     it("testStaticMethods0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStaticMethods0014';
+      const TAG = 'testStaticMethods0011';
       let c: C9 = new C9()
       expect(C9.getCount(c)).assertEqual(1)
     });
@@ -518,7 +518,7 @@ export default function StaticMethodsTest(): void {
      * @tc.level     Level 2
      */
     it("testStaticMethods0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStaticMethods0015';
+      const TAG = 'testStaticMethods0012';
       let c: C10 = new C10()
       expect(C10.getCount(c)).assertEqual(1)
     });
@@ -533,7 +533,7 @@ export default function StaticMethodsTest(): void {
      * @tc.level     Level 2
      */
     it("testStaticMethods0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStaticMethods0016';
+      const TAG = 'testStaticMethods0013';
       let c: C11 = new C11()
       expect(B7.getCount(c)).assertEqual(1)
     });
@@ -548,7 +548,7 @@ export default function StaticMethodsTest(): void {
      * @tc.level     Level 2
      */
     it("testStaticMethods0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStaticMethods0017';
+      const TAG = 'testStaticMethods0014';
       expect(C12.getCount(2)).assertEqual(3)
     });
 
@@ -562,7 +562,7 @@ export default function StaticMethodsTest(): void {
      * @tc.level     Level 2
      */
     it("testStaticMethods0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStaticMethods0019';
+      const TAG = 'testStaticMethods0015';
       let c: C14 = new C14()
       expect(C14.getCount(c)).assertEqual(1)
     });
@@ -577,7 +577,7 @@ export default function StaticMethodsTest(): void {
      * @tc.level     Level 2
      */
     it("testStaticMethods0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStaticMethods0021';
+      const TAG = 'testStaticMethods0016';
       expect(C16.getCount(2)).assertEqual(3)
     });
   })

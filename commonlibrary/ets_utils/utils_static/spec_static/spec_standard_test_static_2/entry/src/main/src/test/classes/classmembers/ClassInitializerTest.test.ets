@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -571,7 +571,7 @@ export default function ClassInitializerTest():void {
      * @tc.level     Level 2
      */
     it("testClassInitializer0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInitializer0020';
+      const TAG = 'testClassInitializer0018';
       expect(E1.e).assertEqual(5);
       expect(res1).assertEqual("E");
     })
@@ -586,7 +586,7 @@ export default function ClassInitializerTest():void {
      * @tc.level     Level 2
      */
     it("testClassInitializer0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInitializer0021';
+      const TAG = 'testClassInitializer0019';
       expect(F1.f).assertEqual(6);
       expect(res1).assertEqual("EF");
     })
@@ -601,7 +601,7 @@ export default function ClassInitializerTest():void {
      * @tc.level     Level 2
      */
     it("testClassInitializer0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testClassInitializer0022';
+      const TAG = 'testClassInitializer0020';
       expect(G1.g).assertEqual(7);
       expect(res1).assertEqual("EFG");
     })

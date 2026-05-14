@@ -2509,7 +2509,7 @@ export default function FieldDeclarationTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldDeclarationTwo0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(A_F210.field instanceof C_F210 | undefined).assertTrue()
+      expect(A_F210.field instanceof C_F210).assertTrue()
       expect(typeof A_F210.field!!.data).assertEqual('int')
       expect(A_F210.field!.data).assertEqual(4)
     })
@@ -2523,7 +2523,7 @@ export default function FieldDeclarationTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldDeclarationTwo0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(A_F211.field instanceof C_F211 | undefined).assertTrue()
+      expect(A_F211.field instanceof C_F211).assertTrue()
       expect(typeof A_F211.field!!.data).assertEqual('int')
       expect(A_F211.field!.data).assertEqual(0)
     })
@@ -2563,7 +2563,7 @@ export default function FieldDeclarationTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldDeclarationTwo0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(A_F214.field instanceof C_F214 | undefined).assertTrue()
+      expect(A_F214.field instanceof C_F214).assertTrue()
       expect(typeof A_F214.field!!.data).assertEqual('int')
       expect(A_F214.field!.data).assertEqual(4)
     })
@@ -2577,7 +2577,7 @@ export default function FieldDeclarationTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldDeclarationTwo0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(A_F215.field instanceof C_F215 | undefined).assertTrue()
+      expect(A_F215.field instanceof C_F215).assertTrue()
       expect(typeof A_F215.field!!.data).assertEqual('int')
       expect(A_F215.field!.data).assertEqual(0)
     })
@@ -2604,7 +2604,7 @@ export default function FieldDeclarationTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldDeclarationTwo0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(A_F217.field instanceof C_F217 | undefined).assertTrue()
+      expect(A_F217.field instanceof C_F217).assertTrue()
       expect(A_F217.field).assertEqual(undefined)
     })
 
@@ -2669,7 +2669,7 @@ export default function FieldDeclarationTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldDeclarationTwo0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(A_F222.field instanceof C_F222 | undefined).assertTrue()
+      expect(A_F222.field instanceof C_F222).assertTrue()
       expect(typeof A_F222.field!!.data).assertEqual('int')
       expect(A_F222.field!.data).assertEqual(4)
     })
@@ -2683,7 +2683,7 @@ export default function FieldDeclarationTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldDeclarationTwo0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(A_F223.field instanceof C_F223 | undefined).assertTrue()
+      expect(A_F223.field instanceof C_F223).assertTrue()
       expect(typeof A_F223.field!!.data).assertEqual('int')
       expect(A_F223.field!.data).assertEqual(0)
     })
@@ -2697,7 +2697,7 @@ export default function FieldDeclarationTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldDeclarationTwo0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(A_F224.field instanceof C_F224 | undefined).assertTrue()
+      expect(A_F224.field instanceof C_F224).assertTrue()
       expect(typeof A_F224.field!!.data).assertEqual('int')
       expect(A_F224.field!.data).assertEqual(4)
     })
@@ -2750,7 +2750,7 @@ export default function FieldDeclarationTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldDeclarationTwo0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(A_F228.field instanceof C_F228 | undefined).assertTrue()
+      expect(A_F228.field instanceof C_F228).assertTrue()
       expect(typeof A_F228.field!!.data).assertEqual('int')
       expect(A_F228.field!.data).assertEqual(4)
     })

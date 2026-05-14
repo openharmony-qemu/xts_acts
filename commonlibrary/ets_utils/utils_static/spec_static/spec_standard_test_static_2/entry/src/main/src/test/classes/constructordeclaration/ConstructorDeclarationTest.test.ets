@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1853,7 +1853,7 @@ export default function ConstructorDeclarationTest():void {
     it("testConstructorDeclaration0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorDeclaration0057'
       let a = A56.getInstance("Hello!")
-      expect(a instanceof A56)
+      expect(a instanceof A56).assertTrue()
       expect(a.tag).assertEqual("Hello!")
       let b = A56.getInstance("Bye!")
       expect(b).assertEqual(a)
@@ -1872,7 +1872,7 @@ export default function ConstructorDeclarationTest():void {
     it("testConstructorDeclaration0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorDeclaration0058'
       let a = A57.getInstance("Hello!")
-      expect(a instanceof A57)
+      expect(a instanceof A57).assertTrue()
       expect(a.tag).assertEqual("Hello!")
       let b = A57.getInstance("Bye!")
       expect(b).assertEqual(a)
@@ -1891,7 +1891,7 @@ export default function ConstructorDeclarationTest():void {
     it("testConstructorDeclaration0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorDeclaration0059'
       let a = A58.getInstance()
-      expect(a instanceof A58)
+      expect(a instanceof A58).assertTrue()
       let b = A58.getInstance()
       expect(b).assertEqual(a)
     });
@@ -1908,7 +1908,7 @@ export default function ConstructorDeclarationTest():void {
     it("testConstructorDeclaration0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorDeclaration0060'
       let a = A59.getInstance("Hello!")
-      expect(a instanceof A59)
+      expect(a instanceof A59).assertTrue()
       expect(a.tag).assertEqual("Hello!")
       let b = A59.getInstance("Bye!")
       expect(b).assertEqual(a)
@@ -1927,7 +1927,7 @@ export default function ConstructorDeclarationTest():void {
     it("testConstructorDeclaration0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorDeclaration0061'
       let a = A60.getInstance("Hello!")
-      expect(a instanceof A60)
+      expect(a instanceof A60).assertTrue()
       expect(a.tag).assertEqual("Hello!")
       let b = A60.getInstance("Bye!")
       expect(b).assertEqual(a)

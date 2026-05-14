@@ -778,6 +778,7 @@ class D_17 extends C_25 {
 
 class E_11 extends D_17 {
   constructor() {
+    super()
   }
 
   test() {
@@ -1609,7 +1610,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0018';
+      const TAG = 'testMultiLevelInheritance0017';
       let test: B_17 = new B_17();
       expect(test._publicVar).assertEqual(true);
     });
@@ -1624,7 +1625,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0019';
+      const TAG = 'testMultiLevelInheritance0018';
       let test: C_14 = new C_14();
       expect(test._publicVar).assertEqual(true);
     });
@@ -1639,7 +1640,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0020';
+      const TAG = 'testMultiLevelInheritance0019';
       let test: D_9 = new D_9();
       expect(test._publicVar).assertEqual(true);
     });
@@ -1654,7 +1655,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0021';
+      const TAG = 'testMultiLevelInheritance0020';
       let test: E_7 = new E_7();
       expect(test._publicVar).assertEqual(false);
     });
@@ -1669,7 +1670,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0022';
+      const TAG = 'testMultiLevelInheritance0021';
       let test: F_3 = new F_3();
       expect(test._publicVar).assertEqual(true);
     });
@@ -1684,7 +1685,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0023';
+      const TAG = 'testMultiLevelInheritance0022';
       let test: B_23 = new B_23();
       expect(test._publicVar[0]).assertEqual(1);
     });
@@ -1699,7 +1700,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0024';
+      const TAG = 'testMultiLevelInheritance0023';
       let test: C_19 = new C_19();
       expect(test._publicVar[0]).assertEqual(1);
     });
@@ -1714,7 +1715,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0025';
+      const TAG = 'testMultiLevelInheritance0024';
       let test: D_13 = new D_13();
       expect(test._publicVar[0]).assertEqual(1);
     });
@@ -1728,7 +1729,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0026';
+      const TAG = 'testMultiLevelInheritance0025';
       let test: E_9 = new E_9();
       expect(test._publicVar[0]).assertEqual(0);
     });
@@ -1742,7 +1743,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0027';
+      const TAG = 'testMultiLevelInheritance0026';
       let test: F_4 = new F_4();
       expect(test._publicVar[0]).assertEqual(1);
     });
@@ -1756,7 +1757,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0028';
+      const TAG = 'testMultiLevelInheritance0027';
       let b: B_28 = new B_28();
       expect(b._publicVar[0]).assertEqual(1);
     });
@@ -1770,7 +1771,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0029';
+      const TAG = 'testMultiLevelInheritance0028';
       let c: C_23 = new C_23();
       expect(c._publicVar[0]).assertEqual(1);
     });
@@ -1784,7 +1785,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0030';
+      const TAG = 'testMultiLevelInheritance0029';
       let d: D_16 = new D_16();
       expect(d._publicVar[0]).assertEqual(1);
     });
@@ -1798,7 +1799,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0031';
+      const TAG = 'testMultiLevelInheritance0030';
       let e: E_11 = new E_11();
       expect(e._publicVar[0]).assertEqual(0);
     });
@@ -1812,7 +1813,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0032';
+      const TAG = 'testMultiLevelInheritance0031';
       let f: F_5 = new F_5();
       expect(f._publicVar[0]).assertEqual(1);
     });
@@ -1826,7 +1827,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0033';
+      const TAG = 'testMultiLevelInheritance0032';
       let b: B_33 = new B_33();
       expect(b._publicVar).assertEqual(true);
     });
@@ -1841,7 +1842,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0034';
+      const TAG = 'testMultiLevelInheritance0033';
       let c: C_27 = new C_27();
       expect(c._publicVar).assertEqual(true);
     });
@@ -1855,7 +1856,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0035';
+      const TAG = 'testMultiLevelInheritance0034';
       let d: D_19 = new D_19();
       expect(d._publicVar).assertEqual(true);
     });
@@ -1869,7 +1870,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0036';
+      const TAG = 'testMultiLevelInheritance0035';
       let e: E_13 = new E_13();
       expect(e._publicVar).assertEqual(false);
     });
@@ -1883,7 +1884,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0037';
+      const TAG = 'testMultiLevelInheritance0036';
       let f: F_6 = new F_6();
       expect(f._publicVar).assertEqual(true);
     });
@@ -1897,7 +1898,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0038';
+      const TAG = 'testMultiLevelInheritance0037';
       let c: C_31 = new C_31();
       expect(c._publicVar).assertEqual(3);
     });
@@ -1912,7 +1913,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0039';
+      const TAG = 'testMultiLevelInheritance0038';
       let test: B_39 = new B_39;
       expect(test._publicVar).assertEqual(null);
     });
@@ -1927,7 +1928,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0040';
+      const TAG = 'testMultiLevelInheritance0039';
       let test: C_32 = new C_32();
       expect(test._publicVar).assertEqual(null);
     });
@@ -1942,7 +1943,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0041';
+      const TAG = 'testMultiLevelInheritance0040';
       let test: D_22 = new D_22();
       expect(test._publicVar).assertEqual(null);
     });
@@ -1957,7 +1958,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0042';
+      const TAG = 'testMultiLevelInheritance0041';
       let test: E_15 = new E_15;
       expect(test._publicVar).assertEqual(null);
     });
@@ -1972,7 +1973,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0043';
+      const TAG = 'testMultiLevelInheritance0042';
       let test: F_7 = new F_7;
       expect(test._publicVar).assertEqual(null);
     });
@@ -1988,7 +1989,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0044';
+      const TAG = 'testMultiLevelInheritance0043';
       let test: B_44 = new B_44;
       expect(test._publicVar).assertEqual('Multi-level inheritance');
     });
@@ -2004,7 +2005,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0045';
+      const TAG = 'testMultiLevelInheritance0044';
       let test: C_36 = new C_36;
       expect(test._publicVar).assertEqual('Multi-level inheritance');
     });
@@ -2020,7 +2021,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0046';
+      const TAG = 'testMultiLevelInheritance0045';
       let test: D_25 = new D_25();
       expect(test._publicVar).assertEqual('Multi-level inheritance');
     });
@@ -2036,7 +2037,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0047';
+      const TAG = 'testMultiLevelInheritance0046';
       let test: E_17 = new E_17;
       expect(test._publicVar).assertEqual('aaa');
     });
@@ -2051,7 +2052,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0048';
+      const TAG = 'testMultiLevelInheritance0047';
       let test: F_8 = new F_8;
       expect(test._publicVar).assertEqual('Multi-level inheritance');
     });
@@ -2067,7 +2068,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0049';
+      const TAG = 'testMultiLevelInheritance0048';
       let test: B_49 = new B_49;
       expect(test._publicVar).assertEqual(2);
     });
@@ -2082,7 +2083,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0042';
+      const TAG = 'testMultiLevelInheritance0049';
       let test: C_40 = new C_40;
       expect(test._publicVar).assertEqual(2);
     });
@@ -2097,7 +2098,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0051';
+      const TAG = 'testMultiLevelInheritance0050';
       let test: D_28 = new D_28;
       expect(test._publicVar).assertEqual(2);
     });
@@ -2112,7 +2113,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0052';
+      const TAG = 'testMultiLevelInheritance0051';
       let test: E_19 = new E_19;
       expect(test._publicVar).assertEqual(20);
     });
@@ -2127,7 +2128,7 @@ export default function MultiLevelInheritanceTest():void {
      * @tc.level     Level 2
      */
     it("testMultiLevelInheritance0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMultiLevelInheritance0053';
+      const TAG = 'testMultiLevelInheritance0052';
       let test: F_9 = new F_9;
       expect(test._publicVar).assertEqual(2);
     });

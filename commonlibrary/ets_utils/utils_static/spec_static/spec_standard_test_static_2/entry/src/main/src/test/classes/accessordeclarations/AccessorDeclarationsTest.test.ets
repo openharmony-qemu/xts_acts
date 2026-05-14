@@ -261,7 +261,11 @@ export default function AccessorDeclarationsTest():void {
      */
     it("testAccessorDeclarations0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testAccessorDeclarations0001';
-      foo(new Derived)
+      let d: Derived = new Derived()
+      d.field = new Derived
+      let b: Base = d.field
+      expect(d.field instanceof Derived).assertTrue()
+      expect(b instanceof Base).assertTrue()
     });
 
     /**

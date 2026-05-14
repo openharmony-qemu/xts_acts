@@ -34,6 +34,11 @@ async function sleep(time: int): Promise<int> {
   });
 }
 
+
+function waitForCompletion<T>(fn: () => T): T {
+  return fn()
+}
+
 class A_F397 {
   private _field!: int
   get field(): int {

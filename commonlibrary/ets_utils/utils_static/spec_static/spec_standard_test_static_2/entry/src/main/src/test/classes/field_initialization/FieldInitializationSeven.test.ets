@@ -1035,10 +1035,10 @@ export default function FieldInitializationSevenTest(): void {
      */
     it("testFieldInitSeven0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F719 = new ns.A_F719()
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(4)
       a.field = 5
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(5)
     })
 
@@ -1155,7 +1155,7 @@ export default function FieldInitializationSevenTest(): void {
     it("testFieldInitSeven0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = new ns.A_F727()
       expect(a.field instanceof float).assertTrue()
-      expect(a.field).assertEqual(0.0f)
+      expect(a.field).assertEqual(4.5f)
       a.field = 7.3f
       expect(a.field instanceof float).assertTrue()
       expect(a.field).assertEqual(7.3f)
@@ -1172,7 +1172,7 @@ export default function FieldInitializationSevenTest(): void {
     it("testFieldInitSeven0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = new ns.A_F728()
       expect(a.field instanceof bigint).assertTrue()
-      expect(a.field).assertEqual(0n)
+      expect(a.field).assertEqual(4n)
       a.field = 5n
       expect(a.field instanceof bigint).assertTrue()
       expect(a.field).assertEqual(5n)
@@ -1189,7 +1189,7 @@ export default function FieldInitializationSevenTest(): void {
     it("testFieldInitSeven0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = new ns.A_F729()
       expect(a.field instanceof string).assertTrue()
-      expect(a.field).assertEqual("")
+      expect(a.field).assertEqual("abc")
       a.field = "efg"
       expect(a.field instanceof string).assertTrue()
       expect(a.field).assertEqual("efg")
@@ -1240,7 +1240,7 @@ export default function FieldInitializationSevenTest(): void {
     it("testFieldInitSeven0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = new ns.A_F732()
       expect(a.field instanceof Object).assertTrue()
-      expect(a.field).assertEqual(null)
+      expect(a.field).assertEqual(4)
       a.field = 5
       expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(5)
@@ -1256,10 +1256,10 @@ export default function FieldInitializationSevenTest(): void {
      */
     it("testFieldInitSeven0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = new ns.A_F733()
-      expect(a.field instanceof Object | undefined | null).assertTrue()
-      expect(a.field).assertEqual(null)
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(4)
       a.field = 5
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(5)
     })
 
@@ -1376,7 +1376,7 @@ export default function FieldInitializationSevenTest(): void {
     it("testFieldInitSeven0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = new ns.A_F755()
       expect(a.field instanceof float).assertTrue()
-      expect(a.field).assertEqual(0.0f)
+      expect(a.field).assertEqual(4.5f)
       a.field = 7.3f
       expect(a.field instanceof float).assertTrue()
       expect(a.field).assertEqual(7.3f)
@@ -1393,7 +1393,7 @@ export default function FieldInitializationSevenTest(): void {
     it("testFieldInitSeven0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = new ns.A_F756()
       expect(a.field instanceof bigint).assertTrue()
-      expect(a.field).assertEqual(0n)
+      expect(a.field).assertEqual(4n)
       a.field = 5n
       expect(a.field instanceof bigint).assertTrue()
       expect(a.field).assertEqual(5n)
@@ -1410,7 +1410,7 @@ export default function FieldInitializationSevenTest(): void {
     it("testFieldInitSeven0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = new ns.A_F757()
       expect(a.field instanceof string).assertTrue()
-      expect(a.field).assertEqual("")
+      expect(a.field).assertEqual("abc")
       a.field = "efg"
       expect(a.field instanceof string).assertTrue()
       expect(a.field).assertEqual("efg")
@@ -1461,7 +1461,7 @@ export default function FieldInitializationSevenTest(): void {
     it("testFieldInitSeven0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = new ns.A_F760()
       expect(a.field instanceof Object).assertTrue()
-      expect(a.field).assertEqual(null)
+      expect(a.field).assertEqual(4)
       a.field = 5
       expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(5)
@@ -1477,10 +1477,10 @@ export default function FieldInitializationSevenTest(): void {
      */
     it("testFieldInitSeven0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = new ns.A_F761()
-      expect(a.field instanceof Object | undefined | null).assertTrue()
-      expect(a.field).assertEqual(null)
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(4)
       a.field = 5
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(5)
     })
 
@@ -1597,7 +1597,7 @@ export default function FieldInitializationSevenTest(): void {
     it("testFieldInitSeven0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = new ns.A_F769()
       expect(a.field instanceof float).assertTrue()
-      expect(a.field).assertEqual(0.0f)
+      expect(a.field).assertEqual(4.5f)
       a.field = 7.3f
       expect(a.field instanceof float).assertTrue()
       expect(a.field).assertEqual(7.3f)
@@ -1614,7 +1614,7 @@ export default function FieldInitializationSevenTest(): void {
     it("testFieldInitSeven0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = new ns.A_F770()
       expect(a.field instanceof bigint).assertTrue()
-      expect(a.field).assertEqual(0n)
+      expect(a.field).assertEqual(4n)
       a.field = 5n
       expect(a.field instanceof bigint).assertTrue()
       expect(a.field).assertEqual(5n)
@@ -1631,7 +1631,7 @@ export default function FieldInitializationSevenTest(): void {
     it("testFieldInitSeven0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = new ns.A_F771()
       expect(a.field instanceof string).assertTrue()
-      expect(a.field).assertEqual("")
+      expect(a.field).assertEqual("abc")
       a.field = "efg"
       expect(a.field instanceof string).assertTrue()
       expect(a.field).assertEqual("efg")
@@ -1682,7 +1682,7 @@ export default function FieldInitializationSevenTest(): void {
     it("testFieldInitSeven0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = new ns.A_F774()
       expect(a.field instanceof Object).assertTrue()
-      expect(a.field).assertEqual(null)
+      expect(a.field).assertEqual(4)
       a.field = 5
       expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(5)
@@ -1698,10 +1698,10 @@ export default function FieldInitializationSevenTest(): void {
      */
     it("testFieldInitSeven0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = new ns.A_F775()
-      expect(a.field instanceof Object | undefined | null).assertTrue()
-      expect(a.field).assertEqual(null)
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(4)
       a.field = 5
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(5)
     })
 

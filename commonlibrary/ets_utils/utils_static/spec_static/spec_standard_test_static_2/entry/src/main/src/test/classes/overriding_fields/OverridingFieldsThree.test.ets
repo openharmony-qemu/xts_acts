@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1181,99 +1181,171 @@ class A_F377 extends Base_F377 {
 }
 
 class Base_F379 {
-  field: Object = 5
+  static field: Object
+  static {
+    Base_F379.field = 5
+  }
 }
 
 class A_F379 extends Base_F379 {
-  static field: Object = "abc"
+  static field: Object
+  static {
+    A_F379.field = "abc"
+  }
 }
 
 class Base_F380 {
-  field: number = 3
+  static field: number
+  static {
+    Base_F380.field = 3
+  }
 }
 
 class A_F380 extends Base_F380 {
-  static field: number = 6.7
+  static field: number
+  static {
+    A_F380.field = 6.7
+  }
 }
 
 class Base_F381 {
-  field: double = 3.4
+  static field: double
+  static {
+    Base_F381.field = 3.4
+  }
 }
 
 class A_F381 extends Base_F381 {
-  static field: double = 5.0
+  static field: double
+  static {
+    A_F381.field = 5.0
+  }
 }
 
 class Base_F382 {
-  field: float = 6.7f
+  static field: float
+  static {
+    Base_F382.field = 6.7f
+  }
 }
 
 class A_F382 extends Base_F382 {
-  static field: float = 7.3f
+  static field: float
+  static {
+    A_F382.field = 7.3f
+  }
 }
 
 class Base_F383 {
-  field: long = 9223372036854775807
+  static field: long
+  static {
+    Base_F383.field = 9223372036854775807
+  }
 }
 
 class A_F383 extends Base_F383 {
-  static field: long = 78945
+  static field: long
+  static {
+    A_F383.field = 78945
+  }
 }
 
 class Base_F384 {
-  field: int = 123
+  static field: int
+  static {
+    Base_F384.field = 123
+  }
 }
 
 class A_F384 extends Base_F384 {
-  static field: int = 321
+  static field: int
+  static {
+    A_F384.field = 321
+  }
 }
 
 class Base_F385 {
-  field: short = 325
+  static field: short
+  static {
+    Base_F385.field = 325
+  }
 }
 
 class A_F385 extends Base_F385 {
-  static field: short = 253
+  static field: short
+  static {
+    A_F385.field = 253
+  }
 }
 
 class Base_F386 {
-  field: byte = 127
+  static field: byte
+  static {
+    Base_F386.field = 127
+  }
 }
 
 class A_F386 extends Base_F386 {
-  static field: byte = 78
+  static field: byte
+  static {
+    A_F386.field = 78
+  }
 }
 
 class Base_F387 {
-  field: string = "abc"
+  static field: string
+  static {
+    Base_F387.field = "abc"
+  }
 }
 
 class A_F387 extends Base_F387 {
-  static field: string = "defg"
+  static field: string
+  static {
+    A_F387.field = "defg"
+  }
 }
 
 class Base_F388 {
-  field: bigint = 12345678901234567890n
+  static field: bigint
+  static {
+    Base_F388.field = 12345678901234567890n
+  }
 }
 
 class A_F388 extends Base_F388 {
-  static field: bigint = 5556423623465n
+  static field: bigint
+  static {
+    A_F388.field = 5556423623465n
+  }
 }
 
 class Base_F389 {
-  field: char = c'\u2028'
+  static field: char
+  static {
+    Base_F389.field = c'\u2028'
+  }
 }
 
 class A_F389 extends Base_F389 {
-  static field: char = c'z'
+  static field: char
+  static {
+    A_F389.field = c'z'
+  }
 }
 
 class Base_F390 {
-  field: boolean = false
+  static field: boolean
+  static {
+    Base_F390.field = false
+  }
 }
 
 class A_F390 extends Base_F390 {
-  static field: boolean = true
+  static field: boolean
+  static {
+    A_F390.field = true
+  }
 }
 
 class Base1_F391 {
@@ -2501,8 +2573,7 @@ export default function OverridingFieldsThreeTest(): void {
       let a: A_F366 = new A_F366()
       expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual("abc")
-      expect(Base_F366.field instanceof Object).assertTrue()
-      expect(Base_F366.field).assertEqual(5)
+
       expect(Base_F366.field instanceof Object).assertTrue()
       expect(Base_F366.field).assertEqual(5)
     })
@@ -2519,8 +2590,7 @@ export default function OverridingFieldsThreeTest(): void {
       let a: A_F367 = new A_F367()
       expect(a.field instanceof number).assertTrue()
       expect(a.field).assertEqual(6.7)
-      expect(Base_F367.field instanceof number).assertTrue()
-      expect(Base_F367.field).assertEqual(3)
+
       expect(Base_F367.field instanceof number).assertTrue()
       expect(Base_F367.field).assertEqual(3)
     })
@@ -2537,8 +2607,7 @@ export default function OverridingFieldsThreeTest(): void {
       let a: A_F368 = new A_F368()
       expect(a.field instanceof double).assertTrue()
       expect(a.field).assertEqual(5.0)
-      expect(Base_F368.field instanceof double).assertTrue()
-      expect(Base_F368.field).assertEqual(3.4)
+
       expect(Base_F368.field instanceof double).assertTrue()
       expect(Base_F368.field).assertEqual(3.4)
     })
@@ -2555,8 +2624,7 @@ export default function OverridingFieldsThreeTest(): void {
       let a: A_F369 = new A_F369()
       expect(a.field instanceof float).assertTrue()
       expect(a.field).assertEqual(7.3f)
-      expect(Base_F369.field instanceof float).assertTrue()
-      expect(Base_F369.field).assertEqual(6.7f)
+
       expect(Base_F369.field instanceof float).assertTrue()
       expect(Base_F369.field).assertEqual(6.7f)
     })
@@ -2573,8 +2641,7 @@ export default function OverridingFieldsThreeTest(): void {
       let a: A_F370 = new A_F370()
       expect(a.field instanceof long).assertTrue()
       expect(a.field).assertEqual(78945)
-      expect(Base_F370.field instanceof long).assertTrue()
-      expect(Base_F370.field).assertEqual(9223372036854775807)
+
       expect(Base_F370.field instanceof long).assertTrue()
       expect(Base_F370.field).assertEqual(9223372036854775807)
     })
@@ -2591,8 +2658,7 @@ export default function OverridingFieldsThreeTest(): void {
       let a: A_F371 = new A_F371()
       expect(a.field instanceof int).assertTrue()
       expect(a.field).assertEqual(321)
-      expect(Base_F371.field instanceof int).assertTrue()
-      expect(Base_F371.field).assertEqual(123)
+
       expect(Base_F371.field instanceof int).assertTrue()
       expect(Base_F371.field).assertEqual(123)
     })
@@ -2609,8 +2675,7 @@ export default function OverridingFieldsThreeTest(): void {
       let a: A_F372 = new A_F372()
       expect(a.field instanceof short).assertTrue()
       expect(a.field).assertEqual(253)
-      expect(Base_F372.field instanceof short).assertTrue()
-      expect(Base_F372.field).assertEqual(325)
+
       expect(Base_F372.field instanceof short).assertTrue()
       expect(Base_F372.field).assertEqual(325)
     })
@@ -2627,8 +2692,7 @@ export default function OverridingFieldsThreeTest(): void {
       let a: A_F373 = new A_F373()
       expect(a.field instanceof byte).assertTrue()
       expect(a.field).assertEqual(78)
-      expect(Base_F373.field instanceof byte).assertTrue()
-      expect(Base_F373.field).assertEqual(127)
+
       expect(Base_F373.field instanceof byte).assertTrue()
       expect(Base_F373.field).assertEqual(127)
     })
@@ -2645,8 +2709,7 @@ export default function OverridingFieldsThreeTest(): void {
       let a: A_F374 = new A_F374()
       expect(a.field instanceof string).assertTrue()
       expect(a.field).assertEqual("defg")
-      expect(Base_F374.field instanceof string).assertTrue()
-      expect(Base_F374.field).assertEqual("abc")
+
       expect(Base_F374.field instanceof string).assertTrue()
       expect(Base_F374.field).assertEqual("abc")
     })
@@ -2663,8 +2726,7 @@ export default function OverridingFieldsThreeTest(): void {
       let a: A_F375 = new A_F375()
       expect(a.field instanceof bigint).assertTrue()
       expect(a.field).assertEqual(5556423623465n)
-      expect(Base_F375.field instanceof bigint).assertTrue()
-      expect(Base_F375.field).assertEqual(12345678901234567890n)
+
       expect(Base_F375.field instanceof bigint).assertTrue()
       expect(Base_F375.field).assertEqual(12345678901234567890n)
     })
@@ -2681,8 +2743,7 @@ export default function OverridingFieldsThreeTest(): void {
       let a: A_F376 = new A_F376()
       expect(a.field instanceof char).assertTrue()
       expect(a.field).assertEqual(c'z')
-      expect(Base_F376.field instanceof char).assertTrue()
-      expect(Base_F376.field).assertEqual(c'\u2028')
+
       expect(Base_F376.field instanceof char).assertTrue()
       expect(Base_F376.field).assertEqual(c'\u2028')
     })
@@ -2699,8 +2760,7 @@ export default function OverridingFieldsThreeTest(): void {
       let a: A_F377 = new A_F377()
       expect(a.field instanceof boolean).assertTrue()
       expect(a.field).assertEqual(true)
-      expect(Base_F377.field instanceof boolean).assertTrue()
-      expect(Base_F377.field).assertEqual(false)
+
       expect(Base_F377.field instanceof boolean).assertTrue()
       expect(Base_F377.field).assertEqual(false)
     })
@@ -2715,10 +2775,11 @@ export default function OverridingFieldsThreeTest(): void {
      */
     it("testOverridingFieldsThree0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F379 = new A_F379()
-      expect(a.field instanceof Object).assertTrue()
-      expect(a.field).assertEqual(5)
-      expect(A_F379.field instanceof Object).assertTrue()
-      expect(A_F379.field).assertEqual("abc")
+        expect(A_F379.field instanceof Object).assertTrue()
+          expect(A_F379.field).assertEqual("abc")
+          expect(Base_F379.field instanceof Object).assertTrue()
+          expect(Base_F379.field).assertEqual(5)
+
     })
 
     /**
@@ -2731,10 +2792,11 @@ export default function OverridingFieldsThreeTest(): void {
      */
     it("testOverridingFieldsThree0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F380 = new A_F380()
-      expect(a.field instanceof number).assertTrue()
-      expect(a.field).assertEqual(3)
-      expect(A_F380.field instanceof number).assertTrue()
-      expect(A_F380.field).assertEqual(6.7)
+        expect(A_F380.field instanceof number).assertTrue()
+          expect(A_F380.field).assertEqual(6.7)
+          expect(Base_F380.field instanceof number).assertTrue()
+          expect(Base_F380.field).assertEqual(3)
+
     })
 
     /**
@@ -2747,10 +2809,11 @@ export default function OverridingFieldsThreeTest(): void {
      */
     it("testOverridingFieldsThree0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F381 = new A_F381()
-      expect(a.field instanceof double).assertTrue()
-      expect(a.field).assertEqual(3.4)
-      expect(A_F381.field instanceof double).assertTrue()
-      expect(A_F381.field).assertEqual(5.0)
+        expect(A_F381.field instanceof double).assertTrue()
+          expect(A_F381.field).assertEqual(5.0)
+          expect(Base_F381.field instanceof double).assertTrue()
+          expect(Base_F381.field).assertEqual(3.4)
+
     })
 
     /**
@@ -2763,10 +2826,11 @@ export default function OverridingFieldsThreeTest(): void {
      */
     it("testOverridingFieldsThree0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F382 = new A_F382()
-      expect(a.field instanceof float).assertTrue()
-      expect(a.field).assertEqual(6.7f)
-      expect(A_F382.field instanceof float).assertTrue()
-      expect(A_F382.field).assertEqual(7.3f)
+        expect(A_F382.field instanceof float).assertTrue()
+          expect(A_F382.field).assertEqual(7.3f)
+          expect(Base_F382.field instanceof float).assertTrue()
+          expect(Base_F382.field).assertEqual(6.7f)
+
     })
 
     /**
@@ -2779,10 +2843,11 @@ export default function OverridingFieldsThreeTest(): void {
      */
     it("testOverridingFieldsThree0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F383 = new A_F383()
-      expect(a.field instanceof long).assertTrue()
-      expect(a.field).assertEqual(9223372036854775807)
-      expect(A_F383.field instanceof long).assertTrue()
-      expect(A_F383.field).assertEqual(78945)
+        expect(A_F383.field instanceof long).assertTrue()
+          expect(A_F383.field).assertEqual(78945)
+          expect(Base_F383.field instanceof long).assertTrue()
+          expect(Base_F383.field).assertEqual(9223372036854775807)
+
     })
 
     /**
@@ -2795,10 +2860,11 @@ export default function OverridingFieldsThreeTest(): void {
      */
     it("testOverridingFieldsThree0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F384 = new A_F384()
-      expect(a.field instanceof int).assertTrue()
-      expect(a.field).assertEqual(123)
-      expect(A_F384.field instanceof int).assertTrue()
-      expect(A_F384.field).assertEqual(321)
+        expect(A_F384.field instanceof int).assertTrue()
+          expect(A_F384.field).assertEqual(321)
+          expect(Base_F384.field instanceof int).assertTrue()
+          expect(Base_F384.field).assertEqual(123)
+
     })
 
     /**
@@ -2811,10 +2877,11 @@ export default function OverridingFieldsThreeTest(): void {
      */
     it("testOverridingFieldsThree0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F385 = new A_F385()
-      expect(a.field instanceof short).assertTrue()
-      expect(a.field).assertEqual(325)
-      expect(A_F385.field instanceof short).assertTrue()
-      expect(A_F385.field).assertEqual(253)
+        expect(A_F385.field instanceof short).assertTrue()
+          expect(A_F385.field).assertEqual(253)
+          expect(Base_F385.field instanceof short).assertTrue()
+          expect(Base_F385.field).assertEqual(325)
+
     })
 
     /**
@@ -2827,10 +2894,11 @@ export default function OverridingFieldsThreeTest(): void {
      */
     it("testOverridingFieldsThree0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F386 = new A_F386()
-      expect(a.field instanceof byte).assertTrue()
-      expect(a.field).assertEqual(127)
-      expect(A_F386.field instanceof byte).assertTrue()
-      expect(A_F386.field).assertEqual(78)
+        expect(A_F386.field instanceof byte).assertTrue()
+          expect(A_F386.field).assertEqual(78)
+          expect(Base_F386.field instanceof byte).assertTrue()
+          expect(Base_F386.field).assertEqual(127)
+
     })
 
     /**
@@ -2843,10 +2911,11 @@ export default function OverridingFieldsThreeTest(): void {
      */
     it("testOverridingFieldsThree0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F387 = new A_F387()
-      expect(a.field instanceof string).assertTrue()
-      expect(a.field).assertEqual("abc")
-      expect(A_F387.field instanceof string).assertTrue()
-      expect(A_F387.field).assertEqual("defg")
+        expect(A_F387.field instanceof string).assertTrue()
+          expect(A_F387.field).assertEqual("defg")
+          expect(Base_F387.field instanceof string).assertTrue()
+          expect(Base_F387.field).assertEqual("abc")
+
     })
 
     /**
@@ -2859,10 +2928,11 @@ export default function OverridingFieldsThreeTest(): void {
      */
     it("testOverridingFieldsThree0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F388 = new A_F388()
-      expect(a.field instanceof bigint).assertTrue()
-      expect(a.field).assertEqual(12345678901234567890n)
-      expect(A_F388.field instanceof bigint).assertTrue()
-      expect(A_F388.field).assertEqual(5556423623465n)
+        expect(A_F388.field instanceof bigint).assertTrue()
+          expect(A_F388.field).assertEqual(5556423623465n)
+          expect(Base_F388.field instanceof bigint).assertTrue()
+          expect(Base_F388.field).assertEqual(12345678901234567890n)
+
     })
 
     /**
@@ -2875,10 +2945,11 @@ export default function OverridingFieldsThreeTest(): void {
      */
     it("testOverridingFieldsThree0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F389 = new A_F389()
-      expect(a.field instanceof char).assertTrue()
-      expect(a.field).assertEqual(c'\u2028')
-      expect(A_F389.field instanceof char).assertTrue()
-      expect(A_F389.field).assertEqual(c'z')
+        expect(A_F389.field instanceof char).assertTrue()
+          expect(A_F389.field).assertEqual(c'z')
+          expect(Base_F389.field instanceof char).assertTrue()
+          expect(Base_F389.field).assertEqual(c'\u2028')
+
     })
 
     /**
@@ -2891,10 +2962,11 @@ export default function OverridingFieldsThreeTest(): void {
      */
     it("testOverridingFieldsThree0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F390 = new A_F390()
-      expect(a.field instanceof boolean).assertTrue()
-      expect(a.field).assertEqual(false)
-      expect(A_F390.field instanceof boolean).assertTrue()
-      expect(A_F390.field).assertEqual(true)
+        expect(A_F390.field instanceof boolean).assertTrue()
+          expect(A_F390.field).assertEqual(true)
+          expect(Base_F390.field instanceof boolean).assertTrue()
+          expect(Base_F390.field).assertEqual(false)
+
     })
   })
 }

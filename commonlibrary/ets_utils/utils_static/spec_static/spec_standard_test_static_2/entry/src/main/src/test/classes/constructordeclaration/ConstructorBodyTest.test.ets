@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -600,7 +600,7 @@ class A19 {
     expect(this.f08).assertEqual('3.14')
     expect(this.f09).assertEqual(111111111111111111111111n)
     expect(this.f10.length).assertEqual(3)
-    expect(this.f10[0] instanceof Object)
+    expect(this.f10[0] instanceof Object).assertTrue()
     expect(this.f10[1]).assertEqual('b')
     expect(this.f10[2]).assertEqual(333n)
     expect(this.f11.length).assertEqual(3)
@@ -680,7 +680,7 @@ class B16 extends A20 {
     expect(this.f08).assertEqual('3.14')
     expect(this.f09).assertEqual(111111111111111111111111n)
     expect(this.f10.length).assertEqual(3)
-    expect(this.f10[0] instanceof Object)
+    expect(this.f10[0] instanceof Object).assertTrue()
     expect(this.f10[1]).assertEqual('b')
     expect(this.f10[2]).assertEqual(333n)
     expect(this.f11.length).assertEqual(3)
@@ -760,7 +760,7 @@ class B17 extends A21 {
     expect(this.f08).assertEqual('3.14')
     expect(this.f09).assertEqual(111111111111111111111111n)
     expect(this.f10.length).assertEqual(3)
-    expect(this.f10[0] instanceof Object)
+    expect(this.f10[0] instanceof Object).assertTrue()
     expect(this.f10[1]).assertEqual('b')
     expect(this.f10[2]).assertEqual(333n)
     expect(this.f11.length).assertEqual(3)
@@ -845,7 +845,7 @@ class B18 extends A22 {
     expect(this.f08).assertEqual('3.14')
     expect(this.f09).assertEqual(111111111111111111111111n)
     expect(this.f10.length).assertEqual(3)
-    expect(this.f10[0] instanceof Object)
+    expect(this.f10[0] instanceof Object).assertTrue()
     expect(this.f10[1]).assertEqual('b')
     expect(this.f10[2]).assertEqual(333n)
     expect(this.f11.length).assertEqual(3)
@@ -888,7 +888,7 @@ class B18 extends A22 {
     expect(this.f08).assertEqual('3.14')
     expect(this.f09).assertEqual(111111111111111111111111n)
     expect(this.f10.length).assertEqual(3)
-    expect(this.f10[0] instanceof Object)
+    expect(this.f10[0] instanceof Object).assertTrue()
     expect(this.f10[1]).assertEqual('b')
     expect(this.f10[2]).assertEqual(333n)
     expect(this.f11.length).assertEqual(3)
@@ -960,7 +960,7 @@ class B19 extends A23 {
     expect(this.f08).assertEqual('3.14')
     expect(this.f09).assertEqual(111111111111111111111111n)
     expect(this.f10.length).assertEqual(3)
-    expect(this.f10[0] instanceof Object)
+    expect(this.f10[0] instanceof Object).assertTrue()
     expect(this.f10[1]).assertEqual('b')
     expect(this.f10[2]).assertEqual(333n)
     expect(this.f11.length).assertEqual(3)
@@ -1003,7 +1003,7 @@ class B19 extends A23 {
     expect(this.f08).assertEqual('3.14')
     expect(this.f09).assertEqual(111111111111111111111111n)
     expect(this.f10.length).assertEqual(3)
-    expect(this.f10[0] instanceof Object)
+    expect(this.f10[0] instanceof Object).assertTrue()
     expect(this.f10[1]).assertEqual('b')
     expect(this.f10[2]).assertEqual(333n)
     expect(this.f11.length).assertEqual(3)
@@ -1038,6 +1038,7 @@ class A24 {
         return
       case Color.Green:
         this.x = 22
+        return
       case Color.Blue:
         return
     }
@@ -3007,12 +3008,12 @@ export default function ConstructorBodyTest():void {
     it("testConstructorBody0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0056'
       let black = new BWPoint(1.0, 11.0, true)
-      expect(black instanceof BWPoint)
+      expect(black instanceof BWPoint).assertTrue()
       expect(black.color).assertEqual(1)
       expect(black.x).assertEqual(1.0)
       expect(black.y).assertEqual(11.0)
       let white = new BWPoint(2.0, 22.0, false)
-      expect(white instanceof BWPoint)
+      expect(white instanceof BWPoint).assertTrue()
       expect(white.color).assertEqual(0)
       expect(white.x).assertEqual(2.0)
       expect(white.y).assertEqual(22.0)
@@ -3030,7 +3031,7 @@ export default function ConstructorBodyTest():void {
     it("testConstructorBody0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0057'
       let black = ColoredPoint1.zero(ColoredPoint1.BLACK);
-      expect(black instanceof ColoredPoint1);
+      expect(black instanceof ColoredPoint1).assertTrue();
       expect(black.color).assertEqual(1);
       expect(black.x).assertEqual(0.0);
       expect(black.y).assertEqual(0.0);

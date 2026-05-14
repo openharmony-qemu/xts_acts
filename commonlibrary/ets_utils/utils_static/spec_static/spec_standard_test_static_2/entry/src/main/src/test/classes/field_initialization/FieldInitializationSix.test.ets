@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1663,10 +1663,10 @@ export default function FieldInitializationSixTest(): void {
      */
     it("testFieldInitSix0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F620<Object | undefined> = new A_F620<Object | undefined>(undefined)
-      expect(a.field instanceof Object | undefined).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(undefined)
       a.field = 5
-      expect(a.field instanceof Object | undefined).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(5)
     })
 
@@ -1680,10 +1680,10 @@ export default function FieldInitializationSixTest(): void {
      */
     it("testFieldInitSix0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F621<Object | undefined | null> = new A_F621<Object | undefined | null>(4)
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(4)
       a.field = 5
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(5)
     })
 
@@ -1701,7 +1701,6 @@ export default function FieldInitializationSixTest(): void {
       let val: long = 5
           for (let i: int = 0; i < 5; i++) {
             let a: A_F623 = new A_F623()
-        expect(a.field instanceof long).assertTrue()
         expect(a.field instanceof long).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
@@ -1722,7 +1721,6 @@ export default function FieldInitializationSixTest(): void {
           for (let i: int = 0; i < 5; i++) {
             let a: A_F624 = new A_F624()
         expect(a.field instanceof int).assertTrue()
-        expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
           }
@@ -1741,7 +1739,6 @@ export default function FieldInitializationSixTest(): void {
       let val: byte = 5
           for (let i: int = 0; i < 5; i++) {
             let a: A_F625 = new A_F625()
-        expect(a.field instanceof byte).assertTrue()
         expect(a.field instanceof byte).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
@@ -1762,7 +1759,6 @@ export default function FieldInitializationSixTest(): void {
           for (let i: int = 0; i < 5; i++) {
             let a: A_F626 = new A_F626()
         expect(a.field instanceof short).assertTrue()
-        expect(a.field instanceof short).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
           }
@@ -1781,7 +1777,6 @@ export default function FieldInitializationSixTest(): void {
       let val: double = 5
           for (let i: int = 0; i < 5; i++) {
             let a: A_F627 = new A_F627()
-        expect(a.field instanceof double).assertTrue()
         expect(a.field instanceof double).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
@@ -1802,7 +1797,6 @@ export default function FieldInitializationSixTest(): void {
           for (let i: int = 0; i < 5; i++) {
             let a: A_F628 = new A_F628()
         expect(a.field instanceof number).assertTrue()
-        expect(a.field instanceof number).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
           }
@@ -1821,7 +1815,6 @@ export default function FieldInitializationSixTest(): void {
       let val: float = 5.0f
           for (let i: int = 0; i < 5; i++) {
             let a: A_F629 = new A_F629()
-        expect(a.field instanceof float).assertTrue()
         expect(a.field instanceof float).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1.0f
@@ -1842,7 +1835,6 @@ export default function FieldInitializationSixTest(): void {
           for (let i: int = 0; i < 5; i++) {
             let a: A_F630 = new A_F630()
         expect(a.field instanceof bigint).assertTrue()
-        expect(a.field instanceof bigint).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1n
           }
@@ -1861,7 +1853,6 @@ export default function FieldInitializationSixTest(): void {
       let val: string = "v"
           for (let i: int = 0; i < 5; i++) {
             let a: A_F631 = new A_F631()
-        expect(a.field instanceof string).assertTrue()
         expect(a.field instanceof string).assertTrue()
         expect(a.field).assertEqual(val)
             val += "n"
@@ -1921,7 +1912,7 @@ export default function FieldInitializationSixTest(): void {
       let val: int = 5
           for (let i: int = 0; i < 5; i++) {
             let a: A_F634 = new A_F634()
-        expect(a.field instanceof Object | undefined).assertTrue()
+        expect(a.field instanceof Object).assertTrue()
         expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
@@ -1941,7 +1932,7 @@ export default function FieldInitializationSixTest(): void {
       let val: int = 5
           for (let i: int = 0; i < 5; i++) {
             let a: A_F635 = new A_F635()
-        expect(a.field instanceof Object | undefined | null).assertTrue()
+        expect(a.field instanceof Object).assertTrue()
         expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
@@ -1962,7 +1953,6 @@ export default function FieldInitializationSixTest(): void {
           for (let i: int = 0; i < 5; i++) {
             let a: A_F637 = new A_F637()
         expect(a.field instanceof long).assertTrue()
-        expect(a.field instanceof long).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
           }
@@ -1981,7 +1971,6 @@ export default function FieldInitializationSixTest(): void {
       let val: int = 5
           for (let i: int = 0; i < 5; i++) {
             let a: A_F638 = new A_F638()
-        expect(a.field instanceof int).assertTrue()
         expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
@@ -2002,7 +1991,6 @@ export default function FieldInitializationSixTest(): void {
           for (let i: int = 0; i < 5; i++) {
             let a: A_F639 = new A_F639()
         expect(a.field instanceof byte).assertTrue()
-        expect(a.field instanceof byte).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
           }
@@ -2021,7 +2009,6 @@ export default function FieldInitializationSixTest(): void {
       let val: short = 5
           for (let i: int = 0; i < 5; i++) {
             let a: A_F640 = new A_F640()
-        expect(a.field instanceof short).assertTrue()
         expect(a.field instanceof short).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
@@ -2042,7 +2029,6 @@ export default function FieldInitializationSixTest(): void {
           for (let i: int = 0; i < 5; i++) {
             let a: A_F641 = new A_F641()
         expect(a.field instanceof double).assertTrue()
-        expect(a.field instanceof double).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
           }
@@ -2061,7 +2047,6 @@ export default function FieldInitializationSixTest(): void {
       let val: int = 5
           for (let i: int = 0; i < 5; i++) {
             let a: A_F642 = new A_F642()
-        expect(a.field instanceof number).assertTrue()
         expect(a.field instanceof number).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
@@ -2082,7 +2067,6 @@ export default function FieldInitializationSixTest(): void {
           for (let i: int = 0; i < 5; i++) {
             let a: A_F643 = new A_F643()
         expect(a.field instanceof float).assertTrue()
-        expect(a.field instanceof float).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1.0f
           }
@@ -2102,7 +2086,6 @@ export default function FieldInitializationSixTest(): void {
           for (let i: int = 0; i < 5; i++) {
             let a: A_F644 = new A_F644()
         expect(a.field instanceof bigint).assertTrue()
-        expect(a.field instanceof bigint).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1n
           }
@@ -2121,7 +2104,6 @@ export default function FieldInitializationSixTest(): void {
       let val: string = "v"
           for (let i: int = 0; i < 5; i++) {
             let a: A_F645 = new A_F645()
-        expect(a.field instanceof string).assertTrue()
         expect(a.field instanceof string).assertTrue()
         expect(a.field).assertEqual(val)
             val += "n"
@@ -2181,7 +2163,7 @@ export default function FieldInitializationSixTest(): void {
       let val: int = 5
           for (let i: int = 0; i < 5; i++) {
             let a: A_F648 = new A_F648()
-        expect(a.field instanceof Object | undefined).assertTrue()
+        expect(a.field instanceof Object).assertTrue()
         expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
@@ -2201,7 +2183,7 @@ export default function FieldInitializationSixTest(): void {
       let val: int = 5
           for (let i: int = 0; i < 5; i++) {
             let a: A_F649 = new A_F649()
-        expect(a.field instanceof Object | undefined | null).assertTrue()
+        expect(a.field instanceof Object).assertTrue()
         expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
@@ -2222,7 +2204,6 @@ export default function FieldInitializationSixTest(): void {
           for (let i: int = 0; i < 5; i++) {
             let a: A_F651 = new A_F651()
         expect(a.field instanceof long).assertTrue()
-        expect(a.field instanceof long).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
           }
@@ -2241,7 +2222,6 @@ export default function FieldInitializationSixTest(): void {
       let val: int = 5
           for (let i: int = 0; i < 5; i++) {
             let a: A_F652 = new A_F652()
-        expect(a.field instanceof int).assertTrue()
         expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
@@ -2262,7 +2242,6 @@ export default function FieldInitializationSixTest(): void {
           for (let i: int = 0; i < 5; i++) {
             let a: A_F653 = new A_F653()
         expect(a.field instanceof byte).assertTrue()
-        expect(a.field instanceof byte).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
           }
@@ -2281,7 +2260,6 @@ export default function FieldInitializationSixTest(): void {
       let val: short = 5
           for (let i: int = 0; i < 5; i++) {
             let a: A_F654 = new A_F654()
-        expect(a.field instanceof short).assertTrue()
         expect(a.field instanceof short).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
@@ -2302,7 +2280,6 @@ export default function FieldInitializationSixTest(): void {
           for (let i: int = 0; i < 5; i++) {
             let a: A_F655 = new A_F655()
         expect(a.field instanceof double).assertTrue()
-        expect(a.field instanceof double).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
           }
@@ -2321,7 +2298,6 @@ export default function FieldInitializationSixTest(): void {
       let val: int = 5
           for (let i: int = 0; i < 5; i++) {
             let a: A_F656 = new A_F656()
-        expect(a.field instanceof number).assertTrue()
         expect(a.field instanceof number).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
@@ -2342,7 +2318,6 @@ export default function FieldInitializationSixTest(): void {
           for (let i: int = 0; i < 5; i++) {
             let a: A_F657 = new A_F657()
         expect(a.field instanceof float).assertTrue()
-        expect(a.field instanceof float).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1.0f
           }
@@ -2362,7 +2337,6 @@ export default function FieldInitializationSixTest(): void {
           for (let i: int = 0; i < 5; i++) {
             let a: A_F658 = new A_F658()
         expect(a.field instanceof bigint).assertTrue()
-        expect(a.field instanceof bigint).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1n
           }
@@ -2381,7 +2355,6 @@ export default function FieldInitializationSixTest(): void {
       let val: string = "v"
           for (let i: int = 0; i < 5; i++) {
             let a: A_F659 = new A_F659()
-        expect(a.field instanceof string).assertTrue()
         expect(a.field instanceof string).assertTrue()
         expect(a.field).assertEqual(val)
             val += "n"
@@ -2441,7 +2414,7 @@ export default function FieldInitializationSixTest(): void {
       let val: int = 5
           for (let i: int = 0; i < 5; i++) {
             let a: A_F662 = new A_F662()
-        expect(a.field instanceof Object | undefined).assertTrue()
+        expect(a.field instanceof Object).assertTrue()
         expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
@@ -2461,7 +2434,7 @@ export default function FieldInitializationSixTest(): void {
       let val: int = 5
           for (let i: int = 0; i < 5; i++) {
             let a: A_F663 = new A_F663()
-        expect(a.field instanceof Object | undefined | null).assertTrue()
+        expect(a.field instanceof Object).assertTrue()
         expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
@@ -2683,10 +2656,10 @@ export default function FieldInitializationSixTest(): void {
      */
     it("testFieldInitSix0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F677 = new ns.A_F677()
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(4)
       a.field = 5
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(5)
     })
 
@@ -2905,10 +2878,10 @@ export default function FieldInitializationSixTest(): void {
      */
     it("testFieldInitSix0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: ns.A_F691 = new ns.A_F691()
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(4)
       a.field = 5
-      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field instanceof Object).assertTrue()
       expect(a.field).assertEqual(5)
     })
   })

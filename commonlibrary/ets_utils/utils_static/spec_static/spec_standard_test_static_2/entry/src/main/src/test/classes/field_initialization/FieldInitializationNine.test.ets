@@ -857,14 +857,14 @@ export default function FieldInitializationNineTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitNine0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(A_F899.field instanceof Object | undefined).assertTrue()
+      expect(A_F899.field instanceof Object).assertTrue()
       expect(A_F899.field).assertEqual(undefined)
           let a: A_F899 = new A_F899()
       a.foo(5)
-      expect(A_F899.field instanceof Object | undefined).assertTrue()
+      expect(A_F899.field instanceof Object).assertTrue()
       expect(A_F899.field).assertEqual(5)
       a.foo(undefined)
-      expect(A_F899.field instanceof Object | undefined).assertTrue()
+      expect(A_F899.field instanceof Object).assertTrue()
       expect(A_F899.field).assertEqual(undefined)
     })
 
@@ -877,14 +877,14 @@ export default function FieldInitializationNineTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitNine0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(A_F900.field instanceof Object | undefined | null).assertTrue()
+      expect(A_F900.field instanceof Object).assertTrue()
       expect(A_F900.field).assertEqual(4)
           let a: A_F900 = new A_F900()
       a.foo(5)
-      expect(A_F900.field instanceof Object | undefined | null).assertTrue()
+      expect(A_F900.field instanceof Object).assertTrue()
       expect(A_F900.field).assertEqual(5)
       a.foo(4)
-      expect(A_F900.field instanceof Object | undefined | null).assertTrue()
+      expect(A_F900.field instanceof Object).assertTrue()
       expect(A_F900.field).assertEqual(4)
     })
 
@@ -1125,13 +1125,13 @@ export default function FieldInitializationNineTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitNine0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(A_F914.field instanceof Object | undefined).assertTrue()
+      expect(A_F914.field instanceof Object).assertTrue()
       expect(A_F914.field).assertEqual(undefined)
           let a: A_F914 = new A_F914()
-      expect(A_F914.field instanceof Object | undefined).assertTrue()
+      expect(A_F914.field instanceof Object).assertTrue()
       expect(A_F914.field).assertEqual(5)
           A_F914.field = undefined
-      expect(A_F914.field instanceof Object | undefined).assertTrue()
+      expect(A_F914.field instanceof Object).assertTrue()
       expect(A_F914.field).assertEqual(undefined)
     })
 
@@ -1144,13 +1144,13 @@ export default function FieldInitializationNineTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitNine0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(A_F915.field instanceof Object | undefined | null).assertTrue()
+      expect(A_F915.field instanceof Object).assertTrue()
       expect(A_F915.field).assertEqual(4)
           let a: A_F915 = new A_F915()
-      expect(A_F915.field instanceof Object | undefined | null).assertTrue()
+      expect(A_F915.field instanceof Object).assertTrue()
       expect(A_F915.field).assertEqual(5)
           A_F915.field = 4
-      expect(A_F915.field instanceof Object | undefined | null).assertTrue()
+      expect(A_F915.field instanceof Object).assertTrue()
       expect(A_F915.field).assertEqual(4)
     })
 
@@ -1168,7 +1168,6 @@ export default function FieldInitializationNineTest(): void {
         expect(A_F917.v instanceof long).assertTrue()
         expect(A_F917.v).assertEqual(val)
             let a: A_F917 = new A_F917()
-        expect(a.field instanceof long).assertTrue()
         expect(a.field instanceof long).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
@@ -1191,7 +1190,6 @@ export default function FieldInitializationNineTest(): void {
         expect(A_F918.v).assertEqual(val)
             let a: A_F918 = new A_F918()
         expect(a.field instanceof int).assertTrue()
-        expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
           }
@@ -1212,7 +1210,6 @@ export default function FieldInitializationNineTest(): void {
         expect(A_F919.v instanceof byte).assertTrue()
         expect(A_F919.v).assertEqual(val)
             let a: A_F919 = new A_F919()
-        expect(a.field instanceof byte).assertTrue()
         expect(a.field instanceof byte).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
@@ -1235,7 +1232,6 @@ export default function FieldInitializationNineTest(): void {
         expect(A_F920.v).assertEqual(val)
             let a: A_F920 = new A_F920()
         expect(a.field instanceof short).assertTrue()
-        expect(a.field instanceof short).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
           }
@@ -1256,7 +1252,6 @@ export default function FieldInitializationNineTest(): void {
         expect(A_F921.v instanceof double).assertTrue()
         expect(A_F921.v).assertEqual(val)
             let a: A_F921 = new A_F921()
-        expect(a.field instanceof double).assertTrue()
         expect(a.field instanceof double).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
@@ -1279,7 +1274,6 @@ export default function FieldInitializationNineTest(): void {
         expect(A_F922.v).assertEqual(val)
             let a: A_F922 = new A_F922()
         expect(a.field instanceof number).assertTrue()
-        expect(a.field instanceof number).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
           }
@@ -1300,7 +1294,6 @@ export default function FieldInitializationNineTest(): void {
         expect(A_F923.v instanceof float).assertTrue()
         expect(A_F923.v).assertEqual(val)
             let a: A_F923 = new A_F923()
-        expect(a.field instanceof float).assertTrue()
         expect(a.field instanceof float).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1.0f
@@ -1323,7 +1316,6 @@ export default function FieldInitializationNineTest(): void {
         expect(A_F924.v).assertEqual(val)
             let a: A_F924 = new A_F924()
         expect(a.field instanceof bigint).assertTrue()
-        expect(a.field instanceof bigint).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1n
           }
@@ -1344,7 +1336,6 @@ export default function FieldInitializationNineTest(): void {
         expect(A_F925.v instanceof string).assertTrue()
         expect(A_F925.v).assertEqual(val)
             let a: A_F925 = new A_F925()
-        expect(a.field instanceof string).assertTrue()
         expect(a.field instanceof string).assertTrue()
         expect(a.field).assertEqual(val)
             val += "n"
@@ -1410,7 +1401,7 @@ export default function FieldInitializationNineTest(): void {
         expect(A_F928.v instanceof int).assertTrue()
         expect(A_F928.v).assertEqual(val)
             let a: A_F928 = new A_F928()
-        expect(a.field instanceof Object | undefined).assertTrue()
+        expect(a.field instanceof Object).assertTrue()
         expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
@@ -1432,7 +1423,7 @@ export default function FieldInitializationNineTest(): void {
         expect(A_F929.v instanceof int).assertTrue()
         expect(A_F929.v).assertEqual(val)
             let a: A_F929 = new A_F929()
-        expect(a.field instanceof Object | undefined | null).assertTrue()
+        expect(a.field instanceof Object).assertTrue()
         expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
@@ -1455,7 +1446,6 @@ export default function FieldInitializationNineTest(): void {
         expect(A_F931.v).assertEqual(val)
             let a: A_F931 = new A_F931()
         expect(a.field instanceof long).assertTrue()
-        expect(a.field instanceof long).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
           }
@@ -1476,7 +1466,6 @@ export default function FieldInitializationNineTest(): void {
         expect(A_F932.v instanceof int).assertTrue()
         expect(A_F932.v).assertEqual(val)
             let a: A_F932 = new A_F932()
-        expect(a.field instanceof int).assertTrue()
         expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
@@ -1499,7 +1488,6 @@ export default function FieldInitializationNineTest(): void {
         expect(A_F933.v).assertEqual(val)
             let a: A_F933 = new A_F933()
         expect(a.field instanceof byte).assertTrue()
-        expect(a.field instanceof byte).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
           }
@@ -1520,7 +1508,6 @@ export default function FieldInitializationNineTest(): void {
         expect(A_F934.v instanceof short).assertTrue()
         expect(A_F934.v).assertEqual(val)
             let a: A_F934 = new A_F934()
-        expect(a.field instanceof short).assertTrue()
         expect(a.field instanceof short).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
@@ -1543,7 +1530,6 @@ export default function FieldInitializationNineTest(): void {
         expect(A_F935.v).assertEqual(val)
             let a: A_F935 = new A_F935()
         expect(a.field instanceof double).assertTrue()
-        expect(a.field instanceof double).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
           }
@@ -1564,7 +1550,6 @@ export default function FieldInitializationNineTest(): void {
         expect(A_F936.v instanceof number).assertTrue()
         expect(A_F936.v).assertEqual(val)
             let a: A_F936 = new A_F936()
-        expect(a.field instanceof number).assertTrue()
         expect(a.field instanceof number).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
@@ -1587,7 +1572,6 @@ export default function FieldInitializationNineTest(): void {
         expect(A_F937.v).assertEqual(val)
             let a: A_F937 = new A_F937()
         expect(a.field instanceof float).assertTrue()
-        expect(a.field instanceof float).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1.0f
           }
@@ -1609,7 +1593,6 @@ export default function FieldInitializationNineTest(): void {
         expect(A_F938.v).assertEqual(val)
             let a: A_F938 = new A_F938()
         expect(a.field instanceof bigint).assertTrue()
-        expect(a.field instanceof bigint).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1n
           }
@@ -1630,7 +1613,6 @@ export default function FieldInitializationNineTest(): void {
         expect(A_F939.v instanceof string).assertTrue()
         expect(A_F939.v).assertEqual(val)
             let a: A_F939 = new A_F939()
-        expect(a.field instanceof string).assertTrue()
         expect(a.field instanceof string).assertTrue()
         expect(a.field).assertEqual(val)
             val += "n"
@@ -1696,7 +1678,7 @@ export default function FieldInitializationNineTest(): void {
         expect(A_F942.v instanceof int).assertTrue()
         expect(A_F942.v).assertEqual(val)
             let a: A_F942 = new A_F942()
-        expect(a.field instanceof Object | undefined).assertTrue()
+        expect(a.field instanceof Object).assertTrue()
         expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
@@ -1718,7 +1700,7 @@ export default function FieldInitializationNineTest(): void {
         expect(A_F943.v instanceof int).assertTrue()
         expect(A_F943.v).assertEqual(val)
             let a: A_F943 = new A_F943()
-        expect(a.field instanceof Object | undefined | null).assertTrue()
+        expect(a.field instanceof Object).assertTrue()
         expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
@@ -1741,7 +1723,6 @@ export default function FieldInitializationNineTest(): void {
         expect(A_F945.v).assertEqual(val)
             let a: A_F945 = new A_F945()
         expect(a.field instanceof long).assertTrue()
-        expect(a.field instanceof long).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
           }
@@ -1762,7 +1743,6 @@ export default function FieldInitializationNineTest(): void {
         expect(A_F946.v instanceof int).assertTrue()
         expect(A_F946.v).assertEqual(val)
             let a: A_F946 = new A_F946()
-        expect(a.field instanceof int).assertTrue()
         expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
@@ -1785,7 +1765,6 @@ export default function FieldInitializationNineTest(): void {
         expect(A_F947.v).assertEqual(val)
             let a: A_F947 = new A_F947()
         expect(a.field instanceof byte).assertTrue()
-        expect(a.field instanceof byte).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
           }
@@ -1806,7 +1785,6 @@ export default function FieldInitializationNineTest(): void {
         expect(A_F948.v instanceof short).assertTrue()
         expect(A_F948.v).assertEqual(val)
             let a: A_F948 = new A_F948()
-        expect(a.field instanceof short).assertTrue()
         expect(a.field instanceof short).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
@@ -1829,7 +1807,6 @@ export default function FieldInitializationNineTest(): void {
         expect(A_F949.v).assertEqual(val)
             let a: A_F949 = new A_F949()
         expect(a.field instanceof double).assertTrue()
-        expect(a.field instanceof double).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
           }
@@ -1850,7 +1827,6 @@ export default function FieldInitializationNineTest(): void {
         expect(A_F950.v instanceof number).assertTrue()
         expect(A_F950.v).assertEqual(val)
             let a: A_F950 = new A_F950()
-        expect(a.field instanceof number).assertTrue()
         expect(a.field instanceof number).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
@@ -1873,7 +1849,6 @@ export default function FieldInitializationNineTest(): void {
         expect(A_F951.v).assertEqual(val)
             let a: A_F951 = new A_F951()
         expect(a.field instanceof float).assertTrue()
-        expect(a.field instanceof float).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1.0f
           }
@@ -1895,7 +1870,6 @@ export default function FieldInitializationNineTest(): void {
         expect(A_F952.v).assertEqual(val)
             let a: A_F952 = new A_F952()
         expect(a.field instanceof bigint).assertTrue()
-        expect(a.field instanceof bigint).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1n
           }
@@ -1916,7 +1890,6 @@ export default function FieldInitializationNineTest(): void {
         expect(A_F953.v instanceof string).assertTrue()
         expect(A_F953.v).assertEqual(val)
             let a: A_F953 = new A_F953()
-        expect(a.field instanceof string).assertTrue()
         expect(a.field instanceof string).assertTrue()
         expect(a.field).assertEqual(val)
             val += "n"
@@ -1982,7 +1955,7 @@ export default function FieldInitializationNineTest(): void {
         expect(A_F956.v instanceof int).assertTrue()
         expect(A_F956.v).assertEqual(val)
             let a: A_F956 = new A_F956()
-        expect(a.field instanceof Object | undefined).assertTrue()
+        expect(a.field instanceof Object).assertTrue()
         expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
@@ -2004,7 +1977,7 @@ export default function FieldInitializationNineTest(): void {
         expect(A_F957.v instanceof int).assertTrue()
         expect(A_F957.v).assertEqual(val)
             let a: A_F957 = new A_F957()
-        expect(a.field instanceof Object | undefined | null).assertTrue()
+        expect(a.field instanceof Object).assertTrue()
         expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(val)
             val += 1
@@ -2192,13 +2165,13 @@ export default function FieldInitializationNineTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitNine0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(A_F968.field instanceof Object | undefined).assertTrue()
+      expect(A_F968.field instanceof Object).assertTrue()
       expect(A_F968.field).assertEqual(undefined)
           A_F968.field = 5
-      expect(A_F968.field instanceof Object | undefined).assertTrue()
+      expect(A_F968.field instanceof Object).assertTrue()
       expect(A_F968.field).assertEqual(5)
           A_F968.field = undefined
-      expect(A_F968.field instanceof Object | undefined).assertTrue()
+      expect(A_F968.field instanceof Object).assertTrue()
       expect(A_F968.field).assertEqual(undefined)
     })
 
@@ -2211,13 +2184,13 @@ export default function FieldInitializationNineTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitNine0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(A_F969.field instanceof Object | undefined | null).assertTrue()
+      expect(A_F969.field instanceof Object).assertTrue()
       expect(A_F969.field).assertEqual(undefined)
           A_F969.field = 5
-      expect(A_F969.field instanceof Object | undefined | null).assertTrue()
+      expect(A_F969.field instanceof Object).assertTrue()
       expect(A_F969.field).assertEqual(5)
           A_F969.field = undefined
-      expect(A_F969.field instanceof Object | undefined | null).assertTrue()
+      expect(A_F969.field instanceof Object).assertTrue()
       expect(A_F969.field).assertEqual(undefined)
     })
 
@@ -2458,13 +2431,13 @@ export default function FieldInitializationNineTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitNine0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(A_F983.field instanceof Object | undefined).assertTrue()
+      expect(A_F983.field instanceof Object).assertTrue()
       expect(A_F983.field).assertEqual(undefined)
           A_F983.field = 5
-      expect(A_F983.field instanceof Object | undefined).assertTrue()
+      expect(A_F983.field instanceof Object).assertTrue()
       expect(A_F983.field).assertEqual(5)
           A_F983.field = undefined
-      expect(A_F983.field instanceof Object | undefined).assertTrue()
+      expect(A_F983.field instanceof Object).assertTrue()
       expect(A_F983.field).assertEqual(undefined)
     })
 
@@ -2477,13 +2450,13 @@ export default function FieldInitializationNineTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldInitNine0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(A_F984.field instanceof Object | undefined | null).assertTrue()
+      expect(A_F984.field instanceof Object).assertTrue()
       expect(A_F984.field).assertEqual(4)
           A_F984.field = 5
-      expect(A_F984.field instanceof Object | undefined | null).assertTrue()
+      expect(A_F984.field instanceof Object).assertTrue()
       expect(A_F984.field).assertEqual(5)
           A_F984.field = 4
-      expect(A_F984.field instanceof Object | undefined | null).assertTrue()
+      expect(A_F984.field instanceof Object).assertTrue()
       expect(A_F984.field).assertEqual(4)
     })
 

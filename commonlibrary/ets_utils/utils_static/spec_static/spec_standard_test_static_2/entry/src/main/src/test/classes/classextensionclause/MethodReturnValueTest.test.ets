@@ -1,4 +1,4 @@
-/*---
+﻿/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,7 +90,7 @@ class GrandParent2 {
   }
 }
 
-class Parent3 extends GrandParent {
+class Parent3 extends GrandParent2 {
   public getValue(): number {
     return super.getValue() + 100;
   }
@@ -737,7 +737,7 @@ export default function MethodReturnValueTest(): void {
      * @tc.level     Level 2
      */
     it("testMethodReturnValue0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodReturnValue0020';
+      const TAG = 'testMethodReturnValue0019';
       let parent = new Parent19();
       let parentValue: boolean = parent.getValue();
       expect(parentValue).assertEqual(true);
@@ -755,7 +755,7 @@ export default function MethodReturnValueTest(): void {
      * @tc.level     Level 2
      */
     it("testMethodReturnValue0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodReturnValue0021';
+      const TAG = 'testMethodReturnValue0020';
       let parent = new Parent20();
       let parentValue: [] = parent.getValue();
       expect(parentValue.toString()).assertEqual("");
@@ -773,7 +773,7 @@ export default function MethodReturnValueTest(): void {
      * @tc.level     Level 2
      */
     it("testMethodReturnValue0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodReturnValue0022';
+      const TAG = 'testMethodReturnValue0021';
       let parent = new Parent21();
       let obj1: Person = parent.createGenericObject();
       expect(obj1.name).assertEqual("John");
@@ -797,7 +797,7 @@ export default function MethodReturnValueTest(): void {
      * @tc.level     Level 2
      */
     it("testMethodReturnValue0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodReturnValue0023';
+      const TAG = 'testMethodReturnValue0022';
       let parent = new Parent22();
       let parentValue: bigint = parent.getValue();
       expect(parentValue).assertEqual(123n);
@@ -815,7 +815,7 @@ export default function MethodReturnValueTest(): void {
      * @tc.level     Level 2
      */
     it("testMethodReturnValue0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testMethodReturnValue0024';
+      const TAG = 'testMethodReturnValue0023';
       let parent = new Parent23();
       parent.getValue();
       expect(parent.wasExecuted()).assertEqual(true);

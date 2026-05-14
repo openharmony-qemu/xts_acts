@@ -35,6 +35,11 @@ async function sleep(time: int): Promise<int> {
   });
 }
 
+
+function waitForCompletion<T>(fn: () => T): T {
+  return fn()
+}
+
 class A_F100 {
   field!: string
 }
@@ -1620,7 +1625,7 @@ export default function FieldsLateInitOneTest(): void {
     it("testFieldsLateInitOne0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F146 = new A_F146()
         expect(a.field instanceof Promise).assertTrue()
-        let res = waitForCompletion(async () => a.field)
+        let res = waitForCompletion(() => a.field)
         expect(res instanceof long).assertTrue()
         expect(res).assertEqual(5)
     })
@@ -1636,7 +1641,7 @@ export default function FieldsLateInitOneTest(): void {
     it("testFieldsLateInitOne0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F147 = new A_F147()
         expect(a.field instanceof Promise).assertTrue()
-        let res = waitForCompletion(async () => a.field)
+        let res = waitForCompletion(() => a.field)
         expect(res instanceof int).assertTrue()
         expect(res).assertEqual(5)
     })
@@ -1652,7 +1657,7 @@ export default function FieldsLateInitOneTest(): void {
     it("testFieldsLateInitOne0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F148 = new A_F148()
         expect(a.field instanceof Promise).assertTrue()
-        let res = waitForCompletion(async () => a.field)
+        let res = waitForCompletion(() => a.field)
         expect(res instanceof byte).assertTrue()
         expect(res).assertEqual(5)
     })
@@ -1668,7 +1673,7 @@ export default function FieldsLateInitOneTest(): void {
     it("testFieldsLateInitOne0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F149 = new A_F149()
         expect(a.field instanceof Promise).assertTrue()
-        let res = waitForCompletion(async () => a.field)
+        let res = waitForCompletion(() => a.field)
         expect(res instanceof short).assertTrue()
         expect(res).assertEqual(5)
     })
@@ -1684,7 +1689,7 @@ export default function FieldsLateInitOneTest(): void {
     it("testFieldsLateInitOne0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F150 = new A_F150()
         expect(a.field instanceof Promise).assertTrue()
-        let res = waitForCompletion(async () => a.field)
+        let res = waitForCompletion(() => a.field)
         expect(res instanceof double).assertTrue()
         expect(res).assertEqual(7.3)
     })
@@ -1700,7 +1705,7 @@ export default function FieldsLateInitOneTest(): void {
     it("testFieldsLateInitOne0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F151 = new A_F151()
         expect(a.field instanceof Promise).assertTrue()
-        let res = waitForCompletion(async () => a.field)
+        let res = waitForCompletion(() => a.field)
         expect(res instanceof number).assertTrue()
         expect(res).assertEqual(5)
     })
@@ -1716,7 +1721,7 @@ export default function FieldsLateInitOneTest(): void {
     it("testFieldsLateInitOne0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F152 = new A_F152()
         expect(a.field instanceof Promise).assertTrue()
-        let res = waitForCompletion(async () => a.field)
+        let res = waitForCompletion(() => a.field)
         expect(res instanceof float).assertTrue()
         expect(res).assertEqual(7.3f)
     })
@@ -1732,7 +1737,7 @@ export default function FieldsLateInitOneTest(): void {
     it("testFieldsLateInitOne0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F153 = new A_F153()
         expect(a.field instanceof Promise).assertTrue()
-        let res = waitForCompletion(async () => a.field)
+        let res = waitForCompletion(() => a.field)
         expect(res instanceof bigint).assertTrue()
         expect(res).assertEqual(5n)
     })
@@ -1748,7 +1753,7 @@ export default function FieldsLateInitOneTest(): void {
     it("testFieldsLateInitOne0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F154 = new A_F154()
         expect(a.field instanceof Promise).assertTrue()
-        let res = waitForCompletion(async () => a.field)
+        let res = waitForCompletion(() => a.field)
         expect(res instanceof string).assertTrue()
         expect(res).assertEqual("abc")
     })
@@ -1764,7 +1769,7 @@ export default function FieldsLateInitOneTest(): void {
     it("testFieldsLateInitOne0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F155 = new A_F155()
         expect(a.field instanceof Promise).assertTrue()
-        let res = waitForCompletion(async () => a.field)
+        let res = waitForCompletion(() => a.field)
         expect(res instanceof char).assertTrue()
         expect(res).assertEqual(c'a')
     })
@@ -1780,7 +1785,7 @@ export default function FieldsLateInitOneTest(): void {
     it("testFieldsLateInitOne0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F156 = new A_F156()
         expect(a.field instanceof Promise).assertTrue()
-        let res = waitForCompletion(async () => a.field)
+        let res = waitForCompletion(() => a.field)
         expect(res instanceof boolean).assertTrue()
         expect(res).assertEqual(false)
     })
@@ -1796,7 +1801,7 @@ export default function FieldsLateInitOneTest(): void {
     it("testFieldsLateInitOne0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F157 = new A_F157()
         expect(a.field instanceof Promise).assertTrue()
-        let res = waitForCompletion(async () => a.field)
+        let res = waitForCompletion(() => a.field)
         expect(res instanceof Object).assertTrue()
         expect(res).assertEqual(5)
     })
@@ -1809,10 +1814,10 @@ export default function FieldsLateInitOneTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInitOne0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitOne0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let a: A_F158 = new A_F158()
         expect(a.field instanceof Promise).assertTrue()
-        let res = waitForCompletion(async () => a.field)
+        let res: C_F158 = await a.field
         expect(res instanceof C_F158).assertTrue()
         expect(res.data instanceof int).assertTrue()
         expect(res.data).assertEqual(5)
@@ -1830,7 +1835,7 @@ export default function FieldsLateInitOneTest(): void {
       let a: A_F159 = new A_F159()
         a.field = a.foo_F159()
         expect(a.field instanceof Promise).assertTrue()
-        let res = waitForCompletion(async () => a.field)
+        let res = waitForCompletion(() => a.field)
         expect(res instanceof long).assertTrue()
         expect(res).assertEqual(5)
     })
@@ -1847,7 +1852,7 @@ export default function FieldsLateInitOneTest(): void {
       let a: A_F160 = new A_F160()
         a.field = a.foo_F160()
         expect(a.field instanceof Promise).assertTrue()
-        let res = waitForCompletion(async () => a.field)
+        let res = waitForCompletion(() => a.field)
         expect(res instanceof int).assertTrue()
         expect(res).assertEqual(5)
     })
@@ -1864,7 +1869,7 @@ export default function FieldsLateInitOneTest(): void {
       let a: A_F161 = new A_F161()
         a.field = a.foo_F161()
         expect(a.field instanceof Promise).assertTrue()
-        let res = waitForCompletion(async () => a.field)
+        let res = waitForCompletion(() => a.field)
         expect(res instanceof byte).assertTrue()
         expect(res).assertEqual(5)
     })
@@ -1881,7 +1886,7 @@ export default function FieldsLateInitOneTest(): void {
       let a: A_F162 = new A_F162()
         a.field = a.foo_F162()
         expect(a.field instanceof Promise).assertTrue()
-        let res = waitForCompletion(async () => a.field)
+        let res = waitForCompletion(() => a.field)
         expect(res instanceof short).assertTrue()
         expect(res).assertEqual(5)
     })
@@ -1898,7 +1903,7 @@ export default function FieldsLateInitOneTest(): void {
       let a: A_F163 = new A_F163()
         a.field = a.foo_F163()
         expect(a.field instanceof Promise).assertTrue()
-        let res = waitForCompletion(async () => a.field)
+        let res = waitForCompletion(() => a.field)
         expect(res instanceof double).assertTrue()
         expect(res).assertEqual(7.3)
     })
@@ -1915,7 +1920,7 @@ export default function FieldsLateInitOneTest(): void {
       let a: A_F164 = new A_F164()
         a.field = a.foo_F164()
         expect(a.field instanceof Promise).assertTrue()
-        let res = waitForCompletion(async () => a.field)
+        let res = waitForCompletion(() => a.field)
         expect(res instanceof number).assertTrue()
         expect(res).assertEqual(5)
     })
@@ -1932,7 +1937,7 @@ export default function FieldsLateInitOneTest(): void {
       let a: A_F165 = new A_F165()
         a.field = a.foo_F165()
         expect(a.field instanceof Promise).assertTrue()
-        let res = waitForCompletion(async () => a.field)
+        let res = waitForCompletion(() => a.field)
         expect(res instanceof float).assertTrue()
         expect(res).assertEqual(7.3f)
     })
@@ -1949,7 +1954,7 @@ export default function FieldsLateInitOneTest(): void {
       let a: A_F166 = new A_F166()
         a.field = a.foo_F166()
         expect(a.field instanceof Promise).assertTrue()
-        let res = waitForCompletion(async () => a.field)
+        let res = waitForCompletion(() => a.field)
         expect(res instanceof bigint).assertTrue()
         expect(res).assertEqual(5n)
     })
@@ -1966,7 +1971,7 @@ export default function FieldsLateInitOneTest(): void {
       let a: A_F167 = new A_F167()
         a.field = a.foo_F167()
         expect(a.field instanceof Promise).assertTrue()
-        let res = waitForCompletion(async () => a.field)
+        let res = waitForCompletion(() => a.field)
         expect(res instanceof string).assertTrue()
         expect(res).assertEqual("abc")
     })
@@ -1983,7 +1988,7 @@ export default function FieldsLateInitOneTest(): void {
       let a: A_F168 = new A_F168()
         a.field = a.foo_F168()
         expect(a.field instanceof Promise).assertTrue()
-        let res = waitForCompletion(async () => a.field)
+        let res = waitForCompletion(() => a.field)
         expect(res instanceof char).assertTrue()
         expect(res).assertEqual(c'a')
     })
@@ -2000,7 +2005,7 @@ export default function FieldsLateInitOneTest(): void {
       let a: A_F169 = new A_F169()
         a.field = a.foo_F169()
         expect(a.field instanceof Promise).assertTrue()
-        let res = waitForCompletion(async () => a.field)
+        let res = waitForCompletion(() => a.field)
         expect(res instanceof boolean).assertTrue()
         expect(res).assertEqual(false)
     })
@@ -2017,7 +2022,7 @@ export default function FieldsLateInitOneTest(): void {
       let a: A_F170 = new A_F170()
         a.field = a.foo_F170()
         expect(a.field instanceof Promise).assertTrue()
-        let res = waitForCompletion(async () => a.field)
+        let res = waitForCompletion(() => a.field)
         expect(res instanceof Object).assertTrue()
         expect(res).assertEqual(5)
     })
@@ -2030,11 +2035,11 @@ export default function FieldsLateInitOneTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInitOne0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitOne0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let a: A_F171 = new A_F171()
         a.field = a.foo_F171()
         expect(a.field instanceof Promise).assertTrue()
-        let res = waitForCompletion(async () => a.field)
+        let res: C_F171 = await a.field
         expect(res instanceof C_F171).assertTrue()
         expect(res.data instanceof int).assertTrue()
         expect(res.data).assertEqual(5)
@@ -2230,7 +2235,7 @@ export default function FieldsLateInitOneTest(): void {
      */
     it("testFieldsLateInitOne0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F184 = new A_F184()
-        let res = waitForCompletion(async () => a.foo_F184().then((): long => a.field))
+        let res = waitForCompletion(() => a.foo_F184().then((): long => a.field))
         expect(res instanceof long).assertTrue()
         expect(res).assertEqual(5)
         expect(a.field instanceof long).assertTrue()
@@ -2247,7 +2252,7 @@ export default function FieldsLateInitOneTest(): void {
      */
     it("testFieldsLateInitOne0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F185 = new A_F185()
-        let res = waitForCompletion(async () => a.foo_F185().then((): int => a.field))
+        let res = waitForCompletion(() => a.foo_F185().then((): int => a.field))
         expect(res instanceof int).assertTrue()
         expect(res).assertEqual(5)
         expect(a.field instanceof int).assertTrue()
@@ -2264,7 +2269,7 @@ export default function FieldsLateInitOneTest(): void {
      */
     it("testFieldsLateInitOne0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F186 = new A_F186()
-        let res = waitForCompletion(async () => a.foo_F186().then((): byte => a.field))
+        let res = waitForCompletion(() => a.foo_F186().then((): byte => a.field))
         expect(res instanceof byte).assertTrue()
         expect(res).assertEqual(5)
         expect(a.field instanceof byte).assertTrue()
@@ -2281,7 +2286,7 @@ export default function FieldsLateInitOneTest(): void {
      */
     it("testFieldsLateInitOne0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F187 = new A_F187()
-        let res = waitForCompletion(async () => a.foo_F187().then((): short => a.field))
+        let res = waitForCompletion(() => a.foo_F187().then((): short => a.field))
         expect(res instanceof short).assertTrue()
         expect(res).assertEqual(5)
         expect(a.field instanceof short).assertTrue()
@@ -2298,7 +2303,7 @@ export default function FieldsLateInitOneTest(): void {
      */
     it("testFieldsLateInitOne0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F188 = new A_F188()
-        let res = waitForCompletion(async () => a.foo_F188().then((): double => a.field))
+        let res = waitForCompletion(() => a.foo_F188().then((): double => a.field))
         expect(res instanceof double).assertTrue()
         expect(res).assertEqual(7.3)
         expect(a.field instanceof double).assertTrue()
@@ -2315,7 +2320,7 @@ export default function FieldsLateInitOneTest(): void {
      */
     it("testFieldsLateInitOne0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F189 = new A_F189()
-        let res = waitForCompletion(async () => a.foo_F189().then((): number => a.field))
+        let res = waitForCompletion(() => a.foo_F189().then((): number => a.field))
         expect(res instanceof number).assertTrue()
         expect(res).assertEqual(5)
         expect(a.field instanceof number).assertTrue()
@@ -2332,7 +2337,7 @@ export default function FieldsLateInitOneTest(): void {
      */
     it("testFieldsLateInitOne0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F190 = new A_F190()
-        let res = waitForCompletion(async () => a.foo_F190().then((): float => a.field))
+        let res = waitForCompletion(() => a.foo_F190().then((): float => a.field))
         expect(res instanceof float).assertTrue()
         expect(res).assertEqual(7.3f)
         expect(a.field instanceof float).assertTrue()
@@ -2349,7 +2354,7 @@ export default function FieldsLateInitOneTest(): void {
      */
     it("testFieldsLateInitOne0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F191 = new A_F191()
-        let res = waitForCompletion(async () => a.foo_F191().then((): bigint => a.field))
+        let res = waitForCompletion(() => a.foo_F191().then((): bigint => a.field))
         expect(res instanceof bigint).assertTrue()
         expect(res).assertEqual(5n)
         expect(a.field instanceof bigint).assertTrue()
@@ -2366,7 +2371,7 @@ export default function FieldsLateInitOneTest(): void {
      */
     it("testFieldsLateInitOne0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F192 = new A_F192()
-        let res = waitForCompletion(async () => a.foo_F192().then((): string => a.field))
+        let res = waitForCompletion(() => a.foo_F192().then((): string => a.field))
         expect(res instanceof string).assertTrue()
         expect(res).assertEqual("abc")
         expect(a.field instanceof string).assertTrue()
@@ -2383,7 +2388,7 @@ export default function FieldsLateInitOneTest(): void {
      */
     it("testFieldsLateInitOne0094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F193 = new A_F193()
-        let res = waitForCompletion(async () => a.foo_F193().then((): char => a.field))
+        let res = waitForCompletion(() => a.foo_F193().then((): char => a.field))
         expect(res instanceof char).assertTrue()
         expect(res).assertEqual(c'a')
         expect(a.field instanceof char).assertTrue()
@@ -2400,7 +2405,7 @@ export default function FieldsLateInitOneTest(): void {
      */
     it("testFieldsLateInitOne0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F194 = new A_F194()
-        let res = waitForCompletion(async () => a.foo_F194().then((): boolean => a.field))
+        let res = waitForCompletion(() => a.foo_F194().then((): boolean => a.field))
         expect(res instanceof boolean).assertTrue()
         expect(res).assertEqual(false)
         expect(a.field instanceof boolean).assertTrue()
@@ -2417,7 +2422,7 @@ export default function FieldsLateInitOneTest(): void {
      */
     it("testFieldsLateInitOne0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F195 = new A_F195()
-        let res = waitForCompletion(async () => a.foo_F195().then((): Object => a.field))
+        let res = waitForCompletion(() => a.foo_F195().then((): Object => a.field))
         expect(res instanceof Object).assertTrue()
         expect(res).assertEqual(5)
         expect(a.field instanceof Object).assertTrue()
@@ -2448,12 +2453,9 @@ export default function FieldsLateInitOneTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInitOne0098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitOne0098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let a: A_F197 = new A_F197()
-        let res = waitForCompletion(async () => a.foo_F197().then((): C_F197 => a.field))
-        expect(res instanceof C_F197).assertTrue()
-        expect(res.data instanceof int).assertTrue()
-        expect(res.data).assertEqual(5)
+        await a.foo_F197()
         expect(a.field instanceof C_F197).assertTrue()
         expect(a.field.data instanceof int).assertTrue()
         expect(a.field.data).assertEqual(5)
