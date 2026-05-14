@@ -28,9 +28,7 @@ struct Index2 {
              Text(this.message)
              TextInput({ placeholder: 'input your word...', })
                 .id('textInput')
-             Button('next page') {
-               Text('next page')
-             }
+             Button('next page')
            }
              .width('100%')
 
