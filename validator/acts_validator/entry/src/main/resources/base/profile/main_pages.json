@@ -198,6 +198,7 @@
     "pages/ArkUI/PassThrough",
     "pages/ArkUI/MenuColorMode",
     "pages/ArkUI/SetCustomCursor",
-    "pages/ArkUI/PopupColorMode"
+    "pages/ArkUI/PopupColorMode",
+    "pages/ArkUI/AccessibilityCustomActionsTest"
   ]
 }

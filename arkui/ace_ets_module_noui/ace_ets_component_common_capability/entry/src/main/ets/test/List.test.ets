@@ -36,6 +36,7 @@ import embeddedComponentTerminationInfoTest from './EmbeddedComponentTest/Embedd
 import pluginComponentManagerParamTest from './nullandundefinedcoverage/pluginComponentManager/PluginComponentManagerParam.test';
 import XComponentAttributeTest from './nullandundefinedcoverage/xcomponent/XComponentAttributeTest.test';
 import getFilteredInspectorTreeByIdDepthBoundaryTest from './UIContext/GetFilteredInspectorTreeByIdDepthBoundaryTest.test';
+import inspectorLabelTest from './inspectorLabel/inspectorLabelTest.test';
 
 
 export default function testsuite() {
@@ -62,4 +63,5 @@ export default function testsuite() {
   XComponentAttributeTest();
   LayoutChildrenTest();
   getFilteredInspectorTreeByIdDepthBoundaryTest();
+  inspectorLabelTest();
 }
