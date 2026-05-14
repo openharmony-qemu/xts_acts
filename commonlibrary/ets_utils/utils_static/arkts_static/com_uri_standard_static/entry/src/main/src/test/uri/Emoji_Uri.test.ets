@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,7 +19,7 @@ import  uri  from '@ohos.uri';
 import hilog from '@ohos.hilog';
 import Utils from '../Util.test';
 
-export default function Uri_Emoji() {
+export default function Uri_Emoji(): void {
   describe('Uri_Emoji', (): void => {
       afterEach(async (): Promise<void> => {
         await Utils.msSleep(20);

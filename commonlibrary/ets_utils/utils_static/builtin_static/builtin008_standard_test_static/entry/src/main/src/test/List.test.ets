@@ -21,7 +21,7 @@ import Array07 from "./Array07.test";
 import Array08 from "./Array08.test";
 import Array09 from "./Array09.test";
 
-export default function testsuite() {
+export default function testsuite(): void {
   ArrayCopyWithin();
   ArrayIncludes();
   BuiltinArrayAt();

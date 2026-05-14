@@ -24,7 +24,7 @@ export async function sleep(time: int): Promise<int> {
 }
 
 
-export default function ArrayBuffer4Test() {
+export default function ArrayBuffer4Test(): void {
   describe('ArrayBuffer4Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

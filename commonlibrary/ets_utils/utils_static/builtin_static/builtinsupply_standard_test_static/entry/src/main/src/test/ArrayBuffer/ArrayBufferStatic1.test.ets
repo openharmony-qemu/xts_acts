@@ -23,7 +23,7 @@ export async function sleep(time: int): Promise<int> {
   });
 }
 
-export default function ArrayBuffer1Test() {
+export default function ArrayBuffer1Test(): void {
   describe('ArrayBuffer1Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

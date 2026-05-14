@@ -23,7 +23,7 @@ export async function sleep(time: int): Promise<int> {
   });
 }
 
-export default function ParseFloatTest() {
+export default function ParseFloatTest(): void {
   describe('ParseFloatTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

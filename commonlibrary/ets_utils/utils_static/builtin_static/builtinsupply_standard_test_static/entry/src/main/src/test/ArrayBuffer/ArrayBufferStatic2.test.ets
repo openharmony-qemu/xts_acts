@@ -89,7 +89,7 @@ class StaticViewClass {
 }
 
 
-export default function ArrayBuffer2Test() {
+export default function ArrayBuffer2Test(): void {
   describe('ArrayBuffer2Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

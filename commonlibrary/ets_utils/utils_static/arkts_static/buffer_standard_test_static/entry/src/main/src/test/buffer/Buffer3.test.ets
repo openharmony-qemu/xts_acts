@@ -30,7 +30,7 @@ import {
 } from '../../../../hypium/index';
 
 
-export default function bufferTest3() {
+export default function bufferTest3(): void {
   describe("bufferTest3", (): void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);

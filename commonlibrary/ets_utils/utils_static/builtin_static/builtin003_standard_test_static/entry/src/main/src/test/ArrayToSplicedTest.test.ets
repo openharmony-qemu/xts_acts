@@ -8,7 +8,7 @@ export async function sleep(time: int): Promise<int> {
   });
 }
 
-export default function ArrayToSplicedTest() {
+export default function ArrayToSplicedTest(): void {
   describe('ArrayToSplicedTest', ():void => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(():void => {

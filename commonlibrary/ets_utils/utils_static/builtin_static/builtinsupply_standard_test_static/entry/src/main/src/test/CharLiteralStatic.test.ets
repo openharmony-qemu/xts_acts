@@ -28,7 +28,7 @@ interface Obj{
 interface CharObj{
   charProp:string
 }
-export default function BuiltinsCharLiteralTest() {
+export default function BuiltinsCharLiteralTest(): void {
   describe('BuiltinsCharLiteralTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

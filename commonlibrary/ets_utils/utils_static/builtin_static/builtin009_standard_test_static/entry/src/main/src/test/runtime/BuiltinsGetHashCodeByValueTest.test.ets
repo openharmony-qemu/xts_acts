@@ -27,7 +27,7 @@ import {
 } from './BuiltinsGetHashCodeClass';
 import Utils from '../Util.test';
 
-export default function builtinsGetHashCodeByValueTest() {
+export default function builtinsGetHashCodeByValueTest(): void {
   describe("builtinsGetHashCodeByValueTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

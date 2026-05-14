@@ -41,7 +41,7 @@ class MyClass {
   }
 }
 
-export default function BuiltinsUndefinedLiteralTest() {
+export default function BuiltinsUndefinedLiteralTest(): void {
   describe('BuiltinsUndefinedLiteralTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

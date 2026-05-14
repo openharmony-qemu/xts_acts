@@ -26,7 +26,7 @@ import builtinsArrayLowerBoundSearchSecondPrototypebTest from "./ArrayLowerBound
 
 import builtinsArrayMapPrototypebTest from "./ArrayMapTest.test";
 
-export default function testsuite() {
+export default function testsuite(): void {
    abilityTest();
    builtinsArrayFindPrototypebTest();
    builtinsArrayFindIndexPrototypebTest();

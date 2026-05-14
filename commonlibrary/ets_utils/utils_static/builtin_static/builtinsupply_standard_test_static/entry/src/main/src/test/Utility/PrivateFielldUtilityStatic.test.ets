@@ -598,7 +598,7 @@ class UserProfile {
     return this.user;
   }
 }
-export default function BuiltinsPrivateFieldsUtilityTypeTest() {
+export default function BuiltinsPrivateFieldsUtilityTypeTest(): void {
   describe('BuiltinsPrivateFieldsUtilityTypeTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

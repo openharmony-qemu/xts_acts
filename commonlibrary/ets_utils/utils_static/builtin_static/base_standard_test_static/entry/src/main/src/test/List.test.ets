@@ -15,7 +15,7 @@ import StringTest from './String.test.ets'
 import WeakMapTest from './WeakMap.test.ets'
 import etsIntlPtsFunTest from './IntlProperties.test.ets'
 
-export default function testsuite() {
+export default function testsuite(): void {
   booleanTest()
   DataViewTest()
   EmojiRegExp()

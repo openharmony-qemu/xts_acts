@@ -18,7 +18,7 @@ import Utils from './Util.test';
 import { BusinessError } from '@ohos.base';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
-export default function EveryModulusTest() {
+export default function EveryModulusTest():void {
 
   describe("EveryModulusTest", (): void => {
     // Dewm25 fines a test suite. Two parameters are supported: test suite name and test suite function.

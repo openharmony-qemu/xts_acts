@@ -178,7 +178,7 @@ interface DateInterface {
 type RequiredDateInterface = Required<DateInterface>;
 
 
-export default function BuiltinsRequiredUtilityTypeTest() {
+export default function BuiltinsRequiredUtilityTypeTest(): void {
   describe('BuiltinsRequiredUtilityTypeTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

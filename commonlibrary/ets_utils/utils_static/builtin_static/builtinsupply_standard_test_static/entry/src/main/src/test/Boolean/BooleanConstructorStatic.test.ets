@@ -23,7 +23,7 @@ export async function sleep(time: int): Promise<int> {
   });
 }
 
-export default function builtinsBooleanConstructorTest() {
+export default function builtinsBooleanConstructorTest(): void {
   describe('builtinsBooleanConstructorTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

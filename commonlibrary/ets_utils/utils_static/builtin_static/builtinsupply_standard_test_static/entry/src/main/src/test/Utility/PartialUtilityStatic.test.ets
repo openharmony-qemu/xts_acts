@@ -223,7 +223,7 @@ interface BigInt64ArrayInterface {
   myBigInt64Array: BigInt64Array;
 }
 type PartialBigInt64ArrayInterface = Partial<BigInt64ArrayInterface>;
-export default function BuiltinsPartialUtilityTypeTest() {
+export default function BuiltinsPartialUtilityTypeTest(): void {
   describe('BuiltinsPartialUtilityTypeTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

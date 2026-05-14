@@ -2,7 +2,7 @@ import { afterEach, describe, expect, it, Level, Size, TestType } from '../../..
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 
-export default function booleanTest() {
+export default function booleanTest(): void {
   describe('booleanTest', (): void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);

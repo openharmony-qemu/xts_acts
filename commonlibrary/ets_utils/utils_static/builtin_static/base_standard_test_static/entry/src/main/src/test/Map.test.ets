@@ -31,7 +31,7 @@ type MapValueType = number | ObjectType | undefined;
 
 interface ObjectType {}
 
-export default function MapTest() {
+export default function MapTest(): void {
   describe('mapTest', (): void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);

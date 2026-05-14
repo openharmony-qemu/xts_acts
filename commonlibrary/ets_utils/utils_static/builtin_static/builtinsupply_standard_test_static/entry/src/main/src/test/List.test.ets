@@ -60,7 +60,7 @@ import builtinsGenericsActTest from "./Generics/GenericsActStatic.test";
 import builtinsGenericsDefaultTest from "./Generics/GenericsDefaultStatic.test";
 import builtinsGenericsFormatTest from "./Generics/GenericsFormatStatic.test";
 
-export default function testsuite() {
+export default function testsuite(): void {
   builtinsRegExpConstructorTest();
   builtinsRegExpInstancePropTest();
   builtinsRegExpSymbolMatchTest();

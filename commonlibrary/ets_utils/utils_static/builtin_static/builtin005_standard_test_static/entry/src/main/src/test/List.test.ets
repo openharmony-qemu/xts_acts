@@ -21,7 +21,7 @@ import builtinsArrayFilterPrototypebTest from "./ArrayFilterTest.test";
 import builtinsArrayCopyToPrototypebTest from "./ArrayCopyToTest.test";
 
 import builtinsArrayCopyOfPrototypebTest from "./ArrayCopyOfTest.test";
-export default function testsuite() {
+export default function testsuite(): void {
   abilityTest();
   builtinsArrayAtPrototypebTest();
   builtinsArrayAtSecondPrototypebTest();

@@ -26,7 +26,7 @@ let str3 =
   '%21%21%22%22%23%23%24%24%25%25%26%26%27%27%28%28%2A%2A%2B%2B%2C%2C%2D%2D%2E%2E%2F%2F%3A%3A%3B%3B%3C%3C%3D%3D%3E%3E%3F%3F%40%40%5B%5B%5C%5C%5D%5D%5E%5E%5F%5F%60%60%7B%7B%7C%7C%7D%7D%7E%7E';
 let str3Decode = '!!""##$$%%&&\'\'((**++,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~';
 
-export default function uriTest2() {
+export default function uriTest2(): void {
   describe('uriTest2', (): void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);

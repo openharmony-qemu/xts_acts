@@ -477,7 +477,7 @@ class G30<T = string[]> {
   }
 }
 
-export default function builtinsGenericsFormatTest() {
+export default function builtinsGenericsFormatTest(): void {
   describe('BuiltinsGenericsFormatTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

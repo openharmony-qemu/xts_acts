@@ -8,7 +8,7 @@ export async function sleep(time: int): Promise<int> {
   });
 }
 
-export default function ArrayToSortedTest() {
+export default function ArrayToSortedTest(): void {
   describe('ArrayToSortedTest', ():void => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(():void => {

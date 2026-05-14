@@ -18,7 +18,7 @@ import Utils from './Util.test';
 import { BusinessError } from '@ohos.base';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
-export default function BuiltinArrayFill02Test() {
+export default function BuiltinArrayFill02Test(): void {
 
   describe("BuiltinArrayFill02Test", (): void => {
     // Dewm25 fines a test suite. Two parameters are supported: test suite name and test suite function.

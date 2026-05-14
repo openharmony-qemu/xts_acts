@@ -436,7 +436,7 @@ interface UserData {
   age: number;
 }
 
-export default function builtinsGenericsDefaultTest() {
+export default function builtinsGenericsDefaultTest(): void {
   describe('BuiltinsGenericsDefaultTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

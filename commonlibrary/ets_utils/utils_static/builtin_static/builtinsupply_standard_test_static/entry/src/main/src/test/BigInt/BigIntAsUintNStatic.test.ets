@@ -23,7 +23,7 @@ export async function sleep(time: int): Promise<int> {
   });
 }
 
-export default function BuiltinsAsUintNTest() {
+export default function BuiltinsAsUintNTest(): void {
   describe('BuiltinsAsUintNTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

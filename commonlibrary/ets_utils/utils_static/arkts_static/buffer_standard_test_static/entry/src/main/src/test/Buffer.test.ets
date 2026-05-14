@@ -18,7 +18,7 @@ import { BusinessError } from '@ohos.base';
 
 let TAG = "testAlloc0010"
 
-export default function BufferTest() {
+export default function BufferTest(): void {
   describe('BufferTest', (): void => {
 
     /**

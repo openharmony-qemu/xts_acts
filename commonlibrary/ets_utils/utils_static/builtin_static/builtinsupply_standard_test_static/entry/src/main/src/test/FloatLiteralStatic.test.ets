@@ -31,7 +31,7 @@ interface CharObj{
 
 
 
-export default function BuiltinsFloatLiteralTest() {
+export default function BuiltinsFloatLiteralTest(): void {
   describe('BuiltinsFloatLiteralTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

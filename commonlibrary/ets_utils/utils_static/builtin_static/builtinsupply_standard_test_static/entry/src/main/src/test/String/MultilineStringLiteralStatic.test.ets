@@ -27,7 +27,7 @@ interface Person{
   city:string
 }
 
-export default function BuiltinsMultilineStringLiteralTest() {
+export default function BuiltinsMultilineStringLiteralTest(): void {
   describe('BuiltinsMultilineStringLiteralTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

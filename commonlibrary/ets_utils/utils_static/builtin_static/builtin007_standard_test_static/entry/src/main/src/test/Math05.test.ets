@@ -19,7 +19,7 @@ import Utils from './Util.test';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 
-export default function math05Test() {
+export default function math05Test(): void {
 
   describe("math05Test", (): void => {
     // Dewm25 fines a test suite. Two parameters are supported: test suite name and test suite function.

@@ -157,7 +157,7 @@ class C {
     }
 }
 
-export default function classTest() {
+export default function classTest(): void {
     describe('ClassTest', (): void => {
         beforeAll(() => {
         })

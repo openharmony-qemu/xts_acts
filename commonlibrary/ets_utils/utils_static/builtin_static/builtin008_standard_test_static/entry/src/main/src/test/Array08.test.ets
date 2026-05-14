@@ -33,7 +33,7 @@ interface Options {
   endings: string,
 }
 
-export default function Array_08Test() {
+export default function Array_08Test(): void {
   describe('Array_08Test', (): void => {
     // Dewm25 fines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

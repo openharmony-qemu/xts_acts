@@ -440,7 +440,7 @@ interface Options {
 }
 
 
-export default function type_04Test() {
+export default function type_04Test(): void {
   describe("type_04Test", (): void => {
     // Dewm25 fines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
