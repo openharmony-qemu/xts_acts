@@ -1211,6 +1211,14 @@ export default function nativeAVScreenCaptureNdkTest() {
       expect(result).assertEqual(expectedResult);
       result = myScreenCaptureNdk.normalAVScreenCaptureSetPickerModeScreenAndWindow();
       expect(result).assertEqual(expectedResult);
+      result = myScreenCaptureNdk.normalAVScreenCaptureSetPickerModeAppOnly();
+      expect(result).assertEqual(expectedResult);
+      result = myScreenCaptureNdk.normalAVScreenCaptureSetPickerModeWindowAndApp();
+      expect(result).assertEqual(expectedResult);
+      result = myScreenCaptureNdk.normalAVScreenCaptureSetPickerModeScreenAndApp();
+      expect(result).assertEqual(expectedResult);
+      result = myScreenCaptureNdk.normalAVScreenCaptureSetPickerModeScreenWindowAndApp();
+      expect(result).assertEqual(expectedResult);
       done();
     });
 
