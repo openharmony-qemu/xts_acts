@@ -1915,5 +1915,567 @@ export default function arrayBufferStringifyTest(): void {
       }
     });
 
+    /**
+     * @tc.name testArrayBufferStringify0113
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1130
+     * @tc.desc Verify ArrayBuffer.stringify: bufferpassing ，verify compile or runtime error
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferStringify0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        let result = ArrayBuffer.stringify(12345, "utf8", 0, 3);
+        expect(true).assertFail()
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(e as object)
+      }
+    });
 
+    /**
+     * @tc.name testArrayBufferStringify0114
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1140
+     * @tc.desc Verify ArrayBuffer.stringify: bufferpassing boolean ，verify compile or runtime error
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferStringify0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        let result = ArrayBuffer.stringify(true, "utf8", 0, 3);
+        expect(true).assertFail()
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(e as object)
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferStringify0115
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1150
+     * @tc.desc Verify ArrayBuffer.stringify: bufferpassing string ，verify compile or runtime error
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferStringify0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        let result = ArrayBuffer.stringify("not a buffer", "utf8", 0, 3);
+        expect(true).assertFail()
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(e as object)
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferStringify0116
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1160
+     * @tc.desc Verify ArrayBuffer.stringify: encodingpassing ，verify compile or runtime error
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferStringify0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const encoded = ArrayBuffer.from("ABC", "utf8");
+      let result = ArrayBuffer.stringify(encoded, 65, 0, encoded.byteLength);
+        expect(true).assertFail()
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(e as object)
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferStringify0117
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1170
+     * @tc.desc Verify ArrayBuffer.stringify: encodingpassing boolean ，verify compile or runtime error
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferStringify0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const encoded = ArrayBuffer.from("ABC", "utf8");
+      let result = ArrayBuffer.stringify(encoded, true, 0, encoded.byteLength);
+        expect(true).assertFail()
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(e as object)
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferStringify0118
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1180
+     * @tc.desc Verify ArrayBuffer.stringify: startpassing string "0"，verify compile or runtime error
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferStringify0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const encoded = ArrayBuffer.from("ABC", "utf8");
+      let result = ArrayBuffer.stringify(encoded, "utf8", "0", encoded.byteLength);
+        expect(true).assertFail()
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(e as object)
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferStringify0119
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1190
+     * @tc.desc Verify ArrayBuffer.stringify: startpassing boolean ，verify compile or runtime error
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferStringify0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const encoded = ArrayBuffer.from("ABC", "utf8");
+      let result = ArrayBuffer.stringify(encoded, "utf8", true, encoded.byteLength);
+        expect(true).assertFail()
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(e as object)
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferStringify0120
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1200
+     * @tc.desc Verify ArrayBuffer.stringify: endpassing string "3"，verify compile or runtime error
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferStringify0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const encoded = ArrayBuffer.from("ABC", "utf8");
+      let result = ArrayBuffer.stringify(encoded, "utf8", 0, "3");
+        expect(true).assertFail()
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(e as object)
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferStringify0121
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1210
+     * @tc.desc Verify ArrayBuffer.stringify: endpassing boolean ，verify compile or runtime error
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferStringify0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const encoded = ArrayBuffer.from("ABC", "utf8");
+      let result = ArrayBuffer.stringify(encoded, "utf8", 0, false);
+        expect(true).assertFail()
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(e as object)
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferStringify0122
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1220
+     * @tc.desc Verify ArrayBuffer.stringify: startpassing object ，verify compile or runtime error
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferStringify0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const encoded = ArrayBuffer.from("ABC", "utf8");
+      let result = ArrayBuffer.stringify(encoded, "utf8", {}, encoded.byteLength);
+        expect(true).assertFail()
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(e as object)
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferStringify0123
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1230
+     * @tc.desc Verify ArrayBuffer.stringify: endpassing object ，verify compile or runtime error
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferStringify0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const encoded = ArrayBuffer.from("ABC", "utf8");
+      let result = ArrayBuffer.stringify(encoded, "utf8", 0, {});
+        expect(true).assertFail()
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(e as object)
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferStringify0124
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1240
+     * @tc.desc Verify ArrayBuffer.stringify: passing type ，verify compile or runtime error
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferStringify0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        let result = ArrayBuffer.stringify("buffer", 123, "start", true);
+        expect(true).assertFail()
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(e as object)
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferStringify0125
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1250
+     * @tc.desc Verify ArrayBuffer.stringify: start=-1，verify runtime error
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferStringify0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const encoded = ArrayBuffer.from("ABC", "utf8");
+      let result = ArrayBuffer.stringify(encoded, "utf8", -1, encoded.byteLength);
+        expect(true).assertFail()
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(e as object)
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferStringify0126
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1260
+     * @tc.desc Verify ArrayBuffer.stringify: end=-1，verify runtime error
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferStringify0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const encoded = ArrayBuffer.from("ABC", "utf8");
+      let result = ArrayBuffer.stringify(encoded, "utf8", 0, -1);
+        expect(true).assertFail()
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(e as object)
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferStringify0127
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1270
+     * @tc.desc Verify ArrayBuffer.stringify: start=-3,end=-1，verify runtime error
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferStringify0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const encoded = ArrayBuffer.from("ABC", "utf8");
+      let result = ArrayBuffer.stringify(encoded, "utf8", -3, -1);
+        expect(true).assertFail()
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(e as object)
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferStringify0128
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1280
+     * @tc.desc Verify ArrayBuffer.stringify: start=-100，verify runtime error
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferStringify0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const encoded = ArrayBuffer.from("ABC", "utf8");
+      let result = ArrayBuffer.stringify(encoded, "utf8", -100, encoded.byteLength);
+        expect(true).assertFail()
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(e as object)
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferStringify0129
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1290
+     * @tc.desc Verify ArrayBuffer.stringify: end=-100，verify runtime error
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferStringify0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const encoded = ArrayBuffer.from("ABC", "utf8");
+      let result = ArrayBuffer.stringify(encoded, "utf8", 0, -100);
+        expect(true).assertFail()
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(e as object)
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferStringify0130
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1300
+     * @tc.desc Verify ArrayBuffer.stringify: start=NaN，verify compile or runtime error
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferStringify0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const encoded = ArrayBuffer.from("ABC", "utf8");
+      let result = ArrayBuffer.stringify(encoded, "utf8", NaN, encoded.byteLength);
+        expect(true).assertFail()
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(e as object)
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferStringify0131
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1310
+     * @tc.desc Verify ArrayBuffer.stringify: end=NaN，verify compile or runtime error
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferStringify0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const encoded = ArrayBuffer.from("ABC", "utf8");
+      let result = ArrayBuffer.stringify(encoded, "utf8", 0, NaN);
+        expect(true).assertFail()
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(e as object)
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferStringify0132
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1320
+     * @tc.desc Verify ArrayBuffer.stringify: start=Infinity，verify compile or runtime error
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferStringify0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const encoded = ArrayBuffer.from("ABC", "utf8");
+      let result = ArrayBuffer.stringify(encoded, "utf8", Infinity, encoded.byteLength);
+        expect(true).assertFail()
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(e as object)
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferStringify0133
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1330
+     * @tc.desc Verify ArrayBuffer.stringify: end=Infinity，verify compile or runtime error
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferStringify0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const encoded = ArrayBuffer.from("ABC", "utf8");
+      let result = ArrayBuffer.stringify(encoded, "utf8", 0, Infinity);
+        expect(true).assertFail()
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(e as object)
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferStringify0134
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1340
+     * @tc.desc Verify ArrayBuffer.stringify: start=-Infinity，verify compile or runtime error
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferStringify0134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const encoded = ArrayBuffer.from("ABC", "utf8");
+      let result = ArrayBuffer.stringify(encoded, "utf8", -Infinity, encoded.byteLength);
+        expect(true).assertFail()
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(e as object)
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferStringify0135
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1350
+     * @tc.desc Verify ArrayBuffer.stringify: end=-Infinity，verify compile or runtime error
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferStringify0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const encoded = ArrayBuffer.from("ABC", "utf8");
+      let result = ArrayBuffer.stringify(encoded, "utf8", 0, -Infinity);
+        expect(true).assertFail()
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(e as object)
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferStringify0136
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1360
+     * @tc.desc Verify ArrayBuffer.stringify: start=1.5，verify compile or runtime is
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferStringify0136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const encoded = ArrayBuffer.from("ABCDEF", "utf8");
+      let result = ArrayBuffer.stringify(encoded, "utf8", 1.5, encoded.byteLength);
+        expect(true).assertFail()
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(e as object)
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferStringify0137
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1370
+     * @tc.desc Verify ArrayBuffer.stringify: end=2.7，verify compile or runtime is
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferStringify0137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const encoded = ArrayBuffer.from("ABCDEF", "utf8");
+      let result = ArrayBuffer.stringify(encoded, "utf8", 0, 2.7);
+        expect(true).assertFail()
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(e as object)
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferStringify0138
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1380
+     * @tc.desc Verify ArrayBuffer.stringify: start is maximum ，verify runtime error
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferStringify0138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const encoded = ArrayBuffer.from("ABC", "utf8");
+      let result = ArrayBuffer.stringify(encoded, "utf8", Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER);
+        expect(true).assertFail()
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(e as object)
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferStringify0139
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1390
+     * @tc.desc Verify ArrayBuffer.stringify: start is minimum （negative ），verify runtime error
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferStringify0139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const encoded = ArrayBuffer.from("ABC", "utf8");
+      let result = ArrayBuffer.stringify(encoded, "utf8", Number.MIN_SAFE_INTEGER, encoded.byteLength);
+        expect(true).assertFail()
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(e as object)
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferStringify0140
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1400
+     * @tc.desc Verify ArrayBuffer.stringify: detach ArrayBuffercall stringify，verify runtime error
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferStringify0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const encoded = ArrayBuffer.from("ABC", "utf8");
+      encoded.detach();
+      let result = ArrayBuffer.stringify(encoded, "utf8", 0, encoded.byteLength);
+        expect(true).assertFail()
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue()
+        Utils.assertThrownErrorCodeIsNumber(e as object)
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferStringify0141
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1410
+     * @tc.desc Verify ArrayBuffer.stringify: resizable ArrayBuffercall stringify，verify normal decode
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferStringify0141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(8, 16);
+      const view = new Uint8Array(buffer);
+      view[0] = 65; view[1] = 66; view[2] = 67;
+      let result = ArrayBuffer.stringify(buffer, "utf8", 0, 3);
+      expect(result).assertEqual("ABC");
+    });
+
+    /**
+     * @tc.name testArrayBufferStringify0142
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1420
+     * @tc.desc Verify ArrayBuffer.stringify: resize after call stringify，verify length decode
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferStringify0142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(6, 16);
+      const view = new Uint8Array(buffer);
+      view[0] = 65; view[1] = 66; view[2] = 67; view[3] = 68; view[4] = 69; view[5] = 70;
+      buffer.resize(3);
+      let result = ArrayBuffer.stringify(buffer, "utf8", 0, buffer.byteLength);
+      expect(result).assertEqual("ABC");
+    });
+    return;
+  });
 }
