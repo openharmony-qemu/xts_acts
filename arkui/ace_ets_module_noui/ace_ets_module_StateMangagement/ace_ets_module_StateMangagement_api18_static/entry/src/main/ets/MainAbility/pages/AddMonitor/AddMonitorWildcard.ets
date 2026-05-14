@@ -19,8 +19,8 @@ import hilog from '@ohos.hilog';
 
 @ObservedV2
 export class AddMonitorClass {
-  @Trace propA: int = 8;
-  @Trace propB: int = 99;
+  @Trace public propA: int = 8;
+  @Trace public propB: int = 99;
 
   constructor(a: int, b: int) {
     this.propA = a;
