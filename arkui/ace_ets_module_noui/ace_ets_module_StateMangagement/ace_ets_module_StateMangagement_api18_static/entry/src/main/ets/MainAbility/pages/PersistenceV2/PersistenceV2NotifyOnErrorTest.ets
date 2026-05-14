@@ -64,6 +64,7 @@ struct PersistenceV2NotifyOnErrorTest {
     Column() {
       Text('Key connectSample: ' + this.p?.sampleChild.count.toString())
         .id('PersistenceV2NotifyOnErrorTest_01')
+        .height('5%')
 
     }
     .width('100%')

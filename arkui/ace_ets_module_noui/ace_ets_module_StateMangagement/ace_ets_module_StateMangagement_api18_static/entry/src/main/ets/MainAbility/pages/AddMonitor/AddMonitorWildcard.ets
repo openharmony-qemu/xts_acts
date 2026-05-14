@@ -47,21 +47,25 @@ struct AddMonitorWildcard {
     Column() {
       Button(`Change propA:${this.cls.propA} num:${this.num}`)
         .id('ButtonChangePropA')
+        .height('5%')
         .onClick(() => {
           this.cls.propA += 1; // onClsChanged回调触发
         })
       Button(`Change propB:${this.cls.propB} num:${this.num}`)
         .id('ButtonChangePropB1')
+        .height('5%')
         .onClick(() => {
           this.cls.propB += 1; // onClsChanged回调触发
         })
       Button('clear')
         .id('ButtonClear')
+        .height('5%')
         .onClick(() => {
           UIUtils.clearMonitor(this.monitorHandle!); // 取消监听
         })
       Button(`Change propB:${this.cls.propB} num:${this.num}`)
         .id('ButtonChangePropB2')
+        .height('5%')
         .onClick(() => {
           this.cls.propB += 1; // onClsChanged回调触发
         })

@@ -47,6 +47,7 @@ struct AddMonitorWildcardUnerfined {
     Column() {
       Button(`Change propA:${this.cls.propA} num1:${this.num1}`)
         .id('ButtonPropA')
+        .height('5%')
         .onClick(() => {
           this.cls.propA += 1; // onClsChanged回调触发
         })

@@ -43,16 +43,19 @@ struct MonitorComponentV2Wildcards {
       Divider()
       Button(`#1 Change propA:${this.cls.propA}-${this.num}`)
         .id('componentV2Button_001')
+        .height('5%')
         .onClick(() => {
           this.cls.propA += 1; // 触发onClsChanged
         })
       Button(`#2 Change propB:${this.cls.propB}-${this.num}`)
         .id('componentV2Button_002')
+        .height('5%')
         .onClick(() => {
           this.cls.propB += 1; // 触发onClsChanged
         })
       Button(`#3 Assign class object:${this.cls.propB}-${this.num}`)
         .id('componentV2Button_003')
+        .height('5%')
         .onClick(() => {
           this.cls = new ClassA(-200, -200); // 触发onClsChanged
         })
@@ -173,12 +176,14 @@ struct MonitorObservedV2Wildcards {
     Column() {
       Button(`change name:${this.info.info1.name}:${this.info.num}`)
         .id('observedV2Button_001')
+        .height('5%')
         .onClick(() => {
           this.info.info1.name = 'Jack'; // 能够触发onNameChange方法
         })
 
       Button(`change age:${this.info.info1.age}:${this.info.num}`)
         .id('observedV2Button_002')
+        .height('5%')
         .onClick(() => {
           this.info.info1.age = 30; // 能够触发onNameChange方法
         })
