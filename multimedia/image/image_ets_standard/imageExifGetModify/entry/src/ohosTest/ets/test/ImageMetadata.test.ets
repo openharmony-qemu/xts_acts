@@ -223,24 +223,24 @@ export default function ImageMetadata() {
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_READ_IMAGE_METADATA_BY_TYPE_0005
-     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_READ_IMAGE_METADATA_BY_TYPE_0005
-     * @tc.desc   readImageMetadataByType returns GIF metadata fields
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SOURCE_READ_IMAGE_METADATA_BY_TYPE_0006
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SOURCE_READ_IMAGE_METADATA_BY_TYPE_0006
+     * @tc.desc   readImageMetadataByType returns AVIS metadata fields
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_IMAGE_SOURCE_READ_IMAGE_METADATA_BY_TYPE_0005', Level.LEVEL0, async (done: Function) => {
-      const testTag = 'SUB_MULTIMEDIA_IMAGE_SOURCE_READ_IMAGE_METADATA_BY_TYPE_0005'
+    it('SUB_MULTIMEDIA_IMAGE_SOURCE_READ_IMAGE_METADATA_BY_TYPE_0006', Level.LEVEL0, async (done: Function) => {
+      const testTag = 'SUB_MULTIMEDIA_IMAGE_SOURCE_READ_IMAGE_METADATA_BY_TYPE_0006'
       hilog.info(domain, testTag, `begin`);
       try {
-        const fileName = 'test6.gif';
+        const fileName = 'bird_8bit_I420_599x359_fps10.avif';
         const imageSourceApi: image.ImageSource = await getImageSource(fileName, "uri");
-        let metadataTypes: image.MetadataType[] = [image.MetadataType.GIF_METADATA];
+        let metadataTypes: image.MetadataType[] = [image.MetadataType.AVIS_METADATA];
         let imageMetadata: image.ImageMetadata = await imageSourceApi.readImageMetadataByType(metadataTypes);
         imageSourceApi.release();
         expect(imageMetadata != null).assertTrue();
-        expect(imageMetadata.gifMetadata != null).assertTrue();
+        expect(imageMetadata.avisMetadata != null).assertTrue();
         hilog.info(domain, testTag, `readImageMetadataByType success `);
         done();
       } catch (e) {
