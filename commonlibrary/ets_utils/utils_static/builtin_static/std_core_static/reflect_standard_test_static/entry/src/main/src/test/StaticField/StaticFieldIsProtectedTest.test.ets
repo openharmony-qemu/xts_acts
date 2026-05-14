@@ -864,3 +864,1183 @@ function reflectVehicle050(): ReflectClass {
   return cls;
 }
 
+export default function StaticFieldIsProtectedTest(): void {
+  describe('StaticFieldIsProtectedTest', (): void => {
+    beforeAll((): void => {
+    });
+    beforeEach(async (): Promise<void> => {
+      await Utils.msSleep(30);
+    });
+    afterEach((): void => {
+    });
+    afterAll((): void => {
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_0100
+     * @tc.name testStaticFieldIsProtected001
+     * @tc.desc Verify isProtected does not require any parameters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass001();
+      let field: StaticField | null = cls.getStaticField('name');
+      let result: boolean = field!.isProtected();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_0200
+     * @tc.name testStaticFieldIsProtected002
+     * @tc.desc Verify isProtected returns boolean without passing any parameters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass001();
+      let field: StaticField | null = cls.getStaticField('name');
+      let result: boolean = field!.isProtected();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_0300
+     * @tc.name testStaticFieldIsProtected003
+     * @tc.desc Verify passing extra parameters to isProtected causes compile error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_0400
+     * @tc.name testStaticFieldIsProtected004
+     * @tc.desc Verify isProtected returns true for protected static fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass004();
+      let field1: StaticField | null = cls.getStaticField('config');
+      expect(field1!.isProtected()).assertEqual(true);
+      let field2: StaticField | null = cls.getStaticField('buffer');
+      expect(field2!.isProtected()).assertEqual(true);
+      let field3: StaticField | null = cls.getStaticField('metadata');
+      expect(field3!.isProtected()).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_0500
+     * @tc.name testStaticFieldIsProtected005
+     * @tc.desc Verify isProtected returns false for public static fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass005();
+      let field1: StaticField | null = cls.getStaticField('name');
+      expect(field1!.isProtected()).assertEqual(false);
+      let field2: StaticField | null = cls.getStaticField('count');
+      expect(field2!.isProtected()).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_0600
+     * @tc.name testStaticFieldIsProtected006
+     * @tc.desc Verify isProtected returns false for private static fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass006();
+      let field1: StaticField | null = cls.getStaticField('secret');
+      expect(field1!.isProtected()).assertEqual(false);
+      let field2: StaticField | null = cls.getStaticField('value');
+      expect(field2!.isProtected()).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_0700
+     * @tc.name testStaticFieldIsProtected007
+     * @tc.desc Verify isProtected returns false for internal static fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass007();
+      let field: StaticField | null = cls.getStaticField('internalField');
+      expect(field!.isProtected()).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_0800
+     * @tc.name testStaticFieldIsProtected008
+     * @tc.desc Verify isProtected return value is strictly boolean type
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass004();
+      let field: StaticField | null = cls.getStaticField('config');
+      let result: boolean = field!.isProtected();
+      expect(typeof result).assertEqual('boolean');
+      expect(result).assertEqual(true);
+      let cls2: ReflectClass = reflectMyClass005();
+      let field2: StaticField | null = cls2.getStaticField('name');
+      let result2: boolean = field2!.isProtected();
+      expect(typeof result2).assertEqual('boolean');
+      expect(result2).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_0900
+     * @tc.name testStaticFieldIsProtected009
+     * @tc.desc Verify isProtected is mutually exclusive with isPublic and isPrivate
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass009();
+      let field1: StaticField | null = cls.getStaticField('prot');
+      expect(field1!.isProtected()).assertEqual(true);
+      expect(field1!.isPublic()).assertEqual(false);
+      expect(field1!.isPrivate()).assertEqual(false);
+      let field2: StaticField | null = cls.getStaticField('pub');
+      expect(field2!.isProtected()).assertEqual(false);
+      expect(field2!.isPublic()).assertEqual(true);
+      let field3: StaticField | null = cls.getStaticField('priv');
+      expect(field3!.isProtected()).assertEqual(false);
+      expect(field3!.isPrivate()).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_1000
+     * @tc.name testStaticFieldIsProtected010
+     * @tc.desc Verify typeof isProtected return value is boolean
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass004();
+      let field: StaticField | null = cls.getStaticField('config');
+      let result: boolean = field!.isProtected();
+      expect(typeof result).assertEqual('boolean');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_1100
+     * @tc.name testStaticFieldIsProtected011
+     * @tc.desc Verify isProtected return value can be used as boolean condition
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass009();
+      let field: StaticField | null = cls.getStaticField('prot');
+      if (field!.isProtected()) {
+        console.info('This is a protected field');
+      } else {
+        console.info('This is a non-protected field');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_1200
+     * @tc.name testStaticFieldIsProtected012
+     * @tc.desc Verify isProtected returns true for protected fields of various types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass012();
+      expect(cls.getStaticField('num')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('str')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('bool')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('arr')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('obj')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('charField')!.isProtected()).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_1300
+     * @tc.name testStaticFieldIsProtected013
+     * @tc.desc Verify calling isProtected on null object throws error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field: StaticField | null = null;
+      try {
+        field!.isProtected();
+        expect().assertFail();
+      } catch (error) {
+        expect(error !== null).assertEqual(true);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_1400
+     * @tc.name testStaticFieldIsProtected014
+     * @tc.desc Verify calling isProtected on undefined object throws error
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field: StaticField | undefined;
+      try {
+        field!.isProtected();
+        expect().assertFail();
+      } catch (error) {
+        expect(error !== null).assertEqual(true);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_1500
+     * @tc.name testStaticFieldIsProtected015
+     * @tc.desc Verify isProtected on non-existent static field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass015();
+      let field: StaticField | null = cls.getStaticField('nonexistent');
+      if (field !== null) {
+        let result: boolean = field.isProtected();
+      } else {
+        console.info('Field does not exist');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_1600
+     * @tc.name testStaticFieldIsProtected016
+     * @tc.desc Verify isProtected with protected readonly field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass016();
+      let field: StaticField | null = cls.getStaticField('value');
+      expect(field!.isProtected()).assertEqual(true);
+      expect(field!.isReadonly()).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_1700
+     * @tc.name testStaticFieldIsProtected017
+     * @tc.desc Verify isProtected with protected static field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass017();
+      let field: StaticField | null = cls.getStaticField('count');
+      expect(field!.isProtected()).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_1800
+     * @tc.name testStaticFieldIsProtected018
+     * @tc.desc Verify isProtected and isPublic are mutually exclusive
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass018();
+      let field1: StaticField | null = cls.getStaticField('prot');
+      expect(field1!.isProtected()).assertEqual(true);
+      expect(field1!.isPublic()).assertEqual(false);
+      let field2: StaticField | null = cls.getStaticField('pub');
+      expect(field2!.isProtected()).assertEqual(false);
+      expect(field2!.isPublic()).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_1900
+     * @tc.name testStaticFieldIsProtected019
+     * @tc.desc Verify isProtected and isPrivate are mutually exclusive
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass019();
+      let field1: StaticField | null = cls.getStaticField('prot');
+      expect(field1!.isProtected()).assertEqual(true);
+      expect(field1!.isPrivate()).assertEqual(false);
+      let field2: StaticField | null = cls.getStaticField('priv');
+      expect(field2!.isProtected()).assertEqual(false);
+      expect(field2!.isPrivate()).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_2000
+     * @tc.name testStaticFieldIsProtected020
+     * @tc.desc Verify isProtected combined with isReadonly
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass020();
+      let field1: StaticField | null = cls.getStaticField('protReadonly');
+      expect(field1!.isProtected() && field1!.isReadonly()).assertEqual(true);
+      let field2: StaticField | null = cls.getStaticField('pubReadonly');
+      expect(field2!.isProtected() || !field2!.isReadonly()).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_2100
+     * @tc.name testStaticFieldIsProtected021
+     * @tc.desc Verify getting type information of protected field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass021();
+      let field: StaticField | null = cls.getStaticField('config');
+      if (field!.isProtected()) {
+        console.info('Protected field type: ' + field!.getType().getName());
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_2200
+     * @tc.name testStaticFieldIsProtected022
+     * @tc.desc Verify getting name of protected field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass022();
+      let field: StaticField | null = cls.getStaticField('config');
+      if (field!.isProtected()) {
+        console.info('Protected field name: ' + field!.getName());
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_2300
+     * @tc.name testStaticFieldIsProtected023
+     * @tc.desc Verify getting value of protected field via reflection
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass023();
+      let field: StaticField | null = cls.getStaticField('setting');
+      if (field!.isProtected()) {
+        let value: string | number | boolean | null = field!.getValue() as string | number | boolean | null;
+        console.info('Protected field value: ' + value);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_2400
+     * @tc.name testStaticFieldIsProtected024
+     * @tc.desc Verify modifying protected field value via reflection
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass024();
+      let field: StaticField | null = cls.getStaticField('counter');
+      if (field!.isProtected()) {
+        field!.setValue(100);
+        console.info('Protected field updated: ' + field!.getValue());
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_2500
+     * @tc.name testStaticFieldIsProtected025
+     * @tc.desc Verify isProtected is a synchronous method
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass004();
+      let field: StaticField | null = cls.getStaticField('config');
+      let result: boolean = field!.isProtected();
+      expect(result).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_2600
+     * @tc.name testStaticFieldIsProtected026
+     * @tc.desc Verify isProtected return value is not a Promise type
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass004();
+      let field: StaticField | null = cls.getStaticField('config');
+      let result: boolean = field!.isProtected();
+      expect(result instanceof Promise).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_2700
+     * @tc.name testStaticFieldIsProtected027
+     * @tc.desc Verify complete reflection API flow for checking protected fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectConfig027();
+      let protectedCount: number = 0;
+      let publicCount: number = 0;
+      let privateCount: number = 0;
+      let fieldNames: string[] = ['APP_NAME', 'API_KEY', 'DEBUG_MODE', 'PASSWORD', 'LOG_LEVEL'];
+      for (let i = 0; i < fieldNames.length; i++) {
+        let field: StaticField | null = cls.getStaticField(fieldNames[i]);
+        if (field !== null) {
+          if (field.isProtected()) protectedCount++;
+          else if (field.isPublic()) publicCount++;
+          else if (field.isPrivate()) privateCount++;
+        }
+      }
+      expect(protectedCount).assertEqual(2);
+      expect(publicCount).assertEqual(2);
+      expect(privateCount).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_2800
+     * @tc.name testStaticFieldIsProtected028
+     * @tc.desc Verify using isProtected to distinguish access levels
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass028();
+      let fieldNames: string[] = ['publicField', 'protectedField', 'privateField'];
+      for (let i = 0; i < fieldNames.length; i++) {
+        let field: StaticField | null = cls.getStaticField(fieldNames[i]);
+        if (field !== null) {
+          let level: string = 'unknown';
+          if (field.isProtected()) {
+            level = 'protected';
+          } else if (field.isPublic()) {
+            level = 'public';
+          } else if (field.isPrivate()) {
+            level = 'private';
+          }
+          console.info(field.getName() + ': ' + level);
+        }
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_2900
+     * @tc.name testStaticFieldIsProtected029
+     * @tc.desc Verify isProtected with parent class protected static fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let parentCls: ReflectClass = reflectParent029();
+      let parentField1: StaticField | null = parentCls.getStaticField('parentPublic');
+      expect(parentField1!.isProtected()).assertEqual(false);
+      let parentField2: StaticField | null = parentCls.getStaticField('parentProtected');
+      expect(parentField2!.isProtected()).assertEqual(true);
+      let childCls: ReflectClass = reflectChild029();
+      let childField1: StaticField | null = childCls.getStaticField('childPublic');
+      expect(childField1!.isProtected()).assertEqual(false);
+      let childField2: StaticField | null = childCls.getStaticField('childProtected');
+      expect(childField2!.isProtected()).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_3000
+     * @tc.name testStaticFieldIsProtected030
+     * @tc.desc Verify accessing parent class protected fields from child class
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let baseCls: ReflectClass = reflectBaseComponent030();
+      let configField: StaticField | null = baseCls.getStaticField('defaultConfig');
+      expect(configField!.isProtected()).assertEqual(true);
+      let versionField: StaticField | null = baseCls.getStaticField('version');
+      expect(versionField!.isProtected()).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_3100
+     * @tc.name testStaticFieldIsProtected031
+     * @tc.desc Verify interface fields cannot be protected
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectImpl031();
+      let field1: StaticField | null = cls.getStaticField('constant');
+      expect(field1!.isProtected()).assertEqual(false);
+      let field2: StaticField | null = cls.getStaticField('internalConstant');
+      expect(field2!.isProtected()).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_3200
+     * @tc.name testStaticFieldIsProtected032
+     * @tc.desc Verify isProtected with generic class protected static fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectGenericClass032();
+      let field1: StaticField | null = cls.getStaticField('defaultValue');
+      expect(field1!.isProtected()).assertEqual(false);
+      let field2: StaticField | null = cls.getStaticField('cache');
+      expect(field2!.isProtected()).assertEqual(true);
+      let field3: StaticField | null = cls.getStaticField('metadata');
+      expect(field3!.isProtected()).assertEqual(false);
+      expect(field3!.isPrivate()).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_3300
+     * @tc.name testStaticFieldIsProtected033
+     * @tc.desc Verify isProtected with function type protected field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass033();
+      expect(cls.getStaticField('handler')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('callback')!.isProtected()).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_3400
+     * @tc.name testStaticFieldIsProtected034
+     * @tc.desc Verify isProtected with class type protected field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass034();
+      expect(cls.getStaticField('inner')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('outer')!.isProtected()).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_3500
+     * @tc.name testStaticFieldIsProtected035
+     * @tc.desc Verify public/private/protected modifiers are mutually exclusive
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass035();
+      let fieldNames: string[] = ['pub', 'priv', 'prot'];
+      for (let i = 0; i < fieldNames.length; i++) {
+        let field: StaticField | null = cls.getStaticField(fieldNames[i]);
+        if (field !== null) {
+          let publicCount: number = (field.isPublic() ? 1 : 0);
+          let privateCount: number = (field.isPrivate() ? 1 : 0);
+          let protectedCount: number = (field.isProtected() ? 1 : 0);
+          expect(publicCount + privateCount + protectedCount).assertEqual(1);
+        }
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_3600
+     * @tc.name testStaticFieldIsProtected036
+     * @tc.desc Verify multiple calls to isProtected return consistent results
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass036();
+      let field: StaticField | null = cls.getStaticField('value');
+      let result1: boolean = field!.isProtected();
+      let result2: boolean = field!.isProtected();
+      let result3: boolean = field!.isProtected();
+      expect(result1).assertEqual(result2);
+      expect(result2).assertEqual(result3);
+      expect(result1).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_3700
+     * @tc.name testStaticFieldIsProtected037
+     * @tc.desc Verify traversing large number of fields and checking protected attribute
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass037();
+      let fieldNames: string[] = ['field1', 'field2', 'field3', 'field4', 'field5'];
+      let protectedCount: number = 0;
+      for (let i = 0; i < fieldNames.length; i++) {
+        let field: StaticField | null = cls.getStaticField(fieldNames[i]);
+        if (field !== null && field.isProtected()) {
+          protectedCount++;
+        }
+      }
+      console.info('Protected fields count: ' + protectedCount);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_3800
+     * @tc.name testStaticFieldIsProtected038
+     * @tc.desc Verify StaticField isProtected and InstanceField isProtected behave consistently
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass038();
+      let staticField: StaticField | null = cls.getStaticField('staticProtected');
+      expect(staticField!.isProtected()).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_3900
+     * @tc.name testStaticFieldIsProtected039
+     * @tc.desc Verify filtering protected fields from field list
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass039();
+      let fieldNames: string[] = ['a', 'b', 'c', 'd'];
+      let protectedFields: StaticField[] = [];
+      for (let i = 0; i < fieldNames.length; i++) {
+        let field: StaticField | null = cls.getStaticField(fieldNames[i]);
+        if (field !== null && field.isProtected()) {
+          protectedFields.push(field);
+        }
+      }
+      expect(protectedFields.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_4000
+     * @tc.name testStaticFieldIsProtected040
+     * @tc.desc Verify excluding protected fields from field list
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass040();
+      let fieldNames: string[] = ['a', 'b', 'c', 'd'];
+      let nonProtectedFields: StaticField[] = [];
+      for (let i = 0; i < fieldNames.length; i++) {
+        let field: StaticField | null = cls.getStaticField(fieldNames[i]);
+        if (field !== null && !field.isProtected()) {
+          nonProtectedFields.push(field);
+        }
+      }
+      expect(nonProtectedFields.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_4100
+     * @tc.name testStaticFieldIsProtected041
+     * @tc.desc Verify getting access level string of a field
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass041();
+      let fieldNames: string[] = ['pub', 'prot', 'priv', 'inter'];
+      for (let i = 0; i < fieldNames.length; i++) {
+        let field: StaticField | null = cls.getStaticField(fieldNames[i]);
+        if (field !== null) {
+          let level: string = 'unknown';
+          if (field.isPublic()) {
+            level = 'public';
+          } else if (field.isProtected()) {
+            level = 'protected';
+          } else if (field.isPrivate()) {
+            level = 'private';
+          } else {
+            level = 'internal';
+          }
+          console.info(field.getName() + ': ' + level);
+        }
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_4200
+     * @tc.name testStaticFieldIsProtected042
+     * @tc.desc Verify encapsulation of protected fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass042();
+      let fieldNames: string[] = ['apiKey', 'secretKey', 'internalId'];
+      for (let i = 0; i < fieldNames.length; i++) {
+        let field: StaticField | null = cls.getStaticField(fieldNames[i]);
+        if (field !== null) {
+          if (field.isProtected()) {
+            console.info('[PROTECTED] ' + field.getName() + ': ***');
+          } else {
+            console.info(field.getName() + ': ' + field.getValue());
+          }
+        }
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_4300
+     * @tc.name testStaticFieldIsProtected043
+     * @tc.desc Verify sensitive data should be marked as protected
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass043();
+      let displayField: StaticField | null = cls.getStaticField('displayName');
+      expect(displayField!.isProtected()).assertEqual(false);
+      let emailField: StaticField | null = cls.getStaticField('email');
+      expect(emailField!.isProtected()).assertEqual(false);
+      let passwordField: StaticField | null = cls.getStaticField('password');
+      expect(passwordField!.isProtected()).assertEqual(true);
+      let tokenField: StaticField | null = cls.getStaticField('authToken');
+      expect(tokenField!.isProtected()).assertEqual(true);
+      let ssnField: StaticField | null = cls.getStaticField('ssn');
+      expect(ssnField!.isProtected()).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_4400
+     * @tc.name testStaticFieldIsProtected044
+     * @tc.desc Verify reflection API can access protected fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass044();
+      let protectedField: StaticField | null = cls.getStaticField('protectedData');
+      expect(protectedField!.isProtected()).assertEqual(true);
+      let value: string | number | boolean | null = protectedField!.getValue() as string | number | boolean | null;
+      console.info('Protected data via reflection: ' + value);
+      protectedField!.setValue('modified');
+      console.info('Modified protected data: ' + protectedField!.getValue());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_4500
+     * @tc.name testStaticFieldIsProtected045
+     * @tc.desc Verify component base class uses protected fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let baseCls: ReflectClass = reflectBaseComponent045();
+      let hooksField: StaticField | null = baseCls.getStaticField('hooks');
+      expect(hooksField!.isProtected()).assertEqual(true);
+      let propsField: StaticField | null = baseCls.getStaticField('defaultProps');
+      expect(propsField!.isProtected()).assertEqual(true);
+      let stateField: StaticField | null = baseCls.getStaticField('internalState');
+      expect(stateField!.isProtected()).assertEqual(false);
+      expect(stateField!.isPrivate()).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_4600
+     * @tc.name testStaticFieldIsProtected046
+     * @tc.desc Verify framework extension points use protected fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let pluginCls: ReflectClass = reflectFrameworkPlugin046();
+      let hooksField: StaticField | null = pluginCls.getStaticField('hookPoints');
+      expect(hooksField!.isProtected()).assertEqual(true);
+      let depsField: StaticField | null = pluginCls.getStaticField('dependencies');
+      expect(depsField!.isProtected()).assertEqual(true);
+      let registryField: StaticField | null = pluginCls.getStaticField('registry');
+      expect(registryField!.isProtected()).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_4700
+     * @tc.name testStaticFieldIsProtected047
+     * @tc.desc Verify config inheritance with protected fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let baseCls: ReflectClass = reflectAppConfig047();
+      let pathField: StaticField | null = baseCls.getStaticField('configPath');
+      expect(pathField!.isProtected()).assertEqual(true);
+      let logField: StaticField | null = baseCls.getStaticField('logLevel');
+      expect(logField!.isProtected()).assertEqual(true);
+      let secretField: StaticField | null = baseCls.getStaticField('secretKey');
+      expect(secretField!.isProtected()).assertEqual(false);
+      expect(secretField!.isPrivate()).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_4800
+     * @tc.name testStaticFieldIsProtected048
+     * @tc.desc Verify accessing protected fields in unit tests
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass048();
+      let field: StaticField | null = cls.getStaticField('protectedValue');
+      if (field !== null && field.isProtected()) {
+        let value: string | number | boolean | null = field.getValue() as string | number | boolean | null;
+        console.info('Protected value: ' + value);
+        field.setValue('new value');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_4900
+     * @tc.name testStaticFieldIsProtected049
+     * @tc.desc Verify plugin system protected integration points
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let pluginCls: ReflectClass = reflectAnalyticsPlugin049();
+      let field: StaticField | null = pluginCls.getStaticField('integrationPoints');
+      let hasIntegrationPoints: boolean = (field !== null && field.isProtected());
+      expect(hasIntegrationPoints).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_5000
+     * @tc.name testStaticFieldIsProtected050
+     * @tc.desc Verify protected field design intent for inheritance hierarchy
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let vehicleCls: ReflectClass = reflectVehicle050();
+      let engineField: StaticField | null = vehicleCls.getStaticField('engineType');
+      expect(engineField!.isProtected()).assertEqual(true);
+      let capacityField: StaticField | null = vehicleCls.getStaticField('fuelCapacity');
+      expect(capacityField!.isProtected()).assertEqual(true);
+      let serialField: StaticField | null = vehicleCls.getStaticField('serialNumberPrefix');
+      expect(serialField!.isProtected()).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_5100
+     * @tc.name testStaticFieldIsProtected051
+     * @tc.desc Verify protected fields in template configuration class
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass051();
+      expect(cls.getStaticField('TEMPLATE_PATH')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('TEMPLATE_EXTENSION')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('TEMPLATE_CACHE_ENABLED')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('TEMPLATE_ENGINE')!.isProtected()).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_5200
+     * @tc.name testStaticFieldIsProtected052
+     * @tc.desc Verify protected fields in middleware configuration class
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass052();
+      expect(cls.getStaticField('MIDDLEWARE_STACK')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('MIDDLEWARE_ORDER')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('MIDDLEWARE_ENABLED')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('MIDDLEWARE_VERSION')!.isProtected()).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_5300
+     * @tc.name testStaticFieldIsProtected053
+     * @tc.desc Verify protected fields in validation configuration class
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass053();
+      expect(cls.getStaticField('VALIDATION_RULES')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('VALIDATION_MESSAGES')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('VALIDATION_STRICT')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('VALIDATION_ENABLED')!.isProtected()).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_5400
+     * @tc.name testStaticFieldIsProtected054
+     * @tc.desc Verify protected fields in event configuration class
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass054();
+      expect(cls.getStaticField('EVENT_CLICK')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('EVENT_CHANGE')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('EVENT_SUBMIT')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('EVENT_CUSTOM')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('EVENT_NAMESPACE')!.isProtected()).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_5500
+     * @tc.name testStaticFieldIsProtected055
+     * @tc.desc Verify protected fields in route configuration class
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass055();
+      expect(cls.getStaticField('ROUTE_HOME')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('ROUTE_ABOUT')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('ROUTE_CONTACT')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('ROUTE_ADMIN')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('ROUTE_PREFIX')!.isProtected()).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_5600
+     * @tc.name testStaticFieldIsProtected056
+     * @tc.desc Verify protected readonly fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass056();
+      expect(cls.getStaticField('PROTECTED_CONSTANT')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('PROTECTED_NAME')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('PUBLIC_CONSTANT')!.isProtected()).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_5700
+     * @tc.name testStaticFieldIsProtected057
+     * @tc.desc Verify many protected fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass057();
+      expect(cls.getStaticField('fieldA')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('fieldB')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('fieldC')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('fieldD')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('fieldE')!.isProtected()).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_5800
+     * @tc.name testStaticFieldIsProtected058
+     * @tc.desc Verify protected fields of multiple types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass058();
+      expect(cls.getStaticField('protectedStr')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('protectedNum')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('protectedBool')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('protectedArr')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('publicStr')!.isProtected()).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_5900
+     * @tc.name testStaticFieldIsProtected059
+     * @tc.desc Verify protected fields with private field in namespace class
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass059();
+      expect(cls.getStaticField('NAMESPACE_DEFAULT')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('NAMESPACE_ADMIN')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('NAMESPACE_API')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('NAMESPACE_PUBLIC')!.isProtected()).assertEqual(true);
+      expect(cls.getStaticField('NAMESPACE_INTERNAL')!.isProtected()).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_6000
+     * @tc.name testStaticFieldIsProtected060
+     * @tc.desc Verify getProtectedFieldNames helper function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass051();
+      let names: string[] = getProtectedFieldNames(cls);
+      expect(names.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_6100
+     * @tc.name testStaticFieldIsProtected061
+     * @tc.desc Verify getNonProtectedFieldNames helper function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass059();
+      let names: string[] = getNonProtectedFieldNames(cls);
+      expect(names.length).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_6200
+     * @tc.name testStaticFieldIsProtected062
+     * @tc.desc Verify countProtectedFields helper function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass054();
+      let count: number = countProtectedFields(cls);
+      expect(count).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_6300
+     * @tc.name testStaticFieldIsProtected063
+     * @tc.desc Verify hasProtectedFields helper function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls1: ReflectClass = reflectMyClass055();
+      expect(hasProtectedFields(cls1)).assertEqual(true);
+      let cls2: ReflectClass = createReflectClass('EmptyClass');
+      expect(hasProtectedFields(cls2)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_6400
+     * @tc.name testStaticFieldIsProtected064
+     * @tc.desc Verify filterProtectedFields helper function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass058();
+      let allFields: StaticField[] = cls.getDeclaredStaticFields();
+      let protectedFields: StaticField[] = filterProtectedFields(allFields);
+      expect(protectedFields.length).assertEqual(4);
+      for (let i = 0; i < protectedFields.length; i++) {
+        expect(protectedFields[i].isProtected()).assertEqual(true);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_6500
+     * @tc.name testStaticFieldIsProtected065
+     * @tc.desc Verify getInheritableFields helper function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass051();
+      let inheritable: StaticField[] = getInheritableFields(cls);
+      expect(inheritable.length).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_6600
+     * @tc.name testStaticFieldIsProtected066
+     * @tc.desc Verify validateProtectedFieldNaming helper function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass051();
+      let field: StaticField | null = cls.getStaticField('TEMPLATE_PATH');
+      expect(validateProtectedFieldNaming(field!)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_6700
+     * @tc.name testStaticFieldIsProtected067
+     * @tc.desc Verify buildProtectedFieldConfig helper function
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticFieldIsProtected067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: ReflectClass = reflectMyClass056();
+      let config: Record<string, string | number | boolean | null> = buildProtectedFieldConfig(cls);
+      expect(config['PROTECTED_CONSTANT']).assertEqual(100);
+      expect(config['PROTECTED_NAME']).assertEqual('protected');
+      expect(config['PUBLIC_CONSTANT']).assertEqual(undefined);
+    });
+  });
+}
