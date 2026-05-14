@@ -37,6 +37,9 @@ import IDataSourcePrefetchingMethods from './Prefetcher/IDataSourcePrefetchingMe
 import ReuseObjectRawTest from './ReuseObject/ReuseObjectRawTest.test';
 import LazyForEachReleaseStrategyTest from './LazyForeach/LazyForEachReleaseStrategy.test';
 import LazyForEachCustomComponentFreezeModeStaticTest from './LazyForeach/LazyForEachCustomComponentFreezeModeStaticTest.test';
+import SyncMonitorNotWildcardsTest from './SyncMonitor/SyncMonitorNotWildcards.test';
+import PersistentStorageApiTest from './PersistentStorage/PersistentStorageApi.test';
+import PersistenceV2ApiTest from './PersistenceV2/PersistenceV2Api.test';
 
 export default function testsuite() {
   ArrayLikeStringTest(); 
@@ -55,11 +58,14 @@ export default function testsuite() {
   AddMonitorObservedV2Map(); 
   AddMonitorObservedV2Set(); 
   AddMonitorErrorCode();
-  AddMonitorParentChild(); 
+  AddMonitorParentChild();
   AddMonitorTwoDimensionalArray(); 
   BasicPrefetcherMethods();
   IDataSourcePrefetchingMethods();
   //ReuseObjectRawTest(); 
   LazyForEachReleaseStrategyTest();
   LazyForEachCustomComponentFreezeModeStaticTest();
+  SyncMonitorNotWildcardsTest();
+  PersistentStorageApiTest();
+  PersistenceV2ApiTest();
 }
