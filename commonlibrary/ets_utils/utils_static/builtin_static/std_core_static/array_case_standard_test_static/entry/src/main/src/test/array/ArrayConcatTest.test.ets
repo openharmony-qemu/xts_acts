@@ -860,5 +860,36 @@ export default function ArrayConcatTest(): void {
       expect(result[3]).assertEqual(4);
       expect(result[4]).assertEqual(5);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_4700
+     * @tc.name testArrayConcat047
+     * @tc.desc Verify concat preserves the inferred number array shape in the result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayConcat047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<int>(1, 2);
+      const arr2 = new Array<int>(3, 4);
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(4);
+      expect(result[2]).assertEqual(3);
+    });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_4800
+     * @tc.name testArrayConcat048
+     * @tc.desc Verify explicit union arrays can represent documented mixed-type concat inference
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayConcat048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<number | string>(1, 2);
+      const arr2 = new Array<number | string>('a', 'b');
+      const result = arr1.concat(arr2);
+      expect(result.length).assertEqual(4);
+      expect(result[2]).assertEqual('a');
+    });
   });
 }

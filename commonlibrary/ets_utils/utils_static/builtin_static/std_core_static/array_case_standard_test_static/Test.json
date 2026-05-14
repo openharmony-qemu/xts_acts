@@ -5,7 +5,7 @@
         "test-timeout": "180000",
         "shell-timeout": "180000",
         "testcase-timeout": "15000",
-        "bundle-name": "com.example.array_standard_test_static",
+        "bundle-name": "arrayCase.standard.test.static",
         "module-name": "entry"
     },
     "kits": [

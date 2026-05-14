@@ -853,5 +853,20 @@ export default function ArrayConstructor3Test(): void {
         expect(arr[i].data).assertEqual(i + 1);
       }
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_5300
+     * @tc.name testArrayConstructor3053
+     * @tc.desc Verify documented compile-time type mismatch cases remain excluded from runtime execution
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayConstructor3053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const numArr = new Array<number>(1, 2, 3);
+      const strArr = new Array<string>('a', 'b', 'c');
+      expect(numArr.length).assertEqual(3);
+      expect(strArr[1]).assertEqual('b');
+    });
   });
 }

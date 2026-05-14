@@ -1001,7 +1001,10 @@ export default function ArrayConstructor4Test(): void {
      */
     it('testArrayConstructor057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<number>(1000, (index) => index);
-      const arr2 = new Array<number>(...buildSequentialNumbers045(1000));
+      const arr2 = new Array<number>(1000);
+      for (let i = 0; i < count; i++) {
+        arr2.pushOne(i);
+      }
       for (let i = 0; i < 1000; i++) {
         expect(arr1[i]).assertEqual(arr2[i]);
       }
