@@ -54,6 +54,7 @@
                 "./resource/image/jpeg_xmp.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",
                 "./resource/image/test_exif_v3.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",
                 "./resource/image/fake.dng ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",
+                "./resource/image/C025.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",
                 "./resource/image/C027.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",
                 "./resource/image/food.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",
                 "./resource/image/test6.gif ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",
