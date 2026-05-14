@@ -4369,15 +4369,19 @@ Camera_ErrorCode NDKCamera::UnregisterExposureStateChangeCallbackWithoutSession(
     return ret;
 }
 
+bool g_isExposureStateCallback;
 bool g_isExposureStart;
 bool g_isExposureFinish;
 void OnExposureStateCallback(void* context, OH_Camera_ExposureState state)
 {
     LOG("Camera_ExposureState is called, state: %d", state);
+    g_isExposureStateCallback = true;
     if (state == OH_CAMERA_EXPOSURE_STATE_SCAN) {
+        LOG("Camera_ExposureState is called, state: OH_CAMERA_EXPOSURE_STATE_SCAN");
         g_isExposureStart = true;
     }
     if (state == OH_CAMERA_EXPOSURE_STATE_CONVERGED) {
+        LOG("Camera_ExposureState is called, state: OH_CAMERA_EXPOSURE_STATE_CONVERGED");
         g_isExposureFinish = true;
     }
 }
@@ -4420,7 +4424,7 @@ bool NDKCamera::WaitForExposureFinish()
     const int waitExposureTimeout = 5;
     const int sleepInterval = 20;
     auto startTime = std::chrono::system_clock::now();
-    while (!g_isExposureFinish) {
+    while (!g_isExposureStateCallback) {
         std::this_thread::sleep_for(std::chrono::milliseconds(sleepInterval));
         auto endTime = std::chrono::system_clock::now();
         auto duration_seconds = std::chrono::duration_cast<std::chrono::seconds>(endTime - startTime).count();
@@ -4429,7 +4433,7 @@ bool NDKCamera::WaitForExposureFinish()
             break;
         }
     }
-    return g_isExposureFinish;
+    return g_isExposureStateCallback;
 }
 
 int32_t g_minTint;
