@@ -21,7 +21,7 @@ import hilog from '@ohos.hilog'
 const waitUiReadyMs: int = 1000;
 const TestTag: string = 'UiTest_TAG';
 const ParameterErrorCode: int = 17000007;
-const ErrorCode17000005: int = 17000005;
+const DeviceErrorCode = 17000005;
 
 function sleep(nm: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {
@@ -755,7 +755,7 @@ export default function uitestApi26ErrorTest(): void {
         expect().assertFail();
       } catch (error) {
         hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseWithoutPoint error: ' + error.code);
-        expect(error.code === ErrorCode17000005 || error.code === ParameterErrorCode).assertTrue();
+        expect(error.code === DeviceErrorCode || error.code === ParameterErrorCode).assertTrue();
       }
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseWithoutPoint over');
     });
