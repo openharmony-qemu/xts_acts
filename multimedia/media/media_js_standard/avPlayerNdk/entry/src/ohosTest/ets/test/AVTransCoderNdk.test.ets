@@ -988,7 +988,10 @@ export default function AVTransCoderNdkTest() {
         await closeRawFd(VIDEO_AVC_AUDIO_AAC);
         await closeFileFd(dstFd.fd);
         let isSupport: number = await myavcapability.AVCapabilityIsSupportedHEVC();
-        if (isSupport == -1) {
+        console.info('isSupport:', isSupport)
+        let isSupportEncoder: number = await myavcapability.AVCapabilityIsSupportedHEVCEncoder();
+        console.info('isSupportEncoder:', isSupportEncoder)
+        if ((isSupport == -1) || (isSupportEncoder == -1)) {
           expect(ret).assertEqual(OH_AVErrCode.AV_ERR_IO);
         } else {
           expect(ret).assertEqual(OH_AVErrCode.AV_ERR_OK);
@@ -1773,8 +1776,11 @@ export default function AVTransCoderNdkTest() {
       if (isSupportHEVC) {
         let ret = await testOhAvTransCoderAndPlayVideo('testOhAvTransCoderPlayer0005', VIDEO_SOURCE_MP4_HEVC);
         let isSupport: number = await myavcapability.AVCapabilityIsSupportedHEVC();
-        if (isSupport == -1) {
-        expect(ret).assertEqual(FAIL);
+        console.info('isSupport:', isSupport)
+        let isSupportEncoder: number = await myavcapability.AVCapabilityIsSupportedHEVCEncoder();
+        console.info('isSupportEncoder:', isSupportEncoder)
+        if ((isSupport == -1) || (isSupportEncoder == -1)) {
+          expect(ret).assertEqual(FAIL);
         } else {
           expect(ret).assertEqual(OH_AVErrCode.AV_ERR_OK);
         }
