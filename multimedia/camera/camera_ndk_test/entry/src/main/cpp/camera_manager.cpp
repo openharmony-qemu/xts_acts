@@ -4465,7 +4465,8 @@ Camera_ErrorCode NDKCamera::SetColorTint(int useCaseCode)
     } else if (useCaseCode == PARAMETER4_ERROR) {
         ret_ = OH_CaptureSession_SetColorTint(nullptr, g_minTint);
     } else if (useCaseCode == PARAMETER5_ERROR) {
-        ret_ = OH_CaptureSession_SetColorTint(captureSession_, nullptr);
+        uint32_t colorTintNull;
+        ret_ = OH_CaptureSession_SetColorTint(captureSession_, colorTintNull);
     }
 
     if (ret_ != CAMERA_OK) {
