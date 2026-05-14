@@ -16,32 +16,32 @@
 export const RenderNodeUtils_001: () => number;
 export const RenderNodeUtils_002: () => number;
 
-export const TestRenderNodeBlurStyleOption001: () => number;
+export const TestRenderNodeBlurStyleOption_001: () => number;
 
-export const TestRenderNodeBlurStyleOption002: () => number;
+export const TestRenderNodeBlurStyleOption_002: () => number;
 
-export const TestRenderNodeBlurStyleOption003: () => number;
+export const TestRenderNodeBlurStyleOption_003: () => number;
 
-export const TestRenderNodeBlurStyleOption004: () => number;
+export const TestRenderNodeBlurStyleOption_004: () => number;
 
-export const TestRenderNodeBlurStyleOption005: () => number;
+export const TestRenderNodeBlurStyleOption_005: () => number;
 
-export const TestRenderNodeBlurStyleOption006: () => number;
+export const TestRenderNodeBlurStyleOption_006: () => number;
 
-export const TestRenderNodeBlurStyleOption007: () => number;
+export const TestRenderNodeBlurStyleOption_007: () => number;
 
-export const TestRenderNodeBlurStyleOption008: () => number;
+export const TestRenderNodeBlurStyleOption_008: () => number;
 
-export const TestRenderNodeBlurStyleOption009: () => number;
+export const TestRenderNodeBlurStyleOption_009: () => number;
 
-export const TestRenderNodeBlurStyleOption010: () => number;
+export const TestRenderNodeBlurStyleOption_010: () => number;
 
-export const TestRenderNodeBlurStyleOption011: () => number;
+export const TestRenderNodeBlurStyleOption_011: () => number;
 
-export const TestRenderNodeBlurStyleOption012: () => number;
+export const TestRenderNodeBlurStyleOption_012: () => number;
 
-export const TestRenderNodeBlurStyleOption013: () => number;
+export const TestRenderNodeBlurStyleOption_013: () => number;
 
-export const TestRenderNodeBlurStyleOption014: () => number;
+export const TestRenderNodeBlurStyleOption_014: () => number;
 
-export const TestRenderNodeBlurStyleOption015: () => number;
+export const TestRenderNodeBlurStyleOption_015: () => number;

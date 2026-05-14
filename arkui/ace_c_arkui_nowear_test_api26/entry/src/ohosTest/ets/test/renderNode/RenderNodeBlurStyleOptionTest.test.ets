@@ -12,214 +12,210 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import { beforeEach, describe, expect, it, Level } from '@ohos/hypium';
 import Utils from '../common/Utils';
 import nativeFunc from 'libnativefunc.so'
 
 export default function RenderNodeBlurStyleOptionTest(){
-
   describe('RenderNodeBlurStyleOptionTest', () => {
     beforeEach(async (done: Function) => {
       await Utils.sleep(100);
       done();
     });
 
-
     /**
-     * @tc.name   SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_1000
-     * @tc.number SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_1000
-     * @tc.desc   SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_1000
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.number     : SUB_ARKUI_CAPI_RenderNodeBlurStyleOption_0100
+     * @tc.name       : RenderNodeBlurStyleOption_0100
+     * @tc.desc       : test RenderNodeBlurStyleOption
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
-    it('SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_1000', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.TestRenderNodeBlurStyleOption001()).assertEqual(0)
+    it('RenderNodeBlurStyleOption_0100', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TestRenderNodeBlurStyleOption_001()).assertEqual(0)
       done()
     })
 
     /**
-     * @tc.name   SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_2000
-     * @tc.number SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_2000
-     * @tc.desc   SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_2000
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.number     : SUB_ARKUI_CAPI_RenderNodeBlurStyleOption_0200
+     * @tc.name       : RenderNodeBlurStyleOption_0200
+     * @tc.desc       : test RenderNodeBlurStyleOption
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
-    it('SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_2000', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.TestRenderNodeBlurStyleOption002()).assertEqual(0)
+    it('RenderNodeBlurStyleOption_0200', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TestRenderNodeBlurStyleOption_002()).assertEqual(0)
       done()
     })
 
     /**
-     * @tc.name   SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_3000
-     * @tc.number SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_3000
-     * @tc.desc   SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_3000
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.number     : SUB_ARKUI_CAPI_RenderNodeBlurStyleOption_0300
+     * @tc.name       : RenderNodeBlurStyleOption_0300
+     * @tc.desc       : test RenderNodeBlurStyleOption
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
-    it('SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_3000', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.TestRenderNodeBlurStyleOption003()).assertEqual(0)
+    it('RenderNodeBlurStyleOption_0300', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TestRenderNodeBlurStyleOption_003()).assertEqual(0)
       done()
     })
 
     /**
-     * @tc.name   SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_4000
-     * @tc.number SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_4000
-     * @tc.desc   SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_4000
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.number     : SUB_ARKUI_CAPI_RenderNodeBlurStyleOption_0400
+     * @tc.name       : RenderNodeBlurStyleOption_0400
+     * @tc.desc       : test RenderNodeBlurStyleOption
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
-    it('SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_4000', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.TestRenderNodeBlurStyleOption004()).assertEqual(0)
+    it('RenderNodeBlurStyleOption_0400', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TestRenderNodeBlurStyleOption_004()).assertEqual(0)
       done()
     })
 
     /**
-     * @tc.name   SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_5000
-     * @tc.number SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_5000
-     * @tc.desc   SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_5000
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.number     : SUB_ARKUI_CAPI_RenderNodeBlurStyleOption_0500
+     * @tc.name       : RenderNodeBlurStyleOption_0500
+     * @tc.desc       : test RenderNodeBlurStyleOption
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
-    it('SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_5000', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.TestRenderNodeBlurStyleOption005()).assertEqual(0)
+    it('RenderNodeBlurStyleOption_0500', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TestRenderNodeBlurStyleOption_005()).assertEqual(0)
       done()
     })
 
     /**
-     * @tc.name   SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_6000
-     * @tc.number SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_6000
-     * @tc.desc   SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_6000
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.number     : SUB_ARKUI_CAPI_RenderNodeBlurStyleOption_0600
+     * @tc.name       : RenderNodeBlurStyleOption_0600
+     * @tc.desc       : test RenderNodeBlurStyleOption
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
-    it('SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_6000', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.TestRenderNodeBlurStyleOption006()).assertEqual(0)
+    it('RenderNodeBlurStyleOption_0600', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TestRenderNodeBlurStyleOption_006()).assertEqual(0)
       done()
     })
 
     /**
-     * @tc.name   SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_7000
-     * @tc.number SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_7000
-     * @tc.desc   SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_7000
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.number     : SUB_ARKUI_CAPI_RenderNodeBlurStyleOption_0700
+     * @tc.name       : RenderNodeBlurStyleOption_0700
+     * @tc.desc       : test RenderNodeBlurStyleOption
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
-    it('SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_7000', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.TestRenderNodeBlurStyleOption007()).assertEqual(0)
+    it('RenderNodeBlurStyleOption_0700', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TestRenderNodeBlurStyleOption_007()).assertEqual(0)
       done()
     })
 
     /**
-     * @tc.name   SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_8000
-     * @tc.number SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_8000
-     * @tc.desc   SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_8000
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.number     : SUB_ARKUI_CAPI_RenderNodeBlurStyleOption_0800
+     * @tc.name       : RenderNodeBlurStyleOption_0800
+     * @tc.desc       : test RenderNodeBlurStyleOption
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
-    it('SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_8000', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.TestRenderNodeBlurStyleOption008()).assertEqual(0)
+    it('RenderNodeBlurStyleOption_0800', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TestRenderNodeBlurStyleOption_008()).assertEqual(0)
       done()
     })
 
     /**
-     * @tc.name   SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_9000
-     * @tc.number SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_9000
-     * @tc.desc   SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_9000
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.number     : SUB_ARKUI_CAPI_RenderNodeBlurStyleOption_0900
+     * @tc.name       : RenderNodeBlurStyleOption_0900
+     * @tc.desc       : test RenderNodeBlurStyleOption
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
-    it('SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_9000', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.TestRenderNodeBlurStyleOption009()).assertEqual(0)
+    it('RenderNodeBlurStyleOption_0900', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TestRenderNodeBlurStyleOption_009()).assertEqual(0)
       done()
     })
 
     /**
-     * @tc.name   SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_1010
-     * @tc.number SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_1010
-     * @tc.desc   SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_1010
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.number     : SUB_ARKUI_CAPI_RenderNodeBlurStyleOption_1000
+     * @tc.name       : RenderNodeBlurStyleOption_1000
+     * @tc.desc       : test RenderNodeBlurStyleOption
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
-    it('SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_1010', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.TestRenderNodeBlurStyleOption010()).assertEqual(0)
+    it('RenderNodeBlurStyleOption_1000', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TestRenderNodeBlurStyleOption_010()).assertEqual(0)
       done()
     })
 
     /**
-     * @tc.name   SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_1011
-     * @tc.number SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_1011
-     * @tc.desc   SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_1011
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.number     : SUB_ARKUI_CAPI_RenderNodeBlurStyleOption_1100
+     * @tc.name       : RenderNodeBlurStyleOption_1100
+     * @tc.desc       : test RenderNodeBlurStyleOption
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
-    it('SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_1011', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.TestRenderNodeBlurStyleOption011()).assertEqual(0)
+    it('RenderNodeBlurStyleOption_1100', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TestRenderNodeBlurStyleOption_011()).assertEqual(0)
       done()
     })
 
     /**
-     * @tc.name   SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_1012
-     * @tc.number SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_1012
-     * @tc.desc   SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_1012
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.number     : SUB_ARKUI_CAPI_RenderNodeBlurStyleOption_1200
+     * @tc.name       : RenderNodeBlurStyleOption_1200
+     * @tc.desc       : test RenderNodeBlurStyleOption
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
-    it('SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_1012', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.TestRenderNodeBlurStyleOption012()).assertEqual(0)
+    it('RenderNodeBlurStyleOption_1200', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TestRenderNodeBlurStyleOption_012()).assertEqual(0)
       done()
     })
 
     /**
-     * @tc.name   SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_1013
-     * @tc.number SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_1013
-     * @tc.desc   SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_1013
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.number     : SUB_ARKUI_CAPI_RenderNodeBlurStyleOption_1300
+     * @tc.name       : RenderNodeBlurStyleOption_1300
+     * @tc.desc       : test RenderNodeBlurStyleOption
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
-    it('SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_1013', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.TestRenderNodeBlurStyleOption013()).assertEqual(0)
+    it('RenderNodeBlurStyleOption_1300', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TestRenderNodeBlurStyleOption_013()).assertEqual(0)
       done()
     })
 
     /**
-     * @tc.name   SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_1014
-     * @tc.number SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_1014
-     * @tc.desc   SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_1014
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.number     : SUB_ARKUI_CAPI_RenderNodeBlurStyleOption_1400
+     * @tc.name       : RenderNodeBlurStyleOption_1400
+     * @tc.desc       : test RenderNodeBlurStyleOption
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
-    it('SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_1014', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.TestRenderNodeBlurStyleOption014()).assertEqual(0)
+    it('RenderNodeBlurStyleOption_1400', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TestRenderNodeBlurStyleOption_014()).assertEqual(0)
       done()
     })
 
     /**
-     * @tc.name   SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_1015
-     * @tc.number SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_1015
-     * @tc.desc   SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_1015
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.number     : SUB_ARKUI_CAPI_RenderNodeBlurStyleOption_1500
+     * @tc.name       : RenderNodeBlurStyleOption_1500
+     * @tc.desc       : test RenderNodeBlurStyleOption
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
-    it('SUB_ACE_ARKUI_RenderNodeBlurStyleOptionTest_1015', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.TestRenderNodeBlurStyleOption015()).assertEqual(0)
+    it('RenderNodeBlurStyleOption_1500', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TestRenderNodeBlurStyleOption_015()).assertEqual(0)
       done()
     })
-
   })
 }
