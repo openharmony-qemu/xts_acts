@@ -24,7 +24,7 @@ let name: string = 'zhangsan'
 let owner: string = 'com.acts.accountauthenticator'
 let self_owner: string = 'com.example.actsaccountoperatetest.static'
 
-export default function AppAccountResultCheckStatic() {
+export default function AppAccountResultCheckStatic(): void {
   describe('AppAccountResultCheckStatic', () => {
     let accountManager: account.AppAccountManager = account.createAppAccountManager();
     hilog.info(0x0000, tag, "AppAccountManager create finish====");

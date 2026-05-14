@@ -22,7 +22,7 @@ import { RecordData } from '@ohos.base';
 
 let tag: string = 'testTag';
 
-export default function AppAccountParamCheckStatic() {
+export default function AppAccountParamCheckStatic(): void {
   describe('AppAccountParamCheckStatic', () => {
     let accountManager: account.AppAccountManager = account.createAppAccountManager();
     hilog.info(0x0000, tag, '====>AppAccountManager create finish====');

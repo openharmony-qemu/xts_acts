@@ -24,7 +24,7 @@ import { CreateAccount, RemoveAccount } from './AccountFunc.test';
 
 let tag: string = 'testTag';
 
-export default function ActsOsAccountThirdPartyTest_third_4_Static() {
+export default function ActsOsAccountThirdPartyTest_third_4_Static(): void {
   describe('ActsOsAccountThirdPartyTest_third_4_Static', () => {
     let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
     hilog.info(0x0000, tag, "====>get os AccountManager finish====");

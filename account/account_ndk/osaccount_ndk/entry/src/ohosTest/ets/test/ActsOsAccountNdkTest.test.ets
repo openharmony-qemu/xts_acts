@@ -17,7 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import osAccountNdk from 'libosaccountndk.so'
 
 const Success = 0
-export default function ActsOsAccountNdkTest() {
+export default function ActsOsAccountNdkTest(): void {
   describe('ActsOsAccountNdkTest', () => {
 
     /**

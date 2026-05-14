@@ -19,7 +19,7 @@ import Want from '@ohos.app.ability.Want'
 const name = 'zhangSan'
 const owner = 'com.acts.notExist'
 
-export default function AppAccountParamCheck5() {
+export default function AppAccountParamCheck5(): void {
   describe('AppAccountParamCheck5', () => {
 
     afterEach(async (done: Function) => {

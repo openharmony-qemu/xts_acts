@@ -18,7 +18,7 @@ import { describe, afterEach, it, expect, TestType, Size, Level } from '@ohos/hy
 const name = 'zhangSan'
 const owner = 'com.acts.notExist'
 
-export default function AppAccountParamCheck2() {
+export default function AppAccountParamCheck2(): void {
   describe('AppAccountParamCheck2', () => {
 
     afterEach(async (done: Function) => {

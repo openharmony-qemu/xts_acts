@@ -20,7 +20,7 @@ import { BusinessError } from '@ohos.base';
 
 let tag: string = 'testTag';
 
-export default function DistributedAccountParamCheckStatic() {
+export default function DistributedAccountParamCheckStatic(): void {
   describe('DistributedAccountParamCheckStatic', () => {
     let distributedAccountAbility:distributedAccount.DistributedAccountAbility = distributedAccount.getDistributedAccountAbility();
     hilog.info(0x0000, tag, '====>getDistributedAccountAbility finish====');

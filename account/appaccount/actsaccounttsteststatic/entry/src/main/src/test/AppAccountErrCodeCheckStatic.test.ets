@@ -24,7 +24,7 @@ let nameLimit: int = 512
 
 let tag: string = 'testTag';
 
-export default function AppAccountErrCodeCheckStatic() {
+export default function AppAccountErrCodeCheckStatic(): void {
   describe('AppAccountErrCodeCheckStatic', () => {
     let accountManager: account.AppAccountManager = account.createAppAccountManager();
     hilog.info(0x0000, tag, "====>AppAccountManager create finish====");
