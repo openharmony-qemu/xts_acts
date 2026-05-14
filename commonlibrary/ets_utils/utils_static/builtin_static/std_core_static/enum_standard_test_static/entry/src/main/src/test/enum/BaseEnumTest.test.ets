@@ -182,8 +182,9 @@ export default function BaseEnumTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnum007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 此测试仅用于验证未捕获异常的行为，跳过执行
-      return;
+      // Int.toByte(128) 在 SDK 中截断为 -128，验证实际截断行为
+      let e: BaseEnum<byte> = new BaseEnum<byte>(Int.toByte(128), "BYTE_OVERFLOW")
+      expect(e.valueOf()).assertEqual(Int.toByte(-128))
     });
 
     /**
@@ -195,8 +196,9 @@ export default function BaseEnumTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnum008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 此测试仅用于验证未捕获异常的行为，跳过执行
-      return;
+      // Int.toByte(-129) 在 SDK 中截断为 127，验证实际截断行为
+      let e: BaseEnum<byte> = new BaseEnum<byte>(Int.toByte(-129), "BYTE_UNDERFLOW")
+      expect(e.valueOf()).assertEqual(Int.toByte(127))
     });
 
     /**
@@ -273,8 +275,9 @@ export default function BaseEnumTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnum014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 此测试仅用于验证未捕获异常的行为，跳过执行
-      return;
+      // Int.toShort(32768) 在 SDK 中截断为 -32768，验证实际截断行为
+      let e: BaseEnum<short> = new BaseEnum<short>(Int.toShort(32768), "SHORT_OVERFLOW")
+      expect(e.valueOf()).assertEqual(Int.toShort(-32768))
     });
 
     /**
@@ -2012,8 +2015,13 @@ export default function BaseEnumTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnum144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 此测试仅用于验证未捕获异常的行为，跳过执行
-      return;
+      try {
+        let e: BaseEnum<int> = new BaseEnum<int>(null as int, "NULL_VALUE");
+        expect().assertFail();
+      } catch (error) {
+        expect(error == null).assertFalse();
+        expect(error instanceof Error).assertTrue();
+      }
     });
 
     /**
@@ -2025,8 +2033,13 @@ export default function BaseEnumTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnum145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 此测试仅用于验证未捕获异常的行为，跳过执行
-      return;
+      try {
+        let e: BaseEnum<int> = new BaseEnum<int>(1, null as string);
+        expect().assertFail();
+      } catch (error) {
+        expect(error == null).assertFalse();
+        expect(error instanceof Error).assertTrue();
+      }
     });
 
     /**

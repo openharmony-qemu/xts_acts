@@ -179,8 +179,9 @@ export default function BaseEnumConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumConstructor011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // SDK行为: Int.toByte(128) 不会抛出异常，而是截断为 -128，此测试跳过
-      return;
+      // Int.toByte(128) 在 SDK 中截断为 -128，验证实际截断行为
+      const e = new BaseEnum<byte>(Int.toByte(128), "OVERFLOW_BYTE");
+      expect(e.valueOf()).assertEqual(Int.toByte(-128));
     });
 
     /**
@@ -192,8 +193,9 @@ export default function BaseEnumConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumConstructor012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // SDK行为: Int.toByte(-129) 不会抛出异常，而是截断为 127，此测试跳过
-      return;
+      // Int.toByte(-129) 在 SDK 中截断为 127，验证实际截断行为
+      const e = new BaseEnum<byte>(Int.toByte(-129), "UNDERFLOW_BYTE");
+      expect(e.valueOf()).assertEqual(Int.toByte(127));
     });
 
     /**
@@ -858,8 +860,15 @@ export default function BaseEnumConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumConstructor062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // SDK行为: (true as int) 在运行时不会抛出异常，此测试跳过
-      return;
+      // boolean 类型不在泛型约束内，但 SDK 在运行时不做严格校验
+      // 验证构造不会导致未捕获异常，且实例化成功
+      try {
+        const e = new BaseEnum<int>(true as int, "BOOL_VALUE");
+        expect(e instanceof BaseEnum).assertTrue();
+        expect(e.getName()).assertEqual("BOOL_VALUE");
+      } catch (error) {
+        expect().assertFail();
+      }
     });
 
     /**
@@ -1568,8 +1577,13 @@ export default function BaseEnumConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumConstructor109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // SDK行为: (true as int) 在运行时不会抛出异常，此测试跳过
-      return;
+      // 类型不匹配在 SDK 运行时不抛异常，验证构造成功
+      try {
+        const e = new BaseEnum<int>(true as int, "TYPE_MISMATCH");
+        expect(e instanceof BaseEnum).assertTrue();
+      } catch (error) {
+        expect().assertFail();
+      }
     });
 
     /**
