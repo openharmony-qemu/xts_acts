@@ -13,8 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Flex, FlexDirection,ClickEvent,Margin,
-  ItemAlign, FlexAlign, Text, Button, FontWeight, ButtonType, ClickEvent, Margin,BorderStyle, Search} from '@ohos.arkui.component'
+import { Entry, Column, Component, Flex, FlexDirection, ClickEvent, Margin,
+  ItemAlign, FlexAlign, Text, Button, FontWeight, ButtonType} from '@ohos.arkui.component'
 import router from '@ohos.router';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage, State } from '@ohos.arkui.stateManagement'

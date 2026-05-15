@@ -15,7 +15,6 @@
  */
 
 import { Entry, Text, Column, Component, Button, ClickEvent, TextAlign, Margin, ForEach } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 import common from '@ohos.app.ability.common'
 import Want from '@ohos.app.ability.Want'
