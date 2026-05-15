@@ -55,81 +55,7 @@ class Dog extends Animal {
   }
 }
 
-class Animal1 {
-  name: string = '';
-  constructor(name: string) {
-    this.name = name;
-  }
-  public speak(): string {
-    return "Animal speak";
-  }
-}
-
-class Dog1 extends Animal1 {
-  breed: string = '';
-  constructor(name: string, breed: string) {
-    super(name);
-    this.breed = breed;
-  }
-
-  public speak(): string {
-    return "Dog speak";
-  }
-}
-
-class Animal2 {
-  name: string = '';
-  constructor(name: string) {
-    this.name = name;
-  }
-  public speak(): string {
-    return "Animal speak";
-  }
-}
-
-class Dog2 extends Animal2 {
-  breed: string = '';
-  constructor(name: string, breed: string) {
-    super(name);
-    this.breed = breed;
-  }
-  public speak(): string {
-    return "Dog speak";
-  }
-}
-
-class Animal3 {
-  name: string = '';
-  constructor(name: string) {
-    this.name = name;
-  }
-  public speak(): string {
-    return "Animal speak";
-  }
-}
-
-class Dog3 extends Animal3 {
-  breed: string = '';
-  constructor(name: string, breed: string) {
-    super(name);
-    this.breed = breed;
-  }
-  public speak(): string {
-    return "Dog speak";
-  }
-}
-
-class Animal4 {
-  name: string = '';
-  constructor(name: string) {
-    this.name = name;
-  }
-  public speak(): string {
-    return "Animal speak";
-  }
-}
-
-class Fish extends Animal4 {
+class Fish extends Animal {
   protected waterType: string;
   constructor(name: string, waterType: string) {
     super(name);
@@ -144,17 +70,7 @@ class Fish extends Animal4 {
   }
 }
 
-class Animal5 {
-  name: string = '';
-  constructor(name: string) {
-    this.name = name;
-  }
-  public speak(): string {
-    return "Animal speak";
-  }
-}
-
-class Fish2 extends Animal5 {
+class Fish2 extends Animal {
   private waterType: string;
   constructor(name: string, waterType: string) {
     super(name);
@@ -169,17 +85,7 @@ class Fish2 extends Animal5 {
   }
 }
 
-class Animal6 {
-  name: string = '';
-  constructor(name: string) {
-    this.name = name;
-  }
-  public speak(): string {
-    return "Animal speak";
-  }
-}
-
-class Mammal extends Animal6 {
+class Mammal extends Animal {
   public furColor: string;
   constructor(name: string, furColor: string) {
     super(name);
@@ -199,21 +105,11 @@ class Lion extends Mammal {
   }
 }
 
-class Animal7 {
-  name: string = '';
-  constructor(name: string) {
-    this.name = name;
-  }
-  public speak(): string {
-    return "Animal speak";
-  }
-}
-
 interface Motion {
   swim(): string;
 }
 
-class Dolphin extends Animal7 implements Motion {
+class Dolphin extends Animal implements Motion {
   public swim(): string {
     return "Dolphin is swimming";
   }
@@ -225,17 +121,7 @@ class Dolphin extends Animal7 implements Motion {
   }
 }
 
-class Animal8 {
-  name: string = '';
-  constructor(name: string) {
-    this.name = name;
-  }
-  public speak(): string {
-    return "Animal speak";
-  }
-}
-
-abstract class Bird2 extends Animal8 {
+abstract class Bird2 extends Animal {
   public abstract fly(): string;
   constructor(name: string) {
     super(name);
@@ -254,17 +140,7 @@ class Eagle extends Bird2 {
   }
 }
 
-class Animal9 {
-  name: string = '';
-  constructor(name: string) {
-    this.name = name;
-  }
-  public speak(): string {
-    return "Animal speak";
-  }
-}
-
-class Wolf extends Animal9 {
+class Wolf extends Animal {
   public packSize: number;
   constructor(name: string, packSize: number) {
     super(name);
@@ -348,7 +224,7 @@ export default function MembersTest():void {
      * @tc.level     Level 2
      */
     it("testMembers0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const dog = new Dog1("Buddy", "Golden Retriever");
+      const dog = new Dog("Buddy", "Golden Retriever");
       expect(dog.name).assertEqual("Buddy");
       expect(dog.breed).assertEqual("Golden Retriever");
     });
@@ -363,7 +239,7 @@ export default function MembersTest():void {
      * @tc.level     Level 2
      */
     it("testMembers0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const animal: Animal2 = new Dog2("Max", "Labrador");
+      const animal: Animal = new Dog("Max", "Labrador");
       expect(animal.speak()).assertEqual("Dog speak");
     });
 
@@ -377,8 +253,8 @@ export default function MembersTest():void {
      * @tc.level     Level 2
      */
     it("testMembers0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const animal: Animal3 = new Dog3("Max", "Labrador");
-      expect((animal as Dog3).breed).assertEqual("Labrador");
+      const animal: Animal = new Dog("Max", "Labrador");
+      expect((animal as Dog).breed).assertEqual("Labrador");
     });
 
     /**
@@ -391,7 +267,7 @@ export default function MembersTest():void {
      * @tc.level     Level 2
      */
     it("testMembers0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const animal: Animal4 = new Fish("Dory", "Saltwater")
+      const animal: Animal = new Fish("Dory", "Saltwater")
       expect((animal as Fish).getWaterType()).assertEqual("Saltwater");
     });
 
@@ -405,7 +281,7 @@ export default function MembersTest():void {
      * @tc.level     Level 2
      */
     it("testMembers0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const animal: Animal5 = new Fish2("Dory", "Saltwater");
+      const animal: Animal = new Fish2("Dory", "Saltwater");
       expect((animal as Fish2).getWaterType()).assertEqual("Saltwater");
     });
 
@@ -419,7 +295,7 @@ export default function MembersTest():void {
      * @tc.level     Level 2
      */
     it("testMembers0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const animal: Animal6 = new Lion("Mufasa");
+      const animal: Animal = new Lion("Mufasa");
       expect(animal.speak()).assertEqual("Roar!");
       expect((animal as Lion).furColor).assertEqual("Golden");
     });
@@ -434,7 +310,7 @@ export default function MembersTest():void {
      * @tc.level     Level 2
      */
     it("testMembers0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const animal: Animal7 = new Dolphin("Dolly");
+      const animal: Animal = new Dolphin("Dolly");
       expect((animal as Dolphin).swim()).assertEqual("Dolphin is swimming");
     });
 
@@ -448,7 +324,7 @@ export default function MembersTest():void {
      * @tc.level     Level 2
      */
     it("testMembers0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const animal: Animal8 = new Eagle("Sky");
+      const animal: Animal = new Eagle("Sky");
       expect("Eagle is flying").assertEqual((animal as Eagle).fly());
     });
 
@@ -462,7 +338,7 @@ export default function MembersTest():void {
      * @tc.level     Level 2
      */
     it("testMembers0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const animal: Animal9 = new Wolf("Luna", 3);
+      const animal: Animal = new Wolf("Luna", 3);
       expect((animal as Wolf).packSize).assertEqual(3);
       expect((animal as Wolf).name).assertEqual("Luna");
     });

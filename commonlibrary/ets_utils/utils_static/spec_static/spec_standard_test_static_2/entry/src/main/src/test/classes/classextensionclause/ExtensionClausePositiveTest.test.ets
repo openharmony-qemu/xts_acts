@@ -69,10 +69,10 @@ class D_2 extends C_2 {
 }
 
 
-class D_3 {
+class D_Base {
   value: number = 11
 }
-class F extends D_3 {}
+class F_Base extends D_Base {}
 
 class A_3<T> {
   value: T;
@@ -96,11 +96,6 @@ class B extends A_3<number> {
   }
 }
 
-class D_4 {
-  value: number = 11
-}
-class F_1 extends D_4 {}
-
 class A_4<T> {
   value: T;
 
@@ -122,11 +117,6 @@ class B_1<T> extends A_4<T> {
     super(value);
   }
 }
-
-class D_5 {
-  value: number = 11
-}
-class F_2 extends D_5 {}
 
 class A_5<T> {
   value: T;
@@ -150,11 +140,6 @@ class B_2<T extends number> extends A_5<T> {
   }
 }
 
-class D_6 {
-  value: number = 11
-}
-class F_3 extends D_6 {}
-
 class A_6<T> {
   value: T;
 
@@ -171,16 +156,11 @@ class A_6<T> {
   }
 }
 
-class B_3<T extends D_6> extends A_6<T> {
+class B_3<T extends D_Base> extends A_6<T> {
   constructor(value: T) {
     super(value);
   }
 }
-
-class D_7 {
-  value: number = 11
-}
-class F_4 extends D_7 {}
 
 class A_7<T1,T2> {
   value: T1;
@@ -198,16 +178,11 @@ class A_7<T1,T2> {
   }
 }
 
-class B_4<T extends D_7> extends A_7<T,number> {
+class B_4<T extends D_Base> extends A_7<T,number> {
   constructor(value: T) {
     super(value);
   }
 }
-
-class D_8 {
-  value: number = 11
-}
-class F_5 extends D_8 {}
 
 class A_8<T1,out T2 extends T1> {
   value: T1;
@@ -225,16 +200,11 @@ class A_8<T1,out T2 extends T1> {
   }
 }
 
-class B_5<T extends D_8> extends A_8<D_8,F_5> {
-  constructor(value: F_5) {
+class B_5<T extends D_Base> extends A_8<D_Base,F_Base> {
+  constructor(value: F_Base) {
     super(value);
   }
 }
-
-class D_9 {
-  value: number = 11
-}
-class F_6 extends D_9 {}
 
 class A_9<in T1 extends T2,T2> {
   value: T2;
@@ -252,8 +222,8 @@ class A_9<in T1 extends T2,T2> {
   }
 }
 
-class B_6<T extends D_9> extends A_9<T,D_9> {
-  constructor(value: D_9) {
+class B_6<T extends D_Base> extends A_9<T,D_Base> {
+  constructor(value: D_Base) {
     super(value);
   }
 }
@@ -375,7 +345,7 @@ export default function ExtensionClausePositiveTest():void {
      * @tc.level     Level 2
      */
     it("testExtensionClausePositive0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let b: B_3<D_6> = new B_3<D_6>(new F_3())
+      let b: B_3<D_Base> = new B_3<D_Base>(new F_Base())
       expect(b.value.value).assertEqual(11)
     });
 
@@ -388,7 +358,7 @@ export default function ExtensionClausePositiveTest():void {
      * @tc.level     Level 2
      */
     it("testExtensionClausePositive0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let b: B_4<D_7> = new B_4<D_7>(new F_4())
+      let b: B_4<D_Base> = new B_4<D_Base>(new F_Base())
       expect(b.value.value).assertEqual(11)
     });
 
@@ -401,7 +371,7 @@ export default function ExtensionClausePositiveTest():void {
      * @tc.level     Level 2
      */
     it("testExtensionClausePositive0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let b: B_5<D_8> = new B_5<D_8>(new F_5())
+      let b: B_5<D_Base> = new B_5<D_Base>(new F_Base())
       expect(b.value.value).assertEqual(11)
     });
 
@@ -414,7 +384,7 @@ export default function ExtensionClausePositiveTest():void {
      * @tc.level     Level 2
      */
     it("testExtensionClausePositive0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let b: B_6<D_9> = new B_6<D_9>(new F_6())
+      let b: B_6<D_Base> = new B_6<D_Base>(new F_Base())
       expect(b.value.value).assertEqual(11)
     });
   })

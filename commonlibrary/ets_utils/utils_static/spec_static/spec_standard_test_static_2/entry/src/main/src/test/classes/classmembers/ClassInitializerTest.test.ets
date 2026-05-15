@@ -157,18 +157,6 @@ class A11 {
   }
 }
 
-class A12 {
-  public static a: int;
-
-  static {
-    try {
-      A12.a = 5;
-    } catch (e) {
-      A12.a = 1
-    }
-  }
-}
-
 class A13 {
   public static a: int;
 
@@ -417,7 +405,7 @@ export default function ClassInitializerTest():void {
      * @tc.level     Level 2
      */
     it("testClassInitializer0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(A12.a).assertEqual(5);
+      expect(A6.a).assertEqual(5);
     })
 
     /**
@@ -454,20 +442,6 @@ export default function ClassInitializerTest():void {
      * @tc.level     Level 2
      */
     it("testClassInitializer0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(B.b).assertEqual(2);
-      expect(res).assertEqual("AB");
-    })
-
-    /**
-     * @tc.number    SUB_CLASS_INITIALIZER_TEST_1700
-     * @tc.name      testClassInitializer0017
-     * @tc.desc      When a class is initialized, the class initializer declared in the class is executed along with
-     * all class initializers of all superclasses.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testClassInitializer0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(B.b).assertEqual(2);
       expect(res).assertEqual("AB");
     })

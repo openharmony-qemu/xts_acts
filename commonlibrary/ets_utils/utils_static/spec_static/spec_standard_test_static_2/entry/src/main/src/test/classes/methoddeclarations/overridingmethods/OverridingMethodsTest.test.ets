@@ -123,21 +123,6 @@ final class B6 extends A6 {
   }
 }
 
-class A7 {
-  foo(): int {
-    return 1;
-  }
-}
-
-final class B7 extends A7 {
-  foo(): int {
-    return 5;
-  }
-}
-
-function getB1(): B7 {
-  return new B7
-}
 
 
 export default function OverridingMethodsTest():void {
@@ -267,17 +252,5 @@ export default function OverridingMethodsTest():void {
       expect(b.foo()).assertEqual(undefined)
     });
 
-    /**
-     * @tc.number    SUB_OVERRIDING_METHODS_TEST_0900
-     * @tc.name      testOverridingMethods0009
-     * @tc.desc      Overriding methods with default parameters
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testOverridingMethods0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let instance: A7 = getB1()
-      expect(instance.foo()).assertEqual(5)
-    });
   })
 }

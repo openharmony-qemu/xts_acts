@@ -59,31 +59,6 @@ class C extends B {
   }
 }
 
-class A_1 {
-  public _publicVar: number;
-
-  constructor() {
-    this._publicVar = 2;
-    this._publicVar = 3;
-  }
-}
-
-class B_1 extends A_1 {
-  constructor() {
-    super();
-  }
-}
-
-class C_1 extends B_1 {
-  constructor() {
-    super();
-  }
-
-  test() {
-    expect(this._publicVar).assertEqual(3);
-  }
-}
-
 class A_2 {
   public _publicVar: number;
 
@@ -1377,20 +1352,6 @@ export default function MultiLevelInheritanceTest():void {
      */
     it("testMultiLevelInheritance0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let test: C = new C();
-      expect(test._publicVar).assertEqual(3);
-    });
-
-    /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_0200
-     * @tc.name      testMultiLevelInheritance0002
-     * @tc.desc      Test whether class c can correctly obtain the initial value of the public variable _publicVar
-     * in class a after indirectly inheriting class a from class b
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testMultiLevelInheritance0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let test: C_1 = new C_1();
       expect(test._publicVar).assertEqual(3);
     });
 

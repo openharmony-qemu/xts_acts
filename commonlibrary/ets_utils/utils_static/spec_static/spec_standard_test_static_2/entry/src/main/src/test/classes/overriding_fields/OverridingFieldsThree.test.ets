@@ -1348,18 +1348,6 @@ class A_F390 extends Base_F390 {
   }
 }
 
-class Base1_F391 {
-    field: Base1_F391 = new Base1_F391();
-}
-
-interface Base2_F391 {
-    field: Base1_F391;
-}
-
-class Derived_F391 extends Base1_F391 implements Base2_F391 {
-    field: Base1_F391 = new Derived_F391(); // overriding 'field' and providing new initial value
-}
-
 export default function OverridingFieldsThreeTest(): void {
   describe("OverridingFieldsThreeTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.

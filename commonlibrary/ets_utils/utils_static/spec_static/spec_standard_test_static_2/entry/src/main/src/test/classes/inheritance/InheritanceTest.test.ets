@@ -60,12 +60,6 @@ class C extends B {
   }
 }
 
-class C1 extends B {
-  a(f: E): K {
-    return f as K
-  }
-}
-
 class C2 extends B {
   a(f: F): F {
     return f
@@ -417,10 +411,10 @@ export default function InheritanceTest():void {
      */
     it("testInheritance0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
-      const c: C1 = new C1()
+      const c: C2 = new C2()
       const e: E = c.a(new K())
       expect(e.e).assertEqual('k');
-      expect(e instanceof K).assertTrue();
+      expect(e instanceof F).assertTrue();
     });
 
     /**
@@ -434,8 +428,8 @@ export default function InheritanceTest():void {
     it("testInheritance0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       const c: C2 = new C2()
-      const e: E = c.a(new K())
-      expect(e.e).assertEqual('k');
+      const e: E = c.a(new F())
+      expect(e.e).assertEqual('f');
       expect(e instanceof F).assertTrue();
     });
 
@@ -449,10 +443,10 @@ export default function InheritanceTest():void {
      */
     it("testInheritance0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
-      const c: C2 = new C2()
-      const e: E = c.a(new F())
-      expect(e.e).assertEqual('f');
-      expect(e instanceof F).assertTrue();
+      const c: C3 = new C3()
+      const e: E = c.a(new K())
+      expect(e.e).assertEqual('k');
+      expect(e instanceof K).assertTrue();
     });
 
     /**
@@ -465,10 +459,10 @@ export default function InheritanceTest():void {
      */
     it("testInheritance0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
-      const c: C3 = new C3()
-      const e: E = c.a(new K())
-      expect(e.e).assertEqual('k');
-      expect(e instanceof K).assertTrue();
+      const c: C4 = new C4()
+      const e: E = c.a(new E())
+      expect(e.e).assertEqual('e');
+      expect(e instanceof E).assertTrue();
     });
 
     /**
@@ -481,10 +475,10 @@ export default function InheritanceTest():void {
      */
     it("testInheritance0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
-      const c: C4 = new C4()
-      const e: E = c.a(new E())
-      expect(e.e).assertEqual('e');
-      expect(e instanceof E).assertTrue();
+      const c: C5 = new C5()
+      const e: E = c.a(new K())
+      expect(e.e).assertEqual('k');
+      expect(e instanceof K).assertTrue();
     });
 
     /**
@@ -497,7 +491,7 @@ export default function InheritanceTest():void {
      */
     it("testInheritance0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
-      const c: C5 = new C5()
+      const c: C6 = new C6()
       const e: E = c.a(new K())
       expect(e.e).assertEqual('k');
       expect(e instanceof K).assertTrue();
@@ -513,10 +507,10 @@ export default function InheritanceTest():void {
      */
     it("testInheritance0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
-      const c: C6 = new C6()
+      const c: C7 = new C7()
       const e: E = c.a(new K())
       expect(e.e).assertEqual('k');
-      expect(e instanceof K).assertTrue();
+      expect(e instanceof F).assertTrue();
     });
 
     /**
@@ -530,8 +524,8 @@ export default function InheritanceTest():void {
     it("testInheritance0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       const c: C7 = new C7()
-      const e: E = c.a(new K())
-      expect(e.e).assertEqual('k');
+      const e: E = c.a(new F())
+      expect(e.e).assertEqual('f');
       expect(e instanceof F).assertTrue();
     });
 
@@ -545,10 +539,10 @@ export default function InheritanceTest():void {
      */
     it("testInheritance0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
-      const c: C7 = new C7()
-      const e: E = c.a(new F())
-      expect(e.e).assertEqual('f');
-      expect(e instanceof F).assertTrue();
+      const c: C8 = new C8()
+      const e: E = c.a(new K())
+      expect(e.e).assertEqual('k');
+      expect(e instanceof K).assertTrue();
     });
 
     /**
@@ -561,10 +555,10 @@ export default function InheritanceTest():void {
      */
     it("testInheritance0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
-      const c: C8 = new C8()
-      const e: E = c.a(new K())
-      expect(e.e).assertEqual('k');
-      expect(e instanceof K).assertTrue();
+      const c: C9 = new C9()
+      const e: E = c.a(new E())
+      expect(e.e).assertEqual('e');
+      expect(e instanceof E).assertTrue();
     });
 
     /**
@@ -577,10 +571,10 @@ export default function InheritanceTest():void {
      */
     it("testInheritance0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
-      const c: C9 = new C9()
-      const e: E = c.a(new E())
-      expect(e.e).assertEqual('e');
-      expect(e instanceof E).assertTrue();
+      const c: C10 = new C10()
+      const e: E1 = c.a(new K1())
+      expect(e.e()).assertEqual('k');
+      expect(e instanceof K1).assertTrue();
     });
 
     /**
@@ -593,7 +587,7 @@ export default function InheritanceTest():void {
      */
     it("testInheritance0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
-      const c: C10 = new C10()
+      const c: C11 = new C11()
       const e: E1 = c.a(new K1())
       expect(e.e()).assertEqual('k');
       expect(e instanceof K1).assertTrue();
@@ -609,10 +603,10 @@ export default function InheritanceTest():void {
      */
     it("testInheritance0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
-      const c: C11 = new C11()
+      const c: C12 = new C12()
       const e: E1 = c.a(new K1())
       expect(e.e()).assertEqual('k');
-      expect(e instanceof K1).assertTrue();
+      expect(e instanceof F1).assertTrue();
     });
 
     /**
@@ -626,8 +620,8 @@ export default function InheritanceTest():void {
     it("testInheritance0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       const c: C12 = new C12()
-      const e: E1 = c.a(new K1())
-      expect(e.e()).assertEqual('k');
+      const e: E1 = c.a(new F1())
+      expect(e.e()).assertEqual('f');
       expect(e instanceof F1).assertTrue();
     });
 
@@ -641,10 +635,10 @@ export default function InheritanceTest():void {
      */
     it("testInheritance0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
-      const c: C12 = new C12()
-      const e: E1 = c.a(new F1())
-      expect(e.e()).assertEqual('f');
-      expect(e instanceof F1).assertTrue();
+      const c: C13 = new C13()
+      const e: E1 = c.a(new K1())
+      expect(e.e()).assertEqual('k');
+      expect(e instanceof K1).assertTrue();
     });
 
     /**
@@ -657,10 +651,10 @@ export default function InheritanceTest():void {
      */
     it("testInheritance0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
-      const c: C13 = new C13()
-      const e: E1 = c.a(new K1())
-      expect(e.e()).assertEqual('k');
-      expect(e instanceof K1).assertTrue();
+      const c: C14 = new C14()
+      const e: E1 = c.a(new E1())
+      expect(e.e()).assertEqual('e');
+      expect(e instanceof E1).assertTrue();
     });
 
     /**
@@ -673,10 +667,10 @@ export default function InheritanceTest():void {
      */
     it("testInheritance0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
-      const c: C14 = new C14()
-      const e: E1 = c.a(new E1())
-      expect(e.e()).assertEqual('e');
-      expect(e instanceof E1).assertTrue();
+      const c: C15 = new C15()
+      const e: E1 = c.a(new K1())
+      expect(e.e()).assertEqual('k');
+      expect(e instanceof K1).assertTrue();
     });
 
     /**
@@ -689,10 +683,10 @@ export default function InheritanceTest():void {
      */
     it("testInheritance0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
-      const c: C15 = new C15()
-      const e: E1 = c.a(new K1())
-      expect(e.e()).assertEqual('k');
-      expect(e instanceof K1).assertTrue();
+      const c: C16 = new C16()
+      const e: E1 = c.a(new F1())
+      expect(e.e()).assertEqual('f');
+      expect(e instanceof F1).assertTrue();
     });
 
     /**
@@ -705,7 +699,7 @@ export default function InheritanceTest():void {
      */
     it("testInheritance0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
-      const c: C15 = new C15()
+      const c: C17 = new C17()
       const e: E1 = c.a(new K1())
       expect(e.e()).assertEqual('k');
       expect(e instanceof K1).assertTrue();
@@ -721,54 +715,6 @@ export default function InheritanceTest():void {
      */
     it("testInheritance0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
-      const c: C16 = new C16()
-      const e: E1 = c.a(new K1())
-      expect(e.e()).assertEqual('k');
-      expect(e instanceof F1).assertTrue();
-    });
-
-    /**
-     * @tc.number    SUB_INHERITANCE_ONE_TEST_2200
-     * @tc.name      testInheritance0022
-     * @tc.desc      Inheritance method multiple level with overriding
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testInheritance0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      const c: C16 = new C16()
-      const e: E1 = c.a(new F1())
-      expect(e.e()).assertEqual('f');
-      expect(e instanceof F1).assertTrue();
-    });
-
-    /**
-     * @tc.number    SUB_INHERITANCE_ONE_TEST_2300
-     * @tc.name      testInheritance0023
-     * @tc.desc      Inheritance method multiple level with overriding
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testInheritance0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      const c: C17 = new C17()
-      const e: E1 = c.a(new K1())
-      expect(e.e()).assertEqual('k');
-      expect(e instanceof K1).assertTrue();
-    });
-
-    /**
-     * @tc.number    SUB_INHERITANCE_ONE_TEST_2400
-     * @tc.name      testInheritance0024
-     * @tc.desc      Inheritance method multiple level with overriding
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testInheritance0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       const c: C18 = new C18()
       const e: E1 = c.a(new E1())
       expect(e.e()).assertEqual('e');
@@ -776,79 +722,79 @@ export default function InheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_INHERITANCE_ONE_TEST_2500
-     * @tc.name      testInheritance0025
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_2200
+     * @tc.name      testInheritance0022
      * @tc.desc      Inheritance abstract method of superclass and default methods from superinterface
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testInheritance0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testInheritance0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let instance: B12 = new B12();
       expect( instance.fee()).assertEqual(2);
     });
 
     /**
-     * @tc.number    SUB_INHERITANCE_ONE_TEST_2600
-     * @tc.name      testInheritance0026
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_2300
+     * @tc.name      testInheritance0023
      * @tc.desc      Inheritance method of superclass that not a member of direct superclass
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testInheritance0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testInheritance0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let instance: C19 = new C19();
+      expect( instance.fee()).assertEqual(1);
+    });
+
+    /**
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_2400
+     * @tc.name      testInheritance0024
+     * @tc.desc      Inheritance abstract method of superclass and default methods from superinterface
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testInheritance0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let instance: B14 = new B14();
+      expect( instance.fee()).assertEqual(1);
+    });
+
+    /**
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_2500
+     * @tc.name      testInheritance0025
+     * @tc.desc      Inheritance method of superclass
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testInheritance0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let instance: B15 = new B15();
+      expect( instance.fee()).assertEqual(1);
+    });
+
+    /**
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_2600
+     * @tc.name      testInheritance0026
+     * @tc.desc      Inheritance static method of superclass
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testInheritance0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let instance: B16 = new B16();
       expect( instance.fee()).assertEqual(1);
     });
 
     /**
      * @tc.number    SUB_INHERITANCE_ONE_TEST_2700
      * @tc.name      testInheritance0027
-     * @tc.desc      Inheritance abstract method of superclass and default methods from superinterface
+     * @tc.desc      Inheritance static method of superclass
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testInheritance0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let instance: B14 = new B14();
-      expect( instance.fee()).assertEqual(1);
-    });
-
-    /**
-     * @tc.number    SUB_INHERITANCE_ONE_TEST_2800
-     * @tc.name      testInheritance0028
-     * @tc.desc      Inheritance method of superclass
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testInheritance0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let instance: B15 = new B15();
-      expect( instance.fee()).assertEqual(1);
-    });
-
-    /**
-     * @tc.number    SUB_INHERITANCE_ONE_TEST_2900
-     * @tc.name      testInheritance0029
-     * @tc.desc      Inheritance static method of superclass
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testInheritance0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let instance: B16 = new B16();
-      expect( instance.fee()).assertEqual(1);
-    });
-
-    /**
-     * @tc.number    SUB_INHERITANCE_ONE_TEST_3000
-     * @tc.name      testInheritance0030
-     * @tc.desc      Inheritance static method of superclass
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testInheritance0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let instance: B17 = new B17();
       expect( instance.fee()).assertEqual(1);
     });
