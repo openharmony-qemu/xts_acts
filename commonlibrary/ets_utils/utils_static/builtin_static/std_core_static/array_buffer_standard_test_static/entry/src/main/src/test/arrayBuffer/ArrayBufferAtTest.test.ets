@@ -47,7 +47,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_0200
-     * @tc.desc Mindmap arity zero is compile-time rejected; STA documents at(pos: int) with pos required; runtime verifies at(0) after set.
+     * @tc.desc Mindmap ArrayBuffer_at §1.1.2: buffer.at() with zero args is compile-time rejected; executable case covers §1.2.1 pos=0 read after set (STA requires at(pos: int)).
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -61,7 +61,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_0300
-     * @tc.desc Mindmap excess arity is compile-time rejected; STA at has single pos parameter; runtime verifies one-arg at reads correctly.
+     * @tc.desc Mindmap ArrayBuffer_at §1.1.3: two-arg at is compile-time rejected; executable case verifies single-arg at(1) after set on a length-3 buffer.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -75,7 +75,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_0400
-     * @tc.desc Mindmap three-arg call is compile-time rejected; STA at has single pos parameter; runtime verifies one-arg at reads correctly.
+     * @tc.desc Mindmap ArrayBuffer_at §1.1.4: three-arg at is compile-time rejected; executable case verifies single-arg at(byteLength-1) after set on a length-3 buffer (§1.2.3).
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
