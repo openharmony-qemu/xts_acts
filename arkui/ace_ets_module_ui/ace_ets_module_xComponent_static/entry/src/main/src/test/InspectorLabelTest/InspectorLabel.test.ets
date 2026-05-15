@@ -98,9 +98,10 @@ export default function InspectorLabelTest() {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         let obj = JSON.parseJsonElement(inspector.getInspectorByKey('text_inspectorLabel_undefined'));
-        console.info("[SUB_ARKUI_INSPECTORLABEL_PARAM_UNDEFINED_0300] obj is: " + JSON.stringify(obj.$attrs));
-        let inspectorLabelValue: ESObject = obj.$attrs.inspectorLabel;
-        expect(inspectorLabelValue === undefined).assertTrue();
+        console.info('[SUB_ARKUI_INSPECTORLABEL_PARAM_UNDEFINED_0300] obj is: ' + obj.getElement('$attrs'));
+        let inspectorLabelValue = obj.getElement('$attrs').tryGetString('inspectorLabel');
+        console.info('[SUB_ARKUI_INSPECTORLABEL_PARAM_UNDEFINED_0300] inspectorLabelValue: ' + inspectorLabelValue);
+        expect(inspectorLabelValue === "").assertTrue();
         console.info('[SUB_ARKUI_INSPECTORLABEL_PARAM_UNDEFINED_0300] END');
         done();
       } catch (error) {
@@ -123,9 +124,10 @@ export default function InspectorLabelTest() {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         let obj = JSON.parseJsonElement(inspector.getInspectorByKey('text_inspectorLabel_empty'));
-        console.info("[SUB_ARKUI_INSPECTORLABEL_PARAM_EMPTY_0400] obj is: " + JSON.stringify(obj.$attrs));
-        let inspectorLabelValue: ESObject = obj.$attrs.inspectorLabel;
-        expect(inspectorLabelValue === undefined).assertTrue();
+        console.info('[SUB_ARKUI_INSPECTORLABEL_PARAM_EMPTY_0400] obj is: ' + obj.getElement('$attrs'));
+        let inspectorLabelValue = obj.getElement('$attrs').tryGetString('inspectorLabel');
+        console.info('[SUB_ARKUI_INSPECTORLABEL_PARAM_EMPTY_0400] inspectorLabelValue: ' + inspectorLabelValue);
+        expect(inspectorLabelValue === "").assertTrue();
         console.info('[SUB_ARKUI_INSPECTORLABEL_PARAM_EMPTY_0400] END');
         done();
       } catch (error) {
