@@ -19,7 +19,7 @@ import { startAbility, stopApplication } from './Util.test'
 
 const waitUiReadyMs: number = 1000;
 const TestTag = 'UiTest_TAG';
-const DeviceErrorCode = 17000005;
+const DeviceErrorCode = 17000007;
 
 export default function uitestOnApi26Test() {
   describe('UitestOnApi26Test', () => {

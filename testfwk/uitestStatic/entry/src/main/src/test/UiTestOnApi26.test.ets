@@ -22,7 +22,7 @@ let domain: int = 0x0000;
 let tag: string = 'uitestTag';
 const TestTag = 'uitestTag';
 const waitUiReadyMs: int = 1000;
-const DeviceErrorCode = 17000005;
+const DeviceErrorCode = 17000007;
 
 export default function uitestOnApi26Test(): void {
   describe('UitestOnApi26Test', (): void => {
