@@ -161,7 +161,7 @@ export default function windowPCTest() {
         }
         let driver: Driver = Driver.create();
         let buttonOne = await driver.findComponent(ON.text('知道了'));
-        console.info(`buttonOne is &{JSON.stringify(buttonOne)}`);
+        console.info(`buttonOne is ${JSON.stringify(buttonOne)}`);
         if (buttonOne) {
           await buttonOne.click();
         }
