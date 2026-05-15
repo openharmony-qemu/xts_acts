@@ -445,7 +445,7 @@ export default function abilityTest() {
 
     /**
      * @tc.name   test_getFloatViewLimits_errcode1300016
-     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_0700
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_GETFLOATINGLIMITS_0200
      * @tc.desc   test getFloatViewLimits function
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
