@@ -50,7 +50,7 @@ export class Str {
 
 @ObservedV2
 export class TestObservedV2 {
-  @Trace age: number = 20
+  @Trace public age: number = 20
   public stringValue3: string = 'world'
 
   constructor(stringValue3: string) {

@@ -44,7 +44,17 @@ enum ENUM {
 
 @ObservedV2
 export class ChildInfo extends Info {
-  @Trace age: number = 20
+  @Trace public age: number = 20
+  @Monitor(['t2'])	 
+   onT2Change(monitor: IMonitor) {	 
+     testSample.res1 = "测试1：Success" 
+   } 
+ 
+ 
+   @Monitor([ENUM.T3]) 
+   onT3Change(monitor: IMonitor) { 
+     testSample.res2 = "测试2：Success" 
+   }
   
 }
 

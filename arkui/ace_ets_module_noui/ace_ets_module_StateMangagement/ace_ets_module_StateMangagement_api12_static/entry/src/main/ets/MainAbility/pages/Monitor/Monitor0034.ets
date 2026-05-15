@@ -54,7 +54,7 @@ export class Monitor0034Class {
 
 @ObservedV2
 export class Monitor0034ChildClass extends Monitor0034Class {
-  @Trace age: number = 20
+  @Trace public age: number = 20
   @Monitor(['name'])
   onNameChange(monitor: IMonitor): void  {
     prompt.showToast({ message: `name: ${monitor.value<Any>()?.now}`, duration: 2000 })
