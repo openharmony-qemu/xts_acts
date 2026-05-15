@@ -50,14 +50,17 @@ export default function audioCapturerChange() {
           });
         await Utils.msSleep(1000);
         let driver = Driver.create();
+        console.info('driver start');
         await Utils.msSleep(1000);
-        let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 2000);
+        let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 1000);
         let permissionButton2 = await driver.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), 500);
         if (permissionButton != null) {
           await permissionButton.click();
+          console.info('permissionButton start');
         }
         if (permissionButton2 != null) {
           await permissionButton2.click();
+          console.info('permissionButton2 start');
         }
       } catch (err) {
         console.error('beforeAll failed, err: ' + err);
