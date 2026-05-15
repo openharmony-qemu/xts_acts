@@ -89,7 +89,9 @@ group("ans_standard") {
       "actsNotificationAnsGetNotificationSettingTest:ActsNotificationAnsGetNotificationSettingTest",
       "actsNotificationAnsGetNotificationSettingTestStatic:ActsNotificationAnsGetNotificationSettingStaticTest",
       "actsNotificationAnsSubscribeNotificationTest:ActsNotificationAnsSubscribeNotificationTest",
-      "actsNotificationAnsSubscribeNotificationNoSystemTestStatic:ActsNotificationAnsSubscribeNotificationNoSystemStaticTest"
+      "actsNotificationAnsSubscribeNotificationNoSystemTestStatic:ActsNotificationAnsSubscribeNotificationNoSystemStaticTest",
+      "actsNotificationAnsGetAppListSortingThirdTestStatic:ActsNotificationAnsGetAppListSortingThirdTestStatic",
+      "actsNotificationAnsGetAppListSortingTest:ActsNotificationAnsGetAppListSortingTest"
     ]
   }
 }
