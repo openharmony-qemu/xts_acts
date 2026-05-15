@@ -52,11 +52,14 @@ import {
   SphereGeometry,
   Vec2,
   Vec3,
-  Vec4
+  Vec4,
+  PCFConfig,
+  ShadowAlgorithmType
 } from '@ohos.graphics.scene'
 import { $rawfile, Resource } from '@ohos.arkui.component'
 import { describe, expect, it, Level, Size, TestType } from '../../../hypium/index'
 import { doubleEqual, vec4ToString } from '../common/utils'
+import * as scene3d from '@ohos.graphics.scene'
 
 export default function sceneTest() {
   describe('sceneTest', () => {
@@ -1394,5 +1397,422 @@ export default function sceneTest() {
         done();
       }
     })
+    
+    /**
+     * @tc.name   testRenderResourceFactory_createImageStream
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_4700
+     * @tc.desc   Test createImageStream method of RenderResourceFactory
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testRenderResourceFactory_createImageStream', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void) => {
+        let msg = "============================testRenderResourceFactory_createImageStream";
+        console.info(msg + ' begin ');
+        try {
+          const scene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+          expect(scene != null).assertTrue();
+
+          const rf: scene3d.RenderResourceFactory = scene.getResourceFactory();
+          const imageStream = await rf.createImageStream({ name: "testImageStream" });
+          expect(imageStream != null).assertTrue();
+          expect(imageStream!.name).assertEqual("testImageStream");
+          expect(imageStream!.surfaceId.length > 0).assertTrue();
+          expect(imageStream!.width >= 0).assertTrue();
+          expect(imageStream!.height >= 0).assertTrue();
+          expect(imageStream!.resourceType).assertEqual(scene3d.SceneResourceType.IMAGE);
+
+          imageStream!.destroy();
+          scene.destroy();
+          done();
+        } catch (err) {
+          console.info(msg + " Failed: " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testImageStream_surfaceId
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_4800
+     * @tc.desc   Test ImageStream surfaceId property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testImageStream_surfaceId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void) => {
+        let msg = "============================testImageStream_surfaceId";
+        console.info(msg + ' begin ');
+        try {
+          const scene = await Scene.load();
+          const rf = scene.getResourceFactory();
+          const imageStream = await rf.createImageStream({ name: "surfaceIdTest" });
+          const surfaceId = imageStream!.surfaceId;
+          expect(surfaceId.length > 0).assertTrue();
+          scene.destroy();
+          done();
+        } catch (err) {
+          console.info(msg + " Failed: " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testImageStream_width_height
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_4900
+     * @tc.desc   Test ImageStream width and height properties inherited from Image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testImageStream_width_height', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void) => {
+        let msg = "============================testImageStream_width_height";
+        console.info(msg + ' begin ');
+        try {
+          const scene = await Scene.load();
+          const rf = scene.getResourceFactory();
+          const imageStream = await rf.createImageStream({ name: "widthHeightTest" });
+          expect(imageStream!.width >= 0).assertTrue();
+          expect(imageStream!.height >= 0).assertTrue();
+          scene.destroy();
+          done();
+        } catch (err) {
+          console.info(msg + " Failed: " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testImageStream_resourceType
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_5000
+     * @tc.desc   Test ImageStream resourceType property inherited from SceneResource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testImageStream_resourceType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void) => {
+        let msg = "============================testImageStream_resourceType";
+        console.info(msg + ' begin ');
+        try {
+          const scene = await Scene.load();
+          const rf = scene.getResourceFactory();
+          const imageStream = await rf.createImageStream({ name: "resourceTypeTest" });
+          expect(imageStream!.resourceType).assertEqual(scene3d.SceneResourceType.IMAGE);
+          scene.destroy();
+          done();
+        } catch (err) {
+          console.info(msg + " Failed: " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testImageStream_name_uri
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_5100
+     * @tc.desc   Test ImageStream name and uri properties inherited from SceneResource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testImageStream_name_uri', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void) => {
+        let msg = "============================testImageStream_name_uri";
+        console.info(msg + ' begin ');
+        try {
+          const scene = await Scene.load();
+          const rf = scene.getResourceFactory();
+          const imageStream1 = await rf.createImageStream({ name: "testNameOnly" });
+          expect(imageStream1!.name).assertEqual("testNameOnly");
+          const imageStream2 = await rf.createImageStream({
+            name: "testWithUri",
+            uri: $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb")
+          });
+          expect(imageStream2!.name).assertEqual("testWithUri");
+          expect(imageStream2!.uri != null).assertTrue();
+          scene.destroy();
+          done();
+        } catch (err) {
+          console.info(msg + " Failed: " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testImageStream_destroy
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_5200
+     * @tc.desc   Test ImageStream destroy method inherited from SceneResource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testImageStream_destroy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void) => {
+        let msg = "============================testImageStream_destroy";
+        console.info(msg + ' begin ');
+        try {
+          const scene = await Scene.load();
+          const rf = scene.getResourceFactory();
+          const imageStream = await rf.createImageStream({ name: "destroyTest" });
+          imageStream!.destroy();
+          scene.destroy();
+          done();
+        } catch (err) {
+          console.info(msg + " Failed: " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testImageStream_null_params
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_5300
+     * @tc.desc   Test createImageStream with null and undefined parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    // it('testImageStream_null_params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    //   async (done: () => void) => {
+    //     let msg = "============================testImageStream_null_params";
+    //     console.info(msg + ' begin ');
+    //     try {
+    //       const scene = await Scene.load();
+    //       const rf = scene.getResourceFactory();
+    //       const imageStreamNull = await rf.createImageStream(null);
+    //       expect(imageStreamNull != null).assertTrue();
+    //       const imageStreamUndefined = await rf.createImageStream(undefined);
+    //       expect(imageStreamUndefined != null).assertTrue();
+    //       scene.destroy();
+    //       done();
+    //     } catch (err) {
+    //       console.info(msg + " Failed: " + JSON.stringify(err));
+    //       expect().assertFail();
+    //       done();
+    //     }
+    //   })
+    /**
+     * @tc.name   testPCFConfig_create
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_5400
+     * @tc.desc   Test PCFConfig constructor creates valid instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPCFConfig_create', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void) => {
+        let msg = "============================testPCFConfig_create";
+        console.info(msg + ' begin ');
+        try {
+          let scene = await Scene.load();
+          expect(scene != null).assertTrue();
+
+          let pcfConfig = new PCFConfig();
+          expect(pcfConfig != null).assertTrue();
+
+          scene!.destroy();
+          done();
+        } catch (err) {
+          console.info(msg + " Failed: " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testPCFConfig_shadowSampleRadius_default
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_5500
+     * @tc.desc   Test PCFConfig shadowSampleRadius default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPCFConfig_shadowSampleRadius_default', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void) => {
+        let msg = "============================testPCFConfig_shadowSampleRadius_default";
+        console.info(msg + ' begin ');
+        try {
+          let scene = await Scene.load();
+          expect(scene != null).assertTrue();
+
+          let pcfConfig = new PCFConfig();
+          expect(pcfConfig.shadowSampleRadius).assertEqual(5.0);
+
+          scene!.destroy();
+          done();
+        } catch (err) {
+          console.info(msg + " Failed: " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testPCFConfig_shadowSampleRadius_set
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_5600
+     * @tc.desc   Test PCFConfig shadowSampleRadius set and get
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPCFConfig_shadowSampleRadius_set', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void) => {
+      let msg = "============================testPCFConfig_shadowSampleRadius_set";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load();
+        expect(scene != null).assertTrue();
+
+        let pcfConfig = new PCFConfig();
+        pcfConfig.shadowSampleRadius = 10.0;
+        expect(pcfConfig.shadowSampleRadius).assertEqual(10.0);
+
+        pcfConfig.shadowSampleRadius = 0;
+        expect(pcfConfig.shadowSampleRadius).assertEqual(0);
+
+        pcfConfig.shadowSampleRadius = undefined;
+        expect(pcfConfig.shadowSampleRadius).assertEqual(undefined);
+
+        scene!.destroy();
+        done();
+      } catch (err) {
+        console.info(msg + " Failed: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testPCFConfig_shadowSampleCount_default
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_5700
+     * @tc.desc   Test PCFConfig shadowSampleCount default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPCFConfig_shadowSampleCount_default', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void) => {
+      let msg = "============================testPCFConfig_shadowSampleCount_default";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load();
+        expect(scene != null).assertTrue();
+
+        let pcfConfig = new PCFConfig();
+        expect(pcfConfig.shadowSampleCount).assertEqual(16);
+
+        scene!.destroy();
+        done();
+      } catch (err) {
+        console.info(msg + " Failed: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testPCFConfig_shadowSampleCount_set
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_5800
+     * @tc.desc   Test PCFConfig shadowSampleCount set and get
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPCFConfig_shadowSampleCount_set', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void) => {
+      let msg = "============================testPCFConfig_shadowSampleCount_set";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load();
+        expect(scene != null).assertTrue();
+
+        let pcfConfig = new PCFConfig();
+        pcfConfig.shadowSampleCount = 32;
+        expect(pcfConfig.shadowSampleCount).assertEqual(32);
+
+        pcfConfig.shadowSampleCount = 0;
+        expect(pcfConfig.shadowSampleCount).assertEqual(0);
+
+        pcfConfig.shadowSampleCount = undefined;
+        expect(pcfConfig.shadowSampleCount).assertEqual(undefined);
+
+        scene!.destroy();
+        done();
+      } catch (err) {
+        console.info(msg + " Failed: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testPCFConfig_shadowAlgorithmType
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_5900
+     * @tc.desc   Test PCFConfig shadowAlgorithmType returns PCF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPCFConfig_shadowAlgorithmType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void) => {
+      let msg = "============================testPCFConfig_shadowAlgorithmType";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load();
+        expect(scene != null).assertTrue();
+
+        let pcfConfig = new PCFConfig();
+        expect(pcfConfig.shadowAlgorithmType).assertEqual(ShadowAlgorithmType.PCF);
+        expect(ShadowAlgorithmType.PCF).assertEqual(0);
+
+        scene!.destroy();
+        done();
+      } catch (err) {
+        console.info(msg + " Failed: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testRenderConfiguration_softShadowConfig
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_6000
+     * @tc.desc   Test RenderConfiguration softShadowConfig property set and get
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testRenderConfiguration_softShadowConfig', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void) => {
+      let msg = "============================testRenderConfiguration_softShadowConfig";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load();
+        let rc = scene!.renderConfiguration;
+
+        expect(rc!.softShadowConfig).assertEqual(undefined);
+
+        rc!.softShadowConfig = new PCFConfig();
+        expect(rc!.softShadowConfig != null).assertTrue();
+
+        rc!.softShadowConfig = undefined;
+        expect(rc!.softShadowConfig).assertEqual(undefined);
+
+        scene!.destroy();
+        done();
+      } catch (err) {
+        console.info(msg + " Failed: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+    
   })
 }
