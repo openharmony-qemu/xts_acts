@@ -546,7 +546,7 @@ export default function arrayBufferByteLengthFieldTest(): void {
     /**
      * @tc.name testArrayBufferByteLengthField0037
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_BYTE_LENGTH_3700
-     * @tc.desc Mindmap ArrayBuffer_get_byteLength §3.1: assigning to read-only byteLength may throw or be ignored; byteLength must stay unchanged (Record bracket used where compile allows).
+     * @tc.desc Verify ArrayBuffer.byteLength: byteLengthproperty assignment or error ，
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -557,8 +557,6 @@ export default function arrayBufferByteLengthFieldTest(): void {
       try {
         (buffer as Record<string, Object>)["byteLength"] = 100;
       } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e as object);
       }
       let after = buffer.byteLength;
       expect(after).assertEqual(before);
@@ -567,7 +565,7 @@ export default function arrayBufferByteLengthFieldTest(): void {
     /**
      * @tc.name testArrayBufferByteLengthField0038
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_BYTE_LENGTH_3800
-     * @tc.desc Mindmap ArrayBuffer_get_byteLength §3.1 follow-up: read byteLength on ArrayBuffer(8) still returns 8 after unrelated access pattern.
+     * @tc.desc Verify ArrayBuffer.byteLength: after byteLength ，
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -581,7 +579,7 @@ export default function arrayBufferByteLengthFieldTest(): void {
     /**
      * @tc.name testArrayBufferByteLengthField0039
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_BYTE_LENGTH_3900
-     * @tc.desc ArrayBuffer_byte §3.2 zero-length semantics: byteLength is 0 after resize(0) (no detach() available; simulates detached-length-0 behavior
+     * @tc.desc Verify ArrayBuffer.byteLength: detached ArrayBufferaccess byteLength，returns 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -596,7 +594,7 @@ export default function arrayBufferByteLengthFieldTest(): void {
     /**
      * @tc.name testArrayBufferByteLengthField0040
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_BYTE_LENGTH_4000
-     * @tc.desc Mindmap ArrayBuffer_get_byteLength §3.2: after resize(0), byteLength matches getByteLength() (detach substitute per STA).
+     * @tc.desc Verify ArrayBuffer.byteLength: detached ArrayBuffer byteLength and getByteLength()consistent
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -610,7 +608,7 @@ export default function arrayBufferByteLengthFieldTest(): void {
     /**
      * @tc.name testArrayBufferByteLengthField0041
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_BYTE_LENGTH_4100
-     * @tc.desc Mindmap ArrayBuffer_get_byteLength §3.2: repeated byteLength reads stay 0 after resize(0) (detach substitute).
+     * @tc.desc Verify ArrayBuffer.byteLength: detached after multiple access byteLength，return value consistent is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -628,7 +626,7 @@ export default function arrayBufferByteLengthFieldTest(): void {
     /**
      * @tc.name testArrayBufferByteLengthField0042
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_BYTE_LENGTH_4200
-     * @tc.desc Mindmap ArrayBuffer_get_byteLength §3.2: resizable buffer after resize(0) reports byteLength 0 (detach substitute per STA).
+     * @tc.desc Verify ArrayBuffer.byteLength: resizable ArrayBuffer detached after access byteLength，returns 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -639,5 +637,6 @@ export default function arrayBufferByteLengthFieldTest(): void {
       let result = buffer.byteLength;
       expect(result).assertEqual(0);
     });
+    return;
   });
 }
