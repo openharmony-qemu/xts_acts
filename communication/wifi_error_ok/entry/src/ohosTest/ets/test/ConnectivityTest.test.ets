@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll } from '@ohos/hypium';
 import wifindktest from 'libwifindk.so';
 import wifiMg from '@ohos.wifiManager';
 
