@@ -1,3 +1,18 @@
+/*
+* Copyright (c) 2024-2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+*/
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium/index';
 
 async function sleep(time: int): Promise<int> {
@@ -1218,116 +1233,6 @@ export default function EnumerationMethodsTest(): void {
 
       expect(testNS.runTest93()).assertTrue();
     });
-
-    /**
-     * 源文件：        enum_explicit_type_tostring_10.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_1100
-     * @tc.name      testEnumerationMethods0095
-     * @tc.desc      Checking for enum with explicit byte type constant that methods c.toString() and
-     *               c.valueOf().toString() return the same value.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    // it("testEnumerationMethods0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   expect(Enum1.Red.valueOf() instanceof byte).assertTrue();
-    //   expect(Enum1.Red.toString()).assertEqual("0");
-    //   expect(Enum1.Red.toString()).assertEqual(Enum1.Red.valueOf().toString());
-    //
-    //   expect(Enum1.Green.valueOf() instanceof byte).assertTrue();
-    //   expect(Enum1.Green.toString()).assertEqual("10");
-    //   expect(Enum1.Green.toString()).assertEqual(Enum1.Green.valueOf().toString());
-    //
-    //   expect(Enum1.Blue.valueOf() instanceof byte).assertTrue();
-    //   expect(Enum1.Blue.toString()).assertEqual("11");
-    //   expect(Enum1.Blue.toString()).assertEqual(Enum1.Blue.valueOf().toString());
-    //
-    //   expect(Enum1.First.valueOf() instanceof byte).assertTrue();
-    //   expect(Enum1.First.toString()).assertEqual("-128");
-    //   expect(Enum1.First.toString()).assertEqual(Enum1.First.valueOf().toString());
-    //
-    //   expect(Enum1.Second.valueOf() instanceof byte).assertTrue();
-    //   expect(Enum1.Second.toString()).assertEqual("123");
-    //   expect(Enum1.Second.toString()).assertEqual(Enum1.Second.valueOf().toString());
-    //
-    //   expect(Enum1.Third.valueOf() instanceof byte).assertTrue();
-    //   expect(Enum1.Third.toString()).assertEqual("127");
-    //   expect(Enum1.Third.toString()).assertEqual(Enum1.Third.valueOf().toString());
-    //
-    //   expect(Enum1.One.valueOf() instanceof byte).assertTrue();
-    //   expect(Enum1.One.toString()).assertEqual("1");
-    //   expect(Enum1.One.toString()).assertEqual(Enum1.One.valueOf().toString());
-    //
-    //   expect(Enum1.one.valueOf() instanceof byte).assertTrue();
-    //   expect(Enum1.one.toString()).assertEqual("1");
-    //   expect(Enum1.one.toString()).assertEqual(Enum1.one.valueOf().toString());
-    //
-    //   expect(Enum1.oNe.valueOf() instanceof byte).assertTrue();
-    //   expect(Enum1.oNe.toString()).assertEqual("1");
-    //   expect(Enum1.oNe.toString()).assertEqual(Enum1.oNe.valueOf().toString());
-    //
-    //   expect(testNS.runTest94()).assertTrue();
-    // });
-
-    /**
-     * 源文件：        enum_explicit_type_tostring_11.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_1200
-     * @tc.name      testEnumerationMethods0096
-     * @tc.desc      Checking for enum with explicit byte type constant that methods c.toString() and
-     *               c.valueOf().toString() return the same value.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    /**
-     * ArkTS 1.2 兼容性说明：
-     * 本组用例依赖旧版本对基础数值类型的宽松匹配，
-     * 将 byte 类型 valueOf() 结果按 long/Number 语义进行判断。
-     *
-     * 当前 ArkTS 1.2 对基础数值类型的静态与运行时行为更严格，
-     * byte 不再按旧版预期隐式满足更宽类型判断，因此断言失败。
-     *
-     * 该差异属于数值类型规则变化，先注释保留。
-     */
-    // it("testEnumerationMethods0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //     expect(Enum1.Red.valueOf() instanceof byte).assertTrue();
-    //     expect(Enum1.Red.toString()).assertEqual("0");
-    //     expect(Enum1.Red.toString()).assertEqual(Enum1.Red.valueOf().toString());
-    //
-    //     expect(Enum1.Green.valueOf() instanceof byte).assertTrue();
-    //     expect(Enum1.Green.toString()).assertEqual("10");
-    //     expect(Enum1.Green.toString()).assertEqual(Enum1.Green.valueOf().toString());
-    //
-    //     expect(Enum1.Blue.valueOf() instanceof byte).assertTrue();
-    //     expect(Enum1.Blue.toString()).assertEqual("11");
-    //     expect(Enum1.Blue.toString()).assertEqual(Enum1.Blue.valueOf().toString());
-    //
-    //     expect(Enum1.First.valueOf() instanceof byte).assertTrue();
-    //     expect(Enum1.First.toString()).assertEqual("-128");
-    //     expect(Enum1.First.toString()).assertEqual(Enum1.First.valueOf().toString());
-    //
-    //     expect(Enum1.Second.valueOf() instanceof byte).assertTrue();
-    //     expect(Enum1.Second.toString()).assertEqual("123");
-    //     expect(Enum1.Second.toString()).assertEqual(Enum1.Second.valueOf().toString());
-    //
-    //     expect(Enum1.Third.valueOf() instanceof byte).assertTrue();
-    //     expect(Enum1.Third.toString()).assertEqual("127");
-    //     expect(Enum1.Third.toString()).assertEqual(Enum1.Third.valueOf().toString());
-    //
-    //     expect(Enum1.One.valueOf() instanceof byte).assertTrue();
-    //     expect(Enum1.One.toString()).assertEqual("1");
-    //     expect(Enum1.One.toString()).assertEqual(Enum1.One.valueOf().toString());
-    //
-    //     expect(Enum1.one.valueOf() instanceof byte).assertTrue();
-    //     expect(Enum1.one.toString()).assertEqual("1");
-    //     expect(Enum1.one.toString()).assertEqual(Enum1.one.valueOf().toString());
-    //
-    //     expect(Enum1.oNe.valueOf() instanceof byte).assertTrue();
-    //     expect(Enum1.oNe.toString()).assertEqual("1");
-    //     expect(Enum1.oNe.toString()).assertEqual(Enum1.oNe.valueOf().toString());
-    //
-    //     expect(testNS.runTest95()).assertTrue();
-    // });
 
     /**
      * 源文件：        enum_explicit_type_tostring_12.ets

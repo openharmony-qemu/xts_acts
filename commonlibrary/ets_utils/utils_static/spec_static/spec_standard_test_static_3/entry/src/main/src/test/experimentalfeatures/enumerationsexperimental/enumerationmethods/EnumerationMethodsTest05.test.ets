@@ -1,3 +1,18 @@
+/*
+* Copyright (c) 2024-2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+*/
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium/index';
 
 async function sleep(time: int): Promise<int> {
@@ -1406,130 +1421,6 @@ export default function EnumerationMethodsTest(): void {
 
       expect(testNS.runTest65()).assertTrue();
     });
-
-    /**
-     * 源文件：        enum_explicit_type_getvalueof_10.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_1100
-     * @tc.name      testEnumerationMethods0067
-     * @tc.desc      Checking for enum with explicit float type constant for getValueOf method support.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    // it("testEnumerationMethods0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   expect(Enum5.getValueOf("Red") instanceof Enum5).assertTrue();
-    //   expect(Enum5.getValueOf("Red")).assertEqual(Enum5.Red);
-    //   expect(Enum5.getValueOf("Red").valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.getValueOf("Red").valueOf()).assertEqual(1.5);
-    //
-    //   expect(Enum5.getValueOf("Green") instanceof Enum5).assertTrue();
-    //   expect(Enum5.getValueOf("Green")).assertEqual(Enum5.Green);
-    //   expect(Enum5.getValueOf("Green").valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.getValueOf("Green").valueOf()).assertEqual(10.3);
-    //
-    //   expect(Enum5.getValueOf("Blue") instanceof Enum5).assertTrue();
-    //   expect(Enum5.getValueOf("Blue")).assertEqual(Enum5.Blue);
-    //   expect(Enum5.getValueOf("Blue").valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.getValueOf("Blue").valueOf()).assertEqual(7.6);
-    //
-    //   expect(Enum5.getValueOf("First") instanceof Enum5).assertTrue();
-    //   expect(Enum5.getValueOf("First")).assertEqual(Enum5.First);
-    //   expect(Enum5.getValueOf("First").valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.getValueOf("First").valueOf()).assertEqual(-214748.3648);
-    //
-    //   expect(Enum5.getValueOf("Second") instanceof Enum5).assertTrue();
-    //   expect(Enum5.getValueOf("Second")).assertEqual(Enum5.Second);
-    //   expect(Enum5.getValueOf("Second").valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.getValueOf("Second").valueOf()).assertEqual(123.45);
-    //
-    //   expect(Enum5.getValueOf("Third") instanceof Enum5).assertTrue();
-    //   expect(Enum5.getValueOf("Third")).assertEqual(Enum5.Third);
-    //   expect(Enum5.getValueOf("Third").valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.getValueOf("Third").valueOf()).assertEqual(2147483.647);
-    //
-    //   expect(Enum5.getValueOf("One") instanceof Enum5).assertTrue();
-    //   expect(Enum5.getValueOf("One")).assertEqual(Enum5.One);
-    //   expect(Enum5.getValueOf("One").valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.getValueOf("One").valueOf()).assertEqual(1.0);
-    //
-    //   expect(Enum5.getValueOf("one") instanceof Enum5).assertTrue();
-    //   expect(Enum5.getValueOf("one")).assertEqual(Enum5.one);
-    //   expect(Enum5.getValueOf("one").valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.getValueOf("one").valueOf()).assertEqual(1.0);
-    //
-    //   expect(Enum5.getValueOf("oNe") instanceof Enum5).assertTrue();
-    //   expect(Enum5.getValueOf("oNe")).assertEqual(Enum5.oNe);
-    //   expect(Enum5.getValueOf("oNe").valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.getValueOf("oNe").valueOf()).assertEqual(1.0);
-    //
-    //   expect(testNS.runTest66()).assertTrue();
-    // });
-
-    /**
-     * 源文件：        enum_explicit_type_getvalueof_11.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_1200
-     * @tc.name      testEnumerationMethods0068
-     * @tc.desc      Checking for enum with explicit float type constant for getValueOf method support.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    /**
-     * ArkTS 1.2 兼容性说明：
-     * 本组用例依赖旧版本对 float/double 数值比较的宽松预期。
-     * 当前 ArkTS 1.2 环境下，float 与 double 的比较及显示虽然看起来同为 10.3，
-     * 但底层类型与精度表示不同，Hypium 按更严格的数值/类型规则比较时会导致断言失败。
-     *
-     * 该差异属于 ArkTS 1.2 数值类型与精度语义变化，先注释保留。
-     */
-    // it("testEnumerationMethods0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //     expect(Enum5.getValueOf("Red") instanceof Enum5).assertTrue();
-    //     expect(Enum5.getValueOf("Red")).assertEqual(Enum5.Red);
-    //     expect(Enum5.getValueOf("Red").valueOf() instanceof float).assertTrue();
-    //     expect(Enum5.getValueOf("Red").valueOf()).assertEqual(1.5);
-    //
-    //     expect(Enum5.getValueOf("Green") instanceof Enum5).assertTrue();
-    //     expect(Enum5.getValueOf("Green")).assertEqual(Enum5.Green);
-    //     expect(Enum5.getValueOf("Green").valueOf() instanceof float).assertTrue();
-    //     expect(Enum5.getValueOf("Green").valueOf()).assertEqual(10.3);
-    //
-    //     expect(Enum5.getValueOf("Blue") instanceof Enum5).assertTrue();
-    //     expect(Enum5.getValueOf("Blue")).assertEqual(Enum5.Blue);
-    //     expect(Enum5.getValueOf("Blue").valueOf() instanceof float).assertTrue();
-    //     expect(Enum5.getValueOf("Blue").valueOf()).assertEqual(7.6);
-    //
-    //     expect(Enum5.getValueOf("First") instanceof Enum5).assertTrue();
-    //     expect(Enum5.getValueOf("First")).assertEqual(Enum5.First);
-    //     expect(Enum5.getValueOf("First").valueOf() instanceof float).assertTrue();
-    //     expect(Enum5.getValueOf("First").valueOf()).assertEqual(-214748.3648);
-    //
-    //     expect(Enum5.getValueOf("Second") instanceof Enum5).assertTrue();
-    //     expect(Enum5.getValueOf("Second")).assertEqual(Enum5.Second);
-    //     expect(Enum5.getValueOf("Second").valueOf() instanceof float).assertTrue();
-    //     expect(Enum5.getValueOf("Second").valueOf()).assertEqual(123.45);
-    //
-    //     expect(Enum5.getValueOf("Third") instanceof Enum5).assertTrue();
-    //     expect(Enum5.getValueOf("Third")).assertEqual(Enum5.Third);
-    //     expect(Enum5.getValueOf("Third").valueOf() instanceof float).assertTrue();
-    //     expect(Enum5.getValueOf("Third").valueOf()).assertEqual(2147483.647);
-    //
-    //     expect(Enum5.getValueOf("One") instanceof Enum5).assertTrue();
-    //     expect(Enum5.getValueOf("One")).assertEqual(Enum5.One);
-    //     expect(Enum5.getValueOf("One").valueOf() instanceof float).assertTrue();
-    //     expect(Enum5.getValueOf("One").valueOf()).assertEqual(1.0);
-    //
-    //     expect(Enum5.getValueOf("one") instanceof Enum5).assertTrue();
-    //     expect(Enum5.getValueOf("one")).assertEqual(Enum5.one);
-    //     expect(Enum5.getValueOf("one").valueOf() instanceof float).assertTrue();
-    //     expect(Enum5.getValueOf("one").valueOf()).assertEqual(1.0);
-    //
-    //     expect(Enum5.getValueOf("oNe") instanceof Enum5).assertTrue();
-    //     expect(Enum5.getValueOf("oNe")).assertEqual(Enum5.oNe);
-    //     expect(Enum5.getValueOf("oNe").valueOf() instanceof float).assertTrue();
-    //     expect(Enum5.getValueOf("oNe").valueOf()).assertEqual(1.0);
-    //
-    //     expect(testNS.runTest67()).assertTrue();
-    // });
 
     /**
      * 源文件：        enum_explicit_type_getvalueof_12.ets
