@@ -444,6 +444,34 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   test_getFloatViewLimits_errcode1300016
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_0700
+     * @tc.desc   test getFloatViewLimits function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_getFloatViewLimits_errcode1300016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let CaseName: string = 'test_getFloatViewLimits_errcode1300016';
+      console.log(CaseName + ' begin.');
+      try {
+        let limits: floatView.FloatViewLimits = floatView.getFloatViewLimits(-1);
+        console.info(CaseName + ' FloatViewLimits: ' + JSON.stringify(limits));
+        expect(false).assertTrue();
+        done();
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && !isDeviceSupportFloatView) {
+          done();
+        } else {
+          expect(e.code).assertEqual(1300016);
+          done();
+        }
+      }
+    })
+
+    /**
      * @tc.name   test_setUIContext_0100
      * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_0800
      * @tc.desc   test setUIContext with valid path
@@ -1012,7 +1040,7 @@ export default function abilityTest() {
         let floatViewController = await floatView.create(config);
         callDoneOnStopped(floatViewController, CaseName, done)
         console.info(CaseName + ' Succeeded in creating float view controller.');
-        await floatViewController.setUIContext("testability/pages/First/index");
+        await floatViewController.setUIContext("testability/pages/First/index", new LocalStorage());
         console.info(CaseName + ' Succeeded in setting UI context.');
         await floatViewController.start();
         console.info(CaseName + ' Succeeded in starting float view.');
@@ -1156,6 +1184,7 @@ export default function abilityTest() {
           if (info.state === floatView.FloatViewState.STARTED) {
             let properties = floatViewController.getWindowProperties();
             console.info(CaseName + ' Window properties: ' + JSON.stringify(properties));
+            expect(properties.templateType).assertEqual(floatView.FloatViewTemplateType.ROUNDED_RECTANGLE);
             expect(properties.windowId).assertLarger(0);
             expect(properties.displayId).assertLargerOrEqual(0);
             expect(properties.windowRect != null).assertTrue();
@@ -2214,9 +2243,13 @@ export default function abilityTest() {
           done();
         }).catch((err: BusinessError) => {
           console.error(CaseName + ' Failed to bind. Cause: ' + err.code + ', message: ' + err.message);
-          expect(err.code).assertEqual(1300019);
-          expect(err.message != null).assertTrue();
-          done();
+          if (err.code === 801 && (!isDeviceSupportFloatView || !isDeviceSupportFloatBall)) {
+            done();
+          } else {
+            expect(err.code).assertEqual(1300019);
+            expect(err.message != null).assertTrue();
+            done();
+          }
         });
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
@@ -2514,6 +2547,59 @@ export default function abilityTest() {
         }).catch((err: BusinessError) => {
           console.error(CaseName + ' Failed to unbind. Cause: ' + err.code + ', message: ' + err.message);
           expect(err.code).assertEqual(1300025);
+          expect(err.message != null).assertTrue();
+          done();
+        });
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && (!isDeviceSupportFloatView || !isDeviceSupportFloatBall)) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_unbind_floatView_started
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_UNBIND_0300
+     * @tc.desc   test unbind when floatView has started but not stopped yet
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_unbind_floatView_started', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_unbind_floatView_started';
+      console.log(CaseName + ' begin.');
+      let floatViewConfig: floatView.FloatViewConfiguration = {
+        context: context,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      let floatingBallConfig: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let floatingBallParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title'
+      };
+      try {
+        let floatViewController = await floatView.create(floatViewConfig);
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        let floatingBallController = await floatingBall.create(floatingBallConfig);
+        console.info(CaseName + ' Succeeded in creating floating ball controller.');
+        await floatView.bind(floatViewController, floatingBallController, floatingBallParams);
+        console.info(CaseName + ' Succeeded in binding floatView and floatingBall.');
+        await floatViewController.setUIContext("testability/pages/First/index");
+        let floatViewController2 = await floatView.create(floatViewConfig);
+        floatView.unbind(floatViewController2, floatingBallController).then(async () => {
+          console.info(CaseName + ' Succeeded in unbinding.');
+          expect(false).assertTrue();
+          done();
+        }).catch(async (err: BusinessError) => {
+          console.error(CaseName + ' Failed to unbind. Cause: ' + err.code + ', message: ' + err.message);
+          expect(err.code).assertEqual(1300031);
           expect(err.message != null).assertTrue();
           done();
         });
