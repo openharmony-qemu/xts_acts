@@ -2197,7 +2197,7 @@ export default function bluetoothConnectionTest() {
                       expect().assertFail();
                   }
               });
-              await Utils.msSleep(500)
+              await Utils.msSleep(500);
           } catch (err) {
               err = err as BusinessError;
               hilog.info(domain, tag, `${caseName} get error: ${JSON.stringify(err)}`);
@@ -2257,7 +2257,7 @@ export default function bluetoothConnectionTest() {
                       expect().assertFail();
                   }
               });
-              await Utils.msSleep(500)
+              await Utils.msSleep(500);
           } catch (err) {
               err = err as BusinessError;
               hilog.info(domain, tag, `${caseName} get error: ${JSON.stringify(err)}`);
@@ -2317,7 +2317,7 @@ export default function bluetoothConnectionTest() {
                       expect().assertFail();
                   }
               });
-              await Utils.msSleep(500)
+              await Utils.msSleep(500);
           } catch (err) {
               err = err as BusinessError;
               hilog.info(domain, tag, `${caseName} get error: ${JSON.stringify(err)}`);
