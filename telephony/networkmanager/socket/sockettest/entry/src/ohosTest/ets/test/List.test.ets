@@ -29,7 +29,7 @@ import TLSSocketUpgradeTest from './TLSSocketUpgrade.test';
 import TlsSkipRemoteValidationTest from './TlsSkipRemoteValidation.test';
 import socketErrorCodeTest from './socketErrorCode.test';
 import localSocketTest from './localSocketTest.test';
-import TCPSocketAsyncConnectTest from './TCPSocketAsyncConnect.test'
+import TCPSocketAsyncConnectTest from './TCPSocketAsyncConnect.test';
 import connection from '@ohos.net.connection';
 import EmptyTest from './Empty.test';
 
