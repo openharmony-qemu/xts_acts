@@ -22,16 +22,6 @@ async function sleep(time: int): Promise<int> {
   });
 }
 
-
-//1-1 null—class
-//2-2
-//3-3
-//4-4
-//5-5
-//6-6
-//7-7
-//8-8
-//9-9
 let res: number = 0;
 function foo(arg: number): number {
   res++;

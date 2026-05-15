@@ -23,21 +23,6 @@ async function sleep(time: int): Promise<int> {
   });
 }
 
-/*let res = ""
-// empty array
-let arr: int[] = new int[0]
-
-
-let res1 = ""
-// empty nullable array
-let arr1: int[]|null = new int[0]
-
-
-let res2 = ""
-// empty nullable array
-let arr2: int[]|undefined = new int[0]
-*/
-
 let res3 = ""
 
 let res4 = ""
@@ -114,10 +99,6 @@ let arr8: int[][] = [[1,2,3], [4,5,6], [7,8,9]]
 let res21 = ""
 // array of strings
 let arr9: string[] = ["ABC", "DEF", "GHJ"]
-//
-// let res22 = ""
-// // function, implicit widening conversion: byte -> int
-// let foo: () => FixedArray<byte> = ():FixedArray<byte> => { return [42 as byte, 43 as byte] }
 
 let res23 = ""
 
@@ -135,24 +116,6 @@ type T=[number, boolean]
 // array of tuples with type alias
 let arr11: T[] = [[42.0, true], [43.0, false]]
 
-/*let res27 = "";
-let data: Number[] = [7.0, 8.0, 9.0];
-class A1  implements Iterator<Number> {
-  index = 0;
-  $_iterator() {
-    this.index = 0
-    return this
-  }
-
-  next(): IteratorResult<Number> {
-    return {
-      done: this.index >= data.length,
-      value: this.index >= data.length ? undefined : data[this.index++]
-     }
-  }
-
-}*/
-
 export default function ForOfTypeAnnotationTest():void{
   describe('ForOfTypeAnnotationTest', () => {
     beforeAll(() => {
@@ -167,63 +130,6 @@ export default function ForOfTypeAnnotationTest():void{
 
     afterAll(() => {
     })
-
-
-    /**
-     * @tc.number    SUB_FOR_OF_TYPES_ANNOTATIONTEST_0100
-     * @tc.name      testForOfTypeAnnotation0001
-     * @tc.desc      An explicit type annotation is allowed for a for variable
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    //
-    // it("testForOfTypeAnnotation0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   res = ""
-    //   for (let v: int of arr)
-    //   {
-    //     res += v
-    //   }
-    //   expect(res).assertEqual("")
-    // })
-    //
-    // /**
-    //  * @tc.number    SUB_FOR_OF_TYPES_ANNOTATIONTEST_0200
-    //  * @tc.name      testForOfTypeAnnotation0002
-    //  * @tc.desc      An explicit type annotation is allowed for a for variable
-    //  * @tc.size      MediumTest
-    //  * @tc.type      Function
-    //  * @tc.level     Level 2
-    //  */
-    //
-    // it("testForOfTypeAnnotation0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   res1 = ""
-    //   for (let v: int of arr1!)
-    //   {
-    //     res1 += v
-    //   }
-    //   expect(res1).assertEqual("")
-    // });
-    //
-    //
-    // /**
-    //  * @tc.number    SUB_FOR_OF_TYPES_ANNOTATIONTEST_0300
-    //  * @tc.name      testForOfTypeAnnotation0003
-    //  * @tc.desc      An explicit type annotation is allowed for a for variable
-    //  * @tc.size      MediumTest
-    //  * @tc.type      Function
-    //  * @tc.level     Level 2
-    //  */
-    //
-    // it("testForOfTypeAnnotation0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   res2 = ""
-    //   for (const v: int of arr2!)
-    //   {
-    //     res2 += v
-    //   }
-    //   expect(res2).assertEqual("")
-    //
-    // });
 
     /**
      * @tc.number    SUB_FOR_OF_TYPES_ANNOTATIONTEST_0400
@@ -604,47 +510,7 @@ export default function ForOfTypeAnnotationTest():void{
       }
       expect(res21).assertEqual("A B C D E F G H J ");
     });
-    //
-    // /**
-    //  * @tc.number    SUB_FOR_OF_TYPES_ANNOTATIONTEST_2300
-    //  * @tc.name      testForOfTypeAnnotation0023
-    //  * @tc.desc      An explicit type annotation is allowed for a for variable
-    //  * @tc.size      MediumTest
-    //  * @tc.type      Function
-    //  * @tc.level     Level 2
-    //  */
-    //
-    // it("testForOfTypeAnnotation0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   res22 = ""
-    //   for (let v: int of foo())
-    //   {
-    //     res22 += new Int(v)
-    //   }
-    //   expect(res22).assertEqual("4243");
-    // });
-    //
-    //  /**
-    //   * @tc.number    SUB_FOR_OF_TYPES_ANNOTATIONTEST_2400
-    //   * @tc.name      testForOfTypeAnnotation0024
-    //   * @tc.desc      An explicit type annotation is allowed for a for variable
-    //   * @tc.size      MediumTest
-    //   * @tc.type      Function
-    //   * @tc.level     Level 2
-    //   */
 
-   /* it("testForOfTypeAnnotation0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      res23 = ""
-      let ch: char = c'X'
-      for (let ch: string of "A" + "B" + "CD")
-      {
-        res23 += ch
-        ch = ' '
-        res23 += ch
-      }
-      expect(res23).assertEqual("A B C D ");
-      expect(ch).assertEqual('X');
-    });
-*/
     /**
      * @tc.number    SUB_FOR_OF_TYPES_ANNOTATIONTEST_2500
      * @tc.name      testForOfTypeAnnotation0025
@@ -704,24 +570,5 @@ export default function ForOfTypeAnnotationTest():void{
       }
       expect(res26).assertEqual("42true43false");
     });
-
-    /**
-     * @tc.number    SUB_FOR_OF_TYPES_ANNOTATIONTEST_2800
-     * @tc.name      testForOfTypeAnnotation0028
-     * @tc.desc      An explicit type annotation is allowed for a for variable
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-
-   /* it("testForOfTypeAnnotation0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      res27 = ""
-      for (let v: number of new A1())
-      {
-        res27 += v
-      }
-      expect(res27).assertEqual("789");
-    });*/
-
   })
 }

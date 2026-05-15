@@ -493,31 +493,6 @@ export default function CallableTypesWithInvokeMethodTest(): void {
     });
 
     /**
-     * @tc.number    SUB_CALLABLE_TYPES_WITH_INVOKE_METHOD_TEST_1500
-     * @tc.name      testCallableTypesWithInvokeMethod0015
-     * @tc.desc      The method invoke can have an arbitrary signature. The method can
-     *               be used in a type call expression in either case above. If the
-     *               signature has parameters, then the call must contain corresponding
-     *               arguments.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    /**
-     * ArkTS 1.2 兼容性说明：
-     * 本用例原本按旧测试预期校验抛出异常文本为 "checkException"。
-     * 当前 ArkTS 1.2 / 运行时环境下，invoke 链路抛出的真实异常消息为 "invoke error"，
-     * Hypium 的 assertThrow 会对真实异常消息进行匹配，因此断言失败。
-     *
-     * 该差异属于运行时异常消息实现变化，并非当前语法主验证目标，先注释保留。
-     */
-    // it("testCallableTypesWithInvokeMethod0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   expect(() => {
-    //     foo(true);
-    //   }).assertThrow("checkException");
-    // });
-
-    /**
      * @tc.number    SUB_CALLABLE_TYPES_WITH_INVOKE_METHOD_TEST_1600
      * @tc.name      testCallableTypesWithInvokeMethod0016
      * @tc.desc      The method invoke can have an arbitrary signature. The method can

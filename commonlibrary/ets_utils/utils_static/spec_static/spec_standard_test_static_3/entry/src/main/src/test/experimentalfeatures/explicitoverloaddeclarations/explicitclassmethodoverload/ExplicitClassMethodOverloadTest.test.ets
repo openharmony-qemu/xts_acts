@@ -1,4 +1,4 @@
-import { afterAll, afterEach, beforeAll, beforeEach, describe, it, Level, Size, TestType } from '../../../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe,expect, it, Level, Size, TestType } from '../../../../../../hypium/index';
 
 async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {
@@ -2194,9 +2194,8 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A32 = new A32();
-
-      arktest.assertEQ('one', a.publicFoo(12.6));
-      arktest.assertEQ('two', a.publicFoo('Hello!'));
+      expect(a.publicFoo(12.6)).assertEqual('one');
+      expect(a.publicFoo('Hello!')).assertEqual('two');
     });
     /**
      * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_3400

@@ -114,23 +114,6 @@ export default function FunctionsWithReceiverTest():void{
     });
 
     /**
-     * @tc.number    SUB_FUNCTIONS_WITH_RECEIVERTEST_0300
-     * @tc.name      testFunctionsWithReceiver0003
-     * @tc.desc      A function with receiver declaration is a top-level declaration (see Top-Level
-    Declarations) that looks almost the same as Function Declarations, except that the
-    first mandatory parameter uses keyword this as its name.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-/*    it("testFunctionsWithReceiver0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      let a: int = 1
-      expect(a.f1()).assertEqual(1);
-      expect(a.toDouble().f1()).assertEqual(2);
-    });*/
-
-    /**
      * @tc.number    SUB_FUNCTIONS_WITH_RECEIVERTEST_0400
      * @tc.name      testFunctionsWithReceiver0004
      * @tc.desc      A function with receiver declaration is a top-level declaration (see Top-Level
@@ -149,29 +132,6 @@ export default function FunctionsWithReceiverTest():void{
       a1 = b1
       expect(f2(a1)).assertEqual(2);
     });
-
-    /**
-     * @tc.number    SUB_FUNCTIONS_WITH_RECEIVERTEST_0500
-     * @tc.name      testFunctionsWithReceiver0005
-     * @tc.desc      A function with receiver declaration is a top-level declaration (see Top-Level
-    Declarations) that looks almost the same as Function Declarations, except that the
-    first mandatory parameter uses keyword this as its name.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    // 说明：overload 派发基于 this 的运行时类型，而非变量声明类型。
-    // 虽然 a 被声明为 A 类型并通过 b as A 赋值，但其实际运行时类型为 B。
-    // 因此 f(a) 会根据 this 的实际类型匹配 f_b(B) 而非 f_a(A)，返回 2 而非 1。
-/*    it("testFunctionsWithReceiver0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      let a1: A1 = new A1()
-      let b1: B1 = new B1()
-      expect(f2(a1)).assertEqual(1);
-      expect(f2(b1)).assertEqual(2);
-      a1 = b1 as A1
-      expect(f2(a1)).assertEqual(2);
-    });*/
 
     /**
      * @tc.number    SUB_FUNCTIONS_WITH_RECEIVERTEST_0600
