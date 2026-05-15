@@ -30,22 +30,22 @@ export default function BigIntConstructorDoubleTest(): void {
     it('非整数 double 抛错', TestType.STANDARD, (): void => {
       expect((): void => {
         new BigInt(1.5);
-      }).assertThrowError('Error');
+      }).assertThrowError('RangeError');
       expect((): void => {
         new BigInt(3.14);
-      }).assertThrowError('Error');
+      }).assertThrowError('RangeError');
     });
 
     it('NaN / Infinity double 抛错', TestType.STANDARD, (): void => {
       expect((): void => {
         new BigInt(Number.NaN);
-      }).assertThrowError('Error');
+      }).assertThrowError('RangeError');
       expect((): void => {
         new BigInt(Number.POSITIVE_INFINITY);
-      }).assertThrowError('Error');
+      }).assertThrowError('RangeError');
       expect((): void => {
         new BigInt(Number.NEGATIVE_INFINITY);
-      }).assertThrowError('Error');
+      }).assertThrowError('RangeError');
     });
   });
 }

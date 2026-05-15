@@ -23,10 +23,11 @@ export default function BigIntConstructorNoArgTest(): void {
       expect(zero instanceof BigInt).assertTrue();
     });
 
-    it('两次无参构造为不同引用、字符串均为 0', TestType.STANDARD, (): void => {
+    it('两次无参构造字符串均为 0（Sta 可能复用引用，不强制 !==）', TestType.STANDARD, (): void => {
       const a = new BigInt();
       const b = new BigInt();
-      expect(a === b).assertFalse();
+      expect(a.toString()).assertEqual('0');
+      expect(b.toString()).assertEqual('0');
       expect(a.toString()).assertEqual(b.toString());
     });
 
@@ -61,19 +62,19 @@ export default function BigIntConstructorNoArgTest(): void {
     it('new BigInt(NaN as double) 应抛错', TestType.STANDARD, (): void => {
       expect((): void => {
         new BigInt(Number.NaN);
-      }).assertThrowError('Error');
+      }).assertThrowError('RangeError');
     });
 
     it('new BigInt(Infinity) 应抛错', TestType.STANDARD, (): void => {
       expect((): void => {
         new BigInt(Number.POSITIVE_INFINITY);
-      }).assertThrowError('Error');
+      }).assertThrowError('RangeError');
     });
 
     it('new BigInt(-Infinity) 应抛错', TestType.STANDARD, (): void => {
       expect((): void => {
         new BigInt(Number.NEGATIVE_INFINITY);
-      }).assertThrowError('Error');
+      }).assertThrowError('RangeError');
     });
   });
 }

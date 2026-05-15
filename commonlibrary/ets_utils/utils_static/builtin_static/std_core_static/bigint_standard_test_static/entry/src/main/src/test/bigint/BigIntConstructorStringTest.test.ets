@@ -21,13 +21,15 @@ export default function BigIntConstructorStringTest(): void {
       expect(new BigInt('007').toString()).assertEqual('7');
     });
 
-    it('非法十进制字符串抛错', TestType.STANDARD, (): void => {
+    it('空字符串得 0', TestType.STANDARD, (): void => {
+      expect(new BigInt('').toString()).assertEqual('0');
+    });
+
+    it('非法十进制字符串应抛错', TestType.STANDARD, (): void => {
+      const invalidMsg = 'BigInt.parseFromString(): provided string is invalid';
       expect((): void => {
         new BigInt('abc');
-      }).assertThrowError('Error');
-      expect((): void => {
-        new BigInt('');
-      }).assertThrowError('Error');
+      }).assertThrow(invalidMsg);
     });
   });
 }

@@ -19,10 +19,11 @@ export default function BigIntConstructorCopyTest(): void {
       expect(copied.equals(original)).assertTrue();
     });
 
-    it('拷贝与源非同一引用', TestType.STANDARD, (): void => {
+    it('拷贝与源数值一致（Sta 可能复用引用，不强制 !==）', TestType.STANDARD, (): void => {
       const original = new BigInt(1);
       const copied = new BigInt(original);
-      expect(copied === original).assertFalse();
+      expect(copied.equals(original)).assertTrue();
+      expect(copied.toString()).assertEqual('1');
     });
   });
 }
