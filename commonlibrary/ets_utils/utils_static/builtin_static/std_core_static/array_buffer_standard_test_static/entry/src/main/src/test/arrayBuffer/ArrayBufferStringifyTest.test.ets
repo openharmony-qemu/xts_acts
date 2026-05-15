@@ -232,7 +232,7 @@ export default function arrayBufferStringifyTest(): void {
      */
     it('testArrayBufferStringify0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        let result = ArrayBuffer.stringify(("not a buffer" as string) as ArrayBuffer, "utf8", 0, 3);
+        let result = ArrayBuffer.stringify((("not a buffer" as string) as Object) as ArrayBuffer, "utf8", 0, 3);
         expect(true).assertFail()
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue()
@@ -250,7 +250,7 @@ export default function arrayBufferStringifyTest(): void {
      */
     it('testArrayBufferStringify0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        let result = ArrayBuffer.stringify((123 as number) as ArrayBuffer, "utf8", 0, 3);
+        let result = ArrayBuffer.stringify(((123 as number) as Object) as ArrayBuffer, "utf8", 0, 3);
         expect(true).assertFail()
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue()
@@ -431,7 +431,7 @@ export default function arrayBufferStringifyTest(): void {
     it('testArrayBufferStringify0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const encoded = ArrayBuffer.from("ABC", "utf8");
-      let result = ArrayBuffer.stringify(encoded, (123 as number) as string, 0, encoded.byteLength);
+      let result = ArrayBuffer.stringify(encoded, ((123 as number) as Object) as string, 0, encoded.byteLength);
         expect(true).assertFail()
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue()
@@ -1899,7 +1899,7 @@ export default function arrayBufferStringifyTest(): void {
      */
     it('testArrayBufferStringify0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        let result = ArrayBuffer.stringify((12345 as number) as ArrayBuffer, "utf8", 0, 3);
+        let result = ArrayBuffer.stringify(((12345 as number) as Object) as ArrayBuffer, "utf8", 0, 3);
         expect(true).assertFail()
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue()
@@ -1917,7 +1917,7 @@ export default function arrayBufferStringifyTest(): void {
      */
     it('testArrayBufferStringify0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        let result = ArrayBuffer.stringify((true as boolean) as ArrayBuffer, "utf8", 0, 3);
+        let result = ArrayBuffer.stringify(((true as boolean) as Object) as ArrayBuffer, "utf8", 0, 3);
         expect(true).assertFail()
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue()
@@ -1935,7 +1935,7 @@ export default function arrayBufferStringifyTest(): void {
      */
     it('testArrayBufferStringify0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        let result = ArrayBuffer.stringify(("not a buffer" as string) as ArrayBuffer, "utf8", 0, 3);
+        let result = ArrayBuffer.stringify((("not a buffer" as string) as Object) as ArrayBuffer, "utf8", 0, 3);
         expect(true).assertFail()
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue()
@@ -1954,7 +1954,7 @@ export default function arrayBufferStringifyTest(): void {
     it('testArrayBufferStringify0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const encoded = ArrayBuffer.from("ABC", "utf8");
-      let result = ArrayBuffer.stringify(encoded, (65 as number) as string, 0, encoded.byteLength);
+      let result = ArrayBuffer.stringify(encoded, ((65 as number) as Object) as string, 0, encoded.byteLength);
         expect(true).assertFail()
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue()
@@ -2105,7 +2105,7 @@ export default function arrayBufferStringifyTest(): void {
      */
     it('testArrayBufferStringify0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        let result = ArrayBuffer.stringify(("buffer" as string) as ArrayBuffer, ((123 as number) as Object) as string, (("start" as string) as Object) as int, ((true as boolean) as Object) as int);
+        let result = ArrayBuffer.stringify((("buffer" as string) as Object) as ArrayBuffer, ((123 as number) as Object) as string, (("start" as string) as Object) as int, ((true as boolean) as Object) as int);
         expect(true).assertFail()
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue()
