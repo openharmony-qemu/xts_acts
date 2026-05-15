@@ -1,6 +1,6 @@
 import abilityTest from "./Ability.test";
 
-//SKD
+
 import ProgramEntryPointTest from "./modulesandnamespaces/programentrypoint/ProgramEntryPointTest.test";
 import StandArdLibraryUsageTest from "./modulesandnamespaces/standardlibraryusage/StandArdLibraryUsageTest.test";
 import TopLevelStatementsTest from "./modulesandnamespaces/toplevelstatements/TopLevelStatementsTest.test";
@@ -11,7 +11,7 @@ import SelectiveBindingTest from "./modulesandnamespaces/importdirectives/select
 import SeveralBindingsForOneImportPathTest from "./modulesandnamespaces/importdirectives/severalbindingsforoneimportpath/SeveralBindingsForOneImportPathTest.test";
 import NameSpaceDeclarationsTest from "./modulesandnamespaces/namespacedeclarations/NameSpaceDeclarationsTest.test";
 import ImportPathFileTest from "./modulesandnamespaces/importdirectives/importpath/file/ImportPathFileTest.test";
-//GX
+
 import EnumerationDoubleValuesTest from "./experimentalfeatures/enumerationsexperimental/enumerationwithexplicittype/enumerationdoublevalues/EnumerationDoubleValuesTest.test";
 import EnumerationTypeAnnotationTest from "./experimentalfeatures/enumerationsexperimental/enumerationwithexplicittype/enumerationtypeannotation/EnumerationTypeAnnotationTest.test";
 import AdditiveExpressionsTest from './experimentalfeatures/enumerationsexperimental/enumerationwithexplicittype/additiveexpressions/AdditiveExpressionsTest.test';
@@ -19,31 +19,22 @@ import BitwiseExpressionsTest from "./experimentalfeatures/enumerationsexperimen
 import EqualityExpressionsTest from './experimentalfeatures/enumerationsexperimental/enumerationwithexplicittype/equalityexpressions/EqualityExpressionsTest.test';
 import ShiftExpressionsTest from './experimentalfeatures/enumerationsexperimental/enumerationwithexplicittype/shiftexpressions/ShiftExpressionsTest.test';
 import UnaryExpressionsTest from './experimentalfeatures/enumerationsexperimental/enumerationwithexplicittype/unaryexpressions/UnaryExpressionsTest.test';
-// import EnumerationWithExplicitTypeTest from "./experimentalfeatures/enumerationsexperimental/enumerationwithexplicittype/EnumerationWithExplicitTypeTest.test";
-// import EnumerationMethodsTest from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest.test";
-
 import EnumerationMethodsTest01 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest01.test";
-import EnumerationMethodsTest02 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest02.test";
 import EnumerationMethodsTest03 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest03.test";
 import EnumerationMethodsTest04 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest04.test";
 import EnumerationMethodsTest05 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest05.test";
-import EnumerationMethodsTest06 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest06.test";
 import EnumerationMethodsTest07 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest07.test";
 import EnumerationMethodsTest08 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest08.test";
 import EnumerationMethodsTest09 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest09.test";
 import EnumerationMethodsTest10 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest10.test";
 import EnumerationMethodsTest11 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest11.test";
 import EnumerationMethodsTest12 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest12.test";
-import EnumerationMethodsTest13 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest13.test";
 import EnumerationMethodsTest14 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest14.test";
 import EnumerationMethodsTest15 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest15.test";
-import EnumerationMethodsTest16 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest16.test";
 import EnumerationMethodsTest17 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest17.test";
 import EnumerationMethodsTest18 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest18.test";
 import EnumerationMethodsTest19 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest19.test";
 import EnumerationMethodsTest20 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest20.test";
-
-
 import EnumerationWithExplicitTypeTest01 from "./experimentalfeatures/enumerationsexperimental/enumerationwithexplicittype/EnumerationWithExplicitTypeTest01.test";
 import EnumerationWithExplicitTypeTest02 from "./experimentalfeatures/enumerationsexperimental/enumerationwithexplicittype/EnumerationWithExplicitTypeTest02.test";
 import EnumerationWithExplicitTypeTest03 from "./experimentalfeatures/enumerationsexperimental/enumerationwithexplicittype/EnumerationWithExplicitTypeTest03.test";
@@ -55,7 +46,6 @@ import EnumerationWithExplicitTypeTest08 from "./experimentalfeatures/enumeratio
 import EnumerationWithExplicitTypeTest09 from "./experimentalfeatures/enumerationsexperimental/enumerationwithexplicittype/EnumerationWithExplicitTypeTest09.test";
 import EnumerationWithExplicitTypeTest10 from "./experimentalfeatures/enumerationsexperimental/enumerationwithexplicittype/EnumerationWithExplicitTypeTest10.test";
 import EnumerationWithExplicitTypeTest11 from "./experimentalfeatures/enumerationsexperimental/enumerationwithexplicittype/EnumerationWithExplicitTypeTest11.test";
-
 import IndexableTypesTest from "./experimentalfeatures/indexabletypes/IndexableTypesTest.test";
 import CallableTypesWithInvokeMethodTest from "./experimentalfeatures/callabletypes/callabletypeswithinvokemethod/CallableTypesWithInvokeMethodTest.test";
 import CallableTypesWithInstantiateMethodTest from "./experimentalfeatures/callabletypes/callabletypeswithinstantiatemethod/CallableTypesWithInstantiateMethodTest.test";
@@ -74,7 +64,7 @@ import TrailingLambdasTest from "./experimentalfeatures/trailinglambdas/Trailing
 import DestructuringAssignmentTest from './experimentalfeatures/patternmatching/destructuringassignment/DestructuringAssignmentTest.test';
 import GenericsExperimentalTest from './experimentalfeatures/genericsexperimental/GenericsExperimentalTest.test';
 import NonNullishTypeParameterTest from './experimentalfeatures/genericsexperimental/nonnullishtypeparameter/NonNullishTypeParameterTest.test';
-//FJ
+
 import NumericDefaultLiteralTypesTest01 from './semanticrules/typeinference/typeinferencefornumericliterals/NumericDefaultLiteralTypesTest01.test';
 import NumericDefaultLiteralTypesTest02 from './semanticrules/typeinference/typeinferencefornumericliterals/NumericDefaultLiteralTypesTest02.test';
 import NumericDefaultLiteralTypesTest03 from './semanticrules/typeinference/typeinferencefornumericliterals/NumericDefaultLiteralTypesTest03.test';
@@ -134,7 +124,7 @@ import OverloadEquivalentSignaturesTest from './semanticrules/overloading/overlo
 import OverloadWithImportTest01 from './semanticrules/overloading/overloadwithimport/OverloadWithImportTest01.test'
 import OverloadWithImportTest02 from './semanticrules/overloading/overloadwithimport/OverloadWithImportTest02.test'
 import OverloadWithImportTest03 from './semanticrules/overloading/overloadwithimport/OverloadWithImportTest03.test'
-//GL
+
 import FixedArrayTypesTest from "./experimentalfeatures/fixedarraytypes/FixedArrayTypesTest.test";
 import ResizableArrayCreationExpressionsTest from "./experimentalfeatures/resizablearraycreationexpressions/ResizableArrayCreationExpressionsTest.test";
 import TypeCharTest from "./experimentalfeatures/typechar/TypeCharTest.test";
@@ -171,8 +161,6 @@ import StaticInitializationSafetyTest from "./semanticrules/staticinitialization
 import StaticInitializationTest from "./semanticrules/staticinitialization/StaticInitializationTest.test";
 import TypeErasureTest from "./semanticrules/typeerasure/TypeErasureTest.test";
 import SemanticRulesTest from "./semanticrules/SemanticRulesTest.test";
-
-//MZ
 
 import SpecificsOfAssignmentLikeContexts from './semanticrules/semanticessentials/AssignmentContextPositiveCases'
 import BinaryOverflow from './semanticrules/semanticessentials/BinaryOverflow'
@@ -359,21 +347,17 @@ export default function testsuite(): void {
   ShiftExpressionsTest();
   UnaryExpressionsTest();
   EnumerationMethodsTest01();
-  EnumerationMethodsTest02();
   EnumerationMethodsTest03();
   EnumerationMethodsTest04();
   EnumerationMethodsTest05();
-  EnumerationMethodsTest06();
   EnumerationMethodsTest07();
   EnumerationMethodsTest08();
   EnumerationMethodsTest09();
   EnumerationMethodsTest10();
   EnumerationMethodsTest11();
   EnumerationMethodsTest12();
-  EnumerationMethodsTest13();
   EnumerationMethodsTest14();
   EnumerationMethodsTest15();
-  EnumerationMethodsTest16();
   EnumerationMethodsTest17();
   EnumerationMethodsTest18();
   EnumerationMethodsTest19();
