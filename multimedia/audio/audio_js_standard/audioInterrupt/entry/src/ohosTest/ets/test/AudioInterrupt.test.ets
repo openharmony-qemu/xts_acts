@@ -48,9 +48,6 @@ export default function audioInterrupt() {
         button = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
       }
       if (button == null || button == undefined) {
-        button = await dr?.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), 500);
-      }
-      if (button == null || button == undefined) {
         button = await dr?.waitForComponent(ON.text('打开', MatchPattern.EQUALS), 500);
       }
       if (button == null || button == undefined) {

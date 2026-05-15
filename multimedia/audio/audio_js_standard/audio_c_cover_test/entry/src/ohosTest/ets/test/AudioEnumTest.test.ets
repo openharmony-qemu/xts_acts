@@ -35,7 +35,7 @@ export default function AudioEnumTest() {
           await text.click()
         }
         if (text2) {
-          await text.click()
+          await text2.click()
         }
       }, 2000)
       atManager.requestPermissionsFromUser(getContext(), permissions).then((data: PermissionRequestResult) => {
