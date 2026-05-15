@@ -3185,6 +3185,7 @@ export default function PhotoTest() {
         createPhotoOutput();
         addPhotoOutput();
         sessionCommitConfig();
+        cameraObj.getColorTintRange();
 
         //--------------------------------------------测试过程------------------------------------------------------
         let ret = cameraObj.setColorTint(0)
@@ -3218,6 +3219,7 @@ export default function PhotoTest() {
         createPhotoOutput();
         addPhotoOutput();
         sessionCommitConfig();
+        cameraObj.getColorTintRange();
 
         //--------------------------------------------测试过程------------------------------------------------------
         let ret = cameraObj.setColorTint(1)
@@ -3251,6 +3253,7 @@ export default function PhotoTest() {
         createPhotoOutput();
         addPhotoOutput();
         sessionCommitConfig();
+        cameraObj.getColorTintRange();
 
         //--------------------------------------------测试过程------------------------------------------------------
         let ret = cameraObj.setColorTint(2)
