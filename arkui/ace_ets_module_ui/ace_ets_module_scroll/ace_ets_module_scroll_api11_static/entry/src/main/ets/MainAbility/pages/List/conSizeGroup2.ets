@@ -24,11 +24,9 @@ import {
   ListItem,
   Margin,
   Color,
-  TextAlign,
   Builder,
   List,
   ForEach,
-  ListItem,
   TextAlign
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';

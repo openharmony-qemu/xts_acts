@@ -19,14 +19,14 @@ import {
   GridAttribute,
   AttributeModifier
 } from '@ohos.arkui.component';
-import { State, Observed } from '@ohos.arkui.stateManagement';
+import { State, Observed, Track } from '@ohos.arkui.stateManagement';
 import { GridDataSource } from './GridDataSource';
 
 @Observed
 export class MyEnableModifier implements AttributeModifier<GridAttribute> {
   // 外部传入控制值，可以是 boolean | undefined
-  @State public columnsTemplate_: string | undefined = '1fr 1fr';
-  @State public change: boolean | undefined = true;
+  @Track public columnsTemplate_: string | undefined = '1fr 1fr';
+  @Track public change: boolean | undefined = true;
 
   applyNormalAttribute(instance: GridAttribute): void {
     // 情况 1、2、4 都调用 enabled，区别在于 controlValue 可能是 false、true 或 undefined

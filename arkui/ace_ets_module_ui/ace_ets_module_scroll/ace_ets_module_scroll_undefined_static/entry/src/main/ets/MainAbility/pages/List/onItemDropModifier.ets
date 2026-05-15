@@ -25,15 +25,15 @@ import {
   ListAttribute,
   AttributeModifier
 } from '@ohos.arkui.component';
-import { State, Observed } from '@ohos.arkui.stateManagement';
+import { State, Observed, Track } from '@ohos.arkui.stateManagement';
 import { MyDataSource } from './MyDataSource';
 
 @Observed
 export class MyEnableModifier implements AttributeModifier<ListAttribute> {
   // 外部传入控制值，可以是 boolean | undefined
-  @State public isChange: boolean = true
-  @State public text: String = '';
-  @State public change: boolean | undefined = true;
+  @Track public isChange: boolean = true
+  @Track public text: String = '';
+  @Track public change: boolean | undefined = true;
 
   applyNormalAttribute(instance: ListAttribute): void {
     // 情况 1、2、4 都调用 enabled，区别在于 controlValue 可能是 false、true 或 undefined

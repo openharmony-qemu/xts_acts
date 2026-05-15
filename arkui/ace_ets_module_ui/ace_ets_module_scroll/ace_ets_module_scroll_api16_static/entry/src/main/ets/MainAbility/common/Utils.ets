@@ -21,7 +21,6 @@ import inspector from '@ohos.arkui.inspector'
 import { sendTouchEvent } from "@ohos.arkui.Test";
 
 import { RecordData } from '@ohos.base';
-import { TouchObject, TouchType } from '@ohos.arkui.component';
 import events_emitter from '@ohos.events.emitter';
 
 export default class Utils {
