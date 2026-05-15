@@ -100,7 +100,7 @@ export default function abilityTest() {
      * @tc.number SUB_MULTIMEDIA_AVSESSION_SET_SUPPORTED_PLAY_SPEEDS_PARAM_0100
      * @tc.desc Test setSupportedPlaySpeeds with valid PlaybackSpeed array.
      *         测试点：验证设置支持的播放速度功能
-     *         测试输入：有效的 PlaybackSpeed 数组 [SPEED_1_00_X, SPEED_1_50_X, SPEED_2_00_X]
+     *         测试输入：有效的 PlaybackSpeed 数组 1.00, 1.50, 2.00
      *         测试输出：Promise resolve，设置成功
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -108,11 +108,7 @@ export default function abilityTest() {
      */
     it('SUB_MULTIMEDIA_AVSESSION_SET_SUPPORTED_PLAY_SPEEDS_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(`${TAG}: setSupportedPlaySpeedsValidParam001 start`);
-      let speeds: Array<avSession.PlaybackSpeed> = [
-        avSession.PlaybackSpeed.SPEED_1_00_X,
-        avSession.PlaybackSpeed.SPEED_1_50_X,
-        avSession.PlaybackSpeed.SPEED_2_00_X
-      ];
+      let speeds: Array<number> = [1.00, 1.50, 2.00];
       await session?.setSupportedPlaySpeeds(speeds).then(() => {
         console.info(`${TAG}: setSupportedPlaySpeeds success`);
       }).catch((error: BusinessError) => {
@@ -128,7 +124,7 @@ export default function abilityTest() {
      * @tc.number SUB_MULTIMEDIA_AVSESSION_SET_SUPPORTED_PLAY_SPEEDS_PARAM_0200
      * @tc.desc Test setSupportedPlaySpeeds with single PlaybackSpeed element.
      *         测试点：验证设置单个播放速度
-     *         测试输入：单个元素数组 [SPEED_1_00_X]
+     *         测试输入：单个元素数组 99.99
      *         测试输出：Promise resolve，设置成功
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -136,7 +132,7 @@ export default function abilityTest() {
      */
     it('SUB_MULTIMEDIA_AVSESSION_SET_SUPPORTED_PLAY_SPEEDS_PARAM_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(`${TAG}: setSupportedPlaySpeedsSingleSpeed002 start`);
-      let speeds: Array<avSession.PlaybackSpeed> = [avSession.PlaybackSpeed.SPEED_1_00_X];
+      let speeds: Array<number> = [99.99];
       await session?.setSupportedPlaySpeeds(speeds).then(() => {
         console.info(`${TAG}: setSupportedPlaySpeeds with single speed success`);
       }).catch((error: BusinessError) => {
@@ -160,19 +156,7 @@ export default function abilityTest() {
      */
     it('SUB_MULTIMEDIA_AVSESSION_SET_SUPPORTED_PLAY_SPEEDS_PARAM_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(`${TAG}: setSupportedPlaySpeedsAllSpeeds003 start`);
-      let speeds: Array<avSession.PlaybackSpeed> = [
-        avSession.PlaybackSpeed.SPEED_0_125_X,
-        avSession.PlaybackSpeed.SPEED_0_25_X,
-        avSession.PlaybackSpeed.SPEED_0_50_X,
-        avSession.PlaybackSpeed.SPEED_0_75_X,
-        avSession.PlaybackSpeed.SPEED_1_00_X,
-        avSession.PlaybackSpeed.SPEED_1_25_X,
-        avSession.PlaybackSpeed.SPEED_1_50_X,
-        avSession.PlaybackSpeed.SPEED_1_75_X,
-        avSession.PlaybackSpeed.SPEED_2_00_X,
-        avSession.PlaybackSpeed.SPEED_3_00_X,
-        avSession.PlaybackSpeed.SPEED_4_00_X
-      ];
+      let speeds: Array<number> = [0.125, 0.25, 0.50, 0.75, 1.00, 10.01, 1111.1111, 11111111111111.0]
       try {
         await session?.setSupportedPlaySpeeds(speeds);
         console.info(`${TAG}: setSupportedPlaySpeeds with all speeds success`);
@@ -198,7 +182,7 @@ export default function abilityTest() {
      */
     it('SUB_MULTIMEDIA_AVSESSION_SET_SUPPORTED_PLAY_SPEEDS_PARAM_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(`${TAG}: setSupportedPlaySpeedsEmptyArray004 start`);
-      let speeds: Array<avSession.PlaybackSpeed> = [];
+      let speeds: Array<number> = [];
       try {
         await session?.setSupportedPlaySpeeds(speeds);
         console.info(`${TAG}: setSupportedPlaySpeeds with empty array success`);
@@ -224,7 +208,7 @@ export default function abilityTest() {
      */
     it('SUB_MULTIMEDIA_AVSESSION_SET_SUPPORTED_PLAY_SPEEDS_ERROR_6600102_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(`${TAG}: setSupportedPlaySpeedsErrorSessionNotExist005 start`);
-      let speeds: Array<avSession.PlaybackSpeed> = [avSession.PlaybackSpeed.SPEED_1_00_X];
+      let speeds: Array<number> = [1.00];
       try {
         await session?.destroy();
         await session?.setSupportedPlaySpeeds(speeds);
@@ -537,17 +521,14 @@ export default function abilityTest() {
      */
     it('SUB_MULTIMEDIA_AVSESSION_GET_SUPPORTED_PLAY_SPEEDS_RETURN_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(`${TAG}: getSupportedPlaySpeedsReturnValue001 start`);
-      let speeds: Array<avSession.PlaybackSpeed> = [
-        avSession.PlaybackSpeed.SPEED_1_00_X,
-        avSession.PlaybackSpeed.SPEED_1_50_X
-      ];
+      let speeds: Array<number> = [1.00, 999999999.999999999];
       try {
         await session?.setSupportedPlaySpeeds(speeds);
-        let result: Array<avSession.PlaybackSpeed> = await controller?.getSupportedPlaySpeeds();
+        let result: Array<number> = await controller?.getSupportedPlaySpeeds();
         console.info(`${TAG}: getSupportedPlaySpeeds result: ${JSON.stringify(result)}`);
         expect(result?.length).assertEqual(2);
-        expect(result?.includes(avSession.PlaybackSpeed.SPEED_1_00_X)).assertTrue();
-        expect(result?.includes(avSession.PlaybackSpeed.SPEED_1_50_X)).assertTrue();
+        expect(result?.includes(1.00)).assertTrue();
+        expect(result?.includes(999999999.999999999)).assertTrue();
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         console.info(`${TAG}: error: ${e.code}`);
@@ -571,7 +552,7 @@ export default function abilityTest() {
     it('SUB_MULTIMEDIA_AVSESSION_GET_SUPPORTED_PLAY_SPEEDS_RETURN_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(`${TAG}: getSupportedPlaySpeedsEmptyResult002 start`);
       try {
-        let result: Array<avSession.PlaybackSpeed> = await controller?.getSupportedPlaySpeeds();
+        let result: Array<number> = await controller?.getSupportedPlaySpeeds();
         console.info(`${TAG}: getSupportedPlaySpeeds result without setting: ${JSON.stringify(result)}`);
         expect(result).assertNotNull();
       } catch (error) {
@@ -971,7 +952,7 @@ export default function abilityTest() {
      */
     it('SUB_MULTIMEDIA_AVSESSION_ON_SUPPORTED_PLAY_SPEEDS_CHANGE_EVENT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(`${TAG}: onSupportedPlaySpeedsChangeRegister001 start`);
-      let callback = (data: Array<avSession.PlaybackSpeed>) => {
+      let callback = (data: Array<number>) => {
         console.info(`${TAG}: onSupportedPlaySpeedsChange callback: ${JSON.stringify(data)}`);
       };
       try {
@@ -999,18 +980,18 @@ export default function abilityTest() {
      */
     it('SUB_MULTIMEDIA_AVSESSION_ON_SUPPORTED_PLAY_SPEEDS_CHANGE_EVENT_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(`${TAG}: onSupportedPlaySpeedsChangeTrigger002 start`);
-      let receivedData: Array<avSession.PlaybackSpeed> = [];
-      let callback = (data: Array<avSession.PlaybackSpeed>) => {
+      let receivedData: Array<number> = [];
+      let callback = (data: Array<number>) => {
         console.info(`${TAG}: callback received speeds: ${JSON.stringify(data)}`);
         receivedData = data;
       };
       try {
         controller?.onSupportedPlaySpeedsChange(callback);
-        let speeds: Array<avSession.PlaybackSpeed> = [avSession.PlaybackSpeed.SPEED_2_00_X];
+        let speeds: Array<number> = [2.00];
         await session?.setSupportedPlaySpeeds(speeds);
         await sleep(500);
         expect(receivedData.length).assertEqual(1);
-        expect(receivedData.includes(avSession.PlaybackSpeed.SPEED_2_00_X)).assertTrue();
+        expect(receivedData.includes(2.00)).assertTrue();
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         console.info(`${TAG}: error: ${e.code}`);
@@ -1033,7 +1014,7 @@ export default function abilityTest() {
      */
     it('SUB_MULTIMEDIA_AVSESSION_ON_SUPPORTED_PLAY_SPEEDS_CHANGE_ERROR_6600103_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(`${TAG}: onSupportedPlaySpeedsChangeErrorControllerNotExist003 start`);
-      let callback = (data: Array<avSession.PlaybackSpeed>) => {
+      let callback = (data: Array<number>) => {
         console.info(`${TAG}: callback received`);
       };
       try {
@@ -1065,14 +1046,14 @@ export default function abilityTest() {
     it('SUB_MULTIMEDIA_AVSESSION_OFF_SUPPORTED_PLAY_SPEEDS_CHANGE_EVENT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(`${TAG}: offSupportedPlaySpeedsChangeUnregister001 start`);
       let callbackTriggered = false;
-      let callback = (data: Array<avSession.PlaybackSpeed>) => {
+      let callback = (data: Array<number>) => {
         console.info(`${TAG}: callback triggered`);
         callbackTriggered = true;
       };
       try {
         controller?.onSupportedPlaySpeedsChange(callback);
         controller?.offSupportedPlaySpeedsChange();
-        let speeds: Array<avSession.PlaybackSpeed> = [avSession.PlaybackSpeed.SPEED_1_50_X];
+        let speeds: Array<number> = [4.00];
         await session?.setSupportedPlaySpeeds(speeds);
         await sleep(500);
         expect(callbackTriggered).assertFalse();
@@ -1100,17 +1081,17 @@ export default function abilityTest() {
       console.info(`${TAG}: offSupportedPlaySpeedsChangeUnregisterSpecific002 start`);
       let callback1Triggered = false;
       let callback2Triggered = false;
-      let callback1 = (data: Array<avSession.PlaybackSpeed>) => {
+      let callback1 = (data: Array<number>) => {
         callback1Triggered = true;
       };
-      let callback2 = (data: Array<avSession.PlaybackSpeed>) => {
+      let callback2 = (data: Array<number>) => {
         callback2Triggered = true;
       };
       try {
         controller?.onSupportedPlaySpeedsChange(callback1);
         controller?.onSupportedPlaySpeedsChange(callback2);
         controller?.offSupportedPlaySpeedsChange(callback1);
-        let speeds: Array<avSession.PlaybackSpeed> = [avSession.PlaybackSpeed.SPEED_1_25_X];
+        let speeds: Array<number> = [1.25];
         await session?.setSupportedPlaySpeeds(speeds);
         await sleep(500);
         expect(callback1Triggered).assertFalse();
