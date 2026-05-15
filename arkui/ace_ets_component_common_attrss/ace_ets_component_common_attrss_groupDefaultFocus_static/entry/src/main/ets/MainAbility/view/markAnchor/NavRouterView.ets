@@ -16,22 +16,18 @@
 
 import {
   Component,
-  Text,
+  Text,FlexDirection,Flex,$r,
   Row,
   ClickEvent,
   Column,
   List,
   Image,
   ForEach,
-  Position,
+  Position,Padding,
   Margin,
   TextAlign,
   Color,
-  NavDestination,
-  Flex,
-  $r,
-  FlexDirection,
-  Padding
+  NavDestination
 } from '@ohos.arkui.component';
 import { Link, State } from '@ohos.arkui.stateManagement';
 
@@ -44,6 +40,7 @@ export struct NavRouterView {
 
   build() {
     Column() {
+    // NavRouter() {
       Row() {
         Image($r('app.media.icon')).width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin)
         Text(`NavRouter`)
@@ -66,12 +63,11 @@ export struct NavRouterView {
         }
       }.backgroundColor('#ccc')
       .title(`NavDestination`)
-
-      // }.onStateChange((isActivated: boolean) => {
-      //   console.info('isActivated = ' + isActivated);
-      // })
-      // .markAnchor(this._markAnchor)
-      // .key(this.componentKey)
-    }
+    // }.onStateChange((isActivated: boolean) => {
+    //   console.info('isActivated = ' + isActivated);
+    // })
+    // .markAnchor(this._markAnchor)
+    // .key(this.componentKey)
   }
   }
+}

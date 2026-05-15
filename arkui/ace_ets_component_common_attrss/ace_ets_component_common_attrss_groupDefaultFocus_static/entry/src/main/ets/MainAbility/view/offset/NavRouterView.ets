@@ -16,7 +16,7 @@
 
 import {
   Component,
-  Text,
+  Text,Flex,FlexDirection,
   Row,
   ClickEvent,
   Column,
@@ -25,14 +25,11 @@ import {
   ForEach,
   Position,
   Margin,
-  Padding,
   TextAlign,
   Color,
   NavDestination,
   $r,
-  Padding,
-  Flex,
-  FlexDirection
+  Padding
 } from '@ohos.arkui.component';
 import { Link, State } from '@ohos.arkui.stateManagement';
 
@@ -45,6 +42,7 @@ export struct NavRouterView {
 
   build() {
     Column() {
+    // NavRouter() {
       Row() {
         Image($r('app.media.icon')).width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin)
         Text(`NavRouter`)
