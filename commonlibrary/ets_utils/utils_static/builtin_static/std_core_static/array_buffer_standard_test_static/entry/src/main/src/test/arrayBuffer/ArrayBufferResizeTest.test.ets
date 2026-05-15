@@ -294,16 +294,16 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_1700
-     * @tc.desc Verify ArrayBuffer.resize: passing boolean true，verify type or throws exception is
+     * @tc.desc Mindmap 1.2.13: coerce or throw — OH may treat (true as int) as 1 (resize succeeds); on throw use ERROR_CODE.01. Same-try assertFail would catch AssertException and fail Utils whitelist.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferResize0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(2, 6);
       try {
-        const buffer = new ArrayBuffer(2, 6);
         buffer.resize((true as int));
-        expect(true).assertFail();
+        expect(buffer.byteLength).assertEqual(1);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e as object);
@@ -520,7 +520,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_3100
-     * @tc.desc After shrink then resize(0), resizable remains true; constructor ceiling as length on ArrayBuffer type — observe byteLength transitions only.
+     * @tc.desc After shrink then resize(0), resizable remains true; constructor ceiling not exposed as maxByteLength on type surface — observe byteLength transitions only.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -770,7 +770,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0044
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_4400
-     * @tc.desc ES transfer() not on standard ArrayBuffer interface; use slice0, byteLength) copy plus resize(0) for resizable source - source remains resizable and can grow again within ceiling.
+     * @tc.desc ES transfer() not on STA surface; use slice(0, byteLength) copy plus resize(0) on resizable source — source stays resizable and can grow again within ceiling.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

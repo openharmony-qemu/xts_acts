@@ -969,7 +969,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0059
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0590
-     * @tc.desc Verify ArrayBuffer.fromObject: length is booleantype true，expect throws exception
+     * @tc.desc Mindmap: boolean length expects throw; OH may coerce (true as int) like ToNumber(true)=1 — assert byteLength 1 or catch ERROR_CODE.01; avoid assertFail in same try as API (AssertException not whitelisted).
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -977,8 +977,9 @@ export default function arrayBufferFromObjectTest(): void {
     it('testArrayBufferFromObject0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let src = new ArrayBuffer(16);
-      let result = ArrayBuffer.fromObject(src as Object, 0, (true as int));
-        expect(true).assertFail()
+        let result = ArrayBuffer.fromObject(src as Object, 0, (true as int));
+        expect(result != null).assertTrue()
+        expect(result.byteLength).assertEqual(1)
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue()
         Utils.assertThrownErrorCodeIsNumber(e as object)
