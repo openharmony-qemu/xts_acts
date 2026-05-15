@@ -18,8 +18,8 @@ function sleep(time: number) {
   return new Promise<void>((resolve) => setTimeout(resolve, time));
 }
 
-export default function ArrayCombinationCollectionsTest2() {
-  describe('ArrayCombinationCollectionsTest2', (): void => {
+export default function BuiltinsArrayCombinationSecondTest() {
+  describe('BuiltinsArrayCombinationSecondTest', (): void => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -42,63 +42,66 @@ export default function ArrayCombinationCollectionsTest2() {
     })
 
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2001
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2001
+     * @tc.name   builtinsArrayCombinationSecondTest0100
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_0100
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2001';
+    it('builtinsArrayCombinationSecondTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest0100';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3]);
       const result = arr.concat(collections.Array.from([4, 5])).slice(1, 4);
       expect(result).assertDeepEquals(collections.Array.from([2, 3, 4]));
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2002
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2002
+     * @tc.name   builtinsArrayCombinationSecondTest0200
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_0200
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2002';
+    it('builtinsArrayCombinationSecondTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest0200';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([10, 20, 30, 40]);
       const result = arr.slice(1, 3).concat(collections.Array.from([50, 60]));
       expect(result).assertDeepEquals(collections.Array.from([20, 30, 50, 60]));
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2003
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2003
+     * @tc.name   builtinsArrayCombinationSecondTest0300
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_0300
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2003';
+    it('builtinsArrayCombinationSecondTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest0300';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2]);
       const result = arr.concat(collections.Array.from([3])).concat(collections.Array.from([4, 5]));
       expect(result).assertDeepEquals(collections.Array.from([1, 2, 3, 4, 5]));
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2004
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2004
+     * @tc.name   builtinsArrayCombinationSecondTest0400
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_0400
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2004';
+    it('builtinsArrayCombinationSecondTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest0400';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([0, 1, 2, 3, 4, 5]);
       const result = arr.slice(1, 5).slice(1, 3);
@@ -109,16 +112,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taResult).assertDeepEquals(collections.Int8Array.from(new Int8Array([2, 3])));
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2005
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2005
+     * @tc.name   builtinsArrayCombinationSecondTest0500
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_0500
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2005';
+    it('builtinsArrayCombinationSecondTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest0500';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3]);
       arr.push(4);
@@ -131,16 +135,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(sum2).assertEqual(10);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2006
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2006
+     * @tc.name   builtinsArrayCombinationSecondTest0600
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_0600
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2006';
+    it('builtinsArrayCombinationSecondTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest0600';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3, 4]).map(x => x * 2);
       expect(arr).assertDeepEquals(collections.Array.from([2, 4, 6, 8]));
@@ -148,16 +153,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(ta).assertDeepEquals(collections.Int8Array.from(new Int8Array([2, 4, 6, 8])));
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2007
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2007
+     * @tc.name   builtinsArrayCombinationSecondTest0700
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_0700
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2007';
+    it('builtinsArrayCombinationSecondTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest0700';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3, 4, 5]);
       const result = arr.filter(x => x % 2 === 0);
@@ -169,16 +175,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(filtered).assertDeepEquals(collections.Int8Array.from(new Int8Array([2, 4])));
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2008
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2008
+     * @tc.name   builtinsArrayCombinationSecondTest0800
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_0800
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2008';
+    it('builtinsArrayCombinationSecondTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest0800';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3, 4]);
       const result = arr.reduce((a, b) => a + b, 0);
@@ -188,16 +195,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taSum).assertEqual(10);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2009
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2009
+     * @tc.name   builtinsArrayCombinationSecondTest0900
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_0900
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2009';
+    it('builtinsArrayCombinationSecondTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest0900';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3, 4]);
       const result = arr.reduceRight((a, b) => a - b);
@@ -207,16 +215,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taRes).assertEqual(4 - 3 - 2 - 1);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2010
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2010
+     * @tc.name   builtinsArrayCombinationSecondTest1000
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_1000
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2010';
+    it('builtinsArrayCombinationSecondTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest1000';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3, 4]);
       const result = arr.some(x => x > 3);
@@ -226,16 +235,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taResult).assertEqual(true);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2011
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2011
+     * @tc.name   builtinsArrayCombinationSecondTest1100
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_1100
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2011';
+    it('builtinsArrayCombinationSecondTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest1100';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3, 4]);
       const result = arr.every(x => x > 0);
@@ -245,16 +255,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taResult).assertEqual(true);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2012
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2012
+     * @tc.name   builtinsArrayCombinationSecondTest1200
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_1200
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2012';
+    it('builtinsArrayCombinationSecondTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest1200';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3, 4]);
       const val = arr.find(x => x > 2);
@@ -264,16 +275,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taVal).assertEqual(3);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2013
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2013
+     * @tc.name   builtinsArrayCombinationSecondTest1300
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_1300
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2013';
+    it('builtinsArrayCombinationSecondTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest1300';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3, 4]);
       const idx = arr.findIndex(x => x === 3);
@@ -283,16 +295,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taIdx).assertEqual(2);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2014
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2014
+     * @tc.name   builtinsArrayCombinationSecondTest1400
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_1400
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2014';
+    it('builtinsArrayCombinationSecondTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest1400';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3, 4]);
       arr.pop();
@@ -306,16 +319,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(s).assertEqual(6);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2015
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2015
+     * @tc.name   builtinsArrayCombinationSecondTest1500
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_1500
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2015';
+    it('builtinsArrayCombinationSecondTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest1500';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3]);
       arr.pop();
@@ -326,16 +340,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(mapped).assertDeepEquals(collections.Int8Array.from(new Int8Array([2, 4])));
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2016
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2016
+     * @tc.name   builtinsArrayCombinationSecondTest1600
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_1600
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2016';
+    it('builtinsArrayCombinationSecondTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest1600';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3, 4]);
       arr.pop();
@@ -347,16 +362,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(filtered).assertDeepEquals(collections.Int8Array.from(new Int8Array([2])));
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2017
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2017
+     * @tc.name   builtinsArrayCombinationSecondTest1700
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_1700
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2017';
+    it('builtinsArrayCombinationSecondTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest1700';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3, 4]);
       arr.pop();
@@ -367,16 +383,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taRes).assertEqual(6);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2018
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2018
+     * @tc.name   builtinsArrayCombinationSecondTest1800
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_1800
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2018';
+    it('builtinsArrayCombinationSecondTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest1800';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3, 4]);
       arr.pop();
@@ -387,16 +404,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taRes).assertEqual(3 - 2 - 1);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2019
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2019
+     * @tc.name   builtinsArrayCombinationSecondTest1900
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_1900
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2027';
+    it('builtinsArrayCombinationSecondTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest1900';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3]);
       arr.pop();
@@ -407,16 +425,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taRes).assertEqual(false);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2020
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2020
+     * @tc.name   builtinsArrayCombinationSecondTest2000
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_2000
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2028';
+    it('builtinsArrayCombinationSecondTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest2000';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3]);
       arr.pop();
@@ -427,16 +446,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taRes).assertEqual(true);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2021
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2021
+     * @tc.name   builtinsArrayCombinationSecondTest2100
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_2100
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2029';
+    it('builtinsArrayCombinationSecondTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest2100';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3]);
       arr.pop();
@@ -447,16 +467,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taVal).assertEqual(2);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2022
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2022
+     * @tc.name   builtinsArrayCombinationSecondTest2200
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_2200
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2030';
+    it('builtinsArrayCombinationSecondTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest2200';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3]);
       arr.pop();
@@ -467,16 +488,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taIdx).assertEqual(1);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2023
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2023
+     * @tc.name   builtinsArrayCombinationSecondTest2300
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_2300
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2034';
+    it('builtinsArrayCombinationSecondTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest2300';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3, 4]);
       arr.shift();
@@ -490,16 +512,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(total).assertEqual(9);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2024
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2024
+     * @tc.name   builtinsArrayCombinationSecondTest2400
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_2400
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2035';
+    it('builtinsArrayCombinationSecondTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest2400';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3]);
       arr.shift();
@@ -510,16 +533,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taRes).assertDeepEquals(collections.Int8Array.from(new Int8Array([6, 9])));
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2025
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2025
+     * @tc.name   builtinsArrayCombinationSecondTest2500
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_2500
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2036';
+    it('builtinsArrayCombinationSecondTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest2500';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3, 4]);
       arr.shift();
@@ -532,16 +556,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taRes).assertDeepEquals(collections.Int8Array.from(new Int8Array([2, 4])));
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2026
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2026
+     * @tc.name   builtinsArrayCombinationSecondTest2600
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_2600
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2037';
+    it('builtinsArrayCombinationSecondTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest2600';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3, 4]);
       arr.shift();
@@ -552,16 +577,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taSum).assertEqual(9);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2027
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2027
+     * @tc.name   builtinsArrayCombinationSecondTest2700
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_2700
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2038';
+    it('builtinsArrayCombinationSecondTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest2700';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3, 4]);
       arr.shift();
@@ -572,16 +598,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taRes).assertEqual(4 - 3 - 2);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2028
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2028
+     * @tc.name   builtinsArrayCombinationSecondTest2800
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_2800
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2039';
+    it('builtinsArrayCombinationSecondTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest2800';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3]);
       arr.shift();
@@ -592,16 +619,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taRes).assertEqual(true);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2029
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2029
+     * @tc.name   builtinsArrayCombinationSecondTest2900
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_2900
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2040';
+    it('builtinsArrayCombinationSecondTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest2900';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3]);
       arr.shift();
@@ -612,16 +640,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taRes).assertEqual(true);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2030
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2030
+     * @tc.name   builtinsArrayCombinationSecondTest3000
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_3000
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2041';
+    it('builtinsArrayCombinationSecondTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest3000';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3, 4]);
       arr.shift();
@@ -632,16 +661,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taVal).assertEqual(3);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2031
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2031
+     * @tc.name   builtinsArrayCombinationSecondTest3100
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_3100
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2042';
+    it('builtinsArrayCombinationSecondTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest3100';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3]);
       arr.shift();
@@ -652,16 +682,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taIdx).assertEqual(0);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2032
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2032
+     * @tc.name   builtinsArrayCombinationSecondTest3200
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_3200
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2046';
+    it('builtinsArrayCombinationSecondTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest3200';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([2, 3, 4]);
       arr.unshift(1);
@@ -671,16 +702,17 @@ export default function ArrayCombinationCollectionsTest2() {
 
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2033
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2033
+     * @tc.name   builtinsArrayCombinationSecondTest3300
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_3300
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2047';
+    it('builtinsArrayCombinationSecondTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest3300';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([2, 3]);
       arr.unshift(1);
@@ -689,16 +721,17 @@ export default function ArrayCombinationCollectionsTest2() {
 
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2034
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2034
+     * @tc.name   builtinsArrayCombinationSecondTest3400
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_3400
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2048';
+    it('builtinsArrayCombinationSecondTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest3400';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([2, 3, 4]);
       arr.unshift(1);
@@ -708,80 +741,85 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(res[1]).assertDeepEquals(4);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2035
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2035
+     * @tc.name   builtinsArrayCombinationSecondTest3500
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_3500
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2049';
+    it('builtinsArrayCombinationSecondTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest3500';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([2, 3, 4]);
       arr.unshift(1);
       const sum = arr.reduce((a, b) => a + b, 0);
       expect(sum).assertEqual(10);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2036
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2036
+     * @tc.name   builtinsArrayCombinationSecondTest3600
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_3600
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2050';
+    it('builtinsArrayCombinationSecondTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest3600';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([3, 4]);
       arr.unshift(1, 2);
       const res = arr.reduceRight((a, b) => a - b);
       expect(res).assertEqual(-2);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2037
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2037
+     * @tc.name   builtinsArrayCombinationSecondTest3700
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_3700
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2051';
+    it('builtinsArrayCombinationSecondTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest3700';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([2, 3]);
       arr.unshift(1);
       const hasEven = arr.some(x => x % 2 === 0);
       expect(hasEven).assertEqual(true);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2038
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2038
+     * @tc.name   builtinsArrayCombinationSecondTest3800
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_3800
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2052';
+    it('builtinsArrayCombinationSecondTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest3800';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([2, 4]);
       arr.unshift(6);
       const allEven = arr.every(x => x % 2 === 0);
       expect(allEven).assertEqual(true);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2039
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2039
+     * @tc.name   builtinsArrayCombinationSecondTest3900
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_3900
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2053';
+    it('builtinsArrayCombinationSecondTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest3900';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([3, 5, 7]);
       arr.unshift(2);
@@ -790,16 +828,17 @@ export default function ArrayCombinationCollectionsTest2() {
 
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2040
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2040
+     * @tc.name   builtinsArrayCombinationSecondTest4000
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_4000
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2054';
+    it('builtinsArrayCombinationSecondTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest4000';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([2, 4, 5]);
       arr.unshift(1);
@@ -808,16 +847,17 @@ export default function ArrayCombinationCollectionsTest2() {
 
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2041
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2041
+     * @tc.name   builtinsArrayCombinationSecondTest4100
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_4100
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2058';
+    it('builtinsArrayCombinationSecondTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest4100';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3, 4]);
       arr.splice(1, 2, 9, 10);
@@ -826,32 +866,34 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(sum).assertEqual(24);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2042
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2042
+     * @tc.name   builtinsArrayCombinationSecondTest4200
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_4200
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2059';
+    it('builtinsArrayCombinationSecondTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest4200';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3, 4]);
       const mapped = arr.splice(2, 1, 9).map(x => x * 2);
       expect(mapped).assertDeepEquals(collections.Array.from([6]));
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2043
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2043
+     * @tc.name   builtinsArrayCombinationSecondTest4300
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_4300
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2060';
+    it('builtinsArrayCombinationSecondTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest4300';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3, 4]);
       arr.splice(1, 1, 10);
@@ -861,16 +903,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(res[1]).assertDeepEquals(4);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2044
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2044
+     * @tc.name   builtinsArrayCombinationSecondTest4400
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_4400
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2061';
+    it('builtinsArrayCombinationSecondTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest4400';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3]);
       arr.splice(1, 1, 5);
@@ -878,16 +921,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(sum).assertEqual(9);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2045
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2045
+     * @tc.name   builtinsArrayCombinationSecondTest4500
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_4500
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2062';
+    it('builtinsArrayCombinationSecondTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest4500';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3]);
       arr.splice(0, 1, 9);
@@ -895,16 +939,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(diff).assertEqual(-8);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2046
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2046
+     * @tc.name   builtinsArrayCombinationSecondTest4600
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_4600
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2063';
+    it('builtinsArrayCombinationSecondTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest4600';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3]);
       arr.splice(1, 1, 10);
@@ -912,16 +957,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(hasEven).assertEqual(true);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2047
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2047
+     * @tc.name   builtinsArrayCombinationSecondTest4700
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_4700
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2064';
+    it('builtinsArrayCombinationSecondTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest4700';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([2, 4, 6]);
       arr.splice(1, 1, 8);
@@ -929,16 +975,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(allEven).assertEqual(true);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2048
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2048
+     * @tc.name   builtinsArrayCombinationSecondTest4800
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_4800
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2065';
+    it('builtinsArrayCombinationSecondTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest4800';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3]);
       arr.splice(0, 1, 5);
@@ -946,16 +993,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(res).assertEqual(5);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2049
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2049
+     * @tc.name   builtinsArrayCombinationSecondTest4900
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_4900
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2066';
+    it('builtinsArrayCombinationSecondTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest4900';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3]);
       arr.splice(1, 1, 9);
@@ -963,16 +1011,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(idx).assertEqual(1);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2050
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2050
+     * @tc.name   builtinsArrayCombinationSecondTest5000
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_5000
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2070';
+    it('builtinsArrayCombinationSecondTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest5000';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([3, 1, 2]);
       arr.sort((a, b) => a - b);
@@ -989,16 +1038,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(ta).assertDeepEquals(collections.Int8Array.from(new Int8Array([-1, 0, 1])));
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2051
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2051
+     * @tc.name   builtinsArrayCombinationSecondTest5100
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_5100
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2071';
+    it('builtinsArrayCombinationSecondTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest5100';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([3, 1, 2]);
       const res = arr.sort().map(x => x * 2);
@@ -1009,16 +1059,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(resTA).assertDeepEquals(collections.Int8Array.from(new Int8Array([2, 4, 6])));
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2052
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2052
+     * @tc.name   builtinsArrayCombinationSecondTest5200
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_5200
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2072';
+    it('builtinsArrayCombinationSecondTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest5200';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([4, 1, 3, 2]);
       const res = arr.sort().filter(x => x > 2);
@@ -1031,16 +1082,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(resTA).assertDeepEquals(collections.Int8Array.from(new Int8Array([3, 4])));
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2053
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2053
+     * @tc.name   builtinsArrayCombinationSecondTest5300
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_5300
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2073';
+    it('builtinsArrayCombinationSecondTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest5300';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([5, 1, 4]);
       const sum = arr.sort().reduce((a, b) => a + b, 0);
@@ -1051,16 +1103,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(sumTA).assertEqual(10);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2054
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2054
+     * @tc.name   builtinsArrayCombinationSecondTest5400
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_5400
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2074';
+    it('builtinsArrayCombinationSecondTest5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest5400';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([2, 1, 3]);
       const res = arr.sort().reduceRight((a, b) => a - b);
@@ -1071,16 +1124,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(resTA).assertEqual(0);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2055
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2055
+     * @tc.name   builtinsArrayCombinationSecondTest5500
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_5500
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2075';
+    it('builtinsArrayCombinationSecondTest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest5500';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([3, 2, 1]);
       const res = arr.sort().some(x => x === 2);
@@ -1091,16 +1145,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(resTA).assertEqual(true);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2056
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2056
+     * @tc.name   builtinsArrayCombinationSecondTest5600
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_5600
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2076';
+    it('builtinsArrayCombinationSecondTest5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest5600';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3]);
       const res = arr.sort().every(x => x < 5);
@@ -1111,16 +1166,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(resTA).assertEqual(true);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2057
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2057
+     * @tc.name   builtinsArrayCombinationSecondTest5700
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_5700
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2077';
+    it('builtinsArrayCombinationSecondTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest5700';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([3, 1, 4]);
       const res = arr.sort().find(x => x > 2);
@@ -1131,16 +1187,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(resTA).assertEqual(3);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2058
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2058
+     * @tc.name   builtinsArrayCombinationSecondTest5800
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_5800
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2078';
+    it('builtinsArrayCombinationSecondTest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest5800';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([3, 1, 2]);
       const res = arr.sort().findIndex(x => x === 2);
@@ -1151,16 +1208,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(resTA).assertEqual(1);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2059
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2059
+     * @tc.name   builtinsArrayCombinationSecondTest5900
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_5900
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2082';
+    it('builtinsArrayCombinationSecondTest5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest5900';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3]);
       let res: number[] = [];
@@ -1173,16 +1231,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taRes).assertDeepEquals([3, 2, 1]);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2060
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2060
+     * @tc.name   builtinsArrayCombinationSecondTest6000
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_6000
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2083';
+    it('builtinsArrayCombinationSecondTest6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest6000';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3]);
       const res = arr.reverse().map(v => v * 2);
@@ -1193,16 +1252,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(resTA).assertDeepEquals(collections.Int8Array.from(new Int8Array([6, 4, 2])));
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2061
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2061
+     * @tc.name   builtinsArrayCombinationSecondTest6100
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_6100
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2084';
+    it('builtinsArrayCombinationSecondTest6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest6100';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3, 4]);
       const res = arr.reverse().filter(v => v % 2 === 0);
@@ -1215,16 +1275,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(resTA).assertDeepEquals(collections.Int8Array.from(new Int8Array([4, 2])));
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2062
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2062
+     * @tc.name   builtinsArrayCombinationSecondTest6200
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_6200
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2085';
+    it('builtinsArrayCombinationSecondTest6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest6200';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3]);
       const sum = arr.reverse().reduce((a, b) => a + b, 0);
@@ -1235,16 +1296,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taSum).assertEqual(6);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2063
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2063
+     * @tc.name   builtinsArrayCombinationSecondTest6300
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_6300
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2086';
+    it('builtinsArrayCombinationSecondTest6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest6300';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3]);
       const diff = arr.reverse().reduceRight((a, b) => a - b);
@@ -1255,16 +1317,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(diffTA).assertEqual(-4);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2064
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2064
+     * @tc.name   builtinsArrayCombinationSecondTest6400
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_6400
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2087';
+    it('builtinsArrayCombinationSecondTest6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest6400';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3]);
       const res = arr.reverse().some(v => v > 2);
@@ -1275,16 +1338,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(resTA).assertEqual(true);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2065
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2065
+     * @tc.name   builtinsArrayCombinationSecondTest6500
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_6500
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2088';
+    it('builtinsArrayCombinationSecondTest6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest6500';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([2, 4, 6]);
       const res = arr.reverse().every(v => v % 2 === 0);
@@ -1295,16 +1359,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(resTA).assertEqual(true);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2066
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2066
+     * @tc.name   builtinsArrayCombinationSecondTest6600
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_6600
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2089';
+    it('builtinsArrayCombinationSecondTest6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest6600';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3]);
       const res = arr.reverse().find(v => v < 3);
@@ -1315,16 +1380,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(resTA).assertEqual(2);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2067
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2067
+     * @tc.name   builtinsArrayCombinationSecondTest6700
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_6700
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2090';
+    it('builtinsArrayCombinationSecondTest6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest6700';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3]);
       const idx = arr.reverse().findIndex(v => v === 1);
@@ -1335,16 +1401,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(idxTA).assertEqual(2);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2068
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2068
+     * @tc.name   builtinsArrayCombinationSecondTest6800
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_6800
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2094';
+    it('builtinsArrayCombinationSecondTest6800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest6800';
       console.info(`${caseName}, test start`);
       let arr = collections.Array.from([1, 2, 3, 4, 5]);
       let result: number[] = [];
@@ -1357,16 +1424,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taResult).assertDeepEquals([4, 5, 3, 4, 5]);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2069
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2069
+     * @tc.name   builtinsArrayCombinationSecondTest6900
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_6900
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2095';
+    it('builtinsArrayCombinationSecondTest6900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest6900';
       console.info(`${caseName}, test start`);
       let arr = collections.Array.from([1, 2, 3, 4, 5]);
       let mapped = arr.copyWithin(1, 2).map(x => x * 2);
@@ -1377,16 +1445,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taMapped).assertDeepEquals(collections.Int8Array.from(new Int8Array([2, 6, 8, 10, 10])));
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2070
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2070
+     * @tc.name   builtinsArrayCombinationSecondTest7000
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_7000
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2096';
+    it('builtinsArrayCombinationSecondTest7000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest7000';
       console.info(`${caseName}, test start`);
       let arr = collections.Array.from([1, 2, 3, 4, 5]);
       let filtered = arr.copyWithin(2, 0).filter(x => x > 2);
@@ -1398,16 +1467,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taFiltered).assertDeepEquals(collections.Int8Array.from(new Int8Array([3])));
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2071
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2071
+     * @tc.name   builtinsArrayCombinationSecondTest7100
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_7100
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2097';
+    it('builtinsArrayCombinationSecondTest7100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest7100';
       console.info(`${caseName}, test start`);
       let arr = collections.Array.from([1, 2, 3, 4]);
       let sum = arr.copyWithin(1, 2).reduce((a, b) => a + b, 0);
@@ -1418,16 +1488,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taSum).assertEqual(12);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2072
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2072
+     * @tc.name   builtinsArrayCombinationSecondTest7200
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_7200
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2098';
+    it('builtinsArrayCombinationSecondTest7200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest7200';
       console.info(`${caseName}, test start`);
       let arr = collections.Array.from([1, 2, 3, 4]);
       let res = arr.copyWithin(0, 2).reduceRight((a, b) => a - b, 0);
@@ -1438,16 +1509,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taRes).assertEqual((((0 - 4) - 3) - 3) - 4);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2073
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2073
+     * @tc.name   builtinsArrayCombinationSecondTest7300
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_7300
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2099';
+    it('builtinsArrayCombinationSecondTest7300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest7300';
       console.info(`${caseName}, test start`);
       let arr = collections.Array.from([1, 2, 3, 4]);
       let res = arr.copyWithin(0, 2).some(x => x === 3);
@@ -1458,16 +1530,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taRes).assertEqual(true);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2074
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2074
+     * @tc.name   builtinsArrayCombinationSecondTest7400
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_7400
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2100';
+    it('builtinsArrayCombinationSecondTest7400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest7400';
       console.info(`${caseName}, test start`);
       let arr = collections.Array.from([2, 4, 6]);
       let res = arr.copyWithin(1, 2).every(x => x % 2 === 0);
@@ -1480,15 +1553,15 @@ export default function ArrayCombinationCollectionsTest2() {
     });
 
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2075
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2075
+     * @tc.name   builtinsArrayCombinationSecondTest7500
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_7500
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2101';
+    it('builtinsArrayCombinationSecondTest7500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest7500';
       console.info(`${caseName}, test start`);
       let arr = collections.Array.from([1, 2, 3, 4]);
       let found = arr.copyWithin(0, 2).find(x => x === 3);
@@ -1499,16 +1572,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taFound).assertEqual(3);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2076
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2076
+     * @tc.name   builtinsArrayCombinationSecondTest7600
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_7600
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2102';
+    it('builtinsArrayCombinationSecondTest7600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest7600';
       console.info(`${caseName}, test start`);
       let arr = collections.Array.from([1, 2, 3, 4]);
       let idx = arr.copyWithin(1, 2).findIndex(x => x === 4);
@@ -1519,16 +1593,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taIdx).assertEqual(2);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2077
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2077
+     * @tc.name   builtinsArrayCombinationSecondTest7700
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_7700
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2106';
+    it('builtinsArrayCombinationSecondTest7700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest7700';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3, 4]);
       let res: number[] = [];
@@ -1543,15 +1618,15 @@ export default function ArrayCombinationCollectionsTest2() {
     });
 
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2078
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2078
+     * @tc.name   builtinsArrayCombinationSecondTest7800
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_7800
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2108';
+    it('builtinsArrayCombinationSecondTest7800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest7800';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3, 4]);
       const filtered = arr.fill(3, 0, 2).filter(x => x === 3);
@@ -1565,16 +1640,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taFiltered).assertDeepEquals(collections.Int8Array.from(new Int8Array([3, 3, 3])));
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2079
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2079
+     * @tc.name   builtinsArrayCombinationSecondTest7900
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_7900
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2109';
+    it('builtinsArrayCombinationSecondTest7900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest7900';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3]);
       const sum = arr.fill(2).reduce((a, b) => a + b, 0);
@@ -1585,16 +1661,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taSum).assertEqual(6);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2080
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2080
+     * @tc.name   builtinsArrayCombinationSecondTest8000
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_8000
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2110';
+    it('builtinsArrayCombinationSecondTest8000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest8000';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3]);
       const diff = arr.fill(2).reduceRight((a, b) => a - b);
@@ -1605,16 +1682,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taDiff).assertEqual(-2);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2081
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2081
+     * @tc.name   builtinsArrayCombinationSecondTest8100
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_8100
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2111';
+    it('builtinsArrayCombinationSecondTest8100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest8100';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3]);
       const hasThree = arr.fill(3).some(x => x === 3);
@@ -1625,16 +1703,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taHasThree).assertEqual(true);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2082
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2082
+     * @tc.name   builtinsArrayCombinationSecondTest8200
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_8200
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2112';
+    it('builtinsArrayCombinationSecondTest8200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest8200';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3]);
       const allThree = arr.fill(3).every(x => x === 3);
@@ -1645,16 +1724,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taAllThree).assertEqual(true);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2083
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2083
+     * @tc.name   builtinsArrayCombinationSecondTest8300
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_8300
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2113';
+    it('builtinsArrayCombinationSecondTest8300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest8300';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3]);
       const found = arr.fill(2).find(x => x === 2);
@@ -1665,16 +1745,17 @@ export default function ArrayCombinationCollectionsTest2() {
       expect(taFound).assertEqual(2);
       console.info(`${caseName}, test end`);
     });
+
     /**
-     * @tc.name   ArrayCombinationCollectionsTest2084
-     * @tc.number BUILTINS_ARRAY_COMBINATION_COLLECTIONS_TEST2084
+     * @tc.name   builtinsArrayCombinationSecondTest8400
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_SECOND_TEST_8400
      * @tc.desc   Test Method Combination in Shared Array/TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ArrayCombinationCollectionsTest2084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'ArrayCombinationCollectionsTest2114';
+    it('builtinsArrayCombinationSecondTest8400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationSecondTest8400';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.from([1, 2, 3]);
       const idx = arr.fill(4).findIndex(x => x === 4);

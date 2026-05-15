@@ -33,8 +33,8 @@ class BaseClass1{
   }
 }
 
-export default function SetClearCollectionsTest() {
-  describe('SetClearCollectionsTest', () => {
+export default function BuiltinsSetClearTest() {
+  describe('BuiltinsSetClearTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -57,15 +57,15 @@ export default function SetClearCollectionsTest() {
     })
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_0100
-     * @tc.name builtinsAsyncLockConstructorTest0100
-     * @tc.desc Clear non-empty Set with string elements, verify size becomes 0
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetClearTest0100
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_0100
+     * @tc.desc    Clear non-empty Set with string elements, verify size becomes 0
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const caseName = 'SetClearCollectionsTest001';
+    it('builtinsSetClearTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetClearTest0100';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>(['a', 'b', 'c']);
       set.clear();
@@ -74,15 +74,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_0200
-     * @tc.name builtinsAsyncLockConstructorTest0200
-     * @tc.desc Clear non-empty Set with number elements, verify elements are removed
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetClearTest0200
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_0200
+     * @tc.desc    Clear non-empty Set with number elements, verify elements are removed
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const caseName = 'SetClearCollectionsTest002';
+    it('builtinsSetClearTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetClearTest0200';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2, 3]);
       set.clear();
@@ -93,15 +93,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_0300
-     * @tc.name builtinsAsyncLockConstructorTest0300
-     * @tc.desc Clear Set with boolean elements, verify size and elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetClearTest0300
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_0300
+     * @tc.desc    Clear Set with boolean elements, verify size and elements
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const caseName = 'SetClearCollectionsTest004';
+    it('builtinsSetClearTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetClearTest0300';
       console.info(`${caseName}, test start`);
       const set: collections.Set<boolean> = new collections.Set<boolean>([true, false, true]);
       set.clear();
@@ -112,15 +112,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_0400
-     * @tc.name builtinsAsyncLockConstructorTest0400
-     * @tc.desc Clear Set with null and undefined, verify removal
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetClearTest0400
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_0400
+     * @tc.desc    Clear Set with null and undefined, verify removal
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const caseName = 'SetClearCollectionsTest005';
+    it('builtinsSetClearTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetClearTest0400';
       console.info(`${caseName}, test start`);
       const set: collections.Set<null | undefined> = new collections.Set<null | undefined>([null, undefined, null]);
       set.clear();
@@ -131,15 +131,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_0500
-     * @tc.name builtinsAsyncLockConstructorTest0500
-     * @tc.desc Clear Set with single element, verify size becomes 0
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetClearTest0500
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_0500
+     * @tc.desc    Clear Set with single element, verify size becomes 0
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const caseName = 'SetClearCollectionsTest006';
+    it('builtinsSetClearTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetClearTest0500';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>(['only-element']);
       set.clear();
@@ -149,15 +149,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_0600
-     * @tc.name builtinsAsyncLockConstructorTest0600
-     * @tc.desc Clear Set with NaN (special equality), verify removal
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetClearTest0600
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_0600
+     * @tc.desc    Clear Set with NaN (special equality), verify removal
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const caseName = 'SetClearCollectionsTest007';
+    it('builtinsSetClearTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetClearTest0600';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([NaN, 1, NaN]);
       set.clear();
@@ -167,15 +167,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_0700
-     * @tc.name builtinsAsyncLockConstructorTest0700
-     * @tc.desc Clear Set with 0 and -0, verify removal
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetClearTest0700
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_0700
+     * @tc.desc    Clear Set with 0 and -0, verify removal
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const caseName = 'SetClearCollectionsTest008';
+    it('builtinsSetClearTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetClearTest0700';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([0, -0, 100]);
       set.clear();
@@ -186,15 +186,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_0800
-     * @tc.name builtinsAsyncLockConstructorTest0800
-     * @tc.desc Clear Set with BigInt elements, verify removal
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetClearTest0800
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_0800
+     * @tc.desc    Clear Set with BigInt elements, verify removal
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const caseName = 'SetClearCollectionsTest010';
+    it('builtinsSetClearTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetClearTest0800';
       console.info(`${caseName}, test start`);
       const set: collections.Set<bigint> = new collections.Set<bigint>([100n, 200n, 100n]);
       set.clear();
@@ -205,15 +205,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_0900
-     * @tc.name builtinsAsyncLockConstructorTest0900
-     * @tc.desc Call clear() on empty Set (no side effects)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.name    builtinsSetClearTest0900
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_0900
+     * @tc.desc    Call clear() on empty Set (no side effects)
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL2
      */
-    it('builtinsAsyncLockConstructorTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
-      const caseName = 'SetClearCollectionsTest011';
+    it('builtinsSetClearTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'builtinsSetClearTest0900';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>();
       set.clear();
@@ -222,15 +222,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_1000
-     * @tc.name builtinsAsyncLockConstructorTest1000
-     * @tc.desc Clear Set with large number of elements (1000 elements)
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.name    builtinsSetClearTest1000
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_1000
+     * @tc.desc    Clear Set with large number of elements (1000 elements)
+     * @tc.type    Function
+     * @tc.size    LargeTest
+     * @tc.level   LEVEL2
      */
-    it('builtinsAsyncLockConstructorTest1000', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, (): void => {
-      const caseName = 'SetClearCollectionsTest012';
+    it('builtinsSetClearTest1000', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, (): void => {
+      const caseName = 'builtinsSetClearTest1000';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>();
       for (let i = 0; i < 1000; i++) {
@@ -244,15 +244,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_1100
-     * @tc.name builtinsAsyncLockConstructorTest1100
-     * @tc.desc Call clear() twice on non-empty Set (no extra effects)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.name    builtinsSetClearTest1100
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_1100
+     * @tc.desc    Call clear() twice on non-empty Set (no extra effects)
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL2
      */
-    it('builtinsAsyncLockConstructorTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
-      const caseName = 'SetClearCollectionsTest013';
+    it('builtinsSetClearTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'builtinsSetClearTest1100';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2, 3]);
       set.clear();
@@ -266,15 +266,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_1200
-     * @tc.name builtinsAsyncLockConstructorTest1200
-     * @tc.desc Clear Set created from another Set, verify removal
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.name    builtinsSetClearTest1200
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_1200
+     * @tc.desc    Clear Set created from another Set, verify removal
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL2
      */
-    it('builtinsAsyncLockConstructorTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
-      const caseName = 'SetClearCollectionsTest019';
+    it('builtinsSetClearTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'builtinsSetClearTest1200';
       console.info(`${caseName}, test start`);
       const originalSet: collections.Set<number> = new collections.Set<number>([1, 2, 3]);
       const newSet: collections.Set<number> = new collections.Set<number>(originalSet);
@@ -286,15 +286,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_1300
-     * @tc.name builtinsAsyncLockConstructorTest1300
-     * @tc.desc Clear Set created from array, verify removal
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.name    builtinsSetClearTest1300
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_1300
+     * @tc.desc    Clear Set created from array, verify removal
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL2
      */
-    it('builtinsAsyncLockConstructorTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
-      const caseName = 'SetClearCollectionsTest020';
+    it('builtinsSetClearTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'builtinsSetClearTest1300';
       console.info(`${caseName}, test start`);
       const arr: number[] = [1, 2, 3];
       const set: collections.Set<number> = new collections.Set<number>(arr);
@@ -305,15 +305,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_1400
-     * @tc.name builtinsAsyncLockConstructorTest1400
-     * @tc.desc Add new elements after clear(), verify normal addition
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name    builtinsSetClearTest1400
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_1400
+     * @tc.desc    Add new elements after clear(), verify normal addition
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL3
      */
-    it('builtinsAsyncLockConstructorTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
-      const caseName = 'SetClearCollectionsTest021';
+    it('builtinsSetClearTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      const caseName = 'builtinsSetClearTest1400';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2]);
       set.clear();
@@ -328,15 +328,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_1500
-     * @tc.name builtinsAsyncLockConstructorTest1500
-     * @tc.desc Verify iterator has no elements after clear()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name    builtinsSetClearTest1500
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_1500
+     * @tc.desc    Verify iterator has no elements after clear()
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL3
      */
-    it('builtinsAsyncLockConstructorTest1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
-      const caseName = 'SetClearCollectionsTest022';
+    it('builtinsSetClearTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      const caseName = 'builtinsSetClearTest1500';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2, 3]);
       set.clear();
@@ -350,15 +350,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_1600
-     * @tc.name builtinsAsyncLockConstructorTest1600
-     * @tc.desc Multiple references to same Set, clear() affects all references
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name    builtinsSetClearTest1600
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_1600
+     * @tc.desc    Multiple references to same Set, clear() affects all references
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL3
      */
-    it('builtinsAsyncLockConstructorTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
-      const caseName = 'SetClearCollectionsTest023';
+    it('builtinsSetClearTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      const caseName = 'builtinsSetClearTest1600';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2]);
       const ref1 = set;
@@ -373,15 +373,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_1700
-     * @tc.name builtinsAsyncLockConstructorTest1700
-     * @tc.desc Clear Set with nested Set elements, verify removal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name    builtinsSetClearTest1700
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_1700
+     * @tc.desc    Clear Set with nested Set elements, verify removal
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL3
      */
-    it('builtinsAsyncLockConstructorTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-      const caseName = 'SetClearCollectionsTest026';
+    it('builtinsSetClearTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      const caseName = 'builtinsSetClearTest1700';
       console.info(`${caseName}, test start`);
       const innerSet1: collections.Set<number> = new collections.Set<number>([1, 2]);
       const innerSet2: collections.Set<number> = new collections.Set<number>([3, 4]);
@@ -396,15 +396,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_1800
-     * @tc.name builtinsAsyncLockConstructorTest1800
-     * @tc.desc Clear Set and verify forEach has no iterations
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name    builtinsSetClearTest1800
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_1800
+     * @tc.desc    Clear Set and verify forEach has no iterations
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL3
      */
-    it('builtinsAsyncLockConstructorTest1800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
-      const caseName = 'SetClearCollectionsTest027';
+    it('builtinsSetClearTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      const caseName = 'builtinsSetClearTest1800';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2, 3]);
       set.clear();
@@ -419,15 +419,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_1900
-     * @tc.name builtinsAsyncLockConstructorTest1900
-     * @tc.desc Clear Set used in for...of loop (no iterations after clear)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name    builtinsSetClearTest1900
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_1900
+     * @tc.desc    Clear Set used in for...of loop (no iterations after clear)
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL3
      */
-    it('builtinsAsyncLockConstructorTest1900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
-      const caseName = 'SetClearCollectionsTest028';
+    it('builtinsSetClearTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      const caseName = 'builtinsSetClearTest1900';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2, 3]);
       set.clear();
@@ -442,15 +442,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_2000
-     * @tc.name builtinsAsyncLockConstructorTest2000
-     * @tc.desc Comprehensive test: clear() + add() + clear() + add()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name    builtinsSetClearTest2000
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_2000
+     * @tc.desc    Comprehensive test: clear() + add() + clear() + add()
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL3
      */
-    it('builtinsAsyncLockConstructorTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-      const caseName = 'SetClearCollectionsTest030';
+    it('builtinsSetClearTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      const caseName = 'builtinsSetClearTest2000';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>();
 
@@ -470,15 +470,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_2100
-     * @tc.name builtinsAsyncLockConstructorTest2100
-     * @tc.desc Clear Set during iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name    builtinsSetClearTest2100
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_2100
+     * @tc.desc    Clear Set during iteration
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL3
      */
-    it('builtinsAsyncLockConstructorTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-      const caseName = 'SetClearCollectionsTest031';
+    it('builtinsSetClearTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      const caseName = 'builtinsSetClearTest2100';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2, 3, 4, 5]);
       const iterationLogs: number[] = [];
@@ -500,15 +500,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_2200
-     * @tc.name builtinsAsyncLockConstructorTest2200
-     * @tc.desc Clear Set used in Map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name    builtinsSetClearTest2200
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_2200
+     * @tc.desc    Clear Set used in Map
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL3
      */
-    it('builtinsAsyncLockConstructorTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-      const caseName = 'SetClearCollectionsTest061';
+    it('builtinsSetClearTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      const caseName = 'builtinsSetClearTest2200';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2, 3]);
       const map: collections.Map<string, collections.Set<number>> = new collections.Map<string, collections.Set<number>>();
@@ -522,15 +522,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_2300
-     * @tc.name builtinsAsyncLockConstructorTest2300
-     * @tc.desc Clear Set used as key in Map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name    builtinsSetClearTest2300
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_2300
+     * @tc.desc    Clear Set used as key in Map
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL3
      */
-    it('builtinsAsyncLockConstructorTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-      const caseName = 'SetClearCollectionsTest062';
+    it('builtinsSetClearTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      const caseName = 'builtinsSetClearTest2300';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2, 3]);
       const map: collections.Map<collections.Set<number>, string> = new collections.Map<collections.Set<number>, string>();
@@ -545,15 +545,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_2400
-     * @tc.name builtinsAsyncLockConstructorTest2400
-     * @tc.desc Clear Set used in WeakMap
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name    builtinsSetClearTest2400
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_2400
+     * @tc.desc    Clear Set used in WeakMap
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL3
      */
-    it('builtinsAsyncLockConstructorTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-      const caseName = 'SetClearCollectionsTest063';
+    it('builtinsSetClearTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      const caseName = 'builtinsSetClearTest2400';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2, 3]);
       const wm: WeakMap<object, string> = new WeakMap<object, string>();
@@ -567,15 +567,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_2500
-     * @tc.name builtinsAsyncLockConstructorTest2500
-     * @tc.desc Clear Set after converting to array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name    builtinsSetClearTest2500
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_2500
+     * @tc.desc    Clear Set after converting to array
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL3
      */
-    it('builtinsAsyncLockConstructorTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-      const caseName = 'SetClearCollectionsTest064';
+    it('builtinsSetClearTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      const caseName = 'builtinsSetClearTest2500';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2, 3]);
       const arr: number[] = Array.from(set);
@@ -591,15 +591,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_2600
-     * @tc.name builtinsAsyncLockConstructorTest2600
-     * @tc.desc Clear Set used in JSON serialization
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name    builtinsSetClearTest2600
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_2600
+     * @tc.desc    Clear Set used in JSON serialization
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL3
      */
-    it('builtinsAsyncLockConstructorTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-      const caseName = 'SetClearCollectionsTest065';
+    it('builtinsSetClearTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      const caseName = 'builtinsSetClearTest2600';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2, 3]);
 
@@ -616,15 +616,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_2700
-     * @tc.name builtinsAsyncLockConstructorTest2700
-     * @tc.desc Clear Set used in function parameters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name    builtinsSetClearTest2700
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_2700
+     * @tc.desc    Clear Set used in function parameters
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL3
      */
-    it('builtinsAsyncLockConstructorTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-      const caseName = 'SetClearCollectionsTest067';
+    it('builtinsSetClearTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      const caseName = 'builtinsSetClearTest2700';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2, 3]);
 
@@ -634,15 +634,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_2800
-     * @tc.name builtinsAsyncLockConstructorTest2800
-     * @tc.desc Clear Set with elements that throw in getter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name    builtinsSetClearTest2800
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_2800
+     * @tc.desc    Clear Set with elements that throw in getter
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL3
      */
-    it('builtinsAsyncLockConstructorTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-      const caseName = 'SetClearCollectionsTest084';
+    it('builtinsSetClearTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      const caseName = 'builtinsSetClearTest2800';
       console.info(`${caseName}, test start`);
       const maliciousObj = new BaseClass1();
 
@@ -654,15 +654,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_2900
-     * @tc.name builtinsAsyncLockConstructorTest2900
-     * @tc.desc Clear Set multiple times with additions in between
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name    builtinsSetClearTest2900
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_2900
+     * @tc.desc    Clear Set multiple times with additions in between
+     * @tc.type    Function
+     * @tc.size    LargeTest
+     * @tc.level   LEVEL3
      */
-    it('builtinsAsyncLockConstructorTest2900', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
-      const caseName = 'SetClearCollectionsTest074';
+    it('builtinsSetClearTest2900', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
+      const caseName = 'builtinsSetClearTest2900';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>();
       const iterations = 100;
@@ -681,15 +681,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_3000
-     * @tc.name builtinsAsyncLockConstructorTest3000
-     * @tc.desc Clear Set with Unicode characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name    builtinsSetClearTest3000
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_3000
+     * @tc.desc    Clear Set with Unicode characters
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL3
      */
-    it('builtinsAsyncLockConstructorTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-      const caseName = 'SetClearCollectionsTest091';
+    it('builtinsSetClearTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      const caseName = 'builtinsSetClearTest3000';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>([
         'café', 'cafe', 'cafè',
@@ -705,15 +705,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_3100
-     * @tc.name builtinsAsyncLockConstructorTest3100
-     * @tc.desc Clear Set with emojis and special symbols
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name    builtinsSetClearTest3100
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_3100
+     * @tc.desc    Clear Set with emojis and special symbols
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL3
      */
-    it('builtinsAsyncLockConstructorTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-      const caseName = 'SetClearCollectionsTest092';
+    it('builtinsSetClearTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      const caseName = 'builtinsSetClearTest3100';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>([
         '😊', '😂', '😍', '👍', '❤️',
@@ -729,15 +729,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_3200
-     * @tc.name builtinsAsyncLockConstructorTest3200
-     * @tc.desc Clear Set with bidirectional text characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name    builtinsSetClearTest3200
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_3200
+     * @tc.desc    Clear Set with bidirectional text characters
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL3
      */
-    it('builtinsAsyncLockConstructorTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-      const caseName = 'SetClearCollectionsTest093';
+    it('builtinsSetClearTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      const caseName = 'builtinsSetClearTest3200';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>([
         'א', 'ב', 'ג',
@@ -753,15 +753,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_3300
-     * @tc.name builtinsAsyncLockConstructorTest3300
-     * @tc.desc Clear Set with zero-width characters
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name    builtinsSetClearTest3300
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_3300
+     * @tc.desc    Clear Set with zero-width characters
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL3
      */
-    it('builtinsAsyncLockConstructorTest3300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
-      const caseName = 'SetClearCollectionsTest094';
+    it('builtinsSetClearTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      const caseName = 'builtinsSetClearTest3300';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>([
         '\u200B',
@@ -778,15 +778,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_3400
-     * @tc.name builtinsAsyncLockConstructorTest3400
-     * @tc.desc Clear Set with control characters
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name    builtinsSetClearTest3400
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_3400
+     * @tc.desc    Clear Set with control characters
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL3
      */
-    it('builtinsAsyncLockConstructorTest3400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
-      const caseName = 'SetClearCollectionsTest095';
+    it('builtinsSetClearTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      const caseName = 'builtinsSetClearTest3400';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>([
         '\0',
@@ -804,15 +804,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_3500
-     * @tc.name builtinsAsyncLockConstructorTest3500
-     * @tc.desc Clear Set with mathematical symbols
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name    builtinsSetClearTest3500
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_3500
+     * @tc.desc    Clear Set with mathematical symbols
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL3
      */
-    it('builtinsAsyncLockConstructorTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-      const caseName = 'SetClearCollectionsTest096';
+    it('builtinsSetClearTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      const caseName = 'builtinsSetClearTest3500';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>([
         '∀', '∂', '∑', '∏', '√', '∞',
@@ -828,15 +828,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_3600
-     * @tc.name builtinsAsyncLockConstructorTest3600
-     * @tc.desc Clear Set with rare Unicode planes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name    builtinsSetClearTest3600
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_3600
+     * @tc.desc    Clear Set with rare Unicode planes
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL3
      */
-    it('builtinsAsyncLockConstructorTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-      const caseName = 'SetClearCollectionsTest097';
+    it('builtinsSetClearTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      const caseName = 'builtinsSetClearTest3600';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>([
         '𝌆',
@@ -855,15 +855,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_3700
-     * @tc.name builtinsAsyncLockConstructorTest3700
-     * @tc.desc Clear Set with mixed direction text
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name    builtinsSetClearTest3700
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_3700
+     * @tc.desc    Clear Set with mixed direction text
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL3
      */
-    it('builtinsAsyncLockConstructorTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-      const caseName = 'SetClearCollectionsTest098';
+    it('builtinsSetClearTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      const caseName = 'builtinsSetClearTest3700';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>([
         'Hello א',
@@ -880,15 +880,15 @@ export default function SetClearCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_3800
-     * @tc.name builtinsAsyncLockConstructorTest3800
-     * @tc.desc Clear Set with surrogate pairs
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.name    builtinsSetClearTest3800
+     * @tc.number  SUB_BUILTINS_SET_CLEAR_TEST_3800
+     * @tc.desc    Clear Set with surrogate pairs
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL3
      */
-    it('builtinsAsyncLockConstructorTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-      const caseName = 'SetClearCollectionsTest099';
+    it('builtinsSetClearTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      const caseName = 'builtinsSetClearTest3800';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>([
         'A\uD83D\uDE00B',

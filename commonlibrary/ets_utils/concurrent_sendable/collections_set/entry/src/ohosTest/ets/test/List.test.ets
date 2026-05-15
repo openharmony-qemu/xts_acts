@@ -13,34 +13,34 @@
  * limitations under the License.
  */
 
-import SetCollectionsTest from "./SetCollectionsTest.test";
-import SetAddCollectionsTest from "./SetAddCollectionsTest.test";
-import SetClearCollectionsTest from "./SetClearCollectionsTest.test";
-import SetConstructorCollectionsTest from "./SetConstructorCollectionsTest.test";
-import SetDeleteCollectionsTest from "./SetDeleteCollectionsTest.test";
-import SetEntriesCollectionsTest from "./SetEntriesCollectionsTest.test";
-import SetForeachCollectionsTest from "./SetForeachCollectionsTest.test";
-import SetFromCollectionsTest from "./SetFromCollectionsTest.test";
-import SetHasCollectionsTest from "./SetHasCollectionsTest.test";
-import SetKeysCollectionsTest from "./SetKeysCollectionsTest.test";
-import SetValuesCollectionsTest from "./SetValuesCollectionsTest.test";
-import SetSizeCollectionsTest from "./SetSizeCollectionsTest.test";
-import SetSymbolIteratorCollectionsTest from './SetSymbolIteratorCollectionsTest.test'
+import BuiltinsSetTest from "./BuiltinsSetTest.test";
+import BuiltinsSetAddTest from "./BuiltinsSetAddTest.test";
+import BuiltinsSetClearTest from "./BuiltinsSetClearTest.test";
+import BuiltinsSetConstructorTest from "./BuiltinsSetConstructorTest.test";
+import BuiltinsSetDeleteTest from "./BuiltinsSetDeleteTest.test";
+import BuiltinsSetEntriesTest from "./BuiltinsSetEntriesTest.test";
+import BuiltinsSetForeachTest from "./BuiltinsSetForeachTest.test";
+import BuiltinsSetFromTest from "./BuiltinsSetFromTest.test";
+import BuiltinsSetHasTest from "./BuiltinsSetHasTest.test";
+import BuiltinsSetKeysTest from "./BuiltinsSetKeysTest.test";
+import BuiltinsSetValuesTest from "./BuiltinsSetValuesTest.test";
+import BuiltinsSetSizeTest from "./BuiltinsSetSizeTest.test";
+import BuiltinsSetSymbolIteratorTest from './BuiltinsSetSymbolIteratorTest.test'
 
 export default function testsuite() {
-  SetCollectionsTest();
-  SetAddCollectionsTest();
-  SetClearCollectionsTest();
-  SetConstructorCollectionsTest();
-  SetDeleteCollectionsTest();
-  SetEntriesCollectionsTest();
-  SetForeachCollectionsTest();
-  SetFromCollectionsTest();
-  SetHasCollectionsTest();
-  SetKeysCollectionsTest();
-  SetValuesCollectionsTest();
-  SetSizeCollectionsTest();
-  SetSymbolIteratorCollectionsTest();
+  BuiltinsSetTest();
+  BuiltinsSetAddTest();
+  BuiltinsSetClearTest();
+  BuiltinsSetConstructorTest();
+  BuiltinsSetDeleteTest();
+  BuiltinsSetEntriesTest();
+  BuiltinsSetForeachTest();
+  BuiltinsSetFromTest();
+  BuiltinsSetHasTest();
+  BuiltinsSetKeysTest();
+  BuiltinsSetValuesTest();
+  BuiltinsSetSizeTest();
+  BuiltinsSetSymbolIteratorTest();
 
 };
 

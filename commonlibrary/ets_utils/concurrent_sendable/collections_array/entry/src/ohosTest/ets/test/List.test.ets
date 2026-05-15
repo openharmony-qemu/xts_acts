@@ -13,14 +13,16 @@
  * limitations under the License.
  */
 
-import ArrayCombinationSharedTest from './ArrayCombinationCollectionsTest.test';
-import ArrayCombinationSharedTest2 from './ArrayCombinationCollectionsTest2.test';
-import ArrayCombinationSharedTest3 from './ArrayCombinationCollectionsTest3.test';
+import BuiltinsArrayCombinationTest from './BuiltinsArrayCombinationTest.test';
+import BuiltinsArrayCombinationSecondTest from './BuiltinsArrayCombinationSecondTest.test';
+import BuiltinsArrayCombinationThirdTest from './BuiltinsArrayCombinationThirdTest.test';
+import BuiltinsArrayCombinationFourthTest from './BuiltinsArrayCombinationFourthTest.test';
 
 export default function testsuite() {
-  ArrayCombinationSharedTest();
-  ArrayCombinationSharedTest2();
-  ArrayCombinationSharedTest3();
-
+  BuiltinsArrayCombinationTest();
+  BuiltinsArrayCombinationSecondTest();
+  BuiltinsArrayCombinationThirdTest();
+  BuiltinsArrayCombinationFourthTest();
+  
 };
 

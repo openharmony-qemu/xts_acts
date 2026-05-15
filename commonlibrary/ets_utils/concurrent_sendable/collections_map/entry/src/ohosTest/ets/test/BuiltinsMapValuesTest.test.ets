@@ -22,8 +22,8 @@ class TestClass {
   public prop: string = 'test';
 }
 
-export default function MapValuesCollectionsTest() {
-  describe('MapValuesCollectionsTest', () => {
+export default function BuiltinsMapValuesTest() {
+  describe('BuiltinsMapValuesTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -46,28 +46,28 @@ export default function MapValuesCollectionsTest() {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_001
-     * @tc.name mapValuesCollectionsTest001
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_0100
+     * @tc.name builtinsMapValuesTest0100
      * @tc.desc Basic functionality: values() of empty Map returns empty array
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapValuesCollectionsTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>();
       const values: string[] = Array.from(map.values());
       expect(values.length).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_002
-     * @tc.name mapValuesCollectionsTest002
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_0200
+     * @tc.name builtinsMapValuesTest0200
      * @tc.desc Basic functionality: values() with single key-value pair
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapValuesCollectionsTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>([[1, 'a']]);
       const values: string[] = Array.from(map.values());
       expect(values.length).assertEqual(1);
@@ -75,14 +75,14 @@ export default function MapValuesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_003
-     * @tc.name mapValuesCollectionsTest003
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_0300
+     * @tc.name builtinsMapValuesTest0300
      * @tc.desc Order preservation: values() maintains insertion order
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapValuesCollectionsTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>([[3, 'c'], [1, 'a'], [2, 'b']]);
       const values: string[] = Array.from(map.values());
       expect(values[0]).assertEqual('c');
@@ -91,14 +91,14 @@ export default function MapValuesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_004
-     * @tc.name mapValuesCollectionsTest004
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_0400
+     * @tc.name builtinsMapValuesTest0400
      * @tc.desc Key override: values() keeps last set value for duplicate keys
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapValuesCollectionsTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>();
       map.set('key', 'old');
       map.set('key', 'new');
@@ -108,28 +108,28 @@ export default function MapValuesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_005
-     * @tc.name mapValuesCollectionsTest005
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_0500
+     * @tc.name builtinsMapValuesTest0500
      * @tc.desc Iterator property: values() returns object with next method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>();
       const iterator: IterableIterator<string> = map.values();
       expect(typeof iterator.next).assertEqual('function');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_006
-     * @tc.name mapValuesCollectionsTest006
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_0600
+     * @tc.name builtinsMapValuesTest0600
      * @tc.desc Iterator traversal: complete value sequence via next()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>([[1, 'x'], [2, 'y']]);
       const iterator: IterableIterator<string> = map.values();
       expect(iterator.next().value).assertEqual('x');
@@ -138,14 +138,14 @@ export default function MapValuesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_007
-     * @tc.name mapValuesCollectionsTest007
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_0700
+     * @tc.name builtinsMapValuesTest0700
      * @tc.desc Consistency: values() match values in entries()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>([[10, 'foo'], [20, 'bar']]);
       const values: string[] = Array.from(map.values());
       const entries: [number, string][] = Array.from(map.entries());
@@ -154,42 +154,42 @@ export default function MapValuesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_008
-     * @tc.name mapValuesCollectionsTest008
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_0800
+     * @tc.name builtinsMapValuesTest0800
      * @tc.desc Consistency: values() match get() results
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>([[5, 'test']]);
       const values: string[] = Array.from(map.values());
       expect(values[0]).assertEqual(map.get(5));
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_009
-     * @tc.name mapValuesCollectionsTest009
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_0900
+     * @tc.name builtinsMapValuesTest0900
      * @tc.desc String keys: values() with string as key
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapValuesCollectionsTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>([['name', 'test']]);
       const values: string[] = Array.from(map.values());
       expect(values[0]).assertEqual('test');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_010
-     * @tc.name mapValuesCollectionsTest010
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_1000
+     * @tc.name builtinsMapValuesTest1000
      * @tc.desc Boolean keys: values() with boolean as key
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapValuesCollectionsTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<boolean, string> = new collections.Map<boolean, string>([[true, 'yes'], [false, 'no']]);
       const values: string[] = Array.from(map.values());
       expect(values[0]).assertEqual('yes');
@@ -197,42 +197,42 @@ export default function MapValuesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_011
-     * @tc.name mapValuesCollectionsTest011
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_1100
+     * @tc.name builtinsMapValuesTest1100
      * @tc.desc Null key: values() with null as key
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<null, string> = new collections.Map<null, string>([[null, 'null value']]);
       const values: string[] = Array.from(map.values());
       expect(values[0]).assertEqual('null value');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_012
-     * @tc.name mapValuesCollectionsTest012
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_1200
+     * @tc.name builtinsMapValuesTest1200
      * @tc.desc Undefined key: values() with undefined as key
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<undefined, string> = new collections.Map<undefined, string>([[undefined, 'undefined value']]);
       const values: string[] = Array.from(map.values());
       expect(values[0]).assertEqual('undefined value');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_013
-     * @tc.name mapValuesCollectionsTest013
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_1300
+     * @tc.name builtinsMapValuesTest1300
      * @tc.type Function
      * @tc.desc Original Map unchanged after values()
      * @tc.size MediumTest
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapValuesCollectionsTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>([[1, 'a']]);
       Array.from(map.values());
       expect(map.size).assertEqual(1);
@@ -240,14 +240,14 @@ export default function MapValuesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_014
-     * @tc.name mapValuesCollectionsTest014
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_1400
+     * @tc.name builtinsMapValuesTest1400
      * @tc.desc Iterator reuse: can traverse multiple times
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>([[1, 'a']]);
       const values1: string[] = Array.from(map.values());
       const values2: string[] = Array.from(map.values());
@@ -255,14 +255,14 @@ export default function MapValuesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_015
-     * @tc.name mapValuesCollectionsTest015
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_1500
+     * @tc.name builtinsMapValuesTest1500
      * @tc.desc New iterator: each values() call returns new iterator
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>();
       const iter1: IterableIterator<string> = map.values();
       const iter2: IterableIterator<string> = map.values();
@@ -270,14 +270,14 @@ export default function MapValuesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_016
-     * @tc.name mapValuesCollectionsTest016
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_1600
+     * @tc.name builtinsMapValuesTest1600
      * @tc.desc for...of loop over values()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>([[1, 'x'], [2, 'y']]);
       const result: string[] = [];
       for (const value of map.values()) {
@@ -288,70 +288,70 @@ export default function MapValuesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_017
-     * @tc.name mapValuesCollectionsTest017
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_1700
+     * @tc.name builtinsMapValuesTest1700
      * @tc.desc values() with NaN as value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, number> = new collections.Map<number, number>([[1, NaN]]);
       const values: number[] = Array.from(map.values());
       expect(values[0] !== values[0]).assertEqual(true);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_018
-     * @tc.name mapValuesCollectionsTest018
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_1800
+     * @tc.name builtinsMapValuesTest1800
      * @tc.desc values() with Infinity as value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, number> = new collections.Map<number, number>([[1, Infinity]]);
       const values: number[] = Array.from(map.values());
       expect(values[0]).assertEqual(Infinity);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_019
-     * @tc.name mapValuesCollectionsTest019
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_1900
+     * @tc.name builtinsMapValuesTest1900
      * @tc.desc values() with -Infinity as value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, number> = new collections.Map<number, number>([[1, -Infinity]]);
       const values: number[] = Array.from(map.values());
       expect(values[0]).assertEqual(-Infinity);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_020
-     * @tc.name mapValuesCollectionsTest020
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_2000
+     * @tc.name builtinsMapValuesTest2000
      * @tc.desc values() with BigInt as value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, bigint> = new collections.Map<number, bigint>([[1, 42n]]);
       const values: bigint[] = Array.from(map.values());
       expect(values[0]).assertEqual(42n);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_021
-     * @tc.name mapValuesCollectionsTest021
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_2100
+     * @tc.name builtinsMapValuesTest2100
      * @tc.desc values() with class instance as value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const instance: TestClass = new TestClass();
       const map: collections.Map<number, TestClass> = new collections.Map<number, TestClass>([[1, instance]]);
       const values: TestClass[] = Array.from(map.values());
@@ -360,14 +360,14 @@ export default function MapValuesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_022
-     * @tc.name mapValuesCollectionsTest022
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_2200
+     * @tc.name builtinsMapValuesTest2200
      * @tc.desc values() after clear()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>([[1, 'a'], [2, 'b']]);
       map.clear();
       const values: string[] = Array.from(map.values());
@@ -375,14 +375,14 @@ export default function MapValuesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_023
-     * @tc.name mapValuesCollectionsTest023
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_2300
+     * @tc.name builtinsMapValuesTest2300
      * @tc.desc values() with numeric zero and negative zero as values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, number> = new collections.Map<number, number>([[1, 0], [2, -0]]);
       const values: number[] = Array.from(map.values());
       expect(values[0]).assertEqual(0);
@@ -392,14 +392,14 @@ export default function MapValuesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_024
-     * @tc.name mapValuesCollectionsTest024
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_2400
+     * @tc.name builtinsMapValuesTest2400
      * @tc.desc values() with empty string as value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>([[1, '']]);
       const values: string[] = Array.from(map.values());
       expect(values[0]).assertEqual('');
@@ -407,14 +407,14 @@ export default function MapValuesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_025
-     * @tc.name mapValuesCollectionsTest025
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_2500
+     * @tc.name builtinsMapValuesTest2500
      * @tc.desc values() with large string as value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let largeStr: string = '';
       for (let i: number = 0; i < 1000; i++) {
         largeStr += 'a';
@@ -426,14 +426,14 @@ export default function MapValuesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_026
-     * @tc.name mapValuesCollectionsTest026
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_2600
+     * @tc.name builtinsMapValuesTest2600
      * @tc.desc values() with multi-line string as value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const multiStr: string = 'line1\nline2';
       const map: collections.Map<number, string> = new collections.Map<number, string>([[1, multiStr]]);
       const values: string[] = Array.from(map.values());
@@ -442,28 +442,28 @@ export default function MapValuesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_027
-     * @tc.name mapValuesCollectionsTest027
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_2700
+     * @tc.name builtinsMapValuesTest2700
      * @tc.desc values() with undefined as value
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapValuesCollectionsTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, undefined> = new collections.Map<number, undefined>([[1, undefined]]);
       const values: undefined[] = Array.from(map.values());
       expect(values[0]).assertEqual(undefined);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_028
-     * @tc.name mapValuesCollectionsTest028
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_2800
+     * @tc.name builtinsMapValuesTest2800
      * @tc.desc values() with large number of entries (1000)
      * @tc.size LargeTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest028', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, (): void => {
+    it('builtinsMapValuesTest2800', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>();
       const count: number = 1000;
       for (let i: number = 0; i < count; i++) {
@@ -475,42 +475,42 @@ export default function MapValuesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_029
-     * @tc.name mapValuesCollectionsTest029
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_2900
+     * @tc.name builtinsMapValuesTest2900
      * @tc.desc values() with Map that has NaN as key
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>([[NaN, 'value']]);
       const values: string[] = Array.from(map.values());
       expect(values[0]).assertEqual('value');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_030
-     * @tc.name mapValuesCollectionsTest030
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_3000
+     * @tc.name builtinsMapValuesTest3000
      * @tc.desc values() with Map that has -0 as key
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>([[-0, 'value']]);
       const values: string[] = Array.from(map.values());
       expect(values[0]).assertEqual('value');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_031
-     * @tc.name mapValuesCollectionsTest031
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_3100
+     * @tc.name builtinsMapValuesTest3100
      * @tc.desc values() with Map that has 0 and -0 as separate keys
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>([[0, 'zero'], [-0, 'neg-zero']]);
       const values: string[] = Array.from(map.values());
       expect(values.length).assertEqual(1);
@@ -518,14 +518,14 @@ export default function MapValuesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_032
-     * @tc.name mapValuesCollectionsTest032
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_3200
+     * @tc.name builtinsMapValuesTest3200
      * @tc.desc values() with Map created from another Map
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const original: collections.Map<number, string> = new collections.Map<number, string>([[1, 'a'], [2, 'b']]);
       const map: collections.Map<number, string> = new collections.Map<number, string>(Array.from(original.entries()));
       const values: string[] = Array.from(map.values());
@@ -534,14 +534,14 @@ export default function MapValuesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_033
-     * @tc.name mapValuesCollectionsTest033
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_3300
+     * @tc.name builtinsMapValuesTest3300
      * @tc.desc values() used with Array.prototype.map
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, number> = new collections.Map<number, number>([[1, 10], [2, 20], [3, 30]]);
       const values: number[] = Array.from(map.values());
       const doubled: number[] = values.map((v: number) => v * 2);
@@ -551,14 +551,14 @@ export default function MapValuesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_034
-     * @tc.name mapValuesCollectionsTest034
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_3400
+     * @tc.name builtinsMapValuesTest3400
      * @tc.desc values() used with Array.prototype.filter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, number> = new collections.Map<number, number>([[1, 5], [2, 15], [3, 25], [4, 5]]);
       const values: number[] = Array.from(map.values());
       const filtered: number[] = values.filter((v: number) => v > 10);
@@ -568,14 +568,14 @@ export default function MapValuesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_035
-     * @tc.name mapValuesCollectionsTest035
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_3500
+     * @tc.name builtinsMapValuesTest3500
      * @tc.desc values() used with Array.prototype.reduce
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, number> = new collections.Map<number, number>([[1, 1], [2, 2], [3, 3], [4, 4]]);
       const values: number[] = Array.from(map.values());
       const sum: number = values.reduce((acc: number, curr: number) => acc + curr, 0);
@@ -584,14 +584,14 @@ export default function MapValuesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_036
-     * @tc.name mapValuesCollectionsTest036
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_3600
+     * @tc.name builtinsMapValuesTest3600
      * @tc.desc values() used with Array.prototype.find
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>([[1, 'apple'], [2, 'banana'], [3, 'cherry']]);
       const values: string[] = Array.from(map.values());
       const found: string | undefined = values.find((v: string) => v.startsWith('b'));
@@ -599,14 +599,14 @@ export default function MapValuesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_037
-     * @tc.name mapValuesCollectionsTest037
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_3700
+     * @tc.name builtinsMapValuesTest3700
      * @tc.desc values() used with Array.prototype.every
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map1: collections.Map<number, number> = new collections.Map<number, number>([[1, 5], [2, 10], [3, 15]]);
       const map2: collections.Map<number, number> = new collections.Map<number, number>([[1, 5], [2, 20], [3, 15]]);
 
@@ -621,14 +621,14 @@ export default function MapValuesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_038
-     * @tc.name mapValuesCollectionsTest038
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_3800
+     * @tc.name builtinsMapValuesTest3800
      * @tc.desc values() used with Array.prototype.some
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map1: collections.Map<number, string> = new collections.Map<number, string>([[1, 'cat'], [2, 'dog'], [3, 'bird']]);
       const map2: collections.Map<number, string> = new collections.Map<number, string>([[1, 'cat'], [2, 'dog'], [3, 'fish']]);
 
@@ -643,14 +643,14 @@ export default function MapValuesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_039
-     * @tc.name mapValuesCollectionsTest039
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_3900
+     * @tc.name builtinsMapValuesTest3900
      * @tc.desc values() with empty values array and array methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>();
       const values: string[] = Array.from(map.values());
 
@@ -660,14 +660,14 @@ export default function MapValuesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_040
-     * @tc.name mapValuesCollectionsTest040
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_4000
+     * @tc.name builtinsMapValuesTest4000
      * @tc.desc values() iterator with spread operator
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>([[1, 'a'], [2, 'b'], [3, 'c']]);
       const values: string[] = Array.from(map.values());
       expect(values[0]).assertEqual('a');
@@ -676,14 +676,14 @@ export default function MapValuesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_041
-     * @tc.name mapValuesCollectionsTest041
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_4100
+     * @tc.name builtinsMapValuesTest4100
      * @tc.desc values() with Map that has been converted to array and back
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const original: collections.Map<number, string> = new collections.Map<number, string>([[1, 'a'], [2, 'b']]);
       const entries: [number, string][] = Array.from(original.entries());
       const newMap: collections.Map<number, string> = new collections.Map<number, string>(entries);
@@ -694,14 +694,14 @@ export default function MapValuesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_042
-     * @tc.name mapValuesCollectionsTest042
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_4200
+     * @tc.name builtinsMapValuesTest4200
      * @tc.desc values() with very large values (memory usage test)
      * @tc.size LargeTest
      * @tc.type Performance
      * @tc.level Level 3
      */
-    it('mapValuesCollectionsTest042', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
+    it('builtinsMapValuesTest4200', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>();
       const count: number = 100;
       let largeValue: string = '';
@@ -717,14 +717,14 @@ export default function MapValuesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_043
-     * @tc.name mapValuesCollectionsTest043
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_4300
+     * @tc.name builtinsMapValuesTest4300
      * @tc.desc values() with Map and same values added and removed
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>();
       map.set(1, 'a');
       map.delete(1);
@@ -735,14 +735,14 @@ export default function MapValuesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_044
-     * @tc.name mapValuesCollectionsTest044
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_4400
+     * @tc.name builtinsMapValuesTest4400
      * @tc.desc values() with Map and numeric keys in descending order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>([[5, 'e'], [4, 'd'], [3, 'c'], [2, 'b'], [1, 'a']]);
       const values: string[] = Array.from(map.values());
       expect(values[0]).assertEqual('e');
@@ -753,14 +753,14 @@ export default function MapValuesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_045
-     * @tc.name mapValuesCollectionsTest045
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_4500
+     * @tc.name builtinsMapValuesTest4500
      * @tc.desc values() with Map and string keys with varying cases
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>([
         ['Apple', 'red'],
         ['banana', 'yellow'],
@@ -774,14 +774,14 @@ export default function MapValuesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_VALUES_COLLECTIONS_TEST_046
-     * @tc.name mapValuesCollectionsTest046
+     * @tc.number SUB_BUILTINS_MAP_VALUES_TEST_4600
+     * @tc.name builtinsMapValuesTest4600
      * @tc.desc values() with Map and dynamic values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapValuesCollectionsTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapValuesTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let dynamicValue: string = 'initial';
       const map: collections.Map<number, string> = new collections.Map<number, string>([[1, dynamicValue]]);
       dynamicValue = 'modified';
@@ -791,3 +791,4 @@ export default function MapValuesCollectionsTest() {
 
   })
 }
+

@@ -134,8 +134,8 @@ class Laptop extends Device {
   }
 }
 
-export default function SetKeysCollectionsTest() {
-  describe('SetKeysCollectionsTest', () => {
+export default function BuiltinsSetKeysTest() {
+  describe('BuiltinsSetKeysTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -158,15 +158,15 @@ export default function SetKeysCollectionsTest() {
     })
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_0100
-     * @tc.name builtinsAsyncLockConstructorTest0100
-     * @tc.desc Test basic functionality of Set.keys() with string elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest0100
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_0100
+     * @tc.desc    Test basic functionality of Set.keys() with string elements
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0001';
+    it('builtinsSetKeysTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest0100';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>(['a', 'b', 'c']);
       const keys = set.keys();
@@ -178,15 +178,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_0200
-     * @tc.name builtinsAsyncLockConstructorTest0200
-     * @tc.desc Test Set.keys() with number elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest0200
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_0200
+     * @tc.desc    Test Set.keys() with number elements
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0002';
+    it('builtinsSetKeysTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest0200';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2, 3, 4]);
       const keys = set.keys();
@@ -199,15 +199,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_0300
-     * @tc.name builtinsAsyncLockConstructorTest0300
-     * @tc.desc Test Set.keys() on empty Set
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest0300
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_0300
+     * @tc.desc    Test Set.keys() on empty Set
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0003';
+    it('builtinsSetKeysTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest0300';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>();
       const keys = set.keys();
@@ -216,15 +216,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_0400
-     * @tc.name builtinsAsyncLockConstructorTest0400
-     * @tc.desc Test that Set.keys() preserves insertion order
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest0400
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_0400
+     * @tc.desc    Test that Set.keys() preserves insertion order
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0004';
+    it('builtinsSetKeysTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest0400';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>();
       set.add('first');
@@ -239,15 +239,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_0500
-     * @tc.name builtinsAsyncLockConstructorTest0500
-     * @tc.desc Test Set.keys() with duplicate elements (which get ignored)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest0500
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_0500
+     * @tc.desc    Test Set.keys() with duplicate elements (which get ignored)
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0005';
+    it('builtinsSetKeysTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest0500';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2, 2, 3, 3, 3]);
       const keys = set.keys();
@@ -259,15 +259,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_0600
-     * @tc.name builtinsAsyncLockConstructorTest0600
-     * @tc.desc Test Set.keys() with mixed data types (number, string, boolean, null, undefined)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest0600
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_0600
+     * @tc.desc    Test Set.keys() with mixed data types (number, string, boolean, null, undefined)
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0006';
+    it('builtinsSetKeysTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest0600';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number | string | boolean | null | undefined> = new collections.Set<number | string | boolean | null | undefined>([1, 'a', true, null, undefined]);
       const keys = set.keys();
@@ -280,15 +280,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_0700
-     * @tc.name builtinsAsyncLockConstructorTest0700
-     * @tc.desc Test Set.keys() with NaN elements (which are considered equal)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest0700
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_0700
+     * @tc.desc    Test Set.keys() with NaN elements (which are considered equal)
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0008';
+    it('builtinsSetKeysTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest0700';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([NaN, NaN, 10]);
       const keys = set.keys();
@@ -299,15 +299,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_0800
-     * @tc.name builtinsAsyncLockConstructorTest0800
-     * @tc.desc Test Set.keys() with 0 and -0 (treated as equal)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest0800
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_0800
+     * @tc.desc    Test Set.keys() with 0 and -0 (treated as equal)
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0009';
+    it('builtinsSetKeysTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest0800';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([0, -0, 1]);
       const keys = set.keys();
@@ -318,15 +318,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_0900
-     * @tc.name builtinsAsyncLockConstructorTest0900
-     * @tc.desc Test that each call to keys() returns a new iterator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest0900
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_0900
+     * @tc.desc    Test that each call to keys() returns a new iterator
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0010';
+    it('builtinsSetKeysTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest0900';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2, 3]);
       const keys1 = set.keys();
@@ -339,15 +339,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_1000
-     * @tc.name builtinsAsyncLockConstructorTest1000
-     * @tc.desc Test Set.keys() after adding new elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest1000
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_1000
+     * @tc.desc    Test Set.keys() after adding new elements
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0011';
+    it('builtinsSetKeysTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest1000';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2]);
       set.add(3);
@@ -359,15 +359,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_1100
-     * @tc.name builtinsAsyncLockConstructorTest1100
-     * @tc.desc Test Set.keys() after deleting an element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest1100
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_1100
+     * @tc.desc    Test Set.keys() after deleting an element
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0012';
+    it('builtinsSetKeysTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest1100';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2, 3]);
       set.delete(2);
@@ -379,15 +379,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_1200
-     * @tc.name builtinsAsyncLockConstructorTest1200
-     * @tc.desc Test Set.keys() with BigInt elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest1200
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_1200
+     * @tc.desc    Test Set.keys() with BigInt elements
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0013';
+    it('builtinsSetKeysTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest1200';
       console.info(`${caseName}, test start`);
       const set: collections.Set<bigint> = new collections.Set<bigint>([1n, 2n, 3n]);
       const keys = set.keys();
@@ -398,15 +398,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_1300
-     * @tc.name builtinsAsyncLockConstructorTest1300
-     * @tc.desc Test iterator state after complete iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest1300
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_1300
+     * @tc.desc    Test iterator state after complete iteration
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0015';
+    it('builtinsSetKeysTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest1300';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2]);
       const keys = set.keys();
@@ -418,15 +418,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_1400
-     * @tc.name builtinsAsyncLockConstructorTest1400
-     * @tc.desc Test converting Set.keys() iterator to array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest1400
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_1400
+     * @tc.desc    Test converting Set.keys() iterator to array
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0018';
+    it('builtinsSetKeysTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest1400';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>(['x', 'y', 'z']);
       const keysArray: string[] = Array.from(set.keys());
@@ -438,15 +438,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_1500
-     * @tc.name builtinsAsyncLockConstructorTest1500
-     * @tc.desc Test iterating over Set.keys() with for...of loop
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest1500
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_1500
+     * @tc.desc    Test iterating over Set.keys() with for...of loop
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0019';
+    it('builtinsSetKeysTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest1500';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([10, 20, 30]);
       const result: number[] = [];
@@ -461,15 +461,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_1600
-     * @tc.name builtinsAsyncLockConstructorTest1600
-     * @tc.desc Test Set.keys() with SameValueZero comparison (0, -0, false)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest1600
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_1600
+     * @tc.desc    Test Set.keys() with SameValueZero comparison (0, -0, false)
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0020';
+    it('builtinsSetKeysTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest1600';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number | boolean> = new collections.Set<number | boolean>([0, -0, false]);
       const keys = set.keys();
@@ -480,15 +480,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_1700
-     * @tc.name builtinsAsyncLockConstructorTest1700
-     * @tc.desc Test Set.keys() with large number of elements (1000 elements)
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest1700
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_1700
+     * @tc.desc    Test Set.keys() with large number of elements (1000 elements)
+     * @tc.type    Function
+     * @tc.size    LargeTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest1700', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0021';
+    it('builtinsSetKeysTest1700', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest1700';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>();
       const size: number = 1000;
@@ -505,15 +505,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_1800
-     * @tc.name builtinsAsyncLockConstructorTest1800
-     * @tc.desc Test Set.keys() after calling clear()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest1800
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_1800
+     * @tc.desc    Test Set.keys() after calling clear()
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0022';
+    it('builtinsSetKeysTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest1800';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2, 3]);
       set.clear();
@@ -523,15 +523,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_1900
-     * @tc.name builtinsAsyncLockConstructorTest1900
-     * @tc.desc Test that keys() and values() return same iterator for Set
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest1900
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_1900
+     * @tc.desc    Test that keys() and values() return same iterator for Set
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0023';
+    it('builtinsSetKeysTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest1900';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>(['a', 'b']);
       const keys = set.keys();
@@ -542,15 +542,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_2000
-     * @tc.name builtinsAsyncLockConstructorTest2000
-     * @tc.desc Test that keys() returns an iterator object with next() method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest2000
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_2000
+     * @tc.desc    Test that keys() returns an iterator object with next() method
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0024';
+    it('builtinsSetKeysTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest2000';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2]);
       const keys = set.keys();
@@ -559,15 +559,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_2100
-     * @tc.name builtinsAsyncLockConstructorTest2100
-     * @tc.desc Test partial iteration with Set.keys()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest2100
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_2100
+     * @tc.desc    Test partial iteration with Set.keys()
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0027';
+    it('builtinsSetKeysTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest2100';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2, 3, 4, 5]);
       const keys = set.keys();
@@ -577,15 +577,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_2200
-     * @tc.name builtinsAsyncLockConstructorTest2200
-     * @tc.desc Test Set.keys() with null and undefined elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest2200
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_2200
+     * @tc.desc    Test Set.keys() with null and undefined elements
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0028';
+    it('builtinsSetKeysTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest2200';
       console.info(`${caseName}, test start`);
       const set: collections.Set<null | undefined> = new collections.Set<null | undefined>([null, undefined, null, undefined]);
       const keys = set.keys();
@@ -596,15 +596,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_2300
-     * @tc.name builtinsAsyncLockConstructorTest2300
-     * @tc.desc Test chained iteration with Set.keys()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest2300
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_2300
+     * @tc.desc    Test chained iteration with Set.keys()
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0029';
+    it('builtinsSetKeysTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest2300';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>(['p', 'q', 'r']);
       const keys = set.keys();
@@ -628,15 +628,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_2400
-     * @tc.name builtinsAsyncLockConstructorTest2400
-     * @tc.desc Test Set.keys() with elements added in reverse order
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest2400
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_2400
+     * @tc.desc    Test Set.keys() with elements added in reverse order
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0031';
+    it('builtinsSetKeysTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest2400';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>();
       [5, 4, 3, 2, 1].forEach((num: number) => set.add(num));
@@ -650,15 +650,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_2500
-     * @tc.name builtinsAsyncLockConstructorTest2500
-     * @tc.desc Test Set.keys() with elements added and removed multiple times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest2500
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_2500
+     * @tc.desc    Test Set.keys() with elements added and removed multiple times
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0032';
+    it('builtinsSetKeysTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest2500';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>();
       set.add(1);
@@ -676,15 +676,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_2600
-     * @tc.name builtinsAsyncLockConstructorTest2600
-     * @tc.desc Test Set.keys() with Symbol.iterator call
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest2600
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_2600
+     * @tc.desc    Test Set.keys() with Symbol.iterator call
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0033';
+    it('builtinsSetKeysTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest2600';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>(['a', 'b']);
       const keys: Iterator<string> = set.keys();
@@ -695,15 +695,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_2700
-     * @tc.name builtinsAsyncLockConstructorTest2700
-     * @tc.desc Test Set.keys() with very large integers
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest2700
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_2700
+     * @tc.desc    Test Set.keys() with very large integers
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0034';
+    it('builtinsSetKeysTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest2700';
       console.info(`${caseName}, test start`);
       const largeNum1: bigint = 9007199254740991n;
       const largeNum2: bigint = 9007199254740992n;
@@ -716,15 +716,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_2800
-     * @tc.name builtinsAsyncLockConstructorTest2800
-     * @tc.desc Test Set.keys() with empty strings and whitespace
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest2800
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_2800
+     * @tc.desc    Test Set.keys() with empty strings and whitespace
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0035';
+    it('builtinsSetKeysTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest2800';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>(['', ' ', '  ']);
       const keys = set.keys();
@@ -735,15 +735,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_2900
-     * @tc.name builtinsAsyncLockConstructorTest2900
-     * @tc.desc Test Set.keys() with iterating during concurrent modification
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest2900
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_2900
+     * @tc.desc    Test Set.keys() with iterating during concurrent modification
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0038';
+    it('builtinsSetKeysTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest2900';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2, 3]);
       const keys = set.keys();
@@ -757,15 +757,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_3000
-     * @tc.name builtinsAsyncLockConstructorTest3000
-     * @tc.desc Test Set.keys() with Unicode characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest3000
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_3000
+     * @tc.desc    Test Set.keys() with Unicode characters
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0040';
+    it('builtinsSetKeysTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest3000';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>(['ä', 'ö', 'ü', 'ñ', 'ç']);
       const keys = set.keys();
@@ -778,15 +778,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_3100
-     * @tc.name builtinsAsyncLockConstructorTest3100
-     * @tc.desc Test Set.keys() with surrogate pair characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest3100
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_3100
+     * @tc.desc    Test Set.keys() with surrogate pair characters
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0041';
+    it('builtinsSetKeysTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest3100';
       console.info(`${caseName}, test start`);
       const emoji1: string = '😊';
       const emoji2: string = '🎉';
@@ -799,15 +799,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_3200
-     * @tc.name builtinsAsyncLockConstructorTest3200
-     * @tc.desc Test Set.keys() with very long strings
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest3200
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_3200
+     * @tc.desc    Test Set.keys() with very long strings
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0042';
+    it('builtinsSetKeysTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest3200';
       console.info(`${caseName}, test start`);
       const longStr1: string = 'a'.repeat(1000);
       const longStr2: string = 'b'.repeat(1000);
@@ -820,15 +820,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_3300
-     * @tc.name builtinsAsyncLockConstructorTest3300
-     * @tc.desc Test Set.keys() with large dataset after many modifications
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest3300
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_3300
+     * @tc.desc    Test Set.keys() with large dataset after many modifications
+     * @tc.type    Function
+     * @tc.size    LargeTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest3300', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0048';
+    it('builtinsSetKeysTest3300', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest3300';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>();
       const initialSize: number = 1000;
@@ -848,15 +848,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_3400
-     * @tc.name builtinsAsyncLockConstructorTest3400
-     * @tc.desc Test Set.keys() with multiple NaN values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest3400
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_3400
+     * @tc.desc    Test Set.keys() with multiple NaN values
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0064';
+    it('builtinsSetKeysTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest3400';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([NaN, NaN, NaN, 1, NaN]);
       const keys = set.keys();
@@ -868,15 +868,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_3500
-     * @tc.name builtinsAsyncLockConstructorTest3500
-     * @tc.desc Test Set.keys() with class instances
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest3500
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_3500
+     * @tc.desc    Test Set.keys() with class instances
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0079';
+    it('builtinsSetKeysTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest3500';
       console.info(`${caseName}, test start`);
       const person1: Person = new Person('Alice', 25);
       const person2: Person = new Person('Bob', 30);
@@ -890,15 +890,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_3600
-     * @tc.name builtinsAsyncLockConstructorTest3600
-     * @tc.desc Test Set.keys() with abstract class implementations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest3600
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_3600
+     * @tc.desc    Test Set.keys() with abstract class implementations
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0080';
+    it('builtinsSetKeysTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest3600';
       console.info(`${caseName}, test start`);
       const circle: Shape = new Circle(5);
       const square: Shape = new Square(4);
@@ -911,15 +911,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_3700
-     * @tc.name builtinsAsyncLockConstructorTest3700
-     * @tc.desc Test Set.keys() with Infinity and -Infinity
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest3700
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_3700
+     * @tc.desc    Test Set.keys() with Infinity and -Infinity
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0065';
+    it('builtinsSetKeysTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest3700';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([Infinity, -Infinity, Infinity]);
       const keys = set.keys();
@@ -931,15 +931,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_3800
-     * @tc.name builtinsAsyncLockConstructorTest3800
-     * @tc.desc Test Set.keys() with parameter properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest3800
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_3800
+     * @tc.desc    Test Set.keys() with parameter properties
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0094';
+    it('builtinsSetKeysTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest3800';
       console.info(`${caseName}, test start`);
       const car1: Car = new Car('Toyota', 2020);
       const car2: Car = new Car('Honda', 2022);
@@ -953,15 +953,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_3900
-     * @tc.name builtinsAsyncLockConstructorTest3900
-     * @tc.desc Test Set.keys() with static class properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest3900
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_3900
+     * @tc.desc    Test Set.keys() with static class properties
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0095';
+    it('builtinsSetKeysTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest3900';
       console.info(`${caseName}, test start`);
       const config1: Configuration = new Configuration('dev');
       const config2: Configuration = new Configuration('prod');
@@ -975,15 +975,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_4000
-     * @tc.name builtinsAsyncLockConstructorTest4000
-     * @tc.desc Test Set.keys() with private class methods
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest4000
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_4000
+     * @tc.desc    Test Set.keys() with private class methods
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0096';
+    it('builtinsSetKeysTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest4000';
       console.info(`${caseName}, test start`);
       const counter1: Counter = new Counter();
       const counter2: Counter = new Counter();
@@ -998,15 +998,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_4100
-     * @tc.name builtinsAsyncLockConstructorTest4100
-     * @tc.desc Test Set.keys() with protected class members
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest4100
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_4100
+     * @tc.desc    Test Set.keys() with protected class members
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0097';
+    it('builtinsSetKeysTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest4100';
       console.info(`${caseName}, test start`);
       const child1: Child = new Child(10);
       const child2: Child = new Child(20);
@@ -1020,15 +1020,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_4200
-     * @tc.name builtinsAsyncLockConstructorTest4200
-     * @tc.desc Test Set.keys() with static methods
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest4200
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_4200
+     * @tc.desc    Test Set.keys() with static methods
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0098';
+    it('builtinsSetKeysTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest4200';
       console.info(`${caseName}, test start`);
       const obj1: MathOperations = new MathOperations();
       const obj2: MathOperations = new MathOperations();
@@ -1042,15 +1042,15 @@ export default function SetKeysCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_4300
-     * @tc.name builtinsAsyncLockConstructorTest4300
-     * @tc.desc Test Set.keys() with abstract methods
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetKeysTest4300
+     * @tc.number  SUB_BUILTINS_SET_KEYS_TEST_4300
+     * @tc.desc    Test Set.keys() with abstract methods
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetKeysCollections0099';
+    it('builtinsSetKeysTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetKeysTest4300';
       console.info(`${caseName}, test start`);
       const phone: Device = new Phone();
       const laptop: Device = new Laptop();

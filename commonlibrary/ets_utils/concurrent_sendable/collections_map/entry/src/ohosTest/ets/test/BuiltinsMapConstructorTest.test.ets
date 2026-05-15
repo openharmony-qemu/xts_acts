@@ -17,8 +17,8 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import { collections } from '@kit.ArkTS';
 import Utils from './Util.test';
 
-export default function MapConstructorCollectionsTest() {
-  describe('MapConstructorCollectionsTest', () => {
+export default function BuiltinsMapConstructorTest() {
+  describe('BuiltinsMapConstructorTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -41,227 +41,227 @@ export default function MapConstructorCollectionsTest() {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_CONSTRUCTOR_COLLECTIONS_TEST_001
-     * @tc.name mapConstructorCollectionsTest001
+     * @tc.number SUB_BUILTINS_MAP_CONSTRUCTOR_TEST_0100
+     * @tc.name builtinsMapConstructorTest0100
      * @tc.desc Create empty ArkTS Map using constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('mapConstructorCollectionsTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('builtinsMapConstructorTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map: collections.Map<number, number> = new collections.Map<number, number>();
       expect(map.size).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_CONSTRUCTOR_COLLECTIONS_TEST_002
-     * @tc.name mapConstructorCollectionsTest002
+     * @tc.number SUB_BUILTINS_MAP_CONSTRUCTOR_TEST_0200
+     * @tc.name builtinsMapConstructorTest0200
      * @tc.desc Create ArkTS Map from array of key-value pairs
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('mapConstructorCollectionsTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('builtinsMapConstructorTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>([['a', 1], ['b', 2]]);
       expect(map.size).assertEqual(2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_CONSTRUCTOR_COLLECTIONS_TEST_003
-     * @tc.name mapConstructorCollectionsTest003
+     * @tc.number SUB_BUILTINS_MAP_CONSTRUCTOR_TEST_0300
+     * @tc.name builtinsMapConstructorTest0300
      * @tc.desc Create ArkTS Map from another ArkTS Map
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('mapConstructorCollectionsTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('builtinsMapConstructorTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const original: collections.Map<string, string> = new collections.Map<string, string>([['key', 'value']]);
       const map: collections.Map<string, string> = new collections.Map<string, string>(Array.from(original.entries()));
       expect(map.get('key')).assertEqual('value');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_CONSTRUCTOR_COLLECTIONS_TEST_004
-     * @tc.name mapConstructorCollectionsTest004
+     * @tc.number SUB_BUILTINS_MAP_CONSTRUCTOR_TEST_0400
+     * @tc.name builtinsMapConstructorTest0400
      * @tc.desc Create ArkTS Map with null as parameter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('mapConstructorCollectionsTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('builtinsMapConstructorTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>(null);
       expect(map.size).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_CONSTRUCTOR_COLLECTIONS_TEST_005
-     * @tc.name mapConstructorCollectionsTest005
+     * @tc.number SUB_BUILTINS_MAP_CONSTRUCTOR_TEST_0500
+     * @tc.name builtinsMapConstructorTest0500
      * @tc.desc Create ArkTS Map with undefined as parameter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('mapConstructorCollectionsTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('builtinsMapConstructorTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>(undefined);
       expect(map.size).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_CONSTRUCTOR_COLLECTIONS_TEST_006
-     * @tc.name mapConstructorCollectionsTest006
+     * @tc.number SUB_BUILTINS_MAP_CONSTRUCTOR_TEST_0600
+     * @tc.name builtinsMapConstructorTest0600
      * @tc.desc ArkTS Map with boolean keys
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('mapConstructorCollectionsTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('builtinsMapConstructorTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map: collections.Map<boolean, string> = new collections.Map<boolean, string>([[true, 'yes'], [false, 'no']]);
       expect(map.get(true)).assertEqual('yes');
       expect(map.get(false)).assertEqual('no');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_CONSTRUCTOR_COLLECTIONS_TEST_007
-     * @tc.name mapConstructorCollectionsTest007
+     * @tc.number SUB_BUILTINS_MAP_CONSTRUCTOR_TEST_0700
+     * @tc.name builtinsMapConstructorTest0700
      * @tc.desc ArkTS Map with number keys
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('mapConstructorCollectionsTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('builtinsMapConstructorTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>([[1, 'one'], [2, 'two']]);
       expect(map.get(1)).assertEqual('one');
       expect(map.get(2)).assertEqual('two');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_CONSTRUCTOR_COLLECTIONS_TEST_008
-     * @tc.name mapConstructorCollectionsTest008
+     * @tc.number SUB_BUILTINS_MAP_CONSTRUCTOR_TEST_0800
+     * @tc.name builtinsMapConstructorTest0800
      * @tc.desc ArkTS Map with NaN as key
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('mapConstructorCollectionsTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('builtinsMapConstructorTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>([[NaN, 'not a number']]);
       expect(map.get(NaN)).assertEqual('not a number');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_CONSTRUCTOR_COLLECTIONS_TEST_009
-     * @tc.name mapConstructorCollectionsTest009
+     * @tc.number SUB_BUILTINS_MAP_CONSTRUCTOR_TEST_0900
+     * @tc.name builtinsMapConstructorTest0900
      * @tc.desc ArkTS Map with duplicate primitive keys in iterable
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('mapConstructorCollectionsTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('builtinsMapConstructorTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>([['a', 1], ['a', 2], ['a', 3]]);
       expect(map.size).assertEqual(1);
       expect(map.get('a')).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_CONSTRUCTOR_COLLECTIONS_TEST_010
-     * @tc.name mapConstructorCollectionsTest010
+     * @tc.number SUB_BUILTINS_MAP_CONSTRUCTOR_TEST_1000
+     * @tc.name builtinsMapConstructorTest1000
      * @tc.desc Check ArkTS Map is instance of collections.Map
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('mapConstructorCollectionsTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('builtinsMapConstructorTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>();
       expect(map instanceof collections.Map).assertEqual(true);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_CONSTRUCTOR_COLLECTIONS_TEST_011
-     * @tc.name mapConstructorCollectionsTest011
+     * @tc.number SUB_BUILTINS_MAP_CONSTRUCTOR_TEST_1100
+     * @tc.name builtinsMapConstructorTest1100
      * @tc.desc ArkTS Map with key as null
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapConstructorCollectionsTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapConstructorTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new collections.Map<null, string>([[null, 'null value']]);
       expect(map.get(null)).assertEqual('null value');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_CONSTRUCTOR_COLLECTIONS_TEST_012
-     * @tc.name mapConstructorCollectionsTest012
+     * @tc.number SUB_BUILTINS_MAP_CONSTRUCTOR_TEST_1200
+     * @tc.name builtinsMapConstructorTest1200
      * @tc.desc ArkTS Map with key as undefined
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapConstructorCollectionsTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapConstructorTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new collections.Map<undefined, string>([[undefined, 'undefined value']]);
       expect(map.get(undefined)).assertEqual('undefined value');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_CONSTRUCTOR_COLLECTIONS_TEST_013
-     * @tc.name mapConstructorCollectionsTest013
+     * @tc.number SUB_BUILTINS_MAP_CONSTRUCTOR_TEST_1300
+     * @tc.name builtinsMapConstructorTest1300
      * @tc.desc ArkTS Map with key as Infinity
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapConstructorCollectionsTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapConstructorTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>([[Infinity, 'infinity value']]);
       expect(map.get(Infinity)).assertEqual('infinity value');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_CONSTRUCTOR_COLLECTIONS_TEST_014
-     * @tc.name mapConstructorCollectionsTest014
+     * @tc.number SUB_BUILTINS_MAP_CONSTRUCTOR_TEST_1400
+     * @tc.name builtinsMapConstructorTest1400
      * @tc.desc ArkTS Map with key as -Infinity
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapConstructorCollectionsTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapConstructorTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>([[-Infinity, 'negative infinity value']]);
       expect(map.get(-Infinity)).assertEqual('negative infinity value');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_CONSTRUCTOR_COLLECTIONS_TEST_015
-     * @tc.name mapConstructorCollectionsTest015
+     * @tc.number SUB_BUILTINS_MAP_CONSTRUCTOR_TEST_1500
+     * @tc.name builtinsMapConstructorTest1500
      * @tc.desc ArkTS Map with key as bigint
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapConstructorCollectionsTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapConstructorTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const key: bigint = 123n;
       const map: collections.Map<bigint, string> = new collections.Map<bigint, string>([[key, 'bigint value']]);
       expect(map.get(key)).assertEqual('bigint value');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_CONSTRUCTOR_COLLECTIONS_TEST_016
-     * @tc.name mapConstructorCollectionsTest016
+     * @tc.number SUB_BUILTINS_MAP_CONSTRUCTOR_TEST_1600
+     * @tc.name builtinsMapConstructorTest1600
      * @tc.desc ArkTS Map with empty string key
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapConstructorCollectionsTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapConstructorTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>([['', 'empty string']]);
       expect(map.get('')).assertEqual('empty string');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_CONSTRUCTOR_COLLECTIONS_TEST_017
-     * @tc.name mapConstructorCollectionsTest017
+     * @tc.number SUB_BUILTINS_MAP_CONSTRUCTOR_TEST_1700
+     * @tc.name builtinsMapConstructorTest1700
      * @tc.desc ArkTS Map with whitespace string keys
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapConstructorCollectionsTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapConstructorTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>([[' ', 'space'], ['\t', 'tab'], ['\n', 'newline']]);
       expect(map.get(' ')).assertEqual('space');
       expect(map.get('\t')).assertEqual('tab');
@@ -269,14 +269,14 @@ export default function MapConstructorCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_CONSTRUCTOR_COLLECTIONS_TEST_018
-     * @tc.name mapConstructorCollectionsTest018
+     * @tc.number SUB_BUILTINS_MAP_CONSTRUCTOR_TEST_1800
+     * @tc.name builtinsMapConstructorTest1800
      * @tc.desc ArkTS Map with special character keys
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapConstructorCollectionsTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapConstructorTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>([['!', 'exclamation'], ['@', 'at'], ['#', 'hash']]);
       expect(map.get('!')).assertEqual('exclamation');
       expect(map.get('@')).assertEqual('at');
@@ -284,19 +284,20 @@ export default function MapConstructorCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_CONSTRUCTOR_COLLECTIONS_TEST_019
-     * @tc.name mapConstructorCollectionsTest019
+     * @tc.number SUB_BUILTINS_MAP_CONSTRUCTOR_TEST_1900
+     * @tc.name builtinsMapConstructorTest1900
      * @tc.desc ArkTS Map with Unicode character keys
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapConstructorCollectionsTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const map: collections.Map<string, string> = new collections.Map<string, string>([['€', 'euro'], ['π', 'pi'], ['😊', 'smile']]);
-      expect(map.get('€')).assertEqual('euro');
+    it('builtinsMapConstructorTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const map: collections.Map<string, string> = new collections.Map<string, string>([['�?, 'euro'], ['π', 'pi'], ['😊', 'smile']]);
+      expect(map.get('�?)).assertEqual('euro');
       expect(map.get('π')).assertEqual('pi');
       expect(map.get('😊')).assertEqual('smile');
     });
 
   })
 }
+

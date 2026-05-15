@@ -35,8 +35,8 @@ class TestClass {
   }
 }
 
-export default function MapEntriesCollectionsTest() {
-  describe('MapEntriesCollectionsTest', () => {
+export default function BuiltinsMapEntriesTest() {
+  describe('BuiltinsMapEntriesTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -59,14 +59,14 @@ export default function MapEntriesCollectionsTest() {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_ENTRIES_COLLECTIONS_TEST_0001
-     * @tc.name mapEntriesCollectionsTest0001
+     * @tc.number SUB_BUILTINS_MAP_ENTRIES_TEST_0100
+     * @tc.name builtinsMapEntriesTest0100
      * @tc.desc Verify entries() returns iterator for non-empty ArkTS Map
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapEntriesCollectionsTest0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapEntriesTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>([['a', 1], ['b', 2]]);
       const entries = map.entries();
       expect(JSON.stringify(entries.next().value)).assertDeepEquals(JSON.stringify(['a', 1]));
@@ -75,28 +75,28 @@ export default function MapEntriesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_ENTRIES_COLLECTIONS_TEST_0002
-     * @tc.name mapEntriesCollectionsTest0002
+     * @tc.number SUB_BUILTINS_MAP_ENTRIES_TEST_0200
+     * @tc.name builtinsMapEntriesTest0200
      * @tc.desc Verify entries() returns empty iterator for empty ArkTS Map
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapEntriesCollectionsTest0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapEntriesTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>();
       const entries = map.entries();
       expect(entries.next().done).assertEqual(true);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_ENTRIES_COLLECTIONS_TEST_0003
-     * @tc.name mapEntriesCollectionsTest0003
+     * @tc.number SUB_BUILTINS_MAP_ENTRIES_TEST_0300
+     * @tc.name builtinsMapEntriesTest0300
      * @tc.desc Verify entries() returns entries in insertion order
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapEntriesCollectionsTest0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapEntriesTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>();
       map.set(3, 'three');
       map.set(1, 'one');
@@ -107,84 +107,84 @@ export default function MapEntriesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_ENTRIES_COLLECTIONS_TEST_0004
-     * @tc.name mapEntriesCollectionsTest0004
+     * @tc.number SUB_BUILTINS_MAP_ENTRIES_TEST_0400
+     * @tc.name builtinsMapEntriesTest0400
      * @tc.desc Verify entries() works with number keys
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapEntriesCollectionsTest0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapEntriesTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>([[1, 'one'], [2, 'two']]);
       const entries = Array.from(map.entries());
       expect(JSON.stringify(entries)).assertDeepEquals(JSON.stringify([[1, 'one'], [2, 'two']]));
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_ENTRIES_COLLECTIONS_TEST_0005
-     * @tc.name mapEntriesCollectionsTest0005
+     * @tc.number SUB_BUILTINS_MAP_ENTRIES_TEST_0500
+     * @tc.name builtinsMapEntriesTest0500
      * @tc.desc Verify entries() works with string keys
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapEntriesCollectionsTest0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapEntriesTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>([['one', 1], ['two', 2]]);
       const entries = Array.from(map.entries());
       expect(JSON.stringify(entries)).assertDeepEquals(JSON.stringify([['one', 1], ['two', 2]]));
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_ENTRIES_COLLECTIONS_TEST_0006
-     * @tc.name mapEntriesCollectionsTest0006
+     * @tc.number SUB_BUILTINS_MAP_ENTRIES_TEST_0600
+     * @tc.name builtinsMapEntriesTest0600
      * @tc.desc Verify entries() works with boolean keys
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapEntriesCollectionsTest0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapEntriesTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<boolean, string> = new collections.Map<boolean, string>([[true, 'yes'], [false, 'no']]);
       const entries = Array.from(map.entries());
       expect(JSON.stringify(entries)).assertDeepEquals(JSON.stringify([[true, 'yes'], [false, 'no']]));
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_ENTRIES_COLLECTIONS_TEST_0007
-     * @tc.name mapEntriesCollectionsTest0007
+     * @tc.number SUB_BUILTINS_MAP_ENTRIES_TEST_0700
+     * @tc.name builtinsMapEntriesTest0700
      * @tc.desc Verify entries() works with Map containing null values
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapEntriesCollectionsTest0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapEntriesTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<string, null> = new collections.Map<string, null>([['a', null], ['b', null]]);
       const entries = Array.from(map.entries());
       expect(JSON.stringify(entries)).assertDeepEquals(JSON.stringify([['a', null], ['b', null]]));
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_ENTRIES_COLLECTIONS_TEST_0008
-     * @tc.name mapEntriesCollectionsTest0008
+     * @tc.number SUB_BUILTINS_MAP_ENTRIES_TEST_0800
+     * @tc.name builtinsMapEntriesTest0800
      * @tc.desc Verify entries() works with Map containing undefined values
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapEntriesCollectionsTest0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapEntriesTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<string, undefined> = new collections.Map<string, undefined>([['a', undefined], ['b', undefined]]);
       const entries = Array.from(map.entries());
       expect(JSON.stringify(entries)).assertDeepEquals(JSON.stringify([['a', undefined], ['b', undefined]]));
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_ENTRIES_COLLECTIONS_TEST_0009
-     * @tc.name mapEntriesCollectionsTest0009
+     * @tc.number SUB_BUILTINS_MAP_ENTRIES_TEST_0900
+     * @tc.name builtinsMapEntriesTest0900
      * @tc.desc Verify entries() works with large Map (100 entries)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapEntriesCollectionsTest0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapEntriesTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<number, number> = new collections.Map<number, number>();
       for (let i: number = 0; i < 100; i++) {
         map.set(i, i * 2);
@@ -197,14 +197,14 @@ export default function MapEntriesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_ENTRIES_COLLECTIONS_TEST_0010
-     * @tc.name mapEntriesCollectionsTest0010
+     * @tc.number SUB_BUILTINS_MAP_ENTRIES_TEST_1000
+     * @tc.name builtinsMapEntriesTest1000
      * @tc.desc Verify entries() iterator can be iterated with for...of loop
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapEntriesCollectionsTest0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapEntriesTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>([['a', 1], ['b', 2], ['c', 3]]);
       const results: [string, number][] = [];
 
@@ -216,14 +216,14 @@ export default function MapEntriesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_ENTRIES_COLLECTIONS_TEST_0011
-     * @tc.name mapEntriesCollectionsTest0011
+     * @tc.number SUB_BUILTINS_MAP_ENTRIES_TEST_1100
+     * @tc.name builtinsMapEntriesTest1100
      * @tc.desc Verify entries() returns new iterator each time it's called
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapEntriesCollectionsTest0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapEntriesTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>([[1, 'one'], [2, 'two']]);
       const entries1 = map.entries();
       const entries2 = map.entries();
@@ -233,14 +233,14 @@ export default function MapEntriesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_ENTRIES_COLLECTIONS_TEST_0012
-     * @tc.name mapEntriesCollectionsTest0012
+     * @tc.number SUB_BUILTINS_MAP_ENTRIES_TEST_1200
+     * @tc.name builtinsMapEntriesTest1200
      * @tc.desc Verify entries() works with Map created from another Map
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapEntriesCollectionsTest0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapEntriesTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const original: collections.Map<number, string> = new collections.Map<number, string>([[1, 'one'], [2, 'two']]);
       const map: collections.Map<number, string> = new collections.Map<number, string>(Array.from(original.entries()));
       const entries = Array.from(map.entries());
@@ -248,14 +248,14 @@ export default function MapEntriesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_ENTRIES_COLLECTIONS_TEST_0013
-     * @tc.name mapEntriesCollectionsTest0013
+     * @tc.number SUB_BUILTINS_MAP_ENTRIES_TEST_1300
+     * @tc.name builtinsMapEntriesTest1300
      * @tc.desc Verify entries() works with Map containing NaN keys
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('mapEntriesCollectionsTest0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
+    it('builtinsMapEntriesTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>([[NaN, 'not a number'], [NaN, 'another NaN']]);
       const entries = Array.from(map.entries());
       expect(entries.length).assertEqual(1);
@@ -263,14 +263,14 @@ export default function MapEntriesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_ENTRIES_COLLECTIONS_TEST_0014
-     * @tc.name mapEntriesCollectionsTest0014
+     * @tc.number SUB_BUILTINS_MAP_ENTRIES_TEST_1400
+     * @tc.name builtinsMapEntriesTest1400
      * @tc.desc Verify entries() iterator is not affected by value modifications
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapEntriesCollectionsTest0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapEntriesTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>([[1, 'one'], [2, 'two']]);
       const entries = map.entries();
 
@@ -281,14 +281,14 @@ export default function MapEntriesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_ENTRIES_COLLECTIONS_TEST_0015
-     * @tc.name mapEntriesCollectionsTest0015
+     * @tc.number SUB_BUILTINS_MAP_ENTRIES_TEST_1500
+     * @tc.name builtinsMapEntriesTest1500
      * @tc.desc Verify entries() iterator can be restarted by creating new iterator
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapEntriesCollectionsTest0015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapEntriesTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>([['a', 1], ['b', 2]]);
       const entries1 = map.entries();
       entries1.next();
@@ -298,14 +298,14 @@ export default function MapEntriesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_ENTRIES_COLLECTIONS_TEST_0016
-     * @tc.name mapEntriesCollectionsTest0016
+     * @tc.number SUB_BUILTINS_MAP_ENTRIES_TEST_1600
+     * @tc.name builtinsMapEntriesTest1600
      * @tc.desc Verify entries() works with Map containing 0 and -0 as distinct keys
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('mapEntriesCollectionsTest0016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
+    it('builtinsMapEntriesTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>([[0, 'zero'], [-0, 'negative zero']]);
       const entries = Array.from(map.entries());
       expect(entries.length).assertEqual(1);
@@ -313,28 +313,28 @@ export default function MapEntriesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_ENTRIES_COLLECTIONS_TEST_0017
-     * @tc.name mapEntriesCollectionsTest0017
+     * @tc.number SUB_BUILTINS_MAP_ENTRIES_TEST_1700
+     * @tc.name builtinsMapEntriesTest1700
      * @tc.desc Verify entries() iterator can be converted to array using spread operator
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapEntriesCollectionsTest0017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapEntriesTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<string, boolean> = new collections.Map<string, boolean>([['active', true], ['visible', false]]);
       const entries = Array.from(map.entries());
       expect(JSON.stringify(entries)).assertDeepEquals(JSON.stringify([['active', true], ['visible', false]]));
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_ENTRIES_COLLECTIONS_TEST_0018
-     * @tc.name mapEntriesCollectionsTest0018
+     * @tc.number SUB_BUILTINS_MAP_ENTRIES_TEST_1800
+     * @tc.name builtinsMapEntriesTest1800
      * @tc.desc Verify entries() works with Map after multiple set and delete operations
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapEntriesCollectionsTest0018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapEntriesTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>();
       map.set(1, 'one');
       map.set(2, 'two');
@@ -347,14 +347,14 @@ export default function MapEntriesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_ENTRIES_COLLECTIONS_TEST_0019
-     * @tc.name mapEntriesCollectionsTest0019
+     * @tc.number SUB_BUILTINS_MAP_ENTRIES_TEST_1900
+     * @tc.name builtinsMapEntriesTest1900
      * @tc.desc Test entries with KeyClass as key
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapEntriesCollectionsTest0019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapEntriesTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const key1 = new KeyClass(1);
       const key2 = new KeyClass(2);
       const map: collections.Map<KeyClass, string> = new collections.Map<KeyClass, string>([[key1, 'first'], [key2, 'second']]);
@@ -366,70 +366,70 @@ export default function MapEntriesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_ENTRIES_COLLECTIONS_TEST_0020
-     * @tc.name mapEntriesCollectionsTest0020
+     * @tc.number SUB_BUILTINS_MAP_ENTRIES_TEST_2000
+     * @tc.name builtinsMapEntriesTest2000
      * @tc.desc Verify entries() works with Map containing empty string keys and values
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapEntriesCollectionsTest0020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapEntriesTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>([['', 'empty key'], ['key', '']]);
       const entries = Array.from(map.entries());
       expect(JSON.stringify(entries)).assertDeepEquals(JSON.stringify([['', 'empty key'], ['key', '']]));
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_ENTRIES_COLLECTIONS_TEST_0021
-     * @tc.name mapEntriesCollectionsTest0021
+     * @tc.number SUB_BUILTINS_MAP_ENTRIES_TEST_2100
+     * @tc.name builtinsMapEntriesTest2100
      * @tc.desc Verify entries() iterator can be used in Array.from with mapping function
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapEntriesCollectionsTest0021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapEntriesTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<number, number> = new collections.Map<number, number>([[1, 10], [2, 20]]);
       const mapped: number[] = Array.from(map.entries(), (entry: [number, number]) => entry[0] * entry[1]);
       expect(JSON.stringify(mapped)).assertDeepEquals(JSON.stringify([10, 40]));
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_ENTRIES_COLLECTIONS_TEST_0022
-     * @tc.name mapEntriesCollectionsTest0022
+     * @tc.number SUB_BUILTINS_MAP_ENTRIES_TEST_2200
+     * @tc.name builtinsMapEntriesTest2200
      * @tc.desc Verify entries() works with Map containing Unicode characters in keys and values
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapEntriesCollectionsTest0022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapEntriesTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>([['café', 'coffee'], ['cœur', 'heart']]);
       const entries = Array.from(map.entries());
       expect(JSON.stringify(entries)).assertDeepEquals(JSON.stringify([['café', 'coffee'], ['cœur', 'heart']]));
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_ENTRIES_COLLECTIONS_TEST_0023
-     * @tc.name mapEntriesCollectionsTest0023
+     * @tc.number SUB_BUILTINS_MAP_ENTRIES_TEST_2300
+     * @tc.name builtinsMapEntriesTest2300
      * @tc.desc Verify entries() works with Map containing Infinity and -Infinity as values
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapEntriesCollectionsTest0023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapEntriesTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>([['inf', Infinity], ['ninf', -Infinity]]);
       const entries = Array.from(map.entries());
       expect(JSON.stringify(entries)).assertDeepEquals(JSON.stringify([['inf', Infinity], ['ninf', -Infinity]]));
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_ENTRIES_COLLECTIONS_TEST_0024
-     * @tc.name mapEntriesCollectionsTest0024
+     * @tc.number SUB_BUILTINS_MAP_ENTRIES_TEST_2400
+     * @tc.name builtinsMapEntriesTest2400
      * @tc.desc Verify entries() works with Map containing multi-line string values
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapEntriesCollectionsTest0024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapEntriesTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>([
         [1, 'line1\nline2'],
         [2, 'single line']
@@ -442,36 +442,36 @@ export default function MapEntriesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_ENTRIES_COLLECTIONS_TEST_0025
-     * @tc.name mapEntriesCollectionsTest0025
+     * @tc.number SUB_BUILTINS_MAP_ENTRIES_TEST_2500
+     * @tc.name builtinsMapEntriesTest2500
      * @tc.desc Verify entries() works with Map containing special Unicode characters
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapEntriesCollectionsTest0025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapEntriesTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>([
         ['emoji', '😊🎉'],
-        ['math', '∑∫∂'],
+        ['math', '∑∫�?],
         ['cyrillic', 'привет']
       ]);
       const entries = Array.from(map.entries());
       expect(JSON.stringify(entries)).assertDeepEquals(JSON.stringify([
         ['emoji', '😊🎉'],
-        ['math', '∑∫∂'],
+        ['math', '∑∫�?],
         ['cyrillic', 'привет']
       ]));
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_ENTRIES_COLLECTIONS_TEST_0026
-     * @tc.name mapEntriesCollectionsTest0026
+     * @tc.number SUB_BUILTINS_MAP_ENTRIES_TEST_2600
+     * @tc.name builtinsMapEntriesTest2600
      * @tc.desc Verify entries() works with Map containing numbers in scientific notation
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapEntriesCollectionsTest0026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapEntriesTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<number, number> = new collections.Map<number, number>([
         [1e3, 2e3],
         [3e-4, 4e-5]
@@ -484,14 +484,14 @@ export default function MapEntriesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_ENTRIES_COLLECTIONS_TEST_0027
-     * @tc.name mapEntriesCollectionsTest0027
+     * @tc.number SUB_BUILTINS_MAP_ENTRIES_TEST_2700
+     * @tc.name builtinsMapEntriesTest2700
      * @tc.desc Verify entries() works with Map after clear()
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapEntriesCollectionsTest0027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapEntriesTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>([[1, 'one'], [2, 'two']]);
       map.clear();
       const entries = Array.from(map.entries());
@@ -499,14 +499,14 @@ export default function MapEntriesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_ENTRIES_COLLECTIONS_TEST_0028
-     * @tc.name mapEntriesCollectionsTest0028
+     * @tc.number SUB_BUILTINS_MAP_ENTRIES_TEST_2800
+     * @tc.name builtinsMapEntriesTest2800
      * @tc.desc Verify entries() iterator continues correctly after partial iteration
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapEntriesCollectionsTest0028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapEntriesTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>([['a', 1], ['b', 2], ['c', 3], ['d', 4]]);
       const entries = map.entries();
 
@@ -523,14 +523,14 @@ export default function MapEntriesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_ENTRIES_COLLECTIONS_TEST_0029
-     * @tc.name mapEntriesCollectionsTest0029
+     * @tc.number SUB_BUILTINS_MAP_ENTRIES_TEST_2900
+     * @tc.name builtinsMapEntriesTest2900
      * @tc.desc Test entries with TestClass as key
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('mapEntriesCollectionsTest0029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
+    it('builtinsMapEntriesTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const instance1 = new TestClass(10);
       const instance2 = new TestClass(10);
       const map: collections.Map<TestClass, string> = new collections.Map<TestClass, string>([[instance1, 'first'], [instance2, 'second']]);
@@ -542,14 +542,14 @@ export default function MapEntriesCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_ENTRIES_COLLECTIONS_TEST_0030
-     * @tc.name mapEntriesCollectionsTest0030
+     * @tc.number SUB_BUILTINS_MAP_ENTRIES_TEST_3000
+     * @tc.name builtinsMapEntriesTest3000
      * @tc.desc Verify entries() works with Map containing large string values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapEntriesCollectionsTest0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapEntriesTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let largeString: string = '';
       for (let i: number = 0; i < 10000; i++) {
         largeString += 'a';
@@ -563,3 +563,4 @@ export default function MapEntriesCollectionsTest() {
 
   })
 }
+

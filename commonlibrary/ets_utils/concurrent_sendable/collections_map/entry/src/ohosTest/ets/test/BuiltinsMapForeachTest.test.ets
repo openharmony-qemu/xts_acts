@@ -33,8 +33,8 @@ class CustomError extends Error {
   }
 }
 
-export default function MapForeachCollectionsTest() {
-  describe('MapForeachCollectionsTest', () => {
+export default function BuiltinsMapForeachTest() {
+  describe('BuiltinsMapForeachTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -57,14 +57,14 @@ export default function MapForeachCollectionsTest() {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0001
-     * @tc.name mapForeachCollectionsTest0001
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_0100
+     * @tc.name builtinsMapForeachTest0100
      * @tc.desc Verify forEach executes callback for each key-value pair in insertion order
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapForeachCollectionsTest0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapForeachTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>([['a', 1], ['b', 2], ['c', 3]]);
       const result: string[] = [];
       map.forEach((value: number, key: string) => {
@@ -74,14 +74,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0002
-     * @tc.name mapForeachCollectionsTest0002
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_0200
+     * @tc.name builtinsMapForeachTest0200
      * @tc.desc Verify callback receives value as first parameter
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapForeachCollectionsTest0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapForeachTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>([[1, 'x'], [2, 'y']]);
       const values: string[] = [];
       map.forEach((value: string) => {
@@ -91,14 +91,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0003
-     * @tc.name mapForeachCollectionsTest0003
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_0300
+     * @tc.name builtinsMapForeachTest0300
      * @tc.desc Verify callback receives key as second parameter
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapForeachCollectionsTest0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapForeachTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<boolean, number> = new collections.Map<boolean, number>([[true, 10], [false, 20]]);
       const keys: boolean[] = [];
       map.forEach((_: number, key: boolean) => {
@@ -108,14 +108,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0004
-     * @tc.name mapForeachCollectionsTest0004
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_0400
+     * @tc.name builtinsMapForeachTest0400
      * @tc.desc Verify callback receives map as third parameter
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapForeachCollectionsTest0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapForeachTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, boolean> = new collections.Map<string, boolean>([['active', true]]);
       let targetMap: collections.Map<string, boolean> | null = null;
       map.forEach((_: boolean, __: string, currentMap: collections.Map<string, boolean>) => {
@@ -125,14 +125,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0005
-     * @tc.name mapForeachCollectionsTest0005
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_0500
+     * @tc.name builtinsMapForeachTest0500
      * @tc.desc Verify forEach does not execute callback for deleted keys
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapForeachCollectionsTest0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapForeachTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>([['a', 'foo'], ['b', 'bar']]);
       map.delete('a');
       const count: number[] = [];
@@ -143,14 +143,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0006
-     * @tc.name mapForeachCollectionsTest0006
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_0600
+     * @tc.name builtinsMapForeachTest0600
      * @tc.desc Verify forEach executes callback for keys with undefined value
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapForeachCollectionsTest0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapForeachTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<number, undefined> = new collections.Map<number, undefined>([[1, undefined], [2, undefined]]);
       let count: number = 0;
       map.forEach(() => {
@@ -160,14 +160,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0007
-     * @tc.name mapForeachCollectionsTest0007
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_0700
+     * @tc.name builtinsMapForeachTest0700
      * @tc.desc Verify callback handles null values
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapForeachCollectionsTest0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapForeachTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, null> = new collections.Map<string, null>([['a', null], ['b', null]]);
       const values: null[] = [];
       map.forEach((value: null) => {
@@ -177,14 +177,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0008
-     * @tc.name mapForeachCollectionsTest0008
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_0800
+     * @tc.name builtinsMapForeachTest0800
      * @tc.desc Verify forEach with bigint values
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapForeachCollectionsTest0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapForeachTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<string, bigint> = new collections.Map<string, bigint>([['a', 10n], ['b', 20n]]);
       let sum: bigint = 0n;
       map.forEach((value: bigint) => {
@@ -194,14 +194,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0009
-     * @tc.name mapForeachCollectionsTest0009
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_0900
+     * @tc.name builtinsMapForeachTest0900
      * @tc.desc Verify forEach with Map containing one entry
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapForeachCollectionsTest0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapForeachTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>([['key', 'value']]);
       let count: number = 0;
       map.forEach(() => {
@@ -211,14 +211,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0010
-     * @tc.name mapForeachCollectionsTest0010
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_1000
+     * @tc.name builtinsMapForeachTest1000
      * @tc.desc Verify forEach with Map containing ten entries
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapForeachCollectionsTest0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapForeachTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, number> = new collections.Map<number, number>();
       for (let i: number = 1; i <= 10; i++) {
         map.set(i, i);
@@ -231,14 +231,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0011
-     * @tc.name mapForeachCollectionsTest0011
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_1100
+     * @tc.name builtinsMapForeachTest1100
      * @tc.desc Verify callback parameters order (value first, then key)
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapForeachCollectionsTest0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapForeachTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>([['a', 10]]);
       let params: [number, string] | null = null;
       map.forEach((value: number, key: string) => {
@@ -248,14 +248,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0012
-     * @tc.name mapForeachCollectionsTest0012
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_1200
+     * @tc.name builtinsMapForeachTest1200
      * @tc.desc Verify forEach with callback that returns value (ignored)
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapForeachCollectionsTest0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapForeachTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<number, number> = new collections.Map<number, number>([[1, 1], [2, 2]]);
       const result: number[] = [];
       map.forEach((value: number) => {
@@ -265,14 +265,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0013
-     * @tc.name mapForeachCollectionsTest0013
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_1300
+     * @tc.name builtinsMapForeachTest1300
      * @tc.desc Verify forEach with Map containing NaN keys
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('mapForeachCollectionsTest0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
+    it('builtinsMapForeachTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>([[NaN, 'nan1'], [NaN, 'nan2']]);
       const values: string[] = [];
       map.forEach((value: string) => {
@@ -282,14 +282,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0014
-     * @tc.name mapForeachCollectionsTest0014
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_1400
+     * @tc.name builtinsMapForeachTest1400
      * @tc.desc Verify forEach with Map containing 0 and -0 keys
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('mapForeachCollectionsTest0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
+    it('builtinsMapForeachTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>([[0, 'zero'], [-0, 'negZero']]);
       const values: string[] = [];
       map.forEach((value: string) => {
@@ -299,14 +299,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0015
-     * @tc.name mapForeachCollectionsTest0015
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_1500
+     * @tc.name builtinsMapForeachTest1500
      * @tc.desc Verify forEach with callback that modifies its own closure
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('mapForeachCollectionsTest0015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
+    it('builtinsMapForeachTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const map: collections.Map<number, number> = new collections.Map<number, number>([[1, 10], [2, 20], [3, 30]]);
       let multiplier: number = 1;
       const result: number[] = [];
@@ -318,14 +318,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0016
-     * @tc.name mapForeachCollectionsTest0016
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_1600
+     * @tc.name builtinsMapForeachTest1600
      * @tc.desc Verify forEach does not iterate over prototype properties
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapForeachCollectionsTest0016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapForeachTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<number, number> = new collections.Map<number, number>([[1, 1]]);
       let count: number = 0;
       map.forEach(() => {
@@ -335,14 +335,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0017
-     * @tc.name mapForeachCollectionsTest0017
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_1700
+     * @tc.name builtinsMapForeachTest1700
      * @tc.desc Verify forEach with empty callback (no operation)
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapForeachCollectionsTest0017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapForeachTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, number> = new collections.Map<number, number>([[1, 1], [2, 2]]);
       let threwError: boolean = false;
 
@@ -358,14 +358,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0018
-     * @tc.name mapForeachCollectionsTest0018
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_1800
+     * @tc.name builtinsMapForeachTest1800
      * @tc.desc Verify forEach with Map containing undefined keys
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapForeachCollectionsTest0018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapForeachTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<undefined, number> = new collections.Map<undefined, number>([[undefined, 10], [undefined, 20]]);
       const values: number[] = [];
       map.forEach((value: number) => {
@@ -375,14 +375,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0019
-     * @tc.name mapForeachCollectionsTest0019
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_1900
+     * @tc.name builtinsMapForeachTest1900
      * @tc.desc Verify forEach with Map containing null keys
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapForeachCollectionsTest0019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapForeachTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<null, string> = new collections.Map<null, string>([[null, 'a'], [null, 'b']]);
       const values: string[] = [];
       map.forEach((value: string) => {
@@ -392,14 +392,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0020
-     * @tc.name mapForeachCollectionsTest0020
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_2000
+     * @tc.name builtinsMapForeachTest2000
      * @tc.desc Verify forEach with large Map (100 entries)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapForeachCollectionsTest0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapForeachTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<number, number> = new collections.Map<number, number>();
       for (let i: number = 1; i <= 100; i++) {
         map.set(i, i * 2);
@@ -412,14 +412,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0021
-     * @tc.name mapForeachCollectionsTest0021
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_2100
+     * @tc.name builtinsMapForeachTest2100
      * @tc.desc Verify callback is called with correct parameters for each entry
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapForeachCollectionsTest0021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapForeachTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>([[1, 'one'], [2, 'two'], [3, 'three']]);
       const params: [string, number][] = [];
       map.forEach((value: string, key: number) => {
@@ -429,14 +429,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0022
-     * @tc.name mapForeachCollectionsTest0022
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_2200
+     * @tc.name builtinsMapForeachTest2200
      * @tc.desc Verify forEach with callback that uses all three parameters
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapForeachCollectionsTest0022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapForeachTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>([['a', 1], ['b', 2]]);
       const result: string[] = [];
       map.forEach((value: number, key: string, currentMap: collections.Map<string, number>) => {
@@ -446,14 +446,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0023
-     * @tc.name mapForeachCollectionsTest0023
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_2300
+     * @tc.name builtinsMapForeachTest2300
      * @tc.desc Verify forEach with callback that returns undefined (no effect)
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapForeachCollectionsTest0023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapForeachTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<number, number> = new collections.Map<number, number>([[1, 10], [2, 20]]);
       const result: number[] = [];
       map.forEach((value: number) => {
@@ -464,14 +464,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0024
-     * @tc.name mapForeachCollectionsTest0024
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_2400
+     * @tc.name builtinsMapForeachTest2400
      * @tc.desc Verify forEach with callback that uses nullish coalescing on values
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapForeachCollectionsTest0024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapForeachTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<number, string | null | undefined> = new collections.Map<number, string | null | undefined>([[1, 'foo'], [2, null], [3, undefined]]);
       const results: string[] = [];
       map.forEach((value: string | null | undefined) => {
@@ -481,14 +481,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0025
-     * @tc.name mapForeachCollectionsTest0025
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_2500
+     * @tc.name builtinsMapForeachTest2500
      * @tc.desc Verify forEach with Map containing string keys with special characters
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapForeachCollectionsTest0025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapForeachTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>([['a@b', 1], ['c#d', 2], ['e$f', 3]]);
       const keys: string[] = [];
       map.forEach((_: number, key: string) => {
@@ -498,14 +498,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0026
-     * @tc.name mapForeachCollectionsTest0026
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_2600
+     * @tc.name builtinsMapForeachTest2600
      * @tc.desc Verify forEach with Map containing numeric keys as strings
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapForeachCollectionsTest0026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapForeachTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>([['1', 'one'], ['2', 'two'], ['3', 'three']]);
       const results: [string, string][] = [];
       map.forEach((value: string, key: string) => {
@@ -515,14 +515,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0027
-     * @tc.name mapForeachCollectionsTest0027
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_2700
+     * @tc.name builtinsMapForeachTest2700
      * @tc.desc Verify forEach with Map containing boolean keys
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapForeachCollectionsTest0027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapForeachTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<boolean, number> = new collections.Map<boolean, number>([[true, 1], [false, 0]]);
       const results: [boolean, number][] = [];
       map.forEach((value: number, key: boolean) => {
@@ -532,14 +532,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0028
-     * @tc.name mapForeachCollectionsTest0028
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_2800
+     * @tc.name builtinsMapForeachTest2800
      * @tc.desc Verify forEach with Map that has duplicate entries (overwritten)
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapForeachCollectionsTest0028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapForeachTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>([['a', 1], ['a', 2], ['b', 3]]);
       const results: [string, number][] = [];
       map.forEach((value: number, key: string) => {
@@ -549,14 +549,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0029
-     * @tc.name mapForeachCollectionsTest0029
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_2900
+     * @tc.name builtinsMapForeachTest2900
      * @tc.desc Verify forEach with Map created from another Map
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapForeachCollectionsTest0029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapForeachTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const originalMap: collections.Map<number, string> = new collections.Map<number, string>([[1, 'one'], [2, 'two']]);
       const newMap: collections.Map<number, string> = new collections.Map<number, string>(Array.from(originalMap.entries()));
       const results: string[] = [];
@@ -567,14 +567,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0030
-     * @tc.name mapForeachCollectionsTest0030
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_3000
+     * @tc.name builtinsMapForeachTest3000
      * @tc.desc Verify forEach with Map filtered via entries()
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapForeachCollectionsTest0030', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapForeachTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<number, number> = new collections.Map<number, number>([[1, 10], [2, 20], [3, 30]]);
       const filteredEntries: [number, number][] = Array.from(map.entries()).filter((entry: [number, number]) => entry[0] % 2 === 0);
       const filteredMap: collections.Map<number, number> = new collections.Map<number, number>(filteredEntries);
@@ -586,14 +586,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0031
-     * @tc.name mapForeachCollectionsTest0031
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_3100
+     * @tc.name builtinsMapForeachTest3100
      * @tc.desc Verify forEach throws CustomError
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('mapForeachCollectionsTest0031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
+    it('builtinsMapForeachTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>([[1, 'one']]);
       try {
         map.forEach(() => {
@@ -607,14 +607,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0032
-     * @tc.name mapForeachCollectionsTest0032
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_3200
+     * @tc.name builtinsMapForeachTest3200
      * @tc.desc Verify forEach with Map containing undefined and null values
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapForeachCollectionsTest0032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapForeachTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<string, undefined | null> = new collections.Map<string, undefined | null>([['a', undefined], ['b', null], ['c', undefined]]);
       const results: (undefined | null)[] = [];
       map.forEach((value: undefined | null) => {
@@ -624,14 +624,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0033
-     * @tc.name mapForeachCollectionsTest0033
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_3300
+     * @tc.name builtinsMapForeachTest3300
      * @tc.desc Verify forEach with Map containing empty string values
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapForeachCollectionsTest0033', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapForeachTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>([[1, ""], [2, ""], [3, "non-empty"]]);
       const results: string[] = [];
       map.forEach((value: string) => {
@@ -641,14 +641,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0034
-     * @tc.name mapForeachCollectionsTest0034
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_3400
+     * @tc.name builtinsMapForeachTest3400
      * @tc.desc Verify forEach with Map containing multi-line string values
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapForeachCollectionsTest0034', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapForeachTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>([[1, "line1\nline2"], [2, "single line"]]);
       const results: string[] = [];
       map.forEach((value: string) => {
@@ -658,31 +658,31 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0035
-     * @tc.name mapForeachCollectionsTest0035
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_3500
+     * @tc.name builtinsMapForeachTest3500
      * @tc.desc Verify forEach with Map containing Unicode characters
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapForeachCollectionsTest0035', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
-      const map: collections.Map<string, string> = new collections.Map<string, string>([['emoji', '😊'], ['symbol', '★'], ['letter', 'ñ']]);
+    it('builtinsMapForeachTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const map: collections.Map<string, string> = new collections.Map<string, string>([['emoji', '😊'], ['symbol', '�?], ['letter', 'ñ']]);
       const results: string[] = [];
       map.forEach((value: string) => {
         results.push(value);
       });
-      expect(results).assertDeepEquals(['😊', '★', 'ñ']);
+      expect(results).assertDeepEquals(['😊', '�?, 'ñ']);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0036
-     * @tc.name mapForeachCollectionsTest0036
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_3600
+     * @tc.name builtinsMapForeachTest3600
      * @tc.desc Verify forEach with TestClass as value
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapForeachCollectionsTest0036', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapForeachTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const inst1 = new TestClass(1);
       const inst2 = new TestClass(2);
       const map: collections.Map<number, TestClass> = new collections.Map<number, TestClass>([[1, inst1], [2, inst2]]);
@@ -696,14 +696,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0037
-     * @tc.name mapForeachCollectionsTest0037
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_3700
+     * @tc.name builtinsMapForeachTest3700
      * @tc.desc Verify forEach with Map containing large number of entries (1000)
      * @tc.size LargeTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapForeachCollectionsTest0037', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, (): void => {
+    it('builtinsMapForeachTest3700', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, (): void => {
       const map: collections.Map<number, number> = new collections.Map<number, number>();
       for (let i: number = 1; i <= 1000; i++) {
         map.set(i, i);
@@ -716,14 +716,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0038
-     * @tc.name mapForeachCollectionsTest0038
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_3800
+     * @tc.name builtinsMapForeachTest3800
      * @tc.desc Verify forEach with Map where callback uses template literals
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapForeachCollectionsTest0038', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapForeachTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>([['width', 100], ['height', 200]]);
       const results: string[] = [];
       map.forEach((value: number, key: string) => {
@@ -733,14 +733,14 @@ export default function MapForeachCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_FOREACH_COLLECTIONS_TEST_0039
-     * @tc.name mapForeachCollectionsTest0039
+     * @tc.number SUB_BUILTINS_MAP_FOREACH_TEST_3900
+     * @tc.name builtinsMapForeachTest3900
      * @tc.desc Verify forEach with Map containing Infinity and -Infinity values
-     * @tc.size SmallTest
+     * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapForeachCollectionsTest0039', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapForeachTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>([['inf', Infinity], ['ninf', -Infinity]]);
       const results: number[] = [];
       map.forEach((value: number) => {
@@ -753,3 +753,4 @@ export default function MapForeachCollectionsTest() {
 
   })
 }
+

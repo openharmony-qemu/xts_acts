@@ -55,8 +55,8 @@ class ImmutableData {
   }
 }
 
-export default function SetSizeCollectionsTest() {
-  describe('SetSizeCollectionsTest', () => {
+export default function BuiltinsSetSizeTest() {
+  describe('BuiltinsSetSizeTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -79,15 +79,15 @@ export default function SetSizeCollectionsTest() {
     })
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_0100
-     * @tc.name builtinsAsyncLockConstructorTest0100
-     * @tc.desc Verify size of empty Set
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetSizeTest0100
+     * @tc.number  SUB_BUILTINS_SET_SIZE_TEST_0100
+     * @tc.desc    Verify size of empty Set
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetSizeCollections001';
+    it('builtinsSetSizeTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetSizeTest0100';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>();
       const size: number = set.size;
@@ -97,15 +97,15 @@ export default function SetSizeCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_0200
-     * @tc.name builtinsAsyncLockConstructorTest0200
-     * @tc.desc Verify size with unique string elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetSizeTest0200
+     * @tc.number  SUB_BUILTINS_SET_SIZE_TEST_0200
+     * @tc.desc    Verify size with unique string elements
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetSizeCollections002';
+    it('builtinsSetSizeTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetSizeTest0200';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>(['a', 'b', 'c', 'd']);
       const size: number = set.size;
@@ -115,15 +115,15 @@ export default function SetSizeCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_0300
-     * @tc.name builtinsAsyncLockConstructorTest0300
-     * @tc.desc Verify size ignores duplicate number elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetSizeTest0300
+     * @tc.number  SUB_BUILTINS_SET_SIZE_TEST_0300
+     * @tc.desc    Verify size ignores duplicate number elements
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetSizeCollections003';
+    it('builtinsSetSizeTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetSizeTest0300';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2, 2, 3, 3, 3]);
       const size: number = set.size;
@@ -133,15 +133,15 @@ export default function SetSizeCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_0400
-     * @tc.name builtinsAsyncLockConstructorTest0400
-     * @tc.desc Verify size updates after add operations
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetSizeTest0400
+     * @tc.number  SUB_BUILTINS_SET_SIZE_TEST_0400
+     * @tc.desc    Verify size updates after add operations
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetSizeCollections004';
+    it('builtinsSetSizeTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetSizeTest0400';
       console.info(`${caseName}, test start`);
       const set: collections.Set<boolean> = new collections.Set<boolean>();
 
@@ -157,15 +157,15 @@ export default function SetSizeCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_0500
-     * @tc.name builtinsAsyncLockConstructorTest0500
-     * @tc.desc Verify size updates after delete operations
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetSizeTest0500
+     * @tc.number  SUB_BUILTINS_SET_SIZE_TEST_0500
+     * @tc.desc    Verify size updates after delete operations
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetSizeCollections005';
+    it('builtinsSetSizeTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetSizeTest0500';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>(['x', 'y', 'z']);
 
@@ -181,15 +181,15 @@ export default function SetSizeCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_0600
-     * @tc.name builtinsAsyncLockConstructorTest0600
-     * @tc.desc Verify size after clear operation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetSizeTest0600
+     * @tc.number  SUB_BUILTINS_SET_SIZE_TEST_0600
+     * @tc.desc    Verify size after clear operation
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetSizeCollections006';
+    it('builtinsSetSizeTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetSizeTest0600';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([10, 20, 30]);
 
@@ -202,15 +202,15 @@ export default function SetSizeCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_0700
-     * @tc.name builtinsAsyncLockConstructorTest0700
-     * @tc.desc Verify size with NaN elements (treated as equal)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetSizeTest0700
+     * @tc.number  SUB_BUILTINS_SET_SIZE_TEST_0700
+     * @tc.desc    Verify size with NaN elements (treated as equal)
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetSizeCollections008';
+    it('builtinsSetSizeTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetSizeTest0700';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([NaN, NaN, 5, NaN]);
       expect(set.size).assertEqual(2);
@@ -218,15 +218,15 @@ export default function SetSizeCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_0800
-     * @tc.name builtinsAsyncLockConstructorTest0800
-     * @tc.desc Verify size with 0 and -0 elements (treated as equal)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetSizeTest0800
+     * @tc.number  SUB_BUILTINS_SET_SIZE_TEST_0800
+     * @tc.desc    Verify size with 0 and -0 elements (treated as equal)
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetSizeCollections009';
+    it('builtinsSetSizeTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetSizeTest0800';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([0, -0, 1, -0]);
       expect(set.size).assertEqual(2);
@@ -234,15 +234,15 @@ export default function SetSizeCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_0900
-     * @tc.name builtinsAsyncLockConstructorTest0900
-     * @tc.desc Verify size with BigInt elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetSizeTest0900
+     * @tc.number  SUB_BUILTINS_SET_SIZE_TEST_0900
+     * @tc.desc    Verify size with BigInt elements
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetSizeCollections011';
+    it('builtinsSetSizeTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetSizeTest0900';
       console.info(`${caseName}, test start`);
       const big1: bigint = 100n;
       const big2: bigint = 200n;
@@ -254,15 +254,15 @@ export default function SetSizeCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_1000
-     * @tc.name builtinsAsyncLockConstructorTest1000
-     * @tc.desc Verify size with mixed primitive types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetSizeTest1000
+     * @tc.number  SUB_BUILTINS_SET_SIZE_TEST_1000
+     * @tc.desc    Verify size with mixed primitive types
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetSizeCollections013';
+    it('builtinsSetSizeTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetSizeTest1000';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string | number | boolean | null> = new collections.Set<string | number | boolean | null>([
         'text', 42, true, null, 42, 'text', false
@@ -272,15 +272,15 @@ export default function SetSizeCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_1100
-     * @tc.name builtinsAsyncLockConstructorTest1100
-     * @tc.desc Verify size with large dataset (10,000+ elements)
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetSizeTest1100
+     * @tc.number  SUB_BUILTINS_SET_SIZE_TEST_1100
+     * @tc.desc    Verify size with large dataset (10,000+ elements)
+     * @tc.type    Function
+     * @tc.size    LargeTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest1100', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetSizeCollections014';
+    it('builtinsSetSizeTest1100', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetSizeTest1100';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>();
       const targetSize: number = 15000;
@@ -300,15 +300,15 @@ export default function SetSizeCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_1200
-     * @tc.name builtinsAsyncLockConstructorTest1200
-     * @tc.desc Verify size after consecutive add/delete operations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetSizeTest1200
+     * @tc.number  SUB_BUILTINS_SET_SIZE_TEST_1200
+     * @tc.desc    Verify size after consecutive add/delete operations
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetSizeCollections020';
+    it('builtinsSetSizeTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetSizeTest1200';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>();
 
@@ -334,15 +334,15 @@ export default function SetSizeCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_1300
-     * @tc.name builtinsAsyncLockConstructorTest1300
-     * @tc.desc Verify size with extremely large string values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetSizeTest1300
+     * @tc.number  SUB_BUILTINS_SET_SIZE_TEST_1300
+     * @tc.desc    Verify size with extremely large string values
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetSizeCollections021';
+    it('builtinsSetSizeTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetSizeTest1300';
       console.info(`${caseName}, test start`);
       const longStr1: string = 'a'.repeat(10000);
       const longStr2: string = 'b'.repeat(10000);
@@ -354,15 +354,15 @@ export default function SetSizeCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_1400
-     * @tc.name builtinsAsyncLockConstructorTest1400
-     * @tc.desc Verify size with mixed case-sensitive string elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetSizeTest1400
+     * @tc.number  SUB_BUILTINS_SET_SIZE_TEST_1400
+     * @tc.desc    Verify size with mixed case-sensitive string elements
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetSizeCollections022';
+    it('builtinsSetSizeTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetSizeTest1400';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>(['Apple', 'apple', 'APPLE', 'Banana']);
       expect(set.size).assertEqual(4);
@@ -370,15 +370,15 @@ export default function SetSizeCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_1500
-     * @tc.name builtinsAsyncLockConstructorTest1500
-     * @tc.desc Verify size after adding and deleting the same element multiple times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetSizeTest1500
+     * @tc.number  SUB_BUILTINS_SET_SIZE_TEST_1500
+     * @tc.desc    Verify size after adding and deleting the same element multiple times
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetSizeCollections027';
+    it('builtinsSetSizeTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetSizeTest1500';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>();
 
@@ -400,15 +400,15 @@ export default function SetSizeCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_1600
-     * @tc.name builtinsAsyncLockConstructorTest1600
-     * @tc.desc Verify size with maximum safe integer values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetSizeTest1600
+     * @tc.number  SUB_BUILTINS_SET_SIZE_TEST_1600
+     * @tc.desc    Verify size with maximum safe integer values
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetSizeCollections032';
+    it('builtinsSetSizeTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetSizeTest1600';
       console.info(`${caseName}, test start`);
       const maxSafe: number = Number.MAX_SAFE_INTEGER;
       const maxSafePlus: number = Number.MAX_SAFE_INTEGER + 1;
@@ -419,15 +419,15 @@ export default function SetSizeCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_1700
-     * @tc.name builtinsAsyncLockConstructorTest1700
-     * @tc.desc Verify size with negative zero and positive zero in mixed types
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetSizeTest1700
+     * @tc.number  SUB_BUILTINS_SET_SIZE_TEST_1700
+     * @tc.desc    Verify size with negative zero and positive zero in mixed types
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetSizeCollections033';
+    it('builtinsSetSizeTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetSizeTest1700';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number | string> = new collections.Set<number | string>([0, -0, '0', '-0', 0, -0]);
       expect(set.size).assertEqual(3);
@@ -435,15 +435,15 @@ export default function SetSizeCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_1800
-     * @tc.name builtinsAsyncLockConstructorTest1800
-     * @tc.desc Verify size with elements added during iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetSizeTest1800
+     * @tc.number  SUB_BUILTINS_SET_SIZE_TEST_1800
+     * @tc.desc    Verify size with elements added during iteration
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetSizeCollections034';
+    it('builtinsSetSizeTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetSizeTest1800';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2, 3]);
       let iterationCount: number = 0;
@@ -462,15 +462,15 @@ export default function SetSizeCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_1900
-     * @tc.name builtinsAsyncLockConstructorTest1900
-     * @tc.desc Verify size with elements removed during iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetSizeTest1900
+     * @tc.number  SUB_BUILTINS_SET_SIZE_TEST_1900
+     * @tc.desc    Verify size with elements removed during iteration
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetSizeCollections035';
+    it('builtinsSetSizeTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetSizeTest1900';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2, 3, 4, 5]);
       const values: Iterator<number> = set.values();
@@ -489,15 +489,15 @@ export default function SetSizeCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_2000
-     * @tc.name builtinsAsyncLockConstructorTest2000
-     * @tc.desc Verify size with maximum capacity elements (performance test)
-     * @tc.size LargeTest
-     * @tc.type Performance
-     * @tc.level Level 1
+     * @tc.name    builtinsSetSizeTest2000
+     * @tc.number  SUB_BUILTINS_SET_SIZE_TEST_2000
+     * @tc.desc    Verify size with maximum capacity elements (performance test)
+     * @tc.type    Performance
+     * @tc.size    LargeTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest2000', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetSizeCollections040';
+    it('builtinsSetSizeTest2000', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetSizeTest2000';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>();
       const targetSize: number = 1000;
@@ -522,15 +522,15 @@ export default function SetSizeCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_2100
-     * @tc.name builtinsAsyncLockConstructorTest2100
-     * @tc.desc Verify size with empty and whitespace strings
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetSizeTest2100
+     * @tc.number  SUB_BUILTINS_SET_SIZE_TEST_2100
+     * @tc.desc    Verify size with empty and whitespace strings
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest2100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetSizeCollections041';
+    it('builtinsSetSizeTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetSizeTest2100';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>(['', ' ', '  ', '\t', '\n', '']);
       expect(set.size).assertEqual(5);
@@ -538,15 +538,15 @@ export default function SetSizeCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_2200
-     * @tc.name builtinsAsyncLockConstructorTest2200
-     * @tc.desc Verify size with numbers in different formats (octal, hex, decimal)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetSizeTest2200
+     * @tc.number  SUB_BUILTINS_SET_SIZE_TEST_2200
+     * @tc.desc    Verify size with numbers in different formats (octal, hex, decimal)
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest2200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetSizeCollections042';
+    it('builtinsSetSizeTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetSizeTest2200';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([
         10,
@@ -560,15 +560,15 @@ export default function SetSizeCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_2300
-     * @tc.name builtinsAsyncLockConstructorTest2300
-     * @tc.desc Verify size with multiple NaN values mixed with other numbers
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetSizeTest2300
+     * @tc.number  SUB_BUILTINS_SET_SIZE_TEST_2300
+     * @tc.desc    Verify size with multiple NaN values mixed with other numbers
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest2300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetSizeCollections044';
+    it('builtinsSetSizeTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetSizeTest2300';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([
         NaN,
@@ -582,15 +582,15 @@ export default function SetSizeCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_2400
-     * @tc.name builtinsAsyncLockConstructorTest2400
-     * @tc.desc Verify size with elements added via spread operator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetSizeTest2400
+     * @tc.number  SUB_BUILTINS_SET_SIZE_TEST_2400
+     * @tc.desc    Verify size with elements added via spread operator
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetSizeCollections050';
+    it('builtinsSetSizeTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetSizeTest2400';
       console.info(`${caseName}, test start`);
       const arr1: number[] = [1, 2, 3];
       const arr2: number[] = [3, 4, 5];
@@ -601,15 +601,15 @@ export default function SetSizeCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_2500
-     * @tc.name builtinsAsyncLockConstructorTest2500
-     * @tc.desc Verify size with elements added from another Set
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetSizeTest2500
+     * @tc.number  SUB_BUILTINS_SET_SIZE_TEST_2500
+     * @tc.desc    Verify size with elements added from another Set
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetSizeCollections051';
+    it('builtinsSetSizeTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetSizeTest2500';
       console.info(`${caseName}, test start`);
       const sourceSet: collections.Set<string> = new collections.Set<string>(['a', 'b', 'c']);
       const targetSet: collections.Set<string> = new collections.Set<string>(['c', 'd', 'e']);
@@ -621,15 +621,15 @@ export default function SetSizeCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_2600
-     * @tc.name builtinsAsyncLockConstructorTest2600
-     * @tc.desc Verify size with elements removed using multiple delete calls in sequence
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetSizeTest2600
+     * @tc.number  SUB_BUILTINS_SET_SIZE_TEST_2600
+     * @tc.desc    Verify size with elements removed using multiple delete calls in sequence
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetSizeCollections052';
+    it('builtinsSetSizeTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetSizeTest2600';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([10, 20, 30, 40, 50, 60]);
 
@@ -640,15 +640,15 @@ export default function SetSizeCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_2700
-     * @tc.name builtinsAsyncLockConstructorTest2700
-     * @tc.desc Verify size with large negative numbers
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetSizeTest2700
+     * @tc.number  SUB_BUILTINS_SET_SIZE_TEST_2700
+     * @tc.desc    Verify size with large negative numbers
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest2700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetSizeCollections054';
+    it('builtinsSetSizeTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetSizeTest2700';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([
         -1, -10, -100, -1000,
@@ -660,15 +660,15 @@ export default function SetSizeCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_2800
-     * @tc.name builtinsAsyncLockConstructorTest2800
-     * @tc.desc Verify size with elements that are class instances with same values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetSizeTest2800
+     * @tc.number  SUB_BUILTINS_SET_SIZE_TEST_2800
+     * @tc.desc    Verify size with elements that are class instances with same values
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetSizeCollections055';
+    it('builtinsSetSizeTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetSizeTest2800';
       console.info(`${caseName}, test start`);
       const item1: ImmutableItem = new ImmutableItem('key', 'value');
       const item2: ImmutableItem = new ImmutableItem('key', 'value');
@@ -680,15 +680,15 @@ export default function SetSizeCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_2900
-     * @tc.name builtinsAsyncLockConstructorTest2900
-     * @tc.desc Verify size with elements added in different orders
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetSizeTest2900
+     * @tc.number  SUB_BUILTINS_SET_SIZE_TEST_2900
+     * @tc.desc    Verify size with elements added in different orders
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetSizeCollections057';
+    it('builtinsSetSizeTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetSizeTest2900';
       console.info(`${caseName}, test start`);
       const set1: collections.Set<string> = new collections.Set<string>(['x', 'y', 'z']);
       const set2: collections.Set<string> = new collections.Set<string>(['z', 'y', 'x']);
@@ -700,15 +700,15 @@ export default function SetSizeCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_3000
-     * @tc.name builtinsAsyncLockConstructorTest3000
-     * @tc.desc Verify size consistency across multiple operations
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetSizeTest3000
+     * @tc.number  SUB_BUILTINS_SET_SIZE_TEST_3000
+     * @tc.desc    Verify size consistency across multiple operations
+     * @tc.type    Function
+     * @tc.size    LargeTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest3000', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetSizeCollections060';
+    it('builtinsSetSizeTest3000', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetSizeTest3000';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>();
       const operations: Array<GeneratedTypeLiteralInterface_1> = [];
@@ -745,15 +745,15 @@ export default function SetSizeCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_3100
-     * @tc.name builtinsAsyncLockConstructorTest3100
-     * @tc.desc Verify size with class instances
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetSizeTest3100
+     * @tc.number  SUB_BUILTINS_SET_SIZE_TEST_3100
+     * @tc.desc    Verify size with class instances
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetSizeCollections012';
+    it('builtinsSetSizeTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetSizeTest3100';
       console.info(`${caseName}, test start`);
       const inst1: TestModel = new TestModel('A', 10);
       const inst2: TestModel = new TestModel('B', 20);
@@ -765,15 +765,15 @@ export default function SetSizeCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_ASYNCLOCK_CONSTRUCTOR_TEST_3200
-     * @tc.name builtinsAsyncLockConstructorTest3200
-     * @tc.desc Verify size with mixed unique and duplicate complex objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.name    builtinsSetSizeTest3200
+     * @tc.number  SUB_BUILTINS_SET_SIZE_TEST_3200
+     * @tc.desc    Verify size with mixed unique and duplicate complex objects
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   LEVEL1
      */
-    it('builtinsAsyncLockConstructorTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'testSetSizeCollections031';
+    it('builtinsSetSizeTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsSetSizeTest3200';
       console.info(`${caseName}, test start`);
       const data1: ImmutableData = new ImmutableData('key1', 100);
       const data2: ImmutableData = new ImmutableData('key2', 200);

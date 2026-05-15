@@ -13,23 +13,22 @@
  * limitations under the License.
  */
 
-import MapClearCollectionsTest from "./MapClearCollectionsTest.test";
-import MapConstructorCollectionsTest from "./MapConstructorCollectionsTest.test";
-import MapDeleteCollectionsTest from "./MapDeleteCollectionsTest.test";
-import MapEntriesCollectionsTest from "./MapEntriesCollectionsTest.test";
-import MapForeachCollectionsTest from "./MapForeachCollectionsTest.test";
-import MapGetCollectionsTest from "./MapGetCollectionsTest.test";
-import MapHasCollectionsTest from "./MapHasCollectionsTest.test";
-import MapValuesCollectionsTest from "./MapValuesCollectionsTest.test";
+import BuiltinsMapClearTest from "./BuiltinsMapClearTest.test";
+import BuiltinsMapConstructorTest from "./BuiltinsMapConstructorTest.test";
+import BuiltinsMapDeleteTest from "./BuiltinsMapDeleteTest.test";
+import BuiltinsMapEntriesTest from "./BuiltinsMapEntriesTest.test";
+import BuiltinsMapForeachTest from "./BuiltinsMapForeachTest.test";
+import BuiltinsMapGetTest from "./BuiltinsMapGetTest.test";
+import BuiltinsMapHasTest from "./BuiltinsMapHasTest.test";
+import BuiltinsMapValuesTest from "./BuiltinsMapValuesTest.test";
 
 export default function testsuite() {
-  MapClearCollectionsTest();
-  MapConstructorCollectionsTest();
-  MapDeleteCollectionsTest();
-  MapEntriesCollectionsTest();
-  MapForeachCollectionsTest();
-  MapGetCollectionsTest();
-  MapHasCollectionsTest();
-  MapValuesCollectionsTest();
+  BuiltinsMapClearTest();
+  BuiltinsMapConstructorTest();
+  BuiltinsMapDeleteTest();
+  BuiltinsMapEntriesTest();
+  BuiltinsMapForeachTest();
+  BuiltinsMapGetTest();
+  BuiltinsMapHasTest();
+  BuiltinsMapValuesTest();
 };
-

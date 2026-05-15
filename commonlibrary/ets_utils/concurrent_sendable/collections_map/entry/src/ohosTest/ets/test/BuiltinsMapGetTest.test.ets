@@ -26,8 +26,8 @@ class Person {
   }
 }
 
-export default function MapGetCollectionsTest() {
-  describe('MapGetCollectionsTest', () => {
+export default function BuiltinsMapGetTest() {
+  describe('BuiltinsMapGetTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -50,56 +50,56 @@ export default function MapGetCollectionsTest() {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0001
-     * @tc.name mapGetCollectionsTest0001
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_0100
+     * @tc.name builtinsMapGetTest0100
      * @tc.desc Verify Map.get returns correct value for existing string key
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapGetCollectionsTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapGetTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>();
       map.set('key1', 100);
       expect(map.get('key1')).assertEqual(100);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0002
-     * @tc.name mapGetCollectionsTest0002
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_0200
+     * @tc.name builtinsMapGetTest0200
      * @tc.desc Verify Map.get returns undefined for non-existing key
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapGetCollectionsTest0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapGetTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>();
       map.set('name', 'Alice');
       expect(map.get('age')).assertEqual(undefined);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0003
-     * @tc.name mapGetCollectionsTest0003
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_0300
+     * @tc.name builtinsMapGetTest0300
      * @tc.desc Verify Map.get returns correct value for number key
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapGetCollectionsTest0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapGetTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>();
       map.set(42, 'answer');
       expect(map.get(42)).assertEqual('answer');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0004
-     * @tc.name mapGetCollectionsTest0004
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_0400
+     * @tc.name builtinsMapGetTest0400
      * @tc.desc Verify Map.get distinguishes between number and string keys with same value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapGetCollectionsTest0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapGetTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<number | string, boolean> = new collections.Map<number | string, boolean>();
       map.set(123, true);
       map.set('123', false);
@@ -108,14 +108,14 @@ export default function MapGetCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0005
-     * @tc.name mapGetCollectionsTest0005
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_0500
+     * @tc.name builtinsMapGetTest0500
      * @tc.desc Verify Map.get returns correct value for boolean key
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapGetCollectionsTest0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapGetTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<boolean, string> = new collections.Map<boolean, string>();
       map.set(true, 'yes');
       map.set(false, 'no');
@@ -124,14 +124,14 @@ export default function MapGetCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0006
-     * @tc.name mapGetCollectionsTest0006
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_0600
+     * @tc.name builtinsMapGetTest0600
      * @tc.desc Verify Map.get returns correct value after key is updated
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapGetCollectionsTest0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapGetTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>();
       map.set('count', 1);
       map.set('count', 2);
@@ -139,14 +139,14 @@ export default function MapGetCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0007
-     * @tc.name mapGetCollectionsTest0007
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_0700
+     * @tc.name builtinsMapGetTest0700
      * @tc.desc Verify Map.get returns undefined after key is deleted
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapGetCollectionsTest0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapGetTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>();
       map.set('key', 'value');
       map.delete('key');
@@ -154,42 +154,42 @@ export default function MapGetCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0008
-     * @tc.name mapGetCollectionsTest0008
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_0800
+     * @tc.name builtinsMapGetTest0800
      * @tc.desc Verify Map.get works with null key
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapGetCollectionsTest0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapGetTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<null, string> = new collections.Map<null, string>();
       map.set(null, 'null value');
       expect(map.get(null)).assertEqual('null value');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0009
-     * @tc.name mapGetCollectionsTest0009
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_0900
+     * @tc.name builtinsMapGetTest0900
      * @tc.desc Verify Map.get works with undefined key
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapGetCollectionsTest0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapGetTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<undefined, number> = new collections.Map<undefined, number>();
       map.set(undefined, 123);
       expect(map.get(undefined)).assertEqual(123);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0010
-     * @tc.name mapGetCollectionsTest0010
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_1000
+     * @tc.name builtinsMapGetTest1000
      * @tc.desc Verify Map.get distinguishes between null and undefined keys
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapGetCollectionsTest0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapGetTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<null | undefined, string> = new collections.Map<null | undefined, string>();
       map.set(null, 'null');
       map.set(undefined, 'undefined');
@@ -198,28 +198,28 @@ export default function MapGetCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0011
-     * @tc.name mapGetCollectionsTest0011
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_1100
+     * @tc.name builtinsMapGetTest1100
      * @tc.desc Verify Map.get works with NaN as key
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapGetCollectionsTest0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapGetTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>();
       map.set(NaN, 'not a number');
       expect(map.get(NaN)).assertEqual('not a number');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0012
-     * @tc.name mapGetCollectionsTest0012
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_1200
+     * @tc.name builtinsMapGetTest1200
      * @tc.desc Verify Map.get returns correct value for large integer key
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapGetCollectionsTest0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapGetTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const largeKey: bigint = 9007199254740991n;
       const map: collections.Map<bigint, string> = new collections.Map<bigint, string>();
       map.set(largeKey, 'large value');
@@ -227,14 +227,14 @@ export default function MapGetCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0013
-     * @tc.name mapGetCollectionsTest0013
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_1300
+     * @tc.name builtinsMapGetTest1300
      * @tc.desc Verify Map.get returns correct value for multiple keys
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapGetCollectionsTest0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapGetTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>();
       map.set('a', 'apple');
       map.set('b', 'banana');
@@ -245,41 +245,41 @@ export default function MapGetCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0014
-     * @tc.name mapGetCollectionsTest0014
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_1400
+     * @tc.name builtinsMapGetTest1400
      * @tc.desc Verify Map.get works with empty string key
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapGetCollectionsTest0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapGetTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>();
       map.set('', 0);
       expect(map.get('')).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0015
-     * @tc.name mapGetCollectionsTest0015
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_1500
+     * @tc.name builtinsMapGetTest1500
      * @tc.desc Verify Map.get returns undefined for empty map
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapGetCollectionsTest0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapGetTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, number> = new collections.Map<number, number>();
       expect(map.get(1)).assertEqual(undefined);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0016
-     * @tc.name mapGetCollectionsTest0016
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_1600
+     * @tc.name builtinsMapGetTest1600
      * @tc.desc Verify Map.get works after clear
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapGetCollectionsTest0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapGetTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>();
       map.set('key', 'value');
       map.clear();
@@ -287,14 +287,14 @@ export default function MapGetCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0017
-     * @tc.name mapGetCollectionsTest0017
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_1700
+     * @tc.name builtinsMapGetTest1700
      * @tc.desc Verify Map.get works with large number of entries
      * @tc.size LargeTest
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('mapGetCollectionsTest0017', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
+    it('builtinsMapGetTest1700', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       const map: collections.Map<number, number> = new collections.Map<number, number>();
       const size: number = 1000;
 
@@ -308,42 +308,42 @@ export default function MapGetCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0018
-     * @tc.name mapGetCollectionsTest0018
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_1800
+     * @tc.name builtinsMapGetTest1800
      * @tc.desc Verify Map.get returns correct value for boolean true key
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapGetCollectionsTest0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapGetTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<boolean, string> = new collections.Map<boolean, string>();
       map.set(true, 'active');
       expect(map.get(true)).assertEqual('active');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0019
-     * @tc.name mapGetCollectionsTest0019
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_1900
+     * @tc.name builtinsMapGetTest1900
      * @tc.desc Verify Map.get returns correct value for boolean false key
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapGetCollectionsTest0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapGetTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<boolean, string> = new collections.Map<boolean, string>();
       map.set(false, 'inactive');
       expect(map.get(false)).assertEqual('inactive');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0020
-     * @tc.name mapGetCollectionsTest0020
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_2000
+     * @tc.name builtinsMapGetTest2000
      * @tc.desc Verify Map.get works with negative number keys
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapGetCollectionsTest0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapGetTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>();
       map.set(-1, 'negative one');
       map.set(-100, 'negative hundred');
@@ -352,14 +352,14 @@ export default function MapGetCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0021
-     * @tc.name mapGetCollectionsTest0021
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_2100
+     * @tc.name builtinsMapGetTest2100
      * @tc.desc Verify Map.get works with float number keys
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapGetCollectionsTest0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapGetTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>();
       map.set(3.14, 'pi');
       map.set(2.718, 'e');
@@ -368,14 +368,14 @@ export default function MapGetCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0022
-     * @tc.name mapGetCollectionsTest0022
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_2200
+     * @tc.name builtinsMapGetTest2200
      * @tc.desc Verify Map.get distinguishes between similar float keys
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapGetCollectionsTest0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapGetTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>();
       map.set(1.0, 'one point zero');
       map.set(1.0000001, 'almost one');
@@ -384,14 +384,14 @@ export default function MapGetCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0023
-     * @tc.name mapGetCollectionsTest0023
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_2300
+     * @tc.name builtinsMapGetTest2300
      * @tc.desc Verify Map.get works with string keys containing special characters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapGetCollectionsTest0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapGetTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>();
       map.set('!@#$%', 'special chars');
       map.set('a=b&c=d', 'query string');
@@ -400,14 +400,14 @@ export default function MapGetCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0024
-     * @tc.name mapGetCollectionsTest0024
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_2400
+     * @tc.name builtinsMapGetTest2400
      * @tc.desc Verify Map.get works with Unicode string keys
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapGetCollectionsTest0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapGetTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>();
       map.set('café', 'coffee');
       map.set('北京', 'Beijing');
@@ -416,14 +416,14 @@ export default function MapGetCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0025
-     * @tc.name mapGetCollectionsTest0025
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_2500
+     * @tc.name builtinsMapGetTest2500
      * @tc.desc Verify Map.get returns correct value for Sendable class instance keys
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapGetCollectionsTest0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapGetTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const person: Person = new Person('Alice');
       const map: collections.Map<Person, number> = new collections.Map<Person, number>();
       map.set(person, 30);
@@ -432,14 +432,14 @@ export default function MapGetCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0026
-     * @tc.name mapGetCollectionsTest0026
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_2600
+     * @tc.name builtinsMapGetTest2600
      * @tc.desc Verify Map.get distinguishes between different Sendable class instances
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapGetCollectionsTest0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapGetTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<Person, number> = new collections.Map<Person, number>();
       map.set(new Person('Alice'), 30);
 
@@ -447,14 +447,14 @@ export default function MapGetCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0027
-     * @tc.name mapGetCollectionsTest0027
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_2700
+     * @tc.name builtinsMapGetTest2700
      * @tc.desc Verify Map.get returns correct value after re-adding key
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapGetCollectionsTest0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapGetTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>();
       map.set('key', 1);
       map.delete('key');
@@ -463,14 +463,14 @@ export default function MapGetCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0028
-     * @tc.name mapGetCollectionsTest0028
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_2800
+     * @tc.name builtinsMapGetTest2800
      * @tc.desc Verify Map.get works with same key added multiple times
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapGetCollectionsTest0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapGetTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>();
       map.set(1, 'one');
       map.set(1, 'uno');
@@ -479,14 +479,14 @@ export default function MapGetCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0029
-     * @tc.name mapGetCollectionsTest0029
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_2900
+     * @tc.name builtinsMapGetTest2900
      * @tc.desc Verify Map.get returns correct value for key added in constructor
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapGetCollectionsTest0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapGetTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>([
         ['a', 1],
         ['b', 2],
@@ -496,14 +496,14 @@ export default function MapGetCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0030
-     * @tc.name mapGetCollectionsTest0030
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_3000
+     * @tc.name builtinsMapGetTest3000
      * @tc.desc Verify Map.get returns correct value after map is copied
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('mapGetCollectionsTest0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+    it('builtinsMapGetTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const originalMap: collections.Map<string, number> = new collections.Map<string, number>([['a', 1], ['b', 2]]);
       const copiedMap: collections.Map<string, number> = new collections.Map<string, number>(Array.from(originalMap.entries()));
 
@@ -512,14 +512,14 @@ export default function MapGetCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0031
-     * @tc.name mapGetCollectionsTest0031
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_3100
+     * @tc.name builtinsMapGetTest3100
      * @tc.desc Verify Map.get works with keys from other realms (theoretical)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('mapGetCollectionsTest0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+    it('builtinsMapGetTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const key: string = 'cross-realm';
       const map: collections.Map<string, string> = new collections.Map<string, string>();
       map.set(key, 'value');
@@ -527,28 +527,28 @@ export default function MapGetCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0032
-     * @tc.name mapGetCollectionsTest0032
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_3200
+     * @tc.name builtinsMapGetTest3200
      * @tc.desc Verify Map.get returns undefined for key that was never set
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 1
+     * @tc.level LEVEL1
      */
-    it('mapGetCollectionsTest0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('builtinsMapGetTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>();
       map.set('a', 'A');
       expect(map.get('b')).assertEqual(undefined);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0033
-     * @tc.name mapGetCollectionsTest0033
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_3300
+     * @tc.name builtinsMapGetTest3300
      * @tc.desc Verify Map.get works with very long string keys
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapGetCollectionsTest0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapGetTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let longKey: string = '';
       for (let i: number = 0; i < 1000; i++) {
         longKey += 'a';
@@ -559,14 +559,14 @@ export default function MapGetCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0034
-     * @tc.name mapGetCollectionsTest0034
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_3400
+     * @tc.name builtinsMapGetTest3400
      * @tc.desc Verify Map.get returns correct value for key added in loop
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapGetCollectionsTest0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapGetTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<number, number> = new collections.Map<number, number>();
 
       for (let i: number = 0; i < 10; i++) {
@@ -577,14 +577,14 @@ export default function MapGetCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0035
-     * @tc.name mapGetCollectionsTest0035
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_3500
+     * @tc.name builtinsMapGetTest3500
      * @tc.desc Verify Map.get returns correct value after map is modified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapGetCollectionsTest0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapGetTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>([['a', 'A'], ['b', 'B']]);
 
       map.set('c', 'C');
@@ -595,14 +595,14 @@ export default function MapGetCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0036
-     * @tc.name mapGetCollectionsTest0036
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_3600
+     * @tc.name builtinsMapGetTest3600
      * @tc.desc Verify Map.get works with key that is a BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapGetCollectionsTest0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapGetTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const bigKey: bigint = 9007199254740991n;
       const map: collections.Map<bigint, string> = new collections.Map<bigint, string>();
       map.set(bigKey, 'big integer');
@@ -610,14 +610,14 @@ export default function MapGetCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0037
-     * @tc.name mapGetCollectionsTest0037
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_3700
+     * @tc.name builtinsMapGetTest3700
      * @tc.desc Verify Map.get distinguishes between BigInt and Number with same value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('mapGetCollectionsTest0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('builtinsMapGetTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<bigint | number, string> = new collections.Map<bigint | number, string>();
       map.set(42n, 'bigint');
       map.set(42, 'number');
@@ -627,14 +627,14 @@ export default function MapGetCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0038
-     * @tc.name mapGetCollectionsTest0038
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_3800
+     * @tc.name builtinsMapGetTest3800
      * @tc.desc Verify Map.get returns correct value for key in large map
      * @tc.size LargeTest
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('mapGetCollectionsTest0038', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
+    it('builtinsMapGetTest3800', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>();
       const targetKey: number = 5000;
 
@@ -646,14 +646,14 @@ export default function MapGetCollectionsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_MAP_GET_COLLECTIONS_TEST_0039
-     * @tc.name mapGetCollectionsTest0039
+     * @tc.number SUB_BUILTINS_MAP_GET_TEST_3900
+     * @tc.name builtinsMapGetTest3900
      * @tc.desc Verify Map.get returns correct value after many key additions and deletions
      * @tc.size LargeTest
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('mapGetCollectionsTest0039', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
+    it('builtinsMapGetTest3900', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>();
       const specialKey: number = 9999;
       for (let i: number = 0; i < 10000; i++) {
@@ -669,3 +669,4 @@ export default function MapGetCollectionsTest() {
     });
   })
 }
+
