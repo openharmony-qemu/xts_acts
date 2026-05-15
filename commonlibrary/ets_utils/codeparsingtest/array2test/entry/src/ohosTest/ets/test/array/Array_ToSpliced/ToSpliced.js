@@ -125,7 +125,7 @@ function runCasePart2(idx) {
   return safeExec(fn);
 }
 
-function runCasePart3(idx) {
+function runCasePart3a(idx) {
   const localIdx = idx - 50;
   const cases = [
     () => same(tsp([1, 2], 1, 0, undefined), [1, undefined, 2]),
@@ -144,6 +144,14 @@ function runCasePart3(idx) {
     () => same(tsp([1, 2, 3], 1, 1), [1, 3]),
     () => same(tsp([1, 3], 1, 0, 2), [1, 2, 3]),
     () => same(tsp([1, 5], 1, 0, 2, 3, 4), [1, 2, 3, 4, 5]),
+  ];
+  const fn = cases[localIdx];
+  if (!fn) return false;
+  return safeExec(fn);
+}
+function runCasePart3b(idx) {
+  const localIdx = idx - 59;
+  const cases = [
     () => {
   const items = Array.from({ length: 200 }, (_, i) => i);
   const a = [0];
@@ -232,7 +240,7 @@ function runCasePart4(idx) {
   return safeExec(fn);
 }
 
-function runCasePart5(idx) {
+function runCasePart5a(idx) {
   const localIdx = idx - 75;
   const cases = [
     () => {
@@ -268,6 +276,14 @@ function runCasePart5(idx) {
   const r = tsp([]);
   return r.length === 0 && r !== [];
 },
+  ];
+  const fn = cases[localIdx];
+  if (!fn) return false;
+  return safeExec(fn);
+}
+function runCasePart5b(idx) {
+  const localIdx = idx - 82;
+  const cases = [
     () => {
   const r = tsp([], 0);
   return r.length === 0;
@@ -289,7 +305,7 @@ function runCasePart5(idx) {
   return safeExec(fn);
 }
 
-function runCasePart6(idx) {
+function runCasePart6a(idx) {
   const localIdx = idx - 88;
   const cases = [
     () => {
@@ -322,6 +338,14 @@ function runCasePart6(idx) {
   }
   return same(f(1, 2, 3), [1, 'new', 3]);
 },
+  ];
+  const fn = cases[localIdx];
+  if (!fn) return false;
+  return safeExec(fn);
+}
+function runCasePart6b(idx) {
+  const localIdx = idx - 94;
+  const cases = [
     () => same(tsp('abc', 1, 1, 'X'), ['a', 'X', 'c']),
     () => {
   if (typeof document === 'undefined') {
@@ -351,10 +375,13 @@ function runCase(id) {
   const idx = id - 100;
   if (idx < 25) return runCasePart1(idx);
   if (idx < 50) return runCasePart2(idx);
-  if (idx < 67) return runCasePart3(idx);
+  if (idx < 59) return runCasePart3a(idx);
+  if (idx < 67) return runCasePart3b(idx);
   if (idx < 75) return runCasePart4(idx);
-  if (idx < 88) return runCasePart5(idx);
-  return runCasePart6(idx);
+  if (idx < 82) return runCasePart5a(idx);
+  if (idx < 88) return runCasePart5b(idx);
+  if (idx < 94) return runCasePart6a(idx);
+  return runCasePart6b(idx);
 }
 
 export function ToSplicedJs_0100() {

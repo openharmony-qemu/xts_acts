@@ -119,7 +119,7 @@ function runCasePart02(idx) {
   return safeExec(fn);
 }
 
-function runCasePart03(idx) {
+function runCasePart03a(idx) {
   const localIdx = idx - 14;
   const cases = [
     () => {
@@ -152,6 +152,14 @@ function runCasePart03(idx) {
         return e instanceof TypeError;
       }
     },
+  ];
+  const fn = cases[localIdx];
+  if (!fn) return false;
+  return safeExec(fn);
+}
+function runCasePart03b(idx) {
+  const localIdx = idx - 18;
+  const cases = [
     () => {
       try {
         ts([1, 2, 3], null);
@@ -354,7 +362,7 @@ function runCasePart08(idx) {
   return safeExec(fn);
 }
 
-function runCasePart09(idx) {
+function runCasePart09a(idx) {
   const localIdx = idx - 56;
   const cases = [
     () => {
@@ -385,6 +393,14 @@ function runCasePart09(idx) {
         (Object.is(r[2], 0) || Object.is(r[2], -0))
       );
     },
+  ];
+  const fn = cases[localIdx];
+  if (!fn) return false;
+  return safeExec(fn);
+}
+function runCasePart09b(idx) {
+  const localIdx = idx - 60;
+  const cases = [
     () => {
       try {
         ts([Symbol('a'), Symbol('b')]);
@@ -571,7 +587,7 @@ function runCasePart13(idx) {
   return safeExec(fn);
 }
 
-function runCasePart14(idx) {
+function runCasePart14a(idx) {
   const localIdx = idx - 90;
   const cases = [
     () => ts({ length: 'abc', 0: 1, 1: 2 }).length === 0,
@@ -594,6 +610,14 @@ function runCasePart14(idx) {
       };
       return ts(obj, (a, b) => a - b).join(',') === '1,2,3';
     },
+  ];
+  const fn = cases[localIdx];
+  if (!fn) return false;
+  return safeExec(fn);
+}
+function runCasePart14b(idx) {
+  const localIdx = idx - 93;
+  const cases = [
     () => {
       try {
         const obj = {
@@ -682,18 +706,21 @@ function runCase(id) {
   const idx = id - 100;
   if (idx < 7) return runCasePart01(idx);
   if (idx < 14) return runCasePart02(idx);
-  if (idx < 21) return runCasePart03(idx);
+  if (idx < 18) return runCasePart03a(idx);
+  if (idx < 21) return runCasePart03b(idx);
   if (idx < 28) return runCasePart04(idx);
   if (idx < 35) return runCasePart05(idx);
   if (idx < 42) return runCasePart06(idx);
   if (idx < 49) return runCasePart07(idx);
   if (idx < 56) return runCasePart08(idx);
-  if (idx < 63) return runCasePart09(idx);
+  if (idx < 60) return runCasePart09a(idx);
+  if (idx < 63) return runCasePart09b(idx);
   if (idx < 70) return runCasePart10(idx);
   if (idx < 77) return runCasePart11(idx);
   if (idx < 84) return runCasePart12(idx);
   if (idx < 90) return runCasePart13(idx);
-  if (idx < 96) return runCasePart14(idx);
+  if (idx < 93) return runCasePart14a(idx);
+  if (idx < 96) return runCasePart14b(idx);
   return runCasePart15(idx);
 }
 
