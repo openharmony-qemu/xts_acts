@@ -159,6 +159,12 @@ export default function windowPCTest() {
           lastWindow = await window.getLastWindow(context)
           lastID = lastWindow.getWindowProperties().id
         }
+        let driver: Driver = Driver.create();
+        let buttonOne = await driver.findComponent(ON.text('知道了'));
+        console.info(`buttonOne is &{JSON.stringify(buttonOne)}`);
+        if (buttonOne) {
+          await buttonOne.click();
+        }
       } catch (error) {
         console.log('afterEach fail cause' + error)
       }
@@ -290,8 +296,10 @@ export default function windowPCTest() {
         let driver = Driver.create()
         let windowPoint = windowClass.getWindowProperties().windowRect
         console.info(`${message} windowPoint = ${JSON.stringify(windowPoint)}`)
-        await driver.drag(windowPoint.left + 100, windowPoint.top + 50, windowPoint.left + 200, windowPoint.top + 150)
-        await sleep(1000)
+        if (isFreeWindowMode) {
+          await driver.drag(windowPoint.left + 100, windowPoint.top + 50, windowPoint.left + 200, windowPoint.top + 150)
+          await sleep(1000)
+        }
         windowPoint = windowClass.getWindowProperties().windowRect
         console.info(`${message} windowPoint = ${JSON.stringify(windowPoint)}`)
         try {
