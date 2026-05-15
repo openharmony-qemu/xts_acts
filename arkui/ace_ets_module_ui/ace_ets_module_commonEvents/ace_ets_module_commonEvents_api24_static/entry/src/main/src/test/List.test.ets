@@ -42,6 +42,7 @@ import Marquee from './getHistoricalPointsTest/Marquee.test';
 import getSizeLimitationTest from './getSizeLimitation/GetSizeLimitationTest.test';
 import setCustomCursorundefined from './setCustomCursor/setCustomCursor_unedfined.test';
 import setCustomCursor from './setCustomCursor/setCustomCursor.test';
+import shouldRecognizerParallelWith from './shouldRecognizerParallelWith/shouldRecognizerParallelWith.test'
 
 export default function testsuite() {
   getSizeLimitationTest();
@@ -73,4 +74,5 @@ export default function testsuite() {
   getHistoricalPoints_globalDisplayX();
   setCustomCursorundefined();
   setCustomCursor();
+  shouldRecognizerParallelWith();
 }
