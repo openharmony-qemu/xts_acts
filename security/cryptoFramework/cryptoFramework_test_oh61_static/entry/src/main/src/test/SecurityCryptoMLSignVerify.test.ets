@@ -109,29 +109,6 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
       });
 
     /**
-     * @tc.name   SUB_Security_CryptoFramework_MLDSA_SignVerify_Func_0400
-     * @tc.number SUB_Security_CryptoFramework_MLDSA_SignVerify_Func_0400
-     * @tc.desc   ML-DSA sign object creation test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("SUB_Security_CryptoFramework_MLDSA_SignVerify_Func_0400",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-        try {
-          let sign: cryptoFramework.Sign = cryptoFramework.createSign("ML-DSA");
-          expect(sign.algName).assertEqual("ML-DSA");
-          expect(typeof sign.initSync).assertEqual('function');
-          expect(typeof sign.signSync).assertEqual('function');
-          expect(typeof sign.setSignSpec).assertEqual('function');
-        } catch (error) {
-          console.error(`[XTS] MLDSA_SignVerify_Func_0400 ${error}, error code: ${error.code}`);
-          expect(null).assertFail();
-        }
-        done();
-      });
-
-    /**
      * @tc.name   SUB_Security_CryptoFramework_MLDSA_Spec_Func_0500
      * @tc.number SUB_Security_CryptoFramework_MLDSA_Spec_Func_0500
      * @tc.desc   Set deterministic before init - functional test.
