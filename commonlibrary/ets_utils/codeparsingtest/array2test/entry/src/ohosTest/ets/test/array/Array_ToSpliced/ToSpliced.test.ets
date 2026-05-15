@@ -43,7 +43,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0100
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_0100
-     * @tc.desc   1.1.1 从数组中间删除元素
+     * @tc.desc   1.1.1 Delete elements from middle of array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -54,7 +54,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0101
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_0200
-     * @tc.desc   1.1.2 从数组头部删除元素
+     * @tc.desc   1.1.2 Delete elements from head of array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -65,7 +65,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0102
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_0300
-     * @tc.desc   1.1.3 从数组尾部删除元素
+     * @tc.desc   1.1.3 Delete elements from tail of array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -76,7 +76,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0103
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_0400
-     * @tc.desc   1.1.4 删除数组所有元素
+     * @tc.desc   1.1.4 Delete all elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -87,7 +87,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0104
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_0500
-     * @tc.desc   1.2.1 在数组中间插入元素
+     * @tc.desc   1.2.1 Insert elements in middle of array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -98,7 +98,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0105
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_0600
-     * @tc.desc   1.2.2 在数组头部插入元素
+     * @tc.desc   1.2.2 Insert elements at head of array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -109,7 +109,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0106
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_0700
-     * @tc.desc   1.2.3 在数组尾部追加元素
+     * @tc.desc   1.2.3 Append elements at tail of array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -120,7 +120,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0107
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_0800
-     * @tc.desc   1.2.4 插入单个元素
+     * @tc.desc   1.2.4 Insert single element
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -131,7 +131,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0108
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_0900
-     * @tc.desc   1.2.5 插入多个元素
+     * @tc.desc   1.2.5 Insert multiple elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -142,7 +142,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0109
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_1000
-     * @tc.desc   1.3.1 用一个元素替换一个元素
+     * @tc.desc   1.3.1 Replace one element with one element
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -153,7 +153,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0110
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_1100
-     * @tc.desc   1.3.2 用多个元素替换一个元素
+     * @tc.desc   1.3.2 Replace one element with multiple elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -164,7 +164,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0111
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_1200
-     * @tc.desc   1.3.3 用一个元素替换多个元素
+     * @tc.desc   1.3.3 Replace multiple elements with one element
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -175,7 +175,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0112
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_1300
-     * @tc.desc   1.3.4 用多个元素替换多个元素（数量不同）
+     * @tc.desc   1.3.4 Replace multiple elements with different count
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -186,7 +186,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0113
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_1400
-     * @tc.desc   1.4.1 start和deleteCount均为0且无item
+     * @tc.desc   1.4.1 start and deleteCount are 0 with no item
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -197,7 +197,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0114
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_1500
-     * @tc.desc   1.4.2 start等于数组长度且无item
+     * @tc.desc   1.4.2 start equals array length with no item
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -208,7 +208,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0115
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_1600
-     * @tc.desc   2.1.1 start=0（从头部开始）
+     * @tc.desc   2.1.1 start=0 (from head)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -219,7 +219,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0116
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_1700
-     * @tc.desc   2.1.2 start在数组中间
+     * @tc.desc   2.1.2 start in middle of array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -230,7 +230,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0117
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_1800
-     * @tc.desc   2.1.3 start等于array.length
+     * @tc.desc   2.1.3 start equals array.length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -241,7 +241,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0118
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_1900
-     * @tc.desc   2.1.4 start大于array.length
+     * @tc.desc   2.1.4 start greater than array.length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -252,7 +252,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0119
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_2000
-     * @tc.desc   2.2.1 start为-1（从末尾倒数第1个）
+     * @tc.desc   2.2.1 start=-1 (last element)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -263,7 +263,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0120
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_2100
-     * @tc.desc   2.2.2 start为负数且在范围内
+     * @tc.desc   2.2.2 negative start within range
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -274,7 +274,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0121
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_2200
-     * @tc.desc   2.2.3 start为负数且绝对值等于array.length
+     * @tc.desc   2.2.3 negative start with abs equal to array.length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -285,7 +285,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0122
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_2300
-     * @tc.desc   2.2.4 start为负数且绝对值大于array.length
+     * @tc.desc   2.2.4 negative start with abs greater than array.length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -296,7 +296,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0123
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_2400
-     * @tc.desc   2.3.1 start省略（不传start参数）
+     * @tc.desc   2.3.1 start omitted
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -307,7 +307,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0124
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_2500
-     * @tc.desc   2.3.2 start为NaN
+     * @tc.desc   2.3.2 start is NaN
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -318,7 +318,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0125
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_2600
-     * @tc.desc   2.3.3 start为Infinity
+     * @tc.desc   2.3.3 start is Infinity
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -329,7 +329,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0126
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_2700
-     * @tc.desc   2.3.4 start为-Infinity
+     * @tc.desc   2.3.4 start is -Infinity
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -340,7 +340,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0127
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_2800
-     * @tc.desc   2.3.5 start为浮点数（向下取整）
+     * @tc.desc   2.3.5 start is float (floored)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -351,7 +351,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0128
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_2900
-     * @tc.desc   2.3.6 start为字符串数字
+     * @tc.desc   2.3.6 start is numeric string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -362,7 +362,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0129
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_3000
-     * @tc.desc   2.3.7 start为null
+     * @tc.desc   2.3.7 start is null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -373,7 +373,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0130
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_3100
-     * @tc.desc   2.3.8 start为undefined
+     * @tc.desc   2.3.8 start is undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -384,7 +384,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0131
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_3200
-     * @tc.desc   2.3.9 start为true/false
+     * @tc.desc   2.3.9 start is true/false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -395,7 +395,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0132
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_3300
-     * @tc.desc   3.1.1 deleteCount=0（不删除）
+     * @tc.desc   3.1.1 deleteCount=0 (no deletion)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -406,7 +406,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0133
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_3400
-     * @tc.desc   3.1.2 deleteCount小于从start到末尾的元素数
+     * @tc.desc   3.1.2 deleteCount less than elements from start to end
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -417,7 +417,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0134
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_3500
-     * @tc.desc   3.1.3 deleteCount等于从start到末尾的元素数
+     * @tc.desc   3.1.3 deleteCount equals elements from start to end
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -428,7 +428,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0135
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_3600
-     * @tc.desc   3.1.4 deleteCount大于从start到末尾的元素数
+     * @tc.desc   3.1.4 deleteCount greater than elements from start to end
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -439,7 +439,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0136
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_3700
-     * @tc.desc   3.2.1 deleteCount省略
+     * @tc.desc   3.2.1 deleteCount omitted
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -450,7 +450,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0137
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_3800
-     * @tc.desc   3.2.2 deleteCount为undefined
+     * @tc.desc   3.2.2 deleteCount is undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -461,7 +461,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0138
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_3900
-     * @tc.desc   3.2.3 deleteCount为undefined且传item参数
+     * @tc.desc   3.2.3 deleteCount is undefined with item parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -472,7 +472,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0139
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_4000
-     * @tc.desc   3.2.4 deleteCount为Infinity且传item参数
+     * @tc.desc   3.2.4 deleteCount Infinity with item
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -483,7 +483,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0140
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_4100
-     * @tc.desc   3.2.5 deleteCount为负数
+     * @tc.desc   3.2.5 deleteCount is negative
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -494,7 +494,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0141
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_4200
-     * @tc.desc   3.2.6 deleteCount为NaN
+     * @tc.desc   3.2.6 deleteCount is NaN
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -505,7 +505,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0142
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_4300
-     * @tc.desc   3.2.7 deleteCount为浮点数（截断取整）
+     * @tc.desc   3.2.7 deleteCount is float (truncated)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -516,7 +516,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0143
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_4400
-     * @tc.desc   3.2.8 deleteCount为字符串数字
+     * @tc.desc   3.2.8 deleteCount is numeric string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -527,7 +527,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0144
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_4500
-     * @tc.desc   3.2.9 deleteCount为null
+     * @tc.desc   3.2.9 deleteCount is null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -538,7 +538,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0145
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_4600
-     * @tc.desc   3.2.10 deleteCount为true/false
+     * @tc.desc   3.2.10 deleteCount is true/false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -549,7 +549,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0146
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_4700
-     * @tc.desc   4.1.1 item为数字
+     * @tc.desc   4.1.1 item is number
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -560,7 +560,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0147
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_4800
-     * @tc.desc   4.1.2 item为字符串
+     * @tc.desc   4.1.2 item is string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -571,7 +571,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0148
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_4900
-     * @tc.desc   4.1.3 item为对象
+     * @tc.desc   4.1.3 item is object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -582,7 +582,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0149
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_5000
-     * @tc.desc   4.1.4 item为数组
+     * @tc.desc   4.1.4 item is array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -593,7 +593,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0150
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_5100
-     * @tc.desc   4.1.5 item为undefined
+     * @tc.desc   4.1.5 item is undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -604,7 +604,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0151
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_5200
-     * @tc.desc   4.1.6 item为null
+     * @tc.desc   4.1.6 item is null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -615,7 +615,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0152
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_5300
-     * @tc.desc   4.1.7 item为布尔值
+     * @tc.desc   4.1.7 item is boolean
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -626,7 +626,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0153
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_5400
-     * @tc.desc   4.1.8 item为函数
+     * @tc.desc   4.1.8 item is function
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -637,7 +637,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0154
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_5500
-     * @tc.desc   4.1.9 item为Symbol
+     * @tc.desc   4.1.9 item is Symbol
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -648,7 +648,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0155
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_5600
-     * @tc.desc   4.1.10 item为BigInt
+     * @tc.desc   4.1.10 item is BigInt
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -659,7 +659,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0156
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_5700
-     * @tc.desc   4.2.1 不传item参数
+     * @tc.desc   4.2.1 no item parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -670,7 +670,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0157
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_5800
-     * @tc.desc   4.2.2 传入一个item
+     * @tc.desc   4.2.2 pass one item
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -681,7 +681,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0158
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_5900
-     * @tc.desc   4.2.3 传入多个item
+     * @tc.desc   4.2.3 pass multiple items
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -692,7 +692,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0159
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_6000
-     * @tc.desc   4.2.4 传入大量item（性能关注点）
+     * @tc.desc   4.2.4 pass many items (performance)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -703,7 +703,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0160
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_6100
-     * @tc.desc   4.3.1 item为Date对象
+     * @tc.desc   4.3.1 item is Date object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -714,7 +714,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0161
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_6200
-     * @tc.desc   4.3.2 item为RegExp对象
+     * @tc.desc   4.3.2 item is RegExp object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -725,7 +725,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0162
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_6300
-     * @tc.desc   4.3.3 item为Map/Set
+     * @tc.desc   4.3.3 item is Map/Set
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -736,7 +736,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0163
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_6400
-     * @tc.desc   4.3.4 item为稀疏数组
+     * @tc.desc   4.3.4 item is sparse array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -747,7 +747,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0164
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_6500
-     * @tc.desc   5.1.1 返回值是新数组对象（引用不同）
+     * @tc.desc   5.1.1 return value is new array (different reference)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -758,7 +758,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0165
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_6600
-     * @tc.desc   5.1.2 返回值的length属性正确
+     * @tc.desc   5.1.2 return value length is correct
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -769,7 +769,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0166
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_6700
-     * @tc.desc   5.1.3 返回值是Array实例
+     * @tc.desc   5.1.3 return value is Array instance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -780,7 +780,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0167
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_6800
-     * @tc.desc   5.1.4 返回值包含正确的元素顺序
+     * @tc.desc   5.1.4 return value has correct element order
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -791,7 +791,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0168
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_6900
-     * @tc.desc   5.2.1 原数组内容不变
+     * @tc.desc   5.2.1 original array content unchanged
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -802,7 +802,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0169
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_7000
-     * @tc.desc   5.2.2 原数组length不变
+     * @tc.desc   5.2.2 original array length unchanged
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -813,7 +813,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0170
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_7100
-     * @tc.desc   5.2.3 原数组的元素引用不变
+     * @tc.desc   5.2.3 original element references unchanged
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -824,7 +824,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0171
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_7200
-     * @tc.desc   5.2.4 多次调用toSpliced互不影响
+     * @tc.desc   5.2.4 multiple toSpliced calls do not interfere
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -835,7 +835,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0172
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_7300
-     * @tc.desc   5.3.1 对象元素是浅拷贝（引用相同）
+     * @tc.desc   5.3.1 object elements are shallow copied (same reference)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -846,7 +846,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0173
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_7400
-     * @tc.desc   5.3.2 未被删除的对象元素保留原引用
+     * @tc.desc   5.3.2 non-deleted object elements keep original reference
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -857,7 +857,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0174
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_7500
-     * @tc.desc   6.1.1 稀疏数组的空槽转为undefined
+     * @tc.desc   6.1.1 sparse array holes become undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -868,7 +868,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0175
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_7600
-     * @tc.desc   6.1.2 返回的数组是密集数组（无空槽）
+     * @tc.desc   6.1.2 returned array is dense (no holes)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -879,7 +879,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0176
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_7700
-     * @tc.desc   6.1.3 稀疏数组中空槽在删除范围内
+     * @tc.desc   6.1.3 sparse holes within deletion range
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -890,7 +890,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0177
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_7800
-     * @tc.desc   6.1.4 稀疏数组中空槽在保留范围内
+     * @tc.desc   6.1.4 sparse holes within retained range
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -901,7 +901,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0178
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_7900
-     * @tc.desc   6.2.1 全部为空槽的数组
+     * @tc.desc   6.2.1 array with all holes
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -912,7 +912,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0179
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_8000
-     * @tc.desc   6.2.2 大间隔稀疏数组
+     * @tc.desc   6.2.2 sparse array with large gaps
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -923,7 +923,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0180
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_8100
-     * @tc.desc   7.1.1 空数组上调用toSpliced
+     * @tc.desc   7.1.1 toSpliced on empty array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -934,7 +934,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0181
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_8200
-     * @tc.desc   7.1.2 空数组不传参数
+     * @tc.desc   7.1.2 empty array with no arguments
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -945,7 +945,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0182
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_8300
-     * @tc.desc   7.1.3 空数组仅传start
+     * @tc.desc   7.1.3 empty array with start only
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -956,7 +956,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0183
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_8400
-     * @tc.desc   7.2.1 单元素数组删除唯一元素
+     * @tc.desc   7.2.1 delete sole element from single-element array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -967,7 +967,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0184
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_8500
-     * @tc.desc   7.2.2 单元素数组替换唯一元素
+     * @tc.desc   7.2.2 replace sole element in single-element array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -978,7 +978,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0185
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_8600
-     * @tc.desc   7.2.3 单元素数组在元素前插入
+     * @tc.desc   7.2.3 insert before sole element
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -989,7 +989,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0186
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_8700
-     * @tc.desc   7.3.1 数组包含多种类型元素
+     * @tc.desc   7.3.1 array with mixed element types
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1000,7 +1000,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0187
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_8800
-     * @tc.desc   7.3.2 插入不同类型元素到混合数组
+     * @tc.desc   7.3.2 insert different types into mixed array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1011,7 +1011,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0188
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_8900
-     * @tc.desc   7.4.1 大数组删除操作
+     * @tc.desc   7.4.1 large array deletion
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1022,7 +1022,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0189
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_9000
-     * @tc.desc   7.4.2 大数组插入操作
+     * @tc.desc   7.4.2 large array insertion
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1033,7 +1033,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0190
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_9100
-     * @tc.desc   7.5.1 冻结数组上调用toSpliced
+     * @tc.desc   7.5.1 toSpliced on frozen array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1044,7 +1044,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0191
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_9200
-     * @tc.desc   7.5.2 密封数组上调用toSpliced
+     * @tc.desc   7.5.2 toSpliced on sealed array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1055,7 +1055,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0192
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_9300
-     * @tc.desc   8.1.1 具有length和整数键属性的普通对象
+     * @tc.desc   8.1.1 plain object with length and integer keys
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1066,7 +1066,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0193
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_9400
-     * @tc.desc   8.1.2 arguments对象
+     * @tc.desc   8.1.2 arguments object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1077,7 +1077,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0194
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_9500
-     * @tc.desc   8.1.3 字符串对象
+     * @tc.desc   8.1.3 string object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1099,7 +1099,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0196
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_9700
-     * @tc.desc   8.2.1 length为0的对象
+     * @tc.desc   8.2.1 object with length 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1110,7 +1110,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0197
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_9800
-     * @tc.desc   8.2.2 length大于实际属性数的对象
+     * @tc.desc   8.2.2 object with length greater than actual properties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1121,7 +1121,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0198
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_9900
-     * @tc.desc   8.2.3 length小于实际属性数的对象
+     * @tc.desc   8.2.3 object with length less than actual properties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1132,7 +1132,7 @@ export default function ArrayToSplicedMindMapTest() {
     /**
      * @tc.name   testToSplicedTest0199
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_9999
-     * @tc.desc   8.2.4 length为负数的对象
+     * @tc.desc   8.2.4 object with negative length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2

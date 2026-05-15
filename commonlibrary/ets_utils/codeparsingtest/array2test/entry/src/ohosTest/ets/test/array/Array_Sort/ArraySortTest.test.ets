@@ -41,7 +41,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0100
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_0100
-     * @tc.desc MindMap sort 功能点 001
+     * @tc.desc MindMap sort feature point 001
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -53,7 +53,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0101
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_0200
-     * @tc.desc MindMap sort 功能点 002
+     * @tc.desc MindMap sort feature point 002
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -65,7 +65,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0102
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_0300
-     * @tc.desc MindMap sort 功能点 003
+     * @tc.desc MindMap sort feature point 003
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -77,7 +77,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0103
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_0400
-     * @tc.desc MindMap sort 功能点 004
+     * @tc.desc MindMap sort feature point 004
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -89,7 +89,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0104
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_0500
-     * @tc.desc MindMap sort 功能点 005
+     * @tc.desc MindMap sort feature point 005
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -101,7 +101,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0105
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_0600
-     * @tc.desc MindMap sort 功能点 006
+     * @tc.desc MindMap sort feature point 006
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -113,7 +113,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0106
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_0700
-     * @tc.desc MindMap sort 功能点 007
+     * @tc.desc MindMap sort feature point 007
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -125,7 +125,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0107
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_0800
-     * @tc.desc MindMap sort 功能点 008
+     * @tc.desc MindMap sort feature point 008
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -137,7 +137,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0108
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_0900
-     * @tc.desc MindMap sort 功能点 009
+     * @tc.desc MindMap sort feature point 009
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -149,7 +149,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0109
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_1000
-     * @tc.desc MindMap sort 功能点 010
+     * @tc.desc MindMap sort feature point 010
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -161,7 +161,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0110
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_1100
-     * @tc.desc MindMap sort 功能点 011
+     * @tc.desc MindMap sort feature point 011
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -173,7 +173,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0111
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_1200
-     * @tc.desc MindMap sort 功能点 012
+     * @tc.desc MindMap sort feature point 012
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -185,7 +185,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0112
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_1300
-     * @tc.desc MindMap sort 功能点 013
+     * @tc.desc MindMap sort feature point 013
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -197,7 +197,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0113
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_1400
-     * @tc.desc MindMap sort 功能点 014
+     * @tc.desc MindMap sort feature point 014
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -209,7 +209,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0114
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_1500
-     * @tc.desc MindMap sort 功能点 015
+     * @tc.desc MindMap sort feature point 015
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -221,7 +221,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0115
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_1600
-     * @tc.desc MindMap sort 功能点 016
+     * @tc.desc MindMap sort feature point 016
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -233,7 +233,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0116
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_1700
-     * @tc.desc MindMap sort 功能点 017
+     * @tc.desc MindMap sort feature point 017
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -245,7 +245,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0117
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_1800
-     * @tc.desc MindMap sort 功能点 018
+     * @tc.desc MindMap sort feature point 018
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -257,7 +257,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0118
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_1900
-     * @tc.desc MindMap sort 功能点 019
+     * @tc.desc MindMap sort feature point 019
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -269,7 +269,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0119
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_2000
-     * @tc.desc MindMap sort 功能点 020
+     * @tc.desc MindMap sort feature point 020
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -281,7 +281,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0120
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_2100
-     * @tc.desc MindMap sort 功能点 021
+     * @tc.desc MindMap sort feature point 021
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -293,7 +293,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0121
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_2200
-     * @tc.desc MindMap sort 功能点 022
+     * @tc.desc MindMap sort feature point 022
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -305,7 +305,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0122
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_2300
-     * @tc.desc MindMap sort 功能点 023
+     * @tc.desc MindMap sort feature point 023
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -317,7 +317,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0123
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_2400
-     * @tc.desc MindMap sort 功能点 024
+     * @tc.desc MindMap sort feature point 024
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -329,7 +329,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0124
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_2500
-     * @tc.desc MindMap sort 功能点 025
+     * @tc.desc MindMap sort feature point 025
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -341,7 +341,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0125
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_2600
-     * @tc.desc MindMap sort 功能点 026
+     * @tc.desc MindMap sort feature point 026
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -353,7 +353,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0126
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_2700
-     * @tc.desc MindMap sort 功能点 027
+     * @tc.desc MindMap sort feature point 027
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -365,7 +365,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0127
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_2800
-     * @tc.desc MindMap sort 功能点 028
+     * @tc.desc MindMap sort feature point 028
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -377,7 +377,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0128
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_2900
-     * @tc.desc MindMap sort 功能点 029
+     * @tc.desc MindMap sort feature point 029
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -389,7 +389,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0129
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_3000
-     * @tc.desc MindMap sort 功能点 030
+     * @tc.desc MindMap sort feature point 030
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -401,7 +401,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0130
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_3100
-     * @tc.desc MindMap sort 功能点 031
+     * @tc.desc MindMap sort feature point 031
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -413,7 +413,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0131
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_3200
-     * @tc.desc MindMap sort 功能点 032
+     * @tc.desc MindMap sort feature point 032
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -425,7 +425,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0132
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_3300
-     * @tc.desc MindMap sort 功能点 033
+     * @tc.desc MindMap sort feature point 033
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -437,7 +437,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0133
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_3400
-     * @tc.desc MindMap sort 功能点 034
+     * @tc.desc MindMap sort feature point 034
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -449,7 +449,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0134
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_3500
-     * @tc.desc MindMap sort 功能点 035
+     * @tc.desc MindMap sort feature point 035
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -461,7 +461,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0135
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_3600
-     * @tc.desc MindMap sort 功能点 036
+     * @tc.desc MindMap sort feature point 036
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -473,7 +473,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0136
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_3700
-     * @tc.desc MindMap sort 功能点 037
+     * @tc.desc MindMap sort feature point 037
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -485,7 +485,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0137
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_3800
-     * @tc.desc MindMap sort 功能点 038
+     * @tc.desc MindMap sort feature point 038
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -497,7 +497,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0138
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_3900
-     * @tc.desc MindMap sort 功能点 039
+     * @tc.desc MindMap sort feature point 039
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -509,7 +509,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0139
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_4000
-     * @tc.desc MindMap sort 功能点 040
+     * @tc.desc MindMap sort feature point 040
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -521,7 +521,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0140
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_4100
-     * @tc.desc MindMap sort 功能点 041
+     * @tc.desc MindMap sort feature point 041
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -533,7 +533,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0141
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_4200
-     * @tc.desc MindMap sort 功能点 042
+     * @tc.desc MindMap sort feature point 042
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -545,7 +545,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0142
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_4300
-     * @tc.desc MindMap sort 功能点 043
+     * @tc.desc MindMap sort feature point 043
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -557,7 +557,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0143
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_4400
-     * @tc.desc MindMap sort 功能点 044
+     * @tc.desc MindMap sort feature point 044
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -569,7 +569,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0144
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_4500
-     * @tc.desc MindMap sort 功能点 045
+     * @tc.desc MindMap sort feature point 045
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -581,7 +581,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0145
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_4600
-     * @tc.desc MindMap sort 功能点 046
+     * @tc.desc MindMap sort feature point 046
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -593,7 +593,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0146
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_4700
-     * @tc.desc MindMap sort 功能点 047
+     * @tc.desc MindMap sort feature point 047
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -605,7 +605,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0147
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_4800
-     * @tc.desc MindMap sort 功能点 048
+     * @tc.desc MindMap sort feature point 048
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -617,7 +617,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0148
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_4900
-     * @tc.desc MindMap sort 功能点 049
+     * @tc.desc MindMap sort feature point 049
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -629,7 +629,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0149
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_5000
-     * @tc.desc MindMap sort 功能点 050
+     * @tc.desc MindMap sort feature point 050
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -641,7 +641,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0150
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_5100
-     * @tc.desc MindMap sort 功能点 051
+     * @tc.desc MindMap sort feature point 051
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -653,7 +653,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0151
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_5200
-     * @tc.desc MindMap sort 功能点 052
+     * @tc.desc MindMap sort feature point 052
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -665,7 +665,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0152
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_5300
-     * @tc.desc MindMap sort 功能点 053
+     * @tc.desc MindMap sort feature point 053
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -677,7 +677,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0153
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_5400
-     * @tc.desc MindMap sort 功能点 054
+     * @tc.desc MindMap sort feature point 054
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -689,7 +689,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0154
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_5500
-     * @tc.desc MindMap sort 功能点 055
+     * @tc.desc MindMap sort feature point 055
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -701,7 +701,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0155
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_5600
-     * @tc.desc MindMap sort 功能点 056
+     * @tc.desc MindMap sort feature point 056
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -713,7 +713,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0156
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_5700
-     * @tc.desc MindMap sort 功能点 057
+     * @tc.desc MindMap sort feature point 057
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -725,7 +725,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0157
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_5800
-     * @tc.desc MindMap sort 功能点 058
+     * @tc.desc MindMap sort feature point 058
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -737,7 +737,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0158
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_5900
-     * @tc.desc MindMap sort 功能点 059
+     * @tc.desc MindMap sort feature point 059
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -749,7 +749,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0159
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_6000
-     * @tc.desc MindMap sort 功能点 060
+     * @tc.desc MindMap sort feature point 060
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -761,7 +761,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0160
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_6100
-     * @tc.desc MindMap sort 功能点 061
+     * @tc.desc MindMap sort feature point 061
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -773,7 +773,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0161
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_6200
-     * @tc.desc MindMap sort 功能点 062
+     * @tc.desc MindMap sort feature point 062
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -785,7 +785,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0162
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_6300
-     * @tc.desc MindMap sort 功能点 063
+     * @tc.desc MindMap sort feature point 063
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -797,7 +797,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0163
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_6400
-     * @tc.desc MindMap sort 功能点 064
+     * @tc.desc MindMap sort feature point 064
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -809,7 +809,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0164
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_6500
-     * @tc.desc MindMap sort 功能点 065
+     * @tc.desc MindMap sort feature point 065
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -821,7 +821,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0165
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_6600
-     * @tc.desc MindMap sort 功能点 066
+     * @tc.desc MindMap sort feature point 066
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -833,7 +833,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0166
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_6700
-     * @tc.desc MindMap sort 功能点 067
+     * @tc.desc MindMap sort feature point 067
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -845,7 +845,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0167
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_6800
-     * @tc.desc MindMap sort 功能点 068
+     * @tc.desc MindMap sort feature point 068
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -857,7 +857,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0168
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_6900
-     * @tc.desc MindMap sort 功能点 069
+     * @tc.desc MindMap sort feature point 069
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -869,7 +869,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0169
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_7000
-     * @tc.desc MindMap sort 功能点 070
+     * @tc.desc MindMap sort feature point 070
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -881,7 +881,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0170
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_7100
-     * @tc.desc MindMap sort 功能点 071
+     * @tc.desc MindMap sort feature point 071
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -893,7 +893,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0171
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_7200
-     * @tc.desc MindMap sort 功能点 072
+     * @tc.desc MindMap sort feature point 072
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -905,7 +905,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0172
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_7300
-     * @tc.desc MindMap sort 功能点 073
+     * @tc.desc MindMap sort feature point 073
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -917,7 +917,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0173
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_7400
-     * @tc.desc MindMap sort 功能点 074
+     * @tc.desc MindMap sort feature point 074
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -929,7 +929,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0174
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_7500
-     * @tc.desc MindMap sort 功能点 075
+     * @tc.desc MindMap sort feature point 075
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -941,7 +941,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0175
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_7600
-     * @tc.desc MindMap sort 功能点 076
+     * @tc.desc MindMap sort feature point 076
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -953,7 +953,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0176
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_7700
-     * @tc.desc MindMap sort 功能点 077
+     * @tc.desc MindMap sort feature point 077
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -965,7 +965,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0177
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_7800
-     * @tc.desc MindMap sort 功能点 078
+     * @tc.desc MindMap sort feature point 078
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -977,7 +977,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0178
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_7900
-     * @tc.desc MindMap sort 功能点 079
+     * @tc.desc MindMap sort feature point 079
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -989,7 +989,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0179
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_8000
-     * @tc.desc MindMap sort 功能点 080
+     * @tc.desc MindMap sort feature point 080
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1001,7 +1001,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0180
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_8100
-     * @tc.desc MindMap sort 功能点 081
+     * @tc.desc MindMap sort feature point 081
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1013,7 +1013,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0181
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_8200
-     * @tc.desc MindMap sort 功能点 082
+     * @tc.desc MindMap sort feature point 082
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1025,7 +1025,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0182
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_8300
-     * @tc.desc MindMap sort 功能点 083
+     * @tc.desc MindMap sort feature point 083
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1037,7 +1037,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0183
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_8400
-     * @tc.desc MindMap sort 功能点 084
+     * @tc.desc MindMap sort feature point 084
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1049,7 +1049,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0184
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_8500
-     * @tc.desc MindMap sort 功能点 085
+     * @tc.desc MindMap sort feature point 085
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1061,7 +1061,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0185
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_8600
-     * @tc.desc MindMap sort 功能点 086
+     * @tc.desc MindMap sort feature point 086
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1073,7 +1073,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0186
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_8700
-     * @tc.desc MindMap sort 功能点 087
+     * @tc.desc MindMap sort feature point 087
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1085,7 +1085,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0187
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_8800
-     * @tc.desc MindMap sort 功能点 088
+     * @tc.desc MindMap sort feature point 088
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1097,7 +1097,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0188
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_8900
-     * @tc.desc MindMap sort 功能点 089
+     * @tc.desc MindMap sort feature point 089
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1109,7 +1109,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0189
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_9000
-     * @tc.desc MindMap sort 功能点 090
+     * @tc.desc MindMap sort feature point 090
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1121,7 +1121,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0190
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_9100
-     * @tc.desc MindMap sort 功能点 091
+     * @tc.desc MindMap sort feature point 091
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1133,7 +1133,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0191
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_9200
-     * @tc.desc MindMap sort 功能点 092
+     * @tc.desc MindMap sort feature point 092
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1145,7 +1145,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0192
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_9300
-     * @tc.desc MindMap sort 功能点 093
+     * @tc.desc MindMap sort feature point 093
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1157,7 +1157,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0193
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_9400
-     * @tc.desc MindMap sort 功能点 094
+     * @tc.desc MindMap sort feature point 094
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1169,7 +1169,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0194
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_9500
-     * @tc.desc MindMap sort 功能点 095
+     * @tc.desc MindMap sort feature point 095
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1181,7 +1181,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0195
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_9600
-     * @tc.desc MindMap sort 功能点 096
+     * @tc.desc MindMap sort feature point 096
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1193,7 +1193,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0196
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_9700
-     * @tc.desc MindMap sort 功能点 097
+     * @tc.desc MindMap sort feature point 097
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1205,7 +1205,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0197
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_9800
-     * @tc.desc MindMap sort 功能点 098
+     * @tc.desc MindMap sort feature point 098
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1217,7 +1217,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0198
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_9900
-     * @tc.desc MindMap sort 功能点 099
+     * @tc.desc MindMap sort feature point 099
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1229,7 +1229,7 @@ export default function ArraySortMindMapTest() {
     /**
      * @tc.name testArraySortTest0199
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SORT_SUPPLEMENT_TEST_9999
-     * @tc.desc MindMap sort 功能点 100
+     * @tc.desc MindMap sort feature point 100
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

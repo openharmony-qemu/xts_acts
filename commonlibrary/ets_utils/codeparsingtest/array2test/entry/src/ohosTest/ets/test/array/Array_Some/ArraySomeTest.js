@@ -82,7 +82,6 @@ export function ArraySomeJs_25() {
         count++;
         return element > 3;
     });
-    // delete 后空槽是否触发回调因实现而异，仅要求命中 >3 且次数在合理范围
     return result === true && count >= 3 && count <= 5;
 }
 
@@ -145,7 +144,6 @@ export function ArraySomeJs_55() {
             if (x === 2) {
                 throw new Error('Error at 2');
             }
-            // 不可在 x===1 时 return true，否则 some 提前结束，抛不出异常
             return false;
         });
         return false;
@@ -298,7 +296,6 @@ export function ArraySomeJs_84() {
     return result === true;
 }
 
-/** 回调返回 NaN 时 some 按假值处理 */
 export function ArraySomeJs_148() {
     const arr = [1, 2, 3];
     return arr.some(() => NaN) === false;

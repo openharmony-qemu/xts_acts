@@ -70,12 +70,11 @@ export default function ArraySliceTestSupplement() {
       // This API supports only one parameter: clear action function.
     })
 
-    // ==================== 第 1 节：基础功能测试 ====================
 
     /**
      * @tc.name testArraySliceTest0100
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_0100
-     * @tc.desc 1.1 从数组中间提取一段连续的元素
+     * @tc.desc 1.1 Extract a contiguous segment from the middle of the array
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -90,7 +89,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0101
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_0200
-     * @tc.desc 1.2 提取数组中的单个元素
+     * @tc.desc 1.2 Extract a single element from the array
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -104,7 +103,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0102
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_0300
-     * @tc.desc 1.3 begin >= end 时返回空数组
+     * @tc.desc 1.3 Return empty array when begin >= end
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -118,7 +117,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0103
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_0400
-     * @tc.desc 1.4 不传参数返回整个数组的拷贝
+     * @tc.desc 1.4 Return a copy of the entire array when no arguments are passed
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -136,7 +135,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0104
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_0500
-     * @tc.desc 1.5 只指定 begin 参数提取到数组末尾
+     * @tc.desc 1.5 Extract to end of array with only begin specified
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -150,7 +149,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0105
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_0600
-     * @tc.desc 1.6 begin 为 0 时从开头提取到指定位置
+     * @tc.desc 1.6 Extract from start to specified position when begin is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -161,12 +160,11 @@ export default function ArraySliceTestSupplement() {
       expect(result).assertDeepEquals([1, 2, 3]);
     })
 
-    // ==================== 第 2 节：参数边界测试 ====================
 
     /**
      * @tc.name testArraySliceTest0106
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_0700
-     * @tc.desc 2.1 begin > end 时返回空数组
+     * @tc.desc 2.1 Return empty array when begin > end
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -180,7 +178,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0107
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_0800
-     * @tc.desc 2.2 begin 大于数组长度时返回空数组
+     * @tc.desc 2.2 Return empty array when begin exceeds array length
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -194,7 +192,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0108
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_0900
-     * @tc.desc 2.3 end 大于数组长度时提取到数组末尾
+     * @tc.desc 2.3 Extract to end when end exceeds array length
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -208,7 +206,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0109
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_1000
-     * @tc.desc 2.4 begin 和 end 都超出数组长度时返回空数组
+     * @tc.desc 2.4 Return empty array when both begin and end exceed length
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -222,7 +220,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0110
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_1100
-     * @tc.desc 2.5 begin 等于 end 时返回空数组
+     * @tc.desc 2.5 Return empty array when begin equals end
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -236,7 +234,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0111
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_1200
-     * @tc.desc 2.6 begin 为 0 从数组开头开始提取
+     * @tc.desc 2.6 Extract from array start when begin is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -250,7 +248,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0112
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_1300
-     * @tc.desc 2.7 end 为数组长度时提取到最后一个元素
+     * @tc.desc 2.7 Extract through last element when end equals length
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -264,7 +262,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0113
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_1400
-     * @tc.desc 2.8 begin 接近数组末尾时提取末尾元素
+     * @tc.desc 2.8 Extract trailing elements when begin is near end
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -275,12 +273,11 @@ export default function ArraySliceTestSupplement() {
       expect(result).assertDeepEquals([5]);
     })
 
-    // ==================== 第 3 节：特殊值处理（ETS 部分）====================
 
     /**
      * @tc.name testArraySliceTest0114
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_1500
-     * @tc.desc 3.4 Infinity 作为参数的处理
+     * @tc.desc 3.4 Handle Infinity as parameter
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -295,12 +292,11 @@ export default function ArraySliceTestSupplement() {
       expect(result3).assertDeepEquals([1, 2, 3, 4, 5]);
     })
 
-    // ==================== 第 4 节：数组类型测试（ETS 部分）====================
 
     /**
      * @tc.name testArraySliceTest0115
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_1600
-     * @tc.desc 4.2 处理普通密集数组
+     * @tc.desc 4.2 Handle dense array
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -314,7 +310,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0116
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_1700
-     * @tc.desc 4.5 对 TypedArray 使用 slice
+     * @tc.desc 4.5 Use slice on TypedArray
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -331,7 +327,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0117
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_1800
-     * @tc.desc 4.6 对空数组使用 slice
+     * @tc.desc 4.6 Use slice on empty array
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -345,7 +341,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0118
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_1900
-     * @tc.desc 4.7 对单元素数组使用 slice
+     * @tc.desc 4.7 Use slice on single-element array
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -360,12 +356,11 @@ export default function ArraySliceTestSupplement() {
       expect(result3).assertDeepEquals([]);
     })
 
-    // ==================== 第 5 节：引用类型测试 ====================
 
     /**
      * @tc.name testArraySliceTest0119
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_2000
-     * @tc.desc 5.1 验证 slice 返回浅拷贝，修改新数组不影响原数组
+     * @tc.desc 5.1 Verify slice returns shallow copy; modifying new array does not affect original
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -381,7 +376,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0120
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_2100
-     * @tc.desc 5.2 数组中的对象元素是引用关系
+     * @tc.desc 5.2 Object elements in array are by reference
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -399,7 +394,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0121
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_2200
-     * @tc.desc 5.3 数组中的嵌套数组是引用关系
+     * @tc.desc 5.3 Nested arrays in array are by reference
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -416,7 +411,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0122
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_2300
-     * @tc.desc 5.4 处理多层嵌套数组结构
+     * @tc.desc 5.4 Handle multi-level nested array structure
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -431,7 +426,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0123
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_2400
-     * @tc.desc 5.5 数组中的函数元素是引用关系
+     * @tc.desc 5.5 Function elements in array are by reference
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -443,12 +438,11 @@ export default function ArraySliceTestSupplement() {
       expect(result[0] === arr[0]).assertEqual(true);
     })
 
-    // ==================== 第 6 节：负索引处理 ====================
 
     /**
      * @tc.name testArraySliceTest0124
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_2500
-     * @tc.desc 6.1 begin 为负数时从数组末尾开始计算
+     * @tc.desc 6.1 Negative begin counts from end of array
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -462,7 +456,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0125
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_2600
-     * @tc.desc 6.2 end 为负数时从数组末尾开始计算
+     * @tc.desc 6.2 Negative end counts from end of array
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -476,7 +470,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0126
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_2700
-     * @tc.desc 6.3 begin 和 end 都为负数
+     * @tc.desc 6.3 Both begin and end are negative
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -490,7 +484,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0127
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_2800
-     * @tc.desc 6.4 负索引超出范围时等价于从 0 开始
+     * @tc.desc 6.4 Negative index out of range is treated as 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -506,7 +500,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0128
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_2900
-     * @tc.desc 6.5 混合正负索引
+     * @tc.desc 6.5 Mixed positive and negative indices
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -522,7 +516,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0129
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_3000
-     * @tc.desc 6.6 负索引绝对值等于数组长度时等价于从 0 开始
+     * @tc.desc 6.6 Negative index with abs equal to length is treated as 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -536,7 +530,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0130
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_3100
-     * @tc.desc 6.7 begin 为负 end 为正且转换后 begin < end
+     * @tc.desc 6.7 Negative begin and positive end with converted begin < end
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -547,12 +541,11 @@ export default function ArraySliceTestSupplement() {
       expect(result).assertDeepEquals([3, 4]);
     })
 
-    // ==================== 第 7 节：参数省略测试（ETS 部分）====================
 
     /**
      * @tc.name testArraySliceTest0131
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_3200
-     * @tc.desc 7.1 省略 begin 时 begin 默认为 0
+     * @tc.desc 7.1 Default begin to 0 when omitted
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -566,7 +559,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0132
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_3300
-     * @tc.desc 7.2 省略 end 时 end 默认为数组长度
+     * @tc.desc 7.2 Default end to array length when omitted
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -580,7 +573,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0133
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_3400
-     * @tc.desc 7.3 全部省略时返回整个数组的拷贝
+     * @tc.desc 7.3 Return full copy when all parameters omitted
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -595,7 +588,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0134
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_3500
-     * @tc.desc 7.4 只传一个参数作为 begin
+     * @tc.desc 7.4 Pass single argument as begin
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -606,12 +599,11 @@ export default function ArraySliceTestSupplement() {
       expect(result).assertDeepEquals([3, 4, 5]);
     })
 
-    // ==================== 第 9 节：异常场景测试（ETS 部分）====================
 
     /**
      * @tc.name testArraySliceTest0135
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_3600
-     * @tc.desc 9.4 对 Object.freeze 的数组使用 slice
+     * @tc.desc 9.4 Use slice on Object.freeze array
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -623,7 +615,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0136
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_3700
-     * @tc.desc 9.5 对 Object.seal 的数组使用 slice
+     * @tc.desc 9.5 Use slice on Object.seal array
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -635,7 +627,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0137
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_3800
-     * @tc.desc 9.6 数组 length 属性被修改后的处理
+     * @tc.desc 9.6 Handle modified array length property
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -647,12 +639,11 @@ export default function ArraySliceTestSupplement() {
       expect(result).assertDeepEquals([2, 3]);
     })
 
-    // ==================== 第 10 节：与其他方法交互 ====================
 
     /**
      * @tc.name testArraySliceTest0138
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_3900
-     * @tc.desc 10.1 slice 返回的数组与 concat 配合使用
+     * @tc.desc 10.1 Use slice result with concat
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -666,7 +657,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0139
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_4000
-     * @tc.desc 10.2 slice 和 splice 的区别与配合
+     * @tc.desc 10.2 Difference and combination of slice and splice
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -685,7 +676,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0140
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_4100
-     * @tc.desc 10.3 slice 返回的数组使用 map 方法
+     * @tc.desc 10.3 Use map on slice result
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -699,7 +690,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0141
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_4200
-     * @tc.desc 10.4 slice 返回的数组使用 filter 方法
+     * @tc.desc 10.4 Use filter on slice result
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -713,7 +704,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0142
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_4300
-     * @tc.desc 10.5 slice 返回的数组使用 reduce 方法
+     * @tc.desc 10.5 Use reduce on slice result
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -727,7 +718,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0143
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_4400
-     * @tc.desc 10.6 多个数组方法链式调用
+     * @tc.desc 10.6 Chain multiple array methods
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -744,7 +735,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0144
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_4500
-     * @tc.desc 10.7 slice 与 spread 运算符配合
+     * @tc.desc 10.7 Combine slice with spread operator
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -760,12 +751,11 @@ export default function ArraySliceTestSupplement() {
       expect(result3).assertDeepEquals([2, 3, 6, 7]);
     })
 
-    // ==================== 第 11 节：原型链测试（ETS 部分）====================
 
     /**
      * @tc.name testArraySliceTest0145
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_4600
-     * @tc.desc 11.1 通过 Array.prototype.slice 调用
+     * @tc.desc 11.1 Call via Array.prototype.slice
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -777,7 +767,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0146
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_4700
-     * @tc.desc 11.3 在数组子类上使用 slice
+     * @tc.desc 11.3 Use slice on array subclass
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -793,12 +783,11 @@ export default function ArraySliceTestSupplement() {
       expect(result).assertDeepEquals([2, 3]);
     })
 
-    // ==================== 第 12 节：实际应用场景 ====================
 
     /**
      * @tc.name testArraySliceTest0147
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_4800
-     * @tc.desc 12.1 使用 slice 快速克隆数组
+     * @tc.desc 12.1 Use slice to clone array quickly
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -813,7 +802,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0148
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_4900
-     * @tc.desc 12.4 使用 slice 实现简单的分页功能
+     * @tc.desc 12.4 Use slice for simple pagination
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -834,7 +823,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0149
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_5000
-     * @tc.desc 12.5 使用负索引获取数组末尾 N 个元素
+     * @tc.desc 12.5 Use negative index to get last N elements
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -849,7 +838,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0150
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_5100
-     * @tc.desc 12.6 使用 slice 删除数组元素（不修改原数组）
+     * @tc.desc 12.6 Use slice to remove elements without mutating original
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -866,7 +855,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0151
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_5200
-     * @tc.desc 12.7 将数组分块处理
+     * @tc.desc 12.7 Chunk array processing
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -887,7 +876,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0152
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_5300
-     * @tc.desc 12.8 配合 filter 和 indexOf 实现数组去重
+     * @tc.desc 12.8 Deduplicate array with filter and indexOf
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -902,12 +891,11 @@ export default function ArraySliceTestSupplement() {
       expect(result).assertDeepEquals([1, 2, 3, 4]);
     })
 
-    // ==================== 第 3 节：特殊值处理（JS 实现）====================
 
     /**
      * @tc.name testArraySliceTest0153
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_5400
-     * @tc.desc 3.1 undefined 作为参数时视为未传递
+     * @tc.desc 3.1 Treat undefined parameter as not passed
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -919,7 +907,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0154
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_5500
-     * @tc.desc 3.2 null 被转换为 0
+     * @tc.desc 3.2 null is converted to 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -931,7 +919,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0155
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_5600
-     * @tc.desc 3.3 NaN 被转换为 0
+     * @tc.desc 3.3 NaN is converted to 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -943,7 +931,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0156
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_5700
-     * @tc.desc 3.5 空字符串被转换为 0
+     * @tc.desc 3.5 Empty string is converted to 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -955,7 +943,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0157
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_5800
-     * @tc.desc 3.6 布尔值被转换为 1 或 0
+     * @tc.desc 3.6 Boolean is converted to 1 or 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -964,12 +952,11 @@ export default function ArraySliceTestSupplement() {
       expect(ArraySliceJs_3_6()).assertEqual(true);
     })
 
-    // ==================== 第 4 节：数组类型测试（JS 实现）====================
 
     /**
      * @tc.name testArraySliceTest0158
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_5900
-     * @tc.desc 4.1 处理含有空位的稀疏数组
+     * @tc.desc 4.1 Handle sparse array with holes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -981,7 +968,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0159
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_6000
-     * @tc.desc 4.3 通过 call/apply 在类数组对象上使用 slice
+     * @tc.desc 4.3 Use slice on array-like via call/apply
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -993,7 +980,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0160
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_6100
-     * @tc.desc 4.4 对 arguments 对象使用 slice
+     * @tc.desc 4.4 Use slice on arguments object
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1002,12 +989,11 @@ export default function ArraySliceTestSupplement() {
       expect(ArraySliceJs_4_4()).assertEqual(true);
     })
 
-    // ==================== 第 5 节：引用类型测试（JS 实现）====================
 
     /**
      * @tc.name testArraySliceTest0161
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_6200
-     * @tc.desc 5.6 处理包含 Symbol 的数组
+     * @tc.desc 5.6 Handle array containing Symbol
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1016,12 +1002,11 @@ export default function ArraySliceTestSupplement() {
       expect(ArraySliceJs_5_6()).assertEqual(true);
     })
 
-    // ==================== 第 7 节：参数省略测试（JS 实现）====================
 
     /**
      * @tc.name testArraySliceTest0162
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_6300
-     * @tc.desc 7.5 传递超过 2 个参数，多余的参数被忽略
+     * @tc.desc 7.5 Extra arguments beyond 2 are ignored
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1033,7 +1018,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0163
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_6400
-     * @tc.desc 7.6 通过 apply 传递参数数组
+     * @tc.desc 7.6 Pass arguments via apply
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1042,12 +1027,11 @@ export default function ArraySliceTestSupplement() {
       expect(ArraySliceJs_7_6()).assertEqual(true);
     })
 
-    // ==================== 第 8 节：类型转换测试（JS 实现）====================
 
     /**
      * @tc.name testArraySliceTest0164
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_6500
-     * @tc.desc 8.1 字符串参数被转换为数字
+     * @tc.desc 8.1 String parameter converted to number
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1059,7 +1043,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0165
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_6600
-     * @tc.desc 8.2 浮点数参数被向下取整
+     * @tc.desc 8.2 Float parameter is floored
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1071,7 +1055,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0166
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_6700
-     * @tc.desc 8.3 对象通过 valueOf 转换为数字
+     * @tc.desc 8.3 Object converted to number via valueOf
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1083,7 +1067,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0167
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_6800
-     * @tc.desc 8.4 数组参数被转换为数字
+     * @tc.desc 8.4 Array parameter converted to number
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1095,7 +1079,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0168
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_6900
-     * @tc.desc 8.5 BigInt 参数的处理（预期抛出 TypeError）
+     * @tc.desc 8.5 BigInt parameter handling (expect TypeError)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1107,7 +1091,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0169
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_7000
-     * @tc.desc 8.6 十六进制字符串转换为数字
+     * @tc.desc 8.6 Hex string converted to number
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1116,12 +1100,11 @@ export default function ArraySliceTestSupplement() {
       expect(ArraySliceJs_8_6()).assertEqual(true);
     })
 
-    // ==================== 第 9 节：异常场景测试（JS 实现）====================
 
     /**
      * @tc.name testArraySliceTest0170
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_7100
-     * @tc.desc 9.1 this 值为 null 时抛出 TypeError
+     * @tc.desc 9.1 Throw TypeError when this is null
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1133,7 +1116,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0171
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_7200
-     * @tc.desc 9.2 this 值为 undefined 时抛出 TypeError
+     * @tc.desc 9.2 Throw TypeError when this is undefined
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1145,7 +1128,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0172
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_7300
-     * @tc.desc 9.3 this 值为字符串时被视为类数组对象
+     * @tc.desc 9.3 String this is treated as array-like
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1157,7 +1140,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0173
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_7400
-     * @tc.desc 9.7 length 属性为只读的情况
+     * @tc.desc 9.7 Read-only length property
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1166,12 +1149,11 @@ export default function ArraySliceTestSupplement() {
       expect(ArraySliceJs_9_7()).assertEqual(true);
     })
 
-    // ==================== 第 11 节：原型链测试（JS 实现）====================
 
     /**
      * @tc.name testArraySliceTest0174
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_7500
-     * @tc.desc 11.2 修改 Array.prototype.slice 后的影响
+     * @tc.desc 11.2 Effect after modifying Array.prototype.slice
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1183,7 +1165,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0175
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_7600
-     * @tc.desc 11.4 使用 Symbol.species 控制返回的构造函数
+     * @tc.desc 11.4 Control constructor via Symbol.species
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1195,7 +1177,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0176
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_7700
-     * @tc.desc 11.5 在自定义类数组对象上使用 slice
+     * @tc.desc 11.5 Use slice on custom array-like object
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1207,7 +1189,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0177
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_7800
-     * @tc.desc 11.6 Object.create(数组) 后 slice 沿原型链得到 [1,2,3]
+     * @tc.desc 11.6 slice via prototype after Object.create(array) yields [1,2,3]
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1216,12 +1198,11 @@ export default function ArraySliceTestSupplement() {
       expect(ArraySliceJs_11_6()).assertEqual(true);
     })
 
-    // ==================== 第 12 节：实际应用场景（JS 实现）====================
 
     /**
      * @tc.name testArraySliceTest0178
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_7900
-     * @tc.desc 12.2 将 arguments 转换为真数组
+     * @tc.desc 12.2 Convert arguments to real array
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1233,7 +1214,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0179
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_8000
-     * @tc.desc 12.3 在函数中处理可变参数列表
+     * @tc.desc 12.3 Handle variadic arguments in function
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

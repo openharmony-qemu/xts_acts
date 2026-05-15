@@ -50,10 +50,8 @@ import {
   ArraySomeJs_148
 } from './ArraySomeTest';
 
-// 模块级回调，避免 it 内嵌套函数（arkts-no-nested-funcs）
 const ARRAY_SOME_NAMED_GT3: (e: number) => boolean = (e: number): boolean => e > 3;
 
-// 异构数组用例的占位类型（避免 it 内嵌套类）
 class ArraySomeMixMarker {}
 
 export default function ArraySomeMindMapTest() {
@@ -102,7 +100,6 @@ export default function ArraySomeMindMapTest() {
      */
     it('testArraySomeTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const fruits: string[] = ['apple', 'banana', 'orange'];
-      // banana/orange 长度为 6，须用 >=6 与导图「长名称」语义一致
       expect(fruits.some((f: string): boolean => f.length >= 6)).assertEqual(true);
       expect(fruits.some((f: string): boolean => f.includes('berry'))).assertEqual(false);
     })

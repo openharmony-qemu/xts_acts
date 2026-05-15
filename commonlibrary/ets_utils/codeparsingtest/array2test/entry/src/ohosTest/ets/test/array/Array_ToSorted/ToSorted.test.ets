@@ -43,7 +43,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0100
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_0100
-     * @tc.desc   无参调用基本排序
+     * @tc.desc   Basic sort with no arguments
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -54,7 +54,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0101
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_0200
-     * @tc.desc   带比较函数调用
+     * @tc.desc   Sort with compare function
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -65,7 +65,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0102
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_0300
-     * @tc.desc   数字数组默认排序（字符串转换）
+     * @tc.desc   Default sort of number array (string conversion)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -76,7 +76,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0103
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_0400
-     * @tc.desc   布尔值数组排序
+     * @tc.desc   Sort boolean array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -87,7 +87,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0104
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_0500
-     * @tc.desc   相同元素数组排序
+     * @tc.desc   Sort array of identical elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -98,7 +98,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0105
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_0600
-     * @tc.desc   已排序数组再次排序
+     * @tc.desc   Sort already sorted array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -109,7 +109,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0106
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_0700
-     * @tc.desc   逆序数组排序
+     * @tc.desc   Sort reverse-ordered array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -120,7 +120,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0107
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_0800
-     * @tc.desc   重复元素数组排序
+     * @tc.desc   Sort array with duplicates
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -131,7 +131,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0108
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_0900
-     * @tc.desc   比较函数参数验证
+     * @tc.desc   Compare function parameter validation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -142,7 +142,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0109
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_1000
-     * @tc.desc   比较函数返回负值
+     * @tc.desc   Compare function returns negative
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -153,7 +153,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0110
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_1100
-     * @tc.desc   比较函数返回正值
+     * @tc.desc   Compare function returns positive
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -164,7 +164,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0111
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_1200
-     * @tc.desc   比较函数返回零
+     * @tc.desc   Compare function returns zero
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -175,7 +175,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0112
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_1300
-     * @tc.desc   比较函数返回非整数（浮点数）
+     * @tc.desc   Compare function returns non-integer (float)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -186,7 +186,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0113
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_1400
-     * @tc.desc   比较函数返回NaN
+     * @tc.desc   Compare function returns NaN
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -197,7 +197,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0114
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_1500
-     * @tc.desc   比较函数返回Infinity
+     * @tc.desc   Compare function returns Infinity
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -208,7 +208,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0115
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_1600
-     * @tc.desc   比较函数内部抛出异常
+     * @tc.desc   Compare function throws internally
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -219,7 +219,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0116
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_1700
-     * @tc.desc   比较函数不是函数类型
+     * @tc.desc   Compare function is not a function
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -230,7 +230,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0117
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_1800
-     * @tc.desc   比较函数传入数字类型
+     * @tc.desc   Compare function passed number
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -241,7 +241,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0118
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_1900
-     * @tc.desc   比较函数传入null
+     * @tc.desc   Compare function passed null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -252,7 +252,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0119
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_2000
-     * @tc.desc   比较函数传入对象
+     * @tc.desc   Compare function passed object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -263,7 +263,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0120
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_2100
-     * @tc.desc   比较函数传入undefined（等同于不传）
+     * @tc.desc   Compare function passed undefined (same as omitted)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -274,7 +274,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0121
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_2200
-     * @tc.desc   比较函数只使用第一个参数
+     * @tc.desc   Compare function uses only first parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -285,7 +285,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0122
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_2300
-     * @tc.desc   比较函数修改原数组元素
+     * @tc.desc   Compare function mutates original elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -296,7 +296,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0123
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_2400
-     * @tc.desc   返回值为新数组
+     * @tc.desc   Return value is new array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -307,7 +307,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0124
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_2500
-     * @tc.desc   原数组保持不变
+     * @tc.desc   Original array unchanged
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -318,7 +318,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0125
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_2600
-     * @tc.desc   返回数组长度等于原数组长度
+     * @tc.desc   Returned array length equals original
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -329,7 +329,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0126
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_2700
-     * @tc.desc   返回数组包含所有原数组元素
+     * @tc.desc   Returned array contains all original elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -340,7 +340,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0127
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_2800
-     * @tc.desc   返回数组与原数组不是同一引用
+     * @tc.desc   Returned array is not same reference as original
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -351,7 +351,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0128
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_2900
-     * @tc.desc   返回数组的原型为Array
+     * @tc.desc   Returned array prototype is Array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -362,7 +362,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0129
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_3000
-     * @tc.desc   新数组中对象元素保持相同引用
+     * @tc.desc   Object elements keep same reference in new array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -373,7 +373,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0130
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_3100
-     * @tc.desc   原数组为冻结数组时仍可排序
+     * @tc.desc   Sort works when original is frozen
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -384,7 +384,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0131
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_3200
-     * @tc.desc   原数组为密封数组时仍可排序
+     * @tc.desc   Sort works when original is sealed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -395,7 +395,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0132
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_3300
-     * @tc.desc   纯数字升序排序
+     * @tc.desc   Numeric ascending sort
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -406,7 +406,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0133
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_3400
-     * @tc.desc   纯数字降序排序
+     * @tc.desc   Numeric descending sort
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -417,7 +417,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0134
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_3500
-     * @tc.desc   浮点数排序
+     * @tc.desc   Float sort
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -428,7 +428,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0135
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_3600
-     * @tc.desc   负数排序
+     * @tc.desc   Negative number sort
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -439,7 +439,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0136
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_3700
-     * @tc.desc   Infinity和-Infinity排序
+     * @tc.desc   Infinity and -Infinity sort
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -450,7 +450,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0137
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_3800
-     * @tc.desc   NaN排序行为
+     * @tc.desc   NaN sort behavior
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -461,7 +461,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0138
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_3900
-     * @tc.desc   字符串按Unicode排序
+     * @tc.desc   String sort by Unicode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -472,7 +472,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0139
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_4000
-     * @tc.desc   字符串大小写排序
+     * @tc.desc   String case sort
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -483,7 +483,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0140
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_4100
-     * @tc.desc   空字符串排序
+     * @tc.desc   Empty string sort
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -494,7 +494,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0141
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_4200
-     * @tc.desc   中文字符串排序
+     * @tc.desc   Chinese string sort
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -505,7 +505,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0142
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_4300
-     * @tc.desc   对象数组按属性排序
+     * @tc.desc   Object array sort by property
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -516,7 +516,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0143
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_4400
-     * @tc.desc   null值排序
+     * @tc.desc   null value sort
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -527,7 +527,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0144
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_4500
-     * @tc.desc   undefined值排序
+     * @tc.desc   undefined value sort
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -538,7 +538,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0145
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_4600
-     * @tc.desc   null和undefined混合排序
+     * @tc.desc   Mixed null and undefined sort
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -549,7 +549,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0146
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_4700
-     * @tc.desc   混合数字和字符串排序
+     * @tc.desc   Mixed number and string sort
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -560,7 +560,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0147
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_4800
-     * @tc.desc   混合多种类型排序
+     * @tc.desc   Mixed multiple types sort
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -571,7 +571,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0148
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_4900
-     * @tc.desc   日期对象排序
+     * @tc.desc   Date object sort
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -582,7 +582,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0149
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_5000
-     * @tc.desc   空数组排序
+     * @tc.desc   Empty array sort
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -593,7 +593,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0150
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_5100
-     * @tc.desc   单元素数组排序
+     * @tc.desc   Single-element array sort
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -604,7 +604,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0151
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_5200
-     * @tc.desc   双元素数组排序
+     * @tc.desc   Two-element array sort
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -615,7 +615,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0152
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_5300
-     * @tc.desc   稀疏数组-中间有空槽
+     * @tc.desc   Sparse array - holes in middle
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -626,7 +626,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0153
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_5400
-     * @tc.desc   稀疏数组-首部有空槽
+     * @tc.desc   Sparse array - holes at start
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -637,7 +637,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0154
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_5500
-     * @tc.desc   稀疏数组-尾部有空槽
+     * @tc.desc   Sparse array - holes at end
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -648,7 +648,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0155
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_5600
-     * @tc.desc   稀疏数组-全部空槽
+     * @tc.desc   Sparse array - all holes
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -659,7 +659,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0156
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_5700
-     * @tc.desc   稀疏数组-空槽与undefined混合
+     * @tc.desc   Sparse array - holes mixed with undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -670,7 +670,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0157
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_5800
-     * @tc.desc   稀疏数组-使用比较函数时空槽不触发回调
+     * @tc.desc   Sparse array - holes skip compare callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -681,7 +681,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0158
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_5900
-     * @tc.desc   含NaN的数组排序
+     * @tc.desc   Array with NaN sort
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -692,7 +692,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0159
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_6000
-     * @tc.desc   含正零和负零的数组排序
+     * @tc.desc   Array with +0 and -0 sort
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -703,7 +703,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0160
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_6100
-     * @tc.desc   含Symbol元素的数组排序
+     * @tc.desc   Array with Symbol elements sort
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -714,7 +714,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0161
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_6200
-     * @tc.desc   含函数元素的数组排序
+     * @tc.desc   Array with function elements sort
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -725,7 +725,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0162
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_6300
-     * @tc.desc   大数组排序
+     * @tc.desc   Large array sort
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -736,7 +736,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0163
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_6400
-     * @tc.desc   含数组嵌套元素排序
+     * @tc.desc   Array with nested array elements sort
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -747,7 +747,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0164
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_6500
-     * @tc.desc   原型链上有额外元素的数组
+     * @tc.desc   Array with extra prototype elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -758,7 +758,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0165
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_6600
-     * @tc.desc   普通类数组对象
+     * @tc.desc   Plain array-like object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -769,7 +769,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0166
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_6700
-     * @tc.desc   类数组对象length大于实际属性数
+     * @tc.desc   Array-like length greater than properties
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -780,7 +780,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0167
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_6800
-     * @tc.desc   类数组对象length为0
+     * @tc.desc   Array-like length is 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -791,7 +791,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0168
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_6900
-     * @tc.desc   类数组对象length为负数
+     * @tc.desc   Array-like negative length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -802,7 +802,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0169
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_7000
-     * @tc.desc   类数组对象length为非整数
+     * @tc.desc   Array-like non-integer length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -813,7 +813,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0170
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_7100
-     * @tc.desc   类数组对象length为NaN
+     * @tc.desc   Array-like length is NaN
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -824,7 +824,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0171
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_7200
-     * @tc.desc   类数组对象length为Infinity
+     * @tc.desc   Array-like length is Infinity
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -835,7 +835,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0172
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_7300
-     * @tc.desc   类数组对象无length属性
+     * @tc.desc   Array-like without length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -846,7 +846,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0173
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_7400
-     * @tc.desc   类数组对象含非数字键
+     * @tc.desc   Array-like with non-numeric keys
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -857,7 +857,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0174
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_7500
-     * @tc.desc   字符串作为this值
+     * @tc.desc   String as this value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -868,7 +868,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0175
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_7600
-     * @tc.desc   arguments对象作为this值
+     * @tc.desc   arguments as this value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -879,7 +879,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0176
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_7700
-     * @tc.desc   使用apply调用
+     * @tc.desc   Call via apply
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -890,7 +890,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0177
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_7800
-     * @tc.desc   使用bind调用
+     * @tc.desc   Call via bind
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -901,7 +901,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0178
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_7900
-     * @tc.desc   TypedArray作为this值
+     * @tc.desc   TypedArray as this value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -912,7 +912,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0179
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_8000
-     * @tc.desc   传入多余参数
+     * @tc.desc   Extra arguments passed
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -923,7 +923,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0180
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_8100
-     * @tc.desc   compareFn为布尔值
+     * @tc.desc   compareFn is boolean
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -934,7 +934,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0181
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_8200
-     * @tc.desc   compareFn为数字0
+     * @tc.desc   compareFn is number 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -945,7 +945,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0182
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_8300
-     * @tc.desc   compareFn为空数组
+     * @tc.desc   compareFn is empty array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -956,7 +956,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0183
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_8400
-     * @tc.desc   compareFn为箭头函数
+     * @tc.desc   compareFn is arrow function
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -967,7 +967,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0184
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_8500
-     * @tc.desc   compareFn为bind返回的函数
+     * @tc.desc   compareFn is bind-returned function
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -978,7 +978,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0185
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_8600
-     * @tc.desc   this为null
+     * @tc.desc   this is null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -989,7 +989,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0186
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_8700
-     * @tc.desc   this为undefined
+     * @tc.desc   this is undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1000,7 +1000,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0187
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_8800
-     * @tc.desc   this为原始数字
+     * @tc.desc   this is primitive number
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1011,7 +1011,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0188
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_8900
-     * @tc.desc   this为原始布尔值
+     * @tc.desc   this is primitive boolean
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1022,7 +1022,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0189
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_9000
-     * @tc.desc   length属性为非常大的数
+     * @tc.desc   Very large length property
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1033,7 +1033,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0190
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_9100
-     * @tc.desc   length属性为非数字字符串
+     * @tc.desc   Non-numeric string length property
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1044,7 +1044,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0191
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_9200
-     * @tc.desc   数组长度超过2^32
+     * @tc.desc   Array length exceeds 2^32
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1055,7 +1055,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0192
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_9300
-     * @tc.desc   属性访问器定义的length
+     * @tc.desc   length via property accessor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1066,7 +1066,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0193
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_9400
-     * @tc.desc   length的getter抛出异常
+     * @tc.desc   length getter throws
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1077,7 +1077,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0194
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_9500
-     * @tc.desc   元素访问器抛出异常
+     * @tc.desc   Element accessor throws
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1088,7 +1088,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0195
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_9600
-     * @tc.desc   与sort()结果一致性
+     * @tc.desc   Consistency with sort() result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1099,7 +1099,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0196
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_9700
-     * @tc.desc   与sort()对比-原数组不变性
+     * @tc.desc   Compare with sort() - original unchanged
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1110,7 +1110,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0197
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_9800
-     * @tc.desc   与toReversed()链式调用
+     * @tc.desc   Chain with toReversed()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1121,7 +1121,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0198
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_9900
-     * @tc.desc   与toSpliced()链式调用
+     * @tc.desc   Chain with toSpliced()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1132,7 +1132,7 @@ export default function ArrayToSortedMindMapTest() {
     /**
      * @tc.name   testToSortedTest0199
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_9999
-     * @tc.desc   与with()链式调用
+     * @tc.desc   Chain with with()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
