@@ -2,50 +2,104 @@
  * 依据 /Users/yuhu/word/harmony/test/BigInt_constructor_6测试思维导图.md
  */
 import { describe, it, expect } from '../../../../hypium/index';
-import { TestType } from '../../../../hypium/Constant';
+import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntConstructorDoubleTest(): void {
   describe('BigInt double 构造（导图 constructor_6）', () => {
-    it('整数 double 0 / 1 / -1', TestType.STANDARD, (): void => {
-      expect(new BigInt(0.0).toString()).assertEqual('0');
-      expect(new BigInt(1.0).toString()).assertEqual('1');
-      expect(new BigInt(-1.0).toString()).assertEqual('-1');
-    });
+    /**
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_DOUBLE_0100
+     * @tc.name testBigIntConstructorDoubleIntegerSmall0100
+     * @tc.desc Verify integer doubles 0, 1, and -1 construct expected BigInt values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntConstructorDoubleIntegerSmall0100',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(new BigInt(0.0).toString()).assertEqual('0');
+        expect(new BigInt(1.0).toString()).assertEqual('1');
+        expect(new BigInt(-1.0).toString()).assertEqual('-1');
+      });
 
-    it('整数 double 100 / -999999', TestType.STANDARD, (): void => {
-      expect(new BigInt(100.0).toString()).assertEqual('100');
-      expect(new BigInt(-999999.0).toString()).assertEqual('-999999');
-    });
+    /**
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_DOUBLE_0200
+     * @tc.name testBigIntConstructorDoubleIntegerLarge0200
+     * @tc.desc Verify larger integer doubles construct expected BigInt values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntConstructorDoubleIntegerLarge0200',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(new BigInt(100.0).toString()).assertEqual('100');
+        expect(new BigInt(-999999.0).toString()).assertEqual('-999999');
+      });
 
-    it('+0.0 与 -0.0 均为 0', TestType.STANDARD, (): void => {
-      expect(new BigInt(+0.0).toString()).assertEqual('0');
-      expect(new BigInt(-0.0).toString()).assertEqual('0');
-    });
+    /**
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_DOUBLE_0300
+     * @tc.name testBigIntConstructorDoubleZeroSign0300
+     * @tc.desc Verify positive and negative zero doubles construct BigInt zero
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntConstructorDoubleZeroSign0300',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(new BigInt(+0.0).toString()).assertEqual('0');
+        expect(new BigInt(-0.0).toString()).assertEqual('0');
+      });
 
-    it('安全整数边界 double', TestType.STANDARD, (): void => {
-      expect(new BigInt(9007199254740991.0).toString()).assertEqual('9007199254740991');
-      expect(new BigInt(-9007199254740991.0).toString()).assertEqual('-9007199254740991');
-    });
+    /**
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_DOUBLE_0400
+     * @tc.name testBigIntConstructorDoubleSafeInteger0400
+     * @tc.desc Verify safe integer boundary doubles construct expected BigInt values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntConstructorDoubleSafeInteger0400',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(new BigInt(9007199254740991.0).toString()).assertEqual('9007199254740991');
+        expect(new BigInt(-9007199254740991.0).toString()).assertEqual('-9007199254740991');
+      });
 
-    it('非整数 double 抛错', TestType.STANDARD, (): void => {
-      expect((): void => {
-        new BigInt(1.5);
-      }).assertThrowError('RangeError');
-      expect((): void => {
-        new BigInt(3.14);
-      }).assertThrowError('RangeError');
-    });
+    /**
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_DOUBLE_0500
+     * @tc.name testBigIntConstructorDoubleNonInteger0500
+     * @tc.desc Verify non-integer doubles throw RangeError when constructing BigInt
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntConstructorDoubleNonInteger0500',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect((): void => {
+          new BigInt(1.5);
+        }).assertThrowError('RangeError');
+        expect((): void => {
+          new BigInt(3.14);
+        }).assertThrowError('RangeError');
+      });
 
-    it('NaN / Infinity double 抛错', TestType.STANDARD, (): void => {
-      expect((): void => {
-        new BigInt(Number.NaN);
-      }).assertThrowError('RangeError');
-      expect((): void => {
-        new BigInt(Number.POSITIVE_INFINITY);
-      }).assertThrowError('RangeError');
-      expect((): void => {
-        new BigInt(Number.NEGATIVE_INFINITY);
-      }).assertThrowError('RangeError');
-    });
+    /**
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_DOUBLE_0600
+     * @tc.name testBigIntConstructorDoubleNaNInfinity0600
+     * @tc.desc Verify NaN and Infinity doubles throw RangeError when constructing BigInt
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntConstructorDoubleNaNInfinity0600',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect((): void => {
+          new BigInt(Number.NaN);
+        }).assertThrowError('RangeError');
+        expect((): void => {
+          new BigInt(Number.POSITIVE_INFINITY);
+        }).assertThrowError('RangeError');
+        expect((): void => {
+          new BigInt(Number.NEGATIVE_INFINITY);
+        }).assertThrowError('RangeError');
+      });
   });
 }
