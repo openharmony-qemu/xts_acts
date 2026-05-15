@@ -1562,6 +1562,9 @@ export default function drawingTsCanvasPart9Test(): void {
           console.info(msg + ` errorCode is: ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
+      } else {
+        console.info(msg + ` image createPixelMap error`);
+        expect().assertFail();
       }
     })
     /**
@@ -1597,6 +1600,9 @@ export default function drawingTsCanvasPart9Test(): void {
           console.info(msg + ` errorCode is: ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
+      } else {
+        console.info(msg + ` image createPixelMap error`);
+        expect().assertFail();
       }
     })
     /**
