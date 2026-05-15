@@ -35,7 +35,7 @@ struct BlankExample {
         .height(60)
         .width(200)
 
-      List() {
+      Column() {
         Text('Blank-color-动态切换(undefined/Color.Yellow)')
           .fontSize(20)
           .margin(15)

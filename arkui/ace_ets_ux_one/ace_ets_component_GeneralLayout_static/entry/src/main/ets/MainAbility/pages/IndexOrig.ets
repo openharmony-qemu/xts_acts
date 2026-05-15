@@ -15,7 +15,7 @@
  */
 
 import { LengthMetrics, LengthUnit } from '@ohos.arkui.node';
-import { Entry, Component, Column, Image, Button, Edges, $r, ClickEvent,
+import { Entry, Component, Column, Image, Edges, $r, ClickEvent,
   LocalizedEdges, Button, Position } from '@ohos.arkui.component'
 
 @Entry
