@@ -32,7 +32,7 @@ class TestCustomSpan extends CustomSpan {
     console.info('[TestCustomSpan-' + this.id + '] layoutPolicy: ' + measureInfo.layoutPolicy);
 
     AppStorage.setOrCreate('customSpanMeasure_' + this.id, measureInfo);
-    
+
     return {
       width: this.widthValue,
       height: this.heightValue
@@ -101,50 +101,50 @@ struct CustomSpanMeasureInfo {
     Scroll() {
       Column() {
         Text(undefined, { controller: this.controller1 })
-          .width(300)
-          .height(100)
+          .width('10%')
+          .height('7%')
           .id('customSpan_measure_maxWidth_300')
           .fontSize(20)
 
         Text(undefined, { controller: this.controller2 })
-          .width(500)
-          .height(100)
+          .width('10%')
+          .height('7%')
           .id('customSpan_measure_maxWidth_500')
           .fontSize(20)
 
         Text(undefined, { controller: this.controller3 })
           .width('100%')
-          .height(100)
+          .height('7%')
           .id('customSpan_measure_maxWidth_full')
           .fontSize(20)
 
         Text(undefined, { controller: this.controller4 })
           .width('80%')
-          .height(100)
+          .height('7%')
           .id('customSpan_measure_maxWidth_percent')
           .fontSize(20)
 
         Text(undefined, { controller: this.controller5 })
-          .width(300)
-          .height(100)
+          .width('10%')
+          .height('7%')
           .id('customSpan_measure_layoutPolicy_none')
           .fontSize(20)
 
         Text(undefined, { controller: this.controller6 })
-          .width(300)
-          .height(100)
+          .width('10%')
+          .height('7%')
           .id('customSpan_measure_layoutPolicy_set')
           .fontSize(20)
 
         Text(undefined, { controller: this.controller7 })
-          .width(300)
-          .height(100)
+          .width('10%')
+          .height('7%')
           .id('customSpan_measure_null')
           .fontSize(20)
 
         Text(undefined, { controller: this.controller8 })
-          .width(300)
-          .height(100)
+          .width('10%')
+          .height('7%')
           .id('customSpan_measure_undefined')
           .fontSize(20)
       }
