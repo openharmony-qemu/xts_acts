@@ -860,14 +860,12 @@ export default function BaseEnumConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumConstructor062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // boolean 类型不在泛型约束内，但 SDK 在运行时不做严格校验
-      // 验证构造不会导致未捕获异常，且实例化成功
+      // boolean 类型不在泛型约束内，SDK 运行时抛出异常
       try {
         const e = new BaseEnum<int>(true as int, "BOOL_VALUE");
-        expect(e instanceof BaseEnum).assertTrue();
-        expect(e.getName()).assertEqual("BOOL_VALUE");
-      } catch (error) {
         expect().assertFail();
+      } catch (error) {
+        expect(error === null).assertFalse();
       }
     });
 
@@ -1577,12 +1575,12 @@ export default function BaseEnumConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumConstructor109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 类型不匹配在 SDK 运行时不抛异常，验证构造成功
+      // 类型不匹配在 SDK 运行时抛出异常
       try {
         const e = new BaseEnum<int>(true as int, "TYPE_MISMATCH");
-        expect(e instanceof BaseEnum).assertTrue();
-      } catch (error) {
         expect().assertFail();
+      } catch (error) {
+        expect(error === null).assertFalse();
       }
     });
 
