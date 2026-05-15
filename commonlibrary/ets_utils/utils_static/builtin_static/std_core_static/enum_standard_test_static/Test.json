@@ -10,7 +10,7 @@
     },
     "kits": [{
         "test-file-name": [
-            "ActsEnumStaticTest"
+            "ActsEnumStaticTest.hap"
         ],
         "type": "AppInstallKit",
         "cleanup-apps": true
