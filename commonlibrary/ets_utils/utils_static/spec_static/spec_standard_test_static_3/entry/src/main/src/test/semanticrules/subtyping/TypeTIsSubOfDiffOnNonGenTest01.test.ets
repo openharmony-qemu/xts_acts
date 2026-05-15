@@ -726,7 +726,7 @@ export default function TypeTIsSubOfDiffOnNonGenTest01(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it(" testTypeTIsSubOfDiffOnNonGen0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testTypeTIsSubOfDiffOnNonGen0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = ' testTypeTIsSubOfDiffOnNonGen0004';
 
       let v1: C3_4 | number = 123
@@ -749,7 +749,7 @@ export default function TypeTIsSubOfDiffOnNonGenTest01(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it(" testTypeTIsSubOfDiffOnNonGen0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testTypeTIsSubOfDiffOnNonGen0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = ' testTypeTIsSubOfDiffOnNonGen0005';
 
       let v1: III1_5 | III2_5 = new C1_5()

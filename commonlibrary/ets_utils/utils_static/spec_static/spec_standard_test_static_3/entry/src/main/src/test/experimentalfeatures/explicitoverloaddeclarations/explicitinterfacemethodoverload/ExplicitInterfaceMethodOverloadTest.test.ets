@@ -1175,7 +1175,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A = new A()
       expect(a.m()).assertEqual(0);
@@ -1198,7 +1197,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A1 = new A1()
       expect(a.m(a)).assertEqual(1);
@@ -1218,7 +1216,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = new A2()
       expect(a.m(true)).assertEqual(1.0);
@@ -1237,7 +1234,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A4<X, Y> = new A4<X, Y>()
 
@@ -1256,7 +1252,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A5 = new A5()
       let x: X1 = new X1()
@@ -1284,7 +1279,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let j: J6 = ((): J6 => new A6)()
       expect(j.foo(new C3)).assertEqual('A.3');
@@ -1316,26 +1310,20 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let j: J71 = ((): J71 => new A7)()
       expect(j.foo(new C3)).assertEqual('A.3');
       expect(j.foo(new C2)).assertEqual('A.2');
       expect(j.foo(new C1)).assertEqual('A.1');
-
-
       let m: M = ((): M => new A7)()
       expect(m.foo(new C3)).assertEqual('A.3');
       expect(m.foo(new C2)).assertEqual('A.2');
       expect(m.foo(new C1)).assertEqual('A.1');
-
       let a: A7 = ((): A7 => new A7)()
       expect(a.foo(new C3)).assertEqual('A.3');
       expect(a.foo(new C2)).assertEqual('A.2');
       expect(a.foo(new C1)).assertEqual('A.1');
-
     });
-
 
     /**
      * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_0900
@@ -1348,39 +1336,28 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let j: J71 = ((): J71 => new A8)()
       expect(j.foo(new C3)).assertEqual('A.3');
       expect(j.foo(new C2)).assertEqual('A.2');
       expect(j.foo(new C1)).assertEqual('A.1');
-
-
       let k: K2 = ((): K2 => new A8)()
       expect(k.foo(new C3)).assertEqual('A.3');
       expect(k.foo(new C2)).assertEqual('A.2');
       expect(k.foo(new C1)).assertEqual('A.1');
-
-
       let m: M1 = ((): M1 => new A8)()
       expect(m.foo(new C3)).assertEqual('A.3');
       expect(m.foo(new C2)).assertEqual('A.2');
       expect(m.foo(new C1)).assertEqual('A.1');
-
-
       let l: L = ((): L => new A8)()
       expect(l.foo(new C3)).assertEqual('A.3');
       expect(l.foo(new C2)).assertEqual('A.2');
       expect(l.foo(new C1)).assertEqual('A.1');
-
       let a: A8 = ((): A8 => new A8)()
       expect(a.foo(new C3)).assertEqual('A.3');
       expect(a.foo(new C2)).assertEqual('A.2');
       expect(a.foo(new C1)).assertEqual('A.1');
-
-
     });
-
 
     /**
      * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_1000
@@ -1393,7 +1370,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let j: J7 = {}
       expect(j.foo(new C3)).assertEqual('J.3');
@@ -2645,7 +2621,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let j: J41 = ((): J41 => new A64)()
       expect(j.foo(new C3)).assertEqual('A.3')
@@ -2680,7 +2655,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let j: J42 = {}
       expect(j.foo(new C3)).assertEqual('J.1')
@@ -2709,7 +2683,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let j: J48 = ((): J48 => new A71)()
       expect(j.foo(new C3)).assertEqual('A.2')
@@ -2738,7 +2711,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0110", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let j: J63 = ((): J63 => new A86)()
       expect(j.foo(new C3)).assertEqual('A.1')

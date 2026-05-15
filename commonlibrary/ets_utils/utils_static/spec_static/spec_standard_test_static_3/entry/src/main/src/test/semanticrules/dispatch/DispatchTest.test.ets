@@ -302,7 +302,7 @@ export default function DispatchTest():void {
     // ==================== Dispatch Tests ====================
 
     /**
-     * @tc.number    SUB_DISPATCH_0100
+     * @tc.number    SUB_DISPATCH_ONE_TEST_0100
      * @tc.name      testDispatch0001
      * @tc.desc      Field access with interface implementation
      * @tc.size      MediumTest
@@ -319,7 +319,7 @@ export default function DispatchTest():void {
     });
 
     /**
-     * @tc.number    SUB_DISPATCH_0200
+     * @tc.number    SUB_DISPATCH_ONE_TEST_0200
      * @tc.name      testDispatch0002
      * @tc.desc      Generic class method dispatch
      * @tc.size      MediumTest
@@ -333,7 +333,7 @@ export default function DispatchTest():void {
     });
 
     /**
-     * @tc.number    SUB_DISPATCH_0300
+     * @tc.number    SUB_DISPATCH_ONE_TEST_0300
      * @tc.name      testDispatch0003
      * @tc.desc      Interface with object literal
      * @tc.size      MediumTest
@@ -347,7 +347,7 @@ export default function DispatchTest():void {
     });
 
     /**
-     * @tc.number    SUB_DISPATCH_0400
+     * @tc.number    SUB_DISPATCH_ONE_TEST_0400
      * @tc.name      testDispatch0004
      * @tc.desc      Union type field access
      * @tc.size      MediumTest
@@ -364,7 +364,7 @@ export default function DispatchTest():void {
     // ==================== Dynamic Dispatch Tests ====================
 
     /**
-     * @tc.number    SUB_DYNAMIC_DISPATCH_0500
+     * @tc.number    SUB_DYNAMIC_DISPATCH_TEST_0500
      * @tc.name      testDynamicDispatch0005
      * @tc.desc      Dynamic dispatch with class inheritance
      * @tc.size      MediumTest
@@ -378,7 +378,7 @@ export default function DispatchTest():void {
     });
 
     /**
-     * @tc.number    SUB_DYNAMIC_DISPATCH_0600
+     * @tc.number    SUB_DYNAMIC_DISPATCH_TEST_0600
      * @tc.name      testDynamicDispatch0006
      * @tc.desc      Dynamic dispatch with namespace
      * @tc.size      MediumTest
@@ -392,7 +392,7 @@ export default function DispatchTest():void {
     });
 
     /**
-     * @tc.number    SUB_DYNAMIC_DISPATCH_0700
+     * @tc.number    SUB_DYNAMIC_DISPATCH_TEST_0700
      * @tc.name      testDynamicDispatch0007
      * @tc.desc      Dynamic dispatch with multiple overriding
      * @tc.size      MediumTest
@@ -406,7 +406,7 @@ export default function DispatchTest():void {
     });
 
     /**
-     * @tc.number    SUB_DYNAMIC_DISPATCH_0800
+     * @tc.number    SUB_DYNAMIC_DISPATCH_TEST_0800
      * @tc.name      testDynamicDispatch0008
      * @tc.desc      Dynamic dispatch with union type call
      * @tc.size      MediumTest
@@ -420,7 +420,7 @@ export default function DispatchTest():void {
     });
 
     /**
-     * @tc.number    SUB_DYNAMIC_DISPATCH_0900
+     * @tc.number    SUB_DYNAMIC_DISPATCH_TEST_0900
      * @tc.name      testDynamicDispatch0009
      * @tc.desc      Dynamic dispatch preserved in cast
      * @tc.size      MediumTest
@@ -434,7 +434,7 @@ export default function DispatchTest():void {
     });
 
     /**
-     * @tc.number    SUB_DYNAMIC_DISPATCH_1000
+     * @tc.number    SUB_DYNAMIC_DISPATCH_TEST_1000
      * @tc.name      testDynamicDispatch0010
      * @tc.desc      Dynamic dispatch with interface
      * @tc.size      MediumTest
@@ -449,7 +449,7 @@ export default function DispatchTest():void {
     });
 
     /**
-     * @tc.number    SUB_DYNAMIC_DISPATCH_1100
+     * @tc.number    SUB_DYNAMIC_DISPATCH_TEST_1100
      * @tc.name      testDynamicDispatch0011
      * @tc.desc      Dynamic dispatch with interface and namespace
      * @tc.size      MediumTest
@@ -464,7 +464,7 @@ export default function DispatchTest():void {
     });
 
     /**
-     * @tc.number    SUB_DYNAMIC_DISPATCH_1200
+     * @tc.number    SUB_DYNAMIC_DISPATCH_TEST_1200
      * @tc.name      testDynamicDispatch0012
      * @tc.desc      Dynamic dispatch with several interfaces implementation
      * @tc.size      MediumTest
@@ -483,7 +483,7 @@ export default function DispatchTest():void {
     // ==================== Static Dispatch Tests ====================
 
     /**
-     * @tc.number    SUB_STATIC_DISPATCH_1300
+     * @tc.number    SUB_DYNAMIC_DISPATCH_TEST_1300
      * @tc.name      testStaticDispatch0013
      * @tc.desc      Static dispatch with field access
      * @tc.size      MediumTest
@@ -496,7 +496,7 @@ export default function DispatchTest():void {
     });
 
     /**
-     * @tc.number    SUB_STATIC_DISPATCH_1400
+     * @tc.number    SUB_DYNAMIC_DISPATCH_TEST_1400
      * @tc.name      testStaticDispatch0014
      * @tc.desc      Static dispatch with namespace
      * @tc.size      MediumTest
@@ -510,7 +510,7 @@ export default function DispatchTest():void {
     });
 
     /**
-     * @tc.number    SUB_STATIC_DISPATCH_1500
+     * @tc.number    SUB_DYNAMIC_DISPATCH_TEST_1500
      * @tc.name      testStaticDispatch0015
      * @tc.desc      Static dispatch with union type
      * @tc.size      MediumTest
@@ -524,7 +524,7 @@ export default function DispatchTest():void {
     });
 
     /**
-     * @tc.number    SUB_STATIC_DISPATCH_1600
+     * @tc.number    SUB_DYNAMIC_DISPATCH_TEST_1600
      * @tc.name      testStaticDispatch0016
      * @tc.desc      Static dispatch with interface
      * @tc.size      MediumTest
@@ -539,7 +539,7 @@ export default function DispatchTest():void {
     });
 
     /**
-     * @tc.number    SUB_STATIC_DISPATCH_1700
+     * @tc.number    SUB_DYNAMIC_DISPATCH_TEST_1700
      * @tc.name      testStaticDispatch0017
      * @tc.desc      Static dispatch with interface and namespace
      * @tc.size      MediumTest
@@ -554,7 +554,7 @@ export default function DispatchTest():void {
     });
 
     /**
-     * @tc.number    SUB_STATIC_DISPATCH_1800
+     * @tc.number    SUB_DYNAMIC_DISPATCH_TEST_1800
      * @tc.name      testStaticDispatch0018
      * @tc.desc      Static dispatch with interface extension
      * @tc.size      MediumTest
@@ -571,7 +571,7 @@ export default function DispatchTest():void {
     });
 
     /**
-     * @tc.number    SUB_STATIC_DISPATCH_1900
+     * @tc.number    SUB_DYNAMIC_DISPATCH_TEST_1900
      * @tc.name      testStaticDispatch0019
      * @tc.desc      Static dispatch with several interfaces implementation
      * @tc.size      MediumTest

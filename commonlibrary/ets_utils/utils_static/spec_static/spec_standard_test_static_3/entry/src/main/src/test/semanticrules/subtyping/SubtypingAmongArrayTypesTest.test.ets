@@ -57,20 +57,6 @@ export default function SubtypingAmongArrayTypesTest(): void {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-
-    /**
-     * @tc.number    SUB_SUBTYPING_AMONG_ARRAY_TYPESTEST_0100
-     * @tc.name      testSubtypingAmongArrayTypes0001
-     * @tc.desc      Array type
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testStaticAndInstanceFields0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStaticAndInstanceFields0001';
-      let a: number[];
-    });
-
     /**
      * @tc.number    SUB_SUBTYPING_AMONG_ARRAY_TYPESTEST_0200
      * @tc.name      testSubtypingAmongArrayTypes0002

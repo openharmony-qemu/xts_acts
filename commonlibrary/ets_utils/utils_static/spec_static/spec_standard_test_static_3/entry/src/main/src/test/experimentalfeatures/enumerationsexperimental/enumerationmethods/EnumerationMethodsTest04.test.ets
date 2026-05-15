@@ -703,8 +703,7 @@ export default function EnumerationMethodsTest(): void {
     })
 
     /**
-     * 源文件：        enum_explicit_type_getname_16.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0300
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_ONE_0300
      * @tc.name      testEnumerationMethods0045
      * @tc.desc      Checking for enum with explicit double type constant for getName method support.
      * @tc.size      MediumTest
@@ -752,8 +751,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_explicit_type_getname_17.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0400
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_ONE_0400
      * @tc.name      testEnumerationMethods0046
      * @tc.desc      Checking for enum with explicit double type constant for getName method support.
      * @tc.size      MediumTest
@@ -801,8 +799,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_explicit_type_getname_18.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0500
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_ONE_0500
      * @tc.name      testEnumerationMethods0047
      * @tc.desc      Checking for enum with explicit double type constant for getName method support.
      * @tc.size      MediumTest
@@ -850,8 +847,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_explicit_type_getname_19.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0600
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_ONE_0600
      * @tc.name      testEnumerationMethods0048
      * @tc.desc      Checking for enum with explicit double type constant for getName method support.
      * @tc.size      MediumTest
@@ -899,8 +895,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_explicit_type_getname_24.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_1100
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_ONE_1100
      * @tc.name      testEnumerationMethods0053
      * @tc.desc      Checking for enum with explicit string type constant for getName method support.
      * @tc.size      MediumTest
@@ -940,8 +935,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_explicit_type_getname_25.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_1200
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_ONE_1200
      * @tc.name      testEnumerationMethods0054
      * @tc.desc      Checking for enum with explicit string type constant for getName method support.
      * @tc.size      MediumTest
@@ -981,8 +975,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_explicit_type_getname_26.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_1300
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_ONE_1300
      * @tc.name      testEnumerationMethods0055
      * @tc.desc      Checking for enum with explicit string type constant for getName method support.
      * @tc.size      MediumTest
@@ -1022,8 +1015,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_explicit_type_getname_27.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_1400
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_ONE_1400
      * @tc.name      testEnumerationMethods0056
      * @tc.desc      Checking for enum with explicit string type constant for getName method support.
      * @tc.size      MediumTest

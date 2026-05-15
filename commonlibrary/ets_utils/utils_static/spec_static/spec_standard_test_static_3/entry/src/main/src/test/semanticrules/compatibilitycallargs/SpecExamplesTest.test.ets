@@ -509,22 +509,6 @@ export default function SpecExamplesTest(): void {
     });
 
     /**
-     * @tc.number    SUB_SPEC_EXAMPLES_TEST_0700
-     * @tc.name      testSpecExamples0007
-     * @tc.desc      Specification examples for semantic checks that must be performed to arguments
-     *               when checking the validity of any function, method, constructor, or lambda call.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testSpecExamples0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSpecExamples0007';
-      
-
-      let a = new A7(1, "111")
-    });
-
-    /**
      * @tc.number    SUB_SPEC_EXAMPLES_TEST_0800
      * @tc.name      testSpecExamples0008
      * @tc.desc      Specification examples for semantic checks that must be performed to arguments

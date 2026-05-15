@@ -717,20 +717,17 @@ export default function DiffTypeIsSubOfTypeTOnPredefinedTest01(): void {
  * @tc.number    SUB_DIFF_TYPE_IS_SUB_OF_TYPE_T_ON_PREDEFINED_1500
  * @tc.name      testDiffTypeIsSubOfTypeTOnPredefined0015
  * @tc.desc      Checking that difference type A - B is a subtype of T if A is a subtype of T
-in case of usage instanceof on predefined types
+ *               in case of usage instanceof on predefined types
  * @tc.size      MediumTest
  * @tc.type      Function
  * @tc.level     Level 2
  */
-it(" testDiffTypeIsSubOfTypeTOnPredefined0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-  const TAG = ' testDiffTypeIsSubOfTypeTOnPredefined0015';
-
+it("testDiffTypeIsSubOfTypeTOnPredefined0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
   let res: number = f1_15(null);
   expect(res).assertEqual(1);
   res = f1_15(5n);
   expect(res).assertEqual(2);
-
   expect(testNS1_15.runTest()).assertEqual(true);
   expect(testNS2_15.runTest()).assertEqual(true);
   expect(testNS3_15.runTest()).assertEqual(true);
@@ -741,20 +738,17 @@ it(" testDiffTypeIsSubOfTypeTOnPredefined0015", TestType.FUNCTION | Size.MEDIUMT
  * @tc.number    SUB_DIFF_TYPE_IS_SUB_OF_TYPE_T_ON_PREDEFINED_1600
  * @tc.name      testDiffTypeIsSubOfTypeTOnPredefined0016
  * @tc.desc      Checking that difference type A - B is a subtype of T if A is a subtype of T
-in case of usage instanceof on predefined types
+ *               in case of usage instanceof on predefined types
  * @tc.size      MediumTest
  * @tc.type      Function
  * @tc.level     Level 2
  */
-it(" testDiffTypeIsSubOfTypeTOnPredefined0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-  const TAG = ' testDiffTypeIsSubOfTypeTOnPredefined0016';
-
+it("testDiffTypeIsSubOfTypeTOnPredefined0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
   let res: number = f1_16(null);
   expect(res).assertEqual(1);
   res = f1_16(5);
   expect(res).assertEqual(2);
-
   expect(testNS1_16.runTest()).assertEqual(true);
   expect(testNS2_16.runTest()).assertEqual(true);
   expect(testNS3_16.runTest()).assertEqual(true);
@@ -765,12 +759,12 @@ it(" testDiffTypeIsSubOfTypeTOnPredefined0016", TestType.FUNCTION | Size.MEDIUMT
  * @tc.number    SUB_DIFF_TYPE_IS_SUB_OF_TYPE_T_ON_PREDEFINED_1700
  * @tc.name      testDiffTypeIsSubOfTypeTOnPredefined0017
  * @tc.desc      Checking that difference type A - B is a subtype of T if A is a subtype of T
-in case of usage instanceof on predefined types
+ *                in case of usage instanceof on predefined types
  * @tc.size      MediumTest
  * @tc.type      Function
  * @tc.level     Level 2
  */
-it(" testDiffTypeIsSubOfTypeTOnPredefined0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+it("testDiffTypeIsSubOfTypeTOnPredefined0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
   const TAG = ' testDiffTypeIsSubOfTypeTOnPredefined0017';
 
 
@@ -788,12 +782,12 @@ it(" testDiffTypeIsSubOfTypeTOnPredefined0017", TestType.FUNCTION | Size.MEDIUMT
  * @tc.number    SUB_DIFF_TYPE_IS_SUB_OF_TYPE_T_ON_PREDEFINED_1800
  * @tc.name      testDiffTypeIsSubOfTypeTOnPredefined0018
  * @tc.desc      Checking that difference type A - B is a subtype of T if A is a subtype of T
-in case of usage instanceof on predefined types
+ *               in case of usage instanceof on predefined types
  * @tc.size      MediumTest
  * @tc.type      Function
  * @tc.level     Level 2
  */
-it(" testDiffTypeIsSubOfTypeTOnPredefined0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+it("testDiffTypeIsSubOfTypeTOnPredefined0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
   const TAG = ' testDiffTypeIsSubOfTypeTOnPredefined0018';
 
 
@@ -811,12 +805,12 @@ it(" testDiffTypeIsSubOfTypeTOnPredefined0018", TestType.FUNCTION | Size.MEDIUMT
  * @tc.number    SUB_DIFF_TYPE_IS_SUB_OF_TYPE_T_ON_PREDEFINED_1900
  * @tc.name      testDiffTypeIsSubOfTypeTOnPredefined0019
  * @tc.desc      Checking that difference type A - B is a subtype of T if A is a subtype of T
-in case of usage instanceof on predefined types
+ *               in case of usage instanceof on predefined types
  * @tc.size      MediumTest
  * @tc.type      Function
  * @tc.level     Level 2
  */
-it(" testDiffTypeIsSubOfTypeTOnPredefined0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+it("testDiffTypeIsSubOfTypeTOnPredefined0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
   const TAG = ' testDiffTypeIsSubOfTypeTOnPredefined0019';
 
 
@@ -834,12 +828,12 @@ it(" testDiffTypeIsSubOfTypeTOnPredefined0019", TestType.FUNCTION | Size.MEDIUMT
  * @tc.number    SUB_DIFF_TYPE_IS_SUB_OF_TYPE_T_ON_PREDEFINED_2000
  * @tc.name      testDiffTypeIsSubOfTypeTOnPredefined0020
  * @tc.desc      Checking that difference type A - B is a subtype of T if A is a subtype of T
-in case of usage instanceof on predefined types
+ *               in case of usage instanceof on predefined types
  * @tc.size      MediumTest
  * @tc.type      Function
  * @tc.level     Level 2
  */
-it(" testDiffTypeIsSubOfTypeTOnPredefined0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+it("testDiffTypeIsSubOfTypeTOnPredefined0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
   const TAG = ' testDiffTypeIsSubOfTypeTOnPredefined0020';
 
 

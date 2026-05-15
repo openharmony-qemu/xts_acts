@@ -457,7 +457,6 @@ export default function EnumerationMethodsTest(): void {
     })
 
     /**
-     * 源文件：        enum_implicit_type_fromvalue_0.ets
      * @tc.number    SUB_ENUMERATION_METHODS_XTS_ONE_TEST_0100
      * @tc.name      testEnumerationMethods0155
      * @tc.desc      Checking for enum with implicit int type constant for fromValue method support.
@@ -520,8 +519,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_implicit_type_fromvalue_1.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0200
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_EIGHT_0200
      * @tc.name      testEnumerationMethods0156
      * @tc.desc      Checking for enum with implicit int type constant for fromValue method support.
      * @tc.size      MediumTest
@@ -583,8 +581,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_implicit_type_fromvalue_2.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0300
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_EIGHT_0300
      * @tc.name      testEnumerationMethods0157
      * @tc.desc      Checking for enum with implicit long type constant for fromValue method support.
      * @tc.size      MediumTest
@@ -647,8 +644,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_implicit_type_fromvalue_3.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0400
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_EIGHT_0400
      * @tc.name      testEnumerationMethods0158
      * @tc.desc      Checking for enum with implicit long type constant for fromValue method support.
      * @tc.size      MediumTest
@@ -710,8 +706,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_implicit_type_fromvalue_4.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0500
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_EIGHT_0500
      * @tc.name      testEnumerationMethods0159
      * @tc.desc      Checking for enum with implicit string type constant for fromValue method support.
      * @tc.size      MediumTest
@@ -760,8 +755,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_implicit_type_fromvalue_5.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0600
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_EIGHT_0600
      * @tc.name      testEnumerationMethods0160
      * @tc.desc      Checking for enum with implicit string type constant for fromValue method support.
      * @tc.size      MediumTest

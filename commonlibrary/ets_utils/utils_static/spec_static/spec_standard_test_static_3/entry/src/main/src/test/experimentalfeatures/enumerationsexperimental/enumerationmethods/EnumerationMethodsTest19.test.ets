@@ -508,8 +508,7 @@ export default function EnumerationMethodsTest(): void {
     })
 
     /**
-     * 源文件：        enum_implicit_type_values_0.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0100
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_THIRTEEN_0100
      * @tc.name      testEnumerationMethods0215
      * @tc.desc      Checking for enum with implicit int type constant for values method support.
      * @tc.size      MediumTest
@@ -578,8 +577,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_implicit_type_values_1.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0200
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_THIRTEEN_0200
      * @tc.name      testEnumerationMethods0216
      * @tc.desc      Checking for enum with implicit int type constant for values method support.
      * @tc.size      MediumTest
@@ -649,8 +647,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_implicit_type_values_2.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0300
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_THIRTEEN_0300
      * @tc.name      testEnumerationMethods0217
      * @tc.desc      Checking for enum with implicit long type constant for values method support.
      * @tc.size      MediumTest
@@ -720,8 +717,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_implicit_type_values_3.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0400
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_THIRTEEN_0400
      * @tc.name      testEnumerationMethods0218
      * @tc.desc      Checking for enum with implicit long type constant for values method support.
      * @tc.size      MediumTest
@@ -791,8 +787,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_implicit_type_values_4.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0500
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_THIRTEEN_0500
      * @tc.name      testEnumerationMethods0219
      * @tc.desc      Checking for enum with implicit string type constant for values method support.
      * @tc.size      MediumTest
@@ -850,8 +845,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_implicit_type_values_5.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0600
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_THIRTEEN_0600
      * @tc.name      testEnumerationMethods0220
      * @tc.desc      Checking for enum with implicit string type constant for values method support.
      * @tc.size      MediumTest

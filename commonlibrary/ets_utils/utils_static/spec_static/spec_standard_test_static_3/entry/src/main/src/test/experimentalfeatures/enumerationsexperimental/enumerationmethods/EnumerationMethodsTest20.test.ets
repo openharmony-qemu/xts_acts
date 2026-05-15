@@ -82,8 +82,7 @@ export default function EnumerationMethodsTest(): void {
     })
 
     /**
-     * 源文件：        enum_type_methods_getname.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0100
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_FOURTEEN_0100
      * @tc.name      testEnumerationMethods0221
      * @tc.desc      Method getName() returns the name of an enumeration constant.
      * @tc.size      MediumTest
@@ -96,8 +95,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_type_methods_getname_1.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0200
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_FOURTEEN_0200
      * @tc.name      testEnumerationMethods0222
      * @tc.desc      Method getName() returns the name of an enumeration constant.
      * @tc.size      MediumTest
@@ -110,8 +108,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_type_methods_getvalue_0.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0300
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_FOURTEEN_0300
      * @tc.name      testEnumerationMethods0223
      * @tc.desc      valueOf() returns a value of enumeration constant which is either of int or string type.
      *               Int enum used.
@@ -132,8 +129,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_type_methods_getvalue_1.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0400
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_FOURTEEN_0400
      * @tc.name      testEnumerationMethods0224
      * @tc.desc      valueOf() returns a value of enumeration constant which is either of int or string type.
      *               String enum used.
@@ -154,8 +150,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_type_methods_getvalue_tostring.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0500
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_FOURTEEN_0500
      * @tc.name      testEnumerationMethods0225
      * @tc.desc      c.toString() returns the same value as c.valueOf().toString().
      * @tc.size      MediumTest
@@ -168,8 +163,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_type_methods_getvalue_tostring_1.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0600
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_FOURTEEN_0600
      * @tc.name      testEnumerationMethods0226
      * @tc.desc      c.toString() returns the same value as c.valueOf().toString().
      * @tc.size      MediumTest
@@ -182,8 +176,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_type_methods_getvalueof.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0700
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_EIGHT_0700
      * @tc.name      testEnumerationMethods0227
      * @tc.desc      getValueOf(string) returns an enumeration constant with the given name, or throws an error if no
      *               constant with such name exists.
@@ -200,8 +193,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_type_methods_pipeline.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0900
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_EIGHT_0900
      * @tc.name      testEnumerationMethods0229
      * @tc.desc      'Method getName() returns the name of an enumeration constant. Method valueOf() returns an int or
      *               string value of an enumeration constant depending on the type of the enumeration constant.'
@@ -215,8 +207,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_type_methods_values.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_1000
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_EIGHT_1000
      * @tc.name      testEnumerationMethods0230
      * @tc.desc      values() returns an array of enumeration constants in the order of declaration.
      * @tc.size      MediumTest

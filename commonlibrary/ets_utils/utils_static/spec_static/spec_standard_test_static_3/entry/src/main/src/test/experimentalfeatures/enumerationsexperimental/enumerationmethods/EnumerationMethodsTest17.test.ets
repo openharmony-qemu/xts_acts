@@ -624,8 +624,7 @@ export default function EnumerationMethodsTest(): void {
     })
 
     /**
-     * 源文件：        enum_implicit_type_tostring_0.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0100
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_ELEVEN_0100
      * @tc.name      testEnumerationMethods0191
      * @tc.desc      Checking for enum with implicit int type constant that methods c.toString() and
      *               c.valueOf().toString() return the same value.
@@ -675,8 +674,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_implicit_type_tostring_1.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0200
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_ELEVEN_0200
      * @tc.name      testEnumerationMethods0192
      * @tc.desc      Checking for enum with implicit int type constant that methods c.toString() and
      *               c.valueOf().toString() return the same value.
@@ -726,8 +724,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_implicit_type_tostring_2.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0300
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_ELEVEN_0300
      * @tc.name      testEnumerationMethods0193
      * @tc.desc      Checking for enum with implicit int type constant that methods c.toString() and
      *               c.valueOf().toString() return the same value.
@@ -776,8 +773,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_implicit_type_tostring_3.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0400
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_ELEVEN_0400
      * @tc.name      testEnumerationMethods0194
      * @tc.desc      Checking for enum with implicit int type constant that methods c.toString() and
      *               c.valueOf().toString() return the same value.
@@ -826,8 +822,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_implicit_type_tostring_4.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0500
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_ELEVEN_0500
      * @tc.name      testEnumerationMethods0195
      * @tc.desc      Checking for enum with implicit long type constant that methods c.toString() and
      *               c.valueOf().toString() return the same value.
@@ -876,8 +871,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_implicit_type_tostring_5.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0600
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_ELEVEN_0600
      * @tc.name      testEnumerationMethods0196
      * @tc.desc      Checking for enum with implicit long type constant that methods c.toString() and
      *               c.valueOf().toString() return the same value.
@@ -926,8 +920,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_implicit_type_tostring_6.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0700
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_SIX_0700
      * @tc.name      testEnumerationMethods0197
      * @tc.desc      Checking for enum with implicit long type constant that methods c.toString() and
      *               c.valueOf().toString() return the same value.
@@ -977,8 +970,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_implicit_type_tostring_7.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0800
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_SIX_0800
      * @tc.name      testEnumerationMethods0198
      * @tc.desc      Checking for enum with implicit long type constant that methods c.toString() and
      *               c.valueOf().toString() return the same value.
@@ -1028,8 +1020,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_implicit_type_tostring_8.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0900
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_SIX_0900
      * @tc.name      testEnumerationMethods0199
      * @tc.desc      Checking for enum with implicit string type constant that methods c.toString() and
      *               c.valueOf().toString() return the same value.
@@ -1071,8 +1062,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_implicit_type_tostring_9.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_1000
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_SIX_1000
      * @tc.name      testEnumerationMethods0200
      * @tc.desc      Checking for enum with implicit string type constant that methods c.toString() and
      *               c.valueOf().toString() return the same value.
@@ -1114,8 +1104,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_implicit_type_tostring_10.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_1100
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_SEVEN_1100
      * @tc.name      testEnumerationMethods0201
      * @tc.desc      Checking for enum with implicit string type constant that methods c.toString() and
      *               c.valueOf().toString() return the same value.
@@ -1158,8 +1147,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_implicit_type_tostring_11.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_1200
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_SEVEN_1200
      * @tc.name      testEnumerationMethods0202
      * @tc.desc      Checking for enum with implicit string type constant that methods c.toString() and
      *               c.valueOf().toString() return the same value.

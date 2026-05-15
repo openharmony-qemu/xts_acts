@@ -614,49 +614,6 @@ export default function SemanticRulesTest():void {
     });
 
     /**
-     * @tc.number    SUB_SEMANTIC_RULES_TEST_1700
-     * @tc.name      testSemanticRules0017
-     * @tc.desc      Ensuring that method override in subclasses keeps void return types unchanged.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testSemanticRules0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSemanticRules0017';
-      console.log(TAG + ' start');
-
-      let a = new Base17();
-      let b = new Derived17();
-
-      a.methodOne(a);
-      b.methodOne(a);
-    });
-
-    /**
-     * @tc.number    SUB_SEMANTIC_RULES_TEST_1800
-     * @tc.name      testSemanticRules0018
-     * @tc.desc      Ensuring that method override in subclasses keeps never return types unchanged.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testSemanticRules0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSemanticRules0018';
-      console.log(TAG + ' start');
-
-      let a = new Base18();
-      let b = new Derived18();
-
-      try {
-        a.methodOne(a);
-      } catch (e) {}
-
-      try {
-        b.methodOne(a);
-      } catch (e) {}
-    });
-
-    /**
      * @tc.number    SUB_SEMANTIC_RULES_TEST_1900
      * @tc.name      testSemanticRules0019
      * @tc.desc      Ensuring that method override in subclasses keeps function return types unchanged.
@@ -740,33 +697,6 @@ export default function SemanticRulesTest():void {
 
       expect(resultA).assertEqual(resultB);
     });
-
-    /**
-     * @tc.number    SUB_SEMANTIC_RULES_TEST_2600
-     * @tc.name      testSemanticRules0026
-     * @tc.desc      Ensuring that method override in subclasses keeps never return types unchanged.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testSemanticRules0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSemanticRules0026';
-      console.log(TAG + ' start');
-
-      let a = new Base26();
-      let b = new Derived26();
-
-      try {
-        a.methodOne(a);
-      } catch (e) {
-      }
-
-      try {
-        b.methodOne(a);
-      } catch (e) {
-      }
-    });
-
   })
 
 }

@@ -736,8 +736,7 @@ export default function EnumerationMethodsTest(): void {
     })
 
     /**
-     * 源文件：        enum_explicit_type_fromvalue_rte_0.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0100
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_ONE_0100
      * @tc.name      testEnumerationMethods0015
      * @tc.desc      Checking for enum with explicit int type constant for fromValue method support which should throws
      *               an error if no constant has such a value.
@@ -746,8 +745,7 @@ export default function EnumerationMethodsTest(): void {
      * @tc.level     Level 2
      */
     /**
-     * 源文件：        enum_explicit_type_getname_0.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0100
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_TWO_0100
      * @tc.name      testEnumerationMethods0029
      * @tc.desc      Checking for enum with explicit int type constant for getName method support.
      * @tc.size      MediumTest
@@ -795,8 +793,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_explicit_type_getname_1.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0200
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_ONE_0200
      * @tc.name      testEnumerationMethods0030
      * @tc.desc      Checking for enum with explicit int type constant for getName method support.
      * @tc.size      MediumTest

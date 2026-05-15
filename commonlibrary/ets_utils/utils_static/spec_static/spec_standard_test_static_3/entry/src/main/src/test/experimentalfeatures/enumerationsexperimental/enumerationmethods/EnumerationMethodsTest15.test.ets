@@ -442,8 +442,7 @@ export default function EnumerationMethodsTest(): void {
     })
 
     /**
-     * 源文件：        enum_implicit_type_getvalueof_0.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0100
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_TEN_0100
      * @tc.name      testEnumerationMethods0179
      * @tc.desc      Checking for enum with implicit int type constant for getValueOf method support.
      * @tc.size      MediumTest
@@ -500,8 +499,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_implicit_type_getvalueof_1.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0200
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_TEN_0200
      * @tc.name      testEnumerationMethods0180
      * @tc.desc      Checking for enum with implicit int type constant for getValueOf method support.
      * @tc.size      MediumTest
@@ -558,8 +556,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_implicit_type_getvalueof_2.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0300
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_TEN_0300
      * @tc.name      testEnumerationMethods0181
      * @tc.desc      Checking for enum with implicit long type constant for getValueOf method support.
      * @tc.size      MediumTest
@@ -616,8 +613,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_implicit_type_getvalueof_3.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0400
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_TEN_0400
      * @tc.name      testEnumerationMethods0182
      * @tc.desc      Checking for enum with implicit long type constant for getValueOf method support.
      * @tc.size      MediumTest
@@ -674,8 +670,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_implicit_type_getvalueof_4.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0500
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_TEN_0500
      * @tc.name      testEnumerationMethods0183
      * @tc.desc      Checking for enum with implicit string type constant for getValueOf method support.
      * @tc.size      MediumTest
@@ -724,8 +719,7 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_implicit_type_getvalueof_5.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0600
+     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_TEN_0600
      * @tc.name      testEnumerationMethods0184
      * @tc.desc      Checking for enum with implicit string type constant for getValueOf method support.
      * @tc.size      MediumTest

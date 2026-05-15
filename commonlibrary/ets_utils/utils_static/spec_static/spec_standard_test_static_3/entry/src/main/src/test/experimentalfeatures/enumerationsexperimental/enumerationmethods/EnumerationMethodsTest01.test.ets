@@ -890,7 +890,6 @@ export default function EnumerationMethodsTest(): void {
     })
 
     /**
-     * 源文件：        enum_explicit_type_fromvalue_0.ets
      * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0100
      * @tc.name      testEnumerationMethods0001
      * @tc.desc      Checking for enum with explicit int type constant for fromValue method support.
@@ -952,7 +951,6 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_explicit_type_fromvalue_1.ets
      * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0200
      * @tc.name      testEnumerationMethods0002
      * @tc.desc      Checking for enum with explicit int type constant for fromValue method support.
@@ -1014,7 +1012,6 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_explicit_type_fromvalue_2.ets
      * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0300
      * @tc.name      testEnumerationMethods0003
      * @tc.desc      Checking for enum with explicit long type constant for fromValue method support.
@@ -1076,7 +1073,6 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_explicit_type_fromvalue_3.ets
      * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0400
      * @tc.name      testEnumerationMethods0004
      * @tc.desc      Checking for enum with explicit long type constant for fromValue method support.
@@ -1138,7 +1134,6 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_explicit_type_fromvalue_4.ets
      * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0500
      * @tc.name      testEnumerationMethods0005
      * @tc.desc      Checking for enum with explicit byte type constant for fromValue method support.
@@ -1200,7 +1195,6 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_explicit_type_fromvalue_5.ets
      * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0600
      * @tc.name      testEnumerationMethods0006
      * @tc.desc      Checking for enum with explicit byte type constant for fromValue method support.
@@ -1262,7 +1256,6 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_explicit_type_fromvalue_6.ets
      * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0700
      * @tc.name      testEnumerationMethods0007
      * @tc.desc      Checking for enum with explicit short type constant for fromValue method support.
@@ -1324,7 +1317,6 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_explicit_type_fromvalue_7.ets
      * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0800
      * @tc.name      testEnumerationMethods0008
      * @tc.desc      Checking for enum with explicit short type constant for fromValue method support.
@@ -1386,7 +1378,6 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_explicit_type_fromvalue_8.ets
      * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0900
      * @tc.name      testEnumerationMethods0009
      * @tc.desc      Checking for enum with explicit double type constant for fromValue method support.
@@ -1448,7 +1439,6 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_explicit_type_fromvalue_9.ets
      * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_1000
      * @tc.name      testEnumerationMethods0010
      * @tc.desc      Checking for enum with explicit double type constant for fromValue method support.
@@ -1510,7 +1500,6 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_explicit_type_fromvalue_10.ets
      * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_1100
      * @tc.name      testEnumerationMethods0011
      * @tc.desc      Checking
@@ -1572,7 +1561,6 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_explicit_type_fromvalue_11.ets
      * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_1200
      * @tc.name      testEnumerationMethods0012
      * @tc.desc      Checking for enum with explicit float type constant for fromValue method support.
@@ -1634,7 +1622,6 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_explicit_type_fromvalue_12.ets
      * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_1300
      * @tc.name      testEnumerationMethods0013
      * @tc.desc      Checking for enum with explicit string type constant for fromValue method support.
@@ -1683,7 +1670,6 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_explicit_type_fromvalue_13.ets
      * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_1400
      * @tc.name      testEnumerationMethods0014
      * @tc.desc      Checking for enum with explicit string type constant for fromValue method support.

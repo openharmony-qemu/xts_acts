@@ -637,7 +637,7 @@ export default function OverridingConflictTest():void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_CONFLICTTEST_0100
+     * @tc.number    SUB_OVERRIDING_CONFLICT_TEST_0100
      * @tc.name      testDeepInheritanceOverridingPositive0001
      * @tc.desc      Test for some overridden method conflict. Special case is: Covariant return type.
      * @tc.size      MediumTest
@@ -649,7 +649,7 @@ export default function OverridingConflictTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_CONFLICTTEST_0200
+     * @tc.number    SUB_OVERRIDING_CONFLICT_TEST_0200
      * @tc.name      testDeepInheritanceOverridingPositive0002
      * @tc.desc      Test for some overridden method conflict. Special case is: Same signature.
      * @tc.size      MediumTest
@@ -661,7 +661,7 @@ export default function OverridingConflictTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_CONFLICTTEST_0300
+     * @tc.number    SUB_OVERRIDING_CONFLICT_TEST_0300
      * @tc.name      testDeepInheritanceOverridingPositive0003
      * @tc.desc      Test for some overridden method conflict. Special case is: No implementation in C1.
      * @tc.size      MediumTest
@@ -673,7 +673,7 @@ export default function OverridingConflictTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_CONFLICTTEST_0400
+     * @tc.number    SUB_OVERRIDING_CONFLICT_TEST_0400
      * @tc.name      testDeepInheritanceOverridingPositive0004
      * @tc.desc      Test for some overridden method conflict. Special case is: Covariant return type.
      * @tc.size      MediumTest
@@ -685,7 +685,7 @@ export default function OverridingConflictTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_CONFLICTTEST_0500
+     * @tc.number    SUB_OVERRIDING_CONFLICT_TEST_0500
      * @tc.name      testDeepInheritanceOverridingPositive0005
      * @tc.desc      Test for some overridden method conflict. Special case is: Contravariant parameter type.
      * @tc.size      MediumTest
@@ -697,7 +697,7 @@ export default function OverridingConflictTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_CONFLICTTEST_0600
+     * @tc.number    SUB_OVERRIDING_CONFLICT_TEST_0600
      * @tc.name      testDeepInheritanceOverridingPositive0006
      * @tc.desc      Test for some overridden method conflict. Special case is: Contravariant parameter type, covariant return type.
      * @tc.size      MediumTest
@@ -709,7 +709,7 @@ export default function OverridingConflictTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_CONFLICTTEST_0700
+     * @tc.number    SUB_OVERRIDING_CONFLICT_TEST_0700
      * @tc.name      testDeepInheritanceOverridingPositive0007
      * @tc.desc      Test for some overridden method conflict. Special case is: Union contravariant parameter type, union covariant return type.
      * @tc.size      MediumTest
@@ -721,7 +721,7 @@ export default function OverridingConflictTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_CONFLICTTEST_0800
+     * @tc.number    SUB_OVERRIDING_CONFLICT_TEST_0800
      * @tc.name      testDeepInheritanceOverridingPositive0008
      * @tc.desc      Test for some overridden method conflict. Special case is: Rest parameter type.
      * @tc.size      MediumTest
@@ -733,7 +733,7 @@ export default function OverridingConflictTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_CONFLICTTEST_0900
+     * @tc.number    SUB_OVERRIDING_CONFLICT_TEST_0900
      * @tc.name      testDeepInheritanceOverridingPositive0009
      * @tc.desc      Test for some overridden method conflict. Special case is: Same signature.
      * @tc.size      MediumTest
@@ -745,7 +745,7 @@ export default function OverridingConflictTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_CONFLICTTEST_1000
+     * @tc.number    SUB_OVERRIDING_CONFLICT_TEST_1000
      * @tc.name      testDeepInheritanceOverridingPositive0010
      * @tc.desc      Test for some overridden method conflict. Special case is: No implementation in C1.
      * @tc.size      MediumTest
@@ -757,7 +757,7 @@ export default function OverridingConflictTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_CONFLICTTEST_1100
+     * @tc.number    SUB_OVERRIDING_CONFLICT_TEST_1100
      * @tc.name      testDeepInheritanceOverridingPositive0011
      * @tc.desc      Test for some overridden method conflict. Special case is: Covariant return type.
      * @tc.size      MediumTest
@@ -769,7 +769,7 @@ export default function OverridingConflictTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_CONFLICTTEST_1200
+     * @tc.number    SUB_OVERRIDING_CONFLICT_TEST_1200
      * @tc.name      testDeepInheritanceOverridingPositive0012
      * @tc.desc      Test for some overridden method conflict. Special case is: Contravariant parameter type.
      * @tc.size      MediumTest
@@ -781,7 +781,7 @@ export default function OverridingConflictTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_CONFLICTTEST_1300
+     * @tc.number    SUB_OVERRIDING_CONFLICT_TEST_1300
      * @tc.name      testDeepInheritanceOverridingPositive0013
      * @tc.desc      Test for some overridden method conflict. Special case is: Contravariant parameter type, covariant return type.
      * @tc.size      MediumTest
@@ -793,7 +793,7 @@ export default function OverridingConflictTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_CONFLICTTEST_1400
+     * @tc.number    SUB_OVERRIDING_CONFLICT_TEST_1400
      * @tc.name      testDeepInheritanceOverridingPositive0014
      * @tc.desc      Test for some overridden method conflict. Special case is: Union contravariant parameter type, union covariant return type.
      * @tc.size      MediumTest
@@ -805,7 +805,7 @@ export default function OverridingConflictTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_CONFLICTTEST_1500
+     * @tc.number    SUB_OVERRIDING_CONFLICT_TEST_1500
      * @tc.name      testDeepInheritanceOverridingPositive0015
      * @tc.desc      Test for some overridden method conflict. Special case is: Rest parameter type.
      * @tc.size      MediumTest
@@ -817,7 +817,7 @@ export default function OverridingConflictTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_CONFLICTTEST_1600
+     * @tc.number    SUB_OVERRIDING_CONFLICT_TEST_1600
      * @tc.name      testDeepInheritanceOverridingPositive0016
      * @tc.desc      Test for some overridden method conflict. Special case is: Same signature.
      * @tc.size      MediumTest
@@ -829,7 +829,7 @@ export default function OverridingConflictTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_CONFLICTTEST_1700
+     * @tc.number    SUB_OVERRIDING_CONFLICT_TEST_1700
      * @tc.name      testDeepInheritanceOverridingPositive0017
      * @tc.desc      Test for some overridden method conflict. Special case is: No implementation in C1.
      * @tc.size      MediumTest
@@ -841,7 +841,7 @@ export default function OverridingConflictTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_CONFLICTTEST_1800
+     * @tc.number    SUB_OVERRIDING_CONFLICT_TEST_1800
      * @tc.name      testDeepInheritanceOverridingPositive0018
      * @tc.desc      Test for some overridden method conflict. Special case is: Covariant return type.
      * @tc.size      MediumTest
@@ -853,7 +853,7 @@ export default function OverridingConflictTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_CONFLICTTEST_1900
+     * @tc.number    SUB_OVERRIDING_CONFLICT_TEST_1900
      * @tc.name      testDeepInheritanceOverridingPositive0019
      * @tc.desc      Test for some overridden method conflict. Special case is: Contravariant parameter type.
      * @tc.size      MediumTest
@@ -865,7 +865,7 @@ export default function OverridingConflictTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_CONFLICTTEST_2000
+     * @tc.number    SUB_OVERRIDING_CONFLICT_TEST_2000
      * @tc.name      testDeepInheritanceOverridingPositive0020
      * @tc.desc      Test for some overridden method conflict. Special case is: Contravariant parameter type, covariant return type.
      * @tc.size      MediumTest
@@ -877,7 +877,7 @@ export default function OverridingConflictTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_CONFLICTTEST_2100
+     * @tc.number    SUB_OVERRIDING_CONFLICT_TEST_2100
      * @tc.name      testDeepInheritanceOverridingPositive0021
      * @tc.desc      Test for some overridden method conflict. Special case is: Union contravariant parameter type, union covariant return type.
      * @tc.size      MediumTest
@@ -889,7 +889,7 @@ export default function OverridingConflictTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_CONFLICTTEST_2200
+     * @tc.number    SUB_OVERRIDING_CONFLICT_TEST_2200
      * @tc.name      testDeepInheritanceOverridingPositive0022
      * @tc.desc      Test for some overridden method conflict. Special case is: Rest parameter type.
      * @tc.size      MediumTest
@@ -901,7 +901,7 @@ export default function OverridingConflictTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_CONFLICTTEST_2300
+     * @tc.number    SUB_OVERRIDING_CONFLICT_TEST_2300
      * @tc.name      testDeepInheritanceOverridingPositive0023
      * @tc.desc      Test for some overridden method conflict. Special case is: Generic classes and interfaces.
      * @tc.size      MediumTest
@@ -913,7 +913,7 @@ export default function OverridingConflictTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_CONFLICTTEST_2400
+     * @tc.number    SUB_OVERRIDING_CONFLICT_TEST_2400
      * @tc.name      testDeepInheritanceOverridingPositive0024
      * @tc.desc      Test for some overridden method conflict. Special case is: Same signature.
      * @tc.size      MediumTest
@@ -925,7 +925,7 @@ export default function OverridingConflictTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_CONFLICTTEST_2500
+     * @tc.number    SUB_OVERRIDING_CONFLICT_TEST_2500
      * @tc.name      testDeepInheritanceOverridingPositive0025
      * @tc.desc      Test for some overridden method conflict. Special case is: No implementation in C2.
      * @tc.size      MediumTest
@@ -937,7 +937,7 @@ export default function OverridingConflictTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_CONFLICTTEST_2600
+     * @tc.number    SUB_OVERRIDING_CONFLICT_TEST_2600
      * @tc.name      testDeepInheritanceOverridingPositive0026
      * @tc.desc      Test for some overridden method conflict. Special case is: No implementation in C1, C2.
      * @tc.size      MediumTest
@@ -949,7 +949,7 @@ export default function OverridingConflictTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_CONFLICTTEST_2700
+     * @tc.number    SUB_OVERRIDING_CONFLICT_TEST_2700
      * @tc.name      testDeepInheritanceOverridingPositive0027
      * @tc.desc      Test for some overridden method conflict. Special case is: Covariant return type.
      * @tc.size      MediumTest
@@ -961,7 +961,7 @@ export default function OverridingConflictTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_CONFLICTTEST_2800
+     * @tc.number    SUB_OVERRIDING_CONFLICT_TEST_2800
      * @tc.name      testDeepInheritanceOverridingPositive0028
      * @tc.desc      Test for some overridden method conflict. Special case is: Contravariant parameter type.
      * @tc.size      MediumTest
@@ -973,7 +973,7 @@ export default function OverridingConflictTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_CONFLICTTEST_2900
+     * @tc.number    SUB_OVERRIDING_CONFLICT_TEST_2900
      * @tc.name      testDeepInheritanceOverridingPositive0029
      * @tc.desc      Test for some overridden method conflict. Special case is: Contravariant parameter type, covariant return type.
      * @tc.size      MediumTest
@@ -985,7 +985,7 @@ export default function OverridingConflictTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_CONFLICTTEST_3000
+     * @tc.number    SUB_OVERRIDING_CONFLICT_TEST_3000
      * @tc.name      testDeepInheritanceOverridingPositive0030
      * @tc.desc      Test for some overridden method conflict. Special case is: Union contravariant parameter type, union covariant return type.
      * @tc.size      MediumTest
@@ -997,7 +997,7 @@ export default function OverridingConflictTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_CONFLICTTEST_3100
+     * @tc.number    SUB_OVERRIDING_CONFLICT_TEST_3100
      * @tc.name      testDeepInheritanceOverridingPositive0031
      * @tc.desc      Test for some overridden method conflict. Special case is: Rest parameter type.
      * @tc.size      MediumTest
