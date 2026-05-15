@@ -44,13 +44,6 @@ class Derived extends Base {
   override set field(a_field: Base) {}
 }
 
-function foo (base: Base) {
-  base.field = new Derived // setter is called
-  let b: Base = base.field // getter is called
-  expect(base.field instanceof Derived).assertTrue();
-  expect(b instanceof Base).assertTrue();
-}
-
 class TestError extends Error {}
 
 class A {

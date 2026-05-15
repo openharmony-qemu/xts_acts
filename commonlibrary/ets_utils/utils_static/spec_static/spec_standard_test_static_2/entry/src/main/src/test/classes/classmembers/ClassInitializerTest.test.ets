@@ -213,79 +213,7 @@ class B extends A15 {
   }
 }
 
-class C extends A15 {
-  static c: int = 0
-  static {
-    C.c = 3
-    res += "C"
-  }
-}
-
-class D extends C {
-  static d: int = 0
-  static {
-    D.d = 4
-    res += "D"
-  }
-}
-
-abstract class E {
-  static e: int = 0
-  static {
-    E.e = 5
-    res += "E"
-  }
-}
-
-class F extends E {
-  static f: int = 0
-  static {
-    F.f = 6
-    res += "F"
-  }
-}
-
-class G extends F {
-  static g: int = 0
-  static {
-    G.g = 7
-    res += "G"
-  }
-}
-
 let res1 = ""
-
-class A16 {
-  static a: int = 0
-  static {
-    A16.a = 1
-    res1 += "A"
-  }
-}
-
-class B1 extends A16 {
-  static b: int = 0
-  static {
-    B1.b = 2
-    res1 += "B"
-  }
-}
-
-class C1 extends A16 {
-  static c: int = 0
-  static {
-    C1.c = 3
-    res1 += "C"
-  }
-}
-
-class D1 extends C1 {
-  static d: int = 0
-  static {
-    D1.d = 4
-    res1 += "D"
-  }
-}
 
 abstract class E1 {
   static e: int = 0
