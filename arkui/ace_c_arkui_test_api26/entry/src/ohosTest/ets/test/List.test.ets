@@ -24,6 +24,7 @@ import gestureErrorCodeTest from './gestureIntercept/GestureErrorCodeTest.test'
 import passThroughTest from './passThrough/PassThroughTest.test'
 import GetSizeLimitationTest from './getSizeLimitation/GetSizeLimitationTest.test'
 import InspectorLabelTest from './inspectorLabel/InspectorLabelTest.test'
+import AccessibilityFocusIdTest from './accessibilityFocusId/AccessibilityFocusIdTest.test'
 
 export default function testsuite() {
   RegisterCommonAreaApproximateChangeEventTest();
@@ -38,4 +39,5 @@ export default function testsuite() {
   GestureInterceptTest();
   GetSizeLimitationTest();
   InspectorLabelTest();
+  AccessibilityFocusIdTest();
 }
