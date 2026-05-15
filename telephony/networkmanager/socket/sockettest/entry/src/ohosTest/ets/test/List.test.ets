@@ -28,8 +28,9 @@ import SocketGetLocalAddressTest from './SocketGetLocalAddress.test';
 import TLSSocketUpgradeTest from './TLSSocketUpgrade.test';
 import TlsSkipRemoteValidationTest from './TlsSkipRemoteValidation.test';
 import socketErrorCodeTest from './socketErrorCode.test';
-import localSocketTest from './localSocketTest.test'
-import connection from '@ohos.net.connection'
+import localSocketTest from './localSocketTest.test';
+import TCPSocketAsyncConnectTest from './TCPSocketAsyncConnect.test'
+import connection from '@ohos.net.connection';
 import EmptyTest from './Empty.test';
 
 let netHandle = connection.getDefaultNetSync();
@@ -50,6 +51,7 @@ export default function testsuite() {
     SocketGetLocalAddressTest();
     TLSSocketUpgradeTest();
     TlsSkipRemoteValidationTest();
+    TCPSocketAsyncConnectTest();
   }else{
     EmptyTest()
   }
