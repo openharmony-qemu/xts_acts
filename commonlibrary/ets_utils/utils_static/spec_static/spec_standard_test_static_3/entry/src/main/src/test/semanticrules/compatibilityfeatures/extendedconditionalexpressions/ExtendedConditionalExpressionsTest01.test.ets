@@ -1826,7 +1826,7 @@ export default function ExtendedConditionalExpressionsTest01():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_10000
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_ONE_EXPRESSIONS_1000
      * @tc.name      testConditionalAndOrStringMethods0100
      * @tc.desc      Conditional-and and conditional-or with string method results
      * @tc.size      MediumTest

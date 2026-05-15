@@ -23,9 +23,6 @@ async function sleep(time: int): Promise<int> {
   });
 }
 
-// ============================================================================
-// Data Setup for overloading_0
-// ============================================================================
 namespace overloading_0 {
   export class A {}
   export class B extends A {}
@@ -59,9 +56,6 @@ namespace overloading_0 {
   }
 }
 
-// ============================================================================
-// Data Setup for overloading_1
-// ============================================================================
 namespace overloading_1 {
   export class A {}
   export class B extends A {}
@@ -104,8 +98,6 @@ namespace overloading_2 {
 
   export interface K {
     meth(p: B, q: A, w: Object): A;
-    // [FIX] 将第三个参数改为 string，打破 (B,A,Object) 与 (A,Object,Object) 之间的严格子类型重叠，彻底规避底层 LinkerVerificationError
-    // Methods with the same name are defined in the same interface
     meth(p: A, q: Object, w: string): B;
   }
   export interface I extends K {}
@@ -271,7 +263,7 @@ export default function InterfacesTest():void {
     })
 
     /**
-     * @tc.number    SUB_INTERFACESTEST_0100
+     * @tc.number    SUB_INTERFACESTEST_ONE_0100
      * @tc.name      testOverloading0001
      * @tc.desc      Overloading allows using the same name to call several methods with different signatures (different number of parameters).
      * @tc.size      MediumTest
@@ -283,7 +275,7 @@ export default function InterfacesTest():void {
     });
 
     /**
-     * @tc.number    SUB_INTERFACESTEST_0200
+     * @tc.number    SUB_INTERFACESTEST_ONE_0200
      * @tc.name      testOverloading0002
      * @tc.desc      Overloading allows using the same name to call several methods with different signatures (parameters are not contravariant).
      * @tc.size      MediumTest
@@ -295,7 +287,7 @@ export default function InterfacesTest():void {
     });
 
     /**
-     * @tc.number    SUB_INTERFACESTEST_0300
+     * @tc.number    SUB_INTERFACESTEST_ONE_0300
      * @tc.name      testOverloading0003
      * @tc.desc      Overloading allows using the same name to call several methods with different signatures (defined in the same interface).
      * @tc.size      MediumTest
@@ -307,7 +299,7 @@ export default function InterfacesTest():void {
     });
 
     /**
-     * @tc.number    SUB_INTERFACESTEST_0400
+     * @tc.number    SUB_INTERFACESTEST_ONE_0400
      * @tc.name      testOverloading0004
      * @tc.desc      Overloading allows using the same name to call several methods with different signatures (different number of type parameters).
      * @tc.size      MediumTest
@@ -319,7 +311,7 @@ export default function InterfacesTest():void {
     });
 
     /**
-     * @tc.number    SUB_INTERFACESTEST_0500
+     * @tc.number    SUB_INTERFACESTEST_ONE_0500
      * @tc.name      testOverloading0005
      * @tc.desc      Overloading allows using the same name to call several methods with different signatures (with generic interface extending).
      * @tc.size      MediumTest
@@ -331,7 +323,7 @@ export default function InterfacesTest():void {
     });
 
     /**
-     * @tc.number    SUB_INTERFACESTEST_0600
+     * @tc.number    SUB_INTERFACESTEST_ONE_0600
      * @tc.name      testOverloading0006
      * @tc.desc      Overloading allows using the same name to call several methods with different signatures (inherited from generic and specific).
      * @tc.size      MediumTest

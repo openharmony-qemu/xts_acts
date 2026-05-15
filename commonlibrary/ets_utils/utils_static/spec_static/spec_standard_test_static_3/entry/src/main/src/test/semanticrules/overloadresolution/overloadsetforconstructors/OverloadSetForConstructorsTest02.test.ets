@@ -1612,7 +1612,6 @@ export default function OverloadSetForConstructorsTest02():void {
       expect('foo1').assertEqual(c.foo);
     });
 
-    // c_subtyping_params_7: new C_sub7(new B_sub())
     /**
      * @tc.number    SUB_OVERLOAD_SET_FOR_CONSTRUCTORS_SUBTYPING_TEST_0800
      * @tc.name      testOverloadSetForConstructorsSubtyping0008
