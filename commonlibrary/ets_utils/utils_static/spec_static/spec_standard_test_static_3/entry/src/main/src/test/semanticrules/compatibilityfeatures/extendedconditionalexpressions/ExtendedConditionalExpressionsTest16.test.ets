@@ -77,14 +77,14 @@ export default function ExtendedConditionalExpressionsTest16():void {
 
     // ===== BigInt truthy base value (Long.MAX_VALUE) - ops pattern =====
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_16_0001
-     * @tc.name      testOpsBigIntTruthy_16_0001
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SIXTEEN_EXPRESSIONS_0100
+     * @tc.name    testConditionalExpression0622
      * @tc.desc      BigInt truthy base value operations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsBigIntTruthy_16_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0622', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: bigint = 9223372036854775807n;  // truthy base value (Long.MAX_VALUE as bigint)
 
       expect((!a) ? false : true).assertTrue();
@@ -97,14 +97,14 @@ export default function ExtendedConditionalExpressionsTest16():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_16_0002
-     * @tc.name      testOpsBigIntTruthyWithNumber_16_0002
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SIXTEEN_EXPRESSIONS_0200
+     * @tc.name    testConditionalExpression0623
      * @tc.desc      BigInt truthy with Number operations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsBigIntTruthyWithNumber_16_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0623', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: bigint = 9223372036854775807n;
 
       expect(((a && 0) ? false : true)).assertTrue();
@@ -116,14 +116,14 @@ export default function ExtendedConditionalExpressionsTest16():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_16_0003
-     * @tc.name      testOpsBigIntTruthyWithLong_16_0003
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SIXTEEN_EXPRESSIONS_0300
+     * @tc.name    testConditionalExpression0624
      * @tc.desc      BigInt truthy with Long value operations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsBigIntTruthyWithLong_16_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0624', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: bigint = 9223372036854775807n;
       let minVal: bigint = -9223372036854775808n;
       let maxVal: bigint = 9223372036854775807n;
@@ -136,14 +136,14 @@ export default function ExtendedConditionalExpressionsTest16():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_16_0004
-     * @tc.name      testOpsBigIntTruthyWithBoolean_16_0004
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SIXTEEN_EXPRESSIONS_0400
+     * @tc.name    testConditionalExpression0625
      * @tc.desc      BigInt truthy with Boolean operations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsBigIntTruthyWithBoolean_16_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0625', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: bigint = 9223372036854775807n;
 
       expect(((a && false) ? false : true)).assertTrue();
@@ -154,14 +154,14 @@ export default function ExtendedConditionalExpressionsTest16():void {
 
     // ===== BigInt falsy base value (0n) - ops pattern =====
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_16_0005
-     * @tc.name      testOpsBigIntFalsy_16_0005
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SIXTEEN_EXPRESSIONS_0500
+     * @tc.name    testConditionalExpression0626
      * @tc.desc      BigInt falsy base value operations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsBigIntFalsy_16_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0626', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: bigint = 0n;  // falsy base value
 
       expect((!a) ? true : false).assertTrue();
@@ -172,14 +172,14 @@ export default function ExtendedConditionalExpressionsTest16():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_16_0006
-     * @tc.name      testOpsBigIntFalsyWithNumber_16_0006
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SIXTEEN_EXPRESSIONS_0600
+     * @tc.name    testConditionalExpression0627
      * @tc.desc      BigInt falsy with Number operations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsBigIntFalsyWithNumber_16_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0627', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: bigint = 0n;
 
       expect(((a && 0) ? false : true)).assertTrue();
@@ -191,14 +191,14 @@ export default function ExtendedConditionalExpressionsTest16():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_16_0007
-     * @tc.name      testOpsBigIntFalsyWithLong_16_0007
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SIXTEEN_EXPRESSIONS_0700
+     * @tc.name    testConditionalExpression0628
      * @tc.desc      BigInt falsy with Long value operations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsBigIntFalsyWithLong_16_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0628', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: bigint = 0n;
       let minVal: bigint = -9223372036854775808n;
       let maxVal: bigint = 9223372036854775807n;
@@ -211,14 +211,14 @@ export default function ExtendedConditionalExpressionsTest16():void {
 
     // ===== BigInt negative value (truthy) =====
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_16_0008
-     * @tc.name      testOpsBigIntNegative_16_0008
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SIXTEEN_EXPRESSIONS_0800
+     * @tc.name    testConditionalExpression0629
      * @tc.desc      BigInt negative value operations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsBigIntNegative_16_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0629', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: bigint = -1n;  // truthy
 
       expect((!a) ? false : true).assertTrue();
@@ -229,14 +229,14 @@ export default function ExtendedConditionalExpressionsTest16():void {
 
     // ===== Char truthiness tests =====
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_16_0009
-     * @tc.name      testOpsCharNullTruthy_16_0009
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SIXTEEN_EXPRESSIONS_0900
+     * @tc.name    testConditionalExpression0630
      * @tc.desc      Char null character truthiness tests
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsCharNullTruthy_16_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0630', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: char = c'\u0000';  // falsy
 
       expect((!a) ? true : false).assertTrue();
@@ -247,14 +247,14 @@ export default function ExtendedConditionalExpressionsTest16():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_16_0010
-     * @tc.name      testOpsCharSpaceTruthy_16_0010
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SIXTEEN_EXPRESSIONS_1000
+     * @tc.name    testConditionalExpression0631
      * @tc.desc      Char space character truthiness tests
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsCharSpaceTruthy_16_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0631', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: char = c' ';  // truthy
 
       expect((!a) ? false : true).assertTrue();
@@ -266,14 +266,14 @@ export default function ExtendedConditionalExpressionsTest16():void {
 
     // ===== String method return values =====
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_16_0011
-     * @tc.name      testOpsStringEmptySubstring_16_0011
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SIXTEEN_EXPRESSIONS_1100
+     * @tc.name    testConditionalExpression0632
      * @tc.desc      String empty substring truthiness tests
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsStringEmptySubstring_16_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0632', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: String = new String("\u0000\u0000").substring(0, 0);  // falsy
 
       expect((!a) ? true : false).assertTrue();
@@ -282,14 +282,14 @@ export default function ExtendedConditionalExpressionsTest16():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_16_0012
-     * @tc.name      testOpsStringNonEmptySubstring_16_0012
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SIXTEEN_EXPRESSIONS_1200
+     * @tc.name    testConditionalExpression0633
      * @tc.desc      String non-empty substring truthiness tests
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsStringNonEmptySubstring_16_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0633', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: String = new String("\u0000\u0000").substring(0, 1);  // truthy
 
       expect((!a) ? false : true).assertTrue();
@@ -299,14 +299,14 @@ export default function ExtendedConditionalExpressionsTest16():void {
 
     // ===== Number special values with BigInt =====
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_16_0013
-     * @tc.name      testOpsBigIntWithPositiveInfinity_16_0013
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SIXTEEN_EXPRESSIONS_1300
+     * @tc.name    testConditionalExpression0634
      * @tc.desc      BigInt with positive infinity operations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsBigIntWithPositiveInfinity_16_0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0634', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: bigint = 1n;
 
       expect(((a && Number.POSITIVE_INFINITY) ? true : false)).assertTrue();
@@ -314,14 +314,14 @@ export default function ExtendedConditionalExpressionsTest16():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_16_0014
-     * @tc.name      testOpsBigIntWithNegativeInfinity_16_0014
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SIXTEEN_EXPRESSIONS_1400
+     * @tc.name    testConditionalExpression0635
      * @tc.desc      BigInt with negative infinity operations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsBigIntWithNegativeInfinity_16_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0635', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: bigint = 1n;
 
       expect(((a && Number.NEGATIVE_INFINITY) ? true : false)).assertTrue();
@@ -329,14 +329,14 @@ export default function ExtendedConditionalExpressionsTest16():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_16_0015
-     * @tc.name      testOpsBigIntWithNaN_16_0015
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SIXTEEN_EXPRESSIONS_1500
+     * @tc.name    testConditionalExpression0636
      * @tc.desc      BigInt with NaN operations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsBigIntWithNaN_16_0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0636', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: bigint = 1n;
 
       expect(((a && Number.NaN) ? false : true)).assertTrue();
@@ -344,14 +344,14 @@ export default function ExtendedConditionalExpressionsTest16():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_16_0016
-     * @tc.name      testOpsBigIntWithMinValue_16_0016
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SIXTEEN_EXPRESSIONS_1600
+     * @tc.name    testConditionalExpression0637
      * @tc.desc      BigInt with Number MIN_VALUE operations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsBigIntWithMinValue_16_0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0637', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: bigint = 1n;
 
       expect(((a && Number.MIN_VALUE) ? true : false)).assertTrue();
@@ -360,14 +360,14 @@ export default function ExtendedConditionalExpressionsTest16():void {
 
     // ===== While loop with BigInt =====
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_16_0017
-     * @tc.name      testWhileBigIntTruthy_16_0017
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SIXTEEN_EXPRESSIONS_1700
+     * @tc.name    testConditionalExpression0638
      * @tc.desc      While loop with truthy BigInt
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testWhileBigIntTruthy_16_0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0638', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 1;
       let v: bigint = 1n;
 
@@ -381,14 +381,14 @@ export default function ExtendedConditionalExpressionsTest16():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_16_0018
-     * @tc.name      testWhileBigIntFalsy_16_0018
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SIXTEEN_EXPRESSIONS_1800
+     * @tc.name    testConditionalExpression0639
      * @tc.desc      While loop with falsy BigInt
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testWhileBigIntFalsy_16_0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0639', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 0;
       let v: bigint = 0n;
 
@@ -402,14 +402,14 @@ export default function ExtendedConditionalExpressionsTest16():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_16_0019
-     * @tc.name      testWhileBigIntNegative_16_0019
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SIXTEEN_EXPRESSIONS_1900
+     * @tc.name    testConditionalExpression0640
      * @tc.desc      While loop with negative BigInt
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testWhileBigIntNegative_16_0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0640', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 1;
       let v: bigint = -1n;
 
@@ -423,14 +423,14 @@ export default function ExtendedConditionalExpressionsTest16():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_16_0020
-     * @tc.name      testWhileBigIntLarge_16_0020
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SIXTEEN_EXPRESSIONS_2000
+     * @tc.name    testConditionalExpression0641
      * @tc.desc      While loop with large BigInt value
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testWhileBigIntLarge_16_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0641', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 1;
       let v: bigint = 9007199254740991n;
 
@@ -445,14 +445,14 @@ export default function ExtendedConditionalExpressionsTest16():void {
 
     // ===== Do-while loop with BigInt =====
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_16_0021
-     * @tc.name      testDoWhileBigIntTruthy_16_0021
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SIXTEEN_EXPRESSIONS_2100
+     * @tc.name    testConditionalExpression0642
      * @tc.desc      Do-while loop with truthy BigInt
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testDoWhileBigIntTruthy_16_0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0642', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 1;
       let v: bigint = 1n;
 
@@ -466,14 +466,14 @@ export default function ExtendedConditionalExpressionsTest16():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_16_0022
-     * @tc.name      testDoWhileBigIntFalsy_16_0022
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SIXTEEN_EXPRESSIONS_2200
+     * @tc.name    testConditionalExpression0643
      * @tc.desc      Do-while loop with falsy BigInt
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testDoWhileBigIntFalsy_16_0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0643', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 1;
       let v: bigint = 0n;
 
@@ -487,14 +487,14 @@ export default function ExtendedConditionalExpressionsTest16():void {
 
     // ===== If statement with BigInt =====
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_16_0023
-     * @tc.name      testIfBigIntTruthy_16_0023
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SIXTEEN_EXPRESSIONS_2300
+     * @tc.name    testConditionalExpression0644
      * @tc.desc      If statement with truthy BigInt
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testIfBigIntTruthy_16_0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0644', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let res: number = 1;
       let v: bigint = 1n;
 
@@ -505,14 +505,14 @@ export default function ExtendedConditionalExpressionsTest16():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_16_0024
-     * @tc.name      testIfBigIntFalsy_16_0024
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SIXTEEN_EXPRESSIONS_2400
+     * @tc.name    testConditionalExpression0645
      * @tc.desc      If statement with falsy BigInt
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testIfBigIntFalsy_16_0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0645', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let res: number = 1;
       let v: bigint = 0n;
 
@@ -523,14 +523,14 @@ export default function ExtendedConditionalExpressionsTest16():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_16_0025
-     * @tc.name      testIfBigIntNegative_16_0025
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SIXTEEN_EXPRESSIONS_2500
+     * @tc.name    testConditionalExpression0646
      * @tc.desc      If statement with negative BigInt
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testIfBigIntNegative_16_0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0646', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let res: number = 1;
       let v: bigint = -1n;
 
@@ -542,42 +542,42 @@ export default function ExtendedConditionalExpressionsTest16():void {
 
     // ===== Conditional expression with BigInt =====
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_16_0026
-     * @tc.name      testCondBigIntTruthy_16_0026
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SIXTEEN_EXPRESSIONS_2600
+     * @tc.name    testConditionalExpression0647
      * @tc.desc      Conditional expression with truthy BigInt
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testCondBigIntTruthy_16_0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0647', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: bigint = 1n;
       let res = v ? 0 : 1;
       expect(res).assertEqual(0);
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_16_0027
-     * @tc.name      testCondBigIntFalsy_16_0027
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SIXTEEN_EXPRESSIONS_2700
+     * @tc.name    testConditionalExpression0648
      * @tc.desc      Conditional expression with falsy BigInt
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testCondBigIntFalsy_16_0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0648', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: bigint = 0n;
       let res = v ? 0 : 1;
       expect(res).assertEqual(1);
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_16_0028
-     * @tc.name      testCondBigIntNegative_16_0028
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SIXTEEN_EXPRESSIONS_2800
+     * @tc.name    testConditionalExpression0649
      * @tc.desc      Conditional expression with negative BigInt
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testCondBigIntNegative_16_0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0649', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: bigint = -1n;
       let res = v ? 0 : 1;
       expect(res).assertEqual(0);
@@ -585,14 +585,14 @@ export default function ExtendedConditionalExpressionsTest16():void {
 
     // ===== Array operations with BigInt =====
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_16_0029
-     * @tc.name      testBigIntArrayIndexAccess_16_0029
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SIXTEEN_EXPRESSIONS_2900
+     * @tc.name    testConditionalExpression0650
      * @tc.desc      BigInt array index access truthiness
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testBigIntArrayIndexAccess_16_0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0650', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: bigint[] = [0n, 1n, -1n];
       let res: number = 1;
 
@@ -608,14 +608,14 @@ export default function ExtendedConditionalExpressionsTest16():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_16_0030
-     * @tc.name      testBigIntArrayFilter_16_0030
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SIXTEEN_EXPRESSIONS_3000
+     * @tc.name    testConditionalExpression0651
      * @tc.desc      BigInt array filter with comparison
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testBigIntArrayFilter_16_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0651', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: bigint[] = [0n, 1n, 2n, 3n];
       let filtered = arr.filter(x => x > 0n);
       expect(filtered.length).assertEqual(3);
@@ -623,14 +623,14 @@ export default function ExtendedConditionalExpressionsTest16():void {
 
     // ===== Object with BigInt property =====
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_16_0031
-     * @tc.name      testBigIntObjectProperty_16_0031
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SIXTEEN_EXPRESSIONS_3100
+     * @tc.name    testConditionalExpression0652
      * @tc.desc      Object with BigInt property truthiness
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testBigIntObjectProperty_16_0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0652', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: BigIntObj = new BigIntObj(0n);
       let res: number = 1;
 
@@ -647,14 +647,14 @@ export default function ExtendedConditionalExpressionsTest16():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_16_0032
-     * @tc.name      testBigIntObjectOptionalChain_16_0032
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SIXTEEN_EXPRESSIONS_3200
+     * @tc.name    testConditionalExpression0653
      * @tc.desc      BigInt object optional chain with nullish coalescing
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testBigIntObjectOptionalChain_16_0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0653', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: BigIntObj2 = new BigIntObj2(0n);
       let result: bigint = obj.big ?? -1n;
       expect(result).assertEqual(0n);
@@ -662,14 +662,14 @@ export default function ExtendedConditionalExpressionsTest16():void {
 
     // ===== Enum with BigInt combination =====
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_16_0033
-     * @tc.name      testBigIntEnumAnd_16_0033
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SIXTEEN_EXPRESSIONS_3300
+     * @tc.name    testConditionalExpression0654
      * @tc.desc      BigInt truthy with enum AND operations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testBigIntEnumAnd_16_0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0654', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: bigint = 1n;
       let mode: Mode = Mode.ON;
 
@@ -678,14 +678,14 @@ export default function ExtendedConditionalExpressionsTest16():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_16_0034
-     * @tc.name      testBigIntEnumOr_16_0034
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SIXTEEN_EXPRESSIONS_3400
+     * @tc.name    testConditionalExpression0655
      * @tc.desc      BigInt falsy with enum OR operations
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testBigIntEnumOr_16_0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0655', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: bigint = 0n;
       let mode: Mode = Mode.OFF;  // 0
 

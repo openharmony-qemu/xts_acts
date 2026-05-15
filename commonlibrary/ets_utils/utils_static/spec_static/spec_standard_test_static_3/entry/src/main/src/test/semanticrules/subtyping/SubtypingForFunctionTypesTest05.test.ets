@@ -720,7 +720,7 @@ export default function SubtypingForFunctionTypesTest05(): void {
     })
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_1500
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_FIVE_0100
      * @tc.name      testPositiveInterfaceMethodGeneric0114
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -741,7 +741,7 @@ export default function SubtypingForFunctionTypesTest05(): void {
     })
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_1600
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_FIVE_0200
      * @tc.name      testPositiveInterfaceMethodGeneric0115
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -762,7 +762,7 @@ export default function SubtypingForFunctionTypesTest05(): void {
     })
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_1700
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_FIVE_0300
      * @tc.name      testPositiveLambda0116
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \\ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -783,7 +783,7 @@ export default function SubtypingForFunctionTypesTest05(): void {
     });
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_1800
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_FIVE_0400
      * @tc.name      testPositiveLambda0117
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \\ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -805,7 +805,7 @@ export default function SubtypingForFunctionTypesTest05(): void {
     });
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_1900
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_FIVE_0500
      * @tc.name      testPositiveLambda0118
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \\ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -826,7 +826,7 @@ export default function SubtypingForFunctionTypesTest05(): void {
     });
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_2000
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_FIVE_0600
      * @tc.name      testPositiveLambda0119
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \\ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -848,7 +848,7 @@ export default function SubtypingForFunctionTypesTest05(): void {
     });
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_2100
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_FIVE_0700
      * @tc.name      testPositiveLambda0120
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \\ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -869,7 +869,7 @@ export default function SubtypingForFunctionTypesTest05(): void {
     });
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_2200
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_FIVE_0800
      * @tc.name      testPositiveLambda0121
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \\ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -890,7 +890,7 @@ export default function SubtypingForFunctionTypesTest05(): void {
     });
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_2300
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_FIVE_0900
      * @tc.name      testPositiveLambda0122
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \\ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -911,7 +911,7 @@ export default function SubtypingForFunctionTypesTest05(): void {
     });
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_2400
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_FIVE_1000
      * @tc.name      testPositiveLambda0123
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \\ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -932,7 +932,7 @@ export default function SubtypingForFunctionTypesTest05(): void {
     });
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_2500
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_FIVE_1100
      * @tc.name      testPositiveLambda0124
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \\ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -953,7 +953,7 @@ export default function SubtypingForFunctionTypesTest05(): void {
     });
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_2600
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_FIVE_1200
      * @tc.name      testPositiveLambda0125
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \\ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -974,7 +974,7 @@ export default function SubtypingForFunctionTypesTest05(): void {
     });
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_2700
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_FIVE_1300
      * @tc.name      testPositiveLambda0126
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \\ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -995,7 +995,7 @@ export default function SubtypingForFunctionTypesTest05(): void {
     });
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_2800
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_FIVE_1400
      * @tc.name      testPositiveLambda0127
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \\ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -1016,7 +1016,7 @@ export default function SubtypingForFunctionTypesTest05(): void {
     });
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_2900
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_FIVE_1500
      * @tc.name      testPositiveLambda0128
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \\ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -1037,7 +1037,7 @@ export default function SubtypingForFunctionTypesTest05(): void {
     });
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_3000
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_FIVE_1600
      * @tc.name      testPositiveLambda0129
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \\ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -1058,7 +1058,7 @@ export default function SubtypingForFunctionTypesTest05(): void {
     });
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_3100
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_FIVE_1700
      * @tc.name      testPositiveLambda0130
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \\ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -1079,7 +1079,7 @@ export default function SubtypingForFunctionTypesTest05(): void {
     });
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_3200
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_FIVE_1800
      * @tc.name      testPositiveLambda0131
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \\ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -1100,7 +1100,7 @@ export default function SubtypingForFunctionTypesTest05(): void {
     });
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_3300
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_FIVE_1900
      * @tc.name      testPositiveLambda0132
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \\ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -1123,7 +1123,7 @@ export default function SubtypingForFunctionTypesTest05(): void {
     });
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_3400
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_FIVE_2000
      * @tc.name      testPositiveLambda0133
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \\ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -1147,7 +1147,7 @@ export default function SubtypingForFunctionTypesTest05(): void {
     });
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_3500
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_FIVE_2100
      * @tc.name      testPositiveLambda0134
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \\ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -1169,7 +1169,7 @@ export default function SubtypingForFunctionTypesTest05(): void {
     });
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_3600
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_FIVE_2200
      * @tc.name      testPositiveStaticMethod0135
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \\ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -1190,7 +1190,7 @@ export default function SubtypingForFunctionTypesTest05(): void {
     });
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_3700
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_FIVE_2300
      * @tc.name      testPositiveStaticMethod0136
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \\ of function type S with parameters SP1 , ... , SPn and return type SR if all of\

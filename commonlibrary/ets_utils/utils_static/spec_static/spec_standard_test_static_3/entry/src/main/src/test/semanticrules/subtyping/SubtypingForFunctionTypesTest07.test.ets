@@ -784,7 +784,7 @@ export default function SubtypingForFunctionTypesTest07(): void {
     })
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_5400
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_SEVEN_0100
      * @tc.name      testPositiveStaticMethodGeneric0153
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -804,7 +804,7 @@ export default function SubtypingForFunctionTypesTest07(): void {
     })
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_5500
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_SEVEN_0200
      * @tc.name      testPositiveStaticMethodGeneric00154
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -824,7 +824,7 @@ export default function SubtypingForFunctionTypesTest07(): void {
     })
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_5600
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_SEVEN_0300
      * @tc.name      testPositiveStaticMethodGeneric00155
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -844,7 +844,7 @@ export default function SubtypingForFunctionTypesTest07(): void {
     })
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_5700
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_SEVEN_0400
      * @tc.name      testPositiveStaticMethodGeneric0156
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -864,7 +864,7 @@ export default function SubtypingForFunctionTypesTest07(): void {
     })
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_5800
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_SEVEN_0500
      * @tc.name      testPositiveStaticMethodGeneric0157
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -884,7 +884,7 @@ export default function SubtypingForFunctionTypesTest07(): void {
     })
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_5900
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_SEVEN_0600
      * @tc.name      testPositiveStaticMethodGeneric0158
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -904,7 +904,7 @@ export default function SubtypingForFunctionTypesTest07(): void {
     })
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_6000
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_SEVEN_0700
      * @tc.name      testPositiveStaticMethodGeneric0159
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -924,7 +924,7 @@ export default function SubtypingForFunctionTypesTest07(): void {
     })
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_6100
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_SEVEN_0800
      * @tc.name      testPositiveStaticMethodGeneric0160
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -944,7 +944,7 @@ export default function SubtypingForFunctionTypesTest07(): void {
     })
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_6200
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_SEVEN_0900
      * @tc.name      testPositiveStaticMethodGeneric0161
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -964,7 +964,7 @@ export default function SubtypingForFunctionTypesTest07(): void {
     })
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_6300
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_SEVEN_1000
      * @tc.name      testPositiveStaticMethodGeneric0162
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -984,7 +984,7 @@ export default function SubtypingForFunctionTypesTest07(): void {
     })
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_6400
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_SEVEN_1100
      * @tc.name      testPositiveStaticMethodGeneric0163
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -1004,7 +1004,7 @@ export default function SubtypingForFunctionTypesTest07(): void {
     })
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_6500
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_SEVEN_1200
      * @tc.name      testPositiveStaticMethodGeneric0164
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -1024,7 +1024,7 @@ export default function SubtypingForFunctionTypesTest07(): void {
     })
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_6600
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_SEVEN_1300
      * @tc.name      testPositiveStaticMethodGeneric0165
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -1044,7 +1044,7 @@ export default function SubtypingForFunctionTypesTest07(): void {
     })
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_6700
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_SEVEN_1400
      * @tc.name      testPositiveStaticMethodGeneric0166
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -1064,7 +1064,7 @@ export default function SubtypingForFunctionTypesTest07(): void {
     })
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_6800
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_SEVEN_1500
      * @tc.name      testPositiveStaticMethodGeneric0167
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -1084,7 +1084,7 @@ export default function SubtypingForFunctionTypesTest07(): void {
     })
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_6900
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_SEVEN_1600
      * @tc.name      testPositiveStaticMethodGeneric0168
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -1104,7 +1104,7 @@ export default function SubtypingForFunctionTypesTest07(): void {
     })
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_7000
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_SEVEN_1700
      * @tc.name      testPositiveStaticMethodGeneric0169
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -1125,7 +1125,7 @@ export default function SubtypingForFunctionTypesTest07(): void {
     })
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_7100
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_SEVEN_1800
      * @tc.name      testPositiveStaticMethodGeneric0170
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
@@ -1146,7 +1146,7 @@ export default function SubtypingForFunctionTypesTest07(): void {
     })
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1_7200
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_SEVEN_1900
      * @tc.name      testPositiveStaticMethodGeneric0171
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \ of function type S with parameters SP1 , ... , SPn and return type SR if all of\

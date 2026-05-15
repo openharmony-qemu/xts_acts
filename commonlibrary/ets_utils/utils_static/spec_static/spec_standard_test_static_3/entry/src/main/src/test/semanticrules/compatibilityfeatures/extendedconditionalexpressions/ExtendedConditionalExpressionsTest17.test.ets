@@ -122,14 +122,14 @@ export default function ExtendedConditionalExpressionsTest17():void {
 
     // ===== Nested logical operations with truthy base (Long.MAX_VALUE) =====
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0001
-     * @tc.name      testNestedOpsTruthyBase_17_0001
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_0100
+     * @tc.name    testConditionalExpression0656
      * @tc.desc      Nested logical operations with truthy base
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testNestedOpsTruthyBase_17_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0656', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: long = Long.MAX_VALUE;  // truthy
 
       // Nested: (a && b) || c
@@ -142,14 +142,14 @@ export default function ExtendedConditionalExpressionsTest17():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0002
-     * @tc.name      testTripleOpsTruthy_17_0002
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_0200
+     * @tc.name    testConditionalExpression0657
      * @tc.desc      Triple logical operations with truthy base
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testTripleOpsTruthy_17_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0657', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: long = Long.MAX_VALUE;  // truthy
       let b: long = 1;  // truthy
       let c: long = 0;  // falsy
@@ -161,14 +161,14 @@ export default function ExtendedConditionalExpressionsTest17():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0003
-     * @tc.name      testMixedOpsTruthy_17_0003
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_0300
+     * @tc.name    testConditionalExpression0658
      * @tc.desc      Mixed logical operations with truthy base
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testMixedOpsTruthy_17_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0658', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: long = Long.MAX_VALUE;
       let b: long = 0;
       let c: long = 1;
@@ -179,14 +179,14 @@ export default function ExtendedConditionalExpressionsTest17():void {
 
     // ===== Nested logical operations with falsy base (0) =====
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0004
-     * @tc.name      testNestedOpsFalsyBase_17_0004
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_0400
+     * @tc.name    testConditionalExpression0659
      * @tc.desc      Nested logical operations with falsy base
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testNestedOpsFalsyBase_17_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0659', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: long = 0;  // falsy
 
       // (a && b) || c -> falsy || truthy = truthy
@@ -199,14 +199,14 @@ export default function ExtendedConditionalExpressionsTest17():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0005
-     * @tc.name      testTripleOpsFalsy_17_0005
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_0500
+     * @tc.name    testConditionalExpression0660
      * @tc.desc      Triple logical operations with falsy base
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testTripleOpsFalsy_17_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0660', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: long = 0;  // falsy
       let b: long = 0;  // falsy
       let c: long = 0;  // falsy
@@ -219,14 +219,14 @@ export default function ExtendedConditionalExpressionsTest17():void {
 
     // ===== Operator precedence with && and || =====
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0006
-     * @tc.name      testPrecedenceAndOr_17_0006
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_0600
+     * @tc.name    testConditionalExpression0661
      * @tc.desc      Operator precedence with AND and OR
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testPrecedenceAndOr_17_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0661', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // && has higher precedence than ||
       let a = true && false;  // false
       let result = a || true;  // true
@@ -238,14 +238,14 @@ export default function ExtendedConditionalExpressionsTest17():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0007
-     * @tc.name      testPrecedenceWithNumbers_17_0007
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_0700
+     * @tc.name    testConditionalExpression0662
      * @tc.desc      Operator precedence with numbers
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testPrecedenceWithNumbers_17_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0662', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // 1 && 0 || 1 = (1 && 0) || 1 = 0 || 1 = 1
       let result = (1 && 0) || 1;
       expect(result).assertEqual(1);
@@ -257,14 +257,14 @@ export default function ExtendedConditionalExpressionsTest17():void {
 
     // ===== Short-circuit evaluation with function calls =====
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0008
-     * @tc.name      testShortCircuitFunctionAnd_17_0008
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_0800
+     * @tc.name    testConditionalExpression0663
      * @tc.desc      Short-circuit evaluation with AND and function call
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testShortCircuitFunctionAnd_17_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0663', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let called = false;
       let falsy: boolean = false;
 
@@ -274,14 +274,14 @@ export default function ExtendedConditionalExpressionsTest17():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0009
-     * @tc.name      testShortCircuitFunctionOr_17_0009
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_0900
+     * @tc.name    testConditionalExpression0664
      * @tc.desc      Short-circuit evaluation with OR and function call
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testShortCircuitFunctionOr_17_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0664', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let called = false;
       let truthy: boolean = true;
 
@@ -292,14 +292,14 @@ export default function ExtendedConditionalExpressionsTest17():void {
 
     // ===== Logical operators with enum values =====
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0010
-     * @tc.name      testEnumRedFalsyOps_17_0010
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_1000
+     * @tc.name    testConditionalExpression0665
      * @tc.desc      Logical operators with enum Color.Red (falsy)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testEnumRedFalsyOps_17_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0665', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let color: Color = Color.Red;  // 0, falsy
 
       expect((!color) ? true : false).assertTrue();
@@ -308,14 +308,14 @@ export default function ExtendedConditionalExpressionsTest17():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0011
-     * @tc.name      testEnumGreenTruthyOps_17_0011
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_1100
+     * @tc.name    testConditionalExpression0666
      * @tc.desc      Logical operators with enum Color.Green (truthy)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testEnumGreenTruthyOps_17_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0666', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let color: Color = Color.Green;  // 1, truthy
 
       expect((!color) ? false : true).assertTrue();
@@ -324,14 +324,14 @@ export default function ExtendedConditionalExpressionsTest17():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0012
-     * @tc.name      testEnumSizeLTruthyOps_17_0012
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_1200
+     * @tc.name    testConditionalExpression0667
      * @tc.desc      Logical operators with enum TestSize.L (truthy)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testEnumSizeLTruthyOps_17_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0667', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let size: TestSize = TestSize.L;  // 2, truthy
 
       expect((!size) ? false : true).assertTrue();
@@ -340,14 +340,14 @@ export default function ExtendedConditionalExpressionsTest17():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0013
-     * @tc.name      testEnumStatusNoneFalsyOps_17_0013
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_1300
+     * @tc.name    testConditionalExpression0668
      * @tc.desc      Logical operators with enum Status.NONE (falsy)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testEnumStatusNoneFalsyOps_17_0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0668', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let status: Status = Status.NONE;  // 0, falsy
 
       expect((!status) ? true : false).assertTrue();
@@ -357,14 +357,14 @@ export default function ExtendedConditionalExpressionsTest17():void {
 
     // ===== Logical operators with wrapper types =====
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0014
-     * @tc.name      testNewNumberTruthyOps_17_0014
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_1400
+     * @tc.name    testConditionalExpression0669
      * @tc.desc      Logical operators with Number wrapper (truthy)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testNewNumberTruthyOps_17_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0669', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Number = new Number(1);  // truthy
 
       expect((!a) ? false : true).assertTrue();
@@ -373,14 +373,14 @@ export default function ExtendedConditionalExpressionsTest17():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0015
-     * @tc.name      testNewNumberZeroFalsyOps_17_0015
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_1500
+     * @tc.name    testConditionalExpression0670
      * @tc.desc      Logical operators with Number wrapper zero (falsy)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testNewNumberZeroFalsyOps_17_0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0670', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Number = new Number(0);  // falsy
 
       expect((!a) ? true : false).assertTrue();
@@ -389,14 +389,14 @@ export default function ExtendedConditionalExpressionsTest17():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0016
-     * @tc.name      testNewBooleanTrueTruthyOps_17_0016
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_1600
+     * @tc.name    testConditionalExpression0671
      * @tc.desc      Logical operators with Boolean wrapper true (truthy)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testNewBooleanTrueTruthyOps_17_0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0671', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Boolean = new Boolean(true);  // truthy
 
       expect((!a) ? false : true).assertTrue();
@@ -406,14 +406,14 @@ export default function ExtendedConditionalExpressionsTest17():void {
 
     // ===== While loop with complex conditions =====
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0017
-     * @tc.name      testWhileAndCondition_17_0017
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_1700
+     * @tc.name    testConditionalExpression0672
      * @tc.desc      While loop with AND condition
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testWhileAndCondition_17_0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0672', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 0;
       let a: long = 1;  // truthy
       let b: long = 0;  // falsy
@@ -426,14 +426,14 @@ export default function ExtendedConditionalExpressionsTest17():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0018
-     * @tc.name      testWhileOrCondition_17_0018
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_1800
+     * @tc.name    testConditionalExpression0673
      * @tc.desc      While loop with OR condition
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testWhileOrCondition_17_0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0673', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 1;
       let a: long = 0;  // falsy
       let b: long = 1;  // truthy
@@ -446,14 +446,14 @@ export default function ExtendedConditionalExpressionsTest17():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0019
-     * @tc.name      testWhileNestedCondition_17_0019
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_1900
+     * @tc.name    testConditionalExpression0674
      * @tc.desc      While loop with nested condition
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testWhileNestedCondition_17_0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0674', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 1;
       let a: long = 1;
       let b: long = 0;
@@ -471,14 +471,14 @@ export default function ExtendedConditionalExpressionsTest17():void {
 
     // ===== For loop with complex conditions =====
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0020
-     * @tc.name      testForLoopWithAndCondition_17_0020
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_2000
+     * @tc.name    testConditionalExpression0675
      * @tc.desc      For loop with AND condition
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testForLoopWithAndCondition_17_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0675', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sum: number = 0;
       let arr: number[] = [1, 2, 3, 4, 5];
 
@@ -489,14 +489,14 @@ export default function ExtendedConditionalExpressionsTest17():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0021
-     * @tc.name      testForLoopWithOrCondition_17_0021
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_2100
+     * @tc.name    testConditionalExpression0676
      * @tc.desc      For loop with OR condition
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testForLoopWithOrCondition_17_0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0676', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sum: number = 0;
       let arr: number[] = [0, 0, 0, 3, 4];
 
@@ -511,42 +511,42 @@ export default function ExtendedConditionalExpressionsTest17():void {
 
     // ===== Ternary with logical operators =====
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0022
-     * @tc.name      testTernaryWithAnd_17_0022
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_2200
+     * @tc.name    testConditionalExpression0677
      * @tc.desc      Ternary expression with AND operator
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testTernaryWithAnd_17_0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0677', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = 1 && 2;  // Returns 2
       let result = a ? "truthy" : "falsy";
       expect(result).assertEqual("truthy");
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0023
-     * @tc.name      testTernaryWithOr_17_0023
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_2300
+     * @tc.name    testConditionalExpression0678
      * @tc.desc      Ternary expression with OR operator
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testTernaryWithOr_17_0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0678', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = 0 || 2;  // Returns 2
       let result = a ? "truthy" : "falsy";
       expect(result).assertEqual("truthy");
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0024
-     * @tc.name      testTernaryWithFalsyAnd_17_0024
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_2400
+     * @tc.name    testConditionalExpression0679
      * @tc.desc      Ternary expression with falsy AND result
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testTernaryWithFalsyAnd_17_0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0679', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = 1 && 0;  // Returns 0
       let result = a ? "truthy" : "falsy";
       expect(result).assertEqual("falsy");
@@ -554,14 +554,14 @@ export default function ExtendedConditionalExpressionsTest17():void {
 
     // ===== Null/undefined checks with logical operators =====
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0025
-     * @tc.name      testNullAndUndefined_17_0025
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_2500
+     * @tc.name    testConditionalExpression0680
      * @tc.desc      Null and undefined with logical operators
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testNullAndUndefined_17_0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0680', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Object | null = null;
       let b: Object | undefined = undefined;
 
@@ -570,14 +570,14 @@ export default function ExtendedConditionalExpressionsTest17():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0026
-     * @tc.name      testNullOrValue_17_0026
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_2600
+     * @tc.name    testConditionalExpression0681
      * @tc.desc      Null or fallback value with OR operator
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testNullOrValue_17_0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0681', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: FallbackValue | null = null;
       let fallback: FallbackValue = new FallbackValue(1);
 
@@ -587,28 +587,28 @@ export default function ExtendedConditionalExpressionsTest17():void {
 
     // ===== Array operations with logical operators =====
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0027
-     * @tc.name      testArrayFilterWithOr_17_0027
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_2700
+     * @tc.name    testConditionalExpression0682
      * @tc.desc      Array filter with OR condition
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testArrayFilterWithOr_17_0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0682', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: number[] = [0, 1, 2, 0, 3];
       let filtered = arr.filter(x => x === 0 || x === 2);
       expect(filtered.length).assertEqual(3);
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0028
-     * @tc.name      testArrayFindWithAnd_17_0028
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_2800
+     * @tc.name    testConditionalExpression0683
      * @tc.desc      Array find with AND condition
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testArrayFindWithAnd_17_0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0683', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: number[] = [1, 2, 3, 4, 5];
       let found = arr.find(x => x > 2 && x < 5);
       expect(found).assertEqual(3);
@@ -616,28 +616,28 @@ export default function ExtendedConditionalExpressionsTest17():void {
 
     // ===== String operations with logical operators =====
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0029
-     * @tc.name      testStringEmptyCheckWithOr_17_0029
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_2900
+     * @tc.name    testConditionalExpression0684
      * @tc.desc      String empty check with OR operator
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testStringEmptyCheckWithOr_17_0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0684', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: string = "";
       let result = str || "default";
       expect(result).assertEqual("default");
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0030
-     * @tc.name      testStringWithAnd_17_0030
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_3000
+     * @tc.name    testConditionalExpression0685
      * @tc.desc      String with AND operator
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testStringWithAnd_17_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0685', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let str: string = "hello";
       let result = str && str.length > 0;
       expect(result).assertEqual(true);
@@ -645,28 +645,28 @@ export default function ExtendedConditionalExpressionsTest17():void {
 
     // ===== Object property access with logical operators =====
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0031
-     * @tc.name      testObjectPropertyChainWithOr_17_0031
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_3100
+     * @tc.name    testConditionalExpression0686
      * @tc.desc      Object property chain with OR operator
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testObjectPropertyChainWithOr_17_0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0686', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: ValueObj = new ValueObj(null);
       let result = obj.value || 100;
       expect(result).assertEqual(100);
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0032
-     * @tc.name      testObjectPropertyChainWithAnd_17_0032
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_3200
+     * @tc.name    testConditionalExpression0687
      * @tc.desc      Object property chain with AND operator
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testObjectPropertyChainWithAnd_17_0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0687', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let nested: NestedInner = new NestedInner(0);
       let obj: NestedValue = new NestedValue(nested);
       let result = obj.nested && obj.nested.value;
@@ -675,27 +675,27 @@ export default function ExtendedConditionalExpressionsTest17():void {
 
     // ===== Negation operator behavior =====
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0033
-     * @tc.name      testDoubleNegationTruthy_17_0033
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_3300
+     * @tc.name    testConditionalExpression0688
      * @tc.desc      Double negation with truthy values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testDoubleNegationTruthy_17_0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0688', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(!!1).assertEqual(true);
       expect(!!-1).assertEqual(true);
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0034
-     * @tc.name      testDoubleNegationFalsy_17_0034
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_3400
+     * @tc.name    testConditionalExpression0689
      * @tc.desc      Double negation with falsy values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testDoubleNegationFalsy_17_0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0689', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(!!0).assertEqual(false);
       expect(!!null).assertEqual(false);
       expect(!!undefined).assertEqual(false);
@@ -704,14 +704,14 @@ export default function ExtendedConditionalExpressionsTest17():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0035
-     * @tc.name      testNegationOfObjects_17_0035
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_3500
+     * @tc.name    testConditionalExpression0690
      * @tc.desc      Negation of objects
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testNegationOfObjects_17_0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0690', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: number[] = [];
       let obj: ConfigObj = new ConfigObj(true, null, false);
 
@@ -721,14 +721,14 @@ export default function ExtendedConditionalExpressionsTest17():void {
 
     // ===== Real-world scenarios =====
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0036
-     * @tc.name      testFeatureFlagCheck_17_0036
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_3600
+     * @tc.name    testConditionalExpression0691
      * @tc.desc      Feature flag check scenario
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testFeatureFlagCheck_17_0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0691', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let config: ConfigObj = new ConfigObj(true, null, false);
 
       let enabled = config.darkMode || config.notifications;
@@ -736,14 +736,14 @@ export default function ExtendedConditionalExpressionsTest17():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0037
-     * @tc.name      testUserPermissionCheck_17_0037
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_3700
+     * @tc.name    testConditionalExpression0692
      * @tc.desc      User permission check scenario
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testUserPermissionCheck_17_0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0692', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let user: UserObj = new UserObj("admin", null);
 
       let hasRole = user.role === "admin" || user.role === "moderator";
@@ -754,14 +754,14 @@ export default function ExtendedConditionalExpressionsTest17():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0038
-     * @tc.name      testInputValidationChain_17_0038
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_3800
+     * @tc.name    testConditionalExpression0693
      * @tc.desc      Input validation chain scenario
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testInputValidationChain_17_0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0693', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let input1: string | null = "hello";
       let input2: string | null = "";
       let input3: string | null = null;
@@ -776,14 +776,14 @@ export default function ExtendedConditionalExpressionsTest17():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_17_0039
-     * @tc.name      testConfigWithDefaults_17_0039
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_SEVENTEEN_EXPRESSIONS_3900
+     * @tc.name    testConditionalExpression0694
      * @tc.desc      Config with default values using nullish coalescing
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testConfigWithDefaults_17_0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0694', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let config: TimeoutObj = new TimeoutObj(null, 0);
 
       let timeout = config.timeout ?? 5000;

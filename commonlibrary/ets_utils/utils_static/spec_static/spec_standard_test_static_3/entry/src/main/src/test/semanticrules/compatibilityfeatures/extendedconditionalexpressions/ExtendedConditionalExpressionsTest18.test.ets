@@ -68,14 +68,14 @@ export default function ExtendedConditionalExpressionsTest18(): void {
 
     // For Loop with Falsy Values
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0622
-     * @tc.name      testOpsForFalsy001
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHTEEN_EXPRESSIONS_0100
+     * @tc.name    testConditionalExpression0695
      * @tc.desc      For loop with null value
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsForFalsy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0695', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 0;
       let v: Object | null = null;
 
@@ -89,14 +89,14 @@ export default function ExtendedConditionalExpressionsTest18(): void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0623
-     * @tc.name      testOpsForFalsy002
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHTEEN_EXPRESSIONS_0200
+     * @tc.name    testConditionalExpression0696
      * @tc.desc      For loop with undefined value
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsForFalsy002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0696', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 0;
       let v: Object | undefined = undefined;
 
@@ -110,14 +110,14 @@ export default function ExtendedConditionalExpressionsTest18(): void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0624
-     * @tc.name      testOpsForFalsy003
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHTEEN_EXPRESSIONS_0300
+     * @tc.name    testConditionalExpression0697
      * @tc.desc      For loop with number zero
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsForFalsy003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0697', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 0;
       let v: number = 0;
 
@@ -131,14 +131,14 @@ export default function ExtendedConditionalExpressionsTest18(): void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0625
-     * @tc.name      testOpsForFalsy004
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHTEEN_EXPRESSIONS_0400
+     * @tc.name    testConditionalExpression0698
      * @tc.desc      For loop with number 0.0
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsForFalsy004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0698', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 0;
       let v: number = 0.0;
 
@@ -152,14 +152,14 @@ export default function ExtendedConditionalExpressionsTest18(): void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0626
-     * @tc.name      testOpsForFalsy005
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHTEEN_EXPRESSIONS_0500
+     * @tc.name    testConditionalExpression0699
      * @tc.desc      For loop with empty string
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsForFalsy005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0699', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 0;
       let v: string = "";
 
@@ -173,14 +173,14 @@ export default function ExtendedConditionalExpressionsTest18(): void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0627
-     * @tc.name      testOpsForFalsy006
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHTEEN_EXPRESSIONS_0600
+     * @tc.name    testConditionalExpression0700
      * @tc.desc      For loop with negative zero
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsForFalsy006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 0;
       let v: number = -0;
 
@@ -194,14 +194,14 @@ export default function ExtendedConditionalExpressionsTest18(): void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0628
-     * @tc.name      testOpsForFalsy007
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHTEEN_EXPRESSIONS_0700
+     * @tc.name    testConditionalExpression0701
      * @tc.desc      For loop with NaN
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsForFalsy007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0701', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 0;
       let v: number = Number.NaN;
 
@@ -215,14 +215,14 @@ export default function ExtendedConditionalExpressionsTest18(): void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0629
-     * @tc.name      testOpsForFalsy008
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHTEEN_EXPRESSIONS_0800
+     * @tc.name    testConditionalExpression0702
      * @tc.desc      For loop with boolean false
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsForFalsy008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0702', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 0;
       let v: boolean = false;
 
@@ -237,14 +237,14 @@ export default function ExtendedConditionalExpressionsTest18(): void {
 
     // For Loop with Truthy Values
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0630
-     * @tc.name      testOpsForTruthy001
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHTEEN_EXPRESSIONS_0900
+     * @tc.name    testConditionalExpression0703
      * @tc.desc      For loop with truthy hex value
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsForTruthy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0703', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 1;
       let v: number = 0x80;
 
@@ -258,14 +258,14 @@ export default function ExtendedConditionalExpressionsTest18(): void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0631
-     * @tc.name      testOpsForTruthy002
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHTEEN_EXPRESSIONS_1000
+     * @tc.name    testConditionalExpression0704
      * @tc.desc      For loop with truthy hex value 0x8000
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsForTruthy002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0704', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 1;
       let v: number = 0x8000;
 
@@ -279,14 +279,14 @@ export default function ExtendedConditionalExpressionsTest18(): void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0632
-     * @tc.name      testOpsForTruthy003
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHTEEN_EXPRESSIONS_1100
+     * @tc.name    testConditionalExpression0705
      * @tc.desc      For loop with truthy number one
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsForTruthy003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0705', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 1;
       let v: number = 1;
 
@@ -300,14 +300,14 @@ export default function ExtendedConditionalExpressionsTest18(): void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0633
-     * @tc.name      testOpsForTruthy004
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHTEEN_EXPRESSIONS_1200
+     * @tc.name    testConditionalExpression0706
      * @tc.desc      For loop with truthy negative one
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsForTruthy004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0706', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 1;
       let v: number = -1;
 
@@ -321,14 +321,14 @@ export default function ExtendedConditionalExpressionsTest18(): void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0634
-     * @tc.name      testOpsForTruthy005
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHTEEN_EXPRESSIONS_1300
+     * @tc.name    testConditionalExpression0707
      * @tc.desc      For loop with truthy non-empty string
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsForTruthy005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0707', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 1;
       let v: string = "hello";
 
@@ -342,14 +342,14 @@ export default function ExtendedConditionalExpressionsTest18(): void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0635
-     * @tc.name      testOpsForTruthy006
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHTEEN_EXPRESSIONS_1400
+     * @tc.name    testConditionalExpression0708
      * @tc.desc      For loop with truthy empty object
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsForTruthy006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0708', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 1;
       let v: Object = {};
 
@@ -363,14 +363,14 @@ export default function ExtendedConditionalExpressionsTest18(): void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0636
-     * @tc.name      testOpsForTruthy007
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHTEEN_EXPRESSIONS_1500
+     * @tc.name    testConditionalExpression0709
      * @tc.desc      For loop with truthy empty array
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsForTruthy007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0709', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 1;
       let v: Array<number> = [];
 
@@ -384,14 +384,14 @@ export default function ExtendedConditionalExpressionsTest18(): void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0637
-     * @tc.name      testOpsForTruthy008
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHTEEN_EXPRESSIONS_1600
+     * @tc.name    testConditionalExpression0710
      * @tc.desc      For loop with truthy boolean true
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsForTruthy008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0710', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 1;
       let v: boolean = true;
 
@@ -406,14 +406,14 @@ export default function ExtendedConditionalExpressionsTest18(): void {
 
     // For Loop with Logical Operators in Condition
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0638
-     * @tc.name      testOpsForLogical001
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHTEEN_EXPRESSIONS_1700
+     * @tc.name    testConditionalExpression0711
      * @tc.desc      For loop with AND condition truthy
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsForLogical001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0711', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 1;
       let a: number = 1;
       let b: number = 2;
@@ -428,14 +428,14 @@ export default function ExtendedConditionalExpressionsTest18(): void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0639
-     * @tc.name      testOpsForLogical002
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHTEEN_EXPRESSIONS_1800
+     * @tc.name    testConditionalExpression0712
      * @tc.desc      For loop with AND condition falsy
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsForLogical002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0712', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 0;
       let a: number = 0;
       let b: number = 2;
@@ -448,14 +448,14 @@ export default function ExtendedConditionalExpressionsTest18(): void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0640
-     * @tc.name      testOpsForLogical003
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHTEEN_EXPRESSIONS_1900
+     * @tc.name    testConditionalExpression0713
      * @tc.desc      For loop with OR condition truthy
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsForLogical003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0713', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 1;
       let a: number = 1;
       let b: number = 0;
@@ -470,14 +470,14 @@ export default function ExtendedConditionalExpressionsTest18(): void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0641
-     * @tc.name      testOpsForLogical004
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHTEEN_EXPRESSIONS_2000
+     * @tc.name    testConditionalExpression0714
      * @tc.desc      For loop with OR condition falsy
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsForLogical004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0714', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 0;
       let a: number = 0;
       let b: number = 0;
@@ -490,14 +490,14 @@ export default function ExtendedConditionalExpressionsTest18(): void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0642
-     * @tc.name      testOpsForLogical005
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHTEEN_EXPRESSIONS_2100
+     * @tc.name    testConditionalExpression0715
      * @tc.desc      For loop with triple AND condition
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsForLogical005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0715', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 0;
       let a: number = 1;
       let b: number = 1;
@@ -512,14 +512,14 @@ export default function ExtendedConditionalExpressionsTest18(): void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0643
-     * @tc.name      testOpsForLogical006
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHTEEN_EXPRESSIONS_2200
+     * @tc.name    testConditionalExpression0716
      * @tc.desc      For loop with triple OR condition
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsForLogical006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0716', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 1;
       let a: number = 0;
       let b: number = 0;
@@ -536,14 +536,14 @@ export default function ExtendedConditionalExpressionsTest18(): void {
 
     // For Loop with Nullish Coalescing
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0644
-     * @tc.name      testOpsForNullish001
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHTEEN_EXPRESSIONS_2300
+     * @tc.name    testConditionalExpression0717
      * @tc.desc      For loop with nullish coalescing null value
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsForNullish001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0717', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 1;
       let v: NullishObj | null = null;
       let defaultObj: NullishObj = new NullishObj(1);
@@ -558,14 +558,14 @@ export default function ExtendedConditionalExpressionsTest18(): void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0645
-     * @tc.name      testOpsForNullish002
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHTEEN_EXPRESSIONS_2400
+     * @tc.name    testConditionalExpression0718
      * @tc.desc      For loop with nullish coalescing undefined value
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsForNullish002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0718', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 1;
       let v: NullishObj | undefined = undefined;
       let defaultObj: NullishObj = new NullishObj(1);
@@ -580,14 +580,14 @@ export default function ExtendedConditionalExpressionsTest18(): void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0646
-     * @tc.name      testOpsForNullish003
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHTEEN_EXPRESSIONS_2500
+     * @tc.name    testConditionalExpression0719
      * @tc.desc      For loop with nullish coalescing zero
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsForNullish003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0719', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 0;
       let v: number = 0;
 
@@ -599,14 +599,14 @@ export default function ExtendedConditionalExpressionsTest18(): void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_0647
-     * @tc.name      testOpsForNullish004
+     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHTEEN_EXPRESSIONS_2600
+     * @tc.name    testConditionalExpression0720
      * @tc.desc      For loop with nullish coalescing object
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testOpsForNullish004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConditionalExpression0720', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let retcode: number = 1;
       let v: NullishObj = new NullishObj(1);
 
