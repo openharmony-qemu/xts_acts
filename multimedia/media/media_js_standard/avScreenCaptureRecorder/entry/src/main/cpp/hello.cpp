@@ -41,20 +41,40 @@
 #define PARAM_0 0
 #define PARAM_30 30
 
+const bool IS_ENCODER = true;
+const bool IS_DECODER = false;
+
 static napi_value OHAvCapabilityByCategoryH265(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     int backParam = FAIL;
     OH_AVCapability *capability = nullptr;
-    OH_AVRange qualityRange;
-    OH_AVErrCode checkParam;
+
+    int32_t checkParam = 0;
     LOGI("OH_AVCodec_GetCapabilityByCategory get capability");
-    capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
+    capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, IS_DECODER, SOFTWARE);
     if (capability != nullptr) {
         backParam = SUCCESS;
         LOGE("OH_AVCodec_GetCapabilityByCategory get capability SUCCESS");
     }
     LOGI("OH_AVCodec_GetCapabilityByCategory get capability :%{public}d", capability);
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value OHAvCapabilityByCategoryH265Encoder(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int backParam = FAIL;
+    OH_AVCapability *capability = nullptr;
+
+    int32_t checkParam = 0;
+    capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, IS_ENCODER, HARDWARE);
+    OH_LOG_INFO(LOG_APP, "OH_AVCodec_GetCapabilityByCategory capability=%{public}d", capability);
+    if (capability != nullptr) {
+        backParam = SUCCESS;
+        OH_LOG_INFO(LOG_APP, "OH_AVCodec_GetCapabilityByCategory checkParam=%{public}d", checkParam);
+    }
     napi_create_int32(env, backParam, &result);
     return result;
 }
@@ -89,6 +109,8 @@ static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
         { "OHAvCapabilityByCategoryH265", nullptr, OHAvCapabilityByCategoryH265, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "OHAvCapabilityByCategoryH265Encoder", nullptr, OHAvCapabilityByCategoryH265Encoder, nullptr, nullptr, nullptr,
             napi_default, nullptr },
         { "OHAVMuxerByAddTrackH265", nullptr, OHAVMuxerByAddTrackH265, nullptr, nullptr, nullptr,
             napi_default, nullptr }
