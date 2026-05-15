@@ -375,6 +375,10 @@ static napi_value OHNetConnRegisterCustomDnsResolver(napi_env env, napi_callback
         ret = OH_NetConn_RegisterCustomDnsResolver(customResolver);
         OH_NetConn_UnregisterCustomDnsResolver();
         ret = OH_NetConn_RegisterCustomDnsResolver(customResolver);
+    } else if (index == CASE_INDEX_4) {
+        OH_NetConn_RegisterCustomDnsResolver(nullptr);
+        OH_NetConn_CustomDnsResolver customResolver = MyCustomDnsResolver;
+        ret = OH_NetConn_RegisterCustomDnsResolver(customResolver);
     }
     napi_value result = nullptr;
     napi_create_int32(env, ret, &result);
