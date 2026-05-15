@@ -581,7 +581,7 @@ export default function arrayBufferByteLengthFieldTest(): void {
     /**
      * @tc.name testArrayBufferByteLengthField0039
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_BYTE_LENGTH_3900
-     * @tc.desc Mindmap ArrayBuffer_get_byteLength §3.2 zero-length semantics: byteLength is 0 after resize(0) (STA has no detach(); substitutes mindmap detached-length-0 intent).
+     * @tc.desc ArrayBuffer_byte §3.2 zero-length semantics: byteLength is 0 after resize(0) (no detach() available; simulates detached-length-0 behavior
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
