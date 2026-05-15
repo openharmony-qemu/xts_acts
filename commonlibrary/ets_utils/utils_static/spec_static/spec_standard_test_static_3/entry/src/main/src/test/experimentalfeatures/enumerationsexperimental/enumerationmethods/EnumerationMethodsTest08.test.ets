@@ -1,3 +1,18 @@
+/*
+* Copyright (c) 2024-2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+*/
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium/index';
 
 async function sleep(time: int): Promise<int> {
@@ -989,215 +1004,6 @@ export default function EnumerationMethodsTest(): void {
 
       expect(testNS.runTest103()).assertTrue();
     });
-
-    /**
-     * 源文件：        enum_explicit_type_tostring_20.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0700
-     * @tc.name      testEnumerationMethods0105
-     * @tc.desc      Checking for enum with explicit float type constant that methods c.toString() and
-     *               c.valueOf().toString() return the same value.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    // it("testEnumerationMethods0105", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   expect(Enum5.Red.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.Red.toString()).assertEqual(new Number(1.5).toString());
-    //   expect(Enum5.Red.toString()).assertEqual(Enum5.Red.valueOf().toString());
-    //
-    //   expect(Enum5.Green.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.Green.toString()).assertEqual(new Number(10.3).toString());
-    //   expect(Enum5.Green.toString()).assertEqual(Enum5.Green.valueOf().toString());
-    //
-    //   expect(Enum5.Blue.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.Blue.toString()).assertEqual(new Number(7.6).toString());
-    //   expect(Enum5.Blue.toString()).assertEqual(Enum5.Blue.valueOf().toString());
-    //
-    //   expect(Enum5.First.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.First.toString()).assertEqual(new Number(-214748.3648).toString());
-    //   expect(Enum5.First.toString()).assertEqual(Enum5.First.valueOf().toString());
-    //
-    //   expect(Enum5.Second.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.Second.toString()).assertEqual(new Number(123.45).toString());
-    //   expect(Enum5.Second.toString()).assertEqual(Enum5.Second.valueOf().toString());
-    //
-    //   expect(Enum5.Third.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.Third.toString()).assertEqual(new Number(2147483.647).toString());
-    //   expect(Enum5.Third.toString()).assertEqual(Enum5.Third.valueOf().toString());
-    //
-    //   expect(Enum5.One.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.One.toString()).assertEqual(new Number(1.0).toString());
-    //   expect(Enum5.One.toString()).assertEqual(Enum5.One.valueOf().toString());
-    //
-    //   expect(Enum5.one.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.one.toString()).assertEqual(new Number(1.0).toString());
-    //   expect(Enum5.one.toString()).assertEqual(Enum5.one.valueOf().toString());
-    //
-    //   expect(Enum5.oNe.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.oNe.toString()).assertEqual(new Number(1.0).toString());
-    //   expect(Enum5.oNe.toString()).assertEqual(Enum5.oNe.valueOf().toString());
-    //
-    //   expect(testNS.runTest104()).assertTrue();
-    // });
-
-    /**
-     * 源文件：        enum_explicit_type_tostring_21.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0800
-     * @tc.name      testEnumerationMethods0106
-     * @tc.desc      Checking for enum with explicit float type constant that methods c.toString() and
-     *               c.valueOf().toString() return the same value.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    // it("testEnumerationMethods0106", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   expect(Enum5.Red.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.Red.toString()).assertEqual(new Number(1.5).toString());
-    //   expect(Enum5.Red.toString()).assertEqual(Enum5.Red.valueOf().toString());
-    //
-    //   expect(Enum5.Green.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.Green.toString()).assertEqual(new Number(10.3).toString());
-    //   expect(Enum5.Green.toString()).assertEqual(Enum5.Green.valueOf().toString());
-    //
-    //   expect(Enum5.Blue.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.Blue.toString()).assertEqual(new Number(7.6).toString());
-    //   expect(Enum5.Blue.toString()).assertEqual(Enum5.Blue.valueOf().toString());
-    //
-    //   expect(Enum5.First.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.First.toString()).assertEqual(new Number(-214748.3648).toString());
-    //   expect(Enum5.First.toString()).assertEqual(Enum5.First.valueOf().toString());
-    //
-    //   expect(Enum5.Second.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.Second.toString()).assertEqual(new Number(123.45).toString());
-    //   expect(Enum5.Second.toString()).assertEqual(Enum5.Second.valueOf().toString());
-    //
-    //   expect(Enum5.Third.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.Third.toString()).assertEqual(new Number(2147483.647).toString());
-    //   expect(Enum5.Third.toString()).assertEqual(Enum5.Third.valueOf().toString());
-    //
-    //   expect(Enum5.One.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.One.toString()).assertEqual(new Number(1.0).toString());
-    //   expect(Enum5.One.toString()).assertEqual(Enum5.One.valueOf().toString());
-    //
-    //   expect(Enum5.one.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.one.toString()).assertEqual(new Number(1.0).toString());
-    //   expect(Enum5.one.toString()).assertEqual(Enum5.one.valueOf().toString());
-    //
-    //   expect(Enum5.oNe.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.oNe.toString()).assertEqual(new Number(1.0).toString());
-    //   expect(Enum5.oNe.toString()).assertEqual(Enum5.oNe.valueOf().toString());
-    //
-    //   expect(testNS.runTest105()).assertTrue();
-    // });
-
-    /**
-     * 源文件：        enum_explicit_type_tostring_22.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0900
-     * @tc.name      testEnumerationMethods0107
-     * @tc.desc      Checking for enum with explicit float type constant that methods c.toString() and
-     *               c.valueOf().toString() return the same value.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    // it("testEnumerationMethods0107", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   expect(Enum5.Red.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.Red.toString()).assertEqual(new Number(1.5).toString());
-    //   expect(Enum5.Red.toString()).assertEqual(Enum5.Red.valueOf().toString());
-    //
-    //   expect(Enum5.Green.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.Green.toString()).assertEqual(new Number(10.3).toString());
-    //   expect(Enum5.Green.toString()).assertEqual(Enum5.Green.valueOf().toString());
-    //
-    //   expect(Enum5.Blue.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.Blue.toString()).assertEqual(new Number(7.6).toString());
-    //   expect(Enum5.Blue.toString()).assertEqual(Enum5.Blue.valueOf().toString());
-    //
-    //   expect(Enum5.First.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.First.toString()).assertEqual(new Number(-214748.3648).toString());
-    //   expect(Enum5.First.toString()).assertEqual(Enum5.First.valueOf().toString());
-    //
-    //   expect(Enum5.Second.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.Second.toString()).assertEqual(new Number(123.45).toString());
-    //   expect(Enum5.Second.toString()).assertEqual(Enum5.Second.valueOf().toString());
-    //
-    //   expect(Enum5.Third.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.Third.toString()).assertEqual(new Number(2147483.647).toString());
-    //   expect(Enum5.Third.toString()).assertEqual(Enum5.Third.valueOf().toString());
-    //
-    //   expect(Enum5.One.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.One.toString()).assertEqual(new Number(1.0).toString());
-    //   expect(Enum5.One.toString()).assertEqual(Enum5.One.valueOf().toString());
-    //
-    //   expect(Enum5.one.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.one.toString()).assertEqual(new Number(1.0).toString());
-    //   expect(Enum5.one.toString()).assertEqual(Enum5.one.valueOf().toString());
-    //
-    //   expect(Enum5.oNe.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.oNe.toString()).assertEqual(new Number(1.0).toString());
-    //   expect(Enum5.oNe.toString()).assertEqual(Enum5.oNe.valueOf().toString());
-    //
-    //   expect(testNS.runTest106()).assertTrue();
-    // });
-
-    /**
-     * 源文件：        enum_explicit_type_tostring_23.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_1000
-     * @tc.name      testEnumerationMethods0108
-     * @tc.desc      Checking for enum with explicit float type constant that methods c.toString() and
-     *               c.valueOf().toString() return the same value.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    /**
-     * ArkTS 1.2 兼容性说明：
-     * 本组用例依赖旧版本对 float.toString() 文本结果的预期。
-     * 当前 ArkTS 1.2 环境下，float 值在字符串化时会体现实际精度截断/格式化差异，
-     * 例如旧预期为 -214748.3648，而当前结果可能为 -214748.36，
-     * 因而导致字符串断言失败。
-     *
-     * 该差异属于 ArkTS 1.2 浮点格式化行为变化，不再修改原测试，先注释保留。
-     */
-    // it("testEnumerationMethods0108", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //     expect(Enum5.Red.valueOf() instanceof float).assertTrue();
-    //     expect(Enum5.Red.toString()).assertEqual(new Number(1.5).toString());
-    //     expect(Enum5.Red.toString()).assertEqual(Enum5.Red.valueOf().toString());
-    //
-    //     expect(Enum5.Green.valueOf() instanceof float).assertTrue();
-    //     expect(Enum5.Green.toString()).assertEqual(new Number(10.3).toString());
-    //     expect(Enum5.Green.toString()).assertEqual(Enum5.Green.valueOf().toString());
-    //
-    //     expect(Enum5.Blue.valueOf() instanceof float).assertTrue();
-    //     expect(Enum5.Blue.toString()).assertEqual(new Number(7.6).toString());
-    //     expect(Enum5.Blue.toString()).assertEqual(Enum5.Blue.valueOf().toString());
-    //
-    //     expect(Enum5.First.valueOf() instanceof float).assertTrue();
-    //     expect(Enum5.First.toString()).assertEqual(new Number(-214748.3648).toString());
-    //     expect(Enum5.First.toString()).assertEqual(Enum5.First.valueOf().toString());
-    //
-    //     expect(Enum5.Second.valueOf() instanceof float).assertTrue();
-    //     expect(Enum5.Second.toString()).assertEqual(new Number(123.45).toString());
-    //     expect(Enum5.Second.toString()).assertEqual(Enum5.Second.valueOf().toString());
-    //
-    //     expect(Enum5.Third.valueOf() instanceof float).assertTrue();
-    //     expect(Enum5.Third.toString()).assertEqual(new Number(2147483.647).toString());
-    //     expect(Enum5.Third.toString()).assertEqual(Enum5.Third.valueOf().toString());
-    //
-    //     expect(Enum5.One.valueOf() instanceof float).assertTrue();
-    //     expect(Enum5.One.toString()).assertEqual(new Number(1.0).toString());
-    //     expect(Enum5.One.toString()).assertEqual(Enum5.One.valueOf().toString());
-    //
-    //     expect(Enum5.one.valueOf() instanceof float).assertTrue();
-    //     expect(Enum5.one.toString()).assertEqual(new Number(1.0).toString());
-    //     expect(Enum5.one.toString()).assertEqual(Enum5.one.valueOf().toString());
-    //
-    //     expect(Enum5.oNe.valueOf() instanceof float).assertTrue();
-    //     expect(Enum5.oNe.toString()).assertEqual(new Number(1.0).toString());
-    //     expect(Enum5.oNe.toString()).assertEqual(Enum5.oNe.valueOf().toString());
-    //
-    //     expect(testNS.runTest107()).assertTrue();
-    // });
 
     /**
      * 源文件：        enum_explicit_type_tostring_24.ets

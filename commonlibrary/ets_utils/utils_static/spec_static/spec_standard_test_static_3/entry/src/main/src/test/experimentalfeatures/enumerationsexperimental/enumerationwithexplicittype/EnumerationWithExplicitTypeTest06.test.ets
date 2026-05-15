@@ -1,3 +1,18 @@
+/*
+* Copyright (c) 2024-2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+*/
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium/index';
 
 async function sleep(time: int): Promise<int> {
@@ -75,20 +90,7 @@ enum ConstEnumIntE2: int { first = EnumIntE2.first, second, third }
 
 enum ConstEnumIntE3: int { first = 123, second, third }
 enum EnumIntE3: int { first = ConstEnumIntE3.first, second, third }
-// 注释理由同上
-/*const intConstMax0: int = 2147483647;
 
-enum EnumIntF0: int {
-  first = intConstMax0,
-  second = intConstMax0 - 1,
-  third = intConstMax0 - 2
-}
-
-enum ConstEnumIntF0: int {
-  first = intConstMax0,
-  second = intConstMax0 - 1,
-  third = intConstMax0 - 2
-}*/
 enum EnumIntF0: int {
   first = 2147483647,
   second = 2147483646,

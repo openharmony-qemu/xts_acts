@@ -1,3 +1,18 @@
+/*
+* Copyright (c) 2024-2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+*/
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium/index';
 
 async function sleep(time: int): Promise<int> {
@@ -810,174 +825,6 @@ export default function EnumerationMethodsTest(): void {
 
       expect(testNS.runTest131()).assertTrue();
     });
-
-    /**
-     * 源文件：        enum_explicit_type_valueof_20.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0700
-     * @tc.name      testEnumerationMethods0133
-     * @tc.desc      Checking for enum with explicit float type constant for valueOf method support.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    // it("testEnumerationMethods0133", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   expect(Enum5.Red.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.Red.valueOf()).assertEqual(1.5);
-    //
-    //   expect(Enum5.Green.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.Green.valueOf()).assertEqual(10.3);
-    //
-    //   expect(Enum5.Blue.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.Blue.valueOf()).assertEqual(7.6);
-    //
-    //   expect(Enum5.First.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.First.valueOf()).assertEqual(-214748.3648);
-    //
-    //   expect(Enum5.Second.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.Second.valueOf()).assertEqual(123.45);
-    //
-    //   expect(Enum5.Third.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.Third.valueOf()).assertEqual(2147483.647);
-    //
-    //   expect(Enum5.One.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.One.valueOf()).assertEqual(1.0);
-    //
-    //   expect(Enum5.one.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.one.valueOf()).assertEqual(1.0);
-    //
-    //   expect(Enum5.oNe.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.oNe.valueOf()).assertEqual(1.0);
-    //
-    //   expect(testNS.runTest132()).assertTrue();
-    // });
-
-    /**
-     * 源文件：        enum_explicit_type_valueof_21.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0800
-     * @tc.name      testEnumerationMethods0134
-     * @tc.desc      Checking for enum with explicit float type constant for valueOf method support.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    // it("testEnumerationMethods0134", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   expect(Enum5.Red.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.Red.valueOf()).assertEqual(1.5);
-    //
-    //   expect(Enum5.Green.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.Green.valueOf()).assertEqual(10.3);
-    //
-    //   expect(Enum5.Blue.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.Blue.valueOf()).assertEqual(7.6);
-    //
-    //   expect(Enum5.First.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.First.valueOf()).assertEqual(-214748.3648);
-    //
-    //   expect(Enum5.Second.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.Second.valueOf()).assertEqual(123.45);
-    //
-    //   expect(Enum5.Third.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.Third.valueOf()).assertEqual(2147483.647);
-    //
-    //   expect(Enum5.One.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.One.valueOf()).assertEqual(1.0);
-    //
-    //   expect(Enum5.one.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.one.valueOf()).assertEqual(1.0);
-    //
-    //   expect(Enum5.oNe.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.oNe.valueOf()).assertEqual(1.0);
-    //
-    //   expect(testNS.runTest133()).assertTrue();
-    // });
-
-    /**
-     * 源文件：        enum_explicit_type_valueof_22.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0900
-     * @tc.name      testEnumerationMethods0135
-     * @tc.desc      Checking for enum with explicit float type constant for valueOf method support.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    // it("testEnumerationMethods0135", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   expect(Enum5.Red.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.Red.valueOf()).assertEqual(1.5);
-    //
-    //   expect(Enum5.Green.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.Green.valueOf()).assertEqual(10.3);
-    //
-    //   expect(Enum5.Blue.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.Blue.valueOf()).assertEqual(7.6);
-    //
-    //   expect(Enum5.First.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.First.valueOf()).assertEqual(-214748.3648);
-    //
-    //   expect(Enum5.Second.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.Second.valueOf()).assertEqual(123.45);
-    //
-    //   expect(Enum5.Third.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.Third.valueOf()).assertEqual(2147483.647);
-    //
-    //   expect(Enum5.One.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.One.valueOf()).assertEqual(1.0);
-    //
-    //   expect(Enum5.one.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.one.valueOf()).assertEqual(1.0);
-    //
-    //   expect(Enum5.oNe.valueOf() instanceof float).assertTrue();
-    //   expect(Enum5.oNe.valueOf()).assertEqual(1.0);
-    //
-    //   expect(testNS.runTest134()).assertTrue();
-    // });
-
-    /**
-     * 源文件：        enum_explicit_type_valueof_23.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_1000
-     * @tc.name      testEnumerationMethods0136
-     * @tc.desc      Checking for enum with explicit float type constant for valueOf method support.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    /**
-     * ArkTS 1.2 兼容性说明：
-     * 本组用例依赖旧版本对 float/double 数值比较的宽松预期。
-     * 当前 ArkTS 1.2 环境下，float 与 double 的比较及显示虽然看起来同为 10.3，
-     * 但底层类型与精度表示不同，Hypium 按更严格的数值/类型规则比较时会导致断言失败。
-     *
-     * 该差异属于 ArkTS 1.2 数值类型与精度语义变化，先注释保留。
-     */
-    // it("testEnumerationMethods0136", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //     expect(Enum5.Red.valueOf() instanceof float).assertTrue();
-    //     expect(Enum5.Red.valueOf()).assertEqual(1.5);
-    //
-    //     expect(Enum5.Green.valueOf() instanceof float).assertTrue();
-    //     expect(Enum5.Green.valueOf()).assertEqual(10.3);
-    //
-    //     expect(Enum5.Blue.valueOf() instanceof float).assertTrue();
-    //     expect(Enum5.Blue.valueOf()).assertEqual(7.6);
-    //
-    //     expect(Enum5.First.valueOf() instanceof float).assertTrue();
-    //     expect(Enum5.First.valueOf()).assertEqual(-214748.3648);
-    //
-    //     expect(Enum5.Second.valueOf() instanceof float).assertTrue();
-    //     expect(Enum5.Second.valueOf()).assertEqual(123.45);
-    //
-    //     expect(Enum5.Third.valueOf() instanceof float).assertTrue();
-    //     expect(Enum5.Third.valueOf()).assertEqual(2147483.647);
-    //
-    //     expect(Enum5.One.valueOf() instanceof float).assertTrue();
-    //     expect(Enum5.One.valueOf()).assertEqual(1.0);
-    //
-    //     expect(Enum5.one.valueOf() instanceof float).assertTrue();
-    //     expect(Enum5.one.valueOf()).assertEqual(1.0);
-    //
-    //     expect(Enum5.oNe.valueOf() instanceof float).assertTrue();
-    //     expect(Enum5.oNe.valueOf()).assertEqual(1.0);
-    //
-    //     expect(testNS.runTest135()).assertTrue();
-    // });
 
     /**
      * 源文件：        enum_explicit_type_valueof_24.ets

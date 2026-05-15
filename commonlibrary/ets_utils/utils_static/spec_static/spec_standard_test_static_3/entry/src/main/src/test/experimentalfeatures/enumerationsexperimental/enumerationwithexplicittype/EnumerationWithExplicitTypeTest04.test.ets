@@ -1,3 +1,18 @@
+/*
+* Copyright (c) 2024-2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+*/
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium/index';
 
 async function sleep(time: int): Promise<int> {
@@ -887,154 +902,6 @@ export default function EnumerationWithExplicitTypeTest04(): void {
       expect(c.toString()).assertEqual("1");
       expect(testNS57.runTest()).assertEqual(true);
     });
-
-    /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_FOUR_TEST_0900
-     * @tc.name      testEnumerationWithExplicitType0077
-     * @tc.desc      Checking for enum with explicit float type constant to string conversion.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    // 1.2兼容性问题：float enum 的 toString()/格式化精度与预期不一致，
-    // -214748.3648f 实际输出为 -214748.36，暂时注释。
-    /*
-        it('testEnumerationWithExplicitType0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-          expect(Enum24.Red.valueOf() instanceof float).assertEqual(true);
-          expect(Enum24.Red.toString()).assertEqual("1.5");
-          expect(Enum24.Green.valueOf() instanceof float).assertEqual(true);
-          expect(Enum24.Green.toString()).assertEqual("10.3");
-          expect(Enum24.Blue.valueOf() instanceof float).assertEqual(true);
-          expect(Enum24.Blue.toString()).assertEqual("7.6");
-          expect(Enum24.First.valueOf() instanceof float).assertEqual(true);
-          expect(Enum24.First.toString()).assertEqual("-214748.3648");
-          expect(Enum24.Second.valueOf() instanceof float).assertEqual(true);
-          expect(Enum24.Second.toString()).assertEqual("123.45");
-          expect(Enum24.Third.valueOf() instanceof float).assertEqual(true);
-          expect(Enum24.Third.toString()).assertEqual("2147483.647");
-          expect(Enum24.One.valueOf() instanceof float).assertEqual(true);
-          expect(Enum24.One.toString()).assertEqual("1");
-          expect(Enum24.one.valueOf() instanceof float).assertEqual(true);
-          expect(Enum24.one.toString()).assertEqual("1");
-          expect(Enum24.oNe.valueOf() instanceof float).assertEqual(true);
-          expect(Enum24.oNe.toString()).assertEqual("1");
-          expect(testNS58.runTest()).assertEqual(true);
-        });
-    */
-
-    /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_FOUR_TEST_1000
-     * @tc.name      testEnumerationWithExplicitType0078
-     * @tc.desc      Checking for enum with explicit float type constant to string conversion.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    // 1.2兼容性问题：float enum 的 toString()/格式化精度与预期不一致，
-    // -214748.3648f 实际输出为 -214748.36，暂时注释。
-    /*    it('testEnumerationWithExplicitType0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-          expect(Enum24.Red.valueOf() instanceof float).assertEqual(true);
-          expect(Enum24.Red.toString()).assertEqual("1.5");
-          expect(Enum24.Green.valueOf() instanceof float).assertEqual(true);
-          expect(Enum24.Green.toString()).assertEqual("10.3");
-          expect(Enum24.Blue.valueOf() instanceof float).assertEqual(true);
-          expect(Enum24.Blue.toString()).assertEqual("7.6");
-          expect(Enum24.First.valueOf() instanceof float).assertEqual(true);
-          expect(Enum24.First.toString()).assertEqual("-214748.3648");
-          expect(Enum24.Second.valueOf() instanceof float).assertEqual(true);
-          expect(Enum24.Second.toString()).assertEqual("123.45");
-          expect(Enum24.Third.valueOf() instanceof float).assertEqual(true);
-          expect(Enum24.Third.toString()).assertEqual("2147483.647");
-          expect(Enum24.One.valueOf() instanceof float).assertEqual(true);
-          expect(Enum24.One.toString()).assertEqual("1");
-          expect(Enum24.one.valueOf() instanceof float).assertEqual(true);
-          expect(Enum24.one.toString()).assertEqual("1");
-          expect(Enum24.oNe.valueOf() instanceof float).assertEqual(true);
-          expect(Enum24.oNe.toString()).assertEqual("1");
-          expect(testNS59.runTest()).assertEqual(true);
-        });*/
-
-    /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_FOUR_TEST_1100
-     * @tc.name      testEnumerationWithExplicitType0079
-     * @tc.desc      Checking for enum with explicit float type constant to string conversion.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    // 1.2兼容性问题：float enum 的 toString()/格式化精度与预期不一致，
-    // -214748.3648f 实际输出为 -214748.36，暂时注释。
-    /*    it('testEnumerationWithExplicitType0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-          let c: Enum24 = Enum24.Red;
-          expect(c.valueOf() instanceof float).assertEqual(true);
-          expect(c.toString()).assertEqual("1.5");
-          c = Enum24.Green;
-          expect(c.valueOf() instanceof float).assertEqual(true);
-          expect(c.toString()).assertEqual("10.3");
-          c = Enum24.Blue;
-          expect(c.valueOf() instanceof float).assertEqual(true);
-          expect(c.toString()).assertEqual("7.6");
-          c = Enum24.First;
-          expect(c.valueOf() instanceof float).assertEqual(true);
-          expect(c.toString()).assertEqual("-214748.3648");
-          c = Enum24.Second;
-          expect(c.valueOf() instanceof float).assertEqual(true);
-          expect(c.toString()).assertEqual("123.45");
-          c = Enum24.Third;
-          expect(c.valueOf() instanceof float).assertEqual(true);
-          expect(c.toString()).assertEqual("2147483.647");
-          c = Enum24.One;
-          expect(c.valueOf() instanceof float).assertEqual(true);
-          expect(c.toString()).assertEqual("1");
-          c = Enum24.one;
-          expect(c.valueOf() instanceof float).assertEqual(true);
-          expect(c.toString()).assertEqual("1");
-          c = Enum24.oNe;
-          expect(c.valueOf() instanceof float).assertEqual(true);
-          expect(c.toString()).assertEqual("1");
-          expect(testNS60.runTest()).assertEqual(true);
-        });*/
-
-    /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_FOUR_TEST_1200
-     * @tc.name      testEnumerationWithExplicitType0080
-     * @tc.desc      Checking for enum with explicit float type constant to string conversion.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    // 1.2兼容性问题：float enum 的 toString()/格式化精度与预期不一致，
-    // -214748.3648f 实际输出为 -214748.36，暂时注释。
-    /*    it('testEnumerationWithExplicitType0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-          let c: Enum24 = Enum24.Red;
-          expect(c.valueOf() instanceof float).assertEqual(true);
-          expect(c.toString()).assertEqual("1.5");
-          c = Enum24.Green;
-          expect(c.valueOf() instanceof float).assertEqual(true);
-          expect(c.toString()).assertEqual("10.3");
-          c = Enum24.Blue;
-          expect(c.valueOf() instanceof float).assertEqual(true);
-          expect(c.toString()).assertEqual("7.6");
-          c = Enum24.First;
-          expect(c.valueOf() instanceof float).assertEqual(true);
-          expect(c.toString()).assertEqual("-214748.3648");
-          c = Enum24.Second;
-          expect(c.valueOf() instanceof float).assertEqual(true);
-          expect(c.toString()).assertEqual("123.45");
-          c = Enum24.Third;
-          expect(c.valueOf() instanceof float).assertEqual(true);
-          expect(c.toString()).assertEqual("2147483.647");
-          c = Enum24.One;
-          expect(c.valueOf() instanceof float).assertEqual(true);
-          expect(c.toString()).assertEqual("1");
-          c = Enum24.one;
-          expect(c.valueOf() instanceof float).assertEqual(true);
-          expect(c.toString()).assertEqual("1");
-          c = Enum24.oNe;
-          expect(c.valueOf() instanceof float).assertEqual(true);
-          expect(c.toString()).assertEqual("1");
-          expect(testNS61.runTest()).assertEqual(true);
-        });*/
 
     /**
      * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_FOUR_TEST_1300

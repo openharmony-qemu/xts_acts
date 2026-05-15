@@ -1,3 +1,18 @@
+/*
+* Copyright (c) 2024-2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+*/
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium/index';
 
 async function sleep(time: int): Promise<int> {
@@ -11,29 +26,14 @@ async function sleep(time: int): Promise<int> {
 // enum_type_methods_getname.ets
 enum Color {Red, Green, Blue};
 
-// ╔════════════════════════════════════════════════════╗
-// ║  enum_type_methods_getname_1.ets                   ║
-// ╚════════════════════════════════════════════════════╝
 enum Color1 {Red = "r1", Blue = "b1", Green = "g1"};
 
-// ╔════════════════════════════════════════════════════╗
-// ║  enum_type_methods_getvalue_tostring.ets           ║
-// ╚════════════════════════════════════════════════════╝
 enum Color2 {Red = "r1", Green = "g1", Blue = "b1"};
 
-// ╔════════════════════════════════════════════════════╗
-// ║  enum_type_methods_getvalue_tostring_1.ets         ║
-// ╚════════════════════════════════════════════════════╝
 enum Color3 {Red = 1, Green = 2, Blue};
 
-// ╔════════════════════════════════════════════════════╗
-// ║  enum_type_methods_pipeline.ets                    ║
-// ╚════════════════════════════════════════════════════╝
 enum Color4 {Red = 777, Blue = 55, Green = 2};
 
-// ╔════════════════════════════════════════════════════╗
-// ║  enum_type_methods_getvalue_X.ets                  ║
-// ╚════════════════════════════════════════════════════╝
 enum GeneratedEnum {
   A,
   AA,
@@ -58,9 +58,6 @@ enum GeneratedEnum1 {
   AAAAAAAAA = "AAAAAAAAA"
 };
 
-// ╔════════════════════════════════════════════════════╗
-// ║  enum_type_methods_values.ets                      ║
-// ╚════════════════════════════════════════════════════╝
 function f(a: FixedArray<Color>): number {
   return a.length;
 }
@@ -203,22 +200,6 @@ export default function EnumerationMethodsTest(): void {
     });
 
     /**
-     * 源文件：        enum_type_methods_getvalueof_1.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0800
-     * @tc.name      testEnumerationMethods0228
-     * @tc.desc      getValueOf(string) returns an enumeration constant with the given name, or throws an error if no
-     *               constant with such name exists.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    // it("testEnumerationMethods0228", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //     expect(() => {
-    //         Color.getValueOf("Yellow")
-    //     }).assertThrow("Should throw error for invalid value 'Yellow'");
-    // });
-
-    /**
      * 源文件：        enum_type_methods_pipeline.ets
      * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0900
      * @tc.name      testEnumerationMethods0229
@@ -249,38 +230,5 @@ export default function EnumerationMethodsTest(): void {
       expect(colors[2]).assertEqual(Color.Blue);
       expect(f(colors)).assertEqual(3);
     });
-
-    /**
-     * 源文件：        enum_type_methods_values_1.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_1100
-     * @tc.name      testEnumerationMethods0231
-     * @tc.desc      values() returns an array of enumeration constants in the order of declaration.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    /**
-     * ArkTS 1.2 兼容性说明：
-     * 本用例依赖旧版本较宽松的重载解析规则，期望：
-     *   Color1.values()
-     * 可匹配到：
-     *   f(a: FixedArray<Color>): number
-     *
-     * 但在当前 ArkTS 1.2 环境下，重载解析按实参静态类型进行更严格的精确匹配，
-     * Color1.values() 的结果不再被视为 FixedArray<Color>，
-     * 因此调用实际落入：
-     *   f(a: Object): int
-     * 返回值变为 2，而非旧预期的 3。
-     *
-     * 该差异反映的是 ArkTS 1.2 重载解析与类型匹配规则收紧，
-     * 不修改原始测试逻辑，先注释保留。
-     */
-    // it("testEnumerationMethods0231", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //     let colors = Color1.values();
-    //     expect(colors[0]).assertEqual(Color1.Red);
-    //     expect(colors[1]).assertEqual(Color1.Blue);
-    //     expect(colors[2]).assertEqual(Color1.Green);
-    //     expect(f(colors)).assertEqual(3);
-    // });
   })
 }
