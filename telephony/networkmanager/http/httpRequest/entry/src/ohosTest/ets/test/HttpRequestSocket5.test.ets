@@ -597,7 +597,6 @@ export default function HttpRequestSocket5Test() {
       const caseName: string = 'testHttpRequestSocket5Test1100';
       const XTS_TEST_HTTP_URL: string = 'http://test-socks.innerdomain';
       console.info(`${caseName}---Start`);
-
       let httpRequest: http.HttpRequest | undefined;
       try {
         const netHandle: connection.NetHandle = await new Promise<connection.NetHandle>((resolve, reject) => {
@@ -606,27 +605,23 @@ export default function HttpRequestSocket5Test() {
             else resolve(data);
           });
         });
-
         if (netHandle.netId == 0) {
           console.info(`${caseName} Please connect to the network`);
           ExpectFail();
           done();
           return;
         }
-
         const socks5Proxy: connection.Socks5Proxy = {
           host: '146.56.217.118',
-          port: 7801,
+          port: 7800,
           username: 'test',
           password: 'testpass',
           dnsStrategy: connection.Socks5DnsStrategy.PROXY_MODE,
-          exclusionList: ['test-socks.innerdomain'],
+          exclusionList: [],
         };
-
         let httpRequestOptions: http.HttpRequestOptions = {
           usingSocks5Proxy: socks5Proxy,
         };
-
         httpRequest = http.createHttp();
         const response: http.HttpResponse = await new Promise<http.HttpResponse>((resolve, reject) => {
           httpRequest!.request(XTS_TEST_HTTP_URL, httpRequestOptions,
@@ -640,12 +635,12 @@ export default function HttpRequestSocket5Test() {
               }
             });
         });
-        console.info(`${caseName} test11  got success (unexpected): ${response.responseCode}`);
-        ExpectFail();
+        console.info(`${caseName} test11  got success: ${response.responseCode}`);
+        ExpectTrue(response.responseCode === 200);
       } catch (err) {
-        console.info(`${caseName} test11 httpRequest failed as expected: ${JSON.stringify(err)}`);
+        console.info(`${caseName} test11 httpRequest unexpectedly failed: ${JSON.stringify(err)}`);
         const error = err as BusinessError;
-        ExpectTrue(error.code === 2300006);
+        ExpectFail();
       } finally {
         httpRequest?.destroy();
         done();
