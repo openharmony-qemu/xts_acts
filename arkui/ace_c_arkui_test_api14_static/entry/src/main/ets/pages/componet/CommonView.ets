@@ -18,6 +18,7 @@ import { State, Watch } from '@ohos.arkui.stateManagement';
 import { Entry, Component, Button, Row, ClickEvent, ContentSlot, Column, ColumnOptions } from '@ohos.arkui.component';
 import { UIContext, UIInspector } from '@ohos.arkui.UIContext';
 
+@Entry
 @Component
 export struct CommonView {
   pageTag: string = '';

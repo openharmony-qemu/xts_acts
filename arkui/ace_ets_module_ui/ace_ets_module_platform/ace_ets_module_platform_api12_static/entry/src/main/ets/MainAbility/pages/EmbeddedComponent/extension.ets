@@ -20,7 +20,7 @@ import UIExtensionContentSession from '@ohos.app.ability.UIExtensionContentSessi
 
 //let storage = this.getUIContext().getSharedLocalStorage();
 
-//@Entry(storage)
+@Entry()
 @Component
 struct Extension {
   @State message: string = 'EmbeddedUIExtensionAbility Index';
