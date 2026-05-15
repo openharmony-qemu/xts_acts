@@ -54,10 +54,10 @@ struct GridItemEventPage {
   @State modifier: MyPointModifier = new MyPointModifier()
 
   build() {
-    Text(this.modifier.message)
-      .id('GridItemM_text')
     Scroll() {
       Column() {
+        Text(this.modifier.message)
+          .id('GridItemM_text')
         Grid() {
           GridItem() {
             Text('4')

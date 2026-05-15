@@ -41,12 +41,12 @@ import {
   EffectEdge
 } from '@ohos.arkui.component'
 import { AttributeModifier, CommonAttribute, ScrollAttribute } from '@ohos.arkui.component'
-import { State, Observed } from '@ohos.arkui.stateManagement'
+import { State, Observed, Track } from '@ohos.arkui.stateManagement'
 
 // ===================== Modifier 定义 =====================
 @Observed
 export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
-  @State public edgeEffectVal1: EdgeEffect | undefined = EdgeEffect.Spring;
+  @Track public edgeEffectVal1: EdgeEffect | undefined = EdgeEffect.Spring;
 
   applyNormalAttribute(instance: ScrollAttribute): void {
     instance.edgeEffect(this.edgeEffectVal1, { alwaysEnabled: false, effectEdge: EdgeEffect.None } as EdgeEffectOptions)

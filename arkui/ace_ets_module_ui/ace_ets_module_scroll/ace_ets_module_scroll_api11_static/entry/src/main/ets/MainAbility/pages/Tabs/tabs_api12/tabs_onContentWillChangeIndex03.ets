@@ -27,7 +27,6 @@ import {
   BarMode,
   ClickEvent,
   FlexAlign,
-  Builder,
   Builder
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
