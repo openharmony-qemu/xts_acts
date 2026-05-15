@@ -1570,34 +1570,7 @@ export default function sceneTest() {
           done();
         }
       })
-
-    /**
-     * @tc.name   testImageStream_null_params
-     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_5300
-     * @tc.desc   Test createImageStream with null and undefined parameters
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    // it('testImageStream_null_params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-    //   async (done: () => void) => {
-    //     let msg = "============================testImageStream_null_params";
-    //     console.info(msg + ' begin ');
-    //     try {
-    //       const scene = await Scene.load();
-    //       const rf = scene.getResourceFactory();
-    //       const imageStreamNull = await rf.createImageStream(null);
-    //       expect(imageStreamNull != null).assertTrue();
-    //       const imageStreamUndefined = await rf.createImageStream(undefined);
-    //       expect(imageStreamUndefined != null).assertTrue();
-    //       scene.destroy();
-    //       done();
-    //     } catch (err) {
-    //       console.info(msg + " Failed: " + JSON.stringify(err));
-    //       expect().assertFail();
-    //       done();
-    //     }
-    //   })
+      
     /**
      * @tc.name   testPCFConfig_create
      * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_5400
@@ -1813,6 +1786,6 @@ export default function sceneTest() {
         done();
       }
     });
-    
+
   })
 }
