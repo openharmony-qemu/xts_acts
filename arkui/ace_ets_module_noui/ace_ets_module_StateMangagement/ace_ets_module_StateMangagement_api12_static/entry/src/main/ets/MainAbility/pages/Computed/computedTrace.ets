@@ -41,7 +41,7 @@ export class Name {
   testNumber: number = 0;
 
   @Computed
-  get fullName() {
+  get fullName(): string  {
     this.testNumber += 1;
     return this.firstName + ' ' + this.lastName;
   }
@@ -53,7 +53,7 @@ const name: Name = new Name();
 @ComponentV2
 struct ComputedTrace {
   name1: Name = name;
-  @State showTestNumber:number = 0
+  @Local showTestNumber:number = 0;
 
   build() {
     Column() {

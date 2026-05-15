@@ -37,6 +37,7 @@ import {
 //测试：Repeat嵌套场景
 @ObservedV2
 export class OuterObject {
+  @Trace age: number = 11;
   public id: number
   public inner: InnerObject
 

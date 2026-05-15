@@ -49,7 +49,8 @@ export class Str {
 }
 
 @ObservedV2
-class TestObservedV2 {
+export class TestObservedV2 {
+  @Trace age: number = 20
   public stringValue3: string = 'world'
 
   constructor(stringValue3: string) {
@@ -108,7 +109,7 @@ struct V2ToV1ComponentCorrect_TestV2Parent1 {
 }
 
 @Component
-export struct V2ToV1ComponentCorrect_TestV1child1 {
+struct V2ToV1ComponentCorrect_TestV1child1 {
   @State stringValue1: string = 'hello'
   @PropRef enumValue1: Set<number> | MemberType = MemberType.first
   @PropRef localValue1: TestObserved1 = new TestObserved1('Providerv1')

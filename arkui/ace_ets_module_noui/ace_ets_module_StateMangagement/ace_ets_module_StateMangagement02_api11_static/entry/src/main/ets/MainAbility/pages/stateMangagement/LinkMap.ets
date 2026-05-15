@@ -59,7 +59,7 @@ import hilog from "@ohos.hilog";
 import common from '@ohos.app.ability.common';
 @Component
 struct LinkMapChild {
-  @Link value: Map<number, string>= new Map<number, string>([[0, "a"], [1, "b"], [3, "c"]])
+  @Link value: Map<number, string>;
 
   build() {
     Column() {

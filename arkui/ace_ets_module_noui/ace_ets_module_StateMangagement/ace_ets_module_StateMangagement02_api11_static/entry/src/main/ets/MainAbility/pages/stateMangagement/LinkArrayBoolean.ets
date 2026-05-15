@@ -59,7 +59,7 @@ import hilog from "@ohos.hilog";
 import common from '@ohos.app.ability.common';
 @Component
 struct LinkArrayBooleanChild {
-  @Link value: Array<boolean> = new Array<boolean>(false,true)
+  @Link value: Array<boolean>
 
   build() {
     Column() {

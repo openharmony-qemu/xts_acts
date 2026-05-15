@@ -54,8 +54,9 @@ export class Monitor0034Class {
 
 @ObservedV2
 export class Monitor0034ChildClass extends Monitor0034Class {
+  @Trace age: number = 20
   @Monitor(['name'])
-  onNameChange(monitor: IMonitor) {
+  onNameChange(monitor: IMonitor): void  {
     prompt.showToast({ message: `name: ${monitor.value<Any>()?.now}`, duration: 2000 })
   }
 }
@@ -63,13 +64,13 @@ export class Monitor0034ChildClass extends Monitor0034Class {
 @Entry
 @ComponentV2
 struct Monitor0034 {
-  cls: Monitor0034ChildClass = new Monitor0034ChildClass()
+  @Local cls: Monitor0034ChildClass = new Monitor0034ChildClass()
 
   build() {
     Column() {
       Button(`Change Name ${this.cls.name}`)
         .id('btnMonitor0034')
-        .onClick(():void=>{
+        .onClick(()=>{
           this.cls.name = 'Jack'
         })
     }

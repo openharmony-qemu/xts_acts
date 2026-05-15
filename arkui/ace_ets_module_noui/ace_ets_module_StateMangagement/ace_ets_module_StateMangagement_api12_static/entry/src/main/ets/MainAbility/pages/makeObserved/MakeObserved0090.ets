@@ -36,7 +36,7 @@ import {
 
 @ObservedV2
 export class ClassMakeObserved0090 {
-  @Track
+  @Trace
   private _name: string
 
   public set name(value: string) {

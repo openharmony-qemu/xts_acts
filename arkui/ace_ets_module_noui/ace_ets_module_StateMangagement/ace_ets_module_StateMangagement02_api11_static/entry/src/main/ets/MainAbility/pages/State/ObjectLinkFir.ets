@@ -67,7 +67,7 @@ export class FirClassA {
 // 构建子组件View用于承载@ObjectLink修饰的变量
 @Component
 struct ViewFir {
-  @ObjectLink classB: FirClassA = new FirClassA(1);
+  @ObjectLink classB: FirClassA;
   build() {
     Row() {
       // 将ClassB的成员变量b在UI呈现出来
