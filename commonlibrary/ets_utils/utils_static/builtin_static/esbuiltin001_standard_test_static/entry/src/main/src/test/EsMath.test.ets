@@ -24,7 +24,7 @@ export async function sleep(time: int): Promise<int> {
   });
 }
 
-export default function EsMathTest(){
+export default function EsMathTest(): void {
   describe('EsMathTest', ():void => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll((): void => {
