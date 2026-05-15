@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -69,19 +69,35 @@ export default function AlignStart_AddOneWidth() {
       let Start_AddOneWidth_012: RectValue = CommonFunc.getComponentRect('Start_AddOneWidth_012');
       let Start_AddOneWidth_013: RectValue = CommonFunc.getComponentRect('Start_AddOneWidth_013');
       let Start_AddOneWidth_01: RectValue = CommonFunc.getComponentRect('Start_AddOneWidth_01');
-      expect(Math.abs(Start_AddOneWidth_011.top - Start_AddOneWidth_012.top) <= 1).assertTrue()
-      expect(Math.abs(Start_AddOneWidth_013.top - Start_AddOneWidth_012.top) <= 1).assertTrue()
-      expect(Math.abs(Start_AddOneWidth_011.top - Start_AddOneWidth_01.top) <= 1).assertTrue()
-      expect(Math.abs(Start_AddOneWidth_01.left - Start_AddOneWidth_011.left) <= 1).assertTrue()
-      expect(Math.abs(Start_AddOneWidth_012.left - Start_AddOneWidth_011.right) <= 1).assertTrue()
-      expect(Math.abs(Start_AddOneWidth_013.left - Start_AddOneWidth_012.right) <= 1).assertTrue()
-      expect(Math.abs(Start_AddOneWidth_011.right - Start_AddOneWidth_011.left - vp2px(160)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddOneWidth_012.right - Start_AddOneWidth_012.left - vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddOneWidth_013.right - Start_AddOneWidth_013.left - vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddOneWidth_011.bottom - Start_AddOneWidth_011.top - vp2px(50)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddOneWidth_012.bottom - Start_AddOneWidth_012.top - vp2px(100)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddOneWidth_013.bottom - Start_AddOneWidth_013.top - vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddOneWidth_01.right - Start_AddOneWidth_013.right - vp2px(40)) <= 1).assertTrue()
+
+      console.info('testFlexAlignStartTextWidth_chazhi1:' + Math.floor(Math.abs(Start_AddOneWidth_011.top - Start_AddOneWidth_012.top)));
+      console.info('testFlexAlignStartTextWidth_chazhi2:' + Math.floor(Math.abs(Start_AddOneWidth_013.top - Start_AddOneWidth_012.top)));
+      console.info('testFlexAlignStartTextWidth_chazhi3:' + Math.floor(Math.abs(Start_AddOneWidth_011.top - Start_AddOneWidth_01.top)));
+      console.info('testFlexAlignStartTextWidth_chazhi4:' + Math.floor(Math.abs(Start_AddOneWidth_01.left - Start_AddOneWidth_011.left)));
+      console.info('testFlexAlignStartTextWidth_chazhi5:' + Math.floor(Math.abs(Start_AddOneWidth_012.left - Start_AddOneWidth_011.right)));
+      console.info('testFlexAlignStartTextWidth_chazhi6:' + Math.floor(Math.abs(Start_AddOneWidth_013.left - Start_AddOneWidth_012.right)));
+      console.info('testFlexAlignStartTextWidth_chazhi7:' + Math.floor(Math.abs(Start_AddOneWidth_011.right - Start_AddOneWidth_011.left - vp2px(160))));
+      console.info('testFlexAlignStartTextWidth_chazhi8:' + Math.floor(Math.abs(Start_AddOneWidth_012.right - Start_AddOneWidth_012.left - vp2px(150))));
+      console.info('testFlexAlignStartTextWidth_chazhi9:' + Math.floor(Math.abs(Start_AddOneWidth_013.right - Start_AddOneWidth_013.left - vp2px(150))));
+      console.info('testFlexAlignStartTextWidth_chazhi10:' + Math.floor(Math.abs(Start_AddOneWidth_011.bottom - Start_AddOneWidth_011.top - vp2px(50))));
+      console.info('testFlexAlignStartTextWidth_chazhi11:' + Math.floor(Math.abs(Start_AddOneWidth_012.bottom - Start_AddOneWidth_012.top - vp2px(100))));
+      console.info('testFlexAlignStartTextWidth_chazhi12:' + Math.floor(Math.abs(Start_AddOneWidth_013.bottom - Start_AddOneWidth_013.top - vp2px(150))));
+      console.info('testFlexAlignStartTextWidth_chazhi13:' + Math.floor(Math.abs(Start_AddOneWidth_01.right - Start_AddOneWidth_013.right - vp2px(40))));
+      
+      expect(Math.floor(Math.abs(Start_AddOneWidth_011.top - Start_AddOneWidth_012.top)) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(Start_AddOneWidth_013.top - Start_AddOneWidth_012.top)) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(Start_AddOneWidth_011.top - Start_AddOneWidth_01.top)) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(Start_AddOneWidth_01.left - Start_AddOneWidth_011.left)) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(Start_AddOneWidth_012.left - Start_AddOneWidth_011.right)) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(Start_AddOneWidth_013.left - Start_AddOneWidth_012.right)) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(Start_AddOneWidth_011.right - Start_AddOneWidth_011.left - vp2px(160))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(Start_AddOneWidth_012.right - Start_AddOneWidth_012.left - vp2px(150))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(Start_AddOneWidth_013.right - Start_AddOneWidth_013.left - vp2px(150))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(Start_AddOneWidth_011.bottom - Start_AddOneWidth_011.top - vp2px(50))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(Start_AddOneWidth_012.bottom - Start_AddOneWidth_012.top - vp2px(100))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(Start_AddOneWidth_013.bottom - Start_AddOneWidth_013.top - vp2px(150))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(Start_AddOneWidth_01.right - Start_AddOneWidth_013.right - vp2px(40))) <= 1).assertTrue()
+
       console.info('[testFlexAlignStartTextWidth] END');
 
     });

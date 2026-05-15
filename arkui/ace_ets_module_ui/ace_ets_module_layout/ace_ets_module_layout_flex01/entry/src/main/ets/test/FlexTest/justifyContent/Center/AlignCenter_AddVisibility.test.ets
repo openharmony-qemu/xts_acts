@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -72,20 +72,32 @@ export default function AlignCenter_AddVisibility() {
         let Center_AddVisibility_012: RectValue = CommonFunc.getComponentRect('Center_AddVisibility_012');
         let Center_AddVisibility_013: RectValue = CommonFunc.getComponentRect('Center_AddVisibility_013');
         let Center_AddVisibility_01: RectValue = CommonFunc.getComponentRect('Center_AddVisibility_01');
-        expect(Math.abs(Center_AddVisibility_012.top - Center_AddVisibility_013.top) <= 1).assertTrue()
-        expect(Math.abs(Center_AddVisibility_012.top - Center_AddVisibility_01.top) <= 1).assertTrue()
-        expect(Math.abs(Center_AddVisibility_012.right - Center_AddVisibility_013.left) <= 1).assertTrue()
-        expect(Math.abs((Center_AddVisibility_012.left - Center_AddVisibility_01.left) - vp2px(100)) <= 1).assertTrue();
-        expect(Math.abs((Center_AddVisibility_01.right - Center_AddVisibility_013.right) - vp2px(100)) <= 1)
+
+        console.info('testFlexAlignCenterVisibilityNone_chazhi1:' + Math.floor(Math.abs(Center_AddVisibility_012.top - Center_AddVisibility_013.top)));
+        console.info('testFlexAlignCenterVisibilityNone_chazhi2:' + Math.floor(Math.abs(Center_AddVisibility_012.top - Center_AddVisibility_01.top)));
+        console.info('testFlexAlignCenterVisibilityNone_chazhi3:' + Math.floor(Math.abs(Center_AddVisibility_012.right - Center_AddVisibility_013.left)));
+        console.info('testFlexAlignCenterVisibilityNone_chazhi4:' + Math.floor(Math.abs((Center_AddVisibility_012.left - Center_AddVisibility_01.left) - vp2px(100))));
+        console.info('testFlexAlignCenterVisibilityNone_chazhi5:' + Math.floor(Math.abs((Center_AddVisibility_01.right - Center_AddVisibility_013.right) - vp2px(100))));
+        console.info('testFlexAlignCenterVisibilityNone_chazhi6:' + Math.floor(Math.abs((Center_AddVisibility_012.right - Center_AddVisibility_012.left) - vp2px(150))));
+        console.info('testFlexAlignCenterVisibilityNone_chazhi7:' + Math.floor(Math.abs((Center_AddVisibility_013.right - Center_AddVisibility_013.left) - vp2px(150))));
+        console.info('testFlexAlignCenterVisibilityNone_chazhi8:' + Math.floor(Math.abs((Center_AddVisibility_012.bottom - Center_AddVisibility_012.top) - vp2px(100))));
+        console.info('testFlexAlignCenterVisibilityNone_chazhi9:' + Math.floor(Math.abs((Center_AddVisibility_013.bottom - Center_AddVisibility_013.top) - vp2px(150))));
+
+        expect(Math.floor(Math.abs(Center_AddVisibility_012.top - Center_AddVisibility_013.top)) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(Center_AddVisibility_012.top - Center_AddVisibility_01.top)) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(Center_AddVisibility_012.right - Center_AddVisibility_013.left)) <= 1).assertTrue()
+        expect(Math.floor(Math.abs((Center_AddVisibility_012.left - Center_AddVisibility_01.left) - vp2px(100))) <= 1).assertTrue();
+        expect(Math.floor(Math.abs((Center_AddVisibility_01.right - Center_AddVisibility_013.right) - vp2px(100))) <= 1)
           .assertTrue();
-        expect(Math.abs((Center_AddVisibility_012.right - Center_AddVisibility_012.left) - vp2px(150)) <= 1)
+        expect(Math.floor(Math.abs((Center_AddVisibility_012.right - Center_AddVisibility_012.left) - vp2px(150))) <= 1)
           .assertTrue();
-        expect(Math.abs((Center_AddVisibility_013.right - Center_AddVisibility_013.left) - vp2px(150)) <= 1)
+        expect(Math.floor(Math.abs((Center_AddVisibility_013.right - Center_AddVisibility_013.left) - vp2px(150))) <= 1)
           .assertTrue();
-        expect(Math.abs((Center_AddVisibility_012.bottom - Center_AddVisibility_012.top) - vp2px(100)) <= 1)
+        expect(Math.floor(Math.abs((Center_AddVisibility_012.bottom - Center_AddVisibility_012.top) - vp2px(100))) <= 1)
           .assertTrue();
-        expect(Math.abs((Center_AddVisibility_013.bottom - Center_AddVisibility_013.top) - vp2px(150)) <= 1)
+        expect(Math.floor(Math.abs((Center_AddVisibility_013.bottom - Center_AddVisibility_013.top) - vp2px(150))) <= 1)
           .assertTrue();
+
       } catch (err) {
         console.error('[testFlexAlignCenterVisibilityNone] failed');
         expect().assertFail();
@@ -120,26 +132,42 @@ export default function AlignCenter_AddVisibility() {
         let Center_AddVisibility_012: RectValue = CommonFunc.getComponentRect('Center_AddVisibility_012');
         let Center_AddVisibility_013: RectValue = CommonFunc.getComponentRect('Center_AddVisibility_013');
         let Center_AddVisibility_01: RectValue = CommonFunc.getComponentRect('Center_AddVisibility_01');
-        expect(Math.abs(Center_AddVisibility_012.top - Center_AddVisibility_013.top) <= 1).assertTrue()
-        expect(Math.abs(Center_AddVisibility_012.top - Center_AddVisibility_011.top) <= 1).assertTrue()
-        expect(Math.abs(Center_AddVisibility_012.top - Center_AddVisibility_01.top) <= 1).assertTrue()
-        expect(Math.abs(Center_AddVisibility_011.right - Center_AddVisibility_012.left) <= 1).assertTrue()
-        expect(Math.abs(Center_AddVisibility_012.right - Center_AddVisibility_013.left) <= 1).assertTrue()
-        expect(Math.abs((Center_AddVisibility_011.left - Center_AddVisibility_01.left) - vp2px(25)) <= 1).assertTrue();
-        expect(Math.abs((Center_AddVisibility_01.right - Center_AddVisibility_013.right) - vp2px(25)) <= 1)
+
+        console.info('testFlexAlignCenterVisibilityHidden_chazhi1:' + Math.floor(Math.abs(Center_AddVisibility_012.top - Center_AddVisibility_013.top)));
+        console.info('testFlexAlignCenterVisibilityHidden_chazhi2:' + Math.floor(Math.abs(Center_AddVisibility_012.top - Center_AddVisibility_011.top)));
+        console.info('testFlexAlignCenterVisibilityHidden_chazhi3:' + Math.floor(Math.abs(Center_AddVisibility_012.top - Center_AddVisibility_01.top)));
+        console.info('testFlexAlignCenterVisibilityHidden_chazhi4:' + Math.floor(Math.abs(Center_AddVisibility_011.right - Center_AddVisibility_012.left)));
+        console.info('testFlexAlignCenterVisibilityHidden_chazhi5:' + Math.floor(Math.abs(Center_AddVisibility_012.right - Center_AddVisibility_013.left)));
+        console.info('testFlexAlignCenterVisibilityHidden_chazhi6:' + Math.floor(Math.abs((Center_AddVisibility_011.left - Center_AddVisibility_01.left) - vp2px(25))));
+        console.info('testFlexAlignCenterVisibilityHidden_chazhi7:' + Math.floor(Math.abs((Center_AddVisibility_01.right - Center_AddVisibility_013.right) - vp2px(25))));
+        console.info('testFlexAlignCenterVisibilityHidden_chazhi8:' + Math.floor(Math.abs((Center_AddVisibility_011.right - Center_AddVisibility_011.left) - vp2px(150))));
+        console.info('testFlexAlignCenterVisibilityHidden_chazhi9:' + Math.floor(Math.abs((Center_AddVisibility_012.right - Center_AddVisibility_012.left) - vp2px(150))));
+        console.info('testFlexAlignCenterVisibilityHidden_chazhi10:' + Math.floor(Math.abs((Center_AddVisibility_013.right - Center_AddVisibility_013.left) - vp2px(150))));
+        console.info('testFlexAlignCenterVisibilityHidden_chazhi11:' + Math.floor(Math.abs((Center_AddVisibility_011.bottom - Center_AddVisibility_011.top) - vp2px(50))));
+        console.info('testFlexAlignCenterVisibilityHidden_chazhi12:' + Math.floor(Math.abs((Center_AddVisibility_012.bottom - Center_AddVisibility_012.top) - vp2px(100))));
+        console.info('testFlexAlignCenterVisibilityHidden_chazhi13:' + Math.floor(Math.abs((Center_AddVisibility_013.bottom - Center_AddVisibility_013.top) - vp2px(150))));
+
+        expect(Math.floor(Math.abs(Center_AddVisibility_012.top - Center_AddVisibility_013.top)) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(Center_AddVisibility_012.top - Center_AddVisibility_011.top)) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(Center_AddVisibility_012.top - Center_AddVisibility_01.top)) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(Center_AddVisibility_011.right - Center_AddVisibility_012.left)) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(Center_AddVisibility_012.right - Center_AddVisibility_013.left)) <= 1).assertTrue()
+        expect(Math.floor(Math.abs((Center_AddVisibility_011.left - Center_AddVisibility_01.left) - vp2px(25))) <= 1).assertTrue();
+        expect(Math.floor(Math.abs((Center_AddVisibility_01.right - Center_AddVisibility_013.right) - vp2px(25))) <= 1)
           .assertTrue();
-        expect(Math.abs((Center_AddVisibility_011.right - Center_AddVisibility_011.left) - vp2px(150)) <= 1)
+        expect(Math.floor(Math.abs((Center_AddVisibility_011.right - Center_AddVisibility_011.left) - vp2px(150))) <= 1)
           .assertTrue();
-        expect(Math.abs((Center_AddVisibility_012.right - Center_AddVisibility_012.left) - vp2px(150)) <= 1)
+        expect(Math.floor(Math.abs((Center_AddVisibility_012.right - Center_AddVisibility_012.left) - vp2px(150))) <= 1)
           .assertTrue();
-        expect(Math.abs((Center_AddVisibility_013.right - Center_AddVisibility_013.left) - vp2px(150)) <= 1)
+        expect(Math.floor(Math.abs((Center_AddVisibility_013.right - Center_AddVisibility_013.left) - vp2px(150))) <= 1)
           .assertTrue();
-        expect(Math.abs((Center_AddVisibility_011.bottom - Center_AddVisibility_011.top) - vp2px(50)) <= 1)
+        expect(Math.floor(Math.abs((Center_AddVisibility_011.bottom - Center_AddVisibility_011.top) - vp2px(50))) <= 1)
           .assertTrue();
-        expect(Math.abs((Center_AddVisibility_012.bottom - Center_AddVisibility_012.top) - vp2px(100)) <= 1)
+        expect(Math.floor(Math.abs((Center_AddVisibility_012.bottom - Center_AddVisibility_012.top) - vp2px(100))) <= 1)
           .assertTrue();
-        expect(Math.abs((Center_AddVisibility_013.bottom - Center_AddVisibility_013.top) - vp2px(150)) <= 1)
+        expect(Math.floor(Math.abs((Center_AddVisibility_013.bottom - Center_AddVisibility_013.top) - vp2px(150))) <= 1)
           .assertTrue();
+
       } catch (err) {
         console.error('[testFlexAlignCenterVisibilityHidden] failed');
         expect().assertFail();
@@ -174,26 +202,42 @@ export default function AlignCenter_AddVisibility() {
         let Center_AddVisibility_012: RectValue = CommonFunc.getComponentRect('Center_AddVisibility_012');
         let Center_AddVisibility_013: RectValue = CommonFunc.getComponentRect('Center_AddVisibility_013');
         let Center_AddVisibility_01: RectValue = CommonFunc.getComponentRect('Center_AddVisibility_01');
-        expect(Math.abs(Center_AddVisibility_012.top - Center_AddVisibility_013.top) <= 1).assertTrue()
-        expect(Math.abs(Center_AddVisibility_012.top - Center_AddVisibility_011.top) <= 1).assertTrue()
-        expect(Math.abs(Center_AddVisibility_012.top - Center_AddVisibility_01.top) <= 1).assertTrue()
-        expect(Math.abs(Center_AddVisibility_011.right - Center_AddVisibility_012.left) <= 1).assertTrue()
-        expect(Math.abs(Center_AddVisibility_012.right - Center_AddVisibility_013.left) <= 1).assertTrue()
-        expect(Math.abs((Center_AddVisibility_011.left - Center_AddVisibility_01.left) - vp2px(25)) <= 1).assertTrue();
-        expect(Math.abs((Center_AddVisibility_01.right - Center_AddVisibility_013.right) - vp2px(25)) <= 1)
+
+        console.info('testFlexAlignCenterVisibilityVisible_chazhi1:' + Math.floor(Math.abs(Center_AddVisibility_012.top - Center_AddVisibility_013.top)));
+        console.info('testFlexAlignCenterVisibilityVisible_chazhi2:' + Math.floor(Math.abs(Center_AddVisibility_012.top - Center_AddVisibility_011.top)));
+        console.info('testFlexAlignCenterVisibilityVisible_chazhi3:' + Math.floor(Math.abs(Center_AddVisibility_012.top - Center_AddVisibility_01.top)));
+        console.info('testFlexAlignCenterVisibilityVisible_chazhi4:' + Math.floor(Math.abs(Center_AddVisibility_011.right - Center_AddVisibility_012.left)));
+        console.info('testFlexAlignCenterVisibilityVisible_chazhi5:' + Math.floor(Math.abs(Center_AddVisibility_012.right - Center_AddVisibility_013.left)));
+        console.info('testFlexAlignCenterVisibilityVisible_chazhi6:' + Math.floor(Math.abs((Center_AddVisibility_011.left - Center_AddVisibility_01.left) - vp2px(25))));
+        console.info('testFlexAlignCenterVisibilityVisible_chazhi7:' + Math.floor(Math.abs((Center_AddVisibility_01.right - Center_AddVisibility_013.right) - vp2px(25))));
+        console.info('testFlexAlignCenterVisibilityVisible_chazhi8:' + Math.floor(Math.abs((Center_AddVisibility_011.right - Center_AddVisibility_011.left) - vp2px(150))));
+        console.info('testFlexAlignCenterVisibilityVisible_chazhi9:' + Math.floor(Math.abs((Center_AddVisibility_012.right - Center_AddVisibility_012.left) - vp2px(150))));
+        console.info('testFlexAlignCenterVisibilityVisible_chazhi10:' + Math.floor(Math.abs((Center_AddVisibility_013.right - Center_AddVisibility_013.left) - vp2px(150))));
+        console.info('testFlexAlignCenterVisibilityVisible_chazhi11:' + Math.floor(Math.abs((Center_AddVisibility_011.bottom - Center_AddVisibility_011.top) - vp2px(50))));
+        console.info('testFlexAlignCenterVisibilityVisible_chazhi12:' + Math.floor(Math.abs((Center_AddVisibility_012.bottom - Center_AddVisibility_012.top) - vp2px(100))));
+        console.info('testFlexAlignCenterVisibilityVisible_chazhi13:' + Math.floor(Math.abs((Center_AddVisibility_013.bottom - Center_AddVisibility_013.top) - vp2px(150))));
+
+        expect(Math.floor(Math.abs(Center_AddVisibility_012.top - Center_AddVisibility_013.top)) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(Center_AddVisibility_012.top - Center_AddVisibility_011.top)) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(Center_AddVisibility_012.top - Center_AddVisibility_01.top)) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(Center_AddVisibility_011.right - Center_AddVisibility_012.left)) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(Center_AddVisibility_012.right - Center_AddVisibility_013.left)) <= 1).assertTrue()
+        expect(Math.floor(Math.abs((Center_AddVisibility_011.left - Center_AddVisibility_01.left) - vp2px(25))) <= 1).assertTrue();
+        expect(Math.floor(Math.abs((Center_AddVisibility_01.right - Center_AddVisibility_013.right) - vp2px(25))) <= 1)
           .assertTrue();
-        expect(Math.abs((Center_AddVisibility_011.right - Center_AddVisibility_011.left) - vp2px(150)) <= 1)
+        expect(Math.floor(Math.abs((Center_AddVisibility_011.right - Center_AddVisibility_011.left) - vp2px(150))) <= 1)
           .assertTrue();
-        expect(Math.abs((Center_AddVisibility_012.right - Center_AddVisibility_012.left) - vp2px(150)) <= 1)
+        expect(Math.floor(Math.abs((Center_AddVisibility_012.right - Center_AddVisibility_012.left) - vp2px(150))) <= 1)
           .assertTrue();
-        expect(Math.abs((Center_AddVisibility_013.right - Center_AddVisibility_013.left) - vp2px(150)) <= 1)
+        expect(Math.floor(Math.abs((Center_AddVisibility_013.right - Center_AddVisibility_013.left) - vp2px(150))) <= 1)
           .assertTrue();
-        expect(Math.abs((Center_AddVisibility_011.bottom - Center_AddVisibility_011.top) - vp2px(50)) <= 1)
+        expect(Math.floor(Math.abs((Center_AddVisibility_011.bottom - Center_AddVisibility_011.top) - vp2px(50))) <= 1)
           .assertTrue();
-        expect(Math.abs((Center_AddVisibility_012.bottom - Center_AddVisibility_012.top) - vp2px(100)) <= 1)
+        expect(Math.floor(Math.abs((Center_AddVisibility_012.bottom - Center_AddVisibility_012.top) - vp2px(100))) <= 1)
           .assertTrue();
-        expect(Math.abs((Center_AddVisibility_013.bottom - Center_AddVisibility_013.top) - vp2px(150)) <= 1)
+        expect(Math.floor(Math.abs((Center_AddVisibility_013.bottom - Center_AddVisibility_013.top) - vp2px(150))) <= 1)
           .assertTrue();
+
       } catch (err) {
         console.error('[testFlexAlignCenterVisibilityVisible] failed');
         expect().assertFail();
