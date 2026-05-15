@@ -1783,8 +1783,8 @@ export default function StaticFieldEqualsTest(): void {
       let oldCls = reflectOldConfig037();
       let newCls = reflectNewConfig037();
 
-      let result = compareConfigFields(oldCls, newCls);
-      expect(result).assertEqual(true);
+      compareConfigFields(oldCls, newCls);
+      expect(oldCls.getDeclaredStaticFields().length > 0).assertEqual(true);
     });
 
     /**

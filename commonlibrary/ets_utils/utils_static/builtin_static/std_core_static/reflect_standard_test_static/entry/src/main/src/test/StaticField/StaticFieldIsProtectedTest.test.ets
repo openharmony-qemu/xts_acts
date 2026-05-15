@@ -1652,8 +1652,8 @@ export default function StaticFieldIsProtectedTest(): void {
           }
         }
       }
-      let apiKeyField: StaticField | null = cls.getStaticField('apiKey');
-      expect(apiKeyField!.isProtected()).assertEqual(true);
+      let secretKeyField: StaticField | null = cls.getStaticField('secretKey');
+      expect(secretKeyField!.isProtected()).assertEqual(true);
     });
 
     /**

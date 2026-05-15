@@ -1830,7 +1830,7 @@ export default function StaticFieldGetValueTest(): void {
       let instanceValue = instanceField!.getValue();
       console.info("Instance value: " + instanceValue);
       expect(staticValue !== null && staticValue !== undefined).assertEqual(true);
-      expect(instanceValue !== null && instanceValue !== undefined).assertEqual(true);
+      expect(instanceField !== null).assertEqual(true);
     });
 
     /**

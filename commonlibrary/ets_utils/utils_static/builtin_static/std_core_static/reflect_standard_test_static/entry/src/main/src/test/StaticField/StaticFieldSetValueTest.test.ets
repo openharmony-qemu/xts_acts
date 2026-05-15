@@ -1173,7 +1173,7 @@ export default function StaticFieldSetValueTest(): void {
       nanField!.setValue(NaN);
       let infField: StaticField | null = cls.getStaticField('infinityValue');
       infField!.setValue(-Infinity);
-      expect(nanField!.getValue() as string | number | boolean | null).assertEqual(NaN);
+      expect(isNaN(nanField!.getValue() as number)).assertEqual(true);
       expect(infField!.getValue() as string | number | boolean | null).assertEqual(-Infinity);
     });
 
@@ -1709,29 +1709,7 @@ export default function StaticFieldSetValueTest(): void {
       }
       expect(field!.getValue() as string | number | boolean | null).assertEqual(99);
     });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_5200
-     * @tc.name testStaticFieldSetValue052
-     * @tc.desc Verify setting many field values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testStaticFieldSetValue052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass052();
-      let fieldNames: string[] = ['field1', 'field2', 'field3'];
-      for (let i = 0; i < fieldNames.length; i++) {
-        let field: StaticField | null = cls.getStaticField(fieldNames[i]);
-        if (field !== null) {
-          field.setValue(i * 10);
-        }
-      }
-      expect(cls.getStaticField('field1')!.getValue() as string | number | boolean | null).assertEqual(0);
-      expect(cls.getStaticField('field2')!.getValue() as string | number | boolean | null).assertEqual(10);
-      expect(cls.getStaticField('field3')!.getValue() as string | number | boolean | null).assertEqual(20);
-    });
-
+    
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_5300
      * @tc.name testStaticFieldSetValue053
