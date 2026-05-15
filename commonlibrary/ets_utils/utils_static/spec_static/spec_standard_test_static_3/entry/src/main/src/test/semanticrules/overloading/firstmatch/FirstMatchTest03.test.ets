@@ -14,15 +14,8 @@
  */
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium/index';
-// declare function setTimeout(handler: Function, timeout?: number): number;
-// // FIX ESE0127
-// function sleep(time: number): Promise<void> {
-//   return new Promise<void>((resolve: Function): void => {
-//     setTimeout((): void => { (resolve as () => void)(); }, time);
-//   });
-// }
 
-// FIX ESE1236581: Add export to all helper classes used in exported function signatures
+
 export class A {}
 export class B {}
 export class C {}
@@ -30,9 +23,6 @@ export class A1 {}
 export class A2 extends A1 {}
 export class A3 extends A2 {}
 
-// ---- Group 1: Generics ----
-// FIX ESE0017/ESE0131: Generic overload signatures cause assembly sig collisions.
-// Replace generic overload declarations with single implementations using instanceof.
 namespace fm_gen_0 {
   export function foo(v: Object): number { if (v instanceof A) return 1; return 2; }
 }
@@ -49,7 +39,7 @@ namespace fm_gen_4 {
   export class C1<T> { foo(v: T): string { return 'foo1'; } }
   export class C2 extends C1<A2> { foo(v: A1): string { return 'foo2'; } }
 }
-// FIX ESE0017: overload decls in class had body issues. Use proper sig+impl pattern.
+
 namespace fm_gen_5 {
   export class C1<T> { foo(v: T): string { return 'foo1'; } }
   export class C2 extends C1<A1> {
@@ -57,7 +47,6 @@ namespace fm_gen_5 {
   }
 }
 
-// ---- Group 2: Top Level ----
 namespace fm_top_0 {
   export function foo(v1: number | string, v2: number | string): number {
     if (typeof v1 === 'number' && typeof v2 === 'string') return 1;
@@ -73,12 +62,11 @@ namespace fm_top_1 {
     return 5;
   }
 }
-// FIX ESE0131: implementation signature was same as second overload sig.
-// Remove duplicate and keep one sig + impl pattern.
+
 namespace fm_top_2 {
   export function foo(v1: number, ...v2: number[]): number { return (v2 && v2.length > 0) ? 2 : 1; }
 }
-// FIX ESE0017/ESE0131: overload sig same as impl signature.
+
 namespace fm_top_3 {
   export function foo(v1: number, ...v2: number[]): number { return (v2 && v2.length > 0) ? 1 : 1; }
 }
@@ -91,12 +79,11 @@ namespace fm_top_5 {
 namespace fm_top_6 {
   export function foo(v: A1): string { if (v instanceof A2) return 'foo with A2'; return 'foo with A1'; }
 }
-// FIX ESE0130/ESE0131: foo(v: A1) overload sig same assembly as impl; foo(v: A2) collides.
-// Single implementation: first-match semantics demonstrated at runtime via same result.
+
 namespace fm_top_7 {
   export function foo(v: A1): string { return 'foo with A1'; }
 }
-// FIX ESE0017/ESE0130/ESE0131: three overload sigs with conflicting assembly sigs.
+
 namespace fm_top_8 {
   export function foo(v: A1): string { return 'foo with A1'; }
 }
@@ -104,9 +91,6 @@ namespace fm_top_9 {
   export function foo(v: A1): string { if (v instanceof A3) return 'foo with A3'; return 'foo with A1'; }
 }
 
-// ---- Group 3: Tuple Subtyping ----
-// [FIX] Array.isArray() 对向上转型为 Object 的元组在 ArkTS 中可能返回 false
-// 采用直接的 instanceof 排除或直接引用比较的方式来精准匹配测试用例
 namespace fm_tuple_0 {
   export let tpl: [A, B] = [new A(), new B()];
   export function foo(v: Object): number {
@@ -157,7 +141,7 @@ namespace fm_tuple_5 {
   }
 }
 
-// ---- Group 4: Union Subtyping ----
+
 namespace fm_union_0 {
   export let a: A | B = new A();
   export let b: B | A = new A();
@@ -217,7 +201,7 @@ export default function FirstMatchTest03():void {
     })
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTHREE_0100
+     * @tc.number    SUB_FIRST_MATCH_TEST_THREE_0100
      * @tc.name      testFirstMatchGenerics0001
      * @tc.desc      Generic overload, less specific appended.
      * @tc.size      MediumTest
@@ -230,7 +214,7 @@ export default function FirstMatchTest03():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTHREE_0200
+     * @tc.number    SUB_FIRST_MATCH_TEST_THREE_0200
      * @tc.name      testFirstMatchGenerics0002
      * @tc.desc      Generic overload, more specific prepended.
      * @tc.size      MediumTest
@@ -243,7 +227,7 @@ export default function FirstMatchTest03():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTHREE_0300
+     * @tc.number    SUB_FIRST_MATCH_TEST_THREE_0300
      * @tc.name      testFirstMatchGenerics0003
      * @tc.desc      Generic extends overload, less specific appended.
      * @tc.size      MediumTest
@@ -256,7 +240,7 @@ export default function FirstMatchTest03():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTHREE_0400
+     * @tc.number    SUB_FIRST_MATCH_TEST_THREE_0400
      * @tc.name      testFirstMatchGenerics0004
      * @tc.desc      Generic extends overload, more specific prepended.
      * @tc.size      MediumTest
@@ -269,7 +253,7 @@ export default function FirstMatchTest03():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTHREE_0500
+     * @tc.number    SUB_FIRST_MATCH_TEST_THREE_0500
      * @tc.name      testFirstMatchGenerics0005
      * @tc.desc      Generic in derived class, less specific.
      * @tc.size      MediumTest
@@ -283,7 +267,7 @@ export default function FirstMatchTest03():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTHREE_0600
+     * @tc.number    SUB_FIRST_MATCH_TEST_THREE_0600
      * @tc.name      testFirstMatchGenerics0006
      * @tc.desc      Generic in derived class, more specific.
      * @tc.size      MediumTest
@@ -297,7 +281,7 @@ export default function FirstMatchTest03():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTHREE_0700
+     * @tc.number    SUB_FIRST_MATCH_TEST_THREE_0700
      * @tc.name      testFirstMatchTopLevel0007
      * @tc.desc      Top level simple overload.
      * @tc.size      MediumTest
@@ -310,7 +294,7 @@ export default function FirstMatchTest03():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTHREE_0800
+     * @tc.number    SUB_FIRST_MATCH_TEST_THREE_0800
      * @tc.name      testFirstMatchTopLevel0008
      * @tc.desc      Top level multiple overload.
      * @tc.size      MediumTest
@@ -326,7 +310,7 @@ export default function FirstMatchTest03():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTHREE_0900
+     * @tc.number    SUB_FIRST_MATCH_TEST_THREE_0900
      * @tc.name      testFirstMatchTopLevel0009
      * @tc.desc      Top level overload with rest param.
      * @tc.size      MediumTest
@@ -339,7 +323,7 @@ export default function FirstMatchTest03():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTHREE_1000
+     * @tc.number    SUB_FIRST_MATCH_TEST_THREE_1000
      * @tc.name      testFirstMatchTopLevel0010
      * @tc.desc      Top level overload of rest param.
      * @tc.size      MediumTest
@@ -352,7 +336,7 @@ export default function FirstMatchTest03():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTHREE_1100
+     * @tc.number    SUB_FIRST_MATCH_TEST_THREE_1100
      * @tc.name      testFirstMatchTopLevel0011
      * @tc.desc      Top level overload with optional param.
      * @tc.size      MediumTest
@@ -365,7 +349,7 @@ export default function FirstMatchTest03():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTHREE_1200
+     * @tc.number    SUB_FIRST_MATCH_TEST_THREE_1200
      * @tc.name      testFirstMatchTopLevel0012
      * @tc.desc      Top level overload of optional param.
      * @tc.size      MediumTest
@@ -378,7 +362,7 @@ export default function FirstMatchTest03():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTHREE_1300
+     * @tc.number    SUB_FIRST_MATCH_TEST_THREE_1300
      * @tc.name      testFirstMatchTopLevel0013
      * @tc.desc      Top level overload with hierarchy.
      * @tc.size      MediumTest
@@ -391,7 +375,7 @@ export default function FirstMatchTest03():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTHREE_1400
+     * @tc.number    SUB_FIRST_MATCH_TEST_THREE_1400
      * @tc.name      testFirstMatchTopLevel0014
      * @tc.desc      Top level overload hierarchy reverse.
      * @tc.size      MediumTest
@@ -404,7 +388,7 @@ export default function FirstMatchTest03():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTHREE_1500
+     * @tc.number    SUB_FIRST_MATCH_TEST_THREE_1500
      * @tc.name      testFirstMatchTopLevel0015
      * @tc.desc      Top level multiple overload hierarchy.
      * @tc.size      MediumTest
@@ -418,7 +402,7 @@ export default function FirstMatchTest03():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTHREE_1600
+     * @tc.number    SUB_FIRST_MATCH_TEST_THREE_1600
      * @tc.name      testFirstMatchTopLevel0016
      * @tc.desc      Top level multiple overload hierarchy reverse.
      * @tc.size      MediumTest
@@ -432,7 +416,7 @@ export default function FirstMatchTest03():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTHREE_1700
+     * @tc.number    SUB_FIRST_MATCH_TEST_THREE_1700
      * @tc.name      testFirstMatchTupleSubtyping0017
      * @tc.desc      Tuple types, single type functions after tuple.
      * @tc.size      MediumTest
@@ -446,7 +430,7 @@ export default function FirstMatchTest03():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTHREE_1800
+     * @tc.number    SUB_FIRST_MATCH_TEST_THREE_1800
      * @tc.name      testFirstMatchTupleSubtyping0018
      * @tc.desc      Tuple types, single type functions before tuple.
      * @tc.size      MediumTest
@@ -460,7 +444,7 @@ export default function FirstMatchTest03():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTHREE_1900
+     * @tc.number    SUB_FIRST_MATCH_TEST_THREE_1900
      * @tc.name      testFirstMatchTupleSubtyping0019
      * @tc.desc      Tuple types, tuple between single.
      * @tc.size      MediumTest
@@ -474,7 +458,7 @@ export default function FirstMatchTest03():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTHREE_2000
+     * @tc.number    SUB_FIRST_MATCH_TEST_THREE_2000
      * @tc.name      testFirstMatchTupleSubtyping0020
      * @tc.desc      2 tuple signatures length match.
      * @tc.size      MediumTest
@@ -487,7 +471,7 @@ export default function FirstMatchTest03():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTHREE_2100
+     * @tc.number    SUB_FIRST_MATCH_TEST_THREE_2100
      * @tc.name      testFirstMatchTupleSubtyping0021
      * @tc.desc      2 tuple signatures length match reverse.
      * @tc.size      MediumTest
@@ -500,7 +484,7 @@ export default function FirstMatchTest03():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTHREE_2200
+     * @tc.number    SUB_FIRST_MATCH_TEST_THREE_2200
      * @tc.name      testFirstMatchTupleSubtyping0022
      * @tc.desc      Alias of 2 tuple signatures.
      * @tc.size      MediumTest
@@ -513,7 +497,7 @@ export default function FirstMatchTest03():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTHREE_2300
+     * @tc.number    SUB_FIRST_MATCH_TEST_THREE_2300
      * @tc.name      testFirstMatchUnionSubtyping0023
      * @tc.desc      Union subtyping, single type before union.
      * @tc.size      MediumTest
@@ -528,7 +512,7 @@ export default function FirstMatchTest03():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTHREE_2400
+     * @tc.number    SUB_FIRST_MATCH_TEST_THREE_2400
      * @tc.name      testFirstMatchUnionSubtyping0024
      * @tc.desc      Union subtyping, single type after union.
      * @tc.size      MediumTest
@@ -543,7 +527,7 @@ export default function FirstMatchTest03():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTHREE_2500
+     * @tc.number    SUB_FIRST_MATCH_TEST_THREE_2500
      * @tc.name      testFirstMatchUnionSubtyping0025
      * @tc.desc      3 union type parameter functions.
      * @tc.size      MediumTest
@@ -560,7 +544,7 @@ export default function FirstMatchTest03():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTHREE_2600
+     * @tc.number    SUB_FIRST_MATCH_TEST_THREE_2600
      * @tc.name      testFirstMatchUnionSubtyping0026
      * @tc.desc      3 union type parameter functions reversed.
      * @tc.size      MediumTest
@@ -577,7 +561,7 @@ export default function FirstMatchTest03():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTHREE_2700
+     * @tc.number    SUB_FIRST_MATCH_TEST_THREE_2700
      * @tc.name      testFirstMatchUnionSubtyping0027
      * @tc.desc      3 union type parameter matched specific.
      * @tc.size      MediumTest

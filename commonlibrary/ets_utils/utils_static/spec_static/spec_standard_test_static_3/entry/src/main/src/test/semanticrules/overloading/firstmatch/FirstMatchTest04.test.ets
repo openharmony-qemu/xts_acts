@@ -14,17 +14,7 @@
  */
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium/index';
-// declare function setTimeout(handler: Function, timeout?: number): number;
-// // FIX ESE0127
-// function sleep(time: number): Promise<void> {
-//   return new Promise<void>((resolve: Function): void => {
-//     setTimeout(resolve, time);
-//   });
-// }
 
-// ============================================================================
-// Group 1: subtypes_basic (Object / null / undefined)
-// ============================================================================
 namespace sub_basic_0 {
   export function foo(p: Object | null): string {
     return "foo1";
@@ -57,11 +47,6 @@ namespace sub_basic_2 {
   }
 }
 
-// ============================================================================
-// Group 2: subtypes_function (Function parameter subtyping)
-// [FIX] 使用 "运行时参数探针(Runtime Parameter Probing)" 彻底取代不可靠的 toString()
-// 并使用 (arg: Object) => void 规避 undefined 强转 String 导致的崩溃
-// ============================================================================
 namespace sub_func_4 {
   export interface I1 {}
   export class C1 implements I1 {}
@@ -76,7 +61,6 @@ namespace sub_func_4 {
   export function foo(p: Object): string { return "foo1"; }
 
   export function bar(p: Object): string {
-    // 1. 保留 toString() 作为备用，应对 JIT/Debug 模式
     let str: string = p.toString();
     if (str.indexOf('C2') >= 0) return 'foo1';
     if (str.indexOf('C1') >= 0) return 'foo2';
@@ -84,12 +68,8 @@ namespace sub_func_4 {
     if (str.indexOf('I3') >= 0) return 'foo5';
     if (str.indexOf('I2') >= 0) return 'foo5';
 
-    // 2. 运行时探针 (针对 AOT / 源码混淆后的设备环境)
-    // 强制转换为接收任意 Object 且返回 void 的函数，避免 undefined cast 崩溃
     let fn = p as (arg: Object) => void;
 
-    // 根据参数逆变的严格限制，按"最纯粹接口 -> 最终实体类"的顺序探测：
-    // 如果向期待 C1 的闭包传入 PureI1，ArkTS 会抛出 ClassCastError，利用这一点精确定位目标闭包！
     try { fn(new PureI1()); return 'foo3'; } catch (e) { let err = e; }
     try { fn(new PureI3()); return 'foo5'; } catch (e) { let err = e; }
     try { fn(new PureI2()); return 'foo5'; } catch (e) { let err = e; }
@@ -100,9 +80,6 @@ namespace sub_func_4 {
   }
 }
 
-// ============================================================================
-// Group 3: subtypes_mixing (Mixed subtype signatures)
-// ============================================================================
 namespace sub_mix_5 {
   export class B {}
   export class D extends B {}
@@ -113,9 +90,6 @@ namespace sub_mix_5 {
   }
 }
 
-// ============================================================================
-// Group 4: subtypes_numeric (Numeric Types)
-// ============================================================================
 namespace sub_num_6 {
   export function foo(p: number): string {
     return "foo1";
@@ -127,9 +101,6 @@ namespace sub_num_6 {
   }
 }
 
-// ============================================================================
-// Group 5: subtypes_regular (Class/Interface hierarchy)
-// ============================================================================
 namespace sub_reg_7 {
   export interface I1 {}
   export class C1 implements I1 {}
@@ -160,9 +131,6 @@ namespace sub_reg_7 {
   }
 }
 
-// ============================================================================
-// Test Suite
-// ============================================================================
 export default function FirstMatchTest04():void {
   describe('FirstMatchTest04', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -189,7 +157,7 @@ export default function FirstMatchTest04():void {
     })
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTFOUR_0100
+     * @tc.number    SUB_FIRST_MATCH_TEST_FOUR_0100
      * @tc.name      testSubtypesBasic0001
      * @tc.desc      First match for basic types (Any/Object vs null).
      * @tc.size      MediumTest
@@ -204,7 +172,7 @@ export default function FirstMatchTest04():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTFOUR_0200
+     * @tc.number    SUB_FIRST_MATCH_TEST_FOUR_0200
      * @tc.name      testSubtypesBasic0002
      * @tc.desc      First match for basic types (Object vs null).
      * @tc.size      MediumTest
@@ -219,7 +187,7 @@ export default function FirstMatchTest04():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTFOUR_0300
+     * @tc.number    SUB_FIRST_MATCH_TEST_FOUR_0300
      * @tc.name      testSubtypesBasic0003
      * @tc.desc      First match for basic types (undefined vs null).
      * @tc.size      MediumTest
@@ -234,7 +202,7 @@ export default function FirstMatchTest04():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTFOUR_0400
+     * @tc.number    SUB_FIRST_MATCH_TEST_FOUR_0400
      * @tc.name      testSubtypesFunction0004
      * @tc.desc      More specific methods placed before general candidates (Functions).
      * @tc.size      MediumTest
@@ -256,7 +224,7 @@ export default function FirstMatchTest04():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTFOUR_0500
+     * @tc.number    SUB_FIRST_MATCH_TEST_FOUR_0500
      * @tc.name      testSubtypesMixing0005
      * @tc.desc      Mixing subtypes within the same signature.
      * @tc.size      MediumTest
@@ -272,7 +240,7 @@ export default function FirstMatchTest04():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTFOUR_0600
+     * @tc.number    SUB_FIRST_MATCH_TEST_FOUR_0600
      * @tc.name      testSubtypesNumeric0006
      * @tc.desc      More specific methods placed before general candidates (Numeric Types).
      * @tc.size      MediumTest
@@ -287,7 +255,7 @@ export default function FirstMatchTest04():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTFOUR_0700
+     * @tc.number    SUB_FIRST_MATCH_TEST_FOUR_0700
      * @tc.name      testSubtypesRegular0007
      * @tc.desc      More specific methods placed before general candidates (Regular Hierarchies).
      * @tc.size      MediumTest

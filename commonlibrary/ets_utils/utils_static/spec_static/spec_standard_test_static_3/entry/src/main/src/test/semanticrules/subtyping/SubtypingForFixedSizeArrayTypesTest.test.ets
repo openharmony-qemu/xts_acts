@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
  * you may not use this file except in compliance with the License.
@@ -509,7 +509,7 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_0100
+     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_1300
      * @tc.name      testNegativeTypeSafety0001
      * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
     <: FixedSize<A> if B <: A.'
@@ -524,7 +524,7 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_0200
+     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_1400
      * @tc.name      testNegativeTypeSafety0002
      * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
     <: FixedSize<A> if B <: A.'
@@ -539,7 +539,7 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_0300
+     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_1500
      * @tc.name      testNegativeTypeSafety0003
      * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
     <: FixedSize<A> if B <: A.'
@@ -554,7 +554,7 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_0400
+     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_1600
      * @tc.name      testNegativeTypeSafety0004
      * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
     <: FixedSize<A> if B <: A.'
@@ -569,7 +569,7 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_0500
+     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_1700
      * @tc.name      testNegativeTypeSafety0005
      * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
     <: FixedSize<A> if B <: A.'
@@ -584,7 +584,7 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_0600
+     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_1800
      * @tc.name      testNegativeTypeSafety0006
      * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
     <: FixedSize<A> if B <: A.'
@@ -599,7 +599,7 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_0700
+     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_1900
      * @tc.name      testNegativeTypeSafety0007
      * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
     <: FixedSize<A> if B <: A.'
@@ -614,7 +614,7 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_0800
+     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_2000
      * @tc.name      testNegativeTypeSafety0008
      * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
     <: FixedSize<A> if B <: A.'
@@ -629,7 +629,7 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_0900
+     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_2100
      * @tc.name      testNegativeTypeSafety0009
      * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
     <: FixedSize<A> if B <: A.'
@@ -644,7 +644,7 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_1000
+     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_2200
      * @tc.name      testNegativeTypeSafety0010
      * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
     <: FixedSize<A> if B <: A.'
@@ -659,7 +659,7 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_1100
+     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_2300
      * @tc.name      testNegativeTypeSafety0011
      * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
     <: FixedSize<A> if B <: A.'
@@ -674,7 +674,7 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_1200
+     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_2400
      * @tc.name      testNegativeTypeSafety0012
      * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
     <: FixedSize<A> if B <: A.'
@@ -689,7 +689,7 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_1300
+     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_2500
      * @tc.name      testNegativeTypeSafety0013
      * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
     <: FixedSize<A> if B <: A.'
@@ -704,7 +704,7 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_1400
+     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_2600
      * @tc.name      testNegativeTypeSafety0014
      * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
     <: FixedSize<A> if B <: A.'
@@ -719,7 +719,7 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_1500
+     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_2700
      * @tc.name      testNegativeTypeSafety0015
      * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
     <: FixedSize<A> if B <: A.'

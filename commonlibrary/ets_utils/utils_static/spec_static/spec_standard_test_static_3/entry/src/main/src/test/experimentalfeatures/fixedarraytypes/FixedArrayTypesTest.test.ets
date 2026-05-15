@@ -56,10 +56,6 @@ function foo<T>(p: Object | null | undefined): FixedArray<T> {
   return p! as FixedArray<T>
 }
 
-
-
-
-// Classes for covariance testing
 class ClassA {}
 class ClassB extends ClassA {}
 
@@ -89,7 +85,7 @@ export default function FixedArrayTypesTest():void {
     })
 
     /**
-     * @tc.number    SUB_FIXEDARRAY_CAST_000100
+     * @tc.number    SUB_FIXED_ARRAY_TEST_0100
      * @tc.name      testFixedArrayCast0001
      * @tc.desc      Testing FixedArray<byte> casting to Object and back to original type
      * @tc.size      MediumTest
@@ -105,7 +101,7 @@ export default function FixedArrayTypesTest():void {
     });
 
     /**
-     * @tc.number    SUB_FIXEDARRAY_CAST_000200
+     * @tc.number    SUB_FIXED_ARRAY_TEST_0200
      * @tc.name      testFixedArrayCast0002
      * @tc.desc      Testing FixedArray<short> casting to Object and back to original type
      * @tc.size      MediumTest
@@ -121,7 +117,7 @@ export default function FixedArrayTypesTest():void {
     });
 
     /**
-     * @tc.number    SUB_FIXEDARRAY_CAST_000300
+     * @tc.number    SUB_FIXED_ARRAY_TEST_0300
      * @tc.name      testFixedArrayCast0003
      * @tc.desc      Testing FixedArray<int> casting to Object and back to original type
      * @tc.size      MediumTest
@@ -137,7 +133,7 @@ export default function FixedArrayTypesTest():void {
     });
 
     /**
-     * @tc.number    SUB_FIXEDARRAY_CAST_000400
+     * @tc.number    SUB_FIXED_ARRAY_TEST_0400
      * @tc.name      testFixedArrayCast0004
      * @tc.desc      Testing FixedArray<long> casting to Object and back to original type
      * @tc.size      MediumTest
@@ -153,7 +149,7 @@ export default function FixedArrayTypesTest():void {
     });
 
     /**
-     * @tc.number    SUB_FIXEDARRAY_CAST_000500
+     * @tc.number    SUB_FIXED_ARRAY_TEST_0500
      * @tc.name      testFixedArrayCast0005
      * @tc.desc      Testing FixedArray<float> casting to Object and back to original type
      * @tc.size      MediumTest
@@ -168,7 +164,7 @@ export default function FixedArrayTypesTest():void {
     });
 
     /**
-     * @tc.number    SUB_FIXEDARRAY_CAST_000600
+     * @tc.number    SUB_FIXED_ARRAY_TEST_0600
      * @tc.name      testFixedArrayCast0006
      * @tc.desc      Testing FixedArray<double> casting to Object and back to original type
      * @tc.size      MediumTest
@@ -183,7 +179,7 @@ export default function FixedArrayTypesTest():void {
     });
 
     /**
-     * @tc.number    SUB_FIXEDARRAY_CAST_000700
+     * @tc.number    SUB_FIXED_ARRAY_TEST_0700
      * @tc.name      testFixedArrayCast0007
      * @tc.desc      Testing FixedArray<char> casting to Object and back to original type
      * @tc.size      MediumTest
@@ -199,7 +195,7 @@ export default function FixedArrayTypesTest():void {
     });
 
     /**
-     * @tc.number    SUB_FIXEDARRAY_CAST_000800
+     * @tc.number    SUB_FIXED_ARRAY_TEST_0800
      * @tc.name      testFixedArrayCast0008
      * @tc.desc      Testing FixedArray<boolean> casting to Object and back to original type
      * @tc.size      MediumTest
@@ -215,7 +211,7 @@ export default function FixedArrayTypesTest():void {
     });
 
     /**
-     * @tc.number    SUB_FIXEDARRAY_CAST_000900
+     * @tc.number    SUB_FIXED_ARRAY_TEST_0900
      * @tc.name      testFixedArrayCast0009
      * @tc.desc      Testing FixedArray<string> casting to Object and back to original type
      * @tc.size      MediumTest
@@ -231,7 +227,7 @@ export default function FixedArrayTypesTest():void {
     });
 
     /**
-     * @tc.number    SUB_FIXEDARRAY_CAST_001000
+     * @tc.number    SUB_FIXED_ARRAY_TEST_1000
      * @tc.name      testFixedArrayCast0010
      * @tc.desc      Testing nested FixedArray casting to Object and back
      * @tc.size      MediumTest
@@ -250,7 +246,7 @@ export default function FixedArrayTypesTest():void {
     });
 
     /**
-     * @tc.number    SUB_FIXEDARRAY_CAST_001100
+     * @tc.number    SUB_FIXED_ARRAY_TEST_1100
      * @tc.name      testFixedArrayCast0011
      * @tc.desc      Testing FixedArray type cast error to different type expects ClassCastError
      * @tc.size      MediumTest
@@ -270,7 +266,7 @@ export default function FixedArrayTypesTest():void {
     });
 
     /**
-     * @tc.number    SUB_FIXEDARRAY_CAST_001200
+     * @tc.number    SUB_FIXED_ARRAY_TEST_1200
      * @tc.name      testFixedArrayCast0012
      * @tc.desc      Testing FixedArray type cast error short to different type expects ClassCastError
      * @tc.size      MediumTest
@@ -290,7 +286,7 @@ export default function FixedArrayTypesTest():void {
     });
 
     /**
-     * @tc.number    SUB_FIXEDARRAY_CAST_001300
+     * @tc.number    SUB_FIXED_ARRAY_TEST_1300
      * @tc.name      testFixedArrayCast0013
      * @tc.desc      Testing FixedArray casting using generic function
      * @tc.size      MediumTest
@@ -307,7 +303,7 @@ export default function FixedArrayTypesTest():void {
     });
 
     /**
-     * @tc.number    SUB_FIXEDARRAY_CAST_001400
+     * @tc.number    SUB_FIXED_ARRAY_TEST_1400
      * @tc.name      testFixedArrayCast0014
      * @tc.desc      Testing FixedArray casting using generic function
      * @tc.size      MediumTest
@@ -324,7 +320,7 @@ export default function FixedArrayTypesTest():void {
     });
 
     /**
-     * @tc.number    SUB_FIXEDARRAY_COVARIANCE_000100
+     * @tc.number    SUB_FIXED_ARRAY_TEST_1500
      * @tc.name      testFixedArrayCovariance0001
      * @tc.desc      FixedArrays are covariant
      * @tc.size      MediumTest
@@ -342,7 +338,7 @@ export default function FixedArrayTypesTest():void {
     });
 
     /**
-     * @tc.number    SUB_FIXEDARRAY_LITERAL_000100
+     * @tc.number    SUB_FIXED_ARRAY_TEST_1600
      * @tc.name      testFixedArrayLiteral0001
      * @tc.desc      An array literal with number type
      * @tc.size      MediumTest
@@ -358,7 +354,7 @@ export default function FixedArrayTypesTest():void {
     });
 
     /**
-     * @tc.number    SUB_FIXEDARRAY_LITERAL_000200
+     * @tc.number    SUB_FIXED_ARRAY_TEST_1700
      * @tc.name      testFixedArrayLiteral0002
      * @tc.desc      An array literal with string type
      * @tc.size      MediumTest
@@ -374,7 +370,7 @@ export default function FixedArrayTypesTest():void {
     });
 
     /**
-     * @tc.number    SUB_FIXEDARRAY_LITERAL_000300
+     * @tc.number    SUB_FIXED_ARRAY_TEST_1800
      * @tc.name      testFixedArrayLiteral0003
      * @tc.desc      An array literal with boolean type
      * @tc.size      MediumTest
@@ -390,7 +386,7 @@ export default function FixedArrayTypesTest():void {
     });
 
     /**
-     * @tc.number    SUB_FIXEDARRAY_LITERAL_000400
+     * @tc.number    SUB_FIXED_ARRAY_TEST_1900
      * @tc.name      testFixedArrayLiteral0004
      * @tc.desc      An array literal with bigint type
      * @tc.size      MediumTest

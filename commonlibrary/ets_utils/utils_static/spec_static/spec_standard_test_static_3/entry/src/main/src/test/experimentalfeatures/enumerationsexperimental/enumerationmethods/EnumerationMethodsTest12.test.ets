@@ -458,7 +458,7 @@ export default function EnumerationMethodsTest(): void {
 
     /**
      * 源文件：        enum_implicit_type_fromvalue_0.ets
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0100
+     * @tc.number    SUB_ENUMERATION_METHODS_XTS_ONE_TEST_0100
      * @tc.name      testEnumerationMethods0155
      * @tc.desc      Checking for enum with implicit int type constant for fromValue method support.
      * @tc.size      MediumTest

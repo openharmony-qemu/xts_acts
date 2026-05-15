@@ -478,7 +478,7 @@ export default function FirstMatchTest01(): void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTONE_1500
+     * @tc.number    SUB_FIRST_MATCH_TEST_1500
      * @tc.name      testFirstMatch1c1i0015
      * @tc.desc      Linearization C1 -> I1. Simple overload with optional param.
      * @tc.size      MediumTest

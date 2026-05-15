@@ -14,13 +14,7 @@
  */
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium/index';
-// declare function setTimeout(handler: Function, timeout?: number): number;
-// // FIX ESE0127: simplified sleep avoiding PromiseLike and setTimeout callback type issues
-// function sleep(time: number): Promise<void> {
-//   return new Promise<void>((resolve: Function): void => {
-//     setTimeout((): void => { (resolve as () => void)(); }, time);
-//   });
-// }
+
 
 export class A1 {}
 export class A2 extends A1 {}
@@ -432,7 +426,7 @@ export default function FirstMatchTest02():void {
     })
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTWO_0100
+     * @tc.number    SUB_FIRST_MATCH_TEST_TWO_0100
      * @tc.name      testFirstMatchTwo0001
      * @tc.desc      Linearization C2 -> C1.
      * @tc.size      MediumTest
@@ -448,7 +442,7 @@ export default function FirstMatchTest02():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTWO_0200
+     * @tc.number    SUB_FIRST_MATCH_TEST_TWO_0200
      * @tc.name      testFirstMatchTwo0002
      * @tc.desc      Linearization C2 -> C1 Multiple overload.
      * @tc.size      MediumTest
@@ -468,7 +462,7 @@ export default function FirstMatchTest02():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTWO_0300
+     * @tc.number    SUB_FIRST_MATCH_TEST_TWO_0300
      * @tc.name      testFirstMatchTwo0003
      * @tc.desc      Linearization C2 -> C1 Rest param.
      * @tc.size      MediumTest
@@ -484,7 +478,7 @@ export default function FirstMatchTest02():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTWO_0400
+     * @tc.number    SUB_FIRST_MATCH_TEST_TWO_0400
      * @tc.name      testFirstMatchTwo0004
      * @tc.desc      Linearization C2 -> C1 -> I1 -> I2.
      * @tc.size      MediumTest
@@ -504,7 +498,7 @@ export default function FirstMatchTest02():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTWO_0500
+     * @tc.number    SUB_FIRST_MATCH_TEST_TWO_0500
      * @tc.name      testFirstMatchTwo0005
      * @tc.desc      Linearization C2 -> C1 -> I1 -> I2 Override.
      * @tc.size      MediumTest
@@ -523,7 +517,7 @@ export default function FirstMatchTest02():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTWO_0600
+     * @tc.number    SUB_FIRST_MATCH_TEST_TWO_0600
      * @tc.name      testFirstMatchTwo0006
      * @tc.desc      Linearization C2 -> C1 -> I1 -> I2 Rest param.
      * @tc.size      MediumTest
@@ -543,7 +537,7 @@ export default function FirstMatchTest02():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTWO_0700
+     * @tc.number    SUB_FIRST_MATCH_TEST_TWO_0700
      * @tc.name      testFirstMatchTwo0007
      * @tc.desc      Linearization C2 -> C1 -> I1 -> I2 Rest param 2.
      * @tc.size      MediumTest
@@ -563,7 +557,7 @@ export default function FirstMatchTest02():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTWO_0800
+     * @tc.number    SUB_FIRST_MATCH_TEST_TWO_0800
      * @tc.name      testFirstMatchTwo0008
      * @tc.desc      Linearization C2 -> C1 -> I1 -> I2 Optional param.
      * @tc.size      MediumTest
@@ -582,7 +576,7 @@ export default function FirstMatchTest02():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTWO_0900
+     * @tc.number    SUB_FIRST_MATCH_TEST_TWO0900
      * @tc.name      testFirstMatchTwo0009
      * @tc.desc      Linearization C2 -> C1 -> I1 -> I2 Optional param 2.
      * @tc.size      MediumTest
@@ -601,7 +595,7 @@ export default function FirstMatchTest02():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTWO_1000
+     * @tc.number    SUB_FIRST_MATCH_TEST_TWO_1000
      * @tc.name      testFirstMatchTwo0010
      * @tc.desc      Linearization C2 -> C1 -> I1 -> I2 Hierarchy.
      * @tc.size      MediumTest
@@ -620,7 +614,7 @@ export default function FirstMatchTest02():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTWO_1100
+     * @tc.number    SUB_FIRST_MATCH_TEST_TWO_1100
      * @tc.name      testFirstMatchTwo0011
      * @tc.desc      Linearization C2 -> C1 -> I1 -> I2 Overload override.
      * @tc.size      MediumTest
@@ -639,7 +633,7 @@ export default function FirstMatchTest02():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTWO_1200
+     * @tc.number    SUB_FIRST_MATCH_TEST_TWO_1200
      * @tc.name      testFirstMatchTwo0012
      * @tc.desc      Linearization C2 -> C1 -> I1 -> I2 Override overload.
      * @tc.size      MediumTest
@@ -658,7 +652,7 @@ export default function FirstMatchTest02():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTWO_1300
+     * @tc.number    SUB_FIRST_MATCH_TEST_TWO_1300
      * @tc.name      testFirstMatchTwo0013
      * @tc.desc      C2 -> C1 rest override.
      * @tc.size      MediumTest
@@ -675,7 +669,7 @@ export default function FirstMatchTest02():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTWO_1400
+     * @tc.number    SUB_FIRST_MATCH_TEST_TWO_1400
      * @tc.name      testFirstMatchTwo0014
      * @tc.desc      C2 -> C1 optional override.
      * @tc.size      MediumTest
@@ -691,7 +685,7 @@ export default function FirstMatchTest02():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTWO_1500
+     * @tc.number    SUB_FIRST_MATCH_TEST_TWO_1500
      * @tc.name      testFirstMatchTwo0015
      * @tc.desc      C2 -> C1 4 interfaces.
      * @tc.size      MediumTest
@@ -705,7 +699,7 @@ export default function FirstMatchTest02():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTWO_1600
+     * @tc.number    SUB_FIRST_MATCH_TEST_TWO_1600
      * @tc.name      testFirstMatchTwo0016
      * @tc.desc      C2 -> C1 optional override 2.
      * @tc.size      MediumTest
@@ -722,7 +716,7 @@ export default function FirstMatchTest02():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTWO_1700
+     * @tc.number    SUB_FIRST_MATCH_TEST_TWO_1700
      * @tc.name      testFirstMatchTwo0017
      * @tc.desc      C2 -> C1 5 interfaces.
      * @tc.size      MediumTest
@@ -739,7 +733,7 @@ export default function FirstMatchTest02():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTWO_1800
+     * @tc.number    SUB_FIRST_MATCH_TEST_TWO_1800
      * @tc.name      testFirstMatchTwo0018
      * @tc.desc      C2 -> C1 hierarchy.
      * @tc.size      MediumTest
@@ -757,7 +751,7 @@ export default function FirstMatchTest02():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTWO_1900
+     * @tc.number    SUB_FIRST_MATCH_TEST_TWO_1900
      * @tc.name      testFirstMatchTwo0019
      * @tc.desc      C2 -> C1 override hierarchy.
      * @tc.size      MediumTest
@@ -775,7 +769,7 @@ export default function FirstMatchTest02():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTWO_2000
+     * @tc.number    SUB_FIRST_MATCH_TEST_TWO_2000
      * @tc.name      testFirstMatchTwo0020
      * @tc.desc      C2 -> C1 mixed hierarchy.
      * @tc.size      MediumTest
@@ -795,7 +789,7 @@ export default function FirstMatchTest02():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTWO_2100
+     * @tc.number    SUB_FIRST_MATCH_TEST_TWO_2100
      * @tc.name      testFirstMatchTwo0021
      * @tc.desc      C3 -> C2 -> C1 simple.
      * @tc.size      MediumTest
@@ -815,7 +809,7 @@ export default function FirstMatchTest02():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTWO_2200
+     * @tc.number    SUB_FIRST_MATCH_TEST_TWO_2200
      * @tc.name      testFirstMatchTwo0022
      * @tc.desc      C3 -> C2 -> C1 override.
      * @tc.size      MediumTest
@@ -832,7 +826,7 @@ export default function FirstMatchTest02():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTWO_2300
+     * @tc.number    SUB_FIRST_MATCH_TEST_TWO_2300
      * @tc.name      testFirstMatchTwo0023
      * @tc.desc      C3 -> C2 -> C1 multiple overload.
      * @tc.size      MediumTest
@@ -856,7 +850,7 @@ export default function FirstMatchTest02():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTWO_2400
+     * @tc.number    SUB_FIRST_MATCH_TEST_TWO_2400
      * @tc.name      testFirstMatchTwo0024
      * @tc.desc      C3 -> C2 -> C1 rest.
      * @tc.size      MediumTest
@@ -875,7 +869,7 @@ export default function FirstMatchTest02():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTWO_2500
+     * @tc.number    SUB_FIRST_MATCH_TEST_TWO_2500
      * @tc.name      testFirstMatchTwo0025
      * @tc.desc      C3 -> C2 -> C1 rest override.
      * @tc.size      MediumTest
@@ -895,7 +889,7 @@ export default function FirstMatchTest02():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTWO_2600
+     * @tc.number    SUB_FIRST_MATCH_TEST_TWO_2600
      * @tc.name      testFirstMatchTwo0026
      * @tc.desc      C3 -> C2 -> C1 optional.
      * @tc.size      MediumTest
@@ -915,7 +909,7 @@ export default function FirstMatchTest02():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTWO_2700
+     * @tc.number    SUB_FIRST_MATCH_TEST_TWO_2700
      * @tc.name      testFirstMatchTwo0027
      * @tc.desc      C3 -> C2 -> C1 optional override.
      * @tc.size      MediumTest
@@ -936,7 +930,7 @@ export default function FirstMatchTest02():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTWO_2800
+     * @tc.number    SUB_FIRST_MATCH_TEST_TWO_2800
      * @tc.name      testFirstMatchTwo0028
      * @tc.desc      C3 -> C2 -> C1 hierarchy overload.
      * @tc.size      MediumTest
@@ -954,7 +948,7 @@ export default function FirstMatchTest02():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTWO_2900
+     * @tc.number    SUB_FIRST_MATCH_TEST_TWO_2900
      * @tc.name      testFirstMatchTwo0029
      * @tc.desc      C3 -> C2 -> C1 hierarchy override.
      * @tc.size      MediumTest
@@ -974,7 +968,7 @@ export default function FirstMatchTest02():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTWO_3000
+     * @tc.number    SUB_FIRST_MATCH_TEST_TWO_3000
      * @tc.name      testFirstMatchTwo0030
      * @tc.desc      C3 -> C2 -> C1 8 interfaces.
      * @tc.size      MediumTest
@@ -993,7 +987,7 @@ export default function FirstMatchTest02():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TESTTWO_3100
+     * @tc.number    SUB_FIRST_MATCH_TEST_TWO_3100
      * @tc.name      testFirstMatchTwo0031
      * @tc.desc      C3 -> C2 -> C1 hierarchy override 2.
      * @tc.size      MediumTest
