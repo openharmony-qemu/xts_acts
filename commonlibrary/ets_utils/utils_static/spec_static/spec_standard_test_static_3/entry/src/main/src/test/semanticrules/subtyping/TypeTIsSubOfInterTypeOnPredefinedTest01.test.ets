@@ -674,7 +674,7 @@ namespace testNS7_3 {
 
   export function runTest_3(): boolean {
     let v1: float = 123
-    let v2: float = 45.6
+    let v2: float = 45.6f
     let res: boolean =
       check_3(v1, false, 1) &&
       check_3(v2, false, 2)

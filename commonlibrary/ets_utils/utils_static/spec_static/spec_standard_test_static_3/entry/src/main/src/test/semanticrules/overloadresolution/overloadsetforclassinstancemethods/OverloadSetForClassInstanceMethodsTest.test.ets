@@ -471,7 +471,7 @@ export default function OverloadSetForClassInstanceMethodsTest():void {
      * @tc.level     Level 2
      */
     it("testOverloadSetForClassInstanceMethods0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let f: float = 5.1;
+      let f: float = 5.1f;
       let a: A_num = new A_num();
       expect('fI').assertEqual(a.foo(f));
     });

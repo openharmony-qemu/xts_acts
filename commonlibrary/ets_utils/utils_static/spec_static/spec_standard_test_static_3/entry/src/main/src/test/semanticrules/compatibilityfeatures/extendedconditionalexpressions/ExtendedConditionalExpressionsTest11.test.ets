@@ -246,7 +246,7 @@ export default function ExtendedConditionalExpressionsTest11():void {
      * @tc.level     Level 2
      */
     it('testConditionalExpression0390', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: float = 1.0  // truthy
+      let v: float = 1.0f  // truthy
       let res = v ? 0 : 1
       expect(res).assertEqual(0);
     });

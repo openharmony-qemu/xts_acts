@@ -231,7 +231,7 @@ export default function OverloadSetForFunctionsTest02():void {
       let s: short = 1;
       let i: int = 1;
       let l: long = 1;
-      let f: float = 1.0;
+      let f: float = 1.0f;
       let n: number = 1.0;
       expect('fI').assertEqual(foo_num2(b));
     });
@@ -249,7 +249,7 @@ export default function OverloadSetForFunctionsTest02():void {
       let s: short = 1;
       let i: int = 1;
       let l: long = 1;
-      let f: float = 1.0;
+      let f: float = 1.0f;
       let n: number = 1.0;
       expect('fI').assertEqual(foo_num2(s));
     });
@@ -267,7 +267,7 @@ export default function OverloadSetForFunctionsTest02():void {
       let s: short = 1;
       let i: int = 1;
       let l: long = 1;
-      let f: float = 1.0;
+      let f: float = 1.0f;
       let n: number = 1.0;
       expect('fI').assertEqual(foo_num2(i));
     });
@@ -285,7 +285,7 @@ export default function OverloadSetForFunctionsTest02():void {
       let s: short = 1;
       let i: int = 1;
       let l: long = 1;
-      let f: float = 1.0;
+      let f: float = 1.0f;
       let n: number = 1.0;
       expect('fL').assertEqual(foo_num2(l));
     });
@@ -303,7 +303,7 @@ export default function OverloadSetForFunctionsTest02():void {
       let s: short = 1;
       let i: int = 1;
       let l: long = 1;
-      let f: float = 1.0;
+      let f: float = 1.0f;
       let n: number = 1.0;
       expect('fF').assertEqual(foo_num2(f));
     });
@@ -321,7 +321,7 @@ export default function OverloadSetForFunctionsTest02():void {
       let s: short = 1;
       let i: int = 1;
       let l: long = 1;
-      let f: float = 1.0;
+      let f: float = 1.0f;
       let n: number = 1.0;
       expect('fN').assertEqual(foo_num2(n));
     });
@@ -339,7 +339,7 @@ export default function OverloadSetForFunctionsTest02():void {
       let s: short = 1;
       let i: int = 1;
       let l: long = 1;
-      let f: float = 1.0;
+      let f: float = 1.0f;
       let n: number = 1.0;
       expect('fL').assertEqual(foo_num3(b));
     });
@@ -357,7 +357,7 @@ export default function OverloadSetForFunctionsTest02():void {
       let s: short = 1;
       let i: int = 1;
       let l: long = 1;
-      let f: float = 1.0;
+      let f: float = 1.0f;
       let n: number = 1.0;
       expect('fL').assertEqual(foo_num3(s));
     });
@@ -375,7 +375,7 @@ export default function OverloadSetForFunctionsTest02():void {
       let s: short = 1;
       let i: int = 1;
       let l: long = 1;
-      let f: float = 1.0;
+      let f: float = 1.0f;
       let n: number = 1.0;
       expect('fL').assertEqual(foo_num3(i));
     });
@@ -393,7 +393,7 @@ export default function OverloadSetForFunctionsTest02():void {
       let s: short = 1;
       let i: int = 1;
       let l: long = 1;
-      let f: float = 1.0;
+      let f: float = 1.0f;
       let n: number = 1.0;
       expect('fL').assertEqual(foo_num3(l));
     });
@@ -411,7 +411,7 @@ export default function OverloadSetForFunctionsTest02():void {
       let s: short = 1;
       let i: int = 1;
       let l: long = 1;
-      let f: float = 1.0;
+      let f: float = 1.0f;
       let n: number = 1.0;
       expect('fF').assertEqual(foo_num3(f));
     });
@@ -429,7 +429,7 @@ export default function OverloadSetForFunctionsTest02():void {
       let s: short = 1;
       let i: int = 1;
       let l: long = 1;
-      let f: float = 1.0;
+      let f: float = 1.0f;
       let n: number = 1.0;
       expect('fN').assertEqual(foo_num3(n));
     });
@@ -447,7 +447,7 @@ export default function OverloadSetForFunctionsTest02():void {
       let s: short = 1;
       let i: int = 1;
       let l: long = 1;
-      let f: float = 1.0;
+      let f: float = 1.0f;
       let n: number = 1.0;
       expect('fF').assertEqual(foo_num4(b));
     });
@@ -465,7 +465,7 @@ export default function OverloadSetForFunctionsTest02():void {
       let s: short = 1;
       let i: int = 1;
       let l: long = 1;
-      let f: float = 1.0;
+      let f: float = 1.0f;
       let n: number = 1.0;
       expect('fF').assertEqual(foo_num4(s));
     });
@@ -483,7 +483,7 @@ export default function OverloadSetForFunctionsTest02():void {
       let s: short = 1;
       let i: int = 1;
       let l: long = 1;
-      let f: float = 1.0;
+      let f: float = 1.0f;
       let n: number = 1.0;
       expect('fF').assertEqual(foo_num4(i));
     });
@@ -501,7 +501,7 @@ export default function OverloadSetForFunctionsTest02():void {
       let s: short = 1;
       let i: int = 1;
       let l: long = 1;
-      let f: float = 1.0;
+      let f: float = 1.0f;
       let n: number = 1.0;
       expect('fF').assertEqual(foo_num4(l));
     });
@@ -519,7 +519,7 @@ export default function OverloadSetForFunctionsTest02():void {
       let s: short = 1;
       let i: int = 1;
       let l: long = 1;
-      let f: float = 1.0;
+      let f: float = 1.0f;
       let n: number = 1.0;
       expect('fF').assertEqual(foo_num4(f));
     });
@@ -537,7 +537,7 @@ export default function OverloadSetForFunctionsTest02():void {
       let s: short = 1;
       let i: int = 1;
       let l: long = 1;
-      let f: float = 1.0;
+      let f: float = 1.0f;
       let n: number = 1.0;
       expect('fN').assertEqual(foo_num4(n));
     });
@@ -555,7 +555,7 @@ export default function OverloadSetForFunctionsTest02():void {
       let s: short = 1;
       let i: int = 1;
       let l: long = 1;
-      let f: float = 1.0;
+      let f: float = 1.0f;
       let n: number = 1.0;
       expect('fN').assertEqual(foo_num5(b));
     });
@@ -573,7 +573,7 @@ export default function OverloadSetForFunctionsTest02():void {
       let s: short = 1;
       let i: int = 1;
       let l: long = 1;
-      let f: float = 1.0;
+      let f: float = 1.0f;
       let n: number = 1.0;
       expect('fN').assertEqual(foo_num5(s));
     });
@@ -591,7 +591,7 @@ export default function OverloadSetForFunctionsTest02():void {
       let s: short = 1;
       let i: int = 1;
       let l: long = 1;
-      let f: float = 1.0;
+      let f: float = 1.0f;
       let n: number = 1.0;
       expect('fN').assertEqual(foo_num5(i));
     });
@@ -609,7 +609,7 @@ export default function OverloadSetForFunctionsTest02():void {
       let s: short = 1;
       let i: int = 1;
       let l: long = 1;
-      let f: float = 1.0;
+      let f: float = 1.0f;
       let n: number = 1.0;
       expect('fN').assertEqual(foo_num5(l));
     });
@@ -627,7 +627,7 @@ export default function OverloadSetForFunctionsTest02():void {
       let s: short = 1;
       let i: int = 1;
       let l: long = 1;
-      let f: float = 1.0;
+      let f: float = 1.0f;
       let n: number = 1.0;
       expect('fN').assertEqual(foo_num5(f));
     });
@@ -645,7 +645,7 @@ export default function OverloadSetForFunctionsTest02():void {
       let s: short = 1;
       let i: int = 1;
       let l: long = 1;
-      let f: float = 1.0;
+      let f: float = 1.0f;
       let n: number = 1.0;
       expect('fN').assertEqual(foo_num5(n));
     });
