@@ -51,7 +51,7 @@ class Person {
   }
 }
 
-export default function bufferTest2() {
+export default function bufferTest2(): void {
   describe("bufferTest2", (): void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);

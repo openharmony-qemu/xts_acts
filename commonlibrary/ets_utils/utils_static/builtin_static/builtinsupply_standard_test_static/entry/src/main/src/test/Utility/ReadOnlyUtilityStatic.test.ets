@@ -190,7 +190,7 @@ class A {
   f3: boolean = true;
 }
 
-export default function BuiltinsReadonlyUtilityTypeTest() {
+export default function BuiltinsReadonlyUtilityTypeTest(): void {
   describe('BuiltinsReadonlyUtilityTypeTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
