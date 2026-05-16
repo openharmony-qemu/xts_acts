@@ -20,6 +20,7 @@ import MediaTestBase from "./MediaTestBase";
 import { LOG_TAG, MediaErrorCode, SLEEP_TIME_500, SLEEP_TIME_5000, SLEEP_TIME_200, SLEEP_TIME_20 } from "../Constants";
 import { common } from "@kit.AbilityKit";
 import { closeFd, getFd, sleep } from '../common';
+import {image} from '@kit.ImageKit';
 
 const TAG = LOG_TAG + 'AVTranscoderTest';
 const VIDEO_SOURCE = 'H264_AAC.mp4';
@@ -28,6 +29,16 @@ let mediaTestBase = new MediaTestBase();
 let fileDescriptor: media.AVFileDescriptor;
 let mTranscoder: media.AVTranscoder | undefined;
 let currentProgress: number = 0;
+let imageFd: number = -1;
+let imageResource: image.ImageSource | undefined;
+let imagePixelmap: image.PixelMap | undefined;
+
+let waterMarkConfig: media.WatermarkConfiguration = {
+  top : 100,
+  left : 100,
+  width : 100,
+  height : 100,
+};
 
 let avTranscoderConfig: media.AVTranscoderConfig = {
   audioBitrate: 200000,
@@ -63,6 +74,13 @@ async function createAVTranscoder(done: Function, context: common.UIAbilityConte
       mTranscoder.fdDst = await getFd('output.mp4');
       console.info(TAG, testName + ' Succeeded in creating AVTranscoder, fd: ' + mTranscoder.fdSrc.fd + ', offset: ' +
       mTranscoder.fdSrc.offset + ', length: ' + mTranscoder.fdSrc.length + ', fdDst: ' + mTranscoder.fdDst);
+      imageFd = await globalThis.abilityContext.resourceManager.getRawFdSync('watermark.png');
+      imageResource = image.createImageSource(imageFd);
+      const decodingOptions: image.DecodingOptions = {
+        editable: true,
+        desiredPixelFormat: image.PixelMapFormat.RGBA_8888,
+      }
+      imagePixelmap = await imageResource.createPixelMap(decodingOptions);
     } else {
       console.error(TAG, testName + ' transcoder is undefined.');
       expect().assertFail();
@@ -668,6 +686,160 @@ export default function AVTranscoderTest() {
       const testName = 'start_abnormal_001';
       await createAVTranscoder(done, testContext, testName);
       await startAVTranscoder(done, testName);
+      done();
+    })
+
+    /**
+     * @tc.name   watermark_001
+     * @tc.number AV_TRANSCODER_TEST_0001
+     * @tc.desc   Test normal scene of watermark in AVTranscoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('watermark_001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'watermark_001';
+      await createAVTranscoder(done, testContext, testName);
+      await avTranscoder?.addWatermark(watermarkPixelMap, watermarkConfig).then((watermarkId: number) => {
+        console.info('addWatermark success, watermarkId: ' + watermarkId);
+        expect(watermarkId).assertEqual(1);
+      }).catch((err: BusinessError) => {
+        console.error('addWatermark failed and catch error is ' + err.message);
+        expect().assertFail();
+        done();
+      });
+      await prepareAVTranscoder(done, testName);
+      await startAVTranscoder(done, testName);
+      done();
+    })
+
+    /**
+     * @tc.name   watermark_002
+     * @tc.number AV_TRANSCODER_TEST_0002
+     * @tc.desc   Test abnormal scene of watermark in AVTranscoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('watermark_002', Level.LEVEL0, async (done: Function) => {
+      const testName = 'watermark_002';
+      await createAVTranscoder(done, testContext, testName);
+      await prepareAVTranscoder(done, testName);
+      await avTranscoder?.addWatermark(watermarkPixelMap, watermarkConfig).then((watermarkId: number) => {
+        console.info('addWatermark success, watermarkId: ' + watermarkId);
+        expect().assertFail();
+      }).catch((err: BusinessError) => {
+        console.error('addWatermark failed and catch error is ' + err.message + err.code);
+        expect(err.code).assertEqual(5400102);
+      });
+      done();
+    })
+    
+    /**
+    * @tc.name   watermark_003
+    * @tc.number AV_TRANSCODER_TEST_0003
+    * @tc.desc   Test abnormal scene of watermark in AVTranscoder, loop addWatermark 6 times.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('watermark_003', Level.LEVEL0, async (done: Function) => {
+      const testName = 'watermark_003';
+      await createAVTranscoder(done, testContext, testName);
+      try {
+        // 循环调用 addWatermark 6次
+        for (let i = 0; i < 6; i++) {
+          const watermarkId: number = await avTranscoder?.addWatermark(watermarkPixelMap, watermarkConfig);
+          console.info(`addWatermark success, times: ${i + 1}, watermarkId: ${watermarkId}`);
+          expect(watermarkId).assertEqual(i + 1);
+        }
+      } catch (err) {
+        console.error('addWatermark failed and catch error is ' + err.message + err.code);
+        expect(err.code).assertEqual(5400108);
+      }
+    })
+
+    /**
+     * @tc.name   watermark_004
+     * @tc.number AV_TRANSCODER_TEST_0004
+     * @tc.desc   Test abnormal scene of watermark in AVTranscoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('watermark_004', Level.LEVEL0, async (done: Function) => {
+      const testName = 'watermark_004';
+      await createAVTranscoder(done, testContext, testName);
+      await avTranscoder?.addWatermark(null, watermarkConfig).then((watermarkId: number) => {
+        console.info('addWatermark success, watermarkId: ' + watermarkId);
+        expect().assertFail();
+      }).catch((err: BusinessError) => {
+        console.error('addWatermark failed and catch error is ' + err.message + err.code);
+        expect(err.code).assertEqual(401);
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   watermark_005
+     * @tc.number AV_TRANSCODER_TEST_0005
+     * @tc.desc   Test abnormal scene of watermark in AVTranscoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('watermark_005', Level.LEVEL0, async (done: Function) => {
+      const testName = 'watermark_005';
+      await createAVTranscoder(done, testContext, testName);
+      await avTranscoder?.addWatermark(undefined, watermarkConfig).then((watermarkId: number) => {
+        console.info('addWatermark success, watermarkId: ' + watermarkId);
+        expect().assertFail();
+      }).catch((err: BusinessError) => {
+        console.error('addWatermark failed and catch error is ' + err.message + err.code);
+        expect(err.code).assertEqual(401);
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   watermark_006
+     * @tc.number AV_TRANSCODER_TEST_0006
+     * @tc.desc   Test abnormal scene of watermark in AVTranscoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('watermark_006', Level.LEVEL0, async (done: Function) => {
+      const testName = 'watermark_006';
+      await createAVTranscoder(done, testContext, testName);
+      await avTranscoder?.addWatermark(watermarkPixelMap, null).then((watermarkId: number) => {
+        console.info('addWatermark success, watermarkId: ' + watermarkId);
+        expect().assertFail();
+      }).catch((err: BusinessError) => {
+        console.error('addWatermark failed and catch error is ' + err.message + err.code);
+        expect(err.code).assertEqual(401);
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   watermark_007
+     * @tc.number AV_TRANSCODER_TEST_0007
+     * @tc.desc   Test abnormal scene of watermark in AVTranscoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('watermark_007', Level.LEVEL0, async (done: Function) => {
+      const testName = 'watermark_007';
+      await createAVTranscoder(done, testContext, testName);
+      await avTranscoder?.addWatermark(watermarkPixelMap, undefined).then((watermarkId: number) => {
+        console.info('addWatermark success, watermarkId: ' + watermarkId);
+        expect().assertFail();
+      }).catch((err: BusinessError) => {
+        console.error('addWatermark failed and catch error is ' + err.message + err.code);
+        expect(err.code).assertEqual(401);
+      });
       done();
     })
 
