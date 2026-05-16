@@ -31,6 +31,8 @@
     "MainAbility/pages/PersistenceV2/PersistenceV2NotifyOnErrorTest",
     "MainAbility/pages/Monitor/MonitorWildcards",
     "MainAbility/pages/AddMonitor/AddMonitorWildcard",
-    "MainAbility/pages/AddMonitor/AddMonitorWildcardUnerfined"
+    "MainAbility/pages/AddMonitor/AddMonitorWildcardUnerfined",
+    "MainAbility/pages/lifecycle/ReuseComponentLifecycle",
+    "MainAbility/pages/lifecycle/ReuseV2ComponentLifecycle"
   ]
 }
