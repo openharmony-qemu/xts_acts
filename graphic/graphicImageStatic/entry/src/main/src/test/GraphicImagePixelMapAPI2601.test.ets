@@ -21,7 +21,7 @@ import { BusinessError } from '@ohos.base';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
-export default function GraphicImagePixelMapAPI2601(): void {
+export default function GraphicImagePixelMapAPI2601() {
 
   describe("GraphicImagePixelMapAPI2601", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
@@ -2711,6 +2711,9 @@ export default function GraphicImagePixelMapAPI2601(): void {
           let pixelMap = await image.createPixelMap(color, opts);
           let alphaPixelMap: image.PixelMap = await pixelMap.extractAlphaPixelMap();
           expect(alphaPixelMap !== undefined).assertTrue();
+          console.info(msgStr + ' pixelMap enum ', alphaPixelMap.isEditable, alphaPixelMap.isStrideAlignment);
+          expect(alphaPixelMap.isEditable).assertFalse();
+          expect(alphaPixelMap.isStrideAlignment).assertFalse();
           await alphaPixelMap.release();
           await pixelMap.release();
           console.info(msgStr + 'extractAlphaPixelMap success');
@@ -2922,6 +2925,9 @@ export default function GraphicImagePixelMapAPI2601(): void {
           let pixelMap = await image.createPixelMap(color, opts);
           let alphaPixelMap: image.PixelMap = pixelMap.extractAlphaPixelMapSync();
           expect(alphaPixelMap !== undefined).assertTrue();
+          console.info(msgStr + ' pixelMap enum ', alphaPixelMap.isEditable, alphaPixelMap.isStrideAlignment);
+          expect(alphaPixelMap.isEditable).assertFalse();
+          expect(alphaPixelMap.isStrideAlignment).assertFalse();
           await alphaPixelMap.release();
           await pixelMap.release();
           console.info(msgStr + 'extractAlphaPixelMapSync success');
