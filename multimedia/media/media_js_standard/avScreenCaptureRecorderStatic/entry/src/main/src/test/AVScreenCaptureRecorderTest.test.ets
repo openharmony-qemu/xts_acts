@@ -598,6 +598,29 @@ export default function AVScreenCaptureRecorderTest() {
 
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ON_OFF_StateChange_static_0100 end');
     });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ENUM_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ENUM_static_0100
+     * @tc.desc   AvScreenCaptureRecorder pause and resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ENUM_static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ENUM_static_0100 start')
+      expect(Number(media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_PAUSED_BY_USER)).assertEqual(11);
+      expect(Number(media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_RESUMED_BY_USER)).assertEqual(12);
+      expect(Number(media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_PAUSED_BY_APP)).assertEqual(13);
+      expect(Number(media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_RESUMED_BY_APP)).assertEqual(14);
+      expect(Number(media.PickerMode.APP_ONLY)).assertEqual(3);
+      expect(Number(media.PickerMode.WINDOW_AND_APP)).assertEqual(4);
+      expect(Number(media.PickerMode.SCREEN_AND_APP)).assertEqual(5);
+      expect(Number(media.PickerMode.SCREEN_WINDOW_AND_APP)).assertEqual(6);
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ENUM_static_0100 end');
+      done();
+    });
   })
 }
 
