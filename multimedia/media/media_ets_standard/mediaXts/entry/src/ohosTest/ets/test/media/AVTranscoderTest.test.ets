@@ -690,15 +690,15 @@ export default function AVTranscoderTest() {
     })
 
     /**
-     * @tc.name   watermark_001
-     * @tc.number AV_TRANSCODER_TEST_0001
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0100
      * @tc.desc   Test normal scene of watermark in AVTranscoder.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('watermark_001', Level.LEVEL0, async (done: Function) => {
-      const testName = 'watermark_001';
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0100';
       await createAVTranscoder(done, testContext, testName);
       await avTranscoder?.addWatermark(watermarkPixelMap, watermarkConfig).then((watermarkId: number) => {
         console.info('addWatermark success, watermarkId: ' + watermarkId);
@@ -714,15 +714,15 @@ export default function AVTranscoderTest() {
     })
 
     /**
-     * @tc.name   watermark_002
-     * @tc.number AV_TRANSCODER_TEST_0002
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0200
      * @tc.desc   Test abnormal scene of watermark in AVTranscoder.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('watermark_002', Level.LEVEL0, async (done: Function) => {
-      const testName = 'watermark_002';
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0200', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0200';
       await createAVTranscoder(done, testContext, testName);
       await prepareAVTranscoder(done, testName);
       await avTranscoder?.addWatermark(watermarkPixelMap, watermarkConfig).then((watermarkId: number) => {
@@ -736,15 +736,15 @@ export default function AVTranscoderTest() {
     })
     
     /**
-    * @tc.name   watermark_003
-    * @tc.number AV_TRANSCODER_TEST_0003
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0300
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0300
     * @tc.desc   Test abnormal scene of watermark in AVTranscoder, loop addWatermark 6 times.
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
     */
-    it('watermark_003', Level.LEVEL0, async (done: Function) => {
-      const testName = 'watermark_003';
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0300', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0300';
       await createAVTranscoder(done, testContext, testName);
       try {
         // 循环调用 addWatermark 6次
@@ -760,15 +760,15 @@ export default function AVTranscoderTest() {
     })
 
     /**
-     * @tc.name   watermark_004
-     * @tc.number AV_TRANSCODER_TEST_0004
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0400
      * @tc.desc   Test abnormal scene of watermark in AVTranscoder.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('watermark_004', Level.LEVEL0, async (done: Function) => {
-      const testName = 'watermark_004';
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0400', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0400';
       await createAVTranscoder(done, testContext, testName);
       await avTranscoder?.addWatermark(null, watermarkConfig).then((watermarkId: number) => {
         console.info('addWatermark success, watermarkId: ' + watermarkId);
@@ -781,15 +781,15 @@ export default function AVTranscoderTest() {
     })
 
     /**
-     * @tc.name   watermark_005
-     * @tc.number AV_TRANSCODER_TEST_0005
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0500
      * @tc.desc   Test abnormal scene of watermark in AVTranscoder.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('watermark_005', Level.LEVEL0, async (done: Function) => {
-      const testName = 'watermark_005';
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0500', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0500';
       await createAVTranscoder(done, testContext, testName);
       await avTranscoder?.addWatermark(undefined, watermarkConfig).then((watermarkId: number) => {
         console.info('addWatermark success, watermarkId: ' + watermarkId);
@@ -802,15 +802,15 @@ export default function AVTranscoderTest() {
     })
 
     /**
-     * @tc.name   watermark_006
-     * @tc.number AV_TRANSCODER_TEST_0006
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0600
      * @tc.desc   Test abnormal scene of watermark in AVTranscoder.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('watermark_006', Level.LEVEL0, async (done: Function) => {
-      const testName = 'watermark_006';
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0600', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0600';
       await createAVTranscoder(done, testContext, testName);
       await avTranscoder?.addWatermark(watermarkPixelMap, null).then((watermarkId: number) => {
         console.info('addWatermark success, watermarkId: ' + watermarkId);
@@ -823,15 +823,15 @@ export default function AVTranscoderTest() {
     })
 
     /**
-     * @tc.name   watermark_007
-     * @tc.number AV_TRANSCODER_TEST_0007
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0700
      * @tc.desc   Test abnormal scene of watermark in AVTranscoder.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('watermark_007', Level.LEVEL0, async (done: Function) => {
-      const testName = 'watermark_007';
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0700', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0700';
       await createAVTranscoder(done, testContext, testName);
       await avTranscoder?.addWatermark(watermarkPixelMap, undefined).then((watermarkId: number) => {
         console.info('addWatermark success, watermarkId: ' + watermarkId);
