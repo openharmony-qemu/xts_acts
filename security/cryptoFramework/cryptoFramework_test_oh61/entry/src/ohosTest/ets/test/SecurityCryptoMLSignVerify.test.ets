@@ -558,6 +558,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           sign.initSync(keyPair.priKey);
           let message: cryptoFramework.DataBlob = { data: new Uint8Array(64).fill(0x41) };
           let sig1: cryptoFramework.DataBlob = sign.signSync(message);
+          let sig3: cryptoFramework.DataBlob = sign.signSync(message);
           let sign2: cryptoFramework.Sign = cryptoFramework.createSign("ML-DSA");
           sign2.setSignSpec(cryptoFramework.SignSpecItem.ML_DSA_DETERMINISTIC_BOOL, true);
           sign2.setSignSpec(cryptoFramework.SignSpecItem.ML_DSA_MU_BOOL, true);
@@ -565,6 +566,8 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           let sig2: cryptoFramework.DataBlob = sign2.signSync(message);
           expect(sig1.data.length).assertEqual(sig2.data.length);
           let ret: boolean = compareDataBlob(sig1, sig2);
+          expect(ret).assertTrue();
+          ret = compareDataBlob(sig1, sig3);
           expect(ret).assertTrue();
           let verify: cryptoFramework.Verify = cryptoFramework.createVerify("ML-DSA");
           verify.setVerifySpec(cryptoFramework.SignSpecItem.ML_DSA_MU_BOOL, true);
@@ -807,11 +810,20 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           let keyGenerator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator("ML-DSA-65");
           let keyPair: cryptoFramework.KeyPair = keyGenerator.generateKeyPairSync();
           let verify: cryptoFramework.Verify = cryptoFramework.createVerify("ML-DSA");
+          let sign: cryptoFramework.Sign = cryptoFramework.createSign("ML-DSA");
           verify.initSync(keyPair.pubKey);
           try {
             verify.getVerifySpec(cryptoFramework.SignSpecItem.ML_DSA_MU_BOOL);
             expect(null).assertFail();
           } catch (e) {
+            console.error(`[XTS] MLDSA_Limit_Func_2400 verify ${e}, error code: ${e.code}`);
+            expect(e.code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
+          }
+          try {
+            sign.getSignSpec(cryptoFramework.SignSpecItem.ML_DSA_MU_BOOL);
+            expect(null).assertFail();
+          } catch (e) {
+            console.error(`[XTS] MLDSA_Limit_Func_2400 sign ${e}, error code: ${e.code}`);
             expect(e.code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
           }
         } catch (error) {
@@ -976,19 +988,19 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
             cryptoFramework.createSign("ML-DSA-44");
             expect(null).assertFail();
           } catch (e) {
-            expect(e.code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
+            expect(e.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
           }
           try {
             cryptoFramework.createSign("ML-DSA-65");
             expect(null).assertFail();
           } catch (e) {
-            expect(e.code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
+            expect(e.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
           }
           try {
             cryptoFramework.createSign("ML-DSA-87");
             expect(null).assertFail();
           } catch (e) {
-            expect(e.code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
+            expect(e.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
           }
           let sign: cryptoFramework.Sign = cryptoFramework.createSign("ML-DSA");
           expect(sign.algName).assertEqual("ML-DSA");
@@ -1637,6 +1649,82 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
         } catch (error) {
           console.error(`[XTS] MLDSA_Spec_Func_3200 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_MLDSA_Mu_Func_1700
+     * @tc.number SUB_Security_CryptoFramework_MLDSA_Mu_Func_1700
+     * @tc.desc   deterministic + mu set number type test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_Security_CryptoFramework_MLDSA_Mu_Func_1700",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        try {
+          let sign: cryptoFramework.Sign = cryptoFramework.createSign("ML-DSA");
+          sign.setSignSpec(cryptoFramework.SignSpecItem.ML_DSA_DETERMINISTIC_BOOL, 1);
+          expect(null).assertFail();
+        } catch (error) {
+          console.error(`[XTS] MLDSA_Mu_Func_1700 sign ${error}, error code: ${error.code}`);
+          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+        }
+        try {
+          let verify: cryptoFramework.Verify = cryptoFramework.createVerify("ML-DSA");
+          verify.setVerifySpec(cryptoFramework.SignSpecItem.ML_DSA_MU_BOOL, 1);
+          expect(null).assertFail();
+        } catch (error) {
+          console.error(`[XTS] MLDSA_Mu_Func_1700 verify ${error}, error code: ${error.code}`);
+          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Security_CryptoFramework_MLDSA_Mu_Func_1800
+     * @tc.number SUB_Security_CryptoFramework_MLDSA_Mu_Func_1800
+     * @tc.desc   RSA set ML_DSA_MU_BOOL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_Security_CryptoFramework_MLDSA_Mu_Func_1800",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let context: Uint8Array = new Uint8Array([0x01, 0x02, 0x03]);
+      try {
+          let sign: cryptoFramework.Sign = cryptoFramework.createSign("RSA512|PKCS1|SHA256");
+          sign.setSignSpec(cryptoFramework.SignSpecItem.ML_DSA_MU_BOOL, true);
+          expect(null).assertFail();
+        } catch (error) {
+          console.error(`[XTS] MLDSA_Mu_Func_1800 Sign ${error}, error code: ${error.code}`);
+          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+        }
+        try {
+          let sign: cryptoFramework.Sign = cryptoFramework.createSign("RSA512|PKCS1|SHA256");
+          sign.setSignSpec(cryptoFramework.SignSpecItem.ML_DSA_CONTEXT_UINT8ARR, context);
+          expect(null).assertFail();
+        } catch (error) {
+          console.error(`[XTS] MLDSA_Mu_Func_1800 Sign context ${error}, error code: ${error.code}`);
+          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+        }
+        let verify: cryptoFramework.Verify = cryptoFramework.createVerify("RSA512|PKCS1|SHA256");
+        try {
+          verify.setVerifySpec(cryptoFramework.SignSpecItem.ML_DSA_MU_BOOL, true);
+          expect(null).assertFail();
+        } catch (error) {
+          console.error(`[XTS] MLDSA_Mu_Func_1800 Verify ${error}, error code: ${error.code}`);
+          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+        }
+        try {
+          let context: Uint8Array = new Uint8Array([0x01, 0x02, 0x03]);
+          let verify: cryptoFramework.Verify = cryptoFramework.createVerify("RSA512|PKCS1|SHA256");
+          verify.setVerifySpec(cryptoFramework.SignSpecItem.ML_DSA_CONTEXT_UINT8ARR, context);
+          expect(null).assertFail();
+        } catch (error) {
+          console.error(`[XTS] MLDSA_Mu_Func_1800 Verify context ${error}, error code: ${error.code}`);
+          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
       });

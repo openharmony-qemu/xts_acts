@@ -631,7 +631,7 @@ export default function SecurityCryptoMLEncapAndDecapTestUnit() {
         expect(null).assertFail();
       } catch (error) {
         console.error(`[XTS] ML_KEM_DESTROY_0100 ${error}, error code: ${(error as BusinessError).code}`);
-        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
       }
       done();
     });
