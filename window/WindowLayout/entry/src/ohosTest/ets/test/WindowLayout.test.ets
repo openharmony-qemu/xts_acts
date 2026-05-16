@@ -7676,7 +7676,7 @@ export default function windowLayoutTest() {
 
     /**
      * @tc.name recoverError13000020200
-     * @tc.number SUB_WINDOWS_WINDOWLAYOUT_RECOVER_ERROR_1300002_0100
+     * @tc.number SUB_WINDOWS_WINDOWLAYOUT_RECOVER_ERROR_1300002_0200
      * @tc.desc recover 1300002 window destroyed test.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
