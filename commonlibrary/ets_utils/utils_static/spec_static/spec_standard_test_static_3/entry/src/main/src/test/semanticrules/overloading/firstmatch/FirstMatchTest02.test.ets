@@ -576,7 +576,7 @@ export default function FirstMatchTest02():void {
     });
 
     /**
-     * @tc.number    SUB_FIRST_MATCH_TEST_TWO0900
+     * @tc.number    SUB_FIRST_MATCH_TEST_TWO_0900
      * @tc.name      testFirstMatchTwo0009
      * @tc.desc      Linearization C2 -> C1 -> I1 -> I2 Optional param 2.
      * @tc.size      MediumTest

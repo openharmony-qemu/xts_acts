@@ -66,7 +66,7 @@ function f(a: Object): int {
   return 2;
 }
 
-export default function EnumerationMethodsTest(): void {
+export default function EnumerationMethodsTest20(): void {
   describe('EnumerationMethodsTest', () => {
     beforeAll(() => {
     })

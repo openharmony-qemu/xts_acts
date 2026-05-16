@@ -139,7 +139,6 @@ export default function ForOfTypeAnnotationTest():void{
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testForOfTypeAnnotation0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       res3 = ""
       // empty string
@@ -159,7 +158,6 @@ export default function ForOfTypeAnnotationTest():void{
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testForOfTypeAnnotation0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       res4 = ""
       for (let v: string of s!)
@@ -177,7 +175,6 @@ export default function ForOfTypeAnnotationTest():void{
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testForOfTypeAnnotation0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       res5 = ""
       for (const v:string of s1!)
@@ -195,7 +192,6 @@ export default function ForOfTypeAnnotationTest():void{
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testForOfTypeAnnotation0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       res6 = ""
       for (let v: char of arr3)
@@ -213,7 +209,6 @@ export default function ForOfTypeAnnotationTest():void{
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testForOfTypeAnnotation0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       res7 = ""
       let sum: long = 0
@@ -232,7 +227,6 @@ export default function ForOfTypeAnnotationTest():void{
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testForOfTypeAnnotation0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       res8 = ""
       const v: int = 0;
@@ -252,7 +246,6 @@ export default function ForOfTypeAnnotationTest():void{
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testForOfTypeAnnotation0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       res9 = ""
       let v: boolean = true;
@@ -274,7 +267,6 @@ export default function ForOfTypeAnnotationTest():void{
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testForOfTypeAnnotation0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       res10 = ""
       for (let v: Color of arr5)
@@ -293,7 +285,6 @@ export default function ForOfTypeAnnotationTest():void{
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testForOfTypeAnnotation0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       res11 = ""
       for (const ch: char of[new Char(c'1'),new Char(c'2'),new Char(c'3'),new Char(c'4')])
@@ -311,7 +302,6 @@ export default function ForOfTypeAnnotationTest():void{
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testForOfTypeAnnotation0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       res12 = ""
       for (let i:long of arr6)
@@ -329,7 +319,6 @@ export default function ForOfTypeAnnotationTest():void{
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testForOfTypeAnnotation0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       res13 = ""
       for (const v: Int of[9, 8, 7, 6, 5])
@@ -347,7 +336,6 @@ export default function ForOfTypeAnnotationTest():void{
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testForOfTypeAnnotation0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       res14 = ""
       for (const v:Boolean of[false, true, true, false])
@@ -365,7 +353,6 @@ export default function ForOfTypeAnnotationTest():void{
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testForOfTypeAnnotation0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       res15 = ""
       let sum: double = 0.0
@@ -384,7 +371,6 @@ export default function ForOfTypeAnnotationTest():void{
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testForOfTypeAnnotation0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       res16 = ""
       let ok = true
@@ -408,7 +394,6 @@ export default function ForOfTypeAnnotationTest():void{
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testForOfTypeAnnotation0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       res17 = ""
       let arr: A[] = [new A(), new A()]
@@ -428,7 +413,6 @@ export default function ForOfTypeAnnotationTest():void{
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testForOfTypeAnnotation0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       res18 = ""
       let arr: (number | boolean)[] = [true, false, 1.0, 2.0]
@@ -452,7 +436,6 @@ export default function ForOfTypeAnnotationTest():void{
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testForOfTypeAnnotation0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       res19 = ""
       let arr: U[] = [true, 1.0, false, 2.0]
@@ -476,7 +459,6 @@ export default function ForOfTypeAnnotationTest():void{
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testForOfTypeAnnotation0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       res20 = ""
       for (const v: int[] of arr8)
@@ -498,7 +480,6 @@ export default function ForOfTypeAnnotationTest():void{
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testForOfTypeAnnotation0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       res21 = ""
       for (let v: string of arr9)
@@ -519,7 +500,6 @@ export default function ForOfTypeAnnotationTest():void{
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testForOfTypeAnnotation0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       res24 = ""
       for (let v: string of foo1<String>("AZ"))
@@ -541,7 +521,6 @@ export default function ForOfTypeAnnotationTest():void{
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testForOfTypeAnnotation0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       res25 = ""
       for (const v: [number, Color] of arr10)
@@ -560,7 +539,6 @@ export default function ForOfTypeAnnotationTest():void{
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testForOfTypeAnnotation0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       res26 = ""
       for (const v: T of arr11)

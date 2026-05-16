@@ -87,7 +87,6 @@ export default function CallableTypesTest(): void{
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testCallableTypes0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new C().fld).assertEqual('C');
       expect(new C(42.0).fld).assertEqual('N');
@@ -106,7 +105,6 @@ export default function CallableTypesTest(): void{
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testCallableTypes0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new C1().fld).assertEqual('C');
       expect(new C1(42.0).fld).assertEqual('N');

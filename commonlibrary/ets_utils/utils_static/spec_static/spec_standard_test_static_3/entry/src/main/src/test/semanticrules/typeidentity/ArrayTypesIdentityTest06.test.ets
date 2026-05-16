@@ -1322,7 +1322,7 @@ export default function ArrayTypesIdentityTest06(): void {
     })
 
     /**
-     * @tc.number    SUB_ ARRAY_TYPES_IDENTITY_TEST_2900
+     * @tc.number    SUB_ARRAY_TYPES_IDENTITY_TEST_2900
      * @tc.name      testArrayTypesIdentity0029
      * @tc.desc      Checking for Array types T[] and Array<T> are identical on predefined types on assign operations.
      *               were not provided.'
@@ -1366,7 +1366,7 @@ export default function ArrayTypesIdentityTest06(): void {
     });
 
     /**
-     * @tc.number    SUB_ ARRAY_TYPES_IDENTITY_TEST_3000
+     * @tc.number    SUB_ARRAY_TYPES_IDENTITY_TEST_3000
      * @tc.name      testArrayTypesIdentity0030
      * @tc.desc      Checking for Array types T[] and Array<T> are identical on predefined types on assign operations.
      *               were not provided.'
@@ -1417,7 +1417,7 @@ export default function ArrayTypesIdentityTest06(): void {
     });
 
     /**
-     * @tc.number    SUB_ ARRAY_TYPES_IDENTITY_TEST_3100
+     * @tc.number    SUB_ARRAY_TYPES_IDENTITY_TEST_3100
      * @tc.name      testArrayTypesIdentity0031
      * @tc.desc      Checking for Array types T[] and Array<T> are identical on predefined types on assign operations.
      *               were not provided.'

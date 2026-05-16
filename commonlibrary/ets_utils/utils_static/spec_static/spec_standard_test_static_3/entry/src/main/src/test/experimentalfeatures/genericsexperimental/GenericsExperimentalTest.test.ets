@@ -193,7 +193,6 @@ export default function GenericsExperimentalTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testGenericsExperimental0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let a = new A<Object>();
       let result = a.foo(new Object());
@@ -209,7 +208,6 @@ export default function GenericsExperimentalTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testGenericsExperimental0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let a = new A1<Object>();
       let result = a.foo(new Object());
@@ -226,7 +224,6 @@ export default function GenericsExperimentalTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testGenericsExperimental0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let b = new B<A2>();
       let result = b.foo(new A2("test"));
@@ -243,7 +240,6 @@ export default function GenericsExperimentalTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testGenericsExperimental0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let b = new B1<A3>();
       let result = b.foo(new A3("test"));
@@ -260,7 +256,6 @@ export default function GenericsExperimentalTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testGenericsExperimental0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let b = new B2<null>();
       let hasThrown = false;
@@ -284,7 +279,6 @@ export default function GenericsExperimentalTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testGenericsExperimental0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let b = new B3<undefined>();
       let hasThrown = false;
@@ -307,7 +301,6 @@ export default function GenericsExperimentalTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testGenericsExperimental0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let a = new A6<undefined>();
       let result = a.foo(undefined);
@@ -324,7 +317,6 @@ export default function GenericsExperimentalTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testGenericsExperimental0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let a = new A7<null>();
       let result = a.foo(null);
@@ -341,7 +333,6 @@ export default function GenericsExperimentalTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testGenericsExperimental0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let b = new B4<A8>();
       let result = b.foo(new A8("test"));
@@ -358,7 +349,6 @@ export default function GenericsExperimentalTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testGenericsExperimental0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let b = new B5<A9>();
       let result = b.foo(new A9("test"));
@@ -375,7 +365,6 @@ export default function GenericsExperimentalTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testGenericsExperimental0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let b = new B6<null>();
       let result = b.foo(null);
@@ -392,7 +381,6 @@ export default function GenericsExperimentalTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testGenericsExperimental0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let b = new B7<undefined>();
       let result = b.foo(undefined);

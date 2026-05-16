@@ -441,7 +441,7 @@ Complex =
 One = "one", one = "one", oNe = "one"
 };
 
-export default function EnumerationMethodsTest(): void {
+export default function EnumerationMethodsTest12(): void {
   describe('EnumerationMethodsTest', () => {
     beforeAll(() => {
     })

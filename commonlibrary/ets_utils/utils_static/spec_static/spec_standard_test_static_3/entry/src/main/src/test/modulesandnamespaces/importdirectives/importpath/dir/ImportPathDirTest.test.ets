@@ -63,7 +63,6 @@ export default function ImportPathDirTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testImportPathDir0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       console.log('testImportPathDir0001 start');
       let result = importedFromFile();
@@ -80,7 +79,6 @@ export default function ImportPathDirTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testImportPathDir0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       console.log('testImportPathDir0002 start');
       let result = importedFromFile();

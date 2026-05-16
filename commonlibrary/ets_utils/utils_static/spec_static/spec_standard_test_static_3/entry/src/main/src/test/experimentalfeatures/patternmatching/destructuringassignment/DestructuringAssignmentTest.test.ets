@@ -151,7 +151,6 @@ export default function DestructuringAssignmentTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testDestructuringAssignment0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let n: number = 1;
       let s: string = "a";
@@ -169,7 +168,6 @@ export default function DestructuringAssignmentTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testDestructuringAssignment0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let n: number = 1;
       let s: string = "a";
@@ -186,7 +184,6 @@ export default function DestructuringAssignmentTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testDestructuringAssignment0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let n: number = 1;
       let s: string = "a";
@@ -203,7 +200,6 @@ export default function DestructuringAssignmentTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testDestructuringAssignment0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let n1: number = 1;
       let n2: number = 1;
@@ -223,7 +219,6 @@ export default function DestructuringAssignmentTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testDestructuringAssignment0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let n: number = 1;
       let s: string = "a";
@@ -249,7 +244,6 @@ export default function DestructuringAssignmentTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testDestructuringAssignment0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let n: number = 1;
       let s: string = "a";
@@ -275,7 +269,6 @@ export default function DestructuringAssignmentTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testDestructuringAssignment0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let n: number = 1;
       let s: string = "a";
@@ -300,7 +293,6 @@ export default function DestructuringAssignmentTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testDestructuringAssignment0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let n1: number = 1;
       let n2: number = 1;
@@ -339,7 +331,6 @@ export default function DestructuringAssignmentTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testDestructuringAssignment0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let n1: number = 0;
       let n2: number = 0;
@@ -358,7 +349,6 @@ export default function DestructuringAssignmentTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testDestructuringAssignment0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       res1 = 0;
       [] = [foo1(1), foo1(2), foo1(3)];
@@ -374,7 +364,6 @@ export default function DestructuringAssignmentTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testDestructuringAssignment0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let n1: number = 0;
       let n2: number = 0;
@@ -396,7 +385,6 @@ export default function DestructuringAssignmentTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testDestructuringAssignment0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let n1: number = 0;
       let n2: number = 0;
@@ -419,7 +407,6 @@ export default function DestructuringAssignmentTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testDestructuringAssignment0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let n1: number = 0;
       let n2: number = 0;
@@ -442,7 +429,6 @@ export default function DestructuringAssignmentTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testDestructuringAssignment0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let n1: number = 0;
       let n2: number = 0;
@@ -467,7 +453,6 @@ export default function DestructuringAssignmentTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testDestructuringAssignment0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let n1: number = 0;
       let n2: number = 0;
@@ -493,7 +478,6 @@ export default function DestructuringAssignmentTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testDestructuringAssignment0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let n1: number = 0;
       let n2: number = 0;
@@ -523,7 +507,6 @@ export default function DestructuringAssignmentTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testDestructuringAssignment0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let n1: number = 0;
       let n2: number = 0;
@@ -546,7 +529,6 @@ export default function DestructuringAssignmentTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testDestructuringAssignment0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let n1: number = 0;
       let n2: number = 0;
@@ -568,7 +550,6 @@ export default function DestructuringAssignmentTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testDestructuringAssignment0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let n1: number = 0;
       let n2: number = 0;
@@ -591,7 +572,6 @@ export default function DestructuringAssignmentTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testDestructuringAssignment0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let n1: number = 0;
       let n2: number = 0;
@@ -615,7 +595,6 @@ export default function DestructuringAssignmentTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testDestructuringAssignment0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let n1: number = 0;
       let n2: number = 0;
@@ -640,7 +619,6 @@ export default function DestructuringAssignmentTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testDestructuringAssignment0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let n1: number = 0;
       let n2: number = 0;
@@ -666,7 +644,6 @@ export default function DestructuringAssignmentTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testDestructuringAssignment0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let n1: number = 0;
       let n2: number = 0;
@@ -693,7 +670,6 @@ export default function DestructuringAssignmentTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testDestructuringAssignment0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let n1: number = 0;
       let n2: number = 0;
@@ -716,7 +692,6 @@ export default function DestructuringAssignmentTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testDestructuringAssignment0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let n: number = 1;
       let s: string = "a";
@@ -734,7 +709,6 @@ export default function DestructuringAssignmentTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testDestructuringAssignment0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let n: number = 1;
       let s: string = "a";
@@ -752,7 +726,6 @@ export default function DestructuringAssignmentTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testDestructuringAssignment0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
       let n: number = 1;
       let s: string = "a";
@@ -770,7 +743,6 @@ export default function DestructuringAssignmentTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
   it("testDestructuringAssignment0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
     let n: number = 1;
     let s: string = "a";

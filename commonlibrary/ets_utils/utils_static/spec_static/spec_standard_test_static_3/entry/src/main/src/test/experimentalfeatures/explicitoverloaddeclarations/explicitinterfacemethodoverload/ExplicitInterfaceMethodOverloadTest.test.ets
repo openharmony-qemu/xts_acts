@@ -1226,7 +1226,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     });
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_0500
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_0400
      * @tc.name      testExplicitInterfaceMethodOverload0005
      * @tc.desc      Interface method overload declaration allows declaring an overload alias as
     an interface member for a set of interface methods.
@@ -1244,7 +1244,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
 
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_0600
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_0500
      * @tc.name      testExplicitInterfaceMethodOverload0006
      * @tc.desc      Interface method overload declaration allows declaring an overload alias as
     an interface member for a set of interface methods.
@@ -1269,7 +1269,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
 
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_0700
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_0600
      * @tc.name      testExplicitInterfaceMethodOverload0007
      * @tc.desc      An explicit overload defined in a superinterface can be overridden in a subinterface.
     An explicit interface overload can be overridden in a class. Check that explicit
@@ -1300,7 +1300,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
 
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_0800
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_0700
      * @tc.name      testExplicitInterfaceMethodOverload0008
      * @tc.desc      An explicit overload defined in a superinterface can be overridden in a subinterface.
     An explicit interface overload can be overridden in a class. Check that explicit
@@ -1326,7 +1326,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     });
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_0900
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_0800
      * @tc.name      testExplicitInterfaceMethodOverload0009
      * @tc.desc      An explicit overload defined in a superinterface can be overridden in a subinterface.
     An explicit interface overload can be overridden in a class. Check that explicit
@@ -1360,7 +1360,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     });
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_1000
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_0900
      * @tc.name      testExplicitInterfaceMethodOverload0010
      * @tc.desc      An explicit overload defined in a superinterface can be overridden in a subinterface.
     An explicit interface overload can be overridden in a class. Check that explicit
@@ -1390,7 +1390,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     });
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_1600
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_1000
      * @tc.name      testExplicitInterfaceMethodOverload0016
      * @tc.desc      An explicit overload defined in a superinterface can be overridden in a subinterface.
     An explicit interface overload can be overridden in a class. Check that explicit
@@ -1400,7 +1400,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let j: J12 = ((): J12 => new A15)()
       expect(j.foo(new C3)).assertEqual('A.3');
@@ -1423,7 +1422,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     });
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_4300
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_1100
      * @tc.name      testExplicitInterfaceMethodOverload0043
      * @tc.desc      'Explicit interface method overload allows declaring a name for a set of interface
     methods.
@@ -1432,7 +1431,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = new A42();
       expect(a.foo1(1 as byte)).assertEqual('short');
@@ -1468,7 +1466,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
 
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_4400
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_1200
      * @tc.name      testExplicitInterfaceMethodOverload0044
      * @tc.desc      'Explicit interface method overload allows declaring a name for a set of interface
     methods.
@@ -1477,7 +1475,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = new A43();
 
@@ -1519,7 +1516,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     });
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_4500
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_1300
      * @tc.name      testExplicitInterfaceMethodOverload0045
      * @tc.desc      'Explicit interface method overload allows declaring a name for a set of interface
     methods.
@@ -1528,7 +1525,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = new A44();
       expect(a.foo1(1 as byte)).assertEqual('short');
@@ -1566,7 +1562,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
 
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_4600
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_1400
      * @tc.name      testExplicitInterfaceMethodOverload0046
      * @tc.desc      'Explicit interface method overload allows declaring a name for a set of interface
     methods.
@@ -1575,7 +1571,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = new A45();
       expect(a.foo1(1f)).assertEqual('float');
@@ -1616,7 +1611,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     });
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_4800
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_1500
      * @tc.name      testExplicitInterfaceMethodOverload0048
      * @tc.desc      'Explicit interface method overload allows declaring a name for a set of interface
     methods.
@@ -1625,7 +1620,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = new A47();
       expect(a.m1(1f)).assertEqual('float');
@@ -1648,7 +1642,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     });
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_5300
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_1600
      * @tc.name      testExplicitInterfaceMethodOverload0053
      * @tc.desc      'Explicit interface method overload allows declaring a name for a set of interface
     Overloaded default interface methods implemented in class, numeric parameters.'
@@ -1656,7 +1650,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = new A52();
       expect(a.foo1(1 as byte)).assertEqual('short');
@@ -1690,7 +1683,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(a.foo6(1)).assertEqual('byte');
     });
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_5400
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_1700
      * @tc.name      testExplicitInterfaceMethodOverload0054
      * @tc.desc      'Explicit interface method overload allows declaring a name for a set of interface
     Overloaded default interface methods implemented in class, numeric parameters.'
@@ -1698,7 +1691,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = new A53();
       expect(a.foo1(1f)).assertEqual('float');
@@ -1738,7 +1730,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(a.foo6(1.0)).assertEqual('number');
     });
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_5500
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_1800
      * @tc.name      testExplicitInterfaceMethodOverload0055
      * @tc.desc      'Explicit interface method overload allows declaring a name for a set of interface
     Overloaded default interface methods implemented in class, numeric parameters.'
@@ -1746,7 +1738,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = new A54();
       expect(a.foo1(1 as byte)).assertEqual('short');
@@ -1780,7 +1771,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(a.foo6(1)).assertEqual('byte');
     });
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_5600
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_1900
      * @tc.name      testExplicitInterfaceMethodOverload0056
      * @tc.desc      'Explicit interface method overload allows declaring a name for a set of interface
     Overloaded default interface methods implemented in class, numeric parameters.'
@@ -1788,7 +1779,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = new A55();
       expect(a.foo1(1f)).assertEqual('float');
@@ -1829,7 +1819,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     });
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_5800
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_2000
      * @tc.name      testExplicitInterfaceMethodOverload0058
      * @tc.desc      'Explicit interface method overload allows declaring a name for a set of interface
     Overloaded default interface methods implemented in class, numeric parameters.'
@@ -1837,7 +1827,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = new A57();
       expect(a.m1(1f)).assertEqual('number');
@@ -1859,7 +1848,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(a.m3(1.0)).assertEqual('number');
     });
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_5900
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_2100
      * @tc.name      testExplicitInterfaceMethodOverload0059
      * @tc.desc      'Explicit interface method overload allows declaring a name for a set of interface
     methods.
@@ -1874,7 +1863,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: I20 = {};
       expect(a.foo1(1 as byte)).assertEqual('short');
@@ -1903,7 +1891,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     });
     
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_6000
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_2200
      * @tc.name      testExplicitInterfaceMethodOverload0060
      * @tc.desc      'Explicit interface method overload allows declaring a name for a set of interface
     methods.
@@ -1918,7 +1906,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: I21 = {};
       expect(a.foo1(1f)).assertEqual('float');
@@ -1951,7 +1938,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     });
     
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_6100
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_2300
      * @tc.name      testExplicitInterfaceMethodOverload0061
      * @tc.desc      'Explicit interface method overload allows declaring a name for a set of interface
     methods.
@@ -1966,7 +1953,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: I22 = {};
       expect(a.m1(1 as byte)).assertEqual('short');
@@ -1988,7 +1974,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(a.m2<byte>(1 as byte)).assertEqual('GEN');
     });
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_6200
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_2400
      * @tc.name      testExplicitInterfaceMethodOverload0062
      * @tc.desc      'Explicit interface method overload allows declaring a name for a set of interface
     methods.
@@ -2003,7 +1989,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: I23 = {};
       expect(a.m2(1f)).assertEqual('GEN2');
@@ -2029,7 +2014,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     });
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_6300
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_2500
      * @tc.name      testExplicitInterfaceMethodOverload0063
      * @tc.desc      'Explicit interface method overload allows declaring a name for a set of interface
     methods.
@@ -2038,7 +2023,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: I24 = {};
       expect(a.foo1(1 as byte)).assertEqual('short');
@@ -2073,7 +2057,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     });
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_6400
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_2600
      * @tc.name      testExplicitInterfaceMethodOverload0064
      * @tc.desc      'Explicit interface method overload allows declaring a name for a set of interface
     methods.
@@ -2082,7 +2066,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: I25 = {};
       expect(a.foo1(1f)).assertEqual('float');
@@ -2122,7 +2105,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(a.foo6(1.0)).assertEqual('number');
     });
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_6500
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_2700
      * @tc.name      testExplicitInterfaceMethodOverload0065
      * @tc.desc      'Explicit interface method overload allows declaring a name for a set of interface
     methods.
@@ -2131,7 +2114,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: I26 = {};
       expect(a.m1(1 as byte)).assertEqual('short');
@@ -2151,7 +2133,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     });
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_6600
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_2800
      * @tc.name      testExplicitInterfaceMethodOverload0066
      * @tc.desc      'Explicit interface method overload allows declaring a name for a set of interface
     methods.
@@ -2160,7 +2142,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: I27 = {};
       expect(a.m2(1f)).assertEqual('number');
@@ -2182,7 +2163,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(a.m1(1.0)).assertEqual('number');
     });
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_6700
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_2900
      * @tc.name      testExplicitInterfaceMethodOverload0067
      * @tc.desc      'An explicit overload defined in a superinterface can be overridden
     in a subinterface. In this case, the overload declaration of the
@@ -2199,7 +2180,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: I29 = {};
       expect(a.foo1(1 as byte)).assertEqual('short');
@@ -2228,7 +2208,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     });
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_6800
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_3000
      * @tc.name      testExplicitInterfaceMethodOverload0068
      * @tc.desc      'An explicit overload defined in a superinterface can be overridden
     in a subinterface. In this case, the overload declaration of the
@@ -2245,7 +2225,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: I31 = {};
       expect(a.foo1(1f)).assertEqual('float');
@@ -2278,7 +2257,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     });
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_7600
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_3100
      * @tc.name      testExplicitInterfaceMethodOverload0076
      * @tc.desc      'An explicit overload defined in a superinterface can be overridden
     in a subinterface. In this case, the overload declaration of the
@@ -2288,7 +2267,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: I47 = {};
       expect(a.foo1(1 as byte)).assertEqual('short');
@@ -2323,7 +2301,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     });
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_7700
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_3200
      * @tc.name      testExplicitInterfaceMethodOverload0077
      * @tc.desc      'An explicit overload defined in a superinterface can be overridden
     in a subinterface. In this case, the overload declaration of the
@@ -2333,7 +2311,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: I49 = {};
       expect(a.foo1(1f)).assertEqual('float');
@@ -2374,7 +2351,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     });
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_7800
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_3300
      * @tc.name      testExplicitInterfaceMethodOverload0078
      * @tc.desc      'An explicit overload defined in a superinterface can be overridden
     in a subinterface. In this case, the overload declaration of the
@@ -2384,7 +2361,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: I51 = {};
       expect(a.foo1(1 as byte)).assertEqual('short');
@@ -2418,7 +2394,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(a.foo6(1)).assertEqual('byte');
     });
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_7900
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_3400
      * @tc.name      testExplicitInterfaceMethodOverload0079
      * @tc.desc      'An explicit overload defined in a superinterface can be overridden
     in a subinterface. In this case, the overload declaration of the
@@ -2428,7 +2404,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: I53 = {};
       expect(a.foo1(1f)).assertEqual('float');
@@ -2469,7 +2444,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     });
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_8100
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_3500
      * @tc.name      testExplicitInterfaceMethodOverload0081
      * @tc.desc      'An explicit overload defined in a superinterface can be overridden
     in a subinterface. In this case, the overload declaration of the
@@ -2479,7 +2454,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: I57 = {};
       expect(a.m1(1f)).assertEqual('number');
@@ -2502,7 +2476,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     });
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_8200
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_3600
      * @tc.name      testExplicitInterfaceMethodOverload0082
      * @tc.desc      A method is defined in a subinterface with the same name as the method in the
     superinterface. If signatures are override-compatible (see Override-Compatible Signatures),
@@ -2512,7 +2486,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A58 = new A58();
       expect(a.foo(1 as int)).assertEqual(2.1);
@@ -2520,7 +2493,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     });
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_8400
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_3700
      * @tc.name      testExplicitInterfaceMethodOverload0084
      * @tc.desc      A method is defined in a subinterface with the same name as the method in the
     superinterface. If signatures are override-compatible (see Override-Compatible Signatures),
@@ -2530,14 +2503,13 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = new A60();
       expect(a.foo(1.1 as number) == 1).assertTrue();
       expect(a.foo("some string") == 2).assertTrue();
     });
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_8500
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_3800
      * @tc.name      testExplicitInterfaceMethodOverload0085
      * @tc.desc      A method is defined in a subinterface with the same name as the method in the
     superinterface. If signatures are override-compatible (see Override-Compatible Signatures),
@@ -2547,7 +2519,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = new A61();
       expect(a.foo(1.1 as number) == 1).assertTrue();
@@ -2555,7 +2526,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     });
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_8600
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_3900
      * @tc.name      testExplicitInterfaceMethodOverload0086
      * @tc.desc      An explicit overload defined in a superinterface can be overridden in a subinterface.
     An explicit interface overload can be overridden in a class. Check that explicit
@@ -2565,7 +2536,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let j: J39 = ((): J39 => new A62)()
       expect(j.foo(new C3)).assertEqual('A.1')
@@ -2583,7 +2553,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(a.foo(new C1)).assertEqual('A.1')
     });
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_8700
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_4000
      * @tc.name      testExplicitInterfaceMethodOverload0087
      * @tc.desc      An explicit overload defined in a superinterface can be overridden in a subinterface.
     An explicit interface overload can be overridden in a class. Check that explicit
@@ -2593,7 +2563,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let j: J40 = ((): J40 => new A63)()
       expect(j.foo(new C3)).assertEqual('A.3')
@@ -2611,7 +2580,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(a.foo(new C1)).assertEqual('A.1')
     });
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_8800
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_4100
      * @tc.name      testExplicitInterfaceMethodOverload0088
      * @tc.desc      An explicit overload defined in a superinterface can be overridden in a subinterface.
     An explicit interface overload can be overridden in a class. Check that explicit
@@ -2645,7 +2614,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(a.foo(new C1)).assertEqual('A.1')
     });
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_8900
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_4200
      * @tc.name      testExplicitInterfaceMethodOverload0089
      * @tc.desc      An explicit overload defined in a superinterface can be overridden in a subinterface.
     An explicit interface overload can be overridden in a class. Check that explicit
@@ -2673,7 +2642,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     });
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_9500
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_4300
      * @tc.name      testExplicitInterfaceMethodOverload0095
      * @tc.desc      An explicit overload defined in a superinterface can be overridden in a subinterface.
     An explicit interface overload can be overridden in a class. Check that explicit
@@ -2701,7 +2670,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     });
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_11000
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_4400
      * @tc.name      testExplicitInterfaceMethodOverload0110
      * @tc.desc      An explicit overload defined in a superinterface can be overridden in a subinterface.
     An explicit interface overload can be overridden in a class. Check that explicit
@@ -2729,7 +2698,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     });
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_11100
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_4500
      * @tc.name      testExplicitInterfaceMethodOverload0111
      * @tc.desc      An explicit overload defined in a superinterface can be overridden in a subinterface.
     An explicit interface overload can be overridden in a class. Check that explicit
@@ -2739,7 +2708,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0111", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let j: J64 = ((): J64 => new A87)()
       expect(j.foo(new C3)).assertEqual('A.3')
@@ -2757,7 +2725,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     });
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_11300
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_4600
      * @tc.name      testExplicitInterfaceMethodOverload0113
      * @tc.desc      An explicit overload defined in a superinterface can be overridden in a subinterface.
     An explicit interface overload can be overridden in a class. Check that explicit
@@ -2767,7 +2735,6 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-
     it("testExplicitInterfaceMethodOverload0113", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let j: J66 = {}
       expect(j.foo(new C3)).assertEqual('J.1')
@@ -2786,7 +2753,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     });
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_11800
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_4700
      * @tc.name      testExplicitInterfaceMethodOverload0118
      * @tc.desc      Test cases when explicit overload name is shadowed by a method name and vice
     versa.
@@ -2807,7 +2774,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(i2.foo(1 as long)).assertEqual(2)
     });
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_11900
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_4800
      * @tc.name      testExplicitInterfaceMethodOverload0119
      * @tc.desc      Test cases when explicit overload name is shadowed by a method name and vice
     versa.
@@ -2830,7 +2797,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(i2.foo(1 as long)).assertEqual(2)
     });
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_12000
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_4900
      * @tc.name      testExplicitInterfaceMethodOverload0120
      * @tc.desc      Interface method overload declaration allows declaring an overload alias as
     an interface member for a set of interface methods.
@@ -2843,7 +2810,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     });
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_12100
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_5000
      * @tc.name      testExplicitInterfaceMethodOverload0121
      * @tc.desc      Interface method overload declaration allows declaring an overload alias as
     an interface member for a set of interface methods.
@@ -2856,7 +2823,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     });
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_12200
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_5100
      * @tc.name      testExplicitInterfaceMethodOverload0122
      * @tc.desc      desc: Interface method overload declaration allows declaring an overload alias as
     an interface member for a set of interface methods.
@@ -2869,7 +2836,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     });
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_12300
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_5200
      * @tc.name      testExplicitInterfaceMethodOverload0123
      * @tc.desc      desc: Interface method overload declaration allows declaring an overload alias as
     an interface member for a set of interface methods.
@@ -2882,7 +2849,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     });
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_12400
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_5300
      * @tc.name      testExplicitInterfaceMethodOverload0124
      * @tc.desc      desc: Interface method overload declaration allows declaring an overload alias as
     an interface member for a set of interface methods.
@@ -2895,7 +2862,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     });
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_12500
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_5400
      * @tc.name      testExplicitInterfaceMethodOverload0125
      * @tc.desc      Interface method overload declaration allows declaring an overload alias as
     an interface member for a set of interface methods.
@@ -2907,7 +2874,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       new A101();
     });
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_12600
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_5500
      * @tc.name      testExplicitInterfaceMethodOverload0126
      * @tc.desc      Interface method overload declaration allows declaring an overload alias as
     an interface member for a set of interface methods.
@@ -2927,7 +2894,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(res == 200 + 1).assertTrue();
     });
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_12700
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_5600
      * @tc.name      testExplicitInterfaceMethodOverload0127
      * @tc.desc      Interface method overload declaration allows declaring an overload alias as
     an interface member for a set of interface methods.
@@ -2947,7 +2914,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(res == 200 + 15).assertTrue();
     });
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_12800
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_5700
      * @tc.name      testExplicitInterfaceMethodOverload0128
      * @tc.desc      Interface method overload declaration allows declaring an overload alias as
     an interface member for a set of interface methods.
@@ -2967,7 +2934,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(res == 200 + 2).assertTrue();
     });
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_12900
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_5800
      * @tc.name      testExplicitInterfaceMethodOverload0129
      * @tc.desc      Interface method overload declaration allows declaring an overload alias as
     an interface member for a set of interface methods.
@@ -2987,7 +2954,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(res == 200 + 12).assertTrue();
     });
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_13000
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_5900
      * @tc.name      testExplicitInterfaceMethodOverload0130
      * @tc.desc      Interface method overload declaration allows declaring an overload alias as
     an interface member for a set of interface methods.
@@ -3007,7 +2974,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(res == 200 + 4).assertTrue();
     });
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_13100
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_6000
      * @tc.name      testExplicitInterfaceMethodOverload0131
      * @tc.desc      Interface method overload declaration allows declaring an overload alias as
     an interface member for a set of interface methods.
@@ -3027,7 +2994,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(res == 200 + 6).assertTrue();
     });
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_13200
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_6100
      * @tc.name      testExplicitInterfaceMethodOverload0132
      * @tc.desc      Interface method overload declaration allows declaring an overload alias as
     an interface member for a set of interface methods.
@@ -3047,7 +3014,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(res == 200 + 8).assertTrue();
     });
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_13300
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_6200
      * @tc.name      testExplicitInterfaceMethodOverload0133
      * @tc.desc      Interface method overload declaration allows declaring an overload alias as
     an interface member for a set of interface methods.
@@ -3067,7 +3034,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(res == 200 + 10).assertTrue();
     });
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_13400
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_6300
      * @tc.name      testExplicitInterfaceMethodOverload0134
      * @tc.desc      Interface method overload declaration allows declaring an overload alias as
     an interface member for a set of interface methods.
@@ -3087,7 +3054,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(res == 200 + 14).assertTrue();
     });
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_13500
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_6400
      * @tc.name      testExplicitInterfaceMethodOverload0135
      * @tc.desc      Interface method overload declaration allows declaring an overload alias as
     an interface member for a set of interface methods.
@@ -3107,7 +3074,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(res == 200 + 17).assertTrue();
     });
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_13600
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_6500
      * @tc.name      testExplicitInterfaceMethodOverload0136
      * @tc.desc      Interface method overload declaration allows declaring an overload alias as
     an interface member for a set of interface methods.
@@ -3127,7 +3094,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(res == 200 + 19).assertTrue();
     });
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_13700
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_6600
      * @tc.name      testExplicitInterfaceMethodOverload0137
      * @tc.desc      Interface method overload declaration allows declaring an overload alias as
     an interface member for a set of interface methods.
@@ -3148,7 +3115,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     });
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_13800
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_6700
      * @tc.name      testExplicitInterfaceMethodOverload0138
      * @tc.desc      Interface method overload declaration allows declaring an overload alias as
     an interface member for a set of interface methods.
@@ -3169,7 +3136,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
     });
 
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_13900
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_6800
      * @tc.name      testExplicitInterfaceMethodOverload0139
      * @tc.desc      Interface method overload declaration allows declaring an overload alias as
     an interface member for a set of interface methods.
@@ -3189,7 +3156,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(res == 200 + 22).assertTrue();
     });
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_14000
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_6900
      * @tc.name      testExplicitInterfaceMethodOverload0140
      * @tc.desc      Interface method overload declaration allows declaring an overload alias as
     an interface member for a set of interface methods.
@@ -3209,7 +3176,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(res == 200 + 23).assertTrue();
     });
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_14100
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_7000
      * @tc.name      testExplicitInterfaceMethodOverload0141
      * @tc.desc      Interface method overload declaration allows declaring an overload alias as
     an interface member for a set of interface methods.
@@ -3229,7 +3196,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(res == 200 + 24).assertTrue();
     });
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_14200
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_7100
      * @tc.name      testExplicitInterfaceMethodOverload0142
      * @tc.desc      Interface method overload declaration allows declaring an overload alias as
     an interface member for a set of interface methods.
@@ -3249,7 +3216,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
       expect(res == 200 + 25).assertTrue();
     });
     /**
-     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_14300
+     * @tc.number    SUB_EXPLICIT_INTERFACE_METHOD_OVERLOADTEST_7200
      * @tc.name      testExplicitInterfaceMethodOverload143
      * @tc.desc      Interface method overload declaration allows declaring an overload alias as
     an interface member for a set of interface methods.

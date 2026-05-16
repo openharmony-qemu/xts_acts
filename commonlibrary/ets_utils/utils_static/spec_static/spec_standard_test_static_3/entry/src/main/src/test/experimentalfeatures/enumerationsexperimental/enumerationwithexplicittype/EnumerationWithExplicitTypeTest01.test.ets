@@ -945,7 +945,7 @@ export default function EnumerationWithExplicitTypeTest01(): void {
     });
 
     /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_ONE_TEST_500
+     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_ONE_TEST_1500
      * @tc.name      testEnumerationWithExplicitType0015
      * @tc.desc      Checking for enum with explicit int type constant for get constant from value.
      * @tc.size      MediumTest

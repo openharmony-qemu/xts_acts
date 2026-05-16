@@ -558,7 +558,7 @@ export default function UnaryExpressionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_UNARY_EXPRESSIONS_XTSTEST2300
+     * @tc.number    SUB_UNARY_EXPRESSIONS_XTSTEST_2300
      * @tc.name      testUnaryExpressions0023
      * @tc.desc      desc: Unary plus expression for enumeration with explicit type
      * @tc.size      MediumTest

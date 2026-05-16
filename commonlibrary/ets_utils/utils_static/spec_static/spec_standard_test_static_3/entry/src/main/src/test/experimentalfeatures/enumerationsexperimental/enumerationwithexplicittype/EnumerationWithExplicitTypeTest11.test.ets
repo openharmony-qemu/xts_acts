@@ -240,7 +240,6 @@ export default function EnumerationWithExplicitTypeTest11(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      *//*
-
     it('testEnumerationWithExplicitType0433', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(EnumShortM0.first.valueOf()).assertEqual(32767 - 1)
       expect(EnumShortM0.second.valueOf()).assertEqual(32767)
@@ -256,7 +255,6 @@ export default function EnumerationWithExplicitTypeTest11(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      *//*
-
     it('testEnumerationWithExplicitType0434', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(EnumShortM0.first.valueOf()).assertEqual(32767 - 1)
       expect(EnumShortM0.second.valueOf()).assertEqual(32767)
@@ -272,7 +270,6 @@ export default function EnumerationWithExplicitTypeTest11(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      *//*
-
     it('testEnumerationWithExplicitType0435', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(EnumShortM0.first.valueOf()).assertEqual(32767 - 1)
       expect(EnumShortM0.second.valueOf()).assertEqual(32767)
@@ -288,7 +285,6 @@ export default function EnumerationWithExplicitTypeTest11(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      *//*
-
     it('testEnumerationWithExplicitType0436', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(EnumShortM0.first.valueOf()).assertEqual(32767 - 1)
       expect(EnumShortM0.second.valueOf()).assertEqual(32767)
@@ -304,7 +300,6 @@ export default function EnumerationWithExplicitTypeTest11(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      *//*
-
     it('testEnumerationWithExplicitType0437', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(EnumShortM1.first.valueOf()).assertEqual(32767 - 10)
       expect(EnumShortM1.second.valueOf()).assertEqual(32767 - 9)
@@ -320,7 +315,6 @@ export default function EnumerationWithExplicitTypeTest11(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      *//*
-
     it('testEnumerationWithExplicitType0438', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(EnumShortM1.first.valueOf()).assertEqual(32767 - 10)
       expect(EnumShortM1.second.valueOf()).assertEqual(32767 - 9)
@@ -336,7 +330,6 @@ export default function EnumerationWithExplicitTypeTest11(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      *//*
-
     it('testEnumerationWithExplicitType0439', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(EnumShortM1.first.valueOf()).assertEqual(32767 - 10)
       expect(EnumShortM1.second.valueOf()).assertEqual(32767 - 9)
@@ -352,7 +345,6 @@ export default function EnumerationWithExplicitTypeTest11(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      *//*
-
     it('testEnumerationWithExplicitType0440', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(EnumShortM1.first.valueOf()).assertEqual(32767 - 10)
       expect(EnumShortM1.second.valueOf()).assertEqual(32767 - 9)
@@ -368,7 +360,6 @@ export default function EnumerationWithExplicitTypeTest11(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      *//*
-
     it('testEnumerationWithExplicitType0441', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(EnumShortM2.first.valueOf()).assertEqual(0)
       expect(EnumShortM2.second.valueOf()).assertEqual(-32768)
@@ -384,7 +375,6 @@ export default function EnumerationWithExplicitTypeTest11(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      *//*
-
     it('testEnumerationWithExplicitType0442', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(EnumShortM2.first.valueOf()).assertEqual(0)
       expect(EnumShortM2.second.valueOf()).assertEqual(-32768)
@@ -400,7 +390,6 @@ export default function EnumerationWithExplicitTypeTest11(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      *//*
-
     it('testEnumerationWithExplicitType0443', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(EnumShortM2.first.valueOf()).assertEqual(0)
       expect(EnumShortM2.second.valueOf()).assertEqual(-32768)
@@ -416,7 +405,6 @@ export default function EnumerationWithExplicitTypeTest11(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      *//*
-
     it('testEnumerationWithExplicitType0444', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(EnumShortM2.first.valueOf()).assertEqual(0)
       expect(EnumShortM2.second.valueOf()).assertEqual(-32768)
@@ -432,7 +420,6 @@ export default function EnumerationWithExplicitTypeTest11(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      *//*
-
     it('testEnumerationWithExplicitType0445', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(EnumShortM3.first.valueOf()).assertEqual(-32768 + 10)
       expect(EnumShortM3.second.valueOf()).assertEqual(-32768 + 11)
@@ -448,7 +435,6 @@ export default function EnumerationWithExplicitTypeTest11(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      *//*
-
     it('testEnumerationWithExplicitType0446', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(EnumShortM3.first.valueOf()).assertEqual(-32768 + 10)
       expect(EnumShortM3.second.valueOf()).assertEqual(-32768 + 11)
@@ -464,7 +450,6 @@ export default function EnumerationWithExplicitTypeTest11(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      *//*
-
     it('testEnumerationWithExplicitType0447', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(EnumShortM3.first.valueOf()).assertEqual(-32768 + 10)
       expect(EnumShortM3.second.valueOf()).assertEqual(-32768 + 11)
@@ -480,7 +465,6 @@ export default function EnumerationWithExplicitTypeTest11(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      *//*
-
     it('testEnumerationWithExplicitType0448', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(EnumShortM3.first.valueOf()).assertEqual(-32768 + 10)
       expect(EnumShortM3.second.valueOf()).assertEqual(-32768 + 11)

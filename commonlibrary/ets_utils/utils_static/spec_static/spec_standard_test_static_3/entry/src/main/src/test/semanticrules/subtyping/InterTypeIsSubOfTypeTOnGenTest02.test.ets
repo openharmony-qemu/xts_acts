@@ -1395,7 +1395,7 @@ export default function InterTypeIsSubOfTypeTOnGenTest02(): void {
     })
 
     /**
-     * @tc.number    SUB_INTER_TYPE_IS_SUB_OF_TYPE_T_ON_GEN_0500a
+     * @tc.number    SUB_INTER_TYPE_IS_SUB_OF_TYPE_T_ON_GEN_0500
      * @tc.name      testInterTypeIsSubOfTypeTOnGen0005
      * @tc.desc      Checking that intersection type I (defined as I1 & I2) is a subtype of type
      *               T if Ii is a subtype of T for some i in case of usage instanceof on generic custom
