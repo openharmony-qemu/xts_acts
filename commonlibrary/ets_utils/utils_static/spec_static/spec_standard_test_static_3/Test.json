@@ -5,13 +5,13 @@
         "test-timeout": "180000",
         "shell-timeout": "180000",
         "testcase-timeout": "15000",
-        "bundle-name": "spec.standard.test.static3",
+        "bundle-name": "spec.standard.test3.static",
         "module-name": "entry"
     },
     "kits": [
         {
             "test-file-name": [
-                "ActsSpecStaticTest3.hap"
+                "ActsSpec3StaticTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
