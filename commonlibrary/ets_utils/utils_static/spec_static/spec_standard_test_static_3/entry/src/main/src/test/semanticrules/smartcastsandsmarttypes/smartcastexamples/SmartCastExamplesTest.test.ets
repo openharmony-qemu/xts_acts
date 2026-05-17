@@ -109,7 +109,7 @@ export default function SmartCastExamplesTest():void {
 
     /**
      * @tc.number    SUB_SMART_CAST_EXAMPLESTEST_0100
-     * @tc.name      testSpecExample0001
+     * @tc.name      testSpecExampleOne0001
      * @tc.desc      There could be cases when the type of an entity (mostly local variables) is
      *               a union type and in the particular context of the program the compiler can narrow
      *               (smart cast) the static type to a more precise type (smart type) and allow operations
@@ -118,20 +118,20 @@ export default function SmartCastExamplesTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testSpecExample0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testSpecExampleOne0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(main_01()).assertEqual("[object Object]")
     });
 
     /**
      * @tc.number    SUB_SMART_CAST_EXAMPLESTEST_0200
-     * @tc.name      testSpecExample0002
+     * @tc.name      testSpecExampleOne0002
      * @tc.desc      Checking smart cast inside initial assignments, increments on unions,
      *               and inside `instanceof` blocks.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testSpecExample0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testSpecExampleOne0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(boo_02()).assertEqual(43)
       expect(goo_02()).assertEqual(1)
       expect(foo_02(new Derived_02(), new Derived_02())).assertEqual(1)
@@ -140,14 +140,14 @@ export default function SmartCastExamplesTest():void {
 
     /**
      * @tc.number    SUB_SMART_CAST_EXAMPLESTEST_0300
-     * @tc.name      testSpecExample0003
+     * @tc.name      testSpecExampleOne0003
      * @tc.desc      Checking smart cast dynamically resolving the correct function overload
      *               based on the narrowed type of the variable.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testSpecExample0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testSpecExampleOne0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Base_03 = new Base_03()
       expect(foo_03(a)).assertEqual("Base")
 

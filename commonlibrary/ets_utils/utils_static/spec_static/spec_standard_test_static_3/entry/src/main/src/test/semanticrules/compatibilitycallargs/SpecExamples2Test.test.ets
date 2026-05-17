@@ -177,14 +177,14 @@ export default function SpecExamples2Test(): void {
 
     /**
      * @tc.number    SUB_SPEC_EXAMPLES2_TEST_0100
-     * @tc.name      testSpecExamples0001
+     * @tc.name      testSpecExamplesOne0001
      * @tc.desc      Specification examples for semantic checks that must be performed to arguments
      *               when checking the validity of any function, method, constructor, or lambda call.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testSpecExamples0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testSpecExamplesOne0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       
 
       let my_lambda_var: my_lambda1 = (pa: number[]): void => {
@@ -212,14 +212,14 @@ export default function SpecExamples2Test(): void {
 
     /**
      * @tc.number    SUB_SPEC_EXAMPLES2_TEST_0200
-     * @tc.name      testSpecExamples0002
+     * @tc.name      testSpecExamplesOne0002
      * @tc.desc      Specification examples for semantic checks that must be performed to arguments
      *               when checking the validity of any function, method, constructor, or lambda call.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testSpecExamples0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testSpecExamplesOne0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       
 
       let my_lambda_var: my_lambda2 = (p1: number, p2: number[]): void => {
@@ -247,14 +247,14 @@ export default function SpecExamples2Test(): void {
 
     /**
      * @tc.number    SUB_SPEC_EXAMPLES2_TEST_0300
-     * @tc.name      testSpecExamples0003
+     * @tc.name      testSpecExamplesOne0003
      * @tc.desc      Specification examples for semantic checks that must be performed to arguments
      *               when checking the validity of any function, method, constructor, or lambda call.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testSpecExamples0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testSpecExamplesOne0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       
 
       let my_lambda_var: my_lambda3 = (pc: TestMix[]): void => {
@@ -284,14 +284,14 @@ export default function SpecExamples2Test(): void {
 
     /**
      * @tc.number    SUB_SPEC_EXAMPLES2_TEST_0400
-     * @tc.name      testSpecExamples0004
+     * @tc.name      testSpecExamplesOne0004
      * @tc.desc      Specification examples for semantic checks that must be performed to arguments
      *               when checking the validity of any function, method, constructor, or lambda call.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testSpecExamples0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testSpecExamplesOne0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       
 
       let my_lambda_var: my_lambda4 = (p: Object[]): void => {

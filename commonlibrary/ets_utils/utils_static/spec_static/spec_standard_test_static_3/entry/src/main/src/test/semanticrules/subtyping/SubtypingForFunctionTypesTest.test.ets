@@ -1211,7 +1211,7 @@ export default function SubtypingForFunctionTypesTest(): void {
 
     /**
      * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPESTEST_1400
-     * @tc.name      testPositiveFunction0014
+     * @tc.name      testPositiveFunctionOne0014
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \\ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
      *               \ the following conditions are met: \u2022 m <= n \u2022 for each i <= m\n    -\
@@ -1223,7 +1223,7 @@ export default function SubtypingForFunctionTypesTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testPositiveFunction0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testPositiveFunctionOne0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       expect(foodbn14(new Derived14, 1) instanceof Derived14).assertTrue()
       expect(foodbn14(new Derived14, 1).b).assertEqual('d')

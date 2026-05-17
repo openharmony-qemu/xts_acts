@@ -131,7 +131,7 @@ export default function NumericDefaultLiteralTypesTest02():void {
 
     /**
      * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_0600
-     * @tc.name      testNumericLogical0007
+     * @tc.name      testNumericLogicalOne0006
      * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
      * evaluated from the expression. The evaluated numeric result type can be inferred
      * to a numeric target type from the context.
@@ -139,7 +139,7 @@ export default function NumericDefaultLiteralTypesTest02():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericLogical0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericLogicalOne0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: long = 9223372036854775806 ^ 1;
       expect(a instanceof long).assertTrue();
       expect(a).assertEqual(9223372036854775806 ^ 1);
@@ -147,7 +147,7 @@ export default function NumericDefaultLiteralTypesTest02():void {
 
     /**
      * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_0700
-     * @tc.name      testNumericLogical0007
+     * @tc.name      testNumericLogicalOne0007
      * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
      * evaluated from the expression. The evaluated numeric result type can be inferred
      * to a numeric target type from the context.
@@ -155,7 +155,7 @@ export default function NumericDefaultLiteralTypesTest02():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericLogical0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericLogicalOne0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: int = -16 ^ 1;
       expect(a instanceof int).assertTrue();
       expect(a).assertEqual(-16 ^ 1);

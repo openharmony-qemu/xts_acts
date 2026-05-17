@@ -67,13 +67,13 @@ export default function SubtypingAmongPrimitiveTypestTest():void {
 
     /**
      * @tc.number    SUB_SUBTYPING_AMONG_PRIMITIVE_TYPESTEST_0200
-     * @tc.name      testStaticAndInstanceFields0002
+     * @tc.name      testPrimitiveStaticFields0002
      * @tc.desc      Subtyping relation among the primitive types
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testStaticAndInstanceFields0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testPrimitiveStaticFields0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let strNumber: string = "5";
       let convertedNumber: number = Number(strNumber);
       expect(convertedNumber).assertEqual(5);
@@ -85,13 +85,13 @@ export default function SubtypingAmongPrimitiveTypestTest():void {
 
     /**
      * @tc.number    SUB_SUBTYPING_AMONG_PRIMITIVE_TYPESTEST_0300
-     * @tc.name      testStaticAndInstanceFields0003
+     * @tc.name      testPrimitiveStaticFields0003
      * @tc.desc      Subtyping relation among the primitive types
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testStaticAndInstanceFields0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testPrimitiveStaticFields0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       let instance: long = 5 as int;
       expect(instance).assertEqual(5);
@@ -99,13 +99,13 @@ export default function SubtypingAmongPrimitiveTypestTest():void {
 
     /**
      * @tc.number    SUB_SUBTYPING_AMONG_PRIMITIVE_TYPESTEST_0400
-     * @tc.name      testStaticAndInstanceFields0004
+     * @tc.name      testPrimitiveStaticFields0004
      * @tc.desc      Subtyping relation among the primitive types
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testStaticAndInstanceFields0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testPrimitiveStaticFields0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       let instance: int = 5 as short;
       expect(instance).assertEqual(5);
@@ -113,13 +113,13 @@ export default function SubtypingAmongPrimitiveTypestTest():void {
 
     /**
      * @tc.number    SUB_SUBTYPING_AMONG_PRIMITIVE_TYPESTEST_0500
-     * @tc.name      testStaticAndInstanceFields0005
+     * @tc.name      testPrimitiveStaticFields0005
      * @tc.desc      Subtyping relation among the primitive types
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testStaticAndInstanceFields0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testPrimitiveStaticFields0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       let instance: short = 5 as byte;
       expect(instance).assertEqual(5 as number);

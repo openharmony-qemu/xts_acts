@@ -189,14 +189,14 @@ export default function SpecificsOfAssignmentLikeContexts(): void{
 
     /**
      * @tc.number    SUB_BASEDATE_POSITIVE_CASES_0100
-     * @tc.name      testPositiveCases0001
+     * @tc.name      testPositiveCasesOne0001
      * @tc.desc      Assignment-like context is specific in that the type of a left-hand-side expression is known,
      * but the type of a right-hand-side expression is not necessarily known in the context as follows
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testPositiveCases0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testPositiveCasesOne0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       assignSameType1(1, 1)
       assignOtherType1(1, 2)
       assignIndexed1([])

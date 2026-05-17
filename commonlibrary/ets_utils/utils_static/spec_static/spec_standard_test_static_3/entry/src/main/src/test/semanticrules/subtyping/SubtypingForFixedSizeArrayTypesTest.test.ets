@@ -498,174 +498,6 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
 
     /**
      * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_1300
-     * @tc.name      testNegativeTypeSafety0001
-     * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
-    <: FixedSize<A> if B <: A.'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNegativeTypeSafety0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      expect(y12 instanceof FixedArray<Number>).assertEqual(true);
-    });
-
-    /**
-     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_1400
-     * @tc.name      testNegativeTypeSafety0002
-     * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
-    <: FixedSize<A> if B <: A.'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNegativeTypeSafety0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      expect(y13 instanceof FixedArray<Boolean>).assertEqual(true);
-    });
-
-    /**
-     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_1500
-     * @tc.name      testNegativeTypeSafety0003
-     * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
-    <: FixedSize<A> if B <: A.'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNegativeTypeSafety0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      expect(y14 instanceof FixedArray<J>).assertEqual(true);
-    });
-
-    /**
-     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_1600
-     * @tc.name      testNegativeTypeSafety0004
-     * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
-    <: FixedSize<A> if B <: A.'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNegativeTypeSafety0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      expect(y15 instanceof FixedArray<BigInt>).assertEqual(true);
-    });
-
-    /**
-     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_1700
-     * @tc.name      testNegativeTypeSafety0005
-     * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
-    <: FixedSize<A> if B <: A.'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNegativeTypeSafety0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      expect(y16 instanceof FixedArray<Array>).assertEqual(true);
-    });
-
-    /**
-     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_1800
-     * @tc.name      testNegativeTypeSafety0006
-     * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
-    <: FixedSize<A> if B <: A.'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNegativeTypeSafety0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      expect(y17 instanceof FixedArray<null>).assertEqual(true);
-    });
-
-    /**
-     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_1900
-     * @tc.name      testNegativeTypeSafety0007
-     * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
-    <: FixedSize<A> if B <: A.'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNegativeTypeSafety0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      expect(y18 instanceof FixedArray<undefined>).assertEqual(true);
-    });
-
-    /**
-     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_2000
-     * @tc.name      testNegativeTypeSafety0008
-     * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
-    <: FixedSize<A> if B <: A.'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNegativeTypeSafety0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      expect(y19 instanceof FixedArray<Base>).assertEqual(true);
-    });
-
-    /**
-     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_2100
-     * @tc.name      testNegativeTypeSafety0009
-     * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
-    <: FixedSize<A> if B <: A.'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNegativeTypeSafety0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      expect(y20 instanceof FixedArray<String>).assertEqual(true);
-    });
-
-    /**
-     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_2200
-     * @tc.name      testNegativeTypeSafety0010
-     * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
-    <: FixedSize<A> if B <: A.'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNegativeTypeSafety0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      expect(y21 instanceof FixedArray<String>).assertEqual(true);
-    });
-
-    /**
-     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_2300
-     * @tc.name      testNegativeTypeSafety0011
-     * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
-    <: FixedSize<A> if B <: A.'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNegativeTypeSafety0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      expect(y22 instanceof FixedArray<'1'|'2'|'3'>).assertEqual(true);
-    });
-
-    /**
-     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_2400
-     * @tc.name      testNegativeTypeSafety0012
-     * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
-    <: FixedSize<A> if B <: A.'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNegativeTypeSafety0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      expect(y23 instanceof FixedArray<Base>).assertEqual(true);
-    });
-
-    /**
-     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_2500
      * @tc.name      testNegativeTypeSafety0013
      * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
     <: FixedSize<A> if B <: A.'
@@ -675,11 +507,11 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
      */
     it("testNegativeTypeSafety0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
-      expect(y24 instanceof FixedArray<Object>).assertEqual(true);
+      expect(y12 instanceof FixedArray<Number>).assertEqual(true);
     });
 
     /**
-     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_2600
+     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_1400
      * @tc.name      testNegativeTypeSafety0014
      * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
     <: FixedSize<A> if B <: A.'
@@ -689,11 +521,11 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
      */
     it("testNegativeTypeSafety0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
-      expect(y25 instanceof FixedArray<[Base, J, string]>).assertEqual(true);
+      expect(y13 instanceof FixedArray<Boolean>).assertEqual(true);
     });
 
     /**
-     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_2700
+     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_1500
      * @tc.name      testNegativeTypeSafety0015
      * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
     <: FixedSize<A> if B <: A.'
@@ -703,18 +535,185 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
      */
     it("testNegativeTypeSafety0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
+      expect(y14 instanceof FixedArray<J>).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_1600
+     * @tc.name      testNegativeTypeSafety0016
+     * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
+    <: FixedSize<A> if B <: A.'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNegativeTypeSafety0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      expect(y15 instanceof FixedArray<BigInt>).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_1700
+     * @tc.name      testNegativeTypeSafety0017
+     * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
+    <: FixedSize<A> if B <: A.'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNegativeTypeSafety0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      expect(y16 instanceof FixedArray<Array>).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_1800
+     * @tc.name      testNegativeTypeSafety0018
+     * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
+    <: FixedSize<A> if B <: A.'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNegativeTypeSafety0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      expect(y17 instanceof FixedArray<null>).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_1900
+     * @tc.name      testNegativeTypeSafety0019
+     * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
+    <: FixedSize<A> if B <: A.'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNegativeTypeSafety0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(y18 instanceof FixedArray<undefined>).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_2000
+     * @tc.name      testNegativeTypeSafety0020
+     * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
+    <: FixedSize<A> if B <: A.'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNegativeTypeSafety0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      expect(y19 instanceof FixedArray<Base>).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_2100
+     * @tc.name      testNegativeTypeSafety0021
+     * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
+    <: FixedSize<A> if B <: A.'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNegativeTypeSafety0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      expect(y20 instanceof FixedArray<String>).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_2200
+     * @tc.name      testNegativeTypeSafety0022
+     * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
+    <: FixedSize<A> if B <: A.'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNegativeTypeSafety0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      expect(y21 instanceof FixedArray<String>).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_2300
+     * @tc.name      testNegativeTypeSafety0023
+     * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
+    <: FixedSize<A> if B <: A.'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNegativeTypeSafety0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      expect(y22 instanceof FixedArray<'1'|'2'|'3'>).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_2400
+     * @tc.name      testNegativeTypeSafety0024
+     * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
+    <: FixedSize<A> if B <: A.'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNegativeTypeSafety0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      expect(y23 instanceof FixedArray<Base>).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_2500
+     * @tc.name      testNegativeTypeSafety0025
+     * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
+    <: FixedSize<A> if B <: A.'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNegativeTypeSafety0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      expect(y24 instanceof FixedArray<Object>).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_2600
+     * @tc.name      testNegativeTypeSafety0026
+     * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
+    <: FixedSize<A> if B <: A.'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNegativeTypeSafety0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      expect(y25 instanceof FixedArray<[Base, J, string]>).assertEqual(true);
+    });
+
+    /**
+     * @tc.number    SUB_NEGATIVE_TYPE_SAFETY_2700
+     * @tc.name      testNegativeTypeSafety0027
+     * @tc.desc     'Fixed-size array types are covariant and are formally defined as follows: FixedSize<B>
+    <: FixedSize<A> if B <: A.'
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testNegativeTypeSafety0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
       expect(y26 instanceof FixedArray<Derived>).assertEqual(true);
     });
 
     /**
      * @tc.number    SUB_POSITIVE_TYPE_SAFETY_0100
-     * @tc.name      testPositiveTypeSafety0001
+     * @tc.name      testNegativeTypeSafety0028
      * @tc.desc      Union of string literals in FixedArray erased to FixedArray<String> in runtime
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testPositiveTypeSafety0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNegativeTypeSafety0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       foo12(x27)
       foo12(y27)
@@ -724,13 +723,13 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
 
     /**
      * @tc.number    SUB_POSITIVE_TYPE_SAFETY_0200
-     * @tc.name      testPositiveTypeSafety0002
+     * @tc.name      testNegativeTypeSafety0029
      * @tc.desc      Union of string literals in FixedArray erased to FixedArray<String> in runtime
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testPositiveTypeSafety0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNegativeTypeSafety0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       foo13(x28)
       foo13(y28)

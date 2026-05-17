@@ -837,7 +837,7 @@ export default function InterTypeIsSubOfTypeTOnStrLit2Test(): void {
 
     /**
      * @tc.number    SUB_INTER_TYPE_IS_SUB_OF_TYPE_T_ON_STR_LIT2_0100
-     * @tc.name      testInterTypeIsSubOfTypeTOnStrLit0001
+     * @tc.name      testInterTypeIsSubOfTypeTOnStrLitOne0001
      * @tc.desc      Checking that intersection type I (defined as I1 & I2) is a subtype of type
      *               T if Ii is a subtype of T for some i in case of usage instanceof on literal union
      *               types
@@ -845,7 +845,7 @@ export default function InterTypeIsSubOfTypeTOnStrLit2Test(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testInterTypeIsSubOfTypeTOnStrLit0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testInterTypeIsSubOfTypeTOnStrLitOne0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       let res1: boolean = check_is_in_T_type_2_0("In Progress", 1)
       let res2: boolean = check_is_in_T_type_2_0("Done", 2)
@@ -857,7 +857,7 @@ export default function InterTypeIsSubOfTypeTOnStrLit2Test(): void {
 
     /**
      * @tc.number    SUB_INTER_TYPE_IS_SUB_OF_TYPE_T_ON_STR_LIT2_0200
-     * @tc.name      testInterTypeIsSubOfTypeTOnStrLit0002
+     * @tc.name      testInterTypeIsSubOfTypeTOnStrLitOne0002
      * @tc.desc      Checking that intersection type I (defined as I1 & I2) is a subtype of type
      *               T if Ii is a subtype of T for some i in case of usage instanceof on literal union
      *               types
@@ -865,7 +865,7 @@ export default function InterTypeIsSubOfTypeTOnStrLit2Test(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testInterTypeIsSubOfTypeTOnStrLit0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testInterTypeIsSubOfTypeTOnStrLitOne0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       let res1: boolean = check_is_in_T_type_2_1("In Progress", 1)
       let res2: boolean = check_is_in_T_type_2_1("Done", 2)
