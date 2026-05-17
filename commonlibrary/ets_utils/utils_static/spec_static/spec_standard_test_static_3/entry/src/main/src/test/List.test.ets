@@ -208,6 +208,7 @@ import InterTypeIsSubOfTypeTOnPredefinedTest01 from './semanticrules/subtyping/I
 import InterTypeIsSubOfTypeTOnPredefinedTest02 from './semanticrules/subtyping/InterTypeIsSubOfTypeTOnPredefinedTest02.test'
 import InterTypeIsSubOfTypeTOnPredefinedTest03 from './semanticrules/subtyping/InterTypeIsSubOfTypeTOnPredefinedTest03.test'
 import InterTypeIsSubOfTypeTOnStrLit1Test from './semanticrules/subtyping/InterTypeIsSubOfTypeTOnStrLit1Test.test'
+import InterTypeIsSubOfTypeTOnStrLit1Test01 from './semanticrules/subtyping/InterTypeIsSubOfTypeTOnStrLit1Test01.test'
 import InterTypeIsSubOfTypeTOnStrLit2Test from './semanticrules/subtyping/InterTypeIsSubOfTypeTOnStrLit2Test.test'
 import TypeTIsSubOfInterTypeOnGenTest from './semanticrules/subtyping/TypeTIsSubOfInterTypeOnGenTest.test'
 import TypeTIsSubOfInterTypeOnGenTest01 from './semanticrules/subtyping/TypeTIsSubOfInterTypeOnGenTest01.test'
@@ -239,6 +240,7 @@ import TypeTIsSubOfDiffOnNonGenTest from './semanticrules/subtyping/TypeTIsSubOf
 import TypeTIsSubOfDiffOnNonGenTest01 from './semanticrules/subtyping/TypeTIsSubOfDiffOnNonGenTest01.test'
 import TypeTIsSubOfDiffOnPredefinedTest from './semanticrules/subtyping/TypeTIsSubOfDiffOnPredefinedTest.test'
 import TypeTIsSubOfDiffOnPredefinedTest01 from './semanticrules/subtyping/TypeTIsSubOfDiffOnPredefinedTest01.test'
+import TypeTIsSubOfDiffOnStrLitTest from './semanticrules/subtyping/TypeTIsSubOfDiffOnStrLitTest.test'
 import ArrayTypesIdentityTest from './semanticrules/typeidentity/ArrayTypesIdentityTest.test'
 import ArrayTypesIdentityTest01 from './semanticrules/typeidentity/ArrayTypesIdentityTest01.test'
 import ArrayTypesIdentityTest02 from './semanticrules/typeidentity/ArrayTypesIdentityTest02.test'
@@ -533,6 +535,7 @@ export default function testsuite(): void {
   InterTypeIsSubOfTypeTOnPredefinedTest02();
   InterTypeIsSubOfTypeTOnPredefinedTest03();
   InterTypeIsSubOfTypeTOnStrLit1Test();
+  InterTypeIsSubOfTypeTOnStrLit1Test01();
   InterTypeIsSubOfTypeTOnStrLit2Test();
   TypeTIsSubOfInterTypeOnGenTest();
   TypeTIsSubOfInterTypeOnGenTest01();
@@ -564,6 +567,7 @@ export default function testsuite(): void {
   TypeTIsSubOfDiffOnNonGenTest01();
   TypeTIsSubOfDiffOnPredefinedTest();
   TypeTIsSubOfDiffOnPredefinedTest01();
+  TypeTIsSubOfDiffOnStrLitTest();
   ArrayTypesIdentityTest();
   ArrayTypesIdentityTest01();
   ArrayTypesIdentityTest02();
