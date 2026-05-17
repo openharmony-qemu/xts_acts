@@ -514,7 +514,6 @@ export default function ArrayOfArraysTypesIdentityTest17(): void {
      * @tc.level     Level 2
      */
     it("testArrayOfArraysTypesIdentity0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayOfArraysTypesIdentity0047';
 
       let a: Array<C1[]> = [[{data: 1} as C1, {data: 3} as C1], [{data: 5} as C1, {data: 7} as C1]]
       let b: Array<C1>[] = cast1(a)
@@ -573,7 +572,6 @@ export default function ArrayOfArraysTypesIdentityTest17(): void {
      * @tc.level     Level 2
      */
     it("testArrayOfArraysTypesIdentity0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayOfArraysTypesIdentity0048';
 
       let a: Array<C2[]> = [[{data: 1} as C2, {data: 3} as C2], [{data: 5} as C2, {data: 7} as C2]]
       let b: Array<C2>[] = cast2(a)
@@ -632,7 +630,6 @@ export default function ArrayOfArraysTypesIdentityTest17(): void {
      * @tc.level     Level 2
      */
     it("testArrayOfArraysTypesIdentity0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayOfArraysTypesIdentity0049';
 
       let a: Array<C3[]> = [[{data: 1} as C3, {data: 3} as C3], [{data: 5} as C3, {data: 7} as C3]]
       let b: Array<C3>[] = cast3(a)
@@ -690,7 +687,6 @@ export default function ArrayOfArraysTypesIdentityTest17(): void {
      * @tc.level     Level 2
      */
     it("testArrayOfArraysTypesIdentity0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayOfArraysTypesIdentity0050';
 
       let a: Array<C4[]> = [[{data: 1} as C4, {data: 3} as C4], [{data: 5} as C4, {data: 7} as C4]]
       let b: Array<C4>[] = cast4(a)
@@ -748,7 +744,6 @@ export default function ArrayOfArraysTypesIdentityTest17(): void {
      * @tc.level     Level 2
      */
     it("testArrayOfArraysTypesIdentity0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayOfArraysTypesIdentity0051';
 
       let a: Array<C5>[] = [[{data: 1} as C5, {data: 3} as C5], [{data: 5} as C5, {data: 7} as C5]]
       let b: Array<C5[]> = cast5(a)
@@ -806,7 +801,6 @@ export default function ArrayOfArraysTypesIdentityTest17(): void {
      * @tc.level     Level 2
      */
     it("testArrayOfArraysTypesIdentity0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayOfArraysTypesIdentity0052';
 
       let a: Array<C6>[] = [[{data: 1} as C6, {data: 3} as C6], [{data: 5} as C6, {data: 7} as C6]]
       let b: Array<C6[]> = cast6(a)
@@ -864,7 +858,6 @@ export default function ArrayOfArraysTypesIdentityTest17(): void {
      * @tc.level     Level 2
      */
     it("testArrayOfArraysTypesIdentity0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayOfArraysTypesIdentity0053';
 
       let a: Array<C1>[] = [[{data: 1} as C1, {data: 3} as C1], [{data: 5} as C1, {data: 7} as C1]]
       let b: Array<C1[]> = cast1(a)

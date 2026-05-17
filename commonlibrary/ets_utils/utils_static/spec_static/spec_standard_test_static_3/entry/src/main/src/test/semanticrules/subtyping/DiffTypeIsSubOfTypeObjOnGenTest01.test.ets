@@ -1510,7 +1510,6 @@ export default function DiffTypeIsSubOfTypeObjOnGenTest01(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeIsSubOfTypeObjOnGen0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeIsSubOfTypeObjOnGen0007';
 
       let res: number = f1_7(new C1_7<number, null>(321));
       expect(res).assertEqual(1);
@@ -1531,7 +1530,6 @@ export default function DiffTypeIsSubOfTypeObjOnGenTest01(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeIsSubOfTypeObjOnGen0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeIsSubOfTypeObjOnGen0008';
 
       let res: number = f1_8(new C1_8(321));
       expect(res).assertEqual(1);
@@ -1552,7 +1550,6 @@ export default function DiffTypeIsSubOfTypeObjOnGenTest01(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeIsSubOfTypeObjOnGen0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeIsSubOfTypeObjOnGen0009';
 
       let res: number = testNS3_9.f1_9(new testNS3_9.C1_9<number, null>(123));
       expect(res).assertEqual(1);
@@ -1573,7 +1570,6 @@ export default function DiffTypeIsSubOfTypeObjOnGenTest01(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeIsSubOfTypeObjOnGen0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeIsSubOfTypeObjOnGen0010';
 
       let res: number = testNS3_10.f1_10(new testNS3_10.C1_10(123));
       expect(res).assertEqual(1);
@@ -1594,7 +1590,6 @@ export default function DiffTypeIsSubOfTypeObjOnGenTest01(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeIsSubOfTypeObjOnGen0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeIsSubOfTypeObjOnGen0011';
 
       let res: number = testNS3_11.f1_11(new testNS3_11.C1_11<number, null>(123));
       expect(res).assertEqual(1);
@@ -1614,7 +1609,6 @@ export default function DiffTypeIsSubOfTypeObjOnGenTest01(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeIsSubOfTypeObjOnGen0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeIsSubOfTypeObjOnGen0012';
 
       let res: number =
         testNS3_12.f1_12(new testNS3_12.C2_12<testNS3_12.Derived_12, testNS3_12.Base_12>(new testNS3_12.Derived_12(321)));

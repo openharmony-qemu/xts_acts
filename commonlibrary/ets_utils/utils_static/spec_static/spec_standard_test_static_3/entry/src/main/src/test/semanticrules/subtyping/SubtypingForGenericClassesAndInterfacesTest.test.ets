@@ -453,7 +453,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericCastToGenericSuperclass0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericCastToGenericSuperclass0001';
        
 
       let instance: C1<B1> = new D1<B1>(new B1());
@@ -470,7 +469,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericCastToObject0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericCastToObject0002';
        
 
       let b2: B2<String> = new B2<String>();
@@ -487,7 +485,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericCastToObjectWithParameters0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericCastToObjectWithParameters0003';
        
 
       let instance: Object = new C3<B3>(new B3());
@@ -504,7 +501,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericCastToSuperclass0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericCastToSuperclass0004';
        
 
       let instance: A4 = new B4<String>();
@@ -523,7 +519,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsAndIntfSubtyping0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsAndIntfSubtyping0005';
        
 
       let base = (t5 = new A5<D5,E5>)
@@ -545,7 +540,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsAndIntfSubtyping0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsAndIntfSubtyping0006';
        
 
       let base = (t6 = new Object)
@@ -567,7 +561,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsAndIntfSubtyping0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsAndIntfSubtyping0007';
        
 
       t7 = {}
@@ -590,7 +583,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsAndIntfSubtyping0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsAndIntfSubtyping0008';
        
 
       let base = (a8 = t8)
@@ -612,7 +604,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsAndIntfSubtyping0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsAndIntfSubtyping0009';
        
 
       let base = (a9 = new Object)
@@ -634,7 +625,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsAndIntfSubtyping0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsAndIntfSubtyping0010';
        
 
       let base = foo10(new A10<D10,E10>)
@@ -655,7 +645,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsAndIntfSubtyping0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsAndIntfSubtyping0011';
        
 
       let base = foo11(new Object)
@@ -676,7 +665,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsAndIntfSubtyping0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsAndIntfSubtyping0012';
        
 
       t12 = {}
@@ -698,7 +686,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsAndIntfSubtyping0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsAndIntfSubtyping0013';
        
 
       let base = foo13(t13)
@@ -719,7 +706,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsAndIntfSubtyping0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsAndIntfSubtyping0014';
        
 
       let base = foo14(new Object)
@@ -740,7 +726,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsAndIntfSubtyping0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsAndIntfSubtyping0015';
        
 
       let base = new C15().foo15(new A15<D15,E15>)
@@ -761,7 +746,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsAndIntfSubtyping0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsAndIntfSubtyping0016';
        
 
       let base = new C16().foo16(new Object)
@@ -782,7 +766,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsAndIntfSubtyping0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsAndIntfSubtyping0017';
        
 
       t17 = {}
@@ -804,7 +787,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsAndIntfSubtyping0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsAndIntfSubtyping0018';
        
 
       let base = new C18().foo18(t18)
@@ -825,7 +807,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsAndIntfSubtyping0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsAndIntfSubtyping0019';
        
 
       let base = new C19().foo19(new Object)
@@ -846,7 +827,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsAndIntfSubtyping0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsAndIntfSubtyping0020';
        
 
       let base = C20.foo20(new A20<D20,E20>)
@@ -867,7 +847,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsAndIntfSubtyping0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsAndIntfSubtyping0021';
        
 
       let base = C21.foo21(new Object)
@@ -888,7 +867,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsAndIntfSubtyping0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsAndIntfSubtyping0022';
        
 
       t22 = {}
@@ -910,7 +888,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsAndIntfSubtyping0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsAndIntfSubtyping0023';
        
 
       let base = C23.foo23(t23)
@@ -931,7 +908,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsAndIntfSubtyping0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsAndIntfSubtyping0024';
        
 
       let base = C24.foo24(new Object)
@@ -952,7 +928,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsAndIntfSubtyping0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsAndIntfSubtyping0025';
        
 
       let base = new C25(new A25<D25,E25>).a25
@@ -973,7 +948,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsAndIntfSubtyping0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsAndIntfSubtyping0026';
        
 
       let base = new C26(new Object).a26
@@ -994,7 +968,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsAndIntfSubtyping0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsAndIntfSubtyping0027';
        
 
       t27 = {}
@@ -1016,7 +989,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsAndIntfSubtyping0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsAndIntfSubtyping0028';
        
 
       let base = new C28(t28).c28
@@ -1037,7 +1009,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsAndIntfSubtyping0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsAndIntfSubtyping0029';
        
 
       let base = new C29(new Object).a29
@@ -1058,7 +1029,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericSubAndSuperinterfaces0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericSubAndSuperinterfaces0030';
        
 
       let instanceD: D30<String, Number> = { name: 'String2', id: 2.0 }
@@ -1077,7 +1047,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericSubinterface0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericSubinterface0031';
        
 
       let instanceB: B31<Y31>  = {x31: new X31(), y31: new Y31()}
@@ -1096,7 +1065,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsSubtypingTypeVariance0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsSubtypingTypeVariance0032';
        
 
       let base = new A32<F32,E32>(new E32)
@@ -1116,7 +1084,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsSubtypingTypeVariance0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsSubtypingTypeVariance0033';
        
 
       let base = new A33<F33,D33>(new D33)
@@ -1136,7 +1103,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsSubtypingTypeVariance0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsSubtypingTypeVariance0034';
        
 
       let base = new A34<F34,D34>(new D34)
@@ -1156,7 +1122,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsSubtypingTypeVariance0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsSubtypingTypeVariance0035';
        
 
       let base = new A35<E35,F35>(new F35)
@@ -1176,7 +1141,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsSubtypingTypeVariance0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsSubtypingTypeVariance0036';
        
 
       let base = new A36<D36,E36>(new E36)
@@ -1196,7 +1160,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsSubtypingTypeVariance0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsSubtypingTypeVariance0037';
        
 
       let base = new A37<F37,F37>(new F37)
@@ -1216,7 +1179,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsSubtypingTypeVariance0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsSubtypingTypeVariance0037';
        
 
       let base = new A37<F37,F37>(new F37)
@@ -1236,7 +1198,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsSubtypingTypeVariance0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsSubtypingTypeVariance0038';
        
 
       let base = new A38<E38,E38>(new E38)
@@ -1256,7 +1217,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsSubtypingTypeVariance0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsSubtypingTypeVariance0039';
        
 
       let base = new A39<E39,F39>(new F39)
@@ -1276,7 +1236,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsSubtypingTypeVariance0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsSubtypingTypeVariance0040';
        
 
       let base = new A40<D40,D40>(new D40)
@@ -1296,7 +1255,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testGenericClsSubtypingTypeVariance0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testGenericClsSubtypingTypeVariance0041';
        
 
       let base = new A41<D41,D41>(new D41)

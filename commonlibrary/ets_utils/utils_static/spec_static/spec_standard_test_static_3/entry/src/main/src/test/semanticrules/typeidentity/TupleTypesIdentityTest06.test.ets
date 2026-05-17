@@ -1538,7 +1538,6 @@ export default function TupleTypesIdentityTest06(): void {
      * @tc.level     Level 2
      */
     it("testTupleTypesIdentity0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testTupleTypesIdentity0019';
 
       let a: [ Object | undefined,
         Array<Object | undefined | null>,
@@ -1590,7 +1589,6 @@ export default function TupleTypesIdentityTest06(): void {
      * @tc.level     Level 2
      */
     it("testTupleTypesIdentity0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testTupleTypesIdentity0020';
 
       let a: [ undefined | Object,
         (undefined | null | Object)[],
@@ -1642,7 +1640,6 @@ export default function TupleTypesIdentityTest06(): void {
      * @tc.level     Level 2
      */
     it("testTupleTypesIdentity0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testTupleTypesIdentity0021';
 
       let a: [ Object | undefined,
         Array<Object | undefined | null>,

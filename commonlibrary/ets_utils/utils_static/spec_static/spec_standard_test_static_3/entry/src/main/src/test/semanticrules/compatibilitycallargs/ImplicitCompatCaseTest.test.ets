@@ -91,7 +91,6 @@ export default function ImplicitCompatCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testImplicitCompatCase0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testImplicitCompatCase0001';
       
 
       const val1: number = 123;
@@ -110,7 +109,6 @@ export default function ImplicitCompatCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testImplicitCompatCase0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testImplicitCompatCase0002';
       
 
       const val1: string = "true";
@@ -129,7 +127,6 @@ export default function ImplicitCompatCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testImplicitCompatCase0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testImplicitCompatCase0003';
       
       const val1: boolean = true;
       const val2: number = val1 ? 1 : 0;
@@ -147,7 +144,6 @@ export default function ImplicitCompatCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testImplicitCompatCase0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testImplicitCompatCase0004';
       
       const val1: Function = () => "test";
       const val2: string = val1.toString();
@@ -165,7 +161,6 @@ export default function ImplicitCompatCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testImplicitCompatCase0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testImplicitCompatCase0005';
       
       const val1: string = "123";
       const val2: number = Number(val1);
@@ -183,7 +178,6 @@ export default function ImplicitCompatCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testImplicitCompatCase0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testImplicitCompatCase0006';
       
       const val1: number[] = [1, 2, 3];
       const val2: string = val1.toString();
@@ -201,7 +195,6 @@ export default function ImplicitCompatCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testImplicitCompatCase0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testImplicitCompatCase0007';
       
       const val1: Record<string, string> = { "key": "value" };
       const val2: string = JSON.stringify(val1);
@@ -219,7 +212,6 @@ export default function ImplicitCompatCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testImplicitCompatCase0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testImplicitCompatCase0008';
       
       const val1: number = 1;
       const val2: boolean = Boolean(val1);

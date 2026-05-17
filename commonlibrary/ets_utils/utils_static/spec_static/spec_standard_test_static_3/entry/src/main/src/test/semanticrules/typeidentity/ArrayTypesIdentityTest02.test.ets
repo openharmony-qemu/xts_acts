@@ -985,7 +985,6 @@ export default function ArrayTypesIdentityTest02(): void {
      * @tc.level     Level 2
      */
     it("testArrayTypesIdentity0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayTypesIdentity0008';
 
       let a: number[] = [1, 3, 5]
       let b: Array<number> = cast_8(a)
@@ -1036,7 +1035,6 @@ export default function ArrayTypesIdentityTest02(): void {
      * @tc.level     Level 2
      */
     it("testArrayTypesIdentity0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayTypesIdentity0009';
 
       let a: number[] = [1, 3, 5]
       let b: Array<number> = cast(a)

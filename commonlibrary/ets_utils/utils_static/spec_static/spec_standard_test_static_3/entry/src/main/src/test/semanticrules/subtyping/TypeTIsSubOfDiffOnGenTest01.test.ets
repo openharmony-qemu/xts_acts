@@ -1370,7 +1370,6 @@ export default function TypeTIsSubOfDiffOnGenTest01(): void {
      * @tc.level     Level 2
      */
     it("testTypeTIsSubOfDiffOnGen0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testTypeTIsSubOfDiffOnGen0004';
 
       let v1: III1_4 | II2_4 | III2_4 = new C1_4(123)
       let v2: III1_4 | II2_4 | III2_4 = new C3_4(321n)
@@ -1397,7 +1396,6 @@ export default function TypeTIsSubOfDiffOnGenTest01(): void {
      * @tc.level     Level 2
      */
     it("testTypeTIsSubOfDiffOnGen0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testTypeTIsSubOfDiffOnGen0005';
 
       let v1: III1_5<number, null> | III1_5<bigint, undefined> | number = new C1_5<number, null>(123)
       let v2: III1_5<number, null> | III1_5<bigint, undefined> | number = new C3_5<bigint, undefined>(321n)
@@ -1423,7 +1421,6 @@ export default function TypeTIsSubOfDiffOnGenTest01(): void {
      * @tc.level     Level 2
      */
     it("testTypeTIsSubOfDiffOnGen0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testTypeTIsSubOfDiffOnGen0006';
 
       let v1: C1_6<Derived_6, Base_6> | C2_6<Base_6, Derived_6> = new C2_6<Derived_6, Base_6>(new Derived_6(321))
       let v2: C1_6<Derived_6, Base_6> | C2_6<Base_6, Derived_6> = new C1_6<Base_6, Base_6>(new Base_6(123n))

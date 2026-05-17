@@ -70,7 +70,7 @@ export default function BitwiseExpressionsTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it(" testBitwiseExpressions0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testBitwiseExpressions0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       let res_and_1 = TypedEnum.A & TypedEnum.B
       let res_and_2 = TypedEnum.C & TypedEnum.D
@@ -97,7 +97,7 @@ export default function BitwiseExpressionsTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it(" testBitwiseExpressions0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testBitwiseExpressions0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       let res_and_1 = TypedEnum1.A & TypedEnum1.B
       let res_and_2 = TypedEnum1.C & TypedEnum1.D
@@ -124,7 +124,7 @@ export default function BitwiseExpressionsTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it(" testBitwiseExpressions0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testBitwiseExpressions0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       let res_and_1 = TypedEnum2.A & TypedEnum2.B
       let res_and_2 = TypedEnum2.C & TypedEnum2.D
@@ -151,7 +151,7 @@ export default function BitwiseExpressionsTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it(" testBitwiseExpressions0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testBitwiseExpressions0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       let res_and_1 = TypedEnum3.A & TypedEnum3.B
       let res_and_2 = TypedEnum3.C & TypedEnum3.D
@@ -178,7 +178,7 @@ export default function BitwiseExpressionsTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it(" testBitwiseExpressions0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testBitwiseExpressions0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       let res_and_1 = TypedEnum4.A & TypedEnum4.B
       let res_and_2 = TypedEnum4.C & TypedEnum4.D
@@ -205,7 +205,7 @@ export default function BitwiseExpressionsTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it(" testBitwiseExpressions0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testBitwiseExpressions0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       let res_and_1 = TypedEnum5.A & TypedEnum5.B
       let res_and_2 = TypedEnum5.C & TypedEnum5.D

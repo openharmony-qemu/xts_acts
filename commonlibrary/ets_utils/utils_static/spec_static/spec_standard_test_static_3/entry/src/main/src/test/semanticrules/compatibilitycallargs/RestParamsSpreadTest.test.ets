@@ -157,7 +157,6 @@ export default function RestParamsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testRestParamsSpread0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testRestParamsSpread0001';
       
 
       let arr: number[] = [0, -128, 127];
@@ -190,7 +189,6 @@ export default function RestParamsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testRestParamsSpread0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testRestParamsSpread0002';
       
 
       let arr: number[] = [0, -128, 127];
@@ -223,7 +221,6 @@ export default function RestParamsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testRestParamsSpread0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testRestParamsSpread0003';
       
 
       let arr: number[] = [0, -128, 127];
@@ -256,7 +253,6 @@ export default function RestParamsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testRestParamsSpread0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testRestParamsSpread0004';
       
 
       let arr: number[] = [0.0, -128.0, 127.0];
@@ -289,7 +285,6 @@ export default function RestParamsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testRestParamsSpread0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testRestParamsSpread0005';
       
 
       let arr: number[] = [0, -32768, 32767];
@@ -322,7 +317,6 @@ export default function RestParamsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testRestParamsSpread0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testRestParamsSpread0006';
       
 
       let arr: number[] = [0, -32768, 32767];

@@ -82,7 +82,6 @@ export default function SubtypingAmongArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testStaticAndInstanceFields0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStaticAndInstanceFields0003';
 
       let b1 = new B2();
       let b2 = new B2();
@@ -100,7 +99,6 @@ export default function SubtypingAmongArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testStaticAndInstanceFields0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStaticAndInstanceFields0004';
 
       let b1 = B3.create();
       let b2 = B3.create();
@@ -120,7 +118,6 @@ export default function SubtypingAmongArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testStaticAndInstanceFields0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testStaticAndInstanceFields0005';
 
       let instance: Object[] = [1, 2];
       expect(typeof instance[0]).assertEqual('int');

@@ -1394,8 +1394,7 @@ export default function ArrayOfArraysTypesIdentityTest13():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it(" testArrayOfArraysTypesIdentity0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = ' testArrayOfArraysTypesIdentity0031';
+    it("testArrayOfArraysTypesIdentity0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
        
 
       let a: Array<number>[] = [[1, 3], [5, 7]]
@@ -1460,8 +1459,7 @@ export default function ArrayOfArraysTypesIdentityTest13():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it(" testArrayOfArraysTypesIdentity0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = ' testArrayOfArraysTypesIdentity0032';
+    it("testArrayOfArraysTypesIdentity0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
        
 
       let a: Array<number>[] = [[1, 3], [5, 7]]

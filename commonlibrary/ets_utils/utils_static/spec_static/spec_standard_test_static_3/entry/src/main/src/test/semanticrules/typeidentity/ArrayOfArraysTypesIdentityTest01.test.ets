@@ -1280,7 +1280,6 @@ export default function ArrayOfArraysTypesIdentityTest01(): void{
      * @tc.level     Level 2
      */
     it("testArrayOfArraysTypesIdentity0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testArrayOfArraysTypesIdentity0003"
       let a: Array<number[]> = [[1, 3], [5, 7]]
       let b: Array<number>[] = a
       expect(a instanceof Array).assertTrue()
@@ -1342,7 +1341,6 @@ export default function ArrayOfArraysTypesIdentityTest01(): void{
      * @tc.level     Level 2
      */
     it("testArrayOfArraysTypesIdentity0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testArrayOfArraysTypesIdentity0004"
       let a: Array<number>[] = [[1, 3], [5, 7]]
       let b: Array<number[]> = a
       expect(a instanceof Array).assertTrue()

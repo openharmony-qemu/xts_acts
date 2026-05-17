@@ -763,7 +763,6 @@ export default function ArrayOfArraysTypesIdentityTest29(): void {
      * @tc.level     Level 2
      */
     it("testArrayOfArraysTypesIdentity0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayOfArraysTypesIdentity0076';
       let a: Array<C>[] = [[{data: 1}, {data: 3}], [{data: 5}, {data: 7}]]
       let b: Array<C[]> = cast(a)
       expect(a instanceof Array).assertEqual(true)
@@ -821,7 +820,6 @@ export default function ArrayOfArraysTypesIdentityTest29(): void {
      * @tc.level     Level 2
      */
     it("testArrayOfArraysTypesIdentity0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayOfArraysTypesIdentity0077';
       let a: int[][] = [[1, 3], [5, 7]]
       let b: Array<Array<int>> = foo(a)
       expect(a instanceof Array).assertEqual(true)

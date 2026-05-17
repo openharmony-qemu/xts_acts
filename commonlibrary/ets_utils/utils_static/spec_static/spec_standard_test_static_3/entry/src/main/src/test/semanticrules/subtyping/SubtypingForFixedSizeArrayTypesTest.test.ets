@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
  * you may not use this file except in compliance with the License.
@@ -197,7 +197,6 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testNegativeTypeSafety0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNegativeTypeSafety0001';
 
       let exceptionCheck = (e: Error): boolean => {
         return e instanceof ArrayStoreError &&
@@ -225,7 +224,6 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testNegativeTypeSafety0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNegativeTypeSafety0002';
 
       let exceptionCheck1 = (e: Error): Boolean => {
         return e instanceof ArrayStoreError &&
@@ -252,7 +250,6 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testNegativeTypeSafety0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNegativeTypeSafety0003';
 
       let exceptionCheck2 = (e: Error): Boolean => {
         return e instanceof ArrayStoreError &&
@@ -279,7 +276,6 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testNegativeTypeSafety0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNegativeTypeSafety0004';
 
       let exceptionCheck3 = (e: Error): Boolean => {
         return e instanceof ArrayStoreError &&
@@ -305,7 +301,6 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testNegativeTypeSafety0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNegativeTypeSafety0005';
 
       let exceptionCheck4 = (e: Error): Boolean => {
         return e instanceof ArrayStoreError &&
@@ -331,7 +326,6 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testNegativeTypeSafety0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNegativeTypeSafety0006';
 
       let exceptionCheck5 = (e: Error): Boolean => {
         return e instanceof ArrayStoreError &&
@@ -357,7 +351,6 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testNegativeTypeSafety0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNegativeTypeSafety0007';
 
       let exceptionCheck6 = (e: Error): Boolean => {
         return e instanceof ArrayStoreError &&
@@ -384,7 +377,6 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testNegativeTypeSafety0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNegativeTypeSafety0008';
 
       let exceptionCheck7 = (e: Error): Boolean => {
         return e instanceof ArrayStoreError &&
@@ -411,7 +403,6 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testNegativeTypeSafety0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNegativeTypeSafety0009';
 
       let exceptionCheck8 = (e: Error): Boolean => {
         return e instanceof ArrayStoreError &&
@@ -438,7 +429,6 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testNegativeTypeSafety0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNegativeTypeSafety0010';
 
       let exceptionCheck9 = (e: Error): Boolean => {
         return e instanceof ArrayStoreError &&
@@ -465,7 +455,6 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testNegativeTypeSafety0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNegativeTypeSafety0011';
 
       let exceptionCheck10 = (e: Error): Boolean => {
         return e instanceof ArrayStoreError &&
@@ -492,7 +481,6 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testNegativeTypeSafety0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNegativeTypeSafety0012';
 
       let exceptionCheck11 = (e: Error): Boolean => {
         return e instanceof ArrayStoreError &&
@@ -518,7 +506,6 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testNegativeTypeSafety0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNegativeTypeSafety0001';
 
       expect(y12 instanceof FixedArray<Number>).assertEqual(true);
     });
@@ -533,7 +520,6 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testNegativeTypeSafety0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNegativeTypeSafety0002';
 
       expect(y13 instanceof FixedArray<Boolean>).assertEqual(true);
     });
@@ -548,7 +534,6 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testNegativeTypeSafety0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNegativeTypeSafety0003';
 
       expect(y14 instanceof FixedArray<J>).assertEqual(true);
     });
@@ -563,7 +548,6 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testNegativeTypeSafety0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNegativeTypeSafety0004';
 
       expect(y15 instanceof FixedArray<BigInt>).assertEqual(true);
     });
@@ -578,7 +562,6 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testNegativeTypeSafety0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNegativeTypeSafety0005';
 
       expect(y16 instanceof FixedArray<Array>).assertEqual(true);
     });
@@ -593,7 +576,6 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testNegativeTypeSafety0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNegativeTypeSafety0006';
 
       expect(y17 instanceof FixedArray<null>).assertEqual(true);
     });
@@ -608,7 +590,6 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testNegativeTypeSafety0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNegativeTypeSafety0007';
 
       expect(y18 instanceof FixedArray<undefined>).assertEqual(true);
     });
@@ -623,7 +604,6 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testNegativeTypeSafety0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNegativeTypeSafety0008';
 
       expect(y19 instanceof FixedArray<Base>).assertEqual(true);
     });
@@ -638,7 +618,6 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testNegativeTypeSafety0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNegativeTypeSafety0009';
 
       expect(y20 instanceof FixedArray<String>).assertEqual(true);
     });
@@ -653,7 +632,6 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testNegativeTypeSafety0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNegativeTypeSafety0010';
 
       expect(y21 instanceof FixedArray<String>).assertEqual(true);
     });
@@ -668,7 +646,6 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testNegativeTypeSafety0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNegativeTypeSafety0011';
 
       expect(y22 instanceof FixedArray<'1'|'2'|'3'>).assertEqual(true);
     });
@@ -683,7 +660,6 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testNegativeTypeSafety0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNegativeTypeSafety0012';
 
       expect(y23 instanceof FixedArray<Base>).assertEqual(true);
     });
@@ -698,7 +674,6 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testNegativeTypeSafety0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNegativeTypeSafety0013';
 
       expect(y24 instanceof FixedArray<Object>).assertEqual(true);
     });
@@ -713,7 +688,6 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testNegativeTypeSafety0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNegativeTypeSafety0014';
 
       expect(y25 instanceof FixedArray<[Base, J, string]>).assertEqual(true);
     });
@@ -728,7 +702,6 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testNegativeTypeSafety0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNegativeTypeSafety0015';
 
       expect(y26 instanceof FixedArray<Derived>).assertEqual(true);
     });
@@ -742,7 +715,6 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testPositiveTypeSafety0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPositiveTypeSafety0001';
 
       foo12(x27)
       foo12(y27)
@@ -759,7 +731,6 @@ export default function SubtypingForFixedSizeArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testPositiveTypeSafety0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPositiveTypeSafety0002';
 
       foo13(x28)
       foo13(y28)

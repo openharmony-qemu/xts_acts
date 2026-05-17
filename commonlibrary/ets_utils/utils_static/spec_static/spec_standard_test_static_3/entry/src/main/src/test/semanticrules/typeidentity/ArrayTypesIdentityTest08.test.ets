@@ -1295,7 +1295,6 @@ export default function ArrayTypesIdentityTest08(): void {
      * @tc.level     Level 2
      */
     it("testArrayTypesIdentity0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayTypesIdentity0035';
       
 
       let a_35: Array<int> = [1, 3, 5]
@@ -1346,7 +1345,6 @@ export default function ArrayTypesIdentityTest08(): void {
      * @tc.level     Level 2
      */
     it("testArrayTypesIdentity0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayTypesIdentity0036';
 
       let a_36: Array<number> = [1, 3, 5]
       let b_36: number[] = foo_36(a_36)
@@ -1396,7 +1394,6 @@ export default function ArrayTypesIdentityTest08(): void {
      * @tc.level     Level 2
      */
     it("testArrayTypesIdentity0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayTypesIdentity0037';
       
 
       let a_37: C_37[] = [{data_37: 1}, {data_37: 3}, {data_37: 5}]
@@ -1439,7 +1436,6 @@ export default function ArrayTypesIdentityTest08(): void {
      * @tc.level     Level 2
      */
     it("testArrayTypesIdentity0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayTypesIdentity0038';
       
 
       let a_38: C_38[] = [{data_38: 1}, {data_38: 3}, {data_38: 5}]
@@ -1482,7 +1478,6 @@ export default function ArrayTypesIdentityTest08(): void {
      * @tc.level     Level 2
      */
     it("testArrayTypesIdentity0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayTypesIdentity0039';
       
 
       let a_39: C_39[] = [{data_39: 1}, {data_39: 3}, {data_39: 5}]
@@ -1525,7 +1520,6 @@ export default function ArrayTypesIdentityTest08(): void {
      * @tc.level     Level 2
      */
     it("testArrayTypesIdentity0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayTypesIdentity0040';
       
 
       let a_40: C_40[] = [{data_40: 1}, {data_40: 3}, {data_40: 5}]
@@ -1568,7 +1562,6 @@ export default function ArrayTypesIdentityTest08(): void {
      * @tc.level     Level 2
      */
     it("testArrayTypesIdentity0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayTypesIdentity0041';
       
 
       let a_41: Array<C_41> = [{data_41: 1}, {data_41: 3}, {data_41: 5}]
@@ -1611,7 +1604,6 @@ export default function ArrayTypesIdentityTest08(): void {
      * @tc.level     Level 2
      */
     it("testArrayTypesIdentity0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayTypesIdentity0042';
       
 
       let a_42: Array<C_42> = [{data_42: 1}, {data_42: 3}, {data_42: 5}]
@@ -1654,7 +1646,6 @@ export default function ArrayTypesIdentityTest08(): void {
      * @tc.level     Level 2
      */
     it("testArrayTypesIdentity0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayTypesIdentity0043';
       
 
       let a_43: Array<C_43> = [{data_43: 1}, {data_43: 3}, {data_43: 5}]
@@ -1697,7 +1688,6 @@ export default function ArrayTypesIdentityTest08(): void {
      * @tc.level     Level 2
      */
     it("testArrayTypesIdentity0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayTypesIdentity0044';
       
 
       let a_44: Array<C_44> = [{data_44: 1}, {data_44: 3}, {data_44: 5}]

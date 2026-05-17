@@ -83,7 +83,6 @@ export default function AsymmetricVerificationCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testAsymmetricVerificationCase0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAsymmetricVerificationCase0001';
        
 
       const val1: boolean = true;
@@ -105,7 +104,6 @@ export default function AsymmetricVerificationCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testAsymmetricVerificationCase0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAsymmetricVerificationCase0002';
        
 
       const val1: Function = () => "test";
@@ -127,7 +125,6 @@ export default function AsymmetricVerificationCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testAsymmetricVerificationCase0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAsymmetricVerificationCase0003';
        
 
       const val1: null = null;
@@ -147,7 +144,6 @@ export default function AsymmetricVerificationCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testAsymmetricVerificationCase0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAsymmetricVerificationCase0004';
        
 
       const val1: number[] = [1, 2, 3];
@@ -167,7 +163,6 @@ export default function AsymmetricVerificationCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testAsymmetricVerificationCase0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAsymmetricVerificationCase0005';
        
 
       const val1: Record<string, string> = {"key": "value"};
@@ -187,7 +182,6 @@ export default function AsymmetricVerificationCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testAsymmetricVerificationCase0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAsymmetricVerificationCase0006';
        
 
       const val1: number = 123;

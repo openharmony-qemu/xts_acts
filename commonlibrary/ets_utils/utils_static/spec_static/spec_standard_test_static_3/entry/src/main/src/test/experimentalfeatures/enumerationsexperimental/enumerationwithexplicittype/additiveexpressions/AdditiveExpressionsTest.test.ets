@@ -83,7 +83,7 @@ export default function AdditiveExpressionsTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it(" testAdditiveExpressions0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testAdditiveExpressions0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(TypedEnum.A - TypedEnum.B).assertEqual(TypedEnum.C)
 
     });
@@ -96,7 +96,7 @@ export default function AdditiveExpressionsTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it(" testAdditiveExpressions0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testAdditiveExpressions0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(TypedEnum1.A - TypedEnum1.B).assertEqual(TypedEnum1.C)
 
     });
@@ -109,7 +109,7 @@ export default function AdditiveExpressionsTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it(" testAdditiveExpressions0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testAdditiveExpressions0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(TypedEnum2.A - TypedEnum2.B).assertEqual(TypedEnum2.C)
 
     });
@@ -122,7 +122,7 @@ export default function AdditiveExpressionsTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it(" testAdditiveExpressions0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testAdditiveExpressions0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(TypedEnum3.A - TypedEnum3.B).assertEqual(TypedEnum3.C)
 
     });
@@ -135,7 +135,7 @@ export default function AdditiveExpressionsTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it(" testAdditiveExpressions0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testAdditiveExpressions0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(TypedEnum4.A - TypedEnum4.B).assertEqual(TypedEnum4.C)
 
     });
@@ -148,7 +148,7 @@ export default function AdditiveExpressionsTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it(" testAdditiveExpressions0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testAdditiveExpressions0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(TypedEnum5.A - TypedEnum5.B).assertEqual(TypedEnum5.C)
 
     });
@@ -161,7 +161,7 @@ export default function AdditiveExpressionsTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it(" testAdditiveExpressions0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testAdditiveExpressions0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(TypedEnum6.A + TypedEnum6.B).assertEqual(TypedEnum6.C)
 
     });
@@ -174,7 +174,7 @@ export default function AdditiveExpressionsTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it(" testAdditiveExpressions0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testAdditiveExpressions0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(TypedEnum7.A + TypedEnum7.B).assertEqual(TypedEnum7.C)
 
     });
@@ -187,7 +187,7 @@ export default function AdditiveExpressionsTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it(" testAdditiveExpressions0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testAdditiveExpressions0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(TypedEnum8.A + TypedEnum8.B).assertEqual(TypedEnum8.C)
 
     });
@@ -200,7 +200,7 @@ export default function AdditiveExpressionsTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it(" testAdditiveExpressions0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testAdditiveExpressions0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(TypedEnum9.A + TypedEnum9.B).assertEqual(TypedEnum9.C)
 
     });
@@ -213,7 +213,7 @@ export default function AdditiveExpressionsTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it(" testAdditiveExpressions0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testAdditiveExpressions0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(TypedEnum10.A + TypedEnum10.B).assertEqual(TypedEnum10.C)
 
     });
@@ -226,7 +226,7 @@ export default function AdditiveExpressionsTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it(" testAdditiveExpressions0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testAdditiveExpressions0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(TypedEnum11.A + TypedEnum11.B).assertEqual(TypedEnum11.C)
 
 

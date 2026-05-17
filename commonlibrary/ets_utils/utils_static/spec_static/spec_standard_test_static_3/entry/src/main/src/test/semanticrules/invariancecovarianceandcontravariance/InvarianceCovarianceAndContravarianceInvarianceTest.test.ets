@@ -186,7 +186,6 @@ export default function InvarianceCovarianceAndContravarianceInvarianceTest(): v
      */
     it("testInvarianceCovarianceAndContravarianceInvariance0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceInvariance0001';
 
       let a = new Base();
       let b = new Derived();
@@ -205,7 +204,6 @@ export default function InvarianceCovarianceAndContravarianceInvarianceTest(): v
      */
     it("testInvarianceCovarianceAndContravarianceInvariance0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceInvariance0002';
 
 
       let i: number = 1;
@@ -224,7 +222,6 @@ export default function InvarianceCovarianceAndContravarianceInvarianceTest(): v
      */
     it("testInvarianceCovarianceAndContravarianceInvariance0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceInvariance0003';
       let i: Number = 1;
       expect(foo3(i)).assertEqual(i);
     });
@@ -240,7 +237,6 @@ export default function InvarianceCovarianceAndContravarianceInvarianceTest(): v
      */
     it("testInvarianceCovarianceAndContravarianceInvariance0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceInvariance0004';
 
       let i: string = "hey there";
       expect(foo4(i)).assertEqual(i);
@@ -257,7 +253,6 @@ export default function InvarianceCovarianceAndContravarianceInvarianceTest(): v
      */
     it("testInvarianceCovarianceAndContravarianceInvariance0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceInvariance0005';
 
       let i: String = "hey there";
       expect(foo5(i)).assertEqual(i);
@@ -274,7 +269,6 @@ export default function InvarianceCovarianceAndContravarianceInvarianceTest(): v
      */
     it("testInvarianceCovarianceAndContravarianceInvariance0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceInvariance0006';
 
       let i: String = 'C'.toString();
       expect(foo6(i)).assertEqual(i)
@@ -291,7 +285,6 @@ export default function InvarianceCovarianceAndContravarianceInvarianceTest(): v
      */
     it("testInvarianceCovarianceAndContravarianceInvariance0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceInvariance0007';
       let i: String = 'C';
       expect(foo7(i)).assertEqual(i);
      });
@@ -307,7 +300,6 @@ export default function InvarianceCovarianceAndContravarianceInvarianceTest(): v
      */
     it("testInvarianceCovarianceAndContravarianceInvariance0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceInvariance0008';
 
       let i: number = 1;
       expect(foo8(i)).assertEqual(i);
@@ -324,7 +316,6 @@ export default function InvarianceCovarianceAndContravarianceInvarianceTest(): v
      */
     it("testInvarianceCovarianceAndContravarianceInvariance0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceInvariance0009';
 
       let i: number = 1;
       expect(foo9(i)).assertEqual(i);
@@ -341,7 +332,6 @@ export default function InvarianceCovarianceAndContravarianceInvarianceTest(): v
      */
     it("testInvarianceCovarianceAndContravarianceInvariance0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceInvariance0010';
 
       let i: number = 1.1;
       expect(foo10(i)).assertEqual(i);
@@ -358,7 +348,6 @@ export default function InvarianceCovarianceAndContravarianceInvarianceTest(): v
      */
     it("testInvarianceCovarianceAndContravarianceInvariance0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceInvariance0011';
 
       let i: number = 1.2;
       expect(foo11(i)).assertEqual(i);
@@ -375,7 +364,6 @@ export default function InvarianceCovarianceAndContravarianceInvarianceTest(): v
      */
     it("testInvarianceCovarianceAndContravarianceInvariance0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceInvariance0012';
 
         let i: number = -0.2f;
         expect(foo12(i)).assertEqual(i);
@@ -392,7 +380,6 @@ export default function InvarianceCovarianceAndContravarianceInvarianceTest(): v
      */
     it("testInvarianceCovarianceAndContravarianceInvariance0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceInvariance0013';
 
       let i: number = -0.0000008f;
       expect(foo13(i)).assertEqual(i);
@@ -409,7 +396,6 @@ export default function InvarianceCovarianceAndContravarianceInvarianceTest(): v
      */
     it("testInvarianceCovarianceAndContravarianceInvariance0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceInvariance0014';
 
       let i: Object = new Object();
       expect(foo14(i)).assertEqual(i);
@@ -426,7 +412,6 @@ export default function InvarianceCovarianceAndContravarianceInvarianceTest(): v
      */
     it("testInvarianceCovarianceAndContravarianceInvariance0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceInvariance0015';
 
       let i: A = new A();
       expect(foo15(i)).assertEqual(i);
@@ -443,7 +428,6 @@ export default function InvarianceCovarianceAndContravarianceInvarianceTest(): v
      */
     it("testInvarianceCovarianceAndContravarianceInvariance0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceInvariance0016';
 
       let i: E = E.S;
       expect(foo16(i)).assertEqual(i);
@@ -460,7 +444,6 @@ export default function InvarianceCovarianceAndContravarianceInvarianceTest(): v
      */
     it("testInvarianceCovarianceAndContravarianceInvariance0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceInvariance0017';
 
       let i: B17 = new B17();
       expect(foo17(i)).assertEqual(i);
@@ -477,7 +460,6 @@ export default function InvarianceCovarianceAndContravarianceInvarianceTest(): v
      */
     it("testInvarianceCovarianceAndContravarianceInvariance0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceInvariance0018';
 
       let i: A18 = new A18();
       expect(foo18(i)).assertEqual(i);
@@ -494,7 +476,6 @@ export default function InvarianceCovarianceAndContravarianceInvarianceTest(): v
      */
     it("testInvarianceCovarianceAndContravarianceInvariance0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceInvariance0019';
 
       let i: tpl = ['v', 2.1];
       expect(foo19(i)).assertEqual(i);
@@ -511,7 +492,6 @@ export default function InvarianceCovarianceAndContravarianceInvarianceTest(): v
      */
     it("testInvarianceCovarianceAndContravarianceInvariance0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceInvariance0020';
 
       let i: number[] = [1, 2.1];
       expect(foo20(i)).assertEqual(i);
@@ -528,7 +508,6 @@ export default function InvarianceCovarianceAndContravarianceInvarianceTest(): v
      */
     it("testInvarianceCovarianceAndContravarianceInvariance0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceInvariance0021';
 
       let i: String|undefined|null = "abc";
       expect(foo21(i)).assertEqual(i);
@@ -545,7 +524,6 @@ export default function InvarianceCovarianceAndContravarianceInvarianceTest(): v
      */
     it("testInvarianceCovarianceAndContravarianceInvariance0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceInvariance0022';
 
       let i: String|undefined|null = undefined;
       expect(foo22(i)).assertEqual(i);
@@ -562,7 +540,6 @@ export default function InvarianceCovarianceAndContravarianceInvarianceTest(): v
      */
     it("testInvarianceCovarianceAndContravarianceInvariance0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceInvariance0023';
 
       let i: String|undefined|null = null;
       expect(foo23(i)).assertEqual(i);
@@ -579,7 +556,6 @@ export default function InvarianceCovarianceAndContravarianceInvarianceTest(): v
      */
     it("testInvarianceCovarianceAndContravarianceInvariance0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceInvariance0024';
 
       let b: Base24 = [1.2];
       expect(logBase(b)).assertEqual(logExt(logBase, b));
@@ -596,7 +572,6 @@ export default function InvarianceCovarianceAndContravarianceInvarianceTest(): v
      */
     it("testInvarianceCovarianceAndContravarianceInvariance0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceInvariance0025';
 
       let b: Base25 = [1.2];
       expect(logBase25(b)).assertEqual(logExt25(logBase25, b));

@@ -57,8 +57,7 @@ export default function SpecificsOfStringOperatorContextsTest(): void {
          * @tc.level     Level 2
          */
         it("teststringConcatenation0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'teststringConcatenation0001';
-
+      
             let b: number = 1;
             let s: number = 2;
             let i: number = 3;

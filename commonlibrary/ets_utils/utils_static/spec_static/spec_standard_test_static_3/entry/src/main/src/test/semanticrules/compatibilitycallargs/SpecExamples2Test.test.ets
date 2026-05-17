@@ -185,7 +185,6 @@ export default function SpecExamples2Test(): void {
      * @tc.level     Level 2
      */
     it("testSpecExamples0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSpecExamples0001';
       
 
       let my_lambda_var: my_lambda1 = (pa: number[]): void => {
@@ -221,7 +220,6 @@ export default function SpecExamples2Test(): void {
      * @tc.level     Level 2
      */
     it("testSpecExamples0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSpecExamples0002';
       
 
       let my_lambda_var: my_lambda2 = (p1: number, p2: number[]): void => {
@@ -257,7 +255,6 @@ export default function SpecExamples2Test(): void {
      * @tc.level     Level 2
      */
     it("testSpecExamples0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSpecExamples0003';
       
 
       let my_lambda_var: my_lambda3 = (pc: TestMix[]): void => {
@@ -295,7 +292,6 @@ export default function SpecExamples2Test(): void {
      * @tc.level     Level 2
      */
     it("testSpecExamples0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSpecExamples0004';
       
 
       let my_lambda_var: my_lambda4 = (p: Object[]): void => {

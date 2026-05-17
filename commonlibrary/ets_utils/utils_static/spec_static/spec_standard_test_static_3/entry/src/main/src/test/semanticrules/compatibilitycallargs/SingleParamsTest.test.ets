@@ -435,7 +435,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSingleParams0001';
       
 
       let a1: A1 = new A1(0);
@@ -465,7 +464,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSingleParams0002';
       
 
       let a1: A2 = new A2(0);
@@ -495,7 +493,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSingleParams0003';
       
 
       let a1: A3 = new A3(0);
@@ -525,7 +522,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSingleParams0004';
       
 
       let a1: A4 = new A4(0);
@@ -555,7 +551,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSingleParams0005';
       
 
       let a1: A5 = new A5(0);
@@ -585,7 +580,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSingleParams0006';
       
 
       let a1: A6 = new A6(0);
@@ -615,7 +609,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSingleParams0007';
       
 
       let a1: A7 = new A7(0);
@@ -645,7 +638,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSingleParams0008';
       
 
       let a1: A8 = new A8(0);
@@ -675,7 +667,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSingleParams0009';
       
 
       let a1: A9 = new A9(0);
@@ -705,7 +696,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSingleParams0010';
       
 
       let a1: A10 = new A10(0);
@@ -735,7 +725,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSingleParams0011';
       
 
       let a1: A11 = new A11(0);
@@ -765,7 +754,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSingleParams0012';
       
 
       let a1: A12 = new A12(0);
@@ -795,7 +783,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSingleParams0013';
       
 
       let a1: A13 = new A13(0);
@@ -825,7 +812,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSingleParams0014';
       
 
       let a1: A14 = new A14(0);
@@ -855,7 +841,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSingleParams0015';
       
 
       let a1: A15 = new A15(0);
@@ -885,7 +870,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSingleParams0016';
       
 
       let a1: A16 = new A16(0);
@@ -915,7 +899,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSingleParams0017';
       
 
       let a1: A17 = new A17(0);
@@ -945,7 +928,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSingleParams0018';
       
 
       let a1: A18 = new A18(0);
@@ -975,7 +957,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSingleParams0019';
       
 
       let a1: A19 = new A19(0.0);
@@ -1020,7 +1001,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSingleParams0020';
       
 
       let a1: A20 = new A20(Color20.Red);
@@ -1050,7 +1030,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSingleParams021';
       
 
       let a1: A21 = new A21(Color21.Red);
@@ -1080,7 +1059,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSingleParams0022';
       
 
       let a1: A22 = new A22(Color22.Red);
@@ -1110,7 +1088,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSingleParams0023';
       
 
       let a1: A23 = new A23(Color23.Red);
@@ -1140,7 +1117,6 @@ export default function SingleParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testSingleParams0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSingleParams0024';
       
 
 

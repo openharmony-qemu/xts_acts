@@ -1291,7 +1291,6 @@ export default function InterTypeIsSubOfTypeTOnGenTest(): void {
      * @tc.level     Level 2
      */
     it("testInterTypeIsSubOfTypeTOnGen0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInterTypeIsSubOfTypeTOnGen0007';
 
 
       let res1: boolean = check_is_in_T_type_7(

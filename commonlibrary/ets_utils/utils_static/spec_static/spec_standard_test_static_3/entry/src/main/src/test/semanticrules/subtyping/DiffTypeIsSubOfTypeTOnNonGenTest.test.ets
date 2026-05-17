@@ -1381,7 +1381,6 @@ export default function DiffTypeIsSubOfTypeTOnNonGenTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeIsSubOfTypeTOnNonGen0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeIsSubOfTypeTOnNonGen0001';
       let res: number = f1_1(new Dog_1())
       expect(res).assertEqual(1)
       res = f1_1(new Cat_1())
@@ -1400,7 +1399,6 @@ export default function DiffTypeIsSubOfTypeTOnNonGenTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeIsSubOfTypeTOnNonGen0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeIsSubOfTypeTOnNonGen0002';
       let res: number = f1_2(new Dog_2())
       expect(res).assertEqual(1)
       res = f1_2(new Cat_2())
@@ -1419,7 +1417,6 @@ export default function DiffTypeIsSubOfTypeTOnNonGenTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeIsSubOfTypeTOnNonGen0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeIsSubOfTypeTOnNonGen0003';
       let res: number = f1_3(new C1_3())
       expect(res).assertEqual(1)
       res = f1_3(new B2_3())
@@ -1439,7 +1436,6 @@ export default function DiffTypeIsSubOfTypeTOnNonGenTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeIsSubOfTypeTOnNonGen0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeIsSubOfTypeTOnNonGen0004';
       let res: number = f1_4(new C1_4())
       expect(res).assertEqual(1)
       res = f1_4(new B2_4())
@@ -1459,7 +1455,6 @@ export default function DiffTypeIsSubOfTypeTOnNonGenTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeIsSubOfTypeTOnNonGen0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeIsSubOfTypeTOnNonGen0005';
       let res: number = f1_5(new C1_5())
       expect(res).assertEqual(1)
       res = f1_5(new C3_5())
@@ -1479,7 +1474,6 @@ export default function DiffTypeIsSubOfTypeTOnNonGenTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeIsSubOfTypeTOnNonGen0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeIsSubOfTypeTOnNonGen0006';
       let res: number = f1_6(new C1_6())
       expect(res).assertEqual(1)
       res = f1_6(new C3_6())
@@ -1500,7 +1494,6 @@ export default function DiffTypeIsSubOfTypeTOnNonGenTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeIsSubOfTypeTOnNonGen0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeIsSubOfTypeTOnNonGen0007';
       let res: number = f1_7(new C2_7())
       expect(res).assertEqual(1)
       res = f1_7(new C3_7())

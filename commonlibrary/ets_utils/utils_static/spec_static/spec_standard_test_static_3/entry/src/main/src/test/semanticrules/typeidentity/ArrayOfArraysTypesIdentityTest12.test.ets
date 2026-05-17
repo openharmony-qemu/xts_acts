@@ -1394,7 +1394,6 @@ export default function ArrayOfArraysTypesIdentityTest12(): void {
      * @tc.level     Level 2
      */
     it("testArrayOfArraysTypesIdentity0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayOfArraysTypesIdentity0029';
        
 
       let a: Array<int>[] = [[1, 3], [5, 7]]
@@ -1460,7 +1459,6 @@ export default function ArrayOfArraysTypesIdentityTest12(): void {
      * @tc.level     Level 2
      */
     it("testArrayOfArraysTypesIdentity0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayOfArraysTypesIdentity0030';
 
 
       let a: Array<int>[] = [[1, 3], [5, 7]]

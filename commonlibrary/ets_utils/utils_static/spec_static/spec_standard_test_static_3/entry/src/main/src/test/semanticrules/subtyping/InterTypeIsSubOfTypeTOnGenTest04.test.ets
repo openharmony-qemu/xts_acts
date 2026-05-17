@@ -1445,7 +1445,6 @@ export default function InterTypeIsSubOfTypeTOnGenTest04(): void {
      * @tc.level     Level 2
      */
     it("testInterTypeIsSubOfTypeTOnGen0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInterTypeIsSubOfTypeTOnGen0009';
       let res1: boolean = check_is_in_T_type_9(new C2_9(6.7), 1)
       let res2: boolean = check_is_in_T_type_9(new C3_9(321n), 2)
       let res3: boolean = check_is_in_T_type_9(5n, 3)
@@ -1465,7 +1464,6 @@ export default function InterTypeIsSubOfTypeTOnGenTest04(): void {
      * @tc.level     Level 2
      */
     it("testInterTypeIsSubOfTypeTOnGen0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInterTypeIsSubOfTypeTOnGen0010';
 
       let res1: boolean = check_is_in_T_type_10(new C1_10(123), 1);
       let res2: boolean = check_is_in_T_type_10(new C3_10(321n), 2);
@@ -1486,7 +1484,6 @@ export default function InterTypeIsSubOfTypeTOnGenTest04(): void {
      * @tc.level     Level 2
      */
     it("testInterTypeIsSubOfTypeTOnGen0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInterTypeIsSubOfTypeTOnGen0011';
       let res1: boolean = check_is_in_T_type_11(new C1_11<number, null>(123), 1);
       let res2: boolean = check_is_in_T_type_11(new C3_11<bigint, undefined>(321n), 2);
       let res3: boolean = check_is_in_T_type_11(5n, 3);
@@ -1509,7 +1506,6 @@ export default function InterTypeIsSubOfTypeTOnGenTest04(): void {
      * @tc.level     Level 2
      */
     it("testInterTypeIsSubOfTypeTOnGen0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInterTypeIsSubOfTypeTOnGen0012';
       let res1: boolean = check_is_in_T_type_12(new C1_12<number, null>(123), 1)
       let res2: boolean = check_is_in_T_type_12(new C3_12<bigint, undefined>(321n), 2)
       let res3: boolean = check_is_in_T_type_12(5n, 3)

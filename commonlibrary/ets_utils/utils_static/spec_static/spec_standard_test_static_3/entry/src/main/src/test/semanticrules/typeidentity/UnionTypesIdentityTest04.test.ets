@@ -1189,7 +1189,6 @@ export default function UnionTypesIdentityTest04(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testUnionTypesIdentity0035';
 
       let a: Object | undefined = 5n
       let b: undefined | Object = foo6(a)
@@ -1239,7 +1238,6 @@ export default function UnionTypesIdentityTest04(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testUnionTypesIdentity0036';
 
       let a: undefined | Object = 5n
       let b: Object | undefined = foo7(a)
@@ -1288,7 +1286,6 @@ export default function UnionTypesIdentityTest04(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testUnionTypesIdentity0037';
 
       let a: Cat14 | Dog14 | Frog14 | number = new Cat14()
       let b: number | Dog14 | Cat14 | Frog14 = foo8(a)
@@ -1342,7 +1339,6 @@ export default function UnionTypesIdentityTest04(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testUnionTypesIdentity0038';
 
       let a: number | Dog15 | Cat15 | Frog15 = new Cat15()
       let b: Cat15 | Dog15 | Frog15 | number = foo9(a)
@@ -1396,7 +1392,6 @@ export default function UnionTypesIdentityTest04(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testUnionTypesIdentity0039';
 
       let a: Cat16 | Dog16 | Frog16 | number = new Cat16()
       let b: number | Dog16 | Cat16 | Frog16 = foo10(a)
@@ -1450,7 +1445,6 @@ export default function UnionTypesIdentityTest04(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testUnionTypesIdentity0040';
 
       let a: number | Dog17 | Cat17 | Frog17 = new Cat17()
       let b: Cat17 | Dog17 | Frog17 | number = foo11(a)
@@ -1504,7 +1498,6 @@ export default function UnionTypesIdentityTest04(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testUnionTypesIdentity0041';
 
       let a: Cat18 | Dog18 | Frog18 | number = new Cat18()
       let b: number | Dog18 | Cat18 | Frog18 = foo12(a)
@@ -1558,7 +1551,6 @@ export default function UnionTypesIdentityTest04(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testUnionTypesIdentity0042';
 
       let a: number | Dog19 | Cat19 | Frog19 = new Cat19()
       let b: Cat19 | Dog19 | Frog19 | number = foo13(a)
@@ -1613,7 +1605,6 @@ export default function UnionTypesIdentityTest04(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testUnionTypesIdentity0043';
 
       let a: Cat20 | Dog20 | Frog20 | number = new Cat20()
       let b: number | Dog20 | Cat20 | Frog20 = foo14(a)
@@ -1668,7 +1659,6 @@ export default function UnionTypesIdentityTest04(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testUnionTypesIdentity0044';
 
       let a: number | Dog21 | Cat21 | Frog21 = new Cat21()
       let b: Cat21 | Dog21 | Frog21 | number = foo15(a)

@@ -1376,7 +1376,6 @@ export default function InterTypeIsSubOfTypeTOnPredefinedTest02(): void {
      * @tc.level     Level 2
      */
     it("testInterTypeIsSubOfTypeTOnPredefined0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInterTypeIsSubOfTypeTOnPredefined0006';
       
 
       let res1_6: boolean = check_is_in_T_type_6(5 as byte, 1)
@@ -1400,7 +1399,6 @@ export default function InterTypeIsSubOfTypeTOnPredefinedTest02(): void {
      * @tc.level     Level 2
      */
     it("testInterTypeIsSubOfTypeTOnPredefined0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInterTypeIsSubOfTypeTOnPredefined0007';
       
 
       let res1_7: boolean = check_is_in_T_type_7(17 as short, 1)
@@ -1424,7 +1422,6 @@ export default function InterTypeIsSubOfTypeTOnPredefinedTest02(): void {
      * @tc.level     Level 2
      */
     it("testInterTypeIsSubOfTypeTOnPredefined0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInterTypeIsSubOfTypeTOnPredefined0008';
       
 
       let res1_8: boolean = check_is_in_T_type_8(1.7, 1)
@@ -1448,7 +1445,6 @@ export default function InterTypeIsSubOfTypeTOnPredefinedTest02(): void {
      * @tc.level     Level 2
      */
     it("testInterTypeIsSubOfTypeTOnPredefined0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInterTypeIsSubOfTypeTOnPredefined0009';
       
 
       let res1_9: boolean = check_is_in_T_type_9(1.7, 1)
@@ -1472,7 +1468,6 @@ export default function InterTypeIsSubOfTypeTOnPredefinedTest02(): void {
      * @tc.level     Level 2
      */
     it("testInterTypeIsSubOfTypeTOnPredefined0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInterTypeIsSubOfTypeTOnPredefined0010';
       
 
       let res1_10: boolean = check_is_in_T_type_10(1.7f, 1)

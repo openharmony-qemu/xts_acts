@@ -765,7 +765,6 @@ it("testDiffTypeIsSubOfTypeTOnPredefined0016", TestType.FUNCTION | Size.MEDIUMTE
  * @tc.level     Level 2
  */
 it("testDiffTypeIsSubOfTypeTOnPredefined0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-  const TAG = ' testDiffTypeIsSubOfTypeTOnPredefined0017';
 
 
   let res: number = f1_17(true);
@@ -788,7 +787,6 @@ it("testDiffTypeIsSubOfTypeTOnPredefined0017", TestType.FUNCTION | Size.MEDIUMTE
  * @tc.level     Level 2
  */
 it("testDiffTypeIsSubOfTypeTOnPredefined0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-  const TAG = ' testDiffTypeIsSubOfTypeTOnPredefined0018';
 
 
   let res: number = f1_18(5);
@@ -811,7 +809,6 @@ it("testDiffTypeIsSubOfTypeTOnPredefined0018", TestType.FUNCTION | Size.MEDIUMTE
  * @tc.level     Level 2
  */
 it("testDiffTypeIsSubOfTypeTOnPredefined0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-  const TAG = ' testDiffTypeIsSubOfTypeTOnPredefined0019';
 
 
   let res: number = f1_19("abc");
@@ -834,7 +831,6 @@ it("testDiffTypeIsSubOfTypeTOnPredefined0019", TestType.FUNCTION | Size.MEDIUMTE
  * @tc.level     Level 2
  */
 it("testDiffTypeIsSubOfTypeTOnPredefined0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-  const TAG = ' testDiffTypeIsSubOfTypeTOnPredefined0020';
 
 
   let res: number = f1_20("abc");

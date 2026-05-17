@@ -98,7 +98,6 @@ export default function TupleRestParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testTupleRestParams0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testTupleRestParams0001';
       
 
       let tuple: [number, number, number] = [0, 0, 0.0];
@@ -131,7 +130,6 @@ export default function TupleRestParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testTupleRestParams0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testTupleRestParams0002';
       
 
       let tuple: [number, number, number] = [0, -128, 3.4028234663852886e38];

@@ -629,7 +629,6 @@ export default function ArrayOfArraysTypesIdentityTest02():void {
      * @tc.level     Level 2
      */
     it("testArrayOfArraysTypesIdentity0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayOfArraysTypesIdentity0084';
 
       let a: C[][] = [[{data: 1}, {data: 3}], [{data: 5}, {data: 7}]]
       let b: Array<Array<C>> = foo(a)
@@ -688,7 +687,6 @@ export default function ArrayOfArraysTypesIdentityTest02():void {
      * @tc.level     Level 2
      */
     it("testArrayOfArraysTypesIdentity0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayOfArraysTypesIdentity0085';
 
       let a: C1[][] = [[{data: 1}, {data: 3}], [{data: 5}, {data: 7}]]
       let b: Array<Array<C1>> = foo1(a)
@@ -747,7 +745,6 @@ export default function ArrayOfArraysTypesIdentityTest02():void {
      * @tc.level     Level 2
      */
     it("testArrayOfArraysTypesIdentity0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayOfArraysTypesIdentity0086';
 
       let a: C2[][] = [[{data: 1}, {data: 3}], [{data: 5}, {data: 7}]]
       let b: Array<Array<C2>> = foo2(a)
@@ -806,7 +803,6 @@ export default function ArrayOfArraysTypesIdentityTest02():void {
      * @tc.level     Level 2
      */
     it("testArrayOfArraysTypesIdentity0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayOfArraysTypesIdentity0087';
 
       let a: Array<Array<C3>> = [[{data: 1}, {data: 3}], [{data: 5}, {data: 7}]]
       let b: C3[][] = foo3(a)
@@ -865,7 +861,6 @@ export default function ArrayOfArraysTypesIdentityTest02():void {
      * @tc.level     Level 2
      */
     it("testArrayOfArraysTypesIdentity0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayOfArraysTypesIdentity0088';
 
       let a: Array<Array<C4>> = [[{data: 1}, {data: 3}], [{data: 5}, {data: 7}]]
       let b: C4[][] = foo4(a)
@@ -924,7 +919,6 @@ export default function ArrayOfArraysTypesIdentityTest02():void {
      * @tc.level     Level 2
      */
     it("testArrayOfArraysTypesIdentity0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayOfArraysTypesIdentity0089';
 
       let a: Array<Array<C5>> = [[{data: 1}, {data: 3}], [{data: 5}, {data: 7}]]
       let b: C5[][] = foo5(a)
@@ -983,7 +977,6 @@ export default function ArrayOfArraysTypesIdentityTest02():void {
      * @tc.level     Level 2
      */
     it("testArrayOfArraysTypesIdentity0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayOfArraysTypesIdentity0090';
 
       let a: Array<Array<C6>> = [[{data: 1}, {data: 3}], [{data: 5}, {data: 7}]]
       let b: C6[][] = foo6(a)
@@ -1041,7 +1034,6 @@ export default function ArrayOfArraysTypesIdentityTest02():void {
      * @tc.level     Level 2
      */
     it("testArrayOfArraysTypesIdentity0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayOfArraysTypesIdentity0091';
 
       let a: Array<Array<C7>> = [[{data: 1}, {data: 3}], [{data: 5}, {data: 7}]]
       let b: C7[][] = foo7(a)
@@ -1100,7 +1092,6 @@ export default function ArrayOfArraysTypesIdentityTest02():void {
      * @tc.level     Level 2
      */
     it("testArrayOfArraysTypesIdentity0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayOfArraysTypesIdentity0092';
 
       let a: Array<Array<C8>> = [[{data: 1}, {data: 3}], [{data: 5}, {data: 7}]]
       let b: C8[][] = foo8(a)
@@ -1159,7 +1150,6 @@ export default function ArrayOfArraysTypesIdentityTest02():void {
      * @tc.level     Level 2
      */
     it("testArrayOfArraysTypesIdentity0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayOfArraysTypesIdentity0093';
 
       let a: Array<C9[]> = [[{data: 1}, {data: 3}], [{data: 5}, {data: 7}]]
       let b: Array<C9>[] = foo9(a)

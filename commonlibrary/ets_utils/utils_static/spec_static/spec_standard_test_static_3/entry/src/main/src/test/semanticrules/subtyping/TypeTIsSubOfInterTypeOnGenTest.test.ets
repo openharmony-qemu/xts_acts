@@ -1488,7 +1488,6 @@ export default function TypeTIsSubOfInterTypeOnGenTest(): void {
      * @tc.level     Level 2
      */
     it("testTypeTIsSubOfInterTypeOnGen0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testTypeTIsSubOfInterTypeOnGen0001';
       let v1: B2_0<bigint, undefined> | Other_0<string> | C1_0<number, null> = new C1_0<number, null>(321)
       let v2: B2_0<bigint, undefined> | Other_0<string> | C1_0<number, null> = new B2_0<bigint, undefined>(123n)
       let res: boolean = check_0(v1, true, 1) && check_0(v2, false, 2)
@@ -1510,7 +1509,6 @@ export default function TypeTIsSubOfInterTypeOnGenTest(): void {
      * @tc.level     Level 2
      */
     it("testTypeTIsSubOfInterTypeOnGen0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testTypeTIsSubOfInterTypeOnGen0002';
       let v1: B2_1 | Other_1 | C1_1 = new C1_1(321)
       let v2: B2_1 | Other_1 | C1_1 = new B2_1(123n)
       let res: boolean = check_1(v1, true, 1) && check_1(v2, false, 2)

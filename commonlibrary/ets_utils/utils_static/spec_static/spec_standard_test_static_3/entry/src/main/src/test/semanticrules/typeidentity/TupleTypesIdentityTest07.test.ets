@@ -1537,7 +1537,6 @@ export default function TupleTypesIdentityTest07(): void {
      * @tc.level     Level 2
      */
     it("testTupleTypesIdentity0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testTupleTypesIdentity0022';
 
       let a: [ undefined | Object,
         (undefined | null | Object)[],

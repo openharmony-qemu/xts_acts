@@ -1421,7 +1421,6 @@ export default function ArrayTypesIdentityTest04(): void {
      * @tc.level     Level 2
      */
     it("testArrayTypesIdentity0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayTypesIdentity0013';
 
       let a: Array<number> = [1, 3, 5]
       let b: number[] = cast_13(a)
@@ -1472,7 +1471,6 @@ export default function ArrayTypesIdentityTest04(): void {
      * @tc.level     Level 2
      */
     it("testArrayTypesIdentity0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayTypesIdentity0014';
 
       let a: Array<number> = [1, 3, 5]
       let b: number[] = cast_14(a)
@@ -1523,7 +1521,6 @@ export default function ArrayTypesIdentityTest04(): void {
      * @tc.level     Level 2
      */
     it("testArrayTypesIdentity0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayTypesIdentity0015';
 
       let a: Array<number> = [1, 3, 5]
       let b: number[] = cast_15(a)

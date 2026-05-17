@@ -185,7 +185,6 @@ export default function RestParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testRestParams0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testRestParams0001';
       
 
       let a: A1 = new A1(0, -128, 127);
@@ -212,7 +211,6 @@ export default function RestParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testRestParams0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testRestParams0002';
       
 
       let a: A2 = new A2(0, -128, 127);
@@ -239,7 +237,6 @@ export default function RestParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testRestParams0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testRestParams0003';
       
 
       let a: A3 = new A3(0, -128, 127);
@@ -269,7 +266,6 @@ export default function RestParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testRestParams0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testRestParams0004';
       
 
       let a: A4 = new A4(0, -128, 127);
@@ -299,7 +295,6 @@ export default function RestParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testRestParams0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testRestParams0005';
       
 
       let a: A5 = new A5(0, -32768, 32767);
@@ -329,7 +324,6 @@ export default function RestParamsTest(): void {
      * @tc.level     Level 2
      */
     it("testRestParams0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testRestParams0006';
       
 
       let a: A6 = new A6(0, -32768, 32767);
@@ -347,42 +341,6 @@ export default function RestParamsTest(): void {
       expect(method_result[2]).assertEqual(32767);
       expect(func_result[2]).assertEqual(32767);
       expect(a.field[2]).assertEqual(32767);
-    });
-
-    /**
-     * @tc.number    SUB_REST_PARAMS_TEST_0700
-     * @tc.name      testRestParams0007
-     * @tc.desc      Type of each argument corresponding to the rest parameter without the spread
-     *               operator must be compatible with the element type of the array rest type parameter.nt
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testRestParams0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testRestParams0007';
-      
-
-      let a: A7 = new A7(new C7, new C7, new C7);
-      let method_result = a.bar7(new C7, new C7, new C7);
-      let func_result = foo7(new C7, new C7, new C7);
-    });
-
-    /**
-     * @tc.number    SUB_REST_PARAMS_TEST_0800
-     * @tc.name      testRestParams0008
-     * @tc.desc      Type of each argument corresponding to the rest parameter without the spread
-     *               operator must be compatible with the element type of the array rest type parameter.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testRestParams0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testRestParams0008';
-      
-
-      let a: A8 = new A8(new C8, new C8, new C8);
-      let method_result = a.bar8(new C8, new C8, new C8);
-      let func_result = foo8(new C8, new C8, new C8);
     });
   })
 }

@@ -213,7 +213,6 @@ export default function InvarianceCovarianceAndContravarianceExamplesTest(): voi
      */
     it("testInvarianceCovarianceAndContravarianceExamples0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceExamples0001';
 
 
       let a = new Base1();
@@ -235,7 +234,6 @@ export default function InvarianceCovarianceAndContravarianceExamplesTest(): voi
      */
     it("testInvarianceCovarianceAndContravarianceExamples0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceExamples0002';
 
       let a = new Base2();
       let b = new Derived2();
@@ -257,7 +255,6 @@ export default function InvarianceCovarianceAndContravarianceExamplesTest(): voi
      */
     it("testInvarianceCovarianceAndContravarianceExamples0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceExamples0003';
 
       let a = new Base3();
       let b = new Derived3();
@@ -279,7 +276,6 @@ export default function InvarianceCovarianceAndContravarianceExamplesTest(): voi
      */
     it("testInvarianceCovarianceAndContravarianceExamples0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceExamples0004';
 
       let a = new Base5();
       let b = new Derived5();
@@ -302,7 +298,6 @@ export default function InvarianceCovarianceAndContravarianceExamplesTest(): voi
      */
     it("testInvarianceCovarianceAndContravarianceExamples0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceExamples0005';
 
       let a = new Base6();
       let b = new Derived6();
@@ -325,7 +320,6 @@ export default function InvarianceCovarianceAndContravarianceExamplesTest(): voi
      */
     it("testInvarianceCovarianceAndContravarianceExamples0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceExamples0006';
 
       let a = new Base7();
       let b = new Derived7();
@@ -347,7 +341,6 @@ export default function InvarianceCovarianceAndContravarianceExamplesTest(): voi
      */
     it("testInvarianceCovarianceAndContravarianceExamples0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceExamples0007';
 
       let a = new Base10();
       let b = new Derived10();
@@ -369,7 +362,6 @@ export default function InvarianceCovarianceAndContravarianceExamplesTest(): voi
      */
     it("testInvarianceCovarianceAndContravarianceExamples0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceExamples0008';
 
       let a = new Base11();
       let b = new Derived11();
@@ -391,7 +383,6 @@ export default function InvarianceCovarianceAndContravarianceExamplesTest(): voi
      */
     it("testInvarianceCovarianceAndContravarianceExamples0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceExamples0009';
      ;
       let a = new Base15();
       let b = new Derived15();
@@ -413,7 +404,6 @@ export default function InvarianceCovarianceAndContravarianceExamplesTest(): voi
      */
     it("testInvarianceCovarianceAndContravarianceExamples0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceExamples0010';
 
       let a = new Base18();
       let b = new Derived18();
@@ -435,7 +425,6 @@ export default function InvarianceCovarianceAndContravarianceExamplesTest(): voi
      */
     it("testInvarianceCovarianceAndContravarianceExamples0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceExamples0011';
         let a = new Base19();
         let b = new Derived19();
 
@@ -456,7 +445,6 @@ export default function InvarianceCovarianceAndContravarianceExamplesTest(): voi
      */
     it("testInvarianceCovarianceAndContravarianceExamples0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceExamples0012';
       let a = new Base22();
       let b = new Derived22();
 

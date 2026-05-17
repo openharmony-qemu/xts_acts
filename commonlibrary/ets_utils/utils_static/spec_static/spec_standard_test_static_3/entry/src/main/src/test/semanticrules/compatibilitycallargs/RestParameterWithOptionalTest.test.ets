@@ -153,7 +153,6 @@ export default function RestParameterWithOptionalTest(): void {
      * @tc.level     Level 2
      */
     it("testRestParameterWithOptionalTest0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testRestParameterWithOptionalTest0001';
       
 
       expect(foo1()).assertEqual(1);
@@ -170,7 +169,6 @@ export default function RestParameterWithOptionalTest(): void {
      * @tc.level     Level 2
      */
     it("testRestParameterWithOptionalTest0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testRestParameterWithOptionalTest0002';
       
 
       expect(foo2("mandatory")).assertEqual(1);
@@ -187,7 +185,6 @@ export default function RestParameterWithOptionalTest(): void {
      * @tc.level     Level 2
      */
     it("testRestParameterWithOptionalTest0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testRestParameterWithOptionalTest0003';
       
 
       expect(foo3()).assertEqual(2);
@@ -205,7 +202,6 @@ export default function RestParameterWithOptionalTest(): void {
      * @tc.level     Level 2
      */
     it("testRestParameterWithOptionalTest0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testRestParameterWithOptionalTest0004';
       
 
       expect(foo4("mandatory")).assertEqual(2);
@@ -223,7 +219,6 @@ export default function RestParameterWithOptionalTest(): void {
      * @tc.level     Level 2
      */
     it("testRestParameterWithOptionalTest0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testRestParameterWithOptionalTest0005';
       
 
       expect(foo5()).assertEqual(3);
@@ -242,7 +237,6 @@ export default function RestParameterWithOptionalTest(): void {
      * @tc.level     Level 2
      */
     it("testRestParameterWithOptionalTest0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testRestParameterWithOptionalTest0006';
       
 
       expect(foo6("mandatory")).assertEqual(3);
@@ -261,7 +255,6 @@ export default function RestParameterWithOptionalTest(): void {
      * @tc.level     Level 2
      */
     it("testRestParameterWithOptionalTest0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testRestParameterWithOptionalTest0007';
       
 
       expect(foo7("mandatory", "mandatory")).assertEqual(3);

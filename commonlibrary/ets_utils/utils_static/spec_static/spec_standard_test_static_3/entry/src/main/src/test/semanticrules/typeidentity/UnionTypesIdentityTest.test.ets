@@ -1321,7 +1321,6 @@ export default function UnionTypesIdentityTest(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testUnionTypesIdentity0001';
 
       let a: Object | undefined = 5n
       let b: undefined | Object = a
@@ -1368,7 +1367,6 @@ export default function UnionTypesIdentityTest(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testUnionTypesIdentity0002';
 
       let a: undefined | Object = 5n
       let b: Object | undefined = a
@@ -1415,7 +1413,6 @@ export default function UnionTypesIdentityTest(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testUnionTypesIdentity0003';
 
       let a: Cat | Dog | Frog | number = new Cat()
       let b: number | Dog | Cat | Frog = a
@@ -1467,7 +1464,6 @@ export default function UnionTypesIdentityTest(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testUnionTypesIdentity0004';
 
       let a: number | Dog1 | Cat1 | Frog1 = new Cat1()
       let b: Cat1 | Dog1 | Frog1 | number = a
@@ -1519,7 +1515,6 @@ export default function UnionTypesIdentityTest(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testUnionTypesIdentity0005';
 
       let a: Object | undefined = 5n
       let b: undefined | Object = cast(a)
@@ -1568,7 +1563,6 @@ export default function UnionTypesIdentityTest(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testUnionTypesIdentity0006';
 
       let a: undefined | Object = 5n
       let b: Object | undefined = cast1(a)
@@ -1617,7 +1611,6 @@ export default function UnionTypesIdentityTest(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testUnionTypesIdentity0007';
 
       let a: Object | undefined = 5n
       let b: undefined | Object = cast2(a)
@@ -1666,7 +1659,6 @@ export default function UnionTypesIdentityTest(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testUnionTypesIdentity0008';
 
       let a: undefined | Object = 5n
       let b: Object | undefined = cast3(a)

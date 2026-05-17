@@ -1531,7 +1531,6 @@ export default function UnionTypesIdentityTest01(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testUnionTypesIdentity0009';
 
       let a: Object | undefined = 5n
       let b: undefined | Object = cast4(a)
@@ -1581,7 +1580,6 @@ export default function UnionTypesIdentityTest01(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testUnionTypesIdentity0010';
 
 
       let a: undefined | Object = 5n
@@ -1632,7 +1630,6 @@ export default function UnionTypesIdentityTest01(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testUnionTypesIdentity0011';
 
       let a: Object | undefined = 5n
       let b: undefined | Object = cast6(a)
@@ -1682,7 +1679,6 @@ export default function UnionTypesIdentityTest01(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testUnionTypesIdentity0012';
       let a: undefined | Object = 5n
       let b: Object | undefined = cast7(a)
       expect(a instanceof Object | undefined).assertEqual(true)
@@ -1731,7 +1727,6 @@ export default function UnionTypesIdentityTest01(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testUnionTypesIdentity0013';
 
       let a: Object | undefined = 5n
       let b: undefined | Object = cast8(a)
@@ -1781,7 +1776,6 @@ export default function UnionTypesIdentityTest01(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testUnionTypesIdentity0014';
 
       let a: undefined | Object = 5n
       let b: Object | undefined = cast9(a)

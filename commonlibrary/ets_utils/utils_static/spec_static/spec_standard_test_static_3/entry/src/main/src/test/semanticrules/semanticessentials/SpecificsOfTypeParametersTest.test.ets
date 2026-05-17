@@ -54,8 +54,7 @@ export default function SpecificsOfTypeParametersTest(): void {
          * @tc.level     Level 2
          */
         it("testPositiveCases0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            const TAG = 'testPositiveCases0001';
-
+      
             let pos1 = new Pos<number>(1);
             let pos2 = new Pos<number>(new Number(1));
             let pos3 = new Pos<number>(1.0);

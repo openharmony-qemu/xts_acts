@@ -1378,7 +1378,6 @@ export default function TypeTIsSubOfDiffOnPredefinedTest(): void {
      * @tc.level     Level 2
      */
     it("testTypeTIsSubOfDiffOnPredefined0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testTypeTIsSubOfDiffOnPredefined0001';
       let v1: Object = 5n
       let v2: Object = 123
       let res: boolean =
@@ -1406,7 +1405,6 @@ export default function TypeTIsSubOfDiffOnPredefinedTest(): void {
      * @tc.level     Level 2
      */
     it("testTypeTIsSubOfDiffOnPredefined0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testTypeTIsSubOfDiffOnPredefined0002';
 
       let v1: Object = "abc"
       let v2: Object = 123
@@ -1434,7 +1432,6 @@ export default function TypeTIsSubOfDiffOnPredefinedTest(): void {
      * @tc.level     Level 2
      */
     it("testTypeTIsSubOfDiffOnPredefined0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testTypeTIsSubOfDiffOnPredefined0003';
 
       let v1: number = 123
       let v2: number = 456

@@ -134,7 +134,6 @@ export default function InheritanceRelationshipCompatibilityCaseTest(): void {
      */
     it("inheritancerelationshipcompatibilitycaseTest0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
       void => {
-      const TAG = 'inheritancerelationshipcompatibilitycaseTest0001';
       
 
       const val1: Child1 = new Child1();
@@ -157,7 +156,6 @@ export default function InheritanceRelationshipCompatibilityCaseTest(): void {
      */
     it("inheritancerelationshipcompatibilitycaseTest0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
       void => {
-      const TAG = 'inheritancerelationshipcompatibilitycaseTest0002';
       
 
       const val1: Child2 = new Child2();
@@ -178,7 +176,6 @@ export default function InheritanceRelationshipCompatibilityCaseTest(): void {
      */
     it("inheritancerelationshipcompatibilitycaseTest0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
       void => {
-      const TAG = 'inheritancerelationshipcompatibilitycaseTest0003';
       
 
       const val1: MyClass1 = new MyClass1();
@@ -200,7 +197,6 @@ export default function InheritanceRelationshipCompatibilityCaseTest(): void {
      */
     it("inheritancerelationshipcompatibilitycaseTest0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
       void => {
-      const TAG = 'inheritancerelationshipcompatibilitycaseTest0004';
       
 
       const val1: Child4<string> = new Child4<string>();
@@ -220,7 +216,6 @@ export default function InheritanceRelationshipCompatibilityCaseTest(): void {
      */
     it("inheritancerelationshipcompatibilitycaseTest0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
       void => {
-      const TAG = 'inheritancerelationshipcompatibilitycaseTest0005';
       
 
       const val1: Child5 = new Child5();
@@ -240,7 +235,6 @@ export default function InheritanceRelationshipCompatibilityCaseTest(): void {
      */
     it("inheritancerelationshipcompatibilitycaseTest0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
       void => {
-      const TAG = 'inheritancerelationshipcompatibilitycaseTest0006';
       
 
       let a = new Base1();
@@ -261,7 +255,6 @@ export default function InheritanceRelationshipCompatibilityCaseTest(): void {
      */
     it("inheritancerelationshipcompatibilitycaseTest0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
       void => {
-      const TAG = 'inheritancerelationshipcompatibilitycaseTest0007';
       
 
       const val1: ChildInterface1 = {};
@@ -281,7 +274,6 @@ export default function InheritanceRelationshipCompatibilityCaseTest(): void {
      */
     it("inheritancerelationshipcompatibilitycaseTest0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
       void => {
-      const TAG = 'inheritancerelationshipcompatibilitycaseTest0008';
       
 
       const val1: ConcreteClass1 = new ConcreteClass1();

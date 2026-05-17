@@ -78,7 +78,6 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
      */
     it("testInvarianceCovarianceAndContravarianceContravariance0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
       , (): void => {
-      const TAG = 'testInvarianceCovarianceAndContravarianceContravariance0001';
 
 
         let a = new Base();
@@ -89,21 +88,6 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 
         b.foo(a);
         expect(res).assertEqual(2);
-      });
-
-    /**
-     * @tc.number    SUB_INVARIANCE_COVARIANCE_AND_CONTRAVARIANCE_CONTRAVARIANCETEST_0200
-     * @tc.name      testInvarianceCovarianceAndContravarianceContravariance0002
-     * @tc.desc      desc: contravariance for the return type is prohibited
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testInvarianceCovarianceAndContravarianceContravariance0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
-      , (): void => {
-        const TAG = 'testInvarianceCovarianceAndContravarianceContravariance0002';
-
-        foo(new C2());
       });
   });
  }

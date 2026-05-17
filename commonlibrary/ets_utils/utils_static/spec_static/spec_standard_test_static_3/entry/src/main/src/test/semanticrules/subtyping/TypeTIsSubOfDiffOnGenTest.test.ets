@@ -1541,7 +1541,6 @@ export default function TypeTIsSubOfDiffOnGenTest(): void {
      * @tc.level     Level 2
      */
     it("testTypeTIsSubOfDiffOnGen0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testTypeTIsSubOfDiffOnGen0001';
 
       let v1: B2_1<bigint, undefined> | Other_1<string> | C1_1<number, null> = new C1_1<number, null>(321)
       let v2: B2_1<bigint, undefined> | Other_1<string> | C1_1<number, null> = new B2_1<bigint, undefined>(123n)
@@ -1565,7 +1564,6 @@ export default function TypeTIsSubOfDiffOnGenTest(): void {
      * @tc.level     Level 2
      */
     it("testTypeTIsSubOfDiffOnGen0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testTypeTIsSubOfDiffOnGen0002';
 
       let v1: B2_2 | Other_2 | C1_2 = new C1_2(321)
       let v2: B2_2 | Other_2 | C1_2 = new B2_2(123n)
@@ -1591,7 +1589,6 @@ export default function TypeTIsSubOfDiffOnGenTest(): void {
      * @tc.level     Level 2
      */
     it("testTypeTIsSubOfDiffOnGen0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testTypeTIsSubOfDiffOnGen0003';
 
       let v1: III1_3<number, null> | II2_3<bigint, undefined> | III2_3<number, string> = new C1_3<number, null>(123)
       let v2: III1_3<number, null> | II2_3<bigint, undefined> | III2_3<number, string> = new C3_3<bigint, undefined>(321n)

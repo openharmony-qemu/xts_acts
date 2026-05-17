@@ -1503,7 +1503,6 @@ export default function DiffTypeIsSubOfTypeObjOnGenTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeIsSubOfTypeObjOnGenTest0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeIsSubOfTypeObjOnGenTest0001';
 
 
       let res: number = f1_1(new C1_1<number, null>(321))
@@ -1526,7 +1525,6 @@ export default function DiffTypeIsSubOfTypeObjOnGenTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeIsSubOfTypeObjOnGenTest0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeIsSubOfTypeObjOnGenTest0002';
 
 
       let res: number = f1_2(new C1_2<number, null>(321))
@@ -1549,7 +1547,6 @@ export default function DiffTypeIsSubOfTypeObjOnGenTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeIsSubOfTypeObjOnGenTest0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeIsSubOfTypeObjOnGenTest0003';
 
 
       let res: number = f1_3(new C1_3<number, null>(123));
@@ -1570,7 +1567,6 @@ export default function DiffTypeIsSubOfTypeObjOnGenTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeIsSubOfTypeObjOnGenTest0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeIsSubOfTypeObjOnGenTest0004';
 
 
       let res: number = f1_4(new C1_4(123));
@@ -1591,7 +1587,6 @@ export default function DiffTypeIsSubOfTypeObjOnGenTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeIsSubOfTypeObjOnGenTest0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeIsSubOfTypeObjOnGenTest0006';
 
 
       let res: number = f1_12(new C2_12<Derived_12, Base_12>(new Derived_12(321)));

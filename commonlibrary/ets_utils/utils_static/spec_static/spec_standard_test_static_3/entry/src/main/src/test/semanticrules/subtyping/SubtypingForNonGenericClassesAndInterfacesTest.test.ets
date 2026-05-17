@@ -283,7 +283,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericCastToObject0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNonGenericCastToObject0001';
         
 
       let instance: Object = new B1();
@@ -300,7 +299,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericCastToSuperclass0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNonGenericCastToSuperclass0003';
         
 
       let instanceA = new A3()
@@ -326,7 +324,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping00007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNonGenericClsAndIntfSubtyping00007';
         
 
       let base = (t7 = new T7)
@@ -347,7 +344,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNonGenericClsAndIntfSubtyping0008';
         
 
       let base = (t8 = new Object)
@@ -368,7 +364,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNonGenericClsAndIntfSubtyping0009';
         
 
       t9 = {}
@@ -390,7 +385,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNonGenericClsAndIntfSubtyping0010';
         
 
       let base = (a10 = t10)
@@ -411,7 +405,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNonGenericClsAndIntfSubtyping0011';
         
 
       let base = (a11 = new Object)
@@ -432,7 +425,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNonGenericClsAndIntfSubtyping0012';
         
 
       let base = foo12(new T12)
@@ -454,7 +446,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNonGenericClsAndIntfSubtyping0013';
         
 
       let base = foo13(new Object)
@@ -475,7 +466,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNonGenericClsAndIntfSubtyping0014';
         
       t14 = {}
       let base = foo14(t14)
@@ -496,7 +486,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNonGenericClsAndIntfSubtyping0015';
         
 
       let base = foo15(t15)
@@ -517,7 +506,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNonGenericClsAndIntfSubtyping0016';
         
 
       let base = foo16(new Object())
@@ -538,7 +526,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNonGenericClsAndIntfSubtyping0017';
         
 
       let base = new A17().foo17(new T17)
@@ -559,7 +546,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNonGenericClsAndIntfSubtyping0018';
         
 
       t18 = {}
@@ -581,7 +567,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNonGenericClsAndIntfSubtyping0019';
         
 
       let base = new C19().foo19(t19)
@@ -602,7 +587,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNonGenericClsAndIntfSubtyping0020';
         
 
       let base = new A20().foo20(new Object)
@@ -623,7 +607,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNonGenericClsAndIntfSubtyping0021';
         
 
       let base = A21.foo21(new T21)
@@ -644,7 +627,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNonGenericClsAndIntfSubtyping0022';
         
 
       let base = A22.foo22(new Object)
@@ -665,7 +647,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNonGenericClsAndIntfSubtyping0023';
         
 
       t23 = {}
@@ -687,7 +668,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNonGenericClsAndIntfSubtyping0024';
         
 
       let base = C24.foo24(t24)
@@ -708,7 +688,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNonGenericClsAndIntfSubtyping0025';
         
 
       let base = A25.foo25(new Object)
@@ -729,7 +708,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNonGenericClsAndIntfSubtyping0026';
         
 
       let base = new A26(new T26).a26
@@ -750,7 +728,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping00227", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNonGenericClsAndIntfSubtyping00227';
         
 
       let base = new A27(new Object).a27
@@ -771,7 +748,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNonGenericClsAndIntfSubtyping0028';
         
 
       t28 = {}
@@ -793,7 +769,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNonGenericClsAndIntfSubtyping0029';
         
 
       let base = new C29(t29).c29
@@ -814,7 +789,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericClsAndIntfSubtyping0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNonGenericClsAndIntfSubtyping0030';
         
 
       let base = new A30(new Object()).a30
@@ -835,7 +809,6 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
      * @tc.level     Level 2
      */
     it("testNonGenericSuperinterface0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testNonGenericSuperinterface0031';
         
 
       let instanceB: B31 = {}

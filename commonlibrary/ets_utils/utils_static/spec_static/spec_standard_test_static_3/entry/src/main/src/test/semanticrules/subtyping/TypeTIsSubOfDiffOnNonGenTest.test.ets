@@ -1663,7 +1663,6 @@ export default function TypeTIsSubOfDiffOnNonGenTest(): void {
      * @tc.level     Level 2
      */
     it("testTypeTIsSubOfDiffOnNonGen0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = ' testTypeTIsSubOfDiffOnNonGen0001';
 
       let v1: Cat_1 | Dog_1 | number = 123
       let v2: Cat_1 | Dog_1 | number = new Dog_1()
@@ -1688,7 +1687,6 @@ export default function TypeTIsSubOfDiffOnNonGenTest(): void {
      * @tc.level     Level 2
      */
     it("testTypeTIsSubOfDiffOnNonGen0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = ' testTypeTIsSubOfDiffOnNonGen0002';
 
       let v1: B2_2 | Other_2 | C1_2 = new C1_2()
       let v2: B2_2 | Other_2 | C1_2 = new B2_2()
@@ -1714,7 +1712,6 @@ export default function TypeTIsSubOfDiffOnNonGenTest(): void {
      * @tc.level     Level 2
      */
     it("testTypeTIsSubOfDiffOnNonGen0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = ' testTypeTIsSubOfDiffOnNonGen0003';
 
       let v1: III1_3 | II2_3 | III2_3 = new C1_3()
       let v2: III1_3 | II2_3 | III2_3 = new C3_3()

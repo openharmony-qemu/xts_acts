@@ -1231,7 +1231,6 @@ export default function InterTypeIsSubOfTypeObjOnPredefinedTest(): void {
      * @tc.level     Level 2
      */
     it("testInterTypeIsSubOfTypeObjOnPredefined0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInterTypeIsSubOfTypeObjOnPredefined0007';
       
 
       let res1: boolean = check_is_in_T_type_7(1.7, 1)
@@ -1255,7 +1254,6 @@ export default function InterTypeIsSubOfTypeObjOnPredefinedTest(): void {
      * @tc.level     Level 2
      */
     it("testInterTypeIsSubOfTypeObjOnPredefined0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInterTypeIsSubOfTypeObjOnPredefined0008';
       
 
       let res1: boolean = check_is_in_T_type_8(1.7, 1)
@@ -1279,7 +1277,6 @@ export default function InterTypeIsSubOfTypeObjOnPredefinedTest(): void {
      * @tc.level     Level 2
      */
     it("testInterTypeIsSubOfTypeObjOnPredefined0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInterTypeIsSubOfTypeObjOnPredefined0009';
       
 
       let res1: boolean = check_is_in_T_type_9(5n, 1)
@@ -1303,7 +1300,6 @@ export default function InterTypeIsSubOfTypeObjOnPredefinedTest(): void {
      * @tc.level     Level 2
      */
     it("testInterTypeIsSubOfTypeObjOnPredefined0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInterTypeIsSubOfTypeObjOnPredefined0010';
       
 
       let res1: boolean = check_is_in_T_type_10("abc", 1)
@@ -1327,7 +1323,6 @@ export default function InterTypeIsSubOfTypeObjOnPredefinedTest(): void {
      * @tc.level     Level 2
      */
     it("testInterTypeIsSubOfTypeObjOnPredefined0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInterTypeIsSubOfTypeObjOnPredefined0011';
       
 
       let res1: boolean = check_is_in_T_type_11('a', 1)
@@ -1351,7 +1346,6 @@ export default function InterTypeIsSubOfTypeObjOnPredefinedTest(): void {
      * @tc.level     Level 2
      */
     it("testInterTypeIsSubOfTypeObjOnPredefined0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInterTypeIsSubOfTypeObjOnPredefined0012';
       
 
       let res1: boolean = check_is_in_T_type_12(true, 1)

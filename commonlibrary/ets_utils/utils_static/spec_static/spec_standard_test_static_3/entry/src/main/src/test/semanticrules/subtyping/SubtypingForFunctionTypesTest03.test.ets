@@ -1229,7 +1229,6 @@ export default function SubtypingForFunctionTypesTest03(): void {
      * @tc.level     Level 2
      */
     it("testPositiveInstanceMethodGeneric0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPositiveInstanceMethodGeneric0070';
 
       expect(foodbo70(new Derived70) instanceof Derived70).assertTrue()
     })
@@ -1249,7 +1248,6 @@ export default function SubtypingForFunctionTypesTest03(): void {
      * @tc.level     Level 2
      */
     it("testPositiveInstanceMethodGeneric0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPositiveInstanceMethodGeneric0071';
 
       expect(foodbr71(new Derived71, 1, 2, 3) instanceof Derived71).assertTrue()
     })
@@ -1269,7 +1267,6 @@ export default function SubtypingForFunctionTypesTest03(): void {
      * @tc.level     Level 2
      */
     it("testPositiveInstanceMethodGeneric0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPositiveInstanceMethodGeneric0072';
 
       expect(foodbn72(new Derived72, 1) instanceof Base72).assertTrue()
     })
@@ -1289,7 +1286,6 @@ export default function SubtypingForFunctionTypesTest03(): void {
      * @tc.level     Level 2
      */
     it("testPositiveInstanceMethodGeneric0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPositiveInstanceMethodGeneric0073';
 
       expect(foodbo73(new Derived73) instanceof Base73).assertTrue()
     })
@@ -1309,7 +1305,6 @@ export default function SubtypingForFunctionTypesTest03(): void {
      * @tc.level     Level 2
      */
     it("testPositiveInstanceMethodGeneric0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPositiveInstanceMethodGeneric0074';
 
       expect(foodbr74(new Derived74, 1, 2, 3) instanceof Base74).assertTrue()
     })
@@ -1329,7 +1324,6 @@ export default function SubtypingForFunctionTypesTest03(): void {
      * @tc.level     Level 2
      */
     it("testPositiveInstanceMethodGeneric0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPositiveInstanceMethodGeneric0075';
 
       let r = foodbn75.unsafeCall(new Base75, 1.0)
       expect(r instanceof Base75).assertTrue()
@@ -1350,7 +1344,6 @@ export default function SubtypingForFunctionTypesTest03(): void {
      * @tc.level     Level 2
      */
     it("testPositiveInstanceMethodGeneric0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPositiveInstanceMethodGeneric0076';
 
       let r = foodbo76.unsafeCall(new Base76)
       expect(r instanceof Base76).assertTrue()
@@ -1371,7 +1364,6 @@ export default function SubtypingForFunctionTypesTest03(): void {
      * @tc.level     Level 2
      */
     it("testPositiveInstanceMethodGeneric0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPositiveInstanceMethodGeneric0077';
 
       let r = foodbr77.unsafeCall(new Base77, 1.0, 2.0, 3.0)
       expect(r instanceof Base77).assertTrue()
@@ -1392,7 +1384,6 @@ export default function SubtypingForFunctionTypesTest03(): void {
      * @tc.level     Level 2
      */
     it("testPositiveInterfaceMethod0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPositiveInterfaceMethod0078';
 
       expect(foobb78(new Base78) instanceof Derived78).assertTrue()
       expect(foobb78(new Base78).b).assertEqual('d')
@@ -1413,7 +1404,6 @@ export default function SubtypingForFunctionTypesTest03(): void {
      * @tc.level     Level 2
      */
     it("testPositiveInterfaceMethod0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPositiveInterfaceMethod0079';
 
       let r = foodb79.unsafeCall(new Base79)
       expect(r instanceof Derived79).assertTrue()
@@ -1435,7 +1425,6 @@ export default function SubtypingForFunctionTypesTest03(): void {
      * @tc.level     Level 2
      */
     it("testPositiveInterfaceMethod0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPositiveInterfaceMethod0080';
 
       expect(foodb80(new Derived80) instanceof Derived80).assertTrue()
       expect(foodb80(new Derived80).b).assertEqual('d')
@@ -1456,7 +1445,6 @@ export default function SubtypingForFunctionTypesTest03(): void {
      * @tc.level     Level 2
      */
     it("testPositiveInterfaceMethod0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPositiveInterfaceMethod0081';
 
       let r = foodd81.unsafeCall(new Base81)
       expect(r instanceof Derived81).assertTrue()
@@ -1478,7 +1466,6 @@ export default function SubtypingForFunctionTypesTest03(): void {
      * @tc.level     Level 2
      */
     it("testPositiveInterfaceMethod0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPositiveInterfaceMethod0082';
 
       expect(foobbn82(new Base82, 1) instanceof Base82).assertTrue()
       expect(foobbn82(new Base82, 1).b).assertEqual('b')
@@ -1499,7 +1486,6 @@ export default function SubtypingForFunctionTypesTest03(): void {
      * @tc.level     Level 2
      */
     it("testPositiveInterfaceMethod0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPositiveInterfaceMethod0083';
 
       expect(foobbo83(new Base83) instanceof Base83).assertTrue()
       expect(foobbo83(new Base83).b).assertEqual('b')
@@ -1520,7 +1506,6 @@ export default function SubtypingForFunctionTypesTest03(): void {
      * @tc.level     Level 2
      */
     it("testPositiveInterfaceMethod0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPositiveInterfaceMethod0084';
 
       expect(foobbn84(new Base84, 1) instanceof Derived84).assertTrue()
       expect(foobbn84(new Base84, 1).b).assertEqual('d')
@@ -1541,7 +1526,6 @@ export default function SubtypingForFunctionTypesTest03(): void {
      * @tc.level     Level 2
      */
     it("testPositiveInterfaceMethod0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPositiveInterfaceMethod0085';
 
       expect(foobbo85(new Base85) instanceof Derived85).assertTrue()
       expect(foobbo85(new Base85).b).assertEqual('d')
@@ -1562,7 +1546,6 @@ export default function SubtypingForFunctionTypesTest03(): void {
      * @tc.level     Level 2
      */
     it("testPositiveInterfaceMethod0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPositiveInterfaceMethod0086';
 
       expect(foodbn86(new Derived86, 1) instanceof Derived86).assertTrue()
       expect(foodbn86(new Derived86, 1).b).assertEqual('d')
@@ -1583,7 +1566,6 @@ export default function SubtypingForFunctionTypesTest03(): void {
      * @tc.level     Level 2
      */
     it("testPositiveInterfaceMethod0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPositiveInterfaceMethod0087';
 
       expect(foodbo87(new Derived87) instanceof Derived87).assertTrue()
       expect(foodbo87(new Derived87).b).assertEqual('d')
@@ -1604,7 +1586,6 @@ export default function SubtypingForFunctionTypesTest03(): void {
      * @tc.level     Level 2
      */
     it("testPositiveInterfaceMethod0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPositiveInterfaceMethod0088';
 
       expect(foodbn88(new Derived88, 1) instanceof Derived88).assertTrue()
       expect(foodbn88(new Derived88, 1).b).assertEqual('d')
@@ -1625,7 +1606,6 @@ export default function SubtypingForFunctionTypesTest03(): void {
      * @tc.level     Level 2
      */
     it("testPositiveInterfaceMethod0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPositiveInterfaceMethod0089';
 
       expect(foodbo89(new Derived89) instanceof Derived89).assertTrue()
       expect(foodbo89(new Derived89).b).assertEqual('d')
@@ -1646,7 +1626,6 @@ export default function SubtypingForFunctionTypesTest03(): void {
      * @tc.level     Level 2
      */
     it("testPositiveInterfaceMethod0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPositiveInterfaceMethod0090';
 
       expect(foodbr90(new Derived90, 1, 2, 3) instanceof Derived90).assertTrue()
       expect(foodbr90(new Derived90, 1, 2, 3).b).assertEqual('d')
@@ -1667,7 +1646,6 @@ export default function SubtypingForFunctionTypesTest03(): void {
      * @tc.level     Level 2
      */
     it("testPositiveInterfaceMethod0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testPositiveInterfaceMethod0091';
 
       expect(foodbn91(new Derived91, 1) instanceof Derived91).assertTrue()
       expect(foodbn91(new Derived91, 1).b).assertEqual('d')

@@ -1114,7 +1114,6 @@ export default function InterTypeIsSubOfTypeObjOnGenTest(): void {
      * @tc.level     Level 2
      */
     it("testInterTypeIsSubOfTypeObjOnGen0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInterTypeIsSubOfTypeObjOnGen0001';
       
 
       let res1_1: boolean = check_is_in_T_type_1(
@@ -1140,7 +1139,6 @@ export default function InterTypeIsSubOfTypeObjOnGenTest(): void {
      * @tc.level     Level 2
      */
     it("testInterTypeIsSubOfTypeObjOnGen0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInterTypeIsSubOfTypeObjOnGen0002';
       
 
       let res1_2: boolean = check_is_in_T_type_2(
@@ -1167,7 +1165,6 @@ export default function InterTypeIsSubOfTypeObjOnGenTest(): void {
      * @tc.level     Level 2
      */
     it("testInterTypeIsSubOfTypeObjOnGen0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInterTypeIsSubOfTypeObjOnGen0003';
       
 
       let res1_3: boolean = check_is_in_T_type_3(

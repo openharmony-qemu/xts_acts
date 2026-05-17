@@ -427,7 +427,7 @@ One = "one", one = "one", oNe = "one"
 };
 
 export default function EnumerationMethodsTest15(): void {
-  describe('EnumerationMethodsTest', () => {
+  describe('EnumerationMethodsTest15', () => {
     beforeAll(() => {
     })
 

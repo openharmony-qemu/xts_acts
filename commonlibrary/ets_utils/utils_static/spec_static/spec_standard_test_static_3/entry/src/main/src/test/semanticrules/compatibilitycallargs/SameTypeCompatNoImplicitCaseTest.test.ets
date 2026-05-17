@@ -172,7 +172,6 @@ export default function SameTypeCompatNoImplicitCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testSameTypeCompatNoImplicitCase0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSameTypeCompatNoImplicitCase0001';
       
       const val1: number = 3.14;
       const val2: number = 2.718;
@@ -194,7 +193,6 @@ export default function SameTypeCompatNoImplicitCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testSameTypeCompatNoImplicitCase0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSameTypeCompatNoImplicitCase0002';
       
       const val1: string = "Hello";
       const val2: string = "World";
@@ -214,7 +212,6 @@ export default function SameTypeCompatNoImplicitCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testSameTypeCompatNoImplicitCase0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSameTypeCompatNoImplicitCase0003';
       
       const val1: boolean = true;
       const val2: boolean = false;
@@ -234,7 +231,6 @@ export default function SameTypeCompatNoImplicitCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testSameTypeCompatNoImplicitCase0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSameTypeCompatNoImplicitCase0004';
       
       const val1: number[] = [1, 2, 3];
       const val2: number[] = [4, 5, 6];
@@ -256,7 +252,6 @@ export default function SameTypeCompatNoImplicitCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testSameTypeCompatNoImplicitCase0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSameTypeCompatNoImplicitCase0005';
       
       const val1: undefined = undefined;
       const val2: undefined = undefined;
@@ -278,7 +273,6 @@ export default function SameTypeCompatNoImplicitCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testSameTypeCompatNoImplicitCase0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSameTypeCompatNoImplicitCase0006';
       
       const val1: null = null;
       const val2: null = null;
@@ -300,7 +294,6 @@ export default function SameTypeCompatNoImplicitCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testSameTypeCompatNoImplicitCase0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSameTypeCompatNoImplicitCase0007';
       
       const val1: string | null = "Hello";
       const val2: string | null = null;
@@ -322,7 +315,6 @@ export default function SameTypeCompatNoImplicitCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testSameTypeCompatNoImplicitCase0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSameTypeCompatNoImplicitCase0008';
       
       const val1: string | undefined = "Hello";
       const val2: string | undefined = undefined;
@@ -344,7 +336,6 @@ export default function SameTypeCompatNoImplicitCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testSameTypeCompatNoImplicitCase0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSameTypeCompatNoImplicitCase0009';
       
       const val1: keyVal9 = { "key": "value1" };
       const val2: keyVal9 = { "key": "value2" };
@@ -366,7 +357,6 @@ export default function SameTypeCompatNoImplicitCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testSameTypeCompatNoImplicitCase0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSameTypeCompatNoImplicitCase0010';
       
       const val1: my_lambda10 = (a, b) => a + b;
       const val2: my_lambda10 = (a, b) => a * b;
@@ -386,7 +376,6 @@ export default function SameTypeCompatNoImplicitCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testSameTypeCompatNoImplicitCase0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSameTypeCompatNoImplicitCase0011';
       
       const val1: Date = new Date();
       const val2: Date = new Date();
@@ -407,7 +396,6 @@ export default function SameTypeCompatNoImplicitCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testSameTypeCompatNoImplicitCase0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSameTypeCompatNoImplicitCase0012';
       
       const val1:string = 'test';
       const val2:string = 'example';
@@ -427,7 +415,6 @@ export default function SameTypeCompatNoImplicitCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testSameTypeCompatNoImplicitCase0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSameTypeCompatNoImplicitCase0013';
       
       const val1: Map<string, number> = new Map<string, number>([["a", 1]]);
       const val2: Map<string, number> = new Map<string, number>([["b", 2]]);
@@ -449,7 +436,6 @@ export default function SameTypeCompatNoImplicitCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testSameTypeCompatNoImplicitCase0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSameTypeCompatNoImplicitCase0014';
       
       const val1: Set<string> = new Set<string>(["a"]);
       const val2: Set<string> = new Set<string>(["b"]);
@@ -471,7 +457,6 @@ export default function SameTypeCompatNoImplicitCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testSameTypeCompatNoImplicitCase0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSameTypeCompatNoImplicitCase0015';
       
       const val1: Promise<string> = Promise.resolve("Hello");
       const val2: Promise<string> = Promise.resolve("World");
@@ -493,7 +478,6 @@ export default function SameTypeCompatNoImplicitCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testSameTypeCompatNoImplicitCase0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSameTypeCompatNoImplicitCase0016';
       
       const val1: bigint = new BigInt(100);
       const val2: bigint = new BigInt(200);
@@ -513,7 +497,6 @@ export default function SameTypeCompatNoImplicitCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testSameTypeCompatNoImplicitCase0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSameTypeCompatNoImplicitCase0017';
       
       const val1: name_age17 = { "Alice": 25 };
       const val2: name_age17 = { "Bob": 30 };
@@ -535,7 +518,6 @@ export default function SameTypeCompatNoImplicitCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testSameTypeCompatNoImplicitCase0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSameTypeCompatNoImplicitCase0018';
       
       const val1: [string, number] = ["Hello", 42];
       const val2: [string, number] = ["World", 100];
@@ -557,7 +539,6 @@ export default function SameTypeCompatNoImplicitCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testSameTypeCompatNoImplicitCase0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSameTypeCompatNoImplicitCase0019';
       
       const val1: ReadonlyArray<string> = ["a", "b", "c"];
       const val2: ReadonlyArray<string> = ["d", "e", "f"];
@@ -580,7 +561,6 @@ export default function SameTypeCompatNoImplicitCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testSameTypeCompatNoImplicitCase0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSameTypeCompatNoImplicitCase0020';
       
       const val1: my_partial20 = ["Alice", undefined];
       const val2: my_partial20 = [undefined, 25];
@@ -602,7 +582,6 @@ export default function SameTypeCompatNoImplicitCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testSameTypeCompatNoImplicitCase0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSameTypeCompatNoImplicitCase0021';
       
       const val1: my_record21 = {"a": 1, "b": 2};
       const val2: my_record21 = {"c": 3, "d": 4};
@@ -624,7 +603,6 @@ export default function SameTypeCompatNoImplicitCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testSameTypeCompatNoImplicitCase0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSameTypeCompatNoImplicitCase0022';
       
       const val1: my_lambda22 = () => console.log("Hello");
       const val2: my_lambda22 = () => console.log("World");
@@ -646,7 +624,6 @@ export default function SameTypeCompatNoImplicitCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testSameTypeCompatNoImplicitCase0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSameTypeCompatNoImplicitCase0023';
       
       const val1: my_type23 = { "a": 1, "b": 2 };
       const val2: my_type23 = { "c": 3, "d": 4 };
@@ -668,7 +645,6 @@ export default function SameTypeCompatNoImplicitCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testSameTypeCompatNoImplicitCase0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSameTypeCompatNoImplicitCase0024';
       
       const val1: Readonly<my_type24> = { "Alice": 25 };
       const val2: Readonly<my_type24> = { "Bob": 30 };
@@ -690,7 +666,6 @@ export default function SameTypeCompatNoImplicitCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testSameTypeCompatNoImplicitCase0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSameTypeCompatNoImplicitCase0025';
       
       const val1: my_type25 = new my_type25();
       const val2: my_type25 = new my_type25("Alice");

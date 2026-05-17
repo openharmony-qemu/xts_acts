@@ -882,7 +882,6 @@ export default function ArrayOfArraysTypesIdentityTest02(): void{
      * @tc.level     Level 2
      */
     it("testArrayOfArraysTypesIdentity0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testArrayOfArraysTypesIdentity0005"
       expect(testNS1_3.runTest()).assertTrue()
       expect(testNS2_3.runTest()).assertTrue()
       expect(testNS3_3.runTest()).assertTrue()
@@ -898,7 +897,6 @@ export default function ArrayOfArraysTypesIdentityTest02(): void{
      * @tc.level     Level 2
      */
     it("testArrayOfArraysTypesIdentity0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testArrayOfArraysTypesIdentity0006"
       let a: C_3[][] = [[{data: 1} as C_3, {data: 3} as C_3], [{data: 5} as C_3, {data: 7} as C_3]]
       let b: Array<Array<C_3>> = a
       expect(a instanceof Array).assertTrue()
@@ -952,7 +950,6 @@ export default function ArrayOfArraysTypesIdentityTest02(): void{
      * @tc.level     Level 2
      */
     it("testArrayOfArraysTypesIdentity0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testArrayOfArraysTypesIdentity0007"
       let a: Array<Array<C_3>> = [[{data: 1} as C_3, {data: 3} as C_3], [{data: 5} as C_3, {data: 7} as C_3]]
       let b: C_3[][] = a
       expect(a instanceof Array).assertTrue()
@@ -1006,7 +1003,6 @@ export default function ArrayOfArraysTypesIdentityTest02(): void{
      * @tc.level     Level 2
      */
     it("testArrayOfArraysTypesIdentity0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testArrayOfArraysTypesIdentity0008"
       let a: Array<C_3[]> = [[{data: 1} as C_3, {data: 3} as C_3], [{data: 5} as C_3, {data: 7} as C_3]]
       let b: Array<C_3>[] = a
       expect(a instanceof Array).assertTrue()
@@ -1060,7 +1056,6 @@ export default function ArrayOfArraysTypesIdentityTest02(): void{
      * @tc.level     Level 2
      */
     it("testArrayOfArraysTypesIdentity0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testArrayOfArraysTypesIdentity0009"
       let a: Array<C_3>[] = [[{data: 1} as C_3, {data: 3} as C_3], [{data: 5} as C_3, {data: 7} as C_3]]
       let b: Array<C_3[]> = a
       expect(a instanceof Array).assertTrue()
@@ -1114,7 +1109,6 @@ export default function ArrayOfArraysTypesIdentityTest02(): void{
      * @tc.level     Level 2
      */
     it("testArrayOfArraysTypesIdentity0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = "testArrayOfArraysTypesIdentity0010"
       let a: number[][] = [[1, 3], [5, 7]]
       let b: Array<Array<number>> = cast_3(a)
       expect(a instanceof Array).assertTrue()

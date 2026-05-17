@@ -72,7 +72,6 @@ export default function BoundaryCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testBoundaryCase0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testBoundaryCase0001';
         
 
       const val1: Any = null;
@@ -92,7 +91,6 @@ export default function BoundaryCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testBoundaryCase0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testBoundaryCase0002';
         
 
       const val1: null = null;

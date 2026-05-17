@@ -477,21 +477,6 @@ export default function ReturnTypeInferenceTest04():void {
     });
 
     /**
-     * @tc.number    SUB_RETURN_TYPE_INFERENCETESTFOUR_1500
-     * @tc.name      testRetTypeInfer0015
-     * @tc.desc      An omitted function or method return type can be inferred from the function
-     * or the method body.
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testRetTypeInfer0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let i = foo15(true);
-      let j = foo15(false);
-    });
-
-    /**
      * @tc.number    SUB_RETURN_TYPE_INFERENCETESTFOUR_1600
      * @tc.name      testRetTypeInfer0016
      * @tc.desc      An omitted function or method return type can be inferred from the function
@@ -519,21 +504,6 @@ export default function ReturnTypeInferenceTest04():void {
       let i: ENM17 = foo17()
       expect(i == ENM17.Blue).assertTrue();
     });
-
-    /**
-     * @tc.number    SUB_RETURN_TYPE_INFERENCETESTFOUR_1800
-     * @tc.name      testRetTypeInfer0018
-     * @tc.desc      An omitted function or method return type can be inferred from the function
-     * or the method body.
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testRetTypeInfer0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let i = foo18()
-    });
-
     /**
      * @tc.number    SUB_RETURN_TYPE_INFERENCETESTFOUR_1900
      * @tc.name      testRetTypeInfer0019

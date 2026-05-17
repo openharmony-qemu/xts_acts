@@ -107,7 +107,6 @@ export default function InterfaceImplementationCompatibilityCaseTest(): void {
      */
     it("testInterfaceImplementationCompatibilityCase0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
       void => {
-      const TAG = 'testInterfaceImplementationCompatibilityCase0001';
       
 
       const val1: MyClass2 = new MyClass2();
@@ -127,7 +126,6 @@ export default function InterfaceImplementationCompatibilityCaseTest(): void {
      */
     it("testInterfaceImplementationCompatibilityCase0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
       void => {
-      const TAG = 'testInterfaceImplementationCompatibilityCase0002';
       
 
       const val1: MyClass3 = new MyClass3();

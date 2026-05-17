@@ -1482,7 +1482,6 @@ export default function TypeTIsSubOfDiffOnStrLitTest(): void {
      * @tc.level     Level 2
      */
     it("testTypeTIsSubOfDiffOnStrLit0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testTypeTIsSubOfDiffOnStrLit0001';
 
       let v1: number = 123
       let v2: number = 456
@@ -1519,7 +1518,6 @@ export default function TypeTIsSubOfDiffOnStrLitTest(): void {
      * @tc.level     Level 2
      */
     it("testTypeTIsSubOfDiffOnStrLit0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testTypeTIsSubOfDiffOnStrLit0002';
 
       let v1: number = 123
       let v2: number = 456

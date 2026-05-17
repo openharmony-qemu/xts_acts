@@ -387,7 +387,6 @@ export default function DiffTypeIsSubOfTypeTOnStrLitTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeIsSubOfTypeTOnStrLit0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeIsSubOfTypeTOnStrLit0001';
 
 
       let res: number = f1_1("In Progress")
@@ -410,7 +409,6 @@ export default function DiffTypeIsSubOfTypeTOnStrLitTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeIsSubOfTypeTOnStrLit0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeIsSubOfTypeTOnStrLit0002';
 
 
       let res: number = f1_2("In Progress")

@@ -1369,7 +1369,6 @@ export default function UnionTypesIdentityTest03(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testUnionTypesIdentity0028';
 
       let a: number | Dog13 | Cat13 | Frog13 = new Cat13()
       let b: Cat13 | Dog13 | Frog13 | number = cast23(a)
@@ -1424,7 +1423,6 @@ export default function UnionTypesIdentityTest03(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testUnionTypesIdentity0029';
 
       let a: Object | undefined = 5n
       let b: undefined | Object = foo(a)
@@ -1474,7 +1472,6 @@ export default function UnionTypesIdentityTest03(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testUnionTypesIdentity0030';
 
       let a: undefined | Object = 5n
       let b: Object | undefined = foo1(a)
@@ -1524,7 +1521,6 @@ export default function UnionTypesIdentityTest03(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testUnionTypesIdentity0031';
 
       let a: Object | undefined = 5n
       let b: undefined | Object = foo2(a)
@@ -1574,7 +1570,6 @@ export default function UnionTypesIdentityTest03(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testUnionTypesIdentity0032';
 
       let a: undefined | Object = 5n
       let b: Object | undefined = foo3(a)
@@ -1624,7 +1619,6 @@ export default function UnionTypesIdentityTest03(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testUnionTypesIdentity0033';
 
       let a: Object | undefined = 5n
       let b: undefined | Object = foo4(a)
@@ -1674,7 +1668,6 @@ export default function UnionTypesIdentityTest03(): void {
      * @tc.level     Level 2
      */
     it("testUnionTypesIdentity0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testUnionTypesIdentity0034';
 
       let a: undefined | Object = 5n
       let b: Object | undefined = foo5(a)

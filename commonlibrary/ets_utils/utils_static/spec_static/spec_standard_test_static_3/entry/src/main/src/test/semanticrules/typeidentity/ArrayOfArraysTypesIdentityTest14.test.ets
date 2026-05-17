@@ -191,7 +191,6 @@ export default function ArrayOfArraysTypesIdentityTest14(): void {
      * @tc.level     Level 2
      */
     it("testArrayOfArraysTypesIdentity0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayOfArraysTypesIdentity0033';
 
       let a: C[][] = [[{data: 1} as C, {data: 3} as C], [{data: 5} as C, {data: 7} as C]]
       let b: Array<Array<C>> = cast1(a)
@@ -250,7 +249,6 @@ export default function ArrayOfArraysTypesIdentityTest14(): void {
      * @tc.level     Level 2
      */
     it("testArrayOfArraysTypesIdentity0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayOfArraysTypesIdentity0034';
 
       let a: C[][] = [[{data: 1} as C, {data: 3} as C], [{data: 5} as C, {data: 7} as C]]
       let b: Array<Array<C>> = cast2(a)

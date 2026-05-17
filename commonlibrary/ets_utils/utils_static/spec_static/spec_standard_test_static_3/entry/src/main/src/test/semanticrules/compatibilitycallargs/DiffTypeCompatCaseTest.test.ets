@@ -106,7 +106,6 @@ export default function DiffTypeCompatCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeCompatCase0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeCompatCase0001';
 
       const val1: Array<number> = [1, 2, 3];
       const val2: object = {};
@@ -124,7 +123,6 @@ export default function DiffTypeCompatCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeCompatCase0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeCompatCase0002';
 
       const val1: boolean = true;
       const val2: number = 1;
@@ -142,7 +140,6 @@ export default function DiffTypeCompatCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeCompatCase0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeCompatCase0003';
 
       const val1: number = 123;
       const val2: string = "123";
@@ -160,7 +157,6 @@ export default function DiffTypeCompatCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeCompatCase0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeCompatCase0004';
 
       const val1: bigint = BigInt(123);
       const val2: number = 123;
@@ -178,7 +174,6 @@ export default function DiffTypeCompatCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeCompatCase0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeCompatCase0005';
 
       const val1: Array<number> = [1, 2, 3];
       const val2: [number, number] = [1, 2];
@@ -196,7 +191,6 @@ export default function DiffTypeCompatCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeCompatCase0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeCompatCase0006';
 
       const val1: string | number = 123;
       const val2: string  = "test";
@@ -214,7 +208,6 @@ export default function DiffTypeCompatCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeCompatCase0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeCompatCase0007';
 
       const val1: object = {};
       const val2: null = null;
@@ -232,7 +225,6 @@ export default function DiffTypeCompatCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeCompatCase0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeCompatCase0008';
 
       const val1: Function = () => {};
       const val2: object = {};
@@ -250,7 +242,6 @@ export default function DiffTypeCompatCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeCompatCase0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeCompatCase0009';
 
       const val1: Color = Color.Red;
       const val2: number = 0;
@@ -268,7 +259,6 @@ export default function DiffTypeCompatCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeCompatCase0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeCompatCase0010';
 
       const val1: object = {};
       const val2: Array<number> = [1, 2, 3];
@@ -286,7 +276,6 @@ export default function DiffTypeCompatCaseTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeCompatCase0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeCompatCase0011';
 
       const val1: string = "hello";
       const val2: number = 123;

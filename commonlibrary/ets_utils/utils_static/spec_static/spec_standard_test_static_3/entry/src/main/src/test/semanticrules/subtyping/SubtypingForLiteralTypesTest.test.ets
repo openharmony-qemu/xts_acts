@@ -89,7 +89,6 @@ export default function SubtypingForLiteralTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testLiteralType0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLiteralType0001';
 
       b1 = a1
       expect(b1 instanceof strLiteral1).assertTrue()
@@ -105,7 +104,6 @@ export default function SubtypingForLiteralTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testLiteralType0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLiteralType0002';
 
       let a: UnionNarrow2 = foo2()
       let b: UnionWide2 = a
@@ -123,7 +121,6 @@ export default function SubtypingForLiteralTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testSubtypingLiterals0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSubtypingLiterals0003';
 
       let a: A3 = new A3();
       let b: A3 = new B3();
@@ -140,7 +137,6 @@ export default function SubtypingForLiteralTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testSubtypingLiterals0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSubtypingLiterals0004';
 
       let bar = foo2_4
       expect(bar('b')).assertEqual('b')
@@ -157,7 +153,6 @@ export default function SubtypingForLiteralTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testSubtypingLiterals0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSubtypingLiterals0005';
 
       x5 = y5
       x5 = null
@@ -176,7 +171,6 @@ export default function SubtypingForLiteralTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testSubtypingLiterals0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSubtypingLiterals0006';
 
       expect(foo7('some_string', 'some_string')).assertTrue()
 

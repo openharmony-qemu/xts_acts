@@ -641,8 +641,7 @@ export default function SemanticRulesTypeIdentity05(): void {
      */
     it("testSemanticRulesTypeIdentity0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
       , (): void => {
-        const TAG = 'testSemanticRulesTypeIdentity0067';
-        let a: (Cat31 | Dog31 | Frog31 | number)[] = [new Cat31(), 7.8, new Dog31(), new Frog31()]
+          let a: (Cat31 | Dog31 | Frog31 | number)[] = [new Cat31(), 7.8, new Dog31(), new Frog31()]
         let b: Array<number | Dog31 | Cat31 | Frog31> = foo31(a)
 
         expect(a instanceof Array).assertTrue();
@@ -692,8 +691,7 @@ export default function SemanticRulesTypeIdentity05(): void {
      */
     it("testSemanticRulesTypeIdentity0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
       , (): void => {
-        const TAG = 'testSemanticRulesTypeIdentity0068';
-        let a: Array<Cat32 | Dog32 | Frog32 | number> = [new Cat32(), 7.8, new Dog32(), new Frog32()]
+          let a: Array<Cat32 | Dog32 | Frog32 | number> = [new Cat32(), 7.8, new Dog32(), new Frog32()]
         let b: (number | Dog32 | Cat32 | Frog32)[] = foo32(a)
 
         expect(a instanceof Array).assertTrue();
@@ -743,8 +741,7 @@ export default function SemanticRulesTypeIdentity05(): void {
      */
     it("testSemanticRulesTypeIdentity0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
       , (): void => {
-        const TAG = 'testSemanticRulesTypeIdentity0069';
-        let a: (Cat33 | Dog33 | Frog33 | number)[] = [new Cat33(), 7.8, new Dog33(), new Frog33()]
+          let a: (Cat33 | Dog33 | Frog33 | number)[] = [new Cat33(), 7.8, new Dog33(), new Frog33()]
         let b: Array<number | Dog33 | Cat33 | Frog33> = foo33(a)
 
         expect(a instanceof Array).assertTrue();
@@ -794,8 +791,7 @@ export default function SemanticRulesTypeIdentity05(): void {
      */
     it("testSemanticRulesTypeIdentity0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
       , (): void => {
-        const TAG = 'testSemanticRulesTypeIdentity0070';
-        let a: Array<Cat34 | Dog34 | Frog34 | number> = [new Cat34(), 7.8, new Dog34(), new Frog34()]
+          let a: Array<Cat34 | Dog34 | Frog34 | number> = [new Cat34(), 7.8, new Dog34(), new Frog34()]
         let b: (number | Dog34 | Cat34 | Frog34)[] = foo34(a)
 
         expect(a instanceof Array).assertTrue();
@@ -845,8 +841,7 @@ export default function SemanticRulesTypeIdentity05(): void {
      */
     it("testSemanticRulesTypeIdentity0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
       , (): void => {
-        const TAG = 'testSemanticRulesTypeIdentity0071';
-        let a: (Cat36 | Dog36 | Frog43 | number)[] = [new Cat36(), 7.8, new Dog36(), new Frog43()]
+          let a: (Cat36 | Dog36 | Frog43 | number)[] = [new Cat36(), 7.8, new Dog36(), new Frog43()]
         let b: Array<number | Dog36 | Cat36 | Frog43> = foo36(a)
 
         expect(a instanceof Array).assertTrue();
@@ -898,8 +893,7 @@ export default function SemanticRulesTypeIdentity05(): void {
      */
     it("testSemanticRulesTypeIdentity0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
       , (): void => {
-        const TAG = 'testSemanticRulesTypeIdentity0072';
-        let a: Array<Cat37 | Dog37 | Frog44 | number> = [new Cat37(), 7.8, new Dog37(), new Frog44()]
+          let a: Array<Cat37 | Dog37 | Frog44 | number> = [new Cat37(), 7.8, new Dog37(), new Frog44()]
         let b: (number | Dog37 | Cat37 | Frog44)[] = foo37(a)
 
         expect(a instanceof Array).assertTrue();

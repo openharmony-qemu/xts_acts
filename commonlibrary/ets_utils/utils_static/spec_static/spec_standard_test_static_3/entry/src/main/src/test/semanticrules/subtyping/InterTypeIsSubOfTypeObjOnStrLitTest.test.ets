@@ -827,7 +827,6 @@ export default function InterTypeIsSubOfTypeObjOnStrLitTest(): void {
      * @tc.level     Level 2
      */
     it("testInterTypeIsSubOfTypeObjOnStrLit0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInterTypeIsSubOfTypeObjOnStrLit0001';
       
 
       let res1: boolean = check_is_in_T_type_1("In Progress", 1)
@@ -850,7 +849,6 @@ export default function InterTypeIsSubOfTypeObjOnStrLitTest(): void {
      * @tc.level     Level 2
      */
     it("testInterTypeIsSubOfTypeObjOnStrLit0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInterTypeIsSubOfTypeObjOnStrLit0002';
       
 
       let res1: boolean = check_is_in_T_type_2("In Progress", 1)
@@ -874,7 +872,6 @@ export default function InterTypeIsSubOfTypeObjOnStrLitTest(): void {
      * @tc.level     Level 2
      */
     it("testInterTypeIsSubOfTypeObjOnStrLit0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInterTypeIsSubOfTypeObjOnStrLit0003';
       
 
       let res1: boolean = check_is_in_T_type_3("In Progress", 1)
@@ -897,7 +894,6 @@ export default function InterTypeIsSubOfTypeObjOnStrLitTest(): void {
      * @tc.level     Level 2
      */
     it("testInterTypeIsSubOfTypeObjOnStrLit0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testInterTypeIsSubOfTypeObjOnStrLit0004';
       
 
       let res1: boolean = check_is_in_T_type_4("In Progress", 1)

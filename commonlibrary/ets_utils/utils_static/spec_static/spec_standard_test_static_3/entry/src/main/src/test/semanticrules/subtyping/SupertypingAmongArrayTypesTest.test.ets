@@ -72,7 +72,6 @@ export default function SupertypingAmongArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testSupertypingAmongArrayTypes0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSupertypingAmongArrayTypes0001';
 
       let b: B =  B.create();
       let i: I = b;
@@ -91,7 +90,6 @@ export default function SupertypingAmongArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testSupertypingAmongArrayTypes0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSupertypingAmongArrayTypes0002';
 
       let a: A =  B2.create();
       let b = a as B2;
@@ -111,7 +109,6 @@ export default function SupertypingAmongArrayTypesTest(): void {
      * @tc.level     Level 2
      */
     it("testSupertypingAmongArrayTypes0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSupertypingAmongArrayTypes0003';
 
       let a1: Object = 1;
       let a2: Object = 2;

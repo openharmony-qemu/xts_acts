@@ -176,7 +176,6 @@ export default function DiffTypeIsSubOfTypeObjOnStrLitTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeIsSubOfTypeObjOnStrLit0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeIsSubOfTypeObjOnStrLit0001';
       let res: number = f1_1("In Progress");
       expect(res).assertEqual(1);
       res = f1_1("On Review");
@@ -194,7 +193,6 @@ export default function DiffTypeIsSubOfTypeObjOnStrLitTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeIsSubOfTypeObjOnStrLit0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeIsSubOfTypeObjOnStrLit0002';
       let res: number = f1_2("In Progress");
       expect(res).assertEqual(1);
       res = f1_2("On Review");

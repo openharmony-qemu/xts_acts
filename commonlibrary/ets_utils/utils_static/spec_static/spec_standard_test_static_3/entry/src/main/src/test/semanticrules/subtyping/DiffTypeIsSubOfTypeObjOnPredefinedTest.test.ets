@@ -451,7 +451,6 @@ export default function DiffTypeIsSubOfTypeObjOnPredefinedTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeIsSubOfTypeObjOnPredefined0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeIsSubOfTypeObjOnPredefined0001';
       let res: number = f1_1(false);
       expect(res).assertEqual(1);
       res = f1_1(123);
@@ -469,7 +468,6 @@ export default function DiffTypeIsSubOfTypeObjOnPredefinedTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeIsSubOfTypeObjOnPredefined0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeIsSubOfTypeObjOnPredefined0002';
       let res: number = f1_2(123);
       expect(res).assertEqual(1);
       res = f1_2(false);
@@ -487,7 +485,6 @@ export default function DiffTypeIsSubOfTypeObjOnPredefinedTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeIsSubOfTypeObjOnPredefined0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeIsSubOfTypeObjOnPredefined0003';
       let res: number = f1_3("bca");
       expect(res).assertEqual(1);
       res = f1_3(true);
@@ -505,7 +502,6 @@ export default function DiffTypeIsSubOfTypeObjOnPredefinedTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeIsSubOfTypeObjOnPredefined0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeIsSubOfTypeObjOnPredefined0004';
       let res: number = f1_4(true);
       expect(res).assertEqual(1);
       res = f1_4(6);
@@ -523,7 +519,6 @@ export default function DiffTypeIsSubOfTypeObjOnPredefinedTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeIsSubOfTypeObjOnPredefined0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeIsSubOfTypeObjOnPredefined0005';
       let res: number = f1_5(false);
       expect(res).assertEqual(1);
       res = f1_5(123);
@@ -541,7 +536,6 @@ export default function DiffTypeIsSubOfTypeObjOnPredefinedTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeIsSubOfTypeObjOnPredefined0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeIsSubOfTypeObjOnPredefined0006';
       let res: number = f1_6(123);
       expect(res).assertEqual(1);
       res = f1_6(false);
@@ -559,7 +553,6 @@ export default function DiffTypeIsSubOfTypeObjOnPredefinedTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeIsSubOfTypeObjOnPredefined0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeIsSubOfTypeObjOnPredefined0007';
       let res: number = f1_7("bca");
       expect(res).assertEqual(1);
       res = f1_7(true);
@@ -577,7 +570,6 @@ export default function DiffTypeIsSubOfTypeObjOnPredefinedTest(): void {
      * @tc.level     Level 2
      */
     it("testDiffTypeIsSubOfTypeObjOnPredefined0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testDiffTypeIsSubOfTypeObjOnPredefined0008';
       let res: number = f1_8(true);
       expect(res).assertEqual(1);
       res = f1_8(6);

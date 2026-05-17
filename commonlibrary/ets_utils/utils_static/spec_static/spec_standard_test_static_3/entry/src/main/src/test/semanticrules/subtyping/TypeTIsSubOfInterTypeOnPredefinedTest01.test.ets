@@ -897,7 +897,6 @@ export default function TypeTIsSubOfInterTypeOnPredefinedTest01(): void {
      * @tc.level     Level 2
      */
     it("testTypeTIsSubOfInterTypeOnPredefined0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testTypeTIsSubOfInterTypeOnPredefined0003';
       let v1: int = 123
       let v2: int = 456
       let res: boolean =
