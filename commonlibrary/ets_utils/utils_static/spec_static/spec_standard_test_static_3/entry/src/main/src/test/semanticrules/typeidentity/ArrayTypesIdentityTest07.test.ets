@@ -1427,7 +1427,7 @@ export default function ArrayTypesIdentityTest07(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("arraytypesidentityTest0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testArrayTypesIdentity0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       let a: number[] = [1, 3, 5]
       let b: Array<number> = foo_32(a)
@@ -1477,7 +1477,7 @@ export default function ArrayTypesIdentityTest07(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("arraytypesidentityTest0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testArrayTypesIdentity0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       let a: Array<number> = [1, 3, 5]
       let b: number[] = foo_33(a)
@@ -1527,7 +1527,7 @@ export default function ArrayTypesIdentityTest07(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("arraytypesidentityTest0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testArrayTypesIdentity0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       let a: Array<number> = [1, 3, 5]
       let b: number[] = foo_34(a)

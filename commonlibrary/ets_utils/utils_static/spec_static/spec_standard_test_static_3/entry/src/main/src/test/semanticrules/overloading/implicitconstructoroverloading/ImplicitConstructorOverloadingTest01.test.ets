@@ -516,7 +516,7 @@ export default function ImplicitConstructorOverloadingTest01():void {
 
     /**
      * @tc.number    SUB_IMPLICIT_CONSTRUCTOR_OVERLOADINGTESTONE_0900
-     * @tc.name      testCo3Over0009
+     * @tc.name      testCo3Over0001
      * @tc.desc      Two or more unnamed constructors within a class are implicitly overloaded (Multiple params).
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -528,7 +528,7 @@ export default function ImplicitConstructorOverloadingTest01():void {
 
     /**
      * @tc.number    SUB_IMPLICIT_CONSTRUCTOR_OVERLOADINGTESTONE_1000
-     * @tc.name      testCo3Over0010
+     * @tc.name      testCo3Over0002
      * @tc.desc      Two or more unnamed constructors within a class are implicitly overloaded (Optional params).
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -540,7 +540,7 @@ export default function ImplicitConstructorOverloadingTest01():void {
 
     /**
      * @tc.number    SUB_IMPLICIT_CONSTRUCTOR_OVERLOADINGTESTONE_1100
-     * @tc.name      testCo3Over0011
+     * @tc.name      testCo3Over0003
      * @tc.desc      Two or more unnamed constructors within a class are implicitly overloaded (Value types).
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -552,7 +552,7 @@ export default function ImplicitConstructorOverloadingTest01():void {
 
     /**
      * @tc.number    SUB_IMPLICIT_CONSTRUCTOR_OVERLOADINGTESTONE_1200
-     * @tc.name      testCo3Over0012
+     * @tc.name      testCo3Over0004
      * @tc.desc      Two or more unnamed constructors within a class are implicitly overloaded (Rest params).
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -564,7 +564,7 @@ export default function ImplicitConstructorOverloadingTest01():void {
 
     /**
      * @tc.number    SUB_IMPLICIT_CONSTRUCTOR_OVERLOADINGTESTONE_1300
-     * @tc.name      testCo3Over0013
+     * @tc.name      testCo3Over0005
      * @tc.desc      Two or more unnamed constructors within a class are implicitly overloaded (Generics).
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -576,7 +576,7 @@ export default function ImplicitConstructorOverloadingTest01():void {
 
     /**
      * @tc.number    SUB_IMPLICIT_CONSTRUCTOR_OVERLOADINGTESTONE_1400
-     * @tc.name      testCo3Over0014
+     * @tc.name      testCo3Over0006
      * @tc.desc      Two or more unnamed constructors within a class are implicitly overloaded (Dependent types).
      * @tc.size      MediumTest
      * @tc.type      Function

@@ -2846,7 +2846,7 @@ export default function ExplicitInterfaceMethodOverloadTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testExplicitInterfaceMethodOverload128", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testExplicitInterfaceMethodOverload0128", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = new Derived2<Number, String>();
       let b = new Base<Number, String>();
       let c: TPL = [false, 1.2f];

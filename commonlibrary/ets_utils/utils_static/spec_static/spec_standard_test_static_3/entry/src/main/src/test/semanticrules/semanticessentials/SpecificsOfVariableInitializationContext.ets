@@ -159,7 +159,7 @@ export default function SpecificsOfVariableInitializationContext(): void{
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testtestDeclarationTypeInference0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testDeclarationTypeInference0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       testDeclarationTypeInference();
       expect(1 + 1).assertEqual(2);
     });

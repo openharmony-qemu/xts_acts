@@ -1115,7 +1115,7 @@ export default function InterTypeIsSubOfTypeTOnPredefinedTest01(): void {
     })
 
     /**
-     * @tc.number    SUB_INTER_TYPE_IS_SUB_OF_TYPE_T_ON_GEN_0300
+     * @tc.number    SUB_INTER_TYPE_IS_SUB_OF_TYPE_TEST_0300
      * @tc.name      testInterTypeIsSubOfTypeTOnGen0003
      * @tc.desc      Checking that intersection type I (defined as I1 & I2) is a subtype of type
      *               T if Ii is a subtype of T for some i in case of usage instanceof on predefined types
@@ -1142,7 +1142,7 @@ export default function InterTypeIsSubOfTypeTOnPredefinedTest01(): void {
     });
 
     /**
-     * @tc.number    SUB_INTER_TYPE_IS_SUB_OF_TYPE_T_ON_GEN_0400
+     * @tc.number    SUB_INTER_TYPE_IS_SUB_OF_TYPE_TEST_0400
      * @tc.name      testInterTypeIsSubOfTypeTOnGen0004
      * @tc.desc      Checking that intersection type I (defined as I1 & I2) is a subtype of type
      *               T if Ii is a subtype of T for some i in case of usage instanceof on predefined types
@@ -1165,7 +1165,7 @@ export default function InterTypeIsSubOfTypeTOnPredefinedTest01(): void {
     });
 
     /**
-     * @tc.number    SUB_INTER_TYPE_IS_SUB_OF_TYPE_T_ON_GEN_0500
+     * @tc.number    SUB_INTER_TYPE_IS_SUB_OF_TYPE_TEST_0500
      * @tc.name      testInterTypeIsSubOfTypeTOnGen0005
      * @tc.desc      Checking that intersection type I (defined as I1 & I2) is a subtype of type
      *               T if Ii is a subtype of T for some i in case of usage instanceof on predefined types

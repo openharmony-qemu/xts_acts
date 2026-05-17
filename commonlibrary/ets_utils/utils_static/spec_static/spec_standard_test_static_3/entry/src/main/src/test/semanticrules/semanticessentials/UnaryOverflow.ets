@@ -56,7 +56,7 @@ export default function UnaryOverflow(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testUnaryOverflow_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testUnaryOverflow0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let x: byte = 127;
       let result = ++x;
       expect(result).assertEqual(-128)
@@ -72,7 +72,7 @@ export default function UnaryOverflow(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testUnaryOverflow_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testUnaryOverflow0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let x: short = 32767;
       let result = ++x;
       expect(result).assertEqual(-32768)
@@ -88,7 +88,7 @@ export default function UnaryOverflow(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testUnaryOverflow_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testUnaryOverflow0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let x: byte = 127;
       let result = x++;
       expect(result).assertEqual(127)
@@ -104,7 +104,7 @@ export default function UnaryOverflow(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testUnaryOverflow_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testUnaryOverflow0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let x: short = 32767;
       let result = x++;
       expect(result).assertEqual(32767)
@@ -120,7 +120,7 @@ export default function UnaryOverflow(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testUnaryOverflow_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testUnaryOverflow0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let x: int = -2147483648;
       let result = -x;
       expect(result).assertEqual(-2147483648)

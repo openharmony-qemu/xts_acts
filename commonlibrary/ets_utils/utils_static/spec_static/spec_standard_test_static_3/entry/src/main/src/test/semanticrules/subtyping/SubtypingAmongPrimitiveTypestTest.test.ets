@@ -45,7 +45,7 @@ export default function SubtypingAmongPrimitiveTypestTest():void {
 
     /**
      * @tc.number    SUB_SUBTYPING_AMONG_PRIMITIVE_TYPESTEST_0100
-     * @tc.name      testSubtypingAmongPrimitiveTypes0001
+     * @tc.name      testStaticAndInstanceFields0001
      * @tc.desc      Subtyping relation among the primitive types
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -67,7 +67,7 @@ export default function SubtypingAmongPrimitiveTypestTest():void {
 
     /**
      * @tc.number    SUB_SUBTYPING_AMONG_PRIMITIVE_TYPESTEST_0200
-     * @tc.name      testSubtypingAmongPrimitiveTypes0002
+     * @tc.name      testStaticAndInstanceFields0002
      * @tc.desc      Subtyping relation among the primitive types
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -85,7 +85,7 @@ export default function SubtypingAmongPrimitiveTypestTest():void {
 
     /**
      * @tc.number    SUB_SUBTYPING_AMONG_PRIMITIVE_TYPESTEST_0300
-     * @tc.name      testSubtypingAmongPrimitiveTypes0003
+     * @tc.name      testStaticAndInstanceFields0003
      * @tc.desc      Subtyping relation among the primitive types
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -99,7 +99,7 @@ export default function SubtypingAmongPrimitiveTypestTest():void {
 
     /**
      * @tc.number    SUB_SUBTYPING_AMONG_PRIMITIVE_TYPESTEST_0400
-     * @tc.name      testSubtypingAmongPrimitiveTypes0004
+     * @tc.name      testStaticAndInstanceFields0004
      * @tc.desc      Subtyping relation among the primitive types
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -113,7 +113,7 @@ export default function SubtypingAmongPrimitiveTypestTest():void {
 
     /**
      * @tc.number    SUB_SUBTYPING_AMONG_PRIMITIVE_TYPESTEST_0500
-     * @tc.name      testSubtypingAmongPrimitiveTypes0005
+     * @tc.name      testStaticAndInstanceFields0005
      * @tc.desc      Subtyping relation among the primitive types
      * @tc.size      MediumTest
      * @tc.type      Function

@@ -685,7 +685,7 @@ export default function InterTypeIsSubOfTypeTOnStrLit1Test01(): void {
       // This API supports only one parameter: preset action function.
     })
     /**
-     * @tc.number    SUB_INTER_TYPE_IS_SUB_OF_TYPE_T_ON_STR_LIT1_0300
+     * @tc.number    SUB_INTER_TYPE_IS_SUB_OF_TYPE_T_ON_STR_LIT1_ONE_0300
      * @tc.name      testInterTypeIsSubOfTypeTOnStrLit0004
      * @tc.desc      Checking that intersection type I (defined as I1 & I2) is a subtype of type
      *               T if Ii is a subtype of T for some i in case of usage instanceof on literal union

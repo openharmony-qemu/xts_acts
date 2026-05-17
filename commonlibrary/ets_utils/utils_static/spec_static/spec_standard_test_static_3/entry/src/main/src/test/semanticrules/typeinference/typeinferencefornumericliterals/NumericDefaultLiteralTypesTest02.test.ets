@@ -131,7 +131,7 @@ export default function NumericDefaultLiteralTypesTest02():void {
 
     /**
      * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_0600
-     * @tc.name      testNumericLogical0006
+     * @tc.name      testNumericLogical0007
      * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
      * evaluated from the expression. The evaluated numeric result type can be inferred
      * to a numeric target type from the context.

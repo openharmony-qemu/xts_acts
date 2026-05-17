@@ -383,7 +383,7 @@ export default function OverrideCompatibleSignaturesTest03():void {
 
     /**
      * @tc.number    SUB_OVERRIDE_COMPATIBLE_SIGNATURESTESTTHREE_0400
-     * @tc.name      testOverrideCompatibilityUnion0004
+     * @tc.name      testOverrideCompatibilityUnion0001
      * @tc.desc      Checking override-compatibility with Unions: parameter contravariance
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -395,7 +395,7 @@ export default function OverrideCompatibleSignaturesTest03():void {
 
     /**
      * @tc.number    SUB_OVERRIDE_COMPATIBLE_SIGNATURESTESTTHREE_0500
-     * @tc.name      testOverrideCompatibilityUnion0005
+     * @tc.name      testOverrideCompatibilityUnion0002
      * @tc.desc      Checking override-compatibility with Unions: return type covariance
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -407,7 +407,7 @@ export default function OverrideCompatibleSignaturesTest03():void {
 
     /**
      * @tc.number    SUB_OVERRIDE_COMPATIBLE_SIGNATURESTESTTHREE_0600
-     * @tc.name      testOverrideCompatibilityTuple0006
+     * @tc.name      testOverrideCompatibilityTuple0001
      * @tc.desc      Checking override-compatibility with Tuples: same parameter type
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -419,7 +419,7 @@ export default function OverrideCompatibleSignaturesTest03():void {
 
     /**
      * @tc.number    SUB_OVERRIDE_COMPATIBLE_SIGNATURESTESTTHREE_0700
-     * @tc.name      testOverrideCompatibilityTuple0007
+     * @tc.name      testOverrideCompatibilityTuple0002
      * @tc.desc      Checking override-compatibility with Tuples: parameter contravariance
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -431,7 +431,7 @@ export default function OverrideCompatibleSignaturesTest03():void {
 
     /**
      * @tc.number    SUB_OVERRIDE_COMPATIBLE_SIGNATURESTESTTHREE_0800
-     * @tc.name      testOverrideCompatibilityTuple0008
+     * @tc.name      testOverrideCompatibilityTuple0003
      * @tc.desc      Checking override-compatibility with Tuples: parameter contravariance 2
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -443,7 +443,7 @@ export default function OverrideCompatibleSignaturesTest03():void {
 
     /**
      * @tc.number    SUB_OVERRIDE_COMPATIBLE_SIGNATURESTESTTHREE_0900
-     * @tc.name      testOverrideCompatibilityTuple0009
+     * @tc.name      testOverrideCompatibilityTuple0004
      * @tc.desc      Checking override-compatibility with Tuples: same return type
      * @tc.size      MediumTest
      * @tc.type      Function

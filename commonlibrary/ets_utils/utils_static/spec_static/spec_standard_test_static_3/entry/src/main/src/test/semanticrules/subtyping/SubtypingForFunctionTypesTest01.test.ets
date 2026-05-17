@@ -1145,7 +1145,7 @@ export default function SubtypingForFunctionTypesTest01(): void {
     });
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_ONE_1400
+     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_TEST_1400
      * @tc.name      testPositiveFunctionGeneric0036
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
      *               \ of function type S with parameters SP1 , ... , SPn and return type SR if all of\

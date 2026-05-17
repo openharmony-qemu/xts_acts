@@ -145,7 +145,7 @@ export default function RestParameterWithOptionalTest(): void {
 
     /**
      * @tc.number    SUB_REST_PARAMETER_WITH_OPTIONAL_0100
-     * @tc.name      testRestParameterWithOptional0001
+     * @tc.name      testRestParameterWithOptionalTest0001
      * @tc.desc      Type of each argument corresponding to the rest parameter without the spread
      *               operator must be compatible with the element type of the array rest type parameter.
      * @tc.size      MediumTest
@@ -161,7 +161,7 @@ export default function RestParameterWithOptionalTest(): void {
 
     /**
      * @tc.number    SUB_REST_PARAMETER_WITH_OPTIONAL_0200
-     * @tc.name      testRestParameterWithOptional0002
+     * @tc.name      testRestParameterWithOptionalTest0002
      * @tc.desc      Type of each argument corresponding to the rest parameter without the spread
      *               operator must be compatible with the element type of the array rest type parameter.
      * @tc.size      MediumTest
@@ -177,7 +177,7 @@ export default function RestParameterWithOptionalTest(): void {
 
     /**
      * @tc.number    SUB_REST_PARAMETER_WITH_OPTIONAL_0300
-     * @tc.name      testRestParameterWithOptional0003
+     * @tc.name      testRestParameterWithOptionalTest0003
      * @tc.desc      Type of each argument corresponding to the rest parameter without the spread
      *               operator must be compatible with the element type of the array rest type parameter.
      * @tc.size      MediumTest
@@ -194,7 +194,7 @@ export default function RestParameterWithOptionalTest(): void {
 
     /**
      * @tc.number    SUB_REST_PARAMETER_WITH_OPTIONAL_0400
-     * @tc.name      testRestParameterWithOptional0004
+     * @tc.name      testRestParameterWithOptionalTest0004
      * @tc.desc      Type of each argument corresponding to the rest parameter without the spread
      *               operator must be compatible with the element type of the array rest type parameter.
      * @tc.size      MediumTest
@@ -211,7 +211,7 @@ export default function RestParameterWithOptionalTest(): void {
 
     /**
      * @tc.number    SUB_REST_PARAMETER_WITH_OPTIONAL_0500
-     * @tc.name      testRestParameterWithOptional0005
+     * @tc.name      testRestParameterWithOptionalTest0005
      * @tc.desc      Type of each argument corresponding to the rest parameter without the spread
      *               operator must be compatible with the element type of the array rest type parameter.
      * @tc.size      MediumTest
@@ -229,7 +229,7 @@ export default function RestParameterWithOptionalTest(): void {
 
     /**
      * @tc.number    SUB_REST_PARAMETER_WITH_OPTIONAL_0600
-     * @tc.name      testRestParameterWithOptional0006
+     * @tc.name      testRestParameterWithOptionalTest0006
      * @tc.desc      Type of each argument corresponding to the rest parameter without the spread
      *               operator must be compatible with the element type of the array rest type parameter.
      * @tc.size      MediumTest
@@ -247,7 +247,7 @@ export default function RestParameterWithOptionalTest(): void {
 
     /**
      * @tc.number    SUB_REST_PARAMETER_WITH_OPTIONAL_0700
-     * @tc.name      testRestParameterWithOptional0007
+     * @tc.name      testRestParameterWithOptionalTest0007
      * @tc.desc      Type of each argument corresponding to the rest parameter without the spread
      *               operator must be compatible with the element type of the array rest type parameter.
      * @tc.size      MediumTest
@@ -264,4 +264,3 @@ export default function RestParameterWithOptionalTest(): void {
     });
   })
 }
-

@@ -793,7 +793,7 @@ export default function ArrayOfArraysTypesIdentityTest17(): void {
 
     /**
      * @tc.number    SUB_ARRAY_OF_ARRAYS_TYPES_IDENTITY_5200
-     * @tc.name      testArrayOfArraysTypesIdentity0006
+     * @tc.name      testArrayOfArraysTypesIdentity0052
      * @tc.desc      Checking for 2d Arrays with mix of types T[] and Array<T> are identical on custom
      *               types by using cast expression.
      * @tc.size      MediumTest

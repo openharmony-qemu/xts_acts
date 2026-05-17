@@ -132,7 +132,7 @@ export default function InheritanceRelationshipCompatibilityCaseTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("inheritancerelationshipcompatibilitycaseTest0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
+    it("testInheritanceRelationshipCompatibilityCase0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
       void => {
       
 
@@ -154,7 +154,7 @@ export default function InheritanceRelationshipCompatibilityCaseTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("inheritancerelationshipcompatibilitycaseTest0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
+    it("testInheritanceRelationshipCompatibilityCase0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
       void => {
       
 
@@ -174,7 +174,7 @@ export default function InheritanceRelationshipCompatibilityCaseTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("inheritancerelationshipcompatibilitycaseTest0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
+    it("testInheritanceRelationshipCompatibilityCase0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
       void => {
       
 
@@ -195,7 +195,7 @@ export default function InheritanceRelationshipCompatibilityCaseTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("inheritancerelationshipcompatibilitycaseTest0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
+    it("testInheritanceRelationshipCompatibilityCase0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
       void => {
       
 
@@ -214,7 +214,7 @@ export default function InheritanceRelationshipCompatibilityCaseTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("inheritancerelationshipcompatibilitycaseTest0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
+    it("testInheritanceRelationshipCompatibilityCase0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
       void => {
       
 
@@ -233,7 +233,7 @@ export default function InheritanceRelationshipCompatibilityCaseTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("inheritancerelationshipcompatibilitycaseTest0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
+    it("testInheritanceRelationshipCompatibilityCase0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
       void => {
       
 
@@ -253,13 +253,11 @@ export default function InheritanceRelationshipCompatibilityCaseTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("inheritancerelationshipcompatibilitycaseTest0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
+    it("testInheritanceRelationshipCompatibilityCase0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
       void => {
-      
-
+    
       const val1: ChildInterface1 = {};
       const val2: ParentInterface1 = {};
-
       const result1 = checkTypeIdentity4(val1, val2);
       expect(result1).assertEqual(false);
     });
@@ -272,13 +270,12 @@ export default function InheritanceRelationshipCompatibilityCaseTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("inheritancerelationshipcompatibilitycaseTest0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
+    it("testInheritanceRelationshipCompatibilityCase0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
       void => {
       
 
       const val1: ConcreteClass1 = new ConcreteClass1();
       const val2: AbstractClass1 = new ConcreteClass1();
-
       const result1 = checkTypeIdentity5(val1, val2);
       expect(result1).assertEqual(true);
     });

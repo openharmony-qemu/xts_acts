@@ -196,7 +196,7 @@ export default function SpecificsOfAssignmentLikeContexts(): void{
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testtestPositiveCases0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testPositiveCases0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       assignSameType1(1, 1)
       assignOtherType1(1, 2)
       assignIndexed1([])

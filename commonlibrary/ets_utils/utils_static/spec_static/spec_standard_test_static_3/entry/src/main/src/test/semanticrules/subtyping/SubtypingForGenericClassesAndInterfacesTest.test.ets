@@ -1171,25 +1171,6 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
     });
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_GENERIC_CLASSES_AND_INTERFACESTEST_3700
-     * @tc.name      testGenericClsSubtypingTypeVariance0037
-     * @tc.desc      Subtyping relation between generic classes with type variance
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testGenericClsSubtypingTypeVariance0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-       
-
-      let base = new A37<F37,F37>(new F37)
-      let subtype = new A37<E37,F37>(new F37)
-      expect(base.foo37(new F37) instanceof F37).assertTrue()
-      base = subtype
-      expect(base.foo37(new E37) instanceof F37).assertTrue()
-      expect(base.foo37(new E37) instanceof F37).assertTrue()
-    });
-
-    /**
      * @tc.number    SUB_SUBTYPING_FOR_GENERIC_CLASSES_AND_INTERFACESTEST_3800
      * @tc.name      testGenericClsSubtypingTypeVariance0038
      * @tc.desc      Subtyping relation between generic classes with type variance
@@ -1263,6 +1244,23 @@ export default function SubtypingForGenericClassesAndInterfacesTest(): void {
       base = subtype
       expect(base.foo41(new D41) instanceof D41).assertTrue()
       expect(base.foo41(new D41) instanceof F41).assertTrue()
+    });
+
+    /**
+     * @tc.number    SUB_SUBTYPING_FOR_GENERIC_CLASSES_AND_INTERFACESTEST_4200
+     * @tc.name      testGenericClsSubtypingTypeVariance4200
+     * @tc.desc      Subtyping relation between generic classes with type variance
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testGenericClsSubtypingTypeVariance4200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let base = new A37<F37,F37>(new F37)
+      let subtype = new A37<E37,F37>(new F37)
+      expect(base.foo37(new F37) instanceof F37).assertTrue()
+      base = subtype
+      expect(base.foo37(new E37) instanceof F37).assertTrue()
+      expect(base.foo37(new E37) instanceof F37).assertTrue()
     });
   })
 }

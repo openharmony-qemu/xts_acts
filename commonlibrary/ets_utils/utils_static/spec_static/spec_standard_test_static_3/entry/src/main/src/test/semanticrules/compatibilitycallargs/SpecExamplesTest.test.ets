@@ -535,7 +535,7 @@ export default function SpecExamplesTest(): void {
      */
     it("testSpecExamples0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testSpecExamples0009';
-      
+
 
       foo9(1, "111")
     });
@@ -551,7 +551,7 @@ export default function SpecExamplesTest(): void {
      */
     it("testSpecExamples0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testSpecExamples0010';
-      
+
 
       let my_lambda_var: my_lambda10 = (...p10: (number|string)[]): void => { expect(p10[0]).assertEqual(1)
         expect(p10[1]).assertEqual("111") }
@@ -569,7 +569,7 @@ export default function SpecExamplesTest(): void {
      */
     it("testSpecExamples0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testSpecExamples0011';
-      
+
 
       let a = new A11(1, "111")
     });
@@ -585,7 +585,7 @@ export default function SpecExamplesTest(): void {
      */
     it("testSpecExamples0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testSpecExamples0012';
-      
+
 
       new B12().bar12(1, "111")
     });
@@ -601,7 +601,7 @@ export default function SpecExamplesTest(): void {
      */
     it("testSpecExamples0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testSpecExamples0013';
-      
+
 
       foo13(...[1, "111"])
     });
@@ -625,22 +625,6 @@ export default function SpecExamplesTest(): void {
     });
 
     /**
-     * @tc.number    SUB_SPEC_EXAMPLES_TEST_1500
-     * @tc.name      testSpecExamples0015
-     * @tc.desc      Specification examples for semantic checks that must be performed to arguments
-     *               when checking the validity of any function, method, constructor, or lambda call.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testSpecExamples0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSpecExamples0015';
-      
-
-      let a = new A15(...[1, "111"])
-    });
-
-    /**
      * @tc.number    SUB_SPEC_EXAMPLES_TEST_1600
      * @tc.name      testSpecExamples0016
      * @tc.desc      Specification examples for semantic checks that must be performed to arguments
@@ -651,14 +635,12 @@ export default function SpecExamplesTest(): void {
      */
     it("testSpecExamples0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testSpecExamples0016';
-      
-
       new B16().bar16(...[1, "111"])
     });
 
     /**
      * @tc.number    SUB_SPEC_EXAMPLES_TEST_1700
-     * @tc.name      testSpecExamples0001
+     * @tc.name      testSpecExamples0017
      * @tc.desc      Specification examples for semantic checks that must be performed to arguments
      *               when checking the validity of any function, method, constructor, or lambda call.
      * @tc.size      MediumTest
@@ -667,8 +649,6 @@ export default function SpecExamplesTest(): void {
      */
     it("testSpecExamples0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testSpecExamples0017';
-      
-
       foo17(...[1, "111"])
     });
 
@@ -683,7 +663,7 @@ export default function SpecExamplesTest(): void {
      */
     it("testSpecExamples0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testSpecExamples0018';
-      
+
 
       let my_lambda_var: my_lambda18 = (...p18: [number, string]): void => { expect(p18[0]).assertEqual(1)
         expect(p18[1]).assertEqual("111") }
@@ -701,7 +681,7 @@ export default function SpecExamplesTest(): void {
      */
     it("testSpecExamples0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testSpecExamples0019';
-      
+
 
       let a = new A19(...[1, "111"])
     });
@@ -717,7 +697,7 @@ export default function SpecExamplesTest(): void {
      */
     it("testSpecExamples0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testSpecExamples0020';
-      
+
 
       new B20().bar20(...[1, "111"])
     });

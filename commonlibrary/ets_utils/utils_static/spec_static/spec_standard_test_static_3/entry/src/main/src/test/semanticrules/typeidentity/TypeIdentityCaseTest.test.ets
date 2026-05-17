@@ -264,7 +264,7 @@ export default function TypeIdentityCase(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testTypeIdentityCase_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testTypeIdentityCase0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let tuple: MyTuple = [42, "Hello"];
       let result = processMyTuple2(tuple);
       expect(result[0]).assertEqual(42)

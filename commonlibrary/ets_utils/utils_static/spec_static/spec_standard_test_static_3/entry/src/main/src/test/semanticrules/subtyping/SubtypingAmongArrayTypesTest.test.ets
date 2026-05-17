@@ -59,7 +59,7 @@ export default function SubtypingAmongArrayTypesTest(): void {
     })
     /**
      * @tc.number    SUB_SUBTYPING_AMONG_ARRAY_TYPESTEST_0200
-     * @tc.name      testSubtypingAmongArrayTypes0002
+     * @tc.name      testStaticAndInstanceFields0002
      * @tc.desc      Supertype relation among array types
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -75,7 +75,7 @@ export default function SubtypingAmongArrayTypesTest(): void {
 
     /**
      * @tc.number    SUB_SUBTYPING_AMONG_ARRAY_TYPESTEST_0300
-     * @tc.name      testSubtypingAmongArrayTypes0003
+     * @tc.name      testStaticAndInstanceFields0003
      * @tc.desc      Supertype relation among array types
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -92,7 +92,7 @@ export default function SubtypingAmongArrayTypesTest(): void {
 
     /**
      * @tc.number    SUB_SUBTYPING_AMONG_ARRAY_TYPESTEST_0400
-     * @tc.name      testSubtypingAmongArrayTypes0004
+     * @tc.name      testStaticAndInstanceFields0004
      * @tc.desc      Supertype relation among array types
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -111,7 +111,7 @@ export default function SubtypingAmongArrayTypesTest(): void {
 
     /**
      * @tc.number    SUB_SUBTYPING_AMONG_ARRAY_TYPESTEST_0500
-     * @tc.name      testSubtypingAmongArrayTypes0005
+     * @tc.name      testStaticAndInstanceFields0005
      * @tc.desc      Supertype relation among array types
      * @tc.size      MediumTest
      * @tc.type      Function

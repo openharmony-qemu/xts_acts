@@ -115,7 +115,7 @@ export default function DiffTypeCompatCaseTest(): void {
     });
 
     /**
-     * @tc.number    SUB_SPECIFICS_OF_TYPE_PARAMETERS_0200
+     * @tc.number    SUB_SPECIFICS_OF_TYPE_PARAMETERSTEST_0200
      * @tc.name      testDiffTypeCompatCase0002
      * @tc.desc      Ensuring type identity in type guards.
      * @tc.size      MediumTest
@@ -132,7 +132,7 @@ export default function DiffTypeCompatCaseTest(): void {
     });
 
     /**
-     * @tc.number    SUB_SPECIFICS_OF_TYPE_PARAMETERS_0300
+     * @tc.number    SUB_SPECIFICS_OF_TYPE_PARAMETERSTEST_0300
      * @tc.name      testDiffTypeCompatCase0003
      * @tc.desc      Ensuring type identity in type guards.
      * @tc.size      MediumTest
@@ -149,7 +149,7 @@ export default function DiffTypeCompatCaseTest(): void {
     });
 
     /**
-     * @tc.number    SUB_SPECIFICS_OF_TYPE_PARAMETERS_0400
+     * @tc.number    SUB_SPECIFICS_OF_TYPE_PARAMETERSTEST_0400
      * @tc.name      testDiffTypeCompatCase0004
      * @tc.desc      Ensuring type identity in type guards.
      * @tc.size      MediumTest
@@ -234,7 +234,7 @@ export default function DiffTypeCompatCaseTest(): void {
     });
 
     /**
-     * @tc.number    SUB_SPECIFICS_OF_TYPE_PARAMETERS_0900
+     * @tc.number    SUB_SPECIFICS_OF_TYPE_PARAMETERSTEST_0900
      * @tc.name      testDiffTypeCompatCase0009
      * @tc.desc      Ensuring type identity in type guards.
      * @tc.size      MediumTest
@@ -251,7 +251,7 @@ export default function DiffTypeCompatCaseTest(): void {
     });
 
     /**
-     * @tc.number    SUB_SPECIFICS_OF_TYPE_PARAMETERS_1000
+     * @tc.number    SUB_SPECIFICS_OF_TYPE_PARAMETERSTEST_1000
      * @tc.name      testDiffTypeCompatCase0010
      * @tc.desc      Ensuring type identity in type guards.
      * @tc.size      MediumTest
@@ -268,7 +268,7 @@ export default function DiffTypeCompatCaseTest(): void {
     });
 
     /**
-     * @tc.number    SUB_SPECIFICS_OF_TYPE_PARAMETERS_1100
+     * @tc.number    SUB_SPECIFICS_OF_TYPE_PARAMETERSTEST_1100
      * @tc.name      testDiffTypeCompatCase0011
      * @tc.desc      Ensuring type identity in type guards.
      * @tc.size      MediumTest

@@ -721,7 +721,7 @@ export default function SubtypingForNonGenericClassesAndInterfacesTest(): void {
 
     /**
      * @tc.number    SUB_SUBTYPING_FOR_NON_GENERIC_CLASSES_AND_INTERFACESTEST_2700
-     * @tc.name      testNonGenericClsAndIntfSubtyping0027
+     * @tc.name      testNonGenericClsAndIntfSubtyping00227
      * @tc.desc      Subtyping relation between non-generic classes and interfaces
      * @tc.size      MediumTest
      * @tc.type      Function

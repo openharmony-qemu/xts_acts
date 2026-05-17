@@ -121,7 +121,7 @@ export default function NonNullishTypeParameterTest(): void {
 
     /**
      * @tc.number    SUB_NONNULLISH_TYPEPARAMETER_XTSTEST_0200
-     * @tc.name      testNonNullishTypeParameter0001
+     * @tc.name      testNonNullishTypeParameter0002
      * @tc.desc      desc: NonNullish Type Parameter
      * @tc.size      MediumTest
      * @tc.type      Function

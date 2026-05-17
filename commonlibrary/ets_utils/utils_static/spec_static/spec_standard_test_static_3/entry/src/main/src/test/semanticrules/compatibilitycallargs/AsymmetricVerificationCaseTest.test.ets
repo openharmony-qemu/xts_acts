@@ -156,7 +156,7 @@ export default function AsymmetricVerificationCaseTest(): void {
 
     /**
      * @tc.number    SUB_ASYMMETRIC_VERIFICATION_CASE_TEST_0500
-     * @tc.name      testAsymmetricVerificationCase
+     * @tc.name      testAsymmetricVerificationCase0005
      * @tc.desc      Verifying asymmetric compatibility between boolean and number.
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -193,5 +193,4 @@ export default function AsymmetricVerificationCaseTest(): void {
     });
   })
 }
-
 
