@@ -3776,23 +3776,6 @@ export default function ExplicitClassMethodOverloadTest(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_ONE_TEST_7500
-     * @tc.name      testExplicitClassMethodOverload0187
-     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
-     *               for a set of static or instance methods. Aabstract class tests.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    // 1.2兼容性问题：非显式类型枚举参与 overload 决议时，优先命中基础整数类型重载(int)，
-    // 未命中枚举类型重载(Color1)，暂时注释。
-/*    it('testExplicitClassMethodOverload0187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A97 = new A97();
-      let value: Color1 = Color1.Red;
-      expect('Color').assertEqual(a.meth(value))
-    });*/
-
-    /**
      * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_ONE_TEST_7600
      * @tc.name      testExplicitClassMethodOverload0188
      * @tc.desc      Method overload declaration allows declaring an overload alias as a class member

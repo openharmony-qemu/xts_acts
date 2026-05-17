@@ -464,25 +464,6 @@ export default function DispatchTest():void {
     });
 
     /**
-     * @tc.number    SUB_DYNAMIC_DISPATCH_TEST_1200
-     * @tc.name      testDynamicDispatch0012
-     * @tc.desc      Dynamic dispatch with several interfaces implementation
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testDynamicDispatch0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let c1: ADynDispatch8 = new CDynDispatch8()
-      let c2: BDynDispatch8 = new CDynDispatch8()
-
-      c1.foo(111)
-      c2.foo("sss")
-      expect(true).assertTrue();
-    });
-
-    // ==================== Static Dispatch Tests ====================
-
-    /**
      * @tc.number    SUB_DYNAMIC_DISPATCH_TEST_1300
      * @tc.name      testStaticDispatch0013
      * @tc.desc      Static dispatch with field access

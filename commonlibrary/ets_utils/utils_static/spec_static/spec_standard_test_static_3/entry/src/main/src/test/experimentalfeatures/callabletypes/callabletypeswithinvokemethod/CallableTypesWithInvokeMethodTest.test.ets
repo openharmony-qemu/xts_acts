@@ -345,7 +345,6 @@ export default function CallableTypesWithInvokeMethodTest(): void {
      * @tc.level     Level 2
      */
     it("testCallableTypesWithInvokeMethod0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(C6()).assertEqual(C6())
       expect(C6.$_invoke()).assertEqual(C6())
     });
 

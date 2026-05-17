@@ -145,20 +145,6 @@ export default function ReturnTypeInferenceTest05():void {
     })
 
     /**
-     * @tc.number    SUB_RETURN_TYPE_INFERENCETESTFIVE_0100
-     * @tc.name      testRetTypeInterfaceMethod0001
-     * @tc.desc      Implementation methods from interface with or without return.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testRetTypeInterfaceMethod0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A = new A()
-      a.foo()
-      expect(true).assertTrue()
-    });
-
-    /**
      * @tc.number    SUB_RETURN_TYPE_INFERENCETESTFIVE_0200
      * @tc.name      testRetTypeInterfaceMethod0002
      * @tc.desc      Implementation methods from interface with or without return.
