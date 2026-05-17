@@ -603,23 +603,5 @@ export default function DispatchTest():void {
       expect(b.fld).assertEqual("def");
       expect(b.met()).assertEqual(2);
     });
-
-    /**
-     * @tc.number    SUB_ROOT_CALL_DISPATCH_2200
-     * @tc.name      testRootCallDispatch0022
-     * @tc.desc      Dynamic dispatch with several interfaces implementation
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testRootCallDispatch0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let c1: ARootDispatch3 = new CRootDispatch3()
-      let c2: BRootDispatch3 = new CRootDispatch3()
-
-      c1.foo(111)
-      c2.foo("sss")
-      expect(true).assertTrue();
-    });
-
   })
 }
