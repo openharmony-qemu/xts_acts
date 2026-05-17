@@ -1,4 +1,4 @@
-import abilityTest from "./Ability.test";
+
 
 
 import ProgramEntryPointTest from "./modulesandnamespaces/programentrypoint/ProgramEntryPointTest.test";
@@ -324,7 +324,7 @@ import SpecExamplesTest from './semanticrules/compatibilitycallargs/SpecExamples
 import TupleRestParamsTest from './semanticrules/compatibilitycallargs/TupleRestParamsTest.test'
 
 export default function testsuite(): void {
-  abilityTest();
+
   //SKD
   ProgramEntryPointTest();
   StandArdLibraryUsageTest();

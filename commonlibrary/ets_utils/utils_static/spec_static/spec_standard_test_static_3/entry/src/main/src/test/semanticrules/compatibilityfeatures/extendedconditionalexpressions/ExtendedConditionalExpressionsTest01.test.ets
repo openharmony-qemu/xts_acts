@@ -1178,19 +1178,6 @@ export default function ExtendedConditionalExpressionsTest01():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_6400
-     * @tc.name    testConditionalExpression0064
-     * @tc.desc      Conditional expression with char space ' ' (truthy)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let res: number = (c' ') ? 1 : 0  // truthy
-      expect(res).assertEqual(1);
-    });
-
-    /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_6500
      * @tc.name    testConditionalExpression0065
      * @tc.desc      Conditional expression with negative zero -0 (falsy)

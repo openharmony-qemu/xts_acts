@@ -69,7 +69,7 @@ export default function IntersectionTypesTest():void {
     })
 
     /**
-     * @tc.number    SUB_INTERSECTION_TYPESTEST_0100
+     * @tc.number    SUB_INTERSECTION_TYPES_TEST_0100
      * @tc.name      testExample0001
      * @tc.desc      The values of intersection type A & B are all values that belong to both A and
      * B. Example from the section. (Note: Implemented via interface inheritance in strict ArkTS)
@@ -84,7 +84,7 @@ export default function IntersectionTypesTest():void {
     });
 
     /**
-     * @tc.number    SUB_INTERSECTION_TYPESTEST_0200
+     * @tc.number    SUB_INTERSECTION_TYPES_TEST_0200
      * @tc.name      testExample0002
      * @tc.desc      Intersection type as a function parameter type. (Note: Implemented via inheritance)
      * @tc.size      MediumTest

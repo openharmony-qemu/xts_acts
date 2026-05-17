@@ -61,7 +61,7 @@ export default function SelectiveBindingTest(): void {
     })
 
     /**
-     * @tc.number    SUB_SELECTIVE_BINDINGTEST_0100
+     * @tc.number    SUB_SELECTIVE_ONE_BINDINGTEST_0100
      * @tc.name      testSelectiveBinding0001
      * @tc.desc      Import simple name
      * @tc.size      MediumTest
@@ -76,7 +76,7 @@ export default function SelectiveBindingTest(): void {
     });
 
     /**
-     * @tc.number    SUB_SELECTIVE_BINDINGTEST_0200
+     * @tc.number    SUB_SELECTIVE_ONE_BINDINGTEST_0200
      * @tc.name      testSelectiveBinding0002
      * @tc.desc      import simple name as Name
      * @tc.size      MediumTest
@@ -85,13 +85,12 @@ export default function SelectiveBindingTest(): void {
      */
     it("testSelectiveBinding0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testSelectiveBinding0002';
-      console.log(TAG + ' start');
       let x = Sine(1.0);
       expect(x).assertEqual(0.8414709848078965);
     });
 
     /**
-     * @tc.number    SUB_SELECTIVE_BINDINGTEST_0300
+     * @tc.number    SUB_SELECTIVE_ONE_BINDINGTEST_0300
      * @tc.name      testSelectiveBinding0003
      * @tc.desc      import multiple simple names
      * @tc.size      MediumTest
@@ -106,7 +105,7 @@ export default function SelectiveBindingTest(): void {
     });
 
     /**
-     * @tc.number    SUB_SELECTIVE_BINDINGTEST_0400
+     * @tc.number    SUB_SELECTIVE_ONE_BINDINGTEST_0400
      * @tc.name      testSelectiveBinding0004
      * @tc.desc      import multiple simple names
      * @tc.size      MediumTest
@@ -121,7 +120,7 @@ export default function SelectiveBindingTest(): void {
     });
 
     /**
-     * @tc.number    SUB_SELECTIVE_BINDINGTEST_0500
+     * @tc.number    SUB_SELECTIVE_ONE_BINDINGTEST_0500
      * @tc.name      testSelectiveBinding0005
      * @tc.desc      import multiple simple names with as
      * @tc.size      MediumTest

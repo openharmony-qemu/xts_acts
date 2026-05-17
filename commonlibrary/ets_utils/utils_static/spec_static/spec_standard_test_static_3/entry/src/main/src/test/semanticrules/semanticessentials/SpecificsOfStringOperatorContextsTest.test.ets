@@ -48,15 +48,15 @@ export default function SpecificsOfStringOperatorContextsTest(): void {
             // This API supports only one parameter: clear action function.
         })
         /**
-         * @tc.number    SPECIFICS_OF_STRING_OPERATOR_CONTEXTS_TEST_0100
-         * @tc.name      teststringConcatenation0001
+         * @tc.number    SUB_SPECIFICS_OF_STRING_OPERATOR_CONTEXTS_TEST_0100
+         * @tc.name      testStringConcatenation0001
          * @tc.desc      "If one operand of the binary operator \u2018+\u2019 is of type string, then\
          *               \ the string conversion applies to another non-string operand to convert it to string"
          * @tc.size      MediumTest
          * @tc.type      Function
          * @tc.level     Level 2
          */
-        it("teststringConcatenation0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it("testStringConcatenation0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       
             let b: number = 1;
             let s: number = 2;

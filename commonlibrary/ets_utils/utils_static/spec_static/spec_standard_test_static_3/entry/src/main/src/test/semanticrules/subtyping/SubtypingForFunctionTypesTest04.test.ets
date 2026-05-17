@@ -1501,7 +1501,6 @@ export default function SubtypingForFunctionTypesTest04(): void {
      * @tc.level     Level 2
      */
     it("testPositiveInterfaceMethodGeneric0099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
       expect(foodb99(new Derived99) instanceof Derived99).assertTrue()
     })
 
@@ -1519,7 +1518,7 @@ export default function SubtypingForFunctionTypesTest04(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testPositiveInterfaceMethodGeneric00100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testPositiveInterfaceMethodGeneric0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       expect(foodd100(new Derived100) instanceof Base100).assertTrue()
     })

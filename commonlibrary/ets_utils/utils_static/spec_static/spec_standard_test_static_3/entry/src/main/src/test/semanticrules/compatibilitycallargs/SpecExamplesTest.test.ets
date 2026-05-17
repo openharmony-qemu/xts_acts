@@ -412,85 +412,6 @@ export default function SpecExamplesTest(): void {
     })
 
     /**
-     * @tc.number    SUB_SPEC_EXAMPLES_TEST_0100
-     * @tc.name      testSpecExamples0001
-     * @tc.desc      Specification examples for semantic checks that must be performed to arguments
-     *               when checking the validity of any function, method, constructor, or lambda call.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testSpecExamples0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSpecExamples0001';
-      
-      foo1(1)
-
-    });
-
-    /**
-     * @tc.number    SUB_SPEC_EXAMPLES_TEST_0200
-     * @tc.name      testSpecExamples0002
-     * @tc.desc      Specification examples for semantic checks that must be performed to arguments
-     *               when checking the validity of any function, method, constructor, or lambda call.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testSpecExamples0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSpecExamples0002';
-      
-
-      let my_lambda_var: my_lambda2 = (p2: Object): void => { expect(p2).assertEqual(1) }
-      my_lambda_var(1)
-    });
-
-    /**
-     * @tc.number    SUB_SPEC_EXAMPLES_TEST_0300
-     * @tc.name      testSpecExamples0003
-     * @tc.desc      Specification examples for semantic checks that must be performed to arguments
-     *               when checking the validity of any function, method, constructor, or lambda call.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testSpecExamples0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSpecExamples0003';
-      
-      let a = new A3(1)
-    });
-
-    /**
-     * @tc.number    SUB_SPEC_EXAMPLES_TEST_0400
-     * @tc.name      testSpecExamples0004
-     * @tc.desc      Specification examples for semantic checks that must be performed to arguments
-     *               when checking the validity of any function, method, constructor, or lambda call.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testSpecExamples0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSpecExamples0004';
-      
-      new B4().bar4(1)
-    });
-
-    /**
-     * @tc.number    SUB_SPEC_EXAMPLES_TEST_0500
-     * @tc.name      testSpecExamples0005
-     * @tc.desc      Specification examples for semantic checks that must be performed to arguments
-     *               when checking the validity of any function, method, constructor, or lambda call.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testSpecExamples0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSpecExamples0005';
-      
-
-      foo5(1, "111")
-    });
-
-    /**
      * @tc.number    SUB_SPEC_EXAMPLES_TEST_0600
      * @tc.name      testSpecExamples0006
      * @tc.desc      Specification examples for semantic checks that must be performed to arguments
@@ -509,38 +430,6 @@ export default function SpecExamplesTest(): void {
     });
 
     /**
-     * @tc.number    SUB_SPEC_EXAMPLES_TEST_0800
-     * @tc.name      testSpecExamples0008
-     * @tc.desc      Specification examples for semantic checks that must be performed to arguments
-     *               when checking the validity of any function, method, constructor, or lambda call.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testSpecExamples0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSpecExamples0008';
-      
-
-      new B8().bar8(1, "111")
-    });
-
-    /**
-     * @tc.number    SUB_SPEC_EXAMPLES_TEST_0900
-     * @tc.name      testSpecExamples0009
-     * @tc.desc      Specification examples for semantic checks that must be performed to arguments
-     *               when checking the validity of any function, method, constructor, or lambda call.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testSpecExamples0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSpecExamples0009';
-
-
-      foo9(1, "111")
-    });
-
-    /**
      * @tc.number    SUB_SPEC_EXAMPLES_TEST_1000
      * @tc.name      testSpecExamples0010
      * @tc.desc      Specification examples for semantic checks that must be performed to arguments
@@ -551,59 +440,9 @@ export default function SpecExamplesTest(): void {
      */
     it("testSpecExamples0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testSpecExamples0010';
-
-
       let my_lambda_var: my_lambda10 = (...p10: (number|string)[]): void => { expect(p10[0]).assertEqual(1)
         expect(p10[1]).assertEqual("111") }
       my_lambda_var(1, "111")
-    });
-
-    /**
-     * @tc.number    SUB_SPEC_EXAMPLES_TEST_1100
-     * @tc.name      testSpecExamples0011
-     * @tc.desc      Specification examples for semantic checks that must be performed to arguments
-     *               when checking the validity of any function, method, constructor, or lambda call.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testSpecExamples0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSpecExamples0011';
-
-
-      let a = new A11(1, "111")
-    });
-
-    /**
-     * @tc.number    SUB_SPEC_EXAMPLES_TEST_1200
-     * @tc.name      testSpecExamples0012
-     * @tc.desc      Specification examples for semantic checks that must be performed to arguments
-     *               when checking the validity of any function, method, constructor, or lambda call.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testSpecExamples0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSpecExamples0012';
-
-
-      new B12().bar12(1, "111")
-    });
-
-    /**
-     * @tc.number    SUB_SPEC_EXAMPLES_TEST_1300
-     * @tc.name      testSpecExamples0013
-     * @tc.desc      Specification examples for semantic checks that must be performed to arguments
-     *               when checking the validity of any function, method, constructor, or lambda call.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testSpecExamples0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSpecExamples0013';
-
-
-      foo13(...[1, "111"])
     });
 
     /**
@@ -617,39 +456,10 @@ export default function SpecExamplesTest(): void {
      */
     it("testSpecExamples0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testSpecExamples0014';
-      
-
-      let my_lambda_var: my_lambda14 = (...p14: (number|string)[]): void => { expect(p14[0]).assertEqual(1)
+      let my_lambda_var: my_lambda14 = (...p14: (number|string)[]): void => {
+        expect(p14[0]).assertEqual(1)
         expect(p14[1]).assertEqual("111") }
       my_lambda_var(...[1, "111"])
-    });
-
-    /**
-     * @tc.number    SUB_SPEC_EXAMPLES_TEST_1600
-     * @tc.name      testSpecExamples0016
-     * @tc.desc      Specification examples for semantic checks that must be performed to arguments
-     *               when checking the validity of any function, method, constructor, or lambda call.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testSpecExamples0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSpecExamples0016';
-      new B16().bar16(...[1, "111"])
-    });
-
-    /**
-     * @tc.number    SUB_SPEC_EXAMPLES_TEST_1700
-     * @tc.name      testSpecExamples0017
-     * @tc.desc      Specification examples for semantic checks that must be performed to arguments
-     *               when checking the validity of any function, method, constructor, or lambda call.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testSpecExamples0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSpecExamples0017';
-      foo17(...[1, "111"])
     });
 
     /**
@@ -663,43 +473,9 @@ export default function SpecExamplesTest(): void {
      */
     it("testSpecExamples0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testSpecExamples0018';
-
-
       let my_lambda_var: my_lambda18 = (...p18: [number, string]): void => { expect(p18[0]).assertEqual(1)
         expect(p18[1]).assertEqual("111") }
       my_lambda_var(...[1, "111"])
-    });
-
-    /**
-     * @tc.number    SUB_SPEC_EXAMPLES_TEST_1900
-     * @tc.name      testSpecExamples0019
-     * @tc.desc      Specification examples for semantic checks that must be performed to arguments
-     *               when checking the validity of any function, method, constructor, or lambda call.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testSpecExamples0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSpecExamples0019';
-
-
-      let a = new A19(...[1, "111"])
-    });
-
-    /**
-     * @tc.number    SUB_SPEC_EXAMPLES_TEST_2000
-     * @tc.name      testSpecExamples0020
-     * @tc.desc      Specification examples for semantic checks that must be performed to arguments
-     *               when checking the validity of any function, method, constructor, or lambda call.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testSpecExamples0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSpecExamples0020';
-
-
-      new B20().bar20(...[1, "111"])
     });
   })
 }

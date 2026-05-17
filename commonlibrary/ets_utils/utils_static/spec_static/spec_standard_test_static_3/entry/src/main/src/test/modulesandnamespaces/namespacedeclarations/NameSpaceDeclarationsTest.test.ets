@@ -389,7 +389,7 @@ export default function NameSpaceDeclarationsTest(): void {
     })
 
     /**
-     * @tc.number    SUB_NAMESPACE_DECLARATIONS_0100
+     * @tc.number    SUB_NAMESPACE_ONE_DECLARATIONS_0100
      * @tc.name      testNamespaceDeclarations0001
      * @tc.desc      A namespace declaration introduces the qualified name to be used as a qualifier for access
      *               to each exported entity of a namespace. Tests basic top-level declarations with class.
@@ -402,7 +402,7 @@ export default function NameSpaceDeclarationsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NAMESPACE_DECLARATIONS_0200
+     * @tc.number    SUB_NAMESPACE_ONE_DECLARATIONS_0200
      * @tc.name      testNamespaceDeclarations0002
      * @tc.desc      A namespace declaration introduces the qualified name to be used as a qualifier for access
      *               to each exported entity of a namespace. Tests basic top-level declarations with interface.
@@ -417,7 +417,7 @@ export default function NameSpaceDeclarationsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NAMESPACE_DECLARATIONS_0300
+     * @tc.number    SUB_NAMESPACE_ONE_DECLARATIONS_0300
      * @tc.name      testNamespaceDeclarations0003
      * @tc.desc      A namespace declaration introduces the qualified name to be used as a qualifier
      *               for access to each exported entity of a namespace. Tests basic top-level declarations with enum.
@@ -434,7 +434,7 @@ export default function NameSpaceDeclarationsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NAMESPACE_DECLARATIONS_0400
+     * @tc.number    SUB_NAMESPACE_ONE_DECLARATIONS_0400
      * @tc.name      testNamespaceDeclarations0004
      * @tc.desc      A namespace declaration introduces the qualified name to be used as a qualifier for access
      *               to each exported entity of a namespace. Tests basic top-level declarations with type and function.
@@ -448,7 +448,7 @@ export default function NameSpaceDeclarationsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NAMESPACE_DECLARATIONS_0500
+     * @tc.number    SUB_NAMESPACE_ONE_DECLARATIONS_0500
      * @tc.name      testNamespaceDeclarations0005
      * @tc.desc      A namespace declaration introduces the qualified name to be used as a qualifier
      *               for access to each exported entity of a namespace.
@@ -465,7 +465,7 @@ export default function NameSpaceDeclarationsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NAMESPACE_DECLARATIONS_0600
+     * @tc.number    SUB_NAMESPACE_ONE_DECLARATIONS_0600
      * @tc.name      testNamespaceDeclarations0006
      * @tc.desc      A namespace declaration introduces the qualified name to be used as a qualifier for
      *               access to each exported entity of a namespace. Tests basic top-level declarations with constant.
@@ -478,7 +478,7 @@ export default function NameSpaceDeclarationsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NAMESPACE_DECLARATIONS_0700
+     * @tc.number    SUB_NAMESPACE_ONE_DECLARATIONS_0700
      * @tc.name      testNamespaceDeclarations0007
      * @tc.desc      A namespace declaration introduces the qualified name to be used as a qualifier
      *               for access to each exported entity of a namespace. Tests function returning constant.
@@ -491,7 +491,7 @@ export default function NameSpaceDeclarationsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NAMESPACE_DECLARATIONS_0800
+     * @tc.number    SUB_NAMESPACE_ONE_DECLARATIONS_0800
      * @tc.name      testNamespaceDeclarations0008
      * @tc.desc      A namespace declaration introduces the qualified name to be used as a qualifier
      *                for access to each exported entity of a namespace. Tests simple function.
@@ -504,7 +504,7 @@ export default function NameSpaceDeclarationsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NAMESPACE_DECLARATIONS_0900
+     * @tc.number    SUB_NAMESPACE_ONE_DECLARATIONS_0900
      * @tc.name      testNamespaceDeclarations0009
      * @tc.desc      A namespace declaration introduces the qualified name to be used as a qualifier
      *               for access to each exported entity of a namespace. Tests embedded namespace.
@@ -517,7 +517,7 @@ export default function NameSpaceDeclarationsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NAMESPACE_DECLARATIONS_1000
+     * @tc.number    SUB_NAMESPACE_ONE_DECLARATIONS_1000
      * @tc.name      testNamespaceDeclarations0010
      * @tc.desc      A namespace declaration introduces the qualified name to be used as a qualifier
      *                for access to each exported entity of a namespace. Tests qualified namespace name.
@@ -530,7 +530,7 @@ export default function NameSpaceDeclarationsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NAMESPACE_DECLARATIONS_1100
+     * @tc.number    SUB_NAMESPACE_ONE_DECLARATIONS_1100
      * @tc.name      testNamespaceDeclarations0011
      * @tc.desc      A namespace declaration introduces the qualified name to be used as a qualifier
      *               for access to each exported entity of a namespace. Tests merged namespaces.
@@ -544,7 +544,7 @@ export default function NameSpaceDeclarationsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NAMESPACE_DECLARATIONS_1200
+     * @tc.number    SUB_NAMESPACE_ONE_DECLARATIONS_1200
      * @tc.name      testNamespaceDeclarations0012
      * @tc.desc      A namespace declaration introduces the qualified name to be used as a qualifier
      *               for access to each exported entity of a namespace. Tests nested qualified namespaces.
@@ -559,7 +559,7 @@ export default function NameSpaceDeclarationsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NAMESPACE_DECLARATIONS_1300
+     * @tc.number    SUB_NAMESPACE_ONE_DECLARATIONS_1300
      * @tc.name      testNamespaceDeclarations0013
      * @tc.desc      A namespace declaration introduces the qualified name to be used as a qualifier
      *              for access to each exported entity of a namespace. Tests merged nested namespaces.
@@ -574,7 +574,7 @@ export default function NameSpaceDeclarationsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NAMESPACE_DECLARATIONS_1400
+     * @tc.number    SUB_NAMESPACE_ONE_DECLARATIONS_1400
      * @tc.name      testNamespaceDeclarations0014
      * @tc.desc      A namespace declaration introduces the qualified name to be used as a qualifier
      *                for access to each exported entity of a namespace. Tests namespace shadowing by class.
@@ -588,7 +588,7 @@ export default function NameSpaceDeclarationsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NAMESPACE_DECLARATIONS_1500
+     * @tc.number    SUB_NAMESPACE_ONE_DECLARATIONS_1500
      * @tc.name      testNamespaceDeclarations0015
      * @tc.desc      A namespace declaration introduces the qualified name to be used as a qualifier
      *                for access to each exported entity of a namespace. Tests case sensitivity.
@@ -602,7 +602,7 @@ export default function NameSpaceDeclarationsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NAMESPACE_DECLARATIONS_1550
+     * @tc.number    SUB_NAMESPACE_ONE_DECLARATIONS_1600
      * @tc.name      testNamespaceDeclarations0016
      * @tc.desc      A namespace declaration introduces the qualified name to be used as a qualifier for
      *               access to each exported entity of a namespace. Tests local variable can shadow imported namespace.
@@ -616,7 +616,7 @@ export default function NameSpaceDeclarationsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NAMESPACE_DECLARATIONS_1600
+     * @tc.number    SUB_NAMESPACE_ONE_DECLARATIONS_1700
      * @tc.name      testNamespaceDeclarations0017
      * @tc.desc      A namespace declaration introduces the qualified name to be used as a qualifier
      *                for access to each exported entity of a namespace. Tests non-exported function access.
@@ -629,7 +629,7 @@ export default function NameSpaceDeclarationsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NAMESPACE_DECLARATIONS_1700
+     * @tc.number    SUB_NAMESPACE_ONE_DECLARATIONS_1800
      * @tc.name      testNamespaceDeclarations0018
      * @tc.desc      A namespace declaration introduces the qualified name to be used as a qualifier for access
      *               to each exported entity of a namespace. Tests exported function calling another exported function.
@@ -642,7 +642,7 @@ export default function NameSpaceDeclarationsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NAMESPACE_DECLARATIONS_1800
+     * @tc.number    SUB_NAMESPACE_ONE_DECLARATIONS_1900
      * @tc.name      testNamespaceDeclarations0019
      * @tc.desc      A namespace declaration introduces the qualified name to be used as a qualifier for access
      *               to each exported entity of a namespace. Tests exported function calling non-exported function.
@@ -655,7 +655,7 @@ export default function NameSpaceDeclarationsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NAMESPACE_DECLARATIONS_1900
+     * @tc.number    SUB_NAMESPACE_ONE_DECLARATIONS_2000
      * @tc.name      testNamespaceDeclarations0020
      * @tc.desc      A namespace declaration introduces the qualified name to be used as a qualifier
      *               for access to each exported entity of a namespace. Tests exported function calling exported
@@ -669,7 +669,7 @@ export default function NameSpaceDeclarationsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NAMESPACE_DECLARATIONS_2000
+     * @tc.number    SUB_NAMESPACE_ONE_DECLARATIONS_2100
      * @tc.name      testNamespaceDeclarations0021
      * @tc.desc      A namespace declaration introduces the qualified name to be used as a qualifier
      *                for access to each exported entity of a namespace. Tests local exported namespace.
@@ -682,7 +682,7 @@ export default function NameSpaceDeclarationsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NAMESPACE_DECLARATIONS_2100
+     * @tc.number    SUB_NAMESPACE_ONE_DECLARATIONS_2200
      * @tc.name      testNamespaceDeclarations0022
      * @tc.desc      The code in static block is executed only when the namespace members are used in the program.
      * @tc.size      MediumTest
@@ -697,7 +697,7 @@ export default function NameSpaceDeclarationsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NAMESPACE_DECLARATIONS_2200
+     * @tc.number    SUB_NAMESPACE_ONE_DECLARATIONS_2300
      * @tc.name      testNamespaceDeclarations0023
      * @tc.desc      The code in static block is executed only when the namespace members are used in the program.
      *               Initialize not exported field.
@@ -710,7 +710,7 @@ export default function NameSpaceDeclarationsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NAMESPACE_DECLARATIONS_2300
+     * @tc.number    SUB_NAMESPACE_ONE_DECLARATIONS_2400
      * @tc.name      testNamespaceDeclarations0024
      * @tc.desc      The code in static block is executed only when the namespace members are used in the program.
      *               Initialize by calling from another namespace.
@@ -724,7 +724,7 @@ export default function NameSpaceDeclarationsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NAMESPACE_DECLARATIONS_2400
+     * @tc.number    SUB_NAMESPACE_ONE_DECLARATIONS_2500
      * @tc.name      testNamespaceDeclarations0025
      * @tc.desc      The code in static block is executed only when the namespace members are used in the program.
      *               Let static initializer use variable before it was initialized.
@@ -738,7 +738,7 @@ export default function NameSpaceDeclarationsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NAMESPACE_DECLARATIONS_2500
+     * @tc.number    SUB_NAMESPACE_ONE_DECLARATIONS_2600
      * @tc.name      testNamespaceDeclarations0026
      * @tc.desc      Only one of the merging namespaces can have an initializer. Otherwise, a compile-time error occurs.
      *               Exported function is accessible in the same namespace.
@@ -753,7 +753,7 @@ export default function NameSpaceDeclarationsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NAMESPACE_DECLARATIONS_2600
+     * @tc.number    SUB_NAMESPACE_ONE_DECLARATIONS_2700
      * @tc.name      testNamespaceDeclarations0027
      * @tc.desc      Only one of the merging namespaces can have an initializer. Otherwise, a compile-time error occurs.
      *               Qualified namespace name.
@@ -766,7 +766,7 @@ export default function NameSpaceDeclarationsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NAMESPACE_DECLARATIONS_2700
+     * @tc.number    SUB_NAMESPACE_ONE_DECLARATIONS_2800
      * @tc.name      testNamespaceDeclarations0028
      * @tc.desc      Only one of the merging namespaces can have an initializer. Otherwise, a compile-time error occurs.
      *               Qualified namespace name used.
@@ -781,7 +781,7 @@ export default function NameSpaceDeclarationsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NAMESPACE_DECLARATIONS_2800
+     * @tc.number    SUB_NAMESPACE_ONE_DECLARATIONS_2900
      * @tc.name      testNamespaceDeclarations0029
      * @tc.desc      Namespaces like modules can have top-level statements which act as namespace initializers,
      *               and are called only if at least one of the exported namespace members is used in the program.
@@ -800,7 +800,7 @@ export default function NameSpaceDeclarationsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NAMESPACE_DECLARATIONS_2900
+     * @tc.number    SUB_NAMESPACE_ONE_DECLARATIONS_3000
      * @tc.name      testNamespaceDeclarations0030
      * @tc.desc      Namespaces like modules can have top-level statements which act as namespace initializers,
      *               and are called only if at least one of the exported namespace members is used in the program.
@@ -823,7 +823,7 @@ export default function NameSpaceDeclarationsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NAMESPACE_DECLARATIONS_3000
+     * @tc.number    SUB_NAMESPACE_ONE_DECLARATIONS_3100
      * @tc.name      testNamespaceDeclarations0031
      * @tc.desc      Namespaces like modules can have top-level statements which act as namespace initializers,
      *                and are called only if at least one of the exported namespace members is used in the program.
@@ -840,7 +840,7 @@ export default function NameSpaceDeclarationsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NAMESPACE_DECLARATIONS_3100
+     * @tc.number    SUB_NAMESPACE_ONE_DECLARATIONS_3200
      * @tc.name      testNamespaceDeclarations0032
      * @tc.desc      Sample from spec, Namespaces with identical namespace names in a single compilation unit
      *                merge their exported declarations into a single namespace.
@@ -853,7 +853,7 @@ export default function NameSpaceDeclarationsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NAMESPACE_DECLARATIONS_3200
+     * @tc.number    SUB_NAMESPACE_ONE_DECLARATIONS_3300
      * @tc.name      testNamespaceDeclarations0033
      * @tc.desc      Sample from spec, Namespaces with identical namespace names in a single compilation
      *                unit merge their exported declarations into a single namespace.

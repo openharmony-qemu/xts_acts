@@ -46,7 +46,7 @@ export default function SpecificsOfTypeParametersTest(): void {
             // This API supports only one parameter: clear action function.
         })
         /**
-         * @tc.number    SPECIFICS_OF_TYPE_PARAMETERS_TEST_0100
+         * @tc.number    SUB_SPECIFICS_OF_TYPE_PARAMETERS_TEST_0100
          * @tc.name      testPositiveCases0001
          * @tc.desc      Explicit type argument new Pos<number>(1) must be used to fix the code
          * @tc.size      MediumTest

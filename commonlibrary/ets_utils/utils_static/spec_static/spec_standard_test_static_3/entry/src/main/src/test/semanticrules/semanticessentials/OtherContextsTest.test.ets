@@ -47,7 +47,7 @@ export default function OtherContextsTest(): void {
             // This API supports only one parameter: clear action function.
         })
         /**
-         * @tc.number    OTHER_CONTEXTS_TEST_0100
+         * @tc.number    SUB_OTHER_CONTEXTS_TEST_0100
          * @tc.name      testSubtyping0001
          * @tc.desc      The only semantic rule for all other contexts, and specifically for Overriding,
          *               is to use Subtyping.

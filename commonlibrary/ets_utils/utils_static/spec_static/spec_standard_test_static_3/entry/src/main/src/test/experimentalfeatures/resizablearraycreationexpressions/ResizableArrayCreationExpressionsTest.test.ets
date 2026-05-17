@@ -405,14 +405,14 @@ export default function ResizableArrayCreationExpressionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_CREATE_2D_ARRAY_0100
-     * @tc.name      testCreate2DArray0001
+     * @tc.number    SUB_CREATE_ONE_ARRAY_0100
+     * @tc.name      testCreateOneDArray0001
      * @tc.desc      Create 2D Array with number type
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testCreate2DArray0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testCreateOneDArray0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // Create 2D array with explicit dimensions using initializer
       let a: Array<Array<number>> = new Array<Array<number>>(4, (_: int): Array<number> => new Array<number>(4, (_: int): number => 0.0));
       expect(a.length).assertEqual(4);
@@ -421,14 +421,14 @@ export default function ResizableArrayCreationExpressionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_CREATE_2D_ARRAY_0200
-     * @tc.name      testCreate2DArray0002
+     * @tc.number    SUB_CREATE_ONE_ARRAY_0200
+     * @tc.name      testCreateOneDArray0002
      * @tc.desc      Create 2D Array with predefined values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testCreate2DArray0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testCreateOneDArray0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // Create 2D array with push for each row
       let a: Array<Array<number>> = new Array<Array<number>>();
       a.push(new Array<number>(3, (_: int): number => 5.5));
@@ -440,14 +440,14 @@ export default function ResizableArrayCreationExpressionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_CREATE_3D_ARRAY_0100
-     * @tc.name      testCreate3DArray0001
+     * @tc.number    SUB_CREATE_ONE_ARRAY_0300
+     * @tc.name      testCreateArray0001
      * @tc.desc      Create 3D Array with number type
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testCreate3DArray0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testCreateArray0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Array<Array<Array<number>>> = new Array<Array<Array<number>>>(2, (_: int): Array<Array<number>> => {
         let inner: Array<Array<number>> = new Array<Array<number>>(3, (_: int): Array<number> => new Array<number>(4));
         return inner;

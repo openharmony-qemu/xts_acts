@@ -51,7 +51,7 @@ export default function ImportDirectivesTest(): void{
     })
 
     /**
-     * @tc.number    SUB_IMPORT_DIRECTIVESTEST_0100
+     * @tc.number    SUB_IMPORT_DIRECTIVES_TEST_0100
      * @tc.name      testImportDirectives0001
      * @tc.desc      In import declarations use '* as <alias>' to import all
      * @tc.size      MediumTest
