@@ -2295,19 +2295,6 @@ export default function ExplicitClassMethodOverloadTest(): void {
       let b: B43 = new B43();
       expect(b.test()).assertEqual('f1f2f3');
     });
-//编译器报protected overload cannot have private methods错误，暂时注释保留
-/*    *//**
-     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_4600
-     * @tc.name      testExplicitClassMethodOverload0045
-     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     *//*
-    it('testExplicitClassMethodOverload0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let b: B44 = new B44();
-      expect(b.test()).assertEqual('f1f2f3');
-    });*/
 
     /**
      * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_4700
@@ -2334,19 +2321,6 @@ export default function ExplicitClassMethodOverloadTest(): void {
       let b: B46 = new B46();
       expect(b.test()).assertEqual('f1f2f3');
     });
-//注释原因上面已说
-/*    *//**
-     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_4900
-     * @tc.name      testExplicitClassMethodOverload0048
-     * @tc.desc      Overload alias and overloaded methods can have different access modifiers.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     *//*
-    it('testExplicitClassMethodOverload0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let b: B47 = new B47();
-      expect(b.test()).assertEqual('f1f2f3');
-    });*/
 
     /**
      * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TEST_5000
@@ -3363,22 +3337,6 @@ export default function ExplicitClassMethodOverloadTest(): void {
       let a: A96 = new A96();
       expect('FA:Color').assertEqual(a.meth([Color.Red]))
     });
-
-    /**
-     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_ONE_TEST_3700
-     * @tc.name      testExplicitClassMethodOverload0149
-     * @tc.desc      Method overload declaration allows declaring an overload alias as a class member
-     *               for a set of static or instance methods.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    // 1.2兼容性问题：字符串值枚举 Size1 参与 overload 决议时，
-    // 实际优先命中 string 重载，而未命中 Size1 重载，暂时注释。
-/*    it('testExplicitClassMethodOverload0149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A96 = new A96();
-      expect('FA:Size').assertEqual(a.meth([Size1.M]))
-    });*/
 
     /**
      * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_ONE_TEST_3800
