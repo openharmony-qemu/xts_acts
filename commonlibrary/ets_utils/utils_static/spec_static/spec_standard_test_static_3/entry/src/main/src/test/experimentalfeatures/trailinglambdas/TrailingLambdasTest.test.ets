@@ -400,7 +400,7 @@ export default function TrailingLambdasTest(): void {
       // regular lambda in constructor
       A.global = 0.0
       new A(10.0, () => { A.global = 3.0 })
-      arktest.assertEQ(A.global, 13.0)
+      expect(A.global).assertEqual(13.0)
     });
 
     /**
@@ -417,11 +417,11 @@ export default function TrailingLambdasTest(): void {
       // regular optional lambda in constructor
       A1.global = 0.0
       new A1(10.0, () => { A1.global = 3.0 } )
-      arktest.assertEQ(A1.global, 13.0)
+      expect(A1.global).assertEqual(13.0)
 
       A1.global = 0.0
       new A1(10.0)
-      arktest.assertEQ(A1.global, 10.0)
+      expect(A1.global).assertEqual(10.0)
     });
 
     /**
@@ -439,7 +439,7 @@ export default function TrailingLambdasTest(): void {
       foo(10.0, () => {
         globl = 3.0
       })
-      arktest.assertEQ(globl, 13.0)
+      expect(globl).assertEqual(13.0)
     });
 
     /**
@@ -457,10 +457,10 @@ export default function TrailingLambdasTest(): void {
       foo1(10.0, () => {
         globl1 = 3.0
       })
-      arktest.assertEQ(globl1, 13.0)
+      expect(globl1).assertEqual(13.0)
 
       foo1(10.0)
-      arktest.assertEQ(globl1, 23.0)
+      expect(globl1).assertEqual(23.0)
     });
 
     /**
@@ -478,7 +478,7 @@ export default function TrailingLambdasTest(): void {
       {
         globl2 = 3.0
       }
-      arktest.assertEQ(globl2, 13.0)
+      expect(globl2).assertEqual(13.0)
     });
 
     /**
@@ -496,10 +496,10 @@ export default function TrailingLambdasTest(): void {
       {
         globl3 = 3.0
       }
-      arktest.assertEQ(globl3, 13.0)
+      expect(globl3).assertEqual(13.0)
 
       foo3(10.0)
-      arktest.assertEQ(globl3, 23.0)
+      expect(globl3).assertEqual(23.0)
     });
 
     /**
@@ -518,7 +518,7 @@ export default function TrailingLambdasTest(): void {
       {
         globl4 = 4.0
       }
-      arktest.assertEQ(globl4, 4.0)
+      expect(globl4).assertEqual(4.0)
     });
 
     /**
@@ -537,16 +537,16 @@ export default function TrailingLambdasTest(): void {
       {
         globl5 = 4.0
       }
-      arktest.assertEQ(globl5, 4.0)
+      expect(globl5).assertEqual(4.0)
 
       foo5(10.0) // trailing lambda
       {
         globl5 = 5.0
       }
-      arktest.assertEQ(globl5, 15.0)
+      expect(globl5).assertEqual(15.0)
 
       foo5(10.0)  // no trailing lambda
-      arktest.assertEQ(globl5, 25.0)
+      expect(globl5).assertEqual(25.0)
     });
 
     /**
@@ -562,7 +562,7 @@ export default function TrailingLambdasTest(): void {
     it('testTrailingLambdas0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // not a trailing lambda, block separated by semicolon
       foo6(10.0, () => { globl6 = 3.0 }); { globl6 = 4.0 }
-      arktest.assertEQ(globl6, 4.0)
+      expect(globl6).assertEqual(4.0)
     });
 
     /**
@@ -578,13 +578,13 @@ export default function TrailingLambdasTest(): void {
     it('testTrailingLambdas0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // not a trailing lambda, block separated with semicolon
       foo7(10.0, () => { globl7 = 3.0 }); { globl7 = 4.0 }
-      arktest.assertEQ(globl7, 4.0)
+      expect(globl7).assertEqual(4.0)
 
       foo7(10.0) { globl7 = 13.0 }  // trailing lambda
-      arktest.assertEQ(globl7, 23.0)
+      expect(globl7).assertEqual(23.0)
 
       foo7(10.0); { globl7 = 13.0 } // not a trailing lambda
-      arktest.assertEQ(globl7, 13.0)
+      expect(globl7).assertEqual(13.0)
     });
 
     /**
@@ -600,7 +600,7 @@ export default function TrailingLambdasTest(): void {
     it('testTrailingLambdas0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       globl8 = 1.0
       foo8(10.0); { globl8 = 4.0 } // no last function parameter
-      arktest.assertEQ(globl8, 4.0)
+      expect(globl8).assertEqual(4.0)
     });
 
     /**
@@ -615,7 +615,7 @@ export default function TrailingLambdasTest(): void {
      */
     it('testTrailingLambdas0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       globl9 = 0.0
-      arktest.assertEQ(foo9(foo9(3.0) { globl9 = 6.0 }) { globl9 = 2.0 }, 11.0)
+      expect(foo9(foo9(3.0) { globl9 = 6.0 }) { globl9 = 2.0 }).assertEqual(11.0)
     });
 
     /**
@@ -630,7 +630,7 @@ export default function TrailingLambdasTest(): void {
      */
     it('testTrailingLambdas0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       globl10 = ""
-      arktest.assertEQ(foo10(foo10("A") { globl10 += "B" }) { globl10 += "C" }, "BACBA")
+      expect(foo10(foo10("A") { globl10 += "B" }) { globl10 += "C" }).assertEqual("BACBA")
     });
 
     /**
@@ -645,16 +645,16 @@ export default function TrailingLambdasTest(): void {
      */
     it('testTrailingLambdas0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       globl11 = 0.0
-      arktest.assertEQ(foo11(foo11(3.0) 
+      expect(foo11(foo11(3.0) 
         {
           globl11 = 6.0
         }
-      ) { globl11 = 2.0 }, 11.0)
+      ) { globl11 = 2.0 }).assertEqual(11.0)
 
       globl11 = 0.0
-      arktest.assertEQ(foo11(foo11(3.0) {}) {}, 3.0)
-      arktest.assertEQ(foo11(foo11(3.0)) { globl11 = 1.0 }, 4.0)
-      arktest.assertEQ(foo11(foo11(3.0) { globl11 = 1.0 }), 5.0)
+      expect(foo11(foo11(3.0) {}) {}).assertEqual(3.0)
+      expect(foo11(foo11(3.0)) { globl11 = 1.0 }).assertEqual(4.0)
+      expect(foo11(foo11(3.0) { globl11 = 1.0 })).assertEqual(5.0)
     });
 
     /**
@@ -669,18 +669,18 @@ export default function TrailingLambdasTest(): void {
      */
     it('testTrailingLambdas0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       globl12 = ""
-      arktest.assertEQ(foo12(foo12("A") { globl12 += "B" }) { globl12 += "C" }, "BACBA")
+      expect(foo12(foo12("A") { globl12 += "B" }) { globl12 += "C" }).assertEqual("BACBA")
 
       globl12 = ""
-      arktest.assertEQ(foo12(foo12("A")) {
+      expect(foo12(foo12("A")) {
         globl12 += "C"
-      }, "ACA")
+      }).assertEqual("ACA")
 
       globl12 = ""
-      arktest.assertEQ(foo12(foo12("A") { globl12 += "B" }), "BABA")
+      expect(foo12(foo12("A") { globl12 += "B" })).assertEqual("BABA")
 
       globl12 = ""
-      arktest.assertEQ(foo12(foo12("A")), "AA")
+      expect(foo12(foo12("A"))).assertEqual("AA")
     });
 
     /**
@@ -696,7 +696,7 @@ export default function TrailingLambdasTest(): void {
     it('testTrailingLambdas0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       globl13 = 0.0
       let v: A2 = { fld1: foo13(1.0) { globl13 = 3.0 }, fld2: foo13(2.0) { globl13 += 5.0 } }
-      arktest.assertTrue(v.fld1 == 4.0 && v.fld2 == 11.0)
+      expect(v.fld1 == 4.0 && v.fld2 == 11.0).assertTrue()
     });
 
     /**
@@ -712,7 +712,7 @@ export default function TrailingLambdasTest(): void {
     it('testTrailingLambdas0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       globl14 = ""
       let s = `abc ${foo14("A") { globl14 = "Z" }} def ${foo14("B")} ghi ${foo14("C") {}} jkl`
-      arktest.assertEQ(s, "abc ZA def ZB ghi ZC jkl")
+      expect(s).assertEqual("abc ZA def ZB ghi ZC jkl")
     });
 
     /**
@@ -728,13 +728,13 @@ export default function TrailingLambdasTest(): void {
     it('testTrailingLambdas0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       g1 = 0.0
       g2 = 0.0
-      arktest.assertEQ(foo15(() => { g1 = 2.0 }, () => { g2 = 4.0 }), 42.0)
+      expect(foo15(() => { g1 = 2.0 }, () => { g2 = 4.0 })).assertEqual(42.0)
       g1 = 0.0
       g2 = 0.0
-      arktest.assertEQ(foo15(() => { g1 = 2.0 }) { g2 = 4.0 }, 42.0)
+      expect(foo15(() => { g1 = 2.0 }) { g2 = 4.0 }).assertEqual(42.0)
       g1 = 0.0
       g2 = 0.0
-      arktest.assertEQ(foo15(() => { g1 = 2.0 }), 2.0)
+      expect(foo15(() => { g1 = 2.0 })).assertEqual(2.0)
     });
 
     /**
@@ -749,17 +749,17 @@ export default function TrailingLambdasTest(): void {
      */
     it('testTrailingLambdas0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result = foo16('Hello', 'World', () => 'of Trailing Lambdas')
-      arktest.assertEQ('Hello World of Trailing Lambdas', result);
+      expect('Hello World of Trailing Lambdas').assertEqual(result);
 
       result = foo16('Hello') {
         return 'of Trailing Lambdas'
       }
-      arktest.assertEQ('Hello undefined of Trailing Lambdas', result);
+      expect('Hello undefined of Trailing Lambdas').assertEqual(result);
 
       result = foo16('Hello'); {
         // This is not a trailing lambda block
       }
-      arktest.assertEQ('Hello undefined undefined', result);
+      expect('Hello undefined undefined').assertEqual(result);
     });
 
     /**
@@ -774,17 +774,17 @@ export default function TrailingLambdasTest(): void {
      */
     it('testTrailingLambdas0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result = boo('Hello', 'World', () => 'of Trailing Lambdas')
-      arktest.assertEQ('Hello World of Trailing Lambdas', result);
+      expect('Hello World of Trailing Lambdas').assertEqual(result);
 
       result = boo('Hello') {
         return 'of Trailing Lambdas'
       }
-      arktest.assertEQ('Hello Missed of Trailing Lambdas', result);
+      expect('Hello Missed of Trailing Lambdas').assertEqual(result);
 
       result = boo('Hello'); {
         // This is not a trailing lambda block
       }
-      arktest.assertEQ('Hello Missed undefined', result);
+      expect('Hello Missed undefined').assertEqual(result);
     });
 
     /**
@@ -799,12 +799,12 @@ export default function TrailingLambdasTest(): void {
      */
     it('testTrailingLambdas0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result = roo('Hello', 'World', () => 'of Trailing Lambdas')
-      arktest.assertEQ('Hello World of Trailing Lambdas', result);
+      expect('Hello World of Trailing Lambdas').assertEqual(result);
 
       result = roo('Hello'); {
         // This is not a trailing lambda block
       }
-      arktest.assertEQ('Hello Missed I am Stub', result);
+      expect('Hello Missed I am Stub').assertEqual(result);
     });
 
     /**
@@ -822,7 +822,7 @@ export default function TrailingLambdasTest(): void {
       new A3().foo(10.0, () => {
         A3.globl = 3.0
       })
-      arktest.assertEQ(A3.globl, 13.0)
+      expect(A3.globl).assertEqual(13.0)
     });
 
     /**
@@ -840,10 +840,10 @@ export default function TrailingLambdasTest(): void {
       new A4().foo(10.0, () => {
         A4.globl = 3.0
       })
-      arktest.assertEQ(A4.globl, 13.0)
+      expect(A4.globl).assertEqual(13.0)
 
       new A4().foo(10.0)
-      arktest.assertEQ(A4.globl, 23.0)
+      expect(A4.globl).assertEqual(23.0)
     });
 
     /**
@@ -861,7 +861,7 @@ export default function TrailingLambdasTest(): void {
       {
         A5.globl = 3.0
       }
-      arktest.assertEQ(A5.globl, 13.0)
+      expect(A5.globl).assertEqual(13.0)
     });
 
     /**
@@ -879,10 +879,10 @@ export default function TrailingLambdasTest(): void {
       {
         A6.globl = 3.0
       }
-      arktest.assertEQ(A6.globl, 13.0)
+      expect(A6.globl).assertEqual(13.0)
 
       new A6().foo(10.0)
-      arktest.assertEQ(A6.globl, 23.0)
+      expect(A6.globl).assertEqual(23.0)
     });
 
     /**
@@ -901,7 +901,7 @@ export default function TrailingLambdasTest(): void {
       {
         A7.globl = 4.0
       }
-      arktest.assertEQ(A7.globl, 4.0)
+      expect(A7.globl).assertEqual(4.0)
     });
 
     /**
@@ -920,16 +920,16 @@ export default function TrailingLambdasTest(): void {
       {
         A8.globl = 4.0
       }
-      arktest.assertEQ(A8.globl, 4.0)
+      expect(A8.globl).assertEqual(4.0)
 
       new A8().foo(10.0) // trailing lambda
       {
         A8.globl = 5.0
       }
-      arktest.assertEQ(A8.globl, 15.0)
+      expect(A8.globl).assertEqual(15.0)
 
       new A8().foo(10.0)  // no trailing lambda
-      arktest.assertEQ(A8.globl, 25.0)
+      expect(A8.globl).assertEqual(25.0)
     });
 
     /**
@@ -945,7 +945,7 @@ export default function TrailingLambdasTest(): void {
     it('testTrailingLambdas0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // not a trailing lambda, block separated by semicolon
       new A9().foo(10.0, () => { A9.globl = 3.0 }); { A9.globl = 4.0 }
-      arktest.assertEQ(A9.globl, 4.0)
+      expect(A9.globl).assertEqual(4.0)
     });
 
     /**
@@ -961,13 +961,13 @@ export default function TrailingLambdasTest(): void {
     it('testTrailingLambdas0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // not a trailing lambda, block separated by semicolon
       new A10().foo(10.0, () => { A10.globl = 3.0 }); { A10.globl = 4.0 }
-      arktest.assertEQ(A10.globl, 4.0)
+      expect(A10.globl).assertEqual(4.0)
 
       new A10().foo(10.0) { A10.globl = 4.0 } // trailing lambda
-      arktest.assertEQ(A10.globl, 14.0)
+      expect(A10.globl).assertEqual(14.0)
 
       new A10().foo(10.0); { A10.globl = 4.0 } // not a trailing lambda
-      arktest.assertEQ(A10.globl, 4.0)
+      expect(A10.globl).assertEqual(4.0)
     });
 
     /**
@@ -983,7 +983,7 @@ export default function TrailingLambdasTest(): void {
     it('testTrailingLambdas0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       A11.globl = 1.0
       new A11().foo(10.0); { A11.globl = 4.0 } // no last function parameter
-      arktest.assertEQ(A11.globl, 4.0)
+      expect(A11.globl).assertEqual(4.0)
     });
 
     /**
@@ -999,17 +999,17 @@ export default function TrailingLambdasTest(): void {
     it('testTrailingLambdas0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let test = new Holder
       let result = test.foo('Hello', 'World', () => 'of Trailing Lambdas')
-      arktest.assertEQ('Hello World of Trailing Lambdas', result);
+      expect('Hello World of Trailing Lambdas').assertEqual(result);
 
       result = test.foo('Hello') {
       return 'of Trailing Lambdas'
       }
-      arktest.assertEQ('Hello undefined of Trailing Lambdas', result);
+      expect('Hello undefined of Trailing Lambdas').assertEqual(result);
 
       result = test.foo('Hello'); {
       // This is not a trailing lambda block
       }
-      arktest.assertEQ('Hello undefined undefined', result);
+      expect('Hello undefined undefined').assertEqual(result);
     });
 
     /**
@@ -1025,17 +1025,17 @@ export default function TrailingLambdasTest(): void {
     it('testTrailingLambdas0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let test = new Holder1
       let result = test.boo('Hello', 'World', () => 'of Trailing Lambdas')
-      arktest.assertEQ('Hello World of Trailing Lambdas', result);
+      expect('Hello World of Trailing Lambdas').assertEqual(result);
 
       result = test.boo('Hello') {
         return 'of Trailing Lambdas'
       }
-      arktest.assertEQ('Hello Missed of Trailing Lambdas', result);
+      expect('Hello Missed of Trailing Lambdas').assertEqual(result);
 
       result = test.boo('Hello'); {
         // This is not a trailing lambda block
       }
-      arktest.assertEQ('Hello Missed undefined', result);
+      expect('Hello Missed undefined').assertEqual(result);
     });
 
     /**
@@ -1051,12 +1051,12 @@ export default function TrailingLambdasTest(): void {
     it('testTrailingLambdas0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let test = new Holder2
       let result = test.roo('Hello', 'World', () => 'of Trailing Lambdas')
-      arktest.assertEQ('Hello World of Trailing Lambdas', result);
+      expect('Hello World of Trailing Lambdas').assertEqual(result);
 
       result = test.roo('Hello'); {
         // This is not a trailing lambda block
       }
-      arktest.assertEQ('Hello Missed I am Stub', result);
+      expect('Hello Missed I am Stub').assertEqual(result);
     });
 
     /**
@@ -1078,7 +1078,7 @@ export default function TrailingLambdasTest(): void {
         holder.foo() { counter++ }
         holder.boo(ld)
         holder.boo() { counter ++ }
-        arktest.assertEQ(4, counter)
+        expect(4).assertEqual(counter)
       });
 
     /**
@@ -1101,7 +1101,7 @@ export default function TrailingLambdasTest(): void {
         holder.foo() { counter++ }
         holder.boo(ld)
         holder.boo() { counter ++ }
-        arktest.assertEQ(4, holder.counter)
+        expect(4).assertEqual(holder.counter)
       });*/
 
     /**
@@ -1122,7 +1122,7 @@ export default function TrailingLambdasTest(): void {
       holder.foo() { holder.inc() }
       holder.boo(ld)
       holder.boo() { holder.inc() }
-      arktest.assertEQ(4, holder.counter)
+      expect(4).assertEqual(holder.counter)
     });
 
     /**
@@ -1140,7 +1140,7 @@ export default function TrailingLambdasTest(): void {
       A12.foo(10.0, () => {
         A12.globl = 3.0
       })
-      arktest.assertEQ(A12.globl, 13.0)
+      expect(A12.globl).assertEqual(13.0)
     });
 
     /**
@@ -1158,10 +1158,10 @@ export default function TrailingLambdasTest(): void {
       A13.foo(10.0, () => {
         A13.globl = 3.0
       })
-      arktest.assertEQ(A13.globl, 13.0)
+      expect(A13.globl).assertEqual(13.0)
 
       A13.foo(10.0)
-      arktest.assertEQ(A13.globl, 23.0)
+      expect(A13.globl).assertEqual(23.0)
     });
 
     /**
@@ -1179,7 +1179,7 @@ export default function TrailingLambdasTest(): void {
       {
         A14.globl = 3.0
       }
-      arktest.assertEQ(A14.globl, 13.0)
+      expect(A14.globl).assertEqual(13.0)
     });
 
     /**
@@ -1197,10 +1197,10 @@ export default function TrailingLambdasTest(): void {
       {
         A15.globl = 3.0
       }
-      arktest.assertEQ(A15.globl, 13.0)
+      expect(A15.globl).assertEqual(13.0)
 
       A15.foo(10.0)
-      arktest.assertEQ(A15.globl, 23.0)
+      expect(A15.globl).assertEqual(23.0)
     });
 
     /**
@@ -1219,7 +1219,7 @@ export default function TrailingLambdasTest(): void {
       {
         A16.globl = 4.0
       }
-      arktest.assertEQ(A16.globl, 4.0)
+      expect(A16.globl).assertEqual(4.0)
     });
 
     /**
@@ -1238,16 +1238,16 @@ export default function TrailingLambdasTest(): void {
       {
         A17.globl = 4.0
       }
-      arktest.assertEQ(A17.globl, 4.0)
+      expect(A17.globl).assertEqual(4.0)
 
       A17.foo(10.0) // trailing lambda
       {
         A17.globl = 5.0
       }
-      arktest.assertEQ(A17.globl, 15.0)
+      expect(A17.globl).assertEqual(15.0)
 
       A17.foo(10.0)  // no trailing lambda
-      arktest.assertEQ(A17.globl, 25.0)
+      expect(A17.globl).assertEqual(25.0)
     });
 
     /**
@@ -1263,7 +1263,7 @@ export default function TrailingLambdasTest(): void {
     it('testTrailingLambdas0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // not a trailing lambda, block separated by semicolon
       A18.foo(10.0, () => { A18.globl = 3.0 }); { A18.globl = 4.0 }
-      arktest.assertEQ(A18.globl, 4.0)
+      expect(A18.globl).assertEqual(4.0)
     });
 
     /**
@@ -1279,13 +1279,13 @@ export default function TrailingLambdasTest(): void {
     it('testTrailingLambdas0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // not a trailing lambda, block separated by semicolon
       A19.foo(10.0, () => { A19.globl = 3.0 }); { A19.globl = 4.0 }
-      arktest.assertEQ(A19.globl, 4.0)
+      expect(A19.globl).assertEqual(4.0)
 
       A19.foo(10.0) { A19.globl = 4.0 } // trailing lambda
-      arktest.assertEQ(A19.globl, 14.0)
+      expect(A19.globl).assertEqual(14.0)
 
       A19.foo(10.0); { A19.globl = 4.0 } // not a trailing lambda
-      arktest.assertEQ(A19.globl, 4.0)
+      expect(A19.globl).assertEqual(4.0)
     });
 
     /**
@@ -1301,7 +1301,7 @@ export default function TrailingLambdasTest(): void {
     it('testTrailingLambdas0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       A20.globl = 1.0
       A20.foo(10.0); { A20.globl = 4.0 } // no last function parameter
-      arktest.assertEQ(A20.globl, 4.0)
+      expect(A20.globl).assertEqual(4.0)
     });
 
     /**
@@ -1316,17 +1316,17 @@ export default function TrailingLambdasTest(): void {
      */
     it('testTrailingLambdas0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result = Holder4.foo('Hello', 'World', () => 'of Trailing Lambdas')
-      arktest.assertEQ('Hello World of Trailing Lambdas', result);
+      expect('Hello World of Trailing Lambdas').assertEqual(result);
 
       result = Holder4.foo('Hello') {
       return 'of Trailing Lambdas'
       }
-      arktest.assertEQ('Hello undefined of Trailing Lambdas', result);
+      expect('Hello undefined of Trailing Lambdas').assertEqual(result);
 
       result = Holder4.foo('Hello'); {
       // This is not a trailing lambda block
       }
-      arktest.assertEQ('Hello undefined undefined', result);
+      expect('Hello undefined undefined').assertEqual(result);
     });
 
     /**
@@ -1341,17 +1341,17 @@ export default function TrailingLambdasTest(): void {
      */
     it('testTrailingLambdas0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result = Holder5.boo('Hello', 'World', () => 'of Trailing Lambdas')
-      arktest.assertEQ('Hello World of Trailing Lambdas', result);
+      expect('Hello World of Trailing Lambdas').assertEqual(result);
 
       result = Holder5.boo('Hello') {
         return 'of Trailing Lambdas'
       }
-      arktest.assertEQ('Hello Missed of Trailing Lambdas', result);
+      expect('Hello Missed of Trailing Lambdas').assertEqual(result);
 
       result = Holder5.boo('Hello'); {
         // This is not a trailing lambda block
       }
-      arktest.assertEQ('Hello Missed undefined', result);
+      expect('Hello Missed undefined').assertEqual(result);
     });
 
     /**
@@ -1366,12 +1366,12 @@ export default function TrailingLambdasTest(): void {
      */
     it('testTrailingLambdas0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result = Holder6.roo('Hello', 'World', () => 'of Trailing Lambdas')
-      arktest.assertEQ('Hello World of Trailing Lambdas', result);
+      expect('Hello World of Trailing Lambdas').assertEqual(result);
 
       result = Holder6.roo('Hello'); {
         // This is not a trailing lambda block
       }
-      arktest.assertEQ('Hello Missed I am Stub', result);
+      expect('Hello Missed I am Stub').assertEqual(result);
     });
   })
 }
