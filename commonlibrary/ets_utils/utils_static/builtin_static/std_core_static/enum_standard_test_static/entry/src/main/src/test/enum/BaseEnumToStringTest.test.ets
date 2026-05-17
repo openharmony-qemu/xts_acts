@@ -566,7 +566,6 @@ export default function BaseEnumToStringTest(): void {
       const e = new BaseEnum<string>(longStr, "LONG");
       let result = e.toString();
       expect(result).assertEqual(longStr);
-      expect(result.length).assertEqual(1000);
     });
 
     /**
@@ -790,8 +789,7 @@ export default function BaseEnumToStringTest(): void {
     it('testBaseEnumToString054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const e = new BaseEnum<int>(404, "NOT_FOUND");
       let result = e.toString();
-      expect(result === null).assertFalse();
-      expect(result == undefined).assertFalse();
+      expect(typeof result).assertEqual("string");
     });
 
     /**
@@ -839,7 +837,6 @@ export default function BaseEnumToStringTest(): void {
       const e = new BaseEnum<string>("", "EMPTY");
       let result = e.toString();
       expect(result).assertEqual("");
-      expect(result.length).assertEqual(0);
     });
 
     /**
@@ -854,7 +851,6 @@ export default function BaseEnumToStringTest(): void {
       const e = new BaseEnum<string>("A", "SINGLE");
       let result = e.toString();
       expect(result).assertEqual("A");
-      expect(result.length).assertEqual(1);
     });
 
     /**
@@ -869,7 +865,7 @@ export default function BaseEnumToStringTest(): void {
       let longVal: string = "x".repeat(10000);
       const e = new BaseEnum<string>(longVal, "LONG");
       let result = e.toString();
-      expect(result.length).assertEqual(10000);
+      expect(result).assertEqual(longVal);
     });
 
     /**
@@ -884,7 +880,6 @@ export default function BaseEnumToStringTest(): void {
       const e = new BaseEnum<int>(0, "ZERO");
       let result = e.toString();
       expect(result).assertEqual("0");
-      expect(result == undefined).assertFalse();
     });
 
     /**
@@ -1001,12 +996,8 @@ export default function BaseEnumToStringTest(): void {
      */
     it('testBaseEnumToString067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const e = new BaseEnum<int>(404, "NOT_FOUND");
-      try {
-        let result = e.toString();
-        expect(result).assertEqual("404");
-      } catch (error) {
-        expect().assertFail();
-      }
+      let result = e.toString();
+      expect(result).assertEqual("404");
     });
 
     /**
@@ -1041,13 +1032,9 @@ export default function BaseEnumToStringTest(): void {
       const eNaN = new BaseEnum<float>(Double.toFloat(NaN), "NAN");
       const eInf = new BaseEnum<float>(Double.toFloat(Infinity), "INF");
       const eNegInf = new BaseEnum<float>(Double.toFloat(-Infinity), "NEG_INF");
-      try {
-        expect(eNaN.toString()).assertEqual("NaN");
-        expect(eInf.toString()).assertEqual("Infinity");
-        expect(eNegInf.toString()).assertEqual("-Infinity");
-      } catch (error) {
-        expect().assertFail();
-      }
+      expect(eNaN.toString()).assertEqual("NaN");
+      expect(eInf.toString()).assertEqual("Infinity");
+      expect(eNegInf.toString()).assertEqual("-Infinity");
     });
 
     /**

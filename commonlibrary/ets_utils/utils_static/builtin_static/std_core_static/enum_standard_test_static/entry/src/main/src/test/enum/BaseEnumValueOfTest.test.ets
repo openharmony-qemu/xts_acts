@@ -65,10 +65,9 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 此测试仅用于验证编译时异常，跳过执行
-      let skipReason: string = "compile-time verification only";
-      expect(skipReason.length > 0).assertTrue();
-      return;
+      let e: BaseEnum<int> = new BaseEnum<int>(-1, "NEG_ONE")
+      let result: int = e.valueOf()
+      expect(result).assertEqual(-1)
     });
 
     /**
@@ -80,10 +79,9 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 此测试仅用于验证编译时异常，跳过执行
-      let skipReason: string = "compile-time verification only";
-      expect(skipReason.length > 0).assertTrue();
-      return;
+      let e: BaseEnum<string> = new BaseEnum<string>("active", "STATUS")
+      let result: string = e.valueOf()
+      expect(result).assertEqual("active")
     });
 
     /**
@@ -95,10 +93,9 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 此测试仅用于验证编译时异常，跳过执行
-      let skipReason: string = "compile-time verification only";
-      expect(skipReason.length > 0).assertTrue();
-      return;
+      let e: BaseEnum<long> = new BaseEnum<long>(Int.toLong(500), "LONG_VAL")
+      let result: long = e.valueOf()
+      expect(result).assertEqual(Int.toLong(500))
     });
 
     /**
@@ -110,10 +107,9 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 此测试仅用于验证编译时异常，跳过执行
-      let skipReason: string = "compile-time verification only";
-      expect(skipReason.length > 0).assertTrue();
-      return;
+      let e: BaseEnum<byte> = new BaseEnum<byte>(64 as byte, "BYTE_VAL")
+      let result: byte = e.valueOf()
+      expect(result).assertEqual(64 as byte)
     });
 
     /**
@@ -1299,7 +1295,6 @@ export default function BaseEnumValueOfTest(): void {
       let longStr: string = "a".repeat(10000)
       let e: BaseEnum<string> = new BaseEnum<string>(longStr, "LONG_STR")
       expect(e.valueOf()).assertEqual(longStr)
-      expect(e.valueOf().length).assertEqual(10000)
     });
 
     /**
@@ -1352,12 +1347,8 @@ export default function BaseEnumValueOfTest(): void {
      */
     it('testBaseEnumValueOf093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: BaseEnum<int> = new BaseEnum<int>(100, "VAL")
-      try {
       let result: int = e.valueOf()
       expect(result).assertEqual(100)
-      } catch (error) {
-      expect().assertFail()
-      }
     });
 
     /**
@@ -1370,12 +1361,8 @@ export default function BaseEnumValueOfTest(): void {
      */
     it('testBaseEnumValueOf094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: BaseEnum<string> = new BaseEnum<string>("test", "TEST")
-      try {
       let result: string = e.valueOf()
       expect(result).assertEqual("test")
-      } catch (error) {
-      expect().assertFail()
-      }
     });
 
     /**
@@ -1387,10 +1374,9 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 此测试仅用于验证编译时异常，跳过执行
-      let skipReason: string = "compile-time verification only";
-      expect(skipReason.length > 0).assertTrue();
-      return;
+      let e: BaseEnum<double> = new BaseEnum<double>(2.718, "DOUBLE_VAL")
+      let result: double = e.valueOf()
+      expect(result).assertEqual(2.718)
     });
 
     /**

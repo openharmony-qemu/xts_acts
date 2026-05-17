@@ -173,7 +173,6 @@ export default function BaseEnumGetNameTest(): void {
       const e = new BaseEnum<int>(0, "");
       let name: string = e.getName();
       expect(name).assertEqual("");
-      expect(name.length).assertEqual(0);
     });
 
     /**
@@ -187,7 +186,6 @@ export default function BaseEnumGetNameTest(): void {
     it('testBaseEnumGetName012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const e = new BaseEnum<int>(1, "A");
       expect(e.getName()).assertEqual("A");
-      expect(e.getName().length).assertEqual(1);
     });
 
     /**
@@ -277,7 +275,6 @@ export default function BaseEnumGetNameTest(): void {
       let longName: string = "A".repeat(1000);
       const e = new BaseEnum<int>(1, longName);
       expect(e.getName()).assertEqual(longName);
-      expect(e.getName().length).assertEqual(1000);
     });
 
     /**
@@ -318,7 +315,7 @@ export default function BaseEnumGetNameTest(): void {
     it('testBaseEnumGetName021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const e = new BaseEnum<int>(1, "OK");
       let name: string = e.getName();
-      expect(name === null).assertFalse();
+      expect(typeof name).assertEqual("string");
     });
 
     /**
@@ -332,7 +329,7 @@ export default function BaseEnumGetNameTest(): void {
     it('testBaseEnumGetName022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const e = new BaseEnum<int>(1, "OK");
       let name: string = e.getName();
-      expect(name == undefined).assertFalse();
+      expect(name).assertEqual("OK");
     });
 
     /**
@@ -427,12 +424,8 @@ export default function BaseEnumGetNameTest(): void {
      */
     it('testBaseEnumGetName028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const e = new BaseEnum<int>(1, "SAFE");
-      try {
-        let name: string = e.getName();
-        expect(name).assertEqual("SAFE");
-      } catch (error) {
-        expect().assertFail();
-      }
+      let name: string = e.getName();
+      expect(name).assertEqual("SAFE");
     });
 
     /**
@@ -468,7 +461,7 @@ export default function BaseEnumGetNameTest(): void {
         let name: string = (null as BaseEnum<int>).getName();
         expect().assertFail();
       } catch (error) {
-        expect(error === null).assertFalse();
+        expect(error instanceof Error).assertTrue();
       }
     });
 
@@ -485,7 +478,7 @@ export default function BaseEnumGetNameTest(): void {
         let name: string = (undefined as BaseEnum<int>).getName();
         expect().assertFail();
       } catch (error) {
-        expect(error === null).assertFalse();
+        expect(error instanceof Error).assertTrue();
       }
     });
   });
