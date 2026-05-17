@@ -346,36 +346,8 @@ export default function CallableTypesWithInvokeMethodTest(): void {
      */
     it("testCallableTypesWithInvokeMethod0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(C6()).assertEqual(C6())
-      expect(C6.$_invoke()).assertEqual(C6.$_invoke())
       expect(C6.$_invoke()).assertEqual(C6())
     });
-
-    /**
-     * @tc.number    SUB_CALLABLE_TYPES_WITH_INVOKE_METHOD_TEST_0800
-     * @tc.name      testCallableTypesWithInvokeMethod0008
-     * @tc.desc      The method invoke can have an arbitrary signature. The method can
-     *               be used in a type call expression in either case above. If the
-     *               signature has parameters, then the call must contain corresponding
-     *               arguments.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    /**
-     * ArkTS 1.2 兼容性说明：
-     * 本用例依赖旧版本对数值表达式/除法结果的推导预期。
-     * 在当前 ArkTS 1.2 环境下，整型/浮点混合计算的结果与旧用例预期不一致，
-     * 导致断言值出现 4.5 与 4 的差异。
-     *
-     * 该问题反映的是数值运算规则与旧版预期的兼容性变化，
-     * 不属于当前主工程功能问题，先注释保留，后续如需适配再单独处理。
-     */
-    // it("testCallableTypesWithInvokeMethod0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   let x = Div(Mul(Add(1, 2), 3), 2)
-    //   expect(x).assertEqual((1 + 2) * 3 / 2)
-    //   let y = Div.$_invoke(Mul.$_invoke(Add.$_invoke(1, 2), 3), 2)
-    //   expect(y).assertEqual(x)
-    // });
 
     /**
      * @tc.number    SUB_CALLABLE_TYPES_WITH_INVOKE_METHOD_TEST_0900

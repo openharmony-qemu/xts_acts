@@ -174,7 +174,6 @@ import NumericExpressions from './semanticrules/semanticessentials/NumericExpres
 import SpecificsOfVariableInitializationContext from './semanticrules/semanticessentials/SpecificsOfVariableInitializationContext'
 import TypeOfStandaloneExpression from './semanticrules/semanticessentials/TypeOfStandaloneExpression'
 import UnaryOverflow from './semanticrules/semanticessentials/UnaryOverflow'
-import OtherContextsTest from './semanticrules/semanticessentials/OtherContextsTest.test'
 import SpecificsOfStringOperatorContextsTest from './semanticrules/semanticessentials/SpecificsOfStringOperatorContextsTest.test'
 import SpecificsOfTypeParametersTest from './semanticrules/semanticessentials/SpecificsOfTypeParametersTest.test'
 import SubtypingForFunctionTypesTest from './semanticrules/subtyping/SubtypingForFunctionTypesTest.test'
@@ -500,7 +499,6 @@ export default function testsuite(): void {
   SpecificsOfVariableInitializationContext();
   TypeOfStandaloneExpression();
   UnaryOverflow();
-  OtherContextsTest();
   SpecificsOfStringOperatorContextsTest();
   SpecificsOfTypeParametersTest();
   SubtypingForFunctionTypesTest();

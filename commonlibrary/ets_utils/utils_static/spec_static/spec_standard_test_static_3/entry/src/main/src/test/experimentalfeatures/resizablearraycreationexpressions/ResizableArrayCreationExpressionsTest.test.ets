@@ -813,7 +813,6 @@ export default function ResizableArrayCreationExpressionsTest(): void {
       // Adjust test to use valid dimension to avoid compile errors
       let a: Array<number> = new Array<number>(10, (): number => 0);
       expect(a.length).assertEqual(10);
-      expect(true).assertTrue();
     });
 
     /**
@@ -830,7 +829,6 @@ export default function ResizableArrayCreationExpressionsTest(): void {
       let len: int = 10;
       let a: Array<number> = new Array<number>(len, (): number => 0);
       expect(a.length).assertEqual(10);
-      expect(true).assertTrue();
     });
 
   })

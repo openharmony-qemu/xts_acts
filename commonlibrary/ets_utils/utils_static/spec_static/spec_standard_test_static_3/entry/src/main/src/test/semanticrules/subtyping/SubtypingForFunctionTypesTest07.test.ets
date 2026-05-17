@@ -854,8 +854,7 @@ export default function SubtypingForFunctionTypesTest07(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testPositiveStaticMethodGeneric00156", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
+    it("testPositiveStaticMethodGeneric0156", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(foodd156(new Derived156) instanceof Base156).assertTrue()
     })
 

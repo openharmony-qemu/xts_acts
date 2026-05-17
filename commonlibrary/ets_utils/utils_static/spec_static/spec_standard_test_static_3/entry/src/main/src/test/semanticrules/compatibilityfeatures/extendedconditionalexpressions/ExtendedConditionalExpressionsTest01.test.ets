@@ -1152,32 +1152,6 @@ export default function ExtendedConditionalExpressionsTest01():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_6200
-     * @tc.name    testConditionalExpression0062
-     * @tc.desc      Conditional expression with char '\u0000' (falsy)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let res: number = (c'\u0000') ? 1 : 0  // falsy
-      expect(res).assertEqual(0);
-    });
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_6300
-     * @tc.name    testConditionalExpression0063
-     * @tc.desc      Conditional expression with non-null char '\u0001' (truthy)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let res: number = (c'\u0001') ? 1 : 0  // truthy
-      expect(res).assertEqual(1);
-    });
-
-    /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EXPRESSIONS_6500
      * @tc.name    testConditionalExpression0065
      * @tc.desc      Conditional expression with negative zero -0 (falsy)

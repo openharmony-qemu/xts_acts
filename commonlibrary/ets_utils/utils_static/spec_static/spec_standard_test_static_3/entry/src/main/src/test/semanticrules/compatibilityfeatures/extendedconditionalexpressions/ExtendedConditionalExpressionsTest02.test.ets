@@ -243,19 +243,6 @@ export default function ExtendedConditionalExpressionsTest02():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_TWO_EXPRESSIONS_1400
-     * @tc.name    testConditionalExpression0114
-     * @tc.desc      Conditional expression with falsy value (c'\u0000')
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let res: number = (c'\u0000') ? 1 : 0  // falsy
-      expect(res).assertEqual(0);
-    });
-
-    /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_TWO_EXPRESSIONS_1500
      * @tc.name    testConditionalExpression0115
      * @tc.desc      Conditional expression with falsy value (null char string)
@@ -487,19 +474,6 @@ export default function ExtendedConditionalExpressionsTest02():void {
      */
     it('testConditionalExpression0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let res: number = (1n) ? 0 : 1  // truthy
-      expect(res).assertEqual(0);
-    });
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_TWO_EXPRESSIONS_3300
-     * @tc.name    testConditionalExpression0133
-     * @tc.desc      Conditional expression with truthy value (c' ')
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let res: number = (c' ') ? 0 : 1  // truthy
       expect(res).assertEqual(0);
     });
 

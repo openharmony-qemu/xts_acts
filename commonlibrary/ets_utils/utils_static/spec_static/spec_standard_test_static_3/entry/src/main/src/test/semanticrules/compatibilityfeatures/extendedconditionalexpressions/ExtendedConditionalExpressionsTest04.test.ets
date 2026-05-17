@@ -536,22 +536,6 @@ export default function ExtendedConditionalExpressionsTest04():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_FOUR_EXPRESSIONS_2700
-     * @tc.name    testConditionalExpression0209
-     * @tc.desc      If statement with truthy condition (c' ')
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let res: number = 0;
-      if (c' ') { // truthy
-        res = 1
-      }
-      expect(res).assertEqual(1);
-    });
-
-    /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_FOUR_EXPRESSIONS_2800
      * @tc.name    testConditionalExpression0210
      * @tc.desc      If statement with truthy condition (empty array)

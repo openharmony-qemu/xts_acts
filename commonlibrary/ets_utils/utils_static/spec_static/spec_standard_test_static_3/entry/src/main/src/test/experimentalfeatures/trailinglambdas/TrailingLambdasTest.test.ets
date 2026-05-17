@@ -1082,29 +1082,6 @@ export default function TrailingLambdasTest(): void {
       });
 
     /**
-     * @tc.number    SUB_TRAILING_LAMBDAS_TEST_3500
-     * @tc.name      testTrailingLambdas0035
-     * @tc.desc      The trailing lambda mechanism allows using a special form of function or method
-     *               call when the last parameter of a function or a method is of function type, and
-     *               the argument is passed as a lambda using the {} notation.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-// 1.2兼容性问题：receiver lambda 中未限定成员名 counter 被解析为外层全局变量，
-// 未绑定到 ReceiverTarget1.counter，导致 holder.counter 仍为0，暂时注释。
-/*      it('testTrailingLambdas0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let ld = (this: ReceiverTarget1) => { counter++ }
-
-        let holder = new ReceiverTarget1
-        holder.foo(ld)
-        holder.foo() { counter++ }
-        holder.boo(ld)
-        holder.boo() { counter ++ }
-        expect(4).assertEqual(holder.counter)
-      });*/
-
-    /**
      * @tc.number    SUB_TRAILING_LAMBDAS_TEST_3600
      * @tc.name      testTrailingLambdas0036
      * @tc.desc      The trailing lambda mechanism allows using a special form of function or method

@@ -227,13 +227,13 @@ export default function InheritanceRelationshipCompatibilityCaseTest(): void {
 
     /**
      * @tc.number    SUB_INHERITANCE_RELATIONSHIP_COMPATIBILITY_CASE_0600
-     * @tc.name      testInheritanceRelationshipCompatibilityCase0006
+     * @tc.name      testRelationshipCompatibilityCase0006
      * @tc.desc      Verifying compatibility between child class and parent class.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testInheritanceRelationshipCompatibilityCase0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
+    it("testRelationshipCompatibilityCase0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
       void => {
       
 
@@ -253,7 +253,7 @@ export default function InheritanceRelationshipCompatibilityCaseTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testInheritanceRelationshipCompatibilityCase0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
+    it("testInheritanceRelationshipCompatibilityCase0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():
       void => {
     
       const val1: ChildInterface1 = {};

@@ -1529,7 +1529,7 @@ export default function TupleTypesIdentityTest07(): void {
     })
 
     /**
-     * @tc.Number    SUB_TUPLE_TYPES_IDENTITY_2200
+     * @tc.number    SUB_TUPLE_TYPES_IDENTITY_2200
      * @tc.name      testTupleTypesIdentity0022
      * @tc.desc      Checking for tuple types A and B are identical on function call.
      * @tc.size      MediumTest

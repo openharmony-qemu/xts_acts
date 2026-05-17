@@ -952,7 +952,7 @@ export default function EnumerationWithExplicitTypeTest01(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testEnumerationGetConstantFromValue0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testEnumerationWithExplicitType0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let c = Enum5.fromValue(0);
       expect(c instanceof Enum5).assertEqual(true);
       expect(c.valueOf() instanceof int).assertEqual(true);

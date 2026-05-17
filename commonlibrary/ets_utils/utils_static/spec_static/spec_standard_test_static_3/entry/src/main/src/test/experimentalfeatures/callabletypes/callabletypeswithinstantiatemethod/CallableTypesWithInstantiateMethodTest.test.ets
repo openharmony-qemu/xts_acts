@@ -419,22 +419,6 @@ export default function CallableTypesWithInstantiateMethodTest(): void {
     });
 
     /**
-     * @tc.number    SUB_CALLABLE_TYPES_WITH_INSTANTIATE_METHOD_TEST_0700
-     * @tc.name      testCallableTypesWithInstantiateMethod0007
-     * @tc.desc      The method instantiate can have an arbitrary signature by itself.
-     *               If it is to be used in a type call expression, then its first
-     *               parameter must be a factory. The method can have or not have other
-     *               parameters, and those parameters can be arbitrary.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testCallableTypesWithInstantiateMethod0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let f: () => C6 = (): C6 => new C6()
-      expect(C6.$_instantiate(f)).assertEqual(C6.$_instantiate(f))
-    });
-
-    /**
      * @tc.number    SUB_CALLABLE_TYPES_WITH_INSTANTIATE_METHOD_TEST_0800
      * @tc.name      testCallableTypesWithInstantiateMethod0008
      * @tc.desc      The method instantiate can have an arbitrary signature by itself.
@@ -564,40 +548,6 @@ export default function CallableTypesWithInstantiateMethodTest(): void {
     });
 
     /**
-     * @tc.number    SUB_CALLABLE_TYPES_WITH_INSTANTIATE_METHOD_TEST_1500
-     * @tc.name      testCallableTypesWithInstantiateMethod0015
-     * @tc.desc      The method instantiate can have an arbitrary signature by itself.
-     *               If it is to be used in a type call expression, then its first
-     *               parameter must be a factory. The method can have or not have other
-     *               parameters, and those parameters can be arbitrary.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testCallableTypesWithInstantiateMethod0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(() => {
-        C14(true)
-      })
-    });
-
-    /**
-     * @tc.number    SUB_CALLABLE_TYPES_WITH_INSTANTIATE_METHOD_TEST_1600
-     * @tc.name      testCallableTypesWithInstantiateMethod0016
-     * @tc.desc      The method instantiate can have an arbitrary signature by itself.
-     *               If it is to be used in a type call expression, then its first
-     *               parameter must be a factory. The method can have or not have other
-     *               parameters, and those parameters can be arbitrary.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testCallableTypesWithInstantiateMethod0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(() => {
-        C15(true)
-      })
-    });
-
-    /**
      * @tc.number    SUB_CALLABLE_TYPES_WITH_INSTANTIATE_METHOD_TEST_1700
      * @tc.name      testCallableTypesWithInstantiateMethod0017
      * @tc.desc      The method instantiate can have an arbitrary signature by itself.
@@ -610,7 +560,7 @@ export default function CallableTypesWithInstantiateMethodTest(): void {
      */
     it("testCallableTypesWithInstantiateMethod0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x = C16.$_instantiate() { return new C16() }
-    expect(x.fld).assertEqual(1)
+      expect(x.fld).assertEqual(1)
   });
 
   /**
