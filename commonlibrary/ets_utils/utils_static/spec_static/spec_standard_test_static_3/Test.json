@@ -11,7 +11,7 @@
     "kits": [
         {
             "test-file-name": [
-                "ActsSpecTest3Static.hap"
+                "ActsSpecTest3static.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
