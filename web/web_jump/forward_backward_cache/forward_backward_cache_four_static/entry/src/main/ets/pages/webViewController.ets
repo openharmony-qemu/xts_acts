@@ -25,7 +25,7 @@ import events_emitter from '@ohos.events.emitter';
 import { webview } from '@kit.ArkWeb';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 

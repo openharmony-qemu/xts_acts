@@ -25,7 +25,7 @@ import { AppStorage,StoragePropRef,Observed } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
 import { RecordData } from '@ohos.base';
 @Observed
-class MySpanComponentModifier implements AttributeModifier<SpanAttribute> {
+export class MySpanComponentModifier implements AttributeModifier<SpanAttribute> {
   mFontSize: number | string | Resource = 16;
   mFontFamily: string | Resource  = 'HarmonyOS Sans'
   mLineHeight: Length = 0
@@ -49,7 +49,7 @@ class MySpanComponentModifier implements AttributeModifier<SpanAttribute> {
   }
 }
 @Observed
-class MySpanFontModifier implements AttributeModifier<SpanAttribute> {
+export class MySpanFontModifier implements AttributeModifier<SpanAttribute> {
   mFont: Font = {}
   applyNormalAttribute(instance: SpanAttribute): void {
     instance.font(this.mFont);

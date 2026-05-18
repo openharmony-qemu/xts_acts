@@ -34,7 +34,7 @@ function sleep(time: number) {
   return new Promise<string>((resolve: (value: string) => void) => {
     setTimeout(():void => {
       resolve("ok")
-    }, time * 1000 as Int);
+    }, (time * 1000).toInt());
   }).then(() => {
     console.info(`sleep ${time} over...`);
   })

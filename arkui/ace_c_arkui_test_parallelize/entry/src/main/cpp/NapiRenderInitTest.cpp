@@ -23,6 +23,11 @@
 #include "radio//RadioTest.h"
 #include "slider/SliderTest.h"
 #include "toggle/ToggleTest.h"
+#include "grid/GridAttributeTest.h"
+#include "list/ListAttributeTest.h"
+#include "scroll/ScrollAttributeTest.h"
+#include "refresh/RefreshAttributeTest.h"
+#include "waterFlow/WaterFlowAttributeTest.h"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -58,6 +63,31 @@ static napi_value Init(napi_env env, napi_value exports)
         {"radioTest", nullptr, RadioTest::radioTest, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"sliderTest", nullptr, SliderTest::sliderTest, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"toggleTest", nullptr, ToggleTest::toggleTest, nullptr, nullptr, nullptr, napi_default, nullptr},
+        // grid
+        {"CreateNativeGridNode", nullptr, GridAttributeTest::CreateNativeGridNode,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"DisposeNativeGridNode", nullptr, GridAttributeTest::DisposeNativeGridNode,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        // list
+        {"CreateNativeListNode", nullptr, ListAttributeTest::CreateNativeListNode,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"DisposeNativeListNode", nullptr, ListAttributeTest::DisposeNativeListNode,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        // scroll
+        {"CreateNativeScrollNode", nullptr, ScrollAttributeTest::CreateNativeScrollNode,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"DisposeNativeScrollNode", nullptr, ScrollAttributeTest::DisposeNativeScrollNode,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        // refresh
+        {"CreateNativeRefreshNode", nullptr, RefreshAttributeTest::CreateNativeRefreshNode,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"DisposeNativeRefreshNode", nullptr, RefreshAttributeTest::DisposeNativeRefreshNode,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        // waterFlow
+        {"CreateNativeWaterFlowNode", nullptr, WaterFlowAttributeTest::CreateNativeWaterFlowNode,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"DisposeNativeWaterFlowNode", nullptr, WaterFlowAttributeTest::DisposeNativeWaterFlowNode,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

@@ -32,7 +32,7 @@ let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-export default function onVisibleAreaChangeTest() {
+export default async function onVisibleAreaChangeTest() {
   //Component to be tested
   // let supportView: Array<string> = new Array<string>(
   let supportView: string[] = [
@@ -124,7 +124,7 @@ export default function onVisibleAreaChangeTest() {
       CommonTest.initTest(pageConfig, supportView, testValues,  async (data: BasePageConfig): Promise<void> => {
       //Get Information about the location of the target component before the change
         console.log('++++++++++++++++++++++++4')
-      let targetRectBefore: RectValue = Utils.getComponentRect(data.pageConfig.componentKey??'');
+      let targetRectBefore: RectValue = await Utils.getComponentRect(data.pageConfig.componentKey??'');
         console.log('++++++++++++++++++++++++5')
       console.info('[' + data.caseTag + '] targetRectBefore: ' + targetRectBefore);
         let uiContext = AppStorage.get<UIContext>('uiContext')
@@ -139,9 +139,9 @@ export default function onVisibleAreaChangeTest() {
       await Utils.sleep(4000);
 
       //Gets information about where the target component moved out
-      let targetRectLeave: RectValue = Utils.getComponentRect(data.pageConfig.componentKey??'');
+      let targetRectLeave: RectValue = await Utils.getComponentRect(data.pageConfig.componentKey??'');
       console.info('[' + data.caseTag + '] targetRectLeave: ' + targetRectLeave);
-      let compareTextLeave = Utils.getComponentByKey(data.pageConfig.compareTextKey??'');
+      let compareTextLeave = await Utils.getComponentByKey(data.pageConfig.compareTextKey??'');
 
       //Set value
       // AttrsManager.change(data.caseTag, data.testValue.setValue.enter);
@@ -151,9 +151,9 @@ export default function onVisibleAreaChangeTest() {
       await Utils.sleep(4000);
 
       //Gets information about where the target component enters
-      let targetRectEnter: RectValue = Utils.getComponentRect(data.pageConfig.componentKey??'');
+      let targetRectEnter: RectValue = await Utils.getComponentRect(data.pageConfig.componentKey??'');
       console.info('[' + data.caseTag + '] targetRectEnter: ' + targetRectEnter);
-      let compareTextEnter = Utils.getComponentByKey(data.pageConfig.compareTextKey??'');
+      let compareTextEnter = await Utils.getComponentByKey(data.pageConfig.compareTextKey??'');
 
       //Check that the target component has moved the correct distance
       console.info('[' + data.caseTag + '] targetRectBefore.bottom: ' + targetRectBefore.bottom);

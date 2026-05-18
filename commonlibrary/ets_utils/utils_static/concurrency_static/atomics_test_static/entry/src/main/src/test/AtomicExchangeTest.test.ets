@@ -11,7 +11,7 @@ class StaticAtomic {
   static async exchange(newValue: number): Promise<number> {
     return new Promise<number>((resolve) => {
       setTimeout(() => {
-        const old = Atomics.exchange(StaticAtomic.ia, 0, newValue as long);
+        const old = Atomics.exchange(StaticAtomic.ia, 0, newValue.toLong());
         resolve(old);
       }, 3);
     });
@@ -42,7 +42,7 @@ abstract class BaseValidator {
 
     return new Promise<boolean>((resolve) => {
       setTimeout(() => {
-        Atomics.exchange(this.ia, 0, newValue as long);
+        Atomics.exchange(this.ia, 0, newValue.toLong());
         resolve(true);
       }, 3);
     });
@@ -85,7 +85,7 @@ class AtomicUpdater {
   private async _exchange(index: int, newValue: number): Promise<number> {
     return new Promise<number>((resolve) => {
       setTimeout(() => {
-        const old = Atomics.exchange(this.ia, index as int, newValue as long);
+        const old = Atomics.exchange(this.ia, index as int, newValue.toLong());
         resolve(old);
       }, 3);
     });
@@ -116,7 +116,7 @@ class BaseAtomic {
   protected async _exchange(index: int, newValue: number): Promise<number> {
     return new Promise<number>((resolve) => {
       setTimeout(() => {
-        const old = Atomics.exchange(this.ia, index as int, newValue as long);
+        const old = Atomics.exchange(this.ia, index as int, newValue.toLong());
         resolve(old);
       }, 3);
     });
@@ -152,7 +152,7 @@ class SharedAtomic {
   async setValue(newValue: number): Promise<number> {
     return new Promise<number>((resolve) => {
       setTimeout(() => {
-        const old = Atomics.exchange(this.ia, this.index as int, newValue as long);
+        const old = Atomics.exchange(this.ia, this.index as int, newValue.toLong());
         resolve(old);
       }, 3);
     });
@@ -341,7 +341,7 @@ export default function atomicsExchangeTest() {
       ia[1] = 5; // Target
 
       // Transfer 3 from source to target (atomic exchange + add)
-      const oldSource = Atomics.exchange(ia, 0, ia[0] - 3 as long);
+      const oldSource = Atomics.exchange(ia, 0, (ia[0] - 3).toLong());
       Atomics.add(ia, 1, 3);
 
       expect(oldSource).assertEqual(20);
@@ -840,7 +840,7 @@ export default function atomicsExchangeTest() {
       const ia = new Int32Array(sab);
       ia[0] = 10;
       try {
-        Atomics.exchange(ia, 0, 15.5 as long)
+        Atomics.exchange(ia, 0, 15.5.toLong())
       } catch (e) {
         expect(e.message).assertContain(10);
       }
@@ -979,7 +979,7 @@ export default function atomicsExchangeTest() {
       const sab = new ArrayBuffer(4);
       const ia = new Int32Array(sab);
       try {
-        Atomics.exchange(ia, 0.5 as int, 5)
+        Atomics.exchange(ia, 0.5.toInt(), 5)
       } catch (e) {
         expect(e.message).assertContain(10);
       }
@@ -1112,7 +1112,7 @@ export default function atomicsExchangeTest() {
       const batchExchange = async (index: int, newValue: number): Promise<number> => {
         return new Promise<number>((resolve) => {
           setTimeout(() => {
-            const oldValue = Atomics.exchange(ia, index as int, newValue as long);
+            const oldValue = Atomics.exchange(ia, index as int, newValue.toLong());
             resolve(oldValue);
           }, 4);
         });
@@ -1153,7 +1153,7 @@ export default function atomicsExchangeTest() {
               if (index < 0 || index >= ia.length) {
                 throw new RangeError('Invalid index');
               }
-              const old = Atomics.exchange(ia, index as int, newValue as long);
+              const old = Atomics.exchange(ia, index as int, newValue.toLong());
               resolve(old);
             } catch (err) {
               errorCaught = true;
@@ -1256,7 +1256,7 @@ export default function atomicsExchangeTest() {
           return new Promise<number>((resolve) => {
             setTimeout(() => {
               const current = ia[0];
-              const old = Atomics.exchange(ia, 0, current + step as long);
+              const old = Atomics.exchange(ia, 0, (current + step).toLong());
               resolve(old);
             }, 3);
           });
@@ -1336,7 +1336,7 @@ export default function atomicsExchangeTest() {
         try {
           oldData = await new Promise<number>((resolve) => {
             setTimeout(() => {
-              const old = Atomics.exchange(ia, 0, newData as long);
+              const old = Atomics.exchange(ia, 0, newData.toLong());
               resolve(old);
             }, 4);
           });
@@ -1414,7 +1414,7 @@ export default function atomicsExchangeTest() {
         const index = await getTargetIndex();
         return new Promise<number>((resolve) => {
           setTimeout(() => {
-            const old = Atomics.exchange(ia, index as int, newValue as long);
+            const old = Atomics.exchange(ia, index.toInt(), newValue.toLong());
             resolve(old);
           }, 3);
         });
@@ -1461,7 +1461,7 @@ export default function atomicsExchangeTest() {
 
         const old = await new Promise<number>((resolve) => {
           setTimeout(() => {
-            resolve(Atomics.exchange(ia, 0, newValue as long));
+            resolve(Atomics.exchange(ia, 0, newValue.toLong()));
           }, 2);
         });
 
@@ -1501,7 +1501,7 @@ export default function atomicsExchangeTest() {
           return new Promise<boolean>((resolve) => {
             setTimeout(() => {
               currentStep++;
-              const old = Atomics.exchange(ia, 0, currentStep as long);
+              const old = Atomics.exchange(ia, 0, currentStep.toLong());
               const reachedTarget = currentStep === target;
               resolve(reachedTarget);
             }, 3);
@@ -1542,10 +1542,10 @@ export default function atomicsExchangeTest() {
         // Run exchanges in parallel
         const old = await Promise.all([
           new Promise<number>((resolve) => {
-            setTimeout(() => resolve(Atomics.exchange(ia, 0, newA as long)), 3);
+            setTimeout(() => resolve(Atomics.exchange(ia, 0, newA.toLong())), 3);
           }),
           new Promise<number>((resolve) => {
-            setTimeout(() => resolve(Atomics.exchange(ia, 1, newB as long)), 3);
+            setTimeout(() => resolve(Atomics.exchange(ia, 1, newB.toLong())), 3);
           })
         ]);
 
@@ -1663,7 +1663,7 @@ export default function atomicsExchangeTest() {
         const newValue = await mockApi(); // Fetch dynamic value
         return new Promise<number>((resolve) => {
           setTimeout(() => {
-            const old = Atomics.exchange(ia, 0, newValue as long);
+            const old = Atomics.exchange(ia, 0, newValue.toLong());
             resolve(old);
           }, 3);
         });
@@ -1696,7 +1696,7 @@ export default function atomicsExchangeTest() {
         try {
           oldValue = await new Promise<number>((resolve) => {
             setTimeout(() => {
-              const old = Atomics.exchange(ia, 0, tempValue as long);
+              const old = Atomics.exchange(ia, 0, tempValue.toLong());
               resolve(old);
             }, 3);
           });
@@ -1711,7 +1711,7 @@ export default function atomicsExchangeTest() {
           // Reset to initial value in finally
           await new Promise<void>((resolve) => {
             setTimeout(() => {
-              Atomics.exchange(ia, 0, initialValue as long);
+              Atomics.exchange(ia, 0, initialValue.toLong());
               resetDone = true;
               resolve(undefined);
             }, 1);
@@ -1830,7 +1830,7 @@ export default function atomicsExchangeTest() {
           for (let i: int = 0; i < newValues.length; i++) {
             await new Promise<void>((resolve) => {
               setTimeout(() => {
-                Atomics.exchange(ia, i as int, newValues[i] as long);
+                Atomics.exchange(ia, i as int, newValues[i].toLong());
                 updatedIndexes.push(i);
                 resolve(undefined);
               }, 2);
@@ -1846,7 +1846,7 @@ export default function atomicsExchangeTest() {
           await Promise.all(updatedIndexes.map((i: int):Promise<void> => {
             return new Promise<void>((resolve) => {
               setTimeout(() => {
-                Atomics.exchange(ia, i as int, initialValues[i] as long);
+                Atomics.exchange(ia, i as int, initialValues[i].toLong());
                 resolve(undefined);
               }, 1);
             });
@@ -1933,7 +1933,7 @@ export default function atomicsExchangeTest() {
         // Exchange
         await new Promise<void>((resolve) => {
           setTimeout(() => {
-            Atomics.exchange(ia, 0, newVal as long);
+            Atomics.exchange(ia, 0, newVal.toLong());
             resolve(undefined);
           }, 3);
         });
@@ -1986,7 +1986,7 @@ export default function atomicsExchangeTest() {
         const apiValue = await Promise.race([mockApi1(), mockApi2()]);
         return new Promise<number>((resolve) => {
           setTimeout(() => {
-            const old = Atomics.exchange(ia, 0, apiValue as long);
+            const old = Atomics.exchange(ia, 0, apiValue.toLong());
             resolve(old);
           }, 2);
         });
@@ -2066,7 +2066,7 @@ export default function atomicsExchangeTest() {
         try {
           oldData = await new Promise<number>((resolve) => {
             setTimeout(() => {
-              const old = Atomics.exchange(ia, 0, newData as long);
+              const old = Atomics.exchange(ia, 0, newData.toLong());
               resolve(old);
             }, 3);
           });
@@ -2106,7 +2106,7 @@ export default function atomicsExchangeTest() {
               if (newValue <= expectedPrev) {
                 resolve(false); // Invalid sequence: no exchange
               }
-              Atomics.exchange(ia, 0, newValue as long);
+              Atomics.exchange(ia, 0, newValue.toLong());
               expectedPrev = newValue; // Update expected for next call
               resolve(true);
             }, 3);
@@ -2150,7 +2150,7 @@ export default function atomicsExchangeTest() {
           // Update A first
           await new Promise<void>((resolve) => {
             setTimeout(() => {
-              Atomics.exchange(ia, 0, newA as long);
+              Atomics.exchange(ia, 0, newA.toLong());
               updated.push(0);
               resolve(undefined);
             }, 2);
@@ -2164,7 +2164,7 @@ export default function atomicsExchangeTest() {
           // Update B (only if no failure)
           await new Promise<void>((resolve) => {
             setTimeout(() => {
-              Atomics.exchange(ia, 1, newB as long);
+              Atomics.exchange(ia, 1, newB.toLong());
               updated.push(1);
               resolve(undefined);
             }, 2);
@@ -2175,7 +2175,7 @@ export default function atomicsExchangeTest() {
           await Promise.all(updated.map((i) => {
             return new Promise<void>((resolve) => {
               setTimeout(() => {
-                Atomics.exchange(ia, i as int, i === 0 ? initialA : initialB as long);
+                Atomics.exchange(ia, i.toInt(), i === 0 ? initialA : initialB.toLong());
                 resolve(undefined);
               }, 1);
             });
@@ -2229,7 +2229,7 @@ export default function atomicsExchangeTest() {
 
         await new Promise<void>((resolve) => {
           setTimeout(() => {
-            Atomics.exchange(ia, 0, newValue as long);
+            Atomics.exchange(ia, 0, newValue.toLong());
             resolve(undefined);
           }, 2);
         });
@@ -2265,10 +2265,10 @@ export default function atomicsExchangeTest() {
         return async (): Promise<string> => {
           return new Promise<string>((resolve) => {
             setTimeout(() => {
-              Atomics.exchange(ia, 0, targetValue as long);
+              Atomics.exchange(ia, 0, targetValue.toLong());
               winnerId = id;
               resolve(id);
-            }, Math.random() * 10 as int); // Random delay to simulate race
+            }, (Math.random() * 10).toInt()); // Random delay to simulate race
           });
         };
       };
@@ -2340,7 +2340,7 @@ export default function atomicsExchangeTest() {
 
         await new Promise<void>((resolve) => {
           setTimeout(() => {
-            Atomics.exchange(ia, 0, targetValue as long);
+            Atomics.exchange(ia, 0, targetValue.toLong());
             resolve(undefined);
           }, 2);
         });

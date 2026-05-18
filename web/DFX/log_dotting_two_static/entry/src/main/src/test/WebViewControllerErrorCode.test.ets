@@ -56,9 +56,9 @@ export default function webViewControllerErrorCode() {
      * @tc.desc   test pageUp error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testPageUpError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testPageUpError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       Utils.emitEvent("testPageUpError002", 10)
       await Utils.msSleep(5000);
@@ -75,9 +75,9 @@ export default function webViewControllerErrorCode() {
      * @tc.desc   test pageDown error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testPageDownError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testPageDownError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       Utils.emitEvent("testPageDownError001", 10)
       await Utils.msSleep(5000);
@@ -94,9 +94,9 @@ export default function webViewControllerErrorCode() {
      * @tc.desc   test pageDown error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testPageDownError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testPageDownError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       Utils.emitEvent("testPageDownError002", 10)
       await Utils.msSleep(5000);
@@ -107,15 +107,15 @@ export default function webViewControllerErrorCode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAY_0500
-    * @tc.name       : SwitchNextPageStatic
-    * @tc.desc       : test PAGE_REDIRECT
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
+    /**
+    * @tc.name       SwitchNextPageStatic
+    * @tc.number     SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAY_2200
+    * @tc.desc       test PAGE_REDIRECT
+    * @tc.size       MEDIUM
+    * @tc.type       Function
+    * @tc.level      LEVEL0
     */
-    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
         Utils.emitEvent('SwitchNextPageStatic', 10)

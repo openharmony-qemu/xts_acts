@@ -96,7 +96,7 @@ export default function LongTimeTaskManagerErrorCodeStaticTest() {
         } catch (error) {
           error = error as BusinessError;
           console.log(`SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_001 requestSuspendDelay4 failed. code is ${error.code} message is ${error.message}`);
-          expect((error.code) as number).assertEqual(9900002);
+          expect((error.code).toDouble()).assertEqual(9900002);
           done();
         };
 

@@ -109,11 +109,11 @@ export default function ohosPromptJsunit() {
 it('test_OhosPrompt_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       await Utils.sleep(1000)
       let callback = (eventData: emitter.EventData) => {
-        waitForCompletion(async () => {
+        (async () => {
           console.info("[test_OhosPrompt_static_001] get event state result is: " + JSON.stringify(eventData));
           await Utils.sleep(500)
           expect(((eventData.data) as Record<String,RecordData>)['matrix1']).assertEqual("[100, 10]")
-        })
+        })().awaitSync()
       }
       let innerEvent: emitter.InnerEvent = {
         eventId: 142,

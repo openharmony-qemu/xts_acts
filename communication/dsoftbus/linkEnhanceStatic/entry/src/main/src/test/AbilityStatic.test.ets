@@ -1196,7 +1196,7 @@ export default function LinkEnhanceAPI() {
             hilog.info(domain, tag, '[CALLBACK]clientConnectResultCallback result.reason=' + result.reason);
             hilog.info(domain, tag, '[CALLBACK]clientConnectResultCallback result.deviceId=' + result.deviceId);
             success = result.success;
-            reason = result.reason;
+            reason = result.reason.toDouble();
             deviceId = result.deviceId;
             });
           connection.connect();

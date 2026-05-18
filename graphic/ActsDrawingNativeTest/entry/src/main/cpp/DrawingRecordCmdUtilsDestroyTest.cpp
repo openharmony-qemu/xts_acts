@@ -35,14 +35,6 @@ void DrawingRecordCmdUtilsDestroyTestTearDown()
     std::cout << "DrawingRecordCmdUtilsDestroyTest errorCodeReset after each test case." << std::endl;
 }
 
-/**
- * @tc.name   testRecordCmdUtilsDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0200
- * @tc.desc   test for testRecordCmdUtilsDestroyNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRecordCmdUtilsDestroyNormal()
 {
     DrawingRecordCmdUtilsDestroyTestSetUp();

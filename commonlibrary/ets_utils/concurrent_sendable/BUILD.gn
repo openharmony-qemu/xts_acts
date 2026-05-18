@@ -18,6 +18,7 @@ group("concurrent_sendable") {
   if (is_standard_system) {
     deps = [
       "sendableclasstest:ActsSendableClassTest",
+      "sendable_containers:ActsSendableContainersTest",
     ]
   }
 }

@@ -1398,7 +1398,7 @@ export default function KVManagerRootDir() {
 
                 console.info(TAG + ' 2. put 6, get 6---');
                 await kvStore!.put(TEST_KEY_1, TEST_VALUE_1);
-                await kvStore!.put(TEST_KEY_2, TEST_VALUE_2 as long);
+                await kvStore!.put(TEST_KEY_2, TEST_VALUE_2.toLong());
                 await kvStore!.put(TEST_KEY_3, TEST_VALUE_3);
                 await kvStore!.put(TEST_KEY_4, TEST_VALUE_4);
                 await kvStore!.put(TEST_KEY_5, TEST_VALUE_5);
@@ -1461,7 +1461,7 @@ export default function KVManagerRootDir() {
 
                 console.info(TAG + ' 8. update 6, get 6---');
                 await kvStore!.put(TEST_KEY_1, TEST_VALUE_11);
-                await kvStore!.put(TEST_KEY_2, TEST_VALUE_22 as long);
+                await kvStore!.put(TEST_KEY_2, TEST_VALUE_22.toLong());
                 await kvStore!.put(TEST_KEY_3, TEST_VALUE_33);
                 await kvStore!.put(TEST_KEY_4, TEST_VALUE_44);
                 await kvStore!.put(TEST_KEY_5, TEST_VALUE_55);
@@ -2556,11 +2556,11 @@ export default function KVManagerRootDir() {
 
                 console.info(TAG + ' 2. put 3, get 3---');
                 await kvStoreDir!.put(TEST_KEY_Dir1, TEST_VALUE_Dir1);
-                await kvStoreDir!.put(TEST_KEY_Dir2, TEST_VALUE_Dir2 as long);
+                await kvStoreDir!.put(TEST_KEY_Dir2, TEST_VALUE_Dir2.toLong());
                 await kvStoreDir!.put(TEST_KEY_Dir3, TEST_VALUE_Dir3);
 
                 await kvStore!.put(TEST_KEY_1, TEST_VALUE_1);
-                await kvStore!.put(TEST_KEY_2, TEST_VALUE_2 as long);
+                await kvStore!.put(TEST_KEY_2, TEST_VALUE_2.toLong());
                 await kvStore!.put(TEST_KEY_3, TEST_VALUE_3);
 
                 let query = new factory.Query();

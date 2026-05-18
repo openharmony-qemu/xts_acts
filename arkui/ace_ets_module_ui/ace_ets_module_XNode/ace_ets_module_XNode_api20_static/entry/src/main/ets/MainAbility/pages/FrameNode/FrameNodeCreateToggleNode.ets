@@ -52,7 +52,7 @@ import { UIContext } from '@ohos.arkui.UIContext';
 
 let toggleOptions: ToggleOptions = { type: ToggleType.Checkbox, isOn: false };
 
-class MyNodeController extends NodeController {
+export class MyNodeController extends NodeController {
   public errorCode: string = '';
   private worker: EAWorker = new EAWorker();
   private myNode: typeNode.Toggle | null = null;

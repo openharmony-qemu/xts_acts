@@ -15,7 +15,7 @@
  */
 
 import { describe, it, expect, beforeAll, beforeEach, afterEach, Level } from '../../../../hypium/index';
-import { Driver, ON } from '@kit.TestKit';
+import { Driver, ON, Rect } from '@kit.TestKit';
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -67,7 +67,8 @@ export default function ContentCoverOptionsTest() {
         await CommonFunc.sleep(500);
         await (button.click() as Promise<void>);
         await CommonFunc.sleep(1000);
-        const safeArea = CommonFunc.getComponentRect('SafeArea');
+        const safeAreaButton = await driver.findComponent(ON.id('SafeArea'));
+        const safeArea = await (safeAreaButton?.getBounds() as Promise<Rect>)
         console.info('safeArea_0010 enableSafeArea: ' + JSON.stringify(safeArea));
         console.info('safeArea_0010 top: ' + safeArea.top);
         expect(Math.round(safeArea.top) > 0).assertTrue();

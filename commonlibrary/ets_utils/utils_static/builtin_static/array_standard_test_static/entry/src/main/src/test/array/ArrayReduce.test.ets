@@ -243,7 +243,7 @@ export default function ArrayReduceTest() {
      */
     it('ArrayReduceTest007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [5, 2, 9, 1];
-      const callback = (acc: int, curr: int) => Math.max(acc, curr) as int;
+      const callback = (acc: int, curr: int) => Math.max(acc, curr).toInt();
       const result = arr.reduce(callback);
 
       expect(result).assertEqual(9);
@@ -260,7 +260,7 @@ export default function ArrayReduceTest() {
     it('ArrayReduceTest008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [5, 2, 9, 1];
       const initialValue = 10;
-      const callback = (acc: int, curr: int) => Math.min(acc, curr) as int;
+      const callback = (acc: int, curr: int) => Math.min(acc, curr).toInt();
       const result = arr.reduce(callback, initialValue);
 
       expect(result).assertEqual(1);

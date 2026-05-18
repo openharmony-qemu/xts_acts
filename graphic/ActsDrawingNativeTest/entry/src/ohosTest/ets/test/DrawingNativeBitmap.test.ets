@@ -320,5 +320,57 @@ export default function DrawingNativeBitmapTest() {
       const result = libDrawingNative.DrawingBitmap(21);
       expect(result).assertEqual(0);
     })
+
+    /**
+     * @tc.name   testBitmapGetRowBytesNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_2300
+     * @tc.desc   test for testBitmapGetRowBytesNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testBitmapGetRowBytesNormal', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingBitmap(22);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testBitmapGetRowBytesNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_2400
+     * @tc.desc   test for testBitmapGetRowBytesNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testBitmapGetRowBytesNull', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingBitmap(23);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testBitmapGetRowBytesAbnormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_2500
+     * @tc.desc   test for testBitmapGetRowBytesAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testBitmapGetRowBytesAbnormal', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingBitmap(24);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testBitmapGetRowBytesMultipleCalls
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingBitmap_2600
+     * @tc.desc   test for testBitmapGetRowBytesMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testBitmapGetRowBytesMultipleCalls', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingBitmap(25);
+      expect(result).assertEqual(0);
+    })
   })
 }

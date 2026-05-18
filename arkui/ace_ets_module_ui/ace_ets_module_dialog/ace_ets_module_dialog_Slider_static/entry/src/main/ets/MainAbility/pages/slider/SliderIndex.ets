@@ -94,8 +94,10 @@ struct SliderIndex {
   ]);
 
   private uiContext: UIContext = this.getUIContext();
-  private preNode1: ComponentContent = new ComponentContent(this.uiContext, wrapBuilder(preTextBuilder));
-  private sufNode1: ComponentContent = new ComponentContent(this.uiContext, wrapBuilder(sufTextBuilder));
+  private preNode1: ComponentContent<Object> =
+    new ComponentContent<Object>(this.uiContext, wrapBuilder(preTextBuilder));
+  private sufNode1: ComponentContent<Object> =
+    new ComponentContent<Object>(this.uiContext, wrapBuilder(sufTextBuilder));
 
   aboutToAppear() {
     try {

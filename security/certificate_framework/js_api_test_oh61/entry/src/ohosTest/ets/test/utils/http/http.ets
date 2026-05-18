@@ -80,18 +80,18 @@ export function HttpServer() {
       try {
         // 解析待响应的证书名
         let requestMsg = ArrayBuffer2String(requestInfo.message);
-        let RegExpMatchArrayCert = requestMsg.match("GET /(.*).crt HTTP/1.0");
+        let RegExpMatchArrayCert = requestMsg.match("GET /.*?([^/]*).crt HTTP/1.0");
         if (RegExpMatchArrayCert && RegExpMatchArrayCert?.[1]) {
           downloadFile = RegExpMatchArrayCert?.[1];
           dataDer = OnlineCertMap.map.get(downloadFile);
         }
-        let RegExpMatchArrayCrl = requestMsg.match("GET /(.*).crl HTTP/1.0");
+        let RegExpMatchArrayCrl = requestMsg.match("GET /.*?([^/]*).crl HTTP/1.0");
         if (RegExpMatchArrayCrl && RegExpMatchArrayCrl?.[1]) {
           downloadFile = RegExpMatchArrayCrl?.[1];
           contentType = "application/pkix-crl";
           dataDer = OnlineCrlMap.map.get(downloadFile);
         }
-        let RegExpMatchArrayOcsp = requestMsg.match("POST /ocsp/(.*).crl HTTP/1.0");
+        let RegExpMatchArrayOcsp = requestMsg.match("POST /ocsp/.*?([^/]*).crl HTTP/1.0");
         if (RegExpMatchArrayOcsp && RegExpMatchArrayOcsp?.[1]) {
           downloadFile = RegExpMatchArrayOcsp?.[1];
           contentType = "application/ocsp-response";

@@ -889,26 +889,6 @@ export default function ArrayTest() {
     });
 
     /**
-     * @tc.number    SUB_ARRAY_CREATE_TEST_0300
-     * @tc.name      testArrayCreate003
-     * @tc.desc      Test the function of the interface ArrayCreate
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
-     */
-    it("testArrayCreate003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const TAG: string = 'testArrayCreate003';
-      try {
-        let array = Array.create<number>(-5, 0);
-      } catch (err) {
-        if (err instanceof BusinessError) {
-          console.error(`Expected error caught: ${err.message}`);
-          expect(err.message).assertEqual('size = -5');
-        }
-      }
-    });
-
-    /**
      * @tc.number    SUB_ARRAY_CREATE_TEST_0400
      * @tc.name      testArrayCreate004
      * @tc.desc      Test the function of the interface ArrayCreate

@@ -57,6 +57,14 @@ import {
   CHAIN_GIT_CODE_INTER_PEM,
   CHAIN_GIT_CODE_LEAF_PEM,
   CHAIN_GIT_CODE_ROOT_PEM,
+  CHAIN_SM2_3_1_PEM,
+  CHAIN_SM2_3_3_PEM,
+  CHAIN_SM2_8_1_PEM,
+  CHAIN_SM2_8_7_PEM,
+  CHAIN_SM2_8_8_PEM,
+  CHAIN_SM2_DEFAULT_3_1_PEM,
+  CHAIN_SM2_DEFAULT_3_2_PEM,
+  CHAIN_SM2_DEFAULT_3_3_PEM,
 } from "./utils/chain/chain";
 
 
@@ -1015,6 +1023,130 @@ export default function certFrameworkCertAllowDownloadInterCaTestUnit() {
         } catch (error) {
           console.error(`[XTS] Allow_Download_Inter_CA_Func_2600 “${error}“, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CERT_HAS_EXPIRED);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2700
+     * @tc.number SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2700
+     * @tc.desc   完整校验，设置待校验实体证书，信任根证书，开启下载中间证书的能力，设置SM2用户ID参数的功能测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2700",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        try {
+          let algName: string = "PKIX";
+          let rootCert: cert.X509Cert = await createX509CertPem(CHAIN_SM2_3_3_PEM);
+          let entryCert: cert.X509Cert = await createX509CertPem(CHAIN_SM2_3_1_PEM);
+          let validatorParams: cert.X509CertValidatorParams = {
+            trustedCerts: [rootCert],
+            userId: new Uint8Array([ // 01234567890123456789
+              0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39,
+              0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39
+            ]),
+            allowDownloadIntermediateCa: true
+          };
+          let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
+          let chainResult: cert.VerifyCertResult = await validator.validate(entryCert, validatorParams);
+          expect(chainResult.certChain.length).assertEqual(3);
+        } catch (error) {
+          console.error(`"${error}", error code: ${error.code}`);
+          expect(null).assertFail();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2800
+     * @tc.number SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2800
+     * @tc.desc   完整校验，设置待校验实体证书，信任根证书，开启下载中间证书的能力，最多下载5次功能测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2800",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        try {
+          let algName: string = "PKIX";
+          let rootCert: cert.X509Cert = await createX509CertPem(CHAIN_SM2_8_8_PEM);
+          let inter1Cert: cert.X509Cert = await createX509CertPem(CHAIN_SM2_8_7_PEM);
+          let entryCert: cert.X509Cert = await createX509CertPem(CHAIN_SM2_8_1_PEM);
+          let validatorParams: cert.X509CertValidatorParams = {
+            trustedCerts: [rootCert],
+            untrustedCerts: [inter1Cert],
+            allowDownloadIntermediateCa: true
+          };
+          let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
+          let chainResult: cert.VerifyCertResult = await validator.validate(entryCert, validatorParams);
+          expect(chainResult.certChain.length).assertEqual(8);
+        } catch (error) {
+          console.error(`"${error}", error code: ${error.code}`);
+          expect(null).assertFail();
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2900
+     * @tc.number SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2900
+     * @tc.desc   完整校验，设置待校验实体证书，信任根证书，开启下载中间证书的能力，超过5次下载的功能测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_Security_Cert_Framework_Allow_Download_Inter_CA_Func_2900",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        try {
+          let algName: string = "PKIX";
+          let rootCert: cert.X509Cert = await createX509CertPem(CHAIN_SM2_8_8_PEM);
+          let entryCert: cert.X509Cert = await createX509CertPem(CHAIN_SM2_8_1_PEM);
+          let validatorParams: cert.X509CertValidatorParams = {
+            trustedCerts: [rootCert],
+            allowDownloadIntermediateCa: true
+          };
+          let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
+          await validator.validate(entryCert, validatorParams);
+          expect(null).assertFail();
+        } catch (error) {
+          console.error(`"${error}", error code: ${error.code}`);
+          expect(error.code).assertEqual(cert.CertResult.ERR_UNABLE_TO_GET_ISSUER_CERT_LOCALLY);
+        }
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_Security_Cert_Framework_New_Chain_Func_6600
+     * @tc.number SUB_Security_Cert_Framework_New_Chain_Func_6600
+     * @tc.desc   完整校验，设置待校验实体证书，不信任中间证书，信任根证书，开启CRL吊销检查且允许下载CRL的功能测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_Security_Cert_Framework_New_Chain_Func_6600",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        try {
+          let algName: string = "PKIX";
+          let rootDefaultX509CertGm: cert.X509Cert = await createX509CertPem(CHAIN_SM2_DEFAULT_3_3_PEM);
+          let interDefaultX509CertGm: cert.X509Cert = await createX509CertPem(CHAIN_SM2_DEFAULT_3_2_PEM);
+          let leafDefaultX509CertGm: cert.X509Cert = await createX509CertPem(CHAIN_SM2_DEFAULT_3_1_PEM);
+          let validatorParams: cert.X509CertValidatorParams = {
+            trustedCerts: [rootDefaultX509CertGm],
+            untrustedCerts: [interDefaultX509CertGm],
+            revokedParams: {
+              revocationFlags: [cert.CertRevocationFlag.CERT_REVOCATION_CRL_CHECK],
+              crls: [],
+              allowDownloadCrl: true
+            }
+          };
+          let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
+          await validator.validate(leafDefaultX509CertGm, validatorParams);
+          expect(null).assertFail();
+        } catch (error) {
+          console.error(`"${error}", error code: ${error.code}`);
+          expect(error.code).assertEqual(cert.CertResult.ERR_CERT_HAS_REVOKED);
         }
         done();
       });

@@ -18,8 +18,12 @@ group("officeservice") {
   if (is_standard_system) {
     deps = [
       "ActsObjectEditorDocumentTest:ActsObjectEditorDocumentTest",
+      "ActsObjectEditorDocumentTestTwo:ActsObjectEditorDocumentTwoTest",
+      "ActsObjectEditorDocumentTestThree:ActsObjectEditorDocumentThreeTest",
+      "ActsObjectEditorEnumTest:ActsObjectEditorEnumTest",
       "ActsObjectEditorExtensionTest:ActsObjectEditorExtensionTest",
       "ActsObjectEditorProxyTest:ActsObjectEditorProxyTest",
+      "ActsObjectEditorProxyTestTwo:ActsObjectEditorProxyTwoTest",
     ]
   }
 }

@@ -655,8 +655,10 @@ static void CheckAttributeOnMainThread(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_Nod
     // 视效属性  NODE_CUSTOM_SHADOW
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NODE_CUSTOM_SHADOW", " CheckAttributeOnMainThread 55");
     if (withReset) {
-        ArkUI_NumberValue column_customShadow_value[] = { { .f32 = 0.0f }, { .i32 = 0 }, { .f32 = 0.0f }, { .f32 = 0.0f },
-                                                          { .i32 = 0 }, { .u32 = 0 }, { .u32 = 0 } };
+        ArkUI_NumberValue column_customShadow_value[] = {
+            { .f32 = -1.0f }, { .i32 = 0 }, { .f32 = 0.0f }, { .f32 = 0.0f },
+            { .i32 = 0 }, { .u32 = 0 }, { .u32 = 0 }
+        };
         ArkUI_AttributeItem column_customShadow_item = { column_customShadow_value,
                                                        sizeof(column_customShadow_value) / sizeof(ArkUI_NumberValue) };
         CheckSwiperAttrForMainThread(nodeAPI, item, NODE_CUSTOM_SHADOW, &column_customShadow_item);
@@ -1557,8 +1559,10 @@ static void SetAttribute(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_NodeHandle item, 
     CheckSwiperAttr(nodeAPI, item, NODE_CUSTOM_SHADOW, &column_customShadow_item);
     if (withReset) {
         nodeAPI->resetAttribute(item, NODE_CUSTOM_SHADOW);
-        ArkUI_NumberValue column_customShadow_value[] = { { .f32 = 0.0f }, { .i32 = 0 }, { .f32 = 0.0f }, { .f32 = 0.0f },
-                                                      { .i32 = ARKUI_SHADOW_TYPE_COLOR }, { .u32 = 0 }, { .u32 = 0 } };
+        ArkUI_NumberValue column_customShadow_value[] = {
+            { .f32 = -1.0f }, { .i32 = 0 }, { .f32 = 0.0f }, { .f32 = 0.0f },
+            { .i32 = ARKUI_SHADOW_TYPE_COLOR }, { .u32 = 0 }, { .u32 = 0 }
+        };
         ArkUI_AttributeItem column_customShadow_item = { column_customShadow_value,
                                                    sizeof(column_customShadow_value) / sizeof(ArkUI_NumberValue) };
         CheckSwiperAttr(nodeAPI, item, NODE_CUSTOM_SHADOW, &column_customShadow_item);

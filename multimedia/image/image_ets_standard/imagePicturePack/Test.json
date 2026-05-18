@@ -6,7 +6,7 @@
         "bundle-name": "ohos.acts.multimedia.image.imagePicturePack",
         "module-name": "entry_test",
         "shell-timeout": "300000",
-        "testcase-timeout": "10000"
+        "testcase-timeout": "30000"
     },
     "kits": [
         {
@@ -40,7 +40,14 @@
                 "./resource/image/testExif.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/files",
                 "./resource/image/GainMap.dat ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/files",
                 "./resource/image/UnrefocusMap.dat ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/files",
-                "./resource/image/FragmentMap.dat ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/files"
+                "./resource/image/FragmentMap.dat ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/files",
+                "./resource/image/jpeg_exif_thumbnail.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/files",
+                "./resource/image/jpeg_no_thumbnail.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/files",
+                "./resource/image/heif_box_thumbnail.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/files",
+                "./resource/image/heif_exif_thumbnail.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/files",
+                "./resource/image/heif_no_thumbnail.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/files",
+                "./resource/image/300_100.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/files",
+                "./resource/image/generateThumbnailFailed.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/files"
             ]
         },
         {

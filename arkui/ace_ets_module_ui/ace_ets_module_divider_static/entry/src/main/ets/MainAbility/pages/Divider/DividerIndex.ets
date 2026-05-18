@@ -1,4 +1,5 @@
 'use static';
+
 /**
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,9 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+ 
 import {
   Entry,
-  Component,
+  Component,ColumnOptions,
   Column,
   Scroll,
   Divider,
@@ -38,63 +40,78 @@ struct DividerIndex {
   }
 
   build() {
-    Scroll() {
-      Column() {
+      Column({space:1} as ColumnOptions) {
         Text('Divider default')
+          .height(10)
         Divider()
           .id('dividerDefault').key('dividerDefault')
-          .width('100%')
+          .width(180)
+          .height(7)
 
         Text('Divider vertical true')
+          .height(10)
         Divider()
           .vertical(true)
           .id('dividerVerticalTrue').key('dividerVerticalTrue')
-          .height('50vp')
+          .width(180)
+          .height(7)
 
         Text('Divider vertical false')
+          .height(10)
         Divider()
           .vertical(false)
           .id('dividerVerticalFalse').key('dividerVerticalFalse')
-          .width('100%')
+          .width(180)
+          .height(7)
 
         Text('Divider color red')
+          .height(10)
         Divider()
           .color('#FF0000')
           .id('dividerColorRed').key('dividerColorRed')
-          .width('100%')
+          .width(180)
+          .height(7)
 
         Text('Divider strokeWidth 5')
+          .height(10)
         Divider()
           .strokeWidth(5)
           .id('dividerStrokeWidth5').key('dividerStrokeWidth5')
-          .width('100%')
+          .width(180)
+          .height(7)
 
         Text('Divider strokeWidth 10px')
+          .height(10)
         Divider()
           .strokeWidth('10px')
           .id('dividerStrokeWidth10px').key('dividerStrokeWidth10px')
-          .width('100%')
+          .width(180)
+          .height(7)
 
         Text('Divider lineCap Butt')
+          .height(10)
         Divider()
           .lineCap(LineCapStyle.Butt)
           .id('dividerLineCapButt').key('dividerLineCapButt')
-          .width('100%')
+          .width(180)
+          .height(7)
 
         Text('Divider lineCap Round')
+          .height(10)
         Divider()
           .lineCap(LineCapStyle.Round)
           .id('dividerLineCapRound').key('dividerLineCapRound')
-          .width('100%')
+          .width(180)
+          .height(7)
 
         Text('Divider lineCap Square')
+          .height(10)
         Divider()
           .lineCap(LineCapStyle.Square)
           .id('dividerLineCapSquare').key('dividerLineCapSquare')
-          .width('100%')
-      }
-      .width('100%')
-      .padding({ top: '2%', bottom: '2%', left: '2%', right: '2%' })
+          .width(180)
+          .height(7)
+
     }
     .width('100%')
     .height('100%')

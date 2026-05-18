@@ -80,8 +80,8 @@ namespace ArkUICapiTest {
             nodeAPI->setAttribute(image, NODE_ID, &id_item);
             id_item.string = "dragArea";
             nodeAPI->setAttribute(dragArea, NODE_ID, &id_item);
-            nodeAPI->addChild(Column, image);
             nodeAPI->addChild(Column, dragArea);
+            nodeAPI->addChild(Column, image);
             nodeAPI->registerNodeEventReceiver(&OnEventReceive);
  
         std::string id(xComponentID);

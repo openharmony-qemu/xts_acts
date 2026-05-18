@@ -37,7 +37,7 @@ import emitter from '@ohos.events.emitter';
 import { Callback, RecordData } from '@ohos.base'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 

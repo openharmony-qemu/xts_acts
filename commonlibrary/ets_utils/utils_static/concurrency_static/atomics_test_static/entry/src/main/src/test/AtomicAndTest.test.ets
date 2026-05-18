@@ -236,7 +236,7 @@ export default function atomicsAndTest() {
       // Simulate concurrent bit clearing
       const clearBit = (bit: number) => {
         const mask = ~(1 << bit);
-        Atomics.and(view, 0, mask as long);
+        Atomics.and(view, 0, mask.toLong());
       };
 
       // Clear bits 0-4
@@ -509,7 +509,7 @@ export default function atomicsAndTest() {
       const sab = new ArrayBuffer(4);
       const ia = new Int32Array(sab);
       ia[0] = 0b1111;
-      const result = Atomics.and(ia, 0, 5.9 as long);
+      const result = Atomics.and(ia, 0, 5.9.toLong());
       expect(result).assertEqual(15);
       expect(ia[0]).assertEqual(5);
     });
@@ -578,7 +578,7 @@ export default function atomicsAndTest() {
       const sab = new ArrayBuffer(4);
       const ia = new Int32Array(sab);
       ia[0] = 25; // 0x00000019
-      const result = Atomics.and(ia, 0, NaN as long); // NaN → 0
+      const result = Atomics.and(ia, 0, NaN.toLong()); // NaN → 0
       expect(result).assertEqual(25);
       expect(ia[0]).assertEqual(0); // 25 & 0 = 0
     });
@@ -644,7 +644,7 @@ export default function atomicsAndTest() {
       ia[0] = 42;
       // Explicitly convert empty string to number to avoid TypeScript type error
       const mask = Number('');
-      const result = Atomics.and(ia, 0, mask as long);
+      const result = Atomics.and(ia, 0, mask.toLong());
       expect(result).assertEqual(42);
       expect(ia[0]).assertEqual(0);
     });
@@ -662,7 +662,7 @@ export default function atomicsAndTest() {
       ia[0] = 17;
       // Convert non-numeric string to number (results in NaN, then coerced to 0 in bitwise ops)
       const mask = Number('test');
-      const result = Atomics.and(ia, 0, mask as long);
+      const result = Atomics.and(ia, 0, mask.toLong());
       expect(result).assertEqual(17);
       expect(ia[0]).assertEqual(0);
     });
@@ -680,7 +680,7 @@ export default function atomicsAndTest() {
       ua[0] = 0x12345678;
       // Convert hex string to number with explicit radix
       const mask = parseInt('0xFFFF0000', 16);
-      const result = Atomics.and(ua, 0, mask as long);
+      const result = Atomics.and(ua, 0, mask.toLong());
       expect(result).assertEqual(0x12345678);
       expect(ua[0]).assertEqual(0x12340000);
     });
@@ -698,7 +698,7 @@ export default function atomicsAndTest() {
       ia[0] = 63;
       // Convert octal string to number with explicit radix
       const mask = parseInt('0o17', 8);
-      const result = Atomics.and(ia, 0, mask as long);
+      const result = Atomics.and(ia, 0, mask.toLong());
       expect(result).assertEqual(63);
       expect(ia[0]).assertEqual(0);
     });
@@ -716,7 +716,7 @@ export default function atomicsAndTest() {
       ia[0] = 27;
       // Convert binary string to number with explicit radix
       const mask = parseInt('0b10101', 2);
-      const result = Atomics.and(ia, 0, mask as long);
+      const result = Atomics.and(ia, 0, mask.toLong());
       expect(result).assertEqual(27);
       expect(ia[0]).assertEqual(0);
     });
@@ -770,7 +770,7 @@ export default function atomicsAndTest() {
       ia[0] = 55;
       // Convert null to number (results in 0) to avoid TypeScript error
       const mask = Number(null);
-      const result = Atomics.and(ia, 0, mask as long);
+      const result = Atomics.and(ia, 0, mask.toLong());
       expect(result).assertEqual(55);
       expect(ia[0]).assertEqual(0);
     });
@@ -788,7 +788,7 @@ export default function atomicsAndTest() {
       ia[0] = 72;
       // Convert undefined to number (results in NaN, coerced to 0 in bitwise ops)
       const mask = Number(undefined);
-      const result = Atomics.and(ia, 0, mask as long);
+      const result = Atomics.and(ia, 0, mask.toLong());
       expect(result).assertEqual(72);
       expect(ia[0]).assertEqual(0);
     });
@@ -806,7 +806,7 @@ export default function atomicsAndTest() {
       ua[0] = 99;
       // Convert object to number (results in NaN, coerced to 0 in bitwise ops)
       const mask = Number(NaN); //Number({});
-      const result = Atomics.and(ua, 0, mask as long);
+      const result = Atomics.and(ua, 0, mask.toLong());
       expect(result).assertEqual(99);
       expect(ua[0]).assertEqual(0);
     });
@@ -824,7 +824,7 @@ export default function atomicsAndTest() {
       ia[0] = 105;
       // Convert array to number (results in NaN, coerced to 0 in bitwise ops)
       const mask = Number(0) //Number([1, 2, 3]);
-      const result = Atomics.and(ia, 0, mask as long);
+      const result = Atomics.and(ia, 0, mask.toLong());
       expect(result).assertEqual(105);
       expect(ia[0]).assertEqual(0);
     });
@@ -842,7 +842,7 @@ export default function atomicsAndTest() {
       ia[0] = 121;
       // Convert function to number (results in NaN, coerced to 0 in bitwise ops)
       const mask = Number(NaN) //Number(() => {      });
-      const result = Atomics.and(ia, 0, mask as long);
+      const result = Atomics.and(ia, 0, mask.toLong());
       expect(result).assertEqual(121);
       expect(ia[0]).assertEqual(0);
     });
@@ -859,7 +859,7 @@ export default function atomicsAndTest() {
       const ia16 = new Int16Array(sab);
       ia16[0] = 0x7FFF; // Max Int16 value
       const mask: int = 0x00FF; // 8-bit mask
-      const result = Atomics.and(ia16, 0, mask as long);
+      const result = Atomics.and(ia16, 0, mask.toLong());
       expect(result).assertEqual(32767);
       expect(ia16[0]).assertEqual(255);
     });
@@ -876,7 +876,7 @@ export default function atomicsAndTest() {
       const ua16 = new Uint16Array(sab);
       ua16[0] = 0xFFFF; // Max Uint16 value
       const mask: int = 0x0F0F; // 16-bit mask
-      const result = Atomics.and(ua16, 0, mask as long);
+      const result = Atomics.and(ua16, 0, mask.toLong());
       expect(result).assertEqual(65535);
       expect(ua16[0]).assertEqual(3855);
     });
@@ -893,7 +893,7 @@ export default function atomicsAndTest() {
       const ia8 = new Int8Array(sab);
       ia8[0] = -1; // 0xFF in 8-bit two's complement
       const mask: int = 0x0F; // 4-bit mask
-      const result = Atomics.and(ia8, 0, mask as long);
+      const result = Atomics.and(ia8, 0, mask.toLong());
       expect(result).assertEqual(-1);
       expect(ia8[0]).assertEqual(15);
     });
@@ -910,7 +910,7 @@ export default function atomicsAndTest() {
       const ua8 = new Uint8Array(sab);
       ua8[0] = 0xFF; // Max Uint8 value
       const mask: int = 0xAA; // 8-bit mask (10101010)
-      const result = Atomics.and(ua8, 0, mask as long);
+      const result = Atomics.and(ua8, 0, mask.toLong());
       expect(result).assertEqual(255);
       expect(ua8[0]).assertEqual(170);
     });
@@ -945,7 +945,7 @@ export default function atomicsAndTest() {
       ia[0] = 30; // 0b11110
       // Async wrapper with Promise.resolve
       const asyncAnd = async (arr: Int32Array, idx: int, mask: number): Promise<long> => {
-        return Promise.resolve(Atomics.and(arr, idx as int, mask as long));
+        return Promise.resolve(Atomics.and(arr, idx as int, mask.toLong()));
       };
       const result: long = await asyncAnd(ia, 0,
         0b10101); // 21
@@ -1154,7 +1154,7 @@ export default function atomicsAndTest() {
         return value * 2; // Mask = 25 * 2 = 50
       };
       const mask = await preProcess(25);
-      const result = await Promise.resolve(Atomics.and(ia, 0, mask as long));
+      const result = await Promise.resolve(Atomics.and(ia, 0, mask.toLong()));
       expect(result).assertEqual(25);
       expect(ia[0]).assertEqual(16);
     });
@@ -1248,11 +1248,11 @@ export default function atomicsAndTest() {
 
       // First sequential Atomics.and call
       const mask1 = await getDynamicMask(1);
-      const result1 = Atomics.and(ia, 0, mask1 as long);
+      const result1 = Atomics.and(ia, 0, mask1.toLong());
 
       // Second sequential Atomics.and call
       const mask2 = await getDynamicMask(2);
-      const result2 = Atomics.and(ia, 0, mask2 as long);
+      const result2 = Atomics.and(ia, 0, mask2.toLong());
 
       expect(result1).assertEqual(63);
       expect(result2).assertEqual(48); // Old value after first call: 63 & 48 = 48
@@ -1281,7 +1281,7 @@ export default function atomicsAndTest() {
 
       // Get mask asynchronously and execute Atomics.and
       const mask = await fetchMask();
-      const result = Atomics.and(ia, 0, mask as long);
+      const result = Atomics.and(ia, 0, mask.toLong());
 
       expect(result).assertEqual(40);
       expect(ia[0]).assertEqual(40); // 40 & 47 = 40
@@ -1351,7 +1351,7 @@ export default function atomicsAndTest() {
       // Async loop: delay → execute Atomics.and → store result
       for (const mask of masks) {
         await delay(2);
-        const res = Atomics.and(ia, 0, mask as long);
+        const res = Atomics.and(ia, 0, mask.toLong());
         results.push(res);
       }
 
@@ -1385,7 +1385,7 @@ export default function atomicsAndTest() {
             resolve(undefined)
           }, 3)
         });
-        return Atomics.and(arr, idx as int, mask as long);
+        return Atomics.and(arr, idx.toInt(), mask.toLong());
       };
 
       // Execute async wrapper and assert results
@@ -1453,7 +1453,7 @@ export default function atomicsAndTest() {
           if (isNaN(validMask)) {
             throw new Error('Invalid mask (NaN)');
           }
-          return Atomics.and(arr, idx as int, validMask as long);
+          return Atomics.and(arr, idx.toInt(), validMask.toLong());
         } catch (err) {
           if (retries > 0) {
             await new Promise<void>((resolve) => {
@@ -1558,7 +1558,7 @@ export default function atomicsAndTest() {
           }, 2)
         });
         const mask: int = attempt === 0 ? 0xFFFF : 0x0FFF; // Dynamic mask per attempt
-        const result: number = Atomics.and(ia16, 0, mask as long);
+        const result: number = Atomics.and(ia16, 0, mask.toLong());
         attempt++;
 
         // Retry if result is not expected (first attempt result: 32767)
@@ -1659,7 +1659,7 @@ export default function atomicsAndTest() {
           });
           // Closure accesses outer function's initialVal
           const mask: int = initialVal > 40 ? 0b101111 : 0b001111;
-          return Atomics.and(ia, 0, mask as long);
+          return Atomics.and(ia, 0, mask.toLong());
         };
       };
 
@@ -1695,7 +1695,7 @@ export default function atomicsAndTest() {
       };
 
       const mask = await calculateMask(ua16);
-      const result = Atomics.and(ua16, 0, mask as long);
+      const result = Atomics.and(ua16, 0, mask.toLong());
 
       expect(result).assertEqual(65535);
       expect(ua16[0]).assertEqual(255); // 65535 & 0x00FF = 255
@@ -1757,7 +1757,7 @@ export default function atomicsAndTest() {
               resolve(undefined)
             }, 2)
           });
-          const oldVal = Atomics.and(arr, i as int, maskList[i] as long);
+          const oldVal = Atomics.and(arr, i as int, maskList[i].toLong());
           callback(oldVal);
         }
       };
@@ -1875,7 +1875,7 @@ export default function atomicsAndTest() {
         .then((val: number): number => val + 5) // 35
         .then((val: number): number => val % 40); // 35
 
-      const result = Atomics.and(ia, 0, mask as long);
+      const result = Atomics.and(ia, 0, mask.toLong());
       expect(result).assertEqual(50);
       expect(ia[0]).assertEqual(34); // 50 & 35 = 10
     });
@@ -1928,7 +1928,7 @@ export default function atomicsAndTest() {
           }, 3)
         });
         const mask: number = useHighMask ? 0xFFFF0000 : 0x0000FFFF;
-        return Atomics.and(ua32, 0, mask as long);
+        return Atomics.and(ua32, 0, mask.toLong());
       };
 
       const result = await asyncConditionalAnd(true);
@@ -2028,7 +2028,7 @@ export default function atomicsAndTest() {
       };
 
       const mask = await validateMask(0b10101010); // 170
-      const result = Atomics.and(ua8, 0, mask as long);
+      const result = Atomics.and(ua8, 0, mask.toLong());
 
       expect(result).assertEqual(200);
       expect(ua8[0]).assertEqual(136);
@@ -2117,7 +2117,7 @@ export default function atomicsAndTest() {
         });
         const idx: int = useIndex1 ? 1 : 0;
         const mask: int = useIndex1 ? 150 : 50;
-        return Atomics.and(ua32, idx as int, mask as long);
+        return Atomics.and(ua32, idx as int, mask.toLong());
       };
 
       const result = await asyncDynamicIndexAnd(true);
@@ -2152,7 +2152,7 @@ export default function atomicsAndTest() {
       // Nested Promise chain: transform → and → return
       const finalResult = await Promise.resolve(ia[0])
         .then((val: number) => transformValue(val)) // Mask = 18 * 2 = 36
-        .then(mask => Atomics.and(ia, 0, mask as long));
+        .then(mask => Atomics.and(ia, 0, mask.toLong()));
 
       expect(finalResult).assertEqual(18);
       expect(ia[0]).assertEqual(0); // 18 & 36 = 18
@@ -2221,7 +2221,7 @@ export default function atomicsAndTest() {
             resolve(undefined)
           }, 2)
         }); // Simulate async gap
-        const oldVal = Atomics.and(arrays[i], 0, masks[i] as long);
+        const oldVal = Atomics.and(arrays[i], 0, masks[i].toLong());
         oldValues.push(oldVal);
       }
 

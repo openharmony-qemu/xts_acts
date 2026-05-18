@@ -19,7 +19,6 @@ struct Test1 {
   @State resultText: string = 'No result yet';
 
   build() {
-    Text('index:' + this.index)
     NavDestination() {
       Column() {
         Column() {

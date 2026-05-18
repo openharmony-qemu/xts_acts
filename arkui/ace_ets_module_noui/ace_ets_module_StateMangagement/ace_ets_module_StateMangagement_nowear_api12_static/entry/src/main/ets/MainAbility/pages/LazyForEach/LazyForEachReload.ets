@@ -82,7 +82,7 @@ struct ViewHolder {
 
   aboutToDisappear(): void {
     console.info(`ViewHolder: aboutToDisappear(${this.item})`)
-    this.disappearCount++
+    setTimeout(()=>{this.disappearCount++},0)
   }
 
   build() {
@@ -113,7 +113,7 @@ struct WaterFlowDemo {
           }
           .width('100%')
           .height('25%')
-          .backgroundColor(this.colors[(Number(item)%5 as int)])
+          .backgroundColor(this.colors[((Number(item)%5).toInt())])
         }, (item: string) => item)
       }
       .columnsTemplate('1fr 1fr')

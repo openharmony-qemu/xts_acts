@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -697,7 +697,7 @@ export default function IndexedCollections11Test() {
         const TAG = 'testArrayLength0005';
         console.log(TAG + ' start');
 
-        const arr5: number[] = new Array<number>(5);
+        const arr5: number[] = Array.create<number>(5, NaN);
         const result5: boolean = arr5.length === 5;
         expect(result5).assertTrue();
 
@@ -1319,7 +1319,7 @@ export default function IndexedCollections11Test() {
         const TAG = 'testArrayLength0032';
         console.log(TAG + ' start');
 
-        const arr32: number[] = new Array<number>(4);
+        const arr32: number[] = Array.create<number>(4, NaN);
         const result32: boolean = arr32.length === 4;
         expect(result32).assertTrue();
 

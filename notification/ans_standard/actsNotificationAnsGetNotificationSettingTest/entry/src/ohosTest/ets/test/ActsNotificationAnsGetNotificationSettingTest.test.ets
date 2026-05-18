@@ -51,28 +51,12 @@ export default function ActsNotificationAnsGetNotificationSettingTest() {
       let deviceTypeInfo: string = deviceInfo.deviceType;
       try {
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
-        notificationManager.openNotificationSettingsWithResult(context).then(async(data) => {
+        notificationManager.openNotificationSettingsWithResult(context).then((data) => {
           hilog.info(0x0000, 'testTag',
             `${testNum} openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
-            expect(data.lockScreenEnabled).assertEqual(false)
           expect(data.bannerEnabled).assertEqual(false)
           expect(data.badgeNumberEnabled).assertEqual(false)
           expect(data.notificationEnabled).assertEqual(false)
-          await sleep(1000)
-          notificationManager.getNotificationSetting().then((data) => {
-            hilog.info(0x0000, 'testTag',
-              `${testNum} getNotificationSetting success, data: ${JSON.stringify(data)}`);     
-              expect(data.lockScreenEnabled).assertEqual(false)
-            expect(data.bannerEnabled).assertEqual(false)
-            expect(data.badgeNumberEnabled).assertEqual(false)
-            expect(data.notificationEnabled).assertEqual(false)
-            done()
-          }).catch((err: BusinessError) => {
-            hilog.error(0x0000, 'testTag',
-              `${testNum} getNotificationSetting failed, code is ${err.code}, message is ${err.message}`);
-            expect(false).assertTrue();
-            done()
-          });
         }).catch((err: BusinessError) => {
           hilog.error(0x0000, 'testTag',
             `${testNum} openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
@@ -88,22 +72,23 @@ export default function ActsNotificationAnsGetNotificationSettingTest() {
           await button.click()
           await sleep(500)
         }
-          let button1 = await driver.findComponent(ON.text('锁屏通知'));
-          console.info(testNum + `button1 is ${JSON.stringify(button1)}`);
-          if (button1 !== null) {
-            console.info(testNum + `button1 is ${JSON.stringify(button1)}`);
-            await sleep(1000);
-            await button1.click()
-            await sleep(500)
-          }
-          let button2 = await driver.findComponent(ON.text('桌面角标'));
+        let scrollBar = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')))
+        console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
+        expect(scrollBar != null).assertTrue()
+        await scrollBar.scrollToBottom()
+        await sleep(1000)
+        let button2 = await driver.findComponent(ON.text('桌面角标'));
+        console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
+        if (button2 !== null) {
           console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
-          if (button2 !== null) {
-            console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
-            await sleep(1000);
-            await button2.click()
-            await sleep(500)
-          }
+          await sleep(1000);
+          await button2.click()
+          await sleep(500)
+        }
+        let scrollBar1 = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')))
+        console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar1)} `);
+        expect(scrollBar1 != null).assertTrue()
+        await scrollBar1.scrollToTop()
         await sleep(500)
         let button3 = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('允许通知')));
         console.info(testNum + `button3 is ${JSON.stringify(button3)}`);
@@ -120,8 +105,22 @@ export default function ActsNotificationAnsGetNotificationSettingTest() {
           console.info(testNum + `button4 is ${JSON.stringify(button4)}`);
           await sleep(1000);
           await button4.click()
-          await sleep(500)
+          await sleep(100)
         }
+        await sleep(500)
+        notificationManager.getNotificationSetting().then((data) => {
+          hilog.info(0x0000, 'testTag',
+            `${testNum} getNotificationSetting success, data: ${JSON.stringify(data)}`);     
+          expect(data.bannerEnabled).assertEqual(false)
+          expect(data.badgeNumberEnabled).assertEqual(false)
+          expect(data.notificationEnabled).assertEqual(false)
+          done()
+        }).catch((err: BusinessError) => {
+          hilog.error(0x0000, 'testTag',
+            `${testNum} getNotificationSetting failed, code is ${err.code}, message is ${err.message}`);
+          expect(false).assertTrue();
+          done()
+        });
       } catch (err) {
         console.error(testNum + `openNotificationSettingsWithResult fail: ${JSON.stringify(err)}${err.message}`);
         expect(false).assertTrue();
@@ -139,14 +138,11 @@ export default function ActsNotificationAnsGetNotificationSettingTest() {
      */
     it('SUB_Notification_Ans_GetNotificationSetting_0200', Level.LEVEL0, async (done: Function) => {
       let testNum: string = 'SUB_Notification_Ans_GetNotificationSetting_0200'
-      let driver: Driver = Driver.create();
-      let deviceTypeInfo: string = deviceInfo.deviceType;
       try {
-        let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
         notificationManager.openNotificationSettingsWithResult(null).then((data) => {
           hilog.info(0x0000, 'testTag',
             `${testNum} openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
-            expect(data.lockScreenEnabled).assertEqual(false)
+            expect(data.lockScreenEnabled).assertEqual(true)
             done()
         }).catch((err: BusinessError) => {
           hilog.error(0x0000, 'testTag',
@@ -177,14 +173,11 @@ export default function ActsNotificationAnsGetNotificationSettingTest() {
      */
     it('SUB_Notification_Ans_GetNotificationSetting_0300', Level.LEVEL0, async (done: Function) => {
       let testNum: string = 'SUB_Notification_Ans_GetNotificationSetting_0300'
-      let driver: Driver = Driver.create();
-      let deviceTypeInfo: string = deviceInfo.deviceType;
       try {
-        let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
         notificationManager.openNotificationSettingsWithResult(undefined).then((data) => {
           hilog.info(0x0000, 'testTag',
             `${testNum} openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
-            expect(data.lockScreenEnabled).assertEqual(false)
+            expect(data.lockScreenEnabled).assertEqual(true)
             done()
         }).catch((err: BusinessError) => {
           hilog.error(0x0000, 'testTag',

@@ -40,14 +40,6 @@ void DrawingNativeSamplingOptionsTestTearDown()
     std::cout << "DrawingNativeSamplingOptionsTest errorCodeReset after each test case." << std::endl;
 }
 
-/**
- * @tc.name   testSamplingOptionsCreateDestroyDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0100
- * @tc.desc   test for testSamplingOptionsCreateDestroyDestroyNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestSamplingOptionsCreateDestroyDestroyNormal()
 {
     DrawingNativeSamplingOptionsTestSetUp();
@@ -75,14 +67,6 @@ int TestSamplingOptionsCreateDestroyDestroyNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testSamplingOptionsCreateDestroyDestroyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0101
- * @tc.desc   test for testSamplingOptionsCreateDestroyDestroyNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestSamplingOptionsCreateDestroyDestroyNull()
 {
     DrawingNativeSamplingOptionsTestSetUp();
@@ -94,14 +78,6 @@ int TestSamplingOptionsCreateDestroyDestroyNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testSamplingOptionsCreateDestroyDestroyMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0102
- * @tc.desc   test for testSamplingOptionsCreateDestroyDestroyMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestSamplingOptionsCreateDestroyDestroyMultipleCalls()
 {
     DrawingNativeSamplingOptionsTestSetUp();
@@ -134,14 +110,6 @@ int TestSamplingOptionsCreateDestroyDestroyMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testSamplingOptionsCopyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0200
- * @tc.desc   test for testSamplingOptionsCopyNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestSamplingOptionsCopyNormal()
 {
     DrawingNativeSamplingOptionsTestSetUp();
@@ -156,14 +124,6 @@ int TestSamplingOptionsCopyNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testSamplingOptionsCopyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0201
- * @tc.desc   test for testSamplingOptionsCopyNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestSamplingOptionsCopyNull()
 {
     DrawingNativeSamplingOptionsTestSetUp();
@@ -176,14 +136,6 @@ int TestSamplingOptionsCopyNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testSamplingOptionsCopyMultiCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SAMPLING_OPTIONS_0202
- * @tc.desc   test for testSamplingOptionsCopyMultiCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestSamplingOptionsCopyMultiCalls()
 {
     DrawingNativeSamplingOptionsTestSetUp();

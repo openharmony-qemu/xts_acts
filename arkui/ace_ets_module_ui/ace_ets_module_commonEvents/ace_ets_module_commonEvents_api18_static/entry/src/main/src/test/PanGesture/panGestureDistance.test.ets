@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -76,15 +76,15 @@ export default function panGestureDistanceTest() {
      */
 it('panGesture_panRecognizer_getDistance_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('panGesture_panRecognizer_getDistance_static_0010 START');
-      let gridRect = CommonFunc.getComponentRectOnScreen('getDistance')
+      let gridRect = await CommonFunc.getComponentRectOnScreen('getDistance')
       let driver = Driver.create()
       await driver.fling({
-        x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`) as Int,
-        y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`) as Int
+        x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`).toInt(),
+        y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt()
       },
         {
-          x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`) as Int,
-          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.3 + gridRect.top}`) as Int
+          x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`).toInt(),
+          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.3 + gridRect.top}`).toInt()
         }, 5, 4000);
       let strJson = inspector.getInspectorByKey('distance1');
       let obj = JSON.parseJsonElement(strJson);
@@ -105,15 +105,15 @@ it('panGesture_panRecognizer_getDistance_static_0010', Level.LEVEL0, async (done
      */
 it('panGesture_panRecognizer_getDistance_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('panGesture_panRecognizer_getDistance_static_0020 START');
-      let gridRect = CommonFunc.getComponentRectOnScreen('getDistance')
+      let gridRect = await CommonFunc.getComponentRectOnScreen('getDistance')
       let driver = Driver.create()
       await driver.fling({
-        x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`) as Int,
-        y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`) as Int
+        x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`).toInt(),
+        y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt()
       },
         {
-          x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`) as Int,
-          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.3 + gridRect.top}`) as Int
+          x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`).toInt(),
+          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.3 + gridRect.top}`).toInt()
         }, 5, 4000);
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('map');
@@ -135,15 +135,15 @@ it('panGesture_panRecognizer_getDistance_static_0020', Level.LEVEL0, async (done
      */
 it('panGesture_panRecognizer_getDistance_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('panGesture_panRecognizer_getDistance_static_0030 START');
-      let gridRect = CommonFunc.getComponentRectOnScreen('modifierGetDistance')
+      let gridRect = await CommonFunc.getComponentRectOnScreen('modifierGetDistance')
       let driver = Driver.create()
       await driver.fling({
-        x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`) as Int,
-        y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`) as Int
+        x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`).toInt(),
+        y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt()
       },
         {
-          x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`) as Int,
-          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.3 + gridRect.top}`) as Int
+          x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`).toInt(),
+          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.3 + gridRect.top}`).toInt()
         }, 5, 4000);
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('modifierMap');

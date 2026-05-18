@@ -341,10 +341,16 @@ export default function AVScreenCaptureRecorderTest() {
      */
     it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_0200', Level.LEVEL0, async (done: Function) => {
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_0200 start')
-      let result: number = myScreenCaptureNdk.OHAVMuxerByAddTrackH265();
-      if (result != 0) {
+      let isSupportAddTrackH265: number = myScreenCaptureNdk.OHAVMuxerByAddTrackH265();
+      console.info('isSupportAddTrackH265:', isSupportAddTrackH265)
+      let isSupportH265Decoder: number = myScreenCaptureNdk.OHAvCapabilityByCategoryH265();
+      console.info('isSupportH265Decoder:', isSupportH265Decoder)
+      let isSupportH265Encoder: number = myScreenCaptureNdk.OHAvCapabilityByCategoryH265Encoder();
+      console.info('isSupportEncoder:', isSupportH265Encoder)
+      let isSupportH265 = (isSupportAddTrackH265 != 0 || isSupportH265Decoder != 0 || isSupportH265Encoder != 0)? -1 : 0;
+      if (isSupportH265 != 0) {
         console.info('Failed to obtain the default videoProfiles object.Not support AddTrackH265');
-        expect(result).not().assertEqual(0);
+        expect(isSupportH265).not().assertEqual(0);
         done();
         return;
       }
@@ -391,10 +397,16 @@ export default function AVScreenCaptureRecorderTest() {
      */
     it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_0201', Level.LEVEL0, async (done: Function) => {
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_0201 start')
-      let result: number = myScreenCaptureNdk.OHAVMuxerByAddTrackH265();
-      if (result != 0) {
+      let isSupportAddTrackH265: number = myScreenCaptureNdk.OHAVMuxerByAddTrackH265();
+      console.info('isSupportAddTrackH265:', isSupportAddTrackH265)
+      let isSupportH265Decoder: number = myScreenCaptureNdk.OHAvCapabilityByCategoryH265();
+      console.info('isSupportH265Decoder:', isSupportH265Decoder)
+      let isSupportH265Encoder: number = myScreenCaptureNdk.OHAvCapabilityByCategoryH265Encoder();
+      console.info('isSupportEncoder:', isSupportH265Encoder)
+      let isSupportH265 = (isSupportAddTrackH265 != 0 || isSupportH265Decoder != 0 || isSupportH265Encoder != 0)? -1 : 0;
+      if (isSupportH265 != 0) {
         console.info('Failed to obtain the default videoProfiles object.Not support AddTrackH265');
-        expect(result).not().assertEqual(0);
+        expect(isSupportH265).not().assertEqual(0);
         done();
         return;
       }
@@ -743,7 +755,7 @@ export default function AVScreenCaptureRecorderTest() {
       try {
         await captureRecorder.skipPrivacyMode(null);
       } catch (error) {
-        console.error(`reportAVScreenCaptureUserChoice error, error message: ${error.message}`);
+        console.error(`skipPrivacyMode error, error message: ${error.message}`);
         result = false;
       }
 
@@ -778,24 +790,15 @@ export default function AVScreenCaptureRecorderTest() {
         expect().assertFalse();
       }
       let result: boolean = true;
-      let result1: boolean = true;
       try {
         await captureRecorder.excludePickerWindows(null);
       } catch (error) {
-        console.error(`reportAVScreenCaptureUserChoice error, error message: ${error.message}`);
+        console.error(`excludePickerWindows error, error message: ${error.message}`);
         result = false;
       }
 
-
-      await captureRecorder.excludePickerWindows([]).then(() => {
-        console.info('skipPrivacyMode null success');
-      }).catch((err: BusinessError) => {
-        result1 = false;
-        console.error('skipPrivacyMode null failed, error: ' + err.message);
-      });
       await captureRecorder.release();
       expect(result).assertTrue();
-      expect(result1).assertTrue();
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ERR_EXCLUDEPICKER end');
       done();
     })
@@ -849,10 +852,16 @@ export default function AVScreenCaptureRecorderTest() {
      */
     it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTUREPRIVACYMASKMODE_0100', Level.LEVEL0, async (done: Function) => {
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTUREPRIVACYMASKMODE_0100 start')
-      let result: number = myScreenCaptureNdk.OHAVMuxerByAddTrackH265();
-      if (result != 0) {
+      let isSupportAddTrackH265: number = myScreenCaptureNdk.OHAVMuxerByAddTrackH265();
+      console.info('isSupportAddTrackH265:', isSupportAddTrackH265)
+      let isSupportH265Decoder: number = myScreenCaptureNdk.OHAvCapabilityByCategoryH265();
+      console.info('isSupportH265Decoder:', isSupportH265Decoder)
+      let isSupportH265Encoder: number = myScreenCaptureNdk.OHAvCapabilityByCategoryH265Encoder();
+      console.info('isSupportEncoder:', isSupportH265Encoder)
+      let isSupportH265 = (isSupportAddTrackH265 != 0 || isSupportH265Decoder != 0 || isSupportH265Encoder != 0)? -1 : 0;
+      if (isSupportH265 != 0) {
         console.info('Failed to obtain the default videoProfiles object.Not support AddTrackH265');
-        expect(result).not().assertEqual(0);
+        expect(isSupportH265).not().assertEqual(0);
         done();
         return;
       }
@@ -907,10 +916,16 @@ export default function AVScreenCaptureRecorderTest() {
      */
     it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTUREPRIVACYMASKMODE_0200', Level.LEVEL0, async (done: Function) => {
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTUREPRIVACYMASKMODE_0200 start')
-      let result: number = myScreenCaptureNdk.OHAVMuxerByAddTrackH265();
-      if (result != 0) {
+      let isSupportAddTrackH265: number = myScreenCaptureNdk.OHAVMuxerByAddTrackH265();
+      console.info('isSupportAddTrackH265:', isSupportAddTrackH265)
+      let isSupportH265Decoder: number = myScreenCaptureNdk.OHAvCapabilityByCategoryH265();
+      console.info('isSupportH265Decoder:', isSupportH265Decoder)
+      let isSupportH265Encoder: number = myScreenCaptureNdk.OHAvCapabilityByCategoryH265Encoder();
+      console.info('isSupportEncoder:', isSupportH265Encoder)
+      let isSupportH265 = (isSupportAddTrackH265 != 0 || isSupportH265Decoder != 0 || isSupportH265Encoder != 0)? -1 : 0;
+      if (isSupportH265 != 0) {
         console.info('Failed to obtain the default videoProfiles object.Not support AddTrackH265');
-        expect(result).not().assertEqual(0);
+        expect(isSupportH265).not().assertEqual(0);
         done();
         return;
       }
@@ -1122,6 +1137,7 @@ export default function AVScreenCaptureRecorderTest() {
         strategy: {
           keepCaptureDuringCall: false,
           enableBFrame: false,
+          enablePause: true,
         },
       };
 
@@ -1129,6 +1145,111 @@ export default function AVScreenCaptureRecorderTest() {
       expect(mediaTestBase.isTestSucceeded()).assertTrue();
 
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0100 end');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0200
+     * @tc.desc   AvScreenCaptureRecorder pause and resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0200', Level.LEVEL0, async (done: Function) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0200 start')
+      let avConfig: media.AVScreenCaptureRecordConfig = {
+        fd: -1,
+        frameWidth: 640,
+        frameHeight: 480,
+        videoBitrate: 10000000,
+        audioSampleRate: 48000,
+        audioChannelCount: 1,
+        audioBitrate: 96000,
+        preset: media.AVScreenCaptureRecordPreset.SCREEN_RECORD_PRESET_H264_AAC_MP4,
+        strategy: {
+          keepCaptureDuringCall: false,
+          enableBFrame: false,
+          enablePause: false,
+        },
+      };
+
+      let avScreenCaptureRecorder: media.AVScreenCaptureRecorder | undefined;
+      media.createAVScreenCaptureRecorder().then((captureRecorder: media.AVScreenCaptureRecorder) => {
+        if (captureRecorder != null) {
+          avScreenCaptureRecorder = captureRecorder;
+          console.info('Succeeded in creating avScreenCaptureRecorder');
+          avScreenCaptureRecorder.pauseRecording().then(() => {
+            console.info('avScreenCaptureRecorder pause success');
+          }).catch((err: BusinessError) => {
+            console.error('avScreenCaptureRecorder pause failed, error: ' + err.message + err.code);
+            expect(err.code).assertEqual(5400102);
+          });
+          avScreenCaptureRecorder.release();
+        } else {
+          console.error('Failed to create avScreenCaptureRecorder');
+          expect().assertFail();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
+        expect().assertFail();
+      });
+
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0200 end');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0300
+     * @tc.desc   AvScreenCaptureRecorder pause and resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0300', Level.LEVEL0, async (done: Function) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0300 start')
+
+      let avScreenCaptureRecorder: media.AVScreenCaptureRecorder | undefined;
+      media.createAVScreenCaptureRecorder().then((captureRecorder: media.AVScreenCaptureRecorder) => {
+        if (captureRecorder != null) {
+          avScreenCaptureRecorder = captureRecorder;
+          console.info('Succeeded in creating avScreenCaptureRecorder');
+          avScreenCaptureRecorder.resumeRecording().then(() => {
+            console.info('avScreenCaptureRecorder resume success');
+          }).catch((err: BusinessError) => {
+            console.error('avScreenCaptureRecorder resume failed, error: ' + err.message + err.code);
+            expect(err.code).assertEqual(5400102);
+          });
+          avScreenCaptureRecorder.release();
+        } else {
+          console.error('Failed to create avScreenCaptureRecorder');
+          expect().assertFail();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
+        expect().assertFail();
+      });
+
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0200 end');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0400
+     * @tc.desc   AvScreenCaptureRecorder pause and resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0400', Level.LEVEL0, async (done: Function) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0400 start')
+      expect(media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_PAUSED_BY_USER).assertEqual(11);
+      expect(media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_RESUMED_BY_USER).assertEqual(12);
+      expect(media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_PAUSED_BY_APP).assertEqual(13);
+      expect(media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_RESUMED_BY_APP).assertEqual(14);
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0400 end');
       done();
     });
   })

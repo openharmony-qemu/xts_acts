@@ -39,12 +39,12 @@ import {
   FadingEdgeOptions
 } from '@ohos.arkui.component'
 import { AttributeModifier, CommonAttribute , ListAttribute} from '@ohos.arkui.component'
-import { State, Observed } from '@ohos.arkui.stateManagement'
+import { State, Observed, Track } from '@ohos.arkui.stateManagement'
 
 // ===================== Modifier 定义 =====================
 @Observed
-class ListModifier implements AttributeModifier<ListAttribute> {
-  @State public barState: BarState | undefined = BarState.On;
+export class ListModifier implements AttributeModifier<ListAttribute> {
+  @Track public barState: BarState | undefined = BarState.On;
 
   applyNormalAttribute(instance: ListAttribute): void {
     instance.scrollBar(this.barState)

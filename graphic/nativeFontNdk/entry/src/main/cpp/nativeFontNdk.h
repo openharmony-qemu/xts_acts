@@ -358,5 +358,20 @@ napi_value OHTextStyleAttriFontEdging0100(napi_env env, napi_callback_info info)
 napi_value OHDrawingReleaseRangeBuffer0100(napi_env env, napi_callback_info info);
 napi_value OHDrawingFontFullDescriptorAttributeId0100(napi_env env, napi_callback_info info);
 napi_value OHDrawingFontFullDescriptorAttributeId0200(napi_env env, napi_callback_info info);
+napi_value OHDrawingSetTypographyStyleAttributeDoubleArray0100(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetTypographyStyleAttributeDoubleArray0100(napi_env env, napi_callback_info info);
+napi_value OHDrawingSetTypographyStyleAttributeDoubleArray0200(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetTypographyStyleAttributeDoubleArray0200(napi_env env, napi_callback_info info);
+napi_value OHDrawingSetTypographyStyleAttributeDoubleArray0300(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetTypographyStyleAttributeDoubleArray0300(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetTypographyStyleAttributeDoubleArray0400(napi_env env, napi_callback_info info);
+napi_value OHDrawingSetTypographyStyleAttributeDoubleArray0400(napi_env env, napi_callback_info info);
+napi_value OHDrawingSetTypographyStyleAttributeDoubleArray0500(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetTypographyStyleAttributeDoubleArray0500(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetTypographyStyleAttributeDoubleArray0600(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetTypographyStyleAttributeDoubleArray0700(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetTypographyStyleAttributeDoubleArray0800(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetTypographyStyleAttributeDoubleArray0900(napi_env env, napi_callback_info info);
+napi_value OHDrawingSetTypographyStyleAttributeDoubleFirstLineHeadIndent0100(napi_env env, napi_callback_info info);
 
 #endif // NATIVEFONTNDK_USELESS_H

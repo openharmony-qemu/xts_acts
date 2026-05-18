@@ -16,6 +16,7 @@ group("ActsAceEtsModuleImageTextTest") {
   testonly = true
   if (ace_engine_feature_wearable) {
     deps = [
+      "ace_c_module_imageText_common:ActsAceCArkUIImageTextCommonTest",
       "ace_ets_module_badge_static:ActsAceEtsModuleBadgeStaticTest",
       "ace_ets_module_imageText_api11_other:ActsAceEtsModuleImageTextApi11OtherTest",
       "ace_ets_module_imageText_api20:ActsAceEtsModuleImageTextApi20Test",
@@ -55,6 +56,7 @@ group("ActsAceEtsModuleImageTextTest") {
     ]
   } else {
     deps = [
+      "ace_c_module_imageText_common:ActsAceCArkUIImageTextCommonTest",
       "ace_ets_module_badge_static:ActsAceEtsModuleBadgeStaticTest",
       "ace_ets_module_imageText_api11_other:ActsAceEtsModuleImageTextApi11OtherTest",
       "ace_ets_module_imageText_api20:ActsAceEtsModuleImageTextApi20Test",

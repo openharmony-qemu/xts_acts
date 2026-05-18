@@ -1139,6 +1139,22 @@ export default function abilityTest() {
       done();
     })
 
+    /**
+     * @tc.number      SUB_MULTIMEDIA_AVSESSION_EXTRAKEY_ENUM_0100
+     * @tc.name        SUB_MULTIMEDIA_AVSESSION_EXTRAKEY_ENUM_0100
+     * @tc.desc        compare all value in ExtraKey to number value
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level2
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_EXTRAKEY_ENUM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
+      console.info(`TestLog: DLNA_DIDL_LITE is ${avSession.ExtraKey.DLNA_DIDL_LITE}`);
+      expect(avSession.ExtraKey.DLNA_DIDL_LITE).assertEqual('DIDL-Lite' as avSession.ExtraKey);
+      console.info(`TestLog: DLNA_CURRENT_URI_METADATA is ${avSession.ExtraKey.DLNA_CURRENT_URI_METADATA}`);
+      expect(avSession.ExtraKey.DLNA_CURRENT_URI_METADATA).assertEqual('CurrentURIMetadata' as avSession.ExtraKey);
+      done();
+    })
+
   })
 }
 

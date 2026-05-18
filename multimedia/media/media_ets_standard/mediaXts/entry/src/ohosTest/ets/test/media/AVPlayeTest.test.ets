@@ -1649,6 +1649,118 @@ async function testMetricsListening01(src: string | media.AVFileDescriptor, test
   });
 }
 
+async function timedMetaDataON(avPlayer: media.AVPlayer, done: Function) {
+  avPlayer.onTimedMetaData((metaData: media.AVTimedMetaData) => {
+    if (metaData) {
+      console.info('onTimedMetaData info: TimedMetaData=' + JSON.stringify(metaData));
+      expect(metaData.start).assertLargerOrEqual(0);
+      expect(metaData.duration).assertLargerOrEqual(0);
+      if (metaData.contents) {
+        console.info('onTimedMetaData contents: ' + JSON.stringify(metaData.contents));
+      }
+      avPlayer.offTimedMetaData();
+    } else {
+      console.info('onTimedMetaData info is null');
+      expect(false).assertTrue();
+      done();
+    }
+  })
+}
+
+function timedMetaDataOFF(avPlayer: media.AVPlayer | null, done: Function, offFunc?: Callback<media.AVTimedMetaData>) {
+  avPlayer?.on('stateChange', async (state, reason) =>{
+    switch (state) {
+      case INITIALIZED:
+        if (!avPlayer) {
+          console.info(`avPlayer is null`);
+          break;
+        }
+        console.info(`case INITIALIZED`);
+        expect(avPlayer.state).assertEqual(INITIALIZED);
+        avPlayer.prepare((err) =>{
+          console.info('case prepare called' + err);
+          if (err != null) {
+            console.error(`case prepare error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          } else if (avPlayer) {
+            console.info('case avPlayer.duration: ' + avPlayer.duration);
+          }
+        });
+        break;
+      case PREPARED:
+        avPlayer?.play();
+        break;
+      case COMPLETED:
+        if (offFunc) {
+          avPlayer?.offTimedMetaData(offFunc);
+        } else {
+          avPlayer?.offTimedMetaData();
+        }
+        avPlayer?.release()
+        break;
+      case RELEASED:
+        avPlayer = null;
+        done();
+        break;
+      case ERROR:
+        expect().assertFail();
+        avPlayer?.release().then(() =>{
+        }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
+        avPlayer = null;
+        break;
+      default:
+        break;
+    }
+  })
+}
+
+async function testTimedMetaDataListening(src: string | media.AVFileDescriptor, testName: string,
+  avPlayer: media.AVPlayer | null, timedMetaDataListening:Function, done: Function) {
+  console.info(`case media source: ${src}`)
+  media.createAVPlayer((err, video) => {
+    console.info(`case media err: ${err}`)
+    if (typeof (video) !== 'undefined') {
+      console.info('case createAVPlayer success');
+      avPlayer = video;
+      timedMetaDataOFF(avPlayer, done);
+      timedMetaDataListening(avPlayer, done);
+      setSource(avPlayer, src, testName);
+    }
+    if (err != null) {
+      console.error(`case createAVPlayer error, errMessage is ${err.message}`);
+      expect().assertFail();
+      done();
+    }
+  });
+}
+
+async function testTimedMetaDataListening01(src: string | media.AVFileDescriptor, testName: string,
+  avPlayer: media.AVPlayer | null, timedMetaDataListening:Function, done: Function) {
+  console.info(`case media source: ${src}`)
+  media.createAVPlayer((err, video) => {
+    console.info(`case media err: ${err}`)
+    if (typeof (video) !== 'undefined') {
+      console.info('case createAVPlayer success');
+      avPlayer = video;
+      timedMetaDataOFF(avPlayer, done, (metaData: media.AVTimedMetaData) => {
+        if (metaData) {
+          console.info('offTimedMetaData info: TimedMetaData=' + JSON.stringify(metaData));
+          expect(metaData.start).assertLargerOrEqual(0);
+          expect(metaData.duration).assertLargerOrEqual(0);
+        }
+      });
+      timedMetaDataListening(avPlayer, done);
+      setSource(avPlayer, src, testName);
+    }
+    if (err != null) {
+      console.error(`case createAVPlayer error, errMessage is ${err.message}`);
+      expect().assertFail();
+      done();
+    }
+  });
+}
+
 export default function AVPlayerTest() {
   describe('AVPlayerLocalTest', () => {
     beforeAll(async () => {
@@ -5415,6 +5527,36 @@ export default function AVPlayerTest() {
         expect().assertFail();
       }
       done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_TIMEDMETADATA_ON_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_TIMEDMETADATA_ON_0100
+     * @tc.desc   Local Video timedMetaData control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_TIMEDMETADATA_ON_0100', Level.LEVEL0, async (done: Function) => {
+      expect(fileDescriptor.fd).assertLarger(0);
+      if (fileDescriptor) {
+        testTimedMetaDataListening(fileDescriptor, "SUB_MULTIMEDIA_MEDIA_VIDEO_TIMEDMETADATA_ON_0100", avPlayer, timedMetaDataON, done);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_TIMEDMETADATA_ON_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_TIMEDMETADATA_ON_0200
+     * @tc.desc   Local Video timedMetaData control test with off callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_TIMEDMETADATA_ON_0200', Level.LEVEL0, async (done: Function) => {
+      expect(fileDescriptor.fd).assertLarger(0);
+      if (fileDescriptor) {
+        testTimedMetaDataListening01(fileDescriptor, "SUB_MULTIMEDIA_MEDIA_VIDEO_TIMEDMETADATA_ON_0200", avPlayer, timedMetaDataON, done);
+      }
     });
   })
 }

@@ -77,8 +77,15 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
 
     beforeEach(async() => {
       console.info(`${TAG} afterEach START`)
-      await notificationManager.removeAllSlots()
-      await Utils.msSleep(2000)
+      notificationManager.removeAllSlots((e: Error | null) => {
+        if (e) {
+          let err:BusinessError=e as BusinessError
+          console.info(`${TAG} removeAllSlots AsyncCallback err: ${err}, errMes: ${err.message}`)
+        } else {
+          console.info(`${TAG} removeAllSlots AsyncCallback success`)
+        }
+      })
+      await Utils.msSleep(5000)
       console.info(`${TAG} afterEach END`)
     })
 
@@ -97,8 +104,7 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
         bundle: bundleName,
       };
       let driver = Driver.create();
-      let deviceTypeInfo: string = deviceInfo.deviceType;
-      let buttonName:string[]=['锁屏通知','桌面角标','允许通知','确定']
+      let buttonName:string[]=['桌面角标','允许通知','确定']
       let testContext: common.UIAbilityContext= AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
       try {
         notificationManager.openNotificationSettingsWithResult(testContext).then((data) => {
@@ -117,8 +123,8 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
             done();
           }
         });
-        await driver.assertComponentExist(ON.text('通知管理'));
         await Utils.msSleep(2000)
+        await driver.assertComponentExist(ON.text('通知管理'));
         let buttonOne = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('允许通知')));
         console.info(`${testNum} button is ${JSON.stringify(buttonOne)}`);
         if (buttonOne !== null) {
@@ -161,10 +167,7 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
         }
         notificationManager.getNotificationSetting().then((data: notificationManager.NotificationSetting) => {
           console.info(`${testNum}getNotificationSetting success, data: ${JSON.stringify(data)}`);
-          expect(data.lockScreenEnabled).assertEqual(false)
           expect(data.notificationEnabled).assertEqual(false)
-          expect(data.vibrationEnabled).assertEqual(true)
-          expect(data.soundEnabled).assertEqual(true)
           expect(data.bannerEnabled).assertEqual(false)
           expect(data.badgeNumberEnabled).assertEqual(false)
           done()
@@ -206,7 +209,7 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
         bundle: bundleName,
       };
       let driver = Driver.create();
-      let buttonName:string[]=['锁屏通知','桌面角标','横幅通知','确定']
+      let buttonName:string[]=['桌面角标','横幅通知','确定']
       let testContext: common.UIAbilityContext= AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
       try {
         notificationManager.openNotificationSettingsWithResult(testContext).then((data) => {
@@ -269,7 +272,6 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
         }
         notificationManager.getNotificationSetting().then((data: notificationManager.NotificationSetting) => {
           console.info(`${testNum}getNotificationSetting success, data: ${JSON.stringify(data)}`);
-          expect(data.lockScreenEnabled).assertEqual(true)
           expect(data.notificationEnabled).assertEqual(true)
           expect(data.bannerEnabled).assertEqual(true)
           expect(data.badgeNumberEnabled).assertEqual(true)

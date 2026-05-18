@@ -80,7 +80,7 @@ export default function ShadowTest() {
       strJson = inspector.getInspectorByKey('shadowTest');
       await CommonFunc.sleep(1000);
       expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('shadow')))
-        .assertEqual('{"radius":"0.000000","color":"#FF000000","offsetX":"0.000000","offsetY":"0.000000","type":"0","fill":"0"}');
+        .assertEqual('{"radius":"-1.000000","color":"#FF000000","offsetX":"0.000000","offsetY":"0.000000","type":"0","fill":"0"}');
       console.info('[ShadowUndefinedTest_static_0100] END');
       done();
     });

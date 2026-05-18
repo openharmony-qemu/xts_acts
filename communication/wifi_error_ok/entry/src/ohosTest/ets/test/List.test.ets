@@ -13,8 +13,9 @@
  * limitations under the License.
  */
 
-import ConnectivityTest from './ConnectivityTest.test'
-
+import ConnectivityTest from './ConnectivityTest.test';
+import EnumValueTest from './EnumvalueTest.test';
 export default function testsuite() {
-  ConnectivityTest()
+  ConnectivityTest();
+  EnumValueTest();
 }

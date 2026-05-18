@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -75,10 +75,10 @@ it('textPickerDialogSelectedAreaTest_static_001', Level.LEVEL0, async (done: () 
       let middle = (top + bottom) / 2
 
       await driver.swipe(
-        Math.round(left + (right - left) / 2) as int,
-        Math.round(top + (bottom - top) / 2) as int,
-        Math.round(left + (right - left) / 2) as int,
-        Math.round(top) as int
+        Math.round(left + (right - left) / 2).toInt(),
+        Math.round(top + (bottom - top) / 2).toInt(),
+        Math.round(left + (right - left) / 2).toInt(),
+        Math.round(top).toInt()
       );
       await Utils.sleep(6000);
 

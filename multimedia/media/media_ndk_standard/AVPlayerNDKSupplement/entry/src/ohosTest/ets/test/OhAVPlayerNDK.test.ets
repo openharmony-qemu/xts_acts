@@ -42,6 +42,8 @@ enum OH_AVErrCode {
   AV_ERR_UNSUPPORTED_FORMAT = 11,
 
   AV_ERR_SUPER_RESOLUTION_NOT_ENABLED = 5410004,
+
+  AV_ERR_SUPER_RESOLUTION_UNSUPPORTED = 5410003,
 }
 const MAX_COUNT = 999999999;
 const VIDEO_RESOURCE_TRACK_COUNT = 2;
@@ -82,16 +84,22 @@ export async function getFile(filepath: string): Promise<media.AVFileDescriptor>
 export default function OhAVPlayerNDKTest() {
   describe('OhAVPlayerNDKTest', () => {
     let fileDescriptor: media.AVFileDescriptor;
+    let fileDescriptor1: media.AVFileDescriptor;
     let twoAudioFileFd: media.AVFileDescriptor;
     let testContext: common.UIAbilityContext;
     let filePath: string;
+    let filePath1: string;
     let fileSize: number;
+    let fileSize1: number;
     beforeAll(async () => {
       console.info("====> OhAVPlayerNDKTest beforeAll case");
       testContext = AppStorage.get('testContext') as common.UIAbilityContext;
       filePath = testContext.filesDir + "/H264_AAC.mp4"
+      filePath1 = testContext.filesDir + "/H265_7680x4320_24fps_8bit.mp4"
       fileDescriptor = await getFile(filePath);
+      fileDescriptor1 = await getFile(filePath1);
       fileSize = fileDescriptor.length as number;
+      fileSize1 = fileDescriptor1.length as number;
       twoAudioFileFd = await getFile(testContext.filesDir + "/H264_AAC_2audio.mp4");
       console.info("====> OhAVPlayerNDKTest beforeAll case end");
     });
@@ -352,6 +360,24 @@ export default function OhAVPlayerNDKTest() {
       await sleep(2000);
       expect(avplayer.checkErrorCode(testResult.userData)).assertEqual(
         OH_AVErrCode.AV_ERR_SUPER_RESOLUTION_NOT_ENABLED);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETTARGETVIDEOWINDOWSIZE_0100
+     * @tc.name   SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETTARGETVIDEOWINDOWSIZE_0100
+     * @tc.desc   Test OH_AVPlayer_SetTargetVideoWindowSize, isEnable false
+     *            testOhAvPlayerNdkSetTargetVideoWindowSize0012
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETTARGETVIDEOWINDOWSIZE_0100', Level.LEVEL0, async (done: Function) => {
+      let testResult: avplayer.NdkAVPlayerResult =
+        avplayer.testSetTargetVideoWindowSizeErr(fileDescriptor1, 1920, 1080, true);
+      await sleep(2000);
+      expect(avplayer.checkErrorCode(testResult.userData)).assertEqual(
+        OH_AVErrCode.AV_ERR_SUPER_RESOLUTION_UNSUPPORTED);
       done();
     });
 

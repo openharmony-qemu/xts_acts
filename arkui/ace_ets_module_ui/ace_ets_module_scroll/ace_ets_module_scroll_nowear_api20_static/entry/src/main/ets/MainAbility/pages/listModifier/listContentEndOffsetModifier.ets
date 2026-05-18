@@ -150,28 +150,28 @@ import { BusinessError } from '@kit.BasicServicesKit'
 
 // 定义不同的 ListModifier 类
 @Observed
-class ListNormalModifier implements AttributeModifier<ListAttribute> {
+export class ListNormalModifier implements AttributeModifier<ListAttribute> {
   applyNormalAttribute(instance: ListAttribute): void {
     instance.contentEndOffset(60);
   }
 }
 
 @Observed
-class ListEmptyModifier implements AttributeModifier<ListAttribute> {
+export class ListEmptyModifier implements AttributeModifier<ListAttribute> {
   applyNormalAttribute(instance: ListAttribute): void {
     instance.contentEndOffset(0);
   }
 }
 
 @Observed
-class ListInvalidModifier implements AttributeModifier<ListAttribute> {
+export class ListInvalidModifier implements AttributeModifier<ListAttribute> {
   applyNormalAttribute(instance: ListAttribute): void {
     instance.contentEndOffset(-30);
   }
 }
 
 @Observed
-class ListExplicitUndefinedModifier implements AttributeModifier<ListAttribute> {
+export class ListExplicitUndefinedModifier implements AttributeModifier<ListAttribute> {
   applyNormalAttribute(instance: ListAttribute): void {
     instance.contentEndOffset(undefined);
   }

@@ -1560,17 +1560,17 @@ let ASY_RSA_KEY_SPEC = [
   [["RSA1024"], ["PRIMES_2", "PRIMES_3"]],
 ]
 
-let ASY_ECC_KEY_SPEC_1 = [
+let ASY_ECC_KEY_SPEC_1: string[] = [
   "ECC224", "ECC256", "ECC384", "ECC521", "ECC_BrainPoolP160r1", "ECC_BrainPoolP160t1",
 ]
 
-let ASY_ECC_KEY_SPEC_2 = [
+let ASY_ECC_KEY_SPEC_2: string[] = [
   "ECC_BrainPoolP192r1", "ECC_BrainPoolP224r1",
   "ECC_BrainPoolP256r1", "ECC_BrainPoolP320r1",
   "ECC_BrainPoolP384r1", "ECC_BrainPoolP512r1",
 ]
 
-let ASY_ECC_KEY_SPEC_3 = [
+let ASY_ECC_KEY_SPEC_3: string[] = [
   "ECC_BrainPoolP192t1", "ECC_BrainPoolP224t1",
   "ECC_BrainPoolP256t1", "ECC_BrainPoolP320t1",
   "ECC_BrainPoolP384t1", "ECC_BrainPoolP512t1",

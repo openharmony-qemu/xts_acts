@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -108,7 +108,7 @@ it('NavigationBindToNestedScrollable_static_0100', Level.LEVEL0, async (done: ()
       let right = scrollBarRect.right;
       let bottom = scrollBarRect.bottom;
       
-      await driver.swipe(Math.round(right - uiContext!.vp2px(11)) as int, Math.round(top + uiContext!.vp2px(12)) as int, Math.round(right - uiContext!.vp2px(11)) as int, Math.round(bottom) as int);
+      await driver.swipe(Math.round(right - uiContext!.vp2px(11)).toInt(), Math.round(top + uiContext!.vp2px(12)).toInt(), Math.round(right - uiContext!.vp2px(11)).toInt(), Math.round(bottom).toInt());
       await driver.delayMs(500)
 
       await driver.assertComponentExist(ON.type('TitleBar'));
@@ -127,7 +127,11 @@ it('NavigationBindToNestedScrollable_static_0100', Level.LEVEL0, async (done: ()
       console.info('NavigationBindToNestedScrollable_0100 tooBarTop1: ', tooBarTop1);
       console.info('NavigationBindToNestedScrollable_0100 tooBarBottom1: ', tooBarBottom1);
 
-      await driver.swipe(Math.round(right - uiContext!.vp2px(11)) as int, Math.round(bottom - uiContext!.vp2px(12)) as int, Math.round(right - uiContext!.vp2px(11)) as int, Math.round(top) as int); //master22
+      await driver.swipe(
+        Math.round(right - uiContext!.vp2px(11)).toInt(), 
+        Math.round(bottom - uiContext!.vp2px(12)).toInt(), 
+        Math.round(right - uiContext!.vp2px(11)).toInt(), 
+        Math.round(top).toInt());
       await driver.delayMs(500)
       let list = await driver.findComponent(ON.type('List'));
       
@@ -136,7 +140,11 @@ it('NavigationBindToNestedScrollable_static_0100', Level.LEVEL0, async (done: ()
       let listRight = listRect.right;
       let listBottom = listRect.bottom;
 
-      await driver.swipe(Math.round(listRight - uiContext!.vp2px(11)) as int, Math.round(listTop + uiContext!.vp2px(12)) as int, Math.round(listRight - uiContext!.vp2px(11)) as int, Math.round(listBottom) as int);
+      await driver.swipe(
+        Math.round(listRight - uiContext!.vp2px(11)).toInt(), 
+        Math.round(listTop + uiContext!.vp2px(12)).toInt(), 
+        Math.round(listRight - uiContext!.vp2px(11)).toInt(), 
+        Math.round(listBottom).toInt());
       await driver.delayMs(500)
 
       let component1 = await driver.findComponent(ON.type('TitleBar').text('pageOne'));

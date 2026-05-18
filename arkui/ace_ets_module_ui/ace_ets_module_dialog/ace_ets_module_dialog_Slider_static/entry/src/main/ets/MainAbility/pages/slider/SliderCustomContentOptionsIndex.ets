@@ -54,7 +54,8 @@ struct SliderCustomContentOptionsIndex {
   @State value2: number = 60;
 
   private uiContext: UIContext = this.getUIContext();
-  private preNode1: ComponentContent = new ComponentContent(this.uiContext, wrapBuilder(preTextBuilder));
+  private preNode1: ComponentContent<Object> =
+    new ComponentContent<Object>(this.uiContext, wrapBuilder(preTextBuilder));
 
   aboutToAppear() {
     try {

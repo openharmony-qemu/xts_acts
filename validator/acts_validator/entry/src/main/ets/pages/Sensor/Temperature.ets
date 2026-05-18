@@ -51,7 +51,7 @@ struct Temperature {
         Logger.info(TAG, `sensorList.length: ${sensorList.length}`);
         if (sensorList.length > 0) {
           Logger.info(TAG, `isMockSensor: ${sensorList[0].isMockSensor}`);
-          if (sensorList[0].isMockSensor == false) {
+          if (sensorList[0].isMockSensor == true) {
             this.isHave = false;
             this.Vue = false;
             promptAction.showToast({

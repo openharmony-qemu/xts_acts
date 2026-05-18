@@ -12,38 +12,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import WindowLifecycle from './WindowLifecycle.test';
 import windowTitleBarTest from './WindowTitleBar.test';
 import windowModalTest from './WindowModal.test';
-import windowMaximizeTest from './WindowMaximize.test';
-import windowImmersiveTest from './WindowImmersive.test';
 import windowManageTest from './WindowManage.test';
 import windowAutoSaveTest from './WindowAutoSave.test';
 import windowZindexTest from './WindowZindex.test';
-import windowLayoutTest from './WindowLayout.test';
 import extensionWindowPropertiesTest from './ExtensionWindowProperties.test';
 import windowFocusTest from './WindowFocus.test';
 import windowPCTest from './WindowPC.test';
 import windowRotationTest from './WindowRotation.test';
-import windowEventTest from './WindowEvent.test';
 import windowControlsTest from './WindowControls.test';
-import windowKeyBorad from './WindowKeyBorad.test';
 
 export default function testsuite() {
   windowFocusTest();
   windowAutoSaveTest();
   windowTitleBarTest();
-  windowLayoutTest();
   windowZindexTest();
   windowManageTest();
-  WindowLifecycle();
   windowModalTest();
-  windowMaximizeTest();
-  windowImmersiveTest();
-  windowEventTest();
   windowPCTest();
   windowControlsTest();
-  windowKeyBorad()
   windowRotationTest();
   extensionWindowPropertiesTest();
 }

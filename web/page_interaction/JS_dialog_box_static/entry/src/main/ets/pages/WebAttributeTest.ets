@@ -41,7 +41,7 @@ import { Driver, PointerMatrix } from '@ohos.UiTest';
 import cert from '@ohos.security.cert';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 

@@ -37,14 +37,6 @@ void DrawingNativeMaskFilterTestTearDown()
     std::cout << "DrawingNativeMaskFilterTest errorCodeReset after each test case." << std::endl;
 }
 
-/**
- * @tc.name   testMaskFilterCreateBlurDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MASK_FILTER_0100
- * @tc.desc   Test for creating and destroying a blur mask filter with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestMaskFilterCreateBlurDestroyNormal()
 {
     DrawingNativeMaskFilterTestSetUp();
@@ -82,14 +74,6 @@ int TestMaskFilterCreateBlurDestroyNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testMaskFilterCreateBlurDestroyNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MASK_FILTER_0101
- * @tc.desc   Test for creating and destroying a blur mask filter with NULL parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestMaskFilterCreateBlurDestroyNULL()
 {
     DrawingNativeMaskFilterTestSetUp();
@@ -102,14 +86,6 @@ int TestMaskFilterCreateBlurDestroyNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testMaskFilterCreateBlurDestroyMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MASK_FILTER_0102
- * @tc.desc   Test for multiple calls of creating and destroying a blur mask filter.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestMaskFilterCreateBlurDestroyMultipleCalls()
 {
     DrawingNativeMaskFilterTestSetUp();
@@ -134,14 +110,6 @@ int TestMaskFilterCreateBlurDestroyMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testMaskFilterCreateBlurDestroyAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MASK_FILTER_0103
- * @tc.desc   Test for creating and destroying a blur mask filter with abnormal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestMaskFilterCreateBlurDestroyAbnormal()
 {
     DrawingNativeMaskFilterTestSetUp();
@@ -153,14 +121,6 @@ int TestMaskFilterCreateBlurDestroyAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testMaskFilterCreateBlurDestroyMaximum
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MASK_FILTER_0104
- * @tc.desc   Test for creating and destroying a blur mask filter with maximum values.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestMaskFilterCreateBlurDestroyMaximum()
 {
     DrawingNativeMaskFilterTestSetUp();

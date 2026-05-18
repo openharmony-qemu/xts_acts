@@ -1336,7 +1336,7 @@ struct restoreIdPage {
   // }
 
   build() {
-    GridRow({ columns: this.columns as Int, gutter: this.gutter }) {
+    GridRow({ columns: this.columns.toInt(), gutter: this.gutter }) {
       Row() {
         if (this.targetView == 'Button') {
           Button('button1')
@@ -1381,7 +1381,7 @@ struct restoreIdPage {
           Marquee({
             start: true,
             step: 50,
-            loop: Infinity as Int,
+            loop: Infinity.toInt(),
             fromStart: true,
             src: 'Running Marquee starts rolling'
           }).commonStyle(this.componentKey)

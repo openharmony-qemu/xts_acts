@@ -51,7 +51,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
 @Observed
-class MyModifier implements AttributeModifier<GridAttribute> {
+export class MyModifier implements AttributeModifier<GridAttribute> {
   public onScrollFrameBeginValue: boolean = true;
   public onDidScrollValue: boolean = true;
   public onReachStartValue: boolean = true;

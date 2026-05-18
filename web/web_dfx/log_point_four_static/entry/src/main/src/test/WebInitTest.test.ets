@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,8 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 let testAbilityContext:common.UIAbilityContext;
-
-export default function webViewContCreatePdfAndOthersError() {
-  describe('ActsAceWebDevWebViewContCreatePdfAndOthersErrorTest', (): void => {
+export default function webInitTest() {
+  describe('webInitTest', (): void => {
     beforeAll(async (): Promise<void> => {
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       abilityDelegator.addAbilityMonitor({
@@ -54,7 +53,6 @@ export default function webViewContCreatePdfAndOthersError() {
     /**
     * @tc.name        testPrefetchPageInitErrStatic
     * @tc.number      SUB_WEB_PREFETCH_PAGE
-    
     * @tc.desc        test interface of prefetchPage with not been associated with specific Web Components
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -94,7 +92,7 @@ export default function webViewContCreatePdfAndOthersError() {
 
     /**
     * @tc.name        testCreateWebPrintDocumentAdapterInitErrStatic
-    * @tc.number      SUB_WEB_CREATE_WEB_PRINT_DOCUMENT_ADAPTER
+    * @tc.number      SUB_WEB_CREATE_WEB_PRINT_DOCUMENT_ADAPTER_ERR
     * @tc.desc        test interface of createWebPrintDocumentAdapter with not been associated with specific Web Components
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -234,7 +232,7 @@ export default function webViewContCreatePdfAndOthersError() {
 
     /**
     * @tc.name        testPauseAllMediaInitErrStatic
-    * @tc.number      SUB_WEB_PAUSE_ALL_MEDIA
+    * @tc.number      SUB_WEB_PAUSE_ALL_MEDIA_001
     * @tc.desc        test interface of pauseAllMedia with not been associated with specific Web Components
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -294,7 +292,7 @@ export default function webViewContCreatePdfAndOthersError() {
 
     /**
     * @tc.name        testPrecompileJavaScriptInitErrStatic
-    * @tc.number      SUB_WEB_PRECOMPILE_JAVA_SCRIPT
+    * @tc.number      SUB_WEB_PRECOMPILE_JAVA_SCRIPT_Err
     * @tc.desc        test interface of precompileJavaScript with not been associated with specific Web Components
     * @tc.size        MediumTest
     * @tc.type        Function
@@ -305,7 +303,6 @@ export default function webViewContCreatePdfAndOthersError() {
       Utils.emitEvent('emitPrecompileJavaScriptInitErr', 10)
       await Utils.msSleep(3000);
       Utils.registerEvent("testPrecompileJavaScriptInitErr", true, 111040, done);
-      // Utils.registerEvent("testPrecompileJavaScriptInitErr", "Init error. The WebviewController must be associated with a Web component", 111050, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webViewContCreatePdfAndOthersErrorButton', 10, '');
       await Utils.msSleep(6000);
@@ -333,14 +330,14 @@ export default function webViewContCreatePdfAndOthersError() {
     })
 
     /**
+    * @tc.name        testGetLastHitTestInitErrStatic
     * @tc.number      SUB_WEB_GET_LAST_HIT_TEST
-    * @tc.name        testGetLastHitTestInitErr
     * @tc.desc        test interface of getLastHitTest with not been associated with specific Web Components
     * @tc.size        MediumTest
     * @tc.type        Function
     * @tc.level       LEVEL0
     */
-    it('testGetLastHitTestInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testGetLastHitTestInitErrStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
       Utils.emitEvent('emitGetLastHitTestInitErr', 10)
       await Utils.msSleep(3000);
@@ -353,14 +350,14 @@ export default function webViewContCreatePdfAndOthersError() {
     })
 
     /**
+    * @tc.name        testGetPageOffsetTestInitErrStatic
     * @tc.number      SUB_WEB_GET_PAGE_OFFSET
-    * @tc.name        testGetPageOffsetTestInitErr
     * @tc.desc        test interface of getPageOffset with not been associated with specific Web Components
     * @tc.size        MediumTest
     * @tc.type        Function
     * @tc.level       LEVEL0
     */
-    it('testGetPageOffsetTestInitErr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testGetPageOffsetTestInitErrStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
       Utils.emitEvent('emitGetPageOffsetTestInitErr', 10)
       await Utils.msSleep(3000);

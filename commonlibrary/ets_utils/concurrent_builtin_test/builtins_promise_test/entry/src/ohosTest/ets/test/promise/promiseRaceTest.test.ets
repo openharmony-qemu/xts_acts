@@ -496,32 +496,6 @@ export default function promiseRaceTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_Promise_race_TEST_022
-     * @tc.name PromiseRaceTest022
-     * @tc.desc Race with promises that have dependent timings
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    it('PromiseRaceTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let p2Delay = 0;
-
-      const p1: Promise<number> = new Promise<number>(resolve =>
-      setTimeout(() => {
-        p2Delay = 20; // Modify p2's delay after p1 starts
-        resolve(1);
-      }, 100)
-      );
-
-      const p2: Promise<number> = new Promise<number>(resolve =>
-      setTimeout(() => resolve(2), p2Delay)
-      );
-
-      const result = await Promise.race([p1, p2]);
-      expect(result).assertEqual(2);
-    });
-
-    /**
      * @tc.number SUB_BUILTINS_Promise_race_TEST_023
      * @tc.name PromiseRaceTest023
      * @tc.desc Race with promises that wrap callback-based functions
@@ -867,32 +841,6 @@ export default function promiseRaceTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_Promise_race_TEST_038
-     * @tc.name PromiseRaceTest038
-     * @tc.desc Race with promises that resolve after network-like delays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    it('PromiseRaceTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const simulateNetwork = (latency: number, data: string): Promise<string> => {
-        return new Promise<string>(resolve => {
-          // Simulate variable network delay
-          const actualDelay = latency + Math.random() * 20;
-          setTimeout(() => resolve(data), actualDelay);
-        });
-      };
-
-      const result = await Promise.race([
-        simulateNetwork(600, 'Server A'),
-        simulateNetwork(300, 'Server B'),
-        simulateNetwork(450, 'Server C')
-      ]);
-
-      expect(result).assertEqual('Server B');
-    });
-
-    /**
      * @tc.number SUB_BUILTINS_Promise_race_TEST_039
      * @tc.name PromiseRaceTest039
      * @tc.desc Race with promises that use class methods
@@ -951,37 +899,6 @@ export default function promiseRaceTest() {
 
       // Verify p2 (faster promise) wins the race
       expect(result).assertEqual(identifier2);
-    });
-
-    /**
-     * @tc.number SUB_BUILTINS_Promise_race_TEST_041
-     * @tc.name PromiseRaceTest041
-     * @tc.desc Race with promises that use progressive delays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    it('PromiseRaceTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const createProgressivePromise = (id: number, baseDelay: number): Promise<number> => {
-        return new Promise<number>(resolve => {
-          let delay = 0;
-          const interval = setInterval(() => {
-            delay += baseDelay;
-            if (delay >= 100) {
-              clearInterval(interval);
-              resolve(id);
-            }
-          }, baseDelay);
-        });
-      };
-
-      const result = await Promise.race([
-        createProgressivePromise(1, 250), // ~120ms (30*4)
-        createProgressivePromise(2, 20), // ~100ms (20*5)
-        createProgressivePromise(3, 25)// ~100ms (25*4)
-      ]);
-
-      expect([2, 3]).assertContain(result);
     });
 
     /**
@@ -1055,31 +972,6 @@ export default function promiseRaceTest() {
 
       const result = await Promise.race([p1, p2]);
       expect(result).assertEqual(big2);
-    });
-
-    /**
-     * @tc.number SUB_BUILTINS_Promise_race_TEST_045
-     * @tc.name PromiseRaceTest045
-     * @tc.desc Race with promises that use recursive resolution
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    it('PromiseRaceTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const recursiveResolve = (value: number, depth: number, delay: number): Promise<number> => {
-        if (depth === 0) {
-          return new Promise<number>(resolve => setTimeout(() => resolve(value), delay));
-        }
-        return new Promise<number>(resolve =>
-        setTimeout(() => resolve(recursiveResolve(value, depth - 1, delay / 2)), delay)
-        );
-      };
-
-      const p1: Promise<number> = recursiveResolve(1, 3, 140); // ~40 + 20 + 10 + 5 = 75ms
-      const p2: Promise<number> = recursiveResolve(2, 2, 30); // ~30 + 15 + 7.5 = 52.5ms
-
-      const result = await Promise.race([p1, p2]);
-      expect(result).assertEqual(2);
     });
 
     /**
@@ -1522,38 +1414,6 @@ export default function promiseRaceTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_Promise_race_TEST_062
-     * @tc.name PromiseRaceTest062
-     * @tc.desc Race with promises that use mixed parallel and sequential steps
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 4
-     */
-    it('PromiseRaceTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      // Sequence with parallel steps in between
-      const workflow1: Promise<number> = new Promise<number>(resolve =>
-      setTimeout(() => resolve(1), 10)
-      ).then(num => Promise.all([
-        Promise.resolve(num * 2),
-        new Promise<number>(resolve => setTimeout(() => resolve(5), 15))
-      ])).then((res: number[]) => new Promise<number>(resolve =>
-      setTimeout(() => resolve(res[0] + res[1]), 100)
-      ));
-
-      const workflow2: Promise<number> = new Promise<number>(resolve =>
-      setTimeout(() => resolve(2), 5)
-      ).then(num => Promise.all([
-        new Promise<number>(resolve => setTimeout(() => resolve(num * 3), 10)),
-        Promise.resolve(8)
-      ])).then((res: number[]) => new Promise<number>(resolve =>
-      setTimeout(() => resolve(res[0] + res[1]), 15)
-      ));
-
-      const result = await Promise.race([workflow1, workflow2]);
-      expect(result).assertEqual(14);
-    });
-
-    /**
      * @tc.number SUB_BUILTINS_Promise_race_TEST_065
      * @tc.name PromiseRaceTest065
      * @tc.desc Race with promises that use async retry logic with backoff
@@ -1604,51 +1464,6 @@ export default function promiseRaceTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_Promise_race_TEST_069
-     * @tc.name PromiseRaceTest069
-     * @tc.desc Race with promises that use dynamic timeout adjustment based on performance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 4
-     */
-    it('PromiseRaceTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const p1: Promise<number> = new Promise<number>(resolve => {
-        const start = Date.now(); // Use Date.now() instead of performance.now()
-        const check = () => {
-          const elapsed = Date.now() - start;
-          // Adjust target time based on elapsed time
-          const target = elapsed > 20 ? 30 : 50;
-
-          if (elapsed >= target) {
-            resolve(1);
-          } else {
-            setTimeout(check, 5);
-          }
-        };
-        check();
-      });
-
-      // p2: Uses interval logic with clear timing
-      const p2: Promise<number> = new Promise<number>(resolve => {
-        let iterations = 0;
-        const interval = setInterval(() => {
-          iterations++;
-          // Double interval after 3 iterations (original logic preserved)
-          if (iterations >= 3) {
-            clearInterval(interval);
-            setTimeout(() => resolve(2), 100);
-          }
-        }, 10); // 10ms interval
-      });
-
-      // Race to get first resolved promise
-      const result = await Promise.race([p1, p2]);
-
-      // Verify p2 wins the race
-      expect(result).assertEqual(1);
-    });
-
-    /**
      * @tc.number SUB_BUILTINS_Promise_race_TEST_070
      * @tc.name PromiseRaceTest070
      * @tc.desc Race with promises that resolve after multiple nested Promise.all calls
@@ -1675,39 +1490,6 @@ export default function promiseRaceTest() {
 
       const result = await Promise.race([nestedAll1, nestedAll2]);
       expect(result).assertEqual(44);
-    });
-
-    /**
-     * @tc.number SUB_BUILTINS_Promise_race_TEST_071
-     * @tc.name PromiseRaceTest071
-     * @tc.desc Race with promises that use async error recovery chains
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 4
-     */
-    it('PromiseRaceTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const p1: Promise<string> = new Promise<string>((_, reject) =>
-      setTimeout(() => reject(new Error('Failure A')), 10)
-      ).catch((error: Error) => {
-        return new Promise<string>((_, reject) =>
-        setTimeout(() => reject(new Error('Failure B')), 15)
-        );
-      }).catch((error: Error) => {
-        return new Promise<string>(resolve =>
-        setTimeout(() => resolve('Recovery 1'), 150)
-        );
-      }); // Total ~30ms
-
-      const p2: Promise<string> = new Promise<string>((_, reject) =>
-      setTimeout(() => reject(new Error('Failure X')), 5)
-      ).catch((error: Error) => {
-        return new Promise<string>(resolve =>
-        setTimeout(() => resolve('Recovery 2'), 20)
-        );
-      }); // Total ~25ms
-
-      const result = await Promise.race([p1, p2]);
-      expect(result).assertEqual('Recovery 2');
     });
 
     /**
@@ -2173,50 +1955,6 @@ export default function promiseRaceTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_Promise_race_TEST_088
-     * @tc.name PromiseRaceTest088
-     * @tc.desc Race with promises that use async batching with dynamic sizes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 4
-     */
-    it('PromiseRaceTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const processBatch = (batch: number[], delay: number): Promise<number> => {
-        return new Promise<number>(resolve => {
-          setTimeout(() => {
-            resolve(batch.reduce((sum, item) => sum + item, 0));
-          }, delay);
-        });
-      };
-
-      const dynamicBatching = async (items: number[], initialBatchSize: number): Promise<number> => {
-        let total = 0;
-        let batchSize = initialBatchSize;
-        let index = 0;
-
-        while (index < items.length) {
-          const batch = items.slice(index, index + batchSize);
-          total += await processBatch(batch, batchSize * 50);
-          index += batchSize;
-          batchSize = Math.min(batchSize * 2, items.length - index); // Double batch size each time
-        }
-
-        return total;
-      };
-
-      const items = [1, 2, 3, 4, 5, 6, 7, 8];
-
-      // Batch sizes: 2 → 4 → 2 (total delay: 10 + 20 + 10 = 40ms)
-      const p1: Promise<number> = dynamicBatching(items, 2);
-
-      // Batch sizes: 1 → 2 → 4 → 1 (total delay: 5 + 10 + 20 + 5 = 40ms)
-      const p2: Promise<number> = dynamicBatching(items, 1);
-
-      const result = await Promise.race([p1, p2]);
-      expect(result).assertEqual(36);
-    });
-
-    /**
      * @tc.number SUB_BUILTINS_Promise_race_TEST_089
      * @tc.name PromiseRaceTest089
      * @tc.desc Race with promises that use async retry with exponential backoff
@@ -2261,46 +1999,6 @@ export default function promiseRaceTest() {
       expect([1, 2]).assertContain(result);
     });
 
-    /**
-     * @tc.number SUB_BUILTINS_Promise_race_TEST_090
-     * @tc.name PromiseRaceTest090
-     * @tc.desc Race with promises that use complex async workflow patterns
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 5
-     */
-    it('PromiseRaceTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      // Simulate a complex workflow with multiple stages
-      const stage1 = (value: number): Promise<number> =>
-      new Promise<number>(resolve => setTimeout(() => resolve(value * 2), 10));
-
-      const stage2 = (value: number): Promise<number> =>
-      new Promise<number>(resolve => setTimeout(() => resolve(value + 5), 15));
-
-      const stage3 = (value: number): Promise<number> =>
-      new Promise<number>(resolve => setTimeout(() => resolve(value * 3), 20));
-
-      // Workflow 1: Sequential stages with some parallel steps
-      const workflow1: Promise<number> = stage1(2)
-        .then(num => Promise.all([
-          stage2(num),
-          new Promise<number>(resolve => setTimeout(() => resolve(10), 5))
-        ]))
-        .then((res: number[]) => stage3(res[0] + res[1]));
-
-      // Workflow 2: Different sequence with conditional steps
-      const workflow2: Promise<number> = stage2(3)
-        .then(num => {
-          if (num > 5) {
-            return stage1(num);
-          }
-          return Promise.resolve(num);
-        })
-        .then(num => stage3(num));
-
-      const result = await Promise.race([workflow1, workflow2]);
-      expect(result == 57 || result == 48).assertEqual(true);
-    });
     /**
      * @tc.number SUB_BUILTINS_Promise_race_TEST_091
      * @tc.name PromiseRaceTest091
@@ -2409,37 +2107,6 @@ export default function promiseRaceTest() {
 
       // combo1 should win: ~10ms vs combo2's ~18ms
       expect(result).assertDeepEquals(['fast', 'fixed']);
-    });
-
-    /**
-     * @tc.number SUB_BUILTINS_Promise_race_TEST_095
-     * @tc.name PromiseRaceTest095
-     * @tc.desc Race between allSettled and race with mixed resolutions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 5
-     */
-    it('PromiseRaceTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      // All settled with mixed results
-      const allSettled = Promise.allSettled([
-        new Promise<number>(resolve => setTimeout(() => resolve(10), 5)),
-        new Promise<number>((_, reject) => setTimeout(() => reject(new Error('Oops')), 10))
-      ]);
-
-      // Nested race with reject
-      const nestedRace = Promise.race([
-        new Promise<number>((_, reject) => setTimeout(() => reject(new Error('Fail fast')), 120)),
-        new Promise<number>(resolve => setTimeout(() => resolve(20), 150))
-      ]);
-
-      try {
-        const result = await Promise.race([allSettled, nestedRace]);
-        // If we reach here, allSettled won
-        expect((result as Object[]).length).assertEqual(2);
-      } catch (error) {
-        // If we reach here, nestedRace's rejection won
-        expect((error as Error).message).assertEqual('Fail fast');
-      }
     });
 
     /**

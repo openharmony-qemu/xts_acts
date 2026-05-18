@@ -49,14 +49,6 @@ void DrawingNativeRegionTestTearDown()
     std::cout << "DrawingNativeRegionTest errorCodeReset after each test case." << std::endl;
 }
 
-/**
- * @tc.name   testRegionCreateNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_NUMBER_100
- * @tc.desc   test for testRegionCreateNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRegionCreateNormal()
 {
     DrawingNativeRegionTestSetUp();
@@ -68,14 +60,6 @@ int TestRegionCreateNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionCreateMoreTimes
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0101
- * @tc.desc   test for testRegionCreateMoreTimes.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL1
- */
 int TestRegionCreateMoreTimes()
 {
     DrawingNativeRegionTestSetUp();
@@ -93,14 +77,6 @@ int TestRegionCreateMoreTimes()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_NUMBER_200
- * @tc.desc   test for testRegionDestroyNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRegionDestroyNormal()
 {
     DrawingNativeRegionTestSetUp();
@@ -113,14 +89,6 @@ int TestRegionDestroyNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionDestroyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0201
- * @tc.desc   test for testRegionDestroyNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL1
- */
 int TestRegionDestroyNull()
 {
     DrawingNativeRegionTestSetUp();
@@ -132,14 +100,6 @@ int TestRegionDestroyNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionContainsInRange
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_NUMBER_300
- * @tc.desc   test for testRegionContainsInRange.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRegionContainsInRange()
 {
     DrawingNativeRegionTestSetUp();
@@ -165,14 +125,6 @@ int TestRegionContainsInRange()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionContainsXvalueNotInRange
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0301
- * @tc.desc   test for testRegionContainsXvalueNotInRange.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL1
- */
 int TestRegionContainsXvalueNotInRange()
 {
     DrawingNativeRegionTestSetUp();
@@ -197,14 +149,6 @@ int TestRegionContainsXvalueNotInRange()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionContainsYvalueNotInRange
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0302
- * @tc.desc   test for testRegionContainsYvalueNotInRange.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL1
- */
 int TestRegionContainsYvalueNotInRange()
 {
     DrawingNativeRegionTestSetUp();
@@ -229,14 +173,6 @@ int TestRegionContainsYvalueNotInRange()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionContainsAllNotInRange
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0303
- * @tc.desc   test for testRegionContainsAllNotInRange.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL1
- */
 int TestRegionContainsAllNotInRange()
 {
     DrawingNativeRegionTestSetUp();
@@ -261,14 +197,6 @@ int TestRegionContainsAllNotInRange()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionContainsRegionNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0304
- * @tc.desc   test for testRegionContainsRegionNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL1
- */
 int TestRegionContainsRegionNull()
 {
     DrawingNativeRegionTestSetUp();
@@ -280,14 +208,6 @@ int TestRegionContainsRegionNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionOpNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_NUMBER_400
- * @tc.desc   test for testRegionOpNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRegionOpNormal()
 {
     DrawingNativeRegionTestSetUp();
@@ -321,14 +241,6 @@ int TestRegionOpNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionOpRegionNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_NUMBER_401
- * @tc.desc   test for testRegionOpRegionNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRegionOpRegionNull()
 {
     DrawingNativeRegionTestSetUp();
@@ -350,14 +262,6 @@ int TestRegionOpRegionNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionOpMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0402
- * @tc.desc   test for testRegionOpMultipleCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRegionOpMultipleCalls()
 {
     DrawingNativeRegionTestSetUp();
@@ -389,14 +293,6 @@ int TestRegionOpMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionSetRectResultTrue
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_NUMBER_500
- * @tc.desc   test for testRegionSetRectResultTrue.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRegionSetRectResultTrue()
 {
     DrawingNativeRegionTestSetUp();
@@ -415,14 +311,6 @@ int TestRegionSetRectResultTrue()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionSetRectRegionNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0501
- * @tc.desc   test for testRegionSetRectRegionNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL1
- */
 int TestRegionSetRectRegionNull()
 {
     DrawingNativeRegionTestSetUp();
@@ -439,14 +327,6 @@ int TestRegionSetRectRegionNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionSetRectRectNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0502
- * @tc.desc   test for testRegionSetRectRectNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL1
- */
 int TestRegionSetRectRectNull()
 {
     DrawingNativeRegionTestSetUp();
@@ -462,14 +342,6 @@ int TestRegionSetRectRectNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionSetRectResultFalse
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0503
- * @tc.desc   test for testRegionSetRectResultFalse.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL1
- */
 int TestRegionSetRectResultFalse()
 {
     DrawingNativeRegionTestSetUp();
@@ -489,14 +361,6 @@ int TestRegionSetRectResultFalse()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionSetPathResultTrue
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_NUMBER_600
- * @tc.desc   test for testRegionSetPathResultTrue.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRegionSetPathResultTrue()
 {
     DrawingNativeRegionTestSetUp();
@@ -531,14 +395,6 @@ int TestRegionSetPathResultTrue()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionSetPathRegionNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0601
- * @tc.desc   test for testRegionSetPathRegionNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL1
- */
 int TestRegionSetPathRegionNull()
 {
     DrawingNativeRegionTestSetUp();
@@ -578,14 +434,6 @@ int TestRegionSetPathRegionNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionSetPathResultFalse
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0602
- * @tc.desc   test for testRegionSetPathResultFalse.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL1
- */
 int TestRegionSetPathResultFalse()
 {
     DrawingNativeRegionTestSetUp();
@@ -617,14 +465,6 @@ int TestRegionSetPathResultFalse()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionCopyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_NUMBER_700
- * @tc.desc   test for testRegionCopyNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRegionCopyNormal()
 {
     DrawingNativeRegionTestSetUp();
@@ -647,14 +487,6 @@ int TestRegionCopyNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionCopyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0701
- * @tc.desc   test for testRegionCopyNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRegionCopyNull()
 {
     DrawingNativeRegionTestSetUp();
@@ -677,14 +509,6 @@ int TestRegionCopyNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionCopyAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0702
- * @tc.desc   test for testRegionCopyAbnormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRegionCopyAbnormal()
 {
     DrawingNativeRegionTestSetUp();
@@ -735,14 +559,6 @@ int TestRegionCopyAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionCopyMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0703
- * @tc.desc   test for testRegionCopyMultipleCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRegionCopyMultipleCalls()
 {
     DrawingNativeRegionTestSetUp();
@@ -769,14 +585,6 @@ int TestRegionCopyMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionEmptyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0800
- * @tc.desc   test for testRegionEmptyNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRegionEmptyNormal()
 {
     DrawingNativeRegionTestSetUp();
@@ -799,14 +607,6 @@ int TestRegionEmptyNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionEmptyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0801
- * @tc.desc   test for testRegionEmptyNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRegionEmptyNull()
 {
     DrawingNativeRegionTestSetUp();
@@ -829,14 +629,6 @@ int TestRegionEmptyNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionEmptyCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0802
- * @tc.desc   test for testRegionEmptyCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRegionEmptyCalls()
 {
     DrawingNativeRegionTestSetUp();
@@ -861,14 +653,6 @@ int TestRegionEmptyCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionGetBoundaryNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0900
- * @tc.desc   test for testRegionGetBoundaryNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRegionGetBoundaryNormal()
 {
     DrawingNativeRegionTestSetUp();
@@ -903,14 +687,6 @@ int TestRegionGetBoundaryNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionGetBoundaryNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0901
- * @tc.desc   test for testRegionGetBoundaryNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRegionGetBoundaryNull()
 {
     DrawingNativeRegionTestSetUp();
@@ -934,14 +710,6 @@ int TestRegionGetBoundaryNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionGetBoundaryMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_0902
- * @tc.desc   test for testRegionGetBoundaryMultipleCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRegionGetBoundaryMultipleCalls()
 {
     DrawingNativeRegionTestSetUp();
@@ -962,14 +730,6 @@ int TestRegionGetBoundaryMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionGetBoundsNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1000
- * @tc.desc   test for testRegionGetBoundsNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRegionGetBoundsNormal()
 {
     DrawingNativeRegionTestSetUp();
@@ -1009,14 +769,6 @@ int TestRegionGetBoundsNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionGetBoundsNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1001
- * @tc.desc   test for testRegionGetBoundsNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRegionGetBoundsNull()
 {
     DrawingNativeRegionTestSetUp();
@@ -1036,14 +788,6 @@ int TestRegionGetBoundsNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionGetBoundsMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1002
- * @tc.desc   test for testRegionGetBoundsMultipleCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRegionGetBoundsMultipleCalls()
 {
     DrawingNativeRegionTestSetUp();
@@ -1067,14 +811,6 @@ int TestRegionGetBoundsMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionIsComplexNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1100
- * @tc.desc   test for testRegionIsComplexNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRegionIsComplexNormal()
 {
     DrawingNativeRegionTestSetUp();
@@ -1109,14 +845,6 @@ int TestRegionIsComplexNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionIsComplexNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1101
- * @tc.desc   test for testRegionIsComplexNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRegionIsComplexNull()
 {
     DrawingNativeRegionTestSetUp();
@@ -1139,14 +867,6 @@ int TestRegionIsComplexNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionIsComplexMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1102
- * @tc.desc   test for testRegionIsComplexMultipleCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRegionIsComplexMultipleCalls()
 {
     DrawingNativeRegionTestSetUp();
@@ -1179,14 +899,6 @@ int TestRegionIsComplexMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionIsEmptyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1200
- * @tc.desc   test for testRegionIsEmptyNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRegionIsEmptyNormal()
 {
     DrawingNativeRegionTestSetUp();
@@ -1210,14 +922,6 @@ int TestRegionIsEmptyNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionIsEmptyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1201
- * @tc.desc   test for testRegionIsEmptyNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRegionIsEmptyNull()
 {
     DrawingNativeRegionTestSetUp();
@@ -1235,14 +939,6 @@ int TestRegionIsEmptyNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionIsEmptyMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1202
- * @tc.desc   test for testRegionIsEmptyMultipleCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRegionIsEmptyMultipleCalls()
 {
     DrawingNativeRegionTestSetUp();
@@ -1264,14 +960,6 @@ int TestRegionIsEmptyMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionIsRectNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1300
- * @tc.desc   test for testRegionIsRectNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRegionIsRectNormal()
 {
     DrawingNativeRegionTestSetUp();
@@ -1305,14 +993,6 @@ int TestRegionIsRectNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionIsRectNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1301
- * @tc.desc   test for testRegionIsRectNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRegionIsRectNull()
 {
     DrawingNativeRegionTestSetUp();
@@ -1330,14 +1010,6 @@ int TestRegionIsRectNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionIsRectMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1302
- * @tc.desc   test for testRegionIsRectMultipleCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRegionIsRectMultipleCalls()
 {
     DrawingNativeRegionTestSetUp();
@@ -1354,14 +1026,6 @@ int TestRegionIsRectMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionQuickContainsNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1400
- * @tc.desc   test for testRegionQuickContainsNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRegionQuickContainsNormal()
 {
     DrawingNativeRegionTestSetUp();
@@ -1386,14 +1050,6 @@ int TestRegionQuickContainsNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionQuickContainsNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1401
- * @tc.desc   test for testRegionQuickContainsNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRegionQuickContainsNull()
 {
     DrawingNativeRegionTestSetUp();
@@ -1434,14 +1090,6 @@ int TestRegionQuickContainsNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionQuickContainsAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1402
- * @tc.desc   test for testRegionQuickContainsAbnormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRegionQuickContainsAbnormal()
 {
     DrawingNativeRegionTestSetUp();
@@ -1466,14 +1114,6 @@ int TestRegionQuickContainsAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionQuickContainsMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1403
- * @tc.desc   test for testRegionQuickContainsMultipleCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRegionQuickContainsMultipleCalls()
 {
     DrawingNativeRegionTestSetUp();
@@ -1496,14 +1136,6 @@ int TestRegionQuickContainsMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionQuickRejectNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1500
- * @tc.desc   test for testRegionQuickRejectNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRegionQuickRejectNormal()
 {
     DrawingNativeRegionTestSetUp();
@@ -1532,14 +1164,6 @@ int TestRegionQuickRejectNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionQuickRejectNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1501
- * @tc.desc   test for testRegionQuickRejectNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRegionQuickRejectNull()
 {
     DrawingNativeRegionTestSetUp();
@@ -1580,14 +1204,6 @@ int TestRegionQuickRejectNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionQuickRejectAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1502
- * @tc.desc   test for testRegionQuickRejectAbnormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRegionQuickRejectAbnormal()
 {
     DrawingNativeRegionTestSetUp();
@@ -1612,14 +1228,6 @@ int TestRegionQuickRejectAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionQuickRejectMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1503
- * @tc.desc   test for testRegionQuickRejectMultipleCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRegionQuickRejectMultipleCalls()
 {
     DrawingNativeRegionTestSetUp();
@@ -1642,14 +1250,6 @@ int TestRegionQuickRejectMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionTranslateNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1600
- * @tc.desc   test for testRegionTranslateNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRegionTranslateNormal()
 {
     DrawingNativeRegionTestSetUp();
@@ -1671,14 +1271,6 @@ int TestRegionTranslateNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionTranslateNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1601
- * @tc.desc   test for testRegionTranslateNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRegionTranslateNull()
 {
     DrawingNativeRegionTestSetUp();
@@ -1700,14 +1292,6 @@ int TestRegionTranslateNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRegionTranslateMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_REGION_1602
- * @tc.desc   test for testRegionTranslateMultipleCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRegionTranslateMultipleCalls()
 {
     DrawingNativeRegionTestSetUp();

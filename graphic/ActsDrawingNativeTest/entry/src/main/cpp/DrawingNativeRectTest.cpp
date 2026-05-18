@@ -53,14 +53,6 @@ void DrawingNativeRectTestTearDown()
     std::cout << "DrawingNativeRectTest errorCodeReset after each test case." << std::endl;
 }
 
-/**
- * @tc.name   testRectCreateNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0100
- * @tc.desc   Test for creating and destroying a rectangle object with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRectCreateNormal()
 {
     DrawingNativeRectTestSetUp();
@@ -74,14 +66,6 @@ int TestRectCreateNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectIntersectNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0200
- * @tc.desc   Test for intersecting two rectangles with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRectIntersectNormal()
 {
     DrawingNativeRectTestSetUp();
@@ -133,14 +117,6 @@ int TestRectIntersectNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectIntersectNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0201
- * @tc.desc   Test for intersecting rectangles with NULL parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectIntersectNull()
 {
     DrawingNativeRectTestSetUp();
@@ -170,14 +146,6 @@ int TestRectIntersectNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectJoinNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0300
- * @tc.desc   Test for joining two rectangles with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRectJoinNormal()
 {
     DrawingNativeRectTestSetUp();
@@ -231,14 +199,6 @@ int TestRectJoinNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectJoinNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0301
- * @tc.desc   Test for joining rectangles with NULL parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectJoinNull()
 {
     DrawingNativeRectTestSetUp();
@@ -269,14 +229,6 @@ int TestRectJoinNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectSetLeftNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0400
- * @tc.desc   Test for setting and getting the left coordinate of a rectangle with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRectSetLeftNormal()
 {
     DrawingNativeRectTestSetUp();
@@ -298,14 +250,6 @@ int TestRectSetLeftNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectSetLeftNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0401
- * @tc.desc   Test for setting the left coordinate of a rectangle with NULL parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectSetLeftNull()
 {
     DrawingNativeRectTestSetUp();
@@ -325,14 +269,6 @@ int TestRectSetLeftNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectSetLeftAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0402
- * @tc.desc   Test for setting the left coordinate of a rectangle with abnormal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectSetLeftAbnormal()
 {
     DrawingNativeRectTestSetUp();
@@ -354,14 +290,6 @@ int TestRectSetLeftAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectSetLeftMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0403
- * @tc.desc   Test for repeatedly setting and getting the left coordinate of a rectangle.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectSetLeftMultipleCalls()
 {
     DrawingNativeRectTestSetUp();
@@ -378,14 +306,6 @@ int TestRectSetLeftMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectSetTopNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0500
- * @tc.desc   Test for setting and getting the top coordinate of a rectangle with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRectSetTopNormal()
 {
     DrawingNativeRectTestSetUp();
@@ -407,14 +327,6 @@ int TestRectSetTopNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectSetTopNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0501
- * @tc.desc   Test for setting the top coordinate of a rectangle with NULL parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectSetTopNull()
 {
     DrawingNativeRectTestSetUp();
@@ -434,14 +346,6 @@ int TestRectSetTopNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectSetTopAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0502
- * @tc.desc   Test for setting the top coordinate of a rectangle with abnormal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectSetTopAbnormal()
 {
     DrawingNativeRectTestSetUp();
@@ -463,14 +367,6 @@ int TestRectSetTopAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectSetTopMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0503
- * @tc.desc   Test for repeatedly setting and getting the top coordinate of a rectangle.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectSetTopMultipleCalls()
 {
     DrawingNativeRectTestSetUp();
@@ -506,14 +402,6 @@ int TestRectSetTopMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectSetRightNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0600
- * @tc.desc   Test for setting and getting the right coordinate of a rectangle with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRectSetRightNormal()
 {
     DrawingNativeRectTestSetUp();
@@ -535,14 +423,6 @@ int TestRectSetRightNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectSetRightNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0601
- * @tc.desc   Test for setting the right coordinate of a rectangle with NULL parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectSetRightNull()
 {
     DrawingNativeRectTestSetUp();
@@ -562,14 +442,6 @@ int TestRectSetRightNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectSetRightAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0602
- * @tc.desc   Test for setting the right coordinate of a rectangle with abnormal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectSetRightAbnormal()
 {
     DrawingNativeRectTestSetUp();
@@ -591,14 +463,6 @@ int TestRectSetRightAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectSetRightMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0603
- * @tc.desc   Test for repeatedly setting and getting the right coordinate of a rectangle.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectSetRightMultipleCalls()
 {
     DrawingNativeRectTestSetUp();
@@ -634,14 +498,6 @@ int TestRectSetRightMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectSetBottomNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0700
- * @tc.desc   Test for setting and getting the bottom coordinate of a rectangle with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRectSetBottomNormal()
 {
     DrawingNativeRectTestSetUp();
@@ -663,14 +519,6 @@ int TestRectSetBottomNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectSetBottomNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0701
- * @tc.desc   Test for setting the bottom coordinate of a rectangle with NULL parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectSetBottomNull()
 {
     DrawingNativeRectTestSetUp();
@@ -690,14 +538,6 @@ int TestRectSetBottomNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectSetBottomAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0702
- * @tc.desc   Test for setting the bottom coordinate of a rectangle with abnormal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectSetBottomAbnormal()
 {
     DrawingNativeRectTestSetUp();
@@ -718,14 +558,6 @@ int TestRectSetBottomAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectSetBottomMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0703
- * @tc.desc   Test for repeatedly setting and getting the bottom coordinate of a rectangle.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectSetBottomMultipleCalls()
 {
     DrawingNativeRectTestSetUp();
@@ -744,14 +576,6 @@ int TestRectSetBottomMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectGetLeftNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0800
- * @tc.desc   Test for setting and getting the left coordinate of a rectangle with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRectGetLeftNormal()
 {
     DrawingNativeRectTestSetUp();
@@ -770,14 +594,6 @@ int TestRectGetLeftNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectGetLeftNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0801
- * @tc.desc   Test for getting the left coordinate of a rectangle with NULL parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectGetLeftNull()
 {
     DrawingNativeRectTestSetUp();
@@ -794,14 +610,6 @@ int TestRectGetLeftNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectGetTopNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0900
- * @tc.desc   Test for setting and getting the top coordinate of a rectangle with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRectGetTopNormal()
 {
     DrawingNativeRectTestSetUp();
@@ -820,14 +628,6 @@ int TestRectGetTopNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectGetTopNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_0901
- * @tc.desc   Test for getting the top coordinate of a rectangle with NULL parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectGetTopNull()
 {
     DrawingNativeRectTestSetUp();
@@ -844,14 +644,6 @@ int TestRectGetTopNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectGetRightNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1000
- * @tc.desc   Test for setting and getting the right coordinate of a rectangle with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRectGetRightNormal()
 {
     DrawingNativeRectTestSetUp();
@@ -870,14 +662,6 @@ int TestRectGetRightNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectGetRightNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1001
- * @tc.desc   Test for getting the right coordinate of a rectangle with NULL parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectGetRightNull()
 {
     DrawingNativeRectTestSetUp();
@@ -895,14 +679,6 @@ int TestRectGetRightNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectGetBottomNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1100
- * @tc.desc   Test for setting and getting the bottom coordinate of a rectangle with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRectGetBottomNormal()
 {
     DrawingNativeRectTestSetUp();
@@ -922,14 +698,6 @@ int TestRectGetBottomNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectGetBottomNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1101
- * @tc.desc   Test for getting the bottom coordinate of a rectangle with NULL parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectGetBottomNull()
 {
     DrawingNativeRectTestSetUp();
@@ -947,14 +715,6 @@ int TestRectGetBottomNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectGetHeightNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1200
- * @tc.desc   Test for setting coordinates and getting the height of a rectangle with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRectGetHeightNormal()
 {
     DrawingNativeRectTestSetUp();
@@ -980,14 +740,6 @@ int TestRectGetHeightNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectGetHeightNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1201
- * @tc.desc   Test for getting the height of a rectangle with NULL parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectGetHeightNull()
 {
     DrawingNativeRectTestSetUp();
@@ -1005,14 +757,6 @@ int TestRectGetHeightNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectGetWidthNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1300
- * @tc.desc   Test for setting coordinates and getting the width of a rectangle with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRectGetWidthNormal()
 {
     DrawingNativeRectTestSetUp();
@@ -1038,14 +782,6 @@ int TestRectGetWidthNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectGetWidthNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1301
- * @tc.desc   Test for getting the width of a rectangle with NULL parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectGetWidthNull()
 {
     DrawingNativeRectTestSetUp();
@@ -1063,14 +799,6 @@ int TestRectGetWidthNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectGetWidthBoundary
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1302
- * @tc.desc   Test for setting coordinates and getting the width of a rectangle with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRectGetWidthBoundary()
 {
     DrawingNativeRectTestSetUp();
@@ -1098,14 +826,6 @@ int TestRectGetWidthBoundary()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectCopyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1400
- * @tc.desc   Test for copying a rectangle with normal parameters and checking the copied values.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRectCopyNormal()
 {
     DrawingNativeRectTestSetUp();
@@ -1164,14 +884,6 @@ int TestRectCopyNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectCopyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1401
- * @tc.desc   Test for copying a rectangle with NULL parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectCopyNull()
 {
     DrawingNativeRectTestSetUp();
@@ -1199,14 +911,6 @@ int TestRectCopyNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1500
- * @tc.desc   Test for creating and destroying a rectangle object with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRectDestroyNormal()
 {
     DrawingNativeRectTestSetUp();
@@ -1220,14 +924,6 @@ int TestRectDestroyNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectDestroyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1501
- * @tc.desc   Test for destroying a rectangle object with NULL parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectDestroyNull()
 {
     DrawingNativeRectTestSetUp();
@@ -1244,14 +940,6 @@ int TestRectDestroyNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectInsetNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1600
- * @tc.desc   Test for testRectInsetNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRectInsetNormal()
 {
     DrawingNativeRectTestSetUp();
@@ -1275,14 +963,6 @@ int TestRectInsetNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectInsetAbNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1601
- * @tc.desc   Test for testRectInsetAbNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectInsetAbNormal()
 {
     DrawingNativeRectTestSetUp();
@@ -1306,14 +986,6 @@ int TestRectInsetAbNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectInsetNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1602
- * @tc.desc   Test for testRectInsetNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectInsetNull()
 {
     DrawingNativeRectTestSetUp();
@@ -1337,14 +1009,6 @@ int TestRectInsetNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectInsetCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1603
- * @tc.desc   Test for testRectInsetCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectInsetCalls()
 {
     DrawingNativeRectTestSetUp();
@@ -1370,14 +1034,6 @@ int TestRectInsetCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectContainsNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1700
- * @tc.desc   Test for testRectContainsNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRectContainsNormal()
 {
     DrawingNativeRectTestSetUp();
@@ -1399,14 +1055,6 @@ int TestRectContainsNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectContainsNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1701
- * @tc.desc   Test for testRectContainsNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectContainsNull()
 {
     DrawingNativeRectTestSetUp();
@@ -1436,14 +1084,6 @@ int TestRectContainsNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectContainsCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1703
- * @tc.desc   Test for testRectContainsCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectContainsCalls()
 {
     DrawingNativeRectTestSetUp();
@@ -1467,14 +1107,6 @@ int TestRectContainsCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectSetEmptyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1800
- * @tc.desc   Test for testRectSetEmptyNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRectSetEmptyNormal()
 {
     DrawingNativeRectTestSetUp();
@@ -1487,14 +1119,6 @@ int TestRectSetEmptyNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectSetEmptyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1801
- * @tc.desc   Test for testRectSetEmptyNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectSetEmptyNull()
 {
     DrawingNativeRectTestSetUp();
@@ -1507,14 +1131,6 @@ int TestRectSetEmptyNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectSetEmptyMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1802
- * @tc.desc   Test for testRectSetEmptyMultipleCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectSetEmptyMultipleCalls()
 {
     DrawingNativeRectTestSetUp();
@@ -1529,14 +1145,6 @@ int TestRectSetEmptyMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectIsEmptyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1900
- * @tc.desc   Test for testRectIsEmptyNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRectIsEmptyNormal()
 {
     DrawingNativeRectTestSetUp();
@@ -1555,14 +1163,6 @@ int TestRectIsEmptyNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectIsEmptyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1901
- * @tc.desc   Test for testRectIsEmptyNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectIsEmptyNull()
 {
     DrawingNativeRectTestSetUp();
@@ -1580,14 +1180,6 @@ int TestRectIsEmptyNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectIsEmptyMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_1902
- * @tc.desc   Test for testRectIsEmptyMultipleCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectIsEmptyMultipleCalls()
 {
     DrawingNativeRectTestSetUp();
@@ -1604,14 +1196,6 @@ int TestRectIsEmptyMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectOffsetNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2000
- * @tc.desc   Test for testRectOffsetNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRectOffsetNormal()
 {
     DrawingNativeRectTestSetUp();
@@ -1634,14 +1218,6 @@ int TestRectOffsetNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectOffsetNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2001
- * @tc.desc   Test for testRectOffsetNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectOffsetNull()
 {
     DrawingNativeRectTestSetUp();
@@ -1670,14 +1246,6 @@ int TestRectOffsetNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectOffsetAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2002
- * @tc.desc   Test for testRectOffsetAbnormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectOffsetAbnormal()
 {
     DrawingNativeRectTestSetUp();
@@ -1694,14 +1262,6 @@ int TestRectOffsetAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectOffsetMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2003
- * @tc.desc   Test for testRectOffsetMultipleCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectOffsetMultipleCalls()
 {
     DrawingNativeRectTestSetUp();
@@ -1720,14 +1280,6 @@ int TestRectOffsetMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectOffsetToNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2100
- * @tc.desc   Test for testRectOffsetToNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRectOffsetToNormal()
 {
     DrawingNativeRectTestSetUp();
@@ -1744,14 +1296,6 @@ int TestRectOffsetToNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectOffsetToNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2101
- * @tc.desc   Test for testRectOffsetToNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectOffsetToNull()
 {
     DrawingNativeRectTestSetUp();
@@ -1780,14 +1324,6 @@ int TestRectOffsetToNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectOffsetToAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2102
- * @tc.desc   Test for testRectOffsetToAbnormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectOffsetToAbnormal()
 {
     DrawingNativeRectTestSetUp();
@@ -1804,14 +1340,6 @@ int TestRectOffsetToAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectOffsetToMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2103
- * @tc.desc   Test for testRectOffsetToMultipleCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectOffsetToMultipleCalls()
 {
     DrawingNativeRectTestSetUp();
@@ -1830,14 +1358,6 @@ int TestRectOffsetToMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectSortNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2200
- * @tc.desc   Test for testRectSortNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRectSortNormal()
 {
     DrawingNativeRectTestSetUp();
@@ -1861,14 +1381,6 @@ int TestRectSortNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectSortNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2201
- * @tc.desc   Test for testRectSortNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectSortNull()
 {
     DrawingNativeRectTestSetUp();
@@ -1885,14 +1397,6 @@ int TestRectSortNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectSortMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2202
- * @tc.desc   Test for testRectSortMultipleCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectSortMultipleCalls()
 {
     DrawingNativeRectTestSetUp();
@@ -1911,14 +1415,6 @@ int TestRectSortMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectUnionNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2300
- * @tc.desc   Test for testRectUnionNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRectUnionNormal()
 {
     DrawingNativeRectTestSetUp();
@@ -1939,14 +1435,6 @@ int TestRectUnionNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectUnionNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2301
- * @tc.desc   Test for testRectUnionNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectUnionNull()
 {
     DrawingNativeRectTestSetUp();
@@ -1965,14 +1453,6 @@ int TestRectUnionNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRectUnionMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECT_2302
- * @tc.desc   Test for testRectUnionMultipleCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRectUnionMultipleCalls()
 {
     DrawingNativeRectTestSetUp();

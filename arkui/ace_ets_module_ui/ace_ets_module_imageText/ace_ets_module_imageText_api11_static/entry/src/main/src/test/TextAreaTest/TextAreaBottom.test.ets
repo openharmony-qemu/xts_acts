@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -91,7 +91,7 @@ export default function textArea_bottom() {
         let textArea_01 = CommonFunc.getComponentRect('textArea_bottom_textArea_01');
         let y1 = textArea_01.top
         await driver.click(
-          (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2)) as Int,(Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /45)) as Int
+          (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2)).toInt(),(Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /45)).toInt()
         );
         await CommonFunc.sleep(1000);
 
@@ -134,7 +134,7 @@ export default function textArea_bottom() {
         console.log('assert position')
         let y1 = textArea_01.bottom
         await driver.click(
-          (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2)) as Int,(Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /2)) as Int
+          (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2)).toInt(),(Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /2)).toInt()
         );
         await CommonFunc.sleep(1000);
         let textArea_02 = CommonFunc.getComponentRect('textArea_bottom_textArea_01');
@@ -174,7 +174,7 @@ export default function textArea_bottom() {
         console.log('assert position')
         let y1 = textArea_01.bottom
         await driver.click(
-          (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2)) as Int,(Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /45 *44)) as Int
+          (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2)).toInt(),(Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /45 *44)).toInt()
         );
         await CommonFunc.sleep(1000);
         let textArea_02 = CommonFunc.getComponentRect('textArea_bottom_textArea_01');

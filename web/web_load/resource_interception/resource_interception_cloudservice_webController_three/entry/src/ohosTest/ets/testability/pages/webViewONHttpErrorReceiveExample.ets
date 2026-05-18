@@ -16,6 +16,7 @@
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview';
+import { URL } from '../../test/Config.test';
 
 const EVENT_ID_SET_EMIT_KEY = 202230;
 
@@ -80,7 +81,7 @@ struct webViewONHttpErrorReceiveExample {
             case "emitOnHttpErrorReceiveByExample": {
               try {
                 this.isReady = 1;
-                this.controller.loadUrl('http://1.1.1.123/index.html');
+                this.controller.loadUrl(URL);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -145,7 +146,9 @@ struct webViewONHttpErrorReceiveExample {
           console.log('title:' + event.title);
           this.title = event.title
           if (this.isReady === 1) {
-            Utils.emitEvent(this.title, 202240);
+            if (this.title) {
+              Utils.emitEvent(true, 202240);
+            }
           }
         })
     }

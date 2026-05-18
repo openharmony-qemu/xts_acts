@@ -24,7 +24,6 @@ import common from '@ohos.app.ability.common';
 import inspector from '@ohos.arkui.inspector';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 const EVENT_ID_SET_SUITE_KEY = 177009;
-const driver = Driver.create();
 let testAbilityContext:common.UIAbilityContext;
 
 
@@ -59,7 +58,8 @@ export default function WebViewEnableDefaultContextMenuJsunit() {
         Utils.emitEvent("EnableDefaultContextMenuStatic01", EVENT_ID_SET_SUITE_KEY);
         await Utils.msSleep(1000);
         Utils.registerEvent("EnableDefaultContextMenuStatic01", true, 20260325, done);
-        await Utils.msSleep(1000);
+        let driver = Driver.create();
+        await Utils.msSleep(2000);
         let buttonThree = await driver.findComponent(ON.id('webEnableDefaultContextMenu'));
         await Utils.msSleep(1000);
         if(buttonThree) {
@@ -95,7 +95,8 @@ export default function WebViewEnableDefaultContextMenuJsunit() {
         Utils.emitEvent("EnableDefaultContextMenuStatic02", EVENT_ID_SET_SUITE_KEY);
         await Utils.msSleep(1000);
         Utils.registerEvent("EnableDefaultContextMenuStatic02", true, 20260326, done);
-        await Utils.msSleep(1000);
+        let driver = Driver.create();
+        await Utils.msSleep(2000);
         let buttonThree = await driver.findComponent(ON.id('webEnableDefaultContextMenu'));
         await Utils.msSleep(1000);
         if(buttonThree) {
@@ -131,7 +132,8 @@ export default function WebViewEnableDefaultContextMenuJsunit() {
         Utils.emitEvent("EnableDefaultContextMenuStatic03", EVENT_ID_SET_SUITE_KEY);
         await Utils.msSleep(1000);
         Utils.registerEvent("EnableDefaultContextMenuStatic03", true, 20260327, done);
-        await Utils.msSleep(1000);
+        let driver = Driver.create();
+        await Utils.msSleep(2000);
         let buttonThree = await driver.findComponent(ON.id('webEnableDefaultContextMenu'));
         await Utils.msSleep(1000);
         if(buttonThree) {
@@ -167,7 +169,8 @@ export default function WebViewEnableDefaultContextMenuJsunit() {
         Utils.emitEvent("EnableDefaultContextMenuStatic04", EVENT_ID_SET_SUITE_KEY);
         await Utils.msSleep(1000);
         Utils.registerEvent("EnableDefaultContextMenuStatic04", true, 20260328, done);
-        await Utils.msSleep(1000);
+        let driver = Driver.create();
+        await Utils.msSleep(2000);
         let buttonThree = await driver.findComponent(ON.id('webEnableDefaultContextMenu'));
         await Utils.msSleep(1000);
         if(buttonThree) {

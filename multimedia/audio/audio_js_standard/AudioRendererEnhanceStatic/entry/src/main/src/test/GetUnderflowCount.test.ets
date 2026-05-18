@@ -56,9 +56,13 @@ export default function audioRendererTest() {
         let driver = Driver.create();
         await Utils.msSleep(1000);
         let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 2000);
+        let permissionButton2 = await driver.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), 500);
         await Utils.msSleep(1000);
         if (permissionButton != null) {
           await permissionButton.click();
+        }
+        if (permissionButton2 != null) {
+          await permissionButton2.click();
         }
       } catch (err) {
         console.error('beforeAll failed, err: ' + err);
@@ -218,7 +222,7 @@ export default function audioRendererTest() {
         await renderPlay();
         let value: number = audioRen!.getUnderflowCountSync();
         console.info(`${TagFrmwkRender}: getUnderflowCount :SUCCESS ${value}`);
-        expect(value as number).assertLargerOrEqual(testConst.OUTPUT_NUMBER_0 as number);
+        expect(value as number).assertLargerOrEqual(testConst.OUTPUT_NUMBER_0.toDouble());
         try {
           await audioRen!.drain();
           try {
@@ -283,7 +287,7 @@ export default function audioRendererTest() {
         try {
           let data = await audioRen!.getUnderflowCount();
           console.info(`${TagFrmwkRender}: getUnderflowCount :SUCCESS ${data}`);
-          expect(data as number).assertLargerOrEqual(testConst.OUTPUT_NUMBER_0 as number);
+          expect(data.toDouble()).assertLargerOrEqual(testConst.OUTPUT_NUMBER_0.toDouble());
           try {
             await audioRen!.drain();
             try {
@@ -412,7 +416,7 @@ export default function audioRendererTest() {
             done();
           } else {
             console.info(`${TagFrmwkRender}: getUnderflowCount :SUCCESS ${data}`);
-            expect(data as long).assertLargerOrEqual(testConst.OUTPUT_NUMBER_0 as long);
+            expect(data as long).assertLargerOrEqual(testConst.OUTPUT_NUMBER_0.toLong());
           }
         });
         try {

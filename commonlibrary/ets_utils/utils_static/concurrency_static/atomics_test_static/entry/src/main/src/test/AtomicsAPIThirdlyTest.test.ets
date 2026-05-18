@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -21,7 +21,7 @@ import { atomicTask, gc, MemoryMonitor, sleep, taskFunction } from '../testabili
 class ExtendedAtomics {
   static exchange(typedArray: Int32Array, index: number, value: number): number {
     console.log(`${index},${value}`);
-    const result = Atomics.exchange(typedArray, index as int, value as int);
+    const result = Atomics.exchange(typedArray, index.toInt(), value.toInt());
     console.log(`exchange:${result}`);
     return result;
   }

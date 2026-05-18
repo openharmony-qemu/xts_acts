@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -85,10 +85,10 @@ it('RotationGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: () 
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let pointers: PointerMatrix = PointerMatrix.create(2,2);
-      pointers.setPoint(0,0,{x: Math.round(areaObj1.left) as Int,y: Math.round(areaObj1.top) as Int });
-      pointers.setPoint(0,1,{x: Math.round(areaObj1.right) as Int,y: Math.round(areaObj1.top) as Int });
-      pointers.setPoint(1,0,{x: Math.round(areaObj1.right) as Int,y: Math.round(areaObj1.bottom) as Int });
-      pointers.setPoint(1,1,{x: Math.round(areaObj1.left) as Int,y: Math.round(areaObj1.bottom) as Int });
+      pointers.setPoint(0,0,{x: Math.round(areaObj1.left).toInt(),y: Math.round(areaObj1.top).toInt() });
+      pointers.setPoint(0,1,{x: Math.round(areaObj1.right).toInt(),y: Math.round(areaObj1.top).toInt() });
+      pointers.setPoint(1,0,{x: Math.round(areaObj1.right).toInt(),y: Math.round(areaObj1.bottom).toInt() });
+      pointers.setPoint(1,1,{x: Math.round(areaObj1.left).toInt(),y: Math.round(areaObj1.bottom).toInt() });
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(4000);
 

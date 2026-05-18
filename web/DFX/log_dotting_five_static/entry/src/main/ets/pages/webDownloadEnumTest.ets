@@ -29,7 +29,7 @@ import { BusinessError } from '@ohos.base'
 import { Callback, RecordData } from '@ohos.base'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 

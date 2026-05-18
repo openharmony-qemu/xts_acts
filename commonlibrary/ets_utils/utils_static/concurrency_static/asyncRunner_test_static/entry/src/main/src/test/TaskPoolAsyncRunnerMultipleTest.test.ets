@@ -40,7 +40,7 @@ declare class ArkTools {
   static forceFullGC(): void;
 }
 
-export default function taskPoolAsyncRunnerMultipleTest() {
+export default function taskPoolAsyncRunnerMultipleTest(): void {
   describe('TaskPoolAsyncRunnerMultipleTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

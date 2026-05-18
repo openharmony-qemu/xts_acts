@@ -28,6 +28,7 @@ export default function InjectOfflineResourcesTest() {
 
   describe('injectOfflineResourcesTest', (): void => {
     beforeAll(async (): Promise<void> => {
+      await Utils.msSleep(2000);
       console.log("App start")
     });
 
@@ -100,14 +101,14 @@ export default function InjectOfflineResourcesTest() {
       })
 
     /**
-     * @tc.name   SwitchNextPageStatic
-     * @tc.number SwitchNextPage_20006
+     * @tc.name   SwitchNextPage
+     * @tc.number SUB_WEB_SwitchNextPage_STATIC_0100
      * @tc.desc   SwitchNextPage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
         Utils.emitEvent("emitonSwitchNextPage", 10)

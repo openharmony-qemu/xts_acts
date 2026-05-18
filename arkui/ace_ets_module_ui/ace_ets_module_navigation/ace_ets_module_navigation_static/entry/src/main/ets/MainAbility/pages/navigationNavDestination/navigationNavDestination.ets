@@ -67,7 +67,7 @@ struct NavigationNavDestination {
         .title('t');
       }
       .enableVisibilityLifecycleWithContentCover(true)
-      .splitPlaceholder(new ComponentContent(this.getUIContext(), wrapBuilder(navSplitPhBuilder)))
+      .splitPlaceholder(new ComponentContent<Object>(this.getUIContext(), wrapBuilder(navSplitPhBuilder)))
       .height('32%')
       .width('100%')
       .id('navNd_body');

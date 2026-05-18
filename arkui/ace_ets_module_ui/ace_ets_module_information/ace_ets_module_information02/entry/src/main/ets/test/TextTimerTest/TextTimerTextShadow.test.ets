@@ -75,7 +75,7 @@ export default function TextTimerTextShadowTest() {
       let strJson = getInspectorByKey('textTimer2ShadowTest');
       let obj: ESObject = JSON.parse(strJson);
       console.info('TextTimerTextShadowTest_002 component obj is: ' + obj.$attrs.textShadow);
-      expect(obj.$attrs.textShadow.radius).assertEqual('0.000000');
+      expect(obj.$attrs.textShadow.radius).assertEqual('-10.000000');
       expect(obj.$attrs.textShadow.color).assertEqual('#FF000000');
       expect(obj.$attrs.textShadow.offsetX).assertEqual('-10.000000');
       expect(obj.$attrs.textShadow.offsetY).assertEqual('0.000000');

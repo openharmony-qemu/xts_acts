@@ -405,6 +405,7 @@ describe('btHidTest', () => {
     afterEach(async (done : Function) =>  {
         console.info('afterEach called')
         await unregisterHidDeviceaftereach();
+        await sleep(100);
         done();
     })
     afterAll(async (done : Function) =>  {

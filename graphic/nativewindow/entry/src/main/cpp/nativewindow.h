@@ -73,13 +73,16 @@ private:
     OHNativeWindow* _nativeWindow = nullptr;
 
 public:
-    InitNativeWindow()
+    explicit InitNativeWindow(bool needSetBufferGeometry = true)
     {
         _image = OH_ConsumerSurface_Create();
+        OH_ConsumerSurface_SetDefaultSize(_image, 0x50, 0x50);
         if (_image != nullptr) {
             _nativeWindow = OH_NativeImage_AcquireNativeWindow(_image);
             if (_nativeWindow != nullptr) {
-                OH_NativeWindow_NativeWindowHandleOpt(_nativeWindow, SET_BUFFER_GEOMETRY, width_, height_);
+                if (needSetBufferGeometry) {
+                    OH_NativeWindow_NativeWindowHandleOpt(_nativeWindow, SET_BUFFER_GEOMETRY, width_, height_);
+                }
                 OH_NativeWindow_NativeWindowHandleOpt(_nativeWindow, SET_USAGE, usage);
             } else {
                 _nativeWindow = nullptr;
@@ -274,6 +277,7 @@ napi_value testNativeWindowNativeWindowAtDetachDifferentBufferAbnormal(napi_env 
 napi_value testNativeWindowNativeWindowHandleOptNullptr(napi_env env, napi_callback_info info);
 napi_value testNativeWindowNativeWindowHandleOptSetGetBufferGeometryNormal(napi_env env, napi_callback_info info);
 napi_value testNativeWindowNativeWindowHandleOptSetGetBufferGeometryAbnormal(napi_env env, napi_callback_info info);
+napi_value testNativeWindowNativeWindowHandleOptCodeAbnormal(napi_env env, napi_callback_info info);
 
 // Native Window 2
 napi_value testNativeWindowNativeWindowHandleOptSetGetFormatNormal(napi_env env, napi_callback_info info);
@@ -357,4 +361,6 @@ napi_value testNativeWindowLockBufferMultipleCalls(napi_env env, napi_callback_i
 napi_value testNativeWindowUnLockAndFlushBufferMultipleCalls(napi_env env, napi_callback_info info);
 napi_value testNativeWindowLockAndUnLockAndRequest(napi_env env, napi_callback_info info);
 napi_value OHNativeErrorCodeCover(napi_env env, napi_callback_info info);
+napi_value testNativeWindowNativeWindowFlushBufferAbnormalRegion(napi_env env, napi_callback_info info);
+napi_value testNativeWindowNativeWindowRequestBufferDefaultWidthAndHeight(napi_env env, napi_callback_info info);
 #endif // NATIVEWINDOW_USELESS_H

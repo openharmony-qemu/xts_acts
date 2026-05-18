@@ -84,6 +84,7 @@ export class AsyncObj {
 struct WebComponent {
   controller: webview.WebviewController = new webview.WebviewController(undefined);
   controllerOther: webview.WebviewController = new webview.WebviewController(undefined);
+  controllerThree: webview.WebviewController = new webview.WebviewController(undefined);
   controllerOne: webview.WebviewController = new webview.WebviewController(undefined);
   @State isShouldOverlay : boolean = true;
   @State isCallback : boolean = true;
@@ -157,6 +158,20 @@ struct WebComponent {
                   console.error(`Error: ${errMsg}`);
                   Utils.emitEvent('error', 2603261011);
                 }
+              }
+              break;
+            }
+
+            case 'emitEmulateTouchFromMouseEventStatic002': {
+              try {
+                this.isPageEnd = -1;
+                this.controllerThree.refresh()
+                this.controllerThree.loadUrl("www.baidu.com")
+                Utils.emitEvent('no error', 2630141801);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 2630141801);
               }
               break;
             }
@@ -332,6 +347,12 @@ struct WebComponent {
 
       Web({ src: 'resource://rawfile/index1.html', controller: this.controller, incognitoMode: true })
         .javaScriptAccess(true)
+        .onRefreshAccessedHistory(undefined)
+        .onSearchResultReceive(undefined)
+        .onClientAuthenticationRequest(undefined)
+        .onFaviconReceived(undefined)
+        .enableNativeMediaPlayer(undefined)
+        .optimizeParserBudget(undefined)
     }
   }
 }

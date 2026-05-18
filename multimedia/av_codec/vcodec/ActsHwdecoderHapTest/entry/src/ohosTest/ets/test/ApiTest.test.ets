@@ -1808,5 +1808,88 @@ export default function ApiTest() {
       done();
     })
 
+    /**
+     * @tc.name   SUB_VIDEO_HWDEC_API_ADD_1000
+     * @tc.number SUB_VIDEO_HWDEC_API_ADD_1000
+     * @tc.desc   api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_VIDEO_HWDEC_API_ADD_1000', Level.LEVEL2, async (done: Function) => {
+      const result = await entry.Api_Test(127);
+      expect(result).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_VIDEO_HWDEC_API_ADD_1100
+     * @tc.number SUB_VIDEO_HWDEC_API_ADD_1100
+     * @tc.desc   api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_VIDEO_HWDEC_API_ADD_1100', Level.LEVEL2, async (done: Function) => {
+      const result = await entry.Api_Test(128);
+      expect(result).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_VIDEO_HWDEC_API_ADD_1200
+     * @tc.number SUB_VIDEO_HWDEC_API_ADD_1200
+     * @tc.desc   api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_VIDEO_HWDEC_API_ADD_1200', Level.LEVEL2, async (done: Function) => {
+      const result = await entry.Api_Test(129);
+      expect(result).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_VIDEO_HWDEC_API_ADD_1300
+     * @tc.number SUB_VIDEO_HWDEC_API_ADD_1300
+     * @tc.desc   api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_VIDEO_HWDEC_API_ADD_1300', Level.LEVEL2, async (done: Function) => {
+      const result = await entry.Api_Test(130);
+      expect(result).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_VIDEO_HWDEC_API_ADD_1400
+     * @tc.number SUB_VIDEO_HWDEC_API_ADD_1400
+     * @tc.desc   api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_VIDEO_HWDEC_API_ADD_1400', Level.LEVEL2, async (done: Function) => {
+      const result = await entry.Api_Test(131);
+      expect(result).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_VIDEO_HWDEC_API_ADD_1500
+     * @tc.number SUB_VIDEO_HWDEC_API_ADD_1500
+     * @tc.desc   api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_VIDEO_HWDEC_API_ADD_1500', Level.LEVEL2, async (done: Function) => {
+      const result = await entry.Api_Test(132);
+      expect(result).assertEqual(0);
+      done();
+    })
   })
 }

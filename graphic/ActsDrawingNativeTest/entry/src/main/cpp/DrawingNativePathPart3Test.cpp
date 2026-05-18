@@ -54,14 +54,6 @@ void DrawingNativePathPart3TestTearDown()
     std::cout << "DrawingNativePathPart3Test errorCodeReset after each test case." << std::endl;
 }
 
-/**
- * @tc.name   testPathIsClosedNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3700
- * @tc.desc   Test for checking if a path is closed using normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathIsClosedNormal()
 {
     DrawingNativePathPart3TestSetUp();
@@ -90,14 +82,6 @@ int TestPathIsClosedNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathIsClosedNormal2
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3701
- * @tc.desc   Test for checking if a path is closed without closing it.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathIsClosedNormal2()
 {
     DrawingNativePathPart3TestSetUp();
@@ -120,14 +104,6 @@ int TestPathIsClosedNormal2()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathIsClosedNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3702
- * @tc.desc   Test for checking if a path is closed with NULL or invalid parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathIsClosedNull()
 {
     DrawingNativePathPart3TestSetUp();
@@ -145,14 +121,6 @@ int TestPathIsClosedNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathGetPositionTangentNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3800
- * @tc.desc   Test for getting position and tangent of a path using normal parameters with tangent flag set to true.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathGetPositionTangentNormal()
 {
     DrawingNativePathPart3TestSetUp();
@@ -179,14 +147,6 @@ int TestPathGetPositionTangentNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathGetPositionTangentNormal2
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3801
- * @tc.desc   Test for getting position and tangent of a path using normal parameters with tangent flag set to false.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathGetPositionTangentNormal2()
 {
     DrawingNativePathPart3TestSetUp();
@@ -213,14 +173,6 @@ int TestPathGetPositionTangentNormal2()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathGetPositionTangentNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3802
- * @tc.desc   Test for getting position and tangent of a path using NULL or invalid parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathGetPositionTangentNull()
 {
     DrawingNativePathPart3TestSetUp();
@@ -254,14 +206,6 @@ int TestPathGetPositionTangentNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathGetPositionTangentAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3803
- * @tc.desc   Test for getting position and tangent of a path with abnormal parameters (non-float values).
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathGetPositionTangentAbnormal()
 {
     DrawingNativePathPart3TestSetUp();
@@ -309,14 +253,6 @@ int TestPathGetPositionTangentAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathGetPositionTangentMaximal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3804
- * @tc.desc   Test for getting position and tangent of a path with maximal values.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathGetPositionTangentMaximal()
 {
     DrawingNativePathPart3TestSetUp();
@@ -365,14 +301,6 @@ int TestPathGetPositionTangentMaximal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathOpNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3900
- * @tc.desc   Test for performing path operations using normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathOpNormal()
 {
     DrawingNativePathPart3TestSetUp();
@@ -426,14 +354,6 @@ int TestPathOpNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathOpNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3901
- * @tc.desc   Test for performing path operations with NULL or invalid parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathOpNull()
 {
     DrawingNativePathPart3TestSetUp();
@@ -463,14 +383,6 @@ int TestPathOpNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathGetMatrixNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4000
- * @tc.desc   Test for getting transformation matrix of a path using normal parameters with matrix flag set to true.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathGetMatrixNormal()
 {
     DrawingNativePathPart3TestSetUp();
@@ -510,14 +422,6 @@ int TestPathGetMatrixNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathGetMatrixNormal2
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4001
- * @tc.desc   Test for getting transformation matrix of a path using normal parameters with matrix flag set to false.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathGetMatrixNormal2()
 {
     DrawingNativePathPart3TestSetUp();
@@ -557,14 +461,6 @@ int TestPathGetMatrixNormal2()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathGetMatrixNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4002
- * @tc.desc   Test for getting transformation matrix of a path using NULL or invalid parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathGetMatrixNull()
 {
     DrawingNativePathPart3TestSetUp();
@@ -596,14 +492,6 @@ int TestPathGetMatrixNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathGetMatrixAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4003
- * @tc.desc   Test for getting transformation matrix of a path with abnormal parameters (non-float values).
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathGetMatrixAbnormal()
 {
     DrawingNativePathPart3TestSetUp();
@@ -633,14 +521,6 @@ int TestPathGetMatrixAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathGetMatrixMaximal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4004
- * @tc.desc   Test for getting transformation matrix of a path with maximal values.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathGetMatrixMaximal()
 {
     DrawingNativePathPart3TestSetUp();
@@ -670,14 +550,6 @@ int TestPathGetMatrixMaximal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathGetSegmentNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4100
- * @tc.desc   Testing the enumeration traversal of the interface for extracting path segments and appending them to the
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathGetSegmentNormal()
 {
     DrawingNativePathPart3TestSetUp();
@@ -714,14 +586,6 @@ int TestPathGetSegmentNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathGetSegmentNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4101
- * @tc.desc   Tests when an interface that intercepts a path fragment and appends it to the target path passes a null
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathGetSegmentNull()
 {
     DrawingNativePathPart3TestSetUp();
@@ -766,14 +630,6 @@ int TestPathGetSegmentNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathGetSegmentAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4102
- * @tc.desc   Test cases where the function intercepts a path fragment and appends it to the destination path with an
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathGetSegmentAbnormal()
 {
     DrawingNativePathPart3TestSetUp();
@@ -813,14 +669,6 @@ int TestPathGetSegmentAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathGetSegmentMultiplies
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4103
- * @tc.desc   The test function intercepts the path fragment and appends it to the target path loop several times
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathGetSegmentMultiplies()
 {
     DrawingNativePathPart3TestSetUp();
@@ -851,14 +699,6 @@ int TestPathGetSegmentMultiplies()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathSetPathNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4200
- * @tc.desc   test for testPathSetPathNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathSetPathNormal()
 {
     DrawingNativePathPart3TestSetUp();
@@ -885,14 +725,6 @@ int TestPathSetPathNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathSetPathNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4201
- * @tc.desc   test for testPathSetPathNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathSetPathNull()
 {
     DrawingNativePathPart3TestSetUp();
@@ -922,14 +754,6 @@ int TestPathSetPathNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathSetPathMulptiCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4202
- * @tc.desc   test for testPathSetPathMulptiCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathSetPathMulptiCalls()
 {
     DrawingNativePathPart3TestSetUp();
@@ -959,14 +783,6 @@ int TestPathSetPathMulptiCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathIsEmptyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4300
- * @tc.desc   test for testPathIsEmptyNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathIsEmptyNormal()
 {
     DrawingNativePathPart3TestSetUp();
@@ -990,14 +806,6 @@ int TestPathIsEmptyNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathIsEmptyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4301
- * @tc.desc   test for testPathIsEmptyNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathIsEmptyNull()
 {
     DrawingNativePathPart3TestSetUp();
@@ -1025,14 +833,6 @@ int TestPathIsEmptyNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathIsEmptyMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4302
- * @tc.desc   test for testPathIsEmptyMultipleCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathIsEmptyMultipleCalls()
 {
     DrawingNativePathPart3TestSetUp();
@@ -1059,14 +859,6 @@ int TestPathIsEmptyMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathIsRectNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4400
- * @tc.desc   test for testPathIsRectNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathIsRectNormal()
 {
     DrawingNativePathPart3TestSetUp();
@@ -1104,14 +896,6 @@ int TestPathIsRectNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathIsRectNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4401
- * @tc.desc   test for testPathIsRectNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathIsRectNull()
 {
     DrawingNativePathPart3TestSetUp();
@@ -1146,14 +930,6 @@ int TestPathIsRectNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathIsRectMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4402
- * @tc.desc   test for testPathIsRectMultipleCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathIsRectMultipleCalls()
 {
     DrawingNativePathPart3TestSetUp();
@@ -1183,14 +959,6 @@ int TestPathIsRectMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathGetFillTypeNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4500
- * @tc.desc   test for testPathGetFillTypeNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathGetFillTypeNormal()
 {
     DrawingNativePathPart3TestSetUp();
@@ -1232,14 +1000,6 @@ int TestPathGetFillTypeNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathGetFillTypeNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4501
- * @tc.desc   test for testPathGetFillTypeNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathGetFillTypeNull()
 {
     DrawingNativePathPart3TestSetUp();
@@ -1267,14 +1027,6 @@ int TestPathGetFillTypeNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathGetFillTypeMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4502
- * @tc.desc   test for testPathGetFillTypeMultipleCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathGetFillTypeMultipleCalls()
 {
     DrawingNativePathPart3TestSetUp();
@@ -1300,14 +1052,6 @@ int TestPathGetFillTypeMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathApproximateNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4600
- * @tc.desc   test for testPathApproximateNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathApproximateNormal()
 {
     DrawingNativePathPart3TestSetUp();
@@ -1342,14 +1086,6 @@ int TestPathApproximateNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathApproximateNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4601
- * @tc.desc   test for testPathApproximateNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathApproximateNull()
 {
     DrawingNativePathPart3TestSetUp();
@@ -1388,14 +1124,6 @@ int TestPathApproximateNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathApproximateAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4602
- * @tc.desc   test for testPathApproximateAbnormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathApproximateAbnormal()
 {
     DrawingNativePathPart3TestSetUp();
@@ -1431,14 +1159,6 @@ int TestPathApproximateAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathApproximateMultiCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4603
- * @tc.desc   test for testPathApproximateMultiCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathApproximateMultiCalls()
 {
     DrawingNativePathPart3TestSetUp();
@@ -1468,14 +1188,6 @@ int TestPathApproximateMultiCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathInterpolateNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4700
- * @tc.desc   test for testPathInterpolateNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathInterpolateNormal()
 {
     DrawingNativePathPart3TestSetUp();
@@ -1520,14 +1232,6 @@ int TestPathInterpolateNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathInterpolateNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4701
- * @tc.desc   test for testPathInterpolateNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathInterpolateNull()
 {
     DrawingNativePathPart3TestSetUp();
@@ -1575,14 +1279,6 @@ int TestPathInterpolateNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathInterpolateAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4702
- * @tc.desc   test for testPathInterpolateAbnormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathInterpolateAbnormal()
 {
     DrawingNativePathPart3TestSetUp();
@@ -1618,14 +1314,6 @@ int TestPathInterpolateAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathInterpolateMultiCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4703
- * @tc.desc   test for testPathInterpolateMultiCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathInterpolateMultiCalls()
 {
     DrawingNativePathPart3TestSetUp();
@@ -1661,14 +1349,6 @@ int TestPathInterpolateMultiCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathIsInterpolateNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4800
- * @tc.desc   test for testPathIsInterpolateNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathIsInterpolateNormal()
 {
     DrawingNativePathPart3TestSetUp();
@@ -1709,14 +1389,6 @@ int TestPathIsInterpolateNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathIsInterpolateNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4801
- * @tc.desc   test for testPathIsInterpolateNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathIsInterpolateNull()
 {
     DrawingNativePathPart3TestSetUp();
@@ -1754,14 +1426,6 @@ int TestPathIsInterpolateNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathIsInterpolateMultiCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4802
- * @tc.desc   test for testPathIsInterpolateMultiCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathIsInterpolateMultiCalls()
 {
     DrawingNativePathPart3TestSetUp();
@@ -1794,14 +1458,6 @@ int TestPathIsInterpolateMultiCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathIsInverseFillTypeNormalOne
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4900
- * @tc.desc   test for testPathIsInverseFillTypeNormalOne
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathIsInverseFillTypeNormalOne()
 {
     DrawingNativePathPart3TestSetUp();
@@ -1839,14 +1495,6 @@ int TestPathIsInverseFillTypeNormalOne()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathIsInverseFillTypeNormalTwo
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4901
- * @tc.desc   test for testPathIsInverseFillTypeNormalTwo
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathIsInverseFillTypeNormalTwo()
 {
     DrawingNativePathPart3TestSetUp();
@@ -1884,14 +1532,6 @@ int TestPathIsInverseFillTypeNormalTwo()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathIsInverseFillTypeNormalThree
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4902
- * @tc.desc   test for testPathIsInverseFillTypeNormalThree
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathIsInverseFillTypeNormalThree()
 {
     DrawingNativePathPart3TestSetUp();
@@ -1929,14 +1569,6 @@ int TestPathIsInverseFillTypeNormalThree()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathIsInverseFillTypeNormalFour
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4903
- * @tc.desc   test for testPathIsInverseFillTypeNormalFour
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathIsInverseFillTypeNormalFour()
 {
     DrawingNativePathPart3TestSetUp();
@@ -1974,14 +1606,6 @@ int TestPathIsInverseFillTypeNormalFour()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathIsInverseFillTypeNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4904
- * @tc.desc   test for testPathIsInverseFillTypeNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathIsInverseFillTypeNull()
 {
     DrawingNativePathPart3TestSetUp();
@@ -2007,14 +1631,6 @@ int TestPathIsInverseFillTypeNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathToggleInverseFillTypeNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4905
- * @tc.desc   test for testPathToggleInverseFillTypeNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathToggleInverseFillTypeNull()
 {
     DrawingNativePathPart3TestSetUp();
@@ -2041,14 +1657,6 @@ int TestPathToggleInverseFillTypeNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathIsInverseFillTypeCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4906
- * @tc.desc   test for testPathIsInverseFillTypeCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathIsInverseFillTypeCalls()
 {
     DrawingNativePathPart3TestSetUp();
@@ -2070,14 +1678,6 @@ int TestPathIsInverseFillTypeCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathToggleInverseFillTypeCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4907
- * @tc.desc   test for testPathToggleInverseFillTypeCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathToggleInverseFillTypeCalls()
 {
     DrawingNativePathPart3TestSetUp();

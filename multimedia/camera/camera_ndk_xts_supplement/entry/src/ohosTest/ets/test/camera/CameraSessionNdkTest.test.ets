@@ -51,8 +51,6 @@ export default function CameraFunctionTest() {
     });
     afterAll(() => {
       console.info('afterAll case');
-      let result = cameraObj.captureSessionRelease();
-      console.info(TAG, result);
     });
 
     /**
@@ -750,6 +748,48 @@ export default function CameraFunctionTest() {
       let result = cameraObj.TestGetExposureDurationWithUnconfiguredStream();
       console.info(TAG, result);
       expect(result).assertEqual(7400103);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0300
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0300
+     * @tc.desc     OH_PreviewOutput_AddDeferredSurface - CAMERA_INVALID_ARGUMENT
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0300', Level.LEVEL0, async () => {
+      let result = cameraObj.TestAddDeferredSurfaceWithEmptyStr("");
+      console.info(TAG, result);
+      expect(result).assertEqual(7400101);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0100
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0100
+     * @tc.desc     OH_PreviewOutput_AddDeferredSurface - CAMERA_OK
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0100', Level.LEVEL0, async () => {
+      let result = cameraObj.TestAddDeferredSurfaceSucc(indexSurfaceId);
+      console.info(TAG, result);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0200
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0200
+     * @tc.desc     OH_PreviewOutput_AddDeferredSurface - CAMERA_INVALID_ARGUMENT
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0200', Level.LEVEL0, async () => {
+      let result = cameraObj.TestAddDeferredSurfaceErr(indexSurfaceId);
+      console.info(TAG, result);
+      expect(result).assertEqual(7400101);
     });
     
   })

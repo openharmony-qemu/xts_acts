@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -52,7 +52,7 @@ struct makeObserved0140 {
   colors: Array<string> = ['0XFFC0CB', '0XDA70D6', '0X6B8E23', '0X6A5ACD', '0x00FFF', '0X00FF7F']
   sections: WaterFlowSections = UIUtils.makeObserved(new WaterFlowSections())
   scroller: Scroller = new Scroller()
-  @Local private arr: Array<number> = new Array<number>(8).fill(0)
+  @Local private arr: Array<number> = Array.create<number>(8, 0)
   oneColumnSection: SectionOptions = {
     itemsCount: 3,
     crossCount: 1,

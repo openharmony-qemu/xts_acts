@@ -42,6 +42,7 @@ export default function webSocketNoPTest() {
   describe("WebSocketNoPTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
+    let availableWebSocketAddress: string = 'wss://ws.ifelse.io/';
 
     /**
      * @tc.name   testNetworkMgrWebSocketConnectCode201Callback_static_0100
@@ -123,7 +124,225 @@ export default function webSocketNoPTest() {
         hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
         done();
       }
-    })
+    });
+  
+    /**
+     * @tc.name   testWebSocketSendCallBack_static_0500
+     * @tc.number SUB_Network_WebSocket_SendCallBack_0500
+     * @tc.desc   Establish a WebSocket Send 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWebSocketSendCallBack_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    async (done: () => void): Promise<void> => {
+      let caseName: string = 'testWebSocketSendCallBack_static_0500';
+      hilog.info(domain, tag, '%{public}s', caseName + ' start');
+      try {
+        let ws = webSocket.createWebSocket();
+        ws.connect(availableWebSocketAddress, (err: BusinessError<void> | null, value: boolean | undefined) => {
+          if (err && err.code !== 0) {
+            hilog.info(domain, tag, '%{public}s', caseName + 'connect fail! : errcode is ->' + err.code);
+            ExpectTrue(err.code === 201);
+            done();
+          } else {
+            hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
+          }
+        });
+        ws.onOpen((value: webSocket.OpenResult | undefined) => {
+          if (value && value !== null) {
+            hilog.info(domain, tag, '%{public}s', caseName + 'onOpen success ' + value.message);
+            ws.send("Hello, server!", (err: BusinessError<void> | null, value: boolean | undefined) => {
+              if (err && err.code !== 0) {
+                hilog.info(domain, tag, '%{public}s', caseName + 'send fail ' + err.code);
+                ExpectTrue(err.code === 201);
+                done();
+              } else {
+                hilog.info(domain, tag, '%{public}s', caseName + 'send success');
+                done();
+              }
+            });
+          }
+        });
+      } catch (err) {
+        hilog.info(domain, tag, '%{public}s', caseName + '  catch error is ' + err.code);
+        hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+        ExpectTrue(err.code === 201);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testWebSocketSendPermission_static_0800
+     * @tc.number SUB_Network_WebSocket_SendPermission_0800
+     * @tc.desc   test websocket
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWebSocketSendPermission_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testWebSocketSendPermission_static_0800';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          let ws = webSocket.createWebSocket();
+          ws.onOpen((value: webSocket.OpenResult | undefined) => {
+            if (value && value !== null) {
+              hilog.info(domain, tag, '%{public}s', caseName + 'onOpen success ' + value.message);
+              ws.send('hello!').then((value: boolean) => {
+                if (value && value !== null) {
+                  hilog.info(domain, tag, '%{public}s', caseName + 'send success ' + value);
+                  done();
+                }
+              }).catch((err: Error) => {
+                if (err && err.code !== 0) {
+                  hilog.info(domain, tag, '%{public}s', caseName + 'send fail ' + err.code);
+                  ExpectTrue(err.code === 201);
+                  done();
+                }
+              });
+            }
+          });
+          ws.connect(availableWebSocketAddress, (err: BusinessError<void> | null, value: boolean | undefined) => {
+            if (err && err.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + 'connect fail! : errcode is ->' + err.code);
+              ExpectTrue(err.code === 201);
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
+              done();
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + '  catch error is ' + err.code);
+          hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+          ExpectTrue(err.code === 201);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testWebSocketClose_static_0100
+     * @tc.number SUB_Network_WebSocket_Close_0100
+     * @tc.desc   test websocket close 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWebSocketClose_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testWebSocketClose_static_0100';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          let ws = webSocket.createWebSocket();
+          ws.close((err: BusinessError<void> | null, value: boolean | undefined) => {
+            if (err && err.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + 'close fail! : errcode is ->' + err.code);
+              ExpectTrue(err.code === 2302999 || err.code === 201);
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + 'close success!');
+              done();
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + '  catch error is ' + err.code);
+          hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+          ExpectTrue(err.code === 201);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testWebSocketClose_static_0400
+     * @tc.number SUB_Network_WebSocket_Close_0400
+     * @tc.desc   test websocket close
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWebSocketClose_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testWebSocketClose_static_0400';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          let ws = webSocket.createWebSocket();
+          ws.connect(availableWebSocketAddress, (err: BusinessError<void> | null, value: boolean | undefined) => {
+            if (err && err.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + 'connect fail! : errcode is ->' + err.code);
+              ExpectTrue(err.code === 201);
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
+              let webSocketCloseOptions: webSocket.WebSocketCloseOptions = {
+                code: 1,
+                reason: ""
+              };
+              ws.close(webSocketCloseOptions, (err: BusinessError<void> | null, value: boolean | undefined) => {
+                if (err && err.code !== 0) {
+                  hilog.info(domain, tag, '%{public}s', caseName + 'close fail! : errcode is ->' + err.code);
+                  ExpectTrue(err.code === 201);
+                  done();
+                } else {
+                  hilog.info(domain, tag, '%{public}s', caseName + 'close success! ' + value);
+                  done();
+                }
+              });
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + '  catch error is ' + err.code);
+          hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+          ExpectFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testWebSocketClosePermission_static_0200
+     * @tc.number SUB_Network_WebSocket_ClosePermission_0200
+     * @tc.desc   test websocket close
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWebSocketClosePermission_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testWebSocketClosePermission_static_0200';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          let ws = webSocket.createWebSocket();
+          ws.connect(availableWebSocketAddress, (err: BusinessError<void> | null, value: boolean | undefined) => {
+            if (err && err.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + 'connect fail! : errcode is ->' + err.code);
+              ExpectTrue(err.code === 201);
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
+              let webSocketCloseOptions: webSocket.WebSocketCloseOptions = {
+                code: 1,
+                reason: ""
+              };
+              ws.close(webSocketCloseOptions).then((value: boolean | undefined) => {
+                hilog.info(domain, tag, '%{public}s', caseName + 'close success! ' + value);
+                done();
+              }).catch((err: Error) => {
+                if (err && err.code !== 0) {
+                  hilog.info(domain, tag, '%{public}s', caseName + 'close fail! : errcode is ->' + err.code);
+                  ExpectTrue(err.code === 201);
+                  done();
+                }
+              });
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + '  catch error is ' + err.code);
+          hilog.info(domain, tag, '%{public}s', caseName + '---test end');
+          ExpectTrue(err.code === 201);
+          done();
+        }
+      });
+
 
 
   })

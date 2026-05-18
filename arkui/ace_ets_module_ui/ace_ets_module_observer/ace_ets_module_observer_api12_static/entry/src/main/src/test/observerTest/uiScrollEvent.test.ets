@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -90,7 +90,7 @@ it('uiScrollEvent_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       let height = bottom -top;
       let width = right - left;
       await CommonFunc.sleep(1000);
-      await (driver.swipe(Math.round(left + width*0.2) as int ,Math.round(bottom - height/5) as int ,Math.round(left + width*0.2) as int ,Math.round(bottom - height/2) as int ) as Promise<void>);
+      await (driver.swipe(Math.round(left + width*0.2).toInt() ,Math.round(bottom - height/5).toInt() ,Math.round(left + width*0.2).toInt() ,Math.round(bottom - height/2).toInt() ) as Promise<void>);
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('scrollEvent_ui2');
       let obj = JSON.parseJsonElement(strJson);

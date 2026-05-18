@@ -22,9 +22,12 @@
 #include <multimedia/player_framework/native_avdemuxer.h>
 #include <multimedia/player_framework/native_avsource.h>
 #include <multimedia/player_framework/native_avmemory.h>
+#include <multimedia/player_framework/native_avcodec_videoencoder.h>
 #include <fcntl.h>
 #include <string>
 #include <sys/stat.h>
+#include <iostream>
+#include <unistd.h>
 
 // 测试常量定义
 constexpr int MAX_DECODER_INSTANCES = 64;        // 最大解码器实例数
@@ -33,6 +36,7 @@ constexpr int MAX_VIDEO_WIDTH = 1920;            // 最大视频宽度
 constexpr int VC1_PROFILE_COUNT = 3;             // VC1 支持的 profile 数量
 constexpr int WMV3_PROFILE_COUNT = 2;            // WMV3 支持的 profile 数量
 constexpr int PIXEL_FORMAT_COUNT = 3;            // 支持的像素格式数量
+static OH_AVCodec *venc_ = nullptr;
 
 #ifdef SUPPORT_DRM
 #include "native_mediakeysession.h"
@@ -771,6 +775,193 @@ int VideoAv1DecCapApi0017()
         return 0;
     }
     return 0;
+}
+
+// Obtain a list of supported capabilities and their names for the video encoder
+int VideoEncCapApi0018()
+{
+    uint32_t count = 0;
+    OH_AVCapability **capabilityList = nullptr;
+    const char *codecNameType = nullptr;
+    const char *codecNameMimeType = nullptr;
+    capabilityList = OH_AVCodec_GetCapabilityList(OH_AVCODEC_TYPE_VIDEO_ENCODER, &count);
+    if (capabilityList == nullptr || count == 0) {
+        return -1;
+    }
+    for (uint32_t i = 0; i < count; ++i) {
+        codecNameType = OH_AVCapability_GetName(capabilityList[i]);
+        codecNameMimeType = OH_AVCapability_GetMimeType(capabilityList[i]);
+        cout << "codecNameType= " << codecNameType << endl;
+        cout << "codecNameMimeType= " << codecNameMimeType << endl;
+    }
+    return 0;
+}
+
+// Obtain a list of supported capabilities and their names for the video decoder
+int VideoDecCapApi0019()
+{
+    uint32_t count = 0;
+    OH_AVCapability **capabilityList = nullptr;
+    const char *codecNameType = nullptr;
+    const char *codecNameMimeType = nullptr;
+    capabilityList = OH_AVCodec_GetCapabilityList(OH_AVCODEC_TYPE_VIDEO_DECODER, &count);
+    if (capabilityList == nullptr || count == 0) {
+        return -1;
+    }
+    for (uint32_t i = 0; i < count; ++i) {
+        codecNameType = OH_AVCapability_GetName(capabilityList[i]);
+        codecNameMimeType = OH_AVCapability_GetMimeType(capabilityList[i]);
+        cout << "codecNameType= " << codecNameType << endl;
+        cout << "codecNameMimeType= " << codecNameMimeType << endl;
+    }
+    return 0;
+}
+
+// Obtain a list of supported capabilities and their names for the audio encoder
+int VideoEncCapApi0020()
+{
+    uint32_t count = 0;
+    OH_AVCapability **capabilityList = nullptr;
+    const char *codecNameType = nullptr;
+    const char *codecNameMimeType = nullptr;
+    capabilityList = OH_AVCodec_GetCapabilityList(OH_AVCODEC_TYPE_AUDIO_ENCODER, &count);
+    if (capabilityList == nullptr || count == 0) {
+        return -1;
+    }
+    for (uint32_t i = 0; i < count; ++i) {
+        codecNameType = OH_AVCapability_GetName(capabilityList[i]);
+        codecNameMimeType = OH_AVCapability_GetMimeType(capabilityList[i]);
+        cout << "codecNameType= " << codecNameType << endl;
+        cout << "codecNameMimeType= " << codecNameMimeType << endl;
+    }
+    return 0;
+}
+
+// Obtain a list of supported capabilities and their names for the audio DECODER
+int VideoDecCapApi0021()
+{
+    uint32_t count = 0;
+    OH_AVCapability **capabilityList = nullptr;
+    const char *codecNameType = nullptr;
+    const char *codecNameMimeType = nullptr;
+    capabilityList = OH_AVCodec_GetCapabilityList(OH_AVCODEC_TYPE_AUDIO_DECODER, &count);
+    if (capabilityList == nullptr || count == 0) {
+        return -1;
+    }
+    for (uint32_t i = 0; i < count; ++i) {
+        codecNameType = OH_AVCapability_GetName(capabilityList[i]);
+        codecNameMimeType = OH_AVCapability_GetMimeType(capabilityList[i]);
+        cout << "codecNameType= " << codecNameType << endl;
+        cout << "codecNameMimeType= " << codecNameMimeType << endl;
+    }
+    return 0;
+}
+
+// Check the encoder type
+int VideoEncCapApi0022()
+{
+    OH_AVCapability *capHevcHw = nullptr;
+    bool checkMimeType = true;
+    capHevcHw = OH_AVCodec_GetCapabilityByCategory(
+        OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
+    if (capHevcHw == nullptr) {
+        return 0;
+    }
+    checkMimeType = OH_AVCapability_CheckMimeType(capHevcHw, OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
+    if (!checkMimeType) {
+        return -1;
+    }
+    return 0;
+}
+
+// Check the secure decoder type
+int VideoDecCapApi0023()
+{
+    uint32_t count = 0;
+    if (access("/system/lib64/media/", 0)) {
+        return 0;
+    }
+    OH_AVCapability **capabilityList = OH_AVCodec_GetCapabilityList(OH_AVCODEC_TYPE_VIDEO_DECODER, &count);
+    if (capabilityList == nullptr || count == 0) {
+        return -1;
+    }
+    for (uint32_t i = 0; i < count; ++i) {
+        if (OH_AVCapability_IsSecure(capabilityList[i])) {
+            return 0;
+        }
+    }
+    return -1;
+}
+
+// Check the encoder type
+int VideoDecCapApi0024()
+{
+    bool checkMimeType = true;
+    checkMimeType = OH_AVCapability_CheckMimeType(nullptr, OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
+    if (!checkMimeType) {
+        return -1;
+    }
+    return 0;
+}
+
+// Check the encoder type
+int VideoDecCapApi0025()
+{
+    OH_AVCapability *capHevcHw = nullptr;
+    bool checkMimeType = true;
+    capHevcHw = OH_AVCodec_GetCapabilityByCategory(
+        OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
+    if (capHevcHw == nullptr) {
+        return 0;
+    }
+    checkMimeType = OH_AVCapability_CheckMimeType(capHevcHw, nullptr);
+    if (!checkMimeType) {
+        return -1;
+    }
+    return 0;
+}
+
+// Check the encoder type
+int VideoDecCapApi0026()
+{
+    bool checkMimeType = true;
+    checkMimeType = OH_AVCapability_IsSecure(nullptr);
+    if (!checkMimeType) {
+        return -1;
+    }
+    return 0;
+}
+
+int VideoDecCapApi0027()
+{
+    OH_AVCapability *cap = OH_AVCodec_GetCapabilityByCategory(
+        OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, SOFTWARE);
+    if (!cap) {
+        return 0;
+    }
+    string codecName = "";
+    codecName = OH_AVCapability_GetName(cap);
+    venc_ = OH_VideoEncoder_CreateByName(codecName.c_str());
+    if (!venc_) {
+        return -1;
+    }
+    OH_AVFormat *format = OH_VideoEncoder_GetOutputDescription(venc_);
+    if (!format) {
+        OH_VideoEncoder_Destroy(venc_);
+        return -1;
+    }
+
+    int32_t layerId = 0;
+    int32_t ret = OH_AVFormat_GetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_TEMPORAL_LAYER_ID, &layerId);
+    if (ret == 0) {
+        std::cout << "temporal layer id: " << layerId << std::endl;
+    } else {
+        std::cerr << "Failed to get temporal layer id, ret=" << ret << std::endl;
+    }
+
+    OH_AVFormat_Destroy(format);
+    OH_VideoEncoder_Destroy(venc_);
+    return (ret == 0) ? 0 : -1;
 }
 
 } // namespace Media

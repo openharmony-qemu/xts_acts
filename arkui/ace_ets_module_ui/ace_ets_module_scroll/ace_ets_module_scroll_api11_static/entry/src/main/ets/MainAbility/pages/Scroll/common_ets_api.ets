@@ -30,7 +30,6 @@ import {
 import {
   State,
   StorageLink,
-  LocalStorage,
   Environment,
   PersistentStorage,
   LocalStorage

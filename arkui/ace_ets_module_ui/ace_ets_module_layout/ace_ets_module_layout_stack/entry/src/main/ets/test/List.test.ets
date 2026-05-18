@@ -31,6 +31,7 @@ import StackChildAlignmentTest from './Stack/StackChildAlignmentTest.ets'
 import StackBackgroundTest from './Stack/StackBackgroundTest.ets'
 import stackAlignContentJsunit from './Stack/stack.test.ets';
 import StackAlignContentNullUndefinedTest from './Stack/StackAlignContentNullUndefined.test';
+import StackSyncLoadTest from './Stack/StackSyncLoadTest.test';
 
 export default function testsuite() {
   stackAlignChange();
@@ -52,4 +53,5 @@ export default function testsuite() {
   StackBackgroundTest();
   stackAlignContentJsunit();
   StackAlignContentNullUndefinedTest();
+  StackSyncLoadTest();
 }

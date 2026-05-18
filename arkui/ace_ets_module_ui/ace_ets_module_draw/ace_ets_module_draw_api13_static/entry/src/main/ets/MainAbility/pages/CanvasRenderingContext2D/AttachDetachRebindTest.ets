@@ -16,7 +16,6 @@
 import {
   Entry,
   Component,
-  Canvas,
   RenderingContextSettings,
   CanvasRenderingContext2D,
   Callback,
@@ -26,7 +25,7 @@ import {
   ClickEvent,
   Color,
   Text,
-  Canvas,
+  Canvas
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 

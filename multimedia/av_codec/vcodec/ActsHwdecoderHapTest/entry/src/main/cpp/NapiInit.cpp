@@ -30,7 +30,7 @@ static constexpr int RESULT_ERROR = -1;
 
 // Handler count constants for std::array sizes (avoid magic numbers).
 static constexpr size_t HWH265_HDR2SDR_COUNT = 1;
-static constexpr size_t API_TEST_COUNT = 127;
+static constexpr size_t API_TEST_COUNT = 133;
 static constexpr size_t FUNC2_TEST_COUNT = 48;
 static constexpr size_t FUNC_TEST_COUNT = 24;
 static constexpr size_t STATE_TEST_COUNT = 43;
@@ -199,7 +199,9 @@ static const std::array<TestHandler, API_TEST_COUNT> g_api_test_Handlers = {
     VIDEO_DECODE_SYNC_API_0050,    VIDEO_DECODE_SYNC_API_0060,    VIDEO_DECODE_SYNC_API_0070,
     VIDEO_DECODE_SYNC_API_0080,    VIDEO_HWDEC_FORMAT_API_0010,   VIDEO_HWDEC_FORMAT_API_0020,
     VIDEO_HWDEC_API_ADD_0010,      VIDEO_HWDEC_API_ADD_0020,      VIDEO_HWDEC_API_ADD_0030,
-    VIDEO_HWDEC_API_ADD_0040
+    VIDEO_HWDEC_API_ADD_0040,      VIDEO_HWDEC_API_ADD_0050,      VIDEO_HWDEC_API_ADD_0060,
+    VIDEO_HWDEC_API_ADD_0070,      VIDEO_HWDEC_API_ADD_0080,      VIDEO_HWDEC_API_ADD_0090,
+    VIDEO_HWDEC_API_ADD_0100
 };
 
 static const std::array<TestHandler, FUNC2_TEST_COUNT> g_func2_test_Handlers = {

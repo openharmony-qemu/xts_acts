@@ -31,7 +31,8 @@
                 "./resource/audio/H264_AAC.mp4 -> /data/app/el2/100/base/com.example.avplayerndk/haps/entry_test/files/",
                 "./resource/media/codec/demuxer/srt_3200.srt -> /data/app/el2/100/base/com.example.avplayerndk/haps/entry_test/files/",
                 "./resource/media/AVPlayer/H264_AAC_2audio.mp4 -> /data/app/el2/100/base/com.example.avplayerndk/haps/entry_test/files/",
-                "./resource/media/codec/demuxer/srt_2800.srt -> /data/app/el2/100/base/com.example.avplayerndk/haps/entry_test/files/"
+                "./resource/media/codec/demuxer/srt_2800.srt -> /data/app/el2/100/base/com.example.avplayerndk/haps/entry_test/files/",
+                "./resource/media/H265_7680x4320_24fps_8bit.mp4 -> /data/app/el2/100/base/com.example.avplayerndk/haps/entry_test/files/"
             ]
         },
         {

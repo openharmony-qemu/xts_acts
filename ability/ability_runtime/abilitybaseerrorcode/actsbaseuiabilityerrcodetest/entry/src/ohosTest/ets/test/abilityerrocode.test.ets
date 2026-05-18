@@ -1227,14 +1227,14 @@ export default function errorCodeTest() {
     })
 
     /**
-     * @tc.name    SUB_Ability_AbilityBase_ErrorCode_0025
+     * @tc.name    SUB_Ability_AbilityBase_ErrorCode_0025Adapt001
      * @tc.number SUB_Ability_AbilityBase_ErrorCode_0025
      * @tc.desc   To verify the errcode 16000078 when assithap "multiAppMode" with ability & parameters with APP_INSTANCE_KEY ："app_instance_100"
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it(' SUB_Ability_AbilityBase_ErrorCode_0025', Level.LEVEL0, async (done: Function) => {
+    it('SUB_Ability_AbilityBase_ErrorCode_0025Adapt001', Level.LEVEL0, async (done: Function) => {
       let tag:string = ' SUB_Ability_AbilityBase_ErrorCode_0025';
       if (mpExtensionEnable == 'true') {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {

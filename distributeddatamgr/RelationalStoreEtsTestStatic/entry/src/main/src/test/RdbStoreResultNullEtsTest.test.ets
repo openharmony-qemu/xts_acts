@@ -63,7 +63,7 @@ let STORE_CONFIG2 :data_relationalStore.StoreConfig = {
 let rdbStore : data_relationalStore.RdbStore | undefined;
 let rdbStore1 : data_relationalStore.RdbStore
 let rdbStore2 : data_relationalStore.RdbStore
-let vbs :Array<data_relationalStore.ValuesBucket> = new Array<data_relationalStore.ValuesBucket>(3);
+let vbs :Array<data_relationalStore.ValuesBucket> = [];
 const valueBucket0 :data_relationalStore.ValuesBucket = {
   "data1": "hello",
   "data2": 10 as long,//
@@ -89,9 +89,9 @@ const valueBucket4 :data_relationalStore.ValuesBucket = {
   "data3": 100000.9,
   "data4": new Uint8Array(0),
 }
-vbs[0] = valueBucket0
-vbs[1] = valueBucket1
-vbs[2] = valueBucket2
+vbs.push(valueBucket0)
+vbs.push(valueBucket1)
+vbs.push(valueBucket2)
 
 const valueBucket3 :data_relationalStore.ValuesBucket = {
   "data1": "hello",
@@ -1568,17 +1568,13 @@ export default function RdbStoreResultNullEtsTest() {
           "data1": "hello world"
         };
         if (rdbStore!= undefined) {
-          rdbStore!.insert("test", valueBucket1, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE,
-            (err, rowId) => {
-              if (err) {
-                console.error(tag +`Insert is failed, code is ${err.code}, message is ${err.message}`);
-                expect(true).assertFail();
-              }else{
-                console.info(tag +`Insert is successful, rowId = ${rowId}`);
-                expect(rowId).assertEqual(1);
-                waitForCompletion(async () => {await rdbStore!.close();})
-                console.info(tag +`close succsee`);
-                rdbStore!.executeSql("SELECT * FROM test where data1 = ?", ['hello world'], (err) => {
+          try {
+            let rowId = await rdbStore!.insert("test", valueBucket1, data_relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
+            console.info(tag +`Insert is successful, rowId = ${rowId}`);
+            expect(rowId).assertEqual(1);
+            await rdbStore!.close();
+            console.info(tag +`close succsee`);
+            rdbStore!.executeSql("SELECT * FROM test where data1 = ?", ['hello world'], (err) => {
                   if (err) {
                     console.error(tag +`Query failed, code is ${err.code}, message is ${err.message}`);
                     expect(14800014).assertEqual(err.code);
@@ -1587,8 +1583,10 @@ export default function RdbStoreResultNullEtsTest() {
                     expect(true).assertFail();
                   }
                 })
-              }
-            });
+          } catch (err) {
+            console.error(tag +`Insert is failed, code is ${err.code}, message is ${err.message}`);
+            expect(true).assertFail();
+          }
         }
         done()
         console.log(tag + "************* testRdbexecuteSql005 end *************");

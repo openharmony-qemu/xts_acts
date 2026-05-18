@@ -1235,5 +1235,26 @@ export default function initNdkTest() {
       }
       done();
     });
+
+    /**
+     * @tc.name   testCanIUse003
+     * @tc.number SUB_STARTUP_INIT_SYSCAPNDK_CANIUSE_0300
+     * @tc.desc   test canIUse with using null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testCanIUse003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try{
+        let cap = "";
+        let result: boolean = canIUse(cap);
+        expect(result).assertEqual(false);
+        console.info('the SystemCapability of SystemCapability.Ability.testCanIUse003 can not use.');
+      }catch(e){
+        console.info('the SystemCapability of SystemCapability.Ability.testCanIUse003 can use.');
+        expect().assertFail();
+      }
+      done();
+    });
   })
 }

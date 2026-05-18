@@ -43,7 +43,7 @@ interface Obj18{
   field2:string
 }
 
-export default function BuiltinsNullLiteralTest() {
+export default function BuiltinsNullLiteralTest(): void {
   describe('BuiltinsNullLiteralTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

@@ -102,7 +102,7 @@ async function  doScryptKdfTaskPool(maxMemory: long, n: long, r: long, p: long,
     return {ret:ret, code: code, secret: secret} as secretResult;
   } catch (error) {
     console.error(`doScryptKdfTaskPool “${error}“, error code: ${error.code}`);
-    code = error.code as number;
+    code = error.code.toDouble();
     let secret: cryptoFramework.DataBlob = {data: new Uint8Array()} as cryptoFramework.DataBlob;
     return {ret:false, code: code, secret: secret} as secretResult;
   }

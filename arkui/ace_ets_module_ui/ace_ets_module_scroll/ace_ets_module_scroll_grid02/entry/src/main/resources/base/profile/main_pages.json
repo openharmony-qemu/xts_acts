@@ -46,6 +46,7 @@
         "MainAbility/pages/gridDefault/gridEventNullUndefined",
         "MainAbility/pages/gridItemDefault/gridItemNullUndefined",
         "MainAbility/pages/LazyVGridLayout/columnsTemplateNullUndefined",
-        "MainAbility/pages/LazyVGridLayout/columnsRowsGapNullUndefined"
+        "MainAbility/pages/LazyVGridLayout/columnsRowsGapNullUndefined",
+        "MainAbility/pages/LazyVGridLayout/onVisibleIndexesChangeTest"
     ]
 }

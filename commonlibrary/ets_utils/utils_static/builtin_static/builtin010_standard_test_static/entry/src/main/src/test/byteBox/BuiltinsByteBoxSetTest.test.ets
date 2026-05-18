@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -78,7 +78,7 @@ export default function builtinsByteBoxSetText() {
       const box = new ByteBox();
       const underflowValue: number = -129;
       try {
-        const byteValue: byte = underflowValue as byte;
+        const byteValue: byte = underflowValue.toByte();
         const setResult: byte = box.set(byteValue);
         expect(setResult).assertEqual(127);
       } catch (error) {
@@ -98,7 +98,7 @@ export default function builtinsByteBoxSetText() {
       const box = new ByteBox();
       const overflowValue: number = 128;
       try {
-        const byteValue: byte = overflowValue as byte;
+        const byteValue: byte = overflowValue.toByte();
         const setResult: byte = box.set(byteValue);
         expect(setResult).assertEqual(-128);
       } catch (error) {

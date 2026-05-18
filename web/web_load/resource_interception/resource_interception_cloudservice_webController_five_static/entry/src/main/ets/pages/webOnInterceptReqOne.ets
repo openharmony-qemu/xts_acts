@@ -21,7 +21,7 @@ import { BusinessError, Callback, RecordData } from '@ohos.base'
 import { Hypium } from '../../../hypium';
 import Utils from '../../src/test/Utils.test';
 
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 

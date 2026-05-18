@@ -39,7 +39,7 @@ const KEY_TEST_STRING_ELEMENT = 'key_test_string';
 const KEY_TEST_SYNC_ELEMENT = 'key_test_sync';
 
 const VALUE_TEST_INT_ELEMENT = 123  as long;
-const VALUE_TEST_FLOAT_ELEMENT = 321.12  as long;
+const VALUE_TEST_FLOAT_ELEMENT = 321.12.toLong();
 const VALUE_TEST_BOOLEAN_ELEMENT = true;
 const VALUE_TEST_STRING_ELEMENT = 'value-string-001';
 
@@ -965,7 +965,7 @@ export default function SingleKvStoreConcurrencyTest() {
         console.info('SINGLEKVSTORE_CONCURRENCY_CHANGEFLOAT_PROMISE_0100 start');
         let count: number = 200;
         let count1: number = 200;
-        let VALUE_TEST_FLOAT1_ELEMENT = 456.78  as long;
+        let VALUE_TEST_FLOAT1_ELEMENT = 456.78.toLong();
         for (let i = 0; i < 200; i++) {
           try {
             kvStore!.put(KEY_TEST_FLOAT_ELEMENT, VALUE_TEST_FLOAT_ELEMENT).

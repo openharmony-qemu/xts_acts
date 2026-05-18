@@ -40,10 +40,10 @@ const ERR_ALL_PERM_GRANTED = 12100011;
 const ERR_PERM_NOT_REVOKE_BY_USER = 12100012;
 
 function clickRequest(driver: Driver, name: string): boolean {
-  waitForCompletion(async () => {await Utils.msSleep(2000);})
+  Utils.msSleep(2000).awaitSync()
   try {
     hilog.error(domain, tag, ` 11111111111111111111111 error, ${ JSON.stringify(name) }`);
-    return waitForCompletion<boolean>(async (): Promise<boolean> => {
+    return (async (): Promise<boolean> => {
       let button = await driver.findComponent(ON.text(name));
       await Utils.msSleep(1000);
       if (button !== null) {
@@ -52,7 +52,7 @@ function clickRequest(driver: Driver, name: string): boolean {
         return true;
       }
       return false;
-    })
+    })().awaitSync()
   } catch (error) {
     hilog.error(domain, tag, ` findcomponent error, ${ JSON.stringify(error) }`);
     return false;
@@ -248,7 +248,7 @@ export default function requestPermissionOnSettingStaticTest() {
             expect(error.code).assertEqual(ERR_PERM_NOT_REVOKE_BY_USER);
 
             let driver: Driver = Driver.create();
-            waitForCompletion(async () => {await Utils.msSleep(1000);})
+            Utils.msSleep(1000).awaitSync()
             // 2. 申请权限弹框，并选择允许
             hilog.info(domain, 'testTag', "Test_requestPermissionOnSetting_007 begin request permisson from user");
             atManager.requestPermissionsFromUser(testAbilityContext!, permissionList).then((data: PermissionRequestResult): void => {
@@ -266,7 +266,7 @@ export default function requestPermissionOnSettingStaticTest() {
                 done();
               });
             });
-            waitForCompletion(async () => {await Utils.msSleep(3000);})
+            Utils.msSleep(3000).awaitSync()
             clickRequest(driver, '允许');
           });
         } catch (error) {
@@ -297,7 +297,7 @@ export default function requestPermissionOnSettingStaticTest() {
             expect(error.code).assertEqual(ERR_PERM_NOT_REVOKE_BY_USER);
 
             let driver1: Driver = Driver.create();
-            waitForCompletion(async () => {await Utils.msSleep(1000);})
+            Utils.msSleep(1000).awaitSync()
             // 申请WRITE_CALENDAR权限弹框，并选择禁止
             atManager.requestPermissionsFromUser(testAbilityContext!, new Array<Permissions>('ohos.permission.WRITE_CALENDAR')).then((data: PermissionRequestResult): void => {
               hilog.info(domain, tag, "requestPermissionsFromUser data1 ");
@@ -310,7 +310,7 @@ export default function requestPermissionOnSettingStaticTest() {
                 expect(error.code).assertEqual(ERR_PERM_NOT_REVOKE_BY_USER);
 
                 let driver2: Driver = Driver.create();
-                waitForCompletion(async () => {await Utils.msSleep(1000);})
+                Utils.msSleep(1000).awaitSync()
                 // 申请权限，选择允许
                 atManager.requestPermissionsFromUser(testAbilityContext!, new Array<Permissions>('ohos.permission.READ_CALENDAR')).then((data: PermissionRequestResult): void => {
                   hilog.info(domain, tag, "requestPermissionsFromUser data2 " + JSON.stringify(data));
@@ -318,7 +318,7 @@ export default function requestPermissionOnSettingStaticTest() {
                   expect(data.dialogShownResults?.[0]).assertEqual(true);
 
                   let driver3: Driver = Driver.create();
-                  waitForCompletion(async () => {await Utils.msSleep(1000);})
+                  Utils.msSleep(1000).awaitSync()
                   // 3. 1个被允许，一个被禁止，正常弹框(选择允许)
                   atManager.requestPermissionOnSetting(testAbilityContext!, permissionList).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
                     // hilog.info(domain, 'testTag', "Test_requestPermissionOnSetting_008 data " + JSON.stringify(data));
@@ -333,18 +333,18 @@ export default function requestPermissionOnSettingStaticTest() {
                       done();
                     });
                   });
-                  waitForCompletion(async () => {await Utils.msSleep(2000);})
+                  Utils.msSleep(2000).awaitSync()
                   if (clickRequest(driver3, '允许') || clickRequest(driver3, '禁止')) {
                     if (clickRequest(driver3, '仅此应用日程'))
                     clickRequest(driver3, '确定');
                   }
                 });
-                waitForCompletion(async () => {await Utils.msSleep(2000);})
+                Utils.msSleep(2000).awaitSync()
                 clickRequest(driver2, '允许');
               });
             });
             // click second permission
-            waitForCompletion(async () => {await Utils.msSleep(2000);})
+            Utils.msSleep(2000).awaitSync()
             if(!clickRequest(driver1, '禁止')) {
               if(!clickRequest(driver1, '不允许')) {
                 clickRequest(driver1, '取消');
@@ -383,7 +383,7 @@ export default function requestPermissionOnSettingStaticTest() {
             expect(data.dialogShownResults?.[0]).assertEqual(true);
 
             let driver2: Driver = Driver.create();
-            waitForCompletion(async () => {await Utils.msSleep(1000);})
+            Utils.msSleep(1000).awaitSync()
             // 2. 嵌套式重复调用
             atManager.requestPermissionOnSetting(testAbilityContext!, permissionList).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
               // hilog.info(domain, tag, "Test_requestPermissionOnSetting_009 data1 " + JSON.stringify(data));
@@ -391,21 +391,21 @@ export default function requestPermissionOnSettingStaticTest() {
               expect(data[0] != null).assertTrue();
 
               let driver3: Driver = Driver.create();
-              waitForCompletion(async () => {await Utils.msSleep(1000);})
+              Utils.msSleep(1000).awaitSync()
               atManager.requestPermissionOnSetting(testAbilityContext!, permissionList).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
                 // hilog.info(domain, tag, "Test_requestPermissionOnSetting_009 data2 " + JSON.stringify(data));
                 expect(data[0]).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_DENIED); // -1: not granted
                 expect(data[0] != null).assertTrue();
 
                 let driver4: Driver = Driver.create();
-                waitForCompletion(async () => {await Utils.msSleep(1000);})
+                Utils.msSleep(1000).awaitSync()
                 atManager.requestPermissionOnSetting(testAbilityContext!, permissionList).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
                   // hilog.info(domain, tag, "Test_requestPermissionOnSetting_009 data3 " + JSON.stringify(data));
                   expect(data[0]).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_DENIED); // -1: not granted
                   expect(data[0] != null).assertTrue();
 
                   let driver5: Driver = Driver.create();
-                  waitForCompletion(async () => {await Utils.msSleep(1000);})
+                  Utils.msSleep(1000).awaitSync()
                   atManager.requestPermissionOnSetting(testAbilityContext!, permissionList).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
                     // hilog.info(domain, tag, "Test_requestPermissionOnSetting_009 data4 " + JSON.stringify(data));
                     expect(data[0]).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_DENIED); // -1: not granted
@@ -413,7 +413,7 @@ export default function requestPermissionOnSettingStaticTest() {
                     done();
                   });
                   // click second permission
-                  waitForCompletion(async () => {await Utils.msSleep(2000);})
+                  Utils.msSleep(2000).awaitSync()
                   if(!clickRequest(driver5, '禁止')) {
                     if(!clickRequest(driver5, '不允许')) {
                       clickRequest(driver5, '取消');
@@ -423,7 +423,7 @@ export default function requestPermissionOnSettingStaticTest() {
                   }
                 });
                 // click second permission
-                waitForCompletion(async () => {await Utils.msSleep(2000);})
+                Utils.msSleep(2000).awaitSync()
                 if(!clickRequest(driver4, '禁止')) {
                   if(!clickRequest(driver4, '不允许')) {
                     clickRequest(driver4, '取消');
@@ -433,7 +433,7 @@ export default function requestPermissionOnSettingStaticTest() {
                 }
               });
               // click second permission
-              waitForCompletion(async () => {await Utils.msSleep(2000);})
+              Utils.msSleep(2000).awaitSync()
               if(!clickRequest(driver3, '禁止')) {
                 if(!clickRequest(driver3, '不允许')) {
                   clickRequest(driver3, '取消');
@@ -443,7 +443,7 @@ export default function requestPermissionOnSettingStaticTest() {
               }
             });
             // click second permission
-            waitForCompletion(async () => {await Utils.msSleep(2000);})
+            Utils.msSleep(2000).awaitSync()
             if(!clickRequest(driver2, '禁止')) {
               if(!clickRequest(driver2, '不允许')) {
                 clickRequest(driver2, '取消');
@@ -489,7 +489,7 @@ export default function requestPermissionOnSettingStaticTest() {
             hilog.info(domain, 'testTag', "requestPermissionsFromUser data " + JSON.stringify(data));
 
             let driver2: Driver = Driver.create();
-            waitForCompletion(async () => {await Utils.msSleep(1000);})
+            Utils.msSleep(1000).awaitSync()
             atManager.requestPermissionOnSetting(testAbilityContext!, permissionList).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
               // hilog.info(domain, tag, "Test_requestPermissionOnSetting_010 data1 " + JSON.stringify(data));
               expect(data[0]).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_GRANTED); // 0: granted
@@ -506,7 +506,7 @@ export default function requestPermissionOnSettingStaticTest() {
                 done();
               }
             });
-            waitForCompletion(async () => {await Utils.msSleep(2000);})
+            Utils.msSleep(2000).awaitSync()
             if (clickRequest(driver2, '始终允许') || clickRequest(driver2, '仅使用期间允许')) {
               clickRequest(driver2, '确定');
             }
@@ -547,7 +547,7 @@ export default function requestPermissionOnSettingStaticTest() {
             hilog.info(domain, tag, "requestPermissionsFromUser data ");
 
             let driver2: Driver = Driver.create();
-            waitForCompletion(async () => {await Utils.msSleep(1000);})
+            Utils.msSleep(1000).awaitSync()
             let permissionList1: Array<Permissions> = new Array<Permissions>('ohos.permission.MICROPHONE');
             atManager.requestPermissionOnSetting(testAbilityContext!, permissionList1).then((data: Array<abilityAccessCtrl.GrantStatus>): void => {
               // hilog.info(domain, tag, "Test_requestPermissionOnSetting_010 data1 " + JSON.stringify(data));
@@ -564,11 +564,11 @@ export default function requestPermissionOnSettingStaticTest() {
                 done();
               }
             });
-            waitForCompletion(async () => {await Utils.msSleep(2000);})
+            Utils.msSleep(2000).awaitSync()
             if (clickRequest(driver2, '允许')) {
               clickRequest(driver2, '确定');
             }
-            waitForCompletion(async () => {await Utils.msSleep(2000);})
+            Utils.msSleep(2000).awaitSync()
             if (clickRequest(driver2, '允许')) {
               clickRequest(driver2, '确定');
             }

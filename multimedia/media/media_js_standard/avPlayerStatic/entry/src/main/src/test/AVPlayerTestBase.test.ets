@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -249,10 +249,8 @@ export function setAVPlayerFunCb(src: string | media.AVFileDescriptor, avPlayer:
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     if (reason == media.StateChangeReason.BACKGROUND) {
       console.info(`case media.StateChangeReason.BACKGROUND`);
-      waitForCompletion(async () => {
-        await avPlayer!!.release().then(() => {
-        }).catch(mediaTestBase.catchCallback);
-      });
+      avPlayer!!.release().then(() => {
+        }).catch(mediaTestBase.catchCallback).awaitSync();
     }
     console.info(`case state is ${state}`);
     switch (state) {
@@ -291,9 +289,7 @@ export function setAVPlayerFunCb(src: string | media.AVFileDescriptor, avPlayer:
         } else if (playCnt == 1) {
           expect(avPlayer?.state).assertEqual(PLAYING);
           // step 3: playing -> seek duration/3
-          waitForCompletion(async () => {
-            await mediaTestBase.msleepAsync(playTime);
-          });
+          mediaTestBase.msleepAsync(playTime).awaitSync();
           avPlayer?.seek(avPlayer!!.duration / 3);
         } else if (playCnt == 2) {
           expect(avPlayer?.state).assertEqual(PLAYING);
@@ -378,7 +374,7 @@ export function setAVPlayerFunCb(src: string | media.AVFileDescriptor, avPlayer:
   avPlayer?.onSeekDone((seekDoneTime: int) => {
     seekDoneCnt[0]++;
     console.info(`case seekDone called, seekDoneCnt is ${seekDoneCnt}, seekDoneTime is ${seekDoneTime}`);
-    let count: int = Math.floor(seekDoneCnt[0]) as int;
+    let count: int = Math.floor(seekDoneCnt[0]).toInt();
     switch (count) {
       case 2:
         // step 6: seek(paused) -> play
@@ -407,9 +403,7 @@ export function setAVPlayerFunCb(src: string | media.AVFileDescriptor, avPlayer:
         }
         if (nowTime > avPlayer!!.duration / 2) {
           avPlayer?.setSpeed(media.PlaybackSpeed.SPEED_FORWARD_1_00_X);
-          waitForCompletion(async () => {
-            await mediaTestBase.msleepAsync(avPlayer!!.duration - nowTime + playTime);
-          });
+          mediaTestBase.msleepAsync(avPlayer!!.duration - nowTime + playTime).awaitSync();
         }
         if (avPlayer!!.loop == true) {
           // step 8: playing -> seek duration when loop false
@@ -433,12 +427,10 @@ export function setAVPlayerFunCb(src: string | media.AVFileDescriptor, avPlayer:
   avPlayer?.onError((err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);
     expect().assertFail();
-    waitForCompletion(async () => {
-      await avPlayer!!.release().then(() => {
+    avPlayer!!.release().then(() => {
         avPlayer = null;
         done();
-      });
-    });
+      }).awaitSync();
   });
 }
 
@@ -484,7 +476,7 @@ async function setAVPlayerPlayAndPauseWithCallBack(src: string | media.AVFileDes
         console.info('playPauseLoopWithCallBack play state is PLAYING')
         expect(avPlayer?.state).assertEqual(PLAYING);
         playPauseCount++;
-        waitForCompletion(async () => {await mediaTestBase.msleepAsync(playTime);})
+        mediaTestBase.msleepAsync(playTime).awaitSync()
         if (playPauseCount == 1001) {
           // step 4: playing -> stop -> release
           avPlayer?.stop().then(() => {
@@ -519,14 +511,14 @@ async function setAVPlayerPlayAndPauseWithCallBack(src: string | media.AVFileDes
     }
   });
   avPlayer?.onError((err: BusinessError) => {
-    waitForCompletion(async () => {
+    (async () => {
       console.error(`case error called, errMessage is ${err.message}`);
       expect().assertFail();
       await avPlayer!!.release().then(() => {
         avPlayer = null;
         done();
       });
-    })
+    })().awaitSync()
   });
 }
 
@@ -556,7 +548,7 @@ async function createToReleaseLoop(src: string | media.AVFileDescriptor, avPlaye
   let surfaceID: string = globalThis.value;
   console.info(`case createToReleaseLoop in, surfaceID is ${surfaceID}`);
   avPlayer?.onStateChange((state, reason) => {
-    waitForCompletion(async () => {
+    (async () => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     console.info(`case state is ${state}`);
     switch (state) {
@@ -597,17 +589,17 @@ async function createToReleaseLoop(src: string | media.AVFileDescriptor, avPlaye
       default:
         break;
     }
-  })
+  })().awaitSync()
   });
   avPlayer?.onError((err: BusinessError) => {
-    waitForCompletion(async () => {
+    (async () => {
       console.error(`case error called, errMessage is ${err.message}`);
       expect().assertFail();
       await avPlayer!!.release().then(() => {
         avPlayer = null;
         done();
       });
-    })
+    })().awaitSync()
   });
 }
 
@@ -641,8 +633,8 @@ async function playToCompletedLoop(src: string | media.AVFileDescriptor, avPlaye
         avPlayer!!.surfaceId = surfaceID;
         console.info('playToCompletedLoop play state is INITIALIZED')
         // step 1: initialized -> prepared -> play
-        waitForCompletion(async () => {await preparePromise(avPlayer!);})
-        waitForCompletion(async () => {await sleep(2000);})
+        preparePromise(avPlayer!).awaitSync()
+        sleep(2000).awaitSync()
         avPlayer?.play()
         break;
       case PLAYING:
@@ -686,14 +678,14 @@ async function playToCompletedLoop(src: string | media.AVFileDescriptor, avPlaye
     }
   });
   avPlayer?.onError((err: BusinessError) => {
-    waitForCompletion(async () => {
+    (async () => {
       console.error(`case error called, errMessage is ${err.message}`);
       expect().assertFail();
       await avPlayer!!.release().then(() => {
         avPlayer = null;
         done();
       });
-    })
+    })().awaitSync()
   });
 }
 
@@ -793,14 +785,14 @@ async function seekLoopWithoutCallbackLoop(src: string | media.AVFileDescriptor,
     }
   });
   avPlayer?.onError((err: BusinessError) => {
-    waitForCompletion(async () => {
+    (async () => {
       console.error(`case error called, errMessage is ${err.message}`);
       expect().assertFail();
       await avPlayer!!.release().then(() => {
         avPlayer = null;
         done();
       });
-    })
+    })().awaitSync()
   });
 }
 
@@ -858,14 +850,14 @@ async function prepareToStopLoop(src: string | media.AVFileDescriptor, avPlayer:
     }
   });
   avPlayer?.onError((err: BusinessError) => {
-    waitForCompletion(async () => {
+    (async () => {
       console.error(`case error called, errMessage is ${err.message}`);
       expect().assertFail();
       await avPlayer!!.release().then(() => {
         avPlayer = null;
         done();
       });
-    })
+    })().awaitSync()
   });
 }
 
@@ -932,14 +924,14 @@ async function prepareToResetLoop(src: string | media.AVFileDescriptor, avPlayer
     }
   });
   avPlayer?.onError((err: BusinessError) => {
-    waitForCompletion(async () => {
+    (async () => {
       console.error(`case error called, errMessage is ${err.message}`);
       expect().assertFail();
       await avPlayer!!.release().then(() => {
         avPlayer = null;
         done();
       });
-    })
+    })().awaitSync()
   });
 }
 
@@ -956,7 +948,7 @@ async function createToReleaseLoop2(src: string | media.AVFileDescriptor, avPlay
   let surfaceID: string = globalThis.value;
   console.info(`case createToReleaseLoop2 in, surfaceID is ${surfaceID}`);
   avPlayer?.onStateChange((state, reason) => {
-    waitForCompletion(async () => {
+    (async () => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     console.info(`case state is ${state}`);
     switch (state) {
@@ -1002,17 +994,17 @@ async function createToReleaseLoop2(src: string | media.AVFileDescriptor, avPlay
       default:
         break;
     }
-    })
+    })().awaitSync()
   });
   avPlayer?.onError((err: BusinessError) => {
-    waitForCompletion(async () => {
+    (async () => {
     console.error(`case error called, errMessage is ${err.message}`);
     expect().assertFail();
     await avPlayer!!.release().then(() => {
       avPlayer = null;
       done();
     });
-    })
+    })().awaitSync()
   });
 }
 
@@ -1043,7 +1035,7 @@ function createTimeCallback(src: string | media.AVFileDescriptor, avPlayer: medi
     switch (state) {
       case IDLE:
         expect(avPlayer?.state).assertEqual(IDLE);
-        end = Date.now();
+        end = Date.now().toDouble();
         console.info(`createTimeCallback end time is : ${end}`)
         execution = (end - createStart)
         createTotalTime = createTotalTime + execution;
@@ -1107,7 +1099,7 @@ export async function prepareTimeWithoutCallback(src: string | media.AVFileDescr
     await avPlayer!!.prepare().then(() => {
       expect(avPlayer?.state).assertEqual(PREPARED);
       console.info('prepareTimeWithoutCallback avPlayer state is prepared')
-      end = Date.now()
+      end = Date.now().toDouble()
       console.info(`prepareTimeWithoutCallback end time is : ${end}`)
     }).catch(mediaTestBase.catchCallback);
     await mediaTestBase.msleepAsync(SLEEP_TIME)
@@ -1162,14 +1154,14 @@ async function prepareTimeCallback(src: string | media.AVFileDescriptor, avPlaye
         }
         console.info('prepareTimeWithCallback play state is INITIALIZED')
         // step 1: initialized -> prepared
-        start = Date.now();
+        start = Date.now().toDouble();
         console.info(`prepareTimeWithCallback start time is : ${start}`)
         avPlayer?.prepare()
         break;
       case PREPARED:
         expect(avPlayer?.state).assertEqual(PREPARED);
         console.info('prepareTimeWithCallback avPlayer state is prepared')
-        end = Date.now();
+        end = Date.now().toDouble();
         console.info(`prepareTimeWithCallback end time is : ${end}`)
         execution = (end - start)
         console.info("prepareTimeWithCallback execution time  is :" + execution)
@@ -1202,7 +1194,7 @@ export async function playTimeWithoutCallback(src: string | media.AVFileDescript
     let end: number = 0;
     console.info(`playTimeWithoutCallback start time is : ${start}`)
     await avPlayer!!.play().then(() => {
-      end = Date.now();
+      end = Date.now().toDouble();
       console.info(`playTimeWithoutCallback end time is : ${end}`)
       console.info('playTimeWithoutCallback play success');
       expect(avPlayer?.state).assertEqual(PLAYING);
@@ -1258,7 +1250,7 @@ export async function playTimeCallback(avPlayer: media.AVPlayer | undefined | nu
       case PREPARED:
         expect(avPlayer?.state).assertEqual(PREPARED);
         console.info('playTimeCallback avPlayer state is prepared')
-        start = Date.now();
+        start = Date.now().toDouble();
         console.info(`playTimeCallback start time is : ${start}`)
         // step 2: prapared -> play
         avPlayer?.play()
@@ -1266,7 +1258,7 @@ export async function playTimeCallback(avPlayer: media.AVPlayer | undefined | nu
       case PLAYING:
         console.info('playTimeCallback play state is PLAYING')
         expect(avPlayer?.state).assertEqual(PLAYING);
-        end = Date.now();
+        end = Date.now().toDouble();
         console.info(`playTimeCallback end time is : ${end}`)
         execution = (end - start)
         console.info("playTimeCallback execution time  is :" + execution)
@@ -1291,7 +1283,7 @@ export async function playTimeCallback(avPlayer: media.AVPlayer | undefined | nu
       case PAUSED:
         console.info('playTimeWithCallback play state is PAUSED')
         expect(avPlayer?.state).assertEqual('paused');
-        start = Date.now();
+        start = Date.now().toDouble();
         console.info(`playTimeCallback start time is : ${start}`)
         avPlayer?.play()
         break;
@@ -1328,7 +1320,7 @@ export async function pauseTimeWithoutCallback(src: string | media.AVFileDescrip
     await avPlayer!!.pause().then(() => {
       console.info('pauseTimeWithoutCallback pause success');
       expect(avPlayer?.state).assertEqual(PAUSED);
-      end = Date.now();
+      end = Date.now().toDouble();
       console.info(`pauseTimeWithoutCallback end time is : ${end}`)
       execution = (end - start)
       console.info("pauseTimeWithoutCallback execution time  is :" + execution)
@@ -1387,14 +1379,14 @@ async function pauseTimeCallback(avPlayer: media.AVPlayer | undefined | null, do
         console.info('pauseTimeCallback play state is PLAYING')
         expect(avPlayer?.state).assertEqual(PLAYING);
         setTimeout(() => {
-          start = Date.now();
+          start = Date.now().toDouble();
           console.info(`pauseTimeCallback start time is : ${start}`)
           avPlayer?.pause()
         }, 200);
         break;
       case PAUSED:
         expect(avPlayer?.state).assertEqual(PAUSED);
-        end = Date.now();
+        end = Date.now().toDouble();
         console.info(`pauseTimeCallback end time is : ${end}`)
         execution = (end - start)
         console.info("pauseTimeCallback execution time  is :" + execution)
@@ -1442,7 +1434,7 @@ export async function stopTimeWithoutCallback(src: string | media.AVFileDescript
     console.info(`stopTimeWithoutCallback start time is : ${start}`)
     let end: number = 0;
     await avPlayer!!.stop().then(() => {
-      end = Date.now();
+      end = Date.now().toDouble();
       console.info(`stopTimeWithoutCallback end time is : ${end}`)
       expect(avPlayer?.state).assertEqual(STOPPED);
       console.info('stopTimeWithoutCallback avPlayer state is stop')
@@ -1500,14 +1492,14 @@ async function stopTimeCallback(src: string | media.AVFileDescriptor, avPlayer: 
       case PREPARED:
         expect(avPlayer?.state).assertEqual(PREPARED);
         console.info('stopTimeCallback avPlayer state is prepared')
-        start = Date.now();
+        start = Date.now().toDouble();
         console.info(`stopTimeCallback start time is : ${start}`)
         loopTime++;
         avPlayer?.stop()
         break;
       case STOPPED:
         expect(avPlayer?.state).assertEqual(STOPPED);
-        end = Date.now();
+        end = Date.now().toDouble();
         console.info(`stopTimeCallback end time is : ${end}`)
         execution = (end - start)
         console.info("stopTimeCallback execution time  is :" + execution)
@@ -1554,7 +1546,7 @@ export async function resetTimeWithoutCallback(src: string | media.AVFileDescrip
     let start = Date.now();
     console.info(`resetTimeWithoutCallback start time is : ${start}`)
     await avPlayer!!.reset().then(() => {
-      end = Date.now();
+      end = Date.now().toDouble();
       console.info(`resetTimeWithoutCallback end time is : ${end}`)
       console.info('reset success');
       expect(avPlayer?.state).assertEqual(IDLE);
@@ -1592,7 +1584,7 @@ async function resetTimeCallback(src: string | media.AVFileDescriptor, avPlayer:
     switch (state) {
       case IDLE:
         expect(avPlayer?.state).assertEqual(IDLE);
-        end = Date.now();
+        end = Date.now().toDouble();
         console.info(`resetTimeCallback end time is : ${end}`)
         execution = (end - start)
         console.info("resetTimeCallback execution time  is :" + execution)
@@ -1616,7 +1608,7 @@ async function resetTimeCallback(src: string | media.AVFileDescriptor, avPlayer:
           avPlayer!!.surfaceId = surfaceID;
         }
         console.info('resetTimeCallback play state is INITIALIZED')
-        start = Date.now();
+        start = Date.now().toDouble();
         console.info(`resetTimeCallback start time is : ${start}`)
         avPlayer?.reset().then(() => {
           console.info('reset success');
@@ -1681,14 +1673,14 @@ async function releaseTimeCallback(src: string | media.AVFileDescriptor, avPlaye
           avPlayer!!.surfaceId = surfaceID;
         }
         console.info('releaseTimeCallback play state is INITIALIZED')
-        start = Date.now();
+        start = Date.now().toDouble();
         console.info(`releaseTimeCallback start time is : ${start}`)
         avPlayer?.release()
         break;
       case RELEASED:
         console.info('releaseTimeCallback play state is release')
         expect(avPlayer?.state).assertEqual(RELEASED);
-        end = Date.now();
+        end = Date.now().toDouble();
         console.info(`releaseTimeCallback end time is : ${end}`)
         execution = (end - start)
         console.info("releaseTimeCallback execution time  is :" + execution)
@@ -1794,7 +1786,7 @@ async function seekTimeCallback(avPlayer: media.AVPlayer | undefined | null, don
       case PLAYING:
         console.info('seekTimeCallback play state is PLAYING')
         expect(avPlayer?.state).assertEqual(PLAYING);
-        start = Date.now();
+        start = Date.now().toDouble();
         console.info(`seekTimeCallback start time is : ${start}`)
         loopTime += 20;
         if (loopTime == 220) {
@@ -1807,7 +1799,7 @@ async function seekTimeCallback(avPlayer: media.AVPlayer | undefined | null, don
             done();
           }).catch(mediaTestBase.catchCallback);
         } else {
-          avPlayer?.seek(loopTime as int)
+          avPlayer?.seek(loopTime.toInt())
         }
         break;
       case PAUSED:
@@ -1822,7 +1814,7 @@ async function seekTimeCallback(avPlayer: media.AVPlayer | undefined | null, don
     }
   });
   avPlayer?.onSeekDone((seekDoneTime) => {
-    end = Date.now();
+    end = Date.now().toDouble();
     console.info(`seekTimeCallback end time is : ${end}`)
     execution = (end - start)
     console.info("seekTimeCallback execution time  is :" + execution)
@@ -1921,7 +1913,7 @@ async function getTrackDescriptionTimeCallback(avPlayer: media.AVPlayer | undefi
       case PLAYING:
         console.info('getTrackDescriptionTimeCallback play state is PLAYING')
         expect(avPlayer?.state).assertEqual(PLAYING);
-        start = Date.now();
+        start = Date.now().toDouble();
         console.info(`getTrackDescriptionTimeCallback start time is : ${start}`)
         if (loopTime == 10) {
           avPlayer?.release().then(() => {
@@ -1937,7 +1929,7 @@ async function getTrackDescriptionTimeCallback(avPlayer: media.AVPlayer | undefi
           avPlayer?.getTrackDescription().then((arrList: Array<media.MediaDescription>) => {
             if (arrList != null) {
               arrayDescription = arrList;
-              end = Date.now();
+              end = Date.now().toDouble();
               console.info(`getTrackDescriptionTimeCallback end time is : ${end}`)
               execution = (end - start)
               console.info("getTrackDescriptionTimeCallback execution time  is :" + execution)
@@ -2307,7 +2299,7 @@ async function setSpeedTimeCallback(avPlayer: media.AVPlayer | undefined, done: 
             done();
           }).catch(mediaTestBase.catchCallback);
         } else {
-          start = Date.now();
+          start = Date.now().toDouble();
           console.info(`setSpeedTimeCallback start time is : ${start}`)
           loopTime++
           avPlayer?.setSpeed(media.PlaybackSpeed.SPEED_FORWARD_1_00_X);
@@ -2325,7 +2317,7 @@ async function setSpeedTimeCallback(avPlayer: media.AVPlayer | undefined, done: 
     }
   });
   avPlayer?.onSpeedDone((speed) => {
-    end = Date.now();
+    end = Date.now().toDouble();
     console.info(`setSpeedTimeCallback end time is : ${end}`)
     execution = (end - start)
     console.info("setSpeedTimeCallback execution time  is :" + execution)
@@ -2454,7 +2446,7 @@ async function setVolumeTimeCallback(avPlayer: media.AVPlayer | undefined, done:
             done();
           }).catch(mediaTestBase.catchCallback);
         } else {
-          start = Date.now();
+          start = Date.now().toDouble();
           console.info(`setVolumeTimeCallback start time is : ${start}`)
           loopTime++
           let volume = 1.0
@@ -2473,7 +2465,7 @@ async function setVolumeTimeCallback(avPlayer: media.AVPlayer | undefined, done:
     }
   });
   avPlayer?.onVolumeChange((vol) => {
-    end = Date.now();
+    end = Date.now().toDouble();
     console.info(`setVolumeTimeCallback end time is : ${end}`)
     execution = (end - start)
     console.info("setVolumeTimeCallback execution time  is :" + execution)
@@ -2511,7 +2503,7 @@ export async function firstFrameTime(src: string | media.AVFileDescriptor, avPla
       done();
     }).catch(mediaTestBase.catchCallback);
   })
-  start = Date.now();
+  start = Date.now().toDouble();
   console.info(`firstFrameTime start time is : ${start}`)
   await avPlayer!!.play().then(() => {
     console.info('firstFrameTime play success');
@@ -2585,10 +2577,10 @@ async function setAVPlayerPlay(src: string | media.AVFileDescriptor, avPlayer: m
         console.info('setAVPlayerPlay play state is PLAYING')
         expect(avPlayer?.state).assertEqual(PLAYING);
         if (avPlayer && avPlayer.duration > 3000) {
-          waitForCompletion(async () => {await mediaTestBase.msleepAsync(3000);})
+          mediaTestBase.msleepAsync(3000).awaitSync()
           avPlayer?.seek(avPlayer!!.duration, media.SeekMode.SEEK_NEXT_SYNC)
         } else {
-          waitForCompletion(async () => {await mediaTestBase.msleepAsync(500);})
+          mediaTestBase.msleepAsync(500).awaitSync()
           avPlayer?.seek(avPlayer!!.duration, media.SeekMode.SEEK_NEXT_SYNC)
         }
         break;
@@ -2613,14 +2605,14 @@ async function setAVPlayerPlay(src: string | media.AVFileDescriptor, avPlayer: m
     }
   });
   avPlayer?.onError((err: BusinessError) => {
-    waitForCompletion(async () => {
+    (async () => {
       console.error(`case error called, errMessage is ${err.message}`);
       expect().assertFail();
       await avPlayer!!.release().then(() => {
         avPlayer = null;
         done();
       });
-    })
+    })().awaitSync()
   });
 }
 

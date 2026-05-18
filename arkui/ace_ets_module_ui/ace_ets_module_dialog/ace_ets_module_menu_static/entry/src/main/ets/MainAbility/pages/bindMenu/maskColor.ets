@@ -65,7 +65,7 @@ struct maskColorIndex {
             value: 'Menu2', action: () => {
               console.info('handle Menu2 select');
             }
-          } as MenuElement], { mask: {color:0xFF6495ED as Int}, showInSubWindow: false})
+          } as MenuElement], { mask: {color:0xFF6495ED.toInt()}, showInSubWindow: false})
         Button('3')
           .id('maskColorButton3')
           .bindMenu([{

@@ -149,33 +149,33 @@ import { LengthUnit, typeNode } from '@ohos.arkui.node'
 import { BusinessError } from '@kit.BasicServicesKit'
 // 定义不同的 FocusWrapMode Modifier 类
 @Observed
-class FocusWrapModeDefaultModifier implements AttributeModifier<GridAttribute> {
+export class FocusWrapModeDefaultModifier implements AttributeModifier<GridAttribute> {
   applyNormalAttribute(instance: GridAttribute): void {
     instance.focusWrapMode(FocusWrapMode.DEFAULT);
   }
 }
 @Observed
-class FocusWrapModeUndefinedModifier implements AttributeModifier<GridAttribute> {
+export class FocusWrapModeUndefinedModifier implements AttributeModifier<GridAttribute> {
   applyNormalAttribute(instance: GridAttribute): void {
     instance.focusWrapMode(undefined);
   }
 }
 @Observed
-class FocusWrapModeWrapWithArrowModifier implements AttributeModifier<GridAttribute> {
+export class FocusWrapModeWrapWithArrowModifier implements AttributeModifier<GridAttribute> {
   applyNormalAttribute(instance: GridAttribute): void {
     instance.focusWrapMode(FocusWrapMode.WRAP_WITH_ARROW);
   }
 }
 
 @Observed
-class FocusWrapModeExplicitUndefinedModifier implements AttributeModifier<GridAttribute> {
+export class FocusWrapModeExplicitUndefinedModifier implements AttributeModifier<GridAttribute> {
   applyNormalAttribute(instance: GridAttribute): void {
     instance.focusWrapMode(undefined);
   }
 }
 // 动态切换的 Modifier
 @Observed
-class FocusWrapModeDynamicModifier implements AttributeModifier<GridAttribute> {
+export class FocusWrapModeDynamicModifier implements AttributeModifier<GridAttribute> {
   private mode: FocusWrapMode | undefined;
 
   constructor(mode: FocusWrapMode | undefined) {

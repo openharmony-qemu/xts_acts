@@ -48,7 +48,7 @@ export default function ClientAuthenticationHandlerTestThree() {
     it('testClientAuthenticationHandlerConfirmStatic003',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitClientAuthenticationHandlerConfirm003', 10);
       await Utils.msSleep(2000);
-      Utils.registerEvent('emitClientAuthenticationHandlerConfirm003', true, 25141101, done);
+      Utils.registerEvent('emitClientAuthenticationHandlerConfirm003', 801, 25141101, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('clientAuthenticationHandlerThreeButtonThree', 10, '');
       await Utils.msSleep(2000);

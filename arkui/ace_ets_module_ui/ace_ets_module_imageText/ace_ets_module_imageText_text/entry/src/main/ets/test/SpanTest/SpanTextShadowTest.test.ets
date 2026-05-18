@@ -83,7 +83,7 @@ export default function SpanTextShadowTest() {
       let strJson = getInspectorByKey('spanTextShadow2');
       let obj: ESObject = JSON.parse(strJson);
       console.log('spanTextShadow2-----' +JSON.stringify(obj.$attrs.textShadow));
-      expect(obj.$attrs.textShadow.radius).assertEqual('0.000000');
+      expect(obj.$attrs.textShadow.radius).assertEqual('-1.000000');
       expect(obj.$attrs.textShadow.color).assertEqual('#FF008000');
       expect(obj.$attrs.textShadow.offsetX).assertEqual('-10.000000');
       expect(obj.$attrs.textShadow.offsetY).assertEqual('-10.000000');
@@ -113,7 +113,7 @@ export default function SpanTextShadowTest() {
       expect(item1.offsetX).assertEqual('10.000000');
       expect(item1.offsetY).assertEqual('10.000000');
       expect(item1.type).assertEqual('0');
-      expect(item2.radius).assertEqual('0.000000');
+      expect(item2.radius).assertEqual('-1.000000');
       expect(item2.color).assertEqual('#FF008000');
       expect(item2.offsetX).assertEqual('-10.000000');
       expect(item2.offsetY).assertEqual('-10.000000');

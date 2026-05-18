@@ -46,7 +46,7 @@ async function getPermissions() {
     let applicationFlags: int = bundleManager.ApplicationFlag.GET_APPLICATION_INFO_DEFAULT;
     let applicationInfo: bundleManager.ApplicationInfo = bundleManager.getApplicationInfoSync('com.example.actstelephonysimhascardtest.static', applicationFlags, userId);
     let tokenId: long = applicationInfo.accessTokenId;
-    let tokenValue: int = tokenId as int;
+    let tokenValue: int = tokenId.toInt();
     for (let index = 0; index < list.length; index++) {
       abilityAccessCtrl.createAtManager().grantUserGrantedPermission(tokenValue, list[index] as Permissions, 1);
     }

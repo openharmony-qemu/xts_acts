@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -78,15 +78,15 @@ struct CanvasAttrsTest {
       Row() {
         Button('Swipe to Top').id('swipe_top')
           .onClick((e:ClickEvent) => {
-            let rect = this.scroller.getItemRect(this.swipeStartIndex as int) // Get child components size and position
+            let rect = this.scroller.getItemRect(this.swipeStartIndex.toInt()) // Get child components size and position
             this.scroller.scrollToIndex(0) // Slide to the specified index
-            this.scroller.scrollBy(0, -rect.y as int) // Slide a specified distance
+            this.scroller.scrollBy(0, -rect.y.toInt()) // Slide a specified distance
           })
         Button('Swipe to Bottom').id('swipe_bottom')
           .onClick((e:ClickEvent) => {
-            let rect = this.scroller.getItemRect(this.swipeStartIndex as int) // Get child components size and position
+            let rect = this.scroller.getItemRect(this.swipeStartIndex.toInt()) // Get child components size and position
             this.scroller.scrollToIndex(this.arr.length - 1) // Slide to the specified index
-            this.scroller.scrollBy(0, -rect.y as int) // Slide a specified distance
+            this.scroller.scrollBy(0, -rect.y.toInt()) // Slide a specified distance
           })
       }
 

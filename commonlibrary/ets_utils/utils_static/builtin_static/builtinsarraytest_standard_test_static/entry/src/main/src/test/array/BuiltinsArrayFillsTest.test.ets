@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -350,7 +350,7 @@ export default function builtinsArrayFillTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFillTest0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr: undefined[] = new Array<undefined>(3);
+      const arr: undefined[] = Array.create<undefined>(3, undefined);
       const result: undefined[] = arr.fill(undefined);
       const expectedResult = [undefined, undefined, undefined];
       expect(result).assertDeepEquals(expectedResult);
@@ -366,7 +366,7 @@ export default function builtinsArrayFillTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayFillTest0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray: null[] = new Array<null>(3);
+      const inputArray: null[] = Array.create<null>(3, null);
       const result: null[] = inputArray.fill(null);
       console.log('result:', JSON.stringify(result));
       const expectedResult = [null, null, null]
@@ -398,7 +398,7 @@ export default function builtinsArrayFillTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayWithTest0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray: string[] = new Array<string>(1);
+      const inputArray: string[] = Array.create<string>(1, '');
       const result: string[] = inputArray.fill('!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~');
       console.log('resultwith:', JSON.stringify(result));
       const expectedResult = ["!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"];
@@ -414,7 +414,7 @@ export default function builtinsArrayFillTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayWithTest0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray: string[] = new Array<string>(3);
+      const inputArray: string[] = Array.create<string>(3, '');
       const result = inputArray.fill('undefined');
       console.log('result11:', JSON.stringify(result));
       const expectedResult = ['undefined', 'undefined', 'undefined']
@@ -430,7 +430,7 @@ export default function builtinsArrayFillTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayWithTest0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray: string[] = new Array<string>(3);
+      const inputArray: string[] = Array.create<string>(3, '');
       const result = inputArray.fill('null');
       console.log('result:', JSON.stringify(result));
       const expectedResult = ["null", "null", "null"]
@@ -446,7 +446,7 @@ export default function builtinsArrayFillTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayWithTest0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray: string[] = new Array<string>(3);
+      const inputArray: string[] = Array.create<string>(3, '');
       const result = inputArray.fill('');
       console.log('result:', JSON.stringify(result));
       const expectedResult = ["", "", ""]
@@ -462,7 +462,7 @@ export default function builtinsArrayFillTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayWithTest0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray: string[] = new Array<string>(3);
+      const inputArray: string[] = Array.create<string>(3, '');
       const unicodeCodePoint = 0x1F60A;
       const c = String.fromCodePoint(unicodeCodePoint);
       const result: string[] = inputArray.fill(c);
@@ -480,7 +480,7 @@ export default function builtinsArrayFillTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayWithTest0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray: string[] = new Array<string>(3);
+      const inputArray: string[] = Array.create<string>(3, '');
       try {
         const char1 = String.fromCodePoint(0x110000)
         const result: string[] = inputArray.fill(char1);
@@ -501,7 +501,7 @@ export default function builtinsArrayFillTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayWithTest0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr: Array<number> = new Array<number>(3);
+      const arr: Array<number> = Array.create<number>(3, 0);
       const specialNumbers: number[] = [
         Math.floor(1.5),
         0,
@@ -523,7 +523,7 @@ export default function builtinsArrayFillTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayWithTest0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr: Array<number> = new Array<number>(5);
+      const arr: Array<number> = Array.create<number>(5, 0);
       const specialNumbers = [
         Number.EPSILON,
         Number.MIN_VALUE,
@@ -546,7 +546,7 @@ export default function builtinsArrayFillTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayWithTest0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr: Array<number> = new Array<number>(5);
+      const arr: Array<number> = Array.create<number>(5, 0);
       const specialNumbers = [
         123.456,
         0xcafebabe,
@@ -569,7 +569,7 @@ export default function builtinsArrayFillTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayWithTest0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray: boolean[] = new Array<boolean>(3);
+      const inputArray: boolean[] = Array.create<boolean>(3, false);
       const result = inputArray.fill(true);
       console.log('result:', JSON.stringify(result));
       const expectedResult = [true, true, true]
@@ -585,7 +585,7 @@ export default function builtinsArrayFillTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayWithTest0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray: boolean[] = new Array<boolean>(3);
+      const inputArray: boolean[] = Array.create<boolean>(3, false);
       const result = inputArray.fill(false);
       console.log('result:', JSON.stringify(result));
       const expectedResult = [false, false, false]
@@ -601,7 +601,7 @@ export default function builtinsArrayFillTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayWithTest0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray: boolean[] = new Array<boolean>(3);
+      const inputArray: boolean[] = Array.create<boolean>(3, false);
       const result = inputArray.fill(!'s');
       console.log('result:', JSON.stringify(result));
       const expectedResult = [false, false, false]
@@ -617,7 +617,7 @@ export default function builtinsArrayFillTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayWithTest0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputArray: boolean[] = new Array<boolean>(3);
+      const inputArray: boolean[] = Array.create<boolean>(3, false);
       const result = inputArray.fill(!0);
       console.log('result:', JSON.stringify(result));
       const expectedResult = [true, true, true]
@@ -633,7 +633,7 @@ export default function builtinsArrayFillTest() {
      * @tc.level  LEVEL1
      */
     it('builtinsArrayWithTest0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr: Array<number> = new Array<number>(3);
+      const arr: Array<number> = Array.create<number>(3, 0);
       const result = arr.fill(NaN);
       expect(JSON.stringify(result)).assertEqual(JSON.stringify([NaN, NaN, NaN]));
     });

@@ -17,7 +17,7 @@ ohos_js_app_static_suite("ActsVideoProcessingEngineTest") {
   #test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsVideoProcessingEngineTest"
+  hap_name = "ActsVideoProcessingEngineTestAdapt001StaticTest"
   part_name = "video_processing_engine"
   subsystem_name = "multimedia"
 }

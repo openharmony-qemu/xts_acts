@@ -1,11 +1,11 @@
-import ArrayBlockingQueuetest from './ArrayBlockingQueue.test';
-import LinkedBlockingQueuetest from './LinkedBlockingQueuetest.test';
-import ArrayBlockingQueueStressTest from './ArrayBlockingQueueStressTest.test';
-import LinkedBlockingQueueStressTest from './LinkedBlockingQueueStressTest.test';
+import ArrayConcurrentQueuetest from './ArrayConcurrentQueue.test';
+import LinkedConcurrentQueuetest from './LinkedConcurrentQueuetest.test';
+import ArrayConcurrentQueueStressTest from './ArrayConcurrentQueueStressTest.test';
+import LinkedConcurrentQueueStressTest from './LinkedConcurrentQueueStressTest.test';
 
 export default function testsuite() {
-  LinkedBlockingQueuetest()
-  ArrayBlockingQueuetest()
-  ArrayBlockingQueueStressTest()
-  LinkedBlockingQueueStressTest()
+  LinkedConcurrentQueuetest()
+  ArrayConcurrentQueuetest()
+  ArrayConcurrentQueueStressTest()
+  LinkedConcurrentQueueStressTest()
 }

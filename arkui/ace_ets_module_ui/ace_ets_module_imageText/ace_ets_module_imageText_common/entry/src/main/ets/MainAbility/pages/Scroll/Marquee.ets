@@ -12,7 +12,6 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-
 @Entry
 @Component
 struct MarqueeStop4 {
@@ -29,9 +28,9 @@ struct MarqueeStop4 {
           Column() {
             Text('Stop')
             Text(this.numberSTOP.toString())
-          }.margin(10)
+          }.margin(5)
           .id('onStopTest')
-        }.margin(20)
+        }.margin(10)
 
         Marquee({
           start: true,
@@ -41,22 +40,25 @@ struct MarqueeStop4 {
           src: this.marqueeText
         })
           .marqueeUpdateStrategy(MarqueeUpdateStrategy.DEFAULT)
-          .margin(20)
+          .margin(10)
           .onStop(() => {
             this.numberSTOP++;
           })
         Button(this.isString.toString())
           .onClick(() => {
-          if (this.change) {
-            this.change = false
-            this.isString = '反向滚动';
-          } else {
-            this.change = true
-            this.isString = '正向滚动';
-          }
-        }).id('onStopbutton')
-          .margin(20)
-      }.height(600).width('100%').padding({ left: 35, right: 35, top: 35 })
+            if (this.change) {
+              this.change = false
+              this.isString = '反向滚动';
+            } else {
+              this.change = true
+              this.isString = '正向滚动';
+            }
+          }).id('onStopbutton')
+          .margin(10)
+      }
+      .height(350)
+      .width('90%')
+      .padding({ left: 15, right: 15, top: 15 }) // 内边距大幅缩小
     }
   }
 }

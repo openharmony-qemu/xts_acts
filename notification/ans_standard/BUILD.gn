@@ -82,12 +82,16 @@ group("ans_standard") {
       "actsNotificationCesMoreInstanceTestStatic:ActsNotificationCesMoreInstanceStaticTest",
       "actsNotificationAnsOpenWindowWithResultWithoutAbilityTest:ActsNotificationAnsOpenWindowWithResultWithoutAbilityTest",
       "actsNotificationAnsOpenWindowWithResultWithinAbilityNoPermissionTest:ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPermissionTest",
-      "actsNotificationAnsopenWindowWithResultWithoutAbilityTestStatic:ActsNotificationAnsopenWindowWithResultWithoutAbilityStaticTest",
-      "actsNotificationAnsopenWindowWithResultWithinAbilityTestStatic:ActsNotificationAnsopenWindowWithResultWithinAbilityStaticTest",
-      "actsNotificationAnsopenWindowWithResultWithinAbilityNoPermissionTestStatic:ActsNotificationAnsopenWindowWithResultWithinAbilityNoPermissionStaticTest",
+      "actsNotificationAnsOpenWindowWithResultWithoutAbilityTestStatic:ActsNotificationAnsopenWindowWithResultWithoutAbilityStaticTest",
+      "actsNotificationAnsOpenWindowWithResultWithinAbilityTestStatic:ActsNotificationAnsopenWindowWithResultWithinAbilityStaticTest",
+      "actsNotificationAnsOpenWindowWithResultWithinAbilityNoPermissionTestStatic:ActsNotificationAnsopenWindowWithResultWithinAbilityNoPermissionStaticTest",
       "actsNotificationAnsOpenWindowWithResultWithinAbilityTest:ActsNotificationAnsOpenWindowWithResultWithinAbilityTest",
       "actsNotificationAnsGetNotificationSettingTest:ActsNotificationAnsGetNotificationSettingTest",
-      "actsNotificationAnsGetNotificationSettingTestStatic:ActsNotificationAnsGetNotificationSettingStaticTest"
+      "actsNotificationAnsGetNotificationSettingTestStatic:ActsNotificationAnsGetNotificationSettingStaticTest",
+      "actsNotificationAnsSubscribeNotificationTest:ActsNotificationAnsSubscribeNotificationTest",
+      "actsNotificationAnsSubscribeNotificationNoSystemTestStatic:ActsNotificationAnsSubscribeNotificationNoSystemStaticTest",
+      "actsNotificationAnsGetAppListSortingThirdTestStatic:ActsNotificationAnsGetAppListSortingThirdStaticTest",
+      "actsNotificationAnsGetAppListSortingTest:ActsNotificationAnsGetAppListSortingTest"
     ]
   }
 }

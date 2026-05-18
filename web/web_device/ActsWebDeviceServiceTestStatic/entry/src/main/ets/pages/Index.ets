@@ -33,6 +33,7 @@ struct MyStateSample {
   }
 
   webviewController: webView.WebviewController = new webView.WebviewController(undefined);
+  webviewController_two: webView.WebviewController = new webView.WebviewController(undefined);
   @State str: string = ''
   @State geoAccess: boolean = false;
   @State geoShow: boolean = false;
@@ -131,6 +132,19 @@ struct MyStateSample {
         .onGeolocationHide(() => {
           this.geoHide = true
           console.info(0x0000, 'testTag', 'onGeolocationHide==> geoHide:' + this.geoHide)
+        })
+      Web({ src: "resource://rawfile/geo.html", controller: this.webviewController_two })
+        .width('100%')
+        .databaseAccess(true)
+        .geolocationAccess(true)
+        .onGeolocationShow((event: OnGeolocationShowEvent): void => {
+          if (event) {
+            let geo : JsGeolocation = new JsGeolocation();
+            geo = event.geolocation;
+            geo.invoke(event.origin, false, true);
+          }
+        })
+        .onGeolocationHide(() => {
         })
     }
   }

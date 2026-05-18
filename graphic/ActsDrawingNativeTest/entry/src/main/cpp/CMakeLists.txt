@@ -45,6 +45,7 @@ DrawingNativePathEffectTest.cpp
 DrawingNativePathTest.cpp
 DrawingNativePathPart2Test.cpp
 DrawingNativePathPart3Test.cpp
+DrawingNativePathPart4Test.cpp
 DrawingNativePenTest.cpp
 DrawingNativePixelMapTest.cpp
 DrawingNativeRegionTest.cpp

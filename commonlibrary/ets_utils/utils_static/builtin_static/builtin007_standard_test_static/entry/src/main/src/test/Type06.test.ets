@@ -115,7 +115,7 @@ interface Options {
 
 interface TestInterface {}
 
-export default function type_06Test() {
+export default function type_06Test(): void {
   describe('type_06Test', (): void => {
     // Dewm25 fines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -1059,7 +1059,7 @@ export default function type_06Test() {
         expect(field.isStatic()).assertTrue();
 
         const newValue = 20;
-        field.setStaticValue(newValue as number);
+        field.setStaticValue(newValue.toDouble());
 
         const actual = field.getStaticValue() as number;
         expect(actual).assertEqual(newValue);

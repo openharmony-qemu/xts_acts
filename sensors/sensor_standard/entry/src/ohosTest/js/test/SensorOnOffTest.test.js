@@ -17,8 +17,36 @@ import sensor from '@ohos.sensor'
 
 export default function SystemParameterTest() {
 describe('SystemParameterTest', function () {
-    beforeAll(function () {
-        console.info('beforeAll called')
+    let sensorList = undefined;
+    let Available = false;
+    let isAvailable = async (data) => {
+        if (sensorList != undefined) {
+            const targetSensor = sensorList?.filter((sensors) => sensors.sensorId === data);
+            console.info(`====> isAvailable : ${targetSensor},length : ${targetSensor?.length}`);
+            if (targetSensor?.length != 0) {
+                Available = true;
+                console.info(`====> Available : ${Available}`);
+            } else {
+                Available = false;
+                console.info(`====> Available : ${Available}`);
+            }
+        } else {
+            console.info(`====> sensorList : ${sensorList}`);
+        }
+    }
+    beforeAll(function (done) {
+        try {
+            sensor.getSensorList((err, data) => {
+                console.info(`====> beforeAll Succeeded in getting GetSensorList err.code ${err?.code} ,err.message${err?.message}`);
+                sensorList = data;
+                console.info(`====> beforeAll success ${sensorList}`);
+                done();
+            });  
+        } catch (error) {
+            console.info(`====> beforeAll failed err.code ${error.code} ,err.message${error.message}`);
+            done();
+        }
+        console.info(`====> beforeAll end`);
     })
 
     afterAll(function () {
@@ -222,12 +250,17 @@ describe('SystemParameterTest', function () {
      */
     it('SUB_SENSORS_Sensor_Supplemental_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info("------------------SUB_SENSORS_Sensor_Supplemental_0010-------------------------");
+        await isAvailable(sensor.SensorId.FUSION_PRESSURE);
         const TAG = '====>SUB_SENSORS_Sensor_Supplemental_0010';
         try {
             const type = sensor.SensorId.FUSION_PRESSURE;
             const result = sensor.getSingleSensorByDeviceSync(type, null);
             console.info(TAG + ` success result.length: ${result.length}  ,result: ${JSON.stringify(result)}`);
-            expect(result.length === 0).assertTrue();
+            if (Available) {
+                expect(result.length).assertLarger(0);
+            } else {
+                expect(result.length === 0).assertTrue();
+            };
             done();
         } catch (error) {
             console.info(TAG + ` fail, errCode: ${error.code}  ,msg: ${error.message}`);
@@ -246,12 +279,17 @@ describe('SystemParameterTest', function () {
      */
     it('SUB_SENSORS_Sensor_Supplemental_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info("------------------SUB_SENSORS_Sensor_Supplemental_0020-------------------------");
+        await isAvailable(sensor.SensorId.FUSION_PRESSURE);
         const TAG = '====>SUB_SENSORS_Sensor_Supplemental_0020';
         try {
             const type = sensor.SensorId.FUSION_PRESSURE;
             const result = sensor.getSingleSensorByDeviceSync(type, undefined);
             console.info(TAG + ` success result.length: ${result.length}  ,result: ${JSON.stringify(result)}`);
-            expect(result.length === 0).assertTrue();
+            if (Available) {
+                expect(result.length).assertLarger(0);
+            } else {
+                expect(result.length === 0).assertTrue();
+            };
             done();
         } catch (error) {
             console.info(TAG + ` fail, errCode: ${error.code}  ,msg: ${error.message}`);

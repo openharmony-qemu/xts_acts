@@ -112,7 +112,7 @@ export default function builtinsArrayToLocaleStringTest() {
       const arr = []
       const actual = [obj, arr, () => {
       }].toLocaleString();
-      expect(actual).assertEqual("[object Object],,Cannot get source code of function");
+      expect(actual).assertEqual("[object Object],,Cannot get source code");
     });
 
     /**

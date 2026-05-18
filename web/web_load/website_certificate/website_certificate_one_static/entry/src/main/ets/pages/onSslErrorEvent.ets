@@ -24,7 +24,7 @@ import { Hypium } from '../../../hypium';
 import { WebLayoutMode } from '@ohos.arkui.component'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 

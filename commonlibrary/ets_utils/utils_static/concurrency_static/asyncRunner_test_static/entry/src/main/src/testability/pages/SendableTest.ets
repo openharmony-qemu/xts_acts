@@ -60,7 +60,7 @@ export class BaseClass {
 export class DeriveClass extends BaseClass {
   private name: string = 'sendable: this is DeriveClass';
 
-  printName() {
+  printName(): void {
     console.info(this.name);
   }
 
@@ -79,7 +79,7 @@ export class AsyncLockTest {
    
   }
 
-  async setCount(count: number) {
+  async setCount(count: number): Promise<void> {
     let s: string[] = []
     s[0].split('')[1].toString()
     this.count_ = count;
@@ -119,7 +119,7 @@ export class AsyncLockTestCatch {
     // })
   }
 
-  async setCount(count: number) {
+  async setCount(count: number): Promise<void> {
     this.count_ = count;
     let s: string[] = [];
     s[0].split('')[1].toString();
@@ -138,7 +138,7 @@ export class AsyncLockTestFinally {
    
   }
 
-  async setCount(count: number) {
+  async setCount(count: number): Promise<void> {
     this.count_ = count;
     let s: string[] = [];
     s[0].split('')[1].toString();
@@ -158,7 +158,7 @@ export class AsyncLockTest1 {
     
   }
 
-  async setCount(count: number) {
+  async setCount(count: number): Promise<void> {
     this.count_ = count;
    
   }
@@ -172,24 +172,24 @@ export class MyAsyncLock {
     this.isLocked = false;
   }
 
-  async acquire() {
+  async acquire(): Promise<void> {
     // 模拟获取锁的过程，等待直到锁可用
     throw new Error('Simulated error in task execution.');
   }
 
-  async acquire1() {
+  async acquire1(): Promise<void> {
     // 模拟获取锁的过程，等待直到锁可用
     console.log('Lock acquired.');
   }
 
-  release() {
+  release(): void {
     // 释放锁
     this.isLocked = false;
     console.log('Lock released.');
   }
 }
 
-export let lock = new MyAsyncLock();
+export let lock: MyAsyncLock = new MyAsyncLock();
 
 // 模拟异步任务函数
 export function asyncTask(): Promise<void> {
@@ -227,7 +227,7 @@ export class AsyncLockTest2 {
     // })
   }
 
-  async setCount(count: number) {
+  async setCount(count: number): Promise<void> {
     if (Math.random() < 1) {
       throw new Error('Simulated error in wait callback.');
     }

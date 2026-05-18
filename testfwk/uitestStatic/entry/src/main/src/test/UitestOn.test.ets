@@ -35,7 +35,7 @@ function sleep(numberMillis: int) {
   return
 }
 
-export default function uitestOnTest() {
+export default function uitestOnTest(): void {
   describe('uitestOnTest', (): void => {
     beforeAll(async () : Promise<void> => {
       hilog.info(domain, tag, "uitestOnTest loadup start!!!!!")

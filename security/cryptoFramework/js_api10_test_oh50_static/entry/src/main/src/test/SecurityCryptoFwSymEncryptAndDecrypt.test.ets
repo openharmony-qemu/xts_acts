@@ -503,7 +503,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
           let keyPair= await syncSymEncAndDecUtils.createAsymKeySync(algName);
           for (let j = 0; j < paddings.length; j++) {
             let padding: string = paddings[j];
-            let dataLen: int = padding == "NoPadding" ? Number(rsaSpec[2][0]) as int : Number(rsaSpec[2][1]) as int;
+            let dataLen: int = padding == "NoPadding" ? Number(rsaSpec[2][0]).toInt() : Number(rsaSpec[2][1]).toInt();
             let data: cryptoFramework.DataBlob = await commonUtils.createData(dataLen);
             let encAlgName: string = rsaSpec[0][0] != "RSA" ? algName + "|" + padding : "RSA" + "|" + padding;
             let dataCipher: cryptoFramework.DataBlob = syncSymEncAndDecUtils.encryptDecryptAsymMessageSync(encAlgName, keyPair, data, true);
@@ -564,7 +564,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
           let masksName: string[] = rsaSpec[3];
           for (let maskNameId = 0; maskNameId < masksName.length; maskNameId++) {
             let maskName: string = rsaSpec[3][maskNameId];
-            let dataLen: int = Number(rsaSpec[4][0]) as int;
+            let dataLen: int = Number(rsaSpec[4][0]).toInt();
             let data: cryptoFramework.DataBlob = await commonUtils.createData(dataLen);
             let encAlgName: string = rsaSpec[0][0] != "RSA" ? `${algName}|${padding}|${mdName}|${maskName}` : `RSA|${padding}|${mdName}|${maskName}`;
             let dataCipher: cryptoFramework.DataBlob = syncSymEncAndDecUtils.encryptDecryptAsymOAaepMessageSync(encAlgName, keyPair, data, true);
@@ -598,7 +598,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
           let masksName: string[] = rsaSpec[3];
           for (let maskNameId = 0; maskNameId < masksName.length; maskNameId++) {
             let maskName: string = rsaSpec[3][maskNameId];
-            let dataLen: int = Number(rsaSpec[4][0]) as int;
+            let dataLen: int = Number(rsaSpec[4][0]).toInt();
             let data: cryptoFramework.DataBlob = await commonUtils.createData(dataLen);
             let encAlgName: string = rsaSpec[0][0] != "RSA" ? `${algName}|${padding}|${mdName}|${maskName}` : `RSA|${padding}|${mdName}|${maskName}`;
             let dataCipher: cryptoFramework.DataBlob = syncSymEncAndDecUtils.encryptDecryptAsymOAaepMessageSync(encAlgName, keyPair, data, true);
@@ -632,7 +632,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
           let masksName: string[] = rsaSpec[3];
           for (let maskNameId = 0; maskNameId < masksName.length; maskNameId++) {
             let maskName: string = rsaSpec[3][maskNameId];
-            let dataLen: int = Number(rsaSpec[4][0]) as int;
+            let dataLen: int = Number(rsaSpec[4][0]).toInt();
             let data: cryptoFramework.DataBlob = await commonUtils.createData(dataLen);
             let encAlgName: string = rsaSpec[0][0] != "RSA" ? `${algName}|${padding}|${mdName}|${maskName}` : `RSA|${padding}|${mdName}|${maskName}`;
             let dataCipher: cryptoFramework.DataBlob = syncSymEncAndDecUtils.encryptDecryptAsymOAaepMessageSync(encAlgName, keyPair, data, true);
@@ -666,7 +666,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
           let masksName: string[] = rsaSpec[3];
           for (let maskNameId = 0; maskNameId < masksName.length; maskNameId++) {
             let maskName: string = rsaSpec[3][maskNameId];
-            let dataLen: int = Number(rsaSpec[4][0]) as int;
+            let dataLen: int = Number(rsaSpec[4][0]).toInt();
             let data: cryptoFramework.DataBlob = await commonUtils.createData(dataLen);
             let encAlgName: string = rsaSpec[0][0] != "RSA" ? `${algName}|${padding}|${mdName}|${maskName}` : `RSA|${padding}|${mdName}|${maskName}`;
             let dataCipher: cryptoFramework.DataBlob = syncSymEncAndDecUtils.encryptDecryptAsymOAaepMessageSync(encAlgName, keyPair, data, true);
@@ -700,7 +700,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
           let masksName: string[] = rsaSpec[3];
           for (let maskNameId = 0; maskNameId < masksName.length; maskNameId++) {
             let maskName: string = rsaSpec[3][maskNameId];
-            let dataLen: int = Number(rsaSpec[4][0]) as int;
+            let dataLen: int = Number(rsaSpec[4][0]).toInt();
             let data: cryptoFramework.DataBlob = await commonUtils.createData(dataLen);
             let encAlgName: string = rsaSpec[0][0] != "RSA" ? `${algName}|${padding}|${mdName}|${maskName}` : `RSA|${padding}|${mdName}|${maskName}`;
             let dataCipher: cryptoFramework.DataBlob = syncSymEncAndDecUtils.encryptDecryptAsymOAaepMessageSync(encAlgName, keyPair, data, true);
@@ -734,7 +734,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
           let masksName: string[] = rsaSpec[3];
           for (let maskNameId = 0; maskNameId < masksName.length; maskNameId++) {
             let maskName: string = rsaSpec[3][maskNameId];
-            let dataLen: int = Number(rsaSpec[4][0]) as int;
+            let dataLen: int = Number(rsaSpec[4][0]).toInt();
             let data: cryptoFramework.DataBlob = await commonUtils.createData(dataLen);
             let encAlgName: string = rsaSpec[0][0] != "RSA" ? `${algName}|${padding}|${mdName}|${maskName}` : `RSA|${padding}|${mdName}|${maskName}`;
             let dataCipher: cryptoFramework.DataBlob = syncSymEncAndDecUtils.encryptDecryptAsymOAaepMessageSync(encAlgName, keyPair, data, true);
@@ -768,7 +768,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
           let masksName: string[] = rsaSpec[3];
           for (let maskNameId = 0; maskNameId < masksName.length; maskNameId++) {
             let maskName: string = rsaSpec[3][maskNameId];
-            let dataLen: int = Number(rsaSpec[4][0]) as int;
+            let dataLen: int = Number(rsaSpec[4][0]).toInt();
             let data: cryptoFramework.DataBlob = await commonUtils.createData(dataLen);
             let encAlgName: string = rsaSpec[0][0] != "RSA" ? `${algName}|${padding}|${mdName}|${maskName}` : `RSA|${padding}|${mdName}|${maskName}`;
             let dataCipher: cryptoFramework.DataBlob = syncSymEncAndDecUtils.encryptDecryptAsymOAaepMessageSync(encAlgName, keyPair, data, true);
@@ -802,7 +802,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
           let masksName: string[] = rsaSpec[3];
           for (let maskNameId = 0; maskNameId < masksName.length; maskNameId++) {
             let maskName: string = rsaSpec[3][maskNameId];
-            let dataLen: int = Number(rsaSpec[4][0]) as int;
+            let dataLen: int = Number(rsaSpec[4][0]).toInt();
             let data: cryptoFramework.DataBlob = await commonUtils.createData(dataLen);
             let encAlgName: string = rsaSpec[0][0] != "RSA" ? `${algName}|${padding}|${mdName}|${maskName}` : `RSA|${padding}|${mdName}|${maskName}`;
             let dataCipher: cryptoFramework.DataBlob = syncSymEncAndDecUtils.encryptDecryptAsymOAaepMessageSync(encAlgName, keyPair, data, true);
@@ -836,7 +836,7 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
           let masksName: string[] = rsaSpec[3];
           for (let maskNameId = 0; maskNameId < masksName.length; maskNameId++) {
             let maskName: string = rsaSpec[3][maskNameId];
-            let dataLen: int = Number(rsaSpec[4][0]) as int;
+            let dataLen: int = Number(rsaSpec[4][0]).toInt();
             let data: cryptoFramework.DataBlob = await commonUtils.createData(dataLen);
             let encAlgName: string = rsaSpec[0][0] != "RSA" ? `${algName}|${padding}|${mdName}|${maskName}` : `RSA|${padding}|${mdName}|${maskName}`;
             let dataCipher: cryptoFramework.DataBlob = syncSymEncAndDecUtils.encryptDecryptAsymOAaepMessageSync(encAlgName, keyPair, data, true);

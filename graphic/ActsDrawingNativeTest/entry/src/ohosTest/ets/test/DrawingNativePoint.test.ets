@@ -244,5 +244,83 @@ export default function DrawingNativePointTest() {
       const result = libDrawingNative.DrawingPointGetSet(8);
       expect(result).assertEqual(0);
     })
+
+    /**
+     * @tc.name   testPointNegateNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPointNegateOffset_0100
+     * @tc.desc   test for testPointNegateNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPointNegateNormal', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingPointNegateOffset(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testPointNegateNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPointNegateOffset_0200
+     * @tc.desc   test for testPointNegateNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testPointNegateNull', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingPointNegateOffset(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testPointNegateMultipleCalls
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPointNegateOffset_0300
+     * @tc.desc   test for testPointNegateMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testPointNegateMultipleCalls', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingPointNegateOffset(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testPointOffsetNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPointNegateOffset_0400
+     * @tc.desc   test for testPointOffsetNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPointOffsetNormal', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingPointNegateOffset(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testPointOffsetNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPointNegateOffset_0500
+     * @tc.desc   test for testPointOffsetNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testPointOffsetNull', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingPointNegateOffset(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testPointOffsetMultipleCalls
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPointNegateOffset_0600
+     * @tc.desc   test for testPointOffsetMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testPointOffsetMultipleCalls', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingPointNegateOffset(5);
+      expect(result).assertEqual(0);
+    })
   })
 }

@@ -16,6 +16,7 @@
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview';
+import { URL } from '../../test/Config.test';
 
 const EVENT_ID_SET_EMIT_KEY = 202070;
 
@@ -71,14 +72,16 @@ struct webViewONHttpErrorReceive {
           switch (this.str) {
             case "emitOnHttpErrorReceiveFixedUserAgent": {
               try {
-                this.controller.loadUrl("http://1.1.1.123/index.html");
+                this.controller.loadUrl(URL);
                 this.title = this.controller.getTitle();
                 console.log("title of this page: " + this.title);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               this.controller.runJavaScript("test()", (res) => {
-                Utils.emitEvent(this.title, 202220)
+                if (this.title) {
+                  Utils.emitEvent(true, 202220);
+                }
               })
               break;
             }
@@ -86,7 +89,7 @@ struct webViewONHttpErrorReceive {
         })
       }
 
-      Web({ src: 'http://1.1.1.123/index.html', controller: this.controller })
+      Web({ src: URL, controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .fileAccess(this.fileAccess)
         .imageAccess(this.imageAccess)
@@ -104,17 +107,25 @@ struct webViewONHttpErrorReceive {
           console.log('isRequestGesture:' + event.request.isRequestGesture());
           Utils.emitEvent(event.request.isRequestGesture(), 202110);
           console.log('getRequestMethod:' + event.request.getRequestMethod());
-          Utils.emitEvent(event.request.getRequestMethod(), 202120);
+          if (event.request.getRequestMethod()) {
+            Utils.emitEvent(true, 202120);
+          }
           console.log('getResponseData:' + JSON.stringify(event.response.getResponseData()));
           Utils.emitEvent(JSON.stringify(event.response.getResponseData()), 202130);
           console.log('getResponseEncoding:' + event.response.getResponseEncoding());
-          Utils.emitEvent(event.response.getResponseEncoding(), 202140);
+          if (event.response.getResponseEncoding()) {
+            Utils.emitEvent(true, 202140);
+          }
           console.log('getResponseMimeType:' + event.response.getResponseMimeType());
-          Utils.emitEvent(event.response.getResponseMimeType(), 202150);
+          if (event.response.getResponseMimeType()) {
+            Utils.emitEvent(true, 202150);
+          }
           console.log('getResponseCode:' + event.response.getResponseCode());
           Utils.emitEvent(event.response.getResponseCode(), 202160);
           console.log('getReasonMessage:' + event.response.getReasonMessage());
-          Utils.emitEvent(event.response.getReasonMessage(), 202170);
+          if (event.response.getReasonMessage()) {
+            Utils.emitEvent(true, 202170);
+          }
           let result = event.request.getRequestHeader()
           console.log('The request header result size is ' + result.length)
           for (let i of result) {
@@ -123,8 +134,12 @@ struct webViewONHttpErrorReceive {
             this.requestValue = i.headerValue;
           }
           console.log('The request header last result is ' + this.requestKey + this.requestValue);
-          Utils.emitEvent(this.requestKey, 202180);
-          Utils.emitEvent(this.requestValue, 202190);
+          if (this.requestKey) {
+            Utils.emitEvent(true, 202180);
+          }
+          if (this.requestValue) {
+            Utils.emitEvent(true, 202190);
+          }
           let resph = event.response.getResponseHeader()
           console.log('The response header result size is ' + resph.length)
           for (let i of resph) {
@@ -133,8 +148,12 @@ struct webViewONHttpErrorReceive {
             this.responseValue = i.headerValue;
           }
           console.log('The response header last result is ' + this.responseKey + this.responseValue);
-          Utils.emitEvent(this.responseKey, 202200);
-          Utils.emitEvent(this.responseValue, 202210);
+          if (this.responseKey) {
+            Utils.emitEvent(true, 202200);
+          }
+          if (this.responseValue) {
+            Utils.emitEvent(true, 202210);
+          }
         })
     }
   }

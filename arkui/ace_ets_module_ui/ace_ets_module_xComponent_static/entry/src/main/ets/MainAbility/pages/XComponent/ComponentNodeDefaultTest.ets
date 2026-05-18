@@ -29,7 +29,7 @@ import {
   typeNode
 } from "@ohos.arkui.node";
 
-class MyNodeController extends NodeController {
+export class MyNodeController extends NodeController {
   public uiContext: UIContext | null = null;
   public rootNode: FrameNode | null = null;
 

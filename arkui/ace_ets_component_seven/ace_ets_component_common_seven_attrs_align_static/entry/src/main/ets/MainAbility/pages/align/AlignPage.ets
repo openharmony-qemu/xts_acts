@@ -701,7 +701,7 @@ struct alignPage {
           Marquee({
             start: true,
             step: 50,
-            loop: Infinity as int,
+            loop: Infinity.toInt(),
             fromStart: true,
             src: 'Running Marquee starts rolling'
           }).attributeModifier(this._alignMarqueeMod)

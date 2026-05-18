@@ -573,6 +573,7 @@ static napi_value KeyCode19(napi_env env, napi_callback_info info)
     int32_t keyCode5 = 2731;
     int32_t keyCode6 = 2732;
     int32_t keyCode7 = 2733;
+    int32_t keyCode8 = 2740;
     napi_create_int32(env,
                       (Input_KeyCode::KEYCODE_KBDINPUTASSIST_NEXT == keyCode1 &&
                       Input_KeyCode::KEYCODE_KBDINPUTASSIST_PREVGROUP == keyCode2 &&
@@ -580,7 +581,8 @@ static napi_value KeyCode19(napi_env env, napi_callback_info info)
                       Input_KeyCode::KEYCODE_KBDINPUTASSIST_ACCEPT == keyCode4 &&
                       Input_KeyCode::KEYCODE_KBDINPUTASSIST_CANCEL == keyCode5 &&
                       Input_KeyCode::KEYCODE_MOUSE_ASSISTANT == keyCode6 &&
-                      Input_KeyCode::KEYCODE_MOUSE_INTELLIGENCE_SELECTION == keyCode7) ? 1 : 0, &result);
+                      Input_KeyCode::KEYCODE_MOUSE_INTELLIGENCE_SELECTION == keyCode7 &&
+                      Input_KeyCode::KEYCODE_AOD_SINGLE_CLICK == keyCode8) ? 1 : 0, &result);
     return result;
 }
 
@@ -726,6 +728,7 @@ static napi_value KeyCode26(napi_env env, napi_callback_info info)
     int32_t keyCode5 = 3212;
     int32_t keyCode6 = 3213;
     int32_t keyCode7 = 3220;
+    int32_t keyCode8 = 3232;
     napi_create_int32(env,
                       (Input_KeyCode::KEYCODE_BTN_7 == keyCode1 &&
                       Input_KeyCode::KEYCODE_BTN_8 == keyCode2 &&
@@ -733,7 +736,8 @@ static napi_value KeyCode26(napi_env env, napi_callback_info info)
                       Input_KeyCode::KEYCODE_DAGGER_CLICK == keyCode4 &&
                       Input_KeyCode::KEYCODE_DAGGER_DOUBLE_CLICK == keyCode5 &&
                       Input_KeyCode::KEYCODE_DAGGER_LONG_PRESS == keyCode6 &&
-                      Input_KeyCode::KEYCODE_DIV == keyCode7) ? 1 : 0, &result);
+                      Input_KeyCode::KEYCODE_DIV == keyCode7 &&
+                      Input_KeyCode::KEYCODE_XKEY == keyCode8) ? 1 : 0, &result);
     return result;
 }
 
@@ -1339,6 +1343,14 @@ static napi_value GetTouchEventToolType(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value BindInputDeviceToDisplay(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Input_Result retResult = OH_Input_BindInputDeviceToDisplay(1, 1);
+    napi_create_int32(env, (retResult == INPUT_PARAMETER_ERROR) ? 1 : 0, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_property_descriptor desc_part1[] = {
     {"QueryMaxTouchPoints1", nullptr, QueryMaxTouchPoints1, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -1422,6 +1434,7 @@ static napi_property_descriptor desc_part3[] = {
     {"SetTouchEventToolType1", nullptr, SetTouchEventToolType1, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"SetTouchEventToolType2", nullptr, SetTouchEventToolType2, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"GetTouchEventToolType", nullptr, GetTouchEventToolType, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"BindInputDeviceToDisplay", nullptr, BindInputDeviceToDisplay, nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 
 static napi_value Init(napi_env env, napi_value exports)

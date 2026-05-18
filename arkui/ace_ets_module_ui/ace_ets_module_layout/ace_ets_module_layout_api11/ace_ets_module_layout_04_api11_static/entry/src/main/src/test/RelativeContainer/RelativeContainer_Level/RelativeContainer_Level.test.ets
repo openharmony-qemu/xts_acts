@@ -81,8 +81,8 @@ it('SUB_ACE_RelativeContainer_Level_TEST_static_0100', Level.LEVEL0, async (done
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let RelativeContainer_Level_bt1: RectValue = CommonFunc.getComponentRect('RelativeContainer_Level_bt1');
-      let RelativeContainer_Level_tx2: RectValue = CommonFunc.getComponentRect('RelativeContainer_Level_tx2');
+      let RelativeContainer_Level_bt1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_Level_bt1');
+      let RelativeContainer_Level_tx2: RectValue = await CommonFunc.getComponentRect('RelativeContainer_Level_tx2');
 
 
       console.log('assert position')
@@ -111,8 +111,8 @@ it('SUB_ACE_RelativeContainer_Level_TEST_static_0200', Level.LEVEL0, async (done
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let RelativeContainer_Level_bt1: RectValue = CommonFunc.getComponentRect('RelativeContainer_Level_bt1');
-      let RelativeContainer_Level_tx2: RectValue = CommonFunc.getComponentRect('RelativeContainer_Level_tx2');
+      let RelativeContainer_Level_bt1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_Level_bt1');
+      let RelativeContainer_Level_tx2: RectValue = await CommonFunc.getComponentRect('RelativeContainer_Level_tx2');
 
 
       console.log('assert position')
@@ -143,8 +143,8 @@ it('SUB_ACE_RelativeContainer_Level_TEST_static_0300', Level.LEVEL0, async (done
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let RelativeContainer_Level_bt1: RectValue = CommonFunc.getComponentRect('RelativeContainer_Level_bt1');
-      let RelativeContainer_Level_tx2: RectValue = CommonFunc.getComponentRect('RelativeContainer_Level_tx2');
+      let RelativeContainer_Level_bt1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_Level_bt1');
+      let RelativeContainer_Level_tx2: RectValue = await CommonFunc.getComponentRect('RelativeContainer_Level_tx2');
 
 
       console.log('assert position')

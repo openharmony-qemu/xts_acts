@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -70,7 +70,7 @@ export default function ChipOnClose() {
 it('ChipOnClose_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       console.info('ChipOnClose_static_001 START');
-      let ChipActionCol = CommonFunc.getComponentRect('ChipOnCloseCol');
+      let ChipActionCol = await CommonFunc.getComponentRect('ChipOnCloseCol');
       await CommonFunc.sleep(200);
       let right: number = ChipActionCol.right - uiContext.vp2px(22) + Number(AppStorage.get<number>("winLeft") ?? 0);
       let top: number = ChipActionCol.top + uiContext.vp2px(60) + Number(AppStorage.get<number>("winTop") ?? 0);
@@ -78,7 +78,7 @@ it('ChipOnClose_static_001', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('ChipOnClose_static_001 right：' + right + 'top:' + top);
       let driver = Driver.create();
       await driver.mouseClick({
-        x: Math.round(right) as int, y: Math.round(top) as int
+        x: Math.round(right).toInt(), y: Math.round(top).toInt()
       }, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(1000);
       console.info('ChipOnClose_static_001 click success');

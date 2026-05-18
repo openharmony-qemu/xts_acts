@@ -3773,7 +3773,7 @@ export default function abilityTest() {
                     console.info(`${TAG}TestLog: Play command callback registration successful`);
                     expect(info?.callerBundleName).assertEqual("com.example.myapplication.static");
                     expect(info?.callerModuleName).assertEqual(cmdInfo.callerModuleName);
-                    expect(info?.callerDeviceId).assertNull();
+                    expect(info?.callerDeviceId).assertEqual("");
                     expect(info?.callerType).assertEqual(avSession.CallerType.TYPE_APP);
                     console.info(`${TAG}TestLog: Controller get commandInfo successfully`);
                 });
@@ -3816,7 +3816,7 @@ export default function abilityTest() {
                     console.info(`${TAG}TestLog: PlayPrevious command callback registration successful`);
                     expect(info?.callerBundleName).assertEqual("com.example.myapplication.static");
                     expect(info?.callerModuleName).assertEqual(cmdInfo.callerModuleName);
-                    expect(info?.callerDeviceId).assertNull();
+                    expect(info?.callerDeviceId).assertEqual("");
                     expect(info?.callerType).assertEqual(avSession.CallerType.TYPE_APP);
                     console.info(`${TAG}TestLog: Controller get commandInfo successfully`);
                 });
@@ -3859,7 +3859,7 @@ export default function abilityTest() {
                     console.info(`${TAG}TestLog: PlayNext command callback registration successful`);
                     expect(info?.callerBundleName).assertEqual("com.example.myapplication.static");
                     expect(info?.callerModuleName).assertEqual(cmdInfo.callerModuleName);
-                    expect(info?.callerDeviceId).assertNull();
+                    expect(info?.callerDeviceId).assertEqual("");
                     expect(info?.callerType).assertEqual(avSession.CallerType.TYPE_APP);
                     console.info(`${TAG}TestLog: Controller get commandInfo successfully`);
                 });

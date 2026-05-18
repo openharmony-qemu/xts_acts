@@ -85,15 +85,18 @@ async function permissionClick() {
     console.info(`driver is ${JSON.stringify(driver)}`);
     await sleep(100);
     console.info(`UiDriver start`);
-    let button = await driver.findComponent(BY.text('允许'));
-    if (button == null) {
+    let button1 = await driver.findComponent(BY.text('允许'));
+    let button2 = await driver.findComponent(BY.text('始终允许'));
+    console.info(`button1 is ${JSON.stringify(button1)}`);
+    console.info(`button2 is ${JSON.stringify(button2)}`);
+    if (button1 == null && button2 == null) {
         let delegator = abilityDelegatorRegistry.getAbilityDelegator();
         let cmd = "hidumper -s WindowManagerService -a'-a'"
         await delegator.executeShellCommand(cmd);
     }
-    console.info(`button is ${JSON.stringify(button)}`);
     await sleep(100);
-    await button.click();
+    await button1?.click();
+    await button2?.click();
     await sleep(1000);
 }
 
@@ -209,13 +212,9 @@ export async function cameraCaptureRelyOnNum(TAG: string, photoOutput: ESObject)
     }
     //使用当前拍照设置进行拍照。
     console.info(`${TAG} start take first photo`);
-    let ready: boolean = false;
-    photoOutput!.on('captureReady', (err: BusinessError) => { ready = true; });
     await photoOutput.capture(photoCaptureSetting);
     await waitUntilImageArrival(TAG);
-    let result: boolean = await waitForTrigger((): boolean => ready);
-    expect(result).assertTrue();
-    photoOutput!.off('captureReady');
+    // 部分设备不支持captureReady回调
     await sleep(1000);
     console.info(`${TAG} start take second photo`);
     imageArrival = false;
@@ -1726,6 +1725,7 @@ export default function ImageReceiverTest() {
             const myData = getUserData(CALLBACK_FUC_01, 888, "on image arrive", false);
             expect(arriveOnNdkTest.imageArriveOn(receiverPhoto, myData) == IMAGE_SUCCESS).assertTrue();
             expect(arriveOnNdkTest.imageReceiverTest(receiverPhoto, CAMERA_FORMAT_JPEG, TEST_TYPE_PHOTO, receiverPreview) == IMAGE_SUCCESS).assertTrue();
+            await sleep(2000);
             const result = arriveOnNdkTest.waitForCondition(myData.callBackId, myData.num, 0);
             expect(arriveOnNdkTest.imageArriveOff(receiverPhoto, CALLBACK_FUC_DE) == IMAGE_SUCCESS).assertTrue();
             arriveOnNdkTest.releaseImageReceiver(receiverPhoto);

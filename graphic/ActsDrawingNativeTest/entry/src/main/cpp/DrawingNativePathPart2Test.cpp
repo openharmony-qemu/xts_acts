@@ -42,14 +42,6 @@ void DrawingNativePathPart2TestTearDown()
     OH_Drawing_ErrorCodeReset();
     std::cout << "DrawingNativePathPart2Test errorCodeReset after each test case." << std::endl;
 }
-/**
- * @tc.name   testPathAddArcNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_1900
- * @tc.desc   Test for adding an arc to a path with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathAddArcNormal()
 {
     DrawingNativePathPart2TestSetUp();
@@ -76,14 +68,6 @@ int TestPathAddArcNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathAddArcNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_1901
- * @tc.desc   Test for adding an arc to a path with NULL or invalid parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathAddArcNull()
 {
     DrawingNativePathPart2TestSetUp();
@@ -115,14 +99,6 @@ int TestPathAddArcNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathAddArcAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_1902
- * @tc.desc   Test for adding an arc to a path with abnormal data types as parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathAddArcAbnormal()
 {
     DrawingNativePathPart2TestSetUp();
@@ -150,14 +126,6 @@ int TestPathAddArcAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathAddArcMaximal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_1903
- * @tc.desc   Test for adding an arc to a path with maximal values as parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathAddArcMaximal()
 {
     DrawingNativePathPart2TestSetUp();
@@ -186,14 +154,6 @@ int TestPathAddArcMaximal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathAddPathNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2000
- * @tc.desc   Test for adding a path to another path with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathAddPathNormal()
 {
     DrawingNativePathPart2TestSetUp();
@@ -221,14 +181,6 @@ int TestPathAddPathNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathAddPathNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2001
- * @tc.desc   Test for adding a path to another path with NULL or invalid parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathAddPathNull()
 {
     DrawingNativePathPart2TestSetUp();
@@ -262,14 +214,6 @@ int TestPathAddPathNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathAddPathWithMatrixAndModeNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2100
- * @tc.desc   Test for adding a path to another path with matrix and mode transformations using normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathAddPathWithMatrixAndModeNormal()
 {
     DrawingNativePathPart2TestSetUp();
@@ -308,14 +252,6 @@ int TestPathAddPathWithMatrixAndModeNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathAddPathWithMatrixAndModeNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2101
- * @tc.desc   Test for adding a path to another path with matrix and mode transformations using NULL or invalid
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathAddPathWithMatrixAndModeNull()
 {
     DrawingNativePathPart2TestSetUp();
@@ -352,14 +288,6 @@ int TestPathAddPathWithMatrixAndModeNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathAddPathWithModeNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2200
- * @tc.desc   Test for adding a path to another path with mode transformations using normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathAddPathWithModeNormal()
 {
     DrawingNativePathPart2TestSetUp();
@@ -391,14 +319,6 @@ int TestPathAddPathWithModeNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathAddPathWithModeNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2201
- * @tc.desc   Test for adding a path to another path with mode transformations using NULL or invalid parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathAddPathWithModeNull()
 {
     DrawingNativePathPart2TestSetUp();
@@ -426,14 +346,6 @@ int TestPathAddPathWithModeNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathAddPathWithOffsetAndModeNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2300
- * @tc.desc   Test for adding a path to another path with offset and mode transformations using normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathAddPathWithOffsetAndModeNormal()
 {
     DrawingNativePathPart2TestSetUp();
@@ -466,14 +378,6 @@ int TestPathAddPathWithOffsetAndModeNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathAddPathWithOffsetAndModeNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2301
- * @tc.desc   Test for adding a path to another path with offset and mode transformations using NULL or invalid
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathAddPathWithOffsetAndModeNull()
 {
     DrawingNativePathPart2TestSetUp();
@@ -507,14 +411,6 @@ int TestPathAddPathWithOffsetAndModeNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathAddPathWithOffsetAndModeAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2302
- * @tc.desc   Test for adding a path to another path with offset and mode transformations using abnormal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathAddPathWithOffsetAndModeAbnormal()
 {
     DrawingNativePathPart2TestSetUp();
@@ -544,14 +440,6 @@ int TestPathAddPathWithOffsetAndModeAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathAddPathWithOffsetAndModeMaximal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2303
- * @tc.desc   Test for adding a path to another path with offset and mode transformations using maximal values.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathAddPathWithOffsetAndModeMaximal()
 {
     DrawingNativePathPart2TestSetUp();
@@ -578,14 +466,6 @@ int TestPathAddPathWithOffsetAndModeMaximal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathAddOvalNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2400
- * @tc.desc   Test for adding an oval to a path using normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathAddOvalNormal()
 {
     DrawingNativePathPart2TestSetUp();
@@ -617,14 +497,6 @@ int TestPathAddOvalNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathAddOvalNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2401
- * @tc.desc   Test for adding an oval to a path using NULL or invalid parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathAddOvalNull()
 {
     DrawingNativePathPart2TestSetUp();
@@ -652,14 +524,6 @@ int TestPathAddOvalNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathAddPolygonNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2500
- * @tc.desc   Test for adding a polygon to a path with the fourth parameter set to true.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathAddPolygonNormal()
 {
     DrawingNativePathPart2TestSetUp();
@@ -688,14 +552,6 @@ int TestPathAddPolygonNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathAddPolygonNormal2
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2501
- * @tc.desc   Test for adding a polygon to a path with the fourth parameter set to false.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathAddPolygonNormal2()
 {
     DrawingNativePathPart2TestSetUp();
@@ -724,14 +580,6 @@ int TestPathAddPolygonNormal2()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathAddPolygonNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2502
- * @tc.desc   Test for adding a polygon to a path using NULL or invalid parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathAddPolygonNull()
 {
     DrawingNativePathPart2TestSetUp();
@@ -764,14 +612,6 @@ int TestPathAddPolygonNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathAddPolygonAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2503
- * @tc.desc   Test for adding a polygon to a path using abnormal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathAddPolygonAbnormal()
 {
     DrawingNativePathPart2TestSetUp();
@@ -808,14 +648,6 @@ int TestPathAddPolygonAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathAddPolygonMaximal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2504
- * @tc.desc   Test for adding a polygon to a path using maximal values.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathAddPolygonMaximal()
 {
     DrawingNativePathPart2TestSetUp();
@@ -851,14 +683,6 @@ int TestPathAddPolygonMaximal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathAddCircleNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2600
- * @tc.desc   Test for adding a circle to a path using normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathAddCircleNormal()
 {
     DrawingNativePathPart2TestSetUp();
@@ -885,14 +709,6 @@ int TestPathAddCircleNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathAddCircleNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2601
- * @tc.desc   Test for adding a circle to a path using NULL or invalid parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathAddCircleNull()
 {
     DrawingNativePathPart2TestSetUp();
@@ -922,14 +738,6 @@ int TestPathAddCircleNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathAddCircleAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2602
- * @tc.desc   Test for adding a circle to a path using abnormal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathAddCircleAbnormal()
 {
     DrawingNativePathPart2TestSetUp();
@@ -959,14 +767,6 @@ int TestPathAddCircleAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathAddCircleMaximal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2603
- * @tc.desc   Test for adding a circle to a path using maximal values.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathAddCircleMaximal()
 {
     DrawingNativePathPart2TestSetUp();
@@ -993,14 +793,6 @@ int TestPathAddCircleMaximal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathBuildFromSvgStringNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2700
- * @tc.desc   Test for building a path from an SVG string using normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathBuildFromSvgStringNormal()
 {
     DrawingNativePathPart2TestSetUp();
@@ -1025,14 +817,6 @@ int TestPathBuildFromSvgStringNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathBuildFromSvgStringNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2701
- * @tc.desc   Test for building a path from an SVG string using NULL or invalid parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathBuildFromSvgStringNull()
 {
     DrawingNativePathPart2TestSetUp();
@@ -1057,14 +841,6 @@ int TestPathBuildFromSvgStringNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathContainsNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2800
- * @tc.desc   Test for checking if a path contains a specified point using normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathContainsNormal()
 {
     DrawingNativePathPart2TestSetUp();
@@ -1092,14 +868,6 @@ int TestPathContainsNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathContainsNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2801
- * @tc.desc   Test for checking if a path contains a specified point using NULL or invalid parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathContainsNull()
 {
     DrawingNativePathPart2TestSetUp();
@@ -1125,14 +893,6 @@ int TestPathContainsNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathContainsAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2802
- * @tc.desc   Test for checking if a path contains a specified point using abnormal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathContainsAbnormal()
 {
     DrawingNativePathPart2TestSetUp();
@@ -1162,14 +922,6 @@ int TestPathContainsAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathContainsMaximal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2803
- * @tc.desc   Test for checking if a path contains a specified point using maximal values.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathContainsMaximal()
 {
     DrawingNativePathPart2TestSetUp();
@@ -1201,14 +953,6 @@ int TestPathContainsMaximal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathTransformNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2900
- * @tc.desc   Test for transforming a path using normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathTransformNormal()
 {
     DrawingNativePathPart2TestSetUp();
@@ -1236,14 +980,6 @@ int TestPathTransformNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathTransformNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2901
- * @tc.desc   Test for transforming a path using NULL or invalid parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathTransformNull()
 {
     DrawingNativePathPart2TestSetUp();
@@ -1272,14 +1008,6 @@ int TestPathTransformNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathTransformWithPerspectiveClipNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3000
- * @tc.desc   Test for transforming a path with perspective clip using normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathTransformWithPerspectiveClipNormal()
 {
     DrawingNativePathPart2TestSetUp();
@@ -1310,14 +1038,6 @@ int TestPathTransformWithPerspectiveClipNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathTransformWithPerspectiveClipNormal2
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3001
- * @tc.desc   Test for transforming a path with perspective clip using normal parameters with false perspective clip.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathTransformWithPerspectiveClipNormal2()
 {
     DrawingNativePathPart2TestSetUp();
@@ -1349,14 +1069,6 @@ int TestPathTransformWithPerspectiveClipNormal2()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathTransformWithPerspectiveClipNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3002
- * @tc.desc   Test for transforming a path with perspective clip using NULL or invalid parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathTransformWithPerspectiveClipNull()
 {
     DrawingNativePathPart2TestSetUp();
@@ -1391,14 +1103,6 @@ int TestPathTransformWithPerspectiveClipNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathSetFillTypeNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3100
- * @tc.desc   Test for setting fill type of a path using normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathSetFillTypeNormal()
 {
     DrawingNativePathPart2TestSetUp();
@@ -1436,14 +1140,6 @@ int TestPathSetFillTypeNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathSetFillTypeNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3101
- * @tc.desc   Test for setting fill type of a path using NULL or invalid parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathSetFillTypeNull()
 {
     DrawingNativePathPart2TestSetUp();
@@ -1465,14 +1161,6 @@ int TestPathSetFillTypeNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathSetFillTypeMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3102
- * @tc.desc   Test for setting fill type of a path with multiple calls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathSetFillTypeMultipleCalls()
 {
     DrawingNativePathPart2TestSetUp();
@@ -1501,14 +1189,6 @@ int TestPathSetFillTypeMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathGetLengthNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3200
- * @tc.desc   Test for getting the length of a path using normal parameters with detailed length.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathGetLengthNormal()
 {
     DrawingNativePathPart2TestSetUp();
@@ -1529,14 +1209,6 @@ int TestPathGetLengthNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathGetLengthNormal2
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3201
- * @tc.desc   Test for getting the length of a path using normal parameters without detailed length.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathGetLengthNormal2()
 {
     DrawingNativePathPart2TestSetUp();
@@ -1558,14 +1230,6 @@ int TestPathGetLengthNormal2()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathGetLengthNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3202
- * @tc.desc   Test for getting the length of a path using NULL or invalid parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathGetLengthNull()
 {
     DrawingNativePathPart2TestSetUp();
@@ -1583,14 +1247,6 @@ int TestPathGetLengthNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathGetBoundsNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3300
- * @tc.desc   Test for getting the bounds of a path using normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathGetBoundsNormal()
 {
     DrawingNativePathPart2TestSetUp();
@@ -1617,14 +1273,6 @@ int TestPathGetBoundsNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathGetBoundsNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3301
- * @tc.desc   Test for getting the bounds of a path using NULL or invalid parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathGetBoundsNull()
 {
     DrawingNativePathPart2TestSetUp();
@@ -1652,14 +1300,6 @@ int TestPathGetBoundsNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathCloseNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3400
- * @tc.desc   test for testPathCloseNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathCloseNormal()
 {
     DrawingNativePathPart2TestSetUp();
@@ -1683,14 +1323,6 @@ int TestPathCloseNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathCloseNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3401
- * @tc.desc   Test for closing a path using NULL or invalid parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathCloseNull()
 {
     DrawingNativePathPart2TestSetUp();
@@ -1708,14 +1340,6 @@ int TestPathCloseNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathOffsetNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3500
- * @tc.desc   Test for offsetting a path using normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathOffsetNormal()
 {
     DrawingNativePathPart2TestSetUp();
@@ -1747,14 +1371,6 @@ int TestPathOffsetNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathOffsetNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3501
- * @tc.desc   Test for offsetting a path using NULL or invalid parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathOffsetNull()
 {
     DrawingNativePathPart2TestSetUp();
@@ -1783,14 +1399,6 @@ int TestPathOffsetNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathOffsetAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3502
- * @tc.desc   Test for offsetting a path with abnormal parameters (non-float values).
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathOffsetAbnormal()
 {
     DrawingNativePathPart2TestSetUp();
@@ -1817,14 +1425,6 @@ int TestPathOffsetAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathOffsetMaximal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3503
- * @tc.desc   Test for offsetting a path with maximal values.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathOffsetMaximal()
 {
     DrawingNativePathPart2TestSetUp();
@@ -1851,14 +1451,6 @@ int TestPathOffsetMaximal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathResetNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3600
- * @tc.desc   Test for resetting a path using normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPathResetNormal()
 {
     DrawingNativePathPart2TestSetUp();
@@ -1884,14 +1476,6 @@ int TestPathResetNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathResetNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3601
- * @tc.desc   Test for resetting a path using NULL or invalid parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathResetNull()
 {
     DrawingNativePathPart2TestSetUp();
@@ -1909,14 +1493,6 @@ int TestPathResetNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPathResetMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3602
- * @tc.desc   Test for resetting a path with multiple calls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPathResetMultipleCalls()
 {
     DrawingNativePathPart2TestSetUp();

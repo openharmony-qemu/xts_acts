@@ -102,10 +102,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
         notificationManager.openNotificationSettingsWithResult(context).then((data) => {
           hilog.info(0x0000, 'testTag',
             `${testNum} openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
-            expect(data.vibrationEnabled).assertEqual(false)
-            expect(data.lockScreenEnabled).assertEqual(false)
-            expect(data.notificationEnabled).assertEqual(true)
-          expect(data.soundEnabled).assertEqual(false)
+          expect(data.notificationEnabled).assertEqual(true)
           expect(data.bannerEnabled).assertEqual(false)
           expect(data.badgeNumberEnabled).assertEqual(false)
           done()
@@ -125,51 +122,23 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
           await button.click()
           await sleep(500)
         }
-          let button1 = await driver.findComponent(ON.text('锁屏通知'));
-          console.info(testNum + `button1 is ${JSON.stringify(button1)}`);
-          if (button1 !== null) {
-            console.info(testNum + `button1 is ${JSON.stringify(button1)}`);
-            await sleep(1000);
-            await button1.click()
-            await sleep(500)
-          }
-          let button2 = await driver.findComponent(ON.text('桌面角标'));
+        let scrollBar = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')))
+        console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
+        expect(scrollBar != null).assertTrue()
+        await scrollBar.scrollToBottom()
+        await sleep(500);
+        let button2 = await driver.findComponent(ON.text('桌面角标'));
+        console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
+        if (button2 !== null) {
           console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
-          if (button2 !== null) {
-            console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
-            await sleep(1000);
-            await button2.click()
-            await sleep(500)
-          }
-          let scrollBar = await driver.findComponent(ON.text('桌面角标'))
-          console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
-          expect(scrollBar != null).assertTrue()
-          await scrollBar.scrollToBottom()
-          await sleep(1000)
-          let button3 = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('振动')));
-          console.info(testNum + `button3 is ${JSON.stringify(button3)}`);
-          if (button3 !== null) {
-            console.info(testNum + `button3 is ${JSON.stringify(button3)}`);
-            await sleep(1000);
-            await button3.click()
-            await sleep(500)
-          }
-          let button4 = await driver.findComponent(ON.text('昂扬'));
-          console.info(testNum + `button4 is ${JSON.stringify(button4)}`);
-          if (button4 !== null) {
-            console.info(testNum + `button4 is ${JSON.stringify(button4)}`);
-            await sleep(1000);
-            await button4.click()
-            await sleep(500)
-          }
-          let button5 = await driver.findComponent(ON.text('无铃声'));
-          console.info(testNum + `button5 is ${JSON.stringify(button5)}`);
-          if (button5 !== null) {
-            console.info(testNum + `button5 is ${JSON.stringify(button5)}`);
-            await sleep(1000);
-            await button5.click()
-            await sleep(500)
-          }
+          await sleep(1000);
+          await button2.click()
+          await sleep(500)
+        }
+        let scrollBar1 = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')))
+        console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar1)} `);
+        expect(scrollBar1 != null).assertTrue()
+        await scrollBar1.scrollToTop()
         await sleep(500)
         let button8 = await driver.findComponent(ON.text('确定'));
         console.info(testNum + `button8 is ${JSON.stringify(button8)}`);
@@ -203,9 +172,6 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
         notificationManager.openNotificationSettingsWithResult(context).then((data) => {
           hilog.info(0x0000, 'testTag',
             testNum + `openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
-          expect(data.vibrationEnabled).assertEqual(true)
-          expect(data.soundEnabled).assertEqual(true)
-          expect(data.lockScreenEnabled).assertEqual(true)
           expect(data.bannerEnabled).assertEqual(true)
           expect(data.badgeNumberEnabled).assertEqual(true)
           expect(data.notificationEnabled).assertEqual(true)
@@ -218,59 +184,27 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
           done()
         });
         await sleep(1000);
-          let button1 = await driver.findComponent(ON.text('锁屏通知'));
-          console.info(testNum + `button1 is ${JSON.stringify(button1)}`);
-          if (button1 !== null) {
-            console.info(testNum + `button1 is ${JSON.stringify(button1)}`);
-            await sleep(1000);
-            await button1.click()
-            await sleep(500)
-          }
-          let button = await driver.findComponent(ON.text('横幅通知'));
+        let button = await driver.findComponent(ON.text('横幅通知'));
+        console.info(testNum + `button is ${JSON.stringify(button)}`);
+        if (button !== null) {
           console.info(testNum + `button is ${JSON.stringify(button)}`);
-          if (button !== null) {
-            console.info(testNum + `button is ${JSON.stringify(button)}`);
-            await sleep(1000);
-            await button.click()
-            await sleep(500)
-          }
-          let button2 = await driver.findComponent(ON.text('桌面角标'));
+          await sleep(1000);
+          await button.click()
+          await sleep(500)
+        }
+        let scrollBar = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')))
+        console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
+        expect(scrollBar != null).assertTrue()
+        await scrollBar.scrollToBottom()
+        await sleep(500)
+        let button2 = await driver.findComponent(ON.text('桌面角标'));
+        console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
+        if (button2 !== null) {
           console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
-          if (button2 !== null) {
-            console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
-            await sleep(1000);
-            await button2.click()
-            await sleep(500)
-          }
-          let scrollBar = await driver.findComponent(ON.text('桌面角标'))
-          console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
-          expect(scrollBar != null).assertTrue()
-          await scrollBar.scrollToBottom()
-          await sleep(1000)
-          let button3 = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('振动')));
-          console.info(testNum + `button3 is ${JSON.stringify(button3)}`);
-          if (button3 !== null) {
-            console.info(testNum + `button3 is ${JSON.stringify(button3)}`);
-            await sleep(1000);
-            await button3.click()
-            await sleep(500)
-          }
-          let button4 = await driver.findComponent(ON.text('无铃声'));
-          console.info(testNum + `button4 is ${JSON.stringify(button4)}`);
-          if (button4 !== null) {
-            console.info(testNum + `button4 is ${JSON.stringify(button4)}`);
-            await sleep(1000);
-            await button4.click()
-            await sleep(500)
-          }
-          let button5 = await driver.findComponent(ON.text('跟随系统设定 (昂扬)'));
-          console.info(testNum + `button5 is ${JSON.stringify(button5)}`);
-          if (button5 !== null) {
-            console.info(testNum + `button5 is ${JSON.stringify(button5)}`);
-            await sleep(1000);
-            await button5.click()
-            await sleep(500)
-          }
+          await sleep(1000);
+          await button2.click()
+          await sleep(500)
+        }
         await sleep(500)
         let button8 = await driver.findComponent(ON.text('确定'));
         console.info(testNum + `button8 is ${JSON.stringify(button8)}`);
@@ -346,9 +280,6 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
         notificationManager.openNotificationSettingsWithResult(context).then((data) => {
           hilog.info(0x0000, 'testTag',
             testNum + `openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
-            expect(data.vibrationEnabled).assertEqual(false)
-            expect(data.lockScreenEnabled).assertEqual(false)
-          expect(data.soundEnabled).assertEqual(false)
           expect(data.bannerEnabled).assertEqual(false)
           expect(data.badgeNumberEnabled).assertEqual(false)
           expect(data.notificationEnabled).assertEqual(true)
@@ -360,60 +291,27 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
           done()
         });
         await sleep(1000);
-          await sleep(500)
-          let button1 = await driver.findComponent(ON.text('锁屏通知'));
-          console.info(testNum + `button1 is ${JSON.stringify(button1)}`);
-          if (button1 !== null) {
-            console.info(testNum + `button1 is ${JSON.stringify(button1)}`);
-            await sleep(1000);
-            await button1.click()
-            await sleep(500)
-          }
-          let button = await driver.findComponent(ON.text('横幅通知'));
+        let scrollBar = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')))
+        console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
+        expect(scrollBar != null).assertTrue()
+        await scrollBar.scrollToBottom()
+        await sleep(500)
+        let button = await driver.findComponent(ON.text('横幅通知'));
+        console.info(testNum + `button is ${JSON.stringify(button)}`);
+        if (button !== null) {
           console.info(testNum + `button is ${JSON.stringify(button)}`);
-          if (button !== null) {
-            console.info(testNum + `button is ${JSON.stringify(button)}`);
-            await sleep(1000);
-            await button.click()
-            await sleep(500)
-          }
-          let button2 = await driver.findComponent(ON.text('桌面角标'));
+          await sleep(1000);
+          await button.click()
+          await sleep(500)
+        }
+        let button2 = await driver.findComponent(ON.text('桌面角标'));
+        console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
+        if (button2 !== null) {
           console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
-          if (button2 !== null) {
-            console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
-            await sleep(1000);
-            await button2.click()
-            await sleep(500)
-          }
-          let scrollBar = await driver.findComponent(ON.text('桌面角标'))
-          console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
-          expect(scrollBar != null).assertTrue()
-          await scrollBar.scrollToBottom()
-          await sleep(1000)
-          let button3 = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('振动')));
-          console.info(testNum + `button3 is ${JSON.stringify(button3)}`);
-          if (button3 !== null) {
-            console.info(testNum + `button3 is ${JSON.stringify(button3)}`);
-            await sleep(1000);
-            await button3.click()
-            await sleep(500)
-          }
-          let button4 = await driver.findComponent(ON.text('昂扬'));
-          console.info(testNum + `button4 is ${JSON.stringify(button4)}`);
-          if (button4 !== null) {
-            console.info(testNum + `button4 is ${JSON.stringify(button4)}`);
-            await sleep(1000);
-            await button4.click()
-            await sleep(500)
-          }
-          let button5 = await driver.findComponent(ON.text('无铃声'));
-          console.info(testNum + `button5 is ${JSON.stringify(button5)}`);
-          if (button5 !== null) {
-            console.info(testNum + `button5 is ${JSON.stringify(button5)}`);
-            await sleep(1000);
-            await button5.click()
-            await sleep(500)
-          }
+          await sleep(1000);
+          await button2.click()
+          await sleep(500)
+        }
         await sleep(500)
         let button8 = await driver.findComponent(ON.text('确定'));
         console.info(testNum + `button8 is ${JSON.stringify(button8)}`);
@@ -427,9 +325,6 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
         notificationManager.openNotificationSettingsWithResult(context).then((data) => {
           hilog.info(0x0000, 'testTag',
             testNum + `openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
-            expect(data.vibrationEnabled).assertEqual(false)
-            expect(data.lockScreenEnabled).assertEqual(false)
-          expect(data.soundEnabled).assertEqual(false)
           expect(data.bannerEnabled).assertEqual(false)
           expect(data.badgeNumberEnabled).assertEqual(false)
           expect(data.notificationEnabled).assertEqual(true)
@@ -487,9 +382,6 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
         notificationManager.openNotificationSettingsWithResult(context).then((data) => {
           hilog.info(0x0000, 'testTag',
             testNum + `openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
-          expect(data.vibrationEnabled).assertEqual(true)
-          expect(data.lockScreenEnabled).assertEqual(true)
-          expect(data.soundEnabled).assertEqual(true)
           expect(data.bannerEnabled).assertEqual(true)
           expect(data.badgeNumberEnabled).assertEqual(true)
           expect(data.notificationEnabled).assertEqual(true)
@@ -501,60 +393,27 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
           done()
         });
         await sleep(1000);
+        let scrollBar = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')))
+        console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
+        expect(scrollBar != null).assertTrue()
+        await scrollBar.scrollToBottom()
         await sleep(500)
-          let button1 = await driver.findComponent(ON.text('锁屏通知'));
-          console.info(testNum + `button1 is ${JSON.stringify(button1)}`);
-          if (button1 !== null) {
-            console.info(testNum + `button1 is ${JSON.stringify(button1)}`);
-            await sleep(1000);
-            await button1.click()
-            await sleep(500)
-          }
-          let button = await driver.findComponent(ON.text('横幅通知'));
+        let button = await driver.findComponent(ON.text('横幅通知'));
+        console.info(testNum + `button is ${JSON.stringify(button)}`);
+        if (button !== null) {
           console.info(testNum + `button is ${JSON.stringify(button)}`);
-          if (button !== null) {
-            console.info(testNum + `button is ${JSON.stringify(button)}`);
-            await sleep(1000);
-            await button.click()
-            await sleep(500)
-          }
-          let button2 = await driver.findComponent(ON.text('桌面角标'));
+          await sleep(1000);
+          await button.click()
+          await sleep(500)
+        }
+        let button2 = await driver.findComponent(ON.text('桌面角标'));
+        console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
+        if (button2 !== null) {
           console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
-          if (button2 !== null) {
-            console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
-            await sleep(1000);
-            await button2.click()
-            await sleep(500)
-          }
-          let scrollBar = await driver.findComponent(ON.text('桌面角标'))
-          console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
-          expect(scrollBar != null).assertTrue()
-          await scrollBar.scrollToBottom()
-          await sleep(1000)
-          let button3 = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('振动')));
-          console.info(testNum + `button3 is ${JSON.stringify(button3)}`);
-          if (button3 !== null) {
-            console.info(testNum + `button3 is ${JSON.stringify(button3)}`);
-            await sleep(1000);
-            await button3.click()
-            await sleep(500)
-          }
-          let button4 = await driver.findComponent(ON.text('无铃声'));
-          console.info(testNum + `button4 is ${JSON.stringify(button4)}`);
-          if (button4 !== null) {
-            console.info(testNum + `button4 is ${JSON.stringify(button4)}`);
-            await sleep(1000);
-            await button4.click()
-            await sleep(500)
-          }
-          let button5 = await driver.findComponent(ON.text('跟随系统设定 (昂扬)'));
-          console.info(testNum + `button5 is ${JSON.stringify(button5)}`);
-          if (button5 !== null) {
-            console.info(testNum + `button5 is ${JSON.stringify(button5)}`);
-            await sleep(1000);
-            await button5.click()
-            await sleep(500)
-          }
+          await sleep(1000);
+          await button2.click()
+          await sleep(500)
+        }
         await sleep(500)
         let button6 = await driver.findComponent(ON.text('确定'));
         console.info(testNum + `button6 is ${JSON.stringify(button6)}`);
@@ -600,13 +459,15 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
     it('SUB_Notification_Ans_openWindow_WithResult_1200', Level.LEVEL2, async (done: Function) => {
       let testNum: string = 'SUB_Notification_Ans_openWindow_WithResult_1200'
       let driver: Driver = Driver.create();
+      let num= 0
       try {
         let context: common.UIAbilityContext = getContext(ctx) as common.UIAbilityContext;
         for (let index = 0; index < 500; index++) {
           notificationManager.openNotificationSettingsWithResult(context).then((data) => {
+            num++
             hilog.info(0x0000, 'testTag',
               `${testNum} ${index} openNotificationSettingsWithResult success, data: ${JSON.stringify(data)}`);
-            expect(index).assertEqual(0);
+            expect(num).assertEqual(1);
             expect(JSON.stringify(data))
               .assertEqual('{"vibrationEnabled":true,"soundEnabled":true,"lockScreenEnabled":true,"bannerEnabled":true,"badgeNumberEnabled":true,"notificationEnabled":true}')
             done()

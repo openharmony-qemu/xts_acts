@@ -1317,7 +1317,8 @@ export default function abilityTest() {
                 console.info(`TestLog: Set maxVolume error: code: ${err?.code}, message: ${err?.message}`);
                 expect(true).assertFalse();
             }
-             done();
+            await Utils.msSleep(500);
+            done();
         })
 
         /**

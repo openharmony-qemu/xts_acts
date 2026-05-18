@@ -47,14 +47,6 @@ void DrawingNativeColorTestTearDown()
     std::cout << "DrawingNativeColorTest errorCodeReset after each test case." << std::endl;
 }
 
-/**
- * @tc.name   testColorSetArgbNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0100
- * @tc.desc   test for testColorSetArgbNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestColorSetArgbNormal()
 {
     DrawingNativeColorTestSetUp();
@@ -73,14 +65,6 @@ int TestColorSetArgbNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testColorSetArgbNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0200
- * @tc.desc   test for testColorSetArgbNULL.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestColorSetArgbNULL()
 {
     DrawingNativeColorTestSetUp();
@@ -110,14 +94,6 @@ int TestColorSetArgbNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testColorSetArgbMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0300
- * @tc.desc   test for testColorSetArgbMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestColorSetArgbMultipleCalls()
 {
     DrawingNativeColorTestSetUp();
@@ -133,14 +109,6 @@ int TestColorSetArgbMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testColorSetArgbAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0400
- * @tc.desc   test for testColorSetArgbAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestColorSetArgbAbnormal()
 {
     DrawingNativeColorTestSetUp();
@@ -169,14 +137,6 @@ int TestColorSetArgbAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testColorSetArgbMaximum
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_COLOR_0500
- * @tc.desc   test for testColorSetArgbMaximum.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestColorSetArgbMaximum()
 {
     DrawingNativeColorTestSetUp();

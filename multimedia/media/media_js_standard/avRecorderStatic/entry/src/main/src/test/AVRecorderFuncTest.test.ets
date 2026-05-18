@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -952,7 +952,7 @@ export default function avRecorderTest() {
         if (err == null) {
           console.info(`releaseTimeTestCallback current state is : ${avRecorder.state}`)
           console.info('release releaseTimeTestCallback success');
-          end = Date.now()
+          end = Date.now().toDouble()
           console.info(`releaseTimeTestCallback end time is : ${end}`)
           let numStr: string = (end - start) +'';
           let execution = parseInt(numStr)
@@ -2879,6 +2879,34 @@ export default function avRecorderTest() {
       expect(Number(media.AacProfile.AAC_HE)).assertEqual(1);
       expect(Number(media.AacProfile.AAC_HE_V2)).assertEqual(2);
       expect(String(media.ContainerFormatType.CFT_AAC)).assertEqual('aac');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_SETMETADATA_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_SETMETADATA_static_0100
+     * @tc.desc   set metadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_SETMETADATA_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_SETMETADATA_static_0100 start')
+      let timestamp = Date.now();
+      let filename = `avRecorder_${timestamp}.wav`;
+      fdObject = await commonFun.getFd(filename);
+      fdPath = 'fd://' + fdObject.fdNumber;
+      console.info('case fdPath is: ' + fdPath);
+      avConfig.url = fdPath;
+      console.info('avConfig.url ' + avConfig.url);
+      avConfig.profile.fileFormat = FORMAT_WAV;
+      avConfig.profile.audioCodec = ENCORDER_WAV;
+      avConfig.profile.audioBitrate = 64000;
+      avConfig.profile.audioChannels = 1;
+      avConfig.profile.audioSampleRate = 8000;
+      let result = await commonFun.avRecorderSetMetadataTest(avConfig, RECORDER_TIME, done);
+      expect(result).assertEqual(true);
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_SETMETADATA_static_0100 end');
       done();
     });
   })

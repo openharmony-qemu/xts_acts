@@ -59,6 +59,14 @@
     {
       "name": "app_name",
       "value": "Demo"
+    },
+    {
+      "name": "scrollBarWidth_Normal",
+      "value": "50"
+    },
+    {
+      "name": "scrollBarWidth_Error",
+      "value": "这是一个错误的资源值"
     }
     
   ]

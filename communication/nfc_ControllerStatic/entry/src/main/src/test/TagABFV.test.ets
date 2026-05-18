@@ -28,10 +28,10 @@ let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag1: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let remoteTagService: rpc.RemoteObject = new rpc.RemoteObject("rpcTestAbility");
 
-let nfcAtag:tag.NfcATag;
-let nfcBTag:tag.NfcBTag;
-let nfcFTag:tag.NfcFTag;
-let nfcVTag:tag.NfcVTag;
+let nfcAtag:tag.NfcATag | undefined;
+let nfcBTag:tag.NfcBTag | undefined;
+let nfcFTag:tag.NfcFTag | undefined;
+let nfcVTag:tag.NfcVTag | undefined;
 
 let aTag: tag.TagInfo = {
     "uid": [0x01, 0x02, 0x03, 0x04],
@@ -160,7 +160,7 @@ export default function TagABFVTest() {
             let nfcAtag = tag.getNfcA(aTag);
             if (nfcAtag != null && nfcAtag != undefined) {
                 try {
-                    let sak: int = nfcAtag.getSak();
+                    let sak: int = nfcAtag!.getSak();
                     hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_TagABFV_static_0100 sak is ' + sak);
                 } catch (error) {
                     error = error as BusinessError;
@@ -336,7 +336,7 @@ export default function TagABFVTest() {
             let nfcVTag = tag.getNfcV(vTag);
             if (nfcVTag != null && nfcVTag != undefined) {
                 try {
-                    let ResponseFlags: int = nfcVTag.getResponseFlags();
+                    let ResponseFlags: int = nfcVTag!.getResponseFlags();
                 } catch(error) {
                     error = error as BusinessError;
                     hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_TagABFV_static_0700 getResponseFlags error =  ' + error + ' - ' + error.code);
@@ -361,7 +361,7 @@ export default function TagABFVTest() {
             let nfcVTag = tag.getNfcV(vTag);
             if (nfcVTag != null && nfcVTag != undefined) {
                 try {
-                    let DsfId: int = nfcVTag.getDsfId();
+                    let DsfId: int = nfcVTag!.getDsfId();
                 } catch (error) {
                     error = error as BusinessError;
                     hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_TagABFV_static_0800 getDsfId error =  ' + error + ' - ' + error.code);

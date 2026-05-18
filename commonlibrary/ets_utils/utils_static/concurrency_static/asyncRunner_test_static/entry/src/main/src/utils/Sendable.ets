@@ -23,7 +23,7 @@ export class SendableClass {
   constructor(num: number) {
     this.num = num;
   }
-  GetNum() {
+  GetNum(): number {
     return this.num;
   }
 }
@@ -62,7 +62,7 @@ export class SendableClassTest {
     this.func = func;
   }
   public func: FuncType;
-  foo() {
+  foo(): number {
     let num : number = sendableArrayFunc();
     return num;
   }
@@ -77,8 +77,7 @@ function sendableFunctionTop() {
 // @Sendable
 class SendableClassTop {
   public num :number = 200;
-  say() {
+  say(): number {
     return this.num;
   }
 }
-

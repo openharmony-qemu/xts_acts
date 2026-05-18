@@ -55,7 +55,7 @@ export default function webTwoJsunit() {
 
     /**
      * @tc.name   onDownloadFailed
-     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_FOUR_API_002
+     * @tc.number SUB_ACE_WEB_API_0100
      * @tc.desc   ets allow the Web access overview mode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -71,5 +71,43 @@ export default function webTwoJsunit() {
         await Utils.msSleep(2000);
 		done()
     })
+
+    /**
+     * @tc.name   emitRefreshTrueStatic001
+     * @tc.number SUB_ACE_WEB_REFRESH_0100
+     * @tc.desc   refresh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('emitRefreshTrueStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('emitRefreshTrueStatic', 10)
+        await Utils.msSleep(2000);
+        Utils.registerEvent('emitRefreshTrueStatic', true, 7, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('webcomponenttwo', 10, '');
+        await Utils.msSleep(2000);
+        done()
+      })
+
+    /**
+     * @tc.name   emitRefreshFalseStatic002
+     * @tc.number SUB_ACE_WEB_REFRESH_0200
+     * @tc.desc   refresh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('emitRefreshFalseStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('emitRefreshFalseStatic', 10)
+        await Utils.msSleep(2000);
+        Utils.registerEvent('emitRefreshFalseStatic', true, 8, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('webcomponenttwo', 10, '');
+        await Utils.msSleep(2000);
+        done()
+      })
   })
 }

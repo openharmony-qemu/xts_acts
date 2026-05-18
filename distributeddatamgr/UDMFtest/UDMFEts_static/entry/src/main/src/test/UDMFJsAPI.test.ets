@@ -2579,7 +2579,7 @@ export default function UDMFJsApiTest() {
           key:data,
           visibility: unifiedDataChannel.Visibility.ALL
         };
-        unifiedDataChannel.queryData(options1).then((ret: Array<unifiedDataChannel.UnifiedData>) => {
+        unifiedDataChannel.queryData(options1).then(async (ret: Array<unifiedDataChannel.UnifiedData>) => {
           let size = ret.length;
           console.info(`data.size = ${size}`);
           for (let i = 0; i < size; i++) {
@@ -2599,7 +2599,7 @@ export default function UDMFJsApiTest() {
               }
             }
           }
-          waitForCompletion(async ()=>{await unifiedDataChannel.deleteData(options1)});
+          await unifiedDataChannel.deleteData(options1);
           done();
         }).catch((err1) => {
           let err = err1 as BusinessError;
@@ -2811,7 +2811,7 @@ export default function UDMFJsApiTest() {
           key:data,
           visibility: unifiedDataChannel.Visibility.OWN_PROCESS
         };
-        unifiedDataChannel.queryData(options1).then((ret: Array<unifiedDataChannel.UnifiedData>) => {
+        unifiedDataChannel.queryData(options1).then(async (ret: Array<unifiedDataChannel.UnifiedData>) => {
           let size = ret.length;
           console.info(`data.size = ${size}`);
           for (let i = 0; i < size; i++) {
@@ -2831,7 +2831,7 @@ export default function UDMFJsApiTest() {
               }
             }
           }
-          waitForCompletion(async ()=>{await unifiedDataChannel.deleteData(options1)});
+          await unifiedDataChannel.deleteData(options1);
           done();
         }).catch((err1) => {
           let err = err1 as BusinessError;
@@ -3025,7 +3025,7 @@ export default function UDMFJsApiTest() {
           key:data,
           visibility: unifiedDataChannel.Visibility.ALL
         };
-        unifiedDataChannel.queryData(options1).then((ret: Array<unifiedDataChannel.UnifiedData>) => {
+        unifiedDataChannel.queryData(options1).then(async (ret: Array<unifiedDataChannel.UnifiedData>) => {
           let size = ret.length;
           console.info(`data.size = ${size}`);
           for (let i = 0; i < size; i++) {
@@ -3045,7 +3045,7 @@ export default function UDMFJsApiTest() {
               }
             }
           }
-          waitForCompletion(async ()=>{await unifiedDataChannel.deleteData(options1)});
+          await unifiedDataChannel.deleteData(options1);
           done();
         }).catch((err1) => {
           let err = err1 as BusinessError;
@@ -3680,40 +3680,36 @@ export default function UDMFJsApiTest() {
           visibility: unifiedDataChannel.Visibility.ALL
         };
         try {
-          await unifiedDataChannel.updateData(options1,unifiedData1).then((ret) =>{
-            waitForCompletion(async () => {
-              console.info(`updateData success; data = ${ret}, options = ${options1}`);
-              expect(options1.visibility).assertEqual(unifiedDataChannel.Visibility.ALL);
-              await unifiedDataChannel.queryData(options1).then((ret: Array<unifiedDataChannel.UnifiedData>) => {
-                waitForCompletion(async () => {
-                  let size = ret.length;
-                  console.info(`data.size = ${size}`);
-                  for (let i = 0; i < size; i++) {
-                    let records = ret[i].getRecords() as Array<unifiedDataChannel.UnifiedRecord>;
-                    let size = records.length;
-                    for (let j = 0; j < size; j++) {
-                      let unifiedDataRecord = records[i] as unifiedDataChannel.UnifiedRecord;
-                      let record = unifiedDataRecord.getValue() as uniformDataStruct.PlainText;
-                      if (record != undefined) {
-                        expect(record.uniformDataType).assertEqual(plainText1.uniformDataType);
-                        expect(record.textContent).assertEqual(plainText1.textContent);
-                        expect(record.textAbstract).assertEqual(plainText1.textAbstract);
-                        let detailsGet: Record<string, string> = record.details as Record<string, string> ;
-                        if (detailsGet) {
-                          expect(detailsGet['attr1']).assertEqual(plainTextDetails['attr1']);
-                        }
-                      }
+          await unifiedDataChannel.updateData(options1,unifiedData1).then(async (ret: undefined) =>{
+            console.info(`updateData success; data = ${ret}, options = ${options1}`);
+            expect(options1.visibility).assertEqual(unifiedDataChannel.Visibility.ALL);
+            await unifiedDataChannel.queryData(options1).then(async (ret: Array<unifiedDataChannel.UnifiedData>) => {
+              let size = ret.length;
+              console.info(`data.size = ${size}`);
+              for (let i = 0; i < size; i++) {
+                let records = ret[i].getRecords() as Array<unifiedDataChannel.UnifiedRecord>;
+                let size = records.length;
+                for (let j = 0; j < size; j++) {
+                  let unifiedDataRecord = records[i] as unifiedDataChannel.UnifiedRecord;
+                  let record = unifiedDataRecord.getValue() as uniformDataStruct.PlainText;
+                  if (record != undefined) {
+                    expect(record.uniformDataType).assertEqual(plainText1.uniformDataType);
+                    expect(record.textContent).assertEqual(plainText1.textContent);
+                    expect(record.textAbstract).assertEqual(plainText1.textAbstract);
+                    let detailsGet: Record<string, string> = record.details as Record<string, string> ;
+                    if (detailsGet) {
+                      expect(detailsGet['attr1']).assertEqual(plainTextDetails['attr1']);
                     }
                   }
-                  await unifiedDataChannel.deleteData(options1);
-                  done();
-                })
-              }).catch((err1) => {
-                let err = err1 as BusinessError;
-                console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9470 " + err.code + err.message);
-                expect().assertFail();
-                done();
-              })
+                }
+              }
+              await unifiedDataChannel.deleteData(options1);
+              done();
+            }).catch((err1) => {
+              let err = err1 as BusinessError;
+              console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9470 " + err.code + err.message);
+              expect().assertFail();
+              done();
             })
           }).catch((err1) =>{
             let err = err1 as BusinessError;

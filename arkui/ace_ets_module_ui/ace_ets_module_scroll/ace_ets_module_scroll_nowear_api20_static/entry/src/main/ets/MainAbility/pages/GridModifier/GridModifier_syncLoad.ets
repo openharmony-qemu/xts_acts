@@ -150,7 +150,7 @@ import { BusinessError } from '@kit.BasicServicesKit'
 
 // 定义 syncLoad 的 Modifier 类
 @Observed
-class SyncLoadModifier implements AttributeModifier<ImageAttribute> {
+export class SyncLoadModifier implements AttributeModifier<ImageAttribute> {
   private syncValue: boolean | undefined;
 
   constructor(sync: boolean | undefined) {
@@ -164,7 +164,7 @@ class SyncLoadModifier implements AttributeModifier<ImageAttribute> {
 
 // 不设置 syncLoad 属性的 Modifier
 @Observed
-class NoSyncLoadModifier implements AttributeModifier<ImageAttribute> {
+export class NoSyncLoadModifier implements AttributeModifier<ImageAttribute> {
   applyNormalAttribute(instance: ImageAttribute): void {
     //  intentionally do nothing - 不设置 syncLoad 属性
   }

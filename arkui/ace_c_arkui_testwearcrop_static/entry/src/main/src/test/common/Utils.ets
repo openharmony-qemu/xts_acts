@@ -100,7 +100,9 @@ export default class Utils {
   static async clickComponent(id: string) {
     let driver = Driver.create();
     let component = await driver.findComponent(ON.id(id));
-    await (component?.click() as Promise<void>);
+    if (component) {
+      await component.click();
+    }
   }
 //
 //   static async doubleClickComponent(id: string) {
@@ -110,9 +112,9 @@ export default class Utils {
 //     await component.click();
 //   }
 //
-  static clickLocation(X: int, Y: int) {
+  static async clickLocation(X: int, Y: int) {
     let driver =  Driver.create();
-    waitForCompletion(async ()=>{await driver.click(X, Y);})
+    await driver.click(X, Y);
   }
 
   // static async triggerKey(id: number) {
@@ -123,13 +125,17 @@ export default class Utils {
   static async longClickComponent(id: string) {
     let driver = Driver.create();
     let component = await driver.findComponent(ON.id(id));
-    await (component?.longClick() as Promise<void>);
+    if (component) {
+      await component.longClick();
+    }
   }
 
   static async clickComponentByText(text: string) {
     let driver = Driver.create();
     let component = await driver.findComponent(ON.text(text));
-    await (component?.click() as Promise<void>);
+    if (component) {
+      await component.click();
+    }
   }
 //
 //   static async fingerZoom(key: string, isOut: boolean) {

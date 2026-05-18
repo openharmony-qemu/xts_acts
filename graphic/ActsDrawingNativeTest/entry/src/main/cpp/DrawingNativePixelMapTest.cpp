@@ -41,14 +41,6 @@ void DrawingNativePixelMapTestTearDown()
     std::cout << "DrawingNativePixelMapTest errorCodeReset after each test case." << std::endl;
 }
 
-/**
- * @tc.name   testPixelMapGetFromNativePixelMapNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0100
- * @tc.desc   test for testPixelMapGetFromNativePixelMapNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPixelMapGetFromNativePixelMapNormal()
 {
     DrawingNativePixelMapTestSetUp();
@@ -61,14 +53,6 @@ int TestPixelMapGetFromNativePixelMapNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPixelMapGetFromNativePixelMapNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0101
- * @tc.desc   test for testPixelMapGetFromNativePixelMapNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPixelMapGetFromNativePixelMapNull()
 {
     DrawingNativePixelMapTestSetUp();
@@ -78,14 +62,6 @@ int TestPixelMapGetFromNativePixelMapNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPixelMapGetFromNativePixelMapMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0102
- * @tc.desc   test for testPixelMapGetFromNativePixelMapMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPixelMapGetFromNativePixelMapMultipleCalls()
 {
     DrawingNativePixelMapTestSetUp();
@@ -100,14 +76,6 @@ int TestPixelMapGetFromNativePixelMapMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPixelMapGetFromNativePixelMapBoundary
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0102
- * @tc.desc   test for testPixelMapGetFromNativePixelMapBoundary.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPixelMapGetFromNativePixelMapBoundary()
 {
     DrawingNativePixelMapTestSetUp();
@@ -120,14 +88,6 @@ int TestPixelMapGetFromNativePixelMapBoundary()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPixelMapGetFromOhPixelMapNativeNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0200
- * @tc.desc   test for testPixelMapGetFromOhPixelMapNativeNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPixelMapGetFromOhPixelMapNativeNormal()
 {
     DrawingNativePixelMapTestSetUp();
@@ -143,14 +103,6 @@ int TestPixelMapGetFromOhPixelMapNativeNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPixelMapGetFromOhPixelMapNativeNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0201
- * @tc.desc   test for testPixelMapGetFromOhPixelMapNativeNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPixelMapGetFromOhPixelMapNativeNull()
 {
     DrawingNativePixelMapTestSetUp();
@@ -162,14 +114,6 @@ int TestPixelMapGetFromOhPixelMapNativeNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPixelMapGetFromOhPixelMapNativeMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0202
- * @tc.desc   test for testPixelMapGetFromOhPixelMapNativeMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPixelMapGetFromOhPixelMapNativeMultipleCalls()
 {
     DrawingNativePixelMapTestSetUp();
@@ -186,14 +130,6 @@ int TestPixelMapGetFromOhPixelMapNativeMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPixelMapGetFromOhPixelMapNativeBoundary
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0203
- * @tc.desc   test for testPixelMapGetFromOhPixelMapNativeBoundary.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPixelMapGetFromOhPixelMapNativeBoundary()
 {
     DrawingNativePixelMapTestSetUp();
@@ -214,14 +150,6 @@ int TestPixelMapGetFromOhPixelMapNativeBoundary()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPixelMapDissolveNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0300
- * @tc.desc   test for testPixelMapDissolveNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPixelMapDissolveNormal()
 {
     DrawingNativePixelMapTestSetUp();
@@ -239,14 +167,6 @@ int TestPixelMapDissolveNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPixelMapDissolveNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PIXEL_MAP_0301
- * @tc.desc   test for testPixelMapDissolveNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPixelMapDissolveNull()
 {
     DrawingNativePixelMapTestSetUp();

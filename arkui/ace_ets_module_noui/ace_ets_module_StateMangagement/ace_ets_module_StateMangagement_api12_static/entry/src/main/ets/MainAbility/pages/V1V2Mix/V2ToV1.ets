@@ -40,7 +40,7 @@ export enum MemberType {
 }
 
 @Observed
-class Str {
+export class Str {
   public stringValue4: string = 'hello'
 
   constructor(stringValue4: string) {

@@ -79,11 +79,11 @@ it('SUB_ACE_RelativeContainer_AnchorPoint_Visibility_None_TEST_static_0100', Lev
       console.log('get Initial value')
 
       console.log('get RelativeContainer_AnchorPoint_Visibility_None_bt2 value')
-      let RelativeContainer_AnchorPoint_Visibility_None_bt2: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Visibility_None_bt2');
+      let RelativeContainer_AnchorPoint_Visibility_None_bt2: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Visibility_None_bt2');
 
       console.log('get RelativeContainer_AnchorPoint_Visibility_None_tx2 value')
       
-      let RelativeContainer_AnchorPoint_Visibility_None_r1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Visibility_None_r1');
+      let RelativeContainer_AnchorPoint_Visibility_None_r1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Visibility_None_r1');
 
       console.log('assert position')
 

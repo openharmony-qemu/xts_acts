@@ -164,7 +164,7 @@ import { LengthUnit, typeNode } from '@ohos.arkui.node'
 
 import { BusinessError } from '@kit.BasicServicesKit'
 @Observed
-class Modifier2 implements AttributeModifier<WaterFlowAttribute> {
+export class Modifier2 implements AttributeModifier<WaterFlowAttribute> {
   public startDragging: string = 'start';
   public stopDragging: string = 'start';
   public willStopDragging: string = 'start';

@@ -122,14 +122,6 @@ void DrawingNativeSurFaceTestTearDown()
     std::cout << "DrawingNativeSurFaceTest errorCodeReset after each test case." << std::endl;
 }
 
-/**
- * @tc.name   testSurfaceCreateFromGpuContextNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0100
- * @tc.desc   test for testSurfaceCreateFromGpuContextNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestSurfaceCreateFromGpuContextNormal()
 {
     DrawingNativeSurFaceTestSetUp();
@@ -154,14 +146,6 @@ int TestSurfaceCreateFromGpuContextNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testSurfaceCreateFromGpuContextNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0101
- * @tc.desc   test for testSurfaceCreateFromGpuContextNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestSurfaceCreateFromGpuContextNull()
 {
     DrawingNativeSurFaceTestSetUp();
@@ -184,14 +168,6 @@ int TestSurfaceCreateFromGpuContextNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testSurfaceCreateFromGpuContextBoundary
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0102
- * @tc.desc   test for testSurfaceCreateFromGpuContextBoundary.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestSurfaceCreateFromGpuContextBoundary()
 {
     DrawingNativeSurFaceTestSetUp();
@@ -212,14 +188,6 @@ int TestSurfaceCreateFromGpuContextBoundary()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testSurfaceDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0200
- * @tc.desc   test for testSurfaceDestroyNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestSurfaceDestroyNormal()
 {
     DrawingNativeSurFaceTestSetUp();
@@ -237,14 +205,6 @@ int TestSurfaceDestroyNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testSurfaceDestroyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0201
- * @tc.desc   test for testSurfaceDestroyNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestSurfaceDestroyNull()
 {
     DrawingNativeSurFaceTestSetUp();
@@ -256,14 +216,6 @@ int TestSurfaceDestroyNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testSurfaceGetCanvasNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0300
- * @tc.desc   test for testSurfaceGetCanvasNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestSurfaceGetCanvasNormal()
 {
     DrawingNativeSurFaceTestSetUp();
@@ -289,14 +241,6 @@ int TestSurfaceGetCanvasNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testSurfaceGetCanvasNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0301
- * @tc.desc   test for testSurfaceGetCanvasNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestSurfaceGetCanvasNull()
 {
     DrawingNativeSurFaceTestSetUp();
@@ -318,14 +262,6 @@ int TestSurfaceGetCanvasNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testSurfaceGetCanvasBoundary
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0302
- * @tc.desc   test for testSurfaceGetCanvasBoundary.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestSurfaceGetCanvasBoundary()
 {
     DrawingNativeSurFaceTestSetUp();
@@ -349,14 +285,6 @@ int TestSurfaceGetCanvasBoundary()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testSurfaceCreateOnScreenNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0400
- * @tc.desc   test for testSurfaceCreateOnScreenNormal.window
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestSurfaceCreateOnScreenNormal()
 {
     DrawingNativeSurFaceTestSetUp();
@@ -376,14 +304,6 @@ int TestSurfaceCreateOnScreenNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testSurfaceCreateOnScreenNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0401
- * @tc.desc   test for testSurfaceCreateOnScreenNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestSurfaceCreateOnScreenNull()
 {
     DrawingNativeSurFaceTestSetUp();
@@ -399,14 +319,6 @@ int TestSurfaceCreateOnScreenNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testSurfaceCreateOnScreenMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0402
- * @tc.desc   test for testSurfaceCreateOnScreenMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestSurfaceCreateOnScreenMultipleCalls()
 {
     DrawingNativeSurFaceTestSetUp();
@@ -444,14 +356,6 @@ int TestSurfaceCreateOnScreenMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testSurfaceFlushNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0500
- * @tc.desc   test for testSurfaceFlushNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestSurfaceFlushNormal()
 {
     DrawingNativeSurFaceTestSetUp();
@@ -473,14 +377,6 @@ int TestSurfaceFlushNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testSurfaceFlushNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0501
- * @tc.desc   test for testSurfaceFlushNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestSurfaceFlushNull()
 {
     DrawingNativeSurFaceTestSetUp();
@@ -490,14 +386,6 @@ int TestSurfaceFlushNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testSurfaceFlushAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0502
- * @tc.desc   test for testSurfaceFlushAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestSurfaceFlushAbnormal()
 {
     DrawingNativeSurFaceTestSetUp();
@@ -520,14 +408,6 @@ int TestSurfaceFlushAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testSurfaceFlushMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0503
- * @tc.desc   test for testSurfaceFlushMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestSurfaceFlushMultipleCalls()
 {
     DrawingNativeSurFaceTestSetUp();
@@ -588,14 +468,6 @@ int TestSurfaceFlushMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testSurfaceFlushTiming
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0504
- * @tc.desc   test for testSurfaceFlushTiming.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestSurfaceFlushTiming()
 {
     DrawingNativeSurFaceTestSetUp();

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -83,7 +83,7 @@ it('HoverScale_APITest_static_0100', Level.LEVEL0, async (done: () => void): Pro
 
        await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(5000);
-       driver?.click(Math.round(point.x/2) as int, Math.round(point.y/4) as int);
+       driver?.click(Math.round(point.x/2).toInt(), Math.round(point.y/4).toInt());
       await CommonFunc.sleep(1000);
       let hoverScale = inspector.getInspectorByKey('hoverScale');
       console.info("[HoverScale_APITest_0100] hoverScale attrs is: " + JSON.stringify(JSON.parseJsonElement(hoverScale).getElement('$attrs')));

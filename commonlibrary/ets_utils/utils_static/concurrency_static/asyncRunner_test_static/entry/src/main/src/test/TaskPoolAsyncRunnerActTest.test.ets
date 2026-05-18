@@ -34,7 +34,7 @@ import { sleep } from '../testability/pages/Utils';
 // import { printArgs1003, printArgs1004 } from '../testability/pages/pages/SendableTest';
 
 
-export default function taskPoolAsyncRunnerActTest() {
+export default function taskPoolAsyncRunnerActTest(): void {
   describe('TaskPoolAsyncRunnerActTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async () => {

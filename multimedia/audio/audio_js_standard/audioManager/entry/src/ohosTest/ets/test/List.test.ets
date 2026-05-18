@@ -24,6 +24,7 @@ import audioManagerOnInterrupt from './AudioManagerOnInterrupt.test';
 import { abilityAccessCtrl, common, PermissionRequestResult, Permissions } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { abilityDelegatorRegistry, Driver, ON } from '@kit.TestKit';
+import { MatchPattern } from '@ohos.UiTest'
 
 function getPermission() {
   let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
@@ -48,17 +49,12 @@ async function driveFn() {
   console.info(`come in driveFn`);
   let driver = await Driver.create();
   console.info(`driver is ${JSON.stringify(driver)}`);
-  await sleep(100);
-  console.info(`UiDriver start`);
-  let button = await driver.waitForComponent(ON.text('允许'), 5000);
-  if (button == null) {
-    let delegator = abilityDelegatorRegistry.getAbilityDelegator();
-    let cmd = "hidumper -s WindowManagerService -a'-a'"
-    await delegator.executeShellCommand(cmd);
-  }
-  console.info(`button is ${JSON.stringify(button)}`);
-  await sleep(500);
-  await button.click();
+  await sleep(2000);
+  let power = await driver?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
+  let power2 = await driver?.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), 500);
+  await power?.click();
+  await power2?.click();
+  await sleep(2000);
 }
 
 export default function testsuite() {

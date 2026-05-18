@@ -15,12 +15,21 @@
 
 #include "include/DrawingNativeCanvasCommonTest.h"
 #include "include/OhosCommonTest.h"
+#include <cstdint>
 
 #define DRAWING_NUMBER_1 1
+#define DRAWING_NUMBER_2 2
+#define DRAWING_NUMBER_3 3
+#define DRAWING_NUMBER_4 4
 #define DRAWING_NUMBER_10 10
 #define DRAWING_NUMBER_50 50
 #define DRAWING_NUMBER_100 100
-#define DRAWING_NUMBER_0XFF0000FF 0xFF0000FF
+#define DRAWING_NUMBER_200 200
+#define DRAWING_NUMBER_256 256
+#define DRAWING_NUMBER_300 300
+#define DRAWING_NUMBER_1080 1080
+#define DRAWING_NUMBER_1090 1090
+#define DRAWING_NUMBER_1100 1100
 
 namespace OHOS {
 namespace Rosen {
@@ -40,14 +49,6 @@ void DrawingNativeCanvasTestPart6TestTearDown()
     std::cout << "DrawingNativeCanvasPart6Test errorCodeReset after each test case." << std::endl;
 }
 
-/**
- * @tc.name   testCanvasDrawSingleChaWithFeaturesNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_5501
- * @tc.desc   test for testCanvasDrawSingleChaWithFeaturesNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestCanvasDrawSingleChaWithFeaturesNormal()
 {
     DrawingNativeCanvasTestPart6TestSetUp();
@@ -90,14 +91,7 @@ int TestCanvasDrawSingleChaWithFeaturesNormal()
     DrawingNativeCanvasTestPart6TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
-/**
- * @tc.name   testCanvasDrawSingleChaWithFeaturesAbNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_5502
- * @tc.desc   test for testCanvasDrawSingleChaWithFeaturesAbNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
+
 int TestCanvasDrawSingleChaWithFeaturesAbNormal()
 {
     DrawingNativeCanvasTestPart6TestSetUp();
@@ -135,14 +129,7 @@ int TestCanvasDrawSingleChaWithFeaturesAbNormal()
     DrawingNativeCanvasTestPart6TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
-/**
- * @tc.name   testCanvasDrawSingleChaWithFeaturesCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_5503
- * @tc.desc   test for testCanvasDrawSingleChaWithFeaturesCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL2
- */
+
 int TestCanvasDrawSingleChaWithFeaturesCalls()
 {
     DrawingNativeCanvasTestPart6TestSetUp();
@@ -165,6 +152,257 @@ int TestCanvasDrawSingleChaWithFeaturesCalls()
     return OH_DRAWING_SUCCESS;
 }
 
+int TestCanvasResetClipNormal()
+{
+    DrawingNativeCanvasTestPart6TestSetUp();
+    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
+    EXPECT_NE(canvas, nullptr);
+    OH_Drawing_Rect *rect1 = OH_Drawing_RectCreate(100.0f, 100.0f, 300.0f, 300.0f);
+    EXPECT_NE(rect1, nullptr);
+    OH_Drawing_CanvasClipRect(canvas, rect1, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasResetClip(canvas);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    OH_Drawing_Rect *rect2 = OH_Drawing_RectCreate(100.0f, 100.0f, 500.0f, 500.0f);
+    EXPECT_NE(rect2, nullptr);
+    OH_Drawing_CanvasDrawRect(canvas, rect2);
+    OH_Drawing_RectDestroy(rect1);
+    OH_Drawing_RectDestroy(rect2);
+    OH_Drawing_CanvasDestroy(canvas);
+    DrawingNativeCanvasTestPart6TestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestCanvasResetClipNull()
+{
+    DrawingNativeCanvasTestPart6TestSetUp();
+    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
+    EXPECT_NE(canvas, nullptr);
+    OH_Drawing_Rect *rect1 = OH_Drawing_RectCreate(100.0f, 100.0f, 300.0f, 300.0f);
+    EXPECT_NE(rect1, nullptr);
+    OH_Drawing_CanvasClipRect(canvas, rect1, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasResetClip(nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    OH_Drawing_Rect *rect2 = OH_Drawing_RectCreate(100.0f, 100.0f, 500.0f, 500.0f);
+    EXPECT_NE(rect2, nullptr);
+    OH_Drawing_CanvasDrawRect(canvas, rect2);
+    OH_Drawing_RectDestroy(rect1);
+    OH_Drawing_RectDestroy(rect2);
+    OH_Drawing_CanvasDestroy(canvas);
+    DrawingNativeCanvasTestPart6TestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestCanvasResetClipMultipleCalls()
+{
+    DrawingNativeCanvasTestPart6TestSetUp();
+    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
+    EXPECT_NE(canvas, nullptr);
+    OH_Drawing_Rect *rect1 = OH_Drawing_RectCreate(100.0f, 100.0f, 300.0f, 300.0f);
+    EXPECT_NE(rect1, nullptr);
+    OH_Drawing_CanvasClipRect(canvas, rect1, OH_Drawing_CanvasClipOp::DIFFERENCE, true);
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasResetClip(canvas);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    }
+    OH_Drawing_Rect *rect2 = OH_Drawing_RectCreate(100.0f, 100.0f, 500.0f, 500.0f);
+    EXPECT_NE(rect2, nullptr);
+    OH_Drawing_CanvasDrawRect(canvas, rect2);
+    OH_Drawing_RectDestroy(rect1);
+    OH_Drawing_RectDestroy(rect2);
+    OH_Drawing_CanvasDestroy(canvas);
+    DrawingNativeCanvasTestPart6TestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestCanvasDrawGlyphsNormal()
+{
+    DrawingNativeCanvasTestPart6TestSetUp();
+    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
+    EXPECT_NE(canvas, nullptr);
+    OH_Drawing_Font *font = OH_Drawing_FontCreate();
+    OH_Drawing_FontSetTextSize(font, 100.0f);
+    EXPECT_NE(font, nullptr);
+    int glyphIds[] = {DRAWING_NUMBER_1080, DRAWING_NUMBER_1090, DRAWING_NUMBER_1100};
+    OH_Drawing_Point2D positions[] = {
+        {DRAWING_NUMBER_100, DRAWING_NUMBER_100},
+        {DRAWING_NUMBER_200, DRAWING_NUMBER_100},
+        {DRAWING_NUMBER_300, DRAWING_NUMBER_100}
+    };
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawGlyphs(
+        canvas, glyphIds, DRAWING_NUMBER_3, 0, positions, DRAWING_NUMBER_3, 0, DRAWING_NUMBER_3, font);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    OH_Drawing_CanvasDestroy(canvas);
+    OH_Drawing_FontDestroy(font);
+    DrawingNativeCanvasTestPart6TestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestCanvasDrawGlyphsNull()
+{
+    DrawingNativeCanvasTestPart6TestSetUp();
+    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
+    EXPECT_NE(canvas, nullptr);
+    OH_Drawing_Font *font = OH_Drawing_FontCreate();
+    OH_Drawing_FontSetTextSize(font, 100.0f);
+    EXPECT_NE(font, nullptr);
+    int glyphIds[] = {DRAWING_NUMBER_1080, DRAWING_NUMBER_1090, DRAWING_NUMBER_1100};
+    OH_Drawing_Point2D positions[] = {
+        {DRAWING_NUMBER_100, DRAWING_NUMBER_100},
+        {DRAWING_NUMBER_200, DRAWING_NUMBER_100},
+        {DRAWING_NUMBER_300, DRAWING_NUMBER_100}
+    };
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawGlyphs(
+        nullptr, glyphIds, DRAWING_NUMBER_3, 0, positions, DRAWING_NUMBER_3, 0, DRAWING_NUMBER_3, font);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    errorCode = OH_Drawing_CanvasDrawGlyphs(
+        canvas, nullptr, DRAWING_NUMBER_3, 0, positions, DRAWING_NUMBER_3, 0, DRAWING_NUMBER_3, font);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    errorCode = OH_Drawing_CanvasDrawGlyphs(
+        canvas, glyphIds, DRAWING_NUMBER_3, 0, nullptr, DRAWING_NUMBER_3, 0, DRAWING_NUMBER_3, font);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    errorCode = OH_Drawing_CanvasDrawGlyphs(
+        canvas, glyphIds, DRAWING_NUMBER_3, 0, positions, DRAWING_NUMBER_3, 0, DRAWING_NUMBER_3, nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    OH_Drawing_CanvasDestroy(canvas);
+    OH_Drawing_FontDestroy(font);
+    DrawingNativeCanvasTestPart6TestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestCanvasDrawGlyphsAbnormal()
+{
+    DrawingNativeCanvasTestPart6TestSetUp();
+    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
+    EXPECT_NE(canvas, nullptr);
+    OH_Drawing_Font *font = OH_Drawing_FontCreate();
+    OH_Drawing_FontSetTextSize(font, 100.0f);
+    EXPECT_NE(font, nullptr);
+    int glyphIds[] = {DRAWING_NUMBER_1080, DRAWING_NUMBER_1090, DRAWING_NUMBER_1100};
+    OH_Drawing_Point2D positions[] = {
+        {DRAWING_NUMBER_100, DRAWING_NUMBER_100},
+        {DRAWING_NUMBER_200, DRAWING_NUMBER_100},
+        {DRAWING_NUMBER_300, DRAWING_NUMBER_100}
+    };
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawGlyphs(
+        canvas, glyphIds, DRAWING_NUMBER_3, -1, positions, DRAWING_NUMBER_3, 0, DRAWING_NUMBER_3, font);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
+    errorCode = OH_Drawing_CanvasDrawGlyphs(
+        canvas, glyphIds, DRAWING_NUMBER_3, 0, positions, DRAWING_NUMBER_3, -DRAWING_NUMBER_1, DRAWING_NUMBER_3, font);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
+    errorCode = OH_Drawing_CanvasDrawGlyphs(
+        canvas, glyphIds, DRAWING_NUMBER_2, 0, positions, DRAWING_NUMBER_3, 0, DRAWING_NUMBER_3, font);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
+    errorCode = OH_Drawing_CanvasDrawGlyphs(
+        canvas, glyphIds, DRAWING_NUMBER_3, 0, positions, DRAWING_NUMBER_2, 0, DRAWING_NUMBER_3, font);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
+    
+    errorCode = OH_Drawing_CanvasDrawGlyphs(
+        canvas, glyphIds, DRAWING_NUMBER_3, 0, positions, DRAWING_NUMBER_3, 0, 0, font);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
+    errorCode = OH_Drawing_CanvasDrawGlyphs(
+        canvas, glyphIds, DRAWING_NUMBER_3, 0, positions, DRAWING_NUMBER_3, 0, -DRAWING_NUMBER_1, font);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
+    OH_Drawing_CanvasDestroy(canvas);
+    OH_Drawing_FontDestroy(font);
+    DrawingNativeCanvasTestPart6TestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestCanvasDrawGlyphsMultipleCalls()
+{
+    DrawingNativeCanvasTestPart6TestSetUp();
+    OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
+    EXPECT_NE(canvas, nullptr);
+    OH_Drawing_Font *font = OH_Drawing_FontCreate();
+    OH_Drawing_FontSetTextSize(font, 100.0f);
+    EXPECT_NE(font, nullptr);
+    int glyphIds[] = {DRAWING_NUMBER_1080, DRAWING_NUMBER_1090, DRAWING_NUMBER_1100};
+    OH_Drawing_Point2D positions[] = {
+        {DRAWING_NUMBER_100, DRAWING_NUMBER_100},
+        {DRAWING_NUMBER_200, DRAWING_NUMBER_100},
+        {DRAWING_NUMBER_300, DRAWING_NUMBER_100}
+    };
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawGlyphs(
+            canvas, glyphIds, DRAWING_NUMBER_3, 0, positions, DRAWING_NUMBER_3, 0, DRAWING_NUMBER_3, font);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    }
+    OH_Drawing_CanvasDestroy(canvas);
+    OH_Drawing_FontDestroy(font);
+    DrawingNativeCanvasTestPart6TestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestCanvasIsOpaqueNormal()
+{
+    DrawingNativeCanvasTestPart6TestSetUp();
+    int32_t width = DRAWING_NUMBER_256;
+    int32_t height = DRAWING_NUMBER_256;
+    OH_Drawing_Image_Info imageInfo = {width, height, COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_OPAQUE};
+    bool isOpaque = false;
+    uint32_t sizePix = width * height;
+    std::vector<uint32_t> pixels(sizePix, 0);
+    uint32_t rowBytes = width * DRAWING_NUMBER_4;
+    OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels.data(), rowBytes);
+    OH_Drawing_Canvas *bitmapCanvas = OH_Drawing_CanvasCreate();
+    OH_Drawing_CanvasBind(bitmapCanvas, bitmap);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasIsOpaque(bitmapCanvas, &isOpaque);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(isOpaque, true);
+    OH_Drawing_CanvasDestroy(bitmapCanvas);
+    OH_Drawing_BitmapDestroy(bitmap);
+    DrawingNativeCanvasTestPart6TestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestCanvasIsOpaqueNull()
+{
+    DrawingNativeCanvasTestPart6TestSetUp();
+    int32_t width = DRAWING_NUMBER_256;
+    int32_t height = DRAWING_NUMBER_256;
+    OH_Drawing_Image_Info imageInfo = {width, height, COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_OPAQUE};
+    bool isOpaque = false;
+    uint32_t sizePix = width * height;
+    std::vector<uint32_t> pixels(sizePix, 0);
+    uint32_t rowBytes = width * DRAWING_NUMBER_4;
+    OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels.data(), rowBytes);
+    OH_Drawing_Canvas *bitmapCanvas = OH_Drawing_CanvasCreate();
+    OH_Drawing_CanvasBind(bitmapCanvas, bitmap);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasIsOpaque(nullptr, &isOpaque);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(isOpaque, false);
+    errorCode = OH_Drawing_CanvasIsOpaque(bitmapCanvas, nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(isOpaque, false);
+    OH_Drawing_CanvasDestroy(bitmapCanvas);
+    OH_Drawing_BitmapDestroy(bitmap);
+    DrawingNativeCanvasTestPart6TestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestCanvasIsOpaqueMultipleCalls()
+{
+    DrawingNativeCanvasTestPart6TestSetUp();
+    int32_t width = DRAWING_NUMBER_256;
+    int32_t height = DRAWING_NUMBER_256;
+    OH_Drawing_Image_Info imageInfo = {width, height, COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_OPAQUE};
+    bool isOpaque = false;
+    uint32_t sizePix = width * height;
+    std::vector<uint32_t> pixels(sizePix, 0);
+    uint32_t rowBytes = width * DRAWING_NUMBER_4;
+    OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreateFromPixels(&imageInfo, pixels.data(), rowBytes);
+    OH_Drawing_Canvas *bitmapCanvas = OH_Drawing_CanvasCreate();
+    OH_Drawing_CanvasBind(bitmapCanvas, bitmap);
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasIsOpaque(bitmapCanvas, &isOpaque);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        EXPECT_EQ(isOpaque, true);
+    }
+    OH_Drawing_CanvasDestroy(bitmapCanvas);
+    OH_Drawing_BitmapDestroy(bitmap);
+    DrawingNativeCanvasTestPart6TestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
 } // namespace Drawing
 } // namespace Rosen
 } // namespace OHOS

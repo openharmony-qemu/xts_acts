@@ -15,7 +15,7 @@
 import { afterEach, beforeAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { huks } from '@kit.UniversalKeystoreKit';
 import {
-  GetAesGenerateOptions, GetEccGenerateOptions,
+  GetAesGenerateOptions, GetEccGenerateOptions, GetEd25519GenerateOptions, GetX25519GenerateOptions,
 } from './utils/huks/GenerateKeyUtils';
 import { CheckSoftware, ClearAllKeys, MergeOptions, SetParam } from './utils/huks/HuksOptionsUtils';
 import { GetDataBySize, StringToUint8Array } from './utils/common/CommonUtils';
@@ -3240,6 +3240,230 @@ export default function SecurityHuksApiCoverInterfaceParam() {
       } catch (err) {
         Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
+      }
+    });
+
+
+    //huks.anonAttestKeyItemOffline()
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_0000
+     * @tc.number SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_0000
+     * @tc.desc   test deleteKeyItem with minimum string parameter length for alias
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_0000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      if (!useSoftware) {
+        await CheckWifiInfo();
+      }
+      let testNumber = "SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_0000";
+      let keyAlias = "a";
+
+      let genOptions = GetEccGenerateOptions(256);
+      let params: huks.HuksParam[] = [
+        {
+          tag: huks.HuksTag.HUKS_TAG_ATTESTATION_CHALLENGE,
+          value: StringToUint8Array("challenge_data")
+        },
+        {
+          tag: huks.HuksTag.HUKS_TAG_ATTESTATION_ID_ALIAS,
+          value: StringToUint8Array("keyAlias")
+        }
+      ];
+
+      try {
+        await huks.generateKeyItem(keyAlias, genOptions);
+        let res = await huks.anonAttestKeyItemOffline(keyAlias, params);
+        expect(res.outData).assertEqual(undefined);
+        expect(res.properties).assertEqual(undefined);
+        expect(res.certChains).not().assertEqual(undefined);
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(null).assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_0100
+     * @tc.number SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_0100
+     * @tc.desc   test deleteKeyItem with maximum string parameter length for alias
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      if (!useSoftware) {
+        await CheckWifiInfo();
+      }
+      let testNumber = "SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_0100";
+      let keyAlias: string = GetDataBySize(HuksMaxAliasLength);
+
+      let genOptions = GetEccGenerateOptions(256);
+      let useOptions = GetAttestKeyOptions();
+
+      try {
+        await huks.generateKeyItem(keyAlias, genOptions);
+        await huks.anonAttestKeyItemOffline(keyAlias, useOptions.properties);
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(null).assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_0200
+     * @tc.number SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_0200
+     * @tc.desc   test deleteKeyItem with empty string parameter for alias
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_0200";
+
+      let useOptions = GetAttestKeyOptions();
+
+      try {
+        await huks.anonAttestKeyItemOffline("", useOptions.properties);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000018);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_0300
+     * @tc.number SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_0300
+     * @tc.desc   test deleteKeyItem with empty string parameter for alias
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_0300";
+
+      let useOptions = GetAttestKeyOptions();
+
+      try {
+        await huks.anonAttestKeyItemOffline(testNumber.padEnd(HuksMaxAliasLength + 1, "a"), useOptions.properties);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000018);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_0400
+     * @tc.number SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_0400
+     * @tc.desc   test deleteKeyItem with null alias parameter
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_0400";
+
+      let useOptions = GetAttestKeyOptions();
+
+      try {
+        await huks.anonAttestKeyItemOffline(null, useOptions.properties);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_0500
+     * @tc.number SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_0500
+     * @tc.desc   test deleteKeyItem with undefined alias parameter
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_0500";
+
+      let useOptions = GetAttestKeyOptions();
+
+      try {
+        await huks.anonAttestKeyItemOffline(undefined, useOptions.properties);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_5000
+     * @tc.number SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_5000
+     * @tc.desc   test deleteKeyItem with null Options parameter
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_5000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_5000";
+      let keyAlias: string = testNumber;
+
+      try {
+        await huks.anonAttestKeyItemOffline(keyAlias, null);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_5100
+     * @tc.number SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_5100
+     * @tc.desc   test deleteKeyItem with undefined Options parameter
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_5100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_5100";
+      let keyAlias: string = testNumber;
+
+      try {
+        await huks.anonAttestKeyItemOffline(keyAlias, undefined);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_5200
+     * @tc.number SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_5200
+     * @tc.desc   test deleteKeyItem with undefined Options parameter after generate
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_5200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+      let testNumber = "SUB_Security_HUKS_ParamSpec_AnonAttestKeyItemOffline_Interface_5200";
+      let keyAlias: string = testNumber;
+
+      let genOptions = GetEccGenerateOptions(256);
+
+      await huks.generateKeyItem(keyAlias, genOptions);
+
+      try {
+        await huks.anonAttestKeyItemOffline(keyAlias, []);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000018);
       }
     });
 

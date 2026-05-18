@@ -46,14 +46,6 @@ void DrawingNativeColorFilterTestTearDown()
     std::cout << "DrawingNativeColorFilterTest errorCodeReset after each test case." << std::endl;
 }
 
-/**
- * @tc.name   testColorFilterCreateBlendModeNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0100
- * @tc.desc   test for testColorFilterCreateBlendModeNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestColorFilterCreateBlendModeNormal()
 {
     DrawingNativeColorFilterTestSetUp();
@@ -79,14 +71,6 @@ int TestColorFilterCreateBlendModeNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testColorFilterCreateBlendModeNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0101
- * @tc.desc   test for testColorFilterCreateBlendModeNULL.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestColorFilterCreateBlendModeNULL()
 {
     DrawingNativeColorFilterTestSetUp();
@@ -100,14 +84,6 @@ int TestColorFilterCreateBlendModeNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testColorFilterCreateBlendModeMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0102
- * @tc.desc   test for testColorFilterCreateBlendModeMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestColorFilterCreateBlendModeMultipleCalls()
 {
     DrawingNativeColorFilterTestSetUp();
@@ -147,14 +123,6 @@ int TestColorFilterCreateBlendModeMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testColorFilterCreateBlendModeAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0103
- * @tc.desc   test for testColorFilterCreateBlendModeAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestColorFilterCreateBlendModeAbnormal()
 {
     DrawingNativeColorFilterTestSetUp();
@@ -168,14 +136,6 @@ int TestColorFilterCreateBlendModeAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testColorFilterCreateBlendModeMaximum
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0104
- * @tc.desc   test for testColorFilterCreateBlendModeMaximum.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestColorFilterCreateBlendModeMaximum()
 {
     DrawingNativeColorFilterTestSetUp();
@@ -189,14 +149,6 @@ int TestColorFilterCreateBlendModeMaximum()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testColorFilterCreateComposeNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0200
- * @tc.desc   test for testColorFilterCreateComposeNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestColorFilterCreateComposeNormal()
 {
     DrawingNativeColorFilterTestSetUp();
@@ -244,14 +196,6 @@ int TestColorFilterCreateComposeNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testColorFilterCreateComposeNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0201
- * @tc.desc   test for testColorFilterCreateComposeNULL.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestColorFilterCreateComposeNULL()
 {
     DrawingNativeColorFilterTestSetUp();
@@ -265,14 +209,6 @@ int TestColorFilterCreateComposeNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testColorFilterCreateComposeMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0202
- * @tc.desc   test for testColorFilterCreateComposeMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestColorFilterCreateComposeMultipleCalls()
 {
     DrawingNativeColorFilterTestSetUp();
@@ -324,14 +260,6 @@ int TestColorFilterCreateComposeMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testColorFilterCreateMatrixNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0300
- * @tc.desc   test for testColorFilterCreateMatrixNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestColorFilterCreateMatrixNormal()
 {
     DrawingNativeColorFilterTestSetUp();
@@ -346,14 +274,6 @@ int TestColorFilterCreateMatrixNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testColorFilterCreateMatrixNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0301
- * @tc.desc   test for testColorFilterCreateMatrixNULL.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestColorFilterCreateMatrixNULL()
 {
     DrawingNativeColorFilterTestSetUp();
@@ -370,14 +290,6 @@ int TestColorFilterCreateMatrixNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testColorFilterCreateMatrixAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0302
- * @tc.desc   test for testColorFilterCreateMatrixAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestColorFilterCreateMatrixAbnormal()
 {
     DrawingNativeColorFilterTestSetUp();
@@ -400,14 +312,6 @@ int TestColorFilterCreateMatrixAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testColorFilterCreateMatrixMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0303
- * @tc.desc   test for testColorFilterCreateMatrixMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestColorFilterCreateMatrixMultipleCalls()
 {
     DrawingNativeColorFilterTestSetUp();
@@ -423,14 +327,6 @@ int TestColorFilterCreateMatrixMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testColorFilterCreateLinearToSrgbGammaNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0400
- * @tc.desc   test for testColorFilterCreateLinearToSrgbGammaNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestColorFilterCreateLinearToSrgbGammaNormal()
 {
     DrawingNativeColorFilterTestSetUp();
@@ -445,14 +341,6 @@ int TestColorFilterCreateLinearToSrgbGammaNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testColorFilterCreateLinearToSrgbGammaMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0401
- * @tc.desc   test for testColorFilterCreateLinearToSrgbGammaMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestColorFilterCreateLinearToSrgbGammaMultipleCalls()
 {
     DrawingNativeColorFilterTestSetUp();
@@ -466,14 +354,6 @@ int TestColorFilterCreateLinearToSrgbGammaMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testColorFilterCreateSrgbGammaToLinearNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0500
- * @tc.desc   test for testColorFilterCreateSrgbGammaToLinearNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestColorFilterCreateSrgbGammaToLinearNormal()
 {
     DrawingNativeColorFilterTestSetUp();
@@ -487,14 +367,6 @@ int TestColorFilterCreateSrgbGammaToLinearNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testColorFilterCreateSrgbGammaToLinearMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0501
- * @tc.desc   test for testColorFilterCreateSrgbGammaToLinearMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestColorFilterCreateSrgbGammaToLinearMultipleCalls()
 {
     DrawingNativeColorFilterTestSetUp();
@@ -508,14 +380,6 @@ int TestColorFilterCreateSrgbGammaToLinearMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testColorFilterCreateLumaNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0600
- * @tc.desc   test for testColorFilterCreateLumaNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestColorFilterCreateLumaNormal()
 {
     DrawingNativeColorFilterTestSetUp();
@@ -528,14 +392,6 @@ int TestColorFilterCreateLumaNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testColorFilterCreateLumaMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0601
- * @tc.desc   test for testColorFilterCreateLumaMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestColorFilterCreateLumaMultipleCalls()
 {
     DrawingNativeColorFilterTestSetUp();
@@ -549,14 +405,6 @@ int TestColorFilterCreateLumaMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testColorFilterDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0700
- * @tc.desc   test for testColorFilterDestroyNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestColorFilterDestroyNormal()
 {
     DrawingNativeColorFilterTestSetUp();
@@ -569,14 +417,6 @@ int TestColorFilterDestroyNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testColorFilterDestroyNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0701
- * @tc.desc   test for testColorFilterDestroyNULL.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestColorFilterDestroyNULL()
 {
     DrawingNativeColorFilterTestSetUp();
@@ -588,14 +428,6 @@ int TestColorFilterDestroyNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testColorFilterCreateLightingNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0800
- * @tc.desc   test for testColorFilterCreateLightingNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestColorFilterCreateLightingNormal()
 {
     DrawingNativeColorFilterTestSetUp();
@@ -608,14 +440,6 @@ int TestColorFilterCreateLightingNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testColorFilterCreateLightingNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0801
- * @tc.desc   test for testColorFilterCreateLightingNULL.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestColorFilterCreateLightingNULL()
 {
     DrawingNativeColorFilterTestSetUp();
@@ -632,14 +456,6 @@ int TestColorFilterCreateLightingNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testColorFilterCreateLightingAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0802
- * @tc.desc   test for testColorFilterCreateLightingAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestColorFilterCreateLightingAbnormal()
 {
     DrawingNativeColorFilterTestSetUp();
@@ -656,14 +472,6 @@ int TestColorFilterCreateLightingAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testColorFilterCreateLightingMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_FILTER_0803
- * @tc.desc   test for testColorFilterCreateLightingMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestColorFilterCreateLightingMultipleCalls()
 {
     DrawingNativeColorFilterTestSetUp();

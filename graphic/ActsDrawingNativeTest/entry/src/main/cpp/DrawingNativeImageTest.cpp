@@ -50,14 +50,6 @@ void DrawingNativeImageTestTearDown()
     std::cout << "DrawingNativeImageTest errorCodeReset after each test case." << std::endl;
 }
 
-/**
- * @tc.name   testImageCreateDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_NUMBER_100
- * @tc.desc   Test for creating and destroying an image object with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestImageCreateDestroyNormal()
 {
     DrawingNativeImageTestSetUp();
@@ -71,14 +63,6 @@ int TestImageCreateDestroyNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageCreateDestroyNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_0101
- * @tc.desc   Test for destroying an image object with a NULL parameter.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestImageCreateDestroyNULL()
 {
     DrawingNativeImageTestSetUp();
@@ -90,14 +74,6 @@ int TestImageCreateDestroyNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageCreateDestroyMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_0102
- * @tc.desc   Test for multiple calls of creating and destroying an image object.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestImageCreateDestroyMultipleCalls()
 {
     DrawingNativeImageTestSetUp();
@@ -123,14 +99,6 @@ int TestImageCreateDestroyMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageBuildFromBitmapNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_NUMBER_200
- * @tc.desc   Test for building an image from a bitmap with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestImageBuildFromBitmapNormal()
 {
     DrawingNativeImageTestSetUp();
@@ -158,14 +126,6 @@ int TestImageBuildFromBitmapNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageBuildFromBitmapNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_0201
- * @tc.desc   Test for building an image from a bitmap with NULL parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestImageBuildFromBitmapNULL()
 {
     DrawingNativeImageTestSetUp();
@@ -193,14 +153,6 @@ int TestImageBuildFromBitmapNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageBuildFromBitmapMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_0202
- * @tc.desc   Test for multiple calls of building an image from a bitmap.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestImageBuildFromBitmapMultipleCalls()
 {
     DrawingNativeImageTestSetUp();
@@ -224,14 +176,6 @@ int TestImageBuildFromBitmapMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageBuildFromBitmapMultipleCallsBoundary
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_0203
- * @tc.desc   Test for multiple calls of building an boundary value image from a bitmap.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestImageBuildFromBitmapMultipleCallsBoundary()
 {
     DrawingNativeImageTestSetUp();
@@ -254,14 +198,6 @@ int TestImageBuildFromBitmapMultipleCallsBoundary()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageGetWidthHeightNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_0300
- * @tc.desc   Test for getting width and height of an image with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestImageGetWidthHeightNormal()
 {
     DrawingNativeImageTestSetUp();
@@ -290,14 +226,6 @@ int TestImageGetWidthHeightNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageGetWidthHeightNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_0301
- * @tc.desc   Test for getting width and height of an image with NULL parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestImageGetWidthHeightNULL()
 {
     DrawingNativeImageTestSetUp();
@@ -323,14 +251,6 @@ int TestImageGetWidthHeightNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageGetWidthHeightMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_0302
- * @tc.desc   Test for multiple calls of getting width and height of an image.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestImageGetWidthHeightMultipleCalls()
 {
     DrawingNativeImageTestSetUp();
@@ -357,14 +277,6 @@ int TestImageGetWidthHeightMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageGetWidthHeightMultipleCallsBoundary
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_0302
- * @tc.desc   Test for multiple calls of getting width and height of an boundary value image.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestImageGetWidthHeightMultipleCallsBoundary()
 {
     DrawingNativeImageTestSetUp();
@@ -393,14 +305,6 @@ int TestImageGetWidthHeightMultipleCallsBoundary()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageGetImageInfoNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_NUMBER_400
- * @tc.desc   Test for getting image info with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestImageGetImageInfoNormal()
 {
     DrawingNativeImageTestSetUp();
@@ -439,14 +343,6 @@ int TestImageGetImageInfoNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageGetImageInfoNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_0401
- * @tc.desc   Test for getting image info with NULL parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestImageGetImageInfoNULL()
 {
     DrawingNativeImageTestSetUp();
@@ -474,14 +370,6 @@ int TestImageGetImageInfoNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageGetImageInfoMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_0402
- * @tc.desc   Test for multiple calls of getting image info.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestImageGetImageInfoMultipleCalls()
 {
     DrawingNativeImageTestSetUp();
@@ -523,14 +411,6 @@ int TestImageGetImageInfoMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageGetImageInfoAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_0403
- * @tc.desc   Test for getting image info with abnormal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestImageGetImageInfoAbnormal()
 {
     DrawingNativeImageTestSetUp();
@@ -555,14 +435,6 @@ int TestImageGetImageInfoAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageGetImageInfoMaximum
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_0404
- * @tc.desc   Test for getting image info with maximum values.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestImageGetImageInfoMaximum()
 {
     DrawingNativeImageTestSetUp();
@@ -587,14 +459,6 @@ int TestImageGetImageInfoMaximum()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageGetImageInfoBoundary
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_0405
- * @tc.desc   Test for getting image info with Boundary value.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestImageGetImageInfoBoundary()
 {
     DrawingNativeImageTestSetUp();

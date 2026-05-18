@@ -24,7 +24,7 @@ import appManager from '@ohos.app.ability.appManager';
 import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import { Hypium } from '../../../hypium/index';
 
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 
@@ -33,6 +33,7 @@ class StringFields {
 struct webViewController {
   stringObj: StringFields = new StringFields();
   controller: webview.WebviewController = new webview.WebviewController(undefined);
+  controller_new: webview.WebviewController = new webview.WebviewController(undefined);
   @State str: string = ""
   @State javaScriptAccess: boolean = true
   @State fileAccess: boolean = true
@@ -81,6 +82,20 @@ struct webViewController {
                   this.controller.loadUrl('https://openharmony.cn/')
                 } catch (error) {
                   console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                }
+                break;
+              }
+              case "testRemoveCache003": {
+                try {
+                  this.buttonStart = true;
+                  console.log('buttonStart==>' + this.buttonStart);
+                  this.removeRom = false
+                  this.controller.loadUrl('https://openharmony.cn/')
+                  this.controller_new.removeCache(this.removeRom)
+                  Utils.emitEvent(true, 20260331)
+                } catch (error) {
+                  console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                  Utils.emitEvent(error.code, 20260331)
                 }
                 break;
               }

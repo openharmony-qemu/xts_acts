@@ -33,7 +33,7 @@ async function exitInputMethod() {
   }
 }
 
-export default function uitestEnumTest() {
+export default function uitestEnumTest(): void {
   describe('uitestTest_Api20', (): void => {
     let driver: Driver | undefined;
     beforeAll(async () : Promise<void> => {

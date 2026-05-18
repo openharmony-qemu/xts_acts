@@ -731,6 +731,48 @@ async function aeadCipherWithUpdateCallback(cipher: cryptoFramework.Cipher, isEn
   return {data: mergeText};
 }
 
+async function aeadEncOrDecPromise(algName: string, isEnc: boolean, symKey: cryptoFramework.SymKey, blockSize: int, dataLen: int,
+  data: cryptoFramework.DataBlob, paramSpec: cryptoFramework.AeadParamsSpec): Promise<cryptoFramework.DataBlob> {
+  try {
+    let cipherText1 = new Uint8Array();
+    let cipher = cryptoFramework.createCipher(algName);
+    if (isEnc) {
+      await cipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, paramSpec);
+    } else {
+      await cipher.init(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramSpec);
+    }
+    let remainingNumber: int = dataLen % blockSize;
+    let business: int = (dataLen - remainingNumber) / blockSize;
+    for(let dataSize = 0; dataSize < business; dataSize++) {
+      let tmp = data.data.subarray(blockSize * dataSize, blockSize * (dataSize + 1));
+      let doFinalText: cryptoFramework.DataBlob = { data:tmp };
+      let encryptCipher: cryptoFramework.DataBlob|null = await cipher.update(doFinalText);
+      if (encryptCipher === null) {
+        throw new Error("[TEST] Update Failed.");
+      }
+      let mergeText = new Uint8Array(cipherText1.length + encryptCipher.data.length);
+      mergeText.set(cipherText1);
+      mergeText.set(encryptCipher.data, cipherText1.length);
+      cipherText1 = mergeText;
+    }
+    let tmp = data.data.subarray(blockSize * business, blockSize * (business + 1));
+    let doFinalText: cryptoFramework.DataBlob = { data:tmp };
+    let encryptCipher: cryptoFramework.DataBlob|null = await cipher.doFinal(doFinalText);
+    if (encryptCipher === null) {
+      return {data: cipherText1};
+    }
+    let mergeText = new Uint8Array(cipherText1.length + encryptCipher.data.length);
+    mergeText.set(cipherText1);
+    mergeText.set(encryptCipher.data, cipherText1.length);
+    cipherText1 = mergeText;
+
+    return {data: cipherText1};
+  } catch (error) {
+    console.error('aeadEncOrDecPromise, ' + error.code + " errorMsg " + error.message);
+    throw error as Error;
+  }
+}
+
 export {
   genGcmOrCcmParamsSpec,
   genCcmParamsSpec,
@@ -770,6 +812,7 @@ export {
   MODE_CFB128_CIPHER_SEPC,
   MODE_GCM_CIPHER_SEPC,
   MODE_CCM_CIPHER_SEPC,
+  sm4GcmVector,
   SM4_GCM_VECTOR,
   WEAK_SYM_CIPHER,
   WEAK_MODE_CIPHER,
@@ -784,5 +827,6 @@ export {
   updateCallback,
   finalCallback,
   aeadCipherWithUpdateCallback,
-  aeadCipherCallback
+  aeadCipherCallback,
+  aeadEncOrDecPromise
 }

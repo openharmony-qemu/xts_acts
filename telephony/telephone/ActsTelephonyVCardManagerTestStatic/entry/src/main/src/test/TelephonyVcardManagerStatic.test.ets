@@ -299,6 +299,149 @@ export default function TelephonyVcardManagerStatic() {
     })
 
     /**
+     * @tc.number  SUB_Telephony_Vcard_ImportVCard_0700
+     * @tc.name    testTelephonyVcardImportVCard_static_0700
+     * @tc.desc    Import the VCard file into the contact database;callback.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it("testTelephonyVcardImportVCard_static_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testTelephonyVcardImportVCard_static_0700';
+        hilog.info(domain, tag, `${caseName} test start`);
+        let accountId: int = 0;
+        try {
+          context = AppStorage.get<common.UIAbilityContext>("Context") as common.UIAbilityContext;
+          vcard.importVCard(context, "", accountId, (err) => {
+            hilog.info(domain, tag, `${caseName} error: ${JSON.stringify(err?.code)}`);
+            expect(err?.code === 8300001).assertTrue();
+            done();
+          });
+        } catch (error) {
+          hilog.info(domain, tag, `${caseName} failed, catch: error->${JSON.stringify(error)}`);
+          expect().assertFail();
+          hilog.info(domain, tag, `${caseName} test end`);
+          done();
+        }
+      })
+
+    /**
+     * @tc.number  SUB_Telephony_Vcard_ImportVCard_0800
+     * @tc.name    testTelephonyVcardImportVCard_static_0800
+     * @tc.desc    Import the VCard file into the contact database;promise.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it("testTelephonyVcardImportVCard_static_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testTelephonyVcardImportVCard_static_0800';
+        hilog.info(domain, tag, `${caseName} test start`);
+        let accountId: int = 0;
+        try {
+          context = AppStorage.get<common.UIAbilityContext>("Context") as common.UIAbilityContext;
+          await vcard.importVCard(context, "", accountId);
+          hilog.info(domain, tag, `${caseName} success`);
+          expect().assertFail();
+          done();
+        } catch (error) {
+          hilog.info(domain, tag, `${caseName} failed, catch: error->${JSON.stringify(error?.code)}`);
+          expect(error?.code === 8300001).assertTrue();
+          hilog.info(domain, tag, `${caseName} test end`);
+          done();
+        }
+      })
+
+    /**
+     * @tc.number  SUB_Telephony_Vcard_ImportVCard_0900
+     * @tc.name    testTelephonyVcardImportVCard_static_0900
+     * @tc.desc    Import the VCard file into the contact database;promise.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it("testTelephonyVcardImportVCard_static_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testTelephonyVcardImportVCard_static_0900';
+        hilog.info(domain, tag, `${caseName} test start`);
+        try {
+          context = AppStorage.get<common.UIAbilityContext>("Context") as common.UIAbilityContext;
+          await vcard.importVCard(context, "");
+          hilog.info(domain, tag, `${caseName} success`);
+          expect().assertFail();
+          done();
+        } catch (error) {
+          hilog.info(domain, tag, `${caseName} failed, catch: error->${JSON.stringify(error?.code)}`);
+          expect(error?.code === 8300001).assertTrue();
+          hilog.info(domain, tag, `${caseName} test end`);
+          done();
+        }
+      })
+
+    /**
+     * @tc.number  SUB_Telephony_Vcard_ImportVCard_1000
+     * @tc.name    testTelephonyVcardImportVCard_static_1000
+     * @tc.desc    Import the VCard file into the contact database;promise.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it("testTelephonyVcardImportVCard_static_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testTelephonyVcardImportVCard_static_1000';
+        hilog.info(domain, tag, `${caseName} test start`);
+        try {
+          context = AppStorage.get<common.UIAbilityContext>("Context") as common.UIAbilityContext;
+          let vcardContacts: string =
+            "BEGIN:VCARD\n" + "VERSION:2.1\n" + "N:alpha123;;;;\n" + "FN:alpha123\n" + "TEL;HOME:12345678123\n" +
+              "END:VCARD\n";
+          await rdFile(context, vcardContacts, new Date().getTime() + '');
+          hilog.info(domain, tag, `${caseName} test start 111, filePath: ${JSON.stringify(filePath)}`);
+          await vcard.importVCard(context, filePath);
+          hilog.info(domain, tag, `${caseName} success`);
+          done();
+        } catch (error) {
+          hilog.info(domain, tag, `${caseName} failed, catch: error->${JSON.stringify(error)}`);
+          expect().assertFail();
+          hilog.info(domain, tag, `${caseName} test end`);
+          done();
+        }
+      })
+
+    /**
+     * @tc.number  SUB_Telephony_Vcard_ImportVCard_1100
+     * @tc.name    testTelephonyVcardImportVCard_static_1100
+     * @tc.desc    Import the VCard file into the contact database;callback.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it("testTelephonyVcardImportVCard_static_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testTelephonyVcardImportVCard_static_1100';
+        hilog.info(domain, tag, `${caseName} test start`);
+        try {
+          context = AppStorage.get<common.UIAbilityContext>("Context") as common.UIAbilityContext;
+          let vcardContacts: string =
+            "N:alpha123;;;;\n" + "FN:alpha123\n" + "TEL;HOME:12345678123\n" + "END:VCARD\n" + "BEGIN:VCARD\n" +
+              "VERSION:2.1\n" + "N:alpha123;;;;\n" + "FN:alpha123\n" + "TEL;HOME:12345678123\n" + "END:VCARD\n";
+          await rdFile(context, vcardContacts, new Date().getTime() + '');
+          let accountId: int = 0;
+          vcard.importVCard(context, filePath, accountId, (err) => {
+            hilog.info(domain, tag, `${caseName} error ${JSON.stringify(err?.code)}`);
+            expect(err?.code === 8300003).assertTrue();
+            done();
+          });
+        } catch (error) {
+          hilog.info(domain, tag, `${caseName} failed, catch: error->${JSON.stringify(error)}`);
+          expect().assertFail();
+          hilog.info(domain, tag, `${caseName} test end`);
+          done();
+        }
+      })
+
+    /**
      * @tc.number  SUB_Telephony_Vcard_ExportVCard_0100
      * @tc.name    testTelephonyVcardExportVCard_static_0100
      * @tc.desc    Import the VCard file into the contact database;callback.
@@ -663,6 +806,63 @@ export default function TelephonyVcardManagerStatic() {
         done();
       }
     })
+
+    /**
+     * @tc.number  SUB_Telephony_Vcard_ExportVCard_1200
+     * @tc.name    testTelephonyVcardExportVCard_static_1200
+     * @tc.desc    Import the VCard file into the contact database;promise.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it("testTelephonyVcardExportVCard_static_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testTelephonyVcardExportVCard_static_1200';
+        hilog.info(domain, tag, `${caseName} test start`);
+        try {
+          context = AppStorage.get<common.UIAbilityContext>("Context") as common.UIAbilityContext;
+          let address: string = await vcard.exportVCard(context, predicates);
+          hilog.info(domain, tag, `${caseName} success`);
+          expect(address !== null).assertTrue();
+          done();
+        } catch (error) {
+          let err = error as BusinessError;
+          hilog.info(domain, tag, `${caseName} failed, catch: err->${JSON.stringify(err)}`);
+          expect().assertFail();
+          hilog.info(domain, tag, `${caseName} test end`);
+          done();
+        }
+      })
+
+    /**
+     * @tc.number  SUB_Telephony_Vcard_ExportVCard_1300
+     * @tc.name    testTelephonyVcardExportVCard_static_1300
+     * @tc.desc    Import the VCard file into the contact database;promise.
+     * @tc.size    SmallTest
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it("testTelephonyVcardExportVCard_static_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testTelephonyVcardExportVCard_static_1300';
+        hilog.info(domain, tag, `${caseName} test start`);
+        try {
+          context = AppStorage.get<common.UIAbilityContext>("Context") as common.UIAbilityContext;
+          let options: vcard.VCardBuilderOptions = {
+            cardType: vcard.VCardType.VERSION_21,
+            charset: "GBK"
+          };
+          await vcard.exportVCard(context, predicates, options);
+          hilog.info(domain, tag, `${caseName} failed`);
+          expect().assertFail();
+          done();
+        } catch (error) {
+          hilog.info(domain, tag, `${caseName} success, catch: error->${JSON.stringify(error?.code)}`);
+          expect(error?.code === 8300001).assertTrue();
+          hilog.info(domain, tag, `${caseName} test end`);
+          done();
+        }
+      })
 
   });
 }

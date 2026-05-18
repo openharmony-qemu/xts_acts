@@ -2412,5 +2412,134 @@ export default function adminManagerTest() {
       console.info(' --- test_startAdminProvision_011_5  -------- END --------');
     })
 
+    /**
+     * @tc.name   test_enableSelfDeviceAdmin_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_ENABLESELFDEVICEADMIN_0100
+     * @tc.desc   test enableSelfDeviceAdmin method with null admin parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_enableSelfDeviceAdmin_0100", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_enableSelfDeviceAdmin_0100  -------- START --------');
+      try {
+        await adminManager.enableSelfDeviceAdmin(null, "testCredential");
+        console.info(' --- test_enableSelfDeviceAdmin_0100 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_enableSelfDeviceAdmin_0100 error 401 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+      console.info(' --- test_enableSelfDeviceAdmin_0100  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_enableSelfDeviceAdmin_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_ENABLESELFDEVICEADMIN_0200
+     * @tc.desc   test enableSelfDeviceAdmin method with undefined admin parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_enableSelfDeviceAdmin_0200", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_enableSelfDeviceAdmin_0200  -------- START --------');
+      try {
+        await adminManager.enableSelfDeviceAdmin(undefined, "testCredential");
+        console.info(' --- test_enableSelfDeviceAdmin_0200 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_enableSelfDeviceAdmin_0200 error 401 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+      console.info(' --- test_enableSelfDeviceAdmin_0200  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_enableSelfDeviceAdmin_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_ENABLESELFDEVICEADMIN_0300
+     * @tc.desc   test enableSelfDeviceAdmin method with null credential parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_enableSelfDeviceAdmin_0300", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_enableSelfDeviceAdmin_0300  -------- START --------');
+      try {
+        await adminManager.enableSelfDeviceAdmin(SELFWANT, null);
+        console.info(' --- test_enableSelfDeviceAdmin_0300 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_enableSelfDeviceAdmin_0300 error 401 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+      console.info(' --- test_enableSelfDeviceAdmin_0300  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_enableSelfDeviceAdmin_0400
+     * @tc.number SUB_CUSTOMIZATION_EDM_ENABLESELFDEVICEADMIN_0400
+     * @tc.desc   test enableSelfDeviceAdmin method with undefined credential parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_enableSelfDeviceAdmin_0400", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_enableSelfDeviceAdmin_0400  -------- START --------');
+      try {
+        await adminManager.enableSelfDeviceAdmin(SELFWANT, undefined);
+        console.info(' --- test_enableSelfDeviceAdmin_0400 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_enableSelfDeviceAdmin_0400 error 401 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+      console.info(' --- test_enableSelfDeviceAdmin_0400  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_enableSelfDeviceAdmin_0500
+     * @tc.number SUB_CUSTOMIZATION_EDM_ENABLESELFDEVICEADMIN_0500
+     * @tc.desc   test enableSelfDeviceAdmin method with expired credential
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_enableSelfDeviceAdmin_0500", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_enableSelfDeviceAdmin_0500  -------- START --------');
+      try {
+        await adminManager.enableSelfDeviceAdmin(SELFWANT, "expiredCredential");
+        console.info(' --- test_enableSelfDeviceAdmin_0500 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_enableSelfDeviceAdmin_0500 error code: ' + error.code);
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200018).assertTrue();
+        }
+      }
+      done();
+      console.info(' --- test_enableSelfDeviceAdmin_0500  -------- END --------');
+    })
   })
 }

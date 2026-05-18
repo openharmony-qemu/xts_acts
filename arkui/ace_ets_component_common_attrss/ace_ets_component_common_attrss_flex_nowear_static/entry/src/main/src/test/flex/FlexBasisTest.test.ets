@@ -34,7 +34,7 @@ let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
-export default function flexBasisTest() {
+export default async function flexBasisTest() {
   let supportView: Array<string> = new Array<string>(
     'RowSplit',
     'ColumnSplit',
@@ -136,7 +136,7 @@ export default function flexBasisTest() {
 
         //Get target component rect
         console.info('[' + data.caseTag + '] Get target component rect');
-        let rect = Utils.getComponentRect(data.pageConfig.componentKey as string);
+        let rect = await Utils.getComponentRect(data.pageConfig.componentKey as string);
 
         console.info('[' + data.caseTag + '] check the size of the component in the spindle ' +
           'direction has been changed by flexBasis ');

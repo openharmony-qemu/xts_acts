@@ -95,6 +95,7 @@ export default function EnableToolBarAdaptation() {
       let btn1: Component = await driver.findComponent(ON.id('pushOneId'));
       await btn1.click()
       console.info('[EnableToolBarAdaptation_0200] btn1 click');
+      await driver.delayMs(1500);
 
       await driver.assertComponentExist(ON.text('a1'));
       await driver.delayMs(500);

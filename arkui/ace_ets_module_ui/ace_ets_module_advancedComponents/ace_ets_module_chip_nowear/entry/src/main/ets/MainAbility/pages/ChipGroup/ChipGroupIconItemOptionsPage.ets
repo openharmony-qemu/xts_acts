@@ -59,6 +59,9 @@ struct ChipGroupIconItemOptionsPage {
             accessibilityDescription: 'ChipGroupItem_accessibilityDescription',
             accessibilityLevel: 'yes',
             allowClose: false,
+            closeOptions: {
+              accessibilityLevel: 'no'
+            },
           },
           {
             prefixIcon: { src: $r('sys.media.ohos_ic_public_clock'), size: { width: 36, height: 36 } },

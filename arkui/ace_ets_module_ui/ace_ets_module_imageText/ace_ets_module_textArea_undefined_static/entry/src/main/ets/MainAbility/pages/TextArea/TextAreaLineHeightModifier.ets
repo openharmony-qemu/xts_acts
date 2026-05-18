@@ -5,7 +5,7 @@ import { Entry, Text, Column, Component, TextArea, ColumnOptions, Row, ClickEven
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class TextAreaModifierUndefined implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifierUndefined implements AttributeModifier<TextAreaAttribute> {
   applyNormalAttribute(instance: TextAreaAttribute): void {
     instance
       .height(30)
@@ -14,7 +14,7 @@ class TextAreaModifierUndefined implements AttributeModifier<TextAreaAttribute> 
 }
 
 @Observed
-class TextAreaModifierDynamicSwitch implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifierDynamicSwitch implements AttributeModifier<TextAreaAttribute> {
   public isLineHeightDefined: boolean = true;
 
   applyNormalAttribute(instance: TextAreaAttribute): void {

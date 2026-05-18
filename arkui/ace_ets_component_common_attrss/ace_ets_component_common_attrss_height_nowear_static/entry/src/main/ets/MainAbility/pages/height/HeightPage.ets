@@ -251,7 +251,7 @@ struct heightPage {
         Marquee({
           start: true,
           step: 50,
-          loop: Number.MAX_VALUE as int,
+          loop: Number.MAX_VALUE.toInt(),
           fromStart: true,
           src: this.src
         })

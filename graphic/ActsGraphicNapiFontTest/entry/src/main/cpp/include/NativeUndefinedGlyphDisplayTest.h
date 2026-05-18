@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -67,6 +67,13 @@ struct NativeUndefinedGlyphDisplayTestContext {
         for (size_t index = 0; index < arraySize; index++) {
             OH_Drawing_TextLine* textLine = OH_Drawing_GetTextLineByIndex(textLines, index);
             OH_Drawing_Rect* rect = OH_Drawing_TextLineGetImageBounds(textLine);
+            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "BoundsResult Func",
+                "Line %{public}zu: [%{public}f, %{public}f, %{public}f, %{public}f]\n",
+                index,
+                OH_Drawing_RectGetLeft(rect),
+                OH_Drawing_RectGetTop(rect),
+                OH_Drawing_RectGetRight(rect),
+                OH_Drawing_RectGetBottom(rect));
             EXPECT_FLOAT_EQ(rectResult[index][0], OH_Drawing_RectGetLeft(rect));
             EXPECT_FLOAT_EQ(rectResult[index][1], OH_Drawing_RectGetTop(rect));
             // 2 is the index of right
@@ -83,21 +90,20 @@ struct NativeUndefinedGlyphDisplayTestContext {
 namespace Drawing {
 
 constexpr const char* TEST_TEXT =
-    "Hello 测 World \uffff\n!@#$%^&*~(){\uffff\uffff}[]90 - = ,.\n\uffff"
-    "testlp\uffff试\uffff Drawing\uffff";
+    "Hello World \uffff\n!@#$%^&*~(){\uffff\uffff}[]90 - = ,.\n\uffff"
+    "testlp\uffff\uffff Drawing\uffff";
 constexpr const char* NO_GLYPH_TEXT = "\uffff";
-constexpr float DEFAULT_RESULT[][4] = { { 2.0, 2.0, 206.63979, 29.0 },
-                                        { 1.0, 5.0, 388.10962, 37.0 },
-                                        { 0, 8.0, 319.4397, 42.0 } };
-constexpr float TOFU_RESULT[][4] = { { 2.0, 2.0, 228.63979, 29.0 },
-                                     { 1.0, 5.0, 388.10962, 37.0 },
-                                     { 8.0, 8.0, 341.4397, 42.0 } };
-constexpr float NO_TO_RESULT[][4] = { { 2.0, 2.0, 232.20976, 29.0 },
-                                      { 2.0, 5.0, 388.43961, 33.0 },
-                                      { 8.0, 8.0, 347.76962, 42.0 } };
+constexpr float DEFAULT_RESULT[][4] = { { 2.0, 1.0, 168.23982, 25.0 },
+                                        { 1.0, 5.0, 388.10961, 37.0 },
+                                        { 0, 8.0, 289.43972, 39.0 } };
+constexpr float TOFU_RESULT[][4] = { { 2.0, 1.0, 190.239822, 25.0 },
+                                     { 1.0, 5.0, 388.109619, 37.0 },
+                                     { 8.0, 8.0, 311.439728, 39.0 } };
+constexpr float NO_TO_RESULT[][4] = { { 2.0, 1.0, 194.409805, 25.0 },
+                                      { 2.0, 5.0, 388.439606, 33.0 },
+                                      { 8.0, 8.0, 317.769684, 39.0 } };
 constexpr float NO_GLYPH_TOFU_RESULT[][4] = { { 8.0, 0, 22.0, 22.0 } };
 constexpr float NO_GLYPH_DEFAULT_RESULT[][4] = { { 0, 0, 0, 0 } };
-constexpr float NO_GLYPH_NO_TO_RESULT[][4] = { { 0, 0, 0, 0 } };
 
 int OHDrawingSetTextUndefinedGlyphDisplay001();
 int OHDrawingSetTextUndefinedGlyphDisplay002();

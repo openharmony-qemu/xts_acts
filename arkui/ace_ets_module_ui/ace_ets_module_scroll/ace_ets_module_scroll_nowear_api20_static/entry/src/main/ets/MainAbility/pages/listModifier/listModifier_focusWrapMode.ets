@@ -34,32 +34,32 @@ import {FrameNode, typeNode} from '@ohos.arkui.node'
 import { BusinessError } from '@kit.BasicServicesKit';
 
 // 定义不同的 FocusWrapMode Modifier 类
-class ListFocusWrapModeDefaultModifier implements AttributeModifier<ListAttribute> {
+export class ListFocusWrapModeDefaultModifier implements AttributeModifier<ListAttribute> {
   applyNormalAttribute(instance: ListAttribute): void {
     instance.focusWrapMode(FocusWrapMode.DEFAULT);
   }
 }
 
-class ListFocusWrapModeUndefinedModifier implements AttributeModifier<ListAttribute> {
+export class ListFocusWrapModeUndefinedModifier implements AttributeModifier<ListAttribute> {
   applyNormalAttribute(instance: ListAttribute): void {
     instance.focusWrapMode(undefined);
   }
 }
 
-class ListFocusWrapModeWrapWithArrowModifier implements AttributeModifier<ListAttribute> {
+export class ListFocusWrapModeWrapWithArrowModifier implements AttributeModifier<ListAttribute> {
   applyNormalAttribute(instance: ListAttribute): void {
     instance.focusWrapMode(FocusWrapMode.WRAP_WITH_ARROW);
   }
 }
 
-class ListFocusWrapModeExplicitUndefinedModifier implements AttributeModifier<ListAttribute> {
+export class ListFocusWrapModeExplicitUndefinedModifier implements AttributeModifier<ListAttribute> {
   applyNormalAttribute(instance: ListAttribute): void {
     instance.focusWrapMode(undefined);
   }
 }
 
 // 动态切换的 Modifier
-class ListFocusWrapModeDynamicModifier implements AttributeModifier<ListAttribute> {
+export class ListFocusWrapModeDynamicModifier implements AttributeModifier<ListAttribute> {
   private mode: FocusWrapMode | undefined;
 
   constructor(mode: FocusWrapMode | undefined) {

@@ -109,7 +109,7 @@ export default class Utils{
       let maxPos = chars.length;
       let pwd = '';
       for (let i = 0; i < len; i++) {
-        pwd += chars.charAt((Math.floor(Math.random() * maxPos)) as int);
+        pwd += chars.charAt((Math.floor(Math.random() * maxPos)).toInt());
       }
       resolve(pwd);
     })

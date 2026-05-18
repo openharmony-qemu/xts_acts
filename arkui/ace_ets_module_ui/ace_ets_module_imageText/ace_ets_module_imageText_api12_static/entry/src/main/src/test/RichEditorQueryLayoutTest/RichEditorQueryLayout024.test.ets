@@ -101,7 +101,7 @@ export default function RichEditorQueryLayout024() {
       expect(selectValueText.indexOf('"textAlign":0') > 0).assertEqual(true);
       expect(selectValueText.indexOf('"leadingMargin":{"size":["16.00vp","0.00vp"]}') > 0).assertEqual(true);
       expect(selectValueText.indexOf('"borderRadius":"20.00px"') > 0).assertEqual(true);
-      expect(selectValueText.indexOf('"margin":{"top":"30.00px","left":"30.00px","right":"30.00px","bottom":"30.00px"}') > 0).assertEqual(true);
+      expect(selectValueText.indexOf('"margin":{"top":"30.00px","right":"30.00px","bottom":"30.00px","left":"30.00px"}') > 0).assertEqual(true);
       done();
     });
 

@@ -116,7 +116,7 @@ export default function ActsNotificationPublishTest() {
         let TAG:string = 'Sub_Notification_Ans_Enable_Query_Static_2700'
         count = 0;
         notificationManager.requestEnableNotification(testAbilityContext!, (err: BusinessError | null) => {
-          waitForCompletion(async () => {
+          (async () => {
           if (err) {
             console.info(`Sub_Notification_Ans_Enable_Query_Static_2700 ===>requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
             expect(false).assertTrue()
@@ -129,7 +129,7 @@ export default function ActsNotificationPublishTest() {
             console.info("Sub_Notification_Ans_Enable_Query_Static_2700 ===>requestEnableNotification success 1s");
             done()
           }
-          })
+          })().awaitSync()
         })
 
         await Utils.msSleep(1000)

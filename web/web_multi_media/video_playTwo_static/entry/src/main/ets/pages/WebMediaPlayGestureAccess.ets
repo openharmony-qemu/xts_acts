@@ -24,7 +24,7 @@ import { BusinessError } from '@ohos.base';
 import emitter from '@ohos.events.emitter';
 import Utils from '../../src/test/Util.test.ets';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 

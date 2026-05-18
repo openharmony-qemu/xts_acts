@@ -456,9 +456,9 @@ export default function JSONStringifyBasicTest() {
      */
     it('JSONStringify_Circular_Array_002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let obj: Record<string, Object> = {};
-      let arr: Object[] = new Array<Object>(1);;
+      let arr: Object[] = new Array<Object>();;
       obj['arr'] = arr;
-      arr[0] = obj;
+      arr.push(obj);
       try {
         JSON.stringify(obj);
       } catch (e) {

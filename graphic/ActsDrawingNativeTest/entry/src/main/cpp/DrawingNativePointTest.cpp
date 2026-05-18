@@ -41,14 +41,6 @@ void DrawingNativePointTestTearDown()
     std::cout << "DrawingNativePointTest errorCodeReset after each test case." << std::endl;
 }
 
-/**
- * @tc.name   testPointCreateNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_NUMBER_100
- * @tc.desc   test for testPointCreateNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPointCreateNormal()
 {
     DrawingNativePointTestSetUp();
@@ -67,14 +59,6 @@ int TestPointCreateNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPointCreateNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0101
- * @tc.desc   test for testPointCreateNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPointCreateNull()
 {
     DrawingNativePointTestSetUp();
@@ -93,14 +77,6 @@ int TestPointCreateNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPointCreateAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0102
- * @tc.desc   test for testPointCreateAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPointCreateAbnormal()
 {
     DrawingNativePointTestSetUp();
@@ -119,14 +95,6 @@ int TestPointCreateAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPointCreateMaximum
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0103
- * @tc.desc   test for testPointCreateMaximum.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPointCreateMaximum()
 {
     DrawingNativePointTestSetUp();
@@ -145,14 +113,6 @@ int TestPointCreateMaximum()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPointCreateMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0104
- * @tc.desc   test for testPointCreateMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPointCreateMultipleCalls()
 {
     DrawingNativePointTestSetUp();
@@ -170,14 +130,6 @@ int TestPointCreateMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPointDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0200
- * @tc.desc   test for testPointDestroyNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPointDestroyNormal()
 {
     DrawingNativePointTestSetUp();
@@ -191,14 +143,6 @@ int TestPointDestroyNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPointDestroyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0201
- * @tc.desc   test for testPointDestroyNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPointDestroyNull()
 {
     DrawingNativePointTestSetUp();
@@ -210,14 +154,6 @@ int TestPointDestroyNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPointGetXNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0300
- * @tc.desc   test for testPointGetXNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPointGetXNormal()
 {
     DrawingNativePointTestSetUp();
@@ -239,14 +175,6 @@ int TestPointGetXNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPointGetXNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0301
- * @tc.desc   test for testPointGetXNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPointGetXNull()
 {
     DrawingNativePointTestSetUp();
@@ -264,14 +192,6 @@ int TestPointGetXNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPointGetXMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0302
- * @tc.desc   test for testPointGetXMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPointGetXMultipleCalls()
 {
     DrawingNativePointTestSetUp();
@@ -290,14 +210,6 @@ int TestPointGetXMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPointGetYNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0400
- * @tc.desc   test for testPointGetYNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPointGetYNormal()
 {
     DrawingNativePointTestSetUp();
@@ -323,14 +235,6 @@ int TestPointGetYNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPointGetYNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0401
- * @tc.desc   test for testPointGetYNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPointGetYNull()
 {
     DrawingNativePointTestSetUp();
@@ -348,14 +252,6 @@ int TestPointGetYNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPointGetYMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0402
- * @tc.desc   test for testPointGetYMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPointGetYMultipleCalls()
 {
     DrawingNativePointTestSetUp();
@@ -374,14 +270,6 @@ int TestPointGetYMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPointSetNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0400
- * @tc.desc   test for testPointSetNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestPointSetNormal()
 {
     DrawingNativePointTestSetUp();
@@ -400,14 +288,6 @@ int TestPointSetNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPointSetNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0401
- * @tc.desc   test for testPointSetNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPointSetNull()
 {
     DrawingNativePointTestSetUp();
@@ -426,14 +306,6 @@ int TestPointSetNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testPointSetMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0402
- * @tc.desc   test for testPointSetMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestPointSetMultipleCalls()
 {
     DrawingNativePointTestSetUp();
@@ -454,6 +326,123 @@ int TestPointSetMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
+int TestPointNegateNormal()
+{
+    DrawingNativePointTestSetUp();
+    OH_Drawing_Point *point = OH_Drawing_PointCreate(10.0f, 10.0f);
+    EXPECT_NE(point, nullptr);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_PointNegate(point);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    float x = 0;
+    float y = 0;
+    OH_Drawing_PointGetX(point, &x);
+    OH_Drawing_PointGetY(point, &y);
+    EXPECT_EQ(x, -10.0f);
+    EXPECT_EQ(y, -10.0f);
+    OH_Drawing_PointDestroy(point);
+    DrawingNativePointTestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestPointNegateNull()
+{
+    DrawingNativePointTestSetUp();
+    OH_Drawing_Point *point = OH_Drawing_PointCreate(10.0f, 10.0f);
+    EXPECT_NE(point, nullptr);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_PointNegate(nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    float x = 0;
+    float y = 0;
+    OH_Drawing_PointGetX(point, &x);
+    OH_Drawing_PointGetY(point, &y);
+    EXPECT_EQ(x, 10.0f);
+    EXPECT_EQ(y, 10.0f);
+    OH_Drawing_PointDestroy(point);
+    DrawingNativePointTestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestPointNegateMultipleCalls()
+{
+    DrawingNativePointTestSetUp();
+    OH_Drawing_Point *point = OH_Drawing_PointCreate(10.0f, 10.0f);
+    EXPECT_NE(point, nullptr);
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_PointNegate(point);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    }
+    OH_Drawing_PointDestroy(point);
+    DrawingNativePointTestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestPointOffsetNormal()
+{
+    DrawingNativePointTestSetUp();
+    OH_Drawing_Point *point = OH_Drawing_PointCreate(10.0f, 10.0f);
+    EXPECT_NE(point, nullptr);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_PointOffset(point, 10.0f, 10.0f);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    float x = 0;
+    float y = 0;
+    OH_Drawing_PointGetX(point, &x);
+    OH_Drawing_PointGetY(point, &y);
+    EXPECT_EQ(x, 20.0f);
+    EXPECT_EQ(y, 20.0f);
+    OH_Drawing_PointDestroy(point);
+    DrawingNativePointTestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestPointOffsetNull()
+{
+    DrawingNativePointTestSetUp();
+    OH_Drawing_Point *point = OH_Drawing_PointCreate(10.0f, 10.0f);
+    EXPECT_NE(point, nullptr);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_PointOffset(nullptr, 10.0f, 10.0f);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    float x = 0;
+    float y = 0;
+    OH_Drawing_PointGetX(point, &x);
+    OH_Drawing_PointGetY(point, &y);
+    EXPECT_EQ(x, 10.0f);
+    EXPECT_EQ(y, 10.0f);
+    errorCode = OH_Drawing_PointOffset(point, 0, 10.0f);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    OH_Drawing_PointGetX(point, &x);
+    OH_Drawing_PointGetY(point, &y);
+    EXPECT_EQ(x, 10.0f);
+    EXPECT_EQ(y, 20.0f);
+    errorCode = OH_Drawing_PointOffset(point, 10.0f, 0);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    OH_Drawing_PointGetX(point, &x);
+    OH_Drawing_PointGetY(point, &y);
+    EXPECT_EQ(x, 20.0f);
+    EXPECT_EQ(y, 20.0f);
+    OH_Drawing_PointDestroy(point);
+    DrawingNativePointTestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestPointOffsetMultipleCalls()
+{
+    DrawingNativePointTestSetUp();
+    OH_Drawing_Point *point = OH_Drawing_PointCreate(10.0f, 10.0f);
+    EXPECT_NE(point, nullptr);
+    float x = 0;
+    float y = 0;
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_PointOffset(point, 10.0f, 10.0f);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        OH_Drawing_PointGetX(point, &x);
+        OH_Drawing_PointGetY(point, &y);
+        EXPECT_EQ(x, 20.0f + i * 10.0f);
+        EXPECT_EQ(y, 20.0f + i * 10.0f);
+    }
+    OH_Drawing_PointDestroy(point);
+    DrawingNativePointTestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
 } // namespace Drawing
 } // namespace Rosen
 } // namespace OHOS

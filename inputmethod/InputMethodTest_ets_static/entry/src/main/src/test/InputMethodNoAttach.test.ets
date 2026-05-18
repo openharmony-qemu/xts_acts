@@ -160,7 +160,8 @@ export default function inputMethodNoAttachTest() {
                 left: 100.0,
                 top: 200.0,
                 width: 10.0,
-                height: 20.0
+                height: 20.0,
+                displayId: 0
             };
             try {
                 await inputMethodCtrl.updateCursor(cursorInfo);

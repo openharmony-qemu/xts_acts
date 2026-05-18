@@ -18,10 +18,18 @@ import ListScrollApiTest from './ListScrollApiTest/ListScrollApi.test';
 import ListItemSwipeManagerTest from './ListItemSwipeManagerTest/ListItemSwipeManager.test';
 import ScrollBarAttributeTest from './ScrollBarAttributeTest/ScrollBarAttribute.test';
 import ScrollScrollableChainTest from './ScrollScrollableChainTest/ScrollScrollableChain.test';
+import getFrameNodeScroller from './FrameNode/getFrameNodeScroller.test';
+import onVisibleIndexesChangeTest from './LazyVGridLayout/onVisibleIndexesChangeTest.test';
+import waterFlowEmptyLazy from './WaterFlow/waterFlowEmptyLazy.test';
+import scrollPropertiesTest from './scrollTest/scrollPropertiesTest.test';
 
 export default function testsuite() {
   ListScrollApiTest();
   ListItemSwipeManagerTest();
   ScrollBarAttributeTest();
   ScrollScrollableChainTest();
+  getFrameNodeScroller()
+  onVisibleIndexesChangeTest();
+  waterFlowEmptyLazy();
+  scrollPropertiesTest();
 }

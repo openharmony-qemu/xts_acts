@@ -655,17 +655,147 @@ export default function arkuiNativeCapiUiInputEvent() {
       done()
     })
 
-    /**
+/**
      * @tc.number  TestArkUICapi_500
      * @tc.name    TestArkUICapi_500
-     * @tc.desc    Case: TestArkUICapi_500. API: OH_ArkUI_DigitalCrownEvent_SetStopPropagation, ArkUI_UIInputEvent.
-     *             Note: non-ASCII details are in the workbook and native C++ comments
+     * @tc.desc    Case: TestArkUICapi_500. API: OH_ArkUI_DigitalCrownEvent_SetStopPropagation, ArkUI_UIInputEvent. Note:
+     *             non-ASCII details are in the workbook and native C++ comments
      * @tc.type    FUNCTION
      * @tc.level   LEVEL1
      * @tc.size    MEDIUMTEST
      */
     it('TestArkUICapi_500', Level.LEVEL1, async (done: Function) => {
       expect(arkuiCapiTest.TestArkUICapi_500()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_ArkUI_NativeAPI_ClonedEvent_SetSourceType_0100
+     * @tc.name    TestArkUICapi_501
+     * @tc.desc    OH_ArkUI_ClonedEvent_SetSourceType with ARKUI_SOURCE_TYPE_TOUCH (1) test.
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     */
+    it('TestArkUICapi_501', Level.LEVEL1, async (done: Function) => {
+      expect(arkuiCapiTest.TestArkUICapi_501()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_ArkUI_NativeAPI_ClonedEvent_SetSourceType_0200
+     * @tc.name    TestArkUICapi_502
+     * @tc.desc    OH_ArkUI_ClonedEvent_SetSourceType with ARKUI_SOURCE_TYPE_MOUSE (2) test.
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     */
+    it('TestArkUICapi_502', Level.LEVEL1, async (done: Function) => {
+      expect(arkuiCapiTest.TestArkUICapi_502()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_ArkUI_NativeAPI_ClonedEvent_SetSourceType_0300
+     * @tc.name    TestArkUICapi_503
+     * @tc.desc    OH_ArkUI_ClonedEvent_SetSourceType with ARKUI_SOURCE_TYPE_KEYBOARD (3) test.
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     */
+    it('TestArkUICapi_503', Level.LEVEL1, async (done: Function) => {
+      expect(arkuiCapiTest.TestArkUICapi_503()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_ArkUI_NativeAPI_ClonedEvent_SetSourceType_0400
+     * @tc.name    TestArkUICapi_504
+     * @tc.desc    OH_ArkUI_ClonedEvent_SetSourceType with ARKUI_SOURCE_TYPE_TOUCHPAD (4) test.
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     */
+    it('TestArkUICapi_504', Level.LEVEL1, async (done: Function) => {
+      expect(arkuiCapiTest.TestArkUICapi_504()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_ArkUI_NativeAPI_ClonedEvent_SetSourceType_0500
+     * @tc.name    TestArkUICapi_505
+     * @tc.desc    OH_ArkUI_ClonedEvent_SetSourceType with ARKUI_SOURCE_TYPE_JOYSTICK (5) test.
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     */
+    it('TestArkUICapi_505', Level.LEVEL1, async (done: Function) => {
+      expect(arkuiCapiTest.TestArkUICapi_505()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_ArkUI_NativeAPI_ClonedEvent_SetToolType_0100
+     * @tc.name    TestArkUICapi_508
+     * @tc.desc    OH_ArkUI_ClonedEvent_SetToolType with ARKUI_TOOL_TYPE_FINGER (1) test.
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     */
+    it('TestArkUICapi_508', Level.LEVEL1, async (done: Function) => {
+      expect(arkuiCapiTest.TestArkUICapi_508()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_ArkUI_NativeAPI_ClonedEvent_SetToolType_0200
+     * @tc.name    TestArkUICapi_509
+     * @tc.desc    OH_ArkUI_ClonedEvent_SetToolType with ARKUI_TOOL_TYPE_PEN (2) test.
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     */
+    it('TestArkUICapi_509', Level.LEVEL1, async (done: Function) => {
+      expect(arkuiCapiTest.TestArkUICapi_509()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_ArkUI_NativeAPI_ClonedEvent_SetToolType_0300
+     * @tc.name    TestArkUICapi_510
+     * @tc.desc    OH_ArkUI_ClonedEvent_SetToolType with ARKUI_TOOL_TYPE_MOUSE (3) test.
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     */
+    it('TestArkUICapi_510', Level.LEVEL1, async (done: Function) => {
+      expect(arkuiCapiTest.TestArkUICapi_510()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_ArkUI_NativeAPI_ClonedEvent_SetToolType_0400
+     * @tc.name    TestArkUICapi_511
+     * @tc.desc    OH_ArkUI_ClonedEvent_SetToolType with ARKUI_TOOL_TYPE_TOUCHPAD (4) test.
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     */
+    it('TestArkUICapi_511', Level.LEVEL1, async (done: Function) => {
+      expect(arkuiCapiTest.TestArkUICapi_511()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.number  SUB_ArkUI_NativeAPI_ClonedEvent_SetToolType_0500
+     * @tc.name    TestArkUICapi_512
+     * @tc.desc    OH_ArkUI_ClonedEvent_SetToolType with ARKUI_TOOL_TYPE_JOYSTICK (5) test.
+     * @tc.type    FUNCTION
+     * @tc.level   LEVEL1
+     * @tc.size    MEDIUMTEST
+     */
+    it('TestArkUICapi_512', Level.LEVEL1, async (done: Function) => {
+      expect(arkuiCapiTest.TestArkUICapi_512()).assertEqual(0)
       done()
     })
 

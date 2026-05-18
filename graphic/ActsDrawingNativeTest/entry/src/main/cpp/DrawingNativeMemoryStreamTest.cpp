@@ -36,14 +36,6 @@ void DrawingNativeMemoryStreamTestTearDown()
     std::cout << "DrawingNativeMemoryStreamTest errorCodeReset after each test case." << std::endl;
 }
 
-/**
- * @tc.name   testMemoryStreamCreateNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MEMORY_STREAM_0100
- * @tc.desc   Test for creating memory stream with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestMemoryStreamCreateNormal()
 {
     DrawingNativeMemoryStreamTestSetUp();
@@ -66,14 +58,6 @@ int TestMemoryStreamCreateNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testMemoryStreamCreateNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MEMORY_STREAM_0101
- * @tc.desc   Test for creating memory stream with NULL or invalid parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestMemoryStreamCreateNull()
 {
     DrawingNativeMemoryStreamTestSetUp();
@@ -93,14 +77,6 @@ int TestMemoryStreamCreateNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testMemoryStreamCreateAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MEMORY_STREAM_0102
- * @tc.desc   Test for creating memory stream with abnormal parameters (negative values).
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestMemoryStreamCreateAbnormal()
 {
     DrawingNativeMemoryStreamTestSetUp();
@@ -116,14 +92,6 @@ int TestMemoryStreamCreateAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testMemoryStreamCreateMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MEMORY_STREAM_0103
- * @tc.desc   Test for creating memory stream with multiple calls using different data segments.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestMemoryStreamCreateMultipleCalls()
 {
     DrawingNativeMemoryStreamTestSetUp();

@@ -55,33 +55,6 @@ export default function actslocationTest() {
     hilog.info(domain, tag, '%{public}s', 'describe start');
     beforeAll(async () => {
       await changedLocationMode()
-      let isWifiActive: boolean = wifiMg.isWifiActive() as boolean
-      if (!isWifiActive) {
-        console.info("======> wifi_test/enable wifi: false");
-      }
-
-      try {
-        let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
-        console.info("======> Internet WifiLinkedInfo : " + JSON.stringify(data));
-        console.info("======> Internet speed : " + JSON.stringify(data.linkSpeed));
-        console.info("======> Internet chload : " + JSON.stringify(data.chload));
-        console.info("======> Internet rssi : " + JSON.stringify(data.rssi));
-
-        if (data.connState == wifiMg.ConnState.CONNECTED) {
-          console.info("======> WLAN connection established ");
-        } else {
-          expect().message("======> WLAN Network error").assertFail();
-
-        }
-        if (data.chload >= 900 || data.rssi <= -80) {
-          expect().message("======> WLAN Network error").assertFail();
-        } else if (data.chload >= 500) {
-          console.info("======> The internet connection is poor. ");
-        }
-      } catch (err) {
-        console.info("======> getLinkedInfo promise failed, err :" + JSON.stringify(err));
-        throw (err as Error);
-      }
       hilog.info(domain, tag, 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       hilog.info(domain, tag, 'beforeAll AbilityDelegator');
@@ -108,18 +81,40 @@ export default function actslocationTest() {
       await Utils.msSleep(2000);
       await Utils.clickRequestPermission('仅使用期间允许');
       await Utils.clickRequestPermission('始终允许');
+      await Utils.msSleep(1000);
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
     })
 
     beforeEach(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeEach start');
-      try {
-        //await Utils.openBluetooth();
-        hilog.info(domain, tag, '%{public}s', 'beforeEach end');
-      } catch (err) {
-        err = err as BusinessError;
-        hilog.error(domain, tag, '%{public}s', 'beforeEach get failed, err: ' + err);
+      let  isWifiActive : boolean = wifiMg.isWifiActive() as boolean
+      if(!isWifiActive){
+        console.info("======> wifi_test/enable wifi: false" );
       }
+
+      try {
+        let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
+        console.info("======> Internet WifiLinkedInfo : " + JSON.stringify(data));
+        console.info("======> Internet speed : " + JSON.stringify(data.linkSpeed));
+        console.info("======> Internet chload : " + JSON.stringify(data.chload));
+        console.info("======> Internet rssi : " + JSON.stringify(data.rssi));
+
+        if (data.connState == wifiMg.ConnState.CONNECTED) {
+          console.info("======> WLAN connection established ");
+        } else {
+          expect().message("======> WLAN Network error").assertFail();
+
+        }
+        if (data.chload >= 900 || data.rssi <= -80) {
+          expect().message("======> WLAN Network error").assertFail();
+        } else if (data.chload >= 500) {
+          console.info("======> The internet connection is poor. ");
+        }
+      } catch (err) {
+        console.info("======> getLinkedInfo promise failed, err :" + JSON.stringify(err));
+        throw (err as Error);
+      }
+      hilog.info(domain, tag, '%{public}s', 'beforeEach end');
     })
 
 
@@ -647,7 +642,11 @@ export default function actslocationTest() {
         }
         if (err !== null && err !== undefined) {
           console.info('SUB_geolocation_getCachedGnssLocationsSize_test_0200 getCachedGnssLocationsSize: err=' + err.code + ', type:' + typeof err);
-          expect(err.code).assertEqual(3301100);
+          if (err.code === 3301100) {
+            expect(err.code).assertEqual(3301100);
+          } else {
+            expect(err.code).assertEqual(801);
+          }
         }
       });
     } catch (err) {
@@ -713,7 +712,11 @@ export default function actslocationTest() {
       geoLocationManager.flushCachedGnssLocations((err) => {
         if (err) {
           console.info('SUB_geolocation_flushCachedGnssLocations_test_0200 flushCachedGnssLocations: err.code=' + err.code);
-          expect(err.code).assertEqual(3301100);
+          if (err.code === 3301100) {
+            expect(err.code).assertEqual(3301100);
+          } else {
+            expect(err.code).assertEqual(801);
+          }
         } else {
           expect(err === undefined).assertTrue();
         }

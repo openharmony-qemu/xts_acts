@@ -27,7 +27,7 @@ export default function calendarPickerOnChangeTest() {
 
   describe('CalendarPickerOnChangeTest', () => {
     let PAGE_TAG = 'CalendarPickerOnChangeTest';
-    waitForCompletion(async ()=>{await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_testwearcrop.static", "EntryAbility")})
+    UtilsTest.startAbility("com.openharmony.arkui_capi_xts_testwearcrop.static", "EntryAbility").awaitSync()
     const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!
 
     beforeAll(async (): Promise<void> => {
@@ -48,7 +48,7 @@ export default function calendarPickerOnChangeTest() {
       console.log('Utils.getComponentRect start')
       let Rect = Utils.getComponentRect('calendarPickerOnChangeTest')
       console.log('Utils.getComponentRect end')
-      Utils.clickLocation(Math.round((AppStorage.get<number>('winLeft')!).toDouble() + Rect.right - uiContext.vp2px(5)).toInt(),
+      await Utils.clickLocation(Math.round((AppStorage.get<number>('winLeft')!).toDouble() + Rect.right - uiContext.vp2px(5)).toInt(),
         Math.round((AppStorage.get<number>('winTop')!).toDouble() + Rect.bottom - uiContext.vp2px(5)).toInt())
       await Utils.sleep(2000)
       expect(Utils.getComponentInfoByKey('calendarPickerOnChangeTest')

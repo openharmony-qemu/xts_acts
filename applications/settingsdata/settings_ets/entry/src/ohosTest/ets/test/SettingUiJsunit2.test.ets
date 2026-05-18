@@ -45,6 +45,14 @@ function isDevicePC(): boolean {
   return deviceType === '2in1';
 }
 
+function isDevicewearable(): boolean {
+  return deviceType === 'wearable';
+}
+
+function isDeviceSupportDoubleClick(): boolean {
+  return isDevicewearable();
+}
+
 function isDeviceSupportInputMethod(): boolean {
   return isDevicePhone() || isDeviceTablet();
 }
@@ -67,6 +75,14 @@ function isDeviceSupportNfc(): boolean {
   return (isDevicePhone() || isDeviceTablet()) &&
     getBoolSystemParam('const.SystemCapability.Communication.NFC.Core', false) &&
     !getBoolSystemParam('const.nfc.not_support', false);
+}
+
+function isDeviceSupportAboutDevice(): boolean {
+  return isDevicePhone() || isDeviceTablet() || isDevicePC();
+}
+
+function isDeviceSupportAppDetail(): boolean {
+  return isDevicePhone() || isDeviceTablet() || isDevicePC();
 }
 
 function isDeviceSupportBiometrics(): boolean {
@@ -4574,5 +4590,507 @@ export default function settingUiJsunit() {
         expect(code).assertEqual(0);
         done();
       });
+
+      /**
+     * @tc.name   SUB_Applications_Settings_openAboutDeviceSettingsPage_invalid_context_0100
+     * @tc.number SUB_Applications_Settings_openAboutDeviceSettingsPage_invalid_context_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Applications_Settings_openAboutDeviceSettingsPage_invalid_context_0100',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: Function) => {
+      if (!isDeviceSupportAboutDevice()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openAboutDeviceSettingsPage(null);
+      } catch (err) {
+        console.error("[openAboutDeviceSettingsPage_invalid_context] error = " + err);
+        code = err?.code;
+      }
+      expect(code).assertEqual(16900010);
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openAboutDeviceSettingsPage_invalid_context_undefined_0200
+   * @tc.number SUB_Applications_Settings_openAboutDeviceSettingsPage_invalid_context_undefined_0200
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openAboutDeviceSettingsPage_invalid_context_undefined_0200',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: Function) => {
+      if (!isDeviceSupportAboutDevice()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openAboutDeviceSettingsPage(undefined);
+      } catch (err) {
+        console.error("[openAboutDeviceSettingsPage_invalid_context_undefined] error = " + err);
+        code = err?.code;
+      }
+      expect(code).assertEqual(16900010);
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openAboutDeviceSettingsPage_invalid_context_applicationContext_0300
+   * @tc.number SUB_Applications_Settings_openAboutDeviceSettingsPage_invalid_context_applicationContext_0300
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openAboutDeviceSettingsPage_invalid_context_applicationContext_0300',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: Function) => {
+      if (!isDeviceSupportAboutDevice()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openAboutDeviceSettingsPage(mContext?.getApplicationContext());
+      } catch (err) {
+        console.error("[openAboutDeviceSettingsPage_invalid_context_applicationContext] error = " + err);
+        code = err?.code;
+      }
+      expect(code).assertEqual(16900010);
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openAboutDeviceSettingsPage_valid_param_0400
+   * @tc.number SUB_Applications_Settings_openAboutDeviceSettingsPage_valid_param_0400
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openAboutDeviceSettingsPage_valid_param_0400',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: Function) => {
+      if (!isDeviceSupportAboutDevice()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openAboutDeviceSettingsPage(mContext);
+        expect(code).assertEqual(0);
+      } catch (err) {
+        console.error("[openAboutDeviceSettingsPage_valid_param] error = " + err);
+        code = err?.code;
+        expect(code).assertEqual(16900020);
+      }
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openAppDetailSettingsPage_invalid_context_0100
+   * @tc.number SUB_Applications_Settings_openAppDetailSettingsPage_invalid_context_0100
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openAppDetailSettingsPage_invalid_context_0100',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: Function) => {
+      if (!isDeviceSupportAppDetail()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openAppDetailSettingsPage(null, 'com.example', 0);
+      } catch (err) {
+        console.error("[openAppDetailSettingsPage_invalid_context] error = " + err);
+        code = err?.code;
+      }
+      expect(code).assertEqual(16900010);
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openAppDetailSettingsPage_invalid_context_undefined_0200
+   * @tc.number SUB_Applications_Settings_openAppDetailSettingsPage_invalid_context_undefined_0200
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openAppDetailSettingsPage_invalid_context_undefined_0200',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: Function) => {
+      if (!isDeviceSupportAppDetail()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openAppDetailSettingsPage(undefined, 'com.example', 0);
+      } catch (err) {
+        console.error("[openAppDetailSettingsPage_invalid_context_undefined] error = " + err);
+        code = err?.code;
+      }
+      expect(code).assertEqual(16900010);
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openAppDetailSettingsPage_invalid_context_applicationContext_0300
+   * @tc.number SUB_Applications_Settings_openAppDetailSettingsPage_invalid_context_applicationContext_0300
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openAppDetailSettingsPage_invalid_context_applicationContext_0300',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: Function) => {
+      if (!isDeviceSupportAppDetail()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openAppDetailSettingsPage(mContext?.getApplicationContext(), 'com.example', 0);
+      } catch (err) {
+        console.error("[openAppDetailSettingsPage_invalid_context_applicationContext] error = " + err);
+        code = err?.code;
+      }
+      expect(code).assertEqual(16900010);
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openAppDetailSettingsPage_invalid_bundleName_0400
+   * @tc.number SUB_Applications_Settings_openAppDetailSettingsPage_invalid_bundleName_0400
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openAppDetailSettingsPage_invalid_bundleName_0400',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: Function) => {
+      if (!isDeviceSupportAppDetail()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openAppDetailSettingsPage(mContext, null, 0);
+      } catch (err) {
+        console.error("[openAppDetailSettingsPage_invalid_bundleName] error = " + err);
+        code = err?.code;
+      }
+      expect(code).assertEqual(16900010);
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openAppDetailSettingsPage_invalid_bundleName_empty_0500
+   * @tc.number SUB_Applications_Settings_openAppDetailSettingsPage_invalid_bundleName_empty_0500
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openAppDetailSettingsPage_invalid_bundleName_empty_0500',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: Function) => {
+      if (!isDeviceSupportAppDetail()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openAppDetailSettingsPage(mContext, '', 0);
+      } catch (err) {
+        console.error("[openAppDetailSettingsPage_invalid_bundleName_empty] error = " + err);
+        code = err?.code;
+      }
+      expect(code).assertEqual(16900010);
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openAppDetailSettingsPage_invalid_bundleName_undefined_0600
+   * @tc.number SUB_Applications_Settings_openAppDetailSettingsPage_invalid_bundleName_undefined_0600
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openAppDetailSettingsPage_invalid_bundleName_undefined_0600',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: Function) => {
+      if (!isDeviceSupportAppDetail()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openAppDetailSettingsPage(mContext, undefined, 0);
+      } catch (err) {
+        console.error("[openAppDetailSettingsPage_invalid_bundleName_undefined] error = " + err);
+        code = err?.code;
+      }
+      expect(code).assertEqual(16900010);
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openAppDetailSettingsPage_valid_appIndex_0700
+   * @tc.number SUB_Applications_Settings_openAppDetailSettingsPage_valid_appIndex_0700
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openAppDetailSettingsPage_valid_appIndex_0700',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: Function) => {
+      if (!isDeviceSupportAppDetail()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openAppDetailSettingsPage(mContext, 'com.example', null);
+        expect(code).assertEqual(0);
+      } catch (err) {
+        console.error("[openAppDetailSettingsPage_valid_appIndex] error = " + err);
+        code = err?.code;
+        expect(code).assertEqual(16900020);
+      }
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openAppDetailSettingsPage_valid_appIndex_undefined_0800
+   * @tc.number SUB_Applications_Settings_openAppDetailSettingsPage_valid_appIndex_undefined_0800
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openAppDetailSettingsPage_valid_appIndex_undefined_0800',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: Function) => {
+      if (!isDeviceSupportAppDetail()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openAppDetailSettingsPage(mContext, 'com.example', undefined);
+        expect(code).assertEqual(0);
+      } catch (err) {
+        console.error("[openAppDetailSettingsPage_valid_appIndex_undefined] error = " + err);
+        code = err?.code;
+        expect(code).assertEqual(16900020);
+      }
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openAppDetailSettingsPage_valid_param_0900
+   * @tc.number SUB_Applications_Settings_openAppDetailSettingsPage_valid_param_0900
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openAppDetailSettingsPage_valid_param_0900',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: Function) => {
+      if (!isDeviceSupportAppDetail()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openAppDetailSettingsPage(mContext, 'com.example');
+        expect(code).assertEqual(0);
+      } catch (err) {
+        console.error("[openAppDetailSettingsPage_valid_param] error = " + err);
+        code = err?.code;
+        expect(code).assertEqual(16900020);
+      }
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openAppDetailSettingsPage_valid_param_1000
+   * @tc.number SUB_Applications_Settings_openAppDetailSettingsPage_valid_param_1000
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openAppDetailSettingsPage_valid_param_1000',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: Function) => {
+      if (!isDeviceSupportAppDetail()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openAppDetailSettingsPage(mContext, 'com.example', 0);
+        expect(code).assertEqual(0);
+      } catch (err) {
+        console.error("[openAppDetailSettingsPage_valid_param] error = " + err);
+        code = err?.code;
+        expect(code).assertEqual(16900020);
+      }
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_0100
+   * @tc.number SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_0100
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_0100',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: Function) => {
+      if (!isDeviceSupportDoubleClick()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openDoubleClickSettingsPage(null);
+      } catch (err) {
+        console.error("[openDoubleClickSettingsPage_invalid_context] error = " + err);
+        code = err?.code;
+      }
+      expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_undefined_0200
+   * @tc.number SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_undefined_0200
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_undefined_0200',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: Function) => {
+      if (!isDeviceSupportDoubleClick()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openDoubleClickSettingsPage(undefined);
+      } catch (err) {
+        console.error("[openDoubleClickSettingsPage_invalid_context_undefined] error = " + err);
+        code = err?.code;
+      }
+      expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_applicationContext_0300
+   * @tc.number SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_applicationContext_0300
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_applicationContext_0300',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: Function) => {
+      if (!isDeviceSupportDoubleClick()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openDoubleClickSettingsPage(mContext?.getApplicationContext());
+      } catch (err) {
+        console.error("[openDoubleClickSettingsPage_invalid_context_applicationContext] error = " + err);
+        code = err?.code;
+      }
+      expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openDoubleClickSettingsPage_valid_param_0400
+   * @tc.number SUB_Applications_Settings_openDoubleClickSettingsPage_valid_param_0400
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openDoubleClickSettingsPage_valid_param_0400',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: Function) => {
+      if (!isDeviceSupportDoubleClick()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openDoubleClickSettingsPage(mContext);
+        expect(code).assertEqual(0);
+      } catch (err) {
+        console.error("[openDoubleClickSettingsPage_valid_param] error = " + err);
+        code = err?.code;
+        expect(code).assertEqual(16900020);
+      }
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_isDoubleClickAppForSelf_false_return_0100
+   * @tc.number SUB_Applications_Settings_isDoubleClickAppForSelf_false_return_0100
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_isDoubleClickAppForSelf_false_return_0100',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: Function) => {
+      if (!isDeviceSupportDoubleClick()) {
+        done();
+        return;
+      }
+      let re = false;
+      let code = 0;
+      try {
+        re = await settings.isDoubleClickAppForSelf();
+        expect(re).assertEqual(false);
+      } catch (err) {
+        console.error("[isDoubleClickAppForSelf_false_return] error = " + err);
+        expect(code).assertEqual(0);
+      }
+      done();
+    });
+
   })
 }

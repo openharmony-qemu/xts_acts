@@ -45,14 +45,6 @@ void DrawingNativeImageFilterTestTearDown()
     std::cout << "DrawingNativeImageFilterTest errorCodeReset after each test case." << std::endl;
 }
 
-/**
- * @tc.name   testImageFilterCreateBlurNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0100
- * @tc.desc   Test for creating a blur image filter with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestImageFilterCreateBlurNormal()
 {
     DrawingNativeImageFilterTestSetUp();
@@ -87,14 +79,6 @@ int TestImageFilterCreateBlurNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageFilterCreateBlurNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0101
- * @tc.desc   Test for creating a blur image filter with NULL parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestImageFilterCreateBlurNULL()
 {
     DrawingNativeImageFilterTestSetUp();
@@ -113,14 +97,6 @@ int TestImageFilterCreateBlurNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageFilterCreateBlurMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0102
- * @tc.desc   Test for multiple calls of creating a blur image filter.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestImageFilterCreateBlurMultipleCalls()
 {
     DrawingNativeImageFilterTestSetUp();
@@ -141,14 +117,6 @@ int TestImageFilterCreateBlurMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageFilterCreateBlurAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0103
- * @tc.desc   Test for creating a blur image filter with abnormal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestImageFilterCreateBlurAbnormal()
 {
     DrawingNativeImageFilterTestSetUp();
@@ -163,14 +131,6 @@ int TestImageFilterCreateBlurAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageFilterCreateBlurMaximum
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0104
- * @tc.desc   Test for creating a blur image filter with maximum values.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestImageFilterCreateBlurMaximum()
 {
     DrawingNativeImageFilterTestSetUp();
@@ -185,14 +145,6 @@ int TestImageFilterCreateBlurMaximum()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageFilterCreateFromColorFilterNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_NUMBER_200
- * @tc.desc   Test for creating an image filter from a color filter with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestImageFilterCreateFromColorFilterNormal()
 {
     DrawingNativeImageFilterTestSetUp();
@@ -225,14 +177,6 @@ int TestImageFilterCreateFromColorFilterNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageFilterCreateFromColorFilterNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0201
- * @tc.desc   Test for creating an image filter from a color filter with NULL parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestImageFilterCreateFromColorFilterNULL()
 {
     DrawingNativeImageFilterTestSetUp();
@@ -250,14 +194,6 @@ int TestImageFilterCreateFromColorFilterNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageFilterCreateFromColorFilterMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0202
- * @tc.desc   Test for multiple calls of creating an image filter from a color filter.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestImageFilterCreateFromColorFilterMultipleCalls()
 {
     DrawingNativeImageFilterTestSetUp();
@@ -276,14 +212,6 @@ int TestImageFilterCreateFromColorFilterMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageFilterDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0300
- * @tc.desc   Test for destroying an image filter with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestImageFilterDestroyNormal()
 {
     DrawingNativeImageFilterTestSetUp();
@@ -296,14 +224,6 @@ int TestImageFilterDestroyNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageFilterDestroyNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0301
- * @tc.desc   Test for destroying an image filter with NULL parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestImageFilterDestroyNULL()
 {
     DrawingNativeImageFilterTestSetUp();
@@ -314,14 +234,6 @@ int TestImageFilterDestroyNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageFilterDestroyMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0302
- * @tc.desc   Test for multiple calls of destroying an image filter.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestImageFilterDestroyMultipleCalls()
 {
     DrawingNativeImageFilterTestSetUp();
@@ -353,14 +265,6 @@ int TestImageFilterDestroyMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageFilterCreateOffsetNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0400
- * @tc.desc   test for testImageFilterCreateOffsetNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestImageFilterCreateOffsetNormal()
 {
     DrawingNativeImageFilterTestSetUp();
@@ -379,14 +283,6 @@ int TestImageFilterCreateOffsetNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageFilterCreateOffsetNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0401
- * @tc.desc   test for testImageFilterCreateOffsetNULL.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestImageFilterCreateOffsetNULL()
 {
     DrawingNativeImageFilterTestSetUp();
@@ -415,14 +311,6 @@ int TestImageFilterCreateOffsetNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageFilterCreateOffsetAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0402
- * @tc.desc   test for testImageFilterCreateOffsetAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestImageFilterCreateOffsetAbnormal()
 {
     DrawingNativeImageFilterTestSetUp();
@@ -454,14 +342,6 @@ int TestImageFilterCreateOffsetAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageFilterCreateOffsetMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0403
- * @tc.desc   test for testImageFilterCreateOffsetMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestImageFilterCreateOffsetMultipleCalls()
 {
     DrawingNativeImageFilterTestSetUp();
@@ -482,14 +362,6 @@ int TestImageFilterCreateOffsetMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageFilterCreateFromShderEffectNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0500
- * @tc.desc   test for testImageFilterCreateFromShderEffectNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestImageFilterCreateFromShderEffectNormal()
 {
     DrawingNativeImageFilterTestSetUp();
@@ -506,14 +378,6 @@ int TestImageFilterCreateFromShderEffectNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageFilterCreateFromShderEffectNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0501
- * @tc.desc   test for testImageFilterCreateFromShderEffectNULL.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestImageFilterCreateFromShderEffectNULL()
 {
     DrawingNativeImageFilterTestSetUp();
@@ -526,14 +390,6 @@ int TestImageFilterCreateFromShderEffectNULL()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageFilterCreateFromShderEffectMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0502
- * @tc.desc   test for testImageFilterCreateFromShderEffectMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestImageFilterCreateFromShderEffectMultipleCalls()
 {
     DrawingNativeImageFilterTestSetUp();
@@ -552,14 +408,6 @@ int TestImageFilterCreateFromShderEffectMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageFilterCreateBlurWithCropNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0600
- * @tc.desc   test for testImageFilterCreateBlurWithCropNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestImageFilterCreateBlurWithCropNormal()
 {
     DrawingNativeImageFilterTestSetUp();
@@ -580,14 +428,6 @@ int TestImageFilterCreateBlurWithCropNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageFilterCreateBlurWithCropNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0601
- * @tc.desc   test for testImageFilterCreateBlurWithCropNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestImageFilterCreateBlurWithCropNull()
 {
     DrawingNativeImageFilterTestSetUp();
@@ -620,14 +460,6 @@ int TestImageFilterCreateBlurWithCropNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testImageFilterCreateBlurWithCropMultiCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0602
- * @tc.desc   test for testImageFilterCreateBlurWithCropMultiCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestImageFilterCreateBlurWithCropMultiCalls()
 {
     DrawingNativeImageFilterTestSetUp();

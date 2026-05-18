@@ -38,10 +38,10 @@ let validImagePngExt = ['.png']
 
 export async function driveFn() {
   let dr = Driver.create();
-  let power = await dr.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
-  if (power != null) {
-    await power.click();
-  }
+  let power1 = await dr.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
+  let power2 = await dr.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), 500);
+  await power1?.click();
+  await power2?.click();
 }
 
 export function sleep(ms: int): Promise<int> {
@@ -133,6 +133,7 @@ export function photoFetchOption(testNum: string, key: string, value: string | n
       'thumb_size',
       photoAccessHelper.PhotoKeys.DETAIL_TIME,
       photoAccessHelper.PhotoKeys.DATE_TAKEN_MS,
+      photoAccessHelper.PhotoKeys.LOCAL_ASSET_SIZE,
       'all_exif'),
     predicates: predicates
   };

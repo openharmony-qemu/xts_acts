@@ -257,19 +257,23 @@ static napi_value TestDocumentRead_ValidParam(napi_env env, napi_callback_info i
     uint8_t buffer[BUF_SIZE] = {0};
     size_t readSize = 0;
     ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateDocumentByOEid(oeid, &document);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_OK) {
+    OH_LOG_INFO(LOG_APP, "TestDocumentRead_ValidParam create document code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    if (document == nullptr) {
         napi_value result;
         napi_create_int32(env, -1, &result);
         return result;
     }
-    if (document != nullptr) {
-        code = OH_ContentEmbed_Document_Read(buffer, BUF_SIZE, document, 0, &readSize);
-        OH_LOG_INFO(LOG_APP, "TestDocumentRead_ValidParam failed code: %{public}d", code);
-        if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_STORAGE_OPERATION_FAILED) {
-            napi_value result;
-            napi_create_int32(env, code, &result);
-            return result;
-        }
+    code = OH_ContentEmbed_Document_Read(buffer, BUF_SIZE, document, 0, &readSize);
+    OH_LOG_INFO(LOG_APP, "TestDocumentRead_ValidParam failed code: %{public}d", code);
+    if (code == CE_ERR_STORAGE_OPERATION_FAILED) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
     }
     napi_value result;
     napi_create_int32(env, -1, &result);
@@ -312,19 +316,23 @@ static napi_value TestDocumentGetOEid_ValidParam(napi_env env, napi_callback_inf
     ContentEmbed_Document *document = nullptr;
     char oeidOut[BUF_SIZE] = {0};
     ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateDocumentByOEid(oeid, &document);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_OK) {
+    OH_LOG_INFO(LOG_APP, "TestDocumentGetOEid_ValidParam create document code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    if (document == nullptr) {
         napi_value result;
         napi_create_int32(env, -1, &result);
         return result;
     }
-    if (document != nullptr) {
-        code = OH_ContentEmbed_Document_GetOEid(document, oeidOut);
-        OH_LOG_INFO(LOG_APP, "TestDocumentGetOEid_ValidParam failed code: %{public}d", code);
-        if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_OK) {
-            napi_value result;
-            napi_create_int32(env, code, &result);
-            return result;
-        }
+    code = OH_ContentEmbed_Document_GetOEid(document, oeidOut);
+    OH_LOG_INFO(LOG_APP, "TestDocumentGetOEid_ValidParam failed code: %{public}d", code);
+    if (code == CE_ERR_OK) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
     }
     napi_value result;
     napi_create_int32(env, -1, &result);
@@ -367,19 +375,23 @@ static napi_value TestDocumentIsLinking_ValidParam(napi_env env, napi_callback_i
     ContentEmbed_Document *document = nullptr;
     bool isLinking = false;
     ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateDocumentByOEid(oeid, &document);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_OK) {
+    OH_LOG_INFO(LOG_APP, "TestDocumentIsLinking_ValidParam create document code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    if (document == nullptr) {
         napi_value result;
         napi_create_int32(env, -1, &result);
         return result;
     }
-    if (document != nullptr) {
-        code = OH_ContentEmbed_Document_IsLinking(document, &isLinking);
-        OH_LOG_INFO(LOG_APP, "TestDocumentIsLinking_ValidParam failed code: %{public}d", code);
-        if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_OK) {
-            napi_value result;
-            napi_create_int32(env, code, &result);
-            return result;
-        }
+    code = OH_ContentEmbed_Document_IsLinking(document, &isLinking);
+    OH_LOG_INFO(LOG_APP, "TestDocumentIsLinking_ValidParam failed code: %{public}d", code);
+    if (code == CE_ERR_OK && !isLinking) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
     }
     napi_value result;
     napi_create_int32(env, -1, &result);
@@ -422,19 +434,23 @@ static napi_value TestDocumentGetNativeFilePath_ValidParam(napi_env env, napi_ca
     ContentEmbed_Document *document = nullptr;
     char nativeFilePath[BUF_SIZE] = {0};
     ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateDocumentByOEid(oeid, &document);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_OK) {
+    OH_LOG_INFO(LOG_APP, "TestDocumentGetNativeFilePath_ValidParam create document code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    if (document == nullptr) {
         napi_value result;
         napi_create_int32(env, -1, &result);
         return result;
     }
-    if (document != nullptr) {
-        code = OH_ContentEmbed_Document_GetNativeFilePath(document, nativeFilePath);
-        OH_LOG_INFO(LOG_APP, "TestDocumentGetNativeFilePath_ValidParam failed code: %{public}d", code);
-        if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_OK) {
-            napi_value result;
-            napi_create_int32(env, code, &result);
-            return result;
-        }
+    code = OH_ContentEmbed_Document_GetNativeFilePath(document, nativeFilePath);
+    OH_LOG_INFO(LOG_APP, "TestDocumentGetNativeFilePath_ValidParam failed code: %{public}d", code);
+    if (code == CE_ERR_OK) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
     }
     napi_value result;
     napi_create_int32(env, -1, &result);
@@ -477,19 +493,23 @@ static napi_value TestDocumentGetRootStorage_ValidParam(napi_env env, napi_callb
     ContentEmbed_Document *document = nullptr;
     ContentEmbed_Storage *storage = nullptr;
     ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateDocumentByOEid(oeid, &document);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_OK) {
+    OH_LOG_INFO(LOG_APP, "TestDocumentGetRootStorage_ValidParam create document code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    if (document == nullptr) {
         napi_value result;
         napi_create_int32(env, -1, &result);
         return result;
     }
-    if (document != nullptr) {
-        code = OH_ContentEmbed_Document_GetRootStorage(document, &storage);
-        OH_LOG_INFO(LOG_APP, "TestDocumentGetRootStorage_ValidParam failed code: %{public}d", code);
-        if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_OK) {
-            napi_value result;
-            napi_create_int32(env, code, &result);
-            return result;
-        }
+    code = OH_ContentEmbed_Document_GetRootStorage(document, &storage);
+    OH_LOG_INFO(LOG_APP, "TestDocumentGetRootStorage_ValidParam failed code: %{public}d", code);
+    if (code == CE_ERR_OK) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
     }
     napi_value result;
     napi_create_int32(env, -1, &result);
@@ -515,19 +535,22 @@ static napi_value TestDocumentFlush_ValidParam(napi_env env, napi_callback_info 
     char oeid[] = "000209FF-0000-0000-C000-000000000046";
     ContentEmbed_Document *document = nullptr;
     ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateDocumentByOEid(oeid, &document);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_OK) {
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    if (document == nullptr) {
         napi_value result;
         napi_create_int32(env, -1, &result);
         return result;
     }
-    if (document != nullptr) {
-        code = OH_ContentEmbed_Document_Flush(document);
-        OH_LOG_INFO(LOG_APP, "TestDocumentFlush_ValidParam failed code: %{public}d", code);
-        if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_FILE_OPERATION_FAILED) {
-            napi_value result;
-            napi_create_int32(env, code, &result);
-            return result;
-        }
+    code = OH_ContentEmbed_Document_Flush(document);
+    OH_LOG_INFO(LOG_APP, "TestDocumentFlush_ValidParam failed code: %{public}d", code);
+    if (code == CE_ERR_FILE_OPERATION_FAILED || code == CE_ERR_OK) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
     }
     napi_value result;
     napi_create_int32(env, -1, &result);
@@ -588,22 +611,30 @@ static napi_value TestStorageCreateStorage_ValidParam(napi_env env, napi_callbac
     ContentEmbed_Storage *storage = nullptr;
     char name[] = "testStorage";
     ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateDocumentByOEid(oeid, &document);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_OK) {
+    OH_LOG_INFO(LOG_APP, "TestStorageCreateStorage_ValidParam create document code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    if (document == nullptr) {
         napi_value result;
         napi_create_int32(env, -1, &result);
         return result;
     }
-    if (document != nullptr) {
-        code = OH_ContentEmbed_Document_GetRootStorage(document, &storage);
-        if (code == CE_ERR_OK && storage != nullptr) {
-            code = OH_ContentEmbed_Storage_CreateStorage(storage, name, &storage);
-            OH_LOG_INFO(LOG_APP, "TestStorageCreateStorage_ValidParam failed code: %{public}d", code);
-            if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_OK) {
-                napi_value result;
-                napi_create_int32(env, code, &result);
-                return result;
-            }
-        }
+    code = OH_ContentEmbed_Document_GetRootStorage(document, &storage);
+    OH_LOG_INFO(LOG_APP, "TestStorageCreateStorage_ValidParam get root storage code: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        napi_value result;
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    code = OH_ContentEmbed_Storage_CreateStorage(storage, name, &storage);
+    OH_LOG_INFO(LOG_APP, "TestStorageCreateStorage_ValidParam failed code: %{public}d", code);
+    if (code == CE_ERR_OK) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
     }
     napi_value result;
     napi_create_int32(env, -1, &result);
@@ -665,38 +696,35 @@ static napi_value TestStorageGetStorage_ValidParam(napi_env env, napi_callback_i
     ContentEmbed_Storage *parentStorage = nullptr;
     ContentEmbed_Storage *childStorage = nullptr;
     char name[] = "testStorage";
+    napi_value result;
     ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateDocumentByOEid(oeid, &document);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_OK) {
-        napi_value result;
-        napi_create_int32(env, -1, &result);
+    OH_LOG_INFO(LOG_APP, "TestStorageGetStorage_ValidParam create document code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
+        napi_create_int32(env, code, &result);
         return result;
     }
     if (document == nullptr) {
-        napi_value result;
         napi_create_int32(env, -1, &result);
         return result;
     }
     code = OH_ContentEmbed_Document_GetRootStorage(document, &parentStorage);
+    OH_LOG_INFO(LOG_APP, "TestStorageGetStorage_ValidParam get root storage code: %{public}d", code);
     if (code != CE_ERR_OK || parentStorage == nullptr) {
-        napi_value result;
         napi_create_int32(env, -1, &result);
         return result;
     }
     code = OH_ContentEmbed_Storage_CreateStorage(parentStorage, name, &childStorage);
+    OH_LOG_INFO(LOG_APP, "TestStorageGetStorage_ValidParam create child storage code: %{public}d", code);
     if (code != CE_ERR_OK || childStorage == nullptr) {
-        napi_value result;
         napi_create_int32(env, -1, &result);
         return result;
     }
-    OH_ContentEmbed_DestroyStorage(childStorage);
     code = OH_ContentEmbed_Storage_GetStorage(parentStorage, name, &childStorage);
     OH_LOG_INFO(LOG_APP, "TestStorageGetStorage_ValidParam failed code: %{public}d", code);
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_OK) {
-        napi_value result;
+    if (code == CE_ERR_OK) {
         napi_create_int32(env, code, &result);
         return result;
     }
-    napi_value result;
     napi_create_int32(env, -1, &result);
     return result;
 }
@@ -757,22 +785,30 @@ static napi_value TestStorageCreateStream_ValidParam(napi_env env, napi_callback
     ContentEmbed_Stream *stream = nullptr;
     char name[] = "testStream";
     ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateDocumentByOEid(oeid, &document);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_OK) {
+    OH_LOG_INFO(LOG_APP, "TestStorageCreateStream_ValidParam create document code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    if (document == nullptr) {
         napi_value result;
         napi_create_int32(env, -1, &result);
         return result;
     }
-    if (document != nullptr) {
-        code = OH_ContentEmbed_Document_GetRootStorage(document, &storage);
-        if (code == CE_ERR_OK && storage != nullptr) {
-            code = OH_ContentEmbed_Storage_CreateStream(storage, name, &stream);
-            OH_LOG_INFO(LOG_APP, "TestStorageCreateStream_ValidParam failed code: %{public}d", code);
-            if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_OK) {
-                napi_value result;
-                napi_create_int32(env, code, &result);
-                return result;
-            }
-        }
+    code = OH_ContentEmbed_Document_GetRootStorage(document, &storage);
+    OH_LOG_INFO(LOG_APP, "TestStorageCreateStream_ValidParam get root storage code: %{public}d", code);
+    if (code != CE_ERR_OK || storage == nullptr) {
+        napi_value result;
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    code = OH_ContentEmbed_Storage_CreateStream(storage, name, &stream);
+    OH_LOG_INFO(LOG_APP, "TestStorageCreateStream_ValidParam failed code: %{public}d", code);
+    if (code == CE_ERR_OK) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
     }
     napi_value result;
     napi_create_int32(env, -1, &result);
@@ -835,9 +871,9 @@ static napi_value TestStorageGetStream_ValidParam(napi_env env, napi_callback_in
     ContentEmbed_Stream *stream = nullptr;
     char name[] = "testStream";
     ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateDocumentByOEid(oeid, &document);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_OK) {
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
         napi_value result;
-        napi_create_int32(env, -1, &result);
+        napi_create_int32(env, code, &result);
         return result;
     }
     if (document == nullptr) {
@@ -846,18 +882,25 @@ static napi_value TestStorageGetStream_ValidParam(napi_env env, napi_callback_in
         return result;
     }
     code = OH_ContentEmbed_Document_GetRootStorage(document, &storage);
-    if (code == CE_ERR_OK && storage != nullptr) {
-        code = OH_ContentEmbed_Storage_CreateStream(storage, name, &stream);
-        if (code == CE_ERR_OK && stream != nullptr) {
-            OH_ContentEmbed_DestroyStream(stream);
-            code = OH_ContentEmbed_Storage_GetStream(storage, name, &stream);
-            OH_LOG_INFO(LOG_APP, "TestStorageGetStream_ValidParam failed code: %{public}d", code);
-            if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_OK) {
-                napi_value result;
-                napi_create_int32(env, code, &result);
-                return result;
-            }
-        }
+    OH_LOG_INFO(LOG_APP, "TestStorageGetStream_ValidParam get root storage code: %{public}d", code);
+    if (code != CE_ERR_OK || storage == nullptr) {
+        napi_value result;
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    code = OH_ContentEmbed_Storage_CreateStream(storage, name, &stream);
+    OH_LOG_INFO(LOG_APP, "TestStorageGetStream_ValidParam create stream code: %{public}d", code);
+    if (code != CE_ERR_OK || stream == nullptr) {
+        napi_value result;
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    code = OH_ContentEmbed_Storage_GetStream(storage, name, &stream);
+    OH_LOG_INFO(LOG_APP, "TestStorageGetStream_ValidParam get stream code: %{public}d", code);
+    if (code == CE_ERR_OK) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
     }
     napi_value result;
     napi_create_int32(env, -1, &result);
@@ -901,22 +944,29 @@ static napi_value TestStorageDeleteEntry_ValidParam(napi_env env, napi_callback_
     ContentEmbed_Storage *storage = nullptr;
     char name[] = "testEntry";
     ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateDocumentByOEid(oeid, &document);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_OK) {
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    if (document == nullptr) {
         napi_value result;
         napi_create_int32(env, -1, &result);
         return result;
     }
-    if (document != nullptr) {
-        code = OH_ContentEmbed_Document_GetRootStorage(document, &storage);
-        if (code == CE_ERR_OK && storage != nullptr) {
-            code = OH_ContentEmbed_Storage_DeleteEntry(storage, name);
-            OH_LOG_INFO(LOG_APP, "TestStorageDeleteEntry_ValidParam failed code: %{public}d", code);
-            if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_STORAGE_OPERATION_FAILED) {
-                napi_value result;
-                napi_create_int32(env, code, &result);
-                return result;
-            }
-        }
+    code = OH_ContentEmbed_Document_GetRootStorage(document, &storage);
+    OH_LOG_INFO(LOG_APP, "TestStorageDeleteEntry_ValidParam get root storage code: %{public}d", code);
+    if (code != CE_ERR_OK || storage == nullptr) {
+        napi_value result;
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    code = OH_ContentEmbed_Storage_DeleteEntry(storage, name);
+    OH_LOG_INFO(LOG_APP, "TestStorageDeleteEntry_ValidParam failed code: %{public}d", code);
+    if (code == CE_ERR_STORAGE_OPERATION_FAILED) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
     }
     napi_value result;
     napi_create_int32(env, -1, &result);
@@ -943,9 +993,9 @@ static napi_value TestDeleteStorage_ValidParam(napi_env env, napi_callback_info 
     ContentEmbed_Document *document = nullptr;
     ContentEmbed_Storage *storage = nullptr;
     ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateDocumentByOEid(oeid, &document);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_OK) {
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
         napi_value result;
-        napi_create_int32(env, -1, &result);
+        napi_create_int32(env, code, &result);
         return result;
     }
     if (document == nullptr) {
@@ -954,14 +1004,18 @@ static napi_value TestDeleteStorage_ValidParam(napi_env env, napi_callback_info 
         return result;
     }
     code = OH_ContentEmbed_Document_GetRootStorage(document, &storage);
-    if (code == CE_ERR_OK && storage != nullptr) {
-        code = OH_ContentEmbed_DestroyStorage(storage);
-        OH_LOG_INFO(LOG_APP, "TestDeleteStorage_ValidParam failed code: %{public}d", code);
-        if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_OK) {
-            napi_value result;
-            napi_create_int32(env, code, &result);
-            return result;
-        }
+    OH_LOG_INFO(LOG_APP, "TestDeleteStorage_ValidParam get root storage code: %{public}d", code);
+    if (code != CE_ERR_OK || storage == nullptr) {
+        napi_value result;
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    code = OH_ContentEmbed_DestroyStorage(storage);
+    OH_LOG_INFO(LOG_APP, "TestDeleteStorage_ValidParam failed code: %{public}d", code);
+    if (code == CE_ERR_OK) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
     }
     napi_value result;
     napi_create_int32(env, -1, &result);
@@ -1025,9 +1079,10 @@ static napi_value TestStreamRead_ValidParam(napi_env env, napi_callback_info inf
     unsigned char *buffer = nullptr;
     size_t readSize = 0;
     ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateDocumentByOEid(oeid, &document);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_OK) {
+    OH_LOG_INFO(LOG_APP, "TestStreamRead_ValidParam create document code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
         napi_value result;
-        napi_create_int32(env, -1, &result);
+        napi_create_int32(env, code, &result);
         return result;
     }
     if (document == nullptr) {
@@ -1036,12 +1091,14 @@ static napi_value TestStreamRead_ValidParam(napi_env env, napi_callback_info inf
         return result;
     }
     code = OH_ContentEmbed_Document_GetRootStorage(document, &storage);
+    OH_LOG_INFO(LOG_APP, "TestStreamRead_ValidParam get root storage code: %{public}d", code);
     if (code != CE_ERR_OK || storage == nullptr) {
         napi_value result;
         napi_create_int32(env, -1, &result);
         return result;
     }
     code = OH_ContentEmbed_Storage_CreateStream(storage, "testStream", &stream);
+    OH_LOG_INFO(LOG_APP, "TestStreamRead_ValidParam create stream code: %{public}d", code);
     if (code != CE_ERR_OK || stream == nullptr) {
         napi_value result;
         napi_create_int32(env, -1, &result);
@@ -1049,7 +1106,7 @@ static napi_value TestStreamRead_ValidParam(napi_env env, napi_callback_info inf
     }
     code = OH_ContentEmbed_Stream_Read(stream, &buffer, BUF_SIZE, &readSize);
     OH_LOG_INFO(LOG_APP, "TestStreamRead_ValidParam failed code: %{public}d", code);
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_OK) {
+    if (code == CE_ERR_OK) {
         napi_value result;
         napi_create_int32(env, code, &result);
         return result;
@@ -1116,9 +1173,10 @@ static napi_value TestStreamWrite_ValidParam(napi_env env, napi_callback_info in
     uint8_t buffer[BUF_SIZE] = {0};
     size_t writeSize = 0;
     ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateDocumentByOEid(oeid, &document);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_OK) {
+    OH_LOG_INFO(LOG_APP, "TestStreamWrite_ValidParam create document code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
         napi_value result;
-        napi_create_int32(env, -1, &result);
+        napi_create_int32(env, code, &result);
         return result;
     }
     if (document == nullptr) {
@@ -1127,12 +1185,14 @@ static napi_value TestStreamWrite_ValidParam(napi_env env, napi_callback_info in
         return result;
     }
     code = OH_ContentEmbed_Document_GetRootStorage(document, &storage);
+    OH_LOG_INFO(LOG_APP, "TestStreamWrite_ValidParam get root storage code: %{public}d", code);
     if (code != CE_ERR_OK || storage == nullptr) {
         napi_value result;
         napi_create_int32(env, -1, &result);
         return result;
     }
     code = OH_ContentEmbed_Storage_CreateStream(storage, "testStream", &stream);
+    OH_LOG_INFO(LOG_APP, "TestStreamWrite_ValidParam create stream code: %{public}d", code);
     if (code != CE_ERR_OK || stream == nullptr) {
         napi_value result;
         napi_create_int32(env, -1, &result);
@@ -1140,7 +1200,7 @@ static napi_value TestStreamWrite_ValidParam(napi_env env, napi_callback_info in
     }
     code = OH_ContentEmbed_Stream_Write(stream, buffer, BUF_SIZE, &writeSize);
     OH_LOG_INFO(LOG_APP, "TestStreamWrite_ValidParam failed code: %{public}d", code);
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_OK) {
+    if (code == CE_ERR_OK) {
         napi_value result;
         napi_create_int32(env, code, &result);
         return result;
@@ -1173,9 +1233,10 @@ static napi_value TestStreamSeek_ValidParam(napi_env env, napi_callback_info inf
     ContentEmbed_Stream *stream = nullptr;
     size_t position = 0;
     ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateDocumentByOEid(oeid, &document);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_OK) {
+    OH_LOG_INFO(LOG_APP, "TestStreamSeek_ValidParam create document code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
         napi_value result;
-        napi_create_int32(env, -1, &result);
+        napi_create_int32(env, code, &result);
         return result;
     }
     if (document == nullptr) {
@@ -1184,12 +1245,14 @@ static napi_value TestStreamSeek_ValidParam(napi_env env, napi_callback_info inf
         return result;
     }
     code = OH_ContentEmbed_Document_GetRootStorage(document, &storage);
+    OH_LOG_INFO(LOG_APP, "TestStreamSeek_ValidParam get root storage code: %{public}d", code);
     if (code != CE_ERR_OK || storage == nullptr) {
         napi_value result;
         napi_create_int32(env, -1, &result);
         return result;
     }
     code = OH_ContentEmbed_Storage_CreateStream(storage, "testStream", &stream);
+    OH_LOG_INFO(LOG_APP, "TestStreamSeek_ValidParam create stream code: %{public}d", code);
     if (code != CE_ERR_OK || stream == nullptr) {
         napi_value result;
         napi_create_int32(env, -1, &result);
@@ -1197,7 +1260,7 @@ static napi_value TestStreamSeek_ValidParam(napi_env env, napi_callback_info inf
     }
     code = OH_ContentEmbed_Stream_Seek(stream, position);
     OH_LOG_INFO(LOG_APP, "TestStreamSeek_ValidParam failed code: %{public}d", code);
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_OK) {
+    if (code == CE_ERR_OK) {
         napi_value result;
         napi_create_int32(env, code, &result);
         return result;
@@ -1245,9 +1308,10 @@ static napi_value TestStreamGetPosition_ValidParam(napi_env env, napi_callback_i
     ContentEmbed_Stream *stream = nullptr;
     size_t position = 0;
     ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateDocumentByOEid(oeid, &document);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_OK) {
+    OH_LOG_INFO(LOG_APP, "TestStreamGetPosition_ValidParam create document code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
         napi_value result;
-        napi_create_int32(env, -1, &result);
+        napi_create_int32(env, code, &result);
         return result;
     }
     if (document == nullptr) {
@@ -1256,12 +1320,14 @@ static napi_value TestStreamGetPosition_ValidParam(napi_env env, napi_callback_i
         return result;
     }
     code = OH_ContentEmbed_Document_GetRootStorage(document, &storage);
+    OH_LOG_INFO(LOG_APP, "TestStreamGetPosition_ValidParam get root storage code: %{public}d", code);
     if (code != CE_ERR_OK || storage == nullptr) {
         napi_value result;
         napi_create_int32(env, -1, &result);
         return result;
     }
     code = OH_ContentEmbed_Storage_CreateStream(storage, "testStream", &stream);
+    OH_LOG_INFO(LOG_APP, "TestStreamGetPosition_ValidParam create stream code: %{public}d", code);
     if (code != CE_ERR_OK || stream == nullptr) {
         napi_value result;
         napi_create_int32(env, -1, &result);
@@ -1269,7 +1335,7 @@ static napi_value TestStreamGetPosition_ValidParam(napi_env env, napi_callback_i
     }
     code = OH_ContentEmbed_Stream_GetPosition(stream, &position);
     OH_LOG_INFO(LOG_APP, "TestStreamGetPosition_ValidParam failed code: %{public}d", code);
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_OK) {
+    if (code == CE_ERR_OK) {
         napi_value result;
         napi_create_int32(env, code, &result);
         return result;
@@ -1317,9 +1383,10 @@ static napi_value TestStreamGetSize_ValidParam(napi_env env, napi_callback_info 
     ContentEmbed_Stream *stream = nullptr;
     size_t size = 0;
     ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateDocumentByOEid(oeid, &document);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_OK) {
+    OH_LOG_INFO(LOG_APP, "TestStreamGetSize_ValidParam create document code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
         napi_value result;
-        napi_create_int32(env, -1, &result);
+        napi_create_int32(env, code, &result);
         return result;
     }
     if (document == nullptr) {
@@ -1328,12 +1395,14 @@ static napi_value TestStreamGetSize_ValidParam(napi_env env, napi_callback_info 
         return result;
     }
     code = OH_ContentEmbed_Document_GetRootStorage(document, &storage);
+    OH_LOG_INFO(LOG_APP, "TestStreamGetSize_ValidParam get root storage code: %{public}d", code);
     if (code != CE_ERR_OK || storage == nullptr) {
         napi_value result;
         napi_create_int32(env, -1, &result);
         return result;
     }
     code = OH_ContentEmbed_Storage_CreateStream(storage, "testStream", &stream);
+    OH_LOG_INFO(LOG_APP, "TestStreamGetSize_ValidParam create stream code: %{public}d", code);
     if (code != CE_ERR_OK || stream == nullptr) {
         napi_value result;
         napi_create_int32(env, -1, &result);
@@ -1341,7 +1410,7 @@ static napi_value TestStreamGetSize_ValidParam(napi_env env, napi_callback_info 
     }
     code = OH_ContentEmbed_Stream_GetSize(stream, &size);
     OH_LOG_INFO(LOG_APP, "TestStreamGetSize_ValidParam failed code: %{public}d", code);
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_OK) {
+    if (code == CE_ERR_OK) {
         napi_value result;
         napi_create_int32(env, code, &result);
         return result;
@@ -1372,9 +1441,10 @@ static napi_value TestDestroyStream_ValidParam(napi_env env, napi_callback_info 
     ContentEmbed_Storage *storage = nullptr;
     ContentEmbed_Stream *stream = nullptr;
     ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateDocumentByOEid(oeid, &document);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_OK) {
+    OH_LOG_INFO(LOG_APP, "TestDestroyStream_ValidParam create document code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
         napi_value result;
-        napi_create_int32(env, -1, &result);
+        napi_create_int32(env, code, &result);
         return result;
     }
     if (document == nullptr) {
@@ -1383,12 +1453,14 @@ static napi_value TestDestroyStream_ValidParam(napi_env env, napi_callback_info 
         return result;
     }
     code = OH_ContentEmbed_Document_GetRootStorage(document, &storage);
+    OH_LOG_INFO(LOG_APP, "TestDestroyStream_ValidParam get root storage code: %{public}d", code);
     if (code != CE_ERR_OK || storage == nullptr) {
         napi_value result;
         napi_create_int32(env, -1, &result);
         return result;
     }
     code = OH_ContentEmbed_Storage_CreateStream(storage, "testStream", &stream);
+    OH_LOG_INFO(LOG_APP, "TestDestroyStream_ValidParam create stream code: %{public}d", code);
     if (code != CE_ERR_OK || stream == nullptr) {
         napi_value result;
         napi_create_int32(env, -1, &result);
@@ -1396,7 +1468,7 @@ static napi_value TestDestroyStream_ValidParam(napi_env env, napi_callback_info 
     }
     code = OH_ContentEmbed_DestroyStream(stream);
     OH_LOG_INFO(LOG_APP, "TestDestroyStream_ValidParam failed code: %{public}d", code);
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_OK) {
+    if (code == CE_ERR_OK) {
         napi_value result;
         napi_create_int32(env, code, &result);
         return result;
@@ -1425,19 +1497,23 @@ static napi_value TestDestroyDocument_ValidParam(napi_env env, napi_callback_inf
     char oeid[] = "000209FF-0000-0000-C000-000000000046";
     ContentEmbed_Document *document = nullptr;
     ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateDocumentByOEid(oeid, &document);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_OK) {
+    OH_LOG_INFO(LOG_APP, "TestDestroyDocument_ValidParam create document code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    if (document == nullptr) {
         napi_value result;
         napi_create_int32(env, -1, &result);
         return result;
     }
-    if (document != nullptr) {
-        code = OH_ContentEmbed_DestroyDocument(document);
-        OH_LOG_INFO(LOG_APP, "TestDestroyDocument_ValidParam failed code: %{public}d", code);
-        if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_OK) {
-            napi_value result;
-            napi_create_int32(env, code, &result);
-            return result;
-        }
+    code = OH_ContentEmbed_DestroyDocument(document);
+    OH_LOG_INFO(LOG_APP, "TestDestroyDocument_ValidParam failed code: %{public}d", code);
+    if (code == CE_ERR_OK) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
     }
     napi_value result;
     napi_create_int32(env, -1, &result);
@@ -1464,22 +1540,30 @@ static napi_value TestStorageDeleteAllEntry_ValidParam(napi_env env, napi_callba
     ContentEmbed_Document *document = nullptr;
     ContentEmbed_Storage *storage = nullptr;
     ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateDocumentByOEid(oeid, &document);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_OK) {
+    OH_LOG_INFO(LOG_APP, "TestStorageDeleteAllEntry_ValidParam create document code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    if (document == nullptr) {
         napi_value result;
         napi_create_int32(env, -1, &result);
         return result;
     }
-    if (document != nullptr) {
-        code = OH_ContentEmbed_Document_GetRootStorage(document, &storage);
-        if (code == CE_ERR_OK && storage != nullptr) {
-            code = OH_ContentEmbed_Storage_DeleteAllEntry(storage);
-            OH_LOG_INFO(LOG_APP, "TestStorageDeleteAllEntry_ValidParam failed code: %{public}d", code);
-            if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_OK) {
-                napi_value result;
-                napi_create_int32(env, code, &result);
-                return result;
-            }
-        }
+    code = OH_ContentEmbed_Document_GetRootStorage(document, &storage);
+    OH_LOG_INFO(LOG_APP, "TestStorageDeleteAllEntry_ValidParam get root storage code: %{public}d", code);
+    if (code != CE_ERR_OK || storage == nullptr) {
+        napi_value result;
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    code = OH_ContentEmbed_Storage_DeleteAllEntry(storage);
+    OH_LOG_INFO(LOG_APP, "TestStorageDeleteAllEntry_ValidParam failed code: %{public}d", code);
+    if (code == CE_ERR_OK) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
     }
     napi_value result;
     napi_create_int32(env, -1, &result);
@@ -1539,9 +1623,10 @@ static napi_value TestStorageGetOEid_ValidParam(napi_env env, napi_callback_info
     ContentEmbed_Storage *storage = nullptr;
     char oeidOut[BUF_SIZE] = {0};
     ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateDocumentByOEid(oeid, &document);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_OK) {
+    OH_LOG_INFO(LOG_APP, "TestStorageGetOEid_ValidParam create document code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
         napi_value result;
-        napi_create_int32(env, -1, &result);
+        napi_create_int32(env, code, &result);
         return result;
     }
     if (document == nullptr) {
@@ -1550,6 +1635,7 @@ static napi_value TestStorageGetOEid_ValidParam(napi_env env, napi_callback_info
         return result;
     }
     code = OH_ContentEmbed_Document_GetRootStorage(document, &storage);
+    OH_LOG_INFO(LOG_APP, "TestStorageGetOEid_ValidParam get root storage code: %{public}d", code);
     if (code != CE_ERR_OK || storage == nullptr) {
         napi_value result;
         napi_create_int32(env, -1, &result);
@@ -1557,7 +1643,7 @@ static napi_value TestStorageGetOEid_ValidParam(napi_env env, napi_callback_info
     }
     code = OH_ContentEmbed_Storage_GetOEid(storage, oeidOut, BUF_SIZE);
     OH_LOG_INFO(LOG_APP, "TestStorageGetOEid_ValidParam failed code: %{public}d", code);
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_OK) {
+    if (code == CE_ERR_OK) {
         napi_value result;
         napi_create_int32(env, code, &result);
         return result;
@@ -1619,9 +1705,10 @@ static napi_value TestStorageSetOEid_ValidParam(napi_env env, napi_callback_info
     ContentEmbed_Document *document = nullptr;
     ContentEmbed_Storage *storage = nullptr;
     ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateDocumentByOEid(oeid, &document);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_OK) {
+    OH_LOG_INFO(LOG_APP, "TestStorageSetOEid_ValidParam create document code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
         napi_value result;
-        napi_create_int32(env, -1, &result);
+        napi_create_int32(env, code, &result);
         return result;
     }
     if (document == nullptr) {
@@ -1630,6 +1717,7 @@ static napi_value TestStorageSetOEid_ValidParam(napi_env env, napi_callback_info
         return result;
     }
     code = OH_ContentEmbed_Document_GetRootStorage(document, &storage);
+    OH_LOG_INFO(LOG_APP, "TestStorageSetOEid_ValidParam get root storage code: %{public}d", code);
     if (code != CE_ERR_OK || storage == nullptr) {
         napi_value result;
         napi_create_int32(env, -1, &result);
@@ -1637,7 +1725,7 @@ static napi_value TestStorageSetOEid_ValidParam(napi_env env, napi_callback_info
     }
     code = OH_ContentEmbed_Storage_SetOEid(storage, oeid, BUF_SIZE);
     OH_LOG_INFO(LOG_APP, "TestStorageSetOEid_ValidParam failed code: %{public}d", code);
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_OK) {
+    if (code == CE_ERR_OK) {
         napi_value result;
         napi_create_int32(env, code, &result);
         return result;
@@ -1672,25 +1760,22 @@ static napi_value TestStorageGetElements_ValidParam(napi_env env, napi_callback_
     ContentEmbed_Storage *storage = nullptr;
     ContentEmbed_StorageElements *elements = nullptr;
     ContentEmbed_ErrorCode code = OH_ContentEmbed_StorageElements_Create(&elements);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_OK) {
+    OH_LOG_INFO(LOG_APP, "TestStorageGetElements_ValidParam create elements code: %{public}d", code);
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
         napi_value result;
-        napi_create_int32(env, -1, &result);
+        napi_create_int32(env, code, &result);
         return result;
     }
     code = OH_ContentEmbed_CreateDocumentByOEid(oeid, &document);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_OK) {
-        OH_ContentEmbed_StorageElements_Destroy(elements);
-        napi_value result;
-        napi_create_int32(env, -1, &result);
-        return result;
-    }
-    if (document == nullptr) {
+    OH_LOG_INFO(LOG_APP, "TestStorageGetElements_ValidParam create document code: %{public}d", code);
+    if (code != CE_ERR_OK || document == nullptr) {
         OH_ContentEmbed_StorageElements_Destroy(elements);
         napi_value result;
         napi_create_int32(env, -1, &result);
         return result;
     }
     code = OH_ContentEmbed_Document_GetRootStorage(document, &storage);
+    OH_LOG_INFO(LOG_APP, "TestStorageGetElements_ValidParam get root storage code: %{public}d", code);
     if (code != CE_ERR_OK || storage == nullptr) {
         OH_ContentEmbed_StorageElements_Destroy(elements);
         napi_value result;
@@ -1699,7 +1784,7 @@ static napi_value TestStorageGetElements_ValidParam(napi_env env, napi_callback_
     }
     code = OH_ContentEmbed_Storage_GetElements(storage, elements);
     OH_LOG_INFO(LOG_APP, "TestStorageGetElements_ValidParam failed code: %{public}d", code);
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_OK) {
+    if (code == CE_ERR_OK) {
         napi_value result;
         napi_create_int32(env, code, &result);
         OH_ContentEmbed_StorageElements_Destroy(elements);
@@ -1730,6 +1815,7 @@ static napi_value TestStorageElementsGetCount_NullCount(napi_env env, napi_callb
 {
     ContentEmbed_StorageElements *elements = nullptr;
     ContentEmbed_ErrorCode code = OH_ContentEmbed_StorageElements_Create(&elements);
+    OH_LOG_INFO(LOG_APP, "TestStorageElementsGetCount_NullCount create elements code: %{public}d", code);
     if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
         napi_value result;
         napi_create_int32(env, code, &result);
@@ -1763,37 +1849,39 @@ static napi_value TestStorageElementsGetCount_ValidParam(napi_env env, napi_call
     size_t count = 0;
     napi_value result;
     ContentEmbed_ErrorCode code = OH_ContentEmbed_StorageElements_Create(&elements);
+    OH_LOG_INFO(LOG_APP, "TestStorageElementsGetCount_ValidParam create elements code: %{public}d", code);
     if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
-        napi_value result;
         napi_create_int32(env, code, &result);
         return result;
     }
     if (elements == nullptr) {
-        napi_value result;
         napi_create_int32(env, -1, &result);
         return result;
     }
     code = OH_ContentEmbed_CreateDocumentByOEid(oeid, &document);
-    if ((code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_OK) || document == nullptr) {
+    OH_LOG_INFO(LOG_APP, "TestStorageElementsGetCount_ValidParam create document code: %{public}d", code);
+    if (code != CE_ERR_OK || document == nullptr) {
         OH_ContentEmbed_StorageElements_Destroy(elements);
         napi_create_int32(env, -1, &result);
         return result;
     }
     code = OH_ContentEmbed_Document_GetRootStorage(document, &storage);
+    OH_LOG_INFO(LOG_APP, "TestStorageElementsGetCount_ValidParam get root storage code: %{public}d", code);
     if (code != CE_ERR_OK || storage == nullptr) {
         OH_ContentEmbed_StorageElements_Destroy(elements);
         napi_create_int32(env, -1, &result);
         return result;
     }
     code = OH_ContentEmbed_Storage_GetElements(storage, elements);
-    if (code != CE_ERR_DEVICE_NOT_SUPPORTED && code != CE_ERR_OK) {
+    OH_LOG_INFO(LOG_APP, "TestStorageElementsGetCount_ValidParam failed code: %{public}d", code);
+    if (code != CE_ERR_OK) {
         OH_ContentEmbed_StorageElements_Destroy(elements);
         napi_create_int32(env, -1, &result);
         return result;
     }
     code = OH_ContentEmbed_StorageElements_GetCount(elements, &count);
     OH_LOG_INFO(LOG_APP, "TestStorageElementsGetCount_ValidParam failed code: %{public}d", code);
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_OK) {
+    if (code == CE_ERR_OK) {
         napi_create_int32(env, code, &result);
         OH_ContentEmbed_StorageElements_Destroy(elements);
         return result;
@@ -1822,6 +1910,7 @@ static napi_value TestStorageElementsGetElement_NullElement(napi_env env, napi_c
 {
     ContentEmbed_StorageElements *elements = nullptr;
     ContentEmbed_ErrorCode code = OH_ContentEmbed_StorageElements_Create(&elements);
+    OH_LOG_INFO(LOG_APP, "TestStorageElementsGetElement_NullElement create elements code: %{public}d", code);
     if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
         napi_value result;
         napi_create_int32(env, code, &result);
@@ -1834,7 +1923,7 @@ static napi_value TestStorageElementsGetElement_NullElement(napi_env env, napi_c
     }
     code = OH_ContentEmbed_StorageElements_GetElement(elements, 0, nullptr);
     OH_LOG_INFO(LOG_APP, "TestStorageElementsGetElement_NullElement failed code: %{public}d", code);
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
+    if (code == CE_ERR_PARAM_INVALID) {
         napi_value result;
         napi_create_int32(env, code, &result);
         OH_ContentEmbed_StorageElements_Destroy(elements);

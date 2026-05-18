@@ -29,6 +29,7 @@ import MediaAVPlayerOff_trackChangeTest from './media/MediaAVPlayerOff_trackChan
 import MediaSourceSetMediaResourceLoaderDelegateTest from './media/MediaSourceSetMediaResourceLoaderDelegate.Test.test';
 import MediaVideoPlayerOn_audioInterruptTest from './media/MediaVideoPlayerOn_audioInterrupt.Test.test';
 import MediaVideoPlayerSeekTest from './media/MediaVideoPlayerSeek.Test.test';
+import MediaVideoPlayerAPITest from './media/MediaVideoPlayerAPITest.test';
 import CreateMediaSourceTest from './media/CreateMediaSourceTest.test';
 import AVPlayerSetSpeedTest from './media/AVPlayerSetSpeed.test';
 import RespondDataTest from './media/RespondDataTest.test';
@@ -37,6 +38,9 @@ import AVPlayervideoSizeChangeSuppTest from './media/AVPlayervideoSizeChangeOnOF
 import AVPlayerSetDecryptionConfigSuppTest from './media/AVPlayerSetDecryptionConfig.test';
 import AVPlayerAddSubtitleFromUrlSuppTest from './media/AVPlayerAddSubtitleFromUrl.test';
 import MediaAPIEnumSupplementTest from "./media/MediaAPIEnumSupplement.test";
+import AVPlayerTrackFilterTest from "./media/AVPlayerTrackFilterTest.test";
+import AVPlayerGetLoadedTimeRangesTest from './media/AVPlayerGetLoadedTimeRangesTest.test';
+import AVPlayerGeTSeekableTimeRangesTest from './media/AVPlayerGeTSeekableTimeRangesTest.test';
 
 export default function testsuite() {
   AVPlayerLocalDeprecatedTest();
@@ -55,6 +59,7 @@ export default function testsuite() {
   MediaSourceSetMediaResourceLoaderDelegateTest();
   MediaVideoPlayerOn_audioInterruptTest();
   MediaVideoPlayerSeekTest();
+  MediaVideoPlayerAPITest();
   CreateMediaSourceTest();
   AVPlayerSetSpeedTest();
   RespondDataTest();
@@ -63,5 +68,8 @@ export default function testsuite() {
   AVPlayerSetDecryptionConfigSuppTest();
   AVPlayerAddSubtitleFromUrlSuppTest();
   MediaAPIEnumSupplementTest();
+  AVPlayerTrackFilterTest();
+  AVPlayerGetLoadedTimeRangesTest();
+ 	AVPlayerGeTSeekableTimeRangesTest();
 }
 

@@ -72,10 +72,10 @@ struct Index {
   } as StyledStringChangedListener
 
   onPageShow() {
-    this.controller3.setStyledString(this.mutableStyledString)
-    waitForCompletion(async ()=>{
+    this.controller3.setStyledString(this.mutableStyledString);
+    (async ()=>{
       this.imagePixelMap = await this.getPixmapFromMedia($r('app.media.icon'));
-    })
+    })().awaitSync()
   }
 
   private async getPixmapFromMedia(resource: Resource):Promise<image.PixelMap> {

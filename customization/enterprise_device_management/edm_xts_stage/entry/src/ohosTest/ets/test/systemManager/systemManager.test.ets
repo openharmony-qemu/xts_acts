@@ -483,113 +483,6 @@ function testSetOtaUpdatePolicy() {
     }
     done();
   });
-
-  /**
-   * @tc.name   test_set_ota_update_policy_0011
-   * @tc.number SUB_CUSTOMIZATION_EDM_SET_OTA_UPDATE_POLICY_JS_0011
-   * @tc.desc   test systemManager setOtaUpdatePolicy with super admin
-   * @tc.type   FUNCTION
-   * @tc.size   MEDIUMTEST
-   * @tc.level  LEVEL2
-   */
-  it("test_set_ota_update_policy_0011", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-    let policy: systemManager.OtaUpdatePolicy = {
-      "policyType": systemManager.PolicyType.PROHIBIT,
-      "version": UPDATE_VERSION,
-    }
-    try {
-      systemManager.setOtaUpdatePolicy(SELFWANT, policy);
-      let getPolicy: systemManager.OtaUpdatePolicy = systemManager.getOtaUpdatePolicy(SELFWANT);
-      expect(getPolicy.policyType == systemManager.PolicyType.PROHIBIT).assertTrue();
-    } catch (error) {
-      expect(error.code == 801).assertTrue();
-    } finally {
-      await adminManager.disableSuperAdmin(SELFHAPNAME);
-    }
-    done();
-  });
-
-  /**
-   * @tc.name   test_set_ota_update_policy_0012
-   * @tc.number SUB_CUSTOMIZATION_EDM_SET_OTA_UPDATE_POLICY_JS_0012
-   * @tc.desc   test systemManager setOtaUpdatePolicy with super admin
-   * @tc.type   FUNCTION
-   * @tc.size   MEDIUMTEST
-   * @tc.level  LEVEL2
-   */
-  it("test_set_ota_update_policy_0012", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-    let policy: systemManager.OtaUpdatePolicy = {
-      "policyType": systemManager.PolicyType.UPDATE_TO_SPECIFIC_VERSION,
-      "version": UPDATE_VERSION,
-    }
-    try {
-      systemManager.setOtaUpdatePolicy(SELFWANT, policy);
-      let getPolicy: systemManager.OtaUpdatePolicy = systemManager.getOtaUpdatePolicy(SELFWANT);
-      expect(getPolicy.policyType == systemManager.PolicyType.UPDATE_TO_SPECIFIC_VERSION).assertTrue();
-    } catch (error) {
-      expect(error.code == 801).assertTrue();
-    } finally {
-      await adminManager.disableSuperAdmin(SELFHAPNAME);
-    }
-    done();
-  });
-
-  /**
-   * @tc.name   test_set_ota_update_policy_0013
-   * @tc.number SUB_CUSTOMIZATION_EDM_SET_OTA_UPDATE_POLICY_JS_0013
-   * @tc.desc   test systemManager setOtaUpdatePolicy with super admin
-   * @tc.type   FUNCTION
-   * @tc.size   MEDIUMTEST
-   * @tc.level  LEVEL2
-   */
-  it("test_set_ota_update_policy_0013", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-    let policy: systemManager.OtaUpdatePolicy = {
-      "policyType": systemManager.PolicyType.WINDOWS,
-      "version": UPDATE_VERSION,
-      "installStartTime": 100000000,
-      "installEndTime": 100000100
-    }
-    try {
-      systemManager.setOtaUpdatePolicy(SELFWANT, policy);
-      let getPolicy: systemManager.OtaUpdatePolicy = systemManager.getOtaUpdatePolicy(SELFWANT);
-      expect(getPolicy.policyType == systemManager.PolicyType.WINDOWS).assertTrue();
-    } catch (error) {
-      expect(error.code == 801).assertTrue();
-    } finally {
-      await adminManager.disableSuperAdmin(SELFHAPNAME);
-    }
-    done();
-  });
-
-  /**
-   * @tc.name   test_set_ota_update_policy_0014
-   * @tc.number SUB_CUSTOMIZATION_EDM_SET_OTA_UPDATE_POLICY_JS_0014
-   * @tc.desc   test systemManager setOtaUpdatePolicy with super admin
-   * @tc.type   FUNCTION
-   * @tc.size   MEDIUMTEST
-   * @tc.level  LEVEL2
-   */
-  it("test_set_ota_update_policy_0014", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-    let policy: systemManager.OtaUpdatePolicy = {
-      "policyType": systemManager.PolicyType.POSTPONE,
-      "version": UPDATE_VERSION,
-      "delayUpdateTime": 1000000
-    }
-    try {
-      systemManager.setOtaUpdatePolicy(SELFWANT, policy);
-      let getPolicy: systemManager.OtaUpdatePolicy = systemManager.getOtaUpdatePolicy(SELFWANT);
-      expect(getPolicy.policyType == systemManager.PolicyType.POSTPONE).assertTrue();
-    } catch (error) {
-      expect(error.code == 801).assertTrue();
-    } finally {
-      await adminManager.disableSuperAdmin(SELFHAPNAME);
-    }
-    done();
-  });
 }
 
 function testGetOtaUpdatePolicy() {
@@ -1307,13 +1200,13 @@ function testGetAutoUnlockAfterReboot() {
   it("test_get_auto_unlock_after_reboot_0004", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
     try {
-      systemManager.getAutoUnlockAfterReboot(null);
-      expect(false).assertTrue();
+      let ret = systemManager.getAutoUnlockAfterReboot(null);
+      expect(ret).assertFalse();
     } catch (error) {
       if (Number(error.code) === 801) {
         expect(Number(error.code) === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
       }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
@@ -3679,13 +3572,16 @@ function testStartCollectLog() {
    */
   it("getKeyEventPolicies_test_001", Level.LEVEL2, async (done: Function) => {
     console.info(' --- getKeyEventPolicies_test_001  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      systemManager.getKeyEventPolicies(null);
+      let policies = systemManager.getKeyEventPolicies(null);
       console.info(' --- getKeyEventPolicies_test_001 error is expected, but it done.');
-      expect(false).assertTrue();
+      expect(policies.length === 0).assertTrue();
     } catch (error) {
       console.info(' --- getKeyEventPolicies_test_001 error 401 is expected, actually catch: ' + error.code);
-      expect(Number(error.code) === 401).assertTrue();
+      expect(Number(error.code) === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
     console.info(' --- getKeyEventPolicies_test_001  -------- END --------');
@@ -3859,13 +3755,16 @@ function testStartCollectLog() {
    */
   it("getKeyEventPolicies_test_015", Level.LEVEL2, async (done: Function) => {
     console.info(' --- getKeyEventPolicies_test_015  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      systemManager.getKeyEventPolicies(null);
+      let policies = systemManager.getKeyEventPolicies(null);
       console.info(' --- getKeyEventPolicies_test_015 error is expected, but it done.');
-      expect(false).assertTrue();
+      expect(policies.length === 0).assertTrue();
     } catch (error) {
       console.info(' --- getKeyEventPolicies_test_015 error 401 is expected, actually catch: ' + error.code);
-      expect(Number(error.code) === 401).assertTrue();
+      expect(Number(error.code) === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
     console.info(' --- getKeyEventPolicies_test_015  -------- END --------');

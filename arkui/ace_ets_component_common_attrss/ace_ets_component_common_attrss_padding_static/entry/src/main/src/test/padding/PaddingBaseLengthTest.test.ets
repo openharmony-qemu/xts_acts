@@ -166,7 +166,7 @@ export default function PaddingBaseLengthTest() {
       await Utils.sleep(1000);
       AppStorage.setOrCreate<number|string|Padding|Resource>('_padding', data.testValue.setValue.padding as number|string|Padding|Resource)
       //Confirm that the padding attribute values have been successfully set.
-      let viewObj: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.componentKey);
+      let viewObj: jsonx.JsonElement = await Utils.getComponentByKey(data.pageConfig.componentKey);
       console.info('[' + data.caseTag + 'data.pageConfig.componentKey:' + data.pageConfig.componentKey);
       console.info('[' + data.caseTag + '] viewObj.$attrs.padding:' + viewObj.getElement('$attrs').getString('padding'));
       console.info('[' + data.caseTag + '] data.testValue.expectValue.padding:' + data.testValue.expectValue.padding);

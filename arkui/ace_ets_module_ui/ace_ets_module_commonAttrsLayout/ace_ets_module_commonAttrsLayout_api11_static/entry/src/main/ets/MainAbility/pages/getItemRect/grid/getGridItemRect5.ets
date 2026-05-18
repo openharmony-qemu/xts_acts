@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -68,7 +68,7 @@ struct getGridItemRect5 {
     let callback: Callback<number> = (message: Message<number>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'index') {
-        this.index = message.value as Int;
+        this.index = message.value.toInt();
       }
     }
     let GridDirectionCallback: Callback<GridDirection> = (message: Message<GridDirection>) => {

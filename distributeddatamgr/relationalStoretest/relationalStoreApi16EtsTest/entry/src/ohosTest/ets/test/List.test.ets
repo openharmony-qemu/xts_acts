@@ -20,7 +20,7 @@ import MemoryDbEtsTest from './RelationalStoreMemoryDb.test';
 import rdbResultSetSyncTest from './RelationalStoreResultSetSync.test';
 import rdbResultSetSJsTest from './resultsetJsunit.test';
 import relationalStoreTransactionErrTest from './RelationalStoreTransactionErr.test';
-
+import rdbStoreSyncExTest from './RelationalStoreSyncEx.test';
 export default function testsuite() {
   relationalStoreEtsTest();
   relationalStoreBatchInsertTest();
@@ -30,4 +30,5 @@ export default function testsuite() {
   rdbResultSetSyncTest();
   rdbResultSetSJsTest();
   relationalStoreTransactionErrTest();
+  rdbStoreSyncExTest();
 }

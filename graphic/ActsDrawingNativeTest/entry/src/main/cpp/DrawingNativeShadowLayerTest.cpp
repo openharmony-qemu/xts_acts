@@ -43,14 +43,6 @@ void DrawingNativeShadowLayerTestTearDown()
     std::cout << "DrawingNativeShadowLayerTest errorCodeReset after each test case." << std::endl;
 }
 
-/**
- * @tc.name   testShadowLayerCreateNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_NUMBER_100
- * @tc.desc   test for testShadowLayerCreateNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestShadowLayerCreateNormal()
 {
     DrawingNativeShadowLayerTestSetUp();
@@ -68,14 +60,6 @@ int TestShadowLayerCreateNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShadowLayerCreateNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_LAYER_0101
- * @tc.desc   test for testShadowLayerCreateNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShadowLayerCreateNull()
 {
     DrawingNativeShadowLayerTestSetUp();
@@ -105,14 +89,6 @@ int TestShadowLayerCreateNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShadowLayerCreateAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_LAYER_0102
- * @tc.desc   test for testShadowLayerCreateAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShadowLayerCreateAbnormal()
 {
     DrawingNativeShadowLayerTestSetUp();
@@ -142,14 +118,6 @@ int TestShadowLayerCreateAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShadowLayerCreateMaximum
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_LAYER_0103
- * @tc.desc   test for testShadowLayerCreateMaximum.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShadowLayerCreateMaximum()
 {
     DrawingNativeShadowLayerTestSetUp();
@@ -178,14 +146,6 @@ int TestShadowLayerCreateMaximum()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShadowLayerCreateMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_LAYER_0104
- * @tc.desc   test for testShadowLayerCreateMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShadowLayerCreateMultipleCalls()
 {
     DrawingNativeShadowLayerTestSetUp();
@@ -206,14 +166,6 @@ int TestShadowLayerCreateMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShadowLayerDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_LAYER_0200
- * @tc.desc   test for testShadowLayerDestroyNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestShadowLayerDestroyNormal()
 {
     DrawingNativeShadowLayerTestSetUp();
@@ -228,14 +180,6 @@ int TestShadowLayerDestroyNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShadowLayerDestroyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_LAYER_0201
- * @tc.desc   test for testShadowLayerDestroyNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShadowLayerDestroyNull()
 {
     DrawingNativeShadowLayerTestSetUp();

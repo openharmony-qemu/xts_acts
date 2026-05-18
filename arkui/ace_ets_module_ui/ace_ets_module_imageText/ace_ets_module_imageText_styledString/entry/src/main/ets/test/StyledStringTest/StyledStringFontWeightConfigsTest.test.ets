@@ -128,8 +128,8 @@ export default function StyledStringFontWeightConfigsTest() {
       await CommonFunc.sleep(1000);
       let enableVariableFontWeight:string|undefined = AppStorage.get('enableVariableFontWeight')
       let enableDeviceFontWeightCategory:string|undefined = AppStorage.get('enableDeviceFontWeightCategory')
-      expect(enableVariableFontWeight).assertEqual('undefined');
-      expect(enableDeviceFontWeightCategory).assertEqual('undefined');
+      expect(enableVariableFontWeight).assertEqual('false');
+      expect(enableDeviceFontWeightCategory).assertEqual('true');
       console.info('[SUB_ARKUI_STYLEDSTRING_TEXTSTYLE_FONTCONFIGS_TEST_0400] END');
       done();
     });

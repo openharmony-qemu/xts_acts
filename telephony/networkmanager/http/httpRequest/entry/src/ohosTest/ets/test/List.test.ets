@@ -32,8 +32,14 @@ import HttpRequestPatchTest from './HttpRequestPatch.test';
 import HttpRequestSyncTest from './HttpRequestSync.test';
 import HttpRequestReuseConnectionsTest from './HttpRequestReuseConnections.test';
 import HttpInterceptorForSafeCheckTest from './HttpInterceptorForSafeCheck.test';
+import HttpRequestEnableAutoCookieTest from './HttpRequestEnableAutoCookie.test';
+import HttpRequestSocket5Test from './HttpRequestSocket5.test';
+import connection from '@ohos.net.connection';
+
+let netHandle = connection.getDefaultNetSync();
 
 export default function testsuite() {
+  if (netHandle.netId != 0 && canIUse("SystemCapability.Communication.NetStack")) {
   HttpInterceptorForSafeCheckTest();
   HttpRequestInterceptor();
   HttpRequestMaxAutoRedirectsTest();
@@ -53,7 +59,13 @@ export default function testsuite() {
     HttpRequestPatchTest();
     HttpRequestSyncTest();
     HttpRequestReuseConnectionsTest();
+    HttpRequestEnableAutoCookieTest();
+    HttpRequestSocket5Test();
+    
   } else {
-    EmptyTest()
+    EmptyTest();
   }
+} else {
+  EmptyTest();
+}
 }

@@ -74,7 +74,7 @@ struct Index {
         .padding(5)
         .id('openUpdate')
         .onClick(() => {
-          let contentNode = new ComponentContent(this.uiContext, wrapBuilder(myMenu));
+          let contentNode = new ComponentContent<Object>(this.uiContext, wrapBuilder(myMenu));
           this.promptAction.openMenu(contentNode, this.targetInfo, {
             title: 'onDidAppear',
             borderRadius: 0,

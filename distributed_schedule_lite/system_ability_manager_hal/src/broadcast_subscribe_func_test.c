@@ -117,6 +117,7 @@ static BOOL Broadcast01TestSuiteSetUp(void)
 
 static BOOL Broadcast01TestSuiteTearDown(void)
 {
+    SAMGR_GetInstance()->UnregisterService(BROADCASR_TEST_SERVICE);
     return TRUE;
 }
 

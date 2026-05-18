@@ -842,7 +842,7 @@ enum Status1 {
   Inactive = 3_000_002,
   Pending = 3_000_003
 }
-enum Status2 {
+enum Status2: long {
   Active = 3_000_000_001,
   Inactive = 3_000_000_002,
   Pending = 3_000_000_003
@@ -883,10 +883,10 @@ enum Color1 { Red=100, Green=200, Blue=300 }
 enum Color2 { Red=10, Green=20, Blue=30 }
 enum Color3 { Red=10001, Green=10002, Blue=10003 }
 enum Color4 { Red=20001, Green=20002, Blue=20003 }
-enum Color5 { Red=3_000_000_001, Green=3_000_000_002, Blue=3_000_000_003 }
+enum Color5: long { Red=3_000_000_001, Green=3_000_000_002, Blue=3_000_000_003 }
 enum Color6: double { Red = 0.0, Green = 100.0, Blue = 101.0 }
 enum Color7 { Red, Green = 100, Blue }
-enum Color8 { Red, Green = 0x3434343456565656, Blue }
+enum Color8: long { Red, Green = 0x3434343456565656, Blue }
 enum Color9 { Red = "r", Green = "g", Blue = "b" }
 
 

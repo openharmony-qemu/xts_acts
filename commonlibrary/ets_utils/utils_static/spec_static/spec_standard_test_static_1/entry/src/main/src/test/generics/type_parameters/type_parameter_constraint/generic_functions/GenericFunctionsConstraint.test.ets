@@ -37,8 +37,6 @@ class Double1 {
   constructor() {}
 }
 
-// 泛型函数约束测试相关定义
-// 函数定义
 function foo1<T extends Int1 | Double1>(p: T): T {
   return p
 }

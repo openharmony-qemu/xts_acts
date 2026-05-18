@@ -31,11 +31,11 @@ let filesDir: string | undefined | null;
 let globalpixelmap: image.PixelMap | undefined = undefined;
 let globalimageSource: image.ImageSource | undefined = undefined;
 
-function getFd(fileName:string) {
+async function getFd(fileName:string) {
   let filePath = filesDir + "/" + fileName;
   console.info("image case filePath is " + filePath);
   let file: fs.File | undefined;
-  waitForCompletion(async () => {file = await fs.open(filePath, 0o0);})
+  file = await fs.open(filePath, 0o0);
   return file!.fd as int
 }
 
@@ -60,7 +60,7 @@ const createPixelmapTestPromise = async (
 ) => {
   let logger = new Logger(testNum);
   try {
-    let fd = getFd("colorspace.jpg");
+    let fd = await getFd("colorspace.jpg");
     let imageSource = image.createImageSource(fd);
     logger.log("ImageSource " + (imageSource != undefined));
     if (imageSource != undefined) {
@@ -73,7 +73,7 @@ const createPixelmapTestPromise = async (
       }
       let decodingOptions: image.DecodingOptions = { desiredColorSpace: csm };
       let pixelMap: image.PixelMap | undefined;
-      waitForCompletion(async () => {pixelMap = await imageSource!.createPixelMap(decodingOptions);})
+      pixelMap = await imageSource!.createPixelMap(decodingOptions);
       logger.log("PixelMap " + pixelMap);
       if (pixelMap != undefined) {
         globalpixelmap = pixelMap;
@@ -108,7 +108,7 @@ const createPixelmapTestCb = async (
 ) => {
   let logger = new Logger(testNum);
   try {
-    let fd = getFd("colorspace.jpg");
+    let fd = await getFd("colorspace.jpg");
     let imageSource = image.createImageSource(fd);
     logger.log("ImageSource " + (imageSource != undefined));
     if (imageSource != undefined) {
@@ -156,13 +156,13 @@ const applyColorSpacePromiseTest = async (
 ) => {
   let logger = new Logger(testNum);
   try {
-    let fd = getFd("colorspace.jpg");
+    let fd = await getFd("colorspace.jpg");
     let imageSource = image.createImageSource(fd);
     logger.log("ImageSource " + (imageSource != undefined));
     if (imageSource != undefined) {
       globalimageSource = imageSource;
       let pixelMap: image.PixelMap | undefined;
-      waitForCompletion(async () => {pixelMap = await imageSource!.createPixelMap();})
+      pixelMap = await imageSource!.createPixelMap();
       if (pixelMap != undefined) {
         globalpixelmap = pixelMap;
         let csmModify: colorSpaceManager.ColorSpaceManager;
@@ -173,7 +173,7 @@ const applyColorSpacePromiseTest = async (
         }
         logger.log("csmModify " + csmModify);
         try{
-          waitForCompletion(async () => {await pixelMap!.applyColorSpace(csmModify);})
+          await pixelMap!.applyColorSpace(csmModify);
           let csm1 = pixelMap!.getColorSpace();
           logger.log("getColorSpace " + csm1);
           let csmn = csm1.getColorSpaceName();
@@ -213,13 +213,13 @@ const applyColorSpaceCbTest = async (
 ) => {
   let logger = new Logger(testNum);
   try {
-    let fd = getFd("colorspace.jpg");
+    let fd = await getFd("colorspace.jpg");
     let imageSource = image.createImageSource(fd);
     logger.log("ImageSource " + (imageSource != undefined));
     if (imageSource != undefined) {
       globalimageSource = imageSource;
       let pixelMap: image.PixelMap | undefined;
-      waitForCompletion(async () => {pixelMap = await imageSource!.createPixelMap();})
+      pixelMap = await imageSource!.createPixelMap();
       if (pixelMap != undefined) {
         globalpixelmap = pixelMap;
         let csmModify: colorSpaceManager.ColorSpaceManager;
@@ -371,7 +371,7 @@ export default function ImageColorSpaceTransferTest() {
         whitePointX: 0.31271,
         whitePointY: 0.32902
       }
-      let gamma: int | undefined = 2.4 as int;
+      let gamma: int | undefined = 2.4.toInt();
       let checkColorSpace = (colorSpaceName:colorSpaceManager.ColorSpace)=> {
         expect(colorSpaceName == CUSTOM).assertTrue();
       }
@@ -462,7 +462,7 @@ export default function ImageColorSpaceTransferTest() {
         whitePointX: 0.31271,
         whitePointY: 0.32902
       }
-      let gamma: int = 2.4 as int;
+      let gamma: int = 2.4.toInt();
       let checkColorSpace = (colorSpaceName:colorSpaceManager.ColorSpace)=> {
         expect(colorSpaceName == CUSTOM).assertTrue();
       }
@@ -553,7 +553,7 @@ export default function ImageColorSpaceTransferTest() {
         whitePointX: 0.31271,
         whitePointY: 0.32902
       }
-      let gamma: int = 2.4 as int;
+      let gamma: int = 2.4.toInt();
       let checkColorSpace = (colorSpaceName:colorSpaceManager.ColorSpace)=> {
         expect(colorSpaceName == CUSTOM).assertTrue();
       }
@@ -644,7 +644,7 @@ export default function ImageColorSpaceTransferTest() {
         whitePointX: 0.31271,
         whitePointY: 0.32902
       }
-      let gamma: int = 2.4 as int;
+      let gamma: int = 2.4.toInt();
       let checkColorSpace = (colorSpaceName:colorSpaceManager.ColorSpace)=> {
         expect(colorSpaceName == CUSTOM).assertTrue();
       }

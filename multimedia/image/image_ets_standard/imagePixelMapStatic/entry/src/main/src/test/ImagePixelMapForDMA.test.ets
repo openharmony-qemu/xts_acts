@@ -110,7 +110,7 @@ export default function imagePixelmap() {
       return bufferRead;
     }
 
-    const getImageInfo = (logger: Logger, buffer: ArrayBuffer, decodingOptions?: image.DecodingOptions) => {
+    const getImageInfo = async (logger: Logger, buffer: ArrayBuffer, decodingOptions?: image.DecodingOptions) => {
       let imageSource = image.createImageSource(buffer);
       if (imageSource == undefined) {
         logger.log("create imageSource failed.")
@@ -119,27 +119,27 @@ export default function imagePixelmap() {
       let pixelMap: image.PixelMap | undefined = undefined;
       let imageInfo: image.ImageInfo | undefined = undefined;
       if (decodingOptions != undefined) {
-        waitForCompletion(async () => {pixelMap = await imageSource!.createPixelMap(decodingOptions);})
+        pixelMap = await imageSource!.createPixelMap(decodingOptions);
       } else {
-        waitForCompletion(async () => {pixelMap = await imageSource!.createPixelMap();})
+        pixelMap = await imageSource!.createPixelMap();
       }
-      waitForCompletion(async () => {await imageSource!.release();})
+      await imageSource!.release();
       if (pixelMap == undefined) {
         logger.log("create pixelMap failed.")
         return undefined;
       }
-      waitForCompletion(async () => {imageInfo = await pixelMap!.getImageInfo();})
-      waitForCompletion(async () => {await pixelMap!.release();})
+      imageInfo = await pixelMap!.getImageInfo();
+      await pixelMap!.release();
       return imageInfo;
     }
 
-    const getPixelmapFromAllocator = (
+    const getPixelmapFromAllocator = async (
       logger: Logger,
       buffer: ArrayBuffer,
       type: string,
       decodingOptions?: image.DecodingOptions,
       allocatorType?: image.AllocatorType
-    ): image.ImageInfo | undefined => {
+    ): Promise<image.ImageInfo | undefined> => {
       let pixelMap: image.PixelMap | undefined;
       try {
         let imageSource = image.createImageSource(buffer);
@@ -156,22 +156,22 @@ export default function imagePixelmap() {
           }
         } else {
           if (decodingOptions != undefined && allocatorType == undefined) {
-            waitForCompletion(async () => {pixelMap = await imageSource!.createPixelMapUsingAllocator(decodingOptions);})
+            pixelMap = await imageSource!.createPixelMapUsingAllocator(decodingOptions);
           } else if (decodingOptions != undefined && allocatorType != undefined) {
-            waitForCompletion(async () => {pixelMap = await imageSource!.createPixelMapUsingAllocator(decodingOptions, allocatorType);})
+            pixelMap = await imageSource!.createPixelMapUsingAllocator(decodingOptions, allocatorType);
           } else if (decodingOptions == undefined && allocatorType == undefined) {
-            waitForCompletion(async () => {pixelMap = await imageSource!.createPixelMapUsingAllocator();})
+            pixelMap = await imageSource!.createPixelMapUsingAllocator();
           }
         }
-        waitForCompletion(async () => {await imageSource!.release();})
+        await imageSource!.release();
       } catch (error) {
         logger.log("getPixelmapFromAllocator error is: " + JSON.stringify(error));
         logger.log('Failed to create pixelMap.');
       }
       if(pixelMap != undefined) {
         let dstImageInfo: image.ImageInfo | undefined;
-        waitForCompletion(async () => {dstImageInfo = await pixelMap!.getImageInfo();})
-        waitForCompletion(async () => {await pixelMap!.release();})
+        dstImageInfo = await pixelMap!.getImageInfo();
+        await pixelMap!.release();
         return dstImageInfo;
       } else {
         return undefined;
@@ -241,8 +241,8 @@ export default function imagePixelmap() {
         desiredSize: {width: 99, height: 200},
         desiredPixelFormat: YCRCB_P010
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, SHARE_MEMORY);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, SHARE_MEMORY);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, SHARE_MEMORY);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -264,8 +264,8 @@ export default function imagePixelmap() {
         desiredSize: {width: 3071, height: 4096},
         desiredPixelFormat: YCRCB_P010
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, DMA);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -287,8 +287,8 @@ export default function imagePixelmap() {
         desiredSize: {width: 3071, height: 4096},
         desiredPixelFormat: YCRCB_P010
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, AUTO);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, AUTO);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, AUTO);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -310,8 +310,8 @@ export default function imagePixelmap() {
         desiredSize: {width: 99, height: 200},
         desiredPixelFormat: YCRCB_P010
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, SHARE_MEMORY);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, SHARE_MEMORY);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, SHARE_MEMORY);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -333,8 +333,8 @@ export default function imagePixelmap() {
         desiredSize: {width: 3071, height: 4096},
         desiredPixelFormat: YCRCB_P010
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, DMA);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -356,8 +356,8 @@ export default function imagePixelmap() {
         desiredSize: {width: 3071, height: 4096},
         desiredPixelFormat: YCRCB_P010
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, AUTO);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, AUTO);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, AUTO);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -379,8 +379,8 @@ export default function imagePixelmap() {
         desiredSize: {width: 99, height: 200},
         desiredPixelFormat: YCRCB_P010
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, SHARE_MEMORY);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, SHARE_MEMORY);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, SHARE_MEMORY);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -402,8 +402,8 @@ export default function imagePixelmap() {
         desiredSize: {width: 3071, height: 4096},
         desiredPixelFormat: YCRCB_P010
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, DMA);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -425,8 +425,8 @@ export default function imagePixelmap() {
         desiredSize: {width: 3071, height: 4096},
         desiredPixelFormat: YCRCB_P010
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, AUTO);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, AUTO);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, AUTO);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -448,8 +448,8 @@ export default function imagePixelmap() {
         desiredSize: {width: 99, height: 200},
         desiredPixelFormat: YCRCB_P010
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, SHARE_MEMORY);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, SHARE_MEMORY);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, SHARE_MEMORY);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -471,8 +471,8 @@ export default function imagePixelmap() {
         desiredSize: {width: 3071, height: 4096},
         desiredPixelFormat: YCRCB_P010
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, DMA);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -494,8 +494,8 @@ export default function imagePixelmap() {
         desiredSize: {width: 3071, height: 4096},
         desiredPixelFormat: YCRCB_P010
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, AUTO);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, AUTO);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, AUTO);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -518,8 +518,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: RGBA_8888,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -542,8 +542,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: BGRA_8888,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -566,8 +566,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: BGRA_8888,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -590,8 +590,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: RGBA_8888,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -614,8 +614,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: RGBA_8888,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -638,8 +638,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: RGBA_F16,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, AUTO);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, AUTO);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -662,8 +662,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: RGBA_8888,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, AUTO);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, AUTO);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -686,8 +686,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: NV21,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, AUTO);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, AUTO);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -710,8 +710,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: NV12,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, AUTO);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, AUTO);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -734,8 +734,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: RGBA_1010102,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, AUTO);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, AUTO);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -758,8 +758,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: RGB_565,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, SHARE_MEMORY);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, SHARE_MEMORY);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, SHARE_MEMORY);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -782,8 +782,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: YCRCB_P010,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, SHARE_MEMORY);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, SHARE_MEMORY);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, SHARE_MEMORY);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -806,8 +806,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: YCRCB_P010,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, SHARE_MEMORY);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, SHARE_MEMORY);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, SHARE_MEMORY);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -830,8 +830,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: YCRCB_P010,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, SHARE_MEMORY);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, SHARE_MEMORY);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, SHARE_MEMORY);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -854,8 +854,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: YCRCB_P010,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, DMA);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -878,8 +878,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: YCRCB_P010,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, DMA);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -902,8 +902,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: YCRCB_P010,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, DMA);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -926,8 +926,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: YCRCB_P010,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, DMA);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -945,8 +945,8 @@ export default function imagePixelmap() {
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_STATIC_1700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_STATIC_1700");
       const buffer = getBuffer(test_DMA_33_77);
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default");
-      let imageInfo = getImageInfo(logger, buffer);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default");
+      let imageInfo = await getImageInfo(logger, buffer);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -964,8 +964,8 @@ export default function imagePixelmap() {
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_STATIC_1800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_STATIC_1800");
       const buffer = getBuffer(test_DMA_128_256);
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default");
-      let imageInfo = getImageInfo(logger, buffer);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default");
+      let imageInfo = await getImageInfo(logger, buffer);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -983,8 +983,8 @@ export default function imagePixelmap() {
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_STATIC_1900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_STATIC_1900");
       const buffer = getBuffer(test_DMA_512_512);
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default");
-      let imageInfo = getImageInfo(logger, buffer);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default");
+      let imageInfo = await getImageInfo(logger, buffer);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -1002,8 +1002,8 @@ export default function imagePixelmap() {
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_STATIC_2000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_STATIC_2000");
       const buffer = getBuffer(test_DMA_2999_3742);
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default");
-      let imageInfo = getImageInfo(logger, buffer);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default");
+      let imageInfo = await getImageInfo(logger, buffer);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -1021,8 +1021,8 @@ export default function imagePixelmap() {
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_STATIC_2100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_STATIC_2100");
       const buffer = getBuffer(test_DMA_3072_4096);
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default");
-      let imageInfo = getImageInfo(logger, buffer);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default");
+      let imageInfo = await getImageInfo(logger, buffer);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -1045,8 +1045,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: RGBA_8888,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -1069,8 +1069,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: BGRA_8888,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -1093,8 +1093,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: BGRA_8888,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -1117,8 +1117,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: RGBA_8888,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -1141,8 +1141,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: RGBA_8888,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -1165,8 +1165,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: RGBA_F16,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, AUTO);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, AUTO);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -1189,8 +1189,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: RGBA_8888,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, AUTO);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, AUTO);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, AUTO);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -1213,8 +1213,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: NV21,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, AUTO);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, AUTO);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, AUTO);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -1237,8 +1237,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: NV12,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, AUTO);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, AUTO);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, AUTO);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -1261,8 +1261,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: RGBA_1010102,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, AUTO);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, AUTO);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, AUTO);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -1285,8 +1285,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: YCRCB_P010,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, SHARE_MEMORY);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, SHARE_MEMORY);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, SHARE_MEMORY);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -1309,8 +1309,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: YCRCB_P010,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, SHARE_MEMORY);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, SHARE_MEMORY);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, SHARE_MEMORY);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -1333,8 +1333,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: YCRCB_P010,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, SHARE_MEMORY);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, SHARE_MEMORY);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, SHARE_MEMORY);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -1357,8 +1357,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: YCRCB_P010,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, SHARE_MEMORY);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, SHARE_MEMORY);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, SHARE_MEMORY);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -1381,8 +1381,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: YCRCB_P010,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, DMA);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -1405,8 +1405,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: YCRCB_P010,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, DMA);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -1429,8 +1429,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: YCRCB_P010,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, DMA);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -1453,8 +1453,8 @@ export default function imagePixelmap() {
         desiredPixelFormat: YCRCB_P010,
         desiredDynamicRange: RANGE_SDR
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, DMA);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -1472,8 +1472,8 @@ export default function imagePixelmap() {
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_STATIC_3800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_STATIC_3800");
       const buffer = getBuffer(test_DMA_33_77);
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync");
-      let imageInfo = getImageInfo(logger, buffer);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync");
+      let imageInfo = await getImageInfo(logger, buffer);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -1491,8 +1491,8 @@ export default function imagePixelmap() {
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_STATIC_3900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_STATIC_3900");
       const buffer = getBuffer(test_DMA_128_256);
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync");
-      let imageInfo = getImageInfo(logger, buffer);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync");
+      let imageInfo = await getImageInfo(logger, buffer);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -1510,8 +1510,8 @@ export default function imagePixelmap() {
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_STATIC_4000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_STATIC_4000");
       const buffer = getBuffer(test_DMA_512_512);
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync");
-      let imageInfo = getImageInfo(logger, buffer);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync");
+      let imageInfo = await getImageInfo(logger, buffer);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -1529,8 +1529,8 @@ export default function imagePixelmap() {
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_STATIC_4100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_STATIC_4100");
       const buffer = getBuffer(test_DMA_2999_3742);
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync");
-      let imageInfo = getImageInfo(logger, buffer);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync");
+      let imageInfo = await getImageInfo(logger, buffer);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -1548,8 +1548,8 @@ export default function imagePixelmap() {
     it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_STATIC_4200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_JPEG_STATIC_4200");
       const buffer = getBuffer(test_DMA_3072_4096);
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync");
-      let imageInfo = getImageInfo(logger, buffer);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync");
+      let imageInfo = await getImageInfo(logger, buffer);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -1577,8 +1577,8 @@ export default function imagePixelmap() {
           desiredPixelFormat: YCRCB_P010,
           desiredDynamicRange: RANGE_HDR
         };
-        let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions);
-        let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions);
+        let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
         let ret = checkPixelmap(done, logger, pixelMap, imageInfo);
         logger.log("checkPixelmap result is: " + ret);
         expect(ret).assertTrue();
@@ -1607,8 +1607,8 @@ export default function imagePixelmap() {
           desiredPixelFormat: YCRCB_P010,
           desiredDynamicRange: RANGE_HDR
         };
-        let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions);
-        let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions);
+        let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
         let ret = checkPixelmap(done, logger, pixelMap, imageInfo);
         logger.log("checkPixelmap result is: " + ret);
         expect(ret).assertTrue();
@@ -1637,8 +1637,8 @@ export default function imagePixelmap() {
           desiredPixelFormat: YCRCB_P010,
           desiredDynamicRange: RANGE_HDR
         };
-        let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, AUTO);
-        let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, AUTO);
+        let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
         let ret = checkPixelmap(done, logger, pixelMap, imageInfo, AUTO);
         logger.log("checkPixelmap result is: " + ret);
         expect(ret).assertTrue();
@@ -1667,8 +1667,8 @@ export default function imagePixelmap() {
           desiredPixelFormat: YCRCB_P010,
           desiredDynamicRange: RANGE_HDR
         };
-        let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, AUTO);
-        let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, AUTO);
+        let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
         let ret = checkPixelmap(done, logger, pixelMap, imageInfo, AUTO);
         logger.log("checkPixelmap result is: " + ret);
         expect(ret).assertTrue();
@@ -1697,8 +1697,8 @@ export default function imagePixelmap() {
           desiredPixelFormat: YCRCB_P010,
           desiredDynamicRange: RANGE_HDR
         };
-        let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
-        let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
+        let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
         let ret = checkPixelmap(done, logger, pixelMap, imageInfo, DMA);
         logger.log("checkPixelmap result is: " + ret);
         expect(ret).assertTrue();
@@ -1727,8 +1727,8 @@ export default function imagePixelmap() {
           desiredPixelFormat: YCRCB_P010,
           desiredDynamicRange: RANGE_HDR
         };
-        let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
-        let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
+        let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
         let ret = checkPixelmap(done, logger, pixelMap, imageInfo, DMA);
         logger.log("checkPixelmap result is: " + ret);
         expect(ret).assertTrue();
@@ -1752,8 +1752,8 @@ export default function imagePixelmap() {
         done();
       } else {
         const buffer = getBuffer(test_DMA_55_77);
-        let pixelMap = getPixelmapFromAllocator(logger, buffer, "default");
-        let imageInfo = getImageInfo(logger, buffer);
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default");
+        let imageInfo = await getImageInfo(logger, buffer);
         let ret = checkPixelmap(done, logger, pixelMap, imageInfo);
         logger.log("checkPixelmap result is: " + ret);
         expect(ret).assertTrue();
@@ -1777,8 +1777,8 @@ export default function imagePixelmap() {
         done();
       } else {
         const buffer = getBuffer(test_DMA_3071_4095);
-        let pixelMap = getPixelmapFromAllocator(logger, buffer, "default");
-        let imageInfo = getImageInfo(logger, buffer);
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default");
+        let imageInfo = await getImageInfo(logger, buffer);
         let ret = checkPixelmap(done, logger, pixelMap, imageInfo);
         logger.log("checkPixelmap result is: " + ret);
         expect(ret).assertTrue();
@@ -1807,8 +1807,8 @@ export default function imagePixelmap() {
           desiredPixelFormat: YCRCB_P010,
           desiredDynamicRange: RANGE_HDR
         };
-        let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions);
-        let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions);
+        let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
         let ret = checkPixelmap(done, logger, pixelMap, imageInfo);
         logger.log("checkPixelmap result is: " + ret);
         expect(ret).assertTrue();
@@ -1837,8 +1837,8 @@ export default function imagePixelmap() {
           desiredPixelFormat: YCRCB_P010,
           desiredDynamicRange: RANGE_HDR
         };
-        let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions);
-        let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions);
+        let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
         let ret = checkPixelmap(done, logger, pixelMap, imageInfo);
         logger.log("checkPixelmap result is: " + ret);
         expect(ret).assertTrue();
@@ -1867,8 +1867,8 @@ export default function imagePixelmap() {
           desiredPixelFormat: YCRCB_P010,
           desiredDynamicRange: RANGE_HDR
         };
-        let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, AUTO);
-        let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, AUTO);
+        let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
         let ret = checkPixelmap(done, logger, pixelMap, imageInfo, AUTO);
         logger.log("checkPixelmap result is: " + ret);
         expect(ret).assertTrue();
@@ -1897,8 +1897,8 @@ export default function imagePixelmap() {
           desiredPixelFormat: YCRCB_P010,
           desiredDynamicRange: RANGE_HDR
         };
-        let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, AUTO);
-        let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, AUTO);
+        let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
         let ret = checkPixelmap(done, logger, pixelMap, imageInfo, AUTO);
         logger.log("checkPixelmap result is: " + ret);
         expect(ret).assertTrue();
@@ -1927,8 +1927,8 @@ export default function imagePixelmap() {
           desiredPixelFormat: YCRCB_P010,
           desiredDynamicRange: RANGE_HDR
         };
-        let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
-        let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
+        let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
         let ret = checkPixelmap(done, logger, pixelMap, imageInfo, DMA);
         logger.log("checkPixelmap result is: " + ret);
         expect(ret).assertTrue();
@@ -1957,8 +1957,8 @@ export default function imagePixelmap() {
           desiredPixelFormat: YCRCB_P010,
           desiredDynamicRange: RANGE_HDR
         };
-        let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
-        let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
+        let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
         let ret = checkPixelmap(done, logger, pixelMap, imageInfo, DMA);
         logger.log("checkPixelmap result is: " + ret);
         expect(ret).assertTrue();
@@ -1982,8 +1982,8 @@ export default function imagePixelmap() {
         done();
       } else {
         const buffer = getBuffer(test_DMA_55_77);
-        let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync");
-        let imageInfo = getImageInfo(logger, buffer);
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync");
+        let imageInfo = await getImageInfo(logger, buffer);
         let ret = checkPixelmap(done, logger, pixelMap, imageInfo);
         logger.log("checkPixelmap result is: " + ret);
         expect(ret).assertTrue();
@@ -2007,8 +2007,8 @@ export default function imagePixelmap() {
         done();
       } else {
         const buffer = getBuffer(test_DMA_3071_4095);
-        let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync");
-        let imageInfo = getImageInfo(logger, buffer);
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync");
+        let imageInfo = await getImageInfo(logger, buffer);
         let ret = checkPixelmap(done, logger, pixelMap, imageInfo);
         logger.log("checkPixelmap result is: " + ret);
         expect(ret).assertTrue();
@@ -2031,8 +2031,8 @@ export default function imagePixelmap() {
         desiredSize: {width: 99, height: 200},
         desiredPixelFormat: YCRCB_P010
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, SHARE_MEMORY);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, SHARE_MEMORY);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, SHARE_MEMORY);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -2054,8 +2054,8 @@ export default function imagePixelmap() {
         desiredSize: {width: 3071, height: 4096},
         desiredPixelFormat: YCRCB_P010
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, DMA);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -2077,8 +2077,8 @@ export default function imagePixelmap() {
         desiredSize: {width: 3071, height: 4096},
         desiredPixelFormat: YCRCB_P010
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, AUTO);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, AUTO);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, AUTO);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -2100,8 +2100,8 @@ export default function imagePixelmap() {
         desiredSize: {width: 99, height: 200},
         desiredPixelFormat: YCRCB_P010
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, SHARE_MEMORY);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, SHARE_MEMORY);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, SHARE_MEMORY);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -2123,8 +2123,8 @@ export default function imagePixelmap() {
         desiredSize: {width: 3071, height: 4096},
         desiredPixelFormat: YCRCB_P010
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, DMA);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -2146,8 +2146,8 @@ export default function imagePixelmap() {
         desiredSize: {width: 3071, height: 4096},
         desiredPixelFormat: YCRCB_P010
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, AUTO);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, AUTO);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, AUTO);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -2175,8 +2175,8 @@ export default function imagePixelmap() {
           desiredSize: {width: 99, height: 200},
           desiredPixelFormat: YCRCB_P010
         };
-        let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, SHARE_MEMORY);
-        let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, SHARE_MEMORY);
+        let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
         let ret = checkPixelmap(done, logger, pixelMap, imageInfo, SHARE_MEMORY);
         logger.log("checkPixelmap result is: " + ret);
         expect(ret).assertTrue();
@@ -2204,8 +2204,8 @@ export default function imagePixelmap() {
           desiredSize: {width: 3071, height: 4096},
           desiredPixelFormat: YCRCB_P010
         };
-        let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
-        let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
+        let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
         let ret = checkPixelmap(done, logger, pixelMap, imageInfo, DMA);
         logger.log("checkPixelmap result is: " + ret);
         expect(ret).assertTrue();
@@ -2233,8 +2233,8 @@ export default function imagePixelmap() {
           desiredSize: {width: 3071, height: 4096},
           desiredPixelFormat: YCRCB_P010
         };
-        let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, AUTO);
-        let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, AUTO);
+        let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
         let ret = checkPixelmap(done, logger, pixelMap, imageInfo, AUTO);
         logger.log("checkPixelmap result is: " + ret);
         expect(ret).assertTrue();
@@ -2257,8 +2257,8 @@ export default function imagePixelmap() {
         desiredSize: {width: 99, height: 200},
         desiredPixelFormat: YCRCB_P010
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, SHARE_MEMORY);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, SHARE_MEMORY);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, SHARE_MEMORY);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -2280,8 +2280,8 @@ export default function imagePixelmap() {
         desiredSize: {width: 3071, height: 4096},
         desiredPixelFormat: YCRCB_P010
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, DMA);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -2303,8 +2303,8 @@ export default function imagePixelmap() {
         desiredSize: {width: 3071, height: 4096},
         desiredPixelFormat: YCRCB_P010
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, AUTO);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, AUTO);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, AUTO);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -2331,8 +2331,8 @@ export default function imagePixelmap() {
           desiredSize: {width: 99, height: 200},
           desiredPixelFormat: YCRCB_P010
         };
-        let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, SHARE_MEMORY);
-        let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, SHARE_MEMORY);
+        let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
         let ret = checkPixelmap(done, logger, pixelMap, imageInfo, SHARE_MEMORY);
         logger.log("checkPixelmap result is: " + ret);
         expect(ret).assertTrue();
@@ -2360,8 +2360,8 @@ export default function imagePixelmap() {
           desiredSize: {width: 3071, height: 4096},
           desiredPixelFormat: YCRCB_P010
         };
-        let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
-        let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
+        let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
         let ret = checkPixelmap(done, logger, pixelMap, imageInfo, DMA);
         logger.log("checkPixelmap result is: " + ret);
         expect(ret).assertTrue();
@@ -2389,8 +2389,8 @@ export default function imagePixelmap() {
           desiredSize: {width: 3071, height: 4096},
           desiredPixelFormat: YCRCB_P010
         };
-        let pixelMap = getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, AUTO);
-        let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, AUTO);
+        let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
         let ret = checkPixelmap(done, logger, pixelMap, imageInfo, AUTO);
         logger.log("checkPixelmap result is: " + ret);
         expect(ret).assertTrue();
@@ -2413,8 +2413,8 @@ export default function imagePixelmap() {
         desiredSize: {width: 99, height: 200},
         desiredPixelFormat: YCRCB_P010
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, SHARE_MEMORY);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, SHARE_MEMORY);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, SHARE_MEMORY);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -2436,8 +2436,8 @@ export default function imagePixelmap() {
         desiredSize: {width: 3071, height: 4096},
         desiredPixelFormat: YCRCB_P010
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, DMA);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -2459,8 +2459,8 @@ export default function imagePixelmap() {
         desiredSize: {width: 3071, height: 4096},
         desiredPixelFormat: YCRCB_P010
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, AUTO);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, AUTO);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, AUTO);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -2482,8 +2482,8 @@ export default function imagePixelmap() {
         desiredSize: {width: 99, height: 200},
         desiredPixelFormat: YCRCB_P010
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, SHARE_MEMORY);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, SHARE_MEMORY);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, SHARE_MEMORY);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -2505,8 +2505,8 @@ export default function imagePixelmap() {
         desiredSize: {width: 3071, height: 4096},
         desiredPixelFormat: YCRCB_P010
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, DMA);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -2528,8 +2528,8 @@ export default function imagePixelmap() {
         desiredSize: {width: 3071, height: 4096},
         desiredPixelFormat: YCRCB_P010
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, AUTO);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, AUTO);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, AUTO);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -2551,8 +2551,8 @@ export default function imagePixelmap() {
         desiredSize: {width: 99, height: 200},
         desiredPixelFormat: YCRCB_P010
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, SHARE_MEMORY);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, SHARE_MEMORY);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, SHARE_MEMORY);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -2574,8 +2574,8 @@ export default function imagePixelmap() {
         desiredSize: {width: 3071, height: 4096},
         desiredPixelFormat: YCRCB_P010
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, DMA);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -2597,8 +2597,8 @@ export default function imagePixelmap() {
         desiredSize: {width: 3071, height: 4096},
         desiredPixelFormat: YCRCB_P010
       };
-      let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, AUTO);
-      let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, AUTO);
+      let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
       let ret = checkPixelmap(done, logger, pixelMap, imageInfo, AUTO);
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
@@ -2625,8 +2625,8 @@ export default function imagePixelmap() {
           desiredSize: {width: 99, height: 200},
           desiredPixelFormat: YCRCB_P010
         };
-        let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, SHARE_MEMORY);
-        let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, SHARE_MEMORY);
+        let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
         let ret = checkPixelmap(done, logger, pixelMap, imageInfo, SHARE_MEMORY);
         logger.log("checkPixelmap result is: " + ret);
         expect(ret).assertTrue();
@@ -2654,8 +2654,8 @@ export default function imagePixelmap() {
           desiredSize: {width: 3071, height: 4096},
           desiredPixelFormat: YCRCB_P010
         };
-        let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
-        let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
+        let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
         let ret = checkPixelmap(done, logger, pixelMap, imageInfo, DMA);
         logger.log("checkPixelmap result is: " + ret);
         expect(ret).assertTrue();
@@ -2683,8 +2683,8 @@ export default function imagePixelmap() {
           desiredSize: {width: 3071, height: 4096},
           desiredPixelFormat: YCRCB_P010
         };
-        let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, AUTO);
-        let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, AUTO);
+        let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
         let ret = checkPixelmap(done, logger, pixelMap, imageInfo, AUTO);
         logger.log("checkPixelmap result is: " + ret);
         expect(ret).assertTrue();
@@ -2712,8 +2712,8 @@ export default function imagePixelmap() {
           desiredSize: {width: 99, height: 200},
           desiredPixelFormat: YCRCB_P010
         };
-        let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, SHARE_MEMORY);
-        let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, SHARE_MEMORY);
+        let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
         let ret = checkPixelmap(done, logger, pixelMap, imageInfo, SHARE_MEMORY);
         logger.log("checkPixelmap result is: " + ret);
         expect(ret).assertTrue();
@@ -2741,8 +2741,8 @@ export default function imagePixelmap() {
           desiredSize: {width: 3071, height: 4096},
           desiredPixelFormat: YCRCB_P010
         };
-        let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
-        let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
+        let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
         let ret = checkPixelmap(done, logger, pixelMap, imageInfo, DMA);
         logger.log("checkPixelmap result is: " + ret);
         expect(ret).assertTrue();
@@ -2770,8 +2770,8 @@ export default function imagePixelmap() {
           desiredSize: {width: 3071, height: 4096},
           desiredPixelFormat: YCRCB_P010
         };
-        let pixelMap = getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, AUTO);
-        let imageInfo = getImageInfo(logger, buffer, decodingOptions);
+        let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, AUTO);
+        let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
         let ret = checkPixelmap(done, logger, pixelMap, imageInfo, AUTO);
         logger.log("checkPixelmap result is: " + ret);
         expect(ret).assertTrue();

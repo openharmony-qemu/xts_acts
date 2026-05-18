@@ -94,14 +94,6 @@ OH_Drawing_RecordCmd* threadFunctionTest1()
     return recordCmd;
 }
 
-/**
- * @tc.name   testRecordCmdDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RECORDER_03000
- * @tc.desc   test for testRecordCmdDestroyNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRecordCmdDestroyNormal()
 {
     DrawingRecordCmdDestroyTestSetUp();
@@ -119,14 +111,6 @@ int TestRecordCmdDestroyNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRecordCmdDestroyNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RECORDER_03100
- * @tc.desc   test for testRecordCmdDestroyNULL.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRecordCmdDestroyNULL()
 {
     DrawingRecordCmdDestroyTestSetUp();

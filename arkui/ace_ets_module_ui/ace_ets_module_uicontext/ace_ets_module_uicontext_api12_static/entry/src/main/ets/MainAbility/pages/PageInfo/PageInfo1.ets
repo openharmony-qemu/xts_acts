@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -80,7 +80,7 @@ struct MyComponent {
           console.log('+++++++++++2')
           const uniqueId: number = this.getUniqueId();
           console.log('+++++++++++3')
-          const pageInfo: PageInfo = uiContext.getPageInfoByUniqueId(uniqueId as int);
+          const pageInfo: PageInfo = uiContext.getPageInfoByUniqueId(uniqueId.toInt());
           console.log('+++++++++++4')
           this.text1 = pageInfo.routerPageInfo?.name + ''
           this.text2 = pageInfo.navDestinationInfo?.name + ''

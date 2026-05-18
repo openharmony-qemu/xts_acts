@@ -75,8 +75,8 @@ export default function row_TextOffsetTest() {
      */
 it('testRowTextOffset_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testRowTextOffset_static_01] START');
-      let firstText: RectValue = CommonFunc.getComponentRect('Row_TextOffset1');
-      let secondText: RectValue = CommonFunc.getComponentRect('Row_TextOffset2');
+      let firstText: RectValue = await CommonFunc.getComponentRect('Row_TextOffset1');
+      let secondText: RectValue = await CommonFunc.getComponentRect('Row_TextOffset2');
       let firstTextLeft: number = firstText.left;
       let firstTextTop: number = firstText.top;
       let secondTextTop: number = secondText.top;
@@ -87,10 +87,10 @@ it('testRowTextOffset_static_01', Level.LEVEL0, async (done: () => void): Promis
         } as Position
       });
       await CommonFunc.sleep(3000);
-      firstText = CommonFunc.getComponentRect('Row_TextOffset1');
-      secondText = CommonFunc.getComponentRect('Row_TextOffset2');
-      let thirdText: RectValue = CommonFunc.getComponentRect('Row_TextOffset3');
-      let rowContainer: RectValue = CommonFunc.getComponentRect('Row_TextOffset_Container01');
+      firstText = await CommonFunc.getComponentRect('Row_TextOffset1');
+      secondText = await CommonFunc.getComponentRect('Row_TextOffset2');
+      let thirdText: RectValue = await CommonFunc.getComponentRect('Row_TextOffset3');
+      let rowContainer: RectValue = await CommonFunc.getComponentRect('Row_TextOffset_Container01');
       let rowContainerStrJson = inspector.getInspectorByKey('Row_TextOffset_Container01');
   let obj = JSON.parseJsonElement(rowContainerStrJson);
   expect(obj.getString('$type')).assertEqual('Row');

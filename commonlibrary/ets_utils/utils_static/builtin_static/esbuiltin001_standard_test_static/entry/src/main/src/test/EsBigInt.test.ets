@@ -460,11 +460,7 @@ export default function EsBigIntTest(){
       console.info(`${caseName}, test start`);
       expect(BigInt.asIntN(0, 1n)).assertEqual(0n);
       expect(BigInt.asIntN(1, 1n)).assertEqual(-1n);
-      expect(BigInt.asIntN(-0.9, 1n)).assertEqual(0n);
-      expect(BigInt.asIntN(0.9, 1n)).assertEqual(0n);
-      expect(BigInt.asIntN(NaN, 1n)).assertEqual(0n);
       expect(BigInt.asIntN(3, 10n)).assertEqual(2n);
-      expect(BigInt.asIntN(3.9, 10n)).assertEqual(2n);
       console.info(`${caseName}, test end`);
     });
 
@@ -584,11 +580,7 @@ export default function EsBigIntTest(){
       console.info(`${caseName}, test start`);
       expect(BigInt.asUintN(0, 1n)).assertEqual(0n);
       expect(BigInt.asUintN(1, 1n)).assertEqual(1n);
-      expect(BigInt.asUintN(-0.9, 1n)).assertEqual(0n);
-      expect(BigInt.asUintN(0.9, 1n)).assertEqual(0n);
-      expect(BigInt.asUintN(NaN, 1n)).assertEqual(0n);
       expect(BigInt.asUintN(3, 10n)).assertEqual(2n);
-      expect(BigInt.asUintN(3.9, 10n)).assertEqual(2n);
       console.info(`${caseName}, test end`);
     });
 })

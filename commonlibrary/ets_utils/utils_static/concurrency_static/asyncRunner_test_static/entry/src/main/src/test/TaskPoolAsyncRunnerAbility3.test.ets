@@ -37,7 +37,7 @@ import { BusinessError } from "@ohos.base";
 import { sleep } from '../testability/pages/Utils';
 
 
-export default function taskPoolAsyncRunnerAbility3() {
+export default function taskPoolAsyncRunnerAbility3(): void {
   describe('TaskPoolAsyncRunnerAbility3', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

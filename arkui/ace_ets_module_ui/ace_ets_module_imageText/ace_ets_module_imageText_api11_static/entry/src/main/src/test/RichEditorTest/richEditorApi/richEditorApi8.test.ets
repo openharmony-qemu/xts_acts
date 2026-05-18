@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -93,7 +93,7 @@ export default function richEditorApi8() {
       let richEditor = CommonFunc.getComponentRectOnScreen('RichEditor8');
 
       await driver.mouseClick({
-        x:(Math.round(richEditor.left) as Int) + 300, y: (Math.round(richEditor.top) as Int) + 300
+        x:(Math.round(richEditor.left).toInt()) + 300, y: (Math.round(richEditor.top).toInt()) + 300
       }, MouseButton.MOUSE_BUTTON_LEFT)
 
       await CommonFunc.sleep(2000);

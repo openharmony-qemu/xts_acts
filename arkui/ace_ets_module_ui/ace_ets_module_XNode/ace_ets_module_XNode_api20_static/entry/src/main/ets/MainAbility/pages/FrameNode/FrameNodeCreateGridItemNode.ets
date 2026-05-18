@@ -49,7 +49,7 @@ import {
 import { State } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
 
-class MyNodeController extends NodeController {
+export class MyNodeController extends NodeController {
   public errorCode: string = '';
   private worker: EAWorker = new EAWorker();
   private myNode: typeNode.GridItem | null = null;

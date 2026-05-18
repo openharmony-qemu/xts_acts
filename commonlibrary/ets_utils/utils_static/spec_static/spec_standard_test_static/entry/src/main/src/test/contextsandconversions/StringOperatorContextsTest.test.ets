@@ -263,9 +263,9 @@ export default function StringOperatorContextsTest() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     */
+    */
     it("testStringOperatorContexts0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let p1: float = 3.14;
+      let p1: float = 3.14f;
       let res = p1 + "";
       let expected = new Float(3.14).toString();
       expect(res).assertEqual(expected);
@@ -278,9 +278,9 @@ export default function StringOperatorContextsTest() {
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
-     */
+    */
     it("testStringOperatorContexts0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let p1: float = 3.14;
+      let p1: float = 3.14f;
       let res = p1 + "";
       let expected = p1.toString();
       expect(res).assertEqual(expected);
@@ -295,7 +295,7 @@ export default function StringOperatorContextsTest() {
      * @tc.level     Level 2
      */
     it("testStringOperatorContexts0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let p1: float = 3.14;
+      let p1: float = 3.14f;
       let res = p1 + "";
       let expected = p1.toString();
       expect(res).assertEqual(expected);

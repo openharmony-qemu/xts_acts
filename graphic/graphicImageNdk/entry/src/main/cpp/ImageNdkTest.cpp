@@ -41,11 +41,20 @@ namespace {
     const uint32_t NUM_7 = 7;
     const uint32_t NUM_8 = 8;
     const uint32_t NUM_9 = 9;
+    const uint32_t NUM_10 = 10;
     const uint32_t CHANNEL_8BIT_MAX = 0xFF;
     const uint32_t MAX_BUFFER_SIZE = 512;
     const uint32_t MAX_COLOR_SIZE = 96;
     const uint32_t MAX_QUALITY_SIZE = 98;
     constexpr int8_t ARGB_8888_BYTES = 4;
+    constexpr float SCALE_RATIO_2X = 2.0f;
+    constexpr float TRANSLATE_OFFSET_10 = 10.0f;
+    constexpr float ROTATE_ANGLE_90 = 90.0f;
+    constexpr float ROTATE_ANGLE_45 = 45.0f;
+    constexpr float OPACITY_HALF = 0.5f;
+    constexpr float OPACITY_MAX = 1.0f;
+    constexpr float OPACITY_INVALID_HIGH = 2.0f;
+    constexpr float OPACITY_INVALID_LOW = -1.0f;
     /**
      * Log print domain.
      */
@@ -112,7 +121,7 @@ static napi_value TestCreatePixelMapWithStrideAbnormal(napi_env env, napi_callba
     std::cout << "cout: ImagePixelmapNativeCTest Test will call OH_Pixelmap_CreatePixelMapWithStride." << std::endl;
     int32_t res = OH_PixelMap_CreatePixelMapWithStride(env, createOps, buffer, bufferSize, rowStride, &pixelmap);
     std::cout << "cout: ImagePixelmapNativeCTest Test OH_Pixelmap_CreatePixelMapWithStride." << std::endl;
-    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest Test OH_Pixelmap_CreatePixelMapWithStride, res: %{public}zu.", res);
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest Test OH_Pixelmap_CreatePixelMapWithStride, res: %{public}d.", res);
     if (res != IMAGE_RESULT_GET_DATA_ABNORMAL) {
         return getJsResult(env, res);
     }
@@ -792,6 +801,1125 @@ static napi_value CreatePixelmapFromSurfaceWithTransformation006(napi_env env, n
     return getJsResult(env, errCode);
 }
 
+static napi_value TestNativeSetPixelFormatAlphaU8(napi_env env, napi_callback_info info)
+{
+    OH_Pixelmap_InitializationOptions *opts = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapInitializationOptions_Create(&opts);
+    if (errCode != IMAGE_SUCCESS) {
+        return getJsResult(env, errCode);
+    }
+    errCode = OH_PixelmapInitializationOptions_SetPixelFormat(opts, PIXEL_FORMAT_ALPHA_U8);
+    if (errCode != IMAGE_SUCCESS) {
+        OH_PixelmapInitializationOptions_Release(opts);
+        return getJsResult(env, errCode);
+    }
+    int32_t format = 0;
+    errCode = OH_PixelmapInitializationOptions_GetPixelFormat(opts, &format);
+    if (errCode != IMAGE_SUCCESS || format != PIXEL_FORMAT_ALPHA_U8) {
+        OH_PixelmapInitializationOptions_Release(opts);
+        return getJsResult(env, IMAGE_UNKNOWN_ERROR);
+    }
+    errCode = OH_PixelmapInitializationOptions_Release(opts);
+    opts = nullptr;
+    if (errCode != IMAGE_SUCCESS) {
+        return getJsResult(env, errCode);
+    }
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeSetPixelFormatAlphaU8 success.");
+    return getJsResult(env, IMAGE_SUCCESS);
+}
+
+static napi_value TestNativeSetPixelFormatAlphaF16(napi_env env, napi_callback_info info)
+{
+    OH_Pixelmap_InitializationOptions *opts = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapInitializationOptions_Create(&opts);
+    if (errCode != IMAGE_SUCCESS) {
+        return getJsResult(env, errCode);
+    }
+    errCode = OH_PixelmapInitializationOptions_SetPixelFormat(opts, PIXEL_FORMAT_ALPHA_F16);
+    if (errCode != IMAGE_SUCCESS) {
+        OH_PixelmapInitializationOptions_Release(opts);
+        return getJsResult(env, errCode);
+    }
+    int32_t format = 0;
+    errCode = OH_PixelmapInitializationOptions_GetPixelFormat(opts, &format);
+    if (errCode != IMAGE_SUCCESS || format != PIXEL_FORMAT_ALPHA_F16) {
+        OH_PixelmapInitializationOptions_Release(opts);
+        return getJsResult(env, IMAGE_UNKNOWN_ERROR);
+    }
+    errCode = OH_PixelmapInitializationOptions_Release(opts);
+    opts = nullptr;
+    if (errCode != IMAGE_SUCCESS) {
+        return getJsResult(env, errCode);
+    }
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeSetPixelFormatAlphaF16 success.");
+    return getJsResult(env, IMAGE_SUCCESS);
+}
+
+static napi_value TestNativeSetOpacityNormal(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value argv[2] = {nullptr};
+    if (napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr) != napi_ok) {
+        OH_LOG_ERROR(LOG_APP, "napi_get_cb_info failed.");
+        return getJsResult(env, IMAGE_BAD_PARAMETER);
+    }
+
+    OH_PixelmapNative* pixelmap = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapNative_ConvertPixelmapNativeFromNapi(env, argv[0], &pixelmap);
+    if (errCode != IMAGE_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_ConvertPixelmapNativeFromNapi failed, errCode: %{public}d.", errCode);
+        return getJsResult(env, errCode);
+    }
+
+    double opacityValue;
+    napi_get_value_double(env, argv[1], &opacityValue);
+
+    errCode = OH_PixelmapNative_SetOpacity(pixelmap, static_cast<float>(opacityValue));
+    if (errCode != IMAGE_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_SetOpacity failed, errCode: %{public}d.", errCode);
+        OH_PixelmapNative_Destroy(&pixelmap);
+        pixelmap = nullptr;
+        return getJsResult(env, errCode);
+    }
+
+    OH_PixelmapNative_Destroy(&pixelmap);
+    pixelmap = nullptr;
+
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeSetOpacityNormal success.");
+    return getJsResult(env, IMAGE_SUCCESS);
+}
+
+static napi_value TestNativeSetOpacityBoundaryMax(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value argv[2] = {nullptr};
+    if (napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr) != napi_ok) {
+        OH_LOG_ERROR(LOG_APP, "napi_get_cb_info failed.");
+        return getJsResult(env, IMAGE_BAD_PARAMETER);
+    }
+
+    OH_PixelmapNative* pixelmap = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapNative_ConvertPixelmapNativeFromNapi(env, argv[0], &pixelmap);
+    if (errCode != IMAGE_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_ConvertPixelmapNativeFromNapi failed, errCode: %{public}d.", errCode);
+        return getJsResult(env, errCode);
+    }
+
+    const float maxOpacityValue = 1.0f;
+    errCode = OH_PixelmapNative_SetOpacity(pixelmap, maxOpacityValue);
+    if (errCode != IMAGE_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_SetOpacity boundary max failed, errCode: %{public}d.", errCode);
+        OH_PixelmapNative_Destroy(&pixelmap);
+        pixelmap = nullptr;
+        return getJsResult(env, errCode);
+    }
+
+    OH_PixelmapNative_Destroy(&pixelmap);
+    pixelmap = nullptr;
+
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeSetOpacityBoundaryMax success.");
+    return getJsResult(env, IMAGE_SUCCESS);
+}
+
+static napi_value TestNativeSetOpacityAlphaF16(napi_env env, napi_callback_info info)
+{
+    OH_Pixelmap_InitializationOptions *opts = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapInitializationOptions_Create(&opts);
+    if (errCode != IMAGE_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "Create opts failed, errCode: %{public}d.", errCode);
+        return getJsResult(env, errCode);
+    }
+
+    const uint32_t width = 10;
+    const uint32_t height = 10;
+    const int32_t alphaF16Format = 16;
+    OH_PixelmapInitializationOptions_SetWidth(opts, width);
+    OH_PixelmapInitializationOptions_SetHeight(opts, height);
+    OH_PixelmapInitializationOptions_SetPixelFormat(opts, alphaF16Format);
+
+    OH_PixelmapNative* pixelmap = nullptr;
+    errCode = OH_PixelmapNative_CreateEmptyPixelmap(opts, &pixelmap);
+    if (errCode != IMAGE_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "Create ALPHA_F16 pixelmap failed, errCode: %{public}d.", errCode);
+        OH_PixelmapInitializationOptions_Release(opts);
+        opts = nullptr;
+        return getJsResult(env, errCode);
+    }
+
+    const float opacityValue = 0.5f;
+    errCode = OH_PixelmapNative_SetOpacity(pixelmap, opacityValue);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TestNativeSetOpacityAlphaF16",
+        "SetOpacity ALPHA_F16 returned: %{public}d, expected: %{public}d.",
+        errCode, IMAGE_SUCCESS);
+
+    if (errCode != IMAGE_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_SetOpacity ALPHA_F16 failed, errCode: %{public}d.", errCode);
+        OH_PixelmapNative_Destroy(&pixelmap);
+        pixelmap = nullptr;
+        OH_PixelmapInitializationOptions_Release(opts);
+        opts = nullptr;
+        return getJsResult(env, errCode);
+    }
+
+    OH_PixelmapNative_Destroy(&pixelmap);
+    pixelmap = nullptr;
+    OH_PixelmapInitializationOptions_Release(opts);
+    opts = nullptr;
+
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeSetOpacityAlphaF16 success.");
+    return getJsResult(env, IMAGE_SUCCESS);
+}
+
+static napi_value TestNativeApplyScaleAbnormal(napi_env env, napi_callback_info info)
+{
+    OH_PixelmapNative *pixelmap = nullptr;
+    float scaleX = 1.5f;
+    float scaleY = 1.5f;
+    Image_ErrorCode errCode = OH_PixelmapNative_ApplyScale(pixelmap, scaleX, scaleY);
+    if (errCode != IMAGE_BAD_PARAMETER) {
+        OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_ApplyScale failed, errCode: %{public}d.", errCode);
+        return getJsResult(env, errCode);
+    }
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeApplyScaleAbnormal success.");
+    return getJsResult(env, IMAGE_SUCCESS);
+}
+
+static napi_value TestNativeApplyScaleNormal(napi_env env, napi_callback_info info)
+{
+    OH_Pixelmap_InitializationOptions *opts = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapInitializationOptions_Create(&opts);
+    if (errCode != IMAGE_SUCCESS) {
+        return getJsResult(env, errCode);
+    }
+    OH_PixelmapInitializationOptions_SetWidth(opts, NUM_10);
+    OH_PixelmapInitializationOptions_SetHeight(opts, NUM_10);
+    OH_PixelmapInitializationOptions_SetPixelFormat(opts, PIXEL_FORMAT_RGBA_8888);
+
+    OH_PixelmapNative *pixelmap = nullptr;
+    errCode = OH_PixelmapNative_CreateEmptyPixelmap(opts, &pixelmap);
+    OH_PixelmapInitializationOptions_Release(opts);
+    if (errCode != IMAGE_SUCCESS || pixelmap == nullptr) {
+        return getJsResult(env, errCode);
+    }
+
+    float scaleX = 2.0f;
+    float scaleY = 2.0f;
+    errCode = OH_PixelmapNative_ApplyScale(pixelmap, scaleX, scaleY);
+
+    OH_PixelmapNative_Destroy(&pixelmap);
+    pixelmap = nullptr;
+
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeApplyScaleNormal success.");
+    return getJsResult(env, errCode);
+}
+
+static napi_value TestNativeApplyScaleAfterRelease(napi_env env, napi_callback_info info)
+{
+    OH_Pixelmap_InitializationOptions *opts = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapInitializationOptions_Create(&opts);
+    if (errCode != IMAGE_SUCCESS) {
+        return getJsResult(env, errCode);
+    }
+    OH_PixelmapInitializationOptions_SetWidth(opts, NUM_10);
+    OH_PixelmapInitializationOptions_SetHeight(opts, NUM_10);
+    OH_PixelmapInitializationOptions_SetPixelFormat(opts, PIXEL_FORMAT_RGBA_8888);
+
+    OH_PixelmapNative *pixelmap = nullptr;
+    errCode = OH_PixelmapNative_CreateEmptyPixelmap(opts, &pixelmap);
+    OH_PixelmapInitializationOptions_Release(opts);
+    if (errCode != IMAGE_SUCCESS || pixelmap == nullptr) {
+        return getJsResult(env, errCode);
+    }
+
+    OH_PixelmapNative_Release(pixelmap);
+
+    float scaleX = 2.0f;
+    float scaleY = 2.0f;
+    errCode = OH_PixelmapNative_ApplyScale(pixelmap, scaleX, scaleY);
+
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeApplyScaleAfterRelease success.");
+    return getJsResult(env, errCode);
+}
+
+static napi_value TestNativeApplyScaleLocked(napi_env env, napi_callback_info info)
+{
+    OH_Pixelmap_InitializationOptions *opts = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapInitializationOptions_Create(&opts);
+    if (errCode != IMAGE_SUCCESS) {
+        return getJsResult(env, errCode);
+    }
+    OH_PixelmapInitializationOptions_SetWidth(opts, NUM_10);
+    OH_PixelmapInitializationOptions_SetHeight(opts, NUM_10);
+    OH_PixelmapInitializationOptions_SetPixelFormat(opts, PIXEL_FORMAT_RGBA_8888);
+
+    OH_PixelmapNative *pixelmap = nullptr;
+    errCode = OH_PixelmapNative_CreateEmptyPixelmap(opts, &pixelmap);
+    OH_PixelmapInitializationOptions_Release(opts);
+    if (errCode != IMAGE_SUCCESS || pixelmap == nullptr) {
+        return getJsResult(env, errCode);
+    }
+
+    void* addr = nullptr;
+    errCode = OH_PixelmapNative_AccessPixels(pixelmap, &addr);
+    if (errCode != IMAGE_SUCCESS) {
+        OH_PixelmapNative_Destroy(&pixelmap);
+        return getJsResult(env, errCode);
+    }
+
+    float scaleX = 2.0f;
+    float scaleY = 2.0f;
+    errCode = OH_PixelmapNative_ApplyScale(pixelmap, scaleX, scaleY);
+
+    OH_PixelmapNative_UnaccessPixels(pixelmap);
+    OH_PixelmapNative_Destroy(&pixelmap);
+
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeApplyScaleLocked success.");
+    return getJsResult(env, errCode);
+}
+
+static napi_value TestNativeApplyTranslateLocked(napi_env env, napi_callback_info info)
+{
+    OH_Pixelmap_InitializationOptions *opts = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapInitializationOptions_Create(&opts);
+    if (errCode != IMAGE_SUCCESS) {
+        return getJsResult(env, errCode);
+    }
+    const uint32_t width = NUM_10;
+    const uint32_t height = NUM_10;
+    OH_PixelmapInitializationOptions_SetWidth(opts, width);
+    OH_PixelmapInitializationOptions_SetHeight(opts, height);
+    OH_PixelmapInitializationOptions_SetPixelFormat(opts, PIXEL_FORMAT_RGBA_8888);
+
+    OH_PixelmapNative *pixelmap = nullptr;
+    errCode = OH_PixelmapNative_CreateEmptyPixelmap(opts, &pixelmap);
+    OH_PixelmapInitializationOptions_Release(opts);
+    if (errCode != IMAGE_SUCCESS || pixelmap == nullptr) {
+        return getJsResult(env, errCode);
+    }
+
+    void* addr = nullptr;
+    errCode = OH_PixelmapNative_AccessPixels(pixelmap, &addr);
+    if (errCode != IMAGE_SUCCESS) {
+        OH_PixelmapNative_Destroy(&pixelmap);
+        return getJsResult(env, errCode);
+    }
+
+    const float x = 10.0f;
+    const float y = 10.0f;
+    errCode = OH_PixelmapNative_ApplyTranslate(pixelmap, x, y);
+
+    OH_PixelmapNative_UnaccessPixels(pixelmap);
+    OH_PixelmapNative_Destroy(&pixelmap);
+
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeApplyTranslateLocked success.");
+    return getJsResult(env, errCode);
+}
+
+static napi_value TestNativeApplyRotateLocked(napi_env env, napi_callback_info info)
+{
+    OH_Pixelmap_InitializationOptions *opts = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapInitializationOptions_Create(&opts);
+    if (errCode != IMAGE_SUCCESS) {
+        return getJsResult(env, errCode);
+    }
+    const uint32_t width = NUM_10;
+    const uint32_t height = NUM_10;
+    OH_PixelmapInitializationOptions_SetWidth(opts, width);
+    OH_PixelmapInitializationOptions_SetHeight(opts, height);
+    OH_PixelmapInitializationOptions_SetPixelFormat(opts, PIXEL_FORMAT_RGBA_8888);
+
+    OH_PixelmapNative *pixelmap = nullptr;
+    errCode = OH_PixelmapNative_CreateEmptyPixelmap(opts, &pixelmap);
+    OH_PixelmapInitializationOptions_Release(opts);
+    if (errCode != IMAGE_SUCCESS || pixelmap == nullptr) {
+        return getJsResult(env, errCode);
+    }
+
+    void* addr = nullptr;
+    errCode = OH_PixelmapNative_AccessPixels(pixelmap, &addr);
+    if (errCode != IMAGE_SUCCESS) {
+        OH_PixelmapNative_Destroy(&pixelmap);
+        return getJsResult(env, errCode);
+    }
+
+    const float angle = 90.0f;
+    errCode = OH_PixelmapNative_ApplyRotate(pixelmap, angle);
+
+    OH_PixelmapNative_UnaccessPixels(pixelmap);
+    OH_PixelmapNative_Destroy(&pixelmap);
+
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeApplyRotateLocked success.");
+    return getJsResult(env, errCode);
+}
+
+static napi_value TestNativeApplyFlipLocked(napi_env env, napi_callback_info info)
+{
+    OH_Pixelmap_InitializationOptions *opts = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapInitializationOptions_Create(&opts);
+    if (errCode != IMAGE_SUCCESS) {
+        return getJsResult(env, errCode);
+    }
+    const uint32_t width = NUM_10;
+    const uint32_t height = NUM_10;
+    OH_PixelmapInitializationOptions_SetWidth(opts, width);
+    OH_PixelmapInitializationOptions_SetHeight(opts, height);
+    OH_PixelmapInitializationOptions_SetPixelFormat(opts, PIXEL_FORMAT_RGBA_8888);
+
+    OH_PixelmapNative *pixelmap = nullptr;
+    errCode = OH_PixelmapNative_CreateEmptyPixelmap(opts, &pixelmap);
+    OH_PixelmapInitializationOptions_Release(opts);
+    if (errCode != IMAGE_SUCCESS || pixelmap == nullptr) {
+        return getJsResult(env, errCode);
+    }
+
+    void* addr = nullptr;
+    errCode = OH_PixelmapNative_AccessPixels(pixelmap, &addr);
+    if (errCode != IMAGE_SUCCESS) {
+        OH_PixelmapNative_Destroy(&pixelmap);
+        return getJsResult(env, errCode);
+    }
+
+    const bool flipH = true;
+    const bool flipV = true;
+    errCode = OH_PixelmapNative_ApplyFlip(pixelmap, flipH, flipV);
+
+    OH_PixelmapNative_UnaccessPixels(pixelmap);
+    OH_PixelmapNative_Destroy(&pixelmap);
+
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeApplyFlipLocked success.");
+    return getJsResult(env, errCode);
+}
+
+static napi_value TestNativeApplyCropLocked(napi_env env, napi_callback_info info)
+{
+    OH_Pixelmap_InitializationOptions *opts = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapInitializationOptions_Create(&opts);
+    if (errCode != IMAGE_SUCCESS) {
+        return getJsResult(env, errCode);
+    }
+    const uint32_t width = NUM_10;
+    const uint32_t height = NUM_10;
+    OH_PixelmapInitializationOptions_SetWidth(opts, width);
+    OH_PixelmapInitializationOptions_SetHeight(opts, height);
+    OH_PixelmapInitializationOptions_SetPixelFormat(opts, PIXEL_FORMAT_RGBA_8888);
+
+    OH_PixelmapNative *pixelmap = nullptr;
+    errCode = OH_PixelmapNative_CreateEmptyPixelmap(opts, &pixelmap);
+    OH_PixelmapInitializationOptions_Release(opts);
+    if (errCode != IMAGE_SUCCESS || pixelmap == nullptr) {
+        return getJsResult(env, errCode);
+    }
+
+    void* addr = nullptr;
+    errCode = OH_PixelmapNative_AccessPixels(pixelmap, &addr);
+    if (errCode != IMAGE_SUCCESS) {
+        OH_PixelmapNative_Destroy(&pixelmap);
+        return getJsResult(env, errCode);
+    }
+
+    const uint32_t regionX = NUM_2;
+    const uint32_t regionY = NUM_2;
+    const uint32_t regionWidth = NUM_5;
+    const uint32_t regionHeight = NUM_5;
+    Image_Region region = {regionX, regionY, regionWidth, regionHeight};
+    errCode = OH_PixelmapNative_ApplyCrop(pixelmap, &region);
+
+    OH_PixelmapNative_UnaccessPixels(pixelmap);
+    OH_PixelmapNative_Destroy(&pixelmap);
+
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeApplyCropLocked success.");
+    return getJsResult(env, errCode);
+}
+
+static napi_value TestNativeConvertAlphaTypeLocked(napi_env env, napi_callback_info info)
+{
+    OH_Pixelmap_InitializationOptions *srcOpts = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapInitializationOptions_Create(&srcOpts);
+    if (errCode != IMAGE_SUCCESS) {
+        return getJsResult(env, errCode);
+    }
+    const uint32_t width = NUM_10;
+    const uint32_t height = NUM_10;
+    OH_PixelmapInitializationOptions_SetWidth(srcOpts, width);
+    OH_PixelmapInitializationOptions_SetHeight(srcOpts, height);
+    OH_PixelmapInitializationOptions_SetPixelFormat(srcOpts, PIXEL_FORMAT_RGBA_8888);
+    OH_PixelmapInitializationOptions_SetAlphaType(srcOpts, PIXELMAP_ALPHA_TYPE_PREMULTIPLIED);
+    OH_PixelmapNative *srcPixelmap = nullptr;
+    errCode = OH_PixelmapNative_CreateEmptyPixelmap(srcOpts, &srcPixelmap);
+    OH_PixelmapInitializationOptions_Release(srcOpts);
+    if (errCode != IMAGE_SUCCESS || srcPixelmap == nullptr) {
+        return getJsResult(env, errCode);
+    }
+    OH_Pixelmap_InitializationOptions *dstOpts = nullptr;
+    errCode = OH_PixelmapInitializationOptions_Create(&dstOpts);
+    if (errCode != IMAGE_SUCCESS) {
+        OH_PixelmapNative_Destroy(&srcPixelmap);
+        return getJsResult(env, errCode);
+    }
+    OH_PixelmapInitializationOptions_SetWidth(dstOpts, width);
+    OH_PixelmapInitializationOptions_SetHeight(dstOpts, height);
+    OH_PixelmapInitializationOptions_SetPixelFormat(dstOpts, PIXEL_FORMAT_RGBA_8888);
+    OH_PixelmapInitializationOptions_SetAlphaType(dstOpts, PIXELMAP_ALPHA_TYPE_UNPREMULTIPLIED);
+    OH_PixelmapNative *dstPixelmap = nullptr;
+    errCode = OH_PixelmapNative_CreateEmptyPixelmap(dstOpts, &dstPixelmap);
+    OH_PixelmapInitializationOptions_Release(dstOpts);
+    if (errCode != IMAGE_SUCCESS || dstPixelmap == nullptr) {
+        OH_PixelmapNative_Destroy(&srcPixelmap);
+        return getJsResult(env, errCode);
+    }
+    errCode = OH_PixelmapNative_AccessPixels(srcPixelmap, nullptr);
+    if (errCode != IMAGE_SUCCESS) {
+        OH_PixelmapNative_Destroy(&srcPixelmap);
+        OH_PixelmapNative_Destroy(&dstPixelmap);
+        return getJsResult(env, errCode);
+    }
+    errCode = OH_PixelmapNative_ConvertAlphaType(srcPixelmap, dstPixelmap, false);
+    OH_PixelmapNative_UnaccessPixels(srcPixelmap);
+    OH_PixelmapNative_Destroy(&srcPixelmap);
+    OH_PixelmapNative_Destroy(&dstPixelmap);
+    return getJsResult(env, errCode);
+}
+
+static napi_value TestNativeApplyScaleWithAntiAliasingNormal(napi_env env, napi_callback_info info)
+{
+    OH_Pixelmap_InitializationOptions *opts = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapInitializationOptions_Create(&opts);
+    if (errCode != IMAGE_SUCCESS) {
+        return getJsResult(env, errCode);
+    }
+    const uint32_t width = NUM_10;
+    const uint32_t height = NUM_10;
+    OH_PixelmapInitializationOptions_SetWidth(opts, width);
+    OH_PixelmapInitializationOptions_SetHeight(opts, height);
+    OH_PixelmapInitializationOptions_SetPixelFormat(opts, PIXEL_FORMAT_RGBA_8888);
+
+    OH_PixelmapNative *pixelmap = nullptr;
+    errCode = OH_PixelmapNative_CreateEmptyPixelmap(opts, &pixelmap);
+    OH_PixelmapInitializationOptions_Release(opts);
+    if (errCode != IMAGE_SUCCESS || pixelmap == nullptr) {
+        return getJsResult(env, errCode);
+    }
+
+    const float scaleX = 2.0f;
+    const float scaleY = 2.0f;
+    errCode = OH_PixelmapNative_ApplyScaleWithAntiAliasing(pixelmap, scaleX, scaleY,
+        OH_PixelmapNative_AntiAliasing_HIGH);
+
+    OH_PixelmapNative_Destroy(&pixelmap);
+    pixelmap = nullptr;
+
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeApplyScaleWithAntiAliasingNormal success.");
+    return getJsResult(env, errCode);
+}
+
+static napi_value TestNativeApplyScaleWithAntiAliasingAfterRelease(napi_env env, napi_callback_info info)
+{
+    OH_Pixelmap_InitializationOptions *opts = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapInitializationOptions_Create(&opts);
+    if (errCode != IMAGE_SUCCESS) {
+        return getJsResult(env, errCode);
+    }
+    const uint32_t width = NUM_10;
+    const uint32_t height = NUM_10;
+    OH_PixelmapInitializationOptions_SetWidth(opts, width);
+    OH_PixelmapInitializationOptions_SetHeight(opts, height);
+    OH_PixelmapInitializationOptions_SetPixelFormat(opts, PIXEL_FORMAT_RGBA_8888);
+
+    OH_PixelmapNative *pixelmap = nullptr;
+    errCode = OH_PixelmapNative_CreateEmptyPixelmap(opts, &pixelmap);
+    OH_PixelmapInitializationOptions_Release(opts);
+    if (errCode != IMAGE_SUCCESS || pixelmap == nullptr) {
+        return getJsResult(env, errCode);
+    }
+
+    OH_PixelmapNative_Release(pixelmap);
+
+    const float scaleX = 2.0f;
+    const float scaleY = 2.0f;
+    errCode = OH_PixelmapNative_ApplyScaleWithAntiAliasing(pixelmap, scaleX, scaleY,
+        OH_PixelmapNative_AntiAliasing_HIGH);
+
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeApplyScaleWithAntiAliasingAfterRelease success.");
+    return getJsResult(env, errCode);
+}
+
+static napi_value TestNativeApplyTranslateNormal(napi_env env, napi_callback_info info)
+{
+    OH_Pixelmap_InitializationOptions *opts = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapInitializationOptions_Create(&opts);
+    if (errCode != IMAGE_SUCCESS) {
+        return getJsResult(env, errCode);
+    }
+    const uint32_t width = NUM_10;
+    const uint32_t height = NUM_10;
+    OH_PixelmapInitializationOptions_SetWidth(opts, width);
+    OH_PixelmapInitializationOptions_SetHeight(opts, height);
+    OH_PixelmapInitializationOptions_SetPixelFormat(opts, PIXEL_FORMAT_RGBA_8888);
+
+    OH_PixelmapNative *pixelmap = nullptr;
+    errCode = OH_PixelmapNative_CreateEmptyPixelmap(opts, &pixelmap);
+    OH_PixelmapInitializationOptions_Release(opts);
+    if (errCode != IMAGE_SUCCESS || pixelmap == nullptr) {
+        return getJsResult(env, errCode);
+    }
+
+    const float x = 10.0f;
+    const float y = 10.0f;
+    errCode = OH_PixelmapNative_ApplyTranslate(pixelmap, x, y);
+
+    OH_PixelmapNative_Destroy(&pixelmap);
+    pixelmap = nullptr;
+
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeApplyTranslateNormal success.");
+    return getJsResult(env, errCode);
+}
+
+static napi_value TestNativeApplyTranslateAfterRelease(napi_env env, napi_callback_info info)
+{
+    OH_Pixelmap_InitializationOptions *opts = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapInitializationOptions_Create(&opts);
+    if (errCode != IMAGE_SUCCESS) {
+        return getJsResult(env, errCode);
+    }
+    const uint32_t width = NUM_10;
+    const uint32_t height = NUM_10;
+    OH_PixelmapInitializationOptions_SetWidth(opts, width);
+    OH_PixelmapInitializationOptions_SetHeight(opts, height);
+    OH_PixelmapInitializationOptions_SetPixelFormat(opts, PIXEL_FORMAT_RGBA_8888);
+
+    OH_PixelmapNative *pixelmap = nullptr;
+    errCode = OH_PixelmapNative_CreateEmptyPixelmap(opts, &pixelmap);
+    OH_PixelmapInitializationOptions_Release(opts);
+    if (errCode != IMAGE_SUCCESS || pixelmap == nullptr) {
+        return getJsResult(env, errCode);
+    }
+
+    OH_PixelmapNative_Release(pixelmap);
+
+    const float x = 10.0f;
+    const float y = 10.0f;
+    errCode = OH_PixelmapNative_ApplyTranslate(pixelmap, x, y);
+
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeApplyTranslateAfterRelease success.");
+    return getJsResult(env, errCode);
+}
+
+static napi_value TestNativeApplyRotateNormal(napi_env env, napi_callback_info info)
+{
+    OH_Pixelmap_InitializationOptions *opts = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapInitializationOptions_Create(&opts);
+    if (errCode != IMAGE_SUCCESS) {
+        return getJsResult(env, errCode);
+    }
+    const uint32_t width = NUM_10;
+    const uint32_t height = NUM_10;
+    OH_PixelmapInitializationOptions_SetWidth(opts, width);
+    OH_PixelmapInitializationOptions_SetHeight(opts, height);
+    OH_PixelmapInitializationOptions_SetPixelFormat(opts, PIXEL_FORMAT_RGBA_8888);
+
+    OH_PixelmapNative *pixelmap = nullptr;
+    errCode = OH_PixelmapNative_CreateEmptyPixelmap(opts, &pixelmap);
+    OH_PixelmapInitializationOptions_Release(opts);
+    if (errCode != IMAGE_SUCCESS || pixelmap == nullptr) {
+        return getJsResult(env, errCode);
+    }
+
+    const float angle = 90.0f;
+    errCode = OH_PixelmapNative_ApplyRotate(pixelmap, angle);
+
+    OH_PixelmapNative_Destroy(&pixelmap);
+    pixelmap = nullptr;
+
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeApplyRotateNormal success.");
+    return getJsResult(env, errCode);
+}
+
+static napi_value TestNativeApplyRotateAfterRelease(napi_env env, napi_callback_info info)
+{
+    OH_Pixelmap_InitializationOptions *opts = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapInitializationOptions_Create(&opts);
+    if (errCode != IMAGE_SUCCESS) {
+        return getJsResult(env, errCode);
+    }
+    const uint32_t width = NUM_10;
+    const uint32_t height = NUM_10;
+    OH_PixelmapInitializationOptions_SetWidth(opts, width);
+    OH_PixelmapInitializationOptions_SetHeight(opts, height);
+    OH_PixelmapInitializationOptions_SetPixelFormat(opts, PIXEL_FORMAT_RGBA_8888);
+
+    OH_PixelmapNative *pixelmap = nullptr;
+    errCode = OH_PixelmapNative_CreateEmptyPixelmap(opts, &pixelmap);
+    OH_PixelmapInitializationOptions_Release(opts);
+    if (errCode != IMAGE_SUCCESS || pixelmap == nullptr) {
+        return getJsResult(env, errCode);
+    }
+
+    OH_PixelmapNative_Release(pixelmap);
+
+    const float angle = 90.0f;
+    errCode = OH_PixelmapNative_ApplyRotate(pixelmap, angle);
+
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeApplyRotateAfterRelease success.");
+    return getJsResult(env, errCode);
+}
+
+static napi_value TestNativeApplyFlipNormal(napi_env env, napi_callback_info info)
+{
+    OH_Pixelmap_InitializationOptions *opts = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapInitializationOptions_Create(&opts);
+    if (errCode != IMAGE_SUCCESS) {
+        return getJsResult(env, errCode);
+    }
+    const uint32_t width = NUM_10;
+    const uint32_t height = NUM_10;
+    OH_PixelmapInitializationOptions_SetWidth(opts, width);
+    OH_PixelmapInitializationOptions_SetHeight(opts, height);
+    OH_PixelmapInitializationOptions_SetPixelFormat(opts, PIXEL_FORMAT_RGBA_8888);
+
+    OH_PixelmapNative *pixelmap = nullptr;
+    errCode = OH_PixelmapNative_CreateEmptyPixelmap(opts, &pixelmap);
+    OH_PixelmapInitializationOptions_Release(opts);
+    if (errCode != IMAGE_SUCCESS || pixelmap == nullptr) {
+        return getJsResult(env, errCode);
+    }
+
+    const bool flipH = true;
+    const bool flipV = true;
+    errCode = OH_PixelmapNative_ApplyFlip(pixelmap, flipH, flipV);
+
+    OH_PixelmapNative_Destroy(&pixelmap);
+    pixelmap = nullptr;
+
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeApplyFlipNormal success.");
+    return getJsResult(env, errCode);
+}
+
+static napi_value TestNativeApplyFlipAfterRelease(napi_env env, napi_callback_info info)
+{
+    OH_Pixelmap_InitializationOptions *opts = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapInitializationOptions_Create(&opts);
+    if (errCode != IMAGE_SUCCESS) {
+        return getJsResult(env, errCode);
+    }
+    const uint32_t width = NUM_10;
+    const uint32_t height = NUM_10;
+    OH_PixelmapInitializationOptions_SetWidth(opts, width);
+    OH_PixelmapInitializationOptions_SetHeight(opts, height);
+    OH_PixelmapInitializationOptions_SetPixelFormat(opts, PIXEL_FORMAT_RGBA_8888);
+
+    OH_PixelmapNative *pixelmap = nullptr;
+    errCode = OH_PixelmapNative_CreateEmptyPixelmap(opts, &pixelmap);
+    OH_PixelmapInitializationOptions_Release(opts);
+    if (errCode != IMAGE_SUCCESS || pixelmap == nullptr) {
+        return getJsResult(env, errCode);
+    }
+
+    OH_PixelmapNative_Release(pixelmap);
+
+    const bool flipH = true;
+    const bool flipV = true;
+    errCode = OH_PixelmapNative_ApplyFlip(pixelmap, flipH, flipV);
+
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeApplyFlipAfterRelease success.");
+    return getJsResult(env, errCode);
+}
+
+static napi_value TestNativeApplyCropNormal(napi_env env, napi_callback_info info)
+{
+    OH_Pixelmap_InitializationOptions *opts = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapInitializationOptions_Create(&opts);
+    if (errCode != IMAGE_SUCCESS) {
+        return getJsResult(env, errCode);
+    }
+    const uint32_t width = NUM_10;
+    const uint32_t height = NUM_10;
+    OH_PixelmapInitializationOptions_SetWidth(opts, width);
+    OH_PixelmapInitializationOptions_SetHeight(opts, height);
+    OH_PixelmapInitializationOptions_SetPixelFormat(opts, PIXEL_FORMAT_RGBA_8888);
+
+    OH_PixelmapNative *pixelmap = nullptr;
+    errCode = OH_PixelmapNative_CreateEmptyPixelmap(opts, &pixelmap);
+    OH_PixelmapInitializationOptions_Release(opts);
+    if (errCode != IMAGE_SUCCESS || pixelmap == nullptr) {
+        return getJsResult(env, errCode);
+    }
+
+    const uint32_t regionX = NUM_2;
+    const uint32_t regionY = NUM_2;
+    const uint32_t regionWidth = NUM_5;
+    const uint32_t regionHeight = NUM_5;
+    Image_Region region = {regionX, regionY, regionWidth, regionHeight};
+    errCode = OH_PixelmapNative_ApplyCrop(pixelmap, &region);
+
+    OH_PixelmapNative_Destroy(&pixelmap);
+    pixelmap = nullptr;
+
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeApplyCropNormal success.");
+    return getJsResult(env, errCode);
+}
+
+static napi_value TestNativeApplyCropAfterRelease(napi_env env, napi_callback_info info)
+{
+    OH_Pixelmap_InitializationOptions *opts = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapInitializationOptions_Create(&opts);
+    if (errCode != IMAGE_SUCCESS) {
+        return getJsResult(env, errCode);
+    }
+    const uint32_t width = NUM_10;
+    const uint32_t height = NUM_10;
+    OH_PixelmapInitializationOptions_SetWidth(opts, width);
+    OH_PixelmapInitializationOptions_SetHeight(opts, height);
+    OH_PixelmapInitializationOptions_SetPixelFormat(opts, PIXEL_FORMAT_RGBA_8888);
+
+    OH_PixelmapNative *pixelmap = nullptr;
+    errCode = OH_PixelmapNative_CreateEmptyPixelmap(opts, &pixelmap);
+    OH_PixelmapInitializationOptions_Release(opts);
+    if (errCode != IMAGE_SUCCESS || pixelmap == nullptr) {
+        return getJsResult(env, errCode);
+    }
+
+    OH_PixelmapNative_Release(pixelmap);
+
+    const uint32_t regionX = NUM_0;
+    const uint32_t regionY = NUM_0;
+    const uint32_t regionWidth = NUM_5;
+    const uint32_t regionHeight = NUM_5;
+    Image_Region region = {regionX, regionY, regionWidth, regionHeight};
+    errCode = OH_PixelmapNative_ApplyCrop(pixelmap, &region);
+
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeApplyCropAfterRelease success.");
+    return getJsResult(env, errCode);
+}
+
+static napi_value TestNativeConvertAlphaTypeNormal(napi_env env, napi_callback_info info)
+{
+    OH_Pixelmap_InitializationOptions *srcOpts = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapInitializationOptions_Create(&srcOpts);
+    if (errCode != IMAGE_SUCCESS) {
+        return getJsResult(env, errCode);
+    }
+    const uint32_t width = NUM_10;
+    const uint32_t height = NUM_10;
+    OH_PixelmapInitializationOptions_SetWidth(srcOpts, width);
+    OH_PixelmapInitializationOptions_SetHeight(srcOpts, height);
+    OH_PixelmapInitializationOptions_SetPixelFormat(srcOpts, PIXEL_FORMAT_RGBA_8888);
+    OH_PixelmapInitializationOptions_SetAlphaType(srcOpts, PIXELMAP_ALPHA_TYPE_PREMULTIPLIED);
+
+    OH_PixelmapNative *srcPixelmap = nullptr;
+    errCode = OH_PixelmapNative_CreateEmptyPixelmap(srcOpts, &srcPixelmap);
+    OH_PixelmapInitializationOptions_Release(srcOpts);
+    if (errCode != IMAGE_SUCCESS || srcPixelmap == nullptr) {
+        return getJsResult(env, errCode);
+    }
+
+    OH_Pixelmap_InitializationOptions *dstOpts = nullptr;
+    errCode = OH_PixelmapInitializationOptions_Create(&dstOpts);
+    if (errCode != IMAGE_SUCCESS) {
+        OH_PixelmapNative_Destroy(&srcPixelmap);
+        return getJsResult(env, errCode);
+    }
+    OH_PixelmapInitializationOptions_SetWidth(dstOpts, width);
+    OH_PixelmapInitializationOptions_SetHeight(dstOpts, height);
+    OH_PixelmapInitializationOptions_SetPixelFormat(dstOpts, PIXEL_FORMAT_RGBA_8888);
+    OH_PixelmapInitializationOptions_SetAlphaType(dstOpts, PIXELMAP_ALPHA_TYPE_UNPREMULTIPLIED);
+
+    OH_PixelmapNative *dstPixelmap = nullptr;
+    errCode = OH_PixelmapNative_CreateEmptyPixelmap(dstOpts, &dstPixelmap);
+    OH_PixelmapInitializationOptions_Release(dstOpts);
+    if (errCode != IMAGE_SUCCESS || dstPixelmap == nullptr) {
+        OH_PixelmapNative_Destroy(&srcPixelmap);
+        return getJsResult(env, errCode);
+    }
+
+    const bool toPremul = false;
+    errCode = OH_PixelmapNative_ConvertAlphaType(srcPixelmap, dstPixelmap, toPremul);
+
+    OH_PixelmapNative_Destroy(&srcPixelmap);
+    srcPixelmap = nullptr;
+    OH_PixelmapNative_Destroy(&dstPixelmap);
+    dstPixelmap = nullptr;
+
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeConvertAlphaTypeNormal success.");
+    return getJsResult(env, errCode);
+}
+
+static napi_value TestNativeConvertAlphaTypeAfterRelease(napi_env env, napi_callback_info info)
+{
+    OH_Pixelmap_InitializationOptions *srcOpts = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapInitializationOptions_Create(&srcOpts);
+    if (errCode != IMAGE_SUCCESS) {
+        return getJsResult(env, errCode);
+    }
+    const uint32_t width = NUM_10;
+    const uint32_t height = NUM_10;
+    OH_PixelmapInitializationOptions_SetWidth(srcOpts, width);
+    OH_PixelmapInitializationOptions_SetHeight(srcOpts, height);
+    OH_PixelmapInitializationOptions_SetPixelFormat(srcOpts, PIXEL_FORMAT_RGBA_8888);
+    OH_PixelmapInitializationOptions_SetAlphaType(srcOpts, PIXELMAP_ALPHA_TYPE_PREMULTIPLIED);
+
+    OH_PixelmapNative *srcPixelmap = nullptr;
+    errCode = OH_PixelmapNative_CreateEmptyPixelmap(srcOpts, &srcPixelmap);
+    OH_PixelmapInitializationOptions_Release(srcOpts);
+    if (errCode != IMAGE_SUCCESS || srcPixelmap == nullptr) {
+        return getJsResult(env, errCode);
+    }
+
+    OH_Pixelmap_InitializationOptions *dstOpts = nullptr;
+    errCode = OH_PixelmapInitializationOptions_Create(&dstOpts);
+    if (errCode != IMAGE_SUCCESS) {
+        OH_PixelmapNative_Destroy(&srcPixelmap);
+        return getJsResult(env, errCode);
+    }
+    OH_PixelmapInitializationOptions_SetWidth(dstOpts, width);
+    OH_PixelmapInitializationOptions_SetHeight(dstOpts, height);
+    OH_PixelmapInitializationOptions_SetPixelFormat(dstOpts, PIXEL_FORMAT_RGBA_8888);
+    OH_PixelmapInitializationOptions_SetAlphaType(dstOpts, PIXELMAP_ALPHA_TYPE_UNPREMULTIPLIED);
+
+    OH_PixelmapNative *dstPixelmap = nullptr;
+    errCode = OH_PixelmapNative_CreateEmptyPixelmap(dstOpts, &dstPixelmap);
+    OH_PixelmapInitializationOptions_Release(dstOpts);
+    if (errCode != IMAGE_SUCCESS || dstPixelmap == nullptr) {
+        OH_PixelmapNative_Destroy(&srcPixelmap);
+        return getJsResult(env, errCode);
+    }
+
+    OH_PixelmapNative_Release(srcPixelmap);
+
+    const bool toPremul = false;
+    errCode = OH_PixelmapNative_ConvertAlphaType(srcPixelmap, dstPixelmap, toPremul);
+
+    OH_PixelmapNative_Destroy(&dstPixelmap);
+    dstPixelmap = nullptr;
+
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeConvertAlphaTypeAfterRelease success.");
+    return getJsResult(env, errCode);
+}
+
+static napi_value TestNativeApplyScaleWithAntiAliasingAbnormal(napi_env env, napi_callback_info info)
+{
+    OH_PixelmapNative *pixelmap = nullptr;
+    float scaleX = 1.5f;
+    float scaleY = 1.5f;
+    Image_ErrorCode errCode = OH_PixelmapNative_ApplyScaleWithAntiAliasing(pixelmap, scaleX, scaleY,
+        OH_PixelmapNative_AntiAliasing_HIGH);
+    if (errCode != IMAGE_BAD_PARAMETER) {
+        OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_ApplyScaleWithAntiAliasing failed, errCode: %{public}d.", errCode);
+        return getJsResult(env, errCode);
+    }
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeApplyScaleWithAntiAliasingAbnormal success.");
+    return getJsResult(env, IMAGE_SUCCESS);
+}
+
+static napi_value TestNativeApplyTranslateAbnormal(napi_env env, napi_callback_info info)
+{
+    OH_PixelmapNative *pixelmap = nullptr;
+    float x = 10.0f;
+    float y = 10.0f;
+    Image_ErrorCode errCode = OH_PixelmapNative_ApplyTranslate(pixelmap, x, y);
+    if (errCode != IMAGE_BAD_PARAMETER) {
+        OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_ApplyTranslate failed, errCode: %{public}d.", errCode);
+        return getJsResult(env, errCode);
+    }
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeApplyTranslateAbnormal success.");
+    return getJsResult(env, IMAGE_SUCCESS);
+}
+
+static napi_value TestNativeApplyRotateAbnormal(napi_env env, napi_callback_info info)
+{
+    OH_PixelmapNative *pixelmap = nullptr;
+    float angle = 45.0f;
+    Image_ErrorCode errCode = OH_PixelmapNative_ApplyRotate(pixelmap, angle);
+    if (errCode != IMAGE_BAD_PARAMETER) {
+        OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_ApplyRotate failed, errCode: %{public}d.", errCode);
+        return getJsResult(env, errCode);
+    }
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeApplyRotateAbnormal success.");
+    return getJsResult(env, IMAGE_SUCCESS);
+}
+
+static napi_value TestNativeApplyFlipAbnormal(napi_env env, napi_callback_info info)
+{
+    OH_PixelmapNative *pixelmap = nullptr;
+    bool flipH = true;
+    bool flipV = false;
+    Image_ErrorCode errCode = OH_PixelmapNative_ApplyFlip(pixelmap, flipH, flipV);
+    if (errCode != IMAGE_BAD_PARAMETER) {
+        OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_ApplyFlip failed, errCode: %{public}d.", errCode);
+        return getJsResult(env, errCode);
+    }
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeApplyFlipAbnormal success.");
+    return getJsResult(env, IMAGE_SUCCESS);
+}
+
+static napi_value TestNativeApplyCropAbnormal(napi_env env, napi_callback_info info)
+{
+    OH_PixelmapNative *pixelmap = nullptr;
+    uint32_t regionX = 0;
+    uint32_t regionY = 0;
+    uint32_t regionWidth = 10;
+    uint32_t regionHeight = 10;
+    Image_Region region = {regionX, regionY, regionWidth, regionHeight};
+    Image_ErrorCode errCode = OH_PixelmapNative_ApplyCrop(pixelmap, &region);
+    if (errCode != IMAGE_BAD_PARAMETER) {
+        OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_ApplyCrop failed, errCode: %{public}d.", errCode);
+        return getJsResult(env, errCode);
+    }
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeApplyCropAbnormal success.");
+    return getJsResult(env, IMAGE_SUCCESS);
+}
+
+static napi_value TestNativeApplyCropNullRegion(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value argv[2] = {nullptr};
+    if (napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr) != napi_ok) {
+        OH_LOG_ERROR(LOG_APP, "napi_get_cb_info failed.");
+        return getJsResult(env, IMAGE_BAD_PARAMETER);
+    }
+
+    OH_PixelmapNative* pixelmap = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapNative_ConvertPixelmapNativeFromNapi(env, argv[0], &pixelmap);
+    if (errCode != IMAGE_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_ConvertPixelmapNativeFromNapi failed, errCode: %{public}d.", errCode);
+        return getJsResult(env, errCode);
+    }
+
+    errCode = OH_PixelmapNative_ApplyCrop(pixelmap, nullptr);
+    if (errCode != IMAGE_BAD_PARAMETER) {
+        OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_ApplyCrop null region failed, errCode: %{public}d.", errCode);
+        OH_PixelmapNative_Destroy(&pixelmap);
+        pixelmap = nullptr;
+        return getJsResult(env, errCode);
+    }
+
+    OH_PixelmapNative_Destroy(&pixelmap);
+    pixelmap = nullptr;
+
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeApplyCropNullRegion success.");
+    return getJsResult(env, IMAGE_SUCCESS);
+}
+
+static napi_value TestNativeApplyCropBothNull(napi_env env, napi_callback_info info)
+{
+    Image_ErrorCode errCode = OH_PixelmapNative_ApplyCrop(nullptr, nullptr);
+    if (errCode != IMAGE_BAD_PARAMETER) {
+        OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_ApplyCrop both null failed, errCode: %{public}d.", errCode);
+        return getJsResult(env, errCode);
+    }
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeApplyCropBothNull success.");
+    return getJsResult(env, IMAGE_SUCCESS);
+}
+
+static napi_value TestNativeApplyRotateInvalidAngle(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value argv[2] = {nullptr};
+    if (napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr) != napi_ok) {
+        OH_LOG_ERROR(LOG_APP, "napi_get_cb_info failed.");
+        return getJsResult(env, IMAGE_BAD_PARAMETER);
+    }
+
+    OH_PixelmapNative* pixelmap = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapNative_ConvertPixelmapNativeFromNapi(env, argv[0], &pixelmap);
+    if (errCode != IMAGE_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_ConvertPixelmapNativeFromNapi failed, errCode: %{public}d.", errCode);
+        return getJsResult(env, errCode);
+    }
+
+    double angleVal;
+    napi_get_value_double(env, argv[1], &angleVal);
+
+    errCode = OH_PixelmapNative_ApplyRotate(pixelmap, static_cast<float>(angleVal));
+    if (errCode != IMAGE_INVALID_PARAMETER) {
+        OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_ApplyRotate invalid angle failed, errCode: %{public}d.", errCode);
+        OH_PixelmapNative_Destroy(&pixelmap);
+        pixelmap = nullptr;
+        return getJsResult(env, errCode);
+    }
+
+    OH_PixelmapNative_Destroy(&pixelmap);
+    pixelmap = nullptr;
+
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeApplyRotateInvalidAngle success.");
+    return getJsResult(env, IMAGE_SUCCESS);
+}
+
+static napi_value TestNativeConvertAlphaTypeAbnormal(napi_env env, napi_callback_info info)
+{
+    OH_PixelmapNative *srcPixelmap = nullptr;
+    OH_PixelmapNative *dstPixelmap = nullptr;
+    bool toPremul = true;
+    Image_ErrorCode errCode = OH_PixelmapNative_ConvertAlphaType(srcPixelmap, dstPixelmap, toPremul);
+    if (errCode != IMAGE_BAD_PARAMETER) {
+        OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_ConvertAlphaType failed, errCode: %{public}d.", errCode);
+        return getJsResult(env, errCode);
+    }
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeConvertAlphaTypeAbnormal success.");
+    return getJsResult(env, IMAGE_SUCCESS);
+}
+
+static napi_value TestNativeConvertAlphaTypeNullSrc(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value argv[2] = {nullptr};
+    if (napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr) != napi_ok) {
+        OH_LOG_ERROR(LOG_APP, "napi_get_cb_info failed.");
+        return getJsResult(env, IMAGE_BAD_PARAMETER);
+    }
+
+    OH_PixelmapNative* dstPixelmap = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapNative_ConvertPixelmapNativeFromNapi(env, argv[0], &dstPixelmap);
+    if (errCode != IMAGE_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_ConvertPixelmapNativeFromNapi failed, errCode: %{public}d.", errCode);
+        return getJsResult(env, errCode);
+    }
+
+    errCode = OH_PixelmapNative_ConvertAlphaType(nullptr, dstPixelmap, true);
+    if (errCode != IMAGE_BAD_PARAMETER) {
+        OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_ConvertAlphaType null src failed, errCode: %{public}d.", errCode);
+        OH_PixelmapNative_Destroy(&dstPixelmap);
+        dstPixelmap = nullptr;
+        return getJsResult(env, errCode);
+    }
+
+    OH_PixelmapNative_Destroy(&dstPixelmap);
+    dstPixelmap = nullptr;
+
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeConvertAlphaTypeNullSrc success.");
+    return getJsResult(env, IMAGE_SUCCESS);
+}
+
+static napi_value TestNativeConvertAlphaTypeNullDst(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value argv[2] = {nullptr};
+    if (napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr) != napi_ok) {
+        OH_LOG_ERROR(LOG_APP, "napi_get_cb_info failed.");
+        return getJsResult(env, IMAGE_BAD_PARAMETER);
+    }
+
+    OH_PixelmapNative* srcPixelmap = nullptr;
+    Image_ErrorCode errCode = OH_PixelmapNative_ConvertPixelmapNativeFromNapi(env, argv[0], &srcPixelmap);
+    if (errCode != IMAGE_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_ConvertPixelmapNativeFromNapi failed, errCode: %{public}d.", errCode);
+        return getJsResult(env, errCode);
+    }
+
+    errCode = OH_PixelmapNative_ConvertAlphaType(srcPixelmap, nullptr, true);
+    if (errCode != IMAGE_BAD_PARAMETER) {
+        OH_LOG_ERROR(LOG_APP, "OH_PixelmapNative_ConvertAlphaType null dst failed, errCode: %{public}d.", errCode);
+        OH_PixelmapNative_Destroy(&srcPixelmap);
+        srcPixelmap = nullptr;
+        return getJsResult(env, errCode);
+    }
+
+    OH_PixelmapNative_Destroy(&srcPixelmap);
+    srcPixelmap = nullptr;
+
+    OH_LOG_INFO(LOG_APP, "ImagePixelmapNativeCTest TestNativeConvertAlphaTypeNullDst success.");
+    return getJsResult(env, IMAGE_SUCCESS);
+}
+
 static void setInt32NamedProperty(napi_env env, napi_value object, const char *utf8name, uint32_t value)
 {
     napi_value tmp;
@@ -847,17 +1975,91 @@ napi_property_descriptor desc[] = {
     {"testNativeIsReleased", nullptr, TestNativeIsReleased, nullptr, nullptr,
      nullptr, napi_default, nullptr},
     {"createPixelmapFromSurfaceWithTransformation001", nullptr,
-      CreatePixelmapFromSurfaceWithTransformation001, nullptr, nullptr, nullptr, napi_default, nullptr},
+     CreatePixelmapFromSurfaceWithTransformation001, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"createPixelmapFromSurfaceWithTransformation002", nullptr,
-      CreatePixelmapFromSurfaceWithTransformation002, nullptr, nullptr, nullptr, napi_default, nullptr},
+     CreatePixelmapFromSurfaceWithTransformation002, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"createPixelmapFromSurfaceWithTransformation003", nullptr,
-      CreatePixelmapFromSurfaceWithTransformation003, nullptr, nullptr, nullptr, napi_default, nullptr},
+     CreatePixelmapFromSurfaceWithTransformation003, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"createPixelmapFromSurfaceWithTransformation004", nullptr,
-      CreatePixelmapFromSurfaceWithTransformation004, nullptr, nullptr, nullptr, napi_default, nullptr},
+     CreatePixelmapFromSurfaceWithTransformation004, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"createPixelmapFromSurfaceWithTransformation005", nullptr,
-      CreatePixelmapFromSurfaceWithTransformation005, nullptr, nullptr, nullptr, napi_default, nullptr},
+     CreatePixelmapFromSurfaceWithTransformation005, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"createPixelmapFromSurfaceWithTransformation006", nullptr,
-      CreatePixelmapFromSurfaceWithTransformation006, nullptr, nullptr, nullptr, napi_default, nullptr},
+     CreatePixelmapFromSurfaceWithTransformation006, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"testNativeSetPixelFormatAlphaU8", nullptr, TestNativeSetPixelFormatAlphaU8, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeSetPixelFormatAlphaF16", nullptr, TestNativeSetPixelFormatAlphaF16, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeSetOpacityNormal", nullptr, TestNativeSetOpacityNormal, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeSetOpacityBoundaryMax", nullptr, TestNativeSetOpacityBoundaryMax, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeSetOpacityAlphaF16", nullptr, TestNativeSetOpacityAlphaF16, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeApplyScaleAbnormal", nullptr, TestNativeApplyScaleAbnormal, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeApplyScaleNormal", nullptr, TestNativeApplyScaleNormal, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeApplyScaleAfterRelease", nullptr, TestNativeApplyScaleAfterRelease, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeApplyScaleLocked", nullptr, TestNativeApplyScaleLocked, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeApplyScaleWithAntiAliasingAbnormal", nullptr,
+     TestNativeApplyScaleWithAntiAliasingAbnormal, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"testNativeApplyScaleWithAntiAliasingNormal", nullptr,
+     TestNativeApplyScaleWithAntiAliasingNormal, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"testNativeApplyScaleWithAntiAliasingAfterRelease", nullptr,
+     TestNativeApplyScaleWithAntiAliasingAfterRelease, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"testNativeApplyTranslateAbnormal", nullptr, TestNativeApplyTranslateAbnormal, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeApplyTranslateNormal", nullptr, TestNativeApplyTranslateNormal, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeApplyTranslateLocked", nullptr, TestNativeApplyTranslateLocked, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeApplyTranslateAfterRelease", nullptr, TestNativeApplyTranslateAfterRelease, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeApplyRotateNormal", nullptr, TestNativeApplyRotateNormal, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeApplyRotateLocked", nullptr, TestNativeApplyRotateLocked, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeApplyRotateAfterRelease", nullptr, TestNativeApplyRotateAfterRelease, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeApplyRotateAbnormal", nullptr, TestNativeApplyRotateAbnormal, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeApplyRotateInvalidAngle", nullptr, TestNativeApplyRotateInvalidAngle, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeApplyFlipNormal", nullptr, TestNativeApplyFlipNormal, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeApplyFlipLocked", nullptr, TestNativeApplyFlipLocked, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeApplyFlipAfterRelease", nullptr, TestNativeApplyFlipAfterRelease, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeApplyFlipAbnormal", nullptr, TestNativeApplyFlipAbnormal, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeApplyCropNormal", nullptr, TestNativeApplyCropNormal, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeApplyCropLocked", nullptr, TestNativeApplyCropLocked, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeApplyCropAfterRelease", nullptr, TestNativeApplyCropAfterRelease, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeApplyCropAbnormal", nullptr, TestNativeApplyCropAbnormal, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeApplyCropNullRegion", nullptr, TestNativeApplyCropNullRegion, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeApplyCropBothNull", nullptr, TestNativeApplyCropBothNull, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeConvertAlphaTypeNormal", nullptr, TestNativeConvertAlphaTypeNormal, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeConvertAlphaTypeLocked", nullptr, TestNativeConvertAlphaTypeLocked, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeConvertAlphaTypeAfterRelease", nullptr, TestNativeConvertAlphaTypeAfterRelease, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeConvertAlphaTypeAbnormal", nullptr, TestNativeConvertAlphaTypeAbnormal, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeConvertAlphaTypeNullSrc", nullptr, TestNativeConvertAlphaTypeNullSrc, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"testNativeConvertAlphaTypeNullDst", nullptr, TestNativeConvertAlphaTypeNullDst, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
 };
 
 EXTERN_C_START

@@ -36,6 +36,10 @@ import GraphicImagePixelMap4 from './GraphicImagePixelMap2.test';
 import GraphicImagePixelMap5 from './GraphicImagePixelMap5.test';
 import GraphicSendImagePixelMapAdd02 from './GraphicSendImagePixelMapAdd02.test';
 import GraphicImageCreatePixelMap05 from './GraphicImageCreatePixelMap05.test';
+import GraphicImagePixelMapAPI2601 from './GraphicImagePixelMapAPI2601.test';
+import GraphicImagePixelMapAPI2602 from './GraphicImagePixelMapAPI2602.test';
+import GraphicImagePixelMapAPI2603 from './GraphicImagePixelMapAPI2603.test';
+import GraphicImagePixelMapErrorCode from './GraphicImagePixelMapErrorCode.test';
 
 export default function testsuite() {
   imagePixelMapTest()
@@ -62,4 +66,8 @@ export default function testsuite() {
   GraphicImagePixelMap5();
   GraphicSendImagePixelMapAdd02();
   GraphicImageCreatePixelMap05();
+  GraphicImagePixelMapAPI2601();
+  GraphicImagePixelMapAPI2602();
+  GraphicImagePixelMapAPI2603();
+  GraphicImagePixelMapErrorCode();
 }

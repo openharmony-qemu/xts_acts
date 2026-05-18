@@ -1416,5 +1416,53 @@ export default function usbNoPerDdkTest() {
       }
     });
 
+    /** @tc.name   testUsbControlTransferNoPer001
+     * @tc.number SUB_Driver_Ext_DDKNoPer_1700
+     * @tc.desc   OH_Usb_ControlTransfer Interface testing - no permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUsbControlTransferNoPer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(TAG, '----------------------testUsbControlTransferNoPer001---------------------------');
+      try {
+        if (deviceId < 0) {
+          console.info(TAG, "Test USB device not connected");
+          expect(deviceId).assertEqual(USB_DDK_FAILED);
+          done();
+          return;
+        }
+        console.info(TAG, "Test USB deviceId = " + deviceId);
+        const ret = usbNoPerDdk.usbControlTransfer(deviceId);
+        console.info(TAG, "Test Result testUsbControlTransferNoPer001 : " + ret);
+        expect(ret).assertEqual(DDK_ERR_NOPERM);
+        done();
+      } catch (err) {
+        console.error(TAG, `testUsbControlTransferNoPer001 failed, message is ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+    /**
+      * @tc.name   testUsbGetNonRootHubsNoPer001
+      * @tc.number SUB_Driver_Ext_DDKNoPer_1800
+      * @tc.desc   OH_Usb_GetNonRootHubs Interface testing - no permission
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('testUsbGetNonRootHubsNoPer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(TAG, '----------------------testUsbGetNonRootHubsNoPer001---------------------------');
+      try {
+        const ret = usbNoPerDdk.usbGetNonRootHubs();
+        console.info(TAG, "Test Result testUsbGetNonRootHubsNoPer001 : " + ret);
+        expect(ret).assertEqual(DDK_ERR_NOPERM);
+        done();
+      } catch (err) {
+        console.error(TAG, `testUsbGetNonRootHubsNoPer001 failed, message is ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
   })
 }

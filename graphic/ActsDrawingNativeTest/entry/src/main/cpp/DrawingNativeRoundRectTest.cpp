@@ -44,14 +44,6 @@ void DrawingNativeRoundRectTestTearDown()
     std::cout << "DrawingNativeRoundRectTest errorCodeReset after each test case." << std::endl;
 }
 
-/**
- * @tc.name   testRoundRectCreateNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_NUMBER_100
- * @tc.desc   test for testRoundRectCreateNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRoundRectCreateNormal()
 {
     DrawingNativeRoundRectTestSetUp();
@@ -71,14 +63,6 @@ int TestRoundRectCreateNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRoundRectCreateNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0101
- * @tc.desc   test for testRoundRectCreateNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRoundRectCreateNull()
 {
     DrawingNativeRoundRectTestSetUp();
@@ -106,14 +90,6 @@ int TestRoundRectCreateNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRoundRectCreateAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0102
- * @tc.desc   test for testRoundRectCreateAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRoundRectCreateAbnormal()
 {
     DrawingNativeRoundRectTestSetUp();
@@ -140,14 +116,6 @@ int TestRoundRectCreateAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRoundRectCreateMaximum
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0103
- * @tc.desc   test for testRoundRectCreateMaximum.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRoundRectCreateMaximum()
 {
     DrawingNativeRoundRectTestSetUp();
@@ -174,14 +142,6 @@ int TestRoundRectCreateMaximum()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRoundRectCreateMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0104
- * @tc.desc   test for testRoundRectCreateMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRoundRectCreateMultipleCalls()
 {
     DrawingNativeRoundRectTestSetUp();
@@ -198,14 +158,6 @@ int TestRoundRectCreateMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRoundRectSetGetCornerNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0200
- * @tc.desc   test for testRoundRectSetGetCornerNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRoundRectSetGetCornerNormal()
 {
     DrawingNativeRoundRectTestSetUp();
@@ -248,14 +200,6 @@ int TestRoundRectSetGetCornerNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRoundRectSetGetCornerNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0201
- * @tc.desc   test for testRoundRectSetGetCornerNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRoundRectSetGetCornerNull()
 {
     DrawingNativeRoundRectTestSetUp();
@@ -284,14 +228,6 @@ int TestRoundRectSetGetCornerNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRoundRectSetGetCornerAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0202
- * @tc.desc   test for testRoundRectSetGetCornerAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRoundRectSetGetCornerAbnormal()
 {
     DrawingNativeRoundRectTestSetUp();
@@ -321,14 +257,6 @@ int TestRoundRectSetGetCornerAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRoundRectSetGetCornerMaximum
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0203
- * @tc.desc   test for testRoundRectSetGetCornerMaximum.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRoundRectSetGetCornerMaximum()
 {
     DrawingNativeRoundRectTestSetUp();
@@ -358,14 +286,6 @@ int TestRoundRectSetGetCornerMaximum()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRoundRectSetGetCornerMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0204
- * @tc.desc   test for testRoundRectSetGetCornerMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRoundRectSetGetCornerMultipleCalls()
 {
     DrawingNativeRoundRectTestSetUp();
@@ -398,14 +318,6 @@ int TestRoundRectSetGetCornerMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRoundRectGetCornerWhenNoSet
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0205
- * @tc.desc   test for testRoundRectGetCornerWhenNoSet.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL2
- */
 int TestRoundRectGetCornerWhenNoSet()
 {
     DrawingNativeRoundRectTestSetUp();
@@ -429,14 +341,6 @@ int TestRoundRectGetCornerWhenNoSet()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRoundRectDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0300
- * @tc.desc   test for testRoundRectDestroyNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRoundRectDestroyNormal()
 {
     DrawingNativeRoundRectTestSetUp();
@@ -458,14 +362,6 @@ int TestRoundRectDestroyNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRoundRectDestroyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0301
- * @tc.desc   test for testRoundRectDestroyNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRoundRectDestroyNull()
 {
     DrawingNativeRoundRectTestSetUp();
@@ -477,14 +373,6 @@ int TestRoundRectDestroyNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRoundRectOffsetNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0400
- * @tc.desc   test for testRoundRectOffsetNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRoundRectOffsetNormal()
 {
     DrawingNativeRoundRectTestSetUp();
@@ -526,14 +414,6 @@ int TestRoundRectOffsetNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRoundRectOffsetNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0401
- * @tc.desc   test for testRoundRectOffsetNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRoundRectOffsetNull()
 {
     DrawingNativeRoundRectTestSetUp();
@@ -560,14 +440,6 @@ int TestRoundRectOffsetNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRoundRectOffsetMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0402
- * @tc.desc   test for testRoundRectOffsetMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRoundRectOffsetMultipleCalls()
 {
     DrawingNativeRoundRectTestSetUp();
@@ -592,14 +464,6 @@ int TestRoundRectOffsetMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRoundRectCopyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0500
- * @tc.desc   test for testRoundRectCopyNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRoundRectCopyNormal()
 {
     DrawingNativeRoundRectTestSetUp();
@@ -647,14 +511,6 @@ int TestRoundRectCopyNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRoundRectCopyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0501
- * @tc.desc   test for testRoundRectCopyNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRoundRectCopyNull()
 {
     DrawingNativeRoundRectTestSetUp();
@@ -675,14 +531,6 @@ int TestRoundRectCopyNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRoundRectCopyMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_ROUND_RECT_0502
- * @tc.desc   test for testRoundRectCopyMultipleCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRoundRectCopyMultipleCalls()
 {
     DrawingNativeRoundRectTestSetUp();

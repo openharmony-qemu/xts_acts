@@ -50,15 +50,15 @@ export default function webViewControllerErrorCodeSecond() {
       console.log("beforeAll end,%s", "Succeed!")
     });
 
-    /*
-    * @tc.number     : SUB_WEB_GETDEFAULTUSERAGENT_0100
-    * @tc.name       : testGetDefaultUserAgentStatic001
-    * @tc.desc       : test getDefaultUserAgent
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
+    /**
+    * @tc.name        testGetDefaultUserAgentStatic001
+    * @tc.number      SUB_WEB_GET_DEFAULTUSERAGENT_0100
+    * @tc.desc        test getDefaultUserAgent
+    * @tc.size        MEDIUM
+    * @tc.type        Function
+    * @tc.level       LEVEL0
     */
-    it('testGetDefaultUserAgentStatic001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testGetDefaultUserAgentStatic001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
         Utils.emitEvent("testGetDefaultUserAgent001", 10);
@@ -70,15 +70,15 @@ export default function webViewControllerErrorCodeSecond() {
         done();
       })
 
-    /*
-     *@tc.number  :SUB_ACE_WEB_WebHttpBodyStream_READ_0100
-     *@tc.name  :testWebView_WebHttpBodyStream_READ
-     *@tc.desc  :test WebView_WebHttpBodyStream_READ
-     *@tc.size  :MediumTest
-     *@tc.type  :Function
-     *@tc.level  :Level 3
+    /**
+     * @tc.name   testWebView_WebHttpBodyStream_READ
+     * @tc.number SUB_ACE_WEB_WebHttpBodyStream_READ_0100
+     * @tc.desc   test WebView_WebHttpBodyStream_READ
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  LEVEL0
      */
-    it('testWebView_WebHttpBodyStream_READ', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testWebView_WebHttpBodyStream_READ', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       Utils.emitEvent("emitWebView_WebHttpBodyStream_READ", 10);
       await Utils.msSleep(2000);
@@ -90,12 +90,12 @@ export default function webViewControllerErrorCodeSecond() {
     })
 
     /**
-     * @tc.name        SwitchNextPageStatic
-     * @tc.number      SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAY_0500
-     * @tc.desc        test PAGE_REDIRECT
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       LEVEL0
+     * @tc.name       SwitchNextPageStatic
+     * @tc.number     SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAY_1200
+     * @tc.desc       test PAGE_REDIRECT
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      LEVEL0
      */
     it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

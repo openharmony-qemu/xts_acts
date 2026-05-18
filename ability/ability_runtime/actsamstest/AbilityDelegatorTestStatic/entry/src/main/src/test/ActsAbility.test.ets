@@ -303,20 +303,16 @@ export default function abilityDelegatorStage() {
       abilityDelegator?.executeShellCommand("aa start -a EntryAbility1 -b com.acts.abilitydelegatortest.static")
       await Utils.msSleep(2000)
       try {
-        abilityDelegator?.startAbility({}, (err: BusinessError<void> | null):void => {
-          waitForCompletion(async () => {
-            hilog.info(0x0000, 'testTag EntryAbility', 'startAbility callback err ' + JSON.stringify(err?.code));
-            if (err) {
-              expect(err?.code).assertEqual(16000019);
-              abilityDelegator?.executeShellCommand("aa start -a EntryAbility -b com.acts.abilitydelegatortest.static")
-              await Utils.msSleep(2000)
-              done();
-            } else {
-              expect(false).assertTrue();
-              done();
-            }
-          })
-        });
+        try {
+          await abilityDelegator?.startAbility({});
+          expect(false).assertTrue();
+          done();
+        } catch (err) {
+          expect(err?.code).assertEqual(16000019);
+          abilityDelegator?.executeShellCommand("aa start -a EntryAbility -b com.acts.abilitydelegatortest.static")
+          await Utils.msSleep(2000)
+          done();
+        }
       } catch (error) {
         hilog.error(0x0000, 'abilityDelegatorStageTag', '%{public}s',
           'SUB_Ability_AbilityTools_AbilityDelegator_Stage_12700 failed ' + JSON.stringify(error));

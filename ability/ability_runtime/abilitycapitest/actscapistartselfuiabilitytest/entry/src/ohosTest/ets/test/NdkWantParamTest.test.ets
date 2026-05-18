@@ -382,5 +382,142 @@ export default function ndkTest() {
       expect(result).assertEqual(401);
       done();
     })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NdkWantEx_2200
+     * @tc.number SUB_Ability_AbilityRuntime_NdkWantEx_2200
+     * @tc.desc   Test empty string uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityRuntime_NdkWantEx_2200', Level.LEVEL3, (done: Function) => {
+      const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_NdkWantEx_2200';
+      hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= START`);
+      let result = testNapi.ndkWantEx_2200();
+      hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + JSON.stringify(result));
+      expect(result).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NdkWantEx_2300
+     * @tc.number SUB_Ability_AbilityRuntime_NdkWantEx_2300
+     * @tc.desc   Test get empty string uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityRuntime_NdkWantEx_2300', Level.LEVEL3, (done: Function) => {
+      const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_NdkWantEx_2300';
+      hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= START`);
+      let result = testNapi.ndkWantEx_2300();
+      hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + JSON.stringify(result));
+      expect(result).assertEqual("");
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NdkWantEx_2400
+     * @tc.number SUB_Ability_AbilityRuntime_NdkWantEx_2400
+     * @tc.desc   Test empty string key for Int32Param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityRuntime_NdkWantEx_2400', Level.LEVEL3, (done: Function) => {
+      const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_NdkWantEx_2400';
+      hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= START`);
+      let result = testNapi.ndkWantEx_2400();
+      hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + JSON.stringify(result));
+      expect(result).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NdkWantEx_2500
+     * @tc.number SUB_Ability_AbilityRuntime_NdkWantEx_2500
+     * @tc.desc   Test get empty string key for Int32Param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityRuntime_NdkWantEx_2500', Level.LEVEL3, (done: Function) => {
+      const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_NdkWantEx_2500';
+     ;
+      hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= START`);
+      let result = testNapi.ndkWantEx_2500();
+      hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + JSON.stringify(result));
+      expect(result).assertEqual(32);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NdkWantEx_2600
+     * @tc.number SUB_Ability_AbilityRuntime_NdkWantEx_2600
+     * @tc.desc   Test empty string key for BoolParam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityRuntime_NdkWantEx_2600', Level.LEVEL3, (done: Function) => {
+      const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_NdkWantEx_2600';
+      hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= START`);
+      let result = testNapi.ndkWantEx_2600();
+      hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + JSON.stringify(result));
+      expect(result).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NdkWantEx_2700
+     * @tc.number SUB_Ability_AbilityRuntime_NdkWantEx_2700
+     * @tc.desc   Test get empty string key for BoolParam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityRuntime_NdkWantEx_2700', Level.LEVEL3, (done: Function) => {
+      const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_NdkWantEx_2700';
+      hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= START`);
+      let result = testNapi.ndkWantEx_2700();
+      hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + JSON.stringify(result));
+      expect(result).assertFalse();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NdkWantEx_2800
+     * @tc.number SUB_Ability_AbilityRuntime_NdkWantEx_2800
+     * @tc.desc   Test empty string key for DoubleParam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityRuntime_NdkWantEx_2800', Level.LEVEL3, (done: Function) => {
+      const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_NdkWantEx_2800';
+      hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= START`);
+      let result = testNapi.ndkWantEx_2800();
+      hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + JSON.stringify(result));
+      expect(result).assertEqual(0);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NdkWantEx_2900
+     * @tc.number SUB_Ability_AbilityRuntime_NdkWantEx_2900
+     * @tc.desc   Test get empty string key for DoubleParam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityRuntime_NdkWantEx_2900', Level.LEVEL3, (done: Function) => {
+      const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_NdkWantEx_2900';
+      hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= START`);
+      let result = testNapi.ndkWantEx_2900();
+      hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= ` + JSON.stringify(result));
+      expect(result).assertEqual(1.0);
+      done();
+    })
   })
 }

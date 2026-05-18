@@ -91,6 +91,7 @@ import canvasMatrixRotateNullUndefinedTest from './CanvasNullUndefined/canvasMat
 import CanvasRendererAntialiasTest from './migratedActs/CanvasRendererAntialias.test';
 import AntialiasTest from './CanvasRenderingContext2D/Antialias.test';
 import CanvasImageBitmapSupportResourceTest from './Canvas/CanvasImageBitmapSupportResourceTest.test';
+import CanvasGradientCreateHDRColorTest from './Canvas/CanvasGradientCreateHDRColorTest.test';
 
 export default function testsuite() {
 
@@ -173,4 +174,5 @@ export default function testsuite() {
   CanvasRendererAntialiasTest();
   AntialiasTest();
   CanvasImageBitmapSupportResourceTest();
+  CanvasGradientCreateHDRColorTest();
 }

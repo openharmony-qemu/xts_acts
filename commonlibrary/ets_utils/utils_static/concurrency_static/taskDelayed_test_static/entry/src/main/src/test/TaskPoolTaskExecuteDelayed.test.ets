@@ -67,24 +67,22 @@ export default function taskPoolTaskExecuteDelayedTest() {
       let callbackTime:number = 0;
 
       await new Promise<boolean>((resolve, _) => {
-        waitForCompletion(async () => {
-          for (let i = 0; i < repeatCount; i++) {
-            let task: taskpool.Task = new taskpool.Task(testFun2, cycleCount, step)
-            await taskpool.executeDelayed(50, task)
-              .then((result: Any) => {
- 	              const num = result as Number;
- 	              allPoints += Number(num)
-                callbackTime++;
-                if (callbackTime == repeatCount) {
-                  resolve(true)
-                }
-              })
-              .catch((e:Error) => {
-                console.error(`error message error: ${JSON.stringify(e)}`)
-                throw e as Error
-              })
-          }
-        })
+        for (let i = 0; i < repeatCount; i++) {
+          let task: taskpool.Task = new taskpool.Task(testFun2, cycleCount, step)
+          taskpool.executeDelayed(50, task)
+            .then((result: Any) => {
+              const num = result as Number;
+              allPoints += Number(num)
+              callbackTime++;
+              if (callbackTime == repeatCount) {
+                resolve(true)
+              }
+            })
+            .catch((e:Error) => {
+              console.error(`error message error: ${JSON.stringify(e)}`)
+              throw e as Error
+            })
+        }
       })
       expect(allPoints).assertEqual(cycleCount * repeatCount * step)
       done()

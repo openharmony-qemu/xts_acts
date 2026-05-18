@@ -354,7 +354,7 @@ export default function typefaceTest() {
     it('testTypeFaceMakeFromCurrentNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
       const msg = 'testTypeFaceMakeFromCurrentNormalStatic';
       let typeArguments = new drawing.TypefaceArguments();
-      let myTypeFace = drawing.Typeface.makeFromFile("/system/fonts/HarmonyOS_Sans_SC.ttf");
+      let myTypeFace = drawing.Typeface.makeFromFile("/system/fonts/HarmonyOS_Sans.ttf");
       try {
         let  typeFace1 = myTypeFace!.makeFromCurrent(typeArguments);
         if(typeFace1 == undefined){
@@ -395,7 +395,7 @@ export default function typefaceTest() {
       const msg = 'testTypeFaceMakeFromCurrentMultipleCallsStatic';
       for (let i = 0; i < 20; i++) {
         let typeArguments = new drawing.TypefaceArguments();
-        let myTypeFace = drawing.Typeface.makeFromFile("/system/fonts/HarmonyOS_Sans_SC.ttf");
+        let myTypeFace = drawing.Typeface.makeFromFile("/system/fonts/HarmonyOS_Sans.ttf");
         try {
           let  typeFace1 = myTypeFace!.makeFromCurrent(typeArguments)
           if(typeFace1 == undefined){
@@ -537,7 +537,7 @@ export default function typefaceTest() {
         expect().assertFail();
       }
       try {
-        let str = "/system/fonts/HarmonyOS_Sans_SC.ttf";
+        let str = "/system/fonts/HarmonyOS_Sans.ttf";
         let typeface = drawing.Typeface.makeFromFile(str) as drawing.Typeface;
         let result = typeface.isBold();
         console.info(msg + ' isBold 3 success ' + JSON.stringify(result));
@@ -606,7 +606,7 @@ export default function typefaceTest() {
         expect().assertFail();
       }
       try {
-        let str = "/system/fonts/HarmonyOS_Sans_SC.ttf";
+        let str = "/system/fonts/HarmonyOS_Sans.ttf";
         let typeface = drawing.Typeface.makeFromFile(str) as drawing.Typeface;
         let result = typeface.isItalic();
         console.info(msg + ' isItalic 3 success ' + JSON.stringify(result));

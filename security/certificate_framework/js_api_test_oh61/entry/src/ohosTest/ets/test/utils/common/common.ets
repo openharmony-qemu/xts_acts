@@ -22,7 +22,7 @@ export function stringToUint8Array(str: string): Uint8Array {
   return new Uint8Array(arr);
 }
 
-export async function createX509CertPem(input: string) {
+export async function createX509CertPem(input: string): Promise<cert.X509Cert> {
   try {
     let EncodingBlob: cert.EncodingBlob = {
       data: stringToUint8Array(input),
@@ -33,6 +33,21 @@ export async function createX509CertPem(input: string) {
     return x509Cert;
   } catch (error) {
     console.error(`[XTS] createX509CertPem ${error}, error code: ${error.code}`);
+    throw error as Error;
+  }
+}
+
+export async function createX509CrlPem(input: string): Promise<cert.X509CRL> {
+  try {
+    let EncodingBlob: cert.EncodingBlob = {
+      data: stringToUint8Array(input),
+      encodingFormat: cert.EncodingFormat.FORMAT_PEM
+    }
+    let x509Cert: cert.X509CRL = await cert.createX509CRL(EncodingBlob);
+
+    return x509Cert;
+  } catch (error) {
+    console.error(`[XTS] createX509CrlPem ${error}, error code: ${error.code}`);
     throw error as Error;
   }
 }

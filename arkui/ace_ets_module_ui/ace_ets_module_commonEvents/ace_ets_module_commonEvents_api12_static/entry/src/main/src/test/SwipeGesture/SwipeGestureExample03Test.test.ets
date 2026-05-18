@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-22026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -95,13 +95,13 @@ it('SwipeGestureExample03Test_static_0010', Level.LEVEL0, async (done: () => voi
       console.log('SwipeGestureExample03Test_0010 areaObj1 clicked finger[1] start',Math.round(areaObj1.left + areaWidth1 * 0.3),Math.round(areaObj1.top + areaHeight1/2))
       console.log('SwipeGestureExample03Test_0010 areaObj1 clicked finger[1] end',Math.round(areaObj1.left + areaWidth1 * 0.8),Math.round(areaObj1.top + areaHeight1/2))
       let driver: Driver = Driver.create();
-      let speed = (Math.floor(areaWidth1 * 0.5 / 0.016 / 1000) * 1000) as Int
+      let speed = (Math.floor(areaWidth1 * 0.5 / 0.016 / 1000) * 1000).toInt()
       await CommonFunc.sleep(1000);
       let pointers: PointerMatrix = PointerMatrix.create(2,2);
-      pointers.setPoint(0,0,{x: Math.round(areaObj1.left + areaWidth1 * 0.2) as Int,y: Math.round(areaObj1.top + areaHeight1/2) as Int } as Point);
-      pointers.setPoint(0,1,{x: Math.round(areaObj1.left + areaWidth1 * 0.7) as Int,y: Math.round(areaObj1.top + areaHeight1/2) as Int } as Point);
-      pointers.setPoint(1,0,{x: Math.round(areaObj1.left + areaWidth1 * 0.3) as Int,y: Math.round(areaObj1.top + areaHeight1/2) as Int } as Point);
-      pointers.setPoint(1,1,{x: Math.round(areaObj1.left + areaWidth1 * 0.8) as Int,y: Math.round(areaObj1.top + areaHeight1/2) as Int } as Point);
+      pointers.setPoint(0,0,{x: Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),y: Math.round(areaObj1.top + areaHeight1/2).toInt() } as Point);
+      pointers.setPoint(0,1,{x: Math.round(areaObj1.left + areaWidth1 * 0.7).toInt(),y: Math.round(areaObj1.top + areaHeight1/2).toInt() } as Point);
+      pointers.setPoint(1,0,{x: Math.round(areaObj1.left + areaWidth1 * 0.3).toInt(),y: Math.round(areaObj1.top + areaHeight1/2).toInt() } as Point);
+      pointers.setPoint(1,1,{x: Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(),y: Math.round(areaObj1.top + areaHeight1/2).toInt() } as Point);
       await driver.injectMultiPointerAction(pointers,speed);
       await CommonFunc.sleep(4000);
 

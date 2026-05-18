@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -113,7 +113,7 @@ struct NavigationApi1 {
             fromParam.start(operation == NavigationOperation.PUSH, true);
             toParam.start(operation == NavigationOperation.PUSH, false);
             console.log(`toParam.start`);
-            this.getUIContext()?.animateTo({ duration: toParam.timeout as int, onFinish: () => {
+            this.getUIContext()?.animateTo({ duration: toParam.timeout.toInt(), onFinish: () => {
               transitionProxy.finishTransition();
               this.finishTransitionTest = '444'
               console.log('finishTransition改变:' + this.finishTransitionTest);

@@ -258,6 +258,7 @@ describe('AccessibleCheckAbility', function () {
         accessibility.isSeniorModeEnabled().then((result) => {
             console.info(`AccessibilityApi: SUB_BASIC_BARRIERFREE_Accessibility_InquiriesSeniorMode_0300 result: ${result}`);
             expect(typeof (result)).assertEqual('boolean');
+            expect(result).assertEqual(false);
             done();
         }).catch((err) => {
             console.error(`AccessibilityApi: SUB_BASIC_BARRIERFREE_Accessibility_InquiriesSeniorMode_0300 has error: ${err.code}`);

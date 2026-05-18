@@ -165,7 +165,7 @@ export default function searchJsunit() {
       let strJsonNew = getInspectorByKey('search');
       let objNew: ESObject = JSON.parse(strJsonNew);
       console.info("searchTest_008 component  is: " + JSON.stringify(objNew.$attrs));
-      expect(objNew.$attrs.enableKeyboardOnFocus).assertEqual(undefined);
+      expect(objNew.$attrs.enableKeyboardOnFocus).assertEqual('true');
       console.info('searchTest_008 END');
       done();
     });

@@ -55,10 +55,6 @@ export default function textInput_caret() {
 
       console.info('[textInput_caret_001] START');
       let driver = Driver.create();
-      await driver.mouseClick({x:300, y:200}, MouseButton.MOUSE_BUTTON_LEFT);
-      console.info('mouse click success');
-      await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070);
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('inputGetCaret'));
       await button.click();

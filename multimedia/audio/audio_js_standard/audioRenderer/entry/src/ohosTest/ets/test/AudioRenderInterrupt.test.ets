@@ -169,6 +169,20 @@ export default function AudioRendererInterruptUnitTest() {
       }
     }
 
+    async function startSuccess(render, done, render1) {
+      try {
+        await render.start()
+        await release(render, done)
+        await release(render1, done)
+        console.log(" start success.")
+        done()
+      } catch (err) {
+        console.log(" start err:" + JSON.stringify(err))
+        expect(false).assertEqual(true)
+        done()
+      }
+    }
+
 
     async function stop(render, done) {
       try {
@@ -584,7 +598,7 @@ export default function AudioRendererInterruptUnitTest() {
 
       let render2 = await createAudioRenderer(renderInfo['VOICE_ASSISTANT'], streamInfo['48000'],done)
       await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-      await startFail(render2, done, render1)
+      await startSuccess(render2, done, render1)
     })
 
 
@@ -857,7 +871,7 @@ export default function AudioRendererInterruptUnitTest() {
 
       let render2 = await createAudioRenderer(renderInfo['VOICE_ASSISTANT'], streamInfo['48000'],done)
       await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-      await startFail(render2, done, render1)
+      await startSuccess(render2, done, render1)
     })
 
 

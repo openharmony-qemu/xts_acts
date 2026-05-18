@@ -146,15 +146,24 @@ struct WebOnPermissionRequest {
                     await waitForExist(async () => {
                       try {
                         const component = await driver.findComponent(ON.text('允许'));
-                        return component !== null;
+                        if(component) {
+                          return component !== null;
+                        } else {
+                          let buttonFour = await driver.waitForComponent(ON.text('本次使用允许'),10000);
+                          return buttonFour !== null;
+                        }
                       } catch {
                         return false;
                       }
                     }, "allowButton", true)
 
                     const component = await driver.findComponent(ON.text('允许'));
-                    await component.click();
-
+                    if(component) {
+                      await component.click();
+                    } else {
+                      let buttonFour = await driver.waitForComponent(ON.text('本次使用允许'),10000);
+                      await buttonFour.click();
+                    }
            
                     const result = await waitForExist(async () => {
                       return new Promise<string>((resolve) => {

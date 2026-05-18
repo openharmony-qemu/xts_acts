@@ -1316,7 +1316,7 @@ export default function NoPermissionTest() {
       console.info(`${caseName} test end `);
     });
 
-        /**
+    /**
      * @tc.name   testTelephonyContactqueryContactsCount2000
      * @tc.number SUB_Telephony_Contact_queryContactsCount_2000
      * @tc.desc   queryContactsCount and use Promise method as an asynchronous method
@@ -1341,6 +1341,61 @@ export default function NoPermissionTest() {
       console.info(`${caseName} test end `);
     });
 
+    /**
+     * @tc.name   testHasMatchedCallLog2100
+     * @tc.number SUB_Telephony_Contact_HasMatchedCallLog_2100
+     * @tc.desc   Test hasMatchedCallLog without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testHasMatchedCallLog2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testHasMatchedCallLog2100';
+      console.info(`${caseName} test start `);
+      try {
+
+        let context: Context = AppStorage.get('context') as Context;
+        let phoneNumber = "13800000000";
+        let minDuration = 10;
+        let withinTime = 400;
+        let result = await contact.hasMatchedCallLog(context, phoneNumber, minDuration, withinTime);
+        console.info(`${caseName} result: ${result}`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} catch error ${JSON.stringify(error)}`);
+        expect(error.code === 201).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testHasMatchedCallLog2200
+     * @tc.number SUB_Telephony_Contact_HasMatchedCallLog_2200
+     * @tc.desc   Test hasMatchedCallLog without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testHasMatchedCallLog2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testHasMatchedCallLog2200';
+      console.info(`${caseName} test start `);
+
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        let phoneNumber = "13800000000";
+        let minDuration = 10;
+
+        let result = await contact.hasMatchedCallLog(context, phoneNumber, minDuration);
+        console.info(`${caseName} result: ${result}`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} catch error ${JSON.stringify(error)}`);
+        expect(error.code === 201).assertTrue();
+        done();
+      }
+    });
 
   })
 }

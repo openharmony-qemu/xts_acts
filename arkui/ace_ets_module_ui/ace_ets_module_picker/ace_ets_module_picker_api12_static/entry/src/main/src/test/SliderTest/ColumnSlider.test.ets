@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -386,7 +386,7 @@ export default function ColumnSliderTest() {
       let rect = await slider!.getBounds();
       console.info(`rect is: ` + JSON.stringify(rect))
 
-      await driver.click(rect.left+Math.round((rect.right-rect.left)/10)+30 as int,Math.round((rect.top+rect.bottom)/2) as int)
+      await driver.click((rect.left+Math.round((rect.right-rect.left)/10)+30).toInt(),Math.round((rect.top+rect.bottom)/2).toInt())
       console.info(`click is: `,rect.left+Math.round((rect.right-rect.left)/10)+30,Math.round((rect.top+rect.bottom)/2))
       // await driver.click(120,524);
       // console.info(`driver.click 1`)
@@ -397,7 +397,7 @@ export default function ColumnSliderTest() {
       console.info("[SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_041] obj1.$attrs.constructor is: " + JSON.stringifyJsonElement(obj1.getElement('$attrs').getElement('constructor')));
       expect(obj1.getElement('$attrs').getElement('constructor').getString('value')).assertEqual('10.000000');
       await Utils.sleep(1000);
-      await driver.drag(rect.left+Math.round((rect.right-rect.left)/10)+30 as int,Math.round((rect.top+rect.bottom)/2) as int,rect.left+Math.ceil((rect.right-rect.left)/5)+30 as int,Math.round((rect.top+rect.bottom)/2) as int, 600 as int)
+      await driver.drag((rect.left+Math.round((rect.right-rect.left)/10)+30).toInt(),Math.round((rect.top+rect.bottom)/2).toInt(),(rect.left+Math.ceil((rect.right-rect.left)/5)+30).toInt(),Math.round((rect.top+rect.bottom)/2).toInt(), 600 as int)
       console.info(`drag is: `,rect.left+Math.round((rect.right-rect.left)/10)+30,Math.round((rect.top+rect.bottom)/2),rect.left+Math.ceil((rect.right-rect.left)/5)+30,Math.round((rect.top+rect.bottom)/2),600)
       let strJson2 = inspector.getInspectorByKey('XSlider16');
       let obj2 = JSON.parseJsonElement(strJson2);
@@ -405,7 +405,7 @@ export default function ColumnSliderTest() {
       console.info("[SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_041] obj2.$attrs.constructor is: " + JSON.stringifyJsonElement(obj2.getElement('$attrs').getElement('constructor')));
       expect(obj2.getElement('$attrs').getElement('constructor').getString('value')).assertEqual('20.000000');
       await Utils.sleep(1000);
-      await driver.drag(rect.left+Math.round((rect.right-rect.left)/5)+30 as int, Math.round((rect.top+rect.bottom)/2) as int, rect.left as int, Math.round((rect.top+rect.bottom)/2) as int, 600 as int)
+      await driver.drag((rect.left+Math.round((rect.right-rect.left)/5)+30).toInt(), Math.round((rect.top+rect.bottom)/2).toInt(), rect.left as int, Math.round((rect.top+rect.bottom)/2).toInt(), 600 as int)
       console.info(`drag is: `,rect.left+Math.round((rect.right-rect.left)/5)+30,Math.round((rect.top+rect.bottom)/2),rect.left,Math.round((rect.top+rect.bottom)/2),600)
       let strJson3 = inspector.getInspectorByKey('XSlider16');
       let obj3 = JSON.parseJsonElement(strJson3);
@@ -431,7 +431,7 @@ export default function ColumnSliderTest() {
       let slider = await driver.findComponent(ON.id('XSlider17')) as Component;
       let rect = await slider!.getBounds();
       console.info(`rect is: ` + JSON.stringify(rect))
-      await driver.click(rect.left+Math.round((rect.right-rect.left)/10)+30 as int, Math.round((rect.top+rect.bottom)/2) as int)
+      await driver.click((rect.left+Math.round((rect.right-rect.left)/10)+30).toInt(), Math.round((rect.top+rect.bottom)/2).toInt())
       console.info(`click is: `,rect.left+Math.round((rect.right-rect.left)/10)+30,Math.round((rect.top+rect.bottom)/2))
       await Utils.sleep(1000);
       let strJson1 = inspector.getInspectorByKey('XSlider17');
@@ -440,14 +440,14 @@ export default function ColumnSliderTest() {
       console.info("[SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_042] obj1.$attrs.constructor is: " + JSON.stringifyJsonElement(obj1.getElement('$attrs').getElement('constructor')));
       expect(obj1.getElement('$attrs').getElement('constructor').getString('value')).assertEqual('10.000000');
       await Utils.sleep(1000);
-      await driver.drag(rect.left+Math.round((rect.right-rect.left)/10)+30 as int, Math.round((rect.top+rect.bottom)/2) as int,rect.left+Math.ceil((rect.right-rect.left)/5)+30 as int,Math.round((rect.top+rect.bottom)/2) as int, 600)
+      await driver.drag((rect.left+Math.round((rect.right-rect.left)/10)+30).toInt(), Math.round((rect.top+rect.bottom)/2).toInt(),(rect.left+Math.ceil((rect.right-rect.left)/5)+30).toInt(),Math.round((rect.top+rect.bottom)/2).toInt(), 600)
       console.info(`drag is: `,rect.left+Math.round((rect.right-rect.left)/10)+30,Math.round((rect.top+rect.bottom)/2),rect.left+Math.ceil((rect.right-rect.left)/5)+30,Math.round((rect.top+rect.bottom)/2),600)
       let strJson2 = inspector.getInspectorByKey('XSlider17');
       let obj2 = JSON.parseJsonElement(strJson2);
       await Utils.sleep(1000);
       console.info("[SUB_ACE_UI_COMPONENT_BUTTON_SLIDER_CAPI_static_042] obj2.$attrs.constructor is: " + JSON.stringifyJsonElement(obj2.getElement('$attrs').getElement('constructor')));
       expect(obj2.getElement('$attrs').getElement('constructor').getString('value')).assertEqual('20.000000');
-      await driver.drag(rect.left+Math.round((rect.right-rect.left)/5)+30 as int,Math.round((rect.top+rect.bottom)/2) as int,rect.left as int,Math.round((rect.top+rect.bottom)/2) as int,600)
+      await driver.drag((rect.left+Math.round((rect.right-rect.left)/5)+30).toInt(),Math.round((rect.top+rect.bottom)/2).toInt(),rect.left as int,Math.round((rect.top+rect.bottom)/2).toInt(),600)
       console.info(`drag is: `,rect.left+Math.round((rect.right-rect.left)/5)+30,Math.round((rect.top+rect.bottom)/2),rect.left,Math.round((rect.top+rect.bottom)/2),600)
       let strJson3 = inspector.getInspectorByKey('XSlider17');
       let obj3 = JSON.parseJsonElement(strJson3);
@@ -633,7 +633,7 @@ export default function ColumnSliderTest() {
       let slider = await driver.findComponent(ON.id('XSlider25')) as Component;
       let rect = await slider!.getBounds();
       console.info(`rect is: ` + JSON.stringify(rect))
-      await driver.click(rect.left+Math.round((rect.right-rect.left)/10) as int,Math.round((rect.top+rect.bottom)/2) as int)
+      await driver.click((rect.left+Math.round((rect.right-rect.left)/10)).toInt(),Math.round((rect.top+rect.bottom)/2).toInt())
       console.info(`click is: `+rect.left+Math.round((rect.right-rect.left)/10),Math.round((rect.top+rect.bottom)/2))
       let strJson1 = inspector.getInspectorByKey('XSlider25');
       let obj1 = JSON.parseJsonElement(strJson1);
@@ -658,7 +658,7 @@ export default function ColumnSliderTest() {
       let slider = await driver.findComponent(ON.id('XSlider26')) as Component;
       let rect = await slider!.getBounds();
       console.info(`rect is: ` + JSON.stringify(rect))
-      await driver.click(rect.left+Math.round((rect.right-rect.left)/10) as int,Math.round((rect.top+rect.bottom)/2) as int)
+      await driver.click((rect.left+Math.round((rect.right-rect.left)/10)).toInt(),Math.round((rect.top+rect.bottom)/2).toInt())
       console.info(`click is: `+rect.left+Math.round((rect.right-rect.left)/10),Math.round((rect.top+rect.bottom)/2))
       let strJson1 = inspector.getInspectorByKey('XSlider26');
       let obj1 = JSON.parseJsonElement(strJson1);

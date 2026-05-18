@@ -449,7 +449,7 @@ export default function atomicsAddTest() {
       const ta = new Int32Array(sab);
       const minValue: int = -2147483648; // Minimum value for Int32
 
-      Atomics.store(ta, 0, minValue as long);
+      Atomics.store(ta, 0, minValue.toLong());
 
       const oldValue = Atomics.add(ta, 0, -1);
       const newValue = Atomics.load(ta, 0);
@@ -480,7 +480,7 @@ export default function atomicsAddTest() {
       valuesToAdd
       )
       {
-        const oldValue = Atomics.add(ta, 0, value as long);
+        const oldValue = Atomics.add(ta, 0, value.toLong());
         expect(oldValue).assertEqual(expectedValue);
         expectedValue += value;
       }
@@ -501,7 +501,7 @@ export default function atomicsAddTest() {
       const ta = new Int32Array(sab);
       const initialValue: int = 100;
 
-      Atomics.store(ta, 0, initialValue as long);
+      Atomics.store(ta, 0, initialValue.toLong());
 
       const oldValue = Atomics.add(ta, 0, 50);
       const newValue = Atomics.load(ta, 0);
@@ -875,7 +875,7 @@ export default function atomicsAddTest() {
       const ta = new Int32Array(sab);
 
       try {
-        Atomics.add(ta, 0, NaN as long)
+        Atomics.add(ta, 0, NaN.toLong())
       } catch (e) {
         expect(e.message).assertContain('');
       }
@@ -932,7 +932,7 @@ export default function atomicsAddTest() {
       const ta = new Int32Array(sab);
 
       try {
-        Atomics.add(ta, 0, Number.MAX_VALUE as long)
+        Atomics.add(ta, 0, Number.MAX_VALUE.toLong())
       } catch (e) {
         expect(e.message).assertContain('');
       }
@@ -1234,7 +1234,7 @@ export default function atomicsAddTest() {
       const ta = new Int32Array(sab);
       const largeValue: int = 2147483647; // Maximum value for Int32
 
-      const oldValue = Atomics.add(ta, 0, largeValue as long);
+      const oldValue = Atomics.add(ta, 0, largeValue.toLong());
       const newValue = Atomics.load(ta, 0);
 
       expect(oldValue).assertEqual(0);
@@ -1319,7 +1319,7 @@ export default function atomicsAddTest() {
       let expectedValue: number = 0;
 
       for (const value of additions) {
-        const oldValue = Atomics.add(ta, 0, value as long);
+        const oldValue = Atomics.add(ta, 0, value.toLong());
         expect(oldValue).assertEqual(expectedValue);
         expectedValue += value;
       }
@@ -1340,7 +1340,7 @@ export default function atomicsAddTest() {
       const ta = new Int16Array(sab);
       const maxValue: int = 32767; // Maximum value for Int16
 
-      Atomics.store(ta, 0, maxValue as long);
+      Atomics.store(ta, 0, maxValue.toLong());
 
       const oldValue = Atomics.add(ta, 0, 1);
       const newValue = Atomics.load(ta, 0);
@@ -1421,7 +1421,7 @@ export default function atomicsAddTest() {
       const ta = new Int8Array(sab);
       const maxValue: int = 127; // Maximum value for Int8
 
-      Atomics.store(ta, 0, maxValue as long);
+      Atomics.store(ta, 0, maxValue.toLong());
 
       const oldValue = Atomics.add(ta, 0, 1);
       const newValue = Atomics.load(ta, 0);
@@ -1504,7 +1504,7 @@ export default function atomicsAddTest() {
       let expectedValue: number = 0;
 
       for (const value of additions) {
-        const oldValue = Atomics.add(ta, 0, value as long);
+        const oldValue = Atomics.add(ta, 0, value.toLong());
         expect(oldValue).assertEqual(expectedValue);
         expectedValue = (expectedValue + value) % 256; // Uint8 wraps around
       }
@@ -1525,7 +1525,7 @@ export default function atomicsAddTest() {
       const ta = new Int32Array(sab);
       const minValue: int = -2147483648; // Minimum value for Int32
 
-      const oldValue = Atomics.add(ta, 0, minValue as long);
+      const oldValue = Atomics.add(ta, 0, minValue.toLong());
       const newValue = Atomics.load(ta, 0);
 
       expect(oldValue).assertEqual(0);
@@ -1678,13 +1678,7 @@ export default function atomicsAddTest() {
       const i32a = new Int32Array(sab);
       i32a[0] = 0;
 
-      // Start waiting for the value to change
-      const waitPromise = new Promise<string>((resolve) => {
-        setTimeout(() => {
-          const result = Atomics.wait(i32a, 0, 0, 2000); // Wait up to 5 seconds
-          resolve(result);
-        }, 0);
-      });
+      const waitPromise = Atomics.waitAsync(i32a, 0, 0, 2000);
 
       // Simulate async add operation using setTimeout
       setTimeout(() => {
@@ -1740,7 +1734,7 @@ export default function atomicsAddTest() {
       const atomicAddPromise = (arr: Int32Array, index: number, value: number): Promise<number> => {
         return new Promise<number>((resolve) => {
           setTimeout(() => {
-            const oldValue = Atomics.add(arr, index as int, value as long);
+            const oldValue = Atomics.add(arr, index.toInt(), value.toLong());
             resolve(oldValue);
           }, 100);
         });
@@ -1845,7 +1839,7 @@ export default function atomicsAddTest() {
 
       let errorThrown = false;
       try {
-        Atomics.add(f32a, 0, 1.5 as long);
+        Atomics.add(f32a, 0, 1.5.toLong());
       } catch (e) {
         errorThrown = true;
         expect(e instanceof TypeError).assertEqual(true);
@@ -1873,9 +1867,9 @@ export default function atomicsAddTest() {
       const atomicAdd = (index: number, value: number): Promise<number> => {
         return new Promise<number>((resolve) => {
           setTimeout(() => {
-            const oldValue = Atomics.add(i32a, index as int, value as long);
+            const oldValue = Atomics.add(i32a, index.toInt(), value.toLong());
             resolve(oldValue);
-          }, Math.random() * 100 as int);
+          }, (Math.random() * 100).toInt());
         });
       };
 
@@ -2001,7 +1995,7 @@ export default function atomicsAddTest() {
       const createAddPromise = (value: number) => {
         return () => new Promise<number>((resolve) => {
           setTimeout(() => {
-            const oldValue = Atomics.add(i32a, 0, value as long);
+            const oldValue = Atomics.add(i32a, 0, value.toLong());
             resolve(oldValue);
           }, 10);
         });
@@ -2037,14 +2031,14 @@ export default function atomicsAddTest() {
       expect(i32a[0]).assertEqual(150);
 
       // Test in the middle
-      const middleIndex: int = (maxSize / 4.0) / 2.0 as int;
+      const middleIndex: int = ((maxSize / 4.0) / 2.0).toInt();
       i32a[middleIndex] = 200;
       oldValue = Atomics.add(i32a, middleIndex as int, 100);
       expect(oldValue).assertEqual(200);
       expect(i32a[middleIndex]).assertEqual(300);
 
       // Test at the end
-      const endIndex: int = (maxSize / 4.0) - 1 as int;
+      const endIndex: int = ((maxSize / 4.0) - 1).toInt();
       i32a[endIndex] = 300;
       oldValue = Atomics.add(i32a, endIndex as int, 150);
       expect(oldValue).assertEqual(300);
@@ -2283,7 +2277,7 @@ export default function atomicsAddTest() {
         return Promise.race([
           new Promise<number>((resolve) => {
             setTimeout(() => {
-              const oldValue = Atomics.add(i32a, 0, value as long);
+              const oldValue = Atomics.add(i32a, 0, value.toLong());
               resolve(oldValue);
             }, timeout);
           }),
@@ -2404,7 +2398,7 @@ export default function atomicsAddTest() {
 
       // Nested function that performs atomic add
       let nestedAdd = (value: number) => {
-        return Atomics.add(i32a, 0, value as long);
+        return Atomics.add(i32a, 0, value.toLong());
       }
 
       // Perform multiple nested adds
@@ -2457,7 +2451,7 @@ export default function atomicsAddTest() {
       let atomicAddPromise = (value: number) => {
         return new Promise<number>((resolve) => {
           setTimeout(() => {
-            const oldValue = Atomics.add(i32a, 0, value as long);
+            const oldValue = Atomics.add(i32a, 0, value.toLong());
             resolve(oldValue);
           }, 50);
         });

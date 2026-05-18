@@ -28,6 +28,7 @@ export default class TestAbility extends UIAbility {
         webView.WebviewController.setActiveWebEngineVersion(webView.ArkWebEngineVersion.M114);
         webView.WebviewController.setActiveWebEngineVersion(webView.ArkWebEngineVersion.SYSTEM_DEFAULT);
         webView.WebviewController.setActiveWebEngineVersion(webView.ArkWebEngineVersion.M132);
+        webView.WebviewController.setActiveWebEngineVersion(webView.ArkWebEngineVersion.M144);
     }
 
     onDestroy() {

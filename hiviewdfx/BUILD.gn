@@ -33,6 +33,7 @@ group("hiviewdfxtestacts") {
       "hicheckertest/hicheckerteststatic:ActsHicheckerStaticTest",
       "hicheckertest/jsleakwatchertest:ActsJsLeakWatcherTest",
       "hicollietest/hicolliendktest:ActsHicollieTest",
+      "hicollietest/hicollieFreezeNdktest:ActsHicollieFreezeTest",
       "hidebugtest/hidebugtestcoltest:ActsHiDebugColTest",
       "hidebugtest/hidebugtestjstest:ActsHiDebugTest",
       "hidebugtest/hidebugtestnewtest:ActsHiDebugNewTest",
@@ -53,6 +54,7 @@ group("hiviewdfxtestacts") {
       "hitracemeterteststatic:ActsHitraceMeterStaticTest",
       "hitracetestnewtest:ActsHiTraceNewTest",
       "hiview/faultlogger/faultloggerjs:faultloggerjs_test",
+      "hiRetrievaltest:ActsHiRetrievalTest",
     ]
   }
 }

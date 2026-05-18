@@ -74,7 +74,6 @@ group("graphic") {
       "windowNdk:ActsWindowNdkTest",
       "windowPermission:ActsWindowPermissionTest",
       "windowStage:ActsWindowStageTest",
-      "windowLifeCycleTestDemo:ActsWindowLifeCycleTestDemo",
       "windowStageTwo:ActsWindowStageTwoTest",
       "windowstandard:window_hap_test",
       "ActsDrawingNativeTest:ActsNewDrawingNativeTest",

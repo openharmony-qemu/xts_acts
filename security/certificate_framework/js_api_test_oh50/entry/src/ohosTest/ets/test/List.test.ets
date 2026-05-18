@@ -41,6 +41,7 @@ import certX509CertCheckNullOrUndefinedTestUnit from './X509CertFunctionParamIsN
 import certExtensionFuncTestUnit from './CertExtension.test';
 import certFrameworkX500NNameTestUnit from './CertX500DistinguishedNameUtf8.test';
 import certFrameworkMatchPrivateTestUnit from './CertPrivateMatch.test';
+import certFrameworkCertChainNewValidatorTestUnit from './CertChainNewValidator.test';
 
 
 export default function testsuite() {
@@ -73,4 +74,5 @@ export default function testsuite() {
   certExtensionFuncTestUnit();
   certFrameworkX500NNameTestUnit();
   certFrameworkMatchPrivateTestUnit();
+  certFrameworkCertChainNewValidatorTestUnit();
 }

@@ -90,5 +90,31 @@ export default function ImageAntialiasedTest() {
       expect(nativeFunc.testImageAntialiased005()).assertEqual(0)
       done()
     })
+
+    /**
+     * @tc.number     SUB_ARKUI_CAPI_NODE_IMAGE_ANTIALIASED_0600
+     * @tc.name       testImageAntialiased006
+     * @tc.desc       testing OH_ArkUI_DrawableDescriptor_SetAnimationStopMode  ARKUI_ERROR_CODE_PARAM_INVALID
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('testImageAntialiased006', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testImageAntialiased006()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.number     SUB_ARKUI_CAPI_NODE_IMAGE_ANTIALIASED_0700
+     * @tc.name       testImageAntialiased007
+     * @tc.desc       testing OH_ArkUI_DrawableDescriptor_GetAnimationStopMode  ARKUI_ERROR_CODE_PARAM_INVALID
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('testImageAntialiased007', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testImageAntialiased007()).assertEqual(0)
+      done()
+    })
   })
 }

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -89,12 +89,12 @@ it('SwipeRecognizer_static_0100', Level.LEVEL0, async (done: () => void): Promis
       console.info('SwipeRecognizer_static_0100 START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      let colum = CommonFunc.getComponentRectOnScreen('SwipeRecognizer');
+      let colum = await CommonFunc.getComponentRectOnScreen('SwipeRecognizer');
       let top = colum.top
       let left = colum.left
-      await driver.swipe(Math.round(AppStorage.get<number>("winLeft") as number + 100) as Int,
-        Math.round(top + 100) as Int, Math.round(AppStorage.get<number>("winLeft") as number + 500) as Int,
-        Math.round(top + 500) as Int, 600)
+      await driver.swipe(Math.round(AppStorage.get<number>("winLeft") as number + 100).toInt(),
+        Math.round(top + 100).toInt(), Math.round(AppStorage.get<number>("winLeft") as number + 500).toInt(),
+        Math.round(top + 500).toInt(), 600)
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('value');
       let obj = JSON.parseJsonElement(strJson);

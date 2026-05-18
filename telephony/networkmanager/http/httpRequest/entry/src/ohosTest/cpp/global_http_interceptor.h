@@ -15,8 +15,8 @@
 
 #ifndef HTTPREQUEST_GLOBAL_HTTP_INTERCEPTOR_H
 #define HTTPREQUEST_GLOBAL_HTTP_INTERCEPTOR_H
-#include <cstdint>
 #include <cstddef>
+#include <cstdint>
 
 #include "network/netstack/http_interceptor.h"
 
@@ -55,12 +55,4 @@ int32_t StartAllInterceptor(int32_t groupId);
 int32_t RemoveAllInterceptor(int32_t groupId);
 int32_t RemoveRequestInterceptor(int32_t groupId);
 int32_t RemoveResponseInterceptor(int32_t groupId);
-
-const char* GetRequestUrl();
-const char* GetRequestMethod();
-const char* GetRequestBody();
-const char* GetRequestHeader();
-const char* GetResponseBody();
-const char* GetResponseHeader();
-int16_t GetResponseCode();
-#endif //HTTPREQUEST_GLOBAL_HTTP_INTERCEPTOR_H
+#endif // HTTPREQUEST_GLOBAL_HTTP_INTERCEPTOR_H

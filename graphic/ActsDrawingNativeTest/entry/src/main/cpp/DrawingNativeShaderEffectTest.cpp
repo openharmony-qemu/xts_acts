@@ -57,14 +57,6 @@ void DrawingNativeShaderEffectTestTearDown()
     std::cout << "DrawingNativeShaderEffectTest errorCodeReset after each test case." << std::endl;
 }
 
-/**
- * @tc.name   testShaderEffectCreateColorShaderNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0100
- * @tc.desc   test for testShaderEffectCreateColorShaderNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestShaderEffectCreateColorShaderNormal()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -79,14 +71,6 @@ int TestShaderEffectCreateColorShaderNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateColorShaderNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0101
- * @tc.desc   test for testShaderEffectCreateColorShaderNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateColorShaderNull()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -100,14 +84,6 @@ int TestShaderEffectCreateColorShaderNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateColorShaderAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0102
- * @tc.desc   test for testShaderEffectCreateColorShaderAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateColorShaderAbnormal()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -121,14 +97,6 @@ int TestShaderEffectCreateColorShaderAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateColorShaderMaximum
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0103
- * @tc.desc   test for testShaderEffectCreateColorShaderMaximum.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateColorShaderMaximum()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -142,14 +110,6 @@ int TestShaderEffectCreateColorShaderMaximum()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateColorShaderMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0104
- * @tc.desc   test for testShaderEffectCreateColorShaderMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateColorShaderMultipleCalls()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -166,14 +126,6 @@ int TestShaderEffectCreateColorShaderMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateLinearGradientWithLocalMatrixNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0200
- * @tc.desc   test for testShaderEffectCreateLinearGradientWithLocalMatrixNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestShaderEffectCreateLinearGradientWithLocalMatrixNormal()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -223,14 +175,6 @@ int TestShaderEffectCreateLinearGradientWithLocalMatrixNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateLinearGradientWithLocalMatrixNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0201
- * @tc.desc   test for testShaderEffectCreateLinearGradientWithLocalMatrixNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateLinearGradientWithLocalMatrixNull()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -277,14 +221,6 @@ int TestShaderEffectCreateLinearGradientWithLocalMatrixNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateLinearGradientWithLocalMatrixAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0202
- * @tc.desc   test for testShaderEffectCreateLinearGradientWithLocalMatrixAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateLinearGradientWithLocalMatrixAbnormal()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -346,14 +282,6 @@ int TestShaderEffectCreateLinearGradientWithLocalMatrixAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateLinearGradientWithLocalMatrixMaximum
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0203
- * @tc.desc   test for testShaderEffectCreateLinearGradientWithLocalMatrixMaximum.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateLinearGradientWithLocalMatrixMaximum()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -415,14 +343,6 @@ int TestShaderEffectCreateLinearGradientWithLocalMatrixMaximum()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateLinearGradientWithLocalMatrixMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0204
- * @tc.desc   test for testShaderEffectCreateLinearGradientWithLocalMatrixMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateLinearGradientWithLocalMatrixMultipleCalls()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -448,14 +368,6 @@ int TestShaderEffectCreateLinearGradientWithLocalMatrixMultipleCalls()
     return OH_DRAWING_SUCCESS;
     }
 
-    /**
-     * @tc.name   testShaderEffectCreateLinearGradienNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0300
-     * @tc.desc   test for testShaderEffectCreateLinearGradienNormal.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
 int TestShaderEffectCreateLinearGradienNormal()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -495,14 +407,6 @@ int TestShaderEffectCreateLinearGradienNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateLinearGradienNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0301
- * @tc.desc   test for testShaderEffectCreateLinearGradienNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateLinearGradienNull()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -538,14 +442,6 @@ int TestShaderEffectCreateLinearGradienNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateLinearGradienAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0302
- * @tc.desc   test for testShaderEffectCreateLinearGradienAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateLinearGradienAbnormal()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -600,14 +496,6 @@ int TestShaderEffectCreateLinearGradienAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateLinearGradienMaximum
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0303
- * @tc.desc   test for testShaderEffectCreateLinearGradienMaximum.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateLinearGradienMaximum()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -662,14 +550,6 @@ int TestShaderEffectCreateLinearGradienMaximum()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateLinearGradienMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0304
- * @tc.desc   test for testShaderEffectCreateLinearGradienMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateLinearGradienMultipleCalls()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -693,14 +573,6 @@ int TestShaderEffectCreateLinearGradienMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateRadialGradientNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0400
- * @tc.desc   test for testShaderEffectCreateRadialGradientNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestShaderEffectCreateRadialGradientNormal()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -737,14 +609,6 @@ int TestShaderEffectCreateRadialGradientNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateRadialGradientNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0401
- * @tc.desc   test for testShaderEffectCreateRadialGradientNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateRadialGradientNull()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -774,14 +638,6 @@ int TestShaderEffectCreateRadialGradientNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateRadialGradientAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0402
- * @tc.desc   test for testShaderEffectCreateRadialGradientAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateRadialGradientAbnormal()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -831,14 +687,6 @@ int TestShaderEffectCreateRadialGradientAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateRadialGradientMaximum
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0403
- * @tc.desc   test for testShaderEffectCreateRadialGradientMaximum.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateRadialGradientMaximum()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -887,14 +735,6 @@ int TestShaderEffectCreateRadialGradientMaximum()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateRadialGradientMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0404
- * @tc.desc   test for testShaderEffectCreateRadialGradientMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateRadialGradientMultipleCalls()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -917,14 +757,6 @@ int TestShaderEffectCreateRadialGradientMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateRadialGradientWithLocalMatrixNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0500
- * @tc.desc   test for testShaderEffectCreateRadialGradientWithLocalMatrixNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestShaderEffectCreateRadialGradientWithLocalMatrixNormal()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -972,14 +804,6 @@ int TestShaderEffectCreateRadialGradientWithLocalMatrixNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateRadialGradientWithLocalMatrixNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0501
- * @tc.desc   test for testShaderEffectCreateRadialGradientWithLocalMatrixNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateRadialGradientWithLocalMatrixNull()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -1016,14 +840,6 @@ int TestShaderEffectCreateRadialGradientWithLocalMatrixNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateRadialGradientWithLocalMatrixAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0502
- * @tc.desc   test for testShaderEffectCreateRadialGradientWithLocalMatrixAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateRadialGradientWithLocalMatrixAbnormal()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -1079,14 +895,6 @@ int TestShaderEffectCreateRadialGradientWithLocalMatrixAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateRadialGradientWithLocalMatrixMaximum
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0503
- * @tc.desc   test for testShaderEffectCreateRadialGradientWithLocalMatrixMaximum.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateRadialGradientWithLocalMatrixMaximum()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -1142,14 +950,6 @@ int TestShaderEffectCreateRadialGradientWithLocalMatrixMaximum()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateRadialGradientWithLocalMatrixMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0504
- * @tc.desc   test for testShaderEffectCreateRadialGradientWithLocalMatrixMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateRadialGradientWithLocalMatrixMultipleCalls()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -1173,14 +973,6 @@ int TestShaderEffectCreateRadialGradientWithLocalMatrixMultipleCalls()
     return OH_DRAWING_SUCCESS;
     }
 
-    /**
-     * @tc.name   testShaderEffectCreateSweepGradientNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0600
-     * @tc.desc   test for testShaderEffectCreateSweepGradientNormal.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
 int TestShaderEffectCreateSweepGradientNormal()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -1215,14 +1007,6 @@ int TestShaderEffectCreateSweepGradientNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateSweepGradientNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0601
- * @tc.desc   test for testShaderEffectCreateSweepGradientNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateSweepGradientNull()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -1248,14 +1032,6 @@ int TestShaderEffectCreateSweepGradientNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateSweepGradientAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0602
- * @tc.desc   test for testShaderEffectCreateSweepGradientAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateSweepGradientAbnormal()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -1297,14 +1073,6 @@ int TestShaderEffectCreateSweepGradientAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateSweepGradientMaximum
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0603
- * @tc.desc   test for testShaderEffectCreateSweepGradientMaximum.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateSweepGradientMaximum()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -1346,14 +1114,6 @@ int TestShaderEffectCreateSweepGradientMaximum()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateSweepGradientMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0604
- * @tc.desc   test for testShaderEffectCreateSweepGradientMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateSweepGradientMultipleCalls()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -1375,14 +1135,6 @@ int TestShaderEffectCreateSweepGradientMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateImageShaderNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0700
- * @tc.desc   test for testShaderEffectCreateImageShaderNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestShaderEffectCreateImageShaderNormal()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -1428,14 +1180,6 @@ int TestShaderEffectCreateImageShaderNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateImageShaderNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0701
- * @tc.desc   test for testShaderEffectCreateImageShaderNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateImageShaderNull()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -1463,14 +1207,6 @@ int TestShaderEffectCreateImageShaderNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateImageShaderMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0704
- * @tc.desc   test for testShaderEffectCreateImageShaderMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateImageShaderMultipleCalls()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -1498,14 +1234,6 @@ int TestShaderEffectCreateImageShaderMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateTwoPointConicalGradientNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0800
- * @tc.desc   test for testShaderEffectCreateTwoPointConicalGradientNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestShaderEffectCreateTwoPointConicalGradientNormal()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -1559,14 +1287,6 @@ int TestShaderEffectCreateTwoPointConicalGradientNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateTwoPointConicalGradientNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0801
- * @tc.desc   test for testShaderEffectCreateTwoPointConicalGradientNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateTwoPointConicalGradientNull()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -1616,14 +1336,6 @@ int TestShaderEffectCreateTwoPointConicalGradientNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateTwoPointConicalGradientAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0802
- * @tc.desc   test for testShaderEffectCreateTwoPointConicalGradientAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateTwoPointConicalGradientAbnormal()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -1696,14 +1408,6 @@ int TestShaderEffectCreateTwoPointConicalGradientAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateTwoPointConicalGradientMaximum
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0803
- * @tc.desc   test for testShaderEffectCreateTwoPointConicalGradientMaximum.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateTwoPointConicalGradientMaximum()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -1774,14 +1478,6 @@ int TestShaderEffectCreateTwoPointConicalGradientMaximum()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateTwoPointConicalGradientMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0804
- * @tc.desc   test for testShaderEffectCreateTwoPointConicalGradientMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateTwoPointConicalGradientMultipleCalls()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -1810,14 +1506,6 @@ int TestShaderEffectCreateTwoPointConicalGradientMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0900
- * @tc.desc   test for testShaderEffectDestroyNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestShaderEffectDestroyNormal()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -1843,14 +1531,6 @@ int TestShaderEffectDestroyNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectDestroyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0901
- * @tc.desc   test for testShaderEffectDestroyNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectDestroyNull()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -1862,14 +1542,6 @@ int TestShaderEffectDestroyNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateSweepGradientWithLocalMatrixNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1000
- * @tc.desc   test for testShaderEffectCreateSweepGradientWithLocalMatrixNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestShaderEffectCreateSweepGradientWithLocalMatrixNormal()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -1917,14 +1589,6 @@ int TestShaderEffectCreateSweepGradientWithLocalMatrixNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateSweepGradientWithLocalMatrixNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1001
- * @tc.desc   test for testShaderEffectCreateSweepGradientWithLocalMatrixNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateSweepGradientWithLocalMatrixNull()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -1975,14 +1639,6 @@ int TestShaderEffectCreateSweepGradientWithLocalMatrixNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateSweepGradientWithLocalMatrixAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1002
- * @tc.desc   test for testShaderEffectCreateSweepGradientWithLocalMatrixAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateSweepGradientWithLocalMatrixAbnormal()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -2032,14 +1688,6 @@ int TestShaderEffectCreateSweepGradientWithLocalMatrixAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateSweepGradientWithLocalMatrixMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1003
- * @tc.desc   test for testShaderEffectCreateSweepGradientWithLocalMatrixMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateSweepGradientWithLocalMatrixMultipleCalls()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -2065,14 +1713,6 @@ int TestShaderEffectCreateSweepGradientWithLocalMatrixMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateComposeEnumTraversal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1100
- * @tc.desc   test for testShaderEffectCreateComposeEnumTraversal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestShaderEffectCreateComposeEnumTraversal()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -2122,14 +1762,6 @@ int TestShaderEffectCreateComposeEnumTraversal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateComposeNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1101
- * @tc.desc   test for testShaderEffectCreateComposeNull.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateComposeNull()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -2152,14 +1784,6 @@ int TestShaderEffectCreateComposeNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreateComposeMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1102
- * @tc.desc   test for testShaderEffectCreateComposeMultipleCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreateComposeMultipleCalls()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -2179,14 +1803,6 @@ int TestShaderEffectCreateComposeMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreatePixelMapShaderNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1200
- * @tc.desc   test for testShaderEffectCreatePixelMapShaderNormal
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestShaderEffectCreatePixelMapShaderNormal()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -2229,14 +1845,6 @@ int TestShaderEffectCreatePixelMapShaderNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreatePixelMapShaderNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1201
- * @tc.desc   test for testShaderEffectCreatePixelMapShaderNull
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreatePixelMapShaderNull()
 {
     DrawingNativeShaderEffectTestSetUp();
@@ -2285,14 +1893,6 @@ int TestShaderEffectCreatePixelMapShaderNull()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testShaderEffectCreatePixelMapShaderMultiCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1202
- * @tc.desc   test for testShaderEffectCreatePixelMapShaderMultiCalls
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestShaderEffectCreatePixelMapShaderMultiCalls()
 {
     DrawingNativeShaderEffectTestSetUp();

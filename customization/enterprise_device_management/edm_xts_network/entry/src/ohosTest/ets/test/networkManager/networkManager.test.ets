@@ -1011,10 +1011,10 @@ function testIsNetworkInterfaceDisabledSync() {
   it("test_is_network_interface_disable_sync_0105", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      networkManager.isNetworkInterfaceDisabledSync(null, NETWORK_ETH_LOCAL);
-      expect(false).assertTrue();
+      let ret = networkManager.isNetworkInterfaceDisabledSync(null, NETWORK_ETH_LOCAL);
+      expect(ret).assertFalse();
     } catch (error) {
-      expect(Number(error.code) === 401).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }

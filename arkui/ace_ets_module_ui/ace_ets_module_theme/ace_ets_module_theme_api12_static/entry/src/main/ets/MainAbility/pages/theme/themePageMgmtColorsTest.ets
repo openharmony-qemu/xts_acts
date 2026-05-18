@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -64,7 +64,7 @@ struct themeTogglePage {
       Column({ space: '8vp' } as ColumnOptions) {
         Text(`未使用WithTheme`)
         // 点击按钮切换局部换肤
-        Button(`切换theme配色：${this.themeNames[this.themeIndex as Int]}`)
+        Button(`切换theme配色：${this.themeNames[this.themeIndex.toInt()]}`)
           .onClick((e:ClickEvent) => {
             this.themeIndex = (this.themeIndex + 1) % themeTogglePage.themeCount;
           }).key('themeToggleClick')
@@ -76,7 +76,7 @@ struct themeTogglePage {
         top: '50vp'
       } as Margin)
 
-      WithTheme({ theme: this.themeArray[this.themeIndex as Int] }) {
+      WithTheme({ theme: this.themeArray[this.themeIndex.toInt()] }) {
         // WithTheme作用域
         Column({ space: '8vp' } as ColumnOptions) {
           Toggle({ type: ToggleType.Switch, isOn: true }).key('toggleBg')

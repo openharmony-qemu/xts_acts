@@ -57,7 +57,8 @@ import FrameNodeCreateToggleNode from './FrameNode/FrameNodeCreateToggleNode.tes
 import FrameNodeCreateWaterFlowNode from './FrameNode/FrameNodeCreateWaterFlowNode.test';
 import FrameNodeCreateFlowItemNode from './FrameNode/FrameNodeCreateFlowItemNode.test';
 import FrameNodeConstructor from './FrameNode/FrameNodeConstructor.test';
-
+import CrossLanguageOptionsSupportFiveMethodsStaticTest from './FrameNode/CrossLanguageOptionsSupportFiveMethodsStaticTest.test';
+import RenderNodeBlurStaticTest from './RenderNode/RenderNodeBlurStaticTest.test';
 
 export default function testsuite() {
     //IsAvailableTest();
@@ -103,4 +104,6 @@ export default function testsuite() {
     FrameNodeCreateWaterFlowNode();
     FrameNodeCreateFlowItemNode();
     FrameNodeConstructor();
+    CrossLanguageOptionsSupportFiveMethodsStaticTest();
+    RenderNodeBlurStaticTest();
 }

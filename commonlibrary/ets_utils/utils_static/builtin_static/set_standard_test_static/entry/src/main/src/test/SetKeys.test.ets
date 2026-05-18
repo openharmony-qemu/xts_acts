@@ -1,6 +1,6 @@
 
 /*
-* Copyright (C) 2024 HiHope Open Source Organization.
+* Copyright (C) 2024-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -3009,7 +3009,7 @@ export default function SetKeysTest() {
       const conversionTime: number = Date.now() - startTime;
       expect(valuesArray.length).assertEqual(targetSize);
       expect(valuesArray[0]).assertEqual(0);
-      expect(valuesArray[(targetSize - 1) as int]).assertEqual(targetSize - 1);
+      expect(valuesArray[(targetSize - 1).toInt()]).assertEqual(targetSize - 1);
     });
 
     /**

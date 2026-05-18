@@ -25,22 +25,18 @@ class UtilsTest{
   static isStartedAbility = false;
 
   static async loadAndSetUpUiTest() : Promise<boolean> {
-    return new Promise<boolean>((resolve, reject) => {
-      waitForCompletion(async () => {
-        hilog.info(domain, tag, `loadAndSetUpUiTest, isloadAndSetUpUiTest`);
-        try {
-          if (!UtilsTest.isloadAndSetUpUiTest) {
-            hilog.info(domain, tag, `loadAndSetUpUiTest, success`);
-            UtilsTest.isloadAndSetUpUiTest = true;
-            await UtilsTest.msSleep(4000)
-          }
-          resolve(true)
-        } catch(error) {
-          hilog.info(domain, tag, `UiTestCase, start abilityFailed: ${String(error)}`);
-          reject(error)
-        }
-      })
-    })
+    hilog.info(domain, tag, `loadAndSetUpUiTest, isloadAndSetUpUiTest`);
+    try {
+      if (!UtilsTest.isloadAndSetUpUiTest) {
+        hilog.info(domain, tag, `loadAndSetUpUiTest, success`);
+        UtilsTest.isloadAndSetUpUiTest = true;
+        await UtilsTest.msSleep(4000)
+      }
+      return true
+    } catch(error) {
+      hilog.info(domain, tag, `UiTestCase, start abilityFailed: ${String(error)}`);
+      throw error
+    }
   }
 
   static async msSleep(count:int) : Promise<int> {

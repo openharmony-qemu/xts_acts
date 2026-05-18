@@ -39,14 +39,6 @@ void DrawingRecordCmdUtilsBeginRecordingTestTearDown()
     std::cout << "DrawingRecordCmdUtilsBeginRecordingTest errorCodeReset after each test case." << std::endl;
 }
 
-/**
- * @tc.name   testRecordCmdUtilsBeginRecordingAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0102
- * @tc.desc   test for testRecordCmdUtilsBeginRecordingAbnormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestRecordCmdUtilsBeginRecordingAbnormal()
 {
     DrawingRecordCmdUtilsBeginRecordingTestSetUp();
@@ -67,14 +59,6 @@ int TestRecordCmdUtilsBeginRecordingAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRecordCmdUtilsBeginRecordingCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0103
- * @tc.desc   test for testRecordCmdUtilsBeginRecordingCalls.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL2
- */
 int TestRecordCmdUtilsBeginRecordingCalls()
 {
     DrawingRecordCmdUtilsBeginRecordingTestSetUp();

@@ -44,13 +44,13 @@ import { http } from '@kit.NetworkKit';
 const EVENT_ID_SET_SUITE_KEY = 177008;
 const TAG = 'WebContextMenuResult ';
 const driver = Driver.create();
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 @Entry
 @Component
 struct BindMenuTest {
-  stringObj: StringFields  = new StringFields ();
+  stringObj: StringFields  = new StringFields();
   controller: webview.WebviewController = new webview.WebviewController(undefined);
   private result: WebContextMenuResult | undefined = undefined;
   @State linkUrl: string = '';

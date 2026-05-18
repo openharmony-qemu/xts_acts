@@ -1,6 +1,6 @@
 'use static'
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,7 +19,7 @@ import { Entry, Text, Column, Component, Search, ColumnOptions, ClickEvent, Butt
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class SearchTextIndentModifier implements AttributeModifier<SearchAttribute> {
+export class SearchTextIndentModifier implements AttributeModifier<SearchAttribute> {
   applyNormalAttribute(instance: SearchAttribute): void {
     instance
       .height(30)
@@ -28,7 +28,7 @@ class SearchTextIndentModifier implements AttributeModifier<SearchAttribute> {
 }
 
 @Observed
-class SearchTextIndentModifier1 implements AttributeModifier<SearchAttribute> {
+export class SearchTextIndentModifier1 implements AttributeModifier<SearchAttribute> {
   public isTextIndent: boolean = true;
   public value: string = ''
 

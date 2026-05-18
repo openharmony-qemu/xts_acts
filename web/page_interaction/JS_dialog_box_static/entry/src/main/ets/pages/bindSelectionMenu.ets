@@ -30,7 +30,7 @@ interface PreviewBuilderParam {
   height: number;
 }
 
-class StringFields {
+export class StringFields {
   str: string = '';
 }
 

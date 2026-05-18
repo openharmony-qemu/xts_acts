@@ -62,8 +62,8 @@ export default function atomicIntTest() {
     it('atomicIntTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const overMax = 2147483648;
       const underMin = -2147483649;
-      expect(new AtomicInt(overMax as int).load()).assertEqual(-2147483648);
-      expect(new AtomicInt(underMin as int).load()).assertEqual(2147483647);
+      expect(new AtomicInt(overMax.toInt()).load()).assertEqual(-2147483648);
+      expect(new AtomicInt(underMin.toInt()).load()).assertEqual(2147483647);
     });
 
     /**
@@ -117,9 +117,9 @@ export default function atomicIntTest() {
       const overMax = 2147483648;
       const underMin = -2147483649;
 
-      atom.store(overMax as int);
+      atom.store(overMax.toInt());
       expect(atom.load()).assertEqual(-2147483648);
-      atom.store(underMin as int);
+      atom.store(underMin.toInt());
       expect(atom.load()).assertEqual(2147483647);
 
       atom.store(11);
@@ -185,12 +185,12 @@ export default function atomicIntTest() {
     it('atomicIntTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const atom = new AtomicInt(2147483647);
       const overMax = 2147483648;
-      expect(atom.exchange(overMax as int)).assertEqual(2147483647);
+      expect(atom.exchange(overMax.toInt())).assertEqual(2147483647);
       expect(atom.load()).assertEqual(-2147483648);
 
       atom.store(-2147483648);
       const underMin = -2147483649;
-      expect(atom.exchange(underMin as int)).assertEqual(-2147483648);
+      expect(atom.exchange(underMin.toInt())).assertEqual(-2147483648);
       expect(atom.load()).assertEqual(2147483647);
     });
 
@@ -257,12 +257,12 @@ export default function atomicIntTest() {
     it('atomicIntTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const atom = new AtomicInt(2147483647);
       const overMax = 2147483648;
-      expect(atom.compareAndSwap(2147483647, overMax as int)).assertEqual(2147483647);
+      expect(atom.compareAndSwap(2147483647, overMax.toInt())).assertEqual(2147483647);
       expect(atom.load()).assertEqual(-2147483648);
 
       atom.store(-2147483648);
       const underMin = -2147483649;
-      expect(atom.compareAndSwap(-2147483648, underMin as int)).assertEqual(-2147483648);
+      expect(atom.compareAndSwap(-2147483648, underMin.toInt())).assertEqual(-2147483648);
       expect(atom.load()).assertEqual(2147483647);
     });
 
@@ -345,12 +345,12 @@ export default function atomicIntTest() {
     it('atomicIntTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const atom = new AtomicInt(2147483647);
       const overMax = 2147483648;
-      expect(atom.fetchAdd(overMax as int)).assertEqual(2147483647);
+      expect(atom.fetchAdd(overMax.toInt())).assertEqual(2147483647);
       expect(atom.load()).assertEqual(-1);
 
       atom.store(-2147483648);
       const underMin = -2147483649;
-      expect(atom.fetchAdd(underMin as int)).assertEqual(-2147483648);
+      expect(atom.fetchAdd(underMin.toInt())).assertEqual(-2147483648);
       expect(atom.load()).assertEqual(-1);
     });
 
@@ -433,12 +433,12 @@ export default function atomicIntTest() {
     it('atomicIntTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const atom = new AtomicInt(2147483647);
       const overMax = 2147483648;
-      expect(atom.fetchSub(overMax as int)).assertEqual(2147483647);
+      expect(atom.fetchSub(overMax.toInt())).assertEqual(2147483647);
       expect(atom.load()).assertEqual(-1);
 
       atom.store(-2147483648);
       const underMin = -2147483649;
-      expect(atom.fetchSub(underMin as int)).assertEqual(-2147483648);
+      expect(atom.fetchSub(underMin.toInt())).assertEqual(-2147483648);
       expect(atom.load()).assertEqual(1);
     });
 

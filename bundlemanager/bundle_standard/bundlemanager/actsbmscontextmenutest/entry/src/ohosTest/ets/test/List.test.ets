@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 import abilityTest from './Ability.test'
+import getInstalledBundleList from './GetInstalledBundleList.test'
 
 export default function testsuite() {
   abilityTest()
+  getInstalledBundleList()
 }

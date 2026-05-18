@@ -83,10 +83,10 @@ it('SUB_ACE_RelativeContainer_AnchorPoint_Visibility_Hidden_TEST_static_0100', L
 
       await CommonFunc.sleep(3000);
       console.log('get Initial value')
-      let RelativeContainer_AnchorPoint_Visibility_Hidden_bt1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Visibility_Hidden_bt1');
-      let RelativeContainer_AnchorPoint_Visibility_Hidden_bt2: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Visibility_Hidden_bt2');
-      let RelativeContainer_AnchorPoint_Visibility_Hidden_tx2: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Visibility_Hidden_tx2');
-      let RelativeContainer_AnchorPoint_Visibility_Hidden_r1: RectValue = CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Visibility_Hidden_r1');
+      let RelativeContainer_AnchorPoint_Visibility_Hidden_bt1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Visibility_Hidden_bt1');
+      let RelativeContainer_AnchorPoint_Visibility_Hidden_bt2: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Visibility_Hidden_bt2');
+      let RelativeContainer_AnchorPoint_Visibility_Hidden_tx2: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Visibility_Hidden_tx2');
+      let RelativeContainer_AnchorPoint_Visibility_Hidden_r1: RectValue = await CommonFunc.getComponentRect('RelativeContainer_AnchorPoint_Visibility_Hidden_r1');
 
       console.log('assert position')
 

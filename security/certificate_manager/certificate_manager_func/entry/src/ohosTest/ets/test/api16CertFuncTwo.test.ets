@@ -23,7 +23,10 @@ import { GlobalContext } from '../../../../src/main/ets/pages/HomePage';
 import certManagerDialog from '@ohos.security.certManagerDialog';
 import deviceInfo from '@ohos.deviceInfo';
 import type common from '@ohos.app.ability.common';
-
+function generateString(len: number){
+  let str: string = 'a';
+  return str.repeat(len);
+}
 let caCert = new Uint8Array([0x30, 0x82, 0x04, 0x31, 0x30, 0x82, 0x03, 0x19, 0xa0, 0x03, 0x02, 0x01, 0x02, 0x02, 0x01, 0x00,
   0x30, 0x0d, 0x06, 0x09, 0x2a, 0x86, 0x48, 0x86, 0xf7, 0x0d, 0x01, 0x01, 0x05, 0x05, 0x00, 0x30,
   0x81, 0x95, 0x31, 0x0b, 0x30, 0x09, 0x06, 0x03, 0x55, 0x04, 0x06, 0x13, 0x02, 0x47, 0x52, 0x31,
@@ -273,7 +276,7 @@ export default function api16CertFuncTestTwoUnit() {
       // This API supports only one parameter: clear action function.
     })
 	
-	/**
+	  /**
      * @tc.name   SUB_Security_CertManager_InstallUserTrustedCertificates_0000
      * @tc.number SUB_Security_CertManager_InstallUserTrustedCertificates_0000
      * @tc.desc   normal test
@@ -699,6 +702,56 @@ export default function api16CertFuncTestTwoUnit() {
       }
       done();
     });
+    /**
+    * @tc.name   SUB_Security_CertManager_OpenUninstallCertificateDialog_0100
+     * @tc.number SUB_Security_CertManager_OpenUninstallCertificateDialog_0100
+     * @tc.desc   Call OpenUninstallCertificateDialog interface with length of certUri is 255 return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_CertManager_OpenUninstallCertificateDialog_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log("SUB_Security_CertManager_OpenUninstallCertificateDialog_0100: started ");
+      let uir ='oh:t=c;o=object;u=100;a=20010044';
+      let uriObject = generateString(255-27);
+      const context :common.Context = GlobalContext.getContext();
+      if (deviceInfo.deviceType == '2in1') {
+        let certificateType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CA_CERT;
+        try {
+          await certManagerDialog.openUninstallCertificateDialog(context, certificateType, uir.replace("object", uriObject))
+          expect(null).assertFail();
+        } catch (err) {
+          console.log("SUB_Security_CertManager_OpenUninstallCertificateDialog_0100: e.code " + err.code);
+          expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_OPERATION_FAILED);
+        }
+      }
+      done();
+    });
+    /**
+    * @tc.name   SUB_Security_CertManager_OpenUninstallCertificateDialog_0200
+     * @tc.number SUB_Security_CertManager_OpenUninstallCertificateDialog_0200
+     * @tc.desc   Call OpenUninstallCertificateDialog interface with length of certUri is 256 return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_CertManager_OpenUninstallCertificateDialog_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log("SUB_Security_CertManager_OpenUninstallCertificateDialog_0200: started ");
+      let uir ='oh:t=c;o=object;u=100;a=20010044';
+      let uriObject = generateString(256-27);
+      const context :common.Context = GlobalContext.getContext();
+      if (deviceInfo.deviceType == '2in1') {
+        let certificateType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CA_CERT;
+        try {
+          await certManagerDialog.openUninstallCertificateDialog(context, certificateType, uir.replace("object", uriObject))
+          expect(null).assertFail();
+        } catch (err) {
+          console.log("SUB_Security_CertManager_OpenUninstallCertificateDialog_0200: e.code " + err.code);
+          expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_OPERATION_FAILED);
+        }
+      }
+      done();
+    });
 
 
     /**
@@ -945,7 +998,6 @@ export default function api16CertFuncTestTwoUnit() {
       }
       done();
     });
-
     /**
      * @tc.name   SUB_Security_CertManager_InstallCaCert_0107
      * @tc.number SUB_Security_CertManager_InstallCaCert_0107
@@ -1012,20 +1064,28 @@ export default function api16CertFuncTestTwoUnit() {
         await certManagerDialog.openAuthorizeDialog(null);
         expect(null).assertFail();
       } catch (err) {
-        console.error(`SUB_Security_CertManager_openAuthorzeDialog_0101 Failed to authorize certificate. Code: ${err.code}, message: ${err.message}`)
-        expect(err.code).assertEqual(401);
-      }
-      try {
-        await certManagerDialog.openAuthorizeDialog(undefined);
-        expect(null).assertFail();
-      } catch (err) {
-        console.error(`SUB_Security_CertManager_openAuthorzeDialog_0101 Failed to authorize certificate. Code: ${err.code}, message: ${err.message}`)
-        expect(err.code).assertEqual(401);
-      }
+		if (!canIUse('SystemCapability.Security.CertificateManagerDialog')) {	 
+		  expect(err.code).assertEqual(801);	 
+		} else {	 
+		  console.error(`SUB_Security_CertManager_openAuthorzeDialog_0101 Failed to authorize certificate. Code: ${err.code}, message: ${err.message}`);	 
+		  expect(err.code).assertEqual(401);	 
+		}	 
+	  }
+ 	  try {	 
+ 		await certManagerDialog.openAuthorizeDialog(undefined);	 
+ 		expect(null).assertFail();	 
+ 	  } catch (err) {	 
+ 		if (!canIUse('SystemCapability.Security.CertificateManagerDialog')) {	 
+ 		  expect(err.code).assertEqual(801); 
+ 		} else { 
+ 		  console.error(`SUB_Security_CertManager_openAuthorzeDialog_0101 Failed to authorize certificate. Code: ${err.code}, message: ${err.message}`); 
+ 		  expect(err.code).assertEqual(401); 
+ 		} 
+ 	  }
       done();
     });
     
-        /**
+     /**
      * @tc.number SUB_Security_CertManager_Ukey_0600
      * @tc.name SUB_Security_CertManager_Ukey_0600
      * @tc.desc abnormal test
@@ -1146,7 +1206,7 @@ export default function api16CertFuncTestTwoUnit() {
      * @tc.level Level3
      * @tc.type Function
      */
-    it('SUB_Security_CertManager_Ukey_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+	it('SUB_Security_CertManager_Ukey_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("SUB_Security_CertManager_Ukey_0200: started ");
       const context :common.Context = GlobalContext.getContext();
       let certTypes: Array<certManagerDialog.CertificateType> = [
@@ -1158,30 +1218,46 @@ export default function api16CertFuncTestTwoUnit() {
         await certManagerDialog.openAuthorizeDialog(null, authorizeRequest);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`SUB_Security_CertManager_Ukey_0200 Failed1 to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
-        expect(error.code).assertEqual(401);
+        if (!canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+          expect(error.code).assertEqual(801);
+        } else {
+          console.error(`SUB_Security_CertManager_Ukey_0200 Failed1 to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(401);
+        }
       }
       try {
         await certManagerDialog.openAuthorizeDialog(undefined, authorizeRequest);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`SUB_Security_CertManager_Ukey_0200 Failed1 to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
-        expect(error.code).assertEqual(401);
+        if (!canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+          expect(error.code).assertEqual(801);
+        } else {
+          console.error(`SUB_Security_CertManager_Ukey_0200 Failed1 to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(401);
+        }
       }
 
       try {
         await certManagerDialog.openAuthorizeDialog(context, null);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`SUB_Security_CertManager_Ukey_0200 Failed2 to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
-        expect(error.code).assertEqual(401);
+        if (!canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+          expect(error.code).assertEqual(801);
+        } else {
+          console.error(`SUB_Security_CertManager_Ukey_0200 Failed2 to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(401);
+        }
       }
       try {
         await certManagerDialog.openAuthorizeDialog(context, undefined);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`SUB_Security_CertManager_Ukey_0200 Failed2 to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
-        expect(error.code).assertEqual(29700006);
+        if (!canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+          expect(error.code).assertEqual(801);
+        } else {
+          console.error(`SUB_Security_CertManager_Ukey_0200 Failed2 to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(29700006);
+        }
       }
       let certTypesNull: Array<certManagerDialog.CertificateType> = [];
       let authorizeRequestNull: certManagerDialog.AuthorizeRequest = { certTypes: certTypesNull, certPurpose: certPurpose };
@@ -1189,8 +1265,12 @@ export default function api16CertFuncTestTwoUnit() {
         await certManagerDialog.openAuthorizeDialog(context, authorizeRequestNull);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`SUB_Security_CertManager_Ukey_0200 Failed3 to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
-        expect(error.code).assertEqual(29700006);
+        if (!canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+          expect(error.code).assertEqual(801);
+        } else {
+          console.error(`SUB_Security_CertManager_Ukey_0200 Failed3 to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(29700006);
+        }
       }
       let certTypes1: Array<certManagerDialog.CertificateType> = [999];
       let authorizeRequest1: certManagerDialog.AuthorizeRequest = { certTypes: certTypes1, certPurpose: certPurpose };
@@ -1199,8 +1279,12 @@ export default function api16CertFuncTestTwoUnit() {
         await certManagerDialog.openAuthorizeDialog(context, authorizeRequest1);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`SUB_Security_CertManager_Ukey_0200 Failed3 to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
-        expect(error.code).assertEqual(29700006);
+        if (!canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+          expect(error.code).assertEqual(801);
+        } else {
+          console.error(`SUB_Security_CertManager_Ukey_0200 Failed3 to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(29700006);
+        }
       }
       done();
     });
@@ -1593,15 +1677,17 @@ export default function api16CertFuncTestTwoUnit() {
         ];
         let certPurpose: certManager.CertificatePurpose = certManager.CertificatePurpose.PURPOSE_DEFAULT;
         let authorizeRequest: certManagerDialog.AuthorizeRequest = { certTypes: certTypes, certPurpose: certPurpose };
-
         try {
           await certManagerDialog.openAuthorizeDialog(context, authorizeRequest);
           expect(null).assertFail();
         } catch (error) {
-          console.error(`SUB_Security_CertManager_Ukey_1300 Failed to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
-          expect(error.code).assertEqual(29700007);
+          if (!canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+            expect(error.code).assertEqual(801);
+          } else {
+            console.error(`SUB_Security_CertManager_Ukey_1300 Failed to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
+            expect(error.code).assertEqual(29700007);
+          }
         }
-
       } else {
         console.info(`SUB_Security_CertManager_Ukey_1300 device not support openUkeyAuthDialog`)
       }
@@ -1750,6 +1836,87 @@ export default function api16CertFuncTestTwoUnit() {
       }
       done();
     });
-  
+	  /**
+     * @tc.name   SUB_Security_CertManager_getUserTrustedCertificate_0100
+     * @tc.number SUB_Security_CertManager_getUserTrustedCertificate_0100
+     * @tc.desc   Call getUserTrustedCertificate interface with length of certUri is 255 return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_CertManager_getUserTrustedCertificate_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('SUB_Security_CertManager_getUserTrustedCertificate_0100 start');
+      let uri = generateString(255);
+      try{
+        await certManager.getUserTrustedCertificate(uri);
+        expect(null).assertFail();
+      }catch(error){
+        console.error("SUB_Security_CertManager_getUserTrustedCertificate_0100 failed to get user trusted certificate.")
+        expect(error.code).assertEqual(401);
+      }
+      console.info('SUB_Security_CertManager_getUserTrustedCertificate_0100 end');
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_getUserTrustedCertificate_0200
+     * @tc.number SUB_Security_CertManager_getUserTrustedCertificate_0200
+     * @tc.desc   Call getUserTrustedCertificate interface with length of certUri is 256 return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_CertManager_getUserTrustedCertificate_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('SUB_Security_CertManager_getUserTrustedCertificate_0200 start');
+      let uri = generateString(256);
+      try{
+        await certManager.getUserTrustedCertificate(uri);
+        expect(null).assertFail();
+      }catch(error){
+        console.error("SUB_Security_CertManager_getUserTrustedCertificate_0200 failed to get user trusted certificate.")
+        expect(error.code).assertEqual(401);
+      }
+      console.info('SUB_Security_CertManager_getUserTrustedCertificate_0200 end');
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_uninstallUserTrustedCertificateSync_0100
+     * @tc.number SUB_Security_CertManager_uninstallUserTrustedCertificateSync_0100
+     * @tc.desc   Call uninstallUserTrustedCertificateSync interface with length of certUri is 255 return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_CertManager_uninstallUserTrustedCertificateSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('SUB_Security_CertManager_uninstallUserTrustedCertificateSync_0100 start');
+      try{
+        await certManager.uninstallUserTrustedCertificateSync(generateString(255));
+        expect(null).assertFail();
+      }catch(error){
+        console.error("SUB_Security_CertManager_uninstallUserTrustedCertificateSync_0100 failed to uninstall user trusted certificate.")
+        expect(error.code).assertEqual(401);
+      }
+      console.info('SUB_Security_CertManager_uninstallUserTrustedCertificateSync_0100 end');
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_uninstallUserTrustedCertificateSync_0200
+     * @tc.number SUB_Security_CertManager_uninstallUserTrustedCertificateSync_0200
+     * @tc.desc   Call uninstallUserTrustedCertificateSync interface with length of certUri is 256 return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_CertManager_uninstallUserTrustedCertificateSync_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('SUB_Security_CertManager_uninstallUserTrustedCertificateSync_0200 start');
+      try{
+        await certManager.uninstallUserTrustedCertificateSync(generateString(256));
+        expect(null).assertFail();
+      }catch(error){
+        console.error("SUB_Security_CertManager_uninstallUserTrustedCertificateSync_0200 failed to uninstall user trusted certificate.")
+        expect(error.code).assertEqual(401);
+      }
+      console.info('SUB_Security_CertManager_uninstallUserTrustedCertificateSync_0200 end');
+      done();
+    });
   })
 }

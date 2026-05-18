@@ -9,6 +9,8 @@
     "MainAbility/pages/uiutils/ApplySync001",
     "MainAbility/pages/uiutils/FlushUpdates001",
     "MainAbility/pages/uiutils/FlushErrorCode",
+    "MainAbility/pages/uiutils/GlobalReusePool",
+    "MainAbility/pages/uiutils/GlobalReusePool002",
     "MainAbility/pages/getTarget/getTarget1",
     "MainAbility/pages/getTarget/getTarget2",
     "MainAbility/pages/getTarget/getTarget3",

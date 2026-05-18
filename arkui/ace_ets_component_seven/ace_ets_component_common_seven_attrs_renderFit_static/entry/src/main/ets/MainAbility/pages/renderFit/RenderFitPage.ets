@@ -1396,7 +1396,7 @@ struct renderFitPage {
     this.componentKey = viewElement.getString("componentKey")
     this.parentWidth = viewElement.getDouble("parentWidth")
     this.parentHeight = viewElement.getDouble("parentHeight")
-    this.columns = viewElement.getDouble("columns") as Int
+    this.columns = viewElement.getDouble("columns").toInt()
     this.gutter = viewElement.getDouble("gutter")
     this.parentComponentKey = viewElement.getString("parentComponentKey")
   }
@@ -1452,7 +1452,7 @@ struct renderFitPage {
           Marquee({
             start: true,
             step: 50,
-            loop: Infinity as Int,
+            loop: Infinity.toInt(),
             fromStart: true,
             src: 'Running Marquee starts rolling'
           }).commonStyle(this.componentKey).attributeModifier(this._renderFitMarqueeMod)

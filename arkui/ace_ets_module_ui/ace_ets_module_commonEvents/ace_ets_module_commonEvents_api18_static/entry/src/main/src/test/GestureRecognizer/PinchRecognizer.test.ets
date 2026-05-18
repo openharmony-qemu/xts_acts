@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -91,7 +91,7 @@ it('PinchRecognizer1_static_0100', Level.LEVEL0, async (done: () => void): Promi
       let windowOffsetX: number = AppStorage.get<number>("winLeft") as number;
       let windowOffsetY: number = AppStorage.get<number>("winTop") as number;
       console.log('PinchRecognizer1_static_0100 windowOffsetX and windowOffsetY', windowOffsetX, windowOffsetY)
-      let areaObj1 = CommonFunc.getComponentRectOnScreen('PinchRecognizer');
+      let areaObj1 = await CommonFunc.getComponentRectOnScreen('PinchRecognizer');
       let areaHeight1 = areaObj1.bottom - areaObj1.top
       let areaWidth1 = areaObj1.right - areaObj1.left
       console.log('PinchRecognizer1_static_0100 areaObj1 start', areaObj1.left, areaObj1.top, areaObj1.right,
@@ -108,20 +108,20 @@ it('PinchRecognizer1_static_0100', Level.LEVEL0, async (done: () => void): Promi
       await CommonFunc.sleep(2000);
       let pointers: PointerMatrix = PointerMatrix.create(2, 2);
       pointers.setPoint(0, 0, {
-        x: Math.round(areaObj1.left + areaWidth1 * 0.1) as Int,
-        y: Math.round(areaObj1.top + areaHeight1 * 0.5) as Int
+        x: Math.round(areaObj1.left + areaWidth1 * 0.1).toInt(),
+        y: Math.round(areaObj1.top + areaHeight1 * 0.5).toInt()
       } as Point);
       pointers.setPoint(0, 1, {
-        x: Math.round(areaObj1.left + areaWidth1 * 0.3) as Int,
-        y: Math.round(areaObj1.top + areaHeight1 * 0.5) as Int
+        x: Math.round(areaObj1.left + areaWidth1 * 0.3).toInt(),
+        y: Math.round(areaObj1.top + areaHeight1 * 0.5).toInt()
       } as Point);
       pointers.setPoint(1, 0, {
-        x: Math.round(areaObj1.right - areaWidth1 * 0.1) as Int,
-        y: Math.round(areaObj1.top + areaHeight1 * 0.5) as Int
+        x: Math.round(areaObj1.right - areaWidth1 * 0.1).toInt(),
+        y: Math.round(areaObj1.top + areaHeight1 * 0.5).toInt()
       } as Point);
       pointers.setPoint(1, 1, {
-        x: Math.round(areaObj1.right - areaWidth1 * 0.3) as Int,
-        y: Math.round(areaObj1.top + areaHeight1 * 0.5) as Int
+        x: Math.round(areaObj1.right - areaWidth1 * 0.3).toInt(),
+        y: Math.round(areaObj1.top + areaHeight1 * 0.5).toInt()
       } as Point);
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(4000);

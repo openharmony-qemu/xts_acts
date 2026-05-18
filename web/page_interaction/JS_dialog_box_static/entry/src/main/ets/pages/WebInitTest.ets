@@ -24,7 +24,7 @@ import window from '@ohos.window'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 const EVENT_ID_SET_SUITE_KEY = 177301;
-class StringFields {
+export class StringFields {
   str: string = '';
 }
 

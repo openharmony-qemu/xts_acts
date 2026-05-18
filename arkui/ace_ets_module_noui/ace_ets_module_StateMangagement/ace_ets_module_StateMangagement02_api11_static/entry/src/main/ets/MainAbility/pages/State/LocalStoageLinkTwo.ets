@@ -93,7 +93,18 @@ struct LocalStoageLinkTwo {
 
   build() {
     Column() {
-      Text(`Prop1:${JSON.stringify(storageLinkTwo.get<ModeLinkTwo>('Prop1'))}, Prop2:${storageLinkTwo.get<number>('Prop2')}, Prop3:${storageLinkTwo.get<boolean>('Prop3')}, Prop4:${storageLinkTwo.get<string>('Prop4')}, Prop5:${storageLinkTwo.get<He>('Prop5')}, Prop6:${JSON.stringify(UIUtils.getTarget(storageLinkTwo.get<object>('Prop6')))}, Prop7:${JSON.stringify(storageLinkTwo.get<Array<ModeLinkTwo>>('Prop7'))}, Prop8:${JSON.stringify(storageLinkTwo.get<Array<number>>('Prop8'))}, Prop9:${JSON.stringify(storageLinkTwo.get<Array<boolean>>('Prop9'))}, Prop10:${JSON.stringify(storageLinkTwo.get<Array<string>>('Prop10'))}, Prop11:${JSON.stringify(storageLinkTwo.get<Array<He>>('Prop11'))}, Prop12:${JSON.stringify(UIUtils.getTarget(storageLinkTwo.get<Array<object>>('Prop12')))}`)
+      Text(`Prop1:${JSON.stringify(storageLinkTwo.get<ModeLinkTwo>('Prop1'))},
+            Prop2:${storageLinkTwo.get<number>('Prop2')},
+            Prop3:${storageLinkTwo.get<boolean>('Prop3')},
+            Prop4:${storageLinkTwo.get<string>('Prop4')},
+            Prop5:${storageLinkTwo.get<He>('Prop5')},
+            Prop6:${JSON.stringify(UIUtils.getTarget(storageLinkTwo.get<object>('Prop6')!))},
+            Prop7:${JSON.stringify(storageLinkTwo.get<Array<ModeLinkTwo>>('Prop7'))},
+            Prop8:${JSON.stringify(storageLinkTwo.get<Array<number>>('Prop8'))},
+            Prop9:${JSON.stringify(storageLinkTwo.get<Array<boolean>>('Prop9'))},
+            Prop10:${JSON.stringify(storageLinkTwo.get<Array<string>>('Prop10'))},
+            Prop11:${JSON.stringify(storageLinkTwo.get<Array<He>>('Prop11'))},
+            Prop12:${JSON.stringify(UIUtils.getTarget(storageLinkTwo.get<Array<object>>('Prop12')!))}`)
         .key('text_getValue2').height('5%')
     }
   }

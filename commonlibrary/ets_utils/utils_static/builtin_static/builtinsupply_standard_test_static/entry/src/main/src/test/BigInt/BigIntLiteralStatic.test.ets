@@ -26,7 +26,7 @@ export async function sleep(time: int): Promise<int> {
 interface myObject {
   num: number;
 }
-export default function BuiltinsBigIntLiteralTest() {
+export default function BuiltinsBigIntLiteralTest(): void {
   describe('BuiltinsBigIntLiteralTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

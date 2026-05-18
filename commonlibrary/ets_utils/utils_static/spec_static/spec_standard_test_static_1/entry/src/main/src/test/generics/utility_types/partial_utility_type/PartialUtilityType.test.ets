@@ -88,7 +88,6 @@ class B_0 extends A_2 {
   k: boolean = false;
 }
 
-// 全局变量定义
 let z_0: int = 0;
 let z_1: int = 0;
 let z_2: int = 0;

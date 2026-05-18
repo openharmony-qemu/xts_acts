@@ -1826,5 +1826,343 @@ export default function btNopUiJsunit() {
             }
             done();
         })
+
+        /**
+         * @tc.number  SUB_Communication_Bluetooth_NopStatic_StopAdvertisingNoParam_0500
+         * @tc.name    SUB_Communication_Bluetooth_NopStatic_StopAdvertisingNoParam_0500
+         * @tc.desc    Test ble.stopAdvertising() without permission (需前置startAdvertising, 预期返回2902055)
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("SUB_Communication_Bluetooth_NopStatic_StopAdvertisingNoParam_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                ble.stopAdvertising();
+                expect(true).assertFalse();
+            } catch (err) {
+                hilog.info(domain, tag, "stopAdvertising no param errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code === 801);
+                } else {
+                    expect(true).assertEqual(err.code === 2902055);
+                }
+            }
+        
+            done();
+        })
+
+        /**
+         * @tc.number  SUB_Communication_Bluetooth_NopStatic_GattServerAddService_0600
+         * @tc.name    SUB_Communication_Bluetooth_NopStatic_GattServerAddService_0600
+         * @tc.desc    Test GattServer.addService without permission (201)
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("SUB_Communication_Bluetooth_NopStatic_GattServerAddService_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let descriptors: Array<ble.BLEDescriptor> = [];
+            let arrayBuffer = new ArrayBuffer(8);
+            let descV = new Uint8Array(arrayBuffer);
+            descV[0] = 11;
+            let descriptor: ble.BLEDescriptor = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                descriptorUuid: '00002902-0000-1000-8000-00805F9B34FB', descriptorValue: arrayBuffer
+            };
+            descriptors.push(descriptor);
+
+            let characteristics: Array<ble.BLECharacteristic> = [];
+            let arrayBufferC = new ArrayBuffer(8);
+            let cccV = new Uint8Array(arrayBufferC);
+            cccV[0] = 1;
+            let characteristic: ble.BLECharacteristic = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB', characteristicValue: arrayBufferC, descriptors: descriptors
+            };
+            characteristics.push(characteristic);
+
+            let gattService: ble.GattService = { serviceUuid: '00001810-0000-1000-8000-00805F9B34FB', isPrimary: true, characteristics: characteristics, includeServices: [] };
+            try {
+                gattServerDevice!.addService(gattService);
+                expect(true).assertFalse();
+            } catch (err) {
+                hilog.info(domain, tag, "addService errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code === 801);
+                } else {
+                    expect(true).assertEqual(err.code === 201);
+                }
+            }
+        
+            done();
+        })
+
+        /**
+         * @tc.number  SUB_Communication_Bluetooth_NopStatic_GattServerRemoveService_0700
+         * @tc.name    SUB_Communication_Bluetooth_NopStatic_GattServerRemoveService_0700
+         * @tc.desc    Test GattServer.removeService without permission (依赖添加服务,预期报错401)
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("SUB_Communication_Bluetooth_NopStatic_GattServerRemoveService_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                gattServerDevice!.removeService('00001810-0000-1000-8000-00805F9B34FB');
+                hilog.info(domain, tag, "removeService success");
+                expect(true).assertFalse();
+            } catch (err) {
+                hilog.info(domain, tag, "removeService errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code === 801);
+                } else {
+                    expect(true).assertEqual(err.code === 401);
+                }
+            }
+        
+            done();
+        })
+
+        /**
+         * @tc.number  SUB_Communication_Bluetooth_NopStatic_GattServerSendResponse_0800
+         * @tc.name    SUB_Communication_Bluetooth_NopStatic_GattServerSendResponse_0800
+         * @tc.desc    Test GattServer.sendResponse without permission (需对端设备连接,预期报错2900099)
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("SUB_Communication_Bluetooth_NopStatic_GattServerSendResponse_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let arrayBufferCCC = new ArrayBuffer(8);
+            let cccValue = new Uint8Array(arrayBufferCCC);
+            cccValue[0] = 1123;
+            let serverResponse: ble.ServerResponse = {
+                deviceId: '3e:45:7f:cc:45:3f',
+                transId: 0,
+                status: 0,
+                offset: 0,
+                value: arrayBufferCCC,
+            };
+            try {
+                gattServerDevice!.sendResponse(serverResponse);
+                hilog.info(domain, tag, "sendResponse success");
+                expect(true).assertFalse();
+            } catch (err) {
+                hilog.info(domain, tag, "sendResponse errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code === 801);
+                } else {
+                    expect(true).assertEqual(err.code === 2900099);
+                }
+            }
+        
+            done();
+        })
+
+        
+
+
+        /**
+         * @tc.number  SUB_Communication_Bluetooth_NopStatic_GattClientDisconnect_1300
+         * @tc.name    SUB_Communication_Bluetooth_NopStatic_GattClientDisconnect_1300
+         * @tc.desc    Test GattClientDevice.disconnect without permission (依赖连接对端设备预期报错099)
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("SUB_Communication_Bluetooth_NopStatic_GattClientDisconnect_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                gattClientDevice!.disconnect();
+                expect(true).assertFalse();
+            } catch (err) {
+                hilog.info(domain, tag, "gattClient disconnect errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code === 801);
+                } else {
+                    expect(true).assertEqual(err.code === 2900099);
+                }
+            }
+        
+            done();
+        })
+
+        
+
+        /**
+         * @tc.number  SUB_Communication_Bluetooth_NopStatic_GattClientReadDescriptorValuePromise_1500
+         * @tc.name    SUB_Communication_Bluetooth_NopStatic_GattClientReadDescriptorValuePromise_1500
+         * @tc.desc    Test GattClientDevice.readDescriptorValue promise without permission (依赖对端设备,预期401)
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("SUB_Communication_Bluetooth_NopStatic_GattClientReadDescriptorValuePromise_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let bufferDesc = new ArrayBuffer(8);
+            let descV = new Uint8Array(bufferDesc);
+            descV[0] = 11;
+            let descriptor: ble.BLEDescriptor = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                descriptorUuid: '00002903-0000-1000-8000-00805F9B34FB',
+                descriptorValue: bufferDesc
+            };
+            try {
+                await gattClientDevice!.readDescriptorValue(descriptor);
+                expect(true).assertFalse();
+            } catch (err) {
+                hilog.info(domain, tag, "readDescriptorValue promise errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code === 801);
+                } else {
+                    expect(true).assertEqual(err.code === 401);
+                }
+            }
+        
+            done();
+        })
+
+        /**
+         * @tc.number  SUB_Communication_Bluetooth_NopStatic_GattClientSetBLEMtuSize_1600
+         * @tc.name    SUB_Communication_Bluetooth_NopStatic_GattClientSetBLEMtuSize_1600
+         * @tc.desc    Test GattClientDevice.setBLEMtuSize without permission (依赖连接对端设备预期报错099)
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("SUB_Communication_Bluetooth_NopStatic_GattClientSetBLEMtuSize_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                gattClientDevice!.setBLEMtuSize(500);
+                expect(true).assertFalse();
+            } catch (err) {
+                hilog.info(domain, tag, "setBLEMtuSize errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code === 801);
+                } else {
+                    expect(true).assertEqual(err.code === 2900099);
+                }
+            }
+        
+            done();
+        })
+
+        /**
+         * @tc.number  SUB_Communication_Bluetooth_NopStatic_GattClientSetCharacteristicChangeIndicationCallback_1700
+         * @tc.name    SUB_Communication_Bluetooth_NopStatic_GattClientSetCharacteristicChangeIndicationCallback_1700
+         * @tc.desc    Test GattClientDevice.setCharacteristicChangeIndication callback without permission (依赖对端设备)
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("SUB_Communication_Bluetooth_NopStatic_GattClientSetCharacteristicChangeIndicationCallback_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let descriptors: Array<ble.BLEDescriptor> = [];
+            let bufferDesc = new ArrayBuffer(8);
+            let descV = new Uint8Array(bufferDesc);
+            descV[0] = 11;
+            let gattPermissions: ble.GattPermissions = {
+                read: false,
+                readEncrypted: false,
+                readEncryptedMitm: false,
+                write: false,
+                writeEncrypted: false,
+                writeEncryptedMitm: false,
+                writeSigned: false,
+                writeSignedMitm: false
+            };
+            let descriptor: ble.BLEDescriptor = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                descriptorUuid: '00002903-0000-1000-8000-00805F9B34FB',
+                descriptorValue: bufferDesc,
+                descriptorHandle: 0,
+                permissions: gattPermissions
+            };
+            descriptors.push(descriptor);
+            let bufferCCC = new ArrayBuffer(8);
+            let cccV = new Uint8Array(bufferCCC);
+            cccV[0] = 1;
+            let characteristic: ble.BLECharacteristic = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                characteristicValue: bufferCCC,
+                descriptors: descriptors
+            };
+            try {
+                gattClientDevice!.setCharacteristicChangeIndication(characteristic, false,
+                    (err: BusinessError | null, data) => {
+                        if (err != null) {
+                            hilog.info(domain, tag, "setCharacteristicChangeIndication callback errCode:" + err!.code + ",errMessage:" + err!.message);
+                            if (err!.code === 801) {
+                                hilog.info(domain, tag, 'api is not support');
+                                expect(true).assertEqual(err!.code === 801);
+                            } else {
+                                expect(true).assertEqual(err!.code === 401);
+                            }
+                        } else {
+                            hilog.info(domain, tag, 'setCharacteristicChangeIndication callback value:' + JSON.stringify(data));
+                            expect().assertFail();
+                        }
+                    });
+            } catch (err) {
+                hilog.info(domain, tag, "setCharacteristicChangeIndication callback errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code === 801);
+                } else {
+                    expect(true).assertEqual(err.code === 401);
+                }
+            }
+        
+            done();
+        })
+
+        /**
+         * @tc.number  SUB_Communication_Bluetooth_NopStatic_GattClientSetCharacteristicChangeIndicationPromise_1800
+         * @tc.name    SUB_Communication_Bluetooth_NopStatic_GattClientSetCharacteristicChangeIndicationPromise_1800
+         * @tc.desc    Test GattClientDevice.setCharacteristicChangeIndication promise without permission (依赖对端设备)
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("SUB_Communication_Bluetooth_NopStatic_GattClientSetCharacteristicChangeIndicationPromise_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let descriptors: Array<ble.BLEDescriptor> = [];
+            let bufferDesc = new ArrayBuffer(8);
+            let descV = new Uint8Array(bufferDesc);
+            descV[0] = 11;
+            let descriptor: ble.BLEDescriptor = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                descriptorUuid: '00002903-0000-1000-8000-00805F9B34FB',
+                descriptorValue: bufferDesc
+            };
+            descriptors.push(descriptor);
+            let bufferCCC = new ArrayBuffer(8);
+            let cccV = new Uint8Array(bufferCCC);
+            cccV[0] = 1;
+            let characteristic: ble.BLECharacteristic = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                characteristicValue: bufferCCC,
+                descriptors: descriptors
+            };
+            try {
+                await gattClientDevice!.setCharacteristicChangeIndication(characteristic, false);
+                expect(true).assertFalse();
+            } catch (err) {
+                hilog.info(domain, tag, "setCharacteristicChangeIndication promise errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code === 801);
+                } else {
+                    expect(true).assertEqual(err.code === 401);
+                }
+            }
+        
+            done();
+        })
     })
 }

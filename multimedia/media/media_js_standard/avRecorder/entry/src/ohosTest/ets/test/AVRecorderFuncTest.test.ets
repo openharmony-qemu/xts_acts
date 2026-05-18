@@ -2312,6 +2312,82 @@ export default function avRecorderTest() {
     })
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_SETMETADATA_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_SETMETADATA_0400
+     * @tc.desc   Recorder audio setmetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_SETMETADATA_0400', Level.LEVEL0, async (done: Function) => {
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_SETMETADATA_0400 start')
+      let fileName: string = commonFun.resourceName();
+      fdObject = await commonFun.getFd(fileName);
+      fdPath = "fd://" + fdObject.fdNumber;
+      avConfig.url = fdPath;
+      await commonFun.avRecorderSetMetadataTest04(avConfig, avRecorder, RECORDER_TIME, done);
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_SETMETADATA_0400 end')
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_SETMETADATA_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_SETMETADATA_0500
+     * @tc.desc   Recorder audio setmetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_SETMETADATA_0500', Level.LEVEL0, async (done: Function) => {
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_SETMETADATA_0500 start')
+      let fileName: string = commonFun.resourceName();
+      fdObject = await commonFun.getFd(fileName);
+      fdPath = "fd://" + fdObject.fdNumber;
+      avConfig.url = fdPath;
+      await commonFun.avRecorderSetMetadataTest05(avConfig, avRecorder, RECORDER_TIME, done);
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_SETMETADATA_0500 end')
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_SETMETADATA_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_SETMETADATA_0600
+     * @tc.desc   Recorder audio setmetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_SETMETADATA_0600', Level.LEVEL0, async (done: Function) => {
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_SETMETADATA_0600 start')
+      let fileName: string = commonFun.resourceName();
+      fdObject = await commonFun.getFd(fileName);
+      fdPath = "fd://" + fdObject.fdNumber;
+      avConfig.url = fdPath;
+      await commonFun.avRecorderSetMetadataTest06(avConfig, avRecorder, RECORDER_TIME, done);
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_SETMETADATA_0600 end')
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_SETMETADATA_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_SETMETADATA_0700
+     * @tc.desc   Recorder audio setmetadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_SETMETADATA_0700', Level.LEVEL0, async (done: Function) => {
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_SETMETADATA_0700 start')
+      let fileName: string = commonFun.resourceName();
+      fdObject = await commonFun.getFd(fileName);
+      fdPath = "fd://" + fdObject.fdNumber;
+      avConfig.url = fdPath;
+      await commonFun.avRecorderSetMetadataTest07(avConfig, avRecorder, RECORDER_TIME, done);
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_SETMETADATA_0700 end')
+      done();
+    })
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0001
      * @tc.number SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0001
      * @tc.desc   Local Video recording mp3 3 seconds to stop

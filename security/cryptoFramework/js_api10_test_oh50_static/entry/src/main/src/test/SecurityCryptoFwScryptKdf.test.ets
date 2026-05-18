@@ -53,9 +53,9 @@ async function doScryptKdfPromiseStub(keySize: int, n: int, r: int, p: int): Pro
         algName: "SCRYPT",
         passphrase: "password",
         salt: new Uint8Array(16),
-        n: n as long,
-        r: r as long,
-        p: p as long,
+        n: n.toLong(),
+        r: r.toLong(),
+        p: p.toLong(),
         maxMemory: p * 128 * r + 32 * r * (n + 2) * 4 + 1,
         keySize: keySize
       }
@@ -96,9 +96,9 @@ async function doScryptKdfSyncStub(keySize: int, n: int, r: int, p: int): Promis
         algName: "SCRYPT",
         passphrase: "password",
         salt: new Uint8Array(16),
-        n: n as long,
-        r: r as long,
-        p: p as long,
+        n: n.toLong(),
+        r: r.toLong(),
+        p: p.toLong(),
         maxMemory: p * 128 * r + 32 * r * (n + 2) * 4 + 1,
         keySize: keySize
       }
@@ -138,9 +138,9 @@ async function doScryptKdfCallbackStub(keySize: int, n: int, r: int, p: int): Pr
         algName: "SCRYPT",
         passphrase: "password",
         salt: new Uint8Array(16),
-        n: n as long,
-        r: r as long,
-        p: p as long,
+        n: n.toLong(),
+        r: r.toLong(),
+        p: p.toLong(),
         maxMemory: p * 128 * r + 32 * r * (n + 2) * 4 + 1,
         keySize: keySize
       }
