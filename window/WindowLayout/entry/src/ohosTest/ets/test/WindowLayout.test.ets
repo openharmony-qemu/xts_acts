@@ -6337,7 +6337,7 @@ export default function windowLayoutTest() {
           done();
         }).catch(async (err: BusinessError) => {
           await terminateAbility(caseName);
-          if (err.code === 801) {
+          if (!isSyscapSessionManagerSupported) {
             console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message} `);
             expect(err.code).assertEqual(801)
           } else {
@@ -6400,7 +6400,7 @@ export default function windowLayoutTest() {
             done();
           }).catch(async (err: BusinessError) => {
             await terminateAbility(caseName);
-            if (err.code === 801) {
+            if (!isSyscapSessionManagerSupported) {
               console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
               expect(err.code).assertEqual(801)
             } else {
@@ -6461,7 +6461,7 @@ export default function windowLayoutTest() {
             done();
           }).catch(async (err: BusinessError) => {
             await terminateAbility(caseName);
-            if (err.code === 801) {
+            if (!isSyscapSessionManagerSupported) {
               console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
               expect(err.code).assertEqual(801)
             } else {
@@ -6523,7 +6523,7 @@ export default function windowLayoutTest() {
             done();
           }).catch(async (err: BusinessError) => {
             await terminateAbility(caseName);
-            if (err.code === 801) {
+            if (!isSyscapSessionManagerSupported) {
               console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
               expect(err.code).assertEqual(801)
             } else {
@@ -6585,7 +6585,7 @@ export default function windowLayoutTest() {
             done();
           }).catch(async (err: BusinessError) => {
             await terminateAbility(caseName);
-            if (err.code === 801) {
+            if (!isSyscapSessionManagerSupported) {
               console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
               expect(err.code).assertEqual(801)
             } else {
@@ -6645,7 +6645,7 @@ export default function windowLayoutTest() {
             done();
           }).catch(async (err: BusinessError) => {
             await terminateAbility(caseName);
-            if (err.code === 801) {
+            if (!isSyscapSessionManagerSupported) {
               console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
               expect(err.code).assertEqual(801)
             } else {
@@ -6704,7 +6704,7 @@ export default function windowLayoutTest() {
               expect(true).assertFalse()
               done()
             }).catch((err:BusinessError)=>{
-              if (err.code === 801) {
+              if (!isSyscapSessionManagerSupported) {
                 console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(801)
               } else {
@@ -6773,7 +6773,7 @@ export default function windowLayoutTest() {
             }).catch(async (err:BusinessError)=>{
               await subWindow.destroyWindow();
               console.info(`${caseName} destroyWindow `);
-              if (err.code === 801) {
+              if (!isSyscapSessionManagerSupported) {
                 console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(801)
               } else {
@@ -6846,7 +6846,7 @@ export default function windowLayoutTest() {
             }).catch(async (err:BusinessError)=>{
               await subWindow.destroyWindow();
               console.info(`${caseName} destroyWindow `);
-              if (err.code === 801) {
+              if (!isSyscapSessionManagerSupported) {
                 console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(801)
               }else  if (err.code === 1300004) {
@@ -6916,7 +6916,7 @@ export default function windowLayoutTest() {
             }).catch(async (err:BusinessError)=>{
               await subWindow.destroyWindow();
               console.info(`${caseName} destroyWindow `);
-              if (err.code === 801) {
+              if (!isSyscapSessionManagerSupported) {
                 console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(801)
               }else  if (err.code === 1300004) {
@@ -6972,7 +6972,7 @@ export default function windowLayoutTest() {
             done();
           }).catch(async (err: BusinessError) => {
             await terminateAbility(caseName);
-            if (err.code === 801) {
+            if (!isSyscapSessionManagerSupported) {
               console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
               expect(err.code).assertEqual(801)
             }else  if (err.code === 1300016) {
@@ -7019,7 +7019,7 @@ export default function windowLayoutTest() {
             done();
           }).catch(async (err: BusinessError) => {
             await terminateAbility(caseName);
-            if (err.code === 801) {
+            if (!isSyscapSessionManagerSupported) {
               console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
               expect(err.code).assertEqual(801)
             }else {
@@ -7080,7 +7080,7 @@ export default function windowLayoutTest() {
               }
               done()
             }).catch((err:BusinessError)=>{
-              if (err.code === 801) {
+              if (!isSyscapSessionManagerSupported) {
                 console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(801)
               } else {
@@ -7148,7 +7148,7 @@ export default function windowLayoutTest() {
               }
               done()
             }).catch((err:BusinessError)=>{
-              if (err.code === 801) {
+              if (!isSyscapSessionManagerSupported) {
                 console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(801)
               } else {
@@ -7221,7 +7221,7 @@ export default function windowLayoutTest() {
               }
               done()
             }).catch((err:BusinessError)=>{
-              if (err.code === 801) {
+              if (!isSyscapSessionManagerSupported) {
                 console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(801)
               } else {
