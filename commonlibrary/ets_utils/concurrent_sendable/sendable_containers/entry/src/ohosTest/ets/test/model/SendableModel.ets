@@ -1,12 +1,12 @@
-
 import { collections } from '@kit.ArkTS';
 
 
-export function gc(){
+export function gc() {
   if (globalThis.ArkTools?.forceFullGC) {
     globalThis.ArkTools.forceFullGC();
   }
 }
+
 @Sendable
 export class SendableSharedCounter {
   public counter: number;

@@ -13,7 +13,7 @@
 * limitations under the License.
 */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
-import { collections } from '@kit.ArkTS';
+import { ArkTSUtils, collections } from '@kit.ArkTS';
 import { taskpool } from '@kit.ArkTS';
 import {
   PlainArray,
@@ -487,10 +487,13 @@ function createSendableClassArray(count: number): collections.Array<SendableClas
 
 // @Sendable
 @Concurrent
-function incrementValue(data: SendableClass): number {
+async function incrementValue(data: SendableClass): Promise<number> {
   "use concurrent"
-  let oldValue = data.value;
-  data.value = oldValue + 1;
+  await ArkTSUtils.locks.AsyncLock.request('incrementValue').lockAsync(()=>{
+    let oldValue = data.value;
+    data.value = oldValue + 1;
+  })
+
   return data.value;
 }
 
@@ -987,7 +990,6 @@ export default function normalContainerSendableObjectTest() {
         let user = await manager.loadUserDataAsync(1);
         expect(user.id).assertEqual(1);
         expect(user.name).assertEqual('User1');
-        // expect(manager.currentUser!.id).assertEqual(1);
         let saved = await manager.saveUserDataAsync(new SendableUser(2, 'Test', 25));
         expect(saved).assertTrue();
         expect(manager.getUserCount()).assertEqual(1);
@@ -1259,7 +1261,7 @@ export default function normalContainerSendableObjectTest() {
         }
         let results = await Promise.all(tasks.map(t => taskpool.execute(t)));
         let finalValue = sharedData.value;
-        expect(finalValue <= 10).assertEqual(true);
+        expect(finalValue == 10).assertEqual(true);
         console.info(`${caseName} test end`);
         done()
       })
@@ -1550,16 +1552,16 @@ export default function normalContainerSendableObjectTest() {
       })
 
     /**
-     * @tc.name   normalClassStress1000_0100
+     * @tc.name   normalClassStress100_0100
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_NORMAL_STRESS_TEST_0100
      * @tc.desc   NormalClass stress 1000 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('normalClassStress1000_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('normalClassStress100_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const caseName = 'normalClassStress1000_0100';
+        const caseName = 'normalClassStress100_0100';
         console.info(`${caseName} test start`);
         let container = new NormalClassWithSendableArray();
         for (let i = 0; i < 100; i++) {
