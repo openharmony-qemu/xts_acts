@@ -3051,6 +3051,61 @@ export default function imageXMPMetadata() {
       expect(result).assertTrue();
       done();
     });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_XMPMETADATA_XMPTAGTYPE_UNKNOWN_ERROR_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_XMPMETADATA_XMPTAGTYPE_UNKNOWN_ERROR_0100
+     * @tc.desc        Verify setBlob rejects empty array buffer input
+     *                 1.Create image.XMPTagType.UNKNOWN
+     *                 2.Call setBlob on a new XMPMetadata instance
+     *                 3.Catch thrown exception
+     *                 4.Verify error code is INVALID_PARAMETER
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_XMPMETADATA_XMPTAGTYPE_UNKNOWN_ERROR_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_XMPMETADATA_XMPTAGTYPE_UNKNOWN_ERROR_0100";
+      let result: boolean = true;
+      const xmpMetadata = new image.XMPMetadata();
+      try {
+        await xmpMetadata.setValue(`xmp:title`, image.XMPTagType.UNKNOWN, 'My Title');
+        console.info(`${testTag} setValue succeeded unexpectedly`);
+        result = false;
+      } catch (error) {
+        console.info(`${testTag} setValue exception: errorCode = ${JSON.stringify(error)}`);
+        result = handleError(testTag, error as GenericError | Array<GenericError>, INVALID_PARAMETER);
+      }
+      console.info(`${testTag} setValue result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_XMPMETADATA_XMPNAMESPACE_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_XMPMETADATA_XMPNAMESPACE_0100
+     * @tc.desc        Verify setBlob rejects empty array buffer input
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_XMPMETADATA_XMPNAMESPACE_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_XMPMETADATA_XMPNAMESPACE_0100";
+      let result: boolean = true;
+      let configs: Array<metadataConfig> = [
+        { path: `${image.XMP_BASIC.prefix}:title`, type: image.XMPTagType.STRING, value: "XMP_BASIC" },
+        { path: `${image.XMP_RIGHTS.prefix}:title`, type: image.XMPTagType.STRING, value: "XMP_RIGHTS" },
+        { path: `${image.EXIF.prefix}:title`, type: image.XMPTagType.STRING, value: "EXIF" },
+        { path: `${image.DUBLIN_CORE.prefix}:title`, type: image.XMPTagType.STRING, value: "DUBLIN_CORE" },
+        { path: `${image.TIFF.prefix}:title`, type: image.XMPTagType.STRING, value: "TIFF" },
+      ]
+
+      const xmpMetadata = await createXmpMetadata(testTag, configs)
+      result = result && await validateXmpMetadata(testTag, xmpMetadata, configs);
+      console.info(`${testTag} readImageMetadata getTag result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
     
   });
 }
