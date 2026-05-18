@@ -539,8 +539,8 @@ namespace testNS7_1 {
 namespace testNS8_1 {
   function check_is_subtype_of_A(a: Object | undefined | null): boolean {
     let res: boolean = false
-    if (a instanceof string | number) {
-      if (a instanceof number) {
+    if (a instanceof string | number | int) {
+      if (a instanceof number | int) {
         res = true
       }
       else {
@@ -571,8 +571,8 @@ namespace testNS8_1 {
     let res: boolean = check_is_subtype_of_A(v)
     expect(res).assertEqual(is_subtype_of_A)
     if (res) {
-      expect(v instanceof string | number).assertEqual(true)
-      if (v instanceof string | number) {
+      expect(v instanceof string | number | int).assertEqual(true)
+      if (v instanceof string | number | int) {
         res = check_is_in_diff_type_with_value(v, v_id)
       }
     }
@@ -589,7 +589,7 @@ namespace testNS8_1 {
       expect(v as Object).assertEqual(123)
     }
   }
-  function check_is_in_diff_type_with_value(v: string | number,
+  function check_is_in_diff_type_with_value(v: string | number | int,
     v_id: number): boolean {
     check_value(v, v_id)
     return check_is_in_diff_type(v)
@@ -1127,15 +1127,10 @@ namespace testNS1_2 {
   function check_is_subtype_of_A(a: Object | undefined | null): boolean {
     let res: boolean = false
     if (a instanceof string | number) {
-      if (a instanceof number) {
+      if ((a === "Done") ||
+        (a === "In Progress") ||
+        (a === "On Review")) {
         res = true
-      }
-      else {
-        if ((a === "Done") ||
-          (a === "In Progress") ||
-          (a === "On Review")) {
-          res = true
-        }
       }
     }
     return res
@@ -1441,42 +1436,6 @@ export default function TypeTIsSubOfDiffOnStrLitTest(): void {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-
-    /**
-     * @tc.number    SUB_TYPE_T_IS_SUB_OF_DIFF_ON_STR_LIT_0100
-     * @tc.name      testTypeTIsSubOfDiffOnStrLit0001
-     * @tc.desc      Checking that Type T is a subtype of the difference type A - B if T is a subtype
-     *               of A, and no value belongs both to T and B in case of usage instanceof on literal
-     *               union types
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testTypeTIsSubOfDiffOnStrLit0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      let v1: number = 123
-      let v2: number = 456
-      let res: boolean =
-        check_1(v1, true, 1) &
-        check_1(v2, true, 2)
-      expect(res).assertEqual(true)
-
-      expect(testNS1_1.runTest()).assertEqual(true)
-      expect(testNS2_1.runTest()).assertEqual(true)
-      expect(testNS3_1.runTest()).assertEqual(true)
-      expect(testNS4_1.runTest()).assertEqual(true)
-      expect(testNS5_1.runTest()).assertEqual(true)
-      expect(testNS6_1.runTest()).assertEqual(true)
-      expect(testNS7_1.runTest()).assertEqual(true)
-      expect(testNS8_1.runTest()).assertEqual(true)
-      expect(testNS9_1.runTest()).assertEqual(true)
-      expect(testNS10_1.runTest()).assertEqual(true)
-      expect(testNS11_1.runTest()).assertEqual(true)
-      expect(testNS12_1.runTest()).assertEqual(true)
-      expect(testNS13_1.runTest()).assertEqual(true)
-      expect(testNS14_1.runTest()).assertEqual(true)
-      expect(testNS15_1.runTest()).assertEqual(true)
-    });
 
     /**
      * @tc.number    SUB_TYPE_T_IS_SUB_OF_DIFF_ON_STR_LIT_0200

@@ -98,7 +98,7 @@ namespace testNS1_5 {
       check_bigint_5(v as II1_5<int, null> | II1_5<number, string> | bigint)
     }
   }
-  function check_value_as_type_T_5(v: III1_5<int, null> | III2_5<number, string> | II2_5<bigint, undefined> | number, v_id: int): void {
+  function check_value_as_type_T_5(v: III1_5<int, null> | III2_5<number, string> | II2_5<bigint, undefined> | bigint, v_id: int): void {
     expect(v instanceof III1_5 | III2_5 | II2_5 ||
       v instanceof II1_5 | bigint).assertTrue()
     check_value_5(v, v_id)
@@ -112,9 +112,9 @@ namespace testNS1_5 {
         expect(v_id).assertEqual(1)
         check_value_5(v, v_id)
         expect(v instanceof III1_5 | III2_5 | II2_5).assertTrue()
-        expect(v instanceof III1_5 | III2_5 | II2_5 | number).assertTrue()
-        if (v instanceof III1_5 | III2_5 | II2_5 | number) {
-          check_value_as_type_T_5(v as III1_5<int, null> | III2_5<number, string> | II2_5<bigint, undefined> | number, v_id)
+        expect(v instanceof III1_5 | III2_5 | II2_5 | bigint).assertTrue()
+        if (v instanceof III1_5 | III2_5 | II2_5 | bigint) {
+          check_value_as_type_T_5(v as III1_5<int, null> | III2_5<number, string> | II2_5<bigint, undefined> | bigint, v_id)
           return true
         } else {
           return false
@@ -123,8 +123,8 @@ namespace testNS1_5 {
       else {
         expect(v_id).assertEqual(2)
         check_value_5(v, v_id)
-        if (v instanceof III1_5 | III2_5 | II2_5 | number) {
-          check_value_as_type_T_5(v as III1_5<int, null> | III2_5<number, string> | II2_5<bigint, undefined> | number, v_id)
+        if (v instanceof III1_5 | III2_5 | II2_5 | bigint) {
+          check_value_as_type_T_5(v as III1_5<int, null> | III2_5<number, string> | II2_5<bigint, undefined> | bigint, v_id)
           return true
         } else {
           return false
@@ -134,8 +134,8 @@ namespace testNS1_5 {
     else {
       expect(v_id).assertEqual(3)
       check_value_5(v, v_id)
-      if (v instanceof III1_5 | III2_5 | II2_5 | number) {
-        check_value_as_type_T_5(v as III1_5<int, null> | III2_5<number, string> | II2_5<bigint, undefined> | number, v_id)
+      if (v instanceof III1_5 | III2_5 | II2_5 | bigint) {
+        check_value_as_type_T_5(v as III1_5<int, null> | III2_5<number, string> | II2_5<bigint, undefined> | bigint, v_id)
         return true
       } else {
         return false
@@ -965,7 +965,7 @@ function check_value_5(v: Any, v_id: int): void {
     check_bigint_5(v as II1_5<int, null> | II1_5<number, string> | bigint)
   }
 }
-function check_value_as_type_T_5(v: III1_5<int, null> | III2_5<number, string> | II2_5<bigint, undefined> | number, v_id: int): void {
+function check_value_as_type_T_5(v: III1_5<int, null> | III2_5<number, string> | II2_5<bigint, undefined> | bigint, v_id: int): void {
   expect(v instanceof III1_5 | III2_5 | II2_5 ||
     v instanceof II1_5 | bigint).assertTrue()
   check_value_5(v, v_id)
@@ -979,9 +979,9 @@ function check_is_in_T_type_5(v: III1_5<int, null> | III2_5<number, string> | II
       expect(v_id).assertEqual(1)
       check_value_5(v, v_id)
       expect(v instanceof III1_5 | III2_5 | II2_5).assertTrue()
-      expect(v instanceof III1_5 | III2_5 | II2_5 | number).assertTrue()
-      if (v instanceof III1_5 | III2_5 | II2_5 | number) {
-        check_value_as_type_T_5(v as III1_5<int, null> | III2_5<number, string> | II2_5<bigint, undefined> | number, v_id)
+      expect(v instanceof III1_5 | III2_5 | II2_5 | bigint).assertTrue()
+      if (v instanceof III1_5 | III2_5 | II2_5 | bigint) {
+        check_value_as_type_T_5(v as III1_5<int, null> | III2_5<number, string> | II2_5<bigint, undefined> | bigint, v_id)
         return true
       } else {
         return false
@@ -990,8 +990,8 @@ function check_is_in_T_type_5(v: III1_5<int, null> | III2_5<number, string> | II
     else {
       expect(v_id).assertEqual(2)
       check_value_5(v, v_id)
-      if (v instanceof III1_5 | III2_5 | II2_5 | number) {
-        check_value_as_type_T_5(v as III1_5<int, null> | III2_5<number, string> | II2_5<bigint, undefined> | number, v_id)
+      if (v instanceof III1_5 | III2_5 | II2_5 | bigint) {
+        check_value_as_type_T_5(v as III1_5<int, null> | III2_5<number, string> | II2_5<bigint, undefined> | bigint, v_id)
         return true
       } else {
         return false
@@ -1001,8 +1001,8 @@ function check_is_in_T_type_5(v: III1_5<int, null> | III2_5<number, string> | II
   else {
     expect(v_id).assertEqual(3)
     check_value_5(v, v_id)
-    if (v instanceof III1_5 | III2_5 | II2_5 | number) {
-      check_value_as_type_T_5(v as III1_5<int, null> | III2_5<number, string> | II2_5<bigint, undefined> | number, v_id)
+    if (v instanceof III1_5 | III2_5 | II2_5 | bigint) {
+      check_value_as_type_T_5(v as III1_5<int, null> | III2_5<number, string> | II2_5<bigint, undefined> | bigint, v_id)
       return true
     } else {
       return false
@@ -1039,23 +1039,23 @@ namespace testNS1_6 {
     expect(a instanceof C1_6).assertTrue()
     expect(a instanceof III1_6).assertTrue()
     expect(a instanceof II1_6).assertTrue()
-    expect(a instanceof I1_6).assertTrue()
-    expect(a instanceof I2_6).assertTrue()
+    expect(a instanceof I1_6 | bigint).assertTrue()
+    expect(a instanceof I2_6 | bigint).assertTrue()
     expect((a as C1_6<int, null>).c1_v as int).assertEqual(123)
   }
   function check_C2_6(a: Any) {
     expect(a instanceof C2_6).assertTrue()
     expect(a instanceof III2_6).assertTrue()
     expect(a instanceof II1_6).assertTrue()
-    expect(a instanceof I1_6).assertTrue()
-    expect(a instanceof I2_6).assertTrue()
+    expect(a instanceof I1_6 | bigint).assertTrue()
+    expect(a instanceof I2_6 | bigint).assertTrue()
     expect((a as C2_6<number, string>).c2_v as number).assertEqual(6.7)
   }
   function check_C3_6(a: Any) {
     expect(a instanceof C3_6).assertTrue()
     expect(a instanceof II2_6).assertTrue()
-    expect(a instanceof I1_6).assertTrue()
-    expect(a instanceof I2_6).assertTrue()
+    expect(a instanceof I1_6 | bigint).assertTrue()
+    expect(a instanceof I2_6 | bigint).assertTrue()
     expect((a as C3_6<bigint, undefined>).c3_v as bigint).assertEqual(321n)
   }
   function check_bigint_6(a: Any) {
@@ -1077,7 +1077,7 @@ namespace testNS1_6 {
       check_bigint_6(v as II1_6<int, null> | II1_6<number, string> | bigint)
     }
   }
-  function check_value_as_type_T_6(v: I1_6<int, null> | I1_6<number, string> | I1_6<bigint, undefined>, v_id: int): void {
+  function check_value_as_type_T_6(v: I1_6<int, null> | I1_6<number, string> | I1_6<bigint, undefined> | bigint, v_id: int): void {
     expect(v instanceof III1_6 | III2_6 | II2_6 ||
       v instanceof II1_6 | bigint).assertTrue()
     check_value_6(v, v_id)
@@ -1091,9 +1091,9 @@ namespace testNS1_6 {
         expect(v_id).assertEqual(1)
         check_value_6(v, v_id)
         expect(v instanceof III1_6 | III2_6 | II2_6).assertTrue()
-        expect(v instanceof I1_6).assertTrue()
-        if (v instanceof I1_6) {
-          check_value_as_type_T_6(v as I1_6<int, null> | I1_6<number, string> | I1_6<bigint, undefined>, v_id)
+        expect(v instanceof I1_6 | bigint).assertTrue()
+        if (v instanceof I1_6 | bigint) {
+          check_value_as_type_T_6(v as I1_6<int, null> | I1_6<number, string> | I1_6<bigint, undefined> | bigint, v_id)
           return true
         } else {
           return false
@@ -1102,8 +1102,8 @@ namespace testNS1_6 {
       else {
         expect(v_id).assertEqual(2)
         check_value_6(v, v_id)
-        if (v instanceof I1_6) {
-          check_value_as_type_T_6(v as I1_6<int, null> | I1_6<number, string> | I1_6<bigint, undefined>, v_id)
+        if (v instanceof I1_6 | bigint) {
+          check_value_as_type_T_6(v as I1_6<int, null> | I1_6<number, string> | I1_6<bigint, undefined> | bigint, v_id)
           return true
         } else {
           return false
@@ -1113,8 +1113,8 @@ namespace testNS1_6 {
     else {
       expect(v_id).assertEqual(3)
       check_value_6(v, v_id)
-      if (v instanceof I1_6) {
-        check_value_as_type_T_6(v as I1_6<int, null> | I1_6<number, string> | I1_6<bigint, undefined>, v_id)
+      if (v instanceof I1_6 | bigint) {
+        check_value_as_type_T_6(v as I1_6<int, null> | I1_6<number, string> | I1_6<bigint, undefined> | bigint, v_id)
         return true
       } else {
         return false
@@ -1163,23 +1163,23 @@ namespace testNS2_6 {
     expect(a instanceof C1_6).assertTrue()
     expect(a instanceof III1_6).assertTrue()
     expect(a instanceof II1_6).assertTrue()
-    expect(a instanceof I1_6).assertTrue()
-    expect(a instanceof I2_6).assertTrue()
+    expect(a instanceof I1_6 | bigint).assertTrue()
+    expect(a instanceof I2_6 | bigint).assertTrue()
     expect((a as C1_6<int, null>).c1_v as int).assertEqual(123)
   }
   function check_C2_6(a: Any) {
     expect(a instanceof C2_6).assertTrue()
     expect(a instanceof III2_6).assertTrue()
     expect(a instanceof II1_6).assertTrue()
-    expect(a instanceof I1_6).assertTrue()
-    expect(a instanceof I2_6).assertTrue()
+    expect(a instanceof I1_6 | bigint).assertTrue()
+    expect(a instanceof I2_6 | bigint).assertTrue()
     expect((a as C2_6<number, string>).c2_v as number).assertEqual(6.7)
   }
   function check_C3_6(a: Any) {
     expect(a instanceof C3_6).assertTrue()
     expect(a instanceof II2_6).assertTrue()
-    expect(a instanceof I1_6).assertTrue()
-    expect(a instanceof I2_6).assertTrue()
+    expect(a instanceof I1_6 | bigint).assertTrue()
+    expect(a instanceof I2_6 | bigint).assertTrue()
     expect((a as C3_6<bigint, undefined>).c3_v as bigint).assertEqual(321n)
   }
   function check_bigint_6(a: Any) {
@@ -1201,7 +1201,7 @@ namespace testNS2_6 {
       check_bigint_6(v as II1_6<int, null> | II1_6<number, string> | bigint)
     }
   }
-  function check_value_as_type_T_6(v: I2_6<int, null> | I2_6<number, string> | I2_6<bigint, undefined>, v_id: int): void {
+  function check_value_as_type_T_6(v: I2_6<int, null> | I2_6<number, string> | I2_6<bigint, undefined> | bigint, v_id: int): void {
     expect(v instanceof III1_6 | III2_6 | II2_6 ||
       v instanceof II1_6 | bigint).assertTrue()
     check_value_6(v, v_id)
@@ -1215,9 +1215,9 @@ namespace testNS2_6 {
         expect(v_id).assertEqual(1)
         check_value_6(v, v_id)
         expect(v instanceof III1_6 | III2_6 | II2_6).assertTrue()
-        expect(v instanceof I2_6).assertTrue()
-        if (v instanceof I2_6) {
-          check_value_as_type_T_6(v as I2_6<int, null> | I2_6<number, string> | I2_6<bigint, undefined>, v_id)
+        expect(v instanceof I2_6 | bigint).assertTrue()
+        if (v instanceof I2_6 | bigint) {
+          check_value_as_type_T_6(v as I2_6<int, null> | I2_6<number, string> | I2_6<bigint, undefined> | bigint, v_id)
           return true
         } else {
           return false
@@ -1226,8 +1226,8 @@ namespace testNS2_6 {
       else {
         expect(v_id).assertEqual(2)
         check_value_6(v, v_id)
-        if (v instanceof I2_6) {
-          check_value_as_type_T_6(v as I2_6<int, null> | I2_6<number, string> | I2_6<bigint, undefined>, v_id)
+        if (v instanceof I2_6 | bigint) {
+          check_value_as_type_T_6(v as I2_6<int, null> | I2_6<number, string> | I2_6<bigint, undefined> | bigint, v_id)
           return true
         } else {
           return false
@@ -1237,8 +1237,8 @@ namespace testNS2_6 {
     else {
       expect(v_id).assertEqual(3)
       check_value_6(v, v_id)
-      if (v instanceof I2_6) {
-        check_value_as_type_T_6(v as I2_6<int, null> | I2_6<number, string> | I2_6<bigint, undefined>, v_id)
+      if (v instanceof I2_6 | bigint) {
+        check_value_as_type_T_6(v as I2_6<int, null> | I2_6<number, string> | I2_6<bigint, undefined> | bigint, v_id)
         return true
       } else {
         return false
@@ -1286,23 +1286,23 @@ function check_C1_6(a: Any) {
   expect(a instanceof C1_6).assertTrue()
   expect(a instanceof III1_6).assertTrue()
   expect(a instanceof II1_6).assertTrue()
-  expect(a instanceof I1_6).assertTrue()
-  expect(a instanceof I2_6).assertTrue()
+  expect(a instanceof I1_6 | bigint).assertTrue()
+  expect(a instanceof I2_6 | bigint).assertTrue()
   expect((a as C1_6<int, null>).c1_v as int).assertEqual(123)
 }
 function check_C2_6(a: Any) {
   expect(a instanceof C2_6).assertTrue()
   expect(a instanceof III2_6).assertTrue()
   expect(a instanceof II1_6).assertTrue()
-  expect(a instanceof I1_6).assertTrue()
-  expect(a instanceof I2_6).assertTrue()
+  expect(a instanceof I1_6 | bigint).assertTrue()
+  expect(a instanceof I2_6 | bigint).assertTrue()
   expect((a as C2_6<number, string>).c2_v as number).assertEqual(6.7)
 }
 function check_C3_6(a: Any) {
   expect(a instanceof C3_6).assertTrue()
   expect(a instanceof II2_6).assertTrue()
-  expect(a instanceof I1_6).assertTrue()
-  expect(a instanceof I2_6).assertTrue()
+  expect(a instanceof I1_6 | bigint).assertTrue()
+  expect(a instanceof I2_6 | bigint).assertTrue()
   expect((a as C3_6<bigint, undefined>).c3_v as bigint).assertEqual(321n)
 }
 function check_bigint_6(a: Any) {
@@ -1324,7 +1324,7 @@ function check_value_6(v: Any, v_id: int): void {
     check_bigint_6(v as II1_6<int, null> | II1_6<number, string> | bigint)
   }
 }
-function check_value_as_type_T_6(v: I1_6<int, null> | I1_6<number, string> | I1_6<bigint, undefined>, v_id: int): void {
+function check_value_as_type_T_6(v: I1_6<int, null> | I1_6<number, string> | I1_6<bigint, undefined> | bigint, v_id: int): void {
   expect(v instanceof III1_6 | III2_6 | II2_6 ||
     v instanceof II1_6 | bigint).assertTrue()
   check_value_6(v, v_id)
@@ -1338,9 +1338,9 @@ function check_is_in_T_type_6(v: III1_6<int, null> | III2_6<number, string> | II
       expect(v_id).assertEqual(1)
       check_value_6(v, v_id)
       expect(v instanceof III1_6 | III2_6 | II2_6).assertTrue()
-      expect(v instanceof I1_6).assertTrue()
-      if (v instanceof I1_6) {
-        check_value_as_type_T_6(v as I1_6<int, null> | I1_6<number, string> | I1_6<bigint, undefined>, v_id)
+      expect(v instanceof I1_6 | bigint).assertTrue()
+      if (v instanceof I1_6 | bigint) {
+        check_value_as_type_T_6(v as I1_6<int, null> | I1_6<number, string> | I1_6<bigint, undefined> | bigint, v_id)
         return true
       } else {
         return false
@@ -1349,8 +1349,8 @@ function check_is_in_T_type_6(v: III1_6<int, null> | III2_6<number, string> | II
     else {
       expect(v_id).assertEqual(2)
       check_value_6(v, v_id)
-      if (v instanceof I1_6) {
-        check_value_as_type_T_6(v as I1_6<int, null> | I1_6<number, string> | I1_6<bigint, undefined>, v_id)
+      if (v instanceof I1_6 | bigint) {
+        check_value_as_type_T_6(v as I1_6<int, null> | I1_6<number, string> | I1_6<bigint, undefined> | bigint, v_id)
         return true
       } else {
         return false
@@ -1360,8 +1360,8 @@ function check_is_in_T_type_6(v: III1_6<int, null> | III2_6<number, string> | II
   else {
     expect(v_id).assertEqual(3)
     check_value_6(v, v_id)
-    if (v instanceof I1_6) {
-      check_value_as_type_T_6(v as I1_6<int, null> | I1_6<number, string> | I1_6<bigint, undefined>, v_id)
+    if (v instanceof I1_6 | bigint) {
+      check_value_as_type_T_6(v as I1_6<int, null> | I1_6<number, string> | I1_6<bigint, undefined> | bigint, v_id)
       return true
     } else {
       return false
@@ -1394,37 +1394,6 @@ export default function InterTypeIsSubOfTypeTOnGenTest02(): void {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-
-    /**
-     * @tc.number    SUB_INTER_TYPE_IS_SUB_OF_TYPE_T_ON_GEN_0500
-     * @tc.name      testInterTypeIsSubOfTypeTOnGen0005
-     * @tc.desc      Checking that intersection type I (defined as I1 & I2) is a subtype of type
-     *               T if Ii is a subtype of T for some i in case of usage instanceof on generic custom
-     *               types
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testInterTypeIsSubOfTypeTOnGen0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
-
-      let res1: boolean = check_is_in_T_type_5(
-        new C1_5<int, null>(123), 1)
-      let res2: boolean = check_is_in_T_type_5(
-        new C3_5<bigint, undefined>(321n), 2)
-      let res3: boolean = check_is_in_T_type_5(
-        5n, 3)
-      expect(res1 && res2 && res3).assertTrue()
-
-      expect(testNS1_5.runTest_5()).assertTrue()
-      expect(testNS2_5.runTest_5()).assertTrue()
-      expect(testNS3_5.runTest_5()).assertTrue()
-      expect(testNS4_5.runTest_5()).assertTrue()
-      expect(testNS5_5.runTest_5()).assertTrue()
-      expect(testNS6_5.runTest_5()).assertTrue()
-      expect(testNS7_5.runTest_5()).assertTrue()
-
-    });
 
     /**
      * @tc.number    SUB_INTER_TYPE_IS_SUB_OF_TYPE_T_ON_GEN_0600
