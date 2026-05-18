@@ -72,6 +72,6 @@ export struct NavRouterView {
       // })
       // .markAnchor(this._markAnchor)
       // .key(this.componentKey)
-      }
+    }
   }
 }

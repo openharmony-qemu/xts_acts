@@ -27,7 +27,6 @@ import {
   Color,
   Text,
   Divider,
-  Canvas,
   TabsController,
   TabContent,
   BarPosition,
