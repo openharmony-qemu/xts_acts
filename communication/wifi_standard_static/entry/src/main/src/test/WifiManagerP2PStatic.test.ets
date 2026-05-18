@@ -139,7 +139,7 @@ export default function actsWifiManagerP2PTest() {
           "groupName": "test_group",
           "goBand": wifiManager.GroupOwnerBand.GO_BAND_2GHZ,
           "netId": -1,
-          "goFreq": 0
+          "goFreq": 2400
         };
         wifiManager.p2pConnect(config);
         hilog.info(domain, tag, `${caseName} p2pConnect success`);
