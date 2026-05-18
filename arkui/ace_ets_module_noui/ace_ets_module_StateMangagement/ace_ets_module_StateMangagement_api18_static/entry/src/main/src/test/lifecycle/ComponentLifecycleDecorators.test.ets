@@ -73,7 +73,7 @@ export default function componentLifecycleDecoratorsTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_COMPONENTLIFECYCLE_COMPONENTINACTIVE_0100', Level.LEVEL0, async () => {
+    it('SUB_ARKUI_COMPONENTLIFECYCLE_COMPONENTINACTIVE_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'ComponentLifecycleDecorators', 'componentInactive_0100 START');
       let driver = Driver.create();
       let scrollBtn = await driver.findComponent(ON.id('scrollToIndexBtn'));
@@ -82,12 +82,13 @@ export default function componentLifecycleDecoratorsTest() {
       let strJson2  = inspector.getInspectorByKey('inactiveText');
       let inactiveText = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('content'));
       hilog.info(0x0000, 'ComponentLifecycleDecorators', 'inactiveText: ' + inactiveText);
-      let storageValueInactive:string = AppStorage.get<string>('ComponentInactiveKey');
-      let storageValueActive:string = AppStorage.get<string>('ComponentActiveKey');
+      let storageValueInactive:string = AppStorage.get<string>('ComponentInactiveKey') as string;
+      let storageValueActive:string = AppStorage.get<string>('ComponentActiveKey') as string;
       hilog.info(0x0000, 'ComponentLifecycleDecorators', 'storageValue: ' + storageValueInactive);
       expect(storageValueInactive).assertEqual('InactiveItem0')
       expect(storageValueActive).assertEqual('ActiveItem6')
       hilog.info(0x0000, 'ComponentLifecycleDecorators', 'componentInactive_0100 END');
+      done();
     });
 
   });
