@@ -699,26 +699,25 @@ export default function ArrayList10Test(): void {
       (): void => {
         const TAG = 'testArrayList03GetLastIndexOf0021';
         console.log(TAG + ' start');
-        console.log("Testing lastIndexOf functionality");
-        const testArray = [true, false, 1, 0, "true", "false"];
-        const results = [
-          testArray.lastIndexOf(true),
-          testArray.lastIndexOf(false),
-          testArray.lastIndexOf(1),
-          testArray.lastIndexOf(0),
-          testArray.lastIndexOf("true"),
-          testArray.lastIndexOf("false")
-        ];
-        const expected = [0, 1, 2, 3, 4, 5];
-        let allCorrect = true;
-        for (let i: int = 0; i < results.length; i++) {
-          if (results[i] !== expected[i]) {
-            allCorrect = false;
-            break;
-          }
-        }
-        expect(allCorrect).assertTrue();
-        console.log("lastIndexOf tests completed");
+        let arrayList = new ArrayList<boolean | number | string>();
+        arrayList.add(true);
+        arrayList.add(false);
+        arrayList.add(1);
+        arrayList.add(0);
+        arrayList.add("true");
+        arrayList.add("false");
+        let result1: number = arrayList.getLastIndexOf(true);
+        let result2: number = arrayList.getLastIndexOf(false);
+        let result3: number = arrayList.getLastIndexOf(1);
+        let result4: number = arrayList.getLastIndexOf(0);
+        let result5: number = arrayList.getLastIndexOf("true");
+        let result6: number = arrayList.getLastIndexOf("false");
+        expect(result1).assertEqual(0);
+        expect(result2).assertEqual(1);
+        expect(result3).assertEqual(2);
+        expect(result4).assertEqual(3);
+        expect(result5).assertEqual(4);
+        expect(result6).assertEqual(5);
         console.log(TAG + ' done');
       });
 
@@ -734,28 +733,26 @@ export default function ArrayList10Test(): void {
       (): void => {
         const TAG = 'testArrayList03GetLastIndexOf0022';
         console.log(TAG + ' start');
-        const arr1 = [1, 2, 3];
-        const arr2 = [4, 5, 6];
-        const arr3 = [1, 2, 3];
-        const arr4 = [7, 8, 9];
-        const arrayOfArrays = [arr1, arr2, arr1, arr3, arr4];
-        const results = [
-          arrayOfArrays.lastIndexOf(arr1),
-          arrayOfArrays.lastIndexOf(arr2),
-          arrayOfArrays.lastIndexOf(arr3),
-          arrayOfArrays.lastIndexOf(arr4),
-          arrayOfArrays.lastIndexOf([1, 2, 3])
-        ];
-        const expected = [2, 1, 3, 4, -1];
-        let allCorrect = true;
-        for (let i: int = 0; i < results.length; i++) {
-          if (results[i] !== expected[i]) {
-            allCorrect = false;
-            break;
-          }
-        }
-        expect(allCorrect).assertTrue();
-        console.log("Array reference comparison in lastIndexOf verified");
+        const arr1: number[] = [1, 2, 3];
+        const arr2: number[] = [4, 5, 6];
+        const arr3: number[] = [1, 2, 3];
+        const arr4: number[] = [7, 8, 9];
+        let arrayList = new ArrayList<number[]>();
+        arrayList.add(arr1);
+        arrayList.add(arr2);
+        arrayList.add(arr1);
+        arrayList.add(arr3);
+        arrayList.add(arr4);
+        let result1: number = arrayList.getLastIndexOf(arr1);
+        let result2: number = arrayList.getLastIndexOf(arr2);
+        let result3: number = arrayList.getLastIndexOf(arr3);
+        let result4: number = arrayList.getLastIndexOf(arr4);
+        let result5: number = arrayList.getLastIndexOf([1.0, 2.0, 3.0]);
+        expect(result1).assertEqual(2);
+        expect(result2).assertEqual(1);
+        expect(result3).assertEqual(3);
+        expect(result4).assertEqual(4);
+        expect(result5).assertEqual(-1);
         console.log(TAG + ' done');
       });
 
@@ -775,24 +772,22 @@ export default function ArrayList10Test(): void {
         const uint8Array2 = new Uint8Array([72, 101, 108, 108, 111]);
         const int8Array = new Int8Array([-1, 0, 1]);
         const float32Array = new Float32Array([1.1, 2.2, 3.3]);
-        const typedArrayCollection = [
-          uint8Array1,
-          int8Array,
-          float32Array,
-          uint8Array1,
-          uint8Array2
-        ];
-        const result1 = typedArrayCollection.lastIndexOf(uint8Array1);
-        const result2 = typedArrayCollection.lastIndexOf(uint8Array2);
-        const result3 = typedArrayCollection.lastIndexOf(int8Array);
-        const result4 = typedArrayCollection.lastIndexOf(float32Array);
-        const result5 = typedArrayCollection.lastIndexOf(new Uint8Array([72, 101, 108, 108, 111]));
+        let arrayList = new ArrayList<ArrayLike<number>>();
+        arrayList.add(uint8Array1);
+        arrayList.add(int8Array);
+        arrayList.add(float32Array);
+        arrayList.add(uint8Array1);
+        arrayList.add(uint8Array2);
+        const result1 = arrayList.getLastIndexOf(uint8Array1);
+        const result2 = arrayList.getLastIndexOf(uint8Array2);
+        const result3 = arrayList.getLastIndexOf(int8Array);
+        const result4 = arrayList.getLastIndexOf(float32Array);
+        const result5 = arrayList.getLastIndexOf(new Uint8Array([72, 101, 108, 108, 111]));
         expect(result1).assertEqual(3);
         expect(result2).assertEqual(4);
         expect(result3).assertEqual(1);
         expect(result4).assertEqual(2);
         expect(result5).assertEqual(-1);
-        console.log("TypedArray reference equality verified");
         console.log(TAG + ' done');
       });
 
@@ -878,12 +873,20 @@ export default function ArrayList10Test(): void {
       (): void => {
         const TAG = 'testArrayList03GetLastIndexOf0026';
         console.log(TAG + ' start');
-        const simpleArray = [null, undefined, null, undefined];
-        const result1 = simpleArray.lastIndexOf(null);
-        const result2 = simpleArray.lastIndexOf(undefined);
-        expect(result1).assertEqual(2);
+        let nullList = new ArrayList<string | null>();
+        nullList.add("a");
+        nullList.add(null);
+        nullList.add("b");
+        nullList.add(null);
+        const result1: number = nullList.getLastIndexOf(null);
+        expect(result1).assertEqual(3);
+        let undefList = new ArrayList<string | undefined>();
+        undefList.add("a");
+        undefList.add(undefined);
+        undefList.add("b");
+        undefList.add(undefined);
+        const result2: number = undefList.getLastIndexOf(undefined);
         expect(result2).assertEqual(3);
-        console.log("Basic null/undefined test passed");
         console.log(TAG + ' done');
       });
 

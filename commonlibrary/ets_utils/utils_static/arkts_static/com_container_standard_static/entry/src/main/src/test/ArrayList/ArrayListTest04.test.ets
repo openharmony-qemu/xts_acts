@@ -876,7 +876,7 @@ export default function ArrayList04Test(): void {
         list.add(1);
         try {
           list.insert(2, 5);
-          console.log("No error thrown for invalid index");
+          expect().assertFail();
         } catch (error) {
           console.log("Expected error caught:", error.message);
         }
@@ -1112,7 +1112,7 @@ export default function ArrayList04Test(): void {
         const list = new ArrayList<number>();
         try {
           list.insert(1, 1000000);
-          console.log("Large index insertion attempted");
+          expect().assertFail();
         } catch (err) {
           console.log("Error with large index:", err.message);
           expect(err.message).assertEqual('The value of "index" is out of range. It must be >= 0 && <= 0. Received value is: 1000000');
@@ -1137,7 +1137,7 @@ export default function ArrayList04Test(): void {
         list.add(1);
         try {
           list.insert(2, -1);
-          console.log("No error for negative index");
+          expect().assertFail();
         } catch (err) {
           console.log("Expected error for negative index:", err.message);
           expect(err.message).assertEqual('The value of "index" is out of range. It must be >= 0 && <= 1. Received value is: -1');

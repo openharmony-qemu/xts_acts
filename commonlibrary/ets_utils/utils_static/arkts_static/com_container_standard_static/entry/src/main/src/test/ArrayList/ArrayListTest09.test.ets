@@ -1165,6 +1165,12 @@ export default function ArrayList09Test(): void {
         arrayList.add(Number.MAX_VALUE);
         arrayList.add(Infinity);
         arrayList.add(NaN);
+        arrayList.sort((a: number, b: number): int => {
+          if (isNaN(a) && isNaN(b)) return 0;
+          if (isNaN(a)) return 1;
+          if (isNaN(b)) return -1;
+          return (a - b).toInt();
+        });
         for (let i: int = 0; i < arrayList.length; i++) {
           console.log(`arrayList[${i}] = ${arrayList[i]}`);
         }
