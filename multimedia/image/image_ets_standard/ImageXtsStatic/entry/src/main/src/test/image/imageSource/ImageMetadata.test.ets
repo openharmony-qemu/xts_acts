@@ -116,41 +116,6 @@ export default function ImageMetadataTestStatic(): void {
 
 
     /**
-     * @tc.number    SUB_MEDIA_IMAGE_HEIFS_METADATA_heifsMetadata_PropertyKey_STATIC_0100
-     * @tc.name      SUB_MEDIA_IMAGE_HEIFS_METADATA_heifsMetadata_PropertyKey_STATIC_0100
-     * @tc.desc      HeifsMetadata PropertyKey 覆盖
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 1
-     */
-    it('SUB_MEDIA_IMAGE_HEIFS_METADATA_heifsMetadata_PropertyKey_STATIC_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      const testName = "SUB_MEDIA_IMAGE_HEIFS_METADATA_heifsMetadata_PropertyKey_STATIC_0100";
-      let filePathFir = await getFilePath("test_exif_v3.heic");
-      let result = true;
-      let isSupportHEIFDecode: boolean = image.createImageSource(filePathFir)!.supportedFormats.includes("image/heic");
-      if (!isSupportHEIFDecode) {
-        console.info(TAG,testName,` device is not support decode heif!`);
-        expect(result).assertTrue();
-        done();
-        return;
-      }
-      try {
-        const imageSourceObj: image.ImageSource | undefined = image.createImageSource(filePath);
-        console.info(TAG, testName, `imageSourceObj success`, imageSourceObj!);
-        const imageMetadata = await imageSourceObj!.readImageMetadata();
-        console.info(TAG, testName, `readImageMetadata success`, imageMetadata);
-        console.info(TAG, testName, `imageSourceObj readImageMetadata success,heifsMetadata.heifsCanvasHeight`,JSON.stringify(imageMetadata.heifsMetadata!.heifsCanvasHeight));
-        console.info(TAG, testName, `imageSourceObj readImageMetadata success,heifsMetadata.heifsCanvasWidth`,JSON.stringify(imageMetadata.heifsMetadata!.heifsCanvasWidth));
-        console.info(TAG, testName, `imageSourceObj readImageMetadata success,heifsMetadata.heifsUnclampedDelayTime`,JSON.stringify(imageMetadata.heifsMetadata!.heifsUnclampedDelayTime));
-        done();
-      } catch (error) {
-        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-        done();
-      }
-    })
-
-    /**
      * @tc.number    SUB_MEDIA_IMAGE_HEIFS_METADATA_GifMetadata_PropertyKey_STATIC_0100
      * @tc.name      SUB_MEDIA_IMAGE_HEIFS_METADATA_GifMetadata_PropertyKey_STATIC_0100
      * @tc.desc      GifMetadata PropertyKey 覆盖
@@ -252,8 +217,8 @@ export default function ImageMetadataTestStatic(): void {
      * @tc.type      Function
      * @tc.level     Level 1
      */
-    it('SUB_MEDIA_IMAGE_HEIFS_METADATA_jfifMetadata_PropertyKey_STATIC_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      const testName = "SUB_MEDIA_IMAGE_HEIFS_METADATA_jfifMetadata_PropertyKey_STATIC_0100";
+    it('SUB_MEDIA_IMAGE_HEIFS_METADATA_pngMetadata_PropertyKey_STATIC_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const testName = "SUB_MEDIA_IMAGE_HEIFS_METADATA_pngMetadata_PropertyKey_STATIC_0100";
       let filePath = await getFilePath("sample2.jfif");
       try {
         const imageSourceObj: image.ImageSource | undefined = image.createImageSource(filePath);
@@ -353,9 +318,9 @@ export default function ImageMetadataTestStatic(): void {
       const testName = "SUB_MEDIA_IMAGE_HEIFS_METADATA_dngMetadata_PropertyKey_STATIC_0100";
       let result: boolean = true;
       let filePathFir = await getFd("dng_xmp.dng");
-      let isSupportHEIFDecode: boolean = image.createImageSource(filePathFir)!.supportedFormats.includes("image/dng");
+      let isSupportHEIFDecode: boolean = image.createImageSource(filePathFir)!.supportedFormats.includes("image/x-adobe-dng");
       if (!isSupportHEIFDecode) {
-        console.info(TAG,testName,` device is not support decode heif!`);
+        console.info(TAG,testName,` device is not support decode dng!`);
         expect(result).assertTrue();
         done();
         return;
@@ -364,8 +329,8 @@ export default function ImageMetadataTestStatic(): void {
         const imageSourceObj: image.ImageSource | undefined = image.createImageSource(filePathFir);
         console.info(TAG, testName, `imageSourceObj success`, imageSourceObj!);
         const imageMetadata:image.ImageMetadata |undefined = await imageSourceObj!.readImageMetadata();
-        // console.info(TAG, testName, `imageSourceObj readImageMetadata success,dngMetadata!.linearResponseLimit`,JSON.stringify(imageMetadata.dngMetadata!.linearResponseLimit));
-        // expect(imageMetadata.dngMetadata!.linearResponseLimit!=undefined).assertTrue();
+        console.info(TAG, testName, `imageSourceObj readImageMetadata success,dngMetadata!.linearResponseLimit`,JSON.stringify(imageMetadata.dngMetadata!.linearResponseLimit));
+        expect(imageMetadata.dngMetadata!.linearResponseLimit!=undefined).assertTrue();
         done();
       } catch (error) {
         console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
