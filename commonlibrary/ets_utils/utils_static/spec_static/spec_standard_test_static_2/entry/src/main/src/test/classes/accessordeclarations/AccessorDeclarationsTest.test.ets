@@ -273,6 +273,7 @@ export default function AccessorDeclarationsTest():void {
       let instance: A = new A();
       try {
         let a = instance.age;
+        expect().assertFail()
       } catch (e) {
         expect(e instanceof TestError).assertTrue()
         return
@@ -384,6 +385,7 @@ export default function AccessorDeclarationsTest():void {
       let instance: A8 = new A8();
       try {
         instance.age = -5;
+        expect().assertFail()
       } catch (e) {
         expect(e instanceof TestError).assertTrue();
         return
