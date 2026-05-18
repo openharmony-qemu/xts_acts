@@ -473,18 +473,6 @@ class A_F156 {
     this.field = this.foo_F156()
   }
 }
-
-class A_F157 {
-  field: Promise<Object>
-  async foo_F157(): Promise<Object> {
-    let v: Object = 5
-    return v
-  }
-  constructor() {
-    this.field = this.foo_F157()
-  }
-}
-
 class C_F158 {data!: int}
 class A_F158 {
   field!: Promise<C_F158>
@@ -584,15 +572,6 @@ class A_F169 {
     return v
   }
 }
-
-class A_F170 {
-  field!: Promise<Object>
-  async foo_F170(): Promise<Object> {
-    let v: Object = 5
-    return v
-  }
-}
-
 class C_F171 {data!: int}
 class A_F171 {
   field!: Promise<C_F171>
@@ -1556,7 +1535,6 @@ export default function FieldsLateInitOneTest(): void {
         foo_F145(lambda)
         expect(a.field.data).assertEqual(5)
     })
-
     /**
      * @tc.number    SUB_FIELDS_LATE_INIT_ONE_4700
      * @tc.name      testFieldsLateInitOne0047
@@ -1566,8 +1544,10 @@ export default function FieldsLateInitOneTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitOne0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      let a: A_F157 = new A_F157()
-        let res: Object = await a.field
+      let a: A_F171 = new A_F171()
+        a.field = a.foo_F171()
+        let res: C_F171 = await a.field
+        expect(res.data).assertEqual(5)
     })
 
     /**
@@ -1579,9 +1559,9 @@ export default function FieldsLateInitOneTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitOne0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      let a: A_F170 = new A_F170()
-        a.field = a.foo_F170()
-        let res: Object = await a.field
+      let a: A_F195 = new A_F195()
+        let res: Object = await a.foo_F195().then((): Object => a.field)
+        expect(a.field).assertEqual(5)
     })
 
     /**
@@ -1593,10 +1573,9 @@ export default function FieldsLateInitOneTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitOne0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      let a: A_F171 = new A_F171()
-        a.field = a.foo_F171()
-        let res: C_F171 = await a.field
-        expect(res.data).assertEqual(5)
+      let a: A_F196 = new A_F196()
+        await a.foo_F196()
+        expect(a.field.data).assertEqual(5)
     })
 
     /**
@@ -1608,34 +1587,6 @@ export default function FieldsLateInitOneTest(): void {
      * @tc.level     Level 2
      */
     it("testFieldsLateInitOne0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      let a: A_F195 = new A_F195()
-        let res: Object = await a.foo_F195().then((): Object => a.field)
-        expect(a.field).assertEqual(5)
-    })
-
-    /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_ONE_5100
-     * @tc.name      testFieldsLateInitOne0051
-     * @tc.desc      Checking for initialization with asynchronous API usage.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldsLateInitOne0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      let a: A_F196 = new A_F196()
-        await a.foo_F196()
-        expect(a.field.data).assertEqual(5)
-    })
-
-    /**
-     * @tc.number    SUB_FIELDS_LATE_INIT_ONE_5200
-     * @tc.name      testFieldsLateInitOne0052
-     * @tc.desc      Checking for initialization with asynchronous API usage.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testFieldsLateInitOne0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let a: A_F197 = new A_F197()
         await a.foo_F197()
         expect(a.field.data).assertEqual(5)
