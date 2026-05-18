@@ -78,7 +78,6 @@ export struct NavigationView {
             //   console.info('isActivated = ' + isActivated);
             //   this.dex = index
             // })
-            }
           }
         }, (item: number) => String(item))
       }
