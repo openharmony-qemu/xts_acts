@@ -2780,10 +2780,8 @@ export default function ExplicitClassMethodOverloadTest(): void {
       let x: number = 12.6;
       let y: string = 'Hello!';
       let a: A92 = new A92();
-      async (): Promise<void> => {
-        await a.foo(x);
-        await a.foo(y);
-      }
+      a.foo(x);
+      a.foo(y);
       expect(A92.num).assertEqual(x);
       expect(A92.str).assertEqual(y);
     });
@@ -2839,10 +2837,8 @@ export default function ExplicitClassMethodOverloadTest(): void {
     it('testExplicitClassMethodOverload0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: number = 12.6;
       let y: string = 'Hello!';
-      async (): Promise<void> => {
-        await A95.foo(x);
-        await A95.foo(y);
-      }
+      A95.foo(x);
+      A95.foo(y);
       expect(A95.num).assertEqual(x);
       expect(A95.str).assertEqual(y);
     });

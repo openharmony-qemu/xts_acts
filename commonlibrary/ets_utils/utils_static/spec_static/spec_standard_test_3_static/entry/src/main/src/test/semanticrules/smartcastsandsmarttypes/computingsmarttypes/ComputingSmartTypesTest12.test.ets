@@ -224,12 +224,13 @@ function check_as_type_T_diff_A_03(v: T_03, v_id: int): void {
   if (fn !== undefined) (fn as CheckValueFuncTypeT_diff_A_03)(v, v_id);
 }
 function check_03(v: T_03, v_type: VarType, v_id: int): void {
+  let val: T_03 = check_values_03[v_id][0] as T_03;
   if (!(typeof v === 'number' || v instanceof Dog_03)) {
     skip_check();
-    check_as_type_T_diff_A_03(v, v_id);
+    check_as_type_T_diff_A_03(val, v_id);
   } else {
     skip_check();
-    check_as_type_T_inter_A_03(v, v_id);
+    check_as_type_T_inter_A_03(val, v_id);
   }
 }
 
@@ -292,12 +293,13 @@ function check_as_type_T_diff_A_04(v: T_04, v_id: int): void {
   if (fn !== undefined) (fn as CheckValueFuncTypeT_diff_A_04)(v, v_id);
 }
 function check_04(v: T_04, v_type: VarType, v_id: int): void {
+  let val: T_04 = check_values_04[v_id][0] as T_04;
   if (!(typeof v === 'number' || v instanceof Dog_04)) {
     if (v instanceof Animal_04) expect(v.va).assertEqual(0);
-    check_as_type_T_diff_A_04(v, v_id);
+    check_as_type_T_diff_A_04(val, v_id);
   } else {
     skip_check();
-    check_as_type_T_inter_A_04(v, v_id);
+    check_as_type_T_inter_A_04(val, v_id);
   }
 }
 
