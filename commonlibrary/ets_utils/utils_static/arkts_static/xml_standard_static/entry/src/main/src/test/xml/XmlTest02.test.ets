@@ -171,8 +171,7 @@ export default function XmlTest_02(): void {
             .trim()
             .replace(new RegExp("<\\/root\\s+[^>]*>", "g"), '</root>');
           const expectedXml: string = `<root xmlns:app="http://myapp.com"><app:item/></root>`;
-          expect(actualXml).assertEqual(expectedXml);
-          expect().assertFail()
+          expect(actualXml).assertEqual(expectedXml)
         } catch (err) {
           console.error(`${TAG} fail, err: ${err}`);
         }

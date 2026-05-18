@@ -1192,7 +1192,7 @@ export default function XmlTest_04(): void {
 
         let options: xml.ParseOptions =
           { supportDoctype: false, attributeValueCallbackFunction: funcB, tagValueCallbackFunction: funcB }
-
+        testThat.parseXml(options)
 
         expect(str).not().assertContain("<!ELEMENT note (to,from,heading,body)>")
         expect(str).not().assertContain("<!ELEMENT to (#PCDATA)>")
@@ -1234,7 +1234,7 @@ export default function XmlTest_04(): void {
 
         let options: xml.ParseOptions =
           { ignoreNameSpace: false, attributeValueCallbackFunction: funcB, tagValueCallbackFunction: funcB }
-
+        testThat.parseXml(options)
 
         expect(str).not().assertContain("xmlns http://www.w3.org/1999/xhtml")
         expect(str).not().assertContain("xmlns http://www.w3.org/2000/svg")

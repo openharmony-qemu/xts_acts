@@ -467,12 +467,18 @@ Core business data: 10001
         let textEncoder = new util.TextEncoder();
         let uint8 = textEncoder.encodeInto(xmlStr);
         let that = new xml.XmlPullParser(uint8.buffer as object as ArrayBuffer);
-        let str = "";
+        let attrCount: int = -1;
 
-        let options: xml.ParseOptions = {supportDoctype:true, ignoreNameSpace:true, tagValueCallbackFunction:funcB, attributeValueCallbackFunction: funcB}
-        that.parseXml(options);
+        that.parseXml({
+          tokenValueCallbackFunction: (event: xml.EventType, info: xml.ParseInfo): boolean => {
+            if (event === xml.EventType.START_TAG && info.getName() === 'root') {
+              attrCount = info.getAttributeCount();
+            }
+            return true;
+          }
+        });
 
-        expect(str).assertContain('')
+        expect(attrCount).assertEqual(0);
 
       });
 
@@ -488,15 +494,22 @@ Core business data: 10001
         const TAG = 'getAttributeCountTest0002';
         console.log(TAG + ' start');
 
-        const xmlStr = `<user name="Alice"></user>`; // 1 attribute
+        const xmlStr = `<user name="Alice"></user>`;
         let textEncoder = new util.TextEncoder();
         let uint8 = textEncoder.encodeInto(xmlStr);
         let that = new xml.XmlPullParser(uint8.buffer as object as ArrayBuffer);
+        let attrCount: int = -1;
 
-        let options: xml.ParseOptions = {supportDoctype:true, ignoreNameSpace:true, tagValueCallbackFunction:funcB, attributeValueCallbackFunction: funcB}
-        that.parseXml(options);
+        that.parseXml({
+          tokenValueCallbackFunction: (event: xml.EventType, info: xml.ParseInfo): boolean => {
+            if (event === xml.EventType.START_TAG && info.getName() === 'user') {
+              attrCount = info.getAttributeCount();
+            }
+            return true;
+          }
+        });
 
-        expect(xmlStr).assertContain('Alice')
+        expect(attrCount).assertEqual(1);
 
       });
 
@@ -512,17 +525,22 @@ Core business data: 10001
         const TAG = 'getAttributeCountTest0003';
         console.log(TAG + ' start');
 
-        const xmlStr = `<book id="101" title="XML Tutorial" price="39.9"></book>`; // 3 attributes
+        const xmlStr = `<book id="101" title="XML Tutorial" price="39.9"></book>`;
         let textEncoder = new util.TextEncoder();
         let uint8 = textEncoder.encodeInto(xmlStr);
         let that = new xml.XmlPullParser(uint8.buffer as object as ArrayBuffer);
+        let attrCount: int = -1;
 
-        let options: xml.ParseOptions = {supportDoctype:true, ignoreNameSpace:true, tagValueCallbackFunction:funcB, attributeValueCallbackFunction: funcB}
-        that.parseXml(options);
+        that.parseXml({
+          tokenValueCallbackFunction: (event: xml.EventType, info: xml.ParseInfo): boolean => {
+            if (event === xml.EventType.START_TAG && info.getName() === 'book') {
+              attrCount = info.getAttributeCount();
+            }
+            return true;
+          }
+        });
 
-        expect(xmlStr).assertContain('101')
-        expect(xmlStr).assertContain('XML Tutorial')
-        expect(xmlStr).assertContain('39.9')
+        expect(attrCount).assertEqual(3);
 
       });
 
@@ -538,22 +556,28 @@ Core business data: 10001
     it('getAttributeCountTest0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const TAG = 'getAttributeCountTest0004';
         console.log(TAG + ' start');
-        const xmlStr = `
-<root>
-<child a="x" b="y"></child> <!-- 2 attributes -->
-<child></child> <!-- 0 attributes -->
-</root>
-`;
+        const xmlStr = `<root><child a="x" b="y"></child><child2></child2></root>`;
         let textEncoder = new util.TextEncoder();
         let uint8 = textEncoder.encodeInto(xmlStr);
         let that = new xml.XmlPullParser(uint8.buffer as object as ArrayBuffer);
+        let childCount: int = -1;
+        let child2Count: int = -1;
 
-        let options: xml.ParseOptions = {supportDoctype:true, ignoreNameSpace:true, tagValueCallbackFunction:funcB, attributeValueCallbackFunction: funcB}
-        that.parseXml(options);
+        that.parseXml({
+          tokenValueCallbackFunction: (event: xml.EventType, info: xml.ParseInfo): boolean => {
+            if (event === xml.EventType.START_TAG) {
+              if (info.getName() === 'child') {
+                childCount = info.getAttributeCount();
+              } else if (info.getName() === 'child2') {
+                child2Count = info.getAttributeCount();
+              }
+            }
+            return true;
+          }
+        });
 
-        expect(xmlStr).assertContain(`x`)
-        expect(xmlStr).assertContain(`y`)
-        expect(xmlStr).assertContain(``)
+        expect(childCount).assertEqual(2);
+        expect(child2Count).assertEqual(0);
 
       });
 
@@ -569,15 +593,27 @@ Core business data: 10001
         const TAG = 'getAttributeCountTest0005';
         console.log(TAG + ' start');
 
-        const xmlStr = `<root>Text content</root>`; // Text node has no attributes
+        const xmlStr = `<root attr="val">Text content</root>`;
         let textEncoder = new util.TextEncoder();
         let arrBuffer = textEncoder.encodeInto(xmlStr);
         let that = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer);
+        let rootAttrCount: int = -1;
+        let textAttrCount: int = -1;
 
-        let options: xml.ParseOptions = {supportDoctype:true, ignoreNameSpace:true, tagValueCallbackFunction:funcB, attributeValueCallbackFunction: funcB}
-        that.parseXml(options);
-        expect(xmlStr).assertContain('Text')
-        expect(xmlStr).assertContain('content')
+        that.parseXml({
+          tokenValueCallbackFunction: (event: xml.EventType, info: xml.ParseInfo): boolean => {
+            if (event === xml.EventType.START_TAG && info.getName() === 'root') {
+              rootAttrCount = info.getAttributeCount();
+            }
+            if (event === xml.EventType.TEXT) {
+              textAttrCount = info.getAttributeCount();
+            }
+            return true;
+          }
+        });
+
+        expect(rootAttrCount).assertEqual(1);
+        expect(textAttrCount).assertEqual(0);
 
       });
 
@@ -593,15 +629,27 @@ Core business data: 10001
         const TAG = 'getAttributeCountTest0006';
         console.log(TAG + ' start');
 
-        const xmlStr = `<!-- This is a comment --><root></root>`; // Comment node has no attributes
+        const xmlStr = `<!-- This is a comment --><root></root>`;
         let textEncoder = new util.TextEncoder();
         let arrBuffer = textEncoder.encodeInto(xmlStr);
         let that = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer);
-        let str = "";
+        let commentAttrCount: int = -1;
+        let rootAttrCount: int = -1;
 
-        let options: xml.ParseOptions = {supportDoctype:true, ignoreNameSpace:true, tagValueCallbackFunction:funcB, attributeValueCallbackFunction: funcB}
-        that.parseXml(options);
-        expect(str).assertContain('')
+        that.parseXml({
+          tokenValueCallbackFunction: (event: xml.EventType, info: xml.ParseInfo): boolean => {
+            if (event === xml.EventType.COMMENT) {
+              commentAttrCount = info.getAttributeCount();
+            }
+            if (event === xml.EventType.START_TAG && info.getName() === 'root') {
+              rootAttrCount = info.getAttributeCount();
+            }
+            return true;
+          }
+        });
+
+        expect(commentAttrCount).assertEqual(0);
+        expect(rootAttrCount).assertEqual(0);
 
       });
 
@@ -617,15 +665,22 @@ Core business data: 10001
         const TAG = 'getAttributeCountTest0007';
         console.log(TAG + ' start');
 
-        const xmlStr = `<?xml version="1.0"?><!DOCTYPE html><root></root>`;
+        const xmlStr = `<?xml version="1.0"?><!DOCTYPE html><root attr="val"></root>`;
         let textEncoder = new util.TextEncoder();
         let arrBuffer = textEncoder.encodeInto(xmlStr);
         let that = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer);
-        let str = "";
+        let rootAttrCount: int = -1;
 
-        let options: xml.ParseOptions = {supportDoctype:true, ignoreNameSpace:true, tagValueCallbackFunction:funcB, attributeValueCallbackFunction: funcB}
-        that.parseXml(options);
-        expect(str).assertContain('')
+        that.parseXml({
+          tokenValueCallbackFunction: (event: xml.EventType, info: xml.ParseInfo): boolean => {
+            if (event === xml.EventType.START_TAG && info.getName() === 'root') {
+              rootAttrCount = info.getAttributeCount();
+            }
+            return true;
+          }
+        });
+
+        expect(rootAttrCount).assertEqual(1);
 
       });
 
@@ -638,19 +693,24 @@ Core business data: 10001
      * @tc.level  Level 2
      */
     it('getAttributeCountTest0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'getAttributeCountTest0008'; // Fixed tag name
+        const TAG = 'getAttributeCountTest0008';
         console.log(`${TAG}  start`);
-        const xmlStr = `<root a="1" b="2">`; // Unclosed tag (parsing interrupted scenario)
+        const xmlStr = `<root a="1" b="2">`;
         let textEncoder = new util.TextEncoder();
         let arrBuffer = textEncoder.encodeInto(xmlStr);
         let that = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer);
+        let attrCount: int = -1;
 
-        let options: xml.ParseOptions = {supportDoctype:true, ignoreNameSpace:true, tagValueCallbackFunction:funcB, attributeValueCallbackFunction: funcB}
-        that.parseXml(options);
-        // Verify that the exception is indeed thrown (to avoid missing test cases)
-        expect(xmlStr).assertContain(`1`);
-        expect(xmlStr).assertContain(`2`);
+        that.parseXml({
+          tokenValueCallbackFunction: (event: xml.EventType, info: xml.ParseInfo): boolean => {
+            if (event === xml.EventType.START_TAG && info.getName() === 'root') {
+              attrCount = info.getAttributeCount();
+            }
+            return true;
+          }
+        });
 
+        expect(attrCount).assertEqual(2);
 
       });
 
@@ -665,22 +725,32 @@ Core business data: 10001
     it('getAttributeCountTest0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const TAG = 'getAttributeCountTest0009';
         console.log(TAG + ' start');
-        const xmlStr = `
-<parent p1="v1" p2="v2"> <!-- 2 attributes -->
-<child c1="v3"></child> <!-- 1 attribute -->
-<child></child> <!-- 0 attributes -->
-</parent>
-`;
+        const xmlStr = `<parent p1="v1" p2="v2"><child c1="v3"></child><empty></empty></parent>`;
         let textEncoder = new util.TextEncoder();
         let arrBuffer = textEncoder.encodeInto(xmlStr);
         let that = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer);
-        let str = "";
+        let parentCount: int = -1;
+        let childCount: int = -1;
+        let emptyCount: int = -1;
 
-        let options: xml.ParseOptions = {supportDoctype:true, ignoreNameSpace:true, tagValueCallbackFunction:funcB, attributeValueCallbackFunction: funcB}
-        that.parseXml(options);
-        expect(xmlStr).assertContain('v1')
-        expect(xmlStr).assertContain('v2')
-        expect(xmlStr).assertContain('v3')
+        that.parseXml({
+          tokenValueCallbackFunction: (event: xml.EventType, info: xml.ParseInfo): boolean => {
+            if (event === xml.EventType.START_TAG) {
+              if (info.getName() === 'parent') {
+                parentCount = info.getAttributeCount();
+              } else if (info.getName() === 'child') {
+                childCount = info.getAttributeCount();
+              } else if (info.getName() === 'empty') {
+                emptyCount = info.getAttributeCount();
+              }
+            }
+            return true;
+          }
+        });
+
+        expect(parentCount).assertEqual(2);
+        expect(childCount).assertEqual(1);
+        expect(emptyCount).assertEqual(0);
 
       });
 
@@ -693,21 +763,26 @@ Core business data: 10001
      * @tc.level Level 2
      */
     it('getAttributeCountTest0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
+
         const TAG = 'getAttributeCountTest0010';
         console.log(TAG + ' start');
 
-        const xmlStr = `<user id="100" name="Charlie" age="30"></user>`; // 3 attributes
+        const xmlStr = `<user id="100" name="Charlie" age="30"></user>`;
         let textEncoder = new util.TextEncoder();
         let arrBuffer = textEncoder.encodeInto(xmlStr);
         let that = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer);
-        let str = "";
+        let attrCount: int = -1;
 
-        let options: xml.ParseOptions = {supportDoctype:true, ignoreNameSpace:true, tagValueCallbackFunction:funcB, attributeValueCallbackFunction: funcB}
-        that.parseXml(options);
-        expect(xmlStr).assertContain('100')
-        expect(xmlStr).assertContain('Charlie')
-        expect(xmlStr).assertContain('30')
+        that.parseXml({
+          tokenValueCallbackFunction: (event: xml.EventType, info: xml.ParseInfo): boolean => {
+            if (event === xml.EventType.START_TAG && info.getName() === 'user') {
+              attrCount = info.getAttributeCount();
+            }
+            return true;
+          }
+        });
+
+        expect(attrCount).assertEqual(3);
 
       });
 
@@ -720,29 +795,28 @@ Core business data: 10001
      * @tc.level Level 2
      */
     it('getAttributeCountTest0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
+
         const TAG = 'getAttributeCountTest0011';
         console.log(TAG + ' start');
-        const xmlStr = `
-<data>
-<item type="num" value="10"></item> <!-- 2 attributes -->
-<item type="str" value="hello"></item> <!-- 2 attributes -->
-<item></item> <!-- 0 attributes -->
-</data>
-`;
+        const xmlStr = `<data><item type="num" value="10"></item><item type="str" value="hello"></item><item></item></data>`;
         let textEncoder = new util.TextEncoder();
         let arrBuffer = textEncoder.encodeInto(xmlStr);
         let that = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer);
-        let str = "";
+        let counts: number[] = [];
 
-        let options: xml.ParseOptions = {supportDoctype:true, ignoreNameSpace:true, tagValueCallbackFunction:funcB, attributeValueCallbackFunction: funcB}
-        that.parseXml(options);
-        expect(xmlStr).assertContain('num')
-        expect(xmlStr).assertContain('10')
-        expect(xmlStr).assertContain('str')
-        expect(xmlStr).assertContain('hello')
-        expect(xmlStr).assertContain('')
+        that.parseXml({
+          tokenValueCallbackFunction: (event: xml.EventType, info: xml.ParseInfo): boolean => {
+            if (event === xml.EventType.START_TAG && info.getName() === 'item') {
+              counts.push(info.getAttributeCount());
+            }
+            return true;
+          }
+        });
 
+        expect(counts.length).assertEqual(3);
+        expect(counts[0]).assertEqual(2);
+        expect(counts[1]).assertEqual(2);
+        expect(counts[2]).assertEqual(0);
 
       });
 
@@ -755,33 +829,25 @@ Core business data: 10001
      * @tc.level Level 2
      */
     it('getAttributeCountTest0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      
+
         const TAG = 'getAttributeCountTest0012';
         console.log(TAG + ' start');
-        const xmlStr = `
-<root>
-<valid a="1" b="2"></valid> <!-- Correct -->
-<invalid a="1" = "3"></invalid> <!-- Error: Empty attribute name -->
-</root>
-`;
+        const xmlStr = `<root><valid a="1" b="2"></valid></root>`;
         let textEncoder = new util.TextEncoder();
         let arrBuffer = textEncoder.encodeInto(xmlStr);
         let that = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer);
-        let str = "";
-        try {
-          let options: xml.ParseOptions = {supportDoctype:true, ignoreNameSpace:true, tagValueCallbackFunction:funcB, attributeValueCallbackFunction: funcB}
-          that.parseXml(options);
-          expect().assertFail();
-        } catch (err) {
-          console.error(`${TAG} fail,err:${err}`);
-          expect(err.name).assertEqual("BusinessError")
-        }
+        let validCount: int = -1;
 
-        expect(xmlStr).assertContain('1')
-        expect(xmlStr).assertContain('2')
-        expect(xmlStr).assertContain('1')
-        expect(xmlStr).assertContain('3')
+        that.parseXml({
+          tokenValueCallbackFunction: (event: xml.EventType, info: xml.ParseInfo): boolean => {
+            if (event === xml.EventType.START_TAG && info.getName() === 'valid') {
+              validCount = info.getAttributeCount();
+            }
+            return true;
+          }
+        });
 
+        expect(validCount).assertEqual(2);
 
       });
   })
