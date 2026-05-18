@@ -6398,6 +6398,9 @@ export default function windowLayoutTest() {
             if (isFreeWindowMode) {
               expect(windowStatusBefore).assertEqual(window.WindowStatusType.FLOATING);
               expect(windowStatus).assertEqual(window.WindowStatusType.MAXIMIZE);
+              if(deviceType == '2in1' && curFoldStatus == 3){
+                expect(windowHeight === displayHeight || windowHeight > displayHeight).assertTrue();
+              }
             }else {
               expect(windowStatusBefore).assertEqual(window.WindowStatusType.FULL_SCREEN);
               expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
@@ -6459,9 +6462,6 @@ export default function windowLayoutTest() {
             if (isFreeWindowMode) {
               expect(windowStatusBefore).assertEqual(window.WindowStatusType.FLOATING);
               expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
-              if(deviceType == '2in1' && curFoldStatus == 3){
-                expect(windowHeight === displayHeight || windowHeight > displayHeight).assertTrue();
-              }
             }else {
               expect(windowStatusBefore).assertEqual(window.WindowStatusType.FULL_SCREEN);
               expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
