@@ -60,8 +60,6 @@ async function stopFloatViewOnStarted(floatViewController: floatView.FloatViewCo
         try {
           floatViewController.stop();
           console.info(caseName + ' stopFloatViewOnStarted Succeeded in stopping float view.');
-          floatViewController.offStateChange();
-          console.info(caseName + ' stopFloatViewOnStarted Succeeded in unregistering stateChange callback.');
           resolve(0);
         } catch (e) {
           console.error(caseName + ' stopFloatViewOnStarted Failed to stop. Cause: ' + e.code + ', message: ' + e.message);
@@ -81,8 +79,6 @@ function callDoneOnStopped(floatViewController: floatView.FloatViewController, c
     console.info(caseName + ' callDoneOnStopped Float view stateChange: ' + info.state);
     if (info.state === floatView.FloatViewState.STOPPED) {
       expect(info.stopReason).assertEqual('APP_STOP')
-      floatViewController.offStateChange();
-      console.info(caseName + ' callDoneOnStopped Succeeded in unregistering stateChange callback.');
       done();
     }
   };
@@ -478,7 +474,7 @@ export default function abilityTest():void {
         callDoneOnStopped(floatViewController, CaseName, done)
         stopFloatViewOnStarted(floatViewController, CaseName)
         console.info(CaseName + ' Succeeded in creating float view controller.');
-        await floatViewController.setUIContext('testability/pages/Index');
+        await floatViewController.setUIContext('pages/Index');
         console.info(CaseName + ' Succeeded in setting UI context.');
         floatViewController.start().then(async () => {
           console.info(CaseName + ' Succeeded in starting float view.');
@@ -2227,6 +2223,59 @@ export default function abilityTest():void {
         }).catch((err: Error) => {
           console.error(CaseName + ' Failed to unbind. Cause: ' + err.code + ', message: ' + err.message);
           expect(err.code).assertEqual(1300025);
+          expect(err.message != null).assertTrue();
+          done();
+        });
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && (!isDeviceSupportFloatView || !isDeviceSupportFloatBall)) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_unbind_floatView_started
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_UNBIND_0300
+     * @tc.desc   test unbind when floatView has started but not stopped yet
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_unbind_floatView_started', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let CaseName: string = 'test_unbind_floatView_started';
+      console.log(CaseName + ' begin.');
+      let floatViewConfig: floatView.FloatViewConfiguration = {
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      let floatingBallConfig: floatingBall.FloatingBallConfiguration = {
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
+      };
+      let floatingBallParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title'
+      };
+      try {
+        let floatViewController = await floatView.create(floatViewConfig);
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        let floatingBallController = await floatingBall.create(floatingBallConfig);
+        console.info(CaseName + ' Succeeded in creating floating ball controller.');
+        await floatView.bind(floatViewController, floatingBallController, floatingBallParams);
+        console.info(CaseName + ' Succeeded in binding floatView and floatingBall.');
+        await floatViewController.setUIContext("testability/pages/First/index");
+        let floatViewController2 = await floatView.create(floatViewConfig);
+        floatView.unbind(floatViewController2, floatingBallController).then(async () => {
+          console.info(CaseName + ' Succeeded in unbinding.');
+          expect(false).assertTrue();
+          done();
+        }).catch(async (err: Error) => {
+          console.error(CaseName + ' Failed to unbind. Cause: ' + err.code + ', message: ' + err.message);
+          expect(err.code).assertEqual(1300031);
           expect(err.message != null).assertTrue();
           done();
         });
