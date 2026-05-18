@@ -32,6 +32,7 @@
     "MainAbility/pages/Monitor/MonitorWildcards",
     "MainAbility/pages/AddMonitor/AddMonitorWildcard",
     "MainAbility/pages/AddMonitor/AddMonitorWildcardUnerfined",
+    "MainAbility/pages/lifecycle/ComponentLifecycleDecorators",
     "MainAbility/pages/lifecycle/ReuseComponentLifecycle",
     "MainAbility/pages/lifecycle/ReuseV2ComponentLifecycle"
   ]
