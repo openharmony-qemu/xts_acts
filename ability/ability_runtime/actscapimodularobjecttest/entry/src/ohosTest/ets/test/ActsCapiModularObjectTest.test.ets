@@ -749,5 +749,533 @@ export default function ActsCapiModularObjectTest() {
           done();
         }
       })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ModularObject_2600
+     * @tc.number SUB_Ability_AbilityRuntime_ModularObject_2600
+     * @tc.desc   Testing OH_AbilityRuntime_ModObjExtensionAbility_RegisterOnCreateFunc with nullptr.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_ModularObject_2600',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        const TESTCASE_NAME = `SUB_Ability_AbilityRuntime_ModularObject_2600`;
+        try {
+          let result: string = AbilityKitTest.ModularObject_2600();
+          hilog.info(DOMAIN, TAG, `${TESTCASE_NAME} result: ${result}`);
+          if (result === ERRORCODE_801) {
+            expect(result).assertEqual(ERRORCODE_801);
+            done();
+          } else {
+            expect(result).assertContain('success');
+            done();
+          }
+        } catch (e) {
+          let err: BusinessError = e as BusinessError;
+          hilog.info(DOMAIN, TAG, `${TESTCASE_NAME} catch code: ${err.code}`);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ModularObject_2700
+     * @tc.number SUB_Ability_AbilityRuntime_ModularObject_2700
+     * @tc.desc   Testing OH_AbilityRuntime_ModObjExtensionAbility_RegisterOnDestroyFunc with nullptr.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_ModularObject_2700',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        const TESTCASE_NAME = `SUB_Ability_AbilityRuntime_ModularObject_2700`;
+        try {
+          let result: string = AbilityKitTest.ModularObject_2700();
+          hilog.info(DOMAIN, TAG, `${TESTCASE_NAME} result: ${result}`);
+          if (result === ERRORCODE_801) {
+            expect(result).assertEqual(ERRORCODE_801);
+            done();
+          } else {
+            expect(result).assertContain('success');
+            done();
+          }
+        } catch (e) {
+          let err: BusinessError = e as BusinessError;
+          hilog.info(DOMAIN, TAG, `${TESTCASE_NAME} catch code: ${err.code}`);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ModularObject_2800
+     * @tc.number SUB_Ability_AbilityRuntime_ModularObject_2800
+     * @tc.desc   Testing OH_AbilityRuntime_ModObjExtensionAbility_RegisterOnConnectFunc with nullptr.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_ModularObject_2800',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        const TESTCASE_NAME = `SUB_Ability_AbilityRuntime_ModularObject_2800`;
+        try {
+          let result: string = AbilityKitTest.ModularObject_2800();
+          hilog.info(DOMAIN, TAG, `${TESTCASE_NAME} result: ${result}`);
+          if (result === ERRORCODE_801) {
+            expect(result).assertEqual(ERRORCODE_801);
+            done();
+          } else {
+            expect(result).assertContain('success');
+            done();
+          }
+        } catch (e) {
+          let err: BusinessError = e as BusinessError;
+          hilog.info(DOMAIN, TAG, `${TESTCASE_NAME} catch code: ${err.code}`);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ModularObject_2900
+     * @tc.number SUB_Ability_AbilityRuntime_ModularObject_2900
+     * @tc.desc   Testing OH_AbilityRuntime_ModObjExtensionAbility_RegisterOnDisconnectFunc with nullptr.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_ModularObject_2900',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        const TESTCASE_NAME = `SUB_Ability_AbilityRuntime_ModularObject_2900`;
+        try {
+          let result: string = AbilityKitTest.ModularObject_2900();
+          hilog.info(DOMAIN, TAG, `${TESTCASE_NAME} result: ${result}`);
+          if (result === ERRORCODE_801) {
+            expect(result).assertEqual(ERRORCODE_801);
+            done();
+          } else {
+            expect(result).assertContain('success');
+            done();
+          }
+        } catch (e) {
+          let err: BusinessError = e as BusinessError;
+          hilog.info(DOMAIN, TAG, `${TESTCASE_NAME} catch code: ${err.code}`);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ModularObject_3000
+     * @tc.number SUB_Ability_AbilityRuntime_ModularObject_3000
+     * @tc.desc   Testing OH_AbilityRuntime_ModObjExtensionAbility_GetContextFromInstance with nullptr.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_ModularObject_3000',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        const TESTCASE_NAME = `SUB_Ability_AbilityRuntime_ModularObject_3000`;
+        try {
+          let result: string = AbilityKitTest.ModularObject_3000();
+          hilog.info(DOMAIN, TAG, `${TESTCASE_NAME} result: ${result}`);
+          if (result === ERRORCODE_801) {
+            expect(result).assertEqual(ERRORCODE_801);
+            done();
+          } else {
+            expect(result).assertContain('success');
+            done();
+          }
+        } catch (e) {
+          let err: BusinessError = e as BusinessError;
+          hilog.info(DOMAIN, TAG, `${TESTCASE_NAME} catch code: ${err.code}`);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ModularObject_3100
+     * @tc.number SUB_Ability_AbilityRuntime_ModularObject_3100
+     * @tc.desc   Testing OH_AbilityRuntime_ModObjExtensionAbility_GetInstanceFromBase with nullptr.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_ModularObject_3100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        const TESTCASE_NAME = `SUB_Ability_AbilityRuntime_ModularObject_3100`;
+        try {
+          let result: string = AbilityKitTest.ModularObject_3100();
+          hilog.info(DOMAIN, TAG, `${TESTCASE_NAME} result: ${result}`);
+          if (result === ERRORCODE_801) {
+            expect(result).assertEqual(ERRORCODE_801);
+            done();
+          } else {
+            expect(result).assertContain('success');
+            done();
+          }
+        } catch (e) {
+          let err: BusinessError = e as BusinessError;
+          hilog.info(DOMAIN, TAG, `${TESTCASE_NAME} catch code: ${err.code}`);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ModularObject_3200
+     * @tc.number SUB_Ability_AbilityRuntime_ModularObject_3200
+     * @tc.desc   Testing OH_AbilityRuntime_ModObjExtensionContext_GetBaseContext with nullptr.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_ModularObject_3200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        const TESTCASE_NAME = `SUB_Ability_AbilityRuntime_ModularObject_3200`;
+        try {
+          let result: string = AbilityKitTest.ModularObject_3200();
+          hilog.info(DOMAIN, TAG, `${TESTCASE_NAME} result: ${result}`);
+          if (result === ERRORCODE_801) {
+            expect(result).assertEqual(ERRORCODE_801);
+            done();
+          } else {
+            expect(result).assertContain('success');
+            done();
+          }
+        } catch (e) {
+          let err: BusinessError = e as BusinessError;
+          hilog.info(DOMAIN, TAG, `${TESTCASE_NAME} catch code: ${err.code}`);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ModularObject_3300
+     * @tc.number SUB_Ability_AbilityRuntime_ModularObject_3300
+     * @tc.desc   Testing OH_AbilityRuntime_ModObjExtensionContext_StartSelfUIAbility with nullptr.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_ModularObject_3300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        const TESTCASE_NAME = `SUB_Ability_AbilityRuntime_ModularObject_3300`;
+        try {
+          let result: string = AbilityKitTest.ModularObject_3300();
+          hilog.info(DOMAIN, TAG, `${TESTCASE_NAME} result: ${result}`);
+          if (result === ERRORCODE_801) {
+            expect(result).assertEqual(ERRORCODE_801);
+            done();
+          } else {
+            expect(result).assertContain('success');
+            done();
+          }
+        } catch (e) {
+          let err: BusinessError = e as BusinessError;
+          hilog.info(DOMAIN, TAG, `${TESTCASE_NAME} catch code: ${err.code}`);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ModularObject_3400
+     * @tc.number SUB_Ability_AbilityRuntime_ModularObject_3400
+     * @tc.desc   Testing OH_AbilityRuntime_ModObjExtensionContext_StartSelfUIAbilityWithStartOptions with nullptr.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_ModularObject_3400',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        const TESTCASE_NAME = `SUB_Ability_AbilityRuntime_ModularObject_3400`;
+        try {
+          let result: string = AbilityKitTest.ModularObject_3400();
+          hilog.info(DOMAIN, TAG, `${TESTCASE_NAME} result: ${result}`);
+          if (result === ERRORCODE_801) {
+            expect(result).assertEqual(ERRORCODE_801);
+            done();
+          } else {
+            expect(result).assertContain('success');
+            done();
+          }
+        } catch (e) {
+          let err: BusinessError = e as BusinessError;
+          hilog.info(DOMAIN, TAG, `${TESTCASE_NAME} catch code: ${err.code}`);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ModularObject_3500
+     * @tc.number SUB_Ability_AbilityRuntime_ModularObject_3500
+     * @tc.desc   Testing OH_AbilityRuntime_ModObjExtensionContext_TerminateSelf with nullptr.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_ModularObject_3500',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        const TESTCASE_NAME = `SUB_Ability_AbilityRuntime_ModularObject_3500`;
+        try {
+          let result: string = AbilityKitTest.ModularObject_3500();
+          hilog.info(DOMAIN, TAG, `${TESTCASE_NAME} result: ${result}`);
+          if (result === ERRORCODE_801) {
+            expect(result).assertEqual(ERRORCODE_801);
+            done();
+          } else {
+            expect(result).assertContain('success');
+            done();
+          }
+        } catch (e) {
+          let err: BusinessError = e as BusinessError;
+          hilog.info(DOMAIN, TAG, `${TESTCASE_NAME} catch code: ${err.code}`);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ModularObject_3600
+     * @tc.number SUB_Ability_AbilityRuntime_ModularObject_3600
+     * @tc.desc   Testing OH_AbilityRuntime_ModObjExtensionContext_CreateIPCRemoteStub with nullptr.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_ModularObject_3600',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        const TESTCASE_NAME = `SUB_Ability_AbilityRuntime_ModularObject_3600`;
+        try {
+          let result: string = AbilityKitTest.ModularObject_3600();
+          hilog.info(DOMAIN, TAG, `${TESTCASE_NAME} result: ${result}`);
+          if (result === ERRORCODE_801) {
+            expect(result).assertEqual(ERRORCODE_801);
+            done();
+          } else {
+            expect(result).assertContain('success');
+            done();
+          }
+        } catch (e) {
+          let err: BusinessError = e as BusinessError;
+          hilog.info(DOMAIN, TAG, `${TESTCASE_NAME} catch code: ${err.code}`);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ModularObject_3700
+     * @tc.number SUB_Ability_AbilityRuntime_ModularObject_3700
+     * @tc.desc   Testing OH_AbilityRuntime_ModObjExtensionContext_DestroyIPCRemoteStub with nullptr.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_ModularObject_3700',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        const TESTCASE_NAME = `SUB_Ability_AbilityRuntime_ModularObject_3700`;
+        try {
+          let result: string = AbilityKitTest.ModularObject_3700();
+          hilog.info(DOMAIN, TAG, `${TESTCASE_NAME} result: ${result}`);
+          if (result === ERRORCODE_801) {
+            expect(result).assertEqual(ERRORCODE_801);
+            done();
+          } else {
+            expect(result).assertContain('success');
+            done();
+          }
+        } catch (e) {
+          let err: BusinessError = e as BusinessError;
+          hilog.info(DOMAIN, TAG, `${TESTCASE_NAME} catch code: ${err.code}`);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0100
+     * @tc.desc   Testing ABILITY_RUNTIME_ERROR_CODE_VISIBILITY_VERIFICATION_FAILED is 16000004.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        const TESTCASE_NAME = `SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0100`;
+        hilog.info(DOMAIN, TAG, `begin of ${TESTCASE_NAME}`);
+        let result = AbilityKitTest.ModularObject_ErrCode_0100();
+        expect(result).assertEqual(16000004);
+        hilog.info(DOMAIN, TAG, `end of ${TESTCASE_NAME}`);
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0200
+     * @tc.number SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0200
+     * @tc.desc   Testing ABILITY_RUNTIME_ERROR_CODE_STATIC_CFG_PERMISSION is 16000005.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        const TESTCASE_NAME = `SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0200`;
+        hilog.info(DOMAIN, TAG, `begin of ${TESTCASE_NAME}`);
+        let result = AbilityKitTest.ModularObject_ErrCode_0200();
+        expect(result).assertEqual(16000005);
+        hilog.info(DOMAIN, TAG, `end of ${TESTCASE_NAME}`);
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0300
+     * @tc.number SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0300
+     * @tc.desc   Testing ABILITY_RUNTIME_ERROR_CODE_CROSS_USER_OPERATION is 16000006.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        const TESTCASE_NAME = `SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0300`;
+        hilog.info(DOMAIN, TAG, `begin of ${TESTCASE_NAME}`);
+        let result = AbilityKitTest.ModularObject_ErrCode_0300();
+        expect(result).assertEqual(16000006);
+        hilog.info(DOMAIN, TAG, `end of ${TESTCASE_NAME}`);
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0400
+     * @tc.number SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0400
+     * @tc.desc   Testing ABILITY_RUNTIME_ERROR_CODE_NO_RUNNING_ABILITIES_WITH_UI is 16000170.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0400',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        const TESTCASE_NAME = `SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0400`;
+        hilog.info(DOMAIN, TAG, `begin of ${TESTCASE_NAME}`);
+        let result = AbilityKitTest.ModularObject_ErrCode_0400();
+        expect(result).assertEqual(16000170);
+        hilog.info(DOMAIN, TAG, `end of ${TESTCASE_NAME}`);
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0500
+     * @tc.number SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0500
+     * @tc.desc   Testing ABILITY_RUNTIME_ERROR_CODE_UPPER_RATE_LIMIT is 16000171.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0500',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        const TESTCASE_NAME = `SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0500`;
+        hilog.info(DOMAIN, TAG, `begin of ${TESTCASE_NAME}`);
+        let result = AbilityKitTest.ModularObject_ErrCode_0500();
+        expect(result).assertEqual(16000171);
+        hilog.info(DOMAIN, TAG, `end of ${TESTCASE_NAME}`);
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0600
+     * @tc.number SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0600
+     * @tc.desc   Testing ABILITY_RUNTIME_ERROR_CODE_UPPER_CONNECTION_NUMBER_LIMIT is 16000172.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0600',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        const TESTCASE_NAME = `SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0600`;
+        hilog.info(DOMAIN, TAG, `begin of ${TESTCASE_NAME}`);
+        let result = AbilityKitTest.ModularObject_ErrCode_0600();
+        expect(result).assertEqual(16000172);
+        hilog.info(DOMAIN, TAG, `end of ${TESTCASE_NAME}`);
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0700
+     * @tc.number SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0700
+     * @tc.desc   Testing ABILITY_RUNTIME_ERROR_CODE_PROPERTY_NOT_FOUND is 16000173.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0700',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        const TESTCASE_NAME = `SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0700`;
+        hilog.info(DOMAIN, TAG, `begin of ${TESTCASE_NAME}`);
+        let result = AbilityKitTest.ModularObject_ErrCode_0700();
+        expect(result).assertEqual(16000173);
+        hilog.info(DOMAIN, TAG, `end of ${TESTCASE_NAME}`);
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0800
+     * @tc.number SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0800
+     * @tc.desc   Testing ABILITY_RUNTIME_ERROR_CODE_TYPE_MISMATCH is 16000174.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0800',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        const TESTCASE_NAME = `SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0800`;
+        hilog.info(DOMAIN, TAG, `begin of ${TESTCASE_NAME}`);
+        let result = AbilityKitTest.ModularObject_ErrCode_0800();
+        expect(result).assertEqual(16000174);
+        hilog.info(DOMAIN, TAG, `end of ${TESTCASE_NAME}`);
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0900
+     * @tc.number SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0900
+     * @tc.desc   Testing ABILITY_RUNTIME_ERROR_CODE_SEND_REQUEST_FAILED is 16000175.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0900',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        const TESTCASE_NAME = `SUB_Ability_AbilityRuntime_ModularObject_ErrCode_0900`;
+        hilog.info(DOMAIN, TAG, `begin of ${TESTCASE_NAME}`);
+        let result = AbilityKitTest.ModularObject_ErrCode_0900();
+        expect(result).assertEqual(16000175);
+        hilog.info(DOMAIN, TAG, `end of ${TESTCASE_NAME}`);
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ModularObject_ErrCode_1000
+     * @tc.number SUB_Ability_AbilityRuntime_ModularObject_ErrCode_1000
+     * @tc.desc   Testing ABILITY_RUNTIME_ERROR_CODE_CROSS_APP_IN_PROCESS is 16000176.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRuntime_ModularObject_ErrCode_1000',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        const TESTCASE_NAME = `SUB_Ability_AbilityRuntime_ModularObject_ErrCode_1000`;
+        hilog.info(DOMAIN, TAG, `begin of ${TESTCASE_NAME}`);
+        let result = AbilityKitTest.ModularObject_ErrCode_1000();
+        expect(result).assertEqual(16000176);
+        hilog.info(DOMAIN, TAG, `end of ${TESTCASE_NAME}`);
+        done();
+      })
   })
 }
