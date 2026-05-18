@@ -6391,7 +6391,7 @@ export default function windowLayoutTest() {
             await sleep(200)
             console.info(`${caseName} Succeeded in maximizing window with full config.`);
             let windowStatus = mainWindow!.getWindowStatus();
-            let windowHeight = mainWindow!.getWindowProperties().windowRect.heigh;
+            let windowHeight = mainWindow!.getWindowProperties().windowRect.height;
             console.info(`${caseName} Succeeded in get window windowHeight is: ${JSON.stringify(windowHeight)}`);
             await terminateAbility(caseName);
             console.info(`${caseName} Succeeded in get window status is: ${JSON.stringify(windowStatus)}`);
@@ -6584,7 +6584,7 @@ export default function windowLayoutTest() {
             await sleep(200)
             console.info(`${caseName} Succeeded in maximizing window with across and snapshot.`);
             let windowStatus = mainWindow!.getWindowStatus();
-            let windowHeight = mainWindow!.getWindowProperties().windowRect.heigh;
+            let windowHeight = mainWindow!.getWindowProperties().windowRect.height;
             console.info(`${caseName} Succeeded in get window windowHeight is: ${JSON.stringify(windowHeight)}`);
             await terminateAbility(caseName);
             console.info(`${caseName} Succeeded in get window status is: ${JSON.stringify(windowStatus)}`);
