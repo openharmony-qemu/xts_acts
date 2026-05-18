@@ -217,8 +217,8 @@ export default function ImageMetadataTestStatic(): void {
      * @tc.type      Function
      * @tc.level     Level 1
      */
-    it('SUB_MEDIA_IMAGE_HEIFS_METADATA_pngMetadata_PropertyKey_STATIC_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      const testName = "SUB_MEDIA_IMAGE_HEIFS_METADATA_pngMetadata_PropertyKey_STATIC_0100";
+    it('SUB_MEDIA_IMAGE_HEIFS_METADATA_jfifMetadata_PropertyKey_STATIC_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const testName = "SUB_MEDIA_IMAGE_HEIFS_METADATA_jfifMetadata_PropertyKey_STATIC_0100";
       let filePath = await getFilePath("sample2.jfif");
       try {
         const imageSourceObj: image.ImageSource | undefined = image.createImageSource(filePath);
