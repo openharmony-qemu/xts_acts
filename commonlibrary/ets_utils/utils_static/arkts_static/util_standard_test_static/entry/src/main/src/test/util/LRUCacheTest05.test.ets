@@ -1694,6 +1694,322 @@ export default function LRUCache05Test(): void {
       console.info(TAG + " end");
     });
 
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRU_CACHEFIVE_5800
+     * @tc.name      testLRUCacheAfterRemoval05_0058
+     * @tc.desc      Verify Manual Removal (remove/delete) updates state correctly.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLRUCacheAfterRemoval05_0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheAfterRemoval05_0058";
+      console.info(TAG + " start");
+
+      const lru = new util.LRUCache<number, string>(5);
+      lru.put(1, "A");
+
+      const removedVal = lru.remove(1);
+
+      expect(removedVal).assertEqual("A");
+      expect(lru.length).assertEqual(0);
+      expect(lru.contains(1)).assertFalse();
+
+      console.info(TAG + " end");
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRU_CACHEFIVE_5900
+     * @tc.name      testLRUCacheAfterRemoval05_0059
+     * @tc.desc      Verify Key Update (put existing key) updates value correctly.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLRUCacheAfterRemoval05_0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheAfterRemoval05_0059";
+      console.info(TAG + " start");
+
+      const lru = new util.LRUCache<number, string>(5);
+      lru.put(1, "Old");
+      expect(lru.get(1)).assertEqual("Old");
+
+      lru.put(1, "New");
+
+      expect(lru.length).assertEqual(1);
+      expect(lru.get(1)).assertEqual("New");
+
+      console.info(TAG + " end");
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRU_CACHEFIVE_6000
+     * @tc.name      testLRUCacheAfterRemoval05_0060
+     * @tc.desc      Verify Clear operation resets the cache state.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLRUCacheAfterRemoval05_0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheAfterRemoval05_0060";
+      console.info(TAG + " start");
+
+      const lru = new util.LRUCache<number, string>(5);
+      lru.put(1, "A");
+      lru.put(2, "B");
+
+      lru.clear();
+
+      expect(lru.isEmpty()).assertTrue();
+      expect(lru.length).assertEqual(0);
+      expect(lru.get(1)).assertUndefined();
+      expect(lru.get(2)).assertUndefined();
+
+      console.info(TAG + " end");
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRU_CACHEFIVE_6100
+     * @tc.name      testLRUCacheAfterRemoval05_0061
+     * @tc.desc      Verify String Keys are handled correctly.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLRUCacheAfterRemoval05_0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheAfterRemoval05_0061";
+      console.info(TAG + " start");
+
+      const lru = new util.LRUCache<string, number>(2);
+      lru.put("KeyA", 100);
+      lru.put("KeyB", 200);
+      lru.put("KeyC", 300);
+
+      expect(lru.contains("KeyA")).assertFalse();
+      expect(lru.get("KeyB")).assertEqual(200);
+      expect(lru.get("KeyC")).assertEqual(300);
+
+      console.info(TAG + " end");
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRU_CACHEFIVE_6200
+     * @tc.name      testLRUCacheAfterRemoval05_0062
+     * @tc.desc      Verify Object Values are stored and retrieved by reference.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLRUCacheAfterRemoval05_0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheAfterRemoval05_0062";
+      console.info(TAG + " start");
+
+      const lru = new util.LRUCache<number, TestObj>(5);
+
+      const obj1: TestObj = { id: 1 };
+      lru.put(1, obj1);
+
+      const retrieved = lru.get(1);
+
+      expect(retrieved).assertEqual(obj1);
+
+      if (retrieved) {
+        expect(retrieved.id).assertEqual(1);
+      }
+
+      lru.remove(1);
+      expect(lru.get(1)).assertUndefined();
+
+      console.info(TAG + " end");
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRU_CACHEFIVE_6300
+     * @tc.name      testLRUCacheAfterRemoval05_0063
+     * @tc.desc      Verify behavior with Array values (Update logic).
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLRUCacheAfterRemoval05_0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheAfterRemoval05_0063";
+      console.info(TAG + " start");
+
+      const lru = new util.LRUCache<string, number[]>(5);
+      lru.put("Arr", [1, 2] as number[]);
+
+      const newArr: number[] = [3, 4];
+      lru.put("Arr", newArr);
+
+      const result = lru.get("Arr");
+
+      expect(result).assertEqual(newArr);
+      if (result) {
+        expect(result.length).assertEqual(2);
+        expect(result[0]).assertEqual(3);
+      } else {
+        expect().assertFail();
+      }
+
+      console.info(TAG + " end");
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRU_CACHEFIVE_6400
+     * @tc.name      testLRUCacheAfterRemoval05_0064
+     * @tc.desc      Verify behavior with Capacity 1 (Ping-Pong eviction).
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLRUCacheAfterRemoval05_0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheAfterRemoval05_0064";
+      console.info(TAG + " start");
+
+      const lru = new util.LRUCache<number, string>(1);
+
+      lru.put(1, "A");
+      expect(lru.contains(1)).assertTrue();
+
+      lru.put(2, "B");
+      expect(lru.contains(1)).assertFalse();
+      expect(lru.contains(2)).assertTrue();
+
+      lru.put(3, "C");
+      expect(lru.contains(2)).assertFalse();
+      expect(lru.contains(3)).assertTrue();
+      expect(lru.get(3)).assertEqual("C");
+
+      console.info(TAG + " end");
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRU_CACHEFIVE_6500
+     * @tc.name      testLRUCacheAfterRemoval05_0065
+     * @tc.desc      Verify removing non-existent key behaves correctly (No Op).
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLRUCacheAfterRemoval05_0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheAfterRemoval05_0065";
+      console.info(TAG + " start");
+
+      const lru = new util.LRUCache<number, string>(5);
+      lru.put(1, "A");
+
+      const result = lru.remove(99);
+
+      expect(result).assertUndefined();
+      expect(lru.length).assertEqual(1);
+      expect(lru.get(1)).assertEqual("A");
+
+      console.info(TAG + " end");
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRU_CACHEFIVE_6600
+     * @tc.name      testLRUCacheAfterRemoval05_0066
+     * @tc.desc      Verify clearing empty cache is safe.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLRUCacheAfterRemoval05_0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheAfterRemoval05_0066";
+      console.info(TAG + " start");
+
+      const lru = new util.LRUCache<number, string>(5);
+      expect(lru.length).assertEqual(0);
+
+      lru.clear();
+
+      expect(lru.isEmpty()).assertTrue();
+      expect(lru.length).assertEqual(0);
+
+      console.info(TAG + " end");
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRU_CACHEFIVE_6700
+     * @tc.name      testLRUCacheAfterRemoval05_0067
+     * @tc.desc      Verify re-insertion logic (Manual Resurrection).
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLRUCacheAfterRemoval05_0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheAfterRemoval05_0067";
+      console.info(TAG + " start");
+
+      const lru = new util.LRUCache<number, string>(5);
+      lru.put(1, "Resurrect");
+
+      lru.remove(1);
+      expect(lru.contains(1)).assertFalse();
+
+      lru.put(99, "Resurrect");
+
+      expect(lru.contains(1)).assertFalse();
+      expect(lru.contains(99)).assertTrue();
+      expect(lru.get(99)).assertEqual("Resurrect");
+
+      console.info(TAG + " end");
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRU_CACHEFIVE_6800
+     * @tc.name      testLRUCacheAfterRemoval05_0068
+     * @tc.desc      Verify mixed sequence: Update then Evict (State Check).
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLRUCacheAfterRemoval05_0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheAfterRemoval05_0068";
+      console.info(TAG + " start");
+
+      const lru = new util.LRUCache<number, string>(1);
+      lru.put(1, "Version1");
+
+      lru.put(1, "Version2");
+      expect(lru.get(1)).assertEqual("Version2");
+
+      lru.put(2, "B");
+
+      expect(lru.contains(1)).assertFalse();
+      expect(lru.get(2)).assertEqual("B");
+
+      console.info(TAG + " end");
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRU_CACHEFIVE_6900
+     * @tc.name      testLRUCacheAfterRemoval05_0069
+     * @tc.desc      Verify multiple items eviction logic.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testLRUCacheAfterRemoval05_0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = "testLRUCacheAfterRemoval05_0069";
+      console.info(TAG + " start");
+
+      const lru = new util.LRUCache<number, string>(2);
+      lru.put(1, "A");
+      lru.put(2, "B");
+
+      lru.put(3, "C");
+      lru.put(4, "D");
+
+      expect(lru.contains(1)).assertFalse();
+      expect(lru.contains(2)).assertFalse();
+
+      expect(lru.contains(3)).assertTrue();
+      expect(lru.contains(4)).assertTrue();
+
+      console.info(TAG + " end");
+    });
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_LRU_CACHEFIVE_7000
