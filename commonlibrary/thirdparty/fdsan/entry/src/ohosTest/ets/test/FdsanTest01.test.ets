@@ -402,13 +402,13 @@ export default function Fdsan01Test() {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FDSANTESTONE_3000
      * @tc.name testFdsan01Chapter0030
-     * @tc.desc Nested error level FATAL: trigger double close, verify program abort and generate crash dump file
+     * @tc.desc Nested error level WARN ALWAYS: trigger double close, verify program abort and generate crash dump file
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFdsan01Chapter0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const result: boolean = testNapi.testFdsanComNestedErrorLevelFatal();
+      const result: boolean = testNapi.testFdsanComNestedErrorLevelWarnAlways();
       expect(result).assertTrue();
     });
 
