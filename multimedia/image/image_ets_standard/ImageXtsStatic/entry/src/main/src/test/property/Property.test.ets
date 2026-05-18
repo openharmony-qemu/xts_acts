@@ -456,8 +456,8 @@ export default function MakerNoteHuaweiMetadataTest(): void {
      * @tc.type       Function
      * @tc.level      Level 0
      */
-    it('SUB_MEDIA_IMAGE_TiffPropertyKey_static_0100', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'SUB_MEDIA_IMAGE_TiffPropertyKey_static_0100';
+    it('SUB_MEDIA_IMAGE_JfifPropertyKey_static_0100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_JfifPropertyKey_static_0100';
       try {
         expect(image.JfifPropertyKey.DENSITY_UNIT).assertEqual('JfifDensityUnit');
         expect(image.JfifPropertyKey.X_DENSITY).assertEqual('JfifXDensity');
