@@ -700,7 +700,7 @@ export default function AVTranscoderTest() {
     it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0100';
       await createAVTranscoder(done, testContext, testName);
-      await avTranscoder?.addWatermark(watermarkPixelMap, watermarkConfig).then((watermarkId: number) => {
+      await mTranscoder?.addWatermark(imagePixelmap, waterMarkConfig).then((watermarkId: number) => {
         console.info('addWatermark success, watermarkId: ' + watermarkId);
         expect(watermarkId).assertEqual(1);
       }).catch((err: BusinessError) => {
@@ -725,7 +725,7 @@ export default function AVTranscoderTest() {
       const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0200';
       await createAVTranscoder(done, testContext, testName);
       await prepareAVTranscoder(done, testName);
-      await avTranscoder?.addWatermark(watermarkPixelMap, watermarkConfig).then((watermarkId: number) => {
+      await mTranscoder?.addWatermark(imagePixelmap, waterMarkConfig).then((watermarkId: number) => {
         console.info('addWatermark success, watermarkId: ' + watermarkId);
         expect().assertFail();
       }).catch((err: BusinessError) => {
@@ -749,7 +749,7 @@ export default function AVTranscoderTest() {
       try {
         // 循环调用 addWatermark 6次
         for (let i = 0; i < 6; i++) {
-          const watermarkId: number = await avTranscoder?.addWatermark(watermarkPixelMap, watermarkConfig);
+          const watermarkId: number = await mTranscoder?.addWatermark(imagePixelmap, waterMarkConfig);
           console.info(`addWatermark success, times: ${i + 1}, watermarkId: ${watermarkId}`);
           expect(watermarkId).assertEqual(i + 1);
         }
@@ -770,7 +770,7 @@ export default function AVTranscoderTest() {
     it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0400', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0400';
       await createAVTranscoder(done, testContext, testName);
-      await avTranscoder?.addWatermark(null, watermarkConfig).then((watermarkId: number) => {
+      await mTranscoder?.addWatermark(null, waterMarkConfig).then((watermarkId: number) => {
         console.info('addWatermark success, watermarkId: ' + watermarkId);
         expect().assertFail();
       }).catch((err: BusinessError) => {
@@ -791,7 +791,7 @@ export default function AVTranscoderTest() {
     it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0500', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0500';
       await createAVTranscoder(done, testContext, testName);
-      await avTranscoder?.addWatermark(undefined, watermarkConfig).then((watermarkId: number) => {
+      await mTranscoder?.addWatermark(undefined, waterMarkConfig).then((watermarkId: number) => {
         console.info('addWatermark success, watermarkId: ' + watermarkId);
         expect().assertFail();
       }).catch((err: BusinessError) => {
@@ -812,7 +812,7 @@ export default function AVTranscoderTest() {
     it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0600', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0600';
       await createAVTranscoder(done, testContext, testName);
-      await avTranscoder?.addWatermark(watermarkPixelMap, null).then((watermarkId: number) => {
+      await mTranscoder?.addWatermark(imagePixelmap, null).then((watermarkId: number) => {
         console.info('addWatermark success, watermarkId: ' + watermarkId);
         expect().assertFail();
       }).catch((err: BusinessError) => {
@@ -833,7 +833,7 @@ export default function AVTranscoderTest() {
     it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0700', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ADDWATERMARK_API_0700';
       await createAVTranscoder(done, testContext, testName);
-      await avTranscoder?.addWatermark(watermarkPixelMap, undefined).then((watermarkId: number) => {
+      await mTranscoder?.addWatermark(imagePixelmap, undefined).then((watermarkId: number) => {
         console.info('addWatermark success, watermarkId: ' + watermarkId);
         expect().assertFail();
       }).catch((err: BusinessError) => {
