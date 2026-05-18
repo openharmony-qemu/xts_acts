@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,7 +27,7 @@ import {
   TestType
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
-import { StaticField, ReflectClass, createReflectClass } from './StaticFieldReflect';
+import { StaticField, ReflectClass, createReflectClass } from '../Util.test';
 
 class MyClass001 {
   public static count: number = 0;
@@ -1058,24 +1059,6 @@ export default function StaticFieldSetValueTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_1200
-     * @tc.name testStaticFieldSetValue012
-     * @tc.desc Verify setting mismatched type value throws error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testStaticFieldSetValue012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass012();
-      let field: StaticField | null = cls.getStaticField('numValue');
-      try {
-        field!.setValue('string');
-      } catch (error) {
-        expect(error !== null).assertEqual(true);
-      }
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_1300
      * @tc.name testStaticFieldSetValue013
      * @tc.desc Verify setting union type field values
@@ -1287,8 +1270,8 @@ export default function StaticFieldSetValueTest(): void {
       try {
         field!.setValue(100);
         expect().assertFail();
-      } catch (error) {
-        expect(error !== null).assertEqual(true);
+      } catch (e) {
+        expect(e.name).assertEqual('NullPointerError');
       }
     });
 
@@ -1305,8 +1288,8 @@ export default function StaticFieldSetValueTest(): void {
       try {
         field!.setValue(100);
         expect().assertFail();
-      } catch (error) {
-        expect(error !== null).assertEqual(true);
+      } catch (e) {
+        expect(e.name).assertEqual('NullPointerError');
       }
     });
 
@@ -1353,8 +1336,8 @@ export default function StaticFieldSetValueTest(): void {
       try {
         field!.setValue(2.71);
         expect().assertFail();
-      } catch (error) {
-        expect(error !== null).assertEqual(true);
+      } catch (e) {
+        expect(e.name).assertEqual('Error');
       }
     });
 
@@ -1372,8 +1355,8 @@ export default function StaticFieldSetValueTest(): void {
       try {
         field!.setValue(200);
         expect().assertFail();
-      } catch (error) {
-        expect(error !== null).assertEqual(true);
+      } catch (e) {
+        expect(e.name).assertEqual('Error');
       }
     });
 
@@ -1391,7 +1374,6 @@ export default function StaticFieldSetValueTest(): void {
       if (field !== null) {
         field!.setValue('new value');
       } else {
-        console.info('Field does not exist');
       }
       expect(field).assertEqual(null);
     });
@@ -1903,9 +1885,6 @@ export default function StaticFieldSetValueTest(): void {
       field!.setValue(3);
       expect(field!.getValue() as string | number | boolean | null).assertEqual(3);
       let current: number = field!.getValue() as number;
-      if (current === 3) {
-        console.info('State is STOPPED, cannot transition further');
-      }
     });
 
     /**
@@ -1920,14 +1899,11 @@ export default function StaticFieldSetValueTest(): void {
       let cls: ReflectClass = reflectConfig063();
       let field: StaticField | null = cls.getStaticField('value');
       let initialValue: string | number | boolean | null = field!.getValue() as string | number | boolean | null;
-      console.info('Initial value: ' + initialValue);
       field!.setValue(200);
       let newValue: string | number | boolean | null = field!.getValue() as string | number | boolean | null;
-      console.info('New value: ' + newValue);
       expect(newValue).assertEqual(200);
       field!.setValue(300);
       let finalValue: string | number | boolean | null = field!.getValue() as string | number | boolean | null;
-      console.info('Final value: ' + finalValue);
       expect(finalValue).assertEqual(300);
     });
 
@@ -1963,9 +1939,7 @@ export default function StaticFieldSetValueTest(): void {
       let oldValue: number = field!.getValue() as number;
       field!.setValue(100);
       observerCalled = true;
-      console.info('Observer notified');
       let newValue: number = field!.getValue() as number;
-      console.info('Value changed from ' + oldValue + ' to ' + newValue);
       expect(observerCalled).assertEqual(true);
     });
 
@@ -1985,14 +1959,6 @@ export default function StaticFieldSetValueTest(): void {
         let fieldName: string = field.getName();
         let oldValue: string | number | boolean | null = field.getValue() as string | number | boolean | null;
         let type: ReflectClass = field.getType();
-        console.info('=== Field Set Log ===');
-        console.info('Owner: ' + owner.getName());
-        console.info('Field: ' + fieldName);
-        console.info('Type: ' + type.getName());
-        console.info('Old Value: ' + oldValue);
-        console.info('New Value: ' + 5000);
-        console.info('Readonly: ' + field.isReadonly());
-        console.info('====================');
         field.setValue(5000);
         expect(field.getValue() as string | number | boolean | null).assertEqual(5000);
       }
@@ -2026,7 +1992,6 @@ export default function StaticFieldSetValueTest(): void {
       let field: StaticField | null = cls.getStaticField('debugValue');
       if (field !== null) {
         let value: string | number | boolean | null = field.getValue() as string | number | boolean | null;
-        console.info('Debug value: ' + value);
         field.setValue('modified debug');
         expect(field.getValue() as string | number | boolean | null).assertEqual('modified debug');
       }

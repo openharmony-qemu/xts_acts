@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,7 +27,7 @@ import {
   TestType
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
-import { StaticField, ReflectClass, createReflectClass } from './StaticFieldReflect';
+import { StaticField, ReflectClass, createReflectClass } from '../Util.test';
 
 function reflectMyClass001(): ReflectClass {
   let cls = createReflectClass('MyClass001');
@@ -504,11 +505,6 @@ function checkDuplicateFieldNames(cls: ReflectClass): void {
       nameSet.add(fieldName);
     }
   }
-  if (duplicates.length > 0) {
-    console.info("Duplicate fields found: " + duplicates.join(", "));
-  } else {
-    console.info("No duplicate fields");
-  }
 }
 
 function toCamelCase(fieldName: string): string {
@@ -608,7 +604,6 @@ function logFieldAccess(field: StaticField): void {
   let fieldName = field.getName();
   let ownerName = field.getOwner().getName();
   let timestamp = new Date().toISOString();
-  console.info(`[${timestamp}] Accessed ${ownerName}.${fieldName}`);
 }
 
 function generateFieldsDoc(cls: ReflectClass): string {
@@ -632,7 +627,6 @@ function validateRequiredFields(cls: ReflectClass, requiredFields: string[]): bo
   }
   for (let i = 0; i < requiredFields.length; i++) {
     if (!fieldNames.has(requiredFields[i])) {
-      console.info(`Missing required field: ${requiredFields[i]}`);
       return false;
     }
   }
@@ -753,7 +747,6 @@ function deserializeToFields(cls: ReflectClass, data: Record<string, string | nu
     if (field !== undefined) {
       let value: string | number | boolean = data[key] as string | number | boolean;
       field.setValue(value);
-      console.info(`Deserialized ${key}: ${value}`);
     }
   }
 }
@@ -1431,8 +1424,8 @@ export default function StaticFieldGetNameTest(): void {
       try {
         field!.getName();
         expect().assertFail();
-      } catch (error) {
-        expect(error !== null).assertEqual(true);
+      } catch (e) {
+        expect(e.name).assertEqual('NullPointerError');
       }
     });
 
@@ -1449,8 +1442,8 @@ export default function StaticFieldGetNameTest(): void {
       try {
         field!.getName();
         expect().assertFail();
-      } catch (error) {
-        expect(error !== null).assertEqual(true);
+      } catch (e) {
+        expect(e.name).assertEqual('NullPointerError');
       }
     });
 
@@ -1468,7 +1461,6 @@ export default function StaticFieldGetNameTest(): void {
       if (field !== null) {
         let name = field.getName();
       } else {
-        console.info("Field does not exist");
         expect(field).assertEqual(null);
       }
     });
@@ -1518,7 +1510,6 @@ export default function StaticFieldGetNameTest(): void {
       let field = cls.getStaticField("data");
       let fieldName = field!.getName();
       let ownerName = field!.getOwner().getName();
-      console.info(`${ownerName}.${fieldName}`);
       expect(fieldName).assertEqual('data');
     });
 
@@ -1535,7 +1526,6 @@ export default function StaticFieldGetNameTest(): void {
       let field = cls.getStaticField("count");
       let fieldName = field!.getName();
       let typeName = field!.getType().getName();
-      console.info(`Field ${fieldName} has type ${typeName}`);
       expect(fieldName).assertEqual('count');
     });
 
@@ -1552,7 +1542,6 @@ export default function StaticFieldGetNameTest(): void {
       let field = cls.getStaticField("value");
       let fieldName = field!.getName();
       let fieldValue = field!.getValue();
-      console.info(`${fieldName} = ${fieldValue}`);
       expect(fieldName).assertEqual('value');
     });
 
@@ -1593,7 +1582,6 @@ export default function StaticFieldGetNameTest(): void {
         } else if (field.isProtected()) {
           accessLevel = "protected";
         }
-        console.info(`${accessLevel} ${field.getName()}`);
       }
       expect(fields.length).assertLarger(0);
     });
@@ -1641,7 +1629,6 @@ export default function StaticFieldGetNameTest(): void {
       let fields = cls.getDeclaredStaticFields();
       for (let i = 0; i < fields.length; i++) {
         let fieldName = fields[i].getName();
-        console.info(`Field: ${fieldName}`);
       }
       expect(fields.length).assertLarger(0);
     });
@@ -1657,9 +1644,6 @@ export default function StaticFieldGetNameTest(): void {
     it('testStaticFieldGetName031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = reflectMyClass031();
       let userFields = findFieldsByPattern(cls, "user");
-      for (let i = 0; i < userFields.length; i++) {
-        console.info("Found: " + userFields[i].getName());
-      }
       expect(userFields.length).assertLarger(0);
     });
 
@@ -1679,9 +1663,6 @@ export default function StaticFieldGetNameTest(): void {
         let nameB = b.getName();
         return nameA.localeCompare(nameB);
       });
-      for (let i = 0; i < fields.length; i++) {
-        console.info(fields[i].getName());
-      }
       expect(fields.length).assertLarger(0);
     });
 
@@ -1714,7 +1695,6 @@ export default function StaticFieldGetNameTest(): void {
         let originalName = fields[i].getName();
         let camelName = toCamelCase(originalName);
         let snakeName = toSnakeCase(originalName);
-        console.info(`${originalName} -> Camel: ${camelName}, Snake: ${snakeName}`);
       }
       expect(fields.length).assertLarger(0);
     });
@@ -1867,7 +1847,6 @@ export default function StaticFieldGetNameTest(): void {
       for (let i = 0; i < fields.length; i++) {
         names.push(fields[i].getName());
       }
-      console.info("Field names: " + names.join(", "));
       expect(names.length).assertLarger(0);
     });
 
@@ -1885,7 +1864,6 @@ export default function StaticFieldGetNameTest(): void {
       let found: boolean = false;
       for (let i = 0; i < fields.length; i++) {
         if (fields[i].getName() === "targetField") {
-          console.info("Found target field");
           found = true;
         }
       }
@@ -1904,11 +1882,9 @@ export default function StaticFieldGetNameTest(): void {
       let cls = reflectMyClass045();
       let staticField = cls.getStaticField("staticValue");
       let staticName = staticField!.getName();
-      console.info("Static field name: " + staticName);
       expect(staticName).assertEqual("staticValue");
       let instanceField = cls.getInstanceField("instanceValue");
       let instanceName = instanceField!.getName();
-      console.info("Instance field name: " + instanceName);
       expect(instanceName).assertEqual("instanceValue");
     });
 
@@ -1923,7 +1899,6 @@ export default function StaticFieldGetNameTest(): void {
     it('testStaticFieldGetName046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = reflectMyClass046();
       let names = getFieldNames(cls);
-      console.info("Field names: " + names.join(", "));
       expect(names.length).assertLarger(0);
     });
 
@@ -1940,7 +1915,6 @@ export default function StaticFieldGetNameTest(): void {
       let fieldMap = createFieldMap(cls);
       let field = fieldMap.get("data");
       if (field !== undefined) {
-        console.info("Found field: " + field.getName());
         expect(field.getName()).assertEqual("data");
       } else {
         expect(field === undefined).assertEqual(false);
@@ -1972,9 +1946,6 @@ export default function StaticFieldGetNameTest(): void {
     it('testStaticFieldGetName049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = reflectConfig049();
       let apiFields = filterFieldsByPrefix(cls, "API_");
-      for (let i = 0; i < apiFields.length; i++) {
-        console.info("API config: " + apiFields[i].getName());
-      }
       expect(apiFields.length).assertLarger(0);
     });
 
@@ -1989,9 +1960,6 @@ export default function StaticFieldGetNameTest(): void {
     it('testStaticFieldGetName050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = reflectAppConfig050();
       let config = getConfigMap(cls);
-      config.forEach((value: string, key: string): void => {
-        console.info(`${key} = ${value}`);
-      });
       expect(config.size).assertLarger(0);
     });
 
@@ -2006,7 +1974,6 @@ export default function StaticFieldGetNameTest(): void {
     it('testStaticFieldGetName051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = reflectDataModel051();
       let json = serializeFields(cls);
-      console.info(json);
       expect(json.length).assertLarger(0);
     });
 
@@ -2036,7 +2003,6 @@ export default function StaticFieldGetNameTest(): void {
     it('testStaticFieldGetName053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = reflectMyClass053();
       let doc = generateFieldsDoc(cls);
-      console.info(doc);
       expect(doc.length).assertLarger(0);
     });
 
@@ -2065,7 +2031,6 @@ export default function StaticFieldGetNameTest(): void {
     it('testStaticFieldGetName055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = reflectMyClass055();
       let value = getFieldValueByName(cls, "dynamicField");
-      console.info("Dynamic value: " + value);
       expect(value !== null).assertEqual(true);
     });
 
@@ -2080,7 +2045,6 @@ export default function StaticFieldGetNameTest(): void {
     it('testStaticFieldGetName056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = reflectMyClass056();
       let normalizedNames = getFieldNamesNormalized(cls);
-      console.info("Normalized: " + normalizedNames.join(", "));
       expect(normalizedNames.length).assertLarger(0);
     });
 
@@ -2095,12 +2059,6 @@ export default function StaticFieldGetNameTest(): void {
     it('testStaticFieldGetName057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = reflectMyClass057();
       let conflicts = findConflictingFieldNames(cls);
-      if (conflicts.length > 0) {
-        console.info("Potential conflicts found:");
-        for (let i = 0; i < conflicts.length; i++) {
-          console.info("  " + conflicts[i].join(", "));
-        }
-      }
       expect(conflicts.length).assertLarger(0);
     });
 
@@ -2116,8 +2074,6 @@ export default function StaticFieldGetNameTest(): void {
       let cls = reflectMyClass058();
       let zhFields = getLocalizedFieldName(cls, 'zh');
       let enFields = getLocalizedFieldName(cls, 'en');
-      console.info("Chinese fields: " + zhFields.join(", "));
-      console.info("English fields: " + enFields.join(", "));
       expect(zhFields.length).assertLarger(0);
       expect(enFields.length).assertLarger(0);
     });

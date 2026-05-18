@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,7 +27,7 @@ import {
   TestType
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
-import { StaticField, ReflectClass, createReflectClass } from './StaticFieldReflect';
+import { StaticField, ReflectClass, createReflectClass } from '../Util.test';
 
 class MyClass001 {
   public static name: string = 'test';
@@ -65,7 +66,6 @@ class MyClass009 {
 
 class MyClass010 {
   public static handler: () => string = (): string => 'result';
-  public static callback: (msg: string) => void = (msg: string): void => console.info(msg);
 }
 
 enum Color011 {
@@ -941,28 +941,12 @@ function debugFieldValue057(field: StaticField): void {
   let fieldName = field.getName();
   let type = field.getType();
   let value = field.getValue();
-  console.info("=== Field Value Debug ===");
-  console.info(`Owner: ${owner.getName()}`);
-  console.info(`Name: ${fieldName}`);
-  console.info(`Type: ${type.getName()}`);
-  console.info(`Value: ${value}`);
-  console.info(`Value Type: ${typeof value}`);
-  console.info(`Is Readonly: ${field.isReadonly()}`);
-  console.info(`Is Public: ${field.isPublic()}`);
-  console.info("========================");
 }
 
 function trySerializeField058(field: StaticField): void {
   let value = field.getValue();
   let fieldName = field.getName();
-  try {
-    let serialized = JSON.stringify(value);
-    console.info(`${fieldName}: ${serialized}`);
-  } catch (error) {
-    console.error(`Failed to serialize ${fieldName}:`, error);
-    console.info(`Value type: ${typeof value}`);
-    console.info(`Value:`, value);
-  }
+  let serialized = JSON.stringify(value);
 }
 
 function getValueOrDefault(field: StaticField, defaultValue: string | number | boolean | null): string | number | boolean | null {
@@ -1333,8 +1317,8 @@ export default function StaticFieldGetValueTest(): void {
       try {
         field!.getValue();
         expect(false).assertEqual(true);
-      } catch (error) {
-        expect(error !== null && error !== undefined).assertEqual(true);
+      } catch (e) {
+        expect(e.name).assertEqual('NullPointerError');
       }
     });
 
@@ -1351,8 +1335,8 @@ export default function StaticFieldGetValueTest(): void {
       try {
         field!.getValue();
         expect(false).assertEqual(true);
-      } catch (error) {
-        expect(error !== null && error !== undefined).assertEqual(true);
+      } catch (e) {
+        expect(e.name).assertEqual('NullPointerError');
       }
     });
 
@@ -1367,12 +1351,8 @@ export default function StaticFieldGetValueTest(): void {
     it('testStaticFieldGetValue022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let cls = reflectMyClass022();
       let field = cls.getStaticField("data");
-      try {
-        let value = field!.getValue();
-        expect(value !== null && value !== undefined).assertEqual(true);
-      } catch (error) {
-        console.info("getValue throws error: " + error);
-      }
+      let value = field!.getValue();
+      expect(value !== null && value !== undefined).assertEqual(true);
     });
 
     /**
@@ -1390,7 +1370,6 @@ export default function StaticFieldGetValueTest(): void {
         let value = field.getValue();
         expect(value !== null && value !== undefined).assertEqual(true);
       } else {
-        console.info("Field does not exist");
         expect(field).assertEqual(null);
       }
     });
@@ -1450,7 +1429,6 @@ export default function StaticFieldGetValueTest(): void {
       let field = cls.getStaticField("data");
       let name = field!.getName();
       let value = field!.getValue();
-      console.info(`${name} = ${value}`);
       expect(name).assertEqual('data');
       expect(value !== null && value !== undefined).assertEqual(true);
     });
@@ -1468,7 +1446,6 @@ export default function StaticFieldGetValueTest(): void {
       let field = cls.getStaticField("count");
       let value = field!.getValue();
       let type = field!.getType();
-      console.info(`Value: ${value}, Type: ${type.getName()}`);
       expect(value !== null && value !== undefined).assertEqual(true);
     });
 
@@ -1485,7 +1462,6 @@ export default function StaticFieldGetValueTest(): void {
       let field = cls.getStaticField("config");
       let owner = field!.getOwner();
       let value = field!.getValue();
-      console.info(`${owner.getName()}.${field!.getName()} = ${value}`);
       expect(owner.getName()).assertEqual('MyClass029');
       expect(value !== null && value !== undefined).assertEqual(true);
     });
@@ -1522,13 +1498,11 @@ export default function StaticFieldGetValueTest(): void {
       let constField = cls.getStaticField("constant");
       if (constField!.isReadonly()) {
         let value = constField!.getValue();
-        console.info(`Readonly constant: ${value}`);
         expect(value !== null && value !== undefined).assertEqual(true);
       }
       let varField = cls.getStaticField("variable");
       if (!varField!.isReadonly()) {
         let value = varField!.getValue();
-        console.info(`Variable: ${value}`);
         expect(value !== null && value !== undefined).assertEqual(true);
       }
     });
@@ -1578,7 +1552,6 @@ export default function StaticFieldGetValueTest(): void {
         let field = fields[i];
         let name = field.getName();
         let value = field.getValue();
-        console.info(`${name} = ${value}`);
       }
       expect(fields.length).assertLarger(0);
     });
@@ -1594,9 +1567,6 @@ export default function StaticFieldGetValueTest(): void {
     it('testStaticFieldGetValue035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let cls = reflectConfig035();
       let configMap = getFieldValuesMap035(cls);
-      configMap.forEach((value, key): void => {
-        console.info(`${key}: ${value}`);
-      });
       expect(configMap.size).assertLarger(0);
     });
 
@@ -1611,7 +1581,6 @@ export default function StaticFieldGetValueTest(): void {
     it('testStaticFieldGetValue036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let cls = reflectDataModel036();
       let json = serializeFields036(cls);
-      console.info(json);
       expect(json.length).assertLarger(0);
     });
 
@@ -1626,9 +1595,7 @@ export default function StaticFieldGetValueTest(): void {
     it('testStaticFieldGetValue037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let cls = reflectConfig037();
       let optionalValue = getFieldValueOrNull037(cls, "OPTIONAL_VALUE");
-      console.info("Optional:", optionalValue);
       let requiredValue = getFieldValueOrNull037(cls, "REQUIRED_VALUE");
-      console.info("Required:", requiredValue);
       expect(requiredValue !== null).assertEqual(true);
     });
 
@@ -1747,7 +1714,6 @@ export default function StaticFieldGetValueTest(): void {
       let cls = reflectMyClass044();
       let selfRefField = cls.getStaticField("selfRef");
       let selfRef = selfRefField!.getValue();
-      console.info("Self reference field:", selfRef);
     }) as () => void);
 
     /**
@@ -1808,8 +1774,6 @@ export default function StaticFieldGetValueTest(): void {
         let val = field!.getValue();
       }
       let time2 = Date.now() - start2;
-      console.info(`Direct access: ${time1}ms`);
-      console.info(`Reflect access: ${time2}ms`);
       expect(time2 >= 0).assertEqual(true);
     });
 
@@ -1825,10 +1789,8 @@ export default function StaticFieldGetValueTest(): void {
       let cls = reflectMyClass048();
       let staticField = cls.getStaticField("staticValue");
       let staticValue = staticField!.getValue();
-      console.info("Static value: " + staticValue);
       let instanceField = cls.getInstanceField("instanceValue");
       let instanceValue = instanceField!.getValue();
-      console.info("Instance value: " + instanceValue);
       expect(staticValue !== null && staticValue !== undefined).assertEqual(true);
       expect(instanceField !== null).assertEqual(true);
     });
@@ -1844,7 +1806,6 @@ export default function StaticFieldGetValueTest(): void {
     it('testStaticFieldGetValue049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let cls = reflectConfig049();
       let values = getAllFieldValues049(cls);
-      console.info("Values: " + values.join(", "));
       expect(values.length).assertLarger(0);
     });
 
@@ -1861,8 +1822,6 @@ export default function StaticFieldGetValueTest(): void {
       let snapshot1 = createFieldSnapshot050(cls);
       Config050.TIMEOUT = 5000;
       let snapshot2 = createFieldSnapshot050(cls);
-      console.info("Snapshot 1 TIMEOUT:", snapshot1.get("TIMEOUT"));
-      console.info("Snapshot 2 TIMEOUT:", snapshot2.get("TIMEOUT"));
       expect(snapshot1.size).assertLarger(0);
       expect(snapshot2.size).assertLarger(0);
     });
@@ -1901,10 +1860,6 @@ export default function StaticFieldGetValueTest(): void {
         let value = fields[i].getValue() as string | number | boolean | null;
         config.set(fieldName, value);
       }
-      console.info("API Endpoint:", config.get("API_ENDPOINT"));
-      console.info("Timeout:", config.get("TIMEOUT"));
-      console.info("Max Retries:", config.get("MAX_RETRIES"));
-      console.info("Debug Mode:", config.get("DEBUG_MODE"));
       expect(config.size).assertLarger(0);
     });
 

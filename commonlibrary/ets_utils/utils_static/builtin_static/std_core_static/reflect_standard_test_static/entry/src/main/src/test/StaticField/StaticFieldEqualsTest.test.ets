@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,7 +27,7 @@ import {
   TestType
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
-import { StaticField, ReflectClass, createReflectClass } from './StaticFieldReflect';
+import { StaticField, ReflectClass, createReflectClass } from '../Util.test';
 
 function reflectMyClass001(): ReflectClass {
   let cls = createReflectClass('MyClass001');
@@ -987,7 +988,6 @@ function differenceFields(fields1: StaticField[], fields2: StaticField[]): Stati
 function compareConfigFields(oldClass: ReflectClass, newClass: ReflectClass): void {
   let oldFields: StaticField[] = oldClass.getDeclaredStaticFields();
   let newFields: StaticField[] = newClass.getDeclaredStaticFields();
-  console.info("Configuration changes:");
   for (let i = 0; i < oldFields.length; i++) {
     let oldField = oldFields[i];
     let found = false;
@@ -997,14 +997,8 @@ function compareConfigFields(oldClass: ReflectClass, newClass: ReflectClass): vo
         found = true;
         let oldValue = oldField.getValue();
         let newValue = newField.getValue();
-        if (oldValue !== newValue) {
-          console.info(`  ${oldField.getName()}: ${oldValue} -> ${newValue}`);
-        }
         break;
       }
-    }
-    if (!found) {
-      console.info(`  ${oldField.getName()} removed`);
     }
   }
   for (let j = 0; j < newFields.length; j++) {
@@ -1015,9 +1009,6 @@ function compareConfigFields(oldClass: ReflectClass, newClass: ReflectClass): vo
         found = true;
         break;
       }
-    }
-    if (!found) {
-      console.info(`  ${newFieldName} added`);
     }
   }
 }
@@ -1048,15 +1039,6 @@ function fieldsAreDeepEqual(field1: StaticField, field2: StaticField): boolean {
 }
 
 function compareFieldsWithLog(field1: StaticField, field2: StaticField): boolean {
-  console.info("=== Field Comparison ===");
-  console.info(`Field1: ${field1.getOwner().getName()}.${field1.getName()}`);
-  console.info(`Field2: ${field2.getOwner().getName()}.${field2.getName()}`);
-  console.info(`Name equal: ${field1.getName() === field2.getName()}`);
-  console.info(`Type equal: ${field1.getType().equals(field2.getType())}`);
-  console.info(`Owner equal: ${field1.getOwner().equals(field2.getOwner())}`);
-  console.info(`Value equal: ${field1.getValue() === field2.getValue()}`);
-  console.info(`equals result: ${field1.equals(field2)}`);
-  console.info("========================");
   return field1.equals(field2);
 }
 
@@ -1339,7 +1321,6 @@ export default function StaticFieldEqualsTest(): void {
       expect(field1!.equals(field2!)).assertEqual(true);
 
       expect(field1! === field2!).assertEqual(true);
-      console.info("equals比较的是字段内容，而非引用");
     });
 
     /**
@@ -1443,8 +1424,8 @@ export default function StaticFieldEqualsTest(): void {
       try {
         field!.equals(otherField!);
         expect().assertFail();
-      } catch (_) {
-        expect(_ !== null).assertEqual(true);
+      } catch (e) {
+        expect(e.name).assertEqual('NullPointerError');
       }
     });
 
@@ -1462,8 +1443,8 @@ export default function StaticFieldEqualsTest(): void {
       try {
         field!.equals(otherField!);
         expect().assertFail();
-      } catch (_) {
-        expect(_ !== null).assertEqual(true);
+      } catch (e) {
+        expect(e.name).assertEqual('NullPointerError');
       }
     });
 
@@ -1615,10 +1596,6 @@ export default function StaticFieldEqualsTest(): void {
       let cls = reflectMyClass029();
       let fields: StaticField[] = cls.getDeclaredStaticFields();
       let groups = groupFieldsByType(fields);
-
-      groups.forEach((fieldList, typeName) => {
-        console.info(`Type ${typeName}: ${fieldList.length} fields`);
-      });
       expect(groups.size).assertLarger(0);
     });
 
@@ -1634,10 +1611,6 @@ export default function StaticFieldEqualsTest(): void {
       let cls = reflectMyClass030();
       let field1 = cls.getStaticField("data");
       let field2 = cls.getStaticField("data");
-
-      if (field1!.equals(field2!)) {
-        console.info("Fields are equal, hash codes should be equal");
-      }
       expect(field1!.equals(field2!)).assertEqual(true);
     });
 
@@ -1665,8 +1638,6 @@ export default function StaticFieldEqualsTest(): void {
       }
 
       let endTime = Date.now();
-      console.info(`Performed ${fields.length * fields.length} comparisons in ${endTime - startTime}ms`);
-      console.info(`Equal field pairs: ${count}`);
       expect(count).assertLarger(0);
     });
 
@@ -1695,8 +1666,6 @@ export default function StaticFieldEqualsTest(): void {
       }
       let time2 = Date.now() - start2;
 
-      console.info(`Reference comparison: ${time1}ms`);
-      console.info(`equals comparison: ${time2}ms`);
       expect(time2 >= 0).assertEqual(true);
     });
 

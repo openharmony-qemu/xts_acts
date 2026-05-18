@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,7 +27,7 @@ import {
   TestType
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
-import { StaticField, ReflectClass, createReflectClass } from './StaticFieldReflect';
+import { StaticField, ReflectClass, createReflectClass } from '../Util.test';
 
 class MyClass001 {
   public static readonly name: string = 'test';
@@ -916,11 +917,6 @@ export default function StaticFieldIsReadonlyTest(): void {
     it('testStaticFieldIsReadonly008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: ReflectClass = reflectMyClass008();
       let field: StaticField | null = cls.getStaticField('name');
-      if (field!.isReadonly()) {
-        console.info('This is a readonly field');
-      } else {
-        console.info('This is a mutable field');
-      }
       expect(field!.isReadonly()).assertEqual(true);
     });
 
@@ -955,8 +951,8 @@ export default function StaticFieldIsReadonlyTest(): void {
       try {
         field!.isReadonly();
         expect().assertFail();
-      } catch (error) {
-        expect(error !== null).assertEqual(true);
+      } catch (e) {
+        expect(e.name).assertEqual('NullPointerError');
       }
     });
 
@@ -973,8 +969,8 @@ export default function StaticFieldIsReadonlyTest(): void {
       try {
         field!.isReadonly();
         expect().assertFail();
-      } catch (error) {
-        expect(error !== null).assertEqual(true);
+      } catch (e) {
+        expect(e.name).assertEqual('NullPointerError');
       }
     });
 
@@ -993,7 +989,6 @@ export default function StaticFieldIsReadonlyTest(): void {
         let result: boolean = field.isReadonly();
         expect(result).assertEqual(true);
       } else {
-        console.info('Field does not exist');
         expect(field).assertEqual(null);
       }
     });
@@ -1068,9 +1063,6 @@ export default function StaticFieldIsReadonlyTest(): void {
     it('testStaticFieldIsReadonly017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: ReflectClass = reflectMyClass017();
       let field: StaticField | null = cls.getStaticField('value');
-      if (field!.isPublic() && field!.isReadonly()) {
-        console.info('Public readonly field');
-      }
       expect(field!.isReadonly()).assertEqual(true);
     });
 
@@ -1085,9 +1077,6 @@ export default function StaticFieldIsReadonlyTest(): void {
     it('testStaticFieldIsReadonly018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: ReflectClass = reflectMyClass018();
       let field: StaticField | null = cls.getStaticField('value');
-      if (field!.isPrivate() && field!.isReadonly()) {
-        console.info('Private readonly field');
-      }
       expect(field!.isReadonly()).assertEqual(true);
     });
 
@@ -1102,9 +1091,6 @@ export default function StaticFieldIsReadonlyTest(): void {
     it('testStaticFieldIsReadonly019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: ReflectClass = reflectMyClass019();
       let field: StaticField | null = cls.getStaticField('value');
-      if (field!.isProtected() && field!.isReadonly()) {
-        console.info('Protected readonly field');
-      }
       expect(field!.isReadonly()).assertEqual(true);
     });
 
@@ -1119,9 +1105,6 @@ export default function StaticFieldIsReadonlyTest(): void {
     it('testStaticFieldIsReadonly020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: ReflectClass = reflectMyClass020();
       let field: StaticField | null = cls.getStaticField('name');
-      if (field!.isReadonly()) {
-        console.info('Readonly field type: ' + field!.getType().getName());
-      }
       expect(field!.isReadonly()).assertEqual(true);
     });
 
@@ -1136,9 +1119,6 @@ export default function StaticFieldIsReadonlyTest(): void {
     it('testStaticFieldIsReadonly021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: ReflectClass = reflectMyClass021();
       let field: StaticField | null = cls.getStaticField('name');
-      if (field!.isReadonly()) {
-        console.info('Readonly field name: ' + field!.getName());
-      }
       expect(field!.isReadonly()).assertEqual(true);
     });
 
@@ -1155,7 +1135,6 @@ export default function StaticFieldIsReadonlyTest(): void {
       let field: StaticField | null = cls.getStaticField('constant');
       if (field!.isReadonly()) {
         let value: string | number | boolean | null = field!.getValue() as string | number | boolean | null;
-        console.info('Readonly constant value: ' + value);
         expect(value !== null && value !== undefined).assertEqual(true);
       }
       expect(field!.isReadonly()).assertEqual(true);
@@ -1207,7 +1186,6 @@ export default function StaticFieldIsReadonlyTest(): void {
         if (field !== null) {
           let fieldName: string = field.getName();
           let isReadonly: boolean = field.isReadonly();
-          console.info('Field: ' + fieldName + ', Readonly: ' + isReadonly);
         }
       }
       let appNameField: StaticField | null = cls.getStaticField('APP_NAME');
@@ -1230,9 +1208,6 @@ export default function StaticFieldIsReadonlyTest(): void {
         if (field !== null) {
           if (!field.isReadonly()) {
             field.setValue(300);
-            console.info(field.getName() + ' is updated');
-          } else {
-            console.info(field.getName() + ' is readonly, cannot modify');
           }
         }
       }
@@ -1382,7 +1357,6 @@ export default function StaticFieldIsReadonlyTest(): void {
           readonlyCount++;
         }
       }
-      console.info('Readonly fields count: ' + readonlyCount);
       expect(readonlyCount).assertLarger(0);
     });
 

@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,7 +27,7 @@ import {
   TestType
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
-import { StaticField, ReflectClass, createReflectClass } from './StaticFieldReflect';
+import { StaticField, ReflectClass, createReflectClass } from '../Util.test';
 
 class MyClass001 {
   protected static name: string = 'test';
@@ -1054,11 +1055,6 @@ export default function StaticFieldIsProtectedTest(): void {
     it('testStaticFieldIsProtected011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: ReflectClass = reflectMyClass009();
       let field: StaticField | null = cls.getStaticField('prot');
-      if (field!.isProtected()) {
-        console.info('This is a protected field');
-      } else {
-        console.info('This is a non-protected field');
-      }
       expect(field!.isProtected()).assertEqual(true);
     });
 
@@ -1093,8 +1089,8 @@ export default function StaticFieldIsProtectedTest(): void {
       try {
         field!.isProtected();
         expect().assertFail();
-      } catch (error) {
-        expect(error !== null).assertEqual(true);
+      } catch (e) {
+        expect(e.name).assertEqual('NullPointerError');
       }
     });
 
@@ -1111,8 +1107,8 @@ export default function StaticFieldIsProtectedTest(): void {
       try {
         field!.isProtected();
         expect().assertFail();
-      } catch (error) {
-        expect(error !== null).assertEqual(true);
+      } catch (e) {
+        expect(e.name).assertEqual('NullPointerError');
       }
     });
 
@@ -1131,7 +1127,6 @@ export default function StaticFieldIsProtectedTest(): void {
         let result: boolean = field.isProtected();
         expect(result).assertEqual(true);
       } else {
-        console.info('Field does not exist');
         expect(field).assertEqual(null);
       }
     });
@@ -1228,9 +1223,6 @@ export default function StaticFieldIsProtectedTest(): void {
     it('testStaticFieldIsProtected021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: ReflectClass = reflectMyClass021();
       let field: StaticField | null = cls.getStaticField('config');
-      if (field!.isProtected()) {
-        console.info('Protected field type: ' + field!.getType().getName());
-      }
       expect(field!.isProtected()).assertEqual(true);
     });
 
@@ -1245,9 +1237,6 @@ export default function StaticFieldIsProtectedTest(): void {
     it('testStaticFieldIsProtected022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: ReflectClass = reflectMyClass022();
       let field: StaticField | null = cls.getStaticField('config');
-      if (field!.isProtected()) {
-        console.info('Protected field name: ' + field!.getName());
-      }
       expect(field!.isProtected()).assertEqual(true);
     });
 
@@ -1264,7 +1253,6 @@ export default function StaticFieldIsProtectedTest(): void {
       let field: StaticField | null = cls.getStaticField('setting');
       if (field!.isProtected()) {
         let value: string | number | boolean | null = field!.getValue() as string | number | boolean | null;
-        console.info('Protected field value: ' + value);
         expect(value !== null && value !== undefined).assertEqual(true);
       }
       expect(field!.isProtected()).assertEqual(true);
@@ -1283,7 +1271,6 @@ export default function StaticFieldIsProtectedTest(): void {
       let field: StaticField | null = cls.getStaticField('counter');
       if (field!.isProtected()) {
         field!.setValue(100);
-        console.info('Protected field updated: ' + field!.getValue());
         expect(field!.getValue()).assertEqual(100);
       }
       expect(field!.isProtected()).assertEqual(true);
@@ -1368,7 +1355,6 @@ export default function StaticFieldIsProtectedTest(): void {
           } else if (field.isPrivate()) {
             level = 'private';
           }
-          console.info(field.getName() + ': ' + level);
         }
       }
       let protField: StaticField | null = cls.getStaticField('protectedField');
@@ -1538,7 +1524,6 @@ export default function StaticFieldIsProtectedTest(): void {
           protectedCount++;
         }
       }
-      console.info('Protected fields count: ' + protectedCount);
       expect(protectedCount).assertLarger(0);
     });
 
@@ -1622,7 +1607,6 @@ export default function StaticFieldIsProtectedTest(): void {
           } else {
             level = 'internal';
           }
-          console.info(field.getName() + ': ' + level);
         }
       }
       let protField: StaticField | null = cls.getStaticField('prot');
@@ -1644,13 +1628,6 @@ export default function StaticFieldIsProtectedTest(): void {
       let fieldNames: string[] = ['apiKey', 'secretKey', 'internalId'];
       for (let i = 0; i < fieldNames.length; i++) {
         let field: StaticField | null = cls.getStaticField(fieldNames[i]);
-        if (field !== null) {
-          if (field.isProtected()) {
-            console.info('[PROTECTED] ' + field.getName() + ': ***');
-          } else {
-            console.info(field.getName() + ': ' + field.getValue());
-          }
-        }
       }
       let secretKeyField: StaticField | null = cls.getStaticField('secretKey');
       expect(secretKeyField!.isProtected()).assertEqual(true);
@@ -1691,9 +1668,7 @@ export default function StaticFieldIsProtectedTest(): void {
       let protectedField: StaticField | null = cls.getStaticField('protectedData');
       expect(protectedField!.isProtected()).assertEqual(true);
       let value: string | number | boolean | null = protectedField!.getValue() as string | number | boolean | null;
-      console.info('Protected data via reflection: ' + value);
       protectedField!.setValue('modified');
-      console.info('Modified protected data: ' + protectedField!.getValue());
     });
 
     /**
@@ -1765,7 +1740,6 @@ export default function StaticFieldIsProtectedTest(): void {
       let field: StaticField | null = cls.getStaticField('protectedValue');
       if (field !== null && field.isProtected()) {
         let value: string | number | boolean | null = field.getValue() as string | number | boolean | null;
-        console.info('Protected value: ' + value);
         field.setValue('new value');
         expect(field.getValue()).assertEqual('new value');
       }

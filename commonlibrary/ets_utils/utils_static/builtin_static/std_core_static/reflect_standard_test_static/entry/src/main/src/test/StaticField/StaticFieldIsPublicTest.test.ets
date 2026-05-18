@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,7 +27,7 @@ import {
   TestType
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
-import { StaticField, ReflectClass, createReflectClass } from './StaticFieldReflect';
+import { StaticField, ReflectClass, createReflectClass } from '../Util.test';
 
 class MyClass001 {
   public static name: string = 'test';
@@ -795,11 +796,6 @@ export default function StaticFieldIsPublicTest(): void {
       let cls: ReflectClass = createReflectClass('MyClass004');
       cls.addStaticField('name', createReflectClass('string'), 'test', true, false, false, false);
       let field: StaticField | null = cls.getStaticField('name');
-      if (field!.isPublic()) {
-        console.info('This is a public field');
-      } else {
-        console.info('This is a non-public field');
-      }
       expect(field!.isPublic()).assertEqual(true);
     });
 
@@ -840,8 +836,8 @@ export default function StaticFieldIsPublicTest(): void {
       try {
         field!.isPublic();
         expect().assertFail();
-      } catch (error) {
-        expect(error !== null).assertEqual(true);
+      } catch (e) {
+        expect(e.name).assertEqual('NullPointerError');
       }
     });
 
@@ -858,8 +854,8 @@ export default function StaticFieldIsPublicTest(): void {
       try {
         field!.isPublic();
         expect().assertFail();
-      } catch (error) {
-        expect(error !== null).assertEqual(true);
+      } catch (e) {
+        expect(e.name).assertEqual('NullPointerError');
       }
     });
 
@@ -877,8 +873,6 @@ export default function StaticFieldIsPublicTest(): void {
       let field: StaticField | null = cls.getStaticField('nonexistent');
       if (field !== null) {
         let result: boolean = field.isPublic();
-      } else {
-        console.info('Field does not exist');
       }
       expect(field).assertEqual(null);
     });
@@ -1409,9 +1403,7 @@ export default function StaticFieldIsPublicTest(): void {
       let publicField: StaticField | null = cls.getStaticField('publicData');
       expect(publicField!.isPublic()).assertEqual(true);
       let value: string | number | boolean | null = publicField!.getValue() as string | number | boolean | null;
-      console.info('Public data via reflection: ' + value);
       publicField!.setValue('modified');
-      console.info('Modified public data: ' + publicField!.getValue());
     });
 
     /**
@@ -1425,18 +1417,6 @@ export default function StaticFieldIsPublicTest(): void {
     it('testStaticFieldIsPublic045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: ReflectClass = reflectAppConfig045();
       let fields: StaticField[] = cls.getDeclaredStaticFields();
-      console.info('=== Public Configuration ===');
-      for (let i = 0; i < fields.length; i++) {
-        if (fields[i].isPublic()) {
-          console.info(fields[i].getName() + ': ' + fields[i].getValue());
-        }
-      }
-      console.info('=== Private Configuration ===');
-      for (let i = 0; i < fields.length; i++) {
-        if (!fields[i].isPublic()) {
-          console.info(fields[i].getName() + ': [HIDDEN]');
-        }
-      }
       expect(fields.length).assertLarger(0);
     });
 
@@ -1451,7 +1431,6 @@ export default function StaticFieldIsPublicTest(): void {
     it('testStaticFieldIsPublic046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: ReflectClass = reflectAPI046();
       let doc: string = generatePublicAPIDoc(cls);
-      console.info(doc);
       expect(doc.length).assertLarger(0);
     });
 

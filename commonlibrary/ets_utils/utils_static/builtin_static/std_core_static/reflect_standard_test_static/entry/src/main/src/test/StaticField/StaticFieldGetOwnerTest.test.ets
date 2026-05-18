@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,7 +27,7 @@ import {
   TestType
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
-import { StaticField, ReflectClass, createReflectClass } from './StaticFieldReflect';
+import { StaticField, ReflectClass, createReflectClass } from '../Util.test';
 
 class MyClass001 {
   public static name: string = 'test';
@@ -216,9 +217,7 @@ abstract class AbstractBase039 {
 class ConcreteImpl039 extends AbstractBase039 {
   public static implField: string = 'implementation';
 
-  public abstractMethod(): void {
-    console.info("Implemented");
-  }
+  abstractMethod(): void {}
 }
 
 interface MyInterface040 {}
@@ -396,7 +395,6 @@ class FrameworkBase057 {
   public static registerField(field: StaticField): void {
     let owner = field.getOwner();
     let fieldName = field.getName();
-    console.info(`Framework: Registered field ${owner.getName()}.${fieldName}`);
     FrameworkBase057.fieldRegistry.set(fieldName, owner);
   }
 
@@ -882,7 +880,6 @@ function checkOwner(cls: ReflectClass, fieldName: string): void {
   let field = cls.getStaticField(fieldName);
   if (field !== undefined) {
     let owner = field!.getOwner();
-    console.info(`${fieldName} owner: ${owner.getName()}`);
   }
 }
 
@@ -929,7 +926,6 @@ function serializeFieldWithOwner(field: StaticField): Record<string, string | nu
 function logFieldAccess(field: StaticField): void {
   let owner = field.getOwner();
   let timestamp = new Date().toISOString();
-  console.info(`[${timestamp}] Accessed ${owner.getName()}.${field.getName()}`);
 }
 
 function generateFieldDoc(field: StaticField): string {
@@ -943,16 +939,6 @@ function debugField(field: StaticField): void {
   let owner = field.getOwner();
   let type = field.getType();
   let value = field.getValue();
-  console.info("=== Field Debug Info ===");
-  console.info(`Name: ${field.getName()}`);
-  console.info(`Owner: ${owner.getName()}`);
-  console.info(`Type: ${type.getName()}`);
-  console.info(`Value: ${value}`);
-  console.info(`Public: ${field.isPublic()}`);
-  console.info(`Private: ${field.isPrivate()}`);
-  console.info(`Protected: ${field.isProtected()}`);
-  console.info(`Readonly: ${field.isReadonly()}`);
-  console.info("========================");
 }
 
 function analyzeFieldByClassName(className: string, fieldName: string): void {
@@ -961,7 +947,6 @@ function analyzeFieldByClassName(className: string, fieldName: string): void {
     let field = cls.getStaticField(fieldName);
     if (field !== undefined) {
       let owner = field!.getOwner();
-      console.info(`Field ${fieldName} is owned by ${owner.getName()}`);
     }
   }
 }
@@ -1355,8 +1340,8 @@ export default function StaticFieldGetOwnerTest(): void {
       try {
         field!.getOwner();
         expect().assertFail();
-      } catch (_) {
-        expect(_ !== null).assertEqual(true);
+      } catch (e) {
+        expect(e.name).assertEqual('NullPointerError');
       }
     });
 
@@ -1373,8 +1358,8 @@ export default function StaticFieldGetOwnerTest(): void {
       try {
         field!.getOwner();
         expect().assertFail();
-      } catch (_) {
-        expect(_ !== null).assertEqual(true);
+      } catch (e) {
+        expect(e.name).assertEqual('NullPointerError');
       }
     });
 
@@ -1392,7 +1377,6 @@ export default function StaticFieldGetOwnerTest(): void {
       if (field !== null) {
         let owner = field.getOwner();
       } else {
-        console.info("Field does not exist");
         expect(field).assertEqual(null);
       }
     });
@@ -1443,7 +1427,6 @@ export default function StaticFieldGetOwnerTest(): void {
       let field = cls.getStaticField("data");
       let fieldName = field!.getName();
       let ownerName = field!.getOwner().getName();
-      console.info(`Field ${fieldName} is owned by ${ownerName}`);
       expect(fieldName).assertEqual('data');
       expect(ownerName).assertEqual('MyClass024');
     });
@@ -1461,7 +1444,6 @@ export default function StaticFieldGetOwnerTest(): void {
       let field = cls.getStaticField("count");
       let owner = field!.getOwner();
       let type = field!.getType();
-      console.info(`Owner: ${owner.getName()}, Type: ${type.getName()}`);
       expect(owner.getName()).assertEqual('MyClass025');
     });
 
@@ -1478,7 +1460,6 @@ export default function StaticFieldGetOwnerTest(): void {
       let field = cls.getStaticField("value");
       let owner = field!.getOwner();
       let value = field!.getValue();
-      console.info(`${owner.getName()}.${field!.getName()} = ${value}`);
       expect(owner.getName()).assertEqual('MyClass026');
     });
 
@@ -1495,7 +1476,6 @@ export default function StaticFieldGetOwnerTest(): void {
       let field = cls.getStaticField("pubField");
       if (field!.isPublic()) {
         let owner = field!.getOwner();
-        console.info(`Public field owned by: ${owner.getName()}`);
         expect(owner.getName()).assertEqual('MyClass027');
       }
     });
@@ -1522,7 +1502,6 @@ export default function StaticFieldGetOwnerTest(): void {
           accessLevel = "protected";
         }
         let owner = field.getOwner();
-        console.info(`${accessLevel} ${field.getName()} owned by ${owner.getName()}`);
       }
       expect(fields.length).assertLarger(0);
     });
@@ -1589,7 +1568,6 @@ export default function StaticFieldGetOwnerTest(): void {
         let field = fields[i];
         let fieldName = field.getName();
         let ownerName = field.getOwner().getName();
-        console.info(`Field: ${fieldName}, Owner: ${ownerName}`);
       }
       expect(fields.length).assertLarger(0);
     });
@@ -1629,7 +1607,6 @@ export default function StaticFieldGetOwnerTest(): void {
         let field = fields[i];
         let owner = field.getOwner();
         let fieldName = field.getName();
-        console.info(`${fieldName} owned by ${owner.getName()}`);
       }
       expect(fields.length).assertLarger(0);
     });
@@ -1646,7 +1623,6 @@ export default function StaticFieldGetOwnerTest(): void {
       let childCls = reflectChild035();
       let ownField = childCls.getStaticField("ownField");
       let origin = getFieldOrigin(ownField!);
-      console.info(origin);
       expect(origin.length).assertLarger(0);
     });
 
@@ -1662,7 +1638,6 @@ export default function StaticFieldGetOwnerTest(): void {
       let cls = reflectNamespacedClass036();
       let field = cls.getStaticField("namespacedField");
       let owner = field!.getOwner();
-      console.info("Namespaced field owner: " + owner.getName());
       expect(owner.getName()).assertEqual('NamespacedClass');
     });
 
@@ -1696,12 +1671,10 @@ export default function StaticFieldGetOwnerTest(): void {
       let strCls = reflectStringContainer038();
       let strField = strCls.getStaticField("defaultValue");
       let strOwner = strField!.getOwner();
-      console.info("StringContainer038 field owner: " + strOwner.getName());
       expect(strOwner.getName()).assertEqual('StringContainer038');
       let numCls = reflectNumberContainer038();
       let numField = numCls.getStaticField("defaultValue");
       let numOwner = numField!.getOwner();
-      console.info("NumberContainer038 field owner: " + numOwner.getName());
       expect(numOwner.getName()).assertEqual('NumberContainer038');
     });
 
@@ -1794,11 +1767,9 @@ export default function StaticFieldGetOwnerTest(): void {
       let cls = reflectMyClass043();
       let staticField = cls.getStaticField("staticValue");
       let staticOwner = staticField!.getOwner();
-      console.info("Static field owner: " + staticOwner.getName());
       expect(staticOwner.getName()).assertEqual("MyClass043");
       let instanceField = cls.getInstanceField("instanceValue");
       let instanceOwner = instanceField!.getOwner();
-      console.info("Instance field owner: " + instanceOwner.getName());
       expect(instanceOwner.getName()).assertEqual("MyClass043");
       expect(staticOwner.equals(instanceOwner)).assertEqual(true);
     });
@@ -1847,9 +1818,6 @@ export default function StaticFieldGetOwnerTest(): void {
       let fieldsB = clsB.getDeclaredStaticFields();
       let allFields = fieldsA.concat(fieldsB);
       let groups = groupFieldsByOwner(allFields);
-      groups.forEach((fieldList, ownerName): void => {
-        console.info(`${ownerName}: ${fieldList.length} fields`);
-      });
       expect(groups.size).assertLarger(0);
     });
 
@@ -1880,7 +1848,6 @@ export default function StaticFieldGetOwnerTest(): void {
       let fields = cls.getDeclaredStaticFields();
       for (let i = 0; i < fields.length; i++) {
         let serialized = serializeFieldWithOwner(fields[i]);
-        console.info(JSON.stringify(serialized));
       }
       expect(fields.length).assertLarger(0);
     });
@@ -1899,7 +1866,6 @@ export default function StaticFieldGetOwnerTest(): void {
       let ownerName: string = data['owner'] as string;
       let fieldName: string = data['name'] as string;
       let value: string | number | boolean | null = data['value']!;
-      console.info(`Deserialized ${ownerName}.${fieldName} = ${value}`);
       expect(ownerName).assertEqual('Config048');
       expect(fieldName).assertEqual('APP_NAME');
       expect(value).assertEqual('MyApp');
@@ -1931,9 +1897,6 @@ export default function StaticFieldGetOwnerTest(): void {
     it('testStaticFieldGetOwner051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = reflectConfig051();
       let fields = cls.getDeclaredStaticFields();
-      for (let i = 0; i < fields.length; i++) {
-        console.info(generateFieldDoc(fields[i]));
-      }
       expect(fields.length).assertLarger(0);
     });
 
@@ -1976,12 +1939,10 @@ export default function StaticFieldGetOwnerTest(): void {
     it('testStaticFieldGetOwner054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v1Cls = reflectConfigV1054();
       let v1Field = v1Cls.getStaticField("API_ENDPOINT");
-      console.info(`V1 field owner: ${v1Field!.getOwner().getName()}`);
       expect(v1Field!.getOwner().getName()).assertEqual('ConfigV1054');
       let v2Cls = reflectConfigV2054();
       let v2Field = v2Cls.getStaticField("API_ENDPOINT");
       if (v2Field !== undefined) {
-        console.info(`V2 field owner: ${v2Field!.getOwner().getName()}`);
         expect(v2Field!.getOwner().getName()).assertEqual('ConfigV2054');
       }
     });
@@ -1998,10 +1959,8 @@ export default function StaticFieldGetOwnerTest(): void {
       let cls = reflectMixedClass055();
       let staticField = cls.getStaticField("staticField");
       let staticOwner = staticField!.getOwner();
-      console.info(`Static field owner: ${staticOwner.getName()}`);
       let instanceField = cls.getInstanceField("instanceField");
       let instanceOwner = instanceField!.getOwner();
-      console.info(`Instance field owner: ${instanceOwner.getName()}`);
       expect(staticOwner.getName()).assertEqual(instanceOwner.getName());
     });
 
@@ -2022,9 +1981,6 @@ export default function StaticFieldGetOwnerTest(): void {
         let fieldName = field.getName();
         let value = field.getValue();
         let targetField = targetClass.getStaticField(fieldName);
-        if (targetField === undefined) {
-          console.info(`Copying ${fieldName} from Config048 to MyClass050`);
-        }
       }
       expect(sourceFields.length).assertLarger(0);
     });

@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,7 +27,7 @@ import {
   TestType
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
-import { StaticField, ReflectClass, createReflectClass } from './StaticFieldReflect';
+import { StaticField, ReflectClass, createReflectClass } from '../Util.test';
 
 class MyClass001 {
   private static name: string = 'test';
@@ -399,15 +400,6 @@ function auditSensitiveFields(cls: ReflectClass): void {
   for (let i = 0; i < fields.length; i++) {
     let field: StaticField = fields[i];
     let fieldName: string = field.getName().toLowerCase();
-    for (let j = 0; j < sensitivePatterns.length; j++) {
-      if (fieldName.includes(sensitivePatterns[j])) {
-        if (!field.isPrivate()) {
-          console.warn('WARNING: Sensitive field ' + field.getName() + ' is not private!');
-        } else {
-          console.info('OK: Sensitive field ' + field.getName() + ' is properly private');
-        }
-      }
-    }
   }
 }
 
@@ -693,11 +685,6 @@ export default function StaticFieldIsPrivateTest(): void {
       let cls: ReflectClass = createReflectClass('MyClass009');
       cls.addStaticField('priv', createReflectClass('int'), 1, false, true, false, false);
       let field: StaticField | null = cls.getStaticField('priv');
-      if (field!.isPrivate()) {
-        console.info('This is a private field');
-      } else {
-        console.info('This is a non-private field');
-      }
       expect(field!.isPrivate()).assertEqual(true);
     });
 
@@ -738,8 +725,8 @@ export default function StaticFieldIsPrivateTest(): void {
       try {
         field!.isPrivate();
         expect().assertFail();
-      } catch (error) {
-        expect(error !== null).assertEqual(true);
+      } catch (e) {
+        expect(e.name).assertEqual('NullPointerError');
       }
     });
 
@@ -756,8 +743,8 @@ export default function StaticFieldIsPrivateTest(): void {
       try {
         field!.isPrivate();
         expect().assertFail();
-      } catch (error) {
-        expect(error !== null).assertEqual(true);
+      } catch (e) {
+        expect(e.name).assertEqual('NullPointerError');
       }
     });
 
@@ -1265,11 +1252,6 @@ export default function StaticFieldIsPrivateTest(): void {
       let fields: StaticField[] = cls.getDeclaredStaticFields();
       for (let i = 0; i < fields.length; i++) {
         let field: StaticField = fields[i];
-        if (field.isPrivate()) {
-          console.info('[ENCRYPTED] ' + field.getName() + ': ***');
-        } else {
-          console.info(field.getName() + ': ' + field.getValue());
-        }
       }
       expect(cls.getStaticField('apiKey')!.isPrivate()).assertEqual(false);
       expect(cls.getStaticField('secretKey')!.isPrivate()).assertEqual(true);
@@ -1318,9 +1300,7 @@ export default function StaticFieldIsPrivateTest(): void {
       let privateField: StaticField | null = cls.getStaticField('privateData');
       expect(privateField!.isPrivate()).assertEqual(true);
       let value: string | number | boolean | null = privateField!.getValue() as string | number | boolean | null;
-      console.info('Private data via reflection: ' + value);
       privateField!.setValue('modified');
-      console.info('Modified private data: ' + privateField!.getValue());
     });
 
     /**
@@ -1361,7 +1341,6 @@ export default function StaticFieldIsPrivateTest(): void {
       cls.addStaticField('API_SECRET', createReflectClass('string'), 'secret_key', false, true, false, false);
       cls.addStaticField('ENCRYPTION_KEY', createReflectClass('string'), 'key', false, true, false, false);
       let publicConfig: Record<string, string | number | boolean | null> = exportPublicConfig(cls);
-      console.info(JSON.stringify(publicConfig));
       expect(publicConfig['APP_NAME']).assertEqual('MyApp');
       expect(publicConfig['DB_PASSWORD']).assertEqual(undefined);
     });
