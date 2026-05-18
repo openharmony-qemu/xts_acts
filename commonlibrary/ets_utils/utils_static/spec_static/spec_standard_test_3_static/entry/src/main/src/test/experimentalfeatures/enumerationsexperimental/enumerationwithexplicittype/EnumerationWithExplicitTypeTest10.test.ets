@@ -762,7 +762,7 @@ export default function EnumerationWithExplicitTypeTest10(): void {
       expect(EnumShortD0.J).assertEqual(j)
       expect(EnumShortD0.K).assertEqual(k)
       expect(EnumShortD0.L).assertEqual(l)
-      expect(EnumShortD0.L).assertEqual(m)
+      expect(EnumShortD0.M).assertEqual(m)
     });
 
     /**
@@ -825,7 +825,7 @@ export default function EnumerationWithExplicitTypeTest10(): void {
       expect(EnumShortD0.J).assertEqual(j)
       expect(EnumShortD0.K).assertEqual(k)
       expect(EnumShortD0.L).assertEqual(l)
-      expect(EnumShortD0.L).assertEqual(m)
+      expect(EnumShortD0.M).assertEqual(m)
     });
 
     /**

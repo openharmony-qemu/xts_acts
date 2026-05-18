@@ -85,10 +85,10 @@ function check_01(v: T_01, v_type: VarType, v_id: int): void {
   // [FIX] 通过原数组索引传入确定无误的静态类型，规避编译器分支推导的兼容性报错，且彻底抛弃隐式 as 转换造成的崩溃
   if (!(v instanceof B_01)) {
     expect(v).assertEqual(undefined);
-    check_as_type_T_diff_A_01(check_values_01[v_id][0], v_id);
+    check_as_type_T_diff_A_01(v, v_id);
   } else {
     expect((v as B_01).methB()).assertEqual("methB");
-    check_as_type_T_inter_A_01(check_values_01[v_id][0], v_id);
+    check_as_type_T_inter_A_01(v, v_id);
   }
 }
 
@@ -157,10 +157,10 @@ function check_as_type_T_diff_A_02(v: T_02, v_id: int): void {
 function check_02(v: T_02, v_type: VarType, v_id: int): void {
   if (!(v instanceof C1_02 || v instanceof C2_02)) {
     skip_check();
-    check_as_type_T_diff_A_02(check_values_02[v_id][0], v_id);
+    check_as_type_T_diff_A_02(v, v_id);
   } else {
     expect((v as I_02).methI()).assertEqual("methI");
-    check_as_type_T_inter_A_02(check_values_02[v_id][0], v_id);
+    check_as_type_T_inter_A_02(v, v_id);
   }
 }
 
@@ -225,10 +225,10 @@ function check_as_type_T_diff_A_03(v: T_03, v_id: int): void {
 function check_03(v: T_03, v_type: VarType, v_id: int): void {
   if (!(typeof v === 'number' || v instanceof Dog_03)) {
     skip_check();
-    check_as_type_T_diff_A_03(check_values_03[v_id][0], v_id);
+    check_as_type_T_diff_A_03(v, v_id);
   } else {
     skip_check();
-    check_as_type_T_inter_A_03(check_values_03[v_id][0], v_id);
+    check_as_type_T_inter_A_03(v, v_id);
   }
 }
 
@@ -293,10 +293,10 @@ function check_as_type_T_diff_A_04(v: T_04, v_id: int): void {
 function check_04(v: T_04, v_type: VarType, v_id: int): void {
   if (!(typeof v === 'number' || v instanceof Dog_04)) {
     if (v instanceof Animal_04) expect(v.va).assertEqual(0);
-    check_as_type_T_diff_A_04(check_values_04[v_id][0], v_id);
+    check_as_type_T_diff_A_04(v, v_id);
   } else {
     skip_check();
-    check_as_type_T_inter_A_04(check_values_04[v_id][0], v_id);
+    check_as_type_T_inter_A_04(v, v_id);
   }
 }
 
@@ -359,15 +359,16 @@ function check_as_type_T_diff_A_05(v: T_05, v_id: int): void {
   if (fn !== undefined) (fn as CheckValueFuncTypeT_diff_A_05)(v, v_id);
 }
 function check_05(v: T_05, v_type: VarType, v_id: int): void {
-  // [FIX] 彻底解决 ESE0046, ESE0127 编译错乱和 ClassCastError 强转崩溃。
-  // 通过传递纯净无污染的静态源数组数据，切断 ArkTS 控制流分析对类型缩窄后的验证失败。
-  if (!(v instanceof B1_05 || v instanceof Other_05)) {
-    if (v instanceof B2_05) expect(v.vb2).assertEqual(123n);
-    check_as_type_T_diff_A_05(check_values_05[v_id][0], v_id);
-  } else {
-    skip_check();
-    check_as_type_T_inter_A_05(check_values_05[v_id][0], v_id);
+  for (; !(v instanceof B1_05 || v instanceof Other_05);) {
+    expect(v_type).assertEqual(VarType.T_diff_A)
+    if (v instanceof B2_05) {
+      expect(v.vb2).assertEqual(123n)
+    }
+    check_as_type_T_diff_A_05(v as T_diff_A_05, v_id)
+    return
   }
+  expect(v_type).assertEqual(VarType.T_inter_A)
+  check_as_type_T_inter_A_05(v as T_inter_A_05, v_id)
 }
 
 // ============================================================================
@@ -433,10 +434,10 @@ function check_as_type_T_diff_A_06(v: T_06, v_id: int): void {
 function check_06(v: T_06, v_type: VarType, v_id: int): void {
   if (!(v instanceof C1_06 || v instanceof C2_06)) {
     if (v instanceof C3_06) expect(v.methII2()).assertEqual("methII2");
-    check_as_type_T_diff_A_06(check_values_06[v_id][0], v_id);
+    check_as_type_T_diff_A_06(v, v_id);
   } else {
     skip_check();
-    check_as_type_T_inter_A_06(check_values_06[v_id][0], v_id);
+    check_as_type_T_inter_A_06(v, v_id);
   }
 }
 
@@ -503,10 +504,10 @@ function check_as_type_T_diff_A_07(v: T_07, v_id: int): void {
 function check_07(v: T_07, v_type: VarType, v_id: int): void {
   if (!(v instanceof C1_07 || v instanceof C2_07)) {
     skip_check();
-    check_as_type_T_diff_A_07(check_values_07[v_id][0], v_id);
+    check_as_type_T_diff_A_07(v, v_id);
   } else {
     if (v instanceof C1_07 || v instanceof C2_07) expect((v as III2_07).methIII2()).assertEqual("methIII2");
-    check_as_type_T_inter_A_07(check_values_07[v_id][0], v_id);
+    check_as_type_T_inter_A_07(v, v_id);
   }
 }
 
@@ -565,10 +566,10 @@ function check_08(v: T_08, v_type: VarType, v_id: int): void {
   let v_obj = v as Object;
   if (!(v_obj instanceof C_08)) {
     if (v_obj instanceof D_08) expect(v_obj.vi).assertEqual(0);
-    check_as_type_T_diff_A_08(check_values_08[v_id][0], v_id);
+    check_as_type_T_diff_A_08(v, v_id);
   } else {
     if (v_obj instanceof B_08) expect(v_obj.methC() === "methC" && v_obj.methI() === "methIB").assertTrue();
-    check_as_type_T_inter_A_08(check_values_08[v_id][0], v_id);
+    check_as_type_T_inter_A_08(v, v_id);
   }
 }
 
@@ -629,10 +630,10 @@ function check_09(v: T_09, v_type: VarType, v_id: int): void {
   let v_obj = v as Object;
   if (!(v_obj instanceof C_09)) {
     if (v_obj instanceof D_09) expect(v_obj.vi).assertEqual(0);
-    check_as_type_T_diff_A_09(check_values_09[v_id][0], v_id);
+    check_as_type_T_diff_A_09(v, v_id);
   } else {
     if (v_obj instanceof B_09) expect(v_obj.methC() === "methCB" && v_obj.methI() === "methI").assertTrue();
-    check_as_type_T_inter_A_09(check_values_09[v_id][0], v_id);
+    check_as_type_T_inter_A_09(v, v_id);
   }
 }
 
@@ -714,10 +715,10 @@ function check_as_type_T_diff_A_10(v: T_10, v_id: int): void {
 function check_10(v: T_10, v_type: VarType, v_id: int): void {
   if (!(v !== undefined)) {
     expect(v).assertEqual(undefined);
-    check_as_type_T_diff_A_10(check_values_10[v_id][0], v_id);
+    check_as_type_T_diff_A_10(v, v_id);
   } else {
     skip_check();
-    check_as_type_T_inter_A_10(check_values_10[v_id][0], v_id);
+    check_as_type_T_inter_A_10(v, v_id);
   }
 }
 

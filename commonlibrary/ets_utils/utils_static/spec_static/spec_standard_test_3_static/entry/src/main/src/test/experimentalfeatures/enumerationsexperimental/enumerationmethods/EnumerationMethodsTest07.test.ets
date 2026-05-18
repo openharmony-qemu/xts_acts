@@ -1283,41 +1283,41 @@ export default function EnumerationMethodsTest07(): void {
      * @tc.level     Level 2
      */
     it("testEnumerationMethods0098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Enum2.Red.valueOf() instanceof short).assertTrue();
-      expect(Enum2.Red.toString()).assertEqual("0");
-      expect(Enum2.Red.toString()).assertEqual(Enum2.Red.valueOf().toString());
+      expect(Enum3.Red.valueOf() instanceof short).assertTrue();
+      expect(Enum3.Red.toString()).assertEqual("0");
+      expect(Enum3.Red.toString()).assertEqual(Enum2.Red.valueOf().toString());
 
-      expect(Enum2.Green.valueOf() instanceof short).assertTrue();
-      expect(Enum2.Green.toString()).assertEqual("10");
-      expect(Enum2.Green.toString()).assertEqual(Enum2.Green.valueOf().toString());
+      expect(Enum3.Green.valueOf() instanceof short).assertTrue();
+      expect(Enum3.Green.toString()).assertEqual("10");
+      expect(Enum3.Green.toString()).assertEqual(Enum2.Green.valueOf().toString());
 
-      expect(Enum2.Blue.valueOf() instanceof short).assertTrue();
-      expect(Enum2.Blue.toString()).assertEqual("11");
-      expect(Enum2.Blue.toString()).assertEqual(Enum2.Blue.valueOf().toString());
+      expect(Enum3.Blue.valueOf() instanceof short).assertTrue();
+      expect(Enum3.Blue.toString()).assertEqual("11");
+      expect(Enum3.Blue.toString()).assertEqual(Enum2.Blue.valueOf().toString());
 
-      expect(Enum2.First.valueOf() instanceof short).assertTrue();
-      expect(Enum2.First.toString()).assertEqual("-32768");
+      expect(Enum3.First.valueOf() instanceof short).assertTrue();
+      expect(Enum3.First.toString()).assertEqual("-32768");
       expect(Enum2.First.toString()).assertEqual(Enum2.First.valueOf().toString());
 
-      expect(Enum2.Second.valueOf() instanceof short).assertTrue();
-      expect(Enum2.Second.toString()).assertEqual("12345");
-      expect(Enum2.Second.toString()).assertEqual(Enum2.Second.valueOf().toString());
+      expect(Enum3.Second.valueOf() instanceof short).assertTrue();
+      expect(Enum3.Second.toString()).assertEqual("12345");
+      expect(Enum3.Second.toString()).assertEqual(Enum2.Second.valueOf().toString());
 
-      expect(Enum2.Third.valueOf() instanceof short).assertTrue();
-      expect(Enum2.Third.toString()).assertEqual("32767");
-      expect(Enum2.Third.toString()).assertEqual(Enum2.Third.valueOf().toString());
+      expect(Enum3.Third.valueOf() instanceof short).assertTrue();
+      expect(Enum3.Third.toString()).assertEqual("32767");
+      expect(Enum3.Third.toString()).assertEqual(Enum2.Third.valueOf().toString());
 
-      expect(Enum2.One.valueOf() instanceof short).assertTrue();
-      expect(Enum2.One.toString()).assertEqual("1");
-      expect(Enum2.One.toString()).assertEqual(Enum2.One.valueOf().toString());
+      expect(Enum3.One.valueOf() instanceof short).assertTrue();
+      expect(Enum3.One.toString()).assertEqual("1");
+      expect(Enum3.One.toString()).assertEqual(Enum2.One.valueOf().toString());
 
-      expect(Enum2.one.valueOf() instanceof short).assertTrue();
-      expect(Enum2.one.toString()).assertEqual("1");
-      expect(Enum2.one.toString()).assertEqual(Enum2.one.valueOf().toString());
+      expect(Enum3.one.valueOf() instanceof short).assertTrue();
+      expect(Enum3.one.toString()).assertEqual("1");
+      expect(Enum3.one.toString()).assertEqual(Enum2.one.valueOf().toString());
 
-      expect(Enum2.oNe.valueOf() instanceof short).assertTrue();
-      expect(Enum2.oNe.toString()).assertEqual("1");
-      expect(Enum2.oNe.toString()).assertEqual(Enum2.oNe.valueOf().toString());
+      expect(Enum3.oNe.valueOf() instanceof short).assertTrue();
+      expect(Enum3.oNe.toString()).assertEqual("1");
+      expect(Enum3.oNe.toString()).assertEqual(Enum2.oNe.valueOf().toString());
 
       expect(testNS.runTest97()).assertTrue();
     });

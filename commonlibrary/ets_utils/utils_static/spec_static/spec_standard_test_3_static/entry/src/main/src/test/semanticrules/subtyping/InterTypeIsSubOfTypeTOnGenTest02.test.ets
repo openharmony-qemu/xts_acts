@@ -149,7 +149,7 @@ namespace testNS1_5 {
       new C3_5<bigint, undefined>(321n), 2)
     let res3: boolean = check_is_in_T_type_5(
       5n, 3)
-    expect(res1 && (res2 || res3)).assertTrue()
+    expect(res1 && res2 && res3).assertTrue()
     return true
   }
 }
@@ -273,7 +273,7 @@ namespace testNS2_5 {
       new C3_5<bigint, undefined>(321n), 2)
     let res3: boolean = check_is_in_T_type_5(
       5n, 3)
-    expect(res1 && (res2 || res3)).assertTrue()
+    expect(res1 && res2 && res3).assertTrue()
     return true
   }
 }
@@ -397,7 +397,7 @@ namespace testNS3_5 {
       new C3_5<bigint, undefined>(321n), 2)
     let res3: boolean = check_is_in_T_type_5(
       5n, 3)
-    expect(res1 && (res2 || res3)).assertTrue()
+    expect(res1 && res2 && res3).assertTrue()
     return true
   }
 }
@@ -521,7 +521,7 @@ namespace testNS4_5 {
       new C3_5<bigint, undefined>(321n), 2)
     let res3: boolean = check_is_in_T_type_5(
       5n, 3)
-    expect(res1 && (res2 || res3)).assertTrue()
+    expect(res1 && res2 && res3).assertTrue()
     return true
   }
 }
@@ -645,7 +645,7 @@ namespace testNS5_5 {
       new C3_5<bigint, undefined>(321n), 2)
     let res3: boolean = check_is_in_T_type_5(
       5n, 3)
-    expect(res1 && (res2 || res3)).assertTrue()
+    expect(res1 && res2 && res3).assertTrue()
     return true
   }
 }
@@ -769,7 +769,7 @@ namespace testNS6_5 {
       new C3_5<bigint, undefined>(321n), 2)
     let res3: boolean = check_is_in_T_type_5(
       5n, 3)
-    expect(res1 && (res2 || res3)).assertTrue()
+    expect(res1 && res2 && res3).assertTrue()
     return true
   }
 }
@@ -893,7 +893,7 @@ namespace testNS7_5 {
       new C3_5<bigint, undefined>(321n), 2)
     let res3: boolean = check_is_in_T_type_5(
       5n, 3)
-    expect(res1 && (res2 || res3)).assertTrue()
+    expect(res1 && res2 && res3).assertTrue()
     return true
   }
 }
@@ -1128,7 +1128,7 @@ namespace testNS1_6 {
       new C3_6<bigint, undefined>(321n), 2)
     let res3: boolean = check_is_in_T_type_6(
       5n, 3)
-    expect(res1 && (res2 || res3)).assertTrue()
+    expect(res1 && res2 && res3).assertTrue()
     return true
   }
 }
@@ -1252,7 +1252,7 @@ namespace testNS2_6 {
       new C3_6<bigint, undefined>(321n), 2)
     let res3: boolean = check_is_in_T_type_6(
       5n, 3)
-    expect(res1 && (res2 || res3)).assertTrue()
+    expect(res1 && res2 && res3).assertTrue()
     return true
   }
 }
@@ -1413,7 +1413,7 @@ export default function InterTypeIsSubOfTypeTOnGenTest02(): void {
         new C3_5<bigint, undefined>(321n), 2)
       let res3: boolean = check_is_in_T_type_5(
         5n, 3)
-      expect(res1 && (res2 || res3)).assertTrue()
+      expect(res1 && res2 && res3).assertTrue()
 
       expect(testNS1_5.runTest_5()).assertTrue()
       expect(testNS2_5.runTest_5()).assertTrue()
@@ -1444,7 +1444,7 @@ export default function InterTypeIsSubOfTypeTOnGenTest02(): void {
         new C3_6<bigint, undefined>(321n), 2)
       let res3: boolean = check_is_in_T_type_6(
         5n, 3)
-      expect(res1 && (res2 || res3)).assertTrue()
+      expect(res1 && res2 && res3).assertTrue()
 
       expect(testNS1_6.runTest_6()).assertTrue()
       expect(testNS2_6.runTest_6()).assertTrue()

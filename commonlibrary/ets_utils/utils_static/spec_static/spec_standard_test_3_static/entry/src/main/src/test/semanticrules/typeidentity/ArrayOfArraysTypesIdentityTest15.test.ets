@@ -236,9 +236,7 @@ export default function ArrayOfArraysTypesIdentityTest15(): void {
       expect(a[1][1] instanceof C1).assertEqual(true)
       expect(typeof a[1][1].data === 'number').assertEqual(true)
       expect(a[1][1].data).assertEqual(7)
-
       expect(testNS_1.runTest_1()).assertEqual(true)
-
     });
 
     /**
@@ -294,9 +292,7 @@ export default function ArrayOfArraysTypesIdentityTest15(): void {
       expect(a[1][1] instanceof C2).assertEqual(true)
       expect(typeof a[1][1].data === 'number').assertEqual(true)
       expect(a[1][1].data).assertEqual(7)
-
-      expect(testNS_1.runTest_1()).assertEqual(true)
-
+      expect(testNS_2.runTest_2()).assertEqual(true)
     });
   })
 }

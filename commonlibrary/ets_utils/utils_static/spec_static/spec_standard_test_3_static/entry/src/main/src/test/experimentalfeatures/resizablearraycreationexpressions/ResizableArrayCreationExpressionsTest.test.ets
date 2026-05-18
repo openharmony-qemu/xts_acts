@@ -110,7 +110,6 @@ export default function ResizableArrayCreationExpressionsTest(): void {
      * @tc.level     Level 2
      */
     it('testArrayCreationExpressions0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Create empty array and add elements using push
       let x: Array<number> = new Array<number>();
       expect(x.length).assertEqual(0);
       x.push(0);
@@ -127,7 +126,6 @@ export default function ResizableArrayCreationExpressionsTest(): void {
      * @tc.level     Level 2
      */
     it('testArrayCreationExpressions0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Create empty array and add elements using push
       let x: Array<number> = new Array<number>();
       expect(x.length).assertEqual(0);
       x.push(0);
@@ -144,8 +142,7 @@ export default function ResizableArrayCreationExpressionsTest(): void {
      * @tc.level     Level 2
      */
     it('testArrayCreationExpressions0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Create empty array and add elements using push
-      let x: Array<number> = new Array<number>();
+      let x: Array<short> = new Array<short>();
       expect(x.length).assertEqual(0);
       x.push(0);
       expect(x.length).assertEqual(1);
@@ -161,8 +158,7 @@ export default function ResizableArrayCreationExpressionsTest(): void {
      * @tc.level     Level 2
      */
     it('testArrayCreationExpressions0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Create empty array and add elements using push
-      let x: Array<number> = new Array<number>();
+      let x: Array<long> = new Array<long>();
       expect(x.length).assertEqual(0);
       x.push(0);
       expect(x.length).assertEqual(1);
@@ -178,10 +174,9 @@ export default function ResizableArrayCreationExpressionsTest(): void {
      * @tc.level     Level 2
      */
     it('testArrayCreationExpressions0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Create empty array and add elements using push
-      let x: Array<number> = new Array<number>();
+      let x: Array<float> = new Array<float>();
       expect(x.length).assertEqual(0);
-      x.push(0.0);
+      x.push(0.0f);
       expect(x.length).assertEqual(1);
       expect(x[0] == 0.0).assertTrue();
     });
@@ -195,8 +190,7 @@ export default function ResizableArrayCreationExpressionsTest(): void {
      * @tc.level     Level 2
      */
     it('testArrayCreationExpressions0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Create empty array and add elements using push
-      let x: Array<number> = new Array<number>();
+      let x: Array<double> = new Array<double>();
       expect(x.length).assertEqual(0);
       x.push(0.0);
       expect(x.length).assertEqual(1);

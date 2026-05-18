@@ -123,7 +123,7 @@ export default function BinaryOverflow(): void{
     /**
      * @tc.number    SUB_BASEDATE_BINARY_OVERFLOW_0500
      * @tc.name      testBinaryOverflow0005
-     * @tc.desc      Testing overflow for binary operator '-' with short and short. On overflow, the type must be converted to int.
+     * @tc.desc      Testing overflow for binary operator '+' with short and short. On overflow, the type must be converted to int.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -141,7 +141,7 @@ export default function BinaryOverflow(): void{
     /**
      * @tc.number    SUB_BASEDATE_BINARY_OVERFLOW_0600
      * @tc.name      testBinaryOverflow0006
-     * @tc.desc      Testing overflow for binary operator '+' with int and int. On overflow, the type must be converted to int.
+     * @tc.desc      Testing overflow for binary operator '-' with int and int. On overflow, the type must be converted to int.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -158,7 +158,7 @@ export default function BinaryOverflow(): void{
     /**
      * @tc.number    SUB_BASEDATE_BINARY_OVERFLOW_0700
      * @tc.name      testBinaryOverflow0007
-     * @tc.desc      Testing overflow for binary operator '-' with int and int. On overflow, the type must be converted to int.
+     * @tc.desc      Testing overflow for binary operator '+' with int and int. On overflow, the type must be converted to int.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2

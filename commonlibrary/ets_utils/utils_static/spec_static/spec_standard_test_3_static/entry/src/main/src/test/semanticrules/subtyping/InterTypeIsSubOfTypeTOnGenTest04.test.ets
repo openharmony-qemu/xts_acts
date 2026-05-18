@@ -128,7 +128,7 @@ namespace testNS1_9 {
     const res1 = check_is_in_T_type_9(new C2_9(6.7), 1);
     const res2 = check_is_in_T_type_9(new C3_9(321n), 2);
     const res3 = check_is_in_T_type_9(5n, 3);
-    expect(res1 && (res2 || res3)).assertTrue();
+    expect(res1 && res2 && res3).assertTrue();
     return true;
   }
 }
@@ -231,7 +231,7 @@ namespace testNS2_9 {
     const res1 = check_is_in_T_type_9(new C1_9(123), 1);
     const res2 = check_is_in_T_type_9(new C3_9(321n), 2);
     const res3 = check_is_in_T_type_9(5n, 3);
-    expect(res1 && (res2 || res3)).assertTrue();
+    expect(res1 && res2 && res3).assertTrue();
     return true;
   }
 }
@@ -423,7 +423,7 @@ namespace testNS1_10 {
     let res1: boolean = check_is_in_T_type_10(new C1_10(123), 1)
     let res2: boolean = check_is_in_T_type_10(new C3_10(321n), 2)
     let res3: boolean = check_is_in_T_type_10(5n, 3)
-    expect(res1 && (res2 || res3)).assertTrue()
+    expect(res1 && res2 && res3).assertTrue()
     return true
   }
 }
@@ -521,7 +521,7 @@ namespace testNS2_10 {
     let res1: boolean = check_is_in_T_type_10(new C2_10(6.7), 1)
     let res2: boolean = check_is_in_T_type_10(new C3_10(321n), 2)
     let res3: boolean = check_is_in_T_type_10(5n, 3)
-    expect(res1 && (res2 || res3)).assertTrue()
+    expect(res1 && res2 && res3).assertTrue()
     return true
   }
 }
@@ -712,7 +712,7 @@ namespace testNS1_11 {
     const res1 = check_is_in_T_type_11(new C1_11<number, null>(123), 1)
     const res2 = check_is_in_T_type_11(new C3_11<bigint, undefined>(321n), 2)
     const res3 = check_is_in_T_type_11(5n, 3)
-    expect(res1 && (res2 || res3)).assertTrue()
+    expect(res1 && res2 && res3).assertTrue()
     return true
   }
 }
@@ -813,7 +813,7 @@ namespace testNS2_11 {
     const res1 = check_is_in_T_type_11(new C2_11<number, string>(6.7), 1)
     const res2 = check_is_in_T_type_11(new C3_11<bigint, undefined>(321n), 2)
     const res3 = check_is_in_T_type_11(5n, 3)
-    expect(res1 && (res2 || res3)).assertTrue()
+    expect(res1 && res2 && res3).assertTrue()
     return true
   }
 }
@@ -914,7 +914,7 @@ namespace testNS3_11 {
     const res1 = check_is_in_T_type_11(new C1_11<number, null>(123), 1)
     const res2 = check_is_in_T_type_11(new C3_11<bigint, undefined>(321n), 2)
     const res3 = check_is_in_T_type_11(5n, 3)
-    expect(res1 && (res2 || res3)).assertTrue()
+    expect(res1 && res2 && res3).assertTrue()
     return true
   }
 }
@@ -1015,7 +1015,7 @@ namespace testNS4_11 {
     const res1 = check_is_in_T_type_11(new C2_11<number, string>(6.7), 1)
     const res2 = check_is_in_T_type_11(new C3_11<bigint, undefined>(321n), 2)
     const res3 = check_is_in_T_type_11(5n, 3)
-    expect(res1 && (res2 || res3)).assertTrue()
+    expect(res1 && res2 && res3).assertTrue()
     return true
   }
 }
@@ -1116,7 +1116,7 @@ namespace testNS5_11 {
     const res1 = check_is_in_T_type_11(new C1_11<number, null>(123), 1)
     const res2 = check_is_in_T_type_11(new C3_11<bigint, undefined>(321n), 2)
     const res3 = check_is_in_T_type_11(5n, 3)
-    expect(res1 && (res2 || res3)).assertTrue()
+    expect(res1 && res2 && res3).assertTrue()
     return true
   }
 }
@@ -1310,7 +1310,7 @@ namespace testNS1_12 {
     const res1 = check_is_in_T_type_12(new C1_12<number, null>(123), 1)
     const res2 = check_is_in_T_type_12(new C3_12<bigint, undefined>(321n), 2)
     const res3 = check_is_in_T_type_12(5n, 3)
-    expect(res1 && (res2 || res3)).assertTrue()
+    expect(res1 && res2 && res3).assertTrue()
     return true
   }
 }
@@ -1448,7 +1448,7 @@ export default function InterTypeIsSubOfTypeTOnGenTest04(): void {
       let res1: boolean = check_is_in_T_type_9(new C2_9(6.7), 1)
       let res2: boolean = check_is_in_T_type_9(new C3_9(321n), 2)
       let res3: boolean = check_is_in_T_type_9(5n, 3)
-      expect(res1 && (res2 || res3)).assertTrue()
+      expect(res1 && res2 && res3).assertTrue()
       expect(testNS1_9.runTest_9()).assertTrue()
       expect(testNS2_9.runTest_9()).assertTrue()
     });
@@ -1468,7 +1468,7 @@ export default function InterTypeIsSubOfTypeTOnGenTest04(): void {
       let res1: boolean = check_is_in_T_type_10(new C1_10(123), 1);
       let res2: boolean = check_is_in_T_type_10(new C3_10(321n), 2);
       let res3: boolean = check_is_in_T_type_10(5n, 3);
-      expect(res1 && (res2 || res3)).assertTrue();
+      expect(res1 && res2 && res3).assertTrue();
       expect(testNS1_10.runTest_10()).assertTrue();
       expect(testNS2_10.runTest_10()).assertTrue();
     });
@@ -1487,7 +1487,7 @@ export default function InterTypeIsSubOfTypeTOnGenTest04(): void {
       let res1: boolean = check_is_in_T_type_11(new C1_11<number, null>(123), 1);
       let res2: boolean = check_is_in_T_type_11(new C3_11<bigint, undefined>(321n), 2);
       let res3: boolean = check_is_in_T_type_11(5n, 3);
-      expect(res1 && (res2 || res3)).assertTrue();
+      expect(res1 && res2 && res3).assertTrue();
       expect(testNS1_11.runTest_11()).assertTrue();
       expect(testNS2_11.runTest_11()).assertTrue();
       expect(testNS3_11.runTest_11()).assertTrue();
@@ -1509,7 +1509,7 @@ export default function InterTypeIsSubOfTypeTOnGenTest04(): void {
       let res1: boolean = check_is_in_T_type_12(new C1_12<number, null>(123), 1)
       let res2: boolean = check_is_in_T_type_12(new C3_12<bigint, undefined>(321n), 2)
       let res3: boolean = check_is_in_T_type_12(5n, 3)
-      expect(res1 && (res2 || res3)).assertTrue()
+      expect(res1 && res2 && res3).assertTrue()
       expect(testNS1_12.runTest_12()).assertTrue()
     });
   })

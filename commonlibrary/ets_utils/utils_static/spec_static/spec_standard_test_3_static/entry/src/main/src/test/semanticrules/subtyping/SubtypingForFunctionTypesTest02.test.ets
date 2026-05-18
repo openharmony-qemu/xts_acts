@@ -1075,8 +1075,8 @@ let foodbr69: (p: Derived69, ...n: number[]) => Base69 = c69.fooDBR69<Derived69,
 let fooddr69: (p: Derived69, ...n: number[]) => Derived69 = c69.fooDDR69<Derived69, Base69>;
 foodbn69 = fooddn69;
 
-export default function SubtypingForFunctionTypesTest01(): void {
-  describe('SubtypingForFunctionTypesTest01', () => {
+export default function SubtypingForFunctionTypesTest02(): void {
+  describe('SubtypingForFunctionTypesTest02', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.

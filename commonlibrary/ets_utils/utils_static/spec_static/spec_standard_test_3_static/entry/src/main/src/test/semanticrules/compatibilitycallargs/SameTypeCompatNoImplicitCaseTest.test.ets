@@ -131,12 +131,6 @@ function checkTypeIdentity25(a: Any, b: Any): boolean {
   return Class.of(a as Object) === Class.of(b as Object);
 }
 
-
-
-
-
-
-
 export default function SameTypeCompatNoImplicitCaseTest(): void {
   describe('SameTypeCompatNoImplicitCaseTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -479,8 +473,8 @@ export default function SameTypeCompatNoImplicitCaseTest(): void {
      */
     it("testSameTypeCompatNoImplicitCase0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       
-      const val1: bigint = new BigInt(100);
-      const val2: bigint = new BigInt(200);
+      const val1: bigint = BigInt(100);
+      const val2: bigint = BigInt(200);
       const diffTypeVal: Any = "This can be any type";
       const result1 = checkTypeIdentity16(val1, val2);
       const result2 = checkTypeIdentity16(val1, diffTypeVal);

@@ -91,7 +91,7 @@ namespace access_modifier_over_2 {
   }
 
   export class Derived implements I1, I2 {
-    public override foo(): void { res = 11; }
+    public foo(): void { res = 11; }
     public bar(): void { res = 5; }
   }
 

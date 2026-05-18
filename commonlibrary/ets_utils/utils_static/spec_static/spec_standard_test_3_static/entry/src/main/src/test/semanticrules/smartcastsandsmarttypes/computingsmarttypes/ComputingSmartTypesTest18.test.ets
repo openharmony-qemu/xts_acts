@@ -29,6 +29,56 @@ function skip_check(): void {
   // Function to skip check value by expression
 }
 
+function check_as_type_T_diff_A_01(v: T_diff_A_01, v_id: int): void {
+  let fn = check_values_01[v_id][2];
+  if (fn !== undefined) (fn as CheckValueFuncTypeT_diff_A_01)(v, v_id);
+}
+
+function check_as_type_T_diff_A_02(v: T_diff_A_02, v_id: int): void {
+  let fn = check_values_02[v_id][2];
+  if (fn !== undefined) (fn as CheckValueFuncTypeT_diff_A_02)(v, v_id);
+}
+
+function check_as_type_T_diff_A_03(v: T_diff_A_03, v_id: int): void {
+  let fn = check_values_03[v_id][2];
+  if (fn !== undefined) (fn as CheckValueFuncTypeT_diff_A_03)(v, v_id);
+}
+
+function check_as_type_T_diff_A_04(v: T_diff_A_04, v_id: int): void {
+  let fn = check_values_04[v_id][2];
+  if (fn !== undefined) (fn as CheckValueFuncTypeT_diff_A_04)(v, v_id);
+}
+
+function check_as_type_T_diff_A_05(v: T_diff_A_05, v_id: int): void {
+  let fn = check_values_05[v_id][2];
+  if (fn !== undefined) (fn as CheckValueFuncTypeT_diff_A_05)(v, v_id);
+}
+
+function check_as_type_T_diff_A_06(v: T_diff_A_06, v_id: int): void {
+  let fn = check_values_06[v_id][2];
+  if (fn !== undefined) (fn as CheckValueFuncTypeT_diff_A_06)(v, v_id);
+}
+
+function check_as_type_T_diff_A_07(v: T_diff_A_07, v_id: int): void {
+  let fn = check_values_07[v_id][2];
+  if (fn !== undefined) (fn as CheckValueFuncTypeT_diff_A_07)(v, v_id);
+}
+
+function check_as_type_T_diff_A_08(v: T_diff_A_08, v_id: int): void {
+  let fn = check_values_08[v_id][2];
+  if (fn !== undefined) (fn as CheckValueFuncTypeT_diff_A_08)(v, v_id);
+}
+
+function check_as_type_T_diff_A_09(v: T_diff_A_09, v_id: int): void {
+  let fn = check_values_09[v_id][2];
+  if (fn !== undefined) (fn as CheckValueFuncTypeT_diff_A_09)(v, v_id);
+}
+
+function check_as_type_T_diff_A_10(v: T_diff_A_10, v_id: int): void {
+  let fn = check_values_10[v_id][2];
+  if (fn !== undefined) (fn as CheckValueFuncTypeT_diff_A_10)(v, v_id);
+}
+
 // ============================================================================
 // Data Setup for testUserDefinedInWl0001
 // ============================================================================
@@ -83,7 +133,9 @@ function check_01(v: T_01, v_type: VarType, v_id: int): void {
     return
   }
   expect(v_type).assertEqual(VarType.T_diff_A)
+  check_as_type_T_diff_A_01(v as T_diff_A_01, v_id)
 }
+
 
 
 // ============================================================================
@@ -150,6 +202,7 @@ function check_02(v: T_02, v_type: VarType, v_id: int): void {
     return
   }
   expect(v_type).assertEqual(VarType.T_diff_A)
+  check_as_type_T_diff_A_02(v as T_diff_A_02, v_id)
 }
 
 
@@ -212,6 +265,7 @@ function check_03(v: T_03, v_type: VarType, v_id: int): void {
     return
   }
   expect(v_type).assertEqual(VarType.T_diff_A)
+  check_as_type_T_diff_A_03(v as T_diff_A_03, v_id)
 }
 
 
@@ -274,6 +328,7 @@ function check_04(v: T_04, v_type: VarType, v_id: int): void {
     return
   }
   expect(v_type).assertEqual(VarType.T_diff_A)
+  check_as_type_T_diff_A_04(v as T_diff_A_04, v_id)
 }
 
 
@@ -340,6 +395,7 @@ function check_05(v: T_05, v_type: VarType, v_id: int): void {
     return
   }
   expect(v_type).assertEqual(VarType.T_diff_A)
+  check_as_type_T_diff_A_05(v as T_diff_A_05, v_id)
 }
 
 
@@ -403,6 +459,7 @@ function check_06(v: T_06, v_type: VarType, v_id: int): void {
     return
   }
   expect(v_type).assertEqual(VarType.T_diff_A)
+  check_as_type_T_diff_A_06(v as T_diff_A_06, v_id)
 }
 
 
@@ -464,6 +521,7 @@ function check_07(v: T_07, v_type: VarType, v_id: int): void {
     return
   }
   expect(v_type).assertEqual(VarType.T_diff_A)
+  check_as_type_T_diff_A_07(v as T_diff_A_07, v_id)
 }
 
 
@@ -523,6 +581,7 @@ function check_08(v: T_08, v_type: VarType, v_id: int): void {
     return
   }
   expect(v_type).assertEqual(VarType.T_diff_A)
+  check_as_type_T_diff_A_08(v as T_diff_A_08, v_id)
 }
 
 
@@ -585,6 +644,7 @@ function check_09(v: T_09, v_type: VarType, v_id: int): void {
     return
   }
   expect(v_type).assertEqual(VarType.T_diff_A)
+  check_as_type_T_diff_A_09(v as T_diff_A_09, v_id)
 }
 
 
@@ -661,6 +721,7 @@ function check_10(v: T_10, v_type: VarType, v_id: int): void {
     return
   }
   expect(v_type).assertEqual(VarType.T_diff_A)
+  check_as_type_T_diff_A_10(v as T_diff_A_10, v_id)
 }
 
 

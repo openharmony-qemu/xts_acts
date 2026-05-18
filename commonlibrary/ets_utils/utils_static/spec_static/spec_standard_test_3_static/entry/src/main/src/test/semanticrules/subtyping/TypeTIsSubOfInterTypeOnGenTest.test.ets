@@ -498,7 +498,7 @@ namespace testNS4_0 {
   export function runTest_0(): boolean {
     let v1: B2_0<bigint, undefined> | Other_0<string> = new Other_0<string>("other")
     let v2: B2_0<bigint, undefined> | Other_0<string> = new B2_0<bigint, undefined>(123n)
-    let res: boolean = check_0(v1, false, 1) && check_0(v2, false, 2)
+    let res: boolean = check_0(v1, false, 1) & check_0(v2, false, 2)
     expect(res).assertEqual(false)
     return true
   }

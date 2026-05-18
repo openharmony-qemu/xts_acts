@@ -544,8 +544,8 @@ export default function CallableTypesWithInstantiateMethodTest(): void {
      * @tc.level     Level 2
      */
     it("testCallableTypesWithInstantiateMethod0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x = C16.$_instantiate() { return new C16() }
-      expect(x.fld).assertEqual(1)
+      let x = C16.$_instantiate(() => new C16());
+      expect(x.fld).assertEqual(1);
   });
 
   /**
@@ -576,11 +576,13 @@ export default function CallableTypesWithInstantiateMethodTest(): void {
    * @tc.level     Level 2
    */
   it("testCallableTypesWithInstantiateMethod0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    for (let z of C18())
-      expect(z instanceof C18).assertTrue()
+    for (let z of C18()) {
+      expect(z instanceof C18).assertTrue();
+    }
 
-    for (let z of C18.$_instantiate() { return new C18() })
-    expect(z instanceof C18).assertTrue()
+    for (let z of C18.$_instantiate(() => new C18())) {
+      expect(z instanceof C18).assertTrue();
+    }
   });
 
   /**
@@ -712,8 +714,8 @@ export default function CallableTypesWithInstantiateMethodTest(): void {
    * @tc.level     Level 2
    */
   it("testCallableTypesWithInstantiateMethod0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x = C27.$_instantiate() { return new D() }
-  expect(x instanceof C27).assertTrue()
+    let x = C27.$_instantiate(() => new D());
+    expect(x instanceof C27).assertTrue();
 });
 
 /**
@@ -754,10 +756,8 @@ it("testCallableTypesWithInstantiateMethod0030", TestType.FUNCTION | Size.MEDIUM
  * @tc.level     Level 2
  */
 it("testCallableTypesWithInstantiateMethod0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x = C30.$_instantiate() {
-        return new C30('')
-      }
-expect(x instanceof C30).assertTrue()
+  let x = C30.$_instantiate(() => new C30(''));
+  expect(x instanceof C30).assertTrue();
 });
 
 /**
@@ -770,10 +770,11 @@ expect(x instanceof C30).assertTrue()
  * @tc.level     Level 2
  */
 it("testCallableTypesWithInstantiateMethod0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-  let x = C31.$_instantiate(() => { return new C31<String>() }, '')
-  expect(x.fld).assertEqual('')
-  let y = C31.$_instantiate(() => { return new C31<Number>() }, 42)
-  expect(y.fld).assertEqual(42)
+  let x = C31.$_instantiate(() => new C31<string>(), '');
+  expect(x.fld).assertEqual('');
+
+  let y = C31.$_instantiate(() => new C31<number>(), 42);
+  expect(y.fld).assertEqual(42);
 });
 
 });

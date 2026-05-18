@@ -54,7 +54,7 @@ namespace MyNamespace3 {
   export function max(x: Vector): number {
     let m = x[0]
     for (let v of x)
-    if (v > m) v = m
+    if (v > m) m = v
     return m
   }
 }

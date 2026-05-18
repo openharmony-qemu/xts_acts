@@ -25,6 +25,78 @@ async function sleep(time: int): Promise<int> {
 
 enum VarType { T_inter_A, T_diff_A }
 
+function check_as_type_T_inter_A0(v: T_inter_A0, v_id: int): void {
+  expect(v).assertEqual(check_values_0[v_id][0])
+}
+
+function check_as_type_T_inter_A1(v: T_inter_A1, v_id: int): void {
+  expect(v).assertEqual(check_values_1[v_id][0])
+}
+
+function check_as_type_T_inter_A2(v: T_inter_A2, v_id: int): void {
+  expect(v).assertEqual(check_values_2[v_id][0])
+}
+
+function check_as_type_T_inter_A3(v: T_inter_A3, v_id: int): void {
+  expect(v).assertEqual(check_values_3[v_id][0])
+}
+
+function check_as_type_T_inter_A4(v: T_inter_A4, v_id: int): void {
+  expect(v).assertEqual(check_values_4[v_id][0])
+}
+
+function check_as_type_T_inter_A5(v: T_inter_A5, v_id: int): void {
+  expect(v).assertEqual(check_values_5[v_id][0])
+}
+
+function check_as_type_T_inter_A6(v: T_inter_A6, v_id: int): void {
+  expect(v).assertEqual(check_values_6[v_id][0])
+}
+
+function check_as_type_T_inter_A7(v: T_inter_A7, v_id: int): void {
+  expect(v).assertEqual(check_values_7[v_id][0])
+}
+
+function check_as_type_T_inter_A8(v: T_inter_A8, v_id: int): void {
+  expect(v).assertEqual(check_values_8[v_id][0])
+}
+
+function check_as_type_T_inter_A9(v: T_inter_A9, v_id: int): void {
+  expect(v).assertEqual(check_values_9[v_id][0])
+}
+
+function check_as_type_T_inter_A10(v: T_inter_A10, v_id: int): void {
+  expect(v).assertEqual(check_values_10[v_id][0])
+}
+
+function check_as_type_T_inter_A11(v: T_inter_A11, v_id: int): void {
+  expect(v).assertEqual(check_values_11[v_id][0])
+}
+
+function check_as_type_T_inter_A12(v: T_inter_A12, v_id: int): void {
+  expect(v).assertEqual(check_values_12[v_id][0])
+}
+
+function check_as_type_T_inter_A13(v: T_inter_A13, v_id: int): void {
+  expect(v).assertEqual(check_values_13[v_id][0])
+}
+
+function check_as_type_T_inter_A14(v: T_inter_A14, v_id: int): void {
+  expect(v).assertEqual(check_values_14[v_id][0])
+}
+
+function check_as_type_T_inter_A15(v: T_inter_A15, v_id: int): void {
+  expect(v).assertEqual(check_values_15[v_id][0])
+}
+
+function check_as_type_T_inter_A16(v: T_inter_A16, v_id: int): void {
+  expect(v).assertEqual(check_values_16[v_id][0])
+}
+
+function check_as_type_T_inter_A17(v: T_inter_A17, v_id: int): void {
+  expect(v).assertEqual(check_values_17[v_id][0])
+}
+
 // ----------------- testPredefinedInFrN0001 -----------------
 type T0 = Object | undefined
 type A0 = undefined
@@ -54,6 +126,7 @@ function check0(v: T0, v_type: VarType, v_id: int): void {
     return
   }
   expect(v_type).assertEqual(VarType.T_inter_A)
+  check_as_type_T_inter_A0(v as T_inter_A0, v_id)
 }
 
 // ----------------- testPredefinedInFrN0002 -----------------
@@ -86,6 +159,7 @@ function check1(v: T1, v_type: VarType, v_id: int): void {
     return
   }
   expect(v_type).assertEqual(VarType.T_inter_A)
+  check_as_type_T_inter_A1(v as T_inter_A1, v_id)
 }
 
 // ----------------- testPredefinedInFrN0003 -----------------
@@ -118,6 +192,7 @@ function check2(v: T2, v_type: VarType, v_id: int): void {
     return
   }
   expect(v_type).assertEqual(VarType.T_inter_A)
+  check_as_type_T_inter_A2(v as T_inter_A2, v_id)
 }
 
 // ----------------- testPredefinedInFrN0004 -----------------
@@ -151,6 +226,7 @@ function check3(v: T3, v_type: VarType, v_id: int): void {
     return
   }
   expect(v_type).assertEqual(VarType.T_inter_A)
+  check_as_type_T_inter_A3(v as T_inter_A3, v_id)
 }
 
 // ----------------- testPredefinedInFrN0005 -----------------
@@ -183,6 +259,7 @@ function check4(v: T4, v_type: VarType, v_id: int): void {
     return
   }
   expect(v_type).assertEqual(VarType.T_inter_A)
+  check_as_type_T_inter_A4(v as T_inter_A4, v_id)
 }
 
 // ----------------- testPredefinedInFrN0006 -----------------
@@ -215,6 +292,7 @@ function check5(v: T5, v_type: VarType, v_id: int): void {
     return
   }
   expect(v_type).assertEqual(VarType.T_inter_A)
+  check_as_type_T_inter_A5(v as T_inter_A5, v_id)
 }
 
 // ----------------- testPredefinedInFrN0007 -----------------
@@ -245,6 +323,7 @@ function check6(v: T6, v_type: VarType, v_id: int): void {
     return
   }
   expect(v_type).assertEqual(VarType.T_inter_A)
+  check_as_type_T_inter_A6(v as T_inter_A6, v_id)
 }
 
 // ----------------- testPredefinedInFrN0008 -----------------
@@ -275,6 +354,7 @@ function check7(v: T7, v_type: VarType, v_id: int): void {
     return
   }
   expect(v_type).assertEqual(VarType.T_inter_A)
+  check_as_type_T_inter_A7(v as T_inter_A7, v_id)
 }
 
 // ----------------- testPredefinedInFrN0009 -----------------
@@ -305,6 +385,7 @@ function check8(v: T8, v_type: VarType, v_id: int): void {
     return
   }
   expect(v_type).assertEqual(VarType.T_inter_A)
+  check_as_type_T_inter_A8(v as T_inter_A8, v_id)
 }
 
 // ----------------- testPredefinedInFrN0010 -----------------
@@ -335,6 +416,7 @@ function check9(v: T9, v_type: VarType, v_id: int): void {
     return
   }
   expect(v_type).assertEqual(VarType.T_inter_A)
+  check_as_type_T_inter_A9(v as T_inter_A9, v_id)
 }
 
 // ----------------- testPredefinedInFrN0011 -----------------
@@ -365,6 +447,7 @@ function check10(v: T10, v_type: VarType, v_id: int): void {
     return
   }
   expect(v_type).assertEqual(VarType.T_inter_A)
+  check_as_type_T_inter_A10(v as T_inter_A10, v_id)
 }
 
 // ----------------- testPredefinedInFrN0012 -----------------
@@ -395,6 +478,7 @@ function check11(v: T11, v_type: VarType, v_id: int): void {
     return
   }
   expect(v_type).assertEqual(VarType.T_inter_A)
+  check_as_type_T_inter_A11(v as T_inter_A11, v_id)
 }
 
 // ----------------- testPredefinedInFrN0013 -----------------
@@ -425,6 +509,7 @@ function check12(v: T12, v_type: VarType, v_id: int): void {
     return
   }
   expect(v_type).assertEqual(VarType.T_inter_A)
+  check_as_type_T_inter_A12(v as T_inter_A12, v_id)
 }
 
 // ----------------- testPredefinedInFrN0014 -----------------
@@ -455,6 +540,7 @@ function check13(v: T13, v_type: VarType, v_id: int): void {
     return
   }
   expect(v_type).assertEqual(VarType.T_inter_A)
+  check_as_type_T_inter_A13(v as T_inter_A13, v_id)
 }
 
 // ----------------- testPredefinedInFrN0015 -----------------
@@ -485,6 +571,7 @@ function check14(v: T14, v_type: VarType, v_id: int): void {
     return
   }
   expect(v_type).assertEqual(VarType.T_inter_A)
+  check_as_type_T_inter_A14(v as T_inter_A14, v_id)
 }
 
 // ----------------- testPredefinedInFrN0016 -----------------
@@ -515,6 +602,7 @@ function check15(v: T15, v_type: VarType, v_id: int): void {
     return
   }
   expect(v_type).assertEqual(VarType.T_inter_A)
+  check_as_type_T_inter_A15(v as T_inter_A15, v_id)
 }
 
 // ----------------- testPredefinedInFrN0017 -----------------
@@ -545,6 +633,7 @@ function check16(v: T16, v_type: VarType, v_id: int): void {
     return
   }
   expect(v_type).assertEqual(VarType.T_inter_A)
+  check_as_type_T_inter_A16(v as T_inter_A16, v_id)
 }
 
 // ----------------- testPredefinedInFrN0018 -----------------
@@ -575,6 +664,7 @@ function check17(v: T17, v_type: VarType, v_id: int): void {
     return
   }
   expect(v_type).assertEqual(VarType.T_inter_A)
+  check_as_type_T_inter_A17(v as T_inter_A17, v_id)
 }
 
 export default function ComputingSmartTypesTest04():void {

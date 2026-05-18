@@ -93,9 +93,9 @@ export default function FixedArrayTypesTest():void {
      * @tc.level     Level 2
      */
     it("testFixedArrayCast0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: FixedArray<number> = [10, 20]
+      let x: FixedArray<byte> = [10, 20]
       let obj: Object = toObj(x)
-      let arr = obj as FixedArray<number>
+      let arr = obj as FixedArray<byte>
       expect(arr[0]).assertEqual(10);
       expect(arr[1]).assertEqual(20);
     });
@@ -109,9 +109,9 @@ export default function FixedArrayTypesTest():void {
      * @tc.level     Level 2
      */
     it("testFixedArrayCast0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: FixedArray<number> = [100, 200]
+      let x: FixedArray<short> = [100, 200]
       let obj: Object = toObj(x)
-      let arr = obj as FixedArray<number>
+      let arr = obj as FixedArray<short>
       expect(arr[0]).assertEqual(100);
       expect(arr[1]).assertEqual(200);
     });
@@ -125,9 +125,9 @@ export default function FixedArrayTypesTest():void {
      * @tc.level     Level 2
      */
     it("testFixedArrayCast0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: FixedArray<number> = [1000, 2000]
+      let x: FixedArray<int> = [1000, 2000]
       let obj: Object = toObj(x)
-      let arr = obj as FixedArray<number>
+      let arr = obj as FixedArray<int>
       expect(arr[0]).assertEqual(1000);
       expect(arr[1]).assertEqual(2000);
     });
@@ -141,9 +141,9 @@ export default function FixedArrayTypesTest():void {
      * @tc.level     Level 2
      */
     it("testFixedArrayCast0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: FixedArray<number> = [1000000000, 2000000000]
+      let x: FixedArray<long> = [1000000000, 2000000000]
       let obj: Object = toObj(x)
-      let arr = obj as FixedArray<number>
+      let arr = obj as FixedArray<long>
       expect(arr[0]).assertEqual(1000000000);
       expect(arr[1]).assertEqual(2000000000);
     });
@@ -157,9 +157,9 @@ export default function FixedArrayTypesTest():void {
      * @tc.level     Level 2
      */
     it("testFixedArrayCast0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: FixedArray<number> = [1.5, 2.5]
+      let x: FixedArray<float> = [1.5, 2.5]
       let obj: Object = toObj(x)
-      let arr = obj as FixedArray<number>
+      let arr = obj as FixedArray<float>
       expect(arr[0] + arr[1]).assertEqual(4.0);
     });
 
@@ -172,9 +172,9 @@ export default function FixedArrayTypesTest():void {
      * @tc.level     Level 2
      */
     it("testFixedArrayCast0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: FixedArray<number> = [1.5, 2.5]
+      let x: FixedArray<double> = [1.5, 2.5]
       let obj: Object = toObj(x)
-      let arr = obj as FixedArray<number>
+      let arr = obj as FixedArray<double>
       expect(arr[0] + arr[1]).assertEqual(4.0);
     });
 

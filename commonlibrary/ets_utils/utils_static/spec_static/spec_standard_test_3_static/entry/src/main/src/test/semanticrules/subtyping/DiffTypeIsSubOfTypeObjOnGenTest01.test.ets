@@ -1597,6 +1597,7 @@ export default function DiffTypeIsSubOfTypeObjOnGenTest01(): void {
       expect(res).assertEqual(2);
       expect(testNS1_11.runTest_11()).assertEqual(true);
       expect(testNS2_11.runTest_11()).assertEqual(true);
+      expect(testNS3_11.runTest_11()).assertEqual(true)
     });
 
     /**

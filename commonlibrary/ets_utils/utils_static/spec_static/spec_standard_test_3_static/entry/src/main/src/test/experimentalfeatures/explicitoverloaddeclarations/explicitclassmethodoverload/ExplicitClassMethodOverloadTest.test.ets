@@ -1,3 +1,18 @@
+/*
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe,expect, it, Level, Size, TestType } from '../../../../../../hypium/index';
 
 async function sleep(time: int): Promise<int> {
@@ -2764,10 +2779,10 @@ export default function ExplicitClassMethodOverloadTest(): void {
       let x: number = 12.6;
       let y: string = 'Hello!';
       let a: A92 = new A92();
-
-      a.foo(x);
-      a.foo(y);
-
+      async (): Promise<void> => {
+        await a.foo(x);
+        await a.foo(y);
+      }
       expect(A92.num).assertEqual(x);
       expect(A92.str).assertEqual(y);
     });
@@ -2823,11 +2838,10 @@ export default function ExplicitClassMethodOverloadTest(): void {
     it('testExplicitClassMethodOverload0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: number = 12.6;
       let y: string = 'Hello!';
-      let a: A95 = new A95();
-
-      A95.foo(x);
-      A95.foo(y);
-
+      async (): Promise<void> => {
+        await A95.foo(x);
+        await A95.foo(y);
+      }
       expect(A95.num).assertEqual(x);
       expect(A95.str).assertEqual(y);
     });

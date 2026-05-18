@@ -36,24 +36,28 @@ namespace testNS1_1 {
   class B2<U, V> extends A<U, V> {
     b2_v: U | V
     constructor (p: U | V) {
+      super();
       this.b2_v = p
     }
   }
   class C1<U, V> extends B1<U, V> {
     c1_v: U | V
     constructor (p: U | V) {
+      super();
       this.c1_v = p
     }
   }
   class C2<U, V> extends B1<U, V> {
     c2_v: U | V
     constructor (p: U | V) {
+      super();
       this.c2_v = p
     }
   }
   class Other<T> {
     other_v: T
     constructor (p: T) {
+      super();
       this.other_v = p
     }
   }
@@ -113,24 +117,28 @@ namespace testNS2_1 {
   class B2<U, V> extends A<U, V> {
     b2_v: U | V
     constructor (p: U | V) {
+      super();
       this.b2_v = p;
     }
   }
   class C1<U, V> extends B1<U, V> {
     c1_v: U | V
     constructor (p: U | V) {
+      super();
       this.c1_v = p;
     }
   }
   class C2<U, V> extends B1<U, V> {
     c2_v: U | V
     constructor (p: U | V) {
+      super();
       this.c2_v = p;
     }
   }
   class Other<T> {
     other_v: T
     constructor (p: T) {
+      super();
       this.other_v = p;
     }
   }
@@ -187,24 +195,28 @@ namespace testNS3_1 {
   class B2<U, V> extends A<U, V> {
     b2_v: U | V
     constructor (p: U | V) {
+      super();
       this.b2_v = p;
     }
   }
   class C1<U, V> extends B1<U, V> {
     c1_v: U | V
     constructor (p: U | V) {
+      super();
       this.c1_v = p;
     }
   }
   class C2<U, V> extends B1<U, V> {
     c2_v: U | V
     constructor (p: U | V) {
+      super();
       this.c2_v = p;
     }
   }
   class Other<T> {
     other_v: T
     constructor (p: T) {
+      super();
       this.other_v = p;
     }
   }

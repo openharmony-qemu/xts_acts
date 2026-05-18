@@ -364,7 +364,7 @@ it('testEnumerationWithExplicitType0305', TestType.FUNCTION | Size.MEDIUMTEST | 
   expect(EnumByteD0.J).assertEqual(j);
   expect(EnumByteD0.K).assertEqual(k);
   expect(EnumByteD0.L).assertEqual(l);
-  expect(EnumByteD0.L).assertEqual(m);
+  expect(EnumByteD0.M).assertEqual(m);
 });
 
 /**
@@ -427,7 +427,7 @@ it('testEnumerationWithExplicitType0306', TestType.FUNCTION | Size.MEDIUMTEST | 
   expect(ConstEnumByteD0.J).assertEqual(j);
   expect(ConstEnumByteD0.K).assertEqual(k);
   expect(ConstEnumByteD0.L).assertEqual(l);
-  expect(ConstEnumByteD0.L).assertEqual(m);
+  expect(ConstEnumByteD0.M).assertEqual(m);
 });
 
 /**

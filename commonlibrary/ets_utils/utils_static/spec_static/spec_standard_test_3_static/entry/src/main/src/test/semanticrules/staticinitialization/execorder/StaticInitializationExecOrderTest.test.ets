@@ -119,9 +119,6 @@ export default function StaticInitializationExecOrderTest():void {
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
-      seqstr00 = "";
-      seq01_str = "";
-      seq02_str = "";
     })
 
     afterAll(() => {

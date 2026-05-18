@@ -134,7 +134,7 @@ namespace testNS1_13 {
     const res1 = check_is_in_T_type_13(new C1_13<number, null>(123), 1)
     const res2 = check_is_in_T_type_13(new C3_13<bigint, undefined>(321n), 2)
     const res3 = check_is_in_T_type_13(5n, 3)
-    expect(res1 && (res2 || res3)).assertTrue()
+    expect(res1 && res2 && res3).assertTrue()
     return true
   }
 }
@@ -243,7 +243,7 @@ namespace testNS2_13 {
     const res1 = check_is_in_T_type_13(new C2_13<number, string>(6.7), 1)
     const res2 = check_is_in_T_type_13(new C3_13<bigint, undefined>(321n), 2)
     const res3 = check_is_in_T_type_13(5n, 3)
-    expect(res1 && (res2 || res3)).assertTrue()
+    expect(res1 && res2 && res3).assertTrue()
     return true
   }
 }
@@ -439,7 +439,7 @@ namespace testNS1_14 {
     const res1 = check_is_in_T_type_14(new C2_14<Derived_14, Base_14>(new Derived_14(321)), 1)
     const res2 = check_is_in_T_type_14(new C1_14<Base_14, Base_14>(new Base_14(123n)), 2)
     const res3 = check_is_in_T_type_14(5n, 3)
-    expect(res1 && (res2 || res3)).assertTrue()
+    expect(res1 && res2 && res3).assertTrue()
     return true
   }
 }
@@ -536,7 +536,7 @@ namespace testNS2_14 {
     const res1 = check_is_in_T_type_14(new C2_14<Derived_14, Base_14>(new Derived_14(321)), 1)
     const res2 = check_is_in_T_type_14(new C1_14<Base_14, Base_14>(new Base_14(123n)), 2)
     const res3 = check_is_in_T_type_14(5n, 3)
-    expect(res1 && (res2 || res3)).assertTrue()
+    expect(res1 && res2 && res3).assertTrue()
     return true
   }
 }
@@ -720,7 +720,7 @@ namespace testNS1_15 {
     const res1 = check_is_in_T_type_15(new C2_15<Derived_15, Base_15>(new Derived_15(321)), 1);
     const res2 = check_is_in_T_type_15(new C1_15<Base_15, Base_15>(new Base_15(123n)), 2);
     const res3 = check_is_in_T_type_15(5n, 3);
-    expect(res1 && (res2 || res3)).assertTrue();
+    expect(res1 && res2 && res3).assertTrue();
     return true;
   }
 }
@@ -859,7 +859,7 @@ export default function InterTypeIsSubOfTypeTOnGenTest05(): void {
         new C3_13<bigint, undefined>(321n), 2)
       let res3: boolean = check_is_in_T_type_13(
         5n, 3)
-      expect(res1 && (res2 || res3)).assertTrue()
+      expect(res1 && res2 && res3).assertTrue()
 
       expect(testNS1_13.runTest_13()).assertTrue()
       expect(testNS2_13.runTest_13()).assertTrue()
@@ -885,7 +885,7 @@ export default function InterTypeIsSubOfTypeTOnGenTest05(): void {
         new C1_14<Base_14, Base_14>(new Base_14(123n)), 2)
       let res3: boolean = check_is_in_T_type_14(
         5n, 3)
-      expect(res1 && (res2 || res3)).assertTrue()
+      expect(res1 && res2 && res3).assertTrue()
 
       expect(testNS1_14.runTest_14()).assertTrue()
       expect(testNS2_14.runTest_14()).assertTrue()
@@ -911,7 +911,7 @@ export default function InterTypeIsSubOfTypeTOnGenTest05(): void {
         new C1_15<Base_15, Base_15>(new Base_15(123n)), 2)
       let res3: boolean = check_is_in_T_type_15(
         5n, 3)
-      expect(res1 && (res2 || res3)).assertTrue()
+      expect(res1 && res2 && res3).assertTrue()
 
       expect(testNS1_15.runTest_15()).assertTrue()
 

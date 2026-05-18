@@ -16,8 +16,6 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType }
   from '../../../../../hypium/index';
 
-
-
 interface I {}
 interface J extends I { j: int }
 class Base {}
@@ -60,7 +58,7 @@ function foo4(ca: FixedArray<'1'|'2'|'3'|number|'4'>) {
 }
 
 let x5: FixedArray<[Base, J, string]> = [[new Base(), {j: 1}, 'a'], [new Derived(), {j: 2}, 'b']]
-let y5: FixedArray<Object> = x
+let y5: FixedArray<Object> = x5
 
 function foo5(ca: FixedArray<Object>) {
   ca[0] = new Object
