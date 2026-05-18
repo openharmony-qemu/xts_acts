@@ -40,7 +40,7 @@ ComponentDisappear, Component, State, Text, Color, TextAlign,
 struct ComponentLifecycleDecorators {
   @State activeText: string = '';
   @State inactiveText: string = '';
-  @State data: Array<string> = [];
+  @State data: Array<string> = [''];
   private scroller: Scroller = new Scroller();
 
   aboutToAppear() {
