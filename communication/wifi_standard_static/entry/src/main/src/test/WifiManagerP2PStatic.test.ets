@@ -20,7 +20,6 @@ import wifiManager from '@ohos.wifiManager';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testWifiTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
-let p2presetwifi: boolean = false;
 export default function actsWifiManagerP2PTest() {
 
   describe("actsWifiManagerP2PTest", (): void => {
@@ -418,7 +417,6 @@ export default function actsWifiManagerP2PTest() {
      * @tc.size MEDIUMTEST
      */
     it("SUB_Communication_WiFiManager_GetCurrentGroup_Promise_Return_0012", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-      p2presetwifi = true;
       let caseName = "LOG_SUB_Communication_WiFiManager_GetCurrentGroup_Promise_Return_0012";
       hilog.info(domain, tag, `${caseName} test start`);
       try {
@@ -493,7 +491,6 @@ export default function actsWifiManagerP2PTest() {
           expect().assertFail();
         }
       }
-      p2presetwifi = false;
       hilog.info(domain, tag, `${caseName} test end`);
       done();
     });
