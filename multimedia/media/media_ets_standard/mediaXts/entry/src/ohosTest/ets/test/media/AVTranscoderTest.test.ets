@@ -749,7 +749,7 @@ export default function AVTranscoderTest() {
       try {
         // 循环调用 addWatermark 6次
         for (let i = 0; i < 6; i++) {
-          const watermarkId: number = await mTranscoder?.addWatermark(imagePixelmap, waterMarkConfig);
+          const watermarkId: number = await mTranscoder!.addWatermark(imagePixelmap, waterMarkConfig);
           console.info(`addWatermark success, times: ${i + 1}, watermarkId: ${watermarkId}`);
           expect(watermarkId).assertEqual(i + 1);
         }

@@ -294,7 +294,7 @@ export default class Commmon {
       }
       console.info(`case addWatermark waterConfig` + JSON.stringify(waterConfig));
  
-      const watermarkCount: number = await avRecorder?.addWatermark(pixelMap, waterConfig);
+      const watermarkCount: number = await avRecorder!.addWatermark(pixelMap, waterConfig);
       console.info(`addWatermark watermarkCount:` + watermarkCount);
       expect(watermarkCount).assertEqual(1);
     } catch (error) {
@@ -325,7 +325,7 @@ export default class Commmon {
       }
       console.info(`case addWatermark waterConfig` + JSON.stringify(waterConfig));
  
-      const watermarkCount: number = await avRecorder?.addWatermark(pixelMap, waterConfig);
+      const watermarkCount: number = await avRecorder!.addWatermark(pixelMap, waterConfig);
       console.info(`addWatermark watermarkCount:` + watermarkCount);
       expect().assertFail();
     } catch (error) {
@@ -357,7 +357,7 @@ export default class Commmon {
       console.info(`case addWatermark waterConfig` + JSON.stringify(waterConfig));
       // 循环调用 addWatermark 6次
       for (let i = 0; i < 6; i++) {
-        const watermarkCount: number = await avRecorder?.addWatermark(pixelMap, waterConfig);
+        const watermarkCount: number = await avRecorder!.addWatermark(pixelMap, waterConfig);
         console.info(`addWatermark success, times: ${i + 1}, watermarkCount: ${watermarkCount}`);
         expect(watermarkCount).assertEqual(i + 1);
       } 
@@ -389,7 +389,7 @@ export default class Commmon {
       }
       console.info(`case addWatermark waterConfig` + JSON.stringify(waterConfig));
  
-      const watermarkCount: number = await avRecorder?.addWatermark(null, waterConfig);
+      const watermarkCount: number = await avRecorder!.addWatermark(null, waterConfig);
       console.info(`addWatermark watermarkCount:` + watermarkCount);
       expect().assertFail();
     } catch (error) {
@@ -420,7 +420,7 @@ export default class Commmon {
       }
       console.info(`case addWatermark waterConfig` + JSON.stringify(waterConfig));
  
-      const watermarkCount: number = await avRecorder?.addWatermark(undefined, waterConfig);
+      const watermarkCount: number = await avRecorder!.addWatermark(undefined, waterConfig);
       console.info(`addWatermark watermarkCount:` + watermarkCount);
       expect().assertFail();
     } catch (error) {
@@ -451,7 +451,7 @@ export default class Commmon {
       }
       console.info(`case addWatermark waterConfig` + JSON.stringify(waterConfig));
  
-      const watermarkCount: number = await avRecorder?.addWatermark(pixelMap, null);
+      const watermarkCount: number = await avRecorder!.addWatermark(pixelMap, null);
       console.info(`addWatermark watermarkCount:` + watermarkCount);
       expect().assertFail();
     } catch (error) {
@@ -482,7 +482,7 @@ export default class Commmon {
       }
       console.info(`case addWatermark waterConfig` + JSON.stringify(waterConfig));
  
-      const watermarkCount: number = await avRecorder?.addWatermark(pixelMap, undefined);
+      const watermarkCount: number = await avRecorder!.addWatermark(pixelMap, undefined);
       console.info(`addWatermark watermarkCount:` + watermarkCount);
       expect().assertFail();
     } catch (error) {
