@@ -168,7 +168,7 @@ export default function SheetOptionsSystemMaterial() {
       let sheet: ESObject = obj.$children[1];
       let date = JSON.stringify(obj.$children[1].$children[0]);
       console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type));
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
       console.info('SheetOptionsSystemMaterial_0400 Sheet Immersive THICK is visible');
 
       await CommonFunc.sleep(500);
@@ -201,7 +201,7 @@ export default function SheetOptionsSystemMaterial() {
       let sheet: ESObject = obj.$children[1];
       let date = JSON.stringify(obj.$children[1].$children[0]);
       console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type));
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
       console.info('SheetOptionsSystemMaterial_0500 Sheet Immersive ULTRA_THIN is visible');
 
       await CommonFunc.sleep(500);

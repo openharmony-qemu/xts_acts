@@ -75,7 +75,7 @@ export default function TipsOptionsSystemMaterial() {
       let popupObj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       let popup: ESObject = popupObj.$children[1];
       let date = JSON.stringify(popupObj.$children[1].$children[0]);
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
       
       console.info('popupObj' + JSON.stringify(JSON.parse(date)));
 
@@ -110,7 +110,7 @@ export default function TipsOptionsSystemMaterial() {
       let popupObj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       let popup: ESObject = popupObj.$children[1];
       let date = JSON.stringify(popupObj.$children[1].$children[0]);
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
       
       console.info('popupObj' + JSON.stringify(JSON.parse(date)));
       await CommonFunc.sleep(500);
@@ -183,7 +183,7 @@ export default function TipsOptionsSystemMaterial() {
       let popupObj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       let popup: ESObject = popupObj.$children[1];
       let date = JSON.stringify(popupObj.$children[1].$children[0]);
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
       
       console.info('popupObj' + JSON.stringify(JSON.parse(date)));
       await CommonFunc.sleep(500);
@@ -219,7 +219,7 @@ export default function TipsOptionsSystemMaterial() {
       let popupObj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       let popup: ESObject = popupObj.$children[1];
       let date = JSON.stringify(popupObj.$children[1].$children[0]);
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
       
       console.info('popupObj' + JSON.stringify(JSON.parse(date)));
       await CommonFunc.sleep(500);
