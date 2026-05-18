@@ -46,7 +46,7 @@ const c6 = 0x00000000
 let v7 = 0xffffffff
 const c7 = 0xffffffff
 
-let v8 = 0X00_00_00_00_ca_fe_CA_FE
+let va8 = 0X00_00_00_00_ca_fe_CA_FE
 const c8 = 0X00_00_00_00_ca_fe_CA_FE
 
 let v9 = 0o00000000000
