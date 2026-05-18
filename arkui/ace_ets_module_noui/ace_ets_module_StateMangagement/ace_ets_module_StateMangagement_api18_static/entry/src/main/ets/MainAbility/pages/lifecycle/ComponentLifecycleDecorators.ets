@@ -30,14 +30,17 @@ import {
   Param
 } from '@ohos.arkui.stateManagement';
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { ComponentActive, ComponentInactive,ComponentAppear, ComponentDisappear, Component, State, Text, Color, TextAlign, Color, IDataSource, DataChangeListener, Entry, Column, SwiperController, Swiper, ForEach, Row, Button } from '@kit.ArkUI';
+import { ComponentActive, ComponentInactive,ComponentAppear, 
+ComponentDisappear, Component, State, Text, Color, TextAlign,
+ Color, IDataSource, DataChangeListener, Entry, Column, 
+ SwiperController, Swiper, ForEach, Row, Button } from '@kit.ArkUI';
 
 @Entry
 @Component
 struct ComponentLifecycleDecorators {
   @State activeText: string = '';
   @State inactiveText: string = '';
-  @State data: Array<string> = [];
+  @State data: Array<string> = new Array<string>();
   private scroller: Scroller = new Scroller();
 
   aboutToAppear() {
