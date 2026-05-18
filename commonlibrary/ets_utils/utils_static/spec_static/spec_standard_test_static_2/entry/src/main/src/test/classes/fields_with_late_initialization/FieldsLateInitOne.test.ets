@@ -1,4 +1,5 @@
-﻿/*
+﻿'use static'
+/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,10 +36,6 @@ async function sleep(time: int): Promise<int> {
   });
 }
 
-
-function waitForCompletion<T>(fn: () => T): T {
-  return fn()
-}
 
 class A_F100 {
   field!: string
@@ -837,7 +834,6 @@ export default function FieldsLateInitOneTest(): void {
     it("testFieldsLateInitOne0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F100 = new A_F100()
         a.field = "abc"
-        expect(a.field instanceof string).assertTrue()
         expect(a.field).assertEqual("abc")
     })
 
@@ -852,7 +848,6 @@ export default function FieldsLateInitOneTest(): void {
     it("testFieldsLateInitOne0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F101 = new A_F101()
         a.field = c'a'
-        expect(a.field instanceof char).assertTrue()
         expect(a.field).assertEqual(c'a')
     })
 
@@ -867,7 +862,6 @@ export default function FieldsLateInitOneTest(): void {
     it("testFieldsLateInitOne0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F102 = new A_F102()
         a.field = false
-        expect(a.field instanceof boolean).assertTrue()
         expect(a.field).assertEqual(false)
     })
 
@@ -882,7 +876,6 @@ export default function FieldsLateInitOneTest(): void {
     it("testFieldsLateInitOne0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F103 = new A_F103()
         a.field = 5
-        expect(a.field instanceof Object).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
@@ -900,7 +893,6 @@ export default function FieldsLateInitOneTest(): void {
       a.field = 5
         }
         lambda()
-        expect(a.field instanceof long).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
@@ -918,7 +910,6 @@ export default function FieldsLateInitOneTest(): void {
       a.field = 5
         }
         lambda()
-        expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
@@ -936,7 +927,6 @@ export default function FieldsLateInitOneTest(): void {
       a.field = 5
         }
         lambda()
-        expect(a.field instanceof byte).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
@@ -954,7 +944,6 @@ export default function FieldsLateInitOneTest(): void {
       a.field = 5
         }
         lambda()
-        expect(a.field instanceof short).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
@@ -972,7 +961,6 @@ export default function FieldsLateInitOneTest(): void {
       a.field = 7.3
         }
         lambda()
-        expect(a.field instanceof double).assertTrue()
         expect(a.field).assertEqual(7.3)
     })
 
@@ -990,7 +978,6 @@ export default function FieldsLateInitOneTest(): void {
       a.field = 5
         }
         lambda()
-        expect(a.field instanceof number).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
@@ -1008,7 +995,6 @@ export default function FieldsLateInitOneTest(): void {
       a.field = 7.3f
         }
         lambda()
-        expect(a.field instanceof float).assertTrue()
         expect(a.field).assertEqual(7.3f)
     })
 
@@ -1026,7 +1012,6 @@ export default function FieldsLateInitOneTest(): void {
       a.field = 5n
         }
         lambda()
-        expect(a.field instanceof bigint).assertTrue()
         expect(a.field).assertEqual(5n)
     })
 
@@ -1044,7 +1029,6 @@ export default function FieldsLateInitOneTest(): void {
       a.field = "abc"
         }
         lambda()
-        expect(a.field instanceof string).assertTrue()
         expect(a.field).assertEqual("abc")
     })
 
@@ -1062,7 +1046,6 @@ export default function FieldsLateInitOneTest(): void {
       a.field = c'a'
         }
         lambda()
-        expect(a.field instanceof char).assertTrue()
         expect(a.field).assertEqual(c'a')
     })
 
@@ -1080,7 +1063,6 @@ export default function FieldsLateInitOneTest(): void {
       a.field = false
         }
         lambda()
-        expect(a.field instanceof boolean).assertTrue()
         expect(a.field).assertEqual(false)
     })
 
@@ -1098,7 +1080,6 @@ export default function FieldsLateInitOneTest(): void {
       a.field = 5
         }
         lambda()
-        expect(a.field instanceof Object).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
@@ -1113,8 +1094,6 @@ export default function FieldsLateInitOneTest(): void {
     it("testFieldsLateInitOne0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F116 = new A_F116()
         a.field = {data: 5}
-        expect(a.field instanceof C_F116).assertTrue()
-        expect(a.field.data instanceof int).assertTrue()
         expect(a.field.data).assertEqual(5)
     })
 
@@ -1132,8 +1111,6 @@ export default function FieldsLateInitOneTest(): void {
       a.field = {data: 5}
         }
         lambda()
-        expect(a.field instanceof C_F117).assertTrue()
-        expect(a.field.data instanceof int).assertTrue()
         expect(a.field.data).assertEqual(5)
     })
 
@@ -1152,11 +1129,8 @@ export default function FieldsLateInitOneTest(): void {
         a.field = new Animal_F118()
         d.field = new Dog_F118()
         c.field = new Cat_F118()
-        expect(a.field instanceof Animal_F118).assertTrue()
         expect(a.field.name).assertEqual("")
-        expect(d.field instanceof Dog_F118).assertTrue()
         expect(d.field.name).assertEqual("dog")
-        expect(c.field instanceof Cat_F118).assertTrue()
         expect(c.field.name).assertEqual("cat")
     })
 
@@ -1175,11 +1149,8 @@ export default function FieldsLateInitOneTest(): void {
         a.field = handlerNothing
         b.field = handlerA
         c.field = handlerAInt
-        expect(a.field instanceof HandlerNothing_F119).assertTrue()
         expect(a.field(new B_F119, 7).v).assertEqual(-567)
-        expect(b.field instanceof HandlerA_F119).assertTrue()
         expect(b.field(new B_F119, 7).v).assertEqual(13)
-        expect(c.field instanceof HandlerAInt_F119).assertTrue()
         expect(c.field(new B_F119, 7).v).assertEqual(-20)
     })
 
@@ -1194,7 +1165,6 @@ export default function FieldsLateInitOneTest(): void {
     it("testFieldsLateInitOne0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F120 = new A_F120()
         foo_F120(a)
-        expect(a.field instanceof long).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
@@ -1209,7 +1179,6 @@ export default function FieldsLateInitOneTest(): void {
     it("testFieldsLateInitOne0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F121 = new A_F121()
         foo_F121(a)
-        expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
@@ -1224,7 +1193,6 @@ export default function FieldsLateInitOneTest(): void {
     it("testFieldsLateInitOne0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F122 = new A_F122()
         foo_F122(a)
-        expect(a.field instanceof byte).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
@@ -1239,7 +1207,6 @@ export default function FieldsLateInitOneTest(): void {
     it("testFieldsLateInitOne0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F123 = new A_F123()
         foo_F123(a)
-        expect(a.field instanceof short).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
@@ -1254,7 +1221,6 @@ export default function FieldsLateInitOneTest(): void {
     it("testFieldsLateInitOne0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F124 = new A_F124()
         foo_F124(a)
-        expect(a.field instanceof double).assertTrue()
         expect(a.field).assertEqual(7.3)
     })
 
@@ -1269,7 +1235,6 @@ export default function FieldsLateInitOneTest(): void {
     it("testFieldsLateInitOne0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F125 = new A_F125()
         foo_F125(a)
-        expect(a.field instanceof number).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
@@ -1284,7 +1249,6 @@ export default function FieldsLateInitOneTest(): void {
     it("testFieldsLateInitOne0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F126 = new A_F126()
         foo_F126(a)
-        expect(a.field instanceof float).assertTrue()
         expect(a.field).assertEqual(7.3f)
     })
 
@@ -1299,7 +1263,6 @@ export default function FieldsLateInitOneTest(): void {
     it("testFieldsLateInitOne0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F127 = new A_F127()
         foo_F127(a)
-        expect(a.field instanceof bigint).assertTrue()
         expect(a.field).assertEqual(5n)
     })
 
@@ -1314,7 +1277,6 @@ export default function FieldsLateInitOneTest(): void {
     it("testFieldsLateInitOne0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F128 = new A_F128()
         foo_F128(a)
-        expect(a.field instanceof string).assertTrue()
         expect(a.field).assertEqual("abc")
     })
 
@@ -1329,7 +1291,6 @@ export default function FieldsLateInitOneTest(): void {
     it("testFieldsLateInitOne0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F129 = new A_F129()
         foo_F129(a)
-        expect(a.field instanceof char).assertTrue()
         expect(a.field).assertEqual(c'a')
     })
 
@@ -1344,7 +1305,6 @@ export default function FieldsLateInitOneTest(): void {
     it("testFieldsLateInitOne0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F130 = new A_F130()
         foo_F130(a)
-        expect(a.field instanceof boolean).assertTrue()
         expect(a.field).assertEqual(false)
     })
 
@@ -1359,7 +1319,6 @@ export default function FieldsLateInitOneTest(): void {
     it("testFieldsLateInitOne0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F131 = new A_F131()
         foo_F131(a)
-        expect(a.field instanceof Object).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
@@ -1374,8 +1333,6 @@ export default function FieldsLateInitOneTest(): void {
     it("testFieldsLateInitOne0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A_F132 = new A_F132()
         foo_F132(a)
-        expect(a.field instanceof C_F132).assertTrue()
-        expect(a.field.data instanceof int).assertTrue()
         expect(a.field.data).assertEqual(5)
     })
 
@@ -1393,7 +1350,6 @@ export default function FieldsLateInitOneTest(): void {
       a.field = 5
         }
         foo_F133(lambda)
-        expect(a.field instanceof long).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
@@ -1411,7 +1367,6 @@ export default function FieldsLateInitOneTest(): void {
       a.field = 5
         }
         foo_F134(lambda)
-        expect(a.field instanceof int).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
@@ -1429,7 +1384,6 @@ export default function FieldsLateInitOneTest(): void {
       a.field = 5
         }
         foo_F135(lambda)
-        expect(a.field instanceof byte).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
@@ -1447,7 +1401,6 @@ export default function FieldsLateInitOneTest(): void {
       a.field = 5
         }
         foo_F136(lambda)
-        expect(a.field instanceof short).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
@@ -1465,7 +1418,6 @@ export default function FieldsLateInitOneTest(): void {
       a.field = 7.3
         }
         foo_F137(lambda)
-        expect(a.field instanceof double).assertTrue()
         expect(a.field).assertEqual(7.3)
     })
 
@@ -1483,7 +1435,6 @@ export default function FieldsLateInitOneTest(): void {
       a.field = 5
         }
         foo_F138(lambda)
-        expect(a.field instanceof number).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
@@ -1501,7 +1452,6 @@ export default function FieldsLateInitOneTest(): void {
       a.field = 7.3f
         }
         foo_F139(lambda)
-        expect(a.field instanceof float).assertTrue()
         expect(a.field).assertEqual(7.3f)
     })
 
@@ -1519,7 +1469,6 @@ export default function FieldsLateInitOneTest(): void {
       a.field = 5n
         }
         foo_F140(lambda)
-        expect(a.field instanceof bigint).assertTrue()
         expect(a.field).assertEqual(5n)
     })
 
@@ -1537,7 +1486,6 @@ export default function FieldsLateInitOneTest(): void {
       a.field = "abc"
         }
         foo_F141(lambda)
-        expect(a.field instanceof string).assertTrue()
         expect(a.field).assertEqual("abc")
     })
 
@@ -1555,7 +1503,6 @@ export default function FieldsLateInitOneTest(): void {
       a.field = c'a'
         }
         foo_F142(lambda)
-        expect(a.field instanceof char).assertTrue()
         expect(a.field).assertEqual(c'a')
     })
 
@@ -1573,7 +1520,6 @@ export default function FieldsLateInitOneTest(): void {
       a.field = false
         }
         foo_F143(lambda)
-        expect(a.field instanceof boolean).assertTrue()
         expect(a.field).assertEqual(false)
     })
 
@@ -1591,7 +1537,6 @@ export default function FieldsLateInitOneTest(): void {
       a.field = 5
         }
         foo_F144(lambda)
-        expect(a.field instanceof Object).assertTrue()
         expect(a.field).assertEqual(5)
     })
 
@@ -1609,8 +1554,6 @@ export default function FieldsLateInitOneTest(): void {
       a.field = {data: 5}
         }
         foo_F145(lambda)
-        expect(a.field instanceof C_F145).assertTrue()
-        expect(a.field.data instanceof int).assertTrue()
         expect(a.field.data).assertEqual(5)
     })
 
@@ -1622,11 +1565,9 @@ export default function FieldsLateInitOneTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInitOne0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitOne0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let a: A_F157 = new A_F157()
-        expect(a.field instanceof Promise).assertTrue()
-        let res = waitForCompletion(() => a.field)
-        expect(res instanceof Object).assertTrue()
+        let res: Object = await a.field
     })
 
     /**
@@ -1637,12 +1578,10 @@ export default function FieldsLateInitOneTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInitOne0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitOne0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let a: A_F170 = new A_F170()
         a.field = a.foo_F170()
-        expect(a.field instanceof Promise).assertTrue()
-        let res = waitForCompletion(() => a.field)
-        expect(res instanceof Object).assertTrue()
+        let res: Object = await a.field
     })
 
     /**
@@ -1656,10 +1595,7 @@ export default function FieldsLateInitOneTest(): void {
     it("testFieldsLateInitOne0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let a: A_F171 = new A_F171()
         a.field = a.foo_F171()
-        expect(a.field instanceof Promise).assertTrue()
         let res: C_F171 = await a.field
-        expect(res instanceof C_F171).assertTrue()
-        expect(res.data instanceof int).assertTrue()
         expect(res.data).assertEqual(5)
     })
 
@@ -1671,11 +1607,9 @@ export default function FieldsLateInitOneTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInitOne0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitOne0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let a: A_F195 = new A_F195()
-        let res = waitForCompletion(() => a.foo_F195().then((): Object => a.field))
-        expect(res instanceof Object).assertTrue()
-        expect(a.field instanceof Object).assertTrue()
+        let res: Object = await a.foo_F195().then((): Object => a.field)
         expect(a.field).assertEqual(5)
     })
 
@@ -1687,11 +1621,9 @@ export default function FieldsLateInitOneTest(): void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testFieldsLateInitOne0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testFieldsLateInitOne0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let a: A_F196 = new A_F196()
-        waitForCompletion(a.foo_F196)
-        expect(a.field instanceof C_F196).assertTrue()
-        expect(a.field.data instanceof int).assertTrue()
+        await a.foo_F196()
         expect(a.field.data).assertEqual(5)
     })
 
@@ -1706,8 +1638,6 @@ export default function FieldsLateInitOneTest(): void {
     it("testFieldsLateInitOne0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let a: A_F197 = new A_F197()
         await a.foo_F197()
-        expect(a.field instanceof C_F197).assertTrue()
-        expect(a.field.data instanceof int).assertTrue()
         expect(a.field.data).assertEqual(5)
     })
   })

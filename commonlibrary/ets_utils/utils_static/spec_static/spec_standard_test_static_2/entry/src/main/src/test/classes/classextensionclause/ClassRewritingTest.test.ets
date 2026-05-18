@@ -1,4 +1,5 @@
-﻿/*---
+﻿'use static'
+/*---
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -186,7 +187,6 @@ export default function ClassRewritingTest():void {
     it("testClassRewriting0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cat = new Cat();
       let result = cat.speak();
-      let result1 = cat.speak();
       expect(result).assertEqual('Meow!');
     });
   })
