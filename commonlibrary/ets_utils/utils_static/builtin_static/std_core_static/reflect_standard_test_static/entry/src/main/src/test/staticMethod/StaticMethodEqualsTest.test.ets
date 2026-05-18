@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -119,7 +120,7 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodEquals001', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodEquals001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StaticMethodEqualsSingleTestClass001>();
       let method1 = cls.getStaticMethod('test');
       let method2 = cls.getStaticMethod('test');
@@ -137,7 +138,7 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodEquals002', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodEquals002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StaticMethodEqualsSingleTestClass001>();
       let method1 = cls.getStaticMethod('test');
       let method2 = cls.getStaticMethod('test');
@@ -154,7 +155,7 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodEquals003', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodEquals003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StaticMethodEqualsTwoDistinctStaticClass002>();
       let m1 = cls.getStaticMethod('method1');
       let m2 = cls.getStaticMethod('method2');
@@ -171,7 +172,7 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodEquals004', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodEquals004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let m1 = Class.from<StaticMethodEqualsCrossAClass003>().getStaticMethod('test');
       let m2 = Class.from<StaticMethodEqualsCrossBClass003>().getStaticMethod('test');
       expect(m1 != undefined).assertTrue();
@@ -187,7 +188,7 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodEquals005', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodEquals005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StaticMethodEqualsSingleTestClass001>();
       let method1 = cls.getStaticMethod('test');
       let method2 = cls.getStaticMethod('test');
@@ -207,7 +208,7 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodEquals006', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodEquals006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StaticMethodEqualsSingleTestClass001>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
@@ -222,7 +223,7 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodEquals007', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodEquals007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StaticMethodEqualsOverloadParamClass004>();
       let methods = cls.getStaticMethods();
       expect(methods.length).assertEqual(2);
@@ -237,7 +238,7 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodEquals008', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodEquals008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StaticMethodEqualsOverloadArityClass005>();
       let methods = cls.getStaticMethods();
       expect(methods.length).assertEqual(2);
@@ -252,7 +253,7 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodEquals009', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodEquals009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StaticMethodEqualsDifferentReturnClass006>();
       let m1 = cls.getStaticMethod('testReturnString');
       let m2 = cls.getStaticMethod('testReturnInt');
@@ -269,7 +270,7 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodEquals010', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodEquals010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StaticMethodEqualsSingleTestClass001>();
       let method1 = cls.getStaticMethod('test');
       let method2 = cls.getStaticMethod('test');
@@ -290,7 +291,7 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodEquals011', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodEquals011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StaticMethodEqualsSingleTestClass001>();
       let method1 = cls.getStaticMethod('test');
       let method2 = cls.getStaticMethod('test');
@@ -309,7 +310,7 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodEquals012', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodEquals012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StaticMethodEqualsSingleTestClass001>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
@@ -324,7 +325,7 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodEquals013', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodEquals013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StaticMethodEqualsSingleTestClass001>();
       let m1 = cls.getStaticMethod('test');
       let m2 = cls.getStaticMethod('test');
@@ -343,7 +344,7 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodEquals014', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodEquals014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StaticMethodEqualsSingleTestClass001>();
       let m1 = cls.getStaticMethod('test');
       let m2 = cls.getStaticMethod('test');
@@ -356,6 +357,9 @@ export default function StaticMethodEqualsTest(): void {
       if (eq12 && eq23) {
         let result = m1!.equals(m3!);
         expect(result).assertTrue();
+      } else {
+        // 脑图: 传递性测试前提条件不满足时应标记失败
+        expect().assertFail();
       }
     });
 
@@ -367,7 +371,7 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodEquals015', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodEquals015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StaticMethodEqualsSingleTestClass001>();
       let m1 = cls.getStaticMethod('test');
       let m2 = cls.getStaticMethod('test');
@@ -386,7 +390,7 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodEquals016', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodEquals016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StaticMethodEqualsSingleTestClass001>();
       let method1 = cls.getStaticMethod('test');
       let method2 = cls.getStaticMethod('test');
@@ -409,7 +413,7 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodEquals017', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodEquals017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StaticMethodEqualsSyncAsyncClass007>();
       let syncMethod = cls.getStaticMethod('syncMethod');
       let asyncMethod = cls.getStaticMethod('asyncMethod');
@@ -427,7 +431,7 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodEquals018', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodEquals018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let m1 = Class.from<StaticMethodEqualsAbstractTargetClass008>().getStaticMethod('test');
       let m2 = Class.from<StaticMethodEqualsAbstractTargetClass008>().getStaticMethod('test');
       expect(m1 != undefined).assertTrue();
@@ -443,7 +447,7 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodEquals019', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodEquals019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let m1 = Class.from<StaticMethodEqualsFinalTargetClass009>().getStaticMethod('test');
       let m2 = Class.from<StaticMethodEqualsFinalTargetClass009>().getStaticMethod('test');
       expect(m1 != undefined).assertTrue();
@@ -459,7 +463,7 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodEquals020', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodEquals020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StaticMethodEqualsGetterSetterClass010>();
       let getter1 = cls.getStaticMethod('%%get-userName');
       let getter2 = cls.getStaticMethod('%%get-userName');
@@ -478,7 +482,7 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodEquals021', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodEquals021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<StaticMethodEqualsMultiMethodClass011>();
       let cls2 = Class.from<StaticMethodEqualsMultiMethodClass011>();
       let methods1 = cls1.getStaticMethods();
@@ -498,7 +502,7 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodEquals022', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodEquals022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StaticMethodEqualsUniqueClass012>();
       let method1 = cls.getStaticMethod('test');
       let method2 = cls.getStaticMethod('test');
@@ -524,7 +528,7 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodEquals023', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodEquals023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let methodsA = Class.from<StaticMethodEqualsSetClassA013>().getStaticMethods();
       let methodsB = Class.from<StaticMethodEqualsSetClassB013>().getStaticMethods();
       let hit: int = 0;

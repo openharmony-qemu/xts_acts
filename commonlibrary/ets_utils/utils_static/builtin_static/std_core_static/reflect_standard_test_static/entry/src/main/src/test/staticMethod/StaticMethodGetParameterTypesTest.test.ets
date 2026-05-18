@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -139,7 +140,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetParameterTypes001', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetParameterTypes001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass001>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
@@ -155,7 +156,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetParameterTypes002', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetParameterTypes002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass002>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
@@ -173,7 +174,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetParameterTypes003', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetParameterTypes003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass003>();
       let method = cls.getStaticMethod('noParam');
       expect(method != undefined).assertTrue();
@@ -189,7 +190,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetParameterTypes004', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetParameterTypes004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass004>();
       let method = cls.getStaticMethod('singleParam');
       expect(method != undefined).assertTrue();
@@ -206,7 +207,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetParameterTypes005', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetParameterTypes005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass005>();
       let method = cls.getStaticMethod('multiTypes');
       expect(method != undefined).assertTrue();
@@ -226,7 +227,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetParameterTypes006', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetParameterTypes006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass006>();
       let method = cls.getStaticMethod('optionalParam');
       expect(method != undefined).assertTrue();
@@ -244,7 +245,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetParameterTypes007', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetParameterTypes007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass007>();
       let method = cls.getStaticMethod('genericParam');
       expect(method != undefined).assertTrue();
@@ -262,7 +263,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetParameterTypes008', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetParameterTypes008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass008>();
       let method = cls.getStaticMethod('varArgs');
       expect(method != undefined).assertTrue();
@@ -279,7 +280,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetParameterTypes009', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetParameterTypes009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass009>();
       let method = cls.getStaticMethod('unionParam');
       expect(method != undefined).assertTrue();
@@ -296,7 +297,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetParameterTypes010', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetParameterTypes010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass010>();
       let m1 = cls.getStaticMethod('objectParam');
       let m2 = cls.getStaticMethod('interfaceParam');
@@ -316,7 +317,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetParameterTypes011', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetParameterTypes011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass011>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
@@ -332,7 +333,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetParameterTypes012', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetParameterTypes012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass012>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
@@ -352,7 +353,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetParameterTypes013', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetParameterTypes013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass013>();
       let method = cls.getStaticMethod('allPrimitives');
       expect(method != undefined).assertTrue();
@@ -377,7 +378,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetParameterTypes014', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetParameterTypes014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass014>();
       let method = cls.getStaticMethod('manyParams');
       expect(method != undefined).assertTrue();
@@ -396,7 +397,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetParameterTypes015', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetParameterTypes015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass015>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
@@ -416,7 +417,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetParameterTypes016', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetParameterTypes016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass016>();
       let m1 = cls.getStaticMethod('normalMethod');
       let m2 = cls.getStaticMethod('asyncMethod');
@@ -437,7 +438,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetParameterTypes017', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetParameterTypes017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass017>();
       let method = cls.getStaticMethod('fetchData');
       expect(method != undefined).assertTrue();
@@ -455,7 +456,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetParameterTypes018', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetParameterTypes018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let m1 = Class.from<AbstractClass018>().getStaticMethod('abstractMethod');
       let m2 = Class.from<FinalClass018>().getStaticMethod('finalMethod');
       expect(m1 != undefined).assertTrue();
@@ -479,7 +480,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetParameterTypes019', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetParameterTypes019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass019>();
       let setter1 = cls.getStaticMethod('%%set-name');
       let setter2 = cls.getStaticMethod('%%set-age');
@@ -501,7 +502,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetParameterTypes020', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetParameterTypes020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass020>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
       let expectedLengths: FixedArray<int> = [0, 1, 2, 3];

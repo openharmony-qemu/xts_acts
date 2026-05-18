@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -146,7 +147,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetReturnType001', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetReturnType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass001>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
@@ -162,7 +163,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetReturnType002', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetReturnType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass002>();
       let m1 = cls.getStaticMethod('returnString');
       let m2 = cls.getStaticMethod('returnInt');
@@ -183,7 +184,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetReturnType003', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetReturnType003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass003>();
       let method = cls.getStaticMethod('noReturn');
       expect(method != undefined).assertTrue();
@@ -198,7 +199,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetReturnType004', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetReturnType004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass004>();
       let m1 = cls.getStaticMethod('returnObject');
       let m2 = cls.getStaticMethod('returnMap');
@@ -216,7 +217,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetReturnType005', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetReturnType005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass005>();
       let m1 = cls.getStaticMethod('returnArray');
       let m2 = cls.getStaticMethod('returnFixedArray');
@@ -234,7 +235,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetReturnType006', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetReturnType006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass006>();
       let method = cls.getStaticMethod('returnGeneric');
       expect(method != undefined).assertTrue();
@@ -250,7 +251,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetReturnType007', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetReturnType007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass007>();
       let method = cls.getStaticMethod('returnUnion');
       expect(method != undefined).assertTrue();
@@ -266,7 +267,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetReturnType008', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetReturnType008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass008>();
       let method = cls.getStaticMethod('fetchData');
       expect(method != undefined).assertTrue();
@@ -282,7 +283,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetReturnType009', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetReturnType009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass009>();
       let m1 = cls.getStaticMethod('returnNullable');
       let m2 = cls.getStaticMethod('returnUndefinable');
@@ -300,7 +301,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetReturnType010', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetReturnType010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass010>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
@@ -317,7 +318,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetReturnType011', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetReturnType011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass011>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
@@ -336,7 +337,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetReturnType012', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetReturnType012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass012>();
       expect(cls.getStaticMethod('rByte')!.getReturnType().getName()).assertEqual('i8');
       expect(cls.getStaticMethod('rShort')!.getReturnType().getName()).assertEqual('i16');
@@ -357,7 +358,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetReturnType013', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetReturnType013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass013>();
       let method = cls.getStaticMethod('chain');
       expect(method != undefined).assertTrue();
@@ -372,7 +373,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetReturnType014', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetReturnType014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass014>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
@@ -392,7 +393,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetReturnType015', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetReturnType015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass015>();
       let m1 = cls.getStaticMethod('normalMethod');
       let m2 = cls.getStaticMethod('asyncMethod');
@@ -413,7 +414,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetReturnType016', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetReturnType016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass016>();
       let m1 = cls.getStaticMethod('fetchData');
       let m2 = cls.getStaticMethod('fetchNumber');
@@ -433,7 +434,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetReturnType017', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetReturnType017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let m1 = Class.from<AbstractClass017>().getStaticMethod('abstractMethod');
       let m2 = Class.from<FinalClass017>().getStaticMethod('finalMethod');
       expect(m1 != undefined).assertTrue();
@@ -450,7 +451,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetReturnType018', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetReturnType018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass018>();
       let getter = cls.getStaticMethod('%%get-name');
       let setter = cls.getStaticMethod('%%set-name');
@@ -468,7 +469,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetReturnType019', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetReturnType019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass019>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
       let returnTypes: Map<string, string> = new Map<string, string>();

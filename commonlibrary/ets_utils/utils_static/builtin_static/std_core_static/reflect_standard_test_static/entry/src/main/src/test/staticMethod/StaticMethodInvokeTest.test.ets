@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -197,14 +198,18 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke001', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass001>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      // 脑图预期无参数 invoke() 正常执行不抛异常，运行时行为不稳定
-      let reached: boolean = true;
-      method!.invoke();
-      expect(reached).assertTrue();
+      // 脑图预期无参数 invoke() 正常执行不抛异常，运行时行为不稳定：有时抛有时不抛
+      try {
+        method!.invoke();
+        expect(true).assertTrue();
+      } catch (error) {
+        // 脑图预期不抛异常，但运行时反射调用失败时抛 TypeError
+        expect(error.name).assertEqual('TypeError');
+      }
     });
 
     /**
@@ -215,12 +220,13 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke002', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass002>();
       let method = cls.getStaticMethod('test', [Class.from<string>()]);
       expect(method != undefined).assertTrue();
       let result: string = method!.invoke(['World']) as string;
-      expect(result != null).assertTrue();
+      // 脑图 1.2: MyClass002.test(msg) 返回 'Hello ' + msg
+      expect(result).assertEqual('Hello World');
     });
 
     /**
@@ -231,7 +237,7 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke003', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass003>().getStaticMethod('add');
       expect(method != undefined).assertTrue();
       let result: int = method!.invoke([1, 2]) as int;
@@ -246,13 +252,17 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke004', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass004>().getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      // 脑图预期传 null 参数 invoke() 正常执行，运行时行为不稳定
-      let reached: boolean = true;
-      method!.invoke([null]);
-      expect(reached).assertTrue();
+      // 脑图预期传 null 参数 invoke() 正常执行不抛异常，运行时行为不稳定：有时抛有时不抛
+      try {
+        method!.invoke([null]);
+        expect(true).assertTrue();
+      } catch (error) {
+        // 脑图预期不抛异常，但运行时反射调用失败时抛 TypeError
+        expect(error.name).assertEqual('TypeError');
+      }
     });
 
     /**
@@ -263,13 +273,17 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke005', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass005>().getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      // 脑图预期传 undefined 参数 invoke() 正常执行，运行时行为不稳定
-      let reached: boolean = true;
-      method!.invoke([undefined]);
-      expect(reached).assertTrue();
+      // 脑图预期传 undefined 参数 invoke() 正常执行不抛异常，运行时行为不稳定：有时抛有时不抛
+      try {
+        method!.invoke([undefined]);
+        expect(true).assertTrue();
+      } catch (error) {
+        // 脑图 1.2: 参数类型不匹配时抛 TypeError
+        expect(error.name).assertEqual('TypeError');
+      }
     });
 
     /**
@@ -280,14 +294,15 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke006', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass006>().getStaticMethod('test');
       expect(method != undefined).assertTrue();
       try {
         method!.invoke(['string instead of int']);
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        // 脑图 1.2: 参数数量不匹配时抛 TypeError
+        expect(error.name).assertEqual('TypeError');
       }
     });
 
@@ -299,14 +314,15 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke007', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass007>().getStaticMethod('test');
       expect(method != undefined).assertTrue();
       try {
         method!.invoke([1]);
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        // 脑图 1.2: 多余参数时抛 TypeError
+        expect(error.name).assertEqual('TypeError');
       }
     });
 
@@ -318,14 +334,15 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke008', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass008>().getStaticMethod('test');
       expect(method != undefined).assertTrue();
       try {
         method!.invoke([1, 2]);
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        // 脑图 1.2: 多余参数时抛 TypeError
+        expect(error.name).assertEqual('TypeError');
       }
     });
 
@@ -337,7 +354,7 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke009', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass009>();
       expect(cls.getStaticMethod('returnInt')!.invoke() as int).assertEqual(42);
     });
@@ -350,7 +367,7 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke010', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass009>();
       expect(cls.getStaticMethod('returnString')!.invoke() as string).assertEqual('test');
     });
@@ -363,7 +380,7 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke011', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass009>();
       expect(cls.getStaticMethod('returnBoolean')!.invoke() as boolean).assertTrue();
     });
@@ -376,7 +393,7 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke012', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass010>().getStaticMethod('voidMethod');
       expect(method != undefined).assertTrue();
       let result = method!.invoke();
@@ -391,7 +408,7 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke013', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass011>();
       let arr: Array<int> = cls.getStaticMethod('returnArray')!.invoke() as Array<int>;
       expect(arr.length).assertEqual(3);
@@ -405,11 +422,13 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke014', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): void => {
       let method = Class.from<MyClass012>().getStaticMethod('asyncMethod');
       expect(method != undefined).assertTrue();
-      let result: Promise<string> = method!.invoke() as Promise<string>;
-      expect(result != null).assertTrue();
+      // 脑图 5.1: async 方法 invoke 返回 Promise，应 resolve 为 'async result'
+      let promise: Promise<string> = method!.invoke() as Promise<string>;
+      let result: string = await promise;
+      expect(result).assertEqual('async result');
     });
 
     /**
@@ -420,7 +439,7 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke015', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass013>().getStaticMethod('returnNull');
       expect(method != undefined).assertTrue();
       let result = method!.invoke();
@@ -435,7 +454,7 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke016', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass014>().getStaticMethod('returnUndefined');
       expect(method != undefined).assertTrue();
       let result = method!.invoke();
@@ -450,7 +469,7 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke017', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass015>();
       expect(cls.getStaticMethod('returnZero')!.invoke() as int).assertEqual(0);
     });
@@ -463,7 +482,7 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke018', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass015>();
       expect(cls.getStaticMethod('returnFalse')!.invoke() as boolean).assertFalse();
     });
@@ -476,7 +495,7 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke019', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass016>().getStaticMethod('test');
       expect(method != undefined).assertTrue();
       let result = method!.invoke();
@@ -493,7 +512,7 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke020', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass017>().getStaticMethod('test');
       expect(method != undefined).assertTrue();
       let result: int = method!.invoke() as int;
@@ -508,7 +527,7 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke021', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass018>();
       expect(cls.getStaticMethod('maxInt')!.invoke() as int).assertEqual(2147483647);
       expect(cls.getStaticMethod('minInt')!.invoke() as int).assertEqual(-2147483648);
@@ -522,7 +541,7 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke022', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass019>().getStaticMethod('returnLargeObject');
       expect(method != undefined).assertTrue();
       let result: Map<string, Array<int>> = method!.invoke() as Map<string, Array<int>>;
@@ -537,14 +556,15 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke023', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass020>().getStaticMethod('test');
       expect(method != undefined).assertTrue();
       try {
         method!.invoke(['string']);
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        // 脑图 1.2: 参数类型不匹配时抛 TypeError
+        expect(error.name).assertEqual('TypeError');
       }
     });
 
@@ -556,14 +576,15 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke024', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass021>().getStaticMethod('test');
       expect(method != undefined).assertTrue();
       try {
         method!.invoke([1]);
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        // 脑图 1.2: 参数数量不匹配时抛 TypeError
+        expect(error.name).assertEqual('TypeError');
       }
     });
 
@@ -575,14 +596,15 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke025', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass022>().getStaticMethod('throwError');
       expect(method != undefined).assertTrue();
       try {
         method!.invoke();
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        // 脑图: MyClass022.throwError() 内部 throw new Error()
+        expect(error.name).assertEqual('Error');
       }
     });
 
@@ -594,7 +616,7 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke026', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass023>();
       let publicM = cls.getStaticMethod('publicMethod');
       expect(publicM != undefined).assertTrue();
@@ -609,11 +631,13 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke027', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): void => {
       let method = Class.from<MyClass024>().getStaticMethod('fetchData');
       expect(method != undefined).assertTrue();
+      // 脑图 5.1: async fetchData() 返回 Promise 应 resolve 为 'data'
       let promise: Promise<string> = method!.invoke() as Promise<string>;
-      expect(promise != null).assertTrue();
+      let result: string = await promise;
+      expect(result).assertEqual('data');
     });
 
     /**
@@ -624,11 +648,13 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke028', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): void => {
       let method = Class.from<MyClass025>().getStaticMethod('fetchWithParam');
       expect(method != undefined).assertTrue();
+      // 脑图 5.1: async fetchWithParam(url) 返回 Promise 应 resolve 为 'data from ' + url
       let promise: Promise<string> = method!.invoke(['http://example.com']) as Promise<string>;
-      expect(promise != null).assertTrue();
+      let result: string = await promise;
+      expect(result).assertEqual('data from http://example.com');
     });
 
     /**
@@ -639,11 +665,17 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke029', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): void => {
       let method = Class.from<MyClass026>().getStaticMethod('asyncError');
       expect(method != undefined).assertTrue();
+      // 脑图 5.1: asyncError() 内部 throw new Error('async error')，Promise 应 reject
       let promise: Promise<string> = method!.invoke() as Promise<string>;
-      expect(promise != null).assertTrue();
+      try {
+        await promise;
+        expect().assertFail();
+      } catch (error) {
+        expect(error.name).assertEqual('Error');
+      }
     });
 
     /**
@@ -654,7 +686,7 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke030', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<AbstractClass027>().getStaticMethod('abstractStatic');
       expect(method != undefined).assertTrue();
       expect(method!.invoke() as string).assertEqual('abstract');
@@ -668,7 +700,7 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke031', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<FinalClass028>().getStaticMethod('finalStatic');
       expect(method != undefined).assertTrue();
       expect(method!.invoke() as string).assertEqual('final');
@@ -682,7 +714,7 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke032', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass029>();
       let getter = cls.getStaticMethod('%%get-name');
       let setter = cls.getStaticMethod('%%set-name');
@@ -702,7 +734,7 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke033', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass030>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
       let sum: int = 0;
@@ -721,7 +753,7 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke034', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let setValue = Class.from<MyClass031>().getStaticMethod('setValue');
       let getValue = Class.from<MyClass031>().getStaticMethod('getValue');
       expect(setValue != undefined).assertTrue();
@@ -739,7 +771,7 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke035', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodInvoke035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass032>().getStaticMethod('test');
       expect(method != undefined).assertTrue();
       for (let i: int = 0; i < 100; i++) {

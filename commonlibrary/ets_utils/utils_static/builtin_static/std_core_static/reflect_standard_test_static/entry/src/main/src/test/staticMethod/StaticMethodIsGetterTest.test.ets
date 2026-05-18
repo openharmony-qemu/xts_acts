@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -196,12 +197,13 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsGetter001', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsGetter001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass001>();
       let method = cls.getStaticMethod('%%get-name');
       expect(method != undefined).assertTrue();
       let isGetter: boolean = method!.isGetter();
-      expect(isGetter != null).assertTrue();
+      // 脑图 2.1: getter 方法预期返回 true
+      expect(isGetter).assertTrue();
     });
 
     /**
@@ -212,7 +214,7 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsGetter002', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsGetter002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass002>();
       let method = cls.getStaticMethod('%%get-name');
       expect(method != undefined).assertTrue();
@@ -229,7 +231,7 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsGetter003', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsGetter003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass003>();
       let method = cls.getStaticMethod('normalMethod');
       expect(method != undefined).assertTrue();
@@ -245,7 +247,7 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsGetter004', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsGetter004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass004>().getStaticMethod('%%set-name');
       expect(method != undefined).assertTrue();
       expect(method!.isGetter()).assertFalse();
@@ -260,7 +262,7 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsGetter005', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsGetter005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass005>().getStaticMethod('%%get-name');
       expect(method != undefined).assertTrue();
       expect(method!.isGetter()).assertTrue();
@@ -275,7 +277,7 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsGetter006', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsGetter006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass006>().getStaticMethod('%%get-name');
       expect(method == undefined).assertTrue();
     });
@@ -288,7 +290,7 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsGetter007', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsGetter007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass007>().getStaticMethod('%%get-name');
       expect(method == undefined).assertTrue();
     });
@@ -301,7 +303,7 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsGetter008', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsGetter008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass008>();
       expect(cls.getStaticMethod('%%get-strProp')!.isGetter()).assertTrue();
       expect(cls.getStaticMethod('%%get-numProp')!.isGetter()).assertTrue();
@@ -316,7 +318,7 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsGetter009', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsGetter009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass009>().getStaticMethod('%%get-fullName');
       expect(method != undefined).assertTrue();
       expect(method!.isGetter()).assertTrue();
@@ -330,7 +332,7 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsGetter010', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsGetter010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass010>();
       let method = cls.getStaticMethod('%%get-name');
       expect(method != undefined).assertTrue();
@@ -347,7 +349,7 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsGetter011', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsGetter011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass011>();
       let method = cls.getStaticMethod('%%get-name');
       expect(method != undefined).assertTrue();
@@ -363,7 +365,7 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsGetter012', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsGetter012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass012>().getStaticMethod('%%get-name');
       expect(method != undefined).assertTrue();
       expect(method!.isGetter()).assertTrue();
@@ -378,7 +380,7 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsGetter013', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsGetter013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass013>();
       let getter = cls.getStaticMethod('%%get-name');
       let setter = cls.getStaticMethod('%%set-name');
@@ -396,7 +398,7 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsGetter014', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsGetter014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<AbstractClass014>().getStaticMethod('%%get-value');
       expect(method != undefined).assertTrue();
       expect(method!.isGetter()).assertTrue();
@@ -410,7 +412,7 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsGetter015', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsGetter015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<FinalClass015>().getStaticMethod('%%get-value');
       expect(method != undefined).assertTrue();
       expect(method!.isGetter()).assertTrue();
@@ -424,7 +426,7 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsGetter016', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsGetter016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass016>().getStaticMethod('%%get-readOnlyValue');
       expect(method != undefined).assertTrue();
       expect(method!.isGetter()).assertTrue();
@@ -438,7 +440,7 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsGetter017', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsGetter017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass017>().getStaticMethod('%%get-myProp');
       expect(method != null).assertTrue();
       expect(method!.getName()).assertEqual('%%get-myProp');
@@ -453,13 +455,14 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsGetter018', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsGetter018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass018>();
       let method = cls.getStaticMethod('%%get-name');
       expect(method != undefined).assertTrue();
       try {
         let isGetter: boolean = method!.isGetter();
-        expect(isGetter != null).assertTrue();
+        // 脑图: getter 方法预期返回 true
+        expect(isGetter).assertTrue();
       } catch (error) {
         expect().assertFail();
       }
@@ -473,7 +476,7 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsGetter019', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsGetter019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass019>().getStaticMethod('%%get-value');
       expect(method != undefined).assertTrue();
       expect(method!.isGetter()).assertTrue();
@@ -488,7 +491,7 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsGetter020', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsGetter020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let m1 = Class.from<AbstractClass021>().getStaticMethod('%%get-abstractValue');
       let m2 = Class.from<FinalClass021>().getStaticMethod('%%get-finalValue');
       let m3 = Class.from<NormalClass021>().getStaticMethod('%%get-normalValue');
@@ -508,7 +511,7 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsGetter021', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsGetter021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass022>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
       let getterCount: int = 0;
@@ -528,7 +531,7 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsGetter022', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsGetter022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass023>().getStaticMethod('%%get-name');
       expect(method != undefined).assertTrue();
       expect(method!.isGetter()).assertTrue();
@@ -545,7 +548,7 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsGetter023', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsGetter023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass024>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
       let getters: Array<reflect.StaticMethod> = [];
@@ -565,7 +568,7 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsGetter024', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsGetter024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass025>();
       let nameGetter = cls.getStaticMethod('%%get-name');
       let nameSetter = cls.getStaticMethod('%%set-name');

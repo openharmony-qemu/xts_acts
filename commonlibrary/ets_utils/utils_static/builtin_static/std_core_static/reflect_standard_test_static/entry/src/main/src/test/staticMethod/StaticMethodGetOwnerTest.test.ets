@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -138,7 +139,7 @@ export default function StaticMethodGetOwnerTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetOwner001', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetOwner001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass001>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
@@ -154,7 +155,7 @@ export default function StaticMethodGetOwnerTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetOwner002', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetOwner002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass002>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
@@ -171,7 +172,7 @@ export default function StaticMethodGetOwnerTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetOwner003', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetOwner003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let methodA = Class.from<ClassA003>().getStaticMethod('methodA');
       let methodB = Class.from<ClassB003>().getStaticMethod('methodB');
       expect(methodA != undefined).assertTrue();
@@ -188,7 +189,7 @@ export default function StaticMethodGetOwnerTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetOwner004', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetOwner004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parentMethod = Class.from<ParentClass004>().getStaticMethod('parentMethod');
       let childMethod = Class.from<ChildClass004>().getStaticMethod('childMethod');
       expect(parentMethod != undefined).assertTrue();
@@ -205,7 +206,7 @@ export default function StaticMethodGetOwnerTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetOwner005', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetOwner005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1: Class = Class.from<_PrivateClass005>();
       let cls2: Class = Class.from<$SpecialClass005>();
       expect(cls1.getStaticMethod('test')!.getOwner().getName().includes('_PrivateClass005')).assertTrue();
@@ -220,7 +221,7 @@ export default function StaticMethodGetOwnerTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetOwner006', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetOwner006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass006>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
@@ -237,7 +238,7 @@ export default function StaticMethodGetOwnerTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetOwner007', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetOwner007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass007>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
@@ -255,7 +256,7 @@ export default function StaticMethodGetOwnerTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetOwner008', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetOwner008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<GenericClass008<int>>();
       let method = cls.getStaticMethod('staticMethod');
       expect(method != undefined).assertTrue();
@@ -270,7 +271,7 @@ export default function StaticMethodGetOwnerTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetOwner009', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetOwner009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass009>();
       let method = cls.getStaticMethod('ownMethod');
       expect(method != undefined).assertTrue();
@@ -285,7 +286,7 @@ export default function StaticMethodGetOwnerTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetOwner010', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetOwner010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass010>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
@@ -305,7 +306,7 @@ export default function StaticMethodGetOwnerTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetOwner011', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetOwner011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass011>();
       let m1 = cls.getStaticMethod('publicMethod');
       let m2 = cls.getStaticMethod('asyncMethod');
@@ -326,7 +327,7 @@ export default function StaticMethodGetOwnerTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetOwner012', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetOwner012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass012>();
       let method = cls.getStaticMethod('fetchData');
       expect(method != undefined).assertTrue();
@@ -341,7 +342,7 @@ export default function StaticMethodGetOwnerTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetOwner013', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetOwner013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let m1 = Class.from<AbstractClass013>().getStaticMethod('abstractMethod');
       let m2 = Class.from<FinalClass013>().getStaticMethod('finalMethod');
       let m3 = Class.from<NormalClass013>().getStaticMethod('normalMethod');
@@ -361,7 +362,7 @@ export default function StaticMethodGetOwnerTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetOwner014', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetOwner014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass014>();
       let getter = cls.getStaticMethod('%%get-name');
       let setter = cls.getStaticMethod('%%set-name');
@@ -379,7 +380,7 @@ export default function StaticMethodGetOwnerTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetOwner015', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodGetOwner015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass015>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
       let ownerName: string = cls.getName();

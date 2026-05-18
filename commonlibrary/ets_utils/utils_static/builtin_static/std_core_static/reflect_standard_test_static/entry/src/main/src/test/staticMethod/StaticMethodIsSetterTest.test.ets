@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -203,12 +204,13 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsSetter001', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsSetter001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass001>();
       let method = cls.getStaticMethod('%%set-name');
       expect(method != undefined).assertTrue();
       let isSetter: boolean = method!.isSetter();
-      expect(isSetter != null).assertTrue();
+      // 脑图 2.1: setter 方法预期返回 true
+      expect(isSetter).assertTrue();
     });
 
     /**
@@ -219,7 +221,7 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsSetter002', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsSetter002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass002>();
       let method = cls.getStaticMethod('%%set-name');
       expect(method != undefined).assertTrue();
@@ -236,7 +238,7 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsSetter003', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsSetter003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass003>();
       let method = cls.getStaticMethod('normalMethod');
       expect(method != undefined).assertTrue();
@@ -252,7 +254,7 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsSetter004', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsSetter004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass004>().getStaticMethod('%%get-name');
       expect(method != undefined).assertTrue();
       expect(method!.isSetter()).assertFalse();
@@ -267,7 +269,7 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsSetter005', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsSetter005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass005>().getStaticMethod('%%set-name');
       expect(method != undefined).assertTrue();
       expect(method!.isSetter()).assertTrue();
@@ -282,7 +284,7 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsSetter006', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsSetter006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass006>().getStaticMethod('%%set-name');
       expect(method == undefined).assertTrue();
     });
@@ -295,7 +297,7 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsSetter007', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsSetter007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass007>().getStaticMethod('%%set-name');
       expect(method == undefined).assertTrue();
     });
@@ -308,7 +310,7 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsSetter008', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsSetter008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass008>();
       expect(cls.getStaticMethod('%%set-strProp')!.isSetter()).assertTrue();
       expect(cls.getStaticMethod('%%set-numProp')!.isSetter()).assertTrue();
@@ -323,7 +325,7 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsSetter009', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsSetter009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass009>().getStaticMethod('%%set-writeOnlyValue');
       expect(method != undefined).assertTrue();
       expect(method!.isSetter()).assertTrue();
@@ -337,7 +339,7 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsSetter010', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsSetter010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass010>();
       let method = cls.getStaticMethod('%%set-name');
       expect(method != undefined).assertTrue();
@@ -354,7 +356,7 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsSetter011', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsSetter011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass011>();
       let method = cls.getStaticMethod('%%set-name');
       expect(method != undefined).assertTrue();
@@ -370,7 +372,7 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsSetter012', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsSetter012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass012>().getStaticMethod('%%set-name');
       expect(method != undefined).assertTrue();
       expect(method!.isSetter()).assertTrue();
@@ -385,7 +387,7 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsSetter013', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsSetter013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass013>().getStaticMethod('%%set-name');
       expect(method != undefined).assertTrue();
       expect(method!.isSetter()).assertTrue();
@@ -400,7 +402,7 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsSetter014', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsSetter014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass014>();
       let getter = cls.getStaticMethod('%%get-name');
       let setter = cls.getStaticMethod('%%set-name');
@@ -418,7 +420,7 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsSetter015', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsSetter015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<AbstractClass015>().getStaticMethod('%%set-value');
       expect(method != undefined).assertTrue();
       expect(method!.isSetter()).assertTrue();
@@ -432,7 +434,7 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsSetter016', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsSetter016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<FinalClass016>().getStaticMethod('%%set-value');
       expect(method != undefined).assertTrue();
       expect(method!.isSetter()).assertTrue();
@@ -446,7 +448,7 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsSetter017', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsSetter017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass017>().getStaticMethod('%%set-myProp');
       expect(method != null).assertTrue();
       expect(method!.getName()).assertEqual('%%set-myProp');
@@ -461,13 +463,14 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsSetter018', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsSetter018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass018>();
       let method = cls.getStaticMethod('%%set-name');
       expect(method != undefined).assertTrue();
       try {
         let isSetter: boolean = method!.isSetter();
-        expect(isSetter != null).assertTrue();
+        // 脑图: setter 方法预期返回 true
+        expect(isSetter).assertTrue();
       } catch (error) {
         expect().assertFail();
       }
@@ -481,7 +484,7 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsSetter019', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsSetter019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass019>().getStaticMethod('%%set-value');
       expect(method != undefined).assertTrue();
       expect(method!.isSetter()).assertTrue();
@@ -496,7 +499,7 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsSetter020', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsSetter020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let m1 = Class.from<AbstractClass021>().getStaticMethod('%%set-abstractValue');
       let m2 = Class.from<FinalClass021>().getStaticMethod('%%set-finalValue');
       let m3 = Class.from<NormalClass021>().getStaticMethod('%%set-normalValue');
@@ -516,7 +519,7 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsSetter021', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsSetter021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass022>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
       let setterCount: int = 0;
@@ -536,7 +539,7 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsSetter022', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsSetter022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass023>().getStaticMethod('%%set-name');
       expect(method != undefined).assertTrue();
       expect(method!.isSetter()).assertTrue();
@@ -553,7 +556,7 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsSetter023', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsSetter023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass024>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
       let setters: Array<reflect.StaticMethod> = [];
@@ -573,7 +576,7 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsSetter024', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsSetter024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass025>();
       let nameGetter = cls.getStaticMethod('%%get-name');
       let nameSetter = cls.getStaticMethod('%%set-name');
@@ -597,7 +600,7 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsSetter025', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testStaticMethodIsSetter025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass026>();
       let getter = cls.getStaticMethod('%%get-value');
       let setter = cls.getStaticMethod('%%set-value');
