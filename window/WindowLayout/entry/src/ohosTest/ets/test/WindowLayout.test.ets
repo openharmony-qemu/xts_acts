@@ -6306,15 +6306,15 @@ export default function windowLayoutTest() {
     });
 
      /**
-     * @tc.name maximizeWithOptionsNoParam0100
+     * @tc.name maximizeWithOptionsNoParam_0100
      * @tc.number SUB_WINDOWS_WINDOWLAYOUT_MAXIMIZEWITHOPTIONS_NORMAL_0100
      * @tc.desc maximizeWithOptions no param test.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('maximizeWithOptionsNoParam0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let caseName = 'maximizeWithOptionsNoParam0100';
+    it('maximizeWithOptionsNoParam_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'maximizeWithOptionsNoParam_0100';
       console.info(`${caseName} begin`);
       let windowStageStart = await startAbility(caseName, context);
       try {
@@ -6348,7 +6348,7 @@ export default function windowLayoutTest() {
         });
       } catch (exception) {
         await terminateAbility(caseName);
-        if (exception.code === 801) {
+        if (!isSyscapSessionManagerSupported) {
           console.info(`${caseName} Capability not supported1, skip test.Cause code: ${exception.code}, message: ${exception.message} `);
           expect(exception.code).assertEqual(801)
         }else {
@@ -6360,21 +6360,21 @@ export default function windowLayoutTest() {
     });
 
     /**
-     * @tc.name maximizeWithOptionsFullConfig0200
+     * @tc.name maximizeWithOptionsFullConfig_0200
      * @tc.number SUB_WINDOWS_WINDOWLAYOUT_MAXIMIZEWITHOPTIONS_NORMAL_0200
      * @tc.desc maximizeWithOptions with full config test.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('maximizeWithOptionsFullConfig0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('maximizeWithOptionsFullConfig_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        let caseName = 'maximizeWithOptionsFullConfig0200';
+        let caseName = 'maximizeWithOptionsFullConfig_0200';
         console.info(`${caseName} begin`);
         let windowStageStart = await startAbility(caseName, context);
         let maximizeOptions: window.MaximizeOptions = {
           maximizePresentation: window.MaximizePresentation.EXIT_IMMERSIVE,
-          acrossDisplayPresentation: window.AcrossDisplayPresentation.FOLLOW_ACROSS_DISPLAY_SETTING,
+          acrossDisplayPresentation: window.AcrossDisplayPresentation.EXIT_ACROSS_DISPLAY_MODE,
           snapshotAnimationConfig: {
             duration: 200,
             delay: 30
@@ -6384,10 +6384,15 @@ export default function windowLayoutTest() {
           let mainWindow = windowStageStart.getMainWindowSync();
           let windowStatusBefore = mainWindow.getWindowStatus()
           console.info(`${caseName} Succeeded in get window status brefore is: ${JSON.stringify(windowStatusBefore)}`);
+          let curFoldStatus: display.FoldStatus = display.getFoldStatus();
+          let displayHeight = display.getDefaultDisplaySync().height;
+          console.info(`${caseName} Succeeded in get display heigh is: ${JSON.stringify(displayHeight)} , FoldStatus is :${JSON.stringify(curFoldStatus)}`);
           mainWindow!.maximizeWithOptions(maximizeOptions).then(async () => {
             await sleep(200)
             console.info(`${caseName} Succeeded in maximizing window with full config.`);
             let windowStatus = mainWindow!.getWindowStatus();
+            let windowHeight = mainWindow!.getWindowProperties().windowRect.heigh;
+            console.info(`${caseName} Succeeded in get window windowHeight is: ${JSON.stringify(windowHeight)}`);
             await terminateAbility(caseName);
             console.info(`${caseName} Succeeded in get window status is: ${JSON.stringify(windowStatus)}`);
             if (isFreeWindowMode) {
@@ -6411,7 +6416,7 @@ export default function windowLayoutTest() {
           });
         } catch (exception) {
           await terminateAbility(caseName);
-          if (exception.code === 801) {
+          if (!isSyscapSessionManagerSupported) {
             console.info(`${caseName} Capability not supported1, skip test.Cause code: ${exception.code}, message: ${exception.message} `);
             expect(exception.code).assertEqual(801)
           }else {
@@ -6423,16 +6428,16 @@ export default function windowLayoutTest() {
       });
 
     /**
-     * @tc.name maximizeWithOptionsSnapshotOnly0300
+     * @tc.name maximizeWithOptionsSnapshotOnly_0300
      * @tc.number SUB_WINDOWS_WINDOWLAYOUT_MAXIMIZEWITHOPTIONS_NORMAL_0300
      * @tc.desc maximizeWithOptions with snapshotAnimationConfig only test.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('maximizeWithOptionsSnapshotOnly0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('maximizeWithOptionsSnapshotOnly_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        let caseName = 'maximizeWithOptionsSnapshotOnly0300';
+        let caseName = 'maximizeWithOptionsSnapshotOnly_0300';
         console.info(`${caseName} begin`);
         let windowStageStart = await startAbility(caseName, context);
         let maximizeOptions: window.MaximizeOptions = {
@@ -6454,6 +6459,9 @@ export default function windowLayoutTest() {
             if (isFreeWindowMode) {
               expect(windowStatusBefore).assertEqual(window.WindowStatusType.FLOATING);
               expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
+              if(deviceType == '2in1' && curFoldStatus == 3){
+                expect(windowHeight === displayHeight || windowHeight > displayHeight).assertTrue();
+              }
             }else {
               expect(windowStatusBefore).assertEqual(window.WindowStatusType.FULL_SCREEN);
               expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
@@ -6472,7 +6480,7 @@ export default function windowLayoutTest() {
           });
         } catch (exception) {
           await terminateAbility(caseName);
-          if (exception.code === 801) {
+          if (!isSyscapSessionManagerSupported) {
             console.info(`${caseName} Capability not supported1, skip test.Cause code: ${exception.code}, message: ${exception.message} `);
             expect(exception.code).assertEqual(801)
           }else {
@@ -6484,16 +6492,16 @@ export default function windowLayoutTest() {
       });
 
     /**
-     * @tc.name maximizeWithOptionsPresentationSnapshot0400
+     * @tc.name maximizeWithOptionsPresentationSnapshot_0400
      * @tc.number SUB_WINDOWS_WINDOWLAYOUT_MAXIMIZEWITHOPTIONS_NORMAL_0400
      * @tc.desc maximizeWithOptions with maximizePresentation and snapshotAnimationConfig test.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('maximizeWithOptionsPresentationSnapshot0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('maximizeWithOptionsPresentationSnapshot_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        let caseName = 'maximizeWithOptionsPresentationSnapshot0400';
+        let caseName = 'maximizeWithOptionsPresentationSnapshot_0400';
         console.info(`${caseName} begin`);
         let windowStageStart = await startAbility(caseName, context);
         let maximizeOptions: window.MaximizeOptions = {
@@ -6534,7 +6542,7 @@ export default function windowLayoutTest() {
           });
         } catch (exception) {
           await terminateAbility(caseName);
-          if (exception.code === 801) {
+          if (!isSyscapSessionManagerSupported) {
             console.info(`${caseName} Capability not supported1, skip test.Cause code: ${exception.code}, message: ${exception.message} `);
             expect(exception.code).assertEqual(801)
           }else {
@@ -6546,16 +6554,16 @@ export default function windowLayoutTest() {
       });
 
     /**
-     * @tc.name maximizeWithOptionsAcrossSnapshot0500
+     * @tc.name maximizeWithOptionsAcrossSnapshot_0500
      * @tc.number SUB_WINDOWS_WINDOWLAYOUT_MAXIMIZEWITHOPTIONS_NORMAL_0500
      * @tc.desc maximizeWithOptions with acrossDisplayPresentation and snapshotAnimationConfig test.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('maximizeWithOptionsAcrossSnapshot0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('maximizeWithOptionsAcrossSnapshot_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        let caseName = 'maximizeWithOptionsAcrossSnapshot0500';
+        let caseName = 'maximizeWithOptionsAcrossSnapshot_0500';
         console.info(`${caseName} begin`);
         let windowStageStart = await startAbility(caseName, context);
         let maximizeOptions: window.MaximizeOptions = {
@@ -6567,17 +6575,25 @@ export default function windowLayoutTest() {
         };
         try {
           let mainWindow = windowStageStart.getMainWindowSync();
+          let curFoldStatus: display.FoldStatus = display.getFoldStatus();
+          let displayHeight = display.getDefaultDisplaySync().height;
+          console.info(`${caseName} Succeeded in get display heigh is: ${JSON.stringify(displayHeight)} , FoldStatus is :${JSON.stringify(curFoldStatus)}`);
           let windowStatusBefore = mainWindow.getWindowStatus()
           console.info(`${caseName} Succeeded in get window status brefore is: ${JSON.stringify(windowStatusBefore)}`);
           mainWindow!.maximizeWithOptions(maximizeOptions).then(async () => {
             await sleep(200)
             console.info(`${caseName} Succeeded in maximizing window with across and snapshot.`);
             let windowStatus = mainWindow!.getWindowStatus();
+            let windowHeight = mainWindow!.getWindowProperties().windowRect.heigh;
+            console.info(`${caseName} Succeeded in get window windowHeight is: ${JSON.stringify(windowHeight)}`);
             await terminateAbility(caseName);
             console.info(`${caseName} Succeeded in get window status is: ${JSON.stringify(windowStatus)}`);
             if (isFreeWindowMode) {
               expect(windowStatusBefore).assertEqual(window.WindowStatusType.FLOATING);
               expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
+              if(deviceType == '2in1' && curFoldStatus == 3){
+                expect(windowHeight > displayHeight).assertTrue();
+              }
             }else {
               expect(windowStatusBefore).assertEqual(window.WindowStatusType.FULL_SCREEN);
               expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
@@ -6596,7 +6612,7 @@ export default function windowLayoutTest() {
           });
         } catch (exception) {
           await terminateAbility(caseName);
-          if (exception.code === 801) {
+          if (!isSyscapSessionManagerSupported) {
             console.info(`${caseName} Capability not supported1, skip test.Cause code: ${exception.code}, message: ${exception.message} `);
             expect(exception.code).assertEqual(801)
           }else {
@@ -6608,16 +6624,16 @@ export default function windowLayoutTest() {
       });
 
     /**
-     * @tc.name maximizeWithOptionsParamSingle0300
+     * @tc.name maximizeWithOptionsParamSingle_0300
      * @tc.number SUB_WINDOWS_WINDOWLAYOUT_MAXIMIZEWITHOPTIONS_PARAM_0300
      * @tc.desc maximizeWithOptions duration=200 only test.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('maximizeWithOptionsParamSingle0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('maximizeWithOptionsParamSingle_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
-        let caseName = 'maximizeWithOptionsParamSingle0300';
+        let caseName = 'maximizeWithOptionsParamSingle_0300';
         console.info(`${caseName} begin`);
         let windowStageStart = await startAbility(caseName, context);
         let maximizeOptions: window.MaximizeOptions = {
@@ -6656,7 +6672,7 @@ export default function windowLayoutTest() {
           });
         } catch (exception) {
           await terminateAbility(caseName);
-          if (exception.code === 801) {
+          if (!isSyscapSessionManagerSupported) {
             console.info(`${caseName} Capability not supported1, skip test.Cause code: ${exception.code}, message: ${exception.message} `);
             expect(exception.code).assertEqual(801)
           }else {
@@ -6668,16 +6684,16 @@ export default function windowLayoutTest() {
       });
 
     /**
-     * @tc.name maximizeWithOptionsError13000020100
+     * @tc.name maximizeWithOptionsError1300002_0100
      * @tc.number SUB_WINDOWS_WINDOWLAYOUT_MAXIMIZEWITHOPTIONS_ERROR_1300002_0100
      * @tc.desc maximizeWithOptions 1300002 window destroyed test.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('maximizeWithOptionsError13000020100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('maximizeWithOptionsError1300002_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
-        let caseName = 'maximizeWithOptionsError13000020100';
+        let caseName = 'maximizeWithOptionsError1300002_0100';
         console.info(`${caseName} begin`);
         let subWindow:window.Window
         let options: window.SubWindowOptions = {
@@ -6724,8 +6740,8 @@ export default function windowLayoutTest() {
             done();
           }
         }).catch((err:BusinessError)=>{
-          if (err.code == 801 || err.code == 1300002) {
-            console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
+          if (err.code == 1300002) {
+            console.info(`${caseName} Capability not supported1, skip test.Cause code: ${err.code}, message: ${err.message}`);
           } else {
             console.error(`${caseName} Failed to create window. Cause code: ${err.code}, message: ${err.message}`);
             expect().assertFail();
@@ -6735,16 +6751,16 @@ export default function windowLayoutTest() {
       });
 
     /**
-     * @tc.name maximizeWithOptionsError13000040100
+     * @tc.name maximizeWithOptionsError1300004_0100
      * @tc.number SUB_WINDOWS_WINDOWLAYOUT_MAXIMIZEWITHOPTIONS_ERROR_1300004_0100
      * @tc.desc maximizeWithOptions 1300004 invalid window type test.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('maximizeWithOptionsError13000040100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('maximizeWithOptionsError1300004_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
-        let caseName = 'maximizeWithOptionsError13000040100';
+        let caseName = 'maximizeWithOptionsError1300004_0100';
         console.info(`${caseName} begin`);
         let subWindow:window.Window
         let options: window.SubWindowOptions = {
@@ -6793,8 +6809,8 @@ export default function windowLayoutTest() {
             done();
           }
         }).catch((err:BusinessError)=>{
-          if (err.code == 801 || err.code == 1300002) {
-            console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
+          if (err.code == 1300002) {
+            console.info(`${caseName} Capability not supported1, skip test.Cause code: ${err.code}, message: ${err.message}`);
           } else {
             console.error(`${caseName} Failed to create window. Cause code: ${err.code}, message: ${err.message}`);
             expect().assertFail();
@@ -6804,16 +6820,16 @@ export default function windowLayoutTest() {
       });
 
     /**
-     * @tc.name maximizeWithOptionsError13000040200
+     * @tc.name maximizeWithOptionsError1300004_0200
      * @tc.number SUB_WINDOWS_WINDOWLAYOUT_MAXIMIZEWITHOPTIONS_ERROR_1300004_0200
      * @tc.desc maximizeWithOptions 1300002 window destroyed test.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('maximizeWithOptionsError13000040200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('maximizeWithOptionsError1300004_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
-        let caseName = 'maximizeWithOptionsError13000040200';
+        let caseName = 'maximizeWithOptionsError1300004_0200';
         console.info(`${caseName} begin`);
         let subWindow:window.Window
         let options: window.SubWindowOptions = {
@@ -6864,8 +6880,8 @@ export default function windowLayoutTest() {
             done();
           }
         }).catch((err:BusinessError)=>{
-          if (err.code == 801 || err.code == 1300002) {
-            console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
+          if (err.code == 1300002) {
+            console.info(`${caseName} Capability not supported1, skip test.Cause code: ${err.code}, message: ${err.message}`);
           } else {
             console.error(`${caseName} Failed to create window. Cause code: ${err.code}, message: ${err.message}`);
             expect().assertFail();
@@ -6875,16 +6891,16 @@ export default function windowLayoutTest() {
       });
 
     /**
-     * @tc.name maximizeWithOptionsError13000040300
+     * @tc.name maximizeWithOptionsError1300004_0300
      * @tc.number SUB_WINDOWS_WINDOWLAYOUT_MAXIMIZEWITHOPTIONS_ERROR_1300004_0300
      * @tc.desc maximizeWithOptions 1300004 window single param snapshotAnimationConfig.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('maximizeWithOptionsError13000040300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('maximizeWithOptionsError1300004_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
-        let caseName = 'maximizeWithOptionsError13000040300';
+        let caseName = 'maximizeWithOptionsError1300004_0300';
         console.info(`${caseName} begin`);
         let subWindow:window.Window
         let options: window.SubWindowOptions = {
@@ -6934,8 +6950,8 @@ export default function windowLayoutTest() {
             done();
           }
         }).catch((err:BusinessError)=>{
-          if (err.code == 801 || err.code == 1300002) {
-            console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
+          if (err.code == 1300002) {
+            console.info(`${caseName} Capability not supported1, skip test.Cause code: ${err.code}, message: ${err.message}`);
           } else {
             console.error(`${caseName} Failed to create window. Cause code: ${err.code}, message: ${err.message}`);
             expect().assertFail();
@@ -6945,16 +6961,16 @@ export default function windowLayoutTest() {
       });
 
     /**
-     * @tc.name maximizeWithOptionsError13000160100
+     * @tc.name maximizeWithOptionsError1300016_0100
      * @tc.number SUB_WINDOWS_WINDOWLAYOUT_MAXIMIZEWITHOPTIONS_ERROR_1300016_0100
      * @tc.desc maximizeWithOptions 1300016 duration>400 test.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('maximizeWithOptionsError13000160100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('maximizeWithOptionsError1300016_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
-        let caseName = 'maximizeWithOptionsError13000160100';
+        let caseName = 'maximizeWithOptionsError1300016_0100';
         console.info(`${caseName} begin`);
         let windowStageStart = await startAbility(caseName, context);
         let maximizeOptions: window.MaximizeOptions = {
@@ -6992,16 +7008,16 @@ export default function windowLayoutTest() {
       });
 
     /**
-     * @tc.name maximizeWithOptionsError13000160200
+     * @tc.name maximizeWithOptionsError1300016_0200
      * @tc.number SUB_WINDOWS_WINDOWLAYOUT_MAXIMIZEWITHOPTIONS_ERROR_1300016_0200
      * @tc.desc maximizeWithOptions 1300016 delay<0 test.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('maximizeWithOptionsError13000160200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('maximizeWithOptionsError1300016_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
-        let caseName = 'maximizeWithOptionsError13000160200';
+        let caseName = 'maximizeWithOptionsError1300016_0200';
         console.info(`${caseName} begin`);
         let windowStageStart = await startAbility(caseName, context);
         let maximizeOptions: window.MaximizeOptions = {
@@ -7041,16 +7057,16 @@ export default function windowLayoutTest() {
       });
 
     /**
-     * @tc.name subWindowMaximizeWithOptionsNoParam0100
+     * @tc.name subWindowMaximizeWithOptionsNoParam_0100
      * @tc.number SUB_WINDOWS_WINDOWLAYOUT_SUBWINDOW_MAXIMIZEWITHOPTIONS_NORMAL_0100
      * @tc.desc subWindow maximizeWithOptions no param test.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('subWindowMaximizeWithOptionsNoParam0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('subWindowMaximizeWithOptionsNoParam_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
-        let caseName = 'subWindowMaximizeWithOptionsNoParam0100';
+        let caseName = 'subWindowMaximizeWithOptionsNoParam_0100';
         console.info(`${caseName} begin`);
         let subWindow:window.Window
         let options: window.SubWindowOptions = {
@@ -7095,8 +7111,8 @@ export default function windowLayoutTest() {
             done();
           }
         }).catch((err:BusinessError)=>{
-          if (err.code == 801 || err.code == 1300002) {
-            console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
+          if (err.code == 1300002) {
+            console.info(`${caseName} Capability not supported1, skip test.Cause code: ${err.code}, message: ${err.message}`);
           } else {
             console.error(`${caseName} Failed to create window. Cause code: ${err.code}, message: ${err.message}`);
             expect().assertFail();
@@ -7106,16 +7122,16 @@ export default function windowLayoutTest() {
       });
 
     /**
-     * @tc.name subWindowMaximizeWithOptionsPresentation0200
+     * @tc.name subWindowMaximizeWithOptionsPresentation_0200
      * @tc.number SUB_WINDOWS_WINDOWLAYOUT_SUBWINDOW_MAXIMIZEWITHOPTIONS_NORMAL_0200
      * @tc.desc subWindow maximizeWithOptions with presentation test.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('subWindowMaximizeWithOptionsPresentation0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('subWindowMaximizeWithOptionsPresentation_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
-        let caseName = 'subWindowMaximizeWithOptionsPresentation0200';
+        let caseName = 'subWindowMaximizeWithOptionsPresentation_0200';
         console.info(`${caseName} begin`);
         let subWindow:window.Window
         let options: window.SubWindowOptions = {
@@ -7163,8 +7179,8 @@ export default function windowLayoutTest() {
             done();
           }
         }).catch((err:BusinessError)=>{
-          if (err.code == 801 || err.code == 1300002) {
-            console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
+          if (err.code == 1300002) {
+            console.info(`${caseName} Capability not supported1, skip test.Cause code: ${err.code}, message: ${err.message}`);
           } else {
             console.error(`${caseName} Failed to create window. Cause code: ${err.code}, message: ${err.message}`);
             expect().assertFail();
@@ -7174,16 +7190,16 @@ export default function windowLayoutTest() {
       });
 
     /**
-     * @tc.name subWindowMaximizeWithOptionsDefaultValue0300
+     * @tc.name subWindowMaximizeWithOptionsDefaultValue_0300
      * @tc.number SUB_WINDOWS_WINDOWLAYOUT_SUBWINDOW_MAXIMIZEWITHOPTIONS_NORMAL_0300
      * @tc.desc subWindow maximizeWithOptions with default values test.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('subWindowMaximizeWithOptionsDefaultValue0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('subWindowMaximizeWithOptionsDefaultValue_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
-        let caseName = 'subWindowMaximizeWithOptionsDefaultValue0300';
+        let caseName = 'subWindowMaximizeWithOptionsDefaultValue_0300';
         console.info(`${caseName} begin`);
         let subWindow:window.Window
         let options: window.SubWindowOptions = {
@@ -7236,8 +7252,8 @@ export default function windowLayoutTest() {
             done();
           }
         }).catch((err:BusinessError)=>{
-          if (err.code == 801 || err.code == 1300002) {
-            console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
+          if (err.code == 1300002) {
+            console.info(`${caseName} Capability not supported1, skip test.Cause code: ${err.code}, message: ${err.message}`);
           } else {
             console.error(`${caseName} Failed to create window. Cause code: ${err.code}, message: ${err.message}`);
             expect().assertFail();
@@ -7247,15 +7263,15 @@ export default function windowLayoutTest() {
       });
 
     /**
-     * @tc.name recoverDefault0100
+     * @tc.name recoverDefault_0100
      * @tc.number SUB_WINDOWS_WINDOWLAYOUT_RECOVER_NORMAL_0100
      * @tc.desc recover from maximized with default config test.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('recoverDefault0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let caseName = 'recoverDefault0100';
+    it('recoverDefault_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'recoverDefault_0100';
       console.info(`${caseName} begin`);
       let windowStageStart = await startAbility(caseName, context);
       try {
@@ -7298,15 +7314,15 @@ export default function windowLayoutTest() {
     });
 
     /**
-     * @tc.name recoverFromFullscreen0200
+     * @tc.name recoverFromFullscreen_0200
      * @tc.number SUB_WINDOWS_WINDOWLAYOUT_RECOVER_NORMAL_0200
      * @tc.desc recover from fullscreen with config test.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('recoverFromFullscreen0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let caseName = 'recoverFromFullscreen0200';
+    it('recoverFromFullscreen_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'recoverFromFullscreen_0200';
       console.info(`${caseName} begin`);
       let windowStageStart = await startAbility(caseName, context);
       try {
@@ -7352,15 +7368,15 @@ export default function windowLayoutTest() {
     });
 
     /**
-     * @tc.name recoverFromSplit0300
+     * @tc.name recoverFromSplit_0300
      * @tc.number SUB_WINDOWS_WINDOWLAYOUT_RECOVER_NORMAL_0300
      * @tc.desc recover from split mode with config test.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('recoverFromSplit0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let caseName = 'recoverFromSplit0300';
+    it('recoverFromSplit_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'recoverFromSplit_0300';
       console.info(`${caseName} begin`);
       let options: StartOptions = {
         windowMode: AbilityConstant.WindowMode.WINDOW_MODE_SPLIT_PRIMARY
@@ -7410,15 +7426,15 @@ export default function windowLayoutTest() {
     });
 
     /**
-     * @tc.name recoverParamMin0100
+     * @tc.name recoverParamMin_0100
      * @tc.number SUB_WINDOWS_WINDOWLAYOUT_RECOVER_PARAM_0100
      * @tc.desc recover duration=0 delay=0 test.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('recoverParamMin0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let caseName = 'recoverParamMin0100';
+    it('recoverParamMin_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'recoverParamMin_0100';
       console.info(`${caseName} begin`);
       let windowStageStart = await startAbility(caseName, context);
       try {
@@ -7464,15 +7480,15 @@ export default function windowLayoutTest() {
     });
 
     /**
-     * @tc.name recoverParamMax0200
+     * @tc.name recoverParamMax_0200
      * @tc.number SUB_WINDOWS_WINDOWLAYOUT_RECOVER_PARAM_0200
      * @tc.desc recover duration=400 delay=350 test.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('recoverParamMax0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let caseName = 'recoverParamMax0200';
+    it('recoverParamMax_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'recoverParamMax_0200';
       console.info(`${caseName} begin`);
       let windowStageStart = await startAbility(caseName, context);
       try {
@@ -7518,15 +7534,15 @@ export default function windowLayoutTest() {
     });
 
     /**
-     * @tc.name recoverParamSingle0300
+     * @tc.name recoverParamSingle_0300
      * @tc.number SUB_WINDOWS_WINDOWLAYOUT_RECOVER_PARAM_0300
      * @tc.desc recover duration=200 only test.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('recoverParamSingle0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let caseName = 'recoverParamSingle0300';
+    it('recoverParamSingle_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'recoverParamSingle_0300';
       console.info(`${caseName} begin`);
       let windowStageStart = await startAbility(caseName, context);
       try {
@@ -7571,15 +7587,15 @@ export default function windowLayoutTest() {
     });
 
     /**
-     * @tc.name recoverError13000010100
+     * @tc.name recoverError1300001_0100
      * @tc.number SUB_WINDOWS_WINDOWLAYOUT_RECOVER_ERROR_1300001_0100
      * @tc.desc recover 1300001 repeated operation test.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('recoverError13000010100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let caseName = 'recoverError13000010100';
+    it('recoverError1300001_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'recoverError1300001_0100';
       console.info(`${caseName} begin`);
       let windowStageStart = await startAbility(caseName, context);
       try {
@@ -7624,15 +7640,15 @@ export default function windowLayoutTest() {
     });
 
     /**
-     * @tc.name recoverError13000020100
+     * @tc.name recoverError1300002_0100
      * @tc.number SUB_WINDOWS_WINDOWLAYOUT_RECOVER_ERROR_1300002_0100
      * @tc.desc recover 1300002 window  does not support floating mode.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('recoverError13000020100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let caseName = 'recoverError13000020100';
+    it('recoverError1300002_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'recoverError1300002_0100';
       console.info(`${caseName} begin`);
       let options: StartOptions = {
         supportWindowModes:[  bundleManager.SupportWindowMode.FULL_SCREEN,
@@ -7677,15 +7693,15 @@ export default function windowLayoutTest() {
     });
 
     /**
-     * @tc.name recoverError13000020200
+     * @tc.name recoverError1300002_0200
      * @tc.number SUB_WINDOWS_WINDOWLAYOUT_RECOVER_ERROR_1300002_0200
      * @tc.desc recover 1300002 window destroyed test.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('recoverError13000020200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let caseName = 'recoverError13000020200';
+    it('recoverError1300002_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'recoverError1300002_0200';
       console.info(`${caseName} begin`);
       windowStage.createSubWindow(caseName).then(async (data)=>{
         try {
@@ -7722,15 +7738,15 @@ export default function windowLayoutTest() {
     });
 
     /**
-     * @tc.name recoverError13000160100
+     * @tc.name recoverError1300016_0100
      * @tc.number SUB_WINDOWS_WINDOWLAYOUT_RECOVER_ERROR_1300016_0100
      * @tc.desc recover 1300016 duration>400 test.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('recoverError13000160100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let caseName = 'recoverError13000160100';
+    it('recoverError1300016_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'recoverError1300016_0100';
       console.info(`${caseName} begin`);
       let windowStageStart = await startAbility(caseName, context);
       try {
@@ -7769,15 +7785,15 @@ export default function windowLayoutTest() {
     });
 
     /**
-     * @tc.name recoverError13000160200
+     * @tc.name recoverError1300016_0200
      * @tc.number SUB_WINDOWS_WINDOWLAYOUT_RECOVER_ERROR_1300016_0200
      * @tc.desc recover 1300016 delay < 0 test.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('recoverError13000160200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let caseName = 'recoverError13000160200';
+    it('recoverError1300016_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'recoverError1300016_0200';
       console.info(`${caseName} begin`);
       let windowStageStart = await startAbility(caseName, context);
       try {
