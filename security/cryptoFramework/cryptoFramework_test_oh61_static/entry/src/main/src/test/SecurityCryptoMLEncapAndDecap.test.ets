@@ -366,7 +366,7 @@ export default function SecurityCryptoMLEncapAndDecapTestUnit() {
         kem.decapsulateSync(keyPair.priKey, wrappedKey);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] ML_KEM_Decap_Error_0200 ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] ML_KEM_Decap_Error_0300 ${error}, error code: ${(error as BusinessError).code}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
       }
       done();

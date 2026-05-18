@@ -486,7 +486,7 @@ export default function SecurityCryptoMLEncapAndDecapTestUnit() {
         kem.decapsulateSync(null, encapResult.wrappedKey);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] ML_KEM_Encap_Error_0200 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_KEM_Encap_Error_0100 ${error}, error code: ${error.code}`);
         expect(error.code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
       }
       done();
@@ -537,7 +537,7 @@ export default function SecurityCryptoMLEncapAndDecapTestUnit() {
         kem.decapsulateSync(keyPair.priKey, wrappedKey);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] ML_KEM_Decap_Error_0200 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_KEM_Decap_Error_0300 ${error}, error code: ${error.code}`);
         expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
       }
       done();
