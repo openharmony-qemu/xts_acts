@@ -35,6 +35,7 @@ import GetStateTest from './PromptActionTest/GetState.test'
 import SheetTest from './SheetTest/Sheet.test'
 import scrollBarTest from './scrollBarTest/scrollBarTest.test';
 import maxHeightTest from './maxHeightTest/maxHeightTest.test';
+import targetSpaceTest from './targetSpaceTest/targetSpaceTest.test';
 
 export default function testsuite() {
   maskTest();
@@ -59,4 +60,5 @@ export default function testsuite() {
   SheetTest();
   scrollBarTest();
   maxHeightTest();
+  targetSpaceTest();
 }
