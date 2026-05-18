@@ -23,7 +23,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import {UtilsTest,startAbility} from '../Util.test';
 import hilog from '@ohos.hilog'
 export default function componentLifecycleDecoratorsTest() {
-  describe('componentLifecycleDecoratorsTest', () => void{
+  describe('ComponentLifecycleDecorators', () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api18.static", "EntryAbility");
       await UtilsTest.msSleep(1000);
