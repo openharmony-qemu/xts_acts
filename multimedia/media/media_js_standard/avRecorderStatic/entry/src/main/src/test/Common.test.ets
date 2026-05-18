@@ -84,7 +84,8 @@ export default class Commmon {
     console.info("dxs: permissionButton : Driver.create() out")
     for (let i = 0; i < num; i++) {
       console.info("dxs: permissionButton : " + i)
-      let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 5000);
+      let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 5000) ||
+        await driver.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), 5000);
       console.info("dxs: permissionButton : " + (permissionButton != null))
       if (permissionButton != null) {
         await permissionButton.click();

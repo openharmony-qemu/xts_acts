@@ -493,7 +493,8 @@ export default class MediaTestBase {
     console.info(`UiDriver start`)
     await this.msleepAsync(500)
     for (let i = 0; i < num; i++) {
-      let button = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 5000);
+      let button = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 5000) ||
+        await driver.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), 5000);
       console.info(`button is ${JSON.stringify(button)}`)
       if (button != null) {
         await button.click()
