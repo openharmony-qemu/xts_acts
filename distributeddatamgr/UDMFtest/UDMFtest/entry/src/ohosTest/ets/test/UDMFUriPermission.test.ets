@@ -16,7 +16,7 @@
 import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach } from "@ohos/hypium";
 import { BusinessError } from '@ohos.base';
 import unifiedDataChannel from '@ohos.data.unifiedDataChannel';
-import uniformTypeDescriptor from '@ohos.data.uniformTypeDescriptor';
+import uniformDataStruct from '@ohos.data.uniformDataStruct';
 
 let tag: string = 'testTag: '
 
@@ -428,7 +428,8 @@ export default function UriPermissionTest() {
       console.log(tag + 'UDMF_Folder_UriAuthorizationPolicies_Test_0100 end');
     })
 	
-	    * @tc.name   UDMF_HTML_UriAuthorizationPolicies_Read_Test_0100
+    /**
+	  * @tc.name   UDMF_HTML_UriAuthorizationPolicies_Read_Test_0100
     * @tc.number SUB_DistributedData_UDMF_SDK_HTML_UriAuthorizationPolicies_Read_Test_0100
     * @tc.desc   Test setting READ permission to uriAuthorizationPolicies on HTML struct.
     * @tc.type   FUNCTION
@@ -442,7 +443,7 @@ export default function UriPermissionTest() {
           uniformDataType: 'general.html',
           htmlContent: '<div><p>Test</p></div>',
           plainContent: 'Test content',
-          uriAuthorizationPolicies: [1]
+          uriAuthorizationPolicies: [unifiedDataChannel.UriPermission.READ]
         };
         expect(html.htmlContent).assertEqual('<div><p>Test</p></div>');
         expect(html.plainContent).assertEqual('Test content');
@@ -469,7 +470,7 @@ export default function UriPermissionTest() {
         let html: uniformDataStruct.HTML = {
           uniformDataType: 'general.html',
           htmlContent: '<div><p>Test</p></div>',
-          uriAuthorizationPolicies: [2]
+          uriAuthorizationPolicies: [unifiedDataChannel.UriPermission.WRITE]
         };
         expect(html.htmlContent).assertEqual('<div><p>Test</p></div>');
         expect(html.uriAuthorizationPolicies![0]).assertEqual(2);
@@ -479,6 +480,58 @@ export default function UriPermissionTest() {
         expect().assertFail();
       }
       console.log(tag + 'UDMF_HTML_UriAuthorizationPolicies_Write_Test_0100 end');
+    })
+
+    /**
+    * @tc.name   UDMF_HTML_UriAuthorizationPolicies_Persist_Test_0100
+    * @tc.number SUB_DistributedData_UDMF_SDK_HTML_UriAuthorizationPolicies_Persist_Test_0100
+    * @tc.desc   Test setting PERSIST permission to uriAuthorizationPolicies on HTML struct.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('UDMF_HTML_UriAuthorizationPolicies_Persist_Test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      console.log(tag + 'UDMF_HTML_UriAuthorizationPolicies_Persist_Test_0100 start');
+      try {
+        let html: uniformDataStruct.HTML = {
+          uniformDataType: 'general.html',
+          htmlContent: '<div><p>Test</p></div>',
+          uriAuthorizationPolicies: [unifiedDataChannel.UriPermission.PERSIST]
+        };
+        expect(html.htmlContent).assertEqual('<div><p>Test</p></div>');
+        expect(html.uriAuthorizationPolicies![0]).assertEqual(3);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.log(tag, `Failed. code: ${error.code}, message: ${error.message}`)
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMF_HTML_UriAuthorizationPolicies_Persist_Test_0100 end');
+    })
+
+    /**
+    * @tc.name   UDMF_HTML_UriAuthorizationPolicies_None_Test_0100
+    * @tc.number SUB_DistributedData_UDMF_SDK_HTML_UriAuthorizationPolicies_None_Test_0100
+    * @tc.desc   Test setting NONE permission to uriAuthorizationPolicies on HTML struct.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('UDMF_HTML_UriAuthorizationPolicies_None_Test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      console.log(tag + 'UDMF_HTML_UriAuthorizationPolicies_None_Test_0100 start');
+      try {
+        let html: uniformDataStruct.HTML = {
+          uniformDataType: 'general.html',
+          htmlContent: '<div><p>Test</p></div>',
+          uriAuthorizationPolicies: [unifiedDataChannel.UriPermission.NONE]
+        };
+        expect(html.htmlContent).assertEqual('<div><p>Test</p></div>');
+        expect(html.uriAuthorizationPolicies![0]).assertEqual(0);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.log(tag, `Failed. code: ${error.code}, message: ${error.message}`)
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMF_HTML_UriAuthorizationPolicies_None_Test_0100 end');
     })
 
     /**
@@ -505,6 +558,36 @@ export default function UriPermissionTest() {
         expect().assertFail();
       }
       console.log(tag + 'UDMF_HTML_UriAuthorizationPolicies_EmptyArray_Test_0100 end');
+    })
+
+    /**
+    * @tc.name   UDMF_HTML_UriAuthorizationPolicies_WithDetails_Test_0100
+    * @tc.number SUB_DistributedData_UDMF_SDK_HTML_UriAuthorizationPolicies_WithDetails_Test_0100
+    * @tc.desc   Test setting uriAuthorizationPolicies with details on HTML struct.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('UDMF_HTML_UriAuthorizationPolicies_WithDetails_Test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.log(tag + 'UDMF_HTML_UriAuthorizationPolicies_WithDetails_Test_0100 start');
+      try {
+        let html: uniformDataStruct.HTML = {
+          uniformDataType: 'general.html',
+          htmlContent: '<div><p>Test</p></div>',
+          uriAuthorizationPolicies: [unifiedDataChannel.UriPermission.READ, unifiedDataChannel.UriPermission.WRITE,
+          unifiedDataChannel.UriPermission.PERSIST]
+        };
+        expect(html.htmlContent).assertEqual('<div><p>Test</p></div>');
+        expect(html.uriAuthorizationPolicies!.length).assertEqual(3);
+        expect(html.uriAuthorizationPolicies![0]).assertEqual(1);
+        expect(html.uriAuthorizationPolicies![1]).assertEqual(2);
+        expect(html.uriAuthorizationPolicies![2]).assertEqual(3);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.log(tag, `Failed. code: ${error.code}, message: ${error.message}`)
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMF_HTML_UriAuthorizationPolicies_WithDetails_Test_0100 end');
     })
 
     /**
@@ -573,7 +656,7 @@ export default function UriPermissionTest() {
           uniformDataType: 'general.file-uri',
           oriUri: 'file://test.txt',
           fileType: 'txt',
-          uriAuthorizationPolicies: [1]
+          uriAuthorizationPolicies: [unifiedDataChannel.UriPermission.READ]
         };
         expect(fileUri.oriUri).assertEqual('file://test.txt');
         expect(fileUri.fileType).assertEqual('txt');
@@ -601,7 +684,7 @@ export default function UriPermissionTest() {
           uniformDataType: 'general.file-uri',
           oriUri: 'file://document.pdf',
           fileType: 'pdf',
-          uriAuthorizationPolicies: [2]
+          uriAuthorizationPolicies: [unifiedDataChannel.UriPermission.WRITE]
         };
         expect(fileUri.oriUri).assertEqual('file://document.pdf');
         expect(fileUri.fileType).assertEqual('pdf');
@@ -629,7 +712,7 @@ export default function UriPermissionTest() {
           uniformDataType: 'general.file-uri',
           oriUri: 'file://image.jpg',
           fileType: 'jpg',
-          uriAuthorizationPolicies: [3]
+          uriAuthorizationPolicies: [unifiedDataChannel.UriPermission.PERSIST]
         };
         expect(fileUri.oriUri).assertEqual('file://image.jpg');
         expect(fileUri.fileType).assertEqual('jpg');
@@ -640,6 +723,34 @@ export default function UriPermissionTest() {
         expect().assertFail();
       }
       console.log(tag + 'UDMF_FileUri_UriAuthorizationPolicies_Persist_Test_0100 end');
+    })
+
+    /**
+    * @tc.name   UDMF_FileUri_UriAuthorizationPolicies_None_Test_0100
+    * @tc.number SUB_DistributedData_UDMF_SDK_FileUri_UriAuthorizationPolicies_None_Test_0100
+    * @tc.desc   Test setting NONE permission to uriAuthorizationPolicies on FileUri struct.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+    it('UDMF_FileUri_UriAuthorizationPolicies_None_Test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      console.log(tag + 'UDMF_FileUri_UriAuthorizationPolicies_None_Test_0100 start');
+      try {
+        let fileUri: uniformDataStruct.FileUri = {
+          uniformDataType: 'general.file-uri',
+          oriUri: 'file://image.jpg',
+          fileType: 'jpg',
+          uriAuthorizationPolicies: [unifiedDataChannel.UriPermission.NONE]
+        };
+        expect(fileUri.oriUri).assertEqual('file://image.jpg');
+        expect(fileUri.fileType).assertEqual('jpg');
+        expect(fileUri.uriAuthorizationPolicies![0]).assertEqual(0);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.log(tag, `Failed. code: ${error.code}, message: ${error.message}`)
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMF_FileUri_UriAuthorizationPolicies_None_Test_0100 end');
     })
 
     /**
@@ -686,15 +797,17 @@ export default function UriPermissionTest() {
           oriUri: 'file://document.pdf',
           fileType: 'pdf',
           details: { size: 1024, name: 'document', type: 'pdf' },
-          uriAuthorizationPolicies: [1, 2]
+          uriAuthorizationPolicies: [unifiedDataChannel.UriPermission.READ, unifiedDataChannel.UriPermission.WRITE,
+          unifiedDataChannel.UriPermission.PERSIST]
         };
         expect(fileUri.oriUri).assertEqual('file://document.pdf');
         expect(fileUri.fileType).assertEqual('pdf');
         expect(fileUri.details!['name']).assertEqual('document');
         expect(fileUri.details!['type']).assertEqual('pdf');
-        expect(fileUri.uriAuthorizationPolicies!.length).assertEqual(2);
+        expect(fileUri.uriAuthorizationPolicies!.length).assertEqual(3);
         expect(fileUri.uriAuthorizationPolicies![0]).assertEqual(1);
         expect(fileUri.uriAuthorizationPolicies![1]).assertEqual(2);
+        expect(fileUri.uriAuthorizationPolicies![2]).assertEqual(3);
       } catch (e) {
         let error: BusinessError = e as BusinessError;
         console.log(tag, `Failed. code: ${error.code}, message: ${error.message}`)
