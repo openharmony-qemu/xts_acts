@@ -17,7 +17,9 @@ import {
   Entry, Component, Builder,NodeContainer,
   Column,
   Flex, FlexDirection, ItemAlign, FlexAlign,
-  Text, Button, FontWeight, ClickEvent, Margin, Color, Row, BorderStyle,Reusable,ComponentV2,Scroller,List,Repeat,ListItem,ReusableV2
+  Text, Button, FontWeight, ClickEvent, Margin, 
+  Color, Row, BorderStyle,Reusable,ComponentV2,
+  Scroller,List,Repeat,ListItem,ReusableV2
 } from '@ohos.arkui.component'
 import {
   State,
@@ -35,7 +37,7 @@ import { ComponentActive, ComponentInactive,ComponentAppear, ComponentDisappear,
 struct ComponentLifecycleDecorators {
   @State activeText: string = '';
   @State inactiveText: string = '';
-  @State data: Array<string> = new Array<string>();
+  @State data: Array<string> = [];
   private scroller: Scroller = new Scroller();
 
   aboutToAppear() {
