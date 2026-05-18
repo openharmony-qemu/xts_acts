@@ -46,7 +46,9 @@ static constexpr int32_t K_INVALID_OWNER_TYPE = 99;
 
 static void EnsureFdUnowned(int fd)
 {
-    if (fd < 0) return;
+    if (fd < 0) {
+        return;
+    }
     uint64_t currentTag = fdsan_get_owner_tag(fd);
     if (currentTag != 0) {
         fdsan_exchange_owner_tag(fd, currentTag, 0);
@@ -595,63 +597,62 @@ static void *ThreadFunc2(void *arg)
     return nullptr;
 }
 
-static napi_value FdsanComMultiThreadMixedOperation(napi_env env, napi_callback_info info)
+static bool MultiThreadClose(int fd, uint64_t tagA, uint64_t tagB, std::atomic<bool> &fdClosed, std::mutex &fdMutex)
 {
-    enum fdsan_error_level originalLevel = fdsan_set_error_level(FDSAN_ERROR_LEVEL_WARN_ALWAYS);
-    int fd = open("/dev/null", O_RDWR);
-    if (fd < 0) {
-        fdsan_set_error_level(originalLevel);
-        napi_value result;
-        napi_get_boolean(env, false, &result);
-        return result;
-    }
-    EnsureFdUnowned(fd);
-    uint64_t tagA = fdsan_create_owner_tag(FDSAN_OWNER_TYPE_FILE, 0xA);
-    uint64_t tagB = fdsan_create_owner_tag(FDSAN_OWNER_TYPE_FILE, 0xB);
-    if (tagA == 0 || tagB == 0) {
-        if (fd >= 0) {
-            close(fd);
-            fd = -1;
-        }
-        fdsan_set_error_level(originalLevel);
-        napi_value result;
-        napi_get_boolean(env, false, &result);
-        return result;
-    }
-    std::atomic<bool> fdClosed{false};
-    std::atomic<bool> shouldStop{false};
-    std::mutex fdMutex;
-    ThreadData *d1 = new ThreadData{fd, tagA, &fdClosed, &fdMutex, &shouldStop};
-    ThreadData *d2 = new ThreadData{fd, tagB, nullptr, &fdMutex, &shouldStop};
+    ThreadData *d1 = new ThreadData{fd, tagA, &fdClosed, &fdMutex, nullptr};
+    ThreadData *d2 = new ThreadData{fd, tagB, nullptr, &fdMutex, nullptr};
+
     pthread_t t1;
     pthread_t t2;
     bool ok1 = (pthread_create(&t1, nullptr, ThreadFunc1, d1) == 0);
     bool ok2 = (pthread_create(&t2, nullptr, ThreadFunc2, d2) == 0);
     if (!ok1 || !ok2) {
-        if (ok1) {
-            pthread_join(t1, nullptr);
-        }
+        if (ok1) pthread_join(t1, nullptr);
         delete d1;
         delete d2;
         close(fd);
         fd = -1;
-        fdsan_set_error_level(originalLevel);
-        napi_value result;
-        napi_get_boolean(env, false, &result);
-        return result;
+        return false;
     }
+
     pthread_join(t1, nullptr);
     pthread_join(t2, nullptr);
-    bool closed = false;
-    {
-        std::lock_guard<std::mutex> lock(fdMutex);
-        closed = fdClosed.load() ? true : (close(fd) == 0);
-        fd = -1;
+
+    std::lock_guard<std::mutex> lock(fdMutex);
+    if (fdClosed.load()) {
+        return true;
     }
-    fdsan_set_error_level(originalLevel);
-    napi_value result;
-    napi_get_boolean(env, closed, &result);
+    bool result = (close(fd) == 0);
+    fd = -1;
     return result;
+}
+
+static napi_value FdsanComMultiThreadMixedOperation(napi_env env, napi_callback_info info)
+{
+    enum fdsan_error_level originalLevel = fdsan_set_error_level(FDSAN_ERROR_LEVEL_WARN_ALWAYS);
+    auto setResult = [env, originalLevel](bool success, int fd) -> napi_value {
+        if (fd >= 0) close(fd);
+        fdsan_set_error_level(originalLevel);
+        napi_value result;
+        napi_get_boolean(env, success, &result);
+        return result;
+    };
+
+    int fd = open("/dev/null", O_RDWR);
+    if (fd < 0) {
+        return setResult(false, fd);
+    }
+    EnsureFdUnowned(fd);
+
+    uint64_t tagA = fdsan_create_owner_tag(FDSAN_OWNER_TYPE_FILE, 0xA);
+    uint64_t tagB = fdsan_create_owner_tag(FDSAN_OWNER_TYPE_FILE, 0xB);
+    if (tagA == 0 || tagB == 0) return setResult(false, fd);
+
+    std::atomic<bool> fdClosed{false};
+    std::mutex fdMutex;
+    bool closed = MultiThreadClose(fd, tagA, tagB, fdClosed, fdMutex);
+    fd = -1;
+    return setResult(closed, fd);
 }
 
 struct DoubleCloseData {
@@ -673,7 +674,7 @@ static void *ThreadAFunc(void *arg)
         data->cv.wait(lock, [data] { return data->threadAReady; });
     }
     
-    int32_t ret = close(data->fd);  
+    int32_t ret = close(data->fd);
     
     {
         std::lock_guard<std::mutex> lock(data->mtx);
@@ -695,7 +696,7 @@ static void *ThreadBFunc(void *arg)
         data->cv.notify_one();
     }
     
-    std::this_thread::sleep_for(std::chrono::milliseconds(50));
+    std::this_thread::sleep_for(std::chrono::milliseconds(K_THREAD_SLEEP_MS));
     
     int32_t ret = fdsan_close_with_tag(data->fd, data->tag);
     
@@ -736,7 +737,8 @@ static napi_value FdsanDoubleCloseCrossThread(napi_env env, napi_callback_info i
     data.threadAClosed = false;
     data.threadBClosed = false;
     
-    pthread_t threadA, threadB;
+    pthread_t threadA;
+    pthread_t threadB;
     pthread_create(&threadA, nullptr, ThreadAFunc, &data);
     pthread_create(&threadB, nullptr, ThreadBFunc, &data);
     
@@ -795,9 +797,10 @@ static napi_value FdsanUseAfterClose(napi_env env, napi_callback_info info)
     EnsureFdUnowned(fd);
     uint64_t tag = fdsan_create_owner_tag(FDSAN_OWNER_TYPE_FILE, 0xABCD);
     fdsan_exchange_owner_tag(fd, 0, tag);
-    
-    close(fd);
-    
+
+    int closeResult = close(fd);
+    fd = -1;
+
     char buf[10];
     ssize_t ret = read(fd, buf, sizeof(buf));
     
@@ -1027,7 +1030,7 @@ static napi_value FdsanSignalSafety(napi_env env, napi_callback_info info)
     
     int timeout = 100;
     while (--timeout > 0 && !g_signalReceived.load()) {
-        usleep(10000);
+        usleep(K_POLL_INTERVAL_US);
     }
     
     struct sigaction defaultSa;
