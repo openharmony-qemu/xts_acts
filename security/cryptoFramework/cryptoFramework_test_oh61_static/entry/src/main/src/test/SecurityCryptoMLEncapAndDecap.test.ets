@@ -40,7 +40,7 @@ export default function SecurityCryptoMLEncapAndDecapTestUnit() {
         let ret: boolean = compareUint8Array(encapResult.sharedSecret, decapSecret);
         expect(ret).assertTrue();
       } catch (error) {
-        console.error(`[XTS] ML_KEM_CREATE_0100 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_KEM_CREATE_0100 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -66,7 +66,7 @@ export default function SecurityCryptoMLEncapAndDecapTestUnit() {
         let ret: boolean = compareUint8Array(encapResult.sharedSecret, decapSecret);
         expect(ret).assertTrue();
       } catch (error) {
-        console.error(`[XTS] ML_KEM_CREATE_0200 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_KEM_CREATE_0200 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -92,7 +92,7 @@ export default function SecurityCryptoMLEncapAndDecapTestUnit() {
         let ret: boolean = compareUint8Array(encapResult.sharedSecret, decapSecret);
         expect(ret).assertTrue();
       } catch (error) {
-        console.error(`[XTS] ML_KEM_CREATE_0300 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_KEM_CREATE_0300 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -120,7 +120,7 @@ export default function SecurityCryptoMLEncapAndDecapTestUnit() {
         expect(decapSecret.length).assertEqual(32);
         expect(compareUint8Array(decapSecret, encapResult.sharedSecret)).assertTrue();
       } catch (error) {
-        console.error(`[XTS] ML_KEM_ENCAP_DECAP_0100 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_KEM_ENCAP_DECAP_0100 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -148,7 +148,7 @@ export default function SecurityCryptoMLEncapAndDecapTestUnit() {
         expect(decapSecret.length).assertEqual(32);
         expect(compareUint8Array(decapSecret, encapResult.sharedSecret)).assertTrue();
       } catch (error) {
-        console.error(`[XTS] ML_KEM_ENCAP_DECAP_0200 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_KEM_ENCAP_DECAP_0200 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -176,7 +176,7 @@ export default function SecurityCryptoMLEncapAndDecapTestUnit() {
         expect(decapSecret.length).assertEqual(32);
         expect(compareUint8Array(decapSecret, encapResult.sharedSecret)).assertTrue();
       } catch (error) {
-        console.error(`[XTS] ML_KEM_ENCAP_DECAP_0300 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_KEM_ENCAP_DECAP_0300 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -207,7 +207,7 @@ export default function SecurityCryptoMLEncapAndDecapTestUnit() {
         let keysDifferent: boolean = !compareUint8Array(result1.wrappedKey, result2.wrappedKey);
         expect(keysDifferent).assertTrue();
       } catch (error) {
-        console.error(`[XTS] ML_KEM_ENCAP_DECAP_0400 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_KEM_ENCAP_DECAP_0400 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -234,7 +234,7 @@ export default function SecurityCryptoMLEncapAndDecapTestUnit() {
         let decapSecret: Uint8Array = await kem.decapsulate(keyPair.priKey, encapResult.wrappedKey);
         expect(compareUint8Array(decapSecret, encapResult.sharedSecret)).assertTrue();
       } catch (error) {
-        console.error(`[XTS] ML_KEM_ENCAP_DECAP_0500 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_KEM_ENCAP_DECAP_0500 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -264,7 +264,7 @@ export default function SecurityCryptoMLEncapAndDecapTestUnit() {
         let decapSecret2: Uint8Array = kem.decapsulateSync(keyPair.priKey, result2.wrappedKey);
         expect(compareUint8Array(decapSecret1, decapSecret2)).assertTrue();
       } catch (error) {
-        console.error(`[XTS] ML_KEM_IKME_0100 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_KEM_IKME_0100 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -291,7 +291,7 @@ export default function SecurityCryptoMLEncapAndDecapTestUnit() {
         expect(!compareUint8Array(result1.sharedSecret, result2.sharedSecret)).assertTrue();
         expect(!compareUint8Array(result1.wrappedKey, result2.wrappedKey)).assertTrue();
       } catch (error) {
-        console.error(`[XTS] ML_KEM_IKME_0200 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_KEM_IKME_0200 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -318,7 +318,7 @@ export default function SecurityCryptoMLEncapAndDecapTestUnit() {
         expect(!compareUint8Array(result1.sharedSecret, result2.sharedSecret)).assertTrue();
         expect(!compareUint8Array(result1.wrappedKey, result2.wrappedKey)).assertTrue();
       } catch (error) {
-        console.error(`[XTS] ML_KEM_IKME_0300 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_KEM_IKME_0300 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -342,7 +342,7 @@ export default function SecurityCryptoMLEncapAndDecapTestUnit() {
         kem.encapsulateSync(keyPair.pubKey, ikme);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] ML_KEM_Ikme_Error_0100 ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] ML_KEM_Ikme_Error_0100 ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
       }
       done();
@@ -366,7 +366,7 @@ export default function SecurityCryptoMLEncapAndDecapTestUnit() {
         kem.decapsulateSync(keyPair.priKey, wrappedKey);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] ML_KEM_Decap_Error_0300 ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] ML_KEM_Decap_Error_0300 ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
       }
       done();
@@ -392,7 +392,7 @@ export default function SecurityCryptoMLEncapAndDecapTestUnit() {
         kem.decapsulateSync(keyPair512.priKey, encapResult.wrappedKey);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] ML_KEM_Decap_Error_0400 ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] ML_KEM_Decap_Error_0400 ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
       }
       done();
@@ -417,7 +417,7 @@ export default function SecurityCryptoMLEncapAndDecapTestUnit() {
         let decapSecret: Uint8Array = kem.decapsulateSync(keyPair2.priKey, encapResult.wrappedKey);
         expect(!compareUint8Array(decapSecret, encapResult.sharedSecret)).assertTrue();
       } catch (error) {
-        console.error(`[XTS] ML_KEM_DECAP_ERROR_0500 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_KEM_DECAP_ERROR_0500 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -445,7 +445,7 @@ export default function SecurityCryptoMLEncapAndDecapTestUnit() {
         let decapSecret: Uint8Array = kem.decapsulateSync(keyPair.priKey, tamperedKey);
         expect(!compareUint8Array(decapSecret, encapResult.sharedSecret)).assertTrue();
       } catch (error) {
-        console.error(`[XTS] ML_KEM_DECAP_ERROR_0600 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_KEM_DECAP_ERROR_0600 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -469,7 +469,7 @@ export default function SecurityCryptoMLEncapAndDecapTestUnit() {
         let decapSecret: Uint8Array = kem.decapsulateSync(keyPair.priKey, wrappedKey);
         expect(decapSecret.length).assertEqual(32);
       } catch (error) {
-        console.error(`[XTS] ML_KEM_DECAP_ERROR_0700 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_KEM_DECAP_ERROR_0700 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -495,7 +495,7 @@ export default function SecurityCryptoMLEncapAndDecapTestUnit() {
         let decapSecret: Uint8Array = kem.decapsulateSync(keyPair.priKey, encapResult.wrappedKey);
         expect(decapSecret.length).assertEqual(32);
       } catch (error) {
-        console.error(`[XTS] ML_KEM_LENGTH_0100 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_KEM_LENGTH_0100 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -521,7 +521,7 @@ export default function SecurityCryptoMLEncapAndDecapTestUnit() {
         let decapSecret: Uint8Array = kem.decapsulateSync(keyPair.priKey, encapResult.wrappedKey);
         expect(decapSecret.length).assertEqual(32);
       } catch (error) {
-        console.error(`[XTS] ML_KEM_LENGTH_0200 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_KEM_LENGTH_0200 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -547,7 +547,7 @@ export default function SecurityCryptoMLEncapAndDecapTestUnit() {
         let decapSecret: Uint8Array = kem.decapsulateSync(keyPair.priKey, encapResult.wrappedKey);
         expect(decapSecret.length).assertEqual(32);
       } catch (error) {
-        console.error(`[XTS] ML_KEM_LENGTH_0300 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_KEM_LENGTH_0300 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -575,7 +575,7 @@ export default function SecurityCryptoMLEncapAndDecapTestUnit() {
           expect(compareUint8Array(decapSecret, encapResult.sharedSecret)).assertTrue();
         }
       } catch (error) {
-        console.error(`[XTS] ML_KEM_STRESS_0100 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_KEM_STRESS_0100 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -605,7 +605,7 @@ export default function SecurityCryptoMLEncapAndDecapTestUnit() {
           expect(compareUint8Array(decapSecret, encapResults[i].sharedSecret)).assertTrue();
         }
       } catch (error) {
-        console.error(`[XTS] ML_KEM_STRESS_0200 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_KEM_STRESS_0200 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -630,7 +630,7 @@ export default function SecurityCryptoMLEncapAndDecapTestUnit() {
         kem.decapsulateSync(keyPair.priKey, encapResult.wrappedKey);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] ML_KEM_DESTROY_0100 ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] ML_KEM_DESTROY_0100 ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
       }
       done();
@@ -653,7 +653,7 @@ export default function SecurityCryptoMLEncapAndDecapTestUnit() {
         kem.encapsulateSync(keyPair.pubKey, null);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] ML_KEM_Encap_Error_0300 ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] ML_KEM_Encap_Error_0300 ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
       }
       done();
@@ -679,7 +679,7 @@ export default function SecurityCryptoMLEncapAndDecapTestUnit() {
         kem.decapsulateSync(keyPair1024.priKey, encapResult.wrappedKey);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] ML_KEM_Decap_Error_0800 ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] ML_KEM_Decap_Error_0800 ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
       }
       done();
@@ -703,7 +703,7 @@ export default function SecurityCryptoMLEncapAndDecapTestUnit() {
         kem.decapsulateSync(keyPair.priKey, wrappedKey);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] ML_KEM_Decap_Boundary_0100 ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] ML_KEM_Decap_Boundary_0100 ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
       }
       done();
@@ -727,7 +727,7 @@ export default function SecurityCryptoMLEncapAndDecapTestUnit() {
         kem.decapsulateSync(keyPair.priKey, wrappedKey);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`[XTS] ML_KEM_Decap_Boundary_0200 ${error}, error code: ${(error as BusinessError).code}`);
+        console.error(`[XTS] ML_KEM_Decap_Boundary_0200 ${error}`);
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
       }
       done();
@@ -766,7 +766,7 @@ export default function SecurityCryptoMLEncapAndDecapTestUnit() {
         }
         expect(allDifferent).assertTrue();
       } catch (error) {
-        console.error(`[XTS] ML_KEM_SECURITY_0100 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_KEM_SECURITY_0100 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -804,7 +804,7 @@ export default function SecurityCryptoMLEncapAndDecapTestUnit() {
         }
         expect(!allFF).assertTrue();
       } catch (error) {
-        console.error(`[XTS] ML_KEM_SECURITY_0200 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] ML_KEM_SECURITY_0200 ${error}`);
         expect(null).assertFail();
       }
       done();

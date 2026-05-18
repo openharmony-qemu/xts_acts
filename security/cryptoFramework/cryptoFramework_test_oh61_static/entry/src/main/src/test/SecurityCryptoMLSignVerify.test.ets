@@ -44,7 +44,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           let result: boolean = verify.verifySync(message, signature);
           expect(result).assertTrue();
         } catch (error) {
-          console.error(`[XTS] MLDSA_SignVerify_Func_0100 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_SignVerify_Func_0100 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -73,7 +73,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           let result: boolean = await verify.verify(message, signature);
           expect(result).assertTrue();
         } catch (error) {
-          console.error(`[XTS] MLDSA_SignVerify_Func_0200 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_SignVerify_Func_0200 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -102,7 +102,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           let result: boolean = await verify.verify(message, signature);
           expect(result).assertTrue();
         } catch (error) {
-          console.error(`[XTS] MLDSA_SignVerify_Func_0300 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_SignVerify_Func_0300 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -134,7 +134,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           let ret: boolean = compareDataBlob(signature1, signature2);
           expect(ret).assertTrue();
         } catch (error) {
-          console.error(`[XTS] MLDSA_Spec_Func_0500 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Spec_Func_0500 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -170,7 +170,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           let result: boolean = verify.verifySync(message, signature);
           expect(result).assertTrue();
         } catch (error) {
-          console.error(`[XTS] MLDSA_Spec_Func_0600 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Spec_Func_0600 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -205,7 +205,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           let result: boolean = verify.verifySync(message, signature);
           expect(result).assertTrue();
         } catch (error) {
-          console.error(`[XTS] MLDSA_Spec_Func_0700 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Spec_Func_0700 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -230,11 +230,11 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
             sign.setSignSpec(cryptoFramework.SignSpecItem.ML_DSA_DETERMINISTIC_BOOL, true);
             expect(null).assertFail();
           } catch (e) {
-            console.error(`[XTS] setSignSpec ${e}, error code: ${(e as BusinessError).code}`);
+            console.error(`[XTS] setSignSpec ${e}`);
             expect((e as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
           }
         } catch (error) {
-          console.error(`[XTS] MLDSA_Spec_Func_0800 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Spec_Func_0800 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -259,11 +259,11 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
             sign.setSignSpec(cryptoFramework.SignSpecItem.ML_DSA_MU_BOOL, true);
             expect(null).assertFail();
           } catch (e) {
-            console.error(`[XTS] setSignSpec ${e}, error code: ${(e as BusinessError).code}`);
+            console.error(`[XTS] setSignSpec ${e}`);
             expect((e as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
           }
         } catch (error) {
-          console.error(`[XTS] MLDSA_Spec_Func_0900 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Spec_Func_0900 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -289,11 +289,11 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
             sign.setSignSpec(cryptoFramework.SignSpecItem.ML_DSA_CONTEXT_UINT8ARR, context.data);
             expect(null).assertFail();
           } catch (e) {
-            console.error(`[XTS] setSignSpec ${e}, error code: ${(e as BusinessError).code}`);
+            console.error(`[XTS] setSignSpec ${e}`);
             expect((e as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
           }
         } catch (error) {
-          console.error(`[XTS] MLDSA_Spec_Func_1000 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Spec_Func_1000 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -331,7 +331,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
             expect((e as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
           }
         } catch (error) {
-          console.error(`[XTS] MLDSA_Spec_Func_1100 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Spec_Func_1100 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -365,7 +365,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
             expect((e as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
           }
         } catch (error) {
-          console.error(`[XTS] MLDSA_Spec_Func_1200 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Spec_Func_1200 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -396,7 +396,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           let result: boolean = verify.verifySync(message, signature);
           expect(result).assertTrue();
         } catch (error) {
-          console.error(`[XTS] MLDSA_Mu_Func_1300 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Mu_Func_1300 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -443,7 +443,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
             expect((e as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
           }
         } catch (error) {
-          console.error(`[XTS] MLDSA_Mu_Func_1400 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Mu_Func_1400 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -477,7 +477,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           let result: boolean = verify.verifySync(message64, signature);
           expect(result).assertTrue();
         } catch (error) {
-          console.error(`[XTS] MLDSA_Mu_Func_4400 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Mu_Func_4400 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -511,7 +511,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           let result: boolean = verify.verifySync(message, signature);
           expect(result).assertFalse();
         } catch (error) {
-          console.error(`[XTS] MLDSA_Mu_Func_1500 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Mu_Func_1500 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -553,7 +553,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           let result: boolean = verify.verifySync(message, sig1);
           expect(result).assertTrue();
         } catch (error) {
-          console.error(`[XTS] MLDSA_Mu_Func_1600 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Mu_Func_1600 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -584,7 +584,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           let result: boolean = verify.verifySync(message, signature);
           expect(result).assertTrue();
         } catch (error) {
-          console.error(`[XTS] MLDSA_Context_Func_1700 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Context_Func_1700 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -617,7 +617,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
             expect((e as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
           }
         } catch (error) {
-          console.error(`[XTS] MLDSA_Context_Func_1800 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Context_Func_1800 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -645,7 +645,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           let result: boolean = verify.verifySync(message, signature);
           expect(result).assertTrue();
         } catch (error) {
-          console.error(`[XTS] MLDSA_Context_Func_1900 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Context_Func_1900 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -677,7 +677,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           let result: boolean = verify.verifySync(message, signature);
           expect(result).assertFalse();
         } catch (error) {
-          console.error(`[XTS] MLDSA_Context_Func_2000 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Context_Func_2000 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -710,7 +710,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
             expect((e as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
           }
         } catch (error) {
-          console.error(`[XTS] MLDSA_InvalidSpec_Func_2100 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_InvalidSpec_Func_2100 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -739,7 +739,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
             expect((e as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
           }
         } catch (error) {
-          console.error(`[XTS] MLDSA_Limit_Func_2200 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Limit_Func_2200 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -768,7 +768,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
             expect((e as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
           }
         } catch (error) {
-          console.error(`[XTS] MLDSA_Limit_Func_2300 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Limit_Func_2300 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -794,18 +794,18 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
             verify.getVerifySpec(cryptoFramework.SignSpecItem.ML_DSA_MU_BOOL);
             expect(null).assertFail();
           } catch (e) {
-            console.error(`[XTS] MLDSA_Limit_Func_2400 verify ${e}, error code: ${(e as BusinessError).code}`);
+            console.error(`[XTS] MLDSA_Limit_Func_2400 verify ${e}`);
             expect((e as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
           }
           try {
             sign.getSignSpec(cryptoFramework.SignSpecItem.ML_DSA_MU_BOOL);
             expect(null).assertFail();
           } catch (e) {
-            console.error(`[XTS] MLDSA_Limit_Func_2400 sign ${e}, error code: ${(e as BusinessError).code}`);
+            console.error(`[XTS] MLDSA_Limit_Func_2400 sign ${e}`);
             expect((e as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
           }
         } catch (error) {
-          console.error(`[XTS] MLDSA_Limit_Func_2400 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Limit_Func_2400 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -833,7 +833,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           let signature: cryptoFramework.DataBlob = sign.signSync(message);
           expect(signature.data.length).assertEqual(3309);
         } catch (error) {
-          console.error(`[XTS] MLDSA_Vector_Func_2500 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Vector_Func_2500 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -864,7 +864,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           let result: boolean = verify.verifySync(message, signature);
           expect(result).assertTrue();
         } catch (error) {
-          console.error(`[XTS] MLDSA_Vector_Func_2600 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Vector_Func_2600 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -895,7 +895,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           let result: boolean = verify.verifySync(message, tamperedSigBlob);
           expect(result).assertFalse();
         } catch (error) {
-          console.error(`[XTS] MLDSA_Vector_Func_2700 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Vector_Func_2700 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -920,7 +920,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           let signature: cryptoFramework.DataBlob = sign.signSync(message);
           expect(signature.data.length).assertEqual(2420);
         } catch (error) {
-          console.error(`[XTS] MLDSA_Vector_Func_2800 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Vector_Func_2800 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -945,7 +945,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           let signature: cryptoFramework.DataBlob = sign.signSync(message);
           expect(signature.data.length).assertEqual(4627);
         } catch (error) {
-          console.error(`[XTS] MLDSA_Vector_Func_2900 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Vector_Func_2900 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -983,7 +983,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           let sign: cryptoFramework.Sign = cryptoFramework.createSign("ML-DSA");
           expect(sign.algName).assertEqual("ML-DSA");
         } catch (error) {
-          console.error(`[XTS] MLDSA_Err_Func_3000 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Err_Func_3000 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -1009,7 +1009,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
             expect((e as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
           }
         } catch (error) {
-          console.error(`[XTS] MLDSA_Err_Func_3100 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Err_Func_3100 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -1037,7 +1037,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
             expect((e as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
           }
         } catch (error) {
-          console.error(`[XTS] MLDSA_Err_Func_3200 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Err_Func_3200 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -1066,7 +1066,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           let result: boolean = verify.verifySync(m2, signature);
           expect(result).assertFalse();
         } catch (error) {
-          console.error(`[XTS] MLDSA_Err_Func_3300 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Err_Func_3300 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -1097,7 +1097,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           let result: boolean = verify.verifySync(message, tamperedSigBlob);
           expect(result).assertFalse();
         } catch (error) {
-          console.error(`[XTS] MLDSA_Err_Func_3400 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Err_Func_3400 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -1127,7 +1127,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           let result: boolean = verify.verifySync(message, signature);
           expect(result).assertFalse();
         } catch (error) {
-          console.error(`[XTS] MLDSA_Err_Func_3500 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Err_Func_3500 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -1154,7 +1154,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           let ret: boolean = compareDataBlob(sig1, sig2);
           expect(ret).assertFalse();
         } catch (error) {
-          console.error(`[XTS] MLDSA_Err_Func_3600 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Err_Func_3600 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -1202,7 +1202,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           verify87.initSync(keyPair87.pubKey);
           expect(verify87.verifySync(message, sig87)).assertTrue();
         } catch (error) {
-          console.error(`[XTS] MLDSA_Complex_Func_3800 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Complex_Func_3800 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -1246,7 +1246,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           verify10k.initSync(keyPair.pubKey);
           expect(verify10k.verifySync(msg10k, sig10k)).assertTrue();
         } catch (error) {
-          console.error(`[XTS] MLDSA_Complex_Func_3900 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Complex_Func_3900 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -1289,7 +1289,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           let result: boolean = verify.verifySync(message, sig1);
           expect(result).assertTrue();
         } catch (error) {
-          console.error(`[XTS] MLDSA_Complex_Func_4000 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Complex_Func_4000 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -1314,7 +1314,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           sign.signSync(emptyMsg);
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] MLDSA_Boundary_Func_4100 ${error}, error code: ${(error as BusinessError).code}`);
+          console.error(`[XTS] MLDSA_Boundary_Func_4100 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
         }
         done();
@@ -1343,7 +1343,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           let result: boolean = verify.verifySync(largeMsg, signature);
           expect(result).assertTrue();
         } catch (error) {
-          console.error(`[XTS] MLDSA_Boundary_Func_4200 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Boundary_Func_4200 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -1368,7 +1368,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           let signature: cryptoFramework.DataBlob = await sign.sign(message);
           expect(signature.data.length).assertEqual(3309);
         } catch (error) {
-          console.error(`[XTS] MLDSA_Async_Func_4300 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Async_Func_4300 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -1396,7 +1396,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           let result: boolean = await verify.verify(message, signature);
           expect(result).assertTrue();
         } catch (error) {
-          console.error(`[XTS] MLDSA_Async_Func_4400 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Async_Func_4400 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -1437,7 +1437,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           });
           expect(signature.data.length).assertEqual(3309);
         } catch (error) {
-          console.error(`[XTS] MLDSA_Callback_Func_4500 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Callback_Func_4500 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -1481,7 +1481,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           });
           expect(result).assertTrue();
         } catch (error) {
-          console.error(`[XTS] MLDSA_Callback_Func_4600 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Callback_Func_4600 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -1509,7 +1509,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           let ret: boolean = compareDataBlob(sig1, sig2);
           expect(ret).assertTrue();
         } catch (error) {
-          console.error(`[XTS] MLDSA_Func_4700 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Func_4700 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -1533,7 +1533,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           sign.signSync(null);
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] MLDSA_Boundary_Func_4300 ${error}, error code: ${(error as BusinessError).code}`);
+          console.error(`[XTS] MLDSA_Boundary_Func_4300 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
         }
         done();
@@ -1557,7 +1557,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           sign.initSync(keyPair.priKey);
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] MLDSA_Boundary_Func_4400 ${error}, error code: ${(error as BusinessError).code}`);
+          console.error(`[XTS] MLDSA_Boundary_Func_4400 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         done();
@@ -1600,7 +1600,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           let result: boolean = verify.verifySync(message, signature);
           expect(result).assertTrue();
         } catch (error) {
-          console.error(`[XTS] MLDSA_Spec_Func_3200 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] MLDSA_Spec_Func_3200 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -1621,7 +1621,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
             sign.setSignSpec(cryptoFramework.SignSpecItem.ML_DSA_DETERMINISTIC_BOOL, 1);
             expect(null).assertFail();
           } catch (error) {
-            console.error(`[XTS] MLDSA_Mu_Func_1700 sign ${error}, error code: ${(error as BusinessError).code}`);
+            console.error(`[XTS] MLDSA_Mu_Func_1700 sign ${error}`);
             expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
           }
           try {
@@ -1629,7 +1629,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
             verify.setVerifySpec(cryptoFramework.SignSpecItem.ML_DSA_MU_BOOL, 1);
             expect(null).assertFail();
           } catch (error) {
-            console.error(`[XTS] MLDSA_Mu_Func_1700 verify ${error}, error code: ${(error as BusinessError).code}`);
+            console.error(`[XTS] MLDSA_Mu_Func_1700 verify ${error}`);
             expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
           }
           done();
@@ -1651,7 +1651,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
             sign.setSignSpec(cryptoFramework.SignSpecItem.ML_DSA_MU_BOOL, true);
             expect(null).assertFail();
           } catch (error) {
-            console.error(`[XTS] MLDSA_Mu_Func_1800 Sign ${error}, error code: ${(error as BusinessError).code}`);
+            console.error(`[XTS] MLDSA_Mu_Func_1800 Sign ${error}`);
             expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
           }
           try {
@@ -1659,7 +1659,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
             sign.setSignSpec(cryptoFramework.SignSpecItem.ML_DSA_CONTEXT_UINT8ARR, context);
             expect(null).assertFail();
           } catch (error) {
-            console.error(`[XTS] MLDSA_Mu_Func_1800 Sign context ${error}, error code: ${(error as BusinessError).code}`);
+            console.error(`[XTS] MLDSA_Mu_Func_1800 Sign context ${error}`);
             expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
           }
           let verify: cryptoFramework.Verify = cryptoFramework.createVerify("RSA512|PKCS1|SHA256");
@@ -1667,7 +1667,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
             verify.setVerifySpec(cryptoFramework.SignSpecItem.ML_DSA_MU_BOOL, true);
             expect(null).assertFail();
           } catch (error) {
-            console.error(`[XTS] MLDSA_Mu_Func_1800 Verify ${error}, error code: ${(error as BusinessError).code}`);
+            console.error(`[XTS] MLDSA_Mu_Func_1800 Verify ${error}`);
             expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
           }
           try {
@@ -1676,7 +1676,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
             verify.setVerifySpec(cryptoFramework.SignSpecItem.ML_DSA_CONTEXT_UINT8ARR, context);
             expect(null).assertFail();
           } catch (error) {
-            console.error(`[XTS] MLDSA_Mu_Func_1800 Verify context ${error}, error code: ${(error as BusinessError).code}`);
+            console.error(`[XTS] MLDSA_Mu_Func_1800 Verify context ${error}`);
             expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
           }
           done();
