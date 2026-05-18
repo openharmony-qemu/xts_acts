@@ -32,8 +32,8 @@ import hilog from '@ohos.hilog'
 
 @Observed
 export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
-  @State state: boolean = false;
-  @State content: Int = 0;
+  state: boolean = false;
+  content: Int = 0;
   applyNormalAttribute(instance: TextAreaAttribute): void {
     if (this.state == false) {
       instance.onTextSelectionChange(undefined);
