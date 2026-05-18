@@ -43,7 +43,7 @@ export default function actsWifiManagerP2PTest() {
     /**
      * @tc.number SUB_Communication_WiFiManager_RemoveGroup_0001
      * @tc.name SUB_Communication_WiFiManager_RemoveGroup_0001
-     * @tc.desc Test createGroup with goBand GO_BAND_2GHZ
+     * @tc.desc Test removeGroup
      * @tc.level Level 0
      * @tc.type Function
      * @tc.size MEDIUMTEST
