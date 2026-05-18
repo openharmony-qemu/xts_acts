@@ -32,8 +32,6 @@ import {
   ItemAlign,
   FlexAlign,
   ButtonType,
-  ClickEvent,
-  Margin,
   FontWeight
 } from '@ohos.arkui.component';
 import { AppStorage } from '@ohos.arkui.stateManagement';
