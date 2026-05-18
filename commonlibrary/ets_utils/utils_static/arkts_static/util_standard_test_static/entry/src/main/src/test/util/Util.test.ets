@@ -651,7 +651,6 @@ export default function Util1Test(): void {
      */
     it('Util1Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const type = new util.types();
-      const nullVal = null;
       expect(type.isMap(new Object())).assertEqual(false);
     });
     /**
@@ -921,7 +920,6 @@ export default function Util1Test(): void {
      */
     it('Util1Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const type = new util.types();
-      const nullDate = null;
       expect(type.isDate(new Object())).assertEqual(false);
     });
     /**
@@ -934,7 +932,6 @@ export default function Util1Test(): void {
      */
     it('Util1Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const type = new util.types();
-      const undefinedDate = undefined;
       expect(type.isDate(new Object())).assertEqual(false);
     });
     /**
@@ -1691,7 +1688,6 @@ export default function Util1Test(): void {
      */
     it('Util1Test168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const type = new util.types();
-      const nullVal = null;
       expect(type.isDataView(new Object())).assertEqual(false);
     });
     /**
@@ -1823,7 +1819,6 @@ export default function Util1Test(): void {
      */
     it('Util1Test178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const type = new util.types();
-      const nullVal = null;
       expect(type.isFloat32Array(new Object())).assertEqual(false);
     });
     /**
@@ -1967,7 +1962,6 @@ export default function Util1Test(): void {
      */
     it('Util1Test199', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const type = new util.types();
-      const nullVal = null;
       expect(type.isSet(new Object())).assertEqual(false);
     });
     /**
@@ -2098,7 +2092,6 @@ export default function Util1Test(): void {
      */
     it('Util1Test209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const type = new util.types();
-      const nullVal = null;
       expect(type.isFloat64Array(new Object())).assertEqual(false);
     });
     /**
@@ -2231,7 +2224,6 @@ export default function Util1Test(): void {
      */
     it('Util1Test219', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const type = new util.types();
-      const undefinedVal = undefined;
       expect(type.isInt8Array(new Object())).assertEqual(false);
     });
     /**
@@ -2362,7 +2354,6 @@ export default function Util1Test(): void {
      */
     it('Util1Test229', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const type = new util.types();
-      const nullVal = null;
       expect(type.isInt16Array(new Object())).assertEqual(false);
     });
     /**
@@ -2494,7 +2485,6 @@ export default function Util1Test(): void {
      */
     it('Util1Test239', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const type = new util.types();
-      const undefinedVal = undefined;
       expect(type.isInt32Array(new Object())).assertEqual(false);
     });
     /**
@@ -2631,7 +2621,6 @@ export default function Util1Test(): void {
      */
     it('Util1Test249', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const type = new util.types();
-      const nullVal = null;
       expect(type.isMapIterator(new Object())).assertEqual(false);
     });
     /**
@@ -2768,7 +2757,6 @@ export default function Util1Test(): void {
      */
     it('Util1Test259', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const type = new util.types();
-      const nullVal = null;
       expect(type.isSetIterator(new Object())).assertEqual(false);
     });
     /**
@@ -2901,7 +2889,6 @@ export default function Util1Test(): void {
      */
     it('Util1Test269', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const type = new util.types();
-      const nullVal = null;
       expect(type.isUint8Array(new Object())).assertEqual(false);
     });
     /**
@@ -3034,7 +3021,6 @@ export default function Util1Test(): void {
      */
     it('Util1Test279', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const type = new util.types();
-      const nullVal = null;
       expect(type.isUint8ClampedArray(new Object())).assertEqual(false);
     });
     /**
@@ -3166,7 +3152,6 @@ export default function Util1Test(): void {
      */
     it('Util1Test289', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const type = new util.types();
-      const undefinedVal = undefined;
       expect(type.isUint16Array(new Object())).assertEqual(false);
     });
     /**
@@ -3311,7 +3296,6 @@ export default function Util1Test(): void {
      */
     it('Util1Test300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const type = new util.types();
-      const nullVal = null;
       expect(type.isUint32Array(new Object())).assertEqual(false);
     });
     /**
@@ -3431,7 +3415,6 @@ export default function Util1Test(): void {
      */
     it('Util1Test309', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const type = new util.types();
-      const nullVal = null;
       expect(type.isWeakMap(new Object())).assertEqual(false);
     });
     /**
@@ -3564,7 +3547,6 @@ export default function Util1Test(): void {
      */
     it('Util1Test319', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const type = new util.types();
-      const nullVal = null;
       expect(type.isWeakSet(new Object())).assertEqual(false);
     });
     /**
@@ -3697,7 +3679,6 @@ export default function Util1Test(): void {
      */
     it('Util1Test329', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const type = new util.types();
-      const nullVal = null;
       expect(type.isBigInt64Array(new Object())).assertEqual(false);
     });
     /**
@@ -3828,7 +3809,6 @@ export default function Util1Test(): void {
      */
     it('Util1Test339', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const type = new util.types();
-      const nullVal = null;
       expect(type.isBigUint64Array(new Object())).assertEqual(false);
     });
     /**
