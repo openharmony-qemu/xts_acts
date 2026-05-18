@@ -158,7 +158,7 @@ export default function ArrayList12Test():void {
         expect(iteratorResults.length).assertEqual(5);
         expect(forEachResults.length).assertEqual(5);
         expect(iteratorResults).assertDeepEquals(forEachResults);
-        expect(iteratorResults).assertDeepEquals([1, 2, 3, 4, 5]);
+        expect(iteratorResults).assertDeepEquals([1.0, 2.0, 3.0, 4.0, 5.0]);
         for (let i: int = 0; i < 5; i++) {
           expect(iteratorResults[i]).assertEqual(forEachResults[i]);
         }

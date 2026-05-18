@@ -1268,8 +1268,8 @@ export default function ArrayList11Test(): void {
         }
         expect(results1.length).assertEqual(5);
         expect(results2.length).assertEqual(5);
-        expect(results1).assertDeepEquals([1, 2, 3, 4, 5]);
-        expect(results2).assertDeepEquals([1, 2, 3, 4, 5]);
+        expect(results1).assertDeepEquals([1.0, 2.0, 3.0, 4.0, 5.0]);
+        expect(results2).assertDeepEquals([1.0, 2.0, 3.0, 4.0, 5.0]);
         console.log(TAG + ' done');
       });
 
@@ -1376,13 +1376,13 @@ export default function ArrayList11Test(): void {
         for (let item of arrayList) {
           convertedArray.push(item);
         }
-        expect(convertedArray).assertDeepEquals([1, 2, 3, 4, 5]);
+        expect(convertedArray).assertDeepEquals([1.0, 2.0, 3.0, 4.0, 5.0]);
         const manualCombinedArray: number[] = [0];
         for (let i: int = 0; i < arrayList.length; i++) {
           manualCombinedArray.push(arrayList[i]);
         }
         manualCombinedArray.push(6);
-        expect(manualCombinedArray).assertDeepEquals([0, 1, 2, 3, 4, 5, 6]);
+        expect(manualCombinedArray).assertDeepEquals([0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0]);
         let total: number = 0;
         for (let item of arrayList) {
           total += item;
@@ -1460,7 +1460,7 @@ export default function ArrayList11Test(): void {
         expect(first).assertEqual(10);
         expect(second).assertEqual(20);
         expect(rest.length).assertEqual(3);
-        expect(rest).assertDeepEquals([30, 40, 50]);
+        expect(rest).assertDeepEquals([30.0, 40.0, 50.0]);
         const pairs: [number, number][] = [];
         let entryIndex: int = 0;
         for (let value of arrayList) {
@@ -1508,7 +1508,7 @@ export default function ArrayList11Test(): void {
           uniqueArray.push(val);
         }
         uniqueArray.sort((a: number, b: number): int => { if (a < b) return -1; if (a > b) return 1; return 0; });
-        expect(uniqueArray).assertDeepEquals([1, 2, 3]);
+        expect(uniqueArray).assertDeepEquals([1.0, 2.0, 3.0]);
         console.log(TAG + ' done');
       });
 
@@ -1569,7 +1569,7 @@ export default function ArrayList11Test(): void {
           results.push(value);
         }
         expect(results.length).assertEqual(5);
-        expect(results).assertDeepEquals([1, 2, 3, 4, 5]);
+        expect(results).assertDeepEquals([1.0, 2.0, 3.0, 4.0, 5.0]);
         arrayList.add(6);
         arrayList.add(7);
         expect(arrayList.length).assertEqual(7);
@@ -1580,7 +1580,7 @@ export default function ArrayList11Test(): void {
           newResults.push(value);
         }
         expect(newResults.length).assertEqual(7);
-        expect(newResults).assertDeepEquals([1, 2, 3, 4, 5, 6, 7]);
+        expect(newResults).assertDeepEquals([1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0]);
         console.log(TAG + ' done');
       });
 
@@ -1607,7 +1607,7 @@ export default function ArrayList11Test(): void {
           results.push(value);
         }
         expect(results.length).assertEqual(5);
-        expect(results).assertDeepEquals([1, 2, 3, 4, 5]);
+        expect(results).assertDeepEquals([1.0, 2.0, 3.0, 4.0, 5.0]);
         arrayList = new ArrayList<number>();
         arrayList.add(1);
         arrayList.add(2);
@@ -1777,13 +1777,13 @@ export default function ArrayList11Test(): void {
           results1.push(arrayList[i]);
         }
         expect(results1.length).assertEqual(3);
-        expect(results1).assertDeepEquals([1, 2, 3]);
+        expect(results1).assertDeepEquals([1.0, 2.0, 3.0]);
         const results2: number[] = [];
         for (let i: int = 0; i < arrayList.length; i++) {
           results2.push(arrayList[i]);
         }
         expect(results2.length).assertEqual(3);
-        expect(results2).assertDeepEquals([1, 2, 3]);
+        expect(results2).assertDeepEquals([1.0, 2.0, 3.0]);
         console.log(TAG + ' done');
       });
 
@@ -1812,9 +1812,9 @@ export default function ArrayList11Test(): void {
           }
         }
         expect(outerResults.length).assertEqual(3);
-        expect(outerResults).assertDeepEquals([1, 2, 3]);
+        expect(outerResults).assertDeepEquals([1.0, 2.0, 3.0]);
         expect(innerResults.length).assertEqual(9);
-        expect(innerResults).assertDeepEquals([1, 2, 3, 1, 2, 3, 1, 2, 3]);
+        expect(innerResults).assertDeepEquals([1.0, 2.0, 3.0, 1.0, 2.0, 3.0, 1.0, 2.0, 3.0]);
         console.log(TAG + ' done');
       });
   })
