@@ -23,6 +23,13 @@ import ScrollScrollBarWidthTest from './Scroll/ScrollScrollBarWidth.test'
 import WaterFlowScrollBarWidthTest from './WaterFlow/WaterFlowScrollBarWidth.test'
 import backPressBehaviorList from './List/backPressBehaviorList.test'
 import headerFooterStyle from './ListItemGroup/headerFooterStyle.test'
+import ArcAlphabetIndexer from './ArcAlpTest/ArcAlp.test'
+import arcSwiperDotIndicator from './ArcSwiperTest/arcSwiperDotIndicator.test'
+import arcSwiperContent from './ArcSwiperTest/arcSwiperContent.test'
+import arcSwiperEvent from './ArcSwiperTest/arcSwiperEvent.test'
+import arcSwiperShow from './ArcSwiperTest/arcSwiperShow.test'
+import arcSwiperBoolean from './ArcSwiperTest/arcSwiperBoolean.test'
+import arcSwiperEffectMode from './ArcSwiperTest/arcSwiperEffectMode.test'
 
 export default function testsuite() {
   GridScrollBarWidthTest();
@@ -34,4 +41,11 @@ export default function testsuite() {
   WaterFlowScrollBarWidthTest();
   backPressBehaviorList();
   headerFooterStyle();
+  ArcAlphabetIndexer();
+  arcSwiperDotIndicator();
+  arcSwiperEvent();
+  arcSwiperShow();
+  arcSwiperContent();
+  arcSwiperBoolean();
+  arcSwiperEffectMode();
 }
