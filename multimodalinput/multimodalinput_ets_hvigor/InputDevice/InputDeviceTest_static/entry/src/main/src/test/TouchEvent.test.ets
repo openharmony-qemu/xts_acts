@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Action } from '@ohos.multimodalInput.touchEvent ';
+import { Action } from '@ohos.multimodalInput.touchEvent';
 import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index"
 import { BusinessError } from "@ohos.base"
 import hilog from '@ohos.hilog'
