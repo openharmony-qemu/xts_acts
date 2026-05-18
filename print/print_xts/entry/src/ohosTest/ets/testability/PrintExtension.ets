@@ -16,6 +16,7 @@
 import hilog from '@ohos.hilog';
 import Want from '@ohos.app.ability.Want'
 import PrintExtensionAbility from '@ohos.app.ability.PrintExtensionAbility';
+import print from '@ohos.print';
 
 const TAG: string = 'printExtension';
 
@@ -38,6 +39,27 @@ export default class PrintExtension extends PrintExtensionAbility {
 
   onDisconnectPrinter(): void {
     hilog.info(0x0023, TAG, 'PrintExtension onDisconnectPrinter');
+  }
+
+  onStartPrintJob(jobInfo: print.PrintJob): void {
+    hilog.info(0x0023, TAG, 'PrintExtension onStartPrintJob');
+  }
+
+  onCancelPrintJob(jobInfo: print.PrintJob): void {
+    hilog.info(0x0023, TAG, 'PrintExtension onCancelPrintJob');
+  }
+
+  onRequestPrinterCapability(printerId: number): print.PrinterCapability {
+    hilog.info(0x0023, TAG, 'PrintExtension onRequestPrinterCapability');
+    let printerCapability: print.PrinterCapability = {
+      colorMode: 0,
+      duplexMode: 0,
+      pageSize: [],
+      resolution: [],
+      minMargin: {},
+      options: ''
+    };
+    return printerCapability;
   }
 
   onDestroy(): void {

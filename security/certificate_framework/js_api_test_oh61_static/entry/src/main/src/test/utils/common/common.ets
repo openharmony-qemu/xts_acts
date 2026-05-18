@@ -38,6 +38,21 @@ export async function createX509CertPem(input: string): Promise<cert.X509Cert> {
   }
 }
 
+export async function createX509CrlPem(input: string): Promise<cert.X509CRL> {
+  try {
+    let EncodingBlob: cert.EncodingBlob = {
+      data: stringToUint8Array(input),
+      encodingFormat: cert.EncodingFormat.FORMAT_PEM
+    }
+    let x509Cert: cert.X509CRL = await cert.createX509CRL(EncodingBlob);
+
+    return x509Cert;
+  } catch (error) {
+    console.error(`[XTS] createX509CrlPem ${error}, error code: ${error.code}`);
+    throw error as Error;
+  }
+}
+
 export async function sleep(timeout: int): Promise<int> {
   let st = 0;
   return new Promise<int>((resolve, reject) => {

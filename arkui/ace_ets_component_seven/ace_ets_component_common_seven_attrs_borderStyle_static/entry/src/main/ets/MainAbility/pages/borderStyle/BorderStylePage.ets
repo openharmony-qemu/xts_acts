@@ -22,12 +22,12 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
+  Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
   ColumnAttribute, ColumnSplitAttribute, CounterAttribute, DataPanelAttribute, DatePickerAttribute, DividerAttribute,
-  EllipseAttribute, FlexAttribute, FlowItemAttribute, FormLinkAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
+  EllipseAttribute, FlexAttribute, FlowItemAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
   GridItemAttribute, GridRowAttribute, HyperlinkAttribute, ImageAttribute, ImageAnimatorAttribute, LineAttribute, ListAttribute,
   ListItemAttribute, ListItemGroupAttribute, LoadingProgressAttribute, MarqueeAttribute, MenuAttribute, MenuItemAttribute,
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
@@ -37,7 +37,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, EffectComponentAttribute, FormComponentAttribute,
   ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, BorderStyle, AlignRuleOption } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
@@ -158,13 +158,6 @@ import { SetValue, RouterParams } from '../../common/Utils';
   export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
     mBorderStyle: BorderStyle = BorderStyle.Solid
     applyNormalAttribute(instance: FormComponentAttribute): void {
-      console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
-     instance.borderStyle(this.mBorderStyle)
-    }
-  }
-  export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-    mBorderStyle: BorderStyle = BorderStyle.Solid
-    applyNormalAttribute(instance: FormLinkAttribute): void {
       console.info(`borderStyle page show ${JSON.stringify(this.mBorderStyle)}`)
      instance.borderStyle(this.mBorderStyle)
     }
@@ -576,7 +569,6 @@ struct borderStylePage {
   @State _borderStyleFlexMod: FlexModifier = new FlexModifier()
   @State _borderStyleFlowItemMod: FlowItemModifier = new FlowItemModifier()
   @State _borderStyleFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  @State _borderStyleFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _borderStyleGaugeMod: GaugeModifier = new GaugeModifier()
   @State _borderStyleGridMod: GridModifier = new GridModifier()
   @State _borderStyleGridColMod: GridColModifier = new GridColModifier()
@@ -646,8 +638,8 @@ struct borderStylePage {
     this.componentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey as string;
     this.parentWidth = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
     this.parentHeight = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
-    this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int)
-    this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int)
+    this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns.toInt())
+    this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter.toInt())
     this.parentComponentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey;
     this._borderStyleButttonMod.mBorderStyle = (this.getUIContext().getRouter().getParams() as RouterParams).view.testValue.setValue.borderStyle
     attrsManager.registerDataChange((value: SetValue) => {
@@ -669,7 +661,6 @@ struct borderStylePage {
       this._borderStyleFlexMod.mBorderStyle = value.borderStyle
       this._borderStyleFlowItemMod.mBorderStyle = value.borderStyle
       this._borderStyleFormComponentMod.mBorderStyle = value.borderStyle
-      this._borderStyleFormLinkMod.mBorderStyle = value.borderStyle
       this._borderStyleGaugeMod.mBorderStyle = value.borderStyle
       this._borderStyleGridMod.mBorderStyle = value.borderStyle
       this._borderStyleGridColMod.mBorderStyle = value.borderStyle
@@ -778,7 +769,7 @@ struct borderStylePage {
           Marquee({
             start: true,
             step: 50,
-            loop: Infinity as int,
+            loop: Infinity.toInt(),
             fromStart: true,
             src: 'Running Marquee starts rolling'
           })

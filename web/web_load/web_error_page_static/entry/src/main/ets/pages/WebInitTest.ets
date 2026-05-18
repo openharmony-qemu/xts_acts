@@ -22,7 +22,7 @@ import events_emitter from '@ohos.events.emitter';
 import { BusinessError, Callback, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { canIUse } from '@internal.full.global'
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 
@@ -182,6 +182,49 @@ struct webViewController {
                 }
                 break;
               }
+              case 'emitEnableAdsBlockErr': {
+                try {
+                  this.controllerTwo.enableAdsBlock(true)
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(error.code, 60612);
+                }
+                break;
+              }
+              case 'emitIsAdsBlockEnabledCheck001': {
+                try {
+                  this.controller.enableAdsBlock(true)
+                  let isBlocked: boolean = this.controller.isAdsBlockEnabled();
+                  console.log(' isAdsBlockEnabled:  ', isBlocked);
+                  Utils.emitEvent(isBlocked, 60613);
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                }
+                break;
+              }
+              case 'emitIsAdsBlockEnabledCheck002': {
+                try {
+                  this.controller.enableAdsBlock(false)
+                  let isBlocked: boolean = this.controller.isAdsBlockEnabled();
+                  console.log(' isAdsBlockEnabled:  ', isBlocked);
+                  Utils.emitEvent(isBlocked, 60614);
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                }
+                break;
+              }
+              case 'emitIsAdsBlockEnabledForCurPage': {
+                try {
+                  this.controller.enableAdsBlock(false)
+                  let isBlocked: boolean = this.controller.isAdsBlockEnabledForCurPage();
+                  console.log(' isAdsBlockEnabled:  ', isBlocked);
+                  Utils.emitEvent(isBlocked, 60616);
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                }
+                break;
+              }
+
             }
           })
 

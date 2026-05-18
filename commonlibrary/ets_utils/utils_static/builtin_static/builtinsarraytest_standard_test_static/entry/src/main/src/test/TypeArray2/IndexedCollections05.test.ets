@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -1669,7 +1669,7 @@ export default function IndexedCollections05Test() {
         let date39 = new Date(2023, 0, 1);
         let arr39: Date[] = [date39, new Date(2024, 0, 1)];
 
-        let result39 = arr39.sort((a: Date, b: Date) => (a.getTime() - b.getTime()) as int);
+        let result39 = arr39.sort((a: Date, b: Date) => (a.getTime() - b.getTime()).toInt());
 
         let result: boolean = result39[0].getFullYear() === 2023;
         expect(result).assertTrue();

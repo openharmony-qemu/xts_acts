@@ -14,14 +14,14 @@ export default function HuksMiscTest() {
     })
     
     /**
-     * @tc.name   SecurityHuksNapiMisc0100
-     * @tc.number Security_HUKS_NAPI_Misc_0100
+     * @tc.name   SUB_SECURITY_HUKS_NAPI_MISC_0100
+     * @tc.number SUB_SECURITY_HUKS_NAPI_MISC_0100
      * @tc.desc   misc test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SecurityHuksNapiMisc0100', Level.LEVEL0, () => {
+    it('SUB_SECURITY_HUKS_NAPI_MISC_0100', Level.LEVEL0, () => {
       const result = libHuks.HuksMiscTest(0);
       expect(result).assertEqual(0);
     })

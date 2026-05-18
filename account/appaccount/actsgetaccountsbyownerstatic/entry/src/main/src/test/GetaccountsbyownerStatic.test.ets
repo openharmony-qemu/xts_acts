@@ -144,7 +144,6 @@ export default function GetAccountsByOwnerStatic() {
           await accountManager.removeAccount("Account_this_application_promise");
           hilog.info(0x0000, tag, "====>GetAccountsByOwner_0200 end====");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>getAccountsByOwner 0200 fail err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -210,7 +209,6 @@ export default function GetAccountsByOwnerStatic() {
           expect(data.length).assertEqual(0);
           hilog.info(0x0000, tag, "====>GetAccountsByOwner_0400 end====");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>getAccountsByOwner err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -263,7 +261,6 @@ export default function GetAccountsByOwnerStatic() {
           expect().assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>getAccountsByOwner 0600 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           hilog.info(0x0000, tag, "====>GetAccountsByOwner_0600 end====");
@@ -323,7 +320,6 @@ export default function GetAccountsByOwnerStatic() {
           expect().assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>getAccountsByOwner 0800 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           hilog.info(0x0000, tag, "====>GetAccountsByOwner_0800 end====");
@@ -404,7 +400,6 @@ export default function GetAccountsByOwnerStatic() {
           await accountManager.removeAccount("Account_application_promise");
           hilog.info(0x0000, tag, "====>GetAccountsByOwner_1000 end====");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>getAccountsByOwner 1000 fail err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -473,7 +468,6 @@ export default function GetAccountsByOwnerStatic() {
           expect(data[0].owner).assertEqual("com.example.actsscenegetallaccounts");
           hilog.info(0x0000, tag, "====>GetAccountsByOwner_1200 end====");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>getAccountsByOwner 1200 fail err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -533,7 +527,6 @@ export default function GetAccountsByOwnerStatic() {
           expect(data.length).assertEqual(0);
           hilog.info(0x0000, tag, "====>GetAccountsByOwner_1400 end====");
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>getAccountsByOwner 1400 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -636,7 +629,6 @@ export default function GetAccountsByOwnerStatic() {
           expect(dataDelete.length).assertEqual(0);
           hilog.info(0x0000, tag, "====>GetAccountsByOwner_1600 end====");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>getAccountsByOwner 1600 fail err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -742,7 +734,6 @@ export default function GetAccountsByOwnerStatic() {
           expect(dataDelete.length).assertEqual(0);
           hilog.info(0x0000, tag, "====>GetAccountsByOwner_1800 end====");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>getAccountsByOwner 1800 fail err: " + JSON.stringify(err));
           expect().assertFail();
         }

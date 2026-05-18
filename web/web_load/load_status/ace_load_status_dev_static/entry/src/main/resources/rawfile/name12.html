@@ -22,11 +22,8 @@
     </style>
 </head>
 <body>
-<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-    <button onclick="openWindow('https://www.baidu.com', 'name1')"
-            style="padding: 15px 30px; font-size: 180px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
-        第一次调用
-    </button>
+<div>
+    <button onclick="openWindow('https://www.baidu.com', 'name1')">第一次调用</button>
 </div>
 <div>
     <button onclick="openWindow('https://www.baidu.com', 'name2')">第二次调用</button>
@@ -35,7 +32,6 @@
 
 <script>
     function openWindow(url, name) {
-        console.info("openWindow" + url + name);
         window.open(url, name);
     }
 </script>

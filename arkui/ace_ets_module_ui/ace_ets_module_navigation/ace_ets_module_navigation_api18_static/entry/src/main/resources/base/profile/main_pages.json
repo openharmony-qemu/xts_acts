@@ -2,7 +2,6 @@
   "src": [
     "MainAbility/pages/index/index",
     "MainAbility/pages/Basic",
-    "MainAbility/pages/CommonNavigation",
     "MainAbility/pages/NavDestinationStateActive",
     "MainAbility/pages/OverlayTest",
     "MainAbility/pages/CustomDialogTest",
@@ -10,6 +9,7 @@
     "MainAbility/pages/BasicSheet02",
     "MainAbility/pages/PathStackPage",
 
-    "MainAbility/pages/OnActivePage"
+    "MainAbility/pages/OnActivePage",
+    "MainAbility/pages/RouterErrCode"
   ]
 }

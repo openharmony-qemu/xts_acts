@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 import nativeDragDropTest from "./nativeDragDropTest/NativeDragDropTest.test"
+import StrategyEnumTest from './StrategyEnum.test'
 
 export default function testsuite() {
   nativeDragDropTest();
+  StrategyEnumTest();
 }

@@ -15,7 +15,7 @@
 
 import {
     fileIO, FILE_CONTENT, prepareFile, nextFileName, isIntNum, isBigInt,
-    describe, it, expect,
+    describe, it, expect, sleep
   } from '../Common';
 import { TestType, Size, Level } from '@ohos/hypium';
 import fileUri from '@ohos.file.fileuri';
@@ -1119,6 +1119,7 @@ describe('fileIO_fs_stat', function () {
         expect(stat !== null).assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -1474,6 +1475,7 @@ describe('fileIO_fs_stat', function () {
         expect(isBigInt(stat.ino)).assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -1540,6 +1542,7 @@ describe('fileIO_fs_stat', function () {
         expect(isIntNum(stat.mode)).assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -1606,6 +1609,7 @@ describe('fileIO_fs_stat', function () {
         expect(isIntNum(stat.uid)).assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -1673,6 +1677,7 @@ describe('fileIO_fs_stat', function () {
         expect(isIntNum(stat.gid)).assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -1739,6 +1744,7 @@ describe('fileIO_fs_stat', function () {
         expect(isIntNum(stat.size)).assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -1805,6 +1811,7 @@ describe('fileIO_fs_stat', function () {
         expect(isIntNum(stat.atime)).assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -1871,6 +1878,7 @@ describe('fileIO_fs_stat', function () {
         expect(isIntNum(stat.mtime)).assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -1937,6 +1945,7 @@ describe('fileIO_fs_stat', function () {
         expect(isIntNum(stat.ctime)).assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -2003,6 +2012,7 @@ describe('fileIO_fs_stat', function () {
         expect(stat.isBlockDevice() === false).assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -2069,6 +2079,7 @@ describe('fileIO_fs_stat', function () {
         expect(stat.isCharacterDevice() === false).assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -2163,6 +2174,7 @@ describe('fileIO_fs_stat', function () {
         expect(stat.isDirectory() === true).assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(dpath, fileIO.OpenMode.DIR);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -2229,6 +2241,7 @@ describe('fileIO_fs_stat', function () {
         expect(stat.isFIFO() === false).assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -2295,6 +2308,7 @@ describe('fileIO_fs_stat', function () {
         expect(stat.isFile() === true).assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -2388,6 +2402,7 @@ describe('fileIO_fs_stat', function () {
         expect(stat.isSocket() === false).assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -2454,6 +2469,7 @@ describe('fileIO_fs_stat', function () {
         expect(stat.isSymbolicLink() === false).assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -2584,6 +2600,7 @@ describe('fileIO_fs_stat', function () {
         expect(stat.location == 1).assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -2704,6 +2721,7 @@ describe('fileIO_fs_stat', function () {
         expect(typeof stat.atimeNs == 'bigint').assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -2797,6 +2815,7 @@ describe('fileIO_fs_stat', function () {
         expect(typeof stat.mtimeNs == 'bigint').assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {
@@ -2890,6 +2909,7 @@ describe('fileIO_fs_stat', function () {
         expect(typeof stat.ctimeNs == 'bigint').assertTrue();
       });
 
+      await sleep(1000);
       let file = fileIO.openSync(fpath);
       fileIO.stat(file.fd, (err, stat2) => {
         if(err) {

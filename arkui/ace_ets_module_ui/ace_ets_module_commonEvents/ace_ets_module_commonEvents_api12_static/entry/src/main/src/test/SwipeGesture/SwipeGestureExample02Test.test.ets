@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -93,9 +93,9 @@ it('SwipeGestureExample02Test_static_0010', Level.LEVEL0, async (done: () => voi
       console.log('SwipeGestureExample02Test_0010 areaObj1 clicked start',Math.round(areaObj1.left + areaWidth1/2),Math.round(areaObj1.top + areaHeight1 * 0.2))
       console.log('SwipeGestureExample02Test_0010 areaObj1 clicked end',Math.round(areaObj1.left + areaWidth1/2),Math.round(areaObj1.bottom + areaHeight1 * 0.9))
       let driver = Driver.create();
-      let speed =( Math.floor(areaHeight1 * 1.7 / 0.016 / 1000) * 1000) as Int
+      let speed =( Math.floor(areaHeight1 * 1.7 / 0.016 / 1000) * 1000).toInt()
       await CommonFunc.sleep(1000);
-      await ((driver.swipe(Math.round(areaObj1.left + areaWidth1/2) as Int,Math.round(areaObj1.top + areaHeight1 * 0.2) as Int,Math.round(areaObj1.left + areaWidth1/2) as Int,Math.round(areaObj1.bottom + areaHeight1 * 0.9) as Int,speed)) as Promise<void>)
+      await ((driver.swipe(Math.round(areaObj1.left + areaWidth1/2).toInt(),Math.round(areaObj1.top + areaHeight1 * 0.2).toInt(),Math.round(areaObj1.left + areaWidth1/2).toInt(),Math.round(areaObj1.bottom + areaHeight1 * 0.9).toInt(),speed)) as Promise<void>)
       await CommonFunc.sleep(4000);
       // 拖动之后重新获取当前区域的位置信息
       let FatherObj = CommonFunc.getComponentRectOnScreen('SwipeGestureExample02_Father');

@@ -25,6 +25,16 @@
     "MainAbility/pages/Menu/bindContextMenuNull",
     "MainAbility/pages/Menu/bindContextResponseNull",
     "MainAbility/pages/Menu/isShownContextMenuNull",
-    "MainAbility/pages/Menu/bindContentCoverNullUndefined"
+    "MainAbility/pages/Menu/bindContentCoverNullUndefined",
+    "MainAbility/pages/uimaterial/ImmersiveStyleTest",
+    "MainAbility/pages/uimaterial/ImmersiveOptionsMaterialColor",
+    "MainAbility/pages/uimaterial/ImmersiveOptionsColorInvert",
+    "MainAbility/pages/uimaterial/ImmersiveOptionsApplyShadow",
+    "MainAbility/pages/uimaterial/UIMaterialTestPage",
+    "MainAbility/pages/popupSystemMaterial/CustomPopupOptionsSystemMaterial",
+    "MainAbility/pages/popupSystemMaterial/SheetOptionsSystemMaterial",
+    "MainAbility/pages/popupSystemMaterial/PopupCommonOptionsSystemMaterial",
+    "MainAbility/pages/popupSystemMaterial/PopupOptionsSystemMaterial",
+    "MainAbility/pages/popupSystemMaterial/TipsOptionsSystemMaterial"
   ]
 }

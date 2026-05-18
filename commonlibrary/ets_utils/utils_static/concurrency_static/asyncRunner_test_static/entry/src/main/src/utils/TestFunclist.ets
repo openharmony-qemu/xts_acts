@@ -41,7 +41,7 @@ export function transferArrayBuffer(arg1: Array<number>): string {
   return 'success';
 }
 
-export function transferAtomics(arg1: Int32Array) {
+export function transferAtomics(arg1: Int32Array): string {
 
   console.info('wait begin::');
   let res = Atomics.wait(arg1, 0, 0, 3000);
@@ -198,12 +198,12 @@ export function WaitforRunner(finalString: string): string {
   return finalString;
 }
 
-export function errorTest() {
+export function errorTest(): never {
 
   throw new Error('this is an error');
 }
 
-export function testCancelDelayed(a: string) {
+export function testCancelDelayed(a: string): string {
 
   let t = Date.now()
   while ((Date.now() - t) < 1000) {
@@ -212,7 +212,7 @@ export function testCancelDelayed(a: string) {
   return 'a';
 }
 
-export function dependend(params: Number) {
+export function dependend(params: Number): void {
 
   if (params >= 100) {
     let t = Date.now();
@@ -222,13 +222,13 @@ export function dependend(params: Number) {
   }
 }
 
-export function hashMapTest(args: number) {
+export function hashMapTest(args: number): HashMap<string, number> {
   const hashMap1: HashMap<string, number> = new HashMap<string, number>();
   hashMap1.set('a', 123);
   return hashMap1;
 }
 
-export function delay() {
+export function delay(): void {
 
   let t = Date.now();
   while ((Date.now() - t) < 1000) {
@@ -250,7 +250,7 @@ export async function randomTest(): Promise<void> {
   });
 }
 
-export async function outerTaskFunc(params: string) {
+export async function outerTaskFunc(params: string): Promise<string> {
 
   let t1 = Date.now();
   while ((Date.now() - t1) < 100) {
@@ -271,11 +271,11 @@ export async function outerTaskFunc(params: string) {
   return 'outerTaskRes-' + val;
 }
 
-export function isConcurrentTest1() {
+export function isConcurrentTest1(): void {
 
 }
 
-export function isConcurrentTest2() {
+export function isConcurrentTest2(): void {
 }
 
 
@@ -310,7 +310,7 @@ export class CancelAndExecuteDelayed {
     this.task = new taskpool.Task(printArgs, num);
   }
 
-  postRequest() {
+  postRequest(): void {
     try {
       taskpool.cancel(this.task);
     } catch (e) {
@@ -326,52 +326,52 @@ export class CancelAndExecuteDelayed {
 }
 
 
-export function dealHashMapTest(hashMap: HashMap<string, number>) {
+export function dealHashMapTest(hashMap: HashMap<string, number>): HashMap<string, number> {
 
   hashMap.set('a', 123);
   return hashMap;
 }
 
-export function noUseConcurrentTest(arg: string) {
+export function noUseConcurrentTest(arg: string): string {
   return arg;
 }
 
-export function sendDataTest(args: number) {
+export function sendDataTest(args: number): void {
 
   let res: number = args * 10;
   taskpool.Task.sendData(res);
 }
 
-export function sendableClassTestFunc(class1: SendableClass, class2: SendableClass) {
+export function sendableClassTestFunc(class1: SendableClass, class2: SendableClass): number {
 
   let num1 = class1.GetNum();
   let num2 = class2.GetNum();
   return num1 + num2;
 }
 
-export function Int8ArrayTestFunc(array: Int8Array) {
+export function Int8ArrayTestFunc(array: Int8Array): Int8Array {
   // 'use concurrent'
   array.set([0, 1, 2]);
   return array;
 }
 
-export function SetTestFunc(set: Set<number>) { // 'use concurrent'
+export function SetTestFunc(set: Set<number>): Set<number> { // 'use concurrent'
   set.add(4);
   return set;
 }
 
-export function MapTestFunc(map: Map<number, number>) {
+export function MapTestFunc(map: Map<number, number>): Map<number, number> {
 
   map.set(5, 6);
   return map;
 }
 
-export function simpleSendableClassTestFunc(class1: SimpleSendable, class2: SimpleSendable) {
+export function simpleSendableClassTestFunc(class1: SimpleSendable, class2: SimpleSendable): number {
 
   return class1.digit + class2.digit;
 }
 
-export function Uint8ClampedArrayTestFunc(array: Uint8ClampedArray) {
+export function Uint8ClampedArrayTestFunc(array: Uint8ClampedArray): Uint8ClampedArray {
 
   array.set([0, 1, 2]);
   return array;

@@ -1184,14 +1184,14 @@ describe("LinkedListTest", function () {
   });
 
   /**
-   * @tc.name   testAdd059 
+   * @tc.name   testAdd059Adapt001
    * @tc.number testAdd059 
    * @tc.desc   Add a element to the end of the LinkedList instance. For example: linkedList.add.bind({}, obj)().
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL1
    */
-  it("testAdd059 ", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+  it("testAdd059Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let linkedList = new LinkedList();
     try {
       linkedList.add.bind({}, "a")();

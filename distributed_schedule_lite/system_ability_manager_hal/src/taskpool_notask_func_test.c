@@ -209,6 +209,10 @@ static BOOL TaskPoolNoTaskFuncTestSuiteSetUp(void)
 
 static BOOL TaskPoolNoTaskFuncTestSuiteTearDown(void)
 {
+    SAMGR_GetInstance()->UnregisterFeatureApi("Service_NoTask", "featureName501");
+    SAMGR_GetInstance()->UnregisterFeature("Service_NoTask", "featureName501");
+    SAMGR_GetInstance()->UnregisterDefaultFeatureApi("Service_NoTask");
+    SAMGR_GetInstance()->UnregisterService("Service_NoTask");
     return TRUE;
 }
 

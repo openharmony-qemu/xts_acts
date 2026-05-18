@@ -34,6 +34,8 @@ export default class MediaTestBase {
   EXCLUDE_PICKER_WINDOWS = 'excludePickerWindows';
   INITWITHERROR_EVENT = 'init';
   STARTRECORDER_EVENT = 'start';
+  PAUSERECORDER_EVENT = 'pause';
+  RESUMERECORDER_EVENT = 'resume';
   SKIPPRIVACYMODE_EVENT = 'skipPrivacyMode';
   STOPRECORDER_EVENT = 'stop';
   RELEASECORDER_EVENT = 'release';
@@ -259,6 +261,32 @@ export default class MediaTestBase {
             }
           });
         }
+        this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        break;
+      case this.PAUSERECORDER_EVENT:
+        steps.shift();
+        if (this.isTestSucceeded()) {
+          await avScreenCaptureRecorder?.pauseRecording().then(() => {
+            console.info('avScreenCaptureRecorder pause success');
+          }).catch((err: BusinessError) => {
+            console.error('avScreenCaptureRecorder pause failed, error: ' + err.message);
+            this.testFail();
+          });
+        }
+        await this.msleepAsync(recorderTime);
+        this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        break;
+      case this.RESUMERECORDER_EVENT:
+        steps.shift();
+        if (this.isTestSucceeded()) {
+          await avScreenCaptureRecorder?.resumeRecording().then(() => {
+            console.info('avScreenCaptureRecorder resume success');
+          }).catch((err: BusinessError) => {
+            console.error('avScreenCaptureRecorder resume failed, error: ' + err.message);
+            this.testFail();
+          });
+        }
+        await this.msleepAsync(recorderTime);
         this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
         break;
       case this.STOPRECORDER_EVENT:

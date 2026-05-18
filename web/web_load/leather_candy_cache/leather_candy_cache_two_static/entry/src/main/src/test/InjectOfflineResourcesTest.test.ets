@@ -28,6 +28,7 @@ export default function InjectOfflineResourcesTest() {
 
   describe('injectOfflineResourcesTest', (): void => {
     beforeAll(async (): Promise<void> => {
+      await Utils.msSleep(2000);
       console.log("App start")
     });
 
@@ -73,47 +74,6 @@ export default function InjectOfflineResourcesTest() {
         await Utils.msSleep(2000);
         done();
       })
-
-    /**
-     * @tc.name   testInjectOfflineResourcesStatic003
-     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_INJECTOFFLINERESOURCES_STATIC_0300
-     * @tc.desc   test injectOfflineResources
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testInjectOfflineResourcesStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        await Utils.msSleep(2000);
-        Utils.emitEvent("testInjectOfflineResources003", 10)
-        await Utils.msSleep(500);
-        Utils.registerEvent("testInjectOfflineResources003", 17100002, 200010, done);
-        await Utils.msSleep(2000);
-        inspector.sendEventByKey('injectOfflineResourcesTestButton', 10, '');
-        await Utils.msSleep(2000);
-        done();
-      })
-
-    /**
-     * @tc.name   testInjectOfflineResourcesStatic004
-     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_INJECTOFFLINERESOURCES_STATIC_0400
-     * @tc.desc   test injectOfflineResources
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testInjectOfflineResourcesStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        await Utils.msSleep(2000);
-        Utils.emitEvent("testInjectOfflineResources004", 10)
-        await Utils.msSleep(500);
-        Utils.registerEvent("testInjectOfflineResources004", 17100001, 200011, done);
-        await Utils.msSleep(2000);
-        inspector.sendEventByKey('injectOfflineResourcesTestButton', 10, '');
-        await Utils.msSleep(2000);
-        done();
-      })
-
     /**
      * @tc.name   testOfflineResourceTypeStatic001
      * @tc.number SUB_WEB_WEBVIEWCONTROLLER_OFFLINERESOURCETYPE_STATIC_0100
@@ -141,14 +101,14 @@ export default function InjectOfflineResourcesTest() {
       })
 
     /**
-     * @tc.name   SwitchNextPageStatic
-     * @tc.number SwitchNextPage_20006
+     * @tc.name   SwitchNextPage
+     * @tc.number SUB_WEB_SwitchNextPage_STATIC_0100
      * @tc.desc   SwitchNextPage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
         Utils.emitEvent("emitonSwitchNextPage", 10)

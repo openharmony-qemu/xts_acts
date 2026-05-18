@@ -683,7 +683,7 @@ export default function prototypeChangeTest() {
      */
     it('prototypeChangeTest3500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let result = protoTypeChangeTest33() as string[];
-      expect(result.toString()).assertEqual(["Cannot get source code of function","function","function () { [native code] }","function toString() { [native code] }"].toString());
+      expect(result.toString()).assertEqual(["Cannot get source code","function","function () { [native code] }","function toString() { [native code] }"].toString());
     });
 
     /**
@@ -735,7 +735,7 @@ export default function prototypeChangeTest() {
      */
     it('prototypeChangeTest3900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let result = protoTypeChangeTest37() as (string | undefined | boolean)[];
-      expect(result.toString()).assertEqual(["Cannot get source code of function",,false].toString());
+      expect(result.toString()).assertEqual(["Cannot get source code",,false].toString());
     });
 
     /**
@@ -761,7 +761,7 @@ export default function prototypeChangeTest() {
      */
     it('prototypeChangeTest4100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let result = protoTypeChangeTest39() as (string | boolean | undefined)[];
-      expect(result.toString()).assertEqual(["object","Cannot get source code of function","[object Object]",false,,"function toString() { [native code] }"].toString());
+      expect(result.toString()).assertEqual(["object","Cannot get source code","[object Object]",false,,"function toString() { [native code] }"].toString());
     });
 
     /**
@@ -787,7 +787,7 @@ export default function prototypeChangeTest() {
      */
     it('prototypeChangeTest4300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let result = protoTypeChangeTest41() as (string | boolean)[];
-      expect(result.toString()).assertEqual(["function Function() { [native code] }",false,true,"Cannot get source code of function"].toString());
+      expect(result.toString()).assertEqual(["function Function() { [native code] }",false,true,"Cannot get source code"].toString());
     });
 
     /**
@@ -916,7 +916,7 @@ export default function prototypeChangeTest() {
      */
     it('prototypeChangeTest5300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let result = protoTypeChangeTest51() as (string | boolean | undefined)[];
-      expect(result.toString()).assertEqual([,true,'Cannot get source code of function',true].toString());
+      expect(result.toString()).assertEqual([,true,'Cannot get source code',true].toString());
     });
 
     /**

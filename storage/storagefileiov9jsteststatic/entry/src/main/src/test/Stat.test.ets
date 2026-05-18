@@ -617,20 +617,18 @@ export default function fileIOStat() {
       try {
         let fpath = await Utils.nextFileName('fileIO_stat_async_static_000');
         expect(await Utils.prepareFile(fpath, FILE_CONTENT)).assertTrue();
-        await fs.stat(fpath).then((statres: fs.Stat) => {
-        waitForCompletion(async () => {
-          expect(statres !== null).assertTrue();
-          let file = fs.openSync(fpath);
-          await fs.stat(file.fd).then((stat2: fs.Stat) => {
-            expect(stat2 !== null).assertTrue();
-            fs.closeSync(file);
-            fs.unlinkSync(fpath);
-            done();
-          }).catch((err: Error): Promise<void> => {
-            hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_000 has error for' + JSON.stringify(err));
-            expect(false).assertTrue();
-          });
-        })
+        await fs.stat(fpath).then(async (statres: fs.Stat) => {
+        expect(statres !== null).assertTrue();
+        let file = fs.openSync(fpath);
+        await fs.stat(file.fd).then((stat2: fs.Stat) => {
+          expect(stat2 !== null).assertTrue();
+          fs.closeSync(file);
+          fs.unlinkSync(fpath);
+          done();
+        }).catch((err: Error): Promise<void> => {
+          hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_000 has error for' + JSON.stringify(err));
+          expect(false).assertTrue();
+        });
         }).catch((err: Error): Promise<void> => {
           hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_static_000 has error for' + JSON.stringify(err));
           expect(false).assertTrue();
@@ -1797,18 +1795,19 @@ export default function fileIOStat() {
         });
         await Utils.msSleep(3000);
         let file = fs.openSync(fpath);
-        fs.stat(file.fd, (err: BusinessError | null, stat2: fs.Stat | undefined) => {
-          if(err?.code != 0) {
-            hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_symbolic_link_static_001 error2: ' + JSON.stringify(err));
-            expect(false).assertTrue();
-          }
+        try {
+          let stat2 = await fs.stat(file.fd);
           expect(stat2?.isSymbolicLink() === false).assertTrue();
           fs.closeSync(file);
-          waitForCompletion(async () => {await Utils.msSleep(2000);})
+          await Utils.msSleep(2000);
           hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_symbolic_link_static_001 unlink start');
           fs.unlinkSync(fpath);
           done();
-        })
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_symbolic_link_static_001 error2: ' + JSON.stringify(err));
+          expect(false).assertTrue();
+          done();
+        }
       } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_symbolic_link_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();

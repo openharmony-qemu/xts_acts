@@ -40,6 +40,12 @@ struct Align {
   build() {
     Column() {
       Column() {
+          Button('flag is' + this.modifier.flag).fontSize(20).id('Common_PixelRound')
+            .onClick((e: ClickEvent) => {
+              this.modifier.flag = !this.modifier.flag;
+          })
+      }
+      Column() {
         List() {
           Text(`pixelRound-动态切换(undefined/NO_FORCE_ROUND) 宽度:${this.curWidth.toFixed(1)}px`)
             .fontSize(20)
@@ -63,13 +69,5 @@ struct Align {
       .padding(10)
       .margin(25)
     }
-
-
-        Column() {
-          Button('flag is' + this.modifier.flag).fontSize(20).id('Common_PixelRound')
-            .onClick((e: ClickEvent) => {
-              this.modifier.flag = !this.modifier.flag;
-            })
-        }
-      }
+  }
 }

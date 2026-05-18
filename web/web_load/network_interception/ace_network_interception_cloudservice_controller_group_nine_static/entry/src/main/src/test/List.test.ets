@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 import ActsAceWebDevCloudServiceWebControllerGroupNineTest from './WebResourceResponse.test'
+import ActsWebGetResponseDataExTest from './WebGetResponseDataExTest.test'
 export default function testsuite() {
   ActsAceWebDevCloudServiceWebControllerGroupNineTest();
+  ActsWebGetResponseDataExTest();
 }

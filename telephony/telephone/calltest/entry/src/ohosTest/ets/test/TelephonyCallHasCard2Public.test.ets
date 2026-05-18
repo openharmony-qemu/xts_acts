@@ -40,7 +40,7 @@ let isSimActive: boolean = sim.isSimActiveSync(0);
 const phoneNumber: string = "15617922808";
 const zonePhoneNumber: string = "+8615617922808";
 const formatPhoneNumber: string = "156-1792-2808";
-const emergencyPhoneNumber: string = "120";
+const emergencyPhoneNumber: string = "911";
 const landlineNumber: string = "057126885879";
 
 async function getPermissions() {
@@ -460,7 +460,7 @@ export default function HasCard2PublicTest() {
       let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber1700';
       console.info(`${caseName} test start`);
       try {
-        call.isEmergencyPhoneNumber("110", null, (err: BusinessError, data: boolean) => {
+        call.isEmergencyPhoneNumber("911", null, (err: BusinessError, data: boolean) => {
           if (err) {
             console.info(`${caseName} isEmergencyPhoneNumber fail, err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -526,7 +526,7 @@ export default function HasCard2PublicTest() {
       let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber1900';
       console.info(`${caseName} test start`);
       try {
-        call.isEmergencyPhoneNumber("110", undefined, (err: BusinessError, data: boolean) => {
+        call.isEmergencyPhoneNumber("911", undefined, (err: BusinessError, data: boolean) => {
           if (err) {
             console.info(`${caseName} isEmergencyPhoneNumber fail, err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -830,7 +830,7 @@ export default function HasCard2PublicTest() {
     it('testTelephonyCallManagerIsEmergencyPhoneNumber3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber3700';
       console.info(`${caseName} test start`);
-      const phoneNumber: string = "110";
+      const phoneNumber: string = "911";
       call.isEmergencyPhoneNumber(phoneNumber, null).then((data: boolean) => {
         console.info(`${caseName} isEmergencyPhoneNumber,promise data->${JSON.stringify(data)}`);
         ExpectTrue(data == true);
@@ -854,7 +854,7 @@ export default function HasCard2PublicTest() {
     it('testTelephonyCallManagerIsEmergencyPhoneNumber3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyCallManagerIsEmergencyPhoneNumber3800';
       console.info(`${caseName} test start`);
-      const phoneNumber: string = "110";
+      const phoneNumber: string = "112";
       call.isEmergencyPhoneNumber(phoneNumber, undefined).then((data: boolean) => {
         console.info(`${caseName} isEmergencyPhoneNumber,promise data->${JSON.stringify(data)}`);
         ExpectTrue(data == true);

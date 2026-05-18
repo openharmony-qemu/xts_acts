@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  *
  *
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -17,7 +17,7 @@
 import HashMap from '@ohos.util.HashMap';
 
 
-interface KeyPairPemString {
+export interface KeyPairPemString {
   algName?: string;
   pubKey: string;
   priKey: string;
@@ -1985,7 +1985,7 @@ class DataBlobMap {
   }
 }
 
-interface externalData {
+export interface externalData {
   algName: string;
   keyPair: KeyPairPemString[]
 }

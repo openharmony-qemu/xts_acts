@@ -9,6 +9,7 @@
         "MainAbility/pages/Navigation/NavPathStackParam",
         "MainAbility/pages/Navigation/NavigationDivider",
         "MainAbility/pages/Navigation/NavigationAttributeNullUndefined",
+        "MainAbility/pages/Navigation/NavigationModeRatio",
         "MainAbility/pages/navigator/NavigatorAttributeNullUndefined",
         "MainAbility/pages/navDestination/NavDestinationAttributeNullUndefined",
         "MainAbility/pages/TabsNullUndefined/TabsControllerNullUndefined",

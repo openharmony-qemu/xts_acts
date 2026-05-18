@@ -221,6 +221,7 @@ import ImageExifMetadataTestSupp from './image/ImageExifMetadata.test';
 import CreatePixelMapSupp from './image/CreatePixelMap.test';
 import GetImageInfoSupp from './image/GetImageInfoTest.test';
 import ReadPixelsToBufferSupp from './image/ReadPixelsToBufferTest.test';
+import ImageMetadataTest from './image/ImageMetadataTest.test';
 import PicturePackingPixelMapFirTestSupp from './image/PicturePackingPixelMapFir.test';
 import PicturePackingPixelMapSecTestSupp from './image/PicturePackingPixelMapSec.test';
 import ImageGetComponentFirSupp from './Picture/PictureGetComponentFirSupp.test';
@@ -435,11 +436,11 @@ export default function testsuite() {
   ImageLensSpecificationSupp();
   ImageLensSerialNumberSupp();
   ImageExifOECFSupp();
+  MultimediaImageTest();
   ImageBitsPerSampleStripOffsetsSupp();
   ImageSourceMetadataSupp();
   ImageGetImagePropertyOptionsSupp();
   ImagePictureMetadataTest();
-  MultimediaImageTest();
   ImageExifMetadataTestSupp();
   PicturePackDataFirTestSupp();
   PicturePackDataThrTestSupp();
@@ -455,6 +456,7 @@ export default function testsuite() {
   CreatePixelMapSupp();
   GetImageInfoSupp();
   ReadPixelsToBufferSupp();
+  ImageMetadataTest();
   PicturePackingPixelMapFirTestSupp();
   PicturePackingPixelMapSecTestSupp();
   ImageGetComponentFirSupp();
@@ -471,4 +473,5 @@ export default function testsuite() {
   PicturePackToFileTestFourSupp();
   imageReadImageMetadataTestSupp();
   ImageSupplementTest();
+
 }

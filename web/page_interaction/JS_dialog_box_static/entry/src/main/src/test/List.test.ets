@@ -20,6 +20,7 @@ import webViewSrollableJsunit from './bindSelectionMenu.test'
 import webAttributeTest from './WebAttributeTest.test'
 import WebViewEnumAndFontLibrary from './WebViewEnumAndFontLibrary.test'
 import WebKeyboardAvoidMode from './WebEmulateTouchFromMouseEvent.test'
+import SaveImageMenu from './SaveImageMenu.test'
 
 
 export default function testsuite() {
@@ -30,4 +31,5 @@ export default function testsuite() {
     webInitTest();
     NativeEmbedParamStatusUpdate();
     WebKeyboardAvoidMode();
+	SaveImageMenu()
 }

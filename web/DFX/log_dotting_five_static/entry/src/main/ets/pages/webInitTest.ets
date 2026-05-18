@@ -25,7 +25,7 @@ import { Hypium } from '../../../hypium';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import Utils from '../../src/test/Utils.test';
 
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 

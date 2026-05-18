@@ -49,6 +49,8 @@ import TextTimerFontWeightTest from './TextTimerTest/TextTimerFontWeight.test';
 import TextTimerNodeTest from './TextTimerTest/TextTimerNode.test';
 import TextTimerTextShadowTest from './TextTimerTest/TextTimerTextShadow.test';
 import TextTimerPropertiesNullUndefinedTest from './TextTimerTest/TextTimerPropertiesNullUndefined.test';
+import TextTimerConfigurationStartTimeTest from './TextTimerTest/TextTimerConfigurationStartTime.test';
+import TextTimerStartTimeTest from './TextTimerTest/TextTimerStartTime.test';
 
 
 export default function testsuite() {
@@ -88,4 +90,6 @@ export default function testsuite() {
     TextTimerNodeTest()
     TextTimerTextShadowTest()
     TextTimerPropertiesNullUndefinedTest()
+    TextTimerConfigurationStartTimeTest()
+    TextTimerStartTimeTest()
 }

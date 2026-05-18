@@ -42,5 +42,9 @@ export const getAvailableEncoder: () => number;
 
 export const setWillMuteWhenInterrupted: () => number;
 
+export const getMaxAmplitude: () => number;
+
+export const setMetadata: () => number;
+
 
 

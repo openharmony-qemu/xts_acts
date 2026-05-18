@@ -38,11 +38,11 @@ import { JsProxyObject } from '../../src/test/Interfaces';
 import image from '@ohos.multimedia.image';
 import { Driver, ON } from '@ohos.UiTest';
 
-class StringFields {
+export class StringFields {
   str: string = '';
 }
 
-class StringFields1 {
+export class StringFields1 {
   onInterceptKeyEventCode: number = 0;
 }
 

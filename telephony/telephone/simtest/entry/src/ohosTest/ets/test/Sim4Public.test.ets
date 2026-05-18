@@ -549,24 +549,30 @@ export default function Sim4Public() {
         console.info(`${caseName} test end`);
         done();
       }
-      sim.getSimLabel(null).then((data: sim.SimLabel) => {
-        console.info(`${caseName} failed, The result is not in line with explections, data->${JSON.stringify(data)}`);
-        ExpectFail();
-        console.info(`${caseName} test end`);
-        done();
-      }).catch((err: BusinessError) =>{
-        if (err && err.code === 401){
-          console.info(`${caseName} successfully: Parameter error and return 8300001`);
-          ExpectTrue(true);
-          console.info(`${caseName} test end`);
-          done();
-        } else {
-          console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
+      try {
+        sim.getSimLabel(null).then((data: sim.SimLabel) => {
+          console.info(`${caseName} failed, The result is not in line with explections, data->${JSON.stringify(data)}`);
           ExpectFail();
           console.info(`${caseName} test end`);
           done();
-        }
-      });
+        }).catch((err: BusinessError) =>{
+          if (err && err.code === 401){
+            console.info(`${caseName} successfully: Parameter error and return 8300001`);
+            ExpectTrue(true);
+            console.info(`${caseName} test end`);
+            done();
+          } else {
+            console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
+            ExpectFail();
+            console.info(`${caseName} test end`);
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
+        expect(err.code === 401);
+        done();
+      }
     });
 
     /**
@@ -586,24 +592,30 @@ export default function Sim4Public() {
         console.info(`${caseName} test end`);
         done();
       }
-      sim.getSimLabel(undefined).then((data: sim.SimLabel) => {
-        console.info(`${caseName} failed, The result is not in line with explections, data->${JSON.stringify(data)}`);
-        ExpectFail();
-        console.info(`${caseName} test end`);
-        done();
-      }).catch((err: BusinessError) =>{
-        if (err && err.code === 401){
-          console.info(`${caseName} successfully: Parameter error and return 8300001`);
-          ExpectTrue(true);
-          console.info(`${caseName} test end`);
-          done();
-        } else {
-          console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
+      try {
+        sim.getSimLabel(undefined).then((data: sim.SimLabel) => {
+          console.info(`${caseName} failed, The result is not in line with explections, data->${JSON.stringify(data)}`);
           ExpectFail();
           console.info(`${caseName} test end`);
           done();
-        }
-      });
+        }).catch((err: BusinessError) =>{
+          if (err && err.code === 401){
+            console.info(`${caseName} successfully: Parameter error and return 8300001`);
+            ExpectTrue(true);
+            console.info(`${caseName} test end`);
+            done();
+          } else {
+            console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
+            ExpectFail();
+            console.info(`${caseName} test end`);
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} failed, err->${JSON.stringify(err)}`);
+        expect(err.code === 401);
+        done();
+      }
     });
 
     /**

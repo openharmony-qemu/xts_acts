@@ -365,14 +365,14 @@ describe("QueueTest", function () {
   });
 
   /**
-   * @tc.name   testAdd020 
+   * @tc.name   testAdd020Adapt001
    * @tc.number testAdd020 
    * @tc.desc   Add element to Queue instance end. For example: queue.add.bind({}, 10)().
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL1
    */
-  it("testAdd020 ", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+  it("testAdd020Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let queue = new Queue();
     try {
       queue.add.bind({}, 10)();

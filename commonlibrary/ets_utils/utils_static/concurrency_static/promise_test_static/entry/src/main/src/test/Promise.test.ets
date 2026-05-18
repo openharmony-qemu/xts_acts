@@ -368,14 +368,12 @@ export default function PromiseTest() {
         let result: Number = 20;
         try {
           const promise1 = new Promise<number>((resolve) => {
-            waitForCompletion(async () => {
-              const task = new taskpool.Task(() => {
-                setTimeout(() => {
-                  resolve(10);
-                }, 100);
-              });
-              await taskpool.execute(task)
-            })
+            const task = new taskpool.Task(() => {
+              setTimeout(() => {
+                resolve(10);
+              }, 100);
+            });
+            taskpool.execute(task)
           });
           result = await promise1;
           expect(result).assertEqual(10);
@@ -409,17 +407,14 @@ export default function PromiseTest() {
               const processedValue = testValue * 2;
               reject(new Error("Worker intentionally rejected the promise"));
               return processedValue;
-            });
-            try {
-              const result = job.Await();
+            }).then((result: number): void => {
               resolve(result);
-            } catch (err) {
+            }).catch((err: Error): void => {
               err = err as Error;
               console.error(`${TAG} catch error: code =>  message => ${err.message}`);
               reject(new Error("Worker intentionally rejected the promise"));
-            } finally {
-              worker.join();
-            }
+            });
+            worker.quit();
           });
           try {
             const result = await promise1;
@@ -1360,13 +1355,13 @@ export default function PromiseTest() {
           });
           const promise2 = Promise.resolve<Any>(undefined);
           const promise3 = Promise.resolve<[number, string]>([1, 'tupleValue'])
-          const queue: containers.LinkedBlockingQueue<number> = new containers.LinkedBlockingQueue<number>();
+          const queue: containers.stackless.LinkedConcurrentQueue<number> = new containers.stackless.LinkedConcurrentQueue<number>();
           queue.add(2);
-          const promise4 = new Promise<containers.LinkedBlockingQueue<number>>((resolve) => {
+          const promise4 = new Promise<containers.stackless.LinkedConcurrentQueue<number>>((resolve) => {
             setTimeout(() => resolve(queue), 100);
           });
           let result =
-            await Promise.race<number | Any | [number, string] | containers.LinkedBlockingQueue<number>>([promise1,
+            await Promise.race<number | Any | [number, string] | containers.stackless.LinkedConcurrentQueue<number>>([promise1,
               promise2, promise3, promise4]) as undefined;
           expect(result).assertEqual(undefined);
         } catch (err) {

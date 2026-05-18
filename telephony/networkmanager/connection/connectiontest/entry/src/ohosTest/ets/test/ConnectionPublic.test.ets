@@ -13,12 +13,27 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType, beforeAll, beforeEach, afterAll, afterEach } from '@ohos/hypium';
 import connection from '@ohos.net.connection';
 import { BusinessError } from '@ohos.base';
 import socket from '@ohos.net.socket';
+import { Driver, ON, MatchPattern } from '@ohos.UiTest';
 import {common } from '@kit.AbilityKit';
 import {policy } from '@kit.NetworkKit';
+
+export async function clickRequestPermission(mess: string): Promise<void> {
+  try {
+    console.info('connection clickRequestPermission start');
+    let driver = Driver.create();
+    let permissionButton = await driver.waitForComponent(ON.text(mess, MatchPattern.CONTAINS), 2000);
+    if (permissionButton !== null) {
+      await permissionButton.click();
+      console.info('connection clickRequestPermission end');
+    }
+  } catch (err) {
+    console.info('connection clickRequestPermission failed');
+  }
+}
 
 const ExpectFail: () => void = () => {
   try {
@@ -43,9 +58,61 @@ function sleep (time:number):Promise<string>{
     });
 }
 
+function isValidIp(ip: string): boolean {
+  if (typeof ip !== 'string' || ip.length === 0) {
+    return false;
+  }
+
+  const ipv4Regex = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+  if (ipv4Regex.test(ip)) {
+    return true;
+  }
+
+  const ipv6Regex = new RegExp(
+    '^(' +
+      '([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|' +
+      '([0-9a-fA-F]{1,4}:){1,7}:|' +
+      '([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|' +
+      '([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|' +
+      '([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|' +
+      '([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|' +
+      '([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|' +
+      '[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|' +
+      ':((:[0-9a-fA-F]{1,4}){1,7}|:)|' +
+      'fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|' +
+      '::(ffff(:0{1,4}){0,1}:){0,1}' +
+      '((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}' +
+      '(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|' +
+      '([0-9a-fA-F]{1,4}:){1,4}:' +
+      '((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}' +
+      '(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])' +
+      ')$'
+  );
+  if (ipv6Regex.test(ip)) {
+    return true;
+  }
+
+  return false;
+}
 
 export default function ConnectionPublicTest() {
   describe('ConnectionPublicTest', () => {
+
+    beforeAll(async (done: Function) => {
+      await clickRequestPermission("使用");
+      await sleep(2000);
+      console.info('beforeAllTest start');
+      done();
+    });
+    beforeEach(() => {
+      console.info('beforeEachTest start');
+    });
+    afterEach(() => {
+      console.info('afterEachTest start');
+    });
+    afterAll(() => {
+      console.info('afterAllTest start');
+    });
 
     /**
      * @tc.name   testNetworkMgrConnectionHasDefaultNet0100
@@ -2664,6 +2731,45 @@ export default function ConnectionPublicTest() {
       try {
         await connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
           netHandle.netId = 99999999;
+          connection.setAppNet(netHandle).then(() => {
+            console.info(`${caseName} SetAppNet: success data->${JSON.stringify(netHandle)}`);
+            ExpectTrue(true);
+            console.info(`${caseName}---End`);
+            done();
+          }).catch((error: BusinessError) => {
+            console.info(`${caseName} SetAppNet: err->${JSON.stringify(error)}`);
+            ExpectFail();
+            console.info(`${caseName}---End`);
+            done();
+          });
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} getDefaultNet: err->${JSON.stringify(error)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionSetAppNet1900
+     * @tc.number SUB_NetworkMgr_Connection_SetAppNet_1900
+     * @tc.desc   Bind the app normal network
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionSetAppNet1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionSetAppNet1900";
+      console.info(`${caseName} test start `);
+      try {
+        await connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+          netHandle.netId = 0;
           connection.setAppNet(netHandle).then(() => {
             console.info(`${caseName} SetAppNet: success data->${JSON.stringify(netHandle)}`);
             ExpectTrue(true);
@@ -9279,7 +9385,7 @@ export default function ConnectionPublicTest() {
             done();
           }).catch((error: BusinessError)=>{
             console.info(`${caseName} error  fetching ip neigh table errorCode:${error.code}`+ JSON.stringify(error));
-            ExpectTrue(false)
+            ExpectTrue(false);
             console.info(`${caseName}---End`);
             done();
           })
@@ -9352,7 +9458,42 @@ export default function ConnectionPublicTest() {
           console.info(`${caseName}---End`);
         }
       });
-    
+
+    /**
+     * @tc.name   testNetworkMgrPolicyGetNetworkAccessPolicy0100
+     * @tc.number SUB_NetworkMgr_Policy_GetNetAccessPolicy_0100
+     * @tc.desc   Test etNetAccessPolicy function
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrPolicyGetNetworkAccessPolicy0100", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = "testNetworkMgrPolicyGetNetworkAccessPolicy0100";
+      console.info(`${caseName}---Start`);
+      try {
+        policy.getNetAccessPolicy().then((data: policy.NetAccessPolicy) => {
+          console.info(`${caseName} getNetworkAccessPolicy data: ${JSON.stringify(data)}`);
+          if (data !== null && data !== undefined) {
+            ExpectTrue(data.allowWiFi === true);
+            ExpectTrue(data.allowCellular === true);
+          } else {
+            ExpectTrue(false);
+          }
+          done();
+        }).catch((error: BusinessError) => {
+          console.error(`${caseName} getNetworkAccessPolicy error ${JSON.stringify(error)}`);
+          ExpectTrue(false);
+          done();
+          console.info(`${caseName} test end`);
+        })
+      } catch (err) {
+        console.error(`${caseName} catch err ${JSON.stringify(err)}`);
+        ExpectFail();
+        done();
+        console.info(`${caseName} test End`);
+      }
+    });
+
     /**
      * @tc.name   testNetworkMgrConnectionConnectionProperties1300
      * @tc.number SUB_NetworkMgr_Connection_ConnectionProperties_1300
@@ -9525,5 +9666,1438 @@ export default function ConnectionPublicTest() {
         done();
       }
     });
+
+ 	     /**
+ 	      * @tc.name   testNetworkMgrConnectionGetSystemNetPortStates0100
+ 	      * @tc.number SUB_NetworkMgr_Connection_GetSystemNetPortStates_0100
+ 	      * @tc.desc   Test GetSystemNetPortStates Success
+ 	      * @tc.type   FUNCTION
+ 	      * @tc.size   SMALLTEST
+ 	      * @tc.level  LEVEL3
+ 	      */
+    it("testNetworkMgrConnectionGetSystemNetPortStates0100", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = "testNetworkMgrConnectionGetSystemNetPortStates0100";
+      console.info(`${caseName}---Start`);
+
+      try {
+        connection.getSystemNetPortStates().then((data: connection.NetPortStatesInfo) => {
+          if (data != undefined && data.tcpPortStatesInfo != undefined && data.udpPortStatesInfo != undefined) {
+            console.info(`${caseName} tcpPortStatesInfo length: ${data.tcpPortStatesInfo.length}`);
+            console.info(`${caseName} udpPortStatesInfo length: ${data.udpPortStatesInfo.length}`);
+
+            for (let i = 0; i < data.tcpPortStatesInfo.length; i++) {
+              const tcpItem = data.tcpPortStatesInfo[i];
+              console.info(`${caseName} tcpItem[${i}]: ${JSON.stringify(tcpItem)}`);
+
+              ExpectTrue(typeof tcpItem.tcpLocalIp === 'string');
+              ExpectTrue(isValidIp(tcpItem.tcpLocalIp));
+
+              ExpectTrue(typeof tcpItem.tcpLocalPort === 'number');
+              ExpectTrue(tcpItem.tcpLocalPort >= 0 && tcpItem.tcpLocalPort <= 65535);
+
+              ExpectTrue(typeof tcpItem.tcpRemoteIp === 'string');
+              ExpectTrue(isValidIp(tcpItem.tcpRemoteIp));
+
+              ExpectTrue(typeof tcpItem.tcpRemotePort === 'number');
+              ExpectTrue(tcpItem.tcpRemotePort >= 0 && tcpItem.tcpRemotePort <= 65535);
+
+              ExpectTrue(typeof tcpItem.tcpUid === 'number');
+              ExpectTrue(tcpItem.tcpUid >= 0);
+
+              ExpectTrue(typeof tcpItem.tcpPid === 'number');
+              ExpectTrue(tcpItem.tcpPid >= 0);
+
+              ExpectTrue(typeof tcpItem.tcpState === 'number');
+              ExpectTrue(tcpItem.tcpState >= 0);
+            }
+
+            for (let i = 0; i < data.udpPortStatesInfo.length; i++) {
+              const udpItem = data.udpPortStatesInfo[i];
+              console.info(`${caseName} udpItem[${i}]: ${JSON.stringify(udpItem)}`);
+
+              ExpectTrue(typeof udpItem.udpLocalIp === 'string');
+              ExpectTrue(isValidIp(udpItem.udpLocalIp));
+
+              ExpectTrue(typeof udpItem.udpLocalPort === 'number');
+              ExpectTrue(udpItem.udpLocalPort >= 0 && udpItem.udpLocalPort <= 65535);
+
+              ExpectTrue(typeof udpItem.udpUid === 'number');
+              ExpectTrue(udpItem.udpUid >= 0);
+
+              ExpectTrue(typeof udpItem.udpPid === 'number');
+              ExpectTrue(udpItem.udpPid >= 0);
+            }
+
+            expect(data.tcpPortStatesInfo.length >= 0).assertTrue();
+            expect(data.udpPortStatesInfo.length >= 0).assertTrue();
+          } else {
+            expect(data === undefined).assertTrue();
+            console.info(`${caseName} error: data or its port states info is undefined`);
+            ExpectTrue(false);
+          }
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} error fetching system net port states, errorCode:${error.code} ${JSON.stringify(error)}`);
+          ExpectTrue(false);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch err: ${JSON.stringify(err)}`);
+        ExpectTrue(err.code === 201);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionGetSystemNetPortStates0200
+     * @tc.number SUB_NetworkMgr_Connection_GetSystemNetPortStates_0200
+     * @tc.desc   Test TcpState and UdpState Enum value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionGetSystemNetPortStates0200", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
+        let caseName: string = "testNetworkMgrConnectionGetSystemNetPortStates0200";
+        console.info(`${caseName}---Start`);
+        ExpectTrue(1 === connection.TcpState.TCP_ESTABLISHED);
+        ExpectTrue(2 === connection.TcpState.TCP_SYN_SENT);
+        ExpectTrue(3 === connection.TcpState.TCP_SYN_RECV);
+        ExpectTrue(4 === connection.TcpState.TCP_FIN_WAIT1);
+        ExpectTrue(5 === connection.TcpState.TCP_FIN_WAIT2);
+        ExpectTrue(6 === connection.TcpState.TCP_TIME_WAIT);
+        ExpectTrue(7 === connection.TcpState.TCP_CLOSE);
+        ExpectTrue(8 === connection.TcpState.TCP_CLOSE_WAIT);
+        ExpectTrue(9 === connection.TcpState.TCP_LAST_ACK);
+        ExpectTrue(10 === connection.TcpState.TCP_LISTEN);
+        ExpectTrue(11 === connection.TcpState.TCP_CLOSING);
+        console.info(`${caseName}---End`);
+        done();
+      });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionTraceRoute0100
+     * @tc.number SUB_NetworkMgr_Connection_TraceRoute_0100
+     * @tc.desc   Test the API function of TraceRoute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionTraceRoute0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionTraceRoute0100";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = "www.baidu.com";
+        let option: connection.TraceRouteOptions = {
+          maxJumpNumber: 30,
+          packetsType: connection.PacketsType.NETCONN_PACKETS_ICMP,
+        };
+        connection.queryTraceRoute(destination, option).then((TraceRouteInfo: connection.TraceRouteInfo[]) => {
+          console.info(`${caseName} TraceRouteInfo: ${JSON.stringify(TraceRouteInfo)}`);
+          console.info(`${caseName} TraceRouteInfo jumpNo: ${JSON.stringify(TraceRouteInfo[0].jumpNo)}`);
+          let jumpNo: number = TraceRouteInfo[0].jumpNo;
+          ExpectTrue(jumpNo === 1);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} queryTraceRoute: err-> ${JSON.stringify(error)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionTraceRoute0200
+     * @tc.number SUB_NetworkMgr_Connection_TraceRoute_0200
+     * @tc.desc   Test the option packetsType is UDP and address of TraceRoute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionTraceRoute0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionTraceRoute0200";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = "www.baidu.com";
+        let option: connection.TraceRouteOptions = {
+          maxJumpNumber: 10,
+          packetsType: connection.PacketsType.NETCONN_PACKETS_UDP,
+        };
+        connection.queryTraceRoute(destination, option).then((TraceRouteInfo: connection.TraceRouteInfo[]) => {
+          console.info(`${caseName} TraceRouteInfo: ${JSON.stringify(TraceRouteInfo)}`);
+          console.info(`${caseName} TraceRouteInfo jumpNo: ${JSON.stringify(TraceRouteInfo[0].address)}`);
+          let address: string = TraceRouteInfo[0].address;
+          ExpectTrue(address !== null && address !== undefined);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} queryTraceRoute: err-> ${JSON.stringify(error)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionTraceRoute0300
+     * @tc.number SUB_NetworkMgr_Connection_TraceRoute_0300
+     * @tc.desc   Test the option packetsType and max_rtt function of TraceRoute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionTraceRoute0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionTraceRoute0300";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = "www.baidu.com";
+        let option: connection.TraceRouteOptions = {
+          maxJumpNumber: 10,
+        };
+        connection.queryTraceRoute(destination, option).then((TraceRouteInfo: connection.TraceRouteInfo[]) => {
+          console.info(`${caseName} TraceRouteInfo: ${JSON.stringify(TraceRouteInfo)}`);
+          console.info(`${caseName} TraceRouteInfo rtt: ${JSON.stringify(TraceRouteInfo[0].rtt)}`);
+          let rtt_max: number = TraceRouteInfo[0].rtt[2];
+          ExpectTrue(rtt_max >= 0);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} queryTraceRoute: err-> ${JSON.stringify(error)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionTraceRoute0400
+     * @tc.number SUB_NetworkMgr_Connection_TraceRoute_0400
+     * @tc.desc   Test the option parameter is not contained in the TraceRoute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionTraceRoute0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionTraceRoute0400";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = "www.baidu.com";
+        let option: connection.TraceRouteOptions = {
+          maxJumpNumber: 30,
+          packetsType: connection.PacketsType.NETCONN_PACKETS_ICMP,
+        };
+        connection.queryTraceRoute(destination).then((TraceRouteInfo: connection.TraceRouteInfo[]) => {
+          console.info(`${caseName} TraceRouteInfo: ${JSON.stringify(TraceRouteInfo)}`);
+          console.info(`${caseName} TraceRouteInfo rtt: ${JSON.stringify(TraceRouteInfo[0].rtt)}`);
+          let rtt_max: number = TraceRouteInfo[0].rtt[2];
+          ExpectTrue(rtt_max >= 0);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} queryTraceRoute: err-> ${JSON.stringify(error)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionTraceRoute0500
+     * @tc.number SUB_NetworkMgr_Connection_TraceRoute_0500
+     * @tc.desc   Test the destination parameter is not contained in the TraceRoute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionTraceRoute0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionTraceRoute0500";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = "www.baidu.com";
+        let option: connection.TraceRouteOptions = {
+          maxJumpNumber: 30,
+          packetsType: connection.PacketsType.NETCONN_PACKETS_ICMP,
+        };
+        connection.queryTraceRoute(null, option).then((TraceRouteInfo: connection.TraceRouteInfo[]) => {
+          console.info(`${caseName} TraceRouteInfo: ${JSON.stringify(TraceRouteInfo)}`);
+          console.info(`${caseName} TraceRouteInfo rtt: ${JSON.stringify(TraceRouteInfo[0].rtt)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} queryTraceRoute: err-> ${JSON.stringify(error)}`);
+          ExpectTrue(error.code === 401);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionTraceRoute0600
+     * @tc.number SUB_NetworkMgr_Connection_TraceRoute_0600
+     * @tc.desc   Test the destination and option parameter is not contained in the TraceRoute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionTraceRoute0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionTraceRoute0600";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = "www.baidu.com";
+        let option: connection.TraceRouteOptions = {
+          maxJumpNumber: 30,
+          packetsType: connection.PacketsType.NETCONN_PACKETS_ICMP,
+        };
+        connection.queryTraceRoute(null, null).then((TraceRouteInfo: connection.TraceRouteInfo[]) => {
+          console.info(`${caseName} TraceRouteInfo: ${JSON.stringify(TraceRouteInfo)}`);
+          console.info(`${caseName} TraceRouteInfo rtt: ${JSON.stringify(TraceRouteInfo[0].rtt)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} queryTraceRoute: err-> ${JSON.stringify(error)}`);
+          ExpectTrue(error.code === 401);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionTraceRoute0700
+     * @tc.number SUB_NetworkMgr_Connection_TraceRoute_0700
+     * @tc.desc   Test the option parameter no maxJumpNumber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionTraceRoute0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionTraceRoute0700";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = "www.baidu.com";
+        let option: connection.TraceRouteOptions = {
+          packetsType: connection.PacketsType.NETCONN_PACKETS_ICMP,
+        };
+        connection.queryTraceRoute(destination, option).then((TraceRouteInfo: connection.TraceRouteInfo[]) => {
+          console.info(`${caseName} TraceRouteInfo: ${JSON.stringify(TraceRouteInfo)}`);
+          console.info(`${caseName} TraceRouteInfo rtt: ${JSON.stringify(TraceRouteInfo[0].rtt)}`);
+          let rtt_max: number = TraceRouteInfo[0].rtt[2];
+          ExpectTrue(rtt_max >= 0);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} queryTraceRoute: err-> ${JSON.stringify(error)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionTraceRoute0800
+     * @tc.number SUB_NetworkMgr_Connection_TraceRoute_0800
+     * @tc.desc   Test the destination is IPV4 address
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionTraceRoute0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionTraceRoute0800";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = "223.5.5.5";
+        let option: connection.TraceRouteOptions = {
+          maxJumpNumber: 30,
+          packetsType: connection.PacketsType.NETCONN_PACKETS_ICMP,
+        };
+        connection.queryTraceRoute(destination, option).then((TraceRouteInfo: connection.TraceRouteInfo[]) => {
+          console.info(`${caseName} TraceRouteInfo: ${JSON.stringify(TraceRouteInfo)}`);
+          console.info(`${caseName} TraceRouteInfo rtt: ${JSON.stringify(TraceRouteInfo[0].rtt)}`);
+          let rtt_max: number = TraceRouteInfo[0].rtt[2];
+          ExpectTrue(rtt_max >= 0);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} queryTraceRoute: err-> ${JSON.stringify(error)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionTraceRoute1000
+     * @tc.number SUB_NetworkMgr_Connection_TraceRoute_1000
+     * @tc.desc   Test the destination is ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionTraceRoute1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionTraceRoute1000";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = "";
+        let option: connection.TraceRouteOptions = {
+          maxJumpNumber: 30,
+          packetsType: connection.PacketsType.NETCONN_PACKETS_ICMP,
+        };
+        connection.queryTraceRoute(destination, option).then((TraceRouteInfo: connection.TraceRouteInfo[]) => {
+          console.info(`${caseName} TraceRouteInfo: ${JSON.stringify(TraceRouteInfo)}`);
+          console.info(`${caseName} TraceRouteInfo rtt: ${JSON.stringify(TraceRouteInfo[0].rtt)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} queryTraceRoute: err-> ${JSON.stringify(error)}`);
+          ExpectTrue(error.code === 2100001);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionTraceRoute1100
+     * @tc.number SUB_NetworkMgr_Connection_TraceRoute_1100
+     * @tc.desc   Test the destination is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionTraceRoute1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionTraceRoute1100";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = undefined;
+        let option: connection.TraceRouteOptions = {
+          maxJumpNumber: 30,
+          packetsType: connection.PacketsType.NETCONN_PACKETS_ICMP,
+        };
+        connection.queryTraceRoute(destination, option).then((TraceRouteInfo: connection.TraceRouteInfo[]) => {
+          console.info(`${caseName} TraceRouteInfo: ${JSON.stringify(TraceRouteInfo)}`);
+          console.info(`${caseName} TraceRouteInfo rtt: ${JSON.stringify(TraceRouteInfo[0].rtt)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} queryTraceRoute: err-> ${JSON.stringify(error)}`);
+          ExpectTrue(error.code === 401);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionTraceRoute1200
+     * @tc.number SUB_NetworkMgr_Connection_TraceRoute_1200
+     * @tc.desc   Test the destination is "100.192.192.192"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionTraceRoute1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionTraceRoute1200";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = "100.192.192.192";
+        let option: connection.TraceRouteOptions = {
+          maxJumpNumber: 30,
+          packetsType: connection.PacketsType.NETCONN_PACKETS_ICMP,
+        };
+        connection.queryTraceRoute(destination, option).then((TraceRouteInfo: connection.TraceRouteInfo[]) => {
+          console.info(`${caseName} TraceRouteInfo: ${JSON.stringify(TraceRouteInfo)}`);
+          ExpectTrue(TraceRouteInfo.length > 0);
+          console.info(`${caseName} TraceRouteInfo rtt: ${JSON.stringify(TraceRouteInfo[1].rtt)}`);
+          let rtt_max: number = TraceRouteInfo[1].rtt[2];
+          ExpectTrue(rtt_max === 1000);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} queryTraceRoute: err-> ${JSON.stringify(error)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionTraceRoute1300
+     * @tc.number SUB_NetworkMgr_Connection_TraceRoute_1300
+     * @tc.desc   Test the destination address invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionTraceRoute1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionTraceRoute1300";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = "123.invalid.com";
+        let option: connection.TraceRouteOptions = {
+          maxJumpNumber: 30,
+          packetsType: connection.PacketsType.NETCONN_PACKETS_ICMP,
+        };
+        connection.queryTraceRoute(destination, option).then((TraceRouteInfo: connection.TraceRouteInfo[]) => {
+          console.info(`${caseName} TraceRouteInfo: ${JSON.stringify(TraceRouteInfo)}`);
+          ExpectTrue(TraceRouteInfo.length === 0);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} queryTraceRoute: err-> ${JSON.stringify(error)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionTraceRoute1400
+     * @tc.number SUB_NetworkMgr_Connection_TraceRoute_1400
+     * @tc.desc   Test the destination is localhost
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionTraceRoute1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionTraceRoute1400";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = "localhost";
+        let option: connection.TraceRouteOptions = {
+          maxJumpNumber: 30,
+          packetsType: connection.PacketsType.NETCONN_PACKETS_ICMP,
+        };
+        connection.queryTraceRoute(destination, option).then((TraceRouteInfo: connection.TraceRouteInfo[]) => {
+          console.info(`${caseName} TraceRouteInfo: ${JSON.stringify(TraceRouteInfo)}`);
+          console.info(`${caseName} TraceRouteInfo rtt: ${JSON.stringify(TraceRouteInfo[0].rtt)}`);
+          let jumpNo: number = TraceRouteInfo[0].jumpNo;
+          ExpectTrue(jumpNo === 1);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} queryTraceRoute: err-> ${JSON.stringify(error)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionTraceRoute1500
+     * @tc.number SUB_NetworkMgr_Connection_TraceRoute_1500
+     * @tc.desc   Test the option maxJumpNumber is -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionTraceRoute1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionTraceRoute1500";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = "www.baidu.com";
+        let option: connection.TraceRouteOptions = {
+          maxJumpNumber: -1,
+          packetsType: connection.PacketsType.NETCONN_PACKETS_ICMP,
+        };
+        connection.queryTraceRoute(destination, option).then((TraceRouteInfo: connection.TraceRouteInfo[]) => {
+          console.info(`${caseName} TraceRouteInfo: ${JSON.stringify(TraceRouteInfo)}`);
+          console.info(`${caseName} TraceRouteInfo rtt: ${JSON.stringify(TraceRouteInfo[0].rtt)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} queryTraceRoute: err-> ${JSON.stringify(error)}`);
+          ExpectTrue(error.code === 2100001);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionTraceRoute1600
+     * @tc.number SUB_NetworkMgr_Connection_TraceRoute_1600
+     * @tc.desc   Test the option maxJumpNumber is 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionTraceRoute1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionTraceRoute1600";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = "www.baidu.com";
+        let option: connection.TraceRouteOptions = {
+          maxJumpNumber: 0,
+          packetsType: connection.PacketsType.NETCONN_PACKETS_ICMP,
+        };
+        connection.queryTraceRoute(destination, option).then((TraceRouteInfo: connection.TraceRouteInfo[]) => {
+          console.info(`${caseName} TraceRouteInfo: ${JSON.stringify(TraceRouteInfo)}`);
+          console.info(`${caseName} TraceRouteInfo rtt: ${JSON.stringify(TraceRouteInfo[0].rtt)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} queryTraceRoute: err-> ${JSON.stringify(error)}`);
+          ExpectTrue(error.code === 2100001);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionTraceRoute1700
+     * @tc.number SUB_NetworkMgr_Connection_TraceRoute_1700
+     * @tc.desc   Test the option maxJumpNumber is 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionTraceRoute1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionTraceRoute1700";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = "www.baidu.com";
+        let option: connection.TraceRouteOptions = {
+          maxJumpNumber: 1,
+          packetsType: connection.PacketsType.NETCONN_PACKETS_ICMP,
+        };
+        connection.queryTraceRoute(destination, option).then((TraceRouteInfo: connection.TraceRouteInfo[]) => {
+          console.info(`${caseName} TraceRouteInfo: ${JSON.stringify(TraceRouteInfo)}`);
+          console.info(`${caseName} TraceRouteInfo rtt: ${JSON.stringify(TraceRouteInfo[0].rtt)}`);
+          ExpectTrue(TraceRouteInfo.length > 0);
+          let jumpNo: number = TraceRouteInfo[0].jumpNo;
+          ExpectTrue(jumpNo === 1);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} queryTraceRoute: err-> ${JSON.stringify(error)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionTraceRoute1800
+     * @tc.number SUB_NetworkMgr_Connection_TraceRoute_1800
+     * @tc.desc   Test the option maxJumpNumber is 31
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionTraceRoute1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionTraceRoute1800";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = "www.baidu.com";
+        let option: connection.TraceRouteOptions = {
+          maxJumpNumber: 31,
+          packetsType: connection.PacketsType.NETCONN_PACKETS_ICMP,
+        };
+        connection.queryTraceRoute(destination, option).then((TraceRouteInfo: connection.TraceRouteInfo[]) => {
+          console.info(`${caseName} TraceRouteInfo: ${JSON.stringify(TraceRouteInfo)}`);
+          console.info(`${caseName} TraceRouteInfo rtt: ${JSON.stringify(TraceRouteInfo[0].rtt)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} queryTraceRoute: err-> ${JSON.stringify(error)}`);
+          ExpectTrue(error.code === 2100001);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionTraceRoute1900
+     * @tc.number SUB_NetworkMgr_Connection_TraceRoute_1900
+     * @tc.desc   Test the option packetsType is 99
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionTraceRoute1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionTraceRoute1900";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = "www.baidu.com";
+        let option: connection.TraceRouteOptions = {
+          maxJumpNumber: 10,
+          packetsType: 99,
+        };
+        connection.queryTraceRoute(destination, option).then((TraceRouteInfo: connection.TraceRouteInfo[]) => {
+          console.info(`${caseName} TraceRouteInfo: ${JSON.stringify(TraceRouteInfo)}`);
+          console.info(`${caseName} TraceRouteInfo rtt: ${JSON.stringify(TraceRouteInfo[0].rtt)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} queryTraceRoute: err-> ${JSON.stringify(error)}`);
+          ExpectTrue(error.code === 2100001);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionTraceRoute2200
+     * @tc.number SUB_NetworkMgr_Connection_TraceRoute_2200
+     * @tc.desc   Test queryTraceRoute concurrent calls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionTraceRoute2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionTraceRoute2200";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = "www.baidu.com";
+        let option: connection.TraceRouteOptions = {
+          maxJumpNumber: 5,
+          packetsType: connection.PacketsType.NETCONN_PACKETS_ICMP,
+        };
+        let promiseArray: Promise<connection.TraceRouteInfo[]>[] = [];
+        for (let i = 0; i < 10; i++) {
+          promiseArray.push(connection.queryTraceRoute(destination, option));
+        }
+        Promise.all(promiseArray).then((results: connection.TraceRouteInfo[][]) => {
+          console.info(`${caseName} all queryTraceRoute success, results count: ${results.length}`);
+          ExpectTrue(results.length === 10);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} queryTraceRoute: err-> ${JSON.stringify(error)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionTraceRoute2300
+     * @tc.number SUB_NetworkMgr_Connection_TraceRoute_2300
+     * @tc.desc   Test the option is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionTraceRoute2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionTraceRoute2300";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = "www.baidu.com";
+        connection.queryTraceRoute(destination, undefined).then((TraceRouteInfo: connection.TraceRouteInfo[]) => {
+          console.info(`${caseName} TraceRouteInfo: ${JSON.stringify(TraceRouteInfo)}`);
+          console.info(`${caseName} TraceRouteInfo rtt: ${JSON.stringify(TraceRouteInfo[0].rtt)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} queryTraceRoute: err-> ${JSON.stringify(error)}`);
+          ExpectTrue(error.code === 401);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+    
+    /**
+     * @tc.name   testNetworkMgrConnectionQueryProbeResult0100
+     * @tc.number SUB_NetworkMgr_Connection_QueryProbeResult_0100
+     * @tc.desc   Test the API function of queryProbeResult
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it("testNetworkMgrConnectionQueryProbeResult0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionQueryProbeResult0100";
+      console.info(`${caseName} test Start`);
+      try {
+        for (let i = 0; i < 10; i++) {
+          let destination = "www.baidu.com";
+          let duration = 3;
+          connection.queryProbeResult(destination, duration).then((ProbeResultInfo: connection.ProbeResultInfo) => {
+            console.info(`${caseName} ProbeResultInfo: ${JSON.stringify(ProbeResultInfo)}`);
+            console.info(`${caseName} lossRate: ${JSON.stringify(ProbeResultInfo.lossRate)}, rtt: ${JSON.stringify(ProbeResultInfo.rtt)}`);
+            ExpectTrue(ProbeResultInfo.rtt[2] < 3000);
+            console.info(`${caseName}---End`);
+            done();
+          }).catch((error: BusinessError) => {
+            console.info(`${caseName} ProbeResultInfo: err-> ${JSON.stringify(error)}`);
+            ExpectFail();
+            console.info(`${caseName}---End`);
+            done();
+          });
+        }
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionQueryProbeResult0200
+     * @tc.number SUB_NetworkMgr_Connection_QueryProbeResult_0200
+     * @tc.desc   Test the destination parameter is not contained in the queryProbeResult
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionQueryProbeResult0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionQueryProbeResult0200";
+      console.info(`${caseName} test Start`);
+      try {
+        let duration = 3;
+        connection.queryProbeResult(null, duration).then((ProbeResultInfo: connection.ProbeResultInfo) => {
+          console.info(`${caseName} ProbeResultInfo: ${JSON.stringify(ProbeResultInfo)}`);
+          console.info(`${caseName} lossRate: ${JSON.stringify(ProbeResultInfo.lossRate)}, rtt: ${JSON.stringify(ProbeResultInfo.rtt)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} ProbeResultInfo: err-> ${JSON.stringify(error)}`);
+          ExpectTrue(error.code === 401);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionQueryProbeResult0300
+     * @tc.number SUB_NetworkMgr_Connection_QueryProbeResult_0300
+     * @tc.desc   Test the duration parameter is not contained in the queryProbeResult
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionQueryProbeResult0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionQueryProbeResult0300";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = "www.baidu.com";
+        connection.queryProbeResult(destination, null).then((ProbeResultInfo: connection.ProbeResultInfo) => {
+          console.info(`${caseName} ProbeResultInfo: ${JSON.stringify(ProbeResultInfo)}`);
+          console.info(`${caseName} lossRate: ${JSON.stringify(ProbeResultInfo.lossRate)}, rtt: ${JSON.stringify(ProbeResultInfo.rtt)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} ProbeResultInfo: err-> ${JSON.stringify(error)}`);
+          ExpectTrue(error.code === 401);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionQueryProbeResult0400
+     * @tc.number SUB_NetworkMgr_Connection_QueryProbeResult_0400
+     * @tc.desc   Test the destination and duration parameter is not contained in the queryProbeResult
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionQueryProbeResult0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionQueryProbeResult0400";
+      console.info(`${caseName} test Start`);
+      try {
+        connection.queryProbeResult(null, null).then((ProbeResultInfo: connection.ProbeResultInfo) => {
+          console.info(`${caseName} ProbeResultInfo: ${JSON.stringify(ProbeResultInfo)}`);
+          console.info(`${caseName} lossRate: ${JSON.stringify(ProbeResultInfo.lossRate)}, rtt: ${JSON.stringify(ProbeResultInfo.rtt)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} ProbeResultInfo: err-> ${JSON.stringify(error)}`);
+          ExpectTrue(error.code === 401);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionQueryProbeResult0500
+     * @tc.number SUB_NetworkMgr_Connection_QueryProbeResult_0500
+     * @tc.desc   Test the destination is IPV4 address
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionQueryProbeResult0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionQueryProbeResult0500";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = "223.5.5.5";
+        let duration = 3;
+        connection.queryProbeResult(destination, duration).then((ProbeResultInfo: connection.ProbeResultInfo) => {
+          console.info(`${caseName} ProbeResultInfo: ${JSON.stringify(ProbeResultInfo)}`);
+          console.info(`${caseName} lossRate: ${JSON.stringify(ProbeResultInfo.lossRate)}, rtt: ${JSON.stringify(ProbeResultInfo.rtt)}`);
+          ExpectTrue(ProbeResultInfo.rtt[2] < 3000);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} ProbeResultInfo: err-> ${JSON.stringify(error)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionQueryProbeResult0700
+     * @tc.number SUB_NetworkMgr_Connection_QueryProbeResult_0700
+     * @tc.desc   Test the destination is ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionQueryProbeResult0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionQueryProbeResult0700";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = "";
+        let duration = 3;
+        connection.queryProbeResult(destination, duration).then((ProbeResultInfo: connection.ProbeResultInfo) => {
+          console.info(`${caseName} ProbeResultInfo: ${JSON.stringify(ProbeResultInfo)}`);
+          console.info(`${caseName} lossRate: ${JSON.stringify(ProbeResultInfo.lossRate)}, rtt: ${JSON.stringify(ProbeResultInfo.rtt)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} ProbeResultInfo: err-> ${JSON.stringify(error)}`);
+          ExpectTrue(error.code === 2100001);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionQueryProbeResult0800
+     * @tc.number SUB_NetworkMgr_Connection_QueryProbeResult_0800
+     * @tc.desc   Test the destination is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionQueryProbeResult0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionQueryProbeResult0800";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = undefined;
+        let duration = 3;
+        connection.queryProbeResult(destination, duration).then((ProbeResultInfo: connection.ProbeResultInfo) => {
+          console.info(`${caseName} ProbeResultInfo: ${JSON.stringify(ProbeResultInfo)}`);
+          console.info(`${caseName} lossRate: ${JSON.stringify(ProbeResultInfo.lossRate)}, rtt: ${JSON.stringify(ProbeResultInfo.rtt)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} ProbeResultInfo: err-> ${JSON.stringify(error)}`);
+          ExpectTrue(error.code === 401);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionQueryProbeResult0900
+     * @tc.number SUB_NetworkMgr_Connection_QueryProbeResult_0900
+     * @tc.desc   Test the destination is "100.192.192.192"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionQueryProbeResult0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionQueryProbeResult0900";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = "100.192.192.192";
+        let duration = 3;
+        connection.queryProbeResult(destination, duration).then((ProbeResultInfo: connection.ProbeResultInfo) => {
+          console.info(`${caseName} ProbeResultInfo: ${JSON.stringify(ProbeResultInfo)}`);
+          console.info(`${caseName} lossRate: ${JSON.stringify(ProbeResultInfo.lossRate)}, rtt: ${JSON.stringify(ProbeResultInfo.rtt)}`);
+          ExpectTrue(ProbeResultInfo.rtt[2] >= 3000);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} ProbeResultInfo: err-> ${JSON.stringify(error)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionQueryProbeResult1000
+     * @tc.number SUB_NetworkMgr_Connection_QueryProbeResult_1000
+     * @tc.desc   Test the destination is invalid address
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionQueryProbeResult1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionQueryProbeResult1000";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = "123.invalid.com";
+        let duration = 3;
+        connection.queryProbeResult(destination, duration).then((ProbeResultInfo: connection.ProbeResultInfo) => {
+          console.info(`${caseName} ProbeResultInfo: ${JSON.stringify(ProbeResultInfo)}`);
+          console.info(`${caseName} lossRate: ${JSON.stringify(ProbeResultInfo.lossRate)}, rtt: ${JSON.stringify(ProbeResultInfo.rtt)}`);
+          ExpectTrue(ProbeResultInfo.rtt[2] >= 3000);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} ProbeResultInfo: err-> ${JSON.stringify(error)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionQueryProbeResult1100
+     * @tc.number SUB_NetworkMgr_Connection_QueryProbeResult_1100
+     * @tc.desc   Test the destination is "localhost"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionQueryProbeResult1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionQueryProbeResult1100";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = "localhost";
+        let duration = 3;
+        connection.queryProbeResult(destination, duration).then((ProbeResultInfo: connection.ProbeResultInfo) => {
+          console.info(`${caseName} ProbeResultInfo: ${JSON.stringify(ProbeResultInfo)}`);
+          console.info(`${caseName} lossRate: ${JSON.stringify(ProbeResultInfo.lossRate)}, rtt: ${JSON.stringify(ProbeResultInfo.rtt)}`);
+          ExpectTrue(ProbeResultInfo.rtt[2] < 3000);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} ProbeResultInfo: err-> ${JSON.stringify(error)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionQueryProbeResult1200
+     * @tc.number SUB_NetworkMgr_Connection_QueryProbeResult_1200
+     * @tc.desc   Test the duration is -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionQueryProbeResult1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionQueryProbeResult1200";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = "www.baidu.com";
+        let duration = -1;
+        connection.queryProbeResult(destination, duration).then((ProbeResultInfo: connection.ProbeResultInfo) => {
+          console.info(`${caseName} ProbeResultInfo: ${JSON.stringify(ProbeResultInfo)}`);
+          console.info(`${caseName} lossRate: ${JSON.stringify(ProbeResultInfo.lossRate)}, rtt: ${JSON.stringify(ProbeResultInfo.rtt)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} ProbeResultInfo: err-> ${JSON.stringify(error)}`);
+          ExpectTrue(error.code === 2100001);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionQueryProbeResult1300
+     * @tc.number SUB_NetworkMgr_Connection_QueryProbeResult_1300
+     * @tc.desc   Test the duration is 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionQueryProbeResult1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionQueryProbeResult1300";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = "www.baidu.com";
+        let duration = 0;
+        connection.queryProbeResult(destination, duration).then((ProbeResultInfo: connection.ProbeResultInfo) => {
+          console.info(`${caseName} ProbeResultInfo: ${JSON.stringify(ProbeResultInfo)}`);
+          console.info(`${caseName} lossRate: ${JSON.stringify(ProbeResultInfo.lossRate)}, rtt: ${JSON.stringify(ProbeResultInfo.rtt)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} ProbeResultInfo: err-> ${JSON.stringify(error)}`);
+          ExpectTrue(error.code === 2100001);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionQueryProbeResult1400
+     * @tc.number SUB_NetworkMgr_Connection_QueryProbeResult_1400
+     * @tc.desc   Test the duration is 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionQueryProbeResult1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionQueryProbeResult1400";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = "www.baidu.com";
+        let duration = 1;
+        connection.queryProbeResult(destination, duration).then((ProbeResultInfo: connection.ProbeResultInfo) => {
+          console.info(`${caseName} ProbeResultInfo: ${JSON.stringify(ProbeResultInfo)}`);
+          console.info(`${caseName} lossRate: ${JSON.stringify(ProbeResultInfo.lossRate)}, rtt: ${JSON.stringify(ProbeResultInfo.rtt)}`);
+          ExpectTrue(ProbeResultInfo.rtt[2] < 1000);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} ProbeResultInfo: err-> ${JSON.stringify(error)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionQueryProbeResult1500
+     * @tc.number SUB_NetworkMgr_Connection_QueryProbeResult_1500
+     * @tc.desc   Test the ProbeResultInfo lossRate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionQueryProbeResult1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionQueryProbeResult1500";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = "www.baidu.com";
+        let duration = 3;
+        connection.queryProbeResult(destination, duration).then((ProbeResultInfo: connection.ProbeResultInfo) => {
+          console.info(`${caseName} ProbeResultInfo: ${JSON.stringify(ProbeResultInfo)}`);
+          console.info(`${caseName} lossRate: ${JSON.stringify(ProbeResultInfo.lossRate)}, rtt: ${JSON.stringify(ProbeResultInfo.rtt)}`);
+          ExpectTrue(ProbeResultInfo.lossRate < 100);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} ProbeResultInfo: err-> ${JSON.stringify(error)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionQueryProbeResult1600
+     * @tc.number SUB_NetworkMgr_Connection_QueryProbeResult_1600
+     * @tc.desc   Test the ProbeResultInfo lossRate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionQueryProbeResult1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionQueryProbeResult1600";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = "123.invalid.com";
+        let duration = 3;
+        connection.queryProbeResult(destination, duration).then((ProbeResultInfo: connection.ProbeResultInfo) => {
+          console.info(`${caseName} ProbeResultInfo: ${JSON.stringify(ProbeResultInfo)}`);
+          console.info(`${caseName} lossRate: ${JSON.stringify(ProbeResultInfo.lossRate)}, rtt: ${JSON.stringify(ProbeResultInfo.rtt)}`);
+          ExpectTrue(ProbeResultInfo.lossRate === 100);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} ProbeResultInfo: err-> ${JSON.stringify(error)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionQueryProbeResult1900
+     * @tc.number SUB_NetworkMgr_Connection_QueryProbeResult_1900
+     * @tc.desc   Test the duration is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionQueryProbeResult1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionQueryProbeResult1900";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = "www.baidu.com";
+        let duration = undefined;
+        connection.queryProbeResult(destination, duration).then((ProbeResultInfo: connection.ProbeResultInfo) => {
+          console.info(`${caseName} ProbeResultInfo: ${JSON.stringify(ProbeResultInfo)}`);
+          console.info(`${caseName} lossRate: ${JSON.stringify(ProbeResultInfo.lossRate)}, rtt: ${JSON.stringify(ProbeResultInfo.rtt)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} ProbeResultInfo: err-> ${JSON.stringify(error)}`);
+          ExpectTrue(error.code === 401);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrConnectionQueryProbeResult2000
+     * @tc.number SUB_NetworkMgr_Connection_QueryProbeResult_2000
+     * @tc.desc   Test the duration is 1001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrConnectionQueryProbeResult2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionQueryProbeResult2000";
+      console.info(`${caseName} test Start`);
+      try {
+        let destination = "www.baidu.com";
+        let duration = 1001;
+        connection.queryProbeResult(destination, duration).then((ProbeResultInfo: connection.ProbeResultInfo) => {
+          console.info(`${caseName} ProbeResultInfo: ${JSON.stringify(ProbeResultInfo)}`);
+          console.info(`${caseName} lossRate: ${JSON.stringify(ProbeResultInfo.lossRate)}, rtt: ${JSON.stringify(ProbeResultInfo.rtt)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} ProbeResultInfo: err-> ${JSON.stringify(error)}`);
+          ExpectTrue(error.code === 2100001);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
   });
 }

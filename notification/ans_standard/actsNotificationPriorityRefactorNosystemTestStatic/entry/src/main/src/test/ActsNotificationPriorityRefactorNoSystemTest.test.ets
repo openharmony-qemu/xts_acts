@@ -77,6 +77,7 @@ export default function actsNotificationPriorityRefactorNoSystemTest() {
         let TAG: string = "Sub_Notification_Ans_Priority_Setting_Refactoring_static_030"
         const bundleOption: notificationManager.BundleOption = { bundle: 'bundleName' };
         let bundles: Array<notificationManager.BundleOption> = [bundleOption];
+        console.info(TAG + `getPriorityEnabledByBundles start`);
         try {
           notificationManager.getPriorityEnabledByBundles(bundles)
             .then((switches: Map<notificationManager.BundleOption, boolean>) => {
@@ -96,8 +97,13 @@ export default function actsNotificationPriorityRefactorNoSystemTest() {
             });
         }catch(err){
           console.error(TAG + `getPriorityEnabledByBundles trycatch failed, err is ${JSON.stringify(err)}`);
-          expect(false).assertTrue()
-          done()
+          if (err.code === 801) {
+            expect(err.code).assertEqual(801);
+            done()
+          } else {
+            expect(false).assertTrue()
+            done()
+          }
         }
       })
 
@@ -114,20 +120,33 @@ export default function actsNotificationPriorityRefactorNoSystemTest() {
         let TAG: string = "Sub_Notification_Ans_Priority_Setting_Refactoring_static_050"
         const bundleOption: notificationManager.BundleOption = { bundle: bundleName };
         let bundles: Array<notificationManager.BundleOption> = [bundleOption];
-        notificationManager.getPriorityStrategyByBundles(bundles).then((strategies: Map<notificationManager.BundleOption, long>) => {
-          console.info(TAG + `getPriorityStrategyByBundles success strategies: ${JSON.stringify(strategies)}`);
-          expect(false).assertTrue()
-          done()
-        }).catch((err: Error) :void=> {
-          console.info(TAG + `getPriorityStrategyByBundles failed, code is ${err.code}, message is ${err.message}`);
-          if (err.code == 801) {
+        console.info(TAG + `getPriorityStrategyByBundles start`);
+        try{
+          notificationManager.getPriorityStrategyByBundles(bundles).then((strategies: Map<notificationManager.BundleOption, long>) => {
+            console.info(TAG + `getPriorityStrategyByBundles success strategies: ${JSON.stringify(strategies)}`);
+            expect(false).assertTrue()
+            done()
+          }).catch((err: Error) :void=> {
+            console.info(TAG + `getPriorityStrategyByBundles failed, code is ${err.code}, message is ${err.message}`);
+            if (err.code == 801) {
+              expect(err.code).assertEqual(801);
+              done()
+            } else {
+              expect(err.code).assertEqual(202);
+              done()
+            }
+          });
+        }catch(err){
+          console.error(TAG + `getPriorityStrategyByBundles trycatch failed, err is ${JSON.stringify(err)}`);
+          if (err.code === 801) {
             expect(err.code).assertEqual(801);
             done()
           } else {
-            expect(err.code).assertEqual(202);
+            expect(false).assertTrue()
             done()
           }
-        });
+        }
+        
       })
 
     /**
@@ -141,20 +160,31 @@ export default function actsNotificationPriorityRefactorNoSystemTest() {
     it('Sub_Notification_Ans_Priority_Setting_Refactoring_static_008',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
         let TAG: string = "Sub_Notification_Ans_Priority_Setting_Refactoring_static_008"
-        notificationManager.isPriorityIntelligentEnabled().then((result: boolean) => {
-          console.info(TAG + `isPriorityIntelligentEnabled result: ${result}`);
-          expect(false).assertTrue()
-          done()
-        }).catch((err: Error):void => {
-          console.info(TAG + `isPriorityIntelligentEnabled failed, code is ${err.code}, message is ${err.message}`);
-          if (err.code == 801) {
+        try{
+          notificationManager.isPriorityIntelligentEnabled().then((result: boolean) => {
+            console.info(TAG + `isPriorityIntelligentEnabled result: ${result}`);
+            expect(false).assertTrue()
+            done()
+          }).catch((err: Error):void => {
+            console.info(TAG + `isPriorityIntelligentEnabled failed, code is ${err.code}, message is ${err.message}`);
+            if (err.code == 801) {
+              expect(err.code).assertEqual(801);
+              done()
+            } else {
+              expect(err.code).assertEqual(202);
+              done()
+            }
+          });
+        }catch(err){
+          console.error(TAG + `isPriorityIntelligentEnabled trycatch failed, err is ${JSON.stringify(err)}`);
+          if (err.code === 801) {
             expect(err.code).assertEqual(801);
             done()
           } else {
-            expect(err.code).assertEqual(202);
+            expect(false).assertTrue()
             done()
           }
-        });
+        }
       })
 
     /**
@@ -170,20 +200,31 @@ export default function actsNotificationPriorityRefactorNoSystemTest() {
         let TAG: string = "Sub_Notification_Ans_Priority_Setting_Refactoring_static_023"
         const bundleOption: notificationManager.BundleOption = { bundle: bundleName };
         let switches: Map<notificationManager.BundleOption, boolean> = new Map<notificationManager.BundleOption, boolean>([[bundleOption, false]]);
-        notificationManager.setPriorityEnabledByBundles(switches).then(() => {
-          console.info(TAG + `setPriorityEnabledByBundles success`);
-          expect(false).assertTrue()
-          done()
-        }).catch((err: Error) :void=> {
-          console.info(TAG + `setPriorityEnabledByBundles failed, code is ${err.code}, message is ${err.message}`);
-          if (err.code == 801) {
+        try{
+          notificationManager.setPriorityEnabledByBundles(switches).then(() => {
+            console.info(TAG + `setPriorityEnabledByBundles success`);
+            expect(false).assertTrue()
+            done()
+          }).catch((err: Error) :void=> {
+            console.info(TAG + `setPriorityEnabledByBundles failed, code is ${err.code}, message is ${err.message}`);
+            if (err.code == 801) {
+              expect(err.code).assertEqual(801);
+              done()
+            } else {
+              expect(err.code).assertEqual(202);
+              done()
+            }
+          });
+        }catch(err){
+          console.error(TAG + `setPriorityEnabledByBundles trycatch failed, err is ${JSON.stringify(err)}`);
+          if (err.code === 801) {
             expect(err.code).assertEqual(801);
             done()
           } else {
-            expect(err.code).assertEqual(202);
+            expect(false).assertTrue()
             done()
           }
-        });
+        }
       })
 
     /**
@@ -197,20 +238,31 @@ export default function actsNotificationPriorityRefactorNoSystemTest() {
     it('Sub_Notification_Ans_Priority_Setting_Refactoring_static_006',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
         let TAG: string = "Sub_Notification_Ans_Priority_Setting_Refactoring_static_006"
-        notificationManager.setPriorityIntelligentEnabled(false).then(() => {
-          console.info(TAG + `setPriorityIntelligentEnabled success`);
-          expect(false).assertTrue()
-          done()
-        }).catch((err: Error) :void=> {
-          console.info(TAG + `setPriorityIntelligentEnabled failed, code is ${err.code}, message is ${err.message}`);
-          if (err.code == 801) {
+        try{
+          notificationManager.setPriorityIntelligentEnabled(false).then(() => {
+            console.info(TAG + `setPriorityIntelligentEnabled success`);
+            expect(false).assertTrue()
+            done()
+          }).catch((err: Error) :void=> {
+            console.info(TAG + `setPriorityIntelligentEnabled failed, code is ${err.code}, message is ${err.message}`);
+            if (err.code == 801) {
+              expect(err.code).assertEqual(801);
+              done()
+            } else {
+              expect(err.code).assertEqual(202);
+              done()
+            }
+          });
+        }catch(err){
+          console.error(TAG + `setPriorityIntelligentEnabled trycatch failed, err is ${JSON.stringify(err)}`);
+          if (err.code === 801) {
             expect(err.code).assertEqual(801);
             done()
           } else {
-            expect(err.code).assertEqual(202);
+            expect(false).assertTrue()
             done()
           }
-        });
+        }
       })
 
     /**
@@ -227,20 +279,31 @@ export default function actsNotificationPriorityRefactorNoSystemTest() {
         const bundleOption: notificationManager.BundleOption = { bundle: bundleName };
         let strategies: Map<notificationManager.BundleOption, long> =
           new Map<notificationManager.BundleOption, long>([[bundleOption, notificationManager.PriorityStrategyStatus.STATUS_INTELLIGENT | notificationManager.PriorityStrategyStatus.STATUS_USER_DEFINED ]]);
-        notificationManager.setPriorityStrategyByBundles(strategies).then(() => {
-          console.info(TAG + `setPriorityStrategyByBundles success`);
-          expect(false).assertTrue()
-          done()
-        }).catch((err: Error) :void=> {
-          console.info(TAG + `setPriorityStrategyByBundles failed, code is ${err.code}, message is ${err.message}`);
-          if (err.code == 801) {
+        try{
+          notificationManager.setPriorityStrategyByBundles(strategies).then(() => {
+            console.info(TAG + `setPriorityStrategyByBundles success`);
+            expect(false).assertTrue()
+            done()
+          }).catch((err: Error) :void=> {
+            console.info(TAG + `setPriorityStrategyByBundles failed, code is ${err.code}, message is ${err.message}`);
+            if (err.code == 801) {
+              expect(err.code).assertEqual(801);
+              done()
+            } else {
+              expect(err.code).assertEqual(202);
+              done()
+            }
+          });
+        }catch(err){
+          console.error(TAG + `setPriorityStrategyByBundles trycatch failed, err is ${JSON.stringify(err)}`);
+          if (err.code === 801) {
             expect(err.code).assertEqual(801);
             done()
           } else {
-            expect(err.code).assertEqual(202);
+            expect(false).assertTrue()
             done()
           }
-        });
+        }
       })
   })
 }

@@ -1,6 +1,6 @@
 'use static'
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -21,7 +21,7 @@ import { State, AppStorage, Observed } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
 @Observed
-class SearchModifier implements AttributeModifier<SearchAttribute> {
+export class SearchModifier implements AttributeModifier<SearchAttribute> {
   public index: Int = 0;
   applyNormalAttribute(instance: SearchAttribute): void {
     instance.height(56)

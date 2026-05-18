@@ -13,7 +13,7 @@ class BaseAtomic {
   protected async _compareExchange(index: int, expected: number, newValue: number): Promise<long> {
     return new Promise<long>((resolve) => {
       setTimeout(() => {
-        const oldValue = Atomics.compareExchange(this.ia, index, expected as long, newValue as long);
+        const oldValue = Atomics.compareExchange(this.ia, index, expected.toLong(), newValue.toLong());
         resolve(oldValue);
       }, 3);
     });
@@ -84,7 +84,7 @@ class AtomicCounter78 {
   async increment(): Promise<long> {
     return new Promise<long>((resolve) => {
       setTimeout(() => {
-        const current = this.ia[this.index] as long;
+        const current = this.ia[this.index].toLong();
         const oldValue = Atomics.compareExchange(this.ia, this.index, current as long, (current + 1) as long);
         resolve(oldValue === current ? current + 1 : current);
       }, 4);
@@ -354,7 +354,7 @@ export default function atomicsCompareExchangeTest() {
       const ia = new Int32Array(sab);
       const maxInt32: int = 2147483647;
       ia[0] = maxInt32;
-      const oldValue = Atomics.compareExchange(ia, 0, maxInt32 as long, -1);
+      const oldValue = Atomics.compareExchange(ia, 0, maxInt32.toLong(), -1);
       expect(oldValue).assertEqual(maxInt32);
       expect(ia[0]).assertEqual(-1);
     });
@@ -372,7 +372,7 @@ export default function atomicsCompareExchangeTest() {
       const ia = new Int32Array(sab);
       const minInt32: int = -2147483648;
       ia[0] = minInt32;
-      const oldValue = Atomics.compareExchange(ia, 0, minInt32 as long, 0);
+      const oldValue = Atomics.compareExchange(ia, 0, minInt32.toLong(), 0);
       expect(oldValue).assertEqual(minInt32);
       expect(ia[0]).assertEqual(0);
     });
@@ -484,7 +484,7 @@ export default function atomicsCompareExchangeTest() {
       const ia = new Int16Array(sab);
       const minInt16: int = -32768;
       ia[0] = minInt16;
-      const oldValue = Atomics.compareExchange(ia, 0, minInt16 as long, 32767);
+      const oldValue = Atomics.compareExchange(ia, 0, minInt16.toLong(), 32767);
       expect(oldValue).assertEqual(minInt16);
       expect(ia[0]).assertEqual(32767);
     });
@@ -503,7 +503,7 @@ export default function atomicsCompareExchangeTest() {
       const ia = new Int32Array(sab);
       ia[0] = 10;
       try {
-        Atomics.compareExchange(ia, 0, 10.5 as long, 20)
+        Atomics.compareExchange(ia, 0, 10.5.toLong(), 20)
       } catch (e) {
         expect(e.message).assertContain(100);
       }
@@ -522,7 +522,7 @@ export default function atomicsCompareExchangeTest() {
       const ia = new Int32Array(sab);
       ia[0] = 10;
       try {
-        Atomics.compareExchange(ia, 0, 10, 20.5 as long)
+        Atomics.compareExchange(ia, 0, 10, 20.5.toLong())
       } catch (e) {
         expect(e.message).assertContain(100);
       }
@@ -675,7 +675,7 @@ export default function atomicsCompareExchangeTest() {
       const sab = new ArrayBuffer(4);
       const ia = new Int32Array(sab);
       try {
-        Atomics.compareExchange(ia, 0.5 as int, 10, 20)
+        Atomics.compareExchange(ia, 0.5.toInt(), 10, 20)
       } catch (e) {
         expect(e.message).assertContain(100);
       }
@@ -1045,7 +1045,7 @@ export default function atomicsCompareExchangeTest() {
       const ia = new Int8Array(sab);
       const value: int = -127; // Int8 min is -128
       ia[0] = value;
-      const oldValue = Atomics.compareExchange(ia, 0, value as long, -1);
+      const oldValue = Atomics.compareExchange(ia, 0, value.toLong(), -1);
       expect(oldValue).assertEqual(value);
       expect(ia[0]).assertEqual(-1);
     });
@@ -1102,7 +1102,7 @@ export default function atomicsCompareExchangeTest() {
       const maxInt32: int = 2147483647;
       const minInt32: int = -2147483648;
       ia[0] = maxInt32;
-      const oldValue = Atomics.compareExchange(ia, 0, maxInt32 as long, minInt32);
+      const oldValue = Atomics.compareExchange(ia, 0, maxInt32.toLong(), minInt32);
       expect(oldValue).assertEqual(maxInt32);
       expect(ia[0]).assertEqual(minInt32);
     });
@@ -1126,7 +1126,7 @@ export default function atomicsCompareExchangeTest() {
       const updateTask = async (taskId: number) => {
         return new Promise<void>((resolve) => {
           // Only update if current value matches taskId (ensures ordered updates)
-          const oldValue = Atomics.compareExchange(ia, 0, taskId as long, (taskId + 1) as long);
+          const oldValue = Atomics.compareExchange(ia, 0, taskId.toLong(), (taskId + 1).toLong());
           if (oldValue === taskId) {
             completed++;
           }
@@ -1238,7 +1238,7 @@ export default function atomicsCompareExchangeTest() {
           setTimeout(() => {
             const oldValue = Atomics.compareExchange(ia, index, expected as long, newValue);
             resolve(oldValue);
-          }, Math.random() * 8 as int);
+          }, (Math.random() * 8).toInt());
         });
       };
 
@@ -1370,7 +1370,7 @@ export default function atomicsCompareExchangeTest() {
               completed++;
             }
             resolve(undefined);
-          }, target * 5 as int);
+          }, (target * 5).toInt());
         });
       };
 
@@ -1532,7 +1532,7 @@ export default function atomicsCompareExchangeTest() {
           return new Promise<boolean>((resolve) => {
             setTimeout(() => {
               const current = ia[0];
-              const oldValue = Atomics.compareExchange(ia, 0, current as long, (current + 1) as long);
+              const oldValue = Atomics.compareExchange(ia, 0, current.toLong(), (current + 1).toLong());
               const isTargetReached = ia[0] === target;
               resolve(isTargetReached);
             }, 4);
@@ -1697,7 +1697,7 @@ export default function atomicsCompareExchangeTest() {
         const updatePromise = new Promise<long>((resolve) => {
           const attempt = () => {
             const current = ia[0];
-            const oldValue = Atomics.compareExchange(ia, 0, current as long, (current + 5) as long);
+            const oldValue = Atomics.compareExchange(ia, 0, current.toLong(), (current + 5).toLong());
             if (oldValue === current) {
               resolve(oldValue);
             } else {
@@ -1711,7 +1711,7 @@ export default function atomicsCompareExchangeTest() {
         const timeoutPromise = new Promise<long>((resolve) => {
           setTimeout(() => {
             usedFallback = true;
-            resolve(ia[0] as long); // Return current value as fallback
+            resolve(ia[0].toLong()); // Return current value as fallback
           }, timeoutMs);
         });
 
@@ -1846,11 +1846,11 @@ export default function atomicsCompareExchangeTest() {
       ia[0] = initialVal;
 
       // 1. Test successful conditional update (current value matches expected old value)
-      const successOldVal = Atomics.compareExchange(ia, 0, expectedOldVal as long, updateVal);
+      const successOldVal = Atomics.compareExchange(ia, 0, expectedOldVal.toLong(), updateVal);
       const updatedVal = Atomics.load(ia, 0);
 
       // 2. Test failed conditional update (current value doesn't match invalid old value)
-      const failOldVal = Atomics.compareExchange(ia, 0, invalidOldVal as long, 100);
+      const failOldVal = Atomics.compareExchange(ia, 0, invalidOldVal.toLong(), 100);
       const finalVal = Atomics.load(ia, 0);
 
       // Key assertions
@@ -1882,7 +1882,7 @@ export default function atomicsCompareExchangeTest() {
           // Simulate async state fetch (e.g., from another thread)
           setTimeout(() => {
             const dynamicVal = ia[0] + 2; // Expected value = current + 2
-            resolve(dynamicVal as long);
+            resolve(dynamicVal.toLong());
           }, 5);
         });
       };
@@ -2050,7 +2050,7 @@ export default function atomicsCompareExchangeTest() {
 
       // Update with dynamic newValue
       const dynamicValueUpdate = async (): Promise<long> => {
-        const expected: long = ia[0] as long;
+        const expected: long = ia[0].toLong();
         const newValue = await getDynamicNewValue(expected); // Get dynamic value
         return new Promise<long>((resolve) => {
           setTimeout(() => {
@@ -2137,7 +2137,7 @@ export default function atomicsCompareExchangeTest() {
         return async (): Promise<long> => {
           return new Promise<long>((resolve) => {
             setTimeout(() => {
-              const current = ia[0] as long;
+              const current = ia[0].toLong();
               const oldValue = Atomics.compareExchange(ia, 0, current as long, current + step);
               resolve(oldValue);
             }, 3);
@@ -2287,7 +2287,7 @@ export default function atomicsCompareExchangeTest() {
         const expectedValue = ia[targetIndex];
         return new Promise<long>((resolve) => {
           setTimeout(() => {
-            const oldValue = Atomics.compareExchange(ia, targetIndex, expectedValue as long, newValue);
+            const oldValue = Atomics.compareExchange(ia, targetIndex, expectedValue.toLong(), newValue);
             resolve(oldValue);
           }, 3);
         });

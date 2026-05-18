@@ -21,6 +21,9 @@ extern int VideoEncodeMseQp0200Test();
 extern int VideoEncodeMseQp0300Test();
 extern int VideoEncodeMseQp0400Test();
 extern int VideoEncodeRepeat0100Test();
+extern int VideoEncodePreProcess0100Test();
+extern int VideoEncodePreProcess0200Test();
+extern int VideoEncodePreProcess0300Test();
 
 extern void InitGetparamTest();
 extern void TestTearDownGetparam();

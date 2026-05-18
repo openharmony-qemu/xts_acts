@@ -14,14 +14,14 @@ export default function HuksAttestTest() {
     })
     
     /**
-     * @tc.name   SecurityHuksNapiAttest0100
-     * @tc.number Security_HUKS_NAPI_Attest_0100
+     * @tc.name   SUB_SECURITY_HUKS_NAPI_ATTEST_0100
+     * @tc.number SUB_SECURITY_HUKS_NAPI_ATTEST_0100
      * @tc.desc   attest with right params and validate success.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SecurityHuksNapiAttest0100', Level.LEVEL0, async () => {
+    it('SUB_SECURITY_HUKS_NAPI_ATTEST_0100', Level.LEVEL0, async () => {
       try {
         const result = await libHuks.HuksAttestTest(0);
         expect(result).assertEqual(0);

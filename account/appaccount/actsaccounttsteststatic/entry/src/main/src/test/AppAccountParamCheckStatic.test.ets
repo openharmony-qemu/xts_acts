@@ -36,7 +36,6 @@ export default function AppAccountParamCheckStatic() {
         try {
           await accountManager.removeAccount(localName);
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>removeAccount err: " + JSON.stringify(err));
         }
       }
@@ -62,7 +61,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_0100 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_0100 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -85,7 +83,6 @@ export default function AppAccountParamCheckStatic() {
           await accountManager.createAccount(name, undefined);
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_0200 success");
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_0200 run err");
           expect().assertFail();
         }
@@ -124,7 +121,6 @@ export default function AppAccountParamCheckStatic() {
             }
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_0300 err: " + err.code);
           expect().assertFail();
           done();
@@ -148,7 +144,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_0400 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_0400 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -173,7 +168,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_0500 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_0500 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -198,7 +192,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_0600 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_0600 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -222,7 +215,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_0700 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_0700 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -248,7 +240,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_0800 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_0800 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -272,7 +263,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_0900 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_0900 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -298,7 +288,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_1000 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_1000 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -322,7 +311,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_1100 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_1100 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -347,7 +335,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_1200 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_1200 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -371,7 +358,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_5900 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_5900 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -402,7 +388,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_1300 catch err: " + err.code);
           expect(err.code).assertEqual(12300002);
           done();
@@ -427,7 +412,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_1400 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_1400 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -451,7 +435,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_1401 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_1401 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -486,7 +469,6 @@ export default function AppAccountParamCheckStatic() {
             }
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_1500 err: " + err.code);
           expect().assertFail();
           done();
@@ -518,7 +500,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_1600 catch err: " + err.code);
           expect(err.code).assertEqual(12300002);
           done();
@@ -550,7 +531,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_1700 catch err: " + err.code);
           expect(err.code).assertEqual(12300002);
           done();
@@ -583,7 +563,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_1800 catch err: " + err.code);
           expect(err.code).assertEqual(12300002);
           done();
@@ -615,7 +594,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_1900 catch err: " + err.code);
           expect(err.code).assertEqual(12300002);
           done();
@@ -647,7 +625,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_2000 catch err: " + err.code);
           expect(err.code).assertEqual(12300002);
           done();
@@ -678,7 +655,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_2100 catch err: " + err.code);
           expect().assertFail();
           done();
@@ -709,7 +685,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_2200 catch err: " + err.code);
           expect().assertFail();
           done();
@@ -733,7 +708,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_2300 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_2300 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -757,7 +731,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_2400 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_2400 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -789,7 +762,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_2500 catch err: " + err.code);
           expect(err.code).assertEqual(12300002);
           done();
@@ -820,7 +792,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_2600 catch err: " + err.code);
           expect(err.code).assertEqual(12300002);
           done();
@@ -853,7 +824,6 @@ export default function AppAccountParamCheckStatic() {
             }
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_2700 err: " + err.code);
           expect().assertFail();
           done();
@@ -884,7 +854,6 @@ export default function AppAccountParamCheckStatic() {
             }
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_2800 err: " + err.code);
           expect().assertFail();
           done();
@@ -917,7 +886,6 @@ export default function AppAccountParamCheckStatic() {
             }
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_2900 err: " + err.code);
           expect().assertFail();
           done();
@@ -950,7 +918,6 @@ export default function AppAccountParamCheckStatic() {
             }
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_3000 err: " + err.code);
           expect().assertFail();
           done();
@@ -983,7 +950,6 @@ export default function AppAccountParamCheckStatic() {
             }
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_3100 err: " + err.code);
           expect().assertFail();
           done();
@@ -1009,7 +975,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_3200 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_3200 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -1035,7 +1000,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_3300 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_3300 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -1061,7 +1025,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_3400 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_3400 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -1086,7 +1049,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_3500 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_3500 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -1111,7 +1073,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_3600 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_3600 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -1142,7 +1103,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_3700 catch err: " + err.code);
           expect(err.code).assertEqual(12300002);
           done();
@@ -1168,7 +1128,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_3800 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_3800 err: " + err.code);
           expect(err.code).assertEqual(12300003);
         }
@@ -1194,7 +1153,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_3900 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_3900 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -1220,7 +1178,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_4000 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_4000 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -1252,7 +1209,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_4100 catch err: " + err.code);
           expect().assertFail();
           done();
@@ -1279,7 +1235,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_4200 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_4200 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -1306,7 +1261,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_4300 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_4300 err: " + err.code);
           expect(err.code).assertEqual(12300003);
         }
@@ -1333,7 +1287,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_4400 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_4400 err: " + err.code);
           expect(err.code).assertEqual(12300003);
         }
@@ -1360,7 +1313,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_4500 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_4500 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -1393,7 +1345,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_4600 catch err: " + err.code);
           expect(err.code).assertEqual(12300002);
           done();
@@ -1419,7 +1370,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_4700 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_4700 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -1444,7 +1394,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_4800 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_4800 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -1469,7 +1418,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_4900 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_4900 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -1494,7 +1442,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_5000 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_5000 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -1519,7 +1466,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_5100 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_5100 err: " + err.code);
           expect(err.code).assertEqual(12300003);
         }
@@ -1544,7 +1490,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_5200 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_5200 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -1570,7 +1515,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_5300 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_5300 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -1596,7 +1540,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_5400 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_5400 err: " + err.code);
           expect(err.code).assertEqual(12300003);
         }
@@ -1622,7 +1565,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_5500 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_5500 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -1654,7 +1596,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_5600 catch err: " + err.code);
           expect(err.code).assertEqual(12300002);
           done();
@@ -1679,7 +1620,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_5700 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_5700 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -1704,7 +1644,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_5800 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_5800 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -1730,7 +1669,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_6000 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_6000 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -1755,7 +1693,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_6100 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_6100 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -1786,7 +1723,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_6200 catch err: " + err.code);
           expect(err.code).assertEqual(12300002);
           done();
@@ -1812,7 +1748,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_6300 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_6300 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -1838,7 +1773,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_6400 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_6400 err: " + err.code);
           expect(err.code).assertEqual(12300003);
         }
@@ -1864,7 +1798,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_6500 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_6500 err: " + err.code);
           expect(err.code).assertEqual(12300003);
         }
@@ -1891,7 +1824,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_6600 catch err: " + err.code);
           expect().assertFail();
           done();
@@ -1917,7 +1849,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_6700 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_6700 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -1943,7 +1874,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_6800 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_6800 err: " + err.code);
           expect(err.code).assertEqual(12300003);
         }
@@ -1969,7 +1899,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_6900 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_6900 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -2001,7 +1930,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_7000 catch err: " + err.code);
           expect().assertFail();
           done();
@@ -2027,7 +1955,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_7100 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_7100 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -2053,7 +1980,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_7200 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_7200 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -2079,7 +2005,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_7300 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_7300 err: " + err.code);
           expect(err.code).assertEqual(12300003);
         }
@@ -2111,7 +2036,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_7400 catch err: " + err.code);
           expect().assertFail();
           done();
@@ -2143,7 +2067,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_7500 catch err: " + err.code);
           expect().assertFail();
           done();
@@ -2169,7 +2092,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_7600 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_7600 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -2195,7 +2117,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_7700 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_7700 err: " + err.code);
           expect(err.code).assertEqual(12300002);
         }
@@ -2221,7 +2142,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_7800 run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_7800 err: " + err.code);
           expect(err.code).assertEqual(12300003);
         }
@@ -2253,7 +2173,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_7900 catch err: " + err.code);
           expect().assertFail();
           done();
@@ -2284,7 +2203,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_8000 catch err: " + err.code);
           expect().assertFail();
           done();
@@ -2316,7 +2234,6 @@ export default function AppAccountParamCheckStatic() {
             }
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_8200 err: " + err.code);
           expect().assertFail();
           done();
@@ -2348,7 +2265,6 @@ export default function AppAccountParamCheckStatic() {
             }
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_8300 err: " + err.code);
           expect().assertFail();
           done();
@@ -2382,7 +2298,6 @@ export default function AppAccountParamCheckStatic() {
             }
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_8400 err: " + err.code);
           expect().assertFail();
           done();
@@ -2417,7 +2332,6 @@ export default function AppAccountParamCheckStatic() {
             }
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_8500 err: " + err.code);
           expect().assertFail();
           done();
@@ -2447,7 +2361,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_8600 catch err: " + err.code);
           expect(err.code).assertEqual(12300002);
           done();
@@ -2478,7 +2391,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_8700 catch err: " + err.code);
           expect(err.code).assertEqual(12300002);
           done();
@@ -2509,7 +2421,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_8800 catch err: " + err.code);
           expect(err.code).assertEqual(12300002);
           done();
@@ -2539,7 +2450,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_8900 catch err: " + err.code);
           expect(err.code).assertEqual(12300002);
           done();
@@ -2571,7 +2481,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_9000 catch err: " + err.code);
           expect().assertFail();
           done();
@@ -2601,7 +2510,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_9100 catch err: " + err.code);
           expect().assertFail();
           done();
@@ -2633,7 +2541,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_9200 catch err: " + err.code);
           expect().assertFail();
           done();
@@ -2663,7 +2570,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_9300 catch err: " + err.code);
           expect(err.code).assertEqual(12300002);
           done();
@@ -2693,7 +2599,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_8100 catch err: " + err.code);
           expect(err.code).assertEqual(12300002);
           done();
@@ -2723,7 +2628,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_9400 catch err: " + err.code);
           expect(err.code).assertEqual(12300002);
           done();
@@ -2754,7 +2658,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_9500 catch err: " + err.code);
           expect(err.code).assertEqual(12300002);
           done();
@@ -2781,7 +2684,6 @@ export default function AppAccountParamCheckStatic() {
           });
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_9600 err: " + err.code);
           expect(err.code).assertEqual(12300002);
           done();
@@ -2817,7 +2719,6 @@ export default function AppAccountParamCheckStatic() {
             }
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_9700 err: " + err.code);
           expect().assertFail();
           done();
@@ -2849,7 +2750,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_9800 catch err: " + err.code);
           expect().assertFail();
           done();
@@ -2881,7 +2781,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_9900 catch err: " + err.code);
           expect().assertFail();
           done();
@@ -2914,7 +2813,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_10000 catch err: " + err.code);
           expect().assertFail();
           done();
@@ -2946,7 +2844,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_10100 catch err: " + err.code);
           expect(err.code).assertEqual(12300002);
           done();
@@ -2978,7 +2875,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_10200 catch err: " + err.code);
           expect(err.code).assertEqual(12300002);
           done();
@@ -3009,7 +2905,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_10300 catch err: " + err.code);
           expect(err.code).assertEqual(12300002);
           done();
@@ -3040,7 +2935,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_10400 catch err: " + err.code);
           expect(err.code).assertEqual(12300002);
           done();
@@ -3070,7 +2964,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_10500 catch err: " + err.code);
           expect(err.code).assertEqual(12300002);
           done();
@@ -3100,7 +2993,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_10600 catch err: " + err.code);
           expect(err.code).assertEqual(12300002);
           done();
@@ -3132,7 +3024,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_10700 catch err: " + err.code);
           expect(err.code).assertEqual(12300002);
           done();
@@ -3163,7 +3054,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_10800 catch err: " + err.code);
           expect(err.code).assertEqual(12300002);
           done();
@@ -3191,7 +3081,6 @@ export default function AppAccountParamCheckStatic() {
           });
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_10900 err: " + err.code);
           expect().assertFail();
           done();
@@ -3217,7 +3106,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_11000 run success");
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_11000 err: " + err.code);
           expect().assertFail();
           done();
@@ -3250,7 +3138,6 @@ export default function AppAccountParamCheckStatic() {
             }
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_11100 err: " + err.code);
           expect().assertFail();
           done();
@@ -3283,7 +3170,6 @@ export default function AppAccountParamCheckStatic() {
             }
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_11200 err: " + err.code);
           expect().assertFail();
           done();
@@ -3319,7 +3205,6 @@ export default function AppAccountParamCheckStatic() {
           });
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_11300 err: " + err.code);
           expect().assertFail();
           done();
@@ -3355,7 +3240,6 @@ export default function AppAccountParamCheckStatic() {
           });
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_11400 err: " + err.code);
           expect().assertFail();
           done();
@@ -3388,7 +3272,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_11500 catch err: " + err.code);
           expect().assertFail();
           done();
@@ -3419,7 +3302,6 @@ export default function AppAccountParamCheckStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_11600 catch err: " + err.code);
           expect(err.code).assertEqual(12300002);
           done();
@@ -3505,7 +3387,6 @@ export default function AppAccountParamCheckStatic() {
             }
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_11900 err: " + err.code);
           expect().assertFail();
           done();
@@ -3532,7 +3413,6 @@ export default function AppAccountParamCheckStatic() {
           });
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_12000 err: " + err.code);
           expect().assertFail();
           done();
@@ -3559,7 +3439,6 @@ export default function AppAccountParamCheckStatic() {
           });
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_12100 err: " + err.code);
           expect().assertFail();
           done();
@@ -3586,7 +3465,6 @@ export default function AppAccountParamCheckStatic() {
           });
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_12200 err: " + err.code);
           expect().assertFail();
           done();
@@ -3613,7 +3491,6 @@ export default function AppAccountParamCheckStatic() {
           });
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_12300 err: " + err.code);
           expect().assertFail();
           done();
@@ -3640,7 +3517,6 @@ export default function AppAccountParamCheckStatic() {
           });
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_12400 err: " + err.code);
           expect().assertFail();
           done();
@@ -3666,7 +3542,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_12500 run success");
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_12500 err: " + err.code);
           expect().assertFail();
           done();
@@ -3691,7 +3566,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_12600 run success");
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_12600 err: " + err.code);
           expect().assertFail();
           done();
@@ -3717,7 +3591,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_11000 run success");
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_11000 err: " + err.code);
           expect().assertFail();
           done();
@@ -3743,7 +3616,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_12800 run success");
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_12800 err: " + err.code);
           expect().assertFail();
           done();
@@ -3769,7 +3641,6 @@ export default function AppAccountParamCheckStatic() {
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_12900 run success");
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountParamCheckStatic_12900 err: " + err.code);
           expect().assertFail();
           done();

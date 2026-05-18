@@ -15,6 +15,7 @@
 import MultiNavigationTest from './MultiNavigation/MultiNavigationTest.test'
 import MultiEntry from './MultiNavigation/MultiEntry.test'
 import MultiEntryUndefined from './MultiNavigation/MultiEntryUndefined.test'
+import multiNavigationValue from './MultiNavigation/multiNavigationValue.test'
 import MultiNavigation1 from './MultiNavigation/MultiNavigation1.test'
 import MultiNavigation2 from './MultiNavigation/MultiNavigation2.test'
 import MultiNavigation3 from './MultiNavigation/MultiNavigation3.test'
@@ -52,6 +53,7 @@ export default function testsuite() {
   MultiNavigationTest();
   MultiEntry();
   MultiEntryUndefined();
+  multiNavigationValue();
   MultiNavigation1()
   MultiNavigation2()
   MultiNavigation3()

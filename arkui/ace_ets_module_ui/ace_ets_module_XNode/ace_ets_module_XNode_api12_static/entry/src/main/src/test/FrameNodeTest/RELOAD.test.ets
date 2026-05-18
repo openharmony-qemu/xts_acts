@@ -83,7 +83,7 @@ it('RELOAD_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> =
       let obj = JSON.parseJsonElement(strJson);
       console.info("[RELOAD_static_0100] component obj is: " + JSON.stringify(obj));
       console.info("[RELOAD_static_0100] content obj is: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual("appear:Hello 100");
+      expect(obj.getElement('$attrs').getString('content')).assertEqual("appear:Hello 40");
       console.info('[RELOAD_static_0100] END');
       done();
     });

@@ -17,6 +17,9 @@
         "MainAbility/pages/CommonMethod/hitTestBehaviorNullAndUndefined",
         "MainAbility/pages/CommonMethod/backgroundNullAndUndefined",
         "MainAbility/pages/CommonMethod/backgroundImageNullAndUndefined",
-        "MainAbility/pages/CommonMethod/backgroundImageSizeNullAndUndefined"
+        "MainAbility/pages/CommonMethod/backgroundImageSizeNullAndUndefined",
+        "MainAbility/pages/ColorMetrics/backgroundColorCreateHDRColorTest",
+        "MainAbility/pages/ColorMetrics/createHDRColorWithLogExposure",
+        "MainAbility/pages/ColorMetrics/createHDRColorWithLinearExposure"
     ]
 }

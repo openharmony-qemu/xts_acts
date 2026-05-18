@@ -88,5 +88,26 @@ export default function webViewControllerPart3Test() {
         done();
       })
 
+    /**
+     * @tc.name   testSetNetworkAvailableStatic003
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETNETWORKAVAILABLE_0300
+     * @tc.desc   test setNetworkAvailable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetNetworkAvailableStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent("testSetNetworkAvailable003", 10)
+        await Utils.msSleep(2000);
+        Utils.registerEvent("testSetNetworkAvailable003", 17100001, 100057, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebViewControllerTestButton', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+
   })
 }

@@ -171,10 +171,6 @@ export class KeyboardDelegate {
           console.info(TAG + '====>inputMethodAbility_test_072 event:' + data.event);
           that.inputMethodAbility_test_072();
           break;
-        case 73:
-          console.info(TAG + '====>inputMethodAbility_test_073 event:' + data.event);
-          that.inputMethodAbility_test_073();
-          break;
         case 74:
           console.info(TAG + '====>inputMethodAbility_test_074 event:' + data.event);
           that.inputMethodAbility_test_074();
@@ -1013,41 +1009,6 @@ export class KeyboardDelegate {
       commoneventmanager.publish("inputMethodAbility_test_072", commonEventPublishData, this.publishCallback);
       clearTimeout(t);
     }, 2000);
-  }
-
-  async inputMethodAbility_test_073() {
-    let commonEventPublishData = {
-      data: "FAILED"
-    };
-    console.info(TAG + '====>receive inputMethodAbility_test_073 success');
-    let count = 0;
-    inputKeyboardDelegate.on('keyDown', (keyEvent) => {
-      inputKeyboardDelegate.off('keyDown');
-      console.info(TAG + "====>inputKeyboardDelegate.on('keyDown') count: " + count);
-      if (keyEvent.keyCode === 2000) {
-        count += 1;
-      }
-      return true;
-    });
-
-    inputKeyboardDelegate.on('keyUp', (keyEvent) => {
-      inputKeyboardDelegate.off('keyUp');
-      console.info(TAG + "====>inputKeyboardDelegate.on('keyUp') count: " + count);
-      if (keyEvent.keyCode === 2000) {
-        count += 1;
-      }
-      console.info(TAG + "====>inputKeyboardDelegate.on('keyUp') count: " + count);
-      return true;
-    });
-    let t = setTimeout(() => {
-      if (count === 2) {
-        commonEventPublishData = {
-          data: "SUCCESS"
-        };
-      }
-      commoneventmanager.publish("inputMethodAbility_test_073", commonEventPublishData, this.publishCallback);
-      clearTimeout(t);
-    }, 800);
   }
 
   async inputMethodAbility_test_074() {

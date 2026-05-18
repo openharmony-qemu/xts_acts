@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -45,7 +45,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function LongPressGestureLongClickTest() {
   describe('LongPressGestureLongClickTest', () => {
 
-    waitForCompletion(async ()=>{await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")})
+    UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility").awaitSync()
 
 
     const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!
@@ -107,8 +107,8 @@ it('LongPressGestureLongClickTest_static_0010', Level.LEVEL0, async (done: () =>
 
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.longClick(Math.round(areaObj.left + areaWidth / 2) as Int,
-        Math.round(areaObj.top + areaHeight / 2) as Int);
+      await driver.longClick(Math.round(areaObj.left + areaWidth / 2).toInt(),
+        Math.round(areaObj.top + areaHeight / 2).toInt());
       await CommonFunc.sleep(3000);
 
       let text1 = inspector.getInspectorByKey('LongPressGestureLongClick_repeat');

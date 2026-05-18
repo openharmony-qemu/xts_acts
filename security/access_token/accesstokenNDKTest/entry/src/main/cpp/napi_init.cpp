@@ -35,7 +35,7 @@ static napi_value OsCheckSelfPermissionA(napi_env env,
 static napi_value OsCheckSelfPermissionB(napi_env env,
                                          napi_callback_info info)
                                          {
-    const char* str = "ohos.permission.APP_TRACKING_CONSENT";
+    const char* str = "ohos.permission.GET_BUNDLE_INFO";
     bool returnValue = OH_AT_CheckSelfPermission(str);
 
     napi_value result = nullptr;

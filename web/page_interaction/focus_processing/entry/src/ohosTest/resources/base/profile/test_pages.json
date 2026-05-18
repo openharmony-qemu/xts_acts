@@ -8,7 +8,8 @@
     "testability/pages/WebGestureTapAndLongPress",
     "testability/pages/WebForceEnableZoom",
     "testability/pages/WebSetSoftKeyboardBehaviorMode",
-    "testability/pages/WebKeyBoardAvoidMode"
+    "testability/pages/WebKeyBoardAvoidMode",
+    "testability/pages/WebOnInputMethodAttached"
   ]
 }
 

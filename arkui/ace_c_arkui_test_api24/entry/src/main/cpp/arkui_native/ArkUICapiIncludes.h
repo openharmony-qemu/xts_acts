@@ -33,5 +33,6 @@
 #include "arkui_native/ArkUI_Full/styled_string/StyledString_ApiSuite3.cpp"
 #include "arkui_native/ArkUI_Full/styled_string/StyledString_ApiSuite4.cpp"
 #include "arkui_native/ArkUI_Full/ui_input_event/UiInputEvent_ApiSuite1.cpp"
+#include "arkui_native/ArkUI_Full/ui_input_event/UiInputEvent_ApiSuite2.cpp"
 
 #endif // ARKUI_CAPI_XTS_ARKUICAPI_INCLUDES_H

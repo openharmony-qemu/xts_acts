@@ -7,16 +7,10 @@
     "MainAbility/pages/EnableDragBar/NavigationEnableDragBar",
     "MainAbility/pages/MultiNavigation/MultiEntry",
     "MainAbility/pages/MultiNavigation/MultiNavigationEntry",
-    "MainAbility/pages/MultiNavigation/PageDetail",
-    "MainAbility/pages/MultiNavigation/PageDetail1",
-    "MainAbility/pages/MultiNavigation/PageHome",
-    "MainAbility/pages/MultiNavigation/PageHome1",
-    "MainAbility/pages/MultiNavigation/PagePlaceholder",
     "MainAbility/pages/Navigation/Recoverable",
     "MainAbility/pages/Navigation/RouterPage2",
     "MainAbility/pages/Navigation/RouterRecoverable",
     "MainAbility/pages/Navigation/SystemTransition",
-    "MainAbility/pages/Navigation/SystemTransition2",
-    "MainAbility/pages/MultiNavigation/Page"
+    "MainAbility/pages/Navigation/SystemTransition2"
   ]
 }

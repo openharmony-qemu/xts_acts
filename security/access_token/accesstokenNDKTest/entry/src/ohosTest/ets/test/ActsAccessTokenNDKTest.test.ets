@@ -77,17 +77,10 @@ export default function ActsAccessTokenNDKTest() {
     it('SUB_Access_Token_CheckPermission_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try{
         console.info('=======> SUB_Access_Token_CheckPermission_0200 start ==========');
-        let atManager = abilityAccessCtrl.createAtManager();
-        atManager.requestPermissionsFromUser(testContext, ['ohos.permission.APP_TRACKING_CONSENT']).then((data) => {
-          console.info(`SUB_Access_Token_CheckPermission_0200 success, data->${JSON.stringify(data)}`);
-          let result: boolean = testNapi.osCheckSelfPermissionB('ohos.permission.APP_TRACKING_CONSENT');
-          console.info('=======>SUB_Access_Token_CheckPermission_0200 result：' + result);
-          expect(result).assertTrue();
-          done();
-        }).catch((err: BusinessError) => {
-          console.error(`SUB_Access_Token_CheckPermission_0200 fail, err code->${err.code} message->${err.message}`);
-          expect(false).assertTrue();
-        });
+        let result: boolean = testNapi.osCheckSelfPermissionB('ohos.permission.GET_BUNDLE_INFO');
+        console.info('=======>SUB_Access_Token_CheckPermission_0200 result：' + result);
+        expect(result).assertTrue();
+        done();
       } catch (error) {
         console.info('=======>SUB_Access_Token_CheckPermission_0200 catch error：' + error);
         expect(false).assertTrue();

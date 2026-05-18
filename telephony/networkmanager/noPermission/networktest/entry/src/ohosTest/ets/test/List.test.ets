@@ -20,8 +20,10 @@ import networkSecurityNoPTest from './networkSecurityNoP.test';
 import ethernetNoPTest from './ethernetNoP.test';
 import dataNoPTest from './datatestNoP.test';
 import socketNopTest from './socketNop.test';
+import httpInterceptorNoPermission from './HttpInterceptorNoPermission.test';
 
 export default function testsuite() {
+  httpInterceptorNoPermission();
   networkManagerWithoutPermissionsTest();
   networkSecurityNoPTest();
   if (canIUse("SystemCapability.Communication.NetManager.Ethernet")) {

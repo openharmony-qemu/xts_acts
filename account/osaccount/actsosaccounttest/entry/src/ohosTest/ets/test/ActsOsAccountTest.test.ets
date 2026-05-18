@@ -229,6 +229,7 @@ export default function ActsOsAccountTest() {
           expect(domainInfo.domain).not().assertUndefined();
           expect(domainInfo.accountName).not().assertUndefined();
           expect(domainInfo.serverConfigId).not().assertUndefined();
+          expect(domainInfo.additionalInfo).not().assertUndefined();
         } else {
           expect(domainInfo == null).assertTrue();
         }
@@ -1546,5 +1547,31 @@ export default function ActsOsAccountTest() {
         done();
       }
     });
+
+    /**
+     * @tc.number     SUB_Account_OsAccount_IsDomainSupported_0100
+     * @tc.name       SUB_Account_OsAccount_IsDomainSupported_0100
+     * @tc.desc       isDomainAccountSupported promise
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL3
+     */
+    it('SUB_Account_OsAccount_IsDomainSupported_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        console.info("====>SUB_Account_OsAccount_IsDomainSupported_0100 start====");
+        try {
+          let status: boolean = await osAccount.isDomainAccountSupported();
+          console.info("====>SUB_Account_OsAccount_IsDomainSupported_0100 status: " + status);
+          if (status) {
+            expect(status).assertTrue();
+          } else {
+            expect(status).assertFalse();
+          }
+        } catch (err) {
+          console.info("====>SUB_Account_OsAccount_IsDomainSupported_0100 catch err: " + JSON.stringify(err));
+          expect().assertFail();
+        }
+        done();
+      });
   });
 }

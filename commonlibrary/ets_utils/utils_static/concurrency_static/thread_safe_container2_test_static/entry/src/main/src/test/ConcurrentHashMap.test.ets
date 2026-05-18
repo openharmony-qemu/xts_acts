@@ -226,7 +226,7 @@ export default function ConcurrentHashMapTest() {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_Iterable_static_Test_STATIC_0109
      * @tc.name constructor_With_Iterable_static_Test_001
-     * @tc.desc Initialize ConcurrentHashMap correctly from Iterable<[K,V]> with existing map entries
+    * @tc.desc Initialize ConcurrentHashMap correctly from Iterable<[K,V]> with defined entries
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
@@ -284,27 +284,27 @@ export default function ConcurrentHashMapTest() {
      * @tc.level Level 0
      */
     it("constructor_With_Iterable_static_Test_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let map = new Map<number | null | undefined, string | null | undefined>();
-      map.set(null, "nullKey");
-      map.set(undefined, "undefinedKey");
-      map.set(1, null);
-      map.set(2, undefined);
+      let map = new Map<number | string, string>();
+      map.set("sentinelKey", "sentinelKey");
+      map.set("definedKey", "definedValue");
+      map.set(1, "sentinelValue");
+      map.set(2, "anotherValue");
 
       let iterable = map.entries();
-      let concurrentMap = new  containers.ConcurrentHashMap<number | null | undefined, string | null | undefined>(iterable);
+      let concurrentMap = new  containers.ConcurrentHashMap<number | string, string>(iterable);
       expect(String(concurrentMap.size)).assertEqual('4');
-      expect(concurrentMap.get(null)).assertEqual("nullKey");
-      expect(concurrentMap.get(undefined)).assertEqual("undefinedKey");
-      expect(concurrentMap.get(1)).assertEqual(null);
-      expect(concurrentMap.get(2)).assertEqual(undefined);
-      expect(concurrentMap.has(null)).assertTrue();
-      expect(concurrentMap.has(undefined)).assertTrue();
+      expect(concurrentMap.get("sentinelKey")).assertEqual("sentinelKey");
+      expect(concurrentMap.get("definedKey")).assertEqual("definedValue");
+      expect(concurrentMap.get(1)).assertEqual("sentinelValue");
+      expect(concurrentMap.get(2)).assertEqual("anotherValue");
+      expect(concurrentMap.has("sentinelKey")).assertTrue();
+      expect(concurrentMap.has("definedKey")).assertTrue();
       expect(concurrentMap.has(1)).assertTrue();
       expect(concurrentMap.has(2)).assertTrue();
-      expect(concurrentMap.remove(null)).assertEqual("nullKey");
-      expect(concurrentMap.remove(undefined)).assertEqual("undefinedKey");
-      expect(concurrentMap.remove(1)).assertEqual(null);
-      expect(concurrentMap.remove(2)).assertEqual(undefined);
+      expect(concurrentMap.remove("sentinelKey")).assertEqual("sentinelKey");
+      expect(concurrentMap.remove("definedKey")).assertEqual("definedValue");
+      expect(concurrentMap.remove(1)).assertEqual("sentinelValue");
+      expect(concurrentMap.remove(2)).assertEqual("anotherValue");
       expect(concurrentMap.size).assertEqual(0);
     });
 
@@ -636,9 +636,9 @@ export default function ConcurrentHashMapTest() {
      * @tc.level Level 0
      */
     it("constructor_With_GetTest_static_Test_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let map:  containers.ConcurrentHashMap<number, undefined> = new  containers.ConcurrentHashMap<number, undefined>();
-      map.set(1, undefined);
-      expect(String(map.get(1))).assertEqual('undefined');
+      let map:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
+      map.set(1, 'definedValue');
+      expect(map.get(1)).assertEqual('definedValue');
     });
 
     /**
@@ -650,9 +650,9 @@ export default function ConcurrentHashMapTest() {
      * @tc.level Level 0
      */
     it("constructor_With_GetTest_static_Test_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let map:  containers.ConcurrentHashMap<number, null> = new  containers.ConcurrentHashMap<number, null>();
-      map.set(1, null);
-      expect(String(map.get(1))).assertEqual("null");
+      let map:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
+      map.set(1, "sentinelValue");
+      expect(map.get(1)).assertEqual("sentinelValue");
     });
 
     /**
@@ -781,14 +781,14 @@ export default function ConcurrentHashMapTest() {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_isEmpty_static_Test_static_Test_0142
      * @tc.name constructor_With_isEmpty_static_Test_static_Test_008
-     * @tc.desc Verify isEmpty with null values
+    * @tc.desc Verify isEmpty with placeholder string values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("constructor_With_isEmpty_static_Test_static_Test_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let map = new  containers.ConcurrentHashMap<number, null>();
-      map.set(1, null);
+      let map = new  containers.ConcurrentHashMap<number, string>();
+      map.set(1, "sentinelValue");
       expect(String(map.isEmpty())).assertEqual('false');
       map.delete(1);
       expect(String(map.isEmpty())).assertEqual('true');
@@ -797,14 +797,14 @@ export default function ConcurrentHashMapTest() {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_isEmpty_static_Test_static_Test_0143
      * @tc.name constructor_With_isEmpty_static_Test_static_Test_009
-     * @tc.desc Verify isEmpty with undefined values
+    * @tc.desc Verify isEmpty with defined values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("constructor_With_isEmpty_static_Test_static_Test_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let map = new  containers.ConcurrentHashMap<number, undefined>();
-      map.set(1, undefined);
+      let map = new  containers.ConcurrentHashMap<number, string>();
+      map.set(1, 'definedValue');
       expect(String(map.isEmpty())).assertEqual('false');
       map.delete(1);
       expect(String(map.isEmpty())).assertEqual('true');
@@ -877,33 +877,33 @@ export default function ConcurrentHashMapTest() {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_toString_static_Test_0148
      * @tc.name constructor_With_toString_static_Test_006
-     * @tc.desc Verify toString with null values
+    * @tc.desc Verify toString with placeholder string values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("constructor_With_toString_static_Test_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let map = new  containers.ConcurrentHashMap<number, string | null>();
-      map.set(1, null);
+      let map = new  containers.ConcurrentHashMap<number, string>();
+      map.set(1, "sentinelValue");
       map.set(2, "two");
       let str = map.toString();
-      expect(str).assertEqual('1,null,2,two');
+      expect(str).assertEqual('1,sentinelValue,2,two');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_toString_static_Test_0149
      * @tc.name constructor_With_toString_static_Test_007
-     * @tc.desc Verify toString with null values
+    * @tc.desc Verify toString with defined values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("constructor_With_toString_static_Test_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let map = new  containers.ConcurrentHashMap<number, string | undefined>();
-      map.set(1, undefined);
+      let map = new  containers.ConcurrentHashMap<number, string>();
+      map.set(1, 'definedValue');
       map.set(2, "two");
       let str = map.toString();
-      expect(str).assertEqual('1,undefined,2,two');
+      expect(str).assertEqual('1,definedValue,2,two');
     });
 
     /**
@@ -983,18 +983,18 @@ export default function ConcurrentHashMapTest() {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_constructor_With_values_static_Test_0154
      * @tc.name constructor_With_values_static_Test_005
-     * @tc.desc Verify values iterator with null/undefined values
+    * @tc.desc Verify values iterator with defined values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("constructor_With_values_static_Test_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const map = new  containers.ConcurrentHashMap<number, string | null | undefined>();
-      map.set(1, null);
-      map.set(2, undefined);
+      const map = new  containers.ConcurrentHashMap<number, string>();
+      map.set(1, "sentinelValue");
+      map.set(2, "definedValue");
       const values = Array.from(map.values());
-      expect(String(values[0])).assertEqual('null');
-      expect(String(values[1])).assertEqual('undefined');
+      expect(String(values[0])).assertEqual('sentinelValue');
+      expect(String(values[1])).assertEqual('definedValue');
     });
 
     /**
@@ -1074,15 +1074,15 @@ export default function ConcurrentHashMapTest() {
      * @tc.level Level 0
      */
     it("constructor_With_Key_static_Test_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const map = new  containers.ConcurrentHashMap<number | string | null, string>();
+      const map = new  containers.ConcurrentHashMap<number | string, string>();
       map.set(1, "number");
       map.set("1", "string");
-      map.set(null, "null");
+      map.set("sentinelKey", "sentinel");
       const keys = Array.from(map.keys());
       expect(String(keys.length)).assertEqual('3');
       expect(String(keys[0])).assertEqual('1');
       expect(String(keys[1])).assertEqual("1");
-      expect(String(keys[2])).assertEqual('null');
+      expect(String(keys[2])).assertEqual('sentinelKey');
     });
 
     /**
@@ -1307,43 +1307,43 @@ export default function ConcurrentHashMapTest() {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_set_With_Set_static_Test_0168
      * @tc.name set_With_Set_static_Test_001
-     * @tc.desc The value is null
+    * @tc.desc The value is a placeholder string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("set_With_Set_static_Test_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let SetTest:  containers.ConcurrentHashMap<number, null> = new  containers.ConcurrentHashMap<number, null>();
-      SetTest.set(10, null);
+      let SetTest:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
+      SetTest.set(10, 'sentinelValue');
       expect(String(SetTest.size)).assertEqual('1');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_set_With_Set_static_Test_0169
      * @tc.name set_With_Set_static_Test_002
-     * @tc.desc The value is undefined
+    * @tc.desc The value is a defined string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("set_With_Set_static_Test_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let SetTest1:  containers.ConcurrentHashMap<number, undefined> = new  containers.ConcurrentHashMap<number, undefined>();
-      SetTest1.set(10, undefined);
+      let SetTest1:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
+      SetTest1.set(10, 'definedValue');
       expect(String(SetTest1.size)).assertEqual('1');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_set_With_Set_static_Test_0170
      * @tc.name set_With_Set_static_Test_003
-     * @tc.desc Set different key values to undefined
+    * @tc.desc Set different key values to the same defined string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("set_With_Set_static_Test_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let keyData:  containers.ConcurrentHashMap<number, undefined> = new  containers.ConcurrentHashMap<number, undefined>();
-      keyData.set(10, undefined);
-      keyData.set(20, undefined);
+      let keyData:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
+      keyData.set(10, 'definedValue');
+      keyData.set(20, 'definedValue');
       expect(String(keyData.size)).assertEqual('2');
     });
 
@@ -1356,12 +1356,12 @@ export default function ConcurrentHashMapTest() {
      * @tc.level Level 0
      */
     it("set_With_Set_static_Test_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let keyData:  containers.ConcurrentHashMap<number, undefined> = new  containers.ConcurrentHashMap<number, undefined>();
-      keyData.set(10, undefined);
+      let keyData:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
+      keyData.set(10, 'definedValue');
       expect(String(keyData.size)).assertEqual('1');
-      keyData.set(10, undefined);
+      keyData.set(10, 'definedValue');
       expect(String(keyData.size)).assertEqual('1');
-      keyData.set(20, undefined);
+      keyData.set(20, 'definedValue');
       expect(String(keyData.size)).assertEqual('2');
     });
 
@@ -1591,15 +1591,15 @@ export default function ConcurrentHashMapTest() {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_delete_Key_With_Test_static__0185
      * @tc.name delete_Key_With_Test_static_Test_001
-     * @tc.desc The value is deleted as null
+    * @tc.desc The value is deleted as a placeholder string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("delete_Key_With_Test_static_Test_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let keyData:  containers.ConcurrentHashMap<string, null> = new  containers.ConcurrentHashMap<string, null>();
+      let keyData:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       const key = '1';
-      const value = null;
+      const value = 'sentinelValue';
       keyData.set(key, value);
       expect(String(keyData.size)).assertEqual("1");
       expect(String(keyData.get(key))).assertEqual(String(value));
@@ -1610,15 +1610,15 @@ export default function ConcurrentHashMapTest() {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_delete_Key_With_Test_static__0186
      * @tc.name delete_Key_With_Test_static_Test_002
-     * @tc.desc The value is deleted as undefined
+    * @tc.desc The value is deleted as a defined string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("delete_Key_With_Test_static_Test_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let keyData:  containers.ConcurrentHashMap<number, undefined> = new  containers.ConcurrentHashMap<number, undefined>();
+      let keyData:  containers.ConcurrentHashMap<number, string> = new  containers.ConcurrentHashMap<number, string>();
       const key = 1;
-      const value = undefined;
+      const value = 'definedValue';
       keyData.set(key, value);
       expect(String(keyData.size)).assertEqual("1");
       expect(keyData.get(key)).assertEqual(value);
@@ -1870,14 +1870,14 @@ export default function ConcurrentHashMapTest() {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_has_With_Test_static_0199
      * @tc.name has_With_Test_static_Test_001
-     * @tc.desc The key is null and the property has has
+    * @tc.desc The key is a placeholder string and the property has has
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("has_With_Test_static_Test_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let keyData:  containers.ConcurrentHashMap<null, string> = new  containers.ConcurrentHashMap<null, string>();
-      const key = null;
+      let keyData:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
+      const key = "sentinelKey";
       const value = "value1";
       keyData.set(key, value);
       let flag: boolean = keyData.has(key);
@@ -1887,15 +1887,15 @@ export default function ConcurrentHashMapTest() {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_has_With_Test_static_0200
      * @tc.name has_With_Test_static_Test_002
-     * @tc.desc The key is undefined and the property has has
+    * @tc.desc The value is a defined string and the property has has
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("has_With_Test_static_Test_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let keyData:  containers.ConcurrentHashMap<string, undefined> = new  containers.ConcurrentHashMap<string, undefined>();
+      let keyData:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       const key = "key";
-      const value = undefined;
+      const value = 'definedValue';
       keyData.set(key, value);
       let flag: boolean = keyData.has(key);
       expect(String(flag)).assertEqual('true');
@@ -1977,9 +1977,9 @@ export default function ConcurrentHashMapTest() {
      * @tc.level Level 0
      */
     it("has_With_Test_static_Test_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let keyData:  containers.ConcurrentHashMap<string, undefined> = new  containers.ConcurrentHashMap<string, undefined>();
+      let keyData:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
       const key = "key";
-      const value = undefined;
+      const value = 'definedValue';
       keyData.set(key, value);
       expect(String(keyData.size)).assertEqual("1");
       expect(keyData.has(key)).assertTrue();
@@ -2052,37 +2052,37 @@ export default function ConcurrentHashMapTest() {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_replaceWithTest_0209
      * @tc.name replace_With_Test_static_Test_001
-     * @tc.desc Null is the key, and the property is replace
+    * @tc.desc A placeholder string is the key, and the property is replace
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("replace_With_Test_static_Test_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let map:  containers.ConcurrentHashMap<null, string> = new  containers.ConcurrentHashMap<null, string>();
-      map.set(null, 'value')
-      let flag: boolean = map.replace(null, "value1");
-      expect(String(map.get(null))).assertEqual("value1");
-      let flag2 = map.delete(null);
+      let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
+      map.set('sentinelKey', 'value')
+      let flag: boolean = map.replace('sentinelKey', "value1");
+      expect(String(map.get('sentinelKey'))).assertEqual("value1");
+      let flag2 = map.delete('sentinelKey');
       expect(flag2).assertTrue();
-      expect(map.has(null)).assertFalse();
+      expect(map.has('sentinelKey')).assertFalse();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_replaceWithTest_0210
      * @tc.name replace_With_Test_static_Test_002
-     * @tc.desc Undefined is the key, and the property is replace
+    * @tc.desc A defined string is the key, and the property is replace
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("replace_With_Test_static_Test_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      let map:  containers.ConcurrentHashMap<undefined, string> = new  containers.ConcurrentHashMap<undefined, string>();
-      map.set(undefined, 'value')
-      let flag: boolean = map.replace(undefined, 'value1');
-      expect(String(map.get(undefined))).assertEqual('value1');
-      let flag2 = map.delete(undefined);
+      let map:  containers.ConcurrentHashMap<string, string> = new  containers.ConcurrentHashMap<string, string>();
+      map.set('definedKey', 'value')
+      let flag: boolean = map.replace('definedKey', 'value1');
+      expect(String(map.get('definedKey'))).assertEqual('value1');
+      let flag2 = map.delete('definedKey');
       expect(flag2).assertTrue();
-      expect(map.has(undefined)).assertFalse();
+      expect(map.has('definedKey')).assertFalse();
     });
 
     /**
@@ -2851,14 +2851,14 @@ export default function ConcurrentHashMapTest() {
      * @tc.level Level 0
      */
     it("constructor_With_Remove_static_Test_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const hashMap = new  containers.ConcurrentHashMap<number, string | null | undefined>();
+      const hashMap = new  containers.ConcurrentHashMap<number, string>();
       hashMap.set(1, "one");
-      hashMap.set(2, null);
-      hashMap.set(3, undefined);
+      hashMap.set(2, "sentinelValue");
+      hashMap.set(3, "definedValue");
       hashMap.set(4, '@@@@');
       expect(hashMap.remove(1)).assertEqual("one");
-      expect(String(hashMap.remove(2))).assertEqual("null");
-      expect(String(hashMap.remove(3))).assertEqual("undefined");
+      expect(String(hashMap.remove(2))).assertEqual("sentinelValue");
+      expect(String(hashMap.remove(3))).assertEqual("definedValue");
       expect(String(hashMap.remove(4))).assertEqual('@@@@');
       expect(String(hashMap.size)).assertEqual('0');
     });

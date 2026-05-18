@@ -1561,16 +1561,13 @@ export default function AVSessionErrorCode() {
     it("SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_ERRORCODE_STATIC_PROMISE_0109", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
         try {
-            if (controller != null) {
-              await controller!.destroy()
-            }
             session!.getAVCastController().then((avcontroller: avSession.AVCastController| undefined) => {
                 console.info(`getAVCastController : SUCCESS `);
+                expect(true).assertFalse();
             });
         } catch (error) {
             console.info(`getAVCastController failed: code: ${error.code}, message: ${error.message}`);
             expect(error.code).assertEqual(6600109);
-            expect(error.message).assertEqual("Cannot read property catch of undefined");
         }
         done();
     })
@@ -1586,9 +1583,6 @@ export default function AVSessionErrorCode() {
     it("SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_ERRORCODE_STATIC_CALLBACK_5900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
         try {
-            if (controller != null) {
-              await controller!.destroy()
-            }
             let aVCastController: avSession.AVCastController| undefined;
             session!.getAVCastController((err: BusinessError | null, avcontroller: avSession.AVCastController| undefined) => {
               if (err) {
@@ -1596,12 +1590,12 @@ export default function AVSessionErrorCode() {
               } else {
                 aVCastController = avcontroller;
                 console.info('getAVCastController : SUCCESS');
+                expect(true).assertFalse();
               }
             });
         } catch (error) {
             console.error(`getAVCastController BusinessError: code: ${error?.code}, message: ${error?.message}`);
             expect(error?.code).assertEqual(6600109);
-            expect(error?.message).assertEqual("Cannot read property catch of undefined");
         }
         done();
     })

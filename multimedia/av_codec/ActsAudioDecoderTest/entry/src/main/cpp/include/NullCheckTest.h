@@ -49,6 +49,14 @@ int NULL_CHECK_028();
 int NULL_CHECK_029();
 int NULL_CHECK_030();
 int NULL_CHECK_031();
+int NULL_CHECK_032();
+int NULL_CHECK_033();
+int NULL_CHECK_034();
+int NULL_CHECK_035();
+int NULL_CHECK_036();
+int NULL_CHECK_037();
+int NULL_CHECK_038();
+int NULL_CHECK_039();
 } // namespace AudioDecoder
 } // namespace Acts
 

@@ -191,4 +191,5 @@ napi_value OHNativeBufferReadFromParcelAbnnormal(napi_env env, napi_callback_inf
 napi_value OHNativeBufferWriteAndReadParcelMultipleCalls(napi_env env, napi_callback_info info);
 napi_value OHNativeBufferMapPlanesNormal1(napi_env env, napi_callback_info info);
 napi_value OHNativeErrorCodeCover(napi_env env, napi_callback_info info);
+napi_value OHNativeBufferAllocFormatDiff(napi_env env, napi_callback_info info);
 #endif //NATIVEBUFFER_NATIVEBUFFER_H

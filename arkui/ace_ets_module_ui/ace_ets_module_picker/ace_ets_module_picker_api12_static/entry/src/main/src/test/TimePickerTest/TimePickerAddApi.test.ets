@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -78,7 +78,7 @@ export default function TimePickerAddApi() {
       let pos = CommonFunc.getComponentRectOnScreen('TimePickerAddApi')
       console.log("================================================== " + JSON.stringify(pos))
       await CommonFunc.sleep(500);
-      await driver.swipe(Math.round(pos.right - AppStorage.get<UIContext>("uiContext")!.vp2px(100)) as int, Math.round(pos.bottom - AppStorage.get<UIContext>("uiContext")!.vp2px(10)) as int,Math.round(pos.right - AppStorage.get<UIContext>("uiContext")!.vp2px(100))as int,Math.round(pos.top) as int);
+      await driver.swipe(Math.round(pos.right - AppStorage.get<UIContext>("uiContext")!.vp2px(100)).toInt(), Math.round(pos.bottom - AppStorage.get<UIContext>("uiContext")!.vp2px(10)).toInt(),Math.round(pos.right - AppStorage.get<UIContext>("uiContext")!.vp2px(100)).toInt(),Math.round(pos.top).toInt());
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('TimePickerAddApiText');
       await CommonFunc.sleep(200);

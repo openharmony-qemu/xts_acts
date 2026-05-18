@@ -375,41 +375,35 @@ export default function GraphicTextClass() {
      * @tc.level  LEVEL1
      */
     it('testGetFullNameStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      () => {
+      async () => {
         let msg = "www data testGetFullNameStatic "
         console.info(msg + 'www data begin');
         let fontType: text.SystemFontType = text.SystemFontType.GENERIC;
         console.info(msg + 111);
         try {
-          waitForCompletion(async () => {
-            let fullNames = await text.getSystemFontFullNamesByType(fontType);
-            console.info(msg + JSON.stringify(fullNames))
-            expect(fullNames !== undefined).assertTrue();
-            expect(fullNames.length > 0).assertTrue();
-          })
+          let fullNames = await text.getSystemFontFullNamesByType(fontType);
+          console.info(msg + JSON.stringify(fullNames))
+          expect(fullNames !== undefined).assertTrue();
+          expect(fullNames.length > 0).assertTrue();
         } catch (err){
           console.info(msg + err);
         }
         try {
-          waitForCompletion(async () => {
-            let fontDescriptor = await text.getFontDescriptorByFullName("HarmonyOS Sans", fontType);
-            console.info(msg + JSON.stringify(fontDescriptor))
-            expect(fontDescriptor !== undefined).assertTrue();
-            expect(Object.keys(fontDescriptor).length > 0).assertTrue();
-            console.info('www data 00000 ', Object.keys(fontDescriptor).length)
-          })
+          let fontDescriptor = await text.getFontDescriptorByFullName("HarmonyOS Sans", fontType);
+          console.info(msg + JSON.stringify(fontDescriptor))
+          expect(fontDescriptor !== undefined).assertTrue();
+          expect(Object.keys(fontDescriptor).length > 0).assertTrue();
+          console.info('www data 00000 ', Object.keys(fontDescriptor).length)
         } catch (err){
           console.info(msg + err);
         }
         try {
-          waitForCompletion(async () => {
-            let fontDescriptors = await text.matchFontDescriptors({
-              weight: text.FontWeight.W400,
-            })
-            console.info(msg + JSON.stringify(fontDescriptors))
-            expect(fontDescriptors !== undefined).assertTrue();
-            expect(fontDescriptors.length > 0).assertTrue();
+          let fontDescriptors = await text.matchFontDescriptors({
+            weight: text.FontWeight.W400,
           })
+          console.info(msg + JSON.stringify(fontDescriptors))
+          expect(fontDescriptors !== undefined).assertTrue();
+          expect(fontDescriptors.length > 0).assertTrue();
         } catch (err){
           console.info(msg + err);
         }

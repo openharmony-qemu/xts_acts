@@ -38,10 +38,10 @@ export default class Utils {
   static rect_bottom: number = 0;
   static rect_value: RectValue = new RectValue();
 
-  static getComponentRect(key: string): RectValue {
+  static async getComponentRect(key: string): Promise<RectValue> {
     console.log('test getData ')
     let strJson = inspector.getInspectorByKey(key);
-    waitForCompletion(async ()=>{await Utils.sleep(2000)})
+    await Utils.sleep(2000)
     let obj1 = JSON.parseJsonElement(strJson)
     const str = obj1.getString("$rect")
     console.info("test: getComponentRect: " + str);

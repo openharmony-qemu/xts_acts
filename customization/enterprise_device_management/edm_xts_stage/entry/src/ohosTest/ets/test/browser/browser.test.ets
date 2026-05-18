@@ -319,11 +319,13 @@ function testGetpolicySync() {
    * @tc.level  LEVEL2
    */
   it("test_getpolicysync_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       browser.getPoliciesSync(null, TEST_APP_ID_1);
-      expect(false).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 401).assertTrue();
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
   })

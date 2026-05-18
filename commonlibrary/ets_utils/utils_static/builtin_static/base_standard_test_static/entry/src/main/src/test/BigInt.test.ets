@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -26,7 +26,7 @@ import {
 } from '../../../hypium/index';
 import Utils from './Util.test';
 
-export default function BigIntTest() {
+export default function BigIntTest(): void {
   describe("BigIntTest", (): void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);
@@ -671,13 +671,13 @@ export default function BigIntTest() {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BIGINT_3500
-     * @tc.name testBigInt.prototype.toString0016
+     * @tc.name testBigIntprototypetoString0016Adapt002
      * @tc.desc Test the function of the interface .prototype.toString().
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testBigInt.prototype.toString0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBigIntprototypetoString0016Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testBigInt.prototype.toString0016';
       try {
         let s = -10n;
@@ -692,13 +692,13 @@ export default function BigIntTest() {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BIGINT_3700
-     * @tc.name testBigInt.prototype.toString0018
+     * @tc.name testBigIntprototypetoString0018Adapt002
      * @tc.desc Test the function of the interface .prototype.toString().
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testBigInt.prototype.toString0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBigIntprototypetoString0018Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testBigInt.prototype.toString0018';
       try {
         let s = -10n;
@@ -712,13 +712,13 @@ export default function BigIntTest() {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BIGINT_3800
-     * @tc.name testBigInt.prototype.toString0019
+     * @tc.name testBigIntprototypetoString0019Adapt002
      * @tc.desc Test the function of the interface .prototype.toString().
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testBigInt.prototype.toString0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBigIntprototypetoString0019Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testBigInt.prototype.toString0019';
       try {
         let s = -10n;
@@ -732,13 +732,13 @@ export default function BigIntTest() {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BIGINT_3900
-     * @tc.name testBigInt.prototype.toString0020
+     * @tc.name testBigIntprototypetoString0020Adapt002
      * @tc.desc Test the function of the interface .prototype.toString().
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testBigInt.prototype.toString0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('testBigIntprototypetoString0020Adapt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testBigInt.prototype.toString0020';
       try {
         let s = -10n;

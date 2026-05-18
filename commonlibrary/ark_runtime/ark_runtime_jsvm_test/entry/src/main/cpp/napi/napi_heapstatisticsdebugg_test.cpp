@@ -42,49 +42,27 @@ static JSVM_Value hello(JSVM_Env env, JSVM_CallbackInfo info)
     OH_JSVM_GetBoolean(env, setValue, &retValue);
     return retValue;
 }
-//OH_JSVM_StartCpuProfiler:Call the interface to be tested,return ok,result not nullptr
-[[maybe_unused]] JSVM_Value TestStartCpuProfilerCase01(JSVM_Env env, JSVM_CallbackInfo info)
-{
-    JSVM_VM vm;
-    JSVM_Status status = OH_JSVM_CreateVM(nullptr, &vm);
-    if (status != JSVM_OK) {
-        OH_JSVM_ThrowError(env, nullptr, "TestStartCpuProfilerCase01:OH_JSVM_CreateVM Failed.");
-        return nullptr;
-    }
-
-    JSVM_CpuProfiler cpuProfiler = nullptr;
-    status = OH_JSVM_StartCpuProfiler(vm, &cpuProfiler);
-    if (status != JSVM_OK || cpuProfiler == nullptr) {
-        OH_JSVM_ThrowError(env, nullptr, "TestStartCpuProfilerCase01:OH_JSVM_StartCpuProfiler Failed.");
-        return nullptr;
-    }
-
-    bool setValue = true;
-    JSVM_Value retValue = nullptr;
-    OH_JSVM_GetBoolean(env, setValue, &retValue);
-    return retValue;
-}
 //OH_JSVM_StopCpuProfiler:call OH_JSVM_StartCpuProfiler,Call the interface to be tested,return ok
 static bool OutputStream(const char *data, int size, void *streamData)
 {
     return true;
 }
 
-[[maybe_unused]] JSVM_Value TestStopCpuProfilerCase01(JSVM_Env env, JSVM_CallbackInfo info)
+[[maybe_unused]] JSVM_Value TestCpuProfilerCase01(JSVM_Env env, JSVM_CallbackInfo info)
 {
     JSVM_VM vm;
     OH_JSVM_CreateVM(nullptr, &vm);
     JSVM_CpuProfiler cpuProfiler;
     JSVM_Status status = OH_JSVM_StartCpuProfiler(vm, &cpuProfiler);
     if (status != JSVM_OK || cpuProfiler == nullptr) {
-        OH_JSVM_ThrowError(env, nullptr, "TestStopCpuProfilerCase01:OH_JSVM_StartCpuProfiler Failed.");
+        OH_JSVM_ThrowError(env, nullptr, "TestCpuProfilerCase01:OH_JSVM_StartCpuProfiler Failed.");
         return nullptr;
     }
 
     void *data = nullptr;
     status = OH_JSVM_StopCpuProfiler(vm, cpuProfiler, OutputStream, data);
     if (status != JSVM_OK) {
-        OH_JSVM_ThrowError(env, nullptr, "TestStopCpuProfilerCase01:OH_JSVM_StopCpuProfiler Failed.");
+        OH_JSVM_ThrowError(env, nullptr, "TestCpuProfilerCase01:OH_JSVM_StopCpuProfiler Failed.");
         return nullptr;
     }
 
@@ -231,7 +209,7 @@ static bool OutputStream(const char *data, int size, void *streamData)
         OH_JSVM_ThrowError(env, nullptr, "TestOpenInspectorWithNameCase01:OH_JSVM_OpenInspectorWithName Failed.");
         return nullptr;
     }
-    
+
     bool setValue = true;
     JSVM_Value retValue = nullptr;
     OH_JSVM_GetBoolean(env, setValue, &retValue);
@@ -247,7 +225,7 @@ static bool OutputStream(const char *data, int size, void *streamData)
                            "TestOpenInspectorWithNameCase02:OH_JSVM_OpenInspectorWithName Execution abnormal.");
         return nullptr;
     }
-    
+
     bool setValue = true;
     JSVM_Value retValue = nullptr;
     OH_JSVM_GetBoolean(env, setValue, &retValue);

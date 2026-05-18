@@ -1579,7 +1579,7 @@ napi_value TestWaterFlowFooter001(napi_env env, napi_callback_info info)
     auto waterFlow = nodeAPI->createNode(ARKUI_NODE_WATER_FLOW);
     auto node = std::make_shared<ColumnComponent>();
     ArkUI_AttributeItem item = { .object = node->GetComponent() };
-    auto ret = nodeAPI->setAttribute(waterFlow, NODE_WATER_FLOW_NODE_ADAPTER, &item);
+    auto ret = nodeAPI->setAttribute(waterFlow, NODE_WATER_FLOW_FOOTER, &item);
     ASSERT_EQ(ret, SUCCESS);
     NAPI_END;
 }

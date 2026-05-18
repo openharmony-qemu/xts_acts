@@ -21,6 +21,7 @@ import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 import { MyCallback } from '../models/MyCallback';
 import { AppStorage } from 'arkui.stateManagement.storage.appStorage'
+import { UIContext } from '@ohos.arkui.UIContext';
 import common from '@ohos.app.ability.common';
 
 class EntryAbility extends UIAbility {
@@ -33,9 +34,11 @@ class EntryAbility extends UIAbility {
     windowStage.loadContent('pages/webViewNativeMediaPlayerProps', (err: BusinessError<void> | null): void => {
       hilog.info(0x0000, 'testTag EntryAbility', 'loadContent entering');
       if (err) {
-        hilog.info(0x0000, 'testTag EntryAbility', 'loadContent error');
+        AppStorage.setOrCreate<UIContext>("UIContext", windowStage.getMainWindowSync().getUIContext());
+        hilog.info(0x0000, 'testTag EntryAbility', 'loadContent error' + err);
         return;
       }
+      // 保存 UIContext， 在后续的同层渲染绘制中会用到。
       hilog.info(0x0000, 'testTag EntryAbility', 'loadContent ok' + JSON.stringify(this.context));
       hilog.info(0x0000, 'testTag EntryAbility', 'onWindowStageCreate ok');
     });

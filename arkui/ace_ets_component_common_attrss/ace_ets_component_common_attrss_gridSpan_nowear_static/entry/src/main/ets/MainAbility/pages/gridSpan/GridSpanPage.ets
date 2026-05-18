@@ -67,12 +67,12 @@ struct GridSpanPage {
 
   build() {
     GridRow({
-      columns: this.columns as Int,
+      columns: this.columns.toInt(),
       gutter: { x: this.gutter as number, y: this.gutter as number } as GutterOption,
       breakpoints: { value: ['400vp', '600vp', '800vp'], reference: BreakpointsReference.WindowSize } as BreakPoints,
       direction: GridRowDirection.Row
     } as GridRowOptions) {
-      GridCol({span:this._gridSpan as Int}) {
+      GridCol({span:this._gridSpan.toInt()}) {
         if (this.targetView == 'ListItem') {
           List({ space: 0, initialIndex: 0 }) {
             ListItem() {
@@ -223,7 +223,7 @@ struct GridSpanPage {
               Marquee({
                 start: true,
                 step: 50,
-                loop: Number.MAX_VALUE as Int,
+                loop: Number.MAX_VALUE.toInt(),
                 fromStart: true,
                 src: 'Running Marquee starts rolling'
               })

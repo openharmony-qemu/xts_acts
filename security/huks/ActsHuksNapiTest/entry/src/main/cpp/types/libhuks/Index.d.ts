@@ -30,6 +30,9 @@ export const HuksCipherAesTest: (caseName: number) => number;
 // HuksCipherRsaTest
 export const HuksCipherRsaTest: (caseName: number) => number;
 
+// HuksCipherRsaTestAsync（异步版本，返回 Promise）
+export const HuksCipherRsaTestAsync: (caseName: number) => Promise<number>;
+
 // HuksCipherSm4Test
 export const HuksCipherSm4Test: (caseName: number) => number;
 
@@ -53,6 +56,9 @@ export const HuksSignVerifyDsaTest: (caseName: number) => number;
 
 // HuksSignVerifyEccTest
 export const HuksSignVerifyEccTest: (caseName: number) => number;
+
+// HuksSignVerifyEd25519Test
+export const HuksSignVerifyEd25519Test: (caseName: number) => number;
 
 // HuksSignVerifyRsaTest（异步版本，返回 Promise）
 export const HuksSignVerifyRsaTest: (caseName: number) => Promise<number>;

@@ -90,11 +90,11 @@ class MySequence3 implements rpc.Parcelable {
         this.pixel_map = pixelMap;
         expect(this.pixel_map.isEditable).assertTrue();
         expect(this.pixel_map.isStrideAlignment).assertTrue();
-        await pixelMap.getImageInfo().then((imageInfo : image.ImageInfo) => {
+        await pixelMap.getImageInfo().then(async (imageInfo : image.ImageInfo) => {
           console.info("unmarshalling information h:" + imageInfo.size.height + "w:" + imageInfo.size.width);
-          pixelMap.release();
-          this.pixel_map.release();
-          pixelParcel.release();
+          await pixelMap.release();
+          await this.pixel_map.release();
+          await pixelParcel.release();
         })
       }).catch((err: BusinessError) => {
         console.info('www data unmarshalling error ', err);
@@ -123,11 +123,11 @@ class MySequence4 implements rpc.Parcelable {
         this.pixel_map = pixelMap;
         expect(this.pixel_map.isEditable).assertFalse();
         expect(this.pixel_map.isStrideAlignment).assertFalse();
-        await pixelMap.getImageInfo().then((imageInfo : image.ImageInfo) => {
+        await pixelMap.getImageInfo().then(async (imageInfo : image.ImageInfo) => {
           console.info("unmarshalling information h:" + imageInfo.size.height + "w:" + imageInfo.size.width);
-          pixelMap.release();
-          this.pixel_map.release();
-          pixelParcel.release();
+          await pixelMap.release();
+          await this.pixel_map.release();
+          await pixelParcel.release();
         })
       }).catch((err: BusinessError) => {
         console.info('www data unmarshalling error ', err);

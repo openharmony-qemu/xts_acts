@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -96,7 +96,7 @@ it('ProviderTest0270_static_001', Level.LEVEL0, async (done: () => void): Promis
       let btn = await (driver.findComponent(ON.id('btnChildProvider0270')) as Promise<Component>);
       let rect = await btn.getBounds();
       console.info(`rect is: ` + JSON.stringify(rect))
-      await driver.drag(rect.left,Math.round((rect.top+rect.bottom)/2) as int,rect.left+Math.round((rect.right-rect.left)/5) as int, Math.round((rect.top+rect.bottom)/2) as int,10)
+      await driver.drag(rect.left,Math.round((rect.top+rect.bottom)/2).toInt(),rect.left+Math.round((rect.right-rect.left)/5).toInt(), Math.round((rect.top+rect.bottom)/2).toInt(),10)
       await CommonFunc.sleep(1000);
       let obj= JSON.parseJsonElement(inspector.getInspectorByKey('tvProvider0270'));
       console.info("[StateSet0010TestJsunit] component obj content is: " + JSON.stringify(obj.getElement('$attrs').getString('content')));

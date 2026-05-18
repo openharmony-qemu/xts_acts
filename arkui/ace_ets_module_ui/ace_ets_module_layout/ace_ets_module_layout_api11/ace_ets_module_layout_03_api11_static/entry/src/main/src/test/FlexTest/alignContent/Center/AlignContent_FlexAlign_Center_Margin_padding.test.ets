@@ -75,11 +75,11 @@ export default function AlignContent_FlexAlign_Center_Margin_padding() {
     
     /**
      * @tc.number   testAlignContentCenterFlexMargin&PaddingNOSatisfy_static
-     * @tc.name     testAlignContentCenterFlexMargin&PaddingNOSatisfy_static
+     * @tc.name     testAlignContentCenterFlexMarginPaddingNOSatisfy_staticAdapt001
      * @tc.desc     testAlignContentCenterFlexMargin&PaddingNOSatisfy_static
      * @tc.level    Level.LEVEL0
      */
-it('testAlignContentCenterFlexMargin&PaddingNOSatisfy_static', Level.LEVEL0, async () => {
+it('testAlignContentCenterFlexMarginPaddingNOSatisfy_staticAdapt001', Level.LEVEL0, async () => {
       console.info('testAlignContentCenterFlexMargin&PaddingNOSatisfy START');
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'padding', value: 40
@@ -130,11 +130,11 @@ it('testAlignContentCenterFlexMargin&PaddingNOSatisfy_static', Level.LEVEL0, asy
     
     /**
      * @tc.number   testAlignContentCenterFlexMargin&PaddingSatisfy_static
-     * @tc.name     testAlignContentCenterFlexMargin&PaddingSatisfy_static
+     * @tc.name     testAlignContentCenterFlexMarginPaddingSatisfy_staticAdapt001
      * @tc.desc     testAlignContentCenterFlexMargin&PaddingSatisfy_static
      * @tc.level    Level.LEVEL0
      */
-it('testAlignContentCenterFlexMargin&PaddingSatisfy_static', Level.LEVEL0, async () => {
+it('testAlignContentCenterFlexMarginPaddingSatisfy_staticAdapt001', Level.LEVEL0, async () => {
       console.info('testAlignContentCenterFlexMargin&PaddingSatisfy START');
       
       

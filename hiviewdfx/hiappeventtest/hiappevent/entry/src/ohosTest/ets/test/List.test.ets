@@ -27,6 +27,10 @@ import Hichecker from './HiChecker.test';
 import Hilog from'./HiLog.test'
 import ErrorObserver from './ErrorObserver.test';
 import jsLeakWatcher from './JsLeakWatcher.test'
+import HilogApi from './HilogApi.test'
+import JsLeakWatcherParamSpecTest from './JsLeakWatcherParamSpec.test'
+import HiAppEventParamSpecTest from './HiAppEventParamSpec.test';
+import HiAppEventV9ParamSpecTest from './HiAppEventV9ParamSpec.test'
 
 export default function testsuite() {
   PerformanceAnalysisKit();
@@ -43,4 +47,8 @@ export default function testsuite() {
   Hilog();
   ErrorObserver();
   jsLeakWatcher();
+  HiAppEventParamSpecTest();
+  HiAppEventV9ParamSpecTest();
+  HilogApi();
+  JsLeakWatcherParamSpecTest();
 }

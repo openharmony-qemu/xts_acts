@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -45,7 +45,7 @@ export default class EntryAbility extends UIAbility {
       }
       let windowClass: window.Window | undefined = undefined;
       windowStage.getMainWindow((err: BusinessError | null, data) => {
-        let errCode: number = err!.code as number;
+        let errCode: number = err!.code.toDouble();
         if (errCode) {
           console.error('Failed to obtain the main window. Cause: ' + JSON.stringify(err));
           return;

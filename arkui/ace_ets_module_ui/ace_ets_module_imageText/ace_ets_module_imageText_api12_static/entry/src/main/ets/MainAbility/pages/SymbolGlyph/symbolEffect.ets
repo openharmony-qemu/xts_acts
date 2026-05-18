@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -45,7 +45,7 @@ struct Index121313 {
           SymbolGlyph(this.replaceFlag ? $r('sys.symbol.checkmark_circle') : $r('sys.symbol.repeat_1'))
             .id("AppearSymbolEffect")
             .fontSize(96)
-            .symbolEffect(new AppearSymbolEffect(EffectScope.WHOLE), this.triggerValueReplace as int)
+            .symbolEffect(new AppearSymbolEffect(EffectScope.WHOLE), this.triggerValueReplace.toInt())
           Button('trigger').onClick((e: ClickEvent) => {
             this.replaceFlag = !this.replaceFlag;
             this.triggerValueReplace = this.triggerValueReplace + 1;
@@ -57,7 +57,7 @@ struct Index121313 {
           SymbolGlyph(this.replaceFlag ? $r('sys.symbol.checkmark_circle') : $r('sys.symbol.repeat_1'))
             .id("DisappearSymbolEffect")
             .fontSize(96)
-            .symbolEffect(new DisappearSymbolEffect(EffectScope.WHOLE), this.triggerValueReplace as int)
+            .symbolEffect(new DisappearSymbolEffect(EffectScope.WHOLE), this.triggerValueReplace.toInt())
           Button('trigger').onClick((e: ClickEvent) => {
             this.replaceFlag = !this.replaceFlag;
             this.triggerValueReplace = this.triggerValueReplace + 1;

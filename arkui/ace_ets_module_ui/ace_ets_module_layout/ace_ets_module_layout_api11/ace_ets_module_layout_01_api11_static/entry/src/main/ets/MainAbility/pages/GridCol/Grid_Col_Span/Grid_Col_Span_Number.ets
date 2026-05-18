@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -32,7 +32,7 @@ struct Grid_Col_Span_Number {
     let callback: Callback<number> = (message: Message<number>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'addSpan') {
-        this.addSpan = message.value as int;
+        this.addSpan = message.value.toInt();
       }
     };
     this.messageManager.registerCallback(callback);
@@ -47,7 +47,7 @@ struct Grid_Col_Span_Number {
           reference: BreakpointsReference.ComponentSize },
         direction: GridRowDirection.Row
       }) {
-        ForEach(this.bgColors, (color: Color, index?: number) => {
+        ForEach(this.bgColors, (color: Color, index?: int) => {
           GridCol({ span: this.addSpan }) {
 
           }.borderColor(color).borderWidth(2).key("Grid_Col_Span_Number_0" + index).height(50)

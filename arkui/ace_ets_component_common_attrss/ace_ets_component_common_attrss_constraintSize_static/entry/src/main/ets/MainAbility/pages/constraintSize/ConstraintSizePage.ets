@@ -237,7 +237,7 @@ struct ConstraintSizePage {
           Marquee({
             start: true,
             step: 50,
-            loop: Number.MAX_VALUE as int,
+            loop: Double.toInt(Number.MAX_VALUE),
             fromStart: true,
             src: 'Running Marquee starts rolling'
           }).applyStyles(this.commonStyle)

@@ -15,11 +15,13 @@
 
 #include "napi/native_api.h"
 #include "include/AudioSuiteBaseTest.h"
+#include "ohaudiosuite/native_audio_converter.h"
 #include <cstdio>
 #include <cstdlib>
 #include <string>
 #include <set>
 #include <thread>
+#include <algorithm>
 
 void *g_userData = nullptr;
 int32_t g_samplingRate = 48000;
@@ -8445,6 +8447,562 @@ static napi_value AudioSuiteEngine_GetSpaceRenderExtensionParams_006(napi_env en
     LOG("AudioSuiteEngine_GetSpaceRenderExtensionParams_006 fail, result is: %{public}d", result);
     return res;
 }
+
+static int32_t MyAudioConverterRequestDataCallback(void* userData, const void** outInputData,
+    OH_AudioConverter_InputStatus* outStatus)
+{
+    static char audioData[4096];
+    std::fill(audioData, audioData + REQUEST_FRAME_SIZE, 1);
+    *outInputData = audioData;
+    *outStatus = OH_AudioConverter_InputStatus::AUDIOCONVERTER_INPUT_HAVE_DATA;
+    return REQUEST_FRAME_SIZE;
+}
+
+static int32_t MyAudioConverterRequestDataCallbackFinished(void* userData, const void** outInputData,
+    OH_AudioConverter_InputStatus* outStatus)
+{
+    *outInputData = nullptr;
+    *outStatus = OH_AudioConverter_InputStatus::AUDIOCONVERTER_INPUT_DATA_FINISHED;
+    return 0;
+}
+
+static int32_t MyAudioConverterRequestDataCallbackNoData(void* userData, const void** outInputData,
+    OH_AudioConverter_InputStatus* outStatus)
+{
+    *outInputData = nullptr;
+    *outStatus = OH_AudioConverter_InputStatus::AUDIOCONVERTER_INPUT_NO_AVAILABLE_DATA;
+    return 0;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioConverter* converter = nullptr;
+    OH_AudioConverter_Format inputFormat = {
+        .encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW,
+        .samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
+        .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
+        .sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE
+    };
+    OH_AudioConverter_Format outputFormat = {
+        .encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW,
+        .samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
+        .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
+        .sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE
+    };
+
+    OH_AudioConverter_Result result = OH_AudioConverter_Create(&inputFormat, &outputFormat, &converter);
+    if (result == OH_AudioConverter_Result::AUDIOCONVERTER_SUCCESS) {
+        OH_AudioConverter_Destroy(converter);
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioConverter_Create_001 success");
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioConverter_Create_001 fail, result: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_PARAM_ERROR_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioConverter_Format inputFormat = {
+        .encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW,
+        .samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
+        .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
+        .sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE
+    };
+
+    OH_AudioConverter_Result result = OH_AudioConverter_Create(&inputFormat, nullptr, nullptr);
+    if (result == OH_AudioConverter_Result::AUDIOCONVERTER_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioConverter_Create_002 success");
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioConverter_Create_002 fail, result: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_PARAM_ERROR_0200(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioConverter* converter = nullptr;
+    OH_AudioConverter_Format outputFormat = {
+        .encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW,
+        .samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
+        .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
+        .sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE
+    };
+
+    OH_AudioConverter_Result result = OH_AudioConverter_Create(nullptr, &outputFormat, &converter);
+    if (result == OH_AudioConverter_Result::AUDIOCONVERTER_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioConverter_Create_003 success");
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioConverter_Create_003 fail, result: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_PARAM_ERROR_0300(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioConverter_Format inputFormat = {
+        .encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW,
+        .samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
+        .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
+        .sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE
+    };
+    OH_AudioConverter_Format outputFormat = {
+        .encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW,
+        .samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
+        .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
+        .sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE
+    };
+
+    OH_AudioConverter_Result result = OH_AudioConverter_Create(&inputFormat, &outputFormat, nullptr);
+    if (result == OH_AudioConverter_Result::AUDIOCONVERTER_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioConverter_Create_004 success");
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioConverter_Create_004 fail, result: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_UNSUPPORTED_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioConverter* converter = nullptr;
+    OH_AudioConverter_Format inputFormat = {
+        .encodingType = static_cast<OH_Audio_EncodingType>(100),
+        .samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
+        .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
+        .sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE
+    };
+    OH_AudioConverter_Format outputFormat = {
+        .encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW,
+        .samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
+        .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
+        .sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE
+    };
+
+    OH_AudioConverter_Result result = OH_AudioConverter_Create(&inputFormat, &outputFormat, &converter);
+    if (result == OH_AudioConverter_Result::AUDIOCONVERTER_ERROR_UNSUPPORTED_FORMAT) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioConverter_Create_005 success");
+        return res;
+    }
+    if (result == OH_AudioConverter_Result::AUDIOCONVERTER_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioConverter_Create_005 success");
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioConverter_Create_005 fail, result: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CONVERTER_DESTROY_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioConverter* converter = nullptr;
+    OH_AudioConverter_Format inputFormat = {
+        .encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW,
+        .samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
+        .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
+        .sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE
+    };
+    OH_AudioConverter_Format outputFormat = {
+        .encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW,
+        .samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
+        .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
+        .sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE
+    };
+
+    OH_AudioConverter_Result result = OH_AudioConverter_Create(&inputFormat, &outputFormat, &converter);
+    if (result == OH_AudioConverter_Result::AUDIOCONVERTER_SUCCESS) {
+        OH_AudioConverter_Destroy(converter);
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioConverter_Destroy_001 success");
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioConverter_Destroy_001 fail, result: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CONVERTER_DESTROY_PARAM_ERROR_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioConverter_Destroy(nullptr);
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+    LOG("AudioConverter_Destroy_002 success");
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CONVERTER_DESTROY_DUPLICATE_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioConverter* converter = nullptr;
+    OH_AudioConverter_Format inputFormat = {
+        .encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW,
+        .samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
+        .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
+        .sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE
+    };
+    OH_AudioConverter_Format outputFormat = {
+        .encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW,
+        .samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
+        .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
+        .sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE
+    };
+
+    OH_AudioConverter_Result result = OH_AudioConverter_Create(&inputFormat, &outputFormat, &converter);
+    if (result == OH_AudioConverter_Result::AUDIOCONVERTER_SUCCESS) {
+        OH_AudioConverter_Destroy(converter);
+        OH_AudioConverter_Destroy(converter);
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioConverter_Destroy_003 success");
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioConverter_Destroy_003 fail, result: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioConverter* converter = nullptr;
+    OH_AudioConverter_Format inputFormat = {
+        .encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW,
+        .samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
+        .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
+        .sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE
+    };
+    OH_AudioConverter_Format outputFormat = {
+        .encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW,
+        .samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
+        .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
+        .sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE
+    };
+
+    OH_AudioConverter_Result result = OH_AudioConverter_Create(&inputFormat, &outputFormat, &converter);
+    if (result == OH_AudioConverter_Result::AUDIOCONVERTER_SUCCESS) {
+        result = OH_AudioConverter_SetInputCallback(converter, MyAudioConverterRequestDataCallback, g_userData);
+        OH_AudioConverter_Destroy(converter);
+        if (result == OH_AudioConverter_Result::AUDIOCONVERTER_SUCCESS) {
+            napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+            LOG("AudioConverter_SetInputCallback_001 success");
+            return res;
+        }
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioConverter_SetInputCallback_001 fail, result: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_PARAM_ERROR_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioConverter_Result result = OH_AudioConverter_SetInputCallback(nullptr,
+        MyAudioConverterRequestDataCallback, g_userData);
+    if (result == OH_AudioConverter_Result::AUDIOCONVERTER_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioConverter_SetInputCallback_002 success");
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioConverter_SetInputCallback_002 fail, result: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_PARAM_ERROR_0200(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioConverter* converter = nullptr;
+    OH_AudioConverter_Format inputFormat = {
+        .encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW,
+        .samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
+        .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
+        .sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE
+    };
+    OH_AudioConverter_Format outputFormat = {
+        .encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW,
+        .samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
+        .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
+        .sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE
+    };
+
+    OH_AudioConverter_Result result = OH_AudioConverter_Create(&inputFormat, &outputFormat, &converter);
+    if (result == OH_AudioConverter_Result::AUDIOCONVERTER_SUCCESS) {
+        result = OH_AudioConverter_SetInputCallback(converter, nullptr, g_userData);
+        OH_AudioConverter_Destroy(converter);
+        if (result == OH_AudioConverter_Result::AUDIOCONVERTER_ERROR_INVALID_PARAM) {
+            napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+            LOG("AudioConverter_SetInputCallback_003 success");
+            return res;
+        }
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioConverter_SetInputCallback_003 fail, result: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_NOTINITIALIZED_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioConverter* converter = nullptr;
+    OH_AudioConverter_Format inputFormat = {
+        .encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW,
+        .samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
+        .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
+        .sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE
+    };
+    OH_AudioConverter_Format outputFormat = {
+        .encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW,
+        .samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
+        .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
+        .sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE
+    };
+
+    OH_AudioConverter_Result result = OH_AudioConverter_Create(&inputFormat, &outputFormat, &converter);
+    if (result == OH_AudioConverter_Result::AUDIOCONVERTER_SUCCESS) {
+        OH_AudioConverter_Destroy(converter);
+        result = OH_AudioConverter_SetInputCallback(converter, MyAudioConverterRequestDataCallback, g_userData);
+        if (result == OH_AudioConverter_Result::AUDIOCONVERTER_ERROR_NOT_INITIALIZED) {
+            napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+            LOG("AudioConverter_SetInputCallback_004 success");
+            return res;
+        }
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioConverter_SetInputCallback_004 fail, result: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_PARAM_ERROR_0300(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioConverter_Result result = OH_AudioConverter_SetInputCallback(nullptr, nullptr, nullptr);
+    if (result == OH_AudioConverter_Result::AUDIOCONVERTER_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioConverter_SetInputCallback_005 success");
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioConverter_SetInputCallback_005 fail, result: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioConverter* converter = nullptr;
+    OH_AudioConverter_Format inputFormat = {
+        .encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW,
+        .samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
+        .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
+        .sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE
+    };
+    OH_AudioConverter_Format outputFormat = {
+        .encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW,
+        .samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
+        .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
+        .sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE
+    };
+
+    OH_AudioConverter_Result result = OH_AudioConverter_Create(&inputFormat, &outputFormat, &converter);
+    if (result == OH_AudioConverter_Result::AUDIOCONVERTER_SUCCESS) {
+        result = OH_AudioConverter_SetInputCallback(converter, MyAudioConverterRequestDataCallback, g_userData);
+        if (result == OH_AudioConverter_Result::AUDIOCONVERTER_SUCCESS) {
+            char outputBuffer[8192];
+            int32_t outputSize = 0;
+            int32_t proSize = 8192;
+            result = OH_AudioConverter_Process(converter, outputBuffer, proSize, &outputSize);
+            OH_AudioConverter_Destroy(converter);
+            if (result == OH_AudioConverter_Result::AUDIOCONVERTER_SUCCESS) {
+                napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+                LOG("AudioConverter_Process_001 success");
+                return res;
+            }
+        }
+        OH_AudioConverter_Destroy(converter);
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioConverter_Process_001 fail, result: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_PARAM_ERROR_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioConverter_Result result = OH_AudioConverter_Process(nullptr, nullptr, 0, nullptr);
+    if (result == OH_AudioConverter_Result::AUDIOCONVERTER_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+        LOG("AudioConverter_Process_002 success");
+        return res;
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioConverter_Process_002 fail, result: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_CALLBACK_NOT_SET_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioConverter* converter = nullptr;
+    OH_AudioConverter_Format inputFormat = {
+        .encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW,
+        .samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
+        .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
+        .sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE
+    };
+    OH_AudioConverter_Format outputFormat = {
+        .encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW,
+        .samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
+        .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
+        .sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE
+    };
+
+    OH_AudioConverter_Result result = OH_AudioConverter_Create(&inputFormat, &outputFormat, &converter);
+    if (result == OH_AudioConverter_Result::AUDIOCONVERTER_SUCCESS) {
+        char outputBuffer[8192];
+        int32_t outputSize = 0;
+        int32_t proSize = 8192;
+        result = OH_AudioConverter_Process(converter, outputBuffer, proSize, &outputSize);
+        OH_AudioConverter_Destroy(converter);
+        if (result == OH_AudioConverter_Result::AUDIOCONVERTER_ERROR_CALLBACK_NOT_SET) {
+            napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+            LOG("AudioConverter_Process_003 success");
+            return res;
+        }
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioConverter_Process_003 fail, result: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_PARAM_ERROR_0200(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioConverter* converter = nullptr;
+    OH_AudioConverter_Format inputFormat = {
+        .encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW,
+        .samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
+        .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
+        .sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE
+    };
+    OH_AudioConverter_Format outputFormat = {
+        .encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW,
+        .samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
+        .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
+        .sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE
+    };
+
+    OH_AudioConverter_Result result = OH_AudioConverter_Create(&inputFormat, &outputFormat, &converter);
+    if (result == OH_AudioConverter_Result::AUDIOCONVERTER_SUCCESS) {
+        result = OH_AudioConverter_SetInputCallback(converter, MyAudioConverterRequestDataCallback, g_userData);
+        if (result == OH_AudioConverter_Result::AUDIOCONVERTER_SUCCESS) {
+            char outputBuffer[8192];
+            int32_t outputSize = 0;
+            int32_t proSize = 8192;
+            result = OH_AudioConverter_Process(converter, nullptr, proSize, &outputSize);
+            OH_AudioConverter_Destroy(converter);
+            if (result == OH_AudioConverter_Result::AUDIOCONVERTER_ERROR_INVALID_PARAM) {
+                napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+                LOG("AudioConverter_Process_004 success");
+                return res;
+            }
+        }
+        OH_AudioConverter_Destroy(converter);
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioConverter_Process_004 fail, result: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_PARAM_ERROR_0300(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioConverter* converter = nullptr;
+    OH_AudioConverter_Format inputFormat = {
+        .encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW,
+        .samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
+        .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
+        .sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE
+    };
+    OH_AudioConverter_Format outputFormat = {
+        .encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW,
+        .samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
+        .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
+        .sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE
+    };
+
+    OH_AudioConverter_Result result = OH_AudioConverter_Create(&inputFormat, &outputFormat, &converter);
+    if (result == OH_AudioConverter_Result::AUDIOCONVERTER_SUCCESS) {
+        result = OH_AudioConverter_SetInputCallback(converter, MyAudioConverterRequestDataCallback, g_userData);
+        if (result == OH_AudioConverter_Result::AUDIOCONVERTER_SUCCESS) {
+            char outputBuffer[8192];
+            int32_t proSize = 8192;
+            result = OH_AudioConverter_Process(converter, outputBuffer, proSize, nullptr);
+            OH_AudioConverter_Destroy(converter);
+            if (result == OH_AudioConverter_Result::AUDIOCONVERTER_ERROR_INVALID_PARAM) {
+                napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+                LOG("AudioConverter_Process_005 success");
+                return res;
+            }
+        }
+        OH_AudioConverter_Destroy(converter);
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioConverter_Process_005 fail, result: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_BUFFER_TOO_SMALL_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioConverter* converter = nullptr;
+    OH_AudioConverter_Format inputFormat = {
+        .encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW,
+        .samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
+        .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
+        .sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE
+    };
+    OH_AudioConverter_Format outputFormat = {
+        .encodingType = OH_Audio_EncodingType::AUDIO_ENCODING_TYPE_RAW,
+        .samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
+        .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
+        .sampleFormat = OH_Audio_SampleFormat::AUDIO_SAMPLE_S16LE
+    };
+
+    OH_AudioConverter_Result result = OH_AudioConverter_Create(&inputFormat, &outputFormat, &converter);
+    if (result == OH_AudioConverter_Result::AUDIOCONVERTER_SUCCESS) {
+        result = OH_AudioConverter_SetInputCallback(converter, MyAudioConverterRequestDataCallback, g_userData);
+        if (result == OH_AudioConverter_Result::AUDIOCONVERTER_SUCCESS) {
+            char outputBuffer[10];
+            int32_t outputSize = 0;
+            int32_t proSize = 10;
+            result = OH_AudioConverter_Process(converter, outputBuffer, proSize, &outputSize);
+            OH_AudioConverter_Destroy(converter);
+            if (result == OH_AudioConverter_Result::AUDIOCONVERTER_ERROR_BUFFER_TOO_SMALL) {
+                napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
+                LOG("AudioConverter_Process_006 success");
+                return res;
+            }
+        }
+        OH_AudioConverter_Destroy(converter);
+    }
+    napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
+    LOG("AudioConverter_Process_006 fail, result: %{public}d", result);
+    return res;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -8957,6 +9515,50 @@ static napi_value Init(napi_env env, napi_value exports)
             AudioSuiteEngine_GetSpaceRenderExtensionParams_005, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "AudioSuiteEngine_GetSpaceRenderExtensionParams_006", nullptr,
             AudioSuiteEngine_GetSpaceRenderExtensionParams_006, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_0100", nullptr, SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_0100,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_PARAM_ERROR_0100", nullptr,
+            SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_PARAM_ERROR_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_PARAM_ERROR_0200", nullptr,
+            SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_PARAM_ERROR_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_PARAM_ERROR_0300", nullptr,
+            SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_PARAM_ERROR_0300, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_UNSUPPORTED_0100", nullptr,
+            SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_UNSUPPORTED_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIO_CONVERTER_DESTROY_0100", nullptr,
+            SUB_MULTIMEDIA_AUDIO_CONVERTER_DESTROY_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIO_CONVERTER_DESTROY_PARAM_ERROR_0100", nullptr,
+            SUB_MULTIMEDIA_AUDIO_CONVERTER_DESTROY_PARAM_ERROR_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIO_CONVERTER_DESTROY_DUPLICATE_0100", nullptr,
+            SUB_MULTIMEDIA_AUDIO_CONVERTER_DESTROY_DUPLICATE_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_0100", nullptr,
+            SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_PARAM_ERROR_0100", nullptr,
+            SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_PARAM_ERROR_0100,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_PARAM_ERROR_0200", nullptr,
+            SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_PARAM_ERROR_0200,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_NOTINITIALIZED_0100", nullptr,
+            SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_NOTINITIALIZED_0100,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_PARAM_ERROR_0300", nullptr,
+            SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_PARAM_ERROR_0300,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_0100", nullptr, SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_0100,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_PARAM_ERROR_0100", nullptr,
+            SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_PARAM_ERROR_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_CALLBACK_NOT_SET_0100", nullptr,
+            SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_CALLBACK_NOT_SET_0100,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_PARAM_ERROR_0200", nullptr,
+            SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_PARAM_ERROR_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_PARAM_ERROR_0300", nullptr,
+            SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_PARAM_ERROR_0300, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_BUFFER_TOO_SMALL_0100", nullptr,
+            SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_BUFFER_TOO_SMALL_0100,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

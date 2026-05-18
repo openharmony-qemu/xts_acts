@@ -38,7 +38,7 @@ struct CapionDigitalCrown {
   @State stepTips: string = '操作步骤:(本测试仅支持手表设备）\n' +
     '1.旋转表冠后观察表盘的text文本内容(旋转后松手)\n' +
     '预期结果：\n' +
-    '1.Text文本变成:\n action:2,angularVelocity:0,degree:0,\neventTime:>0 (eventTime值与旋转时间相关)\n'
+    '1.Text文本变成:errorcode:0,errorcode:401\n action:2,angularVelocity:0,degree:0,\neventTime:>0 (eventTime值与旋转时间相关)\n'
   @State CapionDigitalCrownVue: boolean = false;
   @State active: boolean = false;
   @State intervalNum: number = 0;

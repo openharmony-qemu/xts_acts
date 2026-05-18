@@ -201,7 +201,7 @@ struct promptActionTest {
         .onClick(() => {
           let uiContext = this.getUIContext();
           let promptActionInstance = uiContext.getPromptAction();
-          let contentNode = new ComponentContent(uiContext, wrapBuilder(buildCustomDialogContent));
+          let contentNode = new ComponentContent<Object>(uiContext, wrapBuilder(buildCustomDialogContent));
           promptActionInstance.openCustomDialog(contentNode, {
             onDidAppear: () => {
               AppStorage.setOrCreate<boolean>('promptActionOpenCustomDialog', true);
@@ -221,7 +221,7 @@ struct promptActionTest {
           let uiContext = this.getUIContext();
           let promptActionInstance = uiContext.getPromptAction();
           // Open a dialog first
-          let contentNode = new ComponentContent(uiContext, wrapBuilder(buildCustomDialogContent));
+          let contentNode = new ComponentContent<Object>(uiContext, wrapBuilder(buildCustomDialogContent));
           promptActionInstance.openCustomDialog(contentNode, {}).then(() => {
             // Then update it (same contentNode)
             // Set flag after updateCustomDialog succeeds
@@ -250,7 +250,7 @@ struct promptActionTest {
           AppStorage.setOrCreate<boolean>('promptActionOpenPopup', false);
           let uiContext = this.getUIContext();
           let promptActionInstance = uiContext.getPromptAction();
-          let contentNode = new ComponentContent(uiContext, wrapBuilder(buildPopupContent));
+          let contentNode = new ComponentContent<Object>(uiContext, wrapBuilder(buildPopupContent));
           let popupOptions: PopupCommonOptions = {
             avoidTarget: AvoidanceMode.AVOID_AROUND_TARGET,
             autoCancel: true,
@@ -280,7 +280,7 @@ struct promptActionTest {
           AppStorage.setOrCreate<boolean>('promptActionUpdatePopup', false);
           let uiContext = this.getUIContext();
           let promptActionInstance = uiContext.getPromptAction();
-          let contentNode = new ComponentContent(uiContext, wrapBuilder(buildPopupContent));
+          let contentNode = new ComponentContent<Object>(uiContext, wrapBuilder(buildPopupContent));
           let popupOptions1: PopupCommonOptions = {
             avoidTarget: AvoidanceMode.AVOID_AROUND_TARGET,
             autoCancel: true
@@ -325,7 +325,7 @@ struct promptActionTest {
         .onClick(() => {
           let uiContext = this.getUIContext();
           let promptActionInstance = uiContext.getPromptAction();
-          let contentNode = new ComponentContent(uiContext, wrapBuilder(buildMenuContent));
+          let contentNode = new ComponentContent<Object>(uiContext, wrapBuilder(buildMenuContent));
           let menuOptions: MenuOptions = {
             onDidAppear: () => {
               AppStorage.setOrCreate<boolean>('promptActionOpenMenu', true);
@@ -349,7 +349,7 @@ struct promptActionTest {
         .onClick(() => {
           let uiContext = this.getUIContext();
           let promptActionInstance = uiContext.getPromptAction();
-          let contentNode = new ComponentContent(uiContext, wrapBuilder(buildMenuContent));
+          let contentNode = new ComponentContent<Object>(uiContext, wrapBuilder(buildMenuContent));
           let menuOptions1: MenuOptions = {
             enableArrow: true
           };

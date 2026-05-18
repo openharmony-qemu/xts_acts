@@ -137,7 +137,7 @@ struct NavigationEnableHoverMode {
       Text('适用单屏折叠形态设备进行该测试').fontColor(Color.Green).fontSize('16fp')
       Column() {
         Navigation() {
-          Column().height('80%')
+          Column().height('70%')
           Row() {
             this.PassBtn($r('app.string.btn_fullscreen'), true);
             Button() {
@@ -176,7 +176,7 @@ struct NavigationEnableHoverMode {
         .backgroundColor(Color.White)
       }
       .width('100%')
-      .height('100%')
+      .height('70%')
       .backgroundColor('#F1F3F5')
     }
   }

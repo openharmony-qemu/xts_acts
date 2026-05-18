@@ -393,7 +393,7 @@ export default function AddUsbManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("testRequestAccessoryRight034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+    it("testRequestAccessoryRight034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       hilog.info(domain, tag, '----------------------testRequestAccessoryRight034---------------------------');
       if (!isDevAccessoryFunc) {
         expect(isDevAccessoryFunc).assertFalse();
@@ -402,7 +402,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        waitForCompletion(async ()=>{let ret = await UsbMgr.requestAccessoryRight(accessInfo);});
+        let ret = await UsbMgr.requestAccessoryRight(accessInfo);
       } catch (error) {
         const err = error as BusinessError;
         expect(err.code).assertEqual(401);
@@ -417,7 +417,7 @@ export default function AddUsbManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("testRequestAccessoryRight035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+    it("testRequestAccessoryRight035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       hilog.info(domain, tag, '----------------------testRequestAccessoryRight035---------------------------');
       if (!isDevAccessoryFunc) {
         hilog.info(domain, tag, 'getAccessoryList is empty : ', );
@@ -426,7 +426,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        waitForCompletion(async ()=>{let ret = await UsbMgr.requestAccessoryRight(accessInfo);});
+        let ret = await UsbMgr.requestAccessoryRight(accessInfo);
       } catch (error) {
         const err = error as BusinessError;
         hilog.info(domain, tag, 'testRequestAccessoryRight035 err : ', err);
@@ -442,7 +442,7 @@ export default function AddUsbManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("testRequestAccessoryRight036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+    it("testRequestAccessoryRight036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       hilog.info(domain, tag, '----------------------testRequestAccessoryRight036---------------------------');
       if (!isDevAccessoryFunc) {
         hilog.info(domain, tag, 'getAccessoryList is empty : ', );
@@ -451,7 +451,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        waitForCompletion(async ()=>{let ret = await UsbMgr.requestAccessoryRight(accessInfo);});
+        let ret = await UsbMgr.requestAccessoryRight(accessInfo);
       } catch (error) {
         const err = error as BusinessError;
         hilog.info(domain, tag, 'testRequestAccessoryRight036 err : ', err);
@@ -467,7 +467,7 @@ export default function AddUsbManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("testRequestAccessoryRight037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+    it("testRequestAccessoryRight037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       hilog.info(domain, tag, '----------------------testRequestAccessoryRight037---------------------------');
       if (!isDevAccessoryFunc) {
         hilog.info(domain, tag, 'getAccessoryList is empty : ', );
@@ -476,7 +476,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        waitForCompletion(async ()=>{let ret = await UsbMgr.requestAccessoryRight(accessInfo);});
+        let ret = await UsbMgr.requestAccessoryRight(accessInfo);
       } catch (error) {
         const err = error as BusinessError;
         hilog.info(domain, tag, 'testRequestAccessoryRight037 err : ', err);
@@ -492,7 +492,7 @@ export default function AddUsbManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("testRequestAccessoryRight038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+    it("testRequestAccessoryRight038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       hilog.info(domain, tag, '----------------------testRequestAccessoryRight038---------------------------');
       if (!isDevAccessoryFunc) {
         hilog.info(domain, tag, 'getAccessoryList is empty : ', );
@@ -501,7 +501,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        waitForCompletion(async ()=>{let ret = await UsbMgr.requestAccessoryRight(accessInfo);});
+        let ret = await UsbMgr.requestAccessoryRight(accessInfo);
       } catch (error) {
         const err = error as BusinessError;
         hilog.info(domain, tag, 'testRequestAccessoryRight038 err : ', err);
@@ -517,7 +517,7 @@ export default function AddUsbManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("testOpenAccessory039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+    it("testOpenAccessory039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       hilog.info(domain, tag, '----------------------testOpenAccessory039---------------------------');
       if (!isDevAccessoryFunc) {
         hilog.info(domain, tag, 'getAccessoryList is empty : ', );
@@ -526,7 +526,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
+        await UsbMgr.requestAccessoryRight(accessInfo);
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);
@@ -545,7 +545,7 @@ export default function AddUsbManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("testOpenAccessory040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,() => {
+    it("testOpenAccessory040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async () => {
       hilog.info(domain, tag, '----------------------testOpenAccessory040---------------------------');
       if (!isDevAccessoryFunc) {
         hilog.info(domain, tag, 'getAccessoryList is empty : ', );
@@ -554,7 +554,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
+        await UsbMgr.requestAccessoryRight(accessInfo);
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);
@@ -573,7 +573,7 @@ export default function AddUsbManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("testOpenAccessory041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+    it("testOpenAccessory041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       hilog.info(domain, tag, '----------------------testOpenAccessory041---------------------------');
       if (!isDevAccessoryFunc) {
         hilog.info(domain, tag, 'getAccessoryList is empty : ', );
@@ -582,7 +582,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
+        await UsbMgr.requestAccessoryRight(accessInfo);
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);
@@ -601,7 +601,7 @@ export default function AddUsbManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("testOpenAccessory042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+    it("testOpenAccessory042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       hilog.info(domain, tag, '----------------------testOpenAccessory042---------------------------');
       if (!isDevAccessoryFunc) {
         hilog.info(domain, tag, 'getAccessoryList is empty : ', );
@@ -610,7 +610,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
+        await UsbMgr.requestAccessoryRight(accessInfo);
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);
@@ -629,7 +629,7 @@ export default function AddUsbManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("testOpenAccessory043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+    it("testOpenAccessory043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       hilog.info(domain, tag, '----------------------testOpenAccessory043---------------------------');
       if (!isDevAccessoryFunc) {
         hilog.info(domain, tag, 'getAccessoryList is empty : ', );
@@ -638,7 +638,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
+        await UsbMgr.requestAccessoryRight(accessInfo);
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);
@@ -657,7 +657,7 @@ export default function AddUsbManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("testOpenAccessory044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+    it("testOpenAccessory044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       hilog.info(domain, tag, '----------------------testOpenAccessory044---------------------------');
       if (!isDevAccessoryFunc) {
         hilog.info(domain, tag, 'getAccessoryList is empty : ', );
@@ -666,7 +666,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
+        await UsbMgr.requestAccessoryRight(accessInfo);
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);
@@ -685,7 +685,7 @@ export default function AddUsbManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("testOpenAccessory045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+    it("testOpenAccessory045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       hilog.info(domain, tag, '----------------------testOpenAccessory045---------------------------');
       if (!isDevAccessoryFunc) {
         hilog.info(domain, tag, 'getAccessoryList is empty : ', );
@@ -694,7 +694,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
+        await UsbMgr.requestAccessoryRight(accessInfo);
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);
@@ -713,7 +713,7 @@ export default function AddUsbManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("testOpenAccessory048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+    it("testOpenAccessory048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       hilog.info(domain, tag, '----------------------testOpenAccessory048---------------------------');
       if (!isDevAccessoryFunc) {
         hilog.info(domain, tag, 'getAccessoryList is empty : ', );
@@ -722,7 +722,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
+        await UsbMgr.requestAccessoryRight(accessInfo);
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);
@@ -741,7 +741,7 @@ export default function AddUsbManagerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("testOpenAccessory049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+    it("testOpenAccessory049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       hilog.info(domain, tag, '----------------------testOpenAccessory049---------------------------');
       if (!isDevAccessoryFunc) {
         hilog.info(domain, tag, 'getAccessoryList is empty : ', );
@@ -750,7 +750,7 @@ export default function AddUsbManagerTest() {
       try {
         let accList: Array<UsbMgr.USBAccessory> = UsbMgr.getAccessoryList();
         accessInfo = accList[0];
-        waitForCompletion(async ()=>{await UsbMgr.requestAccessoryRight(accessInfo);});
+        await UsbMgr.requestAccessoryRight(accessInfo);
         let accHandle: UsbMgr.USBAccessoryHandle = UsbMgr.openAccessory(accessInfo);
         UsbMgr.closeAccessory(accHandle);
         UsbMgr.cancelAccessoryRight(accessInfo);

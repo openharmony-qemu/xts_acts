@@ -22,12 +22,12 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
+  Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
   ColumnAttribute, ColumnSplitAttribute, CounterAttribute, DataPanelAttribute, DatePickerAttribute, DividerAttribute,
-  EllipseAttribute, FlexAttribute, FlowItemAttribute, FormLinkAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
+  EllipseAttribute, FlexAttribute, FlowItemAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
   GridItemAttribute, GridRowAttribute, HyperlinkAttribute, ImageAttribute, ImageAnimatorAttribute, LineAttribute, ListAttribute,
   ListItemAttribute, ListItemGroupAttribute, LoadingProgressAttribute, MarqueeAttribute, MenuAttribute, MenuItemAttribute,
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
@@ -37,7 +37,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute, AlignRuleOption,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, BorderImageOption, GradientDirection, RepeatMode } from '@ohos.arkui.component'
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, BorderImageOption, GradientDirection, RepeatMode } from '@ohos.arkui.component'
 import { State, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
 import { SetValue, RouterParams } from '../../common/Utils';
@@ -381,25 +381,6 @@ export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
 
 
 	applyNormalAttribute(instance: FlowItemAttribute): void {
-		instance.borderImage(this.mBorderImage)
-	}
-}
-
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-	mBorderImage: BorderImageOption = {
-		source: { angle: 13,
-			direction: GradientDirection.Right,
-			colors: [[0xAEE1E2, 0.1], [0xD3E0DD, 0.4], [0xFCD1D6, 0.4]]
-		},
-		slice: 28,
-		width: 66,
-		repeat: RepeatMode.Stretch,
-		outset: 4,
-		fill: true
-	}
-
-
-	applyNormalAttribute(instance: FormLinkAttribute): void {
 		instance.borderImage(this.mBorderImage)
 	}
 }
@@ -1653,11 +1634,6 @@ function commonStyle(this: FlowItemAttribute, componentKey: string){
 	return this
 }
 
-function commonStyle(this: FormLinkAttribute, componentKey: string){
-	this.key(componentKey)
-	return this
-}
-
 function commonStyle(this: GaugeAttribute, componentKey: string){
 	this.key(componentKey)
 	return this
@@ -1997,7 +1973,6 @@ struct BorderImagePage {
 	@State _borderImageEllipseModifier: EllipseModifier = new EllipseModifier()
 	@State _borderImageFlexModifier: FlexModifier = new FlexModifier()
 	@State _borderImageFlowItemModifier: FlowItemModifier = new FlowItemModifier()
-	@State _borderImageFormLinkModifier: FormLinkModifier = new FormLinkModifier()
 	@State _borderImageGaugeModifier: GaugeModifier = new GaugeModifier()
 	@State _borderImageGridModifier: GridModifier = new GridModifier()
 	@State _borderImageGridColModifier: GridColModifier = new GridColModifier()
@@ -2100,7 +2075,6 @@ struct BorderImagePage {
 			this._borderImageEllipseModifier.mBorderImage = value.borderImage!;
 			this._borderImageFlexModifier.mBorderImage = value.borderImage!;
 			this._borderImageFlowItemModifier.mBorderImage = value.borderImage!;
-			this._borderImageFormLinkModifier.mBorderImage = value.borderImage!;
 			this._borderImageGaugeModifier.mBorderImage = value.borderImage!;
 			this._borderImageGridModifier.mBorderImage = value.borderImage!;
 			this._borderImageGridColModifier.mBorderImage = value.borderImage!;
@@ -2787,17 +2761,6 @@ struct BorderImagePage {
 					.backgroundColor('#FFFF00')
 					.commonStyle(this.componentKey)
 					.attributeModifier(this._borderImageCanvasModifier)
-			}
-			if (this.targetView == 'FormLink') {
-				FormLink({
-					action: "router",
-					abilityName: "EntryAbility",
-          params: { message: 'testForRouter' } as ObjElement
-        } as FormLinkOptions) {
-					Button("router event").width(120)
-				}
-					.commonStyle(this.componentKey)
-					.attributeModifier(this._borderImageFormLinkModifier)
 			}
 			if (this.targetView == 'Hyperlink') {
 				Hyperlink('https://example.com/', 'Go to the developer website') {

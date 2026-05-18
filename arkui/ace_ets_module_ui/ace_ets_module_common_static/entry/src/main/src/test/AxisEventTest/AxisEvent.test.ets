@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { describe, it, expect, beforeAll, beforeEach, afterEach, Level } from '../../../../hypium/index';
-import { Driver, ON } from '@kit.TestKit';
+import { Driver, ON, Rect} from '@kit.TestKit';
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -62,10 +62,10 @@ export default function AxisEventTest() {
         const driver = Driver.create();
         const scrollComp = await driver.findComponent(ON.id('axisEventList'));
         expect(scrollComp !== null).assertTrue();
-        const rect = CommonFunc.getComponentRect('axisEventList');
-        const centerX: int = Math.round((rect.left + rect.right) / 2) as int;
-        const startY: int = Math.round(rect.top + (rect.bottom - rect.top) * 0.8) as int;
-        const endY: int = Math.round(rect.top + (rect.bottom - rect.top) * 0.2) as int;
+        const rect = await (scrollComp?.getBounds() as Promise<Rect>)
+        const centerX: int = Math.round((rect.left + rect.right) / 2).toInt();
+        const startY: int = Math.round(rect.top + (rect.bottom - rect.top) * 0.8).toInt();
+        const endY: int = Math.round(rect.top + (rect.bottom - rect.top) * 0.2).toInt();
         await driver.swipe(centerX, startY, centerX, endY, 600);
         await CommonFunc.sleep(500);
         const status = getContentByKey('axisEventHasAxisStatus');

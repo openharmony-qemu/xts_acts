@@ -54,14 +54,14 @@ export default function AlignContent_FlexAlign_Center_Margin_padding() {
 
 
     /**
-     * @tc.name   testAlignContentCenterFlexMargin&PaddingNOSatisfy
+     * @tc.name   testAlignContentCenterFlexMarginPaddingNOSatisfyAdapt002
      * @tc.number testAlignContentCenterFlexMargin&PaddingNOSatisfy
      * @tc.desc   testAlignContentCenterFlexMargin&PaddingNOSatisfy
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testAlignContentCenterFlexMargin&PaddingNOSatisfy',  Level.LEVEL0, async () => {
+    it('testAlignContentCenterFlexMarginPaddingNOSatisfyAdapt002',  Level.LEVEL0, async () => {
       console.info('testAlignContentCenterFlexMargin&PaddingNOSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({
         name: 'padding', value: 40
@@ -122,14 +122,14 @@ export default function AlignContent_FlexAlign_Center_Margin_padding() {
 
 
     /**
-     * @tc.name   testAlignContentCenterFlexMargin&PaddingSatisfy
+     * @tc.name   testAlignContentCenterFlexMarginPaddingSatisfyAdapt002
      * @tc.number testAlignContentCenterFlexMargin&PaddingSatisfy
      * @tc.desc   testAlignContentCenterFlexMargin&PaddingSatisfy
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testAlignContentCenterFlexMargin&PaddingSatisfy',  Level.LEVEL0, async () => {
+    it('testAlignContentCenterFlexMarginPaddingSatisfyAdapt002',  Level.LEVEL0, async () => {
       console.info('testAlignContentCenterFlexMargin&PaddingSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({
         name: 'padding', value: 15

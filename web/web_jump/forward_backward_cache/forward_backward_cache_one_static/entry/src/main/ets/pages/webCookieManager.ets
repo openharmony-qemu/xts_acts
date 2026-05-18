@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -38,7 +38,8 @@ import { Callback } from '@ohos.base'
 import { Callback, RecordData } from '@ohos.base'
 import inspector from '@ohos.arkui.inspector';
 import hilog from '@ohos.hilog';
-class StringFields {
+import { UIContext, Router } from '@ohos.arkui.UIContext'
+export class StringFields {
   public str: string = '';
 }
 @Entry
@@ -116,6 +117,13 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
                   Utils.emitEvent(webview.WebCookieManager.isThirdPartyCookieAllowed(), 30033)
                 }, 3000)
                 break;
+              }
+
+              case 'emitonSwitchNextPage': {
+                let uiContext: UIContext = this.getUIContext();
+                let router: Router = uiContext.getRouter();
+                router.pushUrl({ url: 'pages/webEumClass' })
+                console.log('push URL success')
               }
 
 

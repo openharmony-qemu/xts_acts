@@ -11,6 +11,7 @@
     "MainAbility/pages/AxisEvent/AxisEventIndex",
     "MainAbility/pages/DragEvent/DragEventIndex",
     "MainAbility/pages/DismissReason/DismissReasonIndex",
+    "MainAbility/pages/Common/CommonIndex",
     "MainAbility/pages/CommonMethod/CommonMethodIndex",
     "MainAbility/pages/TextContentControllerBase/TextContentControllerBaseIndex",
     "MainAbility/pages/ScrollableCommonMethod/ScrollableCommonMethodIndex",

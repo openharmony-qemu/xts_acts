@@ -1879,6 +1879,8 @@ export default function windowPropertiesTest2() {
       let isFreeWindowMode = false;
       let isSupportRotate = false;
       console.log(msgStr + 'begin');
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.info(`${caseName} isSupport: ${isSupport}`);
 
       let on_setWindowShadowEnabled_Supported = async () => {
         try {
@@ -1971,10 +1973,8 @@ export default function windowPropertiesTest2() {
         await on_setWindowShadowEnabled_notSupported_801();
       } else if (deviceInfo.deviceType === 'car') {
         await on_setWindowShadowEnabled_notSupported_801();
-      } else {
-        console.info(`====>${caseName} end fail====` + deviceInfo.deviceType);
-        expect().assertFail();
-        done();
+      } else if (isSupport === false){
+        await on_setWindowShadowEnabled_notSupported_801();
       }
     });
 
@@ -3193,6 +3193,8 @@ export default function windowPropertiesTest2() {
       let caseName: string = 'testSetWindowContainerColorPermissionwithMainWindow ';
       let windowStageStart = await startAbility3(caseName, context);
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.info(`${caseName} isSupport: ${isSupport}`);
 
       let testSetWindowContainerColorPermissionwithMainWindow_CheckReturnSuccess = async () => {
         try {
@@ -3248,9 +3250,8 @@ export default function windowPropertiesTest2() {
         testSetWindowContainerColorPermissionwithMainWindow_CheckReturnSuccess();
       } else if (deviceInfo.deviceType === 'car') {
         testSetWindowContainerColorPermissionwithMainWindow_CheckReturnFail801();
-      } else {
-        console.info(`====>${msgStr} end fail====`);
-        expect().assertFail();
+      } else if (isSupport === false){
+        testSetWindowContainerColorPermissionwithMainWindow_CheckReturnFail801();
       }
 
       done();

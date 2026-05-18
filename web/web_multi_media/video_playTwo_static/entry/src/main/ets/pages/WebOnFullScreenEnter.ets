@@ -22,7 +22,7 @@ import emitter from '@ohos.events.emitter';
 import { Callback, RecordData} from '@ohos.base'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import inspector from '@ohos.arkui.inspector';
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 
@@ -128,6 +128,13 @@ struct WebOnFullScreenEnter {
                 error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
+            }
+            case 'SwitchNextPageStatic' : {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/WebMediaPlayGestureAccess' })
+              console.log('push URL success')
+              break;
             }
           }
         })

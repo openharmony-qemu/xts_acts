@@ -1185,5 +1185,83 @@ export default function actsNotificationAnsGetNotificationParametersTest() {
         }
       }
     })
+
+    /**
+     * @tc.name   Sub_Notification_Ans_GetNotificationParameters_1100
+     * @tc.number Sub_Notification_Ans_GetNotificationParameters_1100
+     * @tc.desc   [Notification does not exist] When the getNotificationParameters interface of null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Notification_Ans_GetNotificationParameters_1100', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'Sub_Notification_Ans_GetNotificationParameters_1100';
+      try {
+        await notificationManager.getNotificationParameters(null,"label")
+          .then((data: notificationManager.NotificationParameters) => {
+            console.info(`${testNum} Succeeded in getting notification parameters, data is ${JSON.stringify(data)}`);
+            expect().assertFail();
+            done();
+          })
+          .catch((err: BusinessError) => {
+            console.error(`${testNum} Failed to get notification parameters. Code is ${err.code}, message is ${err.message}`);
+            if (err?.code === 801) {
+              expect(err.code).assertEqual(801);
+              done();
+            } else {
+              expect(err.code).assertEqual(401);
+              done();
+            }
+          });
+      } catch (err) {
+        hilog.error(0x0000, 'testTag', `${testNum} getNotificationParameters failed: ${err.code}, ${err.message}`);
+        if (err?.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+        } else {
+          expect(err.code).assertEqual(401);
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   Sub_Notification_Ans_GetNotificationParameters_1200
+     * @tc.number Sub_Notification_Ans_GetNotificationParameters_1200
+     * @tc.desc   [Notification does not exist] When the getNotificationParameters interface of undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Notification_Ans_GetNotificationParameters_1200', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'Sub_Notification_Ans_GetNotificationParameters_1200';
+      try {
+        await notificationManager.getNotificationParameters(undefined,"label")
+          .then((data: notificationManager.NotificationParameters) => {
+            console.info(`${testNum} Succeeded in getting notification parameters, data is ${JSON.stringify(data)}`);
+            expect().assertFail();
+            done();
+          })
+          .catch((err: BusinessError) => {
+            console.error(`${testNum} Failed to get notification parameters. Code is ${err.code}, message is ${err.message}`);
+            if (err?.code === 801) {
+              expect(err.code).assertEqual(801);
+              done();
+            } else {
+              expect(err.code).assertEqual(401);
+              done();
+            }
+          });
+      } catch (err) {
+        hilog.error(0x0000, 'testTag', `${testNum} getNotificationParameters failed: ${err.code}, ${err.message}`);
+        if (err?.code === 801) {
+          expect(err.code).assertEqual(801);
+          done();
+        } else {
+          expect(err.code).assertEqual(401);
+          done();
+        }
+      }
+    })
   })
 }

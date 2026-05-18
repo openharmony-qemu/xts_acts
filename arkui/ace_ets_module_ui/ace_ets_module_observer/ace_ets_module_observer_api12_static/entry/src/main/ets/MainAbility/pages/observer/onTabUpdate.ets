@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -46,7 +46,7 @@ struct callbackFuncTabsExample {
           this.currentIndex = 1
         })
       Text('index: ' + this.index1).id('tab_Index_1')
-      Tabs({ index: this.currentIndex as int, controller: this.controller }) {
+      Tabs({ index: this.currentIndex.toInt(), controller: this.controller }) {
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#00CB87')
         }.tabBar('green').id('tabContentId_0')

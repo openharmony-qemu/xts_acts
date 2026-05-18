@@ -42,7 +42,7 @@
 
 #define DIRMODE 0770
 
-#define WAIT_TIME 3
+#define WAIT_TIME 7
 
 const char *TAG = "transaction_ctest";
 const char *RDB_TEST_PATH = "/data/storage/el2/database/com.example.buchongndktest/entry/";

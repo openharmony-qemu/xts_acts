@@ -14,6 +14,7 @@
  */
 
 #include "common/common.h"
+#include <arkui/drawable_descriptor.h>
 namespace ArkUICapiTest {
 
 static napi_value TestImageAntialiased001(napi_env env, napi_callback_info info)
@@ -76,6 +77,23 @@ static napi_value TestImageAntialiased005(napi_env env, napi_callback_info info)
     auto ret1 = nodeAPI->resetAttribute(image, NODE_IMAGE_ANTIALIASED);
     ASSERT_EQ(ret1, SUCCESS);
     ASSERT_EQ(nodeAPI->getAttribute(image, NODE_IMAGE_ANTIALIASED)->value[PARAM_0].i32, false);
+    NAPI_END;
+}
+
+static napi_value TestImageAntialiased006(napi_env env, napi_callback_info info)
+{
+    NAPI_START(image, ARKUI_NODE_IMAGE);
+    auto ret = OH_ArkUI_DrawableDescriptor_SetAnimationStopMode(nullptr, DRAWABLE_DESCRIPTOR_ANIMATION_FIRST_FRAME);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
+    NAPI_END;
+}
+
+static napi_value TestImageAntialiased007(napi_env env, napi_callback_info info)
+{
+    NAPI_START(image, ARKUI_NODE_IMAGE);
+    DrawableDescriptor_AnimationStopMode mode = DRAWABLE_DESCRIPTOR_ANIMATION_FIRST_FRAME;
+    auto ret = OH_ArkUI_DrawableDescriptor_GetAnimationStopMode(nullptr, &mode);
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
     NAPI_END;
 }
 } // namespace ArkUICapiTest

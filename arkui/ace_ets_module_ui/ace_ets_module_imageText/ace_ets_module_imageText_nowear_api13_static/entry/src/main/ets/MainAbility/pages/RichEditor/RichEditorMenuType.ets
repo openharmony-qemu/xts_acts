@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -102,7 +102,7 @@ struct RichEditorMenuType1 {
   private iconArr: Array<Resource> =
     [$r('app.media.icon'), $r("app.media.icon"), $r('app.media.icon'),
     $r("app.media.icon"), $r('app.media.icon')]
-  @State iconBgColor: ResourceColor[] = new Array<ResourceColor>(this.iconArr.length).fill(this.colorTransparent)
+  @State iconBgColor: ResourceColor[] = Array.create<ResourceColor>(this.iconArr.length, this.colorTransparent)
   @State pasteEnable: boolean = false
   @State visibilityValue: Visibility = Visibility.Visible
     @State textStyle: RichEditorTextStyle = {} as RichEditorTextStyle
@@ -314,7 +314,7 @@ struct RichEditorMenuType1 {
           .width(this.theme.buttonSize)
           .height(this.theme.buttonSize)
           .onClick((e:ClickEvent)=> {
-            if (index as number == 0) {
+            if (index.toDouble() == 0) {
               this.sliderShow = false
               if (this.controller) {
                 let selection = this.controller!.getSelection()!;
@@ -339,7 +339,7 @@ struct RichEditorMenuType1 {
                   }
                 })
               }
-            } else if (index as number == 1) {
+            } else if (index.toDouble() == 1) {
               this.sliderShow = false
               if (this.controller) {
                 let selection = this.controller.getSelection()!;
@@ -364,7 +364,7 @@ struct RichEditorMenuType1 {
                   }
                 })
               }
-            } else if (index as number == 2) {
+            } else if (index.toDouble() == 2) {
               this.sliderShow = false
               if (this.controller) {
                 let selection = this.controller!.getSelection()!;
@@ -396,9 +396,9 @@ struct RichEditorMenuType1 {
                   }
                 })
               }
-            } else if (index as number == 3) {
+            } else if (index.toDouble() == 3) {
               this.sliderShow = !this.sliderShow
-            } else if (index as number == 4) {
+            } else if (index.toDouble() == 4) {
               this.sliderShow = false
               if (this.controller) {
                 let selection = this.controller!.getSelection()!;

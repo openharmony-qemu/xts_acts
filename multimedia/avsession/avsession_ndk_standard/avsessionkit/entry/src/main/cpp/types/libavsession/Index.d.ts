@@ -293,6 +293,10 @@ export const AVMediaDescriptionBuilderSetAlbumCoverUriInvalidParam: () => number
 
 export const AVMediaDescriptionBuilderSetMediaTypeSuccess: () => number;
 
+export const AVMediaDescriptionBuilderSetMediaTypeAudioSuccess: () => number;
+
+export const AVMediaDescriptionBuilderSetMediaTypeVideoSuccess: () => number;
+
 export const AVMediaDescriptionBuilderSetMediaTypeInvalidParam: () => number;
 
 export const AVMediaDescriptionBuilderSetLyricContentSuccess: () => number;
@@ -596,3 +600,9 @@ export const AVSession_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_INIT_FAILED: () => n
 export const AVSession_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_WRITE_FAILED: () => number;
 
 export const AVSession_AVQUEUEITEM_ERROR_NO_MEMORY: () => number;
+
+export const AVMediaDescriptionBuilderSetMediaTypeNullSuccess: () => number;
+
+export const AVMediaDescriptionGetAppNameNullSuccess: () => number;
+
+export const AVSessionCreateNullInvalidParam: () => number;

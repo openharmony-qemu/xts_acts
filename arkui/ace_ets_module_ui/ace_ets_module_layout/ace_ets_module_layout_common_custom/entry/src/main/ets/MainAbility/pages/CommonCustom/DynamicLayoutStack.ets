@@ -13,26 +13,26 @@
  * limitations under the License.
  */
 
- import {
+import {
   StackLayoutAlgorithm,
   DynamicLayout, DynamicLayoutAttribute} from '@kit.ArkUI';
 
 @Entry
 @ComponentV2
 struct DynamicLayoutStack {
-  @Local dynamicLayoutAlignContent: LocalizedAlignment |null| undefined = LocalizedAlignment.CENTER
-  @Local stackLayoutAlignContent: LocalizedAlignment |null| undefined = LocalizedAlignment.CENTER
+  @Local algorithm: StackLayoutAlgorithm = new StackLayoutAlgorithm({
+    alignContent: LocalizedAlignment.CENTER,
+  });
+  @Local stackLayoutAlignContent: LocalizedAlignment | undefined = LocalizedAlignment.CENTER
   public stackAlignContentArr: LocalizedAlignment[] = [LocalizedAlignment.CENTER,LocalizedAlignment.TOP_START,
-  LocalizedAlignment.TOP,LocalizedAlignment.TOP_END,LocalizedAlignment.START,LocalizedAlignment.END,
-  LocalizedAlignment.BOTTOM_START,LocalizedAlignment.BOTTOM,LocalizedAlignment.BOTTOM_END]
+    LocalizedAlignment.TOP,LocalizedAlignment.TOP_END,LocalizedAlignment.START,LocalizedAlignment.END,
+    LocalizedAlignment.BOTTOM_START,LocalizedAlignment.BOTTOM,LocalizedAlignment.BOTTOM_END]
   public stackAlignContentIndex: number = 0
 
   build() {
     Column({space:2}) {
       Row({space: 2}) {
-        DynamicLayout(new StackLayoutAlgorithm({
-          alignContent: this.dynamicLayoutAlignContent,
-        })) {
+        DynamicLayout(this.algorithm) {
           Stack()
             .id('StackLayoutAlgorithm1')
             .backgroundColor(Color.Red)
@@ -46,14 +46,14 @@ struct DynamicLayoutStack {
       }
 
       Row(){
-        Button(`alignContent ${JSON.stringify(this.dynamicLayoutAlignContent)}`)
+        Button(`alignContent ${JSON.stringify(this.stackLayoutAlignContent)}`)
           .onClick(()=>{
             this.stackAlignContentIndex += 1
             if (this.stackAlignContentIndex == 9) {
               this.stackAlignContentIndex = 0
             }
             this.stackLayoutAlignContent= this.stackAlignContentArr[this.stackAlignContentIndex]
-            this.dynamicLayoutAlignContent = this.stackLayoutAlignContent
+            this.algorithm.alignContent = this.stackLayoutAlignContent
           })
           .id('StackLayoutAlgorithmJAlignContent')
           .width(150)
@@ -64,23 +64,16 @@ struct DynamicLayoutStack {
         Button('get')
           .onClick(()=>{
             let strJson1 = getInspectorByKey('DynamicLayoutStack');
-            console.info('hello1:'+JSON.parse(strJson1).$attrs.alignContent);
+            console.info('hello:'+JSON.parse(strJson1).$attrs.alignContent);
 
           })
           .width(80)
           .height(20)
       }
       Row(){
-        Button('null')
-          .onClick(()=>{
-            this.dynamicLayoutAlignContent = null
-          })
-          .id('StackLayoutAlgorithmNull')
-          .width(80)
-          .height(20)
         Button('undefined')
           .onClick(()=>{
-            this.dynamicLayoutAlignContent = undefined
+            this.algorithm.alignContent = undefined
           })
           .id('StackLayoutAlgorithmUndefined')
           .width(80)

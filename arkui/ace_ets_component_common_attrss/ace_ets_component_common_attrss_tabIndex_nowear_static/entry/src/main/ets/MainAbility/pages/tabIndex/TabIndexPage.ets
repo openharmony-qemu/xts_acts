@@ -63,7 +63,7 @@ struct TabIndexPage {
   }
 
   commonStyle(instance: CommonMethod){
-    instance.tabIndex(this._tabIndex as Int)
+    instance.tabIndex(this._tabIndex.toInt())
     instance.key(this.componentKey)
     instance.onFocus(() => {
       this.callback = 'onFocus'

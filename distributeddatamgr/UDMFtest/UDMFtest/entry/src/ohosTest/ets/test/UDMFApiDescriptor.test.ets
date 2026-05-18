@@ -8741,5 +8741,374 @@ export default function UDMFApiDescriptorTest() {
       console.log(tag + "testGetUniformDataTypesByMIMETypeErr0300 end");
     });
 
+    /**
+     * @tc.name   UDMFUtdTest168
+     * @tc.number SUB_DistributedData_UDMF_SDK_UTDJsAPITest_0100
+     * @tc.desc   TypeDescriptor length is 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest168 start');
+      try {
+        let typeObj:UTD.TypeDescriptor = UTD.getTypeDescriptor('a');
+        console.log(tag, `${typeObj}`);
+        expect(typeObj).assertEqual(null);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getTypeDescriptor throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest168 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest169
+     * @tc.number SUB_DistributedData_UDMF_SDK_UTDJsAPITest_0200
+     * @tc.desc   TypeDescriptor length is 256
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest169 start');
+      let str_256 = 'a'.repeat(256);
+      try {
+        let typeObj:UTD.TypeDescriptor = UTD.getTypeDescriptor(str_256);
+        console.log(tag, `${typeObj}`);
+        expect(typeObj).assertEqual(null);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getTypeDescriptor throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest169 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest170
+     * @tc.number SUB_DistributedData_UDMF_SDK_UTDJsAPITest_0300
+     * @tc.desc   TypeDescriptor length is 257
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest170 start');
+      let str_257 = 'a'.repeat(257);
+      try {
+        let typeObj:UTD.TypeDescriptor = UTD.getTypeDescriptor(str_257);
+        console.log(tag, `${typeObj}`);
+        expect(typeObj).assertEqual(null);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getTypeDescriptor throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+      }
+      console.log(tag + 'UDMFUtdTest170 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest171
+     * @tc.number SUB_DistributedData_UDMF_SDK_UTDJsAPITest_0400
+     * @tc.desc   getUniformDataTypeByFilenameExtension belongsTo length is 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest171 start');
+      try {
+        let typeIds = UTD.getUniformDataTypeByFilenameExtension('.pages', 'a');
+        expect().assertFail();
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypeByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect(error.code).assertEqual('401');
+      }
+      console.log(tag + 'UDMFUtdTest171 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest172
+     * @tc.number SUB_DistributedData_UDMF_SDK_UTDJsAPITest_0500
+     * @tc.desc   getUniformDataTypeByFilenameExtension belongsTo length is 256
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest172 start');
+      let str_256 = 'a'.repeat(256);
+      try {
+        let typeIds = UTD.getUniformDataTypeByFilenameExtension('.pages', str_256);
+        expect().assertFail();
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypeByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect(error.code).assertEqual('401');
+      }
+      console.log(tag + 'UDMFUtdTest172 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest173
+     * @tc.number SUB_DistributedData_UDMF_SDK_UTDJsAPITest_0600
+     * @tc.desc   getUniformDataTypeByFilenameExtension belongsTo length is 257
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest173 start');
+      let str_257 = 'a'.repeat(257);
+      try {
+        let typeIds = UTD.getUniformDataTypeByFilenameExtension('.pages', str_257);
+        expect().assertFail();
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypeByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect(error.code).assertEqual('401');
+      }
+      console.log(tag + 'UDMFUtdTest173 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest174
+     * @tc.number SUB_DistributedData_UDMF_SDK_UTDJsAPITest_0700
+     * @tc.desc   getUniformDataTypeByMIMEType belongsTo length is 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest174 start');
+      try {
+        let typeId = UTD.getUniformDataTypeByMIMEType('application/vnd.apple.pages', 'a');
+        expect().assertFail();
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypeByMIMEType throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect(error.code).assertEqual('401');
+      }
+      console.log(tag + 'UDMFUtdTest174 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest175
+     * @tc.number SUB_DistributedData_UDMF_SDK_UTDJsAPITest_0800
+     * @tc.desc   getUniformDataTypeByMIMEType belongsTo length is 256
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest175 start');
+      let str_256 = 'a'.repeat(256);
+      try {
+        let typeId = UTD.getUniformDataTypeByMIMEType('application/vnd.apple.pages', str_256);
+        expect().assertFail();
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypeByMIMEType throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect(error.code).assertEqual('401');
+      }
+      console.log(tag + 'UDMFUtdTest175 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest176
+     * @tc.number SUB_DistributedData_UDMF_SDK_UTDJsAPITest_0900
+     * @tc.desc   getUniformDataTypeByMIMEType belongsTo length is 257
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest176 start');
+      let str_257 = 'a'.repeat(257);
+      try {
+        let typeId = UTD.getUniformDataTypeByMIMEType('application/vnd.apple.pages', str_257);
+        expect().assertFail();
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypeByMIMEType throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect(error.code).assertEqual('401');
+      }
+      console.log(tag + 'UDMFUtdTest176 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest177
+     * @tc.number SUB_DistributedData_UDMF_SDK_UTDJsAPITest_1000
+     * @tc.desc   getUniformDataTypesByFilenameExtension belongsTo length is 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest177 start');
+      try {
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.pages', 'a');
+        expect().assertFail();
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect(error.code).assertEqual('401');
+      }
+      console.log(tag + 'UDMFUtdTest177 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest178
+     * @tc.number SUB_DistributedData_UDMF_SDK_UTDJsAPITest_1100
+     * @tc.desc   getUniformDataTypesByFilenameExtension belongsTo length is 256
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest178 start');
+      let str_256 = 'a'.repeat(256);
+      try {
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.pages', str_256);
+        expect().assertFail();
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect(error.code).assertEqual('401');
+      }
+      console.log(tag + 'UDMFUtdTest178 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest179
+     * @tc.number SUB_DistributedData_UDMF_SDK_UTDJsAPITest_1200
+     * @tc.desc   getUniformDataTypesByFilenameExtension belongsTo length is 257
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest179 start');
+      let str_257 = 'a'.repeat(257);
+      try {
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.pages', str_257);
+        expect().assertFail();
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect(error.code).assertEqual('401');
+      }
+      console.log(tag + 'UDMFUtdTest179 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest180
+     * @tc.number SUB_DistributedData_UDMF_SDK_UTDJsAPITest_1300
+     * @tc.desc   getUniformDataTypesByFilenameExtension belongsTo length is 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest180 start');
+      try {
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.pages', '');
+        expect().assertFail();
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypesByFilenameExtension throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect(error.code).assertEqual('401');
+      }
+      console.log(tag + 'UDMFUtdTest180 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest181
+     * @tc.number SUB_DistributedData_UDMF_SDK_UTDJsAPITest_1400
+     * @tc.desc   getUniformDataTypesByMIMEType belongsTo length is 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest181 start');
+      try {
+        let typeId = UTD.getUniformDataTypesByMIMEType('application/vnd.apple.pages', 'a');
+        expect().assertFail();
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypesByMIMEType throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect(error.code).assertEqual('401');
+      }
+      console.log(tag + 'UDMFUtdTest181 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest182
+     * @tc.number SUB_DistributedData_UDMF_SDK_UTDJsAPITest_1500
+     * @tc.desc   getUniformDataTypesByMIMEType belongsTo length is 256
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest182 start');
+      let str_256 = 'a'.repeat(256);
+      try {
+        let typeId = UTD.getUniformDataTypesByMIMEType('application/vnd.apple.pages', str_256);
+        expect().assertFail();
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypesByMIMEType throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect(error.code).assertEqual('401');
+      }
+      console.log(tag + 'UDMFUtdTest182 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest183
+     * @tc.number SUB_DistributedData_UDMF_SDK_UTDJsAPITest_1600
+     * @tc.desc   getUniformDataTypesByMIMEType belongsTo length is 257
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest183 start');
+      let str_257 = 'a'.repeat(257);
+      try {
+        let typeId = UTD.getUniformDataTypesByMIMEType('application/vnd.apple.pages', str_257);
+        expect().assertFail();
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypesByMIMEType throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect(error.code).assertEqual('401');
+      }
+      console.log(tag + 'UDMFUtdTest183 end');
+    });
+
+    /**
+     * @tc.name   UDMFUtdTest184
+     * @tc.number SUB_DistributedData_UDMF_SDK_UTDJsAPITest_1700
+     * @tc.desc   getUniformDataTypesByMIMEType belongsTo length is 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMFUtdTest184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.log(tag + 'UDMFUtdTest184 start');
+      try {
+        let typeId = UTD.getUniformDataTypesByMIMEType('application/vnd.apple.pages', '');
+        expect().assertFail();
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag + `getUniformDataTypesByMIMEType throws an exception. code is ${error.code}, message is ${error.message}`);
+        expect(error.code).assertEqual('401');
+      }
+      console.log(tag + 'UDMFUtdTest184 end');
+    });
   })
 }

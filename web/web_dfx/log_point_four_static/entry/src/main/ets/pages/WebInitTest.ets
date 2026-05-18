@@ -25,7 +25,7 @@ import { canIUse } from '@internal.full.global'
 import Want from '@ohos.app.ability.Want';
 import webNativeMessagingExtensionManager from '@ohos.web.webNativeMessagingExtensionManager';
 import common from '@ohos.app.ability.common';
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 
@@ -248,7 +248,6 @@ struct webViewController {
                   } else {
                     Utils.emitEvent(false, 111040);
                   }
-
                 } catch (error) {
                   console.error(`emitPrecompileJavaScriptInitErr ErrorCode: ${error.code},  Message: ${error.message}`);
                   this.errorCode = error.code;
@@ -265,7 +264,6 @@ struct webViewController {
                     Utils.emitEvent(-1, 111060);
                     return;
                   }
-
                   let hostCtx = uiCtx.getHostContext();
                   if (!hostCtx) {
                     console.error("hostContext is null");

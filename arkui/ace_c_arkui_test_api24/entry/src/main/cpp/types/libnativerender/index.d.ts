@@ -19,3 +19,17 @@ export const EnableClickSoundEffectTest: (a: string) => void;
 export const EllipsisModeCenterTest: (a: string) => void;
 
 export const EllipsisModeStartTest: (a: string) => void;
+
+export const PointerEventGetCurrentLocalTest: (a: string) => void;
+
+export const TextGetCharacterTest: (a: string) => void;
+
+export const CrossLanguageAddChildTest: () => void;
+
+export const CrossLanguageInsertChildAfterTest: () => void;
+
+export const CrossLanguageInsertChildBeforeTest: () => void;
+
+export const CrossLanguageInsertChildAtTest: () => void;
+
+export const CrossLanguageRemoveChildTest: () => void;

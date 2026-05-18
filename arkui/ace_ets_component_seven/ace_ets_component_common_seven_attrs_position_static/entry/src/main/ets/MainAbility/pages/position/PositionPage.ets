@@ -74,9 +74,6 @@ import {
   FlowItemAttribute,
   ForEach,
   FormComponentAttribute,
-  FormLink,
-  FormLinkAttribute,
-  FormLinkOptions,
   Gauge,
   GaugeAttribute,
   Grid,
@@ -359,15 +356,6 @@ export class FormComponentModifier implements AttributeModifier<FormComponentAtt
   mPosition: Position = { x: 0, y: 0 };
 
   applyNormalAttribute(instance: FormComponentAttribute): void {
-    console.info(`position page show ${JSON.stringify(this.mPosition)}`)
-    instance.position(this.mPosition)
-  }
-}
-
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mPosition: Position = { x: 0, y: 0 };
-
-  applyNormalAttribute(instance: FormLinkAttribute): void {
     console.info(`position page show ${JSON.stringify(this.mPosition)}`)
     instance.position(this.mPosition)
   }
@@ -931,11 +919,6 @@ function commonStyle(this: FlowItemAttribute, componentKey: string) {
   return this
 }
 
-function commonStyle(this: FormLinkAttribute, componentKey: string) {
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: GaugeAttribute, componentKey: string) {
   this.key(componentKey)
   return this
@@ -1279,8 +1262,6 @@ struct PositionPage {
   @State _positionFlowItemMod: FlowItemModifier = new FlowItemModifier()
   //FormComponent Component is not found on build
   @State _positionFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  //FormLink Component is not found on build
-  @State _positionFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _positionGaugeMod: GaugeModifier = new GaugeModifier()
   @State _positionGridMod: GridModifier = new GridModifier()
   @State _positionGridColMod: GridColModifier = new GridColModifier()

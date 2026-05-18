@@ -337,13 +337,12 @@ export default function EAWorker3Test(): void {
             workers.push(worker);
           }
 
-          // Each worker executes multiple increment operations, using run().Await() to wait for completion
           for (let i = 0; i < WORKER_COUNT; i++) {
             for (let j = 0; j < ITERATIONS; j++) {
-              workers[i].run<void>(() => {
+              await workers[i].run<void>(() => {
                 sharedCounter++;
                 completedCount++;
-              }).Await();
+              });
             }
           }
 
@@ -393,12 +392,11 @@ export default function EAWorker3Test(): void {
             workers.push(worker);
           }
 
-          // Each worker posts multiple tasks, using run().Await() to wait for completion
           for (let i = 0; i < WORKER_COUNT; i++) {
             for (let j = 0; j < TASKS_PER_WORKER; j++) {
-              workers[i].run<void>(() => {
+              await workers[i].run<void>(() => {
                 totalCompleted++;
-              }).Await();
+              });
             }
           }
 
@@ -441,7 +439,7 @@ export default function EAWorker3Test(): void {
           let innerWorkerCreated = false;
 
           // Create another worker inside worker
-          const job = outerWorker.run<void>(() => {
+          await outerWorker.run<void>(() => {
             try {
               const innerWorker = new EAWorker(`${TAG}-inner`);
               innerWorker.start();
@@ -454,8 +452,6 @@ export default function EAWorker3Test(): void {
               console.error(`${TAG} Inner worker error: ${error.message}`);
             }
           });
-
-          job.Await();
           outerWorker.quit();
           while (outerWorker.isAlive()) {
             await Utils.msSleep(10);
@@ -489,22 +485,22 @@ export default function EAWorker3Test(): void {
           const worker = new EAWorker(TAG);
           worker.start();
 
-          const job = worker.run<int>(() => {
+          const promise = worker.run<int>(() => {
             return 42;
           });
 
-          // First Await call
-          const result1 = job.Await();
+          // First wait for completion
+          const result1 = await promise;
           expect(result1).assertEqual(42);
 
-          // Second Await (should return same result or throw exception)
+          // Second wait (should return same result or throw exception)
           try {
-            const result2 = job.Await();
+            const result2 = await promise;
             expect(result2).assertEqual(42);
-            console.info(`${TAG} Multiple Await calls allowed, returned same result`);
+            console.info(`${TAG} Multiple wait calls allowed, returned same result`);
           } catch (error) {
-            console.info(`${TAG} Multiple Await calls throw: ${error.message}`);
-            // Some implementations may not allow multiple Await, which is acceptable
+            console.info(`${TAG} Multiple wait calls throw: ${error.message}`);
+            // Some implementations may not allow multiple wait, which is acceptable
           }
 
           worker.quit();
@@ -538,36 +534,31 @@ export default function EAWorker3Test(): void {
           worker.start();
 
           // Test number
-          let jobNumber: Job<int> = worker.run<int>(() => {
+          expect(await worker.run<int>(() => {
             return 123;
-          });
-          expect(jobNumber.Await()).assertEqual(123);
+          })).assertEqual(123);
 
           // Test string
-          let jobString: Job<string> = worker.run<string>(() => {
+          expect(await worker.run<string>(() => {
             return 'hello';
-          });
-          expect(jobString.Await()).assertEqual('hello');
+          })).assertEqual('hello');
 
           // Test boolean
-          let jobBoolean: Job<boolean> = worker.run<boolean>(() => {
+          expect(await worker.run<boolean>(() => {
             return true;
-          });
-          expect(jobBoolean.Await()).assertEqual(true);
+          })).assertEqual(true);
 
           // Test undefined
-          let jobVoid: Job<void> = worker.run<void>(() => {
+          await worker.run<void>(() => {
             return;
           });
-          jobVoid.Await();
 
           // Test object - using Record type
-          let jobObject: Job<Record<string, string>> = worker.run<Record<string, string>>(() => {
+          const result = await worker.run<Record<string, string>>(() => {
             const obj: Record<string, string> = {};
             obj['key'] = 'value';
             return obj;
           });
-          const result = jobObject.Await();
           expect(result['key']).assertEqual('value');
 
           worker.quit();
@@ -602,11 +593,9 @@ export default function EAWorker3Test(): void {
           const worker = new EAWorker(TAG);
           worker.start();
 
-          const job = worker.run<null>(() => {
+          const result = await worker.run<null>(() => {
             return null;
           });
-
-          const result = job.Await();
           expect(result).assertEqual(null);
 
           worker.quit();
@@ -641,15 +630,13 @@ export default function EAWorker3Test(): void {
           const worker = new EAWorker(TAG);
           worker.start();
 
-          const job: Job<int[]> = worker.run<int[]>(() => {
+          const result = await worker.run<int[]>(() => {
             const arr: int[] = [];
             for (let i = 0; i < 100; i++) {
               arr.push(i);
             }
             return arr;
           });
-
-          const result = job.Await();
           expect(result.length).assertEqual(100);
           for (let i = 0; i < 100; i++) {
             expect(result[i]).assertEqual(i);
@@ -688,20 +675,18 @@ export default function EAWorker3Test(): void {
           worker.start();
 
           // Test array parameter
-          let job1: Job<int> = worker.run<int>((arr: int[]) => {
+          expect(await worker.run<int>((arr: int[]) => {
             let sum: int = 0;
             for (let i = 0; i < arr.length; i++) {
               sum += arr[i];
             }
             return sum;
-          }, [1, 2, 3, 4, 5]);
-          expect(job1.Await()).assertEqual(15);
+          }, [1, 2, 3, 4, 5])).assertEqual(15);
 
           // Test multiple parameters
-          let job2: Job<int> = worker.run<int>((a: int, b: int, c: int) => {
+          expect(await worker.run<int>((a: int, b: int, c: int) => {
             return a + b + c;
-          }, 10, 20, 30);
-          expect(job2.Await()).assertEqual(60);
+          }, 10, 20, 30)).assertEqual(60);
 
           worker.quit();
           while (worker.isAlive()) {
@@ -738,7 +723,7 @@ export default function EAWorker3Test(): void {
           const DURATION_MS = 2000;
 
           const startTime = Date.now();
-          const job = worker.run<int>(() => {
+          const result = await worker.run<int>(() => {
             const end = Date.now() + DURATION_MS;
             let counter = 0;
             while (Date.now() < end) {
@@ -746,8 +731,6 @@ export default function EAWorker3Test(): void {
             }
             return counter;
           });
-
-          const result = job.Await();
           const endTime = Date.now();
           const duration = endTime - startTime;
 
@@ -786,19 +769,19 @@ export default function EAWorker3Test(): void {
           worker.start();
 
           const JOB_COUNT = 20;
-          const jobs: Job<int>[] = [];
+          const promises: Promise<int>[] = [];
           const results: int[] = [];
 
-          // Create multiple Jobs
+          // Create multiple promises
           for (let i: int = 0; i < JOB_COUNT; i++) {
-            jobs.push(worker.run<int>((index: int) => {
+            promises.push(worker.run<int>((index: int) => {
               return index * index;
             }, i));
           }
 
-          // Wait for all Jobs to complete
+          // Wait for all promises to complete
           for (let i: int = 0; i < JOB_COUNT; i++) {
-            results.push(jobs[i].Await());
+            results.push(await promises[i]);
           }
 
           // Verify results
@@ -836,13 +819,13 @@ export default function EAWorker3Test(): void {
         console.info(`${TAG} test start`);
 
         try {
-          const task = new taskpool.Task((): int => {
+          const task = new taskpool.Task(async () => {
             const worker = new EAWorker(`${TAG}-inner`);
             worker.start();
 
-            const result = worker.run<int>(() => {
+            const result = await worker.run<int>(() => {
               return 42;
-            }).Await();
+            });
 
             worker.quit();
             while (worker.isAlive()) {

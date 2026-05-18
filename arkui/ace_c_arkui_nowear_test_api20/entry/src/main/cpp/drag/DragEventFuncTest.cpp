@@ -256,8 +256,8 @@ napi_value DragEventFuncTest::CreateNativeNode(napi_env env, napi_callback_info 
     nodeAPI->setAttribute(image, NODE_ID, &id_item);
     id_item.string = "dragArea_";
     nodeAPI->setAttribute(dragArea, NODE_ID, &id_item);
-    nodeAPI->addChild(Column, image);
     nodeAPI->addChild(Column, dragArea);
+    nodeAPI->addChild(Column, image);
     nodeAPI->registerNodeEventReceiver(&OnEventReceive);
 
     std::string id(xComponentID);

@@ -56,13 +56,13 @@ export default function webSslErrorTest() {
       })
     /**
      * @tc.name   testSslErrorInvalidStatic001
-     * @tc.number SUB_WEB_SSLERRORDATEINVALID_01001
+     * @tc.number SUB_WEB_SSL_ERRORDATEINVALID_0100
      * @tc.desc   test SslError DateInvalid
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testSslErrorInvalidStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testSslErrorInvalidStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("emitSslErrorInvalid", 10);
         await Utils.msSleep(2000);
@@ -71,18 +71,18 @@ export default function webSslErrorTest() {
         let button = await driver.findComponent(ON.id('WebSslErrorTestButton'));
         await Utils.msSleep(2000);
         button?.click();
-        await Utils.msSleep(2000);
+        await Utils.msSleep(6000);
         done();
       })
     /**
      * @tc.name   testSslErrorDateInvalidStatic001
-     * @tc.number SUB_WEB_SSLERRORDATEINVALID_0100
+     * @tc.number SUB_WEB_SSLERROR_DATEINVALID_0100
      * @tc.desc   test SslError DateInvalid
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testSslErrorDateInvalidStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testSslErrorDateInvalidStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       Utils.emitEvent("emitSslErrorDateInvalid", 10);
       await Utils.msSleep(2000);
@@ -91,18 +91,18 @@ export default function webSslErrorTest() {
       let button = await driver.findComponent(ON.id('WebSslErrorTestButton'));
       await Utils.msSleep(2000);
       button?.click();
-      await Utils.msSleep(2000);
+      await Utils.msSleep(6000);
       done();
     })
     /**
      * @tc.name   testSslErrorUntrustedStatic001
-     * @tc.number SUB_WEB_SSLERRORUNTRUSTED_0100
+     * @tc.number SUB_WEB_SSL_ERRORUNTRUSTED_0100
      * @tc.desc   test SslError Untrusted
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testSslErrorUntrustedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testSslErrorUntrustedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       Utils.emitEvent("emitSslErrorUntrusted", 10);
       await Utils.msSleep(2000);
@@ -111,18 +111,18 @@ export default function webSslErrorTest() {
       let button = await driver.findComponent(ON.id('WebSslErrorTestButton'));
       await Utils.msSleep(2000);
       button?.click();
-      await Utils.msSleep(2000);
+      await Utils.msSleep(6000);
       done();
     })
     /**
      * @tc.name   testSslErrorHandlerStatic001
-     * @tc.number SUB_WEB_SSLERRORHANDLER_0100
+     * @tc.number SUB_WEB_SSL_ERRORHANDLER_0100
      * @tc.desc   test SslError Handler
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testSslErrorHandlerStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testSslErrorHandlerStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       Utils.emitEvent("emitSslErrorHostMismatch", 10);
       await Utils.msSleep(2000);
@@ -131,18 +131,18 @@ export default function webSslErrorTest() {
       let button = await driver.findComponent(ON.id('WebSslErrorTestButton'));
       await Utils.msSleep(2000);
       button?.click();
-      await Utils.msSleep(2000);
+      await Utils.msSleep(6000);
       done();
     })
     /**
      * @tc.name   testSslErrorHostMismatchStatic001
-     * @tc.number SUB_WEB_SSLERRORHOSTMISMATCH_0100
+     * @tc.number SUB_WEB_SSL_ERRORHOSTMISMATCH_0100
      * @tc.desc   test SslError HostMismatch
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testSslErrorHostMismatchStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testSslErrorHostMismatchStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("emitSslErrorHandler", 10);
         await Utils.msSleep(2000);
@@ -151,7 +151,7 @@ export default function webSslErrorTest() {
         let button = await driver.findComponent(ON.id('WebSslErrorTestButton'));
         await Utils.msSleep(2000);
         button?.click();
-        await Utils.msSleep(2000);
+        await Utils.msSleep(6000);
         done();
       })
     /**
@@ -160,9 +160,9 @@ export default function webSslErrorTest() {
      * @tc.desc   test loadUrl with headers
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testLoadUrlStatic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testLoadUrlStatic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       Utils.emitEvent("testLoadUrl005", 10);
       Utils.registerEvent("testLoadUrl005", 17100002, 201120, done);
@@ -170,7 +170,7 @@ export default function webSslErrorTest() {
       let button = await driver.findComponent(ON.id('WebSslErrorTestButton'));
       await Utils.msSleep(2000);
       button?.click();
-      await Utils.msSleep(2000);
+      await Utils.msSleep(6000);
       done();
     })
     /**
@@ -179,9 +179,9 @@ export default function webSslErrorTest() {
      * @tc.desc   test loadUrl with headers
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testLoadUrlStatic006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testLoadUrlStatic006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       Utils.emitEvent("testLoadUrl006", 10);
       Utils.registerEvent("testLoadUrl006", "index", 201130, done);
@@ -189,7 +189,7 @@ export default function webSslErrorTest() {
       let button = await driver.findComponent(ON.id('WebSslErrorTestButton'));
       await Utils.msSleep(2000);
       button?.click();
-      await Utils.msSleep(2000);
+      await Utils.msSleep(6000);
       done();
     })
     /**
@@ -198,9 +198,9 @@ export default function webSslErrorTest() {
      * @tc.desc   test loadUrl with headers
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testLoadUrlStatic008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testLoadUrlStatic008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       Utils.emitEvent("testLoadUrl008", 10);
       Utils.registerEvent("testLoadUrl008", "index", 201150, done);
@@ -208,8 +208,82 @@ export default function webSslErrorTest() {
       let button = await driver.findComponent(ON.id('WebSslErrorTestButton'));
       await Utils.msSleep(2000);
       button?.click();
-      await Utils.msSleep(2000);
+      await Utils.msSleep(6000);
       done();
     })
+    /**
+     * @tc.name   testLoadUrlStatic009
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_LOADURL_0900
+     * @tc.desc   test loadUrl with 170001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testLoadUrlStatic009', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      Utils.emitEvent("testLoadUrl009", 10);
+      await Utils.msSleep(2000)
+      Utils.registerEvent("testLoadUrl009", 17100001, 201151, done);
+      await Utils.msSleep(2000)
+      let button = await driver.findComponent(ON.id('WebSslErrorTestButton'));
+      await Utils.msSleep(2000);
+      button?.click();
+      await Utils.msSleep(6000);
+      done();
+    })
+    /**
+     * @tc.name   testLoadUrlStatic010
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_LOADURL_1000
+     * @tc.desc   test loadUrl with 170001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testLoadUrlStatic010', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      Utils.emitEvent("testLoadUrl010", 10);
+      await Utils.msSleep(2000)
+      Utils.registerEvent("testLoadUrl010", 17100002, 201152, done);
+      await Utils.msSleep(2000)
+      let button = await driver.findComponent(ON.id('WebSslErrorTestButton'));
+      await Utils.msSleep(2000);
+      button?.click();
+      await Utils.msSleep(6000);
+      done();
+    })
+    /**
+     * @tc.name   testLoadUrlStatic011
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_LOADURL_1100
+     * @tc.desc   test loadUrl with 170001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testLoadUrlStatic011', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      Utils.emitEvent("testLoadUrl011", 10);
+      await Utils.msSleep(2000)
+      Utils.registerEvent("testLoadUrl010", 17100003, 201153, done);
+      await Utils.msSleep(2000)
+      let button = await driver.findComponent(ON.id('WebSslErrorTestButton'));
+      await Utils.msSleep(2000);
+      button?.click();
+      await Utils.msSleep(6000);
+      done();
+    })
+    /**
+     * @tc.name        SwitchNextPageStatic
+     * @tc.number      SUB_WEB_Switch_NextPageStatic_1100
+     * @tc.desc        test PAGE_REDIRECT
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('emitonSwitchNextPage', 10)
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('WebSslErrorTestButton', 10, '');
+        await Utils.msSleep(6000);
+        done();
+      })
   })
 }

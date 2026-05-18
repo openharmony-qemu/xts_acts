@@ -37,7 +37,7 @@ struct Grid_Row_Direction_RowReverse {
           reference: BreakpointsReference.ComponentSize } as BreakPoints,
         direction: GridRowDirection.RowReverse
       }) {
-        ForEach(this.bgColors, (color: Color, index?: number) => {
+        ForEach(this.bgColors, (color: Color, index?: int) => {
           GridCol({ span: 1 }) {
             Row().width("100%").height("20vp")
           }.borderColor(color).borderWidth(2).key('DirectionRowReverse_' + index)

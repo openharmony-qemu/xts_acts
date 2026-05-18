@@ -1726,3 +1726,30 @@ napi_value EnumOHScalingMode2(napi_env env, napi_callback_info info)
     return retValue;
 }
 
+napi_value EnumOHEnableSkipSamples1(napi_env env, napi_callback_info info)
+{
+    OH_AVFormat *format = OH_AVFormat_Create();
+    bool setResult = OH_AVFormat_SetIntValue(format, OH_MD_KEY_ENABLE_BUFFER_SKIP_SAMPLES, 1);
+    napi_value retValue;
+    if (setResult == true) {
+        napi_create_int32(env, 0, &retValue);
+    } else {
+        napi_create_int32(env, 1, &retValue);
+    }
+    OH_AVFormat_Destroy(format);
+    return retValue;
+}
+
+napi_value EnumOHEnableSkipSamples2(napi_env env, napi_callback_info info)
+{
+    OH_AVFormat *format = OH_AVFormat_Create();
+    bool setResult = OH_AVFormat_SetIntValue(format, OH_MD_KEY_ENABLE_BUFFER_SKIP_SAMPLES, 0);
+    napi_value retValue;
+    if (setResult == true) {
+        napi_create_int32(env, 0, &retValue);
+    } else {
+        napi_create_int32(env, 1, &retValue);
+    }
+    OH_AVFormat_Destroy(format);
+    return retValue;
+}

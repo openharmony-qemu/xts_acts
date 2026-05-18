@@ -537,6 +537,7 @@ export default function ApiCoverTest() {
         windowTop: 100,
         windowWidth: 100,
         windowHeight: 100,
+        splitRatio: window.SplitRatioPreference.PRIMARY_DOMINANT
       }
       let startWant: Want = {
         deviceId: "",
@@ -545,6 +546,7 @@ export default function ApiCoverTest() {
       }
       expect(0).assertEqual(insightIntent.ExecuteMode.UI_ABILITY_FOREGROUND);
       expect(1).assertEqual(insightIntent.ExecuteMode.UI_ABILITY_BACKGROUND);
+      expect(1).assertEqual(window.SplitRatioPreference.PRIMARY_DOMINANT);
       console.info("SUB_AA_Test_InsightIntent_0100:" + insightIntent.ExecuteMode.UI_EXTENSION_ABILITY);
       // expect(2).assertEqual(insightIntent.ExecuteMode.UI_EXTENSION_ABILITY)
       AppStorage.get<common.UIAbilityContext>("abilityContext")!.startAbility(startWant, startOp, (err, data) => {
@@ -578,7 +580,8 @@ export default function ApiCoverTest() {
         windowWidth: 100,
         windowHeight: 100,
         windowFocused: true,
-        windowCreateParams: windowParam
+        windowCreateParams: windowParam,
+        splitRatio: window.SplitRatioPreference.EQUAL
       }
       let startWant: Want = {
         deviceId: "",
@@ -587,6 +590,7 @@ export default function ApiCoverTest() {
       }
       expect(0).assertEqual(insightIntent.ExecuteMode.UI_ABILITY_FOREGROUND);
       expect(1).assertEqual(insightIntent.ExecuteMode.UI_ABILITY_BACKGROUND);
+      expect(0).assertEqual(window.SplitRatioPreference.EQUAL);
       console.info("SUB_AA_Test_StartOptions_0100:" + insightIntent.ExecuteMode.UI_EXTENSION_ABILITY);
       // expect(2).assertEqual(insightIntent.ExecuteMode.UI_EXTENSION_ABILITY)
       AppStorage.get<common.UIAbilityContext>("abilityContext")!.startAbility(startWant, startOp, (err, data) => {
@@ -1326,6 +1330,35 @@ export default function ApiCoverTest() {
           done();
         }
       })
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetElementName_0100
+     * @tc.number SUB_Ability_AbilityRuntime_GetElementName_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_GetElementName_0100', Level.LEVEL0, async (done: Function) => {
+
+      let stageContext: common.AbilityStageContext = AppStorage.get<common.AbilityStageContext>("stageContext")!;
+      let deviceId: string | undefined = stageContext.launchElement?.deviceId;
+      let uri: string | undefined = stageContext.launchElement?.uri;
+      let shortName: string | undefined = stageContext.launchElement?.shortName;
+      let bundleName: string | undefined = stageContext.launchElement?.bundleName;
+      let moduleName: string | undefined = stageContext.launchElement?.moduleName;
+      let abilityName: string | undefined = stageContext.launchElement?.abilityName;
+
+      console.info(`GetLaunchElement, deviceId is ${deviceId}, uri is ${uri}, shortName is ${shortName}`);
+      console.info(`GetLaunchElement, bundleName is ${bundleName}, moduleName is ${moduleName}, abilityName is ${abilityName}`);
+      expect(deviceId).assertEqual('0');
+      expect(uri).assertUndefined();
+      expect(shortName).assertUndefined();
+      expect(bundleName).assertEqual('com.example.apicoverhaptest');
+      expect(moduleName).assertEqual('entry_test');
+      expect(abilityName).assertEqual('TestAbility');
+      done();
     })
   })
 }

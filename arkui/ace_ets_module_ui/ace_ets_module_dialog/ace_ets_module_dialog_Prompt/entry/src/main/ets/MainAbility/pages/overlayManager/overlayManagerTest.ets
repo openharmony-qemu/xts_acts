@@ -162,9 +162,12 @@ struct overlayManagerTest {
 
   build() {
     Column({ space: 5 }) {
-      ForEach(this.setLevelOrder, (item: SetParam) => {
-        MyComponent({ title: item.title, func: item.func })
-      }, (item: SetParam) => item.title)
+      Row({ space: 5 }) {
+        ForEach(this.setLevelOrder, (item: SetParam) => {
+          MyComponent({ title: item.title, func: item.func })
+        }, (item: SetParam) => item.title)
+      }.margin({left:30, top:40})
+
       Text(`Top` + this.top)
         .id('myTop')
         .componentTextStyle()

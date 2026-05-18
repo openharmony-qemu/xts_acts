@@ -35,6 +35,11 @@ import GraphicTextAdd03Test from './GraphicTextAdd03Test.test'
 import GraphicTextAdd04Test from './GraphicTextAdd04Test.test'
 import GraphicTextAdd05Test from './GraphicTextAdd05Test.test'
 import GraphicTextAPI24 from './GraphicTextAPI24.test'
+import GraphicTextAPI26 from './GraphicTextAPI26.test'
+import GraphicTextAPI2602 from './GraphicTextAPI2602.test'
+import GraphicGetTextStyle from './GraphicGetTextStyle.test';
+import GraphicParagraphTest from './GraphicParagraphTest.test';
+import FontDescriptor from './FontDescriptor.test';
 
 export default function testsuite() {
   graphicTextATest();
@@ -60,4 +65,9 @@ export default function testsuite() {
   GraphicTextAdd04Test();
   GraphicTextAdd05Test();
   GraphicTextAPI24();
+  GraphicTextAPI26();
+  GraphicTextAPI2602();
+  GraphicGetTextStyle();
+  GraphicParagraphTest();
+  FontDescriptor();
 }

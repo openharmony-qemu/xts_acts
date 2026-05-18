@@ -282,5 +282,78 @@ export default function bluetoothManagerTest() {
       }
       done();
     })
+
+    /**
+     * @tc.name   test_adddisallowedbluetoothprotocolswithpolicy_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDBLUETOOTHPROTOCOLSWITHPOLICY_0100
+     * @tc.desc   test addDisallowedBluetoothProtocols method with policy parameter and normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_adddisallowedbluetoothprotocolswithpolicy_0100', Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      try {
+        let accountId: number = 100;
+        let protocols: Array<bluetoothManager.Protocol> = [bluetoothManager.Protocol.GATT,
+          bluetoothManager.Protocol.SPP];
+        let policy: bluetoothManager.TransferPolicy = bluetoothManager.TransferPolicy.RECEIVE_SEND;
+        bluetoothManager.addDisallowedBluetoothProtocols(SELFWANT, accountId, protocols, policy);
+        expect(false).assertTrue();
+      } catch(error) {
+        expect(error.code == 201).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_removedisallowedbluetoothprotocolswithpolicy_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDBLUETOOTHPROTOCOLSWITHPOLICY_0100
+     * @tc.desc   test removeDisallowedBluetoothProtocols method with policy parameter and normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_removedisallowedbluetoothprotocolswithpolicy_0100', Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      try {
+        let accountId: number = 100;
+        let protocols: Array<bluetoothManager.Protocol> = [bluetoothManager.Protocol.GATT,
+          bluetoothManager.Protocol.SPP];
+        let policy: bluetoothManager.TransferPolicy = bluetoothManager.TransferPolicy.RECEIVE_SEND;
+        bluetoothManager.removeDisallowedBluetoothProtocols(SELFWANT, accountId, protocols, policy);
+        expect(false).assertTrue();
+      } catch(error) {
+        expect(error.code == 201).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_getdisallowedbluetoothprotocolswithpolicy_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDBLUETOOTHPROTOCOLSWITHPOLICY_0100
+     * @tc.desc   test getDisallowedBluetoothProtocols method with policy parameter and normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_getdisallowedbluetoothprotocolswithpolicy_0100', Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      try {
+        let accountId: number = 100;
+        let policy: bluetoothManager.TransferPolicy = bluetoothManager.TransferPolicy.RECEIVE_SEND;
+        bluetoothManager.getDisallowedBluetoothProtocols(SELFWANT, accountId, policy);
+        expect(false).assertTrue();
+      } catch(error) {
+        expect(error.code == 201).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
   })
 }

@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,25 +24,10 @@ import inspector from '@ohos.arkui.inspector';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
 let testAbilityContext:common.UIAbilityContext;
-
+const driver = Driver.create();
 export default function webOnDataResubmitted() {
   describe('WebOnDataResubmittedTest', (): void => {
     beforeAll(async (): Promise<void> => {
-      let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.addAbilityMonitor({
-        abilityName: 'EntryAbility',
-        moduleName:'entry',
-        onAbilityCreate: (abilitys : UIAbility) : void => {
-          testAbilityContext = abilitys.context
-        },
-      }, (err : BusinessError | null) : void => {
-        if (err != null ) {
-          console.log('-----' + err.code)
-        }
-        console.log('BusinessError  end')
-      });
-      await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.open.harmony.systemeventstest.static')
       await Utils.msSleep(5000)
       console.log('beforeAll end,%s', 'Succeed!')
     });
@@ -52,7 +37,7 @@ export default function webOnDataResubmitted() {
 
     /**
     * @tc.name         testDataResubmissionHandlerResendStatic001
-    * @tc.number       SUB_WEB_DATA_RESUBMISSION_HANDLER_RESEND_0100
+    * @tc.number       SUB_WEB_DATA_RESUBMISSION_HANDLER_RESEND_STATIC_0100
     * @tc.desc         test dataResubmissionHandler.resend
     * @tc.size         MediumTest
     * @tc.type         Function
@@ -62,16 +47,22 @@ export default function webOnDataResubmitted() {
       await Utils.msSleep(2000);
       Utils.emitEvent('emitDataResubmissionHandlerResend', 10)
       await Utils.msSleep(3000);
-      Utils.registerEvent('testDataResubmissionHandlerResend001', "dataSubmit", 60600, done);
+      let buttonOne = await driver.findComponent(ON.id('onDataResubmittedKey'));
+      Utils.registerEvent('testDataResubmissionHandlerResend001', true, 60600, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebOnDataResubmittedTestButton', 10, '');
+      if(buttonOne){
+        let point = await buttonOne.getBoundsCenter()
+        await driver.clickAt(point)
+        console.info("buttonOne.clickAt")
+      }
       await Utils.msSleep(6000);
       done()
     })
 
     /**
     * @tc.name         testDataResubmissionHandlerCancelStatic001
-    * @tc.number       SUB_WEB_DATA_RESUBMISSION_HANDLER_CANCEL_0100
+    * @tc.number       SUB_WEB_DATA_RESUBMISSION_HANDLER_CANCEL_STATIC_0100
     * @tc.desc         test dataResubmissionHandler.cancel
     * @tc.size         MediumTest
     * @tc.type         Function
@@ -81,16 +72,22 @@ export default function webOnDataResubmitted() {
       await Utils.msSleep(2000);
       Utils.emitEvent('emitDataResubmissionHandlerCancel', 10)
       await Utils.msSleep(3000);
-      Utils.registerEvent('testDataResubmissionHandlerCancel001', "dataSubmit", 60601, done);
+      let buttonOne = await driver.findComponent(ON.id('onDataResubmittedKey'));
+      Utils.registerEvent('testDataResubmissionHandlerCancel001', false, 60601, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebOnDataResubmittedTestButton', 10, '');
+      if(buttonOne){
+        let point = await buttonOne.getBoundsCenter()
+        await driver.clickAt(point)
+        console.info("buttonOne.clickAt")
+      }
       await Utils.msSleep(6000);
       done()
     })
 
     /**
     * @tc.name         SwitchNextPageStatic
-    * @tc.number       SUB_WEB_SWITCH_NEXT_PAGE111
+    * @tc.number       SUB_WEB_SWITCH_NEXT_PAGE123
     * @tc.desc         test SwitchNextPageStatic
     * @tc.size         MediumTest
     * @tc.type         Function

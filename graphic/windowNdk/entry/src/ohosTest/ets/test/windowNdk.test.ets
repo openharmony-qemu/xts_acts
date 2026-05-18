@@ -420,16 +420,27 @@ export default function windowNdk() {
      */
     it('test_mainWindow_SetWindowStatusBarEnabled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = "test_mainWindow_SetWindowStatusBarEnabled";
+      windowNdkTest.setWindowStatusBarEnabled(windowId, false, true);
+      await sleep(1000)
+      let flag: boolean = false;
+      WindowClass.on('avoidAreaChange', (data: window.AvoidAreaOptions) => {
+        console.info(caseName + 'Succeeded in enabling the listener for system avoid area changes. type:' +
+          JSON.stringify(data.type) + ', area: ' + JSON.stringify(data.area));
+        flag = true;
+      });
       let result = windowNdkTest.setWindowStatusBarEnabled(windowId, true, true);
       console.info(`${caseName}: result: ${result}`);
-      if (isPCStatus != '') {
-        expect(result).assertEqual(801);
-        done();
-      } else {
-        expect(result).assertEqual(0);
-        done();
+      expect(result).assertEqual(0);
+      await sleep(1000);
+      if(isFreeWindowMode){
+        WindowClass.off('avoidAreaChange')
+        expect(flag).assertEqual(false)
+        done()
+      }else{
+        WindowClass.off('avoidAreaChange')
+        expect(flag).assertEqual(true)
+        done()
       }
-
     })
 
     /**
@@ -442,14 +453,26 @@ export default function windowNdk() {
      */
     it('test_mainWindow_SetWindowStatusBarEnabled_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "test_mainWindow_SetWindowStatusBarEnabled_false";
+      let flag: boolean = false;
+      WindowClass.on('avoidAreaChange', (data: window.AvoidAreaOptions) => {
+        console.info(caseName + 'Succeeded in enabling the listener for system avoid area changes. type:' +
+          JSON.stringify(data.type) + ', area: ' + JSON.stringify(data.area));
+        flag = true;
+      });
       let result = windowNdkTest.setWindowStatusBarEnabled(windowId, false, false);
       console.info(`${caseName}: result: ${result}`);
-      if (isPCStatus != '') {
-        expect(result).assertEqual(801);
-        done();
-      } else {
-        expect(result).assertEqual(0);
-        done();
+      expect(result).assertEqual(0);
+      await sleep(1000);
+      if(isFreeWindowMode){
+        WindowClass.off('avoidAreaChange')
+        expect(flag).assertEqual(false)
+        done()
+      }else{
+        WindowClass.off('avoidAreaChange')
+        windowNdkTest.setWindowStatusBarEnabled(windowId, true, false);
+        await sleep(500)
+        expect(flag).assertEqual(true)
+        done()
       }
     })
 
@@ -463,14 +486,26 @@ export default function windowNdk() {
      */
     it('test_mainWindow_SetWindowStatusBarEnabled_false_enableAnimation_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "test_mainWindow_SetWindowStatusBarEnabled_false_enableAnimation_true";
+      let flag: boolean = false;
+      WindowClass.on('avoidAreaChange', (data: window.AvoidAreaOptions) => {
+        console.info(caseName + 'Succeeded in enabling the listener for system avoid area changes. type:' +
+          JSON.stringify(data.type) + ', area: ' + JSON.stringify(data.area));
+        flag = true;
+      });
       let result = windowNdkTest.setWindowStatusBarEnabled(windowId, false, true);
       console.info(`${caseName}: result: ${result}`);
-      if (isPCStatus != '') {
-        expect(result).assertEqual(801);
-        done();
-      } else {
-        expect(result).assertEqual(0);
-        done();
+      expect(result).assertEqual(0);
+      await sleep(1000);
+      if(isFreeWindowMode){
+        WindowClass.off('avoidAreaChange')
+        expect(flag).assertEqual(false)
+        done()
+      }else{
+        WindowClass.off('avoidAreaChange')
+        windowNdkTest.setWindowStatusBarEnabled(windowId, true ,true);
+        await sleep(500)
+        expect(flag).assertEqual(true)
+        done()
       }
     })
 
@@ -492,20 +527,25 @@ export default function windowNdk() {
           let subWindowId = subWindow.getWindowProperties().id;
           console.info(`${caseName}: Succeeded in get the subwindow id: ` + subWindowId);
 
-          let result1 = windowNdkTest.showWindow(subWindowId);
+          let result1 =await windowNdkTest.showWindow(subWindowId);
           console.info(`${caseName}: showWindow result1: ${JSON.stringify(result1)} + &{typeOf(result1)}`);
+          await sleep(1000)
+
+          let flag: boolean = false;
+          subWindow.on('avoidAreaChange', (data: window.AvoidAreaOptions) => {
+            console.info(caseName + 'Succeeded in enabling the listener for system avoid area changes. type:' +
+              JSON.stringify(data.type) + ', area: ' + JSON.stringify(data.area));
+            flag = true;
+          });
 
           let result = windowNdkTest.setWindowStatusBarEnabled(subWindowId, true, true);
-          console.info(`${caseName}: result: ${result}`);
-          if (isPCStatus != '') {
-            await subWindow.destroyWindow();
-            expect(result).assertEqual(801);
-            done();
-          } else {
-            await subWindow.destroyWindow();
-            expect(result).assertEqual(0);
-            done();
-          }
+          console.info(`${caseName}: result: ${result}`)
+          expect(result).assertEqual(0);
+          await sleep(1000);
+          subWindow.off('avoidAreaChange')
+          await subWindow.destroyWindow();
+          expect(flag).assertEqual(false)
+          done()
         }).catch((err: BusinessError) => {
           console.error(`${caseName}:Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
           expect(false).assertTrue();
@@ -541,20 +581,25 @@ export default function windowNdk() {
           let dialogWindowId = dialogWindow.getWindowProperties().id;
           console.info(`${caseName}: Succeeded in get the subwindow id: ` + dialogWindow);
 
-          let result1 = windowNdkTest.showWindow(dialogWindowId);
+          let result1 =await windowNdkTest.showWindow(dialogWindowId);
           console.info(`${caseName}: showWindow result1: ${JSON.stringify(result1)} + &{typeOf(result1)}`);
+          await sleep(1000)
+
+          let flag: boolean = false;
+          dialogWindow.on('avoidAreaChange', (data: window.AvoidAreaOptions) => {
+            console.info(caseName + 'Succeeded in enabling the listener for system avoid area changes. type:' +
+              JSON.stringify(data.type) + ', area: ' + JSON.stringify(data.area));
+            flag = true;
+          });
 
           let result = windowNdkTest.setWindowStatusBarEnabled(dialogWindowId, true, true);
           console.info(`${caseName}: result: ${result}`);
-          if (isPCStatus != '') {
-            await dialogWindow.destroyWindow();
-            expect(result).assertEqual(801);
-            done();
-          } else {
-            await dialogWindow.destroyWindow();
-            expect(result).assertEqual(0);
-            done();
-          }
+          expect(result).assertEqual(0);
+          await sleep(1000);
+          dialogWindow.off('avoidAreaChange')
+          await dialogWindow.destroyWindow();
+          expect(flag).assertEqual(false)
+          done()
         }).catch((err: BusinessError) => {
           console.error(`${caseName}:Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
           expect(false).assertTrue();
@@ -594,14 +639,27 @@ export default function windowNdk() {
      */
     it('test_mainWindow_setWindowNavigationBarEnabled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "test_mainWindow_setWindowNavigationBarEnabled";
+      console.info(`${caseName} start`);
+      windowNdkTest.setWindowNavigationBarEnabled(windowId, false, true);
+      await sleep(1000)
+      let flag: boolean = false;
+      WindowClass.on('avoidAreaChange', (data: window.AvoidAreaOptions) => {
+        console.info(caseName + 'Succeeded in enabling the listener for system avoid area changes. type:' +
+          JSON.stringify(data.type) + ', area: ' + JSON.stringify(data.area));
+        flag = true;
+      });
       let result = windowNdkTest.setWindowNavigationBarEnabled(windowId, true, true);
       console.info(`${caseName}: result: ${result}`);
-      if (isPCStatus != '') {
-        expect(result).assertEqual(801);
-        done();
-      } else {
-        expect(result).assertEqual(0);
-        done();
+      expect(result).assertEqual(0);
+      await sleep(1000);
+      if (deviceType === 'phone' ||deviceType === 'wearable' || deviceType === 'tv' || deviceType === '2in1' || deviceType === 'car' || deviceType === 'tablet' ){
+         WindowClass.off('avoidAreaChange')
+        expect(flag).assertEqual(false)
+        done()
+      }else{
+        WindowClass.off('avoidAreaChange')
+        expect(flag).assertEqual(true)
+        done()
       }
     })
 
@@ -615,14 +673,26 @@ export default function windowNdk() {
      */
     it('test_mainWindow_setWindowNavigationBarEnabled_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "test_mainWindow_setWindowNavigationBarEnabled_false";
+      let flag: boolean = false;
+      WindowClass.on('avoidAreaChange', (data: window.AvoidAreaOptions) => {
+        console.info(caseName + 'Succeeded in enabling the listener for system avoid area changes. type:' +
+          JSON.stringify(data.type) + ', area: ' + JSON.stringify(data.area));
+        flag = true;
+      });
       let result = windowNdkTest.setWindowNavigationBarEnabled(windowId, false, false);
       console.info(`${caseName}: result: ${result}`);
-      if (isPCStatus != '') {
-        expect(result).assertEqual(801);
-        done();
-      } else {
-        expect(result).assertEqual(0);
-        done();
+      expect(result).assertEqual(0);
+      await sleep(1000);
+      if(deviceType === 'phone' ||deviceType === 'wearable' || deviceType === 'tv' || deviceType === '2in1' || deviceType === 'car' || deviceType === 'tablet'){
+        WindowClass.off('avoidAreaChange')
+        expect(flag).assertEqual(false)
+        done()
+      }else{
+        WindowClass.off('avoidAreaChange')
+        windowNdkTest.setWindowNavigationBarEnabled(windowId, true, false);
+        await sleep(500)
+        expect(flag).assertEqual(true)
+        done()
       }
     })
 
@@ -636,14 +706,26 @@ export default function windowNdk() {
      */
     it('test_mainWindow_setWindowNavigationBarEnabled_false_enableAnimation_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "test_mainWindow_setWindowNavigationBarEnabled_false_enableAnimation_true";
+      let flag: boolean = false;
+      WindowClass.on('avoidAreaChange', (data: window.AvoidAreaOptions) => {
+        console.info(caseName + 'Succeeded in enabling the listener for system avoid area changes. type:' +
+          JSON.stringify(data.type) + ', area: ' + JSON.stringify(data.area));
+        flag = true;
+      });
       let result = windowNdkTest.setWindowNavigationBarEnabled(windowId, false, true);
       console.info(`${caseName}: result: ${result}`);
-      if (isPCStatus != '') {
-        expect(result).assertEqual(801);
-        done();
-      } else {
-        expect(result).assertEqual(0);
-        done();
+      expect(result).assertEqual(0);
+      await sleep(1000);
+      if(deviceType === 'phone' ||deviceType === 'wearable' || deviceType === 'tv' || deviceType === '2in1' || deviceType === 'car' || deviceType === 'tablet'){
+        WindowClass.off('avoidAreaChange')
+        expect(flag).assertEqual(false)
+        done()
+      }else{
+        WindowClass.off('avoidAreaChange')
+        windowNdkTest.setWindowNavigationBarEnabled(windowId, true, false);
+        await sleep(500)
+        expect(flag).assertEqual(true)
+        done()
       }
     })
 
@@ -665,20 +747,25 @@ export default function windowNdk() {
           let subWindowId = subWindow.getWindowProperties().id;
           console.info(`${caseName}: Succeeded in get the subwindow id: ` + subWindowId);
 
-          let result1 = windowNdkTest.showWindow(subWindowId);
+          let result1 =await windowNdkTest.showWindow(subWindowId);
           console.info(`${caseName}: showWindow result1: ${JSON.stringify(result1)} + &{typeOf(result1)}`);
+
+           await sleep(1000)
+           let flag: boolean = false;
+          subWindow.on('avoidAreaChange', (data: window.AvoidAreaOptions) => {
+            console.info(caseName + 'Succeeded in enabling the listener for system avoid area changes. type:' +
+              JSON.stringify(data.type) + ', area: ' + JSON.stringify(data.area));
+            flag = true;
+          });
 
           let result = windowNdkTest.setWindowNavigationBarEnabled(subWindowId, true, true);
           console.info(`${caseName}: result: ${result}`);
-          if (isPCStatus != '') {
-            await subWindow.destroyWindow();
-            expect(result).assertEqual(801);
-            done();
-          } else {
-            await subWindow.destroyWindow();
-            expect(result).assertEqual(0);
-            done();
-          }
+          expect(result).assertEqual(0);
+          await sleep(1000);
+          subWindow.off('avoidAreaChange')
+          await subWindow.destroyWindow();
+          expect(flag).assertEqual(false)
+          done()
         }).catch((err: BusinessError) => {
           console.error(`${caseName}:Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
           expect(false).assertTrue();
@@ -714,20 +801,25 @@ export default function windowNdk() {
           let dialogWindowId = dialogWindow.getWindowProperties().id;
           console.info(`${caseName}: Succeeded in get the subwindow id: ` + dialogWindow);
 
-          let result1 = windowNdkTest.showWindow(dialogWindowId);
+          let result1 =await windowNdkTest.showWindow(dialogWindowId);
           console.info(`${caseName}: showWindow result1: ${JSON.stringify(result1)} + &{typeOf(result1)}`);
+          await sleep(1000)
+
+          let flag: boolean = false;
+          dialogWindow.on('avoidAreaChange', (data: window.AvoidAreaOptions) => {
+            console.info(caseName + 'Succeeded in enabling the listener for system avoid area changes. type:' +
+              JSON.stringify(data.type) + ', area: ' + JSON.stringify(data.area));
+            flag = true;
+          });
 
           let result = windowNdkTest.setWindowNavigationBarEnabled(dialogWindowId, true, true);
           console.info(`${caseName}: result: ${result}`);
-          if (isPCStatus != '') {
-            await dialogWindow.destroyWindow();
-            expect(result).assertEqual(801);
-            done();
-          } else {
-            await dialogWindow.destroyWindow();
-            expect(result).assertEqual(0);
-            done();
-          }
+          expect(result).assertEqual(0);
+          await sleep(1000);
+          dialogWindow.off('avoidAreaChange')
+          await dialogWindow.destroyWindow();
+          expect(flag).assertEqual(false)
+          done()
         }).catch((err: BusinessError) => {
           console.error(`${caseName}:Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
           expect(false).assertTrue();
@@ -769,16 +861,11 @@ export default function windowNdk() {
       let caseName = "test_SetWindowStatusBarColor_0xFF00FF00";
       let result = windowNdkTest.setWindowStatusBarColor(windowId, 0XFF00FF00);
       console.info(`${caseName}: result: ${result}`);
-      if (isPCStatus != '') {
-        expect(result).assertEqual(801);
-        done();
-      } else {
-        expect(result).assertEqual(0);
-        let statusBarContentColor = WindowClass.getWindowSystemBarProperties().statusBarContentColor;
-        console.info(`${caseName}: statusBarContentColor: ${statusBarContentColor}`);
-        expect(statusBarContentColor).assertEqual('#FF00FF00');
-        done();
-      }
+      expect(result).assertEqual(0);
+      let statusBarContentColor = WindowClass.getWindowSystemBarProperties().statusBarContentColor;
+      console.info(`${caseName}: statusBarContentColor: ${statusBarContentColor}`);
+      expect(statusBarContentColor).assertEqual('#FF00FF00');
+      done();
     })
 
     /**
@@ -793,21 +880,16 @@ export default function windowNdk() {
       let caseName = "test_SetWindowStatusBarColor_0xFF000000";
       let result1 = windowNdkTest.setWindowStatusBarEnabled(windowId, false, true);
       console.info(`${caseName}: result1: ${result1}`);
-      if (isPCStatus != '') {
-        expect(result1).assertEqual(801);
-        done();
-      } else {
-        expect(result1).assertEqual(0);
-        let result2 = windowNdkTest.setWindowStatusBarColor(windowId, 0XFF000000);
-        console.info(`${caseName}: result: ${result2}`);
-        await sleep(100);
-        let statusBarContentColor = WindowClass.getWindowSystemBarProperties().statusBarContentColor;
-        console.info(`${caseName}: statusBarContentColor: ${statusBarContentColor}`);
-        expect(statusBarContentColor).assertEqual('#FF000000');
-        let result3 = windowNdkTest.setWindowStatusBarEnabled(windowId, true, true);
-        console.info(`${caseName}: result: ${result3}`);
-        done();
-      }
+      expect(result1).assertEqual(0);
+      let result2 = windowNdkTest.setWindowStatusBarColor(windowId, 0XFF000000);
+      console.info(`${caseName}: result: ${result2}`);
+      await sleep(100);
+      let statusBarContentColor = WindowClass.getWindowSystemBarProperties().statusBarContentColor;
+      console.info(`${caseName}: statusBarContentColor: ${statusBarContentColor}`);
+      expect(statusBarContentColor).assertEqual('#FF000000');
+      let result3 = windowNdkTest.setWindowStatusBarEnabled(windowId, true, true);
+      console.info(`${caseName}: result: ${result3}`);
+      done();
     })
 
     /**
@@ -838,17 +920,19 @@ export default function windowNdk() {
       let caseName = "test_getAvoidAreaByType_statusBar_show";
       let result1 = windowNdkTest.setWindowStatusBarEnabled(windowId, true, true);
       console.info(`${caseName}: result1: ${result1}`);
-      if (isPCStatus != '') {
-        expect(result1).assertEqual(801);
-        done();
-      } else {
-        expect(result1).assertEqual(0);
-        let AvoidArea_system = windowNdkTest.getAvoidAreaByType(windowId, 0);
-        console.info(`${caseName}: AvoidArea_system result: ${JSON.stringify(AvoidArea_system)}`);
+      expect(result1).assertEqual(0);
+      let AvoidArea_system = windowNdkTest.getAvoidAreaByType(windowId, 0);
+      console.info(`${caseName}: AvoidArea_system result: ${JSON.stringify(AvoidArea_system)}`);
+      if (isFreeWindowMode) {	 
+          expect(AvoidArea_system.topRect.width).assertEqual(0);
+          expect(AvoidArea_system.topRect.height).assertEqual(0);
+          done();	 
+       } else {
         expect(AvoidArea_system.topRect.width).assertLargerOrEqual(0);
         expect(AvoidArea_system.topRect.height).assertLargerOrEqual(0);
         done();
-      }
+       }
+    
     })
 
     /**
@@ -864,17 +948,18 @@ export default function windowNdk() {
       let result1 = windowNdkTest.setWindowStatusBarEnabled(windowId, false, true);
       console.info(`${caseName}: result1: ${result1}`);
       await sleep(500);
-      if (isPCStatus != '') {
-        expect(result1).assertEqual(801);
+      expect(result1).assertEqual(0);
+      let AvoidArea_system = windowNdkTest.getAvoidAreaByType(windowId, 0);
+      console.info(`${caseName}: AvoidArea_system result: ${JSON.stringify(AvoidArea_system)}`);
+      if (isFreeWindowMode) {	 
+          expect(AvoidArea_system.topRect.width).assertEqual(0);
+          expect(AvoidArea_system.topRect.height).assertEqual(0);
+          done();	 
+       } else {
+        expect(AvoidArea_system.topRect.width).assertLargerOrEqual(0);
+        expect(AvoidArea_system.topRect.height).assertLargerOrEqual(0);
         done();
-      } else {
-        expect(result1).assertEqual(0);
-        let AvoidArea_system = windowNdkTest.getAvoidAreaByType(windowId, 0);
-        console.info(`${caseName}: AvoidArea_system result: ${JSON.stringify(AvoidArea_system)}`);
-        expect(AvoidArea_system.topRect.width).assertEqual(0);
-        expect(AvoidArea_system.topRect.height).assertEqual(0);
-        done();
-      }
+       }
     })
     /**
      * @tc.name   test_getAvoidAreaByType_setLayoutFullScreen
@@ -888,19 +973,21 @@ export default function windowNdk() {
       let caseName = "test_getAvoidAreaByType_setLayoutFullScreen";
       let result1 = windowNdkTest.setWindowStatusBarEnabled(windowId, true, true);
       console.info(`${caseName}: result1: ${result1}`);
-      if (isPCStatus != '') {
-        expect(result1).assertEqual(801);
-        done();
-      } else {
-        expect(result1).assertEqual(0);
-        await WindowClass.setWindowLayoutFullScreen(true);
-        let AvoidArea_system = windowNdkTest.getAvoidAreaByType(windowId, 0);
-        console.info(`${caseName}: AvoidArea_system result: ${JSON.stringify(AvoidArea_system)}`);
+      expect(result1).assertEqual(0);
+      await WindowClass.setWindowLayoutFullScreen(true);
+      let AvoidArea_system = windowNdkTest.getAvoidAreaByType(windowId, 0);
+      console.info(`${caseName}: AvoidArea_system result: ${JSON.stringify(AvoidArea_system)}`);
+      if (isFreeWindowMode) {	 
+         await WindowClass.setWindowLayoutFullScreen(false);
+          expect(AvoidArea_system.topRect.width).assertEqual(0);
+          expect(AvoidArea_system.topRect.height).assertEqual(0);
+          done();	 
+       } else {
+         await WindowClass.setWindowLayoutFullScreen(false);
         expect(AvoidArea_system.topRect.width).assertLargerOrEqual(0);
         expect(AvoidArea_system.topRect.height).assertLargerOrEqual(0);
-        await WindowClass.setWindowLayoutFullScreen(false);
         done();
-      }
+       }
     })
 
     /**
@@ -941,14 +1028,14 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.name   test_setBackgroundColor_#FF00FF00
+     * @tc.name   test_setBackgroundColor_FF00FF00Adapt001
      * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_3100
      * @tc.desc   test_setBackgroundColor_#FF00FF00
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('test_setBackgroundColor_#FF00FF00', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('test_setBackgroundColor_FF00FF00Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "test_setBackgroundColor_#FF00FF00";
       let result = windowNdkTest.setBackgroundColor(windowId, '#FF00FF00');
       console.info(`${caseName}: setBackgroundColor result: ${JSON.stringify(result)}`);
@@ -1056,14 +1143,14 @@ export default function windowNdk() {
     })
 
     /**
-     * @tc.name   test_SetBrightness_0.0
+     * @tc.name   test_SetBrightness_00Adapt001
      * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_3800
      * @tc.desc   test_SetBrightness_0.0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('test_SetBrightness_0.0', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('test_SetBrightness_00Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "test_SetBrightness_0.0";
       let result = windowNdkTest.setBrightness(windowId, 0.0);
       console.info(`${caseName}: setBrightness result: ${JSON.stringify(result)}`);
@@ -2066,31 +2153,27 @@ export default function windowNdk() {
           let Result: number = windowNdkTest.registerFrameMetricsMeasuredCallback(windowId);
           console.info(`${caseName} Result: ${Result}`);
           expect(Result).assertEqual(0);
-          
-          windowStage.setCustomDensity(2.0,true);
-          await sleep(500);
-          let CB_count = windowNdkTest.getFrameMetricsCBCount();
-          let result_metrics = windowNdkTest.getFrameMetrics(); 
-          console.info(`${caseName} CB_count: ${CB_count}`);
-          console.info(`${caseName} result_metrics.isFirstDrawFrame: ${result_metrics.isFirstDrawFrame}`);
-          console.info(`${caseName} result_metrics.inputHandlingDuration: ${result_metrics.inputHandlingDuration}`);
-          console.info(`${caseName} result_metrics.duration: ${result_metrics.duration}`);
-          console.info(`${caseName} result_metrics.timestamp: ${result_metrics.timestamp}`);
-          if (isSupport === false) {
-            expect(CB_count).assertEqual(0);
-            console.info(`${caseName}: 此设备不支持SystemCapability.Window.SessionManager能力`);
-            windowStage.setCustomDensity(-1.0);
-            done();
-          } else {
-            expect(CB_count).assertLarger(0);
-          }
-          expect(result_metrics.isFirstDrawFrame).assertEqual(false);
-          expect(result_metrics.inputHandlingDuration).assertLarger(0);
-          expect(result_metrics.duration).assertLarger(0);
-          expect(result_metrics.timestamp).assertLarger(0);
 
-          await sleep(500);
-          windowStage.setCustomDensity(-1.0);
+          if (isSupport === true){
+            windowStage.setCustomDensity(2.0,true);
+            await sleep(500);
+            let CB_count = windowNdkTest.getFrameMetricsCBCount();
+            let result_metrics = windowNdkTest.getFrameMetrics(); 
+            console.info(`${caseName} CB_count: ${CB_count}`);
+            console.info(`${caseName} result_metrics.isFirstDrawFrame: ${result_metrics.isFirstDrawFrame}`);
+            console.info(`${caseName} result_metrics.inputHandlingDuration: ${result_metrics.inputHandlingDuration}`);
+            console.info(`${caseName} result_metrics.duration: ${result_metrics.duration}`);
+            console.info(`${caseName} result_metrics.timestamp: ${result_metrics.timestamp}`);
+            expect(CB_count).assertLarger(0);
+            expect(result_metrics.isFirstDrawFrame).assertEqual(false);
+            expect(result_metrics.inputHandlingDuration).assertLarger(0);
+            expect(result_metrics.duration).assertLarger(0);
+            expect(result_metrics.timestamp).assertLarger(0);
+
+            await sleep(500);
+            windowStage.setCustomDensity(-1.0);
+          }
+          
           let ResultOff: number = windowNdkTest.unregisterFrameMetricsMeasuredCallback(windowId);
           console.info(`${caseName} Result: ${ResultOff}`);
           expect(ResultOff).assertEqual(0);
@@ -2127,14 +2210,16 @@ export default function windowNdk() {
           console.info(`${caseName} Result: ${ResultOff}`);
           expect(ResultOff).assertEqual(0);
           
-          windowStage.setCustomDensity(2.0,true);
-          await sleep(500);
-          let CB_count = windowNdkTest.getFrameMetricsCBCount();
-          console.info(`${caseName} CB_count: ${CB_count}`);
-          expect(CB_count).assertEqual(0);
+          if (isSupport === true){
+            windowStage.setCustomDensity(2.0,true);
+            await sleep(500);
+            let CB_count = windowNdkTest.getFrameMetricsCBCount();
+            console.info(`${caseName} CB_count: ${CB_count}`);
+            expect(CB_count).assertEqual(0);
 
-          await sleep(500);
-          windowStage.setCustomDensity(-1.0);
+            await sleep(500);
+            windowStage.setCustomDensity(-1.0);
+          }
 
           done()
         } catch (err) {
@@ -2145,16 +2230,16 @@ export default function windowNdk() {
       })
 
     /**
-     * @tc.name   test_OH_WindowManager_registerFrameMetricsMeasuredCallback_401
-     * @tc.number test_OH_WindowManager_registerFrameMetricsMeasuredCallback_401
+     * @tc.name   test_OH_WindowManager_registerFrameMetricsMeasuredCallback1300016_0100
+     * @tc.number SUB_BASIC_WMS_FUNCTION_FRAMEMETRICSMEASURED_0100
      * @tc.desc   OH_WindowManager_registerFrameMetricsMeasuredCallback接口注册
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_OH_WindowManager_registerFrameMetricsMeasuredCallback_401', TestType.FUNCTION |
+    it('test_OH_WindowManager_registerFrameMetricsMeasuredCallback1300016_0100', TestType.FUNCTION |
       Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-        let caseName = 'test_OH_WindowManager_registerFrameMetricsMeasuredCallback_401';
+        let caseName = 'test_OH_WindowManager_registerFrameMetricsMeasuredCallback1300016_0100';
         try {
           console.info(`${caseName} start`);
           let windowClass = windowStage.getMainWindowSync();
@@ -2162,7 +2247,7 @@ export default function windowNdk() {
           console.info(`${caseName} windowId: ${windowId}`);
           let Result: number = windowNdkTest.registerFrameMetricsMeasuredCallbackNullptr(windowId);
           console.info(`${caseName} Result: ${Result}`);
-          expect(Result).assertEqual(401);
+          expect(Result).assertEqual(1300016);
           done()
         } catch (err) {
           console.error(`${caseName} catch err: ` + JSON.stringify(err));
@@ -2172,16 +2257,16 @@ export default function windowNdk() {
       })
 
     /**
-     * @tc.name   test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback_401
-     * @tc.number test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback_401
+     * @tc.name   test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback1300016_0100
+     * @tc.number SUB_BASIC_WMS_FUNCTION_FRAMEMETRICSMEASURED_0200
      * @tc.desc   OH_WindowManager_UnregisterFrameMetricsMeasuredCallback接口注册
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback_401', TestType.FUNCTION |
+    it('test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback1300016_0100', TestType.FUNCTION |
       Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-        let caseName = 'test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback_401';
+        let caseName = 'test_OH_WindowManager_UnregisterFrameMetricsMeasuredCallback1300016_0100';
         try {
           console.info(`${caseName} start`);
           let windowClass = windowStage.getMainWindowSync();
@@ -2189,7 +2274,7 @@ export default function windowNdk() {
           console.info(`${caseName} windowId: ${windowId}`);
           let Result: number = windowNdkTest.unregisterFrameMetricsMeasuredCallbackNullptr(windowId);
           console.info(`${caseName} Result: ${Result}`);
-          expect(Result).assertEqual(401);
+          expect(Result).assertEqual(1300016);
           done()
         } catch (err) {
           console.error(`${caseName} catch err: ` + JSON.stringify(err));
@@ -2238,6 +2323,209 @@ export default function windowNdk() {
           let Result: number = windowNdkTest.unregisterFrameMetricsMeasuredCallback(-1);
           console.info(`${caseName} Result: ${Result}`);
           expect(Result).assertEqual(1300002);
+          done()
+        } catch (err) {
+          console.error(`${caseName} catch err: ` + JSON.stringify(err));
+          expect(false).assertTrue();
+          done()
+        }
+      })
+
+      /**
+      * @tc.name   test_OH_WindowManager_FrameMetrics_IsFirstDrawFrame_1300016
+      * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_6700
+      * @tc.desc   test OH_WindowManager_FrameMetrics_IsFirstDrawFrame with metrics nullptr
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_OH_WindowManager_FrameMetrics_IsFirstDrawFrame_1300016', TestType.FUNCTION |
+      Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+        let caseName = 'test_OH_WindowManager_FrameMetrics_IsFirstDrawFrame_1300016';
+        try {
+          console.info(`${caseName} start`);
+          let Result: number = windowNdkTest.testFrameMetricsIsFirstDrawFrameNullptr();
+          console.info(`${caseName} Result: ${Result}`);
+          expect(Result).assertEqual(1300016);
+          done()
+        } catch (err) {
+          console.error(`${caseName} catch err: ` + JSON.stringify(err));
+          expect(false).assertTrue();
+          done()
+        }
+      })
+
+    /**
+      * @tc.name   test_OH_WindowManager_FrameMetrics_GetInputHandlingDuration_1300016
+      * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_6800
+      * @tc.desc   test OH_WindowManager_FrameMetrics_GetInputHandlingDuration with metrics nullptr
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_OH_WindowManager_FrameMetrics_GetInputHandlingDuration_1300016', TestType.FUNCTION |
+      Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+        let caseName = 'test_OH_WindowManager_FrameMetrics_GetInputHandlingDuration_1300016';
+        try {
+          console.info(`${caseName} start`);
+          let Result: number = windowNdkTest.testFrameMetricsGetInputHandlingDurationNullptr();
+          console.info(`${caseName} Result: ${Result}`);
+          expect(Result).assertEqual(1300016);
+          done()
+        } catch (err) {
+          console.error(`${caseName} catch err: ` + JSON.stringify(err));
+          expect(false).assertTrue();
+          done()
+        }
+      })
+
+    /**
+      * @tc.name   test_OH_WindowManager_FrameMetrics_GetLayoutMeasureDuration_1300016
+      * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_6900
+      * @tc.desc   test OH_WindowManager_FrameMetrics_GetLayoutMeasureDuration with metrics nullptr
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_OH_WindowManager_FrameMetrics_GetLayoutMeasureDuration_1300016', TestType.FUNCTION |
+      Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+        let caseName = 'test_OH_WindowManager_FrameMetrics_GetLayoutMeasureDuration_1300016';
+        try {
+          console.info(`${caseName} start`);
+          let Result: number = windowNdkTest.testFrameMetricsGetLayoutMeasureDurationNullptr();
+          console.info(`${caseName} Result: ${Result}`);
+          expect(Result).assertEqual(1300016);
+          done()
+        } catch (err) {
+          console.error(`${caseName} catch err: ` + JSON.stringify(err));
+          expect(false).assertTrue();
+          done()
+        }
+      })
+
+    /**
+      * @tc.name   test_OH_WindowManager_FrameMetrics_GetVsyncTimestamp_1300016
+      * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_7000
+      * @tc.desc   test OH_WindowManager_FrameMetrics_GetVsyncTimestamp with metrics nullptr
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
+    it('test_OH_WindowManager_FrameMetrics_GetVsyncTimestamp_1300016', TestType.FUNCTION |
+      Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+        let caseName = 'test_OH_WindowManager_FrameMetrics_GetVsyncTimestamp_1300016';
+        try {
+          console.info(`${caseName} start`);
+          let Result: number = windowNdkTest.testFrameMetricsGetVsyncTimestampNullptr();
+          console.info(`${caseName} Result: ${Result}`);
+          expect(Result).assertEqual(1300016);
+          done()
+        } catch (err) {
+          console.error(`${caseName} catch err: ` + JSON.stringify(err));
+          expect(false).assertTrue();
+          done()
+        }
+      })
+
+    /**
+      * @tc.name   test_OH_WindowManager_FrameMetrics_IsFirstDrawFrame_OK_0100
+      * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_7100
+      * @tc.desc   test OH_WindowManager_FrameMetrics_IsFirstDrawFrame return OK
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('test_OH_WindowManager_FrameMetrics_IsFirstDrawFrame_OK_0100', TestType.FUNCTION |
+      Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let caseName = 'test_OH_WindowManager_FrameMetrics_IsFirstDrawFrame_OK_0100';
+        try {
+          console.info(`${caseName} start`);
+          let okResult = windowNdkTest.testFrameMetricsIsFirstDrawFrameOK();
+          console.info(`${caseName} resultCode: ${okResult.resultCode}`);
+          console.info(`${caseName} isFirstDrawFrame: ${okResult.isFirstDrawFrame}`);
+          
+          expect(okResult.resultCode).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error(`${caseName} catch err: ` + JSON.stringify(err));
+          expect(false).assertTrue();
+          done()
+        }
+      })
+
+    /**
+      * @tc.name   test_OH_WindowManager_FrameMetrics_GetInputHandlingDuration_OK_0100
+      * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_7200
+      * @tc.desc   test OH_WindowManager_FrameMetrics_GetInputHandlingDuration return OK
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('test_OH_WindowManager_FrameMetrics_GetInputHandlingDuration_OK_0100', TestType.FUNCTION |
+      Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let caseName = 'test_OH_WindowManager_FrameMetrics_GetInputHandlingDuration_OK_0100';
+        try {
+          console.info(`${caseName} start`);
+          let okResult = windowNdkTest.testFrameMetricsGetInputHandlingDurationOK();
+          console.info(`${caseName} resultCode: ${okResult.resultCode}`);
+          console.info(`${caseName} duration: ${okResult.duration}`);
+          
+          expect(okResult.resultCode).assertEqual(0);
+          expect(okResult.duration).assertLargerOrEqual(0);
+          done()
+        } catch (err) {
+          console.error(`${caseName} catch err: ` + JSON.stringify(err));
+          expect(false).assertTrue();
+          done()
+        }
+      })
+
+    /**
+      * @tc.name   test_OH_WindowManager_FrameMetrics_GetLayoutMeasureDuration_OK_0100
+      * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_7300
+      * @tc.desc   test OH_WindowManager_FrameMetrics_GetLayoutMeasureDuration return OK
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('test_OH_WindowManager_FrameMetrics_GetLayoutMeasureDuration_OK_0100', TestType.FUNCTION |
+      Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let caseName = 'test_OH_WindowManager_FrameMetrics_GetLayoutMeasureDuration_OK_0100';
+        try {
+          console.info(`${caseName} start`);
+          let okResult = windowNdkTest.testFrameMetricsGetLayoutMeasureDurationOK();
+          console.info(`${caseName} resultCode: ${okResult.resultCode}`);
+          console.info(`${caseName} duration: ${okResult.duration}`);
+          
+          expect(okResult.resultCode).assertEqual(0);
+          expect(okResult.duration).assertLargerOrEqual(0);
+          done()
+        } catch (err) {
+          console.error(`${caseName} catch err: ` + JSON.stringify(err));
+          expect(false).assertTrue();
+          done()
+        }
+      })
+
+    /**
+      * @tc.name   test_OH_WindowManager_FrameMetrics_GetVsyncTimestamp_OK_0100
+      * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_7400
+      * @tc.desc   test OH_WindowManager_FrameMetrics_GetVsyncTimestamp return OK
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('test_OH_WindowManager_FrameMetrics_GetVsyncTimestamp_OK_0100', TestType.FUNCTION |
+      Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let caseName = 'test_OH_WindowManager_FrameMetrics_GetVsyncTimestamp_OK_0100';
+        try {
+          console.info(`${caseName} start`);
+          let okResult = windowNdkTest.testFrameMetricsGetVsyncTimestampOK();
+          console.info(`${caseName} resultCode: ${okResult.resultCode}`);
+          console.info(`${caseName} timestamp: ${okResult.timestamp}`);
+          
+          expect(okResult.resultCode).assertEqual(0);
+          expect(okResult.timestamp).assertLargerOrEqual(0);
           done()
         } catch (err) {
           console.error(`${caseName} catch err: ` + JSON.stringify(err));

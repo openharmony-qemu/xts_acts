@@ -1621,7 +1621,7 @@ export default function graphicImagePixelMapAdd03() {
         expect(pixelMap.isEditable).assertTrue();
 
         const region: image.Region = { x: 0, y: 0, size: { width: 2, height: 4 } };
-        pixelMap.crop(region);
+        await pixelMap.crop(region);
         expect(pixelMap.isEditable).assertTrue();
 
         const result = await pixelMap.rotate(90);

@@ -3004,7 +3004,7 @@ export default function Float64ArrayTest() {
         const bigint64Array = new BigInt64Array([9223372036854775807n]);
         console.info(`${TAG} bigint64Array is: ${bigint64Array}`);
         // new Float64Array
-        const byteLength = bigint64Array.buffer.byteLength as number;
+        const byteLength = bigint64Array.buffer.byteLength.toDouble();
         const float64Array  = new Float64Array(byteLength * 3); // because Float64Array is 8 byte,BigInt64 is 8 byte,buffer * 2.
         let offset = 0;
         for (const num of bigint64Array) {

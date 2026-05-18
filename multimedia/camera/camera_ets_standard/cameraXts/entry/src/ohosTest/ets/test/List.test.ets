@@ -35,6 +35,8 @@ import createVideoOutputBackTest from './CameraManager/createVideoOutputBack.tes
 import createMetadataOutputBackTest from './CameraManager/createMetadataOutputBack.test';
 import CameraVideoSessionBackTest from './Session/CameraVideoSessionBack.test';
 import CameraPhotoSessionBackTest from './Session/CameraPhotoSessionBack.test';
+import MiniCapabilityTest from './MiniCapability.test';
+import VideoSessionManualControlTest from './VideoSession/VideoSessionManualControl.test'
 
 export default function testsuite() {
   CameraNoPermissionTest();
@@ -74,4 +76,6 @@ export default function testsuite() {
   PreviewOutputBackTest();
   PhotoOutputBackTest();
   VideoOutputBackTest();
+  MiniCapabilityTest();
+  VideoSessionManualControlTest();
 }

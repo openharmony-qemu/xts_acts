@@ -14,7 +14,7 @@ const curCaretStyle:(CaretStyle | undefined)[] = [
 ]
 
 @Observed
-class TextAreaModifierUndefined implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifierUndefined implements AttributeModifier<TextAreaAttribute> {
   applyNormalAttribute(instance: TextAreaAttribute): void {
     instance
       .height(30)
@@ -23,7 +23,7 @@ class TextAreaModifierUndefined implements AttributeModifier<TextAreaAttribute> 
 }
 
 @Observed
-class TextAreaModifierDynamicSwitch implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifierDynamicSwitch implements AttributeModifier<TextAreaAttribute> {
   public caretStyleIndex: Int = 0;
 
   applyNormalAttribute(instance: TextAreaAttribute): void {

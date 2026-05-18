@@ -149,31 +149,31 @@ import { LengthUnit, typeNode } from '@ohos.arkui.node'
 
 import { BusinessError } from '@kit.BasicServicesKit'
 @Observed
-class ScrollNormalModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollNormalModifier implements AttributeModifier<ScrollAttribute> {
   applyNormalAttribute(instance: ScrollAttribute): void {
     instance.minZoomScale(5);
   }
 }
 @Observed
-class ScrollEmptyModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollEmptyModifier implements AttributeModifier<ScrollAttribute> {
   applyNormalAttribute(instance: ScrollAttribute): void {
     instance.minZoomScale(0);
   }
 }
 @Observed
-class ScrollInvalidModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollInvalidModifier implements AttributeModifier<ScrollAttribute> {
   applyNormalAttribute(instance: ScrollAttribute): void {
     instance.minZoomScale(-10);
   }
 }
 @Observed
-class ScrollExplicitUndefinedModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollExplicitUndefinedModifier implements AttributeModifier<ScrollAttribute> {
   applyNormalAttribute(instance: ScrollAttribute): void {
     instance.minZoomScale(undefined);
   }
 }
 @Observed
-class ScrollDefaultModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollDefaultModifier implements AttributeModifier<ScrollAttribute> {
   applyNormalAttribute(instance: ScrollAttribute): void {
     instance.minZoomScale(1);
   }

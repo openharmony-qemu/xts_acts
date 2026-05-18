@@ -23,12 +23,12 @@ import {
 	Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
 	Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
 	RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-	FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
+	Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
 	GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
 	TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
 	BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
 	ColumnAttribute, ColumnSplitAttribute, CounterAttribute, DataPanelAttribute, DatePickerAttribute, DividerAttribute,
-	EllipseAttribute, FlexAttribute, FlowItemAttribute, FormLinkAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
+	EllipseAttribute, FlexAttribute, FlowItemAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
 	GridItemAttribute, GridRowAttribute, HyperlinkAttribute, ImageAttribute, ImageAnimatorAttribute, LineAttribute, ListAttribute,
 	ListItemAttribute, ListItemGroupAttribute, LoadingProgressAttribute, MarqueeAttribute, MenuAttribute, MenuItemAttribute,
 	MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
@@ -38,7 +38,7 @@ import {
 	SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
 	TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
 	TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
-	BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, BorderOptions, HitTestMode, AlignRuleOption
+	BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, BorderOptions, HitTestMode, AlignRuleOption
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
@@ -184,14 +184,6 @@ export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
 	mHitTestBehavior: HitTestMode = HitTestMode.Transparent
 
 	applyNormalAttribute(instance: FlowItemAttribute): void {
-		instance.hitTestBehavior(this.mHitTestBehavior)
-	}
-}
-
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-	mHitTestBehavior: HitTestMode = HitTestMode.Transparent
-
-	applyNormalAttribute(instance: FormLinkAttribute): void {
 		instance.hitTestBehavior(this.mHitTestBehavior)
 	}
 }
@@ -713,7 +705,6 @@ struct HitTestBehaviorPage {
 	@State _hitTestBehaviorEllipseModifier: EllipseModifier = new EllipseModifier()
 	@State _hitTestBehaviorFlexModifier: FlexModifier = new FlexModifier()
 	@State _hitTestBehaviorFlowItemModifier: FlowItemModifier = new FlowItemModifier()
-	@State _hitTestBehaviorFormLinkModifier: FormLinkModifier = new FormLinkModifier()
 	@State _hitTestBehaviorGaugeModifier: GaugeModifier = new GaugeModifier()
 	@State _hitTestBehaviorGridModifier: GridModifier = new GridModifier()
 	@State _hitTestBehaviorGridColModifier: GridColModifier = new GridColModifier()
@@ -791,8 +782,8 @@ struct HitTestBehaviorPage {
 		this.componentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey as string;
 		this.parentWidth = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
 		this.parentHeight = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
-		this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int)
-		this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int)
+		this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns.toInt())
+		this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter.toInt())
 		this.parentBackGroundColor = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentBackGroundColor
 		this.parentComponentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey;
 		this._hitTestBehaviorButtonModifier.mHitTestBehavior = (this.getUIContext().getRouter().getParams() as RouterParams).view.testValue.setValue.hitTestBehavior
@@ -816,7 +807,6 @@ struct HitTestBehaviorPage {
 			this._hitTestBehaviorEllipseModifier.mHitTestBehavior = value.hitTestBehavior
 			this._hitTestBehaviorFlexModifier.mHitTestBehavior = value.hitTestBehavior
 			this._hitTestBehaviorFlowItemModifier.mHitTestBehavior = value.hitTestBehavior
-			this._hitTestBehaviorFormLinkModifier.mHitTestBehavior = value.hitTestBehavior
 			this._hitTestBehaviorGaugeModifier.mHitTestBehavior = value.hitTestBehavior
 			this._hitTestBehaviorGridModifier.mHitTestBehavior = value.hitTestBehavior
 			this._hitTestBehaviorGridColModifier.mHitTestBehavior = value.hitTestBehavior
@@ -956,7 +946,7 @@ struct HitTestBehaviorPage {
 				Marquee({
 					start: true,
 					step: 50,
-					loop: Infinity as int,
+					loop: Infinity.toInt(),
 					fromStart: true,
 					src: 'Running Marquee starts rolling'
 				})
@@ -1511,17 +1501,6 @@ struct HitTestBehaviorPage {
 					.backgroundColor('#FFFF00')
 
 					.attributeModifier(this._hitTestBehaviorCanvasModifier)
-			}
-			if (this.targetView == 'FormLink') {
-				FormLink({
-					action: "router",
-					abilityName: "EntryAbility",
-					params: { message: 'testForRouter' } as ObjElement
-				} as FormLinkOptions) {
-					Button("router event").width(120)
-				}
-					
-					.attributeModifier(this._hitTestBehaviorFormLinkModifier)
 			}
 			if (this.targetView == 'Hyperlink') {
 				Hyperlink('https://example.com/', 'Go to the developer website') {

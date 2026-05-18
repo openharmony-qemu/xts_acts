@@ -334,7 +334,7 @@ export default function CallManageImsCall() {
          */
         it('Telephony_CallManager_isEmergencyPhoneNumber_Async_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let emergencyNumberOptions = new EmergencyNumberOptions(ERR_SLOT_ID);
-            call.isEmergencyPhoneNumber('110', emergencyNumberOptions, (err) => {
+            call.isEmergencyPhoneNumber('911', emergencyNumberOptions, (err) => {
                 if (err) {
                     console.log(`Telephony_CallManager_isEmergencyPhoneNumber_Async_1300 finish err = ${err}`);
                     done();
@@ -357,7 +357,7 @@ export default function CallManageImsCall() {
         it('Telephony_CallManager_isEmergencyPhoneNumber_Promise_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let emergencyNumberOptions = new EmergencyNumberOptions(ERR_SLOT_ID);
             try {
-                await call.isEmergencyPhoneNumber('120', emergencyNumberOptions);
+                await call.isEmergencyPhoneNumber('112', emergencyNumberOptions);
                 expect().assertFail();
                 console.log('Telephony_CallManager_isEmergencyPhoneNumber_Promise_1300 fail ');
                 done();
@@ -370,20 +370,20 @@ export default function CallManageImsCall() {
         /**
          * @tc.name   Telephony_CallManager_isEmergencyPhoneNumber_Async_1400
          * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Async_1400
-         * @tc.desc   PhoneNumber: 110, no options. Call isEmergencyPhoneNumber() api by callback.
+         * @tc.desc   PhoneNumber: 911, no options. Call isEmergencyPhoneNumber() api by callback.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_isEmergencyPhoneNumber_Async_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            call.isEmergencyPhoneNumber('110', (err, data) => {
+            await call.isEmergencyPhoneNumber('911', (err, data) => {
                 if (err) {
                     console.log(`Telephony_CallManager_isEmergencyPhoneNumber_Async_1400 finish err = ${err}`);
                     expect().assertFail();
                     done();
                     return;
                 }
-                console.log('Telephony_CallManager_isEmergencyPhoneNumber_Async_1400 PASSED ');
+                console.log('Telephony_CallManager_isEmergencyPhoneNumber_Async_1400 PASSED data:'+ data);
                 expect(data).assertTrue();
                 done();
             });
@@ -391,16 +391,16 @@ export default function CallManageImsCall() {
 
         /**
          * @tc.name   Telephony_CallManager_isEmergencyPhoneNumber_Promise_1400
-         * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Async_1500
-         * @tc.desc   PhoneNumber: 120, no options. Call isEmergencyPhoneNumber() api by promise.
+         * @tc.number Telephony_CallManager_isEmergencyPhoneNumber_Promise_1400
+         * @tc.desc   PhoneNumber: 911, no options. Call isEmergencyPhoneNumber() api by promise.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
         it('Telephony_CallManager_isEmergencyPhoneNumber_Promise_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             try {
-                let data = await call.isEmergencyPhoneNumber('120');
-                console.log('Telephony_CallManager_isEmergencyPhoneNumber_Promise_1400 PASSED ');
+                let data = await call.isEmergencyPhoneNumber('911');
+                console.log('Telephony_CallManager_isEmergencyPhoneNumber_Promise_1400 PASSED data:'+ data);
                 expect(data).assertTrue();
                 done();
             } catch (err) {

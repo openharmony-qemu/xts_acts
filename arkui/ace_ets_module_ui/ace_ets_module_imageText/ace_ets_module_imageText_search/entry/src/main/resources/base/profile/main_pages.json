@@ -52,6 +52,8 @@
         "MainAbility/pages/Search/SearchPropertiesNullUndefined",
         "MainAbility/pages/Search/SearchPropertiesNullUndefined02",
         "MainAbility/pages/Search/SearchControllerMethodsTest",
-        "MainAbility/pages/Search/SearchPropertiesNullUndefined03Test"
+        "MainAbility/pages/Search/SearchPropertiesNullUndefined03Test",
+        "MainAbility/pages/SearchApi26/SearchOnWillCopy",
+        "MainAbility/pages/SearchApi26/SearchOnWillCut"
     ]
 }

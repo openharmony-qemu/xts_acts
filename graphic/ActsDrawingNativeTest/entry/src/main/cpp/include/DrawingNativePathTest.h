@@ -259,7 +259,30 @@ int TestPathInterpolateMultiCalls();
 int TestPathIsInterpolateNormal();
 int TestPathIsInterpolateNull();
 int TestPathIsInterpolateMultiCalls();
-
+// Path Part4
+int TestPathGetPointDataNormal();
+int TestPathGetPointDataNull();
+int TestPathGetPointDatAbnormal();
+int TestPathGetPointDataMultipleCalls();
+int TestPathGetVerbDataNormal();
+int TestPathGetVerbDataNull();
+int TestPathGetVerbDataAbnormal();
+int TestPathGetVerbDataMultipleCalls();
+int TestPathGetConicWeightNormal();
+int TestPathGetConicWeightNull();
+int TestPathGetConicWeightAbnormal();
+int TestPathGetConicWeightMultipleCalls();
+int TestPathConvertToSvgStringNormal1();
+int TestPathConvertToSvgStringNormal2();
+int TestPathConvertToSvgStringNull();
+int TestPathConvertToSvgStringAbnormal();
+int TestPathConvertToSvgStringMultipleCalls();
+int TestPathGetLastPointNormal();
+int TestPathGetLastPointNull();
+int TestPathGetLastPointMultipleCalls();
+int TestPathIsEqualNormal();
+int TestPathIsEqualNull();
+int TestPathIsEqualMultipleCalls();
 } // namespace Drawing
 } // namespace Rosen
 } // namespace OHOS

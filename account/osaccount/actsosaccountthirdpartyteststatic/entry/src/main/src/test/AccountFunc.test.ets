@@ -24,6 +24,7 @@ let manager = osAccount.getAuthorizationManager();
 let privilege = 'ohos.privilege.manage_local_accounts';
 let teeToken: Uint8Array | undefined = undefined;
 let deviceType = deviceInfo.deviceType;
+let startTime: double = 0;
 
 let tag: string = 'testTag';
 hilog.info(0x0000, tag, "====>the value of the deviceinfo deviceType is: " + deviceType);
@@ -34,7 +35,13 @@ export async function AcquireAuthorization(): Promise<Uint8Array | undefined> {
     let status = await manager.hasAuthorization(privilege);
     hilog.info(0x0000, tag, "====>hasAuthorization data: " + JSON.stringify(status));
     if (status) {
-        return teeToken;
+        let costTime: double = Date.now() - startTime;
+        if (costTime < 250000) {
+            return teeToken;
+        } else {
+            hilog.info(0x0000, tag, "====>The token is about to expire, start release and reAcquire, cost: " + JSON.stringify(costTime));
+            await manager.releaseAuthorization(privilege);
+        }
     }
     let configParams: Record<string, RecordData> = {
         'uri': 'test.example.com',
@@ -45,7 +52,6 @@ export async function AcquireAuthorization(): Promise<Uint8Array | undefined> {
         await osAccount.DomainServerConfigManager.addServerConfig(configParams);
         hilog.info(0x0000, tag, "====>run err");
     } catch (err) {
-        err = err as BusinessError;
         hilog.info(0x0000, tag, "====>catch err: " + JSON.stringify(err));
         if (err.code === 801) {
             hilog.info(0x0000, tag, "====>Current device not support API: addServerConfig");
@@ -68,6 +74,8 @@ export async function AcquireAuthorization(): Promise<Uint8Array | undefined> {
             option.isInteractionAllowed = true;
             let data = await manager.acquireAuthorization(privilege, option);
             hilog.info(0x0000, tag, "====>acquireAuthorization data: " + JSON.stringify(data));
+            startTime = Date.now();
+            hilog.info(0x0000, tag, "====>token effective start time: " + JSON.stringify(startTime));
             teeToken = data.token;
         }
     }
@@ -91,7 +99,7 @@ export async function CreateAccount(name: string, type: osAccount.OsAccountType,
     }
 }
 
-export async function RemoveAccount(id: int): Promise<BusinessError | null> {
+export async function RemoveAccount(id: int): Promise<BusinessError | undefined> {
     hilog.info(0x0000, tag, "====>in RemoveAccount");
     try {
         let data = await AcquireAuthorization();

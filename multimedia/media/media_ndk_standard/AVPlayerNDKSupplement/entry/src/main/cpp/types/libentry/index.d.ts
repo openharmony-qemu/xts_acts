@@ -28,6 +28,8 @@ export const testSetVideoSuperResolutionForStatusIdle:() => number;
 export const testSetVideoSuperResolutionError: () => number;
 export const testSetTargetVideoWindowSize:
     (fdSrc: media.AVFileDescriptor, width: number, height: number, isEnable: boolean) => NdkAVPlayerResult;
+export const testSetTargetVideoWindowSizeErr:
+    (fdSrc: media.AVFileDescriptor, width: number, height: number, isEnable: boolean) => NdkAVPlayerResult;
 export const testSetTargetVideoWindowSizeError: () => number;
 export const testSetTargetVideoWindowSizeForStatusIdle:() => number;
 export const testSetDataSource: (filePath: string, fileSize: number) => NdkAVPlayerResult;

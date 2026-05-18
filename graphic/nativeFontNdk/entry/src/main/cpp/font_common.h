@@ -17,6 +17,6 @@
 #define GRAPHIC_CAPI_XTS_FONT_COMMON_TEST_H
 
 // 字体路径常量
-constexpr const char* TEST_FONT_PATH = "/system/fonts/HarmonyOS_Sans_SC.ttf";
+constexpr const char* TEST_FONT_PATH = "/system/fonts/HarmonyOS_Sans.ttf";
 
 #endif

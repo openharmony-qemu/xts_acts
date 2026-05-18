@@ -285,8 +285,8 @@ napi_value GetPreDragStatusTest::CreateNativeNode(napi_env env, napi_callback_in
     id_item.string = "textDragTest2";
     nodeAPI->setAttribute(text2, NODE_ID, &id_item);
 
-    nodeAPI->addChild(column, text1);
     nodeAPI->addChild(column, text2);
+    nodeAPI->addChild(column, text1);
     ForthModule(column);
 
     nodeAPI->registerNodeEventReceiver(&OnEventReceive);

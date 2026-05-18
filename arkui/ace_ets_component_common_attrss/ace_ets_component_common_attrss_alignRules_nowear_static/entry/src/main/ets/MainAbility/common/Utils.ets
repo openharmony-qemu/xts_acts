@@ -189,9 +189,9 @@ export default class Utils {
     return rect_value;
   }
 
-  static getComponentByKey(componentKey: string): jsonx.JsonElement {
+  static async getComponentByKey(componentKey: string): Promise<jsonx.JsonElement> {
     let strJson = inspector.getInspectorByKey(componentKey);
-    waitForCompletion(async ()=>{await Utils.sleep(2000);})
+    await Utils.sleep(2000);
     console.info('[' + componentKey + '] obj is: ' + strJson);
     return JSON.parseJsonElement(strJson);
   }

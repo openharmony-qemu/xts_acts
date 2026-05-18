@@ -195,7 +195,7 @@ export default function NewEAWorkerTest() {
         let w: boolean = false;
         try {
           worker1.start();
-          let result = worker1.run<boolean>((): boolean => {
+          let result = await worker1.run<boolean>((): boolean => {
             let worker2 = new EAWorker();
             worker2.start();
             let workerId1 = worker1.getWorkerId();
@@ -205,7 +205,7 @@ export default function NewEAWorkerTest() {
               w = true;
             }
             return w;
-          }).Await();
+          });
           expect(w).assertEqual(true);
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
@@ -856,9 +856,9 @@ export default function NewEAWorkerTest() {
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
         try {
-          worker.run<number>((): number => {
+          await worker.run<number>((): number => {
             return 123;
-          }).Await();
+          });
           worker.start();
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
@@ -888,10 +888,10 @@ export default function NewEAWorkerTest() {
         console.info(`${TAG} test start`);
         const worker = new EAWorker();
         try {
-          worker.run<number>((): number => {
+          await worker.run<number>((): number => {
             worker.start();
             return 123;
-          }).Await();
+          });
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(error.message).assertContain('EAWorker:: Cannot run task when worker is not started');
@@ -1422,9 +1422,9 @@ export default function NewEAWorkerTest() {
         let worker = new EAWorker();
         try {
           worker.start();
-          let result = worker.run<boolean>((): boolean => {
+          let result = await worker.run<boolean>((): boolean => {
             return worker.isAlive()
-          }).Await();
+          });
           expect(result).assertEqual(true);
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
@@ -1539,7 +1539,7 @@ export default function NewEAWorkerTest() {
         try {
           const priority = worker.getPriority();
           console.info(`${TAG} priority: ${priority}`);
-          expect(priority).assertEqual(WorkerPriority.PRIORITY_DEFAULT);
+          expect(priority).assertEqual(WorkerPriority.PRIORITY_HIGH);
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
@@ -1569,7 +1569,7 @@ export default function NewEAWorkerTest() {
         try {
           const priority = EAWorker.main().getPriority();
           console.info(`${TAG} priority: ${priority}`);
-          expect(priority).assertEqual(WorkerPriority.PRIORITY_DEFAULT)
+          expect(priority).assertEqual(WorkerPriority.PRIORITY_HIGH)
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
@@ -1869,7 +1869,7 @@ export default function NewEAWorkerTest() {
           console.info(`${TAG} job: ${JSON.stringify(job, null, 2)}`);
           worker.quit();
           try {
-            job.Await();
+            await job;
             console.info(`${TAG} doneFlag: ${doneFlag}`);
             console.info(`${TAG} fired: ${doneFlag}`);
             await Utils.msSleep(1000);
@@ -1989,10 +1989,10 @@ export default function NewEAWorkerTest() {
         const worker: EAWorker = new EAWorker();
         worker.start();
         try {
-          worker.run<void>(() => {
+          await worker.run<void>(() => {
             worker.quit();
             caught = true;
-          }).Await();
+          });
           expect(caught).assertTrue();
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
@@ -2024,9 +2024,9 @@ export default function NewEAWorkerTest() {
         worker.start();
         try {
           let doneFlag = false;
-          worker.run<void>((): void => {
+          await worker.run<void>((): void => {
             doneFlag = true;
-          }).Await();
+          });
           worker.quit();
           while(worker.isAlive()){
               await Sleep(10);
@@ -2066,9 +2066,9 @@ export default function NewEAWorkerTest() {
         try {
           expect(worker.isAlive()).assertTrue();
           let doneFlag = false;
-          worker.run<void>((): void => {
+          await worker.run<void>((): void => {
             doneFlag = true;
-          }).Await();
+          });
           worker.quit();
           while(worker.isAlive()){
               await Sleep(10);
@@ -2106,9 +2106,9 @@ export default function NewEAWorkerTest() {
         worker.start();
         try {
           let doneFlag = false;
-          worker.run<void>((): void => {
+          await worker.run<void>((): void => {
             doneFlag = true;
-          }).Await();
+          });
           worker.quit();
           while(worker.isAlive()){
               await Sleep(10);
@@ -2146,9 +2146,9 @@ export default function NewEAWorkerTest() {
         try {
           expect(worker.isAlive()).assertTrue();
           let doneFlag = false;
-          worker.run<void>((): void => {
+          await worker.run<void>((): void => {
             doneFlag = true;
-          }).Await();
+          });
           worker.join();
           while(worker.isAlive()){
               await Sleep(10);

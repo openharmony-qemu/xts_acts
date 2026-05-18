@@ -63,6 +63,9 @@
       },
       {
         "name": "ohos.permission.GRANT_SENSITIVE_PERMISSIONS"
+      },
+      {
+        "name": "ohos.permission.CHECK_CALL_LOG"
       }
     ]
   }

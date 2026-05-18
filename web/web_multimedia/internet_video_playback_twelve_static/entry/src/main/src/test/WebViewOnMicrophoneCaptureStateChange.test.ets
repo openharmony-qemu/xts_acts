@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,90 +22,98 @@ import common from '@ohos.app.ability.common';
 import { Driver, ON } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import { MicrophoneCaptureStateChangeInfo, MicrophoneCaptureState } from '@ohos.arkui.component';
 
 let testAbilityContext:common.UIAbilityContext;
+const driver = Driver.create();
 
 export default function ActsAceWebViewOnMicrophoneCaptureStateChangeTest() {
-  describe('ActsAceWebViewOnMicrophoneCaptureStateChange', (): void => {
-    beforeAll(async (): Promise<void> => {
-      let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.addAbilityMonitor({
-        abilityName: 'EntryAbility',
-        moduleName:'entry',
-        onAbilityCreate: (abilitys : UIAbility) : void => {
-          testAbilityContext = abilitys.context
-        },
-      }, (err : BusinessError | null) : void => {
-        if (err != null ) {
-          console.log('-----' + err.code)
-        }
-        console.log('BusinessError  end')
+
+    describe('ActsAceWebViewOnMicrophoneCaptureStateChange', (): void => {
+      beforeAll(async ():Promise<void> => {
+        console.log('App start')
+        await Utils.msSleep(2000)
+        console.log('beforeAll end,%s', 'Succeed!')
       });
-      await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.open.harmony.internetvideoplaybacktwelvetest.static')
-      await Utils.msSleep(5000)
-      console.log('beforeAll end,%s', 'Succeed!')
-    });
-    beforeEach(async () => {
-      console.info('web beforeEach start');
-    })
+
+      beforeEach(async () => {
+        await Utils.msSleep(2000);
+        console.info('beforeEach start');
+      })
 
     /**
-    * @tc.name         testOnMicrophoneCaptureStateChangeStatic001
-    * @tc.number       SUB_ACE_WEBVIEW_ONMICROPHONECAPTURESTATECHANGE_0001
-    * @tc.desc         test OnMicrophoneCaptureStateChange
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        LEVEL0
-    */
-    it('testOnMicrophoneCaptureStateChangeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+     * @tc.name   testOnMicrophoneCaptureStateChangeState001
+     * @tc.number SUB_ACE_WEBVIEW_ONMICROPHONECAPTURESTATECHANGE_0001
+     * @tc.desc   test OnMicrophoneCaptureStateChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEXT
+     * @tc.level  LEVEL3
+     */
+    it('testOnMicrophoneCaptureStateChangeState001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let buttonOne = await driver.findComponent(ON.text('开启麦克风'));
+      if(buttonOne)
+      {
+        await buttonOne.click();
+        console.log("✅ 成功点击「开启麦克风」按钮");
+      }
+      await Utils.msSleep(1000)
+      Utils.emitEvent("emitOnMicrophoneCaptureStateChange001", 10)
       await Utils.msSleep(2000);
-      Utils.emitEvent('testOnMicrophoneCaptureStateChange001', 10)
-      await Utils.msSleep(3000);
-      Utils.registerEvent('testOnMicrophoneCaptureStateChange001', 1, 60700, done);
+      Utils.registerEvent("testOnMicrophoneCaptureStateChange001", true, 20260101, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webViewOnMicrophoneCaptureStateChangeButton', 10, '');
-      await Utils.msSleep(6000);
+      await Utils.msSleep(2000);
       done()
     })
-
     /**
-    * @tc.name         testOnMicrophoneCaptureStateChangeStatic002
-    * @tc.number       SUB_ACE_WEBVIEW_ONMICROPHONECAPTURESTATECHANGE_API_0002
-    * @tc.desc         SUB_ACE_WEBVIEW_ONMICROPHONECAPTURESTATECHANGE_API_0003
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        LEVEL0
-    */
-    it('testOnMicrophoneCaptureStateChangeStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+     * @tc.name   testOnMicrophoneCaptureStateChangeStatic002
+     * @tc.number SUB_ACE_WEBVIEW_ONMICROPHONECAPTURESTATECHANGE_0002
+     * @tc.desc   test OnMicrophoneCaptureStateChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEXT
+     * @tc.level  LEVEL3
+     */
+    it('testOnMicrophoneCaptureStateChangeStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      Utils.emitEvent("emitOnMicrophoneCaptureStateChange002", 10)
       await Utils.msSleep(2000);
-      Utils.emitEvent('testOnMicrophoneCaptureStateChange002', 10)
-      await Utils.msSleep(3000);
-      Utils.registerEvent('testOnMicrophoneCaptureStateChange002', 2, 60701, done);
+      Utils.registerEvent("testOnMicrophoneCaptureStateChange002", MicrophoneCaptureState.PAUSED, 20251229, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webViewOnMicrophoneCaptureStateChangeButton', 10, '');
-      await Utils.msSleep(6000);
+      await Utils.msSleep(2000);
       done()
     })
-
     /**
-    * @tc.name         testOnMicrophoneCaptureStateChangeStatic003
-    * @tc.number       SUB_ACE_WEBVIEW_ONMICROPHONECAPTURESTATECHANGE_API_0003
-    * @tc.desc         test OnMicrophoneCaptureStateChange
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        LEVEL0
-    */
-    it('testOnMicrophoneCaptureStateChangeStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      await Utils.msSleep(2000);
-      Utils.emitEvent('testOnMicrophoneCaptureStateChange003', 10)
-      await Utils.msSleep(3000);
-      Utils.registerEvent('testOnMicrophoneCaptureStateChange003', 0, 60702, done);
+     * @tc.name   testOnMicrophoneCaptureStateChangeStatic003
+     * @tc.number SUB_ACE_WEBVIEW_ONMICROPHONECAPTURESTATECHANGE_API_0003
+     * @tc.desc   test OnMicrophoneCaptureStateChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEXT
+     * @tc.level  LEVEL3
+     */
+    it('testOnMicrophoneCaptureStateChangeStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      Utils.emitEvent("emitOnMicrophoneCaptureStateChange003", 10)
+      Utils.registerEvent("testOnMicrophoneCaptureStateChange003", MicrophoneCaptureState.ACTIVE, 20251230, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webViewOnMicrophoneCaptureStateChangeButton', 10, '');
-      await Utils.msSleep(6000);
+      await Utils.msSleep(2000);
       done()
     })
-
+    /**
+     * @tc.name   testOnMicrophoneCaptureStateChangeStatic004
+     * @tc.number SUB_ACE_WEBVIEW_ONMICROPHONECAPTURESTATECHANGE_API_0004
+     * @tc.desc   test OnMicrophoneCaptureStateChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEXT
+     * @tc.level  LEVEL3
+     */
+    it('testOnMicrophoneCaptureStateChangeStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      Utils.emitEvent("emitOnMicrophoneCaptureStateChange004", 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent("testOnMicrophoneCaptureStateChange004", MicrophoneCaptureState.NONE, 20251231, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('webViewOnMicrophoneCaptureStateChangeButton', 10, '');
+      await Utils.msSleep(2000);
+      done()
+    })
   })
 }

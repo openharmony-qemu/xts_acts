@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -28,7 +28,7 @@ import { XComponent, XComponentType, XComponentController, Text, Alignment, Reso
   TouchEvent, Stack, Entry, Color, Component, Column, Row, Button, VideoController, Builder, Web, wrapBuilder,
   FrameNode, NodeContainer, FlexAlign } from '@kit.ArkUI';
 import { NodeController, NodeRenderType, BuilderNode } from '@ohos.arkui.node';
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 
@@ -191,7 +191,7 @@ class NativeMediaPlayerImpl implements webview.NativeMediaPlayerBridge {
 @Component
 struct WebViewControllerVideoMedia {
   @State nativePlayer: webview.NativeMediaPlayerBridge | null = null;
-  stringObj: StringFields  = new StringFields ();
+  stringObj: StringFields  = new StringFields();
   @State userAgentPC:string = "";
   controller: webview.WebviewController = new webview.WebviewController();
   @State RectWidth:number = 0;

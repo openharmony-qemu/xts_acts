@@ -890,7 +890,7 @@ export default function inputMethodDrawnControlJSUnit() {
         textInputType: 0, enterKeyType: 0
       }
       let cursorInfo: inputMethod.CursorInfo = {
-        left: 2, top: 2, width: 2, height: 2
+        left: 2, top: 2, width: 2, height: 2, displayId: 0
       }
       const textConfig: inputMethod.TextConfig = {
         inputAttribute,

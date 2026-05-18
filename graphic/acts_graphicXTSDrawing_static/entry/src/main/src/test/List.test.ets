@@ -12,6 +12,7 @@ import shadowLayerTest from './ShadowLayer.test';
 import toolTest from './Tool.test'
 import typefaceArguments from './TypefaceArguments.test'
 import rectUtils from './RectUtils.test'
+import PointUtils from './PointUtils.test'
 
 export default function testsuite() {
   samplingOptionsTest();
@@ -27,4 +28,5 @@ export default function testsuite() {
   toolTest();
   typefaceArguments();
   rectUtils();
+  PointUtils();
 }

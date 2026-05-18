@@ -439,7 +439,7 @@ function anonymousFunction() {
 };
 type NestedUnion = number | string ;
 
-export default function type_05Test() {
+export default function type_05Test(): void {
   describe("type_05Test", (): void => {
     // Dewm25 fines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -72,7 +72,7 @@ export default function builtinsArraySortTest() {
      */
     it('builtinsArraySort0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done:() => void) => {
       const numbers: Array<number> = [10, 2, 30];
-      numbers.sort((a: double, b: double) => (a - b) as int);
+      numbers.sort((a: double, b: double) => (a - b).toInt());
       console.log(numbers.toString());
       let a = numbers.toString()
       expect('2,10,30').assertEqual(a);
@@ -175,7 +175,7 @@ export default function builtinsArraySortTest() {
      */
     it('builtinsArraySort0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done:() => void) => {
       const numbers: Array<number> = [100000, 1, 50000];
-      numbers.sort((a: double, b: double) => (a - b) as int);
+      numbers.sort((a: double, b: double) => (a - b).toInt());
       console.log(numbers.toString());
       let a = JSON.stringify(numbers)
       let b = JSON.stringify([1, 50000, 100000])
@@ -199,7 +199,7 @@ export default function builtinsArraySortTest() {
       }, {
         a: 3
       }];
-      numbers.sort((a: NumberObj, b: NumberObj) => (a.a - b.a) as int);
+      numbers.sort((a: NumberObj, b: NumberObj) => (a.a - b.a).toInt());
       console.log(numbers.toString());
       let a = customStringify(numbers);
       expect('[{a:1},{a:2},{a:3}]').assertEqual(a);
@@ -216,7 +216,7 @@ export default function builtinsArraySortTest() {
      */
     it('builtinsArraySort1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done:() => void) => {
       const numbers: Number[][] = [[3], [1], [2]];
-      numbers.sort((a: Number[], b: Number[]) => ((a[0] as number) - (b[0] as number)) as int)
+      numbers.sort((a: Number[], b: Number[]) => ((a[0] as number) - (b[0] as number)).toInt())
       console.log(numbers.toString());
       let a = JSON.stringify(numbers)
       let b = JSON.stringify([[1], [2], [3]])
@@ -234,7 +234,7 @@ export default function builtinsArraySortTest() {
      */
     it('builtinsArraySort1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done:() => void) => {
       const numbers: Number[][] = [[3], [1], [2]];
-      numbers.sort((a: Number[], b: Number[]) => ((a[0] as number) - (b[0] as number)) as int)
+      numbers.sort((a: Number[], b: Number[]) => ((a[0] as number) - (b[0] as number)).toInt())
       console.log(numbers.toString());
       let a = JSON.stringify(numbers)
       let b = JSON.stringify([[1], [2], [3]])

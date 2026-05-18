@@ -60,7 +60,7 @@ export function fun(args: string): string {
   return 'finish';
 }
 
-export function cancelById(task: taskpool.Task) {
+export function cancelById(task: taskpool.Task): void {
   
   taskpool.cancel(task);
 }

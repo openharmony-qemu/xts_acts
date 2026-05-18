@@ -31,7 +31,7 @@ import { State } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { WebNetErrorList } from '@ohos.web.netErrorList'
 
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 
@@ -81,8 +81,7 @@ struct WebHttpBodyStream {
                   let postData = buffer.from(this.htmlData)
                   this.controller.postUrl('https://www.example.com', postData.buffer);
                 } catch (error) {
-                  error = error as BusinessError;
-                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
                 }
                 break;
               }

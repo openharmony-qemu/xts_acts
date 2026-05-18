@@ -144,5 +144,22 @@ export default function webContextMenuEditStateFlagTest() {
       await Utils.msSleep(6000);
       done()
     })
+    /**
+     * @tc.name         SwitchNextPageStatic
+     * @tc.number       SUB_WEB_SWITCH_NEXT_PAGE3331
+     * @tc.desc         test SwitchNextPageStatic
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 0
+     */
+    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('SwitchNextPageStatic', 10)
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebInitTestButton', 10, '');
+        await Utils.msSleep(3000);
+        done()
+      })
   })
 }

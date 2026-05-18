@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -29,7 +29,7 @@ struct APIgetFrameNodeByUniqueId {
     let uniqueId: number = this.getUniqueId();
     let uiContext: UIContext = this.getUIContext();
     if (uiContext) {
-      let node: FrameNode | null = uiContext.getFrameNodeByUniqueId(uniqueId as Int);
+      let node: FrameNode | null = uiContext.getFrameNodeByUniqueId(uniqueId.toInt());
     }
   }
   build(){

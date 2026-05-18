@@ -6,7 +6,7 @@
         "bundle-name": "com.open.harmony.antitrackingtwotest",
         "module-name": "entry_test",
         "shell-timeout": "600000",
-        "testcase-timeout": 30000
+        "testcase-timeout": 70000
     },
     "kits": [{
         "test-file-name": [

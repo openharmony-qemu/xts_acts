@@ -50,7 +50,7 @@ struct InspectorLayoutCallback {
     console.log('[cf]getUIContext-49: ');
     this.inspector = this.uiContext.getUIInspector();
     console.log('[cf]getUIContext51: ');
-    for (let index: int = 0 as int; index < 0; index++) {
+    for (let index: int = 0; index < 0; index++) {
       let listener = this.inspector.createComponentObserver('text_node' + index);
       let onLayoutComplete: () => void = (): void => {
         console.log('[cf]onLayoutComplete: ' + index);

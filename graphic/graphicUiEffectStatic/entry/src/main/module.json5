@@ -43,6 +43,11 @@
           }
         ]
       }
+    ],
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.HDR_BRIGHTNESS"
+      }
     ]
   }
 }

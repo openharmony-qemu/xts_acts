@@ -43,19 +43,19 @@ export default function getBundleInfoForSelf() {
           .then((data: BundleInfo) => {
             hilog.info(domain, tag, 'getBundleInfoForSelfWithREQUESTED_PERMISSION  ====> start');
             if (data) {
-              expect(data.reqPermissionDetails.length).assertEqual(1.0);
-              expect(data.reqPermissionDetails[0].name).assertEqual("ohos.permission.GET_BUNDLE_INFO_PRIVILEGED");
-              expect(data.reqPermissionDetails[0].moduleName).assertEqual("entry");
-              expect(data.reqPermissionDetails[0].reason).assertEqual("$string:module_desc");
-              expect(data.reqPermissionDetails[0].reasonId).assertLarger(0.0);
-              expect(data.reqPermissionDetails[0].usedScene.abilities.length).assertEqual(1.0);
-              expect(data.reqPermissionDetails[0].usedScene.abilities[0]).assertEqual("MainAbility");
-              expect(data.reqPermissionDetails[0].usedScene.when).assertEqual("always");
+              expect(data.reqPermissionDetails.length).assertEqual(2.0);
+              expect(data.reqPermissionDetails[1].name).assertEqual("ohos.permission.GET_BUNDLE_INFO_PRIVILEGED");
+              expect(data.reqPermissionDetails[1].moduleName).assertEqual("entry");
+              expect(data.reqPermissionDetails[1].reason).assertEqual("$string:module_desc");
+              expect(data.reqPermissionDetails[1].reasonId).assertLarger(0.0);
+              expect(data.reqPermissionDetails[1].usedScene.abilities.length).assertEqual(1.0);
+              expect(data.reqPermissionDetails[1].usedScene.abilities[0]).assertEqual("MainAbility");
+              expect(data.reqPermissionDetails[1].usedScene.when).assertEqual("always");
 
               expect(data.signatureInfo!.appId).assertContain(BUNDLE_NAME);
               expect(data.signatureInfo!.fingerprint).not().assertNull();
               expect(data.signatureInfo!.certificate).assertContain(CERTIFICATE);
-              expect(data.signatureInfo!.appIdentifier).assertEqual("");
+              expect(data.signatureInfo!.appIdentifier).assertEqual("test-app-identifier");
               done();
             } else {
               hilog.info(domain, tag, 'getBundleInfoForSelfWithREQUESTED_PERMISSION data null  ====> fail');

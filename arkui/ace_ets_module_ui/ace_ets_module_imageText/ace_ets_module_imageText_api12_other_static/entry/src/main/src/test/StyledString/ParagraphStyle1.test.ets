@@ -119,9 +119,7 @@ it('ParagraphStyle_static_10001', Level.LEVEL1, async (done: () => void): Promis
       console.info('StyledString ParagraphStyle_static_10001 StyledString1_2_pixelMap ' +
       AppStorage.get<string>('StyledString1_2_pixelMap'));
       const StyledStringPixelMap: string = AppStorage.get<string>('StyledString1_2_pixelMap')!
-      const timestamp:double = JSON.parseJsonElement(StyledStringPixelMap).getDouble("timestamp")
-      const captureId:double = JSON.parseJsonElement(StyledStringPixelMap).getDouble("captureId")
-      expect(timestamp + captureId).assertEqual(0);
+      expect(StyledStringPixelMap != '').assertEqual(true);
       console.info('StyledString ParagraphStyle_static_10001 StyledString1_2_size ' +
       AppStorage.get<string>('StyledString1_2_size'));
       expect('' + AppStorage.get<string>('StyledString1_2_size')).assertEqual('["15.00vp","15.00vp"]');

@@ -34,7 +34,7 @@ export default function builtinsJsonSerializationStringifyInterfaceTest() {
      */
     it('builtinsJsonSerializationStringifyInterfaceTest0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const result: string = JSON.stringify(undefined);
-      expect(result).assertEqual('undefined');
+      expect(result).assertEqual('');
     });
 
     /**

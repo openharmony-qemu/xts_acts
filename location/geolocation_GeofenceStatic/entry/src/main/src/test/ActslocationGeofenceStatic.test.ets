@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll, Hypium, beforeEach } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll, Hypium, beforeEach } from "../../../hypium/index";
 import hilog from '@ohos.hilog';
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
@@ -64,35 +64,7 @@ export default function actslocationTest() {
     describe("actslocationTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
         beforeAll(async() => {
-          let  isWifiActive : boolean = wifiMg.isWifiActive() as boolean
-          if(!isWifiActive){
-            console.info("======> wifi_test/enable wifi:" );
-            wifiMg.enableWifi();
-            await Utils.msSleep(5000);
-          }
-
-          try {
-            let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
-            console.info("======> Internet WifiLinkedInfo : " + JSON.stringify(data));
-            console.info("======> Internet speed : " + JSON.stringify(data.linkSpeed));
-            console.info("======> Internet chload : " + JSON.stringify(data.chload));
-            console.info("======> Internet rssi : " + JSON.stringify(data.rssi));
-
-            if (data.connState == wifiMg.ConnState.CONNECTED) {
-              console.info("======> WLAN connection established ");
-            } else {
-              expect().message("======> WLAN Network error").assertFail();
-
-            }
-            if (data.chload >= 900 || data.rssi <= -80) {
-              expect().message("======> WLAN Network error").assertFail();
-            } else if (data.chload >= 500) {
-              console.info("======> The internet connection is poor. ");
-            }
-          } catch (err) {
-            console.info("======> getLinkedInfo promise failed, err :" + JSON.stringify(err));
-            throw (err as Error);
-          }
+          await changedLocationMode()
           hilog.info(domain, tag, 'beforeAll start');
           let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
           hilog.info(domain, tag, 'beforeAll AbilityDelegator');
@@ -122,14 +94,40 @@ export default function actslocationTest() {
             hilog.info(domain, tag, '%{public}s', 'beforeAll end');
         })
 
+        afterAll(async() => {
+          await changedLocationMode()
+        })
+
         beforeEach(async (): Promise<void> => {
-            hilog.info(domain, tag, '%{public}s', 'beforeEach start');
-            try {
-                hilog.info(domain, tag, '%{public}s', 'beforeEach end');
-            } catch (err) {
-                err = err as BusinessError;
-                hilog.error(domain, tag, '%{public}s', 'beforeEach get failed, err: ' + err);
+          hilog.info(domain, tag, '%{public}s', 'beforeEach start');
+          let  isWifiActive : boolean = wifiMg.isWifiActive() as boolean
+          if(!isWifiActive){
+            console.info("======> wifi_test/enable wifi: false" );
+          }
+
+          try {
+            let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
+            console.info("======> Internet WifiLinkedInfo : " + JSON.stringify(data));
+            console.info("======> Internet speed : " + JSON.stringify(data.linkSpeed));
+            console.info("======> Internet chload : " + JSON.stringify(data.chload));
+            console.info("======> Internet rssi : " + JSON.stringify(data.rssi));
+
+            if (data.connState == wifiMg.ConnState.CONNECTED) {
+              console.info("======> WLAN connection established ");
+            } else {
+              expect().message("======> WLAN Network error").assertFail();
+
             }
+            if (data.chload >= 900 || data.rssi <= -80) {
+              expect().message("======> WLAN Network error").assertFail();
+            } else if (data.chload >= 500) {
+              console.info("======> The internet connection is poor. ");
+            }
+          } catch (err) {
+            console.info("======> getLinkedInfo promise failed, err :" + JSON.stringify(err));
+            throw (err as Error);
+          }
+          hilog.info(domain, tag, '%{public}s', 'beforeEach end');
         })
 
         /**

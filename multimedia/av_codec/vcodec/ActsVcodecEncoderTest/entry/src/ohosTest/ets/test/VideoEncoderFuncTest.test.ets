@@ -97,711 +97,795 @@ export default function VideoEncoderFuncTest() {
       console.info('VideoEncoderFuncTest afterEach called');
     });
     /**
-     * @tc.name VIDEO_ENCODE_FUNCTION_0100
-     * @tc.number VIDEO_ENCODE_FUNCTION_0100
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_0100
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_0100
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_FUNCTION_0100', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_0100', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(0);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_FUNCTION_0300
-     * @tc.number VIDEO_ENCODE_FUNCTION_0300
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_0200
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_0200
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_ENCODE_FUNCTION_0300', Level.LEVEL1, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_0200', Level.LEVEL1, async () => {
       let result: number = await testNapi.runFuncTest(1);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_FUNCTION_0700
-     * @tc.number VIDEO_ENCODE_FUNCTION_0700
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_0300
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_0300
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_ENCODE_FUNCTION_0700', Level.LEVEL1, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_0300', Level.LEVEL1, async () => {
       let result: number = await testNapi.runFuncTest(2);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_FUNCTION_0800
-     * @tc.number VIDEO_ENCODE_FUNCTION_0800
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_0400
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_0400
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_ENCODE_FUNCTION_0800', Level.LEVEL1, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_0400', Level.LEVEL1, async () => {
       let result: number = await testNapi.runFuncTest(3);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_FUNCTION_0810
-     * @tc.number VIDEO_ENCODE_FUNCTION_0810
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_0500
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_0500
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_ENCODE_FUNCTION_0810', Level.LEVEL1, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_0500', Level.LEVEL1, async () => {
       let result: number = await testNapi.runFuncTest(4);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_FUNCTION_0900
-     * @tc.number VIDEO_ENCODE_FUNCTION_0900
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_0600
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_0600
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_ENCODE_FUNCTION_0900', Level.LEVEL1, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_0600', Level.LEVEL1, async () => {
       let result: number = await testNapi.runFuncTest(5);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_FUNCTION_1000
-     * @tc.number VIDEO_ENCODE_FUNCTION_1000
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_0700
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_0700
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_ENCODE_FUNCTION_1000', Level.LEVEL1, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_0700', Level.LEVEL1, async () => {
       let result: number = await testNapi.runFuncTest(6);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_FUNCTION_1600
-     * @tc.number VIDEO_ENCODE_FUNCTION_1600
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_0800
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_0800
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_ENCODE_FUNCTION_1600', Level.LEVEL1, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_0800', Level.LEVEL1, async () => {
       let result: number = await testNapi.runFuncTest(7);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_FUNCTION_1700
-     * @tc.number VIDEO_ENCODE_FUNCTION_1700
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_PART_TWO_0800
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_PART_TWO_0800
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_ENCODE_FUNCTION_1700', Level.LEVEL1, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_PART_TWO_0800', Level.LEVEL1, async () => {
       let result: number = await testNapi.runFuncTest(8);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_FUNCTION_1800
-     * @tc.number VIDEO_ENCODE_FUNCTION_1800
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_0900
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_0900
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_ENCODE_FUNCTION_1800', Level.LEVEL1, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_0900', Level.LEVEL1, async () => {
       let result: number = await testNapi.runFuncTest(9);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_FUNCTION_2000
-     * @tc.number VIDEO_ENCODE_FUNCTION_2000
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_1000
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_1000
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('VIDEO_ENCODE_FUNCTION_2000', Level.LEVEL1, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_1000', Level.LEVEL1, async () => {
       let result: number = await testNapi.runFuncTest(10);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_0100
-     * @tc.number VIDEO_ENCODE_CAPABILITY_0100
-     * @tc.desc   api test
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_1100
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_1100
+     * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL1
      */
-    it('VIDEO_ENCODE_CAPABILITY_0100', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_1100', Level.LEVEL1, async () => {
       let result: number = await testNapi.runFuncTest(11);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_0200
-     * @tc.number VIDEO_ENCODE_CAPABILITY_0200
-     * @tc.desc   api test
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_1400
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_1400
+     * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL1
      */
-    it('VIDEO_ENCODE_CAPABILITY_0200', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_1400', Level.LEVEL1, async () => {
       let result: number = await testNapi.runFuncTest(12);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_0300
-     * @tc.number VIDEO_ENCODE_CAPABILITY_0300
-     * @tc.desc   api test
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_1600
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_1600
+     * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL1
      */
-    it('VIDEO_ENCODE_CAPABILITY_0300', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_1600', Level.LEVEL1, async () => {
       let result: number = await testNapi.runFuncTest(13);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_0400
-     * @tc.number VIDEO_ENCODE_CAPABILITY_0400
-     * @tc.desc   api test
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_1700
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_1700
+     * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL1
      */
-    it('VIDEO_ENCODE_CAPABILITY_0400', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_1700', Level.LEVEL1, async () => {
       let result: number = await testNapi.runFuncTest(14);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_0500
-     * @tc.number VIDEO_ENCODE_CAPABILITY_0500
-     * @tc.desc   api test
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_1800
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_1800
+     * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL1
      */
-    it('VIDEO_ENCODE_CAPABILITY_0500', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_1800', Level.LEVEL1, async () => {
       let result: number = await testNapi.runFuncTest(15);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_9900
-     * @tc.number VIDEO_ENCODE_CAPABILITY_9900
-     * @tc.desc   api test
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_1900
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_1900
+     * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL1
      */
-    it('VIDEO_ENCODE_CAPABILITY_9900', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_1900', Level.LEVEL1, async () => {
       let result: number = await testNapi.runFuncTest(16);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_0600
-     * @tc.number VIDEO_ENCODE_CAPABILITY_0600
-     * @tc.desc   api test
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_2000
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_2000
+     * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL1
      */
-    it('VIDEO_ENCODE_CAPABILITY_0600', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_FUNCTION_2000', Level.LEVEL1, async () => {
       let result: number = await testNapi.runFuncTest(17);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_0700
-     * @tc.number VIDEO_ENCODE_CAPABILITY_0700
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_0100
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_0100
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_CAPABILITY_0700', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_0100', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(18);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_0800
-     * @tc.number VIDEO_ENCODE_CAPABILITY_0800
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_0200
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_0200
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_CAPABILITY_0800', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_0200', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(19);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_0900
-     * @tc.number VIDEO_ENCODE_CAPABILITY_0900
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_0300
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_0300
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_CAPABILITY_0900', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_0300', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(20);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_1000
-     * @tc.number VIDEO_ENCODE_CAPABILITY_1000
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_0400
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_0400
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_CAPABILITY_1000', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_0400', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(21);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_1100
-     * @tc.number VIDEO_ENCODE_CAPABILITY_1100
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_0500
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_0500
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_CAPABILITY_1100', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_0500', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(22);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_1200
-     * @tc.number VIDEO_ENCODE_CAPABILITY_1200
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_9900
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_9900
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_CAPABILITY_1200', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_9900', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(23);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_1300
-     * @tc.number VIDEO_ENCODE_CAPABILITY_1300
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_0600
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_0600
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_CAPABILITY_1300', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_0600', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(24);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_1310
-     * @tc.number VIDEO_ENCODE_CAPABILITY_1310
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_0700
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_0700
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_CAPABILITY_1310', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_0700', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(25);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_1400
-     * @tc.number VIDEO_ENCODE_CAPABILITY_1400
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_0800
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_0800
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_CAPABILITY_1400', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_0800', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(26);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_1500
-     * @tc.number VIDEO_ENCODE_CAPABILITY_1500
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_0900
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_0900
+     * @tc.desc   api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_0900', Level.LEVEL2, async () => {
+      let result: number = await testNapi.runFuncTest(27);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_1000
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_1000
+     * @tc.desc   api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_1000', Level.LEVEL2, async () => {
+      let result: number = await testNapi.runFuncTest(28);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_1100
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_1100
+     * @tc.desc   api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_1100', Level.LEVEL2, async () => {
+      let result: number = await testNapi.runFuncTest(29);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_1200
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_1200
+     * @tc.desc   api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_1200', Level.LEVEL2, async () => {
+      let result: number = await testNapi.runFuncTest(30);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_1300
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_1300
+     * @tc.desc   api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_1300', Level.LEVEL2, async () => {
+      let result: number = await testNapi.runFuncTest(31);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_PART_TWO_1300
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_PART_TWO_1300
+     * @tc.desc   api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_PART_TWO_1300', Level.LEVEL2, async () => {
+      let result: number = await testNapi.runFuncTest(32);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_1400
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_1400
+     * @tc.desc   api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_1400', Level.LEVEL2, async () => {
+      let result: number = await testNapi.runFuncTest(33);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_1500
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_1500
      * @tc.desc   VIDEO_ENCODE_CAPABILITY_1500
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_CAPABILITY_1500', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(27);
-      expect(result).assertEqual(0);
-    });
-    /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_1700
-     * @tc.number VIDEO_ENCODE_CAPABILITY_1700
-     * @tc.desc   api test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('VIDEO_ENCODE_CAPABILITY_1700', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(28);
-      expect(result).assertEqual(0);
-    });
-    /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_1800
-     * @tc.number VIDEO_ENCODE_CAPABILITY_1800
-     * @tc.desc   api test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('VIDEO_ENCODE_CAPABILITY_1800', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(29);
-      expect(result).assertEqual(0);
-    });
-    /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_1900
-     * @tc.number VIDEO_ENCODE_CAPABILITY_1900
-     * @tc.desc   api test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('VIDEO_ENCODE_CAPABILITY_1900', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(30);
-      expect(result).assertEqual(0);
-    });
-    /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_8400
-     * @tc.number VIDEO_ENCODE_CAPABILITY_8400
-     * @tc.desc   api test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('VIDEO_ENCODE_CAPABILITY_8400', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(31);
-      expect(result).assertEqual(0);
-    });
-    /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_8500
-     * @tc.number VIDEO_ENCODE_CAPABILITY_8500
-     * @tc.desc   api test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('VIDEO_ENCODE_CAPABILITY_8500', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(32);
-      expect(result).assertEqual(0);
-    });
-    /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_8600
-     * @tc.number VIDEO_ENCODE_CAPABILITY_8600
-     * @tc.desc   api test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('VIDEO_ENCODE_CAPABILITY_8600', Level.LEVEL2, async () => {
-      let result: number = await testNapi.runFuncTest(33);
-      expect(result).assertEqual(0);
-    });
-    /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_2000
-     * @tc.number VIDEO_ENCODE_CAPABILITY_2000
-     * @tc.desc   api test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('VIDEO_ENCODE_CAPABILITY_2000', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_1500', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(34);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_2100
-     * @tc.number VIDEO_ENCODE_CAPABILITY_2100
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_1700
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_1700
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_CAPABILITY_2100', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_1700', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(35);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_2200
-     * @tc.number VIDEO_ENCODE_CAPABILITY_2200
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_1800
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_1800
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_CAPABILITY_2200', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_1800', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(36);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_2300
-     * @tc.number VIDEO_ENCODE_CAPABILITY_2300
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_1900
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_1900
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_CAPABILITY_2300', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_1900', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(37);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_2400
-     * @tc.number VIDEO_ENCODE_CAPABILITY_2400
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_8400
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_8400
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_CAPABILITY_2400', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_8400', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(38);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_2500
-     * @tc.number VIDEO_ENCODE_CAPABILITY_2500
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_8500
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_8500
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_CAPABILITY_2500', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_8500', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(39);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_2700
-     * @tc.number VIDEO_ENCODE_CAPABILITY_2700
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_8600
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_8600
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_CAPABILITY_2700', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_8600', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(40);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_2800
-     * @tc.number VIDEO_ENCODE_CAPABILITY_2800
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_2000
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_2000
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_CAPABILITY_2800', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_2000', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(41);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_3100
-     * @tc.number VIDEO_ENCODE_CAPABILITY_3100
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_2100
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_2100
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_CAPABILITY_3100', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_2100', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(42);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_3200
-     * @tc.number VIDEO_ENCODE_CAPABILITY_3200
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_2200
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_2200
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_CAPABILITY_3200', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_2200', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(43);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_3300
-     * @tc.number VIDEO_ENCODE_CAPABILITY_3300
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_2300
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_2300
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_CAPABILITY_3300', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_2300', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(44);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_3400
-     * @tc.number VIDEO_ENCODE_CAPABILITY_3400
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_2400
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_2400
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_CAPABILITY_3400', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_2400', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(45);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_3500
-     * @tc.number VIDEO_ENCODE_CAPABILITY_3500
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_2500
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_2500
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_CAPABILITY_3500', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_2500', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(46);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_3600
-     * @tc.number VIDEO_ENCODE_CAPABILITY_3600
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_2700
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_2700
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_CAPABILITY_3600', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_2700', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(47);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_3700
-     * @tc.number VIDEO_ENCODE_CAPABILITY_3700
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_2800
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_2800
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_CAPABILITY_3700', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_2800', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(48);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_3800
-     * @tc.number VIDEO_ENCODE_CAPABILITY_3800
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_3100
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_3100
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_CAPABILITY_3800', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_3100', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(49);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_3900
-     * @tc.number VIDEO_ENCODE_CAPABILITY_3900
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_3200
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_3200
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_CAPABILITY_3900', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_3200', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(50);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_4100
-     * @tc.number VIDEO_ENCODE_CAPABILITY_4100
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_3300
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_3300
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_CAPABILITY_4100', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_3300', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(51);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_4200
-     * @tc.number VIDEO_ENCODE_CAPABILITY_4200
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_3400
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_3400
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_CAPABILITY_4200', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_3400', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(52);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_4300
-     * @tc.number VIDEO_ENCODE_CAPABILITY_4300
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_3500
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_3500
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_CAPABILITY_4300', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_3500', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(53);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_4500
-     * @tc.number VIDEO_ENCODE_CAPABILITY_4500
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_3600
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_3600
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_CAPABILITY_4500', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_3600', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(54);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_4600
-     * @tc.number VIDEO_ENCODE_CAPABILITY_4600
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_3700
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_3700
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_CAPABILITY_4600', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_3700', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(55);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_4800
-     * @tc.number VIDEO_ENCODE_CAPABILITY_4800
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_3800
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_3800
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_CAPABILITY_4800', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_3800', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(56);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_4900
-     * @tc.number VIDEO_ENCODE_CAPABILITY_4900
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_3900
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_3900
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_CAPABILITY_4900', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_3900', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(57);
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.name VIDEO_ENCODE_CAPABILITY_9800
-     * @tc.number VIDEO_ENCODE_CAPABILITY_9800
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_4100
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_4100
      * @tc.desc   api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('VIDEO_ENCODE_CAPABILITY_9800', Level.LEVEL2, async () => {
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_4100', Level.LEVEL2, async () => {
       let result: number = await testNapi.runFuncTest(58);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_4200
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_4200
+     * @tc.desc   api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_4200', Level.LEVEL2, async () => {
+      let result: number = await testNapi.runFuncTest(59);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_4300
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_4300
+     * @tc.desc   api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_4300', Level.LEVEL2, async () => {
+      let result: number = await testNapi.runFuncTest(60);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_4500
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_4500
+     * @tc.desc   api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_4500', Level.LEVEL2, async () => {
+      let result: number = await testNapi.runFuncTest(61);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_4600
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_4600
+     * @tc.desc   api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_4600', Level.LEVEL2, async () => {
+      let result: number = await testNapi.runFuncTest(62);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_4800
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_4800
+     * @tc.desc   api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_4800', Level.LEVEL2, async () => {
+      let result: number = await testNapi.runFuncTest(63);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_4900
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_4900
+     * @tc.desc   api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_4900', Level.LEVEL2, async () => {
+      let result: number = await testNapi.runFuncTest(64);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_9800
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_9800
+     * @tc.desc   api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_9800', Level.LEVEL2, async () => {
+      let result: number = await testNapi.runFuncTest(65);
       expect(result).assertEqual(0);
     });
   });

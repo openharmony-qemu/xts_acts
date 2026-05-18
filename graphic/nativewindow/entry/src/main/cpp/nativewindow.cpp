@@ -139,6 +139,8 @@ napi_property_descriptor desc[] = {
     {"testNativeWindowNativeWindowHandleOptSetGetBufferGeometryAbnormal", nullptr,
      testNativeWindowNativeWindowHandleOptSetGetBufferGeometryAbnormal, nullptr, nullptr, nullptr, napi_default,
      nullptr},
+    {"testNativeWindowNativeWindowHandleOptCodeAbnormal", nullptr, testNativeWindowNativeWindowHandleOptCodeAbnormal,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
     {"testNativeWindowNativeWindowHandleOptSetGetFormatNormal", nullptr,
      testNativeWindowNativeWindowHandleOptSetGetFormatNormal, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"testNativeWindowNativeWindowHandleOptSetGetFormatAbnormal", nullptr,
@@ -301,6 +303,10 @@ napi_property_descriptor desc[] = {
      nullptr, napi_default, nullptr},
     {"OHNativeErrorCodeCover", nullptr, OHNativeErrorCodeCover, nullptr, nullptr,
      nullptr, napi_default, nullptr},
+    {"testNativeWindowNativeWindowFlushBufferAbnormalRegion", nullptr,
+     testNativeWindowNativeWindowFlushBufferAbnormalRegion, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"testNativeWindowNativeWindowRequestBufferDefaultWidthAndHeight", nullptr,
+     testNativeWindowNativeWindowRequestBufferDefaultWidthAndHeight, nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 
 EXTERN_C_START

@@ -70,8 +70,12 @@ export default function selectKeyboardAvoidMode() {
       let hideBtn = await driver.findComponent(ON.id('hideBtn'));
       await btn1.click();
       await Utils.sleep(5000);
-      let str = await driver.findComponent(ON.text('ddd'));
-      expect(str == null ).assertTrue();
+      let str = await driver.findComponent(ON.text('123'));
+     
+      let modeTye = getInspectorByKey('modeType');
+      await Utils.sleep(500);
+      let obj: ESObject = JSON.parse(modeTye);
+      expect(obj.$attrs.content).assertEqual('undefined');
       await Utils.sleep(1000);
       await btn1.click();
       await Utils.sleep(1000);
@@ -98,8 +102,13 @@ export default function selectKeyboardAvoidMode() {
         let hideBtn = await driver.findComponent(ON.id('hideBtn'));
         await btn2.click();
         await Utils.sleep(5000);
-        let str1 = await driver.findComponent(ON.text('ddd'));
-        expect(str1 == null ).assertTrue();
+        let str1 = await driver.findComponent(ON.text('123'));
+        
+        let modeTye = getInspectorByKey('modeType');
+        await Utils.sleep(500);
+        let obj: ESObject = JSON.parse(modeTye);
+        expect(obj.$attrs.content).assertEqual('0');
+
         await Utils.sleep(1000);
         await btn2.click();
         await Utils.sleep(1000);
@@ -127,7 +136,12 @@ export default function selectKeyboardAvoidMode() {
         await btn3.click();
         await Utils.sleep(5000);
         let str1 = await driver.findComponent(ON.text('ddd'));
-        expect(str1 !== null ).assertTrue();
+        
+        let modeTye = getInspectorByKey('modeType');
+        await Utils.sleep(500);
+        let obj: ESObject = JSON.parse(modeTye);
+        expect(obj.$attrs.content).assertEqual('1');
+
         await Utils.sleep(1000);
         await btn3.click();
         await Utils.sleep(1000);

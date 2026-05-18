@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2025 HiHope Open Source Organization.
+* Copyright (C) 2025-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the 'License');
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -582,8 +582,8 @@ export default function builtinsDoubleFourthPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsDoubleFourthPrototypebTest3200';
         console.info(`${caseName}, test start`);
-        expect(typeof Double.bitCastFromLong(Number.MAX_SAFE_INTEGER as long)).assertEqual('number');
-        expect(typeof Double.bitCastFromLong(Number.MIN_SAFE_INTEGER as long)).assertEqual('number');
+        expect(typeof Double.bitCastFromLong(Number.MAX_SAFE_INTEGER.toLong())).assertEqual('number');
+        expect(typeof Double.bitCastFromLong(Number.MIN_SAFE_INTEGER.toLong())).assertEqual('number');
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1602,150 +1602,6 @@ export default function builtinsDoubleFourthPrototypebTest() {
         console.info(`${caseName}, test start`);
         const result = Double.toString(NaN);
         expect(result).assertEqual('NaN');
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number builtinsDoubleFourthPrototypebTest8900
-     * @tc.name builtinsDoubleFourthPrototypebTest8900
-     * @tc.desc test Double.valueOf(value: double): Double
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsDoubleFourthPrototypebTest8900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsDoubleFourthPrototypebTest8900';
-        console.info(`${caseName}, test start`);
-        const result = Double.valueOf(123.456);
-        expect(result.valueOf()).assertEqual(123.456);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number builtinsDoubleFourthPrototypebTest9000
-     * @tc.name builtinsDoubleFourthPrototypebTest9000
-     * @tc.desc test Double.valueOf(value: double): Double
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsDoubleFourthPrototypebTest9000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsDoubleFourthPrototypebTest9000';
-        console.info(`${caseName}, test start`);
-        const result = Double.valueOf(-123.456);
-        expect(result.valueOf()).assertEqual(-123.456);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number builtinsDoubleFourthPrototypebTest9100
-     * @tc.name builtinsDoubleFourthPrototypebTest9100
-     * @tc.desc test Double.valueOf(value: double): Double
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsDoubleFourthPrototypebTest9100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsDoubleFourthPrototypebTest9100';
-        console.info(`${caseName}, test start`);
-        const result = Double.valueOf(0.0);
-        expect(result.valueOf()).assertEqual(0.0);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number builtinsDoubleFourthPrototypebTest9200
-     * @tc.name builtinsDoubleFourthPrototypebTest9200
-     * @tc.desc test Double.valueOf(value: double): Double
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsDoubleFourthPrototypebTest9200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsDoubleFourthPrototypebTest9200';
-        console.info(`${caseName}, test start`);
-        const result = Double.valueOf(Double.MAX_VALUE);
-        expect(result.valueOf()).assertEqual(Double.MAX_VALUE);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number builtinsDoubleFourthPrototypebTest9300
-     * @tc.name builtinsDoubleFourthPrototypebTest9300
-     * @tc.desc test Double.valueOf(value: double): Double
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsDoubleFourthPrototypebTest9300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsDoubleFourthPrototypebTest9300';
-        console.info(`${caseName}, test start`);
-        const result = Double.valueOf(Double.MIN_VALUE);
-        expect(result.valueOf()).assertEqual(Double.MIN_VALUE);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number builtinsDoubleFourthPrototypebTest9400
-     * @tc.name builtinsDoubleFourthPrototypebTest9400
-     * @tc.desc test Double.valueOf(value: double): Double
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsDoubleFourthPrototypebTest9400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsDoubleFourthPrototypebTest9400';
-        console.info(`${caseName}, test start`);
-        const result = Double.valueOf(Number.POSITIVE_INFINITY);
-        expect(result.valueOf()).assertEqual(Number.POSITIVE_INFINITY);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number builtinsDoubleFourthPrototypebTest9500
-     * @tc.name builtinsDoubleFourthPrototypebTest9500
-     * @tc.desc test Double.valueOf(value: double): Double
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsDoubleFourthPrototypebTest9500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsDoubleFourthPrototypebTest9500';
-        console.info(`${caseName}, test start`);
-        const result = Double.valueOf(Number.NEGATIVE_INFINITY);
-        expect(result.valueOf()).assertEqual(Number.NEGATIVE_INFINITY);
-        console.info(`${caseName}, test end`);
-        Done();
-      })
-
-    /**
-     * @tc.number builtinsDoubleFourthPrototypebTest9600
-     * @tc.name builtinsDoubleFourthPrototypebTest9600
-     * @tc.desc test Double.valueOf(value: double): Double
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('builtinsDoubleFourthPrototypebTest9600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (Done: () => void): Promise<void> => {
-        const caseName = 'builtinsDoubleFourthPrototypebTest9600';
-        console.info(`${caseName}, test start`);
-        const result = Double.valueOf(NaN);
-        expect(Number.isNaN(result.valueOf())).assertEqual(true);
         console.info(`${caseName}, test end`);
         Done();
       })

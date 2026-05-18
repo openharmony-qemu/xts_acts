@@ -17,7 +17,7 @@ import CameraFunctionErrorTest from "./camera/CameraSessionNdkErrorTest.test";
 import CameraFunctionTest from "./camera/CameraSessionNdkTest.test";
 
 export default function testsuite() {
-  CameraFunctionTest();
   CameraFunctionErrorTest();
   CameraNdkTest();
+  CameraFunctionTest();
 }

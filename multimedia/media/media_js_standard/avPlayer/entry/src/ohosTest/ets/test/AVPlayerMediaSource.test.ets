@@ -1011,5 +1011,114 @@ export default function AVPlayerMediaSource() {
       player.setMediaSource(mediaSource, playStrategy);
       done();
     });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_FD_0100
+     * @tc.number SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_FD_0100
+     * @tc.desc   Local Video create Media Source With Fd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_FD_0100', Level.LEVEL0, async (done: Function) => {
+      let fdObject: media.AVFileDescriptor = {
+        fd: 0,
+        offset: 0,
+        length: 0
+      };
+      let mediaSource = media.createMediaSourceWithFd(fdObject);
+      expect(mediaSource != null).assertTrue();
+      expect(mediaSource != undefined).assertTrue()
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_FD_0200
+     * @tc.number SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_FD_0200
+     * @tc.desc   Local Video create Media Source With Fd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_FD_0200', Level.LEVEL0, async (done: Function) => {
+      let mediaSource = media.createMediaSourceWithFd(null);
+      expect(mediaSource).assertUndefined()
+      console.info(' createMediaSourceWithFd is null')
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_FD_0300
+     * @tc.number SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_FD_0300
+     * @tc.desc   Local Video create Media Source With Fd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_FD_0300', Level.LEVEL0, async (done: Function) => {
+      let mediaSource = media.createMediaSourceWithFd(undefined);
+      expect(mediaSource).assertUndefined()
+      console.info(' createMediaSourceWithFd is undefined')
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_DATA_SOURCE_0100
+     * @tc.number SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_DATA_SOURCE_0100
+     * @tc.desc   Local Video create Media Source With DataSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_DATA_SOURCE_0100', Level.LEVEL0, async (done: Function) => {
+      let dataSource: media.AVDataSrcDescriptor = {
+        fileSize: 0,
+        callback: (buffer: ArrayBuffer, length: number, pos?: number) => 0
+      };
+      let mediaSource = media.createMediaSourceWithDataSource(dataSource);
+      expect(mediaSource != null).assertTrue();
+      expect(mediaSource != undefined).assertTrue()
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_DATA_SOURCE_0200
+     * @tc.number SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_DATA_SOURCE_0200
+     * @tc.desc   Local Video create Media Source With DataSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_DATA_SOURCE_0200', Level.LEVEL0, async (done: Function) => {
+      let mediaSource = media.createMediaSourceWithDataSource(null);
+      expect(mediaSource).assertUndefined()
+      console.info(' createMediaSourceWithDataSource is null')
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_DATA_SOURCE_0300
+     * @tc.number SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_DATA_SOURCE_0300
+     * @tc.desc   Local Video create Media Source With DataSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_CREATE_MEDIA_SOURCE_WITH_DATA_SOURCE_0300', Level.LEVEL0, async (done: Function) => {
+      let mediaSource = media.createMediaSourceWithDataSource(undefined);
+      expect(mediaSource).assertUndefined()
+      console.info(' createMediaSourceWithDataSource is undefined')
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_GET_ID_0100
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_GET_ID_0100
+     * @tc.desc   Local Video get MediaSource ID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_GET_ID_0100', Level.LEVEL0, async (done: Function) => {
+      let mediaSource = media.createMediaSourceWithUrl(url_1a1v_mp4, header);
+      expect(mediaSource).not().assertUndefined()
+      let id = mediaSource.getID();
+      expect(id).not().assertUndefined()
+      expect(id.length).assertLarger(0)
+      done();
+    });
   })
 }

@@ -25,8 +25,8 @@ async function mouseScrollCommonEvent(id: string) {
   let driver = Driver.create();
   let component = await driver.findComponent(ON.id(id));
   let point = await (component?.getBounds() as Promise<Rect>);
-  let centerX = Math.round((point.left + point.right) as int / 2);
-  let centerY = Math.round((point.top + point.bottom) as int / 2);
+  let centerX = Math.round((point.left + point.right).toInt() / 2);
+  let centerY = Math.round((point.top + point.bottom).toInt() / 2);
   driver.mouseScroll({x: centerX.toInt(), y: centerY.toInt()}, true, 30, 2027);
 }
 

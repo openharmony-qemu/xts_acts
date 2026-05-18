@@ -1082,6 +1082,8 @@ export default function windowPropertiesTest() {
       let windowProperties = windowClass.getWindowProperties()
       console.info(`${msgStr} windowProperties: ${JSON.stringify(windowProperties)}`);
       let isFullScreen = windowProperties.isFullScreen;
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.info(`${caseName} isSupport: ${isSupport}`);
 
       let testSetGestureBackEnabledTrue_CheckReturnSuccess = () => {
         windowClass.setGestureBackEnabled(true).then(() => {
@@ -1137,9 +1139,8 @@ export default function windowPropertiesTest() {
         testSetGestureBackEnabledTrue_CheckReturnSuccess();
       } else if (deviceInfo.deviceType === 'car') {
         testSetGestureBackEnabledTrue_CheckReturnSuccess();
-      } else {
-        console.info(`====>${msgStr} end fail====`);
-        expect().assertFail();
+      } else if(isSupport === false){
+        testSetGestureBackEnabledTrue_CheckReturnFail801();
       }
 
       done()
@@ -1159,6 +1160,8 @@ export default function windowPropertiesTest() {
       let windowProperties = windowClass.getWindowProperties()
       console.info(`${msgStr} windowProperties: ${JSON.stringify(windowProperties)}`);
       let isFullScreen = windowProperties.isFullScreen;
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.info(`${caseName} isSupport: ${isSupport}`);
 
       let testSetGestureBackEnabledFalse_CheckReturnSuccess = () => {
         windowClass.setGestureBackEnabled(false).then(() => {
@@ -1214,9 +1217,8 @@ export default function windowPropertiesTest() {
         testSetGestureBackEnabledFalse_CheckReturnSuccess();
       } else if (deviceInfo.deviceType === 'car') {
         testSetGestureBackEnabledFalse_CheckReturnSuccess();
-      } else {
-        console.info(`====>${msgStr} end fail====`);
-        expect().assertFail();
+      } else if(isSupport === false){
+        testSetGestureBackEnabledFalse_CheckReturnFail801();
       }
 
       done()
@@ -1455,14 +1457,14 @@ export default function windowPropertiesTest() {
       }
     })
     /**
-     * @tc.name   testSetWindowGrayScale0.5
+     * @tc.name   testSetWindowGrayScale05Adapt001
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_0400
      * @tc.desc   test setWindowGrayScale
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it("testSetWindowGrayScale0.5", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it("testSetWindowGrayScale05Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "TestSetWindowGrayScale0.5";
       let windowClass = await windowStage.getMainWindow();
       try {
@@ -2342,14 +2344,14 @@ export default function windowPropertiesTest() {
       }
     })
     /**
-     * @tc.name   testSetWindowBrightnessCallback1.5
+     * @tc.name   testSetWindowBrightnessCallback15Adapt001
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2800
      * @tc.desc   set window brightness
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testSetWindowBrightnessCallback1.5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testSetWindowBrightnessCallback15Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'TestSetWindowBrightnessCallback1.5';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -2401,14 +2403,14 @@ export default function windowPropertiesTest() {
       }
     })
     /**
-     * @tc.name   testSetWindowBrightnessCallback0.5
+     * @tc.name   testSetWindowBrightnessCallback05Adapt001
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3000
      * @tc.desc   set window brightness
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testSetWindowBrightnessCallback0.5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testSetWindowBrightnessCallback05Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'TestSetWindowBrightnessCallback0.5';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -2488,14 +2490,14 @@ export default function windowPropertiesTest() {
       }
     })
     /**
-     * @tc.name   testSetWindowBrightnessPromiseNegative1.5
+     * @tc.name   testSetWindowBrightnessPromiseNegative15Adapt001
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3300
      * @tc.desc   set window brightness
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testSetWindowBrightnessPromiseNegative1.5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testSetWindowBrightnessPromiseNegative15Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'TestSetWindowBrightnessPromise_1.5';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -2516,14 +2518,14 @@ export default function windowPropertiesTest() {
       }
     })
     /**
-     * @tc.name   testSetWindowBrightnessPromise1.5
+     * @tc.name   testSetWindowBrightnessPromise15Adapt001
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3400
      * @tc.desc   set window brightness
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testSetWindowBrightnessPromise1.5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testSetWindowBrightnessPromise15Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'TestSetWindowBrightnessPromise1.5';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -2575,14 +2577,14 @@ export default function windowPropertiesTest() {
       }
     })
     /**
-     * @tc.name   testSetWindowBrightnessPromise0.5
+     * @tc.name   testSetWindowBrightnessPromise05Adapt001
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3600
      * @tc.desc   set window brightness
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testSetWindowBrightnessPromise0.5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testSetWindowBrightnessPromise05Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'TestSetWindowBrightnessPromise_0.5';
       try {
         let windowClass = windowStage.getMainWindowSync();
@@ -4667,14 +4669,14 @@ export default function windowPropertiesTest() {
       }
     })
     /**
-     * @tc.name   test_setWindowGrayScale_0.5
+     * @tc.name   test_setWindowGrayScale_05Adapt001
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_1000
      * @tc.desc   test_setWindowGrayScale_0.5
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("test_setWindowGrayScale_0.5", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it("test_setWindowGrayScale_05Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let msgStr = "test_setWindowGrayScale_0.5";
       console.log(msgStr + "begin");
       let windowClass = await windowStage.getMainWindow();

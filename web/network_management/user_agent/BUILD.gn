@@ -15,7 +15,8 @@ group("ActsWebUserAgentTest") {
   testonly = true
   if (is_standard_system) {
     deps = [
-      "user_agent_one:ActsWebUserAgentOneTest"
+      "user_agent_one:ActsWebUserAgentOneTest",
+      "user_agent_one_static:ActsWebUserAgentOneStaticTest",
     ]
   }
 }

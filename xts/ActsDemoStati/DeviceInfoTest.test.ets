@@ -1,1724 +1,1873 @@
 /*
- * Copyright (C) 2021-2024 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
-import deviceinfo from '@ohos.deviceInfo'
-
-export default function deviceInfoTest() {
-    describe('DeviceInfoTest', function () {
-
-        const MAX_CHARACTERS_NUM_ONE = 33;
-        const MAX_CHARACTERS_NUM_TWO = 65;
-        const MAX_CHARACTERS_NUM = 0;
-        const CHARACTERS_NUM_ODID = 36;
-        const CLASS_LEVEL_HIGH = 0;
-        const CLASS_LEVEL_MEDIUM = 1;
-        const CLASS_LEVEL_LOW = 2;
-
-        /**
-         * @tc.name   device_info_test_001
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0100
-         * @tc.desc   Get a string representing the device type.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('device_info_test_001 start');
-            let deviceTypeInfo = deviceinfo.deviceType;
-            
-            if (deviceTypeInfo != '' && deviceTypeInfo != null && deviceTypeInfo != undefined) {
-                console.info('the value of the deviceType is :' + deviceTypeInfo);
-                expect(deviceTypeInfo).assertInstanceOf('String');
-				done();
-            }else {
-                console.info('the return value DeviceType is null or incorrect.');
-                expect().assertFail();
-				done();
-            }
-
-            console.info('device_info_test_001 : end');
-        })
-
-        /**
-         * @tc.name   device_info_test_002
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0200
-         * @tc.desc   Get the manufacture name represented by a string.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('device_info_test_002 start');
-            let manufactureInfo = deviceinfo.manufacture;
-            
-            if (manufactureInfo != '' && manufactureInfo != null && manufactureInfo != undefined) {
-                console.info('the value of the manufactureInfo is :' + manufactureInfo);
-                expect(manufactureInfo).assertInstanceOf('String');
-				done();
-            } else {
-                console.info('the return value Manufacture is null or incorrect.');
-                expect().assertFail();
-				done();
-            }
-
-            console.info('device_info_test_002 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_003
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0300
-         * @tc.desc   Get the device brand represented by a string ull.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('testGetDeviceBrand01 start');
-            let brandInfo = deviceinfo.brand;
-            
-            if (brandInfo != '' && brandInfo != null && brandInfo != undefined) {
-                console.info('the value of the device brand is :' + brandInfo);
-                expect(brandInfo).assertInstanceOf('String');
-				done();
-            } else {
-                console.info('the return value brand is null or incorrect.');
-                expect().assertFail();
-				done();
-            }
-
-            console.info('testGetDeviceBrand01 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_004
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0400
-         * @tc.desc   Get the external product family name re
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('testGetMarketName01 start')
-            let marketNameInfo = deviceinfo.marketName;
-            
-            if (marketNameInfo != '' && marketNameInfo != null && marketNameInfo != undefined) {
-                console.info('the value of the deviceinfo marketName is :' + marketNameInfo);
-                expect(marketNameInfo).assertInstanceOf('String');
-				done();
-            } else {
-                console.info('the return value marketName is null or incorrect.');
-                expect().assertFail();
-				done();
-            }
-
-            console.info('testGetMarketName01 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_005
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0500
-         * @tc.desc   Get the product series represented by a 
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('testGetProductSeries01 start');
-            let productSeriesInfo = deviceinfo.productSeries;
-
-            if (productSeriesInfo != '' && productSeriesInfo != null && productSeriesInfo != undefined) {
-                console.info('the value of the deviceinfo productSeries is :' + productSeriesInfo);
-                expect(productSeriesInfo).assertInstanceOf('String');
-                let str = /[\w-\.\(\)\s]/g;
-                let arr = productSeriesInfo.match(str);
-                let bufferstr = arr.join('');
-                console.info('the value of the bufferstr is :' + bufferstr);
-                expect(productSeriesInfo).assertEqual(bufferstr);
-                done();
-            } else {
-                console.info('the return value is null or incorrect.');
-                expect().assertFail();
-                done();
-            }
-
-            console.info('testGetProductSeries01 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_006
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0600
-         * @tc.desc   Get the internal software sub-model represented 
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('testGetProductModel01 start');
-            let productModelInfo = deviceinfo.productModel;
-            
-            if (productModelInfo != '' && productModelInfo != null && productModelInfo != undefined) {
-                console.info('the value of the deviceinfo productModel is :' + productModelInfo);
-                expect(productModelInfo).assertInstanceOf('String');
-				done();
-            } else {
-                console.info('the return value ProductModel is null or incorrect.');
-                expect().assertFail();
-				done();
-            }
-
-            console.info('testGetProductModel01 : end');
-        })
-
-        /**
-         * @tc.name   device_info_test_007
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0700
-         * @tc.desc   Get the internal software sub-model represented 
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('testGetSoftwareModel01 start');
-            let softwareModelInfo = deviceinfo.softwareModel;
-            
-            if (softwareModelInfo != '' && softwareModelInfo != null && softwareModelInfo != undefined) {
-                console.info('the value of the deviceinfo softwareModel is :' + softwareModelInfo);
-                expect(softwareModelInfo).assertInstanceOf('String');
-                let str = /[\w-\.\(\)\s]/g;
-                let arr = softwareModelInfo.match(str);
-                let bufferstr = arr.join('');
-                console.info('the value of the bufferstr is :' + bufferstr);
-                expect(softwareModelInfo).assertEqual(bufferstr);
-                done();
-            } else {
-                console.info('the return value is null or incorrect.');
-                expect().assertFail();
-				done();
-            }
-
-            console.info('testGetSoftwareModel01 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_008
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0800
-         * @tc.desc   Get the hardware version represented by a string
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('testGetHardWareModel01 start');
-            let hardwareModelInfo = deviceinfo.hardwareModel;
-            
-            if (hardwareModelInfo != '' && hardwareModelInfo != null && hardwareModelInfo != undefined) {
-                console.info('the value of the deviceinfo hardwareModel is :' + hardwareModelInfo);
-                expect(hardwareModelInfo).assertInstanceOf('String');
-                done();
-            } else {
-                console.info('the return value HardWareModel is null or incorrect.');
-                expect().assertFail();
-				done();
-            }
-
-            console.info('testGetHardWareModel01 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_009
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0900
-         * @tc.desc   Get the hardware profile represented by a string
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('testGetHardWareProfile01 start');
-            let hardwareProfileInfo = deviceinfo.hardwareProfile;
-            
-            if (hardwareProfileInfo != '' && hardwareProfileInfo != null && hardwareProfileInfo != undefined) {
-                console.info('the value of the deviceinfo hardwareProfile is :' + hardwareProfileInfo);
-                expect(hardwareProfileInfo).assertInstanceOf('String');
-				done();
-            } else {
-                console.info('the return value hardwareProfile is null or incorrect.');
-                expect().assertFail();
-                done();
-            }
-
-            console.info('testGetHardWareProfile01 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_011
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0120
-         * @tc.desc   Get the bootloader version number represented
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('testGetBootLoaderVersion01 start');
-            let bootloaderVersionInfo = deviceinfo.bootloaderVersion;
-            
-            if (bootloaderVersionInfo != '' && bootloaderVersionInfo != null && bootloaderVersionInfo != undefined) {
-                console.info('the value of the deviceinfo bootloaderVersion is :' + bootloaderVersionInfo);
-                expect(bootloaderVersionInfo).assertInstanceOf('String');
-                let str = /[\w-\.\(\)]/g;
-                let arr = bootloaderVersionInfo.match(str);
-                let bufferstr = arr.join('');
-                console.info('the value of the bufferstr is :' + bufferstr);
-                expect(bootloaderVersionInfo).assertEqual(bufferstr);
-                done();
-            } else {
-                console.info('the return value is null or incorrect.');
-                expect().assertFail();
-                done();
-            }
-
-            console.info('testGetBootLoaderVersion01 ：end')
-        })
-
-        /**
-         * @tc.name   device_info_test_012
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0130
-         * @tc.desc   Get the instruction set supported by the system.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('testGetabiList01 start');
-            let abiListInfo = deviceinfo.abiList;
-            
-            if (abiListInfo != '' && abiListInfo != null && abiListInfo != undefined) {
-                console.info('the value of the deviceinfo abiList is :' + abiListInfo);
-                expect(abiListInfo).assertInstanceOf('String');
-                let str = /[\w-\.\(\)\,]/g;
-                let arr = abiListInfo.match(str);
-                let bufferstr = arr.join('');
-                console.info('the value of the bufferstr is :' + bufferstr);
-                expect(abiListInfo).assertEqual(bufferstr);
-                done();
-            } else {
-                console.info('the return value is null or incorrect.');
-                expect().assertFail();
-                done();
-            }
-
-            console.info('testGetabiList01 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_013
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0140
-         * @tc.desc   Get the security patch level represented
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('testGetSecurityPatchTag01 start');
-            let securityPatchTagInfo = deviceinfo.securityPatchTag;
-            
-            if (securityPatchTagInfo != '' && securityPatchTagInfo != null && securityPatchTagInfo != undefined) {
-                console.info('the value of the deviceinfo securityPatchTag is :' + securityPatchTagInfo);
-                expect(securityPatchTagInfo).assertInstanceOf('String');
-                let str = /[\w\/\.\(\)]/g;
-                let arr = securityPatchTagInfo.match(str);
-                let bufferstr = arr.join('');
-                console.info('the value of the bufferstr is :' + bufferstr);
-                expect(securityPatchTagInfo).assertEqual(bufferstr);
-                done();
-            } else {
-                console.info('the return value is null or incorrect.');
-                expect().assertFail();
-                done();
-            }
-
-            console.info('testGetSecurityPatchTag01 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_014
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0150
-         * @tc.desc   Get the product version represented
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('testGetDisplayVersion01 start');
-            let displayVersionInfo = deviceinfo.displayVersion;
-            
-            if (displayVersionInfo != '' && displayVersionInfo != null && displayVersionInfo != undefined) {
-                console.info('the value of the deviceinfo displayVersion is :' + displayVersionInfo);
-                expect(displayVersionInfo).assertInstanceOf('String');
-				done();
-            } else {
-                console.info('the return value DisplayVersion is null or incorrect.');
-                expect().assertFail();
-				done();
-            }
-
-            console.info('testGetDisplayVersion01 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_015
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0160
-         * @tc.desc   Get the incremental version represented
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('testGetIncrementalVersion01 start');
-            let incrementalVersionInfo = deviceinfo.incrementalVersion;
-            
-            if (incrementalVersionInfo != '' && incrementalVersionInfo != null && incrementalVersionInfo != undefined) {
-                console.info('the value of the deviceinfo incrementalVersion is :' + incrementalVersionInfo);
-                expect(incrementalVersionInfo).assertInstanceOf('String');
-                let str = /[\w-\.\(\)]/g;
-                let arr = incrementalVersionInfo.match(str);
-                let bufferstr = arr.join('');
-                console.info('the value of the bufferstr is :' + bufferstr);
-                expect(incrementalVersionInfo).assertEqual(bufferstr);
-                done();
-            } else {
-                console.info('the return value is null or incorrect.');
-                expect().assertFail();
-				done();
-            }
-
-            console.info('testGetIncrementalVersion01 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_016
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0170
-         * @tc.desc   Get the OS release type represented
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('testGetOSReleaserType01 start');
-            let osReleaseTypeInfo = deviceinfo.osReleaseType;
-            
-            if (osReleaseTypeInfo != '' && osReleaseTypeInfo != null && osReleaseTypeInfo != undefined) {
-                console.info('the value of the deviceinfo osReleaseType is :' + osReleaseTypeInfo);
-                expect(osReleaseTypeInfo).assertInstanceOf('String');
-                let str = /[\w-\.\(\)]/g;
-                let arr = osReleaseTypeInfo.match(str);
-                let bufferstr = arr.join('');
-                console.info('the value of the bufferstr is :' + bufferstr);
-                expect(osReleaseTypeInfo).assertEqual(bufferstr);
-                done();
-            } else {
-                console.info('the return value is null or incorrect.');
-                expect().assertFail();
-				done();
-            }
-
-            console.info('testGetOSReleaserType01 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_017
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0180
-         * @tc.desc   Get the operating system full
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('testGetOSFullName01 start');
-            let osFullNameInfo = deviceinfo.osFullName;
-           
-            if (osFullNameInfo != '' && osFullNameInfo != null && osFullNameInfo != undefined) {
-                console.info('the value of the deviceinfo osFullName is :' + osFullNameInfo);
-                expect(osFullNameInfo).assertInstanceOf('String');
-                let str = /[\w-\.\(\)]/g;
-                let arr = osFullNameInfo.match(str);
-                let bufferstr = arr.join('');
-                console.info('the value of the bufferstr is :' + bufferstr);
-                expect(osFullNameInfo).assertEqual(bufferstr);
-                done();
-            } else {
-                console.info('the return value is null or incorrect.');
-                expect().assertFail();
-				done();
-            }
-
-            console.info('testGetOSFullName01 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_018
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0190
-         * @tc.desc   Get the major (M) version number
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('testGetMajorVersion01 start');
-            let majorVersionInfo = deviceinfo.majorVersion;
-            console.info('the value of the deviceinfo majorVersion is :' + majorVersionInfo);
-
-            expect(majorVersionInfo).assertInstanceOf('Number');
-            if (majorVersionInfo >= 1 && majorVersionInfo <= 99) {
-                let str = /[\w-\.\(\)]/g;
-                let arr = majorVersionInfo.toString().match(str);
-                let substr = arr.join('');
-                let numstr = parseInt(substr);
-                console.info('the value of the bufferstr is :' + numstr);
-                expect(majorVersionInfo).assertEqual(numstr);
-                done();
-            } else {
-                console.info('the return value is null or incorrect.');
-                expect().assertFail();
-				done();
-            }
-
-            console.info('testGetMajorVersion01 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_019
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0210
-         * @tc.desc   Get the senior version number
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('testGetSeniorVersion01 start');
-            let seniorVersionInfo = deviceinfo.seniorVersion;
-            console.info('the value of the deviceinfo seniorVersion is :' + seniorVersionInfo);
-
-            expect(seniorVersionInfo).assertInstanceOf('Number');
-            if (seniorVersionInfo >= 0 && seniorVersionInfo <= 99) {
-                let str = /[\w-\.\(\)]/g;
-                let arr = seniorVersionInfo.toString().match(str);
-                let substr = arr.join('');
-                let numstr = parseInt(substr);
-                console.info('the value of the bufferstr is :' + numstr);
-                expect(seniorVersionInfo).assertEqual(numstr);
-                done();
-            } else {
-                console.info('the return value is null or incorrect.');
-                expect().assertFail();
-				done();
-            }
-
-            console.info('testGetSeniorVersion01 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_020
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0220
-         * @tc.desc   Get the feature (F) version number.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('testGetFeatureVersion01 start');
-            let featureVersionInfo = deviceinfo.featureVersion;
-            console.info('the value of the deviceinfo featureVersion is :' + featureVersionInfo);
-
-            expect(featureVersionInfo).assertInstanceOf('Number');
-            if ((featureVersionInfo >= 1 && featureVersionInfo <= 99) || featureVersionInfo == 0) {
-                let str = /[\w-\.\(\)]/g;
-                let arr = featureVersionInfo.toString().match(str);
-                let substr = arr.join('');
-                let numstr = parseInt(substr);
-                console.info('the value of the bufferstr is :' + numstr);
-                expect(featureVersionInfo).assertEqual(numstr);
-                done();
-            } else {
-                console.info('the return value is null or incorrect.');
-                expect().assertFail();
-				done();
-            }
-
-            console.info('testGetFeatureVersion01 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_021
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0230
-         * @tc.desc   Get the build (B) version numbe
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('testGetBuildVersion01 start');
-            let buildVersionInfo = deviceinfo.buildVersion;
-            console.info('the value of the deviceinfo buildVersion is :' + buildVersionInfo);
-
-            expect(buildVersionInfo).assertInstanceOf('Number');
-            if (buildVersionInfo == 0 || (buildVersionInfo >= 1 && buildVersionInfo <= 999)) {
-                let str = /[\w-\.\(\)]/g;
-                let arr = buildVersionInfo.toString().match(str);
-                let substr = arr.join('');
-                let numstr = parseInt(substr);
-                console.info('the value of the bufferstr is :' + numstr);
-                expect(buildVersionInfo).assertEqual(numstr);
-                done();
-            } else {
-                console.info('the return value is null or incorrect.');
-                expect().assertFail();
-				done();
-            }
-
-            console.info('testGetBuildVersion01 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_022
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0240
-         * @tc.desc   Get the API version number, which return
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('testGetSdkApiVersion01 start');
-            let sdkApiVersionInfo = deviceinfo.sdkApiVersion;
-            console.info('the value of the deviceinfo sdkApiVersion is :' + sdkApiVersionInfo);
-
-            expect(sdkApiVersionInfo).assertInstanceOf('Number');
-            expect(sdkApiVersionInfo >= 0).assertTrue();
-            done();
-
-            let str = /[\w-\.\(\)]/g;
-            let arr = sdkApiVersionInfo.toString().match(str);
-            let substr = arr.join('');
-            let numstr = parseInt(substr);
-            console.info('the value of the bufferstr is :' + numstr);
-            expect(sdkApiVersionInfo).assertEqual(numstr);
-
-            console.info('testGetSdkApiVersion01 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_023
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0250
-         * @tc.desc   Get the first API version number.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('testGetFirstApiVersion01 start');
-            let firstApiVersionInfo = deviceinfo.firstApiVersion;
-            console.info('the value of the deviceinfo firstApiVersion is :' + firstApiVersionInfo);
-
-            expect(firstApiVersionInfo).assertInstanceOf('Number');
-            expect(firstApiVersionInfo >= 0).assertTrue();
-            done();
-
-            let str = /[\w-\.\(\)]/g;
-            let arr = firstApiVersionInfo.toString().match(str);
-            let substr = arr.join('');
-            let numstr = parseInt(substr);
-            console.info('the value of the bufferstr is :' + numstr);
-            expect(firstApiVersionInfo).assertEqual(numstr);
-
-            console.info('testGetFirstApiVersion01 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_024
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0260
-         * @tc.desc   Get the version ID number by
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('testGetVersionId01 start');
-            let versionIdInfo = deviceinfo.versionId;
-            
-            if (versionIdInfo != '' && versionIdInfo != null && versionIdInfo != undefined) {
-                console.info('the value of the deviceinfo versionId is :' + versionIdInfo);
-                expect(versionIdInfo).assertInstanceOf('String');
-				done();
-            } else {
-                console.info('the return value versionId is null or incorrect.');
-                expect().assertFail();
-				done();
-            }
-
-            console.info('testGetVersionId01 end');
-        })
-
-        /**
-         * @tc.name   device_info_test_025
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0270
-         * @tc.desc   Get the different build types of
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('testGetBuildType01 start');
-            let buildTypeInfo = deviceinfo.buildType;
-            
-            if (buildTypeInfo != '' && buildTypeInfo != null && buildTypeInfo != undefined) {
-                console.info('the value of the deviceinfo buildType is :' + buildTypeInfo);
-                expect(buildTypeInfo).assertInstanceOf('String');
-                let str = /[\w-\.\(\)\:]/g;
-                let arr = buildTypeInfo.match(str);
-                let bufferstr = arr.join('');
-                console.info('the value of the bufferstr is :' + bufferstr);
-                expect(buildTypeInfo).assertEqual(bufferstr);
-                done();
-            } else {
-                console.info('the return value is null or incorrect.');
-                expect().assertFail();
-				done();
-            }
-
-            console.info('testGetBuildType01 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_026
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0280
-         * @tc.desc   Get the different build user
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('testGetBuildUser01 start');
-            let buildUserInfo = deviceinfo.buildUser;
-
-            if (buildUserInfo != '' && buildUserInfo != null && buildUserInfo != undefined) {
-                console.info('the value of the deviceinfo buildUser is :' + buildUserInfo);
-                expect(buildUserInfo).assertInstanceOf('String');
-				done();
-            } else {
-                console.info('the return value buildUser is null or incorrect.');
-                expect().assertFail();
-				done();
-            }
-
-            console.info('testGetBuildUser01 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_027
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0290
-         * @tc.desc   Get the build host of the same
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('testGetBuildHost01 start');
-            let buildHostInfo = deviceinfo.buildHost;
-            
-            if (buildHostInfo != '' && buildHostInfo != null && buildHostInfo != undefined) {
-                console.info('the value of the deviceinfo buildHost is :' + buildHostInfo);
-                expect(buildHostInfo).assertInstanceOf('String');
-				done();
-            } else {
-                console.info('the return value BuildHost is null or incorrect.');
-                expect().assertFail();
-				done();
-            }
-
-            console.info('testGetBuildHost01 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_028
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0310
-         * @tc.desc   Get the version build time
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('testGetBuildTime01 start');
-            let buildTimeInfo = deviceinfo.buildTime;
-            
-            if (buildTimeInfo != '' && buildTimeInfo != null && buildTimeInfo != undefined) {
-                console.info('the value of the deviceinfo buildTime is :' + buildTimeInfo);
-                expect(buildTimeInfo).assertInstanceOf('String');
-				done();
-            } else {
-                console.info('the return value BuildTime is null or incorrect.');
-                expect().assertFail();
-				done();
-            }
-
-            console.info('testGetBuildTime01 : end');
-        })
-
-        /**
-         * @tc.name   device_info_test_029
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0320
-         * @tc.desc   Get the version hash
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('testGetBuildRootHash01 start');
-            let buildRootHashInfo = deviceinfo.buildRootHash;
-            
-            if (buildRootHashInfo != '' && buildRootHashInfo != null && buildRootHashInfo != undefined) {
-                console.info('the value of the deviceinfo buildRootHash is :' + buildRootHashInfo);
-                expect(buildRootHashInfo).assertInstanceOf('String');
-                let str = /[\w-\.\(\)]/g;
-                let arr = buildRootHashInfo.match(str);
-                let bufferstr = arr.join('');
-                console.info('the value of the bufferstr is :' + bufferstr);
-                expect(buildRootHashInfo).assertEqual(bufferstr);
-                done();
-            } else {
-                console.info('the return value is null or incorrect.');
-                expect().assertFail();
-				done();
-            }
-
-            console.info('testGetBuildRootHash01 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_030
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0330
-         * @tc.desc   Get a string representing the
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_030 start');
-            let deviceTypeInfo = deviceinfo.deviceType;
-            console.info('the value of the deviceinfo deviceType is:' + deviceTypeInfo);
-
-            let len = deviceTypeInfo.length
-
-            console.info('the value of the device type characters:' + len);
-            expect(len).assertLess(MAX_CHARACTERS_NUM_ONE)
-            console.info('device_info_test_030 : end')
-        })
-
-        /**
-         * @tc.name   device_info_test_031
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0340
-         * @tc.desc   Get a string representing 
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_031 start');
-            let manufactureInfo = deviceinfo.manufacture;
-            console.info('the value of the deviceinfo manufacture is :' + manufactureInfo);
-
-            let len = manufactureInfo.length
-            console.info('the value of the manufacture characters is :' + len);
-            expect(len).assertLess(MAX_CHARACTERS_NUM_ONE);
-            console.info('device_info_test_031 ：end')
-        })
-
-        /**
-         * @tc.name   device_info_test_032
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0350
-         * @tc.desc   Get a string representing the 
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_032 start');
-            let brandInfo = deviceinfo.brand;
-            console.info('the value of the deviceinfo brand is :' + brandInfo);
-
-            let len = brandInfo.length
-            console.info('the value of the external product family name characters is :' + len);
-            expect(len).assertLess(MAX_CHARACTERS_NUM_ONE);
-            console.info('device_info_test_032 ：end')
-        })
-
-        /**
-         * @tc.name   device_info_test_034
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0370
-         * @tc.desc   Get a string representing 
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_034 start');
-            let productSeriesInfo = deviceinfo.productSeries;
-            console.info('the value of the deviceinfo  productSeries is :' + productSeriesInfo);
-
-            let str = /[\w-\.\(\)\s]/g;
-            let len = productSeriesInfo.length
-            console.info('the value of the product series characters is :' + len);
-            expect(len).assertLess(MAX_CHARACTERS_NUM_ONE);
-
-            let arr = productSeriesInfo.match(str);
-            let bufferstr = arr.join('');
-            console.info('the value of the bufferstr is :' + bufferstr);
-            expect(productSeriesInfo).assertEqual(bufferstr);
-
-            console.info('device_info_test_034 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_035
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0380
-         * @tc.desc   Get a string representing
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_035 start');
-            let productModelInfo = deviceinfo.productModel;
-            console.info('the value of the deviceinfo productModel is :' + productModelInfo);
-
-            let len = productModelInfo.length
-            console.info('the value of the certified model characters is :' + len);
-            expect(len).assertLess(MAX_CHARACTERS_NUM_ONE)
-            console.info('device_info_test_035 : end')
-        })
-
-        /**
-         * @tc.name   device_info_test_036
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0390
-         * @tc.desc   Get a string representing
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_036 start');
-            let softwareModelInfo = deviceinfo.softwareModel;
-            console.info('the value of the deviceinfo softwareModel is :' + softwareModelInfo);
-
-            let len = softwareModelInfo.length
-            console.info('the value of the internal software sub-model characters is :' + len);
-            expect(len).assertLess(MAX_CHARACTERS_NUM_ONE);
-
-            let str = /[\w-\.\(\)\s]/g;
-            let arr = softwareModelInfo.match(str);
-            let bufferstr = arr.join('');
-            console.info('the value of the bufferstr is :' + bufferstr);
-            expect(softwareModelInfo).assertEqual(bufferstr);
-
-            console.info('device_info_test_036 ：end')
-        })
-
-        /**
-         * @tc.name   device_info_test_037
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0410
-         * @tc.desc   Get a string representing
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_037 start');
-            let hardwareModelInfo = deviceinfo.hardwareModel;
-            console.info('the value of the deviceinfo hardwareModel is :' + hardwareModelInfo);
-
-            let len = hardwareModelInfo.length;
-            console.info('the value of the hardware version characters is :' + len);
-            expect(len).assertLess(MAX_CHARACTERS_NUM_ONE);
-            console.info('device_info_test_037 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_038
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0420
-         * @tc.desc   Get a string representing
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_038 start');
-            let hardwareProfileInfo = deviceinfo.hardwareProfile;
-            console.info('the value of the deviceinfo hardwareProfile is :' + hardwareProfileInfo);
-
-            let len = hardwareProfileInfo.length;
-            console.info('the value of the hardware version characters is :' + len);
-            expect(len).assertLess(1001);
-            console.info('device_info_test_038 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_040
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0440
-         * @tc.desc   Get a string representing
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_040 start');
-            let displayVersionInfo = deviceinfo.displayVersion;
-            console.info('the value of the deviceinfo displayVersion is :' + displayVersionInfo);
-
-            let len = displayVersionInfo.length;
-            console.info('the value of the device serial number characters is :' + len);
-            expect(len).assertLess(MAX_CHARACTERS_NUM_TWO);
-            console.info('device_info_test_040 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_041
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0450
-         * @tc.desc   Get a string representing
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_041 start');
-            let osFullNameInfo = deviceinfo.osFullName;
-            console.info('the value of the deviceinfo osFullName is :' + osFullNameInfo);
-
-            let len = osFullNameInfo.length;
-            console.info('the value of the operating system full name characters is :' + len);
-            expect(len).assertLess(MAX_CHARACTERS_NUM_ONE);
-
-            let str = /[\w-\.\(\)]/g;
-            let arr = osFullNameInfo.match(str);
-            let bufferstr = arr.join('');
-            console.info('the value of the bufferstr is :' + bufferstr);
-            expect(osFullNameInfo).assertEqual(bufferstr);
-
-            console.info('device_info_test_041 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_042
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0460
-         * @tc.desc   Get a string representing
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_042 start');
-            let versionIdInfo = deviceinfo.versionId;
-            console.info('the value of the deviceinfo versionId is :' + versionIdInfo);
-
-            let len = versionIdInfo.length;
-            console.info('the value of the operating system full name characters is :' + len)
-            expect(len).assertLess(256);
-            console.info('device_info_test_042 : end')
-        })
-
-        /**
-         * @tc.name   device_info_test_043
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0470
-         * @tc.desc   Get a string representing
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_043 start');
-            let buildUserInfo = deviceinfo.buildUser;
-            console.info('the value of the deviceinfo buildUser is :' + buildUserInfo);
-
-            console.info('the value of the different build user of the same baseline code characters is :' + buildUserInfo.length);
-            expect(buildUserInfo.length).assertLess(MAX_CHARACTERS_NUM_ONE);
-
-            let str = /[\w-\.\(\)]/g;
-            let arr = buildUserInfo.match(str);
-            let bufferstr = arr.join('');
-            console.info('the value of the bufferstr is :' + bufferstr);
-            expect(buildUserInfo).assertEqual(bufferstr);
-
-            console.info('device_info_test_043 ：end')
-        })
-
-        /**
-         * @tc.name   device_info_test_044
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0480
-         * @tc.desc   Get a string representing
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_044 start');
-            let buildHostInfo = deviceinfo.buildHost;
-            console.info('the value of the deviceinfo buildHost is :' + buildHostInfo);
-
-            let len = buildHostInfo.length
-            console.info('the value of the different build host of the same baseline code characters is :' + len)
-            expect(len).assertLess(MAX_CHARACTERS_NUM_ONE);
-
-            let str = /[\w-\.\(\)]/g;
-            let arr = buildHostInfo.match(str);
-            let bufferstr = arr.join('');
-            console.info('the value of the bufferstr is :' + bufferstr);
-            expect(buildHostInfo).assertEqual(bufferstr);
-
-            console.info('device_info_test_044 ：end')
-        })
-
-        /**
-         * @tc.name   device_info_test_045
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0490
-         * @tc.desc   Get a string representing
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_045 start');
-            let deviceTypeInfo = deviceinfo.deviceType;
-            console.info('the value of the deviceinfo deviceType is :' + deviceTypeInfo);
-
-            let len = deviceTypeInfo.length;
-            console.info('the value of the device type characters:' + len);
-            expect(len).assertLarger(MAX_CHARACTERS_NUM);
-            console.info('device_info_test_045 : end');
-        })
-
-        /**
-         * @tc.name   device_info_test_046
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0510
-         * @tc.desc   Get a string representing
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_046 start');
-            let manufactureInfo = deviceinfo.manufacture;
-            console.info('the value of the deviceinfo manufacture is :' + manufactureInfo);
-
-            let len = manufactureInfo.length
-            console.info('the value of the manufacture characters is :' + len)
-            expect(len).assertLarger(MAX_CHARACTERS_NUM);
-            console.info('device_info_test_046 ：end')
-        })
-
-        /**
-         * @tc.name   device_info_test_047
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0520
-         * @tc.desc   Get a string representing
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_047 start');
-            let brandInfo = deviceinfo.brand;
-            console.info('the value of the deviceinfo brand is :' + brandInfo);
-
-            let len = brandInfo.length;
-            console.info('the value of the external product family name characters is :' + len);
-            expect(len).assertLarger(MAX_CHARACTERS_NUM);
-            console.info('device_info_test_047 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_048
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0530
-         * @tc.desc   Get a string representing
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_048 start');
-            let marketNameInfo = deviceinfo.marketName;
-            console.info('the value of the deviceinfo marketName is :' + marketNameInfo);
-
-            let len = marketNameInfo.length;
-            console.info('the value of the product series characters is :' + len)
-            expect(len).assertLarger(MAX_CHARACTERS_NUM);
-            console.info('device_info_test_048 ：end');
-        })
-
-
-        /**
-         * @tc.name   device_info_test_049
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0540
-         * @tc.desc   Get a string representing
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_049 start');
-            let productSeriesInfo = deviceinfo.productSeries;
-            console.info('the value of the deviceinfo productSeries is :' + productSeriesInfo);
-
-            let len = productSeriesInfo.length;
-            console.info('the value of the product series characters is :' + len);
-            expect(len).assertLarger(MAX_CHARACTERS_NUM);
-
-            let str = /[\w-\.\(\)\s]/g;
-            let arr = productSeriesInfo.match(str);
-            let bufferstr = arr.join('');
-            console.info('the value of the bufferstr is :' + bufferstr);
-            expect(productSeriesInfo).assertEqual(bufferstr);
-
-            console.info('device_info_test_049 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_050
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0550
-         * @tc.desc   Get a string representing
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_050 start');
-            let productModelInfo = deviceinfo.productModel;
-            console.info('the value of the deviceinfo productModel is :' + productModelInfo);
-
-            let len = productModelInfo.length
-            console.info('the value of the certified model characters is :' + len)
-            expect(len).assertLarger(MAX_CHARACTERS_NUM)
-            console.info('device_info_test_050 : end')
-        })
-
-        /**
-         * @tc.name   device_info_test_051
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0560
-         * @tc.desc   Get a string representing
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_051 start');
-            let softwareModelInfo = deviceinfo.softwareModel;
-            console.info('the value of the deviceinfo softwareModel is :' + softwareModelInfo);
-
-            let len = softwareModelInfo.length
-            console.info('the value of the internal software sub-model characters is :' + len)
-            expect(len).assertLarger(MAX_CHARACTERS_NUM);
-
-            let str = /[\w-\.\(\)\s]/g;
-            let arr = softwareModelInfo.match(str);
-            let bufferstr = arr.join('');
-            console.info('the value of the bufferstr is :' + bufferstr);
-            expect(softwareModelInfo).assertEqual(bufferstr);
-
-            console.info('device_info_test_051 ：end')
-        })
-
-        /**
-         * @tc.name   device_info_test_052
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0570
-         * @tc.desc   Get a string representing
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_052 start');
-            let hardwareModelInfo = deviceinfo.hardwareModel;
-            console.info('the value of the deviceinfo hardwareModel is :' + hardwareModelInfo);
-
-            let len = hardwareModelInfo.length;
-            console.info('the value of the hardware version characters is :' + len);
-            expect(len).assertLarger(MAX_CHARACTERS_NUM);
-            console.info('device_info_test_052 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_053
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0580
-         * @tc.desc   Get a string representing
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_053 start');
-            let hardwareProfileInfo = deviceinfo.hardwareProfile;
-            console.info('the value of the deviceinfo hardwareProfile is :' + hardwareProfileInfo);
-
-            let len = hardwareProfileInfo.length;
-            console.info('the value of the hardware version characters is :' + len);
-            expect(len).assertLarger(MAX_CHARACTERS_NUM);
-            console.info('device_info_test_053 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_055
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0610
-         * @tc.desc   Get a string representing
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_055 start');
-            let displayVersionInfo = deviceinfo.displayVersion;
-            console.info('the value of the deviceinfo displayVersion is :' + displayVersionInfo);
-
-            let len = displayVersionInfo.length;
-            console.info('the value of the device serial number characters is :' + len);
-            expect(len).assertLarger(MAX_CHARACTERS_NUM);
-
-            console.info('device_info_test_055 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_057
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0630
-         * @tc.desc   Get a string representing
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_057 start');
-            let incrementalVersionInfo = deviceinfo.incrementalVersion;
-            console.info('the value of the deviceinfo incrementalVersion is :' + incrementalVersionInfo);
-
-            let len = incrementalVersionInfo.length
-            console.info('the value of the device serial number characters is :' + len)
-            expect(len).assertLarger(MAX_CHARACTERS_NUM);
-
-            let str = /[\w-\.\(\)]/g;
-            let arr = incrementalVersionInfo.match(str);
-            let bufferstr = arr.join('');
-            console.info('the value of the bufferstr is :' + bufferstr);
-            expect(incrementalVersionInfo).assertEqual(bufferstr);
-
-            console.info('device_info_test_057 ：end')
-        })
-
-        /**
-         * @tc.name   device_info_test_058
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0640
-         * @tc.desc   Get a string representing
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_058 start');
-            let versionIdInfo = deviceinfo.versionId;
-            console.info('the value of the deviceinfo versionId is :' + versionIdInfo);
-
-            let len = versionIdInfo.length
-            console.info('the value of the operating system full name characters is :' + len)
-            expect(len).assertLarger(MAX_CHARACTERS_NUM)
-            console.info('device_info_test_058 : end')
-        })
-
-        /**
-         * @tc.name   device_info_test_059
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0650
-         * @tc.desc   Get a string representing
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_043 start');
-            let buildUserInfo = deviceinfo.buildUser;
-            console.info('the value of thebuildUser is :' + buildUserInfo);
-
-            console.info('the value of the different build user of the same baseline code characters is :' + buildUserInfo.length);
-            expect(buildUserInfo.length).assertLarger(MAX_CHARACTERS_NUM);
-
-            console.info('device_info_test_059 ：end')
-        })
-
-        /**
-         * @tc.name   device_info_test_060
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0660
-         * @tc.desc   Get a string representing
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_060 start');
-            let buildHostInfo = deviceinfo.buildHost;
-            console.info('the value of the deviceinfo buildHost is :' + buildHostInfo);
-
-            let len = buildHostInfo.length
-            console.info('the value of the different build host of the same baseline code characters is :' + len);
-            expect(len).assertLarger(MAX_CHARACTERS_NUM);
-            console.info('device_info_test_060 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_061
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0670
-         * @tc.desc   Get security pactch
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('testGetSecurityPatchTag02 start');
-            let securityPatchTagInfo = deviceinfo.securityPatchTag;
-            console.info('the value of the deviceinfo securityPatchTag is :' + securityPatchTagInfo);
-
-            let reFormat = /^(\d{4})\/(\d{2})\/(\d{2})$/;
-            let re = securityPatchTagInfo.match(reFormat);
-            expect(re != null).assertTrue();
-            done();
-
-            console.info('testGetSecurityPatchTag02 : end');
-        })
-
-        /**
-         * @tc.name   device_info_test_0665
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0665
-         * @tc.desc   Get the distributionOSName
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_0665', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_0665 start');
-
-            let distributionOSNameInfo = deviceinfo.distributionOSName;
-            console.info('the value of the distributionOSNameInfo is :' + distributionOSNameInfo);
-            expect(distributionOSNameInfo).assertInstanceOf('String');
-            if (distributionOSNameInfo != '' && distributionOSNameInfo != null && distributionOSNameInfo != undefined) {
-                let str = /[\w-\.\(\)]/g;
-                let arr = distributionOSNameInfo.match(str);
-                let bufferstr = arr.join('');
-                console.info('the value of the bufferstr is :' + bufferstr);
-                expect(distributionOSNameInfo).assertEqual(bufferstr);
-            } else {
-                console.info('the return value is null and the type is :' + typeof (distributionOSNameInfo));
-                expect(distributionOSNameInfo == '').assertTrue();
-            }
-            console.info('device_info_test_0665 ：end');
-        })
-        /**
-         * @tc.name   device_info_test_0666
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0666
-         * @tc.desc   Get the operating system
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_0666', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_0666 start');
-
-            let distributionOSVersionInfo = deviceinfo.distributionOSVersion;
-            console.info('the value of the deviceinfo distributionOSVersion is :' + distributionOSVersionInfo);
-
-            expect(distributionOSVersionInfo).assertInstanceOf('String');
-            if (distributionOSVersionInfo != '' && distributionOSVersionInfo != null && distributionOSVersionInfo != undefined) {
-                let str = /[\w-\.\(\)]/g;
-                let arr = distributionOSVersionInfo.match(str);
-                let bufferstr = arr.join('');
-                console.info('the value of the bufferstr is :' + bufferstr);
-                expect(distributionOSVersionInfo).assertEqual(bufferstr);
-            } else {
-                console.info('the return value is null or incorrect.');
-                expect().assertFail();
-            }
-
-            console.info('device_info_test_0666 ：end');
-        })
-        /**
-         * @tc.name   device_info_test_0667
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0667
-         * @tc.desc   Get a string representing
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_0667', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_0667 start');
-            let distributionOSVersionInfo = deviceinfo.distributionOSVersion;
-            console.info('the value of the deviceinfo distributionOSVersion is :' + distributionOSVersionInfo);
-
-            let len = distributionOSVersionInfo.length;
-            console.info('the value of the operating system full name characters is :' + len);
-            expect(len).assertLess(MAX_CHARACTERS_NUM_ONE);
-
-            let str = /[\w-\.\(\)]/g;
-            let arr = distributionOSVersionInfo.match(str);
-            let bufferstr = arr.join('');
-            console.info('the value of the bufferstr is :' + bufferstr);
-            expect(distributionOSVersionInfo).assertEqual(bufferstr);
-
-            console.info('device_info_test_0667 ：end');
-        })
-        /**
-         * @tc.name   device_info_test_0668
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0668
-         * @tc.desc   Get the API version number
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_0668', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('device_info_test_0668 start');
-            let distributionOSApiVersionInfo = deviceinfo.distributionOSApiVersion;
-            console.info('the value of the deviceinfo distributionOSApiVersion is :' + distributionOSApiVersionInfo);
-
-            expect(distributionOSApiVersionInfo).assertInstanceOf('Number');
-            expect(distributionOSApiVersionInfo >= 0).assertTrue();
-            done();
-
-            let str = /[\w-\.\(\)]/g;
-            let arr = distributionOSApiVersionInfo.toString().match(str);
-            let substr = arr.join('');
-            let numstr = parseInt(substr);
-            console.info('the value of the bufferstr is :' + numstr);
-            expect(distributionOSApiVersionInfo).assertEqual(numstr);
-
-            console.info('device_info_test_0668 ：end');
-        })
-        /**
-         * @tc.name   device_info_test_0669
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_0669
-         * @tc.desc   Get the OS release
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_0669', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('device_info_test_0669 start');
-            let distributionOSReleaseTypeInfo = deviceinfo.distributionOSReleaseType;
-
-            if (distributionOSReleaseTypeInfo != '' && distributionOSReleaseTypeInfo != null && distributionOSReleaseTypeInfo != undefined) {
-                console.info('the value of the deviceinfo distributiondistributionOSReleaseType is :' + distributionOSReleaseTypeInfo);
-                expect(distributionOSReleaseTypeInfo).assertInstanceOf('String');
-                let str = /[\w-\.\(\)]/g;
-                let arr = distributionOSReleaseTypeInfo.match(str);
-                let bufferstr = arr.join('');
-                console.info('the value of the bufferstr is :' + bufferstr);
-                expect(distributionOSReleaseTypeInfo).assertEqual(bufferstr);
-                done();
-            } else {
-                console.info('the return value is null or incorrect.');
-                expect().assertFail();
-				done();
-            }
-
-            console.info('device_info_test_0669 ：end');
-        })
-
-        /**
-         * @tc.name   device_info_test_070
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_070
-         * @tc.desc   Get odid
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_070 start');
-            let odid = deviceinfo.ODID;
-            console.info('the value of the deviceinfo odid is :' + odid);
-
-            let len = odid.length
-            console.info('the length of odid is:' + len);
-            expect(len).assertEqual(CHARACTERS_NUM_ODID);
-            console.info('device_info_test_070 : end');
-        })
-
-        /**
-         * @tc.name   device_info_test_071
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_071
-         * @tc.desc   Get odid
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('device_info_test_071 start');
-            let odid1 = deviceinfo.ODID;
-            console.info('the value of the deviceinfo odid1 is :' + odid1);
-
-            expect(odid1).assertInstanceOf('String');
-            if (odid1 != '' && odid1 != null && odid1 != undefined) {
-                console.info('the value of the deviceinfo odid1 is :' + odid1);
-                expect(odid1).assertInstanceOf('String');
-                done();
-            }
-
-            let odid2 = deviceinfo.ODID;
-            if (odid2 != '' && odid2 != null && odid2 != undefined) {
-                console.info('the value of the deviceinfo odid2 is :' + odid2);
-                expect(odid2).assertInstanceOf('String');
-                done();
-            }
-
-            expect(odid1).assertEqual(odid2);           
-            console.info('device_info_test_071 : end');
-        })
-
-        /**
-         * @tc.name   device_info_test_072
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_072
-         * @tc.desc   Independent Software
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('device_info_test_072 start');
-            let distributionOSApiName = deviceinfo.distributionOSApiName;
-
-            if (distributionOSApiName != '' && distributionOSApiName != null && distributionOSApiName != undefined) {	
-                console.info('the value of the deviceinfo distributionOSApiName is :' + distributionOSApiName);	
-                expect(distributionOSApiName).assertInstanceOf('String');	
-            }
-            done();
-            
-            console.info('device_info_test_072 : end');
-        })
-
-        /**
-         * @tc.name   device_info_test_073
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_073
-         * @tc.desc   Get a string representing
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('device_info_test_073 start');
-            let productModelInfo = deviceinfo.productModelAlias;
-            
-            if (productModelInfo != '' && productModelInfo != null && productModelInfo != undefined) {
-                console.info('the value of the deviceinfo productModelAlias is :' + productModelInfo);
-                expect(productModelInfo).assertInstanceOf('String');
-				done();
-            } else {
-                console.info('the return value ProductModeAlias is null or incorrect.');
-                expect().assertFail();
-                done();
-            }
-
-            console.info('device_info_test_073 : end');
-        })
-
-        /**
-         * @tc.name   device_info_test_074
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_074
-         * @tc.desc   Get diskSN.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-            console.info('device_info_test_074 start');
-            let diskSN = deviceinfo.diskSN;
-            console.info('the value of the deviceinfo diskSN is :' + diskSN);
-            let deviceTypeInfo = deviceinfo.deviceType;
-            console.info('the value of the deviceType is :' + deviceTypeInfo);
-
-            if(deviceTypeInfo == '2in1'){                
-                if (diskSN != '' && diskSN != null && diskSN != undefined) {
-                    console.info('the value of the deviceinfo diskSN is :' + diskSN);
-                    expect(diskSN).assertInstanceOf('String');
-				    done();
-                } else {
-                    console.info('the return value diskSN is null or incorrect.');
-                    expect().assertFail();
-				    done();
-                }
-            }else{
-                expect(diskSN == '').assertTrue();
-                done();
-            }
-            console.info('device_info_test_074 : end');
-        })
-
-        /**
-         * @tc.name   device_info_test_075
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_075
-         * @tc.desc   Get PerformanceClassLevel.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_075 start');
-            let performanceClass = deviceinfo.performanceClass;
-            console.info('the value of the deviceinfo performanceClass is :' + performanceClass);
-            expect(performanceClass).assertLargerOrEqual(deviceinfo.PerformanceClassLevel.CLASS_LEVEL_HIGH);
-            expect(performanceClass).assertLessOrEqual(deviceinfo.PerformanceClassLevel.CLASS_LEVEL_LOW);
-            console.info('device_info_test_075 : end');
-        })
-
-        /**
-         * @tc.name   device_info_test_076
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_076
-         * @tc.desc   Get PerformanceClassLevel.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_076 start');
-            let performanceClass = deviceinfo.PerformanceClassLevel.CLASS_LEVEL_HIGH;
-            console.info('the value of the deviceinfo performanceClass is :' + performanceClass);
-            expect(performanceClass).assertEqual(CLASS_LEVEL_HIGH);
-            console.info('device_info_test_076 : end');
-        })
-
-        /**
-         * @tc.name   device_info_test_077
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_077
-         * @tc.desc   Get PerformanceClassLevel.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_077 start');
-            let performanceClass = deviceinfo.PerformanceClassLevel.CLASS_LEVEL_MEDIUM;
-            console.info('the value of the deviceinfo performanceClass is :' + performanceClass);
-            expect(performanceClass).assertEqual(CLASS_LEVEL_MEDIUM);
-            console.info('device_info_test_077 : end');
-        })
-
-        /**
-         * @tc.name   device_info_test_078
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_078
-         * @tc.desc   Get PerformanceClassLevel.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('device_info_test_078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
-            console.info('device_info_test_078 start');
-            let performanceClass = deviceinfo.PerformanceClassLevel.CLASS_LEVEL_LOW;
-            console.info('the value of the deviceinfo performanceClass is :' + performanceClass);
-            expect(performanceClass).assertEqual(CLASS_LEVEL_LOW);
-            console.info('device_info_test_078 : end');
-        })
+* Copyright (c) 2024 SwanLink (Jiangsu) Technology Development Co., LTD.
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+import {
+    afterAll,
+    afterEach,
+    beforeAll,
+    beforeEach,
+    describe,
+    expect,
+    it,
+    Level,
+    Size,
+    TestType
+  } from '../../../../hypium/index';
+  import { BusinessError } from '@ohos.base';
+  import geoLocationManager from '@ohos.geoLocationManager';
+  import hilog from '@ohos.hilog'
+import { AppStorage } from '@ohos.arkui.stateManagement'
+import common from '@ohos.app.ability.common';
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { BusinessError } from '@ohos.base';
+import AbilityStage from "@ohos.app.ability.AbilityStage"
+import { Driver, ON } from '@ohos.UiTest';
+
+let domain: int = 0x0000;
+let tag: string = 'testTag';
+let addMonitor = false;
+let removeMonitor = false;
+let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+let abilityStageContext: common.AbilityStageContext
+
+  export default function xmlTest1() {
+    describe('xmlTest1', (): void => {
+          /**
+     * @tc.name   testUriConstruction001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_0100
+     * @tc.desc   Constructs a URI by parsing the given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUriConstruction001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      try {
+          let that = new uri.URI('#http://username:password@host:8080/directory/file?foo=1&bar=2');
+      } catch (err) {
+          expect(err.toString()).assertEqual("BusinessError: Syntax Error. Invalid Uri string: The #It can't be the first");
+          expect(err.code).assertEqual(10200002)
+          expect(err.message).assertEqual("Syntax Error. Invalid Uri string: The #It can't be the first");
+      }
+  })
+
+  // Check the UriConstruction.
+  /**
+   * @tc.name   testUriConstruction002
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_0200
+   * @tc.desc   Constructs a URI by parsing the given string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testUriConstruction002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      try {
+          var a = {name: 'gaogao'}
+          let that = new uri.URI(a);
+      } catch (err) {
+          expect(err.toString()).assertEqual(`BusinessError: Parameter error. The type of ${a} must be string`);
+          expect(err.code).assertEqual(401)
+          expect(err.message).assertEqual(`Parameter error. The type of ${a} must be string`);
+      }
+  })
+
+  // Check the UriConstruction.
+  /**
+   * @tc.name   testUriConstruction003
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_0300
+   * @tc.desc   Constructs a URI by parsing the given string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testUriConstruction003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      try {
+          let that = new uri.URI('ht/tp://username:pas sword@host:8080/directory/file?foo=1&bar=2');
+      } catch (err) {
+          expect(err.toString()).assertEqual("BusinessError: Syntax Error. Invalid Uri string");
+          expect(err.code).assertEqual(10200002)
+          expect(err.message).assertEqual("Syntax Error. Invalid Uri string");
+      }
+  })
+
+  // Check the UriConstruction.
+  /**
+   * @tc.name   testUriConstruction004
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_0400
+   * @tc.desc   Constructs a URI by parsing the given string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testUriConstruction004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      try {
+          let that = new uri.URI('http://username:password@[::]:8080/directory/file?Query#gaogao faofao');
+      } catch (err) {
+          expect(err.toString()).assertEqual("BusinessError: Syntax Error. Invalid Uri string");
+          expect(err.code).assertEqual(10200002)
+          expect(err.message).assertEqual("Syntax Error. Invalid Uri string");
+      }
+  })
+
+  // Check the UriConstruction.
+  /**
+   * @tc.name   testUriConstruction005
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_0500
+   * @tc.desc   Constructs a URI by parsing the given string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testUriConstruction005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      try {
+          let that = new uri.URI('http://username:password@host:8080/directory/file?foo^=1&bar=2#gaogaofaofao');
+      } catch (err) {
+          expect(err.toString()).assertEqual("BusinessError: Syntax Error. Invalid Uri string: The Query does not conform to the rule");
+          expect(err.code).assertEqual(10200002)
+          expect(err.message).assertEqual("Syntax Error. Invalid Uri string: The Query does not conform to the rule");
+      }
+  })
+
+  // Check the UriConstruction.
+  /**
+   * @tc.name   testUriConstruction006
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_0600
+   * @tc.desc   Constructs a URI by parsing the given string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testUriConstruction006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      try {
+          let that = new uri.URI('1http://username:password@host:8080/directory/file?foo=1&bar=2#gaogaofaofao');
+      } catch (err) {
+          expect(err.toString()).assertEqual("BusinessError: Syntax Error. Invalid Uri string: The Scheme the first character must be a letter");
+          expect(err.code).assertEqual(10200002)
+          expect(err.message).assertEqual("Syntax Error. Invalid Uri string: The Scheme the first character must be a letter");
+      }
+  })
+
+  // Check the UriConstruction.
+  /**
+   * @tc.name   testUriConstruction007
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_0700
+   * @tc.desc   Constructs a URI by parsing the given string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testUriConstruction007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      try {
+          let that = new uri.URI('ht@tp://username:password@host:8080/directory/file?foo=1&bar=2#gaogaofaofao');
+      } catch (err) {
+          expect(err.toString()).assertEqual("BusinessError: Syntax Error. Invalid Uri string: The scheme does not conform to the rule");
+          expect(err.code).assertEqual(10200002)
+          expect(err.message).assertEqual("Syntax Error. Invalid Uri string: The scheme does not conform to the rule");
+      }
+  })
+
+  // Check the UriConstruction.
+  /**
+   * @tc.name   testUriConstruction008
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_0800
+   * @tc.desc   Constructs a URI by parsing the given string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testUriConstruction008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      try {
+          let that = new uri.URI('http://username:password@[::]:80r80/directory/file?foo=1&bar=2#gaogaofaofao');
+      } catch (err) {
+          expect(err.toString()).assertEqual("BusinessError: Syntax Error. Invalid Uri string: The Prot does not conform to the rule");
+          expect(err.code).assertEqual(10200002)
+          expect(err.message).assertEqual("Syntax Error. Invalid Uri string: The Prot does not conform to the rule");
+      }
+  })
+
+  // Check the UriConstruction.
+  /**
+   * @tc.name   testUriConstruction009
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_0900
+   * @tc.desc   Constructs a URI by parsing the given string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testUriConstruction009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      try {
+          let that = new uri.URI('http://username:password@[::12:55:8080/directory/file?foo=1&bar=2#gaogaofaofao');
+      } catch (err) {
+          expect(err.toString()).assertEqual("BusinessError: Syntax Error. Invalid Uri string: The IPv6 is missing a closing bracket");
+          expect(err.code).assertEqual(10200002)
+          expect(err.message).assertEqual("Syntax Error. Invalid Uri string: The IPv6 is missing a closing bracket");
+      }
+  })
+
+  // Check the UriConstruction.
+  /**
+   * @tc.name   testUriConstruction010
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_1000
+   * @tc.desc   Constructs a URI by parsing the given string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testUriConstruction010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      try {
+          let that = new uri.URI('http://username:pa^ssword@[::12:55]:8080/directory/file?foo=1&bar=2#gaogaofaofao');
+      } catch (err) {
+          expect(err.toString()).assertEqual("BusinessError: Syntax Error. Invalid Uri string: The userInfo does not conform to the rule");
+          expect(err.code).assertEqual(10200002)
+          expect(err.message).assertEqual("Syntax Error. Invalid Uri string: The userInfo does not conform to the rule");
+      }
+  })
+
+  // Check the UriConstruction.
+  /**
+   * @tc.name   testUriConstruction011
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_1100
+   * @tc.desc   Constructs a URI by parsing the given string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testUriConstruction011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      try {
+          let that = new uri.URI('http://username:password@[::1你2:55]:8080/directory/file?foo=1&bar=2#gaogaofaofao');
+      } catch (err) {
+          expect(err.toString()).assertEqual("BusinessError: Syntax Error. Invalid Uri string: The ipv6 does not conform to the rule");
+          expect(err.code).assertEqual(10200002)
+          expect(err.message).assertEqual("Syntax Error. Invalid Uri string: The ipv6 does not conform to the rule");
+      }
+  })
+
+  // Check the UriConstruction.
+  /**
+   * @tc.name   testUriConstruction012
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_1200
+   * @tc.desc   Constructs a URI by parsing the given string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testUriConstruction012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://gg:gaogao@www.baidu.com:99/path/path?query#fagment');
+      expect(gaogao.scheme).assertEqual("http");
+      expect(gaogao.authority).assertEqual("gg:gaogao@www.baidu.com:99");
+      expect(gaogao.ssp).assertEqual("//gg:gaogao@www.baidu.com:99/path/path?query");
+      expect(gaogao.userInfo).assertEqual("gg:gaogao");
+      expect(gaogao.host).assertEqual("www.baidu.com");
+      expect(gaogao.port).assertEqual("99");
+      expect(gaogao.path).assertEqual("/path/path");
+      expect(gaogao.query).assertEqual("query");
+      expect(gaogao.fragment).assertEqual("fagment");
+  })
+
+  // Check the UriConstruction.
+  /**
+   * @tc.name   testUriConstruction013
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_1300
+   * @tc.desc   Constructs a URI by parsing the given string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testUriConstruction013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://gg:gaogao@[1080::8:800:200C:417A]:99/path/66path1?query#fagment');
+      expect(gaogao.scheme).assertEqual("http");
+      expect(gaogao.authority).assertEqual("gg:gaogao@[1080::8:800:200C:417A]:99");
+      expect(gaogao.ssp).assertEqual("//gg:gaogao@[1080::8:800:200C:417A]:99/path/66path1?query");
+      expect(gaogao.userInfo).assertEqual("gg:gaogao");
+      expect(gaogao.host).assertEqual("[1080::8:800:200C:417A]");
+      expect(gaogao.port).assertEqual("99");
+      expect(gaogao.path).assertEqual("/path/66path1");
+      expect(gaogao.query).assertEqual("query");
+      expect(gaogao.fragment).assertEqual("fagment");
+  })
+
+  // Check the UriConstruction.
+  /**
+   * @tc.name   testUriConstruction014
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_1400
+   * @tc.desc   Constructs a URI by parsing the given string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testUriConstruction014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://gg:gaogao@[::]:88/path/path66?foooo#gaogao');
+      expect(gaogao.scheme).assertEqual("http");
+      expect(gaogao.authority).assertEqual("gg:gaogao@[::]:88");
+      expect(gaogao.ssp).assertEqual("//gg:gaogao@[::]:88/path/path66?foooo");
+      expect(gaogao.userInfo).assertEqual("gg:gaogao");
+      expect(gaogao.host).assertEqual("[::]");
+      expect(gaogao.port).assertEqual("88");
+      expect(gaogao.path).assertEqual("/path/path66");
+      expect(gaogao.query).assertEqual("foooo");
+      expect(gaogao.fragment).assertEqual("gaogao");
+  })
+
+  // Check the UriConstruction.
+  /**
+   * @tc.name   testUriConstruction015
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_1500
+   * @tc.desc   Constructs a URI by parsing the given string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testUriConstruction015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/path/66path1?query#fagment');
+      expect(gaogao.scheme).assertEqual("http");
+      expect(gaogao.authority).assertEqual("gg:gaogao@[1:0:0:1:2:1:2:1]:99");
+      expect(gaogao.ssp).assertEqual("//gg:gaogao@[1:0:0:1:2:1:2:1]:99/path/66path1?query");
+      expect(gaogao.userInfo).assertEqual("gg:gaogao");
+      expect(gaogao.host).assertEqual("[1:0:0:1:2:1:2:1]");
+      expect(gaogao.port).assertEqual("99");
+      expect(gaogao.path).assertEqual("/path/66path1");
+      expect(gaogao.query).assertEqual("query");
+      expect(gaogao.fragment).assertEqual("fagment");
+  })
+
+  // Check the UriConstruction.
+  /**
+   * @tc.name   testUriConstruction016
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_1600
+   * @tc.desc   Constructs a URI by parsing the given string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testUriConstruction016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://gg:gaogao@[::FFFF:129.144.52.38]:99/path/path?query#fagment');
+      expect(gaogao.scheme).assertEqual("http");
+      expect(gaogao.authority).assertEqual("gg:gaogao@[::FFFF:129.144.52.38]:99");
+      expect(gaogao.ssp).assertEqual("//gg:gaogao@[::FFFF:129.144.52.38]:99/path/path?query");
+      expect(gaogao.userInfo).assertEqual("gg:gaogao");
+      expect(gaogao.host).assertEqual("[::FFFF:129.144.52.38]");
+      expect(gaogao.port).assertEqual("99");
+      expect(gaogao.path).assertEqual("/path/path");
+      expect(gaogao.query).assertEqual("query");
+      expect(gaogao.fragment).assertEqual("fagment");
+  })
+
+  // Check the UriConstruction.
+  /**
+   * @tc.name   testUriConstruction017
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_1700
+   * @tc.desc   Constructs a URI by parsing the given string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testUriConstruction017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://gg:gaogao@[::192.9.5.5]:99/path/path?query#fagment');
+      expect(gaogao.scheme).assertEqual("http");
+      expect(gaogao.authority).assertEqual("gg:gaogao@[::192.9.5.5]:99");
+      expect(gaogao.ssp).assertEqual("//gg:gaogao@[::192.9.5.5]:99/path/path?query");
+      expect(gaogao.userInfo).assertEqual("gg:gaogao");
+      expect(gaogao.host).assertEqual("[::192.9.5.5]");
+      expect(gaogao.port).assertEqual("99");
+      expect(gaogao.path).assertEqual("/path/path");
+      expect(gaogao.query).assertEqual("query");
+      expect(gaogao.fragment).assertEqual("fagment");
+  })
+
+  // Check the UriConstruction.
+  /**
+   * @tc.name   testUriConstruction018
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_1800
+   * @tc.desc   Constructs a URI by parsing the given string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testUriConstruction018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://gg:gaogao@[22::22:2:2%ss]:99/path/path?query#fagment');
+      expect(gaogao.scheme).assertEqual("http");
+      expect(gaogao.authority).assertEqual("gg:gaogao@[22::22:2:2%ss]:99");
+      expect(gaogao.ssp).assertEqual("//gg:gaogao@[22::22:2:2%ss]:99/path/path?query");
+      expect(gaogao.userInfo).assertEqual("gg:gaogao");
+      expect(gaogao.host).assertEqual("[22::22:2:2%ss]");
+      expect(gaogao.port).assertEqual("99");
+      expect(gaogao.path).assertEqual("/path/path");
+      expect(gaogao.query).assertEqual("query");
+      expect(gaogao.fragment).assertEqual("fagment");
+  })
+
+  // Check the UriConstruction.
+  /**
+   * @tc.name   testUriConstruction019
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_1900
+   * @tc.desc   Constructs a URI by parsing the given string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testUriConstruction019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao =
+              new uri.URI('http://gg:gaogao@[fe80:0000:0001:0000:0440:44ff:1233:5678]:99/path/path?query#fagment');
+      expect(gaogao.scheme).assertEqual("http");
+      expect(gaogao.authority).assertEqual("gg:gaogao@[fe80:0000:0001:0000:0440:44ff:1233:5678]:99");
+      expect(gaogao.ssp).assertEqual("//gg:gaogao@[fe80:0000:0001:0000:0440:44ff:1233:5678]:99/path/path?query");
+      expect(gaogao.userInfo).assertEqual("gg:gaogao");
+      expect(gaogao.host).assertEqual("[fe80:0000:0001:0000:0440:44ff:1233:5678]");
+      expect(gaogao.port).assertEqual("99");
+      expect(gaogao.path).assertEqual("/path/path");
+      expect(gaogao.query).assertEqual("query");
+      expect(gaogao.fragment).assertEqual("fagment");
+  })
+
+  // Check the UriConstruction.
+  /**
+   * @tc.name   testUriConstruction020
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_2000
+   * @tc.desc   Constructs a URI by parsing the given string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testUriConstruction020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://gg:gaogao@[fe80::0001:0000]:99/path/path?query#fagment');
+      expect(gaogao.scheme).assertEqual("http");
+      expect(gaogao.authority).assertEqual("gg:gaogao@[fe80::0001:0000]:99");
+      expect(gaogao.ssp).assertEqual("//gg:gaogao@[fe80::0001:0000]:99/path/path?query");
+      expect(gaogao.userInfo).assertEqual("gg:gaogao");
+      expect(gaogao.host).assertEqual("[fe80::0001:0000]");
+      expect(gaogao.port).assertEqual("99");
+      expect(gaogao.path).assertEqual("/path/path");
+      expect(gaogao.query).assertEqual("query");
+      expect(gaogao.fragment).assertEqual("fagment");
+  })
+
+  // Check the UriConstruction.
+  /**
+   * @tc.name   testUriConstruction021
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_2100
+   * @tc.desc   Constructs a URI by parsing the given string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testUriConstruction021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://gg:gaogao@199.98.55.44:99/path/path?query#fagment');
+      expect(gaogao.scheme).assertEqual("http");
+      expect(gaogao.authority).assertEqual("gg:gaogao@199.98.55.44:99");
+      expect(gaogao.ssp).assertEqual("//gg:gaogao@199.98.55.44:99/path/path?query");
+      expect(gaogao.userInfo).assertEqual("gg:gaogao");
+      expect(gaogao.host).assertEqual("199.98.55.44");
+      expect(gaogao.port).assertEqual("99");
+      expect(gaogao.path).assertEqual("/path/path");
+      expect(gaogao.query).assertEqual("query");
+      expect(gaogao.fragment).assertEqual("fagment");
+  })
+
+  // Check the UriConstruction.
+  /**
+   * @tc.name   testUriConstruction022
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_2200
+   * @tc.desc   Constructs a URI by parsing the given string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testUriConstruction022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://16.9.5.4:99/path/path?query#fagment');
+      expect(gaogao.scheme).assertEqual("http");
+      expect(gaogao.authority).assertEqual("16.9.5.4:99");
+      expect(gaogao.ssp).assertEqual("//16.9.5.4:99/path/path?query");
+      expect(gaogao.userInfo).assertEqual(null);
+      expect(gaogao.host).assertEqual("16.9.5.4");
+      expect(gaogao.port).assertEqual("99");
+      expect(gaogao.path).assertEqual("/path/path");
+      expect(gaogao.query).assertEqual("query");
+      expect(gaogao.fragment).assertEqual("fagment");
+  })
+
+  // Check the UriConstruction.
+  /**
+   * @tc.name   testUriConstruction023
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_2300
+   * @tc.desc   Constructs a URI by parsing the given string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testUriConstruction023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://49.99.54.12:50/path/path23?query#fagment');
+      expect(gaogao.scheme).assertEqual("http");
+      expect(gaogao.authority).assertEqual("49.99.54.12:50");
+      expect(gaogao.ssp).assertEqual("//49.99.54.12:50/path/path23?query");
+      expect(gaogao.userInfo).assertEqual(null);
+      expect(gaogao.host).assertEqual("49.99.54.12");
+      expect(gaogao.port).assertEqual("50");
+      expect(gaogao.path).assertEqual("/path/path23");
+      expect(gaogao.query).assertEqual("query");
+      expect(gaogao.fragment).assertEqual("fagment");
+  })
+
+  // Check the UriConstruction.
+  /**
+   * @tc.name   testUriConstruction024
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_2400
+   * @tc.desc   Constructs a URI by parsing the given string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testUriConstruction024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://user@49.10pe8.54.12:80/path/path23?query#qwer');
+      expect(gaogao.scheme).assertEqual("http");
+      expect(gaogao.authority).assertEqual("user@49.10pe8.54.12:80");
+      expect(gaogao.ssp).assertEqual("//user@49.10pe8.54.12:80/path/path23?query");
+      expect(gaogao.userInfo).assertEqual(null);
+      expect(gaogao.host).assertEqual(null);
+      expect(gaogao.port).assertEqual("-1");
+      expect(gaogao.path).assertEqual("/path/path23");
+      expect(gaogao.query).assertEqual("query");
+      expect(gaogao.fragment).assertEqual("qwer");
+  })
+
+  // Check the UriConstruction.
+  /**
+   * @tc.name   testUriConstruction025
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_2500
+   * @tc.desc   Constructs a URI by parsing the given string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testUriConstruction025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://user@www.baidu.com/path/path23?query#qwer');
+      expect(gaogao.scheme).assertEqual("http");
+      expect(gaogao.authority).assertEqual("user@www.baidu.com");
+      expect(gaogao.ssp).assertEqual("//user@www.baidu.com/path/path23?query");
+      expect(gaogao.userInfo).assertEqual("user");
+      expect(gaogao.host).assertEqual("www.baidu.com");
+      expect(gaogao.port).assertEqual("-1");
+      expect(gaogao.path).assertEqual("/path/path23");
+      expect(gaogao.query).assertEqual("query");
+      expect(gaogao.fragment).assertEqual("qwer");
+  })
+
+  // Check the UriConstruction.
+  /**
+   * @tc.name   testUriConstruction026
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_2600
+   * @tc.desc   Constructs a URI by parsing the given string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testUriConstruction026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://user@www.hw.com:77/path/path23?query#qwer');
+      expect(gaogao.scheme).assertEqual("http");
+      expect(gaogao.authority).assertEqual("user@www.hw.com:77");
+      expect(gaogao.ssp).assertEqual("//user@www.hw.com:77/path/path23?query");
+      expect(gaogao.userInfo).assertEqual("user");
+      expect(gaogao.host).assertEqual("www.hw.com");
+      expect(gaogao.port).assertEqual("77");
+      expect(gaogao.path).assertEqual("/path/path23");
+      expect(gaogao.query).assertEqual("query");
+      expect(gaogao.fragment).assertEqual("qwer");
+  })
+
+  // Check the UriConstruction.
+  /**
+   * @tc.name   testUriConstruction027
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_2700
+   * @tc.desc   Constructs a URI by parsing the given string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testUriConstruction027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('ht2tp://user@www.h12343w.com:77/path/path23?query#qwer');
+      expect(gaogao.scheme).assertEqual("ht2tp");
+      expect(gaogao.authority).assertEqual("user@www.h12343w.com:77");
+      expect(gaogao.ssp).assertEqual("//user@www.h12343w.com:77/path/path23?query");
+      expect(gaogao.userInfo).assertEqual("user");
+      expect(gaogao.host).assertEqual("www.h12343w.com");
+      expect(gaogao.port).assertEqual("77");
+      expect(gaogao.path).assertEqual("/path/path23");
+      expect(gaogao.query).assertEqual("query");
+      expect(gaogao.fragment).assertEqual("qwer");
+  })
+
+  // Check the UriConstruction.
+  /**
+   * @tc.name   testUriConstruction028
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_2800
+   * @tc.desc   Constructs a URI by parsing the given string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testUriConstruction028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('ht2tp://user@www.1hw.1com:77/path/path23?query#qwer');
+      expect(gaogao.scheme).assertEqual("ht2tp");
+      expect(gaogao.authority).assertEqual("user@www.1hw.1com:77");
+      expect(gaogao.ssp).assertEqual("//user@www.1hw.1com:77/path/path23?query");
+      expect(gaogao.userInfo).assertEqual(null);
+      expect(gaogao.host).assertEqual(null);
+      expect(gaogao.port).assertEqual("-1");
+      expect(gaogao.path).assertEqual("/path/path23");
+      expect(gaogao.query).assertEqual("query");
+      expect(gaogao.fragment).assertEqual("qwer");
+  })
+
+  // Check the UriConstruction.
+  /**
+   * @tc.name   testUriConstruction029
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_2900
+   * @tc.desc   Constructs a URI by parsing the given string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testUriConstruction029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://user@hosthost/path/path23?query#qwer');
+      expect(gaogao.scheme).assertEqual("http");
+      expect(gaogao.authority).assertEqual("user@hosthost");
+      expect(gaogao.ssp).assertEqual("//user@hosthost/path/path23?query");
+      expect(gaogao.userInfo).assertEqual("user");
+      expect(gaogao.host).assertEqual("hosthost");
+      expect(gaogao.port).assertEqual("-1");
+      expect(gaogao.path).assertEqual("/path/path23");
+      expect(gaogao.query).assertEqual("query");
+      expect(gaogao.fragment).assertEqual("qwer");
+  })
+
+  // Check the UriConstruction.
+  /**
+   * @tc.name   testUriConstruction030
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_3000
+   * @tc.desc   Constructs a URI by parsing the given string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testUriConstruction030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://user@[::]/path/path23?query#qwer');
+      expect(gaogao.scheme).assertEqual("http");
+      expect(gaogao.authority).assertEqual("user@[::]");
+      expect(gaogao.ssp).assertEqual("//user@[::]/path/path23?query");
+      expect(gaogao.userInfo).assertEqual("user");
+      expect(gaogao.host).assertEqual("[::]");
+      expect(gaogao.port).assertEqual("-1");
+      expect(gaogao.path).assertEqual("/path/path23");
+      expect(gaogao.query).assertEqual("query");
+      expect(gaogao.fragment).assertEqual("qwer");
+  })
+
+  // Check the UriConstruction.
+  /**
+   * @tc.name   testUriConstruction031
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_3100
+   * @tc.desc   Constructs a URI by parsing the given string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testUriConstruction031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://[::192:0:5]/path/path23?query#qwer');
+      expect(gaogao.scheme).assertEqual("http");
+      expect(gaogao.authority).assertEqual("[::192:0:5]");
+      expect(gaogao.ssp).assertEqual("//[::192:0:5]/path/path23?query");
+      expect(gaogao.userInfo).assertEqual(null);
+      expect(gaogao.host).assertEqual("[::192:0:5]");
+      expect(gaogao.port).assertEqual("-1");
+      expect(gaogao.path).assertEqual("/path/path23");
+      expect(gaogao.query).assertEqual("query");
+      expect(gaogao.fragment).assertEqual("qwer");
+  })
+
+  // Check the UriEquals.
+  /**
+   * @tc.name   testEquals001
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_3200
+   * @tc.desc   Tests this URI for equality with another object.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testEquals001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/path1?query#fagment');
+      let gaogao1 = gaogao;
+      let res = gaogao.equals(gaogao1);
+      expect(res).assertEqual(true);
+  })
+
+  // Check the UriEquals.
+  /**
+   * @tc.name   testEquals002
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_3300
+   * @tc.desc   Tests this URI for equality with another object.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testEquals002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/path1?query#fagment');
+      let gaogao1 = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/path1?query#fagment');
+      let res = gaogao.equals(gaogao1);
+      expect(res).assertEqual(true);
+  })
+
+  // Check the UriEquals.
+  /**
+   * @tc.name   testEquals003
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_3400
+   * @tc.desc   Tests this URI for equality with another object.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testEquals003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/path1?query#fagment');
+      let gaogao1 = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/path1?query#fagment123');
+      let res = gaogao.equals(gaogao1);
+      expect(res).assertEqual(false);
+  })
+
+  // Check the UriEquals.
+  /**
+   * @tc.name   testEquals004
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_3500
+   * @tc.desc   Tests this URI for equality with another object.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testEquals004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://gg:gaogao@wwwaaa:99/path1?query#fagment');
+      let gaogao1 = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/path1?query#fagment123');
+      let res = gaogao.equals(gaogao1);
+      expect(res).assertEqual(false);
+  })
+
+  // Check the UriEquals.
+  /**
+   * @tc.name   testEquals005
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_3600
+   * @tc.desc   Tests this URI for equality with another object.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testEquals005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/path1?query#fagment');
+      let gaogao1 = new uri.URI('http://[1:0:0:1:2:1:2:1]/path1?query#fagment123');
+      let res = gaogao.equals(gaogao1);
+      expect(res).assertEqual(false);
+  })
+
+  // Check the UriEquals.
+  /**
+   * @tc.name   testEqualsTo001
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_3700
+   * @tc.desc   Tests this URI for equality with another object.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testEqualsTo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/path1?query#fagment');
+      let gaogao1 = gaogao;
+      let res = gaogao.equalsTo(gaogao1);
+      expect(res).assertEqual(true);
+  })
+
+  // Check the UriEquals.
+  /**
+   * @tc.name   testEqualsTo002
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_3800
+   * @tc.desc   Tests this URI for equality with another object.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testEqualsTo002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/path1?query#fagment');
+      let gaogao1 = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/path1?query#fagment');
+      let res = gaogao.equalsTo(gaogao1);
+      expect(res).assertEqual(true);
+  })
+
+  // Check the UriEquals.
+  /**
+   * @tc.name   testEqualsTo003
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_3900
+   * @tc.desc   Tests this URI for equality with another object.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testEqualsTo003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/path1?query#fagment');
+      let gaogao1 = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/path1?query#fagment123');
+      let res = gaogao.equalsTo(gaogao1);
+      expect(res).assertEqual(false);
+  })
+
+  // Check the UriEquals.
+  /**
+   * @tc.name   testEqualsTo004
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_4000
+   * @tc.desc   Tests this URI for equality with another object.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testEqualsTo004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://gg:gaogao@wwwaaa:99/path1?query#fagment');
+      let gaogao1 = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/path1?query#fagment123');
+      let res = gaogao.equalsTo(gaogao1);
+      expect(res).assertEqual(false);
+  })
+
+  // Check the UriEquals.
+  /**
+   * @tc.name   testEqualsTo005
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_4100
+   * @tc.desc   Tests this URI for equality with another object.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testEqualsTo005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/path1?query#fagment');
+      let gaogao1 = new uri.URI('http://[1:0:0:1:2:1:2:1]/path1?query#fagment123');
+      let res = gaogao.equalsTo(gaogao1);
+      expect(res).assertEqual(false);
+  })
+  
+  // Check the UriEquals.
+  /**
+   * @tc.name   testEqualsTo006
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_4200
+   * @tc.desc   Tests for wrong input parameter type.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testEqualsTo006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      try {
+          let gaogao = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/path1?query#fagment');
+          var gaogao1 = 666;
+          let err = gaogao.equalsTo(gaogao1);
+      } catch (err) {
+          expect(err.toString()).assertEqual(`BusinessError: Parameter error. The type of ${gaogao1} must be URI`);
+          expect(err.code).assertEqual(401)
+          expect(err.message).assertEqual(`Parameter error. The type of ${gaogao1} must be URI`);
+      }
+  })
+
+      
+  // Check the UriEquals.
+   /**
+    * @tc.name   testEqualsTo007
+    * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_4300
+    * @tc.desc   Tests for wrong input parameter type.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+   it('testEqualsTo007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      try {
+          let gaogao = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/path1?query#fagment');
+          var gaogao1 = {"0" : "1"};
+          let err = gaogao.equalsTo(gaogao1);
+      } catch (err) {
+          expect(err.toString()).assertEqual(`BusinessError: Parameter error. The type of ${gaogao1} must be URI`);
+          expect(err.code).assertEqual(401)
+          expect(err.message).assertEqual(`Parameter error. The type of ${gaogao1} must be URI`);
+      }
+  })
+
+  // Check the UriNormalize.
+  /**
+   * @tc.name   testNormalize001
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_4400
+   * @tc.desc   Tests Normalizes this URI's path.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testNormalize001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/path/66./../././mm/.././path1?query#fagment');
+      let res = gaogao.normalize();
+      expect(res.path).assertEqual("/path/path1");
+      expect(res.toString()).assertEqual("http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/path/path1?query#fagment");
+  })
+
+  // Check the UriNormalize.
+  /**
+   * @tc.name   testNormalize002
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_4500
+   * @tc.desc   Tests Normalizes this URI's path.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testNormalize002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/../../path?query#fagment');
+      let res = gaogao.normalize();
+      expect(res.path).assertEqual("/../../path");
+      expect(res.toString()).assertEqual("http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/../../path?query#fagment");
+  })
+
+ // Check the UriNormalize.
+  /**
+   * @tc.name   testNormalize003
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_4600
+   * @tc.desc   Tests Normalizes this URI's path.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testNormalize003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/../../path/.././../aa/bb/cc?query#fagment');
+      let res = gaogao.normalize();
+      expect(res.path).assertEqual("/../../../aa/bb/cc");
+      expect(res.toString()).assertEqual("http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/../../../aa/bb/cc?query#fagment");
+  })
+
+  // Check the UriNormalize.
+  /**
+   * @tc.name   testNormalize004
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_4700
+   * @tc.desc   Tests Normalizes this URI's path.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testNormalize004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/../path/.././../aa/bb/cc?query');
+      let res = gaogao.normalize();
+      expect(res.path).assertEqual("/../../aa/bb/cc");
+      expect(res.toString()).assertEqual("http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/../../aa/bb/cc?query");
+  })
+
+  // Check the UriNormalize.
+  /**
+   * @tc.name   testNormalize005
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_4800
+   * @tc.desc   Tests Normalizes this URI's path.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testNormalize005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/./path/./aa/bb/cc?query#fagment');
+      let res = gaogao.normalize();
+      expect(res.path).assertEqual("/path/aa/bb/cc");
+      expect(res.toString()).assertEqual("http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/path/aa/bb/cc?query#fagment");
+  })
+
+  // Check the UriToString.
+  /**
+   * @tc.name   testToString001
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_4900
+   * @tc.desc   Returns the content of this URI as a US-ASCII string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testToString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/../../path/.././../aa/bb/cc?query#fagment');
+      let res = gaogao.toString();
+      expect(res).assertEqual('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/../../path/.././../aa/bb/cc?query#fagment');
+  })
+
+  // Check the UriToString.
+  /**
+   * @tc.name   testToString002
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_5000
+   * @tc.desc   Returns the content of this URI as a US-ASCII string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testToString002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('htt1p://gg:gaogao@[::192.9.5.5]:99/path/66path1?query#fagment');
+      let res = gaogao.toString();
+      expect(res).assertEqual('htt1p://gg:gaogao@[::192.9.5.5]:99/path/66path1?query#fagment');
+  })
+
+  // Check the UriToString.
+  /**
+   * @tc.name   testToString003
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_5100
+   * @tc.desc   Returns the content of this URI as a US-ASCII string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testToString003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('ftp://username:password@www.baidu.com:88/path?query#fagment');
+      let res = gaogao.toString();
+      expect(res).assertEqual('ftp://username:password@www.baidu.com:88/path?query#fagment');
+  })
+
+  // Check the UriToString.
+  /**
+   * @tc.name   testToString004
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_5200
+   * @tc.desc   Returns the content of this URI as a US-ASCII string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testToString004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://gg:gao你好gao@199.98.55.44:99/path/p你好ath?qu你好ery#fag你好ment');
+      let res = gaogao.toString();
+      expect(res).assertEqual('http://gg:gao%E4%BD%A0%E5%A5%BDgao@199.98.55.44:99/path/' +
+      'p%E4%BD%A0%E5%A5%BDath?qu%E4%BD%A0%E5%A5%BDery#fag%E4%BD%A0%E5%A5%BDment');
+  })
+
+  // Check the UriToString.
+  /**
+   * @tc.name   testToString005
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_5300
+   * @tc.desc   Returns the content of this URI as a US-ASCII string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testToString005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http://gg:gaogao@199.98.55.44:99/path/path?query#fagment');
+      let res = gaogao.toString();
+      expect(res).assertEqual('http://gg:gaogao@199.98.55.44:99/path/path?query#fagment');
+  })
+
+  // Check the UriCheckIsAbsolute.
+  /**
+   * @tc.name   testCheckIsAbsolute001
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_5400
+   * @tc.desc   Tells whether or not this URI is absolute.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testCheckIsAbsolute001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('f/tp://username:password@www.baidu.com:88/path?query#fagment');
+      let res = gaogao.checkIsAbsolute();
+      expect(res).assertEqual(false);
+  })
+
+  // Check the UriCheckIsAbsolute.
+  /**
+   * @tc.name   testCheckIsAbsolute002
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_5500
+   * @tc.desc   Tells whether or not this URI is absolute.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testCheckIsAbsolute002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('ftp://username:password@www.baidu.com:88/path?query#fagment');
+      let res = gaogao.checkIsAbsolute();
+      expect(res).assertEqual(true);
+  })
+
+  // Check the UriCheckIsAbsolute.
+  /**
+   * @tc.name   testCheckIsAbsolute003
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_5600
+   * @tc.desc   Tells whether or not this URI is absolute.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testCheckIsAbsolute003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('htt/p://username:password@www.baidu.com:88/path?query#fagment');
+      let res = gaogao.checkIsAbsolute();
+      expect(res).assertEqual(false);
+  })
+
+  // Check the UriCheckIsAbsolute.
+  /**
+   * @tc.name   testCheckIsAbsolute004
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_5700
+   * @tc.desc   Tells whether or not this URI is absolute.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testCheckIsAbsolute004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('https://username:password@www.baidu.com:88/path?query#fagment');
+      let res = gaogao.checkIsAbsolute();
+      expect(res).assertEqual(true);
+  })
+
+  // Check the UriCheckIsAbsolute.
+  /**
+   * @tc.name   testCheckIsAbsolute005
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_5800
+   * @tc.desc   Tells whether or not this URI is absolute.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testCheckIsAbsolute005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+      let gaogao = new uri.URI('http1://username:password@www.baidu.com:88/path?query#fagment');
+      let res = gaogao.checkIsAbsolute();
+      expect(res).assertEqual(true);
+  })
+
+  // Check the UriCheckRelative.
+   /**
+    * @tc.name   testCheckRelative001
+    * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_5900
+    * @tc.desc   Tells whether or not this URI is relative.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+   it('testCheckRelative001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    let route = new uri.URI('http://www.test.com/images/pic.jpg');
+    let res = route.checkRelative();
+    expect(res).assertEqual(false);
+  })
+
+  // Check the UriCheckRelative.
+  /**
+   * @tc.name   testCheckRelative002
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_6000
+   * @tc.desc   Tells whether or not this URI is relative.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('testCheckRelative002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    let route = new uri.URI('/images/pic.jpg');
+    let res = route.checkRelative();
+    expect(res).assertEqual(true);
+  })
+
+  // Check the UriCheckRelative.
+  /**
+   * @tc.name   testCheckRelative003
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_6100
+   * @tc.desc   Tells whether or not this URI is relative.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testCheckRelative003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('https://www.test.com/images/logo.jpg');
+    let res = route.checkRelative();
+    expect(res).assertEqual(false);
+  })
+
+  // Check the UriCheckRelative.
+  /**
+   * @tc.name   testCheckRelative004
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_6200
+   * @tc.desc   Tells whether or not this URI is relative.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testCheckRelative004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('aaa');
+    let res = route.checkRelative();
+    expect(res).assertEqual(true);
+  })
+
+  // Check the UriCheckRelative.
+  /**
+   * @tc.name   testCheckRelative005
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_6300
+   * @tc.desc   Tells whether or not this URI is relative.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testCheckRelative005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let mailtoRoute = new uri.URI('mailto:user@test.com');
+    expect(mailtoRoute.checkRelative()).assertEqual(false);
+  })
+
+  // Check the UriCheckOpaque.
+  /**
+   * @tc.name   testCheckOpaque001
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_6400
+   * @tc.desc   Tells whether or not this URI is opaque.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testCheckOpaque001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('http://www.test.com/images/pic.jpg');
+    let res = route.checkOpaque();
+    expect(res).assertEqual(false);
+  })
+
+  // Check the UriCheckOpaque.
+  /**
+   * @tc.name   testCheckOpaque002
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_6500
+   * @tc.desc   Tells whether or not this URI is Opaque.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testCheckOpaque002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('images/pic.jpg');
+    let res = route.checkOpaque();
+    expect(res).assertEqual(false);
+  })
+
+  // Check the UriCheckOpaque.
+  /**
+   * @tc.name   testCheckOpaque003
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_6600
+   * @tc.desc   Tells whether or not this URI is Opaque.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testCheckOpaque003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('mailto:user@test.com');
+    expect(route.checkOpaque()).assertEqual(true);
+  })
+
+  // Check the UriCheckOpaque.
+  /**
+   * @tc.name   testCheckOpaque004
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_6700
+   * @tc.desc   Tells whether or not this URI is Opaque.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testCheckOpaque004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('tel:1234567890');
+    let res = route.checkOpaque();
+    expect(res).assertEqual(true);
+  })
+
+  // Check the UriCheckHierarchical.
+  /**
+   * @tc.name   testCheckHierarchical001
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_6800
+   * @tc.desc   Tells whether or not this URI is Opaque.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testCheckHierarchical001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('http://www.test.com/images/pic.jpg');
+    let res = route.checkHierarchical();
+    expect(res).assertEqual(true);
+  })
+
+  // Check the UriCheckHierarchical.
+  /**
+   * @tc.name   testCheckHierarchical002
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_6900
+   * @tc.desc   Tells whether or not this URI is Opaque.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testCheckHierarchical002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('mailto:test@test.com');
+    let res = route.checkHierarchical();
+    expect(res).assertEqual(false);
+  })
+
+  // Check the UriCheckHierarchical.
+  /**
+   * @tc.name   testCheckHierarchical003
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_7000
+   * @tc.desc   Tells whether or not this URI is Opaque.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testCheckHierarchical003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('images/pic.jpg');
+    let res = route.checkHierarchical();
+    expect(res).assertEqual(true);
+  })
+
+  // Check the UriCheckHierarchical.
+  /**
+   * @tc.name   testCheckHierarchical004
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_7100
+   * @tc.desc   Tells whether or not this URI is Opaque.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testCheckHierarchical004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('path');
+    expect(route.checkHierarchical()).assertEqual(true);
+    let testUri = new uri.URI('path:');
+    expect(testUri.checkHierarchical()).assertEqual(false);
+  })
+
+  // Check the UriGetQueryValue.
+  /**
+   * @tc.name   testUriGetQueryValue001
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_7200
+   * @tc.desc   Get specific query parameters from URI
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testUriGetQueryValue001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('https://www.test.com?param1=value1&param2=value2');
+    let param1Value = route.getQueryValue("param1");
+    let param2Value = route.getQueryValue("param2");
+    expect(param1Value).assertEqual('value1');
+    expect(param2Value).assertEqual('value2');
+  })
+
+  // Check the UriGetQueryValue.
+  /**
+   * @tc.name   testUriGetQueryValue002
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_7300
+   * @tc.desc   Get specific query parameters from URI
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testUriGetQueryValue002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('https://www.test.com');
+    expect(route.getQueryValue("param1")).assertEqual(null);
+    let include = new uri.URI('https://www.test.com?param1=value1');
+    expect(include.getQueryValue("param")).assertEqual(null);
+  })
+
+  // Check the UriGetQueryValue.
+  /**
+   * @tc.name   testUriGetQueryValue003
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_7400
+   * @tc.desc   Get specific query parameters from URI
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testUriGetQueryValue003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('https://www.test.com?param1=value1&param1=value2&param1=value3');
+    let param1Value = route.getQueryValue("param1");
+    expect(param1Value).assertEqual("value1");
+    expect(route.getQueryValues("param1")[0]).assertEqual("value1");
+  })
+
+  // Check the UriGetQueryValue.
+  /**
+   * @tc.name   testUriGetQueryValue004
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_7500
+   * @tc.desc   Get specific query parameters from URI
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testUriGetQueryValue004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('https://www.test.com?param1=hello%20world');
+    expect(route.getQueryValue("param1")).assertEqual("hello world");
+    let specialSymbol = new uri.URI('https://www.test.com?param1=hello+world');
+    expect(specialSymbol.getQueryValue("param1")).assertEqual("hello world");
+  })
+
+  // Check the UriGetQueryValue.
+  /**
+   * @tc.name   testUriGetQueryValue005
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_7600
+   * @tc.desc   Get specific query parameters from URI
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testUriGetQueryValue005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('https://www.test.com?param%201=hello');
+    expect(route.getQueryValue("param 1")).assertEqual("hello");
+    expect(route.getQueryValue("1")).assertNull();
+    expect(route.getQueryValue(" 1")).assertNull();
+  })
+
+  // Check the UriGetQueryValue.
+  /**
+   * @tc.name   testUriGetQueryValue006
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_7700
+   * @tc.desc   Get specific query parameters from URI
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testUriGetQueryValue006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('https://www.test.com?param1=&param2=');
+    expect(route.getQueryValue("param1")).assertEqual("");
+    expect(route.getQueryValue("param2")).assertEqual("");
+    let noNameUri = new uri.URI('https://www.test.com?=value');
+    expect(noNameUri.getQueryValue("")).assertEqual("value");
+  })
+
+  // Check the UriGetQueryValue.
+  /**
+   * @tc.name   testUriGetQueryValue007
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_7800
+   * @tc.desc   Get specific query parameters from URI
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testUriGetQueryValue007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let emptyParameter1 = new uri.URI('https://www.test.com?param1=value1&&param3=value3');
+    expect(emptyParameter1.getQueryValue("")).assertEqual("");
+    let emptyParameter12 = new uri.URI('https://www.test.com?param1=value1&');
+    expect(emptyParameter12.getQueryValue("")).assertEqual("");
+    let router = new uri.URI('https://www.test.com?');
+    expect(router.getQueryValue("")).assertEqual(null);
+  })
+
+  // Check the UriAddQueryValue.
+  /**
+   * @tc.name   testUriAddQueryValue001
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_7900
+   * @tc.desc   Add query parameters for URI
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testUriAddQueryValue001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('https://www.test.com');
+    let newRoute = route.addQueryValue("param1", "value1");
+    expect(newRoute.getQueryValue("param1")).assertEqual("value1");
+    expect(newRoute.toString()).assertEqual("https://www.test.com?param1=value1");
+    let clearRoute = newRoute.clearQuery();
+    expect(clearRoute.toString()).assertEqual("https://www.test.com");
+  })
+
+  // Check the UriAddQueryValue.
+  /**
+   * @tc.name   testUriAddQueryValue002
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_8000
+   * @tc.desc   Add query parameters for URI
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testUriAddQueryValue002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('https://www.test.com');
+    let newRoute = route.addQueryValue("param1", "value1").addQueryValue("param2", "value2");
+    expect(newRoute.getQueryValue('param1')).assertEqual("value1");
+    expect(newRoute.getQueryValue('param2')).assertEqual("value2");
+    expect(newRoute.toString()).assertEqual("https://www.test.com?param1=value1&param2=value2");
+  })
+
+  // Check the UriAddQueryValue.
+  /**
+   * @tc.name   testUriAddQueryValue003
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_8100
+   * @tc.desc   Add query parameters for URI
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testUriAddQueryValue003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('https://www.test.com');
+    let newRoute = route.addQueryValue("param1", "hello world");
+    expect(newRoute.toString()).assertEqual("https://www.test.com?param1=hello%20world");
+    expect(newRoute.getQueryValue("param1")).assertEqual("hello world");
+    let paramNames = newRoute.getQueryNames();
+    expect(paramNames.length).assertEqual(1);
+    expect(paramNames.values().next().value).assertEqual("param1");
+  })
+
+  // Check the UriAddQueryValue.
+  /**
+   * @tc.name   testUriAddQueryValue004
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_8200
+   * @tc.desc   Add query parameters for URI
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testUriAddQueryValue004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('https://www.test.com');
+    let newRoute = route.addQueryValue("param1", "value1").addQueryValue("param1", "value2");
+    expect(newRoute.toString()).assertEqual("https://www.test.com?param1=value1&param1=value2");
+  })
+
+  // Check the UriAddQueryValue.
+  /**
+   * @tc.name   testUriAddQueryValue005
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_8300
+   * @tc.desc   Add query parameters for URI
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testUriAddQueryValue005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('https://www.test.com');
+    let newRoute = route.addQueryValue("param1", "value1").addQueryValue("param2", "null");
+    expect(newRoute.toString()).assertEqual("https://www.test.com?param1=value1&param2=null");
+    let values = newRoute.getQueryValues("param1");
+    expect(values[0]).assertEqual("value1");
+  })
+
+  // Check the UriAddQueryValue.
+  /**
+   * @tc.name   testUriAddQueryValue006
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_8400
+   * @tc.desc   Add query parameters for URI
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testUriAddQueryValue006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+      let value = "value";
+      let testUri = new uri.URI('https://www.test.com');
+      let addQuery = testUri.addQueryValue("param", value);
+      expect(addQuery.getQueryValue("param")).assertEqual(value);
+      expect(addQuery.getQueryValues("param")[0]).assertEqual(value);
+      expect(addQuery.toString()).assertEqual("https://www.test.com?param=value");
+      value = "value1";
+      let valueChange = testUri.addQueryValue("param", value);
+      expect(valueChange.toString()).assertEqual("https://www.test.com?param=value1");
+      let newChange = addQuery.addQueryValue("param", value);
+      expect(newChange.toString()).assertEqual("https://www.test.com?param=value&param=value1");
+  })
+
+  // Check the UriAddQueryValue.
+  /**
+   * @tc.name   testUriAddQueryValue007
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_8500
+   * @tc.desc   Add query parameters for URI
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testUriAddQueryValue007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('https://www.test.com');
+    let newRoute = route.addQueryValue("param 1", "value 1");
+    expect(newRoute.getQueryValue("param 1")).assertEqual("value 1");
+  })
+
+  // Check the UriGetQueryNames.
+  /**
+   * @tc.name   testUriGetQueryNames001
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_8600
+   * @tc.desc   Get the names of all query parameters in the URI
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testUriGetQueryNames001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('https://www.test.com?param1=value1&param2=value2');
+    let paramNames = route.getQueryNames();
+    expect(paramNames.length).assertEqual(2);
+    expect(paramNames.values().next().value).assertEqual("param1");
+  })
+
+  // Check the UriGetQueryNames.
+  /**
+   * @tc.name   testUriGetQueryNames002
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_8700
+   * @tc.desc   Get the names of all query parameters in the URI
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testUriGetQueryNames002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('https://www.test.com');
+    let paramNames = route.getQueryNames();
+    expect(paramNames.length).assertEqual(0);
+  })
+
+  // Check the UriGetQueryNames.
+  /**
+   * @tc.name   testUriGetQueryNames003
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_8800
+   * @tc.desc   Get the names of all query parameters in the URI
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testUriGetQueryNames003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('https://www.test.com?param1=value1&&param3=value3');
+    let paramNames = route.getQueryNames();
+    let values = paramNames.values();
+    expect(paramNames.length).assertEqual(3);
+    expect(values.next().value).assertEqual("param1");
+    expect(values.next().value).assertEqual("");
+    expect(values.next().value).assertEqual("param3");
+  })
+
+  // Check the UriGetQueryNames.
+  /**
+   * @tc.name   testUriGetQueryNames004
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_8900
+   * @tc.desc   Get the names of all query parameters in the URI
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testUriGetQueryNames004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('https://www.test.com?param1=value1&=value2&param3=value3');
+    let paramNames = route.getQueryNames();
+    expect(paramNames.length).assertEqual(3);
+    let values = paramNames.values();
+    expect(values.next().value).assertEqual("param1");
+    expect(values.next().value).assertEqual("");
+    expect(values.next().value).assertEqual("param3");
+  })
+
+  // Check the UriGetQueryNames.
+  /**
+   * @tc.name   testUriGetQueryNames005
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_9000
+   * @tc.desc   Get the names of all query parameters in the URI
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testUriGetQueryNames005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('https://www.test.com?param1=value1&&&a&b=v&param3');
+    let paramNames = route.getQueryNames();
+    expect(paramNames.length).assertEqual(5);
+    let values = paramNames.values();
+    expect(values.next().value).assertEqual("param1");
+    expect(values.next().value).assertEqual("");
+    expect(values.next().value).assertEqual("a");
+    expect(values.next().value).assertEqual("b");
+    expect(values.next().value).assertEqual("param3");
+  })
+
+  // Check the UriGetQueryNames.
+  /**
+   * @tc.name   testUriGetQueryNames006
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_9100
+   * @tc.desc   Get the names of all query parameters in the URI
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testUriGetQueryNames006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('https://www.test.com?param%201=value1');
+    let paramNames = route.getQueryNames();
+    expect(paramNames.length).assertEqual(1);
+    expect(paramNames.values().next().value).assertEqual("param 1");
+    let route1 = new uri.URI('https://www.test.com?param+1=value1');
+    let paramNames1 = route1.getQueryNames();
+    expect(paramNames1.length).assertEqual(1);
+    expect(paramNames1.values().next().value).assertEqual("param+1");
+  })
+
+  // Check the UriGetQueryValues.
+  /**
+   * @tc.name   testUriGetQueryValues001
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_9200
+   * @tc.desc   Get all parameters and their corresponding values in the URI query string
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testUriGetQueryValues001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('https://www.test.com/search?query=name&sort=asc&filter=f');
+    let values = route.getQueryValues("query");
+    expect(values.length).assertEqual(1);
+  })
+
+  // Check the UriGetQueryValues.
+  /**
+   * @tc.name   testUriGetQueryValues002
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_9300
+   * @tc.desc   Get all parameters and their corresponding values in the URI query string
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testUriGetQueryValues002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('https://www.test.com/search?query=name');
+    let values = route.getQueryValues("query");
+    expect(values[0]).assertEqual("name");
+  })
+
+  // Check the UriGetQueryValues.
+  /**
+   * @tc.name   testUriGetQueryValues003
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_9400
+   * @tc.desc   Get all parameters and their corresponding values in the URI query string
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testUriGetQueryValues003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let emptyParameter1 = new uri.URI('https://www.test.com/search?query=');
+    let result1 = emptyParameter1.getQueryValues("query");
+    expect(result1.length).assertEqual(1);
+    expect(result1[0]).assertEqual("");
+    let emptyParameter2 = new uri.URI('https://www.test.com/search?=value&');
+    let result2 = emptyParameter2.getQueryValues("");
+    expect(result2[0]).assertEqual("value");
+    expect(result2[1]).assertEqual("");
+    let emptyParameter3 = new uri.URI('https://www.test.com?');
+    let result3 = emptyParameter3.getQueryValues("");
+    expect(result3.length).assertEqual(0);
+    let emptyParameter4 = new uri.URI('https://www.test.com?param');
+    let result4 = emptyParameter4.getQueryValues("param");
+    expect(result4.length).assertEqual(1);
+    expect(result4[0]).assertEqual("");
+    let emptyParameter5 = new uri.URI('https://www.test.com?param1=value1&&param3=value3');
+    let result5 = emptyParameter5.getQueryValues("");
+    expect(result5[0]).assertEqual("");
+  })
+
+  // Check the UriGetQueryValues.
+  /**
+   * @tc.name   testUriGetQueryValues004
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_9500
+   * @tc.desc   Get all parameters and their corresponding values in the URI query string
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testUriGetQueryValues004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('https://www.test.com/search');
+    let values = route.getQueryValues("query");
+    expect(values.length).assertEqual(0);
+  })
+
+  // Check the UriGetQueryValues.
+  /**
+   * @tc.name   testUriGetQueryValues005
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_9600
+   * @tc.desc   Get all parameters and their corresponding values in the URI query string
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testUriGetQueryValues005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('https://www.test.com/search?query=my%20query');
+    let values = route.getQueryValues("query");
+    expect(values[0]).assertEqual("my query");
+  })
+
+  // Check the UriGetQueryValues.
+  /**
+   * @tc.name   testUriGetQueryValues006
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_9700
+   * @tc.desc   Get all parameters and their corresponding values in the URI query string
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testUriGetQueryValues006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('https://www.test.com/search?query=name&query=my');
+    let values = route.getQueryValues("query");
+    expect(values[0]).assertEqual("name");
+    expect(values[1]).assertEqual("my");
+  })
+
+  // Check the UriGetQueryValues.
+  /**
+   * @tc.name   testUriGetQueryValues007
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_9800
+   * @tc.desc   Get all parameters and their corresponding values in the URI query string
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testUriGetQueryValues007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('https://www.test.com?query=hello+world');
+    let values = route.getQueryValues("query");
+    expect(values[0]).assertEqual("hello+world");
+  })
+
+  // Check the UriGetQueryValues.
+  /**
+   * @tc.name   testUriGetQueryValues008
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_9900
+   * @tc.desc   Get all parameters and their corresponding values in the URI query string
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testUriGetQueryValues008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route1 = new uri.URI('https://www.test.com?param_g=value_1');
+    let values1 = route1.getQueryValues("param_g");
+    expect(values1[0]).assertEqual("value_1");
+    expect(route1.getQueryValue('param_g')).assertEqual("value_1");
+  })
+
+  // Check the UriGetBooleanQueryValue.
+  /**
+   * @tc.name   testUriGetBooleanQueryValue001
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_10000
+   * @tc.desc   Get the Boolean value of the URI query parameter
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testUriGetBooleanQueryValue001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('https://www.test.com/search?active=true');
+    let isActive = route.getBooleanQueryValue("active", false);
+    expect(isActive).assertEqual(true);
+  })
+
+  // Check the UriGetBooleanQueryValue.
+  /**
+   * @tc.name   testUriGetBooleanQueryValue002
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_10100
+   * @tc.desc   Get the Boolean value of the URI query parameter
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testUriGetBooleanQueryValue002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('https://www.test.com/search');
+    let isActive = route.getBooleanQueryValue("active", false);
+    expect(isActive).assertEqual(false);
+  })
+
+  // Check the UriGetBooleanQueryValue.
+  /**
+   * @tc.name   testUriGetBooleanQueryValue003
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_10200
+   * @tc.desc   Get the Boolean value of the URI query parameter
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testUriGetBooleanQueryValue003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('https://www.test.com/search?active=name');
+    let isActive = route.getBooleanQueryValue("active", false);
+    expect(isActive).assertEqual(true);
+  })
+
+  // Check the UriGetBooleanQueryValue.
+  /**
+   * @tc.name   testUriGetBooleanQueryValue004
+   * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_10300
+   * @tc.desc   Get the Boolean value of the URI query parameter
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it('testUriGetBooleanQueryValue004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+    let route = new uri.URI('https://www.test.com/search');
+    let isActive = route.getBooleanQueryValue("active", true);
+    expect(isActive).assertEqual(true);
+  })
     })
-}
+  }
+  
+  

@@ -63,5 +63,26 @@ export default function ndkTest() {
       expect(0).assertEqual(ret);
       done();
     })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartNativeChildProcess_0800
+     * @tc.number SUB_Ability_AbilityRuntime_StartNativeChildProcess_0800
+     * @tc.desc   Test empty string entryParams
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityRuntime_StartNativeChildProcess_0800', Level.LEVEL3, async (done: Function) => {
+      let tag = `ACTS_NativeStartChildProcess_0800`;
+      console.log(`${tag}, it begin`);
+      let ret : Number = testNapi.startNativeChildProcess_0800();
+      hilog.info(0x0000, tag, '%{public}s', ` ${tag} execute result:` + ret);
+      if (ret == 801 || ret == 16010004){
+        done();
+        return;
+      }
+      expect(401).assertEqual(ret);
+      done();
+    })
   })
 }

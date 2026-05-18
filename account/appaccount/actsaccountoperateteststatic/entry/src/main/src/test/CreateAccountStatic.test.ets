@@ -94,7 +94,6 @@ export default function ActsAccountCreateAccountStatic() {
         try {
           await accountManager.createAccount("account_name_promise_first");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>add account fail err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -102,7 +101,6 @@ export default function ActsAccountCreateAccountStatic() {
           hilog.info(0x0000, tag, "====>delete account Create_0200 start====");
           await accountManager.removeAccount("account_name_promise_first");
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>delete account err: " + JSON.stringify(err));
         }
         hilog.info(0x0000, tag, "====>ActsAccountCreateAccount_0200 end====");
@@ -156,7 +154,6 @@ export default function ActsAccountCreateAccountStatic() {
         try {
           await accountManager.createAccount("account_name_promise_second", createAccountOptions);
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>add account fail err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -164,7 +161,6 @@ export default function ActsAccountCreateAccountStatic() {
           hilog.info(0x0000, tag, "====>delete account Create_0400 start====");
           await accountManager.removeAccount("account_name_promise_second");
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>delete account err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -240,7 +236,6 @@ export default function ActsAccountCreateAccountStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>add account for the second time 0600 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300004);
           await accountManager.removeAccount("account_name_promise_third");
@@ -302,7 +297,6 @@ export default function ActsAccountCreateAccountStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>add account Create_0800 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           hilog.info(0x0000, tag, "====>ActsAccountCreateAccount_0800 end====");
@@ -370,7 +364,6 @@ export default function ActsAccountCreateAccountStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>add account Create_1000 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           hilog.info(0x0000, tag, "====>ActsAccountCreateAccount_1000 end====");
@@ -423,7 +416,6 @@ export default function ActsAccountCreateAccountStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>add account Create_1200 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           hilog.info(0x0000, tag, "====>ActsAccountCreateAccount_1200 end====");
@@ -463,7 +455,6 @@ export default function ActsAccountCreateAccountStatic() {
             });
           });
         } catch (err) {
-          err = err as BusinessError;
           expect().assertFail();
           done();
         }
@@ -486,7 +477,6 @@ export default function ActsAccountCreateAccountStatic() {
           await accountManager.removeAccount(specialStr);
           hilog.info(0x0000, tag, "====>ActsAccountCreateAccount_1600 end====");
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>createAccount Create_1600 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -542,7 +532,6 @@ export default function ActsAccountCreateAccountStatic() {
         try {
           await accountManager.createAccount(specialStr, createAccountOptions);
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>add Account Create_1800 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -550,7 +539,6 @@ export default function ActsAccountCreateAccountStatic() {
           hilog.info(0x0000, tag, "====>delete account Create_1800====");
           await accountManager.removeAccount(specialStr);
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>delete account err: " + JSON.stringify(err));
         }
         hilog.info(0x0000, tag, "====>ActsAccountCreateAccount_1800 end====");
@@ -622,7 +610,6 @@ export default function ActsAccountCreateAccountStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>add account for the second time err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300004);
           await accountManager.removeAccount("account_name_promise_same");
@@ -685,7 +672,6 @@ export default function ActsAccountCreateAccountStatic() {
         try {
           await accountManager.createAccount(nameLimit, createAccountOptions);
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>add account Create_2600 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -693,7 +679,6 @@ export default function ActsAccountCreateAccountStatic() {
           hilog.info(0x0000, tag, "====>delete account Create_2600 start====");
           await accountManager.removeAccount(nameLimit);
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>delete account err: " + JSON.stringify(err));
         }
         hilog.info(0x0000, tag, "====>ActsAccountCreateAccount_2600 end====");

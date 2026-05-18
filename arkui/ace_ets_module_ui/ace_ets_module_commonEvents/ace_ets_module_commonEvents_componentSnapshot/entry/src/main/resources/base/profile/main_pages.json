@@ -20,6 +20,7 @@
         "MainAbility/pages/componentSnapshot/UIContextGetPromise/UIContextGetPromiseNullAndUndefined",
         "MainAbility/pages/componentSnapshot/UIContextGetSync/UIContextGetSyncNullAndUndefined",
         "MainAbility/pages/componentSnapshot/GetWithUniqueId/GetWithUniqueIdNullAndUndefined",
-        "MainAbility/pages/componentSnapshot/GetSyncWithUniqueId/GetSyncWithUniqueIdNullAndUndefined"
+        "MainAbility/pages/componentSnapshot/GetSyncWithUniqueId/GetSyncWithUniqueIdNullAndUndefined",
+        "MainAbility/pages/getSizeLimitation/GetSizeLimitation"
     ]
 }

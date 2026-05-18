@@ -44,6 +44,16 @@ int TestPointGetYMultipleCalls();
 int TestPointSetNormal();
 int TestPointSetNull();
 int TestPointSetMultipleCalls();
+
+// Point Negate related functions
+int TestPointNegateNormal();
+int TestPointNegateNull();
+int TestPointNegateMultipleCalls();
+
+// Point Offset related functions
+int TestPointOffsetNormal();
+int TestPointOffsetNull();
+int TestPointOffsetMultipleCalls();
 } // namespace Drawing
 } // namespace Rosen
 } // namespace OHOS

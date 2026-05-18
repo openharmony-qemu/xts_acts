@@ -319,12 +319,12 @@ export default function ImageOnErrorCodeTest() {
       let strJson = getInspectorByKey('103100msg');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[ImageOnErrorCodeTest_012] obj.$attrs.content is: ' + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('make svg dom failed.');
+      expect(obj.$attrs.content).assertEqual('image data size is invalid.');
 
       let strJson1 = getInspectorByKey('103100');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info('[ImageOnErrorCodeTest_012] obj1.$attrs.content is: ' + JSON.stringify(obj1.$attrs.content));
-      expect(obj1.$attrs.content).assertEqual('103100');
+      expect(obj1.$attrs.content).assertEqual('103200');
       console.info('[ImageOnErrorCodeTest_012] END');
       done();
     });

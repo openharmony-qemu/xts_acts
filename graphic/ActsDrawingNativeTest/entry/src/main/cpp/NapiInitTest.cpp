@@ -13,11 +13,15 @@
  * limitations under the License.
  */
 
-// Include the split implementation files
 #include "NapiInitPart1Test.cpp"
 #include "NapiInitPart2Test.cpp"
 #include "NapiInitPart3Test.cpp"
 #include "NapiInitPart4Test.cpp"
+
+#define DRAWING_NUMBER_1 1
+
+
+// Include the split implementation files
 
 inline napi_property_descriptor MakeNapiDesc(const char* name, napi_callback cb)
 {
@@ -37,6 +41,7 @@ static const napi_property_descriptor g_drawingNativeDescriptors[] = {
     DECL_NAPI_DESC(DrawingPointCreate),
     DECL_NAPI_DESC(DrawingPointDestroy),
     DECL_NAPI_DESC(DrawingPointGetSet),
+    DECL_NAPI_DESC(DrawingPointNegateOffset),
     DECL_NAPI_DESC(DrawingRegionBasicOperations),
     DECL_NAPI_DESC(DrawingRegionQueryOperations),
     DECL_NAPI_DESC(DrawingPathEffect),
@@ -102,6 +107,8 @@ static const napi_property_descriptor g_drawingNativeDescriptors[] = {
     DECL_NAPI_DESC(DrawingCanvasDrawPixelMapNine),
     DECL_NAPI_DESC(DrawingCanvasCreateWithPixelMap),
     DECL_NAPI_DESC(DrawingCanvasDrawPixelMapRectConstraint),
+    DECL_NAPI_DESC(DrawingCanvasDrawGlyphs),
+    DECL_NAPI_DESC(DrawingCanvasIsOpaque),
     DECL_NAPI_DESC(DrawingColorFilterCreateBlendMode),
     DECL_NAPI_DESC(DrawingColorFilterCreateCompose),
     DECL_NAPI_DESC(DrawingColorFilterCreateMatrix),
@@ -141,7 +148,7 @@ static const napi_property_descriptor g_drawingNativeDescriptors[] = {
     DECL_NAPI_DESC(DrawingFontArgumentsDestroy),
     DECL_NAPI_DESC(DrawingFontSetThemeFontFollowed),
     DECL_NAPI_DESC(DrawingFontIsThemeFontFollowed),
-    DECL_NAPI_DESC(DrawingFontGetMetricsPart2),
+    DECL_NAPI_DESC(DrawingFontGetMetrics),
     DECL_NAPI_DESC(DrawingFontMeasureTextWithBrushOrPen),
     DECL_NAPI_DESC(DrawingFontGetWidthsBounds),
     DECL_NAPI_DESC(DrawingFontGetPos),
@@ -205,7 +212,9 @@ static const napi_property_descriptor g_drawingNativeDescriptors[] = {
     DECL_NAPI_DESC(DrawingRegionPart2QueryOperations),
     DECL_NAPI_DESC(DrawingPathIterator),
     DECL_NAPI_DESC(DrawingPathPart4InverseFillType),
+    DECL_NAPI_DESC(DrawingPathPart4GetData),
     DECL_NAPI_DESC(DrawingCanvasDrawPixelMapMesh),
+    DECL_NAPI_DESC(DrawingCanvasResetClip),
     DECL_NAPI_DESC(DrawingLattice),
     DECL_NAPI_DESC(DrawingRectPart2OtherOperations),
     DECL_NAPI_DESC(DrawingTypefaceIsBoldItalic),
@@ -223,7 +232,7 @@ EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
 EXTERN_C_END
 
 static napi_module drawingNativeModule = {
-    .nm_version = 1,
+    .nm_version = DRAWING_NUMBER_1,
     .nm_flags = 0,
     .nm_filename = nullptr,
     .nm_register_func = Init,

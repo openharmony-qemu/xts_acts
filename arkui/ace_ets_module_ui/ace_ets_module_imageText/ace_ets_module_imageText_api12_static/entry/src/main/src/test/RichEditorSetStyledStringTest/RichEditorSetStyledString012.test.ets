@@ -101,7 +101,7 @@ it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_static_0022', Level.LEV
       let message = await (driver.findComponent(ON.id('message')) as Promise<Component>);
       let messageText = await message.getText();
       await CommonFunc.sleep(500);
-      expect(messageText).assertContain('message:{"end":3,"start":0}');
+      expect(messageText).assertContain('message:{"start":0,"end":3}');
       done();
     });
 

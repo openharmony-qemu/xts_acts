@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -2504,7 +2504,7 @@ export default function typeArrayInt16ArrayTest() {
               break;
             }
           }
-          segments[segmentIndex].push(val as int);
+          segments[segmentIndex].push(val.toInt());
         }
 
         return segments;
@@ -2801,7 +2801,7 @@ export default function typeArrayInt16ArrayTest() {
 
         for (let i = 0; i < result.length; i++) {
 
-          const window = Array.from(data.subarray(i, i + windowSize)).sort((a: double, b: double) => (a - b) as int);
+          const window = Array.from(data.subarray(i, i + windowSize)).sort((a: double, b: double) => (a - b).toInt());
 
           result[i] = window[halfWindow];
         }
@@ -2923,7 +2923,7 @@ export default function typeArrayInt16ArrayTest() {
       const packed = packValues(values, bitLengths);
 
       const arr = new Int16Array([packed]);
-      const unpacked = unpackValues(arr[0] as int, bitLengths as int[]);
+      const unpacked = unpackValues((arr[0]).toInt(), bitLengths as int[]);
 
       expect(arr[0]).assertEqual(0b0011001100111010);
       expect(unpacked.toString()).assertEqual(values.toString());
@@ -3252,7 +3252,7 @@ export default function typeArrayInt16ArrayTest() {
       };
 
       const inversePermutation = (permutation: int[]): int[] => {
-        const inverse = new Array<int>(permutation.length);
+        const inverse = Array.create<int>(permutation.length, 0);
         for (let i = 0; i < permutation.length; i++) {
           inverse[permutation[i]] = i;
         }
@@ -3402,7 +3402,7 @@ export default function typeArrayInt16ArrayTest() {
         const result = new Int16Array(data.length - windowSize + 1);
 
         for (let i = 0; i < result.length; i++) {
-          const window = Array.from(data.subarray(i, i + windowSize)).sort((a: double, b: double) => (a - b) as int);
+          const window = Array.from(data.subarray(i, i + windowSize)).sort((a: double, b: double) => (a - b).toInt());
           const index = Math.min(window.length - 1, Math.round(window.length * percentile / 100)).toInt();
           result[i] = window[index];
         }

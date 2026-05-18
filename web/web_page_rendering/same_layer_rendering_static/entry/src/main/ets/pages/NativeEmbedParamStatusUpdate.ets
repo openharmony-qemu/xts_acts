@@ -61,7 +61,7 @@ struct WebIndex {
               break;
             }
 
-            case 'SwitchNextPageStatic' : {
+            case 'SwitchNextPageStatic7' : {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();
               router.pushUrl({ url: 'pages/webViewEventResult' })

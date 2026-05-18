@@ -32,14 +32,14 @@ export default function es2021Test() {
       expect('abbbaab'.replaceAll(/b/g, 'x')).assertEqual("axxxaax");
     })
     /**
-     * @tc.name   testPromise.any Success
+     * @tc.name   testPromiseanySuccessAdapt001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ES2021NewFeatures_0002
      * @tc.desc   add name of task for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testPromise.any Success', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('testPromiseanySuccessAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const Promise1: Promise<string> = new Promise((resolve, reject) => {
         setTimeout(() => resolve('Promise 1'), 100)
       });
@@ -58,14 +58,14 @@ export default function es2021Test() {
         })
     })
     /**
-     * @tc.name   testPromise.any Error
+     * @tc.name   testPromiseanyErrorAdapt001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ES2021NewFeatures_0003
      * @tc.desc   add name of task for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testPromise.any Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('testPromiseanyErrorAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const Promise1: Promise<string> = new Promise((resolve, reject) => {
         setTimeout(() => reject('Promise 1 error'), 100)
       });

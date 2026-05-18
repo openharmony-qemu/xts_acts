@@ -44,4 +44,6 @@ export class PhotoPickerResult {
   public autoPlayScenes: photoAccessHelper.AutoPlayScene[] = [];
   public appAlbumFilters: Array<string> = [];
   public backgroundOpacity: number | undefined = undefined;
+  public contextRecoveryInfo?: photoAccessHelper.ContextRecoveryInfo;
+  public photoUris?: Array<string>;
 }

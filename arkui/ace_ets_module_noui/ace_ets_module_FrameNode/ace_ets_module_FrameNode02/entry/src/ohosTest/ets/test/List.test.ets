@@ -28,6 +28,10 @@ import isInRenderStateTest from './frameNodeTest/isInRenderStateTest.test';
 import FrameNodeMethodNullUndefinedTest from './frameNodeTest/FrameNodeMethodNullUndefined.test';
 import CustomPropertyNullUndefinedTest from './frameNodeTest/CustomPropertyNullUndefined.test';
 import AddComponentContentNullUndefinedTest from './frameNodeTest/AddComponentContentNullUndefined.test';
+import createFrameNodesUIContextIntTest from './frameNodeTest/createFrameNodesUIContextIntTest.test';
+import GetFrameNodeByIdTest from './frameNodeTest/GetFrameNodeById.test';
+import GetFrameNodeByUniqueIdTest from './frameNodeTest/GetFrameNodeByUniqueId.test';
+import LazyForEachReleaseStrategyTest from './frameNodeTest/LazyForEachReleaseStrategy.test';
 
 export default function testsuite() {
   APIsetOnclickTest();
@@ -46,4 +50,8 @@ export default function testsuite() {
   FrameNodeMethodNullUndefinedTest()
   CustomPropertyNullUndefinedTest()
   AddComponentContentNullUndefinedTest()
+  createFrameNodesUIContextIntTest()
+  GetFrameNodeByIdTest()
+  GetFrameNodeByUniqueIdTest()
+  LazyForEachReleaseStrategyTest()
 }

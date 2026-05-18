@@ -53,6 +53,11 @@ import StyledStringTextDirectionTest from './StyledStringTest/ParagraphStyleText
 import StyledStringMethodsNullTest from './StyledString/StyledStringMethodsNull.test';
 import MutableStyledStringMethodsNullTest from './StyledString/MutableStyledStringMethodsNull.test';
 import MutableStyledStringMethodsNull2Test from './StyledString/MutableStyledStringMethodsNull2.test';
+import StyledStringFontWeightConfigsTest from './StyledStringTest/StyledStringFontWeightConfigsTest.test';
+import StyledStringFontVariationsTest from './StyledString/StyledStringFontVariations.test';
+import CustomSpanMeasureInfoTest from './StyledStringTest/CustomSpanMeasureInfo.test';
+import LineHeightStyleTest from './StyledStringTest/LineHeightStyle.test';
+import LineSpacingStyleTest from './StyledStringTest/LineSpacingStyle.test';
 
 export default function testsuite() {
   InputPresetTest()
@@ -95,4 +100,9 @@ export default function testsuite() {
   StyledStringMethodsNullTest()
   MutableStyledStringMethodsNullTest()
   MutableStyledStringMethodsNull2Test()
+  StyledStringFontWeightConfigsTest()
+  StyledStringFontVariationsTest()
+  CustomSpanMeasureInfoTest()
+  LineHeightStyleTest()
+  LineSpacingStyleTest()
 }

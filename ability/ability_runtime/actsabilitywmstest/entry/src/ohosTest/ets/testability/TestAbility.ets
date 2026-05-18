@@ -28,6 +28,7 @@ export default class TestAbility extends UIAbility {
     hilog.info(0x0000, TAG, '%{public}s', 'want param:' + JSON.stringify(want) ?? '');
     hilog.info(0x0000, TAG, '%{public}s', 'launchParam:' + JSON.stringify(launchParam) ?? '');
     globalThis.context = this.context;
+    hilog.info(0x0000, TAG, '%{public}s', 'TestAbility onCreate ' + JSON.stringify(globalThis.context));
     let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
     abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
     let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs;

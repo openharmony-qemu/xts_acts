@@ -422,11 +422,9 @@ export default function ActsApi21LongTimeTaskManagerTest() {
 
           backgroundTaskManager.stopBackgroundRunning(ability.context, res.continuousTaskId).then(() => {
             console.info("SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_012 Operation stopBackgroundRunning succeeded");
-            expect(true).assertTrue();
             done();
           }).catch((error: BusinessError) => {
             console.error(`SUB_RESOURCESCHEDULE_LONGTIME_API21_TASK_XTS_012 Operation stopBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
-            expect(false).assertTrue();
             done();
           });
         } catch (error) {

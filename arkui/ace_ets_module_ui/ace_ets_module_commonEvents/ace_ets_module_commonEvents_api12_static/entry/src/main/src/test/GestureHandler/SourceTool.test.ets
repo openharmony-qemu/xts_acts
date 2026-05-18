@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -113,8 +113,8 @@ it('SourceTool_static_0020', Level.LEVEL0, async (done: () => void): Promise<voi
       let bottom = colum.bottom
       let left = colum.left
       let right = colum.right
-      await ((driver.swipe(Math.round(left + 20) as Int, Math.round((top + bottom) / 2) as Int,
-        Math.round(right - 20) as Int, Math.round((top + bottom) / 2) as Int)) as Promise<void>);
+      await ((driver.swipe(Math.round(left + 20).toInt(), Math.round((top + bottom) / 2).toInt(),
+        Math.round(right - 20).toInt(), Math.round((top + bottom) / 2).toInt())) as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('sourceTool1_id');
       await CommonFunc.sleep(2000);
@@ -167,8 +167,8 @@ it('axisHorizontal_static_0040', Level.LEVEL0, async (done: () => void): Promise
       let bottom = colum.bottom
       let left = colum.left
       let right = colum.right
-      await ((driver.swipe(Math.round(left + 20) as Int, Math.round((top + bottom) / 2) as Int,
-        Math.round(right - 20) as Int, Math.round((top + bottom) / 2) as Int)) as Promise<void>);
+      await ((driver.swipe(Math.round(left + 20).toInt(), Math.round((top + bottom) / 2).toInt(),
+        Math.round(right - 20).toInt(), Math.round((top + bottom) / 2).toInt())) as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('axisHorizontal_id');
       let obj = JSON.parseJsonElement(strJson);
@@ -195,8 +195,8 @@ it('axisVertical_static_0050', Level.LEVEL0, async (done: () => void): Promise<v
       let bottom = colum.bottom
       let left = colum.left
       let right = colum.right
-      await ((driver.swipe(Math.round(left + 20) as Int, Math.round((top + bottom) / 2) as Int,
-        Math.round(right - 20) as Int, Math.round((top + bottom) / 2) as Int)) as Promise<void>);
+      await ((driver.swipe(Math.round(left + 20).toInt(), Math.round((top + bottom) / 2).toInt(),
+        Math.round(right - 20).toInt(), Math.round((top + bottom) / 2).toInt())) as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('axisVertical_id');
       let obj = JSON.parseJsonElement(strJson);

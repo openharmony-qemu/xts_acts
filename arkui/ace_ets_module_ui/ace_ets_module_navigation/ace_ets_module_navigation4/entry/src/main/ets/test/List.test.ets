@@ -24,6 +24,7 @@ import NavPathStackRemove from './Navigation/NavPathStackRemove.test';
 import NavPathStackReplaceDestination from './Navigation/NavPathStackReplaceDestination.test';
 import NavPathStackReplacePath from './Navigation/NavPathStackReplacePath.test';
 import NavigationAttributeNullUndefinedTest from './Navigation/NavigationAttributeNullUndefined.test';
+import NavigationModeRatio from './Navigation/NavigationModeRatio.test';
 import NavigatorAttributeNullUndefinedTest from './navigator/NavigatorAttributeNullUndefined.test';
 import NavDestinationAttributeNullUndefinedTest from './navDestination/NavDestinationAttributeNullUndefined.test';
 import TabsControllerNullUndefined from './TabsNullUndefined/TabsControllerNullUndefined.test';
@@ -49,6 +50,7 @@ export default function testsuite() {
   NavDestinationSizeUnique()
   NavigationDivider()
   NavigationAttributeNullUndefinedTest()
+  NavigationModeRatio()
   NavigatorAttributeNullUndefinedTest()
   NavDestinationAttributeNullUndefinedTest()
   TabsControllerNullUndefined()

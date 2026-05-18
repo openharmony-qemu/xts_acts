@@ -1,1 +1,7 @@
-{"src":["MainAbility/pages/index/index","MainAbility/pages/Canvas/CanvasIndex"]}
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/Canvas/CanvasIndex",
+    "MainAbility/pages/Canvas/CanvasIndex1"
+  ]
+}

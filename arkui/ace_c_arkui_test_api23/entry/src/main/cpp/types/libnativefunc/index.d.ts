@@ -126,10 +126,13 @@ export const TextDirection_005: () => number;
 export const TextDirection_006: () => number;
 
 export const TestAtomicServiceMenuBarSetVisible01: () => number;
+export const TestAccessibilityElementInfoSetComponentIdentifier001: () => number;
 
 export const TestIsInRenderStateReturnValue001: () => number;
 
 export const TestIsInRenderStateReturnValue002: () => number;
+
+export const TestMoveToParam001: () => number;
 
 export const testPullUpToCancelRefresh01: () => number;
 export const testPullUpToCancelRefresh02: () => number;
@@ -145,6 +148,10 @@ export const testImageAntialiased004: () => number;
 
 export const testImageAntialiased005: () => number;
 
+export const testImageAntialiased006: () => number;
+
+export const testImageAntialiased007: () => number;
+
 export const ListEmptyTest_001: () => number;
 export const ListEmptyTest_002: () => number;
 export const ListEmptyTest_003: () => number;
@@ -154,3 +161,7 @@ export const GridEmptyTest_001: () => number;
 export const GridEmptyTest_002: () => number;
 export const GridEmptyTest_003: () => number;
 export const GridEmptyTest_004: () => number;
+export const WaterFlowEmptyTest_001: () => number;
+export const WaterFlowEmptyTest_002: () => number;
+export const WaterFlowEmptyTest_003: () => number;
+export const WaterFlowEmptyTest_004: () => number;

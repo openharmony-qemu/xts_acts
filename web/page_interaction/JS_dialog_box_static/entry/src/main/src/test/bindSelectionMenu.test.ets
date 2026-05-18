@@ -278,7 +278,7 @@ export default function webViewSrollableJsunit() {
 
     /**
     * @tc.name        SwitchNextPageStatic
-    * @tc.number      SUB_ACE_BASIC_ETS_BINDSELECTIONMENUTYPE_API_083023232
+    * @tc.number      SwitchNextPageStatic_83023232
     * @tc.desc        test bindSelectionMenuType02 interface when choose callback mode.
     * @tc.size        MediumTest
     * @tc.type        Function

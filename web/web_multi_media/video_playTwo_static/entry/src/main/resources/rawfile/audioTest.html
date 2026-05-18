@@ -27,11 +27,11 @@
     </style>
 </head>
 <body>
-<div class="box">
-    <audio controls autoplay loop name="media" id="my-bgm" style="margin-left: -10px;margin-top: -10px;">
-        <source src="01.mp3" type="audio/mpeg">
-    </audio>
-</div>
+    <div class="box">
+        <audio controls autoplay loop name="media" id="my-bgm" style="margin-left: -10px;margin-top: -10px;">
+            <source src="01.mp3" type="audio/mpeg">
+        </audio>
+    </div>
 </body>
 <script>
     let ele=document.getElementById("my-bgm");
@@ -42,12 +42,12 @@
     function test(){
         backToEts.test("backToEts")
     }
-    function enableMute() {
+    function enableMute() { 
         var myVid = document.getElementById("my-bgm");
         myVid.muted = true;
         return myVid.muted
     }
-    function disableMute() {
+    function disableMute() { 
         var myVid = document.getElementById("my-bgm");
         myVid.muted = false;
         return myVid.muted
@@ -76,11 +76,6 @@
     function isPlaying() {
         var myVid = document.getElementById("my-bgm");
         return !myVid.paused
-    }
-
-       function checkState() {
-        var myVid = document.getElementById("my-bgm");
-        return myVid.paused
     }
 
 </script>

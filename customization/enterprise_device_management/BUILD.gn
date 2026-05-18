@@ -18,6 +18,7 @@ group("edm_test_grop") {
   if (is_standard_system) {
     deps = [
       "TestExtensionAbility_001:ExtensionZeroTest",
+      "edm_xts_7.x:ActsEdm7xTest",
       "edm_xts_network:ActsEdmNetworkTest",
       "edm_xts_no_permission:ActsEdmNoPermissionTest",
       "edm_xts_stage:ActsEdmTest",

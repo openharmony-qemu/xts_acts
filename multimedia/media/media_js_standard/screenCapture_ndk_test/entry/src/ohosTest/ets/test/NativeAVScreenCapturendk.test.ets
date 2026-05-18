@@ -1426,5 +1426,82 @@ export default function nativeAVScreenCaptureNdkTest() {
       expect(result).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PAUSE_0100
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PAUSE_0100
+     * @tc.desc   OH_AVScreenCapture_StrategyForPause-False
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PAUSE_0100', Level.LEVEL0, async (done: Function) => {
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForPauseFalse();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PAUSE_0200
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PAUSE_0200
+     * @tc.desc   OH_AVScreenCapture_StrategyForPause-True
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_STRATEGY_FOR_PAUSE_0200', Level.LEVEL0, async (done: Function) => {
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForPauseTrue();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_PAUSE_RESUME_0100
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_PAUSE_RESUME_0100
+     * @tc.desc   OH_AVScreenCapture_PauseScreenCapture and OH_AVScreenCapture_ResumeScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_PAUSE_RESUME_0100', Level.LEVEL0, async (done: Function) => {
+      console.info(Tag + "normalAVScreenCapturePauseResumeTest-------------before click:");
+      let result: number = myScreenCaptureNdk.normalAVScreenCapturePauseResumeTest();
+      console.info(Tag + "normalAVScreenCapturePauseResumeTest-------------result:" + result);
+      expect(result).assertEqual(0);
+      let isShowDialog: number = await Utils.btnTextScreenCapture();
+      let resultStop: number = myScreenCaptureNdk.normalAVScreenCapturePauseResumeTestStop();
+      console.info(Tag + "normalAVScreenCapturePauseResumeTestStop-------------resultStop:" + resultStop);
+      expect(resultStop).assertEqual(0);
+      expect(isShowDialog).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_PAUSE_SCREEN_CAPTURE_0100
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_PAUSE_SCREEN_CAPTURE_0100
+     * @tc.desc   OH_AVScreenCapture_PauseScreenCapture with nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_PAUSE_SCREEN_CAPTURE_0100', Level.LEVEL0, async (done: Function) => {
+      let result: number = myScreenCaptureNdk.normalAVScreenCapturePauseScreenCaptureErr();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_SCREEN_CAPTURE_RESUME_SCREEN_CAPTURE_0100
+     * @tc.number SUB_MULTIMEDIA_SCREEN_CAPTURE_RESUME_SCREEN_CAPTURE_0100
+     * @tc.desc   OH_AVScreenCapture_ResumeScreenCapture with nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_RESUME_SCREEN_CAPTURE_0100', Level.LEVEL0, async (done: Function) => {
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureResumeScreenCaptureErr();
+      expect(result).assertEqual(0);
+      done();
+    });
   })
 }

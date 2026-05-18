@@ -14,8 +14,10 @@
  * limitations under the License.
  */
 import RichEditorTest from './RichEditorTest/RichEditor.test';
-
+import RichEditorHorizontalScrollingTest from './RichEditorTest/RichEditorHorizontalScrolling.test';
+import RichTextSpanSymbolBatchTest from './RichTextSpanSymbolBatchTest/RichTextSpanSymbolBatch.test';
 
 export default function testsuite() {
   RichEditorTest();
+  RichTextSpanSymbolBatchTest();
 }

@@ -18,6 +18,16 @@
 
 namespace ArkUICapiTest {
 
+// Ensure UI input event CAPI module is initialized before PointerEvent APIs (reduces flaky crash on Destroy).
+static inline void EnsureArkUiUiInputEventModuleLoaded()
+{
+    void *ptr = OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_NODE, "ArkUI_UIInputEvent");
+    if (ptr == nullptr) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "EnsureArkUiUiInputEventModuleLoaded",
+            "OH_ArkUI_QueryModuleInterfaceByName returned nullptr for ArkUI_UIInputEvent");
+    }
+}
+
 /*
  * 测试接口: ARKUI_UIINPUTEVENT_TYPE_DIGITAL_CROWN（ARKUI_UIINPUTEVENT_TYPE_DIGITAL_CROWN = 5）
  * 预期效果: 枚举/宏常量取值应为 5。
@@ -119,6 +129,7 @@ static napi_value TestArkUICapi_459(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *evt = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -165,6 +176,7 @@ static napi_value TestArkUICapi_460(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *evt = nullptr;
     auto ec = OH_ArkUI_PointerEvent_CreatePointerEvent(&evt, ARKUI_UIINPUTEVENT_TYPE_TOUCH);
     {
@@ -191,6 +203,7 @@ static napi_value TestArkUICapi_461(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *uiEvent = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -227,6 +240,7 @@ static napi_value TestArkUICapi_462(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -286,6 +300,7 @@ static napi_value TestArkUICapi_463(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -345,6 +360,7 @@ static napi_value TestArkUICapi_464(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -404,6 +420,7 @@ static napi_value TestArkUICapi_465(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -463,6 +480,7 @@ static napi_value TestArkUICapi_466(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -520,6 +538,7 @@ static napi_value TestArkUICapi_467(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -577,6 +596,7 @@ static napi_value TestArkUICapi_468(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -634,6 +654,7 @@ static napi_value TestArkUICapi_469(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -691,6 +712,7 @@ static napi_value TestArkUICapi_470(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -748,6 +770,7 @@ static napi_value TestArkUICapi_471(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -805,6 +828,7 @@ static napi_value TestArkUICapi_472(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -862,6 +886,7 @@ static napi_value TestArkUICapi_473(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -919,6 +944,7 @@ static napi_value TestArkUICapi_474(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -976,6 +1002,7 @@ static napi_value TestArkUICapi_475(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -1033,6 +1060,7 @@ static napi_value TestArkUICapi_476(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -1090,6 +1118,7 @@ static napi_value TestArkUICapi_477(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -1147,6 +1176,7 @@ static napi_value TestArkUICapi_478(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -1204,6 +1234,7 @@ static napi_value TestArkUICapi_479(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -1261,6 +1292,7 @@ static napi_value TestArkUICapi_480(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -1318,6 +1350,7 @@ static napi_value TestArkUICapi_481(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -1376,6 +1409,7 @@ static napi_value TestArkUICapi_482(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -1433,6 +1467,7 @@ static napi_value TestArkUICapi_483(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -1490,6 +1525,7 @@ static napi_value TestArkUICapi_484(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -1547,6 +1583,7 @@ static napi_value TestArkUICapi_485(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -1604,6 +1641,7 @@ static napi_value TestArkUICapi_486(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -1661,6 +1699,7 @@ static napi_value TestArkUICapi_487(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -1720,6 +1759,7 @@ static napi_value TestArkUICapi_488(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -1779,6 +1819,7 @@ static napi_value TestArkUICapi_489(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -1838,6 +1879,7 @@ static napi_value TestArkUICapi_490(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -1897,6 +1939,7 @@ static napi_value TestArkUICapi_491(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -1956,6 +1999,7 @@ static napi_value TestArkUICapi_492(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -2015,6 +2059,7 @@ static napi_value TestArkUICapi_493(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -2074,6 +2119,7 @@ static napi_value TestArkUICapi_494(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -2125,6 +2171,7 @@ static napi_value TestArkUICapi_494(napi_env env, napi_callback_info info)
 namespace {
 napi_value XtsRunPostClonedEventWithStrategyNullNode(napi_env env)
 {
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *baseEvt = nullptr;
     {
         napi_value e = ::ArkUICapiTest::EqFailed(
@@ -2198,6 +2245,7 @@ static napi_value TestArkUICapi_496(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *uiEvent = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -2228,6 +2276,7 @@ static napi_value TestArkUICapi_497(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *uiEvent = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -2258,6 +2307,7 @@ static napi_value TestArkUICapi_498(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *uiEvent = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -2288,6 +2338,7 @@ static napi_value TestArkUICapi_499(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *uiEvent = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(
@@ -2318,6 +2369,7 @@ static napi_value TestArkUICapi_500(napi_env env, napi_callback_info info)
 {
     (void)env;
     (void)info;
+    EnsureArkUiUiInputEventModuleLoaded();
     ArkUI_UIInputEvent *uiEvent = nullptr;
     {
         napi_value napiAssertErr = ::ArkUICapiTest::EqFailed(

@@ -92,6 +92,7 @@ import onGetIrregular9 from "./Grid_iiregular/onGetIrregular9.test";
 import ScrollToIndexForGridJsunit01 from './ScrollToIndex/ScrollToIndexForGridJsunit01.test';
 import ScrollToIndexForGridJsunit02 from './ScrollToIndex/ScrollToIndexForGridJsunit02.test';
 import ScrollToIndexForGridJsunit03 from './ScrollToIndex/ScrollToIndexForGridJsunit03.test';
+import GridScrollBarWidth from './GridScrollBarWidth.test.ets';
 import GridIndexTest from "./GridIndex.test"
 import GridCaseJsunit from './GridCaseJsunit.test';
 import GridItem2Jsunit from './GridItem2.test';
@@ -101,6 +102,7 @@ import GridTestPage from './GridTestPage.test'
 import grid3Jsunit from './Grid3Jsunit.test.ets';
 
 export default function testsuite() {
+  GridScrollBarWidth()
   GridMaxCountJsunit()
   GridItemOnSelectJsunit()
   GridAddJsunit()

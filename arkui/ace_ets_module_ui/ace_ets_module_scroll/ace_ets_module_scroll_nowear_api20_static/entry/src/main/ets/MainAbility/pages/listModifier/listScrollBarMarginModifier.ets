@@ -151,7 +151,7 @@ import { BusinessError } from '@kit.BasicServicesKit'
 
 // 定义不同的 ScrollBarMargin Modifier 类
 @Observed
-class ListScrollBarMarginNormalModifier implements AttributeModifier<ListAttribute> {
+export class ListScrollBarMarginNormalModifier implements AttributeModifier<ListAttribute> {
   private margin: ScrollBarMargin;
 
   constructor(margin: ScrollBarMargin) {
@@ -163,13 +163,13 @@ class ListScrollBarMarginNormalModifier implements AttributeModifier<ListAttribu
   }
 }
 @Observed
-class ListScrollBarMarginEmptyModifier implements AttributeModifier<ListAttribute> {
+export class ListScrollBarMarginEmptyModifier implements AttributeModifier<ListAttribute> {
   applyNormalAttribute(instance: ListAttribute): void {
     instance.scrollBarMargin({} as ScrollBarMargin);
   }
 }
 @Observed
-class ListScrollBarMarginUndefinedModifier implements AttributeModifier<ListAttribute> {
+export class ListScrollBarMarginUndefinedModifier implements AttributeModifier<ListAttribute> {
   applyNormalAttribute(instance: ListAttribute): void {
     instance.scrollBarMargin(undefined);
   }

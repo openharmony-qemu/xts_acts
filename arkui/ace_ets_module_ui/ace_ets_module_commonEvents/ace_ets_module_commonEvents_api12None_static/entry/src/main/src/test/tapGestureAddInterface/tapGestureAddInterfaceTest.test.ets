@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -79,7 +79,7 @@ it('tapGestureAddInterfaceTest_static_0010', Level.LEVEL0, async (done: () => vo
       console.info('tapGestureAddInterfaceTest_0010 column1 width = ' + width + ",height = " + height);
       let driver: Driver = Driver.create();
       let button: Component | null = await driver.findComponent(ON.id('interfaceTestKey'));
-      await driver.doubleClick(Math.round(column1.left + uiContext!.vp2px(10)) as Int,Math.round(column1.top + uiContext!.vp2px(10)) as Int);
+      await driver.doubleClick(Math.round(column1.left + uiContext!.vp2px(10)).toInt(),Math.round(column1.top + uiContext!.vp2px(10)).toInt());
       await CommonFunc.sleep(3000)
       let tt1 = inspector.getInspectorByKey('valueKey');
       let obj = JSON.parseJsonElement(tt1);
@@ -90,7 +90,7 @@ it('tapGestureAddInterfaceTest_static_0010', Level.LEVEL0, async (done: () => vo
       expect(Math.abs(dataE.getDouble('localY') - 10) <= 1).assertTrue();
 
       // click the distanceThreshold range
-      await driver.doubleClick(Math.round(column1.left + width/2 - uiContext!.vp2px(10)) as Int,Math.round(column1.top + uiContext!.vp2px(10)) as Int);
+      await driver.doubleClick(Math.round(column1.left + width/2 - uiContext!.vp2px(10)).toInt(),Math.round(column1.top + uiContext!.vp2px(10)).toInt());
       await CommonFunc.sleep(4000)
       let tt2 = inspector.getInspectorByKey('valueKey');
       let obj2 = JSON.parseJsonElement(tt2);
@@ -123,7 +123,7 @@ it('tapGestureAddInterfaceTest_static_0020', Level.LEVEL0, async (done: () => vo
       console.info('tapGestureAddInterfaceTest_0010 column1 width = ' + width + ",height = " + height);
       let driver: Driver = Driver.create();
       let button: Component | null = await driver.findComponent(ON.id('interfaceTestKey'));
-      await driver.doubleClick(Math.round(column1.left + uiContext!.vp2px(10)) as Int,Math.round(column1.top + uiContext!.vp2px(10)) as Int);
+      await driver.doubleClick(Math.round(column1.left + uiContext!.vp2px(10)).toInt(),Math.round(column1.top + uiContext!.vp2px(10)).toInt());
       await CommonFunc.sleep(3000)
       let tt1 = inspector.getInspectorByKey('valueKey');
       let obj = JSON.parseJsonElement(tt1);
@@ -134,7 +134,7 @@ it('tapGestureAddInterfaceTest_static_0020', Level.LEVEL0, async (done: () => vo
       expect(Math.abs(dataE.getDouble('localY') - 10) <= 1).assertTrue();
 
       // swipe the distanceThreshold range
-      await driver.swipe(Math.round(column1.left + uiContext!.vp2px(10)) as Int,Math.round(column1.top + uiContext!.vp2px(10)) as Int,Math.round(column1.left + uiContext!.vp2px(80)) as Int, Math.round(column1.top + uiContext!.vp2px(10)) as Int);
+      await driver.swipe(Math.round(column1.left + uiContext!.vp2px(10)).toInt(),Math.round(column1.top + uiContext!.vp2px(10)).toInt(),Math.round(column1.left + uiContext!.vp2px(80)).toInt(), Math.round(column1.top + uiContext!.vp2px(10)).toInt());
       await CommonFunc.sleep(3000)
       let tt2 = inspector.getInspectorByKey('valueKey');
       let obj2 = JSON.parseJsonElement(tt2);
@@ -145,7 +145,7 @@ it('tapGestureAddInterfaceTest_static_0020', Level.LEVEL0, async (done: () => vo
       expect(Math.abs(dataE2.getDouble('localY') - 10) <= 1).assertTrue();
 
        // swipe the distanceThreshold range
-      await driver.swipe(Math.round(column1.left + uiContext!.vp2px(10)) as Int,Math.round(column1.top + uiContext!.vp2px(10)) as Int,Math.round(column1.left + uiContext!.vp2px(130)) as Int, Math.round(column1.top + uiContext!.vp2px(10)) as Int);
+      await driver.swipe(Math.round(column1.left + uiContext!.vp2px(10)).toInt(),Math.round(column1.top + uiContext!.vp2px(10)).toInt(),Math.round(column1.left + uiContext!.vp2px(130)).toInt(), Math.round(column1.top + uiContext!.vp2px(10)).toInt());
       await CommonFunc.sleep(3000)
       let tt3 = inspector.getInspectorByKey('valueKey');
       let obj3 = JSON.parseJsonElement(tt3);
@@ -180,7 +180,7 @@ it('tapGestureAddInterfaceTest_static_0030', Level.LEVEL0, async (done: () => vo
       console.info('tapGestureAddInterfaceTest_0010 column1 width = ' + width + ",height = " + height);
       let driver: Driver = Driver.create();
       let button: Component | null = await driver.findComponent(ON.id('interfaceTestKey'));
-      await driver.click(Math.round(column1.left + uiContext!.vp2px(10)) as Int,Math.round(column1.top + uiContext!.vp2px(10)) as Int);
+      await driver.click(Math.round(column1.left + uiContext!.vp2px(10)).toInt(),Math.round(column1.top + uiContext!.vp2px(10)).toInt());
       await CommonFunc.sleep(3000)
       let tt1 = inspector.getInspectorByKey('valueKey');
       let obj = JSON.parseJsonElement(tt1);
@@ -191,7 +191,7 @@ it('tapGestureAddInterfaceTest_static_0030', Level.LEVEL0, async (done: () => vo
       expect(Math.abs(dataE.getDouble('localY') - 10) <= 1).assertTrue();
 
       // click the distanceThreshold range
-      await driver.click(Math.round(column1.left + width/2 - uiContext!.vp2px(10)) as Int,Math.round(column1.top + uiContext!.vp2px(10)) as Int);
+      await driver.click(Math.round(column1.left + width/2 - uiContext!.vp2px(10)).toInt(),Math.round(column1.top + uiContext!.vp2px(10)).toInt());
       await CommonFunc.sleep(4000)
       let tt2 = inspector.getInspectorByKey('valueKey');
       let obj2 = JSON.parseJsonElement(tt2);
@@ -224,7 +224,7 @@ it('tapGestureAddInterfaceTest_static_0040', Level.LEVEL0, async (done: () => vo
       console.info('tapGestureAddInterfaceTest_0010 column1 width = ' + width + ",height = " + height);
       let driver: Driver = Driver.create();
       let button: Component | null = await driver.findComponent(ON.id('interfaceTestKey'));
-      await driver.click(Math.round(column1.left + uiContext!.vp2px(10)) as Int,Math.round(column1.top + uiContext!.vp2px(10)) as Int);
+      await driver.click(Math.round(column1.left + uiContext!.vp2px(10)).toInt(),Math.round(column1.top + uiContext!.vp2px(10)).toInt());
       await CommonFunc.sleep(3000)
       let tt1 = inspector.getInspectorByKey('valueKey');
       let obj = JSON.parseJsonElement(tt1);
@@ -235,7 +235,7 @@ it('tapGestureAddInterfaceTest_static_0040', Level.LEVEL0, async (done: () => vo
       expect(Math.abs(dataE.getDouble('localY') - 10) <= 1).assertTrue();
 
       // swipe the distanceThreshold range
-      await driver.swipe(Math.round(column1.left + uiContext!.vp2px(10)) as Int,Math.round(column1.top + uiContext!.vp2px(10)) as Int,Math.round(column1.left + uiContext!.vp2px(80)) as Int, Math.round(column1.top + uiContext!.vp2px(10)) as Int);
+      await driver.swipe(Math.round(column1.left + uiContext!.vp2px(10)).toInt(),Math.round(column1.top + uiContext!.vp2px(10)).toInt(),Math.round(column1.left + uiContext!.vp2px(80)).toInt(), Math.round(column1.top + uiContext!.vp2px(10)).toInt());
       await CommonFunc.sleep(3000)
       let tt2 = inspector.getInspectorByKey('valueKey');
       let obj2 = JSON.parseJsonElement(tt2);
@@ -246,7 +246,7 @@ it('tapGestureAddInterfaceTest_static_0040', Level.LEVEL0, async (done: () => vo
       expect(Math.abs(dataE2.getDouble('localY') - 10) <= 1).assertTrue();
 
        // swipe out of the distanceThreshold range
-      await driver.swipe(Math.round(column1.left + uiContext!.vp2px(10)) as Int,Math.round(column1.top + uiContext!.vp2px(10)) as Int,Math.round(column1.left + uiContext!.vp2px(130)) as Int, Math.round(column1.top + uiContext!.vp2px(10)) as Int);
+      await driver.swipe(Math.round(column1.left + uiContext!.vp2px(10)).toInt(),Math.round(column1.top + uiContext!.vp2px(10)).toInt(),Math.round(column1.left + uiContext!.vp2px(130)).toInt(), Math.round(column1.top + uiContext!.vp2px(10)).toInt());
       await CommonFunc.sleep(3000)
       let tt3 = inspector.getInspectorByKey('valueKey');
       let obj3 = JSON.parseJsonElement(tt3);

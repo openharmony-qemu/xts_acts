@@ -52,6 +52,7 @@ export default function uitestComponentErrorTest() {
       try {
         const driver = Driver.create();
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+        await sleep(waitUiReadyMs * 2);
         let button = await driver.findComponent(ON.type('Scroll'));
         driver.delayMs(waitUiReadyMs * 3);
         await sleep(100);
@@ -80,7 +81,7 @@ export default function uitestComponentErrorTest() {
       try {
         const driver = Driver.create();
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-        await driver.delayMs(waitUiReadyMs);
+        await sleep(waitUiReadyMs * 2);
         let scrollBar = await driver.findComponent(ON.type('Scroll'));
         await stopApplication('com.uitestScene.acts');
         await driver.delayMs(waitUiReadyMs * 2);

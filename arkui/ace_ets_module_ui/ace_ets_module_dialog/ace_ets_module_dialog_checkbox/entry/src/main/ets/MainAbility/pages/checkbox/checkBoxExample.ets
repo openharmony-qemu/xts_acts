@@ -19,7 +19,7 @@ struct CheckboxExample {
   @State  select:boolean = true;
   @State  selectedColor:string = "#ed6f21"
   messageManager:MessageManager = new MessageManager()
-  
+
   onPageShow() {
     console.info('Checkbox onPageShow')
     globalThis.value = {
@@ -28,35 +28,41 @@ struct CheckboxExample {
     let callback: Callback = (message: ESObject) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'select') {
-          this.select = message.value
+        this.select = message.value
       }
       if (message.name == 'selectedColor') {
-          this.selectedColor = message.value
+        this.selectedColor = message.value
       }
-      
+
     }
     this.messageManager.registerCallback(callback)
 
   }
 
   build() {
-    Row() {
-      Checkbox({name: 'checkbox1',  group: 'checkboxGroup'})
-        .select(this.select)
-        .selectedColor(this.selectedColor)
-        .onChange((value: boolean) => {
-          if (value) {
+    Column() {
+      Row() {
+        Checkbox({name: 'checkbox1',  group: 'checkboxGroup'})
+          .select(this.select)
+          .selectedColor(this.selectedColor)
+          .onChange((value: boolean) => {
+            if (value) {
               this.selectedColor = "#ffff21"
-          } else {
-             this.selectedColor = "#000000"
-          }
-        }).id('chek1')
-      Checkbox({name: 'checkbox2',  group: 'checkboxGroup'})
-        .select(false)
-        .selectedColor(0x39a2db)
-        .onChange((value: boolean) => {
-          console.info('Checkbox2 change is'+ value)
-        }).key("check2")
+            } else {
+              this.selectedColor = "#000000"
+            }
+          }).id('chek1')
+        Checkbox({name: 'checkbox2',  group: 'checkboxGroup'})
+          .select(false)
+          .selectedColor(0x39a2db)
+          .onChange((value: boolean) => {
+            console.info('Checkbox2 change is'+ value)
+          }).key("check2")
+      }
     }
+    .width('100%')
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+    .alignItems(HorizontalAlign.Center)
   }
 }

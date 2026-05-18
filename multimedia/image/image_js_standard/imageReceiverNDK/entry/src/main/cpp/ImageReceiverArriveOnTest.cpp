@@ -585,7 +585,15 @@ bool NDKCameraPhotoOutput(char *str, int32_t desiredFormat, OH_ImageReceiverNati
         return false;
     }
     OH_LOG_INFO(LOG_APP, "SurfaceID for PhotoOutput: %{public}s", surfaceID_c.get());
-    const Camera_Profile *previewProfile = cameraOutputCapability->previewProfiles[0];
+    const Camera_Profile *previewProfile = nullptr;
+    for (uint32_t i = 0; i < cameraOutputCapability->previewProfilesSize; i++) {
+        if (cameraOutputCapability->previewProfiles[i]->size.width == photoProfile->size.width &&
+            cameraOutputCapability->previewProfiles[i]->size.height == photoProfile->size.height) {
+            previewProfile = cameraOutputCapability->previewProfiles[i];
+            break;
+        }
+    }
+    OH_LOG_INFO(LOG_APP, "previewProfile is: %{public}s", previewProfile);
     Camera_PreviewOutput *previewOutput = nullptr;
     if (!CreatePreviewOutput(cameraManager, previewProfile, surfaceID_c.get(), previewOutput)) {
         return false;

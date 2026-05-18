@@ -205,7 +205,7 @@ static napi_value TestCommonAttrsCustomShadow009(napi_env env, napi_callback_inf
     nodeAPI->setAttribute(column, NODE_CUSTOM_SHADOW, &valueItem);
     auto ret = nodeAPI->resetAttribute(column, NODE_CUSTOM_SHADOW);
     ASSERT_EQ(ret, SUCCESS);
-    ASSERT_EQ(nodeAPI->getAttribute(column, NODE_CUSTOM_SHADOW)->value[PARAM_0].f32, PARAM_0);
+    ASSERT_EQ(nodeAPI->getAttribute(column, NODE_CUSTOM_SHADOW)->value[PARAM_0].f32, PARAM_NEGATIVE_1);
     NAPI_END;
 }
 } // namespace ArkUICapiTest

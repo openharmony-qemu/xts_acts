@@ -52,8 +52,8 @@ export struct WaterFlowView {
 
   getItemSizeArray() {
     for (let i = 0; i < 100; i++) {
-      this.itemWidthArray.push(this.getSize() as int)
-      this.itemHeightArray.push(this.getSize() as int)
+      this.itemWidthArray.push(this.getSize().toInt())
+      this.itemHeightArray.push(this.getSize().toInt())
     }
   }
 
@@ -84,7 +84,7 @@ export struct WaterFlowView {
         }
         .width(this.itemWidthArray[item])
         .height(this.itemHeightArray[item])
-        .backgroundColor((this.colors[item % 5] as Int))
+        .backgroundColor((this.colors[item % 5].toInt()))
       }, (item: int) => String(item))
     }
     .columnsTemplate('1fr 1fr 1fr 1fr')

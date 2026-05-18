@@ -103,7 +103,7 @@ export default function imagePicturePack() {
       return bufferRead;
     }
 
-    const getImageSource = (fileName: string, type?: string) => {
+    const getImageSource = async (fileName: string, type?: string) => {
       let imageSourceApi: image.ImageSource | undefined;
       if (type === "buffer") {
         const buffer = getBuffer(fileName);
@@ -114,7 +114,7 @@ export default function imagePicturePack() {
       } else if (type === "rawfile") {
         const resourceMgr: resourceManager.ResourceManager = testContext!.resourceManager
         let rawFileDescriptor: resourceManager.RawFileDescriptor | undefined;
-        waitForCompletion(async () => {rawFileDescriptor = await resourceMgr.getRawFd(fileName);})
+        rawFileDescriptor = await resourceMgr.getRawFd(fileName);
         imageSourceApi = image.createImageSource(rawFileDescriptor as resourceManager.RawFileDescriptor);
       } else if (type === "incremental") {
         const picBuffer = getBuffer(fileName);
@@ -139,73 +139,73 @@ export default function imagePicturePack() {
       return auxiliaryPicture;
     }
 
-    const createPictureImageSourcePic = (fileName: string, type: string, auxType?: image.AuxiliaryPictureType) => {
-      let imageSourceApi: image.ImageSource = getImageSource(fileName, type);
+    const createPictureImageSourcePic = async (fileName: string, type: string, auxType?: image.AuxiliaryPictureType) => {
+      let imageSourceApi: image.ImageSource = await getImageSource(fileName, type);
       let picture: image.Picture | undefined;
       if (auxType) {
         let decodingOptForPicture: image.DecodingOptionsForPicture;
         decodingOptForPicture = {desiredAuxiliaryPictures: [auxType]};
-        waitForCompletion(async () => {picture = await imageSourceApi.createPicture(decodingOptForPicture);})
+        picture = await imageSourceApi.createPicture(decodingOptForPicture);
       } else {
-        waitForCompletion(async () => {picture = await imageSourceApi.createPicture();})
+        picture = await imageSourceApi.createPicture();
       }
-      waitForCompletion(async () => {await imageSourceApi.release();})
+      await imageSourceApi.release();
       expect(picture != undefined).assertTrue();
       let result: image.Picture = picture as image.Picture;
       return result;
     }
 
-    const createPictureOnlyMainPic = (fileName: string, type: string, pixelFormat?: image.PixelMapFormat) => {
-      let imageSourceApi: image.ImageSource = getImageSource(fileName, type);
+    const createPictureOnlyMainPic = async (fileName: string, type: string, pixelFormat?: image.PixelMapFormat) => {
+      let imageSourceApi: image.ImageSource = await getImageSource(fileName, type);
       let pixelMap: image.PixelMap | undefined;
       if (pixelFormat != undefined) {
         let DecodingOptions: image.DecodingOptions = {
           desiredPixelFormat: pixelFormat
         };
-        waitForCompletion(async () => {pixelMap = await imageSourceApi.createPixelMap(DecodingOptions);})
+        pixelMap = await imageSourceApi.createPixelMap(DecodingOptions);
       } else {
-        waitForCompletion(async () => {pixelMap = await imageSourceApi.createPixelMap();})
+        pixelMap = await imageSourceApi.createPixelMap();
       }
       expect(pixelMap != undefined).assertTrue();
       let picture: image.Picture | undefined = image.createPicture(pixelMap as image.PixelMap);
       expect(picture != undefined).assertTrue();
       let result: image.Picture = picture as image.Picture;
-      waitForCompletion(async () => {await imageSourceApi.release();})
+      await imageSourceApi.release();
       if (pixelMap != undefined) {
-        waitForCompletion(async () => {await pixelMap!.release();})
+        await pixelMap!.release();
       }
       return result;
     }
 
-    const createPictureWithGainMapAuxPic = (fileName: string, type: string) => {
-      let picture: image.Picture = createPictureOnlyMainPic(fileName, type);
+    const createPictureWithGainMapAuxPic = async (fileName: string, type: string) => {
+      let picture: image.Picture = await createPictureOnlyMainPic(fileName, type);
       let size: image.Size = {height: 960, width: 720};
       let gainMapAuxiliaryPicture = createAuxPic(GAINMAP, "GainMap.dat", size);
       picture.setAuxiliaryPicture(GAINMAP, gainMapAuxiliaryPicture);
       return picture;
     }
 
-    const createPictureWithDepthMapAuxPic = (fileName: string, type: string) => {
-      let picture: image.Picture = createPictureOnlyMainPic(fileName, type);
-      let pictureAux = createPictureImageSourcePic("AllAuxiliaryPictures.jpg", "fd", DEPTH_MAP);
+    const createPictureWithDepthMapAuxPic = async (fileName: string, type: string) => {
+      let picture: image.Picture = await createPictureOnlyMainPic(fileName, type);
+      let pictureAux = await createPictureImageSourcePic("AllAuxiliaryPictures.jpg", "fd", DEPTH_MAP);
       let depthMapAuxiliaryPicture = pictureAux.getAuxiliaryPicture(DEPTH_MAP);
       expect(depthMapAuxiliaryPicture != null).assertTrue();
       picture.setAuxiliaryPicture(DEPTH_MAP, depthMapAuxiliaryPicture as image.AuxiliaryPicture);
       return picture;
     }
 
-    const createPictureWithUnReFocusMapAuxPic = (fileName: string, type: string) => {
-      let picture: image.Picture = createPictureOnlyMainPic(fileName, type);
-      let pictureAux = createPictureImageSourcePic("AllAuxiliaryPictures.jpg", "fd", UNREFOCUS_MAP);
+    const createPictureWithUnReFocusMapAuxPic = async (fileName: string, type: string) => {
+      let picture: image.Picture = await createPictureOnlyMainPic(fileName, type);
+      let pictureAux = await createPictureImageSourcePic("AllAuxiliaryPictures.jpg", "fd", UNREFOCUS_MAP);
       let unrefocusMapAuxiliaryPicture = pictureAux.getAuxiliaryPicture(UNREFOCUS_MAP);
       expect(unrefocusMapAuxiliaryPicture != null).assertTrue();
       picture.setAuxiliaryPicture(UNREFOCUS_MAP, unrefocusMapAuxiliaryPicture as image.AuxiliaryPicture);
       return picture;
     }
 
-    const createPictureWithLinearMapAuxPic = (fileName: string, type: string) => {
-      let picture: image.Picture = createPictureOnlyMainPic(fileName, type);
-      let pictureAux = createPictureImageSourcePic("AllAuxiliaryPictures.jpg", "fd", LINEAR_MAP);
+    const createPictureWithLinearMapAuxPic = async (fileName: string, type: string) => {
+      let picture: image.Picture = await createPictureOnlyMainPic(fileName, type);
+      let pictureAux = await createPictureImageSourcePic("AllAuxiliaryPictures.jpg", "fd", LINEAR_MAP);
       if (pictureAux == undefined) {
         return undefined;
       }
@@ -215,18 +215,18 @@ export default function imagePicturePack() {
       return picture;
     }
 
-    const createPictureWithFragmentMapAuxPic = (fileName: string, type: string) => {
-      let picture: image.Picture = createPictureOnlyMainPic(fileName, type);
-      let pictureAux = createPictureImageSourcePic("JpegFragmentMap.jpg", "fd", FRAGMENT_MAP);
+    const createPictureWithFragmentMapAuxPic = async (fileName: string, type: string) => {
+      let picture: image.Picture = await createPictureOnlyMainPic(fileName, type);
+      let pictureAux = await createPictureImageSourcePic("JpegFragmentMap.jpg", "fd", FRAGMENT_MAP);
       let fragmentMapAuxiliaryPicture = pictureAux.getAuxiliaryPicture(FRAGMENT_MAP);
       expect(fragmentMapAuxiliaryPicture != null).assertTrue();
       picture.setAuxiliaryPicture(FRAGMENT_MAP, fragmentMapAuxiliaryPicture as image.AuxiliaryPicture);
       return picture;
     }
 
-    const createPictureWithFragmentMapAuxPicHeif = (fileName: string, type: string) => {
-      let picture: image.Picture = createPictureOnlyMainPic(fileName, type);
-      let pictureAux = createPictureImageSourcePic("all_auxtype.heic", "fd", FRAGMENT_MAP);
+    const createPictureWithFragmentMapAuxPicHeif = async (fileName: string, type: string) => {
+      let picture: image.Picture = await createPictureOnlyMainPic(fileName, type);
+      let pictureAux = await createPictureImageSourcePic("all_auxtype.heic", "fd", FRAGMENT_MAP);
       let fragmentMapAuxiliaryPicture = pictureAux.getAuxiliaryPicture(FRAGMENT_MAP);
       expect(fragmentMapAuxiliaryPicture != null).assertTrue();
       picture.setAuxiliaryPicture(FRAGMENT_MAP, fragmentMapAuxiliaryPicture as image.AuxiliaryPicture);
@@ -239,7 +239,7 @@ export default function imagePicturePack() {
       return file.fd as int;
     }
 
-    const checkPackResult = (
+    const checkPackResult = async (
       logger: Logger,
       imageSource: image.ImageSource | undefined,
       flag: string,
@@ -252,26 +252,26 @@ export default function imagePicturePack() {
       }
       let decodeProperties: Record<string, string | null> | undefined;
       let picture: image.Picture | undefined;
-      waitForCompletion(async () => {picture = await imageSource!.createPicture();})
+      picture = await imageSource!.createPicture();
       if (picture == undefined) {
         return false;
       }
       let imageInfo: image.ImageInfo | undefined;
-      waitForCompletion(async () => {imageInfo = await imageSource!.getImageInfo();})
+      imageInfo = await imageSource!.getImageInfo();
       if (imageInfo == undefined) {
         return false;
       }
 
       if (flag == "picture") {
         let metadata: image.Metadata | undefined;
-        waitForCompletion(async () => {await (picture as image.Picture).getMetadata(EXIF_METADATA);})
+        await (picture as image.Picture).getMetadata(EXIF_METADATA);
         if (packOpts.desiredDynamicRange == image.PackingDynamicRange.AUTO && packOpts.needsPackProperties == true && metadata != undefined) {
-          waitForCompletion(async () => {decodeProperties = await metadata!.getAllProperties();})
+          decodeProperties = await metadata!.getAllProperties();
           picture!.release();
-          waitForCompletion(async () => {await imageSource!.release();})
+          await imageSource!.release();
           return imageInfo!.mimeType == packOpts.format && imageInfo!.isHdr == false && JSON.stringify(properties) == JSON.stringify(decodeProperties);
         } else {
-          waitForCompletion(async () => {await imageSource!.release();})
+          await imageSource!.release();
           picture!.release();
           return imageInfo!.mimeType == packOpts.format && imageInfo!.isHdr == false && metadata == undefined;
         }
@@ -303,20 +303,20 @@ export default function imagePicturePack() {
           if (type == FRAGMENT_MAP && (packOpts.desiredDynamicRange == image.PackingDynamicRange.AUTO && packOpts.needsPackProperties == true)) {
             let decodeProperties: Record<string, string | null> | undefined;
             let metadata: image.Metadata | undefined;
-            waitForCompletion(async () => {metadata = await auxPic.getMetadata(FRAGMENT_METADATA);})
+            metadata = await auxPic.getMetadata(FRAGMENT_METADATA);
             if (metadata != undefined) {
-              waitForCompletion(async () => {decodeProperties = await (metadata as image.Metadata).getAllProperties();})
+              decodeProperties = await (metadata as image.Metadata).getAllProperties();
             }
             ret = ret && (JSON.stringify(properties) == JSON.stringify(decodeProperties));
           }
         }
-        waitForCompletion(async () => {await imageSource!.release();})
+        await imageSource!.release();
         picture!.release();
         return ret;
       }
     }
 
-    const testPackPicture = (
+    const testPackPicture = async (
       done: () => void,
       logger: Logger,
       packOpts: image.PackingOption,
@@ -338,15 +338,15 @@ export default function imagePicturePack() {
         let auxPicGet = picture.getAuxiliaryPicture(type);
           expect(auxPicGet != null).assertTrue();
           let auxPic = auxPicGet as image.AuxiliaryPicture;
-          waitForCompletion(async () => {metadata = await auxPic.getMetadata(FRAGMENT_METADATA);})
+          metadata = await auxPic.getMetadata(FRAGMENT_METADATA);
           if (metadata != undefined) {
             logger.log(`getMetadata success: ` + metadata);
-            waitForCompletion(async () => {properties = await metadata!.getAllProperties();})
+            properties = await metadata!.getAllProperties();
           }
         } else {
-          waitForCompletion(async () => {metadata = await picture!.getMetadata(EXIF_METADATA);})
+          metadata = await picture!.getMetadata(EXIF_METADATA);
           if (metadata != undefined) {
-            waitForCompletion(async () => {properties = await metadata!.getAllProperties();})
+            properties = await metadata!.getAllProperties();
           }
         }
 
@@ -354,35 +354,35 @@ export default function imagePicturePack() {
         if (packType === "packing") {
           try {
             let data: ArrayBuffer | undefined;
-            waitForCompletion(async () => {data = await imagePackerApi.packing(picture!, packOpts);})
+            data = await imagePackerApi.packing(picture!, packOpts);
             let imageSource = image.createImageSource(data!);
-            let ret = checkPackResult(logger, imageSource, flag, packOpts, properties, type);
+            let ret = await checkPackResult(logger, imageSource, flag, packOpts, properties, type);
             expect(ret).assertTrue();
             picture.release();
-            waitForCompletion(async () => {await sleep(5000);})
+            await sleep(5000);
             done();
           } catch(error) {
             logger.log(`packing picture to buffer failed: ${error}, error code: ${JSON.stringify(error.code)}`);
             expect(false).assertTrue();
             picture.release();
-            waitForCompletion(async () => {await sleep(5000);})
+            await sleep(5000);
             done();
           }
         } else {
           try {
-            waitForCompletion(async () => {await imagePackerApi.packToFile(picture!, fdNum, packOpts);})
+            await imagePackerApi.packToFile(picture!, fdNum, packOpts);
             let imageSource = image.createImageSource(fdNum);
-            let ret = checkPackResult(logger, imageSource, flag, packOpts, properties, type);
-            waitForCompletion(async () => {await fs.close(fdNum);})
+            let ret = await checkPackResult(logger, imageSource, flag, packOpts, properties, type);
+            await fs.close(fdNum);
             expect(ret).assertTrue();
             picture.release();
-            waitForCompletion(async () => {await sleep(5000);})
+            await sleep(5000);
             done();
           } catch(error) {
             logger.log(`packToFile picture failed: ${error}, error code: ${JSON.stringify(error.code)}`);
             expect(false).assertTrue();
             picture.release();
-            waitForCompletion(async () => {await sleep(5000);})
+            await sleep(5000);
             done();
           };
         }
@@ -404,7 +404,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let picture = createPictureWithGainMapAuxPic("testExif.jpg", "fd");
+        let picture = await createPictureWithGainMapAuxPic("testExif.jpg", "fd");
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98,
@@ -412,7 +412,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.SDR,
           needsPackProperties: false
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, GAINMAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, GAINMAP);
         await sleep(500);
       }
     })
@@ -432,7 +432,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let picture = createPictureImageSourcePic("JPEGISOSingle.jpg", "fd", GAINMAP);
+        let picture = await createPictureImageSourcePic("JPEGISOSingle.jpg", "fd", GAINMAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98,
@@ -440,7 +440,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.AUTO,
           needsPackProperties: true
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, GAINMAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, GAINMAP);
         await sleep(500);
       }
     })
@@ -461,7 +461,7 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_gainmap_02.jpg");
-        let picture = createPictureWithGainMapAuxPic("testExif.jpg", "fd");
+        let picture = await createPictureWithGainMapAuxPic("testExif.jpg", "fd");
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98,
@@ -469,7 +469,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.SDR,
           needsPackProperties: false
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, GAINMAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, GAINMAP);
         await sleep(500);
       }
     })
@@ -490,7 +490,7 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_gainmap_03.jpg");
-        let picture = createPictureImageSourcePic("JPEGISOSingle.jpg", "fd", GAINMAP);
+        let picture = await createPictureImageSourcePic("JPEGISOSingle.jpg", "fd", GAINMAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98,
@@ -498,7 +498,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.AUTO,
           needsPackProperties: true
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, GAINMAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, GAINMAP);
         await sleep(500);
       }
     })
@@ -518,7 +518,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let picture = createPictureWithDepthMapAuxPic("testExif.jpg", "fd");
+        let picture = await createPictureWithDepthMapAuxPic("testExif.jpg", "fd");
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98,
@@ -526,7 +526,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.AUTO,
           needsPackProperties: true
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, DEPTH_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, DEPTH_MAP);
         await sleep(500);
       }
     })
@@ -546,7 +546,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let picture = createPictureWithDepthMapAuxPic("testExif.jpg", "fd");
+        let picture = await createPictureWithDepthMapAuxPic("testExif.jpg", "fd");
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98,
@@ -554,7 +554,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.SDR,
           needsPackProperties: false
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, DEPTH_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, DEPTH_MAP);
         await sleep(500);
       }
     })
@@ -574,7 +574,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let picture = createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", DEPTH_MAP);
+        let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", DEPTH_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98,
@@ -582,7 +582,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.AUTO,
           needsPackProperties: true
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, DEPTH_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, DEPTH_MAP);
         await sleep(500);
       }
     })
@@ -602,12 +602,12 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let picture = createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", DEPTH_MAP);
+        let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", DEPTH_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, DEPTH_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, DEPTH_MAP);
         await sleep(500);
       }
     })
@@ -627,7 +627,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let picture = createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", DEPTH_MAP);
+        let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", DEPTH_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 100,
@@ -635,7 +635,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.SDR,
           needsPackProperties: false
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, DEPTH_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, DEPTH_MAP);
         await sleep(500);
       }
     })
@@ -656,7 +656,7 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_depthMap_01.jpg");
-        let picture = createPictureWithDepthMapAuxPic("testExif.jpg", "fd");
+        let picture = await createPictureWithDepthMapAuxPic("testExif.jpg", "fd");
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98,
@@ -664,7 +664,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.AUTO,
           needsPackProperties: true
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, DEPTH_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, DEPTH_MAP);
         await sleep(500);
       }
     })
@@ -685,7 +685,7 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_depthMap_02.jpg");
-        let picture = createPictureWithDepthMapAuxPic("testExif.jpg", "fd");
+        let picture = await createPictureWithDepthMapAuxPic("testExif.jpg", "fd");
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98,
@@ -693,7 +693,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.SDR,
           needsPackProperties: false
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, DEPTH_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, DEPTH_MAP);
         await sleep(500);
       }
     })
@@ -714,7 +714,7 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_depthMap_03.jpg");
-        let picture = createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", DEPTH_MAP);
+        let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", DEPTH_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98,
@@ -722,7 +722,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.AUTO,
           needsPackProperties: true
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, DEPTH_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, DEPTH_MAP);
         await sleep(500);
       }
     })
@@ -743,12 +743,12 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_depthMap_05.jpg");
-        let picture = createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", DEPTH_MAP);
+        let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", DEPTH_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, DEPTH_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, DEPTH_MAP);
         await sleep(500);
       }
     })
@@ -769,7 +769,7 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_depthMap_03.jpg");
-        let picture = createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", DEPTH_MAP);
+        let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", DEPTH_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 100,
@@ -777,7 +777,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.SDR,
           needsPackProperties: false
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, DEPTH_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, DEPTH_MAP);
         await sleep(500);
       }
     })
@@ -797,7 +797,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let picture = createPictureWithUnReFocusMapAuxPic("testExif.jpg", "fd");
+        let picture = await createPictureWithUnReFocusMapAuxPic("testExif.jpg", "fd");
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98,
@@ -805,7 +805,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.AUTO,
           needsPackProperties: true
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, UNREFOCUS_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, UNREFOCUS_MAP);
         await sleep(2000);
       }
     })
@@ -825,7 +825,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let picture = createPictureWithUnReFocusMapAuxPic("testExif.jpg", "fd");
+        let picture = await createPictureWithUnReFocusMapAuxPic("testExif.jpg", "fd");
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98,
@@ -833,7 +833,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.SDR,
           needsPackProperties: false
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, UNREFOCUS_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, UNREFOCUS_MAP);
         await sleep(2000);
       }
     })
@@ -853,7 +853,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let picture = createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", UNREFOCUS_MAP);
+        let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", UNREFOCUS_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98,
@@ -861,7 +861,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.AUTO,
           needsPackProperties: true
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, UNREFOCUS_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, UNREFOCUS_MAP);
         await sleep(2000);
       }
     })
@@ -881,12 +881,12 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let picture = createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", UNREFOCUS_MAP);
+        let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", UNREFOCUS_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, UNREFOCUS_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, UNREFOCUS_MAP);
         await sleep(2000);
       }
     })
@@ -906,7 +906,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let picture = createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", UNREFOCUS_MAP);
+        let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", UNREFOCUS_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 100,
@@ -914,7 +914,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.SDR,
           needsPackProperties: false
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, UNREFOCUS_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, UNREFOCUS_MAP);
         await sleep(2000);
       }
     })
@@ -935,7 +935,7 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_unRefocusMap_01.jpg");
-        let picture = createPictureWithUnReFocusMapAuxPic("testExif.jpg", "fd");
+        let picture = await createPictureWithUnReFocusMapAuxPic("testExif.jpg", "fd");
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98,
@@ -943,7 +943,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.AUTO,
           needsPackProperties: true
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, UNREFOCUS_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, UNREFOCUS_MAP);
         await sleep(2000);
       }
     })
@@ -964,7 +964,7 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_unRefocusMap_02.jpg");
-        let picture = createPictureWithUnReFocusMapAuxPic("testExif.jpg", "fd");
+        let picture = await createPictureWithUnReFocusMapAuxPic("testExif.jpg", "fd");
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98,
@@ -972,7 +972,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.SDR,
           needsPackProperties: false
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, UNREFOCUS_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, UNREFOCUS_MAP);
         await sleep(2000);
       }
     })
@@ -993,7 +993,7 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_unRefocusMap_03.jpg");
-        let picture = createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", UNREFOCUS_MAP);
+        let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", UNREFOCUS_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98,
@@ -1001,7 +1001,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.AUTO,
           needsPackProperties: true
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, UNREFOCUS_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, UNREFOCUS_MAP);
         await sleep(2000);
       }
     })
@@ -1022,12 +1022,12 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_unRefocusMap_04.jpg");
-        let picture = createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", UNREFOCUS_MAP);
+        let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", UNREFOCUS_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, UNREFOCUS_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, UNREFOCUS_MAP);
         await sleep(2000);
       }
     })
@@ -1048,7 +1048,7 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_unRefocusMap_05.jpg");
-        let picture = createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", UNREFOCUS_MAP);
+        let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", UNREFOCUS_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 100,
@@ -1056,7 +1056,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.SDR,
           needsPackProperties: false
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, UNREFOCUS_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, UNREFOCUS_MAP);
         await sleep(2000);
       }
     })
@@ -1076,7 +1076,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let picture = createPictureWithLinearMapAuxPic("testExif.jpg", "fd");
+        let picture = await createPictureWithLinearMapAuxPic("testExif.jpg", "fd");
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98,
@@ -1084,7 +1084,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.AUTO,
           needsPackProperties: true
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, LINEAR_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, LINEAR_MAP);
         await sleep(500);
       }
     })
@@ -1104,7 +1104,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let picture = createPictureWithLinearMapAuxPic("testExif.jpg", "fd");
+        let picture = await createPictureWithLinearMapAuxPic("testExif.jpg", "fd");
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98,
@@ -1112,7 +1112,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.SDR,
           needsPackProperties: false
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, LINEAR_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, LINEAR_MAP);
         await sleep(500);
       }
     })
@@ -1132,7 +1132,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let picture = createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", LINEAR_MAP);
+        let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", LINEAR_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98,
@@ -1140,7 +1140,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.AUTO,
           needsPackProperties: true
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, LINEAR_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, LINEAR_MAP);
         await sleep(500);
       }
     })
@@ -1160,12 +1160,12 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let picture = createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", LINEAR_MAP);
+        let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", LINEAR_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, LINEAR_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, LINEAR_MAP);
         await sleep(500);
       }
     })
@@ -1185,7 +1185,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let picture = createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", LINEAR_MAP);
+        let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", LINEAR_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 100,
@@ -1193,7 +1193,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.SDR,
           needsPackProperties: false
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, LINEAR_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, LINEAR_MAP);
         await sleep(500);
       }
     })
@@ -1214,7 +1214,7 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_linearMap_01.jpg");
-        let picture = createPictureWithLinearMapAuxPic("testExif.jpg", "fd");
+        let picture = await createPictureWithLinearMapAuxPic("testExif.jpg", "fd");
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98,
@@ -1222,7 +1222,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.AUTO,
           needsPackProperties: true
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, LINEAR_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, LINEAR_MAP);
         await sleep(500);
       }
     })
@@ -1243,7 +1243,7 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_linearMap_02.jpg");
-        let picture = createPictureWithLinearMapAuxPic("testExif.jpg", "fd");
+        let picture = await createPictureWithLinearMapAuxPic("testExif.jpg", "fd");
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98,
@@ -1251,7 +1251,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.SDR,
           needsPackProperties: false
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, LINEAR_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, LINEAR_MAP);
         await sleep(500);
       }
     })
@@ -1272,7 +1272,7 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_linearMap_03.jpg");
-        let picture = createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", LINEAR_MAP);
+        let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", LINEAR_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98,
@@ -1280,7 +1280,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.AUTO,
           needsPackProperties: true
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, LINEAR_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, LINEAR_MAP);
         await sleep(500);
       }
     })
@@ -1301,12 +1301,12 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_linearMap_05.jpg");
-        let picture = createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", LINEAR_MAP);
+        let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", LINEAR_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, LINEAR_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, LINEAR_MAP);
         await sleep(500);
       }
     })
@@ -1327,7 +1327,7 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_linearMap_03.jpg");
-        let picture = createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", LINEAR_MAP);
+        let picture = await createPictureImageSourcePic("AllAuxiliaryPictures_exclude_fragment.jpg", "fd", LINEAR_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 100,
@@ -1335,7 +1335,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.SDR,
           needsPackProperties: false
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, LINEAR_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, LINEAR_MAP);
         await sleep(500);
       }
     })
@@ -1355,7 +1355,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let picture = createPictureWithFragmentMapAuxPic("testExif.jpg", "fd");
+        let picture = await createPictureWithFragmentMapAuxPic("testExif.jpg", "fd");
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98,
@@ -1363,7 +1363,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.AUTO,
           needsPackProperties: true
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, FRAGMENT_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, FRAGMENT_MAP);
         await sleep(500);
       }
     })
@@ -1383,7 +1383,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let picture = createPictureWithFragmentMapAuxPic("testExif.jpg", "fd");
+        let picture = await createPictureWithFragmentMapAuxPic("testExif.jpg", "fd");
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98,
@@ -1391,7 +1391,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.SDR,
           needsPackProperties: false
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, FRAGMENT_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, FRAGMENT_MAP);
         await sleep(500);
       }
     })
@@ -1411,7 +1411,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let picture = createPictureImageSourcePic("JpegFragmentMap.jpg", "fd", FRAGMENT_MAP);
+        let picture = await createPictureImageSourcePic("JpegFragmentMap.jpg", "fd", FRAGMENT_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98,
@@ -1419,7 +1419,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.AUTO,
           needsPackProperties: true
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, FRAGMENT_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, FRAGMENT_MAP);
         await sleep(500);
       }
     })
@@ -1439,12 +1439,12 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let picture = createPictureImageSourcePic("JpegFragmentMap.jpg", "fd", FRAGMENT_MAP);
+        let picture = await createPictureImageSourcePic("JpegFragmentMap.jpg", "fd", FRAGMENT_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, FRAGMENT_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, FRAGMENT_MAP);
         await sleep(500);
       }
     })
@@ -1464,7 +1464,7 @@ export default function imagePicturePack() {
         expect(!isSupportHdr).assertTrue();
         done();
       } else {
-        let picture = createPictureImageSourcePic("JpegFragmentMap.jpg", "fd", FRAGMENT_MAP);
+        let picture = await createPictureImageSourcePic("JpegFragmentMap.jpg", "fd", FRAGMENT_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 100,
@@ -1472,7 +1472,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.AUTO,
           needsPackProperties: false
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, FRAGMENT_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, FRAGMENT_MAP);
         await sleep(500);
       }
     })
@@ -1493,7 +1493,7 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_fragmentMap_01.jpg");
-        let picture = createPictureWithFragmentMapAuxPic("testExif.jpg", "fd");
+        let picture = await createPictureWithFragmentMapAuxPic("testExif.jpg", "fd");
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98,
@@ -1501,7 +1501,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.AUTO,
           needsPackProperties: true
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, FRAGMENT_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, FRAGMENT_MAP);
         await sleep(500);
       }
     })
@@ -1522,7 +1522,7 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_fragmentMap_02.jpg");
-        let picture = createPictureWithFragmentMapAuxPic("testExif.jpg", "fd");
+        let picture = await createPictureWithFragmentMapAuxPic("testExif.jpg", "fd");
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98,
@@ -1530,7 +1530,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.SDR,
           needsPackProperties: false
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, FRAGMENT_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, FRAGMENT_MAP);
         await sleep(500);
       }
     })
@@ -1551,7 +1551,7 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_fragmentMap_03.jpg");
-        let picture = createPictureImageSourcePic("JpegFragmentMap.jpg", "fd", FRAGMENT_MAP);
+        let picture = await createPictureImageSourcePic("JpegFragmentMap.jpg", "fd", FRAGMENT_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98,
@@ -1559,7 +1559,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.AUTO,
           needsPackProperties: true
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, FRAGMENT_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, FRAGMENT_MAP);
         await sleep(500);
       }
     })
@@ -1580,12 +1580,12 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_fragmentMap_04.jpg");
-        let picture = createPictureImageSourcePic("JpegFragmentMap.jpg", "fd", FRAGMENT_MAP);
+        let picture = await createPictureImageSourcePic("JpegFragmentMap.jpg", "fd", FRAGMENT_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 98
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, FRAGMENT_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, FRAGMENT_MAP);
         await sleep(500);
       }
     })
@@ -1606,7 +1606,7 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_fragmentMap_05.jpg");
-        let picture = createPictureImageSourcePic("JpegFragmentMap.jpg", "fd", FRAGMENT_MAP);
+        let picture = await createPictureImageSourcePic("JpegFragmentMap.jpg", "fd", FRAGMENT_MAP);
         let packOpts: image.PackingOption = {
           format: "image/jpeg",
           quality: 100,
@@ -1614,7 +1614,7 @@ export default function imagePicturePack() {
           desiredDynamicRange: image.PackingDynamicRange.SDR,
           needsPackProperties: false
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, FRAGMENT_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, FRAGMENT_MAP);
         await sleep(500);
       }
     })
@@ -1638,14 +1638,14 @@ export default function imagePicturePack() {
         }
         done();
       } else {
-        let picture = createPictureImageSourcePic("all_auxtype.heic", "fd", DEPTH_MAP);
+        let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", DEPTH_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
           quality: 98,
           desiredDynamicRange: image.PackingDynamicRange.AUTO,
           needsPackProperties: true
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, DEPTH_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, DEPTH_MAP);
       }
     })
 
@@ -1668,14 +1668,14 @@ export default function imagePicturePack() {
         }
         done();
       } else {
-        let picture = createPictureImageSourcePic("all_auxtype.heic", "fd", DEPTH_MAP);
+        let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", DEPTH_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
           quality: 98,
           desiredDynamicRange: image.PackingDynamicRange.SDR,
           needsPackProperties: false
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, DEPTH_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, DEPTH_MAP);
       }
     })
 
@@ -1698,12 +1698,12 @@ export default function imagePicturePack() {
         }
         done();
       } else {
-        let picture = createPictureImageSourcePic("all_auxtype.heic", "fd", DEPTH_MAP);
+        let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", DEPTH_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
           quality: 98
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, DEPTH_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, DEPTH_MAP);
       }
     })
 
@@ -1727,14 +1727,14 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_depthMap_03.heic");
-        let picture = createPictureImageSourcePic("all_auxtype.heic", "fd", DEPTH_MAP);
+        let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", DEPTH_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
           quality: 98,
           desiredDynamicRange: image.PackingDynamicRange.AUTO,
           needsPackProperties: true
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, DEPTH_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, DEPTH_MAP);
       }
     })
 
@@ -1758,14 +1758,14 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_depthMap_04.heic");
-        let picture = createPictureImageSourcePic("all_auxtype.heic", "fd", DEPTH_MAP);
+        let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", DEPTH_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
           quality: 98,
           desiredDynamicRange: image.PackingDynamicRange.SDR,
           needsPackProperties: false
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, DEPTH_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, DEPTH_MAP);
       }
     })
 
@@ -1789,12 +1789,12 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_depthMap_05.heic");
-        let picture = createPictureImageSourcePic("all_auxtype.heic", "fd", DEPTH_MAP);
+        let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", DEPTH_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
           quality: 98
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, DEPTH_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, DEPTH_MAP);
       }
     })
 
@@ -1817,14 +1817,14 @@ export default function imagePicturePack() {
         }
         done();
       } else {
-        let picture = createPictureImageSourcePic("all_auxtype.heic", "fd", UNREFOCUS_MAP);
+        let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", UNREFOCUS_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
           quality: 98,
           desiredDynamicRange: image.PackingDynamicRange.AUTO,
           needsPackProperties: true
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, UNREFOCUS_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, UNREFOCUS_MAP);
       }
     })
 
@@ -1847,14 +1847,14 @@ export default function imagePicturePack() {
         }
         done();
       } else {
-        let picture = createPictureImageSourcePic("all_auxtype.heic", "fd", UNREFOCUS_MAP);
+        let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", UNREFOCUS_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
           quality: 98,
           desiredDynamicRange: image.PackingDynamicRange.SDR,
           needsPackProperties: false
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, UNREFOCUS_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, UNREFOCUS_MAP);
       }
     })
 
@@ -1877,12 +1877,12 @@ export default function imagePicturePack() {
         }
         done();
       } else {
-        let picture = createPictureImageSourcePic("all_auxtype.heic", "fd", UNREFOCUS_MAP);
+        let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", UNREFOCUS_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
           quality: 98
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, UNREFOCUS_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, UNREFOCUS_MAP);
       }
     })
 
@@ -1906,14 +1906,14 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_unRefocusMap_01.heic");
-        let picture = createPictureImageSourcePic("all_auxtype.heic", "fd", UNREFOCUS_MAP);
+        let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", UNREFOCUS_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
           quality: 98,
           desiredDynamicRange: image.PackingDynamicRange.AUTO,
           needsPackProperties: true
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, UNREFOCUS_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, UNREFOCUS_MAP);
       }
     })
 
@@ -1937,14 +1937,14 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_unRefocusMap_02.heic");
-        let picture = createPictureImageSourcePic("all_auxtype.heic", "fd", UNREFOCUS_MAP);
+        let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", UNREFOCUS_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
           quality: 98,
           desiredDynamicRange: image.PackingDynamicRange.SDR,
           needsPackProperties: false
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, UNREFOCUS_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, UNREFOCUS_MAP);
       }
     })
 
@@ -1968,12 +1968,12 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_unRefocusMap_03.heic");
-        let picture = createPictureImageSourcePic("all_auxtype.heic", "fd", UNREFOCUS_MAP);
+        let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", UNREFOCUS_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
           quality: 98
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, UNREFOCUS_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, UNREFOCUS_MAP);
       }
     })
 
@@ -1996,14 +1996,14 @@ export default function imagePicturePack() {
         }
         done();
       } else {
-        let picture = createPictureWithLinearMapAuxPic("0801_sdr2.heic", "fd");
+        let picture = await createPictureWithLinearMapAuxPic("0801_sdr2.heic", "fd");
         let packOpts: image.PackingOption = {
           format: "image/heif",
           quality: 98,
           desiredDynamicRange: image.PackingDynamicRange.AUTO,
           needsPackProperties: true
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, LINEAR_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, LINEAR_MAP);
       }
     })
 
@@ -2026,14 +2026,14 @@ export default function imagePicturePack() {
         }
         done();
       } else {
-        let picture = createPictureWithLinearMapAuxPic("0801_sdr2.heic", "fd");
+        let picture = await createPictureWithLinearMapAuxPic("0801_sdr2.heic", "fd");
         let packOpts: image.PackingOption = {
           format: "image/heif",
           quality: 98,
           desiredDynamicRange: image.PackingDynamicRange.SDR,
           needsPackProperties: false
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, LINEAR_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, LINEAR_MAP);
       }
     })
 
@@ -2056,14 +2056,14 @@ export default function imagePicturePack() {
         }
         done();
       } else {
-        let picture = createPictureImageSourcePic("all_auxtype.heic", "fd", LINEAR_MAP);
+        let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", LINEAR_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
           quality: 98,
           desiredDynamicRange: image.PackingDynamicRange.AUTO,
           needsPackProperties: true
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, LINEAR_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, LINEAR_MAP);
       }
     })
 
@@ -2086,14 +2086,14 @@ export default function imagePicturePack() {
         }
         done();
       } else {
-        let picture = createPictureImageSourcePic("all_auxtype.heic", "fd", LINEAR_MAP);
+        let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", LINEAR_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
           quality: 98,
           desiredDynamicRange: image.PackingDynamicRange.SDR,
           needsPackProperties: false
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, LINEAR_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, LINEAR_MAP);
       }
     })
 
@@ -2116,12 +2116,12 @@ export default function imagePicturePack() {
         }
         done();
       } else {
-        let picture = createPictureImageSourcePic("all_auxtype.heic", "fd", LINEAR_MAP);
+        let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", LINEAR_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
           quality: 98
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, LINEAR_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, LINEAR_MAP);
       }
     })
 
@@ -2145,14 +2145,14 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_linearMap_01.heic");
-        let picture = createPictureWithLinearMapAuxPic("0801_sdr2.heic", "fd");
+        let picture = await createPictureWithLinearMapAuxPic("0801_sdr2.heic", "fd");
         let packOpts: image.PackingOption = {
           format: "image/heif",
           quality: 98,
           desiredDynamicRange: image.PackingDynamicRange.AUTO,
           needsPackProperties: true
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, LINEAR_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, LINEAR_MAP);
       }
     })
 
@@ -2176,14 +2176,14 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_linearMap_02.heic");
-        let picture = createPictureWithLinearMapAuxPic("0801_sdr2.heic", "fd");
+        let picture = await createPictureWithLinearMapAuxPic("0801_sdr2.heic", "fd");
         let packOpts: image.PackingOption = {
           format: "image/heif",
           quality: 98,
           desiredDynamicRange: image.PackingDynamicRange.SDR,
           needsPackProperties: false
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, LINEAR_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, LINEAR_MAP);
       }
     })
 
@@ -2207,14 +2207,14 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_linearMap_03.heic");
-        let picture = createPictureImageSourcePic("all_auxtype.heic", "fd", LINEAR_MAP);
+        let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", LINEAR_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
           quality: 98,
           desiredDynamicRange: image.PackingDynamicRange.AUTO,
           needsPackProperties: true
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, LINEAR_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, LINEAR_MAP);
       }
     })
 
@@ -2238,14 +2238,14 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_linearMap_04.heic");
-        let picture = createPictureImageSourcePic("all_auxtype.heic", "fd", LINEAR_MAP);
+        let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", LINEAR_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
           quality: 98,
           desiredDynamicRange: image.PackingDynamicRange.SDR,
           needsPackProperties: false
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, LINEAR_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, LINEAR_MAP);
       }
     })
 
@@ -2269,12 +2269,12 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_linearMap_05.heic");
-        let picture = createPictureImageSourcePic("all_auxtype.heic", "fd", LINEAR_MAP);
+        let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", LINEAR_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
           quality: 98
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, LINEAR_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, LINEAR_MAP);
       }
     })
 
@@ -2297,14 +2297,14 @@ export default function imagePicturePack() {
         }
         done();
       } else {
-        let picture = createPictureWithFragmentMapAuxPicHeif("0801_sdr2.heic", "fd");
+        let picture = await createPictureWithFragmentMapAuxPicHeif("0801_sdr2.heic", "fd");
         let packOpts: image.PackingOption = {
           format: "image/heif",
           quality: 98,
           desiredDynamicRange: image.PackingDynamicRange.AUTO,
           needsPackProperties: true
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, FRAGMENT_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, FRAGMENT_MAP);
       }
     })
 
@@ -2327,14 +2327,14 @@ export default function imagePicturePack() {
         }
         done();
       } else {
-        let picture = createPictureWithFragmentMapAuxPicHeif("0801_sdr2.heic", "fd");
+        let picture = await createPictureWithFragmentMapAuxPicHeif("0801_sdr2.heic", "fd");
         let packOpts: image.PackingOption = {
           format: "image/heif",
           quality: 98,
           desiredDynamicRange: image.PackingDynamicRange.SDR,
           needsPackProperties: false
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, FRAGMENT_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, FRAGMENT_MAP);
       }
     })
 
@@ -2357,14 +2357,14 @@ export default function imagePicturePack() {
         }
         done();
       } else {
-        let picture = createPictureImageSourcePic("all_auxtype.heic", "fd", FRAGMENT_MAP);
+        let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", FRAGMENT_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
           quality: 98,
           desiredDynamicRange: image.PackingDynamicRange.AUTO,
           needsPackProperties: true
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, FRAGMENT_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, FRAGMENT_MAP);
       }
     })
 
@@ -2387,14 +2387,14 @@ export default function imagePicturePack() {
         }
         done();
       } else {
-        let picture = createPictureImageSourcePic("all_auxtype.heic", "fd", FRAGMENT_MAP);
+        let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", FRAGMENT_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
           quality: 98,
           desiredDynamicRange: image.PackingDynamicRange.SDR,
           needsPackProperties: false
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, FRAGMENT_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, FRAGMENT_MAP);
       }
     })
 
@@ -2417,12 +2417,12 @@ export default function imagePicturePack() {
         }
         done();
       } else {
-        let picture = createPictureImageSourcePic("all_auxtype.heic", "fd", FRAGMENT_MAP);
+        let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", FRAGMENT_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
           quality: 98
         };
-        testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, FRAGMENT_MAP);
+        await testPackPicture(done, logger, packOpts, "packing", picture, "picWithAuxPic", 0, FRAGMENT_MAP);
       }
     })
 
@@ -2446,14 +2446,14 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_fragmentMap_01.heic");
-        let picture = createPictureWithFragmentMapAuxPicHeif("0801_sdr2.heic", "fd");
+        let picture = await createPictureWithFragmentMapAuxPicHeif("0801_sdr2.heic", "fd");
         let packOpts: image.PackingOption = {
           format: "image/heif",
           quality: 98,
           desiredDynamicRange: image.PackingDynamicRange.AUTO,
           needsPackProperties: true
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, FRAGMENT_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, FRAGMENT_MAP);
       }
     })
 
@@ -2477,14 +2477,14 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_fragmentMap_02.heic");
-        let picture = createPictureWithFragmentMapAuxPicHeif("0801_sdr2.heic", "fd");
+        let picture = await createPictureWithFragmentMapAuxPicHeif("0801_sdr2.heic", "fd");
         let packOpts: image.PackingOption = {
           format: "image/heif",
           quality: 98,
           desiredDynamicRange: image.PackingDynamicRange.SDR,
           needsPackProperties: false
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, FRAGMENT_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, FRAGMENT_MAP);
       }
     })
 
@@ -2508,14 +2508,14 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_fragmentMap_03.heic");
-        let picture = createPictureImageSourcePic("all_auxtype.heic", "fd", FRAGMENT_MAP);
+        let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", FRAGMENT_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
           quality: 98,
           desiredDynamicRange: image.PackingDynamicRange.AUTO,
           needsPackProperties: true
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, FRAGMENT_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, FRAGMENT_MAP);
       }
     })
 
@@ -2539,14 +2539,14 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_fragmentMap_04.heic");
-        let picture = createPictureImageSourcePic("all_auxtype.heic", "fd", FRAGMENT_MAP);
+        let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", FRAGMENT_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
           quality: 98,
           desiredDynamicRange: image.PackingDynamicRange.SDR,
           needsPackProperties: false
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, FRAGMENT_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, FRAGMENT_MAP);
       }
     })
 
@@ -2570,12 +2570,12 @@ export default function imagePicturePack() {
         done();
       } else {
         let writeFd = getFdCacheDir("pack_fragmentMap_05.heic");
-        let picture = createPictureImageSourcePic("all_auxtype.heic", "fd", FRAGMENT_MAP);
+        let picture = await createPictureImageSourcePic("all_auxtype.heic", "fd", FRAGMENT_MAP);
         let packOpts: image.PackingOption = {
           format: "image/heif",
           quality: 98
         };
-        testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, FRAGMENT_MAP);
+        await testPackPicture(done, logger, packOpts, "packToFile", picture, "picWithAuxPic", writeFd, FRAGMENT_MAP);
       }
     })
   })

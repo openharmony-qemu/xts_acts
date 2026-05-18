@@ -12,11 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import SetEventConfigMinidumpTest from './SetEventConfigMinidumpTest.test';
 import abilityTest from './Ability.test';
 import processorNDKTest from './processorNDK.test';
-import OhHiAppEventSetEventConfig from './OhHiAppEventSetEventConfig.test'
+import OhHiAppEventSetEventConfig from './OhHiAppEventSetEventConfig.test';
 
 export default function testsuite() {
+  SetEventConfigMinidumpTest();
   abilityTest();
   processorNDKTest();
   OhHiAppEventSetEventConfig();

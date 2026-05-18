@@ -31,20 +31,20 @@ const ERROR_CODE16000110: int = 16000110;
 const ERROR_CODE16000113: int = 16000113;
 const ERROR_CODE16000061: int = 16000061;
 
-function msSleep(count: int) {
-  waitForCompletion(async ()=> { await Utils.msSleep(count); });
+async function msSleep(count: int) {
+  await Utils.msSleep(count);
 }
 
 export default function KioskModeStaticTest() {
   describe('KioskModeStaticTest', () => {
     let context: common.UIAbilityContext | undefined;
   
-    beforeAll(() => {
+    beforeAll(async () => {
       hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#beforeAll start`);
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      msSleep(WAIT_TIME2000);
+      await msSleep(WAIT_TIME2000);
       abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
-      msSleep(WAIT_TIME2000);
+      await msSleep(WAIT_TIME2000);
       context = AppStorage.get<common.UIAbilityContext>('UIAbilityContext');
       hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#beforeAll end`);
     })
@@ -106,7 +106,7 @@ export default function KioskModeStaticTest() {
           }
         });
 
-      msSleep(WAIT_TIME2000);
+      await msSleep(WAIT_TIME2000);
       try {
         kioskManager.enterKioskMode(context as common.UIAbilityContext)
           .then(() => {

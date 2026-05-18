@@ -22,25 +22,25 @@ import { test2019_06_ans } from './test2019_06'
 export default function es2019Test() {
   describe('ES2019Test', () => {
     /**
-     * @tc.name   testArray.prototype.flatMap
+     * @tc.name   testArrayprototypeflatMapAdapt001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ES2019NewFeatures_0001
      * @tc.desc   add name of task for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testArray.prototype.flatMap', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('testArrayprototypeflatMapAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(test2019_01_ans).assertDeepEquals([1, 2, 3, 4, 5, 6]);
     })
     /**
-     * @tc.name   testArray.prototype.flat
+     * @tc.name   testArrayprototypeflatAdapt001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ES2019NewFeatures_0002
      * @tc.desc   add name of task for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testArray.prototype.flat', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('testArrayprototypeflatAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const arr1 = [1, 2, [3, 4]];
       expect(arr1.flat()).assertDeepEquals([1, 2, 3, 4]);
       const arr2 = [1, 2, [3, 4, [5, 6]]];
@@ -51,27 +51,27 @@ export default function es2019Test() {
       expect(arr4.flat()).assertDeepEquals([1, 2, 4, 5]);
     })
     /**
-     * @tc.name   testObject.fromEntries
+     * @tc.name   testObjectfromEntriesAdapt001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ES2019NewFeatures_0003
      * @tc.desc   add name of task for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testObject.fromEntries', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('testObjectfromEntriesAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(test2019_03_ans).assertDeepEquals({
         "one": 1, "two": 2, "three": 3
       });
     })
     /**
-     * @tc.name   testTrimStart&TrimEnd
+     * @tc.name   testTrimStartTrimEndAdapt001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ES2019NewFeatures_0004
      * @tc.desc   add name of task for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testTrimStart&TrimEnd', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('testTrimStartTrimEndAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const test = " hello "
       expect(test.trimStart()).assertEqual("hello ");
       expect(test.trimEnd()).assertEqual(" hello");
@@ -92,14 +92,14 @@ export default function es2019Test() {
       }
     })
     /**
-     * @tc.name   testSymbol.description
+     * @tc.name   testSymboldescriptionAdapt001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ES2019NewFeatures_0006
      * @tc.desc   add name of task for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSymbol.description', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('testSymboldescriptionAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(test2019_06_ans).assertEqual("Desc")
     })
     /**
@@ -115,14 +115,14 @@ export default function es2019Test() {
       expect(jsonObj.toString()).assertContain("Hello,World!");
     })
     /**
-     * @tc.name   testJson.stringfy
+     * @tc.name   testJsonstringfyAdapt001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ES2019NewFeatures_0008
      * @tc.desc   add name of task for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testJson.stringfy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('testJsonstringfyAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(JSON.stringify('\u{D800}')).assertEqual("\"\\ud800\"");
       expect(JSON.stringify('\u{D83D}')).assertEqual("\"\\ud83d\"");
       expect(JSON.stringify('\u{DFFF}')).assertEqual("\"\\udfff\"");

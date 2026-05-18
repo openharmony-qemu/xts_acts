@@ -64,8 +64,8 @@ struct webViewIncognitoMode2 {
         Button('web click')
           .key('webViewIncognitoModeButton2')
           .onClick(async () => {
-            await waitForExist(() => this.isPageEnd, this.emitKey, 0);
-            await waitForExist(() => this.isReceive, this.emitKey, 0);
+            await waitForExist(() => this.isPageEnd, this.emitKey, 0, 1000);
+            await waitForExist(() => this.isReceive, this.emitKey, 0, 1000);
             this.isReceive = -1;
             console.info('key==>' + this.emitKey)
 
@@ -74,12 +74,12 @@ struct webViewIncognitoMode2 {
                 try {
                   this.isPageEnd = -1;
                   this.controller.refresh()
-                  await waitForExist(() => this.isPageEnd, this.emitKey, 0);
+                  await waitForExist(() => this.isPageEnd, this.emitKey, 0, 1000);
                   webview.WebCookieManager.configCookieSync(CommonConstants.EXAMPLE_URL, 'testValue1232143');
 
                   this.isPageEnd = -1;
                   this.controller.loadUrl(CommonConstants.EXAMPLE_URL);
-                  await waitForExist(() => this.isPageEnd, this.emitKey, 0);
+                  await waitForExist(() => this.isPageEnd, this.emitKey, 0, 1000);
 
                   webview.WebCookieManager.clearAllCookiesSync();
                   let isExistCookie = webview.WebCookieManager.existCookie();

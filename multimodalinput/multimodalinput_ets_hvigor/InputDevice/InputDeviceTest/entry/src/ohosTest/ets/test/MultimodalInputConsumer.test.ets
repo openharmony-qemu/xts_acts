@@ -477,7 +477,7 @@ export default function MultimodalInputConsumerTest() {
           done();
         } catch (error) {
           console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          expect(error.code).assertEqual(4200002);
+          expect(error.code).assertEqual(401);
           done();
         }
       } catch (error) {
@@ -1295,7 +1295,7 @@ export default function MultimodalInputConsumerTest() {
           done();
         } catch (error) {
           console.info(`${caseName} unsubscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
-          expect(error.code).assertEqual(4200002);
+          expect(error.code).assertEqual(401);
           done();
         }
       } catch (error) {

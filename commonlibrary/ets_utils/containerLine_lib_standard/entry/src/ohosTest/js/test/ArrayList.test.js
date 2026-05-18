@@ -1174,14 +1174,14 @@ describe("ArraylistTest", function () {
   });
 
   /**
-   * @tc.name   testAdd053 
+   * @tc.name   testAdd053Adapt001
    * @tc.number testAdd053 
    * @tc.desc   Add a boolean type element to the end of the ArrayList instance.
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL1
    */
-  it("testAdd053 ", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+  it("testAdd053Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let arrayList = new ArrayList();
     try {
       arrayList.add.bind({}, "a")()

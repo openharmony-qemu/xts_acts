@@ -958,8 +958,8 @@ export default function ActsCommonEventManagerSupportTest() {
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4600 START`)
-      expect(commonEventManager.Support.COMMON_EVENT_VOLUME_DECRYPTED)
-        .assertEqual('usual.event.VOLUME_DECRYPTED')
+      expect(commonEventManager.Support.COMMON_EVENT_BLUETOOTH_HOST_SCAN_MODE_CHANGE)
+        .assertEqual('usual.event.bluetooth.host.SCAN_MODE_CHANGE')
       console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4600 END`)
       done()
     })
@@ -995,6 +995,23 @@ export default function ActsCommonEventManagerSupportTest() {
       expect(commonEventManager.Support.COMMON_EVENT_VOLUME_ENCRYPTION_POLICY_SET)
         .assertEqual('usual.event.VOLUME_ENCRYPTION_POLICY_SET')
       console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4800 END`)
+      done()
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4900
+     * @tc.number SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4900
+     * @tc.desc   specific volumes on the device have been decrypted common event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4900 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_VOLUME_DECRYPTED)
+        .assertEqual('usual.event.VOLUME_DECRYPTED')
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4900 END`)
       done()
     })
   })

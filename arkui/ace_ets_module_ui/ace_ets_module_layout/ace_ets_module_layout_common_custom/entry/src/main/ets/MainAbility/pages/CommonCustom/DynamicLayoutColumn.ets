@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
- import {
+import {
   LengthMetrics,
   ColumnLayoutAlgorithm,
   DynamicLayout, DynamicLayoutAttribute} from '@kit.ArkUI';
@@ -21,32 +21,29 @@
 @Entry
 @ComponentV2
 struct DynamicLayoutColumn {
+  algorithm: ColumnLayoutAlgorithm = new ColumnLayoutAlgorithm({
+    space: LengthMetrics.vp(0),
+    alignItems: HorizontalAlign.Center,
+    justifyContent: FlexAlign.Start,
+    isReverse: false
+  });
   @Local columnSpace: number = 0
   @Local columnAlignItems: HorizontalAlign | undefined = HorizontalAlign.Center
   @Local columnJustifyContent: FlexAlign | undefined= FlexAlign.Start
-  @Local columnIsReverse: boolean | undefined | null = false;
-
-  @Local dynamicLayoutSpace: number|null|undefined = 0
-  @Local dynamicLayoutAlignItems: HorizontalAlign |null| undefined = HorizontalAlign.Center
-  @Local dynamicLayoutJustifyContent: FlexAlign |null| undefined = FlexAlign.Start
-  @Local dynamicLayoutIsReverse: boolean | undefined | null = false;
+  @Local columnIsReverse: boolean | undefined  = false;
 
   uiContext: UIContext | undefined = undefined;
   columnAlignItemsArr: HorizontalAlign [] = [HorizontalAlign.Center, HorizontalAlign.Start, HorizontalAlign.End]
   columnAlignItemsIndex: number = 0
-  columnJustifyContentArr: FlexAlign[] = [FlexAlign.Start, FlexAlign.Center, FlexAlign.End, 
-  FlexAlign.SpaceBetween, FlexAlign.SpaceAround, FlexAlign.SpaceEvenly]
+  columnJustifyContentArr: FlexAlign[] = [FlexAlign.Start, FlexAlign.Center, FlexAlign.End,
+    FlexAlign.SpaceBetween, FlexAlign.SpaceAround, FlexAlign.SpaceEvenly]
   columnJustifyContentIndex: number = 0
   flag: boolean = false
 
   build() {
     Column({space:2}) {
       Row({space: 2}) {
-        DynamicLayout(new ColumnLayoutAlgorithm({
-          space: LengthMetrics.vp(this.dynamicLayoutSpace),
-          alignItems: this.dynamicLayoutAlignItems,
-          justifyContent: this.dynamicLayoutJustifyContent,
-          isReverse: this.dynamicLayoutIsReverse})) {
+        DynamicLayout(this.algorithm) {
           Column()
             .id('ColumnLayoutAlgorithm1')
             .backgroundColor(Color.Blue)
@@ -68,7 +65,8 @@ struct DynamicLayoutColumn {
         Button(`Space++ ${this.columnSpace}`)
           .onClick(()=>{
             this.columnSpace += 2
-            this.dynamicLayoutSpace = this.columnSpace
+            this.algorithm.space = LengthMetrics.vp(this.columnSpace)
+
           })
           .id('ColumnLayoutAlgorithmSpace++')
           .width(90)
@@ -77,7 +75,7 @@ struct DynamicLayoutColumn {
         Button(`Space-- ${this.columnSpace}`)
           .onClick(()=>{
             this.columnSpace -= 2
-            this.dynamicLayoutSpace = this.columnSpace
+            this.algorithm.space = LengthMetrics.vp(this.columnSpace)
           })
           .id('ColumnLayoutAlgorithmSpace--')
           .width(90)
@@ -91,7 +89,7 @@ struct DynamicLayoutColumn {
               this.columnAlignItemsIndex = 0
             }
             this.columnAlignItems = this.columnAlignItemsArr[this.columnAlignItemsIndex]
-            this.dynamicLayoutAlignItems = this.columnAlignItemsArr[this.columnAlignItemsIndex]
+            this.algorithm.alignItems = this.columnAlignItemsArr[this.columnAlignItemsIndex]
           })
           .id('ColumnLayoutAlgorithmAlignItems')
           .width(90)
@@ -104,7 +102,7 @@ struct DynamicLayoutColumn {
               this.columnJustifyContentIndex = 0
             }
             this.columnJustifyContent= this.columnJustifyContentArr[this.columnJustifyContentIndex]
-            this.dynamicLayoutJustifyContent = this.columnJustifyContent
+            this.algorithm.justifyContent = this.columnJustifyContent
           })
           .id('ColumnLayoutAlgorithmJustifyContent')
           .width(100)
@@ -114,7 +112,7 @@ struct DynamicLayoutColumn {
         Button(`isReverse: ${JSON.stringify(this.columnIsReverse)}`)
           .onClick(()=>{
             this.columnIsReverse = !this.columnIsReverse
-            this.dynamicLayoutIsReverse = this.columnIsReverse
+            this.algorithm.isReverse = this.columnIsReverse
           })
           .id('ColumnLayoutAlgorithmIsReverse')
           .width(100)
@@ -122,30 +120,20 @@ struct DynamicLayoutColumn {
         Button('get')
           .onClick(()=>{
             let strJson1 = getInspectorByKey('DynamicLayoutColumn');
+            console.info('hello:'+JSON.parse(strJson1).$attrs.space);
             console.info('hello:'+JSON.parse(strJson1).$attrs.alignItems);
-            console.info('hello1:'+JSON.parse(strJson1).$attrs.space);
-            console.info('hello1:'+JSON.parse(strJson1).$attrs.justifyContent);
+            console.info('hello:'+JSON.parse(strJson1).$attrs.justifyContent);
           })
           .width(80)
           .height(20)
       }
-      Row(){
-        Button('null')
-          .onClick(()=>{
-            this.dynamicLayoutSpace = null
-            this.dynamicLayoutAlignItems = null
-            this.dynamicLayoutIsReverse = null
-            this.dynamicLayoutJustifyContent = null
-          })
-          .id('ColumnLayoutAlgorithmNull')
-          .width(80)
-          .height(20)
+      Row() {
         Button('undefined')
-          .onClick(()=>{
-            this.dynamicLayoutSpace = undefined
-            this.dynamicLayoutAlignItems = undefined
-            this.dynamicLayoutIsReverse = undefined
-            this.dynamicLayoutJustifyContent = undefined
+          .onClick(() => {
+            this.algorithm.space = undefined
+            this.algorithm.alignItems = undefined
+            this.algorithm.justifyContent = undefined
+            this.algorithm.isReverse = undefined
           })
           .id('ColumnLayoutAlgorithmUndefined')
           .width(80)

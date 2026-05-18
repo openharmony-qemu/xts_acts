@@ -9007,25 +9007,25 @@ void useArrayBuffer2(JSVM_Env env, napi_env env1)
     size_t storeLen = SIXTEEN;
     JSVM_Status stat1 = OH_JSVM_AllocateArrayBufferBackingStoreData(storeLen, JSVM_ZERO_INITIALIZED, &storeData);
     NAPI_ASSERT_RETURN_VOID(env1, stat1 == JSVM_OK, "OH_JSVM_AllocateArrayBufferBackingStoreData check status");
-    
+
     JSVM_Value arrayBuffer;
     JSVM_Status stat2 = OH_JSVM_CreateArrayBufferFromBackingStoreData(env, storeData, storeLen, 0, storeLen, &arrayBuffer);
     NAPI_ASSERT_RETURN_VOID(env1, stat2 == JSVM_OK, "OH_JSVM_CreateArrayBufferFromBackingStoreData check status");
-    
+
     void *tmpArrayBufferPtr = nullptr;
     size_t arrayBufferLen = 0;
     JSVM_Status stat3 = OH_JSVM_GetArraybufferInfo(env, arrayBuffer, &tmpArrayBufferPtr, &arrayBufferLen);
     NAPI_ASSERT_RETURN_VOID(env1, stat3 == JSVM_OK, "OH_JSVM_GetArraybufferInfo check status");
-    
+
     size_t typedArrayLen = arrayBufferLen / sizeof(int32_t);
     JSVM_Value typedArray;
     JSVM_Status stat4 = OH_JSVM_CreateTypedarray(env, JSVM_TypedarrayType::JSVM_INT32_ARRAY, typedArrayLen,
                                                  arrayBuffer, 0, &typedArray);
     NAPI_ASSERT_RETURN_VOID(env1, stat4 == JSVM_OK, "OH_JSVM_CreateTypedarray check status");
-    
+
     JSVM_Status stat5 = OH_JSVM_DetachArraybuffer(env, arrayBuffer);
     NAPI_ASSERT_RETURN_VOID(env1, stat5 == JSVM_OK, "OH_JSVM_DetachArraybuffer check status");
-    
+
     JSVM_Status stat6 = OH_JSVM_FreeArrayBufferBackingStoreData(storeData);
     NAPI_ASSERT_RETURN_VOID(env1, stat6 == JSVM_OK, "OH_JSVM_FreeArrayBufferBackingStoreData check status");
 }
@@ -9081,31 +9081,31 @@ void useArrayBuffer3(JSVM_Env env, napi_env env1)
     size_t storeLen = SIXTEEN;
     JSVM_Status stat1 = OH_JSVM_AllocateArrayBufferBackingStoreData(storeLen, JSVM_ZERO_INITIALIZED, &storeData);
     NAPI_ASSERT_RETURN_VOID(env1, stat1 == JSVM_OK, "OH_JSVM_AllocateArrayBufferBackingStoreData check status");
- 
+
     JSVM_Value arrayBuffer;
     JSVM_Status stat2 = OH_JSVM_CreateArrayBufferFromBackingStoreData(env, storeData, storeLen, 0, storeLen, &arrayBuffer);
     NAPI_ASSERT_RETURN_VOID(env1, stat2 == JSVM_OK, "OH_JSVM_CreateArrayBufferFromBackingStoreData check status");
- 
+
     void *tmpArrayBufferPtr = nullptr;
     size_t arrayBufferLen = 0;
     JSVM_Status stat3 = OH_JSVM_GetArraybufferInfo(env, arrayBuffer, &tmpArrayBufferPtr, &arrayBufferLen);
     NAPI_ASSERT_RETURN_VOID(env1, stat3 == JSVM_OK, "OH_JSVM_GetArraybufferInfo check status");
- 
+
     size_t typedArrayLen = arrayBufferLen / sizeof(int32_t);
- 
+
     JSVM_Value typedArray;
     JSVM_Status stat4 = OH_JSVM_CreateTypedarray(env, JSVM_TypedarrayType::JSVM_INT32_ARRAY, typedArrayLen, arrayBuffer, 0, &typedArray);
     NAPI_ASSERT_RETURN_VOID(env1, stat4 == JSVM_OK, "OH_JSVM_CreateTypedarray check status");
- 
+
     JSVM_Status stat5 = OH_JSVM_DetachArraybuffer(env, arrayBuffer);
     NAPI_ASSERT_RETURN_VOID(env1, stat5 == JSVM_OK, "OH_JSVM_DetachArraybuffer check status");
- 
+
     JSVM_Value arrayBuffer2;
     JSVM_Status stat6 = OH_JSVM_CreateArrayBufferFromBackingStoreData(env, storeData, storeLen, 0, storeLen, &arrayBuffer2);
     NAPI_ASSERT_RETURN_VOID(env1, stat6 == JSVM_OK, "OH_JSVM_CreateArrayBufferFromBackingStoreData check status");
     JSVM_Status stat7 = OH_JSVM_DetachArraybuffer(env, arrayBuffer2);
     NAPI_ASSERT_RETURN_VOID(env1, stat7 == JSVM_OK, "OH_JSVM_DetachArraybuffer check status");
- 
+
     JSVM_Status stat8 = OH_JSVM_FreeArrayBufferBackingStoreData(storeData);
     NAPI_ASSERT_RETURN_VOID(env1, stat8 == JSVM_OK, "OH_JSVM_FreeArrayBufferBackingStoreData check status");
 }
@@ -9960,8 +9960,7 @@ static JSVM_CallbackStruct param[] = {
     {.callback = TestGetVMInfoCase01, .data = nullptr},
     {.callback = TestGetVMInfoCase02, .data = nullptr},
     {.callback = TestGetHeapStatisticsCase01, .data = nullptr},
-    {.callback = TestStartCpuProfilerCase01, .data = nullptr},
-    {.callback = TestStopCpuProfilerCase01, .data = nullptr},
+    {.callback = TestCpuProfilerCase01, .data = nullptr},
     {.callback = TestTakeHeapSnapshotCase01, .data = nullptr},
     {.callback = TestOpenInspectorCase01, .data = nullptr},
     {.callback = TestOpenInspectorCase02, .data = nullptr},
@@ -10581,8 +10580,7 @@ static JSVM_PropertyDescriptor jsDescriptor[] = {
     {"testGetVMInfoCase01", nullptr, nullptr, nullptr, nullptr, nullptr, JSVM_DEFAULT},
     {"testGetVMInfoCase02", nullptr, nullptr, nullptr, nullptr, nullptr, JSVM_DEFAULT},
     {"testGetHeapStatisticsCase01", nullptr, nullptr, nullptr, nullptr, nullptr, JSVM_DEFAULT},
-    {"testStartCpuProfilerCase01", nullptr, nullptr, nullptr, nullptr, nullptr, JSVM_DEFAULT},
-    {"testStopCpuProfilerCase01", nullptr, nullptr, nullptr, nullptr, nullptr, JSVM_DEFAULT},
+    {"testCpuProfilerCase01", nullptr, nullptr, nullptr, nullptr, nullptr, JSVM_DEFAULT},
     {"testTakeHeapSnapshotCase01", nullptr, nullptr, nullptr, nullptr, nullptr, JSVM_DEFAULT},
     {"testOpenInspectorCase01", nullptr, nullptr, nullptr, nullptr, nullptr, JSVM_DEFAULT},
     {"testOpenInspectorCase02", nullptr, nullptr, nullptr, nullptr, nullptr, JSVM_DEFAULT},
@@ -11179,6 +11177,13 @@ static napi_value RunJsVm(napi_env nEnv, napi_callback_info nInfo)
   return result;
 }
 
+[[maybe_unused]] static napi_value ThresholdTest(napi_env env, napi_callback_info info) {
+    (void)RunTestsWithPrefix("test_threshold.cpp");
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
+
 EXTERN_C_START
 
 static napi_value Init(napi_env env, napi_value exports)
@@ -11256,6 +11261,7 @@ static napi_value Init(napi_env env, napi_value exports)
         DECLARE_NAPI_FUNCTION("wasmTest", WasmTest),
         DECLARE_NAPI_FUNCTION("arrayBufferBackingStoreTest", ArrayBufferBackingStoreTest),
         DECLARE_NAPI_FUNCTION("testSetDebugOption", testSetDebugOption),
+        DECLARE_NAPI_FUNCTION("testThreshold", ThresholdTest),
     };
     NAPI_CALL(env, napi_define_properties(env, exports, sizeof(properties) / sizeof(properties[0]), properties));
     return exports;

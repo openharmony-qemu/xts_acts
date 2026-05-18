@@ -84,7 +84,7 @@ export default function graphicImagePixelMapTest() {
         done();
       })
       try{
-        pixelMap!.rotate(60)
+        await pixelMap!.rotate(60)
         console.info( msg + ' Succeeded in rotate pixelMap.');
         try{
           pixelMap!.setTransferDetached(true)

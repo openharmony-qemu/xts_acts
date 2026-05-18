@@ -19,7 +19,6 @@ import type common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import certManagerDialog from '@ohos.security.certManagerDialog';
 import * as commonParameter from './utils/common/common_parameter';
-
 export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
   describe('certManagerPubCertJsAPIFunctionTestUnitTwo', () => {
     beforeAll(() => {
@@ -143,7 +142,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
       }
       done();
     });
-
+    
     /**
      * @tc.name   SUB_Security_CertManager_PriCertJsApi_Func_0101
      * @tc.number SUB_Security_CertManager_PriCertJsApi_Func_0101
@@ -174,7 +173,157 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
       }
       done();
     });
+    /**
+     * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_0800
+     * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_0800
+     * @tc.desc   keyUri is null, return error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_CertManager_ImportUkeyCertificate_Func_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_0800 start');
+      let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
+      let ukeyInfo: certManager.UkeyInfo = {
+        certPurpose: certManager.CertificatePurpose.PURPOSE_SIGN,
+      };
+      try {
+        await certManager.importUkeyCertificate(null, certData, ukeyInfo);
+        expect(null).assertFail();
+      } catch (err) {
+        let error: BusinessError = err as BusinessError;
+        console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_0800 failed. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+      console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_0800 end');
+      done();
+    });
 
+    /**
+     * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_0900
+     * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_0900
+     * @tc.desc   keyUri is undefined, return error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_CertManager_ImportUkeyCertificate_Func_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_0900 start');
+      let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
+      let ukeyInfo: certManager.UkeyInfo = {
+        certPurpose: certManager.CertificatePurpose.PURPOSE_SIGN,
+      };
+      try {
+        await certManager.importUkeyCertificate(undefined, certData, ukeyInfo);
+        expect(null).assertFail();
+      } catch (err) {
+        let error: BusinessError = err as BusinessError;
+        console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_0900 failed. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+      console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_0900 end');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_1000
+     * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_1000
+     * @tc.desc   cert is null, return error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_CertManager_ImportUkeyCertificate_Func_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_1000 start');
+      let keyUri: string = 'test';
+      let ukeyInfo: certManager.UkeyInfo = {
+        certPurpose: certManager.CertificatePurpose.PURPOSE_SIGN,
+      };
+      try {
+        await certManager.importUkeyCertificate(keyUri, null, ukeyInfo);
+        expect(null).assertFail();
+      } catch (err) {
+        let error: BusinessError = err as BusinessError;
+        console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_1000 failed. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+      console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_1000 end');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_1100
+     * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_1100
+     * @tc.desc   cert is undefined, return error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_CertManager_ImportUkeyCertificate_Func_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_1100 start');
+      let keyUri: string = 'test';
+      let ukeyInfo: certManager.UkeyInfo = {
+        certPurpose: certManager.CertificatePurpose.PURPOSE_SIGN,
+      };
+      try {
+        await certManager.importUkeyCertificate(keyUri, undefined, ukeyInfo);
+        expect(null).assertFail();
+      } catch (err) {
+        let error: BusinessError = err as BusinessError;
+        console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_1100 failed. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+      console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_1100 end');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_1200
+     * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_1200
+     * @tc.desc   ukeyInfo is null, return error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_CertManager_ImportUkeyCertificate_Func_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_1200 start');
+      let keyUri: string = 'test';
+      let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
+      try {
+        await certManager.importUkeyCertificate(keyUri, certData, null);
+        expect(null).assertFail();
+      } catch (err) {
+        let error: BusinessError = err as BusinessError;
+        console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_1200 failed. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+      console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_1200 end');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_1300
+     * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_1300
+     * @tc.desc   ukeyInfo is undefined, return error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_CertManager_ImportUkeyCertificate_Func_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_1300 start');
+      let keyUri: string = 'test';
+      let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
+      try {
+        await certManager.importUkeyCertificate(keyUri, certData, undefined);
+        expect(null).assertFail();
+      } catch (err) {
+        let error: BusinessError = err as BusinessError;
+        console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_1300 failed. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
+      }
+      console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_1300 end');
+      done();
+    });
     /**
      * @tc.name   SUB_Security_CertManager_PriCertJsApi_Func_0102
      * @tc.number SUB_Security_CertManager_PriCertJsApi_Func_0102

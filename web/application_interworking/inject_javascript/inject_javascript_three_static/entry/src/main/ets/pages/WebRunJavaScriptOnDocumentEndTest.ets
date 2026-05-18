@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -30,9 +30,14 @@ import events_emitter from '@ohos.events.emitter';
 import { Callback, RecordData } from '@ohos.base'
 import { ScriptItem } from '@ohos.arkui.component'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
-class StringFields {
+export class StringFields {
   public str: string = 'emitWebRunJavaScriptOnDocumentEnd001';
 }
+
+function checkResult(result: Array<string>): Boolean{
+  return result.includes('push new js on run end called');
+}
+
 @Entry
 @Component
 struct WebRunJavaScriptOnDocumentEndTest {
@@ -41,13 +46,10 @@ struct WebRunJavaScriptOnDocumentEndTest {
   @State str: string = '';
   private jsStr: string =
     'window.document.getElementById(\'result\').innerHTML = \'runJavaScriptOnDocumentEnd\'';
-  //@State scripts: Array<ScriptItem> = new Array<ScriptItem>(
-  //  { script: this.jsStr, scriptRules: ['*'] }
-  //);
-  @State scripts: Array<ScriptItem> = [
-    { script: this.jsStr, scriptRules: ['*'] }
-  ] as Array<ScriptItem>;
-  @State message: Array<string> = new Array<string>();
+  @State scripts: Array<ScriptItem> = new Array<ScriptItem>(
+   { script: this.jsStr, scriptRules: ['*'] }
+  );
+  @State message: Array<string> = [] as Array<string>;
   private jsEnd: string =
     'console.log("push new js on run end called")';
 
@@ -100,6 +102,12 @@ struct WebRunJavaScriptOnDocumentEndTest {
               break;
             }
 
+            case "emitWebRunJavaScriptOnDocumentEnd002": {
+              console.log("emitWebRunJavaScriptOnDocumentEnd002 result = ", this.message)
+              Utils.emitEvent(checkResult(this.message), 20250221011)
+              break;
+            }
+
             case 'SwitchNextPageStatic' : {
               console.info('key==>test SwitchNextPageStatic')
               let uiContext: UIContext = this.getUIContext();
@@ -116,7 +124,10 @@ struct WebRunJavaScriptOnDocumentEndTest {
         .javaScriptAccess(true)
         .domStorageAccess(true)
         .runJavaScriptOnDocumentEnd(this.scripts)
-
+        .onControllerAttached(() => {
+          this.scripts.push({ script: this.jsEnd, scriptRules: ['*'] });
+          console.log('runJavaScriptOnDocumentEnd scripts==>' + JSON.stringify(this.scripts));
+        })
         .onConsole((event) => {
           if (event) {
             let msg = event.message.getMessage();

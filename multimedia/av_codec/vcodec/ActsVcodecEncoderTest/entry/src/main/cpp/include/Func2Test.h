@@ -82,6 +82,9 @@ extern int VideoEncodeRgba10101020170Test();
 extern int VideoEncodeRgba10101020180Test();
 extern int VideoEncodeRgba10101020190Test();
 extern int VideoEncodeSyncFormat0010Test();
+extern int VideoEncodeAnother0010Test();
+extern int VideoCapabilityConfig0010Test();
+extern int VideoCapabilityConfig0020Test();
 
 extern void InitFunc2Test();
 

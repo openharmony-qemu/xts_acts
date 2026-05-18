@@ -105,6 +105,91 @@ struct WebComponent {
               break;
             }
 
+            case 'emitWebviewEnableBackForwardCacheStatic001': {
+              try {
+                console.info('test enableBackForwardCache with nativeEmbed true');
+                let features: webview.BackForwardCacheSupportedFeatures = {
+                  nativeEmbed: true,
+                  mediaTakeOver: false
+                };
+                webview.WebviewController.enableBackForwardCache(features);
+                Utils.emitEvent('success', 260326101);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326101);
+              }
+              break;
+            }
+
+            case 'emitWebviewEnableBackForwardCacheStatic002': {
+              try {
+                console.info('test enableBackForwardCache with nativeEmbed true');
+                let features: webview.BackForwardCacheSupportedFeatures = {
+                  nativeEmbed: false,
+                  mediaTakeOver: false
+                };
+                webview.WebviewController.enableBackForwardCache(features);
+                Utils.emitEvent('success', 260326102);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326102);
+              }
+              break;
+            }
+
+            case 'emitWebviewEnableBackForwardCacheStatic003': {
+              try {
+                console.info('test enableBackForwardCache with nativeEmbed true');
+                let features: webview.BackForwardCacheSupportedFeatures = {
+                  nativeEmbed: false,
+                  mediaTakeOver: true
+                };
+                webview.WebviewController.enableBackForwardCache(features);
+                Utils.emitEvent('success', 260326103);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326103);
+              }
+              break;
+            }
+
+            case 'emitWebviewEnableBackForwardCacheStatic004': {
+              try {
+                console.info('test enableBackForwardCache with nativeEmbed true');
+                let features: webview.BackForwardCacheSupportedFeatures = {
+                  nativeEmbed: true,
+                  mediaTakeOver: true
+                };
+                webview.WebviewController.enableBackForwardCache(features);
+                Utils.emitEvent('success', 260326104);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326104);
+              }
+              break;
+            }
+
+            case 'emitWebviewEnableBackForwardCacheStatic005': {
+              try {
+                console.info('test enableBackForwardCache with nativeEmbed true');
+                let features: webview.BackForwardCacheSupportedFeatures = {
+                  nativeEmbed: true,
+                  mediaTakeOver: true
+                };
+                webview.WebviewController.enableBackForwardCache(undefined);
+                Utils.emitEvent('success', 260326105);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326105);
+              }
+              break;
+            }
+
             case 'SwitchNextPageStatic' : {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();

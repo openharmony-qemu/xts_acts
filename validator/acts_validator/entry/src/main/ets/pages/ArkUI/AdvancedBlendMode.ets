@@ -246,13 +246,13 @@ export struct MaskDemo {
           })
         Column() {
           Row({ space: 10 }) {
-            Button('FAST')
-              .backgroundColor(this.blendApplyType === BlendApplyType.FAST ? Color.Orange : Color.Gray)
+            Button(this.mUseOffscreen ? '已启用' : '未启用')
+              .backgroundColor(this.mUseOffscreen ? Color.Orange : Color.Gray)
               .fontColor(Color.White)
-              .padding({ left: 15, right: 15 })
+              .padding({ left: 20, right: 20 })
               .onClick(() => {
-                this.blendApplyType = BlendApplyType.FAST;
-              })
+                this.mUseOffscreen = !this.mUseOffscreen;
+             })
 
             Button('OFFSCREEN')
               .backgroundColor(this.blendApplyType === BlendApplyType.OFFSCREEN ? Color.Orange : Color.Gray)
@@ -280,15 +280,14 @@ export struct MaskDemo {
           Text('useBrightnessAndGradientColor:')
             .fontColor(Color.Red)
             .margin({ right: 10 })
-
-          Button(this.mUseOffscreen ? '已启用' : '未启用')
-            .backgroundColor(this.mUseOffscreen ? Color.Orange : Color.Gray)
-            .fontColor(Color.White)
-            .padding({ left: 20, right: 20 })
-            .onClick(() => {
-              this.mUseOffscreen = !this.mUseOffscreen;
-            })
-        }
+            Button('FAST')
+              .backgroundColor(this.blendApplyType === BlendApplyType.FAST ? Color.Orange : Color.Gray)
+              .fontColor(Color.White)
+              .padding({ left: 15, right: 15 })
+              .onClick(() => {
+                this.blendApplyType = BlendApplyType.FAST;
+              })
+            }
         .margin({ top: 10 })
       }
       .height('80%')

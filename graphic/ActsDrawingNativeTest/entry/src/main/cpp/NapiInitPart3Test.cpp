@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 #include "include/NapiInitCommonTest.h"
 
 // Rect Create/Destroy/Copy/Intersect/Join related functions
@@ -1183,4 +1184,3 @@ napi_value DrawingCanvasDrawPixelMapRectConstraint(napi_env env, napi_callback_i
         return resultValue;
     });
 }
-

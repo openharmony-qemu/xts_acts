@@ -18,6 +18,8 @@ import drawingTsPath3Test from "./Path3.test";
 import drawingTsPath4Test from "./Path4.test";
 import drawingTsPath5Test from "./Path5.test";
 import drawingTsPath6Test from "./Path6.test";
+import drawingTsPath7Test from "./Path7.test";
+import drawingTsPath8Test from "./Path8.test";
 
 export default function testsuite() {
   drawingTsPathTest();
@@ -26,4 +28,6 @@ export default function testsuite() {
   drawingTsPath4Test();
   drawingTsPath5Test();
   drawingTsPath6Test();
+  drawingTsPath7Test();
+  drawingTsPath8Test();
 }

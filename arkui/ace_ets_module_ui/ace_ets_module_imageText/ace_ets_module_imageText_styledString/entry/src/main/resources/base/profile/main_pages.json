@@ -6,6 +6,7 @@
         "MainAbility/pages/StyledString/AboutToAppear",
         "MainAbility/pages/StyledString/ClearStyles",
         "MainAbility/pages/StyledString/CustomSpan",
+        "MainAbility/pages/StyledString/CustomSpanMeasureInfo",
         "MainAbility/pages/StyledString/EnableMultiTypeTest",
         "MainAbility/pages/StyledString/FromHtml",
         "MainAbility/pages/StyledString/GetStyles",
@@ -41,6 +42,7 @@
         "MainAbility/pages/StyledString/ParagraphStyleTextDirection",
         "MainAbility/pages/StyledString/StyledStringMethodsNull",
         "MainAbility/pages/StyledString/MutableStyledStringMethodsNull",
-        "MainAbility/pages/StyledString/MutableStyledStringMethodsNull2"
+        "MainAbility/pages/StyledString/MutableStyledStringMethodsNull2",
+        "MainAbility/pages/StyledString/StyledStringFontWeightConfigsTest"
     ]
 }

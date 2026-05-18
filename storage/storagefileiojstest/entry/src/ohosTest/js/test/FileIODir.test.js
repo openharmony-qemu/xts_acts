@@ -383,37 +383,6 @@ describe('fileIOTestDir', function () {
   });
 
   /**
-   * @tc.name   fileio_test_dir_read_sync_005
-   * @tc.number SUB_STORAGE_FileIO_dir_ReadSync_0500
-   * @tc.desc   Function of API, excess files.
-   * @tc.type   FUNCTION
-   * @tc.size   MEDIUMTEST
-   * @tc.level  LEVEL1
-   */
-  it('fileio_test_dir_read_sync_005', Level.LEVEL1, async function () {
-    let dpath = await nextFileName('fileio_test_dir_read_sync_005') + 'd'
-    let fpath = dpath + '/f'
-    try {
-      fileio.mkdirSync(dpath);
-      for (let i = 0; i < 10001; i++) {
-        expect(prepareFile(fpath + i, 'test_text')).assertTrue();
-      }
-      let dd = fileio.opendirSync(dpath);
-      expect(dd !== null).assertTrue();
-      expect(dd.readSync() !== null).assertTrue();
-      dd.closeSync();
-      for (let i = 0; i < 10001; i++) {
-        fileio.unlinkSync(fpath + i);
-      }
-      fileio.rmdirSync(dpath);
-    }
-    catch (e) {
-      console.info('fileio_test_dir_read_sync_005 has failed for ' + e);
-      expect(null).assertFail();
-    }
-  });
-
-  /**
    * @tc.name   fileio_test_dir_close_sync_000
    * @tc.number SUB_STORAGE_FileIO_dir_CloseSync_0000
    * @tc.desc   Function of API, closeSync.

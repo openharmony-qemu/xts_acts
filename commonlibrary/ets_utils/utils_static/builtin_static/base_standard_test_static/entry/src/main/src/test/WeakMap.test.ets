@@ -27,7 +27,7 @@ interface GeneratedObjectLiteralInterface_2 {
   name: string;
 }
 
-export default function WeakMapTest() {
+export default function WeakMapTest(): void {
 
   describe('weakMapTest', (): void => {
     afterEach(async (): Promise<void> => {

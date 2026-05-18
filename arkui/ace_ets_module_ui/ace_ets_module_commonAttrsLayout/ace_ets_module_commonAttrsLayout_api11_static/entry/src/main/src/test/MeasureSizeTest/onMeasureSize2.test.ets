@@ -36,7 +36,7 @@ export default function onMeasureSize2() {
   describe('onMeasureSize2', () => {
     console.info("onMeasureSize2 beforeAll start");
 
-    waitForCompletion(async ()=>{await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")})
+    UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility").awaitSync()
 
 
     const uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!
@@ -77,10 +77,10 @@ it('onMeasureSize2_static_001', Level.LEVEL0, async (done: () => void): Promise<
       await CommonFunc.sleep(1000);
 
       console.log('get Initial value')
-      let text_01 = CommonFunc.getComponentRect('onMeasureSize2_text_01');
-      let text_02 = CommonFunc.getComponentRect('onMeasureSize2_text_02');
-      let text_03 = CommonFunc.getComponentRect('onMeasureSize2_text_03');
-      let Column_1 = CommonFunc.getComponentRect('onMeasureSize2_Column_1');
+      let text_01 = await CommonFunc.getComponentRect('onMeasureSize2_text_01');
+      let text_02 = await CommonFunc.getComponentRect('onMeasureSize2_text_02');
+      let text_03 = await CommonFunc.getComponentRect('onMeasureSize2_text_03');
+      let Column_1 = await CommonFunc.getComponentRect('onMeasureSize2_Column_1');
 
       console.log('assert position')
       expect(Math.abs(Math.round(text_01.left - Column_1.left) - Math.round(uiContext.vp2px(200))) <= 1).assertTrue();

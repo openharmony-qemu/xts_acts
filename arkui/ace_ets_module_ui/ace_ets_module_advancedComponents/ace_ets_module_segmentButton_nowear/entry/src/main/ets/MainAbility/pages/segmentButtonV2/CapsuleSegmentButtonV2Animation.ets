@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -55,11 +55,28 @@ struct CapsuleSegmentButtonV2Example {
     { icon: $r('sys.media.ohos_ic_public_device_matebook') },
     { icon: $r('sys.media.ohos_ic_public_device_watch') },
   ]);
-  @Local enableStateAnimation: boolean = false;
+  @Local enableStateAnimation: (boolean | undefined)[] = [false, true, undefined];
   @Local enableStateAnimationIndex: number = 0;
   build() {
     Scroll() {
       Column({ space: 12 }) {
+
+            Button('false')
+              .onClick(() => {
+                this.enableStateAnimationIndex = 0;
+              })
+
+            Button('true').key('true')
+              .onClick(() => {
+                this.enableStateAnimationIndex = 1;
+              })
+
+            Button('undefined')
+              .onClick(() => {
+                this.enableStateAnimationIndex = 2;
+              })
+
+        Text('' + this.enableStateAnimation[this.enableStateAnimationIndex]).fontSize(18).fontWeight(FontWeight.Bold).key('text')
         CapsuleSegmentButtonV2({
           items: this.textItems,
           selectedIndex: this.textSelectedIndex!!,
@@ -71,35 +88,8 @@ struct CapsuleSegmentButtonV2Example {
           buttonBackgroundBlurStyle: this.buttonBackgroundBlurStyle,
           buttonBackgroundBlurStyleOptions: undefined,
           buttonPadding: this.buttonPadding,
+          enableStateAnimation: this.enableStateAnimation[this.enableStateAnimationIndex]
         }).key('TabSegmentButtonV2_01')
-
-        CapsuleSegmentButtonV2({
-          items: this.hybridItems,
-          selectedIndex: this.hybridSelectedIndex!!,
-          itemSymbolFontSize: this.itemSymbolFontSize,
-        }).key('TabSegmentButtonV2_02')
-
-        CapsuleSegmentButtonV2({
-          items: this.imageItems,
-          selectedIndex: this.imageSelectedIndex!!,
-          itemMinHeight: this.itemMinHeight,
-          itemIconSize: {
-            width: LengthMetrics.vp(30),
-            height: LengthMetrics.vp(30)
-          },
-          itemIconFillColor: this.itemIconFillColor,
-          itemSelectedIconFillColor: this.itemSelectedIconFillColor,
-          buttonBackgroundColor: this.itemSelectedIconFillColor,
-          buttonBackgroundBlurStyle: this.buttonBackgroundBlurStyle,
-          buttonBackgroundBlurStyleOptions: undefined,
-          buttonPadding: this.buttonPadding,
-          enableStateAnimation:this.enableStateAnimation
-        }).key('TabSegmentButtonV2_03')
-        Button('true').key('true')
-        .onClick(() => {
-        this.enableStateAnimation = !this.enableStateAnimation;
-        })
-        Text('' + this.enableStateAnimation).key('text')
       }
       .constraintSize({ minHeight: '100%' })
       .justifyContent(FlexAlign.Start)

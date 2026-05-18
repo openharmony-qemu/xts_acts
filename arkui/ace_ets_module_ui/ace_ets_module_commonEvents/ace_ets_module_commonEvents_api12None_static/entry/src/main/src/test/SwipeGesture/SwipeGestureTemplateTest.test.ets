@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -78,12 +78,12 @@ it('SwipeGestureTemplateTest_static_0010', Level.LEVEL0, async (done: () => void
       console.log('SwipeGestureTemplateTest_0010 areaObj1 clicked end',Math.round(areaObj1.left + areaWidth1 * 0.8),Math.round(areaObj1.top + areaHeight1/2))
       let timeSpace:int = 3000
       let driver = Driver.create();
-      let speed = (Math.floor(areaWidth1 * 0.6 / 0.016 / 1000) * 1000) as Int
+      let speed = (Math.floor(areaWidth1 * 0.6 / 0.016 / 1000) * 1000).toInt()
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2) as Int,Math.round(areaObj1.top + areaHeight1/2) as Int,Math.round(areaObj1.left + areaWidth1 * 0.8) as Int,Math.round(areaObj1.top + areaHeight1/2) as Int,speed)
+      await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt(),Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt(),speed)
       await CommonFunc.sleep(timeSpace);
       let timeBefore:number = Date.now();
-      await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2) as Int,Math.round(areaObj1.top + areaHeight1/2) as Int,Math.round(areaObj1.left + areaWidth1 * 0.8) as Int,Math.round(areaObj1.top + areaHeight1/2) as Int,speed)
+      await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt(),Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt(),speed)
       let timeAfter:number = Date.now();
       await CommonFunc.sleep(3000);
       let text1 = inspector.getInspectorByKey('SwipeGestureTemplate_Text01');
@@ -98,7 +98,7 @@ it('SwipeGestureTemplateTest_static_0010', Level.LEVEL0, async (done: () => void
       console.log('SwipeGestureTemplateTest_0010 obj2 time time2-time1',time2 - time1);
       console.log('TapGestureTemplateTest_0010 obj2 time timeBefore timeAfter', timeBefore, timeAfter);
       console.log('SwipeGestureTemplateTest_0010 obj2 time timeSpace',timeSpace);
-      let flag:number = time2 - time1 - (timeSpace as number) * 1000000 -  (timeAfter - timeBefore)*1000000
+      let flag:number = time2 - time1 - (timeSpace.toDouble()) * 1000000 -  (timeAfter - timeBefore)*1000000
       console.log('SwipeGestureTemplateTest_0010 flag',flag)
       console.log('TapGestureTemplateTest_0010 timeAfter - timeBefore:',timeAfter - timeBefore)
       expect( flag <= (16 * 1000000)).assertTrue();

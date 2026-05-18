@@ -647,14 +647,14 @@ describe("DequeTest", function () {
   });
 
   /**
-   * @tc.name   testInsertFront036 
+   * @tc.name   testInsertFront036Adapt001
    * @tc.number testInsertFront036 
    * @tc.desc   Add element to deque instance header.For example: let a = [1, 2, 3, 4]; deque.insertFront.bind({}, "a")().
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL1
    */
-  it("testInsertFront036 ", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
+  it("testInsertFront036Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
     let deque = new Deque();
     try {
       deque.insertFront.bind({}, "a")();

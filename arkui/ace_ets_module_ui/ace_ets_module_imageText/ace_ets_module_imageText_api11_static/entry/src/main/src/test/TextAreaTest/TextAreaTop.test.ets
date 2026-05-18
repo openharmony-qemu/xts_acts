@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -92,7 +92,7 @@ export default function textArea_top() {
         let driver = Driver.create();
         await driver.click(
           // vp2px(100),vp2px(10)
-          Math.round((textArea_01.left + (textArea_01.right - textArea_01.left) /2)) as Int,Math.round((textArea_01.top + (textArea_01.bottom - textArea_01.top) /45)) as Int
+          Math.round((textArea_01.left + (textArea_01.right - textArea_01.left) /2)).toInt(),Math.round((textArea_01.top + (textArea_01.bottom - textArea_01.top) /45)).toInt()
         );
         await CommonFunc.sleep(1000);
 
@@ -129,7 +129,7 @@ export default function textArea_top() {
         const uiContext = AppStorage.get<UIContext>('uiContext');
         let driver = Driver.create();
         await driver.click(
-          Math.round(uiContext!.vp2px(100)) as Int,Math.round(uiContext!.vp2px(200)) as Int
+          Math.round(uiContext!.vp2px(100)).toInt(),Math.round(uiContext!.vp2px(200)).toInt()
           // (textArea_01.left + (textArea_01.right - textArea_01.left) /2),(textArea_01.top + (textArea_01.bottom - textArea_01.top) /2)
         );
         await CommonFunc.sleep(1000);
@@ -169,7 +169,7 @@ export default function textArea_top() {
         let driver = Driver.create();
         await CommonFunc.sleep(500);
         await driver.click(
-          Math.round((textArea_01.left + (textArea_01.right - textArea_01.left) /2)) as Int,Math.round((textArea_01.top + (textArea_01.bottom - textArea_01.top) /45 * 44)) as Int
+          Math.round((textArea_01.left + (textArea_01.right - textArea_01.left) /2)).toInt(),Math.round((textArea_01.top + (textArea_01.bottom - textArea_01.top) /45 * 44)).toInt()
         );
         await CommonFunc.sleep(1000);
 

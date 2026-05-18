@@ -28,6 +28,40 @@ const DeviceErrorCode = 17000005;
 const ErrorCode = 401;
 const CapabilityCode = 801;
 
+async function dismissDialog(driver: Driver) {
+    await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+    await driver.delayMs(waitUiReadyMs);
+    let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' });
+    console.log(`${TestTag}, dismissDialog window,${JSON.stringify(window)}`);
+    if (window != null) {
+        try {
+            let windowMode = await window.getWindowMode();
+            if (windowMode != WindowMode.FLOATING) {
+                await window.resume();
+                await driver.delayMs(8000);
+            }
+        } catch (error) {
+            console.log(`${TestTag}, dismissDialog resume error,${JSON.stringify(error)}`);
+        }
+    }
+    let stepFirst = await driver.findComponent(ON.text('下一步'))
+    if (stepFirst != null) {
+        await stepFirst.click()
+        await driver.delayMs(1000)
+    }
+    let stepSecond = await driver.findComponent(ON.text('下一步'))
+    if (stepSecond != null) {
+        await stepSecond.click()
+        await driver.delayMs(1000)
+    }
+    let stepThird = await driver.findComponent(ON.text('完成'))
+    if (stepThird != null) {
+        await stepThird.click()
+        await driver.delayMs(1000)
+    }
+    await stopApplication('com.uitestScene.acts');
+}
+
 async function startAbility(bundleName: string, abilityName: string) {
     await delegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`).then(result => {
         console.info(`UiTestCase, start abilityFinished: ${result}`)
@@ -130,6 +164,7 @@ export default function UiTest() {
             driver = Driver.create()
             await driver.delayMs(1000)
             await getInputMethodPermission()
+            await dismissDialog(driver)
             done()
         })
 
@@ -830,6 +865,11 @@ export default function UiTest() {
                 pointers.setPoint(0, 8, ninePoint);
                 await driver.injectKnucklePointerAction(pointers);
                 await driver.delayMs(waitUiReadyMs * 5);
+                let agreeBtn = await driver.findComponent(ON.text('同意'));
+                if (agreeBtn != null) {
+                    await agreeBtn.click()
+                    await driver.delayMs(waitUiReadyMs * 10);
+                }                
                 let screenPng = await driver.findComponent(ON.text('保存'));
                 expect(screenPng != null).assertTrue();
                 await driver.pressBack();

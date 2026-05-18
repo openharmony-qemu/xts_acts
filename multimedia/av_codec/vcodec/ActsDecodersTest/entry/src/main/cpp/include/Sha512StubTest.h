@@ -130,6 +130,8 @@ inline constexpr uint64_t HexToUint64(const char* hex)
 }
 
 // SHA512 常量 K (FIPS 180-4 标准)
+// 注意: 在 C++14 中无法使用 inline constexpr 数组,这里使用 constexpr
+// 每个包含此头文件的编译单元会有独立副本,但编译器会优化
 constexpr uint64_t K512[SHA512_WORD_COUNT] = {
     0x428a2f98d728ae22ULL, 0x7137449123ef65cdULL, 0xb5c0fbcfec4d3b2fULL, 0xe9b5dba58189dbbcULL,
     0x3956c25bf348b538ULL, 0x59f111f1b605d019ULL, 0x923f82a4af194f9bULL,

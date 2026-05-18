@@ -888,5 +888,59 @@ export default function HiDeBugTrace() {
       }
       console.info("SUB_DFX_DFR_requestTrace_Interface_3200 end");
     })
+
+     /**
+     * @tc.name   testHidebugrequestTrace33
+     * @tc.number SUB_DFX_DFR_requestTrace_Interface_3300
+     * @tc.desc   requestTrace函数的异常值覆盖,null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHidebugrequestTrace33', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_requestTrace_Interface_3300 start");
+      try {
+        hidebug.requestTrace(null).then((tracePath: string) => {
+          hilog.info(0x0000, 'hidebug', `SUB_DFX_DFR_requestTrace_Interface_3300: ${tracePath}`)
+          done()
+        }).catch((err: BusinessError) => {
+          hilog.error(0x0000, 'hidebug', `SUB_DFX_DFR_requestTrace_Interface_3300 error1 code: ${err.code}, message: ${err.message}`)
+          expect(err.code == 401).assertTrue();
+          done()
+        })
+      } catch (error) {
+        hilog.error(0x0000, 'hidebug', `SUB_DFX_DFR_requestTrace_Interface_3300 error2 code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`)
+        expect(false).assertTrue();
+        done()
+      }
+      console.info("SUB_DFX_DFR_requestTrace_Interface_3300 end");
+    })
+
+    /**
+     * @tc.name   testHidebugrequestTrace34
+     * @tc.number SUB_DFX_DFR_requestTrace_Interface_3400
+     * @tc.desc   requestTrace函数的异常值覆盖,undefined覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHidebugrequestTrace34', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_requestTrace_Interface_3400 start");
+      try {
+        hidebug.requestTrace(undefined).then((tracePath: string) => {
+          hilog.info(0x0000, 'hidebug', `SUB_DFX_DFR_requestTrace_Interface_3400: ${tracePath}`)
+          done()
+        }).catch((err: BusinessError) => {
+          hilog.error(0x0000, 'hidebug', `SUB_DFX_DFR_requestTrace_Interface_3400 error1 code: ${err.code}, message: ${err.message}`)
+          expect(err.code == 401).assertTrue();
+          done()
+        })
+      } catch (error) {
+        hilog.error(0x0000, 'hidebug', `SUB_DFX_DFR_requestTrace_Interface_3400 error2 code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`)
+        expect(false).assertTrue();
+        done()
+      }
+      console.info("SUB_DFX_DFR_requestTrace_Interface_3400 end");
+    })
   })
 }

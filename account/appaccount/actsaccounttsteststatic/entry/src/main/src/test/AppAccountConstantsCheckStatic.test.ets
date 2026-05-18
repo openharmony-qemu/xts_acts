@@ -51,7 +51,6 @@ export default function AppAccountConstantsCheckStatic() {
           expect(account.Constants.KEY_BOOLEAN_RESULT).assertEqual('booleanResult');
           hilog.info(0x0000, tag, "====>AppAccountConstantsCheckStatic_0100 end====");
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AppAccountConstantsCheckStatic_0100 catch err: " + JSON.stringify(err));
           expect().assertFail();
         }

@@ -26,7 +26,7 @@ import webview from '@ohos.web.webview'
 import {canIUse} from '@internal.full.global'
 import { Driver, ON } from '@ohos.UiTest';
 
-class StringFields {
+export class StringFields {
   str: string = '';
 }
 
@@ -35,6 +35,7 @@ class StringFields {
 struct WebSslErrorTest {
   stringObj: StringFields  = new StringFields ();
   controller: webview.WebviewController = new webview.WebviewController(undefined);
+  controller2: webview.WebviewController = new webview.WebviewController(undefined);
   @State str: string = ""
   @State sslErrorType: number = -1
   @State isReceive: number = -1;
@@ -127,6 +128,40 @@ struct WebSslErrorTest {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;
+            }
+            case "testLoadUrl009": {
+              try {
+                this.controller2.loadUrl("resource://rawfile/index.html");
+                Utils.emitEvent(this.titleReceive, 201151)
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 201151)
+              }
+              break;
+            }
+            case "testLoadUrl010": {
+              try {
+                this.controller.loadUrl('');
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 201152)
+              }
+              break;
+            }
+            case "testLoadUrl011": {
+              try {
+                this.controller.loadUrl('file://', [{ headerKey: 'headerKey', headerValue: 'headerValue' }]);
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 201153)
+              }
+              break;
+            }
+            case 'emitonSwitchNextPage': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/WebTwo' })
+              console.log('push URL success')
             }
           }
         })

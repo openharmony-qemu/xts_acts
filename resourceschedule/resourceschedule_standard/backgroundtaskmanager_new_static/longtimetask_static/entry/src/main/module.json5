@@ -51,6 +51,9 @@
           "multiDeviceConnection",
           "voip",
           "taskKeeping",
+          "avPlaybackAndRecord",
+          "specialScenarioProcessing",
+          "nearlink"
         ]
       }
     ],

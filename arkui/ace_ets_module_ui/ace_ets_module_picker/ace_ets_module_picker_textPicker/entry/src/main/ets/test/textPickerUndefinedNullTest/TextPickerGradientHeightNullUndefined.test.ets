@@ -84,7 +84,7 @@ export default function TextPickerGradientHeightNullUndefinedTest() {
       console.info("[textPickerGradientHeight_001] null gradientHeight value is: " + JSON.stringify(obj.$attrs.gradientHeight));
 
       // null 应该恢复为默认值，两者应该相等
-      expect(obj.$attrs.gradientHeight).assertEqual('36.00vp');
+      expect(obj.$attrs.gradientHeight).assertEqual(objCompare.$attrs.gradientHeight);
 
       console.info('[textPickerGradientHeight_001] END');
     });
@@ -112,7 +112,7 @@ export default function TextPickerGradientHeightNullUndefinedTest() {
       console.info("[textPickerGradientHeight_002] undefined gradientHeight value is: " + JSON.stringify(obj.$attrs.gradientHeight));
 
       // undefined 应该恢复为默认值，两者应该相等
-      expect(obj.$attrs.gradientHeight).assertEqual('36.00vp');
+      expect(obj.$attrs.gradientHeight).assertEqual(objCompare.$attrs.gradientHeight);
 
       console.info('[textPickerGradientHeight_002] END');
     });

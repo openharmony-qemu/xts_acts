@@ -712,5 +712,36 @@ export default function inputMethodNamespaceTest() {
  	        expect(typeof(ATTRIBUTE.capitalizeMode)).assertEqual('int');
  	        done();
  	    });
+
+        /**
+         * @tc.name   Sub_InputMethod_IMF_EasyConnStatic_0800
+         * @tc.number SUB_INPUTMETHOD_IMF_EASYCONNSTATIC_0800
+         * @tc.desc   Test onAttachmentDidFail interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_InputMethod_IMF_EasyConnStatic_0800', Level.LEVEL2, async (done: () => void) => {
+            const CASE_NAME: string = 'Sub_InputMethod_IMF_EasyConnStatic_0800';
+            let callback: (reason: inputMethod.AttachFailureReason) => void = (reason: inputMethod.AttachFailureReason): void => {
+                console.info(`${CASE_NAME} attachment failed, reason: ${reason}`);
+            };
+            let callback1: (reason: inputMethod.AttachFailureReason) => void = (reason: inputMethod.AttachFailureReason): void => {
+                console.info(`${CASE_NAME} attachment failed, reason1: ${reason}`);
+            };
+            try {
+                inputMethod.onAttachmentDidFail(callback);
+                console.info(`${CASE_NAME} onAttachmentDidFail success`);
+                inputMethod.onAttachmentDidFail(callback1);
+                console.info(`${CASE_NAME} onAttachmentDidFail1 success`);
+                inputMethod.offAttachmentDidFail(callback);
+                console.info(`${CASE_NAME} offAttachmentDidFail success`);
+                done();
+            } catch (error) {
+                console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+                expect().assertFail();
+                done();
+            }
+        });
     })
 }

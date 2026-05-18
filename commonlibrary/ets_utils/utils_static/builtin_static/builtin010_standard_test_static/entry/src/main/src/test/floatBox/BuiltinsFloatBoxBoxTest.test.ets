@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -48,7 +48,7 @@ export default function builtinsFloatBoxBoxText() {
      */
     it('builtinsFloatBoxBoxText0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       try {
-        const value: float = 1.40129846432481707e-45 as float;
+        const value: float = (1.40129846432481707e-45).toFloat();
         const box: FloatBox = FloatBox.box(value);
         expect(box.get()).assertEqual(value);
       } catch (error) {
@@ -66,7 +66,7 @@ export default function builtinsFloatBoxBoxText() {
      */
     it('builtinsFloatBoxBoxText0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       try {
-        const value: float = 3.40282346638528860e+38 as float;
+        const value: float = (3.40282346638528860e+38).toFloat();
         const box: FloatBox = FloatBox.box(value);
         expect(box.get()).assertEqual(value);
       } catch (error) {
@@ -84,7 +84,7 @@ export default function builtinsFloatBoxBoxText() {
      */
     it('builtinsFloatBoxBoxText0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       try {
-        const value: float = -1.40129846432481707e-45 as float;
+        const value: float = (-1.40129846432481707e-45).toFloat();
         const box: FloatBox = FloatBox.box(value);
         expect(box.get()).assertEqual(value);
       } catch (error) {
@@ -102,7 +102,7 @@ export default function builtinsFloatBoxBoxText() {
      */
     it('builtinsFloatBoxBoxText0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       try {
-        const value: float = -3.40282346638528860e+38 as float;
+        const value: float = (-3.40282346638528860e+38).toFloat();
         const box: FloatBox = FloatBox.box(value);
         expect(box.get()).assertEqual(value);
       } catch (error) {
@@ -120,7 +120,7 @@ export default function builtinsFloatBoxBoxText() {
      */
     it('builtinsFloatBoxBoxText0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       try {
-        const value: float = 0xcafebabe as float;
+        const value: float = (0xcafebabe).toFloat();
         const box: FloatBox = FloatBox.box(value);
         expect(box.get()).assertEqual(value);
       } catch (error) {
@@ -138,9 +138,9 @@ export default function builtinsFloatBoxBoxText() {
      */
     it('builtinsFloatBoxBoxText0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       try {
-        const value: float = 1.0e-46 as float;
+        const value: float = (1.0e-46).toFloat();
         const box: FloatBox = FloatBox.box(value);
-        expect(box.get()).assertEqual(0.0 as float);
+        expect(box.get()).assertEqual(0.0.toFloat());
       } catch (error) {
         console.log(`Underflow positive test failed: ${error.message}`);
       }
@@ -156,9 +156,9 @@ export default function builtinsFloatBoxBoxText() {
      */
     it('builtinsFloatBoxBoxText0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       try {
-        const value: float = -1.0e-46 as float;
+        const value: float = (-1.0e-46).toFloat();
         const box: FloatBox = FloatBox.box(value);
-        expect(box.get()).assertEqual(-0.0 as float);
+        expect(box.get()).assertEqual((-0.0).toFloat());
       } catch (error) {
         console.log(`Underflow negative test failed: ${error.message}`);
       }

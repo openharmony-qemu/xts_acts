@@ -27,6 +27,7 @@ add_library(ohaudiorenderops SHARED
     NapiInitTest.cpp
     OhAudioRenderUnitTest.cpp
     OhosCommonTest.cpp
+    RenderHelperTest.cpp
     )
 
 target_link_libraries(ohaudiorenderops PUBLIC

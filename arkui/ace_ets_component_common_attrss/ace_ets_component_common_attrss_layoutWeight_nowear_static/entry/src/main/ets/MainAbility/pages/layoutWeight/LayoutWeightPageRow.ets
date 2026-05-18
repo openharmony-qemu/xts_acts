@@ -196,7 +196,7 @@ struct LayoutWeightPageRow {
         Marquee({
           start: true,
           step: 50,
-          loop: Number.MAX_VALUE as Int,
+          loop: Number.MAX_VALUE.toInt(),
           fromStart: true,
           src: 'Running Marquee starts rolling'
         })

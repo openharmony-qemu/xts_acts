@@ -56,13 +56,13 @@ export default function webOnFirstContentfulPaint() {
 
     /**
      * @tc.name   testOnFirstContentfulPaintStatic001
-     * @tc.number SUB_WEB_ONFIRSTCONTENTFULPAINT_0100
+     * @tc.number SUB_WEB_ONFIRSTCONTENTFULPAINT_TC01
      * @tc.desc   test onFirstContentfulPaint with Visibility.None
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testOnFirstContentfulPaintStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void):Promise<void> => {
+    it('testOnFirstContentfulPaintStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void):Promise<void> => {
       Utils.emitEvent('emitOnFirstContentfulPaint001', 10)
       await Utils.msSleep(2000);
       Utils.registerEvent('testOnFirstContentfulPaint001', false, 520, done);
@@ -78,13 +78,13 @@ export default function webOnFirstContentfulPaint() {
 
     /**
      * @tc.name   testOnFirstContentfulPaintStatic002
-     * @tc.number SUB_WEB_ONFIRSTCONTENTFULPAINT_0200
+     * @tc.number SUB_WEB_ONFIRSTCONTENTFULPAINT_TC02
      * @tc.desc   test onFirstContentfulPaint with Visibility.Visible
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testOnFirstContentfulPaintStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: ()=>void):Promise<void> => {
+    it('testOnFirstContentfulPaintStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=>void):Promise<void> => {
       Utils.emitEvent('emitOnFirstContentfulPaint002', 10)
       await Utils.msSleep(2000);
       Utils.registerEvent('testOnFirstContentfulPaintStatic002', true, 522, done);
@@ -97,11 +97,11 @@ export default function webOnFirstContentfulPaint() {
 
     /**
     * @tc.name        SwitchNextPageStatic
-    * @tc.number      SUB_WEB_SWITCH_NEXT_PAGE1112
+    * @tc.number      SUB_WEB_SWITCH_NEXT_PAGE_522
     * @tc.desc        test SwitchNextPageStatic
     * @tc.size        MediumTest
     * @tc.type        Function
-    * @tc.level       Level 0
+    * @tc.level       LEVEL0
     */
     it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

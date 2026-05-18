@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -131,10 +131,10 @@ it('testSwiperSetItemSpace_static', Level.LEVEL0, async (done: () => void): Prom
 
       let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('itemspacekey')
       const delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-      let x1 = Number.parseInt(`${(gridRect.right - gridRect.left) * 0.8 + gridRect.left}`) as Int;
-      let y1 = Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`) as Int;
-      let x2 = Number.parseInt(`${(gridRect.right - gridRect.left) * 0.1 + gridRect.left}`) as Int;
-      let y2 = Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`) as Int;
+      let x1 = Number.parseInt(`${(gridRect.right - gridRect.left) * 0.8 + gridRect.left}`).toInt();
+      let y1 = Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt();
+      let x2 = Number.parseInt(`${(gridRect.right - gridRect.left) * 0.1 + gridRect.left}`).toInt();
+      let y2 = Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt();
       let time = (x1 - x2) / 0.5;
       let cmd = 'uinput -T -m ' + JSON.stringify(x1) + ' ' + JSON.stringify(y1) + ' ' + JSON.stringify(x2) + ' ' +
       JSON.stringify(y2) + ' ' + JSON.stringify(time);
@@ -216,10 +216,10 @@ it('testSwiperSetItemSpaceInvalid_static', Level.LEVEL0, async (done: () => void
 
       let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('itemspacekey')
       const delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-      let x1 = Number.parseInt(`${(gridRect.right - gridRect.left) * 0.8 + gridRect.left}`) as Int;
-      let y1 = Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`) as Int;
-      let x2 = Number.parseInt(`${(gridRect.right - gridRect.left) * 0.1 + gridRect.left}`) as Int;
-      let y2 = Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`) as Int;
+      let x1 = Number.parseInt(`${(gridRect.right - gridRect.left) * 0.8 + gridRect.left}`).toInt();
+      let y1 = Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt();
+      let x2 = Number.parseInt(`${(gridRect.right - gridRect.left) * 0.1 + gridRect.left}`).toInt();
+      let y2 = Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt();
       let time = (x1 - x2) / 0.5;
       let cmd = 'uinput -T -m ' + JSON.stringify(x1) + ' ' + JSON.stringify(y1) + ' ' + JSON.stringify(x2) + ' ' +
       JSON.stringify(y2) + ' ' + JSON.stringify(time);

@@ -38,7 +38,7 @@ import {
 import { State } from '@ohos.arkui.stateManagement';
 import { RecordData } from '@ohos.base';
 
-interface Title1 {
+export interface Title1 {
   title: string,
   subtitle: string
 }

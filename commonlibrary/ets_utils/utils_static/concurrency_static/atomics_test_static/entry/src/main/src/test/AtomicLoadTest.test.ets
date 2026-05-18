@@ -214,7 +214,7 @@ export default function atomicsLoadTest() {
       const ta = new Uint32Array(sab);
       ta[0] = 1500000000;
       const outer = (arr: Uint32Array, idx: number) => {
-        return Atomics.load(arr, idx as int)
+        return Atomics.load(arr, idx.toInt())
       };
       const result = outer(ta, 0);
       expect(result).assertEqual(1500000000);
@@ -337,7 +337,7 @@ export default function atomicsLoadTest() {
       const sab = new ArrayBuffer(4); // 2 Uint16 elements
       const ta = new Uint16Array(sab);
       ta[1] = 5000;
-      const getValue = (idx: number) => Atomics.load(ta, idx as int);
+      const getValue = (idx: number) => Atomics.load(ta, idx.toInt());
       expect(getValue(0)).assertEqual(0);
       expect(getValue(1)).assertEqual(5000);
     });
@@ -358,7 +358,7 @@ export default function atomicsLoadTest() {
         if (idx < 0 || idx >= arr.length) {
           throw new Error('Invalid index');
         }
-        return Atomics.load(arr, idx as int);
+        return Atomics.load(arr, idx.toInt());
       }
       const result = validateAndLoad(ta, 0);
       expect(result).assertEqual(75);
@@ -418,7 +418,7 @@ export default function atomicsLoadTest() {
       const sab = new ArrayBuffer(8);
       const ta = new BigUint64Array(sab);
       ta[0] = 1234567890123456789n;
-      const outerWrapper = (arr: BigUint64Array) => (idx: number) => Atomics.load(arr, idx as int);
+      const outerWrapper = (arr: BigUint64Array) => (idx: number) => Atomics.load(arr, idx.toInt());
       const result = outerWrapper(ta)(0);
       expect(result).assertEqual(1234567890123456789n);
     });
@@ -473,7 +473,7 @@ export default function atomicsLoadTest() {
       ta[0] = 80;
       const safeLoad = (arr: Int32Array, idx: number) => {
         try {
-          return Atomics.load(arr, idx as int);
+          return Atomics.load(arr, idx.toInt());
         } catch (err) {
           return (err as Error).name;
         }
@@ -568,7 +568,7 @@ export default function atomicsLoadTest() {
       const sab = new ArrayBuffer(8);
       const ta = new BigInt64Array(sab);
       try {
-        Atomics.load(ta, 0.5 as int);
+        Atomics.load(ta, 0.5.toInt());
       } catch (e) {
         expect(e.message).assertContain('');
       }
@@ -622,7 +622,7 @@ export default function atomicsLoadTest() {
       const ta = new Int32Array(sab);
       ta[0] = 456;
       // Safe load: check bounds before loading
-      const safeLoad = (arr: Int32Array, idx: number) => idx >= 0 && idx < arr.length ? Atomics.load(arr, idx as int) : null
+      const safeLoad = (arr: Int32Array, idx: number) => idx >= 0 && idx < arr.length ? Atomics.load(arr, idx.toInt()) : null
       expect(safeLoad(ta, 0)).assertEqual(456);
       expect(safeLoad(ta, 1)).assertEqual(null); // Out of bounds
     });
@@ -681,7 +681,7 @@ export default function atomicsLoadTest() {
       ta[0] = -45;
       // Load and validate value range (-128 to 127)
       const loadAndValidate = (arr: Int8Array, idx: number) => {
-        const val = Atomics.load(arr, idx as int);
+        const val = Atomics.load(arr, idx.toInt());
         return val >= -128 && val <= 127 ? val : 'Invalid range';
       }
       expect(loadAndValidate(ta, 0)).assertEqual(-45);
@@ -802,7 +802,7 @@ export default function atomicsLoadTest() {
       const ta = new Uint8Array(sab);
       ta[2] = 255;
       // Validate index is even before loading
-      const evenIndexLoad = (arr: Uint8Array, idx: number) => idx % 2 === 0 ? Atomics.load(arr, idx as int) : 'Odd index'
+      const evenIndexLoad = (arr: Uint8Array, idx: number) => idx % 2 === 0 ? Atomics.load(arr, idx.toInt()) : 'Odd index'
       expect(evenIndexLoad(ta, 2)).assertEqual(255);
       expect(evenIndexLoad(ta, 1)).assertEqual('Odd index');
     });
@@ -837,7 +837,7 @@ export default function atomicsLoadTest() {
       const ta = new BigUint64Array(sab);
       ta[0] = 999999999999999999n;
       // Check if loaded value is greater than target
-      const valueCheckLoad = (arr: BigUint64Array, idx: number, target: bigint) => Atomics.load(arr, idx as int) > target
+      const valueCheckLoad = (arr: BigUint64Array, idx: number, target: bigint) => Atomics.load(arr, idx.toInt()) > target
 
       expect(valueCheckLoad(ta, 0, 100000000000000000n)).assertEqual(true);
       expect(valueCheckLoad(ta, 0, 1000000000000000000n)).assertEqual(false);
@@ -907,7 +907,7 @@ export default function atomicsLoadTest() {
       ta[2] = 3000;
 
       // Batch load multiple indices
-      const batchLoader = (arr: Uint16Array, indices: number[]) => indices.map(idx => Atomics.load(arr, idx as int))
+      const batchLoader = (arr: Uint16Array, indices: number[]) => indices.map(idx => Atomics.load(arr, idx.toInt()))
 
 
       const loadedValues = batchLoader(ta, [0, 2]);
@@ -1062,7 +1062,7 @@ export default function atomicsLoadTest() {
       ta[0] = 500;
 
       // Load and format value as string with prefix
-      const formattedLoad = (arr: Int16Array, idx: number, prefix: string) => `${prefix}${Atomics.load(arr, idx as int)}`
+      const formattedLoad = (arr: Int16Array, idx: number, prefix: string) => `${prefix}${Atomics.load(arr, idx.toInt())}`
 
       expect(formattedLoad(ta, 0, 'Value: ')).assertEqual('Value: 500');
       expect(formattedLoad(ta, 0, 'Data: ')).assertEqual('Data: 500');
@@ -1280,7 +1280,7 @@ export default function atomicsLoadTest() {
             resolve(undefined)
           }, 1)
         });
-        return Atomics.load(arr, idx as int);
+        return Atomics.load(arr, idx.toInt());
       }));
 
       const results = await batchLoad(ta, [0, 2]);
@@ -1358,7 +1358,7 @@ export default function atomicsLoadTest() {
 
       // Load with async validation callback
       const loadWithValidation = async (arr: Int16Array, idx: number, callback: (val: number) => void) => {
-        const value: number = Atomics.load(arr, idx as int);
+        const value: number = Atomics.load(arr, idx.toInt());
         await new Promise<void>((resolve) => {
           setTimeout(() => {
             resolve(undefined)
@@ -1541,7 +1541,7 @@ export default function atomicsLoadTest() {
 
       // Load → async transformation (convert to string)
       const transformLoad = async (arr: Int32Array, idx: number) => {
-        const value = Atomics.load(arr, idx as int);
+        const value = Atomics.load(arr, idx.toInt());
         await new Promise<void>((resolve) => {
           setTimeout(() => {
             resolve(undefined)
@@ -1604,7 +1604,7 @@ export default function atomicsLoadTest() {
       const maxSafeInt = Number.MAX_SAFE_INTEGER;
 
       try {
-        Atomics.load(ta, maxSafeInt as int);
+        Atomics.load(ta, maxSafeInt.toInt());
       } catch (e) {
         expect(e.message).assertContain('Index');
       }
@@ -1807,7 +1807,7 @@ export default function atomicsLoadTest() {
                 resolve(undefined)
               }, 1)
             });
-            return Atomics.load(arr, idx as int);
+            return Atomics.load(arr, idx.toInt());
           })
         );
         return values.reduce((acc, val) => acc + val, 0.);
@@ -1832,7 +1832,7 @@ export default function atomicsLoadTest() {
 
       // Filter: keep only bits 3-5 (0b111000)
       const filter: int = 0b111000;
-      Atomics.and(ia, 0, filter as long); // 0b110110 & 0b111000 = 0b110000 (48)
+      Atomics.and(ia, 0, filter.toLong()); // 0b110110 & 0b111000 = 0b110000 (48)
       const filtered = Atomics.load(ia, 0);
       // Validate filter result
       const validated = Atomics.compareExchange(ia, 0, filtered as long, filtered);

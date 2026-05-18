@@ -106,6 +106,12 @@ export default function DynamicLayoutStackTest() {
       let strJson8 = getInspectorByKey('DynamicLayoutStack');
       console.info('DynamicLayoutStackTest_0100 alignContent:'+JSON.parse(strJson8).$attrs.alignContent);
 
+      let button9 = await driver.findComponent(ON.id('StackLayoutAlgorithmUndefined'));
+      await button9.click();
+      await Utils.sleep(2000)
+      let strJson9 = getInspectorByKey('DynamicLayoutStack');
+      console.info('DynamicLayoutStackTest_0100 alignContent:'+JSON.parse(strJson9).$attrs.alignContent);
+
       expect(JSON.parse(strJson).$attrs.alignContent).assertEqual('Alignment.Center');
       expect(JSON.parse(strJson1).$attrs.alignContent).assertEqual('Alignment.TopStart');
       expect(JSON.parse(strJson2).$attrs.alignContent).assertEqual('Alignment.Top');
@@ -115,6 +121,7 @@ export default function DynamicLayoutStackTest() {
       expect(JSON.parse(strJson6).$attrs.alignContent).assertEqual('Alignment.BottomStart');
       expect(JSON.parse(strJson7).$attrs.alignContent).assertEqual('Alignment.Bottom');
       expect(JSON.parse(strJson8).$attrs.alignContent).assertEqual('Alignment.BottomEnd');
+      expect(JSON.parse(strJson9).$attrs.alignContent).assertEqual('Alignment.Center');
       
       console.info('[DynamicLayoutStackTest_0100] END');
       done();

@@ -20,3 +20,7 @@
  * @returns 0 for success, -1 for failure
  */
 export const videoDecoderTest: (testCaseNumber: number) => number;
+
+export const functest: (testCaseNumber: number) => Promise<number>;
+
+export const apitest: (testCaseNumber: number) => number;

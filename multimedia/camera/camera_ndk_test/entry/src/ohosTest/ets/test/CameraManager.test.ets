@@ -170,9 +170,11 @@ let getPermissions2 = () => {
 let driveFn = async () => {
   let dr = Driver.create();
   await sleep(500);
-  let power = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
+  let power1 = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
+  let power2 = await dr?.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), 500);
   await sleep(500);
-  await power?.click();
+  await power1?.click();
+  await power2?.click();
   await sleep(500);
 }
 
@@ -1302,6 +1304,27 @@ export default function CameraManagerTest() {
           expect(ret).assertEqual(CAMERA_OPERATION_NOT_ALLOWED);
         }
       }
+    })
+    /**
+     * @tc.name   testOHCameraManagerSetTorchModeOnWithLevel3100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OH_CameraManager_SetTorchModeOnWithLevel3100
+     * @tc.desc   Test OH_CameraManager_SetTorchModeOnWithLevel in normal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCameraManagerSetTorchModeOnWithLevel3100', Level.LEVEL0, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance()
+      getSupportedCameraOutputCapability();
+      let ret = cameraObj.oHCameraManagerIsTorchLevelControlSupported();
+      let ret2 = 0;
+      if (ret) {
+        let level = 0.5;
+        ret2 = cameraObj.oHCameraManagerSetTorchModeOnWithLevel(level);
+      }
+      console.info(TAG+"testOHCameraManagerSetTorchModeOnWithLevel3100:"+ret);
+      expect(ret2).assertEqual(0);
     })
     /**
      * @tc.name   testOHCameraManagerRegisterTorchStatusCallback0100

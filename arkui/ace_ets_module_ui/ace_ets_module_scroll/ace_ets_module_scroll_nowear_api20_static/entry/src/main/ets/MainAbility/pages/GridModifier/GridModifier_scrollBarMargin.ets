@@ -150,7 +150,7 @@ import { BusinessError } from '@kit.BasicServicesKit'
 
 // 定义 scrollBarMargin 的 Modifier 类
 @Observed
-class ScrollBarMarginModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollBarMarginModifier implements AttributeModifier<ScrollAttribute> {
   private marginValue: ScrollBarMargin | undefined;
 
   constructor(margin: ScrollBarMargin | undefined) {

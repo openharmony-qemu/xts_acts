@@ -25,6 +25,7 @@ import UitestOn401ErrorCode from './UitestOn401ErrorCode.test'
 import UitestComponent401ErrorCode from './UitestComponent401ErrorCode.test'
 import UitestDriver401ErrorCode from './UitestDriver401ErrorCode.test'
 import UitestUWindow401ErrorCode from './UitestUWindow401ErrorCode.test'
+import uitestApi26ErrorTest from './UitestApi26ErrorCode.test'
 export default function testsuite() {
   uitestComponentErrorTest();
   uitestDriverErrorTest();
@@ -38,4 +39,5 @@ export default function testsuite() {
   UitestComponent401ErrorCode();
   UitestDriver401ErrorCode();
   UitestUWindow401ErrorCode();
+  uitestApi26ErrorTest();
 }

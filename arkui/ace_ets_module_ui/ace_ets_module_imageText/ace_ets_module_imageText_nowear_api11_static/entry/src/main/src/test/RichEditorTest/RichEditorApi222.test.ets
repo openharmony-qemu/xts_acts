@@ -82,12 +82,12 @@ it('RichEditorApi2_static_001', Level.LEVEL2, async (done: () => void) => {
       await CommonFunc.sleep(1000);
       let RichEditor1 = CommonFunc.getComponentRectOnScreen('RichEditorApi2_RichEditor1')
       await driver.mouseDrag({
-        x: Math.round((RichEditor1.right - RichEditor1.left) * 0.3 + RichEditor1.left) as int,
-        y: Math.round((RichEditor1.bottom - RichEditor1.top) * 0.5 + RichEditor1.top) as int
+        x: Math.round((RichEditor1.right - RichEditor1.left) * 0.3 + RichEditor1.left).toInt(),
+        y: Math.round((RichEditor1.bottom - RichEditor1.top) * 0.5 + RichEditor1.top).toInt()
       },
         {
-          x: Math.round((RichEditor1.right - RichEditor1.left) * 0.5 + RichEditor1.left) as int,
-          y: Math.round((RichEditor1.bottom - RichEditor1.top) * 0.5 + RichEditor1.top) as int
+          x: Math.round((RichEditor1.right - RichEditor1.left) * 0.5 + RichEditor1.left).toInt(),
+          y: Math.round((RichEditor1.bottom - RichEditor1.top) * 0.5 + RichEditor1.top).toInt()
         })
       await CommonFunc.sleep(3000);
 

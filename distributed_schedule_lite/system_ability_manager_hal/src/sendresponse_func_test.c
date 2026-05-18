@@ -341,6 +341,13 @@ static BOOL SendResponseTestSuiteSetUp(void)
 
 static BOOL SendResponseTestSuiteTearDown(void)
 {
+    SAMGR_GetInstance()->UnregisterFeatureApi("serviceName601", "featureName602");
+    SAMGR_GetInstance()->UnregisterFeature("serviceName601", "featureName602");
+    SAMGR_GetInstance()->UnregisterFeatureApi("serviceName601", "featureName603");
+    SAMGR_GetInstance()->UnregisterFeature("serviceName601", "featureName603");
+    SAMGR_GetInstance()->UnregisterDefaultFeatureApi("serviceName601");
+    SAMGR_GetInstance()->UnregisterService("serviceName601");
+    
     return TRUE;
 }
 
@@ -376,6 +383,8 @@ LITE_TEST_CASE(SendResponseTestSuite, testSendResponse0010, Function | MediumTes
 
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(feature->featureStatus == TRUE, TRUE);
+    free(request.data);
+    request.data = NULL;
     ReleaseIUnknown(demoApi);
 }
 
@@ -411,6 +420,8 @@ LITE_TEST_CASE(SendResponseTestSuite, testSendResponse0020, Function | MediumTes
 
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(feature->featureStatus == FALSE, TRUE);
+    free(request.data);
+    request.data = NULL;
     ReleaseIUnknown(demoApi);
 }
 
@@ -446,6 +457,8 @@ LITE_TEST_CASE(SendResponseTestSuite, testSendResponse0030, Function | MediumTes
 
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(feature->featureStatus == TRUE, TRUE);
+    free(request.data);
+    request.data = NULL;
     ReleaseIUnknown(demoApi);
 }
 
@@ -481,7 +494,9 @@ LITE_TEST_CASE(SendResponseTestSuite, testSendResponseByIdentity0010, Function |
     demoApi->SAMGR_SendRequestProxy(&feature->identity, &request, DemoHandlerAndCheck);
 
     osDelay(OPER_INTERVAL);
-    TEST_ASSERT_EQUAL_INT(feature->featureStatus == TRUE, TRUE);  
+    TEST_ASSERT_EQUAL_INT(feature->featureStatus == TRUE, TRUE);
+    free(request.data);
+    request.data = NULL;
 
     ReleaseIUnknown(demoApi);
 }
@@ -518,6 +533,8 @@ LITE_TEST_CASE(SendResponseTestSuite, testSendResponseByIdentity0020, Function |
 
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(feature->featureStatus == FALSE, TRUE);
+    free(request.data);
+    request.data = NULL;
 
     ReleaseIUnknown(demoApi);
 }

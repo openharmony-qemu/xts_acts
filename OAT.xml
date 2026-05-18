@@ -63,6 +63,7 @@ Note:If the text contains special characters, please escape them according to th
                 <policyitem type="copyright" name="Huawei Device Co., Ltd." path=".*" rule="may" group="defaultGroup" filefilter="copyrightPolicyFilter" desc="Developed by Huawei Device"/>
                 <policyitem type="copyright" name="HiHope Open Source Organization." path=".*" rule="may" group="defaultGroup" filefilter="copyrightPolicyFilter" desc="Developed By Hihope"/>
 				<policyitem type="copyright" name="SwanLink (Jiangsu) Technology Development Co., LTD." path=".*" rule="may" group="defaultGroup" filefilter="copyrightPolicyFilter" desc="Developed By SwanLink"/>
+				<policyitem type="copyright" name="Copyright (c) 2026 RKH Corp." path=".*" rule="may" group="defaultGroup" filefilter="copyrightPolicyFilter" desc="Developed By RKH"/>
             </policy>
         </policylist>
         <filefilterlist>
@@ -117,6 +118,7 @@ Note:If the text contains special characters, please escape them according to th
                 <filteritem type="filename" name="*.raw" desc="all bin file have check"/>
                 <filteritem type="filename" name="*.ape" desc="all bin file have check"/>
                 <filteritem type="filename" name="*.avi" desc="all bin file have check"/>
+                <filteritem type="filename" name="*.ivf" desc="all bin file have check"/>
             </filefilter>
             <filefilter name="defaultFilter" desc="Filters for default" >
               <filteritem type="filepath" name="multimedia/av_codec/ActsDemuxerTest/entry/src/main/resources/rawfile/amr_nb_8000_1.amr" desc="resource files do not to be added"/>
@@ -149,7 +151,7 @@ Note:If the text contains special characters, please escape them according to th
                 <filteritem type="filepath" name="multimedia/av_codec/vcodec/ActsVcodecEncoderTest/entry/src/main/resources/rawfile/1920_1080_rgba1010102.yuv" desc="resource files do not to be added"/>
                 <filteritem type="filepath" name="multimedia/av_codec/vcodec/ActsVcodecEncoderTest/entry/src/main/resources/rawfile/4096_4096_rgba1010102.yuv" desc="resource files do not to be added"/>
                 <filteritem type="filepath" name="multimedia/av_codec/vcodec/ActsVcodecEncoderTest/entry/src/main/resources/rawfile/test.rgba" desc="resource files do not to be added"/>
-                <filteritem type="filepath" name=" resourceschedule/resourceschedule_standard/ActsQosManagerTest/entry/src/main/resources/rawfile/Qwen2.5-0.5B-CPU-Q4/params" desc="resource files do not to be added"/>
+                <filteritem type="filepath" name="resourceschedule/resourceschedule_standard/ActsQosManagerTest/entry/src/main/resources/rawfile/Qwen2.5-0.5B-CPU-Q4/params" desc="resource files do not to be added"/>
                 <filteritem type="filename" name="*.mp4" desc="mp4 files do not to be added "/>
                 <filteritem type="filename" name="*.mov" desc="mov files do not to be added "/>
                 <filteritem type="filename" name="*.xml" desc="xml files do not to be added "/>

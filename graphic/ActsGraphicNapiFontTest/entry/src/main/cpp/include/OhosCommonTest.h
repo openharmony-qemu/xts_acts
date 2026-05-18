@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2022-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -25,6 +25,7 @@
 #include <string>
 #include <vector>
 #include "napi/native_api.h"
+#include <hilog/log.h>
 
 using std::cout;
 using std::endl;
@@ -39,6 +40,8 @@ using std::stringstream;
 using std::to_string;
 using std::vector;
 
+constexpr const char *APP_LOG_TAG = "FontNdkTest";
+const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
 constexpr int TEST_SUCCESS_CODE = 0;
 constexpr float FLOAT_DATA_EPSILON = 1e-6f;
 

@@ -21,6 +21,10 @@ import ResolveStrategyTest from './ResolveStrategyTest/ResolveStrategy.test';
 import ResolvedUIContextTest from './ResolvedUIContextTest/ResolvedUIContext.test';
 import CustomKeyboardContinueFeatureTest from './CustomKeyboardContinueFeatureTest/CustomKeyboardContinueFeature.test';
 import UIContextTest from './UIContextTest/UIContext.test';
+import ArkuiObserverScrollEventTest from './ArkuiObserverScrollEventTest/ArkuiObserverScrollEvent.test';
+import UIObserverTextChangeTest from './UIObserverTextChangeTest/UIObserverTextChange.test';
+import UIContextStaticMethodsTest from './UIContextStaticMethodsTest/UIContextStaticMethods.test';
+import GetWindowIdTest from './window/GetWindowIdTest.test';
 
 export default function testsuite() {
   OverlayManagerTest();
@@ -30,4 +34,8 @@ export default function testsuite() {
   ResolvedUIContextTest();
   UIContextTest();
   CustomKeyboardContinueFeatureTest();
+  ArkuiObserverScrollEventTest();
+  UIObserverTextChangeTest();
+  UIContextStaticMethodsTest();
+  GetWindowIdTest();
 }

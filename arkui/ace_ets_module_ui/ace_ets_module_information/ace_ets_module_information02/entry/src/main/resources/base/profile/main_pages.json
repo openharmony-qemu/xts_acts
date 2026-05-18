@@ -37,6 +37,8 @@
         "MainAbility/pages/TextTimer/TextTimerFontWeight",
         "MainAbility/pages/TextTimer/TextTimerNode",
         "MainAbility/pages/TextTimer/TextTimerTextShadow",
-        "MainAbility/pages/TextTimer/TextTimerPropertiesNullUndefined"
+        "MainAbility/pages/TextTimer/TextTimerPropertiesNullUndefined",
+        "MainAbility/pages/TextTimer/TextTimerConfigurationStartTime",
+        "MainAbility/pages/TextTimer/TextTimerStartTime"
     ]
 }

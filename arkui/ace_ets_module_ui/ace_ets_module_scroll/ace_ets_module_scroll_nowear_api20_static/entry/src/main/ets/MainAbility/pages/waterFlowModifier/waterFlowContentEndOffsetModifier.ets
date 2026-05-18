@@ -148,25 +148,25 @@ import { LengthUnit, typeNode } from '@ohos.arkui.node'
 
 import { BusinessError } from '@kit.BasicServicesKit'
 @Observed
-class WaterFlowNormalModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowNormalModifier implements AttributeModifier<WaterFlowAttribute> {
   applyNormalAttribute(instance: WaterFlowAttribute): void {
     instance.contentEndOffset(60);
   }
 }
 @Observed
-class WaterFlowEmptyModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowEmptyModifier implements AttributeModifier<WaterFlowAttribute> {
   applyNormalAttribute(instance: WaterFlowAttribute): void {
     instance.contentEndOffset(0);
   }
 }
 @Observed
-class WaterFlowInvalidModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowInvalidModifier implements AttributeModifier<WaterFlowAttribute> {
   applyNormalAttribute(instance: WaterFlowAttribute): void {
     instance.contentEndOffset(-30);
   }
 }
 @Observed
-class WaterFlowExplicitUndefinedModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowExplicitUndefinedModifier implements AttributeModifier<WaterFlowAttribute> {
   applyNormalAttribute(instance: WaterFlowAttribute): void {
     instance.contentEndOffset(undefined);
   }

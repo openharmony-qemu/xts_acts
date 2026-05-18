@@ -15,8 +15,14 @@
  import ActsWebRunJavaScriptOnDocumentStartTest from './WebRunJavaScriptOnDocumentStartTest.test'
 import ActsWebRunJavaScriptOnDocumentEndTest from './WebRunJavaScriptOnDocumentEndTest.test'
 import ActsWebRunJavaScriptHeadEndTest from './WebRunJavaScriptOnHeadEndTest.test'
+import ActsWebRunJavaScriptOnDocumentStartUndefinedTest from './WebRunJavaScriptOnDocumentStartUndefinedTest.test'
+import ActsWebRunJavaScriptOnDocumentEndUndefinedTest from './WebRunJavaScriptOnDocumentEndUndefinedTest.test'
+import ActsWebRunJavaScriptOnHeadEndUndefinedTest from './WebRunJavaScriptOnHeadEndUndefinedTest.test'
 export default function testsuite() {
    ActsWebRunJavaScriptOnDocumentStartTest();
-  ActsWebRunJavaScriptOnDocumentEndTest();
-  ActsWebRunJavaScriptHeadEndTest();
+   ActsWebRunJavaScriptOnDocumentEndTest();
+   ActsWebRunJavaScriptHeadEndTest();
+   ActsWebRunJavaScriptOnDocumentStartUndefinedTest();
+   ActsWebRunJavaScriptOnDocumentEndUndefinedTest();
+   ActsWebRunJavaScriptOnHeadEndUndefinedTest();
 }

@@ -47,7 +47,7 @@ struct GridColOffSetExample {
           reference: BreakpointsReference.WindowSize } as BreakPoints,
         direction: GridRowDirection.Row
       }) {
-        ForEach(this.bgColors, (color: Color, index?: number) => {
+        ForEach(this.bgColors, (color: Color, index?: int) => {
           GridCol({ span: { xs: 1, sm: 2, md: 3, lg: 4 } as GridColColumnOption} as GridColOptions) {
             Row().width("100%").height("20vp")
           }.borderColor(color).borderWidth(2).gridColOffset(this.gridColoffsetValue).key('keykey'+index)

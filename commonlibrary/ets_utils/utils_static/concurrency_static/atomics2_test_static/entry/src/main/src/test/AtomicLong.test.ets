@@ -610,7 +610,7 @@ export default function atomicLongTest() {
       const oldValue = atom.fetchXor(99 as long);
       expect(oldValue).assertEqual(777 as long);
       const changed = atom.load();
-      expect(changed).assertEqual((777 ^ 99) as long);
+      expect(changed).assertEqual((777 ^ 99).toLong());
       atom.fetchXor(99 as long);
       expect(atom.load()).assertEqual(777 as long);
 

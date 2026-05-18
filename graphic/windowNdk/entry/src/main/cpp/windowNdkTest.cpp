@@ -69,6 +69,8 @@ uint64_t g_inputDurationReturn;
 uint64_t g_durationReturn;
 uint64_t g_timestampReturn;
 
+const OH_WindowManager_FrameMetrics* g_currentMetrics = nullptr;
+
 static napi_value filterKeyCode(napi_env env, napi_callback_info info){
     size_t argc = 2;
     napi_value args[2] = {nullptr};
@@ -727,6 +729,7 @@ static void OnFrameMetricsMeasured(int32_t windowId, const OH_WindowManager_Fram
     }
     (void)windowId;
 
+    g_currentMetrics = metrics;
     g_frameMetricsCbCount++;
     
     OH_WindowManager_FrameMetrics_IsFirstDrawFrame(metrics, &g_isFirstDrawFrame);
@@ -855,6 +858,130 @@ static napi_value UnregisterFrameMetricsMeasuredCallbackNullptr(napi_env env, na
     napi_value retCode = nullptr;
     napi_create_int32(env, result, &retCode);
     return retCode;
+}
+
+static napi_value TestFrameMetricsIsFirstDrawFrameNullptr(napi_env env, napi_callback_info info)
+{
+    bool isFirstDrawFrame = false;
+    int32_t result = OH_WindowManager_FrameMetrics_IsFirstDrawFrame(nullptr, &isFirstDrawFrame);
+    OH_LOG_INFO(LOG_APP, "TestFrameMetricsIsFirstDrawFrameNullptr return Code: %{public}d", result);
+    napi_value retCode = nullptr;
+    napi_create_int32(env, result, &retCode);
+    return retCode;
+}
+
+static napi_value TestFrameMetricsGetInputHandlingDurationNullptr(napi_env env, napi_callback_info info)
+{
+    uint64_t duration = 0;
+    int32_t result = OH_WindowManager_FrameMetrics_GetInputHandlingDuration(nullptr, &duration);
+    OH_LOG_INFO(LOG_APP, "TestFrameMetricsGetInputHandlingDurationNullptr return Code: %{public}d", result);
+    napi_value retCode = nullptr;
+    napi_create_int32(env, result, &retCode);
+    return retCode;
+}
+
+static napi_value TestFrameMetricsGetLayoutMeasureDurationNullptr(napi_env env, napi_callback_info info)
+{
+    uint64_t duration = 0;
+    int32_t result = OH_WindowManager_FrameMetrics_GetLayoutMeasureDuration(nullptr, &duration);
+    OH_LOG_INFO(LOG_APP, "TestFrameMetricsGetLayoutMeasureDurationNullptr return Code: %{public}d", result);
+    napi_value retCode = nullptr;
+    napi_create_int32(env, result, &retCode);
+    return retCode;
+}
+
+static napi_value TestFrameMetricsGetVsyncTimestampNullptr(napi_env env, napi_callback_info info)
+{
+    uint64_t timestamp = 0;
+    int32_t result = OH_WindowManager_FrameMetrics_GetVsyncTimestamp(nullptr, &timestamp);
+    OH_LOG_INFO(LOG_APP, "TestFrameMetricsGetVsyncTimestampNullptr return Code: %{public}d", result);
+    napi_value retCode = nullptr;
+    napi_create_int32(env, result, &retCode);
+    return retCode;
+}
+
+static napi_value TestFrameMetricsIsFirstDrawFrameOK(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    napi_create_object(env, &result);
+    
+    bool isFirstDrawFrame = false;
+    int32_t resultCode = OH_WindowManager_FrameMetrics_IsFirstDrawFrame(g_currentMetrics, &isFirstDrawFrame);
+    
+    napi_value return_isFirstDrawFrame;
+    napi_get_boolean(env, isFirstDrawFrame, &return_isFirstDrawFrame);
+    napi_set_named_property(env, result, "isFirstDrawFrame", return_isFirstDrawFrame);
+    
+    napi_value return_code;
+    napi_create_int32(env, resultCode, &return_code);
+    napi_set_named_property(env, result, "resultCode", return_code);
+    
+    OH_LOG_INFO(LOG_APP, "TestFrameMetricsIsFirstDrawFrameOK resultCode: %{public}d, isFirstDrawFrame: %{public}d", 
+                resultCode, isFirstDrawFrame);
+    return result;
+}
+
+static napi_value TestFrameMetricsGetInputHandlingDurationOK(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    napi_create_object(env, &result);
+    
+    uint64_t duration = 0;
+    int32_t resultCode = OH_WindowManager_FrameMetrics_GetInputHandlingDuration(g_currentMetrics, &duration);
+    
+    napi_value return_duration;
+    napi_create_int64(env, duration, &return_duration);
+    napi_set_named_property(env, result, "duration", return_duration);
+    
+    napi_value return_code;
+    napi_create_int32(env, resultCode, &return_code);
+    napi_set_named_property(env, result, "resultCode", return_code);
+    
+    OH_LOG_INFO(LOG_APP, "TestFrameMetricsGetInputHandlingDurationOK resultCode: %{public}d, duration: %{public}llu", 
+                resultCode, duration);
+    return result;
+}
+
+static napi_value TestFrameMetricsGetLayoutMeasureDurationOK(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    napi_create_object(env, &result);
+    
+    uint64_t duration = 0;
+    int32_t resultCode = OH_WindowManager_FrameMetrics_GetLayoutMeasureDuration(g_currentMetrics, &duration);
+    
+    napi_value return_duration;
+    napi_create_int64(env, duration, &return_duration);
+    napi_set_named_property(env, result, "duration", return_duration);
+    
+    napi_value return_code;
+    napi_create_int32(env, resultCode, &return_code);
+    napi_set_named_property(env, result, "resultCode", return_code);
+    
+    OH_LOG_INFO(LOG_APP, "TestFrameMetricsGetLayoutMeasureDurationOK resultCode: %{public}d, duration: %{public}llu", 
+                resultCode, duration);
+    return result;
+}
+
+static napi_value TestFrameMetricsGetVsyncTimestampOK(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    napi_create_object(env, &result);
+    
+    uint64_t timestamp = 0;
+    int32_t resultCode = OH_WindowManager_FrameMetrics_GetVsyncTimestamp(g_currentMetrics, &timestamp);
+    
+    napi_value return_timestamp;
+    napi_create_int64(env, timestamp, &return_timestamp);
+    napi_set_named_property(env, result, "timestamp", return_timestamp);
+    
+    napi_value return_code;
+    napi_create_int32(env, resultCode, &return_code);
+    napi_set_named_property(env, result, "resultCode", return_code);
+    
+    OH_LOG_INFO(LOG_APP, "TestFrameMetricsGetVsyncTimestampOK resultCode: %{public}d, timestamp: %{public}llu", 
+                resultCode, timestamp);
+    return result;
 }
 
 static napi_value TestInjectTouchEventwithWindowXWindowYBeyondScreen(napi_env env, napi_callback_info info)
@@ -1717,6 +1844,22 @@ static napi_value Init(napi_env env, napi_value exports)
         { "registerFrameMetricsMeasuredCallbackNullptr", nullptr, RegisterFrameMetricsMeasuredCallbackNullptr,
             nullptr, nullptr, nullptr, napi_default, nullptr },
         { "unregisterFrameMetricsMeasuredCallbackNullptr", nullptr, UnregisterFrameMetricsMeasuredCallbackNullptr,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "testFrameMetricsIsFirstDrawFrameNullptr", nullptr, TestFrameMetricsIsFirstDrawFrameNullptr,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "testFrameMetricsGetInputHandlingDurationNullptr", nullptr, TestFrameMetricsGetInputHandlingDurationNullptr,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "testFrameMetricsGetLayoutMeasureDurationNullptr", nullptr, TestFrameMetricsGetLayoutMeasureDurationNullptr,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "testFrameMetricsGetVsyncTimestampNullptr", nullptr, TestFrameMetricsGetVsyncTimestampNullptr,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "testFrameMetricsIsFirstDrawFrameOK", nullptr, TestFrameMetricsIsFirstDrawFrameOK,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "testFrameMetricsGetInputHandlingDurationOK", nullptr, TestFrameMetricsGetInputHandlingDurationOK,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "testFrameMetricsGetLayoutMeasureDurationOK", nullptr, TestFrameMetricsGetLayoutMeasureDurationOK,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "testFrameMetricsGetVsyncTimestampOK", nullptr, TestFrameMetricsGetVsyncTimestampOK,
             nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

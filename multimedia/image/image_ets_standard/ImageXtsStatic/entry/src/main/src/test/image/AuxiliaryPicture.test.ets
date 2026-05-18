@@ -16,32 +16,27 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, Hypium, it, Level } from '../../../../hypium';
 import image from '@ohos.multimedia.image';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import fs from '@ohos.file.fs';
 import { colorSpaceManager } from '@kit.ArkGraphics2D';
 
-const TAG = 'AuxiliaryPictureGetMetadataStaticTest';
+const TAG = 'xtsStatic_AuxiliaryPictureGetMetadataStaticTest';
 
 let testContext: common.UIAbilityContext = Hypium.get('Context') as common.UIAbilityContext;
 
-
-async function getAuxiliaryTypeTest(done: () => void, testName: string, pathUri: string, AuxiliaryPictureType: image.AuxiliaryPictureType,
+async function getAuxiliaryTypeTest(done: () => void, testName: string,AuxiliaryPictureType: image.AuxiliaryPictureType,
   callback: (res:image.AuxiliaryPictureType) => void) {
   try {
-    let array = new ArrayBuffer(20000000);
-    let path = `file://${testContext.filesDir}/${pathUri}`;
-    console.info(TAG, testName, `path: ${path}`);
-    const fd = await fs.open(path, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
-    console.info(TAG, testName, `open: ${fd.fd}`);
-    let readLength = await fs.read(fd.fd, array);
-    console.info(TAG, testName, `readLength: ${readLength}`);
-    await fs.close(fd);
-    let auxSize: image.Size = {
-      height: 180,
-      width: 240
-    };
+
+    let context: common.UIAbilityContext = Hypium.get('Context') as common.UIAbilityContext;
+    const resourceMgr = context.resourceManager;
+    console.info(TAG, testName,`resourceMgr success:`,resourceMgr);
+    const rawFile = await resourceMgr.getRawFileContent("AllAuxiliaryPictures_exclude_fragment.jpg");
+    console.info(TAG, testName,`rawFile success:`,rawFile);
+    let auxBuffer: ArrayBuffer = rawFile.buffer as ArrayBuffer;
+    let auxSize: image.Size = { height: 180, width: 240 };
     let auxType: image.AuxiliaryPictureType = AuxiliaryPictureType;
-    let auxPictureObj: image.AuxiliaryPicture | null = image.createAuxiliaryPicture(array, auxSize, auxType);
+    let auxPictureObj: image.AuxiliaryPicture | null = image.createAuxiliaryPicture(auxBuffer, auxSize, auxType);
+    console.info(TAG,'Success get auxPictureObj ' +  JSON.stringify(auxPictureObj!));
     if (auxPictureObj != undefined) {
       let type: image.AuxiliaryPictureType |undefined = auxPictureObj!.getType();
       console.info(TAG,'Success get auxiliary picture type ' +  JSON.stringify(type!));
@@ -88,35 +83,35 @@ export default function ImageAuxiliaryPictureGetMetadataStaticTest(): void {
     });
 
     /**
-     * @tc.name   GET_AUXILIARY_PICTURE_INFO_getAuxiliaryPictureInfo_001
-     * @tc.number GET_AUXILIARY_PICTURE_INFO_getAuxiliaryPictureInfo_001
+     * @tc.name   SUB_MEDIA_IMAGE_GET_AUXILIARY_PICTURE_INFO_getAuxiliaryPictureInfo_static_0100
+     * @tc.number SUB_MEDIA_IMAGE_GET_AUXILIARY_PICTURE_INFO_getAuxiliaryPictureInfo_static_0100
      * @tc.desc   getAuxiliaryPictureInfo the auxiliaryPictureType emu the size
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('GET_AUXILIARY_PICTURE_INFO_getAuxiliaryPictureInfo_001', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'GET_AUXILIARY_PICTURE_INFO_getAuxiliaryPictureInfo_00001';
-      const pathUri = 'AllAuxiliaryPictures.jpg';
-      let path = `file://${testContext.filesDir}/${pathUri}`;
+    it('SUB_MEDIA_IMAGE_GET_AUXILIARY_PICTURE_INFO_getAuxiliaryPictureInfo_static_0100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_GET_AUXILIARY_PICTURE_INFO_getAuxiliaryPictureInfo_static_0100';
+      let context: common.UIAbilityContext = Hypium.get('Context') as common.UIAbilityContext;
+      const resourceMgr = context.resourceManager;
+      console.info(TAG, testName,`resourceMgr success:`,resourceMgr);
+      const rawFile = await resourceMgr.getRawFileContent("AllAuxiliaryPictures_exclude_fragment.jpg");
+      console.info(TAG, testName,`rawFile success:`,rawFile);
+      let auxBuffer: ArrayBuffer = rawFile.buffer as ArrayBuffer;
+      let auxSize: image.Size = { height: 180, width: 240 };
+
       const formats = [
         image.AuxiliaryPictureType.GAINMAP,
         image.AuxiliaryPictureType.DEPTH_MAP,
         image.AuxiliaryPictureType.UNREFOCUS_MAP,
         image.AuxiliaryPictureType.LINEAR_MAP,
         image.AuxiliaryPictureType.FRAGMENT_MAP];
+      console.info(TAG, testName,`formats success:`,formats);
       for (const format of formats) {
-          let array = new ArrayBuffer(20000000);
-          const fd = fs.openSync(path, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
-          console.info(TAG, testName, `open: ${fd.fd}`);
-          await fs.close(fd);
-          let auxSize: image.Size = {
-            height: 180,
-            width: 240
-          };
-          let auxType: image.AuxiliaryPictureType = image.AuxiliaryPictureType.GAINMAP;
-          let auxPictureObj = image.createAuxiliaryPicture(array, auxSize, auxType);
-          console.info(TAG, `createAuxiliaryPicture:`);
+        let auxType: image.AuxiliaryPictureType = image.AuxiliaryPictureType.GAINMAP;
+        console.info(TAG, testName,`image.AuxiliaryPictureType success:`,auxType);
+        let auxPictureObj = image.createAuxiliaryPicture(auxBuffer, auxSize, auxType);
+        console.info(TAG, testName,`auxPictureObj success:`,auxPictureObj);
         try {
           if (auxPictureObj != null) {
             let colorSpaceName = colorSpaceManager.ColorSpace.SRGB;
@@ -129,6 +124,7 @@ export default function ImageAuxiliaryPictureGetMetadataStaticTest(): void {
             };
             auxPictureObj.setAuxiliaryPictureInfo(info);
             let res:image.AuxiliaryPictureInfo | undefined = auxPictureObj.getAuxiliaryPictureInfo();
+            console.info(TAG, testName,`auxPictureObj getAuxiliaryPictureInfo success:`,JSON.stringify(res));
             expect(res!.auxiliaryPictureType == format).assertTrue();
             expect(res!.size.height).assertEqual(100);
             expect(res!.size.width).assertEqual(200);
@@ -148,34 +144,31 @@ export default function ImageAuxiliaryPictureGetMetadataStaticTest(): void {
 
 
     /**
-     * @tc.name   SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_001
-     * @tc.number SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_001
+     * @tc.name   SUB_MEDIA_IMAGE_SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_static_0100
+     * @tc.number SUB_MEDIA_IMAGE_SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_static_0100
      * @tc.desc   setAuxiliaryPictureInfo the auxiliaryPictureType emu the
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_001', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_001';
-      const pathUri = 'AllAuxiliaryPictures.jpg';
-      let path = `file://${testContext.filesDir}/${pathUri}`;
+    it('SUB_MEDIA_IMAGE_SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_static_0100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_static_0100';
+      let context: common.UIAbilityContext = Hypium.get('Context') as common.UIAbilityContext;
+      const resourceMgr = context.resourceManager;
+      console.info(TAG, testName,`resourceMgr success:`,resourceMgr);
+      const rawFile = await resourceMgr.getRawFileContent("AllAuxiliaryPictures_exclude_fragment.jpg");
+      console.info(TAG, testName,`rawFile success:`,rawFile);
+      let auxBuffer: ArrayBuffer = rawFile.buffer as ArrayBuffer;
+      let auxSize: image.Size = { height: 180, width: 240 };
       const formats = [
         image.AuxiliaryPictureType.DEPTH_MAP,
         image.AuxiliaryPictureType.UNREFOCUS_MAP,
         image.AuxiliaryPictureType.LINEAR_MAP,
         image.AuxiliaryPictureType.FRAGMENT_MAP];
       for (const format of formats) {
-        let array = new ArrayBuffer(20000000);
-        const fd = await fs.open(path, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
-        let readLength = await fs.read(fd.fd, array);
-        console.info(TAG, testName, ` readLength: ${readLength}`);
-        await fs.close(fd);
-        let auxSize: image.Size = {
-          height: 180,
-          width: 240
-        };
         let auxType: image.AuxiliaryPictureType = image.AuxiliaryPictureType.GAINMAP;
-        let auxPictureObj = image.createAuxiliaryPicture(array, auxSize, auxType);
+        let auxPictureObj = image.createAuxiliaryPicture(auxBuffer, auxSize, auxType);
+        console.info(TAG, testName,`auxPictureObj success:`,auxPictureObj);
         try {
           console.info(TAG, `createAuxiliaryPicture:`);
           if (auxPictureObj != null) {
@@ -205,17 +198,22 @@ export default function ImageAuxiliaryPictureGetMetadataStaticTest(): void {
     });
 
     /**
-     * @tc.name   SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_002
-     * @tc.number SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_002
+     * @tc.name   SUB_MEDIA_IMAGE_SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_static_0200
+     * @tc.number SUB_MEDIA_IMAGE_SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_static_0200
      * @tc.desc   setAuxiliaryPictureInfo the pixelFormat emu
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_002', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_002';
-      const pathUri = 'AllAuxiliaryPictures.jpg';
-      let path = `file://${testContext.filesDir}/${pathUri}`;
+    it('SUB_MEDIA_IMAGE_SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_static_0200', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_static_0200';
+      let context: common.UIAbilityContext = Hypium.get('Context') as common.UIAbilityContext;
+      const resourceMgr = context.resourceManager;
+      console.info(TAG, testName,`resourceMgr success:`,resourceMgr);
+      const rawFile = await resourceMgr.getRawFileContent("AllAuxiliaryPictures_exclude_fragment.jpg");
+      console.info(TAG, testName,`rawFile success:`,rawFile);
+      let auxBuffer: ArrayBuffer = rawFile.buffer as ArrayBuffer;
+      let auxSize: image.Size = { height: 180, width: 240 };
       const formats = [
         image.PixelMapFormat.ARGB_8888,
         image.PixelMapFormat.RGB_565,
@@ -229,17 +227,8 @@ export default function ImageAuxiliaryPictureGetMetadataStaticTest(): void {
         image.PixelMapFormat.YCBCR_P010,
         image.PixelMapFormat.YCRCB_P010,];
       for (const format of formats) {
-        let array = new ArrayBuffer(20000000);
-        const fd = await fs.open(path, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
-        let readLength = await fs.read(fd.fd, array);
-        console.info(TAG, testName, ` readLength: ${readLength}`);
-        await fs.close(fd);
-        let auxSize: image.Size = {
-          height: 180,
-          width: 240
-        };
         let auxType: image.AuxiliaryPictureType = image.AuxiliaryPictureType.GAINMAP;
-        let auxPictureObj = image.createAuxiliaryPicture(array, auxSize, auxType);
+        let auxPictureObj = image.createAuxiliaryPicture(auxBuffer, auxSize, auxType);
         try {
           console.info(TAG, `createAuxiliaryPicture:`);
           if (auxPictureObj != null) {
@@ -272,30 +261,26 @@ export default function ImageAuxiliaryPictureGetMetadataStaticTest(): void {
 
 
     /**
-     * @tc.name   SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_003
-     * @tc.number SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_003
+     * @tc.name   SUB_MEDIA_IMAGE_SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_static_0300
+     * @tc.number SUB_MEDIA_IMAGE_SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_static_0300
      * @tc.desc   setAuxiliaryPictureInfo the pixelFormat emu
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_003', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_003';
-      const pathUri = 'AllAuxiliaryPictures.jpg';
-      let path = `file://${testContext.filesDir}/${pathUri}`;
-      let array = new ArrayBuffer(20000000);
-      const fd = await fs.open(path, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
-      let readLength = await fs.read(fd.fd, array);
-      console.info(TAG, testName, ` readLength: ${readLength}`);
-      await fs.close(fd);
-      let auxSize: image.Size = {
-        height: 180,
-        width: 240
-      };
+    it('SUB_MEDIA_IMAGE_SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_static_0300', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_static_0300';
+      let context: common.UIAbilityContext = Hypium.get('Context') as common.UIAbilityContext;
+      const resourceMgr = context.resourceManager;
+      console.info(TAG, testName,`resourceMgr success:`,resourceMgr);
+      const rawFile = await resourceMgr.getRawFileContent("AllAuxiliaryPictures_exclude_fragment.jpg");
+      console.info(TAG, testName,`rawFile success:`,rawFile);
+      let auxBuffer: ArrayBuffer = rawFile.buffer as ArrayBuffer;
+      let auxSize: image.Size = { height: 180, width: 240 };
       let auxType: image.AuxiliaryPictureType = image.AuxiliaryPictureType.GAINMAP;
-      let auxPictureObj = image.createAuxiliaryPicture(array, auxSize, auxType);
+      let auxPictureObj = image.createAuxiliaryPicture(auxBuffer, auxSize, auxType);
+      console.info(TAG, `createAuxiliaryPicture:`);
       try {
-        console.info(TAG, `createAuxiliaryPicture:`);
         if (auxPictureObj != null) {
           let colorSpaceName = colorSpaceManager.ColorSpace.SRGB;
           let info: image.AuxiliaryPictureInfo = {
@@ -320,31 +305,28 @@ export default function ImageAuxiliaryPictureGetMetadataStaticTest(): void {
       }
     });
 
-    /**
-     * @tc.name   SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_004
-     * @tc.number SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_004
-     * @tc.desc   setAuxiliaryPictureInfo the pixelFormat emu
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_004', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_004';
-      const pathUri = 'AllAuxiliaryPictures.jpg';
-      let path = `file://${testContext.filesDir}/${pathUri}`;
-      let array = new ArrayBuffer(20000000);
-      const fd = await fs.open(path, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
-      let readLength = await fs.read(fd.fd, array);
-      console.info(TAG, testName, ` readLength: ${readLength}`);
-      await fs.close(fd);
-      let auxSize: image.Size = {
-        height: 180,
-        width: 240
-      };
+     /**
+       * @tc.name   SUB_MEDIA_IMAGE_SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_static_0400
+       * @tc.number SUB_MEDIA_IMAGE_SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_static_0400
+       * @tc.desc   setAuxiliaryPictureInfo the pixelFormat emu
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+      */
+    it('SUB_MEDIA_IMAGE_SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_static_0400', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_SET_AUXILIARY_PICTURE_INFO_setAuxiliaryPictureInfo_static_0400';
+
+      let context: common.UIAbilityContext = Hypium.get('Context') as common.UIAbilityContext;
+      const resourceMgr = context.resourceManager;
+      console.info(TAG, testName,`resourceMgr success:`,resourceMgr);
+      const rawFile = await resourceMgr.getRawFileContent("AllAuxiliaryPictures_exclude_fragment.jpg");
+      console.info(TAG, testName,`rawFile success:`,rawFile);
+      let auxBuffer: ArrayBuffer = rawFile.buffer as ArrayBuffer;
+      let auxSize: image.Size = { height: 180, width: 240 };
       let auxType: image.AuxiliaryPictureType = image.AuxiliaryPictureType.GAINMAP;
-      let auxPictureObj = image.createAuxiliaryPicture(array, auxSize, auxType);
+      let auxPictureObj = image.createAuxiliaryPicture(auxBuffer, auxSize, auxType);
+      console.info(TAG, `createAuxiliaryPicture:`);
       try {
-        console.info(TAG, `createAuxiliaryPicture:`);
         if (auxPictureObj != null) {
           let colorSpaceName = colorSpaceManager.ColorSpace.SRGB;
           let info: image.AuxiliaryPictureInfo = {
@@ -371,129 +353,106 @@ export default function ImageAuxiliaryPictureGetMetadataStaticTest(): void {
 
 
     /**
-     * @tc.name   SUB_MEDIA_AUXILIARY_PICTURE_GET_TYPE_001
-     * @tc.number SUB_MEDIA_AUXILIARY_PICTURE_GET_TYPE_001
+     * @tc.name   SUB_MEDIA_IMAGE_AUXILIARY_PICTURE_GET_TYPE_static_0100
+     * @tc.number SUB_MEDIA_IMAGE_AUXILIARY_PICTURE_GET_TYPE_static_0100
      * @tc.desc   Auxiliary getType
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_AUXILIARY_PICTURE_GET_TYPE_001', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'SUB_MEDIA_AUXILIARY_PICTURE_GET_TYPE_001';
-      const path = 'AllAuxiliaryPictures.jpg';
+    it('SUB_MEDIA_IMAGE_AUXILIARY_PICTURE_GET_TYPE_static_0100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_AUXILIARY_PICTURE_GET_TYPE_static_0100';
       let AuxiliaryPictureType = image.AuxiliaryPictureType.GAINMAP;
-      await getAuxiliaryTypeTest(done, testName, path, AuxiliaryPictureType, (res:image.AuxiliaryPictureType) => {
+      await getAuxiliaryTypeTest(done, testName, AuxiliaryPictureType, (res:image.AuxiliaryPictureType) => {
         expect(res).assertEqual(image.AuxiliaryPictureType.GAINMAP);
       });
     })
 
     /**
-     * @tc.name   SUB_MEDIA_AUXILIARY_PICTURE_GET_TYPE_002
-     * @tc.number SUB_MEDIA_AUXILIARY_PICTURE_GET_TYPE_002
+     * @tc.name   SUB_MEDIA_IMAGE_AUXILIARY_PICTURE_GET_TYPE_static_0200
+     * @tc.number SUB_MEDIA_IMAGE_AUXILIARY_PICTURE_GET_TYPE_static_0200
      * @tc.desc   Auxiliary getType
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_AUXILIARY_PICTURE_GET_TYPE_002', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'SUB_MEDIA_AUXILIARY_PICTURE_GET_TYPE_002';
-      const path = 'AllAuxiliaryPictures.jpg';
+    it('SUB_MEDIA_IMAGE_AUXILIARY_PICTURE_GET_TYPE_static_0200', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_AUXILIARY_PICTURE_GET_TYPE_static_0200';
       let AuxiliaryPictureType = image.AuxiliaryPictureType.DEPTH_MAP;
-      await getAuxiliaryTypeTest(done, testName, path, AuxiliaryPictureType, (res:image.AuxiliaryPictureType) => {
+      await getAuxiliaryTypeTest(done, testName, AuxiliaryPictureType, (res:image.AuxiliaryPictureType) => {
         expect(res).assertEqual(image.AuxiliaryPictureType.DEPTH_MAP);
       });
     })
 
     /**
-     * @tc.name   SUB_MEDIA_AUXILIARY_PICTURE_GET_TYPE_003
-     * @tc.number SUB_MEDIA_AUXILIARY_PICTURE_GET_TYPE_003
+     * @tc.name   SUB_MEDIA_IMAGE_AUXILIARY_PICTURE_GET_TYPE_static_0300
+     * @tc.number SUB_MEDIA_IMAGE_AUXILIARY_PICTURE_GET_TYPE_static_0300
      * @tc.desc   Auxiliary getType
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_AUXILIARY_PICTURE_GET_TYPE_003', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'SUB_MEDIA_AUXILIARY_PICTURE_GET_TYPE_003';
-      const path = 'AllAuxiliaryPictures.jpg';
+    it('SUB_MEDIA_IMAGE_AUXILIARY_PICTURE_GET_TYPE_static_0300', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_AUXILIARY_PICTURE_GET_TYPE_static_0300';
       let AuxiliaryPictureType = image.AuxiliaryPictureType.UNREFOCUS_MAP;
-      await getAuxiliaryTypeTest(done, testName, path, AuxiliaryPictureType, (res:image.AuxiliaryPictureType) => {
+      await getAuxiliaryTypeTest(done, testName, AuxiliaryPictureType, (res:image.AuxiliaryPictureType) => {
         expect(res).assertEqual(image.AuxiliaryPictureType.UNREFOCUS_MAP);
       });
     })
 
     /**
-     * @tc.name   SUB_MEDIA_AUXILIARY_PICTURE_GET_TYPE_004
-     * @tc.number SUB_MEDIA_AUXILIARY_PICTURE_GET_TYPE_004
+     * @tc.name   SUB_MEDIA_IMAGE_AUXILIARY_PICTURE_GET_TYPE_static_0400
+     * @tc.number SUB_MEDIA_IMAGE_AUXILIARY_PICTURE_GET_TYPE_static_0400
      * @tc.desc   Auxiliary getType
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_AUXILIARY_PICTURE_GET_TYPE_004', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'SUB_MEDIA_AUXILIARY_PICTURE_GET_TYPE_004';
-      const path = 'AllAuxiliaryPictures.jpg';
+    it('SUB_MEDIA_IMAGE_AUXILIARY_PICTURE_GET_TYPE_static_0400', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_AUXILIARY_PICTURE_GET_TYPE_static_0400';
       let AuxiliaryPictureType = image.AuxiliaryPictureType.LINEAR_MAP;
-      await getAuxiliaryTypeTest(done, testName, path, AuxiliaryPictureType, (res:image.AuxiliaryPictureType) => {
+      await getAuxiliaryTypeTest(done, testName,  AuxiliaryPictureType, (res:image.AuxiliaryPictureType) => {
         expect(res).assertEqual(image.AuxiliaryPictureType.LINEAR_MAP);
       });
     })
 
     /**
-     * @tc.name   SUB_MEDIA_AUXILIARY_PICTURE_GET_TYPE_005
-     * @tc.number SUB_MEDIA_AUXILIARY_PICTURE_GET_TYPE_005
+     * @tc.name   SUB_MEDIA_IMAGE_AUXILIARY_PICTURE_GET_TYPE_static_0500
+     * @tc.number SUB_MEDIA_IMAGE_AUXILIARY_PICTURE_GET_TYPE_static_0500
      * @tc.desc   Auxiliary getType
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_AUXILIARY_PICTURE_GET_TYPE_005', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'SUB_MEDIA_AUXILIARY_PICTURE_GET_TYPE_005';
-      const path = 'AllAuxiliaryPictures.jpg';
+    it('SUB_MEDIA_IMAGE_AUXILIARY_PICTURE_GET_TYPE_static_0500', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_AUXILIARY_PICTURE_GET_TYPE_static_0500';
       let AuxiliaryPictureType = image.AuxiliaryPictureType.FRAGMENT_MAP;
-      await getAuxiliaryTypeTest(done, testName, path, AuxiliaryPictureType, (res:image.AuxiliaryPictureType) => {
+      await getAuxiliaryTypeTest(done, testName,  AuxiliaryPictureType, (res:image.AuxiliaryPictureType) => {
         expect(res).assertEqual(image.AuxiliaryPictureType.FRAGMENT_MAP);
       });
     })
 
 
+
     /**
-     * @tc.number     SUB_IMAGE_METADATA_MAKER_NOTE_META_DATA_GET_ALL_PROPERTIES_TEST_001
-     * @tc.name       SUB_IMAGE_METADATA_MAKER_NOTE_META_DATA_GET_ALL_PROPERTIES_TEST_001
-     * @tc.desc       Metadata -makerNoteHuaweiMetadata -getAllProperties -返回值不为空
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
-     */
-    it('SUB_IMAGE_METADATA_MAKER_NOTE_META_DATA_GET_ALL_PROPERTIES_TEST_001', Level.LEVEL1, async (done: () => void) => {
-      const testName = 'SUB_IMAGE_METADATA_MAKER_NOTE_META_DATA_GET_ALL_PROPERTIES_TEST_001';
-      let metadata: image.MakerNoteHuaweiMetadata = image.MakerNoteHuaweiMetadata.createInstance();
-      try {
-        let res = await metadata.getAllProperties();
-        expect(res!=undefined).assertTrue();
-        done();
-      } catch (error) {
-        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-        done();
-      }
-    });
-    /**
-     * @tc.number     SUB_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_001
-     * @tc.name       SUB_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_001
+     * @tc.number     SUB_MEDIA_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_static_0100
+     * @tc.name       SUB_MEDIA_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_static_0100
      * @tc.desc       Metadata -ExifMetadata -getAllProperties -返回值不为空
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_001', Level.LEVEL1, async (done: () => void) => {
-      const testName = 'SUB_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_001';
-      // const path = 'test_exif_v2.jpg';
-      let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.imageWidth = 0;
-      let fd: int = getFd('test_exif_v2.jpg');
-      const imageSourceApi: image.ImageSource | undefined = image.createImageSource(fd);
+    it('SUB_MEDIA_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_static_0100', Level.LEVEL1, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_static_0100';
+      const testContext: common.UIAbilityContext = Hypium.get('Context') as common.UIAbilityContext;
+      const inputPathUri = 'test_exif_v2.jpg';
+      let path =`${testContext.filesDir}/${inputPathUri}`;
+      console.info(TAG, testName, `path: ${path}`);
+      let imageSourceApi: image.ImageSource|undefined = image.createImageSource(path);
+      console.info(TAG, testName,`imageSourceApi success:`,imageSourceApi);
       try {
         let metaData:image.ImageMetadata = await imageSourceApi!.readImageMetadata(["ImageWidth", "ImageLength"]);
+        console.info(TAG, testName, `readImageMetadata success:`,metaData);
         if (metaData != undefined && metaData.exifMetadata != undefined) {
           let res: Record<string, string | null> = await metaData!.exifMetadata!.getAllProperties();
           expect(res != undefined).assertTrue();
@@ -505,44 +464,47 @@ export default function ImageAuxiliaryPictureGetMetadataStaticTest(): void {
         console.error(TAG, testName, 'ExifMetadata getProperties error', error.message, error.code);
         expect().assertFail();
         done();
-      } finally {
+      }
+      finally {
         await imageSourceApi?.release();
         done();
       }
     });
+
     /**
-     * @tc.number     SUB_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_002
-     * @tc.name       SUB_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_002
+     * @tc.number     SUB_MEDIA_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_static_0200
+     * @tc.name       SUB_MEDIA_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_static_0200
      * @tc.desc       Metadata -ExifMetadata -getAllProperties -返回值为undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_002', Level.LEVEL1, async (done: () => void) => {
-      const testName = 'SUB_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_002';
+    it('SUB_MEDIA_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_static_0200', Level.LEVEL1, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_METADATA_EXIF_META_DATA_GET_ALL_PROPERTIES_TEST_static_0200';
       let testExifMetadata: image.ExifMetadata = image.ExifMetadata.createInstance();
+      console.info(TAG,testName, 'createInstance success.', testExifMetadata);
       try {
         let res = await testExifMetadata.getAllProperties();
+        console.info(TAG,testName, 'getAllProperties success.', res);
         expect(res).assertUndefined();
-        done();
       } catch (error) {
         console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
         expect().assertFail();
-        done();
       }
+      done();
     });
 
 
     /**
-     * @tc.name   auxiliaryPicture_readPixelsToBuffer_promise_001
-     * @tc.number auxiliaryPicture_readPixelsToBuffer_promise_001
+     * @tc.name   SUB_MEDIA_IMAGE_auxiliaryPicture_readPixelsToBuffer_promise_static_0100
+     * @tc.number SUB_MEDIA_IMAGE_auxiliaryPicture_readPixelsToBuffer_promise_static_0100
      * @tc.desc   readPixelsToBuffer AuxiliaryPictureType =  image.AuxiliaryPictureType.FRAGMENT_MAP;
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('auxiliaryPicture_readPixelsToBuffer_promise_001', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'auxiliaryPicture_readPixelsToBuffer_promise_001';
+    it('SUB_MEDIA_IMAGE_auxiliaryPicture_readPixelsToBuffer_promise_static_0100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_auxiliaryPicture_readPixelsToBuffer_promise_static_0100';
       const pathUri = 'AllAuxiliaryPictures.jpg';
       const AuxiliaryPictureType =  image.AuxiliaryPictureType.FRAGMENT_MAP;
       try {
@@ -550,58 +512,28 @@ export default function ImageAuxiliaryPictureGetMetadataStaticTest(): void {
         let imageSource: image.ImageSource |undefined = image.createImageSource(path);
         let commodityPixelMap: image.Picture | undefined = await imageSource!.createPicture();
         let auxPictureObj: image.AuxiliaryPicture | null = await commodityPixelMap!.getAuxiliaryPicture(AuxiliaryPictureType);
+        console.info(TAG,testName, 'getAuxiliaryPicture success.', auxPictureObj!);
         if (auxPictureObj != null) {
           let pixelsBuffer: ArrayBuffer|undefined = await auxPictureObj!.readPixelsToBuffer();
-          await auxPictureObj!.readPixelsToBuffer()
-          console.info(TAG, 'Write pixels from buffer success.', pixelsBuffer!);
+          // await auxPictureObj!.readPixelsToBuffer()
+          console.info(TAG,testName, 'read pixels from buffer success.', pixelsBuffer!);
+          expect(pixelsBuffer!=undefined).assertTrue();
           imageSource!.release();
           done();
         } else {
-          console.error(TAG, 'AuxPictureObj is null.');
+          console.error(TAG,testName, 'AuxPictureObj is null.');
           expect().assertFail();
           done();
         }
       } catch (error) {
-        console.info(TAG, `failed; error: ${error},${error.code}`, testName);
+        console.info(TAG, testName,`failed; error: ${error},${error.code}`, testName);
         expect().assertFail();
         done();
       }
+      done();
     })
 
 
-    /**
-     * @tc.name   auxiliaryPicture_readPixelsToBuffer_promise_002
-     * @tc.number auxiliaryPicture_readPixelsToBuffer_promise_002
-     * @tc.desc   readPixelsToBuffer const AuxiliaryPictureType = image.AuxiliaryPictureType.UNREFOCUS_MAP;
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('auxiliaryPicture_readPixelsToBuffer_promise_002', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'auxiliaryPicture_readPixelsToBuffer_promise_002';
-      const pathUri = 'AllAuxiliaryPictures.jpg';
-      const AuxiliaryPictureType = image.AuxiliaryPictureType.UNREFOCUS_MAP;
-      try {
-        let path = `file://${testContext.filesDir}/${pathUri}`;
-        let imageSource: image.ImageSource |undefined = image.createImageSource(path);
-        let commodityPixelMap: image.Picture | undefined = await imageSource!.createPicture();
-        let auxPictureObj: image.AuxiliaryPicture | null = await commodityPixelMap!.getAuxiliaryPicture(AuxiliaryPictureType);
-        if (auxPictureObj != null) {
-          let pixelsBuffer: ArrayBuffer|undefined = await auxPictureObj!.readPixelsToBuffer();
-          await auxPictureObj!.readPixelsToBuffer()
-          console.info(TAG, 'Write pixels from buffer success.', pixelsBuffer!);
-          imageSource!.release();
-          done();
-        } else {
-          console.error(TAG, 'AuxPictureObj is null.');
-          expect().assertFail();
-          done();
-        }
-      } catch (error) {
-        console.info(TAG, `failed; error: ${error},${error.code}`, testName);
-        expect().assertFail();
-        done();
-      }
-    })
+
   })
 }

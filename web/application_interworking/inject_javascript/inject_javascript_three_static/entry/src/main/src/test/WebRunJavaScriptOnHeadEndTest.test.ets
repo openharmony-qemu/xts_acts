@@ -36,16 +36,15 @@ export default function ActsWebRunJavaScriptHeadEndTest() {
       console.info('web beforeEach start');
     })
 
-
-    /*
-    * @tc.number     : SUB_ACE_WEB_RUNJAVASCRIPTONHEADEND_API_0001
-    * @tc.name       : testWebRunJavaScriptOnHeadEndStatic001
-    * @tc.desc       : test runJavaScriptOnHeadEnd
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
+    /**
+    * @tc.name        testWebRunJavaScriptOnHeadEndStatic001
+    * @tc.number      SUB_ACE_WEB_RUNJAVASCRIPTONHEADEND_API_2025022103
+    * @tc.desc        test runJavaScriptOnHeadEnd
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
     */
-    it('testWebRunJavaScriptOnHeadEndStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('testWebRunJavaScriptOnHeadEndStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
       Utils.emitEvent('emitWebRunJavaScriptOnHeadEnd001', 10)
@@ -56,5 +55,43 @@ export default function ActsWebRunJavaScriptHeadEndTest() {
       await Utils.msSleep(6000);
       done()
     })
+
+    /**
+     * @tc.name        testWebRunJavaScriptOnDocumentEndStatic002
+     * @tc.number      SUB_ACE_WEB_RUNJAVASCRIPTONHEADEND_API_0002
+     * @tc.desc        test runJavaScriptOnHeadEnd
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('testWebRunJavaScriptOnDocumentEndStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('emitWebRunJavaScriptOnHeadEnd002', 10)
+        await Utils.msSleep(2000);
+        Utils.registerEvent('emitWebRunJavaScriptOnHeadEnd002', true, 20250221031, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebRunJavaScriptOnHeadEndTestButton', 10, '');
+        await Utils.msSleep(6000);
+        done()
+      })
+
+    /**
+    * @tc.name        SwitchNextPageStatic
+    * @tc.number      SwitchNextPageStatic_20250221031
+    * @tc.desc        test runJavaScriptOnDocumentEnd
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       LEVEL0
+    */
+    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('SwitchNextPageStatic', 10)
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebRunJavaScriptOnHeadEndTestButton', 10, '');
+        await Utils.msSleep(2000);
+        done()
+      })
+
   })
 }

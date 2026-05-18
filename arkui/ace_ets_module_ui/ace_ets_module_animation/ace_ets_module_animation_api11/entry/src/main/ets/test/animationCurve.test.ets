@@ -59,14 +59,14 @@ export default function animationCurveTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.name   ArkUX_ohos.curves_customCurve_1000
+     * @tc.name   ArkUX_ohoscurves_customCurve_1000Adapt002
      * @tc.number ArkUX_ohos.curves_customCurve_1000
      * @tc.desc   ArkUX_ohos.curves_customCurve_1000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ArkUX_ohos.curves_customCurve_1000', Level.LEVEL0, async (done: Function) => {
+    it('ArkUX_ohoscurves_customCurve_1000Adapt002', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_ohos.curves_customCurve_1000 START');
       let fraction: ESObject
       setTimeout(() => {
@@ -87,14 +87,14 @@ export default function animationCurveTest() {
       }, 500)
     });
     /**
-     * @tc.name   ArkUX_ohos.curves_customCurve_1100
+     * @tc.name   ArkUX_ohoscurves_customCurve_1100Adapt002
      * @tc.number ArkUX_ohos.curves_customCurve_1100
      * @tc.desc   ArkUX_ohos.curves_customCurve_1100
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ArkUX_ohos.curves_customCurve_1100', Level.LEVEL0, async (done: Function) => {
+    it('ArkUX_ohoscurves_customCurve_1100Adapt002', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_ohos.curves_customCurve_1000 START');
       let fraction1: ESObject
       setTimeout(() => {
@@ -116,14 +116,14 @@ export default function animationCurveTest() {
       }, 500)
     });
     /**
-     * @tc.name   ArkUX_ohos.curves_customCurve_1200
+     * @tc.name   ArkUX_ohoscurves_customCurve_1200Adapt002
      * @tc.number ArkUX_ohos.curves_customCurve_1200
      * @tc.desc   ArkUX_ohos.curves_customCurve_1200
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ArkUX_ohos.curves_customCurve_1200', Level.LEVEL0, async (done: Function) => {
+    it('ArkUX_ohoscurves_customCurve_1200Adapt002', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_ohos.curves_customCurve_1200 START');
       let fraction2: ESObject
       setTimeout(() => {
@@ -145,14 +145,14 @@ export default function animationCurveTest() {
       }, 500)
     });
     /**
-     * @tc.name   ArkUX_ohos.curves_customCurve_1300
+     * @tc.name   ArkUX_ohoscurves_customCurve_1300Adapt002
      * @tc.number ArkUX_ohos.curves_customCurve_1300
      * @tc.desc   ArkUX_ohos.curves_customCurve_1300
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ArkUX_ohos.curves_customCurve_1300', Level.LEVEL0, async (done: Function) => {
+    it('ArkUX_ohoscurves_customCurve_1300Adapt002', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_ohos.curves_customCurve_1300 START');
       let fraction3: ESObject
       let fraction4: ESObject
@@ -178,14 +178,14 @@ export default function animationCurveTest() {
       }, 500)
     });
     /**
-     * @tc.name   ArkUX_ohos.curves_customCurve_1400
+     * @tc.name   ArkUX_ohoscurves_customCurve_1400Adapt002
      * @tc.number ArkUX_ohos.curves_customCurve_1400
      * @tc.desc   ArkUX_ohos.curves_customCurve_1400
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ArkUX_ohos.curves_customCurve_1400', Level.LEVEL0, async (done: Function) => {
+    it('ArkUX_ohoscurves_customCurve_1400Adapt002', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_ohos.curves_customCurve_1400 START');
       let fraction5: ESObject
       setTimeout(() => {

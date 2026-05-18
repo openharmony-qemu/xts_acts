@@ -22,12 +22,12 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
+  Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
   ColumnAttribute, ColumnSplitAttribute, CounterAttribute, DataPanelAttribute, DatePickerAttribute, DividerAttribute,
-  EllipseAttribute, FlexAttribute, FlowItemAttribute, FormLinkAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
+  EllipseAttribute, FlexAttribute, FlowItemAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
   GridItemAttribute, GridRowAttribute, HyperlinkAttribute, ImageAttribute, ImageAnimatorAttribute, LineAttribute, ListAttribute,
   ListItemAttribute, ListItemGroupAttribute, LoadingProgressAttribute, MarqueeAttribute, MenuAttribute, MenuItemAttribute,
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
@@ -37,7 +37,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, EffectComponentAttribute, FormComponentAttribute,
   ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, RenderFit, AlignRuleOption } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
@@ -157,13 +157,6 @@ export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
 export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
   mborderColor: int | string = 0
   applyNormalAttribute(instance: FormComponentAttribute): void {
-    console.info(`backgroundcolor page show ${JSON.stringify(this.mborderColor)}`)
-    instance.borderColor(this.mborderColor)
-  }
-}
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mborderColor: int | string = 0
-  applyNormalAttribute(instance: FormLinkAttribute): void {
     console.info(`backgroundcolor page show ${JSON.stringify(this.mborderColor)}`)
     instance.borderColor(this.mborderColor)
   }
@@ -575,7 +568,6 @@ struct borderColorPage {
   @State _borderColorFlexMod: FlexModifier = new FlexModifier()
   @State _borderColorFlowItemMod: FlowItemModifier = new FlowItemModifier()
   @State _borderColorFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  @State _borderColorFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _borderColorGaugeMod: GaugeModifier = new GaugeModifier()
   @State _borderColorGridMod: GridModifier = new GridModifier()
   @State _borderColorGridColMod: GridColModifier = new GridColModifier()
@@ -645,8 +637,8 @@ struct borderColorPage {
     this.componentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey as string;
     this.parentWidth = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
     this.parentHeight = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
-    this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int)
-    this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int)
+    this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns.toInt())
+    this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter.toInt())
     this.parentComponentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey;
     this._borderColorButtonMod.mborderColor = (this.getUIContext().getRouter().getParams() as RouterParams).view.testValue.setValue.borderColor
     attrsManager.registerDataChange((value: SetValue) => {
@@ -668,7 +660,6 @@ struct borderColorPage {
       this._borderColorFlexMod.mborderColor = value.borderColor
       this._borderColorFlowItemMod.mborderColor = value.borderColor
       this._borderColorFormComponentMod.mborderColor = value.borderColor
-      this._borderColorFormLinkMod.mborderColor = value.borderColor
       this._borderColorGaugeMod.mborderColor = value.borderColor
       this._borderColorGridMod.mborderColor = value.borderColor
       this._borderColorGridColMod.mborderColor = value.borderColor
@@ -779,7 +770,7 @@ struct borderColorPage {
           Marquee({
             start: true,
             step: 50,
-            loop: Infinity as int,
+            loop: Infinity.toInt(),
             fromStart: true,
             src: 'Running Marquee starts rolling'
           }).attributeModifier(this._borderColorMarqueeMod)

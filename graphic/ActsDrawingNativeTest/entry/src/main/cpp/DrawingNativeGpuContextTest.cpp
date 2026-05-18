@@ -21,7 +21,6 @@
 namespace OHOS {
 namespace Rosen {
 namespace Drawing {
-
 namespace {
 // Constants for test values
 constexpr int TEST_LOOP_COUNT_10 = 10;
@@ -57,18 +56,16 @@ void DrawingNativeGpuContextTestSetUp()
 {
     g_eglDisplay = eglGetDisplay(EGL_DEFAULT_DISPLAY);
     EXPECT_NE(g_eglDisplay, EGL_NO_DISPLAY);
-
     EGLint eglMajVers;
     EGLint eglMinVers;
     EGLBoolean ret = eglInitialize(g_eglDisplay, &eglMajVers, &eglMinVers);
     EXPECT_EQ(ret, EGL_TRUE);
-
     EGLint count;
     EGLint configAttribs[] = {
-        EGL_SURFACE_TYPE,    EGL_WINDOW_BIT,     EGL_RED_SIZE,  TEST_NUMBER_8,  EGL_GREEN_SIZE,
-        TEST_NUMBER_8,       EGL_BLUE_SIZE,      TEST_NUMBER_8, EGL_ALPHA_SIZE, TEST_NUMBER_8,
-        EGL_RENDERABLE_TYPE, EGL_OPENGL_ES3_BIT, EGL_NONE,
-    };
+    EGL_SURFACE_TYPE,    EGL_WINDOW_BIT,     EGL_RED_SIZE,  TEST_NUMBER_8,  EGL_GREEN_SIZE,
+    TEST_NUMBER_8,       EGL_BLUE_SIZE,      TEST_NUMBER_8, EGL_ALPHA_SIZE, TEST_NUMBER_8,
+    EGL_RENDERABLE_TYPE, EGL_OPENGL_ES3_BIT, EGL_NONE,
+};
     ret = eglChooseConfig(g_eglDisplay, configAttribs, &g_eglConfig, TEST_NUMBER_1, &count);
     EXPECT_EQ(ret, EGL_TRUE);
     EXPECT_GE(count, TEST_NUMBER_1);
@@ -89,92 +86,57 @@ void DrawingNativeGpuContextTestTearDown()
 {
     EGLBoolean ret = eglDestroySurface(g_eglDisplay, g_eglSurface);
     EXPECT_EQ(ret, EGL_TRUE);
-
     ret = eglDestroyContext(g_eglDisplay, g_eglContext);
     EXPECT_EQ(ret, EGL_TRUE);
-
     ret = eglTerminate(g_eglDisplay);
     EXPECT_EQ(ret, EGL_TRUE);
-
     g_eglSurface = EGL_NO_SURFACE;
     g_eglContext = EGL_NO_CONTEXT;
     g_eglDisplay = EGL_NO_DISPLAY;
 }
 
-/**
- * @tc.name   testGpuContextCreateFromGLDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_GPU_CONTEXT_0100
- * @tc.desc   Test for creating and destroying GPU context with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestGpuContextCreateFromGLDestroyNormal()
 {
     DrawingNativeGpuContextTestSetUp();
     OH_Drawing_GpuContextOptions options;
     options.allowPathMaskCaching = true;
-    OH_Drawing_GpuContext* gpuContext = OH_Drawing_GpuContextCreateFromGL(options);
-    EXPECT_NE(gpuContext, nullptr);
-    OH_Drawing_GpuContextDestroy(gpuContext);
+    OH_Drawing_GpuContext* gpuContext_ = OH_Drawing_GpuContextCreateFromGL(options);
+    EXPECT_NE(gpuContext_, nullptr);
+    OH_Drawing_GpuContextDestroy(gpuContext_);
     DrawingNativeGpuContextTestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testGpuContextDestroyNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_GPU_CONTEXT_0200
- * @tc.desc   Test for destroying GPU context with NULL parameter.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestGpuContextDestroyNULL()
 {
     DrawingNativeGpuContextTestSetUp();
+    OH_Drawing_GpuContext *gpuContext = nullptr;
     OH_Drawing_GpuContextDestroy(nullptr);
-    // add assert
-    EXPECT_TRUE(true);
+    EXPECT_EQ(gpuContext, nullptr);
     DrawingNativeGpuContextTestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testGpuContextCreateFromGLDestroyMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_GPU_CONTEXT_0300
- * @tc.desc   Test for repeatedly creating and destroying GPU context.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL3
- */
 int TestGpuContextCreateFromGLDestroyMultipleCalls()
 {
     DrawingNativeGpuContextTestSetUp();
-    for (int i = 0; i < TEST_LOOP_COUNT_10; i++) {
+    for (int i = 0; i < TEST_NUMBER_10; i++) {
         OH_Drawing_GpuContextOptions options;
         options.allowPathMaskCaching = true;
-        OH_Drawing_GpuContext* gpuContext = OH_Drawing_GpuContextCreateFromGL(options);
-        EXPECT_NE(gpuContext, nullptr);
-        OH_Drawing_GpuContextDestroy(gpuContext);
+        OH_Drawing_GpuContext* gpuContext_ = OH_Drawing_GpuContextCreateFromGL(options);
+        EXPECT_NE(gpuContext_, nullptr);
+        OH_Drawing_GpuContextDestroy(gpuContext_);
     }
     DrawingNativeGpuContextTestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testGpuContextCreateNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_GPU_CONTEXT_0400
- * @tc.desc   Test for creating GPU context with normal parameters.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestGpuContextCreateNormal()
 {
     DrawingNativeGpuContextTestSetUp();
-    OH_Drawing_GpuContext* gpuContext = OH_Drawing_GpuContextCreate();
-    EXPECT_NE(gpuContext, nullptr);
-    OH_Drawing_GpuContextDestroy(gpuContext);
+    OH_Drawing_GpuContext* gpuContext_ = OH_Drawing_GpuContextCreate();
+    EXPECT_NE(gpuContext_, nullptr);
+    OH_Drawing_GpuContextDestroy(gpuContext_);
     DrawingNativeGpuContextTestTearDown();
     return OH_DRAWING_SUCCESS;
 }

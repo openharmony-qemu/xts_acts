@@ -75,7 +75,7 @@ struct popupCommonOptions {
         .constraintSize({ minHeight: 0, maxHeight: '14%' })
         .onClick(() => {
           let context = this.getUIContext();
-          const contentNode = new ComponentContent(context, wrapBuilder(buildPopupContent));
+          const contentNode = new ComponentContent<Object>(context, wrapBuilder(buildPopupContent));
           const promptActionInstance = context.getPromptAction();
           let uniqueId = this.getUniqueId();
           let frameNode: FrameNode | null = context.getFrameNodeByUniqueId(uniqueId);

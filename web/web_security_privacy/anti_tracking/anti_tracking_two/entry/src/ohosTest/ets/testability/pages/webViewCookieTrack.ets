@@ -83,7 +83,7 @@ struct webViewCookieTrack {
       this.controller.removeCache(true);
       this.isPageEnd = -1;
       this.controller.loadUrl($rawfile('cookieTrack.html'))
-      await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+      await waitForExist(()=>this.isPageEnd, this.emitKey, 0, 1000);
       let retryTime = 0
       while(this.traceHosts.length == 0 && retryTime < 5) {
           retryTime += 1
@@ -97,17 +97,19 @@ struct webViewCookieTrack {
           Row() {
               Button('获取url').key('webViewCookieTrackTriggerButton')
               .onClick(async () => {
-                await waitForExist(()=>this.isReceive, this.emitKey, 0);
-                await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+                await waitForExist(()=>this.isReceive, this.emitKey, 0, 1000);
+                await waitForExist(()=>this.isPageEnd, this.emitKey, 0, 1000);
                 console.info('key==>' + this.emitKey);
                 this.isReceive = -1;
+                this.traceHosts = [];
+                this.cookie = '';
                 switch (this.emitKey) {
                     case 'emitWebViewCookieTrackEnableTrue': {
                         try {
                             this.controller.enableIntelligentTrackingPrevention(true)
                             this.isPageEnd = -1;
                             this.controller.refresh()
-                            await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+                            await waitForExist(()=>this.isPageEnd, this.emitKey, 0, 1000);
                             Utils.emitEvent(true,160070)
                             Utils.emitEvent(this.controller.isIntelligentTrackingPreventionEnabled() == true, 160070)
                         } catch (error) {
@@ -127,7 +129,7 @@ struct webViewCookieTrack {
                             this.controller.enableIntelligentTrackingPrevention(false)
                           this.isPageEnd = -1;
                           this.controller.refresh()
-                          await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+                          await waitForExist(()=>this.isPageEnd, this.emitKey, 0, 1000);
                             Utils.emitEvent(this.controller.isIntelligentTrackingPreventionEnabled() == false, 160080)
                         } catch (error) {
                             let e:business_error.BusinessError = error as business_error.BusinessError;
@@ -152,14 +154,14 @@ struct webViewCookieTrack {
                               web_webview.WebviewController.addIntelligentTrackingPreventionBypassingList(this.whiteUrlList)
                               this.isPageEnd = -1;
                               this.controller.refresh()
-                              await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+                              await waitForExist(()=>this.isPageEnd, this.emitKey, 0, 1000);
                               console.log('this.traceHosts afterAdd: ' + this.traceHosts)
                               let afterAddTraceLength = this.traceHosts.length
 
                               web_webview.WebviewController.clearIntelligentTrackingPreventionBypassingList()
                               this.isPageEnd = -1;
                               this.controller.refresh()
-                              await waitForExist(()=>this.isPageEnd, this.emitKey, 0);
+                              await waitForExist(()=>this.isPageEnd, this.emitKey, 0, 1000);
                               console.log('this.traceHosts afterClear: ' + this.traceHosts)
                               let afterClearTraceLength = this.traceHosts.length
                               Utils.emitEvent(beforeTraceLength >= 0 && beforeTraceLength <= afterAddTraceLength && afterClearTraceLength >= afterAddTraceLength, 1282)
@@ -195,6 +197,13 @@ struct webViewCookieTrack {
                 .fileAccess(true)
                 .cacheMode(CacheMode.Default)
                 .onPageBegin(() => {
+                })
+                .onIntelligentTrackingPreventionResult((event) => {
+                  if (event) {
+                    this.cookie = 'host:' + event.host + ',url:' + event.trackerHost;
+                    this.traceHosts.push(this.cookie);
+                    console.log('onIntelligentTrackingPreventionResult ->' + this.cookie);
+                  }
                 })
               .onPageEnd((event)=>{
                 console.info('[TAO]' + this.emitKey);

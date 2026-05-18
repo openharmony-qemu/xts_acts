@@ -33,17 +33,6 @@ struct DragEventIndex {
 
   build() {
     Column() {
-      Text('drag_source')
-        .id('dragEventSource')
-        .width('100%')
-        .height('20%')
-        .backgroundColor('#33FF0000')
-        .draggable(true)
-        .onDragStart((event: DragEvent): DragItemInfo => {
-          let _evt = event;
-          return { extraInfo: 'dragEventTest' };
-        });
-
       Text('drag_target')
         .id('dragEventTarget')
         .width('100%')
@@ -58,6 +47,16 @@ struct DragEventIndex {
           } catch (error) {
             this.getDisplayIdStatus = 'getDisplayId_fail';
           }
+        });
+      Text('drag_source')
+        .id('dragEventSource')
+        .width('100%')
+        .height('20%')
+        .backgroundColor('#33FF0000')
+        .draggable(true)
+        .onDragStart((event: DragEvent): DragItemInfo => {
+          let _evt = event;
+          return { extraInfo: 'dragEventTest' };
         });
 
       Text(this.getDisplayIdStatus).key('dragEventGetDisplayIdStatus').height('5%');

@@ -900,14 +900,14 @@ export default function windowFocusTest() {
     })
 
     /**
-     * @tc.name    test_mainWindow_on_noInteractionDetected_Not_triggered
+     * @tc.name   test_mainWindow_on_noInteractionDetected_Not_triggeredAdapt001
      * @tc.number  test_mainWindow_on_noInteractionDetected_Not_triggered
      * @tc.desc    test_mainWindow_on_noInteractionDetected_Not_triggered
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it(" test_mainWindow_on_noInteractionDetected_Not_triggered", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it("test_mainWindow_on_noInteractionDetected_Not_triggeredAdapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = " test_mainWindow_on_noInteractionDetected_Not_triggered";
       console.log(msgStr + "begin");
       let flag = false;
@@ -940,14 +940,14 @@ export default function windowFocusTest() {
     })
 
     /**
-     * @tc.name    test_mainWindow_on_noInteractionDetected_0_5
+     * @tc.name   test_mainWindow_on_noInteractionDetected_0_5Adapt001
      * @tc.number  test_mainWindow_on_noInteractionDetected_0_5
      * @tc.desc    test_mainWindow_on_noInteractionDetected_0_5
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it(" test_mainWindow_on_noInteractionDetected_0_5", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it("test_mainWindow_on_noInteractionDetected_0_5Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = " test_mainWindow_on_noInteractionDetected_0.5";
       console.log(msgStr + "begin");
       let flag = false;
@@ -979,14 +979,14 @@ export default function windowFocusTest() {
     })
 
     /**
-     * @tc.name    test_mainWindow_on_noInteractionDetected__1
+     * @tc.name   test_mainWindow_on_noInteractionDetected__1Adapt001
      * @tc.number  test_mainWindow_on_noInteractionDetected__1
      * @tc.desc    test_mainWindow_on_noInteractionDetected__1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it(" test_mainWindow_on_noInteractionDetected__1", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it("test_mainWindow_on_noInteractionDetected__1Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = " test_mainWindow_on_noInteractionDetected_-1";
       console.log(msgStr + "begin");
       let windowClass = await windowStage.getMainWindow();
@@ -1926,6 +1926,83 @@ export default function windowFocusTest() {
         done();
       }
     });
+/**
+   * @tc.name SUB_WINDOW_ENV_IS_FOCUSED_HIGHLIGHTED_0100
+   * @tc.number SUB_WINDOW_ENV_IS_FOCUSED_HIGHLIGHTED_0100
+   * @tc.desc SUB_WINDOW_ENV_IS_FOCUSED_HIGHLIGHTED_0100
+   * @tc.type FUNCTION
+   * @tc.size MEDIUMTEST
+   * @tc.level LEVEL0
+   */
+  it('SUB_WINDOW_ENV_IS_FOCUSED_HIGHLIGHTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: Function) => {
+      let caseName = 'SUB_WINDOW_ENV_IS_FOCUSED_HIGHLIGHTED_0100';
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin');
+      let isSubWindowFocused: boolean = true;
+      let isSubWindowHighlighted: boolean = true;
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      let callback = (isHighlighted: boolean) => {
+        console.log(msgStr + 'windowHighlightChange, isHighlighted = ' + isHighlighted)
+        isSubWindowHighlighted = isHighlighted
+      }
+      let callback2 = (windowEventType: window.WindowEventType) => {
+        console.log(msgStr + 'subWindow, windowEventType = ' + windowEventType)
+        if (windowEventType === window.WindowEventType.WINDOW_ACTIVE) {
+          isSubWindowFocused = true;
+        }
+        if (windowEventType === window.WindowEventType.WINDOW_INACTIVE) {
+          isSubWindowFocused = false;
+        }
+      }
+      let subWindow = await windowStage.createSubWindow('SUB_WINDOW_ENV_IS_FOCUSED_HIGHLIGHTED_0100');
+      try {
+        await subWindow.setUIContent('testability/pages/Index5');
+        await subWindow.showWindow();
+        await sleep(500);
+        subWindow.on('windowHighlightChange', callback)
+        subWindow.on('windowEvent', callback2);
+        let mainWin = windowStage.getMainWindowSync();
+        let mainWindowId = mainWin.getWindowProperties().id;
+        let subWindowId = subWindow.getWindowProperties().id;
+        console.info(`${msgStr},mainWindowId：${mainWindowId},subWindowId:${subWindowId}`);
+        await window.shiftAppWindowFocus(subWindowId, mainWindowId);
+        await sleep(500);
+        let envSystemPropertiesIsFocused = await driver.findComponent(ON.id('EnvSystemPropertiesIsFocused'));
+        let envSystemPropertiesIsHighlighted = await driver.findComponent(ON.id('EnvSystemPropertiesIsHighlighted'));
+        console.info(`${msgStr} envSystemPropertiesIsFocused:${JSON.stringify(envSystemPropertiesIsFocused)},envSystemPropertiesIsHighlighted:${envSystemPropertiesIsHighlighted}`);
+        let envIsFocusedStr = await envSystemPropertiesIsFocused.getText();
+        let envIsHighlightedStr = await envSystemPropertiesIsHighlighted.getText();
+        console.info(`${msgStr} envIsFocusedStr:${envIsFocusedStr},envIsHighlightedStr:${envIsHighlightedStr},isSubWindowFocused:${isSubWindowFocused},isSubWindowHighlighted:${isSubWindowHighlighted}`);
+        expect(envIsFocusedStr === 'false' && !isSubWindowFocused).assertTrue()
+        expect(envIsHighlightedStr === 'false' && !isSubWindowHighlighted).assertTrue()
+        await window.shiftAppWindowFocus(mainWindowId, subWindowId);
+        await sleep(500);
+        let envIsFocusedStr2 = await envSystemPropertiesIsFocused.getText();
+        let envIsHighlightedStr2 = await envSystemPropertiesIsHighlighted.getText();
+        console.info(`${msgStr} envIsFocusedStr2:${envIsFocusedStr2},envIsHighlightedStr2:${envIsHighlightedStr2},isSubWindowFocused:${isSubWindowFocused},isSubWindowHighlighted:${isSubWindowHighlighted}`);
+        expect(envIsFocusedStr2 === 'true' && isSubWindowFocused).assertTrue()
+        expect(envIsHighlightedStr2 === 'true' && isSubWindowHighlighted).assertTrue()
+        subWindow.off('windowHighlightChange')
+        subWindow.off('windowEvent')
+        await subWindow.destroyWindow();
+        done()
+      } catch (exception) {
+        console.error(msgStr +
+          `Failed to create the subwindow. Cause code: ${exception.code}, message: ${exception.message}`);
+        if (canIUseRes) {
+          expect(true).assertFail();
+        } else {
+          console.log(msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+          expect(exception.code).assertEqual(801);
+        }
+        subWindow.off('windowHighlightChange')
+        subWindow.off('windowEvent')
+        await subWindow.destroyWindow();
+        done();
+      }
+    })
 
 
   })

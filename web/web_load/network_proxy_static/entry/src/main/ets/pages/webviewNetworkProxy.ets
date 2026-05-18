@@ -23,7 +23,7 @@ import { Hypium } from '../../../hypium';
 import Utils from '../../src/test/Utils.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 type OnProxyConfigChangeCallback = () => void
@@ -61,6 +61,44 @@ struct webviewNetworkProxy {
         Button("webviewNetworkProxy click").key('networkProxyButton').onClick((e: ClickEvent) => {
           console.info("key==>" +  this.stringObj.str)
           switch ( this.stringObj.str) {
+
+            case 'testGetProxyRules2': {
+              try {
+                this.proxyConfig.insertProxyRule('');
+                let proxyRules = this.proxyConfig.getProxyRules();
+                console.log('proxyRules.length: ' + proxyRules.length);
+                for (let i = 0; i < proxyRules.length; i++) {
+                  console.log('SchemeFilter: ' + proxyRules[i].getSchemeFilter());
+                  console.log('Url: ' + proxyRules[i].getUrl());
+                  let schemeFilter = proxyRules[i].getSchemeFilter();
+                  let url = proxyRules[i].getUrl();
+                  if (schemeFilter === 0 && url === '') {
+                    Utils.emitEvent(true, 2025021912);
+                  }
+                }
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+              }
+              break;
+            }
+
+            case 'testGetBypassRules2': {
+              try {
+                this.proxyConfig.insertBypassRule('');
+                let bypassRules = this.proxyConfig.getBypassRules();
+                console.log('bypassRules.length: ' + bypassRules.length);
+                for (let i = 0; i < bypassRules.length; i++) {
+                  console.log('bypassRules: ' + bypassRules[i]);
+                  if (bypassRules[i] === '') {
+                    Utils.emitEvent(true, 2025021902);
+                  }
+                }
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+              }
+              break;
+            }
+
             case 'testNetworkProxySchemeFilterMatchAllSchemes': {
               try {
                 this.proxyConfig.insertProxyRule('algorithmmark.hwcloudtest.cn',
@@ -293,6 +331,8 @@ struct webviewNetworkProxy {
               break;
             }
 
+
+
             case 'testGetBypassRules': {
               try {
                 this.proxyConfig.insertBypassRule('www.baidu.com');
@@ -327,6 +367,7 @@ struct webviewNetworkProxy {
               }
               break;
             }
+
 
             case 'testIsReverseBypassEnabledTrue': {
               try {

@@ -31,6 +31,7 @@ export default function effectKitCTest() {
      * @tc.level  LEVEL0
      */
     it('testEffectKitC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      console.info('www data testEffectKitC_0100 begin');
       let imageSource = image.createImageSource(testPng.buffer);
       imageSource.createPixelMap().then(pixelMap => {
         let headFilter = effectKit.createEffect(pixelMap);
@@ -42,6 +43,7 @@ export default function effectKitCTest() {
         let filter2 = headFilter.blur(undefined);
         console.info('www data filter 222 ', JSON.stringify(filter2));
         expect(filter2 != undefined).assertTrue();
+        console.info('www data testEffectKitC_0100 end');
         done();
       }).catch((err: BusinessError) => {
         console.info('www data failed to pixelMap', JSON.stringify(err));
@@ -59,6 +61,7 @@ export default function effectKitCTest() {
      * @tc.level  LEVEL0
      */
     it('testEffectKitC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      console.info('www data testEffectKitC_0200 begin');
       let imageSource = image.createImageSource(testPng.buffer);
       imageSource.createPixelMap().then(pixelMap => {
         let headFilter = effectKit.createEffect(pixelMap);
@@ -86,6 +89,7 @@ export default function effectKitCTest() {
         let filter6 = headFilter.blur(undefined, effectKit.TileMode.DECAL);
         console.info('www data filter 666 ', JSON.stringify(filter6));
         expect(filter6 != undefined).assertTrue();
+        console.info('www data testEffectKitC_0200 end');
         done();
       }).catch((err: BusinessError) => {
         console.info('www data failed to pixelMap', JSON.stringify(err));
@@ -103,6 +107,7 @@ export default function effectKitCTest() {
      * @tc.level  LEVEL0
      */
     it('testEffectKitC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      console.info('www data testEffectKitC_0300 begin');
       let imageSource = image.createImageSource(testPng.buffer);
       imageSource.createPixelMap().then(pixelMap => {
         let headFilter = effectKit.createEffect(pixelMap);
@@ -276,7 +281,7 @@ export default function effectKitCTest() {
         expect(headFilter1 == undefined).assertTrue();
         
         let headFilter2 = effectKit.createEffect(undefined);
-        console.info('www data createEffect 111 ', JSON.stringify(headFilter2));
+        console.info('www data createEffect 222 ', JSON.stringify(headFilter2));
         expect(headFilter2 == undefined).assertTrue();
         done();
       }).catch((err: BusinessError) => {
@@ -301,26 +306,26 @@ export default function effectKitCTest() {
         console.info('www data testEffectKitC_0900 111 success ', JSON.stringify(colorPicker1));
         try {
           let colorPicker4 = await effectKit.createColorPicker(pixelMap, null);
-          console.info('www data testEffectKitC_0900 444 success ', JSON.stringify(colorPicker4));
+          console.info('www data testEffectKitC_0900 222 success ', JSON.stringify(colorPicker4));
           expect(colorPicker4).assertUndefined();
         } catch(err){
-          console.info('www data testEffectKitC_0900 444 failed', JSON.stringify(err))
+          console.info('www data testEffectKitC_0900 222 failed', JSON.stringify(err))
           expect().assertFail();
         }
         try {
           let colorPicker5 = await effectKit.createColorPicker(pixelMap, undefined);
-          console.info('www data testEffectKitC_0900 555 success ', JSON.stringify(colorPicker5));
+          console.info('www data testEffectKitC_0900 333 success ', JSON.stringify(colorPicker5));
           expect(colorPicker5 != undefined).assertTrue();
         } catch(err){
-          console.info('www data testEffectKitC_0900 555 failed', JSON.stringify(err))
+          console.info('www data testEffectKitC_0900 333 failed', JSON.stringify(err))
           expect().assertFail();
         }
         try {
           let colorPicker6 = await effectKit.createColorPicker(pixelMap, []);
-          console.info('www data testEffectKitC_0900 666 success ', JSON.stringify(colorPicker6));
+          console.info('www data testEffectKitC_0900 444 success ', JSON.stringify(colorPicker6));
           expect(colorPicker6).assertUndefined();
         } catch(err){
-          console.info('www data testEffectKitC_0900 666 failed', JSON.stringify(err))
+          console.info('www data testEffectKitC_0900 444 failed', JSON.stringify(err))
           expect().assertFail();
         }
         done();
@@ -504,7 +509,7 @@ export default function effectKitCTest() {
      * @tc.level  LEVEL0
      */
     it('getPixelMapEnum001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName = 'getPixelMap4';
+      let caseName = 'www data getPixelMap4';
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log("effectKitTest" + msgStr + 'begin');
       let imageSource = image.createImageSource(testJpg.buffer);
@@ -518,7 +523,6 @@ export default function effectKitCTest() {
           console.log(msgStr + "createEffect failed");
           expect(true).assertFail();
           done();
-          return;
         }
         let resultPixel = headFilter.blur(10).getPixelMap();
         expect(resultPixel != null).assertTrue();
@@ -630,7 +634,7 @@ export default function effectKitCTest() {
         expect(pixelMap.isEditable).assertFalse();
         expect(pixelMap.isStrideAlignment).assertTrue();
         effectKit.createEffect(pixelMap).getEffectPixelMap().then((pixelMap)=>{
-          console.info('getPixelBytesNumber = ', pixelMap.getPixelBytesNumber());
+          console.info('www data getPixelBytesNumber = ', pixelMap.getPixelBytesNumber());
           console.info('www data pixelMap isEditable ', pixelMap.isEditable)
           console.info('www data pixelMap isStrideAlignment ', pixelMap.isStrideAlignment)
           expect(pixelMap.isEditable).assertTrue();
@@ -666,7 +670,7 @@ export default function effectKitCTest() {
         expect(pixelMap.isEditable).assertFalse();
         expect(pixelMap.isStrideAlignment).assertTrue();
         effectKit.createEffect(pixelMap).getEffectPixelMap(true).then((pixelMap)=>{
-          console.info('getPixelBytesNumber = ', pixelMap.getPixelBytesNumber());
+          console.info('www data getPixelBytesNumber = ', pixelMap.getPixelBytesNumber());
           console.info('www data pixelMap isEditable ', pixelMap.isEditable)
           console.info('www data pixelMap isStrideAlignment ', pixelMap.isStrideAlignment)
           expect(pixelMap.isEditable).assertTrue();
@@ -702,7 +706,7 @@ export default function effectKitCTest() {
         expect(pixelMap.isEditable).assertFalse();
         expect(pixelMap.isStrideAlignment).assertTrue();
         effectKit.createEffect(pixelMap).getEffectPixelMap(false).then((pixelMap)=>{
-          console.info('getPixelBytesNumber = ', pixelMap.getPixelBytesNumber());
+          console.info('www data getPixelBytesNumber = ', pixelMap.getPixelBytesNumber());
           console.info('www data pixelMap isEditable ', pixelMap.isEditable)
           console.info('www data pixelMap isStrideAlignment ', pixelMap.isStrideAlignment)
           expect(pixelMap.isEditable).assertTrue();
@@ -734,7 +738,7 @@ export default function effectKitCTest() {
           size: { height: 4, width: 6 }
         }
         let pixelMap: image.PixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
-        console.info('www data alloc pixelMap isEditable ', pixelMap.isEditable)  // false
+        console.info('www data alloc pixelMap isEditable ', pixelMap.isEditable)  // true
         console.info('www data alloc pixelMap isStrideAlignment ', pixelMap.isStrideAlignment)  // true
         expect(pixelMap.isEditable).assertTrue();
         expect(pixelMap.isStrideAlignment).assertTrue();
@@ -777,7 +781,7 @@ export default function effectKitCTest() {
           expect(pixelMap.isEditable).assertTrue();
           expect(pixelMap.isStrideAlignment).assertFalse();
           let pixel = effectKit.createEffect(pixelMap).getPixelMap();
-          console.info('getPixelBytesNumber = ', pixel.getPixelBytesNumber());
+          console.info('www data getPixelBytesNumber = ', pixel.getPixelBytesNumber());
           console.info('www data pixelMap isEditable ', pixel.isEditable)
           console.info('www data pixelMap isStrideAlignment ', pixel.isStrideAlignment)
           expect(pixel.isEditable).assertTrue();

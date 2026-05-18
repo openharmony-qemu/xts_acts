@@ -66,14 +66,14 @@ export default function es2018Test() {
       })
     })
     /**
-     * @tc.name   testPromise.finally
+     * @tc.name   testPromisefinallyAdapt001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ES2018NewFeatures_0004
      * @tc.desc   add name of task for taskpool
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testPromise.finally', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('testPromisefinallyAdapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let test2018_04_ans: number = 0;
       let promise1 = new Promise((resolve: (value: string) => void, rejcet: (value: string) => void) => {
         resolve("resolved");

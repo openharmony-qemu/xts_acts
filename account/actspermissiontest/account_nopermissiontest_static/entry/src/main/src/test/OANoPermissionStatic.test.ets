@@ -50,7 +50,6 @@ export default function ActsOANoPermissionTestStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, '====>getOsAccountCount exception: ' + JSON.stringify(err));
           expect(err.code).assertEqual(201);
           done();
@@ -73,7 +72,6 @@ export default function ActsOANoPermissionTestStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, '====>getOsAccountCount err: ' + JSON.stringify(err));
           expect(err.code).assertEqual(201);
         }
@@ -109,7 +107,6 @@ export default function ActsOANoPermissionTestStatic() {
               done();
             });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, '====>getOsAccountLocalIdForDomain exception: ' + JSON.stringify(err));
           expect(err.code).assertEqual(201);
           done();
@@ -133,7 +130,6 @@ export default function ActsOANoPermissionTestStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, '====>checkDataSyncEnabled err: ' + JSON.stringify(err));
           expect(err.code).assertEqual(201);
         }
@@ -168,7 +164,6 @@ export default function ActsOANoPermissionTestStatic() {
             done();
           });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, '====>queryDistributedVirtualDeviceId exception: ' + JSON.stringify(err));
           expect(err.code).assertEqual(201);
           done();
@@ -191,7 +186,6 @@ export default function ActsOANoPermissionTestStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, '====>checkDataSyncEnabled err: ' + JSON.stringify(err));
           expect(err.code).assertEqual(201);
         }
@@ -217,7 +211,6 @@ export default function ActsOANoPermissionTestStatic() {
           hilog.info(0x0000, tag, logTag + "data: " + JSON.stringify(data));
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(201);
@@ -244,7 +237,6 @@ export default function ActsOANoPermissionTestStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           if (err.code === 801) {
             hilog.info(0x0000, tag, logTag + "Current device not support API: updateAccountInfo");
@@ -276,7 +268,6 @@ export default function ActsOANoPermissionTestStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           if (err.code === 801) {
             hilog.info(0x0000, tag, logTag + "Current device not support API: addServerConfig");
@@ -305,7 +296,6 @@ export default function ActsOANoPermissionTestStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           if (err.code === 801) {
             hilog.info(0x0000, tag, logTag + "Current device not support API: removeServerConfig");
@@ -338,7 +328,6 @@ export default function ActsOANoPermissionTestStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           if (err.code === 801) {
             hilog.info(0x0000, tag, logTag + "Current device not support API: updateServerConfig");
@@ -367,7 +356,6 @@ export default function ActsOANoPermissionTestStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           if (err.code === 801) {
             hilog.info(0x0000, tag, logTag + "Current device not support API: getServerConfig");
@@ -395,7 +383,6 @@ export default function ActsOANoPermissionTestStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           if (err.code === 801) {
             hilog.info(0x0000, tag, logTag + "Current device not support API: getAllServerConfigs");
@@ -429,13 +416,60 @@ export default function ActsOANoPermissionTestStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           if (err.code === 801) {
             hilog.info(0x0000, tag, logTag + "Current device not support API: getAccountServerConfig");
           } else {
             expect(err.code).assertEqual(201);
           }
+        }
+        done();
+      });
+
+    /**
+     * @tc.number   SUB_Account_OsAccount_NoPermission_static_4300
+     * @tc.name     SUB_Account_OsAccount_NoPermission_static_4300
+     * @tc.desc     no ohos.permission.GET_LOCAL_ACCOUNT_IDENTIFIERS.
+     * @tc.type     FUNCTION
+     * @tc.size     MEDIUMTEST
+     * @tc.level    LEVEL0
+     */
+    it('SUB_Account_OsAccount_NoPermission_static_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let logTag: string = "====>SUB_Account_OsAccount_NoPermission_static_4300 ";
+        hilog.info(0x0000, tag, logTag + "start====");
+        let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+        try {
+          await accountManager.getOsAccountLocalIds();
+          hilog.info(0x0000, tag, logTag + "run err");
+          expect().assertFail();
+        } catch (err) {
+          hilog.info(0x0000, tag, logTag + 'getOsAccountLocalIds err: ' + JSON.stringify(err));
+          expect(err.code).assertEqual(201);
+        }
+        done();
+      });
+
+    /**
+     * @tc.number   SUB_Account_OsAccount_NoPermission_static_4400
+     * @tc.name     SUB_Account_OsAccount_NoPermission_static_4400
+     * @tc.desc     no ohos.permission.GET_LOCAL_ACCOUNT_IDENTIFIERS.
+     * @tc.type     FUNCTION
+     * @tc.size     MEDIUMTEST
+     * @tc.level    LEVEL0
+     */
+    it('SUB_Account_OsAccount_NoPermission_static_4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let logTag: string = "====>SUB_Account_OsAccount_NoPermission_static_4400 ";
+        hilog.info(0x0000, tag, logTag + "start====");
+        let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+        try {
+          await accountManager.getOsAccountNameByLocalId(100);
+          hilog.info(0x0000, tag, logTag + "run err");
+          expect().assertFail();
+        } catch (err) {
+          hilog.info(0x0000, tag, logTag + 'getOsAccountLocalIds err: ' + JSON.stringify(err));
+          expect(err.code).assertEqual(201);
         }
         done();
       });

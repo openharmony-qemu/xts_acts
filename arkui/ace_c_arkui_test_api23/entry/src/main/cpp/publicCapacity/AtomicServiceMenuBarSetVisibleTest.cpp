@@ -26,4 +26,12 @@ static napi_value TestAtomicServiceMenuBarSetVisible01(napi_env env, napi_callba
     ASSERT_EQ(res, ARKUI_ERROR_CODE_UI_CONTEXT_INVALID);
     NAPI_END;
 }
+static napi_value TestAccessibilityElementInfoSetComponentIdentifier001(napi_env env, napi_callback_info info) {
+    ArkUI_AccessibilityElementInfo *elementInfo = OH_ArkUI_CreateAccessibilityElementInfo();
+    auto ret = OH_ArkUI_AccessibilityElementInfoSetComponentIdentifier(nullptr,nullptr);
+    ASSERT_EQ(ret, ARKUI_ACCESSIBILITY_NATIVE_RESULT_BAD_PARAMETER);
+    auto ret1 = OH_ArkUI_AccessibilityElementInfoSetComponentIdentifier(elementInfo, "111");
+    ASSERT_EQ(ret1, ARKUI_ACCESSIBILITY_NATIVE_RESULT_SUCCESSFUL);
+    NAPI_END;
+}
 }   // namespace ArkUICapiTest

@@ -24,7 +24,8 @@ extern int VideoEncodeCapability4700Test();
 extern int VideoEncodeCapability4710Test();
 extern int VideoEncodeCapability5000Test();
 extern int VideoEncodeCapability5010Test();
-
+extern int VideoEncodeCapability5020Test();
+extern int VideoEncodeCapability5030Test();
 extern void InitConfigureTest();
 extern void TestTearDownConfigure();
 

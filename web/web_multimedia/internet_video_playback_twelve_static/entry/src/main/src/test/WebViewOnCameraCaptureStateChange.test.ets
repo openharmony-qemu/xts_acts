@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import inspector from '@ohos.arkui.inspector';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
 let testAbilityContext:common.UIAbilityContext;
+const driver = Driver.create();
 
 export default function ActsAceWebViewOnCameraCaptureStateChangeCase() {
   describe('ActsAceWebViewOnCameraCaptureStateChangeTest', (): void => {
@@ -58,7 +59,13 @@ export default function ActsAceWebViewOnCameraCaptureStateChangeCase() {
     * @tc.type         Function
     * @tc.level        LEVEL0
     */
-    it('testOnCameraCaptureStateChangeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testOnCameraCaptureStateChangeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let buttonOne = await driver.findComponent(ON.text('开启摄像头'));
+      if(buttonOne)
+      {
+        await buttonOne.click();
+        console.log("✅ 成功点击「开启摄像头」按钮");
+      }
       await Utils.msSleep(2000);
       Utils.emitEvent('testOnCameraCaptureStateChange001', 10)
       await Utils.msSleep(3000);
@@ -77,7 +84,7 @@ export default function ActsAceWebViewOnCameraCaptureStateChangeCase() {
     * @tc.type         Function
     * @tc.level        LEVEL0
     */
-    it('testOnCameraCaptureStateChangeStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testOnCameraCaptureStateChangeStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
       Utils.emitEvent('testOnCameraCaptureStateChange002', 10)
       await Utils.msSleep(3000);
@@ -96,7 +103,7 @@ export default function ActsAceWebViewOnCameraCaptureStateChangeCase() {
     * @tc.type         Function
     * @tc.level        LEVEL0
     */
-    it('testOnCameraCaptureStateChangeStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testOnCameraCaptureStateChangeStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
       Utils.emitEvent('testOnCameraCaptureStateChange003', 10)
       await Utils.msSleep(3000);
@@ -109,13 +116,13 @@ export default function ActsAceWebViewOnCameraCaptureStateChangeCase() {
 
     /**
     * @tc.name         SwitchNextPageStatic
-    * @tc.number       SUB_WEB_ONHTTPERRORRECEIVE_0500
+    * @tc.number       SUB_WEB_ONHTTPERRORRECEIVE_050011
     * @tc.desc         test onHttpErrorReceive callback when returned error code is 500
     * @tc.size         MediumTest
     * @tc.type         Function
     * @tc.level        LEVEL0
     */
-    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
         Utils.emitEvent('SwitchNextPageStatic', 10)

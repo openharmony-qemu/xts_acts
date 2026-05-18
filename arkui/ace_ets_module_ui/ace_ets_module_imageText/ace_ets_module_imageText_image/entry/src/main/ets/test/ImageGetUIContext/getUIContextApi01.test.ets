@@ -58,6 +58,7 @@ export default function getUIContextApi01() {
      */
     it('setImageCacheCount0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('setImageCacheCount0101 START');
+      await CommonFunc.sleep(SLEEP_TIME);
       let driver = await Driver.create();
       let button4 = await driver.findComponent(ON.id('Button001'));
       await button4.click();

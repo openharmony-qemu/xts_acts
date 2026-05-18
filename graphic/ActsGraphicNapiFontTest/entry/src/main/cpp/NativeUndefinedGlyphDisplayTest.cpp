@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -35,7 +35,14 @@ namespace Drawing {
 namespace {
 bool ExistNotdef()
 {
-    std::string existFontPathStr = std::string("/system/fonts/") + GetSystemDefaultFont(true) + "_Notdef.ttf";
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ExistNotdef func", "in");
+    const char* defaultFont = GetSystemDefaultFont(true);
+    if (defaultFont == nullptr) {
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ExistNotdef func", "GetSystemDefaultFont returned null");
+        return false;
+    }
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "ExistNotdef func", "defaultFont is %{public}s", defaultFont);
+    std::string existFontPathStr = std::string("/system/fonts/") + defaultFont + "_Notdef.ttf";
     const char* existFontPath = existFontPathStr.c_str();
     std::ifstream file(existFontPath);
     return file.is_open();
@@ -58,13 +65,22 @@ bool ExistNotoSans()
  */
 int OHDrawingSetTextUndefinedGlyphDisplay001()
 {
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "SetTextUndefinedGlyphDisplay001", "Start test");
     NativeUndefinedGlyphDisplayTestContext ctx;
     OH_Drawing_SetTextUndefinedGlyphDisplay(TEXT_NO_GLYPH_USE_TOFU);
-    OH_Drawing_Typography* typography = ctx.PrepareCreateTypography(OHOS::Rosen::Drawing::TEST_TEXT);
+    const char* fontFamilies[] = { "HarmonyOS Sans" };
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "SetTextUndefinedGlyphDisplay001",
+        "fontFamilies is HarmonyOS Sans");
+    OH_Drawing_Typography* typography =
+        ctx.PrepareCreateTypography(OHOS::Rosen::Drawing::TEST_TEXT, fontFamilies, NUM_1);
     EXPECT_NE(typography, nullptr);
     if (ExistNotdef()) {
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "SetTextUndefinedGlyphDisplay001",
+            "Exist Notdef, BoundsResult TOFU_RESULT");
         ctx.BoundsResult(typography, OHOS::Rosen::Drawing::TOFU_RESULT, NUM_3);
     } else {
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "SetTextUndefinedGlyphDisplay001",
+            "Not Exist Notdef, BoundsResult DEFAULT_RESULT");
         ctx.BoundsResult(typography, OHOS::Rosen::Drawing::DEFAULT_RESULT, NUM_3);
     }
     OH_Drawing_DestroyTypography(typography);
@@ -81,6 +97,7 @@ int OHDrawingSetTextUndefinedGlyphDisplay001()
  */
 int OHDrawingSetTextUndefinedGlyphDisplay002()
 {
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "SetTextUndefinedGlyphDisplay002", "Start test");
     NativeUndefinedGlyphDisplayTestContext ctx;
     OH_Drawing_SetTextUndefinedGlyphDisplay(TEXT_NO_GLYPH_USE_DEFAULT);
     OH_Drawing_Typography* typography = ctx.PrepareCreateTypography(OHOS::Rosen::Drawing::TEST_TEXT);
@@ -100,11 +117,13 @@ int OHDrawingSetTextUndefinedGlyphDisplay002()
  */
 int OHDrawingSetTextUndefinedGlyphDisplay003()
 {
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "SetTextUndefinedGlyphDisplay003", "Start test");
     NativeUndefinedGlyphDisplayTestContext ctx;
     OH_Drawing_SetTextUndefinedGlyphDisplay(TEXT_NO_GLYPH_USE_DEFAULT);
     OH_Drawing_SetTextUndefinedGlyphDisplay(static_cast<OH_Drawing_TextUndefinedGlyphDisplay>(NUM_100));
     OH_Drawing_Typography* defaultTypography = ctx.PrepareCreateTypography(OHOS::Rosen::Drawing::TEST_TEXT);
     EXPECT_NE(defaultTypography, nullptr);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "SetTextUndefinedGlyphDisplay003", "BoundsResult DEFAULT_RESULT");
     ctx.BoundsResult(defaultTypography, OHOS::Rosen::Drawing::DEFAULT_RESULT, NUM_3);
     OH_Drawing_SetTextUndefinedGlyphDisplay(TEXT_NO_GLYPH_USE_TOFU);
     OH_Drawing_SetTextUndefinedGlyphDisplay(static_cast<OH_Drawing_TextUndefinedGlyphDisplay>(NUM_100));
@@ -130,11 +149,13 @@ int OHDrawingSetTextUndefinedGlyphDisplay003()
  */
 int OHDrawingSetTextUndefinedGlyphDisplay004()
 {
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "SetTextUndefinedGlyphDisplay004", "Start test");
     NativeUndefinedGlyphDisplayTestContext ctx;
     OH_Drawing_SetTextUndefinedGlyphDisplay(TEXT_NO_GLYPH_USE_DEFAULT);
     OH_Drawing_SetTextUndefinedGlyphDisplay(static_cast<OH_Drawing_TextUndefinedGlyphDisplay>(NUM_100));
     OH_Drawing_Typography* defaultTypography = ctx.PrepareCreateTypography(OHOS::Rosen::Drawing::NO_GLYPH_TEXT);
     EXPECT_NE(defaultTypography, nullptr);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "SetTextUndefinedGlyphDisplay004", "BoundsResult DEFAULT_RESULT");
     ctx.BoundsResult(defaultTypography, OHOS::Rosen::Drawing::NO_GLYPH_DEFAULT_RESULT, NUM_1);
     OH_Drawing_SetTextUndefinedGlyphDisplay(TEXT_NO_GLYPH_USE_TOFU);
     OH_Drawing_SetTextUndefinedGlyphDisplay(static_cast<OH_Drawing_TextUndefinedGlyphDisplay>(NUM_100));
@@ -160,6 +181,7 @@ int OHDrawingSetTextUndefinedGlyphDisplay004()
  */
 int OHDrawingSetTextUndefinedGlyphDisplay005()
 {
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "SetTextUndefinedGlyphDisplay005", "Start test");
     NativeUndefinedGlyphDisplayTestContext ctx;
     OH_Drawing_SetTextUndefinedGlyphDisplay(TEXT_NO_GLYPH_USE_TOFU);
     const char* fontFamilies[] = { "Noto Sans" };
@@ -167,16 +189,24 @@ int OHDrawingSetTextUndefinedGlyphDisplay005()
         ctx.PrepareCreateTypography(OHOS::Rosen::Drawing::TEST_TEXT, fontFamilies, NUM_1);
     EXPECT_NE(typography, nullptr);
     if (ExistNotoSans()) {
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "SetTextUndefinedGlyphDisplay005",
+            "Exist NotoSans, BoundsResult NO_TO_RESULT");
         ctx.BoundsResult(typography, OHOS::Rosen::Drawing::NO_TO_RESULT, NUM_3);
     } else {
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "SetTextUndefinedGlyphDisplay005",
+            "Not Exist NotoSans, BoundsResult DEFAULT_RESULT");
         ctx.BoundsResult(typography, OHOS::Rosen::Drawing::DEFAULT_RESULT, NUM_3);
     }
     OH_Drawing_Typography* onlyTypography =
         ctx.PrepareCreateTypography(OHOS::Rosen::Drawing::NO_GLYPH_TEXT, fontFamilies, NUM_1);
     EXPECT_NE(onlyTypography, nullptr);
     if (ExistNotdef()) {
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "SetTextUndefinedGlyphDisplay005",
+            "Exist NotoSans, BoundsResult NO_GLYPH_TOFU_RESULT");
         ctx.BoundsResult(onlyTypography, OHOS::Rosen::Drawing::NO_GLYPH_TOFU_RESULT, NUM_1);
     } else {
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "SetTextUndefinedGlyphDisplay005",
+            "Not Exist NotoSans, BoundsResult NO_GLYPH_DEFAULT_RESULT");
         ctx.BoundsResult(onlyTypography, OHOS::Rosen::Drawing::NO_GLYPH_DEFAULT_RESULT, NUM_1);
     }
     OH_Drawing_SetTextUndefinedGlyphDisplay(TEXT_NO_GLYPH_USE_DEFAULT);

@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2025 HiHope Open Source Organization.
+* Copyright (C) 2025-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the 'License');
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -137,7 +137,7 @@ export default function builtinsShortPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest0500'
         console.info(`${caseName}, test start`);
-        const a: short = new Short(Short.MAX_VALUE - 100 as short);
+        const a: short = new Short((Short.MAX_VALUE - 100).toShort());
         const b = new Short(100);
         const result = a.add(b);
         expect(result).assertEqual(Short.MAX_VALUE);
@@ -157,7 +157,7 @@ export default function builtinsShortPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsShortPrototypebTest0600'
         console.info(`${caseName}, test start`);
-        const a: short = new Short(Short.MIN_VALUE - 100 as short);
+        const a: short = new Short((Short.MIN_VALUE - 100).toShort());
         const b = new Short(100);
         const result = a.add(b);
         expect(result).assertEqual(Short.MIN_VALUE);
@@ -991,8 +991,8 @@ export default function builtinsShortPrototypebTest() {
         console.info(`${caseName}, test start`);
         const max = new Short(Short.MAX_VALUE);
         const min = new Short(Short.MIN_VALUE);
-        const almostMax: short = new Short(Short.MAX_VALUE - 1 as short);
-        const almostMin: short = new Short(Short.MIN_VALUE + 1 as short);
+        const almostMax: short = new Short((Short.MAX_VALUE - 1).toShort());
+        const almostMin: short = new Short((Short.MIN_VALUE + 1).toShort());
 
         expect(max.isGreaterEqualThan(almostMax)).assertEqual(true);
         expect(almostMin.isGreaterEqualThan(min)).assertEqual(true);
@@ -1073,7 +1073,7 @@ export default function builtinsShortPrototypebTest() {
         const caseName = 'builtinsShortPrototypebTest6000'
         console.info(`${caseName}, test start`);
         const max = new Short(Short.MAX_VALUE);
-        const belowMax: short = new Short(Short.MAX_VALUE - 1 as short);
+        const belowMax: short = new Short((Short.MAX_VALUE - 1).toShort());
         expect(max.isGreaterThan(belowMax)).assertEqual(true);
         expect(belowMax.isGreaterThan(max)).assertEqual(false);
         console.info(`${caseName}, test end`);
@@ -1093,7 +1093,7 @@ export default function builtinsShortPrototypebTest() {
         const caseName = 'builtinsShortPrototypebTest6100'
         console.info(`${caseName}, test start`);
         const min = new Short(Short.MIN_VALUE);
-        const aboveMin: short = new Short(Short.MIN_VALUE + 1 as short);
+        const aboveMin: short = new Short((Short.MIN_VALUE + 1).toShort());
         expect(aboveMin.isGreaterThan(min)).assertEqual(true);
         expect(min.isGreaterThan(aboveMin)).assertEqual(false);
         console.info(`${caseName}, test end`);

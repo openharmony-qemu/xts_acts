@@ -357,7 +357,8 @@ export default function objectStoreTestV9() {
         });
         await sleep(2000);
         expect("mySession1" == g_object["__sessionId"]).assertEqual(true);
-        g_object.save("local").then((ret: distributedObject.SaveSuccessResponse) => {
+        try {
+          const ret: distributedObject.SaveSuccessResponse = await g_object.save("local");
           expect(ret.sessionId == "mySession1").assertEqual(true);
           expect(ret.version == g_object["__version"]).assertEqual(true);
           expect(ret.deviceId == "local").assertEqual(true);
@@ -369,12 +370,12 @@ export default function objectStoreTestV9() {
           expect(g_object["name"] == "Tom").assertEqual(true);
           expect(g_object["age"] == 17.0).assertEqual(true);
           expect(g_object["isVis"] == true).assertEqual(true);
-          done();
-        }).catch((err: Error) => {
-          console.info('testV9Save001 err ' + `, error code is ${err.code}, message is ${err.message}`);
+        } catch (e) {
+          const err = e as Error;
+          console.info('testV9Save001 err ' + `, error code is ${(err as any).code}, message is ${err.message}`);
           expect().assertFail();
-          done();
-        });
+        }
+        done();
         console.info(TAG + "************* SUB_DDM_AppDataFWK_Object_Api9_Save_001 end *************");
       })
 

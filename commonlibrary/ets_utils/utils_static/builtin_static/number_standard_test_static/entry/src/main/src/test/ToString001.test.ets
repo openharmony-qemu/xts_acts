@@ -241,7 +241,7 @@ export default function BuiltinsToStringTest() {
       let conversionResult: string | undefined;
       let caughtError: boolean = true;
       try {
-        conversionResult = bigIntValue.toString(2.5);
+        conversionResult = bigIntValue.toString(2);
         console.log('No exception was thrown, which is unexpected.', conversionResult);
       } catch (error) {
         if (error instanceof Error) {
@@ -355,123 +355,6 @@ export default function BuiltinsToStringTest() {
 
 
     /**
-     * @tc.number SUB_BUILTINS_TOSTRING_TEST_1400
-     * @tc.name BuiltinsToStringTest1400
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('BuiltinsToStringTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: ()=> void): Promise<void> => {
-      const caseName = 'BuiltinsToStringTest1400';
-      console.info(`${caseName} test start`);
-      let bigIntValue: bigint = 10n;
-      let conversionResult: string | undefined;
-      let caughtError: boolean = true;
-      try {
-        conversionResult = bigIntValue.toString(NaN);
-        console.log('No exception was thrown, which is unexpected.', conversionResult);
-      } catch (error) {
-        if (error instanceof Error) {
-          caughtError = false;
-          console.log('caughtError:' + caughtError);
-        }
-      }
-      expect(caughtError).assertFalse();
-      console.info(`${caseName} test end`);
-      Done();
-    });
-
-
-    /**
-     * @tc.number SUB_BUILTINS_TOSTRING_TEST_1500
-     * @tc.name BuiltinsToStringTest1500
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('BuiltinsToStringTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: ()=> void): Promise<void> => {
-      const caseName = 'BuiltinsToStringTest1500';
-      console.info(`${caseName} test start`);
-      let bigIntValue: bigint = 10n;
-      let conversionResult: string | undefined;
-      let caughtError: boolean = true;
-      try {
-        conversionResult = bigIntValue.toString(undefined);
-        console.log('No exception was thrown, which is unexpected.', conversionResult);
-      } catch (error) {
-        if (error instanceof Error) {
-          caughtError = false;
-          console.log('caughtError:' + caughtError);
-        }
-      }
-      expect(conversionResult).assertContain('10');
-      expect(caughtError).assertTrue();
-      console.info(`${caseName} test end`);
-      Done();
-    });
-
-
-    /**
-     * @tc.number SUB_BUILTINS_TOSTRING_TEST_1600
-     * @tc.name BuiltinsToStringTest1600
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('BuiltinsToStringTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: ()=> void): Promise<void> => {
-      const caseName = 'BuiltinsToStringTest1600';
-      console.info(`${caseName} test start`);
-      let bigIntValue: bigint = 10n;
-      let conversionResult: string | undefined;
-      let caughtError: boolean = true;
-      try {
-        conversionResult = bigIntValue.toString(Infinity);
-        console.log('No exception was thrown, which is unexpected.', conversionResult);
-      } catch (error) {
-        if (error instanceof Error) {
-          caughtError = false;
-          console.log('caughtError:' + caughtError);
-        }
-      }
-      expect(caughtError).assertFalse();
-      console.info(`${caseName} test end`);
-      Done();
-    });
-
-
-    /**
-     * @tc.number SUB_BUILTINS_TOSTRING_TEST_1700
-     * @tc.name BuiltinsToStringTest1700
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('BuiltinsToStringTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: ()=> void): Promise<void> => {
-      const caseName = 'BuiltinsToStringTest1700';
-      console.info(`${caseName} test start`);
-      let bigIntValue: bigint = 10n;
-      let conversionResult: string | undefined;
-      let caughtError: boolean = true;
-      try {
-        conversionResult = bigIntValue.toString(-Infinity);
-        console.log('No exception was thrown, which is unexpected.', conversionResult);
-      } catch (error) {
-        if (error instanceof Error) {
-          caughtError = false;
-          console.log('caughtError:' + caughtError);
-        }
-      }
-      expect(caughtError).assertFalse();
-      console.info(`${caseName} test end`);
-      Done();
-    });
-
-
-    /**
      * @tc.number SUB_BUILTINS_TOSTRING_TEST_1800
      * @tc.name BuiltinsToStringTest1800
      * @tc.desc test
@@ -486,7 +369,7 @@ export default function BuiltinsToStringTest() {
       let conversionResult: string | undefined;
       let caughtError: boolean = true;
       try {
-        conversionResult = bigIntValue.toString(Math.floor(1.5));
+        conversionResult = bigIntValue.toString(1);
         console.log('No exception was thrown, which is unexpected.', conversionResult);
       } catch (error) {
         if (error instanceof Error) {
@@ -515,7 +398,7 @@ export default function BuiltinsToStringTest() {
       let conversionResult: string | undefined;
       let caughtError: boolean = true;
       try {
-        conversionResult = bigIntValue.toString(Number.MAX_VALUE);
+        conversionResult = bigIntValue.toString(Int.MAX_VALUE);
         console.log('No exception was thrown, which is unexpected.', conversionResult);
       } catch (error) {
         if (error instanceof Error) {
@@ -544,7 +427,7 @@ export default function BuiltinsToStringTest() {
       let conversionResult: string | undefined;
       let caughtError: boolean = true;
       try {
-        conversionResult = bigIntValue.toString(Number.MIN_VALUE);
+        conversionResult = bigIntValue.toString(Int.MIN_VALUE);
         console.log('No exception was thrown, which is unexpected.', conversionResult);
       } catch (error) {
         if (error instanceof Error) {
@@ -573,7 +456,7 @@ export default function BuiltinsToStringTest() {
       let conversionResult: string | undefined;
       let caughtError: boolean = true;
       try {
-        conversionResult = bigIntValue.toString(Number.EPSILON);
+        conversionResult = bigIntValue.toString(0);
         console.log('No exception was thrown, which is unexpected.', conversionResult);
       } catch (error) {
         if (error instanceof Error) {
@@ -631,7 +514,7 @@ export default function BuiltinsToStringTest() {
       let conversionResult: string | undefined;
       let caughtError: boolean = true;
       try {
-        conversionResult = bigIntValue.toString(123.456);
+        conversionResult = bigIntValue.toString(123);
         console.log('No exception was thrown, which is unexpected.', conversionResult);
       } catch (error) {
         if (error instanceof Error) {

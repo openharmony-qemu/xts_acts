@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -85,8 +85,8 @@ it('onScrollStopTest_static_0100', Level.LEVEL3, async (done: () => void): Promi
       let btn1 = await driver.findComponent(ON.id('myTextPicker'));
       let rect = await btn1!.getBounds();
       console.info(`rect is: ` + JSON.stringify(rect))
-      await driver.swipe(Math.round((rect.left+rect.right)/2) as int,Math.round((rect.top+rect.bottom)/2)  as int,
-        Math.round((rect.left+rect.right)/2) as int,Math.round((rect.top+rect.bottom)/4) as int,600);
+      await driver.swipe(Math.round((rect.left+rect.right)/2).toInt(),Math.round((rect.top+rect.bottom)/2).toInt(),
+        Math.round((rect.left+rect.right)/2).toInt(),Math.round((rect.top+rect.bottom)/4).toInt(),600);
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('text');
       console.info('[onScrollStopTest_static_0100] onScrollStopTest JSON.parseJsonElement(strJson) is: ' + JSON.stringify(strJson));

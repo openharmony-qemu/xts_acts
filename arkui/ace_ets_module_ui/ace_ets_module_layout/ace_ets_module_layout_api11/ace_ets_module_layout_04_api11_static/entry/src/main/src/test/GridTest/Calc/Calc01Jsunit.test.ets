@@ -73,15 +73,15 @@ export default function CalcJsunit01() {
 it('CalcJsunit01_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[CalcJsunit01_static_0100] START');
       await CommonFunc.sleep(4000);
-      let calc2: RectValue = CommonFunc.getComponentRect('calc01key2');
-      let calc3: RectValue = CommonFunc.getComponentRect('calc01key3');
-      let calc4: RectValue = CommonFunc.getComponentRect('calc01key4');
-      let calc5: RectValue = CommonFunc.getComponentRect('calc01key5');
-      let calc6: RectValue = CommonFunc.getComponentRect('calc01key6');
-      let calc7: RectValue = CommonFunc.getComponentRect('calc01key7');
-      let calc8: RectValue = CommonFunc.getComponentRect('calc01key8');
-      let calc9: RectValue = CommonFunc.getComponentRect('calc01key9');
-      let calc10: RectValue = CommonFunc.getComponentRect('calc01key10');
+      let calc2: RectValue = await CommonFunc.getComponentRect('calc01key2');
+      let calc3: RectValue = await CommonFunc.getComponentRect('calc01key3');
+      let calc4: RectValue = await CommonFunc.getComponentRect('calc01key4');
+      let calc5: RectValue = await CommonFunc.getComponentRect('calc01key5');
+      let calc6: RectValue = await CommonFunc.getComponentRect('calc01key6');
+      let calc7: RectValue = await CommonFunc.getComponentRect('calc01key7');
+      let calc8: RectValue = await CommonFunc.getComponentRect('calc01key8');
+      let calc9: RectValue = await CommonFunc.getComponentRect('calc01key9');
+      let calc10: RectValue = await CommonFunc.getComponentRect('calc01key10');
       await CommonFunc.sleep(2000);
       console.log('11111', calc2.right, calc2.left, calc2.right - calc2.left)
       console.log('22222', calc3.top, calc3.bottom, calc3.bottom - calc3.top)

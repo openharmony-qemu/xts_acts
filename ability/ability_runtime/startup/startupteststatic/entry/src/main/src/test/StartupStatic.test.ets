@@ -446,7 +446,7 @@ export default function StartupStaticTest() {
           done();
         } catch (e) {
           console.log(`${caseName} startupManager.run error: ${e.code}, ${e.message}`);
-          let result: boolean = e.code === 401 || e.code === 16000050;
+          let result: boolean = e.code === 401 || e.code === 16000050 || e.code === 28800001;
           expect(result).assertTrue();
           done();
         }

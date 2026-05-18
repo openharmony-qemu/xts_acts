@@ -30,4 +30,7 @@ target_link_libraries(decoder_test PUBLIC
     librawfile.z.so
     libnative_drm.so
     libnative_window.so
+    libnative_image.so
+    libnative_drawing.so
+    libnative_media_venc.so
 )

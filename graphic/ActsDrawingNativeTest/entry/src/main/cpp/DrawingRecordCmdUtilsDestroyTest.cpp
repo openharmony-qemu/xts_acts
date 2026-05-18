@@ -21,7 +21,6 @@ namespace OHOS {
 namespace Rosen {
 namespace Drawing {
 
-// Common SetUp and TearDown functions implementation
 void DrawingRecordCmdUtilsDestroyTestSetUp()
 {
     std::cout << "DrawingRecordCmdUtilsDestroyTest Setup code called before each test case." << std::endl;
@@ -36,18 +35,9 @@ void DrawingRecordCmdUtilsDestroyTestTearDown()
     std::cout << "DrawingRecordCmdUtilsDestroyTest errorCodeReset after each test case." << std::endl;
 }
 
-/**
- * @tc.name   testRecordCmdUtilsDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RECORDER_01000
- * @tc.desc   test for testRecordCmdUtilsDestroyNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRecordCmdUtilsDestroyNormal()
 {
     DrawingRecordCmdUtilsDestroyTestSetUp();
-
     // 1. OH_Drawing_RecordCmdUtilsCreate
     OH_Drawing_ErrorCode drawingErrorCode = OH_DRAWING_ERROR_INVALID_PARAMETER;
     OH_Drawing_RecordCmdUtils* recordcmd1 = OH_Drawing_RecordCmdUtilsCreate();
@@ -56,9 +46,7 @@ int TestRecordCmdUtilsDestroyNormal()
     // 2. OH_Drawing_RecordCmdUtilsDestroy
     drawingErrorCode = OH_Drawing_RecordCmdUtilsDestroy(recordcmd1);
     EXPECT_EQ(drawingErrorCode, OH_DRAWING_SUCCESS);
-
     DrawingRecordCmdUtilsDestroyTestTearDown();
-
     return OH_DRAWING_SUCCESS;
 }
 

@@ -357,7 +357,7 @@ struct AccessibilityActionOptionsScrollStep {
             }
             .width('80%')
           }
-        }.height('70%')
+        }.height('60%')
 
         Row() {
           this.PassBtn($r('app.string.btn_fullscreen'), true);
@@ -388,7 +388,7 @@ struct AccessibilityActionOptionsScrollStep {
         .width('100%')
         .justifyContent(FlexAlign.SpaceEvenly)
         .backgroundColor(Color.Black)
-        .height('10%')
+        .height('30%')
       }.width('100%').height('100%')
     }
   }

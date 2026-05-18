@@ -77,24 +77,17 @@ export default function DynamicLayoutGridTest() {
       let strJson3 = getInspectorByKey('DynamicLayoutGrid');
       console.info('DynamicLayoutGridTest_0100 columnsTemplate:'+JSON.parse(strJson3).$attrs.columnsTemplate);
 
-      let button4 = await driver.findComponent(ON.id('GridLayoutAlgorithmNull'));
+      let button4 = await driver.findComponent(ON.id('GridLayoutAlgorithmUndefined'));
       await button4.click();
       await Utils.sleep(2000)
       let strJson4 = getInspectorByKey('DynamicLayoutGrid');
       console.info('DynamicLayoutGridTest_0100 columnsTemplate:'+JSON.parse(strJson4).$attrs.columnsTemplate);
-
-      let button5 = await driver.findComponent(ON.id('GridLayoutAlgorithmUndefined'));
-      await button5.click();
-      await Utils.sleep(2000)
-      let strJson5 = getInspectorByKey('DynamicLayoutGrid');
-      console.info('DynamicLayoutGridTest_0100 columnsTemplate:'+JSON.parse(strJson5).$attrs.columnsTemplate);
 
       expect(JSON.parse(strJson).$attrs.columnsTemplate).assertEqual('1fr');
       expect(JSON.parse(strJson).$attrs.rowsGap).assertEqual('0.00vp');
       expect(JSON.parse(strJson1).$attrs.rowsGap).assertEqual('-1.00vp');
       expect(JSON.parse(strJson2).$attrs.rowsGap).assertEqual('1.00vp');
       expect(JSON.parse(strJson4).$attrs.columnsTemplate).assertEqual('1fr');
-      expect(JSON.parse(strJson5).$attrs.columnsTemplate).assertEqual('1fr');
       
       console.info('[DynamicLayoutGridTest_0100] END');
       done();

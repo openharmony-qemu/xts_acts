@@ -18,10 +18,18 @@ import ButtonTest from './ButtonTest/Button.test';
 import ArcButtonEnumTest from './ButtonTest/ArcButtonEnum.test';
 import ArcButtonTest from './ArcButtonTest/ArcButton.test';
 import ButtonLabelStyleTest from './ButtonLabelStyleTest/ButtonLabelStyle.test';
+import DialogButtonOptionsTextAlignTest from './DialogButtonOptionsTextAlignTest/DialogButtonOptionsTextAlign.test';
+import DialogV2ButtonTextAlignTest from './DialogV2ButtonTextAlignTest/DialogV2ButtonTextAlign.test';
+import SegmentButtonEnableStateAnimationTest from './SegmentButtonEnableStateAnimationTest/SegmentButtonEnableStateAnimation.test';
+import SegmentButtonV2EnableStateAnimationTest from './SegmentButtonV2EnableStateAnimationTest/SegmentButtonV2EnableStateAnimation.test';
 
 export default function testsuite() {
   ButtonTest();
   ArcButtonEnumTest();
   ArcButtonTest();
   ButtonLabelStyleTest();
+  DialogButtonOptionsTextAlignTest();
+  DialogV2ButtonTextAlignTest();
+  SegmentButtonEnableStateAnimationTest();
+  SegmentButtonV2EnableStateAnimationTest();
 }

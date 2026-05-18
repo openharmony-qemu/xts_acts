@@ -137,7 +137,6 @@ import {
   RowAttribute,
   RowSplitAttribute,
   Color,
-  FormLink,
   Hyperlink,
   Span,
   LoadingProgress,
@@ -180,7 +179,6 @@ import {
   HorizontalAlign,
   ButtonAttribute,
   FlowItemAttribute,
-  FormLinkAttribute,
   GaugeAttribute,
   SideBarContainerType,
   ClickEvent,
@@ -367,14 +365,6 @@ export class FormComponentModifier implements AttributeModifier<FormComponentAtt
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: FormComponentAttribute): void {
-    instance.accessibilityText(this.mAccessibilityText)
-  }
-}
-
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mAccessibilityText: string = ''
-
-  applyNormalAttribute(instance: FormLinkAttribute): void {
     instance.accessibilityText(this.mAccessibilityText)
   }
 }
@@ -826,7 +816,6 @@ struct accessibilityTextTestDropPage {
   @State _accessibilityTextFlexMod: FlexModifier = new FlexModifier()
   @State _accessibilityTextFlowItemMod: FlowItemModifier = new FlowItemModifier()
   @State _accessibilityTextFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  @State _accessibilityTextFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _accessibilityTextGaugeMod: GaugeModifier = new GaugeModifier()
   @State _accessibilityTextGridMod: GridModifier = new GridModifier()
   @State _accessibilityTextGridColMod: GridColModifier = new GridColModifier()
@@ -927,7 +916,6 @@ struct accessibilityTextTestDropPage {
       this._accessibilityTextFlexMod.mAccessibilityText = value.accessibilityText
       this._accessibilityTextFlowItemMod.mAccessibilityText = value.accessibilityText
       this._accessibilityTextFormComponentMod.mAccessibilityText = value.accessibilityText
-      this._accessibilityTextFormLinkMod.mAccessibilityText = value.accessibilityText
       this._accessibilityTextGaugeMod.mAccessibilityText = value.accessibilityText
       this._accessibilityTextGridMod.mAccessibilityText = value.accessibilityText
       this._accessibilityTextGridColMod.mAccessibilityText = value.accessibilityText

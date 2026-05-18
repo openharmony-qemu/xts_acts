@@ -206,7 +206,7 @@ export default function SecurityCryptoFwHmacSyncTestUnit() {
         let messageLen: int = 128;
         let message: cryptoFramework.DataBlob = await hmacSyncUtils.createData(messageLen);
         for(let algName of hmacSyncUtils.H_MAC_SPEC) {
-          let macLen: int = hmacSyncUtils.getMacSize(algName) as int;
+          let macLen: int = hmacSyncUtils.getMacSize(algName).toInt();
           let keyLen: int = macLen + 16;
           let dataKey: cryptoFramework.DataBlob = await hmacSyncUtils.createData(keyLen);
           let key: cryptoFramework.SymKey = await hmacSyncUtils.convertSymKey(keyAlgName, dataKey);
@@ -236,7 +236,7 @@ export default function SecurityCryptoFwHmacSyncTestUnit() {
         let message: cryptoFramework.DataBlob = await hmacSyncUtils.createData(messageLen);
         for(let algName of hmacSyncUtils.H_MAC_SPEC) {
           let macLen: number = hmacSyncUtils.getMacSize(algName);
-          let keyLen: int = macLen as int;
+          let keyLen: int = macLen.toInt();
           let dataKey: cryptoFramework.DataBlob = await hmacSyncUtils.createData(keyLen);
           let key: cryptoFramework.SymKey = await hmacSyncUtils.convertSymKey(keyAlgName, dataKey);
           let macRes: hmacSyncUtils.macInfo = hmacSyncUtils.doHmacSync(algName, message, key);

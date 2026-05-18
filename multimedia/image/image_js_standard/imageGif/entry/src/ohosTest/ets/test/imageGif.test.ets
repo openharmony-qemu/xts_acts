@@ -609,7 +609,15 @@ async function gifInCompleteFrameMetadataTest(logger: Logger, picture: image.Pic
     logger.log("modifyProperties is: " + JSON.stringify(modifyProperties));
     logger.log("after data is: " + JSON.stringify(data));
     picture?.release();
-    return (JSON.stringify(modifyProperties) == JSON.stringify(data));
+    for (const entry of Object.entries(modifyProperties)) {
+      let key = entry[0];
+      let value = entry[1];
+      logger.log(`key is: ${key}, value is: ${value}`);
+      if (modifyProperties[key] !== data[key]) {
+        return false;
+      }
+    }
+    return true;
   } catch (error) {
     picture?.release();
     logger.log("test metadata failed error is: " + JSON.stringify(error));

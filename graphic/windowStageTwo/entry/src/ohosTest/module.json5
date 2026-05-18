@@ -281,6 +281,9 @@
         "name": "ohos.permission.SYSTEM_FLOAT_WINDOW"
       },
       {
+        "name": "ohos.permission.MANAGE_RECENT_SNAPSHOT"
+      },
+      {
         "name": "ohos.permission.CUSTOM_SCREEN_CAPTURE"
       },
       {

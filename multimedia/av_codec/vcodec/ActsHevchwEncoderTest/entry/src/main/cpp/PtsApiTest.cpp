@@ -34,6 +34,8 @@ const char* CODEC_NAME = "";
 constexpr double DEFAULT_FRAME_RATE = 30.0;
 constexpr uint32_t DEFAULT_KEY_FRAME_INTERVAL = 2000;
 constexpr uint32_t OHPRINTF_VALUE = 1024;
+const char *INP_DIR_1080 = "/data/storage/el2/base/files/1080_1920_nv12.yuv";
+const char *OUTPUT = "/data/storage/el2/base/files/1080_1920.h265";
 } // namespace
 
 namespace OHOS {
@@ -54,8 +56,10 @@ namespace PtsApiTest {
 void SetUpTestCase()
 {
     g_capEnc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    CODEC_NAME = OH_AVCapability_GetName(g_capEnc);
-    cout << "CODEC_NAME: " << CODEC_NAME << endl;
+    if (g_capEnc != nullptr) {
+        CODEC_NAME = OH_AVCapability_GetName(g_capEnc);
+        cout << "CODEC_NAME: " << CODEC_NAME << endl;
+    }
 }
 void TearDown()
 {
@@ -76,13 +80,9 @@ int VIDEO_HW_ENCODE_PTS_FUNC_001()
     string timeStampFilePath = "/data/storage/el2/base/files/xtscase_01_sqr_buffer.txt";
     VEncAPI11Sample::EncoderConfig config;
     vEncSample->LoadTimeStampData(timeStampFilePath, config);
-    char *input = new char[1024];
-    char *output = new char[1024];
-    OHPrintf(input, OHPRINTF_VALUE, "%s", config.inputDir.c_str());
-    OHPrintf(output, OHPRINTF_VALUE, "%s", config.outputDir.c_str());
     vEncSample->maxbiteEnable = true;
-    vEncSample->inpDir = input;
-    vEncSample->outDir = output;
+    vEncSample->inpDir = INP_DIR_1080;
+    vEncSample->outDir = OUTPUT;
     vEncSample->defaultWidth = config.width;
     vEncSample->defaultHeight = config.height;
     vEncSample->defaultBitrateMode = config.bitrateMode;
@@ -109,17 +109,14 @@ int VIDEO_HW_ENCODE_PTS_FUNC_002()
     string timeStampFilePath = "/data/storage/el2/base/files/xtscase_04_sqr_buffer.txt";
     VEncAPI11Sample::EncoderConfig config;
     vEncSample->LoadTimeStampData(timeStampFilePath, config);
-    char *input = new char[1024];
-    char *output = new char[1024];
-    OHPrintf(input, OHPRINTF_VALUE, "%s", config.inputDir.c_str());
-    OHPrintf(output, OHPRINTF_VALUE, "%s", config.outputDir.c_str());
     vEncSample->maxbiteEnable = true;
-    vEncSample->inpDir = input;
-    vEncSample->outDir = output;
+    vEncSample->inpDir = INP_DIR_1080;
+    vEncSample->outDir = OUTPUT;
     vEncSample->defaultWidth = config.width;
     vEncSample->defaultHeight = config.height;
     vEncSample->defaultBitrateMode = config.bitrateMode;
     vEncSample->defaultMaxBitrate = config.bitRate;
+    vEncSample->surfInput = config.surfaceMode;
     vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE; //30
     vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL; //2000
     vEncSample->enablePTSBasedRateControl = true;
@@ -142,18 +139,15 @@ int VIDEO_HW_ENCODE_PTS_FUNC_003()
     string timeStampFilePath = "/data/storage/el2/base/files/xtscase_07_sqr_buffer.txt";
     VEncAPI11Sample::EncoderConfig config;
     vEncSample->LoadTimeStampData(timeStampFilePath, config);
-    char *input = new char[1024];
-    char *output = new char[1024];
-    OHPrintf(input, OHPRINTF_VALUE, "%s", config.inputDir.c_str());
-    OHPrintf(output, OHPRINTF_VALUE, "%s", config.outputDir.c_str());
     vEncSample->maxbiteEnable = true;
-    vEncSample->inpDir = input;
-    vEncSample->outDir = output;
+    vEncSample->inpDir = INP_DIR_1080;
+    vEncSample->outDir = OUTPUT;
     vEncSample->defaultWidth = config.width;
     vEncSample->defaultHeight = config.height;
     vEncSample->defaultBitrateMode = config.bitrateMode;
     vEncSample->defaultMaxBitrate = config.bitRate;
     vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE; //30
+    vEncSample->surfInput = config.surfaceMode;
     vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL; //2000
     vEncSample->enablePTSBasedRateControl = true;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
@@ -175,18 +169,15 @@ int VIDEO_HW_ENCODE_PTS_FUNC_004()
     string timeStampFilePath = "/data/storage/el2/base/files/xtscase_01_sqr_surface.txt";
     VEncAPI11Sample::EncoderConfig config;
     vEncSample->LoadTimeStampData(timeStampFilePath, config);
-    char *input = new char[1024];
-    char *output = new char[1024];
-    OHPrintf(input, OHPRINTF_VALUE, "%s", config.inputDir.c_str());
-    OHPrintf(output, OHPRINTF_VALUE, "%s", config.outputDir.c_str());
     vEncSample->maxbiteEnable = true;
-    vEncSample->inpDir = input;
-    vEncSample->outDir = output;
+    vEncSample->inpDir = INP_DIR_1080;
+    vEncSample->outDir = OUTPUT;
     vEncSample->defaultWidth = config.width;
     vEncSample->defaultHeight = config.height;
     vEncSample->defaultBitrateMode = config.bitrateMode;
     vEncSample->defaultMaxBitrate = config.bitRate;
     vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE; //30
+    vEncSample->surfInput = config.surfaceMode;
     vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL; //2000
     vEncSample->enablePTSBasedRateControl = true;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
@@ -208,18 +199,15 @@ int VIDEO_HW_ENCODE_PTS_FUNC_005()
     string timeStampFilePath = "/data/storage/el2/base/files/xtscase_04_sqr_surface.txt";
     VEncAPI11Sample::EncoderConfig config;
     vEncSample->LoadTimeStampData(timeStampFilePath, config);
-    char *input = new char[1024];
-    char *output = new char[1024];
-    OHPrintf(input, OHPRINTF_VALUE, "%s", config.inputDir.c_str());
-    OHPrintf(output, OHPRINTF_VALUE, "%s", config.outputDir.c_str());
     vEncSample->maxbiteEnable = true;
-    vEncSample->inpDir = input;
-    vEncSample->outDir = output;
+    vEncSample->inpDir = INP_DIR_1080;
+    vEncSample->outDir = OUTPUT;
     vEncSample->defaultWidth = config.width;
     vEncSample->defaultHeight = config.height;
     vEncSample->defaultBitrateMode = config.bitrateMode;
     vEncSample->defaultMaxBitrate = config.bitRate;
     vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE; //30
+    vEncSample->surfInput = config.surfaceMode;
     vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL; //2000
     vEncSample->enablePTSBasedRateControl = true;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));
@@ -241,18 +229,15 @@ int VIDEO_HW_ENCODE_PTS_FUNC_006()
     string timeStampFilePath = "/data/storage/el2/base/files/xtscase_07_sqr_surface.txt";
     VEncAPI11Sample::EncoderConfig config;
     vEncSample->LoadTimeStampData(timeStampFilePath, config);
-    char *input = new char[1024];
-    char *output = new char[1024];
-    OHPrintf(input, OHPRINTF_VALUE, "%s", config.inputDir.c_str());
-    OHPrintf(output, OHPRINTF_VALUE, "%s", config.outputDir.c_str());
     vEncSample->maxbiteEnable = true;
-    vEncSample->inpDir = input;
-    vEncSample->outDir = output;
+    vEncSample->inpDir = INP_DIR_1080;
+    vEncSample->outDir = OUTPUT;
     vEncSample->defaultWidth = config.width;
     vEncSample->defaultHeight = config.height;
     vEncSample->defaultBitrateMode = config.bitrateMode;
     vEncSample->defaultMaxBitrate = config.bitRate;
     vEncSample->defaultFrameRate = DEFAULT_FRAME_RATE; //30
+    vEncSample->surfInput = config.surfaceMode;
     vEncSample->defaultKeyFrameInterval = DEFAULT_KEY_FRAME_INTERVAL; //2000
     vEncSample->enablePTSBasedRateControl = true;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_NAME));

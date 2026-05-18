@@ -788,7 +788,7 @@ export default function RdbErrorCode14800032() {
         let valueBucketArray:relationalStore.ValuesBucket[] = [];
         for (let i = 0; i < 5; i++) {
           let vb:relationalStore.ValuesBucket = {
-            "id": i as long,
+            "id": i.toLong(),
             "name": "zhangsan",
             "age": 19 as long,
             "salary": 100.5,

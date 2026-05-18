@@ -106,7 +106,7 @@ export default function paddingTest2() {
       await Utils.sleep(1000);
 
       //Confirm that the padding attribute values have been successfully set.
-      let viewObj = Utils.getComponentByKey(data.pageConfig.componentKey);
+      let viewObj = await Utils.getComponentByKey(data.pageConfig.componentKey);
       console.info('[' + data.caseTag + '] viewObj.$attrs.padding:' + viewObj.getElement('$attrs').getString('padding'));
       console.info('[' + data.caseTag + '] data.testValue.expectValue.padding:' + data.testValue.expectValue.padding);
 

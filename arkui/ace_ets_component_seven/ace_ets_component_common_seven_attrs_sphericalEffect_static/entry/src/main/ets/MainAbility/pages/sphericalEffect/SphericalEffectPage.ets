@@ -66,9 +66,6 @@ import {
   FlowItemAttribute,
   ForEach,
   FormComponentAttribute,
-  FormLink,
-  FormLinkAttribute,
-  FormLinkOptions,
   Gauge,
   GaugeAttribute,
   Grid,
@@ -350,15 +347,6 @@ export class FormComponentModifier implements AttributeModifier<FormComponentAtt
   mSphericalEffect: number = 1
 
   applyNormalAttribute(instance: FormComponentAttribute): void {
-    console.info(`sphericalEffect page show ${JSON.stringify(this.mSphericalEffect)}`)
-    instance.sphericalEffect(this.mSphericalEffect)
-  }
-}
-
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mSphericalEffect: number = 1
-
-  applyNormalAttribute(instance: FormLinkAttribute): void {
     console.info(`sphericalEffect page show ${JSON.stringify(this.mSphericalEffect)}`)
     instance.sphericalEffect(this.mSphericalEffect)
   }
@@ -939,12 +927,6 @@ function commonStyle(this: FlowItemAttribute, componentKey: string) {
   return this
 }
 
-function commonStyle(this: FormLinkAttribute, componentKey: string) {
-  this.height('100%')
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: GaugeAttribute, componentKey: string) {
   this.height('100%')
   this.key(componentKey)
@@ -1343,7 +1325,6 @@ struct sphericalEffectPage {
   @State _sphericalEffectFlexMod: FlexModifier = new FlexModifier()
   @State _sphericalEffectFlowItemMod: FlowItemModifier = new FlowItemModifier()
   @State _sphericalEffectFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  @State _sphericalEffectFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _sphericalEffectGaugeMod: GaugeModifier = new GaugeModifier()
   @State _sphericalEffectGridMod: GridModifier = new GridModifier()
   @State _sphericalEffectGridColMod: GridColModifier = new GridColModifier()
@@ -1422,7 +1403,7 @@ struct sphericalEffectPage {
   }
 
   build() {
-    GridRow({ columns: this.columns as Int, gutter: this.gutter }) {
+    GridRow({ columns: this.columns.toInt(), gutter: this.gutter }) {
       Row() {
         if (this.targetView == 'Button') {
           Button('button1')
@@ -1473,7 +1454,7 @@ struct sphericalEffectPage {
           Marquee({
             start: true,
             step: 50,
-            loop: Infinity as Int,
+            loop: Infinity.toInt(),
             fromStart: true,
             src: 'Running Marquee starts rolling'
           }).commonStyle(this.componentKey).attributeModifier(this._sphericalEffectMarqueeMod)

@@ -212,7 +212,7 @@ export default function ImageReceiverNativeTest() {
       await getFd('4K-2160x3840.avif');
       let result: number = testNapi.CreatePixelmapUsingAllocatorTest(CASE_INDEX_4,fdNumber);
       console.info(TAG, 'Succeed', JSON.stringify(result));
-      expect(result).assertEqual(7700301);
+      expect(result).assertEqual(0);
     })
     /**
      * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_012
@@ -227,7 +227,7 @@ export default function ImageReceiverNativeTest() {
       await getFd('4K-2160x3840.avif');
       let result: number = testNapi.ImageSourceNativeCreatePictureTest(CASE_INDEX_1,fdNumber);
       console.info(TAG, 'Succeed', JSON.stringify(result));
-      expect(result).assertEqual(7700301);
+      expect(result).assertEqual(0);
     })
     /**
      * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_013

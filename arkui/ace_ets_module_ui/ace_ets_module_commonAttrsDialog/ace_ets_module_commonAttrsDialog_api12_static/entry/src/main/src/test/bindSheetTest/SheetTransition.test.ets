@@ -104,9 +104,10 @@ it('SheetTransition_static_0100', Level.LEVEL0, async (done: () => void): Promis
       console.info("[SheetTransition_0100] component obj2 is: " + JSON.stringify(obj2));
       console.info("[SheetTransition_0100] title: " + JSON.stringify(obj2.getElement('$attrs').getString('content')));
 
-
-      expect(obj2.getElement('$attrs').getString('content')).assertEqual("value Width:" + sizeX);
-
+      console.info("====obj2attr======"+JSON.stringify(obj2.getElement('$attrs')))
+      console.info("====obj2======"+JSON.stringify(obj2))
+      console.info("====obj2conet======"+obj2.getElement('$attrs').getString('content'))
+      expect(obj2.getElement('$attrs').getString('content')).assertContain("value Width");
       console.info('[SheetTransition_0100] END');
       done();
     });

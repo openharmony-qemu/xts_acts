@@ -89,8 +89,12 @@ import getIndexTest from './photoAccessHelper/FetchResult/getIndex.test';
 import getObjectsIndexSetTest from './photoAccessHelper/FetchResult/getObjectsIndexSet.test';
 import getRangeObjectsTest from './photoAccessHelper/FetchResult/getRangeObjects.test';
 import createPhotoAssetTest from './photoAccessHelper/photoAccessHelper/createPhotoAsset.test';
+import mediaLibraryAvailabilityTest from './photoAccessHelper/MediaLibraryAvailability/mediaLibraryAvailability.test.ets';
+import mediaLibraryAvailabilityNoPermissionTest from './photoAccessHelper/MediaLibraryAvailability/mediaLibraryAvailabilityNoPermission.test.ets';
 
 export default function testsuite() {
+  mediaLibraryAvailabilityNoPermissionTest()  // need no permission add to the first
+  mediaLibraryAvailabilityTest()
   provisionResourcesTest();
   // MediaAlbumChangeRequestSetAlbumNameTest();
   MediaAssetChangeRequestSetOrientationTest();

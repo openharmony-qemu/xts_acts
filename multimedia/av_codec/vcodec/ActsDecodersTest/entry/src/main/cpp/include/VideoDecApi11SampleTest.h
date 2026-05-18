@@ -29,13 +29,15 @@
 #include "include/SecurecTest.h"
 #include <multimedia/player_framework/native_avcodec_base.h>
 #include <multimedia/player_framework/native_avcodec_videodecoder.h>
+#include <multimedia/player_framework/native_avcodec_videoencoder.h>
 #include "NocopyableTest.h"
 #include <multimedia/player_framework/native_avmemory.h>
 #include <multimedia/player_framework/native_avformat.h>
 #include <multimedia/player_framework/native_averrors.h>
-// #include "iconsumer_surface.h"  // 已注释：Surface 模式测试用例已禁用
 #include <multimedia/player_framework/native_avdemuxer.h>
 #include <multimedia/player_framework/native_avsource.h>
+#include <native_image/native_image.h>
+#include <native_window/external_window.h>
 #include <fcntl.h>
 
 namespace OHOS {
@@ -53,9 +55,15 @@ public:
     std::queue<OH_AVBuffer *> outBufferQueue_;
 };
 
+class IBufferConsumerListener {
+public:
+    virtual ~IBufferConsumerListener() = default;
+    virtual void OnBufferAvailable() = 0;
+};
+
 class VDecAPI11Sample : public NoCopyable {
 public:
-    VDecAPI11Sample() = default;
+    VDecAPI11Sample();
     ~VDecAPI11Sample() override;
     int32_t RunVideoDecSurface(std::string codeName = "");
     int32_t RunVideoDec(std::string codeName = "");
@@ -131,6 +139,7 @@ public:
     int32_t Release();
     int32_t SetParameter(OH_AVFormat *format);
     void CheckOutputDescription();
+    void CleanupResources();
     void AutoSwitchSurface();
     void InputFunc();
     int32_t DecodeSetSurface();
@@ -156,6 +165,14 @@ public:
     void StopOutloop();
     bool IsRender();
     bool MdCompare(unsigned char *buffer, int len, const char *source[]);
+    int32_t StartVideoDecoderForAV1();
+    int32_t InputOutputLoopForAv1();
+    void InputForAV1FuncTest();
+    int32_t PushDataForAV1(uint32_t index, OH_AVBuffer *buffer);
+    int32_t StartVideoDecoderReadStream();
+    int32_t InputOutputLoop();
+    int32_t PushDataReadStream(uint32_t index, OH_AVBuffer *buffer);
+    void InputReadStreamFuncTest();
     VDecAPI11Signal *signal_;
     uint32_t errCount = 0;
     uint32_t outCount = 0;
@@ -176,7 +193,7 @@ public:
     bool outputCallbackFlush = false;
     bool outputCallbackStop = false;
     bool useHDRSource = false;
-    int32_t DEFAULT_PROFILE = VC1_PROFILE_SIMPLE;
+    int32_t defaultProfile = VC1_PROFILE_SIMPLE;
     OH_AVFormat *trackFormat = nullptr;
     bool isH263Change = false;
     bool isonError = false;
@@ -192,6 +209,8 @@ public:
     std::atomic<bool> isStarted_{ false };
     bool nocaleHash = false;
 private:
+    class Impl;
+    Impl* impl;
     std::unique_ptr<std::ifstream> inFile_;
     std::unique_ptr<std::thread> inputLoop_;
     std::unique_ptr<std::thread> outputLoop_;
@@ -202,9 +221,8 @@ private:
     int64_t timeStamp_ { 0};
     int64_t lastRenderedTimeUs_ { 0 };
     bool isFirstFrame_ = true;
-    OHNativeWindow *nativeWindow[2] = {};
-    // sptr<Surface> cs[2] = {};  // 已注释：Surface 模式测试已禁用
-    // sptr<Surface> ps[2] = {};  // 已注释：Surface 模式测试已禁用
+    OH_NativeImage* cNativeImage[2] = {};
+    OHNativeWindow* nativeWindow[2] = {};
 };
 } // namespace Media
 } // namespace OHOS

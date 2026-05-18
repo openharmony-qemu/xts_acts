@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, afterEach } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll } from "../../../hypium/index";
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
 import { BusinessError, RecordData } from '@ohos.base';
@@ -22,9 +22,34 @@ import uniformTypeDescriptor from '@ohos.data.uniformTypeDescriptor';
 import unifiedDataChannel from '@ohos.data.unifiedDataChannel';
 import uniformDataStruct from '@ohos.data.uniformDataStruct';
 let tag: string = 'testTag';
+let optionsValid: unifiedDataChannel.Options = {
+  intention: unifiedDataChannel.Intention.DATA_HUB
+};
 
 export default function UDMFAddApiStaticTest() {
   describe("UDMFAddApiStaticTest", (): void => {
+    beforeAll(() => {	 
+      console.info("beforeAll");	 
+      unifiedDataChannel.deleteData(optionsValid).then((data: Array<unifiedDataChannel.UnifiedData>) => {	 
+        let size = data.length;	 
+        console.info(` [beforeAll] success to deleteData data.size = ${size}`);	 
+      }).catch((error) => {	 
+        let err: BusinessError = error as BusinessError;	 
+        console.info(` [beforeAll] Failed to deleteData. code is ${err.code},message is ${err.message} `);	 
+      });	 
+    })
+
+    afterAll(() => { 
+      console.info("afterAll"); 
+      unifiedDataChannel.deleteData(optionsValid).then((data: Array<unifiedDataChannel.UnifiedData>) => { 
+        let size = data.length; 
+        console.info(` [afterAll] success to deleteData data.size = ${size}`); 
+      }).catch((error) => { 
+        let err: BusinessError = error as BusinessError; 
+        console.info(` [afterAll] Failed to deleteData. code is ${err.code},message is ${err.message} `); 
+      }); 
+    })
+
     /**
          * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFHasTypeStaticTest_0100
          * @tc.number testSUB_DistributedData_UDMF_SDK_UDMFHasTypeStaticTest_0100

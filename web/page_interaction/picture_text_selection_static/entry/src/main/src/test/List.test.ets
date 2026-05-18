@@ -14,8 +14,10 @@
  */
 import WebInitTest from './WebInitTest.test'
 import webContextMenuEditStateFlagTest from "./WebContextMenuEditStateFlagTest.test"
+import WebWebEnableDataDetectorTest from "./WebEnableDataDetector.test"
 
 export default function testsuite() {
   WebInitTest();
-  webContextMenuEditStateFlagTest()
+  webContextMenuEditStateFlagTest();
+  WebWebEnableDataDetectorTest();
 }

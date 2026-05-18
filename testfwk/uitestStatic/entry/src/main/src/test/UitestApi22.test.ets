@@ -24,7 +24,7 @@ let tag: string = 'uitestTag'; //日志标识字符串,作为tag标识当前runn
 const TestTag = 'uitestTag';
 const waitUiReadyMs: int = 1000;
 
-export default function uitestDriverTestApi22() {
+export default function uitestDriverTestApi22(): void {
   describe('uitestTest_Api22', (): void => {
     let driver: Driver | undefined;
     beforeAll(async () : Promise<void> => {

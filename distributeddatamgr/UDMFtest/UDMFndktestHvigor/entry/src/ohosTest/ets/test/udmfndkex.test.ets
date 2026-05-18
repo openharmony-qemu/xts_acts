@@ -15,11 +15,28 @@
 import hilog from '@ohos.hilog';
 import testNapi from 'libUdmfNdkex.so'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from '@ohos/hypium';
+import unifiedDataChannel from '@ohos.data.unifiedDataChannel';
 
 const TAG = "[ UdmfNdkexTest ] ------ ";
+let tag = 'ttt:';
 
 export default function UdmfNdkexTest() {
   describe('UdmfNdkexTest', async () => {
+    beforeEach(async () => {
+      console.log(tag, `beforeEach`);
+      let options:unifiedDataChannel.Options = {
+        intention: unifiedDataChannel.Intention.DATA_HUB
+      };
+      try {
+        let data = await unifiedDataChannel.deleteData(options);
+        let size = JSON.stringify(data).length;
+        console.log(tag, `[beforeEach] success to deleteData data. size = ${size}`);
+      } catch (e) {
+        let error: BusinessError = e as BusinessError;
+        console.error(tag, `Failed, code is ${error.code}, message is ${error.message}`)
+        expect().assertFail();
+      }
+    })
     /**
      * @tc.name   OH_Udmf_AddRecord001
      * @tc.number SUB_DistributedData_UDMF_SDK_NdkApiTest_0100

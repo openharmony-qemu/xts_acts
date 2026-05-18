@@ -17,6 +17,7 @@
 #include "text_component.h"
 #include "../manager/plugin_manager.h"
 #include <string>
+#include <cmath>
 
 namespace ArkUICapiTest {
 
@@ -70,12 +71,16 @@ napi_value SwiperOnContentDidScrollTest::CreateNativeNode(napi_env env, napi_cal
     auto text_start = std::make_shared<TextComponent>();
     text_start->SetTextContent("test");
     auto swiper = CreateSwiperNode("SwiperOnContentDidScroll");
-    nodeAPI->setLengthMetricUnit(swiper->GetComponent(), ARKUI_LENGTH_METRIC_UNIT_PX);
 
     swiper->RegisterOnDidScrollContext([swiper](ArkUI_NodeEvent *event) {
         ArkUI_NodeComponentEvent *result = OH_ArkUI_NodeEvent_GetNodeComponentEvent(event);
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "SwiperOnContentDidScroll", "data0=%{public}d", result->data[PARAM_0].i32);
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "SwiperOnContentDidScroll", "data1=%{public}d", result->data[PARAM_1].i32);
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "SwiperOnContentDidScroll", "data2=%{public}f", result->data[PARAM_2].f32);
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "SwiperOnContentDidScroll", "data3=%{public}f", result->data[PARAM_3].f32);
+        auto offsetX = static_cast<int>(std::round(result->data[PARAM_3].f32));
         if (result->data[PARAM_0].i32 == PARAM_2 && result->data[PARAM_1].i32 == PARAM_3 &&
-            result->data[PARAM_2].f32 == PARAM_0 && result->data[PARAM_3].f32 == SIZE_250) {
+            result->data[PARAM_2].f32 == PARAM_0 && offsetX == SIZE_250) {
             swiper->SetBackgroundColor(COLOR_GREEN);
         }
     });

@@ -23,7 +23,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
 @Observed
-class MyPointModifier implements AttributeModifier<GridItemAttribute> {
+export class MyPointModifier implements AttributeModifier<GridItemAttribute> {
   public message: string = 'Hello World';
   public isColumnEnd: boolean = true
   public isRowEnd: boolean = true;
@@ -54,10 +54,10 @@ struct GridItemEventPage {
   @State modifier: MyPointModifier = new MyPointModifier()
 
   build() {
-    Text(this.modifier.message)
-      .id('GridItemM_text')
     Scroll() {
       Column() {
+        Text(this.modifier.message)
+          .id('GridItemM_text')
         Grid() {
           GridItem() {
             Text('4')

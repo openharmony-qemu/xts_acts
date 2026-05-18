@@ -17,6 +17,20 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { fileIo as fs } from '@kit.CoreFileKit';
 import { image } from '@kit.ImageKit';
 import fileUri from '@ohos.file.fileuri';
+import dataShare from '@ohos.data.dataShare';
+import dataSharePredicates from '@ohos.data.dataSharePredicates';
+
+export async function deleteCard() {
+  let context: Context = AppStorage.get('context') as Context;
+  let DAHelper: dataShare.DataShareHelper = await dataShare.createDataShareHelper(context, 'datashare:///com.ohos.contactsdataability');
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let DataSharePredicates:dataSharePredicates.DataSharePredicates = predicates.prefixKey('raw_contact_id');
+  let del: number = await DAHelper.delete('datashare:///com.ohos.contactsdataability/contacts/contact_data', DataSharePredicates);
+  let predicates1: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let DataSharePredicates1:dataSharePredicates.DataSharePredicates = predicates.prefixKey('id');
+  await DAHelper.delete('datashare:///com.ohos.contactsdataability/contacts/raw_contact', DataSharePredicates1);
+  return del;
+}
 
 export async function SavePhoto(fileName: string) {
   let fileDir = abilityDelegatorRegistry.getAbilityDelegator().getAppContext().filesDir;

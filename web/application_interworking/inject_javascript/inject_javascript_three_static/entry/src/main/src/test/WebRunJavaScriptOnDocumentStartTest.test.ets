@@ -58,13 +58,13 @@ export default function ActsWebRunJavaScriptOnDocumentStartTest() {
     })
 
 
-    /*
-     * @tc.number     SUB_ACE_WEB_RUNJAVASCRIPTONDOCUMENTSTART_API_0001
+    /**
      * @tc.name       testWebRunJavaScriptOnDocumentStartStatic001
+     * @tc.number     SUB_ACE_WEB_RUNJAVASCRIPTONDOCUMENTSTART_API_20250221
      * @tc.desc       test runJavaScriptOnDocumentStart
      * @tc.size       MediumTest
      * @tc.type       Function
-     * @tc.level      Level 3
+     * @tc.level      Level 0
      */
     it('testWebRunJavaScriptOnDocumentStartStatic001', 0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(4000);
@@ -77,15 +77,34 @@ export default function ActsWebRunJavaScriptOnDocumentStartTest() {
       done()
     })
 
-    /*
-    * @tc.number     SUB_ACE_WEB_RUNJAVASCRIPTONDOCUMENTEND_API_0001
-    * @tc.name       testWebRunJavaScriptOnDocumentEndStatic001
+    /**
+     * @tc.name       testWebRunJavaScriptOnDocumentStartStatic002
+     * @tc.number     SUB_ACE_WEB_RUNJAVASCRIPTONDOCUMENTSTART_API_202502211
+     * @tc.desc       test runJavaScriptOnDocumentStart
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testWebRunJavaScriptOnDocumentStartStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      Utils.emitEvent('emitWebRunJavaScriptOnDocumentStart002', 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent('emitWebRunJavaScriptOnDocumentStart002', true, 202502211, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebRunJavaScriptOnDocumentStartTestButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+    * @tc.name       SwitchNextPageStatic
+    * @tc.number     SUB_ACE_WEB_RUNJAVASCRIPTONDOCUMENTEND_API_00011
     * @tc.desc       test runJavaScriptOnDocumentEnd
     * @tc.size       MediumTest
     * @tc.type       Function
-    * @tc.level      Level 3
+    * @tc.level      LEVEL0
     */
-    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
         Utils.emitEvent('SwitchNextPageStatic', 10)

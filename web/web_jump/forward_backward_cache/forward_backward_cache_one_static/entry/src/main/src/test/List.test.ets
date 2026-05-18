@@ -13,7 +13,20 @@
  * limitations under the License.
  */
 import webCookieManagerTest from './WebCookieManager.test'
-
+import WebEumClassTest from './WebEumClassTest.test'
+import WebViewRotateRenderEffect from './WebViewRotateRenderEffect.test'
+import CertChainDataTest from './CertChainData.test'
+import WebPageTest from './WebPage.test'
+import OnHttpAuthTest from './OnHttpAuthRequset.test'
+import WebViewMetaViewport from './WebViewMetaViewport.test'
+import OnTitleReceive from './OnTitleReceive.test'
 export default function testsuite() {
   webCookieManagerTest();
+  WebEumClassTest();
+  WebViewRotateRenderEffect();
+  CertChainDataTest();
+  WebPageTest();
+  OnHttpAuthTest();
+  WebViewMetaViewport();
+  OnTitleReceive();
 }

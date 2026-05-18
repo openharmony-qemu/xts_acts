@@ -23,6 +23,11 @@
     "deliveryWithInstall": true,
     "installationFree": false,
     "pages": "$profile:main_pages",
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.GET_LOCAL_ACCOUNT_IDENTIFIERS"
+      }
+    ],
     "abilities": [
       {
         "name": "EntryAbility",

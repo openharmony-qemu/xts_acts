@@ -53,9 +53,9 @@ export default class Utils {
     return false;
   }
 
-  static startAbility(abilityName: string = 'TestFormAbility',
+  static async startAbility(abilityName: string = 'TestFormAbility',
                       bundleName: string = 'com.example.helloworld',
-                      uri?: string): boolean {
+                      uri?: string): Promise<boolean> {
     let isSuccessStartAbility: boolean = false;
     try {
       abilityDelegator.startAbility({
@@ -68,7 +68,7 @@ export default class Utils {
         isSuccessStartAbility = true;
       });
       hilog.info(DOMAIN, TAG, 'msSleep 500 start');
-      waitForCompletion(async ()=>{await Utils.msSleep(500);});
+      await Utils.msSleep(500);
       hilog.info(DOMAIN, TAG, 'msSleep 500 end');
     } catch (error) {
       hilog.error(DOMAIN, TAG, `start ${abilityName}-uri:${uri} fail. message: ${error?.message}`);

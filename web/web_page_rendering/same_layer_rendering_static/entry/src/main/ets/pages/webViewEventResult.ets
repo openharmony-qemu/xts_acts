@@ -103,7 +103,7 @@ struct WebEmbedVisibilityChange  {
               break;
             }
 
-            case 'SwitchNextPageStatic' : {
+            case 'SwitchNextPageStatic8' : {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();
               router.pushUrl({ url: 'pages/webViewInitTest' })

@@ -365,6 +365,10 @@ export default function ConvertXml2Test() {
         '      "_name": "wrapper",\n' +
         '      "_elements": [\n' +
         '        {\n' +
+        '          "_type": "text",\n' +
+        '          "_text": "前缀文本"\n' +
+        '        },\n' +
+        '        {\n' +
         '          "_type": "element",\n' +
         '          "_name": "child",\n' +
         '          "_parent": "wrapper",\n' +
@@ -374,6 +378,10 @@ export default function ConvertXml2Test() {
         '              "_text": "子内容"\n' +
         '            }\n' +
         '          ]\n' +
+        '        },\n' +
+        '        {\n' +
+        '          "_type": "text",\n' +
+        '          "_text": "后缀文本"\n' +
         '        }\n' +
         '      ]\n' +
         '    }\n' +
@@ -890,6 +898,10 @@ export default function ConvertXml2Test() {
         '      "_name": "p",\n' +
         '      "_elements": [\n' +
         '        {\n' +
+        '          "_type": "text",\n' +
+        '          "_text": "前文"\n' +
+        '        },\n' +
+        '        {\n' +
         '          "_type": "element",\n' +
         '          "_name": "em",\n' +
         '          "_parent": "p",\n' +
@@ -899,6 +911,10 @@ export default function ConvertXml2Test() {
         '              "_text": "强调"\n' +
         '            }\n' +
         '          ]\n' +
+        '        },\n' +
+        '        {\n' +
+        '          "_type": "text",\n' +
+        '          "_text": "后文"\n' +
         '        }\n' +
         '      ]\n' +
         '    }\n' +
@@ -1553,6 +1569,10 @@ export default function ConvertXml2Test() {
         '      "_name": "article",\n' +
         '      "_elements": [\n' +
         '        {\n' +
+        '          "_type": "text",\n' +
+        '          "_text": "\\n  本文介绍：\\n  "\n' +
+        '        },\n' +
+        '        {\n' +
         '          "_type": "element",\n' +
         '          "_name": "code",\n' +
         '          "_parent": "article",\n' +
@@ -1562,6 +1582,10 @@ export default function ConvertXml2Test() {
         '              "_cdata": "function hello() { return \\"Hello!\\"; }"\n' +
         '            }\n' +
         '          ]\n' +
+        '        },\n' +
+        '        {\n' +
+        '          "_type": "text",\n' +
+        '          "_text": "\\n  请参考以上脚本。\\n"\n' +
         '        }\n' +
         '      ]\n' +
         '    }\n' +
@@ -2994,6 +3018,10 @@ export default function ConvertXml2Test() {
         '          "_parent": "通知",\n' +
         '          "_elements": [\n' +
         '            {\n' +
+        '              "_type": "text",\n' +
+        '              "_text": "\\n    您有新的消息 <点击查看>\\n    "\n' +
+        '            },\n' +
+        '            {\n' +
         '              "_type": "cdata",\n' +
         '              "_cdata": "点击这里：https://example.com?token=a&b=c"\n' +
         '            }\n' +
@@ -3386,6 +3414,10 @@ export default function ConvertXml2Test() {
         '          "_parent": "person",\n' +
         '          "_elements": [\n' +
         '            {\n' +
+        '              "_type": "text",\n' +
+        '              "_text": "前文"\n' +
+        '            },\n' +
+        '            {\n' +
         '              "_type": "element",\n' +
         '              "_name": "b",\n' +
         '              "_parent": "mixed",\n' +
@@ -3395,6 +3427,10 @@ export default function ConvertXml2Test() {
         '                  "_text": "加粗"\n' +
         '                }\n' +
         '              ]\n' +
+        '            },\n' +
+        '            {\n' +
+        '              "_type": "text",\n' +
+        '              "_text": "后文"\n' +
         '            }\n' +
         '          ]\n' +
         '        }\n' +
@@ -3924,7 +3960,16 @@ export default function ConvertXml2Test() {
         elementsKey: ''
       };
       let result = test(`<?python run()?>内容`, options);
-      expect(result).assertEqual('{}');
+      expect(result).assertEqual('{\n' +
+        '  "": [\n' +
+        '    {\n' +
+        '      "": "instruction"\n' +
+        '    },\n' +
+        '    {\n' +
+        '      "": "内容"\n' +
+        '    }\n' +
+        '  ]\n' +
+        '}');
     });
 
     /**
@@ -4148,7 +4193,16 @@ export default function ConvertXml2Test() {
         elementsKey: ''
       };
       let result = test(`<!-- 临时调试 -->数据`, options);
-      expect(result).assertEqual('{}');
+      expect(result).assertEqual('{\n' +
+        '  "": [\n' +
+        '    {\n' +
+        '      "": "comment"\n' +
+        '    },\n' +
+        '    {\n' +
+        '      "": "数据"\n' +
+        '    }\n' +
+        '  ]\n' +
+        '}');
     });
 
     /**
@@ -4503,11 +4557,7 @@ export default function ConvertXml2Test() {
       expect(result).assertEqual('{\n' +
         '  "": [\n' +
         '    {\n' +
-        '      "": [\n' +
-        '        {\n' +
-        '          "": "p"\n' +
-        '        }\n' +
-        '      ]\n' +
+        '      "": "p"\n' +
         '    }\n' +
         '  ]\n' +
         '}');

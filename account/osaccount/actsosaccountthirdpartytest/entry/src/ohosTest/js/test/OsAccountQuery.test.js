@@ -1239,5 +1239,254 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
         done();
       }
     });
+
+    /**
+     * @tc.name   SUB_Account_OsAccount_GetLocalIds_0100
+     * @tc.number SUB_Account_OsAccount_GetLocalIds_0100
+     * @tc.desc   query all osAccount Ids getOsAccountLocalIds promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Account_OsAccount_GetLocalIds_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
+      let tag = "====>SUB_Account_OsAccount_GetLocalIds_0100 ";
+      console.info(tag + "start====");
+      let accountManager = osaccount.getAccountManager();
+      try {
+        let dataArray = await accountManager.getOsAccountLocalIds();
+        console.info(tag, "data: " + dataArray);
+        if (dataArray.length > 0) {
+          expect(dataArray.length).assertEqual(1);
+          expect(dataArray[0]).assertEqual(100);
+        } else {
+          expect(dataArray.length).assertEqual(0);
+        }
+        console.info(tag, "end====");
+      } catch (err) {
+        console.info(tag, "catch err: " + JSON.stringify(err));
+        expect().assertFail();
+      };
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_Account_OsAccount_GetLocalIds_0200
+     * @tc.name     SUB_Account_OsAccount_GetLocalIds_0200
+     * @tc.desc     Verify to obtain the local IDs of all os accounts created getOsAccountLocalIds promise
+     * @tc.type     FUNCTION
+     * @tc.size     MEDIUMTEST
+     * @tc.level    LEVEL3
+     */
+    it('SUB_Account_OsAccount_GetLocalIds_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
+      let tag = "====>SUB_Account_OsAccount_GetLocalIds_0200 ";
+      console.info(tag + "start====");
+      let accountManager = osaccount.getAccountManager();
+      let isEnable = await accountManager.checkMultiOsAccountEnabled();
+      if (isEnable != true) {
+        console.info(tag + "not support multiple osaccouts====");
+        done();
+        return;
+      }
+      let options = {
+        shortName: "Ids",
+        disallowedPreinstalledBundles: [],
+        allowedPreinstalledBundles: []
+      }
+      console.info(tag + "start CreateAccount");
+      let osAccountFir = await CreateAccount("osAccountIds", osaccount.OsAccountType.NORMAL, options);
+      console.info(tag + "create first os account OsAccountInfo: " + JSON.stringify(osAccountFir));
+      let localIdFir = osAccountFir.localId;
+      try {
+        let dataArray = await accountManager.getOsAccountLocalIds();
+        console.info(tag + "data: " + dataArray);
+        expect(dataArray.length >= 1).assertTrue();
+      } catch (err) {
+        console.info(tag + "err: " + JSON.stringify(err));
+        expect().assertFail();
+      }
+      await RemoveAccount(localIdFir);
+      console.info(tag + "remove localId: " + localIdFir);
+      console.info(tag + "end====");
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Account_OsAccount_GetNameById_0100
+     * @tc.number SUB_Account_OsAccount_GetNameById_0100
+     * @tc.desc   Gets the name of target OS account by its local ID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Account_OsAccount_GetNameById_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
+      let tag = "====>SUB_Account_OsAccount_GetNameById_0100 ";
+      console.info(tag + "start====");
+      let accountManager = osaccount.getAccountManager();
+      try {
+        await accountManager.getOsAccountNameByLocalId(null);
+        console.info(tag, "run err");
+        expect().assertFail();
+      } catch (err) {
+        console.info(tag, "catch err: " + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Account_OsAccount_GetNameById_0200
+     * @tc.number SUB_Account_OsAccount_GetNameById_0200
+     * @tc.desc   Gets the name of target OS account by its local ID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Account_OsAccount_GetNameById_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
+      let tag = "====>SUB_Account_OsAccount_GetNameById_0200 ";
+      console.info(tag + "start====");
+      let accountManager = osaccount.getAccountManager();
+      try {
+        await accountManager.getOsAccountNameByLocalId(undefined);
+        console.info(tag, "run err");
+        expect().assertFail();
+      } catch (err) {
+        console.info(tag, "catch err: " + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Account_OsAccount_GetNameById_0300
+     * @tc.number SUB_Account_OsAccount_GetNameById_0300
+     * @tc.desc   Gets the name of target OS account by its local ID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Account_OsAccount_GetNameById_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
+      let tag = "====>SUB_Account_OsAccount_GetNameById_0300 ";
+      console.info(tag + "start====");
+      let accountManager = osaccount.getAccountManager();
+      try {
+        await accountManager.getOsAccountNameByLocalId(-1);
+        console.info(tag, "run err");
+        expect().assertFail();
+      } catch (err) {
+        console.info(tag, "catch err: " + JSON.stringify(err));
+        expect(err.code).assertEqual(12300003);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Account_OsAccount_GetNameById_0400
+     * @tc.number SUB_Account_OsAccount_GetNameById_0400
+     * @tc.desc   Gets the name of target OS account by its local ID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Account_OsAccount_GetNameById_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
+      let tag = "====>SUB_Account_OsAccount_GetNameById_0400 ";
+      console.info(tag + "start====");
+      let accountManager = osaccount.getAccountManager();
+      try {
+        await accountManager.getOsAccountNameByLocalId(0);
+        console.info(tag, "run err");
+        expect().assertFail();
+      } catch (err) {
+        console.info(tag, "catch err: " + JSON.stringify(err));
+        expect(err.code).assertEqual(12300008);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Account_OsAccount_GetNameById_0500
+     * @tc.number SUB_Account_OsAccount_GetNameById_0500
+     * @tc.desc   Gets the name of target OS account by its local ID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Account_OsAccount_GetNameById_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
+      let tag = "====>SUB_Account_OsAccount_GetNameById_0500 ";
+      console.info(tag + "start====");
+      let accountManager = osaccount.getAccountManager();
+      try {
+        await accountManager.getOsAccountNameByLocalId(110);
+        console.info(tag, "run err");
+        expect().assertFail();
+      } catch (err) {
+        console.info(tag, "catch err: " + JSON.stringify(err));
+        expect(err.code).assertEqual(12300003);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Account_OsAccount_GetNameById_0600
+     * @tc.number SUB_Account_OsAccount_GetNameById_0600
+     * @tc.desc   Gets the name of target OS account by its local ID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Account_OsAccount_GetNameById_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done) => {
+      let tag = "====>SUB_Account_OsAccount_GetNameById_0600 ";
+      console.info(tag + "start====");
+      let accountManager = osaccount.getAccountManager();
+      try {
+        let data = await accountManager.getOsAccountNameByLocalId(100);
+        console.info(tag + "data: " + data);
+        expect(data).not().assertUndefined();
+      } catch (err) {
+        console.info(tag, "catch err: " + JSON.stringify(err));
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_Account_OsAccount_GetNameById_0700
+     * @tc.name     SUB_Account_OsAccount_GetNameById_0700
+     * @tc.desc     Gets the name of target OS account by its local ID.
+     * @tc.type     FUNCTION
+     * @tc.size     MEDIUMTEST
+     * @tc.level    LEVEL2
+     */
+    it('SUB_Account_OsAccount_GetNameById_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
+      let tag = "====>SUB_Account_OsAccount_GetNameById_0700 ";
+      console.info(tag + "start====");
+      let accountManager = osaccount.getAccountManager();
+      let isEnable = await accountManager.checkMultiOsAccountEnabled();
+      if (isEnable != true) {
+        console.info(tag + "not support multiple osaccouts====");
+        done();
+        return;
+      }
+      let options = {
+        shortName: "0700sName",
+        disallowedPreinstalledBundles: [],
+        allowedPreinstalledBundles: []
+      }
+      console.info(tag + "start CreateAccount");
+      let osAccountFir = await CreateAccount("accountName", osaccount.OsAccountType.NORMAL, options);
+      console.info(tag + "create first os account OsAccountInfo: " + JSON.stringify(osAccountFir));
+      let localIdFir = osAccountFir.localId;
+      try {
+        let data = await accountManager.getOsAccountNameByLocalId(localIdFir);
+        console.info(tag + "data: " + data);
+        expect(data).assertEqual("accountName");
+      } catch (err) {
+        console.info(tag + "err: " + JSON.stringify(err));
+        expect().assertFail();
+      }
+      await RemoveAccount(localIdFir);
+      console.info(tag + "remove localId: " + localIdFir);
+      console.info(tag + "end====");
+      done();
+    });
   })
 }

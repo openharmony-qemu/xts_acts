@@ -14,6 +14,7 @@
     "MainAbility/pages/DragEvent/DragModifier",
     "MainAbility/pages/DragEvent/dragSpringLoading",
     "MainAbility/pages/DragEvent/normalDrag",
-    "MainAbility/pages/DragEvent/enableInternalDropAnimation"
+    "MainAbility/pages/DragEvent/enableInternalDropAnimation",
+    "MainAbility/pages/autoHideComponentUniqueIds/AutoHideComponentUniqueIdsTest"
   ]
 }

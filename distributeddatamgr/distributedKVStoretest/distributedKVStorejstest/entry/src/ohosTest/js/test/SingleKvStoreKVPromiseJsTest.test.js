@@ -94,18 +94,15 @@ describe('SingleKvStorePromiseTest', function () {
         done();
     })
 
-    beforeEach(async function (done) {
+    beforeEach(async function () {
         console.info('beforeEach' + JSON.stringify(options));
-        await kvManager.getKVStore(TEST_STORE_ID, options).then((store) => {
-            kvStore = store;
+        try {
+            kvStore =  await kvManager.getKVStore(TEST_STORE_ID, options);
             console.info('beforeEach getKVStore success');
             console.info('beforeEach end');
-            done();
-        }).catch((err) => {
-            console.error('beforeEach getKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
-            done();
-        });
-
+        } catch (error) {
+            console.error('beforeEach getKVStore err ' + `, error code is ${error.code}, message is ${error.message}`);
+        }
     })
 
     afterEach(async function (done) {

@@ -95,7 +95,7 @@ it('getListItemGroupRect1_static_0100', Level.LEVEL0, async (done: () => void): 
 
       console.log('get Initial value')
       let listItemGroup_0: RectValue =
-        CommonFunc.getComponentRect('getListItemGroupRect1_listItemGroup_0') as RectValue;
+        await CommonFunc.getComponentRect('getListItemGroupRect1_listItemGroup_0') as RectValue;
 
       let driver = Driver.create();
       await CommonFunc.sleep(2000);
@@ -158,7 +158,7 @@ it('getListItemGroupRect1_static_0200', Level.LEVEL0, async (done: () => void): 
 
       console.log('get Initial value')
       let listItemGroup_1: RectValue =
-        CommonFunc.getComponentRect('getListItemGroupRect1_listItemGroup_1') as RectValue;
+        await CommonFunc.getComponentRect('getListItemGroupRect1_listItemGroup_1') as RectValue;
 
       let driver = Driver.create();
       await CommonFunc.sleep(2000);
@@ -439,7 +439,7 @@ it('getListItemGroupRect1_static_0700', Level.LEVEL0, async (done: () => void): 
 
       console.log('get Initial value')
       let listItemGroup_1: RectValue =
-        CommonFunc.getComponentRect('getListItemGroupRect1_listItemGroup_1') as RectValue;
+        await CommonFunc.getComponentRect('getListItemGroupRect1_listItemGroup_1') as RectValue;
 
       let driver = Driver.create();
       await CommonFunc.sleep(2000);
@@ -503,7 +503,7 @@ it('getListItemGroupRect1_static_0800', Level.LEVEL0, async (done: () => void): 
 
       console.log('get Initial value')
       let listItemGroup_0: RectValue =
-        CommonFunc.getComponentRect('getListItemGroupRect1_listItemGroup_0') as RectValue;
+        await CommonFunc.getComponentRect('getListItemGroupRect1_listItemGroup_0') as RectValue;
 
       let driver = Driver.create();
       await CommonFunc.sleep(2000);
@@ -567,7 +567,7 @@ it('getListItemGroupRect1_static_0900', Level.LEVEL0, async (done: () => void): 
 
       console.log('get Initial value')
       let listItemGroup_0: RectValue =
-        CommonFunc.getComponentRect('getListItemGroupRect1_listItemGroup_0') as RectValue;
+        await CommonFunc.getComponentRect('getListItemGroupRect1_listItemGroup_0') as RectValue;
 
       let driver = Driver.create();
       await CommonFunc.sleep(2000);

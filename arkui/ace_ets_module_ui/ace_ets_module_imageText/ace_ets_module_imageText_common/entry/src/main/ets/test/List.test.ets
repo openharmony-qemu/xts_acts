@@ -37,6 +37,8 @@ import TextCommonTextComputing9 from './MeasureTest/TextCommonTextComputing9.tes
 import TextGetParagraphsTest from './MeasureTest/TextGetParagraphsTest.test';
 import MeasureTextTest from './MeasureTest/MeasureText.test';
 
+import EditDecorationThicknessScaleTest from './EditCommonTest/EditDecorationThicknessScale.test';
+
 import BindSelectionMenuTest from './BindSelectionMenuTest.test';
 import KeyboardAvoidModeTest from './KeyboardAvoidMode.test';
 import ResourceModifierTest from './ResourceModifier.test';
@@ -67,10 +69,14 @@ import MagnifierTest from './Magnifier.test';
 import MeasureUtilsTest from './MeasureUtils.test';
 import TextMenuControllerTest from './TextMenuController.test';
 import UIContextFontRegisterFontTest from './UIContext/UIContextFontRegisterFont.test';
+import SetTextSelectionClearPolicyTest from './UIContext/SetTextSelectionClearPolicy.test';
 import TextMethodsNull2Test from './TextTest/TextMethodsNull2.test';
 import TextAreaEllipsisModeTest from './EllipsisModeTest/TextAreaEllipsisModeTest.test';
 import TextEllipsisModeTest from './EllipsisModeTest/TextInputEllipsisModeTest.test';
 import TextInputEllipsisModeTest from './EllipsisModeTest/TextInputEllipsisModeTest.test';
+import Marquee from './ScrollTest/Marquee.test';
+import MarqueeNull from './ScrollTest/Marquee_null.test';
+import MarqueeUndefined from './ScrollTest/Marquee_undefined.test';
 
 export default function testsuite() {
   TextControllerTest();
@@ -99,6 +105,9 @@ export default function testsuite() {
   TextCommonTextComputing9() 
   TextGetParagraphsTest()
   MeasureTextTest()
+
+  EditDecorationThicknessScaleTest()
+  
   BindSelectionMenuTest()
   KeyboardAvoidModeTest()
   ResourceModifierTest()
@@ -125,8 +134,12 @@ export default function testsuite() {
   MeasureUtilsTest();
   TextMenuControllerTest();
   UIContextFontRegisterFontTest();
+  SetTextSelectionClearPolicyTest();
   TextMethodsNull2Test();
   TextAreaEllipsisModeTest();
   TextEllipsisModeTest();
-  TextInputEllipsisModeTest()
+  TextInputEllipsisModeTest();
+  Marquee();
+  MarqueeNull();
+  MarqueeUndefined();
 }

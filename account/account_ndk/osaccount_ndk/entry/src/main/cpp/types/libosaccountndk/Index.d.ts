@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,7 +12,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-export const osAccountGetAccountNameA: () => number;
+export const osAccountGetAccountNameA: () => string;
 export const osAccountGetAccountNameB: () => number;
 export const osAccountGetAccountNameC: () => number;
 export const osAccountGetAccountNameD: () => number;
+export const osAccountGetAccountNameByIdA: () => number;
+export const osAccountGetAccountNameByIdB: () => number;
+export const osAccountGetAccountNameByIdC: () => number;
+export const osAccountGetAccountNameByIdD: () => number;
+export const osAccountGetAccountNameByIdE: () => number;
+export const osAccountGetAccountNameByIdF: () => number;
+export const osAccountGetAccountNameByIdG: () => string;
+export const osAccountGetAccountNameByIdH: () => string;

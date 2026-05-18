@@ -7855,7 +7855,7 @@ static bool TestNativeArkTSObjectBinding(napi_env env)
     }
     
     // 绑定Native对象到ArkTS对象
-status = napi_wrap(env, js_obj, nativeData,
+    status = napi_wrap(env, js_obj, nativeData,
     [](napi_env env, void* data, void* hint) {
             delete static_cast<NativeData*>(data);
         }, nullptr, nullptr);
@@ -7876,9 +7876,6 @@ status = napi_wrap(env, js_obj, nativeData,
     if (retrievedData == nullptr || retrievedData->value != TEST_VALUE_100) {
         return false;
     }
-    
-    // 清理资源
-    delete retrievedData;
     
     return true;
 }
@@ -7935,10 +7932,7 @@ static bool TestNativeSendableArkTSObjectBinding(napi_env env)
     if (retrievedData == nullptr || retrievedData->value != TEST_VALUE_200) {
         return false;
     }
-    
-    // 清理资源
-    delete retrievedData;
-    
+
     return true;
 }
 

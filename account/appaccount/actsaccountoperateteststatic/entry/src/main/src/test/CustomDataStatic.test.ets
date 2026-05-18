@@ -98,7 +98,6 @@ export default function ActsAccountCustomDataStatic() {
         try {
           await accountManager.createAccount("account_name_0200");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>add Account ActsAccountCustomData_0200 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -106,7 +105,6 @@ export default function ActsAccountCustomDataStatic() {
         try {
           await accountManager.setCustomData("account_name_0200", "key2", "value2");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>setCustomData ActsAccountCustomData_0200 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -116,7 +114,6 @@ export default function ActsAccountCustomDataStatic() {
           hilog.info(0x0000, tag, "====>getCustomData ActsAccountCustomData_0200 data: " + JSON.stringify(data));
           expect(data).assertEqual("value2");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>getCustomData ActsAccountCustomData_0200 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -125,7 +122,6 @@ export default function ActsAccountCustomDataStatic() {
           await accountManager.removeAccount("account_name_0200");
           hilog.info(0x0000, tag, "====>ActsAccountCustomData_0200 end====");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>delete account 0200 fail err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -183,7 +179,6 @@ export default function ActsAccountCustomDataStatic() {
         try {
           await accountManager.createAccount("account_name_0400");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>add Account ActsAccountCustomData_0400 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -192,14 +187,12 @@ export default function ActsAccountCustomDataStatic() {
           hilog.info(0x0000, tag, "====>getCustomData fail ActsAccountCustomData_0400====");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>getCustomData ActsAccountCustomData_0400 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12400002);
           hilog.info(0x0000, tag, "====>delete account ActsAccountCustomData_0400 start====");
           try {
             await accountManager.removeAccount("account_name_0400");
           } catch (err) {
-            err = err as BusinessError;
             hilog.error(0x0000, tag, "====>delete account 0400 fail err: " + JSON.stringify(err));
             expect().assertFail();
           }
@@ -265,7 +258,6 @@ export default function ActsAccountCustomDataStatic() {
         try {
           await accountManager.createAccount("account_name_0600");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>add Account ActsAccountCustomData_0600 fail err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -275,14 +267,12 @@ export default function ActsAccountCustomDataStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>getCustomData 0600 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12400002);
           hilog.info(0x0000, tag, "====>delete account ActsAccountCustomData_0600 start====");
           try {
             await accountManager.removeAccount("account_name_0600");
           } catch (err) {
-            err = err as BusinessError;
             hilog.error(0x0000, tag, "====>delete account 0600 fail err: " + JSON.stringify(err));
             expect().assertFail();
             done();
@@ -359,7 +349,6 @@ export default function ActsAccountCustomDataStatic() {
         try {
           await accountManager.createAccount("account_name_0800");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>add account ActsAccountCustomData_0800 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -367,7 +356,6 @@ export default function ActsAccountCustomDataStatic() {
           await accountManager.setCustomData("account_name_0800", "key8", "value8");
           await accountManager.setCustomData("account_name_0800", "key8", "newvalue8");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>setCustomData ActsAccountCustomData_0800 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -376,7 +364,6 @@ export default function ActsAccountCustomDataStatic() {
           hilog.info(0x0000, tag, "====>getCustomData ActsAccountCustomData_0800 data: " + JSON.stringify(data));
           expect(data).assertEqual("newvalue8");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>getCustomData ActsAccountCustomData_0800 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -385,7 +372,6 @@ export default function ActsAccountCustomDataStatic() {
           await accountManager.removeAccount("account_name_0800");
           hilog.info(0x0000, tag, "====>ActsAccountCustomData_0800 end====");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>delete account 0800 fail err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -460,7 +446,6 @@ export default function ActsAccountCustomDataStatic() {
         try {
           await accountManager.createAccount("account_name_1000");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>add account ActsAccountCustomData_1000 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -468,7 +453,6 @@ export default function ActsAccountCustomDataStatic() {
           await accountManager.setCustomData("account_name_1000", "key10", "value10");
           await accountManager.setCustomData("account_name_1000", "key10", "value10");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>setCustomData ActsAccountCustomData_1000 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -477,7 +461,6 @@ export default function ActsAccountCustomDataStatic() {
           hilog.info(0x0000, tag, "====>getCustomData 1000 data: " + JSON.stringify(data));
           expect(data).assertEqual("value10");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>getCustomData ActsAccountCustomData_1000 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -486,7 +469,6 @@ export default function ActsAccountCustomDataStatic() {
           await accountManager.removeAccount("account_name_1000");
           hilog.info(0x0000, tag, "====>ActsAccountCustomData_1000 end====");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>delete account 1000 fail err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -579,7 +561,6 @@ export default function ActsAccountCustomDataStatic() {
         try {
           await accountManager.createAccount("account_name_1200");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>add account ActsAccountCustomData_1200 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -587,7 +568,6 @@ export default function ActsAccountCustomDataStatic() {
           await accountManager.setCustomData("account_name_1200", "key12_first", "value12_first");
           await accountManager.setCustomData("account_name_1200", "key12_second", "value12_second");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>setCustomData ActsAccountCustomData_1200 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -599,7 +579,6 @@ export default function ActsAccountCustomDataStatic() {
           hilog.info(0x0000, tag, "====>ActsAccountCustomData_1200 getCustomData dataSec: " + JSON.stringify(dataSec));
           expect(dataSec).assertEqual("value12_second");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>getCustomData ActsAccountCustomData_1200 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -608,7 +587,6 @@ export default function ActsAccountCustomDataStatic() {
           await accountManager.removeAccount("account_name_1200");
           hilog.info(0x0000, tag, "====>ActsAccountCustomData_1200 end====");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>delete account 1200 fail err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -664,7 +642,6 @@ export default function ActsAccountCustomDataStatic() {
         try {
           await accountManager.createAccount("account_name_1400");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>add account ActsAccountCustomData_1400 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -673,14 +650,12 @@ export default function ActsAccountCustomDataStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>setCustomData ActsAccountCustomData_1400 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           hilog.info(0x0000, tag, "====>delete account ActsAccountCustomData_1400 start====");
           try {
             await accountManager.removeAccount("account_name_1400");
           } catch (err) {
-            err = err as BusinessError;
             hilog.error(0x0000, tag, "====>delete account 1400 fail err: " + JSON.stringify(err));
             expect().assertFail();
           }
@@ -748,7 +723,6 @@ export default function ActsAccountCustomDataStatic() {
         try {
           await accountManager.createAccount("account_name_1600");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>add account ActsAccountCustomData_1600 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -757,14 +731,12 @@ export default function ActsAccountCustomDataStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>setCustomData ActsAccountCustomData_1600 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           hilog.info(0x0000, tag, "====>delete account ActsAccountCustomData_1600 start====");
           try {
             await accountManager.removeAccount("account_name_1600");
           } catch (err) {
-            err = err as BusinessError;
             hilog.error(0x0000, tag, "====>delete account 1600 fail err: " + JSON.stringify(err));
             expect().assertFail();
           }
@@ -832,7 +804,6 @@ export default function ActsAccountCustomDataStatic() {
         try {
           await accountManager.createAccount("account_name_1800");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>add account ActsAccountCustomData_1800 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -842,7 +813,6 @@ export default function ActsAccountCustomDataStatic() {
           hilog.info(0x0000, tag, "====>getCustomData ActsAccountCustomData_1800 data: " + JSON.stringify(data));
           expect(data).assertEqual("value18");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>setCustomData ActsAccountCustomData_1800 fail err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -850,7 +820,6 @@ export default function ActsAccountCustomDataStatic() {
         try {
           await accountManager.removeAccount("account_name_1800");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>delete account 1800 fail err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -912,14 +881,12 @@ export default function ActsAccountCustomDataStatic() {
         try {
           await accountManager.createAccount("account_name_2000");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>add account ActsAccountCustomData_2000 err: " + JSON.stringify(err));
           expect().assertFail();
         }
         try {
           await accountManager.setCustomData("account_name_2000", "key20", "");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>setCustomData ActsAccountCustomData_2000 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -928,7 +895,6 @@ export default function ActsAccountCustomDataStatic() {
           hilog.info(0x0000, tag, "====>getCustomData ActsAccountCustomData_2000 data: " + JSON.stringify(data));
           expect(data).assertEqual("");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>getCustomData 2000 err: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -937,7 +903,6 @@ export default function ActsAccountCustomDataStatic() {
         try {
           await accountManager.removeAccount("account_name_2000");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>delete account 2000 fail err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -1002,7 +967,6 @@ export default function ActsAccountCustomDataStatic() {
         try {
           await accountManager.createAccount("account_name_2200");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>add account ActsAccountCustomData_2200 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -1011,14 +975,12 @@ export default function ActsAccountCustomDataStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>setCustomData ActsAccountCustomData_2200 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           hilog.info(0x0000, tag, "====>delete account ActsAccountCustomData_2200 start====");
           try {
             await accountManager.removeAccount("account_name_2200");
           } catch (err) {
-            err = err as BusinessError;
             hilog.error(0x0000, tag, "====>delete account 2200 fail err: " + JSON.stringify(err));
             expect().assertFail();
           }
@@ -1086,7 +1048,6 @@ export default function ActsAccountCustomDataStatic() {
         try {
           await accountManager.createAccount("account_name_2400");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>add account ActsAccountCustomData_2400 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -1096,7 +1057,6 @@ export default function ActsAccountCustomDataStatic() {
           hilog.info(0x0000, tag, "====>getCustomData 2400 err: " + JSON.stringify(data));
           expect(data).assertEqual(" ");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>getCustomData 2400 fail err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -1104,7 +1064,6 @@ export default function ActsAccountCustomDataStatic() {
         try {
           await accountManager.removeAccount("account_name_2400");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>delete account 2400 fail err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -1161,7 +1120,6 @@ export default function ActsAccountCustomDataStatic() {
         try {
           await accountManager.createAccount("account_name_2600");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>add account ActsAccountCustomData_2600 err: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -1171,14 +1129,12 @@ export default function ActsAccountCustomDataStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>setCustomData ActsAccountCustomData_2600 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           hilog.info(0x0000, tag, "====>delete account ActsAccountCustomData_2600 start====");
           try {
             await accountManager.removeAccount("account_name_2600");
           } catch (err) {
-            err = err as BusinessError;
             hilog.error(0x0000, tag, "====>delete account 2600 fail err: " + JSON.stringify(err));
             expect().assertFail();
             done();
@@ -1245,7 +1201,6 @@ export default function ActsAccountCustomDataStatic() {
         try {
           await accountManager.createAccount("account_name_2800");
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>add account ActsAccountCustomData_2800 fail err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -1254,14 +1209,12 @@ export default function ActsAccountCustomDataStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>setCustomData ActsAccountCustomData_2800 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           hilog.info(0x0000, tag, "====>delete account ActsAccountCustomData_2800 start====");
           try {
             await accountManager.removeAccount("account_name_2800");
           } catch (err) {
-            err = err as BusinessError;
             hilog.error(0x0000, tag, "====>delete account 2800 fail err: " + JSON.stringify(err));
             expect().assertFail();
           }
@@ -1333,7 +1286,6 @@ export default function ActsAccountCustomDataStatic() {
           await accountManager.removeAccount(" ");
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>ActsAccountCustomData_3000 fail err: " + JSON.stringify(err));
           expect().assertFail();
           done();

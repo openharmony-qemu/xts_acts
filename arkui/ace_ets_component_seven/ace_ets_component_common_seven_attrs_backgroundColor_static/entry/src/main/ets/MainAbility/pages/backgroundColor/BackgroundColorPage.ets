@@ -22,12 +22,12 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
+  Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
   ColumnAttribute, ColumnSplitAttribute, CounterAttribute, DataPanelAttribute, DatePickerAttribute, DividerAttribute,
-  EllipseAttribute, FlexAttribute, FlowItemAttribute, FormLinkAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
+  EllipseAttribute, FlexAttribute, FlowItemAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
   GridItemAttribute, GridRowAttribute, HyperlinkAttribute, ImageAttribute, ImageAnimatorAttribute, LineAttribute, ListAttribute,
   ListItemAttribute, ListItemGroupAttribute, LoadingProgressAttribute, MarqueeAttribute, MenuAttribute, MenuItemAttribute,
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
@@ -37,7 +37,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, EffectComponentAttribute, FormComponentAttribute,
   ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, RichText, AlignRuleOption } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
@@ -157,13 +157,6 @@ export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
 export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
   mBackgroundColor: int | string = 0
   applyNormalAttribute(instance: FormComponentAttribute): void {
-    console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
-    instance.backgroundColor(this.mBackgroundColor)
-  }
-}
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mBackgroundColor: int | string = 0
-  applyNormalAttribute(instance: FormLinkAttribute): void {
     console.info(`borderColor page show ${JSON.stringify(this.mBackgroundColor)}`)
     instance.backgroundColor(this.mBackgroundColor)
   }
@@ -595,7 +588,6 @@ struct BackroundColorPage {
   
   @State _backgroundColorFormComponentMod: FormComponentModifier = new FormComponentModifier()
   
-  @State _backgroundColorFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _backgroundColorGaugeMod: GaugeModifier = new GaugeModifier()
   @State _backgroundColorGridMod: GridModifier = new GridModifier()
   @State _backgroundColorGridColMod: GridColModifier = new GridColModifier()
@@ -681,8 +673,8 @@ struct BackroundColorPage {
     this.parentBackGroundColor = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentBackGroundColor
     this.parentComponentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey;
     // this.BackGroundColor = (this.getUIContext().getRouter().getParams() as RouterParams).view.BackGroundColor
-    this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int)
-    this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int)
+    this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns.toInt())
+    this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter.toInt())
     this._backgroundColorButtonMod.mBackgroundColor = (this.getUIContext().getRouter().getParams() as RouterParams).view.testValue.setValue.backgroundColor
     attrsManager.registerDataChange((value: SetValue) => {
 
@@ -704,7 +696,6 @@ struct BackroundColorPage {
       this._backgroundColorFlexMod.mBackgroundColor = value.backgroundColor
       this._backgroundColorFlowItemMod.mBackgroundColor = value.backgroundColor
       this._backgroundColorFormComponentMod.mBackgroundColor = value.backgroundColor
-      this._backgroundColorFormLinkMod.mBackgroundColor = value.backgroundColor
       this._backgroundColorGaugeMod.mBackgroundColor = value.backgroundColor
       this._backgroundColorGridMod.mBackgroundColor = value.backgroundColor
       this._backgroundColorGridColMod.mBackgroundColor = value.backgroundColor
@@ -814,7 +805,7 @@ struct BackroundColorPage {
           Marquee({
             start: true,
             step: 50,
-            loop: Infinity as int,
+            loop: Infinity.toInt(),
             fromStart: true,
             src: 'Running Marquee starts rolling'
           }).attributeModifier(this._backgroundColorMarqueeMod)

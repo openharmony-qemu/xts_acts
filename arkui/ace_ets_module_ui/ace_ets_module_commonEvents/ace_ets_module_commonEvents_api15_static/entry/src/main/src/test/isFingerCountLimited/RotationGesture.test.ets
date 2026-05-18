@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -99,18 +99,18 @@ it('RotationGesture1_static_0100', Level.LEVEL0, async (done: () => void): Promi
       await CommonFunc.sleep(1000);
       let pointers: PointerMatrix = PointerMatrix.create(2, 2);
       pointers.setPoint(0, 0,
-        { x: Math.round(areaObj1.left + areaWidth1 / 4) as int, y: Math.round(areaObj1.top + areaHeight1 / 4) as int });
+        { x: Math.round(areaObj1.left + areaWidth1 / 4).toInt(), y: Math.round(areaObj1.top + areaHeight1 / 4).toInt() });
       pointers.setPoint(0, 1, {
-        x: Math.round(areaObj1.right - areaWidth1 / 2) as int,
-        y: Math.round(areaObj1.top + areaHeight1 / 4) as int
+        x: Math.round(areaObj1.right - areaWidth1 / 2).toInt(),
+        y: Math.round(areaObj1.top + areaHeight1 / 4).toInt()
       });
       pointers.setPoint(1, 0, {
-        x: Math.round(areaObj1.right - areaWidth1 / 2) as int,
-        y: Math.round(areaObj1.bottom - areaHeight1 / 4) as int
+        x: Math.round(areaObj1.right - areaWidth1 / 2).toInt(),
+        y: Math.round(areaObj1.bottom - areaHeight1 / 4).toInt()
       });
       pointers.setPoint(1, 1, {
-        x: Math.round(areaObj1.left + areaWidth1 / 4) as int,
-        y: Math.round(areaObj1.bottom - areaHeight1 / 4) as int
+        x: Math.round(areaObj1.left + areaWidth1 / 4).toInt(),
+        y: Math.round(areaObj1.bottom - areaHeight1 / 4).toInt()
       });
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(2000);
@@ -166,24 +166,24 @@ it('RotationGesture1_static_0200', Level.LEVEL0, async (done: () => void): Promi
       await CommonFunc.sleep(1000);
       let pointers: PointerMatrix = PointerMatrix.create(3, 2);
       pointers.setPoint(0, 0,
-        { x: Math.round(areaObj1.left + areaWidth1 / 4) as int, y: Math.round(areaObj1.top + areaHeight1 / 4) as int });
+        { x: Math.round(areaObj1.left + areaWidth1 / 4).toInt(), y: Math.round(areaObj1.top + areaHeight1 / 4).toInt() });
       pointers.setPoint(0, 1, {
-        x: Math.round(areaObj1.right - areaWidth1 / 2) as int,
-        y: Math.round(areaObj1.top + areaHeight1 / 4) as int
+        x: Math.round(areaObj1.right - areaWidth1 / 2).toInt(),
+        y: Math.round(areaObj1.top + areaHeight1 / 4).toInt()
       });
       pointers.setPoint(1, 0, {
-        x: Math.round(areaObj1.right - areaWidth1 / 2) as int,
-        y: Math.round(areaObj1.bottom - areaHeight1 / 4) as int
+        x: Math.round(areaObj1.right - areaWidth1 / 2).toInt(),
+        y: Math.round(areaObj1.bottom - areaHeight1 / 4).toInt()
       });
       pointers.setPoint(1, 1, {
-        x: Math.round(areaObj1.left + areaWidth1 / 4) as int,
-        y: Math.round(areaObj1.bottom - areaHeight1 / 4) as int
+        x: Math.round(areaObj1.left + areaWidth1 / 4).toInt(),
+        y: Math.round(areaObj1.bottom - areaHeight1 / 4).toInt()
       });
       pointers.setPoint(2, 0,
-        { x: Math.round(areaObj1.left + areaWidth1 / 3) as int, y: Math.round(areaObj1.top + areaHeight1 / 4) as int });
+        { x: Math.round(areaObj1.left + areaWidth1 / 3).toInt(), y: Math.round(areaObj1.top + areaHeight1 / 4).toInt() });
       pointers.setPoint(2, 1, {
-        x: Math.round(areaObj1.right - areaWidth1 / 3) as int,
-        y: Math.round(areaObj1.top + areaHeight1 / 4) as int
+        x: Math.round(areaObj1.right - areaWidth1 / 3).toInt(),
+        y: Math.round(areaObj1.top + areaHeight1 / 4).toInt()
       });
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(2000);

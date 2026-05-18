@@ -16,9 +16,11 @@
 import onChildTouchTest from './onChildTouchTest/onChildTouchTest.test';
 import onTouchIntercept from './onTouchIntercept/onTouchIntercept.test'
 import parentX_parentY_strategy_Test from './onChildTouchTestTest/ComAttr_parentX_parentY_strategy.test';
+import postInputEventWithStrategyTest from './PostInputEventWithStrategy/postInputEventWithStrategyTest.test';
 
 export default function testsuite() {
   onChildTouchTest();
   onTouchIntercept();
   parentX_parentY_strategy_Test();
+  postInputEventWithStrategyTest();
 }

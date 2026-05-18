@@ -78,7 +78,7 @@ function test1(): void {
 }
 
 
-export default function TaskPoolErrorCodeTest() {
+export default function TaskPoolErrorCodeTest(): void {
   describe('TaskPoolErrorCodeTest', () => {
 
     /**

@@ -560,6 +560,27 @@ static napi_value OH_Pasteboard_HasType0700(napi_env env, napi_callback_info inf
     return result;
 }
 
+static napi_value OH_Pasteboard_HasType0800(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
+    OH_UdmfData* setData = OH_UdmfData_Create();
+    OH_UdmfRecord* record = OH_UdmfRecord_Create();
+    OH_UdsPlainText* plainText = OH_UdsPlainText_Create();
+    char content[] = "hello world";
+    OH_UdsPlainText_SetContent(plainText, content);
+    OH_UdmfRecord_AddPlainText(record, plainText);
+    OH_UdmfData_AddRecord(setData, record);
+
+    OH_Pasteboard_SetData(pasteboard, setData);
+    char type[] = "";
+    bool res = OH_Pasteboard_HasType(pasteboard, type);
+    napi_create_int32(env, res == false, &result);
+    OH_Pasteboard_Destroy(pasteboard);
+
+    return result;
+}
+
 static napi_value OH_Pasteboard_HasData0100(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
@@ -977,6 +998,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"OH_Pasteboard_HasType0600", nullptr, OH_Pasteboard_HasType0600, nullptr,
          nullptr, nullptr, napi_default, nullptr},
         {"OH_Pasteboard_HasType0700", nullptr, OH_Pasteboard_HasType0700, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"OH_Pasteboard_HasType0800", nullptr, OH_Pasteboard_HasType0800, nullptr,
          nullptr, nullptr, napi_default, nullptr},
         {"OH_Pasteboard_HasData0100", nullptr, OH_Pasteboard_HasData0100, nullptr,
          nullptr, nullptr, napi_default, nullptr},

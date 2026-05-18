@@ -90,8 +90,8 @@ export default function verificationStaticTest() {
         try {
           const context: common.UIAbilityContext =
             AppStorage.get<common.UIAbilityContext>('abilityContext') as common.UIAbilityContext;
-          context.startAbility(want).then(() => {
-            waitForCompletion(async () => {
+          try {
+            await context.startAbility(want);
             hilog.info(domain, tag, 'Succeeded in starting SpecifiedAbility.');
             await Utils.msSleep(2000);
             let specifiedId: string= AppStorage.get<string>("specifiedId") as string;
@@ -103,13 +103,12 @@ export default function verificationStaticTest() {
               hilog.error(domain, tag, 'SpecifiedId is not supported.');
               done();
             }
-            })
-          }).catch((err: Error): void => {
+          } catch (err) {
             hilog.error(domain, tag,
               `Failed to start SpecifiedAbility. Code is ${err.code}, message is ${err.message}`);
             expect().assertFail();
             done();
-          });
+          }
         } catch (err) {
           hilog.error(domain, tag, `Failed to start SpecifiedAbility2. Code is ${err.code}, message is ${err.message}`);
           expect().assertFail();

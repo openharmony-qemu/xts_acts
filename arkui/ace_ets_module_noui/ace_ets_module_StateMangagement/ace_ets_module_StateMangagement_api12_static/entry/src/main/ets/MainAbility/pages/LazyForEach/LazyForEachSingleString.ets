@@ -183,7 +183,7 @@ struct RepeatLazyForEachString {
       List({ initialIndex: 10 }) {
         ListItem() {
           Row() {
-            LazyForEach(this.dataSource[this.index as int], (item: string) => {
+            LazyForEach(this.dataSource[this.index.toInt()], (item: string) => {
               Text('' + item).id('lazyForeach_singleS' + `${this.index}`)
                 .fontSize(9)
                 .fontColor(Color.Orange)

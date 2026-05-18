@@ -12,4 +12,8 @@ include_directories(${NATIVERENDER_ROOT_PATH}
                         ${NATIVERENDER_ROOT_PATH}/include)
 
 add_library(entry SHARED AudioTest.cpp Audio1Test.cpp AudioEnumTest.cpp ExportsApiTest.cpp)
-target_link_libraries(entry PUBLIC libace_napi.z.so libohaudio.so librawfile.z.so libhilog_ndk.z.so)
+target_link_libraries(entry PUBLIC libace_napi.z.so libohaudio.so librawfile.z.so libhilog_ndk.z.so
+                                   libdeviceinfo_ndk.z.so)
+
+add_library(midi SHARED AudioMidiTest.cpp)
+target_link_libraries(midi PUBLIC libace_napi.z.so libohmidi.so libdeviceinfo_ndk.z.so)

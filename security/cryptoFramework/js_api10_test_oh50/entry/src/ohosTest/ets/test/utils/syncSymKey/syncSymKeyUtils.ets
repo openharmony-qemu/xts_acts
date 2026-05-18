@@ -299,7 +299,7 @@ async function doCipher(algName: string, mode: string, padding: string, spec: cr
 }
 
 async function doUpdatePromise(cipher: cryptoFramework.Cipher, symKey:cryptoFramework.SymKey,
-  spec: cryptoFramework.IvParamsSpec|null, data: cryptoFramework.DataBlob, blockSize: number,
+  spec: cryptoFramework.ParamsSpec|null, data: cryptoFramework.DataBlob, blockSize: number,
   isEncrypt: cryptoFramework.CryptoMode): Promise<cryptoFramework.DataBlob> {
   let dataLen: number = data.data.byteLength;
   let cipherText = new Uint8Array();
@@ -327,7 +327,7 @@ async function doUpdatePromise(cipher: cryptoFramework.Cipher, symKey:cryptoFram
 }
 
 function doUpdateSync(cipher: cryptoFramework.Cipher, symKey:cryptoFramework.SymKey,
-  spec: cryptoFramework.IvParamsSpec|null, data: cryptoFramework.DataBlob, blockSize: number,
+  spec: cryptoFramework.ParamsSpec|null, data: cryptoFramework.DataBlob, blockSize: number,
   isEncrypt: cryptoFramework.CryptoMode): cryptoFramework.DataBlob {
   let dataLen: number = data.data.byteLength;
   let cipherText = new Uint8Array();
@@ -336,6 +336,7 @@ function doUpdateSync(cipher: cryptoFramework.Cipher, symKey:cryptoFramework.Sym
     let tmp = data.data.subarray(blockSize * dataSize, blockSize * (dataSize + 1));
     let doFinalText: cryptoFramework.DataBlob = { data:tmp };
     let encryptCipher: cryptoFramework.DataBlob = cipher.updateSync(doFinalText);
+    console.error("++++++++++++++ :" + dataSize + ":" + dataLen / blockSize);
     if (encryptCipher) {
       let mergeText = new Uint8Array(cipherText.length + encryptCipher.data.length);
       mergeText.set(cipherText);
@@ -370,4 +371,5 @@ export {
   doCipher,
   doUpdatePromise,
   doUpdateSync,
+  createSymKey,
 }

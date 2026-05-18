@@ -34,6 +34,16 @@ class EntryAbility extends UIAbility {
     hilog.info(0x0000, 'testTag sjd EntryAbility', 'EntryAbility onWindowStageCreate');
     AppStorage.setOrCreate<window.WindowStage>('windowStage', windowStage);
     AppStorage.setOrCreate<common.UIAbilityContext>('stageContext', this.context);
+
+    // 用例getWindowId测试 start
+    let resolved = UIContext.resolveUIContext()?.getWindowId();
+    AppStorage.setOrCreate<Int|undefined>('getWindowIdValue2', UIContext.resolveUIContext()?.getWindowId());
+    hilog.info(0x0000, 'testTag', 'Succeeded in getWindowIdValue2: ' + resolved);
+
+    AppStorage.setOrCreate<Int|undefined>('getWindowIdValue1', UIContext.createUIContextWithoutWindow(this.context)?.getWindowId());
+    hilog.info(0x0000, 'testTag', 'Succeeded in getWindowIdValue1: ' + JSON.stringify(UIContext.createUIContextWithoutWindow(this.context)?.getWindowId()));
+    // 用例getWindowId测试 end
+
     try {
       windowStage.loadContent('MainAbility/pages/index/index', (err: BusinessError<void> | null): void => {
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent entering');

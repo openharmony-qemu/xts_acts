@@ -40,7 +40,6 @@ export default class Utils {
         hilog.info(0x0000, tag, "====>clickRequestPermission end");
       }
     } catch (err) {
-      err = err as BusinessError;
       hilog.info(0x0000, tag, "====>clickRequestPermission get err: " + err);
     }
   }

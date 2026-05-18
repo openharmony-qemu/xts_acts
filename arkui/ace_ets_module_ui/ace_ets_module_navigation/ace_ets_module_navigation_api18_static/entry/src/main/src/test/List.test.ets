@@ -17,9 +17,11 @@
 import OnActivePage from './OnActivePage.test'
 import PathStackPage from './PathStackPage.test'
 import NavDestinationStateActive from './NavDestinationStateActive.test'
+import RouterErrCode from './RouterErrCode.test'
 
 export default function testsuite() {
   PathStackPage();
   OnActivePage();
   NavDestinationStateActive();
+  RouterErrCode();
 }

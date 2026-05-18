@@ -40,6 +40,7 @@ export default function fileIOTest() {
       let fpath = await nextFileName('fileio_test_open_close_sync_000');
       try {
         let fd = fileio.openSync(fpath, 0o102, 0o666);
+        console.info('fileio_test_open_close_sync_000 fd: ' + fd);
         expect(fd !== null).assertTrue();
         fileio.closeSync(fd);
         fileio.unlinkSync(fpath);
@@ -63,6 +64,7 @@ export default function fileIOTest() {
       expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
       try {
         let fd = fileio.openSync(fpath, 0o202);
+        console.info('fileio_test_open_000 fd: ' + fd);
         expect(fd !== null).assertTrue();
         fileio.closeSync(fd);
         fileio.unlinkSync(fpath);
@@ -86,6 +88,7 @@ export default function fileIOTest() {
       expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
       try {
         let fd = fileio.openSync(fpath, 0o100, 0o001);
+        console.info('fileio_test_open_001 fd: ' + fd);
         expect(fd !== null).assertTrue();
         fileio.closeSync(fd);
         fileio.unlinkSync(fpath);
@@ -109,6 +112,7 @@ export default function fileIOTest() {
       expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
       try {
         let fd = fileio.openSync(fpath);
+        console.info('fileio_test_open_002 fd: ' + fd);
         expect(fd !== null).assertTrue();
         fileio.closeSync(fd);
         fileio.unlinkSync(fpath);
@@ -132,6 +136,7 @@ export default function fileIOTest() {
       expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
       try {
         let fd = fileio.openSync(fpath, 0o100, 0o004);
+        console.info('fileio_test_open_003 fd: ' + fd);
         expect(fd !== null).assertTrue();
         fileio.writeSync(fd, FILE_CONTENT, {
           encoding: 'utf-8',
@@ -158,6 +163,7 @@ export default function fileIOTest() {
       expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
       try {
         let fd = fileio.openSync(fpath, 0o101, 0o002);
+        console.info('fileio_test_open_004 fd: ' + fd);
         expect(fd !== null).assertTrue();
         fileio.readSync(fd, new ArrayBuffer(4096), {
           offset: 1,
@@ -182,16 +188,19 @@ export default function fileIOTest() {
       expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
       try {
         let fd = fileio.openSync(fpath, 0o102, 0o001);
+        console.info('fileio_test_open_005 fd: ' + fd);
         expect(fd !== null).assertTrue();
         let wri = fileio.writeSync(fd, FILE_CONTENT, {
           encoding: 'utf-8',
           offset: 1,
           length: 1,
         });
+        console.info('fileio_test_open_005 wri: ' + wri);
         expect(wri !== null).assertTrue();
         let red = fileio.readSync(fd, new ArrayBuffer(4096), {
           offset: 1,
         });
+        console.info('fileio_test_open_005 red: ' + red);
         expect(red !== null).assertTrue();
         fileio.closeSync(fd);
         fileio.unlinkSync(fpath);
@@ -215,6 +224,7 @@ export default function fileIOTest() {
       expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
       try {
         fileio.openSync(fpath, 0o200, 0o700);
+        console.info('fileio_test_open_006 openSync');
         fileio.unlinkSync(fpath);
       } 
       catch (err) {
@@ -235,16 +245,19 @@ export default function fileIOTest() {
       let fpath = await nextFileName('fileio_test_open_007');
       try {
         let fd = fileio.openSync(fpath, 0o302, 0o700);
+        console.info('fileio_test_open_007 fd: ' + fd);
         expect(fd !== null).assertTrue();
         let wri = fileio.writeSync(fd, FILE_CONTENT, {
           encoding: 'utf-8',
           offset: 1,
           length: 1,
         });
+        console.info('fileio_test_open_007 wri: ' + wri);
         expect(wri !== null).assertTrue();
         let red = fileio.readSync(fd, new ArrayBuffer(4096), {
           offset: 1,
         });
+        console.info('fileio_test_open_007 red: ' + red);
         expect(red !== null).assertTrue();
         fileio.closeSync(fd);
         fileio.unlinkSync(fpath);
@@ -318,16 +331,19 @@ export default function fileIOTest() {
       expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
       try {
         let fd = fileio.openSync(fpath, 0o402);
+        console.info('fileio_test_open_010 fd: ' + fd);
         expect(fd !== null).assertTrue();
         let wri = fileio.writeSync(fd, FILE_CONTENT, {
           encoding: 'utf-8',
           offset: 1,
           length: 1,
         });
+        console.info('fileio_test_open_010 wri: ' + wri);
         expect(wri !== null).assertTrue();
         let red = fileio.readSync(fd, new ArrayBuffer(4096), {
           offset: 1,
         });
+        console.info('fileio_test_open_010 red: ' + red);
         expect(red !== null).assertTrue();
         fileio.closeSync(fd);
         fileio.unlinkSync(fpath);

@@ -63,9 +63,6 @@ import {
   FlowItem,
   FlowItemAttribute,
   ForEach,
-  FormLink,
-  FormLinkAttribute,
-  FormLinkOptions,
   Gauge,
   GaugeAttribute,
   Grid,
@@ -426,19 +423,6 @@ export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   }]
 
   applyNormalAttribute(instance: FlowItemAttribute): void {
-    instance.responseRegion(this.mResponseRegion)
-  }
-}
-
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mResponseRegion: Array<Rectangle> = [{
-    x: 13,
-    y: 17,
-    width: '19%',
-    height: '23%'
-  }]
-
-  applyNormalAttribute(instance: FormLinkAttribute): void {
     instance.responseRegion(this.mResponseRegion)
   }
 }
@@ -1278,11 +1262,6 @@ function commonStyle(this: FlowItemAttribute, componentKey: string) {
   return this
 }
 
-function commonStyle(this: FormLinkAttribute, componentKey: string) {
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: GaugeAttribute, componentKey: string) {
   this.key(componentKey)
   return this
@@ -1620,7 +1599,6 @@ struct ResponseRegionPage {
   @State _responseRegionEllipseModifier: EllipseModifier = new EllipseModifier()
   @State _responseRegionFlexModifier: FlexModifier = new FlexModifier()
   @State _responseRegionFlowItemModifier: FlowItemModifier = new FlowItemModifier()
-  @State _responseRegionFormLinkModifier: FormLinkModifier = new FormLinkModifier()
   @State _responseRegionGaugeModifier: GaugeModifier = new GaugeModifier()
   @State _responseRegionGridModifier: GridModifier = new GridModifier()
   @State _responseRegionGridColModifier: GridColModifier = new GridColModifier()
@@ -2331,17 +2309,6 @@ struct ResponseRegionPage {
           .backgroundColor('#FFFF00')
           .commonStyle(this.componentKey)
           .attributeModifier(this._responseRegionCanvasModifier)
-      }
-      if (this.targetView == 'FormLink') {
-        FormLink({
-          action: "router",
-          abilityName: "EntryAbility",
-          params: { message: 'testForRouter' } as ObjElement
-        } as FormLinkOptions) {
-          Button("router event").width(120)
-        }
-        .commonStyle(this.componentKey)
-        .attributeModifier(this._responseRegionFormLinkModifier)
       }
       if (this.targetView == 'Hyperlink') {
         Hyperlink('https://example.com/', 'Go to the developer website') {

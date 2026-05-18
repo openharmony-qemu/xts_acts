@@ -372,5 +372,38 @@ export default function Multicastconnection201Test() {
     }
   });
 
+  /**
+ 	  * @tc.name   testNetworkMgrConnectionGetSystemNetPortStatesNoP0100
+ 	  * @tc.number SUB_NetworkMgr_Connection_GetSystemNetPortStates_NoP_0100
+ 	  * @tc.desc   Test GetSystemNetPortStates no permission(201)
+ 	  * @tc.type   FUNCTION
+ 	  * @tc.size   SMALLTEST
+ 	  * @tc.level  LEVEL3
+ 	  */
+ 	it("testNetworkMgrConnectionGetSystemNetPortStatesNoP0100", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
+ 	  let caseName: string = "testNetworkMgrConnectionGetSystemNetPortStatesNoP0100";
+ 	  console.info(`${caseName}---Start`);
+ 	  try{
+ 	    connection.getSystemNetPortStates().then((data: connection.NetPortStatesInfo)=>{
+ 	      if (data != undefined) {
+          expect(data != undefined).assertTrue();
+ 	        console.info(`${caseName}tcpPortStatesInfo:${data.tcpPortStatesInfo}`);
+ 	        console.info(`${caseName}udpPortStatesInfo:${data.udpPortStatesInfo}`);
+ 	      }
+ 	      ExpectFail();
+ 	      done();
+ 	    }).catch((error: BusinessError)=>{
+ 	      console.info(`${caseName} error  fetching port states info errorCode:${error.code}`+ JSON.stringify(error));
+ 	      ExpectTrue(error.code === 201);
+ 	      console.info(`${caseName}---End`);
+ 	      done();
+ 	    })
+ 	  }catch (err){
+ 	    console.info(`${caseName} catch err is `+JSON.stringify(err));
+ 	    ExpectTrue(err.code === 201);
+ 	    console.info(`${caseName}---End`);
+ 	    done();
+ 	  }
+ 	});
   })
 };

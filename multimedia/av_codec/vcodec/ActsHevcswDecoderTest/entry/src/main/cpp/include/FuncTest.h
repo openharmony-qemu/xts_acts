@@ -47,5 +47,14 @@ extern std::string g_codecNameHevc;
 int VideoDecodeSyncSs265Func0010Test();
 int VideoDecodeSyncSs265Func0020Test();
 int VideoSwdecH265BlankFrame0010Test();
+int VideoSwdecH265Speed0010Test();
+int VideoSwdecH265Speed0020Test();
+int VideoSwdecH265Speed0030Test();
+int VideoSwdecH265Speed0040Test();
+int VideoSwdecH265Speed0050Test();
+int VideoSwdecH265Speed0060Test();
+int VideoSwdecH265Speed0070Test();
+int VideoSwdecH265Speed0080Test();
+int VideoSwdecH265Speed0090Test();
 
 #endif //FUNCTEST_H

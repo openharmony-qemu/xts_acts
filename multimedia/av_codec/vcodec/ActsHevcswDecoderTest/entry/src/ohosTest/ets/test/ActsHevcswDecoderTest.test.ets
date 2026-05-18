@@ -84,5 +84,131 @@ export default function abilityTest() {
       expect(result).assertEqual(0)
       done();
     })
+
+    /**
+     * @tc.name   SUB_MUlTIMEDIA_VIDEO_DEC_SEPPD_FUNCTION_0100
+     * @tc.number SUB_MUlTIMEDIA_VIDEO_DEC_SEPPD_FUNCTION_0100
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MUlTIMEDIA_VIDEO_DEC_SEPPD_FUNCTION_0100', Level.LEVEL1, async (done: Function) => {
+      const result: number = await hevcswDecoderNapi.runFuncTest(3);
+      expect(result).assertEqual(0)
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MUlTIMEDIA_VIDEO_DEC_SEPPD_FUNCTION_0200
+     * @tc.number SUB_MUlTIMEDIA_VIDEO_DEC_SEPPD_FUNCTION_0200
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MUlTIMEDIA_VIDEO_DEC_SEPPD_FUNCTION_0200', Level.LEVEL1, async (done: Function) => {
+      const result: number = await hevcswDecoderNapi.runFuncTest(4);
+      expect(result).assertEqual(0)
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MUlTIMEDIA_VIDEO_DEC_SEPPD_FUNCTION_0300
+     * @tc.number SUB_MUlTIMEDIA_VIDEO_DEC_SEPPD_FUNCTION_0300
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MUlTIMEDIA_VIDEO_DEC_SEPPD_FUNCTION_0300', Level.LEVEL1, async (done: Function) => {
+      const result: number = await hevcswDecoderNapi.runFuncTest(5);
+      expect(result).assertEqual(0)
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MUlTIMEDIA_VIDEO_DEC_SEPPD_FUNCTION_0400
+     * @tc.number SUB_MUlTIMEDIA_VIDEO_DEC_SEPPD_FUNCTION_0400
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MUlTIMEDIA_VIDEO_DEC_SEPPD_FUNCTION_0400', Level.LEVEL1, async (done: Function) => {
+      const result: number = await hevcswDecoderNapi.runFuncTest(6);
+      expect(result).assertEqual(0)
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MUlTIMEDIA_VIDEO_DEC_SEPPD_FUNCTION_0500
+     * @tc.number SUB_MUlTIMEDIA_VIDEO_DEC_SEPPD_FUNCTION_0500
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MUlTIMEDIA_VIDEO_DEC_SEPPD_FUNCTION_0500', Level.LEVEL1, async (done: Function) => {
+      const result: number = await hevcswDecoderNapi.runFuncTest(7);
+      expect(result).assertEqual(0)
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MUlTIMEDIA_VIDEO_DEC_SEPPD_FUNCTION_0600
+     * @tc.number SUB_MUlTIMEDIA_VIDEO_DEC_SEPPD_FUNCTION_0600
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MUlTIMEDIA_VIDEO_DEC_SEPPD_FUNCTION_0600', Level.LEVEL1, async (done: Function) => {
+      const result: number = await hevcswDecoderNapi.runFuncTest(8);
+      expect(result).assertEqual(0)
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MUlTIMEDIA_VIDEO_DEC_SEPPD_FUNCTION_0700
+     * @tc.number SUB_MUlTIMEDIA_VIDEO_DEC_SEPPD_FUNCTION_0700
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MUlTIMEDIA_VIDEO_DEC_SEPPD_FUNCTION_0700', Level.LEVEL1, async (done: Function) => {
+      const result: number = await hevcswDecoderNapi.runFuncTest(9);
+      expect(result).assertEqual(0)
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MUlTIMEDIA_VIDEO_DEC_SEPPD_FUNCTION_0800
+     * @tc.number SUB_MUlTIMEDIA_VIDEO_DEC_SEPPD_FUNCTION_0800
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MUlTIMEDIA_VIDEO_DEC_SEPPD_FUNCTION_0800', Level.LEVEL1, async (done: Function) => {
+      const result: number = await hevcswDecoderNapi.runFuncTest(10);
+      expect(result).assertEqual(0)
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MUlTIMEDIA_VIDEO_DEC_SEPPD_FUNCTION_0900
+     * @tc.number SUB_MUlTIMEDIA_VIDEO_DEC_SEPPD_FUNCTION_0900
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MUlTIMEDIA_VIDEO_DEC_SEPPD_FUNCTION_0900', Level.LEVEL1, async (done: Function) => {
+      const result: number = await hevcswDecoderNapi.runFuncTest(11);
+      expect(result).assertEqual(0)
+      done();
+    })
   })
 }

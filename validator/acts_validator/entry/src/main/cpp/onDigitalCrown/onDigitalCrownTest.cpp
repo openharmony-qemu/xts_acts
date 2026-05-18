@@ -171,14 +171,35 @@ napi_value onDigitalCrownTest::CreateNativeNode(napi_env env, napi_callback_info
                     UpdateTextAndLog(text, eventInfo);
                 } else if (nodeEventType == NODE_ON_DIGITAL_CROWN) {
                     if (eventType == ARKUI_UIINPUTEVENT_TYPE_DIGITAL_CROWN) {
-                        auto errorCode = OH_ArkUI_DigitalCrownEvent_SetStopPropagation(inputEvent, true);
-                        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "errorCode",
-                            "SetStopPropagation 0 errorCode: %{public}d", errorCode);
                         std::ostringstream oss;
-                        oss << "action:" << OH_ArkUI_DigitalCrownEvent_GetAction(inputEvent)
-                            << ", angularVelocity:" << OH_ArkUI_DigitalCrownEvent_GetAngularVelocity(inputEvent)
-                            << ", degree:" << OH_ArkUI_DigitalCrownEvent_GetDegree(inputEvent)
-                            << ", eventTime:" << OH_ArkUI_DigitalCrownEvent_GetEventTime(inputEvent);
+                        auto ARKUI_ERROR_CODE_PARAM_INVALID = OH_ArkUI_DigitalCrownEvent_SetStopPropagation(nullptr, false);
+                        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "errorCode",
+                                 "SetStopPropagation 0 ARKUI_ERROR_CODE_PARAM_INVALID: %{public}d", ARKUI_ERROR_CODE_PARAM_INVALID);
+
+                        auto ARKUI_ERROR_CODE_NO_ERROR = OH_ArkUI_DigitalCrownEvent_SetStopPropagation(inputEvent, true);
+                        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "errorCode",
+                                 "SetStopPropagation 0 ARKUI_ERROR_CODE_NO_ERROR: %{public}d", ARKUI_ERROR_CODE_NO_ERROR);
+
+                            oss <<"errorcode:"<< ARKUI_ERROR_CODE_NO_ERROR
+                                <<", errorcode:"<< ARKUI_ERROR_CODE_PARAM_INVALID
+                                << "\naction:" << OH_ArkUI_DigitalCrownEvent_GetAction(inputEvent)
+                                << ", angularVelocity:" << OH_ArkUI_DigitalCrownEvent_GetAngularVelocity(inputEvent)
+                                << ", degree:" << OH_ArkUI_DigitalCrownEvent_GetDegree(inputEvent)
+                                << ", eventTime:" << OH_ArkUI_DigitalCrownEvent_GetEventTime(inputEvent);
+
+                            if (OH_ArkUI_DigitalCrownEvent_GetAction(inputEvent) == ARKUI_CROWNEVENT_ACTION_UNKNOWN) {
+                                OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN,
+                                    "DigitalCrown", "ARKUI_CROWNEVENT_ACTION_UNKNOWN 0");
+                            }
+                            if (OH_ArkUI_DigitalCrownEvent_GetAction(inputEvent) == ARKUI_CROWNEVENT_ACTION_UPDATE) {
+                                OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN,
+                                    "DigitalCrown", "ARKUI_CROWNEVENT_ACTION_UPDATE 1");
+                            }
+                            if (OH_ArkUI_DigitalCrownEvent_GetAction(inputEvent) == ARKUI_CROWNEVENT_ACTION_END) {
+                                OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN,
+                                    "DigitalCrown", "ARKUI_CROWNEVENT_ACTION_END 2");
+                            }
+
                         eventInfo = oss.str();
                         UpdateTextAndLog(text, eventInfo);
                     }

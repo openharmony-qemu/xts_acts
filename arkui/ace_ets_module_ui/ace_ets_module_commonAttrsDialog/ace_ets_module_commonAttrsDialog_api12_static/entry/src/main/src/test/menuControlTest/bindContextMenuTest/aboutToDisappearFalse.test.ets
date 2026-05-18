@@ -35,7 +35,7 @@ import inspector from '@ohos.arkui.inspector'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
-import { UtilsTest } from '../../Util.test'
+import { UtilsTest } from '../../Util.test';
 
 export default function aboutToDisappearFalse() {
   describe('aboutToDisappearFalse', () => {
@@ -77,8 +77,9 @@ it('aboutToDisappearFalse_static_0100', Level.LEVEL0, async (done: () => void): 
       let button = await driver.findComponent(ON.id('aboutToDisappearFalse'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-
-      await driver.click(200, 200);
+      
+      let button1 = await driver.findComponent(ON.text('菜单选项'));
+      await (button1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('aboutToDisappearFalseText');

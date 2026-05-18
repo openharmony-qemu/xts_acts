@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2024 HiHope Open Source Organization.
+* Copyright (C) 2024-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the 'License');
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -148,7 +148,7 @@ export default function TimerClearTimeoutTest() {
       }, 10);
       let timerId2: number = 2;
       setTimeout(() => {
-        clearTimeout(timerId2 as int);
+        clearTimeout(timerId2.toInt());
       }, 1);
       while (flag != true) {
         await sleep(100);

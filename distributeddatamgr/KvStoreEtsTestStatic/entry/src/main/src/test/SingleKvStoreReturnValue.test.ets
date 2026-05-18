@@ -1237,28 +1237,22 @@ export default function SingleKvStoreReturnValue() {
           }).catch((err: Error) => {
             console.error(TAG+' getKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
           });
-          kvStoreS4!.getSecurityLevel((err: BusinessError | null, data: factory.SecurityLevel | undefined) => {
-            waitForCompletion(async () => {
-              console.info(TAG + 'Succeeded getSecurityLevel S4, data.=' + JSON.stringify(data!) + ',err=' + err);
-              expect(data).assertEqual(factory.SecurityLevel.S4);
-              await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID).then(() => {
-                waitForCompletion(async () => {
-                  console.info(TAG + '  Succeeded closeKVStore S4');
-                  await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID).then(() => {
-                    console.info(TAG + '  Succeeded deleteKVStore S4');
-                    console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0103 end--------- ');
-                    done();
-                  }).catch((err: Error) => {
-                    console.error(TAG + ` Failed deleteKVStore S4 .code is ${err.code},message is ${err.message}`);
-                    done();
-                  });
-                })
-              }).catch((err: Error) => {
-                console.error(TAG + ` Failed closeKVStore S4 .code is ${err.code},message is ${err.message}`);
-                done();
-              });
-            })
-          });
+          try {
+            let data = await kvStoreS4!.getSecurityLevel();
+            expect(data).assertEqual(factory.SecurityLevel.S4);
+            await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID).then(async () => {
+            console.info(TAG + '  Succeeded closeKVStore S4');
+            await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID).then(() => {
+            console.info(TAG + '  Succeeded deleteKVStore S4');
+            console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0103 end--------- ');
+            done();
+            done();
+            });
+            done();
+            });
+          } catch (err) {
+            console.error('getSecurityLevel failed: ' + err);
+          }
 
         } catch (e) {
           console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
@@ -1506,6 +1500,25 @@ export default function SingleKvStoreReturnValue() {
         }
       })
 
+    /**
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_DISTRIBUTEDKVSTORE_REKEY_STA_0100
+     * @tc.name rekeyStaticTest001
+     * @tc.desc 测试 rekey 方法 - 正常调用无参数Promise方式（静态语法）.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('rekeyStaticTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      try {
+        await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID);
+        await kvStore!.rekey();
+        console.info('Test PASSED: rekey Promise signature verified');
+        expect().assertFail();
+      } catch (error) {
+        console.info('rekeyStaticTest001 failed' + error.code + error.message);
+        expect(error.code).assertEqual(15100005);
+      }
+    });
 
     console.info(TAG + '-------------------describe SingleKvStoreReturnValue  end-------------------');
   })

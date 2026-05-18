@@ -58,11 +58,7 @@ build() {
     Column() {
       Column() {
 
-        Text('' + this.wordBreak).id('word_break_text');
-
-        Button('getParagraphStyle').onClick((e: ClickEvent) => {
-          this.wordBreak = JSON.stringify(this.controller!.getParagraphs({ start: -1, end: -1 }));
-        }).id('getParagraphStyle')
+        Text('' + this.wordBreak).id('word_break_text').height('5%').clip(true);
 
         Button('updateParagraphStyle').onClick((e: ClickEvent) => {
           this.controller!.updateParagraphStyle({
@@ -74,6 +70,10 @@ build() {
           })
           this.wordBreak = JSON.stringify(this.controller!.getParagraphs({ start: -1, end: -1 }));
         }).id('updateParagraphStyle')
+
+        Button('getParagraphStyle').onClick((e: ClickEvent) => {
+          this.wordBreak = JSON.stringify(this.controller!.getParagraphs({ start: -1, end: -1 }));
+        }).id('getParagraphStyle')
 
       }
       .borderWidth(1)

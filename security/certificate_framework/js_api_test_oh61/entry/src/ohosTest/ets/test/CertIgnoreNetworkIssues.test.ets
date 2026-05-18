@@ -16,9 +16,11 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from "@ohos/hypium";
 import { cert } from "@kit.DeviceCertificateKit";
 import {
+  CHAIN_3_CA_INTER3_PEM,
   CHAIN_3_CA_INTER_CRL_PEM,
   CHAIN_3_CA_INTER_MD5_PEM,
   CHAIN_3_CA_INTER_PEM,
+  CHAIN_3_CA_LEAF3_PEM,
   CHAIN_3_CA_LEAF_CRL_PEM,
   CHAIN_3_CA_LEAF_MD5_PEM,
   CHAIN_3_CA_LEAF_PEM,
@@ -27,7 +29,7 @@ import {
   CHAIN_3_CA_ROOT_PEM,
   CHAIN_3_INTER_PEM, CHAIN_3_LEAF2_PEM,
   CHAIN_3_LEAF3_PEM,
-  CHAIN_3_LEAF4_PEM,
+  CHAIN_3_LEAF6_PEM,
   CHAIN_3_LEAF_PEM, CHAIN_3_ROOT_PEM,
   CHAIN_SELF_CA_ROOT_PEM } from "./utils/chain/chain";
 import { createX509CertPem } from "./utils/common/common";
@@ -191,7 +193,7 @@ export default function certFrameworkCertIgnoreNetworkIssuesTestUnit() {
     it("SUB_Security_Cert_Framework_Ignore_Network_Issues_Func_0400",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
-          let entryCert: cert.X509Cert = await createX509CertPem(CHAIN_3_LEAF4_PEM);
+          let entryCert: cert.X509Cert = await createX509CertPem(CHAIN_3_LEAF6_PEM);
           let interCert: cert.X509Cert = await createX509CertPem(CHAIN_3_INTER_PEM);
           let rootCert: cert.X509Cert = await createX509CertPem(CHAIN_3_ROOT_PEM);
           let collection: cert.CertCRLCollection = cert.createCertCRLCollection([entryCert, interCert, rootCert]);
@@ -280,8 +282,8 @@ export default function certFrameworkCertIgnoreNetworkIssuesTestUnit() {
     it("SUB_Security_Cert_Framework_Ignore_Network_Issues_Func_0600",
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
-          let entryCert: cert.X509Cert = await createX509CertPem(CHAIN_3_CA_LEAF_PEM);
-          let interCert: cert.X509Cert = await createX509CertPem(CHAIN_3_CA_INTER_PEM);
+          let entryCert: cert.X509Cert = await createX509CertPem(CHAIN_3_CA_LEAF3_PEM);
+          let interCert: cert.X509Cert = await createX509CertPem(CHAIN_3_CA_INTER3_PEM);
           let rootCert: cert.X509Cert = await createX509CertPem(CHAIN_3_CA_ROOT_PEM);
           let collection: cert.CertCRLCollection = cert.createCertCRLCollection([entryCert, interCert, rootCert]);
           let param: cert.CertChainBuildParameters = {

@@ -89,6 +89,7 @@ export const testNativeWindowNativeWindowHandleOptSetGetSourceTypeNormal: () => 
 export const testNativeWindowNativeWindowHandleOptSetGetSourceTypeAbnormal: () => number;
 export const testNativeWindowNativeWindowHandleOptSetGetAppFrameworkTypeNormal: () => number;
 export const testNativeWindowNativeWindowHandleOptSetGetAppFrameworkTypeAbnormal: () => number;
+export const testNativeWindowNativeWindowHandleOptCodeAbnormal: () => number;
 export const testNativeWindowNativeWindowSetSetScalingModeV2Nullptr: () => number;
 export const testNativeWindowNativeWindowSetScalingModeV2ScalingMode: () => number;
 export const testNativeWindowGetColorSpaceFirst: () => number;
@@ -141,3 +142,6 @@ export const testNativeWindowLockBufferMultipleCalls: () => number;
 export const testNativeWindowUnLockAndFlushBufferMultipleCalls: () => number;
 export const testNativeWindowLockAndUnLockAndRequest: () => number;
 export const OHNativeErrorCodeCover: () => number;
+export const testNativeWindowNativeWindowFlushBufferAbnormalRegion: () => number;
+export const testNativeWindowNativeWindowRequestBufferDefaultWidthAndHeight: () => number;
+

@@ -1363,14 +1363,14 @@ export default function ErrorTest() {
       }
     })
     /**
-     * @tc.name   testError.SyntaxError0001
+     * @tc.name   testErrorSyntaxError0001Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ERROR_7900
      * @tc.desc   Test the function of the interface SyntaxError.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testError.SyntaxError0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testErrorSyntaxError0001Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testError.SyntaxError0001";
       try {
         throw SyntaxError();
@@ -1381,14 +1381,14 @@ export default function ErrorTest() {
     })
 
     /**
-     * @tc.name   testError.SyntaxError0002
+     * @tc.name   testErrorSyntaxError0002Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ERROR_8000
      * @tc.desc   Test the function of the interface SyntaxError.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testError.SyntaxError0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testErrorSyntaxError0002Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testError.SyntaxError0002";
       try {
         throw SyntaxError();
@@ -1399,14 +1399,14 @@ export default function ErrorTest() {
     })
 
     /**
-     * @tc.name   testError.SyntaxError0003
+     * @tc.name   testErrorSyntaxError0003Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ERROR_8100
      * @tc.desc   Test the function of the interface SyntaxError.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testError.SyntaxError0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testErrorSyntaxError0003Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testError.SyntaxError0003";
       try {
         throw new SyntaxError();
@@ -1417,14 +1417,14 @@ export default function ErrorTest() {
     })
 
     /**
-     * @tc.name   testError.SyntaxError0004
+     * @tc.name   testErrorSyntaxError0004Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ERROR_8200
      * @tc.desc   Test the function of the interface SyntaxError.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testError.SyntaxError0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testErrorSyntaxError0004Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testError.SyntaxError0004";
       try {
         throw new SyntaxError();
@@ -1435,14 +1435,14 @@ export default function ErrorTest() {
     })
 
     /**
-     * @tc.name   testError.SyntaxError0005
+     * @tc.name   testErrorSyntaxError0005Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ERROR_8300
      * @tc.desc   Test the function of the interface SyntaxError.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testError.SyntaxError0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testErrorSyntaxError0005Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testError.SyntaxError0005";
       try {
         throw new SyntaxError('test');
@@ -1453,14 +1453,14 @@ export default function ErrorTest() {
     })
 
     /**
-     * @tc.name   testError.SyntaxError0006
+     * @tc.name   testErrorSyntaxError0006Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ERROR_8400
      * @tc.desc   Test the function of the interface SyntaxError.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testError.SyntaxError0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testErrorSyntaxError0006Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testError.SyntaxError0006";
       try {
         throw new SyntaxError('test');
@@ -1471,14 +1471,14 @@ export default function ErrorTest() {
     })
 
     /**
-     * @tc.name   testError.SyntaxError0007
+     * @tc.name   testErrorSyntaxError0007Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ERROR_8500
      * @tc.desc   Test the function of the interface SyntaxError.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testError.SyntaxError0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testErrorSyntaxError0007Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testError.SyntaxError0007";
       try {
         throw new SyntaxError(undefined);
@@ -1489,14 +1489,14 @@ export default function ErrorTest() {
     })
 
     /**
-     * @tc.name   testError.SyntaxError0008
+     * @tc.name   testErrorSyntaxError0008Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ERROR_8600
      * @tc.desc   Test the function of the interface SyntaxError.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testError.SyntaxError0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testErrorSyntaxError0008Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testError.SyntaxError0008";
       try {
         throw new SyntaxError(undefined);
@@ -1507,14 +1507,14 @@ export default function ErrorTest() {
     })
 
     /**
-     * @tc.name   testError.SyntaxError0009
+     * @tc.name   testErrorSyntaxError0009Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ERROR_8700
      * @tc.desc   Test the function of the interface SyntaxError.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testError.SyntaxError0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testErrorSyntaxError0009Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testError.SyntaxError0009";
       try {
         throw new SyntaxError('');
@@ -1525,14 +1525,14 @@ export default function ErrorTest() {
     })
 
     /**
-     * @tc.name   testError.SyntaxError0010
+     * @tc.name   testErrorSyntaxError0010Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ERROR_8800
      * @tc.desc   Test the function of the interface SyntaxError.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testError.SyntaxError0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testErrorSyntaxError0010Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testError.SyntaxError0010";
       try {
         throw new SyntaxError('');

@@ -678,7 +678,7 @@ export default function i18nStageTest() {
       } catch (e) {
         e = e as BusinessError;
         console.log('testGetThreeLetterLanguage_0030' + e.code + e.message);
-        expect(e.code).assertEqual('890001');
+        expect(Number(e.code)).assertEqual(890001);
       }
     })
 
@@ -696,7 +696,7 @@ export default function i18nStageTest() {
       } catch (e) {
         e = e as BusinessError;
         console.log('testGetThreeLetterRegion_static_0040' + e.code + e.message);
-        expect(e.code).assertEqual('890001');
+        expect(Number(e.code)).assertEqual(890001);
       }
     })
 
@@ -1428,9 +1428,14 @@ export default function i18nStageTest() {
      * @tc.level LEVEL3
      */
     it('getThreeLetterLanguage_nullString_test_Static_0100', Level.LEVEL3, () => {
-      let value: string = i18n.I18NUtil.getThreeLetterLanguage('');
-      console.log('getThreeLetterLanguage_nullString_test_Static_0100 value:', value);
-      expect(value).assertEqual('');
+      try {
+        let value: string = i18n.I18NUtil.getThreeLetterLanguage('');
+        console.log('getThreeLetterLanguage_nullString_test_Static_0100 value:', value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('getThreeLetterLanguage_nullString_test_Static_0100 code&message:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(890001);
+      }
     })
 
     /**
@@ -1442,9 +1447,14 @@ export default function i18nStageTest() {
      * @tc.level LEVEL3
      */
     it('getThreeLetterRegion_nullString_test_Static_0100', Level.LEVEL3, () => {
-      let value: string = i18n.I18NUtil.getThreeLetterRegion('');
-      console.log('getThreeLetterRegion_nullString_test_Static_0100 value:', value);
-      expect(value).assertEqual('');
+      try {
+        let value: string = i18n.I18NUtil.getThreeLetterRegion('');
+        console.log('getThreeLetterRegion_nullString_test_Static_0100 value:', value);
+        expect(value).assertFail();
+      } catch (e) {
+        console.log('getThreeLetterRegion_nullString_test_Static_0100 code&message:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(890001);
+      }
     })
 
     /**

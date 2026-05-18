@@ -84,7 +84,7 @@ export default function RepeatCloseReuseTest0110() {
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("btnRepeatCloseReuse0110"));
       await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(5000);
       let text = await driver.findComponent(ON.text('item_49'))
       expect(text != null).assertTrue()
       console.info('[RepeatCloseReuseTest0110_static_001] END');

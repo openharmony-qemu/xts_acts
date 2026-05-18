@@ -21,6 +21,7 @@ group("access_token") {
       "accesstokenNDKTest:ActsAccessTokenNDKTest",
       "dynamic/openPermissionOnSettingTest:ActsOpenPermissionOnSettingTest",
       "dynamic/RequestFromUserServicePop:ActsRequestFromUserServicePopTest",
+      "dynamic/accessTokenFuncTest:ActsAccessTokenFuncDynamicTest",
       "static/accessTokenFuncTestStatic:ActsAccessTokenFuncStaticTest",
       "static/requestPermissionOnSettingTestStatic:ActsRequestPermissionsOnSettingStaticTest",
       "static/requestPermissionsFromUserTestStatic:ActsRequestPermissionsFromUserStaticTest",

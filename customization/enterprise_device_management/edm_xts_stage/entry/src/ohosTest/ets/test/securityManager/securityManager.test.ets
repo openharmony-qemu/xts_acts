@@ -310,6 +310,9 @@ export default function securityManagerTest() {
     testSetPasswordPolicy();
     testGetPasswordPolicy();
 
+    testSetScreenLockDisabledForAccount();
+    testIsScreenLockDisabledForAccount();
+
     testInstallUserCertificate();
     testGetUserCertificates();
     testUninstallUserCertificate();
@@ -1518,11 +1521,14 @@ function testGetClipboardPolicy() {
    * @tc.level  LEVEL2
    */
   it("test_get_clipboard_policy_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      securityManager.getAppClipboardPolicy(null, TEST_TOKEN_ID);
-      expect(false).assertTrue();
+      let policy = securityManager.getAppClipboardPolicy(null, TEST_TOKEN_ID);
+      expect(policy.length !== 0).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 401).assertTrue();
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
   });
@@ -1577,10 +1583,10 @@ function testGetClipboardPolicy() {
   it("test_get_clipboard_policy_0600", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      securityManager.getAppClipboardPolicy(null);
-      expect(false).assertTrue();
+      let policy = securityManager.getAppClipboardPolicy(null);
+      expect(policy.length === 0).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 401).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2080,11 +2086,14 @@ function testGetClipboardPolicyByBundleName() {
    * @tc.level  LEVEL2
    */
   it("test_get_clipboard_policy_by_bundle_name_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      securityManager.getAppClipboardPolicy(null, SELFHAPNAME, CURRENT_USER_ID);
-      expect(false).assertTrue();
+      let policy = securityManager.getAppClipboardPolicy(null, SELFHAPNAME, CURRENT_USER_ID);
+      expect(policy.length !== 0).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 401).assertTrue();
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
   });
@@ -2177,6 +2186,308 @@ function testGetClipboardPolicyByBundleName() {
       expect(Number(error.code) === 401).assertTrue();
     }
     done();
+  });
+}
+
+function testSetScreenLockDisabledForAccount() {
+  /**
+   * @tc.name   test_setScreenLockDisabledForAccount_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETSCREENLOCKDISABLEDFORACCOUNT_0100
+   * @tc.desc   test setScreenLockDisabledForAccount method without activated admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setScreenLockDisabledForAccount_0100", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- test_setScreenLockDisabledForAccount_0100  -------- START --------');
+    try {
+      securityManager.setScreenLockDisabledForAccount(SELFWANT, true);
+      console.info(' --- test_setScreenLockDisabledForAccount_0100 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_setScreenLockDisabledForAccount_0100 error 9200001 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
+    }
+    done();
+    console.info(' --- test_setScreenLockDisabledForAccount_0100  -------- END --------');
+  });
+
+  /**
+   * @tc.name   test_setScreenLockDisabledForAccount_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETSCREENLOCKDISABLEDFORACCOUNT_0200
+   * @tc.desc   test setScreenLockDisabledForAccount method without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setScreenLockDisabledForAccount_0200", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- test_setScreenLockDisabledForAccount_0200  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      securityManager.setScreenLockDisabledForAccount(SELFWANT, false);
+      console.info(' --- test_setScreenLockDisabledForAccount_0200 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_setScreenLockDisabledForAccount_0200 error 9200002 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+    console.info(' --- test_setScreenLockDisabledForAccount_0200  -------- END --------');
+  });
+
+  /**
+   * @tc.name   test_setScreenLockDisabledForAccount_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETSCREENLOCKDISABLEDFORACCOUNT_0300
+   * @tc.desc   test setScreenLockDisabledForAccount method without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setScreenLockDisabledForAccount_0300", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- test_setScreenLockDisabledForAccount_0300  -------- START --------');
+    try {
+      securityManager.setScreenLockDisabledForAccount(null, true);
+      console.info(' --- test_setScreenLockDisabledForAccount_0300 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_setScreenLockDisabledForAccount_0300 error 401 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+    console.info(' --- test_setScreenLockDisabledForAccount_0300  -------- END --------');
+  });
+
+  /**
+   * @tc.name   test_setScreenLockDisabledForAccount_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETSCREENLOCKDISABLEDFORACCOUNT_0400
+   * @tc.desc   test setScreenLockDisabledForAccount method with admin undefined
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setScreenLockDisabledForAccount_0400", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- test_setScreenLockDisabledForAccount_0400  -------- START --------');
+    try {
+      securityManager.setScreenLockDisabledForAccount(undefined, true);
+      console.info(' --- test_setScreenLockDisabledForAccount_0400 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_setScreenLockDisabledForAccount_0400 error 401 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+    console.info(' --- test_setScreenLockDisabledForAccount_0400  -------- END --------');
+  });
+
+  /**
+   * @tc.name   test_setScreenLockDisabledForAccount_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETSCREENLOCKDISABLEDFORACCOUNT_0500
+   * @tc.desc   test setScreenLockDisabledForAccount method without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setScreenLockDisabledForAccount_0500", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- test_setScreenLockDisabledForAccount_0500  -------- START --------');
+    try {
+      securityManager.setScreenLockDisabledForAccount(SELFWANT, null);
+      console.info(' --- test_setScreenLockDisabledForAccount_0500 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_setScreenLockDisabledForAccount_0500 error 401 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+    console.info(' --- test_setScreenLockDisabledForAccount_0500  -------- END --------');
+  });
+
+  /**
+   * @tc.name   test_setScreenLockDisabledForAccount_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETSCREENLOCKDISABLEDFORACCOUNT_0600
+   * @tc.desc   test setScreenLockDisabledForAccount method without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setScreenLockDisabledForAccount_0600", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- test_setScreenLockDisabledForAccount_0600  -------- START --------');
+    try {
+      securityManager.setScreenLockDisabledForAccount(SELFWANT, undefined);
+      console.info(' --- test_setScreenLockDisabledForAccount_0600 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_setScreenLockDisabledForAccount_0600 error 401 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+    console.info(' --- test_setScreenLockDisabledForAccount_0600  -------- END --------');
+  });
+}
+
+function testIsScreenLockDisabledForAccount() {
+ /**
+   * @tc.name   test_isScreenLockDisabledForAccount_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_ISSCREENLOCKDISABLEDFORACCOUNT_0100
+   * @tc.desc   test isScreenLockDisabledForAccount method without activated admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_isScreenLockDisabledForAccount_0100", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- test_isScreenLockDisabledForAccount_0100  -------- START --------');
+    try {
+      securityManager.isScreenLockDisabledForAccount(SELFWANT);
+      console.info(' --- test_isScreenLockDisabledForAccount_0100 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_isScreenLockDisabledForAccount_0100 error 9200001 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
+    }
+    done();
+    console.info(' --- test_isScreenLockDisabledForAccount_0100  -------- END --------');
+  });
+
+  /**
+   * @tc.name   test_isScreenLockDisabledForAccount_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_ISSCREENLOCKDISABLEDFORACCOUNT_0200
+   * @tc.desc   test isScreenLockDisabledForAccount method without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_isScreenLockDisabledForAccount_0200", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- test_isScreenLockDisabledForAccount_0200  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      securityManager.isScreenLockDisabledForAccount(SELFWANT);
+      console.info(' --- test_isScreenLockDisabledForAccount_0200 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_isScreenLockDisabledForAccount_0200 error 9200002 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+    console.info(' --- test_isScreenLockDisabledForAccount_0200  -------- END --------');
+  });
+
+  /**
+   * @tc.name   test_isScreenLockDisabledForAccount_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_ISSCREENLOCKDISABLEDFORACCOUNT_0300
+   * @tc.desc   test isScreenLockDisabledForAccount method without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_isScreenLockDisabledForAccount_0300", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- test_isScreenLockDisabledForAccount_0300  -------- START --------');
+    try {
+      securityManager.isScreenLockDisabledForAccount(null);
+      console.info(' --- test_isScreenLockDisabledForAccount_0300 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_isScreenLockDisabledForAccount_0300 error 401 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+    console.info(' --- test_isScreenLockDisabledForAccount_0300  -------- END --------');
+  });
+
+  /**
+   * @tc.name   test_isScreenLockDisabledForAccount_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_ISSCREENLOCKDISABLEDFORACCOUNT_0400
+   * @tc.desc   test isScreenLockDisabledForAccount method with admin undefined
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_isScreenLockDisabledForAccount_0400", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- test_isScreenLockDisabledForAccount_0400  -------- START --------');
+    try {
+      securityManager.isScreenLockDisabledForAccount(undefined);
+      console.info(' --- test_isScreenLockDisabledForAccount_0400 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_isScreenLockDisabledForAccount_0400 error 401 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+    console.info(' --- test_isScreenLockDisabledForAccount_0400  -------- END --------');
+  });
+
+  /**
+   * @tc.name   test_isScreenLockDisabledForAccount_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_ISSCREENLOCKDISABLEDFORACCOUNT_0500
+   * @tc.desc   test isScreenLockDisabledForAccount method with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_isScreenLockDisabledForAccount_0500", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- test_isScreenLockDisabledForAccount_0500  -------- START --------');
+    try {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      securityManager.setScreenLockDisabledForAccount(SELFWANT, true);
+      const result: boolean = securityManager.isScreenLockDisabledForAccount(SELFWANT);
+      expect(result).assertTrue();
+      securityManager.setScreenLockDisabledForAccount(SELFWANT, false);
+      const result2: boolean = securityManager.isScreenLockDisabledForAccount(SELFWANT);
+      expect(result2).assertFalse();
+    } catch (error) {
+      console.info(' --- test_isScreenLockDisabledForAccount_0500 error is not expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(false).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+    console.info(' --- test_isScreenLockDisabledForAccount_0500  -------- END --------');
   });
 }
 
@@ -4256,13 +4567,16 @@ function testUninstallEnterpriseReSignatureCertificate() {
      */
     it("getAppClipboardPolicy_test_001", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getAppClipboardPolicy_test_001  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        securityManager.getAppClipboardPolicy(null);
+        let policy = securityManager.getAppClipboardPolicy(null);
         console.info(' --- getAppClipboardPolicy_test_001 error is expected, but it done.');
-        expect(false).assertTrue();
+        expect(policy.length === 0).assertTrue();
       } catch (error) {
         console.info(' --- getAppClipboardPolicy_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getAppClipboardPolicy_test_001  -------- END --------');
@@ -5108,13 +5422,16 @@ function testUninstallEnterpriseReSignatureCertificate() {
      */
     it("getExternalSourceExtensionsPolicy_test_001", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getExternalSourceExtensionsPolicy_test_001  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        securityManager.getExternalSourceExtensionsPolicy(null);
+        let policy = securityManager.getExternalSourceExtensionsPolicy(null);
         console.info(' --- getExternalSourceExtensionsPolicy_test_001 error is expected, but it done.');
-        expect(false).assertTrue();
+        expect(policy === common.ManagedPolicy.DEFAULT).assertTrue();
       } catch (error) {
         console.info(' --- getExternalSourceExtensionsPolicy_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(Number(error.code) === 801).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getExternalSourceExtensionsPolicy_test_001  -------- END --------');
@@ -5563,13 +5880,16 @@ function testUninstallEnterpriseReSignatureCertificate() {
      */
     it("getAppClipboardPolicy_test_043", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getAppClipboardPolicy_test_043  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        securityManager.getAppClipboardPolicy(null);
+        let policy = securityManager.getAppClipboardPolicy(null);
         console.info(' --- getAppClipboardPolicy_test_043 error is expected, but it done.');
-        expect(false).assertTrue();
+        expect(policy.length === 0).assertTrue();
       } catch (error) {
         console.info(' --- getAppClipboardPolicy_test_043 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getAppClipboardPolicy_test_043  -------- END --------');

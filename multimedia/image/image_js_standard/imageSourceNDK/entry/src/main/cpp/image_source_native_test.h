@@ -66,6 +66,10 @@ public:
     static napi_value TestModifyImagePropertyBlob(napi_env env, napi_callback_info info);
     static napi_value TestModifyImagePropertyError(napi_env env, napi_callback_info info);
     static napi_value TestCreateImageRawData(napi_env env, napi_callback_info info);
+    static napi_value TestCreateImageRawDataSucc(napi_env env, napi_callback_info info);
+    static napi_value TestGetBufferFromRawDataSucc(napi_env env, napi_callback_info info);
+    static napi_value TestDestroyImageRawDataSucc(napi_env env, napi_callback_info info);
+    static napi_value TestDestroyImageRawDataInvalidParam(napi_env env, napi_callback_info info);
     static napi_value TestCreateImageRawDataNullptr(napi_env env, napi_callback_info info);
     static napi_value TestGetBufferFromRawDataNullptr(napi_env env, napi_callback_info info);
     static napi_value TestGetBitsPerPixelFromRawDataNullptr(napi_env env, napi_callback_info info);

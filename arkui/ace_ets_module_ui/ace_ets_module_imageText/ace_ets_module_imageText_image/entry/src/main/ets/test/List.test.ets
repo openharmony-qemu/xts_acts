@@ -80,6 +80,8 @@ import ImageAnimatorPreDecodeUndefinedAndNullTest from './ImageAnimatorUndefined
 import ImageAnimatorStateUndefinedAndNullTest from './ImageAnimatorUndefinedAndNullTest/ImageAnimatorStateUndefinedAndNull.test';
 import ImageAnimatorImagesUndefinedAndNullTest from './ImageAnimatorUndefinedAndNullTest/ImageAnimatorImagesUndefinedAndNull.test';
 import AnimationStopModeTest from './drawableDescriptor/AnimationStopMode.test';
+import ImageColorFilterTest from './ImageColorFilterTest/ImageColorFilter.test';
+import ImageReloadKeyTest from './ImageReloadKeyTest/ImageReloadKey.test';
 
 export default function testsuite() {
   getUIContextApi01();
@@ -150,4 +152,6 @@ export default function testsuite() {
   ImageAnimatorStateUndefinedAndNullTest();
   ImageAnimatorImagesUndefinedAndNullTest();
   AnimationStopModeTest();
+  ImageColorFilterTest();
+  ImageReloadKeyTest();
 }

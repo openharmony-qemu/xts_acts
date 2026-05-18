@@ -22,6 +22,11 @@ import checkBoxGroupTest  from "./checkBoxGroup/checkBoxGroupTest.test";
 import radioTest  from "./radio/radioTest.test";
 import sliderTest  from "./slider/sliderTest.test";
 import toggleTest  from "./toggle/toggleTest.test";
+import GridAttributeTest from './grid/GridAttributeTest.test'
+import ListAttributeTest from './list/ListAttributeTest.test'
+import ScrollAttributeTest from './scroll/ScrollAttributeTest.test'
+import RefreshAttributeTest from './refresh/RefreshAttributeTest.test'
+import WaterFlowAttributeTest from './waterFlow/WaterFlowAttributeTest.test'
 
 export default function testsuite() {
   SwiperWithResetTest();
@@ -34,4 +39,9 @@ export default function testsuite() {
   radioTest();
   sliderTest();
   toggleTest();
+  GridAttributeTest();
+  ListAttributeTest();
+  ScrollAttributeTest();
+  RefreshAttributeTest();
+  WaterFlowAttributeTest();
 }

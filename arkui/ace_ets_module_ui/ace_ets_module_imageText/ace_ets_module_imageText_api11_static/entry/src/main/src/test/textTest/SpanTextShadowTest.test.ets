@@ -107,7 +107,7 @@ export default function SpanTextShadowTest() {
       let strJson = inspector.getInspectorByKey('spanTextShadow2');
       let obj = JSON.parseJsonElement(strJson);
       console.log('spanTextShadow2-----' +JSON.stringify(obj.getElement('$attrs').getElement('textShadow')));
-      expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual('0.000000');
+      expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual('-1.000000');
       expect(obj.getElement('$attrs').getElement('textShadow').getString('color')).assertEqual('#FF008000');
       expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetX')).assertEqual('-10.000000');
       expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetY')).assertEqual('-10.000000');
@@ -136,7 +136,7 @@ export default function SpanTextShadowTest() {
       expect(item1.getString('offsetX')).assertEqual('10.000000');
       expect(item1.getString('offsetY')).assertEqual('10.000000');
       expect(item1.getString('type')).assertEqual('0');
-      expect(item2.getString('radius')).assertEqual('0.000000');
+      expect(item2.getString('radius')).assertEqual('-1.000000');
       expect(item2.getString('color')).assertEqual('#FF008000');
       expect(item2.getString('offsetX')).assertEqual('-10.000000');
       expect(item2.getString('offsetY')).assertEqual('-10.000000');

@@ -225,13 +225,13 @@ it('LinkClassArrJsunit_static_0500', Level.LEVEL0, async (done: () => void): Pro
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[LinkClassArrJsunit_static_0500] component obj1 is: " + JSON.stringify(obj1));
       console.info("[LinkClassArrJsunit_static_0500] text: " + JSON.stringify(obj1.getElement('$attrs').getString('content')));
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual("classArrPar: 1");
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual("classArrPar: 3");
 
       let strJson2 = inspector.getInspectorByKey('classArr_SonAC');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[LinkClassArrJsunit_static_0500] component obj2 is: " + JSON.stringify(obj2));
       console.info("[LinkClassArrJsunit_static_0500] text: " + JSON.stringify(obj2.getElement('$attrs').getString('content')));
-      expect(obj2.getElement('$attrs').getString('content')).assertEqual("classArrSon: 1");
+      expect(obj2.getElement('$attrs').getString('content')).assertEqual("classArrSon: 3");
 
       console.info('[LinkClassArrJsunit_static_0500] END');
       done();
@@ -254,13 +254,13 @@ it('LinkClassArrJsunit_static_0600', Level.LEVEL0, async (done: () => void): Pro
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[LinkClassArrJsunit_static_0600] component obj1 is: " + JSON.stringify(obj1));
       console.info("[LinkClassArrJsunit_static_0600] text: " + JSON.stringify(obj1.getElement('$attrs').getString('content')));
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual("classArrSon: 1");
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual("classArrSon: 2");
 
       let strJson2 = inspector.getInspectorByKey('classArr_ParentAC');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[LinkClassArrJsunit_static_0600] component obj2 is: " + JSON.stringify(obj2));
       console.info("[LinkClassArrJsunit_static_0600] text: " + JSON.stringify(obj2.getElement('$attrs').getString('content')));
-      expect(obj2.getElement('$attrs').getString('content')).assertEqual("classArrPar: 1");
+      expect(obj2.getElement('$attrs').getString('content')).assertEqual("classArrPar: 2");
 
       console.info('[LinkClassArrJsunit_static_0600] END');
       done();

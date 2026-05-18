@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -30,8 +30,9 @@ import web_webview from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import emitter from '@ohos.events.emitter';
 import image from '@ohos.multimedia.image';
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 
@@ -99,6 +100,13 @@ struct webViewOnSslErrorEvent {
               this.controller.clearSslCache();
               this.controller.loadUrl('https://expired.badssl.com')
               break;
+            }
+
+            case 'emitonSwitchNextPage': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/webErrorPage' })
+              console.log('push URL success')
             }
           }
         })

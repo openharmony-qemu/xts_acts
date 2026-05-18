@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -114,9 +114,9 @@ it('PanGesture1_static_0200', Level.LEVEL0, async (done: () => void): Promise<vo
       let colum = CommonFunc.getComponentRectOnScreen('PanGesture1');
       let top = colum.top
       let left = colum.left
-      await ((driver.swipe(Math.round(AppStorage.get<number>("winLeft") as number + 100) as Int,
-        Math.round(top + 100) as Int,
-        Math.round(AppStorage.get<number>("winLeft") as number + 500) as Int, Math.round(top + 500) as Int,
+      await ((driver.swipe(Math.round(AppStorage.get<number>("winLeft") as number + 100).toInt(),
+        Math.round(top + 100).toInt(),
+        Math.round(AppStorage.get<number>("winLeft") as number + 500).toInt(), Math.round(top + 500).toInt(),
         600)) as Promise<void>)
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('PanGesture1_1');

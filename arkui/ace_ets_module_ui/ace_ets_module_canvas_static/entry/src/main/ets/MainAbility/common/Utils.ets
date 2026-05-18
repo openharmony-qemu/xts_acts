@@ -1,6 +1,21 @@
+/**
+ * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,55 +28,54 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import RectValue from './Rect';
-import inspector from '@ohos.arkui.inspector';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { TouchObject, TouchType } from '@ohos.arkui.component';
+import { Memo, __memo_context_type, __memo_id_type } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
+import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, TouchObject, TouchType } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
+import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
+import inspector from '@ohos.arkui.inspector'
 import { sendTouchEvent } from "@ohos.arkui.Test";
 
 export default class Utils {
-  static rect_left: number;
-  static rect_top: number;
-  static rect_right: number;
-  static rect_bottom: number;
+  static rect_left: number = 0;
+  static rect_top: number = 0;
+  static rect_right: number = 0;
+  static rect_bottom: number = 0;
   static rect_value: RectValue = new RectValue();
 
   static getComponentRect(key: string) {
-    let strJson = inspector.getInspectorByKey(key);
-    let obj: Record<string, undefined|null|Object> =
-      JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, undefined|null|Object>;
+    let strJson: string = inspector.getInspectorByKey(key);
+    let obj: Record<string, Object> = JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
     console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo: Array<Array<number>> =
-      JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
-    console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' +
-      "windowRect Top: " +
-    AppStorage.get<number>("winTop as Int"));
-    CommonFunc.rect_left = Number(rectInfo[0][0] ?? 0);
-    CommonFunc.rect_top = Number(rectInfo[0][1] ?? 0);
-    CommonFunc.rect_right = Number(rectInfo[1][0] ?? 0);
-    CommonFunc.rect_bottom = Number(rectInfo[1][1] ?? 0);
-    return CommonFunc.rect_value = {
-      "left": CommonFunc.rect_left,
-      "top": CommonFunc.rect_top,
-      "right": CommonFunc.rect_right,
-      "bottom": CommonFunc.rect_bottom
+    Utils.rect_left = Number(rectInfo[0][0] ?? 0);
+    Utils.rect_top = Number(rectInfo[0][1] ?? 0);
+    Utils.rect_right = Number(rectInfo[1][0] ?? 0);
+    Utils.rect_bottom = Number(rectInfo[1][1] ?? 0);
+    return Utils.rect_value = {
+      left: Utils.rect_left, top: Utils.rect_top, right: Utils.rect_right, bottom: Utils.rect_bottom
     }
   }
 
-  static sleep(time: int) {
-    return new Promise<string>((resolve, reject) => {
+  static async sleep(count:int) : Promise<int> {
+    return new Promise<int>((resolve, reject) => {
       setTimeout(() => {
-        resolve("ok")
-      }, time)
-    }).then(() => {
-      console.info(`sleep ${time} over...`)
+        resolve(0)
+      }, count)
     })
   }
 
+  static async swipe(downX: number, downY: number, upX: number, upY: number, steps: number) {
+    console.info('start to swipe')
+    Utils.drags(downX, downY, upX, upY, steps, false)
+  }
+
   static async drag(downX: number, downY: number, upX: number, upY: number, steps: number) {
+    console.info('start to drag')
+    Utils.drags(downX, downY, upX, upY, steps, true)
+  }
+
+  static async drags(downX: number, downY: number, upX: number, upY: number, steps: number, drag:boolean) {
     console.info('start to drag')
     let xStep: number;
     let yStep: number;
@@ -90,7 +104,7 @@ export default class Utils {
     console.info('down touch started: ' + JSON.stringify(downPoint))
     sendTouchEvent(downPoint);
     console.info('start to move')
-    if (true) {
+    if (drag) {
       Utils.sleep(500)
     }
     for (let i = 1; i <= swipeSteps; i++) {
@@ -112,7 +126,7 @@ export default class Utils {
       Utils.sleep(5)
     }
     console.info('start to up')
-    if (true) {
+    if (drag) {
       Utils.sleep(100)
     }
     let upPoint: TouchObject = {
@@ -130,3 +144,7 @@ export default class Utils {
     Utils.sleep(500)
   }
 }
+
+
+
+

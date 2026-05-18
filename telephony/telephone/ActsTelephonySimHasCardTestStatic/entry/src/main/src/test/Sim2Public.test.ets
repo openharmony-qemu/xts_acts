@@ -1635,6 +1635,56 @@ export default function Sim2Public() {
     });
 
     /**
+     * @tc.name   testTelephonySimHasOperaterPrivileges_static_0900
+     * @tc.number SUB_Telephony_Sim_HasOperaterPrivileges_0900
+     * @tc.desc   SIMCard required Check if the application (caller) has been granted operator permissions. Use callback for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testTelephonySimHasOperaterPrivileges_static_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testTelephonySimHasOperaterPrivileges_static_0900';
+        hilog.info(domain, tag, `${caseName} test start `);
+        try {
+          sim.hasSimCard(0, (err: BusinessError<void> | null, data: boolean | undefined) => {
+            if (data) {
+              hilog.info(domain, tag, `${caseName}:success has SimCard1,data->${JSON.stringify(data)}`);
+              sim.hasOperatorPrivileges(0, (err: BusinessError<void> | null, data: boolean | undefined) => {
+                hilog.info(domain, tag, `${caseName}:00000000,data->${JSON.stringify(data)}`);
+                if (data == false) {
+                  hilog.info(domain, tag,
+                    `${caseName}:Invalid parameter value. err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+                  expect(data).assertFalse();
+                  hilog.info(domain, tag, `${caseName} test end `);
+                  done();
+                } else {
+                  ExpectFail();
+                  hilog.info(domain, tag, `${caseName} test end `);
+                  done();
+                }
+              });
+            } else {
+              hilog.info(domain, tag, `${caseName}:fail Do not have SimCard1,data->${JSON.stringify(data)}`);
+              ExpectFail();
+              hilog.info(domain, tag, `${caseName} test end `);
+              done();
+            }
+          });
+        } catch (err) {
+          let error = err as BusinessError;
+          hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(error)}`);
+          if (error?.code === PERMISSION_DENIED_CODE) {
+            expect(error?.code).assertEqual(PERMISSION_DENIED_CODE);
+          } else {
+            expect(error?.code).assertEqual(PARAMETER_ERROR_CODE);
+          }
+          hilog.info(domain, tag, `${caseName} test end`);
+          done();
+        }
+      });
+
+    /**
      * @tc.name   testTelephonySimHasOperaterPrivileges_static_1700
      * @tc.number SUB_Telephony_Sim_HasOperaterPrivileges_1700
      * @tc.desc   SIMCard required Check if the application (caller) has been granted operator permissions. Use callback for asynchronous promise.

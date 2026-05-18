@@ -22,12 +22,12 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,Resource,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
+  Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
   ColumnAttribute, ColumnSplitAttribute, CounterAttribute, DataPanelAttribute, DatePickerAttribute, DividerAttribute,
-  EllipseAttribute, FlexAttribute, FlowItemAttribute, FormLinkAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
+  EllipseAttribute, FlexAttribute, FlowItemAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
   GridItemAttribute, GridRowAttribute, HyperlinkAttribute, ImageAttribute, ImageAnimatorAttribute, LineAttribute, ListAttribute,
   ListItemAttribute, ListItemGroupAttribute, LoadingProgressAttribute, MarqueeAttribute, MenuAttribute, MenuItemAttribute,
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
@@ -37,7 +37,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,Navigation,NavDestination,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, BorderImageOption, EffectComponentAttribute,CommonMethod,applyStyles,
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, BorderImageOption, EffectComponentAttribute,CommonMethod,applyStyles,
   FormComponentAttribute, ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, AlignRuleOption } from '@ohos.arkui.component'
 import { State, AppStorage, StoragePropRef,Observed } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
@@ -160,13 +160,6 @@ export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
 export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
   mColorBlend: Color = Color.Green
   applyNormalAttribute(instance: FormComponentAttribute): void {
-    console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
-    instance.colorBlend(this.mColorBlend)
-  }
-}
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mColorBlend: Color = Color.Green
-  applyNormalAttribute(instance: FormLinkAttribute): void {
     console.info(`colorBlend page show ${JSON.stringify(this.mColorBlend)}`)
     instance.colorBlend(this.mColorBlend)
   }
@@ -577,7 +570,6 @@ struct colorBlendPage {
   @State _colorBlendFlexMod: FlexModifier = new FlexModifier()
   @State _colorBlendFlowItemMod: FlowItemModifier = new FlowItemModifier()
   @State _colorBlendFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  @State _colorBlendFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _colorBlendGaugeMod: GaugeModifier = new GaugeModifier()
   @State _colorBlendGridMod: GridModifier = new GridModifier()
   @State _colorBlendGridColMod: GridColModifier = new GridColModifier()

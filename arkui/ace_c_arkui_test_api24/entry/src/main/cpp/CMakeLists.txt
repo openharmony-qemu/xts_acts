@@ -26,6 +26,9 @@ add_library(nativerender SHARED
     enableClickSoundEffect/EnableClickSoundEffectTest.cpp
     EllipsisMode/EllipsisModeCenterTest.cpp
     EllipsisMode/EllipsisModeStartTest.cpp
+    pointerEventGetCurrentLocal/PointerEventGetCurrentLocalTest.cpp
+    TextGetCharacter/TextGetCharacterTest.cpp
+    FrameNode/CrossLanguageOptionsSupportFiveMethodsTest.cpp
 )
 
 add_library(nativefunc SHARED

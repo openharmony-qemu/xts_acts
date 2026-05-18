@@ -22,7 +22,7 @@ import events_emitter from '@ohos.events.emitter';
 import { BusinessError, Callback, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { canIUse } from '@internal.full.global'
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 
@@ -119,7 +119,12 @@ struct webViewController {
                 }
                 break;
               }
-
+              case 'SwitchNextPageStatic' : {
+                let uiContext: UIContext = this.getUIContext();
+                let router: Router = uiContext.getRouter();
+                router.pushUrl({ url: 'pages/WebEnableDataDetector' })
+                console.log('push URL success')
+              }
 
             }
           })

@@ -566,7 +566,7 @@ export default function JSONStringifyClassBasicTest() {
     it('JSONStringify_Class_Inheritance_008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const obj = new Test012ChildClass();
       let result: string = JSON.stringify(obj);
-      expect(result).assertEqual('{"childProp":"child","interfaceProp":"interface"}');
+      expect(result).assertEqual('{"interfaceProp":"interface","childProp":"child"}');
     });
 
 
@@ -623,7 +623,7 @@ export default function JSONStringifyClassBasicTest() {
     it('JSONStringify_Class_Interface_004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const obj = new Test016MyClass();
       let result: string = JSON.stringify(obj);
-      expect(result).assertEqual('{"prop2":42,"prop1":"value1"}');
+      expect(result).assertEqual('{"prop1":"value1", "prop2":42}');
     });
 
     /**

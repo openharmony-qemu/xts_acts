@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -374,7 +374,7 @@ struct SliderExample {
           style: this.rightButtonStyleParam,
           icon: {
             size: this.rightCancelIconSizeNumber,
-            color: this.rightCancelIconColorNumber as int,
+            color: this.rightCancelIconColorNumber.toInt(),
             src: this.rightIconSrcPath
           } as IconOptions
         } as CancelButtonOptions)
@@ -382,12 +382,12 @@ struct SliderExample {
           'Search',
           {
             fontSize: this.searchButtonFontSizeNumber,
-            fontColor: this.searchButtonFontColorNumber as int
+            fontColor: this.searchButtonFontColorNumber.toInt()
           }
         )
         .placeholderFont(this.placeholderFont)
         .textFont(this.textFont)
-        .fontColor(this.textColorNumber as int)
+        .fontColor(this.textColorNumber.toInt())
         .key('searchTestfontcaretcolor')
 
       Search({ value: '', placeholder: 'Type to search...' })
@@ -418,7 +418,7 @@ struct SliderExample {
         .margin(5)
         .caretStyle({
           width: this.caretWidthNumber,
-          color: this.caretColorNumber as int
+          color: this.caretColorNumber.toInt()
         })
         .searchIcon({
           size: this.leftSearchIconSizeNumber,
@@ -429,7 +429,7 @@ struct SliderExample {
           style: this.rightButtonStyleParam,
           icon: {
             size: this.rightCancelIconSizeNumber,
-            color: this.rightCancelIconColorNumber as int,
+            color: this.rightCancelIconColorNumber.toInt(),
             src: this.rightIconSrcPath
           } as IconOptions
         } as CancelButtonOptions)
@@ -437,12 +437,12 @@ struct SliderExample {
           'Search',
           {
             fontSize: this.searchButtonFontSizeNumber,
-            fontColor: this.searchButtonFontColorNumber as int
+            fontColor: this.searchButtonFontColorNumber.toInt()
           }
         )
         .placeholderFont(this.placeholderFont)
         .textFont(this.textFont)
-        .fontColor(this.textColorNumber as int)
+        .fontColor(this.textColorNumber.toInt())
         .key('searchTestNumber')
 
       Search({ value: '', placeholder: 'Type to search...' })

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -95,28 +95,28 @@ export default class Utils {
     let driver: Driver = Driver.create();
     let pointers: PointerMatrix = PointerMatrix.create(2, 3);
     pointers.setPoint(0, 0, {
-      x: Math.round(centerX) as Int,
-      y: Math.round(fingerUpCenterY - (isOut ? 40 : 120)) as Int
+      x: Math.round(centerX).toInt(),
+      y: Math.round(fingerUpCenterY - (isOut ? 40 : 120)).toInt()
     });
     pointers.setPoint(0, 1, {
-      x: Math.round(centerX) as Int,
-      y: Math.round(fingerUpCenterY - 80) as Int
+      x: Math.round(centerX).toInt(),
+      y: Math.round(fingerUpCenterY - 80).toInt()
     });
     pointers.setPoint(0, 2, {
-      x: Math.round(centerX) as Int,
-      y: Math.round(fingerUpCenterY - (isOut ? 120 : 40)) as Int
+      x: Math.round(centerX).toInt(),
+      y: Math.round(fingerUpCenterY - (isOut ? 120 : 40)).toInt()
     });
     pointers.setPoint(1, 0, {
-      x: Math.round(centerX) as Int,
-      y: Math.round(fingerUpCenterY + (isOut ? 40 : 120)) as Int
+      x: Math.round(centerX).toInt(),
+      y: Math.round(fingerUpCenterY + (isOut ? 40 : 120)).toInt()
     });
     pointers.setPoint(1, 1, {
-      x: Math.round(centerX) as Int,
-      y: Math.round(fingerUpCenterY + 80) as Int
+      x: Math.round(centerX).toInt(),
+      y: Math.round(fingerUpCenterY + 80).toInt()
     });
     pointers.setPoint(1, 2, {
-      x: Math.round(centerX) as Int,
-      y: Math.round(fingerUpCenterY - (isOut ? 120 : 40)) as Int
+      x: Math.round(centerX).toInt(),
+      y: Math.round(fingerUpCenterY - (isOut ? 120 : 40)).toInt()
     });
     await driver.injectMultiPointerAction(pointers);
   }

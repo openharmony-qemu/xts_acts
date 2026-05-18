@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 import webViewControllerDownloadTest from './WebViewControllerDownloadTest.test'
+import getReferrerUrlTest from './GetReferrerUrlTest.test'
 
 export default function testsuite() {
   webViewControllerDownloadTest()
+  getReferrerUrlTest()
 }

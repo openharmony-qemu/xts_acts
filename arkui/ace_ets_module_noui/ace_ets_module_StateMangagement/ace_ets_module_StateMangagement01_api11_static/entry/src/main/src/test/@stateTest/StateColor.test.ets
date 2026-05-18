@@ -145,7 +145,7 @@ it('StateColor_static_0300', Level.LEVEL0, async (done: () => void): Promise<voi
       let obj = JSON.parseJsonElement(strJson);
       console.info("[StateColor_static_0100] component obj is: " + JSON.stringify(obj));
       console.info("[StateColor_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('count type of "[object Undefined]" number is undefined');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('count type of "[object Undefined]" number is ');
       console.info('[StateColor_static_0100] END');
       done();
     });

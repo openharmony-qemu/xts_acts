@@ -980,3 +980,7 @@ export const VideoDecoder_Start: () => number;
 export const EnumOHScalingMode1: () => number;
 
 export const EnumOHScalingMode2: () => number;
+
+export const EnumOHEnableSkipSamples1: () => number;
+
+export const EnumOHEnableSkipSamples2: () => number;

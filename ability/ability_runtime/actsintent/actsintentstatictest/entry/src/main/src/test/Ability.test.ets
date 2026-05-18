@@ -59,5 +59,44 @@ export default function abilityTest() {
         }
         hilog.info(DOMAIN, TAG, `[${caseName}]: end`);
       })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRunTime_InsightIntentProvider_Static_4900
+     * @tc.number SUB_Ability_AbilityRunTime_InsightIntentProvider_Static_4900
+     * @tc.desc   Test sendIntentResult error code 16000003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Ability_AbilityRunTime_InsightIntentProvider_Static_4900',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'SUB_Ability_AbilityRunTime_InsightIntentProvider_Static_4900';
+        hilog.info(DOMAIN, TAG, `${caseName} start`);
+        const instanceId: int = -1;
+        const result: insightIntent.IntentResult<string> ={
+          "code": 0,
+          result: 'success'
+        }
+        try {
+          insightIntentProvider.sendIntentResult(instanceId, result).then(() => {
+            hilog.info(DOMAIN, TAG, `${caseName} sendIntentResult success`);
+            expect().assertFail();
+            done();
+            hilog.info(DOMAIN, TAG, `${caseName} end`);
+          }).catch((e) => {
+            hilog.info(DOMAIN, TAG, `${caseName} sendIntentResult fail`);
+            const err = e as BusinessError;
+            expect(`${err?.code}`).assertEqual('16000003');
+            expect(e?.message).assertEqual('The specified ID does not exist.');
+            done();
+            hilog.info(DOMAIN, TAG, `${caseName} end`);
+          })
+        } catch (e) {
+          expect().assertFail();
+          done();
+          hilog.info(DOMAIN, TAG, `${caseName} end`);
+        }
+      })
   })
 }

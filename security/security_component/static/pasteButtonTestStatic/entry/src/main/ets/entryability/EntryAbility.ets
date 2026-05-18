@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+
 import UIAbility from '@ohos.app.ability.UIAbility';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import Want from '@ohos.app.ability.Want';
@@ -50,13 +50,13 @@ class EntryAbility extends UIAbility {
         // 获取UIContext实例。
         let uiContext: UIContext | null = null;
         uiContext = windowClass!.getUIContext();
-        if (UIContext) {
+        if (uiContext) {
           hilog.info(0x0000, 'testTag EntryAbility', 'UIContext ok');
           AppStorage.setOrCreate<UIContext>('UIContext', uiContext);
           hilog.info(0x0000, 'testTag EntryAbility', 'setOrCreate UIContext seccess');
         } else {
           hilog.info(0x0000, 'testTag EntryAbility', 'UIContext is undefined');
-        }  
+        }
       });
     });
   }

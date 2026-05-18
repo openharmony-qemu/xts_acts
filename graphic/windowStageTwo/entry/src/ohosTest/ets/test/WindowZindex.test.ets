@@ -386,7 +386,7 @@ export default function windowZindexTest() {
             subWindow2.loadContent('testability/pages/First/index3', storage);
             await subWindow2.showWindow();
             console.log(msgStr + 'windowStage.show SubWindow2 success');
-            await sleep(100);
+            await sleep(1000);
             let promise4 = subWindow1.setRaiseByClickEnabled(true);
             promise4.then(async () => {
               console.info(msgStr + 'Succeeded in setRaiseByClickEnabled the window to app top.');
@@ -477,7 +477,7 @@ export default function windowZindexTest() {
             subWindow2.loadContent('testability/pages/First/index3', storage);
             await subWindow2.showWindow();
             console.log(msgStr + 'windowStage.show SubWindow2 success');
-            await sleep(100);
+            await sleep(1000);
             let promise4 = subWindow1.setRaiseByClickEnabled(false);
             promise4.then(async () => {
               console.info(msgStr + 'Succeeded in setRaiseByClickEnabled the window to app top.');
@@ -2207,6 +2207,64 @@ export default function windowZindexTest() {
         done();
       }
     })
+
+    /**
+     * @tc.number  testGetLastWindowCallbackwithContextUndefined
+     * @tc.name    testGetLastWindowCallbackwithContextUndefined
+     * @tc.desc   调用getLastWindow callback接口，ctx设置为undefined，返回1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testGetLastWindowCallbackwithContextUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testGetLastWindowCallbackwithContextUndefined';
+      try {
+        window.getLastWindow(undefined, (err: BusinessError, data: window.Window) => {
+          if (err && err.code) {
+            console.error(`${caseName} Failed to get last window. Cause code: ${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(1300002);
+            expect((err.message as string).length > 0).assertTrue();
+            done();
+          } else {
+            console.info(`${caseName} Succeeded in getting last window. Data: ${JSON.stringify(data)}`);
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch (err) {
+        console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number  testGetLastWindowPromisewithContextUndefined
+     * @tc.name    testGetLastWindowPromisewithContextUndefined
+     * @tc.desc   调用getLastWindow promise接口，ctx设置为undefined，返回1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testGetLastWindowPromisewithContextUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testGetLastWindowPromisewithContextUndefined';
+      try {
+        window.getLastWindow(undefined).then((data: window.Window) => {
+          console.info(`${caseName} Succeeded in getting last window. Data: ${JSON.stringify(data)}`);
+          expect(false).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`${caseName} Failed to get last window. Cause code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(1300002);
+          expect((err.message as string).length > 0).assertTrue();
+          done();
+        });
+      } catch (err) {
+        console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
 
 
   })

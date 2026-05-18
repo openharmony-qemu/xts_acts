@@ -22,6 +22,7 @@ import CommonSegmentButtonOptionsTest from './segmentButton/CommonSegmentButtonO
 import SegmentButtonItemOptionsTest from './segmentButton/SegmentButtonItemOptions.test';
 import TabSegmentButtonOptionsTest from './segmentButton/TabSegmentButtonOptions.test';
 import MultiSegmentButtonV2PageTest from './segmentButtonV2/MultiSegmentButtonV2PageTest.test';
+import MultiSegmentButtonV2UndefinedPageTest from './segmentButtonV2/MultiSegmentButtonV2UndefinedPageTest.test';
 import SegmentButtonV2Test from './capsuleSegmentButtonV2/SegmentButtonV2.test';
 import SegmentButtonV2Test0010 from './segmentButtonV2/SegmentButtonV2Test0010.test';
 import CapsuleSegmentButtonAttributeTest from './SegmentButtonAttribute/CapsuleSegmentButtonAttributeTest.test';
@@ -34,7 +35,6 @@ import segmentButtonDirectionTest from './segmentButton/segmentbuttonDirection.t
 import SegmentBtnItemTest0010 from './segmentButton/SegmentBtnItemTest0010.test';
 import SegmentButtonItemOptionsArrayTest from './segmentButton/SegmentButtonItemOptionsArray.test';
 import segmentButtonEnableStateAnimation from './segmentButton/segmentButtonEnableStateAnimation.test';
-import CapsuleSegementButtonV2Animation from './capsuleSegmentButtonV2/CapsuleSegementButtonV2Animation.test';
 
 export default function testsuite() {
   SegmentButtonOptionsTest();
@@ -45,6 +45,7 @@ export default function testsuite() {
   SegmentButtonItemOptionsTest();
   TabSegmentButtonOptionsTest();
   MultiSegmentButtonV2PageTest();
+  MultiSegmentButtonV2UndefinedPageTest();
   SegmentButtonV2Test();
   SegmentButtonV2Test0010();
   CapsuleSegmentButtonAttributeTest();
@@ -57,5 +58,4 @@ export default function testsuite() {
   SegmentBtnItemTest0010();
   SegmentButtonItemOptionsArrayTest();
   segmentButtonEnableStateAnimation();
-  CapsuleSegementButtonV2Animation();
 }

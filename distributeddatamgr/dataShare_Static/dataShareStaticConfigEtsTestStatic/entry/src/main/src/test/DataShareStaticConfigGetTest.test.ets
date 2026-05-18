@@ -647,7 +647,8 @@ export default function dataShareStaticConfigGetTest() {
           results.forEach((result) => {
             console.info(TAG + `[DataShareProvider] URI:${result.uri},Value:${result.value},Result:${result.result},AllowList:${result.allowList}`);
             console.log(TAG + "[DataShareProvider] get value length is:" + result.value?.toString().length);
-            expect(result.result).assertEqual(1);
+            // static proxyData value allows 100K, but config.maxValueLength limits to 4K -> return OVER_LIMIT
+            expect(result.result).assertEqual(3);
           });
         }).catch((err: Error) => {
           console.error(TAG + "[DataShareProvider] get failed.err =" + JSON.stringify(err));

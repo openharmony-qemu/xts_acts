@@ -86,6 +86,14 @@ import StackTest02 from "./stack/StackTest02.test"
 import StackTest03 from "./stack/StackTest03.test"
 import StackTest04 from "./stack/StackTest04.test"
 
+import URL01Test from './url/URLTest01.test';
+import URL02Test from './url/URLTest02.test';
+import URI01Test from './uri/URITest01.test';
+import URI02Test from './uri/URITest02.test';
+import URI03Test from './uri/URITest03.test';
+import URI04Test from './uri/URITest04.test';
+import URI05Test from './uri/URITest05.test';
+
 export default function testsuite() {
   LRUCacheTest();
   TextDecoderTest();
@@ -172,5 +180,14 @@ export default function testsuite() {
   StackTest02();
   StackTest03();
   StackTest04();
+
+  URL01Test();
+  URL02Test();
+
+  URI01Test();
+  URI02Test();
+  URI03Test();
+  URI04Test();
+  URI05Test();
 };
 

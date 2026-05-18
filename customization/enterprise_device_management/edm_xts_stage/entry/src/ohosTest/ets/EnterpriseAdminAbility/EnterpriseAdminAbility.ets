@@ -137,4 +137,15 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
   onDeviceBootCompleted(): void {
     console.info('EnterpriseAdminExtensionAbility onDeviceBootCompleted');
   }
+
+  onAdminPolicyChanged(event: common.PolicyChangedEvent): void {
+    console.info(`policy changed. bundleName: ${event.bundleName}`);
+    console.info(`policy changed. functionName: ${event.functionName}`);
+    console.info(`policy changed. parameters: ${JSON.stringify(event.parameters)}`);
+    console.info(`policy changed. time: ${event.time}`);
+    expect(event.bundleName.length > 0).assertTrue();
+    expect(event.functionName.length > 0).assertTrue();
+    expect(event.parameters !== null).assertTrue();
+    expect(event.time > 0).assertTrue();
+  }
 }

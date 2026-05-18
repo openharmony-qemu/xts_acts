@@ -56,7 +56,6 @@ export default function ActsOsAccountTestStatic() {
               done();
             });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>GetSerialNumberForOsAccountLocalId_0300 error: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -93,7 +92,6 @@ export default function ActsOsAccountTestStatic() {
               done();
             });
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>GetSerialNumberForOsAccountLocalId_0400 error: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -116,7 +114,6 @@ export default function ActsOsAccountTestStatic() {
           expect().assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>GetSerialNumberForOsAccountLocalId_0700 error: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300003);
           done();
@@ -139,7 +136,6 @@ export default function ActsOsAccountTestStatic() {
           expect().assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>GetSerialNumberForOsAccountLocalId_0800 error: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300003);
           done();

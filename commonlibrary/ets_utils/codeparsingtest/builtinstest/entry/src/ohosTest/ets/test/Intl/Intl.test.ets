@@ -10100,14 +10100,14 @@ export default function IntlTest() {
     })
 
     /**
-     * @tc.name    testIntlRelativeTimeFormatConstructor0002
+     * @tc.name   testIntlRelativeTimeFormatConstructor0002Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INTL_30700
      * @tc.desc   Test the function of the interface RelativeTimeFormatConstructor.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it(' testIntlRelativeTimeFormatConstructor0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testIntlRelativeTimeFormatConstructor0002Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = " testIntlRelativeTimeFormatConstructor0002";
       try {
         const locales = "test";

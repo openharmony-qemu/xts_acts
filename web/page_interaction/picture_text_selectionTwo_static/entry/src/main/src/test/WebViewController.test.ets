@@ -172,5 +172,23 @@ export default function webViewController() {
         await Utils.msSleep(2000);
         done();
       })
+
+
+    /**
+     * @tc.name   testOnSwitchNextPage
+     * @tc.number SUB_WEB_EMITONSWITCHNEXTPAGE_TITLE_0100
+     * @tc.desc   test HistoryItem title
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEXT
+     * @tc.level  LEVEL3
+     */
+    it('testOnSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent("emitonSwitchNextPage", 10)
+        await Utils.msSleep(3000);
+        inspector.sendEventByKey('WebViewControllerButton', 10, '');
+        await Utils.msSleep(8000);
+        done()
+      })
   })
 }

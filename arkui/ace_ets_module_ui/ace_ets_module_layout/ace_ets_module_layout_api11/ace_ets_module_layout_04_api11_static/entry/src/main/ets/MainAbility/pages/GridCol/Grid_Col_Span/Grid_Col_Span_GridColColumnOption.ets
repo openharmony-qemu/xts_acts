@@ -46,7 +46,7 @@ struct Grid_Col_Span_GridColColumnOption {
           reference: BreakpointsReference.ComponentSize } as BreakPoints,
         direction: GridRowDirection.Row
       }) {
-        ForEach(this.bgColors, (color: Color, index?: number) => {
+        ForEach(this.bgColors, (color: Color, index?: int) => {
           GridCol({
             span: {
               xs: 1,

@@ -57,6 +57,20 @@ export default function ActsAcewebViewCookieTrack() {
       sendEventByKey('webViewCookieTrackTriggerButton', 10, '');
     })
 
+    /**
+     * @tc.name   testCookieTrackClearTrackingPrevention
+     * @tc.number SUB_ACE_WEB_clearIntelligentTrackingPreventionByPassingList_API_0005
+     * @tc.desc   test clearIntelligentTrackingPreventionByPassingList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testCookieTrackClearTrackingPrevention', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let emitKey = "emitCookieTrackClearTrackingPrevention";
+      Utils.emitEvent(emitKey, 160060)
+      Utils.registerEvent("testCookieTrackClearTrackingPrevention", true, 160090, done);
+      sendEventByKey('webViewCookieTrackTriggerButton', 10, '');
+    })
 
     /**
      * @tc.name   testWebViewCookieTrackEnableFalse
@@ -73,20 +87,5 @@ export default function ActsAcewebViewCookieTrack() {
       sendEventByKey('webViewCookieTrackTriggerButton', 10, '');
     })
 
-
-    /**
-     * @tc.name   testCookieTrackClearTrackingPrevention
-     * @tc.number SUB_ACE_WEB_clearIntelligentTrackingPreventionByPassingList_API_0005
-     * @tc.desc   test clearIntelligentTrackingPreventionByPassingList
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testCookieTrackClearTrackingPrevention', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let emitKey = "emitCookieTrackClearTrackingPrevention";
-      Utils.emitEvent(emitKey, 160060)
-      Utils.registerEvent("testCookieTrackClearTrackingPrevention", true, 160090, done);
-      sendEventByKey('webViewCookieTrackTriggerButton', 10, '');
-    })
   })
 }

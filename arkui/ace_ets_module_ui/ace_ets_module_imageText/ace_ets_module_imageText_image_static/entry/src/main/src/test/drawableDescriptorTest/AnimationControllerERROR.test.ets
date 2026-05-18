@@ -78,7 +78,7 @@ export default function ImageAnimationControllerERRORTest() {
       let strJson = inspector.getInspectorByKey('ControllerText');
       let obj = JSON.parseJsonElement(strJson);
       console.info('AnimationControllerERROR_static_001 is: ' + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('undefined');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('');
       done();
     })
 

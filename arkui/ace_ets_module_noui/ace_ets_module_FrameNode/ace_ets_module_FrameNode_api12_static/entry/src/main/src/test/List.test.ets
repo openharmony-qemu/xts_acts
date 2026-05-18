@@ -18,11 +18,20 @@ import frameNodeTest from './frameNodeTest/frameNodeTest.test';
 import frameNodeTest1 from './frameNodeTest/frameNodeTest1.test';
 import nodeContainerTest from './frameNodeTest/nodeContainerTest.test';
 import frameNodeGetInterfaceTest from './frameNodeTest/frameNodeTestGetInterface.test';
+import GetFrameNodeByIdTest from './frameNodeTest/GetFrameNodeById.test';
+import GetFrameNodeByUniqueIdTest from './frameNodeTest/GetFrameNodeByUniqueId.test';
+import createFrameNodesUIContextIntTest from './frameNodeTest/createFrameNodesUIContextIntTest.test';
+import ComponentContentIsTransferredTest from './frameNodeTest/ComponentContentIsTransferredTest.test';
+import ComponentContentIsDisposedTest from './frameNodeTest/ComponentContentIsDisposedTest.test';
 
 export default function testsuite() {
   frameNodeGetInterfaceTest()
   frameNodeTest()
   frameNodeTest1()
   nodeContainerTest()
-
+  GetFrameNodeByIdTest()
+  GetFrameNodeByUniqueIdTest()
+  ComponentContentIsTransferredTest()
+ 	ComponentContentIsDisposedTest()
+  createFrameNodesUIContextIntTest()
 }

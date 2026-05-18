@@ -3,6 +3,7 @@
     "pages/geolocationPermissions",
     "pages/bindSelectionMenu",
     "pages/WebAttributeTest",
-    "pages/WebViewEnumAndFontLibrary"
+    "pages/WebViewEnumAndFontLibrary",
+	"pages/SaveImageMenu"
   ]
 }

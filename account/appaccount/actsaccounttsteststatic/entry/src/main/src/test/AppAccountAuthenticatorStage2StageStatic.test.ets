@@ -473,7 +473,6 @@ export default function AppAccountAuthenticatorStage2StageStatic() {
           expect(ret).assertFalse();
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AuthenticatorStage2Stage_1000 err: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -498,7 +497,6 @@ export default function AppAccountAuthenticatorStage2StageStatic() {
           expect(ret).assertTrue();
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AuthenticatorStage2Stage_1001 err: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -565,7 +563,6 @@ export default function AppAccountAuthenticatorStage2StageStatic() {
           expect(ret[0].owner).assertEqual("com.acts.accountauthenticator.static");
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AuthenticatorStage2Stage_1200 err: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -625,7 +622,6 @@ export default function AppAccountAuthenticatorStage2StageStatic() {
           expect(ret.owner).assertEqual("com.acts.accountauthenticator.static");
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>AuthenticatorStage2Stage_1400 err: " + JSON.stringify(err));
           expect(err).assertEqual(null);
           done();
@@ -1197,7 +1193,6 @@ export default function AppAccountAuthenticatorStage2StageStatic() {
           expect().assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300002);
@@ -1262,7 +1257,6 @@ export default function AppAccountAuthenticatorStage2StageStatic() {
           expect().assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300113);
@@ -1700,7 +1694,6 @@ export default function AppAccountAuthenticatorStage2StageStatic() {
           expect().assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300002);
@@ -1763,7 +1756,6 @@ export default function AppAccountAuthenticatorStage2StageStatic() {
           expect().assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300113);
@@ -1823,7 +1815,6 @@ export default function AppAccountAuthenticatorStage2StageStatic() {
           expect().assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300003);
@@ -1895,7 +1886,6 @@ export default function AppAccountAuthenticatorStage2StageStatic() {
           expect().assertFail();
           done();
         } catch (err) {
-          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300002);

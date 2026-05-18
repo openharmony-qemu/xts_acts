@@ -27,7 +27,7 @@ import webView from '@ohos.web.webview';
 import hilog from '@ohos.hilog';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 
-class StringFields {
+export class StringFields {
   str: string = '';
 }
 

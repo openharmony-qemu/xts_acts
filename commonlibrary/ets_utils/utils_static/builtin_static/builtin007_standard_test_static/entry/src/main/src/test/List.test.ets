@@ -29,8 +29,10 @@ import Math03 from "./Math03.test";
 import Math04 from "./Math04.test";
 import Math05 from "./Math05.test";
 import Math06 from "./Math06.test";
+import classTest from "./Class.test.ets";
+import reflectTest from "./Reflect.test.ets";
 
-export default function testsuite() {
+export default function testsuite(): void {
   CbrtStatic();
   CeilStatic();
   Clz32Static();
@@ -62,4 +64,6 @@ export default function testsuite() {
   Math04();
   Math05();
   Math06();
+  classTest();
+  reflectTest();
 }

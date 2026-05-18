@@ -16,6 +16,7 @@
 import xmlTest1 from './xml/Xml1.test';
 import xmlTest2 from './xml/Xml2.test';
 import dynamicXmlTest1 from './dynamicXml/DynamicXml1.test';
+import dynamicXmlTest2 from './dynamicXml/DynamicXml2.test';
 import actsXml3Test from './xml/Xml3.test';
 import actsXml4Test from './xml/Xml4.test';
 
@@ -23,6 +24,7 @@ export default function testsuite() {
   xmlTest1();
   xmlTest2();
   dynamicXmlTest1();
+  dynamicXmlTest2();
   actsXml3Test();
   actsXml4Test();
 }

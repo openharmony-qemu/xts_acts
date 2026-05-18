@@ -22,12 +22,12 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
+  Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
   ColumnAttribute, ColumnSplitAttribute, CounterAttribute, DataPanelAttribute, DatePickerAttribute, DividerAttribute,applyStyles,CommonMethod,
-  EllipseAttribute, FlexAttribute, FlowItemAttribute, FormLinkAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
+  EllipseAttribute, FlexAttribute, FlowItemAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
   GridItemAttribute, GridRowAttribute, HyperlinkAttribute, ImageAttribute, ImageAnimatorAttribute, LineAttribute, ListAttribute,
   ListItemAttribute, ListItemGroupAttribute, LoadingProgressAttribute, MarqueeAttribute, MenuAttribute, MenuItemAttribute,
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
@@ -37,7 +37,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute, GridRowOptions,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, EffectComponentAttribute, FormComponentAttribute,
   ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, AlignRuleOption } from '@ohos.arkui.component'
 import { State, StoragePropRef,AppStorage } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
@@ -158,13 +158,6 @@ export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
 export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
   mInvert: number= 10
   applyNormalAttribute(instance: FormComponentAttribute): void {
-    console.info(`invert page show ${JSON.stringify(this.mInvert)}`)
-   instance.invert(this.mInvert)
-  }
-}
-export class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mInvert: number= 10
-  applyNormalAttribute(instance: FormLinkAttribute): void {
     console.info(`invert page show ${JSON.stringify(this.mInvert)}`)
    instance.invert(this.mInvert)
   }
@@ -651,12 +644,6 @@ function commonStyle(this: FlowItemAttribute, componentKey: string){
   return this
 }
 
-function commonStyle(this: FormLinkAttribute, componentKey: string){
-  this.height('100%')
-  this.key(componentKey)
-  return this
-}
-
 function commonStyle(this: GaugeAttribute, componentKey: string){
   this.height('100%')
   this.key(componentKey)
@@ -1057,7 +1044,6 @@ struct invertPage {
   @State _invertFlexMod: FlexModifier = new FlexModifier()
   @State _invertFlowItemMod: FlowItemModifier = new FlowItemModifier()
   @State _invertFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  @State _invertFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _invertGaugeMod: GaugeModifier = new GaugeModifier()
   @State _invertGridMod: GridModifier = new GridModifier()
   @State _invertGridColMod: GridColModifier = new GridColModifier()
@@ -1154,7 +1140,6 @@ struct invertPage {
       this._invertFlexMod.mInvert = value.invert
       this._invertFlowItemMod.mInvert = value.invert
       this._invertFormComponentMod.mInvert = value.invert
-      this._invertFormLinkMod.mInvert = value.invert
       this._invertGaugeMod.mInvert = value.invert
       this._invertGridMod.mInvert = value.invert
       this._invertGridColMod.mInvert = value.invert

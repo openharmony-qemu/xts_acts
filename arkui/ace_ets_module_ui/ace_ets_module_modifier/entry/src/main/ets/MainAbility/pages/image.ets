@@ -16,7 +16,7 @@ import { ImageModifier } from "@ohos.arkui.modifier";
 
 class CustomModifier extends ImageModifier {
   applyImageAttribute(instance: ImageAttribute): void {
-    super.applyNormalAttribute?.(instance);
+    //super.applyNormalAttribute?.(instance);
   }
 
   onChange1() {
@@ -29,7 +29,7 @@ class CustomModifier extends ImageModifier {
 struct ImageExample {
   @State customModifier: ImageModifier = new CustomModifier()
     .copyOption(CopyOptions.None)
-    .colorFilter(0.5)
+    .colorFilter(new ColorFilter([0.5]))
     .syncLoad(true)
     .sourceSize({ width: px2vp(200), height: px2vp(100) })
     .interpolation(ImageInterpolation.None)

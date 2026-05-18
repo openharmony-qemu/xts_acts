@@ -41,8 +41,8 @@ const ERROR_CODE_201: int = 201;
 const ERROR_CODE_1600050: int = 16000050;
 const TEST_RESULT_KEY: string = 'result';
 
-function msSleep(count: int) {
-  waitForCompletion(async ()=> { await Utils.msSleep(count); });
+async function msSleep(count: int) {
+  await Utils.msSleep(count);
 }
 
 let sub: commonEventManager.CommonEventSubscriber;
@@ -51,12 +51,12 @@ let mpEnable: string = PARAM_FAIL;
 
 export default function ActsUIExtensionContentSessionErrorCodeTest() {
   describe('ActsUIExtensionContentSessionErrorCodeTest', () => {
-    beforeAll(() => {
+    beforeAll(async () => {
       hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#beforeAll start`);
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      msSleep(WAIT_TIME2000);
+      await msSleep(WAIT_TIME2000);
       abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
-      msSleep(WAIT_TIME2000);
+      await msSleep(WAIT_TIME2000);
       
       testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
       try {

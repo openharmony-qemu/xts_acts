@@ -100,6 +100,8 @@ template <typename Func> napi_value NapiTry(napi_env env, Func&& func)
 
 void OHPrintf(const char* fmt, ...);
 
+int OHPrintf(char* buf, size_t bufSize, const char* fmt, ...);
+
 int SafeMemcpy(void* dst, size_t dstSize, const void* src, size_t len);
 
 bool RandBytes(unsigned char* buf, size_t num);

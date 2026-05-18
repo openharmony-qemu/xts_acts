@@ -67,4 +67,4 @@ async function HmacAnyLengthKeyDigestProcess(HMACAlgoName: string, dataBlob: cry
   }
 }
 
-export { HmacDigestProcess, HmacAnyLengthKeyDigestProcess };
+export { macData, HmacDigestProcess, HmacAnyLengthKeyDigestProcess };

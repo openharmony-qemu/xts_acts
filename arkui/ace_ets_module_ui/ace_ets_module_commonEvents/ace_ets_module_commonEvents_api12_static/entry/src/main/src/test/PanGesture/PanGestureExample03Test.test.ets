@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -46,7 +46,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function PanGestureExample03Test() {
   describe('PanGestureExample03Test', () => {
     
-    waitForCompletion(async ()=>{await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")})
+    UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility").awaitSync()
     
 
     const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!
@@ -111,24 +111,24 @@ it('PanGestureExample03Test_static_0010', Level.LEVEL0, async (done: () => void)
       await CommonFunc.sleep(1000);
       let pointers: PointerMatrix = PointerMatrix.create(2, 2);
       pointers.setPoint(0, 0, {
-        x: Math.round(areaObj1.left + areaWidth1 * 0.2) as Int,
-        y: Math.round(areaObj1.top + areaHeight1 / 2) as Int
+        x: Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),
+        y: Math.round(areaObj1.top + areaHeight1 / 2).toInt()
       } as Point);
       await CommonFunc.sleep(1000);
       pointers.setPoint(0, 1, {
-        x: Math.round(areaObj1.left + areaWidth1 * 0.7) as Int,
-        y: Math.round(areaObj1.top + areaHeight1 / 2) as Int
+        x: Math.round(areaObj1.left + areaWidth1 * 0.7).toInt(),
+        y: Math.round(areaObj1.top + areaHeight1 / 2).toInt()
       } as Point);
 
       await CommonFunc.sleep(1000);
       pointers.setPoint(1, 0, {
-        x: Math.round(areaObj1.left + areaWidth1 * 0.3) as Int,
-        y: Math.round(areaObj1.top + areaHeight1 / 2) as Int
+        x: Math.round(areaObj1.left + areaWidth1 * 0.3).toInt(),
+        y: Math.round(areaObj1.top + areaHeight1 / 2).toInt()
       } as Point);
       await CommonFunc.sleep(1000);
       pointers.setPoint(1, 1, {
-        x: Math.round(areaObj1.left + areaWidth1 * 0.8) as Int,
-        y: Math.round(areaObj1.top + areaHeight1 / 2) as Int
+        x: Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(),
+        y: Math.round(areaObj1.top + areaHeight1 / 2).toInt()
       } as Point);
       await CommonFunc.sleep(1000);
       await driver.injectMultiPointerAction(pointers);

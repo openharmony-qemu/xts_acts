@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -55,7 +55,7 @@ struct RichEditor10 {
   @State lineBreakOptionStr: string[] = new Array<string>('GREEDY', 'HIGH_QUALITY', 'BALANCED')
 build() {
     Column() {
-      Text(''+this.lineBreakOptionStr[this.text as int])
+      Text(''+this.lineBreakOptionStr[this.text.toInt()])
       .id('RichEditor10_Text')
       RichEditor({controller:this.controller} as RichEditorOptions)
         .onReady((): void=>{

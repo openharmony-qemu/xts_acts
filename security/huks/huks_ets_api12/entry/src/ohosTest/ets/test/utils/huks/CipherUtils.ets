@@ -31,6 +31,19 @@ export function GetGcmNoPaddingOptions(): huks.HuksOptions {
   return huksOptions;
 }
 
+export function GetGcmNoPaddingAadOptions(): huks.HuksOptions {
+  let huksOptions: huks.HuksOptions = {
+    properties: new Array(
+      GenParam(huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT),
+      GenParam(huks.HuksTag.HUKS_TAG_BLOCK_MODE, huks.HuksCipherMode.HUKS_MODE_GCM),
+      GenParam(huks.HuksTag.HUKS_TAG_PADDING, huks.HuksKeyPadding.HUKS_PADDING_NONE),
+      GenParam(huks.HuksTag.HUKS_TAG_NONCE, StringToUint8Array("120123456789")),
+      GenParam(huks.HuksTag.HUKS_TAG_AAD, StringToUint8Array("1601234567890123"))
+    )
+  };
+  return huksOptions;
+}
+
 export function GetCcmNoPaddingOptions(): huks.HuksOptions {
   let huksOptions: huks.HuksOptions = {
     properties: new Array(
@@ -39,6 +52,19 @@ export function GetCcmNoPaddingOptions(): huks.HuksOptions {
       GenParam(huks.HuksTag.HUKS_TAG_PADDING, huks.HuksKeyPadding.HUKS_PADDING_NONE),
       GenParam(huks.HuksTag.HUKS_TAG_NONCE, StringToUint8Array("7012345")),
       GenParam(huks.HuksTag.HUKS_TAG_ASSOCIATED_DATA, StringToUint8Array("1601234567890123"))
+    )
+  };
+  return huksOptions;
+}
+
+export function GetCcmNoPaddingAadOptions(): huks.HuksOptions {
+  let huksOptions: huks.HuksOptions = {
+    properties: new Array(
+      GenParam(huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT),
+      GenParam(huks.HuksTag.HUKS_TAG_BLOCK_MODE, huks.HuksCipherMode.HUKS_MODE_CCM),
+      GenParam(huks.HuksTag.HUKS_TAG_PADDING, huks.HuksKeyPadding.HUKS_PADDING_NONE),
+      GenParam(huks.HuksTag.HUKS_TAG_NONCE, StringToUint8Array("7012345")),
+      GenParam(huks.HuksTag.HUKS_TAG_AAD, StringToUint8Array("1601234567890123"))
     )
   };
   return huksOptions;

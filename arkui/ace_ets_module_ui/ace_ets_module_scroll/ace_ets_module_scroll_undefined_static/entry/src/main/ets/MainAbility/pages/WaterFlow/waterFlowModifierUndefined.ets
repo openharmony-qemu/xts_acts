@@ -35,7 +35,7 @@ import hilog from '@ohos.hilog'
 import { MyDataSource } from './MyDataSource'
 
 @Observed
-class MyPointModifier implements AttributeModifier<WaterFlowAttribute> {
+export class MyPointModifier implements AttributeModifier<WaterFlowAttribute> {
   public message: string = 'Hello World';
   public onScrollFrameBeginValue: boolean = true;
   public onScrollIndexValue: boolean = false;

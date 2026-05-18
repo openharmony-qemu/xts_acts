@@ -17,9 +17,11 @@
 import RouterTest from './RouterTest/Router.test';
 import PromptActionTestNew from './PromptActionTest/PromptAction.test';
 import UIObserverTest from './UIObserverTest/UIObserver.test';
+import getRectangleByIdTest from './getRectangleById/getRectangleById.test';
 
 export default function testsuite() {
   PromptActionTestNew();
   UIObserverTest();
   RouterTest();
+  getRectangleByIdTest();
 }

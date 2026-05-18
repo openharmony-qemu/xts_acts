@@ -10,7 +10,7 @@ let TAG: string = 'testTag'; //日志标识字符串,作为tag标识当前runner
 
 let bucket1000: relationalStore.ValuesBucket = {};
 for(let i = 0 ; i < 1001; i++) {
-    bucket1000["test" + i] = i as long;
+    bucket1000["test" + i] = i.toLong();
 }
 
 export default function RdbStoreGetSqlInfoTest() {
@@ -579,10 +579,7 @@ export default function RdbStoreGetSqlInfoTest() {
         it("testGetQuerySqlInfoColumnsTooLong", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             console.log(TAG + "************* testGetQuerySqlInfoColumnsTooLong start *************");
             try {
-                const colums:string[] = new Array<string>(1003);
-                for(let i = 0; i < colums.length; i++) {
-                    colums[i] = "a";
-                }
+                const colums:string[] = Array.create<string>(1003, 'a');
                 const predicates = new relationalStore.RdbPredicates("tableName");
                 predicates.equalTo("tableName", "a");
                 relationalStore.getQuerySqlInfo(predicates, colums);
