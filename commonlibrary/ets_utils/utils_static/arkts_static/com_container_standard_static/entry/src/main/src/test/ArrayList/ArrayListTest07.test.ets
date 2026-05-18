@@ -485,10 +485,9 @@ export default function ArrayList07Test(): void {
         let arrayList = new ArrayList<number>();
         arrayList.add(1);
         arrayList.add(2);
-        try {
-          arrayList.removeByIndex((1.5).toInt());
-        } catch (error) {
-        }
+        let result: number = arrayList.removeByIndex((1.5).toInt());
+        expect(result).assertEqual(2);
+        expect(arrayList.length).assertEqual(1);
         console.log(TAG + ' done');
 
       });
@@ -1766,8 +1765,8 @@ export default function ArrayList07Test(): void {
         const list = new ArrayList<number>();
         list.add(1);
         // In ArkTS-Sta, undefined cannot be passed to Int parameter
-        // Type safety is enforced at compile time
-        expect(true).assertTrue();
+        // Type safety is enforced at compile time, verify list state unchanged
+        expect(list.length).assertEqual(1);
         console.log(TAG + ' done');
       });
 
