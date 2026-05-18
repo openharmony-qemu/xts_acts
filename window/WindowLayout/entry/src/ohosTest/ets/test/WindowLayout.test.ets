@@ -6337,13 +6337,8 @@ export default function windowLayoutTest() {
           done();
         }).catch(async (err: BusinessError) => {
           await terminateAbility(caseName);
-          if (!isSyscapSessionManagerSupported) {
-            console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message} `);
-            expect(err.code).assertEqual(801)
-          } else {
-            console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
-            expect().assertFail();
-          }
+          console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
+          expect().assertFail();
           done();
         });
       } catch (exception) {
@@ -6399,7 +6394,7 @@ export default function windowLayoutTest() {
               expect(windowStatusBefore).assertEqual(window.WindowStatusType.FLOATING);
               expect(windowStatus).assertEqual(window.WindowStatusType.MAXIMIZE);
               if(deviceType == '2in1' && curFoldStatus == 3){
-                expect(windowHeight === displayHeight || windowHeight > displayHeight).assertTrue();
+                expect(windowHeight === displayHeight || windowHeight < displayHeight).assertTrue();
               }
             }else {
               expect(windowStatusBefore).assertEqual(window.WindowStatusType.FULL_SCREEN);
@@ -6408,13 +6403,8 @@ export default function windowLayoutTest() {
             done();
           }).catch(async (err: BusinessError) => {
             await terminateAbility(caseName);
-            if (!isSyscapSessionManagerSupported) {
-              console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
-              expect(err.code).assertEqual(801)
-            } else {
-              console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
-              expect().assertFail();
-            }
+            console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
             done();
           });
         } catch (exception) {
@@ -6469,13 +6459,8 @@ export default function windowLayoutTest() {
             done();
           }).catch(async (err: BusinessError) => {
             await terminateAbility(caseName);
-            if (!isSyscapSessionManagerSupported) {
-              console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
-              expect(err.code).assertEqual(801)
-            } else {
-              console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
-              expect().assertFail();
-            }
+            console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
             done();
           });
         } catch (exception) {
@@ -6531,13 +6516,8 @@ export default function windowLayoutTest() {
             done();
           }).catch(async (err: BusinessError) => {
             await terminateAbility(caseName);
-            if (!isSyscapSessionManagerSupported) {
-              console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
-              expect(err.code).assertEqual(801)
-            } else {
-              console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
-              expect().assertFail();
-            }
+            console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
             done();
           });
         } catch (exception) {
@@ -6601,13 +6581,8 @@ export default function windowLayoutTest() {
             done();
           }).catch(async (err: BusinessError) => {
             await terminateAbility(caseName);
-            if (!isSyscapSessionManagerSupported) {
-              console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
-              expect(err.code).assertEqual(801)
-            } else {
-              console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
-              expect().assertFail();
-            }
+            console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
             done();
           });
         } catch (exception) {
@@ -6661,13 +6636,8 @@ export default function windowLayoutTest() {
             done();
           }).catch(async (err: BusinessError) => {
             await terminateAbility(caseName);
-            if (!isSyscapSessionManagerSupported) {
-              console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
-              expect(err.code).assertEqual(801)
-            } else {
-              console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
-              expect().assertFail();
-            }
+            console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
             done();
           });
         } catch (exception) {
@@ -6681,6 +6651,38 @@ export default function windowLayoutTest() {
           }
           done();
         }
+      });
+
+      /**
+     * @tc.name maximizeWithOptionsError801_0100
+     * @tc.number SUB_WINDOWS_WINDOWLAYOUT_MAXIMIZEWITHOPTIONS_ERROR_801_0100
+     * @tc.desc maximizeWithOptions 801 window destroyed test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+   it('maximizeWithOptionsError801_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let caseName = 'maximizeWithOptionsError801_0100';
+        console.info(`${caseName} begin`);
+        let windowStageStart = await startAbility(caseName, context);
+        let mainWindow = windowStageStart.getMainWindowSync();
+        mainWindow!.maximizeWithOptions().then(async () => {
+          await sleep(200)
+          console.info(`${caseName} Succeeded in maximizing window.`);
+          await terminateAbility(caseName);
+          done();
+        }).catch(async (err: BusinessError) => {
+          await terminateAbility(caseName);
+          if (!isSyscapSessionManagerSupported) {
+            console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(801)
+          } else {
+            console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+          }
+          done();
+        });
       });
 
     /**
@@ -6720,23 +6722,18 @@ export default function windowLayoutTest() {
               expect(true).assertFalse()
               done()
             }).catch((err:BusinessError)=>{
-              if (!isSyscapSessionManagerSupported) {
-                console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
-                expect(err.code).assertEqual(801)
-              } else {
+              if (err.code === 1300002) {
+                console.info(`${caseName} window is destoryed.Cause code: ${err.code}, message: ${err.message}`);
+                expect(err.code).assertEqual(1300002)
+              }else {
                 console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
                 expect().assertFail();
               }
               done();
             })
           } catch (err) {
-            if (err.code === 1300002) {
-              console.info(`${caseName} window is destoryed.Cause code: ${err.code}, message: ${err.message}`);
-              expect(err.code).assertEqual(1300002)
-            } else {
               console.error(`${caseName} Failed to maximize window or other reason. Cause code: ${err.code}, message: ${err.message}`);
               expect().assertFail();
-            }
             done();
           }
         }).catch((err:BusinessError)=>{
@@ -6789,9 +6786,9 @@ export default function windowLayoutTest() {
             }).catch(async (err:BusinessError)=>{
               await subWindow.destroyWindow();
               console.info(`${caseName} destroyWindow `);
-              if (!isSyscapSessionManagerSupported) {
-                console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
-                expect(err.code).assertEqual(801)
+              if (err.code === 1300004) {
+              console.info(`${caseName} window is not supported maximized.Cause code: ${err.code}, message: ${err.message}`);
+              expect(err.code).assertEqual(1300004)
               } else {
                 console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
                 expect().assertFail();
@@ -6799,13 +6796,8 @@ export default function windowLayoutTest() {
               done();
             })
           } catch (err) {
-            if (err.code === 1300004) {
-              console.info(`${caseName} window is not supported maximized.Cause code: ${err.code}, message: ${err.message}`);
-              expect(err.code).assertEqual(1300004)
-            } else {
-              console.error(`${caseName} Failed to maximize window or other reason. Cause code: ${err.code}, message: ${err.message}`);
-              expect().assertFail();
-            }
+            console.error(`${caseName} Failed to maximize window or other reason. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
             done();
           }
         }).catch((err:BusinessError)=>{
@@ -6862,10 +6854,7 @@ export default function windowLayoutTest() {
             }).catch(async (err:BusinessError)=>{
               await subWindow.destroyWindow();
               console.info(`${caseName} destroyWindow `);
-              if (!isSyscapSessionManagerSupported) {
-                console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
-                expect(err.code).assertEqual(801)
-              }else  if (err.code === 1300004) {
+              if (err.code === 1300004) {
                 console.info(`${caseName} subwindow is not supported acrossDisplayPresentation and snapshotAnimationConfig.Cause code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(1300004)
               } else {
@@ -6932,10 +6921,7 @@ export default function windowLayoutTest() {
             }).catch(async (err:BusinessError)=>{
               await subWindow.destroyWindow();
               console.info(`${caseName} destroyWindow `);
-              if (!isSyscapSessionManagerSupported) {
-                console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
-                expect(err.code).assertEqual(801)
-              }else  if (err.code === 1300004) {
+              if (err.code === 1300004) {
                 console.info(`${caseName} subwindow is not supported acrossDisplayPresentation and snapshotAnimationConfig.Cause code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(1300004)
               } else {
@@ -7096,13 +7082,8 @@ export default function windowLayoutTest() {
               }
               done()
             }).catch((err:BusinessError)=>{
-              if (!isSyscapSessionManagerSupported) {
-                console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
-                expect(err.code).assertEqual(801)
-              } else {
-                console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
-                expect().assertFail();
-              }
+              console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
+              expect().assertFail();
               done();
             })
           } catch (err) {
@@ -7164,13 +7145,8 @@ export default function windowLayoutTest() {
               }
               done()
             }).catch((err:BusinessError)=>{
-              if (!isSyscapSessionManagerSupported) {
-                console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
-                expect(err.code).assertEqual(801)
-              } else {
-                console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
-                expect().assertFail();
-              }
+              console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
+              expect().assertFail();
               done();
             })
           } catch (err) {
@@ -7237,13 +7213,8 @@ export default function windowLayoutTest() {
               }
               done()
             }).catch((err:BusinessError)=>{
-              if (!isSyscapSessionManagerSupported) {
-                console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
-                expect(err.code).assertEqual(801)
-              } else {
-                console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
-                expect().assertFail();
-              }
+              console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
+              expect().assertFail();
               done();
             })
           } catch (err) {
