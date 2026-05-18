@@ -35,9 +35,9 @@ export default function TouchEventTest(): void {
         let caseName = "SUB_MMI_Input_Api_Static_TouchEvent_Action_0100";
         hilog.info(domain, tag, `${caseName} enter`);
         try {
-          expect(Action.PULL_DOWN == 4).assertTrue();
-          expect(Action.PULL_MOVE == 5).assertTrue();
-          expect(Action.PULL_UP == 6).assertTrue();
+          expect(Action.PULL_DOWN === 4).assertTrue();
+          expect(Action.PULL_MOVE === 5).assertTrue();
+          expect(Action.PULL_UP === 6).assertTrue();
           done();
         } catch (error) {
           console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);

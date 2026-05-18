@@ -834,12 +834,12 @@ export default function MultimodalKeyCodeTest() {
       let caseName = "SUB_MMI_Input_Api_Static_KeyCode_0100";
       hilog.info(domain, tag, `${caseName} enter`);
       try {
-        expect(KeyCode.KEYCODE_XKEY == 3232).assertTrue();
-        expect(KeyCode.KEYCODE_AOD_SINGLE_CLICK  == 2740).assertTrue();
+        expect(KeyCode.KEYCODE_XKEY === 3232).assertTrue();
+        expect(KeyCode.KEYCODE_AOD_SINGLE_CLICK  === 2740).assertTrue();
         done();
       } catch (error) {
         console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
-        ExpectFalse(true);
+        expect().assertFail();
         done();
       }
       hilog.info(domain, tag, `${caseName} leave`);
