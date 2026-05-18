@@ -807,34 +807,21 @@ namespace testNS1_4 {
         expect(v_id).assertEqual(1)
         check_value_4(v, v_id)
         expect(v instanceof C1_4 | C2_4 | B2_4 | Other_4).assertTrue()
-        expect(v instanceof Any).assertTrue()
-        if (v instanceof Any) {
-          check_value_as_type_T_4(v as Any, v_id)
-          return true
-        } else {
-          return false
-        }
+        check_value_as_type_T_4(v as Any, v_id)
+        return true
       }
       else {
         expect(v_id).assertEqual(2)
         check_value_4(v, v_id)
-        if (v instanceof Any) {
-          check_value_as_type_T_4(v as Any, v_id)
-          return true
-        } else {
-          return false
-        }
+        check_value_as_type_T_4(v as Any, v_id)
+        return true
       }
     }
     else {
       expect(v_id).assertEqual(3)
       check_value_4(v, v_id)
-      if (v instanceof Any) {
-        check_value_as_type_T_4(v as Any, v_id)
-        return true
-      } else {
-        return false
-      }
+      check_value_as_type_T_4(v as Any, v_id)
+      return true
     }
   }
 
@@ -926,34 +913,21 @@ namespace testNS2_4 {
         expect(v_id).assertEqual(1)
         check_value_4(v, v_id)
         expect(v instanceof C1_4 | C2_4 | B2_4 | Other_4).assertTrue()
-        expect(v instanceof Any).assertTrue()
-        if (v instanceof Any) {
-          check_value_as_type_T_4(v as Any, v_id)
-          return true
-        } else {
-          return false
-        }
+        check_value_as_type_T_4(v as Any, v_id)
+        return true
       }
       else {
         expect(v_id).assertEqual(2)
         check_value_4(v, v_id)
-        if (v instanceof Any) {
-          check_value_as_type_T_4(v as Any, v_id)
-          return true
-        } else {
-          return false
-        }
+        check_value_as_type_T_4(v as Any, v_id)
+        return true
       }
     }
     else {
       expect(v_id).assertEqual(3)
       check_value_4(v, v_id)
-      if (v instanceof Any) {
-        check_value_as_type_T_4(v as Any, v_id)
-        return true
-      } else {
-        return false
-      }
+      check_value_as_type_T_4(v as Any, v_id)
+      return true
     }
   }
 
@@ -1044,34 +1018,21 @@ function check_is_in_T_type_4(v: C1_4 | C2_4| B2_4 | Other_4 | B1_4<int, null> |
       expect(v_id).assertEqual(1)
       check_value_4(v, v_id)
       expect(v instanceof C1_4 | C2_4 | B2_4 | Other_4).assertTrue()
-      expect(v instanceof Any).assertTrue()
-      if (v instanceof Any) {
-        check_value_as_type_T_4(v as Any, v_id)
-        return true
-      } else {
-        return false
-      }
+      check_value_as_type_T_4(v as Any, v_id)
+      return true
     }
     else {
       expect(v_id).assertEqual(2)
       check_value_4(v, v_id)
-      if (v instanceof Any) {
-        check_value_as_type_T_4(v as Any, v_id)
-        return true
-      } else {
-        return false
-      }
+      check_value_as_type_T_4(v as Any, v_id)
+      return true
     }
   }
   else {
     expect(v_id).assertEqual(3)
     check_value_4(v, v_id)
-    if (v instanceof Any) {
-      check_value_as_type_T_4(v as Any, v_id)
-      return true
-    } else {
-      return false
-    }
+    check_value_as_type_T_4(v as Any, v_id)
+    return true
   }
 }
 

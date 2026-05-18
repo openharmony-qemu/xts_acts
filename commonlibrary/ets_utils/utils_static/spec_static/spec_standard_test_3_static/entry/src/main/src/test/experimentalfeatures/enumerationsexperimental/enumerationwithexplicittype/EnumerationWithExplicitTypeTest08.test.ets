@@ -1124,20 +1124,6 @@ export default function EnumerationWithExplicitTypeTest08(): void {
     });
 
     /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_EIGHT_TEST_4600
-     * @tc.name      testEnumerationWithExplicitType0266
-     * @tc.desc      Checking integer type overflow on max value (Don't throw CTE at all)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationWithExplicitType0266', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(EnumLongM0.first.valueOf()).assertEqual(9223372036854775807 - 1)
-      expect(EnumLongM0.second.valueOf()).assertEqual(9223372036854775807)
-      expect(EnumLongM0.third.valueOf()).assertEqual(9223372036854775807 + 1)
-    });
-
-    /**
      * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_EIGHT_TEST_4700
      * @tc.name      testEnumerationWithExplicitType0267
      * @tc.desc      Checking integer type overflow on max value (Don't throw CTE at all)
@@ -1146,20 +1132,6 @@ export default function EnumerationWithExplicitTypeTest08(): void {
      * @tc.level     Level 2
      */
     it('testEnumerationWithExplicitType0267', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ConstEnumLongM0.first.valueOf()).assertEqual(9223372036854775807 - 1)
-      expect(ConstEnumLongM0.second.valueOf()).assertEqual(9223372036854775807)
-      expect(ConstEnumLongM0.third.valueOf()).assertEqual(9223372036854775807 + 1)
-    });
-
-    /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_EIGHT_TEST_4800
-     * @tc.name      testEnumerationWithExplicitType0268
-     * @tc.desc      Checking integer type overflow on max value (Don't throw CTE at all)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationWithExplicitType0268', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ConstEnumLongM0.first.valueOf()).assertEqual(9223372036854775807 - 1)
       expect(ConstEnumLongM0.second.valueOf()).assertEqual(9223372036854775807)
       expect(ConstEnumLongM0.third.valueOf()).assertEqual(9223372036854775807 + 1)
@@ -1180,20 +1152,6 @@ export default function EnumerationWithExplicitTypeTest08(): void {
     });
 
     /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_EIGHT_TEST_5000
-     * @tc.name      testEnumerationWithExplicitType0270
-     * @tc.desc      Checking integer type overflow on max value (Don't throw CTE at all)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationWithExplicitType0270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(EnumLongM1.first.valueOf()).assertEqual(9223372036854775807 - 10)
-      expect(EnumLongM1.second.valueOf()).assertEqual(9223372036854775807 - 9)
-      expect(EnumLongM1.third.valueOf()).assertEqual(9223372036854775807 + 100)
-    });
-
-    /**
      * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_EIGHT_TEST_5100
      * @tc.name      testEnumerationWithExplicitType0271
      * @tc.desc      Checking integer type overflow on max value (Don't throw CTE at all)
@@ -1202,20 +1160,6 @@ export default function EnumerationWithExplicitTypeTest08(): void {
      * @tc.level     Level 2
      */
     it('testEnumerationWithExplicitType0271', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ConstEnumLongM1.first.valueOf()).assertEqual(9223372036854775807 - 10)
-      expect(ConstEnumLongM1.second.valueOf()).assertEqual(9223372036854775807 - 9)
-      expect(ConstEnumLongM1.third.valueOf()).assertEqual(9223372036854775807 + 100)
-    });
-
-    /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_EIGHT_TEST_5200
-     * @tc.name      testEnumerationWithExplicitType0272
-     * @tc.desc      Checking integer type overflow on max value (Don't throw CTE at all)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationWithExplicitType0272', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ConstEnumLongM1.first.valueOf()).assertEqual(9223372036854775807 - 10)
       expect(ConstEnumLongM1.second.valueOf()).assertEqual(9223372036854775807 - 9)
       expect(ConstEnumLongM1.third.valueOf()).assertEqual(9223372036854775807 + 100)
@@ -1229,20 +1173,6 @@ export default function EnumerationWithExplicitTypeTest08(): void {
      * @tc.level     Level 2
      */
     it('testEnumerationWithExplicitType0273', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(EnumLongM2.first.valueOf()).assertEqual(0);
-      expect(EnumLongM2.second.valueOf()).assertEqual(-9223372036854775808);
-      expect(EnumLongM2.third.valueOf()).assertEqual(-9223372036854775808 - 1);
-    });
-
-    /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_EIGHT_TEST_5400
-     * @tc.name      testEnumerationWithExplicitType0274
-     * @tc.desc      Checking integer type overflow on min value (Don't throw CTE at all)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationWithExplicitType0274', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(EnumLongM2.first.valueOf()).assertEqual(0);
       expect(EnumLongM2.second.valueOf()).assertEqual(-9223372036854775808);
       expect(EnumLongM2.third.valueOf()).assertEqual(-9223372036854775808 - 1);
@@ -1263,20 +1193,6 @@ export default function EnumerationWithExplicitTypeTest08(): void {
     });
 
     /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_EIGHT_TEST_5600
-     * @tc.name      testEnumerationWithExplicitType0276
-     * @tc.desc      Checking integer type overflow on min value (Don't throw CTE at all)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationWithExplicitType0276', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ConstEnumLongM2.first.valueOf()).assertEqual(0);
-      expect(ConstEnumLongM2.second.valueOf()).assertEqual(-9223372036854775808);
-      expect(ConstEnumLongM2.third.valueOf()).assertEqual(-9223372036854775808 - 1);
-    });
-
-    /**
      * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_EIGHT_TEST_5700
      * @tc.name      testEnumerationWithExplicitType0277
      * @tc.desc      Checking integer type overflow on min value (Don't throw CTE at all)
@@ -1291,20 +1207,6 @@ export default function EnumerationWithExplicitTypeTest08(): void {
     });
 
     /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_EIGHT_TEST_5800
-     * @tc.name      testEnumerationWithExplicitType0278
-     * @tc.desc      Checking integer type overflow on min value (Don't throw CTE at all)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationWithExplicitType0278', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(EnumLongM3.first.valueOf()).assertEqual(-9223372036854775808 + 10);
-      expect(EnumLongM3.second.valueOf()).assertEqual(-9223372036854775808 + 11);
-      expect(EnumLongM3.third.valueOf()).assertEqual(-9223372036854775808 - 100);
-    });
-
-    /**
      * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_EIGHT_TEST_5900
      * @tc.name      testEnumerationWithExplicitType0279
      * @tc.desc      Checking integer type overflow on min value (Don't throw CTE at all)
@@ -1313,20 +1215,6 @@ export default function EnumerationWithExplicitTypeTest08(): void {
      * @tc.level     Level 2
      */
     it('testEnumerationWithExplicitType0279', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ConstEnumLongM3.first.valueOf()).assertEqual(-9223372036854775808 + 10);
-      expect(ConstEnumLongM3.second.valueOf()).assertEqual(-9223372036854775808 + 11);
-      expect(ConstEnumLongM3.third.valueOf()).assertEqual(-9223372036854775808 - 100);
-    });
-
-    /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_EIGHT_TEST_6000
-     * @tc.name      testEnumerationWithExplicitType0280
-     * @tc.desc      Checking integer type overflow on min value (Don't throw CTE at all)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationWithExplicitType0280', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ConstEnumLongM3.first.valueOf()).assertEqual(-9223372036854775808 + 10);
       expect(ConstEnumLongM3.second.valueOf()).assertEqual(-9223372036854775808 + 11);
       expect(ConstEnumLongM3.third.valueOf()).assertEqual(-9223372036854775808 - 100);

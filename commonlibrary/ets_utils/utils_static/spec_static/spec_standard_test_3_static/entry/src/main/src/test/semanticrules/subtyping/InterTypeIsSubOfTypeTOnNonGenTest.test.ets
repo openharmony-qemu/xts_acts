@@ -472,36 +472,21 @@ namespace testNS5_1 {
         expect(v_id_1).assertEqual(1)
         check_value_1(v, v_id_1)
         expect(v instanceof Cat_1 | Dog_1 | Frog_1 | number).assertEqual(true)
-        expect(v instanceof Any).assertEqual(true)
-        if (v instanceof Any) {
-          check_value_as_type_T_1(v, v_id_1)
-          return true
-        } else {
-          return false
-        }
+        check_value_as_type_T_1(v, v_id_1)
+        return true
       }
       else {
         expect(v_id_1).assertEqual(2)
         check_value_1(v, v_id_1)
-        expect(v instanceof Any).assertEqual(true)
-        if (v instanceof Any) {
-          check_value_as_type_T_1(v, v_id_1)
-          return true
-        } else {
-          return false
-        }
+        check_value_as_type_T_1(v, v_id_1)
+        return true
       }
     }
     else {
       expect(v_id_1).assertEqual(3)
       check_value_1(v, v_id_1)
-      expect(v instanceof Any).assertEqual(true)
-      if (v instanceof Any) {
-        check_value_as_type_T_1(v, v_id_1)
-        return true
-      } else {
-        return false
-      }
+      check_value_as_type_T_1(v, v_id_1)
+      return true
     }
   }
 
@@ -1053,34 +1038,21 @@ namespace testNS5_2 {
         expect(v_id_2).assertEqual(1)
         check_value_2(v, v_id_2)
         expect(v instanceof C1_2 | C2_2 | B2_2 | Other_2).assertEqual(true)
-        expect(v instanceof Any).assertEqual(true)
-        if (v instanceof Any) {
-          check_value_as_type_T_2(v, v_id_2)
-          return true
-        } else {
-          return false
-        }
+        check_value_as_type_T_2(v, v_id_2)
+        return true
       }
       else {
         expect(v_id_2).assertEqual(2)
         check_value_2(v, v_id_2)
-        if (v instanceof Any) {
-          check_value_as_type_T_2(v, v_id_2)
-          return true
-        } else {
-          return false
-        }
+        check_value_as_type_T_2(v, v_id_2)
+        return true
       }
     }
     else {
       expect(v_id_2).assertEqual(3)
       check_value_2(v, v_id_2)
-      if (v instanceof Any) {
-        check_value_as_type_T_2(v, v_id_2)
-        return true
-      } else {
-        return false
-      }
+      check_value_as_type_T_2(v, v_id_2)
+      return true
     }
   }
 

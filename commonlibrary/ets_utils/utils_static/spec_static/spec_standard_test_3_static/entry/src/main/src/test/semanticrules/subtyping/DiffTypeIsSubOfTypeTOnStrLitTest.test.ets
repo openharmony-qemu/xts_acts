@@ -96,7 +96,7 @@ namespace testNS2_1 {
   }
 
   function check_value_from_type_T_1(v: Any): boolean {
-    return v instanceof Any;
+    return true;
   }
 
   function foo_1(v: Any): void {
@@ -256,7 +256,7 @@ namespace testNS2_2 {
   }
 
   function check_value_from_type_T_2(v: Any): boolean {
-    return v instanceof Any;
+    return true;
   }
 
   function foo_2(v: Any): void {

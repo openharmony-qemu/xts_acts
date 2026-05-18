@@ -33,8 +33,8 @@ namespace import_2_sources_0_1 {
   }
 }
 
-// ============================================================================
-// Group 2: Arrays (Source 2)
+// Note: All namespaces below are in-file mocks, not actual cross-module imports.
+// To fully test cross-module overload resolution, move to separate helper files.
 // ============================================================================
 namespace import_2_sources_2 {
   export function foo<T>(v: T[]): number {
@@ -129,7 +129,7 @@ export default function OverloadWithImportTest03():void {
     /**
      * @tc.number    SUB_OVERLOAD_WITH_IMPORTTESTTHREE_0100
      * @tc.name      testFunctionImportTwoSource0001
-     * @tc.desc      Overload function from 2 sources imported functions (boolean, number args).
+     * @tc.desc      Overload function with 2-source namespace mock (boolean, number args).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -141,7 +141,7 @@ export default function OverloadWithImportTest03():void {
     /**
      * @tc.number    SUB_OVERLOAD_WITH_IMPORTTESTTHREE_0200
      * @tc.name      testFunctionImportTwoSource0002
-     * @tc.desc      Overload function from 2 sources imported functions (number, string args).
+     * @tc.desc      Overload function with 2-source namespace mock (number, string args).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -153,7 +153,7 @@ export default function OverloadWithImportTest03():void {
     /**
      * @tc.number    SUB_OVERLOAD_WITH_IMPORTTESTTHREE_0300
      * @tc.name      testFunctionImportTwoSource0003
-     * @tc.desc      Overload function from 2 sources imported functions (array args).
+     * @tc.desc      Overload function with 2-source namespace mock (array args).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -165,7 +165,7 @@ export default function OverloadWithImportTest03():void {
     /**
      * @tc.number    SUB_OVERLOAD_WITH_IMPORTTESTTHREE_0400
      * @tc.name      testFunctionImportTwoSource0004
-     * @tc.desc      Overload function from 2 sources imported functions (boxed/primitive boolean).
+     * @tc.desc      Overload function with 2-source namespace mock (boxed/primitive boolean).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -177,7 +177,7 @@ export default function OverloadWithImportTest03():void {
     /**
      * @tc.number    SUB_OVERLOAD_WITH_IMPORTTESTTHREE_0500
      * @tc.name      testFunctionImportTwoSource0005
-     * @tc.desc      Overload function from 2 sources imported functions (boxed/primitive number).
+     * @tc.desc      Overload function with 2-source namespace mock (boxed/primitive number).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -189,7 +189,7 @@ export default function OverloadWithImportTest03():void {
     /**
      * @tc.number    SUB_OVERLOAD_WITH_IMPORTTESTTHREE_0600
      * @tc.name      testFunctionImportTwoSource0006
-     * @tc.desc      Overload function from 2 sources imported functions (Generics with 2 args).
+     * @tc.desc      Overload function with 2-source namespace mock (Generics with 2 args).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -201,7 +201,7 @@ export default function OverloadWithImportTest03():void {
     /**
      * @tc.number    SUB_OVERLOAD_WITH_IMPORTTESTTHREE_0700
      * @tc.name      testFunctionImportTwoSource0007
-     * @tc.desc      Overload function from 2 sources imported functions (Generics with 1 arg).
+     * @tc.desc      Overload function with 2-source namespace mock (Generics with 1 arg).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -213,7 +213,7 @@ export default function OverloadWithImportTest03():void {
     /**
      * @tc.number    SUB_OVERLOAD_WITH_IMPORTTESTTHREE_0800
      * @tc.name      testFunctionImportTwoSource0008
-     * @tc.desc      Overload function from 2 sources imported functions (primitive boolean).
+     * @tc.desc      Overload function with 2-source namespace mock (primitive boolean).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -225,7 +225,7 @@ export default function OverloadWithImportTest03():void {
     /**
      * @tc.number    SUB_OVERLOAD_WITH_IMPORTTESTTHREE_0900
      * @tc.name      testFunctionImportTwoSource0009
-     * @tc.desc      Overload function from 2 sources imported functions (primitive number).
+     * @tc.desc      Overload function with 2-source namespace mock (primitive number).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -237,7 +237,7 @@ export default function OverloadWithImportTest03():void {
     /**
      * @tc.number    SUB_OVERLOAD_WITH_IMPORTTESTTHREE_1000
      * @tc.name      testFunctionImportTwoSource0010
-     * @tc.desc      Overload function from 2 sources imported functions (union null).
+     * @tc.desc      Overload function with 2-source namespace mock (union null).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -249,7 +249,7 @@ export default function OverloadWithImportTest03():void {
     /**
      * @tc.number    SUB_OVERLOAD_WITH_IMPORTTESTTHREE_1100
      * @tc.name      testFunctionImportTwoSource0011
-     * @tc.desc      Overload function from 2 sources imported functions (union boolean).
+     * @tc.desc      Overload function with 2-source namespace mock (union boolean).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -261,7 +261,7 @@ export default function OverloadWithImportTest03():void {
     /**
      * @tc.number    SUB_OVERLOAD_WITH_IMPORTTESTTHREE_1200
      * @tc.name      testFunctionImportTwoSource0012
-     * @tc.desc      Overload function from 2 sources imported functions (union string).
+     * @tc.desc      Overload function with 2-source namespace mock (union string).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -273,7 +273,7 @@ export default function OverloadWithImportTest03():void {
     /**
      * @tc.number    SUB_OVERLOAD_WITH_IMPORTTESTTHREE_1300
      * @tc.name      testFunctionImportTwoSource0013
-     * @tc.desc      Overload function from 2 sources imported functions (union number).
+     * @tc.desc      Overload function with 2-source namespace mock (union number).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2

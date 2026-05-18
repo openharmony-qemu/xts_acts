@@ -55,7 +55,7 @@ namespace fm_2c_1 {
 namespace fm_2c_2 {
   export class C1 { foo(v1: number): number { return 1; } }
   export class C2 extends C1 {
-    foo(v1: number, ...v2: number[]): number { return v2 && v2.length > 0 ? 2 : 2; }
+    foo(v1: number, ...v2: number[]): number { return 2; }
   }
 }
 
@@ -305,7 +305,7 @@ namespace fm_3c_3 {
   export class C2 extends C1 {
     foo(v1: number | string, ...v2: number[]): number {
       if (typeof v1 === 'string') return 3;
-      return v2 && v2.length > 0 ? 2 : 2;
+      return 2;
     }
   }
   export class C3 extends C2 {

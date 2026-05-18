@@ -464,36 +464,23 @@ namespace testNS7_3 {
         check_value_3(v, v_id);
         expect(v).assertEqual(5n);
         expect(v instanceof int | bigint | boolean | string).assertEqual(true);
-        expect(v instanceof Any).assertEqual(true);
-        if (v instanceof Any) {
-          check_value_as_type_T_3(v, v_id);
-          return true;
-        } else {
-          return false;
-        }
+        check_value_as_type_T_3(v, v_id);
+        return true;
       }
       else {
         expect(v_id).assertEqual(2);
         check_value_3(v, v_id);
         expect(v).assertEqual(123);
-        if (v instanceof Any) {
-          check_value_as_type_T_3(v, v_id);
-          return true;
-        } else {
-          return false;
-        }
+        check_value_as_type_T_3(v, v_id);
+        return true;
       }
     }
     else {
       expect(v_id).assertEqual(3);
       check_value_3(v, v_id);
       expect(v).assertEqual(7.8f);
-      if (v instanceof Any) {
-        check_value_as_type_T_3(v, v_id);
-        return true;
-      } else {
-        return false;
-      }
+      check_value_as_type_T_3(v, v_id);
+      return true;
     }
   }
 
@@ -726,36 +713,23 @@ namespace testNS3_4 {
         check_value_4(v, v_id);
         expect(v).assertEqual(567);
         expect(v instanceof bigint | int).assertEqual(true);
-        expect(v instanceof Any).assertEqual(true);
-        if (v instanceof Any) {
-          check_value_as_type_T_4(v, v_id);
-          return true;
-        } else {
-          return false;
-        }
+        check_value_as_type_T_4(v, v_id);
+        return true;
       }
       else {
         expect(v_id).assertEqual(2);
         check_value_4(v, v_id);
         expect(v).assertEqual(723n);
-        if (v instanceof Any) {
-          check_value_as_type_T_4(v, v_id);
-          return true;
-        } else {
-          return false;
-        }
+        check_value_as_type_T_4(v, v_id);
+        return true;
       }
     }
     else {
       expect(v_id).assertEqual(3);
       check_value_4(v, v_id);
       expect(v).assertEqual("efg");
-      if (v instanceof Any) {
-        check_value_as_type_T_4(v, v_id);
-        return true;
-      } else {
-        return false;
-      }
+      check_value_as_type_T_4(v, v_id);
+      return true;
     }
   }
 
@@ -988,36 +962,23 @@ namespace testNS3_5 {
         check_value_5(v, v_id);
         expect(v).assertEqual(567 as long);
         expect(v instanceof bigint | long).assertEqual(true);
-        expect(v instanceof Any).assertEqual(true);
-        if (v instanceof Any) {
-          check_value_as_type_T_5(v, v_id);
-          return true;
-        } else {
-          return false;
-        }
+        check_value_as_type_T_5(v, v_id);
+        return true;
       }
       else {
         expect(v_id).assertEqual(2);
         check_value_5(v, v_id);
         expect(v).assertEqual(723n);
-        if (v instanceof Any) {
-          check_value_as_type_T_5(v, v_id);
-          return true;
-        } else {
-          return false;
-        }
+        check_value_as_type_T_5(v, v_id);
+        return true;
       }
     }
     else {
       expect(v_id).assertEqual(3);
       check_value_5(v, v_id);
       expect(v).assertEqual("efg");
-      if (v instanceof Any) {
-        check_value_as_type_T_5(v, v_id);
-        return true;
-      } else {
-        return false;
-      }
+      check_value_as_type_T_5(v, v_id);
+      return true;
     }
   }
 

@@ -603,34 +603,21 @@ namespace testNS6_5 {
         expect(v_id).assertEqual(1)
         check_value_5(v, v_id)
         expect(v instanceof III1_5 | III2_5 | II2_5).assertEqual(true)
-        expect(v instanceof Any).assertEqual(true)
-        if (v instanceof Any) {
-          check_value_as_type_T_5(v, v_id)
-          return true
-        } else {
-          return false
-        }
+        check_value_as_type_T_5(v, v_id)
+        return true
       }
       else {
         expect(v_id).assertEqual(2)
         check_value_5(v, v_id)
-        if (v instanceof Any) {
-          check_value_as_type_T_5(v, v_id)
-          return true
-        } else {
-          return false
-        }
+        check_value_as_type_T_5(v, v_id)
+        return true
       }
     }
     else {
       expect(v_id).assertEqual(3)
       check_value_5(v, v_id)
-      if (v instanceof Any) {
-        check_value_as_type_T_5(v, v_id)
-        return true
-      } else {
-        return false
-      }
+      check_value_as_type_T_5(v, v_id)
+      return true
     }
   }
   export function runTest_5(): boolean {

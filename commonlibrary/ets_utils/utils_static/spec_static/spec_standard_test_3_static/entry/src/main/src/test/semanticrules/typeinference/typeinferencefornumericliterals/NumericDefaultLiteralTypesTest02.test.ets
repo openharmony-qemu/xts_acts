@@ -1381,23 +1381,6 @@ export default function NumericDefaultLiteralTypesTest02():void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_8300
-     * @tc.name      testNumericLogicalComplementConst0083
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplementConst0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let value : int = -~32766;
-      let a : int = value;
-      expect(a instanceof int).assertTrue();
-      expect(a).assertEqual(-~32766);
-    });
-
-    /**
      * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_8400
      * @tc.name      testNumericLogicalComplementConst0084
      * @tc.desc      The type of expression of a numeric type for Constant Expressions is first

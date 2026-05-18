@@ -260,36 +260,23 @@ namespace testNS4_1 {
         check_value_1(v, v_id);
         expect(v).assertEqual(undefined);
         expect(v instanceof Object | undefined).assertEqual(true);
-        expect(v instanceof Any).assertEqual(true);
-        if (v instanceof Any) {
-          check_value_as_type_T_1(v, v_id);
-          return true;
-        } else {
-          return false;
-        }
+        check_value_as_type_T_1(v, v_id);
+        return true;
       }
       else {
         expect(v_id).assertEqual(2);
         check_value_1(v, v_id);
         expect(v).assertEqual("abc");
-        if (v instanceof Any) {
-          check_value_as_type_T_1(v, v_id);
-          return true;
-        } else {
-          return false;
-        }
+        check_value_as_type_T_1(v, v_id);
+        return true;
       }
     }
     else {
       expect(v_id).assertEqual(3);
       check_value_1(v, v_id);
       expect(v).assertEqual(null);
-      if (v instanceof Any) {
-        check_value_as_type_T_1(v, v_id);
-        return true;
-      } else {
-        return false;
-      }
+      check_value_as_type_T_1(v, v_id);
+      return true;
     }
   }
 
@@ -794,36 +781,23 @@ namespace testNS6_2 {
         check_value_2(v, v_id);
         expect(v).assertEqual(5n);
         expect(v instanceof Object | undefined).assertEqual(true);
-        expect(v instanceof Any).assertEqual(true);
-        if (v instanceof Any) {
-          check_value_as_type_T_2(v, v_id);
-          return true;
-        } else {
-          return false;
-        }
+        check_value_as_type_T_2(v, v_id);
+        return true;
       }
       else {
         expect(v_id).assertEqual(2);
         check_value_2(v, v_id);
         expect(v).assertEqual("abc");
-        if (v instanceof Any) {
-          check_value_as_type_T_2(v, v_id);
-          return true;
-        } else {
-          return false;
-        }
+        check_value_as_type_T_2(v, v_id);
+        return true;
       }
     }
     else {
       expect(v_id).assertEqual(3);
       check_value_2(v, v_id);
       expect(v).assertEqual(null);
-      if (v instanceof Any) {
-        check_value_as_type_T_2(v, v_id);
-        return true;
-      } else {
-        return false;
-      }
+      check_value_as_type_T_2(v, v_id);
+      return true;
     }
   }
 

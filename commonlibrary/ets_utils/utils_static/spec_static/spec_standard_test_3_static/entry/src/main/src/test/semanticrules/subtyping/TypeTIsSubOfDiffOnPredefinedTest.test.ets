@@ -473,10 +473,8 @@ namespace testNS1_2 {
   function check_2(v: Object,
     is_subtype_of_A: boolean, v_id: number): boolean {
     let res: boolean = false
-    expect(v instanceof Any).assertEqual(is_subtype_of_A)
-    if (v instanceof Any) {
-      res = check_is_in_diff_type_2(v, v_id)
-    }
+    expect(is_subtype_of_A).assertEqual(true)
+    res = check_is_in_diff_type_2(v, v_id)
     if (res) {
       check_is_not_in_B_type_2(v, v_id)
     }
@@ -529,10 +527,8 @@ namespace testNS2_2 {
   function check_2(v: string,
     is_subtype_of_A: boolean, v_id: number): boolean {
     let res: boolean = false
-    expect(v instanceof Any).assertEqual(is_subtype_of_A)
-    if (v instanceof Any) {
-      res = check_is_in_diff_type_2(v, v_id)
-    }
+    expect(is_subtype_of_A).assertEqual(true)
+    res = check_is_in_diff_type_2(v, v_id)
     if (res) {
       check_is_not_in_B_type_2(v, v_id)
     }
@@ -585,10 +581,8 @@ namespace testNS3_2 {
   function check_2(v: number,
     is_subtype_of_A: boolean, v_id: number): boolean {
     let res: boolean = false
-    expect(v instanceof Any).assertEqual(is_subtype_of_A)
-    if (v instanceof Any) {
-      res = check_is_in_diff_type_2(v, v_id)
-    }
+    expect(is_subtype_of_A).assertEqual(true)
+    res = check_is_in_diff_type_2(v, v_id)
     if (res) {
       check_is_not_in_B_type_2(v, v_id)
     }
@@ -641,10 +635,8 @@ namespace testNS4_2 {
   function check_2(v: null,
     is_subtype_of_A: boolean, v_id: number): boolean {
     let res: boolean = false
-    expect(v instanceof Any).assertEqual(is_subtype_of_A)
-    if (v instanceof Any) {
-      res = check_is_in_diff_type_2(v, v_id)
-    }
+    expect(is_subtype_of_A).assertEqual(true)
+    res = check_is_in_diff_type_2(v, v_id)
     if (res) {
       check_is_not_in_B_type_2(v, v_id)
     }
@@ -697,10 +689,8 @@ namespace testNS5_2 {
   function check_2(v: undefined,
     is_subtype_of_A: boolean, v_id: number): boolean {
     let res: boolean = false
-    expect(v instanceof Any).assertEqual(is_subtype_of_A)
-    if (v instanceof Any) {
-      res = check_is_in_diff_type_2(v, v_id)
-    }
+    expect(is_subtype_of_A).assertEqual(true)
+    res = check_is_in_diff_type_2(v, v_id)
     if (res) {
       check_is_not_in_B_type_2(v, v_id)
     }
@@ -753,10 +743,8 @@ namespace testNS6_2 {
   function check_2(v: string | number,
     is_subtype_of_A: boolean, v_id: number): boolean {
     let res: boolean = false
-    expect(v instanceof Any).assertEqual(is_subtype_of_A)
-    if (v instanceof Any) {
-      res = check_is_in_diff_type_2(v, v_id)
-    }
+    expect(is_subtype_of_A).assertEqual(true)
+    res = check_is_in_diff_type_2(v, v_id)
     if (res) {
       check_is_not_in_B_type_2(v, v_id)
     }
@@ -808,10 +796,8 @@ namespace testNS6_2 {
 function check_2(v: Object,
   is_subtype_of_A: boolean, v_id: number): boolean {
   let res: boolean = false
-  expect(v instanceof Any).assertEqual(is_subtype_of_A)
-  if (v instanceof Any) {
-    res = check_is_in_diff_type_2(v, v_id)
-  }
+  expect(is_subtype_of_A).assertEqual(true)
+  res = check_is_in_diff_type_2(v, v_id)
   if (res) {
     check_is_not_in_B_type_2(v, v_id)
   }

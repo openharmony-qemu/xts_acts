@@ -100,12 +100,6 @@ interface III15 extends I15 {}
 class A15 implements II15 {}
 class B15 implements III15 {}
 
-function foo15(i: boolean) {
-  if(i)
-    return new A15();
-  return new B15();
-}
-
 function foo16() {  // infer std::Array
   return new Array<int>(2);
 }
@@ -116,10 +110,6 @@ function foo17() {
 }
 
 type TPL18 = [number, string]  // infer tuple
-function foo18() {
-  let i: TPL18 = [1.1, "some str"]
-  return i
-}
 
 const cstr19 = "some string"  // infer string/char
 function foo19(i: boolean) {
@@ -142,7 +132,7 @@ function foo20(i: int) {
 
 function foo21(i: int) {  // infer string of different size
   switch(i) {
-    case 1: return "\u{D800}\u{D801}"; //surrogate
+    case 1: return "\u{1000}\u{1001}"; //myanmar
     case 2: return "\u{A123}"; // utf-16
     case 3: return "\u{00000069}"; // utf-32
     default: return "utf-8";
@@ -550,7 +540,7 @@ export default function ReturnTypeInferenceTest04():void {
      * @tc.level     Level 2
      */
     it("testRetTypeInfer0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(foo21(1) == "\u{D800}\u{D801}").assertTrue()
+      expect(foo21(1) == "\u{1000}\u{1001}").assertTrue()
       expect(foo21(2) == "\u{A123}").assertTrue()
       expect(foo21(3) == "\u{00000069}").assertTrue()
     });

@@ -110,15 +110,10 @@ namespace testNS2_1 {
   function check_is_subtype_of_A(a: Object | undefined | null): boolean {
     let res: boolean = false
     if (a instanceof string | number) {
-      if (a instanceof number) {
+      if ((a === "Done") ||
+        (a === "In Progress") ||
+        (a === "On Review")) {
         res = true
-      }
-      else {
-        if ((a === "Done") ||
-          (a === "In Progress") ||
-          (a === "On Review")) {
-          res = true
-        }
       }
     }
     return res
@@ -184,15 +179,10 @@ namespace testNS3_1 {
   function check_is_subtype_of_A(a: Object | undefined | null): boolean {
     let res: boolean = false
     if (a instanceof string | number) {
-      if (a instanceof number) {
+      if ((a === "Done") ||
+        (a === "In Progress") ||
+        (a === "On Review")) {
         res = true
-      }
-      else {
-        if ((a === "Done") ||
-          (a === "In Progress") ||
-          (a === "On Review")) {
-          res = true
-        }
       }
     }
     return res
@@ -258,15 +248,10 @@ namespace testNS4_1 {
   function check_is_subtype_of_A(a: Object | undefined | null): boolean {
     let res: boolean = false
     if (a instanceof string | number) {
-      if (a instanceof number) {
+      if ((a === "Done") ||
+        (a === "In Progress") ||
+        (a === "On Review")) {
         res = true
-      }
-      else {
-        if ((a === "Done") ||
-          (a === "In Progress") ||
-          (a === "On Review")) {
-          res = true
-        }
       }
     }
     return res
@@ -924,15 +909,10 @@ namespace testNS13_1 {
   function check_is_subtype_of_A(a: Object | undefined | null): boolean {
     let res: boolean = false
     if (a instanceof string | number) {
-      if (a instanceof number) {
+      if ((a === "Done") ||
+        (a === "In Progress") ||
+        (a === "On Review")) {
         res = true
-      }
-      else {
-        if ((a === "Done") ||
-          (a === "In Progress") ||
-          (a === "On Review")) {
-          res = true
-        }
       }
     }
     return res
@@ -1220,15 +1200,10 @@ namespace testNS2_2 {
   function check_is_subtype_of_A(a: Object | undefined | null): boolean {
     let res: boolean = false
     if (a instanceof string | number) {
-      if (a instanceof number) {
+      if ((a === "Done") ||
+        (a === "In Progress") ||
+        (a === "On Review")) {
         res = true
-      }
-      else {
-        if ((a === "Done") ||
-          (a === "In Progress") ||
-          (a === "On Review")) {
-          res = true
-        }
       }
     }
     return res
@@ -1294,15 +1269,10 @@ namespace testNS3_2 {
   function check_is_subtype_of_A(a: Object | undefined | null): boolean {
     let res: boolean = false
     if (a instanceof string | number) {
-      if (a instanceof number) {
+      if ((a === "Done") ||
+        (a === "In Progress") ||
+        (a === "On Review")) {
         res = true
-      }
-      else {
-        if ((a === "Done") ||
-          (a === "In Progress") ||
-          (a === "On Review")) {
-          res = true
-        }
       }
     }
     return res

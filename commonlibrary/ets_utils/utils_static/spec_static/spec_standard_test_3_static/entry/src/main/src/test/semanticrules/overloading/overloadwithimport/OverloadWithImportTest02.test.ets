@@ -24,7 +24,9 @@ async function sleep(time: int): Promise<int> {
 }
 
 // ============================================================================
-// Mocked "function_export_all.ets" and Overload logic for Tests
+// In-file namespace mocks simulating overloaded import sources for Tests
+// Note: These are NOT actual cross-module imports. To fully test cross-module
+// overload resolution, these should be moved to separate helper files.
 // ============================================================================
 
 namespace import_source_0_1 {
@@ -104,7 +106,7 @@ export default function OverloadWithImportTest02():void {
     /**
      * @tc.number    SUB_OVERLOAD_WITH_IMPORTTESTTWO_0100
      * @tc.name      testFunctionImportOneSource0001
-     * @tc.desc      Overload function from imported functions (Empty args).
+     * @tc.desc      Overload function with in-file namespace mock (Empty args).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -116,7 +118,7 @@ export default function OverloadWithImportTest02():void {
     /**
      * @tc.number    SUB_OVERLOAD_WITH_IMPORTTESTTWO_0200
      * @tc.name      testFunctionImportOneSource0002
-     * @tc.desc      Overload function from imported functions (Boolean arg).
+     * @tc.desc      Overload function with in-file namespace mock (Boolean arg).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -128,7 +130,7 @@ export default function OverloadWithImportTest02():void {
     /**
      * @tc.number    SUB_OVERLOAD_WITH_IMPORTTESTTWO_0300
      * @tc.name      testFunctionImportOneSource0003
-     * @tc.desc      Overload function from imported functions (Integer arg resolving to foo03).
+     * @tc.desc      Overload function with in-file namespace mock (Integer arg resolving to foo03).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -140,7 +142,7 @@ export default function OverloadWithImportTest02():void {
     /**
      * @tc.number    SUB_OVERLOAD_WITH_IMPORTTESTTWO_0400
      * @tc.name      testFunctionImportOneSource0004
-     * @tc.desc      Overload function from imported functions (Float arg resolving to foo06).
+     * @tc.desc      Overload function with in-file namespace mock (Float arg resolving to foo06).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -152,7 +154,7 @@ export default function OverloadWithImportTest02():void {
     /**
      * @tc.number    SUB_OVERLOAD_WITH_IMPORTTESTTWO_0500
      * @tc.name      testFunctionImportOneSource0005
-     * @tc.desc      Overload function from imported functions (Math.abs mapping).
+     * @tc.desc      Overload function with in-file namespace mock (Math.abs mapping).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -164,7 +166,7 @@ export default function OverloadWithImportTest02():void {
     /**
      * @tc.number    SUB_OVERLOAD_WITH_IMPORTTESTTWO_0600
      * @tc.name      testFunctionImportOneSource0006
-     * @tc.desc      Overload function from imported functions (Math.max mapping).
+     * @tc.desc      Overload function with in-file namespace mock (Math.max mapping).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -176,7 +178,7 @@ export default function OverloadWithImportTest02():void {
     /**
      * @tc.number    SUB_OVERLOAD_WITH_IMPORTTESTTWO_0700
      * @tc.name      testFunctionImportOneSource0007
-     * @tc.desc      Overload function from imported functions (Integer arg resolving to foo04).
+     * @tc.desc      Overload function with in-file namespace mock (Integer arg resolving to foo04).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -188,7 +190,7 @@ export default function OverloadWithImportTest02():void {
     /**
      * @tc.number    SUB_OVERLOAD_WITH_IMPORTTESTTWO_0800
      * @tc.name      testFunctionImportOneSource0008
-     * @tc.desc      Overload function from imported functions (Double arg resolving to foo07).
+     * @tc.desc      Overload function with in-file namespace mock (Double arg resolving to foo07).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -200,7 +202,7 @@ export default function OverloadWithImportTest02():void {
     /**
      * @tc.number    SUB_OVERLOAD_WITH_IMPORTTESTTWO_0900
      * @tc.name      testFunctionImportOneSource0009
-     * @tc.desc      Overload function from imported functions (Integer arg resolving to foo05).
+     * @tc.desc      Overload function with in-file namespace mock (Integer arg resolving to foo05).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -212,7 +214,7 @@ export default function OverloadWithImportTest02():void {
     /**
      * @tc.number    SUB_OVERLOAD_WITH_IMPORTTESTTWO_1000
      * @tc.name      testFunctionImportOneSource0010
-     * @tc.desc      Overload function from imported functions (Object arg resolving to foo09).
+     * @tc.desc      Overload function with in-file namespace mock (Object arg resolving to foo09).
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2

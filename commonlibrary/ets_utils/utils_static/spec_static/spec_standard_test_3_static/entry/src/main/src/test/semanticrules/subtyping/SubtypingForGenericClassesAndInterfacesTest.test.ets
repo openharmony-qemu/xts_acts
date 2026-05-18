@@ -59,17 +59,17 @@ let a7: A7<D7,E7>
 let s7: B7<D7,E7> = new B7<D7,E7>
 let t7: A7<D7,E7>
 
-class D8 {}
-class E8 extends D8 {}
+class Da8 {}
+class E8 extends Da8 {}
 interface A8<T8,S8> {}
 interface B8<T8,S8> extends A8<T8,S8> {}
-let a8: A8<D8,E8>
-let s8: B8<D8,E8>
-let t8: A8<D8,E8>
+let a8: A8<Da8,E8>
+let s8: B8<Da8,E8>
+let t8: A8<Da8,E8>
 class X8<T8,S8> implements A8<T8,S8> {}
 class Y8<T8,S8> implements B8<T8,S8> {}
-t8 = new X8<D8,E8>
-s8 = new Y8<D8,E8>
+t8 = new X8<Da8,E8>
+s8 = new Y8<Da8,E8>
 
 class D9 {}
 class E9 extends D9 {}
