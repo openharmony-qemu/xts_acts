@@ -1,3 +1,4 @@
+'use static'
 /*
  * 依据 /Users/yuhu/word/harmony/test/BigInt_equals_1测试思维导图.md（equals(to: BigInt)）
  * 非 BigInt 入参在 ArkTS 中需经 Object 强转以覆盖运行时类型错误场景。

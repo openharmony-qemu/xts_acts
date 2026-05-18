@@ -1,3 +1,4 @@
+'use static'
 /*
  * 依据 constructor_2(byte) ~ constructor_5(long) 导图合并：整型路径与边界
  */

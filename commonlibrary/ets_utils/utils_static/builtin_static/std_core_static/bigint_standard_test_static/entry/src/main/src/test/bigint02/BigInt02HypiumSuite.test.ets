@@ -1,3 +1,4 @@
+'use static'
 /*
  * Hypium：BigInt 导图用例入口（entry/src/main/src/test/bigint02）
  * 导图目录：/Users/yuhu/word/harmony/test

@@ -1,3 +1,4 @@
+'use static'
 /*
  * 依据 /Users/yuhu/word/harmony/test/BigInt_fromULong测试思维导图.md
  */
@@ -56,7 +57,7 @@ export default function BigIntFromULongTest(): void {
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const result = BigInt.fromULong(1);
         expect(result instanceof BigInt).assertTrue();
-        expect(result !== null && result !== undefined).assertTrue();
+        expect(result.toString()).assertEqual('1');
       });
 
     /**

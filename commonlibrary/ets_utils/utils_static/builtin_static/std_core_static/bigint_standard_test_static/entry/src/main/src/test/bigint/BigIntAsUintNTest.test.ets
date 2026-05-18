@@ -1,3 +1,4 @@
+'use static'
 /*
  * 依据 /Users/yuhu/word/harmony/test/BigInt_asUintN测试思维导图.md（ArkTS-Sta API）
  * 注：缺少第二参在 ECMAScript 中运行时抛 TypeError；ArkTS-Sta 对 asUintN 静态要求两参，无法在单测中书写单参调用。

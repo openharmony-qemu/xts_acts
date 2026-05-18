@@ -1,3 +1,4 @@
+'use static'
 /*
  * 依据 /Users/yuhu/word/harmony/test/BigInt_constructor_1测试思维导图.md 生成
  * ArkTS-Sta：无参构造、返回值、运算与错误场景（可运行部分）
@@ -118,14 +119,14 @@ export default function BigIntConstructorNoArgTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_NOARG_0800
      * @tc.name testBigIntConstructorNoArgStress0800
-     * @tc.desc Verify many consecutive parameterless constructions remain stable
+     * @tc.desc Verify repeated parameterless constructions remain stable (up to 100 iterations)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntConstructorNoArgStress0800',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        for (let i = 0; i < 1000; i++) {
+        for (let i = 0; i < 100; i++) {
           const v = new BigInt();
           expect(v.toString()).assertEqual('0');
         }

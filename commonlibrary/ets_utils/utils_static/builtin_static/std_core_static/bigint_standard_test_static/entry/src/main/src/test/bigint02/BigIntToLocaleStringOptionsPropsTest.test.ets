@@ -1,3 +1,4 @@
+'use static'
 /*
  * 依据 /Users/yuhu/word/harmony/test/BigIntToLocaleStringOptions_属性测试思维导图.md
  */
