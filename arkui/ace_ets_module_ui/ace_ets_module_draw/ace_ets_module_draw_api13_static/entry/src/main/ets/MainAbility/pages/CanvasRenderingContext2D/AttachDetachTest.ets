@@ -26,7 +26,7 @@ import {
   ClickEvent,
   Color,
   Text,
-  Canvas,VoidCallback
+  VoidCallback
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 
