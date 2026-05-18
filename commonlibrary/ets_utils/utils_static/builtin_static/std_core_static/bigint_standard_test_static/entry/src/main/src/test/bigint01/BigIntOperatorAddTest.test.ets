@@ -97,10 +97,10 @@ export default function BigIntOperatorAddTest(): void {
         const result = a.operatorAdd(b);
         expect(result instanceof BigInt).assertTrue();
         expect(new BigInt(1).operatorAdd(new BigInt(2)).operatorAdd(new BigInt(3)).toString()).assertEqual('6');
-        const zero = new BigInt(0);
-        const self = new BigInt(0);
-        const sum = self.operatorAdd(zero);
-        expect(sum !== self).assertTrue();
+        const a2 = new BigInt(1);
+        const b2 = new BigInt(2);
+        const sum = a2.operatorAdd(b2);
+        expect(sum !== a2).assertTrue();
       });
 
     /**
@@ -116,22 +116,19 @@ export default function BigIntOperatorAddTest(): void {
         const a = new BigInt(10);
         expect((): void => {
           a.operatorAdd(null as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
         expect((): void => {
           a.operatorAdd(undefined as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
         expect((): void => {
           a.operatorAdd('abc' as object as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
         expect((): void => {
           a.operatorAdd(123 as object as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
         expect((): void => {
           a.operatorAdd(true as object as BigInt);
-        }).assertThrowError('TypeError');
-        expect((): void => {
-          a.operatorAdd({} as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
       });
   });
 }

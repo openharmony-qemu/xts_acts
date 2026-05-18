@@ -91,8 +91,9 @@ export default function BigIntGetLongTest(): void {
     it('testBigIntGetLongConsistent0600',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const v = new BigInt(8);
-        expect(v.getLong()).assertEqual(8);
-        expect(v.getLong()).assertEqual(v.getLong());
+        const first = v.getLong();
+        expect(first).assertEqual(8);
+        expect(v.getLong()).assertEqual(first);
       });
 
     /**

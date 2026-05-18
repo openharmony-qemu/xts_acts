@@ -90,16 +90,16 @@ export default function BigIntOperatorBitwiseAndTest(): void {
         const left = new BigInt(12);
         expect((): void => {
           left.operatorBitwiseAnd(null as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
         expect((): void => {
           left.operatorBitwiseAnd(undefined as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
         expect((): void => {
           left.operatorBitwiseAnd(5 as object as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
         expect((): void => {
           left.operatorBitwiseAnd('5' as object as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
       });
   });
 }

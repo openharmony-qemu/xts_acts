@@ -16,9 +16,12 @@ export default function BigIntToString3Test(): void {
      */
     it('testBigIntToString3DoubleRadix0100',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(255).toString(16.0)).assertEqual('ff');
-        expect(new BigInt(10).toString(2.0)).assertEqual('1010');
-        expect(new BigInt(10).toString(8.0)).assertEqual('12');
+        const radix16: double = 16.0;
+        const radix2: double = 2.0;
+        const radix8: double = 8.0;
+        expect(new BigInt(255).toString(Double.toInt(radix16))).assertEqual('ff');
+        expect(new BigInt(10).toString(Double.toInt(radix2))).assertEqual('1010');
+        expect(new BigInt(10).toString(Double.toInt(radix8))).assertEqual('12');
       });
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_3_0200

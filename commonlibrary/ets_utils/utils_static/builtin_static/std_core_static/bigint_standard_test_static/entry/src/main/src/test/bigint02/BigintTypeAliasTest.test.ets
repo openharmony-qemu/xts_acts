@@ -72,7 +72,7 @@ export default function BigintTypeAliasTest(): void {
         }).assertThrow(invalidMsg);
         expect((): void => {
           const bad: bigint = new BigInt(3.14 as double);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('RangeError');
       });
   });
 }

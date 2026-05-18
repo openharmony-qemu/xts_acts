@@ -18,7 +18,7 @@ export default function BigIntToLocaleString2Test(): void {
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const s = new BigInt(1000000).toLocaleString('en-US');
         expect(s.length > 0).assertTrue();
-        const zh = new BigInt(1000000).toLocaleString('zh-CN', { notation: 'compact' });
+        const zh = new BigInt(1000000).toLocaleString('zh-CN', { notation: 'compact', compactDisplay: 'short' });
         expect(zh.length > 0).assertTrue();
       });
   });

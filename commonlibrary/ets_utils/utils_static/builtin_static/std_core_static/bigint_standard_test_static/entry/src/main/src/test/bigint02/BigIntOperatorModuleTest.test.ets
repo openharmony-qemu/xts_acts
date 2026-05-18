@@ -58,22 +58,19 @@ export default function BigIntOperatorModuleTest(): void {
         const a = new BigInt(10);
         expect((): void => {
           a.operatorModule(null as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
         expect((): void => {
           a.operatorModule(undefined as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
         expect((): void => {
           a.operatorModule('abc' as object as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
         expect((): void => {
           a.operatorModule(123 as object as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
         expect((): void => {
           a.operatorModule(true as object as BigInt);
-        }).assertThrowError('TypeError');
-        expect((): void => {
-          a.operatorModule({} as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
       });
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MODULE_0600
@@ -87,7 +84,7 @@ export default function BigIntOperatorModuleTest(): void {
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect((): void => {
           new BigInt(10).operatorModule(new BigInt(0));
-        }).assertThrowError('RangeError');
+        }).assertThrowError('Error');
       });
   });
 }

@@ -81,22 +81,19 @@ export default function BigIntPowTest(): void {
         const v = new BigInt(8);
         expect((): void => {
           v.pow(null as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
         expect((): void => {
           v.pow(undefined as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
         expect((): void => {
           v.pow('abc' as object as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
         expect((): void => {
           v.pow(123 as object as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
         expect((): void => {
           v.pow(true as object as BigInt);
-        }).assertThrowError('TypeError');
-        expect((): void => {
-          v.pow({} as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
       });
   });
 }

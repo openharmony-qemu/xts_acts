@@ -83,13 +83,13 @@ export default function BigIntOperatorBitwiseXorTest(): void {
         const left = new BigInt(5);
         expect((): void => {
           left.operatorBitwiseXor(null as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
         expect((): void => {
           left.operatorBitwiseXor(undefined as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
         expect((): void => {
           left.operatorBitwiseXor(5 as object as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
       });
   });
 }

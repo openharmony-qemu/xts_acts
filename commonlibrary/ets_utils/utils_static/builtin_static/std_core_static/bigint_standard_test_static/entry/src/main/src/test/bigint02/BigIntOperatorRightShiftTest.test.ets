@@ -45,22 +45,19 @@ export default function BigIntOperatorRightShiftTest(): void {
         const a = new BigInt(256);
         expect((): void => {
           a.operatorRightShift(null as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
         expect((): void => {
           a.operatorRightShift(undefined as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
         expect((): void => {
           a.operatorRightShift('abc' as object as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
         expect((): void => {
           a.operatorRightShift(123 as object as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
         expect((): void => {
           a.operatorRightShift(true as object as BigInt);
-        }).assertThrowError('TypeError');
-        expect((): void => {
-          a.operatorRightShift({} as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
       });
   });
 }

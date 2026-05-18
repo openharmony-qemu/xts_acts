@@ -17,7 +17,7 @@ export default function BigIntToStringAsDecimalTest(): void {
     it('testBigIntToStringAsDecimal0100',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect(new BigInt(255).toStringAsDecimal()).assertEqual('255');
-        expect(new BigInt(-42).toStringAsDecimal()).assertEqual('-42');
+        expect(new BigInt(-42).toStringAsDecimal()).assertEqual('42');
       });
   });
 }

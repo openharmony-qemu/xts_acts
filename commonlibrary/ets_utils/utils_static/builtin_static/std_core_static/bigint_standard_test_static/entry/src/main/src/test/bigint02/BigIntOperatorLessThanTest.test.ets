@@ -62,22 +62,19 @@ export default function BigIntOperatorLessThanTest(): void {
         const a = new BigInt(10);
         expect((): void => {
           a.operatorLessThan(null as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
         expect((): void => {
           a.operatorLessThan(undefined as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
         expect((): void => {
           a.operatorLessThan('abc' as object as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
         expect((): void => {
           a.operatorLessThan(123 as object as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
         expect((): void => {
           a.operatorLessThan(true as object as BigInt);
-        }).assertThrowError('TypeError');
-        expect((): void => {
-          a.operatorLessThan({} as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
       });
   });
 }

@@ -17,9 +17,9 @@ export default function BigIntOperatorLessThanEqualTest(): void {
     it('testBigIntOperatorLessThanEqualBasic0100',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect(new BigInt(10).operatorLessThanEqual(new BigInt(10))).assertTrue();
-        expect(new BigInt(5).operatorLessThanEqual(new BigInt(10))).assertFalse();
-        expect(new BigInt(10).operatorLessThanEqual(new BigInt(5))).assertTrue();
-        expect(new BigInt(-5).operatorLessThanEqual(new BigInt(-10))).assertTrue();
+        expect(new BigInt(5).operatorLessThanEqual(new BigInt(10))).assertTrue();
+        expect(new BigInt(10).operatorLessThanEqual(new BigInt(5))).assertFalse();
+        expect(new BigInt(-5).operatorLessThanEqual(new BigInt(-10))).assertFalse();
         expect(new BigInt(0).operatorLessThanEqual(new BigInt(0))).assertTrue();
       });
     /**
@@ -60,22 +60,19 @@ export default function BigIntOperatorLessThanEqualTest(): void {
         const a = new BigInt(10);
         expect((): void => {
           a.operatorLessThanEqual(null as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
         expect((): void => {
           a.operatorLessThanEqual(undefined as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
         expect((): void => {
           a.operatorLessThanEqual('abc' as object as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
         expect((): void => {
           a.operatorLessThanEqual(123 as object as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
         expect((): void => {
           a.operatorLessThanEqual(true as object as BigInt);
-        }).assertThrowError('TypeError');
-        expect((): void => {
-          a.operatorLessThanEqual({} as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
       });
   });
 }

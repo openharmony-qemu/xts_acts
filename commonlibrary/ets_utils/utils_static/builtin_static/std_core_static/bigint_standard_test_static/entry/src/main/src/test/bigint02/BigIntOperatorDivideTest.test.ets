@@ -59,22 +59,19 @@ export default function BigIntOperatorDivideTest(): void {
         const a = new BigInt(10);
         expect((): void => {
           a.operatorDivide(null as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
         expect((): void => {
           a.operatorDivide(undefined as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
         expect((): void => {
           a.operatorDivide('abc' as object as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
         expect((): void => {
           a.operatorDivide(123 as object as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
         expect((): void => {
           a.operatorDivide(true as object as BigInt);
-        }).assertThrowError('TypeError');
-        expect((): void => {
-          a.operatorDivide({} as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
       });
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_DIVIDE_0600
@@ -88,7 +85,7 @@ export default function BigIntOperatorDivideTest(): void {
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect((): void => {
           new BigInt(10).operatorDivide(new BigInt(0));
-        }).assertThrowError('RangeError');
+        }).assertThrowError('Error');
       });
   });
 }

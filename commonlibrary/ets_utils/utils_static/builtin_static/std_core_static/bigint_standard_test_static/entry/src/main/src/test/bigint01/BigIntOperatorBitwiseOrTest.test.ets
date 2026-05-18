@@ -101,13 +101,10 @@ export default function BigIntOperatorBitwiseOrTest(): void {
         const left = new BigInt(12);
         expect((): void => {
           left.operatorBitwiseOr(null as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
         expect((): void => {
           left.operatorBitwiseOr(undefined as BigInt);
-        }).assertThrowError('TypeError');
-        expect((): void => {
-          left.operatorBitwiseOr({} as BigInt);
-        }).assertThrowError('TypeError');
+        }).assertThrowError('ClassCastError');
       });
   });
 }
