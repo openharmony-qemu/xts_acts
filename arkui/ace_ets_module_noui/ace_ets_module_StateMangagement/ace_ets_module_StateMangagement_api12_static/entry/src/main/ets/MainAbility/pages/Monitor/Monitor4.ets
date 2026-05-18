@@ -42,15 +42,16 @@ export class Base {
   @Trace baseNum: number = 100
 
   @Monitor(['baseNum'])
-  onBaseChange(monitor: IMonitor) {
+  onBaseChange(monitor: IMonitor): void {
     testSample.res1 = '测试1：'
   }
 }
 
 @ObservedV2
 export class Derived extends Base {
+  @Trace age: number = 20
   @Monitor(['baseNum'])
-  onDerivedChange(monitor: IMonitor) {
+  onDerivedChange(monitor: IMonitor): void {
     testSample.res1 += "Success"
   }
 }
