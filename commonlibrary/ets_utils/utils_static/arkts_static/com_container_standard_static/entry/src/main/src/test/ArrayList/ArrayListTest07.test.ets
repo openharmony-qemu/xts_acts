@@ -326,9 +326,7 @@ export default function ArrayList07Test(): void {
         console.log(TAG + ' start');
         let arrayList = new ArrayList<number>();
         arrayList.add(1);
-        // In ArkTS-Sta, passing undefined to removeByIndex is a compile-time error
-        // This test validates the compile-time type safety
-        expect(true).assertTrue();
+        expect(arrayList.length).assertEqual(1);
         console.log(TAG + ' done');
 
       });
@@ -347,9 +345,7 @@ export default function ArrayList07Test(): void {
         console.log(TAG + ' start');
         let arrayList = new ArrayList<number>();
         arrayList.add(1);
-        // In ArkTS-Sta, passing null to removeByIndex is a compile-time error
-        // This test validates the compile-time type safety
-        expect(true).assertTrue();
+        expect(arrayList.length).assertEqual(1);
         console.log(TAG + ' done');
 
       });
@@ -1744,9 +1740,8 @@ export default function ArrayList07Test(): void {
         const TAG = 'testArraylist03UndefinedParam0016';
         console.log(TAG + ' start');
         const list = new ArrayList<number>();
-        // In ArkTS-Sta, undefined cannot be passed to Int parameter
-        // Type safety is enforced at compile time
-        expect(true).assertTrue();
+        list.add(1);
+        expect(list.length).assertEqual(1);
         console.log(TAG + ' done');
       });
 
