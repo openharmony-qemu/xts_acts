@@ -44,7 +44,7 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_0100
      * @tc.desc    Clear an empty ArkTS Map, check size is 0
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
     it('builtinsMapClearTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
@@ -58,7 +58,7 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_0200
      * @tc.desc    Clear a ArkTS Map with one element, check size is 0
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
     it('builtinsMapClearTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
@@ -73,7 +73,7 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_0300
      * @tc.desc    Clear a ArkTS Map with multiple elements, check size is 0
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
     it('builtinsMapClearTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
@@ -90,7 +90,7 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_0400
      * @tc.desc    After clear, check if original key exists
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
     it('builtinsMapClearTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
@@ -105,7 +105,7 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_0500
      * @tc.desc    After clear, check if get returns undefined for original key
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
     it('builtinsMapClearTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
@@ -120,7 +120,7 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_0600
      * @tc.desc    Clear a ArkTS Map with number keys
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
     it('builtinsMapClearTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
@@ -136,7 +136,7 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_0700
      * @tc.desc    Clear a ArkTS Map with boolean keys
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
     it('builtinsMapClearTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
@@ -152,7 +152,7 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_0800
      * @tc.desc    Clear a ArkTS Map with null key
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
     it('builtinsMapClearTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
@@ -167,7 +167,7 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_0900
      * @tc.desc    Clear a ArkTS Map with undefined key
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
     it('builtinsMapClearTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
@@ -182,7 +182,7 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_1000
      * @tc.desc    Clear a ArkTS Map and check entries iterator is empty
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
     it('builtinsMapClearTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
@@ -199,7 +199,7 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_1100
      * @tc.desc    Clear a ArkTS Map and check keys iterator is empty
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
     it('builtinsMapClearTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
@@ -216,8 +216,8 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_1200
      * @tc.desc    Clear a ArkTS Map and check values iterator is empty
      * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level 1
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsMapClearTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>();
@@ -233,8 +233,8 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_1300
      * @tc.desc    Call clear multiple times on the same ArkTS Map
      * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level 1
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsMapClearTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>();
@@ -250,8 +250,8 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_1400
      * @tc.desc    Clear a ArkTS Map and then add new elements
      * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level 1
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsMapClearTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string,string> = new collections.Map<string, string>();
@@ -266,8 +266,8 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_1500
      * @tc.desc    Clear a ArkTS Map created from an array of pairs
      * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level 1
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsMapClearTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const pairs: [string, number][] = [['a', 1], ['b', 2], ['c', 3]];
@@ -281,8 +281,8 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_1600
      * @tc.desc    Clear a ArkTS Map created from another Map
      * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level 1
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsMapClearTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const original: collections.Map<string, number> = new collections.Map<string, number>();
@@ -297,8 +297,8 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_1700
      * @tc.desc    Clear a large ArkTS Map with 1000 elements
      * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level 1
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsMapClearTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, number> = new collections.Map<number, number>();
@@ -314,8 +314,8 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_1800
      * @tc.desc    Clear a ArkTS Map and check forEach doesn't execute
      * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level 1
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsMapClearTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>();
@@ -333,8 +333,8 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_1900
      * @tc.desc    Clear a ArkTS Map with large integer keys
      * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level 1
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsMapClearTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>();
@@ -349,8 +349,8 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_2000
      * @tc.desc    Clear a ArkTS Map and verify with has() for multiple keys
      * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level 1
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsMapClearTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>();
@@ -371,8 +371,8 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_2100
      * @tc.desc    Clear a ArkTS Map and check after setting same key again
      * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level 1
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsMapClearTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>();
@@ -388,8 +388,8 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_2200
      * @tc.desc    Clear a ArkTS Map with Infinity as key
      * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level 1
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsMapClearTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>();
@@ -404,8 +404,8 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_2300
      * @tc.desc    Clear a ArkTS Map with NaN as key
      * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level 1
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsMapClearTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>();
@@ -419,8 +419,8 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_2400
      * @tc.desc    Clear a ArkTS Map and check if it's iterable (should be empty)
      * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level 1
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsMapClearTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const pairs: [number, string][] = [[1, 'a'], [2, 'b']];
@@ -438,8 +438,8 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_2500
      * @tc.desc    Clear a ArkTS Map and check with JSON.stringify
      * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level 1
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsMapClearTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const pairs: [string, number][] = [['a', 1]];
@@ -453,8 +453,8 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_2600
      * @tc.desc    Clear a ArkTS Map that's been assigned to another variable
      * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level 1
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsMapClearTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map1: collections.Map<string, string> = new collections.Map<string, string>();
@@ -469,8 +469,8 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_2700
      * @tc.desc    Clear a ArkTS Map and check prototype methods still work
      * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level 1
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsMapClearTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>();
@@ -485,8 +485,8 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_2800
      * @tc.desc    Clear a ArkTS Map with elements added after previous clear
      * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level 1
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsMapClearTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>();
@@ -502,8 +502,8 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_2900
      * @tc.desc    Clear a ArkTS Map with Unicode string keys
      * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level 1
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsMapClearTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>();
@@ -518,8 +518,8 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_3000
      * @tc.desc    Clear a ArkTS Map with empty string key
      * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level 1
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsMapClearTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>();
@@ -533,8 +533,8 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_3100
      * @tc.desc    Clear a ArkTS Map with large integer keys
      * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level 1
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsMapClearTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>();
@@ -549,8 +549,8 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_3200
      * @tc.desc    Clear a ArkTS Map with negative number keys
      * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level 1
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsMapClearTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>();
@@ -565,8 +565,8 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_3300
      * @tc.desc    Clear a ArkTS Map with floating point number keys
      * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level 1
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsMapClearTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>();
@@ -581,8 +581,8 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_3400
      * @tc.desc    Clear a ArkTS Map and check if it's empty using Array.from
      * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level 1
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsMapClearTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const pairs: [number, string][] = [[1, 'a'], [2, 'b']];
@@ -596,8 +596,8 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_3500
      * @tc.desc    Clear a ArkTS Map and then delete a key (should have no effect)
      * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level 1
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsMapClearTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const pairs: [string, string][] = [['key', 'value']];
@@ -612,8 +612,8 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_3600
      * @tc.desc    Clear a ArkTS Map with a ArkTS Map as a value
      * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level 1
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsMapClearTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const innerMap = new collections.Map<string, string>([['inner', 'value']]);
@@ -627,8 +627,8 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_3700
      * @tc.desc    Clear a ArkTS Map and check with Map.prototype.keys.next()
      * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level 1
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsMapClearTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const pairs: [number, string][] = [[1, 'a'], [2, 'b']];
@@ -642,8 +642,8 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_3800
      * @tc.desc    Clear a ArkTS Map and check with Map.prototype.values.next()
      * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level 1
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsMapClearTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const pairs: [number, string][] = [[1, 'a'], [2, 'b']];
@@ -657,8 +657,8 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_3900
      * @tc.desc    Clear a ArkTS Map and check with Map.prototype.entries.next()
      * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level 1
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsMapClearTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const pairs: [number, string][] = [[1, 'a'], [2, 'b']];
@@ -672,8 +672,8 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_4000
      * @tc.desc    Clear a ArkTS Map and then check with a for loop using keys
      * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level 1
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsMapClearTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const pairs: [number, string][] = [[1, 'a'], [2, 'b']];
@@ -693,8 +693,8 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_4100
      * @tc.desc    Clear a ArkTS Map and then check with a for loop using values
      * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level 1
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsMapClearTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const pairs: [number, string][] = [[1, 'a'], [2, 'b']];
@@ -714,8 +714,8 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_4200
      * @tc.desc    Clear a ArkTS Map and check with JSON.stringify after converting to array
      * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level 1
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsMapClearTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const pairs: [number, string][] = [[1, 'a'], [2, 'b']];
@@ -729,8 +729,8 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_4300
      * @tc.desc    Clear a ArkTS Map and then check if the map is equal to a new empty map
      * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level 1
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsMapClearTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
 
@@ -745,8 +745,8 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_4400
      * @tc.desc    Clear a ArkTS Map and check that the map is an instance of Map
      * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level 1
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsMapClearTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const pairs: [number, string][] = [[1, 'a']];
@@ -760,8 +760,8 @@ export default function BuiltinsMapClearTest() {
      * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_4500
      * @tc.desc    Clear a ArkTS Map and check that the clear method still exists
      * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level 1
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
      */
     it('builtinsMapClearTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const pairs: [number, string][] = [[1, 'a']];
