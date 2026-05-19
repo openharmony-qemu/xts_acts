@@ -1660,7 +1660,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
             expect(null).assertFail();
           } catch (error) {
             console.error(`[XTS] MLDSA_Mu_Func_1800 Sign context ${error}`);
-            expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
+            expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.NOT_SUPPORT);
           }
           let verify: cryptoFramework.Verify = cryptoFramework.createVerify("RSA512|PKCS1|SHA256");
           try {
@@ -1677,7 +1677,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
             expect(null).assertFail();
           } catch (error) {
             console.error(`[XTS] MLDSA_Mu_Func_1800 Verify context ${error}`);
-            expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
+            expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.NOT_SUPPORT);
           }
           done();
         });
