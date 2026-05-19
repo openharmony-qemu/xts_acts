@@ -26,20 +26,22 @@ export default function actsWifiManagerFunctionsTest() {
 
   describe("actsWifiManagerFunctionsTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
-    beforeAll(async (): Promise<void> => {
+    beforeAll(async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
-      await Utils.openWifi();
       const ABILITY_NAME = 'EntryAbility';
       const BUNDLE_NAME = 'ohos.acts.communication.wifi.wifidevice.static';
+      await Utils.openWifi();
       await abilityDelegatorRegistry.getAbilityDelegator().executeShellCommand(`aa start -a ${ABILITY_NAME} -b ${BUNDLE_NAME}`);
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
+      done();
     });
 
-    afterAll(async (): Promise<void> => {
+    afterAll(async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'afterAll start');
       await Utils.closeWifi();
       await Utils.openWifi();
       hilog.info(domain, tag, '%{public}s', 'afterAll end');
+      done();
     });
 
     /**
