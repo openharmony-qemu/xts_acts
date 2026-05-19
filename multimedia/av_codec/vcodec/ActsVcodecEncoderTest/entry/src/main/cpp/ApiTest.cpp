@@ -1071,7 +1071,6 @@ int VideoEncodeApiDual0600()
             OH_VideoEncoder_CreateSecondaryFromPrimary(
                 primaryVencCodec, &thirdVencCodec));
         OH_VideoEncoder_Destroy(primaryVencCodec);
-        OH_VideoEncoder_Destroy(vencCodec);
         OH_VideoEncoder_Destroy(secondaryVencCodec);
         return 0;
     } else {
