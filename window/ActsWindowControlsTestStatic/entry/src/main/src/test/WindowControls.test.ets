@@ -1,21 +1,22 @@
 'use static';
 /*
-
-Copyright (c) 2025-2026 Huawei Device Co., Ltd.
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
+
 import display from '@ohos.display';
 // import { MyCallback } from '../models/MyCallback';
 import window from '@ohos.window'
@@ -48,20 +49,20 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
         if (options) {
             context.startAbility(want, options).then(() => {
                 hilog.info(domain, tag, `${caseName} Succeeded in starting ability.`);
-            }).catch((err: Error): PromiseLike | undefined => {
+            }).catch((err: Error): PromiseLike<void> | undefined => {
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         } else {
             context.startAbility(want).then(() => {
                 hilog.info(domain, tag, `${caseName} Succeeded in starting ability.`);
-            }).catch((err: Error): PromiseLike | undefined => {
+            }).catch((err: Error): PromiseLike<void> | undefined => {
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         }
         Utils.msSleep(1000).awaitSync()
         hilog.info(domain, tag, `${caseName} get windowStageStart start.`);
         let windowStageStart: window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
-        hilog.info(domain, tag, `${caseName} Succeeded in get windowStageStart. + windowStageStart`);
+        hilog.info(domain, tag, `${caseName} Succeeded in get windowStageStart.` + windowStageStart);
         resolve(windowStageStart);
     })
 }
@@ -76,7 +77,7 @@ async function terminateAbility(caseName: string) {
         }
         pageContext.terminateSelf().then(() => {
             hilog.info(domain, tag, `${caseName} terminateSelf success`);
-        }).catch((err: Error): PromiseLike | undefined => {
+        }).catch((err: Error): PromiseLike<void> | undefined => {
             hilog.error(domain, tag, `${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
         });
     } catch (e) {
@@ -86,6 +87,7 @@ async function terminateAbility(caseName: string) {
 }
 
 export default function WindowControlsTest(): void {
+
     describe("WindowControlsTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'WindowControlsTest describe start');
         let windowStage: window.WindowStage | undefined;
@@ -199,7 +201,7 @@ export default function WindowControlsTest(): void {
                             hilog.info(domain, tag, msgStr + 'Succeeded in setting image for recent');
                             done()
                         }).catch((err: Error): PromiseLike<void> | undefined => {
-                            hilog.error(domain, tag, msgStr + `Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}`);
+                            hilog.error(domain, tag, msgStr + 'Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}');
                             expect(false).assertTrue();
                             done();
                         });
@@ -459,4 +461,5 @@ export default function WindowControlsTest(): void {
 
 
     })
+
 }
