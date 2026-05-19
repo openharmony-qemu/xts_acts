@@ -19,8 +19,8 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
 export class MyModifier implements AttributeModifier<ButtonAttribute> {
-  @State public cnt: int = 0;
-  @State public isOnMouseUndefined: boolean = true;
+  public cnt: int = 0;
+  public isOnMouseUndefined: boolean = true;
 
   applyNormalAttribute(instance: ButtonAttribute): void {
     instance

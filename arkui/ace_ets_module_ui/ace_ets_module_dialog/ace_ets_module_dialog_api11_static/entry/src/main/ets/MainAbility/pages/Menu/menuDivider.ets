@@ -38,7 +38,6 @@ import {
   DividerStyleOptions,
   SubMenuExpandingMode
 } from '@ohos.arkui.component';
-import { LengthMetrics } from '@ohos.arkui.node'
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
 

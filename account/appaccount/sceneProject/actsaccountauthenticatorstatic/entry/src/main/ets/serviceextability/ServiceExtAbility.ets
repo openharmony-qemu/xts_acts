@@ -261,12 +261,12 @@ class MyAuthenticator extends account.Authenticator {
 }
 
 export default class ServiceExtAbility extends ServiceExtensionAbility {
-  onCreate(want: Want) {
+  onCreate(want: Want): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'ServiceExtensionAbility onCreate');
     hilog.info(0x0000, 'testTag', '%{public}s', 'want param:' + JSON.stringify(want) ?? '');
   }
 
-  onRequest(want: Want, startId: number) {
+  onRequest(want: Want, startId: number): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'ServiceExtensionAbility onRequest');
     hilog.info(0x0000, 'testTag', '%{public}s', 'want param:' + JSON.stringify(want) ?? '');
     hilog.info(0x0000, 'testTag', '%{public}s', 'startId param:' + JSON.stringify(startId) ?? '');
@@ -285,7 +285,7 @@ export default class ServiceExtAbility extends ServiceExtensionAbility {
     return Promise.resolve();
   }
 
-  onDestroy() {
+  onDestroy(): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
   }
 }

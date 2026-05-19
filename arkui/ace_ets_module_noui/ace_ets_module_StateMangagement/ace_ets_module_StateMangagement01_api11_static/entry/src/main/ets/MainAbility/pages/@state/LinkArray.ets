@@ -52,7 +52,7 @@ import common from '@ohos.app.ability.common';
 
 @Component
 struct Child_CM {
-  @Link Array: Array<Number> | Array<boolean> | Boolean | Array<Resource> = [1.0]
+  @Link Array: Array<Number> | Array<boolean> | Boolean | Array<Resource>;
 
 
   build() {

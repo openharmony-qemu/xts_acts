@@ -59,7 +59,7 @@ class Num4 {
 
 @Component
 struct Child_CP {
-  @Link count: number | Object | String | Date | Boolean = '';
+  @Link count: number | Object | String | Date | Boolean;
 
   build() {
     Column() {

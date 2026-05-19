@@ -48,7 +48,7 @@ export class ClassA006 {
 
 @Component
 struct PropObjectLinkFather {
-  @ObjectLink class_A: ClassA006 = new ClassA006(1);
+  @ObjectLink class_A: ClassA006;
 
   build() {
     Column() {
@@ -72,7 +72,7 @@ struct ObjectLinkConsume {
 
 @Component
 struct LinkObjectLink {
-  @Link class_A: ClassA006 = new ClassA006(1);
+  @Link class_A: ClassA006;
 
   build() {
     Column() {
@@ -84,7 +84,7 @@ struct LinkObjectLink {
 
 @Component
 struct PropObjectLink6 {
-  @ObjectLink class_A: ClassA006 = new ClassA006(1);
+  @ObjectLink class_A: ClassA006;
 
   build() {
     Column() {

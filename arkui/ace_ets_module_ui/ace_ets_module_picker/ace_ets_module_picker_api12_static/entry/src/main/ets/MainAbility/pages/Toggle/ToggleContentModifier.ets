@@ -13,10 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Margin, Builder,Row,ToggleConfiguration,
-  TimePicker, Toggle, TimePickerFormat,ClickEvent,
-  Text, TextPicker,Color,Button,FontWeight,Color,ToggleType,ColumnOptions
-,ContentModifier,ToggleConfiguration,WrappedBuilder,wrapBuilder,CustomBuilderT} from '@ohos.arkui.component'
+import { Entry, Column, Component, Margin, Builder, Row, ToggleConfiguration, Toggle, ClickEvent,
+  Text, Color, Button, FontWeight, ToggleType, ColumnOptions
+, ContentModifier, WrappedBuilder, wrapBuilder, CustomBuilderT} from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
 class MySwitchStyle implements ContentModifier<ToggleConfiguration> {

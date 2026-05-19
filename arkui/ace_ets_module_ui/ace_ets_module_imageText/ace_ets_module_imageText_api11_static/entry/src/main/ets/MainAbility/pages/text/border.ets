@@ -26,7 +26,6 @@ import {
   Length,
   ResourceColor,
   EdgeColors,
-  BorderStyle,
   FlexAlign,
   ItemAlign,
   TextAlign
