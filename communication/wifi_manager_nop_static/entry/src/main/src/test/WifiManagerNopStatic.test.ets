@@ -278,7 +278,7 @@ export default function wifiManagerTest() {
               expect(err?.code).assertEqual(201);
             }
           } else {
-            hilog.info(domain, tag, 'use callback api success' + JSON.stringify(data?));
+            hilog.info(domain, tag, 'use callback api success');
             expect().assertFail();
           }
         } catch (err) {
@@ -335,7 +335,7 @@ export default function wifiManagerTest() {
               expect(err?.code).assertEqual(201);
             }
           } else {
-            hilog.info(domain, tag, 'use callback api success' + JSON.stringify(data?));
+            hilog.info(domain, tag, 'use callback api success');
             expect().assertFail();
           }
         } catch (err) {
@@ -392,7 +392,7 @@ export default function wifiManagerTest() {
               expect(err?.code).assertEqual(201);
             }
           } else {
-            hilog.info(domain, tag, 'use callback api success' + JSON.stringify(data?));
+            hilog.info(domain, tag, 'use callback api success');
             expect().assertFail();
           }
         } catch (err) {
@@ -449,7 +449,7 @@ export default function wifiManagerTest() {
               expect(err?.code).assertEqual(201);
             }
           } else {
-            hilog.info(domain, tag, 'use callback api success' + JSON.stringify(data?));
+            hilog.info(domain, tag, 'use callback api success');
             expect().assertFail();
           }
         } catch (err) {
@@ -506,7 +506,7 @@ export default function wifiManagerTest() {
               expect(err?.code).assertEqual(201);
             }
           } else {
-            hilog.info(domain, tag, 'use callback api success' + JSON.stringify(data?));
+            hilog.info(domain, tag, 'use callback api success');
             expect().assertFail();
           }
         } catch (err) {
@@ -579,7 +579,7 @@ export default function wifiManagerTest() {
               expect(err?.code).assertEqual(201);
             }
           } else {
-            hilog.info(domain, tag, 'use callback api success' + JSON.stringify(netWorkId?));
+            hilog.info(domain, tag, 'use callback api success');
             expect().assertFail();
           }
         } catch (err) {
@@ -652,7 +652,7 @@ export default function wifiManagerTest() {
               expect(err?.code).assertEqual(201);
             }
           } else {
-            hilog.info(domain, tag, 'use callback success' + JSON.stringify(netWorkId?));
+            hilog.info(domain, tag, 'use callback api success');
             expect().assertFail();
           }
         } catch (err) {
@@ -709,7 +709,7 @@ export default function wifiManagerTest() {
               expect(err?.code).assertEqual(201);
             }
           } else {
-            hilog.info(domain, tag, 'use callback success');
+            hilog.info(domain, tag, 'use callback api success');
             expect().assertFail();
           }
         } catch (err) {
