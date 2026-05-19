@@ -298,7 +298,7 @@ export default class Commmon {
       console.info(`addWatermark watermarkCount:` + watermarkCount);
       expect(watermarkCount).assertEqual(1);
     } catch (error) {
-      console.error(addWatermark failed and catch error is ' + err.message + err.code);
+      console.error('addWatermark failed and catch error is ' + error.message + error.code);
       expect().assertFail();
     }
   }
@@ -329,7 +329,7 @@ export default class Commmon {
       console.info(`addWatermark watermarkCount:` + watermarkCount);
       expect().assertFail();
     } catch (error) {
-      console.error(addWatermark failed and catch error is ' + err.message + err.code);
+      console.error('addWatermark failed and catch error is ' + error.message + error.code);
       expect(error.code).assertEqual(5400102);
     }
   }
@@ -362,7 +362,7 @@ export default class Commmon {
         expect(watermarkCount).assertEqual(i + 1);
       } 
     } catch (error) {
-      console.error(`addWatermark failed and catch error is ' + err.message + err.code);
+      console.error('addWatermark failed and catch error is ' + error.message + error.code);
       expect(error.code).assertEqual(5400108);
     }
   }
@@ -393,7 +393,7 @@ export default class Commmon {
       console.info(`addWatermark watermarkCount:` + watermarkCount);
       expect().assertFail();
     } catch (error) {
-      console.error(addWatermark failed and catch error is ' + err.message + err.code);
+      console.error('addWatermark failed and catch error is ' + error.message + error.code);
       expect(error.code).assertEqual(401);
     }
   }
@@ -424,7 +424,7 @@ export default class Commmon {
       console.info(`addWatermark watermarkCount:` + watermarkCount);
       expect().assertFail();
     } catch (error) {
-      console.error(addWatermark failed and catch error is ' + err.message + err.code);
+      console.error('addWatermark failed and catch error is ' + error.message + error.code);
       expect(error.code).assertEqual(401);
     }
   }
@@ -455,7 +455,7 @@ export default class Commmon {
       console.info(`addWatermark watermarkCount:` + watermarkCount);
       expect().assertFail();
     } catch (error) {
-      console.error(addWatermark failed and catch error is ' + err.message + err.code);
+      console.error('addWatermark failed and catch error is ' + error.message + error.code);
       expect(error.code).assertEqual(401);
     }
   }
@@ -486,7 +486,7 @@ export default class Commmon {
       console.info(`addWatermark watermarkCount:` + watermarkCount);
       expect().assertFail();
     } catch (error) {
-      console.error(addWatermark failed and catch error is ' + err.message + err.code);
+      console.error('addWatermark failed and catch error is ' + error.message + error.code);
       expect(error.code).assertEqual(401);
     }
   }
