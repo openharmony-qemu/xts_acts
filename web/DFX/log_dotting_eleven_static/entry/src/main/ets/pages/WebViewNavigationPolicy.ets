@@ -77,7 +77,7 @@ export class MyWebNativeMessagingExtension extends WebNativeMessagingExtensionAb
       if (startAbilityForResultTestMode) {
         startAbilityForResultTestMode = false;
         try {
-          const result = await context.startAbilityForResult(abilityWant);
+          const result = context.startAbilityForResult(abilityWant);
           console.info('startAbilityForResult success, result: ' + JSON.stringify(result));
           Utils.emitEvent(0, 20260401);
         } catch (err) {
