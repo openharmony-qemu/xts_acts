@@ -751,7 +751,7 @@ export default function DecimalTest() {
     it('testIsNegative002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let data: Decimal = new Decimal(-0);
       let result: boolean = data.isNegative();
-      expect(result).assertEqual(false);
+      expect(result).assertEqual(true);
     });
 
     /**
@@ -1271,7 +1271,7 @@ export default function DecimalTest() {
     it('testValueOf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let data: Decimal = new Decimal(-0);
       let result: string = data.valueOf();
-      expect(result).assertEqual('0');
+      expect(result).assertEqual('-0');
     });
 
     /**
