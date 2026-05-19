@@ -505,7 +505,7 @@ export default function actsWifiManagerFunctionsTest() {
      */
     it("SUB_Communication_WifiManager_getScanInfoList_True_0011", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName = 'LOG_SUB_Communication_WifiManager_getScanInfoList_True_0011';
-      console.info(`${caseName} test start`);
+      hilog.info(domain, tag, `${caseName} test start`);
       try{
         let infos: Array<wifiManager.WifiScanInfo> = wifiManager.getScanInfoList();
         hilog.info(domain, tag, "getScanInfoList result:" + JSON.stringify(infos));
@@ -575,7 +575,7 @@ export default function actsWifiManagerFunctionsTest() {
           expect().assertFail();
         }
       }
-      console.info(`${caseName} test end`);
+      hilog.info(domain, tag, `${caseName} test end`);
       done();
     });
 
