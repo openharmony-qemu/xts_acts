@@ -42,7 +42,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_0100
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify new ArrayBuffer(8) succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -56,7 +56,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_0200
-     * @tc.desc 验证 buffer.slice(2) 在当前场景执行成功，返回值的 byteLength 为 6。
+     * @tc.desc Verify buffer.slice(2) succeeds and result byteLength is 6
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -81,7 +81,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_0300
-     * @tc.desc 验证 buffer.slice(2, 6) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify buffer.slice(2, 6) succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -106,7 +106,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_0400
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify new ArrayBuffer(8) succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -125,7 +125,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_0500
-     * @tc.desc 验证 buffer.slice(0) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify buffer.slice(0) succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -145,7 +145,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_0600
-     * @tc.desc 验证 buffer.slice(3) 在当前场景执行成功，返回值的 byteLength 为 5。
+     * @tc.desc Verify buffer.slice(3) succeeds and result byteLength is 5
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -170,7 +170,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_0700
-     * @tc.desc 验证 buffer.slice(Double.toInt(1.5)) 在当前场景执行成功，返回值的 byteLength 为 7。
+     * @tc.desc Verify buffer.slice(Double.toInt(1.5)) succeeds and result byteLength is 7
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -191,7 +191,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_0800
-     * @tc.desc 验证 buffer.slice(Double.toInt(NaN)) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify buffer.slice(Double.toInt(NaN)) succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -210,7 +210,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_0900
-     * @tc.desc 验证 buffer.slice(Double.toInt(Infinity)) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify buffer.slice(Double.toInt(Infinity)) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -224,7 +224,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_1000
-     * @tc.desc 验证 buffer.slice(Double.toInt(-Infinity)) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify buffer.slice(Double.toInt(-Infinity)) succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -241,7 +241,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_1100
-     * @tc.desc 验证 buffer.slice(-3) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify buffer.slice(-3) succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -266,7 +266,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_1200
-     * @tc.desc 验证 buffer.slice(-10) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify buffer.slice(-10) succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -287,7 +287,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_1300
-     * @tc.desc 验证 buffer.slice(20) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify buffer.slice(20) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -301,7 +301,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_1400
-     * @tc.desc 验证 buffer.slice(Double.toInt(-2.7)) 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify buffer.slice(Double.toInt(-2.7)) succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -326,7 +326,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_1500
-     * @tc.desc 验证 buffer.slice(2) 在当前场景执行成功，返回值的 byteLength 为 6。
+     * @tc.desc Verify buffer.slice(2) succeeds and result byteLength is 6
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -349,7 +349,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_1600
-     * @tc.desc 验证 buffer.slice(1, 4) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify buffer.slice(1, 4) succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -371,7 +371,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_1700
-     * @tc.desc 验证 buffer.slice(0, Double.toInt(3.9)) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify buffer.slice(0, Double.toInt(3.9)) succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -393,7 +393,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_1800
-     * @tc.desc 验证 buffer.slice(0, Double.toInt(NaN)) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify buffer.slice(0, Double.toInt(NaN)) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -407,7 +407,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_1900
-     * @tc.desc 验证 buffer.slice(0, Double.toInt(Infinity)) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify buffer.slice(0, Double.toInt(Infinity)) succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -425,7 +425,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_2000
-     * @tc.desc 验证 buffer.slice(0, Double.toInt(-Infinity)) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify buffer.slice(0, Double.toInt(-Infinity)) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -439,7 +439,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_2100
-     * @tc.desc 验证 buffer.slice(1, -2) 在当前场景执行成功，返回值的 byteLength 为 5。
+     * @tc.desc Verify buffer.slice(1, -2) succeeds and result byteLength is 5
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -463,7 +463,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_2200
-     * @tc.desc 验证 buffer.slice(5, 2) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify buffer.slice(5, 2) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -477,7 +477,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_2300
-     * @tc.desc 验证 buffer.slice(3, 3) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify buffer.slice(3, 3) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -491,7 +491,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_2400
-     * @tc.desc 验证 buffer.slice(0, 100) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify buffer.slice(0, 100) succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -508,7 +508,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_2500
-     * @tc.desc 验证 buffer.slice(0, -20) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify buffer.slice(0, -20) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -522,7 +522,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_2600
-     * @tc.desc 验证 buffer.slice(0, Double.toInt(-1.8)) 在当前场景执行成功，返回值的 byteLength 为 7。
+     * @tc.desc Verify buffer.slice(0, Double.toInt(-1.8)) succeeds and result byteLength is 7
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -547,7 +547,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_2700
-     * @tc.desc 验证 buffer.slice(2, 6) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify buffer.slice(2, 6) succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -572,7 +572,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_2800
-     * @tc.desc 验证 buffer.slice(1, 3) 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify buffer.slice(1, 3) succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -596,7 +596,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_2900
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify new ArrayBuffer(8) succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -623,7 +623,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_3000
-     * @tc.desc 验证 buffer.slice(1, 4) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify buffer.slice(1, 4) succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -637,7 +637,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_3100
-     * @tc.desc 验证 buffer.slice(3, 10) 在当前场景执行成功，返回值的 byteLength 为 7。
+     * @tc.desc Verify buffer.slice(3, 10) succeeds and result byteLength is 7
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -651,7 +651,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_3200
-     * @tc.desc 验证 buffer.slice(0) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify buffer.slice(0) succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -665,7 +665,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_3300
-     * @tc.desc 验证 buffer.slice(0, 4) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify buffer.slice(0, 4) succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -679,7 +679,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_3400
-     * @tc.desc 验证 buffer.slice(0, 8) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify buffer.slice(0, 8) succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -704,7 +704,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0035
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_3500
-     * @tc.desc 验证 buffer.slice(4, 4) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify buffer.slice(4, 4) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -718,7 +718,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0036
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_3600
-     * @tc.desc 验证 buffer.slice(5) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify buffer.slice(5) succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -738,7 +738,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0037
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_3700
-     * @tc.desc 验证 buffer.slice(0) 在当前场景执行成功，返回值的 byteLength 为 6。
+     * @tc.desc Verify buffer.slice(0) succeeds and result byteLength is 6
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -757,7 +757,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0038
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_3800
-     * @tc.desc 验证 buffer.slice(3, 4) 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc Verify buffer.slice(3, 4) succeeds and result byteLength is 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -775,7 +775,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0039
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_3900
-     * @tc.desc 验证 buffer.slice(0) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify buffer.slice(0) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -789,7 +789,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0040
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_4000
-     * @tc.desc 验证 buffer.slice(500, 513) 在当前场景执行成功，返回值的 byteLength 为 13。
+     * @tc.desc Verify buffer.slice(500, 513) succeeds and result byteLength is 13
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -809,7 +809,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0041
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_4100
-     * @tc.desc 验证 buffer.slice(Double.toInt(2.9)) 在当前场景执行成功，返回值的 byteLength 为 6。
+     * @tc.desc Verify buffer.slice(Double.toInt(2.9)) succeeds and result byteLength is 6
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -831,7 +831,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0042
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_4200
-     * @tc.desc 验证 buffer.slice(0, Double.toInt(4.1)) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify buffer.slice(0, Double.toInt(4.1)) succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -853,7 +853,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0043
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_4300
-     * @tc.desc 验证 buffer.slice(Double.toInt(1.7), Double.toInt(5.3)) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify buffer.slice(Double.toInt(1.7), Double.toInt(5.3)) succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -876,7 +876,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0044
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_4400
-     * @tc.desc 验证 buffer.slice(Double.toInt(0.0)) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify buffer.slice(Double.toInt(0.0)) succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -895,7 +895,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0045
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_4500
-     * @tc.desc 验证 buffer.slice(Double.toInt(Number.MAX_SAFE_INTEGER)) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify buffer.slice(Double.toInt(Number.MAX_SAFE_INTEGER)) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -909,7 +909,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0046
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_4600
-     * @tc.desc 验证 buffer.slice(Double.toInt(-Number.MAX_SAFE_INTEGER)) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify buffer.slice(Double.toInt(-Number.MAX_SAFE_INTEGER)) succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -927,7 +927,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0047
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_4700
-     * @tc.desc 验证 buffer.slice(NaN, Double.toInt(NaN)) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify buffer.slice(NaN, Double.toInt(NaN)) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -941,7 +941,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0048
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_4800
-     * @tc.desc 验证 buffer.slice(Double.toInt(NaN), 3) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify buffer.slice(Double.toInt(NaN), 3) succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -961,7 +961,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0049
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_4900
-     * @tc.desc 验证 buffer.slice(Double.toInt(Infinity), 5) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify buffer.slice(Double.toInt(Infinity), 5) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -975,7 +975,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0050
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_5000
-     * @tc.desc 验证 buffer.slice(2, Double.toInt(Infinity)) 在当前场景执行成功，返回值的 byteLength 为 6。
+     * @tc.desc Verify buffer.slice(2, Double.toInt(Infinity)) succeeds and result byteLength is 6
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -994,7 +994,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0051
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_5100
-     * @tc.desc 验证 buffer.slice(-Infinity, Double.toInt(Infinity)) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify buffer.slice(-Infinity, Double.toInt(Infinity)) succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1013,7 +1013,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0052
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_5200
-     * @tc.desc 验证 buffer.slice(-6, -2) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify buffer.slice(-6, -2) succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1038,7 +1038,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0053
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_5300
-     * @tc.desc 验证 buffer.slice(-6, 5) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify buffer.slice(-6, 5) succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1058,7 +1058,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0054
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_5400
-     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify buffer.resize(0) succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1077,7 +1077,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0055
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_5500
-     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify buffer.resize(0) succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1096,7 +1096,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0056
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_5600
-     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify buffer.resize(0) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1110,7 +1110,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0057
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_5700
-     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify buffer.resize(0) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1127,7 +1127,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0058
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_5800
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify new ArrayBuffer(8) succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

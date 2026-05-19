@@ -74,7 +74,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_0100
-     * @tc.desc 验证 new Byte(Int.toByte(64)) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new Byte(Int.toByte(64)) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -87,7 +87,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_0200
-     * @tc.desc 验证 new Byte(Int.toByte(64)) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new Byte(Int.toByte(64)) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -100,7 +100,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_0300
-     * @tc.desc 验证 new Byte(arg) 在当前场景执行成功，等值关系判断符合预期。
+     * @tc.desc Verify new Byte(arg) succeeds and equality relationship check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -115,7 +115,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_0400
-     * @tc.desc 验证 new Byte(Int.toByte(0)) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new Byte(Int.toByte(0)) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -128,7 +128,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_0500
-     * @tc.desc 验证 new Byte(Int.toByte(1)) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify new Byte(Int.toByte(1)) succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -142,7 +142,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_0600
-     * @tc.desc 验证 new Byte(Int.toByte(64)) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify new Byte(Int.toByte(64)) succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -156,7 +156,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_0700
-     * @tc.desc 验证 new Byte(Int.toByte(-1)) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new Byte(Int.toByte(-1)) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -169,7 +169,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_0800
-     * @tc.desc 验证 new Byte(Int.toByte(-64)) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new Byte(Int.toByte(-64)) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -182,7 +182,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_0900
-     * @tc.desc 验证 new Byte(Int.toByte(127)) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new Byte(Int.toByte(127)) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -195,7 +195,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_1000
-     * @tc.desc 验证 new Byte(Int.toByte(-128)) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new Byte(Int.toByte(-128)) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -208,7 +208,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_1100
-     * @tc.desc 验证 new Byte(Int.toByte(128)) 在当前场景下的行为符合用例预期。
+     * @tc.desc Verify new Byte(Int.toByte(128)) behavior matches test expectation
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -220,7 +220,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_1200
-     * @tc.desc 验证 new Byte(Int.toByte(-129)) 在当前场景下的行为符合用例预期。
+     * @tc.desc Verify new Byte(Int.toByte(-129)) behavior matches test expectation
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -232,7 +232,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_1300
-     * @tc.desc 验证 new Byte(Int.toByte(255)) 在当前场景下的行为符合用例预期。
+     * @tc.desc Verify new Byte(Int.toByte(255)) behavior matches test expectation
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -244,7 +244,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_1400
-     * @tc.desc 验证 new Byte(Utils.castToByte(v as Object)) 在当前场景下的行为符合用例预期。
+     * @tc.desc Verify new Byte(Utils.castToByte(v as Object)) behavior matches test expectation
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -259,7 +259,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_1500
-     * @tc.desc 验证 new Byte(Int.toByte(128)) 在当前场景下的行为符合用例预期。
+     * @tc.desc Verify new Byte(Int.toByte(128)) behavior matches test expectation
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -271,7 +271,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_1600
-     * @tc.desc 验证 new Byte(Int.toByte(-129)) 在当前场景下的行为符合用例预期。
+     * @tc.desc Verify new Byte(Int.toByte(-129)) behavior matches test expectation
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -283,7 +283,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_1700
-     * @tc.desc 验证 new Byte(Double.toByte(0.5)) 在当前场景下的行为符合用例预期。
+     * @tc.desc Verify new Byte(Double.toByte(0.5)) behavior matches test expectation
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -295,7 +295,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_1800
-     * @tc.desc 验证 new Byte(Utils.castToByte(v as Object)) 在当前场景下的行为符合用例预期。
+     * @tc.desc Verify new Byte(Utils.castToByte(v as Object)) behavior matches test expectation
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -310,7 +310,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_1900
-     * @tc.desc 验证 new Byte(Utils.castToByte(v as Object)) 在当前场景下的行为符合用例预期。
+     * @tc.desc Verify new Byte(Utils.castToByte(v as Object)) behavior matches test expectation
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -325,7 +325,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_2000
-     * @tc.desc 验证 new Byte(Utils.castToByte(s as Object)) 在当前场景下的行为符合用例预期。
+     * @tc.desc Verify new Byte(Utils.castToByte(s as Object)) behavior matches test expectation
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -340,7 +340,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_2100
-     * @tc.desc 验证 new Byte(Double.toByte(0.5)) 在当前场景下的行为符合用例预期。
+     * @tc.desc Verify new Byte(Double.toByte(0.5)) behavior matches test expectation
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -352,7 +352,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_2200
-     * @tc.desc 验证 new Byte(v as byte) 在当前场景下的行为符合用例预期。
+     * @tc.desc Verify new Byte(v as byte) behavior matches test expectation
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -367,7 +367,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_2300
-     * @tc.desc 验证 new Byte(Utils.castToByte(probe as Object)) 在当前场景下的行为符合用例预期。
+     * @tc.desc Verify new Byte(Utils.castToByte(probe as Object)) behavior matches test expectation
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -382,7 +382,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_2400
-     * @tc.desc 验证 new Byte(Utils.castToByte(true as Object)) 在当前场景下的行为符合用例预期。
+     * @tc.desc Verify new Byte(Utils.castToByte(true as Object)) behavior matches test expectation
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -394,7 +394,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_2500
-     * @tc.desc 验证 new Byte(Utils.castToByte(false as Object)) 在当前场景下的行为符合用例预期。
+     * @tc.desc Verify new Byte(Utils.castToByte(false as Object)) behavior matches test expectation
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -406,7 +406,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_2600
-     * @tc.desc 验证 new Byte(passed) 在当前场景执行成功，等值关系判断符合预期。
+     * @tc.desc Verify new Byte(passed) succeeds and equality relationship check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -421,7 +421,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_2700
-     * @tc.desc 验证 new Byte(Int.toByte(10)) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new Byte(Int.toByte(10)) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -436,7 +436,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_2800
-     * @tc.desc 验证 new Byte(Int.toByte(64)) 在当前场景执行成功，边界值比较判断符合预期。
+     * @tc.desc Verify new Byte(Int.toByte(64)) succeeds and boundary value comparison check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -451,7 +451,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_2900
-     * @tc.desc 验证 new Byte(Int.toByte(64)) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify new Byte(Int.toByte(64)) succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -466,7 +466,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_3000
-     * @tc.desc 验证 new Byte(Int.toByte(64)) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new Byte(Int.toByte(64)) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -479,7 +479,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_3100
-     * @tc.desc 验证 new Byte(Int.toByte(64)) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify new Byte(Int.toByte(64)) succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -492,7 +492,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_3200
-     * @tc.desc 验证 new Byte(Int.toByte(64)) 在当前场景执行成功，等值关系判断符合预期。
+     * @tc.desc Verify new Byte(Int.toByte(64)) succeeds and equality relationship check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -506,7 +506,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_3300
-     * @tc.desc 验证 new Byte(Int.toByte(64)) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify new Byte(Int.toByte(64)) succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -520,7 +520,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_3400
-     * @tc.desc 验证 new Byte(hi) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new Byte(hi) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -534,7 +534,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0035
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_3500
-     * @tc.desc 验证 new Byte(lo) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new Byte(lo) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -548,7 +548,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0036
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_3600
-     * @tc.desc 验证 new Byte(Int.toByte(0)) 在当前场景执行成功，等值关系判断符合预期。
+     * @tc.desc Verify new Byte(Int.toByte(0)) succeeds and equality relationship check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -561,7 +561,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0037
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_3700
-     * @tc.desc 验证 new Byte(Int.toByte(126)) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new Byte(Int.toByte(126)) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -574,7 +574,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0038
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_3800
-     * @tc.desc 验证 new Byte(Int.toByte(-127)) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new Byte(Int.toByte(-127)) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -587,7 +587,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0039
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_3900
-     * @tc.desc 验证 new Byte(Int.toByte(128)) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify new Byte(Int.toByte(128)) succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -599,7 +599,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0040
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_4000
-     * @tc.desc 验证 new Byte(Int.toByte(-129)) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify new Byte(Int.toByte(-129)) succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -611,7 +611,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0041
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_4100
-     * @tc.desc 验证 new Byte(Int.toByte(256)) 在当前场景下的行为符合用例预期。
+     * @tc.desc Verify new Byte(Int.toByte(256)) behavior matches test expectation
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -623,7 +623,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0042
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_4200
-     * @tc.desc 验证 new Byte(Int.toByte(-256)) 在当前场景下的行为符合用例预期。
+     * @tc.desc Verify new Byte(Int.toByte(-256)) behavior matches test expectation
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -635,7 +635,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0043
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_4300
-     * @tc.desc 验证 new Byte(Utils.castToByte(digitPair as Object)) 在当前场景下的行为符合用例预期。
+     * @tc.desc Verify new Byte(Utils.castToByte(digitPair as Object)) behavior matches test expectation
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -650,7 +650,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0044
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_4400
-     * @tc.desc 验证 new Byte(Utils.castToByte(true as Object)) 在当前场景下的行为符合用例预期。
+     * @tc.desc Verify new Byte(Utils.castToByte(true as Object)) behavior matches test expectation
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -662,7 +662,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0045
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_4500
-     * @tc.desc 验证 new Byte(Utils.castToByte(probe048 as Object)) 在当前场景下的行为符合用例预期。
+     * @tc.desc Verify new Byte(Utils.castToByte(probe048 as Object)) behavior matches test expectation
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -678,7 +678,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0046
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_4600
-     * @tc.desc 验证 new Byte(Utils.castToByte(arr as Object)) 在当前场景下的行为符合用例预期。
+     * @tc.desc Verify new Byte(Utils.castToByte(arr as Object)) behavior matches test expectation
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -694,7 +694,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0047
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_4700
-     * @tc.desc 验证 new Byte(Utils.castToByte(null as Object)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify new Byte(Utils.castToByte(null as Object)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -713,7 +713,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0048
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_4800
-     * @tc.desc 验证 new Byte({}) 在当前场景执行成功，空值有效性判断符合预期。
+     * @tc.desc Verify new Byte({}) succeeds and null validity check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -733,7 +733,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0049
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_4900
-     * @tc.desc 验证 new Byte(Utils.castToByte(byteBadNum as Object)) 在当前场景下的行为符合用例预期。
+     * @tc.desc Verify new Byte(Utils.castToByte(byteBadNum as Object)) behavior matches test expectation
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -748,7 +748,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0050
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_5000
-     * @tc.desc 验证 new Byte(Utils.castToByte(byteBadNum as Object)) 在当前场景下的行为符合用例预期。
+     * @tc.desc Verify new Byte(Utils.castToByte(byteBadNum as Object)) behavior matches test expectation
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

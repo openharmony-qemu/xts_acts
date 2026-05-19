@@ -49,7 +49,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_0100
-     * @tc.desc 验证 ArrayBuffer.isView(view) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(view) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -64,7 +64,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_0200
-     * @tc.desc 验证 ArrayBuffer.isView(view) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(view) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -78,7 +78,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_0300
-     * @tc.desc 验证 ArrayBuffer.isView(view) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(view) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -93,7 +93,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_0400
-     * @tc.desc 验证 ArrayBuffer.isView(view) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(view) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -108,7 +108,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_0500
-     * @tc.desc 验证 ArrayBuffer.isView(view) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(view) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -123,7 +123,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_0600
-     * @tc.desc 验证 ArrayBuffer.isView(arr) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(arr) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -138,7 +138,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_0700
-     * @tc.desc 验证 ArrayBuffer.isView(arr) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(arr) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -153,7 +153,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_0800
-     * @tc.desc 验证 ArrayBuffer.isView(arr) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(arr) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -168,7 +168,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_0900
-     * @tc.desc 验证 ArrayBuffer.isView(arr) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(arr) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -183,7 +183,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_1000
-     * @tc.desc 验证 ArrayBuffer.isView(arr) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(arr) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -198,7 +198,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_1100
-     * @tc.desc 验证 ArrayBuffer.isView(arr) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(arr) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -213,7 +213,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_1200
-     * @tc.desc 验证 ArrayBuffer.isView(arr) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(arr) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -228,7 +228,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_1300
-     * @tc.desc 验证 ArrayBuffer.isView(arr) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(arr) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -243,7 +243,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_1400
-     * @tc.desc 验证 ArrayBuffer.isView(buffer) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(buffer) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -257,7 +257,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_1500
-     * @tc.desc 验证 ArrayBuffer.isView(new ArrayBufferIsViewPlainForMindmap()) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(new ArrayBufferIsViewPlainForMindmap()) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -270,7 +270,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_1600
-     * @tc.desc 验证 ArrayBuffer.isView(new ArrayBufferIsViewPlainRecord()) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(new ArrayBufferIsViewPlainRecord()) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -283,7 +283,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_1700
-     * @tc.desc 验证 ArrayBuffer.isView('hello' as string) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView('hello' as string) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -296,7 +296,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_1800
-     * @tc.desc 验证 ArrayBuffer.isView('' as string) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView('' as string) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -309,7 +309,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_1900
-     * @tc.desc 验证 ArrayBuffer.isView(123 as number) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(123 as number) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -322,7 +322,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_2000
-     * @tc.desc 验证 ArrayBuffer.isView(0 as number) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(0 as number) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -335,7 +335,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_2100
-     * @tc.desc 验证 ArrayBuffer.isView(NaN) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(NaN) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -348,7 +348,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_2200
-     * @tc.desc 验证 ArrayBuffer.isView(true) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(true) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -361,7 +361,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_2300
-     * @tc.desc 验证 ArrayBuffer.isView(false) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(false) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -374,7 +374,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_2400
-     * @tc.desc 验证 ArrayBuffer.isView(new Array<int>()) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(new Array<int>()) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -387,7 +387,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_2500
-     * @tc.desc 验证 ArrayBuffer.isView([1, 2, 3]) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView([1, 2, 3]) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -400,7 +400,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_2600
-     * @tc.desc 验证 ArrayBuffer.isView(view) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(view) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -416,7 +416,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_2700
-     * @tc.desc 验证 ArrayBuffer.isView(arr) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(arr) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -432,7 +432,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_2800
-     * @tc.desc 验证 ArrayBuffer.isView(arr) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(arr) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -448,7 +448,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_2900
-     * @tc.desc 验证 ArrayBuffer.isView(arr) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(arr) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -464,7 +464,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_3000
-     * @tc.desc 验证 ArrayBuffer.isView(arr) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(arr) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -480,7 +480,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_3100
-     * @tc.desc 验证 ArrayBuffer.isView(arr) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(arr) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -496,7 +496,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_3200
-     * @tc.desc 验证 ArrayBuffer.isView(arr) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(arr) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -512,7 +512,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_3300
-     * @tc.desc 验证 ArrayBuffer.isView(arr) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(arr) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -528,7 +528,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_3400
-     * @tc.desc 验证 ArrayBuffer.isView(arr) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(arr) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -544,7 +544,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0035
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_3500
-     * @tc.desc 验证 ArrayBuffer.isView(view) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(view) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -560,7 +560,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0036
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_3600
-     * @tc.desc 验证 ArrayBuffer.isView(arr) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(arr) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -576,7 +576,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0037
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_3700
-     * @tc.desc 验证 ArrayBuffer.isView(arr) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(arr) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -591,7 +591,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0038
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_3800
-     * @tc.desc 验证 ArrayBuffer.isView(buffer) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(buffer) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -606,7 +606,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0039
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_3900
-     * @tc.desc 验证 ArrayBuffer.isView(new ArrayBufferIsViewPlainForMindmap()) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(new ArrayBufferIsViewPlainForMindmap()) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -620,7 +620,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0040
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_4000
-     * @tc.desc 验证 ArrayBuffer.isView('hello' as string) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView('hello' as string) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -634,7 +634,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0041
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_4100
-     * @tc.desc 验证 ArrayBuffer.isView(Utils.boxAsObject(_badNum2)) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(Utils.boxAsObject(_badNum2)) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -649,7 +649,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0042
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_4200
-     * @tc.desc 验证 ArrayBuffer.isView(true) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(true) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -663,7 +663,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0043
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_4300
-     * @tc.desc 验证 ArrayBuffer.isView([1, 2, 3]) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView([1, 2, 3]) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -677,7 +677,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0044
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_4400
-     * @tc.desc 验证 ArrayBuffer.isView(view) 在当前场景执行成功，等值关系判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(view) succeeds and equality relationship check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -694,7 +694,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0045
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_4500
-     * @tc.desc 验证 ArrayBuffer.isView(view) 在当前场景执行成功，等值关系判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(view) succeeds and equality relationship check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -711,7 +711,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0046
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_4600
-     * @tc.desc 验证 ArrayBuffer.isView(view) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(view) succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -727,7 +727,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0047
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_4700
-     * @tc.desc 验证 ArrayBuffer.isView(view) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(view) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -742,7 +742,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0048
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_4800
-     * @tc.desc 验证 ArrayBuffer.isView(view) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(view) succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -758,7 +758,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0049
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_4900
-     * @tc.desc 验证 ArrayBuffer.isView((null as Object)) 在当前场景执行成功，空值有效性判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView((null as Object)) succeeds and null validity check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -777,7 +777,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0050
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_5000
-     * @tc.desc 验证 ArrayBuffer.isView((undefined as Object)) 在当前场景执行成功，空值有效性判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView((undefined as Object)) succeeds and null validity check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -796,7 +796,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0051
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_5100
-     * @tc.desc 验证 ArrayBuffer.isView('test string' as string) 在当前场景执行成功，空值有效性判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView('test string' as string) succeeds and null validity check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -819,7 +819,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0052
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_5200
-     * @tc.desc 验证 ArrayBuffer.isView(3.14) 在当前场景执行成功，空值有效性判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(3.14) succeeds and null validity check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -842,7 +842,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0053
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_5300
-     * @tc.desc 验证 ArrayBuffer.isView(-1) 在当前场景执行成功，空值有效性判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(-1) succeeds and null validity check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -865,7 +865,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0054
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_5400
-     * @tc.desc 验证 ArrayBuffer.isView(Infinity) 在当前场景执行成功，空值有效性判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(Infinity) succeeds and null validity check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -888,7 +888,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0055
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_5500
-     * @tc.desc 验证 ArrayBuffer.isView(-Infinity) 在当前场景执行成功，空值有效性判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(-Infinity) succeeds and null validity check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -911,7 +911,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0056
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_5600
-     * @tc.desc 验证 ArrayBuffer.isView(true) 在当前场景执行成功，空值有效性判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(true) succeeds and null validity check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -934,7 +934,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0057
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_5700
-     * @tc.desc 验证 ArrayBuffer.isView(view) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(view) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -950,7 +950,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0058
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_5800
-     * @tc.desc 验证 ArrayBuffer.isView(arr) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(arr) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -966,7 +966,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0059
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_5900
-     * @tc.desc 验证 ArrayBuffer.isView(buffer) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc Verify ArrayBuffer.isView(buffer) succeeds and view recognition check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

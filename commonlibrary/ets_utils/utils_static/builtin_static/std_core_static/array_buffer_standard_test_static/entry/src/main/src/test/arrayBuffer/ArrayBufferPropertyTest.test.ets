@@ -43,7 +43,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_0100
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify buffer.resize(6) succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -56,7 +56,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_0200
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify buffer.resize(6) succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -69,7 +69,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_0300
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify buffer.resize(6) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -82,7 +82,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_0400
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify buffer.resize(6) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -95,7 +95,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_0500
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify buffer.resize(6) succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -108,7 +108,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_0600
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，返回值的 byteLength 为 6。
+     * @tc.desc Verify buffer.resize(6) succeeds and result byteLength is 6
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -122,7 +122,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_0700
-     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify buffer.resize(0) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -136,7 +136,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_0800
-     * @tc.desc 验证 buffer.resize(8) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify buffer.resize(8) succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -150,7 +150,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_0900
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -163,7 +163,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1000
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify ArrayBuffer.from(u8) succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -178,7 +178,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1100
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify new ArrayBuffer(8) succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -192,7 +192,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1200
-     * @tc.desc 验证 new ArrayBuffer(1024) 在当前场景执行成功，返回值的 byteLength 为 1024。
+     * @tc.desc Verify new ArrayBuffer(1024) succeeds and result byteLength is 1024
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -205,7 +205,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1300
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify buffer.resize(6) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -218,7 +218,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1400
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify buffer.resize(6) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -231,7 +231,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1500
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify buffer.resize(6) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -244,7 +244,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1600
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify buffer.resize(6) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -260,7 +260,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1700
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify buffer.resize(6) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -275,7 +275,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1800
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify buffer.resize(6) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -289,7 +289,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1900
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify new ArrayBuffer(8) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -303,7 +303,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2000
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify new ArrayBuffer(8) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -317,7 +317,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2100
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -330,7 +330,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2200
-     * @tc.desc 验证 new ArrayBuffer(2, 8) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify new ArrayBuffer(2, 8) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -343,7 +343,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2300
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify buffer.resize(6) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -356,7 +356,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2400
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify buffer.resize(6) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -369,7 +369,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2500
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify buffer.resize(6) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -382,7 +382,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2600
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify buffer.resize(6) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -395,7 +395,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2700
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify buffer.resize(6) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -408,7 +408,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2800
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify buffer.resize(6) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -422,7 +422,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2900
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -436,7 +436,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_3000
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -449,7 +449,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_3100
-     * @tc.desc 验证 new ArrayBuffer(16) 在当前场景执行成功，返回值的 byteLength 为 16。
+     * @tc.desc Verify new ArrayBuffer(16) succeeds and result byteLength is 16
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -462,7 +462,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_3200
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new ArrayBuffer(8) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -478,7 +478,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_3300
-     * @tc.desc 验证 new ArrayBuffer(5) 在当前场景执行成功，返回值的 byteLength 为 5。
+     * @tc.desc Verify new ArrayBuffer(5) succeeds and result byteLength is 5
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -492,7 +492,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_3400
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new ArrayBuffer(8) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -506,7 +506,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0035
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_3500
-     * @tc.desc 验证 buffer.resize(10) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify buffer.resize(10) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -519,7 +519,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0036
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_3600
-     * @tc.desc 验证 buffer.resize(10) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify buffer.resize(10) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -532,7 +532,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0037
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_3700
-     * @tc.desc 验证 buffer.resize(10) 在当前场景执行成功，返回值的 byteLength 为 32。
+     * @tc.desc Verify buffer.resize(10) succeeds and result byteLength is 32
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -545,7 +545,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0038
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_3800
-     * @tc.desc 验证 buffer.resize(10) 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc Verify buffer.resize(10) succeeds and result byteLength is 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -558,7 +558,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0039
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_3900
-     * @tc.desc 验证 buffer.resize(10) 在当前场景执行成功，返回值的 byteLength 为 4096。
+     * @tc.desc Verify buffer.resize(10) succeeds and result byteLength is 4096
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -571,7 +571,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0040
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_4000
-     * @tc.desc 验证 buffer.resize(10) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify buffer.resize(10) succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -588,7 +588,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0041
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_4100
-     * @tc.desc 验证 new ArrayBuffer(0) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify new ArrayBuffer(0) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -601,7 +601,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0042
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_4200
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new ArrayBuffer(8) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -614,7 +614,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0043
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_4300
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify new ArrayBuffer(8) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -630,7 +630,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0044
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_4400
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify buffer.resize(6) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -644,7 +644,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0045
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_4500
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify buffer.resize(6) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -658,7 +658,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0046
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_4600
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，返回值的 byteLength 为 16。
+     * @tc.desc Verify buffer.resize(6) succeeds and result byteLength is 16
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -671,7 +671,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0047
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_4700
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify buffer.resize(6) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -686,7 +686,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0048
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_4800
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify buffer.resize(6) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -701,7 +701,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0049
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_4900
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify new ArrayBuffer(8) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -716,7 +716,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0050
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_5000
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -729,7 +729,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0051
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_5100
-     * @tc.desc 验证 new ArrayBuffer(2, 8) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new ArrayBuffer(2, 8) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -742,7 +742,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0052
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_5200
-     * @tc.desc 验证 new ArrayBuffer(2, 8) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify new ArrayBuffer(2, 8) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -758,7 +758,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0053
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_5300
-     * @tc.desc 验证 new ArrayBuffer(2, 8) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify new ArrayBuffer(2, 8) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -772,7 +772,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0054
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_5400
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify buffer.resize(6) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -786,7 +786,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0055
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_5500
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify buffer.resize(6) succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -799,7 +799,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0056
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_5600
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify buffer.resize(6) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -812,7 +812,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0057
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_5700
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify buffer.resize(6) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -825,7 +825,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0058
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_5800
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify buffer.resize(6) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -840,7 +840,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0059
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_5900
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify buffer.resize(6) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -854,7 +854,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0060
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_6000
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，返回值的 byteLength 为 256。
+     * @tc.desc Verify buffer.resize(6) succeeds and result byteLength is 256
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -867,7 +867,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0061
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_6100
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify buffer.resize(6) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -881,7 +881,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0062
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_6200
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify buffer.resize(6) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -896,7 +896,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0063
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_6300
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify new ArrayBuffer(8) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -910,7 +910,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0064
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_6400
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -926,7 +926,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0065
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_6500
-     * @tc.desc 验证 new ArrayBuffer(2, 8) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify new ArrayBuffer(2, 8) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -943,7 +943,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0066
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_6600
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify buffer.resize(6) succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -958,7 +958,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0067
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_6700
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify buffer.resize(6) succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -973,7 +973,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0068
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_6800
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify buffer.resize(6) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -989,7 +989,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0069
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_6900
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，返回值的 byteLength 为 128。
+     * @tc.desc Verify buffer.resize(6) succeeds and result byteLength is 128
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1002,7 +1002,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0070
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_7000
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify buffer.resize(6) succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1017,7 +1017,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0071
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_7100
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify buffer.resize(6) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1033,7 +1033,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0072
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_7200
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify buffer.resize(6) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1051,7 +1051,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0073
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_7300
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify buffer.resize(6) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1067,7 +1067,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0074
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_7400
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify buffer.resize(6) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1084,7 +1084,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0075
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_7500
-     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify buffer.resize(0) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1099,7 +1099,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0076
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_7600
-     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify buffer.resize(0) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1114,7 +1114,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0077
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_7700
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify new ArrayBuffer(8) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1130,7 +1130,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0078
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_7800
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1145,7 +1145,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0079
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_7900
-     * @tc.desc 验证 new ArrayBuffer(2, 8) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify new ArrayBuffer(2, 8) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1160,7 +1160,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0080
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_8000
-     * @tc.desc 验证 buffer.resize(12) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify buffer.resize(12) succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1175,7 +1175,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0081
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_8100
-     * @tc.desc 验证 buffer.resize(12) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify buffer.resize(12) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1190,7 +1190,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0082
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_8200
-     * @tc.desc 验证 buffer.resize(12) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.resize(12) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1211,7 +1211,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0083
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_8300
-     * @tc.desc 验证 buffer.resize(12) 在当前场景执行成功，返回值的 byteLength 为 12。
+     * @tc.desc Verify buffer.resize(12) succeeds and result byteLength is 12
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1227,7 +1227,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0084
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_8400
-     * @tc.desc 验证 buffer.resize(8) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.resize(8) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1247,7 +1247,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0085
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_8500
-     * @tc.desc 验证 buffer.at(8) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.at(8) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1270,7 +1270,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0086
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_8600
-     * @tc.desc 验证 buffer.set(8, Int.toByte(1)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.set(8, Int.toByte(1)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1291,7 +1291,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0087
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_8700
-     * @tc.desc 验证 buffer.resize(16) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.resize(16) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1311,7 +1311,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0088
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_8800
-     * @tc.desc 验证 buffer.resize(16) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.resize(16) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1331,7 +1331,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0089
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_8900
-     * @tc.desc 验证 buffer.resize(16) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.resize(16) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1350,7 +1350,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0090
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_9000
-     * @tc.desc 验证 buffer.resize(16) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.resize(16) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1370,7 +1370,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0091
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_9100
-     * @tc.desc 验证 buffer.resize(-1) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.resize(-1) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

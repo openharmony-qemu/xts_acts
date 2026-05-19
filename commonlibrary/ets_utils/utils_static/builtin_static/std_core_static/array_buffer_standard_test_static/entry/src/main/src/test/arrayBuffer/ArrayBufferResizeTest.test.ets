@@ -45,7 +45,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_0100
-     * @tc.desc 验证 buffer.resize(4) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify buffer.resize(4) succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -59,7 +59,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_0200
-     * @tc.desc 验证 buffer.resize(3) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify buffer.resize(3) succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -73,7 +73,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_0300
-     * @tc.desc 验证 buffer.resize(5) 在当前场景执行成功，返回值的 byteLength 为 5。
+     * @tc.desc Verify buffer.resize(5) succeeds and result byteLength is 5
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -87,7 +87,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_0400
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，返回值的 byteLength 为 6。
+     * @tc.desc Verify buffer.resize(6) succeeds and result byteLength is 6
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -101,7 +101,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_0500
-     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify buffer.resize(0) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -115,7 +115,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_0600
-     * @tc.desc 验证 buffer.resize(4) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify buffer.resize(4) succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -129,7 +129,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_0700
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，返回值的 byteLength 为 6。
+     * @tc.desc Verify buffer.resize(6) succeeds and result byteLength is 6
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -143,7 +143,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_0800
-     * @tc.desc 验证 buffer.resize(3) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify buffer.resize(3) succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -157,7 +157,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_0900
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，返回值的 byteLength 为 6。
+     * @tc.desc Verify buffer.resize(6) succeeds and result byteLength is 6
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -171,7 +171,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_1000
-     * @tc.desc 验证 buffer.resize(-1) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.resize(-1) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -191,7 +191,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_1100
-     * @tc.desc 验证 buffer.resize(100) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.resize(100) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -211,7 +211,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_1200
-     * @tc.desc 验证 buffer.resize(2147483647) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.resize(2147483647) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -231,7 +231,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_1300
-     * @tc.desc 验证 buffer.resize(-1) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.resize(-1) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -251,7 +251,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_1400
-     * @tc.desc 验证 buffer.resize(7) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.resize(7) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -271,7 +271,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_1500
-     * @tc.desc 验证 buffer.resize(2147483647) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.resize(2147483647) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -291,7 +291,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_1600
-     * @tc.desc 验证 buffer.resize(Utils.castToInt(null as Object)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.resize(Utils.castToInt(null as Object)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -311,7 +311,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_1700
-     * @tc.desc 验证 buffer.resize(Utils.castToInt(undefined as Object)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.resize(Utils.castToInt(undefined as Object)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -331,7 +331,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_1800
-     * @tc.desc 验证 buffer.resize(Double.toInt(1.5)) 在当前场景执行成功，空值有效性判断符合预期。
+     * @tc.desc Verify buffer.resize(Double.toInt(1.5)) succeeds and null validity check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -351,7 +351,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_1900
-     * @tc.desc 验证 buffer.resize(5) 在当前场景执行成功，返回值的 byteLength 为 5。
+     * @tc.desc Verify buffer.resize(5) succeeds and result byteLength is 5
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -366,7 +366,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_2000
-     * @tc.desc 验证 buffer.resize(2) 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify buffer.resize(2) succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -380,7 +380,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_2100
-     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify buffer.resize(0) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -394,7 +394,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_2200
-     * @tc.desc 验证 buffer.resize(10) 在当前场景执行成功，返回值的 byteLength 为 10。
+     * @tc.desc Verify buffer.resize(10) succeeds and result byteLength is 10
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -408,7 +408,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_2300
-     * @tc.desc 验证 buffer.resize(4) 在当前场景执行成功，返回值的 byteLength 为 10。
+     * @tc.desc Verify buffer.resize(4) succeeds and result byteLength is 10
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -425,7 +425,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_2400
-     * @tc.desc 验证 buffer.resize(2) 在当前场景执行成功，返回值的 byteLength 为 10。
+     * @tc.desc Verify buffer.resize(2) succeeds and result byteLength is 10
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -440,7 +440,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_2500
-     * @tc.desc 验证 buffer.resize(4) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify buffer.resize(4) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -455,7 +455,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_2600
-     * @tc.desc 验证 buffer.resize(2) 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify buffer.resize(2) succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -471,7 +471,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_2700
-     * @tc.desc 验证 buffer.resize(7) 在当前场景执行成功，返回值的 byteLength 为 7。
+     * @tc.desc Verify buffer.resize(7) succeeds and result byteLength is 7
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -485,7 +485,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_2800
-     * @tc.desc 验证 buffer.resize(3) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify buffer.resize(3) succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -499,7 +499,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_2900
-     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify buffer.resize(0) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -513,7 +513,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_3000
-     * @tc.desc 验证 buffer.resize(8) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify buffer.resize(8) succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -527,7 +527,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_3100
-     * @tc.desc 验证 buffer.resize(5) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify buffer.resize(5) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -542,7 +542,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_3200
-     * @tc.desc 验证 buffer.resize(8) 在当前场景执行成功，返回值的 byteLength 为 12。
+     * @tc.desc Verify buffer.resize(8) succeeds and result byteLength is 12
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -558,7 +558,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_3300
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify buffer.resize(6) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -575,7 +575,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_3400
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify buffer.resize(6) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -593,7 +593,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0035
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_3500
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify buffer.resize(6) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -610,7 +610,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0036
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_3600
-     * @tc.desc 验证 buffer.resize(2) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify buffer.resize(2) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -629,7 +629,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0037
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_3700
-     * @tc.desc 验证 buffer.resize(8) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify buffer.resize(8) succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -649,7 +649,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0038
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_3800
-     * @tc.desc 验证 buffer.resize(3) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify buffer.resize(3) succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -668,7 +668,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0039
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_3900
-     * @tc.desc 验证 buffer.resize(3) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify buffer.resize(3) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -685,7 +685,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0040
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_4000
-     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify buffer.resize(0) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -702,7 +702,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0041
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_4100
-     * @tc.desc 验证 buffer.resize(8) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify buffer.resize(8) succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -722,7 +722,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0042
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_4200
-     * @tc.desc 验证 buffer.resize(6) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.resize(6) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -742,7 +742,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0043
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_4300
-     * @tc.desc 验证 buffer.resize(8) 在当前场景执行成功，空值有效性判断符合预期。
+     * @tc.desc Verify buffer.resize(8) succeeds and null validity check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -763,7 +763,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0044
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_4400
-     * @tc.desc 验证 buffer.resize(6) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify buffer.resize(6) succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -789,7 +789,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0045
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_4500
-     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify buffer.resize(0) succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -815,7 +815,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0046
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_4600
-     * @tc.desc 验证 buffer.resize(-1) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.resize(-1) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -835,7 +835,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0047
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_4700
-     * @tc.desc 验证 buffer.resize(-100) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.resize(-100) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -855,7 +855,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0048
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_4800
-     * @tc.desc 验证 buffer.resize(-1) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.resize(-1) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -875,7 +875,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0049
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_4900
-     * @tc.desc 验证 buffer.resize(-100) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.resize(-100) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -895,7 +895,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0050
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_5000
-     * @tc.desc 验证 buffer.resize(2147483647) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.resize(2147483647) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -915,7 +915,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0051
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_5100
-     * @tc.desc 验证 buffer.resize(1000) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.resize(1000) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

@@ -47,7 +47,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_0100
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -63,7 +63,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_0200
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -78,7 +78,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_0300
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -92,7 +92,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_0400
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -106,7 +106,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_0500
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 5。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 5
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -121,7 +121,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_0600
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -135,7 +135,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_0700
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -150,7 +150,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_0800
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -167,7 +167,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_0900
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -183,7 +183,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_1000
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -198,7 +198,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_1100
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -213,7 +213,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_1200
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -228,7 +228,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_1300
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -242,7 +242,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_1400
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -256,7 +256,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_1500
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 5。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 5
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -270,7 +270,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_1600
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -285,7 +285,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_1700
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -299,7 +299,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_1800
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -313,7 +313,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_1900
-     * @tc.desc 验证 ArrayBuffer.from(buf) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify ArrayBuffer.from(buf) succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -333,7 +333,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_2000
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 7。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 7
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -351,7 +351,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_2100
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 5。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 5
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -365,7 +365,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_2200
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -384,7 +384,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_2300
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -398,7 +398,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_2400
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前场景执行成功，返回值的 byteLength 为 1024。
+     * @tc.desc Verify ArrayBuffer.from(u8) succeeds and result byteLength is 1024
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -419,7 +419,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_2500
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -433,7 +433,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_2600
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -447,7 +447,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_2700
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，边界值比较判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and boundary value comparison check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -462,7 +462,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_2800
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -478,7 +478,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_2900
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -494,7 +494,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_3000
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -510,7 +510,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_3100
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -526,7 +526,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_3200
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -540,7 +540,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_3300
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(u8) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -560,7 +560,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_3400
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from(u8) succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -580,7 +580,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0035
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_3500
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -597,7 +597,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0036
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_3600
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(u8) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -618,7 +618,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0037
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_3700
-     * @tc.desc 验证 ArrayBuffer.from(Utils.castToValueArrayByte(null as Object)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from(Utils.castToValueArrayByte(null as Object)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -637,7 +637,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0038
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_3800
-     * @tc.desc 验证 ArrayBuffer.from(Utils.castToValueArrayByte(undefined as Object)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from(Utils.castToValueArrayByte(undefined as Object)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -656,7 +656,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0039
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_3900
-     * @tc.desc 验证 ArrayBuffer.from(Utils.castToValueArrayByte(null as Object)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from(Utils.castToValueArrayByte(null as Object)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -675,7 +675,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0040
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_4000
-     * @tc.desc 验证 ArrayBuffer.from(Utils.castToValueArrayByte(undefined as Object)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from(Utils.castToValueArrayByte(undefined as Object)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -694,7 +694,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0041
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_4100
-     * @tc.desc 验证 ArrayBuffer.from(Utils.castToValueArrayByte("abc" as Object)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from(Utils.castToValueArrayByte("abc" as Object)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -713,7 +713,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0042
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_4200
-     * @tc.desc 验证 ArrayBuffer.from(Utils.castToValueArrayByte(Utils.boxAsObject(_badNum2))) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from(Utils.castToValueArrayByte(Utils.boxAsObject(_badNum2))) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -733,7 +733,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0043
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_4300
-     * @tc.desc 验证 ArrayBuffer.from(buf) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify ArrayBuffer.from(buf) succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -749,7 +749,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0044
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_4400
-     * @tc.desc 验证 ArrayBuffer.from(Utils.castToValueArrayByte(true as Object)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from(Utils.castToValueArrayByte(true as Object)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

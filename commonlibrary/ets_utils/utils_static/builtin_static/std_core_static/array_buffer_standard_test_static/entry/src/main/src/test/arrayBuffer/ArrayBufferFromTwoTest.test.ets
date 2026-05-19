@@ -42,7 +42,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_0100
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -58,7 +58,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_0200
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -72,7 +72,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_0300
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -86,7 +86,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_0400
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -100,7 +100,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_0500
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -116,7 +116,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_0600
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -131,7 +131,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_0700
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -145,7 +145,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_0800
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -159,7 +159,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_0900
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -173,7 +173,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_1000
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -187,7 +187,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_1100
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -201,7 +201,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_1200
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 5。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 5
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -216,7 +216,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_1300
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 10。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 10
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -233,7 +233,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_1400
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -247,7 +247,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_1500
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -261,7 +261,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_1600
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -275,7 +275,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_1700
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -289,7 +289,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_1800
-     * @tc.desc 验证 ArrayBuffer.from(buf) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from(buf) succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -306,7 +306,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_1900
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -320,7 +320,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_2000
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -335,7 +335,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_2100
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -349,7 +349,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_2200
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -363,7 +363,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_2300
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -377,7 +377,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_2400
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -391,7 +391,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_2500
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，等值关系判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and equality relationship check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -406,7 +406,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_2600
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -422,7 +422,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_2700
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -436,7 +436,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_2800
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -451,7 +451,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_2900
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -465,7 +465,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_3000
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -481,7 +481,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_3100
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -497,7 +497,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_3200
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -514,7 +514,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_3300
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -529,7 +529,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_3400
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -543,7 +543,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0035
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_3500
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -557,7 +557,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0036
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_3600
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -571,7 +571,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0037
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_3700
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -585,7 +585,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0038
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_3800
-     * @tc.desc 验证 ArrayBuffer.from(arr) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from(arr) succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

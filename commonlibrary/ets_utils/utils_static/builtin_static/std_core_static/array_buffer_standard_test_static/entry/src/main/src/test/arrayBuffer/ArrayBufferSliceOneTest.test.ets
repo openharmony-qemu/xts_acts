@@ -42,7 +42,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_0100
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -62,7 +62,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_0200
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -82,7 +82,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_0300
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -96,7 +96,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_0400
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -110,7 +110,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_0500
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -128,7 +128,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_0600
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify new ArrayBuffer(8) succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -146,7 +146,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_0700
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and result byteLength is 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -162,7 +162,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_0800
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and result byteLength is 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -178,7 +178,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_0900
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and result byteLength is 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -194,7 +194,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_1000
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -212,7 +212,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_1100
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -226,7 +226,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_1200
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -240,7 +240,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_1300
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -254,7 +254,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_1400
-     * @tc.desc 验证 new ArrayBuffer(6) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify new ArrayBuffer(6) succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -276,7 +276,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_1500
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and result byteLength is 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -292,7 +292,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_1600
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -310,7 +310,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_1700
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -331,7 +331,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_1800
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -345,7 +345,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_1900
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -363,7 +363,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_2000
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -377,7 +377,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_2100
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -395,7 +395,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_2200
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -417,7 +417,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_2300
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -440,7 +440,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_2400
-     * @tc.desc 验证 new Byte() 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify new Byte() succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -459,7 +459,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_2500
-     * @tc.desc 验证 new Byte() 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify new Byte() succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -479,7 +479,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_2600
-     * @tc.desc 验证 new Byte() 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify new Byte() succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -494,7 +494,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_2700
-     * @tc.desc 验证 new Byte() 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify new Byte() succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -507,7 +507,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_2800
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，等值关系判断符合预期。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and equality relationship check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -522,7 +522,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_2900
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -544,7 +544,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_3000
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -558,7 +558,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_3100
-     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify buffer.resize(0) succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -580,7 +580,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_3200
-     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify buffer.resize(0) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -595,7 +595,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_3300
-     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc Verify buffer.resize(0) succeeds and result byteLength is 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -611,7 +611,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_3400
-     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc Verify buffer.resize(0) succeeds and result byteLength is 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -627,7 +627,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0035
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_3500
-     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，空值有效性判断符合预期。
+     * @tc.desc Verify buffer.resize(0) succeeds and null validity check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -648,7 +648,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0036
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_3600
-     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，空值有效性判断符合预期。
+     * @tc.desc Verify buffer.resize(0) succeeds and null validity check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -669,7 +669,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0037
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_3700
-     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，空值有效性判断符合预期。
+     * @tc.desc Verify buffer.resize(0) succeeds and null validity check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -690,7 +690,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0038
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_3800
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -710,7 +710,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0039
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_3900
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -724,7 +724,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0040
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_4000
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -740,7 +740,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0041
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_4100
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

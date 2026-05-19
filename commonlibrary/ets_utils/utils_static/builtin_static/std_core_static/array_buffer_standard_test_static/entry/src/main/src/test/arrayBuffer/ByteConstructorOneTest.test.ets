@@ -42,7 +42,7 @@ export default function byteConstructorOneTest(): void {
     /**
      * @tc.name testByteConstructorOne0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_0100
-     * @tc.desc 验证 new Byte() 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new Byte() succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -55,7 +55,7 @@ export default function byteConstructorOneTest(): void {
     /**
      * @tc.name testByteConstructorOne0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_0200
-     * @tc.desc 验证 new Byte() 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new Byte() succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -68,7 +68,7 @@ export default function byteConstructorOneTest(): void {
     /**
      * @tc.name testByteConstructorOne0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_0300
-     * @tc.desc 验证 new Byte() 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new Byte() succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -81,7 +81,7 @@ export default function byteConstructorOneTest(): void {
     /**
      * @tc.name testByteConstructorOne0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_0400
-     * @tc.desc 验证 new Byte() 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify new Byte() succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -95,7 +95,7 @@ export default function byteConstructorOneTest(): void {
     /**
      * @tc.name testByteConstructorOne0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_0500
-     * @tc.desc 验证 new Byte() 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new Byte() succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -110,7 +110,7 @@ export default function byteConstructorOneTest(): void {
     /**
      * @tc.name testByteConstructorOne0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_0600
-     * @tc.desc 验证 new Byte() 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify new Byte() succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -123,7 +123,7 @@ export default function byteConstructorOneTest(): void {
     /**
      * @tc.name testByteConstructorOne0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_0700
-     * @tc.desc 验证 new Byte() 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify new Byte() succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -136,7 +136,7 @@ export default function byteConstructorOneTest(): void {
     /**
      * @tc.name testByteConstructorOne0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_0800
-     * @tc.desc 验证 new Byte() 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify new Byte() succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -149,7 +149,7 @@ export default function byteConstructorOneTest(): void {
     /**
      * @tc.name testByteConstructorOne0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_0900
-     * @tc.desc 验证 new Byte() 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new Byte() succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -164,7 +164,7 @@ export default function byteConstructorOneTest(): void {
     /**
      * @tc.name testByteConstructorOne0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_1000
-     * @tc.desc 验证 new Byte() 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new Byte() succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -177,7 +177,7 @@ export default function byteConstructorOneTest(): void {
     /**
      * @tc.name testByteConstructorOne0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_1100
-     * @tc.desc 验证 new Byte() 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new Byte() succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -190,7 +190,7 @@ export default function byteConstructorOneTest(): void {
     /**
      * @tc.name testByteConstructorOne0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_1200
-     * @tc.desc 验证 new Byte() 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new Byte() succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -203,7 +203,7 @@ export default function byteConstructorOneTest(): void {
     /**
      * @tc.name testByteConstructorOne0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_1300
-     * @tc.desc 验证 new Byte() 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new Byte() succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -216,7 +216,7 @@ export default function byteConstructorOneTest(): void {
     /**
      * @tc.name testByteConstructorOne0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_1400
-     * @tc.desc 验证 new Byte() 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new Byte() succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -229,7 +229,7 @@ export default function byteConstructorOneTest(): void {
     /**
      * @tc.name testByteConstructorOne0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_1500
-     * @tc.desc 验证 new Byte() 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new Byte() succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -242,7 +242,7 @@ export default function byteConstructorOneTest(): void {
     /**
      * @tc.name testByteConstructorOne0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_1600
-     * @tc.desc 验证 new Byte() 在当前场景执行成功，等值关系判断符合预期。
+     * @tc.desc Verify new Byte() succeeds and equality relationship check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -255,7 +255,7 @@ export default function byteConstructorOneTest(): void {
     /**
      * @tc.name testByteConstructorOne0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_1700
-     * @tc.desc 验证 new Byte(0) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new Byte(0) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -267,7 +267,7 @@ export default function byteConstructorOneTest(): void {
     /**
      * @tc.name testByteConstructorOne0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_1800
-     * @tc.desc 验证 new Byte(0) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new Byte(0) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -279,7 +279,7 @@ export default function byteConstructorOneTest(): void {
     /**
      * @tc.name testByteConstructorOne0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_1900
-     * @tc.desc 验证 new Byte(0) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new Byte(0) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -292,7 +292,7 @@ export default function byteConstructorOneTest(): void {
     /**
      * @tc.name testByteConstructorOne0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_2000
-     * @tc.desc 验证 new Byte(Utils.castToByte("0" as Object)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify new Byte(Utils.castToByte("0" as Object)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -311,7 +311,7 @@ export default function byteConstructorOneTest(): void {
     /**
      * @tc.name testByteConstructorOne0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_2100
-     * @tc.desc 验证 new Byte(Utils.castToByte(undefined as Object)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify new Byte(Utils.castToByte(undefined as Object)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -330,7 +330,7 @@ export default function byteConstructorOneTest(): void {
     /**
      * @tc.name testByteConstructorOne0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_2200
-     * @tc.desc 验证 new Byte(Utils.castToByte(null as Object)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify new Byte(Utils.castToByte(null as Object)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -349,7 +349,7 @@ export default function byteConstructorOneTest(): void {
     /**
      * @tc.name testByteConstructorOne0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_2300
-     * @tc.desc 验证 new Byte() 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new Byte() succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -364,7 +364,7 @@ export default function byteConstructorOneTest(): void {
     /**
      * @tc.name testByteConstructorOne0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_2400
-     * @tc.desc 验证 new Byte() 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new Byte() succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

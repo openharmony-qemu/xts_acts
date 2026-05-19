@@ -51,7 +51,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0100
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from(u8) succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -65,7 +65,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0200
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from(u8) succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -79,7 +79,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0300
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前场景执行成功，返回值的 byteLength 为 5。
+     * @tc.desc Verify ArrayBuffer.from(u8) succeeds and result byteLength is 5
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -95,7 +95,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0400
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify ArrayBuffer.from(u8) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -109,7 +109,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0500
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前场景执行成功，返回值的 byteLength 为 5。
+     * @tc.desc Verify ArrayBuffer.from(u8) succeeds and result byteLength is 5
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -123,7 +123,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0600
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify ArrayBuffer.from(u8) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -137,7 +137,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0700
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc Verify ArrayBuffer.from(u8) succeeds and result byteLength is 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -151,7 +151,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0800
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前场景执行成功，返回值的 byteLength 为 1024。
+     * @tc.desc Verify ArrayBuffer.from(u8) succeeds and result byteLength is 1024
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -168,7 +168,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0900
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前场景执行成功，返回值的 byteLength 为 5。
+     * @tc.desc Verify ArrayBuffer.from(u8) succeeds and result byteLength is 5
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -198,7 +198,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_1000
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from(u8) succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -216,7 +216,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_1100
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from(u8) succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -234,7 +234,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_1200
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(u8) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -251,7 +251,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_1300
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(u8) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -268,7 +268,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_1400
-     * @tc.desc 验证 ArrayBuffer.from(Utils.castToUint8Array(null as Object)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from(Utils.castToUint8Array(null as Object)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -287,7 +287,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_1500
-     * @tc.desc 验证 ArrayBuffer.from(Utils.castToUint8Array(undefined as Object)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from(Utils.castToUint8Array(undefined as Object)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -306,7 +306,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_1600
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from(u8) succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -323,7 +323,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_1700
-     * @tc.desc 验证 ArrayBuffer.from(Utils.castToUint8Array("hello" as Object)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from(Utils.castToUint8Array("hello" as Object)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -342,7 +342,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_1800
-     * @tc.desc 验证 ArrayBuffer.from(Utils.castToUint8Array(Utils.boxAsObject(_badNum2))) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from(Utils.castToUint8Array(Utils.boxAsObject(_badNum2))) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -362,7 +362,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_1900
-     * @tc.desc 验证 ArrayBuffer.from(Utils.castToUint8Array(true as Object)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from(Utils.castToUint8Array(true as Object)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -381,7 +381,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_2000
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前场景执行成功，返回值的 byteLength 为 10。
+     * @tc.desc Verify ArrayBuffer.from(u8) succeeds and result byteLength is 10
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -396,7 +396,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_2100
-     * @tc.desc 验证 ArrayBuffer.from(Utils.castToUint8Array(new ArrayBufferFromThreePlain() as Object)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from(Utils.castToUint8Array(new ArrayBufferFromThreePlain() as Object)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -415,7 +415,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_2200
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前场景执行成功，返回值的 byteLength 为 u8.length。
+     * @tc.desc Verify ArrayBuffer.from(u8) succeeds and result byteLength is u8.length
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -430,7 +430,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_2300
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前场景执行成功，等值关系判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from(u8) succeeds and equality relationship check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -446,7 +446,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_2400
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from(u8) succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -460,7 +460,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_2500
-     * @tc.desc 验证 new Byte() 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify new Byte() succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -473,7 +473,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_2600
-     * @tc.desc 验证 new Byte() 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new Byte() succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -486,7 +486,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_2700
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from(u8) succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -500,7 +500,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_2800
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(u8) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -515,7 +515,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_2900
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(u8) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -532,7 +532,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_3000
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(u8) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -548,7 +548,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_3100
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(u8) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -565,7 +565,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_3200
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(u8) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -585,7 +585,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_3300
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(u8) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -603,7 +603,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_3400
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(u8) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -619,7 +619,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0035
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_3500
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前场景执行成功，共享底层 buffer 的关系判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from(u8) succeeds and shared underlying buffer relationship check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -633,7 +633,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0036
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_3600
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(u8) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -655,7 +655,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0037
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_3700
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from(u8) succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -675,7 +675,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0038
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_3800
-     * @tc.desc 验证 ArrayBuffer.from(u8OnSource) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from(u8OnSource) succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -694,7 +694,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0039
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_3900
-     * @tc.desc 验证 ArrayBuffer.from(new Uint8Array(buf)) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(new Uint8Array(buf)) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -711,7 +711,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0040
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_4000
-     * @tc.desc 验证 ArrayBuffer.from(u8OnSource) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from(u8OnSource) succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -726,7 +726,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0041
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_4100
-     * @tc.desc 验证 ArrayBuffer.from(new Uint8Array(buf)) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from(new Uint8Array(buf)) succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -740,7 +740,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0042
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_4200
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from(u8) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -760,7 +760,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0043
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_4300
-     * @tc.desc 验证 ArrayBuffer.from(u8) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from(u8) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -780,7 +780,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0044
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_4400
-     * @tc.desc 验证 ArrayBuffer.from(Utils.castToUint8Array(badTypeName as Object)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from(Utils.castToUint8Array(badTypeName as Object)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -800,7 +800,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0045
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_4500
-     * @tc.desc 验证 ArrayBuffer.from(Utils.castToUint8Array(Utils.boxAsObject(_badNum4))) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from(Utils.castToUint8Array(Utils.boxAsObject(_badNum4))) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -820,7 +820,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0046
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_4600
-     * @tc.desc 验证 ArrayBuffer.from(Utils.castToUint8Array(false as Object)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from(Utils.castToUint8Array(false as Object)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -839,7 +839,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0047
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_4700
-     * @tc.desc 验证 ArrayBuffer.from(Utils.castToUint8Array(i16 as Object)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from(Utils.castToUint8Array(i16 as Object)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -859,7 +859,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0048
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_4800
-     * @tc.desc 验证 ArrayBuffer.from(Utils.castToUint8Array(u16 as Object)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from(Utils.castToUint8Array(u16 as Object)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

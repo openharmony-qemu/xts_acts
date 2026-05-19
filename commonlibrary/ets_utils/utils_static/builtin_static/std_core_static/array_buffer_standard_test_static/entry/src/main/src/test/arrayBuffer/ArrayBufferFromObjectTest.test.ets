@@ -49,7 +49,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0010
-     * @tc.desc 验证 ArrayBuffer.fromObject("hello", "utf8", 5) 在当前场景执行成功，返回值的 byteLength 为 5。
+     * @tc.desc Verify ArrayBuffer.fromObject("hello", "utf8", 5) succeeds and result byteLength is 5
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -64,7 +64,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0020
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, 16) 在当前场景执行成功，返回值的 byteLength 为 16。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, 16) succeeds and result byteLength is 16
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -78,7 +78,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0030
-     * @tc.desc 验证 ArrayBuffer.fromObject("ok", "utf8", 2) 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify ArrayBuffer.fromObject("ok", "utf8", 2) succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -93,7 +93,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0040
-     * @tc.desc 验证 ArrayBuffer.fromObject("world", "utf8", 5) 在当前场景执行成功，返回值的 byteLength 为 5。
+     * @tc.desc Verify ArrayBuffer.fromObject("world", "utf8", 5) succeeds and result byteLength is 5
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -106,7 +106,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0050
-     * @tc.desc 验证 ArrayBuffer.fromObject("hi", "utf8", 2) 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify ArrayBuffer.fromObject("hi", "utf8", 2) succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -119,7 +119,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0060
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 2, 8) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 2, 8) succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -133,7 +133,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0070
-     * @tc.desc 验证 ArrayBuffer.fromObject("test", "utf8", 4) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify ArrayBuffer.fromObject("test", "utf8", 4) succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -146,7 +146,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0080
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, 8) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, 8) succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -161,7 +161,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0090
-     * @tc.desc 验证 ArrayBuffer.fromObject("hello world", "utf8", 11) 在当前场景执行成功，返回值的 byteLength 为 11。
+     * @tc.desc Verify ArrayBuffer.fromObject("hello world", "utf8", 11) succeeds and result byteLength is 11
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -174,7 +174,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0100
-     * @tc.desc 验证 ArrayBuffer.fromObject("", "utf8", 0) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify ArrayBuffer.fromObject("", "utf8", 0) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -187,7 +187,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0110
-     * @tc.desc 验证 ArrayBuffer.fromObject("你好", "utf8", 6) 在当前场景执行成功，返回值的 byteLength 为 6。
+     * @tc.desc Verify ArrayBuffer.fromObject("你好", "utf8", 6) succeeds and result byteLength is 6
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -200,7 +200,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0120
-     * @tc.desc 验证 ArrayBuffer.fromObject("abc\t\n\r", "utf8", 7) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject("abc\t\n\r", "utf8", 7) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -219,7 +219,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0130
-     * @tc.desc 验证 ArrayBuffer.fromObject(longStr, "utf8", 10000) 在当前场景执行成功，返回值的 byteLength 为 10000。
+     * @tc.desc Verify ArrayBuffer.fromObject(longStr, "utf8", 10000) succeeds and result byteLength is 10000
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -236,7 +236,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0140
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, 0) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, 0) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -250,7 +250,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0150
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, 16) 在当前场景执行成功，返回值的 byteLength 为 16。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, 16) succeeds and result byteLength is 16
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -266,7 +266,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0160
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, 1024) 在当前场景执行成功，返回值的 byteLength 为 1024。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, 1024) succeeds and result byteLength is 1024
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -280,7 +280,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0170
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, 8) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, 8) succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -298,7 +298,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0180
-     * @tc.desc 验证 ArrayBuffer.fromObject(Utils.boxAsObject(_badNum2), 0, 4) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject(Utils.boxAsObject(_badNum2), 0, 4) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -318,7 +318,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0190
-     * @tc.desc 验证 ArrayBuffer.fromObject(Utils.boxAsObject(_badNum4), 0, 4) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject(Utils.boxAsObject(_badNum4), 0, 4) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -338,7 +338,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0200
-     * @tc.desc 验证 ArrayBuffer.fromObject(Utils.boxAsObject(_badNum102), 0, 4) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject(Utils.boxAsObject(_badNum102), 0, 4) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -358,7 +358,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0210
-     * @tc.desc 验证 ArrayBuffer.fromObject(Utils.boxAsObject(_badNum6), 0, 4) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject(Utils.boxAsObject(_badNum6), 0, 4) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -378,7 +378,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0220
-     * @tc.desc 验证 ArrayBuffer.fromObject((true as Object), 0, 4) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject((true as Object), 0, 4) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -397,7 +397,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0230
-     * @tc.desc 验证 ArrayBuffer.fromObject((false as Object), 0, 4) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject((false as Object), 0, 4) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -416,7 +416,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0240
-     * @tc.desc 验证 ArrayBuffer.fromObject((null as Object), 0, 4) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject((null as Object), 0, 4) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -435,7 +435,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0250
-     * @tc.desc 验证 ArrayBuffer.fromObject((undefined as Object), 0, 4) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject((undefined as Object), 0, 4) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -454,7 +454,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0260
-     * @tc.desc 验证 ArrayBuffer.fromObject((badArr as Object), 0, 4) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject((badArr as Object), 0, 4) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -477,7 +477,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0270
-     * @tc.desc 验证 ArrayBuffer.fromObject((plain as Object), 0, 4) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject((plain as Object), 0, 4) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -497,7 +497,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0280
-     * @tc.desc 验证 ArrayBuffer.fromObject((arrayBufferFromObjectMindmapFn as Object), 0, 4) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject((arrayBufferFromObjectMindmapFn as Object), 0, 4) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -516,7 +516,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0290
-     * @tc.desc 验证 ArrayBuffer.fromObject((arr as Object), 0, 8) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject((arr as Object), 0, 8) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -536,7 +536,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0300
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, 16) 在当前场景执行成功，返回值的 byteLength 为 16。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, 16) succeeds and result byteLength is 16
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -555,7 +555,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0310
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 4, 12) 在当前场景执行成功，返回值的 byteLength 为 12。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 4, 12) succeeds and result byteLength is 12
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -569,7 +569,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0320
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 15, 1) 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 15, 1) succeeds and result byteLength is 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -583,7 +583,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0330
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 16, 0) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 16, 0) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -597,7 +597,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0340
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, -1, 16) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, -1, 16) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -617,7 +617,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0035
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0350
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 20, 4) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 20, 4) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -637,7 +637,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0036
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0360
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 2147483647, 4) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 2147483647, 4) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -657,7 +657,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0037
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0370
-     * @tc.desc 验证 ArrayBuffer.fromObject("hello", "utf8", 5) 在当前场景执行成功，返回值的 byteLength 为 5。
+     * @tc.desc Verify ArrayBuffer.fromObject("hello", "utf8", 5) succeeds and result byteLength is 5
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -670,7 +670,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0038
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0380
-     * @tc.desc 验证 ArrayBuffer.fromObject("hello", "utf-8", 5) 在当前场景执行成功，返回值的 byteLength 为 5。
+     * @tc.desc Verify ArrayBuffer.fromObject("hello", "utf-8", 5) succeeds and result byteLength is 5
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -683,7 +683,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0039
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0390
-     * @tc.desc 验证 ArrayBuffer.fromObject("hello", "ascii", 5) 在当前场景执行成功，返回值的 byteLength 为 5。
+     * @tc.desc Verify ArrayBuffer.fromObject("hello", "ascii", 5) succeeds and result byteLength is 5
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -696,7 +696,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0040
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0400
-     * @tc.desc 验证 ArrayBuffer.fromObject("hello", "invalid-encoding", 5) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject("hello", "invalid-encoding", 5) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -715,7 +715,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0041
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0410
-     * @tc.desc 验证 ArrayBuffer.fromObject("hello", "", 5) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject("hello", "", 5) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -734,7 +734,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0042
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0420
-     * @tc.desc 验证 ArrayBuffer.fromObject("hello", (null as string), 5) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject("hello", (null as string), 5) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -753,7 +753,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0043
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0430
-     * @tc.desc 验证 ArrayBuffer.fromObject("hello", (undefined as string), 5) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject("hello", (undefined as string), 5) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -772,7 +772,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0044
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0440
-     * @tc.desc 验证 ArrayBuffer.fromObject("hello", (true as string), 5) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject("hello", (true as string), 5) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -791,7 +791,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0045
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0450
-     * @tc.desc 验证 ArrayBuffer.fromObject("hello", (false as string), 5) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject("hello", (false as string), 5) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -810,7 +810,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0046
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0460
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, Double.toInt(2.0), 8) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, Double.toInt(2.0), 8) succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -824,7 +824,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0047
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0470
-     * @tc.desc 验证 ArrayBuffer.fromObject(src as Object, Double.toInt(Number.NaN), 8) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify ArrayBuffer.fromObject(src as Object, Double.toInt(Number.NaN), 8) succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -843,7 +843,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0048
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0480
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, copyLen) 在当前场景执行成功，返回值的 byteLength 为 copyLen。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, copyLen) succeeds and result byteLength is copyLen
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -864,7 +864,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0049
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0490
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, 1) 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, 1) succeeds and result byteLength is 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -878,7 +878,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0050
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0500
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, 0) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, 0) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -892,7 +892,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0051
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0510
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, -1) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, -1) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -912,7 +912,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0052
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0520
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, -100) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, -100) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -932,7 +932,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0053
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0530
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 8, 20) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 8, 20) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -952,7 +952,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0054
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0540
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 8, 8) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 8, 8) succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -966,7 +966,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0055
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0550
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, 2147483647) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, 2147483647) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -986,7 +986,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0056
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0560
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, (null as int)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, (null as int)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1006,7 +1006,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0057
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0570
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, (undefined as int)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, (undefined as int)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1026,7 +1026,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0058
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0580
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, Utils.castToInt(("10" as string) as Object)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, Utils.castToInt(("10" as string) as Object)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1046,7 +1046,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0059
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0590
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, (true as int)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, (true as int)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1066,7 +1066,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0060
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0600
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, Double.toInt(3.14)) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, Double.toInt(3.14)) succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1085,7 +1085,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0061
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0610
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, Double.toInt(Number.NaN)) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, Double.toInt(Number.NaN)) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1104,7 +1104,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0062
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0620
-     * @tc.desc 验证 ArrayBuffer.fromObject("hello", "utf8", 5) 在当前场景执行成功，返回值的 byteLength 为 5。
+     * @tc.desc Verify ArrayBuffer.fromObject("hello", "utf8", 5) succeeds and result byteLength is 5
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1118,7 +1118,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0063
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0630
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, 16) 在当前场景执行成功，返回值的 byteLength 为 16。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, 16) succeeds and result byteLength is 16
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1136,7 +1136,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0064
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0640
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 4, 8) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 4, 8) succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1150,7 +1150,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0065
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0650
-     * @tc.desc 验证 ArrayBuffer.fromObject("", "utf8", 0) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify ArrayBuffer.fromObject("", "utf8", 0) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1164,7 +1164,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0066
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0660
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, 0) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, 0) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1178,7 +1178,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0067
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0670
-     * @tc.desc 验证 ArrayBuffer.fromObject("abc", "utf8", 3) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.fromObject("abc", "utf8", 3) succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1192,7 +1192,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0068
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0680
-     * @tc.desc 验证 ArrayBuffer.fromObject("hello", "utf8", 5) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.fromObject("hello", "utf8", 5) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1205,7 +1205,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0069
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0690
-     * @tc.desc 验证 ArrayBuffer.fromObject("hello", "utf8", 5) 在当前场景执行成功，返回值的 byteLength 为 5。
+     * @tc.desc Verify ArrayBuffer.fromObject("hello", "utf8", 5) succeeds and result byteLength is 5
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1220,7 +1220,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0070
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0700
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, 16) 在当前场景执行成功，等值关系判断符合预期。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, 16) succeeds and equality relationship check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1235,7 +1235,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0071
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0710
-     * @tc.desc 验证 ArrayBuffer.fromObject("abc", "utf8", 3) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.fromObject("abc", "utf8", 3) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1251,7 +1251,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0072
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0720
-     * @tc.desc 验证 ArrayBuffer.fromObject("你", "utf8", 3) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.fromObject("你", "utf8", 3) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1265,7 +1265,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0073
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0730
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, 4) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, 4) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1288,7 +1288,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0074
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0740
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 2, 4) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 2, 4) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1315,7 +1315,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0075
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0750
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, 4) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, 4) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1333,7 +1333,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0076
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0760
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, 16) 在当前场景执行成功，返回值的 byteLength 为 16。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, 16) succeeds and result byteLength is 16
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1347,7 +1347,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0077
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0770
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, 0) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, 0) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1361,7 +1361,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0078
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0780
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, 8) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, 8) succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1378,7 +1378,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0079
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0790
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 7, 1) 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 7, 1) succeeds and result byteLength is 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1392,7 +1392,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0080
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0800
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 8, 0) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 8, 0) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1406,7 +1406,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0081
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0810
-     * @tc.desc 验证 ArrayBuffer.fromObject("", "utf8", 0) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify ArrayBuffer.fromObject("", "utf8", 0) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1420,7 +1420,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0082
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0820
-     * @tc.desc 验证 ArrayBuffer.fromObject("A", "utf8", 1) 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc Verify ArrayBuffer.fromObject("A", "utf8", 1) succeeds and result byteLength is 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1433,7 +1433,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0083
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0830
-     * @tc.desc 验证 ArrayBuffer.fromObject(Utils.boxAsObject(_badNum8), 0, 4) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject(Utils.boxAsObject(_badNum8), 0, 4) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1453,7 +1453,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0084
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0840
-     * @tc.desc 验证 ArrayBuffer.fromObject(Utils.boxAsObject(_badNum10), 0, 4) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject(Utils.boxAsObject(_badNum10), 0, 4) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1473,7 +1473,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0085
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0850
-     * @tc.desc 验证 ArrayBuffer.fromObject((true as Object), 0, 5) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject((true as Object), 0, 5) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1492,7 +1492,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0086
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0860
-     * @tc.desc 验证 ArrayBuffer.fromObject((false as Object), 0, 5) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject((false as Object), 0, 5) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1511,7 +1511,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0087
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0870
-     * @tc.desc 验证 ArrayBuffer.fromObject(Utils.castToObject(new ArrayBufferFromObjectPlainForMindmap() as Obje... 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject(Utils.castToObject(new ArrayBufferFromObjectPlainForMindmap() as Obje... throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1530,7 +1530,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0088
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0880
-     * @tc.desc 验证 ArrayBuffer.fromObject((a as Object), 0, 4) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject((a as Object), 0, 4) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1550,7 +1550,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0089
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0890
-     * @tc.desc 验证 ArrayBuffer.fromObject((arr as Object), 0, 16) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject((arr as Object), 0, 16) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1570,7 +1570,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0090
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0900
-     * @tc.desc 验证 ArrayBuffer.fromObject((dv as Object), 0, 8) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject((dv as Object), 0, 8) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1591,7 +1591,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0091
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0910
-     * @tc.desc 验证 ArrayBuffer.fromObject((arrayBufferFromObjectMindmapFn as Object), 0, 8) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject((arrayBufferFromObjectMindmapFn as Object), 0, 8) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1610,7 +1610,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0092
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0920
-     * @tc.desc 验证 ArrayBuffer.fromObject((null as Object), 0, 8) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject((null as Object), 0, 8) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1629,7 +1629,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0093
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0930
-     * @tc.desc 验证 ArrayBuffer.fromObject((undefined as Object), 0, 8) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject((undefined as Object), 0, 8) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1648,7 +1648,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0094
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0940
-     * @tc.desc 验证 ArrayBuffer.fromObject("world", (null as string), 5) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject("world", (null as string), 5) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1667,7 +1667,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0095
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0950
-     * @tc.desc 验证 ArrayBuffer.fromObject("world", (undefined as string), 5) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject("world", (undefined as string), 5) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1686,7 +1686,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0096
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0960
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, (null as int), 16) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, (null as int), 16) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1706,7 +1706,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0097
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0970
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 4, (null as int)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 4, (null as int)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1726,7 +1726,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0098
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0980
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 4, (undefined as int)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 4, (undefined as int)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1746,7 +1746,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0099
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0990
-     * @tc.desc 验证 ArrayBuffer.fromObject((null as Object), (null as string), (null as int)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject((null as Object), (null as string), (null as int)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1765,7 +1765,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0100
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_1000
-     * @tc.desc 验证 ArrayBuffer.fromObject((undefined as Object), (undefined as string), (undefined as int)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject((undefined as Object), (undefined as string), (undefined as int)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1784,7 +1784,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0101
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_1010
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, -1, 8) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, -1, 8) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1804,7 +1804,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0102
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_1020
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 100, 4) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 100, 4) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1824,7 +1824,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0103
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_1030
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, -5) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, -5) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1844,7 +1844,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0104
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_1040
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 4, 8) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 4, 8) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1864,7 +1864,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0105
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_1050
-     * @tc.desc 验证 ArrayBuffer.fromObject("hi", "utf8", 100) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.fromObject("hi", "utf8", 100) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1883,7 +1883,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0106
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_1060
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, -2147483648, 8) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, -2147483648, 8) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1903,7 +1903,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0107
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_1070
-     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, 2147483647) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, 2147483647) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

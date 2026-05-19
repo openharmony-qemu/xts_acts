@@ -43,7 +43,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_0100
-     * @tc.desc 验证 buffer.at(0) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify buffer.at(0) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -60,7 +60,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_0200
-     * @tc.desc 验证 new ArrayBuffer(3) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify new ArrayBuffer(3) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -74,7 +74,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_0300
-     * @tc.desc 验证 new ArrayBuffer(3) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify new ArrayBuffer(3) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -88,7 +88,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_0400
-     * @tc.desc 验证 new ArrayBuffer(3) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify new ArrayBuffer(3) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -102,7 +102,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_0500
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -119,7 +119,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_0600
-     * @tc.desc 验证 buffer.at(2) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify buffer.at(2) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -138,7 +138,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_0700
-     * @tc.desc 验证 buffer.at(3) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify buffer.at(3) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -156,7 +156,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_0800
-     * @tc.desc 验证 buffer.at(-1) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.at(-1) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -177,7 +177,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_0900
-     * @tc.desc 验证 buffer.at(-100) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.at(-100) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -197,7 +197,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_1000
-     * @tc.desc 验证 buffer.at(4) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.at(4) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -218,7 +218,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_1100
-     * @tc.desc 验证 buffer.at(100) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.at(100) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -238,7 +238,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_1200
-     * @tc.desc 验证 buffer.at(posMax) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.at(posMax) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -259,7 +259,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_1300
-     * @tc.desc 验证 buffer.at(1) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.at(1) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -280,7 +280,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_1400
-     * @tc.desc 验证 new ArrayBuffer(3) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify new ArrayBuffer(3) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -298,7 +298,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_1500
-     * @tc.desc 验证 buffer.at(0) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify buffer.at(0) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -312,7 +312,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_1600
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -330,7 +330,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_1700
-     * @tc.desc 验证 new ArrayBuffer(2) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify new ArrayBuffer(2) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -346,7 +346,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_1800
-     * @tc.desc 验证 new ArrayBuffer(2) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new ArrayBuffer(2) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -365,7 +365,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_1900
-     * @tc.desc 验证 buffer.at(0) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify buffer.at(0) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -380,7 +380,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_2000
-     * @tc.desc 验证 buffer.at(0) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify buffer.at(0) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -395,7 +395,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_2100
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -410,7 +410,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_2200
-     * @tc.desc 验证 new ArrayBuffer(2) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new ArrayBuffer(2) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -426,7 +426,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_2300
-     * @tc.desc 验证 new ArrayBuffer(2) 在当前场景执行成功，边界值比较判断符合预期。
+     * @tc.desc Verify new ArrayBuffer(2) succeeds and boundary value comparison check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -442,7 +442,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_2400
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -460,7 +460,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_2500
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -477,7 +477,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_2600
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -493,7 +493,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_2700
-     * @tc.desc 验证 new ArrayBuffer(1) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify new ArrayBuffer(1) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -507,7 +507,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_2800
-     * @tc.desc 验证 new ArrayBuffer(1) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify new ArrayBuffer(1) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -520,7 +520,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_2900
-     * @tc.desc 验证 new ArrayBuffer(256) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify new ArrayBuffer(256) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -538,7 +538,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_3000
-     * @tc.desc 验证 buffer.at(-1) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.at(-1) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -560,7 +560,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_3100
-     * @tc.desc 验证 buffer.at(-2) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.at(-2) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -580,7 +580,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_3200
-     * @tc.desc 验证 buffer.at(posMin) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.at(posMin) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -601,7 +601,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_3300
-     * @tc.desc 验证 buffer.at(pos) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.at(pos) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -623,7 +623,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_3400
-     * @tc.desc 验证 buffer.at(1000) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.at(1000) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -643,7 +643,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0035
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_3500
-     * @tc.desc 验证 buffer.at(posMax) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.at(posMax) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -665,7 +665,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0036
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_3600
-     * @tc.desc 验证 buffer.at(1) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.at(1) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -688,7 +688,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0037
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_3700
-     * @tc.desc 验证 buffer.at(0) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.at(0) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -708,7 +708,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0038
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_3800
-     * @tc.desc 验证 buffer.at(-1) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.at(-1) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -728,7 +728,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0039
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_3900
-     * @tc.desc 验证 buffer.at(10) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify buffer.at(10) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -748,7 +748,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0040
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_4000
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -763,7 +763,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0041
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_4100
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -778,7 +778,7 @@ export default function arrayBufferAtTest(): void {
     /**
      * @tc.name testArrayBufferAt0042
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_4200
-     * @tc.desc 验证 new ArrayBuffer(2) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc Verify new ArrayBuffer(2) succeeds and returned data content matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

@@ -50,7 +50,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0010
-     * @tc.desc 验证 ArrayBuffer.bytesLength('ABC', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('ABC', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -63,7 +63,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0020
-     * @tc.desc 验证 ArrayBuffer.bytesLength('AB', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('AB', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -76,7 +76,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0030
-     * @tc.desc 验证 ArrayBuffer.bytesLength('XYZ', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('XYZ', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -89,7 +89,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0040
-     * @tc.desc 验证 ArrayBuffer.bytesLength('ab', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('ab', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -102,7 +102,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0050
-     * @tc.desc 验证 ArrayBuffer.bytesLength('Q', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('Q', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -115,7 +115,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0060
-     * @tc.desc 验证 ArrayBuffer.bytesLength('QQ', 'ascii') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('QQ', 'ascii') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -128,7 +128,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0070
-     * @tc.desc 验证 ArrayBuffer.bytesLength('', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -141,7 +141,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0080
-     * @tc.desc 验证 ArrayBuffer.bytesLength('test', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('test', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -154,7 +154,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0090
-     * @tc.desc 验证 ArrayBuffer.bytesLength('12345', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('12345', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -167,7 +167,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0100
-     * @tc.desc 验证 ArrayBuffer.bytesLength('A B C', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('A B C', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -180,7 +180,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0110
-     * @tc.desc 验证 ArrayBuffer.bytesLength(' ', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength(' ', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -193,7 +193,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0120
-     * @tc.desc 验证 ArrayBuffer.bytesLength('你好', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('你好', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -206,7 +206,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0130
-     * @tc.desc 验证 ArrayBuffer.bytesLength('你好世界', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('你好世界', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -219,7 +219,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0140
-     * @tc.desc 验证 ArrayBuffer.bytesLength('こんにちは', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('こんにちは', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -232,7 +232,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0150
-     * @tc.desc 验证 ArrayBuffer.bytesLength('안녕하세요', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('안녕하세요', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -245,7 +245,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0160
-     * @tc.desc 验证 ArrayBuffer.bytesLength('😀', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('😀', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -258,7 +258,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0170
-     * @tc.desc 验证 ArrayBuffer.bytesLength('😀😁😂', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('😀😁😂', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -271,7 +271,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0180
-     * @tc.desc 验证 ArrayBuffer.bytesLength('A\nB', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('A\nB', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -284,7 +284,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0190
-     * @tc.desc 验证 ArrayBuffer.bytesLength('A\tB', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('A\tB', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -297,7 +297,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0200
-     * @tc.desc 验证 ArrayBuffer.bytesLength('A\\B', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('A\\B', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -310,7 +310,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0210
-     * @tc.desc 验证 ArrayBuffer.bytesLength('A\0B', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('A\0B', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -323,7 +323,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0220
-     * @tc.desc 验证 ArrayBuffer.from(text, enc) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(text, enc) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -336,7 +336,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0230
-     * @tc.desc 验证 ArrayBuffer.from(text, enc) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(text, enc) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -349,7 +349,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0240
-     * @tc.desc 验证 ArrayBuffer.from(text, enc) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(text, enc) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -362,7 +362,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0250
-     * @tc.desc 验证 ArrayBuffer.from(text, enc) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(text, enc) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -375,7 +375,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0260
-     * @tc.desc 验证 ArrayBuffer.from(text, enc) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(text, enc) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -388,7 +388,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0270
-     * @tc.desc 验证 ArrayBuffer.from(text, enc) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(text, enc) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -404,7 +404,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0280
-     * @tc.desc 验证 ArrayBuffer.bytesLength(longText, 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength(longText, 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -418,7 +418,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0290
-     * @tc.desc 验证 ArrayBuffer.bytesLength(longChinese, 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength(longChinese, 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -432,7 +432,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0300
-     * @tc.desc 验证 ArrayBuffer.bytesLength('null-safe', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('null-safe', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -445,7 +445,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0310
-     * @tc.desc 验证 ArrayBuffer.bytesLength('defined', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('defined', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -458,7 +458,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0320
-     * @tc.desc 验证 ArrayBuffer.bytesLength('123', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('123', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -471,7 +471,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0330
-     * @tc.desc 验证 ArrayBuffer.bytesLength('true', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('true', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -484,7 +484,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0340
-     * @tc.desc 验证 ArrayBuffer.from('ABC', 'utf-16le') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from('ABC', 'utf-16le') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -497,7 +497,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0035
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0350
-     * @tc.desc 验证 ArrayBuffer.from('ABC', 'utf-16le') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from('ABC', 'utf-16le') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -510,7 +510,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0036
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0360
-     * @tc.desc 验证 ArrayBuffer.from('ABC', 'utf-16le') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from('ABC', 'utf-16le') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -523,7 +523,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0037
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0370
-     * @tc.desc 验证 ArrayBuffer.from('ABC', 'utf-16le') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from('ABC', 'utf-16le') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -536,7 +536,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0038
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0380
-     * @tc.desc 验证 ArrayBuffer.from('ABC', 'utf-16le') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from('ABC', 'utf-16le') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -549,7 +549,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0039
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0390
-     * @tc.desc 验证 ArrayBuffer.from('ABC', 'utf-16le') 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from('ABC', 'utf-16le') succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -571,7 +571,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0040
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0400
-     * @tc.desc 验证 ArrayBuffer.bytesLength('ABC', 'ucs2') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('ABC', 'ucs2') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -584,7 +584,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0041
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0410
-     * @tc.desc 验证 ArrayBuffer.bytesLength('ABC', 'ascii') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('ABC', 'ascii') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -597,7 +597,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0042
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0420
-     * @tc.desc 验证 ArrayBuffer.bytesLength(t, e) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength(t, e) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -610,7 +610,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0043
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0430
-     * @tc.desc 验证 ArrayBuffer.bytesLength(t, e) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength(t, e) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -623,7 +623,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0044
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0440
-     * @tc.desc 验证 ArrayBuffer.bytesLength(t, e) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength(t, e) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -637,7 +637,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0045
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0450
-     * @tc.desc 验证 ArrayBuffer.bytesLength(t, e) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength(t, e) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -651,7 +651,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0046
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0460
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "") 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "") succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -670,7 +670,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0047
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0470
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "invalid") 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "invalid") succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -689,7 +689,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0048
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0480
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "xyz123") 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "xyz123") succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -708,7 +708,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0049
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0490
-     * @tc.desc 验证 ArrayBuffer.from('ABC', 'utf-8') 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from('ABC', 'utf-8') succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -730,7 +730,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0050
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0500
-     * @tc.desc 验证 ArrayBuffer.bytesLength('DEF', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('DEF', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -743,7 +743,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0051
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0510
-     * @tc.desc 验证 ArrayBuffer.bytesLength('GHI', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('GHI', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -756,7 +756,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0052
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0520
-     * @tc.desc 验证 ArrayBuffer.bytesLength('JKL', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('JKL', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -769,7 +769,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0053
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0530
-     * @tc.desc 验证 ArrayBuffer.bytesLength('MNO', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('MNO', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -782,7 +782,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0054
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0540
-     * @tc.desc 验证 ArrayBuffer.bytesLength('PQR', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('PQR', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -795,7 +795,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0055
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0550
-     * @tc.desc 验证 ArrayBuffer.bytesLength('\u4e2d', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('\u4e2d', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -808,7 +808,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0056
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0560
-     * @tc.desc 验证 ArrayBuffer.bytesLength('A', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('A', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -821,7 +821,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0057
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0570
-     * @tc.desc 验证 ArrayBuffer.bytesLength('12', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('12', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -834,7 +834,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0058
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0580
-     * @tc.desc 验证 ArrayBuffer.bytesLength('你', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('你', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -847,7 +847,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0059
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0590
-     * @tc.desc 验证 ArrayBuffer.bytesLength('414243', 'hex') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('414243', 'hex') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -860,7 +860,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0060
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0600
-     * @tc.desc 验证 ArrayBuffer.from(text, 'utf16le') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(text, 'utf16le') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -873,7 +873,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0061
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0610
-     * @tc.desc 验证 ArrayBuffer.from(text, 'utf16le') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(text, 'utf16le') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -886,7 +886,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0062
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0620
-     * @tc.desc 验证 ArrayBuffer.from(text, 'utf16le') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(text, 'utf16le') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -899,7 +899,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0063
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0630
-     * @tc.desc 验证 ArrayBuffer.from(text, 'utf16le') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(text, 'utf16le') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -912,7 +912,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0064
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0640
-     * @tc.desc 验证 ArrayBuffer.from(text, 'utf16le') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(text, 'utf16le') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -927,7 +927,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0065
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0650
-     * @tc.desc 验证 ArrayBuffer.from(text, 'utf16le') 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from(text, 'utf16le') succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -945,7 +945,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0066
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0660
-     * @tc.desc 验证 ArrayBuffer.from('ABC', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from('ABC', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -958,7 +958,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0067
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0670
-     * @tc.desc 验证 ArrayBuffer.from('ABC', 'utf8') 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from('ABC', 'utf8') succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -973,7 +973,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0068
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0680
-     * @tc.desc 验证 ArrayBuffer.from(text, encoding) 在当前场景执行成功，边界值比较判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from(text, encoding) succeeds and boundary value comparison check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -987,7 +987,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0069
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0690
-     * @tc.desc 验证 ArrayBuffer.from(text, encoding) 在当前场景执行成功，边界值比较判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from(text, encoding) succeeds and boundary value comparison check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1001,7 +1001,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0070
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0700
-     * @tc.desc 验证 ArrayBuffer.from(text, encoding) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(text, encoding) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1017,7 +1017,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0071
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0710
-     * @tc.desc 验证 ArrayBuffer.from(text, encoding) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(text, encoding) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1033,7 +1033,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0072
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0720
-     * @tc.desc 验证 ArrayBuffer.from(text, encoding) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(text, encoding) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1049,7 +1049,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0073
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0730
-     * @tc.desc 验证 ArrayBuffer.from(text, encoding) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(text, encoding) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1065,7 +1065,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0074
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0740
-     * @tc.desc 验证 ArrayBuffer.from(text, encoding) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(text, encoding) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1081,7 +1081,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0075
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0750
-     * @tc.desc 验证 ArrayBuffer.bytesLength('A', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('A', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1096,7 +1096,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0076
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0760
-     * @tc.desc 验证 ArrayBuffer.bytesLength(text, 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength(text, 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1110,7 +1110,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0077
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0770
-     * @tc.desc 验证 ArrayBuffer.from(text, 'utf16le') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(text, 'utf16le') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1124,7 +1124,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0078
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0780
-     * @tc.desc 验证 ArrayBuffer.from(text, 'utf16le') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(text, 'utf16le') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1138,7 +1138,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0079
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0790
-     * @tc.desc 验证 ArrayBuffer.from(text, 'utf16le') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(text, 'utf16le') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1156,7 +1156,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0080
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0800
-     * @tc.desc 验证 ArrayBuffer.from(text, 'utf16le') 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from(text, 'utf16le') succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1177,7 +1177,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0081
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0810
-     * @tc.desc 验证 ArrayBuffer.bytesLength('😀', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('😀', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1192,7 +1192,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0082
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0820
-     * @tc.desc 验证 ArrayBuffer.bytesLength('static', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('static', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1205,7 +1205,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0083
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0830
-     * @tc.desc 验证 ArrayBuffer.bytesLength('literal', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('literal', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1218,7 +1218,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0084
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0840
-     * @tc.desc 验证 ArrayBuffer.from("你好", "gbk") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("你好", "gbk") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1231,7 +1231,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0085
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0850
-     * @tc.desc 验证 ArrayBuffer.from("你好", "gbk") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("你好", "gbk") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1244,7 +1244,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0086
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0860
-     * @tc.desc 验证 ArrayBuffer.from("你好", "gbk") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("你好", "gbk") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1257,7 +1257,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0087
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0870
-     * @tc.desc 验证 ArrayBuffer.from("你好", "gbk") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("你好", "gbk") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1270,7 +1270,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0088
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0880
-     * @tc.desc 验证 ArrayBuffer.from("你好", "gbk") 在当前场景执行成功，空值有效性判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("你好", "gbk") succeeds and null validity check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1288,7 +1288,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0089
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0890
-     * @tc.desc 验证 ArrayBuffer.from("你好", "gbk") 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("你好", "gbk") succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1307,7 +1307,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0090
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0900
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "xyznotencoding") 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "xyznotencoding") succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1326,7 +1326,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0091
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0910
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "UTF8") 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "UTF8") succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1345,7 +1345,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0092
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0920
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "Utf8") 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "Utf8") succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1364,7 +1364,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0093
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0930
-     * @tc.desc 验证 ArrayBuffer.bytesLength('num', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('num', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1377,7 +1377,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0094
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0940
-     * @tc.desc 验证 ArrayBuffer.bytesLength('bool', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('bool', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1390,7 +1390,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0095
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0950
-     * @tc.desc 验证 ArrayBuffer.bytesLength('obj', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('obj', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1403,7 +1403,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0096
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0960
-     * @tc.desc 验证 ArrayBuffer.bytesLength('arr', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('arr', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1416,7 +1416,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0097
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0970
-     * @tc.desc 验证 ArrayBuffer.bytesLength('ABC', 'latin1') 在当前场景执行成功，等值关系判断符合预期。
+     * @tc.desc Verify ArrayBuffer.bytesLength('ABC', 'latin1') succeeds and equality relationship check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1431,7 +1431,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0098
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0980
-     * @tc.desc 验证 ArrayBuffer.bytesLength('latin', 'latin1') 在当前场景执行成功，等值关系判断符合预期。
+     * @tc.desc Verify ArrayBuffer.bytesLength('latin', 'latin1') succeeds and equality relationship check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1444,7 +1444,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0099
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0990
-     * @tc.desc 验证 ArrayBuffer.bytesLength('41', 'hex') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('41', 'hex') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1459,7 +1459,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0100
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_1000
-     * @tc.desc 验证 ArrayBuffer.bytesLength(text, 'utf8') 在当前场景执行成功，等值关系判断符合预期。
+     * @tc.desc Verify ArrayBuffer.bytesLength(text, 'utf8') succeeds and equality relationship check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1474,7 +1474,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0101
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_1010
-     * @tc.desc 验证 ArrayBuffer.bytesLength('a', 'utf8') 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.bytesLength('a', 'utf8') succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1487,7 +1487,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0102
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_1020
-     * @tc.desc 验证 ArrayBuffer.bytesLength(label, 'utf8') 在当前场景执行成功，字符串匹配判断符合预期。
+     * @tc.desc Verify ArrayBuffer.bytesLength(label, 'utf8') succeeds and string matching check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

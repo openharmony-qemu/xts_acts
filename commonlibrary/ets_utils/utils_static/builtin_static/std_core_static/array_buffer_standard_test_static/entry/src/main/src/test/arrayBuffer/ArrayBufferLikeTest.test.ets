@@ -53,7 +53,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_0100
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify new ArrayBuffer(8) succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -66,7 +66,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_0200
-     * @tc.desc 验证 new ArrayBuffer(0) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify new ArrayBuffer(0) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -79,7 +79,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_0300
-     * @tc.desc 验证 new ArrayBuffer(1024) 在当前场景执行成功，返回值的 byteLength 为 1024。
+     * @tc.desc Verify new ArrayBuffer(1024) succeeds and result byteLength is 1024
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -92,7 +92,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_0400
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 16。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and result byteLength is 16
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -106,7 +106,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_0500
-     * @tc.desc 验证 new ArrayBuffer(1) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify new ArrayBuffer(1) succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -119,7 +119,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_0600
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify new ArrayBuffer(8) succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -133,7 +133,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_0700
-     * @tc.desc 验证 new ArrayBuffer(1024) 在当前场景执行成功，返回值的 byteLength 为 1024。
+     * @tc.desc Verify new ArrayBuffer(1024) succeeds and result byteLength is 1024
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -146,7 +146,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_0800
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 16。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and result byteLength is 16
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -160,7 +160,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_0900
-     * @tc.desc 验证 e !== null && e !== undefined 在当前入参场景下会抛出异常。
+     * @tc.desc Verify e !== null && e !== undefined throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -180,7 +180,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_1000
-     * @tc.desc 验证 new ArrayBufferLikePlainForMindmap() 在当前入参场景下会抛出异常。
+     * @tc.desc Verify new ArrayBufferLikePlainForMindmap() throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -200,7 +200,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_1100
-     * @tc.desc 验证 e !== null && e !== undefined 在当前入参场景下会抛出异常。
+     * @tc.desc Verify e !== null && e !== undefined throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -220,7 +220,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_1200
-     * @tc.desc 验证 new ArrayBuffer(32) 在当前场景执行成功，返回值的 byteLength 为 32。
+     * @tc.desc Verify new ArrayBuffer(32) succeeds and result byteLength is 32
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -233,7 +233,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_1300
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -248,7 +248,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_1400
-     * @tc.desc 验证 new ArrayBuffer(0) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify new ArrayBuffer(0) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -262,7 +262,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_1500
-     * @tc.desc 验证 new ArrayBuffer(16) 在当前场景执行成功，返回值的 byteLength 为 12。
+     * @tc.desc Verify new ArrayBuffer(16) succeeds and result byteLength is 12
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -278,7 +278,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_1600
-     * @tc.desc 验证 new ArrayBuffer(16) 在当前场景执行成功，返回值的 byteLength 为 6。
+     * @tc.desc Verify new ArrayBuffer(16) succeeds and result byteLength is 6
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -293,7 +293,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_1700
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify new ArrayBuffer(8) succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -309,7 +309,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_1800
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify new ArrayBuffer(8) succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -324,7 +324,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_1900
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify new ArrayBuffer(8) succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -339,7 +339,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_2000
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -353,7 +353,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_2100
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new ArrayBuffer(8) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -366,7 +366,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_2200
-     * @tc.desc 验证 buffer.byteLength 在当前场景执行成功，返回值的 byteLength 为 16。
+     * @tc.desc Verify buffer.byteLength succeeds and result byteLength is 16
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -380,7 +380,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_2300
-     * @tc.desc 验证 new Int8Array(buffer) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify new Int8Array(buffer) succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -395,7 +395,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_2400
-     * @tc.desc 验证 new DataView(buffer) 在当前场景执行成功，返回值的 byteLength 为 16。
+     * @tc.desc Verify new DataView(buffer) succeeds and result byteLength is 16
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -409,7 +409,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_2500
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -422,7 +422,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_2600
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -435,7 +435,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_2700
-     * @tc.desc 验证 new ArrayBuffer(64) 在当前场景执行成功，返回值的 byteLength 为 64。
+     * @tc.desc Verify new ArrayBuffer(64) succeeds and result byteLength is 64
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -449,7 +449,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_2800
-     * @tc.desc 验证 new Int32Array(buffer) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new Int32Array(buffer) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -464,7 +464,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_2900
-     * @tc.desc 验证 new Int32Array(buffer) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify new Int32Array(buffer) succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -484,7 +484,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_3000
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify new ArrayBuffer(8) succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -497,7 +497,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_3100
-     * @tc.desc 验证 new Int32Array(buffer as ArrayBuffer) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new Int32Array(buffer as ArrayBuffer) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -511,7 +511,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_3200
-     * @tc.desc 验证 new ArrayBuffer(Double.toInt(Number.POSITIVE_INFINITY)) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc Verify new ArrayBuffer(Double.toInt(Number.POSITIVE_INFINITY)) succeeds and property state check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -529,7 +529,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_3300
-     * @tc.desc 验证 new ArrayBuffer(-1) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify new ArrayBuffer(-1) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -548,7 +548,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_3400
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify new ArrayBuffer(8) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -562,7 +562,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0035
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_3500
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify new ArrayBuffer(8) succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -576,7 +576,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0036
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_3600
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify new ArrayBuffer(8) succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -590,7 +590,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0037
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_3700
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify new ArrayBuffer(8) succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -603,7 +603,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0038
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_3800
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify new ArrayBuffer(4) succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

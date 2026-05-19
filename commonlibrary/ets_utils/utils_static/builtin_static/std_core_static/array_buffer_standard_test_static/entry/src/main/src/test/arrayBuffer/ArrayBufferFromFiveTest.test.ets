@@ -57,7 +57,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_0100
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -70,7 +70,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_0200
-     * @tc.desc 验证 ArrayBuffer.from("utf8", "utf8") 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify ArrayBuffer.from("utf8", "utf8") succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -83,7 +83,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_0300
-     * @tc.desc 验证 ArrayBuffer.from("AB", "utf8") 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify ArrayBuffer.from("AB", "utf8") succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -96,7 +96,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_0400
-     * @tc.desc 验证 ArrayBuffer.from("x", "utf8") 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc Verify ArrayBuffer.from("x", "utf8") succeeds and result byteLength is 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -109,7 +109,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_0500
-     * @tc.desc 验证 ArrayBuffer.from("XY", "utf8") 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify ArrayBuffer.from("XY", "utf8") succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -123,7 +123,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_0600
-     * @tc.desc 验证 ArrayBuffer.from("ABCD", "utf8") 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify ArrayBuffer.from("ABCD", "utf8") succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -136,7 +136,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_0700
-     * @tc.desc 验证 ArrayBuffer.from("WXYZ", "utf8") 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify ArrayBuffer.from("WXYZ", "utf8") succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -149,7 +149,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_0800
-     * @tc.desc 验证 ArrayBuffer.from("Hello123", "utf8") 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify ArrayBuffer.from("Hello123", "utf8") succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -162,7 +162,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_0900
-     * @tc.desc 验证 ArrayBuffer.from("", "utf8") 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify ArrayBuffer.from("", "utf8") succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -176,7 +176,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_1000
-     * @tc.desc 验证 ArrayBuffer.from("你好", "utf8") 在当前场景执行成功，返回值的 byteLength 为 6。
+     * @tc.desc Verify ArrayBuffer.from("你好", "utf8") succeeds and result byteLength is 6
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -189,7 +189,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_1100
-     * @tc.desc 验证 ArrayBuffer.from("こんにちは", "utf8") 在当前场景执行成功，返回值的 byteLength 为 15。
+     * @tc.desc Verify ArrayBuffer.from("こんにちは", "utf8") succeeds and result byteLength is 15
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -202,7 +202,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_1200
-     * @tc.desc 验证 ArrayBuffer.from("😀", "utf8") 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify ArrayBuffer.from("😀", "utf8") succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -215,7 +215,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_1300
-     * @tc.desc 验证 ArrayBuffer.from("A😀B", "utf8") 在当前场景执行成功，返回值的 byteLength 为 6。
+     * @tc.desc Verify ArrayBuffer.from("A😀B", "utf8") succeeds and result byteLength is 6
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -228,7 +228,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_1400
-     * @tc.desc 验证 ArrayBuffer.from("A\tB\nC", "utf8") 在当前场景执行成功，返回值的 byteLength 为 5。
+     * @tc.desc Verify ArrayBuffer.from("A\tB\nC", "utf8") succeeds and result byteLength is 5
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -241,7 +241,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_1500
-     * @tc.desc 验证 ArrayBuffer.from("Hello, World!", "utf8") 在当前场景执行成功，返回值的 byteLength 为 13。
+     * @tc.desc Verify ArrayBuffer.from("Hello, World!", "utf8") succeeds and result byteLength is 13
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -254,7 +254,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_1600
-     * @tc.desc 验证 ArrayBuffer.from("A\\B\\C", "utf8") 在当前场景执行成功，返回值的 byteLength 为 5。
+     * @tc.desc Verify ArrayBuffer.from("A\\B\\C", "utf8") succeeds and result byteLength is 5
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -267,7 +267,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_1700
-     * @tc.desc 验证 ArrayBuffer.from(fromFiveBuildLongA(10000), "utf8") 在当前场景执行成功，返回值的 byteLength 为 10000。
+     * @tc.desc Verify ArrayBuffer.from(fromFiveBuildLongA(10000), "utf8") succeeds and result byteLength is 10000
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -284,7 +284,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_1800
-     * @tc.desc 验证 ArrayBuffer.from(longStr, "utf8") 在当前场景执行成功，返回值的 byteLength 为 3000。
+     * @tc.desc Verify ArrayBuffer.from(longStr, "utf8") succeeds and result byteLength is 3000
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -301,7 +301,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_1900
-     * @tc.desc 验证 ArrayBuffer.from("A", "utf8") 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc Verify ArrayBuffer.from("A", "utf8") succeeds and result byteLength is 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -315,7 +315,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_2000
-     * @tc.desc 验证 ArrayBuffer.from("A\B\C", "utf8") 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from("A\B\C", "utf8") succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -328,7 +328,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_2100
-     * @tc.desc 验证 ArrayBuffer.from(fromFiveBuildLongA(10000), "utf8") 在当前场景执行成功，返回值的 byteLength 为 10000。
+     * @tc.desc Verify ArrayBuffer.from(fromFiveBuildLongA(10000), "utf8") succeeds and result byteLength is 10000
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -342,7 +342,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_2200
-     * @tc.desc 验证 ArrayBuffer.from("A", "utf8") 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc Verify ArrayBuffer.from("A", "utf8") succeeds and result byteLength is 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -356,7 +356,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_2300
-     * @tc.desc 验证 ArrayBuffer.from(Utils.castToString(null as Object), "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from(Utils.castToString(null as Object), "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -376,7 +376,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_2400
-     * @tc.desc 验证 ArrayBuffer.from(Utils.castToString(undefined as Object), "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from(Utils.castToString(undefined as Object), "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -395,7 +395,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_2500
-     * @tc.desc 验证 ArrayBuffer.from(Utils.numberAsString(_badNum2), "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from(Utils.numberAsString(_badNum2), "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -419,7 +419,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_2600
-     * @tc.desc 验证 ArrayBuffer.from("Go", "utf8") 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify ArrayBuffer.from("Go", "utf8") succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -432,7 +432,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_2700
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf-8") 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf-8") succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -445,7 +445,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_2800
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "ascii") 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "ascii") succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -458,7 +458,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_2900
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf16le") 在当前场景执行成功，返回值的 byteLength 为 6。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf16le") succeeds and result byteLength is 6
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -471,7 +471,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_3000
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "ucs2") 在当前场景执行成功，返回值的 byteLength 为 6。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "ucs2") succeeds and result byteLength is 6
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -484,7 +484,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_3100
-     * @tc.desc 验证 ArrayBuffer.from("QUJD", "base64") 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from("QUJD", "base64") succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -497,7 +497,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_3200
-     * @tc.desc 验证 ArrayBuffer.from("414243", "hex") 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from("414243", "hex") succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -510,7 +510,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_3300
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "latin1") 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "latin1") succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -523,7 +523,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_3400
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "binary") 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "binary") succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -536,7 +536,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0035
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_3500
-     * @tc.desc 验证 ArrayBuffer.from("414243", "hex") 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from("414243", "hex") succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -550,7 +550,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0036
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_3600
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "latin1") 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "latin1") succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -564,7 +564,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0037
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_3700
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "binary") 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "binary") succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -578,7 +578,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0038
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_3800
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "UTF8") 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "UTF8") succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -603,7 +603,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0039
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_3900
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "Utf8") 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "Utf8") succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -628,7 +628,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0040
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_4000
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "UTF8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "UTF8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -649,7 +649,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0041
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_4100
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "Utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "Utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -670,7 +670,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0042
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_4200
-     * @tc.desc 验证 ArrayBuffer.from("ABC", Utils.castToString(null as Object)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", Utils.castToString(null as Object)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -690,7 +690,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0043
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_4300
-     * @tc.desc 验证 ArrayBuffer.from("ABC", Utils.castToString(undefined as Object)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", Utils.castToString(undefined as Object)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -710,7 +710,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0044
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_4400
-     * @tc.desc 验证 ArrayBuffer.from("ABC", Utils.numberAsString(_badNum4)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", Utils.numberAsString(_badNum4)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -730,7 +730,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0045
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_4500
-     * @tc.desc 验证 ArrayBuffer.from("Test", "utf8") 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc Verify ArrayBuffer.from("Test", "utf8") succeeds and result byteLength is 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -743,7 +743,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0046
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_4600
-     * @tc.desc 验证 ArrayBuffer.from("你好世界", "utf8") 在当前场景执行成功，返回值的 byteLength 为 12。
+     * @tc.desc Verify ArrayBuffer.from("你好世界", "utf8") succeeds and result byteLength is 12
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -756,7 +756,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0047
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_4700
-     * @tc.desc 验证 ArrayBuffer.from("😀🎉", "utf8") 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify ArrayBuffer.from("😀🎉", "utf8") succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -769,7 +769,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0048
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_4800
-     * @tc.desc 验证 ArrayBuffer.from("A你好B", "utf8") 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc Verify ArrayBuffer.from("A你好B", "utf8") succeeds and result byteLength is 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -782,7 +782,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0049
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_4900
-     * @tc.desc 验证 ArrayBuffer.from("A", "ascii") 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc Verify ArrayBuffer.from("A", "ascii") succeeds and result byteLength is 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -796,7 +796,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0050
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_5000
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -811,7 +811,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0051
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_5100
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -824,7 +824,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0052
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_5200
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -837,7 +837,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0053
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_5300
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，空值有效性判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and null validity check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -850,7 +850,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0054
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_5400
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -863,7 +863,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0055
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_5500
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -876,7 +876,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0056
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_5600
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -890,7 +890,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0057
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_5700
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，等值关系判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and equality relationship check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -904,7 +904,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0058
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_5800
-     * @tc.desc 验证 ArrayBuffer.from(original, "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(original, "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -919,7 +919,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0059
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_5900
-     * @tc.desc 验证 ArrayBuffer.from(original, "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(original, "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -934,7 +934,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0060
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_6000
-     * @tc.desc 验证 ArrayBuffer.from(original, "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(original, "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -949,7 +949,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0061
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_6100
-     * @tc.desc 验证 ArrayBuffer.from(original, "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(original, "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -964,7 +964,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0062
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_6200
-     * @tc.desc 验证 ArrayBuffer.from(original, "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(original, "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -979,7 +979,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0063
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_6300
-     * @tc.desc 验证 ArrayBuffer.from("ABCDE", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("ABCDE", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -993,7 +993,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0064
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_6400
-     * @tc.desc 验证 ArrayBuffer.from(original, "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(original, "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1011,7 +1011,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0065
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_6500
-     * @tc.desc 验证 ArrayBuffer.from(original, "utf16le") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(original, "utf16le") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1026,7 +1026,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0066
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_6600
-     * @tc.desc 验证 ArrayBuffer.from("", "utf8") 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify ArrayBuffer.from("", "utf8") succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1040,7 +1040,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0067
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_6700
-     * @tc.desc 验证 ArrayBuffer.from("", "utf8") 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("", "utf8") succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1054,7 +1054,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0068
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_6800
-     * @tc.desc 验证 ArrayBuffer.from("", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1068,7 +1068,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0069
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_6900
-     * @tc.desc 验证 ArrayBuffer.from("A", "utf8") 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc Verify ArrayBuffer.from("A", "utf8") succeeds and result byteLength is 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1083,7 +1083,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0070
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_7000
-     * @tc.desc 验证 ArrayBuffer.from(bigStr, "utf8") 在当前场景执行成功，返回值的 byteLength 为 102400。
+     * @tc.desc Verify ArrayBuffer.from(bigStr, "utf8") succeeds and result byteLength is 102400
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1100,7 +1100,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0071
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_7100
-     * @tc.desc 验证 ArrayBuffer.from("A", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("A", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1114,7 +1114,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0072
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_7200
-     * @tc.desc 验证 ArrayBuffer.from(fromFiveBuildLongA(100000), "utf8") 在当前场景执行成功，返回值的 byteLength 为 100000。
+     * @tc.desc Verify ArrayBuffer.from(fromFiveBuildLongA(100000), "utf8") succeeds and result byteLength is 100000
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1127,7 +1127,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0073
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_7300
-     * @tc.desc 验证 ArrayBuffer.from(Utils.castToString(null as Object), "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from(Utils.castToString(null as Object), "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1148,7 +1148,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0074
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_7400
-     * @tc.desc 验证 ArrayBuffer.from(Utils.castToString(undefined as Object), "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from(Utils.castToString(undefined as Object), "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1169,7 +1169,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0075
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_7500
-     * @tc.desc 验证 ArrayBuffer.from("ABC", Utils.castToString(undefined as Object)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", Utils.castToString(undefined as Object)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1188,7 +1188,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0076
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_7600
-     * @tc.desc 验证 ArrayBuffer.from(Utils.castToString(null as Object), Utils.castToString(null as Object)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from(Utils.castToString(null as Object), Utils.castToString(null as Object)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1207,7 +1207,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0077
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_7700
-     * @tc.desc 验证 ArrayBuffer.from(Utils.castToString(undefined as Object), Utils.castToString(undefined as Ob... 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from(Utils.castToString(undefined as Object), Utils.castToString(undefined as Ob... throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1226,7 +1226,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0078
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_7800
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "notexist") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "notexist") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1247,7 +1247,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0079
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_7900
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1266,7 +1266,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0080
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_8000
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "12345") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "12345") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1285,7 +1285,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0081
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_8100
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "!@#$%") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "!@#$%") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1304,7 +1304,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0082
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_8200
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "   ") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "   ") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1324,7 +1324,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0083
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_8300
-     * @tc.desc 验证 ArrayBuffer.from(Utils.numberAsString(_badNum6), "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from(Utils.numberAsString(_badNum6), "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1345,7 +1345,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0084
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_8400
-     * @tc.desc 验证 ArrayBuffer.from(Utils.castToString(true as Object), "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from(Utils.castToString(true as Object), "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1364,7 +1364,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0085
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_8500
-     * @tc.desc 验证 ArrayBuffer.from({}, "utf8") 在当前场景执行成功，空值有效性判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from({}, "utf8") succeeds and null validity check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1384,7 +1384,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0086
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_8600
-     * @tc.desc 验证 ArrayBuffer.from(Utils.castToString(badArr as Object), "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from(Utils.castToString(badArr as Object), "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1407,7 +1407,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0087
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_8700
-     * @tc.desc 验证 ArrayBuffer.from(Utils.castToString(new ArrayBuffer(10) as Object), "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from(Utils.castToString(new ArrayBuffer(10) as Object), "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1428,7 +1428,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0088
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_8800
-     * @tc.desc 验证 ArrayBuffer.from("ABC", Utils.castToString(true as Object)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", Utils.castToString(true as Object)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1449,7 +1449,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0089
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_8900
-     * @tc.desc 验证 ArrayBuffer.from("ABC", Utils.castToString(plainEnc as Object)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", Utils.castToString(plainEnc as Object)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1471,7 +1471,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0090
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_9000
-     * @tc.desc 验证 ArrayBuffer.from("ABC", Utils.castToString(["utf8"] as Object)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", Utils.castToString(["utf8"] as Object)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1490,7 +1490,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0091
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_9100
-     * @tc.desc 验证 ArrayBuffer.from(Utils.numberAsString(_badNum9), Utils.numberAsString(_badNum10)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from(Utils.numberAsString(_badNum9), Utils.numberAsString(_badNum10)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

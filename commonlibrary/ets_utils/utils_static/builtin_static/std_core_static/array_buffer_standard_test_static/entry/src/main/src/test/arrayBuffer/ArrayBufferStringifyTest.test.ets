@@ -45,7 +45,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0010
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -59,7 +59,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0020
-     * @tc.desc 验证 ArrayBuffer.from("XY", "utf8") 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc Verify ArrayBuffer.from("XY", "utf8") succeeds and result byteLength is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -74,7 +74,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0030
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -88,7 +88,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0040
-     * @tc.desc 验证 ArrayBuffer.from("XY", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("XY", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -102,7 +102,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0050
-     * @tc.desc 验证 ArrayBuffer.from("Z", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("Z", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -116,7 +116,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0060
-     * @tc.desc 验证 ArrayBuffer.from("Hello", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("Hello", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -130,7 +130,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0070
-     * @tc.desc 验证 ArrayBuffer.from("Hello", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("Hello", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -144,7 +144,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0080
-     * @tc.desc 验证 ArrayBuffer.from("Hello", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("Hello", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -158,7 +158,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0090
-     * @tc.desc 验证 ArrayBuffer.stringify(buffer, "utf8", (Double.toInt(0) as int), (Double.toInt(5) as int)) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.stringify(buffer, "utf8", (Double.toInt(0) as int), (Double.toInt(5) as int)) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -178,7 +178,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0100
-     * @tc.desc 验证 ArrayBuffer.stringify(buffer, "utf8", (Double.toInt(0) as int), (Double.toInt(0) as int)) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.stringify(buffer, "utf8", (Double.toInt(0) as int), (Double.toInt(0) as int)) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -192,7 +192,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0110
-     * @tc.desc 验证 ArrayBuffer.from("ABCDEF", "utf8") 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from("ABCDEF", "utf8") succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -208,7 +208,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0120
-     * @tc.desc 验证 ArrayBuffer.stringify(buffer, "utf8", (Double.toInt(0) as int), (Double.toInt(5) as int)) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.stringify(buffer, "utf8", (Double.toInt(0) as int), (Double.toInt(5) as int)) succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -224,7 +224,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0130
-     * @tc.desc 验证 ArrayBuffer.stringify(buffer, "utf8", (Double.toInt(0) as int), (Double.toInt(0) as int)) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.stringify(buffer, "utf8", (Double.toInt(0) as int), (Double.toInt(0) as int)) succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -239,7 +239,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0140
-     * @tc.desc 验证 ArrayBuffer.stringify(Utils.castToArrayBuffer("not a buffer" as Object), "utf8", 0, 3) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.stringify(Utils.castToArrayBuffer("not a buffer" as Object), "utf8", 0, 3) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -258,7 +258,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0150
-     * @tc.desc 验证 ArrayBuffer.stringify(Utils.castToArrayBuffer(null as Object), "utf8", 0, 3) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.stringify(Utils.castToArrayBuffer(null as Object), "utf8", 0, 3) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -277,7 +277,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0160
-     * @tc.desc 验证 ArrayBuffer.stringify(Utils.castToArrayBuffer(new ArrayBufferStringifyPlainForMindmap() as O... 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.stringify(Utils.castToArrayBuffer(new ArrayBufferStringifyPlainForMindmap() as O... throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -297,7 +297,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0170
-     * @tc.desc 验证 ArrayBuffer.stringify(Utils.castToArrayBuffer("not a buffer" as Object), "utf8", 0, 3) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.stringify(Utils.castToArrayBuffer("not a buffer" as Object), "utf8", 0, 3) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -316,7 +316,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0180
-     * @tc.desc 验证 ArrayBuffer.stringify(Utils.numberAsArrayBuffer(_badNum2), "utf8", 0, 3) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.stringify(Utils.numberAsArrayBuffer(_badNum2), "utf8", 0, 3) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -336,7 +336,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0190
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -351,7 +351,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0200
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -366,7 +366,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0210
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -386,7 +386,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0220
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -401,7 +401,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0230
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -421,7 +421,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0240
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -441,7 +441,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0250
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -461,7 +461,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0260
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -482,7 +482,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0270
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -502,7 +502,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0280
-     * @tc.desc 验证 ArrayBuffer.from("ABCDEF", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("ABCDEF", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -517,7 +517,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0290
-     * @tc.desc 验证 ArrayBuffer.from("ABCDEF", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("ABCDEF", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -531,7 +531,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0300
-     * @tc.desc 验证 ArrayBuffer.from("ABCDEF", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("ABCDEF", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -545,7 +545,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0310
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -559,7 +559,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0320
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -574,7 +574,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0330
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -594,7 +594,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0340
-     * @tc.desc 验证 ArrayBuffer.from("ABCDEF", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABCDEF", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -614,7 +614,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0035
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0350
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -634,7 +634,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0036
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0360
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -654,7 +654,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0037
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0370
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -669,7 +669,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0038
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0380
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -684,7 +684,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0039
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0390
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -705,7 +705,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0040
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0400
-     * @tc.desc 验证 ArrayBuffer.from("ABCDEF", "utf8") 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("ABCDEF", "utf8") succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -720,7 +720,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0041
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0410
-     * @tc.desc 验证 ArrayBuffer.from("ABCDEF", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("ABCDEF", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -734,7 +734,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0042
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0420
-     * @tc.desc 验证 ArrayBuffer.from("ABCDEF", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("ABCDEF", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -748,7 +748,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0043
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0430
-     * @tc.desc 验证 ArrayBuffer.from("ABCDEF", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("ABCDEF", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -762,7 +762,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0044
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0440
-     * @tc.desc 验证 ArrayBuffer.from("ABCDEF", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("ABCDEF", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -776,7 +776,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0045
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0450
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -796,7 +796,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0046
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0460
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -816,7 +816,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0047
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0470
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -836,7 +836,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0048
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0480
-     * @tc.desc 验证 ArrayBuffer.from("ABCDEF", "utf8") 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("ABCDEF", "utf8") succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -851,7 +851,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0049
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0490
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -866,7 +866,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0050
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0500
-     * @tc.desc 验证 ArrayBuffer.from("ABCDEF", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABCDEF", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -886,7 +886,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0051
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0510
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -905,7 +905,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0052
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0520
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -920,7 +920,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0053
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0530
-     * @tc.desc 验证 ArrayBuffer.from("ABCDEF", "utf8") 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("ABCDEF", "utf8") succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -935,7 +935,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0054
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0540
-     * @tc.desc 验证 ArrayBuffer.from(original, "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(original, "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -951,7 +951,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0055
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0550
-     * @tc.desc 验证 ArrayBuffer.from(text, "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(text, "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -966,7 +966,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0056
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0560
-     * @tc.desc 验证 ArrayBuffer.from("ABCDEF", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("ABCDEF", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -980,7 +980,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0057
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0570
-     * @tc.desc 验证 ArrayBuffer.from("ABCDEF", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("ABCDEF", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -995,7 +995,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0058
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0580
-     * @tc.desc 验证 ArrayBuffer.from("ABCDEF", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("ABCDEF", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1009,7 +1009,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0059
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0590
-     * @tc.desc 验证 ArrayBuffer.from("A", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("A", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1023,7 +1023,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0060
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0600
-     * @tc.desc 验证 ArrayBuffer.from("你好", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("你好", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1037,7 +1037,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0061
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0610
-     * @tc.desc 验证 ArrayBuffer.from("Hello你好", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("Hello你好", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1051,7 +1051,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0062
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0620
-     * @tc.desc 验证 ArrayBuffer.from("A\nB\tC", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("A\nB\tC", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1065,7 +1065,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0063
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0630
-     * @tc.desc 验证 ArrayBuffer.from("A B C", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("A B C", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1079,7 +1079,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0064
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0640
-     * @tc.desc 验证 ArrayBuffer.from("", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1093,7 +1093,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0065
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0650
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1107,7 +1107,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0066
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0660
-     * @tc.desc 验证 new Byte() 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify new Byte() succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1120,7 +1120,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0067
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0670
-     * @tc.desc 验证 new Byte() 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify new Byte() succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1133,7 +1133,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0068
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0680
-     * @tc.desc 验证 ArrayBuffer.from("123", "utf8") 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("123", "utf8") succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1147,7 +1147,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0069
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0690
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1161,7 +1161,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0070
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0700
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，等值关系判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and equality relationship check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1176,7 +1176,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0071
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0710
-     * @tc.desc 验证 ArrayBuffer.from(original, "utf8") 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc Verify ArrayBuffer.from(original, "utf8") succeeds and result byteLength is 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1192,7 +1192,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0072
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0720
-     * @tc.desc 验证 ArrayBuffer.from(original, "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(original, "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1207,7 +1207,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0073
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0730
-     * @tc.desc 验证 ArrayBuffer.from(original, "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(original, "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1222,7 +1222,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0074
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0740
-     * @tc.desc 验证 ArrayBuffer.from(original, "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(original, "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1237,7 +1237,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0075
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0750
-     * @tc.desc 验证 ArrayBuffer.from(original, "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(original, "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1252,7 +1252,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0076
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0760
-     * @tc.desc 验证 ArrayBuffer.from(original, "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(original, "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1267,7 +1267,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0077
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0770
-     * @tc.desc 验证 ArrayBuffer.from(original, "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(original, "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1283,7 +1283,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0078
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0780
-     * @tc.desc 验证 ArrayBuffer.from(original, "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(original, "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1298,7 +1298,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0079
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0790
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1316,7 +1316,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0080
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0800
-     * @tc.desc 验证 ArrayBuffer.from("ABCDEF", "utf8") 在当前场景执行成功，返回值的 byteLength 为 6。
+     * @tc.desc Verify ArrayBuffer.from("ABCDEF", "utf8") succeeds and result byteLength is 6
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1331,7 +1331,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0081
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0810
-     * @tc.desc 验证 ArrayBuffer.from("ABCDEF", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("ABCDEF", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1345,7 +1345,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0082
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0820
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1359,7 +1359,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0083
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0830
-     * @tc.desc 验证 ArrayBuffer.from("ABCDEF", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("ABCDEF", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1373,7 +1373,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0084
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0840
-     * @tc.desc 验证 ArrayBuffer.from("ABCDEF", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("ABCDEF", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1387,7 +1387,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0085
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0850
-     * @tc.desc 验证 ArrayBuffer.from("ABCDEF", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("ABCDEF", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1401,7 +1401,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0086
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0860
-     * @tc.desc 验证 ArrayBuffer.from("X", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("X", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1415,7 +1415,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0087
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0870
-     * @tc.desc 验证 ArrayBuffer.from("", "utf8") 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc Verify ArrayBuffer.from("", "utf8") succeeds and result byteLength is 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1430,7 +1430,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0088
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0880
-     * @tc.desc 验证 ArrayBuffer.from(longStr, "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from(longStr, "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1448,7 +1448,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0089
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0890
-     * @tc.desc 验证 ArrayBuffer.from("你好", "utf8") 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.from("你好", "utf8") succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1463,7 +1463,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0090
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0900
-     * @tc.desc 验证 ArrayBuffer.stringify((null as ArrayBuffer), "utf8", 0, 3) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.stringify((null as ArrayBuffer), "utf8", 0, 3) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1482,7 +1482,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0091
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0910
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1502,7 +1502,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0092
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0920
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1524,7 +1524,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0093
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0930
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1545,7 +1545,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0094
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0940
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1566,7 +1566,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0095
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0950
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1587,7 +1587,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0096
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0960
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1608,7 +1608,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0097
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0970
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1629,7 +1629,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0098
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0980
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1650,7 +1650,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0099
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0990
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1671,7 +1671,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0100
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1000
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1691,7 +1691,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0101
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1010
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1711,7 +1711,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0102
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1020
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1731,7 +1731,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0103
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1030
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1751,7 +1751,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0104
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1040
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1771,7 +1771,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0105
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1050
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1791,7 +1791,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0106
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1060
-     * @tc.desc 验证 ArrayBuffer.stringify(Utils.numberAsArrayBuffer(_badNum6), "utf8", 0, 3) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.stringify(Utils.numberAsArrayBuffer(_badNum6), "utf8", 0, 3) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1811,7 +1811,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0107
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1070
-     * @tc.desc 验证 ArrayBuffer.from("ABCDEF", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABCDEF", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1831,7 +1831,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0108
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1080
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1852,7 +1852,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0109
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1090
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1872,7 +1872,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0110
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1100
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1892,7 +1892,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0111
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1110
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1912,7 +1912,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0112
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1120
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1932,7 +1932,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0113
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1130
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1952,7 +1952,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0114
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1140
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1967,7 +1967,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0115
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1150
-     * @tc.desc 验证 ArrayBuffer.stringify(Utils.castToArrayBuffer("buffer" as Object), Utils.numberAsString(badEnc), Utils.castToInt("start" as Object), Utils.castToInt(true as Object)) 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.stringify(Utils.castToArrayBuffer("buffer" as Object), Utils.numberAsString(badEnc), Utils.castToInt("start" as Object), Utils.castToInt(true as Object)) throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1988,7 +1988,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0116
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1160
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2008,7 +2008,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0117
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1170
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2028,7 +2028,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0118
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1180
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2048,7 +2048,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0119
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1190
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2068,7 +2068,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0120
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1200
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2083,7 +2083,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0121
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1210
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2103,7 +2103,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0122
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1220
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2123,7 +2123,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0123
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1230
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2144,7 +2144,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0124
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1240
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2164,7 +2164,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0125
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1250
-     * @tc.desc 验证 ArrayBuffer.from("ABCDEF", "utf8") 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("ABCDEF", "utf8") succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2179,7 +2179,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0126
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1260
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2200,7 +2200,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0127
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1270
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2220,7 +2220,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0128
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1280
-     * @tc.desc 验证 ArrayBuffer.stringify(buffer, "utf8", (Double.toInt(0) as int), (Double.toInt(0) as int)) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.stringify(buffer, "utf8", (Double.toInt(0) as int), (Double.toInt(0) as int)) succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2235,7 +2235,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0129
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1290
-     * @tc.desc 验证 ArrayBuffer.stringify(buffer, "utf8", (Double.toInt(0) as int), (Double.toInt(3) as int)) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.stringify(buffer, "utf8", (Double.toInt(0) as int), (Double.toInt(3) as int)) succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2251,7 +2251,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0130
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1300
-     * @tc.desc 验证 ArrayBuffer.stringify(buffer, "utf8", 0, buffer.byteLength) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.stringify(buffer, "utf8", 0, buffer.byteLength) succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2267,7 +2267,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0131
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1310
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2286,7 +2286,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0132
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1320
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2306,7 +2306,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0133
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1330
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2326,7 +2326,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0134
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1340
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2346,7 +2346,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0135
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1350
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2366,7 +2366,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0136
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1360
-     * @tc.desc 验证 ArrayBuffer.from("ABCDEF", "utf8") 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("ABCDEF", "utf8") succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2380,7 +2380,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0137
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1370
-     * @tc.desc 验证 ArrayBuffer.from("ABCDEF", "utf8") 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc Verify ArrayBuffer.from("ABCDEF", "utf8") succeeds and instance type check passes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2394,7 +2394,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0138
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1380
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2414,7 +2414,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0139
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1390
-     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") throws Error with current input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2434,7 +2434,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0140
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1400
-     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify buffer.resize(0) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2449,7 +2449,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0141
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1410
-     * @tc.desc 验证 ArrayBuffer.stringify(buffer, "utf8", (Double.toInt(0) as int), (Double.toInt(3) as int)) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify ArrayBuffer.stringify(buffer, "utf8", (Double.toInt(0) as int), (Double.toInt(3) as int)) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2467,7 +2467,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0142
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1420
-     * @tc.desc 验证 buffer.resize(3) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc Verify buffer.resize(3) succeeds and result matches expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
