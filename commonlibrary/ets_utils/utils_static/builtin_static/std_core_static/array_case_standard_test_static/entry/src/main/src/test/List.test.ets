@@ -19,10 +19,25 @@ import ArrayCopyWithin1Test from "./array/ArrayCopyWithin1Test.test";
 import ArrayCopyWithin2Test from "./array/ArrayCopyWithin2Test.test";
 import ArrayCopyWithin3Test from "./array/ArrayCopyWithin3Test.test";
 import ArrayCopyWithin4Test from "./array/ArrayCopyWithin4Test.test";
+import ArrayConstructor1Test from "./array/ArrayConstructor1Test.test";
 import ArrayConstructor2Test from "./array/ArrayConstructor2Test.test";
 import ArrayConstructor3Test from "./array/ArrayConstructor3Test.test";
 import ArrayConstructor4Test from "./array/ArrayConstructor4Test.test";
 import ArrayCreateTest from "./array/ArrayCreateTest.test";
+import ArrayEntriesTest from "./array/ArrayEntriesTest.test";
+import ArrayEveryTest from "./array/ArrayEveryTest.test";
+import ArrayExtendToTest from "./array/ArrayExtendToTest.test";
+import ArrayFill1Test from "./array/ArrayFill1Test.test";
+import ArrayFill2Test from "./array/ArrayFill2Test.test";
+import ArrayFilterTest from "./array/ArrayFilterTest.test";
+import ArrayFindIndexTest from "./array/ArrayFindIndexTest.test";
+import ArrayFindLastIndexTest from "./array/ArrayFindLastIndexTest.test";
+import ArrayFindLastTest from "./array/ArrayFindLastTest.test";
+import ArrayFindTest from "./array/ArrayFindTest.test";
+import ArrayFlat1Test from "./array/ArrayFlat1Test.test";
+import ArrayFlat2Test from "./array/ArrayFlat2Test.test";
+import ArrayFlat3Test from "./array/ArrayFlat3Test.test";
+import ArrayFlatMapTest from "./array/ArrayFlatMapTest.test";
 import ArrayGetTest from "./array/ArrayGetTest.test";
 import ArrayInvoke1Test from "./array/ArrayInvoke1Test.test";
 import ArrayInvoke2Test from "./array/ArrayInvoke2Test.test";
@@ -31,7 +46,7 @@ import ArrayIteratorTest from "./array/ArrayIteratorTest.test";
 import ArraySetTest from "./array/ArraySetTest.test";
 
 export default function testsuite(): void {
-  ArrayAt1Test()
+  ArrayAt1Test();
   ArrayConcatTest();
   ArrayCopyWithin1Test();
   ArrayCopyWithin2Test();
