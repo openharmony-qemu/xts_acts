@@ -189,7 +189,7 @@ napi_value OH_Pixelmap_HdrMetadataKey_HDR_GAINMAP_METADATA(napi_env env, napi_ca
     return result;
 }
 
-napi_value Image_ErrorCode_IMAGE_SUCCESS(napi_env env, napi_callback_info info)
+napi_value Image_ErrorCode_IMAGE_DMA_NOT_EXIST(napi_env env, napi_callback_info info)
 {
     napi_value result;
     float x = NUM_1_5;
