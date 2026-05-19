@@ -679,8 +679,8 @@ export default function windowControlsTest() {
     })
 
 /**
- * @tc.name   testsetImageForRecent
- * @tc.number SUB_BASIC_WMS_setImageForRecent_0500
+ * @tc.name   testsetImageForRecent_0200
+ * @tc.number SUB_BASIC_WMS_setImageForRecent_1000
  * @tc.desc   testsetImageForRecent number is 1
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -727,7 +727,7 @@ it('testsetImageForRecent_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
 })
 
 /**
- * @tc.name   testsetImageForRecent
+ * @tc.name   testsetImageForRecent_0300
  * @tc.number SUB_BASIC_WMS_setImageForRecent_0600
  * @tc.desc   testsetImageForRecent number is null
  * @tc.type   FUNCTION
@@ -775,7 +775,7 @@ it('testsetImageForRecent_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
 })
 
 /**
- * @tc.name   testsetImageForRecent
+ * @tc.name   testsetImageForRecent_0400
  * @tc.number SUB_BASIC_WMS_setImageForRecent_0700
  * @tc.desc   testsetImageForRecent number is undefined
  * @tc.type   FUNCTION
@@ -824,7 +824,7 @@ it('testsetImageForRecent_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
 
 
 /**
- * @tc.name   testsetImageForRecent
+ * @tc.name   testsetImageForRecent_0500
  * @tc.number SUB_BASIC_WMS_setImageForRecent_0800
  * @tc.desc   testsetImageForRecent number is null
  * @tc.type   FUNCTION
@@ -873,7 +873,7 @@ it('testsetImageForRecent_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
 
 
 /**
- * @tc.name   testsetImageForRecent
+ * @tc.name   testsetImageForRecent_0600
  * @tc.number SUB_BASIC_WMS_setImageForRecent_0900
  * @tc.desc   testsetImageForRecent number is undefined
  * @tc.type   FUNCTION
