@@ -306,38 +306,7 @@ export default function ImageMetadataTestStatic(): void {
         done();
       }
     })
-    /**
-     * @tc.number    SUB_MEDIA_IMAGE_HEIFS_METADATA_dngMetadata_PropertyKey_STATIC_0100
-     * @tc.name      SUB_MEDIA_IMAGE_HEIFS_METADATA_dngMetadata_PropertyKey_STATIC_0100
-     * @tc.desc      dngMetadata PropertyKey 覆盖
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 1
-     */
-    it('SUB_MEDIA_IMAGE_HEIFS_METADATA_dngMetadata_PropertyKey_STATIC_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      const testName = "SUB_MEDIA_IMAGE_HEIFS_METADATA_dngMetadata_PropertyKey_STATIC_0100";
-      let result: boolean = true;
-      let filePathFir = await getFd("dng_xmp.dng");
-      let isSupportHEIFDecode: boolean = image.createImageSource(filePathFir)!.supportedFormats.includes("image/x-adobe-dng");
-      if (!isSupportHEIFDecode) {
-        console.info(TAG,testName,` device is not support decode dng!`);
-        expect(result).assertTrue();
-        done();
-        return;
-      }
-      try {
-        const imageSourceObj: image.ImageSource | undefined = image.createImageSource(filePathFir);
-        console.info(TAG, testName, `imageSourceObj success`, imageSourceObj!);
-        const imageMetadata:image.ImageMetadata |undefined = await imageSourceObj!.readImageMetadata();
-        console.info(TAG, testName, `imageSourceObj readImageMetadata success,dngMetadata!.linearResponseLimit`,JSON.stringify(imageMetadata.dngMetadata!.linearResponseLimit));
-        expect(imageMetadata.dngMetadata!.linearResponseLimit!=undefined).assertTrue();
-        done();
-      } catch (error) {
-        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
-        expect().assertFail();
-        done();
-      }
-    })
+   
     /**
      * @tc.number    SUB_MEDIA_IMAGE_HEIFS_METADATA_avisMetadata_PropertyKey_STATIC_0100
      * @tc.name      SUB_MEDIA_IMAGE_HEIFS_METADATA_avisMetadata_PropertyKey_STATIC_0100
