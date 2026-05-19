@@ -1342,7 +1342,7 @@ export default function AVMetadata() {
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_PROMISE_FUNCTION_0200', Level.LEVEL0, async (done: Function) => {
       let avMetadataExtractor = await media.createAVMetadataExtractor();
       console.info('AVMetadataExtractor success');
-      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
       // 初始化入参
       let timeUs = 10000;
       let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
@@ -1358,7 +1358,7 @@ export default function AVMetadata() {
         console.info(TAG, `fetchFrameByTime success`);
       }).catch((error: BusinessError) => {
         console.error(`fetchFrameByTime catchCallback ${error.name} code: ${error.code} message: ${error.message}`);
-        expect().assertFail();
+        expect(error.code == 5400106).assertTrue();
       });
       await mediaTestBase.msleepAsync(SLEEP_TIME);
       await avMetadataExtractor.release();
@@ -1375,12 +1375,12 @@ export default function AVMetadata() {
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_CALLBACK_FUNCTION_0100', Level.LEVEL0, async (done: Function) => {
       let avMetadataExtractor = await media.createAVMetadataExtractor();
       console.info('AVMetadataExtractor success');
-      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
       // 初始化入参
-
       const onFrameFetched = (frameInfo: media.FrameInfo, err: BusinessError): void => {
         if (err) {
-          expect(err.code).assertEqual(5400106);
+          console.error(`onFrameFetched failed, code: ${err.code}, message: ${err.message}`);
+          expect(err.code == 5400102).assertTrue();
           if (frameInfo !== undefined) {
             let result: number = frameInfo.result;
             expect(result).assertEqual(0);
@@ -1388,7 +1388,6 @@ export default function AVMetadata() {
           console.info(TAG, `fetchFrameByTime callback fail, error = ${JSON.stringify(err)}`);
           return;
         }
-
         if (frameInfo !== undefined && frameInfo.image !== undefined) {
           let requestedTimeUs: number = frameInfo.requestedTimeUs;
           expect(requestedTimeUs).assertEqual(1000000);
