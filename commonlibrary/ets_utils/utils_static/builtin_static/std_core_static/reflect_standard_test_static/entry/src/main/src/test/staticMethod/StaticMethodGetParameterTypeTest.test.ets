@@ -236,7 +236,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<MyClass006>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      // 脑图 1.2: getParameterType(10) 预期返回 undefined（索引超出范围）
+      // 脑图 1.2: getParameterType(10) 预期返回 undefined，但运行时可能抛 TypeError
       try {
         let paramType = method!.getParameterType(10);
         expect(paramType == undefined).assertTrue();
@@ -257,7 +257,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<MyClass007>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      // 脑图 1.2: getParameterType(2147483647) 预期返回 undefined
+      // 脑图 1.2: getParameterType(2147483647) 预期返回 undefined，但运行时可能抛 TypeError
       try {
         let paramType = method!.getParameterType(2147483647);
         expect(paramType == undefined).assertTrue();
