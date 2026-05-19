@@ -33,6 +33,9 @@ export default function webgl1_uniform() {
             // Presets an action, which is performed before each unit test case starts.
             // The number of execution times is the same as the number of test cases defined by **it**.
             // This API supports only one parameter: preset action function.
+            gl.useProgram(null);
+            gl.bindBuffer(gl.ARRAY_BUFFER, null);
+            gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, null);
             checkError(gl);
         })
         afterEach(function () {
