@@ -52,7 +52,7 @@ export default function baselibContainerSendableObjectTest() {
     beforeAll(() => {
     })
     beforeEach(async () => {
-      await sleep(200);
+      await sleep(100);
     })
     afterEach(() => {
     })

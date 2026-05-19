@@ -47,7 +47,7 @@ export default function collectionsContainerSendableObjectTest() {
     beforeAll(() => {
     })
     beforeEach(async () => {
-      await sleep(200);
+      await sleep(100);
     })
     afterEach(() => {
     })

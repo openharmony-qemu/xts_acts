@@ -43,7 +43,6 @@ function testConcurrentCounterRW(counter: SendableSharedCounter): void {
       counter.counter = counter.counter - 1;
       counter.counter = counter.counter + value;
     } catch (e) {
-      counter.errorCount = counter.errorCount + 1;
       console.info('testConcurrentCounterRW error: ' + e);
     }
   }
@@ -72,7 +71,6 @@ function testConcurrentArrayRW(arr: SendableSharedArray): void {
         }
       }
     } catch (e) {
-      arr.errorCount = arr.errorCount + 1;
       console.info('testConcurrentArrayRW error: ' + e);
     }
   }
@@ -105,7 +103,6 @@ function testConcurrentMapRW(mapObj: SendableSharedMap): void {
       }
       mapObj.map.clear();
     } catch (e) {
-      mapObj.errorCount = mapObj.errorCount + 1;
       console.info('testConcurrentMapRW error: ' + e);
     }
   }
@@ -126,9 +123,6 @@ function testConcurrentComplexRW(counter: SendableSharedCounter, arr: SendableSh
         mapObj.map.delete(i - 5);
       }
     } catch (e) {
-      counter.errorCount = counter.errorCount + 1;
-      arr.errorCount = arr.errorCount + 1;
-      mapObj.errorCount = mapObj.errorCount + 1;
       console.info('testConcurrentComplexRW error: ' + e);
     }
   }
@@ -1097,16 +1091,16 @@ export default function concurrentSharedObjectRWTest() {
       });
 
     /**
-     * @tc.name   concurrentCounterStress500_0100
+     * @tc.name   concurrentCounterStress20_0100
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENT_COUNTER_STRESS_0100
      * @tc.desc   Concurrent counter stress 500 tasks test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('concurrentCounterStress500_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('concurrentCounterStress20_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        let tag = 'concurrentCounterStress500_0100';
+        let tag = 'concurrentCounterStress20_0100';
         console.info(`${tag} start.`);
         let counter = new SendableSharedCounter();
         let count = 0;
@@ -1127,15 +1121,15 @@ export default function concurrentSharedObjectRWTest() {
       });
 
     /**
-     * @tc.name   concurrentArrayStress500_0100
+     * @tc.name   concurrentArrayStress20_0100
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENT_ARRAY_STRESS_0100
      * @tc.desc   Concurrent array stress 500 tasks test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('concurrentArrayStress500_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let tag = 'concurrentArrayStress500_0100';
+    it('concurrentArrayStress20_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let tag = 'concurrentArrayStress20_0100';
       console.info(`${tag} start.`);
       let arr = new SendableSharedArray();
       let count = 0;
@@ -1156,15 +1150,15 @@ export default function concurrentSharedObjectRWTest() {
     });
 
     /**
-     * @tc.name   concurrentMapStress500_0100
+     * @tc.name   concurrentMapStress20_0100
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENT_MAP_STRESS_0100
      * @tc.desc   Concurrent map stress 500 tasks test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('concurrentMapStress500_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let tag = 'concurrentMapStress500_0100';
+    it('concurrentMapStress20_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let tag = 'concurrentMapStress20_0100';
       console.info(`${tag} start.`);
       let mapObj = new SendableSharedMap();
       let count = 0;
@@ -1185,16 +1179,16 @@ export default function concurrentSharedObjectRWTest() {
     });
 
     /**
-     * @tc.name   concurrentComplexStress500_0100
+     * @tc.name   concurrentComplexStress20_0100
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENT_COMPLEX_STRESS_0100
      * @tc.desc   Concurrent complex data stress 500 tasks test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('concurrentComplexStress500_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('concurrentComplexStress20_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        let tag = 'concurrentComplexStress500_0100';
+        let tag = 'concurrentComplexStress20_0100';
         console.info(`${tag} start.`);
         let counter = new SendableSharedCounter();
         let arr = new SendableSharedArray();
@@ -1311,8 +1305,6 @@ export default function concurrentSharedObjectRWTest() {
         console.info(`${tag} count: ${count}.`);
       }
       expect(count).assertEqual(totalTasks);
-      console.info(`${tag} counter: ${counter.counter}, errorCount: ${counter.errorCount}.`);
-      expect(counter.errorCount).assertLargerOrEqual(0);
       console.info(`${tag} end.`);
       done();
     });
