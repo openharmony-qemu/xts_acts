@@ -46,10 +46,7 @@ export default function ArrayFindLastIndexTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testArrayFindLastIndex001',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
+    it('testArrayFindLastIndex001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new Array<number>(10, 20, 30, 20, 10);
         const result = arr.findLastIndex((v: number): boolean => v == 20);
         expect(result).assertEqual(3);
@@ -64,10 +61,7 @@ export default function ArrayFindLastIndexTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testArrayFindLastIndex002',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
+    it('testArrayFindLastIndex002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new Array<number>(10, 20, 30, 40, 50);
         const result = arr.findLastIndex((v: number): boolean => v < 40);
         expect(result).assertEqual(2);
@@ -82,10 +76,7 @@ export default function ArrayFindLastIndexTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testArrayFindLastIndex003',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
+    it('testArrayFindLastIndex003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new Array<number>(10, 20, 30);
         expect(arr.findLastIndex((v: number): boolean => v > 100)).assertEqual(-1);
       }
@@ -99,10 +90,7 @@ export default function ArrayFindLastIndexTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testArrayFindLastIndex004',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
+    it('testArrayFindLastIndex004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new Array<number>();
         expect(arr.findLastIndex((v: number): boolean => true)).assertEqual(-1);
       }
@@ -116,10 +104,7 @@ export default function ArrayFindLastIndexTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testArrayFindLastIndex005',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
+    it('testArrayFindLastIndex005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new Array<number>(10, 20, 30);
         const result = arr.findLastIndex((v: number): boolean => v > 25);
         expect(result).assertEqual(2);
@@ -134,10 +119,7 @@ export default function ArrayFindLastIndexTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testArrayFindLastIndex006',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
+    it('testArrayFindLastIndex006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const i1 = new FindLastIndexItem006();
         i1.value = 10;
         const i2 = new FindLastIndexItem006();
@@ -158,10 +140,7 @@ export default function ArrayFindLastIndexTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testArrayFindLastIndex007',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
+    it('testArrayFindLastIndex007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new Array<number>(10, 20, 30, 40, 50);
         const result = arr.findLastIndex((v: number): boolean => v % 3 == 0);
         expect(result).assertEqual(2);
@@ -176,10 +155,7 @@ export default function ArrayFindLastIndexTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it(
-      'testArrayFindLastIndex008',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (): void => {
+    it('testArrayFindLastIndex008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const arr = new Array<number>(10, 20, 30, 20, 10);
         const first = arr.findIndex((v: number): boolean => v == 20);
         const last = arr.findLastIndex((v: number): boolean => v == 20);
