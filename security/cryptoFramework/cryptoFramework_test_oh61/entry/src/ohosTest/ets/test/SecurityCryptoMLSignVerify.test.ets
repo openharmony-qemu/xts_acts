@@ -1699,7 +1699,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           expect(null).assertFail();
         } catch (error) {
           console.error(`[XTS] MLDSA_Mu_Func_1800 Sign ${error}, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+          expect(error.code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
         }
         try {
           let sign: cryptoFramework.Sign = cryptoFramework.createSign("RSA512|PKCS1|SHA256");
@@ -1707,7 +1707,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           expect(null).assertFail();
         } catch (error) {
           console.error(`[XTS] MLDSA_Mu_Func_1800 Sign context ${error}, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+          expect(error.code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
         }
         let verify: cryptoFramework.Verify = cryptoFramework.createVerify("RSA512|PKCS1|SHA256");
         try {
@@ -1715,7 +1715,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           expect(null).assertFail();
         } catch (error) {
           console.error(`[XTS] MLDSA_Mu_Func_1800 Verify ${error}, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+          expect(error.code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
         }
         try {
           let context: Uint8Array = new Uint8Array([0x01, 0x02, 0x03]);
@@ -1724,7 +1724,7 @@ export default function SecurityCryptoMLSignVerifyTestUnit() {
           expect(null).assertFail();
         } catch (error) {
           console.error(`[XTS] MLDSA_Mu_Func_1800 Verify context ${error}, error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
+          expect(error.code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
         }
         done();
       });
