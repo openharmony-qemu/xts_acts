@@ -15,6 +15,7 @@
  */
 
 import {
+  Entry,
   Component,
   Text,Flex,
   Row,
@@ -37,6 +38,7 @@ import {
 } from '@ohos.arkui.component';
 import { Link, State } from '@ohos.arkui.stateManagement';
 
+@Entry
 @Component
 export struct NavigationView {
   private arr: number[] = [0, 1, 2, 3] as number[]
@@ -45,38 +47,34 @@ export struct NavigationView {
   @Link _position!: Position;
   private componentKey: string = '';
 
-  build() {
+  build():void {
     Navigation(new NavPathStack()) {
       List({ space: 12, initialIndex: 0 }) {
         ForEach(this.arr, (item: number, index: int) => {
           ListItem() {
-            // NavRouter() {
-              Row() {
-                Image($r('app.media.icon')).width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin)
-                Text(`NavRouter${item + 1}`)
-                  .fontSize(22)
-                  .fontWeight(500)
-                  .textAlign(TextAlign.Center)
+            Row() {
+              Image($r('app.media.icon')).width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin)
+              Text(`NavRouter${item + 1}`)
+                .fontSize(22)
+                .fontWeight(500)
+                .textAlign(TextAlign.Center)
+            }
+            .width(180)
+            .height(72)
+            .backgroundColor(this.dex === index ? '#ccc' : '#fff')
+            .borderRadius(24)
+          }
+          ListItem() {
+            NavDestination() {
+              Text(`NavDestination${item + 1}`).fontSize(50)
+              Flex({ direction: FlexDirection.Row }) {
+                Row() {
+                  Image($r('app.media.icon')).width(40).height(40).borderRadius(40).margin({ right: 15 } as Margin)
+                  Text('NavDestination content').fontSize(30)
+                }.padding({ left: 15 } as Padding)
               }
-              .width(180)
-              .height(72)
-              .backgroundColor(this.dex === index ? '#ccc' : '#fff')
-              .borderRadius(24)
-
-              NavDestination() {
-                Text(`NavDestination${item + 1}`).fontSize(50)
-                Flex({ direction: FlexDirection.Row }) {
-                  Row() {
-                    Image($r('app.media.icon')).width(40).height(40).borderRadius(40).margin({ right: 15 } as Margin)
-                    Text('NavDestination content').fontSize(30)
-                  }.padding({ left: 15 } as Padding)
-                }
-              }.backgroundColor('#ccc')
-              .title(`NavDestination${item + 1}`)
-            // }.onStateChange((isActivated: boolean) => {
-            //   console.info('isActivated = ' + isActivated);
-            //   this.dex = index
-            // })
+            }.backgroundColor('#ccc')
+            .title(`NavDestination${item + 1}`)
           }
         }, (item: number) => String(item))
       }
