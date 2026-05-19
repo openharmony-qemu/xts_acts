@@ -6341,6 +6341,11 @@ export default function ImageExifGetModifyByTypeNDK() {
       */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_TIFF_0100", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_TIFF_0100";
+      if (!isSupportedTiff) {
+        console.info(`${testTag} does not support tiff`);
+        done();
+        return
+      }
       let result: boolean = true;
       let propertyKeys: Array<image.TiffPropertyKey> = ImagePropertyConfig.tiffMetadatas.keys;
       let tiffRules: Map<image.TiffPropertyKey, ReadOnlyMetaDataRuleWithType> = ImagePropertyConfig.tiffMetadatas.rules;
@@ -6378,6 +6383,11 @@ export default function ImageExifGetModifyByTypeNDK() {
       */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_TIFF_0200", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_TIFF_0200";
+      if (!isSupportedTiff) {
+        console.info(`${testTag} does not support tiff`);
+        done();
+        return
+      }
       let result: boolean = true;
       let propertyKeys: Array<image.TiffPropertyKey> = ImagePropertyConfig.tiffMetadatas.keys;
       let tiffRules: Map<image.TiffPropertyKey, ReadOnlyMetaDataRuleWithType> = ImagePropertyConfig.tiffMetadatas.rules;
