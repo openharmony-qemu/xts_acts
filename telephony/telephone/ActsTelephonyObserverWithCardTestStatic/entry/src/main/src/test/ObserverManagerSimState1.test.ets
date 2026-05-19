@@ -325,13 +325,13 @@ export default function observerManagerSimStateTest1() {
         let slotId: int = 0;
         let num: int = 0;
         await sim.deactivateSim(slotId);
-        await sim.activateSim(slotId);
         observer.onGetSimActiveState(slotId, (data: boolean | undefined) => {
           console.info(`${caseName} data: ${data}`);
           num++;
           ExpectTrue(num !== 0);
           done();
         });
+        await sim.activateSim(slotId);
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}`);
         ExpectFail();
