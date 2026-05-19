@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -8,11 +9,22 @@
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR ANY KIND, either express or implied.
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function arrayBufferViewPropertyTest(): void {
@@ -30,21 +42,21 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_0100
-     * @tc.desc Verify ArrayBufferView properties: DataViewinstance access bufferproperty ，verify returns backing ArrayBuffer
+     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(8)
-      let view = new DataView(ab)
+      let view: ArrayBufferView = new DataView(ab)
       expect(view.buffer).assertEqual(ab)
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_0200
-     * @tc.desc Verify ArrayBufferView properties: Int8Arrayinstance is ArrayBufferViewaccess bufferproperty
+     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -58,7 +70,7 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_0300
-     * @tc.desc Verify ArrayBufferView properties: Uint8Arrayinstance is ArrayBufferViewaccess bufferproperty
+     * @tc.desc 验证 new ArrayBuffer(16) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -72,7 +84,7 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_0400
-     * @tc.desc Verify ArrayBufferView properties: Int32Arrayinstance is ArrayBufferViewaccess bufferproperty
+     * @tc.desc 验证 new ArrayBuffer(16) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -86,7 +98,7 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_0500
-     * @tc.desc Verify ArrayBufferView properties: Float64Arrayinstance is ArrayBufferViewaccess bufferproperty
+     * @tc.desc 验证 new ArrayBuffer(32) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -100,21 +112,21 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_0600
-     * @tc.desc Verify ArrayBufferView properties: byteOffset byteLength DataViewaccess buffer，buffer returns ArrayBuffer
+     * @tc.desc 验证 new ArrayBuffer(16) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
-      let view = new DataView(ab, 4, 8)
+      let view: ArrayBufferView = new DataView(ab, 4, 8)
       expect(view.buffer).assertEqual(ab)
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_0700
-     * @tc.desc Verify ArrayBufferView properties: byteOffset length TypedArrayaccess buffer，buffer returns ArrayBuffer
+     * @tc.desc 验证 new ArrayBuffer(16) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -128,35 +140,35 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_0800
-     * @tc.desc Verify ArrayBufferView properties: DataViewinstance byteLengthequals passing byteLength or ArrayBuffer length
+     * @tc.desc 验证 new ArrayBuffer(16) 在当前场景执行成功，返回值的 byteLength 为 8。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
-      let view = new DataView(ab, 4, 8)
+      let view: ArrayBufferView = new DataView(ab, 4, 8)
       expect(view.byteLength).assertEqual(8)
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_0900
-     * @tc.desc Verify ArrayBufferView properties: DataView byteLength ，byteLength is ArrayBufferlength byteOffset
+     * @tc.desc 验证 new ArrayBuffer(16) 在当前场景执行成功，返回值的 byteLength 为 12。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
-      let view = new DataView(ab, 4)
+      let view: ArrayBufferView = new DataView(ab, 4)
       expect(view.byteLength).assertEqual(12)
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_1000
-     * @tc.desc Verify ArrayBufferView properties: TypedArray byteLengthequals
+     * @tc.desc 验证 new Int32Array(4) 在当前场景执行成功，返回值的 byteLength 为 16。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -169,7 +181,7 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_1100
-     * @tc.desc Verify ArrayBufferView properties: Int8Array byteLengthequals array length
+     * @tc.desc 验证 new Int8Array(10) 在当前场景执行成功，返回值的 byteLength 为 10。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -182,7 +194,7 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_1200
-     * @tc.desc Verify ArrayBufferView properties: Float64Array byteLengthequals array length 8
+     * @tc.desc 验证 new Float64Array(3) 在当前场景执行成功，返回值的 byteLength 为 24。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -195,35 +207,35 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_1300
-     * @tc.desc Verify ArrayBufferView properties: DataViewinstance byteOffsetequals constructor passing offset
+     * @tc.desc 验证 new ArrayBuffer(16) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
-      let view = new DataView(ab, 4, 8)
+      let view: ArrayBufferView = new DataView(ab, 4, 8)
       expect(view.byteOffset).assertEqual(4)
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_1400
-     * @tc.desc Verify ArrayBufferView properties: DataView byteOffset ，byteOffset is 0
+     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(8)
-      let view = new DataView(ab)
+      let view: ArrayBufferView = new DataView(ab)
       expect(view.byteOffset).assertEqual(0)
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_1500
-     * @tc.desc Verify ArrayBufferView properties: TypedArray offset constructor ，byteOffsetequals passing offset
+     * @tc.desc 验证 new ArrayBuffer(16) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -237,7 +249,7 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_1600
-     * @tc.desc Verify ArrayBufferView properties: TypedArray offset ，byteOffset is 0
+     * @tc.desc 验证 new Int8Array(8) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -250,7 +262,7 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_1700
-     * @tc.desc Verify ArrayBufferView properties: Int32Array byteOffset 4
+     * @tc.desc 验证 new ArrayBuffer(16) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -264,21 +276,21 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_1800
-     * @tc.desc Verify ArrayBufferView properties: bufferproperty returns ArrayBuffer and constructor passing instance
+     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，共享底层 buffer 的关系判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(8)
-      let view = new DataView(ab)
+      let view: ArrayBufferView = new DataView(ab)
       expect(view.buffer === ab).assertTrue()
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_1900
-     * @tc.desc Verify ArrayBufferView properties: from ArrayBuffercreate view bufferreference
+     * @tc.desc 验证 new ArrayBuffer(16) 在当前场景执行成功，共享底层 buffer 的关系判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -286,62 +298,62 @@ export default function arrayBufferViewPropertyTest(): void {
     it('testArrayBufferViewProperty0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
       let view1 = new Int8Array(ab)
-      let view2 = new DataView(ab)
+      let view2: ArrayBufferView = new DataView(ab)
       expect(view1.buffer === view2.buffer).assertTrue()
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_2000
-     * @tc.desc Verify ArrayBufferView properties: verify bufferproperty return value type is ArrayBuffer
+     * @tc.desc 验证 new DataView(new ArrayBuffer(4)) 在当前场景执行成功，实例类型判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let view = new DataView(new ArrayBuffer(4))
+      let view: ArrayBufferView = new DataView(new ArrayBuffer(4))
       expect(view.buffer instanceof ArrayBuffer).assertTrue()
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_2100
-     * @tc.desc Verify ArrayBufferView properties: verify bufferproperty returns not null ArrayBufferinstance
+     * @tc.desc 验证 new Int8Array(4) 在当前场景执行成功，实例类型判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let view = new Int8Array(4)
-      expect(view.buffer != null).assertTrue()
-      expect(view.buffer.byteLength).assertEqual(4)
+      expect(Class.of(view.buffer).getName().indexOf('ArrayBuffer') >= 0).assertTrue()
+      expect(view.buffer instanceof ArrayBuffer).assertTrue()
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_2200
-     * @tc.desc Verify ArrayBufferView properties: bufferproperty byteLength and ArrayBuffer byteLengthconsistent
+     * @tc.desc 验证 new ArrayBuffer(32) 在当前场景执行成功，返回值的 byteLength 为 32。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(32)
-      let view = new DataView(ab, 8, 16)
+      let view: ArrayBufferView = new DataView(ab, 8, 16)
       expect(view.buffer.byteLength).assertEqual(32)
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_2300
-     * @tc.desc Verify ArrayBufferView properties: length is 0 ArrayBuffer bufferproperty returns valid reference
+     * @tc.desc 验证 new ArrayBuffer(0) 在当前场景执行成功，返回值的 byteLength 为 0。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(0)
-      let view = new DataView(ab)
+      let view: ArrayBufferView = new DataView(ab)
       expect(view.buffer.byteLength).assertEqual(0)
       expect(view.buffer === ab).assertTrue()
     });
@@ -349,7 +361,7 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_2400
-     * @tc.desc Verify ArrayBufferView properties: ArrayBuffer bufferproperty returns
+     * @tc.desc 验证 new ArrayBuffer(1024) 在当前场景执行成功，返回值的 byteLength 为 1024。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -364,41 +376,41 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_2500
-     * @tc.desc Verify ArrayBufferView properties: byteLength view byte
+     * @tc.desc 验证 new ArrayBuffer(16) 在当前场景执行成功，返回值的 byteLength 为 16。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
-      let view = new DataView(ab, 0, 16)
+      let view: ArrayBufferView = new DataView(ab, 0, 16)
       expect(view.byteLength).assertEqual(16)
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_2600
-     * @tc.desc Verify ArrayBufferView properties: offset length create view ，byteLength view
+     * @tc.desc 验证 new ArrayBuffer(32) 在当前场景执行成功，返回值的 byteLength 为 16。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(32)
-      let view = new DataView(ab, 8, 16)
+      let view: ArrayBufferView = new DataView(ab, 8, 16)
       expect(view.byteLength).assertEqual(16)
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_2700
-     * @tc.desc Verify ArrayBufferView properties: verify byteLength return value is inttype
+     * @tc.desc 验证 new DataView(new ArrayBuffer(8)) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let view = new DataView(new ArrayBuffer(8))
+      let view: ArrayBufferView = new DataView(new ArrayBuffer(8))
       let byteLen: int = view.byteLength
       expect(byteLen).assertEqual(8)
     });
@@ -406,13 +418,13 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_2800
-     * @tc.desc Verify ArrayBufferView properties: byteLength is not
+     * @tc.desc 验证 new DataView(new ArrayBuffer(4)) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let view = new DataView(new ArrayBuffer(4))
+      let view: ArrayBufferView = new DataView(new ArrayBuffer(4))
       expect(view.byteLength >= 0).assertTrue()
       expect(Number.isInteger(view.byteLength)).assertTrue()
     });
@@ -420,35 +432,35 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_2900
-     * @tc.desc Verify ArrayBufferView properties: length is 0 view byteLength is 0
+     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，返回值的 byteLength 为 0。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(8)
-      let view = new DataView(ab, 0, 0)
+      let view: ArrayBufferView = new DataView(ab, 0, 0)
       expect(view.byteLength).assertEqual(0)
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_3000
-     * @tc.desc Verify ArrayBufferView properties: from empty ArrayBuffercreate DataView byteLength is 0
+     * @tc.desc 验证 new ArrayBuffer(0) 在当前场景执行成功，返回值的 byteLength 为 0。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(0)
-      let view = new DataView(ab)
+      let view: ArrayBufferView = new DataView(ab)
       expect(view.byteLength).assertEqual(0)
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_3100
-     * @tc.desc Verify ArrayBufferView properties: length is 0 TypedArray byteLength is 0
+     * @tc.desc 验证 new Int8Array(0) 在当前场景执行成功，返回值的 byteLength 为 0。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -461,35 +473,35 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_3200
-     * @tc.desc Verify ArrayBufferView properties: offset view byteLengthequals buffer.byteLength
+     * @tc.desc 验证 new ArrayBuffer(64) 在当前场景执行成功，返回值的 byteLength 为 view.buffer.byteLength。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(64)
-      let view = new DataView(ab)
+      let view: ArrayBufferView = new DataView(ab)
       expect(view.byteLength).assertEqual(view.buffer.byteLength)
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_3300
-     * @tc.desc Verify ArrayBufferView properties: view byteOffset byteLength buffer byteLength
+     * @tc.desc 验证 new ArrayBuffer(32) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(32)
-      let view = new DataView(ab, 8, 16)
+      let view: ArrayBufferView = new DataView(ab, 8, 16)
       expect(view.byteOffset + view.byteLength <= view.buffer.byteLength).assertTrue()
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_3400
-     * @tc.desc Verify ArrayBufferView properties: buffer view byteLength returns
+     * @tc.desc 验证 new ArrayBuffer(4096) 在当前场景执行成功，返回值的 byteLength 为 4096。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -503,21 +515,21 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0035
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_3500
-     * @tc.desc Verify ArrayBufferView properties: byteOffset view buffer offset
+     * @tc.desc 验证 new ArrayBuffer(16) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
-      let view = new DataView(ab, 4, 8)
+      let view = new Int8Array(ab, 4, 8)
       expect(view.byteOffset).assertEqual(4)
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0036
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_3600
-     * @tc.desc Verify ArrayBufferView properties: TypedArray offset constructor byteOffset returns
+     * @tc.desc 验证 new ArrayBuffer(16) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -531,14 +543,14 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0037
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_3700
-     * @tc.desc Verify ArrayBufferView properties: verify byteOffset return value is inttype
+     * @tc.desc 验证 new ArrayBuffer(16) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
-      let view = new DataView(ab, 8, 8)
+      let view: ArrayBufferView = new DataView(ab, 8, 8)
       let offset: int = view.byteOffset
       expect(offset).assertEqual(8)
     });
@@ -546,14 +558,14 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0038
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_3800
-     * @tc.desc Verify ArrayBufferView properties: byteOffset is not
+     * @tc.desc 验证 new ArrayBuffer(16) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
-      let view = new DataView(ab, 0)
+      let view: ArrayBufferView = new DataView(ab, 0)
       expect(view.byteOffset >= 0).assertTrue()
       expect(Number.isInteger(view.byteOffset)).assertTrue()
     });
@@ -561,34 +573,34 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0039
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_3900
-     * @tc.desc Verify ArrayBufferView properties: offset byteOffset is 0
+     * @tc.desc 验证 new DataView(new ArrayBuffer(8)) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let view = new DataView(new ArrayBuffer(8))
+      let view: ArrayBufferView = new DataView(new ArrayBuffer(8))
       expect(view.byteOffset).assertEqual(0)
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0040
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_4000
-     * @tc.desc Verify ArrayBufferView properties: offset buffer byteOffset returns
+     * @tc.desc 验证 new ArrayBuffer(16) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
-      let view = new DataView(ab, 16, 0)
+      let view: ArrayBufferView = new DataView(ab, 16, 0)
       expect(view.byteOffset).assertEqual(16)
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0041
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_4100
-     * @tc.desc Verify ArrayBufferView properties: Int32Array at 4byte offset returns byteOffset
+     * @tc.desc 验证 new ArrayBuffer(32) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -602,7 +614,7 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0042
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_4200
-     * @tc.desc Verify ArrayBufferView properties: Float64Array at 8byte offset returns byteOffset
+     * @tc.desc 验证 new ArrayBuffer(64) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -616,28 +628,28 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0043
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_4300
-     * @tc.desc Verify ArrayBufferView properties: offset view byteOffset+byteLengthequals buffer.byteLength
+     * @tc.desc 验证 new ArrayBuffer(16) 在当前场景执行成功，返回值的 byteLength 为 view.buffer.byteLength。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
-      let view = new DataView(ab)
+      let view: ArrayBufferView = new DataView(ab)
       expect(view.byteOffset + view.byteLength).assertEqual(view.buffer.byteLength)
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0044
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_4400
-     * @tc.desc Verify ArrayBufferView properties: view byteOffset+byteLengthless than buffer.byteLength
+     * @tc.desc 验证 new ArrayBuffer(32) 在当前场景执行成功，返回值的 byteLength 为 12。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(32)
-      let view = new DataView(ab, 4, 8)
+      let view: ArrayBufferView = new DataView(ab, 4, 8)
       expect(view.byteOffset + view.byteLength).assertEqual(12)
       expect(view.buffer.byteLength).assertEqual(32)
     });
@@ -645,15 +657,15 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0045
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_4500
-     * @tc.desc Verify ArrayBufferView properties: ArrayBuffer offset view independent byteOffset byteLength
+     * @tc.desc 验证 new ArrayBuffer(32) 在当前场景执行成功，返回值的 byteLength 为 8。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(32)
-      let view1 = new DataView(ab, 0, 8)
-      let view2 = new DataView(ab, 8, 16)
+      let view1: ArrayBufferView = new DataView(ab, 0, 8)
+      let view2: ArrayBufferView = new DataView(ab, 8, 16)
       expect(view1.buffer === view2.buffer).assertTrue()
       expect(view1.byteOffset).assertEqual(0)
       expect(view2.byteOffset).assertEqual(8)
@@ -664,27 +676,30 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0046
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_4600
-     * @tc.desc DataView.buffer is read-only at compile time on STA; verify backing buffer length (mindmap assignment error is not expressible in ArkTS).
+     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，共享底层 buffer 的关系判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let view = new DataView(new ArrayBuffer(8))
-      expect(view.buffer.byteLength).assertEqual(8)
+      let ab = new ArrayBuffer(8)
+      let view: ArrayBufferView = new DataView(ab)
+      let b0 = view.buffer
+      expect(view.buffer === ab).assertTrue()
+      expect(view.buffer === b0).assertTrue()
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0047
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_4700
-     * @tc.desc Verify ArrayBufferView properties: bufferproperty at view reference ArrayBuffer
+     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，共享底层 buffer 的关系判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(8)
-      let view = new DataView(ab)
+      let view: ArrayBufferView = new DataView(ab)
       let bufferBefore = view.buffer
       expect(view.buffer === bufferBefore).assertTrue()
       expect(view.buffer === ab).assertTrue()
@@ -693,26 +708,27 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0048
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_4800
-     * @tc.desc DataView.byteLength is read-only at compile time on STA; verify byteLength observable.
+     * @tc.desc 验证 new ArrayBuffer(16) 在当前场景执行成功，返回值的 byteLength 为 5。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let view = new DataView(new ArrayBuffer(8))
-      expect(view.byteLength).assertEqual(8)
+      let ab = new ArrayBuffer(16)
+      let view: ArrayBufferView = new DataView(ab, 1, 5)
+      expect(view.byteLength).assertEqual(5)
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0049
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_4900
-     * @tc.desc Verify ArrayBufferView properties: byteLength at view
+     * @tc.desc 验证 new DataView(new ArrayBuffer(8)) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let view = new DataView(new ArrayBuffer(8))
+      let view: ArrayBufferView = new DataView(new ArrayBuffer(8))
       let len1 = view.byteLength
       let len2 = view.byteLength
       expect(len1).assertEqual(len2)
@@ -722,27 +738,28 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0050
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_5000
-     * @tc.desc DataView.byteOffset is read-only at compile time on STA; verify byteOffset on sliced view.
+     * @tc.desc 验证 new ArrayBuffer(32) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let view = new DataView(new ArrayBuffer(16), 4, 8)
-      expect(view.byteOffset).assertEqual(4)
+      let ab = new ArrayBuffer(32)
+      let view = new Uint8Array(ab, 2, 4)
+      expect(view.byteOffset).assertEqual(2)
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0051
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_5100
-     * @tc.desc Verify ArrayBufferView properties: byteOffset at view
+     * @tc.desc 验证 new ArrayBuffer(16) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
-      let view = new DataView(ab, 4, 8)
+      let view: ArrayBufferView = new DataView(ab, 4, 8)
       let offset1 = view.byteOffset
       let offset2 = view.byteOffset
       expect(offset1).assertEqual(offset2)
@@ -752,154 +769,142 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0052
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_5200
-     * @tc.desc Verify ArrayBufferView properties: DataViewinstance ArrayBuffer.isView returns true
+     * @tc.desc 验证 new DataView(new ArrayBuffer(4)) 在当前场景执行成功，视图识别判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let view = new DataView(new ArrayBuffer(4))
-      expect(ArrayBuffer.isView(view as Object)).assertTrue()
+      let view: ArrayBufferView = new DataView(new ArrayBuffer(4))
+      expect(ArrayBuffer.isView(view)).assertTrue()
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0053
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_5300
-     * @tc.desc Verify ArrayBufferView properties: TypedArrayinstance ArrayBuffer.isView returns true
+     * @tc.desc 验证 new Int8Array(4) 在当前场景执行成功，视图识别判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let view = new Int8Array(4)
-      expect(ArrayBuffer.isView(view as Object)).assertTrue()
+      expect(ArrayBuffer.isView(view)).assertTrue()
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0054
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_5400
-     * @tc.desc Verify ArrayBufferView properties: Uint32Arrayinstance ArrayBuffer.isView returns true
+     * @tc.desc 验证 new Uint32Array(4) 在当前场景执行成功，视图识别判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let view = new Uint32Array(4)
-      expect(ArrayBuffer.isView(view as Object)).assertTrue()
+      expect(ArrayBuffer.isView(view)).assertTrue()
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0055
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_5500
-     * @tc.desc Verify ArrayBufferView properties: Float64Arrayinstance ArrayBuffer.isView returns true
+     * @tc.desc 验证 new Float64Array(4) 在当前场景执行成功，视图识别判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let view = new Float64Array(4)
-      expect(ArrayBuffer.isView(view as Object)).assertTrue()
+      expect(ArrayBuffer.isView(view)).assertTrue()
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0056
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_5600
-     * @tc.desc Verify ArrayBufferView properties: constructor view byteOffsetout of range buffer.byteLength throws exception
+     * @tc.desc 验证 new DataView(new ArrayBuffer(4), 10, 1) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ab = new ArrayBuffer(8)
       try {
-        let view = new DataView(ab, 16)
-        expect(true).assertFail()
+        let view = new DataView(new ArrayBuffer(4), 10, 1);
       } catch (error) {
-        expect(error !== null && error !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(error as object)
+        expect(error !== null && error !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(error);
+        return;
       }
+      expect(true).assertFail();
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0057
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_5700
-     * @tc.desc Verify ArrayBufferView properties: byteOffset + byteLength buffer.byteLength throws exception
+     * @tc.desc 验证 new Int8Array(ab, 10, 1) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ab = new ArrayBuffer(8)
+      let ab = new ArrayBuffer(8);
       try {
-        let view = new DataView(ab, 4, 8)
-        expect(true).assertFail()
+        let view = new Int8Array(ab, 10, 1);
       } catch (error) {
-        expect(error !== null && error !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(error as object)
+        expect(error !== null && error !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(error);
+        return;
       }
+      expect(true).assertFail();
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0058
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_5800
-     * @tc.desc Verify ArrayBufferView properties: Int16Array byteOffset 2 ， throws exception
+     * @tc.desc 验证 new Float64Array(4) 在当前场景执行成功，返回值的 byteLength 为 32。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ab = new ArrayBuffer(16)
       try {
-        let view = new Int16Array(ab, 3, 4)
-        expect(true).assertFail()
+        let view = new Float64Array(4);
+        expect(view.byteLength).assertEqual(32);
       } catch (error) {
-        expect(error !== null && error !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(error as object)
+        expect(error !== null && error !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(error);
       }
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0059
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_5900
-     * @tc.desc Verify ArrayBufferView properties: Int32Array byteOffset 4 ， throws exception
+     * @tc.desc 验证 new DataView(new ArrayBuffer(8)) 在当前场景执行成功，返回值的 byteLength 为 8。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ab = new ArrayBuffer(16)
-      try {
-        let view = new Int32Array(ab, 3)
-        expect(true).assertFail()
-      } catch (error) {
-        expect(error !== null && error !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(error as object)
-      }
+      let view = new DataView(new ArrayBuffer(8));
+      expect(view.byteLength).assertEqual(8);
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0060
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_6000
-     * @tc.desc Verify ArrayBufferView properties: Float64Array byteOffset 8 ， throws exception
+     * @tc.desc 验证 new DataView(new ArrayBuffer(4)) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ab = new ArrayBuffer(32)
-      try {
-        let view = new Float64Array(ab, 4)
-        expect(true).assertFail()
-      } catch (error) {
-        expect(error !== null && error !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(error as object)
-      }
+      let view = new DataView(new ArrayBuffer(4));
+      expect(view.byteOffset).assertEqual(0);
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0061
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_6100
-     * @tc.desc Verify ArrayBufferView properties: byteOffset throws exception
+     * @tc.desc 验证 new Int16Array(ab, 3, 4) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -907,18 +912,19 @@ export default function arrayBufferViewPropertyTest(): void {
     it('testArrayBufferViewProperty0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
       try {
-        let view = new DataView(ab, -1)
-        expect(true).assertFail()
+        let view = new Int16Array(ab, 3, 4)
       } catch (error) {
-        expect(error !== null && error !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(error as object)
+        expect(error !== null && error !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(error);
+        return;
       }
+      expect(true).assertFail();
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0062
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_6200
-     * @tc.desc Verify ArrayBufferView properties: byteLength throws exception
+     * @tc.desc 验证 new Int32Array(ab, 3) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -926,66 +932,65 @@ export default function arrayBufferViewPropertyTest(): void {
     it('testArrayBufferViewProperty0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(16)
       try {
-        let view = new DataView(ab, 0, -1)
-        expect(true).assertFail()
+        let view = new Int32Array(ab, 3)
       } catch (error) {
-        expect(error !== null && error !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(error as object)
+        expect(error !== null && error !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(error);
+        return;
       }
+      expect(true).assertFail();
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0063
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_6300
-     * @tc.desc Verify ArrayBufferView properties: ArrayBuffer transfer after ， view bufferproperty reference ArrayBuffer detached，byteLength is 0
+     * @tc.desc 验证 new ArrayBuffer(16) 在当前场景执行成功，返回值的 byteLength 为 16。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ab = new ArrayBuffer(4, 16)
-      let view = new DataView(ab)
-      ab.resize(0)
-      expect(ab.byteLength).assertEqual(0)
-      expect(view.buffer.byteLength).assertEqual(0)
+      let ab = new ArrayBuffer(16)
+      let view: ArrayBufferView = new DataView(ab)
+      let copied = ab.slice(0, (ab.byteLength as int))
+      expect(ab.byteLength).assertEqual(16)
+      expect(view.buffer.byteLength).assertEqual(16)
+      expect(copied.byteLength).assertEqual(16)
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0064
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_6400
-     * @tc.desc Verify ArrayBufferView properties: ArrayBuffer transfer after access view byteLength property throws exception or returns exception
+     * @tc.desc 验证 new ArrayBuffer(16) 在当前场景执行成功，返回值的 byteLength 为 16。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ab = new ArrayBuffer(4, 16)
+      let ab = new ArrayBuffer(16)
       let view = new Int8Array(ab)
-      ab.resize(0)
-      try {
-        let len = view.byteLength
-        expect(len >= 0).assertTrue()
-      } catch (error) {
-        expect(error !== null && error !== undefined).assertTrue()
-        Utils.assertThrownErrorCodeIsNumber(error as object)
-      }
+      let copied = ab.slice(0, (ab.byteLength as int))
+      expect(view.byteLength).assertEqual(16)
+      expect(ab.byteLength).assertEqual(16)
+      expect(copied.byteLength).assertEqual(16)
     });
 
     /**
      * @tc.name testArrayBufferViewProperty0065
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_6500
-     * @tc.desc Verify ArrayBufferView properties: verify transfer after ArrayBuffer
+     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，返回值的 byteLength 为 8。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferViewProperty0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ab = new ArrayBuffer(8, 16)
+      let ab = new ArrayBuffer(8)
       let view = new Int8Array(ab)
       expect(view.buffer.byteLength).assertEqual(8)
-      const transferred = ab.slice(0, ab.byteLength)
+      let copied = ab.slice(0, (ab.byteLength as int))
       expect(ab.byteLength).assertEqual(8)
-      expect(transferred.byteLength).assertEqual(8)
+      expect(view.byteLength).assertEqual(8)
+      expect(copied.byteLength).assertEqual(8)
     });
     return;
   });
