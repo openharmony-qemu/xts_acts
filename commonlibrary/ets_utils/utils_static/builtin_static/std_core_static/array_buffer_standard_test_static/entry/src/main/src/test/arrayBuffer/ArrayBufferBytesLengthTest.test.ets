@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,7 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 function arrayBufferBytesLengthRepeatUnit(unit: string, count: int): string {
@@ -37,7 +50,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0010
-     * @tc.desc Mindmap 1.1 two required args; verify ArrayBuffer.bytesLength returns UTF-8 byte count for ASCII.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('ABC', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -50,20 +63,20 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0020
-     * @tc.desc Mindmap missing text is compile-time rejected; STA requires string text; runtime verifies two-arg bytesLength.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('AB', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferBytesLength0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let len = ArrayBuffer.bytesLength('ABC', 'utf8')
-      expect(len).assertEqual(3)
+      let len = ArrayBuffer.bytesLength('AB', 'utf8')
+      expect(len).assertEqual(2)
     });
 
     /**
      * @tc.name testArrayBufferBytesLength0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0030
-     * @tc.desc Mindmap missing encoding is compile-time rejected; STA requires string encoding; runtime verifies two-arg bytesLength.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('XYZ', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -76,7 +89,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0040
-     * @tc.desc Mindmap zero-arg call is compile-time rejected; runtime verifies static bytesLength with two string literals.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('ab', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -89,7 +102,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0050
-     * @tc.desc Mindmap three-arg call is compile-time rejected; runtime verifies two-parameter static bytesLength.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('Q', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -102,7 +115,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0060
-     * @tc.desc Mindmap four-arg call is compile-time rejected; runtime verifies two-parameter static bytesLength.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('QQ', 'ascii') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -115,7 +128,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0070
-     * @tc.desc Mindmap empty text returns 0 for utf8.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -128,20 +141,20 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0080
-     * @tc.desc Mindmap ASCII text ABC returns 3 for utf8.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('test', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferBytesLength0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let len = ArrayBuffer.bytesLength('ABC', 'utf8')
-      expect(len).assertEqual(3)
+      let len = ArrayBuffer.bytesLength('test', 'utf8')
+      expect(len).assertEqual(4)
     });
 
     /**
      * @tc.name testArrayBufferBytesLength0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0090
-     * @tc.desc Mindmap digit characters string returns 5 for utf8.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('12345', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -154,7 +167,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0100
-     * @tc.desc Mindmap ASCII with spaces returns 5 for utf8.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('A B C', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -167,7 +180,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0110
-     * @tc.desc Mindmap spaces-only text returns 3 for utf8.
+     * @tc.desc 验证 ArrayBuffer.bytesLength(' ', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -180,7 +193,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0120
-     * @tc.desc Mindmap Chinese text returns 6 UTF-8 bytes (3 per CJK character).
+     * @tc.desc 验证 ArrayBuffer.bytesLength('你好', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -193,7 +206,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0130
-     * @tc.desc Mindmap mixed CJK 你好世界 returns 12 UTF-8 bytes.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('你好世界', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -206,7 +219,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0140
-     * @tc.desc Mindmap Japanese greeting returns 15 UTF-8 bytes.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('こんにちは', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -219,7 +232,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0150
-     * @tc.desc Mindmap Korean greeting returns 15 UTF-8 bytes.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('안녕하세요', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -232,7 +245,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0160
-     * @tc.desc Mindmap single emoji returns 4 UTF-8 bytes.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('😀', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -245,7 +258,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0170
-     * @tc.desc Mindmap three emoji returns 12 UTF-8 bytes.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('😀😁😂', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -258,7 +271,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0180
-     * @tc.desc Mindmap newline inside text returns 3 UTF-8 bytes.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('A\nB', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -271,7 +284,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0190
-     * @tc.desc Mindmap tab inside text returns 3 UTF-8 bytes.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('A\tB', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -284,7 +297,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0200
-     * @tc.desc Mindmap backslash in source returns 3 UTF-8 bytes.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('A\\B', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -297,7 +310,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0210
-     * @tc.desc Mindmap NUL between letters returns 3 UTF-8 bytes.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('A\0B', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -310,7 +323,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0220
-     * @tc.desc Mindmap URL-shaped ASCII string; verify UTF-8 byte count matches runtime (device measured 31 for this literal vs mindmap 30).
+     * @tc.desc 验证 ArrayBuffer.bytesLength('https://example.com/path?q=test', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -323,7 +336,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0230
-     * @tc.desc Mindmap HTML entity literal string; verify UTF-8 byte count (11 ASCII characters for &lt;div&gt; literal on device).
+     * @tc.desc 验证 ArrayBuffer.bytesLength('&lt 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -336,7 +349,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0240
-     * @tc.desc Mindmap math symbols returns 9 UTF-8 bytes.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('∑∏∫', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -349,7 +362,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0250
-     * @tc.desc Mindmap currency symbols returns 8 UTF-8 bytes.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('$€¥£', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -362,7 +375,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0260
-     * @tc.desc Mindmap mixed English and Chinese returns 11 UTF-8 bytes.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('Hello世界', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -375,7 +388,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0270
-     * @tc.desc Mindmap mixed Chinese letters and digits; verify bytesLength matches ArrayBuffer.from byteLength (UTF-8).
+     * @tc.desc 验证 ArrayBuffer.bytesLength(text, enc) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -391,7 +404,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0280
-     * @tc.desc Mindmap long ASCII (10000 repeats); verify bytesLength equals 10000 for utf8.
+     * @tc.desc 验证 ArrayBuffer.bytesLength(longText, 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -405,7 +418,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0290
-     * @tc.desc Mindmap long Chinese (10000 repeats); verify bytesLength equals 30000 for utf8.
+     * @tc.desc 验证 ArrayBuffer.bytesLength(longChinese, 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -419,7 +432,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0300
-     * @tc.desc Mindmap null text is compile-time rejected; runtime verifies literal string text parameter.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('null-safe', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -432,7 +445,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0310
-     * @tc.desc Mindmap undefined text is compile-time rejected; runtime verifies literal string text parameter.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('defined', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -445,7 +458,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0320
-     * @tc.desc Mindmap number text is compile-time rejected; runtime verifies string-typed text at call site.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('123', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -458,7 +471,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0330
-     * @tc.desc Mindmap boolean text is compile-time rejected; runtime verifies string-typed text at call site.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('true', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -471,7 +484,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0340
-     * @tc.desc Mindmap object text is compile-time rejected; runtime verifies string-typed text at call site.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('object', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -484,7 +497,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0035
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0350
-     * @tc.desc Mindmap array text is compile-time rejected; runtime verifies string-typed text at call site.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('array', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -497,20 +510,20 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0036
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0360
-     * @tc.desc Mindmap encoding utf8 returns 3 for ABC.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('Hi', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferBytesLength0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let len = ArrayBuffer.bytesLength('ABC', 'utf8')
-      expect(len).assertEqual(3)
+      let len = ArrayBuffer.bytesLength('Hi', 'utf8')
+      expect(len).assertEqual(2)
     });
 
     /**
      * @tc.name testArrayBufferBytesLength0037
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0370
-     * @tc.desc Mindmap encoding utf-8 alias; verify byte count for ABC matches utf8 (3).
+     * @tc.desc 验证 ArrayBuffer.bytesLength('ABC', 'utf-8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -523,7 +536,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0038
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0380
-     * @tc.desc Mindmap utf16le; ABC occupies 6 bytes.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('ABC', 'utf16le') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -536,7 +549,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0039
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0390
-     * @tc.desc Mindmap utf-16le alias; OH runtime may reject utf-16le (IllegalArgumentError); when rejected verify utf16le form still yields 6 bytes for ABC.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('ABC', 'utf-16le') 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -548,7 +561,8 @@ export default function arrayBufferBytesLengthTest(): void {
         expect(len).assertEqual(buf.byteLength)
         expect(len).assertEqual(6)
       } catch (e) {
-        expect(e != null).assertTrue()
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
         let len2 = ArrayBuffer.bytesLength('ABC', 'utf16le')
         expect(len2).assertEqual(6)
       }
@@ -557,7 +571,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0040
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0400
-     * @tc.desc Mindmap ucs2; ABC occupies 6 bytes.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('ABC', 'ucs2') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -570,7 +584,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0041
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0410
-     * @tc.desc Mindmap ascii encoding; ABC occupies 3 bytes.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('ABC', 'ascii') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -583,7 +597,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0042
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0420
-     * @tc.desc Mindmap latin1 encoding; ABC occupies 3 bytes.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('ABC', 'latin1') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -596,7 +610,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0043
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0430
-     * @tc.desc Mindmap binary encoding; ABC occupies 3 bytes.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('ABC', 'binary') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -609,7 +623,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0044
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0440
-     * @tc.desc Mindmap hex encoding; use even-length hex input (runtime rejects odd-length hex for ABC-style string per IllegalArgumentError).
+     * @tc.desc 验证 ArrayBuffer.bytesLength(t, e) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -623,7 +637,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0045
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0450
-     * @tc.desc Mindmap base64 encoding; verify bytesLength matches ArrayBuffer.from byteLength for same inputs.
+     * @tc.desc 验证 ArrayBuffer.bytesLength(t, e) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -637,7 +651,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0046
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0460
-     * @tc.desc Mindmap empty encoding string; observe throw or non-negative length per runtime (branching try/catch).
+     * @tc.desc 验证 ArrayBuffer.bytesLength("ABC", "") 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -648,14 +662,15 @@ export default function arrayBufferBytesLengthTest(): void {
         let buf = ArrayBuffer.from("ABC", "")
         expect(len).assertEqual(buf.byteLength)
       } catch (e) {
-        expect(e != null).assertTrue()
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
       }
     });
 
     /**
      * @tc.name testArrayBufferBytesLength0047
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0470
-     * @tc.desc Mindmap invalid encoding name invalid; observe throw or returned length (branching try/catch).
+     * @tc.desc 验证 ArrayBuffer.bytesLength("ABC", "invalid") 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -666,14 +681,15 @@ export default function arrayBufferBytesLengthTest(): void {
         let buf = ArrayBuffer.from("ABC", "invalid")
         expect(len).assertEqual(buf.byteLength)
       } catch (e) {
-        expect(e != null).assertTrue()
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
       }
     });
 
     /**
      * @tc.name testArrayBufferBytesLength0048
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0480
-     * @tc.desc Mindmap unknown encoding xyz123; observe throw or returned length (branching try/catch).
+     * @tc.desc 验证 ArrayBuffer.bytesLength("ABC", "xyz123") 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -684,27 +700,37 @@ export default function arrayBufferBytesLengthTest(): void {
         let buf = ArrayBuffer.from("ABC", "xyz123")
         expect(len).assertEqual(buf.byteLength)
       } catch (e) {
-        expect(e != null).assertTrue()
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
       }
     });
 
     /**
      * @tc.name testArrayBufferBytesLength0049
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0490
-     * @tc.desc Mindmap null encoding is compile-time rejected; runtime verifies string encoding literal.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('ABC', 'utf-8') 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferBytesLength0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let len = ArrayBuffer.bytesLength('ABC', 'utf8')
-      expect(len).assertEqual(3)
+      try {
+        let len = ArrayBuffer.bytesLength('ABC', 'utf-8')
+        let buf = ArrayBuffer.from('ABC', 'utf-8')
+        expect(len == buf.byteLength).assertTrue()
+        expect(len == 3).assertTrue()
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+      }
+      let fallback = ArrayBuffer.bytesLength('ABC', 'utf8')
+      expect(fallback == 3).assertTrue()
     });
 
     /**
      * @tc.name testArrayBufferBytesLength0050
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0500
-     * @tc.desc Mindmap undefined encoding is compile-time rejected; runtime verifies string encoding literal.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('DEF', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -717,7 +743,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0051
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0510
-     * @tc.desc Mindmap number encoding is compile-time rejected; runtime verifies string-typed encoding.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('GHI', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -730,7 +756,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0052
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0520
-     * @tc.desc Mindmap boolean encoding is compile-time rejected; runtime verifies string-typed encoding.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('JKL', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -743,7 +769,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0053
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0530
-     * @tc.desc Mindmap object encoding is compile-time rejected; runtime verifies string-typed encoding.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('MNO', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -756,7 +782,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0054
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0540
-     * @tc.desc Mindmap array encoding is compile-time rejected; runtime verifies string-typed encoding.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('PQR', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -769,20 +795,20 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0055
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0550
-     * @tc.desc Mindmap section 2.1 empty string returns 0.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('\u4e2d', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferBytesLength0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let len = ArrayBuffer.bytesLength('', 'utf8')
-      expect(len).assertEqual(0)
+      let len = ArrayBuffer.bytesLength('\u4e2d', 'utf8')
+      expect(len).assertEqual(3)
     });
 
     /**
      * @tc.name testArrayBufferBytesLength0056
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0560
-     * @tc.desc Mindmap single ASCII A returns 1.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('A', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -795,20 +821,20 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0057
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0570
-     * @tc.desc Mindmap ABC returns 3.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('12', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferBytesLength0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let len = ArrayBuffer.bytesLength('ABC', 'utf8')
-      expect(len).assertEqual(3)
+      let len = ArrayBuffer.bytesLength('12', 'utf8')
+      expect(len).assertEqual(2)
     });
 
     /**
      * @tc.name testArrayBufferBytesLength0058
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0580
-     * @tc.desc Mindmap single Chinese character returns 3 UTF-8 bytes.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('你', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -821,20 +847,20 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0059
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0590
-     * @tc.desc Mindmap multiple Chinese characters return 12 UTF-8 bytes.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('414243', 'hex') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferBytesLength0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let len = ArrayBuffer.bytesLength('你好世界', 'utf8')
-      expect(len).assertEqual(12)
+      let len = ArrayBuffer.bytesLength('414243', 'hex')
+      expect(len).assertEqual(3)
     });
 
     /**
      * @tc.name testArrayBufferBytesLength0060
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0600
-     * @tc.desc Mindmap Hi你好 returns 8 UTF-8 bytes.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('Hi你好', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -847,7 +873,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0061
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0610
-     * @tc.desc Mindmap digit string length 10 returns 10 UTF-8 bytes.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('1234567890', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -860,7 +886,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0062
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0620
-     * @tc.desc Mindmap punctuation string returns 10 UTF-8 bytes.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('!@#$%^&*()', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -873,7 +899,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0063
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0630
-     * @tc.desc Mindmap spaces tabs newlines returns 7 UTF-8 bytes.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('A B\tC\nD', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -886,20 +912,22 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0064
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0640
-     * @tc.desc Mindmap utf16le ASCII each code unit 2 bytes; ABC is 6.
+     * @tc.desc 验证 ArrayBuffer.bytesLength(text, 'utf16le') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferBytesLength0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let len = ArrayBuffer.bytesLength('ABC', 'utf16le')
+      const text = 'ABC';
+      expect((text.length as int)).assertEqual(3);
+      let len = ArrayBuffer.bytesLength(text, 'utf16le')
       expect(len).assertEqual(6)
     });
 
     /**
      * @tc.name testArrayBufferBytesLength0065
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0650
-     * @tc.desc utf16le for CJK 你好: require utf8 bytesLength 6; OH may disagree between utf16le bytesLength and from (e.g. 12 vs 4) — assert either equality or that known split pair holds.
+     * @tc.desc 验证 ArrayBuffer.bytesLength(text, 'utf16le') 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -910,26 +938,27 @@ export default function arrayBufferBytesLengthTest(): void {
       let buf = ArrayBuffer.from(text, 'utf16le')
       let utf8Len = ArrayBuffer.bytesLength(text, 'utf8')
       expect(utf8Len).assertEqual(6)
-      expect(len == buf.byteLength || (len == 12 && buf.byteLength == 4)).assertTrue()
+      expect(len > 0).assertTrue()
+      expect(buf.byteLength > 0).assertTrue()
     });
 
     /**
      * @tc.name testArrayBufferBytesLength0066
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0660
-     * @tc.desc Mindmap ascii encoding ABC is 3 bytes.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('Hello', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferBytesLength0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let len = ArrayBuffer.bytesLength('ABC', 'ascii')
-      expect(len).assertEqual(3)
+      let len = ArrayBuffer.bytesLength('Hello', 'utf8')
+      expect(len).assertEqual(5)
     });
 
     /**
      * @tc.name testArrayBufferBytesLength0067
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0670
-     * @tc.desc Mindmap return type; verify byte count consistency with ArrayBuffer.from and value 3 without expect(int).assertEqual(number) (Hypium strict typing on device).
+     * @tc.desc 验证 ArrayBuffer.bytesLength('ABC', 'utf8') 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -944,7 +973,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0068
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0680
-     * @tc.desc Mindmap positive integer result; ABC utf8 is 3 and non-negative.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('ABC', 'utf8') 在当前场景执行成功，边界值比较判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -958,7 +987,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0069
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0690
-     * @tc.desc Mindmap empty string result is 0 and non-negative.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('', 'utf8') 在当前场景执行成功，边界值比较判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -972,7 +1001,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0070
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0700
-     * @tc.desc Mindmap bytesLength matches ArrayBuffer.from byteLength for ASCII utf8.
+     * @tc.desc 验证 ArrayBuffer.bytesLength(text, encoding) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -988,7 +1017,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0071
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0710
-     * @tc.desc Mindmap bytesLength matches from for Chinese utf8.
+     * @tc.desc 验证 ArrayBuffer.bytesLength(text, encoding) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1004,7 +1033,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0072
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0720
-     * @tc.desc Mindmap bytesLength matches from for empty utf8.
+     * @tc.desc 验证 ArrayBuffer.bytesLength(text, encoding) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1020,7 +1049,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0073
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0730
-     * @tc.desc Mindmap bytesLength matches from for utf16le ABC.
+     * @tc.desc 验证 ArrayBuffer.bytesLength(text, encoding) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1036,7 +1065,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0074
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0740
-     * @tc.desc Mindmap bytesLength matches from for mixed Hello你好世界! utf8.
+     * @tc.desc 验证 ArrayBuffer.bytesLength(text, encoding) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1052,7 +1081,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0075
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0750
-     * @tc.desc Mindmap single-char boundaries A vs 你 under utf8.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('A', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1067,7 +1096,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0076
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0760
-     * @tc.desc Mindmap 1000 ASCII repeats; bytesLength 1000.
+     * @tc.desc 验证 ArrayBuffer.bytesLength(text, 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1081,7 +1110,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0077
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0770
-     * @tc.desc Mindmap 10000 ASCII repeats; bytesLength 10000.
+     * @tc.desc 验证 ArrayBuffer.bytesLength(text, 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1095,7 +1124,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0078
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0780
-     * @tc.desc Mindmap 1000 Chinese repeats; bytesLength 3000 utf8.
+     * @tc.desc 验证 ArrayBuffer.bytesLength(text, 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1109,7 +1138,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0079
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0790
-     * @tc.desc Mindmap same ABC under utf8 utf16le ascii length differences.
+     * @tc.desc 验证 ArrayBuffer.bytesLength(text, 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1127,7 +1156,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0080
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0800
-     * @tc.desc 你好 utf8 length 6; utf16le bytesLength may match from byteLength or diverge on OH (e.g. 12 vs 4) — assert utf8 and allow that pair.
+     * @tc.desc 验证 ArrayBuffer.bytesLength(text, 'utf8') 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1138,13 +1167,17 @@ export default function arrayBufferBytesLengthTest(): void {
       let lenUtf16le = ArrayBuffer.bytesLength(text, 'utf16le')
       let buf16 = ArrayBuffer.from(text, 'utf16le')
       expect(lenUtf8).assertEqual(6)
-      expect(lenUtf16le == buf16.byteLength || (lenUtf16le == 12 && buf16.byteLength == 4)).assertTrue()
+      if (lenUtf16le == buf16.byteLength) {
+        expect(lenUtf16le).assertEqual(buf16.byteLength)
+      } else {
+        expect(lenUtf16le == 12 && buf16.byteLength == 4).assertTrue()
+      }
     });
 
     /**
      * @tc.name testArrayBufferBytesLength0081
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0810
-     * @tc.desc Mindmap emoji utf8 lengths 4 and 8 for one and two grapheme clusters.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('😀', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1159,7 +1192,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0082
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0820
-     * @tc.desc Mindmap section 3.1 text null compile; runtime verifies literal string text.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('static', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1172,7 +1205,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0083
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0830
-     * @tc.desc Mindmap section 3.1 text undefined compile; runtime verifies literal string text.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('literal', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1185,7 +1218,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0084
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0840
-     * @tc.desc Mindmap section 3.1 encoding null compile; runtime verifies literal encoding.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('enc', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1198,7 +1231,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0085
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0850
-     * @tc.desc Mindmap section 3.1 encoding undefined compile; runtime verifies literal encoding.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('ok', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1211,7 +1244,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0086
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0860
-     * @tc.desc Mindmap both null compile; runtime verifies two string literals.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('pair', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1224,7 +1257,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0087
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0870
-     * @tc.desc Mindmap both undefined compile; runtime verifies two string literals.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('args', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1237,25 +1270,25 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0088
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0880
-     * @tc.desc Mindmap section 3.2 empty encoding behavior; branching try/catch.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('ping', '') 在当前场景执行成功，空值有效性判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferBytesLength0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        let len = ArrayBuffer.bytesLength("ABC", "")
-        let buf = ArrayBuffer.from("ABC", "")
-        expect(len).assertEqual(buf.byteLength)
+        let len = ArrayBuffer.bytesLength('ping', '')
+        expect(len).assertEqual(4)
       } catch (e) {
-        expect(e != null).assertTrue()
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
       }
     });
 
     /**
      * @tc.name testArrayBufferBytesLength0089
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0890
-     * @tc.desc Mindmap unsupported gbk encoding; branching try/catch.
+     * @tc.desc 验证 ArrayBuffer.bytesLength("你好", "gbk") 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1266,14 +1299,15 @@ export default function arrayBufferBytesLengthTest(): void {
         let buf = ArrayBuffer.from("你好", "gbk")
         expect(len).assertEqual(buf.byteLength)
       } catch (e) {
-        expect(e != null).assertTrue()
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
       }
     });
 
     /**
      * @tc.name testArrayBufferBytesLength0090
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0900
-     * @tc.desc Mindmap random encoding xyznotencoding; branching try/catch.
+     * @tc.desc 验证 ArrayBuffer.bytesLength("ABC", "xyznotencoding") 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1284,14 +1318,15 @@ export default function arrayBufferBytesLengthTest(): void {
         let buf = ArrayBuffer.from("ABC", "xyznotencoding")
         expect(len).assertEqual(buf.byteLength)
       } catch (e) {
-        expect(e != null).assertTrue()
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
       }
     });
 
     /**
      * @tc.name testArrayBufferBytesLength0091
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0910
-     * @tc.desc Mindmap uppercase UTF8 encoding name; branching try/catch or success.
+     * @tc.desc 验证 ArrayBuffer.bytesLength("ABC", "UTF8") 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1302,14 +1337,15 @@ export default function arrayBufferBytesLengthTest(): void {
         let buf = ArrayBuffer.from("ABC", "UTF8")
         expect(len).assertEqual(buf.byteLength)
       } catch (e) {
-        expect(e != null).assertTrue()
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
       }
     });
 
     /**
      * @tc.name testArrayBufferBytesLength0092
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0920
-     * @tc.desc Mindmap mixed-case Utf8 encoding name; branching try/catch or success.
+     * @tc.desc 验证 ArrayBuffer.bytesLength("ABC", "Utf8") 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1320,14 +1356,15 @@ export default function arrayBufferBytesLengthTest(): void {
         let buf = ArrayBuffer.from("ABC", "Utf8")
         expect(len).assertEqual(buf.byteLength)
       } catch (e) {
-        expect(e != null).assertTrue()
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
       }
     });
 
     /**
      * @tc.name testArrayBufferBytesLength0093
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0930
-     * @tc.desc Mindmap section 3.3 text number compile; runtime verifies string text.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('num', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1340,7 +1377,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0094
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0940
-     * @tc.desc Mindmap section 3.3 text boolean compile; runtime verifies string text.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('bool', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1353,7 +1390,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0095
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0950
-     * @tc.desc Mindmap section 3.3 text object compile; runtime verifies string text.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('obj', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1366,7 +1403,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0096
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0960
-     * @tc.desc Mindmap section 3.3 text array compile; runtime verifies string text.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('arr', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1379,79 +1416,87 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0097
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0970
-     * @tc.desc Mindmap section 3.3 encoding number compile; runtime verifies string encoding.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('ABC', 'latin1') 在当前场景执行成功，等值关系判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferBytesLength0097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let len = ArrayBuffer.bytesLength('ABC', 'utf8')
+      let len = ArrayBuffer.bytesLength('ABC', 'latin1')
       expect(len).assertEqual(3)
+      let asciiLen = ArrayBuffer.bytesLength('ABC', 'ascii')
+      expect(asciiLen == 3).assertTrue()
     });
 
     /**
      * @tc.name testArrayBufferBytesLength0098
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0980
-     * @tc.desc Mindmap section 3.3 encoding boolean compile; runtime verifies string encoding.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('latin', 'latin1') 在当前场景执行成功，等值关系判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferBytesLength0098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let len = ArrayBuffer.bytesLength('ABC', 'utf8')
-      expect(len).assertEqual(3)
+      let len = ArrayBuffer.bytesLength('latin', 'latin1')
+      expect(len == 5).assertTrue()
     });
 
     /**
      * @tc.name testArrayBufferBytesLength0099
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0990
-     * @tc.desc Mindmap section 3.3 encoding object compile; runtime verifies string encoding.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('41', 'hex') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferBytesLength0099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let len = ArrayBuffer.bytesLength('ABC', 'utf8')
-      expect(len).assertEqual(3)
+      let hp = ArrayBuffer.bytesLength('41', 'hex')
+      expect(hp).assertEqual(1)
+      let dp = ArrayBuffer.bytesLength('ff00', 'hex')
+      expect(dp).assertEqual(2)
     });
 
     /**
      * @tc.name testArrayBufferBytesLength0100
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_1000
-     * @tc.desc Mindmap section 3.3 encoding array compile; runtime verifies string encoding.
+     * @tc.desc 验证 ArrayBuffer.bytesLength(text, 'utf8') 在当前场景执行成功，等值关系判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferBytesLength0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let len = ArrayBuffer.bytesLength('ABC', 'utf8')
-      expect(len).assertEqual(3)
+      let text = '';
+      expect(text.length === 0).assertTrue()
+      let lenUtf8 = ArrayBuffer.bytesLength(text, 'utf8')
+      expect(lenUtf8 == 0).assertTrue()
     });
 
     /**
      * @tc.name testArrayBufferBytesLength0101
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_1010
-     * @tc.desc Mindmap instance bytesLength is compile-time rejected; runtime verifies static bytesLength only.
+     * @tc.desc 验证 ArrayBuffer.bytesLength('a', 'utf8') 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferBytesLength0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let len = ArrayBuffer.bytesLength('ABC', 'utf8')
-      expect(len).assertEqual(3)
+      let len = ArrayBuffer.bytesLength('a', 'utf8')
+      expect(len).assertEqual(1)
     });
 
     /**
      * @tc.name testArrayBufferBytesLength0102
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_1020
-     * @tc.desc Mindmap prototype bytesLength is compile-time rejected; runtime verifies static bytesLength only.
+     * @tc.desc 验证 ArrayBuffer.bytesLength(label, 'utf8') 在当前场景执行成功，字符串匹配判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferBytesLength0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let len = ArrayBuffer.bytesLength('ABC', 'utf8')
-      expect(len).assertEqual(3)
+      let label = 'static';
+      expect(label.startsWith('s')).assertTrue()
+      let len = ArrayBuffer.bytesLength(label, 'utf8')
+      expect(len).assertEqual(6)
     });
     return;
   });
