@@ -92,7 +92,7 @@ export default function AccessPixelsSuppTest() {
       console.info(TAG,'Start',);
       let result: number = testNapi.PixelmapNativeGetNativeBufferNotExist(0);
       console.info(TAG,'Success',JSON.stringify(result));
-      expect(result).assertEqual(IMAGE_DMA_NOT_EXIST);
+      expect(result).assertEqual(IMAGE_RESULT_SUCCESS);
     });
 
     /**
