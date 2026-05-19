@@ -2953,7 +2953,7 @@ export default function WindowPropertiesTest() {
             console.log(msgStr + "begin");
             let windowMask: Array<Array<Long>> = new Array < Array < Long >> ();
             for (let i = 0; i < 500; i++) {
-                let arr: Array<Long> = new Array < Long > (500);
+                let arr: Array<Long> = Array.create<Long>(500, 0);
                 for (let j = 0; j < 500; j++) {
                     if (i + j < 500) {
                         arr[j] = 0;
@@ -3013,7 +3013,7 @@ export default function WindowPropertiesTest() {
             console.log(msgStr + "begin");
             let windowMask: Array<Array<Long>> = new Array < Array < Long >> ();
             for (let i = 0; i < 500; i++) {
-                let arr: Array<Long> = new Array < Long > (500);
+                let arr: Array<Long> = Array.create<Long>(500, 0);
                 for (let j = 0; j < 500; j++) {
                     if (i + j < 500) {
                         arr[j] = 0;
