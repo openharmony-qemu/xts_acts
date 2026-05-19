@@ -65,7 +65,6 @@ export default function DecrementUnaryOverflow(): void {
 
       expect(result).assertEqual(127);
       expect(x).assertEqual(127);
-      expect(true).assertTrue();
     });
 
     /**
@@ -82,7 +81,6 @@ export default function DecrementUnaryOverflow(): void {
 
       expect(result).assertEqual(32767);
       expect(x).assertEqual(32767);
-      expect(true).assertTrue();
     });
 
     /**
@@ -99,7 +97,6 @@ export default function DecrementUnaryOverflow(): void {
 
       expect(result).assertEqual(-128);
       expect(x).assertEqual(127);
-      expect(true).assertTrue();
     });
 
     /**
@@ -113,10 +110,8 @@ export default function DecrementUnaryOverflow(): void {
     it("testDecrementUnaryOverflow0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: short = -32768;
       let result = x--;
-
       expect(result).assertEqual(-32768);
       expect(x).assertEqual(32767);
-      expect(true).assertTrue();
     });
 
   });
