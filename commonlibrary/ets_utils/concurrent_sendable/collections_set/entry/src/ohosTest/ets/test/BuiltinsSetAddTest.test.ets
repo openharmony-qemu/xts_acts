@@ -53,7 +53,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_0100
      * @tc.desc    Add single lowercase string to empty Set
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
     it('builtinsSetAddTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
@@ -71,7 +71,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_0200
      * @tc.desc    Add single uppercase string to empty Set
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
     it('builtinsSetAddTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
@@ -89,7 +89,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_0300
      * @tc.desc    Add positive integer to empty Set
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
     it('builtinsSetAddTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
@@ -107,7 +107,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_0400
      * @tc.desc    Add negative integer to empty Set
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
     it('builtinsSetAddTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
@@ -125,7 +125,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_0500
      * @tc.desc    Add positive floating-point number to empty Set
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
     it('builtinsSetAddTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
@@ -143,7 +143,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_0600
      * @tc.desc    Add negative floating-point number to empty Set
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
     it('builtinsSetAddTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
@@ -161,7 +161,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_0700
      * @tc.desc    Add boolean true to empty Set
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
     it('builtinsSetAddTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
@@ -179,7 +179,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_0800
      * @tc.desc    Add boolean false to empty Set
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
     it('builtinsSetAddTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
@@ -197,7 +197,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_0900
      * @tc.desc    Add duplicate strings to Set (should ignore duplicates)
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -215,7 +215,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_1000
      * @tc.desc    Add duplicate numbers to Set (should ignore duplicates)
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -233,7 +233,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_1100
      * @tc.desc    Add string "7" and number 7 (should treat as distinct)
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -251,7 +251,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_1200
      * @tc.desc    Add boolean true and number 1 (should treat as distinct)
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -269,7 +269,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_1300
      * @tc.desc    Add 0 and -0 (should treat as equal)
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -287,7 +287,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_1400
      * @tc.desc    Add multiple NaN values (should treat as equal)
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -305,7 +305,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_1500
      * @tc.desc    Add empty string and space string (should treat as distinct)
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -323,7 +323,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_1600
      * @tc.desc    Add tab and newline characters (should treat as distinct)
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -341,7 +341,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_1700
      * @tc.desc    Add Infinity and -Infinity (should treat as distinct)
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -359,7 +359,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_1800
      * @tc.desc    Add max safe integer and its next value (should treat as distinct)
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -378,7 +378,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_1900
      * @tc.desc    Add two BigInt values with same numeric value
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
      */
     it('builtinsSetAddTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
@@ -398,7 +398,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_2000
      * @tc.desc    Use method chaining to add multiple distinct values
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
      */
     it('builtinsSetAddTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
@@ -416,7 +416,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_2100
      * @tc.desc    Verify add() returns the original Set instance for chaining
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
      */
     it('builtinsSetAddTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
@@ -434,7 +434,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_2200
      * @tc.desc    Add string with Unicode characters
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -452,7 +452,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_2300
      * @tc.desc    Add string with emojis
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -470,7 +470,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_2400
      * @tc.desc    Add very large positive integer
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -488,7 +488,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_2500
      * @tc.desc    Add very small negative integer
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -506,7 +506,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_2600
      * @tc.desc    Add number with high precision decimal
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -524,7 +524,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_2700
      * @tc.desc    Add string representation of number and number
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -542,7 +542,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_2800
      * @tc.desc    Add boolean false and 0
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -560,7 +560,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_2900
      * @tc.desc    Add multiple mixed primitives
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -578,7 +578,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_3000
      * @tc.desc    Add hexadecimal and decimal equivalents
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -596,7 +596,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_3100
      * @tc.desc    Add octal and decimal equivalents
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -614,7 +614,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_3200
      * @tc.desc    Add binary and decimal equivalents
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -632,7 +632,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_3300
      * @tc.desc    Add exponential notation numbers
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -650,7 +650,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_3400
      * @tc.desc    Add string with leading zeros and number
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -668,7 +668,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_3500
      * @tc.desc    Add empty string and string with zero
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -686,7 +686,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_3600
      * @tc.desc    Add Infinity and large number
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -704,7 +704,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_3700
      * @tc.desc    Add -Infinity and very small number
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -722,7 +722,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_3800
      * @tc.desc    Add Number.MIN_VALUE
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -740,7 +740,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_3900
      * @tc.desc    Add Number.EPSILON
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -758,7 +758,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_4000
      * @tc.desc    Add mixed case strings
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -776,7 +776,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_4100
      * @tc.desc    Add strings with whitespace variations
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -794,7 +794,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_4200
      * @tc.desc    Add class instances with @Sendable annotation
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
      */
     it('builtinsSetAddTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
@@ -814,7 +814,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_4300
      * @tc.desc    Add BigInt with different values
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
      */
     it('builtinsSetAddTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
@@ -855,7 +855,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_4500
      * @tc.desc    Add elements to pre-initialized Set
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -873,7 +873,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_4600
      * @tc.desc    Add elements to Set created from array
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -892,7 +892,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_4700
      * @tc.desc    Add elements to Set created from another Set
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -911,7 +911,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_4800
      * @tc.desc    Add elements in chain after other operations
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
      */
     it('builtinsSetAddTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
@@ -931,7 +931,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_4900
      * @tc.desc    Add same value after deleting it
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -951,7 +951,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_5000
      * @tc.desc    Add elements to cleared Set
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -970,7 +970,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_5100
      * @tc.desc    Add elements and check with Array.from
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -989,7 +989,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_5200
      * @tc.desc    Add elements and check with Set.prototype.values
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1008,7 +1008,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_5300
      * @tc.desc    Add elements to nested Sets
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
      */
     it('builtinsSetAddTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
@@ -1034,7 +1034,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_5400
      * @tc.desc    Add elements and check size after various operations
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1064,7 +1064,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_5500
      * @tc.desc    Add elements with same string representation but different types
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
@@ -1083,7 +1083,7 @@ export default function BuiltinsSetAddTest() {
      * @tc.number  SUB_BUILTINS_SET_ADD_TEST_5600
      * @tc.desc    Add elements to multiple Sets
      * @tc.type    Function
-     * @tc.size    MediumTest
+     * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
     it('builtinsSetAddTest5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
