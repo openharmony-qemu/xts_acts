@@ -616,6 +616,200 @@ export default function BuiltinsArrayCombinationFourthTest() {
       console.info(`${caseName}, test end`);
     });
 
+    /**
+     * @tc.name   builtinsArrayCombinationFourthTest2800
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_FOURTH_TEST_2800
+     * @tc.desc   Test Method Combination in Shared Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('builtinsArrayCombinationFourthTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationThirdTest2800';
+      console.info(`${caseName}, test start`);
+      const arr = collections.Array.from([1, 2, 3, 4]);
+      arr.splice(1, 2, 5, 6);
+      arr.fill(9, 1, 3);
+      expect(arr).assertDeepEquals(collections.Array.from([1, 9, 9, 4]));
+      console.info(`${caseName}, test end`);
+    });
 
+    /**
+     * @tc.name   builtinsArrayCombinationFourthTest2900
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_FOURTH_TEST_2900
+     * @tc.desc   Test Method Combination in Shared Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('builtinsArrayCombinationFourthTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationThirdTest2900';
+      console.info(`${caseName}, test start`);
+      const arr = collections.Array.from([3, 1, 2]);
+      arr.sort().push(4);
+      expect(arr).assertDeepEquals(collections.Array.from([1, 2, 3, 4]));
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.name   builtinsArrayCombinationFourthTest3000
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_FOURTH_TEST_3000
+     * @tc.desc   Test Method Combination in Shared Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('builtinsArrayCombinationFourthTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationThirdTest3000';
+      console.info(`${caseName}, test start`);
+      const arr = collections.Array.from([3, 1, 2, 4]);
+      const popped = arr.sort().pop();
+
+      expect(arr).assertDeepEquals(collections.Array.from([1, 2, 3, 4]));
+      expect(arr[0]).assertDeepEquals(1);
+      expect(arr[1]).assertDeepEquals(2);
+      expect(arr[2]).assertDeepEquals(3);
+
+      expect(popped).assertEqual(4);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.name   builtinsArrayCombinationFourthTest3100
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_FOURTH_TEST_3100
+     * @tc.desc   Test Method Combination in Shared Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('builtinsArrayCombinationFourthTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationThirdTest3100';
+      console.info(`${caseName}, test start`);
+      const arr = collections.Array.from([3, 1, 2, 4]);
+      const shifted = arr.sort().shift();
+      expect(arr).assertDeepEquals(collections.Array.from([2, 3, 4]));
+      expect(shifted).assertEqual(1);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.name   builtinsArrayCombinationFourthTest3200
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_FOURTH_TEST_3200
+     * @tc.desc   Test Method Combination in Shared Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('builtinsArrayCombinationFourthTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationThirdTest3200';
+      console.info(`${caseName}, test start`);
+      const arr = collections.Array.from([3, 1, 2]);
+      arr.sort().unshift(0);
+      expect(arr).assertDeepEquals(collections.Array.from([0, 1, 2, 3]));
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.name   builtinsArrayCombinationFourthTest3300
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_FOURTH_TEST_3300
+     * @tc.desc   Test Method Combination in Shared Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('builtinsArrayCombinationFourthTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationThirdTest3300';
+      console.info(`${caseName}, test start`);
+      const arr = collections.Array.from([3, 1, 4, 2]);
+      arr.sort().splice(1, 2, 9);
+      expect(arr).assertDeepEquals(collections.Array.from([1, 9, 4]));
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.name   builtinsArrayCombinationFourthTest3400
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_FOURTH_TEST_3400
+     * @tc.desc   Test Method Combination in Shared Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('builtinsArrayCombinationFourthTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationThirdTest3400';
+      console.info(`${caseName}, test start`);
+      const arr = collections.Array.from([3, 1, 4, 2]);
+      arr.sort().sort((a, b) => b - a);
+      expect(arr).assertDeepEquals(collections.Array.from([4, 3, 2, 1]));
+
+      const ta = collections.Int8Array.from(new Int8Array([3, 1, 4, 2]));
+      ta.sort();
+      expect(Array.from(ta)).assertDeepEquals([1, 2, 3, 4]);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.name   builtinsArrayCombinationFourthTest3500
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_FOURTH_TEST_3500
+     * @tc.desc   Test Method Combination in Shared Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('builtinsArrayCombinationFourthTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationThirdTest3500';
+      console.info(`${caseName}, test start`);
+      const arr = collections.Array.from([3, 1, 2]);
+      arr.sort().reverse();
+      expect(arr).assertDeepEquals(collections.Array.from([3, 2, 1]));
+
+      const ta = collections.Int8Array.from(new Int8Array([3, 1, 2]));
+      ta.sort().reverse();
+      expect(Array.from(ta)).assertDeepEquals([3, 2, 1]);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.name   builtinsArrayCombinationFourthTest3600
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_FOURTH_TEST_3600
+     * @tc.desc   Test Method Combination in Shared Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('builtinsArrayCombinationFourthTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationThirdTest3600';
+      console.info(`${caseName}, test start`);
+      const arr = collections.Array.from([3, 1, 2, 4]);
+      arr.sort().copyWithin(0, 2);
+      expect(arr).assertDeepEquals(collections.Array.from([3, 4, 3, 4]));
+
+      const ta = collections.Int8Array.from(new Int8Array([3, 1, 2, 4]));
+      ta.sort();
+      ta.copyWithin(0, 2);
+      expect(Array.from(ta)).assertDeepEquals([3, 4, 3, 4]);
+      console.info(`${caseName}, test end`);
+    });
+
+    /**
+     * @tc.name   builtinsArrayCombinationFourthTest3700
+     * @tc.number SUB_BUILTINS_ARRAY_COMBINATION_FOURTH_TEST_3700
+     * @tc.desc   Test Method Combination in Shared Array/TypedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('builtinsArrayCombinationFourthTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'builtinsArrayCombinationThirdTest3700';
+      console.info(`${caseName}, test start`);
+      const arr = collections.Array.from([3, 1, 2, 4]);
+      arr.sort().fill(9, 1, 3);
+      expect(arr).assertDeepEquals(collections.Array.from([1, 9, 9, 4]));
+
+      const ta = collections.Int8Array.from(new Int8Array([3, 1, 2, 4]));
+      ta.sort();
+      ta.fill(9, 1, 3);
+      expect(Array.from(ta)).assertDeepEquals([1, 9, 9, 4]);
+      console.info(`${caseName}, test end`);
+    });
   });
 }
