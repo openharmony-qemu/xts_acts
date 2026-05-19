@@ -135,7 +135,7 @@ napi_value OH_Pixelmap_HdrMetadataKey_HDR_STATIC_METADATA(napi_env env, napi_cal
     OH_PixelmapNative_CreatePixelmap(data, dataLength, options, &pixelMapNative);
     OH_Pixelmap_HdrMetadataValue* value = new OH_Pixelmap_HdrMetadataValue;
     Image_ErrorCode errCode = OH_PixelmapNative_GetMetadata(pixelMapNative, HDR_STATIC_METADATA, &value);
-    napi_create_int32(env, errCode == IMAGE_SUCCESS, &result);
+    napi_create_int32(env, errCode == IMAGE_COPY_FAILED, &result);
     return result;
 }
 
@@ -160,7 +160,7 @@ napi_value OH_Pixelmap_HdrMetadataKey_HDR_DYNAMIC_METADATA(napi_env env, napi_ca
     OH_PixelmapNative_CreatePixelmap(data, dataLength, options, &pixelMapNative);
     OH_Pixelmap_HdrMetadataValue* value = new OH_Pixelmap_HdrMetadataValue;
     Image_ErrorCode errCode = OH_PixelmapNative_GetMetadata(pixelMapNative, HDR_DYNAMIC_METADATA, &value);
-    napi_create_int32(env, errCode == IMAGE_SUCCESS, &result);
+    napi_create_int32(env, errCode == IMAGE_COPY_FAILED, &result);
     return result;
 }
 
@@ -185,7 +185,7 @@ napi_value OH_Pixelmap_HdrMetadataKey_HDR_GAINMAP_METADATA(napi_env env, napi_ca
     OH_PixelmapNative_CreatePixelmap(data, dataLength, options, &pixelMapNative);
     OH_Pixelmap_HdrMetadataValue* value = new OH_Pixelmap_HdrMetadataValue;
     Image_ErrorCode errCode = OH_PixelmapNative_GetMetadata(pixelMapNative, HDR_GAINMAP_METADATA, &value);
-    napi_create_int32(env, errCode == IMAGE_SUCCESS, &result);
+    napi_create_int32(env, errCode == IMAGE_COPY_FAILED, &result);
     return result;
 }
 
@@ -210,7 +210,7 @@ napi_value Image_ErrorCode_IMAGE_DMA_NOT_EXIST(napi_env env, napi_callback_info 
     OH_PixelmapNative_CreatePixelmap(data, dataLength, options, &pixelMapNative);
     OH_Pixelmap_HdrMetadataValue* value = new OH_Pixelmap_HdrMetadataValue;
     Image_ErrorCode errCode = OH_PixelmapNative_GetMetadata(pixelMapNative, HDR_GAINMAP_METADATA, &value);
-    napi_create_int32(env, errCode == IMAGE_SUCCESS, &result);
+    napi_create_int32(env, errCode == IMAGE_COPY_FAILED, &result);
     return result;
 }
 
