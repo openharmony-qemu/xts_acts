@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { Text, Component, Button, ClickEvent, Entry } from '@ohos.arkui.component';
+import { Column, Text, Component, Button, ClickEvent, Entry } from '@ohos.arkui.component';
 import hilog from '@ohos.hilog';
 import formInfo from '@ohos.app.form.formInfo';
 
