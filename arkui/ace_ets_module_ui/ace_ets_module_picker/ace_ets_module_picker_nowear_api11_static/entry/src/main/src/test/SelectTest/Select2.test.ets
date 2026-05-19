@@ -28,7 +28,6 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import inspector from '@ohos.arkui.inspector';
 import { $r } from '@ohos.arkui.component';
 import { ArrowPosition, Resource } from '@ohos.arkui.component';
 import { RecordData } from '@ohos.base';

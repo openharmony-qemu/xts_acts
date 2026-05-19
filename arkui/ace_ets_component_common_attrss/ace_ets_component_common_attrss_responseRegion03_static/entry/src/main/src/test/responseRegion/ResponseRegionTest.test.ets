@@ -17,7 +17,6 @@ import Utils, { BasePageConfig, PageConfig, TestValue, RectValue, SetValue, Resp
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
 import CommonTest from "../common/CommonTest"
 import { describe, expect, beforeAll } from '../../../../hypium/index';
-import { UIContext } from "@ohos.arkui.UIContext";
 import { $r,Rectangle } from '@ohos.arkui.component'
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import hilog from '@ohos.hilog'

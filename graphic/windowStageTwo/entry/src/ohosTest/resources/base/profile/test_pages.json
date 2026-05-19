@@ -42,6 +42,8 @@
     "testability/pages/WindowTest/EmbeddedComponentCreateSubWindowOptionsTruePage",
     "testability/pages/WindowTest/extensionCreateSubWindowWithTrueOpt",
     "testability/pages/WindowTest/EmbeddedComponentGetWindowAvoidAreaPage",
-    "testability/pages/WindowTest/extensionGetWindowAvoidArea"
+    "testability/pages/WindowTest/extensionGetWindowAvoidArea",
+    "testability/pages/WindowTest/EmbeddedComponentEvn",
+    "testability/pages/WindowTest/envExtension"
   ]
 }

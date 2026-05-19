@@ -17,7 +17,6 @@
 import {
   Entry,
   Component,
-  Canvas,
   RenderingContextSettings,
   CanvasRenderingContext2D,
   Callback,

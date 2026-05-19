@@ -33,6 +33,7 @@ export function PageTwoBuilder() {
   PageTwo()
 }
 
+@Entry
 @Component
 export struct PageTwo {
   pathStack: NavPathStack = new NavPathStack()

@@ -17,7 +17,7 @@ import {FlexDirection,FlowItem,WaterFlow,ColumnOptions,IndexerAlign,FontWeight,A
 import { State ,Link } from '@ohos.arkui.stateManagement'
 @Component
 export struct FlowItemView {
-  @Link _position: Position={x:0,y:0};
+  public _position: Position={x:0,y:0};
   private componentKey: string='';
   private parentWidth: number = 0;
   private parentHeight: number = 0;

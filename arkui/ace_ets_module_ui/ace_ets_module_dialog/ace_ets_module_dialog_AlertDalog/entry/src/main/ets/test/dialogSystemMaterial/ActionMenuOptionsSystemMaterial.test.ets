@@ -67,7 +67,7 @@ export default function ActionMenuOptionsSystemMaterialTest() {
 		let dialog: ESObject = obj.$children[1]
 		let date = JSON.stringify(obj.$children[1].$children[0])
 		console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
-		expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+		expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
 		console.info('ActionMenuOptionsSystemMaterial_0100 Menu title is visible');
 
 		await CommonFunc.sleep(500);
@@ -101,7 +101,7 @@ export default function ActionMenuOptionsSystemMaterialTest() {
 	let dialog: ESObject = obj.$children[1]
 	let date = JSON.stringify(obj.$children[1].$children[0])
 	console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
-	expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+	expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
 	console.info('ActionMenuOptionsSystemMaterial_0200 Menu title is visible');
 
 	await CommonFunc.sleep(500);
@@ -169,7 +169,7 @@ export default function ActionMenuOptionsSystemMaterialTest() {
 	let dialog: ESObject = obj.$children[1]
 	let date = JSON.stringify(obj.$children[1].$children[0])
 	console.info('obj004'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
-	expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+	expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
 	await CommonFunc.sleep(500);
 	let closeButton = await driver.findComponent(ON.text('Button1'));
 	await closeButton.click();
@@ -200,7 +200,7 @@ export default function ActionMenuOptionsSystemMaterialTest() {
 	let dialog: ESObject = obj.$children[1]
 	let date = JSON.stringify(obj.$children[1].$children[0])
 	console.info('obj005'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
-	expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+	expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
 	console.info('ActionMenuOptionsSystemMaterial_0500 Menu title is visible');
 
 	await CommonFunc.sleep(500);

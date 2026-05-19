@@ -35,6 +35,11 @@ struct FatherControlChild {
 
   build() {
       Scroll(this.scroller) {
+        Button('undefined' + this.change)
+          .onClick((e: ClickEvent) => {
+            this.change = !this.change;
+          })
+          .id('button_shouldBuiltInRecognizerParallelWith')
         Column() {
           Text('Scroll Area')
             .width('92%')
@@ -92,10 +97,5 @@ struct FatherControlChild {
             }
           }
         } : undefined)
-        Button('undefined' + this.change)
-          .onClick((e: ClickEvent) => {
-            this.change = !this.change;
-          })
-          .id('button_shouldBuiltInRecognizerParallelWith')
   }
 }

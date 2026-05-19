@@ -47,8 +47,8 @@ import hilog from '@ohos.hilog'
 
 @Observed
 export class SearchModifier implements AttributeModifier<SearchAttribute> {
-  @State state: boolean = false;
-  @State content: boolean = false;
+  state: boolean = false;
+  content: boolean = false;
   applyNormalAttribute(instance: SearchAttribute): void {
     if (this.state == false) {
       instance.onSubmit(undefined);

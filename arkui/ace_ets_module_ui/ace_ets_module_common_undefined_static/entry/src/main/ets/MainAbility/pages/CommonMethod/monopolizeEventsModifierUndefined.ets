@@ -19,7 +19,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
 export class MyMonopolizeModifier implements AttributeModifier<CommonAttribute> {
-  @State public controlValue: boolean | undefined = true
+  public controlValue: boolean | undefined = true
 
   applyNormalAttribute(instance: CommonAttribute): void {
     if (this.controlValue === undefined) {

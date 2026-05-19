@@ -21,7 +21,7 @@ import { RecordData } from '@ohos.base';
 
 let tag: string = 'testTag';
 
-export default function OsAccountParamCheckStatic() {
+export default function OsAccountParamCheckStatic(): void {
   describe('OsAccountParamCheckStatic', () => {
     let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
     let authorizationManager: osAccount.AuthorizationManager = osAccount.getAuthorizationManager();
