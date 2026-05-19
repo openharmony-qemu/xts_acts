@@ -1753,6 +1753,7 @@ export default function ImageMetadataTestStatic(): void {
         expect(exifValue.jfifMetadata!=undefined).assertTrue();
       } catch (error) {
         console.info(TAG, testName,`Error in : ${error.message}, code: ${error.code}`);
+        expect().assertFail();
       } finally {
         await imageSourceApi!.release();
       }
