@@ -29,29 +29,31 @@ struct XtsFormInfo {
   }
 
   build() {
-    Text('XTS FormInfo').fontSize(20)
-    Button('123').onClick((event: ClickEvent) => {
-      hilog.info(DOMAIN, TAG, 'XtsFormInfo Button 123');
-      let extraData: Record<string, object> = {
-        'abc1': '123',
-        'abc2': '123',
-        'abc3': '123',
-      }
-      let runningFormInfoFo: formInfo.RunningFormInfo = {
-        formId: 'formId',
-        bundleName: 'bundleName',
-        hostBundleName: 'hostBundleName',
-        formLocation: formInfo.FormLocation.DESKTOP,
-        visibilityType: formInfo.VisibilityType.FORM_VISIBLE,
-        moduleName: 'moduleName',
-        abilityName: 'abilityName',
-        formName: 'formName',
-        dimension: 123,
-        formUsageState: formInfo.FormUsageState.UNUSED,
-        formDescription: 'formDescription',
-        extraData: extraData,
-      }
-      hilog.info(DOMAIN, TAG, 'XtsFormInfo Button 123456');
-    })
+    Column() {
+      Text('XTS FormInfo').fontSize(20)
+      Button('123').onClick((event: ClickEvent) => {
+        hilog.info(DOMAIN, TAG, 'XtsFormInfo Button 123');
+        let extraData: Record<string, object> = {
+          'abc1': '123',
+          'abc2': '123',
+          'abc3': '123',
+        }
+        let runningFormInfoFo: formInfo.RunningFormInfo = {
+          formId: 'formId',
+          bundleName: 'bundleName',
+          hostBundleName: 'hostBundleName',
+          formLocation: formInfo.FormLocation.DESKTOP,
+          visibilityType: formInfo.VisibilityType.FORM_VISIBLE,
+          moduleName: 'moduleName',
+          abilityName: 'abilityName',
+          formName: 'formName',
+          dimension: 123,
+          formUsageState: formInfo.FormUsageState.UNUSED,
+          formDescription: 'formDescription',
+          extraData: extraData,
+        }
+        hilog.info(DOMAIN, TAG, 'XtsFormInfo Button 123456');
+      })
+    }
   }
 }
