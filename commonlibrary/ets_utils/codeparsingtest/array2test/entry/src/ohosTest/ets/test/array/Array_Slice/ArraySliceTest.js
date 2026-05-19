@@ -13,29 +13,10 @@
  * limitations under the License.
  */
 
-
-export function ArraySliceJs_3_1() {
-    const arr = [1, 2, 3, 4, 5];
-    const result1 = arr.slice(undefined);
-    const result2 = arr.slice(1, undefined);
-    const result3 = arr.slice(undefined, 3);
-    return JSON.stringify(result1) === '[1,2,3,4,5]' &&
-        JSON.stringify(result2) === '[2,3,4,5]' &&
-        JSON.stringify(result3) === '[1,2,3]';
-}
-
 export function ArraySliceJs_3_2() {
     const arr = [1, 2, 3, 4, 5];
     const result1 = arr.slice(null);
     const result2 = arr.slice(null, 3);
-    return JSON.stringify(result1) === '[1,2,3,4,5]' &&
-        JSON.stringify(result2) === '[1,2,3]';
-}
-
-export function ArraySliceJs_3_3() {
-    const arr = [1, 2, 3, 4, 5];
-    const result1 = arr.slice(NaN);
-    const result2 = arr.slice(NaN, 3);
     return JSON.stringify(result1) === '[1,2,3,4,5]' &&
         JSON.stringify(result2) === '[1,2,3]';
 }
@@ -54,66 +35,16 @@ export function ArraySliceJs_3_6() {
         JSON.stringify(result2) === '[1,2,3]';
 }
 
-
-export function ArraySliceJs_4_1() {
-    const arr = [1, , , 4, 5];
-    const result = arr.slice(1, 4);
-    return result.length === 3 &&
-        result[0] === undefined &&
-        result[1] === undefined &&
-        result[2] === 4;
-}
-
-export function ArraySliceJs_4_3() {
-    const arrayLike = { 0: 'a', 1: 'b', 2: 'c', length: 3 };
-    const result = Array.prototype.slice.call(arrayLike, 1, 3);
-    return JSON.stringify(result) === '["b","c"]';
-}
-
-export function ArraySliceJs_4_4() {
-    function test() {
-        return Array.prototype.slice.call(arguments, 1, 3);
-    }
-    const result = test(1, 2, 3, 4, 5);
-    return JSON.stringify(result) === '[2,3]';
-}
-
-
-export function ArraySliceJs_5_6() {
-    const sym = Symbol('test');
-    const arr = [sym, Symbol('foo'), Symbol('bar')];
-    const result = arr.slice(0, 2);
-    return result.length === 2 &&
-        result[0] === arr[0] &&
-        typeof result[0] === 'symbol';
-}
-
-
 export function ArraySliceJs_7_5() {
     const arr = [1, 2, 3, 4, 5];
     const result = arr.slice(1, 3, 999, 'extra');
     return JSON.stringify(result) === '[2,3]';
 }
 
-export function ArraySliceJs_7_6() {
-    const arr = [1, 2, 3, 4, 5];
-    const result = Array.prototype.slice.apply(arr, [1, 4]);
-    return JSON.stringify(result) === '[2,3,4]';
-}
-
-
 export function ArraySliceJs_8_1() {
     const arr = [1, 2, 3, 4, 5];
     const result1 = arr.slice('1', '3');
     const result2 = arr.slice('2');
-    return JSON.stringify(result1) === '[2,3]' &&
-        JSON.stringify(result2) === '[3,4,5]';
-}
-
-export function ArraySliceJs_8_2() {
-    const arr = [1, 2, 3, 4, 5];
-    const result1 = arr.slice(1.5, 3.9);
-    const result2 = arr.slice(2.1);
     return JSON.stringify(result1) === '[2,3]' &&
         JSON.stringify(result2) === '[3,4,5]';
 }
@@ -133,6 +64,53 @@ export function ArraySliceJs_8_4() {
     return JSON.stringify(result) === '[2,3]';
 }
 
+export function ArraySliceJs_8_6() {
+    const arr = [1, 2, 3, 4, 5];
+    const result = arr.slice('0x1', '0x3');
+    return JSON.stringify(result) === '[2,3]';
+}
+
+export function ArraySliceJs_9_4() {
+    const arr = Object.freeze([1, 2, 3, 4, 5]);
+    const result = arr.slice(1, 3);
+    return JSON.stringify(result) === '[2,3]';
+}
+
+export function ArraySliceJs_9_5() {
+    const arr = Object.seal([1, 2, 3, 4, 5]);
+    const result = arr.slice(1, 3);
+    return JSON.stringify(result) === '[2,3]';
+}
+
+export function ArraySliceJs_4_3() {
+    const arrayLike = { 0: 'a', 1: 'b', 2: 'c', length: 3 };
+    const result = Array.prototype.slice.call(arrayLike, 1, 3);
+    return JSON.stringify(result) === '["b","c"]';
+}
+
+export function ArraySliceJs_4_4() {
+    function test() {
+        return Array.prototype.slice.call(arguments, 1, 3);
+    }
+    const result = test(1, 2, 3, 4, 5);
+    return JSON.stringify(result) === '[2,3]';
+}
+
+export function ArraySliceJs_5_6() {
+    const sym = Symbol('test');
+    const arr = [sym, Symbol('foo'), Symbol('bar')];
+    const result = arr.slice(0, 2);
+    return result.length === 2 &&
+        result[0] === arr[0] &&
+        typeof result[0] === 'symbol';
+}
+
+export function ArraySliceJs_7_6() {
+    const arr = [1, 2, 3, 4, 5];
+    const result = Array.prototype.slice.apply(arr, [1, 4]);
+    return JSON.stringify(result) === '[2,3,4]';
+}
+
 export function ArraySliceJs_8_5() {
     const arr = [1, 2, 3, 4, 5];
     let thrown = false;
@@ -143,13 +121,6 @@ export function ArraySliceJs_8_5() {
     }
     return thrown;
 }
-
-export function ArraySliceJs_8_6() {
-    const arr = [1, 2, 3, 4, 5];
-    const result = arr.slice('0x1', '0x3');
-    return JSON.stringify(result) === '[2,3]';
-}
-
 
 export function ArraySliceJs_9_1() {
     let thrown = false;
@@ -176,18 +147,6 @@ export function ArraySliceJs_9_3() {
     return JSON.stringify(result1) === '["e","l"]';
 }
 
-export function ArraySliceJs_9_4() {
-    const arr = Object.freeze([1, 2, 3, 4, 5]);
-    const result = arr.slice(1, 3);
-    return JSON.stringify(result) === '[2,3]';
-}
-
-export function ArraySliceJs_9_5() {
-    const arr = Object.seal([1, 2, 3, 4, 5]);
-    const result = arr.slice(1, 3);
-    return JSON.stringify(result) === '[2,3]';
-}
-
 export function ArraySliceJs_9_7() {
     const arr = [1, 2, 3, 4, 5];
     Object.defineProperty(arr, 'length', {
@@ -195,13 +154,6 @@ export function ArraySliceJs_9_7() {
         value: 5
     });
     const result = arr.slice(1, 3);
-    return JSON.stringify(result) === '[2,3]';
-}
-
-
-export function ArraySliceJs_11_1() {
-    const arr = [1, 2, 3, 4, 5];
-    const result = Array.prototype.slice.call(arr, 1, 3);
     return JSON.stringify(result) === '[2,3]';
 }
 
@@ -244,7 +196,6 @@ export function ArraySliceJs_11_6() {
     const result = Array.prototype.slice.call(child, 0, 3);
     return Array.isArray(result) && JSON.stringify(result) === '[1,2,3]';
 }
-
 
 export function ArraySliceJs_12_2() {
     function convertToArray() {

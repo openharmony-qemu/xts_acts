@@ -49,7 +49,8 @@ function toReversedCompat(receiver) {
   return result;
 }
 
-function runCasePart1(idx) {
+function runCase(id) {
+  const idx = id - 100;
   const cases = [
     () => { const a = [1, 2, 3]; const b = toReversedCompat(a); return b.join(',') === '3,2,1'; },
     () => { const a = [1, 2, 3]; const b = toReversedCompat(a); return a.join(',') === '1,2,3'; },
@@ -91,15 +92,6 @@ function runCasePart1(idx) {
     () => { const arr = [1,2,3]; const p = new Proxy(arr, {}); const b = toReversedCompat(p); return b.join(',') === '3,2,1'; },
     () => { const arr = [1,2,3]; const p = new Proxy(arr, { get(t,pn,r){ if (pn === '1') return 9; return Reflect.get(t,pn,r);} }); const b = toReversedCompat(p); return b.length === 3 && b[2] === 1 && (b[1] === 9 || b.join(',') === '3,9,1' || b.join(',') === '3,2,1'); },
     () => { const obj = { get 0(){return 'a';}, get 1(){return 'b';}, length:2 }; const b = toReversedCompat(obj); return b.join(',') === 'b,a'; },
-  ];
-  const fn = cases[idx];
-  if (!fn) return false;
-  return safeExec(fn);
-}
-
-function runCasePart2(idx) {
-  const localIdx = idx - 40;
-  const cases = [
     () => { const obj = { get 0(){ throw new Error('x'); }, length:1 }; try { toReversedCompat(obj); } catch (e) { return e instanceof Error; } return false; },
     () => { try { toReversedCompat(null); } catch (e) { return e instanceof TypeError; } return false; },
     () => { try { toReversedCompat(undefined); } catch (e) { return e instanceof TypeError; } return false; },
@@ -140,15 +132,6 @@ function runCasePart2(idx) {
     () => { const arr = [1,2,3]; const b = toReversedCompat(arr); b.copyWithin(1,0,1); return b.join(',') === '3,3,1'; },
     () => { const arr = [1,2,3,4]; const b = toReversedCompat(arr); return b.flatMap((x)=>[x]).join(',') === '4,3,2,1'; },
     () => { const arr = [[1],[2],[3]]; const b = toReversedCompat(arr); return b.flat().join(',') === '3,2,1'; },
-  ];
-  const fn = cases[localIdx];
-  if (!fn) return false;
-  return safeExec(fn);
-}
-
-function runCasePart3(idx) {
-  const localIdx = idx - 80;
-  const cases = [
     () => { const arr = [1,2,3]; const b = toReversedCompat(arr); return b.keys().next().value === 0; },
     () => { const arr = [1,2,3]; const b = toReversedCompat(arr); return b.values().next().value === 3; },
     () => { const arr = [1,2,3]; const b = toReversedCompat(arr); return b.entries().next().value[1] === 3; },
@@ -180,76 +163,16 @@ function runCasePart3(idx) {
     () => { const arr = [1,2,3]; const b = toReversedCompat(arr); return b[0] === 3 && b[2] === 1 && arr[0] === 1; },
     () => { const desc = Object.getOwnPropertyDescriptor(Array.prototype, 'toReversed'); return desc === undefined || typeof desc.value === 'function'; },
   ];
-  const fn = cases[localIdx];
-  if (!fn) return false;
+
+  const fn = cases[idx];
+  if (!fn) {
+    return false;
+  }
   return safeExec(fn);
-}
-
-function runCase(id) {
-  const idx = id - 100;
-  if (idx < 40) return runCasePart1(idx);
-  if (idx < 80) return runCasePart2(idx);
-  return runCasePart3(idx);
-}
-
-export function ToReversedJs_0100() {
-  return runCase(100);
-}
-
-export function ToReversedJs_0101() {
-  return runCase(101);
-}
-
-export function ToReversedJs_0102() {
-  return runCase(102);
-}
-
-export function ToReversedJs_0103() {
-  return runCase(103);
-}
-
-export function ToReversedJs_0104() {
-  return runCase(104);
-}
-
-export function ToReversedJs_0105() {
-  return runCase(105);
-}
-
-export function ToReversedJs_0106() {
-  return runCase(106);
-}
-
-export function ToReversedJs_0107() {
-  return runCase(107);
-}
-
-export function ToReversedJs_0108() {
-  return runCase(108);
-}
-
-export function ToReversedJs_0109() {
-  return runCase(109);
 }
 
 export function ToReversedJs_0110() {
   return runCase(110);
-}
-
-export function ToReversedJs_0111() {
-  return runCase(111);
-}
-
-export function ToReversedJs_0112() {
-  return runCase(112);
-}
-
-export function ToReversedJs_0113() {
-  return runCase(113);
-}
-
-export function ToReversedJs_0114() {
-  return runCase(114);
 }
 
 export function ToReversedJs_0115() {
@@ -262,10 +185,6 @@ export function ToReversedJs_0116() {
 
 export function ToReversedJs_0117() {
   return runCase(117);
-}
-
-export function ToReversedJs_0118() {
-  return runCase(118);
 }
 
 export function ToReversedJs_0119() {
@@ -284,32 +203,8 @@ export function ToReversedJs_0122() {
   return runCase(122);
 }
 
-export function ToReversedJs_0123() {
-  return runCase(123);
-}
-
-export function ToReversedJs_0124() {
-  return runCase(124);
-}
-
 export function ToReversedJs_0125() {
   return runCase(125);
-}
-
-export function ToReversedJs_0126() {
-  return runCase(126);
-}
-
-export function ToReversedJs_0127() {
-  return runCase(127);
-}
-
-export function ToReversedJs_0128() {
-  return runCase(128);
-}
-
-export function ToReversedJs_0129() {
-  return runCase(129);
 }
 
 export function ToReversedJs_0130() {
@@ -384,18 +279,6 @@ export function ToReversedJs_0147() {
   return runCase(147);
 }
 
-export function ToReversedJs_0148() {
-  return runCase(148);
-}
-
-export function ToReversedJs_0149() {
-  return runCase(149);
-}
-
-export function ToReversedJs_0150() {
-  return runCase(150);
-}
-
 export function ToReversedJs_0151() {
   return runCase(151);
 }
@@ -408,180 +291,20 @@ export function ToReversedJs_0153() {
   return runCase(153);
 }
 
-export function ToReversedJs_0154() {
-  return runCase(154);
-}
-
-export function ToReversedJs_0155() {
-  return runCase(155);
-}
-
 export function ToReversedJs_0156() {
   return runCase(156);
-}
-
-export function ToReversedJs_0157() {
-  return runCase(157);
-}
-
-export function ToReversedJs_0158() {
-  return runCase(158);
-}
-
-export function ToReversedJs_0159() {
-  return runCase(159);
-}
-
-export function ToReversedJs_0160() {
-  return runCase(160);
-}
-
-export function ToReversedJs_0161() {
-  return runCase(161);
-}
-
-export function ToReversedJs_0162() {
-  return runCase(162);
-}
-
-export function ToReversedJs_0163() {
-  return runCase(163);
-}
-
-export function ToReversedJs_0164() {
-  return runCase(164);
-}
-
-export function ToReversedJs_0165() {
-  return runCase(165);
-}
-
-export function ToReversedJs_0166() {
-  return runCase(166);
-}
-
-export function ToReversedJs_0167() {
-  return runCase(167);
-}
-
-export function ToReversedJs_0168() {
-  return runCase(168);
-}
-
-export function ToReversedJs_0169() {
-  return runCase(169);
-}
-
-export function ToReversedJs_0170() {
-  return runCase(170);
-}
-
-export function ToReversedJs_0171() {
-  return runCase(171);
-}
-
-export function ToReversedJs_0172() {
-  return runCase(172);
-}
-
-export function ToReversedJs_0173() {
-  return runCase(173);
-}
-
-export function ToReversedJs_0174() {
-  return runCase(174);
-}
-
-export function ToReversedJs_0175() {
-  return runCase(175);
-}
-
-export function ToReversedJs_0176() {
-  return runCase(176);
-}
-
-export function ToReversedJs_0177() {
-  return runCase(177);
-}
-
-export function ToReversedJs_0178() {
-  return runCase(178);
-}
-
-export function ToReversedJs_0179() {
-  return runCase(179);
-}
-
-export function ToReversedJs_0180() {
-  return runCase(180);
-}
-
-export function ToReversedJs_0181() {
-  return runCase(181);
-}
-
-export function ToReversedJs_0182() {
-  return runCase(182);
-}
-
-export function ToReversedJs_0183() {
-  return runCase(183);
 }
 
 export function ToReversedJs_0184() {
   return runCase(184);
 }
 
-export function ToReversedJs_0185() {
-  return runCase(185);
-}
-
 export function ToReversedJs_0186() {
   return runCase(186);
 }
 
-export function ToReversedJs_0187() {
-  return runCase(187);
-}
-
-export function ToReversedJs_0188() {
-  return runCase(188);
-}
-
-export function ToReversedJs_0189() {
-  return runCase(189);
-}
-
-export function ToReversedJs_0190() {
-  return runCase(190);
-}
-
-export function ToReversedJs_0191() {
-  return runCase(191);
-}
-
 export function ToReversedJs_0192() {
   return runCase(192);
-}
-
-export function ToReversedJs_0193() {
-  return runCase(193);
-}
-
-export function ToReversedJs_0194() {
-  return runCase(194);
-}
-
-export function ToReversedJs_0195() {
-  return runCase(195);
-}
-
-export function ToReversedJs_0196() {
-  return runCase(196);
-}
-
-export function ToReversedJs_0197() {
-  return runCase(197);
 }
 
 export function ToReversedJs_0198() {

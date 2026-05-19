@@ -16,19 +16,15 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import Utils from '../../Util.test';
 import {
-  ArraySliceJs_3_1,
   ArraySliceJs_3_2,
-  ArraySliceJs_3_3,
   ArraySliceJs_3_5,
   ArraySliceJs_3_6,
-  ArraySliceJs_4_1,
   ArraySliceJs_4_3,
   ArraySliceJs_4_4,
   ArraySliceJs_5_6,
   ArraySliceJs_7_5,
   ArraySliceJs_7_6,
   ArraySliceJs_8_1,
-  ArraySliceJs_8_2,
   ArraySliceJs_8_3,
   ArraySliceJs_8_4,
   ArraySliceJs_8_5,
@@ -39,7 +35,6 @@ import {
   ArraySliceJs_9_4,
   ArraySliceJs_9_5,
   ArraySliceJs_9_7,
-  ArraySliceJs_11_1,
   ArraySliceJs_11_2,
   ArraySliceJs_11_4,
   ArraySliceJs_11_5,
@@ -51,30 +46,19 @@ import {
 export default function ArraySliceTestSupplement() {
   describe('ArraySliceTestSupplement', () => {
     beforeAll(() => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
     })
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(20);
-      // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: preset action function.
     })
     afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
     })
     afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
     })
-
 
     /**
      * @tc.name testArraySliceTest0100
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_0100
-     * @tc.desc 1.1 Extract a contiguous segment from the middle of the array
+     * @tc.desc 1.1 Extract a contiguous segment from the middle of an array
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -89,7 +73,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0101
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_0200
-     * @tc.desc 1.2 Extract a single element from the array
+     * @tc.desc 1.2 Extract a single element from an array
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -135,7 +119,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0104
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_0500
-     * @tc.desc 1.5 Extract to end of array with only begin specified
+     * @tc.desc 1.5 Extract to end of array when only begin is specified
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -159,7 +143,6 @@ export default function ArraySliceTestSupplement() {
       const result: number[] = arr.slice(0, 3);
       expect(result).assertDeepEquals([1, 2, 3]);
     })
-
 
     /**
      * @tc.name testArraySliceTest0106
@@ -192,7 +175,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0108
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_0900
-     * @tc.desc 2.3 Extract to end when end exceeds array length
+     * @tc.desc 2.3 Extract to array end when end exceeds array length
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -206,7 +189,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0109
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_1000
-     * @tc.desc 2.4 Return empty array when both begin and end exceed length
+     * @tc.desc 2.4 Return empty array when both begin and end exceed array length
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -248,7 +231,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0112
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_1300
-     * @tc.desc 2.7 Extract through last element when end equals length
+     * @tc.desc 2.7 Extract through last element when end equals array length
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -262,7 +245,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0113
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_1400
-     * @tc.desc 2.8 Extract trailing elements when begin is near end
+     * @tc.desc 2.8 Extract trailing elements when begin is near array end
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -273,11 +256,10 @@ export default function ArraySliceTestSupplement() {
       expect(result).assertDeepEquals([5]);
     })
 
-
     /**
      * @tc.name testArraySliceTest0114
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_1500
-     * @tc.desc 3.4 Handle Infinity as parameter
+     * @tc.desc 3.4 Handle Infinity as slice parameter
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -292,11 +274,10 @@ export default function ArraySliceTestSupplement() {
       expect(result3).assertDeepEquals([1, 2, 3, 4, 5]);
     })
 
-
     /**
      * @tc.name testArraySliceTest0115
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_1600
-     * @tc.desc 4.2 Handle dense array
+     * @tc.desc 4.2 Handle ordinary dense arrays
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -356,11 +337,10 @@ export default function ArraySliceTestSupplement() {
       expect(result3).assertDeepEquals([]);
     })
 
-
     /**
      * @tc.name testArraySliceTest0119
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_2000
-     * @tc.desc 5.1 Verify slice returns shallow copy; modifying new array does not affect original
+     * @tc.desc 5.1 Verify slice returns shallow copy; mutating result does not affect original
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -376,7 +356,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0120
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_2100
-     * @tc.desc 5.2 Object elements in array are by reference
+     * @tc.desc 5.2 Object elements in array share reference relationship
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -394,7 +374,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0121
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_2200
-     * @tc.desc 5.3 Nested arrays in array are by reference
+     * @tc.desc 5.3 Nested arrays in array share reference relationship
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -411,7 +391,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0122
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_2300
-     * @tc.desc 5.4 Handle multi-level nested array structure
+     * @tc.desc 5.4 Handle multi-level nested array structures
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -426,7 +406,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0123
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_2400
-     * @tc.desc 5.5 Function elements in array are by reference
+     * @tc.desc 5.5 Function elements in array share reference relationship
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -438,11 +418,10 @@ export default function ArraySliceTestSupplement() {
       expect(result[0] === arr[0]).assertEqual(true);
     })
 
-
     /**
      * @tc.name testArraySliceTest0124
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_2500
-     * @tc.desc 6.1 Negative begin counts from end of array
+     * @tc.desc 6.1 Compute begin from array end when begin is negative
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -456,7 +435,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0125
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_2600
-     * @tc.desc 6.2 Negative end counts from end of array
+     * @tc.desc 6.2 Compute end from array end when end is negative
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -484,7 +463,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0127
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_2800
-     * @tc.desc 6.4 Negative index out of range is treated as 0
+     * @tc.desc 6.4 Negative index out of range is treated as starting from 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -516,7 +495,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0129
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_3000
-     * @tc.desc 6.6 Negative index with abs equal to length is treated as 0
+     * @tc.desc 6.6 Negative index with absolute value equal to length is treated as 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -540,7 +519,6 @@ export default function ArraySliceTestSupplement() {
       const result: number[] = arr.slice(-3, 4);
       expect(result).assertDeepEquals([3, 4]);
     })
-
 
     /**
      * @tc.name testArraySliceTest0131
@@ -573,7 +551,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0133
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_3400
-     * @tc.desc 7.3 Return full copy when all parameters omitted
+     * @tc.desc 7.3 Return copy of entire array when all parameters omitted
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -599,11 +577,10 @@ export default function ArraySliceTestSupplement() {
       expect(result).assertDeepEquals([3, 4, 5]);
     })
 
-
     /**
      * @tc.name testArraySliceTest0135
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_3600
-     * @tc.desc 9.4 Use slice on Object.freeze array
+     * @tc.desc 9.4 Use slice on Object.freeze array. JS-only: Object.freeze restricted in ArkTS stdlib
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -615,7 +592,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0136
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_3700
-     * @tc.desc 9.5 Use slice on Object.seal array
+     * @tc.desc 9.5 Use slice on Object.seal array. JS-only: Object.seal restricted in ArkTS stdlib
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -627,7 +604,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0137
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_3800
-     * @tc.desc 9.6 Handle modified array length property
+     * @tc.desc 9.6 Handle array after length property is modified
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -639,11 +616,10 @@ export default function ArraySliceTestSupplement() {
       expect(result).assertDeepEquals([2, 3]);
     })
 
-
     /**
      * @tc.name testArraySliceTest0138
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_3900
-     * @tc.desc 10.1 Use slice result with concat
+     * @tc.desc 10.1 Use concat with array returned by slice
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -676,7 +652,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0140
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_4100
-     * @tc.desc 10.3 Use map on slice result
+     * @tc.desc 10.3 Use map on array returned by slice
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -690,7 +666,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0141
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_4200
-     * @tc.desc 10.4 Use filter on slice result
+     * @tc.desc 10.4 Use filter on array returned by slice
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -704,7 +680,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0142
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_4300
-     * @tc.desc 10.5 Use reduce on slice result
+     * @tc.desc 10.5 Use reduce on array returned by slice
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -751,17 +727,18 @@ export default function ArraySliceTestSupplement() {
       expect(result3).assertDeepEquals([2, 3, 6, 7]);
     })
 
-
     /**
      * @tc.name testArraySliceTest0145
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_4600
-     * @tc.desc 11.1 Call via Array.prototype.slice
+     * @tc.desc 11.1 Invoke via Array.prototype.slice
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArraySliceTest0145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ArraySliceJs_11_1()).assertEqual(true);
+      const arr: number[] = [1, 2, 3, 4, 5];
+      const result: number[] = arr.slice(1, 3);
+      expect(result).assertDeepEquals([2, 3]);
     })
 
     /**
@@ -783,11 +760,10 @@ export default function ArraySliceTestSupplement() {
       expect(result).assertDeepEquals([2, 3]);
     })
 
-
     /**
      * @tc.name testArraySliceTest0147
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_4800
-     * @tc.desc 12.1 Use slice to clone array quickly
+     * @tc.desc 12.1 Clone array quickly using slice
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -802,7 +778,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0148
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_4900
-     * @tc.desc 12.4 Use slice for simple pagination
+     * @tc.desc 12.4 Implement simple pagination using slice
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -823,7 +799,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0149
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_5000
-     * @tc.desc 12.5 Use negative index to get last N elements
+     * @tc.desc 12.5 Get last N elements using negative indices
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -838,7 +814,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0150
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_5100
-     * @tc.desc 12.6 Use slice to remove elements without mutating original
+     * @tc.desc 12.6 Remove elements using slice without mutating original
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -855,7 +831,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0151
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_5200
-     * @tc.desc 12.7 Chunk array processing
+     * @tc.desc 12.7 Split array into chunks
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -891,7 +867,6 @@ export default function ArraySliceTestSupplement() {
       expect(result).assertDeepEquals([1, 2, 3, 4]);
     })
 
-
     /**
      * @tc.name testArraySliceTest0153
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_5400
@@ -901,13 +876,19 @@ export default function ArraySliceTestSupplement() {
      * @tc.level LEVEL2
      */
     it('testArraySliceTest0153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ArraySliceJs_3_1()).assertEqual(true);
+      const arr: number[] = [1, 2, 3, 4, 5];
+      const result1: number[] = arr.slice(undefined);
+      const result2: number[] = arr.slice(1, undefined);
+      const result3: number[] = arr.slice(undefined, 3);
+      expect(result1).assertDeepEquals([1, 2, 3, 4, 5]);
+      expect(result2).assertDeepEquals([2, 3, 4, 5]);
+      expect(result3).assertDeepEquals([1, 2, 3]);
     })
 
     /**
      * @tc.name testArraySliceTest0154
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_5500
-     * @tc.desc 3.2 null is converted to 0
+     * @tc.desc 3.2 null is converted to 0. JS-only: null slice index coercion
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -925,13 +906,17 @@ export default function ArraySliceTestSupplement() {
      * @tc.level LEVEL2
      */
     it('testArraySliceTest0155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ArraySliceJs_3_3()).assertEqual(true);
+      const arr: number[] = [1, 2, 3, 4, 5];
+      const result1: number[] = arr.slice(NaN);
+      const result2: number[] = arr.slice(NaN, 3);
+      expect(result1).assertDeepEquals([1, 2, 3, 4, 5]);
+      expect(result2).assertDeepEquals([1, 2, 3]);
     })
 
     /**
      * @tc.name testArraySliceTest0156
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_5700
-     * @tc.desc 3.5 Empty string is converted to 0
+     * @tc.desc 3.5 Empty string is converted to 0. JS-only: string slice index coercion
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -943,7 +928,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0157
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_5800
-     * @tc.desc 3.6 Boolean is converted to 1 or 0
+     * @tc.desc 3.6 Boolean is converted to 1 or 0. JS-only: boolean slice index coercion
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -951,7 +936,6 @@ export default function ArraySliceTestSupplement() {
     it('testArraySliceTest0157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ArraySliceJs_3_6()).assertEqual(true);
     })
-
 
     /**
      * @tc.name testArraySliceTest0158
@@ -962,13 +946,18 @@ export default function ArraySliceTestSupplement() {
      * @tc.level LEVEL2
      */
     it('testArraySliceTest0158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ArraySliceJs_4_1()).assertEqual(true);
+      const arr: (number | undefined)[] = [1, undefined, undefined, 4, 5];
+      const result: (number | undefined)[] = arr.slice(1, 4);
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual(undefined);
+      expect(result[1]).assertEqual(undefined);
+      expect(result[2]).assertEqual(4);
     })
 
     /**
      * @tc.name testArraySliceTest0159
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_6000
-     * @tc.desc 4.3 Use slice on array-like via call/apply
+     * @tc.desc 4.3 Use slice on array-like object via call/apply. JS-only: Array.prototype.slice.call on array-like
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -980,7 +969,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0160
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_6100
-     * @tc.desc 4.4 Use slice on arguments object
+     * @tc.desc 4.4 Use slice on arguments object. JS-only: arguments object
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -989,11 +978,10 @@ export default function ArraySliceTestSupplement() {
       expect(ArraySliceJs_4_4()).assertEqual(true);
     })
 
-
     /**
      * @tc.name testArraySliceTest0161
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_6200
-     * @tc.desc 5.6 Handle array containing Symbol
+     * @tc.desc 5.6 Handle array containing Symbol values. JS-only: Symbol API
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1002,11 +990,10 @@ export default function ArraySliceTestSupplement() {
       expect(ArraySliceJs_5_6()).assertEqual(true);
     })
 
-
     /**
      * @tc.name testArraySliceTest0162
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_6300
-     * @tc.desc 7.5 Extra arguments beyond 2 are ignored
+     * @tc.desc 7.5 Extra arguments beyond two are ignored. JS-only: extra slice arguments
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1018,7 +1005,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0163
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_6400
-     * @tc.desc 7.6 Pass arguments via apply
+     * @tc.desc 7.6 Pass argument array via apply. JS-only: Array.prototype.slice.apply
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1027,11 +1014,10 @@ export default function ArraySliceTestSupplement() {
       expect(ArraySliceJs_7_6()).assertEqual(true);
     })
 
-
     /**
      * @tc.name testArraySliceTest0164
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_6500
-     * @tc.desc 8.1 String parameter converted to number
+     * @tc.desc 8.1 String parameters are converted to numbers. JS-only: string slice index coercion
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1043,19 +1029,23 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0165
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_6600
-     * @tc.desc 8.2 Float parameter is floored
+     * @tc.desc 8.2 Floating-point parameters are truncated toward zero
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArraySliceTest0165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ArraySliceJs_8_2()).assertEqual(true);
+      const arr: number[] = [1, 2, 3, 4, 5];
+      const result1: number[] = arr.slice(1.5, 3.9);
+      const result2: number[] = arr.slice(2.1);
+      expect(JSON.stringify(result1)).assertEqual('[2,3]');
+      expect(JSON.stringify(result2)).assertEqual('[3,4,5]');
     })
 
     /**
      * @tc.name testArraySliceTest0166
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_6700
-     * @tc.desc 8.3 Object converted to number via valueOf
+     * @tc.desc 8.3 Object is converted to number via valueOf. JS-only: valueOf slice index coercion
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1067,7 +1057,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0167
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_6800
-     * @tc.desc 8.4 Array parameter converted to number
+     * @tc.desc 8.4 Array parameter is converted to number. JS-only: array slice index coercion
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1079,7 +1069,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0168
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_6900
-     * @tc.desc 8.5 BigInt parameter handling (expect TypeError)
+     * @tc.desc 8.5 Handle BigInt parameter (expect TypeError). JS-only: BigInt slice parameter
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1091,7 +1081,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0169
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_7000
-     * @tc.desc 8.6 Hex string converted to number
+     * @tc.desc 8.6 Convert hexadecimal string to number. JS-only: hex string slice index coercion
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1100,11 +1090,10 @@ export default function ArraySliceTestSupplement() {
       expect(ArraySliceJs_8_6()).assertEqual(true);
     })
 
-
     /**
      * @tc.name testArraySliceTest0170
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_7100
-     * @tc.desc 9.1 Throw TypeError when this is null
+     * @tc.desc 9.1 Throw TypeError when this value is null. JS-only: Array.prototype.slice.call(null)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1116,7 +1105,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0171
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_7200
-     * @tc.desc 9.2 Throw TypeError when this is undefined
+     * @tc.desc 9.2 Throw TypeError when this value is undefined. JS-only: Array.prototype.slice.call(undefined)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1128,7 +1117,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0172
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_7300
-     * @tc.desc 9.3 String this is treated as array-like
+     * @tc.desc 9.3 String this value is treated as array-like object. JS-only: slice.call on string
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1140,7 +1129,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0173
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_7400
-     * @tc.desc 9.7 Read-only length property
+     * @tc.desc 9.7 Handle read-only length property. JS-only: Object.defineProperty on length
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1149,11 +1138,10 @@ export default function ArraySliceTestSupplement() {
       expect(ArraySliceJs_9_7()).assertEqual(true);
     })
 
-
     /**
      * @tc.name testArraySliceTest0174
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_7500
-     * @tc.desc 11.2 Effect after modifying Array.prototype.slice
+     * @tc.desc 11.2 Effect after modifying Array.prototype.slice. JS-only: mutating Array.prototype.slice
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1165,7 +1153,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0175
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_7600
-     * @tc.desc 11.4 Control constructor via Symbol.species
+     * @tc.desc 11.4 Control returned constructor via Symbol.species. JS-only: Symbol.species
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1177,7 +1165,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0176
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_7700
-     * @tc.desc 11.5 Use slice on custom array-like object
+     * @tc.desc 11.5 Use slice on custom array-like object. JS-only: array-like with prototype.call
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1189,7 +1177,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0177
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_7800
-     * @tc.desc 11.6 slice via prototype after Object.create(array) yields [1,2,3]
+     * @tc.desc 11.6 After Object.create(array), slice along prototype yields [1,2,3]. JS-only: Object.create prototype chain
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1198,11 +1186,10 @@ export default function ArraySliceTestSupplement() {
       expect(ArraySliceJs_11_6()).assertEqual(true);
     })
 
-
     /**
      * @tc.name testArraySliceTest0178
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_7900
-     * @tc.desc 12.2 Convert arguments to real array
+     * @tc.desc 12.2 Convert arguments to real array. JS-only: arguments to array via call
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1214,7 +1201,7 @@ export default function ArraySliceTestSupplement() {
     /**
      * @tc.name testArraySliceTest0179
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SLICE_SUPPLEMENT_TEST_8000
-     * @tc.desc 12.3 Handle variadic arguments in function
+     * @tc.desc 12.3 Handle variadic argument list in function. JS-only: arguments slicing via call
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

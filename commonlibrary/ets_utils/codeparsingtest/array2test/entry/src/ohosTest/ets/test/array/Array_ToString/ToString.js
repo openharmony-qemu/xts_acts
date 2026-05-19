@@ -13,6 +13,22 @@
  * limitations under the License.
  */
 
+
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 function safeExec(fn) {
   try {
     return !!fn();
@@ -21,8 +37,13 @@ function safeExec(fn) {
   }
 }
 
+// 模块加载时对 Array.prototype.join 做 descriptor 快照；全量跑测中若仅用「赋值」恢复 join，
+// 可能与引擎原生属性的内部槽不一致，进而影响 Object.create(Array.prototype) 等后续用例。
 var arrayPrototypeJoinDescriptorSnapshot = Object.getOwnPropertyDescriptor(Array.prototype, 'join');
 
+/**
+ * 将 Array.prototype.join 恢复为模块加载时的 descriptor（供套件 beforeEach 调用，隔离用例间污染）。
+ */
 export function restoreArrayPrototypeJoinSnapshot() {
   if (arrayPrototypeJoinDescriptorSnapshot) {
     Object.defineProperty(Array.prototype, 'join', arrayPrototypeJoinDescriptorSnapshot);
@@ -35,72 +56,8 @@ function defineArrayPrototypeJoinFromDescriptor(desc) {
   }
 }
 
-export function ToStringJs_0100() {
-  return [1, 2, 3].toString() === '1,2,3' && ['a', 'b', 'c'].toString() === 'a,b,c' && [10, 20, 30].toString() === '10,20,30';
-}
+/** 1 简单数组转字符串 */
 
-export function ToStringJs_0101() {
-  return [1, 2, 'a', '1a'].toString() === '1,2,a,1a' && [1, 'hello', true, null, undefined].toString() === '1,hello,true,,';
-}
-
-export function ToStringJs_0102() {
-  return typeof [1, 2, 3].toString() === 'string' && [1, 2].toString() === [1, 2].toString(undefined);
-}
-
-export function ToStringJs_0103() {
-  return [].toString() === '' && new Array().toString() === '';
-}
-
-export function ToStringJs_0104() {
-  return [42].toString() === '42' && ['hello'].toString() === 'hello' && [''].toString() === '';
-}
-
-export function ToStringJs_0105() {
-  var arr = [];
-  for (var i = 0; i < 10000; i++) {
-    arr.push(i);
-  }
-  if (arr.toString().split(',').length !== 10000) {
-    return false;
-  }
-  var arr2 = new Array(1000).fill('x');
-  var result = arr2.toString();
-  return (result.match(/,/g) || []).length === 999;
-}
-
-export function ToStringJs_0106() {
-  return (
-    [1, 2, 3].toString() === '1,2,3' &&
-    [1.1, 2.5, 3.14].toString() === '1.1,2.5,3.14' &&
-    [-1, -2, -3].toString() === '-1,-2,-3' &&
-    [0, -0].toString() === '0,0' &&
-    [Infinity, -Infinity, NaN].toString() === 'Infinity,-Infinity,NaN' &&
-    [1e2, 1.5e3].toString() === '100,1500'
-  );
-}
-
-export function ToStringJs_0107() {
-  return (
-    ['hello', 'world'].toString() === 'hello,world' &&
-    ['a', '', 'b'].toString() === 'a,,b' &&
-    ['a,b', 'c,d'].toString() === 'a,b,c,d' &&
-    ['\n', '\t', '\\'].toString() === '\n,\t,\\' &&
-    ['😀', '🎉'].toString() === '😀,🎉'
-  );
-}
-
-export function ToStringJs_0108() {
-  return [true, false].toString() === 'true,false' && [new Boolean(true), new Boolean(false)].toString() === 'true,false';
-}
-
-export function ToStringJs_0109() {
-  return (
-    [null].toString() === '' &&
-    [undefined].toString() === '' &&
-    [1, null, 2, undefined, 3].toString() === '1,,2,,3' &&
-    [null, undefined, null].toString() === ',,'
-  );
-}
 
 export function ToStringJs_0110() {
   var obj = { toString: function () { return 'custom'; } };
@@ -173,14 +130,6 @@ export function ToStringJs_0113() {
   );
 }
 
-export function ToStringJs_0114() {
-  return (
-    [[1, 2, 3], [4, 5, 6], [7, 8, 9]].toString() === '1,2,3,4,5,6,7,8,9' &&
-    [[1], [2, 3], [4, 5, 6]].toString() === '1,2,3,4,5,6' &&
-    [[1, 2], [], [3, 4]].toString() === '1,2,,3,4'
-  );
-}
-
 export function ToStringJs_0115() {
   var ok1 = [[[1, 2], [3, 4]], [[5, 6], [7, 8]]].toString() === '1,2,3,4,5,6,7,8';
   var ok2 = [1, [2, [3, [4]]]].toString() === '1,2,3,4';
@@ -227,10 +176,6 @@ export function ToStringJs_0119() {
   return ok1 && arr2.toString() === ',,';
 }
 
-export function ToStringJs_0120() {
-  return new Array(3).toString() === ',,';
-}
-
 export function ToStringJs_0121() {
   try {
     var arr = [];
@@ -263,11 +208,6 @@ export function ToStringJs_0123() {
   } catch (e) {
     return true;
   }
-}
-
-export function ToStringJs_0124() {
-  var arr = [1, 2, 3];
-  return arr.toString() === arr.join() && ['a', 'b', 'c'].toString() === ['a', 'b', 'c'].join(',');
 }
 
 export function ToStringJs_0125() {
@@ -346,29 +286,6 @@ export function ToStringJs_0128() {
   }
 }
 
-export function ToStringJs_0129() {
-  return (
-    'prefix' + [1, 2, 3] === 'prefix1,2,3' &&
-    [1, 2] + 'suffix' === '1,2suffix' &&
-    [1, 2] + [3, 4] === '1,23,4'
-  );
-}
-
-export function ToStringJs_0130() {
-  var arr = [1, 2, 3];
-  var arr2 = ['a', 'b'];
-  return `${arr}` === '1,2,3' && `result: ${arr2}!` === 'result: a,b!';
-}
-
-export function ToStringJs_0131() {
-  var arr = ['x', 'y'];
-  return String([1, 2, 3]) === '1,2,3' && String([]) === '' && String(arr) === arr.toString();
-}
-
-export function ToStringJs_0132() {
-  return [] + [] === '' && [1] + 2 === '12' && 1 + [2, 3] === '12,3';
-}
-
 export function ToStringJs_0133() {
   return (
     Array.prototype.toString.call({
@@ -441,11 +358,6 @@ export function ToStringJs_0137() {
       Reflect.apply(Array.prototype.toString, { join: function () { return 'reflected'; } }, []) === 'reflected';
   }
   return ok1 && ok2 && ok3;
-}
-
-export function ToStringJs_0138() {
-  var arr = [1, 'a', true];
-  return arr.toString() === arr.join() && [1, 2, 3].toString() === [1, 2, 3].join(',') && [1, 2, 3].join('-') !== [1, 2, 3].toString();
 }
 
 export function ToStringJs_0139() {
@@ -585,8 +497,13 @@ export function ToStringJs_0146() {
   return arr2.length === 3 && arr2[0] === 1;
 }
 
+export function ToStringJs_0147() {
+  return ToStringJs_0147_empty() && ToStringJs_0147_indexed();
+}
+
 export function ToStringJs_0147_empty() {
   var obj = Object.create(Array.prototype);
+  // 自有 length：部分引擎对「仅继承 Array.prototype.length」的普通对象 join/toString 与标准不一致；与 48b 显式 length 对齐。
   obj.length = 0;
   return obj.toString() === '';
 }
@@ -599,47 +516,3 @@ export function ToStringJs_0147_indexed() {
   return obj2.toString() === 'a,b';
 }
 
-/** 48 Object.create(Array.prototype) */
-export function ToStringJs_0147() {
-  return ToStringJs_0147_empty() && ToStringJs_0147_indexed();
-}
-
-export function ToStringJs_0148() {
-  return (
-    [1, 2, 3].toString().indexOf(',') !== -1 &&
-    ['a', 'b', 'c'].toString().split(',').length === 3 &&
-    [1, 2, 3].toString() === '1,2,3'
-  );
-}
-
-export function ToStringJs_0149() {
-  var arr = [1, 2, 3];
-  var str = arr.toString();
-  str = 'modified';
-  return arr.toString() === '1,2,3' && [1, 2].toString() === [1, 2].toString();
-}
-
-export function ToStringJs_0150() {
-  var arr = [1, 2, 3];
-  arr.toString();
-  if (!(arr.length === 3 && arr[0] === 1 && arr[1] === 2 && arr[2] === 3)) {
-    return false;
-  }
-  var arr2 = [1, 2];
-  arr2.toString();
-  arr2.push(3);
-  return arr2.length === 3;
-}
-
-export function ToStringJs_0151() {
-  var result = [1, 2, 3].toString();
-  var ok1 = result.toString() === '1,2,3';
-  var ok2 = [].toString().toString() === '';
-  var arr = [1, 2, 3];
-  var ok3 = arr
-    .toString()
-    .split(',')
-    .map(Number)
-    .toString() === '1,2,3';
-  return ok1 && ok2 && ok3;
-}

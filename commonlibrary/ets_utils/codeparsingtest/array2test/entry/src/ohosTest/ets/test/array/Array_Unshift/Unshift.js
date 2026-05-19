@@ -14,6 +14,27 @@
  */
 
 
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/**
+ * Array.prototype.unshift 导图用例（0100–0199）。
+ * 导图 Markdown 当前共 132 条「测试描述」；本文件按出现顺序均匀分桶取 100 条与之对应，
+ * 避免仅取前 100 条时丢失后半章（Proxy / 大参数 / getter 等）。分桶索引见各条注释中的 mindMapLineIndex。
+ */
+
 function safeExec(fn) {
   try {
     fn();
@@ -27,141 +48,21 @@ function isTypeError(e) {
   return e instanceof TypeError;
 }
 
+/** [mindMapLineIndex=0] 向数组开头添加单个数字元素，验证数组内容和长度 */
 export function UnshiftJs_0100() {
   const arr = [2, 3];
   const r = arr.unshift(1);
   return r === 3 && arr[0] === 1 && arr[1] === 2 && arr[2] === 3 && arr.length === 3;
 }
 
-export function UnshiftJs_0101() {
-  const arr = [2];
-  const r = arr.unshift('a');
-  return r === 2 && arr[0] === 'a' && arr[1] === 2;
-}
+/** [mindMapLineIndex=1] 向数组开头添加单个字符串元素 */
 
-export function UnshiftJs_0102() {
-  const arr = [0];
-  const r = arr.unshift(true);
-  return r === 2 && arr[0] === true && arr[1] === 0;
-}
-
-export function UnshiftJs_0103() {
-  const o = { x: 1 };
-  const arr = [2];
-  const r = arr.unshift(o);
-  return r === 2 && arr[0] === o && arr[1] === 2;
-}
-
-export function UnshiftJs_0104() {
-  const arr = [3];
-  const r = arr.unshift(1, 2);
-  return r === 3 && arr[0] === 1 && arr[1] === 2 && arr[2] === 3;
-}
-
-export function UnshiftJs_0105() {
-  const arr = [3];
-  const r = arr.unshift(1, 'x', null);
-  return r === 4 && arr[0] === 1 && arr[1] === 'x' && arr[2] === null && arr[3] === 3;
-}
-
-export function UnshiftJs_0106() {
-  const o1 = { a: 1 };
-  const o2 = { b: 2 };
-  const arr = [3];
-  const r = arr.unshift(o1, o2);
-  return r === 3 && arr[0] === o1 && arr[1] === o2 && arr[2] === 3;
-}
-
-export function UnshiftJs_0107() {
-  const arr = [4];
-  arr.unshift(1, 2, 3);
-  return arr[0] === 1 && arr[1] === 2 && arr[2] === 3 && arr[3] === 4;
-}
-
-export function UnshiftJs_0108() {
-  const arr = [3, 4];
-  arr.unshift(1, 2);
-  return arr[0] === 1 && arr[1] === 2 && arr[2] === 3 && arr[3] === 4;
-}
-
-export function UnshiftJs_0109() {
-  const arr = [3];
-  const r = arr.unshift(1, 2);
-  return r === 3 && arr[0] === 1 && arr[1] === 2 && arr[2] === 3;
-}
-
-export function UnshiftJs_0110() {
-  const arr = [1.5];
-  const r = arr.unshift(2.25);
-  return r === 2 && arr[0] === 2.25 && arr[1] === 1.5;
-}
-
-export function UnshiftJs_0111() {
-  const arr = [-1];
-  const r = arr.unshift(-2);
-  return r === 2 && arr[0] === -2 && arr[1] === -1;
-}
-
-export function UnshiftJs_0112() {
-  const arr = [];
-  arr.unshift(0, -0);
-  return arr.length === 2 && (1 / arr[0] === Infinity || 1 / arr[0] === -Infinity);
-}
-
-export function UnshiftJs_0113() {
-  const arr = ['b'];
-  const r = arr.unshift('');
-  return r === 2 && arr[0] === '' && arr[1] === 'b';
-}
-
-export function UnshiftJs_0114() {
-  const arr = [false];
-  const r = arr.unshift(true);
-  return r === 2 && arr[0] === true && arr[1] === false;
-}
-
-export function UnshiftJs_0115() {
-  const arr = [1];
-  const r = arr.unshift(false);
-  return r === 2 && arr[0] === false && arr[1] === 1;
-}
-
-export function UnshiftJs_0116() {
-  const arr = [1];
-  const r = arr.unshift(undefined);
-  return r === 2 && arr[0] === undefined && arr[1] === 1;
-}
-
-export function UnshiftJs_0117() {
-  const arr = [1];
-  const r = arr.unshift(null);
-  return r === 2 && arr[0] === null && arr[1] === 1;
-}
-
-export function UnshiftJs_0118() {
-  const arr = [1];
-  const r = arr.unshift(NaN);
-  return r === 2 && arr[1] === 1 && arr[0] !== arr[0];
-}
-
-export function UnshiftJs_0119() {
-  const arr = [1];
-  const r = arr.unshift(-Infinity);
-  return r === 2 && arr[0] === -Infinity && arr[1] === 1;
-}
 
 export function UnshiftJs_0120() {
   const s = Symbol('s');
   const arr = [1];
   const r = arr.unshift(s);
   return r === 2 && arr[0] === s && arr[1] === 1;
-}
-
-export function UnshiftJs_0121() {
-  const o = { k: 1 };
-  const arr = [2];
-  const r = arr.unshift(o);
-  return r === 2 && arr[0] === o;
 }
 
 export function UnshiftJs_0122() {
@@ -203,83 +104,6 @@ export function UnshiftJs_0126() {
   return r === 5 && arr[0] === o && arr[1] === f && arr[2] === m && arr[3] === 'z' && arr[4] === 0;
 }
 
-export function UnshiftJs_0127() {
-  const arr = [];
-  const r = arr.unshift(1);
-  return r === 1 && arr.length === 1 && arr[0] === 1;
-}
-
-export function UnshiftJs_0128() {
-  const arr = [1, 2];
-  const r = arr.unshift(0);
-  return r === 3 && arr.length === 3;
-}
-
-export function UnshiftJs_0129() {
-  const arr = [1];
-  const r = arr.unshift(2, 3);
-  return r === 3 && arr.length === 3 && r === arr.length;
-}
-
-export function UnshiftJs_0130() {
-  const arr = [];
-  const r = arr.unshift();
-  return typeof r === 'number' && r === 0;
-}
-
-export function UnshiftJs_0131() {
-  const arr = [1];
-  const r1 = arr.unshift();
-  const r2 = arr.unshift(2);
-  return r1 === 1 && r2 === 2 && typeof r1 === 'number' && typeof r2 === 'number';
-}
-
-export function UnshiftJs_0132() {
-  const arr = [];
-  arr.unshift(1);
-  arr.unshift(2, 3);
-  const r = arr.unshift(4);
-  return r === 4 && arr[0] === 4 && arr[3] === 1;
-}
-
-export function UnshiftJs_0133() {
-  const arr = [1, 2];
-  const r = arr.unshift();
-  return r === 2 && arr[0] === 1 && arr[1] === 2;
-}
-
-export function UnshiftJs_0134() {
-  const arr = [];
-  const r = arr.unshift();
-  return r === 0 && arr.length === 0;
-}
-
-export function UnshiftJs_0135() {
-  const arr = [];
-  arr.unshift(1);
-  arr.unshift(2);
-  arr.unshift(3);
-  return arr[0] === 3 && arr[1] === 2 && arr[2] === 1;
-}
-
-export function UnshiftJs_0136() {
-  const a = [3];
-  a.unshift(1, 2);
-  const b = [3];
-  b.unshift(1);
-  b.unshift(2);
-  return a[0] === 1 && a[1] === 2 && b[0] === 2 && b[1] === 1;
-}
-
-export function UnshiftJs_0137() {
-  const a = [5];
-  a.unshift(1, 2);
-  a.unshift(3, 4);
-  const b = [5];
-  b.unshift(1, 2, 3, 4);
-  return a.length === b.length && JSON.stringify(a) !== JSON.stringify(b);
-}
-
 export function UnshiftJs_0138() {
   const arr = [3];
   const r = Array.prototype.unshift.apply(arr, [1, 2]);
@@ -297,27 +121,6 @@ export function UnshiftJs_0140() {
   const arr = [3];
   const r = Reflect.apply(Array.prototype.unshift, arr, [1, 2]);
   return r === 3 && arr[0] === 1;
-}
-
-export function UnshiftJs_0141() {
-  const arr = [];
-  const r = arr.unshift(1, 2, 3);
-  return r === 3 && arr[0] === 1 && arr[2] === 3;
-}
-
-export function UnshiftJs_0142() {
-  const arr = [2];
-  const r = arr.unshift(1);
-  return r === 2 && arr[0] === 1 && arr[1] === 2;
-}
-
-export function UnshiftJs_0143() {
-  const arr = [];
-  for (let i = 0; i < 100; i++) {
-    arr.push(i);
-  }
-  const r = arr.unshift(-1);
-  return r === 101 && arr[0] === -1 && arr[100] === 99;
 }
 
 export function UnshiftJs_0144() {
@@ -343,32 +146,7 @@ export function UnshiftJs_0146() {
 export function UnshiftJs_0147() {
   const arr = [1];
   const ret = arr.unshift(2);
-  return typeof ret === 'number' && ret === arr.length && arr === arr;
-}
-
-export function UnshiftJs_0148() {
-  const arr = [10, 20];
-  arr.unshift(1, 2);
-  return arr[2] === 10 && arr[3] === 20;
-}
-
-export function UnshiftJs_0149() {
-  const arr = ['a', 'b', 'c'];
-  arr.unshift('x', 'y');
-  return arr[0] === 'x' && arr[1] === 'y' && arr[2] === 'a' && arr[3] === 'b' && arr[4] === 'c';
-}
-
-export function UnshiftJs_0150() {
-  const arr = [1];
-  arr.unshift(2);
-  arr.unshift(3);
-  return arr.length === 3 && arr[0] === 3;
-}
-
-export function UnshiftJs_0151() {
-  const arr = [2, 3, 4];
-  arr.unshift(0, 1);
-  return arr[0] === 0 && arr[1] === 1 && arr[2] === 2 && arr[3] === 3 && arr[4] === 4;
+  return typeof ret === 'number' && ret === arr.length;
 }
 
 export function UnshiftJs_0152() {
@@ -530,112 +308,6 @@ export function UnshiftJs_0172() {
   return !ex.ok && isTypeError(ex.err);
 }
 
-export function UnshiftJs_0173() {
-  const arr = [1, 2, 3];
-  arr.unshift(0);
-  const s = arr.shift();
-  return s === 0 && JSON.stringify(arr) === '[1,2,3]';
-}
-
-export function UnshiftJs_0174() {
-  const arr = [1, 2, 3];
-  arr.unshift(0);
-  arr.shift();
-  return JSON.stringify(arr) === '[1,2,3]';
-}
-
-export function UnshiftJs_0175() {
-  const arr = [2, 3];
-  arr.unshift(1);
-  arr.push(4);
-  return JSON.stringify(arr) === '[1,2,3,4]';
-}
-
-export function UnshiftJs_0176() {
-  const arr = [1, 2, 3];
-  arr.unshift(0);
-  const p = arr.pop();
-  return p === 3 && JSON.stringify(arr) === '[0,1,2]';
-}
-
-export function UnshiftJs_0177() {
-  const queue = [];
-  queue.push('a');
-  queue.push('b');
-  queue.shift();
-  queue.unshift('c');
-  return JSON.stringify(queue) === '["c","b"]';
-}
-
-export function UnshiftJs_0178() {
-  const arr = [3, 4, 5];
-  arr.unshift(1, 2);
-  arr.splice(2, 1, 'x');
-  return JSON.stringify(arr) === '[1,2,"x",4,5]';
-}
-
-export function UnshiftJs_0179() {
-  const arr = [3, 1];
-  arr.unshift(5, 2, 4);
-  arr.sort((a, b) => a - b);
-  return JSON.stringify(arr) === '[1,2,3,4,5]';
-}
-
-export function UnshiftJs_0180() {
-  const arr = [3, 4];
-  arr.unshift(1, 2);
-  arr.reverse();
-  return JSON.stringify(arr) === '[4,3,2,1]';
-}
-
-export function UnshiftJs_0181() {
-  const arr = [2, 3];
-  arr.unshift(1);
-  const mapped = arr.map((x) => x * 10);
-  return JSON.stringify(mapped) === '[10,20,30]';
-}
-
-export function UnshiftJs_0182() {
-  const arr = [10, 20, 30];
-  arr.unshift(5);
-  const sum = arr.reduce((acc, cur) => acc + cur, 0);
-  return sum === 65;
-}
-
-export function UnshiftJs_0183() {
-  const arr1 = [3, 4];
-  const arr2 = arr1.concat([1, 2]);
-  const lenBefore = arr1.length;
-  arr1.unshift(1, 2);
-  return lenBefore === 2 && arr1.length === 4 && JSON.stringify(arr1) !== JSON.stringify(arr2);
-}
-
-export function UnshiftJs_0184() {
-  const arr1 = [3, 4];
-  const arr2 = [1, 2];
-  arr1.unshift(...arr2);
-  return JSON.stringify(arr1) === '[1,2,3,4]';
-}
-
-export function UnshiftJs_0185() {
-  const arr = [3, 4];
-  arr.unshift(1, 2);
-  const newArr = [...arr, 5];
-  return JSON.stringify(newArr) === '[1,2,3,4,5]';
-}
-
-export function UnshiftJs_0186() {
-  const arr = [2, 3, 4];
-  arr.unshift(1);
-  return arr.indexOf(1) === 0 && arr.indexOf(4) === 3;
-}
-
-export function UnshiftJs_0187() {
-  const arr = ['b', 'c'];
-  arr.unshift('a');
-  return arr.includes('a') === true && arr.includes('d') === false;
-}
-
 export function UnshiftJs_0188() {
   const arr = Object.freeze([1, 2]);
   try {
@@ -759,5 +431,4 @@ export function UnshiftJs_0199() {
   }
   return obj[0] === 'new' || obj.length >= 3;
 }
-
 

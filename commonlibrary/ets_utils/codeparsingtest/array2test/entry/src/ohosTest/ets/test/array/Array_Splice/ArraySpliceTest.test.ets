@@ -22,27 +22,15 @@ import {
 
 export default function ArraySpliceMindMapTest() {
   describe('ArraySpliceMindMapTest', () => {
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(20);
-      // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: preset action function.
     });
     afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
     });
     afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
     });
-
 
     /**
      * @tc.name   testArraySpliceTest0100
@@ -1329,7 +1317,7 @@ export default function ArraySpliceMindMapTest() {
     /**
      * @tc.name   testArraySpliceTest0180
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SPLICE_SUPPLEMENT_TEST_8100
-     * @tc.desc   Verify splice can be applied to array-like objects
+     * @tc.desc   Verify splice can be applied to array-like objects. JS-only: Array.prototype.splice.call on arrayLike
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1402,7 +1390,7 @@ export default function ArraySpliceMindMapTest() {
     /**
      * @tc.name   testArraySpliceTest0185
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SPLICE_SUPPLEMENT_TEST_8600
-     * @tc.desc   Verify splice on array-like object combined with map
+     * @tc.desc   Verify splice on array-like object combined with map. JS-only: Array.prototype.splice.call and map.call on arrayLike
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1633,7 +1621,7 @@ export default function ArraySpliceMindMapTest() {
 
     /**
      * @tc.name   testArraySpliceTest0199
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SPLICE_SUPPLEMENT_TEST_9999
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SPLICE_SUPPLEMENT_TEST_10000
      * @tc.desc   Verify splice removes last element and map values in reverse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
