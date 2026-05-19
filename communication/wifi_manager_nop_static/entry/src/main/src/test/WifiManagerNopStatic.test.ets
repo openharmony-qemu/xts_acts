@@ -38,8 +38,7 @@ export default function wifiManagerTest() {
       try{
         wifiManager.enableWifi();
         expect().assertFail();
-      }catch(err) {
-        err = err as BusinessError;
+      }catch(err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "enableWifi get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -64,8 +63,7 @@ export default function wifiManagerTest() {
       try{
         wifiManager.disableWifi();
         expect().assertFail();
-      }catch(err) {
-        err = err as BusinessError;
+      }catch(err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "disableWifi get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -91,8 +89,7 @@ export default function wifiManagerTest() {
         let state = wifiManager.isConnected();
         hilog.info(domain, tag, "isConnected get:" + state);
         expect().assertFail();
-      }catch(err) {
-        err = err as BusinessError;
+      }catch(err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "isConnected get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -118,8 +115,7 @@ export default function wifiManagerTest() {
         let info: wifiManager.IpInfo = wifiManager.getIpInfo();
         hilog.info(domain, tag, "getIpInfo get:" + info);
         expect().assertFail();
-      }catch(err) {
-        err = err as BusinessError;
+      }catch(err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "getIpInfo get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -145,8 +141,7 @@ export default function wifiManagerTest() {
         let info: Array<wifiManager.WifiScanInfo> = wifiManager.getScanInfoList();
         hilog.info(domain, tag, "getScanInfoList get:" + info);
         expect().assertFail();
-      }catch(err) {
-        err = err as BusinessError;
+      }catch(err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "getScanInfoList get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -172,8 +167,7 @@ export default function wifiManagerTest() {
         let metered = wifiManager.isMeteredHotspot();
         hilog.info(domain, tag, "isMeteredHotspot get:" + metered);
         expect().assertFail();
-      }catch(err) {
-        err = err as BusinessError;
+      }catch(err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "isMeteredHotspot get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -199,8 +193,7 @@ export default function wifiManagerTest() {
         let info: wifiManager.Ipv6Info = wifiManager.getIpv6Info();
         hilog.info(domain, tag, "getIpv6Info get:" + info);
         expect().assertFail();
-      }catch(err) {
-        err = err as BusinessError;
+      }catch(err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "getIpv6Info get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -226,8 +219,7 @@ export default function wifiManagerTest() {
         let level: number = wifiManager.getSignalLevel(0 ,0);
         hilog.info(domain, tag, 'getSignalLevel success result:' + level);
         expect().assertFail();
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "getSignalLevel get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -252,8 +244,7 @@ export default function wifiManagerTest() {
       try {
         await wifiManager.getLinkedInfo().then((data: wifiManager.WifiLinkedInfo) => {});
         expect().assertFail();
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "getLinkedInfo promise get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -309,8 +300,7 @@ export default function wifiManagerTest() {
       try {
         await wifiManager.getP2pLinkedInfo().then((data: wifiManager.WifiP2pLinkedInfo) => {});
         expect().assertFail();
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "getP2pLinkedInfo promise get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -368,8 +358,7 @@ export default function wifiManagerTest() {
       try {
         await wifiManager.getCurrentGroup().then((data: wifiManager.WifiP2pGroupInfo) => {});
         expect().assertFail();
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "getCurrentGroup promise get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -426,8 +415,7 @@ export default function wifiManagerTest() {
       try {
         await wifiManager.getP2pPeerDevices().then((data: wifiManager.WifiP2pDevice[]) => {});
         expect().assertFail();
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "getP2pPeerDevices promise get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -483,8 +471,7 @@ export default function wifiManagerTest() {
       try {
         await wifiManager.getP2pLocalDevice().then((data: wifiManager.WifiP2pDevice) => {});
         expect().assertFail();
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "getP2pLocalDevice promise get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -549,8 +536,7 @@ export default function wifiManagerTest() {
         };
         await wifiManager.addDeviceConfig(wifiDeviceConfig).then((netWorkId: int) => {});
         expect().assertFail();
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "addDeviceConfig promise get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -621,8 +607,7 @@ export default function wifiManagerTest() {
         };
         await wifiManager.addCandidateConfig(wifiDeviceConfig).then((netWorkId: int) => {});
         expect().assertFail();
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "addCandidateConfig promise get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -686,8 +671,7 @@ export default function wifiManagerTest() {
       try {
         await wifiManager.removeCandidateConfig(0).then(() => {});
         expect().assertFail();
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "removeCandidateConfig promise get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -744,8 +728,7 @@ export default function wifiManagerTest() {
         wifiManager.getLinkedInfoSync();
         hilog.info(domain, tag, "getLinkedInfoSync success");
         expect().assertFail();
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "getLinkedInfoSync get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -771,8 +754,7 @@ export default function wifiManagerTest() {
         wifiManager.getCandidateConfigs();
         hilog.info(domain, tag, "getCandidateConfigs success");
         expect().assertFail();
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "getCandidateConfigs get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -798,8 +780,7 @@ export default function wifiManagerTest() {
         wifiManager.getDeviceConfigs();
         hilog.info(domain, tag, "getDeviceConfigs success");
         expect().assertFail();
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "getDeviceConfigs get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -825,8 +806,7 @@ export default function wifiManagerTest() {
         wifiManager.connectToCandidateConfig(0);
         hilog.info(domain, tag, "connectToCandidateConfig success");
         expect().assertFail();
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "connectToCandidateConfig get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -852,8 +832,7 @@ export default function wifiManagerTest() {
         wifiManager.connectToNetwork(0);
         hilog.info(domain, tag, "connectToNetwork success");
         expect().assertFail();
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "connectToNetwork get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -879,8 +858,7 @@ export default function wifiManagerTest() {
         wifiManager.removeDevice(0);
         hilog.info(domain, tag, "removeDevice success");
         expect().assertFail();
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "removeDevice get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -906,8 +884,7 @@ export default function wifiManagerTest() {
         wifiManager.disconnect();
         hilog.info(domain, tag, "disconnect success");
         expect().assertFail();
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "disconnect get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -933,8 +910,7 @@ export default function wifiManagerTest() {
         let multiLinkedInfo: Array<wifiManager.WifiLinkedInfo> = wifiManager.getMultiLinkedInfo();
         hilog.info(domain, tag, 'getMultiLinkedInfo success result:' + JSON.stringify(multiLinkedInfo));
         expect().assertFail();
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "getMultiLinkedInfo get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -960,8 +936,7 @@ export default function wifiManagerTest() {
         let supported: boolean = wifiManager.isFeatureSupported(0);
         hilog.info(domain, tag, 'isFeatureSupported success result:' + JSON.stringify(supported));
         expect().assertFail();
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "isFeatureSupported get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -987,8 +962,7 @@ export default function wifiManagerTest() {
         let addr: string[] = wifiManager.getDeviceMacAddress();
         hilog.info(domain, tag, 'getDeviceMacAddress success result:' + JSON.stringify(addr));
         expect().assertFail();
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "getDeviceMacAddress get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -1014,8 +988,7 @@ export default function wifiManagerTest() {
         let countryCode: string = wifiManager.getCountryCode();
         hilog.info(domain, tag, 'getCountryCode success result:' + JSON.stringify(countryCode));
         expect().assertFail();
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "getCountryCode get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -1041,8 +1014,7 @@ export default function wifiManagerTest() {
         let supported: boolean = wifiManager.isBandTypeSupported(wifiManager.WifiBandType.WIFI_BAND_NONE);
         hilog.info(domain, tag, 'isBandTypeSupported success result:' + JSON.stringify(supported));
         expect().assertFail();
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "isBandTypeSupported get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -1068,8 +1040,7 @@ export default function wifiManagerTest() {
         let apActive: boolean = wifiManager.isHotspotActive();
         hilog.info(domain, tag, 'isHotspotActive success result:' + JSON.stringify(apActive));
         expect().assertFail();
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "isHotspotActive get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -1102,8 +1073,7 @@ export default function wifiManagerTest() {
         }
         wifiManager.createGroup(wifiP2PConfig);
         expect().assertFail();
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "createGroup get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -1129,8 +1099,7 @@ export default function wifiManagerTest() {
         wifiManager.removeGroup();
         hilog.info(domain, tag, 'removeGroup success');
         expect().assertFail();
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "removeGroup get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -1164,8 +1133,7 @@ export default function wifiManagerTest() {
         wifiManager.p2pConnect(wifiP2PConfig);
         hilog.info(domain, tag, 'p2pConnect success');
         expect().assertFail();
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "p2pConnect get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -1191,8 +1159,7 @@ export default function wifiManagerTest() {
         wifiManager.p2pCancelConnect();
         hilog.info(domain, tag, 'p2pCancelConnect success');
         expect().assertFail();
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "p2pCancelConnect get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -1218,8 +1185,7 @@ export default function wifiManagerTest() {
         wifiManager.startDiscoverDevices();
         hilog.info(domain, tag, 'startDiscoverDevices success');
         expect().assertFail();
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "startDiscoverDevices get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -1245,8 +1211,7 @@ export default function wifiManagerTest() {
         wifiManager.stopDiscoverDevices();
         hilog.info(domain, tag, 'stopDiscoverDevices success');
         expect().assertFail();
-      } catch (err) {
-        err = err as BusinessError;
+      } catch (err) { 
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "stopDiscoverDevices get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
