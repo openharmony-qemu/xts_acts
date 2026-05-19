@@ -35,28 +35,17 @@ function singleNumberArray(value: int): Array<int> {
 
 export default function ArrayConcatTest(): void {
   describe('ArrayConcatTest', (): void => {
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll((): void => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
     });
 
     beforeEach(async (): Promise<void> => {
-      // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: preset action function.
       await Utils.msSleep(30);
     });
 
     afterEach((): void => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
     });
 
     afterAll((): void => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
     });
 
     /**
@@ -901,6 +890,269 @@ export default function ArrayConcatTest(): void {
       const result = arr1.concat(arr2);
       expect(result.length).assertEqual(4);
       expect(result[2]).assertEqual('a');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_4900
+     * @tc.name testArrayConcat049
+     * @tc.desc Verify concat does not modify the parameter array contents or length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayConcat049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<int>(1, 2);
+      const arr2 = new Array<int>(3, 4);
+      const originalLength = arr2.length;
+      const firstValue = arr2[0];
+      const secondValue = arr2[1];
+
+      const result = arr1.concat(arr2);
+
+      expect(result.length).assertEqual(4);
+      expect(arr2.length).assertEqual(originalLength);
+      expect(arr2[0]).assertEqual(firstValue);
+      expect(arr2[1]).assertEqual(secondValue);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_5000
+     * @tc.name testArrayConcat050
+     * @tc.desc Verify concat can append the source array to itself while preserving order
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayConcat050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(1, 2, 3);
+      const result = arr.concat(arr);
+
+      expect(result.length).assertEqual(6);
+      expect(result[0]).assertEqual(1);
+      expect(result[2]).assertEqual(3);
+      expect(result[3]).assertEqual(1);
+      expect(result[5]).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_5100
+     * @tc.name testArrayConcat051
+     * @tc.desc Verify concat can append the same parameter array more than once
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayConcat051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<int>(1);
+      const arr2 = new Array<int>(2, 3);
+      const result = arr1.concat(arr2, arr2);
+
+      expect(result.length).assertEqual(5);
+      expect(result[0]).assertEqual(1);
+      expect(result[1]).assertEqual(2);
+      expect(result[2]).assertEqual(3);
+      expect(result[3]).assertEqual(2);
+      expect(result[4]).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_5200
+     * @tc.name testArrayConcat052
+     * @tc.desc Verify empty arrays between concat parameters do not affect element order
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayConcat052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<int>(1, 2);
+      const empty1 = new Array<int>();
+      const arr2 = new Array<int>(3, 4);
+      const empty2 = new Array<int>();
+      const result = arr1.concat(empty1, arr2, empty2);
+
+      expect(result.length).assertEqual(4);
+      expect(result[0]).assertEqual(1);
+      expect(result[1]).assertEqual(2);
+      expect(result[2]).assertEqual(3);
+      expect(result[3]).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_5300
+     * @tc.name testArrayConcat053
+     * @tc.desc Verify object elements coming from parameter arrays are copied by reference
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayConcat053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<Person022>();
+      const p1 = new Person022();
+      p1.name = 'Alice';
+      arr1.pushOne(p1);
+
+      const arr2 = new Array<Person022>();
+      const p2 = new Person022();
+      p2.name = 'Bob';
+      arr2.pushOne(p2);
+
+      const result = arr1.concat(arr2);
+      result[1].name = 'Bobby';
+
+      expect(arr2[0].name).assertEqual('Bobby');
+      expect(p2.name).assertEqual('Bobby');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_5400
+     * @tc.name testArrayConcat054
+     * @tc.desc Verify later source-array structural changes do not change an existing concat result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayConcat054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<int>(1, 2);
+      const arr2 = new Array<int>(3, 4);
+      const result = arr1.concat(arr2);
+
+      arr1.pushOne(99);
+
+      expect(arr1.length).assertEqual(3);
+      expect(result.length).assertEqual(4);
+      expect(result[0]).assertEqual(1);
+      expect(result[1]).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_5500
+     * @tc.name testArrayConcat055
+     * @tc.desc Verify later parameter-array structural changes do not change an existing concat result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayConcat055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<int>(1, 2);
+      const arr2 = new Array<int>(3, 4);
+      const result = arr1.concat(arr2);
+
+      arr2.pushOne(99);
+
+      expect(arr2.length).assertEqual(3);
+      expect(result.length).assertEqual(4);
+      expect(result[2]).assertEqual(3);
+      expect(result[3]).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_5600
+     * @tc.name testArrayConcat056
+     * @tc.desc Verify replacing values in the source array after concat does not rewrite copied primitive values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayConcat056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<int>(1, 2);
+      const arr2 = new Array<int>(3, 4);
+      const result = arr1.concat(arr2);
+
+      arr1[0] = 100;
+      arr1[1] = 200;
+
+      expect(arr1[0]).assertEqual(100);
+      expect(arr1[1]).assertEqual(200);
+      expect(result[0]).assertEqual(1);
+      expect(result[1]).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_5700
+     * @tc.name testArrayConcat057
+     * @tc.desc Verify replacing values in the parameter array after concat does not rewrite copied primitive values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayConcat057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<int>(1, 2);
+      const arr2 = new Array<int>(3, 4);
+      const result = arr1.concat(arr2);
+
+      arr2[0] = 300;
+      arr2[1] = 400;
+
+      expect(arr2[0]).assertEqual(300);
+      expect(arr2[1]).assertEqual(400);
+      expect(result[2]).assertEqual(3);
+      expect(result[3]).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_5800
+     * @tc.name testArrayConcat058
+     * @tc.desc Verify nested arrays from parameters keep the same reference identity in the concat result
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayConcat058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nested = new Array<int>(3, 4);
+      const arr1 = new Array<Object>(1 as Object, 2 as Object);
+      const arr2 = new Array<Object>();
+      arr2.pushOne(nested as Object);
+
+      const result = arr1.concat(arr2);
+      const tail = result[2] as Array<int>;
+
+      expect(result.length).assertEqual(3);
+      expect(tail == nested).assertTrue();
+      tail[0] = 99;
+      expect(nested[0]).assertEqual(99);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_5900
+     * @tc.name testArrayConcat059
+     * @tc.desc Verify concat preserves duplicate primitive values and their order
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayConcat059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<int>(1, 1, 2);
+      const arr2 = new Array<int>(2, 1);
+      const result = arr1.concat(arr2);
+
+      expect(result.length).assertEqual(5);
+      expect(result[0]).assertEqual(1);
+      expect(result[1]).assertEqual(1);
+      expect(result[2]).assertEqual(2);
+      expect(result[3]).assertEqual(2);
+      expect(result[4]).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_6000
+     * @tc.name testArrayConcat060
+     * @tc.desc Verify modifying the concat result structure does not change the parameter array structure
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayConcat060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<int>(1, 2);
+      const arr2 = new Array<int>(3, 4);
+      const result = arr1.concat(arr2);
+
+      result.pop();
+      result.pushOne(99);
+
+      expect(result.length).assertEqual(4);
+      expect(arr2.length).assertEqual(2);
+      expect(arr2[0]).assertEqual(3);
+      expect(arr2[1]).assertEqual(4);
     });
   });
 }

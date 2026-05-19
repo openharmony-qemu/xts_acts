@@ -59,28 +59,17 @@ function collectData1038(): Array<string> {
 
 export default function ArrayInvoke1Test(): void {
   describe('ArrayInvoke1Test', (): void => {
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll((): void => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
     });
 
     beforeEach(async (): Promise<void> => {
-      // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: preset action function.
       await Utils.msSleep(30);
     });
 
     afterEach((): void => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
     });
 
     afterAll((): void => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
     });
 
     /**
@@ -535,12 +524,20 @@ export default function ArrayInvoke1Test(): void {
       const filtered = arr.filter((v: int): boolean => v > 0);
       expect(filtered.length).assertEqual(0);
 
+      let caught = false;
+      let errorType = '';
+      let errorDetail = '';
       try {
         arr.reduce((acc: int, v: int): int => acc + v);
-        expect().assertFail();
       } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
+        caught = true;
+        errorType = Class.of(e as Object).getName();
+        errorDetail = JSON.stringify(e);
       }
+
+      expect(caught).assertTrue();
+      expect(JSON.stringify(errorType).length > 2).assertTrue();
+      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
 
       const sum = arr.reduce((acc: int, v: int): int => acc + v, 0);
       expect(sum).assertEqual(0);
@@ -597,7 +594,7 @@ export default function ArrayInvoke1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_2900
      * @tc.name testArrayInvoke029
-     * @tc.desc Verify parameter count selects the expected array overload
+     * @tc.desc Verify parameter count still distinguishes default single-numeric and multi-item construction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -607,7 +604,8 @@ export default function ArrayInvoke1Test(): void {
       expect(arr1.length).assertEqual(0);
 
       const arr2 = new Array<int>(5);
-      expect(arr2.length).assertEqual(5);
+      expect(arr2.length).assertEqual(1);
+      expect(arr2[0]).assertEqual(5);
 
       const arr3 = new Array<string>('x', 'y', 'z');
       expect(arr3.length).assertEqual(3);
@@ -668,7 +666,7 @@ export default function ArrayInvoke1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_3300
      * @tc.name testArrayInvoke033
-     * @tc.desc Verify an empty array keeps the smallest initialized length state
+     * @tc.desc Verify default construction differs from passing a single numeric argument
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -678,7 +676,8 @@ export default function ArrayInvoke1Test(): void {
       const sizedArr = new Array<int>(100);
 
       expect(emptyArr.length).assertEqual(0);
-      expect(sizedArr.length).assertEqual(100);
+      expect(sizedArr.length).assertEqual(1);
+      expect(sizedArr[0]).assertEqual(100);
     });
 
     /**

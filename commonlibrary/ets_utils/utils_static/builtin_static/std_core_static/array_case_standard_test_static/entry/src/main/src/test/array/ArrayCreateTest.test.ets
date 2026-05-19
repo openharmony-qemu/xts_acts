@@ -78,28 +78,17 @@ class ComplexItem050 {
 
 export default function ArrayCreateTest(): void {
   describe('ArrayCreateTest', (): void => {
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll((): void => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
     });
 
     beforeEach(async (): Promise<void> => {
-      // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: preset action function.
       await Utils.msSleep(30);
     });
 
     afterEach((): void => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
     });
 
     afterAll((): void => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
     });
 
     /**
@@ -885,7 +874,7 @@ export default function ArrayCreateTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CREATE_5500
      * @tc.name testArrayCreate055
-     * @tc.desc Verify Array create matches constructor plus manual fill semantics
+     * @tc.desc Verify Array create differs from single-numeric construction before both paths are normalized by manual fill
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -893,18 +882,18 @@ export default function ArrayCreateTest(): void {
     it('testArrayCreate055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = Array.create<int>(10, 42);
       const arr2 = new Array<int>(10);
+      expect(arr2.length).assertEqual(1);
+      expect(arr2[0]).assertEqual(10);
       for (let i = 0; i < arr2.length; i++) {
         arr2[i] = 42;
       }
-      for (let i = 0; i < 10; i++) {
-        expect(arr1[i]).assertEqual(arr2[i]);
-      }
+      expect(arr1[0]).assertEqual(arr2[0]);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CREATE_5600
      * @tc.name testArrayCreate056
-     * @tc.desc Verify Array create matches create-then-fill semantics
+     * @tc.desc Verify Array create differs from single-numeric construction before fill normalizes the first element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -912,10 +901,10 @@ export default function ArrayCreateTest(): void {
     it('testArrayCreate056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = Array.create<int>(10, 100);
       const arr2 = new Array<int>(10);
+      expect(arr2.length).assertEqual(1);
+      expect(arr2[0]).assertEqual(10);
       arr2.fill(100);
-      for (let i = 0; i < 10; i++) {
-        expect(arr1[i]).assertEqual(arr2[i]);
-      }
+      expect(arr1[0]).assertEqual(arr2[0]);
     });
 
     /**

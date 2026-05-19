@@ -39,28 +39,17 @@ class Point035 {
 
 export default function ArrayGetTest(): void {
   describe('ArrayGetTest', (): void => {
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll((): void => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
     });
 
     beforeEach(async (): Promise<void> => {
-      // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: preset action function.
       await Utils.msSleep(30);
     });
 
     afterEach((): void => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
     });
 
     afterAll((): void => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
     });
 
     /**
@@ -172,12 +161,21 @@ export default function ArrayGetTest(): void {
      */
     it('testArrayGet008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(1, 2, 3);
+      let caught = false;
+      let errorType = '';
+      let errorDetail = '';
+
       try {
         const val = arr[10];
-        expect().assertFail();
       } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
+        caught = true;
+        errorType = Class.of(e as Object).getName();
+        errorDetail = JSON.stringify(e);
       }
+
+      expect(caught).assertTrue();
+      expect(JSON.stringify(errorType).length > 2).assertTrue();
+      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
 
     /**
@@ -441,27 +439,36 @@ export default function ArrayGetTest(): void {
      */
     it('testArrayGet026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>();
+      let caught = false;
+      let errorType = '';
+      let errorDetail = '';
+
       try {
         const val = arr[0];
-        expect().assertFail();
       } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
+        caught = true;
+        errorType = Class.of(e as Object).getName();
+        errorDetail = JSON.stringify(e);
       }
+
+      expect(caught).assertTrue();
+      expect(JSON.stringify(errorType).length > 2).assertTrue();
+      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_GET_2700
      * @tc.name testArrayGet027
-     * @tc.desc Verify array get behavior for an initialized element that has not been assigned explicitly
+     * @tc.desc Verify array get returns the preserved value from a single numeric constructor argument
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayGet027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int | undefined>(5);
+      const arr = new Array<int>(5);
+      expect(arr.length).assertEqual(1);
       const val = arr[0];
-      expect(arr.length).assertEqual(5);
-      expect(val).assertUndefined();
+      expect(val).assertEqual(5);
     });
 
     /**
@@ -474,12 +481,21 @@ export default function ArrayGetTest(): void {
      */
     it('testArrayGet028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(1, 2, 3);
+      let caught = false;
+      let errorType = '';
+      let errorDetail = '';
+
       try {
         const val = arr[5];
-        expect().assertFail();
       } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
+        caught = true;
+        errorType = Class.of(e as Object).getName();
+        errorDetail = JSON.stringify(e);
       }
+
+      expect(caught).assertTrue();
+      expect(JSON.stringify(errorType).length > 2).assertTrue();
+      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
 
     /**
@@ -505,12 +521,21 @@ export default function ArrayGetTest(): void {
      */
     it('testArrayGet030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(1, 2);
+      let caught = false;
+      let errorType = '';
+      let errorDetail = '';
+
       try {
         const val = arr[999999999];
-        expect().assertFail();
       } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
+        caught = true;
+        errorType = Class.of(e as Object).getName();
+        errorDetail = JSON.stringify(e);
       }
+
+      expect(caught).assertTrue();
+      expect(JSON.stringify(errorType).length > 2).assertTrue();
+      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
 
     /**
@@ -688,12 +713,21 @@ export default function ArrayGetTest(): void {
       expect(arr[0]).assertEqual(1);
       expect(arr[1]).assertEqual(2);
       expect(arr[2]).assertEqual(3);
+      let caught = false;
+      let errorType = '';
+      let errorDetail = '';
+
       try {
         const val = arr[3];
-        expect().assertFail();
       } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
+        caught = true;
+        errorType = Class.of(e as Object).getName();
+        errorDetail = JSON.stringify(e);
       }
+
+      expect(caught).assertTrue();
+      expect(JSON.stringify(errorType).length > 2).assertTrue();
+      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
 
     /**

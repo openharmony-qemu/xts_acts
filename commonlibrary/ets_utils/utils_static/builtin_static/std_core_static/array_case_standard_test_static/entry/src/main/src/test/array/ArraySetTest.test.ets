@@ -43,28 +43,17 @@ const COLOR_BLUE028: int = 2;
 
 export default function ArraySetTest(): void {
   describe('ArraySetTest', (): void => {
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll((): void => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
     });
 
     beforeEach(async (): Promise<void> => {
-      // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: preset action function.
       await Utils.msSleep(30);
     });
 
     afterEach((): void => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
     });
 
     afterAll((): void => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
     });
 
     /**
@@ -133,12 +122,21 @@ export default function ArraySetTest(): void {
      */
     it('testArraySet005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(1, 2);
+      let caught = false;
+      let errorType = '';
+      let errorDetail = '';
+
       try {
         arr[2147483647] = 100;
-        expect().assertFail();
       } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
+        caught = true;
+        errorType = Class.of(e as Object).getName();
+        errorDetail = JSON.stringify(e);
       }
+
+      expect(caught).assertTrue();
+      expect(JSON.stringify(errorType).length > 2).assertTrue();
+      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
 
     /**
@@ -164,12 +162,21 @@ export default function ArraySetTest(): void {
      */
     it('testArraySet007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(1, 2, 3);
+      let caught = false;
+      let errorType = '';
+      let errorDetail = '';
+
       try {
         arr[10] = 100;
-        expect().assertFail();
       } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
+        caught = true;
+        errorType = Class.of(e as Object).getName();
+        errorDetail = JSON.stringify(e);
       }
+
+      expect(caught).assertTrue();
+      expect(JSON.stringify(errorType).length > 2).assertTrue();
+      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
 
     /**
@@ -502,12 +509,21 @@ export default function ArraySetTest(): void {
      */
     it('testArraySet030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(1, 2, 3);
+      let caught = false;
+      let errorType = '';
+      let errorDetail = '';
+
       try {
         arr[5] = 100;
-        expect().assertFail();
       } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
+        caught = true;
+        errorType = Class.of(e as Object).getName();
+        errorDetail = JSON.stringify(e);
       }
+
+      expect(caught).assertTrue();
+      expect(JSON.stringify(errorType).length > 2).assertTrue();
+      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
 
     /**
@@ -898,12 +914,21 @@ export default function ArraySetTest(): void {
      */
     it('testArraySet055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>();
+      let caught = false;
+      let errorType = '';
+      let errorDetail = '';
+
       try {
         arr[0] = 1;
-        expect().assertFail();
       } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
+        caught = true;
+        errorType = Class.of(e as Object).getName();
+        errorDetail = JSON.stringify(e);
       }
+
+      expect(caught).assertTrue();
+      expect(JSON.stringify(errorType).length > 2).assertTrue();
+      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
   });
 }
