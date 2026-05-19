@@ -101,7 +101,7 @@ export default function RelationalStoreSyncExTest(): void {
             } catch (err) {
                 const error: BusinessError = err as BusinessError;
                 console.error(TAG + 'syncEx is failed, code is ' + error.code + ', message is ' + error.message);
-                expect(error.code === 201).assertTrue();
+                expect(error.code == 201).assertTrue();
             }
             console.log(TAG + "************* testRdbStoreArksyncExTest0100 end *************");
             done();
@@ -129,7 +129,7 @@ export default function RelationalStoreSyncExTest(): void {
             } catch (err) {
                 const error: BusinessError = err as BusinessError;
                 console.error(TAG + 'syncEx is failed, code is ' + error.code + ', message is ' + error.message);
-                expect(error.code === 14800001).assertTrue();
+                expect(error.code == 14800001).assertTrue();
             }
             console.log(TAG + "************* syncExTest0200 end *************");
             done();
@@ -158,7 +158,7 @@ export default function RelationalStoreSyncExTest(): void {
             } catch (err) {
                 const error: BusinessError = err as BusinessError;
                 console.error(TAG + 'syncEx is failed, code is ' + error.code + ', message is ' + error.message);
-                expect(error.code === 14800014).assertTrue();
+                expect(error.code == 14800014).assertTrue();
             }
             console.log(TAG + "************* testRdbStoreArksyncExTest0300 end *************");
             done();
@@ -186,7 +186,7 @@ export default function RelationalStoreSyncExTest(): void {
             } catch (err) {
                 const error: BusinessError = err as BusinessError;
                 console.error(TAG + 'syncEx is failed, code is ' + error.code + ', message is ' + error.message);
-                expect(error.code === 201).assertTrue();
+                expect(error.code == 201).assertTrue();
             }
             console.log(TAG + "************* testRdbStoreArksyncExTest0700 end *************");
             done();
@@ -214,7 +214,7 @@ export default function RelationalStoreSyncExTest(): void {
             } catch (err) {
                 const error: BusinessError = err as BusinessError;
                 console.error(TAG + 'syncEx is failed, code is ' + error.code + ', message is ' + error.message);
-                expect(error.code === 201).assertTrue();
+                expect(error.code == 201).assertTrue();
             }
             console.log(TAG + "************* testRdbStoreArksyncExTest0800 end *************");
             done();
@@ -242,7 +242,7 @@ export default function RelationalStoreSyncExTest(): void {
             } catch (err) {
                 const error: BusinessError = err as BusinessError;
                 console.error(TAG + 'syncEx is failed, code is ' + error.code + ', message is ' + error.message);
-                expect(error.code === 14800001).assertTrue();
+                expect(error.code == 14800001).assertTrue();
             }
             console.log(TAG + "************* testRdbStoreArksyncExTest0900 end *************");
             done();
@@ -270,7 +270,7 @@ export default function RelationalStoreSyncExTest(): void {
             } catch (err) {
                 const error: BusinessError = err as BusinessError;
                 console.error(TAG + 'syncEx is failed, code is ' + error.code + ', message is ' + error.message);
-                expect(error.code === 14800001).assertTrue();
+                expect(error.code == 14800001).assertTrue();
             }
             console.log(TAG + "************* testRdbStoreArksyncExTest1000 end *************");
             done();
@@ -298,7 +298,7 @@ export default function RelationalStoreSyncExTest(): void {
             } catch (err) {
                 const error: BusinessError = err as BusinessError;
                 console.error(TAG + 'syncEx is failed, code is ' + error.code + ', message is ' + error.message);
-                expect(error.code === 14800001).assertTrue();
+                expect(error.code == 14800001).assertTrue();
             }
             console.log(TAG + "************* testRdbStoreArksyncExTest1100 end *************");
             done();
@@ -326,7 +326,7 @@ export default function RelationalStoreSyncExTest(): void {
             } catch (err) {
                 const error: BusinessError = err as BusinessError;
                 console.error(TAG + 'syncEx is failed, code is ' + error.code + ', message is ' + error.message);
-                expect(error.code === 201).assertTrue();
+                expect(error.code == 201).assertTrue();
             }
             console.log(TAG + "************* testRdbStoreArksyncExTest1200 end *************");
             done();
@@ -360,7 +360,7 @@ export default function RelationalStoreSyncExTest(): void {
             } catch (err) {
                 const error: BusinessError = err as BusinessError;
                 console.error(TAG + 'syncEx is failed, code is ' + error.code + ', message is ' + error.message);
-                expect(error.code === 201).assertTrue();
+                expect(error.code == 201).assertTrue();
             }
             console.log(TAG + "************* testRdbStoreArksyncExTest1300 end *************");
             done();
@@ -389,7 +389,7 @@ export default function RelationalStoreSyncExTest(): void {
             } catch (err) {
                 const error: BusinessError = err as BusinessError;
                 console.error(TAG + 'syncEx is failed, code is ' + error.code + ', message is ' + error.message);
-                expect(error.code === 201).assertTrue();
+                expect(error.code == 201).assertTrue();
             }
             console.log(TAG + "************* testRdbStoreArksyncExTest1400 end *************");
             done();
@@ -418,7 +418,7 @@ export default function RelationalStoreSyncExTest(): void {
             } catch (err) {
                 const error: BusinessError = err as BusinessError;
                 console.error(TAG + 'syncEx is failed, code is ' + error.code + ', message is ' + error.message);
-                expect(error.code === 201).assertTrue();
+                expect(error.code == 201).assertTrue();
             }
             console.log(TAG + "************* testRdbStoreArksyncExTest1500 end *************");
             done();
@@ -448,7 +448,7 @@ export default function RelationalStoreSyncExTest(): void {
             } catch (err) {
                 const error: BusinessError = err as BusinessError;
                 console.error(TAG + 'syncEx is failed, code is ' + error.code + ', message is ' + error.message);
-                expect(error.code === 201).assertTrue();
+                expect(error.code == 201).assertTrue();
             }
             console.log(TAG + "************* testRdbStoreArksyncExTest1600 end *************");
             done();
@@ -485,7 +485,7 @@ export default function RelationalStoreSyncExTest(): void {
             } catch (err) {
                 const error: BusinessError = err as BusinessError;
                 console.info(logTag + 'testRdbStoreArksyncExTest2200 sync failed ' + error.code + ' ' + error.message);
-                expect(error.code === 14800001).assertTrue();
+                expect(error.code == 14800001).assertTrue();
             }
             done();
             console.info(logTag + "************* testRdbStoreArksyncExTest2200 end *************");
