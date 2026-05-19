@@ -15,6 +15,7 @@
  */
 
 import {
+  Entry,
   Component,
   Text,FlexDirection,Flex,$r,
   Row,
@@ -31,14 +32,15 @@ import {
 } from '@ohos.arkui.component';
 import { StoragePropRef, State } from '@ohos.arkui.stateManagement';
 
+@Entry
 @Component
 export struct NavRouterView {
   @State isActive: boolean = false
   @State dex: number = 0
-  @StoragePropRef("_markAnchor") _markAnchor: Position = { x: 0, y: 0 } as Position;
+  @State _markAnchor: Position = { x: 0, y: 0 } as Position;
   private componentKey: string = '';
 
-  build() {
+  build():void {
     Column() {
       Row() {
         Image($r('app.media.icon')).width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin)
