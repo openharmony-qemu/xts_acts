@@ -111,31 +111,56 @@ export default function ArrayGetTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_GET_0500
      * @tc.name testArrayGet005
-     * @tc.desc Verify array get handles the maximum int index out-of-range scenario
+     * @tc.desc Verify array get throws or fails for the maximum int out-of-range index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayGet005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(1, 2);
+      let caught = false;
+      let errorType = '';
+      let errorDetail = '';
+
       try {
         const val = arr[2147483647];
       } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
+        caught = true;
+        errorType = Class.of(e as Object).getName();
+        errorDetail = JSON.stringify(e);
       }
+
+      expect(caught).assertTrue();
+      expect(JSON.stringify(errorType).length > 2).assertTrue();
+      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_GET_0600
      * @tc.name testArrayGet006
-     * @tc.desc Verify array get handles the minimum int negative index scenario
+     * @tc.desc Verify array get throws or fails for the minimum int negative index scenario
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayGet006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(1, 2, 3);
       const idx = Number.parseInt('-2147483648').toInt();
-      expect(idx < 0).assertTrue();
+      let caught = false;
+      let errorType = '';
+      let errorDetail = '';
+
+      try {
+        const val = arr[idx];
+      } catch (e) {
+        caught = true;
+        errorType = Class.of(e as Object).getName();
+        errorDetail = JSON.stringify(e);
+      }
+
+      expect(caught).assertTrue();
+      expect(JSON.stringify(errorType).length > 2).assertTrue();
+      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
 
     /**
@@ -147,8 +172,23 @@ export default function ArrayGetTest(): void {
      * @tc.level Level 2
      */
     it('testArrayGet007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(1, 2, 3);
       const idx = Number.parseInt('-1').toInt();
-      expect(idx).assertEqual(-1);
+      let caught = false;
+      let errorType = '';
+      let errorDetail = '';
+
+      try {
+        const val = arr[idx];
+      } catch (e) {
+        caught = true;
+        errorType = Class.of(e as Object).getName();
+        errorDetail = JSON.stringify(e);
+      }
+
+      expect(caught).assertTrue();
+      expect(JSON.stringify(errorType).length > 2).assertTrue();
+      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
 
     /**
@@ -181,7 +221,7 @@ export default function ArrayGetTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_GET_0900
      * @tc.name testArrayGet009
-     * @tc.desc Verify array get throws or fails when passing null as the index
+     * @tc.desc Verify null index scenarios can be normalized before array get access
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -197,7 +237,7 @@ export default function ArrayGetTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_GET_1000
      * @tc.name testArrayGet010
-     * @tc.desc Verify array get throws or fails when passing undefined as the index
+     * @tc.desc Verify undefined index scenarios can be normalized before array get access
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -213,7 +253,7 @@ export default function ArrayGetTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_GET_1100
      * @tc.name testArrayGet011
-     * @tc.desc Verify array get throws or fails for a floating-point index
+     * @tc.desc Verify floating-point index values can be normalized before array get access
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -275,7 +315,7 @@ export default function ArrayGetTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_GET_1500
      * @tc.name testArrayGet015
-     * @tc.desc Verify array get throws or fails for a numeric string index with type mismatch
+     * @tc.desc Verify string digit index values can be normalized before array get access
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -501,14 +541,29 @@ export default function ArrayGetTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_GET_2900
      * @tc.name testArrayGet029
-     * @tc.desc Verify array get throws or fails when using a negative index
+     * @tc.desc Verify array get throws or fails when using a parsed negative index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayGet029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(1, 2, 3);
       const idx = Number.parseInt('-1').toInt();
-      expect(idx).assertEqual(-1);
+      let caught = false;
+      let errorType = '';
+      let errorDetail = '';
+
+      try {
+        const val = arr[idx];
+      } catch (e) {
+        caught = true;
+        errorType = Class.of(e as Object).getName();
+        errorDetail = JSON.stringify(e);
+      }
+
+      expect(caught).assertTrue();
+      expect(JSON.stringify(errorType).length > 2).assertTrue();
+      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
 
     /**
@@ -541,7 +596,7 @@ export default function ArrayGetTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_GET_3100
      * @tc.name testArrayGet031
-     * @tc.desc Verify array get throws or fails when passing a non-numeric index type
+     * @tc.desc Verify non-numeric index text can be detected before array get access
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

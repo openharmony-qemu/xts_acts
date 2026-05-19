@@ -142,14 +142,29 @@ export default function ArraySetTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SET_0600
      * @tc.name testArraySet006
-     * @tc.desc Verify negative index values remain invalid in a compile-safe form
+     * @tc.desc Verify negative index writes fail at runtime after compile-safe parsing
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArraySet006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(1, 2, 3);
       const idx = Number.parseInt('-1').toInt();
-      expect(idx).assertEqual(-1);
+      let caught = false;
+      let errorType = '';
+      let errorDetail = '';
+
+      try {
+        arr[idx] = 100;
+      } catch (e) {
+        caught = true;
+        errorType = Class.of(e as Object).getName();
+        errorDetail = JSON.stringify(e);
+      }
+
+      expect(caught).assertTrue();
+      expect(JSON.stringify(errorType).length > 2).assertTrue();
+      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
 
     /**
@@ -401,15 +416,19 @@ export default function ArraySetTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SET_2300
      * @tc.name testArraySet023
-     * @tc.desc Verify array set handles a value type mismatch scenario
+     * @tc.desc Verify compile-time-invalid value type mismatch cases are excluded from runtime execution
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArraySet023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // ArkTS rejects assigning a string value to a number array at compile time.
-      const documentedInvalidCase = ['type-mismatch'];
-      expect(documentedInvalidCase.length).assertEqual(1);
+      const arr = new Array<int>(1, 2, 3);
+      const validReplacement = 100;
+
+      // ArkTS rejects assigning a string value to a number array at compile time,
+      // so the runtime suite only keeps the valid control path executable.
+      arr[0] = validReplacement;
+      expect(arr[0]).assertEqual(validReplacement);
     });
 
     /**
@@ -529,27 +548,47 @@ export default function ArraySetTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SET_3100
      * @tc.name testArraySet031
-     * @tc.desc Verify negative set indexes remain invalid in a compile-safe form
+     * @tc.desc Verify negative set indexes fail at runtime after compile-safe parsing
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArraySet031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(1, 2, 3);
       const idx = Number.parseInt('-1').toInt();
-      expect(idx < 0).assertTrue();
+      let caught = false;
+      let errorType = '';
+      let errorDetail = '';
+
+      try {
+        arr[idx] = 100;
+      } catch (e) {
+        caught = true;
+        errorType = Class.of(e as Object).getName();
+        errorDetail = JSON.stringify(e);
+      }
+
+      expect(caught).assertTrue();
+      expect(JSON.stringify(errorType).length > 2).assertTrue();
+      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SET_3200
      * @tc.name testArraySet032
-     * @tc.desc Verify array set handles an incorrect value type scenario
+     * @tc.desc Verify compile-time-invalid value type mismatches stay outside the runtime set path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArraySet032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // ArkTS rejects assigning a string value to a number array at compile time.
-      expect('string'.length).assertEqual(6);
+      const arr = new Array<int>(1, 2, 3);
+      const nextValue = Number.parseInt('123').toInt();
+
+      // ArkTS rejects assigning a string value to a number array at compile time,
+      // so the runtime suite verifies the neighboring valid write path instead.
+      arr[1] = nextValue;
+      expect(arr[1]).assertEqual(nextValue);
     });
 
     /**

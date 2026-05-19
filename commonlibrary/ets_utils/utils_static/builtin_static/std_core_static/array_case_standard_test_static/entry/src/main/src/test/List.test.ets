@@ -37,10 +37,25 @@ export default function testsuite(): void {
   ArrayCopyWithin2Test();
   ArrayCopyWithin3Test();
   ArrayCopyWithin4Test();
+  ArrayConstructor1Test();
   ArrayConstructor2Test();
   ArrayConstructor3Test();
   ArrayConstructor4Test();
   ArrayCreateTest();
+  ArrayEntriesTest();
+  ArrayEveryTest();
+  ArrayExtendToTest();
+  ArrayFill1Test();
+  ArrayFill2Test();
+  ArrayFilterTest();
+  ArrayFindIndexTest();
+  ArrayFindLastIndexTest();
+  ArrayFindLastTest();
+  ArrayFindTest();
+  ArrayFlat1Test();
+  ArrayFlat2Test();
+  ArrayFlat3Test();
+  ArrayFlatMapTest();
   ArrayGetTest()
   ArrayInvoke1Test()
   ArrayInvoke2Test()
