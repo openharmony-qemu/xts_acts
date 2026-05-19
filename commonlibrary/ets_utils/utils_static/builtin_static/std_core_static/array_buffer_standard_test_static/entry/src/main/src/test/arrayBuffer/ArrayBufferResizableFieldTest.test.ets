@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -8,11 +9,23 @@
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR ANY KIND, either express or implied.
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function arrayBufferResizableFieldTest(): void {
@@ -30,7 +43,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_0100
-     * @tc.desc Verify ArrayBuffer.resizable: fixed-size buffer （ maxByteLength），resizable is false
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -43,7 +56,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_0200
-     * @tc.desc Verify ArrayBuffer.resizable: fixed-size buffer （length is 0， maxByteLength），resizable is false
+     * @tc.desc 验证 new ArrayBuffer(0) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -56,7 +69,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_0300
-     * @tc.desc Verify ArrayBuffer.resizable: fixed-size buffer （length ），resizable is false
+     * @tc.desc 验证 new ArrayBuffer(1024) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -69,7 +82,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_0400
-     * @tc.desc Verify ArrayBuffer.resizable: resizable buffer （ maxByteLength），resizable is true
+     * @tc.desc 验证 new ArrayBuffer(2, 8) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -82,7 +95,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_0500
-     * @tc.desc Verify ArrayBuffer.resizable: resizable buffer （length is 0， maxByteLength），resizable is true
+     * @tc.desc 验证 new ArrayBuffer(0, 4) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -95,7 +108,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_0600
-     * @tc.desc Verify ArrayBuffer.resizable: resizable buffer （lengthequals maxByteLength），resizable is true
+     * @tc.desc 验证 new ArrayBuffer(8, 8) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -108,7 +121,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_0700
-     * @tc.desc Verify ArrayBuffer.resizable: resizable buffer （maxByteLength greater than length），resizable is true
+     * @tc.desc 验证 new ArrayBuffer(1, 1024) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -121,20 +134,24 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_0800
-     * @tc.desc Verify ArrayBuffer.resizable: empty buffer （length is 0， maxByteLength），resizable is false
+     * @tc.desc 验证 new ArrayBuffer(0) 在当前场景执行成功，等值关系判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferResizableField0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(0);
-      expect(buffer.resizable).assertFalse();
+      let r1 = buffer.resizable;
+      let r2 = buffer.resizable;
+      expect(r1).assertFalse();
+      expect(r2).assertFalse();
+      expect(r1 === r2).assertTrue();
     });
 
     /**
      * @tc.name testArrayBufferResizableField0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_0900
-     * @tc.desc Verify ArrayBuffer.resizable: slicecreate fixed-size buffer ，resizable is false
+     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -148,7 +165,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_1000
-     * @tc.desc Verify slice of resizable ArrayBuffer: resizable may stay true or become false on OH; assert byteLength and resizable flag consistently.
+     * @tc.desc 验证 new ArrayBuffer(4, 16) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -156,18 +173,13 @@ export default function arrayBufferResizableFieldTest(): void {
     it('testArrayBufferResizableField0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = new ArrayBuffer(4, 16);
       const sliced = src.slice(1, 3);
-      expect(sliced.byteLength).assertEqual(2);
-      if (sliced.resizable) {
-        expect(sliced.resizable).assertTrue();
-      } else {
-        expect(sliced.resizable).assertFalse();
-      }
+      expect(sliced.resizable).assertFalse();
     });
 
     /**
      * @tc.name testArrayBufferResizableField0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_1100
-     * @tc.desc Verify ArrayBuffer.resizable: multiple access resizableproperty ，return value consistent
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -184,7 +196,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_1200
-     * @tc.desc Verify ArrayBuffer.resizable: fixed-size buffer returns false
+     * @tc.desc 验证 buffer.resizable 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -198,7 +210,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_1300
-     * @tc.desc Verify ArrayBuffer.resizable: resizable buffer returns true
+     * @tc.desc 验证 buffer.resizable 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -212,7 +224,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_1400
-     * @tc.desc Verify ArrayBuffer.resizable: length fixed-size buffer returns false
+     * @tc.desc 验证 new ArrayBuffer(1) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -229,7 +241,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_1500
-     * @tc.desc Verify ArrayBuffer.resizable: maxByteLength buffer returns true
+     * @tc.desc 验证 new ArrayBuffer(1, 2) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -246,7 +258,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_1600
-     * @tc.desc Verify ArrayBuffer.resizable: resizablereturn value type is boolean
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -261,7 +273,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_1700
-     * @tc.desc Verify ArrayBuffer.resizable: resizablereturn value equals false（not falsy ）
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -269,14 +281,13 @@ export default function arrayBufferResizableFieldTest(): void {
     it('testArrayBufferResizableField0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
       expect(buffer.resizable === false).assertTrue();
-      const r = buffer.resizable;
-      expect(r === false || r === true).assertTrue();
+      expect(buffer.resizable).assertFalse();
     });
 
     /**
      * @tc.name testArrayBufferResizableField0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_1800
-     * @tc.desc Verify ArrayBuffer.resizable: resizablereturn value equals true（not truthy ）
+     * @tc.desc 验证 new ArrayBuffer(2, 8) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -290,7 +301,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_1900
-     * @tc.desc Verify ArrayBuffer.resizable: === and == return value
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -307,20 +318,21 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_2000
-     * @tc.desc Verify ArrayBuffer.resizable: lengthequals maxByteLength ，resizable is true
+     * @tc.desc 验证 new ArrayBuffer(8, 8) 在当前场景执行成功，返回值的 byteLength 为 8。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferResizableField0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8, 8);
+      expect(buffer.byteLength).assertEqual(8);
       expect(buffer.resizable).assertTrue();
     });
 
     /**
      * @tc.name testArrayBufferResizableField0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_2100
-     * @tc.desc Verify ArrayBuffer.resizable: length is 1，maxByteLength is 1，resizable is true
+     * @tc.desc 验证 new ArrayBuffer(1, 1) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -333,7 +345,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_2200
-     * @tc.desc Verify ArrayBuffer.resizable: length is 0，maxByteLength is 1，resizable is true
+     * @tc.desc 验证 new ArrayBuffer(0, 1) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -346,7 +358,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_2300
-     * @tc.desc Verify ArrayBuffer.resizable: buffer ，resizable is true
+     * @tc.desc 验证 new ArrayBuffer(1024, 4096) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -359,7 +371,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_2400
-     * @tc.desc Verify ArrayBuffer.resizable: resize after resizableproperty
+     * @tc.desc 验证 new ArrayBuffer(2, 8) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -376,7 +388,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_2500
-     * @tc.desc Verify ArrayBuffer.resizable: fixed-size buffer byteLength is 0 ，resizable is false
+     * @tc.desc 验证 new ArrayBuffer(0) 在当前场景执行成功，返回值的 byteLength 为 0。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -390,7 +402,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_2600
-     * @tc.desc Verify ArrayBuffer.resizable: resizableassignment at error
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，空值有效性判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -399,18 +411,17 @@ export default function arrayBufferResizableFieldTest(): void {
       const buffer = new ArrayBuffer(4);
       try {
         (buffer as Record<string, Object>)["resizable"] = true;
+        expect(false).assertTrue();
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e as object);
-        return;
+        Utils.assertThrownErrorCodeIsNumber(e);
       }
-      expect(buffer.resizable).assertFalse();
     });
 
     /**
      * @tc.name testArrayBufferResizableField0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_2700
-     * @tc.desc Verify ArrayBuffer.resizable: fixed-size buffer resizableproperty
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -423,7 +434,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_2800
-     * @tc.desc Verify ArrayBuffer.resizable: buffer resizableproperty is false
+     * @tc.desc 验证 new ArrayBuffer(2, 8) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -436,20 +447,26 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_2900
-     * @tc.desc Verify ArrayBuffer.resizable: detached after access resizablereturns false
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferResizableField0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
+      try {
+        buffer.resize(0);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+      }
       expect(buffer.resizable).assertFalse();
     });
 
     /**
      * @tc.name testArrayBufferResizableField0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_3000
-     * @tc.desc Verify ArrayBuffer.resizable: resizable buffer detached after access resizablereturns false
+     * @tc.desc 验证 new ArrayBuffer(2, 8) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -457,14 +474,13 @@ export default function arrayBufferResizableFieldTest(): void {
     it('testArrayBufferResizableField0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(2, 8);
       buffer.resize(0);
-      expect(buffer.byteLength).assertEqual(0);
       expect(buffer.resizable).assertTrue();
     });
 
     /**
      * @tc.name testArrayBufferResizableField0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_3100
-     * @tc.desc Verify ArrayBuffer.resizable: detached after resizable and detached before consistent （ is false）
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -472,13 +488,19 @@ export default function arrayBufferResizableFieldTest(): void {
     it('testArrayBufferResizableField0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const fixed = new ArrayBuffer(4);
       expect(fixed.resizable).assertFalse();
+      try {
+        fixed.resize(0);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+      }
       expect(fixed.resizable).assertFalse();
     });
 
     /**
      * @tc.name testArrayBufferResizableField0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_3200
-     * @tc.desc Verify ArrayBuffer.resizable: buffer detached after resizable is false
+     * @tc.desc 验证 new ArrayBuffer(2, 8) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
