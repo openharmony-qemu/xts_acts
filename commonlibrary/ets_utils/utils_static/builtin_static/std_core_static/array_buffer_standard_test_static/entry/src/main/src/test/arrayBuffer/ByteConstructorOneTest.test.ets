@@ -279,49 +279,25 @@ export default function byteConstructorOneTest(): void {
     /**
      * @tc.name testByteConstructorOne0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_1900
-     * @tc.desc 验证 8 在当前场景执行成功，返回结果与预期一致。
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testByteConstructorOne0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(8).assertEqual(8)
-    });
-
-    /**
-     * @tc.name testByteConstructorOne0020
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_2000
-     * @tc.desc 验证 1 在当前场景执行成功，返回结果与预期一致。
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testByteConstructorOne0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(1).assertEqual(1)
-    });
-
-    /**
-     * @tc.name testByteConstructorOne0021
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_2100
      * @tc.desc 验证 new Byte(0) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testByteConstructorOne0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testByteConstructorOne0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let b: Byte = new Byte(0);
       expect(b.toByte()).assertEqual(0);
     });
 
     /**
-     * @tc.name testByteConstructorOne0022
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_2200
+     * @tc.name testByteConstructorOne0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_2000
      * @tc.desc 验证 new Byte((("0" as Object) as byte)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testByteConstructorOne0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testByteConstructorOne0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let b: Byte = new Byte((("0" as Object) as byte))
       } catch (e) {
@@ -333,14 +309,14 @@ export default function byteConstructorOneTest(): void {
     });
 
     /**
-     * @tc.name testByteConstructorOne0023
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_2300
+     * @tc.name testByteConstructorOne0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_2100
      * @tc.desc 验证 new Byte(((undefined as Object) as byte)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testByteConstructorOne0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testByteConstructorOne0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let b: Byte = new Byte(((undefined as Object) as byte))
       } catch (e) {
@@ -352,14 +328,14 @@ export default function byteConstructorOneTest(): void {
     });
 
     /**
-     * @tc.name testByteConstructorOne0024
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_2400
+     * @tc.name testByteConstructorOne0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_2200
      * @tc.desc 验证 new Byte(((null as Object) as byte)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testByteConstructorOne0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testByteConstructorOne0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let b: Byte = new Byte(((null as Object) as byte))
       } catch (e) {
@@ -371,14 +347,14 @@ export default function byteConstructorOneTest(): void {
     });
 
     /**
-     * @tc.name testByteConstructorOne0025
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_2500
+     * @tc.name testByteConstructorOne0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_2300
      * @tc.desc 验证 new Byte() 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testByteConstructorOne0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testByteConstructorOne0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       for (let i: int = 0; i < 1000; i++) {
         let b: Byte = new Byte()
         expect(b.toByte()).assertEqual(0)
@@ -386,14 +362,14 @@ export default function byteConstructorOneTest(): void {
     });
 
     /**
-     * @tc.name testByteConstructorOne0026
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_2600
+     * @tc.name testByteConstructorOne0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_2400
      * @tc.desc 验证 new Byte() 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testByteConstructorOne0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testByteConstructorOne0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let b: Byte = new Byte()
       expect(b.toByte()).assertEqual(0)
       expect(b.toInt()).assertEqual(0)

@@ -33,25 +33,27 @@ class ByteCtorTwoObjectProbe023 {
 
 /** Mindmap: out-of-range or type-mismatch may throw std.core errors or truncate on OH (ArkTS spec §8.15 catch + instanceof). */
 class ByteCtorTwoCatchHelper {
-  static assertErrorOrTruncate(build: () => Byte): void {
+  private static isValidTruncatedByte(b: Byte): boolean {
+    if (Class.of(b).getName().indexOf('Byte') < 0) {
+      return false;
+    }
+    const v: byte = b.toByte();
+    const lo: byte = Int.toByte(-128);
+    const hi: byte = Int.toByte(127);
+    return v >= lo && v <= hi;
+  }
+
+  static checkErrorOrTruncate(build: () => Byte): boolean {
     try {
-      const b = build();
-      expect(Class.of(b).getName().indexOf('Byte') >= 0).assertTrue();
-      const v: byte = b.toByte();
-      const lo: byte = Int.toByte(-128);
-      const hi: byte = Int.toByte(127);
-      expect(v >= lo && v <= hi).assertTrue();
+      return ByteCtorTwoCatchHelper.isValidTruncatedByte(build());
     } catch (e) {
       try {
-        const b = build();
-        expect(Class.of(b).getName().indexOf('Byte') >= 0).assertTrue();
-        const v: byte = b.toByte();
-        const lo: byte = Int.toByte(-128);
-        const hi: byte = Int.toByte(127);
-        expect(v >= lo && v <= hi).assertTrue();
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e);
+        return ByteCtorTwoCatchHelper.isValidTruncatedByte(build());
+      } catch (inner) {
+        if (inner === null || inner === undefined) {
+          return false;
+        }
+        return Utils.thrownErrorCodeIsAcceptable(inner);
       }
     }
   }
@@ -212,7 +214,7 @@ export default function byteConstructorTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testByteConstructorTwo0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      ByteCtorTwoCatchHelper.assertErrorOrTruncate((): Byte => new Byte(Int.toByte(128)));
+      expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => new Byte(Int.toByte(128)))).assertTrue();
     });
 
     /**
@@ -224,7 +226,7 @@ export default function byteConstructorTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testByteConstructorTwo0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      ByteCtorTwoCatchHelper.assertErrorOrTruncate((): Byte => new Byte(Int.toByte(-129)));
+      expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => new Byte(Int.toByte(-129)))).assertTrue();
     });
 
     /**
@@ -236,7 +238,7 @@ export default function byteConstructorTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testByteConstructorTwo0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      ByteCtorTwoCatchHelper.assertErrorOrTruncate((): Byte => new Byte(Int.toByte(255)));
+      expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => new Byte(Int.toByte(255)))).assertTrue();
     });
 
     /**
@@ -248,10 +250,10 @@ export default function byteConstructorTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testByteConstructorTwo0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      ByteCtorTwoCatchHelper.assertErrorOrTruncate((): Byte => {
+      expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => {
         const v: number = NaN;
         return new Byte((v as Object) as byte);
-      });
+      })).assertTrue();
     });
 
     /**
@@ -263,7 +265,7 @@ export default function byteConstructorTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testByteConstructorTwo0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      ByteCtorTwoCatchHelper.assertErrorOrTruncate((): Byte => new Byte(Int.toByte(128)));
+      expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => new Byte(Int.toByte(128)))).assertTrue();
     });
 
     /**
@@ -275,7 +277,7 @@ export default function byteConstructorTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testByteConstructorTwo0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      ByteCtorTwoCatchHelper.assertErrorOrTruncate((): Byte => new Byte(Int.toByte(-129)));
+      expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => new Byte(Int.toByte(-129)))).assertTrue();
     });
 
     /**
@@ -287,7 +289,7 @@ export default function byteConstructorTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testByteConstructorTwo0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      ByteCtorTwoCatchHelper.assertErrorOrTruncate((): Byte => new Byte(Double.toByte(0.5)));
+      expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => new Byte(Double.toByte(0.5)))).assertTrue();
     });
 
     /**
@@ -299,10 +301,10 @@ export default function byteConstructorTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testByteConstructorTwo0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      ByteCtorTwoCatchHelper.assertErrorOrTruncate((): Byte => {
+      expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => {
         const v: number = NaN;
         return new Byte((v as Object) as byte);
-      });
+      })).assertTrue();
     });
 
     /**
@@ -314,10 +316,10 @@ export default function byteConstructorTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testByteConstructorTwo0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      ByteCtorTwoCatchHelper.assertErrorOrTruncate((): Byte => {
+      expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => {
         const v: number = Infinity;
         return new Byte((v as Object) as byte);
-      });
+      })).assertTrue();
     });
 
     /**
@@ -329,10 +331,10 @@ export default function byteConstructorTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testByteConstructorTwo0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      ByteCtorTwoCatchHelper.assertErrorOrTruncate((): Byte => {
+      expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => {
         const s: string = '64';
         return new Byte((s as Object) as byte);
-      });
+      })).assertTrue();
     });
 
     /**
@@ -344,7 +346,7 @@ export default function byteConstructorTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testByteConstructorTwo0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      ByteCtorTwoCatchHelper.assertErrorOrTruncate((): Byte => new Byte(Double.toByte(0.5)));
+      expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => new Byte(Double.toByte(0.5)))).assertTrue();
     });
 
     /**
@@ -356,10 +358,10 @@ export default function byteConstructorTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testByteConstructorTwo0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      ByteCtorTwoCatchHelper.assertErrorOrTruncate((): Byte => {
+      expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => {
         const v: Object = (undefined as Object);
         return new Byte(v as byte);
-      });
+      })).assertTrue();
     });
 
     /**
@@ -371,10 +373,10 @@ export default function byteConstructorTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testByteConstructorTwo0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      ByteCtorTwoCatchHelper.assertErrorOrTruncate((): Byte => {
+      expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => {
         const probe = new ByteCtorTwoObjectProbe023();
         return new Byte((probe as Object) as byte);
-      });
+      })).assertTrue();
     });
 
     /**
@@ -386,7 +388,7 @@ export default function byteConstructorTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testByteConstructorTwo0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      ByteCtorTwoCatchHelper.assertErrorOrTruncate((): Byte => new Byte((true as Object) as byte));
+      expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => new Byte((true as Object) as byte))).assertTrue();
     });
 
     /**
@@ -398,7 +400,7 @@ export default function byteConstructorTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testByteConstructorTwo0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      ByteCtorTwoCatchHelper.assertErrorOrTruncate((): Byte => new Byte((false as Object) as byte));
+      expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => new Byte((false as Object) as byte))).assertTrue();
     });
 
     /**
@@ -591,26 +593,7 @@ export default function byteConstructorTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testByteConstructorTwo0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const b = new Byte(Int.toByte(128));
-        expect(Class.of(b).getName().indexOf('Byte') >= 0).assertTrue();
-        const v: byte = b.toByte();
-        const hi: byte = Int.toByte(127);
-        const lo: byte = Int.toByte(-128);
-        expect(v >= lo && v <= hi).assertTrue();
-      } catch (e) {
-        try {
-          const b = new Byte(Int.toByte(128));
-          expect(Class.of(b).getName().indexOf('Byte') >= 0).assertTrue();
-          const v: byte = b.toByte();
-          const hi: byte = Int.toByte(127);
-          const lo: byte = Int.toByte(-128);
-          expect(v >= lo && v <= hi).assertTrue();
-        } catch (e) {
-          expect(e !== null && e !== undefined).assertTrue();
-          Utils.assertThrownErrorCodeIsNumber(e);
-        }
-      }
+      expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => new Byte(Int.toByte(128)))).assertTrue();
     });
 
     /**
@@ -622,26 +605,7 @@ export default function byteConstructorTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testByteConstructorTwo0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const b = new Byte(Int.toByte(-129));
-        expect(Class.of(b).getName().indexOf('Byte') >= 0).assertTrue();
-        const v: byte = b.toByte();
-        const hi: byte = Int.toByte(127);
-        const lo: byte = Int.toByte(-128);
-        expect(v >= lo && v <= hi).assertTrue();
-      } catch (e) {
-        try {
-          const b = new Byte(Int.toByte(-129));
-          expect(Class.of(b).getName().indexOf('Byte') >= 0).assertTrue();
-          const v: byte = b.toByte();
-          const hi: byte = Int.toByte(127);
-          const lo: byte = Int.toByte(-128);
-          expect(v >= lo && v <= hi).assertTrue();
-        } catch (e) {
-          expect(e !== null && e !== undefined).assertTrue();
-          Utils.assertThrownErrorCodeIsNumber(e);
-        }
-      }
+      expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => new Byte(Int.toByte(-129)))).assertTrue();
     });
 
     /**
@@ -653,7 +617,7 @@ export default function byteConstructorTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testByteConstructorTwo0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      ByteCtorTwoCatchHelper.assertErrorOrTruncate((): Byte => new Byte(Int.toByte(256)));
+      expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => new Byte(Int.toByte(256)))).assertTrue();
     });
 
     /**
@@ -665,7 +629,7 @@ export default function byteConstructorTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testByteConstructorTwo0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      ByteCtorTwoCatchHelper.assertErrorOrTruncate((): Byte => new Byte(Int.toByte(-256)));
+      expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => new Byte(Int.toByte(-256)))).assertTrue();
     });
 
     /**
@@ -677,10 +641,10 @@ export default function byteConstructorTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testByteConstructorTwo0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      ByteCtorTwoCatchHelper.assertErrorOrTruncate((): Byte => {
+      expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => {
         const digitPair: string = '64';
         return new Byte((digitPair as Object) as byte);
-      });
+      })).assertTrue();
     });
 
     /**
@@ -692,7 +656,7 @@ export default function byteConstructorTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testByteConstructorTwo0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      ByteCtorTwoCatchHelper.assertErrorOrTruncate((): Byte => new Byte((true as Object) as byte));
+      expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => new Byte((true as Object) as byte))).assertTrue();
     });
 
     /**
@@ -704,11 +668,11 @@ export default function byteConstructorTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testByteConstructorTwo0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      ByteCtorTwoCatchHelper.assertErrorOrTruncate((): Byte => {
+      expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => {
         const probe048 = new ByteCtorTwoObjectProbe023();
         probe048.tag = 48;
         return new Byte((probe048 as Object) as byte);
-      });
+      })).assertTrue();
     });
 
     /**
@@ -720,11 +684,11 @@ export default function byteConstructorTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testByteConstructorTwo0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      ByteCtorTwoCatchHelper.assertErrorOrTruncate((): Byte => {
+      expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => {
         const arr = new Array<number>();
         arr.pushOne(Int.toDouble(1));
         return new Byte((arr as Object) as byte);
-      });
+      })).assertTrue();
     });
 
     /**
@@ -775,10 +739,10 @@ export default function byteConstructorTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testByteConstructorTwo0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      ByteCtorTwoCatchHelper.assertErrorOrTruncate((): Byte => {
+      expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => {
         const byteBadNum: number = NaN;
         return new Byte((byteBadNum as Object) as byte);
-      });
+      })).assertTrue();
     });
 
     /**
@@ -790,10 +754,10 @@ export default function byteConstructorTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testByteConstructorTwo0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      ByteCtorTwoCatchHelper.assertErrorOrTruncate((): Byte => {
+      expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => {
         const byteBadNum: number = Infinity;
         return new Byte((byteBadNum as Object) as byte);
-      });
+      })).assertTrue();
     });
     return;
   });
