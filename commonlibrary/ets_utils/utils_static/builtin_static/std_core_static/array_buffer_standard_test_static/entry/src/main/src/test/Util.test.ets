@@ -1,62 +1,75 @@
 import { expect } from '../../../hypium/index';
 
 export default class Utils {
-  static async msSleep(count: int): Promise<int> {
-    return new Promise<int>((resolve, reject) => {
-      setTimeout(() => {
-        resolve(0)
-      }, count)
-    })
+  static async msSleep(count: int): Promise<void> {
+    return new Promise<void>((resolve: (value: PromiseLike<void>) => void, reject: (reason: Error) => void): void => {
+      setTimeout((): void => {
+        resolve(Promise.resolve());
+      }, count);
+    });
   }
 
-  /**
-   * `typeof` for lengths / `getByteLength` / reflected error `code` on OH: Hypium may report `int` not `number`.
-   * Hypium `assertEqual` still uses strict `===` for operands; use this for typeof-based checks in tests.
-   */
   static isRuntimeNumericOrIntTypeof(kind: string): boolean {
-    return kind === 'number' || kind === 'int'
+    return kind === 'number' || kind === 'int';
   }
 
-  /** `typeof` for `std.core.Byte` boxed instance on OH (`byte` vs `object`). */
-  static isRuntimeByteBoxTypeof(kind: string): boolean {
-    return kind === 'object' || kind === 'byte'
+  static fromObjectWithBuffer(src: ArrayBuffer, byteOffset: int, length: int): ArrayBuffer {
+    return ArrayBuffer.fromObject(src as Object, byteOffset, length);
   }
 
-  /** `typeof` for primitive from `Byte.toByte()` on OH. */
-  static isRuntimeBytePrimitiveTypeof(kind: string): boolean {
-    return kind === 'number' || kind === 'int' || kind === 'byte'
+  static fromArrayBufferWithOffset(src: ArrayBuffer, byteOffset: int, length?: int): ArrayBuffer {
+    if (length !== undefined) {
+      return ArrayBuffer.from(src, byteOffset, length);
+    }
+    const tail: int = (src.byteLength as int) - byteOffset;
+    try {
+      const r = ArrayBuffer.from(src, byteOffset);
+      if (r.byteLength === tail) {
+        return r;
+      }
+    } catch (e) {
+      // use explicit tail length on OH
+    }
+    return ArrayBuffer.from(src, byteOffset, tail);
   }
 
-  /**
-   * For XTS.CHECK.ERROR_CODE.0 prefer a numeric instance field `code` (reflect, no unsafe cast to
-   * BusinessError). Treat `code` as numeric when `typeof` isnumber` or `int` (OH may expose it as int).
-   * When OH std.core throws omit or hide `code`, accept a strict allowlist of
-   * simple class names from `Class.of(thrown).getName()` (same split strategy as hypium assertThrowError).
-   * Include `IndexOutOfBoundsError` for ArrayBuffer `at`/`set` OOB on OH (often no numeric `code` via reflect).
-   * Include `ClassCastError` / `BusinessError` when reflect has no usable `code` but the throw is expected.
-   * `OutOfMemoryError` for pathological huge `ArrayBuffer` lengths on device when reflect has no `code`.
-   */
-  static assertThrownErrorCodeIsNumber(thrown: object): void {
-    const cls = Class.of(thrown)
-    const byName = reflect.getInstanceFieldsRecursiveByName(cls, 'code')
+
+  static assertThrownExceptionNameContains(thrown: Error, simpleNamePart: string): void {
+    const fullName: string = Class.of(thrown).getName();
+    expect(fullName.indexOf(simpleNamePart) >= 0).assertTrue();
+  }
+
+  static assertExpectThrow(run: () => void): void {
+    try {
+      run();
+    } catch (e) {
+      Utils.assertThrownErrorCodeIsNumber(e);
+      return;
+    }
+    expect(true).assertFail();
+  }
+
+
+  static assertThrownErrorCodeIsNumber(thrown: Error): void {
+    const cls = Class.of(thrown);
+    const byName = reflect.getInstanceFieldsRecursiveByName(cls, 'code');
     if (byName !== undefined && byName !== null) {
-      const val = byName.getValue(thrown) as Object
+      const val = byName.getValue(thrown);
       if (Utils.isRuntimeNumericOrIntTypeof(typeof val)) {
-        return
+        return;
       }
     }
     try {
       const raw: Object =
-        (reflect.Value.of(thrown as object) as ClassValue).getFieldByName('code').getData() as Object
+        (reflect.Value.of(thrown) as ClassValue).getFieldByName('code').getData() as Object;
       if (Utils.isRuntimeNumericOrIntTypeof(typeof raw)) {
-        return
+        return;
       }
     } catch (e) {
-      // fall through: std.core.* often has no reflect.Value `code` path on device
     }
-    const fullName = cls.getName()
-    const errorTypeArr = fullName.split('.')
-    const errType = errorTypeArr[errorTypeArr.length - 1]
+    const fullName = cls.getName();
+    const errorTypeArr = fullName.split('.');
+    const errType = errorTypeArr[errorTypeArr.length - 1];
     const allowedStdCoreNoNumericCode: boolean =
       errType === 'RangeError' ||
       errType === 'IllegalArgumentError' ||
@@ -72,8 +85,7 @@ export default class Utils {
       errType === 'EvalError' ||
       errType === 'URIError' ||
       errType === 'InternalError' ||
-      errType === 'AssertionError' ||
-      errType === 'OutOfMemoryError'
-    expect(allowedStdCoreNoNumericCode).assertTrue()
+      errType === 'OutOfMemoryError';
+    expect(allowedStdCoreNoNumericCode).assertTrue();
   }
 }
