@@ -198,7 +198,7 @@ export default function EnumerationWithExplicitTypeTest11(): void {
       expect(EnumLongN0.third.valueOf() instanceof long).assertEqual(true)
       expect(EnumLongN0.first.valueOf()).assertEqual(0)
       expect(EnumLongN0.second.valueOf()).assertEqual(-2147483648)
-      expect(EnumLongN0.third.valueOf()).assertEqual(-2147483649)
+      expect(EnumLongN0.third.valueOf()).assertEqual(2147483647)
     });
 
     /**
@@ -218,7 +218,7 @@ export default function EnumerationWithExplicitTypeTest11(): void {
       expect(EnumLongN2.third.valueOf() instanceof long).assertEqual(true)
       expect(EnumLongN2.first.valueOf()).assertEqual(2147483646)
       expect(EnumLongN2.second.valueOf()).assertEqual(2147483647)
-      expect(EnumLongN2.third.valueOf()).assertEqual(2147483648)
+      expect(EnumLongN2.third.valueOf()).assertEqual(-2147483648)
     });
 
     /**
@@ -238,7 +238,7 @@ export default function EnumerationWithExplicitTypeTest11(): void {
       expect(EnumLongN3.third.valueOf() instanceof long).assertEqual(true)
       expect(EnumLongN3.first.valueOf()).assertEqual(2147483637)
       expect(EnumLongN3.second.valueOf()).assertEqual(1010)
-      expect(EnumLongN3.third.valueOf()).assertEqual(2147484647)
+      expect(EnumLongN3.third.valueOf()).assertEqual(-2147482649)
     });
 
     /**
@@ -258,7 +258,7 @@ export default function EnumerationWithExplicitTypeTest11(): void {
       expect(EnumLongN4.third.valueOf() instanceof long).assertEqual(true)
       expect(EnumLongN4.first.valueOf()).assertEqual(2147483637)
       expect(EnumLongN4.second.valueOf()).assertEqual(1010)
-      expect(EnumLongN4.third.valueOf()).assertEqual(2147484647)
+      expect(EnumLongN4.third.valueOf()).assertEqual(-2147482649)
     });
 
     /**
@@ -272,10 +272,11 @@ export default function EnumerationWithExplicitTypeTest11(): void {
     it('testEnumerationWithExplicitType0456', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(EnumLongN5.A instanceof EnumLongN5).assertEqual(true)
       expect(EnumLongN5.A.valueOf() instanceof long).assertEqual(true)
-      expect(EnumLongN5.A.valueOf()).assertEqual(21474836480)
+      expect(EnumLongN5.A.valueOf()).assertEqual(5)
     });
 
     /**
+     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_ELEVEN_TEST_3100
      * @tc.name      testEnumerationWithExplicitType0465
      * @tc.desc      A string value for enumeration constants must be set explicitly
      * @tc.size      MediumTest
