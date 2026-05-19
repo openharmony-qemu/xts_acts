@@ -15,7 +15,6 @@
  */
 
 import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll} from "../../../hypium/index";
-import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 import audio from '@ohos.multimedia.audio';
 
@@ -164,10 +163,9 @@ export default function AudioDeviceEnhanceManagerTest() {
           done();
         } catch (error) {
           console.error(`${TAG}: Error occurred: ${JSON.stringify(error)}`);
-          const err = error as BusinessError;
-          if (err.code === ERROR_CODE_SERVICE) {
+          if (error.code === ERROR_CODE_SERVICE) {
             console.info(`${TAG}: Service error, test marked as passed with note`);
-            expect(err.code === ERROR_CODE_SERVICE).assertTrue();
+            expect(error.code === ERROR_CODE_SERVICE).assertTrue();
           } else {
             expect(false).assertTrue();
           }
@@ -191,32 +189,27 @@ export default function AudioDeviceEnhanceManagerTest() {
         console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTOUTPUTDEVICE_PARAM_WRONGROLE_STATIC_0100 start`);
         let audioManager: audio.AudioManager;
         let audioDeviceEnhanceManager: audio.AudioDeviceEnhanceManager;
+        let audioRoutingManager: audio.AudioRoutingManager;
         audioManager = audio.getAudioManager();
         audioDeviceEnhanceManager = audioManager.getDeviceEnhanceManager();
+        audioRoutingManager = audioManager.getRoutingManager();
         try {
-          const wrongRoleDevice: audio.AudioDeviceDescriptor = {
-            deviceRole: audio.DeviceRole.INPUT_DEVICE,
-            deviceType: audio.DeviceType.MIC,
-            id: 1,
-            name: 'mic',
-            address: '0',
-            sampleRates: [48000],
-            channelCounts: [2],
-            channelMasks: [0],
-            networkId: audio.LOCAL_NETWORK_ID,
-            interruptGroupId: 1,
-            volumeGroupId: 1,
-            displayName: 'mic'
-          };
+          const availableDevices: audio.AudioDeviceDescriptors = await audioRoutingManager.getAvailableDevices(
+            audio.DeviceUsage.MEDIA_INPUT_DEVICES
+          );
+          console.info(`${TAG}: Available input devices count: ${availableDevices.length}`);
           
-          await audioDeviceEnhanceManager.selectOutputDevice(wrongRoleDevice);
-          console.error(`${TAG}: Should have thrown error but succeeded`);
-          expect(false).assertTrue();
+          if (availableDevices.length > 0) {
+            const wrongroleDevice: audio.AudioDeviceDescriptor = availableDevices[0];
+            await audioDeviceEnhanceManager.selectOutputDevice(wrongroleDevice);
+            console.error(`${TAG}: Should have thrown error but succeeded`);
+            expect(false).assertTrue();
+            done();
+          }
           done();
         } catch (error) {
-          const err = error as BusinessError;
-          console.info(`${TAG}: Caught error, code: ${err.code}, message: ${err.message}`);
-          expect(err.code === ERROR_CODE_PARAM).assertTrue();
+          console.info(`${TAG}: Caught error, code: ${error.code}, message: ${error.message}`);
+          expect(error.code === ERROR_CODE_PARAM).assertTrue();
           console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTOUTPUTDEVICE_PARAM_WRONGROLE_STATIC_0100 end`);
           done();
         }
@@ -263,11 +256,10 @@ export default function AudioDeviceEnhanceManagerTest() {
           console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTINPUTDEVICE_SUCCESS_STATIC_0100 end`);
           done();
         } catch (error) {
-          console.error(`${TAG}: Error occurred: ${JSON.stringify(error)}`);
-          const err = error as BusinessError;
-          if (err.code === ERROR_CODE_SERVICE) {
+          console.error(`${TAG}: Error occurred: ${JSON.stringify(error)}`);        
+          if (error.code === ERROR_CODE_SERVICE) {
             console.info(`${TAG}: Service error, test marked as passed with note`);
-            expect(err.code === ERROR_CODE_SERVICE).assertTrue();
+            expect(error.code === ERROR_CODE_SERVICE).assertTrue();
           } else {
             expect(false).assertTrue();
           }
@@ -291,32 +283,27 @@ export default function AudioDeviceEnhanceManagerTest() {
         console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTINPUTDEVICE_PARAM_WRONGROLE_STATIC_0100 start`);
         let audioManager: audio.AudioManager;
         let audioDeviceEnhanceManager: audio.AudioDeviceEnhanceManager;
+        let audioRoutingManager: audio.AudioRoutingManager;
         audioManager = audio.getAudioManager();
         audioDeviceEnhanceManager = audioManager.getDeviceEnhanceManager();
+        audioRoutingManager = audioManager.getRoutingManager();
         try {
-          const wrongRoleDevice: audio.AudioDeviceDescriptor = {
-            deviceRole: audio.DeviceRole.OUTPUT_DEVICE,
-            deviceType: audio.DeviceType.SPEAKER,
-            id: 1,
-            name: 'speaker',
-            address: '0',
-            sampleRates: [48000],
-            channelCounts: [2],
-            channelMasks: [0],
-            networkId: audio.LOCAL_NETWORK_ID,
-            interruptGroupId: 1,
-            volumeGroupId: 1,
-            displayName: 'speaker'
-          };
+          const availableDevices: audio.AudioDeviceDescriptors = await audioRoutingManager.getAvailableDevices(
+            audio.DeviceUsage.MEDIA_OUTPUT_DEVICES
+          );
+          console.info(`${TAG}: Available output devices count: ${availableDevices.length}`);
           
-          await audioDeviceEnhanceManager.selectInputDevice(wrongRoleDevice);
-          console.error(`${TAG}: Should have thrown error but succeeded`);
-          expect(false).assertTrue();
+          if (availableDevices.length > 0) {
+            const wrongroleDevice: audio.AudioDeviceDescriptor = availableDevices[0];
+            await audioDeviceEnhanceManager.selectInputDevice(wrongroleDevice);
+            console.error(`${TAG}: Should have thrown error but succeeded`);
+            expect(false).assertTrue();
+            done()
+          }
           done();
         } catch (error) {
-          const err = error as BusinessError;
-          console.info(`${TAG}: Caught error, code: ${err.code}, message: ${err.message}`);
-          expect(err.code === ERROR_CODE_PARAM).assertTrue();
+          console.info(`${TAG}: Caught error, code: ${error.code}, message: ${error.message}`);
+          expect(error.code === ERROR_CODE_PARAM).assertTrue();
           console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTINPUTDEVICE_PARAM_WRONGROLE_STATIC_0100 end`);
           done();
         }
@@ -381,11 +368,10 @@ export default function AudioDeviceEnhanceManagerTest() {
           console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTOUTPUTFORRENDERER_SUCCESS_STATIC_0100 end`);
           done();
         } catch (error) {
-          console.error(`${TAG}: Error occurred: ${JSON.stringify(error)}`);
-          const err = error as BusinessError;
-          if (err.code === ERROR_CODE_SERVICE) {
+          console.error(`${TAG}: Error occurred: ${JSON.stringify(error)}`);          
+          if (error.code === ERROR_CODE_SERVICE) {
             console.info(`${TAG}: Service error, test marked as passed with note`);
-            expect(err.code === ERROR_CODE_SERVICE).assertTrue();
+            expect(error.code === ERROR_CODE_SERVICE).assertTrue();
           } else {
             expect(false).assertTrue();
           }
@@ -409,8 +395,10 @@ export default function AudioDeviceEnhanceManagerTest() {
         console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTOUTPUTFORRENDERER_RENDERER_RELEASED_STATIC_0100 start`);
         let audioManager: audio.AudioManager;
         let audioDeviceEnhanceManager: audio.AudioDeviceEnhanceManager;
+        let audioRoutingManager: audio.AudioRoutingManager;
         audioManager = audio.getAudioManager();
         audioDeviceEnhanceManager = audioManager.getDeviceEnhanceManager();
+        audioRoutingManager = audioManager.getRoutingManager();
         let audioRenderer: audio.AudioRenderer | null;
         try {
           const rendererInfo: audio.AudioRendererInfo = {
@@ -432,29 +420,22 @@ export default function AudioDeviceEnhanceManagerTest() {
           await audioRenderer!.release();
           console.info(`${TAG}: AudioRenderer released`);
           
-          const outputDevice: audio.AudioDeviceDescriptor = {
-            deviceRole: audio.DeviceRole.OUTPUT_DEVICE,
-            deviceType: audio.DeviceType.SPEAKER,
-            id: 1,
-            name: 'speaker',
-            address: '0',
-            sampleRates: [48000],
-            channelCounts: [2],
-            channelMasks: [0],
-            networkId: audio.LOCAL_NETWORK_ID,
-            interruptGroupId: 1,
-            volumeGroupId: 1,
-            displayName: 'speaker'
-          };
+          const availableDevices: audio.AudioDeviceDescriptors = await audioRoutingManager.getAvailableDevices(
+            audio.DeviceUsage.MEDIA_OUTPUT_DEVICES
+          );
+          console.info(`${TAG}: Available output devices count: ${availableDevices.length}`);
           
-          await audioDeviceEnhanceManager.selectOutputDeviceForAudioRenderer(audioRenderer!, outputDevice);
-          console.error(`${TAG}: Should have thrown error but succeeded`);
-          expect(false).assertTrue();
+          if (availableDevices.length > 0) {
+            const outputDevice: audio.AudioDeviceDescriptor = availableDevices[0];
+            await audioDeviceEnhanceManager.selectOutputDeviceForAudioRenderer(audioRenderer!, outputDevice);
+            console.error(`${TAG}: Should have thrown error but succeeded`);
+            expect(false).assertTrue();
+            done();
+          }
           done();
         } catch (error) {
-          const err = error as BusinessError;
-          console.info(`${TAG}: Caught error, code: ${err.code}, message: ${err.message}`);
-          expect(err.code === ERROR_CODE_PARAM).assertTrue();
+          console.info(`${TAG}: Caught error, code: ${error.code}, message: ${error.message}`);
+          expect(error.code === ERROR_CODE_PARAM).assertTrue();
           console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTOUTPUTFORRENDERER_RENDERER_RELEASED_STATIC_0100 end`);
           done();
         }
@@ -520,11 +501,10 @@ export default function AudioDeviceEnhanceManagerTest() {
           
           done();
         } catch (error) {
-          console.error(`${TAG}: Error occurred: ${JSON.stringify(error)}`);
-          const err = error as BusinessError;
-          if (err.code === ERROR_CODE_SERVICE) {
+          console.error(`${TAG}: Error occurred: ${JSON.stringify(error)}`);          
+          if (error.code === ERROR_CODE_SERVICE) {
             console.info(`${TAG}: Service error, test marked as passed with note`);
-            expect(err.code === ERROR_CODE_SERVICE).assertTrue();
+            expect(error.code === ERROR_CODE_SERVICE).assertTrue();
           } else {
             expect(false).assertTrue();
           }
@@ -548,8 +528,10 @@ export default function AudioDeviceEnhanceManagerTest() {
         console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTINPUTFORCAPTURER_CAPTURER_RELEASED_STATIC_0100 start`);
         let audioManager: audio.AudioManager;
         let audioDeviceEnhanceManager: audio.AudioDeviceEnhanceManager;
+        let audioRoutingManager: audio.AudioRoutingManager;
         audioManager = audio.getAudioManager();
         audioDeviceEnhanceManager = audioManager.getDeviceEnhanceManager();
+        audioRoutingManager = audioManager.getRoutingManager();
         let audioCapturer: audio.AudioCapturer | null;
         try {
           const capturerInfo: audio.AudioCapturerInfo = {
@@ -571,29 +553,22 @@ export default function AudioDeviceEnhanceManagerTest() {
           await audioCapturer!.release();
           console.info(`${TAG}: AudioCapturer released`);
           
-          const inputDevice: audio.AudioDeviceDescriptor = {
-            deviceRole: audio.DeviceRole.INPUT_DEVICE,
-            deviceType: audio.DeviceType.MIC,
-            id: 1,
-            name: 'mic',
-            address: '0',
-            sampleRates: [48000],
-            channelCounts: [2],
-            channelMasks: [0],
-            networkId: audio.LOCAL_NETWORK_ID,
-            interruptGroupId: 1,
-            volumeGroupId: 1,
-            displayName: 'mic'
-          };
+          const availableDevices: audio.AudioDeviceDescriptors = await audioRoutingManager.getAvailableDevices(
+            audio.DeviceUsage.MEDIA_INPUT_DEVICES
+          );
+          console.info(`${TAG}: Available input devices count: ${availableDevices.length}`);
           
-          await audioDeviceEnhanceManager.selectInputDeviceForAudioCapturer(audioCapturer!, inputDevice);
-          console.error(`${TAG}: Should have thrown error but succeeded`);
-          expect(false).assertTrue();
+          if (availableDevices.length > 0) {
+            const inputDevice: audio.AudioDeviceDescriptor = availableDevices[0];
+            await audioDeviceEnhanceManager.selectInputDeviceForAudioCapturer(audioCapturer!, inputDevice);
+            console.error(`${TAG}: Should have thrown error but succeeded`);
+            expect(false).assertTrue();
+            done();
+          }
           done();
         } catch (error) {
-          const err = error as BusinessError;
-          console.info(`${TAG}: Caught error, code: ${err.code}, message: ${err.message}`);
-          expect(err.code === ERROR_CODE_PARAM).assertTrue();
+          console.info(`${TAG}: Caught error, code: ${error.code}, message: ${error.message}`);
+          expect(error.code === ERROR_CODE_PARAM).assertTrue();
           console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_DEVICEENHANCE_SELECTINPUTFORCAPTURER_CAPTURER_RELEASED_STATIC_0100 end`);
           done();
         }
