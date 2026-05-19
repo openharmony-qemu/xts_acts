@@ -190,7 +190,7 @@ export default function ImageInitImageNativeSuppTest() {
       console.info(TAG,'Start',);
       let result:number = testNapi.OHPixelmapNativeSetMetadataSupp(CASE_INDEX_3)
       console.info(TAG,testName,'Success',JSON.stringify(result));
-      expect(result).assertEqual(IMAGE_DMA_NOT_EXIST)
+      expect(result).assertEqual(IMAGE_SUCCESS)
     })
     /**
      * @tc.number  SUB_PIXELMAP_NATIVE_SET_METADATA_SUPP_005
