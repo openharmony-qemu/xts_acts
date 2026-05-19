@@ -26,15 +26,11 @@ import {
   ArraySomeJs_26,
   ArraySomeJs_29,
   ArraySomeJs_30,
-  ArraySomeJs_38,
   ArraySomeJs_39,
   ArraySomeJs_54,
-  ArraySomeJs_55,
-  ArraySomeJs_56,
   ArraySomeJs_61,
   ArraySomeJs_62,
   ArraySomeJs_63,
-  ArraySomeJs_64,
   ArraySomeJs_65,
   ArraySomeJs_66,
   ArraySomeJs_67,
@@ -46,34 +42,27 @@ import {
   ArraySomeJs_75,
   ArraySomeJs_83,
   ArraySomeJs_84,
-  ArraySomeJs_88,
-  ArraySomeJs_148
+  ArraySomeJs_88
 } from './ArraySomeTest';
 
 const ARRAY_SOME_NAMED_GT3: (e: number) => boolean = (e: number): boolean => e > 3;
 
 class ArraySomeMixMarker {}
 
+interface ArraySomeMultiplierCtx {
+  multiplier: number;
+}
+
 export default function ArraySomeMindMapTest() {
   describe('ArraySomeMindMapTest', () => {
     beforeAll(() => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
     })
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(20);
-      // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: preset action function.
     })
     afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
     })
     afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
     })
     /**
      * @tc.name testArraySomeTest0100
@@ -204,7 +193,7 @@ export default function ArraySomeMindMapTest() {
     /**
      * @tc.name testArraySomeTest0108
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SOME_SUPPLEMENT_TEST_0900
-     * @tc.desc Verify some throws TypeError when callback is omitted
+     * @tc.desc Verify some throws TypeError when callback is omitted. JS-only: omitted callback TypeError semantics
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -216,7 +205,7 @@ export default function ArraySomeMindMapTest() {
     /**
      * @tc.name testArraySomeTest0109
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SOME_SUPPLEMENT_TEST_1000
-     * @tc.desc Verify some throws TypeError when callback is not a function
+     * @tc.desc Verify some throws TypeError when callback is not a function. JS-only: non-function callback TypeError semantics
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -285,7 +274,8 @@ export default function ArraySomeMindMapTest() {
      * @tc.level LEVEL2
      */
     it('testArraySomeTest0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: number[] = [5, 1, 2, 3]; expect(arr.some((n: number): boolean => n > 4)).assertEqual(true);
+      const arr: number[] = [5, 1, 2, 3];
+      expect(arr.some((n: number): boolean => n > 4)).assertEqual(true);
     })
 
     /**
@@ -297,7 +287,8 @@ export default function ArraySomeMindMapTest() {
      * @tc.level LEVEL2
      */
     it('testArraySomeTest0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: number[] = [1, 2, 5, 3, 4]; expect(arr.some((n: number): boolean => n > 4)).assertEqual(true);
+      const arr: number[] = [1, 2, 5, 3, 4];
+      expect(arr.some((n: number): boolean => n > 4)).assertEqual(true);
     })
 
     /**
@@ -309,7 +300,8 @@ export default function ArraySomeMindMapTest() {
      * @tc.level LEVEL2
      */
     it('testArraySomeTest0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: number[] = [1, 2, 3, 4, 5]; expect(arr.some((n: number): boolean => n > 4)).assertEqual(true);
+      const arr: number[] = [1, 2, 3, 4, 5];
+      expect(arr.some((n: number): boolean => n > 4)).assertEqual(true);
     })
 
     /**
@@ -321,7 +313,8 @@ export default function ArraySomeMindMapTest() {
      * @tc.level LEVEL2
      */
     it('testArraySomeTest0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: number[] = [5, 6, 7, 8]; expect(arr.some((n: number): boolean => n > 4)).assertEqual(true);
+      const arr: number[] = [5, 6, 7, 8];
+      expect(arr.some((n: number): boolean => n > 4)).assertEqual(true);
     })
 
     /**
@@ -333,7 +326,8 @@ export default function ArraySomeMindMapTest() {
      * @tc.level LEVEL2
      */
     it('testArraySomeTest0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: number[] = [1, 2, 3, 4]; expect(arr.some((n: number): boolean => n > 10)).assertEqual(false);
+      const arr: number[] = [1, 2, 3, 4];
+      expect(arr.some((n: number): boolean => n > 10)).assertEqual(false);
     })
 
     /**
@@ -362,7 +356,6 @@ export default function ArraySomeMindMapTest() {
       const arr: number[] = [1, 2, 3];
       const r: boolean = arr.some((n: number): boolean => n > 2);
       expect(typeof r === 'boolean').assertEqual(true);
-      expect(r === true || r === false).assertEqual(true);
     })
 
     /**
@@ -383,7 +376,7 @@ export default function ArraySomeMindMapTest() {
     /**
      * @tc.name testArraySomeTest0121
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SOME_SUPPLEMENT_TEST_2200
-     * @tc.desc Verify holes in sparse array are not visited by callback
+     * @tc.desc Verify holes in sparse array are not visited by callback. JS-only: sparse array hole semantics
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -395,7 +388,7 @@ export default function ArraySomeMindMapTest() {
     /**
      * @tc.name testArraySomeTest0122
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SOME_SUPPLEMENT_TEST_2300
-     * @tc.desc Verify difference between array holes and explicit undefined elements
+     * @tc.desc Verify difference between array holes and explicit undefined elements. JS-only: hole vs undefined semantics
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -407,7 +400,7 @@ export default function ArraySomeMindMapTest() {
     /**
      * @tc.name testArraySomeTest0123
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SOME_SUPPLEMENT_TEST_2400
-     * @tc.desc Verify some with leading holes in sparse array
+     * @tc.desc Verify some with leading holes in sparse array. JS-only: sparse array hole semantics
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -419,7 +412,7 @@ export default function ArraySomeMindMapTest() {
     /**
      * @tc.name testArraySomeTest0124
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SOME_SUPPLEMENT_TEST_2500
-     * @tc.desc Verify some with trailing holes in sparse array
+     * @tc.desc Verify some with trailing holes in sparse array. JS-only: sparse array hole semantics
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -431,7 +424,7 @@ export default function ArraySomeMindMapTest() {
     /**
      * @tc.name testArraySomeTest0125
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SOME_SUPPLEMENT_TEST_2600
-     * @tc.desc Verify some after delete creates holes skipped by callback
+     * @tc.desc Verify some after delete creates holes skipped by callback. JS-only: delete operator creates holes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -443,7 +436,7 @@ export default function ArraySomeMindMapTest() {
     /**
      * @tc.name testArraySomeTest0126
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SOME_SUPPLEMENT_TEST_2700
-     * @tc.desc Verify some with mixed holes and defined elements
+     * @tc.desc Verify some with mixed holes and defined elements. JS-only: sparse array hole semantics
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -484,7 +477,7 @@ export default function ArraySomeMindMapTest() {
     /**
      * @tc.name testArraySomeTest0129
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SOME_SUPPLEMENT_TEST_3000
-     * @tc.desc Verify some on array-like object with length 0 via call
+     * @tc.desc Verify some on array-like object with length 0 via call. JS-only: Array.prototype.some.call on arrayLike
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -496,7 +489,7 @@ export default function ArraySomeMindMapTest() {
     /**
      * @tc.name testArraySomeTest0130
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SOME_SUPPLEMENT_TEST_3100
-     * @tc.desc Verify some when array is cleared inside callback (length snapshot)
+     * @tc.desc Verify some when array is cleared inside callback (length snapshot). JS-only: length mutation during traversal
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -572,7 +565,8 @@ export default function ArraySomeMindMapTest() {
      * @tc.level LEVEL2
      */
     it('testArraySomeTest0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: number[] = [5]; expect(arr.some((x: number): boolean => x > 3)).assertEqual(true);
+      const arr: number[] = [5];
+      expect(arr.some((x: number): boolean => x > 3)).assertEqual(true);
     })
 
     /**
@@ -584,7 +578,8 @@ export default function ArraySomeMindMapTest() {
      * @tc.level LEVEL2
      */
     it('testArraySomeTest0136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: number[] = [2]; expect(arr.some((x: number): boolean => x > 3)).assertEqual(false);
+      const arr: number[] = [2];
+      expect(arr.some((x: number): boolean => x > 3)).assertEqual(false);
     })
 
     /**
@@ -613,13 +608,15 @@ export default function ArraySomeMindMapTest() {
      * @tc.level LEVEL2
      */
     it('testArraySomeTest0138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ArraySomeJs_38()).assertEqual(true);
+      const largeArr: number[] = new Array<number>(50000).fill(0);
+      largeArr[49999] = 1;
+      expect(largeArr.some((x: number): boolean => x === 1)).assertEqual(true);
     })
 
     /**
      * @tc.name testArraySomeTest0139
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SOME_SUPPLEMENT_TEST_4000
-     * @tc.desc Verify some on sparse array with very large index
+     * @tc.desc Verify some on sparse array with very large index. JS-only: huge sparse index assignment
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -680,7 +677,8 @@ export default function ArraySomeMindMapTest() {
      * @tc.level LEVEL2
      */
     it('testArraySomeTest0143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: number[] = [1, 2, 3]; expect(arr.some((): boolean => false)).assertEqual(false);
+      const arr: number[] = [1, 2, 3];
+      expect(arr.some((): boolean => false)).assertEqual(false);
     })
 
     /**
@@ -692,7 +690,8 @@ export default function ArraySomeMindMapTest() {
      * @tc.level LEVEL2
      */
     it('testArraySomeTest0144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: number[] = [1, 2, 3]; expect(arr.some((): boolean => 0 !== 0)).assertEqual(false);
+      const arr: number[] = [1, 2, 3];
+      expect(arr.some((): boolean => 0 !== 0)).assertEqual(false);
     })
 
     /**
@@ -704,7 +703,8 @@ export default function ArraySomeMindMapTest() {
      * @tc.level LEVEL2
      */
     it('testArraySomeTest0145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: number[] = [1, 2, 3]; expect(arr.some((): boolean => '' !== '')).assertEqual(false);
+      const arr: number[] = [1, 2, 3];
+      expect(arr.some((): boolean => '' !== '')).assertEqual(false);
     })
 
     /**
@@ -716,7 +716,8 @@ export default function ArraySomeMindMapTest() {
      * @tc.level LEVEL2
      */
     it('testArraySomeTest0146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: number[] = [1, 2, 3]; expect(arr.some((): boolean => null !== null)).assertEqual(false);
+      const arr: number[] = [1, 2, 3];
+      expect(arr.some((): boolean => null !== null)).assertEqual(false);
     })
 
     /**
@@ -741,7 +742,8 @@ export default function ArraySomeMindMapTest() {
      * @tc.level LEVEL2
      */
     it('testArraySomeTest0148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ArraySomeJs_148()).assertEqual(true);
+      const arr: number[] = [1, 2, 3];
+      expect(arr.some((): number => NaN)).assertEqual(false);
     })
 
     /**
@@ -819,7 +821,7 @@ export default function ArraySomeMindMapTest() {
     /**
      * @tc.name testArraySomeTest0154
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SOME_SUPPLEMENT_TEST_5500
-     * @tc.desc Verify some with object method as callback and thisArg
+     * @tc.desc Verify some with object method as callback and thisArg. JS-only: unbound method callback with thisArg
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -837,7 +839,20 @@ export default function ArraySomeMindMapTest() {
      * @tc.level LEVEL2
      */
     it('testArraySomeTest0155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ArraySomeJs_55()).assertEqual(true);
+      const arr: number[] = [1, 2, 3];
+      let caught: boolean = false;
+      try {
+        arr.some((x: number): boolean => {
+          if (x === 2) {
+            throw new Error('Error at 2');
+          }
+          return false;
+        });
+      } catch (e) {
+        caught = true;
+        expect((e as Error).message).assertEqual('Error at 2');
+      }
+      expect(caught).assertEqual(true);
     })
 
     /**
@@ -849,7 +864,22 @@ export default function ArraySomeMindMapTest() {
      * @tc.level LEVEL2
      */
     it('testArraySomeTest0156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ArraySomeJs_56()).assertEqual(true);
+      const arr: number[] = [1, 2, 3, 4, 5];
+      let count: number = 0;
+      let caught: boolean = false;
+      try {
+        arr.some((x: number): boolean => {
+          count++;
+          if (x === 3) {
+            throw new Error('Stop at 3');
+          }
+          return false;
+        });
+      } catch (e) {
+        caught = true;
+      }
+      expect(caught).assertEqual(true);
+      expect(count).assertEqual(3);
     })
 
     /**
@@ -923,7 +953,7 @@ export default function ArraySomeMindMapTest() {
     /**
      * @tc.name testArraySomeTest0161
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SOME_SUPPLEMENT_TEST_6200
-     * @tc.desc Verify some boxes primitive thisArg as object for this
+     * @tc.desc Verify some boxes primitive thisArg as object for this. JS-only: Universal this binding in function callback
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -935,7 +965,7 @@ export default function ArraySomeMindMapTest() {
     /**
      * @tc.name testArraySomeTest0162
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SOME_SUPPLEMENT_TEST_6300
-     * @tc.desc Verify some with thisArg null uses strict undefined this
+     * @tc.desc Verify some with thisArg null uses strict undefined this. JS-only: strict mode this binding
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -947,7 +977,7 @@ export default function ArraySomeMindMapTest() {
     /**
      * @tc.name testArraySomeTest0163
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SOME_SUPPLEMENT_TEST_6400
-     * @tc.desc Verify some with thisArg undefined uses strict undefined this
+     * @tc.desc Verify some with thisArg undefined uses strict undefined this. JS-only: strict mode this binding
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -965,13 +995,18 @@ export default function ArraySomeMindMapTest() {
      * @tc.level LEVEL2
      */
     it('testArraySomeTest0164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ArraySomeJs_64()).assertEqual(true);
+      const arr: number[] = [1, 2, 3];
+      const context: ArraySomeMultiplierCtx = { multiplier: 10 };
+      const ignoreThis: ArraySomeMultiplierCtx = { multiplier: 999 };
+      const r: boolean = arr.some((element: number): boolean =>
+        element * context.multiplier > 15, ignoreThis);
+      expect(r).assertEqual(true);
     })
 
     /**
      * @tc.name testArraySomeTest0165
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SOME_SUPPLEMENT_TEST_6600
-     * @tc.desc Verify nested arrow inside normal callback respects thisArg
+     * @tc.desc Verify nested arrow inside normal callback respects thisArg. JS-only: nested arrow thisArg semantics
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -983,7 +1018,7 @@ export default function ArraySomeMindMapTest() {
     /**
      * @tc.name testArraySomeTest0166
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SOME_SUPPLEMENT_TEST_6700
-     * @tc.desc Verify some on plain array-like object via Array.prototype.some.call
+     * @tc.desc Verify some on plain array-like object via Array.prototype.some.call. JS-only: Array.prototype.some.call
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -995,7 +1030,7 @@ export default function ArraySomeMindMapTest() {
     /**
      * @tc.name testArraySomeTest0167
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SOME_SUPPLEMENT_TEST_6800
-     * @tc.desc Verify some on string primitive via call
+     * @tc.desc Verify some on string primitive via call. JS-only: Array.prototype.some.call on string
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1007,7 +1042,7 @@ export default function ArraySomeMindMapTest() {
     /**
      * @tc.name testArraySomeTest0168
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SOME_SUPPLEMENT_TEST_6900
-     * @tc.desc Verify some on arguments object via call
+     * @tc.desc Verify some on arguments object via call. JS-only: arguments object and Array.prototype.some.call
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1019,7 +1054,7 @@ export default function ArraySomeMindMapTest() {
     /**
      * @tc.name testArraySomeTest0169
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SOME_SUPPLEMENT_TEST_7000
-     * @tc.desc Verify some on NodeList-like mock via call
+     * @tc.desc Verify some on NodeList-like mock via call. JS-only: Array.prototype.some.call on DOM-like mock
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1031,7 +1066,7 @@ export default function ArraySomeMindMapTest() {
     /**
      * @tc.name testArraySomeTest0170
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SOME_SUPPLEMENT_TEST_7100
-     * @tc.desc Verify some on HTMLCollection-like mock via call
+     * @tc.desc Verify some on HTMLCollection-like mock via call. JS-only: Array.prototype.some.call on DOM-like mock
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1069,7 +1104,7 @@ export default function ArraySomeMindMapTest() {
     /**
      * @tc.name testArraySomeTest0173
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SOME_SUPPLEMENT_TEST_7400
-     * @tc.desc Verify some on custom array-like with iterator
+     * @tc.desc Verify some on custom array-like with iterator. JS-only: Array.prototype.some.call on custom arrayLike
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1081,7 +1116,7 @@ export default function ArraySomeMindMapTest() {
     /**
      * @tc.name testArraySomeTest0174
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SOME_SUPPLEMENT_TEST_7500
-     * @tc.desc Verify some on sparse array-like with non-contiguous indices
+     * @tc.desc Verify some on sparse array-like with non-contiguous indices. JS-only: Array.prototype.some.call on sparse arrayLike
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1093,7 +1128,7 @@ export default function ArraySomeMindMapTest() {
     /**
      * @tc.name testArraySomeTest0175
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SOME_SUPPLEMENT_TEST_7600
-     * @tc.desc Verify some on array-like when length exceeds defined indices
+     * @tc.desc Verify some on array-like when length exceeds defined indices. JS-only: Array.prototype.some.call length semantics
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1251,7 +1286,7 @@ export default function ArraySomeMindMapTest() {
     /**
      * @tc.name testArraySomeTest0183
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SOME_SUPPLEMENT_TEST_8400
-     * @tc.desc Verify some when callback deletes next index with delete operator
+     * @tc.desc Verify some when callback deletes next index with delete operator. JS-only: delete operator during traversal
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1263,7 +1298,7 @@ export default function ArraySomeMindMapTest() {
     /**
      * @tc.name testArraySomeTest0184
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SOME_SUPPLEMENT_TEST_8500
-     * @tc.desc Verify some when callback deletes unvisited tail with delete
+     * @tc.desc Verify some when callback deletes unvisited tail with delete. JS-only: delete operator during traversal
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1329,7 +1364,7 @@ export default function ArraySomeMindMapTest() {
     /**
      * @tc.name testArraySomeTest0188
      * @tc.number SUB_COMMONLIBRARY_ARRAY_SOME_SUPPLEMENT_TEST_8900
-     * @tc.desc Verify some allows custom predicate unlike includes reference check
+     * @tc.desc Verify some allows custom predicate unlike includes reference check. JS-only: function element includes reference semantics
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

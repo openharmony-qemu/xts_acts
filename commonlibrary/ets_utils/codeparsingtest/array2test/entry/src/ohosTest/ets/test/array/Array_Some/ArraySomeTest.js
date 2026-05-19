@@ -114,12 +114,6 @@ export function ArraySomeJs_30() {
     return result === false && callCount === 1;
 }
 
-export function ArraySomeJs_38() {
-    const largeArr = new Array(50000).fill(0);
-    largeArr[49999] = 1;
-    return largeArr.some((x) => x === 1) === true;
-}
-
 export function ArraySomeJs_39() {
     const arr = [];
     arr[10000] = 1;
@@ -135,38 +129,6 @@ export function ArraySomeJs_54() {
         }
     };
     return arr.some(checker.check, checker) === true;
-}
-
-export function ArraySomeJs_55() {
-    const arr = [1, 2, 3];
-    try {
-        arr.some((x) => {
-            if (x === 2) {
-                throw new Error('Error at 2');
-            }
-            return false;
-        });
-        return false;
-    } catch (e) {
-        return e.message === 'Error at 2';
-    }
-}
-
-export function ArraySomeJs_56() {
-    const arr = [1, 2, 3, 4, 5];
-    let count = 0;
-    try {
-        arr.some((x) => {
-            count++;
-            if (x === 3) {
-                throw new Error('Stop at 3');
-            }
-            return false;
-        });
-        return false;
-    } catch (e) {
-        return count === 3;
-    }
 }
 
 export function ArraySomeJs_61() {
@@ -193,13 +155,6 @@ export function ArraySomeJs_63() {
         return this === undefined && element > 10;
     }, undefined);
     return r === false;
-}
-
-export function ArraySomeJs_64() {
-    const arr = [1, 2, 3];
-    const context = { multiplier: 10 };
-    const r = arr.some((element) => element * context.multiplier > 15, { multiplier: 999 });
-    return r === true;
 }
 
 export function ArraySomeJs_65() {
@@ -294,11 +249,6 @@ export function ArraySomeJs_84() {
         return element > 3;
     });
     return result === true;
-}
-
-export function ArraySomeJs_148() {
-    const arr = [1, 2, 3];
-    return arr.some(() => NaN) === false;
 }
 
 export function ArraySomeJs_88() {

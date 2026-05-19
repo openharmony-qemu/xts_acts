@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+
 function isString(value) {
   return typeof value === 'string';
 }
@@ -29,7 +30,8 @@ function safeExec(fn) {
   }
 }
 
-function runCasePart1(idx) {
+function runCase(id) {
+  const idx = id - 100;
   const cases = [
     () => [].toLocaleString() === '',
     () => [42].toLocaleString() === '42',
@@ -71,15 +73,6 @@ function runCasePart1(idx) {
     () => { const arr = [1, 2]; arr.length = 5; return arr.toLocaleString() === '1,2,,,'; },
     () => [1, , 3].toLocaleString() === '1,,3',
     () => new Array(5).toLocaleString() === ',,,,',
-  ];
-  const fn = cases[idx];
-  if (!fn) return false;
-  return safeExec(fn);
-}
-
-function runCasePart2(idx) {
-  const localIdx = idx - 40;
-  const cases = [
     () => [1, , , , 5].toLocaleString() === '1,,,,5',
     () => { const arr = [1, 2, 3]; delete arr[1]; return arr.toLocaleString() === '1,,3'; },
     () => [1234567.89].toLocaleString('en-US').length > 0,
@@ -121,15 +114,6 @@ function runCasePart2(idx) {
     () => [''].toLocaleString() === '',
     () => ['x', 'y', 'z'].toLocaleString() === 'x,y,z',
     () => { const arr = [1, 2, 3]; arr[1] = undefined; return arr.toLocaleString() === '1,,3'; },
-  ];
-  const fn = cases[localIdx];
-  if (!fn) return false;
-  return safeExec(fn);
-}
-
-function runCasePart3(idx) {
-  const localIdx = idx - 80;
-  const cases = [
     () => { const arr = [1, 2, 3]; arr[1] = null; return arr.toLocaleString() === '1,,3'; },
     () => [1.1, 2.2, 3.3].toLocaleString().length > 0,
     () => [-1, -2, -3].toLocaleString().indexOf('-') >= 0,
@@ -158,52 +142,16 @@ function runCasePart3(idx) {
     () => { const arr = [new Date(0), new Date(8640000000000000)]; return safeExec(() => isString(arr.toLocaleString())); },
     () => { const arr = [1,2,3]; const desc = Object.getOwnPropertyDescriptor(Array.prototype, 'toLocaleString'); return !!desc && typeof desc.value === 'function' && isString(arr.toLocaleString()); }
   ];
-  const fn = cases[localIdx];
-  if (!fn) return false;
+
+  const fn = cases[idx];
+  if (!fn) {
+    return false;
+  }
   return safeExec(fn);
-}
-
-function runCase(id) {
-  const idx = id - 100;
-  if (idx < 40) return runCasePart1(idx);
-  if (idx < 80) return runCasePart2(idx);
-  return runCasePart3(idx);
-}
-
-export function ToLocaleStringJs_0100() {
-  return runCase(100);
-}
-
-export function ToLocaleStringJs_0101() {
-  return runCase(101);
-}
-
-export function ToLocaleStringJs_0102() {
-  return runCase(102);
-}
-
-export function ToLocaleStringJs_0103() {
-  return runCase(103);
 }
 
 export function ToLocaleStringJs_0104() {
   return runCase(104);
-}
-
-export function ToLocaleStringJs_0105() {
-  return runCase(105);
-}
-
-export function ToLocaleStringJs_0106() {
-  return runCase(106);
-}
-
-export function ToLocaleStringJs_0107() {
-  return runCase(107);
-}
-
-export function ToLocaleStringJs_0108() {
-  return runCase(108);
 }
 
 export function ToLocaleStringJs_0109() {
@@ -222,10 +170,6 @@ export function ToLocaleStringJs_0112() {
   return runCase(112);
 }
 
-export function ToLocaleStringJs_0113() {
-  return runCase(113);
-}
-
 export function ToLocaleStringJs_0114() {
   return runCase(114);
 }
@@ -238,92 +182,16 @@ export function ToLocaleStringJs_0116() {
   return runCase(116);
 }
 
-export function ToLocaleStringJs_0117() {
-  return runCase(117);
-}
-
-export function ToLocaleStringJs_0118() {
-  return runCase(118);
-}
-
-export function ToLocaleStringJs_0119() {
-  return runCase(119);
-}
-
-export function ToLocaleStringJs_0120() {
-  return runCase(120);
-}
-
-export function ToLocaleStringJs_0121() {
-  return runCase(121);
-}
-
-export function ToLocaleStringJs_0122() {
-  return runCase(122);
-}
-
-export function ToLocaleStringJs_0123() {
-  return runCase(123);
-}
-
-export function ToLocaleStringJs_0124() {
-  return runCase(124);
-}
-
-export function ToLocaleStringJs_0125() {
-  return runCase(125);
-}
-
 export function ToLocaleStringJs_0126() {
   return runCase(126);
-}
-
-export function ToLocaleStringJs_0127() {
-  return runCase(127);
-}
-
-export function ToLocaleStringJs_0128() {
-  return runCase(128);
 }
 
 export function ToLocaleStringJs_0129() {
   return runCase(129);
 }
 
-export function ToLocaleStringJs_0130() {
-  return runCase(130);
-}
-
-export function ToLocaleStringJs_0131() {
-  return runCase(131);
-}
-
-export function ToLocaleStringJs_0132() {
-  return runCase(132);
-}
-
-export function ToLocaleStringJs_0133() {
-  return runCase(133);
-}
-
-export function ToLocaleStringJs_0134() {
-  return runCase(134);
-}
-
-export function ToLocaleStringJs_0135() {
-  return runCase(135);
-}
-
 export function ToLocaleStringJs_0136() {
   return runCase(136);
-}
-
-export function ToLocaleStringJs_0137() {
-  return runCase(137);
-}
-
-export function ToLocaleStringJs_0138() {
-  return runCase(138);
 }
 
 export function ToLocaleStringJs_0139() {
@@ -332,10 +200,6 @@ export function ToLocaleStringJs_0139() {
 
 export function ToLocaleStringJs_0140() {
   return runCase(140);
-}
-
-export function ToLocaleStringJs_0141() {
-  return runCase(141);
 }
 
 export function ToLocaleStringJs_0142() {
@@ -418,26 +282,6 @@ export function ToLocaleStringJs_0161() {
   return runCase(161);
 }
 
-export function ToLocaleStringJs_0162() {
-  return runCase(162);
-}
-
-export function ToLocaleStringJs_0163() {
-  return runCase(163);
-}
-
-export function ToLocaleStringJs_0164() {
-  return runCase(164);
-}
-
-export function ToLocaleStringJs_0165() {
-  return runCase(165);
-}
-
-export function ToLocaleStringJs_0166() {
-  return runCase(166);
-}
-
 export function ToLocaleStringJs_0167() {
   return runCase(167);
 }
@@ -446,86 +290,8 @@ export function ToLocaleStringJs_0168() {
   return runCase(168);
 }
 
-export function ToLocaleStringJs_0169() {
-  return safeExec(() => {
-    const arr = [{ a: 1 }, { b: 2 }, { c: 3 }];
-    return isString(arr.toLocaleString()) && arr.toLocaleString().split(',').length >= 3;
-  });
-}
-
 export function ToLocaleStringJs_0170() {
   return runCase(170);
-}
-
-export function ToLocaleStringJs_0171() {
-  return runCase(171);
-}
-
-export function ToLocaleStringJs_0172() {
-  return runCase(172);
-}
-
-export function ToLocaleStringJs_0173() {
-  return runCase(173);
-}
-
-export function ToLocaleStringJs_0174() {
-  return runCase(174);
-}
-
-export function ToLocaleStringJs_0175() {
-  return runCase(175);
-}
-
-export function ToLocaleStringJs_0176() {
-  return safeExec(() => {
-    const arr = [Number.MAX_SAFE_INTEGER, Number.MIN_SAFE_INTEGER];
-    return isString(arr.toLocaleString()) && arr.toLocaleString().length > 0;
-  });
-}
-
-export function ToLocaleStringJs_0177() {
-  return runCase(177);
-}
-
-export function ToLocaleStringJs_0178() {
-  return runCase(178);
-}
-
-export function ToLocaleStringJs_0179() {
-  return runCase(179);
-}
-
-export function ToLocaleStringJs_0180() {
-  return runCase(180);
-}
-
-export function ToLocaleStringJs_0181() {
-  return runCase(181);
-}
-
-export function ToLocaleStringJs_0182() {
-  return runCase(182);
-}
-
-export function ToLocaleStringJs_0183() {
-  return runCase(183);
-}
-
-export function ToLocaleStringJs_0184() {
-  return runCase(184);
-}
-
-export function ToLocaleStringJs_0185() {
-  return runCase(185);
-}
-
-export function ToLocaleStringJs_0186() {
-  return runCase(186);
-}
-
-export function ToLocaleStringJs_0187() {
-  return runCase(187);
 }
 
 export function ToLocaleStringJs_0188() {
@@ -568,10 +334,6 @@ export function ToLocaleStringJs_0196() {
   return runCase(196);
 }
 
-export function ToLocaleStringJs_0197() {
-  return runCase(197);
-}
-
 export function ToLocaleStringJs_0198() {
   return runCase(198);
 }
@@ -579,4 +341,3 @@ export function ToLocaleStringJs_0198() {
 export function ToLocaleStringJs_0199() {
   return runCase(199);
 }
-

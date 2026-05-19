@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+
 function safeExec(fn) {
   try {
     return !!fn();
@@ -40,7 +41,8 @@ function tsp(target, ...args) {
   return Array.prototype.toSpliced.apply(target, args);
 }
 
-function runCasePart1(idx) {
+function runCase(id) {
+  const idx = id - 100;
   const cases = [
     () => same(tsp([1, 2, 3, 4, 5], 2, 1), [1, 2, 4, 5]),
     () => same(tsp([1, 2, 3, 4, 5], 0, 2), [3, 4, 5]),
@@ -79,15 +81,6 @@ function runCasePart1(idx) {
   return same(r, [1, 2, 3]) && r !== a;
 },
     () => same(tsp([1, 2, 3], NaN, 1), [2, 3]),
-  ];
-  const fn = cases[idx];
-  if (!fn) return false;
-  return safeExec(fn);
-}
-
-function runCasePart2(idx) {
-  const localIdx = idx - 25;
-  const cases = [
     () => same(tsp([1, 2, 3], Infinity, 0, 9), [1, 2, 3, 9]),
     () => same(tsp([1, 2, 3], -Infinity, 1, 9), [9, 2, 3]),
     () => same(tsp([1, 2, 3], 1.7, 1, 9), [1, 9, 3]),
@@ -119,15 +112,6 @@ function runCasePart2(idx) {
   const r = tsp([0], 0, 1, [1, 2]);
   return Array.isArray(r[0]) && r[0][0] === 1 && r[0][1] === 2;
 },
-  ];
-  const fn = cases[localIdx];
-  if (!fn) return false;
-  return safeExec(fn);
-}
-
-function runCasePart3a(idx) {
-  const localIdx = idx - 50;
-  const cases = [
     () => same(tsp([1, 2], 1, 0, undefined), [1, undefined, 2]),
     () => same(tsp([1, 2], 1, 0, null), [1, null, 2]),
     () => same(tsp([1, 2], 1, 0, true), [1, true, 2]),
@@ -144,14 +128,6 @@ function runCasePart3a(idx) {
     () => same(tsp([1, 2, 3], 1, 1), [1, 3]),
     () => same(tsp([1, 3], 1, 0, 2), [1, 2, 3]),
     () => same(tsp([1, 5], 1, 0, 2, 3, 4), [1, 2, 3, 4, 5]),
-  ];
-  const fn = cases[localIdx];
-  if (!fn) return false;
-  return safeExec(fn);
-}
-function runCasePart3b(idx) {
-  const localIdx = idx - 59;
-  const cases = [
     () => {
   const items = Array.from({ length: 200 }, (_, i) => i);
   const a = [0];
@@ -183,15 +159,6 @@ function runCasePart3b(idx) {
 },
     () => tsp([1, 2, 3], 1, 1, 9).length === 3,
     () => Array.isArray(tsp([1, 2, 3], 1, 1, 9)),
-  ];
-  const fn = cases[localIdx];
-  if (!fn) return false;
-  return safeExec(fn);
-}
-
-function runCasePart4(idx) {
-  const localIdx = idx - 67;
-  const cases = [
     () => same(tsp([1, 2, 3, 4], 1, 2, 9), [1, 9, 4]),
     () => {
   const a = [3, 1, 2];
@@ -234,15 +201,6 @@ function runCasePart4(idx) {
   const r = tsp(a, 0, 0);
   return r[1] === undefined && Object.prototype.hasOwnProperty.call(r, '1');
 },
-  ];
-  const fn = cases[localIdx];
-  if (!fn) return false;
-  return safeExec(fn);
-}
-
-function runCasePart5a(idx) {
-  const localIdx = idx - 75;
-  const cases = [
     () => {
   const a = [1, , 3];
   const r = tsp(a, 0, 0);
@@ -276,14 +234,6 @@ function runCasePart5a(idx) {
   const r = tsp([]);
   return r.length === 0 && r !== [];
 },
-  ];
-  const fn = cases[localIdx];
-  if (!fn) return false;
-  return safeExec(fn);
-}
-function runCasePart5b(idx) {
-  const localIdx = idx - 82;
-  const cases = [
     () => {
   const r = tsp([], 0);
   return r.length === 0;
@@ -299,15 +249,6 @@ function runCasePart5b(idx) {
   const r = tsp([1, 'a'], 1, 0, null, false, 3n);
   return r.length === 5;
 },
-  ];
-  const fn = cases[localIdx];
-  if (!fn) return false;
-  return safeExec(fn);
-}
-
-function runCasePart6a(idx) {
-  const localIdx = idx - 88;
-  const cases = [
     () => {
   const a = Array.from({ length: 500 }, (_, i) => i);
   const r = tsp(a, 100, 50);
@@ -338,14 +279,6 @@ function runCasePart6a(idx) {
   }
   return same(f(1, 2, 3), [1, 'new', 3]);
 },
-  ];
-  const fn = cases[localIdx];
-  if (!fn) return false;
-  return safeExec(fn);
-}
-function runCasePart6b(idx) {
-  const localIdx = idx - 94;
-  const cases = [
     () => same(tsp('abc', 1, 1, 'X'), ['a', 'X', 'c']),
     () => {
   if (typeof document === 'undefined') {
@@ -364,323 +297,141 @@ function runCasePart6b(idx) {
   const obj = { length: 2, 0: 'a', 1: 'b', 2: 'c', 3: 'd' };
   return same(tsp(obj, 1, 1, 'X'), ['a', 'X']);
 },
-    () => same(tsp({ length: -1, 0: 'a', 1: 'b' }, 0, 0, 'new'), ['new']),
+    () => same(tsp({ length: -1, 0: 'a', 1: 'b' }, 0, 0, 'new'), ['new'])
   ];
-  const fn = cases[localIdx];
-  if (!fn) return false;
+  const fn = cases[idx];
+  if (!fn) {
+    return false;
+  }
   return safeExec(fn);
 }
 
-function runCase(id) {
-  const idx = id - 100;
-  if (idx < 25) return runCasePart1(idx);
-  if (idx < 50) return runCasePart2(idx);
-  if (idx < 59) return runCasePart3a(idx);
-  if (idx < 67) return runCasePart3b(idx);
-  if (idx < 75) return runCasePart4(idx);
-  if (idx < 82) return runCasePart5a(idx);
-  if (idx < 88) return runCasePart5b(idx);
-  if (idx < 94) return runCasePart6a(idx);
-  return runCasePart6b(idx);
-}
 
-export function ToSplicedJs_0100() {
-  return runCase(100);
-}
-export function ToSplicedJs_0101() {
-  return runCase(101);
-}
-export function ToSplicedJs_0102() {
-  return runCase(102);
-}
-export function ToSplicedJs_0103() {
-  return runCase(103);
-}
-export function ToSplicedJs_0104() {
-  return runCase(104);
-}
-export function ToSplicedJs_0105() {
-  return runCase(105);
-}
-export function ToSplicedJs_0106() {
-  return runCase(106);
-}
-export function ToSplicedJs_0107() {
-  return runCase(107);
-}
-export function ToSplicedJs_0108() {
-  return runCase(108);
-}
-export function ToSplicedJs_0109() {
-  return runCase(109);
-}
-export function ToSplicedJs_0110() {
-  return runCase(110);
-}
-export function ToSplicedJs_0111() {
-  return runCase(111);
-}
-export function ToSplicedJs_0112() {
-  return runCase(112);
-}
-export function ToSplicedJs_0113() {
-  return runCase(113);
-}
-export function ToSplicedJs_0114() {
-  return runCase(114);
-}
-export function ToSplicedJs_0115() {
-  return runCase(115);
-}
-export function ToSplicedJs_0116() {
-  return runCase(116);
-}
-export function ToSplicedJs_0117() {
-  return runCase(117);
-}
-export function ToSplicedJs_0118() {
-  return runCase(118);
-}
-export function ToSplicedJs_0119() {
-  return runCase(119);
-}
-export function ToSplicedJs_0120() {
-  return runCase(120);
-}
-export function ToSplicedJs_0121() {
-  return runCase(121);
-}
-export function ToSplicedJs_0122() {
-  return runCase(122);
-}
-export function ToSplicedJs_0123() {
-  return runCase(123);
-}
-export function ToSplicedJs_0124() {
-  return runCase(124);
-}
-export function ToSplicedJs_0125() {
-  return runCase(125);
-}
-export function ToSplicedJs_0126() {
-  return runCase(126);
-}
-export function ToSplicedJs_0127() {
-  return runCase(127);
-}
-export function ToSplicedJs_0128() {
-  return runCase(128);
-}
+
 export function ToSplicedJs_0129() {
   return runCase(129);
 }
+
 export function ToSplicedJs_0130() {
   return runCase(130);
 }
-export function ToSplicedJs_0131() {
-  return runCase(131);
-}
-export function ToSplicedJs_0132() {
-  return runCase(132);
-}
-export function ToSplicedJs_0133() {
-  return runCase(133);
-}
-export function ToSplicedJs_0134() {
-  return runCase(134);
-}
-export function ToSplicedJs_0135() {
-  return runCase(135);
-}
-export function ToSplicedJs_0136() {
-  return runCase(136);
-}
+
 export function ToSplicedJs_0137() {
   return runCase(137);
 }
+
 export function ToSplicedJs_0138() {
   return runCase(138);
 }
-export function ToSplicedJs_0139() {
-  return runCase(139);
-}
-export function ToSplicedJs_0140() {
-  return runCase(140);
-}
-export function ToSplicedJs_0141() {
-  return runCase(141);
-}
-export function ToSplicedJs_0142() {
-  return runCase(142);
-}
-export function ToSplicedJs_0143() {
-  return runCase(143);
-}
+
 export function ToSplicedJs_0144() {
   return runCase(144);
 }
+
 export function ToSplicedJs_0145() {
   return runCase(145);
 }
+
 export function ToSplicedJs_0146() {
   return runCase(146);
 }
-export function ToSplicedJs_0147() {
-  return runCase(147);
-}
-export function ToSplicedJs_0148() {
-  return runCase(148);
-}
-export function ToSplicedJs_0149() {
-  return runCase(149);
-}
+
 export function ToSplicedJs_0150() {
   return runCase(150);
 }
-export function ToSplicedJs_0151() {
-  return runCase(151);
-}
-export function ToSplicedJs_0152() {
-  return runCase(152);
-}
-export function ToSplicedJs_0153() {
-  return runCase(153);
-}
+
 export function ToSplicedJs_0154() {
   return runCase(154);
 }
+
 export function ToSplicedJs_0155() {
   return runCase(155);
 }
+
 export function ToSplicedJs_0156() {
   return runCase(156);
 }
-export function ToSplicedJs_0157() {
-  return runCase(157);
-}
-export function ToSplicedJs_0158() {
-  return runCase(158);
-}
+
 export function ToSplicedJs_0159() {
   return runCase(159);
 }
-export function ToSplicedJs_0160() {
-  return runCase(160);
-}
+
 export function ToSplicedJs_0161() {
   return runCase(161);
 }
+
 export function ToSplicedJs_0162() {
   return runCase(162);
 }
-export function ToSplicedJs_0163() {
-  return runCase(163);
-}
-export function ToSplicedJs_0164() {
-  return runCase(164);
-}
-export function ToSplicedJs_0165() {
-  return runCase(165);
-}
-export function ToSplicedJs_0166() {
-  return runCase(166);
-}
-export function ToSplicedJs_0167() {
-  return runCase(167);
-}
-export function ToSplicedJs_0168() {
-  return runCase(168);
-}
-export function ToSplicedJs_0169() {
-  return runCase(169);
-}
-export function ToSplicedJs_0170() {
-  return runCase(170);
-}
-export function ToSplicedJs_0171() {
-  return runCase(171);
-}
-export function ToSplicedJs_0172() {
-  return runCase(172);
-}
+
 export function ToSplicedJs_0173() {
   return runCase(173);
 }
+
 export function ToSplicedJs_0174() {
   return runCase(174);
 }
+
 export function ToSplicedJs_0175() {
   return runCase(175);
 }
+
 export function ToSplicedJs_0176() {
   return runCase(176);
 }
+
 export function ToSplicedJs_0177() {
   return runCase(177);
 }
+
 export function ToSplicedJs_0178() {
   return runCase(178);
 }
-export function ToSplicedJs_0179() {
-  return runCase(179);
-}
-export function ToSplicedJs_0180() {
-  return runCase(180);
-}
-export function ToSplicedJs_0181() {
-  return runCase(181);
-}
-export function ToSplicedJs_0182() {
-  return runCase(182);
-}
-export function ToSplicedJs_0183() {
-  return runCase(183);
-}
-export function ToSplicedJs_0184() {
-  return runCase(184);
-}
-export function ToSplicedJs_0185() {
-  return runCase(185);
-}
-export function ToSplicedJs_0186() {
-  return runCase(186);
-}
+
 export function ToSplicedJs_0187() {
   return runCase(187);
 }
-export function ToSplicedJs_0188() {
-  return runCase(188);
-}
+
 export function ToSplicedJs_0189() {
   return runCase(189);
 }
+
 export function ToSplicedJs_0190() {
   return runCase(190);
 }
+
 export function ToSplicedJs_0191() {
   return runCase(191);
 }
+
 export function ToSplicedJs_0192() {
   return runCase(192);
 }
+
 export function ToSplicedJs_0193() {
   return runCase(193);
 }
+
 export function ToSplicedJs_0194() {
   return runCase(194);
 }
+
 export function ToSplicedJs_0195() {
   return runCase(195);
 }
+
 export function ToSplicedJs_0196() {
   return runCase(196);
 }
+
 export function ToSplicedJs_0197() {
   return runCase(197);
 }
+
 export function ToSplicedJs_0198() {
   return runCase(198);
 }
+
 export function ToSplicedJs_0199() {
   return runCase(199);
 }

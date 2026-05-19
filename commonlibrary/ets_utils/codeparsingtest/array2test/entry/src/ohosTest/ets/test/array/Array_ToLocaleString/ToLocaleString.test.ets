@@ -13,85 +13,79 @@
  * limitations under the License.
  */
 
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import Utils from '../../Util.test';
 import * as ToLocaleStringJs from './ToLocaleString';
 
 export default function ArrayToLocaleStringMindMapTest() {
   describe('ArrayToLocaleStringMindMapTest', () => {
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
     });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(20);
-      // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: preset action function.
     });
     afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
     });
     afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
     });
 
     /**
      * @tc.name   testToLocaleStringTest0100
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_0100
-     * @tc.desc   Verify js scenario 0100
+     * @tc.desc   Empty array toLocaleString returns empty string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0100()).assertEqual(true);
+      const arr: number[] = [];
+      expect(arr.toLocaleString()).assertEqual('');
     });
 
     /**
      * @tc.name   testToLocaleStringTest0101
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_0200
-     * @tc.desc   Verify js scenario 0101
+     * @tc.desc   Verify array toLocaleString scenario 0101
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0101()).assertEqual(true);
+      const arr: number[] = [42];
+      expect(arr.toLocaleString()).assertEqual('42');
     });
 
     /**
      * @tc.name   testToLocaleStringTest0102
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_0300
-     * @tc.desc   Verify js scenario 0102
+     * @tc.desc   Verify array toLocaleString scenario 0102
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0102()).assertEqual(true);
+      const arr: string[] = ['hello'];
+      expect(arr.toLocaleString()).assertEqual('hello');
     });
 
     /**
      * @tc.name   testToLocaleStringTest0103
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_0400
-     * @tc.desc   Verify js scenario 0103
+     * @tc.desc   Verify array toLocaleString scenario 0103
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0103()).assertEqual(true);
+      const arr: boolean[] = [true, false];
+      expect(arr.toLocaleString()).assertEqual('true,false');
     });
 
     /**
      * @tc.name   testToLocaleStringTest0104
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_0500
-     * @tc.desc   Verify js scenario 0104
+     * @tc.desc   Verify array toLocaleString scenario 0104. JS-only: untyped object literal element
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -103,55 +97,59 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0105
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_0600
-     * @tc.desc   Verify js scenario 0105
+     * @tc.desc   Numeric array joins with commas
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0105()).assertEqual(true);
+      const arr: number[] = [1, 2, 3];
+      expect(arr.toLocaleString()).assertEqual('1,2,3');
     });
 
     /**
      * @tc.name   testToLocaleStringTest0106
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_0700
-     * @tc.desc   Verify js scenario 0106
+     * @tc.desc   Mixed types including null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0106()).assertEqual(true);
+      const arr: (number | string | boolean | null | undefined)[] = [1, 'a', true, null, undefined];
+      expect(arr.toLocaleString()).assertEqual('1,a,true,,');
     });
 
     /**
      * @tc.name   testToLocaleStringTest0107
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_0800
-     * @tc.desc   Verify js scenario 0107
+     * @tc.desc   Verify array toLocaleString scenario 0107
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0107()).assertEqual(true);
+      const arr: number[] = [1, 2, 3];
+      expect(arr.toLocaleString().indexOf(',')).assertEqual(1);
     });
 
     /**
      * @tc.name   testToLocaleStringTest0108
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_0900
-     * @tc.desc   Verify js scenario 0108
+     * @tc.desc   Verify array toLocaleString scenario 0108
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0108()).assertEqual(true);
+      const arr: number[] = [1, 2, 3];
+      expect(typeof arr.toLocaleString()).assertEqual('string');
     });
 
     /**
      * @tc.name   testToLocaleStringTest0109
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_1000
-     * @tc.desc   Verify js scenario 0109
+     * @tc.desc   Verify array toLocaleString scenario 0109. JS-only: Array.toLocaleString locale argument
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -163,7 +161,7 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0110
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_1100
-     * @tc.desc   Verify js scenario 0110
+     * @tc.desc   Verify array toLocaleString scenario 0110. JS-only: Array.toLocaleString locale array argument
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -175,7 +173,7 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0111
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_1200
-     * @tc.desc   Verify js scenario 0111
+     * @tc.desc   Verify array toLocaleString scenario 0111. JS-only: Array.toLocaleString en-US locale argument
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -187,7 +185,7 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0112
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_1300
-     * @tc.desc   Verify js scenario 0112
+     * @tc.desc   Verify array toLocaleString scenario 0112. JS-only: Array.toLocaleString empty locale argument
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -199,19 +197,20 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0113
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_1400
-     * @tc.desc   Verify js scenario 0113
+     * @tc.desc   Verify array toLocaleString scenario 0113
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0113()).assertEqual(true);
+      const arr: number[] = [1, 2, 3];
+      expect(typeof arr.toLocaleString()).assertEqual('string');
     });
 
     /**
      * @tc.name   testToLocaleStringTest0114
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_1500
-     * @tc.desc   Verify js scenario 0114
+     * @tc.desc   Verify array toLocaleString scenario 0114. JS-only: Array.toLocaleString en-US locale argument
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -223,7 +222,7 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0115
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_1600
-     * @tc.desc   Verify js scenario 0115
+     * @tc.desc   Verify array toLocaleString scenario 0115. JS-only: Array.toLocaleString with Intl options
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -235,7 +234,7 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0116
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_1700
-     * @tc.desc   Verify js scenario 0116
+     * @tc.desc   Verify array toLocaleString scenario 0116. JS-only: custom element toLocaleString with locale and options
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -247,115 +246,124 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0117
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_1800
-     * @tc.desc   Verify js scenario 0117
+     * @tc.desc   NaN element appears in result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0117()).assertEqual(true);
+      const arr: number[] = [Number.NaN, 1];
+      expect(arr.toLocaleString()).assertEqual('NaN,1');
     });
 
     /**
      * @tc.name   testToLocaleStringTest0118
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_1900
-     * @tc.desc   Verify js scenario 0118
+     * @tc.desc   Verify array toLocaleString scenario 0118
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0118()).assertEqual(true);
+      const arr: number[] = [Infinity, -Infinity];
+      expect(typeof arr.toLocaleString()).assertEqual('string');
     });
 
     /**
      * @tc.name   testToLocaleStringTest0119
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_2000
-     * @tc.desc   Verify js scenario 0119
+     * @tc.desc   Verify array toLocaleString scenario 0119
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0119()).assertEqual(true);
+      const arr: number[] = [0, -0];
+      expect(typeof arr.toLocaleString()).assertEqual('string');
     });
 
     /**
      * @tc.name   testToLocaleStringTest0120
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_2100
-     * @tc.desc   Verify js scenario 0120
+     * @tc.desc   Verify array toLocaleString scenario 0120
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0120()).assertEqual(true);
+      const arr: number[] = [Number.EPSILON, Number.MIN_VALUE, Number.MAX_VALUE];
+      expect(typeof arr.toLocaleString()).assertEqual('string');
     });
 
     /**
      * @tc.name   testToLocaleStringTest0121
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_2200
-     * @tc.desc   Verify js scenario 0121
+     * @tc.desc   Verify array toLocaleString scenario 0121
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0121()).assertEqual(true);
+      const arr: string[] = ['a', '', 'b'];
+      expect(arr.toLocaleString()).assertEqual('a,,b');
     });
 
     /**
      * @tc.name   testToLocaleStringTest0122
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_2300
-     * @tc.desc   Verify js scenario 0122
+     * @tc.desc   Verify array toLocaleString scenario 0122
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0122()).assertEqual(true);
+      const arr: string[] = ['你好', 'こんにちは', 'hello'];
+      expect(arr.toLocaleString().length > 0).assertEqual(true);
     });
 
     /**
      * @tc.name   testToLocaleStringTest0123
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_2400
-     * @tc.desc   Verify js scenario 0123
+     * @tc.desc   Verify array toLocaleString scenario 0123
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0123()).assertEqual(true);
+      const arr: string[] = ['a\nb', 'c\td'];
+      expect(arr.toLocaleString().length > 0).assertEqual(true);
     });
 
     /**
      * @tc.name   testToLocaleStringTest0124
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_2500
-     * @tc.desc   Verify js scenario 0124
+     * @tc.desc   Verify array toLocaleString scenario 0124
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0124()).assertEqual(true);
+      const arr: Date[] = [new Date(0)];
+      expect(arr.toLocaleString().length > 0).assertEqual(true);
     });
 
     /**
      * @tc.name   testToLocaleStringTest0125
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_2600
-     * @tc.desc   Verify js scenario 0125
+     * @tc.desc   Verify array toLocaleString scenario 0125
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0125()).assertEqual(true);
+      const arr: Date[] = [new Date('invalid')];
+      expect(typeof arr.toLocaleString()).assertEqual('string');
     });
 
     /**
      * @tc.name   testToLocaleStringTest0126
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_2700
-     * @tc.desc   Verify js scenario 0126
+     * @tc.desc   Verify array toLocaleString scenario 0126. JS-only: Date array toLocaleString with timeZone option
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -367,31 +375,33 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0127
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_2800
-     * @tc.desc   Verify js scenario 0127
+     * @tc.desc   Verify array toLocaleString scenario 0127
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0127()).assertEqual(true);
+      const arr: boolean[] = [true];
+      expect(typeof arr.toLocaleString()).assertEqual('string');
     });
 
     /**
      * @tc.name   testToLocaleStringTest0128
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_2900
-     * @tc.desc   Verify js scenario 0128
+     * @tc.desc   Verify array toLocaleString scenario 0128
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0128()).assertEqual(true);
+      const arr: boolean[] = [false];
+      expect(typeof arr.toLocaleString()).assertEqual('string');
     });
 
     /**
      * @tc.name   testToLocaleStringTest0129
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_3000
-     * @tc.desc   Verify js scenario 0129
+     * @tc.desc   Verify array toLocaleString scenario 0129. JS-only: untyped object literal elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -403,79 +413,88 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0130
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_3100
-     * @tc.desc   Verify js scenario 0130
+     * @tc.desc   Verify array toLocaleString scenario 0130
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0130()).assertEqual(true);
+      class CustomLocale {
+        toLocaleString(): string { return 'custom'; }
+      }
+      const arr: CustomLocale[] = [new CustomLocale()];
+      expect(arr.toLocaleString()).assertEqual('custom');
     });
 
     /**
      * @tc.name   testToLocaleStringTest0131
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_3200
-     * @tc.desc   Verify js scenario 0131
+     * @tc.desc   undefined element becomes empty slot
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0131()).assertEqual(true);
+      const arr: (number | undefined)[] = [1, undefined, 3];
+      expect(arr.toLocaleString()).assertEqual('1,,3');
     });
 
     /**
      * @tc.name   testToLocaleStringTest0132
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_3300
-     * @tc.desc   Verify js scenario 0132
+     * @tc.desc   null element becomes empty slot
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0132()).assertEqual(true);
+      const arr: (number | null)[] = [1, null, 3];
+      expect(arr.toLocaleString()).assertEqual('1,,3');
     });
 
     /**
      * @tc.name   testToLocaleStringTest0133
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_3400
-     * @tc.desc   Verify js scenario 0133
+     * @tc.desc   Verify array toLocaleString scenario 0133
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0133()).assertEqual(true);
+      const arr: (null | undefined)[] = [undefined, null, undefined];
+      expect(arr.toLocaleString()).assertEqual(',,');
     });
 
     /**
      * @tc.name   testToLocaleStringTest0134
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_3500
-     * @tc.desc   Verify js scenario 0134
+     * @tc.desc   Nested arrays flatten one level
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0134()).assertEqual(true);
+      const arr: number[][] = [[1, 2], [3, 4]];
+      expect(arr.toLocaleString()).assertEqual('1,2,3,4');
     });
 
     /**
      * @tc.name   testToLocaleStringTest0135
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_3600
-     * @tc.desc   Verify js scenario 0135
+     * @tc.desc   Verify array toLocaleString scenario 0135
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0135()).assertEqual(true);
+      const arr: number[][][] = [[[1]], [[2]]];
+      expect(arr.toLocaleString()).assertEqual('1,2');
     });
 
     /**
      * @tc.name   testToLocaleStringTest0136
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_3700
-     * @tc.desc   Verify js scenario 0136
+     * @tc.desc   Verify array toLocaleString scenario 0136. JS-only: function element in array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -487,31 +506,35 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0137
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_3800
-     * @tc.desc   Verify js scenario 0137
+     * @tc.desc   Verify array toLocaleString scenario 0137
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0137()).assertEqual(true);
+      const arr: number[] = new Array<number>(3);
+      arr[2] = 3;
+      expect(arr.toLocaleString()).assertEqual(',,3');
     });
 
     /**
      * @tc.name   testToLocaleStringTest0138
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_3900
-     * @tc.desc   Verify js scenario 0138
+     * @tc.desc   Verify array toLocaleString scenario 0138
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0138()).assertEqual(true);
+      const arr: number[] = [1, 2];
+      arr.length = 5;
+      expect(arr.toLocaleString()).assertEqual('1,2,,,');
     });
 
     /**
      * @tc.name   testToLocaleStringTest0139
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_4000
-     * @tc.desc   Verify js scenario 0139
+     * @tc.desc   Verify array toLocaleString scenario 0139. JS-only: sparse array hole literal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -523,7 +546,7 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0140
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_4100
-     * @tc.desc   Verify js scenario 0140
+     * @tc.desc   Verify array toLocaleString scenario 0140. JS-only: delete operator creates array hole
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -535,19 +558,20 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0141
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_4200
-     * @tc.desc   Verify js scenario 0141
+     * @tc.desc   Verify array toLocaleString scenario 0141
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0141()).assertEqual(true);
+      const arr: number[] = new Array<number>(5);
+      expect(arr.toLocaleString()).assertEqual(',,,,');
     });
 
     /**
      * @tc.name   testToLocaleStringTest0142
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_4300
-     * @tc.desc   Verify js scenario 0142
+     * @tc.desc   Verify array toLocaleString scenario 0142. JS-only: sparse array multiple holes
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -559,7 +583,7 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0143
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_4400
-     * @tc.desc   Verify js scenario 0143
+     * @tc.desc   Verify array toLocaleString scenario 0143. JS-only: locale en-US on numeric array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -571,7 +595,7 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0144
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_4500
-     * @tc.desc   Verify js scenario 0144
+     * @tc.desc   Verify array toLocaleString scenario 0144. JS-only: locale de-DE on numeric array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -583,7 +607,7 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0145
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_4600
-     * @tc.desc   Verify js scenario 0145
+     * @tc.desc   Verify array toLocaleString scenario 0145. JS-only: locale fr-FR on numeric array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -595,7 +619,7 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0146
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_4700
-     * @tc.desc   Verify js scenario 0146
+     * @tc.desc   Verify array toLocaleString scenario 0146. JS-only: locale ja-JP on numeric array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -607,7 +631,7 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0147
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_4800
-     * @tc.desc   Verify js scenario 0147
+     * @tc.desc   Verify array toLocaleString scenario 0147. JS-only: locale fallback array xx-XX en-US
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -619,7 +643,7 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0148
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_4900
-     * @tc.desc   Verify js scenario 0148
+     * @tc.desc   Verify array toLocaleString scenario 0148. JS-only: currency Intl option
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -631,7 +655,7 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0149
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_5000
-     * @tc.desc   Verify js scenario 0149
+     * @tc.desc   Verify array toLocaleString scenario 0149. JS-only: percent Intl option
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -643,7 +667,7 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0150
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_5100
-     * @tc.desc   Verify js scenario 0150
+     * @tc.desc   Verify array toLocaleString scenario 0150. JS-only: unit Intl option
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -655,7 +679,7 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0151
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_5200
-     * @tc.desc   Verify js scenario 0151
+     * @tc.desc   Verify array toLocaleString scenario 0151. JS-only: maximumFractionDigits option
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -667,7 +691,7 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0152
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_5300
-     * @tc.desc   Verify js scenario 0152
+     * @tc.desc   Verify array toLocaleString scenario 0152. JS-only: minimumIntegerDigits option
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -679,7 +703,7 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0153
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_5400
-     * @tc.desc   Verify js scenario 0153
+     * @tc.desc   Verify array toLocaleString scenario 0153. JS-only: significant digits options
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -691,7 +715,7 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0154
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_5500
-     * @tc.desc   Verify js scenario 0154
+     * @tc.desc   Verify array toLocaleString scenario 0154. JS-only: scientific notation option
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -703,7 +727,7 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0155
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_5600
-     * @tc.desc   Verify js scenario 0155
+     * @tc.desc   Verify array toLocaleString scenario 0155. JS-only: engineering notation option
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -715,7 +739,7 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0156
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_5700
-     * @tc.desc   Verify js scenario 0156
+     * @tc.desc   Verify array toLocaleString scenario 0156. JS-only: compact notation option
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -727,7 +751,7 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0157
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_5800
-     * @tc.desc   Verify js scenario 0157
+     * @tc.desc   Verify array toLocaleString scenario 0157. JS-only: useGrouping false option
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -739,7 +763,7 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0158
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_5900
-     * @tc.desc   Verify js scenario 0158
+     * @tc.desc   Verify array toLocaleString scenario 0158. JS-only: dateStyle full option
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -751,7 +775,7 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0159
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_6000
-     * @tc.desc   Verify js scenario 0159
+     * @tc.desc   Verify array toLocaleString scenario 0159. JS-only: timeStyle long option
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -763,7 +787,7 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0160
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_6100
-     * @tc.desc   Verify js scenario 0160
+     * @tc.desc   Verify array toLocaleString scenario 0160. JS-only: Date timeZone UTC option
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -775,7 +799,7 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0161
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_6200
-     * @tc.desc   Verify js scenario 0161
+     * @tc.desc   Verify array toLocaleString scenario 0161. JS-only: Date year month day options
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -787,67 +811,75 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0162
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_6300
-     * @tc.desc   Verify js scenario 0162
+     * @tc.desc   toLocaleString equals toString
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0162()).assertEqual(true);
+      const arr: number[] = [1, 2, 3];
+      expect(arr.toLocaleString()).assertEqual(arr.toString());
     });
 
     /**
      * @tc.name   testToLocaleStringTest0163
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_6400
-     * @tc.desc   Verify js scenario 0163
+     * @tc.desc   toLocaleString equals join with comma
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0163()).assertEqual(true);
+      const arr: number[] = [1, 2, 3];
+      expect(arr.toLocaleString()).assertEqual(arr.join(','));
     });
 
     /**
      * @tc.name   testToLocaleStringTest0164
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_6500
-     * @tc.desc   Verify js scenario 0164
+     * @tc.desc   Verify array toLocaleString scenario 0164
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0164()).assertEqual(true);
+      const arr: number[] = [1, 2, 3];
+      const backup: string = arr.slice().join(',');
+      arr.toLocaleString();
+      expect(arr.join(',')).assertEqual(backup);
     });
 
     /**
      * @tc.name   testToLocaleStringTest0165
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_6600
-     * @tc.desc   Verify js scenario 0165
+     * @tc.desc   toLocaleString does not mutate array elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0165()).assertEqual(true);
+      const arr: number[] = [1, 2, 3];
+      arr.toLocaleString();
+      expect(arr.length).assertEqual(3);
     });
 
     /**
      * @tc.name   testToLocaleStringTest0166
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_6700
-     * @tc.desc   Verify js scenario 0166
+     * @tc.desc   Verify array toLocaleString scenario 0166
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0166()).assertEqual(true);
+      const arr: number[] = [42];
+      expect(arr.toLocaleString().includes(',')).assertEqual(false);
     });
 
     /**
      * @tc.name   testToLocaleStringTest0167
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_6800
-     * @tc.desc   Verify js scenario 0167
+     * @tc.desc   Verify array toLocaleString scenario 0167. JS-only: Array.prototype.toLocaleString.call on arrayLike
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -859,7 +891,7 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0168
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_6900
-     * @tc.desc   Verify js scenario 0168
+     * @tc.desc   Verify array toLocaleString scenario 0168. JS-only: Object.create(null) element TypeError
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -871,19 +903,23 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0169
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_7000
-     * @tc.desc   Verify js scenario 0169
+     * @tc.desc   Verify array toLocaleString scenario 0169
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0169()).assertEqual(true);
+      class ObjA { a: number = 1; }
+      class ObjB { b: number = 2; }
+      class ObjC { c: number = 3; }
+      const arr: (ObjA | ObjB | ObjC)[] = [new ObjA(), new ObjB(), new ObjC()];
+      expect(arr.toLocaleString().split(',').length).assertEqual(3);
     });
 
     /**
      * @tc.name   testToLocaleStringTest0170
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_7100
-     * @tc.desc   Verify js scenario 0170
+     * @tc.desc   Verify array toLocaleString scenario 0170. JS-only: circular array reference
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -895,211 +931,245 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0171
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_7200
-     * @tc.desc   Verify js scenario 0171
+     * @tc.desc   Verify array toLocaleString scenario 0171
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0171()).assertEqual(true);
+      const arr: number[] = [];
+      for (let i: number = 0; i < 50; i++) {
+        arr.push(i);
+      }
+      expect(arr.toLocaleString().split(',').length).assertEqual(50);
     });
 
     /**
      * @tc.name   testToLocaleStringTest0172
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_7300
-     * @tc.desc   Verify js scenario 0172
+     * @tc.desc   Verify array toLocaleString scenario 0172
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0172()).assertEqual(true);
+      const arr: (Date | number | string)[] = [new Date(0), 123, 'abc'];
+      expect(arr.toLocaleString().length > 0).assertEqual(true);
     });
 
     /**
      * @tc.name   testToLocaleStringTest0173
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_7400
-     * @tc.desc   Verify js scenario 0173
+     * @tc.desc   toLocaleString yields 1,2,3 for numeric array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0173()).assertEqual(true);
+      const arr: number[] = [1, 2, 3];
+      const s: string = arr.toLocaleString();
+      expect(s).assertEqual('1,2,3');
     });
 
     /**
      * @tc.name   testToLocaleStringTest0174
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_7500
-     * @tc.desc   Verify js scenario 0174
+     * @tc.desc   toLocaleString returns non-empty string for numeric array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0174()).assertEqual(true);
+      const arr: number[] = [1, 2, 3];
+      const s: string = arr.toLocaleString();
+      expect(typeof s).assertEqual('string');
+      expect(s.length > 0).assertEqual(true);
     });
 
     /**
      * @tc.name   testToLocaleStringTest0175
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_7600
-     * @tc.desc   Verify js scenario 0175
+     * @tc.desc   Custom element toLocaleString returning number coerces to string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0175()).assertEqual(true);
+      class NumLocale {
+        toLocaleString(): number { return 123; }
+      }
+      const arr: NumLocale[] = [new NumLocale()];
+      expect(arr.toLocaleString()).assertEqual('123');
     });
 
     /**
      * @tc.name   testToLocaleStringTest0176
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_7700
-     * @tc.desc   Verify js scenario 0176
+     * @tc.desc   MAX_SAFE_INTEGER and MIN_SAFE_INTEGER format as string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0176()).assertEqual(true);
+      const arr: number[] = [Number.MAX_SAFE_INTEGER, Number.MIN_SAFE_INTEGER];
+      const s: string = arr.toLocaleString();
+      expect(typeof s).assertEqual('string');
+      expect(s.length > 0).assertEqual(true);
     });
 
     /**
      * @tc.name   testToLocaleStringTest0177
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_7800
-     * @tc.desc   Verify js scenario 0177
+     * @tc.desc   Zero formats as 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0177()).assertEqual(true);
+      const arr: number[] = [0];
+      expect(arr.toLocaleString()).assertEqual('0');
     });
 
     /**
      * @tc.name   testToLocaleStringTest0178
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_7900
-     * @tc.desc   Verify js scenario 0178
+     * @tc.desc   Empty string element alone
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0178()).assertEqual(true);
+      const arr: string[] = [''];
+      expect(arr.toLocaleString()).assertEqual('');
     });
 
     /**
      * @tc.name   testToLocaleStringTest0179
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_8000
-     * @tc.desc   Verify js scenario 0179
+     * @tc.desc   Three strings x,y,z join with commas
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0179()).assertEqual(true);
+      const arr: string[] = ['x', 'y', 'z'];
+      expect(arr.toLocaleString()).assertEqual('x,y,z');
     });
 
     /**
      * @tc.name   testToLocaleStringTest0180
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_8100
-     * @tc.desc   Verify js scenario 0180
+     * @tc.desc   Verify array toLocaleString scenario 0180
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0180()).assertEqual(true);
+      const arr: (number | undefined)[] = [1, 2, 3];
+      arr[1] = undefined;
+      expect(arr.toLocaleString()).assertEqual('1,,3');
     });
 
     /**
      * @tc.name   testToLocaleStringTest0181
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_8200
-     * @tc.desc   Verify js scenario 0181
+     * @tc.desc   Verify array toLocaleString scenario 0181
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0181()).assertEqual(true);
+      const arr: (number | null)[] = [1, 2, 3];
+      arr[1] = null;
+      expect(arr.toLocaleString()).assertEqual('1,,3');
     });
 
     /**
      * @tc.name   testToLocaleStringTest0182
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_8300
-     * @tc.desc   Verify js scenario 0182
+     * @tc.desc   Verify array toLocaleString scenario 0182
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0182()).assertEqual(true);
+      const arr: number[] = [1.1, 2.2, 3.3];
+      expect(arr.toLocaleString().length > 0).assertEqual(true);
     });
 
     /**
      * @tc.name   testToLocaleStringTest0183
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_8400
-     * @tc.desc   Verify js scenario 0183
+     * @tc.desc   Verify array toLocaleString scenario 0183
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0183()).assertEqual(true);
+      const arr: number[] = [-1, -2, -3];
+      expect(arr.toLocaleString().indexOf('-') >= 0).assertEqual(true);
     });
 
     /**
      * @tc.name   testToLocaleStringTest0184
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_8500
-     * @tc.desc   Verify js scenario 0184
+     * @tc.desc   Verify array toLocaleString scenario 0184
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0184()).assertEqual(true);
+      const arr: number[] = [0, 1, 2, 3, 4, 5];
+      expect(arr.toLocaleString().split(',').length).assertEqual(6);
     });
 
     /**
      * @tc.name   testToLocaleStringTest0185
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_8600
-     * @tc.desc   Verify js scenario 0185
+     * @tc.desc   Verify array toLocaleString scenario 0185
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0185', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0185()).assertEqual(true);
+      const arr: number[] = [1, 2, 3];
+      const s1: string = arr.toLocaleString();
+      const s2: string = arr.toLocaleString();
+      expect(s1).assertEqual(s2);
     });
 
     /**
      * @tc.name   testToLocaleStringTest0186
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_8700
-     * @tc.desc   Verify js scenario 0186
+     * @tc.desc   Verify array toLocaleString scenario 0186
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0186', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0186()).assertEqual(true);
+      const arr: Date[] = [new Date(), new Date()];
+      expect(typeof arr.toLocaleString()).assertEqual('string');
     });
 
     /**
      * @tc.name   testToLocaleStringTest0187
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_8800
-     * @tc.desc   Verify js scenario 0187
+     * @tc.desc   Verify array toLocaleString scenario 0187
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0187()).assertEqual(true);
+      class LocA { toLocaleString(): string { return 'A'; } }
+      class LocB { toLocaleString(): string { return 'B'; } }
+      const arr: (LocA | LocB)[] = [new LocA(), new LocB()];
+      expect(arr.toLocaleString()).assertEqual('A,B');
     });
 
     /**
      * @tc.name   testToLocaleStringTest0188
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_8900
-     * @tc.desc   Verify js scenario 0188
+     * @tc.desc   Verify array toLocaleString scenario 0188. JS-only: Object.freeze
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1111,7 +1181,7 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0189
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_9000
-     * @tc.desc   Verify js scenario 0189
+     * @tc.desc   Verify array toLocaleString scenario 0189. JS-only: Object.seal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1123,7 +1193,7 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0190
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_9100
-     * @tc.desc   Verify js scenario 0190
+     * @tc.desc   Verify array toLocaleString scenario 0190. JS-only: Proxy default handler
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1135,7 +1205,7 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0191
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_9200
-     * @tc.desc   Verify js scenario 0191
+     * @tc.desc   Verify array toLocaleString scenario 0191. JS-only: Object.getOwnPropertyDescriptor on Array.prototype
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1147,7 +1217,7 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0192
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_9300
-     * @tc.desc   Verify js scenario 0192
+     * @tc.desc   Verify array toLocaleString scenario 0192. JS-only: Array.prototype.toLocaleString.call(null)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1159,7 +1229,7 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0193
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_9400
-     * @tc.desc   Verify js scenario 0193
+     * @tc.desc   Verify array toLocaleString scenario 0193. JS-only: Array.prototype.toLocaleString.call(undefined)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1171,7 +1241,7 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0194
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_9500
-     * @tc.desc   Verify js scenario 0194
+     * @tc.desc   Verify array toLocaleString scenario 0194. JS-only: Array.prototype.toLocaleString.call arrayLike with getter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1183,7 +1253,7 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0195
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_9600
-     * @tc.desc   Verify js scenario 0195
+     * @tc.desc   Verify array toLocaleString scenario 0195. JS-only: Array.prototype.toLocaleString.call object with throwing getter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1195,7 +1265,7 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0196
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_9700
-     * @tc.desc   Verify js scenario 0196
+     * @tc.desc   Verify array toLocaleString scenario 0196. JS-only: nested array deep flatten stringification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1207,19 +1277,21 @@ export default function ArrayToLocaleStringMindMapTest() {
     /**
      * @tc.name   testToLocaleStringTest0197
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_9800
-     * @tc.desc   Verify js scenario 0197
+     * @tc.desc   Very long string element preserves length 2000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it('testToLocaleStringTest0197', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ToLocaleStringJs.ToLocaleStringJs_0197()).assertEqual(true);
+      const longStr: string = 'a'.repeat(2000);
+      const arr: string[] = [longStr];
+      expect(arr.toLocaleString().length).assertEqual(2000);
     });
 
     /**
      * @tc.name   testToLocaleStringTest0198
      * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_9900
-     * @tc.desc   Verify js scenario 0198
+     * @tc.desc   Verify array toLocaleString scenario 0198. JS-only: Array.toLocaleString with en-US on Math constants
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1230,8 +1302,8 @@ export default function ArrayToLocaleStringMindMapTest() {
 
     /**
      * @tc.name   testToLocaleStringTest0199
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_9999
-     * @tc.desc   Verify js scenario 0199
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_10000
+     * @tc.desc   Verify array toLocaleString scenario 0199. JS-only: Array.prototype toLocaleString descriptor probe
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
