@@ -14,6 +14,7 @@
 */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
 import { collections } from '@kit.ArkTS';
+import { gc } from './model/SendableModel';
 
 export function sleep(time: number): Promise<void> {
   return new Promise<void>((resolve) => {
@@ -44,6 +45,9 @@ const enum SendableEnum {
 }
 
 export default function builtinContainerSendableObjectTest() {
+  let id = setInterval(() => {
+    gc();
+  }, 5000)
   describe('builtinContainerSendableObjectTest', () => {
     beforeAll(() => {
     })
@@ -53,6 +57,7 @@ export default function builtinContainerSendableObjectTest() {
     afterEach(() => {
     })
     afterAll(() => {
+      clearInterval(id);
     })
 
     /**

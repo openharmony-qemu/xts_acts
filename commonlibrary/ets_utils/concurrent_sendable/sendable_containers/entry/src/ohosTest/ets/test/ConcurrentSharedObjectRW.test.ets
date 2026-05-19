@@ -863,6 +863,10 @@ function testConcurrentCollectionsSetRW(set: collections.Set<SendableClass>): vo
 
 
 export default function concurrentSharedObjectRWTest() {
+  let id = setInterval(() => {
+    gc();
+  }, 5000)
+
   describe('concurrentSharedObjectRWTest', () => {
     beforeAll(() => {
     })
@@ -872,7 +876,7 @@ export default function concurrentSharedObjectRWTest() {
     afterEach(() => {
     })
     afterAll(() => {
-      gc();
+      clearInterval(id);
     })
 
     /**
