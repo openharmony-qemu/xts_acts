@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 import { typeNode, NodeController, FrameNode } from  '@ohos.arkui.node';
-import {
-  Entry, Component, Builder,NodeContainer, CheckBoxShape,Text,
+import { Entry, Component, Builder, NodeContainer, CheckBoxShape, Text,
   Column, ColumnOptions, ImageAnalyzerType, CheckboxGroup, Checkbox, HorizontalAlign,
-  Flex, FlexDirection, ItemAlign, FlexAlign, ImageAIOptions,  ImageAnalyzerController, ImageBitmap,  ImageAnalyzerConfig,
-  Text, Button, FontWeight, ClickEvent, Margin, Color, Row, RenderingContextSettings, CanvasRenderingContext2D, Canvas,
+  Flex, FlexDirection, ItemAlign, FlexAlign, ImageAIOptions, ImageAnalyzerController, ImageBitmap, ImageAnalyzerConfig, 
+  Button, FontWeight, ClickEvent, Margin, Color, Row, RenderingContextSettings, CanvasRenderingContext2D, Canvas,
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
