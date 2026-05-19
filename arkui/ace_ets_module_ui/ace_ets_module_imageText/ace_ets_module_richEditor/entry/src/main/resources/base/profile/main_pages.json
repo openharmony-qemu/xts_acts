@@ -189,6 +189,8 @@
   "MainAbility/pages/RichEditor/RichEditorControllerMethodsNull2",
   "MainAbility/pages/RichEditor/RichEditorStyledStringControllerNull",
   "MainAbility/pages/RichEditorApi24/RichEditorBaseControllerSetStyledPlaceholder",
-  "MainAbility/pages/RichEditorApi26/RichEditorHorizontalScrolling"
+  "MainAbility/pages/RichEditorApi26/RichEditorHorizontalScrolling",
+  "MainAbility/pages/RichEditorApi26/RichEditorStrokeJoinStyle",
+  "MainAbility/pages/RichEditorApi26/RichEditorShaderStyle"
   ]
 }
