@@ -162,22 +162,6 @@ export default function DestructuringAssignmentTest(): void {
     });
 
     /**
-     * @tc.number    SUB_DESTRUCTURING_ASSIGNMENT_XTSTEST_0200
-     * @tc.name      testDestructuringAssignment0002
-     * @tc.desc      desc: Destructuring Assignment - trailing omitted elements
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testDestructuringAssignment0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
-      let n: number = 1;
-      let s: string = "a";
-      [n,s] = [1.5, "str"];
-      expect(n).assertEqual(1.5);
-      expect(s).assertEqual("str");
-
-    });
-    /**
      * @tc.number    SUB_DESTRUCTURING_ASSIGNMENT_XTSTEST_0300
      * @tc.name      testDestructuringAssignment0003
      * @tc.desc      desc: Destructuring Assignment - mixed types

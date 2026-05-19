@@ -127,7 +127,7 @@ export default function ResizableArrayCreationExpressionsTest(): void {
      * @tc.level     Level 2
      */
     it('testArrayCreationExpressions0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: Array<number> = new Array<number>();
+      let x: Array<byte> = new Array<byte>();
       expect(x.length).assertEqual(0);
       x.push(0);
       expect(x.length).assertEqual(1);

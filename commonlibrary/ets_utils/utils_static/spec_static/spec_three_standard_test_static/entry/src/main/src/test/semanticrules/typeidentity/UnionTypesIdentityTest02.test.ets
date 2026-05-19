@@ -193,31 +193,24 @@ namespace testNS72 {
     let a: String = "On Review"
     let b: String = cast(a)
     expect(a instanceof String).assertEqual(true)
-    expect(a instanceof String).assertEqual(true)
     expect(a).assertEqual("On Review")
-    expect(b instanceof String).assertEqual(true)
     expect(b instanceof String).assertEqual(true)
     expect(b).assertEqual("On Review")
     a = b
-    expect(a instanceof String).assertEqual(true)
     expect(a instanceof String).assertEqual(true)
     expect(a).assertEqual("On Review")
     a = "In Progress"
     b = cast(a)
     expect(b instanceof String).assertEqual(true)
-    expect(b instanceof String).assertEqual(true)
     expect(b).assertEqual("In Progress")
     a = b
-    expect(a instanceof String).assertEqual(true)
     expect(a instanceof String).assertEqual(true)
     expect(a).assertEqual("In Progress")
     a = "Done"
     b = cast(a)
     expect(b instanceof String).assertEqual(true)
-    expect(b instanceof String).assertEqual(true)
     expect(b).assertEqual("Done")
     a = b
-    expect(a instanceof String).assertEqual(true)
     expect(a instanceof String).assertEqual(true)
     expect(a).assertEqual("Done")
     return true

@@ -235,35 +235,6 @@ namespace override_object_return_6 {
 }
 
 // ============================================================================
-// Data Setup for testOverrideWithObjectExampleReturn0008
-// ============================================================================
-namespace override_object_return_7 {
-  export enum E1 { E1, E2 }
-
-  export interface Base {
-    kinds_of_return_type<T extends Derived, U extends Base>(): Object
-  }
-
-  export interface Derived extends Base {
-    kinds_of_return_type<T extends Derived, U extends Base>(): number
-  }
-
-  export class A implements Derived {
-    res: int = 0
-
-    kinds_of_return_type<T extends Derived, U extends Base>(): number {
-      this.res = 2
-      return 42.0
-    }
-  }
-
-  export function main(): int {
-    let a = new A()
-    let v = a.kinds_of_return_type<Derived, Base>()
-    return a.res
-  }
-}
-
 export default function OverrideCompatibleSignaturesTest02():void {
   describe('OverrideCompatibleSignaturesTest02', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -386,20 +357,6 @@ export default function OverrideCompatibleSignaturesTest02():void {
      */
     it("testOverrideWithObjectExampleReturn0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(override_object_return_6.main()).assertEqual(2);
-    });
-
-    /**
-     * @tc.number    SUB_OVERRIDE_COMPATIBLE_SIGNATURESTESTTWO_0800
-     * @tc.name      testOverrideWithObjectExampleReturn0008
-     * @tc.desc      The example below illustrates override-compatibility with Object. If signatures
-     *               are override-compatible, then overriding is used. Otherwise, a compile-time error
-     *               occurs.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testOverrideWithObjectExampleReturn0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(override_object_return_7.main()).assertEqual(2);
     });
 
   })

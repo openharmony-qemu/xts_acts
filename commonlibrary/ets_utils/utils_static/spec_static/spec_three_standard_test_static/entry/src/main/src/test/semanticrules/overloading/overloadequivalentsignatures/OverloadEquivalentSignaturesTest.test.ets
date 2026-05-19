@@ -83,7 +83,7 @@ export default function OverloadEquivalentSignaturesTest():void {
     })
 
     /**
-     * @tc.number    SUB_OVERLOAD_QUIVALENT_SIGNATURES_0100
+     * @tc.number    SUB_OVERLOAD_EQUIVALENT_SIGNATURES_0100
      * @tc.name      testSingleClassOverGeneric0001
      * @tc.desc      Two constructors are defined in the same class member (one generic T, one specific Number). 
      *               Because their signatures are NOT overload-equivalent, overloading is used successfully.

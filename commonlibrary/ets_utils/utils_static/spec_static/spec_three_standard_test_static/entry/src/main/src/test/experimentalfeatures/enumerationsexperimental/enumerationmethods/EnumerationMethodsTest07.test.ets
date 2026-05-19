@@ -501,88 +501,6 @@ namespace testNS {
     return true;
   }
 
-  // enum_explicit_type_tostring_10.ets
-  export function runTest94(): boolean {
-    expect(Enum1.Red.valueOf() instanceof byte).assertTrue();
-    expect(Enum1.Red.toString()).assertEqual("0");
-    expect(Enum1.Red.toString()).assertEqual(Enum1.Red.valueOf().toString());
-
-    expect(Enum1.Green.valueOf() instanceof byte).assertTrue();
-    expect(Enum1.Green.toString()).assertEqual("10");
-    expect(Enum1.Green.toString()).assertEqual(Enum1.Green.valueOf().toString());
-
-    expect(Enum1.Blue.valueOf() instanceof byte).assertTrue();
-    expect(Enum1.Blue.toString()).assertEqual("11");
-    expect(Enum1.Blue.toString()).assertEqual(Enum1.Blue.valueOf().toString());
-
-    expect(Enum1.First.valueOf() instanceof byte).assertTrue();
-    expect(Enum1.First.toString()).assertEqual("-128");
-    expect(Enum1.First.toString()).assertEqual(Enum1.First.valueOf().toString());
-
-    expect(Enum1.Second.valueOf() instanceof byte).assertTrue();
-    expect(Enum1.Second.toString()).assertEqual("123");
-    expect(Enum1.Second.toString()).assertEqual(Enum1.Second.valueOf().toString());
-
-    expect(Enum1.Third.valueOf() instanceof byte).assertTrue();
-    expect(Enum1.Third.toString()).assertEqual("127");
-    expect(Enum1.Third.toString()).assertEqual(Enum1.Third.valueOf().toString());
-
-    expect(Enum1.One.valueOf() instanceof byte).assertTrue();
-    expect(Enum1.One.toString()).assertEqual("1");
-    expect(Enum1.One.toString()).assertEqual(Enum1.One.valueOf().toString());
-
-    expect(Enum1.one.valueOf() instanceof byte).assertTrue();
-    expect(Enum1.one.toString()).assertEqual("1");
-    expect(Enum1.one.toString()).assertEqual(Enum1.one.valueOf().toString());
-
-    expect(Enum1.oNe.valueOf() instanceof byte).assertTrue();
-    expect(Enum1.oNe.toString()).assertEqual("1");
-    expect(Enum1.oNe.toString()).assertEqual(Enum1.oNe.valueOf().toString());
-
-    return true;
-  }
-
-  // enum_explicit_type_tostring_11.ets
-  export function runTest95(): boolean {
-    expect(Enum1.Red.valueOf() instanceof byte).assertTrue();
-    expect(Enum1.Red.toString()).assertEqual("0");
-    expect(Enum1.Red.toString()).assertEqual(Enum1.Red.valueOf().toString());
-
-    expect(Enum1.Green.valueOf() instanceof byte).assertTrue();
-    expect(Enum1.Green.toString()).assertEqual("10");
-    expect(Enum1.Green.toString()).assertEqual(Enum1.Green.valueOf().toString());
-
-    expect(Enum1.Blue.valueOf() instanceof byte).assertTrue();
-    expect(Enum1.Blue.toString()).assertEqual("11");
-    expect(Enum1.Blue.toString()).assertEqual(Enum1.Blue.valueOf().toString());
-
-    expect(Enum1.First.valueOf() instanceof byte).assertTrue();
-    expect(Enum1.First.toString()).assertEqual("-128");
-    expect(Enum1.First.toString()).assertEqual(Enum1.First.valueOf().toString());
-
-    expect(Enum1.Second.valueOf() instanceof byte).assertTrue();
-    expect(Enum1.Second.toString()).assertEqual("123");
-    expect(Enum1.Second.toString()).assertEqual(Enum1.Second.valueOf().toString());
-
-    expect(Enum1.Third.valueOf() instanceof byte).assertTrue();
-    expect(Enum1.Third.toString()).assertEqual("127");
-    expect(Enum1.Third.toString()).assertEqual(Enum1.Third.valueOf().toString());
-
-    expect(Enum1.One.valueOf() instanceof byte).assertTrue();
-    expect(Enum1.One.toString()).assertEqual("1");
-    expect(Enum1.One.toString()).assertEqual(Enum1.One.valueOf().toString());
-
-    expect(Enum1.one.valueOf() instanceof byte).assertTrue();
-    expect(Enum1.one.toString()).assertEqual("1");
-    expect(Enum1.one.toString()).assertEqual(Enum1.one.valueOf().toString());
-
-    expect(Enum1.oNe.valueOf() instanceof byte).assertTrue();
-    expect(Enum1.oNe.toString()).assertEqual("1");
-    expect(Enum1.oNe.toString()).assertEqual(Enum1.oNe.valueOf().toString());
-
-    return true;
-  }
-
   // enum_explicit_type_tostring_12.ets
   export function runTest96(): boolean {
     expect(Enum2.Red.valueOf() instanceof short).assertTrue();
@@ -1262,7 +1180,7 @@ export default function EnumerationMethodsTest07(): void {
 
       expect(Enum2.oNe.valueOf() instanceof short).assertTrue();
       expect(Enum2.oNe.toString()).assertEqual("1");
-      expect(Enum2.oNe.toString()).assertEqual(Enum3.oNe.valueOf().toString());
+      expect(Enum2.oNe.toString()).assertEqual(Enum2.oNe.valueOf().toString());
 
       expect(testNS.runTest96()).assertTrue();
     });

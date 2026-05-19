@@ -23,14 +23,6 @@ async function sleep(time: int): Promise<int> {
     }, time);
   });
 }
-class Neg<T extends number> {
-  constructor (x: T) {}
-}
-
-class Pos<T extends number> {
-  constructor (x: T) {}
-}
-
 namespace testNS1_4 {
   interface I1_4<U, V> {}
   interface I2_4<U, V> {}
@@ -294,12 +286,6 @@ class C1_4<U = int, V = null> implements III1_4<U, V> {
     this.c1_v_4 = p
   }
 }
-class C2_4<U = number, V = string> implements III2_4<U, V>  {
-  c2_v_4: U | V
-  constructor (p: U | V) {
-    this.c2_v_4 = p
-  }
-}
 class C3_4<U = bigint, V = undefined> implements II2_4<U, V>  {
   c3_v_4: U | V
   constructor (p: U | V) {
@@ -313,14 +299,6 @@ function check_C1_4(a: Any) {
   expect(a instanceof I1_4).assertEqual(true)
   expect(a instanceof I2_4).assertEqual(true)
   expect((a as C1_4).c1_v_4 as int).assertEqual(123)
-}
-function check_C2_4(a: Any) {
-  expect(a instanceof C2_4).assertEqual(true)
-  expect(a instanceof III2_4).assertEqual(true)
-  expect(a instanceof II1_4).assertEqual(true)
-  expect(a instanceof I1_4).assertEqual(true)
-  expect(a instanceof I2_4).assertEqual(true)
-  expect((a as C2_4).c2_v_4 as number).assertEqual(6.7)
 }
 function check_C3_4(a: Any) {
   expect(a instanceof C3_4).assertEqual(true)
@@ -393,113 +371,6 @@ function check_is_in_T_type_4(v: III1_4 | III2_4 | II2_4 | II1_4<int, null> | II
   }
 }
 
-interface I_5<U, V> {}
-interface II1_5<U, V> extends I_5<U, V> {}
-interface II2_5<U, V> extends I_5<U, V> {}
-interface III1_5<U, V> extends II1_5<U, V> {}
-interface III2_5<U, V> extends II1_5<U, V> {}
-class C1_5<U, V> implements III1_5<U, V>, III2_5<U, V> {
-  c1_v_5: U | V;
-  constructor(p: U | V) {
-    this.c1_v_5 = p;
-  }
-}
-class C2_5<U, V> implements II2_5<U, V>, III2_5<U, V> {
-  c2_v_5: U | V;
-  constructor(p: U | V) {
-    this.c2_v_5 = p;
-  }
-}
-class C3_5<U, V> implements III1_5<U, V> {
-  c3_v_5: U | V;
-  constructor(p: U | V) {
-    this.c3_v_5 = p;
-  }
-}
-function check_C1_5(a: Any) {
-  expect(a instanceof C1_5).assertEqual(true);
-  expect(a instanceof III1_5).assertEqual(true);
-  expect(a instanceof III2_5).assertEqual(true);
-  expect(a instanceof II1_5).assertEqual(true);
-  expect(a instanceof I_5).assertEqual(true);
-  expect((a as C1_5<int, null>).c1_v_5 as int).assertEqual(123);
-}
-function check_C2_5(a: Any) {
-  expect(a instanceof C2_5).assertEqual(true);
-  expect(a instanceof II2_5).assertEqual(true);
-  expect(a instanceof III2_5).assertEqual(true);
-  expect(a instanceof II1_5).assertEqual(true);
-  expect(a instanceof I_5).assertEqual(true);
-  expect((a as C2_5<number, string>).c2_v_5 as number).assertEqual(6.7);
-}
-function check_C3_5(a: Any) {
-  expect(a instanceof C3_5).assertEqual(true);
-  expect(a instanceof III1_5).assertEqual(true);
-  expect(a instanceof II1_5).assertEqual(true);
-  expect(a instanceof I_5).assertEqual(true);
-  expect((a as C3_5<bigint, undefined>).c3_v_5 as bigint).assertEqual(321n);
-}
-function check_bigint_5(a: Any) {
-  expect(a instanceof bigint).assertEqual(true);
-  expect(a as bigint).assertEqual(5n);
-}
-function check_value_5(v: Any, v_id: int): void {
-  if (v_id === 1) {
-    check_C1_5(v);
-    check_C1_5(v);
-    check_C1_5(v);
-  } else if (v_id === 2) {
-    check_C3_5(v);
-    check_C3_5(v);
-  } else {
-    check_bigint_5(v);
-    check_bigint_5(v);
-  }
-}
-function check_value_as_type_T_5(v: Object, v_id: int): void {
-  expect(v instanceof III1_5 || v instanceof II2_5 || v instanceof III2_5 || v instanceof bigint).assertEqual(true);
-  check_value_5(v, v_id);
-}
-function check_is_in_T_type_5(
-  v: III1_5<int, null> | III1_5<bigint, undefined> | II2_5<number, string>
-    | III2_5<int, null> | III2_5<number, string> | bigint,
-  v_id: int
-): boolean {
-  check_value_5(v, v_id);
-  if (v instanceof C1_5 || v instanceof C2_5 || v instanceof C3_5) {
-    check_value_5(v, v_id);
-    if (v instanceof C1_5 || v instanceof C2_5 || typeof v === 'bigint') {
-      expect(v_id).assertEqual(1);
-      check_value_5(v, v_id);
-      expect(v instanceof C1_5 || v instanceof C2_5 || v instanceof C3_5).assertEqual(true);
-      expect(v instanceof Object).assertEqual(true);
-      if (v instanceof Object) {
-        check_value_as_type_T_5(v, v_id);
-        return true;
-      } else {
-        return false;
-      }
-    } else {
-      expect(v_id).assertEqual(2);
-      check_value_5(v, v_id);
-      if (v instanceof Object) {
-        check_value_as_type_T_5(v, v_id);
-        return true;
-      } else {
-        return false;
-      }
-    }
-  } else {
-    expect(v_id).assertEqual(3);
-    check_value_5(v, v_id);
-    if (v instanceof Object) {
-      check_value_as_type_T_5(v, v_id);
-      return true;
-    } else {
-      return false;
-    }
-  }
-}
 
 namespace testNS1_6 {
   class C1_6<in T1, out T2> {

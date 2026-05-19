@@ -173,7 +173,7 @@ namespace testNS {
     expect(values[1] instanceof Enum3).assertTrue();
     expect(values[1]).assertEqual(Enum3.Green);
     expect(values[1].valueOf() instanceof int).assertTrue();
-    expect(values[1].valueOf()).assertEqual(Enum2.Green.valueOf());
+    expect(values[1].valueOf()).assertEqual(Enum3.Green.valueOf());
     expect(Enum3[values[1]]).assertEqual("Green");
 
     expect(values[2] instanceof Enum3).assertTrue();
@@ -598,7 +598,7 @@ export default function EnumerationMethodsTest19(): void {
       expect(values[1] instanceof Enum3).assertTrue();
       expect(values[1]).assertEqual(Enum3.Green);
       expect(values[1].valueOf() instanceof int).assertTrue();
-      expect(values[1].valueOf()).assertEqual(Enum2.Green.valueOf());
+      expect(values[1].valueOf()).assertEqual(Enum3.Green.valueOf());
       expect(Enum3[values[1]]).assertEqual("Green");
 
       expect(values[2] instanceof Enum3).assertTrue();

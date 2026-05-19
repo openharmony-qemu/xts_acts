@@ -80,9 +80,8 @@ export default function DefaultInterfaceMethodDeclarationsTest() : void{
     /**
      * @tc.number    SUB_DEFAULT_INTERFACE_METHOD_DECLARATIONSTEST_0100
      * @tc.name      testDefaultInterfaceMethodDeclarations0001
-     * @tc.desc      A default method in an interface body may explicitly be declared private.
-     *               expected_out: 'Semantic error ESE0208: ''getHorsePower'' is an instance property of
-     *              ''Vehicle'''
+     * @tc.desc      A class implementing an interface uses the default method implementation
+     *               unless it overrides the method.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2

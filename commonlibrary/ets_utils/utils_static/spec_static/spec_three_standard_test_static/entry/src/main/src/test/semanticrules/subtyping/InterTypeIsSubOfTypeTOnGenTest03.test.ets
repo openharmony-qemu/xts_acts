@@ -22,14 +22,7 @@ async function sleep(time: int): Promise<int> {
       resolve(0);
     }, time);
   });
-}class Neg<T extends number> {
-  constructor (x: T) {}
 }
-
-class Pos<T extends number> {
-  constructor (x: T) {}
-}
-
 namespace testNS1_7 {
   interface I1_7<U, V> {}
   interface I2_7<U, V> {}
@@ -264,12 +257,6 @@ class C1_7<U, V> implements III1_7<U, V> {
     this.c1_v = p
   }
 }
-class C2_7<U, V> implements III2_7<U, V>  {
-  c2_v: U | V
-  constructor (p: U | V) {
-    this.c2_v = p
-  }
-}
 class C3_7<U, V> implements II2_7<U, V>  {
   c3_v: U | V
   constructor (p: U | V) {
@@ -283,14 +270,6 @@ function check_C1_7(a: Object) {
   expect(a instanceof I1_7).assertTrue()
   expect(a instanceof I2_7).assertTrue()
   expect((a as C1_7<number, null>).c1_v as number).assertEqual(123)
-}
-function check_C2_7(a: Object) {
-  expect(a instanceof C2_7).assertTrue()
-  expect(a instanceof III2_7).assertTrue()
-  expect(a instanceof II1_7).assertTrue()
-  expect(a instanceof I1_7).assertTrue()
-  expect(a instanceof I2_7).assertTrue()
-  expect((a as C2_7<number, string>).c2_v as number).assertEqual(6.7)
 }
 function check_C3_7(a: Object) {
   expect(a instanceof C3_7).assertTrue()

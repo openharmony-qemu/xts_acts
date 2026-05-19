@@ -2853,7 +2853,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('object').assertEqual(a.meth(new Object()))
+      expect(a.meth(new Object())).assertEqual('object')
     });
 
     /**
@@ -2867,7 +2867,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('byte').assertEqual(a.meth(new Byte(-1)))
+      expect(a.meth(new Byte(-1))).assertEqual('byte')
     });
 
     /**
@@ -2881,7 +2881,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('short').assertEqual(a.meth(new Short(-1)))
+      expect(a.meth(new Short(-1))).assertEqual('short')
     });
 
     /**
@@ -2895,7 +2895,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('int').assertEqual(a.meth(new Int(-1)))
+      expect(a.meth(new Int(-1))).assertEqual('int')
     });
 
     /**
@@ -2909,7 +2909,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('long').assertEqual(a.meth(new Long(-1)))
+      expect(a.meth(new Long(-1))).assertEqual('long')
     });
 
     /**
@@ -2923,7 +2923,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('boolean').assertEqual(a.meth(new Boolean(false)))
+      expect(a.meth(new Boolean(false))).assertEqual('boolean')
     });
 
     /**
@@ -2937,7 +2937,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('boolean').assertEqual(a.meth(true))
+      expect(a.meth(true)).assertEqual('boolean')
     });
 
     /**
@@ -2951,7 +2951,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('boolean').assertEqual(a.meth(false))
+      expect(a.meth(false)).assertEqual('boolean')
     });
 
     /**
@@ -2965,7 +2965,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('float').assertEqual(a.meth(new Float(3.14f)))
+      expect(a.meth(new Float(3.14f))).assertEqual('float')
     });
 
     /**
@@ -2979,7 +2979,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('double').assertEqual(a.meth(new Double(3.14)))
+      expect(a.meth(new Double(3.14))).assertEqual('double')
     });
 
     /**
@@ -2993,7 +2993,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('long').assertEqual(a.meth(-1 as long))
+      expect(a.meth(-1 as long)).assertEqual('long')
     });
 
     /**
@@ -3007,7 +3007,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('int').assertEqual(a.meth(-1 as int))
+      expect(a.meth(-1 as int)).assertEqual('int')
     });
 
     /**
@@ -3021,7 +3021,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('byte').assertEqual(a.meth(-1))
+      expect(a.meth(-1)).assertEqual('byte')
     });
 
     /**
@@ -3035,7 +3035,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('short').assertEqual(a.meth(-1 as short))
+      expect(a.meth(-1 as short)).assertEqual('short')
     });
 
     /**
@@ -3049,7 +3049,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('byte').assertEqual(a.meth(-1 as byte))
+      expect(a.meth(-1 as byte)).assertEqual('byte')
     });
 
     /**
@@ -3063,7 +3063,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('double').assertEqual(a.meth(3.14))
+      expect(a.meth(3.14)).assertEqual('double')
     });
 
     /**
@@ -3077,7 +3077,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('float').assertEqual(a.meth(3.14f))
+      expect(a.meth(3.14f)).assertEqual('float')
     });
 
     /**
@@ -3091,7 +3091,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('string').assertEqual(a.meth("abc"))
+      expect(a.meth("abc")).assertEqual('string')
     });
 
     /**
@@ -3105,7 +3105,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('T').assertEqual(a.meth([3.14, "abc"] as T))
+      expect(a.meth([3.14, "abc"] as T)).assertEqual('T')
     });
 
     /**
@@ -3119,7 +3119,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('R').assertEqual(a.meth([3.14, false] as R))
+      expect(a.meth([3.14, false] as R)).assertEqual('R')
     });
 
     /**
@@ -3133,7 +3133,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('FA:string').assertEqual(a.meth(["abc"]))
+      expect(a.meth(["abc"])).assertEqual('FA:string')
     });
 
     /**
@@ -3147,7 +3147,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('FA:byte').assertEqual(a.meth([(-1).toByte()]))
+      expect(a.meth([(-1).toByte()])).assertEqual('FA:byte')
     });
 
     /**
@@ -3161,7 +3161,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('FA:short').assertEqual(a.meth([(-1).toShort()]))
+      expect(a.meth([(-1).toShort()])).assertEqual('FA:short')
     });
 
     /**
@@ -3175,7 +3175,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('FA:int').assertEqual(a.meth([(-1).toInt()]))
+      expect(a.meth([(-1).toInt()])).assertEqual('FA:int')
     });
 
     /**
@@ -3189,7 +3189,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('FA:long').assertEqual(a.meth([(-1).toLong()]))
+      expect(a.meth([(-1).toLong()])).assertEqual('FA:long')
     });
 
     /**
@@ -3203,7 +3203,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('FA:boolean').assertEqual(a.meth([false]))
+      expect(a.meth([false])).assertEqual('FA:boolean')
     });
 
     /**
@@ -3217,7 +3217,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('FA:float').assertEqual(a.meth([3.14f]))
+      expect(a.meth([3.14f])).assertEqual('FA:float')
     });
 
     /**
@@ -3231,7 +3231,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('FA:double').assertEqual(a.meth([3.14]))
+      expect(a.meth([3.14])).assertEqual('FA:double')
     });
 
     /**
@@ -3245,7 +3245,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('FA:object').assertEqual(a.meth([new Object()]))
+      expect(a.meth([new Object()])).assertEqual('FA:object')
     });
 
     /**
@@ -3259,7 +3259,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('FA:Color').assertEqual(a.meth([Color.Red]))
+      expect(a.meth([Color.Red])).assertEqual('FA:Color')
     });
 
     /**
@@ -3273,7 +3273,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('FA:A').assertEqual(a.meth(new FixedArray<A96>(1)))
+      expect(a.meth(new FixedArray<A96>(1))).assertEqual('FA:A')
     });
 
     /**
@@ -3287,7 +3287,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('FA:double').assertEqual(a.meth([3.14, 3.14]))
+      expect(a.meth([3.14, 3.14])).assertEqual('FA:double')
     });
 
     /**
@@ -3301,7 +3301,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('FA:string').assertEqual(a.meth(["abc", "xyz"]))
+      expect(a.meth(["abc", "xyz"])).assertEqual('FA:string')
     });
     /**
      * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_ONE_TEST_4100
@@ -3314,7 +3314,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('i+i').assertEqual(a.meth(10, 20))
+      expect(a.meth(10, 20)).assertEqual('i+i')
     });
 
     /**
@@ -3328,7 +3328,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('s+d').assertEqual(a.meth("a?", 1))
+      expect(a.meth("a?", 1)).assertEqual('s+d')
     });
 
     /**
@@ -3342,7 +3342,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('s+d').assertEqual(a.meth("a?", 2.1))
+      expect(a.meth("a?", 2.1)).assertEqual('s+d')
     });
 
     /**
@@ -3356,7 +3356,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('b+o?').assertEqual(a.meth(false, new X()))
+      expect(a.meth(false, new X())).assertEqual('b+o?')
     });
 
     /**
@@ -3370,7 +3370,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('b+o?').assertEqual(a.meth(true, undefined))
+      expect(a.meth(true, undefined)).assertEqual('b+o?')
     });
 
     /**
@@ -3384,7 +3384,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('void-void').assertEqual(a.meth((): void => { let i: int = 0 }))
+      expect(a.meth((): void => { let i: int = 0 })).assertEqual('void-void')
     });
 
     /**
@@ -3398,7 +3398,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('FF').assertEqual(a.meth((n: number): string => { return "n=" + n }))
+      expect(a.meth((n: number): string => { return "n=" + n })).assertEqual('FF')
     });
 
     /**
@@ -3412,7 +3412,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('EE').assertEqual(a.meth((p: string): int => { return p.length }))
+      expect(a.meth((p: string): int => { return p.length })).assertEqual('EE')
     });
 
     /**
@@ -3426,7 +3426,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('i+o[]').assertEqual(a.meth(5, [new X(), new Y()]))
+      expect(a.meth(5, [new X(), new Y()])).assertEqual('i+o[]')
     });
 
     /**
@@ -3440,7 +3440,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('s+...o').assertEqual(a.meth("abc", new X()))
+      expect(a.meth("abc", new X())).assertEqual('s+...o')
     });
 
     /**
@@ -3454,7 +3454,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('s+...o').assertEqual(a.meth("abc", [new X()]))
+      expect(a.meth("abc", [new X()])).assertEqual('s+...o')
     });
 
     /**
@@ -3468,7 +3468,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('s+...o').assertEqual(a.meth("abc", new X(), new Y()))
+      expect(a.meth("abc", new X(), new Y())).assertEqual('s+...o')
     });
 
     /**
@@ -3482,7 +3482,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('s+...o').assertEqual(a.meth("abc", new X(), new Y(), new Z()))
+      expect(a.meth("abc", new X(), new Y(), new Z())).assertEqual('s+...o')
     });
 
     /**
@@ -3496,7 +3496,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('s+...o').assertEqual(a.meth("abc", [new X(), new Y()]))
+      expect(a.meth("abc", [new X(), new Y()])).assertEqual('s+...o')
     });
 
     /**
@@ -3510,7 +3510,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('X+Y').assertEqual(a.meth(new X(), new Y()))
+      expect(a.meth(new X(), new Y())).assertEqual('X+Y')
     });
 
     /**
@@ -3524,7 +3524,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('X+Y').assertEqual(a.meth(new X(), new Z()))
+      expect(a.meth(new X(), new Z())).assertEqual('X+Y')
     });
 
     /**
@@ -3538,7 +3538,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('objects').assertEqual(a.meth(new Y(), new X()))
+      expect(a.meth(new Y(), new X())).assertEqual('objects')
     });
 
     /**
@@ -3552,7 +3552,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('Y+Z').assertEqual(a.meth(new Y(), new Z()))
+      expect(a.meth(new Y(), new Z())).assertEqual('Y+Z')
     });
 
     /**
@@ -3566,7 +3566,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('objects').assertEqual(a.meth(new Z(), new X()))
+      expect(a.meth(new Z(), new X())).assertEqual('objects')
     });
 
     /**
@@ -3580,7 +3580,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('X+Y').assertEqual(a.meth(new Z(), new Y()))
+      expect(a.meth(new Z(), new Y())).assertEqual('X+Y')
     });
 
     /**
@@ -3594,7 +3594,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('X').assertEqual(a.meth(new X()))
+      expect(a.meth(new X())).assertEqual('X')
     });
 
     /**
@@ -3608,7 +3608,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('X').assertEqual(a.meth(new Y()))
+      expect(a.meth(new Y())).assertEqual('X')
     });
 
     /**
@@ -3622,7 +3622,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('Z').assertEqual(a.meth(new Z()))
+      expect(a.meth(new Z())).assertEqual('Z')
     });
     /**
      * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_ONE_TEST_6400
@@ -3635,7 +3635,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('objects').assertEqual(a.meth(10, 1.1, "new X()", true))
+      expect(a.meth(10, 1.1, "new X()", true)).assertEqual('objects')
     });
 
     /**
@@ -3649,7 +3649,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
      */
     it('testExplicitClassMethodOverload0177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A96 = new A96();
-      expect('number-void').assertEqual(a.meth((v: number): void => { let k: int = 5; }))
+      expect(a.meth((v: number): void => { let k: int = 5; })).assertEqual('number-void')
     });
     /**
      * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_ONE_TEST_6600
@@ -3663,7 +3663,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
     it('testExplicitClassMethodOverload0178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A97 = new A97();
       let value: Object = new Object();
-      expect('object').assertEqual(a.meth(value))
+      expect(a.meth(value)).assertEqual('object')
     });
 
     /**
@@ -3678,7 +3678,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
     it('testExplicitClassMethodOverload0179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A97 = new A97();
       let value: Byte = new Byte(-1);
-      expect('int').assertEqual(a.meth(value))
+      expect(a.meth(value)).assertEqual('int')
     });
 
     /**
@@ -3693,7 +3693,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
     it('testExplicitClassMethodOverload0180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A97 = new A97();
       let value: Short = new Short(-1);
-      expect('int').assertEqual(a.meth(value))
+      expect(a.meth(value)).assertEqual('int')
     });
 
     /**
@@ -3708,7 +3708,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
     it('testExplicitClassMethodOverload0181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A97 = new A97();
       let value: Int = new Int(-1);
-      expect('int').assertEqual(a.meth(value))
+      expect(a.meth(value)).assertEqual('int')
     });
 
     /**
@@ -3723,7 +3723,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
     it('testExplicitClassMethodOverload0182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A97 = new A97();
       let value: Long = new Long(-1);
-      expect('double').assertEqual(a.meth(value))
+      expect(a.meth(value)).assertEqual('double')
     });
 
     /**
@@ -3738,7 +3738,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
     it('testExplicitClassMethodOverload0183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A97 = new A97();
       let value: Boolean = false;
-      expect('boolean').assertEqual(a.meth(value))
+      expect(a.meth(value)).assertEqual('boolean')
     });
 
     /**
@@ -3753,7 +3753,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
     it('testExplicitClassMethodOverload0184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A97 = new A97();
       let value: Float = new Float(3.14f);
-      expect('double').assertEqual(a.meth(value))
+      expect(a.meth(value)).assertEqual('double')
     });
 
     /**
@@ -3768,7 +3768,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
     it('testExplicitClassMethodOverload0185', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A97 = new A97();
       let value: Number = new Double(3.14);
-      expect('double').assertEqual(a.meth(value))
+      expect(a.meth(value)).assertEqual('double')
     });
 
     /**
@@ -3783,7 +3783,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
     it('testExplicitClassMethodOverload0186', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A97 = new A97();
       let value: String = "abc";
-      expect('string').assertEqual(a.meth(value))
+      expect(a.meth(value)).assertEqual('string')
     });
 
     /**
@@ -3798,7 +3798,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
     it('testExplicitClassMethodOverload0188', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A97 = new A97();
       let value: T1 = [3.14, "abc"];
-      expect('T').assertEqual(a.meth(value))
+      expect(a.meth(value)).assertEqual('T')
     });
 
     /**
@@ -3813,7 +3813,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
     it('testExplicitClassMethodOverload0189', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A97 = new A97();
       let value: R1 = [14, false];
-      expect('R').assertEqual(a.meth(value))
+      expect(a.meth(value)).assertEqual('R')
     });
 
     /**
@@ -3828,7 +3828,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
     it('testExplicitClassMethodOverload0190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A97 = new A97();
       let value: boolean = false;
-      expect('object').assertEqual(a.meth([value]))
+      expect(a.meth([value])).assertEqual('object')
     });
 
     /**
@@ -3843,7 +3843,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
     it('testExplicitClassMethodOverload0191', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A97 = new A97();
       let value: string = "abc";
-      expect('object').assertEqual(a.meth([value, "xyz"]))
+      expect(a.meth([value, "xyz"])).assertEqual('object')
     });
 
     /**
@@ -3858,7 +3858,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
     it('testExplicitClassMethodOverload0192', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A97 = new A97();
       let value: int = 10;
-      expect('i+i').assertEqual(a.meth(value, 20))
+      expect(a.meth(value, 20)).assertEqual('i+i')
     });
 
     /**
@@ -3873,7 +3873,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
     it('testExplicitClassMethodOverload0193', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A97 = new A97();
       let value: int = 1;
-      expect('objects').assertEqual(a.meth("a?", value))
+      expect(a.meth("a?", value)).assertEqual('objects')
     });
 
     /**
@@ -3888,7 +3888,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
     it('testExplicitClassMethodOverload0194', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A97 = new A97();
       let value: boolean = false;
-      expect('b+o?').assertEqual(a.meth(value, Color1.Blue))
+      expect(a.meth(value, Color1.Blue)).assertEqual('b+o?')
     });
 
     /**
@@ -3903,7 +3903,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
     it('testExplicitClassMethodOverload0195', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A97 = new A97();
       let value: boolean = true;
-      expect('b+o?').assertEqual(a.meth(value, undefined))
+      expect(a.meth(value, undefined)).assertEqual('b+o?')
     });
 
     /**
@@ -3918,7 +3918,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
     it('testExplicitClassMethodOverload0196', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A97 = new A97();
       let value: SN = "ABC";
-      expect('string').assertEqual(a.meth(value))
+      expect(a.meth(value)).assertEqual('string')
     });
 
     /**
@@ -3933,7 +3933,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
     it('testExplicitClassMethodOverload0197', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A97 = new A97();
       let value: SN = null;
-      expect('SN').assertEqual(a.meth(value))
+      expect(a.meth(value)).assertEqual('SN')
     });
 
     /**
@@ -3948,7 +3948,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
     it('testExplicitClassMethodOverload0198', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A97 = new A97();
       let value: SU = "ABC";
-      expect('string').assertEqual(a.meth(value))
+      expect(a.meth(value)).assertEqual('string')
     });
 
     /**
@@ -3963,7 +3963,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
     it('testExplicitClassMethodOverload0199', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A97 = new A97();
       let value: SU = undefined;
-      expect('SU').assertEqual(a.meth(value))
+      expect(a.meth(value)).assertEqual('SU')
     });
 
     /**
@@ -3978,7 +3978,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
     it('testExplicitClassMethodOverload0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A97 = new A97();
       let value: SNU = "ABC";
-      expect('string').assertEqual(a.meth(value))
+      expect(a.meth(value)).assertEqual('string')
     });
 
     /**
@@ -3993,7 +3993,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
     it('testExplicitClassMethodOverload0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A97 = new A97();
       let value: SNU = null;
-      expect('SN').assertEqual(a.meth(value))
+      expect(a.meth(value)).assertEqual('SN')
     });
 
     /**
@@ -4008,7 +4008,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
     it('testExplicitClassMethodOverload0202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A97 = new A97();
       let value: SNU = undefined;
-      expect('SU').assertEqual(a.meth(value))
+      expect(a.meth(value)).assertEqual('SU')
     });
 
     /**
@@ -4023,7 +4023,7 @@ export default function ExplicitClassMethodOverloadTest(): void {
     it('testExplicitClassMethodOverload0203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: A97 = new A97();
       let value: FixedArray<boolean> = [false];
-      expect('object').assertEqual(a.meth(value))
+      expect(a.meth(value)).assertEqual('object')
     });
     /**
      * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_ONE_TEST_9200
@@ -4461,54 +4461,6 @@ export default function ExplicitClassMethodOverloadTest(): void {
      * @tc.level     Level 2
      */
     it('testExplicitClassMethodOverload0232', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let b: B8 = new B8();
-      expect(b.foo('Hi')).assertEqual('A.fooS');
-    });
-
-    /**
-     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TWO_TEST_2200
-     * @tc.name      testExplicitClassMethodOverload0233
-     * @tc.desc      If a class has an overload declaration, then the overload declaration can be
-     *               overridden in a subclass. If a subclass has no overload declaration, then the declaration
-     *               from the superclass in used. If a subclass has an overload declaration, then the
-     *               overload declaration must list all methods overloaded in a superclass.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testExplicitClassMethodOverload0233', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let b: B8 = new B8();
-      expect(b.foo(5)).assertEqual('B.fooN');
-    });
-
-    /**
-     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TWO_TEST_2300
-     * @tc.name      testExplicitClassMethodOverload0234
-     * @tc.desc      If a class has an overload declaration, then the overload declaration can be
-     *               overridden in a subclass. If a subclass has no overload declaration, then the declaration
-     *               from the superclass in used. If a subclass has an overload declaration, then the
-     *               overload declaration must list all methods overloaded in a superclass.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testExplicitClassMethodOverload0234', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let b: B8 = new B8();
-      expect(b.foo(1.1)).assertEqual('B.fooN');
-    });
-
-    /**
-     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TWO_TEST_2400
-     * @tc.name      testExplicitClassMethodOverload0235
-     * @tc.desc      If a class has an overload declaration, then the overload declaration can be
-     *               overridden in a subclass. If a subclass has no overload declaration, then the declaration
-     *               from the superclass in used. If a subclass has an overload declaration, then the
-     *               overload declaration must list all methods overloaded in a superclass.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testExplicitClassMethodOverload0235', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let b: B8 = new B8();
       expect(b.foo('Hi')).assertEqual('A.fooS');
     });

@@ -737,15 +737,6 @@ export default function EnumerationMethodsTest03(): void {
     })
 
     /**
-     * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_ONE_0100
-     * @tc.name      testEnumerationMethods0015
-     * @tc.desc      Checking for enum with explicit int type constant for fromValue method support which should throws
-     *               an error if no constant has such a value.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    /**
      * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_TWO_0100
      * @tc.name      testEnumerationMethods0029
      * @tc.desc      Checking for enum with explicit int type constant for getName method support.

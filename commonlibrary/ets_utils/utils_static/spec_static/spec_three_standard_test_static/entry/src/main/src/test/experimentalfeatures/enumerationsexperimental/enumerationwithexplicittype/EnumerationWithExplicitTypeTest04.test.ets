@@ -48,18 +48,6 @@ enum Enum23: double {
   oNe = 1.0
 }
 
-enum Enum24: float {
-  Red = 1.5f,
-  Green = 10.3f,
-  Blue = 7.6f,
-  First = -214748.3648f,
-  Second = 123.45f,
-  Third = 2147483.647f,
-  One = 1.0f,
-  one = 1.0f,
-  oNe = 1.0f
-}
-
 enum Enum25: string {
   Red = "reD",
   Green = "grEen",

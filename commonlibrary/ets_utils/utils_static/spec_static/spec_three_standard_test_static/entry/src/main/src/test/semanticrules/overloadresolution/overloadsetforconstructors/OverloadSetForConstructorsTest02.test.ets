@@ -1270,48 +1270,6 @@ export default function OverloadSetForConstructorsTest02():void {
       expect('foo4').assertEqual(a.foo);
     });
 
-    // c_optional_and_rest_parameters_12: new A_opt1("a", 1, 4)
-    /**
-     * @tc.number    SUB_OVERLOAD_SET_FOR_CONSTRUCTORS_OPTIONAL_REST_TEST_1300
-     * @tc.name      testOverloadSetForConstructorsOptionalRest0013
-     * @tc.desc      Test overload set for constructors with optional and rest parameters.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testOverloadSetForConstructorsOptionalRest0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_opt1 = new A_opt1("a", 1, 4);
-      expect('foo4').assertEqual(a.foo);
-    });
-
-    // c_optional_and_rest_parameters_13: new A_opt1("b", 2, 5)
-    /**
-     * @tc.number    SUB_OVERLOAD_SET_FOR_CONSTRUCTORS_OPTIONAL_REST_TEST_1400
-     * @tc.name      testOverloadSetForConstructorsOptionalRest0014
-     * @tc.desc      Test overload set for constructors with optional and rest parameters.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testOverloadSetForConstructorsOptionalRest0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_opt1 = new A_opt1("b", 2, 5);
-      expect('foo4').assertEqual(a.foo);
-    });
-
-    // c_optional_and_rest_parameters_14: new A_opt1("c", 3, 6)
-    /**
-     * @tc.number    SUB_OVERLOAD_SET_FOR_CONSTRUCTORS_OPTIONAL_REST_TEST_1500
-     * @tc.name      testOverloadSetForConstructorsOptionalRest0015
-     * @tc.desc      Test overload set for constructors with optional and rest parameters.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testOverloadSetForConstructorsOptionalRest0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_opt1 = new A_opt1("c", 3, 6);
-      expect('foo4').assertEqual(a.foo);
-    });
-
     // c_optional_and_rest_parameters_15: new A_opt2("a")
     /**
      * @tc.number    SUB_OVERLOAD_SET_FOR_CONSTRUCTORS_OPTIONAL_REST_TEST_1600

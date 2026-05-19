@@ -74,101 +74,6 @@ export default function SeveralBindingsForOneImportPathTest(): void {
     });
 
     /**
-     * @tc.number    SUB_SEVERAL_BINDINGS_FOR_ONE_IMPORT_PATHTEST_0200
-     * @tc.name      testSeveralBindingsForOneImportPath0002
-     * @tc.desc      A name is explicitly used with alias and implicitly without alias. Sine is accessible
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testSeveralBindingsForOneImportPath0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSeveralBindingsForOneImportPath0002';
-      console.log(TAG + ' start');
-
-      let x1 = sin(1.0);
-      expect(x1).assertEqual(0.8414709848078965);
-    });
-
-    /**
-     * @tc.number    SUB_SEVERAL_BINDINGS_FOR_ONE_IMPORT_PATHTEST_0300
-     * @tc.name      testSeveralBindingsForOneImportPath0003
-     * @tc.desc      A name is explicitly used with alias and implicitly without alias. sin is not accessible
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testSeveralBindingsForOneImportPath0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSeveralBindingsForOneImportPath0003';
-      console.log(TAG + ' start');
-      let x2 = sin(1.0);
-      expect(x2).assertEqual(0.8414709848078965);
-    });
-
-    /**
-     * @tc.number    SUB_SEVERAL_BINDINGS_FOR_ONE_IMPORT_PATHTEST_0400
-     * @tc.name      testSeveralBindingsForOneImportPath0004
-     * @tc.desc      A name is explicitly used with alias and implicitly with alias.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testSeveralBindingsForOneImportPath0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSeveralBindingsForOneImportPath0004';
-      console.log(TAG + ' start');
-
-      let x3 = sin(1.0);
-      expect(x3).assertEqual(0.8414709848078965);
-    });
-
-    /**
-     * @tc.number    SUB_SEVERAL_BINDINGS_FOR_ONE_IMPORT_PATHTEST_0500
-     * @tc.name      testSeveralBindingsForOneImportPath0005
-     * @tc.desc      A name is explicitly used with alias several times.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testSeveralBindingsForOneImportPath0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSeveralBindingsForOneImportPath0005';
-      console.log(TAG + ' start');
-
-      let x4 = sin(1.0);
-      expect(x4).assertEqual(0.8414709848078965);
-    });
-
-    /**
-     * @tc.number    SUB_SEVERAL_BINDINGS_FOR_ONE_IMPORT_PATHTEST_0600
-     * @tc.name      testSeveralBindingsForOneImportPath0006
-     * @tc.desc      A name is explicitly used with alias and implicitly without alias. Sine is accessible
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testSeveralBindingsForOneImportPath0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSeveralBindingsForOneImportPath0006';
-      console.log(TAG + ' start');
-
-      let x5 = sin(1.0);
-      expect(x5).assertEqual(0.8414709848078965);
-    });
-
-    /**
-     * @tc.number    SUB_SEVERAL_BINDINGS_FOR_ONE_IMPORT_PATHTEST_0700
-     * @tc.name      testSeveralBindingsForOneImportPath0007
-     * @tc.desc      A name is explicitly used without an alias in several bindings.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testSeveralBindingsForOneImportPath0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSeveralBindingsForOneImportPath0007';
-      console.log(TAG + ' start');
-
-      let x6 = sin(1.0);
-      expect(x6).assertEqual(0.8414709848078965);
-    });
-
-    /**
      * @tc.number    SUB_SEVERAL_BINDINGS_FOR_ONE_IMPORT_PATHTEST_0800
      * @tc.name      testSeveralBindingsForOneImportPath0008
      * @tc.desc      Several imports from one path
@@ -184,24 +89,6 @@ export default function SeveralBindingsForOneImportPathTest(): void {
       let y = cos(1.0);
       expect(x7).assertEqual(0.8414709848078965);
       expect(y).assertEqual(0.5403023058681398);
-    });
-
-    /**
-     * @tc.number    SUB_SEVERAL_BINDINGS_FOR_ONE_IMPORT_PATHTEST_0900
-     * @tc.name      testSeveralBindingsForOneImportPath0009
-     * @tc.desc      Several imports from one path in one line
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testSeveralBindingsForOneImportPath0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testSeveralBindingsForOneImportPath0009';
-      console.log(TAG + ' start');
-
-      let x8 = sin(1.0);
-      let y1 = cos(1.0);
-      expect(x8).assertEqual(0.8414709848078965);
-      expect(y1).assertEqual(0.5403023058681398);
     });
 
   })

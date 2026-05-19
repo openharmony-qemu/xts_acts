@@ -1137,7 +1137,7 @@ export default function EnumerationMethodsTest01(): void {
     /**
      * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0500
      * @tc.name      testEnumerationMethods0005
-     * @tc.desc      Checking for enum with explicit byte type constant for fromValue method support.
+     * @tc.desc      Checking for enum with explicit int type constant for fromValue method support.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1198,7 +1198,7 @@ export default function EnumerationMethodsTest01(): void {
     /**
      * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0600
      * @tc.name      testEnumerationMethods0006
-     * @tc.desc      Checking for enum with explicit byte type constant for fromValue method support.
+     * @tc.desc      Checking for enum with explicit int type constant for fromValue method support.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1259,7 +1259,7 @@ export default function EnumerationMethodsTest01(): void {
     /**
      * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0700
      * @tc.name      testEnumerationMethods0007
-     * @tc.desc      Checking for enum with explicit short type constant for fromValue method support.
+     * @tc.desc      Checking for enum with explicit int type constant for fromValue method support.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1320,7 +1320,7 @@ export default function EnumerationMethodsTest01(): void {
     /**
      * @tc.number    SUB_ENUMERATION_METHODS_XTSTEST_0800
      * @tc.name      testEnumerationMethods0008
-     * @tc.desc      Checking for enum with explicit short type constant for fromValue method support.
+     * @tc.desc      Checking for enum with explicit int type constant for fromValue method support.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2

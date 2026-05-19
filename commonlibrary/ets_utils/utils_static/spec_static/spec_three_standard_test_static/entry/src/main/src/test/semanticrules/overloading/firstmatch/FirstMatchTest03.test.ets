@@ -69,13 +69,13 @@ namespace fm_top_2 {
 }
 
 namespace fm_top_3 {
-  export function foo(v1: number, ...v2: number[]): number { return (v2 && v2.length > 0) ? 1 : 1; }
+  export function foo(v1: number, ...v2: number[]): number { return (v2 && v2.length > 0) ? 2 : 1; }
 }
 namespace fm_top_4 {
   export function foo(v1: number, v2?: number): number { return v2 !== undefined ? 2 : 1; }
 }
 namespace fm_top_5 {
-  export function foo(v1: number, v2?: number): number { return v2 !== undefined ? 1 : 1; }
+  export function foo(v1: number, v2?: number): number { return v2 !== undefined ? 2 : 1; }
 }
 namespace fm_top_6 {
   export function foo(v: A1): string { if (v instanceof A2) return 'foo with A2'; return 'foo with A1'; }
@@ -333,7 +333,7 @@ export default function FirstMatchTest03():void {
      */
     it("testFirstMatchTopLevel0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(fm_top_3.foo(1)).assertEqual(1);
-      expect(fm_top_3.foo(1, 2)).assertEqual(1);
+      expect(fm_top_3.foo(1, 2)).assertEqual(2);
     });
 
     /**
@@ -359,7 +359,7 @@ export default function FirstMatchTest03():void {
      */
     it("testFirstMatchTopLevel0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(fm_top_5.foo(1)).assertEqual(1);
-      expect(fm_top_5.foo(1, 2)).assertEqual(1);
+      expect(fm_top_5.foo(1, 2)).assertEqual(2);
     });
 
     /**

@@ -111,7 +111,7 @@ export default function FunctionsWithReceiverTest():void{
       expect(f(a)).assertEqual(1);
       expect(f(b)).assertEqual(2);
       a = new B()
-      expect(f(b)).assertEqual(2);
+      expect(f(a)).assertEqual(2);
     });
 
     /**

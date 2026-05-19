@@ -655,7 +655,7 @@ export default function ExtendedConditionalExpressionsTest02():void {
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_TWO_EXPRESSIONS_4700
      * @tc.name    testConditionalExpression0147
-     * @tc.desc      Conditional expression with truthy value (Boolean(false))
+     * @tc.desc      Conditional expression with falsy value (new Boolean(false))
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2

@@ -79,7 +79,7 @@ export default function AdditiveExpressionsTest(): void {
     /**
      * @tc.number    SUB_ADDITIVE_EXPRESSIONS_XTSTEST_0100
      * @tc.name      testAdditiveExpressions0001
-     * @tc.desc      desc: Additive operator plus for enumeration with explicit type
+     * @tc.desc      desc: Additive operator minus for enumeration with explicit type
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -92,7 +92,7 @@ export default function AdditiveExpressionsTest(): void {
     /**
      * @tc.number    SUB_ADDITIVE_EXPRESSIONS_XTSTEST_0200
      * @tc.name      testAdditiveExpressions0002
-     * @tc.desc      desc: Additive operator plus for enumeration with explicit type
+     * @tc.desc      desc: Additive operator minus for enumeration with explicit type
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -105,7 +105,7 @@ export default function AdditiveExpressionsTest(): void {
     /**
      * @tc.number    SUB_ADDITIVE_EXPRESSIONS_XTSTEST_0300
      * @tc.name      testAdditiveExpressions0003
-     * @tc.desc      desc: Additive operator plus for enumeration with explicit type
+     * @tc.desc      desc: Additive operator minus for enumeration with explicit type
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -118,7 +118,7 @@ export default function AdditiveExpressionsTest(): void {
     /**
      * @tc.number    SUB_ADDITIVE_EXPRESSIONS_XTSTEST_0400
      * @tc.name      testAdditiveExpressions0004
-     * @tc.desc      desc: Additive operator plus for enumeration with explicit type
+     * @tc.desc      desc: Additive operator minus for enumeration with explicit type
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -131,7 +131,7 @@ export default function AdditiveExpressionsTest(): void {
     /**
      * @tc.number    SUB_ADDITIVE_EXPRESSIONS_XTSTEST_0500
      * @tc.name      testAdditiveExpressions0005
-     * @tc.desc      desc: Additive operator plus for enumeration with explicit type
+     * @tc.desc      desc: Additive operator minus for enumeration with explicit type
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -144,7 +144,7 @@ export default function AdditiveExpressionsTest(): void {
     /**
      * @tc.number    SUB_ADDITIVE_EXPRESSIONS_XTSTEST_0600
      * @tc.name      testAdditiveExpressions0006
-     * @tc.desc      desc: Additive operator plus for enumeration with explicit type
+     * @tc.desc      desc: Additive operator minus for enumeration with explicit type
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
