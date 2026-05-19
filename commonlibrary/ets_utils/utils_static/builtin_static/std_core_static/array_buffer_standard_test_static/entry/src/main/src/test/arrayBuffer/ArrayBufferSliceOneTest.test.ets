@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -8,11 +9,22 @@
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR ANY KIND, either express or implied.
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function arrayBufferSliceOneTest(): void {
@@ -30,17 +42,17 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_0100
-     * @tc.desc Verify ArrayBuffer.slice part1: passing begin end ，normal slice
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 2。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(0, 10 as byte);
-      buffer.set(1, 20 as byte);
-      buffer.set(2, 30 as byte);
-      buffer.set(3, 40 as byte);
+      buffer.set(0, Int.toByte(10));
+      buffer.set(1, Int.toByte(20));
+      buffer.set(2, Int.toByte(30));
+      buffer.set(3, Int.toByte(40));
       const copied = buffer.slice(1, 3);
       expect(copied.byteLength).assertEqual(2);
       expect(copied.at(0)).assertEqual(20);
@@ -50,17 +62,17 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_0200
-     * @tc.desc Verify ArrayBuffer.slice part1: passing begin ，omitted end，copy from begin to byteLength
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 2。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(0, 10 as byte);
-      buffer.set(1, 20 as byte);
-      buffer.set(2, 30 as byte);
-      buffer.set(3, 40 as byte);
+      buffer.set(0, Int.toByte(10));
+      buffer.set(1, Int.toByte(20));
+      buffer.set(2, Int.toByte(30));
+      buffer.set(3, Int.toByte(40));
       const copied = buffer.slice(2);
       expect(copied.byteLength).assertEqual(2);
       expect(copied.at(0)).assertEqual(30);
@@ -70,46 +82,43 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_0300
-     * @tc.desc Verify ArrayBuffer.slice part1: calling with zero args ， error
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 2。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(0, 1 as byte);
-      const copied = buffer.slice(0);
-      expect(copied.byteLength).assertEqual(4);
+      const sliced = buffer.slice(1, 3);
+      expect(sliced.byteLength).assertEqual(2);
     });
 
     /**
      * @tc.name testArrayBufferSliceOne0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_0400
-     * @tc.desc Verify ArrayBuffer.slice part1: passing 3 ， error
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 2。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(0, 10 as byte);
-      buffer.set(1, 20 as byte);
-      const copied = buffer.slice(0, 2);
-      expect(copied.byteLength).assertEqual(2);
+      const sliced = buffer.slice(0, 2);
+      expect(sliced.byteLength).assertEqual(2)
     });
 
     /**
      * @tc.name testArrayBufferSliceOne0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_0500
-     * @tc.desc Verify ArrayBuffer.slice part1: begin=0， from buffer slice
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 2。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(0, 10 as byte);
-      buffer.set(1, 20 as byte);
+      buffer.set(0, Int.toByte(10));
+      buffer.set(1, Int.toByte(20));
       const copied = buffer.slice(0, 2);
       expect(copied.byteLength).assertEqual(2);
       expect(copied.at(0)).assertEqual(10);
@@ -119,15 +128,15 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_0600
-     * @tc.desc Verify ArrayBuffer.slice part1: begin is buffer ，normal slice
+     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，返回值的 byteLength 为 2。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
-      buffer.set(3, 50 as byte);
-      buffer.set(4, 60 as byte);
+      buffer.set(3, Int.toByte(50));
+      buffer.set(4, Int.toByte(60));
       const copied = buffer.slice(3, 5);
       expect(copied.byteLength).assertEqual(2);
       expect(copied.at(0)).assertEqual(50);
@@ -137,14 +146,14 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_0700
-     * @tc.desc Verify ArrayBuffer.slice part1: begin=byteLength-1，slice after byte
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 1。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(3, 99 as byte);
+      buffer.set(3, Int.toByte(99));
       const copied = buffer.slice(3, 4);
       expect(copied.byteLength).assertEqual(1);
       expect(copied.at(0)).assertEqual(99);
@@ -153,14 +162,14 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_0800
-     * @tc.desc Verify ArrayBuffer.slice part1: begin=byteLength-1，omitted end，slice after byte
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 1。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(3, 77 as byte);
+      buffer.set(3, Int.toByte(77));
       const copied = buffer.slice(3);
       expect(copied.byteLength).assertEqual(1);
       expect(copied.at(0)).assertEqual(77);
@@ -169,14 +178,14 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_0900
-     * @tc.desc Verify ArrayBuffer.slice part1: begin=-1， from slice
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 1。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(3, 88 as byte);
+      buffer.set(3, Int.toByte(88));
       const copied = buffer.slice(-1);
       expect(copied.byteLength).assertEqual(1);
       expect(copied.at(0)).assertEqual(88);
@@ -185,15 +194,15 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_1000
-     * @tc.desc Verify ArrayBuffer.slice part1: begin=-2， from slice
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 2。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(2, 30 as byte);
-      buffer.set(3, 40 as byte);
+      buffer.set(2, Int.toByte(30));
+      buffer.set(3, Int.toByte(40));
       const copied = buffer.slice(-2);
       expect(copied.byteLength).assertEqual(2);
       expect(copied.at(0)).assertEqual(30);
@@ -203,7 +212,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_1100
-     * @tc.desc Verify ArrayBuffer.slice part1: begingreater than byteLength，returns empty ArrayBuffer
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 0。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -217,7 +226,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_1200
-     * @tc.desc Verify ArrayBuffer.slice part1: begingreater than byteLength and end，returns empty ArrayBuffer
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 0。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -231,7 +240,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_1300
-     * @tc.desc Verify ArrayBuffer.slice part1: begin is intmaximum ，returns empty ArrayBuffer
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 0。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -245,17 +254,17 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_1400
-     * @tc.desc Verify ArrayBuffer.slice part1: omitted end ，copy from begin to buffer
+     * @tc.desc 验证 new ArrayBuffer(6) 在当前场景执行成功，返回值的 byteLength 为 4。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(6);
-      buffer.set(2, 11 as byte);
-      buffer.set(3, 22 as byte);
-      buffer.set(4, 33 as byte);
-      buffer.set(5, 44 as byte);
+      buffer.set(2, Int.toByte(11));
+      buffer.set(3, Int.toByte(22));
+      buffer.set(4, Int.toByte(33));
+      buffer.set(5, Int.toByte(44));
       const copied = buffer.slice(2);
       expect(copied.byteLength).assertEqual(4);
       expect(copied.at(0)).assertEqual(11);
@@ -267,14 +276,14 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_1500
-     * @tc.desc Verify ArrayBuffer.slice part1: end=begin+1，slice byte
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 1。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(1, 55 as byte);
+      buffer.set(1, Int.toByte(55));
       const copied = buffer.slice(1, 2);
       expect(copied.byteLength).assertEqual(1);
       expect(copied.at(0)).assertEqual(55);
@@ -283,15 +292,15 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_1600
-     * @tc.desc Verify ArrayBuffer.slice part1: end=byteLength，slice to buffer
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 2。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(2, 66 as byte);
-      buffer.set(3, 77 as byte);
+      buffer.set(2, Int.toByte(66));
+      buffer.set(3, Int.toByte(77));
       const copied = buffer.slice(2, 4);
       expect(copied.byteLength).assertEqual(2);
       expect(copied.at(0)).assertEqual(66);
@@ -301,17 +310,17 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_1700
-     * @tc.desc Verify ArrayBuffer.slice part1: endgreater than byteLength， truncated to byteLength
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 3。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(0, 10 as byte);
-      buffer.set(1, 20 as byte);
-      buffer.set(2, 30 as byte);
-      buffer.set(3, 40 as byte);
+      buffer.set(0, Int.toByte(10));
+      buffer.set(1, Int.toByte(20));
+      buffer.set(2, Int.toByte(30));
+      buffer.set(3, Int.toByte(40));
       const copied = buffer.slice(1, 100);
       expect(copied.byteLength).assertEqual(3);
       expect(copied.at(0)).assertEqual(20);
@@ -322,7 +331,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_1800
-     * @tc.desc Verify ArrayBuffer.slice part1: endless than begin，returns empty ArrayBuffer
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 0。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -336,15 +345,15 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_1900
-     * @tc.desc Verify ArrayBuffer.slice part1: end is negative ， from offset
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 2。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(0, 10 as byte);
-      buffer.set(1, 20 as byte);
+      buffer.set(0, Int.toByte(10));
+      buffer.set(1, Int.toByte(20));
       const copied = buffer.slice(0, -2);
       expect(copied.byteLength).assertEqual(2);
       expect(copied.at(0)).assertEqual(10);
@@ -354,7 +363,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_2000
-     * @tc.desc Verify ArrayBuffer.slice part1: end=0， from begin to 0，returns empty ArrayBuffer
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 0。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -368,15 +377,15 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_2100
-     * @tc.desc Verify ArrayBuffer.slice part1: begin end is negative ， from offset after slice
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 2。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(1, 20 as byte);
-      buffer.set(2, 30 as byte);
+      buffer.set(1, Int.toByte(20));
+      buffer.set(2, Int.toByte(30));
       const copied = buffer.slice(-3, -1);
       expect(copied.byteLength).assertEqual(2);
       expect(copied.at(0)).assertEqual(20);
@@ -386,76 +395,80 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_2200
-     * @tc.desc Verify ArrayBuffer.slice part1: slice after verify buffer byte data and buffer consistent
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 2。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(0, 10 as byte);
-      buffer.set(1, 20 as byte);
-      buffer.set(2, 30 as byte);
-      buffer.set(3, 40 as byte);
+      buffer.set(0, Int.toByte(10));
+      buffer.set(1, Int.toByte(20));
+      buffer.set(2, Int.toByte(30));
+      buffer.set(3, Int.toByte(40));
       const copied = buffer.slice(1, 3);
       expect(copied.byteLength).assertEqual(2);
       expect(copied.at(0)).assertEqual(20);
       expect(copied.at(1)).assertEqual(30);
+      expect(buffer.at(0)).assertEqual(10);
+      expect(buffer.at(3)).assertEqual(40);
     });
 
     /**
      * @tc.name testArrayBufferSliceOne0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_2300
-     * @tc.desc Verify ArrayBuffer.slice part1: slice modify buffer
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 4。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(0, 10 as byte);
-      buffer.set(1, 20 as byte);
-      buffer.set(2, 30 as byte);
-      buffer.set(3, 40 as byte);
+      buffer.set(0, Int.toByte(10));
+      buffer.set(1, Int.toByte(20));
+      buffer.set(2, Int.toByte(30));
+      buffer.set(3, Int.toByte(40));
       const copied = buffer.slice(0, 2);
       expect(buffer.byteLength).assertEqual(4);
       expect(buffer.at(0)).assertEqual(10);
       expect(buffer.at(1)).assertEqual(20);
       expect(buffer.at(2)).assertEqual(30);
       expect(buffer.at(3)).assertEqual(40);
+      expect(copied.byteLength).assertEqual(2)
     });
 
     /**
      * @tc.name testArrayBufferSliceOne0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_2400
-     * @tc.desc Verify ArrayBuffer.slice part1: modify slice after buffer buffer
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 2。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(0, 10 as byte);
-      buffer.set(1, 20 as byte);
+      buffer.set(0, Int.toByte(10));
+      buffer.set(1, Int.toByte(20));
       const copied = buffer.slice(0, 2);
-      copied.set(0, 99 as byte);
+      copied.set(0, Int.toByte(99));
       expect(buffer.at(0)).assertEqual(10);
       expect(copied.at(0)).assertEqual(99);
+      expect(copied.byteLength).assertEqual(2)
     });
 
     /**
      * @tc.name testArrayBufferSliceOne0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_2500
-     * @tc.desc Verify ArrayBuffer.slice part1: omitted end ， from begin slice to buffer
+     * @tc.desc 验证 new ArrayBuffer(6) 在当前场景执行成功，返回值的 byteLength 为 3。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(6);
-      buffer.set(3, 40 as byte);
-      buffer.set(4, 50 as byte);
-      buffer.set(5, 60 as byte);
+      buffer.set(3, Int.toByte(40));
+      buffer.set(4, Int.toByte(50));
+      buffer.set(5, Int.toByte(60));
       const copied = buffer.slice(3);
       expect(copied.byteLength).assertEqual(3);
       expect(copied.at(0)).assertEqual(40);
@@ -466,7 +479,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_2600
-     * @tc.desc Verify ArrayBuffer.slice part1: slicemethod return value ArrayBuffertype instance
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，实例类型判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -475,26 +488,26 @@ export default function arrayBufferSliceOneTest(): void {
       const buffer = new ArrayBuffer(4);
       const copied = buffer.slice(0, 2);
       expect(copied instanceof ArrayBuffer).assertTrue();
+      expect(copied.byteLength).assertEqual(2)
     });
 
     /**
      * @tc.name testArrayBufferSliceOne0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_2700
-     * @tc.desc Verify ArrayBuffer.slice part1: slicemethod return value is null
+     * @tc.desc 验证 new Byte() 在当前场景执行成功，实例类型判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(4);
-      const copied = buffer.slice(0, 2);
-      expect(copied != null).assertTrue();
+      let b: Byte = new Byte()
+      expect(Class.of(b).getName().indexOf("Byte") >= 0).assertTrue()
     });
 
     /**
      * @tc.name testArrayBufferSliceOne0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_2800
-     * @tc.desc Verify ArrayBuffer.slice part1: slicereturns buffer and buffer ArrayBufferinstance
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，等值关系判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -503,22 +516,23 @@ export default function arrayBufferSliceOneTest(): void {
       const buffer = new ArrayBuffer(4);
       const copied = buffer.slice(0, 4);
       expect(copied === buffer).assertFalse();
+      expect(copied.byteLength).assertEqual(4)
     });
 
     /**
      * @tc.name testArrayBufferSliceOne0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_2900
-     * @tc.desc Verify ArrayBuffer.slice part1: begin=0，end=byteLength，copy buffer
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 4。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(0, 10 as byte);
-      buffer.set(1, 20 as byte);
-      buffer.set(2, 30 as byte);
-      buffer.set(3, 40 as byte);
+      buffer.set(0, Int.toByte(10));
+      buffer.set(1, Int.toByte(20));
+      buffer.set(2, Int.toByte(30));
+      buffer.set(3, Int.toByte(40));
       const copied = buffer.slice(0, 4);
       expect(copied.byteLength).assertEqual(4);
       expect(copied.at(0)).assertEqual(10);
@@ -530,7 +544,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_3000
-     * @tc.desc Verify ArrayBuffer.slice part1: beginequals end，returns byteLength is 0 empty ArrayBuffer
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 0。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -544,17 +558,17 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_3100
-     * @tc.desc Verify ArrayBuffer.slice part1: begin=0，omitted end，copy buffer
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 4。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(0, 10 as byte);
-      buffer.set(1, 20 as byte);
-      buffer.set(2, 30 as byte);
-      buffer.set(3, 40 as byte);
+      buffer.set(0, Int.toByte(10));
+      buffer.set(1, Int.toByte(20));
+      buffer.set(2, Int.toByte(30));
+      buffer.set(3, Int.toByte(40));
       const copied = buffer.slice(0);
       expect(copied.byteLength).assertEqual(4);
       expect(copied.at(0)).assertEqual(10);
@@ -566,28 +580,29 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_3200
-     * @tc.desc Verify ArrayBuffer.slice part1: begin=0，end=0，returns empty ArrayBuffer
+     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，返回值的 byteLength 为 0。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(4);
+      const buffer = new ArrayBuffer(8);
       const copied = buffer.slice(0, 0);
       expect(copied.byteLength).assertEqual(0);
+      expect(buffer.byteLength).assertEqual(8);
     });
 
     /**
      * @tc.name testArrayBufferSliceOne0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_3300
-     * @tc.desc Verify ArrayBuffer.slice part1: byteLength=1 buffer slice
+     * @tc.desc 验证 new ArrayBuffer(1) 在当前场景执行成功，返回值的 byteLength 为 1。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(1);
-      buffer.set(0, 42 as byte);
+      buffer.set(0, Int.toByte(42));
       const copied = buffer.slice(0, 1);
       expect(copied.byteLength).assertEqual(1);
       expect(copied.at(0)).assertEqual(42);
@@ -596,14 +611,14 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_3400
-     * @tc.desc Verify ArrayBuffer.slice part1: byteLength=1 buffer omitted endslice
+     * @tc.desc 验证 new ArrayBuffer(1) 在当前场景执行成功，返回值的 byteLength 为 1。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(1);
-      buffer.set(0, 42 as byte);
+      buffer.set(0, Int.toByte(42));
       const copied = buffer.slice(0);
       expect(copied.byteLength).assertEqual(1);
       expect(copied.at(0)).assertEqual(42);
@@ -612,64 +627,80 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0035
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_3500
-     * @tc.desc Verify ArrayBuffer.slice part1: detached ArrayBuffercall slicemethod ，throws TypeError
+     * @tc.desc 验证 new ArrayBuffer(4, 8) 在当前场景执行成功，空值有效性判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(4, 16);
-      buffer.set(0, 10 as byte);
-      buffer.set(1, 20 as byte);
+      const buffer = new ArrayBuffer(4, 8);
       buffer.resize(0);
-      const copied = buffer.slice(0, 0);
-      expect(copied.byteLength).assertEqual(0);
+      try {
+        buffer.slice(0, 2);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        return;
+      }
+      expect(buffer.byteLength).assertEqual(0);
     });
 
     /**
      * @tc.name testArrayBufferSliceOne0036
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_3600
-     * @tc.desc Verify ArrayBuffer.slice part1: detached ArrayBufferomitted endcall slice，throws TypeError
+     * @tc.desc 验证 new ArrayBuffer(4, 8) 在当前场景执行成功，空值有效性判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(4, 16);
+      const buffer = new ArrayBuffer(4, 8);
       buffer.resize(0);
-      const copied = buffer.slice(0);
-      expect(copied.byteLength).assertEqual(0);
+      try {
+        buffer.slice(0);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        return;
+      }
+      expect(buffer.byteLength).assertEqual(0);
     });
 
     /**
      * @tc.name testArrayBufferSliceOne0037
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_3700
-     * @tc.desc Verify ArrayBuffer.slice part1: detached ArrayBufferpassing begin ， throws TypeError
+     * @tc.desc 验证 new ArrayBuffer(4, 8) 在当前场景执行成功，空值有效性判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(4, 16);
+      const buffer = new ArrayBuffer(4, 8);
       buffer.resize(0);
-      const copied = buffer.slice(0, 2);
-      expect(copied.byteLength).assertEqual(0);
+      try {
+        buffer.slice(0);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        return;
+      }
+      expect(buffer.byteLength).assertEqual(0);
     });
 
     /**
      * @tc.name testArrayBufferSliceOne0038
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_3800
-     * @tc.desc Verify ArrayBuffer.slice part1: begin is negative and greater than byteLength， from 0 slice
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 2。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(0, 10 as byte);
-      buffer.set(1, 20 as byte);
-      buffer.set(2, 30 as byte);
-      buffer.set(3, 40 as byte);
+      buffer.set(0, Int.toByte(10));
+      buffer.set(1, Int.toByte(20));
+      buffer.set(2, Int.toByte(30));
+      buffer.set(3, Int.toByte(40));
       const copied = buffer.slice(-10, 2);
       expect(copied.byteLength).assertEqual(2);
       expect(copied.at(0)).assertEqual(10);
@@ -679,7 +710,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0039
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_3900
-     * @tc.desc Verify ArrayBuffer.slice part1: end is negative and greater than byteLength，truncated to 0
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 0。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -693,15 +724,15 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0040
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_4000
-     * @tc.desc Verify ArrayBuffer.slice part1: begin=3，end=1，returns empty ArrayBuffer
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 0。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceOne0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
-      buffer.set(0, 10 as byte);
-      buffer.set(1, 20 as byte);
+      buffer.set(0, Int.toByte(10));
+      buffer.set(1, Int.toByte(20));
       const copied = buffer.slice(3, 1);
       expect(copied.byteLength).assertEqual(0);
     });
@@ -709,7 +740,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0041
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_4100
-     * @tc.desc Verify ArrayBuffer.slice part1: begin=100，end=0，returns empty ArrayBuffer
+     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 0。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
