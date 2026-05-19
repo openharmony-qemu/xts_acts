@@ -41,9 +41,7 @@ function tsp(target, ...args) {
   return Array.prototype.toSpliced.apply(target, args);
 }
 
-function runCase(id) {
-  const idx = id - 100;
-  const cases = [
+const TOSPLICED_CASES = [
     () => same(tsp([1, 2, 3, 4, 5], 2, 1), [1, 2, 4, 5]),
     () => same(tsp([1, 2, 3, 4, 5], 0, 2), [3, 4, 5]),
     () => same(tsp([1, 2, 3, 4, 5], 3, 2), [1, 2, 3]),
@@ -298,8 +296,11 @@ function runCase(id) {
   return same(tsp(obj, 1, 1, 'X'), ['a', 'X']);
 },
     () => same(tsp({ length: -1, 0: 'a', 1: 'b' }, 0, 0, 'new'), ['new'])
-  ];
-  const fn = cases[idx];
+];
+
+function runCase(id) {
+  const idx = id - 100;
+  const fn = TOSPLICED_CASES[idx];
   if (!fn) {
     return false;
   }

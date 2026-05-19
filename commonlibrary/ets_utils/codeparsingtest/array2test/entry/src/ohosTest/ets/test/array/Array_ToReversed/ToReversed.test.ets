@@ -1382,7 +1382,7 @@ export default function ArrayToReversedMindMapTest() {
 
     /**
      * @tc.name   testToReversedTest0199
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_TOREVERSED_SUPPLEMENT_TEST_10000
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_TOREVERSED_SUPPLEMENT_TEST_0199
      * @tc.desc   Verify array toReversed scenario 0199. JS-only: optional Array.prototype.with on reversed array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

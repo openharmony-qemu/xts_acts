@@ -79,9 +79,7 @@ function isNonDecreasingNumber(arr) {
   return true;
 }
 
-function runCase(id) {
-  const idx = id - 100;
-  const cases = [
+const TOSORTED_CASES = [
     () => ts(['Mar', 'Jan', 'Feb', 'Dec']).join(',') === 'Dec,Feb,Jan,Mar',
     () => ts([1, 10, 21, 2], (a, b) => a - b).join(',') === '1,2,10,21',
     () => ts([1, 10, 21, 2]).join(',') === '1,10,2,21',
@@ -548,9 +546,11 @@ function runCase(id) {
       const r = ts(arr, (a, b) => a - b).with(0, 99);
       return r[0] === 99 && r[1] === 2 && r[2] === 3;
     }
-  ];
+];
 
-  const fn = cases[idx];
+function runCase(id) {
+  const idx = id - 100;
+  const fn = TOSORTED_CASES[idx];
   if (!fn) {
     return false;
   }

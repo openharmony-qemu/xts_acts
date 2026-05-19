@@ -49,9 +49,7 @@ function toReversedCompat(receiver) {
   return result;
 }
 
-function runCase(id) {
-  const idx = id - 100;
-  const cases = [
+const TOREVERSED_CASES = [
     () => { const a = [1, 2, 3]; const b = toReversedCompat(a); return b.join(',') === '3,2,1'; },
     () => { const a = [1, 2, 3]; const b = toReversedCompat(a); return a.join(',') === '1,2,3'; },
     () => { const a = [1, 2, 3]; const b = toReversedCompat(a); return b !== a; },
@@ -162,9 +160,11 @@ function runCase(id) {
     () => { const arr = [1,2,3]; const b = toReversedCompat(arr); return Object.prototype.hasOwnProperty.call(b, '0') && Object.prototype.hasOwnProperty.call(b, '2'); },
     () => { const arr = [1,2,3]; const b = toReversedCompat(arr); return b[0] === 3 && b[2] === 1 && arr[0] === 1; },
     () => { const desc = Object.getOwnPropertyDescriptor(Array.prototype, 'toReversed'); return desc === undefined || typeof desc.value === 'function'; },
-  ];
+];
 
-  const fn = cases[idx];
+function runCase(id) {
+  const idx = id - 100;
+  const fn = TOREVERSED_CASES[idx];
   if (!fn) {
     return false;
   }

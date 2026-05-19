@@ -1621,7 +1621,7 @@ export default function ArraySpliceMindMapTest() {
 
     /**
      * @tc.name   testArraySpliceTest0199
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SPLICE_SUPPLEMENT_TEST_10000
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SPLICE_SUPPLEMENT_TEST_0199
      * @tc.desc   Verify splice removes last element and map values in reverse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

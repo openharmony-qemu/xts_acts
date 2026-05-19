@@ -1403,7 +1403,7 @@ export default function ArrayToSortedMindMapTest() {
 
     /**
      * @tc.name   testToSortedTest0199
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_10000
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSORTED_SUPPLEMENT_TEST_0199
      * @tc.desc   Verify array toSorted scenario 0199. JS-only: chain with after toSorted
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

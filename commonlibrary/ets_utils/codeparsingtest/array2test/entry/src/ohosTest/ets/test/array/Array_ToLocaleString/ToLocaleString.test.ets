@@ -1302,7 +1302,7 @@ export default function ArrayToLocaleStringMindMapTest() {
 
     /**
      * @tc.name   testToLocaleStringTest0199
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_10000
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_TOLOCALESTRING_SUPPLEMENT_TEST_0199
      * @tc.desc   Verify array toLocaleString scenario 0199. JS-only: Array.prototype toLocaleString descriptor probe
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

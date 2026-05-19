@@ -69,7 +69,7 @@ export default function ArrayToStringMindMapTest() {
      */
     it('testToStringTest0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(arrayToString([1, 2, 3])).assertEqual('1,2,3');
-      expect(arrayToString([1, 2])).assertEqual(arrayToString([1, 2]));
+      expect(arrayToString([1, 2])).assertEqual('1,2');
     });
 
     /**
@@ -688,7 +688,7 @@ export default function ArrayToStringMindMapTest() {
       let str: string = snap;
       str = 'modified';
       expect(arrayToString(arr)).assertEqual('1,2,3');
-      expect(arrayToString([1, 2])).assertEqual(arrayToString([1, 2]));
+      expect(arrayToString([1, 2])).assertEqual('1,2');
     });
 
     /**

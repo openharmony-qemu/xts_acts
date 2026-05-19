@@ -1337,7 +1337,7 @@ export default function ArrayToSplicedMindMapTest() {
 
     /**
      * @tc.name   testToSplicedTest0199
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_10000
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_TOSPLICED_SUPPLEMENT_TEST_0199
      * @tc.desc   Verify array toSpliced scenario 0199. JS-only: arrayLike negative length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

@@ -30,9 +30,7 @@ function safeExec(fn) {
   }
 }
 
-function runCase(id) {
-  const idx = id - 100;
-  const cases = [
+const TOLOCALESTRING_CASES = [
     () => [].toLocaleString() === '',
     () => [42].toLocaleString() === '42',
     () => ['hello'].toLocaleString() === 'hello',
@@ -141,9 +139,11 @@ function runCase(id) {
     () => { const arr = [1,2,3]; return safeExec(() => arr.toLocaleString('en-US', { useGrouping: false })); },
     () => { const arr = [new Date(0), new Date(8640000000000000)]; return safeExec(() => isString(arr.toLocaleString())); },
     () => { const arr = [1,2,3]; const desc = Object.getOwnPropertyDescriptor(Array.prototype, 'toLocaleString'); return !!desc && typeof desc.value === 'function' && isString(arr.toLocaleString()); }
-  ];
+];
 
-  const fn = cases[idx];
+function runCase(id) {
+  const idx = id - 100;
+  const fn = TOLOCALESTRING_CASES[idx];
   if (!fn) {
     return false;
   }
