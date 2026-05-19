@@ -47,40 +47,40 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
         };
         if (options) {
             context.startAbility(want, options).then(() => {
-                hilog.info(domain, tag, ${caseName} Succeeded in starting ability.);
+                hilog.info(domain, tag, `${caseName} Succeeded in starting ability.`);
             }).catch((err: Error): PromiseLike | undefined => {
-                hilog.info(domain, tag, ${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message});
+                hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         } else {
             context.startAbility(want).then(() => {
-                hilog.info(domain, tag, ${caseName} Succeeded in starting ability.);
+                hilog.info(domain, tag, `${caseName} Succeeded in starting ability.`);
             }).catch((err: Error): PromiseLike | undefined => {
-                hilog.info(domain, tag, ${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message});
+                hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         }
         Utils.msSleep(1000).awaitSync()
-        hilog.info(domain, tag, ${caseName} get windowStageStart start.);
+        hilog.info(domain, tag, `${caseName} get windowStageStart start.`);
         let windowStageStart: window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
-        hilog.info(domain, tag, ${caseName} Succeeded in get windowStageStart. + windowStageStart);
+        hilog.info(domain, tag, `${caseName} Succeeded in get windowStageStart. + windowStageStart`);
         resolve(windowStageStart);
     })
 }
 
 async function terminateAbility(caseName: string) {
-    hilog.info(domain, tag, ${caseName} terminateSelf start..);
+    hilog.info(domain, tag, `${caseName} terminateSelf start..`);
     let pageContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('pageContext') as common.UIAbilityContext
-    hilog.info(domain, tag, ${caseName} pageContext :${pageContext});
+    hilog.info(domain, tag, `${caseName} pageContext :${pageContext}`);
     try {
         if (pageContext !== null && pageContext !== undefined) {
-            hilog.info(domain, tag, ${caseName} terminateSelf begin);
+            hilog.info(domain, tag, `${caseName} terminateSelf begin`);
         }
         pageContext.terminateSelf().then(() => {
-            hilog.info(domain, tag, ${caseName} terminateSelf success);
+            hilog.info(domain, tag, `${caseName} terminateSelf success`);
         }).catch((err: Error): PromiseLike | undefined => {
-            hilog.error(domain, tag, ${caseName} terminateSelf fail, err: ${JSON.stringify(err)});
+            hilog.error(domain, tag, `${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
         });
     } catch (e) {
-        hilog.error(domain, tag, ${caseName} pageContext.terminateSelf fail, err: ${JSON.stringify(e)});
+        hilog.error(domain, tag, `${caseName} pageContext.terminateSelf fail, err: ${JSON.stringify(e)}`);
     }
     await Utils.msSleep(1000)
 }
@@ -199,7 +199,7 @@ export default function WindowControlsTest(): void {
                             hilog.info(domain, tag, msgStr + 'Succeeded in setting image for recent');
                             done()
                         }).catch((err: Error): PromiseLike<void> | undefined => {
-                            hilog.error(domain, tag, msgStr + 'Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}');
+                            hilog.error(domain, tag, msgStr + `Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}`);
                             expect(false).assertTrue();
                             done();
                         });
@@ -459,5 +459,4 @@ export default function WindowControlsTest(): void {
 
 
     })
-}
 }
