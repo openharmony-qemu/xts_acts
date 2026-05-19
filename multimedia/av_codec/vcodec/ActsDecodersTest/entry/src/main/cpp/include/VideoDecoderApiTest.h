@@ -64,6 +64,7 @@ int VideoDecCapApi0023();
 int VideoDecCapApi0024();
 int VideoDecCapApi0025();
 int VideoDecCapApi0026();
+int VideoDecCapApi0027();
 
 } // namespace Media
 } // namespace OHOS

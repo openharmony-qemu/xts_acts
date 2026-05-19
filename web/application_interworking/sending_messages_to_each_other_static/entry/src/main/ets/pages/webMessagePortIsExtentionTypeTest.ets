@@ -30,7 +30,7 @@ import { Hypium } from '../../../hypium';
 import Utils from '../../src/test/Utils.test';
 import events_emitter from '@ohos.events.emitter';
 
-class StringFields {
+export class StringFields {
   public str: string = 'testIsExtentionType001';
 }
 

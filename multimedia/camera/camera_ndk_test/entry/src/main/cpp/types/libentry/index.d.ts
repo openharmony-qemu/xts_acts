@@ -652,3 +652,29 @@ export const oHDeleteConstituentCameraDevices: (index:number) => number;
 export const oHGetLensFocalLength: (index:number) => number;
 
 export const oHGetMinimumFocusDistance: (index:number) => number;
+
+export const oHCaptureSessionRegisterExposureStateChangeCallback: () => number;
+ 
+export const oHCaptureSessionUnregisterExposureStateChangeCallback: () => number;
+ 
+export const oHCaptureSessionRegisterExposureStateChangeCallbackWithoutSession: () => number;
+ 
+export const oHCaptureSessionUnregisterExposureStateChangeCallbackWithoutSession: () => number;
+
+export const getEnumExposureState: (index: number) => number;
+
+export const sessionRegisterExposureStateChangeCallback: (index:number) => number;
+
+export const sessionUnregisterExposureStateChangeCallback: (index:number) => number;
+
+export const waitForExposureFinish: () => boolean;
+
+export const getColorTintRange: () => number;
+
+export const setColorTint: (index: number) => number;
+
+export const getColorTint: (index: number) => number;
+
+export const getZoomPointInfos: (index: number) => number;
+
+export const deleteZoomPointInfo: (index: number) => number;

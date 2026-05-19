@@ -50,7 +50,7 @@ void Sigpause0100(void)
     }
 
     sigset_t set = {0};
-    result = sigprocmask(SIG_SETMASK, NULL, &set);
+    result = sigprocmask(SIG_SETMASK, nullptr, &set);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
         return;
@@ -90,6 +90,6 @@ static int SigpauseTestImpl(int argc, char *argv[])
 int SigpauseTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return SigpauseTestImpl(1, libcArgv);
 }

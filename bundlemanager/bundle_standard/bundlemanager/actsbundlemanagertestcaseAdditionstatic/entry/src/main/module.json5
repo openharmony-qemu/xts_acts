@@ -41,6 +41,9 @@
           ],
           "when": "always"
         }
+      },
+      {
+        "name":"ohos.permission.ENTERPRISE_GET_INSTALLED_BUNDLE_LIST"
       }
     ],
     "testRunner": {

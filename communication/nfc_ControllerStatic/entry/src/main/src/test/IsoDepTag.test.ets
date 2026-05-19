@@ -29,7 +29,7 @@ let tag1: string = 'testTag'; //日志标识字符串,作为tag标识当前runne
 let remoteTagService: rpc.RemoteObject = new rpc.RemoteObject("rpcTestAbility");
 
 let mifareClassicTag: tag.MifareClassicTag ;
-let nfcIsoDepTag: tag.IsoDepTag;
+let nfcIsoDepTag: tag.IsoDepTag | undefined;
 
 let isoDepTaginfo: tag.TagInfo = {
   "uid": [0x01, 0x02, 0x03, 0x04],
@@ -172,7 +172,7 @@ export default function nfcIsoDepTagTest() {
       let nfcIsoDepTag = tag.getIsoDep(isoDepTaginfo);
       if (nfcIsoDepTag != null && nfcIsoDepTag != undefined) {
         try {
-          await nfcIsoDepTag.isExtendedApduSupported().then((data) => {
+          await nfcIsoDepTag!.isExtendedApduSupported().then((data) => {
             hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_IsoDepTag_static_0300 isExtendedApduSupported ');
             if (data == true) {
               expect(data).assertTrue();
@@ -228,7 +228,7 @@ export default function nfcIsoDepTagTest() {
           }
         }
         try {
-          nfcIsoDepTag.isExtendedApduSupported(AsyncCallback);
+          nfcIsoDepTag!.isExtendedApduSupported(AsyncCallback);
         } catch(error) {
           error = error as BusinessError;
           if (error.code === 201) {

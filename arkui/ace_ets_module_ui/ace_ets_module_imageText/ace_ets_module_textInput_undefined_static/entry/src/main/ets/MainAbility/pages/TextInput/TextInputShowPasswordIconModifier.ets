@@ -5,7 +5,7 @@ import { Entry, Text, Column, Component, TextInput, InputType, ColumnOptions, Cl
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class TextInputModifierUndefined implements AttributeModifier<TextInputAttribute> {
+export class TextInputModifierUndefined implements AttributeModifier<TextInputAttribute> {
   applyNormalAttribute(instance: TextInputAttribute): void {
     instance
       .height(40)
@@ -16,7 +16,7 @@ class TextInputModifierUndefined implements AttributeModifier<TextInputAttribute
 }
 
 @Observed
-class TextInputModifierDynamicSwitch implements AttributeModifier<TextInputAttribute> {
+export class TextInputModifierDynamicSwitch implements AttributeModifier<TextInputAttribute> {
   public isShowPasswordIcon: boolean = true;
 
   applyNormalAttribute(instance: TextInputAttribute): void {

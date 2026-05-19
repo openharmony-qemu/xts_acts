@@ -1521,11 +1521,14 @@ function testGetClipboardPolicy() {
    * @tc.level  LEVEL2
    */
   it("test_get_clipboard_policy_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      securityManager.getAppClipboardPolicy(null, TEST_TOKEN_ID);
-      expect(false).assertTrue();
+      let policy = securityManager.getAppClipboardPolicy(null, TEST_TOKEN_ID);
+      expect(policy.length !== 0).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 401).assertTrue();
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
   });
@@ -1580,10 +1583,10 @@ function testGetClipboardPolicy() {
   it("test_get_clipboard_policy_0600", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      securityManager.getAppClipboardPolicy(null);
-      expect(false).assertTrue();
+      let policy = securityManager.getAppClipboardPolicy(null);
+      expect(policy.length === 0).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 401).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2083,11 +2086,14 @@ function testGetClipboardPolicyByBundleName() {
    * @tc.level  LEVEL2
    */
   it("test_get_clipboard_policy_by_bundle_name_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      securityManager.getAppClipboardPolicy(null, SELFHAPNAME, CURRENT_USER_ID);
-      expect(false).assertTrue();
+      let policy = securityManager.getAppClipboardPolicy(null, SELFHAPNAME, CURRENT_USER_ID);
+      expect(policy.length !== 0).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 401).assertTrue();
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
   });
@@ -4561,13 +4567,16 @@ function testUninstallEnterpriseReSignatureCertificate() {
      */
     it("getAppClipboardPolicy_test_001", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getAppClipboardPolicy_test_001  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        securityManager.getAppClipboardPolicy(null);
+        let policy = securityManager.getAppClipboardPolicy(null);
         console.info(' --- getAppClipboardPolicy_test_001 error is expected, but it done.');
-        expect(false).assertTrue();
+        expect(policy.length === 0).assertTrue();
       } catch (error) {
         console.info(' --- getAppClipboardPolicy_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getAppClipboardPolicy_test_001  -------- END --------');
@@ -5413,13 +5422,16 @@ function testUninstallEnterpriseReSignatureCertificate() {
      */
     it("getExternalSourceExtensionsPolicy_test_001", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getExternalSourceExtensionsPolicy_test_001  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        securityManager.getExternalSourceExtensionsPolicy(null);
+        let policy = securityManager.getExternalSourceExtensionsPolicy(null);
         console.info(' --- getExternalSourceExtensionsPolicy_test_001 error is expected, but it done.');
-        expect(false).assertTrue();
+        expect(policy === common.ManagedPolicy.DEFAULT).assertTrue();
       } catch (error) {
         console.info(' --- getExternalSourceExtensionsPolicy_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(Number(error.code) === 801).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getExternalSourceExtensionsPolicy_test_001  -------- END --------');
@@ -5868,13 +5880,16 @@ function testUninstallEnterpriseReSignatureCertificate() {
      */
     it("getAppClipboardPolicy_test_043", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getAppClipboardPolicy_test_043  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        securityManager.getAppClipboardPolicy(null);
+        let policy = securityManager.getAppClipboardPolicy(null);
         console.info(' --- getAppClipboardPolicy_test_043 error is expected, but it done.');
-        expect(false).assertTrue();
+        expect(policy.length === 0).assertTrue();
       } catch (error) {
         console.info(' --- getAppClipboardPolicy_test_043 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getAppClipboardPolicy_test_043  -------- END --------');

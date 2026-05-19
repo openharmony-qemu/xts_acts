@@ -866,5 +866,148 @@ export default function stdio_group_test() {
       expect(result).assertEqual(0);
       done();
     });
+    /**
+     * @tc.name   test_fpending
+     * @tc.number SUB_THIRDPARTY_MUSL___FPENDING_0100
+     * @tc.desc   libc-test __fpending
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("test_fpending", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("__fpending");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   test_fpurge
+     * @tc.number SUB_THIRDPARTY_MUSL___FPURGE_0100
+     * @tc.desc   libc-test __fpurge
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("test_fpurge", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("__fpurge");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   test_freadable
+     * @tc.number SUB_THIRDPARTY_MUSL___FREADABLE_0100
+     * @tc.desc   libc-test __freadable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("test_freadable", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("__freadable");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   test_freading
+     * @tc.number SUB_THIRDPARTY_MUSL___FREADING_0100
+     * @tc.desc   libc-test __freading
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("test_freading", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("__freading");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   test_fseterr
+     * @tc.number SUB_THIRDPARTY_MUSL___FSETERR_0100
+     * @tc.desc   libc-test __fseterr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("test_fseterr", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("__fseterr");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   test_fwritable
+     * @tc.number SUB_THIRDPARTY_MUSL___FWRITABLE_0100
+     * @tc.desc   libc-test __fwritable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("test_fwritable", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("__fwritable");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   test_fwriting
+     * @tc.number SUB_THIRDPARTY_MUSL___FWRITING_0100
+     * @tc.desc   libc-test __fwriting
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("test_fwriting", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("__fwriting");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   test_flushlbf
+     * @tc.number SUB_THIRDPARTY_MUSL__FLUSHLBF_0100
+     * @tc.desc   libc-test _flushlbf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("test_flushlbf", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("_flushlbf");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   fsetpos
+     * @tc.number SUB_THIRDPARTY_MUSL_FSETPOS_0100
+     * @tc.desc   libc-test fsetpos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("fsetpos", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("fsetpos");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   getwc
+     * @tc.number SUB_THIRDPARTY_MUSL_GETWC_0100
+     * @tc.desc   libc-test getwc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("getwc", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("getwc");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   rewind
+     * @tc.number SUB_THIRDPARTY_MUSL_REWIND_0100
+     * @tc.desc   libc-test rewind
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("rewind", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("rewind");
+      expect(result).assertEqual(0);
+      done();
+    });
   });
 }

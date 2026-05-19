@@ -1076,5 +1076,89 @@ export default function applicationManagerTest() {
       }
       done();
     })
+
+    /**
+     * @tc.name   test_getApplicationWindowStates_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETAPPLICATIONWINDOWSTATES_NO_PERMISSION_JS_0100
+     * @tc.desc   test getApplicationWindowStates with permission denied 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getApplicationWindowStates_0100", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.getApplicationWindowStates(SELFWANT, TEST_BUNDLENAME, DEFAULT_APP_INDEX);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code === 201).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_addAllowedDistributeAbilityConnBundles_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDALLOWEDDISTRIBUTEABILITYCONN_NO_PERMISSION_JS_0100
+     * @tc.desc   test addAllowedDistributeAbilityConnBundles with permission denied 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addAllowedDistributeAbilityConnBundles_0100", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.addAllowedDistributeAbilityConnBundles(SELFWANT, APP_IDS_1, applicationManager.ServiceType.COLLABORATION_SERVICE, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code === 201).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_removeAllowedDistributeAbilityConnBundles_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDDISTRIBUTEABILITYCONN_NO_PERMISSION_JS_0100
+     * @tc.desc   test removeAllowedDistributeAbilityConnBundles with permission denied 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_removeAllowedDistributeAbilityConnBundles_0100", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.removeAllowedDistributeAbilityConnBundles(SELFWANT, APP_IDS_1, applicationManager.ServiceType.COLLABORATION_SERVICE, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code === 201).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_getAllowedDistributeAbilityConnBundles_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETALLOWEDDISTRIBUTEABILITYCONN_NO_PERMISSION_JS_0100
+     * @tc.desc   test getAllowedDistributeAbilityConnBundles with permission denied 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getAllowedDistributeAbilityConnBundles_0100", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.getAllowedDistributeAbilityConnBundles(SELFWANT, applicationManager.ServiceType.COLLABORATION_SERVICE, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code === 201).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
   })
 }

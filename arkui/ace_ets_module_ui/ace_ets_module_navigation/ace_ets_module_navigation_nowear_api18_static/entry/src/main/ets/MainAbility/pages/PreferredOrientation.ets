@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -39,7 +39,7 @@ struct PortraitPage {
             let displayClass: display.Display | null = null;
             displayClass = display.getDefaultDisplaySync();
             console.log('getPortraitPage displayClass is ', displayClass?.orientation)
-            AppStorage.setOrCreate<number>('testOrientation', displayClass!.orientation as number);
+            AppStorage.setOrCreate<number>('testOrientation', displayClass!.orientation.valueOf().toDouble());
           }).id('getPortraitPage')
         }
       }.width('100%').height('100%')
@@ -71,7 +71,7 @@ struct LandscapePage {
             let displayClass: display.Display | null = null;
             displayClass = display.getDefaultDisplaySync();
             console.log('getLandscapePage displayClass is ', displayClass!.orientation)
-            AppStorage.setOrCreate<number>('testOrientation', displayClass!.orientation as number);
+            AppStorage.setOrCreate<number>('testOrientation', displayClass!.orientation.valueOf().toDouble());
           }).id('getLandscapePage')
         }
       }.width('100%').height('100%')
@@ -101,7 +101,7 @@ struct UnspecifiedPage {
           Button('getUnspecifiedPage').onClick((e:ClickEvent) => {
             let displayClass: display.Display | null = null;
             displayClass = display.getDefaultDisplaySync();
-            AppStorage.setOrCreate<number>('testOrientation', displayClass!.orientation as number);
+            AppStorage.setOrCreate<number>('testOrientation', displayClass!.orientation.valueOf().toDouble());
           }).id('getUnspecifiedPage')
         }
       }.width('100%').height('100%')
@@ -132,7 +132,7 @@ struct PortraitInvertedPage {
             let displayClass: display.Display | null = null;
             displayClass = display.getDefaultDisplaySync();
             console.log('getPortraitInvertedPage displayClass is ', displayClass?.orientation)
-            AppStorage.setOrCreate<number>('testOrientation', displayClass!.orientation as number);
+            AppStorage.setOrCreate<number>('testOrientation', displayClass!.orientation.valueOf().toDouble());
           }).id('getPortraitInvertedPage')
         }
       }.width('100%').height('100%')
@@ -163,7 +163,7 @@ struct LandscapInvertedPage {
             let displayClass: display.Display | null = null;
             displayClass = display.getDefaultDisplaySync();
             console.log('getLandscapInvertedPage displayClass is ', displayClass?.orientation)
-            AppStorage.setOrCreate<number>('testOrientation', displayClass!.orientation as number);
+            AppStorage.setOrCreate<number>('testOrientation', displayClass!.orientation.valueOf().toDouble());
           }).id('getLandscapInvertedPage')
         }
       }.width('100%').height('100%')

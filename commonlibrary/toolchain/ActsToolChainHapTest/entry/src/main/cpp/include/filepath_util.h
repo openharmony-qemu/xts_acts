@@ -24,13 +24,13 @@
 
 #define STR_SLASH "/"
 #define STR_FILE_TXT "/data/storage/el2/base/cache/file.txt"
-#define STR_FILE_LINK_TXT "linkfile.txt"
-#define STR_FILE_IN_TXT "file_in.txt"
-#define STR_FILE_OUT_TXT "file_out.txt"
-#define STR_FILE_FROM_TXT "fromfile.txt"
-#define STR_FILE_TO_TXT "tofile.txt"
+#define STR_FILE_LINK_TXT "/data/storage/el2/base/cache/linkfile.txt"
+#define STR_FILE_IN_TXT "/data/storage/el2/base/cache/file_in.txt"
+#define STR_FILE_OUT_TXT "/data/storage/el2/base/cache/file_out.txt"
+#define STR_FILE_FROM_TXT "/data/storage/el2/base/cache/fromfile.txt"
+#define STR_FILE_TO_TXT "/data/storage/el2/base/cache/tofile.txt"
 #define STR_FILE_SWAP "swapfile"
-#define STR_FILE_SYNC_TXT "sync_file_range.txt"
+#define STR_FILE_SYNC_TXT "/data/storage/el2/base/cache/sync_file_range.txt"
 #define STR_TEST_TXT "/data/storage/el2/base/cache/test.txt"
 #define STR_STAT_TEST_TXT "stattest.txt"
 #define STR_FREAD_TEST_TXT "/data/storage/el2/base/cache/Freadtest.txt"
@@ -38,7 +38,23 @@
 #define STR_VFSCANF_TXT "/data/storage/el2/base/cache/vfscanf.txt"
 #define STR_FACCESSAT_TEST_TXT "faccessattest.txt"
 #define STR_FCHOWNAT_TEST_TXT "fchownattest.txt"
-#define STR_WRITE_TEST_TXT "test_write.txt"
+#define STR_WRITE_TEST_TXT "/data/storage/el2/base/cache/test_write.txt"
+
+#define FILE_ABSOLUTE_PATH(file_name, path) do { \
+    if (!getcwd(path, sizeof(path))) { \
+        t_error("%s getcwd for path failed\n", __func__); \
+        return; \
+    } \
+    strncat(path, STR_SLASH, 1); \
+    strncat(path, file_name, strlen(file_name)); \
+} while (0)
+
+#define FILE_ABSOLUTE_DIR(path) do { \
+    if(!getcwd(path, sizeof(path))) { \
+        t_error("%s getcwd for dir failed\n", __func__); \
+        return; \
+    } \
+} while (0)
 
 static inline bool FileAbsolutePath(const char *fileName, char *path, size_t pathSize)
 {

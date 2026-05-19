@@ -41,7 +41,7 @@ const KEY_TEST_STRING_ELEMENT = 'key_test_string';
 const KEY_TEST_SYNC_ELEMENT = 'key_test_sync';
 
 const VALUE_TEST_INT_ELEMENT = 123  as long;
-const VALUE_TEST_FLOAT_ELEMENT = 321.12  as long;
+const VALUE_TEST_FLOAT_ELEMENT = 321.12.toLong();
 const VALUE_TEST_BOOLEAN_ELEMENT = true;
 const VALUE_TEST_STRING_ELEMENT = 'value-string-001';
 const VALUE_TEST_SYNC_ELEMENT = 'value-string-001';

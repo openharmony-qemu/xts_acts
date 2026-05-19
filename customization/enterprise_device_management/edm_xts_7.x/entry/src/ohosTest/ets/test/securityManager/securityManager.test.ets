@@ -14,7 +14,7 @@
  */
 
 import { describe, expect, it, beforeAll, Level } from '@ohos/hypium';
-import { ENTINFO1, INVALID_WANT, SELFHAPNAME, SELFWANT, PIXEL_MAP, getPixelMap } from '../commom.test.ets';
+import { ENTINFO1, INVALID_WANT, SELFHAPNAME, SELFWANT, PIXEL_MAP, getPixelMap, getInvalidPixelMap, INVALID_PIXEL_MAP } from '../commom.test.ets';
 
 import adminManager from '@ohos.enterprise.adminManager';
 import securityManager from '@ohos.enterprise.securityManager';
@@ -26,11 +26,12 @@ export default function securityManagerTest() {
   })
 }
 
-function testSetScreenWatermarkImage() {
-  beforeAll((done: Function) => {
-    getPixelMap();
-    done();
-  })
+  function testSetScreenWatermarkImage() {
+    beforeAll((done: Function) => {
+      getPixelMap();
+      getInvalidPixelMap();
+      done();
+    })
 
   /**
    * @tc.name   test_setScreenWatermarkImage_0200
@@ -185,6 +186,27 @@ function testSetScreenWatermarkImage() {
       expect(false).assertTrue();
     } catch (error) {
       expect(Number(error.code) === 9200001).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setScreenWatermarkImage_0900
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_SCREEN_WATERMARK_IMAGE_JS_0900
+   * @tc.desc   test setScreenWatermarkImage with invalid pixelmap size
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setScreenWatermarkImage_0900", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setScreenWatermarkImage(SELFWANT, INVALID_PIXEL_MAP);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 9200012).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
   });

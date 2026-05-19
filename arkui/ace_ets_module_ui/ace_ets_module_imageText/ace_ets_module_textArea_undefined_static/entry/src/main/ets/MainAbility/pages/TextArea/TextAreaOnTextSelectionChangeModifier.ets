@@ -31,9 +31,9 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
 @Observed
-class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
-  @State state: boolean = false;
-  @State content: Int = 0;
+export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+  state: boolean = false;
+  content: Int = 0;
   applyNormalAttribute(instance: TextAreaAttribute): void {
     if (this.state == false) {
       instance.onTextSelectionChange(undefined);

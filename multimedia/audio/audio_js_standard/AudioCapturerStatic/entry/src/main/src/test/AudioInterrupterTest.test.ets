@@ -368,11 +368,10 @@ export default function audioInterrupterTest() {
         render2 = await createAudioRenderer(renderInfo.VOICE_ASSISTANT, streamInfo.A48000, done)
         await render2!.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
         await render2!.start()
-        expect(false).assertTrue()
       } catch (err) {
         err = err as BusinessError;
         console.log("INTERRUPTER_TEST err:" + JSON.stringify(err))
-        expect(err.code).assertEqual(6800301)
+        expect(false).assertTrue()
       }
       done()
     })

@@ -13,28 +13,28 @@
  * limitations under the License.
  */
 
-#include <cstdlib>
 #include <pthread.h>
-#include <semaphore.h>
+#include <cstdlib>
 #include <unistd.h>
+#include <semaphore.h>
 #include "functionalext.h"
 
 static int32_t g_priorityTen = 10;
 static int32_t g_priorityHundred = 100;
 static sem_t g_sem;
 
-void* ThreadfuncA(void* arg)
+static void *ThreadfuncA(void *arg)
 {
     sem_wait(&g_sem);
     return arg;
 }
 
 /**
- * @tc.name      : PthreadSetschedparam0100
+ * @tc.name      : pthread_setschedparam_0100
  * @tc.desc      : Verify pthread_setschedparam process success when scheduling policy is SCHED_OTHER and priority is 0
  * @tc.level     : Level 1
  */
-void PthreadSetschedparam0100(void)
+static void PthreadSetschedparam0100(void)
 {
     pthread_t tid;
     sem_init(&g_sem, 0, 0);
@@ -49,13 +49,13 @@ void PthreadSetschedparam0100(void)
     sem_destroy(&g_sem);
 }
 
-static int PthreadSetschedparamTestTestImpl(void)
+static int PthreadSetschedparamTestImpl(void)
 {
     PthreadSetschedparam0100();
-    return T_STATUS;
+    return g_tStatus;
 }
 
 int PthreadSetschedparamTestTest(void)
 {
-    return PthreadSetschedparamTestTestImpl();
+    return PthreadSetschedparamTestImpl();
 }

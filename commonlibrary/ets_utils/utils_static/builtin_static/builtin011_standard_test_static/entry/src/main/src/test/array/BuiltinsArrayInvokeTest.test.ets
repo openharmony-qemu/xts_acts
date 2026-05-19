@@ -15,7 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-export default function BuiltinsArrayInvokeTest() {
+export default function BuiltinsArrayInvokeTest() : void{
   describe("BuiltinsArrayInvokeTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -47,8 +47,8 @@ export default function BuiltinsArrayInvokeTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayInvokeTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>();
-      
+      const arr: number[] = Array.create<number>(0, 0);
+
       expect(arr.length).assertEqual(0);
     });
 

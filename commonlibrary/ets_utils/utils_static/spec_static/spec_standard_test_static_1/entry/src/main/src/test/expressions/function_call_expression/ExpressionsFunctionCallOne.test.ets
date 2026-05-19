@@ -41,14 +41,14 @@ function foo_fixed_array_predefined<T>(p: FixedArray<T>): T {
   return p[0]
 }
 
-function foo1_fixed_array_predefined<T>(p: T): FixedArray<T> {
-  let res: FixedArray<T> = [p]
+function foo1_fixed_array_predefined<T>(p: T): Array<T> {
+  let res: Array<T> = [p]
   return res
 }
 
 function foo1_caller_fixed_array_predefined_1(): FixedArray<float> {
   let p: float = 0.0f
-  return foo1_fixed_array_predefined<float>(p)
+  return [...foo1_fixed_array_predefined<float>(p)]
 }
 
 function test_param_fixed_array_predefined_1() {
@@ -60,7 +60,7 @@ function test_param_fixed_array_predefined_1() {
 
 function foo1_caller_fixed_array_predefined_7(): FixedArray<char> {
   let p: char = c'c'
-  return foo1_fixed_array_predefined<char>(p)
+  return [...foo1_fixed_array_predefined<char>(p)]
 }
 
 function test_param_fixed_array_predefined_7() {

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -82,9 +82,9 @@ export struct WaterFlowView {
             Text('N' + item).fontSize(12).height('16')
           }
         }
-        .width(this.itemWidthArray[item as Int])
-        .height(this.itemHeightArray[item as Int])
-        .backgroundColor(this.colors[(item % 5) as Int])
+        .width(this.itemWidthArray[item.toInt()])
+        .height(this.itemHeightArray[item.toInt()])
+        .backgroundColor(this.colors[(item % 5).toInt()])
       }, (item: number) => String(item))
     }
     .columnsTemplate('1fr 1fr 1fr 1fr')

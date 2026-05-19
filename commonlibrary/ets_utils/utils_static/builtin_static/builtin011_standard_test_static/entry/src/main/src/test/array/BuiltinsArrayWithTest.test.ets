@@ -36,10 +36,10 @@ export default function BuiltinsArrayWithTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayWithTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = [1, 2, 3, 4, 5];
 
       const result = arr.with(2, 10);
-      const expected = new Array<number>(1, 2, 10, 4, 5);
+      const expected: number[] = [1, 2, 10, 4, 5];
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -56,8 +56,8 @@ export default function BuiltinsArrayWithTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayWithTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
-      const original = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = [1, 2, 3, 4, 5];
+      const original: number[] = [1, 2, 3, 4, 5];
 
       const result = arr.with(2, 10);
 
@@ -76,7 +76,10 @@ export default function BuiltinsArrayWithTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayWithTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(1, 2, 3);
+      const arr: number[] = Array.create<number>(3, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
 
       const result = arr.with(1, 10);
 
@@ -92,10 +95,15 @@ export default function BuiltinsArrayWithTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayWithTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
 
       const result = arr.with(0, 100);
-      const expected = new Array<number>(100, 2, 3, 4, 5);
+      const expected: number[] = [100, 2, 3, 4, 5];
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -112,10 +120,15 @@ export default function BuiltinsArrayWithTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayWithTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
 
       const result = arr.with(4, 999);
-      const expected = new Array<number>(1, 2, 3, 4, 999);
+      const expected: number[] = [1, 2, 3, 4, 999];
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -132,10 +145,15 @@ export default function BuiltinsArrayWithTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayWithTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
 
       const result = arr.with(-2, 200);
-      const expected = new Array<number>(1, 2, 3, 200, 5);
+      const expected: number[] = [1, 2, 3, 200, 5];
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -152,7 +170,10 @@ export default function BuiltinsArrayWithTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayWithTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3);
+      const arr: number[] = Array.create<number>(3, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
 
       expect(() => {
         arr.with(-4, 10);
@@ -168,7 +189,10 @@ export default function BuiltinsArrayWithTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayWithTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3);
+      const arr: number[] = Array.create<number>(3, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
 
       expect(() => {
         arr.with(3, 10);
@@ -184,10 +208,20 @@ export default function BuiltinsArrayWithTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayWithTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
 
       const result = arr.with(-1, 500);
-      const expected = new Array<number>(1, 2, 3, 4, 500);
+      const expected: number[] = Array.create<number>(5, 0);
+      expected[0] = 1;
+      expected[1] = 2;
+      expected[2] = 3;
+      expected[3] = 4;
+      expected[4] = 500;
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -222,10 +256,10 @@ export default function BuiltinsArrayWithTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayWithTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<string>("apple", "banana", "cherry");
+      const arr: string[] = ["apple", "banana", "cherry"];
 
       const result = arr.with(1, "orange");
-      const expected = new Array<string>("apple", "orange", "cherry");
+      const expected: string[] = ["apple", "orange", "cherry"];
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -242,10 +276,10 @@ export default function BuiltinsArrayWithTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayWithTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<boolean>(true, false, true);
+      const arr: boolean[] = [true, false, true];
 
       const result = arr.with(1, true);
-      const expected = new Array<boolean>(true, true, true);
+      const expected: boolean[] = [true, true, true];
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -262,10 +296,20 @@ export default function BuiltinsArrayWithTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayWithTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
 
       const result = arr.with(0, 10).with(4, 50).with(2, 30);
-      const expected = new Array<number>(10, 2, 30, 4, 50);
+      const expected: number[] = Array.create<number>(5, 0);
+      expected[0] = 10;
+      expected[1] = 2;
+      expected[2] = 30;
+      expected[3] = 4;
+      expected[4] = 50;
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -301,10 +345,20 @@ export default function BuiltinsArrayWithTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayWithTest1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
 
       const result = arr.with(-5, 999);
-      const expected = new Array<number>(999, 2, 3, 4, 5);
+      const expected: number[] = Array.create<number>(5, 0);
+      expected[0] = 999;
+      expected[1] = 2;
+      expected[2] = 3;
+      expected[3] = 4;
+      expected[4] = 5;
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -321,7 +375,12 @@ export default function BuiltinsArrayWithTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayWithTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
 
       expect(() => {
         arr.with(-6, 10);

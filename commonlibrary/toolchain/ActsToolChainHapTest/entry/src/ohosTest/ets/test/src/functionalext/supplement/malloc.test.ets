@@ -96,5 +96,61 @@ export default function malloc_group_test() {
       expect(result).assertEqual(0);
       done();
     });
+    /**
+     * @tc.name   resTraceFreeRegion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_RESTRACEFREEREGION_0100
+     * @tc.desc   libc-test resTraceFreeRegion
+     */
+    it("resTraceFreeRegion", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("resTraceFreeRegion");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   resTraceMove
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_RESTRACEMOVE_0100
+     * @tc.desc   libc-test resTraceMove
+     */
+    it("resTraceMove", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("resTraceMove");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   restrace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_RESTRACE_0100
+     * @tc.desc   libc-test restrace
+     */
+    it("restrace", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("restrace");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   restraceExt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_RESTRACEEXT_0100
+     * @tc.desc   libc-test restraceExt
+     */
+    it("restraceExt", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("restraceExt");
+      expect(result).assertEqual(0);
+      done();
+    });
+
   });
 }

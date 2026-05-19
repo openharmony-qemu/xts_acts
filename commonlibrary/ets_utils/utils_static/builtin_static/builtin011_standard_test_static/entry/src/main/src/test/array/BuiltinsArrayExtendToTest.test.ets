@@ -160,7 +160,7 @@ export default function BuiltinsArrayExtendToTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayExtendToTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>();
+      const arr: number[] = Array.create<number>(0, 0);
       const initialValue = 10;
       const newLength = 1;
       
@@ -179,9 +179,9 @@ export default function BuiltinsArrayExtendToTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayExtendToTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<Record<string, string>>();
+      const arr: Record<string, string>[] = Array.create<Record<string, string>>(1, {});
       const initialValue1: Record<string, string> = { "name": 'test1' };
-      arr.push(initialValue1);
+      arr[0] = initialValue1;
       const initialValue2: Record<string, string> = { "name": 'test2' };
       const newLength = 3;
       

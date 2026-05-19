@@ -304,7 +304,7 @@ class Container12<T1 = number, T2 = string> {
   }
 }
 type MathOperation<T> = (a: T, b: T) => T;
-export default function builtinsGenericsActTest() {
+export default function builtinsGenericsActTest(): void {
   describe('BuiltinsGenericsActTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

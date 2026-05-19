@@ -14,12 +14,25 @@
 import("//build/ohos.gni")
 import("//test/xts/tools/build/suite.gni")
 
+action("init_ark_jsvm") {
+  script = "//test/xts/acts/init_ark_runtime_jsvm.py"
+  _output_stamp = "${target_gen_dir}/init_ark_runtime_jsvm.stamp"
+  args = [
+    "--root-path",
+    rebase_path("//test/xts/acts/"),
+    "--output",
+    rebase_path(_output_stamp),
+  ]
+  outputs = [ _output_stamp ]
+}
+
 ohos_app_assist_suite("ActsArkRuntimeJsvmJitlessTest_main") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsArkRuntimeJsvmJitlessTest_main"
   part_name = "jsvm"
   subsystem_name = "arkcompiler"
+  deps = [ ":init_ark_jsvm" ]
 }
 
 ohos_js_app_suite("ActsArkRuntimeJsvmJitlessTest") {

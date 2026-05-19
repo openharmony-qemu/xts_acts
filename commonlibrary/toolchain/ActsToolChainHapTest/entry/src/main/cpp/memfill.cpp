@@ -50,7 +50,7 @@ static size_t Mmax(int fd, size_t* start)
     return n & ~(pageSize - 1);
 }
 
-int TVmfill(void** p, size_t* n, int len)
+extern "C" int TVmfill(void** p, size_t* n, int len)
 {
     int fd = MAP_ANONYMOUS ? -1 : open("/dev/zero", O_RDWR);
     size_t start = static_cast<size_t>(-1) / 2 + 1;
@@ -76,7 +76,7 @@ int TVmfill(void** p, size_t* n, int len)
     return i;
 }
 
-int TMemfill()
+extern "C" int TMemfill()
 {
     int r = 0;
     if (TVmfill(nullptr, nullptr, 0) < 0) {

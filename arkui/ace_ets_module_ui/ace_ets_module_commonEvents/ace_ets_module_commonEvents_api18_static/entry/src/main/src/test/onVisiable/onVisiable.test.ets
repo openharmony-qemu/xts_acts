@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -91,7 +91,7 @@ it('onVisibleAreaApproximateChange_static_0010', Level.LEVEL0, async (done: () =
       let width = right - left;
       await CommonFunc.sleep(1000);
       // 从完全可见滑动到完全不可见
-      await driver.swipe(Math.round(left + width*0.5) as Int,Math.round(bottom - height*0.08) as Int,Math.round(left + width*0.5) as Int,Math.round(top + height*0.08) as Int);
+      await driver.swipe(Math.round(left + width*0.5).toInt(),Math.round(bottom - height*0.08).toInt(),Math.round(left + width*0.5).toInt(),Math.round(top + height*0.08).toInt());
       await CommonFunc.sleep(3000);      
       let strJson = inspector.getInspectorByKey('onVisibleAreaApproximateChange_column_id');
       await CommonFunc.sleep(1000);
@@ -102,7 +102,7 @@ it('onVisibleAreaApproximateChange_static_0010', Level.LEVEL0, async (done: () =
       await CommonFunc.sleep(1000);
 
       // 从完全可见滑动到完全不可见
-      await driver.swipe(Math.round(left + width*0.5) as Int,Math.round(top + height*0.08) as Int,Math.round(left + width*0.5) as Int,Math.round(bottom - height*0.08) as Int);
+      await driver.swipe(Math.round(left + width*0.5).toInt(),Math.round(top + height*0.08).toInt(),Math.round(left + width*0.5).toInt(),Math.round(bottom - height*0.08).toInt());
       await CommonFunc.sleep(4000);
       strJson = inspector.getInspectorByKey('onVisibleAreaApproximateChange_column_id');
       await CommonFunc.sleep(1000);

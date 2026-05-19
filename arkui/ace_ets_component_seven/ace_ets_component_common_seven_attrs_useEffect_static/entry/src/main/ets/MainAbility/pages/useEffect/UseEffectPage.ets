@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-import { attrsManager } from '../../common/AttrsManager'
 import router from '@ohos.router'
 import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingContext2D, RenderingContextSettings,
   AlphabetIndexer, Button, Blank, Checkbox, CheckboxGroup, DataPanel, DatePicker, Divider, Gauge, Image, ImageAnimator,
@@ -1178,7 +1177,7 @@ struct useEffectPage {
   }
 
   build() {
-    GridRow({ columns: this.columns as Int, gutter: this.gutter, /*margin: 0 */}) {
+    GridRow({ columns: this.columns.toInt(), gutter: this.gutter, /*margin: 0 */}) {
       Row() {
         if (this.targetView == 'Button') {
           Button('button1').commonStyle(this.componentKey).attributeModifier(this._useEffectButttonMod)

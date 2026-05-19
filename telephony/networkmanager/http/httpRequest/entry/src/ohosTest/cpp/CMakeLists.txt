@@ -11,5 +11,5 @@ endif()
 include_directories(${NATIVERENDER_ROOT_PATH}
                     ${NATIVERENDER_ROOT_PATH}/include)
 
-add_library(entry SHARED napi_init.cpp global_http_interceptor.cpp global_http_interceptor.h)
-target_link_libraries(entry PUBLIC libace_napi.z.so libnet_connection.so libhttp_interceptor.so libhilog_ndk.z.so)
+add_library(entry SHARED napi_init.cpp global_http_interceptor.cpp global_http_interceptor.h http_request.cpp callback.cpp)
+target_link_libraries(entry PUBLIC libace_napi.z.so libnet_connection.so libhttp_interceptor.so libhilog_ndk.z.so libnet_http.so)

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (C) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@
  * Required for wide character formatting functions.
  */
 #ifndef _XOPEN_SOURCE
-#define _XOPEN_SOURCE 700
 #endif
 #include <cstdio>
 #include <cstring>
@@ -176,3 +175,4 @@ int SwprintfTest(void)
 {
     return SwprintfTestImpl();
 }
+

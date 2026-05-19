@@ -22,7 +22,7 @@ import events_emitter from '@ohos.events.emitter';
 import { Callback } from '@ohos.base'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 
-class TestClass {
+export class TestClass {
   constructor() {
   }
 

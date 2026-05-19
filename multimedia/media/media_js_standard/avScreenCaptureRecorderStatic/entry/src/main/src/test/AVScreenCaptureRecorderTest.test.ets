@@ -128,8 +128,6 @@ export default function AVScreenCaptureRecorderTest() {
         //release recorder
         //close fd
         mediaTestBase.RELEASECORDER_EVENT,
-        //create AV
-        mediaTestBase.AV_CREATEAVPLAYER,
         mediaTestBase.END_EVENT);
 
       mediaTestBase.outputName = mediaTestBase.resourceName();

@@ -54,10 +54,26 @@ export default function BuiltinsArrayToSortedTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayToSortedTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(3, 1, 4, 1, 5, 9, 2, 6);
+      const arr: number[] = Array.create<number>(8, 0);
+      arr[0] = 3;
+      arr[1] = 1;
+      arr[2] = 4;
+      arr[3] = 1;
+      arr[4] = 5;
+      arr[5] = 9;
+      arr[6] = 2;
+      arr[7] = 6;
 
       const result = arr.toSorted();
-      const expected = new Array<number>(1, 1, 2, 3, 4, 5, 6, 9);
+      const expected: number[] = Array.create<number>(8, 0);
+      expected[0] = 1;
+      expected[1] = 1;
+      expected[2] = 2;
+      expected[3] = 3;
+      expected[4] = 4;
+      expected[5] = 5;
+      expected[6] = 6;
+      expected[7] = 9;
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -74,8 +90,18 @@ export default function BuiltinsArrayToSortedTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayToSortedTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(3, 1, 4, 1, 5);
-      const original = new Array<number>(3, 1, 4, 1, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 3;
+      arr[1] = 1;
+      arr[2] = 4;
+      arr[3] = 1;
+      arr[4] = 5;
+      const original: number[] = Array.create<number>(5, 0);
+      original[0] = 3;
+      original[1] = 1;
+      original[2] = 4;
+      original[3] = 1;
+      original[4] = 5;
 
       const result = arr.toSorted();
 
@@ -94,10 +120,10 @@ export default function BuiltinsArrayToSortedTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSortedTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<string>("cherry", "apple", "banana", "date");
+      const arr: string[] = ["cherry", "apple", "banana", "date"];
 
       const result = arr.toSorted();
-      const expected = new Array<string>("apple", "banana", "cherry", "date");
+      const expected: string[] = ["apple", "banana", "cherry", "date"];
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -114,7 +140,7 @@ export default function BuiltinsArrayToSortedTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSortedTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>();
+      const arr: number[] = Array.create<number>(0, 0);
 
       const result = arr.toSorted();
 
@@ -147,10 +173,20 @@ export default function BuiltinsArrayToSortedTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSortedTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
 
       const result = arr.toSorted();
-      const expected = new Array<number>(1, 2, 3, 4, 5);
+      const expected: number[] = Array.create<number>(5, 0);
+      expected[0] = 1;
+      expected[1] = 2;
+      expected[2] = 3;
+      expected[3] = 4;
+      expected[4] = 5;
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -167,10 +203,20 @@ export default function BuiltinsArrayToSortedTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSortedTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5, 4, 3, 2, 1);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 5;
+      arr[1] = 4;
+      arr[2] = 3;
+      arr[3] = 2;
+      arr[4] = 1;
 
       const result = arr.toSorted();
-      const expected = new Array<number>(1, 2, 3, 4, 5);
+      const expected: number[] = Array.create<number>(5, 0);
+      expected[0] = 1;
+      expected[1] = 2;
+      expected[2] = 3;
+      expected[3] = 4;
+      expected[4] = 5;
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -187,12 +233,28 @@ export default function BuiltinsArrayToSortedTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayToSortedTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(3, 1, 4, 1, 5, 9, 2, 6);
+      const arr: number[] = Array.create<number>(8, 0);
+      arr[0] = 3;
+      arr[1] = 1;
+      arr[2] = 4;
+      arr[3] = 1;
+      arr[4] = 5;
+      arr[5] = 9;
+      arr[6] = 2;
+      arr[7] = 6;
 
       const result = arr.toSorted((a: number, b: number) => {
         return (b - a).toInt();
       });
-      const expected = new Array<number>(9, 6, 5, 4, 3, 2, 1, 1);
+      const expected: number[] = Array.create<number>(8, 0);
+      expected[0] = 9;
+      expected[1] = 6;
+      expected[2] = 5;
+      expected[3] = 4;
+      expected[4] = 3;
+      expected[5] = 2;
+      expected[6] = 1;
+      expected[7] = 1;
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -209,8 +271,18 @@ export default function BuiltinsArrayToSortedTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayToSortedTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(3, 1, 4, 1, 5);
-      const original = new Array<number>(3, 1, 4, 1, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 3;
+      arr[1] = 1;
+      arr[2] = 4;
+      arr[3] = 1;
+      arr[4] = 5;
+      const original: number[] = Array.create<number>(5, 0);
+      original[0] = 3;
+      original[1] = 1;
+      original[2] = 4;
+      original[3] = 1;
+      original[4] = 5;
 
       const result = arr.toSorted((a: number, b: number) => {
         return (a - b).toInt();
@@ -231,12 +303,12 @@ export default function BuiltinsArrayToSortedTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSortedTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<string>("apple", "pie", "banana", "kiwi");
+      const arr: string[] = ["apple", "pie", "banana", "kiwi"];
 
       const result = arr.toSorted((a: string, b: string) => {
         return (a.length - b.length).toInt();
       });
-      const expected = new Array<string>("pie", "kiwi", "apple", "banana");
+      const expected: string[] = ["pie", "kiwi", "apple", "banana"];
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -253,7 +325,7 @@ export default function BuiltinsArrayToSortedTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSortedTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>();
+      const arr: number[] = Array.create<number>(0, 0);
 
       const result = arr.toSorted((a: number, b: number) => {
         return (a - b).toInt();
@@ -290,11 +362,11 @@ export default function BuiltinsArrayToSortedTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSortedTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<Person>(
+      const arr: Person[] = [
         new Person("Bob", 30),
         new Person("Alice", 25),
         new Person("Charlie", 35)
-      );
+      ];
 
       const result = arr.toSorted((a: Person, b: Person) => {
         return (a.age - b.age).toInt();
@@ -315,7 +387,10 @@ export default function BuiltinsArrayToSortedTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSortedTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3, 1, 2);
+      const arr: number[] = Array.create<number>(3, 0);
+      arr[0] = 3;
+      arr[1] = 1;
+      arr[2] = 2;
 
       const result = arr.toSorted((a: number, b: number) => {
         return (a - b).toInt();
@@ -333,7 +408,10 @@ export default function BuiltinsArrayToSortedTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSortedTest1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3, 1, 2);
+      const arr: number[] = Array.create<number>(3, 0);
+      arr[0] = 3;
+      arr[1] = 1;
+      arr[2] = 2;
 
       const result = arr.toSorted();
 
@@ -349,12 +427,24 @@ export default function BuiltinsArrayToSortedTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSortedTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5, 2, 5, 1, 2, 5);
+      const arr: number[] = Array.create<number>(6, 0);
+      arr[0] = 5;
+      arr[1] = 2;
+      arr[2] = 5;
+      arr[3] = 1;
+      arr[4] = 2;
+      arr[5] = 5;
 
       const result = arr.toSorted((a: number, b: number) => {
         return (a - b).toInt();
       });
-      const expected = new Array<number>(1, 2, 2, 5, 5, 5);
+      const expected: number[] = Array.create<number>(6, 0);
+      expected[0] = 1;
+      expected[1] = 2;
+      expected[2] = 2;
+      expected[3] = 5;
+      expected[4] = 5;
+      expected[5] = 5;
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -371,10 +461,20 @@ export default function BuiltinsArrayToSortedTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSortedTest1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(-5, 3, -10, 0, 8);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = -5;
+      arr[1] = 3;
+      arr[2] = -10;
+      arr[3] = 0;
+      arr[4] = 8;
 
       const result = arr.toSorted();
-      const expected = new Array<number>(-10, -5, 0, 3, 8);
+      const expected: number[] = Array.create<number>(5, 0);
+      expected[0] = -10;
+      expected[1] = -5;
+      expected[2] = 0;
+      expected[3] = 3;
+      expected[4] = 8;
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -391,12 +491,12 @@ export default function BuiltinsArrayToSortedTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSortedTest1800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<Item>(
+      const arr: Item[] = [
         new Item(2, 1),
         new Item(1, 2),
         new Item(2, 3),
         new Item(1, 4)
-      );
+      ];
 
       const result = arr.toSorted((a: Item, b: Item) => {
         return (a.value - b.value).toInt();

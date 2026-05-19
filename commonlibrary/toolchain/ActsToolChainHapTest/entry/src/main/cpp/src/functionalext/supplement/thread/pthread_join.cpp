@@ -52,7 +52,7 @@ static void PthreadJoin0100(void)
 
 /**
  * @tc.name      : PthreadJoin0200
- * @tc.desc      : The input parameter pthread_t is NULL, pthread_join() returns errno code ESRCH
+ * @tc.desc      : The input parameter pthread_t is nullptr, pthread_join() returns errno code ESRCH
  * @tc.level     : Level 0
  */
 void PthreadJoin0200(void)

@@ -6,6 +6,7 @@
     "MainAbility/pages/XComponent/ComponentNodeWithNativeParametersTest",
     "MainAbility/pages/XComponent/ComponentNodeDefaultTest",
     "MainAbility/pages/xComponentHdrBrightness/xComponentHdrBrightness",
-    "MainAbility/pages/componentContentApi/componentContentApi"
+    "MainAbility/pages/componentContentApi/componentContentApi",
+    "MainAbility/pages/inspectorLabel/InspectorLabelTest"
   ]
 }

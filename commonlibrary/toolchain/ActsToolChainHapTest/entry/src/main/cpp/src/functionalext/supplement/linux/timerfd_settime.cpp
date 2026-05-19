@@ -99,7 +99,7 @@ void TimerfdSettime640100(void)
         return;
     }
 
-    result = TimerfdSettime64(fd, 0, &its, NULL);
+    result = TimerfdSettime64(fd, 0, &its, nullptr);
     if (result != 0) {
         t_error("%s __timerfd_settime64 failed\n", __func__);
         return;

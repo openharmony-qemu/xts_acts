@@ -1,6 +1,6 @@
 'use static'
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,7 +18,7 @@ import { Entry, Text, Column, Component, Search, ColumnOptions, ClickEvent, Butt
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class SearchModifierUndefined implements AttributeModifier<SearchAttribute> {
+export class SearchModifierUndefined implements AttributeModifier<SearchAttribute> {
   applyNormalAttribute(instance: SearchAttribute): void {
     instance
       .height(30)
@@ -27,7 +27,7 @@ class SearchModifierUndefined implements AttributeModifier<SearchAttribute> {
 }
 
 @Observed
-class SearchModifierDynamicSwitch implements AttributeModifier<SearchAttribute> {
+export class SearchModifierDynamicSwitch implements AttributeModifier<SearchAttribute> {
   public isOnCutValid: boolean = true;
   public value: string = ''
 

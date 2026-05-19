@@ -91,8 +91,8 @@ export default function ListDraggingFlingTest() {
       console.info('ListDraggingFling_static_0100 value is' + left + ' --' + right + '--' + top + '--' + bottom);
       let height = bottom - top;
       let width = right - left;
-      await driver.swipe(Math.round(left + width / 2) as Int, Math.round(top + height * 0.8) as Int,
-        Math.round(left + width / 2) as Int, Math.round(top + height * 0.2) as Int, 1000);
+      await driver.swipe(Math.round(left + width / 2).toInt(), Math.round(top + height * 0.8).toInt(),
+        Math.round(left + width / 2).toInt(), Math.round(top + height * 0.2).toInt(), 1000);
       await CommonFunc.sleep(SLEEP_TIME_2000);
 
       let strJson1 = inspector.getInspectorByKey('list_startDragging');

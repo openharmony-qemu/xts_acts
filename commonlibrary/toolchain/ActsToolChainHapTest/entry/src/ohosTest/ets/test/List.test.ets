@@ -19,6 +19,7 @@ import functional from "./src/functional.test";
 import fortify from "./src/functionalext/fortify.test";
 import info from "./src/functionalext/info.test";
 import ldso_cfi from "./src/functionalext/ldso_cfi.test";
+import functionalext_ldso_dlopen_config_abs_path from "./src/functionalext/ldso_dlopen_config_abs_path.test";
 import src_functionalext_locale from "./src/functionalext/locale.test";
 import functionalext_backtrace from "./src/functionalext/backtrace.test";
 import conf from "./src/functionalext/supplement/conf.test";
@@ -27,9 +28,12 @@ import dirent from "./src/functionalext/supplement/dirent.test";
 import supplement_env from "./src/functionalext/supplement/env.test";
 import errno from "./src/functionalext/supplement/errno.test";
 import exit from "./src/functionalext/supplement/exit.test";
+import fcntl from "./src/functionalext/supplement/fcntl.test";
 import fenv from "./src/functionalext/supplement/fenv.test";
+import ipc from "./src/functionalext/supplement/ipc.test";
 import legacy from "./src/functionalext/supplement/legacy.test";
 import linux from "./src/functionalext/supplement/linux.test";
+import lock_info from "./src/functionalext/supplement/lock_info.test";
 import src_functionalext_supplement_locale from "./src/functionalext/supplement/locale.test";
 import malloc from "./src/functionalext/supplement/malloc.test";
 import manual_network from "./src/functionalext/supplement/manual/network.test";
@@ -67,6 +71,13 @@ import unittest from "./src/functionalext/unittest.test";
 import src_math from "./src/math.test";
 import nativehook from "./src/nativehook.test";
 import regression from "./src/regression.test";
+import sigchain from "./src/functionalext/sigchain.test";
+import functionalext_ldso_debug from "./src/functionalext/ldso_debug.test";
+import functionalext_legacy from "./src/functionalext/legacy.test";
+import functionalext_thread from "./src/functionalext/thread.test";
+import ldso from "./src/functionalext/supplement/ldso.test";
+import env from "./src/functionalext/supplement/manual/env.test";
+
 
 export default function testsuite() {
   api();
@@ -75,6 +86,7 @@ export default function testsuite() {
   fortify();
   info();
   ldso_cfi();
+  functionalext_ldso_dlopen_config_abs_path();
   src_functionalext_locale();
   functionalext_backtrace();
   conf();
@@ -83,9 +95,12 @@ export default function testsuite() {
   supplement_env();
   errno();
   exit();
+  fcntl();
   fenv();
+  ipc();
   legacy();
   linux();
+  lock_info();
   src_functionalext_supplement_locale();
   malloc();
   manual_network();
@@ -123,4 +138,10 @@ export default function testsuite() {
   src_math();
   nativehook();
   regression();
+  sigchain();
+  functionalext_ldso_debug();
+  functionalext_legacy();
+  functionalext_thread();
+  ldso();
+  env();
 }

@@ -187,8 +187,8 @@ export default function BuiltinsArrayCopyWithinTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCopyWithinTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>();
-      
+      const arr: number[] = Array.create<number>(0, 0);
+
       const result = arr.copyWithin(0);
       
       expect(result).assertEqual(arr);
@@ -414,8 +414,8 @@ export default function BuiltinsArrayCopyWithinTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCopyWithinTest1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>();
-      
+      const arr: number[] = Array.create<number>(0, 0);
+
       const result = arr.copyWithin(0, 0);
       
       expect(result).assertEqual(arr);
@@ -611,8 +611,8 @@ export default function BuiltinsArrayCopyWithinTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCopyWithinTest2600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>();
-      
+      const arr: number[] = Array.create<number>(0, 0);
+
       const result = arr.copyWithin(0, 0, 0);
       
       expect(result).assertEqual(arr);

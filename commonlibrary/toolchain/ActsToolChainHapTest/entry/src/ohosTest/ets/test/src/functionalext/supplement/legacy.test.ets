@@ -31,5 +31,33 @@ export default function legacy_group_test() {
       expect(result).assertEqual(0);
       done();
     });
+    /**
+     * @tc.name   daemon
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_DAEMON_0100
+     * @tc.desc   libc-test daemon
+     */
+    it("daemon", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("daemon");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   futimes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_FUTIMES_0100
+     * @tc.desc   libc-test futimes
+     */
+    it("futimes", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("futimes");
+      expect(result).assertEqual(0);
+      done();
+    });
+
   });
 }

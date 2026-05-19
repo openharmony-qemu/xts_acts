@@ -17,6 +17,8 @@
 #include <cstddef>
 #include <cstdint>
 #include <cmath>
+#include <chrono>
+#include <thread>
 
 #define LOG_DOMAIN 0x0000
 #define LOG_TAG "CameraSessionNDKLOGTAG"
@@ -866,14 +868,24 @@ napi_value TestGetPhysicalApertureSucc(napi_env env, napi_callback_info info)
     OH_Camera_PhysicalAperture* apertures = nullptr;
     uint32_t size;
     OH_CaptureSession_GetSupportedPhysicalApertures(captureSession, &apertures, &size);
+    OH_LOG_ERROR(LOG_APP, "apertures is %{public}d", apertures);
+    OH_LOG_ERROR(LOG_APP, "size is %{public}d", size);
     if (size == 0) {
         OH_LOG_ERROR(LOG_APP, "No supported apertures found.");
         OH_CaptureSession_Release(captureSession);
         napi_create_int32(env, CAMERA_OK, &result);
         return result;
     }
-    double setAperture = apertures->apertures[0];
+    double setAperture = apertures[0].apertures[0];
+    OH_LOG_ERROR(LOG_APP, "setAperture is %{public}f", setAperture);
+    float zoom = apertures->zoomRange.maxZoom;
+    OH_LOG_ERROR(LOG_APP, "zoom is %{public}f", zoom);
+    OH_CaptureSession_SetZoomRatio(captureSession, zoom);
+    const int waitZoomSeconds = 1;
+    std::this_thread::sleep_for(std::chrono::seconds(waitZoomSeconds));
     OH_CaptureSession_SetPhysicalAperture(captureSession, setAperture);
+    const int waitApertureSeconds = 1;
+    std::this_thread::sleep_for(std::chrono::seconds(waitApertureSeconds));
     double getAperture;
     Camera_ErrorCode ret = OH_CaptureSession_GetPhysicalAperture(captureSession, &getAperture);
     if (ret != CAMERA_OK) {
@@ -936,14 +948,22 @@ napi_value TestSetPhysicalApertureSucc(napi_env env, napi_callback_info info)
     OH_Camera_PhysicalAperture* apertures = nullptr;
     uint32_t size;
     OH_CaptureSession_GetSupportedPhysicalApertures(captureSession, &apertures, &size);
+    OH_LOG_ERROR(LOG_APP, "apertures is %{public}d", apertures);
+    OH_LOG_ERROR(LOG_APP, "size is %{public}d", size);
     if (size == 0) {
         OH_LOG_ERROR(LOG_APP, "No supported apertures found.");
         OH_CaptureSession_Release(captureSession);
         napi_create_int32(env, CAMERA_OK, &result);
         return result;
     }
-    double aperture = apertures->apertures[0];
-    Camera_ErrorCode ret = OH_CaptureSession_SetPhysicalAperture(captureSession, aperture);
+    double setAperture = apertures[0].apertures[0];
+    OH_LOG_ERROR(LOG_APP, "setAperture is %{public}f", setAperture);
+    float zoom = apertures->zoomRange.maxZoom;
+    OH_LOG_ERROR(LOG_APP, "zoom is %{public}f", zoom);
+    OH_CaptureSession_SetZoomRatio(captureSession, zoom);
+    const int waitZoomSeconds = 1;
+    std::this_thread::sleep_for(std::chrono::seconds(waitZoomSeconds));
+    Camera_ErrorCode ret = OH_CaptureSession_SetPhysicalAperture(captureSession, setAperture);
     if (ret != CAMERA_OK) {
         OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_SetPhysicalAperture failed. %{public}d", ret);
         napi_create_int32(env, ret, &result);
@@ -979,18 +999,26 @@ napi_value TestSetPhysicalApertureWithUnconfiguredStream(napi_env env, napi_call
     OH_Camera_PhysicalAperture* apertures = nullptr;
     uint32_t size;
     OH_CaptureSession_GetSupportedPhysicalApertures(captureSession, &apertures, &size);
+    OH_LOG_ERROR(LOG_APP, "apertures is %{public}d", apertures);
+    OH_LOG_ERROR(LOG_APP, "size is %{public}d", size);
     if (size == 0) {
         OH_LOG_ERROR(LOG_APP, "No supported apertures found.");
         OH_CaptureSession_Release(captureSession);
         napi_create_int32(env, CAMERA_SESSION_NOT_CONFIG, &result);
         return result;
     }
+    double setAperture = apertures[0].apertures[0];
+    OH_LOG_ERROR(LOG_APP, "setAperture is %{public}f", setAperture);
+    float zoom = apertures->zoomRange.maxZoom;
+    OH_LOG_ERROR(LOG_APP, "zoom is %{public}f", zoom);
+    OH_CaptureSession_SetZoomRatio(captureSession, zoom);
+    const int waitZoomSeconds = 1;
+    std::this_thread::sleep_for(std::chrono::seconds(waitZoomSeconds));
     OH_CaptureSession_Release(captureSession);
-    double aperture = apertures->apertures[0];
     Camera_CaptureSession *captureSession = nullptr;
     OH_CameraManager_CreateCaptureSession(cameraManager, &captureSession);
     OH_CaptureSession_SetSessionMode(captureSession, Camera_SceneMode::NORMAL_PHOTO);
-    Camera_ErrorCode ret = OH_CaptureSession_SetPhysicalAperture(captureSession, aperture);
+    Camera_ErrorCode ret = OH_CaptureSession_SetPhysicalAperture(captureSession, setAperture);
     if (ret != CAMERA_SESSION_NOT_CONFIG) {
         OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_SetPhysicalAperture failed. %{public}d", ret);
         napi_create_int32(env, ret, &result);

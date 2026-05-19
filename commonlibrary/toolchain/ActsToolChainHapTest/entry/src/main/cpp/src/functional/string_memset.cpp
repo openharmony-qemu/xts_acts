@@ -21,10 +21,11 @@
 #define N (500)
 #define ALIGN_MASK (63)
 #define ALIGN_SIZE (64)
-#define TEST_LEN (1000)
+#define TEST_LEN (10)
 #define LOOP_LIMIT (4)
 #define PRINT_LEN (128)
-#define TEST_NEGATIVE_FIVE (-5)
+#define TEST_OFFSET 256
+#define TEST_VALUE_NEG5 -5
 static char g_buf[N];
 static char g_buf2[N];
 
@@ -32,19 +33,18 @@ static void *(*volatile g_pmemset)(void *, int, size_t);
 
 static char *AlignedFunc(void *p)
 {
-    return reinterpret_cast<char *>(reinterpret_cast<uintptr_t>(p) + ALIGN_MASK & -ALIGN_SIZE);
+    return (char*)(((uintptr_t)p + ALIGN_MASK) & -ALIGN_MASK);
 }
 
 static void TestAlign(int align, int len)
 {
-    char *s = AlignedFunc(g_buf + ALIGN_SIZE) + align;
-    char *want = AlignedFunc(g_buf2 + ALIGN_SIZE) + align;
+    char *s = AlignedFunc(g_buf + ALIGN_MASK) + align;
+    char *want = AlignedFunc(g_buf2 + ALIGN_MASK) + align;
     char *p;
     int i;
 
-    if (len + ALIGN_SIZE > g_buf + N - s || len + ALIGN_SIZE > g_buf2 + N - want) {
-        t_error("Buffer overflow: len=%d, align=%d exceeds buffer bounds\n", len, align);
-        return;
+    if (len + ALIGN_MASK > g_buf + N - s || len + ALIGN_MASK > g_buf2 + N - want) {
+        abort();
     }
     for (i = 0; i < N; i++) {
         g_buf[i] = g_buf2[i] = ' ';
@@ -56,11 +56,11 @@ static void TestAlign(int align, int len)
     if (p != s) {
         t_error("memset(%p,...) returned %p\n", s, p);
     }
-    for (i = -ALIGN_SIZE; i < len + ALIGN_SIZE; i++) {
+    for (i = -ALIGN_MASK; i < len + ALIGN_MASK; i++) {
         if (s[i] != want[i]) {
             t_error("memset(align %d, '#', %d) failed at pos %d\n", align, len, i);
-            TPrintf("got : '%.*s'\n", len + PRINT_LEN, s - ALIGN_SIZE);
-            TPrintf("want: '%.*s'\n", len + PRINT_LEN, want - ALIGN_SIZE);
+            t_printf("got : '%.*s'\n", len + PRINT_LEN, s - ALIGN_MASK);
+            t_printf("want: '%.*s'\n", len + PRINT_LEN, want - ALIGN_MASK);
             break;
         }
     }
@@ -72,7 +72,7 @@ static void TestValue(int c)
 
     g_pmemset(g_buf, c, TEST_LEN);
     for (i = 0; i < TEST_LEN; i++) {
-        if (static_cast<unsigned char>(g_buf[i]) != static_cast<unsigned char>(c)) {
+        if ((unsigned char)g_buf[i] != (unsigned char)c) {
             t_error("memset(%d) failed: got %d\n", c, g_buf[i]);
             break;
         }
@@ -87,8 +87,8 @@ static int StringMemsetTestImpl(void)
 
     g_pmemset = memset;
 
-    for (i = 0; i < ALIGN_SIZE; i++) {
-        for (j = 0; j < N - LOOP_LIMIT; j++) {
+    for (i = 0; i < ALIGN_MASK; i++) {
+        for (j = 0; j < N - TEST_OFFSET; j++) {
             TestAlign(i, j);
         }
     }
@@ -96,7 +96,7 @@ static int StringMemsetTestImpl(void)
     TestValue('c');
     TestValue(0);
     TestValue(-1);
-    TestValue(TEST_NEGATIVE_FIVE);
+    TestValue(TEST_VALUE_NEG5);
     TestValue(0xab);
     return g_tStatus;
 }

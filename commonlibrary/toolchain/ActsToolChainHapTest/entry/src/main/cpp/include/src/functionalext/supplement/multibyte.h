@@ -18,5 +18,6 @@
 
 int C16rtombTest();
 int C32rtombTest();
+int WcsnrtombsTest();
 
 #endif // SRC_FUNCTIONALEXT_SUPPLEMENT_MULTIBYTE_H_H

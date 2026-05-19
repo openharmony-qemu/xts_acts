@@ -51,8 +51,6 @@ export default function CameraFunctionTest() {
     });
     afterAll(() => {
       console.info('afterAll case');
-      let result = cameraObj.captureSessionRelease();
-      console.info(TAG, result);
     });
 
     /**

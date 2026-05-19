@@ -93,4 +93,5 @@ static const struct TimeTestStringStruct TEST_STRPTIME_DATA[] = {
     { "PST8PDT", "2022-6-30 3:40:14 wday=6,yday=0,isdst=1,gmtoff=-25200,zone=PDT" },
 };
 
+#define test_strptime_data TEST_STRPTIME_DATA
 #endif

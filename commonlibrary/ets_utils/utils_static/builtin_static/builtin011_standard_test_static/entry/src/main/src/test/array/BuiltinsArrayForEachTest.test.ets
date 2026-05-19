@@ -36,7 +36,7 @@ export default function BuiltinsArrayForEachTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayForEachTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>();
+      const arr: number[] = Array.create<number>(0, 0);
       let callCount = 0;
 
       arr.forEach((value: number, index: int, array: Array<number>) => {
@@ -55,7 +55,8 @@ export default function BuiltinsArrayForEachTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayForEachTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr: Array<number> = [42];
+      const arr: Array<number> = Array.create<number>(1, 0);
+      arr[0] = 42;
       let callCount = 0;
       let capturedValue: number = 0;
       let capturedIndex: number = -1;
@@ -81,7 +82,12 @@ export default function BuiltinsArrayForEachTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayForEachTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
       let callCount = 0;
       const capturedValues: number[] = [];
       const capturedIndices: int[] = [];
@@ -116,7 +122,10 @@ export default function BuiltinsArrayForEachTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayForEachTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(1, 2, 3);
+      const arr: number[] = Array.create<number>(3, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
       let receivedArray: Array<number> | null = null;
 
       arr.forEach((value: number, index: int, array: Array<number>) => {
@@ -135,8 +144,14 @@ export default function BuiltinsArrayForEachTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayForEachTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3);
-      const original = new Array<number>(1, 2, 3);
+      const arr: number[] = Array.create<number>(3, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      const original: number[] = Array.create<number>(3, 0);
+      original[0] = 1;
+      original[1] = 2;
+      original[2] = 3;
 
       arr.forEach((value: number, index: int, array: Array<number>) => {
         // Do nothing
@@ -157,7 +172,10 @@ export default function BuiltinsArrayForEachTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayForEachTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<string>('apple', 'banana', 'cherry');
+      const arr: string[] = Array.create<string>(3, '');
+      arr[0] = 'apple';
+      arr[1] = 'banana';
+      arr[2] = 'cherry';
       let callCount = 0;
       const capturedValues: string[] = [];
 

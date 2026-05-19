@@ -118,7 +118,7 @@ it('ObjectLinkSecJsunit_static_0200', Level.LEVEL0, async (done: () => void): Pr
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ObjectLinkSecJsunit_static_0200] component obj is: " + JSON.stringify(obj));
       console.info("[ObjectLinkSecJsunit_static_0200] text: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual("5");
+      expect(obj.getElement('$attrs').getString('content')).assertEqual("6");
       console.info('[ObjectLinkSecJsunit_static_0200] END');
       done();
     });
@@ -158,7 +158,7 @@ it('ObjectLinkSecJsunit_static_0400', Level.LEVEL0, async (done: () => void): Pr
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ObjectLinkSecJsunit_static_0400] component obj is: " + JSON.stringify(obj));
       console.info("[ObjectLinkSecJsunit_static_0400] text: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual("5");
+      expect(obj.getElement('$attrs').getString('content')).assertEqual("6");
       console.info('[ObjectLinkSecJsunit_static_0400] END');
       done();
     });

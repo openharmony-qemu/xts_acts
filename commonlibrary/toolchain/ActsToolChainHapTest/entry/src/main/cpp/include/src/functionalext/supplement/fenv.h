@@ -18,4 +18,6 @@
 
 int FltRoundsTest();
 
+int FeholdexceptTest();
+int FeupdateenvTest();
 #endif // SRC_FUNCTIONALEXT_SUPPLEMENT_FENV_H_H

@@ -95,7 +95,7 @@ function getMdLen(algName: string, modeName: string): mdData {
   if (ret) {
     for (let mdName of mdLen) {
       if(mdName[0] == algName) {
-        let size: int = Number(mdName[1]) as int;
+        let size: int = Number(mdName[1]).toInt();
         return {isExtract: true, mdSize: size} as mdData;
       }
     }
@@ -257,6 +257,7 @@ export {
   hkdfSpec,
   getMdLen,
   mdData,
+  kdfVector,
   HKDF_DIGEST_SPEC,
   HKDF_MODE_SPEC,
   KAT_VECTOR_DATA

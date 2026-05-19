@@ -20,7 +20,7 @@ interface Person {
   age: number;
 }
 
-export default function BuiltinsArrayToSplicedTest() {
+export default function BuiltinsArrayToSplicedTest() : void{
   describe("BuiltinsArrayToSplicedTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -221,8 +221,8 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSplicedTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>();
-      
+      const arr: number[] = Array.create<number>(0, 0);
+
       const result = arr.toSpliced(0);
       
       expect(result.length).assertEqual(0);
@@ -259,10 +259,10 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSplicedTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<Person>();
-      arr.push({ name: "Alice", age: 25 } as Person);
-      arr.push({ name: "Bob", age: 30 } as Person);
-      arr.push({ name: "Charlie", age: 35 } as Person);
+      const arr: Person[] = Array.create<Person>(3, { name: "", age: 0 });
+      arr[0] = { name: "Alice", age: 25 };
+      arr[1] = { name: "Bob", age: 30 };
+      arr[2] = { name: "Charlie", age: 35 };
       
       const result = arr.toSpliced(1);
       
@@ -491,7 +491,7 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSplicedTest1900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<Person>();
+      const arr: Person[] = [];
       arr.push({ name: "Alice", age: 25 } as Person);
       arr.push({ name: "Bob", age: 30 } as Person);
       arr.push({ name: "Charlie", age: 35 } as Person);
@@ -516,8 +516,8 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSplicedTest2000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>();
-      
+      const arr: number[] = Array.create<number>(0, 0);
+
       const result = arr.toSpliced(0, 0, 1, 2, 3);
       
       expect(result.length).assertEqual(3);
@@ -798,8 +798,8 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSplicedTest3200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>();
-      
+      const arr: number[] = Array.create<number>(0, 0);
+
       const result = arr.toSpliced(0, 0);
       
       expect(result.length).assertEqual(0);
@@ -816,7 +816,7 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSplicedTest3300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<Person>();
+      const arr: Person[] = [];
       arr.push({ name: "Alice", age: 25 } as Person);
       arr.push({ name: "Bob", age: 30 } as Person);
       arr.push({ name: "Charlie", age: 35 } as Person);

@@ -97,7 +97,7 @@ export default class CommonTest {
               }
             let eventData: events_emitter.EventData = {
               data: {
-                "mZIndex": data.testValue.setValue.zIndex as int
+                "mZIndex": data.testValue.setValue.zIndex.toInt()
               } as Record<String,RecordData>
             }
             let innerEvent: events_emitter.InnerEvent = {

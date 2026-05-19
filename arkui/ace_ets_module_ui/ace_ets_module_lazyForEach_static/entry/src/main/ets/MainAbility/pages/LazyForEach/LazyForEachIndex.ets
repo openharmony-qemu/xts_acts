@@ -17,7 +17,7 @@ import { Entry, Component, Column, Text, List, ListItem, LazyForEach, IDataSourc
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
 
-class SimpleDataSource implements IDataSource<string> {
+export class SimpleDataSource implements IDataSource<string> {
   private data: string[] = ['Item0', 'Item1', 'Item2', 'Item3', 'Item4'];
   private listeners: DataChangeListener[] = [];
 

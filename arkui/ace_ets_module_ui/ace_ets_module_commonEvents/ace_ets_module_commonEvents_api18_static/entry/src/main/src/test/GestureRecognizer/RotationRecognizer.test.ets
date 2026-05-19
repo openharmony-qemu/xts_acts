@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -106,13 +106,13 @@ it('RotationRecognizer_static_0100', Level.LEVEL0, async (done: () => void): Pro
       await CommonFunc.sleep(2000);
       let pointers: PointerMatrix = PointerMatrix.create(2, 2);
       pointers.setPoint(0, 0,
-        { x: Math.round(areaObj.left + areaWidth / 4) as Int, y: Math.round(areaObj.top + areaHeight / 4) as Int });
+        { x: Math.round(areaObj.left + areaWidth / 4).toInt(), y: Math.round(areaObj.top + areaHeight / 4).toInt() });
       pointers.setPoint(0, 1,
-        { x: Math.round(areaObj.right - areaWidth / 2) as Int, y: Math.round(areaObj.top + areaHeight / 4) as Int });
+        { x: Math.round(areaObj.right - areaWidth / 2).toInt(), y: Math.round(areaObj.top + areaHeight / 4).toInt() });
       pointers.setPoint(1, 0,
-        { x: Math.round(areaObj.right - areaWidth / 2) as Int, y: Math.round(areaObj.bottom - areaHeight / 4) as Int });
+        { x: Math.round(areaObj.right - areaWidth / 2).toInt(), y: Math.round(areaObj.bottom - areaHeight / 4).toInt() });
       pointers.setPoint(1, 1,
-        { x: Math.round(areaObj.left + areaWidth / 4) as Int, y: Math.round(areaObj.bottom - areaHeight / 4) as Int });
+        { x: Math.round(areaObj.left + areaWidth / 4).toInt(), y: Math.round(areaObj.bottom - areaHeight / 4).toInt() });
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('RotationRecognizer');

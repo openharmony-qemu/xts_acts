@@ -45,6 +45,7 @@
     "MainAbility/pages/MenuNullUndefined/updateMenu",
     "MainAbility/pages/MenuItemNull/MenuItemNull",
     "MainAbility/pages/Menu/scrollBar",
-    "MainAbility/pages/Menu/maxHeight"
+    "MainAbility/pages/Menu/maxHeight",
+    "MainAbility/pages/Menu/targetSpace"
   ]
 }

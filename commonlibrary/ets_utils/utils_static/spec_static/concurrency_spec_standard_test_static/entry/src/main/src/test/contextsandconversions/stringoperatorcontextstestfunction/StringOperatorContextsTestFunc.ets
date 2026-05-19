@@ -176,7 +176,7 @@ export function testStringOperatorContexts0010(){
 
 export function testStringOperatorContexts0011(){
   const TAG = 'testStringOperatorContexts0011';
-  let p1: float = 3.14;
+  let p1: float = 3.14f;
         let res = p1 + "";
         let expected = new Float(3.14).toString();
   if(res !== expected){
@@ -187,7 +187,7 @@ export function testStringOperatorContexts0011(){
 
 export function testStringOperatorContexts0012(){
   const TAG = 'testStringOperatorContexts0012';
-  let p1: float = 3.14;
+  let p1: float = 3.14f;
         let res = p1 + "";
         let expected = p1.toString();
   if(res !== expected){
@@ -198,7 +198,7 @@ export function testStringOperatorContexts0012(){
 
 export function testStringOperatorContexts0013(){
   const TAG = 'testStringOperatorContexts0013';
-  let p1: float = 3.14;
+  let p1: float = 3.14f;
         let res = p1 + "";
         let expected = p1.toString();
   if(res !== expected){

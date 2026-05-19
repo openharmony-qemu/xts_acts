@@ -79,7 +79,7 @@ async function fingerTouchInputEventTest(testCase: string, funcName: string, isA
   let y = Math.round(globalThis.winTop + Utils.getRectVerticalCenterY(rect));
   let pointers: PointerMatrix = PointerMatrix.create(2,2);
   pointers.setPoint(0,0,{x: Math.round(x),y: Math.round(y)});
-  pointers.setPoint(0,1,{x: Math.round(y),y: Math.round(y + vp2px(20))});
+  pointers.setPoint(0,1,{x: Math.round(x),y: Math.round(y + vp2px(20))});
   pointers.setPoint(1,0,{x: Math.round(x),y: Math.round(y)});
   pointers.setPoint(1,1,{x: Math.round(x),y: Math.round(y + vp2px(20))}); 
   await driver.injectMultiPointerAction(pointers);

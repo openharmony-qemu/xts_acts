@@ -64,7 +64,7 @@ void Getdents0300(void)
     static const char *gPath = "/data/storage/el2/base/cache/";
     int fd = open(gPath, O_RDONLY);
     EXPECT_NE("Getdents0300", fd, -1);
-    int result = getdents(fd, NULL, INT_MAX);
+    int result = getdents(fd, nullptr, INT_MAX);
     EXPECT_EQ("Getdents0300", result, FAILED);
 }
 

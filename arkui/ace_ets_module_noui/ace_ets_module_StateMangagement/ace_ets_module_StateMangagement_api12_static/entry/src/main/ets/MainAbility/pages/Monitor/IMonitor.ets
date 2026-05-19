@@ -60,7 +60,6 @@ struct IMonitor1 {
         .onClick(():void => {
           console.log('onclick==================')
           this.message += "!";
-          this.name = "IMonitor succ";
         })
     }
   }

@@ -73,7 +73,7 @@ export default function WebViewActiveWebEngineVersion() {
      */
     it('testActiveWebEngineVersion001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitActiveWebEngineVersion001', 10)
-      Utils.registerEvent('testActiveWebEngineVersion001', webview.ArkWebEngineVersion.M144, 20250903, done);
+      Utils.registerEvent('testActiveWebEngineVersion001', true, 20250903, done);
       sendEventByKey('WebViewActiveWebEngineVersionButton', 10, '');
     })
 
@@ -185,6 +185,20 @@ export default function WebViewActiveWebEngineVersion() {
     it('emitIsActiveWebEngineEvergreen009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitIsActiveWebEngineEvergreen009', 10)
       Utils.registerEvent('emitIsActiveWebEngineEvergreen009', true, 20251225, done);
+      sendEventByKey('WebViewActiveWebEngineVersionButton', 10, '');
+    })
+
+    /**
+     * @tc.name   emitIsActiveWebEngineEvergreen010
+     * @tc.number SUB_ACE_BASIC_ETS_ISACTIVEWEBENGINEEVERGREEN_1000
+     * @tc.desc   IsActiveWebEngineEvergreen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('emitIsActiveWebEngineEvergreen010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent('emitIsActiveWebEngineEvergreen010', 10)
+      Utils.registerEvent('emitIsActiveWebEngineEvergreen010', true, 20260519, done);
       sendEventByKey('WebViewActiveWebEngineVersionButton', 10, '');
     })
 

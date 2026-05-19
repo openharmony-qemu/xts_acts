@@ -205,6 +205,21 @@ function getCurrentUserId() {
   }
 }
 
+let INVALID_PIXEL_MAP: image.PixelMap;
+
+function getInvalidPixelMap() {
+  const color: ArrayBuffer = new ArrayBuffer(40000);
+  let opts: image.InitializationOptions = { editable: true, pixelFormat: 3, size: { height: 10000, width: 1 } }
+  image.createPixelMap(color, opts, (error: BusinessError, pixelMap: image.PixelMap) => {
+    if(error) {
+      console.error('Failed to create invalid pixelmap.');
+      return;
+    } else {
+      INVALID_PIXEL_MAP = pixelMap;
+    }
+  })
+}
+
 let PIXEL_MAP: image.PixelMap;
 const WATERMARK_BUNDLE_NAME = "testBundleName";
 let CURRENT_USER_ID: number = 100;
@@ -318,5 +333,6 @@ export {
   TEST_PERMISSION_MANAGED_STATE_DENIED, TEST_PERMISSION_MANAGED_STATE_DEFAULT, TEST_APP_INSTANCE,
   TEST_PERMISSION_LIST_1, TEST_PERMISSION_1, TEST_INVALID_APP_INSTANCE, APP_IDS_AND_IDENTIFIER_1,
   OTHER_WANT, NOT_EXIST_WANT, MARKET_APPS, ERROR_MARKET_APPS, BLUETOOTH_STATE, WIFI_STATE,
-  getBluetoothState, setBluetoothState, getWifiState, setWifiState, getErrorCode
+  getBluetoothState, setBluetoothState, getWifiState, setWifiState, getErrorCode, getInvalidPixelMap,
+  INVALID_PIXEL_MAP
 }

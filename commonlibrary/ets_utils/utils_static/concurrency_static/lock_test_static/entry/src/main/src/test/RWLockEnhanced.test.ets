@@ -62,7 +62,7 @@ export default function RWLockEnhancedTest(): void {
         await sleep(200);
         rLock.unlock();
 
-        await job.Await();
+        await job;
         worker.join();
         await sleep(200);
 
@@ -109,7 +109,7 @@ export default function RWLockEnhancedTest(): void {
         while (workerCompleted.load() < 1) {
           await sleep(50);
         }
-        worker.join().Await();
+        await worker.join();
         console.info(`${TAG} result: ${result.load()}, worker completed: ${workerCompleted.load()}`);
         expect(workerCompleted.load()).assertEqual(1);
         Done();
@@ -279,14 +279,14 @@ export default function RWLockEnhancedTest(): void {
         for (let i = 0; i < 5; i++) {
           let eaw = new EAWorker();
           eaw.start();
-          eaw.run<Promise<void>>(async (): Promise<void> => {
+          await eaw.run<Promise<void>>(async (): Promise<void> => {
             let writeLock = rwLock.writeLock();
             await writeLock.lock();
             writeCount.fetchAdd(1);
             await class1.increaseCount();
             writeLock.unlock();
             writeCompleted.fetchAdd(1);
-          }).Await();
+          });
           eaw.join();
         }
 
@@ -351,13 +351,13 @@ export default function RWLockEnhancedTest(): void {
 
         let eaw = new EAWorker();
         eaw.start();
-        eaw.run<Promise<void>>(async (): Promise<void> => {
+        await eaw.run<Promise<void>>(async (): Promise<void> => {
           let writeLock = rwLock.writeLock();
           await writeLock.lock();
           await data.increaseCount();
           writeCount.fetchAdd(1);
           writeLock.unlock();
-        }).Await();
+        });
         eaw.join();
         while (writeCount.load() < 1) {
           await sleep(50);
@@ -431,7 +431,7 @@ export default function RWLockEnhancedTest(): void {
         while (workerCompleted.load() < 1) {
           await sleep(50);
         }
-        await job.Await();
+        await job;
         worker.join();
 
         console.info(`${TAG} max concurrent writes: ${maxConcurrent.load()}`);
@@ -534,7 +534,7 @@ export default function RWLockEnhancedTest(): void {
           rLock.unlock();
         });
 
-        await job.Await();
+        await job;
         worker.join();
 
         console.info(`${TAG} count: ${count.load()}`);
@@ -584,7 +584,7 @@ export default function RWLockEnhancedTest(): void {
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_RWLock_Enhanced_1400
      * @tc.name rwLockEnhancedMultipleRWLockInstances
      * @tc.desc Test independence of multiple RWLock instances
-     * @tc.size MediumTest
+     * @tc.size MediumTestawait 
      * @tc.type Function
      * @tc.level Level 0
      */

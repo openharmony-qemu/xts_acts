@@ -58,9 +58,11 @@ export default class Utils {
 
   static async allowScreenCapture() {
     console.info('IN allowScreenCapture...')
-    let btn = await driver.waitForComponent(ON.text("允许"), 2000);
+    let btn = await driver.waitForComponent(ON.text("允许"), 2000) ||
+      await driver.waitForComponent(ON.text("始终允许"), 2000);
     await btn.click();
-    btn = await driver.waitForComponent(ON.text("允许"), 2000);
+    btn = await driver.waitForComponent(ON.text("允许"), 2000) ||
+      await driver.waitForComponent(ON.text("始终允许"), 2000);
     await btn.click();
     console.info('OUT allowScreenCapture...')
   }

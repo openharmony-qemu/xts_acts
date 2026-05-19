@@ -952,7 +952,7 @@ export default function builtinsJsonTypeStringifiersTest() {
      * @tc.level LEVEL0
      */
     it('builtinsJsonTypeStringifiersTest0050', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const floatValue: float = 3.14159;
+      const floatValue: float = 3.14159f;
       const result = JSON.stringify(floatValue);
 
       expect(result).assertEqual("3.14159");
@@ -967,7 +967,7 @@ export default function builtinsJsonTypeStringifiersTest() {
      * @tc.level LEVEL0
      */
     it('builtinsJsonTypeStringifiersTest0051', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const zero: float = 0.0;
+      const zero: float = 0.0f;
       const result = JSON.stringify(zero);
 
       expect(result).assertEqual("0");
@@ -982,7 +982,7 @@ export default function builtinsJsonTypeStringifiersTest() {
      * @tc.level LEVEL0
      */
     it('builtinsJsonTypeStringifiersTest0052', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const negative: float = -2.71828;
+      const negative: float = -2.71828f;
       const result = JSON.stringify(negative);
 
       expect(result).assertEqual("-2.71828");
@@ -1012,7 +1012,7 @@ export default function builtinsJsonTypeStringifiersTest() {
      * @tc.level LEVEL0
      */
     it('builtinsJsonTypeStringifiersTest0054', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const minFloat: float = 1.40129846432481707e-45;
+      const minFloat: float = 1.40129846432481707e-45f;
       const result = JSON.stringify(minFloat);
 
       expect(result).assertEqual("1e-45");
@@ -1128,7 +1128,7 @@ export default function builtinsJsonTypeStringifiersTest() {
      * @tc.level LEVEL0
      */
     it('builtinsJsonTypeStringifiersTest0060', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const negZero: float = -0.0;
+      const negZero: float = -0.0f;
       const result = JSON.stringify(negZero);
 
       expect(result).assertEqual("0");

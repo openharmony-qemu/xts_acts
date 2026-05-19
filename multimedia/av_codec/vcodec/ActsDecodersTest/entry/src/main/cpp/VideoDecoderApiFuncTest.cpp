@@ -22,6 +22,7 @@
 #include <multimedia/player_framework/native_avdemuxer.h>
 #include <multimedia/player_framework/native_avsource.h>
 #include <multimedia/player_framework/native_avmemory.h>
+#include <multimedia/player_framework/native_avcodec_videoencoder.h>
 #include <fcntl.h>
 #include <string>
 #include <sys/stat.h>
@@ -35,6 +36,7 @@ constexpr int MAX_VIDEO_WIDTH = 1920;            // 最大视频宽度
 constexpr int VC1_PROFILE_COUNT = 3;             // VC1 支持的 profile 数量
 constexpr int WMV3_PROFILE_COUNT = 2;            // WMV3 支持的 profile 数量
 constexpr int PIXEL_FORMAT_COUNT = 3;            // 支持的像素格式数量
+static OH_AVCodec *venc_ = nullptr;
 
 #ifdef SUPPORT_DRM
 #include "native_mediakeysession.h"
@@ -928,6 +930,38 @@ int VideoDecCapApi0026()
         return -1;
     }
     return 0;
+}
+
+int VideoDecCapApi0027()
+{
+    OH_AVCapability *cap = OH_AVCodec_GetCapabilityByCategory(
+        OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, SOFTWARE);
+    if (!cap) {
+        return 0;
+    }
+    string codecName = "";
+    codecName = OH_AVCapability_GetName(cap);
+    venc_ = OH_VideoEncoder_CreateByName(codecName.c_str());
+    if (!venc_) {
+        return -1;
+    }
+    OH_AVFormat *format = OH_VideoEncoder_GetOutputDescription(venc_);
+    if (!format) {
+        OH_VideoEncoder_Destroy(venc_);
+        return -1;
+    }
+
+    int32_t layerId = 0;
+    int32_t ret = OH_AVFormat_GetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_TEMPORAL_LAYER_ID, &layerId);
+    if (ret == 0) {
+        std::cout << "temporal layer id: " << layerId << std::endl;
+    } else {
+        std::cerr << "Failed to get temporal layer id, ret=" << ret << std::endl;
+    }
+
+    OH_AVFormat_Destroy(format);
+    OH_VideoEncoder_Destroy(venc_);
+    return (ret == 0) ? 0 : -1;
 }
 
 } // namespace Media

@@ -237,7 +237,7 @@ void SignbitfTc1600(void)
     EXPECT_EQ("SignbitfTc1600", result, 1);
 }
 
-static int SignbitfTestWithArgs(int argc, char* argv[])
+static int SignbitfTestImpl(int argc, char* argv[])
 {
     SignbitfTc0100();
     SignbitfTc0200();
@@ -260,7 +260,7 @@ static int SignbitfTestWithArgs(int argc, char* argv[])
 
 int SignbitfTest(void)
 {
-    static char libcProgStub[] = "libc_test";
-    char* libcArgvStub[] = { libcProgStub, nullptr };
-    return SignbitfTestWithArgs(1, libcArgvStub);
+    static char libcProg[] = "libc_test";
+    char* libcArgv[] = { libcProg, nullptr };
+    return SignbitfTestImpl(1, libcArgv);
 }

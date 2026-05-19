@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -20,6 +20,12 @@ struct GestureInterceptExampleXts {
   @State row2: number = 0;
   @State button1: number = 0;
   @State stack: number = 0;
+  @State touch0: number = 0;
+  @State touch1: number = 0;
+  @State touch2: number = 0;
+  @State gesture0: number = 0;
+  @State gesture1: number = 0;
+  @State gesture2: number = 0;
 
   build() {
     Column({ space: 10 }){
@@ -80,18 +86,35 @@ struct GestureInterceptExampleXts {
             let m = touchRecognizers[i].getEventTargetInfo().getUniqueId();
             console.log("testLog getUniqueId " + m)
             if(touchRecognizers[i].isHostBelongsTo(ii) == true){
+              this.touch0 = 1
               console.log("testLog touchRecognizers isHostBelongsTo")
             } else if(touchRecognizers[i].isHostBelongsTo(ii) == false){
+              this.touch0 = 0
               console.log("testLog touchRecognizers not isHostBelongsTo")
             }
+            if(touchRecognizers[i].isHostBelongsTo(undefined) == false){
+              this.touch1 = 1
+            }
+            if(touchRecognizers[i].isHostBelongsTo(null) == false){
+              this.touch2 = 1
+            }
+
           }
           for (let i0 = 0; i0 < recognizers.length; i0++) {
             let n = recognizers[i0].getEventTargetInfo().getUniqueId();
             console.log("testLog getUniqueId " + n)
             if(recognizers[i0].isHostBelongsTo(n) == true){
+              this.gesture0 = 1
               console.log("testLog GestureRecognizer isHostBelongsTo")
             } else if(recognizers[i0].isHostBelongsTo(n) == false){
+              this.gesture0 = 0
               console.log("testLog GestureRecognizer not isHostBelongsTo")
+            }
+            if(recognizers[i0].isHostBelongsTo(undefined) == false){
+              this.gesture1 = 1
+            }
+            if(recognizers[i0].isHostBelongsTo(null) == false){
+              this.gesture2 = 1
             }
           }
           return this.intervention;
@@ -142,6 +165,10 @@ struct GestureInterceptExampleXts {
       }
       Row(){
         Text('result' + this.stack + this.row1 + this.row2 + this.button1).id('InterceptTest')
+      }
+      Row(){
+        Text('' + this.touch0 + this.gesture0 + this.touch1 + this.touch2 + this.gesture1 + this.gesture2)
+          .id('HostBelongTest')
       }
 
     }.height('80%')

@@ -33,9 +33,9 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
 @Observed
-class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
-  @State state: boolean = false;
-  @State content: EnterKeyType = EnterKeyType.Send;
+export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+  state: boolean = false;
+  content: EnterKeyType = EnterKeyType.Send;
   applyNormalAttribute(instance: TextAreaAttribute): void {
     if (this.state == false) {
       instance.onSubmit(undefined);

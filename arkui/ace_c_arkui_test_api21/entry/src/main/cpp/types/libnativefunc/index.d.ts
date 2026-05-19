@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 export const TestInvalidateAttributes: () => number;
-
 export const TestRegisterCommonEvent001: () => number;
 
 export const TestRegisterCommonEvent002: () => number;
@@ -50,3 +49,4 @@ export const TestNodeErrorCode009: () => number;
 export const TestNodeErrorCode010: () => number;
 export const TestNodeErrorCode011: () => number;
 export const testCrossLanguageTreeOperatingStatus: () => number;
+export const TestGetErrorMessage001: () => number;

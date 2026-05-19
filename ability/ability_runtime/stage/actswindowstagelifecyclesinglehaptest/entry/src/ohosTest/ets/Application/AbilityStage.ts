@@ -13,14 +13,13 @@
  * limitations under the License.
  */
 import AbilityStage from "@ohos.app.ability.AbilityStage";
-import { AbilityLifecycleCallback } from '@kit.AbilityKit';
 
 export default class MyAbilityStage extends AbilityStage {
     onCreate() {
         console.log("[Demo] MyAbilityStage onCreate")
         console.log("[Demo] MyAbilityStage stagecontext: " + JSON.stringify(this.context));
         globalThis.list = []
-        let AbilityLifecycleCallback:AbilityLifecycleCallback = {
+        let AbilityLifecycleCallback = {
             onAbilityCreate(ability) {
                 console.log("[Demo] AbilityLifecycleCallback onAbilityCreate ability:"
                 + JSON.stringify(ability));
@@ -80,7 +79,7 @@ export default class MyAbilityStage extends AbilityStage {
         }
         globalThis.applicationContext = this.context.getApplicationContext();
         console.log("[Demo] stage applicationContext: " + JSON.stringify(globalThis.applicationContext));
-        let lifecycleid = globalThis.applicationContext.on('abilityLifecycle', AbilityLifecycleCallback);
+        let lifecycleid = globalThis.applicationContext.registerAbilityLifecycleCallback(AbilityLifecycleCallback);
         console.log("[Demo] registerAbilityLifecycleCallback number: " + JSON.stringify(lifecycleid));
         globalThis.callbackid = lifecycleid;
     }

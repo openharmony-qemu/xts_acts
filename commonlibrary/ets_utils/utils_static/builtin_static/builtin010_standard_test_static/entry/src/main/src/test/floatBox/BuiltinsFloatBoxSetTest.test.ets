@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,10 +47,10 @@ export default function builtinsFloatBoxSetText() {
      * @tc.level   LEVEL0
      */
     it('builtinsFloatBoxSetText0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const box = FloatBox.box(10.5 as float);
-      const ret = box.set(20.7 as float);
-      expect(ret).assertEqual(20.7 as float);
-      expect(box.get()).assertEqual(20.7 as float);
+      const box = FloatBox.box(10.5.toFloat());
+      const ret = box.set(20.7.toFloat());
+      expect(ret).assertEqual(20.7.toFloat());
+      expect(box.get()).assertEqual(20.7.toFloat());
     });
 
     /**
@@ -63,12 +63,12 @@ export default function builtinsFloatBoxSetText() {
      */
     it('builtinsFloatBoxSetText0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const box = new FloatBox();
-      const value1 = 1.0 as float;
-      const value2 = 1e-8 as float;
+      const value1 = 1.0.toFloat();
+      const value2 = 1e-8.toFloat();
       box.set(value1);
       const sum = box.get() + value2;
       box.set(sum);
-      expect(box.get()).assertEqual(1.0 as float);
+      expect(box.get()).assertEqual(1.0.toFloat());
     });
 
     /**
@@ -80,7 +80,7 @@ export default function builtinsFloatBoxSetText() {
      * @tc.level   LEVEL0
      */
     it('builtinsFloatBoxSetText0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const v = 1.40129846432481707e-45 as float;
+      const v = 1.40129846432481707e-45.toFloat();
       const box = new FloatBox();
       expect(box.set(v)).assertEqual(v);
       expect(box.get()).assertEqual(v);
@@ -95,7 +95,7 @@ export default function builtinsFloatBoxSetText() {
      * @tc.level   LEVEL0
      */
     it('builtinsFloatBoxSetText0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const v = 3.40282346638528860e+38 as float;
+      const v = 3.40282346638528860e+38.toFloat();
       const box = new FloatBox();
       expect(box.set(v)).assertEqual(v);
       expect(box.get()).assertEqual(v);
@@ -111,10 +111,10 @@ export default function builtinsFloatBoxSetText() {
      */
     it('builtinsFloatBoxSetText0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const box = new FloatBox();
-      expect(box.set(1.1 as float)).assertEqual(1.1 as float);
-      expect(box.set(2.2 as float)).assertEqual(2.2 as float);
-      expect(box.set(3.3 as float)).assertEqual(3.3 as float);
-      expect(box.get()).assertEqual(3.3 as float);
+      expect(box.set(1.1.toFloat())).assertEqual(1.1.toFloat());
+      expect(box.set(2.2.toFloat())).assertEqual(2.2.toFloat());
+      expect(box.set(3.3.toFloat())).assertEqual(3.3.toFloat());
+      expect(box.get()).assertEqual(3.3.toFloat());
     });
 
     /**
@@ -127,8 +127,8 @@ export default function builtinsFloatBoxSetText() {
      */
     it('builtinsFloatBoxSetText0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const box = new FloatBox();
-      expect(box.set(1.0e-46 as float)).assertEqual(0.0 as float); // flush to zero
-      expect(box.get()).assertEqual(0.0 as float);
+      expect(box.set(1.0e-46.toFloat())).assertEqual(0.0.toFloat()); // flush to zero
+      expect(box.get()).assertEqual(0.0.toFloat());
     });
 
     /**
@@ -140,7 +140,7 @@ export default function builtinsFloatBoxSetText() {
      * @tc.level   LEVEL0
      */
     it('builtinsFloatBoxSetText0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const v = 0xcafebabe as float;
+      const v = (0xcafebabe).toFloat();
       const box = new FloatBox();
       expect(box.set(v)).assertEqual(v);
       expect(box.get()).assertEqual(v);
@@ -155,7 +155,7 @@ export default function builtinsFloatBoxSetText() {
      * @tc.level   LEVEL0
      */
     it('builtinsFloatBoxSetText0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const v = -1.40129846432481707e-45 as float;
+      const v = -1.40129846432481707e-45.toFloat();
       const box = new FloatBox();
       expect(box.set(v)).assertEqual(v);
       expect(box.get()).assertEqual(v);
@@ -170,7 +170,7 @@ export default function builtinsFloatBoxSetText() {
      * @tc.level   LEVEL0
      */
     it('builtinsFloatBoxSetText0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const v = -3.40282346638528860e+38 as float;
+      const v = -3.40282346638528860e+38.toFloat();
       const box = new FloatBox();
       expect(box.set(v)).assertEqual(v);
       expect(box.get()).assertEqual(v);
@@ -186,8 +186,8 @@ export default function builtinsFloatBoxSetText() {
      */
     it('builtinsFloatBoxSetText0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const box = new FloatBox();
-      expect(box.set(-1.0e-46 as float)).assertEqual(-0.0 as float);
-      expect(box.get()).assertEqual(-0.0 as float);
+      expect(box.set(-1.0e-46.toFloat())).assertEqual(-0.0.toFloat());
+      expect(box.get()).assertEqual(-0.0.toFloat());
     });
   })
 }

@@ -663,7 +663,7 @@ export default function MapValueTest() {
       expect(values[0]).assertEqual(0);
       expect(values[1]).assertEqual(0);
       expect(1 / values[0]).assertEqual(Infinity);
-      expect(1 / values[1]).assertEqual(Infinity);
+      expect(1 / values[1]).assertEqual(-Infinity);
     });
 
     /**

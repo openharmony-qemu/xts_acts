@@ -11,6 +11,8 @@
         "MainAbility/pages/Refresh/maxDownRefresh",
         "MainAbility/pages/Refresh/pullUpToCancelRefresh",
         "MainAbility/pages/Refresh/pullUpToCancelRefreshModifier",
+        "MainAbility/pages/Refresh/RefreshRefreshOffset",
+        "MainAbility/pages/Refresh/RefreshMaxPullDownDistance",
         "MainAbility/pages/Refresh/refreshNullUndefined"
 
     ]

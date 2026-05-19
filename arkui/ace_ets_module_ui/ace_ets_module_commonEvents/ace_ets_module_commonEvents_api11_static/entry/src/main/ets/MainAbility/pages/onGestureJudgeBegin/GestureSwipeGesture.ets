@@ -45,8 +45,6 @@ import {
   LongPressGestureEvent,
   SwipeGestureEvent,
   PanGestureEvent,
-  GestureControl,
-  GestureJudgeResult,
   PanGestureOptions,
   TapGesture,
   LongPressGesture,

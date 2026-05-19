@@ -20,7 +20,7 @@ const ExpectTrue = (n: boolean) => {
         console.info(`exportTrue failed err: ${JSON.stringify(err)}`);
     }
 };
-const TLCP_TARGET_URL: string = 'https://test.gmssl.cn';
+const TLCP_TARGET_URL: string = 'https://smtest.moyufangge.com';
 const TLS_TARGET_URL: string = 'https://www.baidu.com';
 interface CertConfig {
     caPath: string;
@@ -44,7 +44,7 @@ function initCertConfig(context: Context): CertConfig {
     };
     try {
         const certFiles: CertFileInfo[] = [
-            { rawPath: 'sm2.trust.pem', targetName: 'sm2.trust.pem', key: 'caPath' },
+            { rawPath: 'WoSign-SM2.crt', targetName: 'WoSign-SM2.crt', key: 'caPath' },
             { rawPath: 'sm2.user1.sig.crt.pem', targetName: 'sm2.user1.sig.crt.pem', key: 'sigCertPath' },
             { rawPath: 'sm2.user1.sig.key.pem', targetName: 'sm2.user1.sig.key.pem', key: 'sigKeyPath' },
             { rawPath: 'sm2.user1.enc.crt.pem', targetName: 'sm2.user1.enc.crt.pem', key: 'encCertPath' },

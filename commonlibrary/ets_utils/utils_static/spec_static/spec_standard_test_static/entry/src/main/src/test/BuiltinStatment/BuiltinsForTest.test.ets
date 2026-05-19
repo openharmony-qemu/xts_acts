@@ -1085,7 +1085,7 @@ export default function builtinsForTest() {
         let count: number = 0;
         let i = 0;
         //forUpDate正常场景i=函数返回值
-        for (i = 0; i < 10; i = update(i) as int) {
+        for (i = 0; i < 10; i = update(i).toInt()) {
           count++
         }
         expect(2).assertEqual(count);

@@ -18,4 +18,13 @@
 
 int AlignedAllocTest();
 
+int MallocCheckFromPtrTest();
+int MallocUsableSizeTest();
+int MemalignTest();
+int PosixMemalignTest();
+int ReallocTest();
+int RestraceTest();
+int RestraceExtTest();
+int ResTraceFreeRegionTest();
+int ResTraceMoveTest();
 #endif // SRC_FUNCTIONALEXT_SUPPLEMENT_MALLOC_H_H

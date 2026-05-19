@@ -188,20 +188,20 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.name   ActsLocksTestConditionVariableWaitFor001
-     * @tc.number ActsLocksTestConditionVariableWaitFor001
+     * @tc.name   ActsLocksTestConditionVariableWaitFor0100
+     * @tc.number SUB_Runtime_ConditionVariable_WaitFor_0100
      * @tc.desc   check waitFor use
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ActsLocksTestConditionVariableWaitFor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
-      const CASE: string = 'ActsLocksTestConditionVariableWaitFor001';
+    it('ActsLocksTestConditionVariableWaitFor0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const CASE: string = 'ActsLocksTestConditionVariableWaitFor0100';
       console.info(`${CASE} START`);
       try {
         const waitTime: number = 500;
         const conditionVariable: ArkTSUtils.locks.ConditionVariable = new ArkTSUtils.locks.ConditionVariable();
-        conditionVariable.waitFor(waitTime);
+        await conditionVariable.waitFor(waitTime);
       } catch (err) {
         console.error(`${CASE} error:` + err);
         expect().assertFail();
@@ -212,15 +212,15 @@ export default function conditionVariableTest() {
 
 
     /**
-     * @tc.name   ActsLocksTestConditionVariableWaitFor002
-     * @tc.number ActsLocksTestConditionVariableWaitFor002
+     * @tc.name   ActsLocksTestConditionVariableWaitFor0200
+     * @tc.number SUB_Runtime_ConditionVariable_WaitFor_0200
      * @tc.desc   check create waitFor greater than 0 thread
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ActsLocksTestConditionVariableWaitFor002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const CASE: string = 'ActsLocksTestConditionVariableWaitFor002';
+    it('ActsLocksTestConditionVariableWaitFor0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const CASE: string = 'ActsLocksTestConditionVariableWaitFor0200';
       console.info(`${CASE} START`);
       try {
         let result = false;
@@ -243,15 +243,15 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.name   ActsLocksTestConditionVariableWaitFor003
-     * @tc.number ActsLocksTestConditionVariableWaitFor003
+     * @tc.name   ActsLocksTestConditionVariableWaitFor0300
+     * @tc.number SUB_Runtime_ConditionVariable_WaitFor_0300
      * @tc.desc   check create waitFor equal to 0 thread
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('ActsLocksTestConditionVariableWaitFor003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      const CASE: string = 'ActsLocksTestConditionVariableWaitFor003';
+    it('ActsLocksTestConditionVariableWaitFor0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const CASE: string = 'ActsLocksTestConditionVariableWaitFor0300';
       console.info(`${CASE} START`);
       try {
         let result = false;
@@ -270,15 +270,15 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.name   ActsLocksTestConditionVariableWaitFor004
-     * @tc.number ActsLocksTestConditionVariableWaitFor004
+     * @tc.name   ActsLocksTestConditionVariableWaitFor0400
+     * @tc.number SUB_Runtime_ConditionVariable_WaitFor_0400
      * @tc.desc   check create waitFor less than 0 thread
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('ActsLocksTestConditionVariableWaitFor004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      const CASE: string = 'ActsLocksTestConditionVariableWaitFor004';
+    it('ActsLocksTestConditionVariableWaitFor0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const CASE: string = 'ActsLocksTestConditionVariableWaitFor0400';
       console.info(`${CASE} START`);
       try {
         let result = false;
@@ -297,15 +297,15 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.name   ActsLocksTestConditionVariableWaitFor005
-     * @tc.number ActsLocksTestConditionVariableWaitFor005
+     * @tc.name   ActsLocksTestConditionVariableWaitFor0500
+     * @tc.number SUB_Runtime_ConditionVariable_WaitFor_0500
      * @tc.desc   check create waitFor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ActsLocksTestConditionVariableWaitFor005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const CASE: string = 'ActsLocksTestConditionVariableWaitFor005';
+    it('ActsLocksTestConditionVariableWaitFor0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const CASE: string = 'ActsLocksTestConditionVariableWaitFor0500';
       console.info(`${CASE} START`);
       try {
         let result = false;
@@ -332,20 +332,20 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.name   ActsLocksTestConditionVariableWaitFor006
-     * @tc.number ActsLocksTestConditionVariableWaitFor006
+     * @tc.name   ActsLocksTestConditionVariableWaitFor0600
+     * @tc.number SUB_Runtime_ConditionVariable_WaitFor_0600
      * @tc.desc   check waitFor use
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ActsLocksTestConditionVariableWaitFor006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
-      const CASE: string = 'ActsLocksTestConditionVariableWaitFor006';
+    it('ActsLocksTestConditionVariableWaitFor0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const CASE: string = 'ActsLocksTestConditionVariableWaitFor0600';
       console.info(`${CASE} START`);
       try {
         const waitTime: number = 500;
         const conditionVariable = ArkTSUtils.locks.ConditionVariable.request('Test');
-        conditionVariable.waitFor(waitTime);
+        await conditionVariable.waitFor(waitTime);
       } catch (err) {
         console.error(`${CASE} error:` + err);
         expect().assertFail();
@@ -356,15 +356,15 @@ export default function conditionVariableTest() {
 
 
     /**
-     * @tc.name   ActsLocksTestConditionVariableWaitFor007
-     * @tc.number ActsLocksTestConditionVariableWaitFor007
+     * @tc.name   ActsLocksTestConditionVariableWaitFor0700
+     * @tc.number SUB_Runtime_ConditionVariable_WaitFor_0700
      * @tc.desc   check create waitFor greater than 0 thread
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ActsLocksTestConditionVariableWaitFor007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const CASE: string = 'ActsLocksTestConditionVariableWaitFor007';
+    it('ActsLocksTestConditionVariableWaitFor0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const CASE: string = 'ActsLocksTestConditionVariableWaitFor0700';
       console.info(`${CASE} START`);
       try {
         let result = false;
@@ -387,15 +387,15 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.name   ActsLocksTestConditionVariableWaitFor008
-     * @tc.number ActsLocksTestConditionVariableWaitFor008
+     * @tc.name   ActsLocksTestConditionVariableWaitFor0800
+     * @tc.number SUB_Runtime_ConditionVariable_WaitFor_0800
      * @tc.desc   check create waitFor equal to 0 thread
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('ActsLocksTestConditionVariableWaitFor008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      const CASE: string = 'ActsLocksTestConditionVariableWaitFor008';
+    it('ActsLocksTestConditionVariableWaitFor0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const CASE: string = 'ActsLocksTestConditionVariableWaitFor0800';
       console.info(`${CASE} START`);
       try {
         let result = false;
@@ -414,15 +414,15 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.name   ActsLocksTestConditionVariableWaitFor009
-     * @tc.number ActsLocksTestConditionVariableWaitFor009
+     * @tc.name   ActsLocksTestConditionVariableWaitFor0900
+     * @tc.number SUB_Runtime_ConditionVariable_WaitFor_0900
      * @tc.desc   check create waitFor less than 0 thread
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('ActsLocksTestConditionVariableWaitFor009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      const CASE: string = 'ActsLocksTestConditionVariableWaitFor009';
+    it('ActsLocksTestConditionVariableWaitFor0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const CASE: string = 'ActsLocksTestConditionVariableWaitFor0900';
       console.info(`${CASE} START`);
       try {
         let result = false;
@@ -441,15 +441,15 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.name   ActsLocksTestConditionVariableWaitFor010
-     * @tc.number ActsLocksTestConditionVariableWaitFor010
+     * @tc.name   ActsLocksTestConditionVariableWaitFor1100
+     * @tc.number SUB_Runtime_ConditionVariable_WaitFor_1100
      * @tc.desc   check create waitFor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('ActsLocksTestConditionVariableWaitFor010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const CASE: string = 'ActsLocksTestConditionVariableWaitFor010';
+    it('ActsLocksTestConditionVariableWaitFor1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const CASE: string = 'ActsLocksTestConditionVariableWaitFor1100';
       console.info(`${CASE} START`);
       try {
         let result = false;

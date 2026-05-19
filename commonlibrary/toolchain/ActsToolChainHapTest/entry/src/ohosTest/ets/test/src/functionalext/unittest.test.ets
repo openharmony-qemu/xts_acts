@@ -37,5 +37,45 @@ export default function FunctionalextUnittestTestGroupTest() {
         done();
       },
     );
+
+    /**
+     * @tc.name   unittest_fatal_message
+     * @tc.number SUB_THIRDPARTY_MUSL_UNITTEST_FATAL_MESSAGE_0100
+     * @tc.desc   libc-test unittest_fatal_message
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it(
+      "unittest_fatal_message",
+      Level.LEVEL1,
+      async (done: Function) => {
+        const result = await testNapi.runTest(
+          "unittest_fatal_message",
+        );
+        expect(result).assertEqual(0);
+        done();
+      },
+    );
+
+    /**
+     * @tc.name   unittest_fatal_message_assert_fail_dialog
+     * @tc.number SUB_THIRDPARTY_MUSL_UNITTEST_FATAL_MESSAGE_ASSERT_FAIL_DIALOG_0100
+     * @tc.desc   libc-test unittest_fatal_message_assert_fail_dialog
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it(
+      "unittest_fatal_message_assert_fail_dialog",
+      Level.LEVEL1,
+      async (done: Function) => {
+        const result = await testNapi.runTest(
+          "unittest_fatal_message_assert_fail_dialog",
+        );
+        expect(result).assertEqual(0);
+        done();
+      },
+    );
   });
 }

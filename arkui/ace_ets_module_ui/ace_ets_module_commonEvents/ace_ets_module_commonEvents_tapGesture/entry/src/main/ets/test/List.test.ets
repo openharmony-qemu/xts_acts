@@ -37,6 +37,7 @@ import getHistoricalPoints from './getHistoricalPointsTest/getHistoricalPoints.t
 import getHistoricalPoints_displayX from './getHistoricalPointsTest/getHistoricalPoints_displayX.test';
 import getHistoricalPoints_globalDisplayX from './getHistoricalPointsTest/getHistoricalPoints_globalDisplayX.test';
 import getHistoricalPoints_windowX from './getHistoricalPointsTest/getHistoricalPoints_windowX.test';
+import getHistoricalPoints_undefined from './getHistoricalPointsTest/getHistoricalPoints_undefined.test';
 
 
 export default function testsuite() {
@@ -64,4 +65,5 @@ export default function testsuite() {
   getHistoricalPoints_displayX();
   getHistoricalPoints_globalDisplayX();
   getHistoricalPoints_windowX();
+  getHistoricalPoints_undefined();
 }

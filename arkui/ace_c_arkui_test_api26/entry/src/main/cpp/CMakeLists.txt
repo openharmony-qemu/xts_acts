@@ -26,6 +26,7 @@ add_library(nativerender SHARED
     onAreaChange/UnregisterCommonAreaApproximateChangeEventTest.cpp
     gestureIntercept/GestureInterceptTest.cpp
     passThrough/PassThroughTest.cpp
+    getSizeLimitation/GetSizeLimitation.cpp
 )
 
  add_library(nativeNode SHARED 

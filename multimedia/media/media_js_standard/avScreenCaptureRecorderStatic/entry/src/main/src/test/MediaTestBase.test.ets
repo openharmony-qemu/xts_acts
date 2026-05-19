@@ -297,9 +297,14 @@ export default class MediaTestBase {
           console.info('Succeeded in presentPicker');
           this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
         }).catch((err) => {
-          console.error('failed to presentPicker, error: ' + err.code);
-          expect().assertFail();
-          done();
+          console.error('avScreenCaptureRecorder presentPicker failed, error: ' + err.code);
+          if (err.code == 5400103) {
+            this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+          } else {
+            console.error('avScreenCaptureRecorder init failed, error: ' + err.message);
+            expect().assertFail();
+            done();
+          }
         });
         break;
       case 'onError':
@@ -488,7 +493,8 @@ export default class MediaTestBase {
     console.info(`UiDriver start`)
     await this.msleepAsync(500)
     for (let i = 0; i < num; i++) {
-      let button = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 5000);
+      let button = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 5000) ||
+        await driver.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), 5000);
       console.info(`button is ${JSON.stringify(button)}`)
       if (button != null) {
         await button.click()

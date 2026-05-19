@@ -53,4 +53,33 @@ export const createPixelmapFromSurfaceWithTransformation005: (
   surfaceId: string, transformEnabled: boolean) => number;
 export const createPixelmapFromSurfaceWithTransformation006: (
   surfaceId: string, transformEnabled: boolean) => number;
-  
+export const testNativeSetPixelFormatAlphaU8: () => number;
+export const testNativeSetPixelFormatAlphaF16: () => number;
+export const testNativeSetOpacityNormal: (pixelMap: image.PixelMap, value: number) => number;
+export const testNativeSetOpacityBoundaryMax: (pixelMap: image.PixelMap, value: number) => number;
+export const testNativeSetOpacityAlphaF16: () => number;
+export const testNativeApplyScaleAbnormal: () => number;
+export const testNativeApplyScaleNormal: () => number;
+export const testNativeApplyScaleAfterRelease: () => number;
+export const testNativeApplyScaleLocked: () => number;
+export const testNativeApplyScaleWithAntiAliasingAbnormal: () => number;
+export const testNativeApplyScaleWithAntiAliasingNormal: () => number;
+export const testNativeApplyScaleWithAntiAliasingAfterRelease: () => number;
+export const testNativeApplyTranslateAbnormal: () => number;
+export const testNativeApplyTranslateNormal: () => number;
+export const testNativeApplyTranslateLocked: () => number;
+export const testNativeApplyTranslateAfterRelease: () => number;
+export const testNativeApplyRotateNormal: () => number;
+export const testNativeApplyRotateLocked: () => number;
+export const testNativeApplyRotateAfterRelease: () => number;
+export const testNativeApplyFlipNormal: () => number;
+export const testNativeApplyFlipLocked: () => number;
+export const testNativeApplyFlipAfterRelease: () => number;
+export const testNativeApplyCropNormal: () => number;
+export const testNativeApplyCropLocked: () => number;
+export const testNativeApplyCropAfterRelease: () => number;
+export const testNativeConvertAlphaTypeNormal: () => number;
+export const testNativeConvertAlphaTypeLocked: () => number;
+export const testNativeConvertAlphaTypeAfterRelease: () => number;
+export const testNativeConvertAlphaTypeNullSrc: (pixelMap: image.PixelMap) => number;
+export const testNativeConvertAlphaTypeNullDst: (pixelMap: image.PixelMap) => number;

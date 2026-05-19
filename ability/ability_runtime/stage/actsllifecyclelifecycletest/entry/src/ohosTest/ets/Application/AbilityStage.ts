@@ -15,7 +15,6 @@
 
 import AbilityStage from "@ohos.app.ability.AbilityStage"
 import hilog from '@ohos.hilog';
-import { AbilityLifecycleCallback } from '@kit.AbilityKit';
 
 const TEST_TAG = "TAG_MyAbilityStage"
 
@@ -28,7 +27,7 @@ export default class MyAbilityStage extends AbilityStage {
     globalThis.mainAbilityStageListKey = []
     globalThis.willAbilityStageListKey = []
     var abilityName = "";
-    let AbilityLifecycleCallback:AbilityLifecycleCallback = {
+    let AbilityLifecycleCallback = {
       onAbilityCreate(ability) {
         abilityName = ability.context.abilityInfo.name;
         globalThis.mainAbilityStageListKey.push(abilityName + " onAbilityCreate");
@@ -140,7 +139,7 @@ export default class MyAbilityStage extends AbilityStage {
     }
 
     globalThis.ApplicationContextStage = this.context.getApplicationContext();
-    var callBackId = globalThis.ApplicationContextStage.on('abilityLifecycle', AbilityLifecycleCallback);
+    var callBackId = globalThis.ApplicationContextStage.registerAbilityLifecycleCallback(AbilityLifecycleCallback);
     globalThis.mainAbilityStageCallBackId = callBackId
     hilog.info(0x0000, TEST_TAG, `callBackId :${callBackId}`);
   }

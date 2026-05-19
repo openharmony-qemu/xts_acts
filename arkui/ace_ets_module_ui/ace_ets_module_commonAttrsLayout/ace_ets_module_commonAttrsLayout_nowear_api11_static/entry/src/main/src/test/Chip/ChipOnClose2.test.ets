@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -76,7 +76,7 @@ it('ChipOnClose2_static_001', Level.LEVEL0, async (done: () => void): Promise<vo
       console.info('ChipOnClose2_static_001 right：' + right + 'top:' + top);
       let driver = Driver.create();
       await driver.mouseClick({
-        x: Math.round(right) as int, y: Math.round(top) as int
+        x: Math.round(right).toInt(), y: Math.round(top).toInt()
       }, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(1000);
       console.info('ChipOnClose2_static_001 click success');

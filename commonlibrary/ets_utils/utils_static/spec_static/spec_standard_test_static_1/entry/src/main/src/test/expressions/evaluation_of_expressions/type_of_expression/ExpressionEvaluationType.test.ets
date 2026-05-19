@@ -260,13 +260,13 @@ export default function ExpressionEvaluationTypeTest() {
      * @tc.number    SUB_EXPRESSION_EVALUATION_TYPE_1500
      * @tc.name      testExpressionEvaluationType0015
      * @tc.desc      There are two ways to facilitate the compatibility of a non-standalone expression
-     *               with its surrounding context. Assignment from 'Array<number>(3)' to 'number[]'.
+     *               with its surrounding context. Assignment from 'Array<number>()' to 'number[]'.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testExpressionEvaluationType0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number[] = new Array<number>(3);
+      let a: number[] = new Array<number>();
       expect(typeof a).assertEqual("object");
     })
 
@@ -528,13 +528,13 @@ export default function ExpressionEvaluationTypeTest() {
      * @tc.number    SUB_EXPRESSION_EVALUATION_TYPE_3400
      * @tc.name      testExpressionEvaluationType0034
      * @tc.desc      No target type is expected in the context, then the expression is called a standalone
-     *               expression. Assignment from 'Array<number>(3)'.
+     *               expression. Assignment from 'Array<number>()'.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testExpressionEvaluationType0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a = new Array<number>(3);
+      let a = new Array<number>();
       expect(typeof a).assertEqual("object");
     })
 

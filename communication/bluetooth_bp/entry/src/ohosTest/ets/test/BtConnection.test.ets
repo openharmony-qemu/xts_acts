@@ -66,6 +66,10 @@ import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPatter
             bluetooth.offScanModeChange()
         }
     }
+    function onReceiveEvent_AclStateResult(data : bluetooth.AclStateResult){
+        console.info('[bluetooth_js]acl state change result'+ JSON.stringify(data));
+        expect(data).not().assertUndefined();
+    }
 
     const PROFILE_UUID_HFP_AG = '0000111F-0000-1000-8000-00805F9B34FB';
     const PROFILE_UUID_HFP_HF = '0000111E-0000-1000-8000-00805F9B34FB';
@@ -4453,6 +4457,26 @@ describe('btConnectionTest', () => {
                 console.info('[bluetooth_js] getVirtualAddressByHash fail 2900015 参数格式与规范不一致');
                 expect(Number(err.code)).assertEqual(2900015);
             }
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONNECTION_ON_ACLSTATE_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONNECTION_ON_ACLSTATE_0100
+     * @tc.desc   Test common onAclStateChange api26
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_CONNECTION_ON_ACLSTATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) => {
+        try {
+            bluetooth.onAclStateChange(onReceiveEvent_AclStateResult);
+            bluetooth.offAclStateChange(onReceiveEvent_AclStateResult);
+            console.info("[bluetooth_js]connection on/offAclStateChange is success ");
+        } catch (err) {
+            console.error("[bluetooth_js]connection on/offAclStateChange is fail , errCode:" + err.code + ",errMessage:" + err.message);
+            expect().assertFail();
         }
         done();
     })

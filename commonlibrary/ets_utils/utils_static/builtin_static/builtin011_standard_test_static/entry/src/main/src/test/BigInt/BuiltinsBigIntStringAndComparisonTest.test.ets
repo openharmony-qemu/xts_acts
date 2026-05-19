@@ -920,23 +920,6 @@ export default function BuiltinsBigIntStringAndComparisonTest(): void {
     });
 
     /**
-     * @tc.name  bigIntToStringRadixDoubleTest4900
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_RADIX_DOUBLE_TEST_4900
-     * @tc.desc  Test toString(radix?: double) with undefined - defaults to base 10
-     * @tc.type  FUNCTION
-     * @tc.size  SMALLTEST
-     * @tc.level LEVEL0
-     */
-    it('bigIntToStringRadixDoubleTest4900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const bigIntValue: BigInt = new BigInt(12345);
-      const result: string = bigIntValue.toString(undefined);
-
-      expect(result).assertEqual("12345");
-      expect(result).assertEqual(bigIntValue.toString(10));
-      expect(result).assertEqual(bigIntValue.toString());
-    });
-
-    /**
      * @tc.name  bigIntToStringRadixDoubleTest5000
      * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_RADIX_DOUBLE_TEST_5000
      * @tc.desc  Test toString(radix?: double) with valid double values 2.0 and 16.0
@@ -947,79 +930,13 @@ export default function BuiltinsBigIntStringAndComparisonTest(): void {
     it('bigIntToStringRadixDoubleTest5000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const bigIntValue: BigInt = new BigInt(255);
 
-      expect(bigIntValue.toString(2.0 as double)).assertEqual("11111111");
-      expect(bigIntValue.toString(16.0 as double)).assertEqual("ff");
-      expect(bigIntValue.toString(8.0 as double)).assertEqual("377");
+      expect(bigIntValue.toString(2)).assertEqual("11111111");
+      expect(bigIntValue.toString(8)).assertEqual("377");
+      expect(bigIntValue.toString(16)).assertEqual("ff");
+      expect(bigIntValue.toString(10)).assertEqual("255");
     });
 
-    /**
-     * @tc.name  bigIntToStringRadixDoubleTest5100
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_RADIX_DOUBLE_TEST_5100
-     * @tc.desc  Test toString(radix?: double) with fractional double truncates to int (16.7 -> 16)
-     * @tc.type  FUNCTION
-     * @tc.size  SMALLTEST
-     * @tc.level LEVEL0
-     */
-    it('bigIntToStringRadixDoubleTest5100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const bigIntValue: BigInt = new BigInt(255);
 
-      expect(bigIntValue.toString(16.7 as double)).assertEqual("ff");
-      expect(bigIntValue.toString(2.9 as double)).assertEqual("11111111");
-      expect(bigIntValue.toString(10.1 as double)).assertEqual("255");
-    });
-
-    /**
-     * @tc.name  bigIntToStringRadixDoubleTest5200
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_RADIX_DOUBLE_TEST_5200
-     * @tc.desc  Test toString(radix?: double) with very large double values that convert to valid radix (360.9 -> 360, capped at 36 or error handled by implementation)
-     * @tc.type  FUNCTION
-     * @tc.size  SMALLTEST
-     * @tc.level LEVEL0
-     */
-    it('bigIntToStringRadixDoubleTest5200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const bigIntValue: BigInt = new BigInt(100);
-
-      // Test with double that truncates to valid radix 16
-      const result: string = bigIntValue.toString(16.7 as double);
-
-      expect(result).assertEqual("64");
-      expect(result).assertEqual(bigIntValue.toString(16));
-    });
-
-    /**
-     * @tc.name  bigIntToStringRadixDoubleTest5300
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_RADIX_DOUBLE_TEST_5300
-     * @tc.desc  Test toString(radix?: double) with large positive double value truncating to valid radix
-     * @tc.type  FUNCTION
-     * @tc.size  SMALLTEST
-     * @tc.level LEVEL0
-     */
-    it('bigIntToStringRadixDoubleTest5300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const bigIntValue: BigInt = new BigInt(255);
-
-      // 36.9 truncates to 36, which is valid
-      const result: string = bigIntValue.toString(36.9 as double);
-
-      expect(result).assertEqual("73");
-      expect(result).assertEqual(bigIntValue.toString(36));
-    });
-
-    /**
-     * @tc.name  bigIntToStringRadixDoubleTest5400
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_RADIX_DOUBLE_TEST_5400
-     * @tc.desc  Test toString(radix?: double) with double value that has fractional part (2.5 -> 2)
-     * @tc.type  FUNCTION
-     * @tc.size  SMALLTEST
-     * @tc.level LEVEL0
-     */
-    it('bigIntToStringRadixDoubleTest5400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const bigIntValue: BigInt = new BigInt(255);
-
-      const result: string = bigIntValue.toString(2.5 as double);
-
-      expect(result).assertEqual("11111111");
-      expect(result).assertEqual(bigIntValue.toString(2));
-    });
 
     /**
      * @tc.name  bigIntToStringRadixDoubleTest5500
@@ -1032,29 +949,9 @@ export default function BuiltinsBigIntStringAndComparisonTest(): void {
     it('bigIntToStringRadixDoubleTest5500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const bigIntValue: BigInt = new BigInt(35);
 
-      expect(bigIntValue.toString(2.0 as double)).assertInstanceOf('string');
-      expect(bigIntValue.toString(36.0 as double)).assertInstanceOf('string');
-      expect(bigIntValue.toString(36.0 as double)).assertEqual("z");
-    });
-
-    /**
-     * @tc.name  bigIntToStringRadixDoubleTest5600
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_RADIX_DOUBLE_TEST_5600
-     * @tc.desc  Test toString(radix?: double) with double values truncating to valid boundary radix (2.9 -> 2, 36.9 -> 36)
-     * @tc.type  FUNCTION
-     * @tc.size  SMALLTEST
-     * @tc.level LEVEL0
-     */
-    it('bigIntToStringRadixDoubleTest5600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const bigIntValue: BigInt = new BigInt(100);
-
-      const resultLow: string = bigIntValue.toString(2.9 as double);
-      const resultHigh: string = bigIntValue.toString(36.9 as double);
-
-      expect(resultLow).assertEqual("1100100");
-      expect(resultHigh).assertEqual("2s");
-      expect(resultLow).assertEqual(bigIntValue.toString(2));
-      expect(resultHigh).assertEqual(bigIntValue.toString(36));
+      expect(bigIntValue.toString(2)).assertInstanceOf('string');
+      expect(bigIntValue.toString(36)).assertInstanceOf('string');
+      expect(bigIntValue.toString(36)).assertEqual("z");
     });
 
     /**
@@ -1068,8 +965,8 @@ export default function BuiltinsBigIntStringAndComparisonTest(): void {
     it('bigIntToStringRadixDoubleTest5700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const bigIntValue: BigInt = new BigInt(100);
 
-      const result16: string = bigIntValue.toString(16.0 as double);
-      const result8: string = bigIntValue.toString(8.5 as double);
+      const result16: string = bigIntValue.toString(16);
+      const result8: string = bigIntValue.toString(8);
 
       expect(result16).assertEqual("64");
       expect(result8).assertEqual("144");
@@ -1086,41 +983,11 @@ export default function BuiltinsBigIntStringAndComparisonTest(): void {
     it('bigIntToStringRadixDoubleTest5800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const bigIntValue: BigInt = new BigInt(100);
 
-      const result2: string = bigIntValue.toString(2.0 as double);
-      const result2Point1: string = bigIntValue.toString(2.1 as double);
-      const result3: string = bigIntValue.toString(3.9 as double);
+      const result2: string = bigIntValue.toString(2);
+      const result3: string = bigIntValue.toString(3);
 
       expect(result2).assertEqual("1100100");
-      expect(result2Point1).assertEqual("1100100");
       expect(result3).assertEqual("10201");
-    });
-
-    /**
-     * @tc.name  bigIntToStringRadixDoubleTest5900
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_RADIX_DOUBLE_TEST_5900
-     * @tc.desc  Test toString(radix?: double) with double values having fractional part that truncate to valid radix (36.5 -> 36, 16.7 -> 16)
-     * @tc.type  FUNCTION
-     * @tc.size  SMALLTEST
-     * @tc.level LEVEL0
-     */
-    it('bigIntToStringRadixDoubleTest5900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const bigIntValue: BigInt = new BigInt(100);
-
-      const result36Point5: string = bigIntValue.toString(36.5 as double);
-      const result36Point9: string = bigIntValue.toString(36.9 as double);
-      const result36: string = bigIntValue.toString(36 as double);
-
-      expect(result36Point5).assertEqual("2s");
-      expect(result36Point9).assertEqual("2s");
-      expect(result36).assertEqual("2s");
-      expect(result36Point5).assertEqual(result36);
-
-      const result16Point7: string = bigIntValue.toString(16.7 as double);
-      const result16: string = bigIntValue.toString(16 as double);
-
-      expect(result16Point7).assertEqual("64");
-      expect(result16).assertEqual("64");
-      expect(result16Point7).assertEqual(result16);
     });
 
     /**

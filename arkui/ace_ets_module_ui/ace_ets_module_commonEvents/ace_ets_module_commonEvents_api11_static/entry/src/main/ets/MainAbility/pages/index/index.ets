@@ -20,8 +20,6 @@ import testsuite from '../../../../src/test/List.test'
 import { Entry, Component, Column, Row, Button, List, ListItem, FlexDirection, ButtonType, Margin, ItemAlign, FlexAlign, FontWeight, Badge, Text, Flex, ClickEvent } from '@ohos.arkui.component'
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component

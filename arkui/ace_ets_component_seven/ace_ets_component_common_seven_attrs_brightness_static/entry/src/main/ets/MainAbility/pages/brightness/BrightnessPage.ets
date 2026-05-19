@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-import { attrsManager } from '../../common/AttrsManager'
 import router from '@ohos.router'
 import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingContext2D, RenderingContextSettings,
   AlphabetIndexer, Button, Blank, Checkbox, CheckboxGroup, DataPanel, DatePicker, Divider, Gauge, Image, ImageAnimator,
@@ -638,8 +637,8 @@ struct brightnessPage {
     this.componentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey as  string;
     this.parentWidth = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
     this.parentHeight = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
-    this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int)
-    this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int)
+    this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns.toInt())
+    this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter.toInt())
     this.parentComponentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey;
     this._brightnessCheckboxMod.mBrightness = (this.getUIContext().getRouter().getParams() as RouterParams).view.testValue.setValue.brightness
     attrsManager.registerDataChange((value: SetValue) => {
@@ -772,7 +771,7 @@ struct brightnessPage {
           Marquee({
             start: true,
             step: 50,
-            loop: Infinity as int,
+            loop: Infinity.toInt(),
             fromStart: true,
             src: 'Running Marquee starts rolling'
           }).attributeModifier(this._brightnessMarqueeMod)

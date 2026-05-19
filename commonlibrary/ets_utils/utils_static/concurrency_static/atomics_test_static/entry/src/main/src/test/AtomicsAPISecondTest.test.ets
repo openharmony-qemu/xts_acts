@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -71,7 +71,7 @@ export default function AtomicsAPISecondTest() {
         expect(notifyCount1).assertEqual(0);
         
         const lastIndex: number = typedArray.length - 1;
-        const notifyCount2: number = Atomics.notify(typedArray, lastIndex as int);
+        const notifyCount2: number = Atomics.notify(typedArray, lastIndex.toInt());
         expect(notifyCount2).assertEqual(0);
         
         try {
@@ -81,13 +81,13 @@ export default function AtomicsAPISecondTest() {
         }
         
         try {
-          Atomics.notify(typedArray, typedArray.length as int);
+          Atomics.notify(typedArray, typedArray.length.toInt());
         } catch (error) {
           expect(error instanceof RangeError).assertTrue();
         }
         
         try {
-          Atomics.notify(typedArray, typedArray.length as int + 1);
+          Atomics.notify(typedArray, typedArray.length.toInt() + 1);
         } catch (error) {
           expect(error instanceof RangeError).assertTrue();
         }

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -109,8 +109,8 @@ it('TapGestureBasicClickTest_static_0010', Level.LEVEL0, async (done: () => void
 
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.click(Math.round(areaObj.left + areaWidth / 2) as Int,
-        Math.round(areaObj.top + areaHeight / 2) as Int);
+      await driver.click(Math.round(areaObj.left + areaWidth / 2).toInt(),
+        Math.round(areaObj.top + areaHeight / 2).toInt());
       await CommonFunc.sleep(3000);
       let text1 = inspector.getInspectorByKey('TapGestureBasicClick_repeat');
       let obj1 = JSON.parseJsonElement(text1);

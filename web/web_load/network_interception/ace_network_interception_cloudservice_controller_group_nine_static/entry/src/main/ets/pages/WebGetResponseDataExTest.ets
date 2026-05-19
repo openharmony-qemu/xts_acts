@@ -39,7 +39,7 @@ import { Callback } from '@ohos.base'
 import emitter from '@ohos.events.emitter';
 import { Callback, RecordData } from '@ohos.base'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 
@@ -206,7 +206,7 @@ struct WebGetResponseDataExTest {
 
 
 // Mock WebResourceResponse class for testing
-class MockWebResourceResponse {
+export class MockWebResourceResponse {
   private responseData: string | int | ArrayBuffer | Resource | undefined;
   private isValid: boolean = true;
 

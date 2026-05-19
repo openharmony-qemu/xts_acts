@@ -207,7 +207,7 @@ export default function abilityTest() {
       let callBackIdB:number = globalThis.mainAbilityBCallBackId
       await sleep(1000);
       globalThis.ApplicationContextB
-        .off('abilityLifecycle', globalThis.callBackIdB, (error:base.BusinessError, data:ESObject) => {
+        .unregisterAbilityLifecycleCallback(globalThis.callBackIdB, (error:base.BusinessError, data:ESObject) => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} unregisterAbilityLifecycleCallback success,
             err:  ${JSON.stringify(error)} ",data: ${JSON.stringify(data)}`);
         });
@@ -325,15 +325,15 @@ export default function abilityTest() {
 
       isTerminateSelfMainAbilityA = true;
       globalThis.ApplicationContextA
-        .off('abilityLifecycle', globalThis.mainAbilityACallBackId, (error:base.BusinessError, data:ESObject) => {
+        .unregisterAbilityLifecycleCallback(globalThis.mainAbilityACallBackId, (error:base.BusinessError, data:ESObject) => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} unregisterAbilityLifecycleCallback success,
             err:  ${JSON.stringify(error)} ",data: ${JSON.stringify(data)}`);
-          expect(error).assertNull();
+          expect(error.code).assertEqual(0);
           globalThis.ApplicationContextA
-            .off('abilityLifecycle', globalThis.mainAbilityACallBackId, (error:base.BusinessError, data:ESObject) => {
+            .unregisterAbilityLifecycleCallback(globalThis.mainAbilityACallBackId, (error:base.BusinessError, data:ESObject) => {
               hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} unregisterAbilityLifecycleCallback success,
                 err:  ${JSON.stringify(error)} ",data: ${JSON.stringify(data)}`);
-              expect(error).not().assertNull();
+              expect(error.code).assertEqual(1);
               done()
             });
         });
@@ -386,10 +386,10 @@ export default function abilityTest() {
       await sleep(3000);
       globalThis.abilityAContext.terminateSelf()
       globalThis.ApplicationContextA
-        .off('abilityLifecycle', globalThis.mainAbilityACallBackId, (error:base.BusinessError, data:ESObject) => {
+        .unregisterAbilityLifecycleCallback(globalThis.mainAbilityACallBackId, (error:base.BusinessError, data:ESObject) => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} unregisterAbilityLifecycleCallback success,
             err:  ${JSON.stringify(error)} ",data: ${JSON.stringify(data)}`);
-          expect(error).assertNull();
+          expect(error.code).assertEqual(0);
           done()
         });
     })
@@ -440,12 +440,12 @@ export default function abilityTest() {
 
       isTerminateSelfMainAbilityA = true;
       globalThis.ApplicationContextA
-        .off('abilityLifecycle', globalThis.mainAbilityACallBackId, (error:base.BusinessError, data:ESObject) => {
+        .unregisterAbilityLifecycleCallback(globalThis.mainAbilityACallBackId, (error:base.BusinessError, data:ESObject) => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} unregisterAbilityLifecycleCallback success,
             err:  ${JSON.stringify(error)} ",data: ${JSON.stringify(data)}`);
-          expect(error).assertNull();
+          expect(error.code).assertEqual(0);
           globalThis.ApplicationContextA
-            .off('abilityLifecycle', globalThis.mainAbilityACallBackId, (error:base.BusinessError, data:ESObject) => {
+            .unregisterAbilityLifecycleCallback(globalThis.mainAbilityACallBackId, (error:base.BusinessError, data:ESObject) => {
               hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} unregisterAbilityLifecycleCallback success,
                 err:  ${JSON.stringify(error)} ",data: ${JSON.stringify(data)}`);
               done()
@@ -481,10 +481,10 @@ export default function abilityTest() {
       expect(transferStr0.indexOf("MainAbilityA onAbilityDestroy") != -1).assertTrue();
 
       globalThis.ApplicationContextStage
-        .off('abilityLifecycle', globalThis.mainAbilityStageCallBackId, (error:base.BusinessError, data:ESObject) => {
+        .unregisterAbilityLifecycleCallback(globalThis.mainAbilityStageCallBackId, (error:base.BusinessError, data:ESObject) => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} unregisterAbilityLifecycleCallback success,
             err:  ${JSON.stringify(error)} ",data: ${JSON.stringify(data)}`);
-          expect(error).assertNull();
+          expect(error.code).assertEqual(0);
           done()
         });
     })
@@ -865,11 +865,11 @@ export default function abilityTest() {
           
         }
       }
-      let callBackId:number = globalThis.abilityCContext.getApplicationContext().on('abilityLifecycle', AbilityLifecycleCallback);
+      let callBackId:number = globalThis.abilityCContext.getApplicationContext().registerAbilityLifecycleCallback(AbilityLifecycleCallback);
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} MainAbilityC callBackId:${callBackId}`);
       await sleep(1000);
 
-      await globalThis.abilityCContext.getApplicationContext().off('abilityLifecycle', callBackId).then((data:void) => {
+      await globalThis.abilityCContext.getApplicationContext().unregisterAbilityLifecycleCallback(callBackId).then((data:void) => {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} unregisterAbilityLifecycleCallback success,
           callBackId:  ${callBackId} ",data: ${JSON.stringify(data)}`);
       }).catch((error:BusinessError) => {
@@ -878,11 +878,11 @@ export default function abilityTest() {
         expect().assertFail()
         done()
       })
-      let callBackId2:number = globalThis.abilityCContext.getApplicationContext().on('abilityLifecycle', AbilityLifecycleCallback);
+      let callBackId2:number = globalThis.abilityCContext.getApplicationContext().registerAbilityLifecycleCallback(AbilityLifecycleCallback);
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} MainAbilityC callBackId2:${callBackId2}`);
       await sleep(1000);
       isTerminateSelfMainAbilityC = true;
-      await globalThis.abilityCContext.getApplicationContext().off('abilityLifecycle', callBackId2).then((data:void) => {
+      await globalThis.abilityCContext.getApplicationContext().unregisterAbilityLifecycleCallback(callBackId2).then((data:void) => {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} unregisterAbilityLifecycleCallback success,
           callBackId:  ${callBackId} ",data: ${JSON.stringify(data)}`);
       }).catch((error:base.BusinessError) => {
@@ -910,10 +910,10 @@ export default function abilityTest() {
       await sleep(1000);
       isTerminateSelfMainAbilityC = true;
       globalThis.abilityCContext.getApplicationContext()
-        .off('abilityLifecycle', 100, (error:base.BusinessError, data:ESObject) => {
+        .unregisterAbilityLifecycleCallback(100, (error:base.BusinessError, data:ESObject) => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} unregisterAbilityLifecycleCallback success,
             err:  ${JSON.stringify(error)} ",data: ${JSON.stringify(data)}`);
-          expect(error).not().assertNull();
+          expect(error.code).assertEqual(1);
           done()
         });
     })
@@ -933,10 +933,10 @@ export default function abilityTest() {
       await sleep(1000);
       isTerminateSelfMainAbilityC = true;
       globalThis.abilityCContext.getApplicationContext()
-        .off('abilityLifecycle', "", (error:base.BusinessError, data:ESObject) => {
+        .unregisterAbilityLifecycleCallback("", (error:base.BusinessError, data:ESObject) => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} unregisterAbilityLifecycleCallback success,
             err:  ${JSON.stringify(error)} ",data: ${JSON.stringify(data)}`);
-          expect(error).not().assertNull();
+          expect(error.code).assertEqual(1);
           done()
         });
     })
@@ -956,10 +956,10 @@ export default function abilityTest() {
       await sleep(1000);
       isTerminateSelfMainAbilityC = true;
       globalThis.abilityCContext.getApplicationContext()
-        .off('abilityLifecycle', -1, (error:base.BusinessError, data:ESObject) => {
+        .unregisterAbilityLifecycleCallback(-1, (error:base.BusinessError, data:ESObject) => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} unregisterAbilityLifecycleCallback success,
             err:  ${JSON.stringify(error)} ",data: ${JSON.stringify(data)}`);
-          expect(error).not().assertNull();
+          expect(error.code).assertEqual(1);
           done()
         });
     })
@@ -979,10 +979,10 @@ export default function abilityTest() {
       await sleep(1000);
       isTerminateSelfMainAbilityC = true;
       globalThis.abilityCContext.getApplicationContext()
-        .off('abilityLifecycle', "test", (error:base.BusinessError, data:ESObject) => {
+        .unregisterAbilityLifecycleCallback("test", (error:base.BusinessError, data:ESObject) => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} unregisterAbilityLifecycleCallback success, err:
             ${JSON.stringify(error)} ",data: ${JSON.stringify(data)}`);
-          expect(error).not().assertNull();
+          expect(error.code).assertEqual(1);
           done()
         });
     })

@@ -148,43 +148,43 @@ import { LengthUnit, typeNode } from '@ohos.arkui.node'
 
 import { BusinessError } from '@kit.BasicServicesKit'
 @Observed
-class WaterFlowColumnsTemplateFixedModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowColumnsTemplateFixedModifier implements AttributeModifier<WaterFlowAttribute> {
   applyNormalAttribute(instance: WaterFlowAttribute): void {
     instance.columnsTemplate('1fr 2fr 1fr');
   }
 }
 @Observed
-class WaterFlowColumnsTemplateEmptyModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowColumnsTemplateEmptyModifier implements AttributeModifier<WaterFlowAttribute> {
   applyNormalAttribute(instance: WaterFlowAttribute): void {
     instance.columnsTemplate('');
   }
 }
 @Observed
-class WaterFlowColumnsTemplateInvalidModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowColumnsTemplateInvalidModifier implements AttributeModifier<WaterFlowAttribute> {
   applyNormalAttribute(instance: WaterFlowAttribute): void {
     instance.columnsTemplate('abc xyz');
   }
 }
 @Observed
-class WaterFlowColumnsTemplateLG5Modifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowColumnsTemplateLG5Modifier implements AttributeModifier<WaterFlowAttribute> {
   applyNormalAttribute(instance: WaterFlowAttribute): void {
     instance.columnsTemplate({fillType:PresetFillType.BREAKPOINT_SM2MD3LG5});
   }
 }
 @Observed
-class WaterFlowColumnsTemplateLG3Modifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowColumnsTemplateLG3Modifier implements AttributeModifier<WaterFlowAttribute> {
   applyNormalAttribute(instance: WaterFlowAttribute): void {
     instance.columnsTemplate({fillType:PresetFillType.BREAKPOINT_SM1MD2LG3});
   }
 }
 @Observed
-class WaterFlowColumnsTemplateDEFModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowColumnsTemplateDEFModifier implements AttributeModifier<WaterFlowAttribute> {
   applyNormalAttribute(instance: WaterFlowAttribute): void {
     instance.columnsTemplate({fillType:PresetFillType.BREAKPOINT_DEFAULT});
   }
 }
 @Observed
-class WaterFlowColumnsTemplateExplicitUndefinedModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowColumnsTemplateExplicitUndefinedModifier implements AttributeModifier<WaterFlowAttribute> {
   applyNormalAttribute(instance: WaterFlowAttribute): void {
     instance.columnsTemplate(undefined);
   }

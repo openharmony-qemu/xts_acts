@@ -24,7 +24,7 @@ import {
   Progress,QRCode,Radio,Rating,ScrollBar,Select,Slider,TextArea,TextClock,TextInput,TextPicker,TextTimer,TimePicker,Toggle,Badge,
   Counter,GridRow,Grid,List,RelativeContainer,Row,Refresh,TextAlign,SideBarContainer,Stack,Swiper,Tabs,WaterFlow,
   Circle,Ellipse,Line,Polyline,Polygon,Path,Rect,Shape,ColumnSplit,RowSplit,Blank,applyStyles
-,Builder,Button,DataPanelType,Color,Image,MenuItem,ProgressType,BarState,Search,SliderStyle,Axis,ToggleType,Column,Flex,GridRowDirection,GridCol
+,Builder,Button,DataPanelType,Image,MenuItem,ProgressType,BarState,Search,SliderStyle,Axis,ToggleType,Column,Flex,GridRowDirection,GridCol
 ,GridItem,ListItem,Scroll,SideBarContainerType,TabContent,FlowItem,$r,MenuItemOptions,Scroller,BadgeParamWithNumber,BadgeStyle,GridColOptions,GridColColumnOption,
   AlignRuleOption,VerticalAlign,HorizontalAlign,ColumnOptions,FlexAlign,ImageFit,Position,PolylineOptions,RectOptions,FlexDirection
 ,Padding,Web,WebviewController,RichText,MenuItemGroup,CommonMethod
@@ -127,7 +127,7 @@ struct paddingPage {
         Marquee({
           start: true,
           step: 50,
-          loop: Infinity as int,
+          loop: Infinity.toInt(),
           fromStart: true,
           src: this.src
         }).applyStyles(this.commonStyle)

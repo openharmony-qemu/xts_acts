@@ -25,6 +25,9 @@ import ImageLoaderTest from './ImageLoader/ImageLoader.test';
 import ImageOrientationTest from './imageTest/ImageOrientationTest.test';
 import ImageHdrBrightnessTest from './imageTest/ImageHdrBrightness.test';
 import ListImageTest from './ListImageTest/ListImage.test';
+import ImageColorFilterTest from './ImageColorFilterTest/ImageColorFilter.test';
+import ImageReloadKeyTest from './imageTest/ImageReloadKey.test';
+
 export default function testsuite() {
   blendNodeTest();
   getUIContextApiTest();
@@ -37,4 +40,6 @@ export default function testsuite() {
   ImageOrientationTest();
   ImageHdrBrightnessTest();
   ListImageTest();
+  ImageColorFilterTest();
+  ImageReloadKeyTest();
 }

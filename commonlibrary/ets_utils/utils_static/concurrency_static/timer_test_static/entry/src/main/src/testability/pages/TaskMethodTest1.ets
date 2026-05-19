@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2024 HiHope Open Source Organization.
+* Copyright (C) 2024-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the 'License');
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -24,17 +24,17 @@ export async function createTimer(interval: number, counter: number): Promise<Ti
     let timerId = 0.0;
     timerId = setInterval(() => {
       if (++count >= counter) {
-        clearInterval(timerId as int);
+        clearInterval(timerId.toInt());
         resolve({ id: timerId, count: count } as Timer);
       }
-    }, interval as int);
+    }, interval.toInt()).toDouble();
   });
 }
 
 
 export function attemptClearTimer(timerId: number): void {
   try {
-    clearInterval(timerId as int);
+    clearInterval(timerId.toInt());
   } catch (err) {
     throw err as Error;
   }
@@ -49,6 +49,6 @@ export async function mainTimer(interval: number, counter: number): Promise<Time
       if (++count >= counter) {
         resolve({ id: timerId, count: count } as Timer);
       }
-    }, interval as int);
+    }, interval.toInt()).toDouble();
   });
 }

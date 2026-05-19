@@ -148,7 +148,7 @@ struct getVisibleContentInfo {
   }
 }
 
-interface TimeTable {
+export interface TimeTable {
   title: string;
   projects: string[];
 }

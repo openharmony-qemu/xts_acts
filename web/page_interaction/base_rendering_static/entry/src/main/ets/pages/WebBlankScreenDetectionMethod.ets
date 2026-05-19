@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-import { Text,BlurOnKeyboardHideMode,$rawfile,OnConsoleEvent,Entry, Component, Column, Row, Button, ClickEvent, Web, BlankScreenDetectionMethod, DetectedBlankScreenReason, BlankScreenDetectionEventInfo } from "@ohos.arkui.component"
-import { State } from "@ohos.arkui.stateManagement"
+import { Text,BlurOnKeyboardHideMode,$rawfile,OnConsoleEvent,Entry, Component, Column, Row, Button, ClickEvent, Web, BlankScreenDetectionMethod, DetectedBlankScreenReason, BlankScreenDetectionEventInfo } from "@ohos.arkui.component"	 
+import { State } from "@ohos.arkui.stateManagement" 
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import web_webview from '@ohos.web.webview';
 import Utils from '../../src/test/Util.test';
@@ -137,6 +137,19 @@ struct WebComponent {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   Utils.emitEvent(error, 20260315)
                 }
+                break;
+              }
+              case "emitSwitchToWebViewAISessionTypePage": {
+                try {
+                  let uiContext: UIContext = this.getUIContext();
+                  let router: Router = uiContext.getRouter();
+                  router.pushUrl({ url: 'pages/WebViewAISessionType' })
+                  console.info("emitSwitchToWebViewAISessionTypePage success");
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                }
+                break;
               }
             }
           })

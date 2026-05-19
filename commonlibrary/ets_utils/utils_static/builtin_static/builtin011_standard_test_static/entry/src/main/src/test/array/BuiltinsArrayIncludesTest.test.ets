@@ -74,8 +74,8 @@ export default function BuiltinsArrayIncludesTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayIncludesTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>();
-      
+      const arr: number[] = Array.create<number>(0, 0);
+
       expect(arr.includes(1)).assertFalse();
 
       expect(arr.length).assertEqual(0);

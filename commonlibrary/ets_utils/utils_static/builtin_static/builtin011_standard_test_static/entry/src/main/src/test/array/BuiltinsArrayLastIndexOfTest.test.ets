@@ -20,7 +20,7 @@ interface Person {
   age: number;
 }
 
-export default function BuiltinsArrayLastIndexOfTest() {
+export default function BuiltinsArrayLastIndexOfTest() : void{
   describe("BuiltinsArrayLastIndexOfTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -52,7 +52,12 @@ export default function BuiltinsArrayLastIndexOfTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayLastIndexOfTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(1, 2, 3, 2, 1);
+      const arr = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 2;
+      arr[4] = 1;
       const result = arr.lastIndexOf(2);
 
       expect(result).assertEqual(3);
@@ -67,7 +72,12 @@ export default function BuiltinsArrayLastIndexOfTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayLastIndexOfTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
       const result = arr.lastIndexOf(6);
 
       expect(result).assertEqual(-1);
@@ -82,7 +92,7 @@ export default function BuiltinsArrayLastIndexOfTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayLastIndexOfTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>();
+      const arr: number[] = Array.create<number>(0, 0);
       const result = arr.lastIndexOf(1);
 
       expect(result).assertEqual(-1);
@@ -127,7 +137,11 @@ export default function BuiltinsArrayLastIndexOfTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayLastIndexOfTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<string>('hello', 'world', 'test', 'world');
+      const arr = Array.create<string>(4, '');
+      arr[0] = 'hello';
+      arr[1] = 'world';
+      arr[2] = 'test';
+      arr[3] = 'world';
       const result = arr.lastIndexOf('world');
 
       expect(result).assertEqual(3);
@@ -142,7 +156,11 @@ export default function BuiltinsArrayLastIndexOfTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayLastIndexOfTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<boolean>(true, false, true, false);
+      const arr = Array.create<boolean>(4, false);
+      arr[0] = true;
+      arr[1] = false;
+      arr[2] = true;
+      arr[3] = false;
       const result = arr.lastIndexOf(true);
 
       expect(result).assertEqual(2);
@@ -160,7 +178,10 @@ export default function BuiltinsArrayLastIndexOfTest() {
       const person1: Person = { name: 'Alice', age: 25 };
       const person2: Person = { name: 'Bob', age: 30 };
       const person3: Person = { name: 'Alice', age: 25 };
-      const arr = new Array<Person>(person1, person2, person3);
+      const arr: Person[] = Array.create<Person>(3, { name: '', age: 0 });
+      arr[0] = person1;
+      arr[1] = person2;
+      arr[2] = person3;
 
       const result = arr.lastIndexOf(person1);
       expect(result).assertEqual(0);
@@ -175,7 +196,13 @@ export default function BuiltinsArrayLastIndexOfTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayLastIndexOfTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr: Array<number | null | undefined> = [1, null, 2, undefined, 3, null];
+      const arr: Array<number | null | undefined> = Array.create<number | null | undefined>(6, 0);
+      arr[0] = 1;
+      arr[1] = null;
+      arr[2] = 2;
+      arr[3] = undefined;
+      arr[4] = 3;
+      arr[5] = null;
 
       const result1 = arr.lastIndexOf(null);
       expect(result1).assertEqual(5);
@@ -193,7 +220,11 @@ export default function BuiltinsArrayLastIndexOfTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayLastIndexOfTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(2147483647, -2147483648, 0, 2147483647);
+      const arr = Array.create<number>(4, 0);
+      arr[0] = 2147483647;
+      arr[1] = -2147483648;
+      arr[2] = 0;
+      arr[3] = 2147483647;
 
       const result1 = arr.lastIndexOf(2147483647);
       expect(result1).assertEqual(3);
@@ -211,7 +242,12 @@ export default function BuiltinsArrayLastIndexOfTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayLastIndexOfTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(-1, -2, -3, -2, -1);
+      const arr = Array.create<number>(5, 0);
+      arr[0] = -1;
+      arr[1] = -2;
+      arr[2] = -3;
+      arr[3] = -2;
+      arr[4] = -1;
       const result = arr.lastIndexOf(-2);
 
       expect(result).assertEqual(3);
@@ -226,7 +262,11 @@ export default function BuiltinsArrayLastIndexOfTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayLastIndexOfTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3.14, 2.718, 3.14, 1.414);
+      const arr = Array.create<number>(4, 0);
+      arr[0] = 3.14;
+      arr[1] = 2.718;
+      arr[2] = 3.14;
+      arr[3] = 1.414;
       const result = arr.lastIndexOf(3.14);
 
       expect(result).assertEqual(2);
@@ -241,7 +281,12 @@ export default function BuiltinsArrayLastIndexOfTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayLastIndexOfTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(0, 1, 0, 2, 0);
+      const arr = Array.create<number>(5, 0);
+      arr[0] = 0;
+      arr[1] = 1;
+      arr[2] = 0;
+      arr[3] = 2;
+      arr[4] = 0;
       const result = arr.lastIndexOf(0);
 
       expect(result).assertEqual(4);
@@ -275,7 +320,12 @@ export default function BuiltinsArrayLastIndexOfTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayLastIndexOfTest1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5, 1, 2, 3, 4);
+      const arr = Array.create<number>(5, 0);
+      arr[0] = 5;
+      arr[1] = 1;
+      arr[2] = 2;
+      arr[3] = 3;
+      arr[4] = 4;
       const result = arr.lastIndexOf(5);
 
       expect(result).assertEqual(0);
@@ -290,7 +340,12 @@ export default function BuiltinsArrayLastIndexOfTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayLastIndexOfTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
       const result = arr.lastIndexOf(5);
 
       expect(result).assertEqual(4);
@@ -305,7 +360,12 @@ export default function BuiltinsArrayLastIndexOfTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayLastIndexOfTest1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 2, 1);
+      const arr = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 2;
+      arr[4] = 1;
       const result = arr.lastIndexOf(2, 2);
 
       expect(result).assertEqual(1);
@@ -320,7 +380,12 @@ export default function BuiltinsArrayLastIndexOfTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayLastIndexOfTest1800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 2, 1);
+      const arr = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 2;
+      arr[4] = 1;
       const result = arr.lastIndexOf(2, -3);
 
       expect(result).assertEqual(1);
@@ -335,7 +400,12 @@ export default function BuiltinsArrayLastIndexOfTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayLastIndexOfTest1900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 2, 1);
+      const arr = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 2;
+      arr[4] = 1;
       const result = arr.lastIndexOf(2, 0);
 
       expect(result).assertEqual(-1);
@@ -350,7 +420,12 @@ export default function BuiltinsArrayLastIndexOfTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayLastIndexOfTest2000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 2, 1);
+      const arr = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 2;
+      arr[4] = 1;
       const result = arr.lastIndexOf(2, 10);
 
       expect(result).assertEqual(3);
@@ -365,7 +440,12 @@ export default function BuiltinsArrayLastIndexOfTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayLastIndexOfTest2100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 2, 1);
+      const arr = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 2;
+      arr[4] = 1;
       const result = arr.lastIndexOf(2, 5);
 
       expect(result).assertEqual(3);
@@ -380,7 +460,12 @@ export default function BuiltinsArrayLastIndexOfTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayLastIndexOfTest2200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(1, 2, 3, 2, 1);
+      const arr = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 2;
+      arr[4] = 1;
       const result = arr.lastIndexOf(2, 2147483647);
 
       expect(result).assertEqual(3);
@@ -395,7 +480,12 @@ export default function BuiltinsArrayLastIndexOfTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayLastIndexOfTest2300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(1, 2, 3, 2, 1);
+      const arr = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 2;
+      arr[4] = 1;
       const result = arr.lastIndexOf(2, -2147483648);
 
       expect(result).assertEqual(-1);
@@ -410,7 +500,12 @@ export default function BuiltinsArrayLastIndexOfTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayLastIndexOfTest2400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
       const result = arr.lastIndexOf(6, 2);
 
       expect(result).assertEqual(-1);
@@ -425,7 +520,7 @@ export default function BuiltinsArrayLastIndexOfTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayLastIndexOfTest2500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>();
+      const arr: number[] = Array.create<number>(0, 0);
       const result = arr.lastIndexOf(1, 0);
 
       expect(result).assertEqual(-1);

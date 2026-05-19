@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 import Ability from '@ohos.app.ability.UIAbility'
-import { AbilityLifecycleCallback } from '@kit.AbilityKit';
 
 export default class MainAbility7 extends Ability {
     onCreate(want, launchParam) {
@@ -42,7 +41,7 @@ export default class MainAbility7 extends Ability {
         console.log("[Demo] MainAbility7 onForeground")
 
         var listKey7 = [];
-        let AbilityLifecycleCallback:AbilityLifecycleCallback = {
+        let AbilityLifecycleCallback = {
             onAbilityCreate(ability) {
                 console.log("[Demo] AbilityLifecycleCallback onAbilityCreate ability:"
                 + JSON.stringify(ability));
@@ -105,7 +104,7 @@ export default class MainAbility7 extends Ability {
             }
         }
         globalThis.applicationContext7 = this.context.getApplicationContext();
-        let lifecycleid = globalThis.applicationContext7.on('abilityLifecycle', AbilityLifecycleCallback);
+        let lifecycleid = globalThis.applicationContext7.registerAbilityLifecycleCallback(AbilityLifecycleCallback);
         console.log("[Demo] AbilityLifecycleCallback7 number: " + JSON.stringify(lifecycleid));
         setTimeout(function () {
             console.log("[Demo] AbilityLifecycleCallback7 listKey: " + JSON.stringify(listKey7));

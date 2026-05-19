@@ -1224,7 +1224,7 @@ export default function FivePointOne_i18nStageTest() {
       let zoneRules: i18n.ZoneRules = timeZone.getZoneRules();
       let date: Date = new Date(2025, 3, 13);
       let zoneOffsetTransition: i18n.ZoneOffsetTransition = zoneRules.nextTransition(date.getTime());
-      let sj: long = zoneOffsetTransition.getMilliseconds() as long;
+      let sj: long = zoneOffsetTransition.getMilliseconds().toLong();
       console.log('i18n_getMilliseconds_test_Static_0100 sj:', sj);
       let dateTimeFormat: Intl.DateTimeFormat = new Intl.DateTimeFormat('zh-CN', {
         timeZone: 'Africa/Cairo',

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -95,13 +95,13 @@ it('getListItemGroupRect6_static_0100', Level.LEVEL0, async (done: () => void): 
       console.log('delete')
       await driver.swipe(
         Math.round((listItemGroup_3.right - listItemGroup_3.left) * 0.9 + listItemGroup_3.left +
-        Number(AppStorage.get<number>("winLeft"))) as int,
+        Number(AppStorage.get<number>("winLeft"))).toInt(),
         Math.round((listItemGroup_3.bottom - listItemGroup_3.top) * 0.5 + listItemGroup_3.top +
-        Number(AppStorage.get<number>("winTop"))) as int,
+        Number(AppStorage.get<number>("winTop"))).toInt(),
         Math.round((listItemGroup_3.right - listItemGroup_3.left) * 0.1 + listItemGroup_3.left +
-        Number(AppStorage.get<number>("winLeft"))) as int,
+        Number(AppStorage.get<number>("winLeft"))).toInt(),
         Math.round((listItemGroup_3.bottom - listItemGroup_3.top) * 0.5 + listItemGroup_3.top +
-        Number(AppStorage.get<number>("winTop"))) as int
+        Number(AppStorage.get<number>("winTop"))).toInt()
       )
       await CommonFunc.sleep(1000);
 

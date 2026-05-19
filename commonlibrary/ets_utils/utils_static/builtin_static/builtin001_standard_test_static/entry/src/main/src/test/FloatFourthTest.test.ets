@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2025 HiHope Open Source Organization.
+* Copyright (C) 2025-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the 'License');
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -61,7 +61,7 @@ export default function builtinsFloatFourthPrototypebTest() {
         const b = new Float(2.2);
         const result = a.sub(b);
         expect(result instanceof Float).assertEqual(true);
-        expect(result).assertEqual(3.3 as float);
+        expect(result).assertEqual(3.3.toFloat());
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -82,7 +82,7 @@ export default function builtinsFloatFourthPrototypebTest() {
         const b = new Float(-2.2);
         const result = a.sub(b);
         expect(result instanceof Float).assertEqual(true);
-        expect(result).assertEqual(7.7 as float);
+        expect(result).assertEqual(7.7.toFloat());
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -103,7 +103,7 @@ export default function builtinsFloatFourthPrototypebTest() {
         const b = new Float(2.2);
         const result = a.sub(b);
         expect(result instanceof Float).assertEqual(true);
-        expect(result).assertEqual(-7.7 as float);
+        expect(result).assertEqual(-7.7.toFloat());
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -124,7 +124,7 @@ export default function builtinsFloatFourthPrototypebTest() {
         const b = new Float(2.2);
         const result = a.sub(b);
         expect(result instanceof Float).assertEqual(true);
-        expect(result).assertEqual(-2.2 as float);
+        expect(result).assertEqual(-2.2.toFloat());
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -145,7 +145,7 @@ export default function builtinsFloatFourthPrototypebTest() {
         const b = new Float(0.0);
         const result = a.sub(b);
         expect(result instanceof Float).assertEqual(true);
-        expect(result).assertEqual(2.2 as float);
+        expect(result).assertEqual(2.2.toFloat());
         console.info(`${caseName}, test end`);
         Done();
       })

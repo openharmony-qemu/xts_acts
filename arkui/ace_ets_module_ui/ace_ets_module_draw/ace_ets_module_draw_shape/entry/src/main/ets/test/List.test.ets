@@ -60,6 +60,7 @@ import CircleNullUndefined2Test from './Circle/CircleNullUndefined2.test';
 import CircleNullUndefined3Test from './Circle/CircleNullUndefined3.test';
 import RectRadiusWidthHeightNullUndefinedTest from './Rect/RectRadiusWidthHeightNullUndefined.test';
 import RectNullUndefinedTest from './Rect/RectNullUndefined.test';
+import CircleStrokeColorMetricsTest from './Circle/CircleStrokeColorMetricsTest.test';
 
 export default function testsuite() {
 
@@ -111,4 +112,5 @@ export default function testsuite() {
   CircleNullUndefined3Test();
   RectRadiusWidthHeightNullUndefinedTest();
   RectNullUndefinedTest();
+  CircleStrokeColorMetricsTest();
 }

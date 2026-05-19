@@ -329,8 +329,8 @@ export default function EqualityExpressionsTest() {
      * @tc.level     Level 2
      */
     it("testEqualityExpressions0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Object[] = new Array<Object>(1);
-      let b: Object[] = new Array<Object>(1);
+      let a: Object[] = new Array<Object>();
+      let b: Object[] = new Array<Object>();
       expect(a == b).assertEqual(a === b);
       expect(a != b).assertEqual(a !== b);
     });

@@ -70,5 +70,33 @@ export default function FunctionalextSupplementManualNetworkTestGroupTest() {
       expect(result).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.name   gethostbyname2
+     * @tc.number SUB_THIRDPARTY_MUSL_GETHOSTBYNAME_TWO_0100
+     * @tc.desc   libc-test gethostbyname2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("gethostbyname2", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("gethostbyname2");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   gethostbyname_r
+     * @tc.number SUB_THIRDPARTY_MUSL_GETHOSTBYNAME_R_0100
+     * @tc.desc   libc-test gethostbyname_r
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("gethostbyname_r", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("gethostbyname_r");
+      expect(result).assertEqual(0);
+      done();
+    });
   });
 }

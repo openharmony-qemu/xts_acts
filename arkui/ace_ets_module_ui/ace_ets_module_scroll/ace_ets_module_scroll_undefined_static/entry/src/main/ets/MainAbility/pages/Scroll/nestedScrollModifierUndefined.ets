@@ -40,12 +40,12 @@ import {
   NestedScrollOptions
 } from '@ohos.arkui.component'
 import { AttributeModifier, CommonAttribute , ListAttribute} from '@ohos.arkui.component'
-import { State, Observed } from '@ohos.arkui.stateManagement'
+import { State, Observed, Track } from '@ohos.arkui.stateManagement'
 
 // ===================== Modifier 定义 =====================
 @Observed
-class ListModifier implements AttributeModifier<ListAttribute> {
-  @State public isChange: Boolean = true;
+export class ListModifier implements AttributeModifier<ListAttribute> {
+  @Track public isChange: Boolean = true;
 
   applyNormalAttribute(instance: ListAttribute): void {
     if (this.isChange) {

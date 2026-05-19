@@ -27,6 +27,15 @@
 #define CMPFLAG 0
 #define ERREXPECT (-1)
 #define ONREXPECT 1
+#ifndef T_STATUS
+#define T_STATUS T_STATUS
+#endif
+#ifndef FILE_ABSOLUTE_PATH
+#define FILE_ABSOLUTE_PATH(src, dst)                     \
+    do {                                                 \
+        (void)snprintf((dst), sizeof(dst), "%s", (src)); \
+    } while (0)
+#endif
 #ifndef TEST_MODE
 #define TEST_MODE 0666
 #endif
@@ -43,11 +52,10 @@
             t_error("[%s] failed \n", fun); \
     } while (0)
 
-#define EXPECT_EQ(fun, a, b)                                                  \
-    do {                                                                      \
-        if ((a) != (b))                                                       \
-            t_error("[%s] failed %lld != %lld \n", fun, (long long)(a),       \
-                    (long long)(b));                                         \
+#define EXPECT_EQ(fun, a, b)                                                             \
+    do {                                                                                 \
+        if ((a) != (b))                                                                  \
+            t_error("[%s] failed %lld != %lld \n", fun, (long long)(a), (long long)(b)); \
     } while (0)
 
 #define EXPECT_LT(fun, a, b)                                                              \
@@ -88,9 +96,9 @@
     } while (0)
 
 /* floating point comparison */
-#define FLOAT_EQUAL(fun, a, b)                                   \
-    do {                                                         \
-        if (!(fabs((a) - (b)) <= EPS))                           \
+#define FLOAT_EQUAL(fun, a, b)                                                 \
+    do {                                                                       \
+        if (!(fabs((a) - (b)) <= EPS))                                         \
             t_error("[%s] failed %g != %g \n", fun, (double)(a), (double)(b)); \
     } while (0)
 
@@ -120,11 +128,10 @@
             t_error("[%s] failed %ld != %ld \n", fun, a, b); \
     } while (0)
 
-#define EXPECT_LONGLONGEQ(fun, a, b)                                        \
-    do {                                                                    \
-        if ((long long)(a) != (long long)(b))                              \
-            t_error("[%s] failed %lld != %lld \n", fun, (long long)(a),      \
-                    (long long)(b));                                        \
+#define EXPECT_LONGLONGEQ(fun, a, b)                                                     \
+    do {                                                                                 \
+        if ((long long)(a) != (long long)(b))                                            \
+            t_error("[%s] failed %lld != %lld \n", fun, (long long)(a), (long long)(b)); \
     } while (0)
 
 #define EXPECT_GT(fun, a, b)                               \
@@ -215,5 +222,103 @@ int VfwscanfTest(void);
 int AccessTest(void);
 int FchdirTest(void);
 int NiceTest(void);
+
+// LdsoDlopenConfigAbsPath test functions
+int LdsoDlopenConfigAbsPath1Test(void);
+int LdsoDlopenConfigAbsPath2Test(void);
+int LdsoDlopenConfigAbsPath3Test(void);
+int LdsoDlopenConfigAbsPath4Test(void);
+int LdsoDlopenConfigAbsPath5Test(void);
+int LdsoDlopenConfigAbsPath6Test(void);
+int LdsoDlopenConfigAbsPath7Test(void);
+int LdsoDlopenConfigAbsPath8Test(void);
+int LdsoDlopenConfigAbsPath9Test(void);
+int LdsoDlopenConfigAbsPath10Test(void);
+int LdsoDlopenConfigAbsPath11Test(void);
+int LdsoDlopenConfigAbsPath12Test(void);
+int LdsoDlopenConfigAbsPath13Test(void);
+int LdsoDlopenConfigAbsPath14Test(void);
+int LdsoDlopenConfigAbsPath15Test(void);
+int LdsoDlopenConfigAbsPath16Test(void);
+
+// Ctype test functions
+int IswalphaTest(void);
+int IswblankTest(void);
+int IswcntrlTest(void);
+int IswdigitTest(void);
+int IswlowerTest(void);
+int IswprintTest(void);
+int IswpunctTest(void);
+int IswspaceTest(void);
+int IswupperTest(void);
+int IswxdigitTest(void);
+int TowlowerTest(void);
+int TowupperTest(void);
+int TowupperLTest(void);
+
+// Stdio test functions
+int FsetposTest(void);
+int GetwcTest(void);
+int RewindTest(void);
+
+// Thread test functions
+int PthreadCreateTestTest(void);
+int PthreadExitTestTest(void);
+int PthreadGetattrNpTestTest(void);
+int PthreadGetschedparamTestTest(void);
+int PthreadGetspecificTestTest(void);
+int PthreadKeyCreateTestTest(void);
+int PthreadMutexLockTestTest(void);
+int PthreadMutexUnlockTestTest(void);
+int PthreadOnceTestTest(void);
+int PthreadSetspecificTestTest(void);
+int PthreadSetschedparamTestTest(void);
+
+// String test functions
+int MemmemTest(void);
+int MemrchrTest(void);
+int StpcpyTest(void);
+int StpncpyTest(void);
+int StrrchrTest(void);
+int WcscpyTest(void);
+int WcsdupTest(void);
+int WcsncpyTest(void);
+int WcspbrkTest(void);
+
+// Dirent test functions
+int AlphasortTest(void);
+int FdopendirTest(void);
+int OpendirTest(void);
+int RewinddirTest(void);
+int SeekdirTest(void);
+int TelldirTest(void);
+
+// Functional test functions
+int QsortTest(void);
+int Renameat2TestTest(void);
+int SocketTest(void);
+int StringStrchrTest(void);
+int TgmathTest(void);
+
+// Locale supplement test functions
+int LocaleconvSupTest(void);
+int NewlocaleSupTest(void);
+int SetlocaleSupTest(void);
+int UselocaleSupTest(void);
+
+// Fortify test functions
+int InvalidParamTest(void);
+int PthreadFortifyTestTest(void);
+int SelectTestTest(void);
+
+// Fcntl test functions
+int CreatTest(void);
+int OpenatTest(void);
+int OpenTest(void);
+
+// Stdlib test functions
+int FunctionalextFcvtTest(void);
+int WcstoimaxTest(void);
+int WcstoumaxTest(void);
 
 #endif

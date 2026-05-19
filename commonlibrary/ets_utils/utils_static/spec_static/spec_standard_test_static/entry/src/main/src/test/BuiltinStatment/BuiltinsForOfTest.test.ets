@@ -523,7 +523,7 @@ export default function builtinsForOfTest() {
           }
           ;
           if (childItem === mixedArray[1]) {
-            a = childItem[0] as number;
+            a = childItem[0].toDouble();
           }
           ;
         } else {
@@ -947,7 +947,7 @@ export default function builtinsForOfTest() {
             console.log(`Sub-item: ${subItem}`);
           }
           if (item === mixedArray[1]) {
-            a = childItem[0] as number;
+            a = childItem[0].toDouble();
           }
           ;
         } else {

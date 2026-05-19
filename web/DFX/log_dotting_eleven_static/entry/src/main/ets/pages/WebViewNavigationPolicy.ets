@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -401,10 +401,10 @@ struct Index {
               try {
                 if (!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                   this.controller.startCamera();
-                  Utils.emitEvent(this.CameraCaptureStateArr[2] as number, 20260203);
+                  Utils.emitEvent((this.CameraCaptureStateArr[2].valueOf()).toDouble(), 20260203);
                 } else {
                   this.controller.startCamera();
-                  Utils.emitEvent(this.CameraCaptureStateArr[2] as number, 20260203);
+                  Utils.emitEvent((this.CameraCaptureStateArr[2].valueOf()).toDouble(), 20260203);
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -426,11 +426,11 @@ struct Index {
             case 'emitOnMicrophoneCaptureStateChange004': {
               try {
                 if (!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
-                  Utils.emitEvent(this.MicrophoneCaptureStateArr[0] as number, 20251231);
+                  Utils.emitEvent((this.MicrophoneCaptureStateArr[0].valueOf()).toDouble(), 20251231);
                 } else {
                   this.controller.stopMicrophone();
                   setTimeout(() => {
-                    Utils.emitEvent(this.MicrophoneCaptureStateArr[this.newState] as number, 20251231);
+                    Utils.emitEvent((this.MicrophoneCaptureStateArr[this.newState].valueOf()).toDouble(), 20251231);
                   }, 500)
                 }
 

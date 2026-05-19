@@ -57,5 +57,33 @@ export default function FunctionalextSupplementMmanTestGroupTest() {
       expect(result).assertEqual(0);
       done();
     });
+    /**
+     * @tc.name   mmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_MMAP_0100
+     * @tc.desc   libc-test mmap
+     */
+    it("mmap", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("mmap");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   munmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_MUNMAP_0100
+     * @tc.desc   libc-test munmap
+     */
+    it("munmap", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("munmap");
+      expect(result).assertEqual(0);
+      done();
+    });
+
   });
 }

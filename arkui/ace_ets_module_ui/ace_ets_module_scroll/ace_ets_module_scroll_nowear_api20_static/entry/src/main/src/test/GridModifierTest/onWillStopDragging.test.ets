@@ -61,7 +61,7 @@ export default function onWillStopDraggingModifierTest() {
       let bottom = rect.bottom;
       let height = bottom -top;
       let width = right - left;
-      await driver.swipe(Math.round(left + width/2) as Int, Math.round(top + height*0.8) as Int, Math.round(left + width/2) as Int,Math.round(top + height*0.2) as Int, 1000);
+      await driver.swipe(Math.round(left + width/2).toInt(), Math.round(top + height*0.8).toInt(), Math.round(left + width/2).toInt(),Math.round(top + height*0.2).toInt(), 1000);
       await CommonFunc.sleep(2000);
       expect(JSON.parseJsonElement(inspector.getInspectorByKey('onWillStopDragging'))
         .getElement('$attrs')

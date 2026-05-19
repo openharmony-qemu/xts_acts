@@ -101,6 +101,23 @@ export const unregisterFrameMetricsMeasuredCallback: (windowId: number) => numbe
 export const registerFrameMetricsMeasuredCallbackNullptr: (windowId: number) => number;
 export const unregisterFrameMetricsMeasuredCallbackNullptr: (windowId: number) => number;
 
+export const testFrameMetricsIsFirstDrawFrameNullptr: () => number;
+export const testFrameMetricsGetInputHandlingDurationNullptr: () => number;
+export const testFrameMetricsGetLayoutMeasureDurationNullptr: () => number;
+export const testFrameMetricsGetVsyncTimestampNullptr: () => number;
+
+export interface FrameMetricsResult {
+    resultCode: number;
+    isFirstDrawFrame?: boolean;
+    duration?: number;
+    timestamp?: number;
+}
+
+export const testFrameMetricsIsFirstDrawFrameOK: () => FrameMetricsResult;
+export const testFrameMetricsGetInputHandlingDurationOK: () => FrameMetricsResult;
+export const testFrameMetricsGetLayoutMeasureDurationOK: () => FrameMetricsResult;
+export const testFrameMetricsGetVsyncTimestampOK: () => FrameMetricsResult;
+
 export interface myObj {
     isFirstDrawFrame: boolean;
     inputHandlingDuration: number;

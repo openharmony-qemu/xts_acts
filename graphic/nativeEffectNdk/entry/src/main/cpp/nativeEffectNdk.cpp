@@ -27,6 +27,11 @@
 #define FAIL (-1)
 #define DOUBLE_NUM_05 0.5
 #define DOUBLE_NUM_15 1.5
+#define BRIGHTNESS_NORMAL 0.5
+#define BRIGHTNESS_LOWER_BOUND 0.0
+#define BRIGHTNESS_UPPER_BOUND 1.0
+#define BRIGHTNESS_OUT_NEG (-1.0)
+#define BRIGHTNESS_OUT_POS 2.0
 #define ARR_NUM_0 0
 #define ARR_NUM_1 1
 #define ARR_NUM_2 2
@@ -224,7 +229,7 @@ static napi_value OHFilterBrighten(napi_env env, napi_callback_info info)
     CreatePixelMap(&pixMap);
     OH_Filter *filter = nullptr;
     OH_Filter_CreateEffect(*pixMap, &filter);
-    EffectErrorCode effectErrorCode = OH_Filter_Brighten(filter, 0.5);
+    EffectErrorCode effectErrorCode = OH_Filter_Brighten(filter, BRIGHTNESS_NORMAL);
     if (effectErrorCode == EffectErrorCode::EFFECT_SUCCESS) {
         napi_create_int32(env, SUCCESS, &result);
     } else {
@@ -244,7 +249,83 @@ static napi_value OHFilterBrighten001(napi_env env, napi_callback_info info)
     CreatePixelMap(&pixMap);
     OH_Filter *filter = nullptr;
     OH_Filter_CreateEffect(*pixMap, &filter);
-    EffectErrorCode effectErrorCode = OH_Filter_Brighten(nullptr, 0.5);
+    EffectErrorCode effectErrorCode = OH_Filter_Brighten(nullptr, BRIGHTNESS_NORMAL);
+    if (effectErrorCode == EffectErrorCode::EFFECT_BAD_PARAMETER) {
+        napi_create_int32(env, SUCCESS, &result);
+    } else {
+        napi_create_int32(env, FAIL, &result);
+    }
+    OH_Filter_Release(filter);
+    OH_PixelmapNative_Release(*pixMap);
+    return result;
+}
+
+static napi_value OHFilterBrighten0300(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_PixelmapNative *pixmap = nullptr;
+    OH_PixelmapNative **pixMap = &pixmap;
+    CreatePixelMap(&pixMap);
+    OH_Filter *filter = nullptr;
+    OH_Filter_CreateEffect(*pixMap, &filter);
+    EffectErrorCode effectErrorCode = OH_Filter_Brighten(filter, BRIGHTNESS_LOWER_BOUND);
+    if (effectErrorCode == EffectErrorCode::EFFECT_SUCCESS) {
+        napi_create_int32(env, SUCCESS, &result);
+    } else {
+        napi_create_int32(env, FAIL, &result);
+    }
+    OH_Filter_Release(filter);
+    OH_PixelmapNative_Release(*pixMap);
+    return result;
+}
+
+static napi_value OHFilterBrighten0400(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_PixelmapNative *pixmap = nullptr;
+    OH_PixelmapNative **pixMap = &pixmap;
+    CreatePixelMap(&pixMap);
+    OH_Filter *filter = nullptr;
+    OH_Filter_CreateEffect(*pixMap, &filter);
+    EffectErrorCode effectErrorCode = OH_Filter_Brighten(filter, BRIGHTNESS_UPPER_BOUND);
+    if (effectErrorCode == EffectErrorCode::EFFECT_SUCCESS) {
+        napi_create_int32(env, SUCCESS, &result);
+    } else {
+        napi_create_int32(env, FAIL, &result);
+    }
+    OH_Filter_Release(filter);
+    OH_PixelmapNative_Release(*pixMap);
+    return result;
+}
+
+static napi_value OHFilterBrighten0500(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_PixelmapNative *pixmap = nullptr;
+    OH_PixelmapNative **pixMap = &pixmap;
+    CreatePixelMap(&pixMap);
+    OH_Filter *filter = nullptr;
+    OH_Filter_CreateEffect(*pixMap, &filter);
+    EffectErrorCode effectErrorCode = OH_Filter_Brighten(filter, BRIGHTNESS_OUT_NEG);
+    if (effectErrorCode == EffectErrorCode::EFFECT_BAD_PARAMETER) {
+        napi_create_int32(env, SUCCESS, &result);
+    } else {
+        napi_create_int32(env, FAIL, &result);
+    }
+    OH_Filter_Release(filter);
+    OH_PixelmapNative_Release(*pixMap);
+    return result;
+}
+
+static napi_value OHFilterBrighten0600(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_PixelmapNative *pixmap = nullptr;
+    OH_PixelmapNative **pixMap = &pixmap;
+    CreatePixelMap(&pixMap);
+    OH_Filter *filter = nullptr;
+    OH_Filter_CreateEffect(*pixMap, &filter);
+    EffectErrorCode effectErrorCode = OH_Filter_Brighten(filter, BRIGHTNESS_OUT_POS);
     if (effectErrorCode == EffectErrorCode::EFFECT_BAD_PARAMETER) {
         napi_create_int32(env, SUCCESS, &result);
     } else {
@@ -632,67 +713,76 @@ static napi_value OHEffectUnsupportedOperation001(napi_env env, napi_callback_in
     return result;
 }
 
+static napi_property_descriptor desc[] = {
+    {"oHFilterCreateEffect", nullptr, OHFilterCreateEffect, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"oHFilterCreateEffect001", nullptr, OHFilterCreateEffect001, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"oHFilterInvert", nullptr, OHFilterInvert, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"oHFilterInvert001", nullptr, OHFilterInvert001, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"oHFilterBlur", nullptr, OHFilterBlur, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"oHFilterBlur001", nullptr, OHFilterBlur001, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"oHFilterGrayScale", nullptr, OHFilterGrayScale, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"oHFilterGrayScale001", nullptr, OHFilterGrayScale001, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"oHFilterBrighten", nullptr, OHFilterBrighten, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"oHFilterBrighten001", nullptr, OHFilterBrighten001, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"oHFilterBrighten0300", nullptr, OHFilterBrighten0300, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"oHFilterBrighten0400", nullptr, OHFilterBrighten0400, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"oHFilterBrighten0500", nullptr, OHFilterBrighten0500, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"oHFilterBrighten0600", nullptr, OHFilterBrighten0600, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"oHFilterSetColorMatrix", nullptr, OHFilterSetColorMatrix, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"oHFilterSetColorMatrix001", nullptr, OHFilterSetColorMatrix001, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"oHFilterGetEffectPixelMap", nullptr, OHFilterGetEffectPixelMap, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"oHFilterRelease", nullptr, OHFilterRelease, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"oHFilterRelease001", nullptr, OHFilterRelease001, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"oHFilterBlurWithTileMode001", nullptr, OHFilterBlurWithTileMode001, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"oHPixelmapNativeCreateScaledPixelMap001", nullptr, OHPixelmapNativeCreateScaledPixelMap001,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"oHPixelmapNativeCreateScaledPixelMapWithAntiAliasing001", nullptr,
+     OHPixelmapNativeCreateScaledPixelMapWithAntiAliasing001,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"oHPixelmapNativeGetByteCount001", nullptr, OHPixelmapNativeGetByteCount001,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"oHPixelmapNativeAccessPixels001", nullptr, OHPixelmapNativeAccessPixels001,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"oHPixelmapNativeUnaccessPixels001", nullptr, OHPixelmapNativeUnaccessPixels001,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"oHPixelmapInitializationOptionsEditable001", nullptr, OHPixelmapInitializationOptionsEditable001,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"oHPixelmapNativeDestroy001", nullptr, OHPixelmapNativeDestroy001,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"oHPixelmapImageInfoGetAlphaMode001", nullptr, OHPixelmapImageInfoGetAlphaMode001,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"oHPixelmapNativeCreatePixelmapUsingAllocator001", nullptr, OHPixelmapNativeCreatePixelmapUsingAllocator001,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"oHPixelmapNativeCreateEmptyPixelmapUsingAllocator001", nullptr,
+     OHPixelmapNativeCreateEmptyPixelmapUsingAllocator001,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"oHEffectUnsupportedOperation001", nullptr, OHEffectUnsupportedOperation001,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
+};
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
-    napi_property_descriptor desc[] = {
-        {"oHFilterCreateEffect", nullptr, OHFilterCreateEffect, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHFilterCreateEffect001", nullptr, OHFilterCreateEffect001, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHFilterInvert", nullptr, OHFilterInvert, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHFilterInvert001", nullptr, OHFilterInvert001, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHFilterBlur", nullptr, OHFilterBlur, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHFilterBlur001", nullptr, OHFilterBlur001, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHFilterGrayScale", nullptr, OHFilterGrayScale, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHFilterGrayScale001", nullptr, OHFilterGrayScale001, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHFilterBrighten", nullptr, OHFilterBrighten, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHFilterBrighten001", nullptr, OHFilterBrighten001, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHFilterSetColorMatrix", nullptr, OHFilterSetColorMatrix, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHFilterSetColorMatrix001", nullptr, OHFilterSetColorMatrix001, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHFilterGetEffectPixelMap", nullptr, OHFilterGetEffectPixelMap, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHFilterRelease", nullptr, OHFilterRelease, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHFilterRelease001", nullptr, OHFilterRelease001, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHFilterBlurWithTileMode001", nullptr, OHFilterBlurWithTileMode001, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHPixelmapNativeCreateScaledPixelMap001", nullptr, OHPixelmapNativeCreateScaledPixelMap001,
-         nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"oHPixelmapNativeCreateScaledPixelMapWithAntiAliasing001", nullptr,
-         OHPixelmapNativeCreateScaledPixelMapWithAntiAliasing001,
-         nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"oHPixelmapNativeGetByteCount001", nullptr, OHPixelmapNativeGetByteCount001,
-         nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"oHPixelmapNativeAccessPixels001", nullptr, OHPixelmapNativeAccessPixels001,
-         nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"oHPixelmapNativeUnaccessPixels001", nullptr, OHPixelmapNativeUnaccessPixels001,
-         nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"oHPixelmapInitializationOptionsEditable001", nullptr, OHPixelmapInitializationOptionsEditable001,
-         nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"oHPixelmapNativeDestroy001", nullptr, OHPixelmapNativeDestroy001,
-         nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"oHPixelmapImageInfoGetAlphaMode001", nullptr, OHPixelmapImageInfoGetAlphaMode001,
-         nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"oHPixelmapNativeCreatePixelmapUsingAllocator001", nullptr, OHPixelmapNativeCreatePixelmapUsingAllocator001,
-         nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"oHPixelmapNativeCreateEmptyPixelmapUsingAllocator001", nullptr,
-         OHPixelmapNativeCreateEmptyPixelmapUsingAllocator001,
-         nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"oHEffectUnsupportedOperation001", nullptr, OHEffectUnsupportedOperation001,
-         nullptr, nullptr, nullptr, napi_default, nullptr},
-    };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
 }

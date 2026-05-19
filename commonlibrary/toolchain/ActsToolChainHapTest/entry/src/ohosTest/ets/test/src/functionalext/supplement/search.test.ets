@@ -57,5 +57,33 @@ export default function FunctionalextSupplementSearchTestGroupTest() {
       expect(result).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.name   lfind
+     * @tc.number SUB_THIRDPARTY_MUS_LFIND_0100
+     * @tc.desc   libc-test lfind
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("lfind", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("lfind");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   tdestroy
+     * @tc.number SUB_THIRDPARTY_MUS_TDESTROY_0100
+     * @tc.desc   libc-test tdestroy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("tdestroy", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("tdestroy");
+      expect(result).assertEqual(0);
+      done();
+    });
   });
 }

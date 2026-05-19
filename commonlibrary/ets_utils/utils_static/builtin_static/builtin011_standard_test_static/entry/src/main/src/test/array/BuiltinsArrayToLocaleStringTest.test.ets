@@ -53,7 +53,7 @@ export default function BuiltinsArrayToLocateStringTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayToLocaleStringTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>();
+      const arr: number[] = Array.create<number>(0, 0);
 
       const result = arr.toLocaleString();
 
@@ -69,7 +69,12 @@ export default function BuiltinsArrayToLocateStringTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayToLocaleStringTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
 
       const result = arr.toLocaleString();
 
@@ -85,7 +90,10 @@ export default function BuiltinsArrayToLocateStringTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayToLocaleStringTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<string>("apple", "banana", "cherry");
+      const arr: string[] = Array.create<string>(3, '');
+      arr[0] = "apple";
+      arr[1] = "banana";
+      arr[2] = "cherry";
 
       const result = arr.toLocaleString();
 
@@ -101,10 +109,9 @@ export default function BuiltinsArrayToLocateStringTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayToLocaleStringTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<Person>(
-        new Person("Alice", 25),
-        new Person("Bob", 30)
-      );
+      const arr: Person[] = Array.create<Person>(2, new Person("", 0));
+      arr[0] = new Person("Alice", 25);
+      arr[1] = new Person("Bob", 30);
 
       const result = arr.toLocaleString();
 
@@ -120,7 +127,10 @@ export default function BuiltinsArrayToLocateStringTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToLocaleStringTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<object>(1 as object, "apple" as object, new Person("Alice", 25));
+      const arr: object[] = Array.create<object>(3, {});
+      arr[0] = 1 as object;
+      arr[1] = "apple" as object;
+      arr[2] = new Person("Alice", 25);
 
       const result = arr.toLocaleString();
 
@@ -136,7 +146,7 @@ export default function BuiltinsArrayToLocateStringTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayToStringTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>();
+      const arr: number[] = Array.create<number>(0, 0);
 
       const result = arr.toString();
 
@@ -152,7 +162,12 @@ export default function BuiltinsArrayToLocateStringTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayToStringTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
 
       const result = arr.toString();
 
@@ -168,7 +183,10 @@ export default function BuiltinsArrayToLocateStringTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayToStringTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<string>("apple", "banana", "cherry");
+      const arr: string[] = Array.create<string>(3, '');
+      arr[0] = "apple";
+      arr[1] = "banana";
+      arr[2] = "cherry";
 
       const result = arr.toString();
 
@@ -184,10 +202,9 @@ export default function BuiltinsArrayToLocateStringTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayToStringTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<Person>(
-        new Person("Alice", 25),
-        new Person("Bob", 30)
-      );
+      const arr: Person[] = Array.create<Person>(2, new Person("", 0));
+      arr[0] = new Person("Alice", 25);
+      arr[1] = new Person("Bob", 30);
 
       const result = arr.toString();
 
@@ -203,7 +220,10 @@ export default function BuiltinsArrayToLocateStringTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToStringTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<object>(1 as object, "apple" as object, new Person("Alice", 25));
+      const arr: object[] = Array.create<object>(3, {});
+      arr[0] = 1 as object;
+      arr[1] = "apple" as object;
+      arr[2] = new Person("Alice", 25);
 
       const result = arr.toString();
 

@@ -24,6 +24,7 @@
     "MainAbility/pages/TypeNode/TypeNodeGetCheckboxAttribute",
     "MainAbility/pages/TypeNode/TypeNodeGetRadioAttribute",
     "MainAbility/pages/TypeNode/TypeNodeGetSliderAttribute",
-    "MainAbility/pages/TypeNode/TypeNodeGetToggleAttribute"
+    "MainAbility/pages/TypeNode/TypeNodeGetToggleAttribute",
+    "MainAbility/pages/Stack/StackSyncLoadStatic"
   ]
 }

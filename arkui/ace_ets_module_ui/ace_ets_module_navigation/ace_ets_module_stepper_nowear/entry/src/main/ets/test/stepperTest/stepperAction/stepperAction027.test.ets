@@ -58,7 +58,8 @@ export default function stepperAction027() {
       console.info('stepperAction0270 START');
       let driver: Driver = Driver.create();
       await driver.delayMs(1000);
-      await driver.setDisplayRotation(DisplayRotation.ROTATION_90);
+      let btn_true = await driver.findComponent(ON.id('stepper_changeOrientation_true'));
+      await btn_true.click();
       await driver.delayMs(1000);
       await driver.assertComponentExist(ON.text('Page One'));
       let button: Component = await driver.findComponent(ON.text('Next1111111111111111111111111111111111111111111111111'));
@@ -82,8 +83,9 @@ export default function stepperAction027() {
       await button3.click();
       await driver.delayMs(1000);
       await driver.assertComponentExist(ON.text('Page One'));
-	  await driver.setDisplayRotation(DisplayRotation.ROTATION_0);
-	  await driver.delayMs(500);
+      let btn_false = await driver.findComponent(ON.id('stepper_changeOrientation_false'));
+      await btn_false.click();
+	    await driver.delayMs(1000);
       done();
     });
   })

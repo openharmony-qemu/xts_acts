@@ -53,25 +53,6 @@ struct DragEventStartDataLoading {
 
   build() {
     Column({ space: 20 }) {
-      // 拖拽测试区域
-      Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceAround }) {
-        Image($r('app.media.icon'))
-          .id('image1')
-          .width('25%')
-          .height('25%')
-          .border({ width: 1 })
-          .draggable(true)
-          .dragPreview(this.previewData)
-          .onPreDrag((status: PreDragStatus) => {
-            if (status == PreDragStatus.PREPARING_FOR_DRAG_DETECTION) {
-              this.loadData()
-            }
-          })
-      }
-      .height('25%')
-      .width('90%')
-      .margin({ top: 20 })
-
       // 测试按钮
       Button('Test Null Options')
         .width('90%')
@@ -134,6 +115,24 @@ struct DragEventStartDataLoading {
         .onClick(() => {
           this.resetStates();
         })
+      // 拖拽测试区域
+      Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceAround }) {
+        Image($r('app.media.icon'))
+          .id('image1')
+          .width('25%')
+          .height('25%')
+          .border({ width: 1 })
+          .draggable(true)
+          .dragPreview(this.previewData)
+          .onPreDrag((status: PreDragStatus) => {
+            if (status == PreDragStatus.PREPARING_FOR_DRAG_DETECTION) {
+              this.loadData()
+            }
+          })
+      }
+      .height('25%')
+      .width('90%')
+      .margin({ top: 20 })
     }
     .width('100%')
     .height('100%')

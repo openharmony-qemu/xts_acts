@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -208,9 +208,9 @@ export default function IndexedCollections16Test() {
         console.log(TAG + ' start');
 
         const arr36: number[] = [1, 2, 3, 4];
-        const result36 = arr36.sort(() => (Math.random() - 0.5) as int);
+        const result36 = arr36.sort(() => (Math.random() - 0.5).toInt());
 
-        const sorted = result36.slice().sort((a: number, b: number) => (a - b) as int);
+        const sorted = result36.slice().sort((a: number, b: number) => (a - b).toInt());
         expect(sorted.join(',') === '1,2,3,4' && result36.length === 4).assertTrue();
 
         console.log(TAG + ' done');
@@ -235,7 +235,7 @@ export default function IndexedCollections16Test() {
         const result37 = arr37.sort((a: number, b: number) => {
           if (isNaN(a))  return 1;
           if (isNaN(b))  return -1;
-          return (a - b) as int;
+          return (a - b).toInt();
         });
 
         expect(result37.join(',') === '1,2,3,NaN').assertTrue();

@@ -314,7 +314,7 @@ struct RichEditorMenuType1 {
           .width(this.theme.buttonSize)
           .height(this.theme.buttonSize)
           .onClick((e:ClickEvent)=> {
-            if (index as number == 0) {
+            if (index.toDouble() == 0) {
               this.sliderShow = false
               if (this.controller) {
                 let selection = this.controller!.getSelection()!;
@@ -339,7 +339,7 @@ struct RichEditorMenuType1 {
                   }
                 })
               }
-            } else if (index as number == 1) {
+            } else if (index.toDouble() == 1) {
               this.sliderShow = false
               if (this.controller) {
                 let selection = this.controller.getSelection()!;
@@ -364,7 +364,7 @@ struct RichEditorMenuType1 {
                   }
                 })
               }
-            } else if (index as number == 2) {
+            } else if (index.toDouble() == 2) {
               this.sliderShow = false
               if (this.controller) {
                 let selection = this.controller!.getSelection()!;
@@ -396,9 +396,9 @@ struct RichEditorMenuType1 {
                   }
                 })
               }
-            } else if (index as number == 3) {
+            } else if (index.toDouble() == 3) {
               this.sliderShow = !this.sliderShow
-            } else if (index as number == 4) {
+            } else if (index.toDouble() == 4) {
               this.sliderShow = false
               if (this.controller) {
                 let selection = this.controller!.getSelection()!;

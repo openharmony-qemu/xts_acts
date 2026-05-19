@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -66,7 +66,7 @@ async function getPermissions() {
     let applicationFlags: int = bundleManager.ApplicationFlag.GET_APPLICATION_INFO_DEFAULT;
     let applicationInfo: bundleManager.ApplicationInfo = bundleManager.getApplicationInfoSync('com.example.actsradiostatisticetstest.static', applicationFlags, userId);
     let tokenId: long = applicationInfo.accessTokenId;
-    let tokenValue: int = tokenId as int;
+    let tokenValue: int = tokenId.toInt();
     for (let index = 0; index < list.length; index++) {
       await abilityAccessCtrl.createAtManager().grantUserGrantedPermission(tokenValue, list[index] as Permissions, 1);
       console.info(`getPermission succeed `);

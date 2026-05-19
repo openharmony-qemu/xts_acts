@@ -6,6 +6,7 @@
     "MainAbility/pages/onAreaChange/UnregisterCommonAreaApproximateChangeEventTest",
     "MainAbility/pages/orphanCharOptimization/orphanCharOptimizationTest",
     "MainAbility/pages/gestureIntercept/GestureInterceptTest",
-    "MainAbility/pages/passThrough/PassThroughTest"
+    "MainAbility/pages/passThrough/PassThroughTest",
+    "MainAbility/pages/getSizeLimitation/GetSizeLimitationTest"
   ]
 }

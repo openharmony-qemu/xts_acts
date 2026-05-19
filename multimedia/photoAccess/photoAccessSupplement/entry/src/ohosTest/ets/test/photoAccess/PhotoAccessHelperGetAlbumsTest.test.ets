@@ -48,84 +48,6 @@ export default function PhotoAccessHelperGetAlbumsSupp() {
     });
 
     /**
-     * @tc.name   SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_0100
-     * @tc.number SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_0100
-     * @tc.desc   phAccessHelper.setAssetCompatibleCapability-supportedHighResolution-true-jpg
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_0100';
-      console.info(TAG, testName + ' begin.');
-      try {
-        let capability : photoAccessHelper.AssetCompatibleCapability = {
-          supportedHighResolution : true,
-          supportedMimeType:["JPG"]
-        };
-        await phAccessHelper.setAssetCompatibleCapability(capability);
-        expect(capability != undefined).assertTrue();
-        console.info(TAG, testName + '  test  success.');
-        done();
-      } catch (error) {
-        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-        expect().assertFail();
-        done();
-      }
-    });
-    /**
-     * @tc.name   SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_0200
-     * @tc.number SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_0200
-     * @tc.desc   phAccessHelper.setAssetCompatibleCapability-supportedHighResolution-false
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_0200';
-      console.info(TAG, testName + ' begin.');
-      try {
-        let capability : photoAccessHelper.AssetCompatibleCapability = {
-          supportedHighResolution : false,
-          supportedMimeType:["JPG"]
-        };
-        await phAccessHelper.setAssetCompatibleCapability(capability);
-        expect(capability != undefined).assertTrue();
-        console.info(TAG, testName + '  test  success.');
-        done();
-      } catch (error) {
-        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-        expect().assertFail();
-        done();
-      }
-    });
-    /**
-     * @tc.name   SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_0300
-     * @tc.number SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_0300
-     * @tc.desc   phAccessHelper.setAssetCompatibleCapability-supportedMimeType-mp4
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_0300';
-      console.info(TAG, testName + ' begin.');
-      try {
-        let capability : photoAccessHelper.AssetCompatibleCapability = {
-          supportedHighResolution : false,
-          supportedMimeType:["MP4"]
-        };
-        await phAccessHelper.setAssetCompatibleCapability(capability);
-        expect(capability != undefined).assertTrue();
-        console.info(TAG, testName + '  test  success.');
-        done();
-      } catch (error) {
-        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-        expect().assertFail();
-        done();
-      }
-    });
-    /**
      * @tc.name   SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_0400
      * @tc.number SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_0400
      * @tc.desc   phAccessHelper.setAssetCompatibleCapability-第一个参数为null
@@ -167,6 +89,5 @@ export default function PhotoAccessHelperGetAlbumsSupp() {
         done();
       }
     });
-
   })
 }

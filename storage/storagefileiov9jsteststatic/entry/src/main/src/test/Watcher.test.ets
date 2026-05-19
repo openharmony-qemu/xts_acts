@@ -260,10 +260,10 @@ export default function fileIOWatcher() {
         let watcher = fs.createWatcher(dpath, watcherEvent.get('IN_MOVED_FROM', 0x00000040) | watcherEvent.get('IN_MOVED_TO', 0x00000080), (data: WatchEvent) => {
           hilog.info(domain, tag, '%{public}s', `${testNum} :{event: ${data.event}, fileName: ${data.fileName}, cookie: ${data.cookie}}`);
           if (watcherEvent.get('IN_MOVED_FROM') === data.event) {
-            watcherFrom = data.cookie;
+            watcherFrom = data.cookie.toDouble();
           }
           if (watcherEvent.get('IN_MOVED_TO') === data.event) {
-            watcherTo = data.cookie;
+            watcherTo = data.cookie.toDouble();
           }
         });
         watcher.start();

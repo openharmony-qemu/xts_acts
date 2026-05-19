@@ -30,8 +30,8 @@ void Fputc0100(void)
         return;
     }
     FILE *fptr = fopen(path, "w");
-    int exit = fputc('a', fptr);
-    EXPECT_EQ("Fputc0100", exit, CHAR_A_ASCII);
+    int exitCode = fputc('a', fptr);
+    EXPECT_EQ("Fputc0100", exitCode, CHAR_A_ASCII);
     (void)fclose(fptr);
 }
 
@@ -47,8 +47,8 @@ void Fputc0200(void)
         return;
     }
     FILE *fptr = fopen(path, "r");
-    int exit = fputc('a', fptr);
-    EXPECT_EQ("Fputc0200", exit, EOF);
+    int exitCode = fputc('a', fptr);
+    EXPECT_EQ("Fputc0200", exitCode, EOF);
     (void)fclose(fptr);
     (void)remove(path);
 }

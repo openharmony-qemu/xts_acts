@@ -3757,7 +3757,7 @@ export default function AssignmentLikeContextsTest() {
      */
     it("testAssignmentLikeContexts0148", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: int = 300;
-      let dst: byte = src as byte;
+      let dst: byte = src.toByte();
       expect(dst).assertEqual(44);
     });
   })

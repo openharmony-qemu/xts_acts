@@ -58,13 +58,13 @@ export default function SegBtnSelectBackgrountColorTest() {
       let result: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       await CommonFunc.sleep(1000);
       let selectedBackgroundColor0: string =
-        result.$children[0].$children[0].$children[1].$children[0].$attrs.backgroundColor;
+        result.$children[0].$children[0].$children[0].$children[1].$children[0].$attrs.backgroundColor;
       let selectedBackgroundColor1: string =
-        result.$children[0].$children[1].$children[1].$children[0].$attrs.backgroundColor;
+        result.$children[0].$children[1].$children[0].$children[1].$children[0].$attrs.backgroundColor;
       let selectedBackgroundColor2: string =
-        result.$children[0].$children[2].$children[1].$children[0].$attrs.backgroundColor;
+        result.$children[0].$children[2].$children[0].$children[1].$children[0].$attrs.backgroundColor;
       let selectedBackgroundColor3: string =
-        result.$children[0].$children[3].$children[1].$children[0].$attrs.backgroundColor;
+        result.$children[0].$children[3].$children[0].$children[1].$children[0].$attrs.backgroundColor;
       let selectedBackgroundColor_1: string | undefined = AppStorage.get<string>('selectedBackgroundColor_1')
       let selectedBackgroundColor_2: string | undefined = AppStorage.get<string>('selectedBackgroundColor_2')
       await CommonFunc.sleep(2000);

@@ -20,7 +20,7 @@ interface Person {
   age: number;
 }
 
-export default function BuiltinsArraySortTest() {
+export default function BuiltinsArraySortTest() : void{
   describe("BuiltinsArraySortTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -52,7 +52,12 @@ export default function BuiltinsArraySortTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsArraySortTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(5, 3, 1, 4, 2);
+      const arr = Array.create<number>(5, 0);
+      arr[0] = 5;
+      arr[1] = 3;
+      arr[2] = 1;
+      arr[3] = 4;
+      arr[4] = 2;
 
       const result = arr.sort();
 
@@ -73,7 +78,12 @@ export default function BuiltinsArraySortTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySortTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5, 3, 1, 4, 2);
+      const arr = Array.create<number>(5, 0);
+      arr[0] = 5;
+      arr[1] = 3;
+      arr[2] = 1;
+      arr[3] = 4;
+      arr[4] = 2;
 
       const result = arr.sort((a: number, b: number) => (b - a).toInt());
 
@@ -94,7 +104,11 @@ export default function BuiltinsArraySortTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySortTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<string>('banana', 'apple', 'cherry', 'date');
+      const arr = Array.create<string>(4, '');
+      arr[0] = 'banana';
+      arr[1] = 'apple';
+      arr[2] = 'cherry';
+      arr[3] = 'date';
 
       const result = arr.sort((a: string, b: string) => {
         if (a < b) return -1 as int;
@@ -118,13 +132,10 @@ export default function BuiltinsArraySortTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySortTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-
-
-      const arr = new Array<Person>(
-        { name: 'Alice', age: 30 },
-        { name: 'Bob', age: 20 },
-        { name: 'Charlie', age: 25 }
-      );
+      const arr = Array.create<Person>(3, { name: '', age: 0 });
+      arr[0] = { name: 'Alice', age: 30 };
+      arr[1] = { name: 'Bob', age: 20 };
+      arr[2] = { name: 'Charlie', age: 25 };
 
       const result = arr.sort((a: Person, b: Person) => (a.age - b.age).toInt());
 
@@ -143,7 +154,9 @@ export default function BuiltinsArraySortTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArraySortTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(2, 1);
+      const arr = Array.create<number>(2, 0);
+      arr[0] = 2;
+      arr[1] = 1;
 
       const result = arr.sort((a: number, b: number) => 2147483647);
 
@@ -161,7 +174,9 @@ export default function BuiltinsArraySortTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArraySortTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(2, 1);
+      const arr = Array.create<number>(2, 0);
+      arr[0] = 2;
+      arr[1] = 1;
 
       const result = arr.sort((a: number, b: number) => -2147483648);
 
@@ -179,8 +194,18 @@ export default function BuiltinsArraySortTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySortTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5, 3, 1, 4, 2);
-      const original = new Array<number>(5, 3, 1, 4, 2);
+      const arr = Array.create<number>(5, 0);
+      arr[0] = 5;
+      arr[1] = 3;
+      arr[2] = 1;
+      arr[3] = 4;
+      arr[4] = 2;
+      const original = Array.create<number>(5, 0);
+      original[0] = 5;
+      original[1] = 3;
+      original[2] = 1;
+      original[3] = 4;
+      original[4] = 2;
 
       const result = arr.sort((a: number, b: number) => 0);
 
@@ -199,7 +224,9 @@ export default function BuiltinsArraySortTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySortTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(2, 1);
+      const arr = Array.create<number>(2, 0);
+      arr[0] = 2;
+      arr[1] = 1;
 
       const result = arr.sort((a: number, b: number) => -1);
 
@@ -217,7 +244,9 @@ export default function BuiltinsArraySortTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySortTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2);
+      const arr = Array.create<number>(2, 0);
+      arr[0] = 1;
+      arr[1] = 2;
 
       const result = arr.sort((a: number, b: number) => 1);
 
@@ -235,7 +264,7 @@ export default function BuiltinsArraySortTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySortTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>();
+      const arr: number[] = Array.create<number>(0, 0);
 
       const result = arr.sort();
 
@@ -268,7 +297,15 @@ export default function BuiltinsArraySortTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArraySortTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(3, 1, 4, 1, 5, 9, 2, 6);
+      const arr = Array.create<number>(8, 0);
+      arr[0] = 3;
+      arr[1] = 1;
+      arr[2] = 4;
+      arr[3] = 1;
+      arr[4] = 5;
+      arr[5] = 9;
+      arr[6] = 2;
+      arr[7] = 6;
 
       const result = arr.sort((a: number, b: number) => {
         if (a < b) return -2147483648;

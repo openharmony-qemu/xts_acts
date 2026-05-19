@@ -48,7 +48,9 @@ import LifeCycleTest0310 from './lifecycle/LifeCycleTest0310.test';
 import LifeCycleUndefinedNullTest from './lifecycle/LifeCycleUndefinedNullTest.test';
 import CircularReferenceTest from './circularReference/CircularReferenceTest.test';
 import CustomPropertyTest from './customProperty/CustomProperty.test';
-
+import componentLifecycleDecoratorsTest from './lifecycle/ComponentLifecycleDecorators.test';
+import reuseComponentLifecycleTest from './lifecycle/ReuseComponentLifecycle.test';
+import reuseV2ComponentLifecycleTest from './lifecycle/ReuseV2ComponentLifecycle.test';
 export default function testsuite() {
     MutableBuilder001();
     BuilderParam001();
@@ -85,4 +87,7 @@ export default function testsuite() {
     LifeCycleUndefinedNullTest();
     CircularReferenceTest();
     CustomPropertyTest();
+    componentLifecycleDecoratorsTest();
+    reuseComponentLifecycleTest();
+    reuseV2ComponentLifecycleTest();
 }

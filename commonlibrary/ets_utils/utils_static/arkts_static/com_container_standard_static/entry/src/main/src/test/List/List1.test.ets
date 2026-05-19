@@ -632,7 +632,7 @@ export default function ArkListTest() {
         list.insert(10, 0);
         list.insert(8, 0);
         list.sort((first, second) => first - second);
-        list.getSubList(Math.floor(5) as int, Math.floor(1) as int);
+        list.getSubList(Math.floor(5).toInt(), Math.floor(1).toInt());
         expect(false).assertFail();
       } catch (err) {
         err = err as BusinessError;
@@ -663,7 +663,7 @@ export default function ArkListTest() {
         list.insert(10, 0);
         list.insert(8, 0);
         list.sort((first, second) => first - second);
-        list.getSubList(Math.floor(1) as int , Math.floor(5) as int);
+        list.getSubList(Math.floor(1).toInt() , Math.floor(5).toInt());
         list.add(3);
         console.log(`${TAG} list: ${JSON.stringify(list)}`);
         expect(JSON.stringify(list)).assertEqual(`{"0":1,"1":2,"2":4,"3":8,"4":10,"5":3}`);
@@ -700,7 +700,7 @@ export default function ArkListTest() {
         list.add([0, 1, 2]);
 
         list.forEach((value, index: int) => {
-          expect(String(list.set(Math.floor(index || 0) as int, "li si") != undefined)).assertEqual('true');
+          expect(String(list.set(Math.floor(index || 0).toInt(), "li si") != undefined)).assertEqual('true');
         })
         console.log(`${JSON.stringify(list)}`);
       } catch (err) {
@@ -736,8 +736,8 @@ export default function ArkListTest() {
         list.add([0, 1, 2]);
 
         let index = list.getIndexOf(param);
-        let setParam = list.set(Math.floor(index) as int, "li si");
-        let removeParam = list.removeByIndex(Math.floor(index) as int);
+        let setParam = list.set(Math.floor(index).toInt(), "li si");
+        let removeParam = list.removeByIndex(Math.floor(index).toInt());
         expect(String(setParam == removeParam)).assertEqual('true');
       } catch (err) {
         err = err as BusinessError;
@@ -772,7 +772,7 @@ export default function ArkListTest() {
         list.add([0, 1, 2]);
 
         let index = list.getIndexOf(param);
-        let setParam = list.set(Math.floor(index) as int, "li si");
+        let setParam = list.set(Math.floor(index).toInt(), "li si");
         expect(String(list.has(setParam))).assertEqual('true');
       } catch (err) {
         err = err as BusinessError;
@@ -805,7 +805,7 @@ export default function ArkListTest() {
         list.add([0, 1, 2]);
 
         list.forEach((value, index) => {
-          list.set(Math.floor(index || 0) as int, new Temp1(index, "zhang " + index));
+          list.set(Math.floor(index || 0).toInt(), new Temp1(index, "zhang " + index));
         })
         let array = list.convertToArray();
         array.forEach((value) => {
@@ -972,7 +972,7 @@ export default function ArkListTest() {
         list.add("%");
         list.add(`"`);
         list.forEach((value, index) => {
-          expect(list.get(Math.floor(index || 0) as int)).assertEqual(value);
+          expect(list.get(Math.floor(index || 0).toInt())).assertEqual(value);
         });
       } catch (err) {
         err = err as BusinessError;
@@ -1012,7 +1012,7 @@ export default function ArkListTest() {
         list.add(`"`);
         let index = 0;
         list.forEach((value) => {
-          expect(list.get(Math.floor(index || 0) as int)).assertEqual(value);
+          expect(list.get(Math.floor(index || 0).toInt())).assertEqual(value);
           index++;
         });
       } catch (err) {
@@ -1055,7 +1055,7 @@ export default function ArkListTest() {
         list.add(`"`);
         let index = 0;
         list.forEach((value) => {
-          expect(list.get(Math.floor(index || 0) as int)).assertEqual(value);
+          expect(list.get(Math.floor(index || 0).toInt())).assertEqual(value);
           index++;
         });
         expect(listNew.convertToArray().toString()).assertEqual("0");
@@ -1097,7 +1097,7 @@ export default function ArkListTest() {
         list.add(`"`);
         list.forEach((value, index, list: List<number | string | Array<number | string | boolean> | boolean |
         undefined | null | Object>) => {
-          expect(list.get(Math.floor(index || 0) as int)).assertEqual(value);
+          expect(list.get(Math.floor(index || 0).toInt())).assertEqual(value);
         });
       } catch (err) {
         err = err as BusinessError;

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -46,7 +46,7 @@ import {
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 
-class HeadBuilderParams {
+export class HeadBuilderParams {
   public text: string | Resource;
   public colorMode: boolean = false
 
@@ -55,7 +55,7 @@ class HeadBuilderParams {
   }
 }
 
-class FootBuilderParams {
+export class FootBuilderParams {
   public num: int | Resource;
   public colorMode: boolean = false
 
@@ -174,7 +174,7 @@ struct ListItemGroupExample {
     .padding({ top: 5 } as Padding)
   }
 }
-interface TimeTable {
+export interface TimeTable {
   title: string;
   projects: string[];
 }

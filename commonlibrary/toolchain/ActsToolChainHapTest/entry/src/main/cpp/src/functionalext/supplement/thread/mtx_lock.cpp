@@ -20,7 +20,7 @@
 
 static mtx_t g_mtex;
 
-int ThreadfuncA(void* arg)
+static int ThreadfuncA(void* arg)
 {
     int32_t ret = 0;
     ret = mtx_lock(&g_mtex);
@@ -30,7 +30,7 @@ int ThreadfuncA(void* arg)
     return 0;
 }
 
-int ThreadfuncB(void* arg)
+static int ThreadfuncB(void* arg)
 {
     int32_t ret = 0;
     ret = mtx_lock(&g_mtex);
@@ -40,7 +40,7 @@ int ThreadfuncB(void* arg)
     return 0;
 }
 
-int ThreadfuncC(void* arg)
+static int ThreadfuncC(void* arg)
 {
     int32_t ret = 0;
     ret = mtx_lock(&g_mtex);
@@ -50,7 +50,7 @@ int ThreadfuncC(void* arg)
     return 0;
 }
 
-int ThreadfuncD(void* arg)
+static int ThreadfuncD(void* arg)
 {
     int32_t ret = 0;
     ret = mtx_lock(&g_mtex);
@@ -60,7 +60,7 @@ int ThreadfuncD(void* arg)
     return 0;
 }
 
-int ThreadfuncE(void* arg)
+static int ThreadfuncE(void* arg)
 {
     int32_t ret = 0;
     ret = mtx_lock(&g_mtex);

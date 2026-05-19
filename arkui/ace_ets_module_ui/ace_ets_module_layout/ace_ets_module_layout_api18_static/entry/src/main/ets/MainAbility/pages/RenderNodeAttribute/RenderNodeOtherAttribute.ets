@@ -35,7 +35,7 @@ const clip = new ShapeClip();
 const renderNode2 = new RenderNode();
 clip.setCommandPath({ commands: 'M100 0 L0 100 L50 200 L150 200 L200 100 Z' });
 renderNode2.frame = { x: 0, y: 0, width: 20, height: 20 };
-renderNode2.backgroundColor = 0XFF00FF00 as Int;
+renderNode2.backgroundColor = 0XFF00FF00.toInt();
 renderNode2.shapeClip = clip;
 const shapeClip = renderNode2.shapeClip;
 

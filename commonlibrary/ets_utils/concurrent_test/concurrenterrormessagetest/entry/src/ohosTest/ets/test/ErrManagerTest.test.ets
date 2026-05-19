@@ -408,14 +408,18 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('WaitForThrowErrorTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: () => void) => {
-      errorManager.on('globalUnhandledRejectionDetected', handleUnhandledRejection);
-      const conditionVariable = new ArkTSUtils.locks.ConditionVariable();
-      conditionVariable.waitFor(10)
-        .finally(() => {
-          throwError();
-        });
-      await sleep(800);
-      expect(errorCaught).assertEqual(err);
+      let exceptionHandled = false;
+      try {
+        const conditionVariable = new ArkTSUtils.locks.ConditionVariable();
+        await conditionVariable.waitFor(10)
+          .finally(() => {
+            throwError();
+          });
+      } catch (e) {
+        console.error(`WaitForThrowErrorTest0900 error:` + e);
+        exceptionHandled = true;
+      }
+      expect(exceptionHandled).assertTrue();
       Done();
     });
 
@@ -428,13 +432,17 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('WaitForErrorTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: () => void) => {
-      errorManager.on('globalUnhandledRejectionDetected', handleUnhandledRejection);
-      const conditionVariable = new ArkTSUtils.locks.ConditionVariable();
-      conditionVariable.waitFor(10).then(() => {
-        throwError();
-      });
-      await sleep(800);
-      expect(errorCaught).assertEqual(err);
+      let exceptionHandled = false;
+      try {
+        const conditionVariable = new ArkTSUtils.locks.ConditionVariable();
+        await conditionVariable.waitFor(10).then(() => {
+          throwError();
+        });
+      } catch (e) {
+        console.error(`WaitForErrorTest1000 error:` + e);
+        exceptionHandled = true;
+      }
+      expect(exceptionHandled).assertTrue();
       Done();
     });
 

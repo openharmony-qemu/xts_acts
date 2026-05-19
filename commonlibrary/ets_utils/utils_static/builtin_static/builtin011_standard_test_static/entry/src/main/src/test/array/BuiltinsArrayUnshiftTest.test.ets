@@ -20,7 +20,7 @@ interface TestObj {
   value: number;
 }
 
-export default function BuiltinsArrayUnshiftTest() {
+export default function BuiltinsArrayUnshiftTest() : void{
   describe("BuiltinsArrayUnshiftTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

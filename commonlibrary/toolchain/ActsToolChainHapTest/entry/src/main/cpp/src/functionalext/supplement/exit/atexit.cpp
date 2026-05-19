@@ -30,7 +30,7 @@ int RegisterAtExitTest(void (*fn)(void))
 }
 } // namespace
 
-void Atexit0100(void)
+static void Atexit0100(void)
 {
     printf("%s this is end msg\n", __func__);
 }

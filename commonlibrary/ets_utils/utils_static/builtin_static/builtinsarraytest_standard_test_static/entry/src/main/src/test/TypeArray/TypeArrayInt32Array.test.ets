@@ -843,7 +843,7 @@ export default function typeArrayInt32ArrayTest() {
               break;
             }
           }
-          segments[segmentIndex].push(val as int);
+          segments[segmentIndex].push(val.toInt());
         }
 
         return segments;
@@ -1037,7 +1037,7 @@ export default function typeArrayInt32ArrayTest() {
      */
     it('TypeArrayInt32Array0033', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       let robustScale = (data: Int32Array, newMin: int, newMax: int): Int32Array => {
-        let sorted = new Int32Array(Array.from(data)).sort((a: double, b: double) => (a - b) as int);
+        let sorted = new Int32Array(Array.from(data)).sort((a: double, b: double) => (a - b).toInt());
         let n = sorted.length;
 
         let median = n % 2 === 0

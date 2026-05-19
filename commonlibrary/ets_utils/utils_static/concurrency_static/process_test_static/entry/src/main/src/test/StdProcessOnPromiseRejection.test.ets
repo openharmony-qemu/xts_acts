@@ -466,8 +466,7 @@ export default function stdProcessOnUnhandledPromiseRejectionTest(): void {
                     });
                 }
                 for (const eaw of workers) {
-                    let j = eaw.join();
-                    j.Await();
+                    eaw.quit();
                 }
                 await Utils.msSleep(200);
                 expect(concurrentSet.has("Worker 0 error")).assertTrue();
@@ -516,8 +515,7 @@ export default function stdProcessOnUnhandledPromiseRejectionTest(): void {
                         reject(new Error("EAWorker destruction error"));
                     });
                 });
-                let job = eaw.join();
-                job.Await();
+                eaw.quit();
 
                 await Utils.msSleep(30);
 

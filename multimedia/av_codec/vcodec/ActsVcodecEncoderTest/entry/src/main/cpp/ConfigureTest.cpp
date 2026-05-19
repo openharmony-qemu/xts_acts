@@ -334,6 +334,62 @@ int VideoEncodeCapability5010Test()
         return 0;
     }
 }
+int VideoEncodeCapability5020Test()
+{
+    bool isSupportedCBRHQ = OH_AVCapability_IsEncoderBitrateModeSupported(cap_hevc, BITRATE_MODE_CBR_HIGH_QUALITY);
+    auto vEncSample = make_unique<VEncAPI11Sample>();
+    if (isSupportedCBRHQ) {
+        OH_AVCodec *venc = OH_VideoEncoder_CreateByName(g_codecNameHEVC);
+        if (!venc) {
+            return 1;
+        }
+        OH_AVFormat *format = OH_AVFormat_Create();
+        OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, vEncSample->DEFAULT_WIDTH);
+        OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, vEncSample->DEFAULT_HEIGHT);
+        OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, vEncSample->DEFAULT_PIX_FMT);
+        OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, vEncSample->DEFAULT_FRAME_RATE);
+        OH_AVFormat_SetIntValue(format, OH_MD_KEY_I_FRAME_INTERVAL, vEncSample->DEFAULT_KEY_FRAME_INTERVAL);
+        OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, BITRATE_MODE_CBR_HIGH_QUALITY);
+        int ret = OH_VideoEncoder_Configure(venc, format);
+        OH_VideoEncoder_Destroy(venc);
+        OH_AVFormat_Destroy(format);
+        if (ret != AV_ERR_OK) {
+            return 1;
+        }
+        return 0;
+    } else {
+        return 0;
+    }
+}
+int VideoEncodeCapability5030Test()
+{
+    bool isSupportedCBRHQ = OH_AVCapability_IsEncoderBitrateModeSupported(cap_hevc, BITRATE_MODE_CBR_HIGH_QUALITY);
+    auto vEncSample = make_unique<VEncAPI11Sample>();
+    if (isSupportedCBRHQ) {
+        OH_AVCodec *venc = OH_VideoEncoder_CreateByName(g_codecNameHEVC);
+        if (!venc) {
+            return 1;
+        }
+        OH_AVFormat *format = OH_AVFormat_Create();
+        OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, vEncSample->DEFAULT_WIDTH);
+        OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, vEncSample->DEFAULT_HEIGHT);
+        OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, vEncSample->DEFAULT_PIX_FMT);
+        OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, vEncSample->DEFAULT_FRAME_RATE);
+        OH_AVFormat_SetIntValue(format, OH_MD_KEY_I_FRAME_INTERVAL, vEncSample->DEFAULT_KEY_FRAME_INTERVAL);
+        OH_AVFormat_SetIntValue(format, OH_MD_KEY_QUALITY, vEncSample->DEFAULT_QUALITY);
+        OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, BITRATE_MODE_CBR_HIGH_QUALITY);
+        int ret = OH_VideoEncoder_Configure(venc, format);
+        OH_VideoEncoder_Destroy(venc);
+        OH_AVFormat_Destroy(format);
+        if (ret != AV_ERR_INVALID_VAL) {
+            return 1;
+        }
+        return 0;
+    } else {
+        return 0;
+    }
+}
+
 void InitConfigureTest()
 {
     SetUpTestCase();

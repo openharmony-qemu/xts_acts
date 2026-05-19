@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-import { attrsManager } from '../../common/AttrsManager'
 import router from '@ohos.router'
 import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingContext2D, RenderingContextSettings,
   AlphabetIndexer, Button, Blank, Checkbox, CheckboxGroup, DataPanel, DatePicker, Divider, Gauge, Image, ImageAnimator,
@@ -1765,7 +1764,7 @@ struct SweepGradientPage {
 				Marquee({ 
 					start: true,
 					step: 50,
-					loop: Infinity as Int,
+					loop: Infinity.toInt(),
 					fromStart: true,
 					src: 'Running Marquee starts rolling'
 				})

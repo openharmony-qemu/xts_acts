@@ -74,6 +74,26 @@ export default function abilityTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   testHicollieSubthreadCode0800
+     * @tc.number SUB_DFX_DFR_Hicollie_Subthread_Code_0800
+     * @tc.desc   testHicollieSubthreadCode0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testHicollieSubthreadCode0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        let code = testNapi.TestHiCollieAssociateProcessReport1();
+        expect(code == 29800007).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`====> testHicollieSubthreadCode0800 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+    })
     
   })
 }

@@ -18,6 +18,7 @@ import nativeWindow from 'libnativewindow.so'
 import { BusinessError } from '@kit.BasicServicesKit'
 
 export default function nativeWindowTest() {
+
   describe('NativeWindowTest', () => {
     /**
      * @tc.name   testNativeWindowCreateNativeWindowNullptr
@@ -1992,6 +1993,36 @@ export default function nativeWindowTest() {
     it('testNativeErrorCodeCover', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
         let result: number = nativeWindow.OHNativeErrorCodeCover();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   testNativeWindowNativeWindowFlushBufferAbnormalRegion
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2500
+     * @tc.desc   testNativeWindowNativeWindowFlushBufferAbnormalRegion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNativeWindowNativeWindowFlushBufferAbnormalRegion', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowNativeWindowFlushBufferAbnormalRegion();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   testNativeWindowNativeWindowRequestBufferDefaultWidthAndHeight
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2600
+     * @tc.desc   testNativeWindowNativeWindowRequestBufferDefaultWidthAndHeight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNativeWindowNativeWindowRequestBufferDefaultWidthAndHeight', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowNativeWindowRequestBufferDefaultWidthAndHeight();
         expect(result).assertEqual(0);
         done();
       });

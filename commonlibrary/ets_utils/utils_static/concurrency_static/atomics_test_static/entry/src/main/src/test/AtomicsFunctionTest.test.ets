@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -190,7 +190,7 @@ export default function AtomicsFunctionTest() {
       }
 
       const statusIndex: number = 10;
-      Atomics.store(bigInt64Array, statusIndex as int, 0n);
+      Atomics.store(bigInt64Array, statusIndex.toInt(), 0n);
       const checkIndex: number = 3;
       const expectedValue: bigint = BigInt(6);
 
@@ -204,10 +204,10 @@ export default function AtomicsFunctionTest() {
             console.error(`Error in taskpool task ${i}: `, err.message);
           });
       }
-      Atomics.store(bigInt64Array, statusIndex as int, 1n);
-      Atomics.notify(bigInt64Array, statusIndex as int);
+      Atomics.store(bigInt64Array, statusIndex.toInt(), 1n);
+      Atomics.notify(bigInt64Array, statusIndex.toInt());
       console.log('Main thread has notified all taskpool tasks');
-      const actualValue: bigint = Atomics.load(bigInt64Array, checkIndex as int);
+      const actualValue: bigint = Atomics.load(bigInt64Array, checkIndex.toInt());
       expect(actualValue).assertEqual(expectedValue);
       console.info(`${caseName} test end`);
       Done();
@@ -231,7 +231,7 @@ export default function AtomicsFunctionTest() {
         int32Array[i] = i * 2;
       }
       const statusIndex: number = 10;
-      Atomics.store(int32Array, statusIndex as int, 0);
+      Atomics.store(int32Array, statusIndex.toInt(), 0);
       for (let i = 0; i < 10; i++) {
         const task: taskpool.Task = new taskpool.Task(waitInTaskpool2, ArrayBuffer, statusIndex);
         taskpool.execute(task)
@@ -242,7 +242,7 @@ export default function AtomicsFunctionTest() {
             console.error(`Error in taskpool task ${i}: `, err.message);
           });
       }
-      const loadedValue = Atomics.load(int32Array, statusIndex as int);
+      const loadedValue = Atomics.load(int32Array, statusIndex.toInt());
       expect(loadedValue).assertEqual(0);
       console.info(`${caseName} test end`);
       Done();
@@ -268,7 +268,7 @@ export default function AtomicsFunctionTest() {
         bigInt64Array[i] = BigInt(i * 2);
       }
       const statusIndex: number = 10;
-      Atomics.store(bigInt64Array, statusIndex as int, 0n);
+      Atomics.store(bigInt64Array, statusIndex.toInt(), 0n);
 
       for (let i = 0; i < 10; i++) {
         const waitTask: taskpool.Task = new taskpool.Task(waitInTaskpool, ArrayBuffer, statusIndex);
@@ -291,7 +291,7 @@ export default function AtomicsFunctionTest() {
             console.error(`Error in notify taskpool task ${i}: `, err.message);
           });
       }
-      const loadedValue = Atomics.load(bigInt64Array, statusIndex as int);
+      const loadedValue = Atomics.load(bigInt64Array, statusIndex.toInt());
       expect(loadedValue).assertEqual(0n);
       console.info(`${caseName} test end`);
       Done();
@@ -315,7 +315,7 @@ export default function AtomicsFunctionTest() {
         bigInt64Array[i] = BigInt(i * 2);
       }
       const statusIndex: number = 10;
-      Atomics.store(bigInt64Array, statusIndex as int, 0n);
+      Atomics.store(bigInt64Array, statusIndex.toInt(), 0n);
       for (let i = 0; i < 10; i++) {
         const expectedValue = BigInt(i + 1);
         const waitTask: taskpool.Task = new taskpool.Task(waitInTaskpool3, ArrayBuffer, statusIndex, expectedValue);
@@ -340,7 +340,7 @@ export default function AtomicsFunctionTest() {
             console.error(`Error in notify taskpool task ${i}: `, err.message);
           });
       }
-      const loadedValue = Atomics.load(bigInt64Array, statusIndex as int);
+      const loadedValue = Atomics.load(bigInt64Array, statusIndex.toInt());
       expect(loadedValue).assertEqual(0n);
       console.info(`${caseName} test end`);
       Done();

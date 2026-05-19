@@ -37,7 +37,7 @@ interface CircularObject {
   self: CircularObject;
 }
 
-export default function BuiltinsArrayPushOneTest() {
+export default function BuiltinsArrayPushOneTest() : void{
   describe("BuiltinsArrayPushOneTest", ()=> {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -69,7 +69,9 @@ export default function BuiltinsArrayPushOneTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayPushOneTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(1, 2);
+      const arr = Array.create<number>(2, 0);
+      arr[0] = 1;
+      arr[1] = 2;
       const result = arr.pushOne(3);
 
       expect(result).assertEqual(3);
@@ -88,7 +90,8 @@ export default function BuiltinsArrayPushOneTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayPushOneTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr: Array<string> = ['hello'];
+      const arr: Array<string> = Array.create<string>(1, '');
+      arr[0] = 'hello';
       const result = arr.pushOne('world');
 
       expect(result).assertEqual(2);
@@ -106,7 +109,8 @@ export default function BuiltinsArrayPushOneTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayPushOneTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr: Array<boolean> = [true];
+      const arr: Array<boolean> = Array.create<boolean>(1, false);
+      arr[0] = true;
       const result = arr.pushOne(false);
 
       expect(result).assertEqual(2);
@@ -124,7 +128,7 @@ export default function BuiltinsArrayPushOneTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayPushOneTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<Person>();
+      const arr: Person[] = Array.create<Person>(0, { name: '', age: 0 });
       const person: Person = { name: 'Alice', age: 25 };
       const result = arr.pushOne(person);
 
@@ -144,7 +148,8 @@ export default function BuiltinsArrayPushOneTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayPushOneTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr: Array<number | null> = [1];
+      const arr: Array<number | null> = Array.create<number | null>(1, 0);
+      arr[0] = 1;
       const result = arr.pushOne(null);
 
       expect(result).assertEqual(2);
@@ -162,7 +167,8 @@ export default function BuiltinsArrayPushOneTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayPushOneTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr: Array<number | undefined> = [1];
+      const arr: Array<number | undefined> = Array.create<number | undefined>(1, 0);
+      arr[0] = 1;
       const result = arr.pushOne(undefined);
 
       expect(result).assertEqual(2);
@@ -180,7 +186,7 @@ export default function BuiltinsArrayPushOneTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayPushOneTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>();
+      const arr: number[] = Array.create<number>(0, 0);
       const result = arr.pushOne(42);
 
       expect(result).assertEqual(1);
@@ -197,7 +203,7 @@ export default function BuiltinsArrayPushOneTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayPushOneTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>();
+      const arr: number[] = Array.create<number>(0, 0);
       const result1 = arr.pushOne(2147483647);
       expect(result1).assertEqual(1);
 
@@ -217,7 +223,8 @@ export default function BuiltinsArrayPushOneTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayPushOneTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr: Array<number> = [1.0];
+      const arr: Array<number> = Array.create<number>(1, 0);
+      arr[0] = 1.0;
       const result = arr.pushOne(3.14);
 
       expect(result).assertEqual(2);
@@ -235,7 +242,8 @@ export default function BuiltinsArrayPushOneTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayPushOneTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr: Array<Array<number>> = [[1, 2]];
+      const arr: Array<Array<number>> = Array.create<Array<number>>(1, []);
+      arr[0] = [1, 2];
       const result = arr.pushOne([3, 4]);
 
       expect(result).assertEqual(2);
@@ -273,7 +281,7 @@ export default function BuiltinsArrayPushOneTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayPushOneTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>();
+      const arr: number[] = Array.create<number>(0, 0);
       const result = arr.pushOne(0);
 
       expect(result).assertEqual(1);
@@ -308,7 +316,7 @@ export default function BuiltinsArrayPushOneTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayPushOneTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>();
+      const arr: number[] = Array.create<number>(0, 0);
       for (let i = 0; i < 100; i++) {
         const result = arr.pushOne(i);
         expect(result).assertEqual(i + 1);
@@ -349,7 +357,7 @@ export default function BuiltinsArrayPushOneTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayPushOneTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>();
+      const arr: number[] = Array.create<number>(0, 0);
       arr.pushOne(10);
       arr.pushOne(20);
       arr.pushOne(30);
@@ -369,7 +377,7 @@ export default function BuiltinsArrayPushOneTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayPushOneTest1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<Person>();
+      const arr: Person[] = [];
       const person1: Person = { name: 'Alice', age: 25 };
       const person2: Person = { name: 'Bob', age: 30 };
       const person3: Person = { name: 'Charlie', age: 35 };

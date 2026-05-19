@@ -18,6 +18,15 @@
 // Minimal declarations copied from musl libc-test common helpers.
 #include <stddef.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 int TVmfill(void** p, size_t* n, int len);
 int TSetrlim(int r, long lim);
 int TMemfill();
+#ifdef __cplusplus
+}
+#endif
+#ifndef T_MEMFILL
+#define T_MEMFILL TMemfill
+#endif

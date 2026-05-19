@@ -1915,13 +1915,10 @@ function testSetDisallowedPolicy() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
       try {
         restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P, false);
-        expect(false).assertTrue();
+        let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.WIFI_P2P);
+        expect(ret).assertFalse();
       } catch (error) {
-        if (Number(error.code) === 9200002) {
-          expect(Number(error.code) === 9200002).assertTrue();
-        } else {
-          expect(Number(error.code) === 9200007).assertTrue();
-        }
+        expect(Number(error.code) === 9200002).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -2460,16 +2457,16 @@ function testSetDisallowedPolicy() {
     });
 
     /**
-     * @tc.name   test_set_disallowed_policy_secure_erase_0100
-     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSECURE_ERASE_0100
-     * @tc.desc   test restrictions setDisallowedPolicy with secure erase feature without admin
+     * @tc.name   test_set_disallowed_policy_disk_erasure_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYDISK_ERASURE_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with disk erasure feature without admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-     it("test_set_disallowed_policy_secure_erase_0100", Level.LEVEL2, async (done: Function) => {
+     it("test_set_disallowed_policy_disk_erasure_0100", Level.LEVEL2, async (done: Function) => {
       try {
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SECURE_ERASE, true);
+        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.DISK_ERASURE, true);
         expect(false).assertTrue();
       } catch (error) {
         if (Number(error.code) === 801) {
@@ -2482,17 +2479,17 @@ function testSetDisallowedPolicy() {
     });
 
     /**
-     * @tc.name   test_set_disallowed_policy_secure_erase_0200
-     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSECURE_ERASE_0200
-     * @tc.desc   test restrictions setDisallowedPolicy with secure erase feature using byod admin
+     * @tc.name   test_set_disallowed_policy_disk_erasure_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYDISK_ERASURE_0200
+     * @tc.desc   test restrictions setDisallowedPolicy with disk erasure feature using byod admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-     it("test_set_disallowed_policy_secure_erase_0200", Level.LEVEL2, async (done: Function) => {
+     it("test_set_disallowed_policy_disk_erasure_0200", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SECURE_ERASE, true);
+        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.DISK_ERASURE, true);
         expect(false).assertTrue();
       } catch (error) {
         if (Number(error.code) === 801) {
@@ -2507,16 +2504,16 @@ function testSetDisallowedPolicy() {
     });
 
     /**
-     * @tc.name   test_set_disallowed_policy_secure_erase_0300
-     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSECURE_ERASE_0300
-     * @tc.desc   test restrictions setDisallowedPolicy with secure erase feature null admin
+     * @tc.name   test_set_disallowed_policy_disk_erasure_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYDISK_ERASURE_0300
+     * @tc.desc   test restrictions setDisallowedPolicy with disk erasure feature null admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-     it("test_set_disallowed_policy_secure_erase_0300", Level.LEVEL2, async (done: Function) => {
+     it("test_set_disallowed_policy_disk_erasure_0300", Level.LEVEL2, async (done: Function) => {
       try {
-        restrictions.setDisallowedPolicy(null, restrictions.FeatureForDevice.SECURE_ERASE, false);
+        restrictions.setDisallowedPolicy(null, restrictions.FeatureForDevice.DISK_ERASURE, false);
         expect(false).assertTrue();
       } catch (error) {
         if (Number(error.code) === 801) {
@@ -2529,16 +2526,16 @@ function testSetDisallowedPolicy() {
     });
 
     /**
-     * @tc.name   test_set_disallowed_policy_secure_erase_0400
-     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSECURE_ERASE_0400
-     * @tc.desc   test restrictions setDisallowedPolicy with secure erase feature undefined admin
+     * @tc.name   test_set_disallowed_policy_disk_erasure_0400
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYDISK_ERASURE_0400
+     * @tc.desc   test restrictions setDisallowedPolicy with disk erasure feature undefined admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-     it("test_set_disallowed_policy_secure_erase_0400", Level.LEVEL2, async (done: Function) => {
+     it("test_set_disallowed_policy_disk_erasure_0400", Level.LEVEL2, async (done: Function) => {
       try {
-        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.SECURE_ERASE, false);
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.DISK_ERASURE, false);
         expect(false).assertTrue();
       } catch (error) {
         if (Number(error.code) === 801) {
@@ -2551,14 +2548,14 @@ function testSetDisallowedPolicy() {
     });
 
     /**
-     * @tc.name   test_set_disallowed_policy_secure_erase_0500
-     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSECURE_ERASE_0500
-     * @tc.desc   test restrictions setDisallowedPolicy with secure erase feature null feature
+     * @tc.name   test_set_disallowed_policy_disk_erasure_0500
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYDISK_ERASURE_0500
+     * @tc.desc   test restrictions setDisallowedPolicy with disk erasure feature null feature
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-     it("test_set_disallowed_policy_secure_erase_0500", Level.LEVEL2, async (done: Function) => {
+     it("test_set_disallowed_policy_disk_erasure_0500", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         restrictions.setDisallowedPolicy(SELFWANT, null, false);
@@ -2576,14 +2573,14 @@ function testSetDisallowedPolicy() {
     });
 
     /**
-     * @tc.name   test_set_disallowed_policy_secure_erase_0600
-     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSECURE_ERASE_0600
-     * @tc.desc   test restrictions setDisallowedPolicy with secure erase feature undefined feature
+     * @tc.name   test_set_disallowed_policy_disk_erasure_0600
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYDISK_ERASURE_0600
+     * @tc.desc   test restrictions setDisallowedPolicy with disk erasure feature undefined feature
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-     it("test_set_disallowed_policy_secure_erase_0600", Level.LEVEL2, async (done: Function) => {
+     it("test_set_disallowed_policy_disk_erasure_0600", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         restrictions.setDisallowedPolicy(SELFWANT, undefined, false);
@@ -2601,17 +2598,17 @@ function testSetDisallowedPolicy() {
     });
 
     /**
-     * @tc.name   test_set_disallowed_policy_secure_erase_0700
-     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSECURE_ERASE_0700
-     * @tc.desc   test restrictions setDisallowedPolicy with secure erase feature null disallow
+     * @tc.name   test_set_disallowed_policy_disk_erasure_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYDISK_ERASURE_0700
+     * @tc.desc   test restrictions setDisallowedPolicy with disk erasure feature null disallow
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-     it("test_set_disallowed_policy_secure_erase_0700", Level.LEVEL2, async (done: Function) => {
+     it("test_set_disallowed_policy_disk_erasure_0700", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SECURE_ERASE, null);
+        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.DISK_ERASURE, null);
         expect(false).assertTrue();
       } catch (error) {
         if (Number(error.code) === 801) {
@@ -2626,17 +2623,17 @@ function testSetDisallowedPolicy() {
     });
 
     /**
-     * @tc.name   test_set_disallowed_policy_secure_erase_0800
-     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSECURE_ERASE_0800
-     * @tc.desc   test restrictions setDisallowedPolicy with secure erase feature undefined disallow
+     * @tc.name   test_set_disallowed_policy_disk_erasure_0800
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYDISK_ERASURE_0800
+     * @tc.desc   test restrictions setDisallowedPolicy with disk erasure feature undefined disallow
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-     it("test_set_disallowed_policy_secure_erase_0800", Level.LEVEL2, async (done: Function) => {
+     it("test_set_disallowed_policy_disk_erasure_0800", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SECURE_ERASE, undefined);
+        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.DISK_ERASURE, undefined);
         expect(false).assertTrue();
       } catch (error) {
         if (Number(error.code) === 801) {
@@ -2651,18 +2648,18 @@ function testSetDisallowedPolicy() {
     });
 
     /**
-     * @tc.name   test_set_disallowed_policy_secure_erase_0900
-     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSECURE_ERASE_0900
-     * @tc.desc   test restrictions setDisallowedPolicy with secure erase feature super admin set disallow
+     * @tc.name   test_set_disallowed_policy_disk_erasure_0900
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYDISK_ERASURE_0900
+     * @tc.desc   test restrictions setDisallowedPolicy with disk erasure feature super admin set disallow
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-     it("test_set_disallowed_policy_secure_erase_0900", Level.LEVEL0, async (done: Function) => {
+     it("test_set_disallowed_policy_disk_erasure_0900", Level.LEVEL0, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SECURE_ERASE, true);
-        let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SECURE_ERASE);
+        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.DISK_ERASURE, true);
+        let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.DISK_ERASURE);
         expect(ret).assertTrue();
       } catch (error) {
         expect(Number(error.code) === 801).assertTrue();
@@ -2673,18 +2670,228 @@ function testSetDisallowedPolicy() {
     });
 
     /**
-     * @tc.name   test_set_disallowed_policy_secure_erase_1000
-     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSECURE_ERASE_1000
-     * @tc.desc   test restrictions setDisallowedPolicy with secure erase feature super admin cancel disallow
+     * @tc.name   test_set_disallowed_policy_disk_erasure_1000
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYDISK_ERASURE_1000
+     * @tc.desc   test restrictions setDisallowedPolicy with disk erasure feature super admin cancel disallow
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-     it("test_set_disallowed_policy_secure_erase_1000", Level.LEVEL0, async (done: Function) => {
+     it("test_set_disallowed_policy_disk_erasure_1000", Level.LEVEL0, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SECURE_ERASE, false);
-        let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SECURE_ERASE);
+        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.DISK_ERASURE, false);
+        let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.DISK_ERASURE);
+        expect(ret).assertFalse();
+      } catch (error) {
+        expect(Number(error.code) === 801).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_sudo_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSUDO_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with sudo feature without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_set_disallowed_policy_sudo_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUDO, true);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200001).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_sudo_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSUDO_0300
+     * @tc.desc   test restrictions setDisallowedPolicy with sudo feature null admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_set_disallowed_policy_sudo_0300", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(null, restrictions.FeatureForDevice.SUDO, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_sudo_0400
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSUDO_0400
+     * @tc.desc   test restrictions setDisallowedPolicy with sudo feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_set_disallowed_policy_sudo_0400", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.SUDO, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_sudo_0500
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSUDO_0500
+     * @tc.desc   test restrictions setDisallowedPolicy with sudo feature null feature
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_set_disallowed_policy_sudo_0500", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, null, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_sudo_0600
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSUDO_0600
+     * @tc.desc   test restrictions setDisallowedPolicy with sudo feature undefined feature
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_set_disallowed_policy_sudo_0600", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, undefined, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_sudo_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSUDO_0700
+     * @tc.desc   test restrictions setDisallowedPolicy with sudo feature null disallow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_set_disallowed_policy_sudo_0700", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUDO, null);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_sudo_0800
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSUDO_0800
+     * @tc.desc   test restrictions setDisallowedPolicy with sudo feature undefined disallow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_set_disallowed_policy_sudo_0800", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUDO, undefined);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_sudo_0900
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSUDO_0900
+     * @tc.desc   test restrictions setDisallowedPolicy with sudo feature super admin set disallow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+     it("test_set_disallowed_policy_sudo_0900", Level.LEVEL0, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUDO, true);
+        let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUDO);
+        expect(ret).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 801).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_sudo_1000
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSUDO_1000
+     * @tc.desc   test restrictions setDisallowedPolicy with sudo feature super admin cancel disallow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+     it("test_set_disallowed_policy_sudo_1000", Level.LEVEL0, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUDO, false);
+        let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUDO);
         expect(ret).assertFalse();
       } catch (error) {
         expect(Number(error.code) === 801).assertTrue();
@@ -4216,16 +4423,16 @@ done();
     });
 
     /**
-     * @tc.name   test_get_disallowed_policy_secure_erase_0100
-     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSECURE_ERASE_0100
-     * @tc.desc   test restrictions getDisallowedPolicy with secure erase feature without admin
+     * @tc.name   test_get_disallowed_policy_disk_erasure_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYDISK_ERASURE_0100
+     * @tc.desc   test restrictions getDisallowedPolicy with disk erasure feature without admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("test_get_disallowed_policy_secure_erase_0100", Level.LEVEL2, async (done: Function) => {
+    it("test_get_disallowed_policy_disk_erasure_0100", Level.LEVEL2, async (done: Function) => {
       try {
-        restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SECURE_ERASE);
+        restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.DISK_ERASURE);
         expect(false).assertTrue();
       } catch (error) {
         if (Number(error.code) === 801) {
@@ -4238,17 +4445,17 @@ done();
     });
 
     /**
-     * @tc.name   test_get_disallowed_policy_secure_erase_0200
-     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSECURE_ERASE_0200
-     * @tc.desc   test restrictions getDisallowedPolicy with secure erase feature null admin
+     * @tc.name   test_get_disallowed_policy_disk_erasure_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYDISK_ERASURE_0200
+     * @tc.desc   test restrictions getDisallowedPolicy with disk erasure feature null admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("test_get_disallowed_policy_secure_erase_0200", Level.LEVEL2, async (done: Function) => {
+    it("test_get_disallowed_policy_disk_erasure_0200", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        let ret = restrictions.getDisallowedPolicy(null, restrictions.FeatureForDevice.SECURE_ERASE);
+        let ret = restrictions.getDisallowedPolicy(null, restrictions.FeatureForDevice.DISK_ERASURE);
         expect(ret).assertFalse();
       } catch (error) {
         if (Number(error.code) === 801) {
@@ -4263,16 +4470,16 @@ done();
     });
 
     /**
-     * @tc.name   test_get_disallowed_policy_secure_erase_0300
-     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSECURE_ERASE_0300
-     * @tc.desc   test restrictions getDisallowedPolicy with secure erase feature undefined admin
+     * @tc.name   test_get_disallowed_policy_disk_erasure_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYDISK_ERASURE_0300
+     * @tc.desc   test restrictions getDisallowedPolicy with disk erasure feature undefined admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("test_get_disallowed_policy_secure_erase_0300", Level.LEVEL2, async (done: Function) => {
+    it("test_get_disallowed_policy_disk_erasure_0300", Level.LEVEL2, async (done: Function) => {
       try {
-        let ret = restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.SECURE_ERASE);
+        let ret = restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.DISK_ERASURE);
         expect(ret).assertFalse();
       } catch (error) {
         if (Number(error.code) === 801) {
@@ -4285,14 +4492,14 @@ done();
     });
 
     /**
-     * @tc.name   test_get_disallowed_policy_secure_erase_0400
-     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSECURE_ERASE_0400
-     * @tc.desc   test restrictions getDisallowedPolicy with secure erase feature null feature
+     * @tc.name   test_get_disallowed_policy_disk_erasure_0400
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYDISK_ERASURE_0400
+     * @tc.desc   test restrictions getDisallowedPolicy with disk erasure feature null feature
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("test_get_disallowed_policy_secure_erase_0400", Level.LEVEL2, async (done: Function) => {
+    it("test_get_disallowed_policy_disk_erasure_0400", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         restrictions.getDisallowedPolicy(SELFWANT, null);
@@ -4310,14 +4517,14 @@ done();
     });
 
     /**
-     * @tc.name   test_get_disallowed_policy_secure_erase_0500
-     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSECURE_ERASE_0500
-     * @tc.desc   test restrictions getDisallowedPolicy with secure erase feature undefined feature
+     * @tc.name   test_get_disallowed_policy_disk_erasure_0500
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYDISK_ERASURE_0500
+     * @tc.desc   test restrictions getDisallowedPolicy with disk erasure feature undefined feature
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("test_get_disallowed_policy_secure_erase_0500", Level.LEVEL2, async (done: Function) => {
+    it("test_get_disallowed_policy_disk_erasure_0500", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         restrictions.getDisallowedPolicy(SELFWANT, undefined);
@@ -4335,17 +4542,17 @@ done();
     });
 
     /**
-     * @tc.name   test_get_disallowed_policy_secure_erase_0600
-     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSECURE_ERASE_0600
-     * @tc.desc   test restrictions getDisallowedPolicy with secure erase feature super admin
+     * @tc.name   test_get_disallowed_policy_disk_erasure_0600
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYDISK_ERASURE_0600
+     * @tc.desc   test restrictions getDisallowedPolicy with disk erasure feature super admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("test_get_disallowed_policy_secure_erase_0600", Level.LEVEL0, async (done: Function) => {
+    it("test_get_disallowed_policy_disk_erasure_0600", Level.LEVEL0, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SECURE_ERASE);
+        let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.DISK_ERASURE);
         expect(ret).assertFalse();
       } catch (error) {
         expect(Number(error.code) === 801).assertTrue();
@@ -4356,32 +4563,172 @@ done();
     });
 
     /**
-     * @tc.name   test_get_disallowed_policy_secure_erase_0700
-     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSECURE_ERASE_0700
-     * @tc.desc   test restrictions getDisallowedPolicy with secure erase feature byod admin
+     * @tc.name   test_get_disallowed_policy_disk_erasure_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYDISK_ERASURE_0700
+     * @tc.desc   test restrictions getDisallowedPolicy with disk erasure feature byod admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("test_get_disallowed_policy_secure_erase_0700", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
-      try {
-        let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SECURE_ERASE);
-        expect(ret).assertFalse();
-      } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 9200002).assertTrue();
-        }
-      } finally {
-        await adminManager.disableAdmin(SELFWANT);
-      }
-      done();
-    });
+     it("test_get_disallowed_policy_disk_erasure_0700", Level.LEVEL2, async (done: Function) => {
+       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+       try {
+         let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.DISK_ERASURE);
+         expect(ret).assertFalse();
+       } catch (error) {
+         if (Number(error.code) === 801) {
+           expect(Number(error.code) === 801).assertTrue();
+         } else {
+           expect(Number(error.code) === 9200002).assertTrue();
+         }
+       } finally {
+         await adminManager.disableAdmin(SELFWANT);
+       }
+       done();
+     });
 
-   /**
-    * @tc.name   test_get_disallowed_policy_0102
+     /**
+      * @tc.name   test_get_disallowed_policy_sudo_0100
+      * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSUDO_0100
+      * @tc.desc   test restrictions getDisallowedPolicy with sudo feature without admin
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+     it("test_get_disallowed_policy_sudo_0100", Level.LEVEL2, async (done: Function) => {
+       try {
+         restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUDO);
+         expect(false).assertTrue();
+       } catch (error) {
+         if (Number(error.code) === 801) {
+           expect(Number(error.code) === 801).assertTrue();
+         } else {
+           expect(Number(error.code) === 9200001).assertTrue();
+         }
+       }
+       done();
+     });
+
+     /**
+      * @tc.name   test_get_disallowed_policy_sudo_0300
+      * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSUDO_0300
+      * @tc.desc   test restrictions getDisallowedPolicy with sudo feature undefined admin
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+     it("test_get_disallowed_policy_sudo_0300", Level.LEVEL2, async (done: Function) => {
+       try {
+         let ret = restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.SUDO);
+         expect(ret).assertFalse();
+       } catch (error) {
+         if (Number(error.code) === 801) {
+           expect(Number(error.code) === 801).assertTrue();
+         } else {
+           expect(Number(error.code) === 401).assertTrue();
+         }
+       }
+       done();
+     });
+
+     /**
+      * @tc.name   test_get_disallowed_policy_sudo_0400
+      * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSUDO_0400
+      * @tc.desc   test restrictions getDisallowedPolicy with sudo feature null feature
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+     it("test_get_disallowed_policy_sudo_0400", Level.LEVEL2, async (done: Function) => {
+       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+       try {
+         restrictions.getDisallowedPolicy(SELFWANT, null);
+         expect(false).assertTrue();
+       } catch (error) {
+         if (Number(error.code) === 801) {
+           expect(Number(error.code) === 801).assertTrue();
+         } else {
+           expect(Number(error.code) === 401).assertTrue();
+         }
+       } finally {
+         await adminManager.disableSuperAdmin(SELFHAPNAME);
+       }
+       done();
+     });
+
+     /**
+      * @tc.name   test_get_disallowed_policy_sudo_0500
+      * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSUDO_0500
+      * @tc.desc   test restrictions getDisallowedPolicy with sudo feature undefined feature
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+     it("test_get_disallowed_policy_sudo_0500", Level.LEVEL2, async (done: Function) => {
+       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+       try {
+         restrictions.getDisallowedPolicy(SELFWANT, undefined);
+         expect(false).assertTrue();
+       } catch (error) {
+         if (Number(error.code) === 801) {
+           expect(Number(error.code) === 801).assertTrue();
+         } else {
+           expect(Number(error.code) === 401).assertTrue();
+         }
+       } finally {
+         await adminManager.disableSuperAdmin(SELFHAPNAME);
+       }
+       done();
+     });
+
+     /**
+      * @tc.name   test_get_disallowed_policy_sudo_0600
+      * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSUDO_0600
+      * @tc.desc   test restrictions getDisallowedPolicy with sudo feature super admin
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+     it("test_get_disallowed_policy_sudo_0600", Level.LEVEL0, async (done: Function) => {
+       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+       try {
+         let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUDO);
+         expect(ret).assertFalse();
+       } catch (error) {
+         expect(Number(error.code) === 801).assertTrue();
+       } finally {
+         await adminManager.disableSuperAdmin(SELFHAPNAME);
+       }
+       done();
+     });
+
+     /**
+      * @tc.name   test_get_disallowed_policy_sudo_0700
+      * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSUDO_0700
+      * @tc.desc   test restrictions getDisallowedPolicy with sudo feature byod admin
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+     it("test_get_disallowed_policy_sudo_0700", Level.LEVEL2, async (done: Function) => {
+       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+       try {
+         let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUDO);
+         expect(ret).assertFalse();
+       } catch (error) {
+         if (Number(error.code) === 801) {
+           expect(Number(error.code) === 801).assertTrue();
+         } else {
+           expect(Number(error.code) === 9200002).assertTrue();
+         }
+       } finally {
+         await adminManager.disableAdmin(SELFWANT);
+       }
+       done();
+     });
+
+    /**
+     * @tc.name   test_get_disallowed_policy_0102
     * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0102
     * @tc.desc   test restrictions getDisallowedPolicy with invalid admin
     * @tc.type   FUNCTION

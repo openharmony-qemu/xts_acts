@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -184,9 +184,9 @@ export default function builtinsJsonElementGetArrayTest() {
         testMap.set("\v", jsonx.JsonElement.createArray([jsonx.JsonElement.createString("verticalTab")]));
         testMap.set("\?", jsonx.JsonElement.createArray([jsonx.JsonElement.createString("questionMark")]));
         testMap.set("\0", jsonx.JsonElement.createArray([jsonx.JsonElement.createString("nullChar")]));
-        const octalKey = String.fromCharCode((parseInt("101", 8) as number) as int);
+        const octalKey = String.fromCharCode((parseInt("101", 8) as number).toInt());
         testMap.set(octalKey, jsonx.JsonElement.createArray([jsonx.JsonElement.createString("octal101")]));
-        const hexKey = String.fromCharCode((parseInt("42", 16) as number) as int);
+        const hexKey = String.fromCharCode((parseInt("42", 16) as number).toInt());
         testMap.set(hexKey, jsonx.JsonElement.createArray([jsonx.JsonElement.createString("hex41")]));
         const testObject = jsonx.JsonElement.createObject(testMap);
         expect(testObject.getArray("\n")[0].asString()).assertEqual("newline");
@@ -201,11 +201,11 @@ export default function builtinsJsonElementGetArrayTest() {
         expect(testObject.getArray("\v")[0].asString()).assertEqual("verticalTab");
         expect(testObject.getArray("\?")[0].asString()).assertEqual("questionMark");
         expect(testObject.getArray("\0")[0].asString()).assertEqual("nullChar");
-        const octalChar = String.fromCharCode((parseInt("101", 8) as number) as int);
+        const octalChar = String.fromCharCode((parseInt("101", 8) as number).toInt());
         const array12 = testObject.getArray(octalChar);
         expect(array12[0].asString()).assertEqual("octal101");
         expect(octalChar).assertEqual("A");
-        const hexChar = String.fromCharCode((parseInt("42", 16) as number) as int);
+        const hexChar = String.fromCharCode((parseInt("42", 16) as number).toInt());
         const array13 = testObject.getArray(hexChar);
         expect(array13[0].asString()).assertEqual("hex41");
         expect("\x41").assertEqual("A");
@@ -427,7 +427,7 @@ export default function builtinsJsonElementGetArrayTest() {
     it('builtinsJsonElementGetArrayTest0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       try {
         const createInScope = (size: number, id: number) => {
-        const scopedString: string = "z".repeat(size as int) + id;
+        const scopedString: string = "z".repeat(size.toInt()) + id;
           const testMap: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>([
             [scopedString, jsonx.JsonElement.createArray([jsonx.JsonElement.createString(`scoped${id}`)])]
           ]);

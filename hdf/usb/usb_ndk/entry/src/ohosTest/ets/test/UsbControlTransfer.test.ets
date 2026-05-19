@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -27,6 +27,8 @@ export default function usbControlTransferTest() {
     const USB_DDK_FAILED: number = -1;
     const USB_DDK_INVALID_PARAMETER: number = 401;
     const USB_DDK_INVALID_OPERATION: number = 27400002;
+    const USB_DDK_IO_FAILED: number = 27400003;
+    const USB_DDK_TIMEOUT: number = 27400004;
 
     beforeAll(async () => {
       try {
@@ -41,9 +43,103 @@ export default function usbControlTransferTest() {
       }
     })
 
+/**
+     * @tc.name   testUsbGetNonRootHubs001
+     * @tc.number SUB_Driver_Ext_GetNonRootHub_0100
+     * @tc.desc   OH_Usb_GetNonRootHub Interface testing - DDK success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testUsbGetNonRootHubs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info('----------------------testUsbGetNonRootHubs001---------------------------');
+      try {
+        const ret = usbDdk.usbGetNonRootHubsOne(dev);
+        console.info("Test Result testUsbGetNonRootHubs001 : " + ret);
+        expect(ret).assertEqual(USB_DDK_SUCCESS);
+        done();
+      } catch (err) {
+        console.error(TAG, `testUsbGetNonRootHubs001 failed, message is ${err.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testUsbGetNonRootHubs002
+     * @tc.number SUB_Driver_Ext_GetNonRootHub_0200
+     * @tc.desc   OH_Usb_GetNonRootHub Interface testing - DDK not initialized
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUsbGetNonRootHubs002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info('----------------------testUsbGetNonRootHubs002---------------------------');
+      try {
+        const ret = usbDdk.usbGetNonRootHubsTwo(dev);
+        console.info("Test Result testUsbGetNonRootHubs002 : " + ret);
+        expect(ret).assertEqual(USB_DDK_INVALID_OPERATION);
+        done();
+      } catch (err) {
+        console.error(TAG, `testUsbGetNonRootHubs002 failed, message is ${err.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testUsbGetNonRootHubs003
+     * @tc.number SUB_Driver_Ext_GetNonRootHub_0300
+     * @tc.desc   OH_Usb_GetNonRootHub Interface testing -  input null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUsbGetNonRootHubs003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info('----------------------testUsbGetNonRootHubs003---------------------------');
+      try {
+        const ret = usbDdk.usbGetNonRootHubsThree(dev);
+        console.info("Test Result testUsbGetNonRootHubs003 : " + ret);
+        expect(ret).assertEqual(USB_DDK_INVALID_PARAMETER);
+        done();
+      } catch (err) {
+        console.error(TAG, `testUsbGetNonRootHubs003 failed, message is ${err.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testUsbControlTransfer002
+     * @tc.number SUB_Driver_Ext_ControlTransfer_0200
+     * @tc.desc   OH_Usb_ControlTransfer Interface testing -  success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUsbControlTransfer002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info('----------------------testUsbControlTransfer002---------------------------');
+      try {
+        if (dev < 0) {
+          console.info("Test USB device not connected");
+          expect(dev).assertEqual(USB_DDK_FAILED);
+          done();
+          return;
+        }
+        const ret = usbDdk.usbControlTransferTwo(dev);
+        console.info("Test Result testUsbControlTransfer002 : " + ret);
+        expect(ret).assertEqual(USB_DDK_INVALID_PARAMETER);
+        done();
+      } catch (err) {
+        console.error(TAG, `testUsbControlTransfer002 failed, message is ${err.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
     /**
      * @tc.name   testUsbControlTransferGetStatus001
-     * @tc.number SUB_Driver_Ext_ControlTransfer_0100
+     * @tc.number SUB_Driver_Ext_ControlTransfer_0400
      * @tc.desc   OH_Usb_ControlTransfer Interface testing - GET_STATUS request
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -72,7 +168,7 @@ export default function usbControlTransferTest() {
 
     /**
      * @tc.name   testUsbControlTransferSetFeature001
-     * @tc.number SUB_Driver_Ext_ControlTransfer_0200
+     * @tc.number SUB_Driver_Ext_ControlTransfer_0500
      * @tc.desc   OH_Usb_ControlTransfer Interface testing - SET_FEATURE request
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -101,7 +197,7 @@ export default function usbControlTransferTest() {
 
     /**
      * @tc.name   testUsbControlTransferClearFeature001
-     * @tc.number SUB_Driver_Ext_ControlTransfer_0300
+     * @tc.number SUB_Driver_Ext_ControlTransfer_0600
      * @tc.desc   OH_Usb_ControlTransfer Interface testing - CLEAR_FEATURE request
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -130,7 +226,7 @@ export default function usbControlTransferTest() {
 
     /**
      * @tc.name   testUsbControlTransferGetDescriptor001
-     * @tc.number SUB_Driver_Ext_ControlTransfer_0400
+     * @tc.number SUB_Driver_Ext_ControlTransfer_0700
      * @tc.desc   OH_Usb_ControlTransfer Interface testing - GET_DESCRIPTOR request
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -159,7 +255,7 @@ export default function usbControlTransferTest() {
 
     /**
      * @tc.name   testUsbControlTransferGetConfiguration001
-     * @tc.number SUB_Driver_Ext_ControlTransfer_0500
+     * @tc.number SUB_Driver_Ext_ControlTransfer_0800
      * @tc.desc   OH_Usb_ControlTransfer Interface testing - GET_CONFIGURATION request
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -188,7 +284,7 @@ export default function usbControlTransferTest() {
 
     /**
      * @tc.name   testUsbControlTransferGetInterface001
-     * @tc.number SUB_Driver_Ext_ControlTransfer_0600
+     * @tc.number SUB_Driver_Ext_ControlTransfer_0900
      * @tc.desc   OH_Usb_ControlTransfer Interface testing - GET_INTERFACE request
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -217,7 +313,7 @@ export default function usbControlTransferTest() {
 
     /**
      * @tc.name   testUsbControlTransferSetConfiguration001
-     * @tc.number SUB_Driver_Ext_ControlTransfer_0700
+     * @tc.number SUB_Driver_Ext_ControlTransfer_1000
      * @tc.desc   OH_Usb_ControlTransfer Interface testing - SET_CONFIGURATION request
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -246,7 +342,7 @@ export default function usbControlTransferTest() {
 
     /**
      * @tc.name   testUsbControlTransferSetupNull001
-     * @tc.number SUB_Driver_Ext_ControlTransfer_0800
+     * @tc.number SUB_Driver_Ext_ControlTransfer_1100
      * @tc.desc   OH_Usb_ControlTransfer Interface testing - setupPacket is null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -275,7 +371,7 @@ export default function usbControlTransferTest() {
 
     /**
      * @tc.name   testUsbControlTransferDataNull001
-     * @tc.number SUB_Driver_Ext_ControlTransfer_0900
+     * @tc.number SUB_Driver_Ext_ControlTransfer_1200
      * @tc.desc   OH_Usb_ControlTransfer Interface testing - data is null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -304,7 +400,7 @@ export default function usbControlTransferTest() {
 
     /**
      * @tc.name   testUsbControlTransferInvalidDeviceId001
-     * @tc.number SUB_Driver_Ext_ControlTransfer_1000
+     * @tc.number SUB_Driver_Ext_ControlTransfer_1300
      * @tc.desc   OH_Usb_ControlTransfer Interface testing - invalid deviceId
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -320,7 +416,7 @@ export default function usbControlTransferTest() {
           return;
         }
         console.info("Test USB deviceId = " + dev);
-        const ret = usbDdk.usbControlTransferInvalidDeviceId();
+        const ret = usbDdk.usbControlTransferInvalidDeviceId(dev);
         console.info("Test Result testUsbControlTransferInvalidDeviceId001 : " + ret);
         expect(ret).assertEqual(USB_DDK_INVALID_PARAMETER);
         done();
@@ -333,7 +429,7 @@ export default function usbControlTransferTest() {
 
     /**
      * @tc.name   testUsbControlTransferNoInit001
-     * @tc.number SUB_Driver_Ext_ControlTransfer_1100
+     * @tc.number SUB_Driver_Ext_ControlTransfer_1400
      * @tc.desc   OH_Usb_ControlTransfer Interface testing - DDK not initialized
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

@@ -20,7 +20,7 @@ interface Person {
   age: number;
 }
 
-export default function BuiltinsArraySomeTest() {
+export default function BuiltinsArraySomeTest() : void{
   describe("BuiltinsArraySomeTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -98,7 +98,7 @@ export default function BuiltinsArraySomeTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySomeTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>();
+      const arr: number[] = Array.create<number>(0, 0);
       
       const result = arr.some((value: number, index: int, array: Array<number>) => {
         return value > 0;
@@ -169,7 +169,7 @@ export default function BuiltinsArraySomeTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySomeTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<Person>();
+      const arr: Person[] = [];
       arr.push({ name: "Alice", age: 25 } as Person);
       arr.push({ name: "Bob", age: 30 } as Person);
       arr.push({ name: "Charlie", age: 35 } as Person);

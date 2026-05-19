@@ -767,7 +767,6 @@ export default function btAccessTest() {
                 let isNotSupport = false;
                 bluetooth.disableBluetoothAsync().then(() => {
                     console.info("disableBluetoothAsync success");
-                    done();
                 }).catch((err: BusinessError) => {
                     console.error("disableBluetoothAsync get error:" + JSON.stringify(err));
                     if (Number(err.code) == 801) {
@@ -796,7 +795,6 @@ export default function btAccessTest() {
                 let isNotSupports = false;
                 bluetooth.enableBluetoothAsync().then(() => {
                     console.info("enableBluetoothAsync success");
-                    done();
                 }).catch((err: BusinessError) => {
                     console.error("enableBluetoothAsync get error:" + JSON.stringify(err));
                     if (Number(err.code) == 801  || Number(err.code) == 2900099) {
@@ -971,6 +969,26 @@ export default function btAccessTest() {
                 }else{
                     expect(Number(error.code)).assertEqual(401);
                 }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_ACCESS_ISBLUETOOTHSUPPORTED_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_ACCESS_ISBLUETOOTHSUPPORTED_0100
+         * @tc.desc   20260428API26用例覆盖isBluetoothSupported.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("SUB_COMMUNICATION_BLUETOOTH_ACCESS_ISBLUETOOTHSUPPORTED_0100", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
+            try {
+                let isSupported = bluetooth.isBluetoothSupported();
+                console.info("[bluetooth_js]isBluetoothSupported result:" + isSupported);
+                expect(typeof isSupported === 'boolean').assertTrue();
+            } catch (error) {
+                console.error(`[bt_arkts]isBluetoothSupported is failed, code is ${error.code}, message is ${error.message}`);
+                expect().assertFail();
             }
             done();
         })

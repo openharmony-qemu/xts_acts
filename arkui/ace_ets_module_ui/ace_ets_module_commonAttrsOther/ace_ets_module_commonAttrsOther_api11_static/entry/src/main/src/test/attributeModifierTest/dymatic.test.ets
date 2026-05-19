@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -101,8 +101,8 @@ it('dymaticTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<vo
       let right = btRight.right
       let btLeft = await CommonFunc.getComponentRect('pressedBt');
       let left = btLeft.left
-      let xmiddle = Math.round(left + (right - left) / 2) as int
-      let ymiddle = Math.round(top + (bottom - top) / 2) as int
+      let xmiddle = Math.round(left + (right - left) / 2).toInt()
+      let ymiddle = Math.round(top + (bottom - top) / 2).toInt()
       console.log('test result is: ' + btTop + btBottom + btRight + btLeft)
 
       let driver = Driver.create()

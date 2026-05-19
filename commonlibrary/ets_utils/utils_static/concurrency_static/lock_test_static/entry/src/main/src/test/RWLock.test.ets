@@ -76,7 +76,7 @@ export default function RWLockTest(): void {
           await lock.lock()
           count++
           lock.unlock()
-        }).Await()
+        })
         eaw.join()
         setTimeout(async () => {
           await lock.lock()
@@ -129,8 +129,8 @@ export default function RWLockTest(): void {
         await eaw.run<Promise<void>>(async (): Promise<void> => {
           await lock.lock()
           count++
-        }).Await()
-        eaw.join()
+        })
+        eaw.quit()
         setTimeout(() => {
           count++
           lock.unlock()
@@ -178,7 +178,7 @@ export default function RWLockTest(): void {
           count++
           lock2.unlock()
           await lock4.lock()
-        }).Await()
+        })
         eaw.join()
         await new Promise<void>((resolve) => {
           count++
@@ -288,7 +288,7 @@ export default function RWLockTest(): void {
             class1.increaseCount()
             lock.unlock()
           })
-          eaw.join()
+          eaw.quit()
         }
         await lock.lock()
         count++
@@ -340,8 +340,8 @@ export default function RWLockTest(): void {
               count++
             }
             lock.unlock()
-          }).Await()
-          eaw.join()
+          })
+          eaw.quit()
           finish++
         }
         await lock.lock()
@@ -396,7 +396,7 @@ export default function RWLockTest(): void {
             class1.increaseCount()
             throw new Error("error")
           })
-          eaw.join()
+          eaw.quit()
         }
         await lock.lock()
         count++
@@ -546,7 +546,7 @@ export default function RWLockTest(): void {
           await lock.lock()
           count++
           lock.unlock()
-        }).Await()
+        })
         eaw.join()
         setTimeout(async () => {
           await lock.lock()
@@ -599,8 +599,8 @@ export default function RWLockTest(): void {
         await eaw.run<Promise<void>>(async (): Promise<void> => {
           await lock.lock()
           count++
-        }).Await()
-        eaw.join()
+        })
+        eaw.quit()
         setTimeout(() => {
           count++
           lock.unlock()
@@ -648,7 +648,7 @@ export default function RWLockTest(): void {
           count++
           lock2.unlock()
           await lock4.lock()
-        }).Await()
+        })
         eaw.join()
         await new Promise<void>((resolve) => {
           count++
@@ -753,7 +753,7 @@ export default function RWLockTest(): void {
             count++
             lock.unlock()
           })
-          eaw.join()
+          eaw.quit()
         }
         await lock.lock()
         count++
@@ -802,7 +802,7 @@ export default function RWLockTest(): void {
             }
             lock.unlock()
           })
-          eaw.join()
+          eaw.quit()
         }
         await lock.lock()
         count++
@@ -854,7 +854,7 @@ export default function RWLockTest(): void {
               } finally {
                 lock.unlock()
               }
-            }).Await()
+            })
           } catch (e) {
           }
           eaw.join()
@@ -944,8 +944,8 @@ export default function RWLockTest(): void {
           for (let i = 0; i < 100; i++) {
             await lock.lock()
           }
-        }).Await()
-        eaw.join()
+        })
+        eaw.quit()
         for (let i = 0; i < 100; i++) {
           count++
           lock.unlock()
@@ -1019,20 +1019,20 @@ export default function RWLockTest(): void {
         })
         let eaw = new EAWorker()
         eaw.start()
-        eaw.run<void>(() => {
+        await eaw.run<void>(() => {
           result += '1'
           wLock.unlock()
         })
-        eaw.join()
+        eaw.quit()
         while (result.indexOf('2') < 0) {
           await Utils.msSleep(100)
         }
         let eaw2 = new EAWorker()
         eaw2.start()
-        eaw2.run<void>(() => {
+        await eaw2.run<void>(() => {
           rLock.unlock()
           result += '3'
-        }).Await()
+        })
         eaw2.join()
         await wLock.lock()
         result += '4'
@@ -1068,7 +1068,7 @@ export default function RWLockTest(): void {
             rLock.unlock()
           })
         }
-        let jobs: Job<Promise<void>>[] = []
+        let jobs: Promise<Promise<void>>[] = []
         let workers: EAWorker[] = []
         for (let i = 0; i < 10; i++) {
           let eaw = new EAWorker()
@@ -1081,16 +1081,12 @@ export default function RWLockTest(): void {
         }
         let eaw = new EAWorker()
         eaw.start()
-        eaw.run<void>(() => {
+        await eaw.run<void>(() => {
           result += '0'
           wLock.unlock()
         })
-        eaw.join()
-        let pros =
-          jobs.map((value: Job<Promise<void>>, index: int, array: Array<Job<Promise<void>>>): Promise<void> =>
-          value.Await()
-          )
-        await Promise.all(pros)
+        eaw.quit()
+        await Promise.all(jobs)
         workers.forEach((worker: EAWorker) => {
           worker.join()
         })
@@ -1136,7 +1132,7 @@ export default function RWLockTest(): void {
             count++
           })
         }
-        let jobs: Job<Promise<void>>[] = []
+        let jobs: Promise<Promise<void>>[] = []
         let workers: EAWorker[] = []
         for (let i = 0; i < 10; i++) {
           let eaw = new EAWorker()
@@ -1146,12 +1142,9 @@ export default function RWLockTest(): void {
             await rLock.lock()
             result += '1'
           }))
+          eaw.quit()
         }
-        let pros =
-          jobs.map((value: Job<Promise<void>>, index: int, array: Array<Job<Promise<void>>>): Promise<void> =>
-          value.Await()
-          )
-        await Promise.all(pros)
+        await Promise.all(jobs)
         workers.forEach((worker: EAWorker) => {
           worker.join()
         })
@@ -1201,7 +1194,7 @@ export default function RWLockTest(): void {
             class1.increaseCount()
           })
         }
-        let jobs: Job<Promise<void>>[] = []
+        let jobs: Promise<Promise<void>>[] = []
         let workers: EAWorker[] = []
         for (let i = 0; i < 10; i++) {
           let eaw = new EAWorker()
@@ -1224,7 +1217,7 @@ export default function RWLockTest(): void {
           }, i))
         }
 
-        await Promise.all(jobs.map((job: Job<Promise<void>>): Promise<void> => job.Await()))
+        await Promise.all(jobs)
         workers.forEach((worker: EAWorker) => {
           worker.join()
         })
@@ -1235,6 +1228,5 @@ export default function RWLockTest(): void {
         expect(await class1.getCount()).assertEqual(40)
         Done()
       });
-
   })
 }

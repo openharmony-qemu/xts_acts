@@ -19,9 +19,13 @@
     "type": "feature",
     "description": "Please describe the basic information.",
     "mainElement": "TestAbility",
-    "deviceTypes": [
-    ],
+    "deviceTypes": [],
     "deliveryWithInstall": true,
     "installationFree": false,
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.INTERNET"
+      }
+    ]
   }
 }

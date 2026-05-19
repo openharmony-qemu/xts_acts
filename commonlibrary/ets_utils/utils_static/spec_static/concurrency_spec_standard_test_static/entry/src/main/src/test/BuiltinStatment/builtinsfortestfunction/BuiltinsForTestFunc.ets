@@ -1,6 +1,6 @@
 'use static'
 /*
-* Copyright (C) 2024 HiHope Open Source Organization.
+* Copyright (C) 2024-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -949,7 +949,7 @@ export function builtinsStatementForTest_6000() {
   let count: number = 0;
   let i = 0;
   //forUpDate正常场景i=函数返回值
-  for (i = 0; i < 10; i = update(i) as int) {
+  for (i = 0; i < 10; i = update(i).toInt()) {
     count++
   }
   if (2 !== count) {

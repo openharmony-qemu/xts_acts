@@ -67,7 +67,7 @@ static int SignificandfTestImpl(int argc, char* argv[])
 
 int SignificandfTest(void)
 {
-    static char libcProgStub[] = "libc_test";
-    char* libcArgvStub[] = { libcProgStub, nullptr };
-    return SignificandfTestImpl(1, libcArgvStub);
+    static char libcProg[] = "libc_test";
+    char* libcArgv[] = { libcProg, nullptr };
+    return SignificandfTestImpl(1, libcArgv);
 }

@@ -28,7 +28,6 @@ import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import inspector from '@ohos.arkui.inspector';
 import { Color, FontWeight, CalendarAlign, PickerTextStyle } from '@ohos.arkui.component';
 import { RecordData } from '@ohos.base';
 

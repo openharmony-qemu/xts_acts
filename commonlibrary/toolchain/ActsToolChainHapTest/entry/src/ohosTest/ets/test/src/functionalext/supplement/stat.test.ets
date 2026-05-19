@@ -31,5 +31,75 @@ export default function stat_group_test() {
       expect(result).assertEqual(0);
       done();
     });
+    /**
+     * @tc.name   chmod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_CHMOD_0100
+     * @tc.desc   libc-test chmod
+     */
+    it("chmod", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("chmod");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   fchmod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_FCHMOD_0100
+     * @tc.desc   libc-test fchmod
+     */
+    it("fchmod", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("fchmod");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   fchmodat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_FCHMODAT_0100
+     * @tc.desc   libc-test fchmodat
+     */
+    it("fchmodat", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("fchmodat");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   futimesat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_FUTIMESAT_0100
+     * @tc.desc   libc-test futimesat
+     */
+    it("futimesat", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("futimesat");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   utimensat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_UTIMENSAT_0100
+     * @tc.desc   libc-test utimensat
+     */
+    it("utimensat", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("utimensat");
+      expect(result).assertEqual(0);
+      done();
+    });
+
   });
 }

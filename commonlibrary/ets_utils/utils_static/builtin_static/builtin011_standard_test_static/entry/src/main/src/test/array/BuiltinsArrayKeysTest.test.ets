@@ -15,7 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-export default function BuiltinsArrayKeysTest() {
+export default function BuiltinsArrayKeysTest() : void{
   describe("BuiltinsArrayKeysTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -47,7 +47,7 @@ export default function BuiltinsArrayKeysTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayKeysTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>();
+      const arr: number[] = Array.create<number>(0, 0);
       const iterator = arr.keys();
       
       expect(iterator.next().done).assertEqual(true);
@@ -104,7 +104,7 @@ export default function BuiltinsArrayKeysTest() {
     it('builtinsArrayKeysTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const obj1: Record<string, string> = { "name": 'test1' };
       const obj2: Record<string, string> = { "name": 'test2' };
-      const arr = new Array<Record<string, string>>(obj1, obj2);
+      const arr: Record<string, string>[] = [obj1, obj2];
       const iterator = arr.keys();
       
       expect(iterator.next().value).assertEqual(0);

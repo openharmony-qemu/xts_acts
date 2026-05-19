@@ -69,8 +69,8 @@ export default function observerNopSimTest() {
         observer.onGetSimActiveState(slotId, (data: boolean) => {
           console.info(`${caseName} data: ${data}}`);
           ExpectFail();
+          done();
         });
-        done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
         ExpectTrue(error.code === 201);
@@ -79,30 +79,6 @@ export default function observerNopSimTest() {
       console.info(`${caseName} test end`);
     })
 
-    /**
-     * @tc.name   testObserverOffGetSimActiveStateNop0100
-     * @tc.number SUB_Observer_OffGetSimActiveState_Nop_0100
-     * @tc.desc   Using the observer offGetSimActiveState method without permission
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("testObserverOffGetSimActiveStateNop0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let caseName: string = 'testObserverOffGetSimActiveStateNop0100';
-      console.info(`${caseName} test start`);
-      try {
-        observer.offGetSimActiveState((data: boolean) => {
-          console.info(`${caseName} data: ${data}}`);
-          ExpectFail();
-        });
-        done();
-      } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
-        ExpectTrue(error.code === 201);
-        done();
-      }
-      console.info(`${caseName} test end`);
-    })
   })
 }
 

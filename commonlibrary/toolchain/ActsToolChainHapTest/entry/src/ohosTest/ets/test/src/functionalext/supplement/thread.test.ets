@@ -1006,5 +1006,148 @@ export default function thread_group_test() {
       expect(result).assertEqual(0);
       done();
     });
+    /**
+     * @tc.name   pthread_create
+     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_CREATE_0100
+     * @tc.desc   libc-test pthread_create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("pthread_create", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("pthread_create");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   pthread_exit
+     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_EXIT_0100
+     * @tc.desc   libc-test pthread_exit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("pthread_exit", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("pthread_exit");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   pthread_getattr_np
+     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_GETATTR_NP_0100
+     * @tc.desc   libc-test pthread_getattr_np
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("pthread_getattr_np", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("pthread_getattr_np");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   pthread_getschedparam
+     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_GETSCHEDPARAM_0100
+     * @tc.desc   libc-test pthread_getschedparam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("pthread_getschedparam", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("pthread_getschedparam");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   pthread_getspecific
+     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_GETSPECIFIC_0100
+     * @tc.desc   libc-test pthread_getspecific
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("pthread_getspecific", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("pthread_getspecific");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   pthread_key_create
+     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_KEY_CREATE_0100
+     * @tc.desc   libc-test pthread_key_create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("pthread_key_create", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("pthread_key_create");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   pthread_mutex_lock
+     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_MUTEX_LOCK_0100
+     * @tc.desc   libc-test pthread_mutex_lock
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("pthread_mutex_lock", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("pthread_mutex_lock");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   pthread_mutex_unlock
+     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_MUTEX_UNLOCK_0100
+     * @tc.desc   libc-test pthread_mutex_unlock
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("pthread_mutex_unlock", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("pthread_mutex_unlock");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   pthread_once
+     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_ONCE_0100
+     * @tc.desc   libc-test pthread_once
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("pthread_once", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("pthread_once");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   pthread_setspecific
+     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_SETSPECIFIC_0100
+     * @tc.desc   libc-test pthread_setspecific
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("pthread_setspecific", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("pthread_setspecific");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   pthread_setschedparam
+     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_SETSCHEDPARAM_0100
+     * @tc.desc   libc-test pthread_setschedparam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("pthread_setschedparam", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("pthread_setschedparam");
+      expect(result).assertEqual(0);
+      done();
+    });
   });
 }

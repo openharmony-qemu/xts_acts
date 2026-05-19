@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -76,7 +76,7 @@ it('waterFlowStart2_static_0100', Level.LEVEL1, async (done: () => void): Promis
       let height = bottom -top;
       let width = right - left;
       await CommonFunc.sleep(1000);
-      await driver.mouseScroll({x:Math.round(left + width/2) as int, y: Math.round(top + height*0.3) as int}, true ,20)
+      await driver.mouseScroll({x:Math.round(left + width/2).toInt(), y: Math.round(top + height*0.3).toInt()}, true ,20)
       await CommonFunc.sleep(2000)
 
       let onScrollStartText = await driver.findComponent(ON.id('onScrollStart_wText_2'));

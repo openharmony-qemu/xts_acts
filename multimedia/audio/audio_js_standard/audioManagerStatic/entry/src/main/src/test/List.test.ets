@@ -19,6 +19,7 @@ import audioRoutingManager from "./AudioRoutingManager.test"
 import audioLoopBack from './AudioLoopBack.test';
 import audioSpatializationManager from './AudioSpatializationManager.test';
 import audioSessionManagerTest from './AudioSessionManager.test';
+import audioDeviceEnhanceManager from './AudioDeviceEnhanceManagerTest.test';
 import Utils from './Util.test';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -45,9 +46,13 @@ let getPermission = async () => {
         let driver = Driver.create();
         await Utils.msSleep(1000);
         let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 2000);
+        let permissionButton2 = await driver.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), 500);
         await Utils.msSleep(1000);
         if (permissionButton != null) {
             await permissionButton.click();
+        }
+        if (permissionButton2 != null) {
+            await permissionButton2.click();
         }
     } catch (err) {
         console.error('beforeAll failed, err: ' + err);
@@ -57,6 +62,7 @@ let getPermission = async () => {
 export default function testsuite() {
     getPermission();
     audioSessionManagerTest();
+    audioDeviceEnhanceManager();
     audioManagerApi9();
     audioFramework();
     audioRoutingManager();

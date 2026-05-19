@@ -277,5 +277,25 @@ export default function GestureInterceptTest() {
       console.info('[SUB_ACE_ARKUI_GESTUREINTERCEPTJS_0800] END');
       done();
     })
+
+    /**
+     * @tc.number    SUB_ACE_ARKUI_GESTUREINTERCEPTJS_0900
+     * @tc.name      SUB_ACE_ARKUI_GESTUREINTERCEPTJS_0900
+     * @tc.desc      test touch gestureIntercept
+     * @tc.level:    LEVEL 1
+     * @tc.type :    FUNCTION
+     * @tc.size :    MEDIUMTEST
+     */
+    it('SUB_ACE_ARKUI_GESTUREINTERCEPTJS_0900', Level.LEVEL1, async (done: Function) => {
+      console.info('[SUB_ACE_ARKUI_GESTUREINTERCEPTJS_0900] START');
+      await CommonFunc.sleep(500);
+      let driver = await Driver.create()
+      let strJson = getInspectorByKey('HostBelongTest');
+      let obj: ESObject = JSON.parse(strJson);
+      console.info('[SUB_ACE_ARKUI_GESTUREINTERCEPTJS_0900] gestureIntercept: ' + obj.$attrs.content);
+      expect(obj.$attrs.content).assertEqual('111111');
+      console.info('[SUB_ACE_ARKUI_GESTUREINTERCEPTJS_0900] END');
+      done();
+    })
   })
 }

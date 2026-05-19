@@ -19,8 +19,8 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
-#include <pthread.h>
 #include <test.h>
+#include <pthread.h>
 #include <unistd.h>
 #include "functionalext.h"
 
@@ -29,35 +29,38 @@ static const int WAIT_TIME = 1;
 
 /**
  * @tc.name      : set_fatal_message
- * @tc.desc      : test the function of set_fatal_message.
+ * @tc.desc      : Test the function of set_fatal_message.
  * @tc.level     : Level 0
  */
 static void FatalMessage0010(void)
 {
-    const char msg[1024] = { "abcdefghijklmnopqrstuvwxyz1234567890" };
-    pid_t fpid = fork();
+    const char msg[1024] = {"abcdefghijklmnopqrstuvwxyz1234567890"};
+    pid_t fpid;
+    fpid = fork();
     if (fpid < 0) {
         TPrintf("error in fork!");
     } else if (fpid == 0) {
+        int pidChild = getpid();
+        fatal_msg_t *fatal_message = nullptr;
         set_fatal_message(msg);
-        fatal_msg_t* fatal_message = get_fatal_message();
-        EXPECT_EQ("FatalMessage0010", fatal_message, nullptr);
-        exit(getpid());
+        fatal_message = get_fatal_message();
+        EXPECT_EQ("fatal_message_0010", fatal_message, nullptr);
+        exit(pidChild);
     }
 }
 
-TEST_FUN g_gFunArray[] = {
+static TEST_FUN g_gFunArray[] = {
     FatalMessage0010,
 };
 
 static int UnittestFatalMessageTestImpl(void)
 {
-    int num = sizeof(g_gFunArray) / sizeof(g_gFunArray[0]);
+    int num = sizeof(g_gFunArray) / sizeof(TEST_FUN);
     for (int pos = 0; pos < num; ++pos) {
         g_gFunArray[pos]();
     }
 
-    return T_STATUS;
+    return g_tStatus;
 }
 
 int UnittestFatalMessageTest(void)

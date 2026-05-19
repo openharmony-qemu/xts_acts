@@ -1,6 +1,6 @@
 
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -345,7 +345,7 @@ export default function PerfStatEtsTest() {
       const valueBucket1: relationalStore.ValuesBucket = {
         "name": "zhangsan",
         "age": 18 as long,
-        "salary": 100.5 as long,
+        "salary": 100.5.toLong(),
       }
       await rdbStore!.insert("test", valueBucket1)
       rdbStore!.offStatistics();
@@ -378,7 +378,7 @@ export default function PerfStatEtsTest() {
       const valueBucket1: relationalStore.ValuesBucket = {
         "name": "zhangsan",
         "age": 18 as long,
-        "salary": 100.5 as long,
+        "salary": 100.5.toLong(),
       }
       await rdbStore!.insert("test", valueBucket1);
       done();
@@ -408,7 +408,7 @@ export default function PerfStatEtsTest() {
       const valueBucket1: relationalStore.ValuesBucket = {
         "name": "zhangsan",
         "age": 18 as long,
-        "salary": 100.5 as long,
+        "salary": 100.5.toLong(),
       }
       await rdbStore!.insert("test", valueBucket1)
       await Utils.msSleep(1000);

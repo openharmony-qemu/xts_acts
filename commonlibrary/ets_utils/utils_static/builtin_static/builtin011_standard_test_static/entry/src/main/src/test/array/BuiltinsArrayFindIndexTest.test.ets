@@ -96,8 +96,8 @@ export default function BuiltinsArrayFindIndexTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFindIndexTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>();
-      
+      const arr: number[] = Array.create<number>(0, 0);
+
       const result = arr.findIndex((value: number, index: int, array: Array<number>) => {
         return value === 1;
       });

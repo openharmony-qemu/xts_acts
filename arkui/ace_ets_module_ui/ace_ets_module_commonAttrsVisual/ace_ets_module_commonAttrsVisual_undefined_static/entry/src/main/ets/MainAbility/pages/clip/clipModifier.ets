@@ -31,7 +31,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
 export class MyRowAttributeModifier implements AttributeModifier<RowAttribute> {
-  @State public isChange: boolean = true
+  public isChange: boolean = true
 
   applyNormalAttribute(instance: RowAttribute): void {
     if (this.isChange) {

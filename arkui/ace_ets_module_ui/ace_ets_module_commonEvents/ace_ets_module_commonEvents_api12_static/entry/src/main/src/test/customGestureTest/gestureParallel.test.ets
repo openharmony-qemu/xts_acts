@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -95,8 +95,8 @@ it('gestureParallelTest_static_001', Level.LEVEL0, async (done: () => void): Pro
         Number(Number(rectInfo[0][1] ?? 0) + Number(AppStorage.get<number>("winTop") ?? 0));
       console.info("rect_left = " + CommonFunc.rect_left + "CommonFunc.rect_top = " + CommonFunc.rect_top);
       let driver = Driver.create();
-      await driver.longClick(Math.round(CommonFunc.rect_left + uiContext.vp2px(66.66)) as Int, Math.round(CommonFunc.rect_top + uiContext.vp2px(133.33)) as Int);
-      await driver.doubleClick(Math.round(CommonFunc.rect_left + uiContext.vp2px(66.66)) as Int, Math.round(CommonFunc.rect_top + uiContext.vp2px(133.33)) as Int);
+      await driver.longClick(Math.round(CommonFunc.rect_left + uiContext.vp2px(66.66)).toInt(), Math.round(CommonFunc.rect_top + uiContext.vp2px(133.33)).toInt());
+      await driver.doubleClick(Math.round(CommonFunc.rect_left + uiContext.vp2px(66.66)).toInt(), Math.round(CommonFunc.rect_top + uiContext.vp2px(133.33)).toInt());
       let strJson1 = inspector.getInspectorByKey("longPressMsg");
       await CommonFunc.sleep(200);
       console.info("[gestureParallelTest_001] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson1)));

@@ -10,7 +10,7 @@ let TAG: string = 'testTag'; //日志标识字符串,作为tag标识当前runner
 
 let bucket1000: relationalStore.ValuesBucket = {};
 for(let i = 0 ; i < 1001; i++) {
-    bucket1000["test" + i] = i as long;
+    bucket1000["test" + i] = i.toLong();
 }
 
 export default function RdbStoreGetSqlInfoTest() {

@@ -149,7 +149,11 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_IsAutoStartupSupported_0100', Level.LEVEL0, async (done: Function) => {
-      let autoStartupEnabled: string = systemParameterEnhance.getSync('const.product.appboot.setting.enabled');
+      let autoStartupEnabled: string = 'false';
+      try {
+        autoStartupEnabled = systemParameterEnhance.getSync('const.product.appboot.setting.enabled');
+      } catch {
+      }
       let isSupported: boolean = autoStartupManager.isAutoStartupSupported();
       if (autoStartupEnabled === 'true') {
         expect(isSupported).assertTrue();

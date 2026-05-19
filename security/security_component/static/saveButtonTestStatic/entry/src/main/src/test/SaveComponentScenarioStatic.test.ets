@@ -88,9 +88,9 @@ export default function saveComponentScenarioStaticTest() {
             if (data && data.length > 0) {
               console.info(`====>${testname} the window data[0].width: ` + data[0].width);
               console.info(`====>${testname} the window data[0].height: ` + data[0].height);
-              startX = endX = Math.floor(data[0].width * (1/2)) as Int;
-              startY = Math.floor(data[0].height * (4/5)) as Int;
-              endY = Math.floor(data[0].height * (1/5)) as Int;
+              startX = endX = Math.floor(data[0].width * (1/2)).toInt();
+              startY = Math.floor(data[0].height * (4/5)).toInt();
+              endY = Math.floor(data[0].height * (1/5)).toInt();
             } else {
               console.info(`====>${testname} failed to obtain all the display objects data is Null`);
               expect(false).assertTrue();

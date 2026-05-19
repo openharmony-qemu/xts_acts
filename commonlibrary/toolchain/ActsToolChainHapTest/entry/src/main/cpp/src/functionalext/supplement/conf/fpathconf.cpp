@@ -27,7 +27,9 @@ void Fpathconf0100(void)
 {
     long result = fpathconf(0, _PC_LINK_MAX);
     if (result < static_cast<long>(_POSIX_LINK_MAX)) {
-        t_error("[%s] failed: fpathconf _PC_LINK_MAX %ld < _POSIX_LINK_MAX %ld\n", __func__, result,
+        t_error("[%s] failed: fpathconf _PC_LINK_MAX %ld < _POSIX_LINK_MAX %ld\n",
+                __func__,
+                result,
                 static_cast<long>(_POSIX_LINK_MAX));
     }
 }

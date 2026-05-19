@@ -554,8 +554,8 @@ struct RichEditorMenuType1 {
                 this.end = selection.selection[1]
                 this.textSize = value
                 this.controller.updateSpanStyle({
-                  start: this.start as Int,
-                  end: this.end as Int,
+                  start: this.start.toInt(),
+                  end: this.end.toInt(),
                   textStyle: { fontSize: this.textSize }
                 } as RichEditorUpdateTextSpanStyleOptions)
               }

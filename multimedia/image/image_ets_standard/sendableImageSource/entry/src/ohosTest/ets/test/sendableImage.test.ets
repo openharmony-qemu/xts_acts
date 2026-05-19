@@ -203,12 +203,12 @@ export default function sendableImageSource() {
       await sleep(500)
       for (let i = 0; i < 2; i ++) {
         await sleep(1000);
-        let button = await driver.findComponent(ON.text('允许', MatchPattern.EQUALS))
-        console.info('button is ' + JSON.stringify(button))
-        if (button != undefined) {
-            console.info('button is ' + JSON.stringify(button))
-            await button?.click()
-        }
+        let button1 = await driver.findComponent(ON.text('允许', MatchPattern.EQUALS))
+        let button2 = await driver.findComponent(ON.text('始终允许', MatchPattern.EQUALS))
+        console.info('button1 is ' + JSON.stringify(button1))
+        console.info('button2 is ' + JSON.stringify(button2))
+        await button1?.click()
+        await button2?.click()
       }
       sleep(2000)
     })

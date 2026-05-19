@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 import {
-  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,AnimateParam,Search,TextAlign,Axis,NavBarPosition,FlexAlign,
+  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,AnimateParam,Search,TextAlign,NavBarPosition,FlexAlign,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavPathInfo,
   Position,EffectType,Text,Color,Flex,NavDestinationContext,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,
-  FontWeight,Axis,Margin,Swiper,ForEach,ColumnOptions, LayoutSafeAreaEdge, LayoutSafeAreaType,NavigationCommonTitle,NavDestinationCommonTitle,Alignment
+  FontWeight,Margin,Swiper,ForEach,ColumnOptions, LayoutSafeAreaEdge, LayoutSafeAreaType,NavigationCommonTitle,NavDestinationCommonTitle,Alignment
 ,NavPathStack} from '@ohos.arkui.component';
 import {
   State,

@@ -28,14 +28,14 @@ import { RenderNode, FrameNode, NodeController } from '@ohos.arkui.node';
 const renderNode1 = new RenderNode();
 renderNode1.frame = { x: 0, y: 0, width: 20, height: 20 };
 renderNode1.shadowElevation = 10;
-renderNode1.shadowColor = 0XFF00FF00 as Int;
+renderNode1.shadowColor = 0XFF00FF00.toInt();
 const shadowColor = renderNode1.shadowColor;
 
 // shadowOffset test
 const renderNode2 = new RenderNode();
 renderNode2.frame = { x: 0, y: 0, width: 20, height: 20 };
 renderNode2.shadowElevation = 10;
-renderNode2.shadowColor = 0XFF00FF00 as Int;
+renderNode2.shadowColor = 0XFF00FF00.toInt();
 renderNode2.shadowOffset = { x: 10, y: 10 };
 const shadowOffset = renderNode2.shadowOffset;
 
@@ -43,7 +43,7 @@ const shadowOffset = renderNode2.shadowOffset;
 const renderNode3 = new RenderNode();
 renderNode3.frame = { x: 0, y: 0, width: 20, height: 20 };
 renderNode3.shadowElevation = 10;
-renderNode3.shadowColor = 0XFF00FF00 as Int;
+renderNode3.shadowColor = 0XFF00FF00.toInt();
 renderNode3.shadowOffset = { x: 10, y: 10 };
 renderNode3.shadowAlpha = 0.1;
 const shadowAlpha = renderNode3.shadowAlpha;
@@ -58,7 +58,7 @@ const shadowElevation = renderNode4.shadowElevation;
 const renderNode5 = new RenderNode();
 renderNode5.frame = { x: 0, y: 0, width: 20, height: 20 };
 renderNode5.shadowElevation = 10;
-renderNode5.shadowColor = 0XFF00FF00 as Int;
+renderNode5.shadowColor = 0XFF00FF00.toInt();
 renderNode5.shadowRadius = 5;
 const shadowRadius = renderNode5.shadowRadius;
 

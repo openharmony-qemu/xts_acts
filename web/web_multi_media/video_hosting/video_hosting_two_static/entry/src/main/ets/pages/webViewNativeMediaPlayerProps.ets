@@ -68,7 +68,7 @@ let readyState: Int = 0
 let videoTime: Int = 0
 let isResume: boolean = false
 
-interface AVPlayerListener {
+export interface AVPlayerListener {
   onPlaying(): void
 
   onPaused(): void
@@ -94,7 +94,7 @@ interface AVPlayerListener {
   onVideoSizeChanged(width: Int, height: Int): void
 }
 
-class AVPlayerDemo {
+export class AVPlayerDemo {
   private surfaceID: string = ''; // surfaceID用于播放画面展示，具体的值需要通过Xcomponent接口获取，相关文档链接见上面Xcomponent创建方法
   private isSeek: boolean = true; // 用于区分模式是否支持seek操作
   private fileSize: double = -1;
@@ -245,7 +245,7 @@ function ButtonBuilder(params: Params) {
   MyComponent({ params: params })
 }
 
-class NativeMediaPlayerHandlerImpl implements webview.NativeMediaPlayerHandler {
+export class NativeMediaPlayerHandlerImpl implements webview.NativeMediaPlayerHandler {
   private rawHandler: webview.NativeMediaPlayerHandler;
 
   constructor(handler: webview.NativeMediaPlayerHandler) {
@@ -373,7 +373,7 @@ class NativeMediaPlayerHandlerImpl implements webview.NativeMediaPlayerHandler {
   }
 }
 
-class NativeMediaPlayerImpl implements webview.NativeMediaPlayerBridge {
+export class NativeMediaPlayerImpl implements webview.NativeMediaPlayerBridge {
   private surfaceId: string;
   public mediaSource: string;
   private mediaHandler: webview.NativeMediaPlayerHandler;
@@ -552,7 +552,7 @@ class AVPlayerListenerImpl implements AVPlayerListener {
   }
 }
 
-interface Params {
+export interface Params {
   text: string
   text2: string
   web_tab: WebComponent
@@ -687,7 +687,7 @@ struct MyComponent {
   }
 }
 
-class MyNodeController extends NodeController {
+export class MyNodeController extends NodeController {
   private rootNode?: BuilderNode<Params> ;
   private isRemove = false;
   private surfaceId_: string;
@@ -737,7 +737,7 @@ interface PageBeginParam {
 
 @Entry
 @Component
-struct WebComponent {
+export struct WebComponent {
   controller: webview.WebviewController = new webview.WebviewController(undefined);
   controllerone: webview.WebviewController = new webview.WebviewController(undefined);
   controllerTwo: webview.WebviewController = new webview.WebviewController(undefined);

@@ -19,7 +19,6 @@ export default function Hiviewdfx_HiAppEventTest(){
       "report_times_per_app": "3"
     };
 
-    hiAppEvent.setEventConfig(hiAppEvent.event.MAIN_THREAD_JANK, params);
     /**
         * @tc.name SUB_HiAppEvent_setEventConfig_0100
         * @tc.number SUB_HiAppEvent_setEventConfig_0100

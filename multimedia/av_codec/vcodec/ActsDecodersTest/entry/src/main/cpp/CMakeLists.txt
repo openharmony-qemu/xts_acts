@@ -32,4 +32,5 @@ target_link_libraries(decoder_test PUBLIC
     libnative_window.so
     libnative_image.so
     libnative_drawing.so
+    libnative_media_venc.so
 )

@@ -13,54 +13,55 @@
  * limitations under the License.
  */
 
-#include <cstdlib>
 #include <pthread.h>
+#include <cstdlib>
 #include <unistd.h>
 #include "functionalext.h"
 
 static int32_t g_sleepTime = 2;
 static pthread_key_t g_key;
 
-void* ThreadfuncA(void* arg)
+static void *ThreadfuncA(void *arg)
 {
     sleep(g_sleepTime);
     int32_t value = 0;
     int32_t ret = pthread_setspecific(g_key, &value);
     EXPECT_EQ("pthread_key_create_0100_threadfuncA", ret, 0);
-    int32_t* keyRet = (int32_t*)pthread_getspecific(g_key);
+    int32_t *keyRet = (int32_t *)pthread_getspecific(g_key);
     EXPECT_EQ("pthread_key_create_0100_threadfuncA", *keyRet, 0);
     return arg;
 }
 
-void* ThreadfuncB(void* arg)
+static void *ThreadfuncB(void *arg)
 {
     int32_t value = 0;
     int32_t ret = pthread_setspecific(g_key, &value);
     EXPECT_EQ("pthread_key_create_0200_threadfuncB", ret, 0);
-    int32_t* keyRet = (int32_t*)pthread_getspecific(g_key);
+    int32_t *keyRet = (int32_t *)pthread_getspecific(g_key);
     EXPECT_EQ("pthread_key_create_0200_threadfuncB", *keyRet, 0);
     return arg;
 }
 
-void Testfunc(void* arg) {}
+void Testfunc(void *arg)
+{}
 
 /**
- * @tc.name:      PthreadKeyCreate0100
+ * @tc.name:      pthread_key_create_0100
  * @tc.desc:      Verify pthread_key_create process success when second args is null.
  * @tc.desc:      level 0
  */
 void PthreadKeyCreate0100(void)
 {
     pthread_t tid1;
+    pthread_create(&tid1, nullptr, ThreadfuncA, nullptr);
     int32_t ret = pthread_key_create(&g_key, nullptr);
     EXPECT_EQ("PthreadKeyCreate0100", ret, 0);
-    pthread_create(&tid1, nullptr, ThreadfuncA, nullptr);
     pthread_join(tid1, nullptr);
     pthread_key_delete(g_key);
 }
 
 /**
- * @tc.name:      PthreadKeyCreate0200
+ * @tc.name:      pthread_key_create_0200
  * @tc.desc:      Verify pthread_key_create process success when second args is not null.
  * @tc.desc:      level 1
  */
@@ -68,20 +69,20 @@ void PthreadKeyCreate0200(void)
 {
     pthread_t tid2;
     int32_t ret = pthread_key_create(&g_key, Testfunc);
-    EXPECT_EQ("PthreadKeyCreate0200", ret, 0);
     pthread_create(&tid2, nullptr, ThreadfuncB, nullptr);
     pthread_join(tid2, nullptr);
-    pthread_key_delete(g_key);
+    EXPECT_EQ("PthreadKeyCreate0200", ret, 0);
 }
 
-static int PthreadKeyCreateTestTestImpl(void)
+static int PthreadKeyCreateTestImpl(void)
 {
     PthreadKeyCreate0100();
     PthreadKeyCreate0200();
-    return T_STATUS;
+    return g_tStatus;
 }
 
 int PthreadKeyCreateTestTest(void)
 {
-    return PthreadKeyCreateTestTestImpl();
+    return PthreadKeyCreateTestImpl();
 }
+

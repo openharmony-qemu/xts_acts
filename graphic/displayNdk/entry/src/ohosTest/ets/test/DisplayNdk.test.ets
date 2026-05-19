@@ -1214,8 +1214,28 @@ export default function DisplayNdkTest() {
           console.log(`${caseName} result: ${JSON.stringify(result)}`);
           let count:number = 0;
           let windowClass = windowStage.getMainWindowSync();
+          let cap:string = displayClass.getDisplayCapability();
+          let curFoldStatus: display.FoldStatus = display.getFoldStatus();
+          console.info(`Succeeded in obtaining fold status. Data: ${curFoldStatus}`);
           expect(result).assertEqual(0);
           if (deviceType === '2in1' || (deviceType === 'tablet' && isPCMode)) {
+            if (JSON.parse(cap).foldScreenType.split(',').map(Number)[0] === 5 && curFoldStatus === 3) {
+              try {
+                let moveConfiguration: window.MoveConfiguration = {
+                  displayId: 999
+                };
+                let promise2 = windowClass.moveWindowToAsync(300, 300, moveConfiguration);
+                promise2.then(() => {
+                  console.info(caseName + 'Succeeded in moving the window2.');
+                  let rect = windowClass?.getWindowProperties().windowRect;
+                  console.info(caseName + `Get window rect: ` + JSON.stringify(rect));
+                }).catch((err: BusinessError) => {
+                  console.error(caseName + `Failed to move the window. Cause code: ${err.code}, message: ${err.message}`);
+                });
+              } catch (exception) {
+                console.error(caseName + `Failed to move the window. Cause code: ${exception.code}, message: ${exception.message}`);
+              }
+            }
             // 调用maximize接口，设置窗口进入全屏沉浸式。
             windowClass!.maximize(window.MaximizePresentation.ENTER_IMMERSIVE);
             // 调用setTitleAndDockHoverShown接口，隐藏标题栏和dock栏。

@@ -1378,7 +1378,7 @@ export default function abilityTest() {
                   let keyvalue2 = session!.checkMediaKeyStatus();
                 } catch (err) {
                   console.log("XX DRM_AVPLAYER_0900 generateKeySystemRequest err end", err);
-                  errCode = (err as BusinessError).code;
+                  errCode = (err as BusinessError).code.toDouble();
                 }
                 expect(errCode).assertEqual(drm.DrmErrorCode.SERVICE_FATAL_ERROR);
                 session!.destroy();

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -105,22 +105,22 @@ it('gestureInterceptionEnhancementTest_static_0010', Level.LEVEL0, async (done: 
       let width = right - left;
       await CommonFunc.sleep(1000);
       // tabs nest scroll
-      await driver.swipe(Math.round(left + width * 0.8) as Int, Math.round(top + height / 2) as Int,
-        Math.round(left) as Int, Math.round(top + height / 2) as Int);
+      await driver.swipe(Math.round(left + width * 0.8).toInt(), Math.round(top + height / 2).toInt(),
+        Math.round(left).toInt(), Math.round(top + height / 2).toInt());
       await CommonFunc.sleep(2500);
       let text01 = await (driver.findComponent(ON.text("BlueTest")) as Promise<Component>)
       let textContent01: string = await text01.getText();
       expect(textContent01).assertEqual("BlueTest");
 
-      await driver.swipe(Math.round(left + width * 0.8) as Int, Math.round(top + height / 2) as Int,
-        Math.round(left) as Int, Math.round(top + height / 2) as Int);
+      await driver.swipe(Math.round(left + width * 0.8).toInt(), Math.round(top + height / 2).toInt(),
+        Math.round(left).toInt(), Math.round(top + height / 2).toInt());
       await CommonFunc.sleep(2500);
       let text02 = await (driver.findComponent(ON.text("PinkTest")) as Promise<Component>)
       let textContent02: string = await text02.getText();
       expect(textContent02).assertEqual("PinkTest");
 
-      await driver.swipe(Math.round(left + width * 0.8) as Int, Math.round(top + height / 2) as Int,
-        Math.round(left) as Int, Math.round(top + height / 2) as Int);
+      await driver.swipe(Math.round(left + width * 0.8).toInt(), Math.round(top + height / 2).toInt(),
+        Math.round(left).toInt(), Math.round(top + height / 2).toInt());
       await CommonFunc.sleep(2500);
       let text03 = await (driver.findComponent(ON.text("blue and pink test")) as Promise<Component>)
       let textContent03: string = await text03.getText();
@@ -158,8 +158,8 @@ it('gestureInterceptionEnhancementTest_static_0020', Level.LEVEL0, async (done: 
       await CommonFunc.sleep(1000);
       // tabs nest scroll
       console.info("gestureInterceptionEnhancementTest_static_0020 driver.swipe start");
-      await driver.swipe(Math.round(left + width * 0.8) as Int, Math.round(top + height / 2) as Int,
-        Math.round(left) as Int, Math.round(top + height / 2) as Int);
+      await driver.swipe(Math.round(left + width * 0.8).toInt(), Math.round(top + height / 2).toInt(),
+        Math.round(left).toInt(), Math.round(top + height / 2).toInt());
       await CommonFunc.sleep(2500);
       console.info("gestureInterceptionEnhancementTest_static_0020 BlueTest start");
       let text01 = await (driver.findComponent(ON.text("BlueTest")) as Promise<Component>);
@@ -167,15 +167,15 @@ it('gestureInterceptionEnhancementTest_static_0020', Level.LEVEL0, async (done: 
       let textContent01: string = await text01.getText();
       expect(textContent01).assertEqual("BlueTest");
 
-      await driver.swipe(Math.round(left + width * 0.8) as Int, Math.round(top + height / 2) as Int,
-        Math.round(left) as Int, Math.round(top + height / 2) as Int);
+      await driver.swipe(Math.round(left + width * 0.8).toInt(), Math.round(top + height / 2).toInt(),
+        Math.round(left).toInt(), Math.round(top + height / 2).toInt());
       await CommonFunc.sleep(2500);
       let text02 = await (driver.findComponent(ON.text("PinkTest")) as Promise<Component>)
       let textContent02: string = await text02.getText();
       expect(textContent02).assertEqual("PinkTest");
 
-      await driver.swipe(Math.round(left + width * 0.8) as Int, Math.round(top + height / 2) as Int,
-        Math.round(left) as Int, Math.round(top + height / 2) as Int);
+      await driver.swipe(Math.round(left + width * 0.8).toInt(), Math.round(top + height / 2).toInt(),
+        Math.round(left).toInt(), Math.round(top + height / 2).toInt());
       await CommonFunc.sleep(2500);
       let text03 = await (driver.findComponent(ON.text("PinkTest")) as Promise<Component>)
       let textContent03: string = await text03.getText();
@@ -212,15 +212,15 @@ it('gestureInterceptionEnhancementTest_static_0030', Level.LEVEL0, async (done: 
       await CommonFunc.sleep(1000);
       // tabs nest scroll
       console.info("gestureInterceptionEnhancementTest_static_0030 driver.swipe start");
-      await driver.swipe(Math.round(left + width * 0.8) as Int, Math.round(top + height / 2) as Int,
-        Math.round(left) as Int, Math.round(top + height / 2) as Int);
+      await driver.swipe(Math.round(left + width * 0.8).toInt(), Math.round(top + height / 2).toInt(),
+        Math.round(left).toInt(), Math.round(top + height / 2).toInt());
       await CommonFunc.sleep(2500);
-      await driver.swipe(Math.round(left + width * 0.8) as Int, Math.round(top + height / 2) as Int,
-        Math.round(left) as Int, Math.round(top + height / 2) as Int);
+      await driver.swipe(Math.round(left + width * 0.8).toInt(), Math.round(top + height / 2).toInt(),
+        Math.round(left).toInt(), Math.round(top + height / 2).toInt());
       console.info("gestureInterceptionEnhancementTest_static_0030 driver.swipe 2 success");
       await CommonFunc.sleep(2500);
-      await driver.swipe(Math.round(left + width * 0.8) as Int, Math.round(top + height / 2) as Int,
-        Math.round(left) as Int, Math.round(top + height / 2) as Int);
+      await driver.swipe(Math.round(left + width * 0.8).toInt(), Math.round(top + height / 2).toInt(),
+        Math.round(left).toInt(), Math.round(top + height / 2).toInt());
       await CommonFunc.sleep(2500);
       console.info("gestureInterceptionEnhancementTest_static_0030 driver.swipe success");
       let strJson = inspector.getInspectorByKey('callBackS');

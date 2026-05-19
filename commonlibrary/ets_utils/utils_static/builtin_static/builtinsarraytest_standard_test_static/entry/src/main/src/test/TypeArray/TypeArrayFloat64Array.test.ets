@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -294,7 +294,7 @@ export default function typeArrayFloat64ArrayTest() {
       expect(arr2.toString()).assertEqual('4,5,3,4,5');
       expect(arr2.length).assertEqual(5);
       const arr3 = new Float64Array([3.0, 1.0, 4.0, 2.0]);
-      arr3.sort((a: double, b: double) => (a - b) as int);
+      arr3.sort((a: double, b: double) => (a - b).toInt());
       expect(arr3.toString()).assertEqual('1,2,3,4');
       expect(arr3.length).assertEqual(4);
     })
@@ -673,7 +673,7 @@ export default function typeArrayFloat64ArrayTest() {
         if (isNaN(b)) {
           return -1;
         }
-        return (a - b) as int;
+        return (a - b).toInt();
       });
 
       expect(arr[0]).assertEqual(-Infinity);
@@ -1284,7 +1284,7 @@ export default function typeArrayFloat64ArrayTest() {
           originalIndices.push(index);
         }
       });
-      arr.sort((a: double, b: double) => (a - b) as int);
+      arr.sort((a: double, b: double) => (a - b).toInt());
       const sortedIndices: number[] = [];
       arr.forEach((val, index) => {
         if (val === 2.0) {

@@ -39,7 +39,12 @@ export default function BuiltinsTryGetIteratorLengthTest(): void {
      */
     it('builtinsTryGetIteratorLengthTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       // 使用数组的entries()方法获取迭代器（具有__Iterator_getLength方法）
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
       const iterator = arr.entries();
       const result = tryGetIteratorLength(iterator);
       const expected = 5;
@@ -57,7 +62,7 @@ export default function BuiltinsTryGetIteratorLengthTest(): void {
      */
     it('builtinsTryGetIteratorLengthTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       // 使用空数组的entries()方法获取迭代器
-      const arr = new Array<number>();
+      const arr: number[] = Array.create<number>(0, 0);
       const iterator = arr.entries();
       const result = tryGetIteratorLength(iterator);
       const expected = 0;

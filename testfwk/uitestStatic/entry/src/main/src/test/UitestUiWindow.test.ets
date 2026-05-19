@@ -107,7 +107,7 @@ async function maxUiWindow(driver: Driver, window: UiWindow | null): Promise<boo
   }
 }
 
-export default function uitestUiWindowTest() {
+export default function uitestUiWindowTest(): void {
   describe('uitestUiWindowTest', (): void => {
     let driver: Driver | undefined;
     beforeAll(async (): Promise<void> => {

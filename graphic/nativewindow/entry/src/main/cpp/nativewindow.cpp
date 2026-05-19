@@ -303,6 +303,10 @@ napi_property_descriptor desc[] = {
      nullptr, napi_default, nullptr},
     {"OHNativeErrorCodeCover", nullptr, OHNativeErrorCodeCover, nullptr, nullptr,
      nullptr, napi_default, nullptr},
+    {"testNativeWindowNativeWindowFlushBufferAbnormalRegion", nullptr,
+     testNativeWindowNativeWindowFlushBufferAbnormalRegion, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"testNativeWindowNativeWindowRequestBufferDefaultWidthAndHeight", nullptr,
+     testNativeWindowNativeWindowRequestBufferDefaultWidthAndHeight, nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 
 EXTERN_C_START

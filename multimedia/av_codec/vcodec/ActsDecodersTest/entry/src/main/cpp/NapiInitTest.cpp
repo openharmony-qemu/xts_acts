@@ -134,7 +134,8 @@ static const TestFunction API_TEST_FUNCTIONS[] = {
     VideoDecCapApi0023,              // 34
     VideoDecCapApi0024,              // 35
     VideoDecCapApi0025,              // 36
-    VideoDecCapApi0026               // 37
+    VideoDecCapApi0026,              // 37
+    VideoDecCapApi0027               // 38
 };
 
 // Function Test function lookup table

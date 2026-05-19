@@ -36,9 +36,19 @@ export default function BuiltinsArrayMapTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayMapTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
       const result = arr.map((value) => value * 2);
-      const expected = new Array<number>(2, 4, 6, 8, 10);
+      const expected: number[] = Array.create<number>(5, 0);
+      expected[0] = 2;
+      expected[1] = 4;
+      expected[2] = 6;
+      expected[3] = 8;
+      expected[4] = 10;
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -55,7 +65,7 @@ export default function BuiltinsArrayMapTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayMapTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>();
+      const arr: number[] = Array.create<number>(0, 0);
       const result = arr.map((value) => value * 2);
 
       expect(result.length).assertEqual(0);
@@ -87,11 +97,17 @@ export default function BuiltinsArrayMapTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayMapTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3);
+      const arr: number[] = Array.create<number>(3, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
       const result = arr.map((value, index, array) => {
         return value + index + array.length;
       });
-      const expected = new Array<number>(4, 6, 8);
+      const expected: number[] = Array.create<number>(3, 0);
+      expected[0] = 4;
+      expected[1] = 6;
+      expected[2] = 8;
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -108,9 +124,9 @@ export default function BuiltinsArrayMapTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayMapTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<string>("apple", "banana", "cherry");
+      const arr: string[] = ["apple", "banana", "cherry"];
       const result = arr.map((value) => value.toUpperCase());
-      const expected = new Array<string>("APPLE", "BANANA", "CHERRY");
+      const expected: string[] = ["APPLE", "BANANA", "CHERRY"];
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -127,9 +143,9 @@ export default function BuiltinsArrayMapTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayMapTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<boolean>(true, false, true);
+      const arr: boolean[] = [true, false, true];
       const result = arr.map((value) => !value);
-      const expected = new Array<boolean>(false, true, false);
+      const expected: boolean[] = [false, true, false];
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -146,8 +162,18 @@ export default function BuiltinsArrayMapTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayMapTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
-      const original = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
+      const original: number[] = Array.create<number>(5, 0);
+      original[0] = 1;
+      original[1] = 2;
+      original[2] = 3;
+      original[3] = 4;
+      original[4] = 5;
 
       const result = arr.map((value) => value * 2);
 
@@ -166,7 +192,10 @@ export default function BuiltinsArrayMapTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayMapTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3);
+      const arr: number[] = Array.create<number>(3, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
       const result = arr.map((value) => value);
 
       expect(result).not().assertEqual(arr);
@@ -181,9 +210,19 @@ export default function BuiltinsArrayMapTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayMapTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
       const result = arr.map((value) => value * 2).map((value) => value + 1);
-      const expected = new Array<number>(3, 5, 7, 9, 11);
+      const expected: number[] = Array.create<number>(5, 0);
+      expected[0] = 3;
+      expected[1] = 5;
+      expected[2] = 7;
+      expected[3] = 9;
+      expected[4] = 11;
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -200,9 +239,15 @@ export default function BuiltinsArrayMapTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayMapTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3);
+      const arr: number[] = Array.create<number>(3, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
       const result = arr.map((value) => `Number: ${value}`);
-      const expected = new Array<string>("Number: 1", "Number: 2", "Number: 3");
+      const expected: string[] = Array.create<string>(3, "");
+      expected[0] = "Number: 1";
+      expected[1] = "Number: 2";
+      expected[2] = "Number: 3";
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {

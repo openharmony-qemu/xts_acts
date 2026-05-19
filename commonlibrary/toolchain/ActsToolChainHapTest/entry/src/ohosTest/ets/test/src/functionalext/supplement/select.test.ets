@@ -31,5 +31,19 @@ export default function FunctionalextSupplementSelectTestGroupTest() {
       expect(result).assertEqual(0);
       done();
     });
+    /**
+     * @tc.name   select
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_SELECT_0100
+     * @tc.desc   libc-test select
+     */
+    it("select", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("select");
+      expect(result).assertEqual(0);
+      done();
+    });
+
   });
 }

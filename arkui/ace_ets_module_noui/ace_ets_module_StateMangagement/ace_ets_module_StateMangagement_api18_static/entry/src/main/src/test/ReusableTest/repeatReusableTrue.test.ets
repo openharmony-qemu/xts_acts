@@ -75,7 +75,7 @@ export default function repeatReusableTrue() {
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("reusabletrue"));
       await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(5000);
       let text = await driver.findComponent(ON.text('[a] index99: item_99'))
       expect(text != null).assertTrue()
       console.info('[repeatreusabletrue_001] END');

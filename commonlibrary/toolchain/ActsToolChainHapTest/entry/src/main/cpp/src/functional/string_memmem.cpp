@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (C) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@
  * Required for memmem() function which is a GNU extension.
  */
 #ifndef _GNU_SOURCE
-#define _GNU_SOURCE 1
 #endif
 #include <cstring>
 #include "test.h"
@@ -108,3 +107,4 @@ int StringMemmemTest(void)
 {
     return StringMemmemTestImpl();
 }
+

@@ -13,46 +13,58 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import RectValue from './Rect';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { TouchObject, TouchType } from '@ohos.arkui.component';
-import { sendTouchEvent } from "@ohos.arkui.Test";
+import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins // should be insert by ui-plugins
+import {
+  Button,
+  ButtonAttribute,
+  ClickEvent,
+  Column,
+  Component,
+  Entry,
+  Text,
+  TextAttribute,
+  TouchObject,
+  TouchType
+} from '@ohos.arkui.component' // TextAttribute should be insert by ui-plugins
+import inspector from '@ohos.arkui.inspector';
+import { sendTouchEvent } from '@ohos.arkui.Test';
+import common from '@ohos.app.ability.common';
 
 export default class Utils {
-  static rect_left: number;
-  static rect_top: number;
-  static rect_right: number;
-  static rect_bottom: number;
+  static rect_left: number = 0;
+  static rect_top: number = 0;
+  static rect_right: number = 0;
+  static rect_bottom: number = 0;
   static rect_value: RectValue = new RectValue();
 
-  /** 委托 CommonFunc.getInspectorByKey + parseJsonElement，避免 JSON.parse 旧接口在 Evolution 下 ESE0087。 */
   static getComponentRect(key: string): RectValue {
-    let r: RectValue = CommonFunc.getComponentRect(key);
-    CommonFunc.rect_left = r.left;
-    CommonFunc.rect_top = r.top;
-    CommonFunc.rect_right = r.right;
-    CommonFunc.rect_bottom = r.bottom;
-    CommonFunc.rect_value = r;
-    Utils.rect_left = r.left;
-    Utils.rect_top = r.top;
-    Utils.rect_right = r.right;
-    Utils.rect_bottom = r.bottom;
-    Utils.rect_value = r;
-    return r;
+    let strJson = inspector.getInspectorByKey(key);
+    console.log("====================================== " + strJson)
+    let obj1 = JSON.parseJsonElement(strJson)
+    const str = obj1.getString("$rect")
+    let parts = str.substring(1, str.length - 1).split("],[");
+    let rectInfo = parts.map((part: string) => {
+      return part.split(",").map((item: string): double => parseFloat(item.trim()));
+    });
+    return {
+      "left": Number(rectInfo[0][0] ?? 0),
+      "top": Number(rectInfo[0][1] ?? 0),
+      "right": Number(rectInfo[1][0] ?? 0),
+      "bottom": Number(rectInfo[1][1] ?? 0)
+    } as RectValue
   }
 
-  /** 与 CommonFunc.sleep 一致：本工具链对 Promise 空值的 resolve 较严，用 string 占位。 */
-  static sleep(time: int): Promise<string> {
-    return new Promise<string>((resolve, reject) => {
+  static sleep(time: Int) {
+    return new Promise<string>((resolve: (value: string) => void) => {
       setTimeout(() => {
-        resolve('ok');
-      }, time);
+        resolve("ok")
+      }, time)
     }).then(() => {
-      console.info(`sleep ${time} over...`);
-      return 'ok';
-    });
+      console.info(`sleep ${time} over...`)
+    })
   }
+
 
   static async drag(downX: number, downY: number, upX: number, upY: number, steps: number) {
     console.info('start to drag')
@@ -64,7 +76,7 @@ export default class Utils {
     yStep = 0;
     ret = false;
     swipeSteps = steps;
-    if (swipeSteps === 0) {
+    if (swipeSteps == 0) {
       swipeSteps = 1;
     }
     xStep = (upX - downX) / swipeSteps;
@@ -99,7 +111,7 @@ export default class Utils {
       }
       console.info('move touch started: ' + JSON.stringify(movePoint))
       ret = sendTouchEvent(movePoint)
-      if (ret === false) {
+      if (ret == false) {
         break;
       }
       Utils.sleep(5)
@@ -123,3 +135,7 @@ export default class Utils {
     Utils.sleep(500)
   }
 }
+
+
+
+

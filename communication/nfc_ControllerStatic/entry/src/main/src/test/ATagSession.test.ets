@@ -29,7 +29,7 @@ let tag1: string = 'testTag'; //日志标识字符串,作为tag标识当前runne
 
 let remoteTagService: rpc.RemoteObject = new rpc.RemoteObject("rpcTestAbility");
 
-let nfcAtag: tag.NfcATag;
+let nfcAtag: tag.NfcATag | undefined;
 let nfcTagSession: tag.TagSession;
 
 let aTag: tag.TagInfo = {
@@ -100,7 +100,7 @@ export default function nfcATagSessionTest() {
         let nfcAtag = tag.getNfcA(aTag);
         if ((nfcAtag != null) && (nfcAtag != undefined)) {
           try {
-            nfcAtag.connect();
+            nfcAtag!.connect();
             hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_TagSession_static_0100 NfcConnected pass ');
           } catch (error) {
             error = error as BusinessError;
@@ -136,7 +136,7 @@ export default function nfcATagSessionTest() {
       it('SUB_COMMUNICATION_NFC_TagSession_static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
         let nfcAtag = tag.getNfcA(aTag);
         try {
-          nfcAtag.resetConnection();
+          nfcAtag!.resetConnection();
           hilog.info(domain,tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_TagSession_static_0200 resetConnection pass ');
         } catch (error) {
           error = error as BusinessError;
@@ -204,7 +204,7 @@ export default function nfcATagSessionTest() {
         if (nfcAtag != null && nfcAtag != undefined) {
           try {
             let timeoutMs: int = 1000;
-            nfcAtag.setTimeout(timeoutMs);
+            nfcAtag!.setTimeout(timeoutMs);
           } catch (error) {
             error = error as BusinessError;
             if (error.code === 201) {
@@ -240,7 +240,7 @@ export default function nfcATagSessionTest() {
         let nfcAtag = tag.getNfcA(aTag);
         let gettime: int;
         try {
-          gettime = nfcAtag.getTimeout();
+          gettime = nfcAtag!.getTimeout();
         } catch (error) {
           error = error as BusinessError;
           if (error.code === 201) {
@@ -434,7 +434,7 @@ export default function nfcATagSessionTest() {
         let nfcAtag = tag.getNfcA(aTag);
         let mazSendLen: int;
         try {
-            mazSendLen  = nfcAtag.getMaxTransmitSize();
+            mazSendLen  = nfcAtag!.getMaxTransmitSize();
         } catch (error) {
           error = error as BusinessError;
           if (error.code === 201) {

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -111,10 +111,10 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0130', Level.LEVEL0, async (don
       const uiContext = new UIContext();
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
       const winTop = AppStorage.get<number>('winTop as Int') ?? 0;
-      await driver.swipe((winLeft + Math.round(btLeft) as Int + Math.round(UIContext.resolveUIContext()!.vp2px(27) as Int)) as Int,
-        (Math.round(winTop + btBottom - UIContext.resolveUIContext()!.vp2px(10))) as Int,
-        (winLeft + Math.round(btLeft) as Int + Math.round(UIContext.resolveUIContext()!.vp2px(27) as Int)) as Int,
-        Math.round(winTop + btTop + UIContext.resolveUIContext()!.vp2px(10)) as Int);
+      await driver.swipe((winLeft + Math.round(btLeft).toInt() + Math.round(UIContext.resolveUIContext()!.vp2px(27).toInt())).toInt(),
+        (Math.round(winTop + btBottom - UIContext.resolveUIContext()!.vp2px(10))).toInt(),
+        (winLeft + Math.round(btLeft).toInt() + Math.round(UIContext.resolveUIContext()!.vp2px(27).toInt())).toInt(),
+        Math.round(winTop + btTop + UIContext.resolveUIContext()!.vp2px(10)).toInt());
       await CommonFunc.sleep(5000);
 
       let strJson = inspector.getInspectorByKey('swiperText1');

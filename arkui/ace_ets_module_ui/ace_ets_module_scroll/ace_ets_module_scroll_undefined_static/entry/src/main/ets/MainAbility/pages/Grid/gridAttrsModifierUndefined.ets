@@ -50,7 +50,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
 @Observed
-class MyModifier implements AttributeModifier<GridAttribute> {
+export class MyModifier implements AttributeModifier<GridAttribute> {
   public alignItemsValue: boolean = true;
   public cachedCountValue: boolean = true;
   public cellLengthValue: boolean = true;

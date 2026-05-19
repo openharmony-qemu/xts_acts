@@ -26,6 +26,8 @@
         "MainAbility/pages/Measure/TextCommonTextComputing0570",
         "MainAbility/pages/Measure/TextGetParagraphsTest",
         "MainAbility/pages/Measure/MeasureText",
+        
+        "MainAbility/pages/EditCommon/EditDecorationThicknessScale",
 
         "MainAbility/pages/BindSelectionMenuTest",
         "MainAbility/pages/DisableMenuItems",
@@ -57,10 +59,13 @@
         "MainAbility/pages/MeasureUtilsTestPage",
         "MainAbility/pages/TextMenuControllerTestPage",
         "MainAbility/pages/UIContext/UIContextFontRegisterFont",
+        "MainAbility/pages/UIContext/SetTextSelectionClearPolicy",
         "MainAbility/pages/Text/TextMethodsNull2",
         "MainAbility/pages/EllipsisModeTest/TextAreaEllipsisModeTest",
         "MainAbility/pages/EllipsisModeTest/TextEllipsisModeTest",
         "MainAbility/pages/Scroll/Marquee",
+        "MainAbility/pages/Scroll/Marquee_null",
+        "MainAbility/pages/Scroll/Marquee_undefined",
         "MainAbility/pages/EllipsisModeTest/TextInputEllipsisModeTest"
 
     ]

@@ -175,7 +175,7 @@ void Fpclassifyf1200(void)
     EXPECT_EQ("Fpclassifyf1200", ret, FP_NORMAL);
 }
 
-static int FpclassifyfTestWithArgs(int argc, char* argv[])
+static int FpclassifyfTestImpl(int argc, char* argv[])
 {
     Fpclassifyf0100();
     Fpclassifyf0200();
@@ -194,7 +194,7 @@ static int FpclassifyfTestWithArgs(int argc, char* argv[])
 
 int FpclassifyfTest(void)
 {
-    static char libcProgStub[] = "libc_test";
-    char* libcArgvStub[] = { libcProgStub, nullptr };
-    return FpclassifyfTestWithArgs(1, libcArgvStub);
+    static char libcProg[] = "libc_test";
+    char* libcArgv[] = { libcProg, nullptr };
+    return FpclassifyfTestImpl(1, libcArgv);
 }

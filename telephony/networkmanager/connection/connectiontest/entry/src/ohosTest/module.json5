@@ -35,6 +35,15 @@
       },
       {
         "name":"ohos.permission.GET_IP_MAC_INFO"
+      },
+      {
+        "name" : "ohos.permission.APPROXIMATELY_LOCATION"
+      },
+      {
+        "name" : "ohos.permission.LOCATION"
+      },
+      {
+        "name" : "ohos.permission.ACCESS_NET_TRACE_INFO"
       }
     ],
     "deliveryWithInstall": true,

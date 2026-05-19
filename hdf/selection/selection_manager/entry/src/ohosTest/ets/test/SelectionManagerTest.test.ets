@@ -625,7 +625,7 @@ export default function SelectionManagerTest() {
       let context = abilityDelegator.getAppContext();
       context.stageMode = true;
       let panelInfo: PanelInfo = {
-        panelType: PanelType.MAIN_PANEL,
+        panelType: PanelType.MENU_PANEL,
         x: 0,
         y: 0,
         width: 100,
@@ -710,7 +710,7 @@ export default function SelectionManagerTest() {
       let context = abilityDelegator.getAppContext();
       context.stageMode = true;
       let panelInfo: PanelInfo = {
-        panelType: PanelType.MAIN_PANEL,
+        panelType: PanelType.MENU_PANEL,
         x: 0,
         y: 0,
         width: 100,
@@ -796,7 +796,7 @@ export default function SelectionManagerTest() {
       let context = abilityDelegator.getAppContext();
       context.stageMode = true;
       let panelInfo: PanelInfo = {
-        panelType: PanelType.MAIN_PANEL,
+        panelType: PanelType.MENU_PANEL,
         x: 0,
         y: 0,
         width: 100,
@@ -843,7 +843,7 @@ export default function SelectionManagerTest() {
       let context = abilityDelegator.getAppContext();
       context.stageMode = true;
       let panelInfo: PanelInfo = {
-        panelType: PanelType.MENU_PANEL,
+        panelType: PanelType.MAIN_PANEL,
         x: 0,
         y: 0,
         width: 100,
@@ -925,7 +925,7 @@ export default function SelectionManagerTest() {
       let context = abilityDelegator.getAppContext();
       context.stageMode = true;
       let panelInfo: PanelInfo = {
-        panelType: PanelType.MENU_PANEL,
+        panelType: PanelType.MAIN_PANEL,
         x: 0,
         y: 0,
         width: 100,
@@ -1005,7 +1005,7 @@ export default function SelectionManagerTest() {
       let context = abilityDelegator.getAppContext();
       context.stageMode = true;
       let panelInfo: PanelInfo = {
-        panelType: PanelType.MENU_PANEL,
+        panelType: PanelType.MAIN_PANEL,
         x: 0,
         y: 0,
         width: 100,
@@ -1045,7 +1045,7 @@ export default function SelectionManagerTest() {
       let context = abilityDelegator.getAppContext();
       context.stageMode = true;
       let panelInfo: PanelInfo = {
-        panelType: PanelType.MAIN_PANEL,
+        panelType: PanelType.MENU_PANEL,
         x: 0,
         y: 0,
         width: 100,
@@ -1089,7 +1089,7 @@ export default function SelectionManagerTest() {
       let context = abilityDelegator.getAppContext();
       context.stageMode = true;
       let panelInfo: PanelInfo = {
-        panelType: PanelType.MENU_PANEL,
+        panelType: PanelType.MAIN_PANEL,
         x: 0,
         y: 0,
         width: 100,

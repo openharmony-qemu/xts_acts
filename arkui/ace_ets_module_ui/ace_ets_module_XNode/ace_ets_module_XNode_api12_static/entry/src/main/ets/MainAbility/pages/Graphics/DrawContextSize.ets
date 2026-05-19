@@ -23,7 +23,7 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement';
 const uiContext =  AppStorage.get<UIContext>('uiContext');
 const vp2px = uiContext!.vp2px;
 
-class TestRenderNode extends RenderNode {
+export class TestRenderNode extends RenderNode {
   private sizeWidth: number = 0;
   private sizeHeight: number = 0;
   private sizeInPixelWidth: number = 0;

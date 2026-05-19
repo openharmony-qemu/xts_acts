@@ -44,5 +44,19 @@ export default function FunctionalextSchedTestGroupTest() {
       expect(result).assertEqual(0);
       done();
     });
+    /**
+     * @tc.name   sched_setparam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_SCHED_SETPARAM_0100
+     * @tc.desc   libc-test sched_setparam
+     */
+    it("sched_setparam", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("sched_setparam");
+      expect(result).assertEqual(0);
+      done();
+    });
+
   });
 }

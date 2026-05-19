@@ -150,7 +150,7 @@ import { BusinessError } from '@kit.BasicServicesKit'
 
 // 定义 syncLoad 的 Modifier 类
 @Observed
-class SyncLoadModifier implements AttributeModifier<WaterFlowAttribute> {
+export class SyncLoadModifier implements AttributeModifier<WaterFlowAttribute> {
   private syncValue: boolean | undefined;
 
   constructor(sync: boolean | undefined) {

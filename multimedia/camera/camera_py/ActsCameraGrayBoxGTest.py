@@ -16,13 +16,14 @@
 
 from devicetest.core.test_case import Step
 from devicetest.core.suite.test_suite import TestSuite
-from cameraAiTestComFun import getMediaFileFromMediaLibrary
+from cameraAiTestComFun import getMediaFileFromMediaLibrary, Init
 import os
 import shutil
 
 class ActsCameraGrayBoxGTest(TestSuite):
 
     def setup(self):
+        Init(self)
         if os.path.exists('./mediaDir'):
             shutil.rmtree('./mediaDir')
         if os.path.exists('./VideoDir'):

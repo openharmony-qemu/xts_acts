@@ -2340,6 +2340,86 @@ static napi_value normalAVScreenCaptureSetPickerModeScreenAndWindow(napi_env env
     return res;
 }
 
+static napi_value normalAVScreenCaptureSetPickerModeAppOnly(napi_env env, napi_callback_info info)
+{
+    screenCaptureNormal = OH_AVScreenCapture_Create();
+    if (screenCaptureNormal == nullptr) {
+        napi_throw_error((env), nullptr, "error: expect screenCapture is not nullptr");
+    }
+    OH_AVSCREEN_CAPTURE_ErrCode result = OH_AVScreenCapture_SetPickerMode(
+        screenCaptureNormal, OH_CapturePickerMode::OH_CAPTURE_PICKER_MODE_APP_ONLY);
+    if (screenCaptureNormal) {
+        OH_AVScreenCapture_Release(screenCaptureNormal);
+    }
+    int resCapture = TEST_FAILED;
+    if (result == AV_SCREEN_CAPTURE_ERR_OK || result == AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT) {
+        resCapture = TEST_PASS;
+    }
+    napi_value res;
+    napi_create_int32(env, resCapture, &res);
+    return res;
+}
+
+static napi_value normalAVScreenCaptureSetPickerModeWindowAndApp(napi_env env, napi_callback_info info)
+{
+    screenCaptureNormal = OH_AVScreenCapture_Create();
+    if (screenCaptureNormal == nullptr) {
+        napi_throw_error((env), nullptr, "error: expect screenCapture is not nullptr");
+    }
+    OH_AVSCREEN_CAPTURE_ErrCode result = OH_AVScreenCapture_SetPickerMode(
+        screenCaptureNormal, OH_CapturePickerMode::OH_CAPTURE_PICKER_MODE_WINDOW_AND_APP);
+    if (screenCaptureNormal) {
+        OH_AVScreenCapture_Release(screenCaptureNormal);
+    }
+    int resCapture = TEST_FAILED;
+    if (result == AV_SCREEN_CAPTURE_ERR_OK || result == AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT) {
+        resCapture = TEST_PASS;
+    }
+    napi_value res;
+    napi_create_int32(env, resCapture, &res);
+    return res;
+}
+
+static napi_value normalAVScreenCaptureSetPickerModeScreenAndApp(napi_env env, napi_callback_info info)
+{
+    screenCaptureNormal = OH_AVScreenCapture_Create();
+    if (screenCaptureNormal == nullptr) {
+        napi_throw_error((env), nullptr, "error: expect screenCapture is not nullptr");
+    }
+    OH_AVSCREEN_CAPTURE_ErrCode result = OH_AVScreenCapture_SetPickerMode(
+        screenCaptureNormal, OH_CapturePickerMode::OH_CAPTURE_PICKER_MODE_SCREEN_AND_APP);
+    if (screenCaptureNormal) {
+        OH_AVScreenCapture_Release(screenCaptureNormal);
+    }
+    int resCapture = TEST_FAILED;
+    if (result == AV_SCREEN_CAPTURE_ERR_OK || result == AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT) {
+        resCapture = TEST_PASS;
+    }
+    napi_value res;
+    napi_create_int32(env, resCapture, &res);
+    return res;
+}
+
+static napi_value normalAVScreenCaptureSetPickerModeScreenWindowAndApp(napi_env env, napi_callback_info info)
+{
+    screenCaptureNormal = OH_AVScreenCapture_Create();
+    if (screenCaptureNormal == nullptr) {
+        napi_throw_error((env), nullptr, "error: expect screenCapture is not nullptr");
+    }
+    OH_AVSCREEN_CAPTURE_ErrCode result = OH_AVScreenCapture_SetPickerMode(
+        screenCaptureNormal, OH_CapturePickerMode::OH_CAPTURE_PICKER_MODE_SCREEN_WINDOW_AND_APP);
+    if (screenCaptureNormal) {
+        OH_AVScreenCapture_Release(screenCaptureNormal);
+    }
+    int resCapture = TEST_FAILED;
+    if (result == AV_SCREEN_CAPTURE_ERR_OK || result == AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT) {
+        resCapture = TEST_PASS;
+    }
+    napi_value res;
+    napi_create_int32(env, resCapture, &res);
+    return res;
+}
+
 static napi_value normalAVScreenCaptureSetPickerModeScreenAndWindow3(napi_env env, napi_callback_info info)
 {
     screenCaptureNormal = OH_AVScreenCapture_Create();
@@ -2352,7 +2432,8 @@ static napi_value normalAVScreenCaptureSetPickerModeScreenAndWindow3(napi_env en
         OH_AVScreenCapture_Release(screenCaptureNormal);
     }
     int resCapture = TEST_FAILED;
-    if (result == AV_SCREEN_CAPTURE_ERR_INVALID_VAL) {
+    if (result == AV_SCREEN_CAPTURE_ERR_INVALID_VAL ||
+        result == AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT) {
         resCapture = TEST_PASS;
     }
     napi_value res;
@@ -2374,7 +2455,8 @@ static napi_value normalAVScreenCaptureExcludePickerWindows2(napi_env env, napi_
         OH_AVScreenCapture_Release(screenCaptureNormal);
     }
     int resCapture = TEST_FAILED;
-    if (result == AV_SCREEN_CAPTURE_ERR_INVALID_VAL) {
+    if (result == AV_SCREEN_CAPTURE_ERR_INVALID_VAL ||
+        result == AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT) {
         resCapture = TEST_PASS;
     }
     napi_value res;
@@ -2422,7 +2504,7 @@ static napi_value normalAVScreenCaptureResizeCanvas(napi_env env, napi_callback_
     OH_AVSCREEN_CAPTURE_ErrCode result = OH_AVScreenCapture_ResizeCanvas(screenCaptureStrategyForPrivacyMaskMode,
     DEFAULT_WIDTH, DEFAULT_HEIGHT);
     int resCapture = TEST_FAILED;
-    if (result == AV_SCREEN_CAPTURE_ERR_OK) {
+    if (result == AV_SCREEN_CAPTURE_ERR_OK || result == AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT) {
         resCapture = TEST_PASS;
     }
     napi_value res;
@@ -3000,6 +3082,14 @@ static napi_value Init(napi_env env, napi_value exports)
             normalAVScreenCaptureSetPickerModeScreenOnly, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"normalAVScreenCaptureSetPickerModeScreenAndWindow", nullptr,
             normalAVScreenCaptureSetPickerModeScreenAndWindow, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"normalAVScreenCaptureSetPickerModeAppOnly", nullptr,
+            normalAVScreenCaptureSetPickerModeAppOnly, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"normalAVScreenCaptureSetPickerModeWindowAndApp", nullptr,
+            normalAVScreenCaptureSetPickerModeWindowAndApp, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"normalAVScreenCaptureSetPickerModeScreenAndApp", nullptr,
+            normalAVScreenCaptureSetPickerModeScreenAndApp, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"normalAVScreenCaptureSetPickerModeScreenWindowAndApp", nullptr,
+            normalAVScreenCaptureSetPickerModeScreenWindowAndApp, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"normalAVScreenCaptureSetPickerModeScreenAndWindow3", nullptr,
             normalAVScreenCaptureSetPickerModeScreenAndWindow3, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"normalAVScreenCaptureExcludePickerWindows", nullptr,

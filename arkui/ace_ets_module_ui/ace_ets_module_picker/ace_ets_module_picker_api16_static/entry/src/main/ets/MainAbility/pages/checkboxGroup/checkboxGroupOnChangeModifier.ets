@@ -15,11 +15,10 @@
  */
 
 import {CheckboxGroupModifier}from '@ohos.arkui.modifier'
-import {
-  Entry, Component, Builder,NodeContainer, CheckBoxShape,
+import { Entry, Component, Builder, NodeContainer, CheckBoxShape, CheckboxGroupResult,
   Column, ColumnOptions, ImageAnalyzerType, CheckboxGroup, Checkbox,
-  Flex, FlexDirection, ItemAlign, FlexAlign, ImageAIOptions,  ImageAnalyzerController, ImageBitmap,  ImageAnalyzerConfig,
-  Text, Button, FontWeight, ClickEvent, Margin, Color, Row, RenderingContextSettings, CanvasRenderingContext2D, Canvas,CheckboxGroupResult,
+  Flex, FlexDirection, ItemAlign, FlexAlign, ImageAIOptions, ImageAnalyzerController, ImageBitmap, ImageAnalyzerConfig,
+  Text, Button, FontWeight, ClickEvent, Margin, Color, Row, RenderingContextSettings, CanvasRenderingContext2D, Canvas
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 

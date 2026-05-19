@@ -43,7 +43,7 @@ class Short1 {
 }
 
 class Float1 {
-  value: float = 0.0
+  value: float = 0.0f
 }
 
 class Long1 {

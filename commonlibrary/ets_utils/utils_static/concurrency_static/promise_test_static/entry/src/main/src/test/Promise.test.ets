@@ -407,17 +407,14 @@ export default function PromiseTest() {
               const processedValue = testValue * 2;
               reject(new Error("Worker intentionally rejected the promise"));
               return processedValue;
-            });
-            try {
-              const result = job.Await();
+            }).then((result: number): void => {
               resolve(result);
-            } catch (err) {
+            }).catch((err: Error): void => {
               err = err as Error;
               console.error(`${TAG} catch error: code =>  message => ${err.message}`);
               reject(new Error("Worker intentionally rejected the promise"));
-            } finally {
-              worker.join();
-            }
+            });
+            worker.quit();
           });
           try {
             const result = await promise1;

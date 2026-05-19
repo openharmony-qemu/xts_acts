@@ -13,25 +13,25 @@
  * limitations under the License.
  */
 
-#include <cstdlib>
 #include <pthread.h>
+#include <cstdlib>
 #include <unistd.h>
 #include "functionalext.h"
 
 static pthread_key_t g_key;
 
-void* ThreadfuncA(void* arg)
+static void *ThreadfuncA(void *arg)
 {
     int32_t value = 0;
     int32_t ret = pthread_setspecific(g_key, &value);
     EXPECT_EQ("PthreadGetspecific0100", ret, 0);
-    int32_t* keyRet = (int32_t*)pthread_getspecific(g_key);
+    int32_t *keyRet = (int32_t *)pthread_getspecific(g_key);
     EXPECT_EQ("PthreadGetspecific0100", *keyRet, 0);
     return arg;
 }
 
 /**
- * @tc.name:      PthreadGetspecific0100
+ * @tc.name:      pthread_getspecific_0100
  * @tc.desc:      Verify pthread_getspecific process success.
  * @tc.level:     level 0
  */
@@ -44,13 +44,14 @@ void PthreadGetspecific0100(void)
     pthread_key_delete(g_key);
 }
 
-static int PthreadGetspecificTestTestImpl(void)
+static int PthreadGetspecificTestImpl(void)
 {
     PthreadGetspecific0100();
-    return T_STATUS;
+    return g_tStatus;
 }
 
 int PthreadGetspecificTestTest(void)
 {
-    return PthreadGetspecificTestTestImpl();
+    return PthreadGetspecificTestImpl();
 }
+

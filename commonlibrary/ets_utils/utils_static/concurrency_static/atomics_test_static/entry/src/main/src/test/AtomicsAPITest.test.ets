@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -612,7 +612,7 @@ export default function AtomicsAPITest() {
 
         const previousValue = typedArray[0];
         const newValue = previousValue + 5;
-        const oldValue4 = Atomics.exchange(typedArray, 0, newValue as int);
+        const oldValue4 = Atomics.exchange(typedArray, 0, newValue.toInt());
         expect(oldValue4).assertEqual(previousValue);
         expect(typedArray[0]).assertEqual(newValue);
         

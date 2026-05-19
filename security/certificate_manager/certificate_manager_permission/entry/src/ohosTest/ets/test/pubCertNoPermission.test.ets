@@ -189,14 +189,18 @@ export default function pubCertJsAPINoPermissionTestUnit() {
       let certificateType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CA_CERT;
       let certificateScope: certManagerDialog.CertificateScope = certManagerDialog.CertificateScope.CURRENT_USER;
       try {
-        await certManagerDialog.openInstallCertificateDialog(context, certificateType, certificateScope, caCert)
-        expect(null).assertFail()
+        await certManagerDialog.openInstallCertificateDialog(context, certificateType, certificateScope, caCert);
+        expect(null).assertFail();
       } catch (err) {
-        if (err.code == 29700004) {
-          done();
+        if (!canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+          expect(err.code).assertEqual(801);
         } else {
-          console.log("SUB_Security_CertManager_GetPriCertJsApi_Func_0020: e.code " + err.code);
-          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_PERMISSION);
+          if (err.code == 29700004) {
+            expect(err.code).assertEqual(29700004);
+          } else {
+            console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0010: e.code " + err.code);
+            expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_PERMISSION);
+          }
         }
       }
       done();
@@ -226,5 +230,42 @@ export default function pubCertJsAPINoPermissionTestUnit() {
       }
       done();
     });
+	/**
+	 * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_4000
+	 * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_4000
+	 * @tc.desc   import USB key certificate without required permission, return error code 201 on PC device or 801 on non-PC device
+	 * @tc.type   FUNCTION
+	 * @tc.size   MEDIUMTEST
+	 * @tc.level  LEVEL2
+	 */
+	it('SUB_Security_CertManager_ImportUkeyCertificate_Func_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+	  console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_4000 start');
+	  let keyUri: string = 'oh:t=uk;o=UkeyAlias;u=100;a=20010045';
+	  let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
+	  let ukeyInfo: certManager.UkeyInfo = {
+		certPurpose: certManager.CertificatePurpose.PURPOSE_SIGN,
+	  };
+	  if (canIUse('SystemCapability.Security.Huks.CryptoExtension')) {
+		try {
+		  await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
+		  expect(null).assertFail();
+		} catch (err) {
+		  let error: BusinessError = err as BusinessError;
+		  console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_4000 failed. Code: ${error.code}, message: ${error.message}`);
+		  expect(error.code).assertEqual(201);
+		}
+	  } else {
+		try {
+		  await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
+		  expect(null).assertFail();
+		} catch (err) {
+		  let error: BusinessError = err as BusinessError;
+		  console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_4000 failed. Code: ${error.code}, message: ${error.message}`);
+		  expect(error.code).assertEqual(801);
+		}
+	  }
+	  console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_4000 end');
+	  done();
+	});
   })
 }

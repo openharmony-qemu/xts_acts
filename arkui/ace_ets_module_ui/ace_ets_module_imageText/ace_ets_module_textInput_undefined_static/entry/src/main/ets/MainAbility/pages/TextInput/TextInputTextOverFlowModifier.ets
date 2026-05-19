@@ -8,7 +8,7 @@ import hilog from '@ohos.hilog'
 
 
 @Observed
-class MyTextInputModifier implements AttributeModifier<TextInputAttribute> {
+export class MyTextInputModifier implements AttributeModifier<TextInputAttribute> {
   public isChange: boolean = false;
 
   applyNormalAttribute(instance: TextInputAttribute): void {

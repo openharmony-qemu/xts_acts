@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -32,7 +32,7 @@ async function getFdRead(pathName: string, done: () => void) {
     pathName = g_context?.filesDir + '/' + pathName;
     console.log("pathName is " + pathName)
     await fileIo.open(pathName).then((fdNumber: fileIo.File) => {
-        fdReturn = fdNumber.fd;
+        fdReturn = fdNumber.fd.toDouble();
         console.info('[fileIo]case open fd success, fd is ' + fdReturn);
     })
     return new Promise<number>((resolve, reject) => {
@@ -44,7 +44,7 @@ async function getFileDescriptorFromFileDir(filename: string, done: () => void):
     let fileDescriptor: media.AVFileDescriptor | undefined;
     let fd = await getFdRead(filename, done)
     fileDescriptor = {
-        fd: fd as int
+        fd: fd.toInt()
     }
     return new Promise<media.AVFileDescriptor>((resolve, reject) => {
     resolve(fileDescriptor!)

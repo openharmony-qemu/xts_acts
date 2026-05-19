@@ -1825,13 +1825,13 @@ function testGetOutgoingCallPolicyNumbers() {
   it("test_get_outgoing_call_policy_numbers_0104", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      telephonyManager.getOutgoingCallPolicyNumbers(null, adminManager.Policy.BLOCK_LIST);
-      expect(false).assertTrue();
+      let numbers = telephonyManager.getOutgoingCallPolicyNumbers(null, adminManager.Policy.BLOCK_LIST);
+      expect(numbers.length === 0).assertTrue();
     } catch (error) {
       if (Number(error.code) === 801) {
         expect(Number(error.code) === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -2698,12 +2698,12 @@ function testGetIncomingCallPolicyNumbers() {
     try {
       let numbers: Array<string> = 
         telephonyManager.getIncomingCallPolicyNumbers(null, adminManager.Policy.BLOCK_LIST);
-      expect(false).assertTrue();
+      expect(numbers.length === 0).assertTrue();
     } catch (error) {
       if (Number(error.code) === 801) {
         expect(Number(error.code) === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);

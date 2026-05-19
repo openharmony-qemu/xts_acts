@@ -15,7 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 type MixedType = number | string | boolean;
-export default function BuiltinsArrayToStringTest() {
+export default function BuiltinsArrayToStringTest() : void{
   describe("BuiltinsArrayToStringTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -47,7 +47,7 @@ export default function BuiltinsArrayToStringTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayToStringTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>();
+      const arr: number[] = Array.create<number>(0, 0);
 
       const result = arr.toString();
 
@@ -63,7 +63,12 @@ export default function BuiltinsArrayToStringTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToStringTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
 
       const result = arr.toString();
 
@@ -79,7 +84,10 @@ export default function BuiltinsArrayToStringTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToStringTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<string>('hello', 'world', 'test');
+      const arr = Array.create<string>(3, '');
+      arr[0] = 'hello';
+      arr[1] = 'world';
+      arr[2] = 'test';
 
       const result = arr.toString();
 
@@ -95,7 +103,10 @@ export default function BuiltinsArrayToStringTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToStringTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<boolean>(true, false, true);
+      const arr = Array.create<boolean>(3, false);
+      arr[0] = true;
+      arr[1] = false;
+      arr[2] = true;
 
       const result = arr.toString();
 
@@ -111,8 +122,11 @@ export default function BuiltinsArrayToStringTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToStringTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-
-      const arr = new Array<MixedType>(1, 'string', true, 3.14);
+      const arr: MixedType[] = Array.create<MixedType>(4, 0);
+      arr[0] = 1;
+      arr[1] = 'string';
+      arr[2] = true;
+      arr[3] = 3.14;
 
       const result = arr.toString();
 
@@ -142,7 +156,12 @@ export default function BuiltinsArrayToStringTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToStringTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number | undefined | null>(1, undefined, 3, null, 5);
+      const arr: (number | undefined | null)[] = Array.create<number | undefined | null>(5, 0);
+      arr[0] = 1;
+      arr[1] = undefined;
+      arr[2] = 3;
+      arr[3] = null;
+      arr[4] = 5;
 
       const result = arr.toString();
 
@@ -158,7 +177,10 @@ export default function BuiltinsArrayToStringTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToStringTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<string>('hello', '', 'world');
+      const arr = Array.create<string>(3, '');
+      arr[0] = 'hello';
+      arr[1] = '';
+      arr[2] = 'world';
 
       const result = arr.toString();
 
@@ -174,7 +196,10 @@ export default function BuiltinsArrayToStringTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayToStringTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(2147483647, -2147483648, 0);
+      const arr = Array.create<number>(3, 0);
+      arr[0] = 2147483647;
+      arr[1] = -2147483648;
+      arr[2] = 0;
 
       const result = arr.toString();
 
@@ -190,7 +215,10 @@ export default function BuiltinsArrayToStringTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToStringTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1.1, 2.22, 3.333);
+      const arr = Array.create<number>(3, 0);
+      arr[0] = 1.1;
+      arr[1] = 2.22;
+      arr[2] = 3.333;
 
       const result = arr.toString();
 
@@ -206,7 +234,10 @@ export default function BuiltinsArrayToStringTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToStringTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(-1, -2, -3);
+      const arr = Array.create<number>(3, 0);
+      arr[0] = -1;
+      arr[1] = -2;
+      arr[2] = -3;
 
       const result = arr.toString();
 
@@ -222,7 +253,7 @@ export default function BuiltinsArrayToStringTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayToStringTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>();
+      const arr: number[] = Array.create<number>(0, 0);
       for (let i = 0; i < 100; i++) {
         arr.pushOne(i);
       }

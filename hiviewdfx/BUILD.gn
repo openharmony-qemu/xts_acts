@@ -54,6 +54,7 @@ group("hiviewdfxtestacts") {
       "hitracemeterteststatic:ActsHitraceMeterStaticTest",
       "hitracetestnewtest:ActsHiTraceNewTest",
       "hiview/faultlogger/faultloggerjs:faultloggerjs_test",
+      "hiRetrievaltest:ActsHiRetrievalTest",
     ]
   }
 }

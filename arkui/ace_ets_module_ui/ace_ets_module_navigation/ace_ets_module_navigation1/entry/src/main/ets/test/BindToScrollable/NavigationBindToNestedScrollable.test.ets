@@ -96,8 +96,8 @@ export default function NavigationBindToNestedScrollable() {
         await driver.delayMs(1000);
         let component3: Component  = await driver.findComponent(ON.type('ToolBar'));
         let toolBarRect = await component3.getBounds();
-        let tooBarTop1 = toolBarRect.top;
-        let tooBarBottom1 = toolBarRect.bottom;
+        tooBarTop1 = toolBarRect.top;
+        tooBarBottom1 = toolBarRect.bottom;
         console.info('NavigationBindToNestedScrollable_0100 test tooBarTop1: ', tooBarTop1);
         console.info('NavigationBindToNestedScrollable_0100 test tooBarBottom1: ', tooBarBottom1);
       }
@@ -134,6 +134,8 @@ export default function NavigationBindToNestedScrollable() {
         let tooBarBottom2 = toolBarRect2.bottom;
         console.info('NavigationBindToNestedScrollable_0100 tooBarTop2: ', tooBarTop2);
         console.info('NavigationBindToNestedScrollable_0100 tooBarBottom2: ', tooBarBottom2);
+        console.info('NavigationBindToNestedScrollable_0100 test2 tooBarTop1: ', tooBarTop1);
+        console.info('NavigationBindToNestedScrollable_0100 test2 tooBarBottom1: ', tooBarBottom1);
         expect(Math.abs(Math.round(tooBarTop2 - tooBarTop1) - Math.round(tooBarBottom1 - tooBarTop1)) <= 1 ).assertTrue();
       } else {
         expect(component2).assertEqual(null); 

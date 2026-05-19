@@ -20,7 +20,7 @@ interface TestObj {
   value: number;
 }
 
-export default function BuiltinsArraySetTest() {
+export default function BuiltinsArraySetTest() : void{
   describe("BuiltinsArraySetTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -52,7 +52,12 @@ export default function BuiltinsArraySetTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsArraySetTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(10, 20, 30, 40, 50);
+      const arr = Array.create<number>(5, 0);
+      arr[0] = 10;
+      arr[1] = 20;
+      arr[2] = 30;
+      arr[3] = 40;
+      arr[4] = 50;
       const idx = 0;
       const val = 100;
 
@@ -70,7 +75,12 @@ export default function BuiltinsArraySetTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySetTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(10, 20, 30, 40, 50);
+      const arr = Array.create<number>(5, 0);
+      arr[0] = 10;
+      arr[1] = 20;
+      arr[2] = 30;
+      arr[3] = 40;
+      arr[4] = 50;
       const idx = arr.length - 1;
       const val = 500;
 
@@ -88,7 +98,12 @@ export default function BuiltinsArraySetTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySetTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(10, 20, 30, 40, 50);
+      const arr = Array.create<number>(5, 0);
+      arr[0] = 10;
+      arr[1] = 20;
+      arr[2] = 30;
+      arr[3] = 40;
+      arr[4] = 50;
       const idx = 1;
       const val = 200;
 
@@ -106,7 +121,12 @@ export default function BuiltinsArraySetTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySetTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(10, 20, 30, 40, 50);
+      const arr = Array.create<number>(5, 0);
+      arr[0] = 10;
+      arr[1] = 20;
+      arr[2] = 30;
+      arr[3] = 40;
+      arr[4] = 50;
       const idx = 2;
       const val = 300;
 
@@ -124,7 +144,12 @@ export default function BuiltinsArraySetTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySetTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(10, 20, 30, 40, 50);
+      const arr = Array.create<number>(5, 0);
+      arr[0] = 10;
+      arr[1] = 20;
+      arr[2] = 30;
+      arr[3] = 40;
+      arr[4] = 50;
       const idx = 3;
       const val = 400;
 
@@ -142,7 +167,12 @@ export default function BuiltinsArraySetTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySetTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(10, 20, 30, 40, 50);
+      const arr = Array.create<number>(5, 0);
+      arr[0] = 10;
+      arr[1] = 20;
+      arr[2] = 30;
+      arr[3] = 40;
+      arr[4] = 50;
       const idx = 4;
       const val = 500;
 
@@ -160,7 +190,12 @@ export default function BuiltinsArraySetTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySetTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<string>("a", "b", "c", "d", "e");
+      const arr = Array.create<string>(5, "");
+      arr[0] = "a";
+      arr[1] = "b";
+      arr[2] = "c";
+      arr[3] = "d";
+      arr[4] = "e";
       const idx = 2;
       const val = "xyz";
 
@@ -178,7 +213,12 @@ export default function BuiltinsArraySetTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySetTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<boolean>(true, false, true, false, true);
+      const arr = Array.create<boolean>(5, false);
+      arr[0] = true;
+      arr[1] = false;
+      arr[2] = true;
+      arr[3] = false;
+      arr[4] = true;
       const idx = 1;
       const val = true;
 
@@ -196,7 +236,7 @@ export default function BuiltinsArraySetTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySetTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<TestObj>();
+      const arr: TestObj[] = [];
       const val: TestObj = { name: "test", value: 100 };
 
       arr.pushOne(val);
@@ -213,7 +253,10 @@ export default function BuiltinsArraySetTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArraySetTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(1, 2, 3);
+      const arr = Array.create<number>(3, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
       const idx = arr.length;
       const val = 100;
 
@@ -233,7 +276,10 @@ export default function BuiltinsArraySetTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArraySetTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(1, 2, 3);
+      const arr = Array.create<number>(3, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
       const idx = 10;
       const val = 100;
 
@@ -254,7 +300,7 @@ export default function BuiltinsArraySetTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArraySetTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(10000);
+      const arr = Array.create<number>(10000, 0);
       const idx = 5000;
       const val = 9999;
 
@@ -366,7 +412,10 @@ export default function BuiltinsArraySetTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArraySetTest1800' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(1, 2, 3);
+      const arr = Array.create<number>(3, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
       const idx = 0;
       const val = 999;
 
@@ -384,7 +433,7 @@ export default function BuiltinsArraySetTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySetTest1900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>();
+      const arr: number[] = Array.create<number>(0, 0);
       const val = 100;
 
       arr.pushOne(val);
@@ -402,7 +451,12 @@ export default function BuiltinsArraySetTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySetTest2000' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(10, 20, 30, 40, 50);
+      const arr = Array.create<number>(5, 0);
+      arr[0] = 10;
+      arr[1] = 20;
+      arr[2] = 30;
+      arr[3] = 40;
+      arr[4] = 50;
       const idx = 4;
       const val = 999;
 
@@ -420,7 +474,10 @@ export default function BuiltinsArraySetTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySetTest2100' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(10, 20, 30);
+      const arr = Array.create<number>(3, 0);
+      arr[0] = 10;
+      arr[1] = 20;
+      arr[2] = 30;
       const idx = 1;
       const val = 999;
 
@@ -438,7 +495,10 @@ export default function BuiltinsArraySetTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySetTest2200' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(10, 20, 30);
+      const arr = Array.create<number>(3, 0);
+      arr[0] = 10;
+      arr[1] = 20;
+      arr[2] = 30;
       const idx = 0;
       const val = 999;
 
@@ -456,7 +516,10 @@ export default function BuiltinsArraySetTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySetTest2300' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(10, 20, 30);
+      const arr = Array.create<number>(3, 0);
+      arr[0] = 10;
+      arr[1] = 20;
+      arr[2] = 30;
       const idx = 0;
       const val = 999;
 
@@ -493,7 +556,10 @@ export default function BuiltinsArraySetTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySetTest2500' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(10, 20, 30);
+      const arr = Array.create<number>(3, 0);
+      arr[0] = 10;
+      arr[1] = 20;
+      arr[2] = 30;
       const idx = 0;
       const val = 500;
 
@@ -512,7 +578,10 @@ export default function BuiltinsArraySetTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySetTest2600' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(10, 20, 30);
+      const arr = Array.create<number>(3, 0);
+      arr[0] = 10;
+      arr[1] = 20;
+      arr[2] = 30;
       const idx = 0;
       const val = 999;
 
@@ -530,7 +599,10 @@ export default function BuiltinsArraySetTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySetTest2700' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(10, 20, 30);
+      const arr = Array.create<number>(3, 0);
+      arr[0] = 10;
+      arr[1] = 20;
+      arr[2] = 30;
       const idx = 1;
       const val = 999;
 
@@ -548,7 +620,12 @@ export default function BuiltinsArraySetTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySetTest2800' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(10, 20, 30, 40, 50);
+      const arr = Array.create<number>(5, 0);
+      arr[0] = 10;
+      arr[1] = 20;
+      arr[2] = 30;
+      arr[3] = 40;
+      arr[4] = 50;
       const idx = 2;
       const val = 999;
 
@@ -566,7 +643,10 @@ export default function BuiltinsArraySetTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySetTest2900' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(10, 20, 30);
+      const arr = Array.create<number>(3, 0);
+      arr[0] = 10;
+      arr[1] = 20;
+      arr[2] = 30;
       const idx = 2;
       const val = 999;
 
@@ -584,7 +664,10 @@ export default function BuiltinsArraySetTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySetTest3000' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(10, 20, 30);
+      const arr = Array.create<number>(3, 0);
+      arr[0] = 10;
+      arr[1] = 20;
+      arr[2] = 30;
       const idx = 0;
       const val = 999;
 
@@ -602,7 +685,10 @@ export default function BuiltinsArraySetTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySetTest3100' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(10, 20, 30);
+      const arr = Array.create<number>(3, 0);
+      arr[0] = 10;
+      arr[1] = 20;
+      arr[2] = 30;
       const idx = 1;
       const val = 999;
 
@@ -620,7 +706,10 @@ export default function BuiltinsArraySetTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySetTest3200' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(10, 20, 30);
+      const arr = Array.create<number>(3, 0);
+      arr[0] = 10;
+      arr[1] = 20;
+      arr[2] = 30;
       const idx = 2;
       const val = 999;
 
@@ -638,7 +727,10 @@ export default function BuiltinsArraySetTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySetTest3300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(10, 20, 30);
+      const arr = Array.create<number>(3, 0);
+      arr[0] = 10;
+      arr[1] = 20;
+      arr[2] = 30;
       const newValues = [40, 50, 60];
 
       arr.splice(0, 3, ...newValues);

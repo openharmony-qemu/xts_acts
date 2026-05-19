@@ -21,7 +21,8 @@ import {
   PreselectedInfo,
   UpdatablePickerConfigs,
   MovingPhotoBadgeStateChangedCallback,
-  PickerError
+  PickerError,
+  CompletedResult
 } from '@ohos.file.PhotoPickerComponent';
 import { AlbumPickerComponent, AlbumPickerOptions, AlbumInfo } from '@ohos.file.AlbumPickerComponent';
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
@@ -112,6 +113,7 @@ struct PickerComponent {
     result.appAlbumFilters = this.pickerOptions.appAlbumFilters ?? [];
     result.preselectedUris = this.pickerOptions.preselectedUris ?? [];
     result.backgroundOpacity = this.pickerOptions.backgroundOpacity ?? undefined;
+    result.contextRecoveryInfo = this.pickerOptions.contextRecoveryInfo;
     return result;
   }
 
@@ -398,6 +400,24 @@ struct PickerComponent {
         this.pickerController.exitPhotoBrowser();
       }).id('exitBrowser')
     }
+
+    Row() {
+      Button('completed').width('50%').height('5%').onClick(async () => {
+        console.info('testPicker completed click');
+        try {
+          let completedResult: CompletedResult = await this.pickerController.completed();
+          console.info('testPicker completed result=' + JSON.stringify(completedResult));
+          let result: PhotoPickerResult = new PhotoPickerResult();
+          result.photoUris = completedResult?.photoUris ?? [];
+          result.contextRecoveryInfo = completedResult?.contextRecoveryInfo;
+          result.movingPhotoBadgeStates = completedResult?.movingPhotoBadgeStates ?? [];
+          this.sendEvent(result, EventType.COMPLETED_RESULT);
+        } catch (error) {
+          console.error('testPicker completed error=' + JSON.stringify(error));
+          this.sendEvent(error, EventType.COMPLETED_RESULT);
+        }
+      }).id('completedButton')
+    }.margin({ top: '5vp' })
   }
 
   @Builder

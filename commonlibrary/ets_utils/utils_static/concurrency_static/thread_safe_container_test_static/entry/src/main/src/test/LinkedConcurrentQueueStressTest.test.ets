@@ -16,13 +16,13 @@ export default function LinkedConcurrentQueueStressTest() {
       let threadCount: number = 10;
       let operationsPerThread: number = 100;
 
-      let tasks: Job<void>[] = [];
+      let tasks: Promise<void>[] = [];
       let workers: EAWorker[] = [];
       for (let i: number = 0; i < threadCount; i++) {
         let eaw = new EAWorker()
         eaw.start()
         workers.push(eaw)
-        let task: Job<void> = eaw.run<void>((q: containers.stackless.LinkedConcurrentQueue<number>): void => {
+        let task: Promise<void> = eaw.run<void>((q: containers.stackless.LinkedConcurrentQueue<number>): void => {
           for (let j: number = 0; j < operationsPerThread; j++) {
             q.add(j);
             q.poll();
@@ -30,11 +30,11 @@ export default function LinkedConcurrentQueueStressTest() {
         }, queue);
         tasks.push(task);
       }
-      tasks.forEach((jb) => {
-        jb.Await();
-      })
+      for (let i = 0; i < tasks.length; i++) {
+        await tasks[i];
+      }
       workers.forEach((eaw) => {
-        eaw.join().Await();
+        eaw.quit();
       })
 
       expect(queue.size >= 0).assertTrue();
@@ -55,14 +55,14 @@ export default function LinkedConcurrentQueueStressTest() {
       let consumerCount: number = 10;
       let itemsPerProducer: number = 100;
 
-      let tasks: Job<Promise<void>>[] = [];
+      let tasks: Promise<Promise<void>>[] = [];
       let workers: EAWorker[] = [];
 
       for (let i: number = 0; i < producerCount; i++) {
         let eaw = new EAWorker()
         eaw.start()
         workers.push(eaw)
-        let task: Job<Promise<void>> = eaw.run<Promise<void>>(async (q: containers.stackless.LinkedConcurrentQueue<number>, id: number, count: number): Promise<void> => {
+        let task: Promise<Promise<void>> = eaw.run<Promise<void>>(async (q: containers.stackless.LinkedConcurrentQueue<number>, id: number, count: number): Promise<void> => {
           for (let j: number = 0; j < count; j++) {
             await q.push(id * count + j);
           }
@@ -74,7 +74,7 @@ export default function LinkedConcurrentQueueStressTest() {
         let eaw = new EAWorker()
         eaw.start()
         workers.push(eaw)
-        let task: Job<Promise<void>> = eaw.run<Promise<void>>(async (q: containers.stackless.LinkedConcurrentQueue<number>, count: number): Promise<void> => {
+        let task: Promise<Promise<void>> = eaw.run<Promise<void>>(async (q: containers.stackless.LinkedConcurrentQueue<number>, count: number): Promise<void> => {
           for (let j: number = 0; j < count; j++) {
             await q.pop();
           }
@@ -82,11 +82,11 @@ export default function LinkedConcurrentQueueStressTest() {
         tasks.push(task);
       }
 
-      for (let i: int = 0; i < tasks.length; i++) {
-        await tasks[i].Await();
+      for (let i = 0; i < tasks.length; i++) {
+        await tasks[i]
       }
       workers.forEach((eaw) => {
-        eaw.join().Await();
+        eaw.quit();
       })
 
       expect(queue.size).assertEqual(0);
@@ -104,13 +104,13 @@ export default function LinkedConcurrentQueueStressTest() {
       let queue: containers.stackless.LinkedConcurrentQueue<number> = new containers.stackless.LinkedConcurrentQueue<number>(1000);
       let threadCount: number = 10;
 
-      let tasks: Job<void>[] = [];
+      let tasks: Promise<void>[] = [];
       let workers: EAWorker[] = [];
       for (let i: number = 0; i < threadCount; i++) {
         let eaw = new EAWorker()
         eaw.start()
         workers.push(eaw)
-        let task: Job<void> = eaw.run<void>((q: containers.stackless.LinkedConcurrentQueue<number>, id: number): void => {
+        let task: Promise<void> = eaw.run<void>((q: containers.stackless.LinkedConcurrentQueue<number>, id: number): void => {
           for (let j: number = 0; j < 20; j++) {
             q.add(id * 50 + j);
             if (j % 2 === 0) {
@@ -120,11 +120,11 @@ export default function LinkedConcurrentQueueStressTest() {
         }, queue, i);
         tasks.push(task);
       }
-      tasks.forEach((jb) => {
-        jb.Await();
-      })
+      for (let i = 0; i < tasks.length; i++) {
+        await tasks[i]
+      }
       workers.forEach((eaw) => {
-        eaw.join().Await();
+        eaw.quit();
       })
 
       expect(queue.size == 100).assertTrue();
