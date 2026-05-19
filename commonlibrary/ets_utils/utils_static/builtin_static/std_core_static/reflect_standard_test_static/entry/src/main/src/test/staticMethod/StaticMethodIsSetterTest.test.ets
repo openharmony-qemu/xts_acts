@@ -286,7 +286,7 @@ export default function StaticMethodIsSetterTest(): void {
      */
     it('testStaticMethodIsSetter006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass006>().getStaticMethod('%%set-name');
-      expect(method == undefined).assertTrue();
+      expect(method === undefined).assertTrue();
     });
 
     /**
@@ -299,7 +299,7 @@ export default function StaticMethodIsSetterTest(): void {
      */
     it('testStaticMethodIsSetter007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass007>().getStaticMethod('%%set-name');
-      expect(method == undefined).assertTrue();
+      expect(method === undefined).assertTrue();
     });
 
     /**

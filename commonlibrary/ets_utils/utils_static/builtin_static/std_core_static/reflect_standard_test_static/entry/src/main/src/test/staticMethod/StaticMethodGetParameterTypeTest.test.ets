@@ -217,7 +217,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
       // 运行时可能抛 TypeError，若成功则验证返回值
       try {
         let paramType = method!.getParameterType(-1);
-        expect(paramType == undefined).assertTrue();
+        expect(paramType === undefined).assertTrue();
       } catch (error) {
         // 运行时抛 TypeError 与脑图预期不一致
         expect(error.name).assertEqual('TypeError');
@@ -239,7 +239,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
       // 脑图 1.2: getParameterType(10) 预期返回 undefined，但运行时可能抛 TypeError
       try {
         let paramType = method!.getParameterType(10);
-        expect(paramType == undefined).assertTrue();
+        expect(paramType === undefined).assertTrue();
       } catch (error) {
         expect(error.name).assertEqual('TypeError');
       }
@@ -260,7 +260,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
       // 脑图 1.2: getParameterType(2147483647) 预期返回 undefined，但运行时可能抛 TypeError
       try {
         let paramType = method!.getParameterType(2147483647);
-        expect(paramType == undefined).assertTrue();
+        expect(paramType === undefined).assertTrue();
       } catch (error) {
         expect(error.name).assertEqual('TypeError');
       }

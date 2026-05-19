@@ -397,7 +397,7 @@ export default function StaticMethodInvokeTest(): void {
       let method = Class.from<MyClass010>().getStaticMethod('voidMethod');
       expect(method != undefined).assertTrue();
       let result = method!.invoke();
-      expect(result == undefined).assertTrue();
+      expect(result === undefined).assertTrue();
     });
 
     /**
@@ -458,7 +458,7 @@ export default function StaticMethodInvokeTest(): void {
       let method = Class.from<MyClass014>().getStaticMethod('returnUndefined');
       expect(method != undefined).assertTrue();
       let result = method!.invoke();
-      expect(result == undefined).assertTrue();
+      expect(result === undefined).assertTrue();
     });
 
     /**

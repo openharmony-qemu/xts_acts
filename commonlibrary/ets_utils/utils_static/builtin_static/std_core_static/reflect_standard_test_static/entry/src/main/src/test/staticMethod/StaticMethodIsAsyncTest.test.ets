@@ -227,7 +227,7 @@ export default function StaticMethodIsAsyncTest(): void {
      */
     it('testStaticMethodIsAsync005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass005>().getStaticMethod('privateAsync');
-      expect(method == undefined).assertTrue();
+      expect(method === undefined).assertTrue();
     });
 
     /**
@@ -240,7 +240,7 @@ export default function StaticMethodIsAsyncTest(): void {
      */
     it('testStaticMethodIsAsync006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass006>().getStaticMethod('protectedAsync');
-      expect(method == undefined).assertTrue();
+      expect(method === undefined).assertTrue();
     });
 
     /**
@@ -384,7 +384,7 @@ export default function StaticMethodIsAsyncTest(): void {
      */
     it('testStaticMethodIsAsync015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass015>().getStaticMethod('privateAsyncMethod');
-      expect(method == undefined).assertTrue();
+      expect(method === undefined).assertTrue();
     });
 
     /**
