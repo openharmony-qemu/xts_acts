@@ -1,13 +1,13 @@
-/*---
- * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
- * Licensed under the Apache License, Version 2.0 (the "License");
+/*
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the 'License')
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
+ * distributed under the License is distributed on an 'AS IS' BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
@@ -175,18 +175,18 @@ import StaticInitializationTest from "./semanticrules/staticinitialization/Stati
 import TypeErasureTest from "./semanticrules/typeerasure/TypeErasureTest.test";
 import SemanticRulesTest from "./semanticrules/SemanticRulesTest.test";
 
-import SpecificsOfAssignmentLikeContexts from './semanticrules/semanticessentials/AssignmentContextPositiveCases'
-import BinaryOverflow from './semanticrules/semanticessentials/BinaryOverflow'
-import CompoundAssignmentByte from './semanticrules/semanticessentials/CompoundAssignmentByte'
-import CompoundAssignmentInt from './semanticrules/semanticessentials/CompoundAssignmentInt'
-import CompoundAssignmentMixed from './semanticrules/semanticessentials/CompoundAssignmentMixed'
-import CompoundAssignmentRuntimeErrors from './semanticrules/semanticessentials/CompoundAssignmentRuntimeErrors'
-import CompoundAssignmentShort from './semanticrules/semanticessentials/CompoundAssignmentShort'
-import DecrementUnaryOverflow from './semanticrules/semanticessentials/DecrementUnaryOverflow'
-import NumericExpressions from './semanticrules/semanticessentials/NumericExpressions'
-import SpecificsOfVariableInitializationContext from './semanticrules/semanticessentials/SpecificsOfVariableInitializationContext'
-import TypeOfStandaloneExpression from './semanticrules/semanticessentials/TypeOfStandaloneExpression'
-import UnaryOverflow from './semanticrules/semanticessentials/UnaryOverflow'
+import SpecificsOfAssignmentLikeContexts from './semanticrules/semanticessentials/AssignmentContextPositiveCases.test'
+import BinaryOverflow from './semanticrules/semanticessentials/BinaryOverflow.test'
+import CompoundAssignmentByte from './semanticrules/semanticessentials/CompoundAssignmentByte.test'
+import CompoundAssignmentInt from './semanticrules/semanticessentials/CompoundAssignmentInt.test'
+import CompoundAssignmentMixed from './semanticrules/semanticessentials/CompoundAssignmentMixed.test'
+import CompoundAssignmentRuntimeErrors from './semanticrules/semanticessentials/CompoundAssignmentRuntimeErrors.test'
+import CompoundAssignmentShort from './semanticrules/semanticessentials/CompoundAssignmentShort.test'
+import DecrementUnaryOverflow from './semanticrules/semanticessentials/DecrementUnaryOverflow.test'
+import NumericExpressions from './semanticrules/semanticessentials/NumericExpressions.test'
+import SpecificsOfVariableInitializationContext from './semanticrules/semanticessentials/SpecificsOfVariableInitializationContext.test'
+import TypeOfStandaloneExpression from './semanticrules/semanticessentials/TypeOfStandaloneExpression.test'
+import UnaryOverflow from './semanticrules/semanticessentials/UnaryOverflow.test'
 import SpecificsOfStringOperatorContextsTest from './semanticrules/semanticessentials/SpecificsOfStringOperatorContextsTest.test'
 import SpecificsOfTypeParametersTest from './semanticrules/semanticessentials/SpecificsOfTypeParametersTest.test'
 import SubtypingForFunctionTypesTest from './semanticrules/subtyping/SubtypingForFunctionTypesTest.test'
@@ -235,7 +235,7 @@ import DiffTypeIsSubOfTypeObjOnGenTest from './semanticrules/subtyping/DiffTypeI
 import DiffTypeIsSubOfTypeObjOnGenTest01 from './semanticrules/subtyping/DiffTypeIsSubOfTypeObjOnGenTest01.test'
 import TypeTIsSubOfInterTypeOnPredefinedTest01 from './semanticrules/subtyping/TypeTIsSubOfInterTypeOnPredefinedTest01.test'
 import TypeTIsSubOfInterTypeOnStrLitTest from './semanticrules/subtyping/TypeTIsSubOfInterTypeOnStrLitTest.test'
-import TypeTIsSubOfInterTypeOnStrLitTest01 from './semanticrules/subtyping/TypeTIsSubOfInterTypeOnStrLitTest01'
+import TypeTIsSubOfInterTypeOnStrLitTest01 from './semanticrules/subtyping/TypeTIsSubOfInterTypeOnStrLitTest01.test'
 import DiffTypeIsSubOfTypeObjOnNonGenTest from './semanticrules/subtyping/DiffTypeIsSubOfTypeObjOnNonGenTest.test'
 import DiffTypeIsSubOfTypeObjOnPredefinedTest from './semanticrules/subtyping/DiffTypeIsSubOfTypeObjOnPredefinedTest.test'
 import DiffTypeIsSubOfTypeObjOnStrLitTest from './semanticrules/subtyping/DiffTypeIsSubOfTypeObjOnStrLitTest.test'
