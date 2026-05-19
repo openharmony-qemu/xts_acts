@@ -1287,7 +1287,7 @@ export default function actsWifiManagerP2PTest() {
           expect().assertFail();
         }
       }
-      hilog.info(domain, tag, `${caseName} test start`);
+      hilog.info(domain, tag, `${caseName} test end`);
       done();
     });
     /**
@@ -1341,7 +1341,7 @@ export default function actsWifiManagerP2PTest() {
     /**
      * @tc.number SUB_Communication_WiFiManager_P2pConnect_RANDOM_DEVICE_ADDRESS_0033
      * @tc.name SUB_Communication_WiFiManager_P2pConnect_RANDOM_DEVICE_ADDRESS_0033
-     * @tc.desc Test p2pConnect with deviceAddressType REAL_DEVICE_ADDRESS
+     * @tc.desc Test p2pConnect with deviceAddressType RANDOM_DEVICE_ADDRESS
      * @tc.level Level 0
      * @tc.type Function
      * @tc.size MEDIUMTEST
