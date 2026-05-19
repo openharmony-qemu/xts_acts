@@ -27,6 +27,7 @@ let uiContext: common.UIAbilityContext;
 let isSupportHdr: Boolean;
 let isSupportHEIFDecode: boolean;
 let isSupportHEICEncode: boolean;
+let isSupportedTiff: boolean = true;
 const READ_FAILED = 7700202;
 const UNSUPPORTED_IMAGE_FORMATS = 7700102;
 const PROPERTY_NOT_EXIST = 7700204;
@@ -117,6 +118,9 @@ export default function ImageExifGetModifyByTypeNDK() {
       isSupportHdr = !display.getDefaultDisplaySync().hdrFormats.includes(hdrCapability.HDRFormat.NONE) &&
         display.getDefaultDisplaySync().hdrFormats.length != 0;
       isSupportHEICEncode = image.createImagePacker().supportedFormats.includes("image/heic");
+      let formats = await image.getImageSourceSupportedFormats();
+      isSupportedTiff = formats.includes('image/tiff');
+      console.info('isSupportedTiff is ' + isSupportedTiff);
       console.info('beforeAll case');
     });
     beforeEach(() => {
