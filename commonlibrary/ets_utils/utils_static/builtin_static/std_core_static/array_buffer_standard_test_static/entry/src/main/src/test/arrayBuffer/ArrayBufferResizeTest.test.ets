@@ -786,151 +786,151 @@ export default function arrayBufferResizeTest(): void {
       }
     });
 
-      /**
-       * @tc.name testArrayBufferResize0045
-       * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_4500
-       * @tc.desc 验证 new ArrayBuffer(4, 8) 在当前场景执行成功，返回值的 byteLength 为 4。
-       * @tc.type FUNCTION
-       * @tc.size MEDIUMTEST
-       * @tc.level LEVEL2
-       */
-      it('testArrayBufferResize0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const buffer = new ArrayBuffer(4, 8);
-        const copied = buffer.slice(0, (buffer.byteLength as int));
-        expect(copied.byteLength).assertEqual(4);
+    /**
+     * @tc.name testArrayBufferResize0045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_4500
+     * @tc.desc 验证 new ArrayBuffer(4, 8) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferResize0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4, 8);
+      const copied = buffer.slice(0, (buffer.byteLength as int));
+      expect(copied.byteLength).assertEqual(4);
+      try {
+        buffer.resize(0);
+        expect(buffer.byteLength).assertEqual(0);
+      } catch (e) {
         try {
           buffer.resize(0);
           expect(buffer.byteLength).assertEqual(0);
         } catch (e) {
-          try {
-            buffer.resize(0);
-            expect(buffer.byteLength).assertEqual(0);
-          } catch (e) {
-            expect(e !== null && e !== undefined).assertTrue();
-            Utils.assertThrownErrorCodeIsNumber(e);
-          }
+          expect(e !== null && e !== undefined).assertTrue();
+          Utils.assertThrownErrorCodeIsNumber(e);
         }
-      });
+      }
+    });
 
-        /**
-         * @tc.name testArrayBufferResize0046
-         * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_4600
-         * @tc.desc 验证 buffer.resize(-1) 在当前入参场景下会抛出异常。
-         * @tc.type FUNCTION
-         * @tc.size MEDIUMTEST
-         * @tc.level LEVEL2
-         */
-        it('testArrayBufferResize0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-          const buffer = new ArrayBuffer(5, 12);
-          try {
-            buffer.resize(-1);
-          } catch (e) {
-            expect(e !== null && e !== undefined).assertTrue();
-            Utils.assertThrownErrorCodeIsNumber(e);
-            return;
-          }
-          expect(true).assertFail();
-        });
-
-        /**
-         * @tc.name testArrayBufferResize0047
-         * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_4700
-         * @tc.desc 验证 buffer.resize(-100) 在当前入参场景下会抛出异常。
-         * @tc.type FUNCTION
-         * @tc.size MEDIUMTEST
-         * @tc.level LEVEL2
-         */
-        it('testArrayBufferResize0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-          const buffer = new ArrayBuffer(2, 6);
-          try {
-            buffer.resize(-100);
-          } catch (e) {
-            expect(e !== null && e !== undefined).assertTrue();
-            Utils.assertThrownErrorCodeIsNumber(e);
-            return;
-          }
-          expect(true).assertFail();
-        });
-
-        /**
-         * @tc.name testArrayBufferResize0048
-         * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_4800
-         * @tc.desc 验证 buffer.resize(-1) 在当前入参场景下会抛出异常。
-         * @tc.type FUNCTION
-         * @tc.size MEDIUMTEST
-         * @tc.level LEVEL2
-         */
-        it('testArrayBufferResize0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-          const buffer = new ArrayBuffer(1, 5);
-          try {
-            buffer.resize(-1);
-          } catch (e) {
-            expect(e !== null && e !== undefined).assertTrue();
-            Utils.assertThrownErrorCodeIsNumber(e);
-            return;
-          }
-          expect(true).assertFail();
-        });
-
-        /**
-         * @tc.name testArrayBufferResize0049
-         * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_4900
-         * @tc.desc 验证 buffer.resize(-100) 在当前入参场景下会抛出异常。
-         * @tc.type FUNCTION
-         * @tc.size MEDIUMTEST
-         * @tc.level LEVEL2
-         */
-        it('testArrayBufferResize0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-          const buffer = new ArrayBuffer(2, 6);
-          try {
-            buffer.resize(-100);
-          } catch (e) {
-            expect(e !== null && e !== undefined).assertTrue();
-            Utils.assertThrownErrorCodeIsNumber(e);
-            return;
-          }
-          expect(true).assertFail();
-        });
-
-        /**
-         * @tc.name testArrayBufferResize0050
-         * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_5000
-         * @tc.desc 验证 buffer.resize(2147483647) 在当前入参场景下会抛出异常。
-         * @tc.type FUNCTION
-         * @tc.size MEDIUMTEST
-         * @tc.level LEVEL2
-         */
-        it('testArrayBufferResize0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-          const buffer = new ArrayBuffer(1, 100);
-          try {
-            buffer.resize(2147483647);
-          } catch (e) {
-            expect(e !== null && e !== undefined).assertTrue();
-            Utils.assertThrownErrorCodeIsNumber(e);
-            return;
-          }
-          expect(true).assertFail();
-        });
-
-        /**
-         * @tc.name testArrayBufferResize0051
-         * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_5100
-         * @tc.desc 验证 buffer.resize(1000) 在当前入参场景下会抛出异常。
-         * @tc.type FUNCTION
-         * @tc.size MEDIUMTEST
-         * @tc.level LEVEL2
-         */
-        it('testArrayBufferResize0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-          const buffer = new ArrayBuffer(2, 6);
-          try {
-            buffer.resize(1000);
-          } catch (e) {
-            expect(e !== null && e !== undefined).assertTrue();
-            Utils.assertThrownErrorCodeIsNumber(e);
-            return;
-          }
-          expect(true).assertFail();
-        });
+    /**
+     * @tc.name testArrayBufferResize0046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_4600
+     * @tc.desc 验证 buffer.resize(-1) 在当前入参场景下会抛出异常。
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferResize0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(5, 12);
+      try {
+        buffer.resize(-1);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
         return;
-      });
-    }
+      }
+      expect(true).assertFail();
+    });
+
+    /**
+     * @tc.name testArrayBufferResize0047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_4700
+     * @tc.desc 验证 buffer.resize(-100) 在当前入参场景下会抛出异常。
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferResize0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(2, 6);
+      try {
+        buffer.resize(-100);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        return;
+      }
+      expect(true).assertFail();
+    });
+
+    /**
+     * @tc.name testArrayBufferResize0048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_4800
+     * @tc.desc 验证 buffer.resize(-1) 在当前入参场景下会抛出异常。
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferResize0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(1, 5);
+      try {
+        buffer.resize(-1);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        return;
+      }
+      expect(true).assertFail();
+    });
+
+    /**
+     * @tc.name testArrayBufferResize0049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_4900
+     * @tc.desc 验证 buffer.resize(-100) 在当前入参场景下会抛出异常。
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferResize0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(2, 6);
+      try {
+        buffer.resize(-100);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        return;
+      }
+      expect(true).assertFail();
+    });
+
+    /**
+     * @tc.name testArrayBufferResize0050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_5000
+     * @tc.desc 验证 buffer.resize(2147483647) 在当前入参场景下会抛出异常。
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferResize0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(1, 100);
+      try {
+        buffer.resize(2147483647);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        return;
+      }
+      expect(true).assertFail();
+    });
+
+    /**
+     * @tc.name testArrayBufferResize0051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_5100
+     * @tc.desc 验证 buffer.resize(1000) 在当前入参场景下会抛出异常。
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferResize0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(2, 6);
+      try {
+        buffer.resize(1000);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        return;
+      }
+      expect(true).assertFail();
+    });
+    return;
+  });
+}

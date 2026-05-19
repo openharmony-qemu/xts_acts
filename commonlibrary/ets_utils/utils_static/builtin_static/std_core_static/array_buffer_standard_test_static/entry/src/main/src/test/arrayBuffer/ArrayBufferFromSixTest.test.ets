@@ -100,7 +100,8 @@ export default function arrayBufferFromSixTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromSix0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {      const source = ArrayBuffer.from("abcd", "utf8");
+    it('testArrayBufferFromSix0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = ArrayBuffer.from("abcd", "utf8");
       const result = ArrayBuffer.from(source);
       expect(result.byteLength).assertEqual(source.byteLength);
 
@@ -172,7 +173,8 @@ export default function arrayBufferFromSixTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromSix0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {      const source = ArrayBuffer.from("hello", "utf8");
+    it('testArrayBufferFromSix0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = ArrayBuffer.from("hello", "utf8");
       const result = ArrayBuffer.from(source, 0, source.byteLength);
       expect(result.byteLength).assertEqual(source.byteLength);
     });
@@ -185,7 +187,8 @@ export default function arrayBufferFromSixTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromSix0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {      const empty = new ArrayBuffer(0);
+    it('testArrayBufferFromSix0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const empty = new ArrayBuffer(0);
       const result = ArrayBuffer.from(empty, 0, 0);
       expect(result.byteLength).assertEqual(0);
     });
@@ -351,7 +354,8 @@ export default function arrayBufferFromSixTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromSix0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {      const source = ArrayBuffer.from("abcdef", "utf8");
+    it('testArrayBufferFromSix0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = ArrayBuffer.from("abcdef", "utf8");
       const result = ArrayBuffer.from(source, source.byteLength, 0);
       expect(result.byteLength).assertEqual(0);
     });
@@ -503,7 +507,8 @@ export default function arrayBufferFromSixTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromSix0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {      const source = ArrayBuffer.from("abcdef", "utf8");
+    it('testArrayBufferFromSix0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = ArrayBuffer.from("abcdef", "utf8");
       const result = ArrayBuffer.from(source, 0, source.byteLength);
       expect(result.byteLength).assertEqual(source.byteLength);
     });
@@ -592,7 +597,8 @@ export default function arrayBufferFromSixTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromSix0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {      const source = ArrayBuffer.from("abcdef", "utf8");
+    it('testArrayBufferFromSix0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = ArrayBuffer.from("abcdef", "utf8");
       const result = ArrayBuffer.from(source, 0, 2.5);
       expect(result.byteLength).assertEqual(2);
     });
@@ -975,7 +981,8 @@ export default function arrayBufferFromSixTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromSix0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {      const source = ArrayBuffer.from("abcd", "utf8");
+    it('testArrayBufferFromSix0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = ArrayBuffer.from("abcd", "utf8");
       const result = ArrayBuffer.from(source, 0, undefined);
       expect(result.byteLength).assertEqual(4);
     });
@@ -1190,7 +1197,8 @@ export default function arrayBufferFromSixTest(): void {
      */
     it('testArrayBufferFromSix0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const result = ArrayBuffer.from(((new ArrayBufferFromSixPlainForMindmap() as Object) as ESObject) as ArrayBuffer, 0, 1);
+        const result =
+          ArrayBuffer.from(((new ArrayBufferFromSixPlainForMindmap() as Object) as ESObject) as ArrayBuffer, 0, 1);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);

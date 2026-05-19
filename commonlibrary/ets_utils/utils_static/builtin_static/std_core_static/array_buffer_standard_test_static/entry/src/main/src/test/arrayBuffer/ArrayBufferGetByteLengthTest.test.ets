@@ -206,7 +206,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_1200
-    * @tc.desc 验证 buffer.getByteLength() 在当前场景执行成功，数值类型判断符合预期。
+     * @tc.desc 验证 buffer.getByteLength() 在当前场景执行成功，数值类型判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

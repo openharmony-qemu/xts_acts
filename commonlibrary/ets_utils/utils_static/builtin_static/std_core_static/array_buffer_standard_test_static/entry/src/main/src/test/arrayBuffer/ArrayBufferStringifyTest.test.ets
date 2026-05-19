@@ -213,7 +213,8 @@ export default function arrayBufferStringifyTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {      const buffer = new ArrayBuffer(5);
+    it('testArrayBufferStringify0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(5);
       const view = new Uint8Array(buffer);
       let result = ArrayBuffer.stringify(buffer, "utf8", (Double.toInt(0) as int), (Double.toInt(5) as int));
       expect(typeof result === "string").assertTrue();
@@ -228,7 +229,8 @@ export default function arrayBufferStringifyTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {      const buffer = new ArrayBuffer(0);
+    it('testArrayBufferStringify0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(0);
       let result = ArrayBuffer.stringify(buffer, "utf8", (Double.toInt(0) as int), (Double.toInt(0) as int));
       expect(typeof result === "string").assertTrue();
 
@@ -282,7 +284,8 @@ export default function arrayBufferStringifyTest(): void {
      */
     it('testArrayBufferStringify0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        let result = ArrayBuffer.stringify((new ArrayBufferStringifyPlainForMindmap() as Object) as ArrayBuffer, "utf8", 0, 3);
+        let result =
+          ArrayBuffer.stringify((new ArrayBufferStringifyPlainForMindmap() as Object) as ArrayBuffer, "utf8", 0, 3);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -387,7 +390,8 @@ export default function arrayBufferStringifyTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {      const encoded = ArrayBuffer.from("ABC", "utf8");
+    it('testArrayBufferStringify0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const encoded = ArrayBuffer.from("ABC", "utf8");
       let result = ArrayBuffer.stringify(encoded, "utf-8", 0, encoded.byteLength);
       expect(typeof result === "string").assertTrue();
 
@@ -558,7 +562,8 @@ export default function arrayBufferStringifyTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {      const encoded = ArrayBuffer.from("ABC", "utf8");
+    it('testArrayBufferStringify0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const encoded = ArrayBuffer.from("ABC", "utf8");
       let result = ArrayBuffer.stringify(encoded, "utf8", encoded.byteLength, encoded.byteLength);
       expect(typeof result === "string").assertTrue();
 
@@ -652,7 +657,8 @@ export default function arrayBufferStringifyTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {      const encoded = ArrayBuffer.from("ABC", "utf8");
+    it('testArrayBufferStringify0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const encoded = ArrayBuffer.from("ABC", "utf8");
       let result = ArrayBuffer.stringify(encoded, "utf8", (0 as int), encoded.byteLength);
       expect(typeof result === "string").assertTrue();
 
@@ -666,7 +672,8 @@ export default function arrayBufferStringifyTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {      const encoded = ArrayBuffer.from("ABC", "utf8");
+    it('testArrayBufferStringify0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const encoded = ArrayBuffer.from("ABC", "utf8");
       let result = ArrayBuffer.stringify(encoded, "utf8", (Double.toInt(NaN)), encoded.byteLength);
       expect(typeof result === "string").assertTrue();
 
@@ -683,7 +690,8 @@ export default function arrayBufferStringifyTest(): void {
     it('testArrayBufferStringify0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const encoded = ArrayBuffer.from("ABC", "utf8");
-        let result = ArrayBuffer.stringify(encoded, "utf8", (Double.toInt(Number.POSITIVE_INFINITY) as int), encoded.byteLength);
+        let result =
+          ArrayBuffer.stringify(encoded, "utf8", (Double.toInt(Number.POSITIVE_INFINITY) as int), encoded.byteLength);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -700,7 +708,8 @@ export default function arrayBufferStringifyTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {      const encoded = ArrayBuffer.from("ABCDEF", "utf8");
+    it('testArrayBufferStringify0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const encoded = ArrayBuffer.from("ABCDEF", "utf8");
       let result = ArrayBuffer.stringify(encoded, "utf8", 0, encoded.byteLength);
       expect(typeof result === "string").assertTrue();
 
@@ -830,7 +839,8 @@ export default function arrayBufferStringifyTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {      const encoded = ArrayBuffer.from("ABCDEF", "utf8");
+    it('testArrayBufferStringify0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const encoded = ArrayBuffer.from("ABCDEF", "utf8");
       let result = ArrayBuffer.stringify(encoded, "utf8", 0, (Double.toInt(2.7) as int));
       expect(typeof result === "string").assertTrue();
 
@@ -844,7 +854,8 @@ export default function arrayBufferStringifyTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {      const encoded = ArrayBuffer.from("ABC", "utf8");
+    it('testArrayBufferStringify0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const encoded = ArrayBuffer.from("ABC", "utf8");
       let result = ArrayBuffer.stringify(encoded, "utf8", 0, (Double.toInt(Number.NaN) as int));
       expect(typeof result === "string").assertTrue();
 
@@ -897,7 +908,8 @@ export default function arrayBufferStringifyTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {      const encoded = ArrayBuffer.from("ABC", "utf8");
+    it('testArrayBufferStringify0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const encoded = ArrayBuffer.from("ABC", "utf8");
       let result = ArrayBuffer.stringify(encoded, "utf8", 0, encoded.byteLength);
       expect(typeof result === "string").assertTrue();
 
@@ -911,7 +923,8 @@ export default function arrayBufferStringifyTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {      const encoded = ArrayBuffer.from("ABCDEF", "utf8");
+    it('testArrayBufferStringify0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const encoded = ArrayBuffer.from("ABCDEF", "utf8");
       let result = ArrayBuffer.stringify(encoded, "utf8", (Double.toInt(3) as int), (Double.toInt(6) as int));
       expect(typeof result === "string").assertTrue();
 
@@ -1940,7 +1953,8 @@ export default function arrayBufferStringifyTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {      const encoded = ArrayBuffer.from("ABC", "utf8");
+    it('testArrayBufferStringify0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const encoded = ArrayBuffer.from("ABC", "utf8");
       let result = ArrayBuffer.stringify(encoded, "utf8", 0, {});
       expect(typeof result === "string").assertTrue();
 
@@ -1956,8 +1970,9 @@ export default function arrayBufferStringifyTest(): void {
      */
     it('testArrayBufferStringify0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        let result = ArrayBuffer.stringify((("buffer" as Object) as ArrayBuffer), ((123 as number) as ESObject) as string,
-          (("start" as Object) as ESObject) as int, ((true as Object) as ESObject) as int);
+        let result =
+          ArrayBuffer.stringify((("buffer" as Object) as ArrayBuffer), ((123 as number) as ESObject) as string,
+            (("start" as Object) as ESObject) as int, ((true as Object) as ESObject) as int);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -2054,7 +2069,8 @@ export default function arrayBufferStringifyTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {      const encoded = ArrayBuffer.from("ABC", "utf8");
+    it('testArrayBufferStringify0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const encoded = ArrayBuffer.from("ABC", "utf8");
       let result = ArrayBuffer.stringify(encoded, "utf8", (Double.toInt(NaN)), encoded.byteLength);
       expect(typeof result === "string").assertTrue();
 
@@ -2111,7 +2127,8 @@ export default function arrayBufferStringifyTest(): void {
     it('testArrayBufferStringify0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const encoded = ArrayBuffer.from("ABC", "utf8");
-        let result = ArrayBuffer.stringify(encoded, "utf8", (Double.toInt(Number.NEGATIVE_INFINITY) as int), encoded.byteLength);
+        let result =
+          ArrayBuffer.stringify(encoded, "utf8", (Double.toInt(Number.NEGATIVE_INFINITY) as int), encoded.byteLength);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -2148,7 +2165,8 @@ export default function arrayBufferStringifyTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {      const encoded = ArrayBuffer.from("ABCDEF", "utf8");
+    it('testArrayBufferStringify0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const encoded = ArrayBuffer.from("ABCDEF", "utf8");
       let result = ArrayBuffer.stringify(encoded, "utf8", (Double.toInt(1.5) as int), encoded.byteLength);
       expect(typeof result === "string").assertTrue();
 
@@ -2203,7 +2221,8 @@ export default function arrayBufferStringifyTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {      const buffer = new ArrayBuffer(8, 16);
+    it('testArrayBufferStringify0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(8, 16);
       let result = ArrayBuffer.stringify(buffer, "utf8", (Double.toInt(0) as int), (Double.toInt(0) as int));
       expect(typeof result === "string").assertTrue();
 
@@ -2217,7 +2236,8 @@ export default function arrayBufferStringifyTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {      const buffer = new ArrayBuffer(8, 16);
+    it('testArrayBufferStringify0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(8, 16);
       const view = new Uint8Array(buffer);
       let result = ArrayBuffer.stringify(buffer, "utf8", (Double.toInt(0) as int), (Double.toInt(3) as int));
       expect(typeof result === "string").assertTrue();
@@ -2232,7 +2252,8 @@ export default function arrayBufferStringifyTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {      const buffer = new ArrayBuffer(6, 16);
+    it('testArrayBufferStringify0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(6, 16);
       const view = new Uint8Array(buffer);
       let result = ArrayBuffer.stringify(buffer, "utf8", 0, buffer.byteLength);
       expect(typeof result === "string").assertTrue();

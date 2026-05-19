@@ -215,7 +215,8 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromSeven0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {      const empty = new ArrayBuffer(0);
+    it('testArrayBufferFromSeven0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const empty = new ArrayBuffer(0);
       const result = ArrayBuffer.from(empty);
       expect(result.byteLength).assertEqual(0);
 
@@ -793,9 +794,9 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
-        const result = ArrayBuffer.from(source, 0, Double.toInt(0.0));
-        expect(result.byteLength).assertEqual(0);
+      const source = new ArrayBuffer(8);
+      const result = ArrayBuffer.from(source, 0, Double.toInt(0.0));
+      expect(result.byteLength).assertEqual(0);
     });
 
     /**
@@ -826,16 +827,16 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
-        try {
-          const result = ArrayBuffer.from(source, 0, Infinity);
-        } catch (e) {
-          expect(e !== null && e !== undefined).assertTrue();
-          Utils.assertThrownErrorCodeIsNumber(e);
-          expect(source.byteLength).assertEqual(8);
-          return;
-        }
-        expect(true).assertFail();
+      const source = new ArrayBuffer(8);
+      try {
+        const result = ArrayBuffer.from(source, 0, Infinity);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        expect(source.byteLength).assertEqual(8);
+        return;
+      }
+      expect(true).assertFail();
     });
 
     /**
@@ -847,16 +848,16 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
-        try {
-          const result = ArrayBuffer.from(source, 0, -Infinity);
-        } catch (e) {
-          expect(e !== null && e !== undefined).assertTrue();
-          Utils.assertThrownErrorCodeIsNumber(e);
-          expect(source.byteLength).assertEqual(8);
-          return;
-        }
-        expect(true).assertFail();
+      const source = new ArrayBuffer(8);
+      try {
+        const result = ArrayBuffer.from(source, 0, -Infinity);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        expect(source.byteLength).assertEqual(8);
+        return;
+      }
+      expect(true).assertFail();
     });
 
     /**
@@ -868,15 +869,15 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
-        try {
-          const result = ArrayBuffer.from(source, 0, -1);
-        } catch (e) {
-          expect(e !== null && e !== undefined).assertTrue();
-          Utils.assertThrownErrorCodeIsNumber(e);
-          return;
-        }
-        expect(true).assertFail();
+      const source = new ArrayBuffer(8);
+      try {
+        const result = ArrayBuffer.from(source, 0, -1);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        return;
+      }
+      expect(true).assertFail();
     });
 
     /**
@@ -888,15 +889,15 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
-        try {
-          const result = ArrayBuffer.from(source, 0, -100);
-        } catch (e) {
-          expect(e !== null && e !== undefined).assertTrue();
-          Utils.assertThrownErrorCodeIsNumber(e);
-          return;
-        }
-        expect(true).assertFail();
+      const source = new ArrayBuffer(8);
+      try {
+        const result = ArrayBuffer.from(source, 0, -100);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        return;
+      }
+      expect(true).assertFail();
     });
 
     /**
@@ -908,15 +909,15 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(6);
-        try {
-          const result = ArrayBuffer.from(source, 2, 10);
-        } catch (e) {
-          expect(e !== null && e !== undefined).assertTrue();
-          Utils.assertThrownErrorCodeIsNumber(e);
-          return;
-        }
-        expect(true).assertFail();
+      const source = new ArrayBuffer(6);
+      try {
+        const result = ArrayBuffer.from(source, 2, 10);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        return;
+      }
+      expect(true).assertFail();
     });
 
     /**
@@ -928,15 +929,15 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
-        try {
-          const result = ArrayBuffer.from(source, 0, Double.toInt(Number.MAX_SAFE_INTEGER));
-        } catch (e) {
-          expect(e !== null && e !== undefined).assertTrue();
-          Utils.assertThrownErrorCodeIsNumber(e);
-          return;
-        }
-        expect(true).assertFail();
+      const source = new ArrayBuffer(8);
+      try {
+        const result = ArrayBuffer.from(source, 0, Double.toInt(Number.MAX_SAFE_INTEGER));
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        return;
+      }
+      expect(true).assertFail();
     });
 
     /**
@@ -948,17 +949,17 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
+      const source = new ArrayBuffer(8);
 
-        try {
-          const result = ArrayBuffer.from(source, 0, (null as ESObject) as int);
-        } catch (e) {
-          expect(e !== null && e !== undefined).assertTrue();
-          Utils.assertThrownErrorCodeIsNumber(e);
-          expect(source.byteLength).assertEqual(8);
-          return;
-        }
-        expect(true).assertFail();
+      try {
+        const result = ArrayBuffer.from(source, 0, (null as ESObject) as int);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        expect(source.byteLength).assertEqual(8);
+        return;
+      }
+      expect(true).assertFail();
     });
 
     /**
@@ -970,17 +971,17 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
+      const source = new ArrayBuffer(8);
 
-        try {
-          const result = ArrayBuffer.from(source, 0, (("4" as Object) as ESObject) as int);
-        } catch (e) {
-          expect(e !== null && e !== undefined).assertTrue();
-          Utils.assertThrownErrorCodeIsNumber(e);
-          expect(source.byteLength).assertEqual(8);
-          return;
-        }
-        expect(true).assertFail();
+      try {
+        const result = ArrayBuffer.from(source, 0, (("4" as Object) as ESObject) as int);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        expect(source.byteLength).assertEqual(8);
+        return;
+      }
+      expect(true).assertFail();
     });
 
     /**
@@ -1007,15 +1008,15 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
-        const view = new Int8Array(source);
-        for (let i: int = 0; i < 8; i++) {
-          view[i] = i + 1;
-        }
-        const result = ArrayBuffer.from(source);
-        expect(result.byteLength).assertEqual(8);
-        expect(result.at(3)).assertEqual(4);
-        expect(result !== source).assertTrue();
+      const source = new ArrayBuffer(8);
+      const view = new Int8Array(source);
+      for (let i: int = 0; i < 8; i++) {
+        view[i] = i + 1;
+      }
+      const result = ArrayBuffer.from(source);
+      expect(result.byteLength).assertEqual(8);
+      expect(result.at(3)).assertEqual(4);
+      expect(result !== source).assertTrue();
     });
 
     /**
@@ -1027,13 +1028,13 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(10);
-        const view = new Int8Array(source);
-        for (let i: int = 0; i < 10; i++) {
-          view[i] = i;
-        }
-        const result = Utils.fromArrayBufferWithOffset(source, 5);
-        expect(result.byteLength).assertEqual(5);
+      const source = new ArrayBuffer(10);
+      const view = new Int8Array(source);
+      for (let i: int = 0; i < 10; i++) {
+        view[i] = i;
+      }
+      const result = Utils.fromArrayBufferWithOffset(source, 5);
+      expect(result.byteLength).assertEqual(5);
     });
 
     /**
@@ -1045,13 +1046,13 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(10);
-        const view = new Int8Array(source);
-        for (let i: int = 0; i < 10; i++) {
-          view[i] = i;
-        }
-        const result = ArrayBuffer.from(source, 3, 4);
-        expect(result.byteLength).assertEqual(4);
+      const source = new ArrayBuffer(10);
+      const view = new Int8Array(source);
+      for (let i: int = 0; i < 10; i++) {
+        view[i] = i;
+      }
+      const result = ArrayBuffer.from(source, 3, 4);
+      expect(result.byteLength).assertEqual(4);
     });
 
     /**
@@ -1063,16 +1064,16 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(4);
-        const view = new Int8Array(source);
-        view[0] = 10;
-        view[1] = 20;
-        view[2] = 30;
-        view[3] = 40;
-        const result = ArrayBuffer.from(source);
-        const resultView = new Int8Array(result);
-        resultView[0] = 99;
-        expect(view[0]).assertEqual(10);
+      const source = new ArrayBuffer(4);
+      const view = new Int8Array(source);
+      view[0] = 10;
+      view[1] = 20;
+      view[2] = 30;
+      view[3] = 40;
+      const result = ArrayBuffer.from(source);
+      const resultView = new Int8Array(result);
+      resultView[0] = 99;
+      expect(view[0]).assertEqual(10);
     });
 
     /**
@@ -1084,9 +1085,9 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(4);
-        const result = ArrayBuffer.from(source);
-        expect(result === source).assertFalse();
+      const source = new ArrayBuffer(4);
+      const result = ArrayBuffer.from(source);
+      expect(result === source).assertFalse();
     });
 
     /**
@@ -1098,17 +1099,17 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(10);
-        const view = new Int8Array(source);
-        for (let i: int = 0; i < 10; i++) {
-          view[i] = i;
-        }
-        const r1 = ArrayBuffer.from(source, 2, 2);
-        const r2 = ArrayBuffer.from(source, 5, 3);
-        const r3 = ArrayBuffer.from(source, 8, 2);
-        expect(r1.byteLength).assertEqual(2);
-        expect(r2.byteLength).assertEqual(3);
-        expect(r3.byteLength).assertEqual(2);
+      const source = new ArrayBuffer(10);
+      const view = new Int8Array(source);
+      for (let i: int = 0; i < 10; i++) {
+        view[i] = i;
+      }
+      const r1 = ArrayBuffer.from(source, 2, 2);
+      const r2 = ArrayBuffer.from(source, 5, 3);
+      const r3 = ArrayBuffer.from(source, 8, 2);
+      expect(r1.byteLength).assertEqual(2);
+      expect(r2.byteLength).assertEqual(3);
+      expect(r3.byteLength).assertEqual(2);
     });
 
     /**
@@ -1120,9 +1121,9 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
-        const result = ArrayBuffer.from(source, 0, 4);
-        expect(result instanceof ArrayBuffer).assertTrue();
+      const source = new ArrayBuffer(8);
+      const result = ArrayBuffer.from(source, 0, 4);
+      expect(result instanceof ArrayBuffer).assertTrue();
     });
 
     /**
@@ -1134,9 +1135,9 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
-        const result = ArrayBuffer.from(source);
-        expect(result instanceof ArrayBuffer).assertTrue()
+      const source = new ArrayBuffer(8);
+      const result = ArrayBuffer.from(source);
+      expect(result instanceof ArrayBuffer).assertTrue()
     });
 
     /**
@@ -1148,9 +1149,9 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
-        const result = ArrayBuffer.from(source);
-        expect(Class.of(result).getName().indexOf('ArrayBuffer') >= 0).assertTrue();
+      const source = new ArrayBuffer(8);
+      const result = ArrayBuffer.from(source);
+      expect(Class.of(result).getName().indexOf('ArrayBuffer') >= 0).assertTrue();
     });
 
     /**
@@ -1162,9 +1163,9 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
-        const result = ArrayBuffer.from(source, 1, 3);
-        expect(Utils.isRuntimeNumericOrIntTypeof(typeof result.byteLength)).assertTrue();
+      const source = new ArrayBuffer(8);
+      const result = ArrayBuffer.from(source, 1, 3);
+      expect(Utils.isRuntimeNumericOrIntTypeof(typeof result.byteLength)).assertTrue();
     });
 
     /**
@@ -1176,9 +1177,9 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
-        const result = ArrayBuffer.from(source);
-        expect(result instanceof ArrayBuffer).assertTrue();
+      const source = new ArrayBuffer(8);
+      const result = ArrayBuffer.from(source);
+      expect(result instanceof ArrayBuffer).assertTrue();
     });
 
     /**
@@ -1190,9 +1191,9 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(4);
-        const result = ArrayBuffer.from(source);
-        expect(result instanceof ArrayBuffer).assertTrue();
+      const source = new ArrayBuffer(4);
+      const result = ArrayBuffer.from(source);
+      expect(result instanceof ArrayBuffer).assertTrue();
     });
 
     /**
@@ -1204,9 +1205,9 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
-        const result = Utils.fromArrayBufferWithOffset(source, 2);
-        expect(result instanceof ArrayBuffer).assertTrue();
+      const source = new ArrayBuffer(8);
+      const result = Utils.fromArrayBufferWithOffset(source, 2);
+      expect(result instanceof ArrayBuffer).assertTrue();
     });
 
     /**
@@ -1218,19 +1219,19 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(6);
-        const view = new Int8Array(source);
-        view[0] = 10;
-        view[1] = 20;
-        view[2] = 30;
-        view[3] = 40;
-        view[4] = 50;
-        view[5] = 60;
-        const result = ArrayBuffer.from(source);
-        const resultView = new Int8Array(result);
-        for (let i: int = 0; i < source.byteLength; i++) {
-          expect(resultView[i]).assertEqual(view[i]);
-        }
+      const source = new ArrayBuffer(6);
+      const view = new Int8Array(source);
+      view[0] = 10;
+      view[1] = 20;
+      view[2] = 30;
+      view[3] = 40;
+      view[4] = 50;
+      view[5] = 60;
+      const result = ArrayBuffer.from(source);
+      const resultView = new Int8Array(result);
+      for (let i: int = 0; i < source.byteLength; i++) {
+        expect(resultView[i]).assertEqual(view[i]);
+      }
     });
 
     /**
@@ -1242,16 +1243,16 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
-        const view = new Int8Array(source);
-        for (let i: int = 0; i < 8; i++) {
-          view[i] = i * 10;
-        }
-        const result = Utils.fromArrayBufferWithOffset(source, 3);
-        const resultView = new Int8Array(result);
-        for (let i: int = 0; i < result.byteLength; i++) {
-          expect(resultView[i]).assertEqual(view[i + 3]);
-        }
+      const source = new ArrayBuffer(8);
+      const view = new Int8Array(source);
+      for (let i: int = 0; i < 8; i++) {
+        view[i] = i * 10;
+      }
+      const result = Utils.fromArrayBufferWithOffset(source, 3);
+      const resultView = new Int8Array(result);
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(view[i + 3]);
+      }
     });
 
     /**
@@ -1263,16 +1264,16 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(10);
-        const view = new Int8Array(source);
-        for (let i: int = 0; i < 10; i++) {
-          view[i] = i + 1;
-        }
-        const result = ArrayBuffer.from(source, 2, 5);
-        const resultView = new Int8Array(result);
-        for (let i: int = 0; i < 5; i++) {
-          expect(resultView[i]).assertEqual(view[i + 2]);
-        }
+      const source = new ArrayBuffer(10);
+      const view = new Int8Array(source);
+      for (let i: int = 0; i < 10; i++) {
+        view[i] = i + 1;
+      }
+      const result = ArrayBuffer.from(source, 2, 5);
+      const resultView = new Int8Array(result);
+      for (let i: int = 0; i < 5; i++) {
+        expect(resultView[i]).assertEqual(view[i + 2]);
+      }
     });
 
     /**
@@ -1284,16 +1285,16 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
-        const view = new Int8Array(source);
-        for (let i: int = 0; i < 8; i++) {
-          view[i] = i * 2;
-        }
-        const result = ArrayBuffer.from(source, 1, 4);
-        expect(result.at(0)).assertEqual(source.at(1));
-        expect(result.at(1)).assertEqual(source.at(2));
-        expect(result.at(2)).assertEqual(source.at(3));
-        expect(result.at(3)).assertEqual(source.at(4));
+      const source = new ArrayBuffer(8);
+      const view = new Int8Array(source);
+      for (let i: int = 0; i < 8; i++) {
+        view[i] = i * 2;
+      }
+      const result = ArrayBuffer.from(source, 1, 4);
+      expect(result.at(0)).assertEqual(source.at(1));
+      expect(result.at(1)).assertEqual(source.at(2));
+      expect(result.at(2)).assertEqual(source.at(3));
+      expect(result.at(3)).assertEqual(source.at(4));
     });
 
     /**
@@ -1305,18 +1306,18 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(4);
-        const srcView = new Int8Array(source);
-        srcView[0] = 11;
-        srcView[1] = 22;
-        srcView[2] = 33;
-        srcView[3] = 44;
-        const result = ArrayBuffer.from(source);
-        const resView = new Int8Array(result);
-        resView[0] = 99;
-        resView[1] = 88;
-        expect(srcView[0]).assertEqual(11);
-        expect(srcView[1]).assertEqual(22);
+      const source = new ArrayBuffer(4);
+      const srcView = new Int8Array(source);
+      srcView[0] = 11;
+      srcView[1] = 22;
+      srcView[2] = 33;
+      srcView[3] = 44;
+      const result = ArrayBuffer.from(source);
+      const resView = new Int8Array(result);
+      resView[0] = 99;
+      resView[1] = 88;
+      expect(srcView[0]).assertEqual(11);
+      expect(srcView[1]).assertEqual(22);
     });
 
     /**
@@ -1328,21 +1329,21 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(256);
-        const view = new Int8Array(source);
-        for (let i: int = 0; i < 256; i++) {
-          view[i] = i;
+      const source = new ArrayBuffer(256);
+      const view = new Int8Array(source);
+      for (let i: int = 0; i < 256; i++) {
+        view[i] = i;
+      }
+      const result = ArrayBuffer.from(source);
+      const resultView = new Int8Array(result);
+      let allMatch = true;
+      for (let i: int = 0; i < 256; i++) {
+        if (resultView[i] !== view[i]) {
+          allMatch = false;
+          break;
         }
-        const result = ArrayBuffer.from(source);
-        const resultView = new Int8Array(result);
-        let allMatch = true;
-        for (let i: int = 0; i < 256; i++) {
-          if (resultView[i] !== view[i]) {
-            allMatch = false;
-            break;
-          }
-        }
-        expect(allMatch).assertTrue();
+      }
+      expect(allMatch).assertTrue();
     });
 
     /**
@@ -1354,18 +1355,18 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(10);
-        const view = new Int8Array(source);
-        for (let i: int = 0; i < 10; i++) {
-          view[i] = i + 100;
-        }
-        const off: int = 7;
-        const result = Utils.fromArrayBufferWithOffset(source, off);
-        const resultView = new Int8Array(result);
-        expect(result.byteLength).assertEqual((source.byteLength as int) - off);
-        expect(resultView[0]).assertEqual(107);
-        expect(resultView[1]).assertEqual(108);
-        expect(resultView[2]).assertEqual(109);
+      const source = new ArrayBuffer(10);
+      const view = new Int8Array(source);
+      for (let i: int = 0; i < 10; i++) {
+        view[i] = i + 100;
+      }
+      const off: int = 7;
+      const result = Utils.fromArrayBufferWithOffset(source, off);
+      const resultView = new Int8Array(result);
+      expect(result.byteLength).assertEqual((source.byteLength as int) - off);
+      expect(resultView[0]).assertEqual(107);
+      expect(resultView[1]).assertEqual(108);
+      expect(resultView[2]).assertEqual(109);
     });
 
     /**
@@ -1377,20 +1378,20 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(6);
-        const view = new Int8Array(source);
-        view[0] = 1;
-        view[1] = 2;
-        view[2] = 3;
-        view[3] = 4;
-        view[4] = 5;
-        view[5] = 6;
-        const result = ArrayBuffer.from(source);
-        expect(result.byteLength).assertEqual(6);
-        const resultView = new Int8Array(result);
-        for (let i: int = 0; i < 6; i++) {
-          expect(resultView[i]).assertEqual(view[i]);
-        }
+      const source = new ArrayBuffer(6);
+      const view = new Int8Array(source);
+      view[0] = 1;
+      view[1] = 2;
+      view[2] = 3;
+      view[3] = 4;
+      view[4] = 5;
+      view[5] = 6;
+      const result = ArrayBuffer.from(source);
+      expect(result.byteLength).assertEqual(6);
+      const resultView = new Int8Array(result);
+      for (let i: int = 0; i < 6; i++) {
+        expect(resultView[i]).assertEqual(view[i]);
+      }
     });
 
     /**
@@ -1402,13 +1403,13 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
-        const view = new Int8Array(source);
-        for (let i: int = 0; i < 8; i++) {
-          view[i] = i;
-        }
-        const result = Utils.fromArrayBufferWithOffset(source, 5);
-        expect(result.byteLength).assertEqual(3);
+      const source = new ArrayBuffer(8);
+      const view = new Int8Array(source);
+      for (let i: int = 0; i < 8; i++) {
+        view[i] = i;
+      }
+      const result = Utils.fromArrayBufferWithOffset(source, 5);
+      expect(result.byteLength).assertEqual(3);
     });
 
     /**
@@ -1420,14 +1421,14 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
-        const view = new Int8Array(source);
-        for (let i: int = 0; i < 8; i++) {
-          view[i] = i;
-        }
-        const off: int = 1;
-        const result = Utils.fromArrayBufferWithOffset(source, off);
-        expect(result.byteLength).assertEqual((source.byteLength as int) - off);
+      const source = new ArrayBuffer(8);
+      const view = new Int8Array(source);
+      for (let i: int = 0; i < 8; i++) {
+        view[i] = i;
+      }
+      const off: int = 1;
+      const result = Utils.fromArrayBufferWithOffset(source, off);
+      expect(result.byteLength).assertEqual((source.byteLength as int) - off);
     });
 
     /**
@@ -1439,13 +1440,13 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
-        const view = new Int8Array(source);
-        for (let i: int = 0; i < 8; i++) {
-          view[i] = i;
-        }
-        const result = ArrayBuffer.from(source, 0, (source.byteLength as int));
-        expect(result.byteLength).assertEqual(source.byteLength);
+      const source = new ArrayBuffer(8);
+      const view = new Int8Array(source);
+      for (let i: int = 0; i < 8; i++) {
+        view[i] = i;
+      }
+      const result = ArrayBuffer.from(source, 0, (source.byteLength as int));
+      expect(result.byteLength).assertEqual(source.byteLength);
     });
 
     /**
@@ -1457,10 +1458,10 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
-        const result = ArrayBuffer.from(source, 0, 0);
-        expect(result.byteLength).assertEqual(0);
-        expect(result instanceof ArrayBuffer).assertTrue();
+      const source = new ArrayBuffer(8);
+      const result = ArrayBuffer.from(source, 0, 0);
+      expect(result.byteLength).assertEqual(0);
+      expect(result instanceof ArrayBuffer).assertTrue();
     });
 
     /**
@@ -1472,9 +1473,9 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
-        const result = ArrayBuffer.from(source, (source.byteLength as int), 0);
-        expect(result.byteLength).assertEqual(0);
+      const source = new ArrayBuffer(8);
+      const result = ArrayBuffer.from(source, (source.byteLength as int), 0);
+      expect(result.byteLength).assertEqual(0);
     });
 
     /**
@@ -1486,12 +1487,12 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
-        const view = new Int8Array(source);
-        view[0] = 42;
-        const result = ArrayBuffer.from(source, 0, 1);
-        expect(result.byteLength).assertEqual(1);
-        expect(result.at(0)).assertEqual(source.at(0));
+      const source = new ArrayBuffer(8);
+      const view = new Int8Array(source);
+      view[0] = 42;
+      const result = ArrayBuffer.from(source, 0, 1);
+      expect(result.byteLength).assertEqual(1);
+      expect(result.at(0)).assertEqual(source.at(0));
     });
 
     /**
@@ -1503,12 +1504,12 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
-        const view = new Int8Array(source);
-        view[7] = 77;
-        const result = ArrayBuffer.from(source, (source.byteLength as int) - 1, 1);
-        expect(result.byteLength).assertEqual(1);
-        expect(result.at(0)).assertEqual(source.at(source.byteLength - 1));
+      const source = new ArrayBuffer(8);
+      const view = new Int8Array(source);
+      view[7] = 77;
+      const result = ArrayBuffer.from(source, (source.byteLength as int) - 1, 1);
+      expect(result.byteLength).assertEqual(1);
+      expect(result.at(0)).assertEqual(source.at(source.byteLength - 1));
     });
 
     /**
@@ -1520,9 +1521,9 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const empty = new ArrayBuffer(0);
-        const result = ArrayBuffer.from(empty, 0, 0);
-        expect(result.byteLength).assertEqual(0);
+      const empty = new ArrayBuffer(0);
+      const result = ArrayBuffer.from(empty, 0, 0);
+      expect(result.byteLength).assertEqual(0);
     });
 
     /**
@@ -1534,11 +1535,11 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const empty = new ArrayBuffer(0);
-        const result = ArrayBuffer.from(empty);
-        expect(result.byteLength).assertEqual(0);
-        expect(empty.byteLength).assertEqual(0);
-        expect(result !== empty).assertTrue();
+      const empty = new ArrayBuffer(0);
+      const result = ArrayBuffer.from(empty);
+      expect(result.byteLength).assertEqual(0);
+      expect(empty.byteLength).assertEqual(0);
+      expect(result !== empty).assertTrue();
     });
 
     /**
@@ -1550,12 +1551,12 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(1);
-        const view = new Int8Array(source);
-        view[0] = 127;
-        const result = ArrayBuffer.from(source);
-        expect(result.byteLength).assertEqual(1);
-        expect(result.at(0)).assertEqual(source.at(0));
+      const source = new ArrayBuffer(1);
+      const view = new Int8Array(source);
+      view[0] = 127;
+      const result = ArrayBuffer.from(source);
+      expect(result.byteLength).assertEqual(1);
+      expect(result.at(0)).assertEqual(source.at(0));
     });
 
     /**
@@ -1567,12 +1568,12 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(4);
-        const view = new Int8Array(source);
-        view[0] = 1;
-        view[1] = 2;
-        const result = ArrayBuffer.from(source, 1, 1);
-        expect(result.byteLength).assertEqual(1);
+      const source = new ArrayBuffer(4);
+      const view = new Int8Array(source);
+      view[0] = 1;
+      view[1] = 2;
+      const result = ArrayBuffer.from(source, 1, 1);
+      expect(result.byteLength).assertEqual(1);
     });
 
     /**
@@ -1584,13 +1585,13 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
-        const view = new Int8Array(source);
-        for (let i: int = 0; i < 8; i++) {
-          view[i] = i;
-        }
-        const result = ArrayBuffer.from(source, 2, 3);
-        expect(result.byteLength).assertEqual(3);
+      const source = new ArrayBuffer(8);
+      const view = new Int8Array(source);
+      for (let i: int = 0; i < 8; i++) {
+        view[i] = i;
+      }
+      const result = ArrayBuffer.from(source, 2, 3);
+      expect(result.byteLength).assertEqual(3);
     });
 
     /**
@@ -1602,14 +1603,14 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        try {
-          const result = ArrayBuffer.from((undefined as ESObject) as ArrayBuffer);
-        } catch (e) {
-          expect(e !== null && e !== undefined).assertTrue();
-          Utils.assertThrownErrorCodeIsNumber(e);
-          return;
-        }
-        expect(true).assertFail();
+      try {
+        const result = ArrayBuffer.from((undefined as ESObject) as ArrayBuffer);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        return;
+      }
+      expect(true).assertFail();
     });
 
     /**
@@ -1621,14 +1622,14 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        try {
-          const result = ArrayBuffer.from((undefined as ESObject) as ArrayBuffer, 0, 2);
-        } catch (e) {
-          expect(e !== null && e !== undefined).assertTrue();
-          Utils.assertThrownErrorCodeIsNumber(e);
-          return;
-        }
-        expect(true).assertFail();
+      try {
+        const result = ArrayBuffer.from((undefined as ESObject) as ArrayBuffer, 0, 2);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        return;
+      }
+      expect(true).assertFail();
     });
 
     /**
@@ -1640,16 +1641,16 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
+      const source = new ArrayBuffer(8);
 
-        try {
-          const result = ArrayBuffer.from(source, (null as ESObject) as int, 1);
-        } catch (e) {
-          expect(e !== null && e !== undefined).assertTrue();
-          Utils.assertThrownErrorCodeIsNumber(e);
-          return;
-        }
-        expect(true).assertFail();
+      try {
+        const result = ArrayBuffer.from(source, (null as ESObject) as int, 1);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        return;
+      }
+      expect(true).assertFail();
     });
 
     /**
@@ -1701,15 +1702,15 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
-        try {
-          const result = ArrayBuffer.from(source, 3, (null as ESObject) as int);
-        } catch (e) {
-          expect(e !== null && e !== undefined).assertTrue();
-          Utils.assertThrownErrorCodeIsNumber(e);
-          return;
-        }
-        expect(true).assertFail();
+      const source = new ArrayBuffer(8);
+      try {
+        const result = ArrayBuffer.from(source, 3, (null as ESObject) as int);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        return;
+      }
+      expect(true).assertFail();
     });
 
     /**
@@ -1721,15 +1722,15 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
-        try {
-          const result = ArrayBuffer.from(source, source.byteLength, 1);
-        } catch (e) {
-          expect(e !== null && e !== undefined).assertTrue();
-          Utils.assertThrownErrorCodeIsNumber(e);
-          return;
-        }
-        expect(true).assertFail();
+      const source = new ArrayBuffer(8);
+      try {
+        const result = ArrayBuffer.from(source, source.byteLength, 1);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        return;
+      }
+      expect(true).assertFail();
     });
 
     /**
@@ -1741,15 +1742,15 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
-        try {
-          const result = ArrayBuffer.from(source, source.byteLength + 10, 1);
-        } catch (e) {
-          expect(e !== null && e !== undefined).assertTrue();
-          Utils.assertThrownErrorCodeIsNumber(e);
-          return;
-        }
-        expect(true).assertFail();
+      const source = new ArrayBuffer(8);
+      try {
+        const result = ArrayBuffer.from(source, source.byteLength + 10, 1);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        return;
+      }
+      expect(true).assertFail();
     });
 
     /**
@@ -1761,15 +1762,15 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
-        try {
-          const result = ArrayBuffer.from(source, 0, 10);
-        } catch (e) {
-          expect(e !== null && e !== undefined).assertTrue();
-          Utils.assertThrownErrorCodeIsNumber(e);
-          return;
-        }
-        expect(true).assertFail();
+      const source = new ArrayBuffer(8);
+      try {
+        const result = ArrayBuffer.from(source, 0, 10);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        return;
+      }
+      expect(true).assertFail();
     });
 
     /**
@@ -1781,15 +1782,15 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
-        try {
-          const result = Utils.fromArrayBufferWithOffset(source, 10);
-        } catch (e) {
-          expect(e !== null && e !== undefined).assertTrue();
-          Utils.assertThrownErrorCodeIsNumber(e);
-          return;
-        }
-        expect(true).assertFail();
+      const source = new ArrayBuffer(8);
+      try {
+        const result = Utils.fromArrayBufferWithOffset(source, 10);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        return;
+      }
+      expect(true).assertFail();
     });
 
     /**
@@ -1862,18 +1863,18 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(16);
-        const view = new Int8Array(source);
-        view[5] = 55;
-        try {
-          const result = ArrayBuffer.from(source, Double.toInt(Number.POSITIVE_INFINITY), 4);
-        } catch (e) {
-          expect(e !== null && e !== undefined).assertTrue();
-          Utils.assertThrownErrorCodeIsNumber(e);
-          expect(source.at(5)).assertEqual(55);
-          return;
-        }
-        expect(true).assertFail();
+      const source = new ArrayBuffer(16);
+      const view = new Int8Array(source);
+      view[5] = 55;
+      try {
+        const result = ArrayBuffer.from(source, Double.toInt(Number.POSITIVE_INFINITY), 4);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        expect(source.at(5)).assertEqual(55);
+        return;
+      }
+      expect(true).assertFail();
     });
 
     /**
@@ -1885,15 +1886,15 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
-        try {
-          const result = ArrayBuffer.from(source, 0, Infinity);
-        } catch (e) {
-          expect(e !== null && e !== undefined).assertTrue();
-          Utils.assertThrownErrorCodeIsNumber(e);
-          return;
-        }
-        expect(true).assertFail();
+      const source = new ArrayBuffer(8);
+      try {
+        const result = ArrayBuffer.from(source, 0, Infinity);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        return;
+      }
+      expect(true).assertFail();
     });
 
     /**
@@ -1905,16 +1906,16 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(16);
-        try {
-          const result = ArrayBuffer.from(source, Double.toInt(Number.NEGATIVE_INFINITY), 4);
-        } catch (e) {
-          expect(e !== null && e !== undefined).assertTrue();
-          Utils.assertThrownErrorCodeIsNumber(e);
-          expect(source.byteLength).assertEqual(16);
-          return;
-        }
-        expect(true).assertFail();
+      const source = new ArrayBuffer(16);
+      try {
+        const result = ArrayBuffer.from(source, Double.toInt(Number.NEGATIVE_INFINITY), 4);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        expect(source.byteLength).assertEqual(16);
+        return;
+      }
+      expect(true).assertFail();
     });
 
     /**
@@ -1926,16 +1927,16 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(16);
-        try {
-          const result = ArrayBuffer.from(source, 0, -Infinity);
-        } catch (e) {
-          expect(e !== null && e !== undefined).assertTrue();
-          Utils.assertThrownErrorCodeIsNumber(e);
-          expect(source.byteLength).assertEqual(16);
-          return;
-        }
-        expect(true).assertFail();
+      const source = new ArrayBuffer(16);
+      try {
+        const result = ArrayBuffer.from(source, 0, -Infinity);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        expect(source.byteLength).assertEqual(16);
+        return;
+      }
+      expect(true).assertFail();
     });
 
     /**
@@ -1966,16 +1967,16 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(16);
-        try {
-          const result = ArrayBuffer.from((("not_arraybuffer" as Object) as ArrayBuffer));
-        } catch (e) {
-          expect(e !== null && e !== undefined).assertTrue();
-          Utils.assertThrownErrorCodeIsNumber(e);
-          expect(source.byteLength).assertEqual(16);
-          return;
-        }
-        expect(true).assertFail();
+      const source = new ArrayBuffer(16);
+      try {
+        const result = ArrayBuffer.from((("not_arraybuffer" as Object) as ArrayBuffer));
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        expect(source.byteLength).assertEqual(16);
+        return;
+      }
+      expect(true).assertFail();
     });
 
     /**
@@ -2025,14 +2026,15 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        try {
-          const result = ArrayBuffer.from(((new ArrayBufferFromSevenPlainForMindmap() as Object) as ESObject) as ArrayBuffer);
-        } catch (e) {
-          expect(e !== null && e !== undefined).assertTrue();
-          Utils.assertThrownErrorCodeIsNumber(e);
-          return;
-        }
-        expect(true).assertFail();
+      try {
+        const result =
+          ArrayBuffer.from(((new ArrayBufferFromSevenPlainForMindmap() as Object) as ESObject) as ArrayBuffer);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        return;
+      }
+      expect(true).assertFail();
     });
 
     /**
@@ -2044,16 +2046,16 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
+      const source = new ArrayBuffer(8);
 
-        try {
-          const result = ArrayBuffer.from(source, (("0" as Object) as ESObject) as int, 4);
-        } catch (e) {
-          expect(e !== null && e !== undefined).assertTrue();
-          Utils.assertThrownErrorCodeIsNumber(e);
-          return;
-        }
-        expect(true).assertFail();
+      try {
+        const result = ArrayBuffer.from(source, (("0" as Object) as ESObject) as int, 4);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        return;
+      }
+      expect(true).assertFail();
     });
 
     /**
@@ -2065,16 +2067,16 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
+      const source = new ArrayBuffer(8);
 
-        try {
-          const result = ArrayBuffer.from(source, ((true as Object) as ESObject) as int, 4);
-        } catch (e) {
-          expect(e !== null && e !== undefined).assertTrue();
-          Utils.assertThrownErrorCodeIsNumber(e);
-          return;
-        }
-        expect(true).assertFail();
+      try {
+        const result = ArrayBuffer.from(source, ((true as Object) as ESObject) as int, 4);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        return;
+      }
+      expect(true).assertFail();
     });
 
     /**
@@ -2086,16 +2088,16 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
+      const source = new ArrayBuffer(8);
 
-        try {
-          const result = ArrayBuffer.from(source, 0, ((true as Object) as ESObject) as int);
-        } catch (e) {
-          expect(e !== null && e !== undefined).assertTrue();
-          Utils.assertThrownErrorCodeIsNumber(e);
-          return;
-        }
-        expect(true).assertFail();
+      try {
+        const result = ArrayBuffer.from(source, 0, ((true as Object) as ESObject) as int);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        return;
+      }
+      expect(true).assertFail();
     });
 
     /**
@@ -2121,17 +2123,17 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
+      const source = new ArrayBuffer(8);
 
-        try {
-          const dv = new DataView(source);
-          const result = ArrayBuffer.from((dv as Object) as ArrayBuffer);
-        } catch (e) {
-          expect(e !== null && e !== undefined).assertTrue();
-          Utils.assertThrownErrorCodeIsNumber(e);
-          return;
-        }
-        expect(true).assertFail();
+      try {
+        const dv = new DataView(source);
+        const result = ArrayBuffer.from((dv as Object) as ArrayBuffer);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        return;
+      }
+      expect(true).assertFail();
     });
 
     /**
@@ -2143,17 +2145,17 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(12);
+      const source = new ArrayBuffer(12);
 
-        try {
-          ArrayBuffer.from(source, 0, (("4" as Object) as ESObject) as int);
-        } catch (e) {
-          expect(e !== null && e !== undefined).assertTrue();
-          Utils.assertThrownErrorCodeIsNumber(e);
-          expect(source.byteLength).assertEqual(12);
-          return;
-        }
-        expect(true).assertFail();
+      try {
+        ArrayBuffer.from(source, 0, (("4" as Object) as ESObject) as int);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        expect(source.byteLength).assertEqual(12);
+        return;
+      }
+      expect(true).assertFail();
     });
 
     /**
@@ -2165,17 +2167,17 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(12);
+      const source = new ArrayBuffer(12);
 
-        try {
-          ArrayBuffer.from(source, 0, ((true as Object) as ESObject) as int);
-        } catch (e) {
-          expect(e !== null && e !== undefined).assertTrue();
-          Utils.assertThrownErrorCodeIsNumber(e);
-          expect(source.byteLength).assertEqual(12);
-          return;
-        }
-        expect(true).assertFail();
+      try {
+        ArrayBuffer.from(source, 0, ((true as Object) as ESObject) as int);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        expect(source.byteLength).assertEqual(12);
+        return;
+      }
+      expect(true).assertFail();
     });
 
     /**
@@ -2201,17 +2203,17 @@ export default function arrayBufferFromSevenTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const source = new ArrayBuffer(8);
+      const source = new ArrayBuffer(8);
 
-        try {
-          const dv = new DataView(source);
-          ArrayBuffer.from((dv as Object) as ArrayBuffer);
-        } catch (e) {
-          expect(e !== null && e !== undefined).assertTrue();
-          Utils.assertThrownErrorCodeIsNumber(e);
-          return;
-        }
-        expect(true).assertFail();
+      try {
+        const dv = new DataView(source);
+        ArrayBuffer.from((dv as Object) as ArrayBuffer);
+      } catch (e) {
+        expect(e !== null && e !== undefined).assertTrue();
+        Utils.assertThrownErrorCodeIsNumber(e);
+        return;
+      }
+      expect(true).assertFail();
     });
 
     return;

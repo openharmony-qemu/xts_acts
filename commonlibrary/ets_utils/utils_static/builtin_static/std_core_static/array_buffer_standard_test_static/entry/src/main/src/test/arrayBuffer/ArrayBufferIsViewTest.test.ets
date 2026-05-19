@@ -815,167 +815,167 @@ export default function arrayBufferIsViewTest(): void {
       }
     });
 
-      /**
-       * @tc.name testArrayBufferIsView0052
-       * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_5200
-       * @tc.desc 验证 ArrayBuffer.isView(3.14) 在当前场景执行成功，空值有效性判断符合预期。
-       * @tc.type FUNCTION
-       * @tc.size MEDIUMTEST
-       * @tc.level LEVEL2
-       */
-      it('testArrayBufferIsView0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    /**
+     * @tc.name testArrayBufferIsView0052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_5200
+     * @tc.desc 验证 ArrayBuffer.isView(3.14) 在当前场景执行成功，空值有效性判断符合预期。
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferIsView0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        let result = ArrayBuffer.isView(3.14);
+        expect(result).assertFalse()
+      } catch (e) {
         try {
           let result = ArrayBuffer.isView(3.14);
           expect(result).assertFalse()
         } catch (e) {
-          try {
-            let result = ArrayBuffer.isView(3.14);
-            expect(result).assertFalse()
-          } catch (e) {
-            expect(e !== null && e !== undefined).assertTrue();
-            Utils.assertThrownErrorCodeIsNumber(e);
-          }
+          expect(e !== null && e !== undefined).assertTrue();
+          Utils.assertThrownErrorCodeIsNumber(e);
         }
-      });
+      }
+    });
 
-        /**
-         * @tc.name testArrayBufferIsView0053
-         * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_5300
-         * @tc.desc 验证 ArrayBuffer.isView(-1) 在当前场景执行成功，空值有效性判断符合预期。
-         * @tc.type FUNCTION
-         * @tc.size MEDIUMTEST
-         * @tc.level LEVEL2
-         */
-        it('testArrayBufferIsView0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-          try {
-            let result = ArrayBuffer.isView(-1);
-            expect(result).assertFalse()
-          } catch (e) {
-            try {
-              let result = ArrayBuffer.isView(-1);
-              expect(result).assertFalse()
-            } catch (e) {
-              expect(e !== null && e !== undefined).assertTrue();
-              Utils.assertThrownErrorCodeIsNumber(e);
-            }
-          }
-        });
+    /**
+     * @tc.name testArrayBufferIsView0053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_5300
+     * @tc.desc 验证 ArrayBuffer.isView(-1) 在当前场景执行成功，空值有效性判断符合预期。
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferIsView0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        let result = ArrayBuffer.isView(-1);
+        expect(result).assertFalse()
+      } catch (e) {
+        try {
+          let result = ArrayBuffer.isView(-1);
+          expect(result).assertFalse()
+        } catch (e) {
+          expect(e !== null && e !== undefined).assertTrue();
+          Utils.assertThrownErrorCodeIsNumber(e);
+        }
+      }
+    });
 
-          /**
-           * @tc.name testArrayBufferIsView0054
-           * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_5400
-           * @tc.desc 验证 ArrayBuffer.isView(Infinity) 在当前场景执行成功，空值有效性判断符合预期。
-           * @tc.type FUNCTION
-           * @tc.size MEDIUMTEST
-           * @tc.level LEVEL2
-           */
-          it('testArrayBufferIsView0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-            try {
-              let result = ArrayBuffer.isView(Infinity);
-              expect(result).assertFalse()
-            } catch (e) {
-              try {
-                let result = ArrayBuffer.isView(Infinity);
-                expect(result).assertFalse()
-              } catch (e) {
-                expect(e !== null && e !== undefined).assertTrue();
-                Utils.assertThrownErrorCodeIsNumber(e);
-              }
-            }
-          });
+    /**
+     * @tc.name testArrayBufferIsView0054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_5400
+     * @tc.desc 验证 ArrayBuffer.isView(Infinity) 在当前场景执行成功，空值有效性判断符合预期。
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferIsView0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        let result = ArrayBuffer.isView(Infinity);
+        expect(result).assertFalse()
+      } catch (e) {
+        try {
+          let result = ArrayBuffer.isView(Infinity);
+          expect(result).assertFalse()
+        } catch (e) {
+          expect(e !== null && e !== undefined).assertTrue();
+          Utils.assertThrownErrorCodeIsNumber(e);
+        }
+      }
+    });
 
-            /**
-             * @tc.name testArrayBufferIsView0055
-             * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_5500
-             * @tc.desc 验证 ArrayBuffer.isView(-Infinity) 在当前场景执行成功，空值有效性判断符合预期。
-             * @tc.type FUNCTION
-             * @tc.size MEDIUMTEST
-             * @tc.level LEVEL2
-             */
-            it('testArrayBufferIsView0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-              try {
-                let result = ArrayBuffer.isView(-Infinity);
-                expect(result).assertFalse()
-              } catch (e) {
-                try {
-                  let result = ArrayBuffer.isView(-Infinity);
-                  expect(result).assertFalse()
-                } catch (e) {
-                  expect(e !== null && e !== undefined).assertTrue();
-                  Utils.assertThrownErrorCodeIsNumber(e);
-                }
-              }
-            });
+    /**
+     * @tc.name testArrayBufferIsView0055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_5500
+     * @tc.desc 验证 ArrayBuffer.isView(-Infinity) 在当前场景执行成功，空值有效性判断符合预期。
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferIsView0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        let result = ArrayBuffer.isView(-Infinity);
+        expect(result).assertFalse()
+      } catch (e) {
+        try {
+          let result = ArrayBuffer.isView(-Infinity);
+          expect(result).assertFalse()
+        } catch (e) {
+          expect(e !== null && e !== undefined).assertTrue();
+          Utils.assertThrownErrorCodeIsNumber(e);
+        }
+      }
+    });
 
-              /**
-               * @tc.name testArrayBufferIsView0056
-               * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_5600
-               * @tc.desc 验证 ArrayBuffer.isView(true) 在当前场景执行成功，空值有效性判断符合预期。
-               * @tc.type FUNCTION
-               * @tc.size MEDIUMTEST
-               * @tc.level LEVEL2
-               */
-              it('testArrayBufferIsView0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-                try {
-                  let result = ArrayBuffer.isView(true);
-                  expect(result).assertFalse()
-                } catch (e) {
-                  try {
-                    let result = ArrayBuffer.isView(true);
-                    expect(result).assertFalse()
-                  } catch (e) {
-                    expect(e !== null && e !== undefined).assertTrue();
-                    Utils.assertThrownErrorCodeIsNumber(e);
-                  }
-                }
-              });
+    /**
+     * @tc.name testArrayBufferIsView0056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_5600
+     * @tc.desc 验证 ArrayBuffer.isView(true) 在当前场景执行成功，空值有效性判断符合预期。
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferIsView0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        let result = ArrayBuffer.isView(true);
+        expect(result).assertFalse()
+      } catch (e) {
+        try {
+          let result = ArrayBuffer.isView(true);
+          expect(result).assertFalse()
+        } catch (e) {
+          expect(e !== null && e !== undefined).assertTrue();
+          Utils.assertThrownErrorCodeIsNumber(e);
+        }
+      }
+    });
 
-                /**
-                 * @tc.name testArrayBufferIsView0057
-                 * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_5700
-                 * @tc.desc 验证 ArrayBuffer.isView(view) 在当前场景执行成功，视图识别判断符合预期。
-                 * @tc.type FUNCTION
-                 * @tc.size MEDIUMTEST
-                 * @tc.level LEVEL2
-                 */
-                it('testArrayBufferIsView0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-                  const buffer = new ArrayBuffer(0);
-                  const view = new DataView(buffer);
-                  let result = ArrayBuffer.isView(view);
-                  expect(result).assertTrue()
-                  expect(result).assertTrue()
-                });
+    /**
+     * @tc.name testArrayBufferIsView0057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_5700
+     * @tc.desc 验证 ArrayBuffer.isView(view) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferIsView0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(0);
+      const view = new DataView(buffer);
+      let result = ArrayBuffer.isView(view);
+      expect(result).assertTrue()
+      expect(result).assertTrue()
+    });
 
-                /**
-                 * @tc.name testArrayBufferIsView0058
-                 * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_5800
-                 * @tc.desc 验证 ArrayBuffer.isView(arr) 在当前场景执行成功，视图识别判断符合预期。
-                 * @tc.type FUNCTION
-                 * @tc.size MEDIUMTEST
-                 * @tc.level LEVEL2
-                 */
-                it('testArrayBufferIsView0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-                  const buffer = new ArrayBuffer(0);
-                  const arr = new Int8Array(buffer);
-                  let result = ArrayBuffer.isView(arr);
-                  expect(result).assertTrue()
-                  expect(result).assertTrue()
-                });
+    /**
+     * @tc.name testArrayBufferIsView0058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_5800
+     * @tc.desc 验证 ArrayBuffer.isView(arr) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferIsView0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(0);
+      const arr = new Int8Array(buffer);
+      let result = ArrayBuffer.isView(arr);
+      expect(result).assertTrue()
+      expect(result).assertTrue()
+    });
 
-                /**
-                 * @tc.name testArrayBufferIsView0059
-                 * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_5900
-                 * @tc.desc 验证 ArrayBuffer.isView(buffer) 在当前场景执行成功，视图识别判断符合预期。
-                 * @tc.type FUNCTION
-                 * @tc.size MEDIUMTEST
-                 * @tc.level LEVEL2
-                 */
-                it('testArrayBufferIsView0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-                  const buffer = new ArrayBuffer(0);
-                  let result = ArrayBuffer.isView(buffer);
-                  expect(result).assertFalse()
-                  expect(result).assertFalse()
-                });
-                return;
-              });
-            }
+    /**
+     * @tc.name testArrayBufferIsView0059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_5900
+     * @tc.desc 验证 ArrayBuffer.isView(buffer) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferIsView0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(0);
+      let result = ArrayBuffer.isView(buffer);
+      expect(result).assertFalse()
+      expect(result).assertFalse()
+    });
+    return;
+  });
+}

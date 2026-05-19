@@ -313,7 +313,9 @@ export default function arrayBufferFromThreeTest(): void {
      */
     it('testArrayBufferFromThree0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let u8 = new Uint8Array(3);
-      u8[0] = 1; u8[1] = 2; u8[2] = 3;
+      u8[0] = 1;
+      u8[1] = 2;
+      u8[2] = 3;
       const result = ArrayBuffer.from(u8);
       expect(result.byteLength).assertEqual(3);
     });
