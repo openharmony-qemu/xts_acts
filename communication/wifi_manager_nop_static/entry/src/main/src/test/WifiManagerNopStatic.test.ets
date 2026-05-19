@@ -285,8 +285,8 @@ export default function wifiManagerTest() {
           hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
           expect().assertFail();
         }
+        done();
       });
-      done();
     });
 
     /**
@@ -342,8 +342,8 @@ export default function wifiManagerTest() {
           hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
           expect().assertFail();
         }
+        done();
       });
-      done();
     });
 
     /**
@@ -399,8 +399,8 @@ export default function wifiManagerTest() {
           hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
           expect().assertFail();
         }
+        done();
       });
-      done();
     });
 
     /**
@@ -456,8 +456,8 @@ export default function wifiManagerTest() {
           hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
           expect().assertFail();
         }
+        done();
       });
-      done();
     });
 
     /**
@@ -513,8 +513,8 @@ export default function wifiManagerTest() {
           hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
           expect().assertFail();
         }
+        done();
       });
-      done();
     });
 
     /**
@@ -586,8 +586,8 @@ export default function wifiManagerTest() {
           hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
           expect().assertFail();
         }
+        done();
       });
-      done();
     });
 
     /**
@@ -659,8 +659,8 @@ export default function wifiManagerTest() {
           hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
           expect().assertFail();
         }
+        done();
       });
-      done();
     });
 
     /**
@@ -716,8 +716,8 @@ export default function wifiManagerTest() {
           hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
           expect().assertFail();
         }
+        done();
       });
-      done();
     });
 
     /**
