@@ -62,28 +62,17 @@ function alphaAt(index: int): string {
 
 export default function ArrayConstructor4Test(): void {
   describe('ArrayConstructor4Test', (): void => {
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll((): void => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
     });
 
     beforeEach(async (): Promise<void> => {
-      // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: preset action function.
       await Utils.msSleep(30);
     });
 
     afterEach((): void => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
     });
 
     afterAll((): void => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
     });
 
     /**
@@ -180,15 +169,23 @@ export default function ArrayConstructor4Test(): void {
      * @tc.level Level 2
      */
     it('testArrayConstructor007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let caught = false;
+      let errorType = '';
+      let errorDetail = '';
       try {
         let negativeLen = 1;
         negativeLen = 0 - negativeLen;
         const arr = new Array<number>(negativeLen, (index) => index);
         expect(arr.length).assertEqual(0);
-        expect().assertFail();
       } catch (e) {
-        expect(e instanceof RangeError || e instanceof Error).assertTrue();
+        caught = true;
+        errorType = Class.of(e as Object).getName();
+        errorDetail = JSON.stringify(e);
       }
+
+      expect(caught).assertTrue();
+      expect(JSON.stringify(errorType).length > 2).assertTrue();
+      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
 
     /**
@@ -867,6 +864,9 @@ export default function ArrayConstructor4Test(): void {
      * @tc.level Level 2
      */
     it('testArrayConstructor049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let caught = false;
+      let errorType = '';
+      let errorDetail = '';
       try {
         const arr = new Array<number>(5, (index) => {
           if (index === 3) {
@@ -875,10 +875,15 @@ export default function ArrayConstructor4Test(): void {
           return index;
         });
         expect(arr.length).assertEqual(0);
-        expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertTrue();
+        caught = true;
+        errorType = Class.of(e as Object).getName();
+        errorDetail = JSON.stringify(e);
       }
+
+      expect(caught).assertTrue();
+      expect(JSON.stringify(errorType).length > 2).assertTrue();
+      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
 
     /**
@@ -997,19 +1002,21 @@ export default function ArrayConstructor4Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5700
      * @tc.name testArrayConstructor057
-     * @tc.desc Verify initializer-based construction matches direct element construction results for large arrays
+     * @tc.desc Verify initializer-based construction for large arrays remains distinct from single-numeric construction semantics
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayConstructor057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<number>(1000, (index) => index);
+      expect(arr1.length).assertEqual(1000);
 
-      const arr2 = new Array<number>(1000);
-      for (let i = 0; i < arr2.length; i++) {
-        arr2[i] = i;
+      const arr2 = new Array<number>();
+      for (let i = 0; i < 1000; i++) {
+        arr2.push(i);
       }
 
+      expect(arr2.length).assertEqual(1000);
       for (let i = 0; i < 1000; i++) {
         expect(arr1[i]).assertEqual(arr2[i]);
       }

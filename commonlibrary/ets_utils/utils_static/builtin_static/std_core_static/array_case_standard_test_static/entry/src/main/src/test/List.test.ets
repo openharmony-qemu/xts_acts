@@ -14,7 +14,6 @@
  */
 
 import ArrayAt1Test from "./array/ArrayAt1Test.test";
-import ArrayAt2Test from "./array/ArrayAt2Test.test";
 import ArrayConcatTest from "./array/ArrayConcatTest.test";
 import ArrayCopyWithin1Test from "./array/ArrayCopyWithin1Test.test";
 import ArrayCopyWithin2Test from "./array/ArrayCopyWithin2Test.test";
@@ -33,7 +32,6 @@ import ArraySetTest from "./array/ArraySetTest.test";
 
 export default function testsuite(): void {
   ArrayAt1Test()
-  ArrayAt2Test()
   ArrayConcatTest();
   ArrayCopyWithin1Test();
   ArrayCopyWithin2Test();

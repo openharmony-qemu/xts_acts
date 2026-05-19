@@ -64,28 +64,17 @@ function buildSequentialNumbers015(count: number): Array<number> {
 
 export default function ArrayConstructor2Test(): void {
   describe('ArrayConstructor2Test', (): void => {
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll((): void => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
     });
 
     beforeEach(async (): Promise<void> => {
-      // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: preset action function.
       await Utils.msSleep(30);
     });
 
     afterEach((): void => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
     });
 
     afterAll((): void => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
     });
 
     /**
@@ -216,12 +205,20 @@ export default function ArrayConstructor2Test(): void {
      */
     it('testArrayConstructor008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>();
+      let caught = false;
+      let errorType = '';
+      let errorDetail = '';
       try {
         arr[0];
-        expect().assertFail();
       } catch (e) {
-        assertNotNull(e);
+        caught = true;
+        errorType = Class.of(e as Object).getName();
+        errorDetail = JSON.stringify(e);
       }
+
+      expect(caught).assertTrue();
+      expect(JSON.stringify(errorType).length > 2).assertTrue();
+      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
 
     /**
@@ -508,12 +505,20 @@ export default function ArrayConstructor2Test(): void {
       const filtered = arr.filter((v: number): boolean => v > 0);
       expect(filtered.length).assertEqual(0);
 
+      let caught = false;
+      let errorType = '';
+      let errorDetail = '';
       try {
         arr.reduce((acc: number, v: number): number => acc + v);
-        expect().assertFail();
       } catch (e) {
-        assertNotNull(e);
+        caught = true;
+        errorType = Class.of(e as Object).getName();
+        errorDetail = JSON.stringify(e);
       }
+
+      expect(caught).assertTrue();
+      expect(JSON.stringify(errorType).length > 2).assertTrue();
+      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
 
       const sum = arr.reduce((acc: number, v: number): number => acc + v, 0);
       expect(sum).assertEqual(0);
@@ -606,7 +611,7 @@ export default function ArrayConstructor2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_2900
      * @tc.name testArrayConstructor029
-     * @tc.desc Verify empty arrays represent the minimal array state compared with large initialized arrays
+     * @tc.desc Verify default construction differs from passing a single numeric argument
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -614,11 +619,14 @@ export default function ArrayConstructor2Test(): void {
     it('testArrayConstructor029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const emptyArr = new Array<number>();
       const sizedArr = new Array<number>(100);
-      for (let i = 0; i < 100; i++) {
+      expect(sizedArr.length).assertEqual(1);
+      expect(sizedArr[0]).assertEqual(100);
+      for (let i = 0; i < sizedArr.length; i++) {
         sizedArr[i] = i;
       }
       expect(emptyArr.length).assertEqual(0);
-      expect(sizedArr.length).assertEqual(100);
+      expect(sizedArr.length).assertEqual(1);
+      expect(sizedArr[0]).assertEqual(0);
     });
 
     /**
@@ -644,7 +652,7 @@ export default function ArrayConstructor2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_3100
      * @tc.name testArrayConstructor031
-     * @tc.desc Verify constructor choice can match dynamic growth and different initialized scenarios
+     * @tc.desc Verify constructor choice still distinguishes dynamic growth single-numeric and multi-item scenarios
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -656,13 +664,16 @@ export default function ArrayConstructor2Test(): void {
       }
 
       const fixedArr = new Array<number>(100);
-      for (let i = 0; i < 100; i++) {
+      expect(fixedArr.length).assertEqual(1);
+      expect(fixedArr[0]).assertEqual(100);
+      for (let i = 0; i < fixedArr.length; i++) {
         fixedArr[i] = i;
       }
 
       const initArr = new Array<number>(1, 2, 3, 4, 5);
       expect(dynamicArr.length).assertEqual(100);
-      expect(fixedArr.length).assertEqual(100);
+      expect(fixedArr.length).assertEqual(1);
+      expect(fixedArr[0]).assertEqual(0);
       expect(initArr.length).assertEqual(5);
     });
 
@@ -693,12 +704,20 @@ export default function ArrayConstructor2Test(): void {
       expect(arr.length).assertEqual(0);
       expect(arr.length > 0).assertFalse();
 
+      let caught = false;
+      let errorType = '';
+      let errorDetail = '';
       try {
         arr[0];
-        expect().assertFail();
       } catch (e) {
-        assertNotNull(e);
+        caught = true;
+        errorType = Class.of(e as Object).getName();
+        errorDetail = JSON.stringify(e);
       }
+
+      expect(caught).assertTrue();
+      expect(JSON.stringify(errorType).length > 2).assertTrue();
+      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
   });
 }
