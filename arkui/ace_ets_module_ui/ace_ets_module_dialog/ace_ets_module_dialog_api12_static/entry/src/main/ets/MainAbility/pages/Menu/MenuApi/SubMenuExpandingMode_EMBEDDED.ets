@@ -16,7 +16,6 @@
 import {
   Entry,
   Component,
-  $r,
   Column,
   ColumnOptions,
   Text,

@@ -28,7 +28,6 @@ import router from '@ohos.router';
 import {
   Component,
   Driver,
-  Component,
   UiWindow,
   ON,
   MatchPattern,
