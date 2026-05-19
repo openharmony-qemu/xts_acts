@@ -1931,5 +1931,1877 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
           expect(Number(error.code)).assertEqual(401);
         });
     })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_9700
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_9700
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_9700', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_9700';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.NV12;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.YCBCR_P010;
+      await createUnpremultipliedPixelMapPromiseTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_9800
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_9800
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_9800', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_9800';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.NV12;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.YCRCB_P010;
+      await createUnpremultipliedPixelMapPromiseTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_9900
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_9900
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_9900', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_9900';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.NV12;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.ASTC_4x4;
+      await createUnpremultipliedPixelMapPromiseTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10000
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10000
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10000', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10000';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ASTC_4x4;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_565;
+      await createUnpremultipliedPixelMapPromiseTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10100
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10100
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10100';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ASTC_4x4;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.BGRA_8888;
+      await createUnpremultipliedPixelMapPromiseTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(62980103);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10200
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10200
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10200', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10200';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ASTC_4x4;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_888;
+      await createUnpremultipliedPixelMapPromiseTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10300
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10300
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10300', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10300';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ASTC_4x4;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.ALPHA_8;
+      await createUnpremultipliedPixelMapPromiseTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10400
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10400
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10400', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10400';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ASTC_4x4;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_F16;
+      await createUnpremultipliedPixelMapPromiseTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10500
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10500
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10500', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10500';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ASTC_4x4;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.NV21;
+      await createUnpremultipliedPixelMapPromiseTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10600
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10600
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10600', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10600';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ASTC_4x4;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.NV12;
+      await createUnpremultipliedPixelMapPromiseTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10700
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10700
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10700', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10700';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ASTC_4x4;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_1010102;
+      await createUnpremultipliedPixelMapPromiseTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(62980103);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10800
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10800
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10800', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10800';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ASTC_4x4;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.YCBCR_P010;
+      await createUnpremultipliedPixelMapPromiseTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10900
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10900
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10900', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_10900';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ASTC_4x4;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.YCRCB_P010;
+      await createUnpremultipliedPixelMapPromiseTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11000
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11000
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11000', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11000';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ARGB_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.UNKNOWN;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(62980103);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11100
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11100
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11100';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ARGB_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_565;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11200
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11200
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11200', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11200';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ARGB_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_8888;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(62980103);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11300
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11300
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11300', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11300';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ARGB_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.BGRA_8888;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(62980103);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11400
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11400
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11400', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11400';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ARGB_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_888;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11500
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11500
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11500', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11500';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ARGB_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.ALPHA_8;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11600
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11600
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11600', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11600';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ARGB_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_F16;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11700
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11700
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11700', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11700';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ARGB_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.NV21;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11800
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11800
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11800', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11800';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ARGB_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.NV12;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11900
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11900
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11900', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_11900';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ARGB_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_1010102;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(62980103);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12000
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12000
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12000', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12000';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ARGB_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.YCBCR_P010;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12100
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12100
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12100';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ARGB_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.YCRCB_P010;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12200
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12200
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12200', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12200';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ARGB_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.ASTC_4x4;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(62980103);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12300
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12300
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12300', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12300';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGB_565;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.UNKNOWN;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12400
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12400
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12400', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12400';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGB_565;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_565;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12500
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12500
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12500', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12500';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGB_565;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_8888;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12600
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12600
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12600', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12600';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGB_565;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.BGRA_8888;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12700
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12700
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12700', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12700';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGB_565;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_888;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12800
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12800
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12800', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12800';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGB_565;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.ALPHA_8;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12900
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12900
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12900', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_12900';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGB_565;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_F16;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13000
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13000
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13000', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13000';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGB_565;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.NV21;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13100
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13100
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13100';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGB_565;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.NV12;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13200
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13200
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13200', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13200';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGB_565;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_1010102;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13300
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13300
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13300', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13300';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGB_565;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.YCBCR_P010;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13400
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13400
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13400', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13400';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGB_565;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.YCRCB_P010;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13500
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13500
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13500', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13500';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGB_565;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.ASTC_4x4;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13600
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13600
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13600', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13600';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGBA_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_565;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13700
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13700
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13700', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13700';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGBA_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.BGRA_8888;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(62980103);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13800
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13800
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13800', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13800';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGBA_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_888;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13900
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13900
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13900', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_13900';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGBA_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.ALPHA_8;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14000
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14000
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14000', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14000';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGBA_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_F16;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14100
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14100
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14100';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGBA_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.NV21;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14200
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14200
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14200', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14200';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGBA_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.NV12;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14300
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14300
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14300', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14300';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGBA_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_1010102;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(62980103);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14400
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14400
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14400', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14400';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGBA_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.YCBCR_P010;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14500
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14500
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14500', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14500';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGBA_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.YCRCB_P010;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14600
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14600
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14600', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14600';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.BGRA_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.UNKNOWN;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(62980103);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14700
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14700
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14700', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14700';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.BGRA_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_565;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14800
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14800
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14800', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14800';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.BGRA_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_8888;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(62980103);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14900
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14900
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14900', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_14900';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.BGRA_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_888;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15000
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15000
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15000', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15000';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.BGRA_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.ALPHA_8;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15100
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15100
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15100';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.BGRA_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_F16;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15200
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15200
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15200', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15200';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.BGRA_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.NV21;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15300
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15300
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15300', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15300';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.BGRA_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.NV12;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15400
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15400
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15400', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15400';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.BGRA_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_1010102;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(62980103);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15500
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15500
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15500', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15500';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.BGRA_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.YCBCR_P010;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15600
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15600
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15600', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15600';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.BGRA_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.YCRCB_P010;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15700
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15700
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15700', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15700';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.BGRA_8888;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.ASTC_4x4;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(62980103);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15800
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15800
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15800', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15800';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ALPHA_8;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.UNKNOWN;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15900
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15900
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15900', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_15900';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ALPHA_8;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_565;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(62980103);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16000
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16000
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16000', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16000';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ALPHA_8;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_8888;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16100
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16100
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16100';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ALPHA_8;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.BGRA_8888;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16200
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16200
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16200', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16200';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ALPHA_8;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_888;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16300
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16300
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16300', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16300';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ALPHA_8;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_F16;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16400
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16400
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16400', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16400';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ALPHA_8;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.NV21;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16500
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16500
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16500', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16500';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ALPHA_8;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.NV12;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16600
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16600
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16600', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16600';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ALPHA_8;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_1010102;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16700
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16700
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16700', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16700';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ALPHA_8;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.YCBCR_P010;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16800
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16800
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16800', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16800';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ALPHA_8;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.YCRCB_P010;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16900
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16900
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16900', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_16900';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.ALPHA_8;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.ASTC_4x4;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17000
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17000
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17000', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17000';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGBA_F16;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.UNKNOWN;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17100
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17100
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17100';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGBA_F16;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_565;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17200
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17200
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17200', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17200';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGBA_F16;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_8888;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17300
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17300
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17300', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17300';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGBA_F16;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.BGRA_8888;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17400
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17400
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17400', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17400';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGBA_F16;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_888;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17500
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17500
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17500', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17500';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGBA_F16;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.ALPHA_8;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17600
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17600
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17600', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17600';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGBA_F16;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_F16;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(62980103);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17700
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17700
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17700', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17700';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGBA_F16;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.NV21;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17800
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17800
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17800', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17800';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGBA_F16;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.NV12;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17900
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17900
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17900', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_17900';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGBA_F16;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_1010102;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18000
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18000
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18000', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18000';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGBA_F16;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.YCBCR_P010;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18100
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18100
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18100';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGBA_F16;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.YCRCB_P010;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18200
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18200
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18200', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18200';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.RGBA_F16;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.ASTC_4x4;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18300
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18300
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18300', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18300';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.NV21;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.UNKNOWN;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18400
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18400
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18400', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18400';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.NV21;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_565;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18500
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18500
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18500', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18500';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.NV21;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_8888;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18600
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18600
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18600', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18600';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.NV21;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.BGRA_8888;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18700
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18700
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18700', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18700';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.NV21;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_888;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18800
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18800
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18800', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18800';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.NV21;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.ALPHA_8;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18900
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18900
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18900', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_18900';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.NV21;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_F16;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19000
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19000
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19000', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19000';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.NV21;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.NV21;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19100
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19100
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19100';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.NV21;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.NV12;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19200
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19200
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19200', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19200';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.NV21;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_1010102;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19300
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19300
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19300', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19300';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.NV21;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.YCBCR_P010;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19400
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19400
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19400', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19400';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.NV21;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.YCRCB_P010;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19500
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19500
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19500', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19500';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.NV21;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.ASTC_4x4;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19600
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19600
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19600', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19600';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.NV12;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.UNKNOWN;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19700
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19700
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19700', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19700';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.NV12;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_565;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19800
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19800
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19800', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19800';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.NV12;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_8888;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19900
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19900
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19900', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_19900';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.NV12;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.BGRA_8888;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
+
+    /**
+     * @tc.number   SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_20000
+     * @tc.name     SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_20000
+     * @tc.desc     image_createUnPremultipliedPixelMap
+     * @tc.size     MEDIUM
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_20000', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createUnPremultipliedPixelMap_static_20000';
+      let pixelFormatPre: image.PixelMapFormat = image.PixelMapFormat.NV12;
+      let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_888;
+      await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
+        (error: BusinessError) => {
+          expect(Number(error.code)).assertEqual(401);
+        });
+    })
   })
 }
