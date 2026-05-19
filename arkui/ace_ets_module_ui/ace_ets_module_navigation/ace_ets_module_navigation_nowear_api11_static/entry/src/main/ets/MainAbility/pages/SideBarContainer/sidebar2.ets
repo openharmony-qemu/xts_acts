@@ -31,7 +31,6 @@ import {
   SideBarContainer,
   SideBarContainerType,
   ForEach,
-  Color,
   ColumnOptions,
   Resource,
   ButtonStyle,

@@ -16,37 +16,37 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles32BaseFunc.h"
-#include "../ActsKhrgles320001TestSuite.h"
+#include "../ActsGles32KhrSingleUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000480,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000480,
         "KHR-Single-GLES32.subgroups.ballot_",
         "other.graphics.subgroupinverseballot");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000481,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000481,
         "KHR-Single-GLES32.subgroups.ballot_ot",
         "her.graphics.subgroupballotbitextract");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000482,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000482,
         "KHR-Single-GLES32.subgroups.ballot_o",
         "ther.graphics.subgroupballotbitcount");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000483,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000483,
         "KHR-Single-GLES32.subgroups.ballot_other",
         ".graphics.subgroupballotinclusivebitcount");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000484,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000484,
         "KHR-Single-GLES32.subgroups.ballot_other",
         ".graphics.subgroupballotexclusivebitcount");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000485,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000485,
         "KHR-Single-GLES32.subgroups.ballot_",
         "other.graphics.subgroupballotfindlsb");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000486,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000486,
         "KHR-Single-GLES32.subgroups.ballot_",
         "other.graphics.subgroupballotfindmsb");

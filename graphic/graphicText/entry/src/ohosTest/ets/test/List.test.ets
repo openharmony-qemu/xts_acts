@@ -39,6 +39,7 @@ import GraphicTextAPI26 from './GraphicTextAPI26.test'
 import GraphicTextAPI2602 from './GraphicTextAPI2602.test'
 import GraphicGetTextStyle from './GraphicGetTextStyle.test';
 import GraphicParagraphTest from './GraphicParagraphTest.test';
+import FontDescriptor from './FontDescriptor.test';
 
 export default function testsuite() {
   graphicTextATest();
@@ -68,4 +69,5 @@ export default function testsuite() {
   GraphicTextAPI2602();
   GraphicGetTextStyle();
   GraphicParagraphTest();
+  FontDescriptor();
 }

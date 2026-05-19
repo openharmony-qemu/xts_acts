@@ -9,6 +9,7 @@ import metaDataStaticTest from "./image/Metadata.test";
 import ImageAuxiliaryPictureGetMetadataStaticTest from "./image/AuxiliaryPicture.test";
 import ImagePackerStaticTest from "./image/ImagePacker.test";
 import ImageMetadataTestStatic from "./image/imageSource/ImageMetadata.test";
+import createUnpremultipliedPixelMapSyncTest from "./testStatic/image/image/createUnpremultipliedPixelMap.test";
 
 export default function testsuite(): void {
   metaDataStaticTest();
@@ -22,4 +23,5 @@ export default function testsuite(): void {
   CrateImageSourceTest();
   ImageGetComponentSupp();
   ImageMetadataTestStatic();
+  createUnpremultipliedPixelMapSyncTest();
 }

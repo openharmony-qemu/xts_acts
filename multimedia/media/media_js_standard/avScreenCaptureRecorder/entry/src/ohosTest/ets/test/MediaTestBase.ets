@@ -196,6 +196,10 @@ export default class MediaTestBase {
             await avScreenCaptureRecorder?.setPickerMode(media.PickerMode.WINDOW_ONLY);
             await avScreenCaptureRecorder?.setPickerMode(media.PickerMode.SCREEN_ONLY);
             await avScreenCaptureRecorder?.setPickerMode(media.PickerMode.SCREEN_AND_WINDOW);
+            await avScreenCaptureRecorder?.setPickerMode(media.PickerMode.APP_ONLY);
+            await avScreenCaptureRecorder?.setPickerMode(media.PickerMode.WINDOW_AND_APP);
+            await avScreenCaptureRecorder?.setPickerMode(media.PickerMode.SCREEN_AND_APP);
+            await avScreenCaptureRecorder?.setPickerMode(media.PickerMode.SCREEN_WINDOW_AND_APP);
             console.info('avScreenCaptureRecorder setPickerMode success');
           } catch (error) {
             console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + error.message);
@@ -598,14 +602,13 @@ export default class MediaTestBase {
     console.info(`UiDriver start`)
     await this.msleepAsync(3000)
     for (let i = 0; i < num; i++) {
-      let button = await driver.findComponent(BY.text('允许'))
+      let button = await driver.findComponent(BY.text('允许')) ||
+        await driver.findComponent(BY.text('始终允许'))
       if (button == null) {
         continue;
       }
       console.info(`button is ${JSON.stringify(button)}`)
-      if (await driver.findComponent(BY.text('允许')) != null) {
-        await button.click()
-      }
+      await button.click()
     }
     await this.msleepAsync(500)
   }

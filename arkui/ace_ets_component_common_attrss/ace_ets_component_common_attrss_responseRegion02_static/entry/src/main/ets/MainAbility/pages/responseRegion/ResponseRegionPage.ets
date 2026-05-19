@@ -16,8 +16,8 @@
 
 import router from '@ohos.router'
 import {
-  Entry,Text,Column,Button,Component,FlexDirection,ItemAlign,ImageFit,FlexAlign,FontWeight,$r,TextInput,TextArea,List,ListItem,Search,WebviewController,Rectangle,Builder,
-  Image,Grid,GridItem,Rating,MenuItemGroup,MenuItem,Menu,ImageAnimator,DatePicker,CheckboxGroup,Checkbox,Search,Counter,ColumnSplit,AlphabetIndexer,Web,Toggle,TimePicker,
+  Entry,Text,Column,Button,Component,FlexDirection,ItemAlign,ImageFit,FontWeight,$r,TextInput,TextArea,List,ListItem,Search,WebviewController,Rectangle,Builder,
+  Image,Grid,GridItem,Rating,MenuItemGroup,MenuItem,Menu,ImageAnimator,DatePicker,CheckboxGroup,Checkbox,Counter,ColumnSplit,AlphabetIndexer,Web,Toggle,TimePicker,
   TextPicker,Slider,Select,Swiper,Tabs,TabContent,SideBarContainer,Scroll,RowSplit,GridCol,ForEach,Row,GridRow,Flex,Color,FlexAlign,applyStyles,CommonMethod,
   ColumnOptions,Scroller,Margin,TextAlign,MenuItemOptions,Radio,ToggleType,GridRowDirection,Axis,ListItemGroup,SideBarContainerType,Stack,BreakPoints,GridRowOptions,GutterOption,BreakpointsReference,GridColColumnOption,Blank,
   DataPanel,Divider,Gauge,LoadingProgress,Marquee,Navigation,Progress,QRCode,ScrollBar,SliderStyle,TextClock,TextTimer,Circle,Ellipse,Line,Polyline,Polygon,Path,ClickEvent,

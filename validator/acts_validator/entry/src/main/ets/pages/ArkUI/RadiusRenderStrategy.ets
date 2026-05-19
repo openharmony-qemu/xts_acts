@@ -22,8 +22,8 @@ import promptAction from '@ohos.promptAction';
 struct RadiusRenderStrategy {
   @State name: string = 'RadiusRenderStrategy';
   @State stepTips: string = '操作步骤：\n' +
-    '1、点击按钮transition modal, 点击按钮fast, 点击按钮X \n2、点击按钮transition modal, 点击按钮offscreen, 点击按钮X' +
-    '\n' + '预期结果：\n1、点击fast时，模态圆角部分能看到背景底色\n2、点击offscreen部分，模态圆角部分看不到背景底色';
+    '1、点击按钮transition modal, 点击按钮fast \n2、 点击按钮offscreen \n3、来回点击按钮fast和按钮offscreen' +
+    '\n' + '预期结果：\n1、来回点击按钮fast和按钮offscreen时可以观察到模态框背景色有差异';
   @State isVue: boolean = false;
   @State intervalNum: number = 0;
 

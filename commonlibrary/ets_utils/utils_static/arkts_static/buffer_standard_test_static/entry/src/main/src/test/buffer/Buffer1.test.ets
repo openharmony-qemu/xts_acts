@@ -43,7 +43,7 @@ interface Options {
   endings: string,
 }
 
-export default function BufferTest1() {
+export default function BufferTest1(): void {
   describe('bufferTest1', (): void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,7 +19,7 @@ import Utils from './Util.test';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 
-export default function math03Test() {
+export default function math03Test(): void {
 	
   describe("math03Test", (): void => {
     // Dewm25 fines a test suite. Two parameters are supported: test suite name and test suite function.

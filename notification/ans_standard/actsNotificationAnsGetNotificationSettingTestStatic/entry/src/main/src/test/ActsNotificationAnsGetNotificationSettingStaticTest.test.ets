@@ -85,8 +85,11 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
           console.info(`${TAG} removeAllSlots AsyncCallback success`)
         }
       })
-      await Utils.msSleep(5000)
       console.info(`${TAG} afterEach END`)
+    })
+
+    afterEach(async()=>{
+      await Utils.msSleep(5000)
     })
 
     /**
@@ -135,35 +138,39 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
           console.info(`${testNum} null button`);
           expect(buttonOne).assertContain('允许通知')
         }
-        await Utils.msSleep(1500)
-        for (let index = 0; index < buttonName.length; index++) {
+        await Utils.msSleep(500)
+        let buttonTwo = await driver.findComponent(ON.text('桌面角标'));
+        console.info(`${testNum} button is ${JSON.stringify(buttonTwo)}`);
+        if (buttonTwo !== null) {
           await Utils.msSleep(1500)
-          let name = buttonName[index];
-          await Utils.msSleep(1000)
-          if (name==='允许通知') {
-            let button = await driver.findComponent(ON.type('Toggle').isAfter(ON.text(name)));
-            console.info(`${testNum} ${name} button is ${JSON.stringify(button)}`);
-            if (button !== null) {
-              await Utils.msSleep(1500)
-              await button.click();
-              await Utils.msSleep(1500)
-            } else {
-              console.info(`${testNum} null button`);
-              expect(button).assertContain(name)
-            }
-          }else{
-            let button = await driver.findComponent(ON.text(name));
-            console.info(`${testNum} ${name} button is ${JSON.stringify(button)}`);
-            if (button !== null) {
-              await Utils.msSleep(1500)
-              await button.click();
-              await Utils.msSleep(1500)
-            } else {
-              console.info(`${testNum} null button`);
-              expect(button).assertContain(name)
-            }
-          }
+          await buttonTwo.click();
           await Utils.msSleep(1500)
+        } else {
+          console.info(`${testNum} null button`);
+          expect(buttonTwo).assertContain('桌面角标')
+        }
+        await Utils.msSleep(500)
+        let buttonZero = await driver.findComponent(ON.type('Toggle').isAfter(ON.text("允许通知")));
+        console.info(`${testNum} buttonZero is ${JSON.stringify(buttonZero)}`);
+        if (buttonZero !== null) {
+          await Utils.msSleep(1500)
+          await buttonZero.click();
+          await Utils.msSleep(1500)
+        } else {
+          console.info(`${testNum} null button`);
+          expect(buttonZero).assertContain("允许通知")
+        }
+
+        await Utils.msSleep(500)
+        let buttonThree = await driver.findComponent(ON.text('确定'));
+        console.info(`${testNum} button is ${JSON.stringify(buttonThree)}`);
+        if (buttonThree !== null) {
+          await Utils.msSleep(1500)
+          await buttonThree.click();
+          await Utils.msSleep(1500)
+        } else {
+          console.info(`${testNum} null button`);
+          expect(buttonThree).assertContain('确定')
         }
         notificationManager.getNotificationSetting().then((data: notificationManager.NotificationSetting) => {
           console.info(`${testNum}getNotificationSetting success, data: ${JSON.stringify(data)}`);
@@ -241,34 +248,37 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
           expect(buttonOne).assertContain('允许通知')
         }
         await Utils.msSleep(1500)
-        for (let index = 0; index < buttonName.length; index++) {
+        let buttonTwo = await driver.findComponent(ON.text('桌面角标'));
+        console.info(`${testNum} button is ${JSON.stringify(buttonTwo)}`);
+        if (buttonTwo !== null) {
           await Utils.msSleep(1500)
-          let name = buttonName[index];
-          await Utils.msSleep(1000)
-          if (name==='允许通知') {
-            let button = await driver.findComponent(ON.type('Toggle').isAfter(ON.text(name)));
-            console.info(`${testNum} ${name} button is ${JSON.stringify(button)}`);
-            if (button !== null) {
-              await Utils.msSleep(1500)
-              await button.click();
-              await Utils.msSleep(1500)
-            } else {
-              console.info(`${testNum} null button`);
-              expect(button).assertContain(name)
-            }
-          }else{
-            let button = await driver.findComponent(ON.text(name));
-            console.info(`${testNum} ${name} button is ${JSON.stringify(button)}`);
-            if (button !== null) {
-              await Utils.msSleep(1500)
-              await button.click();
-              await Utils.msSleep(1500)
-            } else {
-              console.info(`${testNum} null button`);
-              expect(button).assertContain(name)
-            }
-          }
+          await buttonTwo.click();
           await Utils.msSleep(1500)
+        } else {
+          console.info(`${testNum} null button`);
+          expect(buttonTwo).assertContain('允许通知')
+        }
+        await Utils.msSleep(500)
+        let buttonThree = await driver.findComponent(ON.text('横幅通知'));
+        console.info(`${testNum} button is ${JSON.stringify(buttonThree)}`);
+        if (buttonThree !== null) {
+          await Utils.msSleep(1500)
+          await buttonThree.click();
+          await Utils.msSleep(1500)
+        } else {
+          console.info(`${testNum} null button`);
+          expect(buttonThree).assertContain('允许通知')
+        }
+        await Utils.msSleep(500)
+        let buttonFour = await driver.findComponent(ON.text('确定'));
+        console.info(`${testNum} button is ${JSON.stringify(buttonFour)}`);
+        if (buttonFour !== null) {
+          await Utils.msSleep(1500)
+          await buttonFour.click();
+          await Utils.msSleep(1500)
+        } else {
+          console.info(`${testNum} null button`);
+          expect(buttonFour).assertContain('确定')
         }
         notificationManager.getNotificationSetting().then((data: notificationManager.NotificationSetting) => {
           console.info(`${testNum}getNotificationSetting success, data: ${JSON.stringify(data)}`);

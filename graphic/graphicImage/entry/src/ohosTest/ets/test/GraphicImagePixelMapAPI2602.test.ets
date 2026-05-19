@@ -2236,7 +2236,9 @@ export default function GraphicImagePixelMapAPI2602() {
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
           expect(pixelMap !== undefined).assertTrue();
+          console.info(msgStr + 'pixelMap enum ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertFalse();
+          expect(pixelMap.isStrideAlignment).assertFalse();
           pixelMap.release();
           console.info(msgStr + 'success');
           console.info(msgStr + 'end');
@@ -2577,7 +2579,9 @@ export default function GraphicImagePixelMapAPI2602() {
         try {
           let pixelMap = image.createPixelMapFromPixelsSync(buffer, opts);
           expect(pixelMap !== undefined).assertTrue();
+          console.info(msgStr + ' pixelMap enum ',pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
+          expect(pixelMap.isStrideAlignment).assertFalse();
           pixelMap.release();
           console.info(msgStr + 'success');
           console.info(msgStr + 'end');

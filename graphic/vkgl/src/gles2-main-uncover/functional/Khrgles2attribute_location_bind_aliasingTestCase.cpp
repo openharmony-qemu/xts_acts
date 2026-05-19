@@ -16,37 +16,37 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles2BaseFunc.h"
-#include "../ActsKhrgles20001TestSuite.h"
+#include "../ActsGles2MainUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000656,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000656,
         "dEQP-GLES2.functional.attribute_lo",
         "cation.bind_aliasing.max_cond_float");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000657,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000657,
         "dEQP-GLES2.functional.attribute_lo",
         "cation.bind_aliasing.max_cond_vec2");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000658,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000658,
         "dEQP-GLES2.functional.attribute_lo",
         "cation.bind_aliasing.max_cond_vec3");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000659,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000659,
         "dEQP-GLES2.functional.attribute_lo",
         "cation.bind_aliasing.max_cond_vec4");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000660,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000660,
         "dEQP-GLES2.functional.attribute_lo",
         "cation.bind_aliasing.max_cond_mat2");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000661,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000661,
         "dEQP-GLES2.functional.attribute_lo",
         "cation.bind_aliasing.max_cond_mat3");
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000662,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000662,
         "dEQP-GLES2.functional.attribute_lo",
         "cation.bind_aliasing.max_cond_mat4");

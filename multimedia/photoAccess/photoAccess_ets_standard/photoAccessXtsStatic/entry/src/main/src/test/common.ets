@@ -25,7 +25,7 @@ import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import { common } from '@kit.AbilityKit';
 
-export const LOG_TAG = '[PhotoAccessXts].';
+export const LOG_TAG:string = '[PhotoAccessXts1].';
 
 const delegator = abilityDelegatorRegistry.getAbilityDelegator();
 const COMMON_WAIT_DURATION: number = 500;

@@ -20,7 +20,7 @@ import hilog from '@ohos.hilog'
 
 @Entry
 @Component
-struct markAnchor {
+struct markAnchorTest {
   @State flag: boolean = true;
   @State buttonText: string = 'false'
 

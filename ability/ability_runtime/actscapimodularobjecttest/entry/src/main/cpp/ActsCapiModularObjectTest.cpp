@@ -18,6 +18,8 @@
 #include <string>
 #include <js_native_api_types.h>
 #include "AbilityKit/ability_runtime/modular_object_extension_manager.h"
+#include "AbilityKit/ability_runtime/modular_object_extension_ability.h"
+#include "AbilityKit/ability_runtime/modular_object_extension_context.h"
 #include "ActsCapiModularObjectTest.h"
 #include "hilog/log.h"
 
@@ -701,5 +703,283 @@ napi_value ModularObject_2500(napi_env env, napi_callback_info info)
     OH_AbilityRuntime_ReleaseAllExtensionInfos(&allExtensionInfos);
     napi_value napiRet;
     napi_create_string_utf8(env, result.c_str(), result.size(), &napiRet);
+    return napiRet;
+}
+
+napi_value ModularObject_2600(napi_env env, napi_callback_info info)
+{
+    AbilityRuntime_ErrorCode ret = OH_AbilityRuntime_ModObjExtensionAbility_RegisterOnCreateFunc(
+        nullptr, nullptr);
+    OH_LOG_INFO(LOG_APP, "ModularObject_2600: RegisterOnCreateFunc ret=%{public}d", ret);
+    std::string result;
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
+        result = "success";
+    } else {
+        result = std::to_string(ret);
+    }
+    napi_value napiRet;
+    napi_create_string_utf8(env, result.c_str(), result.size(), &napiRet);
+    return napiRet;
+}
+
+napi_value ModularObject_2700(napi_env env, napi_callback_info info)
+{
+    AbilityRuntime_ErrorCode ret = OH_AbilityRuntime_ModObjExtensionAbility_RegisterOnDestroyFunc(
+        nullptr, nullptr);
+    OH_LOG_INFO(LOG_APP, "ModularObject_2700: RegisterOnDestroyFunc ret=%{public}d", ret);
+    std::string result;
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
+        result = "success";
+    } else {
+        result = std::to_string(ret);
+    }
+    napi_value napiRet;
+    napi_create_string_utf8(env, result.c_str(), result.size(), &napiRet);
+    return napiRet;
+}
+
+napi_value ModularObject_2800(napi_env env, napi_callback_info info)
+{
+    AbilityRuntime_ErrorCode ret = OH_AbilityRuntime_ModObjExtensionAbility_RegisterOnConnectFunc(
+        nullptr, nullptr);
+    OH_LOG_INFO(LOG_APP, "ModularObject_2800: RegisterOnConnectFunc ret=%{public}d", ret);
+    std::string result;
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
+        result = "success";
+    } else {
+        result = std::to_string(ret);
+    }
+    napi_value napiRet;
+    napi_create_string_utf8(env, result.c_str(), result.size(), &napiRet);
+    return napiRet;
+}
+
+napi_value ModularObject_2900(napi_env env, napi_callback_info info)
+{
+    AbilityRuntime_ErrorCode ret = OH_AbilityRuntime_ModObjExtensionAbility_RegisterOnDisconnectFunc(
+        nullptr, nullptr);
+    OH_LOG_INFO(LOG_APP, "ModularObject_2900: RegisterOnDisconnectFunc ret=%{public}d", ret);
+    std::string result;
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
+        result = "success";
+    } else {
+        result = std::to_string(ret);
+    }
+    napi_value napiRet;
+    napi_create_string_utf8(env, result.c_str(), result.size(), &napiRet);
+    return napiRet;
+}
+
+napi_value ModularObject_3000(napi_env env, napi_callback_info info)
+{
+    OH_AbilityRuntime_ModObjExtensionContextHandle context = nullptr;
+    AbilityRuntime_ErrorCode ret = OH_AbilityRuntime_ModObjExtensionAbility_GetContextFromInstance(
+        nullptr, &context);
+    OH_LOG_INFO(LOG_APP, "ModularObject_3000: GetContextFromInstance ret=%{public}d", ret);
+    std::string result;
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
+        result = "success";
+    } else {
+        result = std::to_string(ret);
+    }
+    napi_value napiRet;
+    napi_create_string_utf8(env, result.c_str(), result.size(), &napiRet);
+    return napiRet;
+}
+
+napi_value ModularObject_3100(napi_env env, napi_callback_info info)
+{
+    OH_AbilityRuntime_ModObjExtensionInstanceHandle modObjInstance = nullptr;
+    AbilityRuntime_ErrorCode ret = OH_AbilityRuntime_ModObjExtensionAbility_GetInstanceFromBase(
+        nullptr, &modObjInstance);
+    OH_LOG_INFO(LOG_APP, "ModularObject_3100: GetInstanceFromBase ret=%{public}d", ret);
+    std::string result;
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
+        result = "success";
+    } else {
+        result = std::to_string(ret);
+    }
+    napi_value napiRet;
+    napi_create_string_utf8(env, result.c_str(), result.size(), &napiRet);
+    return napiRet;
+}
+
+napi_value ModularObject_3200(napi_env env, napi_callback_info info)
+{
+    AbilityRuntime_ContextHandle baseContext = nullptr;
+    AbilityRuntime_ErrorCode ret = OH_AbilityRuntime_ModObjExtensionContext_GetBaseContext(
+        nullptr, &baseContext);
+    OH_LOG_INFO(LOG_APP, "ModularObject_3200: GetBaseContext ret=%{public}d", ret);
+    std::string result;
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
+        result = "success";
+    } else {
+        result = std::to_string(ret);
+    }
+    napi_value napiRet;
+    napi_create_string_utf8(env, result.c_str(), result.size(), &napiRet);
+    return napiRet;
+}
+
+napi_value ModularObject_3300(napi_env env, napi_callback_info info)
+{
+    AbilityRuntime_ErrorCode ret = OH_AbilityRuntime_ModObjExtensionContext_StartSelfUIAbility(
+        nullptr, nullptr);
+    OH_LOG_INFO(LOG_APP, "ModularObject_3300: StartSelfUIAbility ret=%{public}d", ret);
+    std::string result;
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
+        result = "success";
+    } else {
+        result = std::to_string(ret);
+    }
+    napi_value napiRet;
+    napi_create_string_utf8(env, result.c_str(), result.size(), &napiRet);
+    return napiRet;
+}
+
+napi_value ModularObject_3400(napi_env env, napi_callback_info info)
+{
+    AbilityRuntime_ErrorCode ret = OH_AbilityRuntime_ModObjExtensionContext_StartSelfUIAbilityWithStartOptions(
+        nullptr, nullptr, nullptr);
+    OH_LOG_INFO(LOG_APP, "ModularObject_3400: StartSelfUIAbilityWithStartOptions ret=%{public}d", ret);
+    std::string result;
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
+        result = "success";
+    } else {
+        result = std::to_string(ret);
+    }
+    napi_value napiRet;
+    napi_create_string_utf8(env, result.c_str(), result.size(), &napiRet);
+    return napiRet;
+}
+
+napi_value ModularObject_3500(napi_env env, napi_callback_info info)
+{
+    AbilityRuntime_ErrorCode ret = OH_AbilityRuntime_ModObjExtensionContext_TerminateSelf(nullptr);
+    OH_LOG_INFO(LOG_APP, "ModularObject_3500: TerminateSelf ret=%{public}d", ret);
+    std::string result;
+    if (ret == ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID) {
+        result = "success";
+    } else {
+        result = std::to_string(ret);
+    }
+    napi_value napiRet;
+    napi_create_string_utf8(env, result.c_str(), result.size(), &napiRet);
+    return napiRet;
+}
+
+napi_value ModularObject_3600(napi_env env, napi_callback_info info)
+{
+    OHIPCRemoteStub* stub = OH_AbilityRuntime_ModObjExtensionContext_CreateIPCRemoteStub(
+        nullptr, nullptr, nullptr, nullptr, nullptr);
+    OH_LOG_INFO(LOG_APP, "ModularObject_3600: CreateIPCRemoteStub stub=%{public}p", stub);
+    std::string result;
+    if (stub == nullptr) {
+        result = "success";
+    } else {
+        result = "stub is not null";
+    }
+    napi_value napiRet;
+    napi_create_string_utf8(env, result.c_str(), result.size(), &napiRet);
+    return napiRet;
+}
+
+napi_value ModularObject_3700(napi_env env, napi_callback_info info)
+{
+    OH_AbilityRuntime_ModObjExtensionContext_DestroyIPCRemoteStub(nullptr, nullptr);
+    OH_LOG_INFO(LOG_APP, "ModularObject_3700: DestroyIPCRemoteStub called with nullptr");
+    std::string result = "success";
+    napi_value napiRet;
+    napi_create_string_utf8(env, result.c_str(), result.size(), &napiRet);
+    return napiRet;
+}
+
+napi_value ModularObject_ErrCode_0100(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = ABILITY_RUNTIME_ERROR_CODE_VISIBILITY_VERIFICATION_FAILED;
+    OH_LOG_INFO(LOG_APP, "ABILITY_RUNTIME_ERROR_CODE_VISIBILITY_VERIFICATION_FAILED=%{public}d", errCode);
+    napi_value napiRet;
+    napi_create_int32(env, errCode, &napiRet);
+    return napiRet;
+}
+
+napi_value ModularObject_ErrCode_0200(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = ABILITY_RUNTIME_ERROR_CODE_STATIC_CFG_PERMISSION;
+    OH_LOG_INFO(LOG_APP, "ABILITY_RUNTIME_ERROR_CODE_STATIC_CFG_PERMISSION=%{public}d", errCode);
+    napi_value napiRet;
+    napi_create_int32(env, errCode, &napiRet);
+    return napiRet;
+}
+
+napi_value ModularObject_ErrCode_0300(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = ABILITY_RUNTIME_ERROR_CODE_CROSS_USER_OPERATION;
+    OH_LOG_INFO(LOG_APP, "ABILITY_RUNTIME_ERROR_CODE_CROSS_USER_OPERATION=%{public}d", errCode);
+    napi_value napiRet;
+    napi_create_int32(env, errCode, &napiRet);
+    return napiRet;
+}
+
+napi_value ModularObject_ErrCode_0400(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = ABILITY_RUNTIME_ERROR_CODE_NO_RUNNING_ABILITIES_WITH_UI;
+    OH_LOG_INFO(LOG_APP, "ABILITY_RUNTIME_ERROR_CODE_NO_RUNNING_ABILITIES_WITH_UI=%{public}d", errCode);
+    napi_value napiRet;
+    napi_create_int32(env, errCode, &napiRet);
+    return napiRet;
+}
+
+napi_value ModularObject_ErrCode_0500(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = ABILITY_RUNTIME_ERROR_CODE_UPPER_RATE_LIMIT;
+    OH_LOG_INFO(LOG_APP, "ABILITY_RUNTIME_ERROR_CODE_UPPER_RATE_LIMIT=%{public}d", errCode);
+    napi_value napiRet;
+    napi_create_int32(env, errCode, &napiRet);
+    return napiRet;
+}
+
+napi_value ModularObject_ErrCode_0600(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = ABILITY_RUNTIME_ERROR_CODE_UPPER_CONNECTION_NUMBER_LIMIT;
+    OH_LOG_INFO(LOG_APP, "ABILITY_RUNTIME_ERROR_CODE_UPPER_CONNECTION_NUMBER_LIMIT=%{public}d", errCode);
+    napi_value napiRet;
+    napi_create_int32(env, errCode, &napiRet);
+    return napiRet;
+}
+
+napi_value ModularObject_ErrCode_0700(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = ABILITY_RUNTIME_ERROR_CODE_PROPERTY_NOT_FOUND;
+    OH_LOG_INFO(LOG_APP, "ABILITY_RUNTIME_ERROR_CODE_PROPERTY_NOT_FOUND=%{public}d", errCode);
+    napi_value napiRet;
+    napi_create_int32(env, errCode, &napiRet);
+    return napiRet;
+}
+
+napi_value ModularObject_ErrCode_0800(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = ABILITY_RUNTIME_ERROR_CODE_TYPE_MISMATCH;
+    OH_LOG_INFO(LOG_APP, "ABILITY_RUNTIME_ERROR_CODE_TYPE_MISMATCH=%{public}d", errCode);
+    napi_value napiRet;
+    napi_create_int32(env, errCode, &napiRet);
+    return napiRet;
+}
+
+napi_value ModularObject_ErrCode_0900(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = ABILITY_RUNTIME_ERROR_CODE_SEND_REQUEST_FAILED;
+    OH_LOG_INFO(LOG_APP, "ABILITY_RUNTIME_ERROR_CODE_SEND_REQUEST_FAILED=%{public}d", errCode);
+    napi_value napiRet;
+    napi_create_int32(env, errCode, &napiRet);
+    return napiRet;
+}
+
+napi_value ModularObject_ErrCode_1000(napi_env env, napi_callback_info info)
+{
+    int32_t errCode = ABILITY_RUNTIME_ERROR_CODE_CROSS_APP_IN_PROCESS;
+    OH_LOG_INFO(LOG_APP, "ABILITY_RUNTIME_ERROR_CODE_CROSS_APP_IN_PROCESS=%{public}d", errCode);
+    napi_value napiRet;
+    napi_create_int32(env, errCode, &napiRet);
     return napiRet;
 }

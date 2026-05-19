@@ -880,6 +880,14 @@ export default function imageExifGetModifyByTypeTest() {
       return imageValue;
     }
 
+    let sleep = async (delay: number): Promise<void> => {
+      return new Promise((resolve, _) => {
+        setTimeout(async () => {
+          resolve();
+        }, delay);
+      });
+    };
+
     /**
      * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_PROMISE_0100
      * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_PROMISE_0100
@@ -973,6 +981,7 @@ export default function imageExifGetModifyByTypeTest() {
      * @tc.level       Level 0
      */
     it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_PROMISE_0500", Level.LEVEL0, async (done:() => void)=>{
+      await sleep(20);
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_PROMISE_0500";
       let result = await verifyMetadataProperties2(testTag, "test_exif_readWrite_jpg_v2.jpg", "fd", "exifMetadata", readAndWriteExifMetadata, exifReadWriteValidationRules);
       console.info(`${testTag} verifyMetadataProperties2 result is: ${result}`);

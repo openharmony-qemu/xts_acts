@@ -25,7 +25,6 @@
           "ruleOptions": {
             "enable": false,
             "files": [
-              "./obfuscation-rules.txt"
             ]
           }
         }

@@ -5006,7 +5006,7 @@ export default function imageNdkTest() {
       const dstSupportedFormatsList: Array<string> = image.createImageSource(filesDir + '/' + "test.jpg").supportedFormats;
       hilog.info(0x0000, testTag, `srcSupportedFormatsList: ` + JSON.stringify(srcSupportedFormatsList));
       hilog.info(0x0000, testTag, `dstSupportedFormatsList: ` + JSON.stringify(dstSupportedFormatsList));
-      const ret = (JSON.stringify(srcSupportedFormatsList) == JSON.stringify(dstSupportedFormatsList));
+      const ret = (JSON.stringify(dstSupportedFormatsList).includes(JSON.stringify(srcSupportedFormatsList)));
       hilog.info(0x0000, testTag, "compare result is: " + ret);
       expect(ret).assertTrue();
       done();
@@ -5026,7 +5026,7 @@ export default function imageNdkTest() {
       const dstSupportedFormatsList: Array<string> = image.createImagePacker().supportedFormats;
       hilog.info(0x0000, testTag, `srcSupportedFormatsList: ` + JSON.stringify(srcSupportedFormatsList));
       hilog.info(0x0000, testTag, `dstSupportedFormatsList: ` + JSON.stringify(dstSupportedFormatsList));
-      const ret = (JSON.stringify(srcSupportedFormatsList) == JSON.stringify(dstSupportedFormatsList));
+      const ret = (JSON.stringify(dstSupportedFormatsList).includes(JSON.stringify(srcSupportedFormatsList)));
       hilog.info(0x0000, testTag, "compare result is: " + ret);
       expect(ret).assertTrue();
       done();

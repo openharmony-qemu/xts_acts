@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import { Entry, Column, Component, Row, Toggle, ClickEvent,TimePicker,TouchEvent,
-  Text, TextPicker,Color,Button,FontWeight,Color,TimePickerResult } from '@ohos.arkui.component'
+import { Entry, Column, Component, Row, Toggle, ClickEvent, TimePicker, TouchEvent,
+  Text, TextPicker, Color, Button, FontWeight, TimePickerResult } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
 @Entry

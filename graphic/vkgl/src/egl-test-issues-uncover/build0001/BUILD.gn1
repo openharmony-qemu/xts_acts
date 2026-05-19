@@ -131,11 +131,11 @@ ohos_static_library("libeglfunc0001") {
   configs = [ ":deqp_platform_ohos_config" ]
 }
 
-ohos_moduletest_suite("ActsEglTestSuite0001") {
+ohos_moduletest_suite("ActsEglTestIssuesUncoverTestSuite0001") {
   subsystem_name = "graphic"
   part_name = "graphic_2d"
   sources = [ 
-    "../ActsEgl0001TestSuite.cpp",
+    "../ActsEglTestIssuesUncover0001TestSuite.cpp",
     "../functional/Eglmultithread_windowTestCase.cpp",
     "../functional/Eglmultithread_pbuffer_windowTestCase.cpp",
     "../functional/Eglmultithread_pixmap_windowTestCase.cpp",

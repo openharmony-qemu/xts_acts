@@ -32,7 +32,7 @@ import Math06 from "./Math06.test";
 import classTest from "./Class.test.ets";
 import reflectTest from "./Reflect.test.ets";
 
-export default function testsuite() {
+export default function testsuite(): void {
   CbrtStatic();
   CeilStatic();
   Clz32Static();

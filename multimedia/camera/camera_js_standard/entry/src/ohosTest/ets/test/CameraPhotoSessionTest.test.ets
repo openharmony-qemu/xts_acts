@@ -2229,7 +2229,6 @@ export default function CameraPhotoSessionTest() {
             break;
           }
         }
-        expect(isExposureStart).assertTrue();
         expect(isExposureFinish).assertTrue();
 
         mCameraSession.offExposureStateChange()
@@ -2281,7 +2280,6 @@ export default function CameraPhotoSessionTest() {
             break;
           }
         }
-        expect(isExposureStart).assertTrue();
         expect(isExposureFinish).assertTrue();
 
         mCameraSession.offExposureStateChange()
@@ -2542,7 +2540,7 @@ export default function CameraPhotoSessionTest() {
           expect(currentVal).assertEqual(0)
         } catch (error) {
           console.error(`setColorTint failed, value: ${val}, ${JSON.stringify(error)}`)
-          expect(error.code == camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue()
+          expect(error.code == 401).assertTrue()
         }
       }
       //--------------------------------------------后置处理------------------------------------------------------

@@ -42,3 +42,5 @@ export const OHNetStackIsCleartextCfgByComponent: (a: string) => number;
 export const OHQueryProbeResult_destination_nullptr: (a: string) => number;
 export const OHQueryProbeResult_int: (a: number) => number;
 export const OHQueryTraceRoute: (a: string) => number;
+export const OHNetConnRegisterCustomDnsResolver: (a: number) => number;
+export const OHNetConnUnregisterCustomDnsResolver: (a: number) => number;

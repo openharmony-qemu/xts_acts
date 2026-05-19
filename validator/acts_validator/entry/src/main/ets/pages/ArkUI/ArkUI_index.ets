@@ -165,6 +165,7 @@ struct IndexPage {
     { title: 'MenuColorMode', uri: 'pages/ArkUI/MenuColorMode' },
     { title: 'SetCustomCursor', uri: 'pages/ArkUI/SetCustomCursor' },
     { title: 'PopupColorMode', uri: 'pages/ArkUI/PopupColorMode' },
+    { title: 'AccessibilityCustomActionsTest', uri: 'pages/ArkUI/AccessibilityCustomActionsTest' },
   ]
   @State ColorObject: Object[] = letColor;
   @State ColorTrue: number[] = [];

@@ -34,9 +34,6 @@ import {
   FlexAlign,
   FontWeight,
   ButtonType,
-  ClickEvent,
-  Margin,
-  FontWeight,
   Padding,
   LengthMetrics
 } from '@ohos.arkui.component'

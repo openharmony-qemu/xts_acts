@@ -225,6 +225,14 @@
         "type": "embeddedUI"
       },
       {
+        "name": "EvnEmbeddedAbility",
+        "description": "$string:TestAbility_desc",
+        "label": "$string:TestAbility_label",
+        "exported": true,
+        "srcEntry": "./ets/testability/EvnEmbeddedAbility.ets",
+        "type": "embeddedUI"
+      },
+      {
         "name": "EmbeddedCreateSubWindowTrueAbility",
         "description": "$string:TestAbility_desc",
         "label": "$string:TestAbility_label",

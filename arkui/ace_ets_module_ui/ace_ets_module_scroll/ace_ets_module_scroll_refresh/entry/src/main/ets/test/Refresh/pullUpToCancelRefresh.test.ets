@@ -33,6 +33,7 @@ export default function pullUpToCancelRefreshTest() {
       if (!("pullUpToCancelRefresh" == pages.name)) {
         console.info("get pullUpToCancelRefreshTest state pages.name: " + JSON.stringify(pages.name));
         let result = await router.push(options);
+        await CommonFunc.sleep(2000);
         console.info("push pullUpToCancelRefreshTest success: " + JSON.stringify(result));
       }
       done();

@@ -32,7 +32,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
 export class MyImageAttributeModifier implements AttributeModifier<ImageAttribute> {
-  @State public isChange: boolean = true
+  public isChange: boolean = true
 
   applyNormalAttribute(instance: ImageAttribute): void {
     if (this.isChange) {

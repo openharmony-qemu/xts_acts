@@ -38,7 +38,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 @Component
 struct ChildWatchLink0050 {
   @State watchValue: string = 'hello'
-  @Watch('watchLink') @Link value: boolean = true
+  @Watch('watchLink') @Link value: boolean
   watchLink(Str:string) {
     this.watchValue = 'HelloArkUI'
   }

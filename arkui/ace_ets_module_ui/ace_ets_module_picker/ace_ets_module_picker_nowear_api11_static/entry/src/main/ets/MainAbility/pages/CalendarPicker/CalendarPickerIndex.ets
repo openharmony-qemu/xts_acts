@@ -34,7 +34,6 @@ import {
   Callback
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
-import  emitter  from '@ohos.events.emitter';
 import { RecordData } from '@ohos.base';
 
 interface EventDataContent {

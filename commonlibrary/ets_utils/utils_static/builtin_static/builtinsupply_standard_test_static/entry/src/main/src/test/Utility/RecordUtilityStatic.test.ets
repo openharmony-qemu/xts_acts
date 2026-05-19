@@ -85,7 +85,7 @@ class Animal {
 type RecordAnimal = Record<'myAnimal', Animal>;
 type MixedKeys = 'name' | 'age';
 type ValueUnion = string | number;
-export default function BuiltinsRecordUtilityTypeTest() {
+export default function BuiltinsRecordUtilityTypeTest(): void {
   describe('BuiltinsRecordUtilityTypeTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

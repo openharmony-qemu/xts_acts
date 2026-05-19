@@ -16,41 +16,41 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles32BaseFunc.h"
-#include "../ActsKhrgles320007TestSuite.h"
+#include "../ActsGles32KhrSingleUncover0007TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles320007TestSuite, TestCase_006046,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0007TestSuite, TestCase_006046,
         "KHR-Single-GLES32.subgroups.sha",
         "pe.framebuffer.clustered_vertex");
 
-static SHRINK_HWTEST_F(ActsKhrgles320007TestSuite, TestCase_006047,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0007TestSuite, TestCase_006047,
         "KHR-Single-GLES32.subgroups.shap",
         "e.framebuffer.clustered_tess_eval");
 
-static SHRINK_HWTEST_F(ActsKhrgles320007TestSuite, TestCase_006048,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0007TestSuite, TestCase_006048,
         "KHR-Single-GLES32.subgroups.shape.",
         "framebuffer.clustered_tess_control");
 
-static SHRINK_HWTEST_F(ActsKhrgles320007TestSuite, TestCase_006049,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0007TestSuite, TestCase_006049,
         "KHR-Single-GLES32.subgroups.shap",
         "e.framebuffer.clustered_geometry");
 
-static SHRINK_HWTEST_F(ActsKhrgles320007TestSuite, TestCase_006050,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0007TestSuite, TestCase_006050,
         "KHR-Single-GLES32.subgroups.",
         "shape.framebuffer.quad_vertex");
 
-static SHRINK_HWTEST_F(ActsKhrgles320007TestSuite, TestCase_006051,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0007TestSuite, TestCase_006051,
         "KHR-Single-GLES32.subgroups.sh",
         "ape.framebuffer.quad_tess_eval");
 
-static SHRINK_HWTEST_F(ActsKhrgles320007TestSuite, TestCase_006052,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0007TestSuite, TestCase_006052,
         "KHR-Single-GLES32.subgroups.sha",
         "pe.framebuffer.quad_tess_control");
 
-static SHRINK_HWTEST_F(ActsKhrgles320007TestSuite, TestCase_006053,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0007TestSuite, TestCase_006053,
         "KHR-Single-GLES32.subgroups.s",
         "hape.framebuffer.quad_geometry");

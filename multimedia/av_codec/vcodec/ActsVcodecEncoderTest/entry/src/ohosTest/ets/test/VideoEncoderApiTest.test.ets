@@ -802,5 +802,29 @@ export default function VideoEncoderApiTest() {
       let result: number = await testNapi.runApiTest(58);
       expect(result).assertEqual(0);
     });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_DUAL_API_0500
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_DUAL_API_0500
+     * @tc.desc   api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_DUAL_API_0500', Level.LEVEL2, async () => {
+      let result: number = await testNapi.runApiTest(59);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_DUAL_API_0600
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_DUAL_API_0600
+     * @tc.desc   api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_DUAL_API_0600', Level.LEVEL2, async () => {
+      let result: number = await testNapi.runApiTest(60);
+      expect(result).assertEqual(0);
+    });
   });
 }

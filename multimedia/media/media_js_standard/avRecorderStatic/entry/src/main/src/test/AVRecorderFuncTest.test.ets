@@ -2875,6 +2875,10 @@ export default function avRecorderTest() {
       expect(Number(media.PickerMode.WINDOW_ONLY)).assertEqual(0);
       expect(Number(media.PickerMode.SCREEN_ONLY)).assertEqual(1);
       expect(Number(media.PickerMode.SCREEN_AND_WINDOW)).assertEqual(2);
+      expect(Number(media.PickerMode.APP_ONLY)).assertEqual(3);
+      expect(Number(media.PickerMode.WINDOW_AND_APP)).assertEqual(4);
+      expect(Number(media.PickerMode.SCREEN_AND_APP)).assertEqual(5);
+      expect(Number(media.PickerMode.SCREEN_WINDOW_AND_APP)).assertEqual(6);
       expect(Number(media.AacProfile.AAC_LC)).assertEqual(0);
       expect(Number(media.AacProfile.AAC_HE)).assertEqual(1);
       expect(Number(media.AacProfile.AAC_HE_V2)).assertEqual(2);

@@ -19,7 +19,7 @@ export async function sleep(time: int): Promise<int> {
   });
 }
 
-export default function ArrayToSplicedThirdTest() {
+export default function ArrayToSplicedThirdTest(): void {
   describe('ArrayToSplicedThirdTest', (): void => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll((): void => {

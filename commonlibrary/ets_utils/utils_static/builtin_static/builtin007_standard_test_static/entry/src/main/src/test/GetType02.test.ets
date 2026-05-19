@@ -17,7 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import Utils from './Util.test';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
-export default function getType02Test() {
+export default function getType02Test(): void {
   describe("getType02Test", (): void => {
     // Dewm25 fines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

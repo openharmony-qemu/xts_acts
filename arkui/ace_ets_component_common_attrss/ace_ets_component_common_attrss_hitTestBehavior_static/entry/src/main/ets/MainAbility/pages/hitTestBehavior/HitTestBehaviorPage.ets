@@ -16,7 +16,6 @@
 import { RouterParams,CustomValue } from '../../common/Utils';
 import router from '@ohos.router'
 import {
-  NavPathStack,
   ListItemGroup,
   MenuItemGroupOptions,
   MenuItemGroup,
