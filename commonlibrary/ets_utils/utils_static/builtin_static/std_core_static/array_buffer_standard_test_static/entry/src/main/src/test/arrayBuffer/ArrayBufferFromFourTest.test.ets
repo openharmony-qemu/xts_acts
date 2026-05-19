@@ -65,14 +65,14 @@ export default function arrayBufferFromFourTest(): void {
     /**
      * @tc.name testArrayBufferFromFour0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_0200
-     * @tc.desc 验证 ArrayBuffer.from((null as ESObject) as double[]) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToDoubleArray(null as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFour0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        ArrayBuffer.from((null as ESObject) as double[]);
+        ArrayBuffer.from(Utils.castToDoubleArray(null as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -297,14 +297,14 @@ export default function arrayBufferFromFourTest(): void {
     /**
      * @tc.name testArrayBufferFromFour0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_1700
-     * @tc.desc 验证 ArrayBuffer.from((null as ESObject) as double[]) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToDoubleArray(null as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFour0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        ArrayBuffer.from((null as ESObject) as double[]);
+        ArrayBuffer.from(Utils.castToDoubleArray(null as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -316,14 +316,14 @@ export default function arrayBufferFromFourTest(): void {
     /**
      * @tc.name testArrayBufferFromFour0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_1800
-     * @tc.desc 验证 ArrayBuffer.from((undefined as ESObject) as double[]) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToDoubleArray(undefined as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFour0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        ArrayBuffer.from((undefined as ESObject) as double[]);
+        ArrayBuffer.from(Utils.castToDoubleArray(undefined as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -335,7 +335,7 @@ export default function arrayBufferFromFourTest(): void {
     /**
      * @tc.name testArrayBufferFromFour0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_1900
-     * @tc.desc 验证 ArrayBuffer.from((__s as ESObject) as double[]) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToDoubleArray(__s as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -343,7 +343,7 @@ export default function arrayBufferFromFourTest(): void {
     it('testArrayBufferFromFour0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const __s: string = "hello";
-        ArrayBuffer.from((__s as ESObject) as double[]);
+        ArrayBuffer.from(Utils.castToDoubleArray(__s as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -355,7 +355,7 @@ export default function arrayBufferFromFourTest(): void {
     /**
      * @tc.name testArrayBufferFromFour0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_2000
-     * @tc.desc 验证 ArrayBuffer.from((n as ESObject) as double[]) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToDoubleArray(n as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -363,7 +363,7 @@ export default function arrayBufferFromFourTest(): void {
     it('testArrayBufferFromFour0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const n: number = 123;
-        ArrayBuffer.from((n as ESObject) as double[]);
+        ArrayBuffer.from(Utils.castToDoubleArray(n as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -389,7 +389,7 @@ export default function arrayBufferFromFourTest(): void {
     /**
      * @tc.name testArrayBufferFromFour0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_2200
-     * @tc.desc 验证 ArrayBuffer.from(arr as ESObject as double[]) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(arr as Object as double[]) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -397,7 +397,7 @@ export default function arrayBufferFromFourTest(): void {
     it('testArrayBufferFromFour0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const arr: int[] = [1, 2, 3];
-        ArrayBuffer.from(arr as ESObject as double[]);
+        ArrayBuffer.from(arr as Object as double[]);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -688,7 +688,7 @@ export default function arrayBufferFromFourTest(): void {
     /**
      * @tc.name testArrayBufferFromFour0041
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_4100
-     * @tc.desc 验证 ArrayBuffer.from((null as ESObject) as double[]) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToDoubleArray(null as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -697,7 +697,7 @@ export default function arrayBufferFromFourTest(): void {
       const mindmapProbe: string = 'section-40-null-double-array-slot';
       expect(mindmapProbe.endsWith('slot')).assertTrue();
       try {
-        ArrayBuffer.from((null as ESObject) as double[]);
+        ArrayBuffer.from(Utils.castToDoubleArray(null as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -709,7 +709,7 @@ export default function arrayBufferFromFourTest(): void {
     /**
      * @tc.name testArrayBufferFromFour0042
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_4200
-     * @tc.desc 验证 ArrayBuffer.from((undefined as ESObject) as double[]) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToDoubleArray(undefined as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -718,7 +718,7 @@ export default function arrayBufferFromFourTest(): void {
       const mindmapProbe: string = 'section-41-undef-double-array-slot';
       expect(mindmapProbe.indexOf('undef') >= 0).assertTrue();
       try {
-        ArrayBuffer.from((undefined as ESObject) as double[]);
+        ArrayBuffer.from(Utils.castToDoubleArray(undefined as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -730,14 +730,14 @@ export default function arrayBufferFromFourTest(): void {
     /**
      * @tc.name testArrayBufferFromFour0043
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_4300
-     * @tc.desc 验证 ArrayBuffer.from((true as ESObject) as double[]) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToDoubleArray(true as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFour0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        ArrayBuffer.from((true as ESObject) as double[]);
+        ArrayBuffer.from(Utils.castToDoubleArray(true as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -749,7 +749,7 @@ export default function arrayBufferFromFourTest(): void {
     /**
      * @tc.name testArrayBufferFromFour0044
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_4400
-     * @tc.desc 验证 ArrayBuffer.from((plain as ESObject) as double[]) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToDoubleArray(plain as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -757,7 +757,7 @@ export default function arrayBufferFromFourTest(): void {
     it('testArrayBufferFromFour0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const plain = new ArrayBufferLikePlainForMindmap();
-        ArrayBuffer.from((plain as ESObject) as double[]);
+        ArrayBuffer.from(Utils.castToDoubleArray(plain as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -769,7 +769,7 @@ export default function arrayBufferFromFourTest(): void {
     /**
      * @tc.name testArrayBufferFromFour0045
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_4500
-     * @tc.desc 验证 ArrayBuffer.from((__s as ESObject) as double[]) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToDoubleArray(__s as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -778,7 +778,7 @@ export default function arrayBufferFromFourTest(): void {
       expect('string-not-double-vector'.substring(0, 6)).assertEqual('string');
       try {
         const __s: string = "hello";
-        ArrayBuffer.from((__s as ESObject) as double[]);
+        ArrayBuffer.from(Utils.castToDoubleArray(__s as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -790,7 +790,7 @@ export default function arrayBufferFromFourTest(): void {
     /**
      * @tc.name testArrayBufferFromFour0046
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_4600
-     * @tc.desc 验证 ArrayBuffer.from((n as ESObject) as double[]) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToDoubleArray(n as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -800,7 +800,7 @@ export default function arrayBufferFromFourTest(): void {
       expect(scalarProbe > 120).assertTrue();
       try {
         const n: number = 123;
-        ArrayBuffer.from((n as ESObject) as double[]);
+        ArrayBuffer.from(Utils.castToDoubleArray(n as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -812,7 +812,7 @@ export default function arrayBufferFromFourTest(): void {
     /**
      * @tc.name testArrayBufferFromFour0047
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_4700
-     * @tc.desc 验证 ArrayBuffer.from(arr as ESObject as double[]) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(arr as Object as double[]) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -820,7 +820,7 @@ export default function arrayBufferFromFourTest(): void {
     it('testArrayBufferFromFour0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const arr: int[] = [1, 2, 3];
-        ArrayBuffer.from(arr as ESObject as double[]);
+        ArrayBuffer.from(arr as Object as double[]);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -832,7 +832,7 @@ export default function arrayBufferFromFourTest(): void {
     /**
      * @tc.name testArrayBufferFromFour0048
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_4800
-     * @tc.desc 验证 ArrayBuffer.from((new ArrayBuffer(4) as ESObject) as double[]) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToDoubleArray(new ArrayBuffer(4) as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -840,7 +840,7 @@ export default function arrayBufferFromFourTest(): void {
     it('testArrayBufferFromFour0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const arr: double[] = [1.0, 2.0];
-        ArrayBuffer.from((new ArrayBuffer(4) as ESObject) as double[]);
+        ArrayBuffer.from(Utils.castToDoubleArray(new ArrayBuffer(4) as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);

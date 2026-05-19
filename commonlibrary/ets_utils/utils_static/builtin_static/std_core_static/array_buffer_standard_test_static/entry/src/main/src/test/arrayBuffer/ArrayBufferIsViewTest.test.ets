@@ -64,7 +64,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_0200
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc 验证 ArrayBuffer.isView(view) 在当前场景执行成功，视图识别判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -634,13 +634,14 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0041
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_4100
-     * @tc.desc 验证 ArrayBuffer.isView((42 as number) as Object) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc 验证 ArrayBuffer.isView(Utils.boxAsObject(_badNum2)) 在当前场景执行成功，视图识别判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferIsView0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = ArrayBuffer.isView((42 as number) as Object);
+      const _badNum2: number = 42;
+      let result = ArrayBuffer.isView(Utils.boxAsObject(_badNum2));
       expect(result).assertFalse()
       expect(result).assertFalse()
     });

@@ -637,7 +637,7 @@ export default function arrayBufferSetTest(): void {
     /**
      * @tc.name testArrayBufferSet0037
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SET_3700
-     * @tc.desc 验证 buffer.set(2147483647, Int.toByte(10)) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 buffer.resize(0) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -657,7 +657,7 @@ export default function arrayBufferSetTest(): void {
     /**
      * @tc.name testArrayBufferSet0038
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SET_3800
-     * @tc.desc 验证 buffer.set(-2147483648, Int.toByte(10)) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 buffer.resize(0) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -677,7 +677,7 @@ export default function arrayBufferSetTest(): void {
     /**
      * @tc.name testArrayBufferSet0039
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SET_3900
-     * @tc.desc 验证 buffer.set(1, Int.toByte(10)) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 buffer.resize(0) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

@@ -298,14 +298,15 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0180
-     * @tc.desc 验证 ArrayBuffer.fromObject((123 as number) as Object, 0, 4) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.fromObject(Utils.boxAsObject(_badNum2), 0, 4) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromObject0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        ArrayBuffer.fromObject((123 as number) as Object, 0, 4);
+        const _badNum2: number = 123;
+        ArrayBuffer.fromObject(Utils.boxAsObject(_badNum2), 0, 4);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -317,14 +318,15 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0190
-     * @tc.desc 验证 ArrayBuffer.fromObject((0 as number) as Object, 0, 4) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.fromObject(Utils.boxAsObject(_badNum4), 0, 4) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromObject0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        ArrayBuffer.fromObject((0 as number) as Object, 0, 4);
+        const _badNum4: number = 0;
+        ArrayBuffer.fromObject(Utils.boxAsObject(_badNum4), 0, 4);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -336,14 +338,15 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0200
-     * @tc.desc 验证 ArrayBuffer.fromObject((-1 as number) as Object, 0, 4) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.fromObject(Utils.boxAsObject(_badNum102), 0, 4) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromObject0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        ArrayBuffer.fromObject((-1 as number) as Object, 0, 4);
+        const _badNum102: number = -1;
+        ArrayBuffer.fromObject(Utils.boxAsObject(_badNum102), 0, 4);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -355,14 +358,15 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0210
-     * @tc.desc 验证 ArrayBuffer.fromObject((3.14 as number) as Object, 0, 4) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.fromObject(Utils.boxAsObject(_badNum6), 0, 4) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromObject0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        ArrayBuffer.fromObject((3.14 as number) as Object, 0, 4);
+        const _badNum6: number = 3.14;
+        ArrayBuffer.fromObject(Utils.boxAsObject(_badNum6), 0, 4);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -450,7 +454,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0260
-     * @tc.desc 验证 ArrayBuffer.fromObject((badArr as ESObject) as Object, 0, 4) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.fromObject((badArr as Object), 0, 4) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -461,7 +465,7 @@ export default function arrayBufferFromObjectTest(): void {
       badArr.pushOne(2);
       badArr.pushOne(3);
       try {
-        ArrayBuffer.fromObject((badArr as ESObject) as Object, 0, 4);
+        ArrayBuffer.fromObject((badArr as Object), 0, 4);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -473,7 +477,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0270
-     * @tc.desc 验证 ArrayBuffer.fromObject((plain as ESObject) as Object, 0, 4) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.fromObject((plain as Object), 0, 4) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -481,7 +485,7 @@ export default function arrayBufferFromObjectTest(): void {
     it('testArrayBufferFromObject0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let plain = new ArrayBufferFromObjectPlainForMindmap();
       try {
-        ArrayBuffer.fromObject((plain as ESObject) as Object, 0, 4);
+        ArrayBuffer.fromObject((plain as Object), 0, 4);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -493,14 +497,14 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0280
-     * @tc.desc 验证 ArrayBuffer.fromObject((arrayBufferFromObjectMindmapFn as ESObject) as Object, 0, 4) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.fromObject((arrayBufferFromObjectMindmapFn as Object), 0, 4) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromObject0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        ArrayBuffer.fromObject((arrayBufferFromObjectMindmapFn as ESObject) as Object, 0, 4);
+        ArrayBuffer.fromObject((arrayBufferFromObjectMindmapFn as Object), 0, 4);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -512,7 +516,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0290
-     * @tc.desc 验证 new Uint8Array(8) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.fromObject((arr as Object), 0, 8) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -520,7 +524,7 @@ export default function arrayBufferFromObjectTest(): void {
     it('testArrayBufferFromObject0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let arr = new Uint8Array(8);
-        ArrayBuffer.fromObject((arr as ESObject) as Object, 0, 8);
+        ArrayBuffer.fromObject((arr as Object), 0, 8);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -593,7 +597,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0340
-     * @tc.desc 验证 new ArrayBuffer(16) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, -1, 16) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -613,7 +617,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0035
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0350
-     * @tc.desc 验证 new ArrayBuffer(16) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 20, 4) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -633,7 +637,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0036
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0360
-     * @tc.desc 验证 new ArrayBuffer(16) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 2147483647, 4) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -888,7 +892,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0051
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0510
-     * @tc.desc 验证 new ArrayBuffer(16) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, -1) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -908,7 +912,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0052
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0520
-     * @tc.desc 验证 new ArrayBuffer(16) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, -100) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -928,7 +932,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0053
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0530
-     * @tc.desc 验证 new ArrayBuffer(16) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 8, 20) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -962,7 +966,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0055
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0550
-     * @tc.desc 验证 new ArrayBuffer(16) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, 2147483647) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -982,7 +986,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0056
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0560
-     * @tc.desc 验证 new ArrayBuffer(16) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, (null as int)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1002,7 +1006,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0057
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0570
-     * @tc.desc 验证 new ArrayBuffer(16) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, (undefined as int)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1022,7 +1026,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0058
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0580
-     * @tc.desc 验证 new ArrayBuffer(16) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, Utils.castToInt(("10" as string) as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1030,7 +1034,7 @@ export default function arrayBufferFromObjectTest(): void {
     it('testArrayBufferFromObject0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let src = new ArrayBuffer(16);
-        Utils.fromObjectWithBuffer(src, 0, (("10" as string) as Object) as int);
+        Utils.fromObjectWithBuffer(src, 0, Utils.castToInt(("10" as string) as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -1042,7 +1046,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0059
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0590
-     * @tc.desc 验证 new ArrayBuffer(16) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, (true as int)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1429,14 +1433,15 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0083
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0830
-     * @tc.desc 验证 ArrayBuffer.fromObject((42 as number) as Object, 0, 4) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.fromObject(Utils.boxAsObject(_badNum8), 0, 4) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromObject0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        ArrayBuffer.fromObject((42 as number) as Object, 0, 4);
+        const _badNum8: number = 42;
+        ArrayBuffer.fromObject(Utils.boxAsObject(_badNum8), 0, 4);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -1448,14 +1453,15 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0084
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0840
-     * @tc.desc 验证 ArrayBuffer.fromObject((2.71 as number) as Object, 0, 4) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.fromObject(Utils.boxAsObject(_badNum10), 0, 4) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromObject0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        ArrayBuffer.fromObject((2.71 as number) as Object, 0, 4);
+        const _badNum10: number = 2.71;
+        ArrayBuffer.fromObject(Utils.boxAsObject(_badNum10), 0, 4);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -1505,14 +1511,14 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0087
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0870
-     * @tc.desc 验证 ArrayBuffer.fromObject((new ArrayBufferFromObjectPlainForMindmap() as ESObject) as Obje... 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.fromObject(Utils.castToObject(new ArrayBufferFromObjectPlainForMindmap() as Obje... 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromObject0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        ArrayBuffer.fromObject((new ArrayBufferFromObjectPlainForMindmap() as ESObject) as Object, 0, 4);
+        ArrayBuffer.fromObject(Utils.castToObject(new ArrayBufferFromObjectPlainForMindmap() as Object), 0, 4);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -1524,7 +1530,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0088
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0880
-     * @tc.desc 验证 ArrayBuffer.fromObject((a as ESObject) as Object, 0, 4) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.fromObject((a as Object), 0, 4) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1532,7 +1538,7 @@ export default function arrayBufferFromObjectTest(): void {
     it('testArrayBufferFromObject0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let a = new Array<number>();
-        ArrayBuffer.fromObject((a as ESObject) as Object, 0, 4);
+        ArrayBuffer.fromObject((a as Object), 0, 4);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -1544,7 +1550,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0089
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0890
-     * @tc.desc 验证 new Uint8Array(16) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.fromObject((arr as Object), 0, 16) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1552,7 +1558,7 @@ export default function arrayBufferFromObjectTest(): void {
     it('testArrayBufferFromObject0089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let arr = new Uint8Array(16);
-        ArrayBuffer.fromObject((arr as ESObject) as Object, 0, 16);
+        ArrayBuffer.fromObject((arr as Object), 0, 16);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -1564,7 +1570,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0090
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0900
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.fromObject((dv as Object), 0, 8) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1573,7 +1579,7 @@ export default function arrayBufferFromObjectTest(): void {
       try {
         let src = new ArrayBuffer(8);
         let dv = new DataView(src);
-        ArrayBuffer.fromObject((dv as ESObject) as Object, 0, 8);
+        ArrayBuffer.fromObject((dv as Object), 0, 8);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -1585,14 +1591,14 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0091
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0910
-     * @tc.desc 验证 ArrayBuffer.fromObject((arrayBufferFromObjectMindmapFn as ESObject) as Object, 0, 8) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.fromObject((arrayBufferFromObjectMindmapFn as Object), 0, 8) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromObject0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        ArrayBuffer.fromObject((arrayBufferFromObjectMindmapFn as ESObject) as Object, 0, 8);
+        ArrayBuffer.fromObject((arrayBufferFromObjectMindmapFn as Object), 0, 8);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -1680,7 +1686,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0096
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0960
-     * @tc.desc 验证 new ArrayBuffer(16) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, (null as int), 16) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1700,7 +1706,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0097
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0970
-     * @tc.desc 验证 new ArrayBuffer(16) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 4, (null as int)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1720,7 +1726,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0098
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0980
-     * @tc.desc 验证 new ArrayBuffer(16) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 4, (undefined as int)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1778,7 +1784,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0101
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_1010
-     * @tc.desc 验证 new ArrayBuffer(16) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, -1, 8) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1798,7 +1804,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0102
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_1020
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 100, 4) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1818,7 +1824,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0103
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_1030
-     * @tc.desc 验证 new ArrayBuffer(16) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, -5) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1838,7 +1844,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0104
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_1040
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 4, 8) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1877,7 +1883,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0106
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_1060
-     * @tc.desc 验证 new ArrayBuffer(16) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, -2147483648, 8) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1897,7 +1903,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0107
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_1070
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 Utils.fromObjectWithBuffer(src, 0, 2147483647) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

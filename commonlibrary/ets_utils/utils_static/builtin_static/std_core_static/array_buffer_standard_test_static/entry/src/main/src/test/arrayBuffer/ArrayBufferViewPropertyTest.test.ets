@@ -708,7 +708,7 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0048
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_4800
-     * @tc.desc 验证 new ArrayBuffer(16) 在当前场景执行成功，返回值的 byteLength 为 5。
+     * @tc.desc 验证 ArrayBuffer.isView(view) 在当前场景执行成功，返回值的 byteLength 为 5。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -722,7 +722,7 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0049
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_4900
-     * @tc.desc 验证 new DataView(new ArrayBuffer(8)) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc 验证 ArrayBuffer.isView(view) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -738,7 +738,7 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0050
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_5000
-     * @tc.desc 验证 new ArrayBuffer(32) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc 验证 ArrayBuffer.isView(view) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -752,7 +752,7 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0051
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_5100
-     * @tc.desc 验证 new ArrayBuffer(16) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc 验证 ArrayBuffer.isView(view) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -769,7 +769,7 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0052
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_5200
-     * @tc.desc 验证 new DataView(new ArrayBuffer(4)) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc 验证 ArrayBuffer.isView(view) 在当前场景执行成功，视图识别判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -782,7 +782,7 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0053
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_5300
-     * @tc.desc 验证 new Int8Array(4) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc 验证 ArrayBuffer.isView(view) 在当前场景执行成功，视图识别判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -795,7 +795,7 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0054
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_5400
-     * @tc.desc 验证 new Uint32Array(4) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc 验证 ArrayBuffer.isView(view) 在当前场景执行成功，视图识别判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -808,7 +808,7 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0055
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_5500
-     * @tc.desc 验证 new Float64Array(4) 在当前场景执行成功，视图识别判断符合预期。
+     * @tc.desc 验证 ArrayBuffer.isView(view) 在当前场景执行成功，视图识别判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

@@ -168,7 +168,7 @@ export default function arrayBufferLikeTest(): void {
     it('testArrayBufferLike0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const badLike: string = "not-a-buffer";
-        const likeBuffer: ArrayBufferLike = (badLike as Object) as ArrayBufferLike;
+        const likeBuffer: ArrayBufferLike = Utils.castToArrayBufferLike(badLike as Object);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -188,7 +188,7 @@ export default function arrayBufferLikeTest(): void {
     it('testArrayBufferLike0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const plain = new ArrayBufferLikePlainForMindmap();
-        const likeBuffer: ArrayBufferLike = (plain as ESObject) as ArrayBufferLike;
+        const likeBuffer: ArrayBufferLike = Utils.castToArrayBufferLike(plain as Object);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -208,7 +208,7 @@ export default function arrayBufferLikeTest(): void {
     it('testArrayBufferLike0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const scalar: number = 8;
-        const likeBuffer: ArrayBufferLike = (scalar as ESObject) as ArrayBufferLike;
+        const likeBuffer: ArrayBufferLike = Utils.castToArrayBufferLike(scalar as Object);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);

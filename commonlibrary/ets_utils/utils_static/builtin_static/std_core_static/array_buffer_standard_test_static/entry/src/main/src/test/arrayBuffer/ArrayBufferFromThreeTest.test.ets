@@ -268,14 +268,14 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_1400
-     * @tc.desc 验证 ArrayBuffer.from((null as ESObject) as Uint8Array) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToUint8Array(null as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromThree0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        let result = ArrayBuffer.from((null as ESObject) as Uint8Array);
+        let result = ArrayBuffer.from(Utils.castToUint8Array(null as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -287,14 +287,14 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_1500
-     * @tc.desc 验证 ArrayBuffer.from((undefined as ESObject) as Uint8Array) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToUint8Array(undefined as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromThree0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        let result = ArrayBuffer.from((undefined as ESObject) as Uint8Array);
+        let result = ArrayBuffer.from(Utils.castToUint8Array(undefined as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -323,14 +323,14 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_1700
-     * @tc.desc 验证 ArrayBuffer.from((("hello" as Object) as Uint8Array)) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToUint8Array("hello" as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromThree0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        let result = ArrayBuffer.from((("hello" as Object) as Uint8Array));
+        let result = ArrayBuffer.from(Utils.castToUint8Array("hello" as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -342,14 +342,15 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_1800
-     * @tc.desc 验证 ArrayBuffer.from((((123 as number) as ESObject) as Uint8Array)) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToUint8Array(Utils.boxAsObject(_badNum2))) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromThree0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        let result = ArrayBuffer.from((((123 as number) as ESObject) as Uint8Array));
+        const _badNum2: number = 123;
+        let result = ArrayBuffer.from(Utils.castToUint8Array(Utils.boxAsObject(_badNum2)));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -361,14 +362,14 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_1900
-     * @tc.desc 验证 ArrayBuffer.from(((true as Object) as Uint8Array)) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToUint8Array(true as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromThree0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        let result = ArrayBuffer.from(((true as Object) as Uint8Array));
+        let result = ArrayBuffer.from(Utils.castToUint8Array(true as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -395,14 +396,14 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_2100
-     * @tc.desc 验证 ArrayBuffer.from(((new ArrayBufferFromThreePlain() as Object) as Uint8Array)) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToUint8Array(new ArrayBufferFromThreePlain() as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromThree0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        let result = ArrayBuffer.from(((new ArrayBufferFromThreePlain() as Object) as Uint8Array));
+        let result = ArrayBuffer.from(Utils.castToUint8Array(new ArrayBufferFromThreePlain() as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -779,7 +780,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0044
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_4400
-     * @tc.desc 验证 ArrayBuffer.from((badTypeName as Object) as Uint8Array) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToUint8Array(badTypeName as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -787,7 +788,7 @@ export default function arrayBufferFromThreeTest(): void {
     it('testArrayBufferFromThree0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const badTypeName: string = "Uint8Array";
-        let result = ArrayBuffer.from((badTypeName as Object) as Uint8Array);
+        let result = ArrayBuffer.from(Utils.castToUint8Array(badTypeName as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -799,14 +800,15 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0045
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_4500
-     * @tc.desc 验证 ArrayBuffer.from((((42 as number) as ESObject) as Uint8Array)) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToUint8Array(Utils.boxAsObject(_badNum4))) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromThree0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        let result = ArrayBuffer.from((((42 as number) as ESObject) as Uint8Array));
+        const _badNum4: number = 42;
+        let result = ArrayBuffer.from(Utils.castToUint8Array(Utils.boxAsObject(_badNum4)));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -818,14 +820,14 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0046
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_4600
-     * @tc.desc 验证 ArrayBuffer.from(((false as Object) as Uint8Array)) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToUint8Array(false as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromThree0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        let result = ArrayBuffer.from(((false as Object) as Uint8Array));
+        let result = ArrayBuffer.from(Utils.castToUint8Array(false as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -837,7 +839,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0047
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_4700
-     * @tc.desc 验证 ArrayBuffer.from((i16 as Object) as Uint8Array) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToUint8Array(i16 as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -845,7 +847,7 @@ export default function arrayBufferFromThreeTest(): void {
     it('testArrayBufferFromThree0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let i16 = new Int16Array([1, 2, 3]);
-        let result = ArrayBuffer.from((i16 as Object) as Uint8Array);
+        let result = ArrayBuffer.from(Utils.castToUint8Array(i16 as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -857,7 +859,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0048
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_4800
-     * @tc.desc 验证 ArrayBuffer.from((u16 as Object) as Uint8Array) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToUint8Array(u16 as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -865,7 +867,7 @@ export default function arrayBufferFromThreeTest(): void {
     it('testArrayBufferFromThree0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let u16 = new Uint16Array([1, 2, 3]);
-        let result = ArrayBuffer.from((u16 as Object) as Uint8Array);
+        let result = ArrayBuffer.from(Utils.castToUint8Array(u16 as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);

@@ -45,7 +45,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_0100
-     * @tc.desc 验证 ArrayBuffer.from(source, 1, 2) 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc 验证 ArrayBuffer.from("abcd", "utf8") 在当前场景执行成功，返回值的 byteLength 为 2。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -61,7 +61,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_0200
-     * @tc.desc 验证 ArrayBuffer.from(source, 1, 2) 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc 验证 ArrayBuffer.from("abcd", "utf8") 在当前场景执行成功，返回值的 byteLength 为 2。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -75,7 +75,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_0300
-     * @tc.desc 验证 ArrayBuffer.from(source, 1) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from("abcd", "utf8") 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -95,7 +95,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_0400
-     * @tc.desc 验证 ArrayBuffer.from(source) 在当前场景执行成功，返回值的 byteLength 为 source.byteLength。
+     * @tc.desc 验证 ArrayBuffer.from("abcd", "utf8") 在当前场景执行成功，返回值的 byteLength 为 source.byteLength。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -110,7 +110,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_0500
-     * @tc.desc 验证 ArrayBuffer.from(source, 3, 1) 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc 验证 ArrayBuffer.from("WXYZ", "utf8") 在当前场景执行成功，返回值的 byteLength 为 1。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -125,7 +125,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_0600
-     * @tc.desc 验证 ArrayBuffer.from(source, 0, (source.byteLength as int)) 在当前场景执行成功，返回值的 byteLength 为 5。
+     * @tc.desc 验证 ArrayBuffer.from("hello", "utf8") 在当前场景执行成功，返回值的 byteLength 为 5。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -154,7 +154,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_0800
-     * @tc.desc 验证 ArrayBuffer.from(source, 5, 10) 在当前场景执行成功，返回值的 byteLength 为 10。
+     * @tc.desc 验证 ArrayBuffer.from("abcdefghijklmnopqrstuvwxyz", "utf8") 在当前场景执行成功，返回值的 byteLength 为 10。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -168,7 +168,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_0900
-     * @tc.desc 验证 ArrayBuffer.from(source, 0, source.byteLength) 在当前场景执行成功，返回值的 byteLength 为 source.byteLength。
+     * @tc.desc 验证 ArrayBuffer.from("hello", "utf8") 在当前场景执行成功，返回值的 byteLength 为 source.byteLength。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -196,14 +196,14 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_1100
-     * @tc.desc 验证 ArrayBuffer.from((null as ESObject) as ArrayBuffer, 0, 1) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToArrayBuffer(null as Object), 0, 1) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSix0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const result = ArrayBuffer.from((null as ESObject) as ArrayBuffer, 0, 1);
+        const result = ArrayBuffer.from(Utils.castToArrayBuffer(null as Object), 0, 1);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -215,14 +215,14 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_1200
-     * @tc.desc 验证 ArrayBuffer.from((null as ESObject) as ArrayBuffer, 0, 2) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToArrayBuffer(null as Object), 0, 2) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSix0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const result = ArrayBuffer.from((null as ESObject) as ArrayBuffer, 0, 2);
+        const result = ArrayBuffer.from(Utils.castToArrayBuffer(null as Object), 0, 2);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -234,14 +234,14 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_1300
-     * @tc.desc 验证 ArrayBuffer.from((("abcd" as Object) as ArrayBuffer), 0, 1) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToArrayBuffer("abcd" as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSix0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const result = ArrayBuffer.from((("abcd" as Object) as ArrayBuffer), 0, 1);
+        const result = ArrayBuffer.from(Utils.castToArrayBuffer("abcd" as Object), 0, 1);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -253,7 +253,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_1400
-     * @tc.desc 验证 ArrayBuffer.from((((12345 as number) as ESObject) as ArrayBuffer), 0, 1) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.numberAsArrayBuffer(_badNum2), 0, 1) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -261,7 +261,8 @@ export default function arrayBufferFromSixTest(): void {
     it('testArrayBufferFromSix0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new ArrayBuffer(8);
       try {
-        const result = ArrayBuffer.from((((12345 as number) as ESObject) as ArrayBuffer), 0, 1);
+        const _badNum2: number = 12345;
+        const result = ArrayBuffer.from(Utils.numberAsArrayBuffer(_badNum2), 0, 1);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -273,7 +274,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_1500
-     * @tc.desc 验证 ArrayBuffer.from(source, 0, 3) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc 验证 ArrayBuffer.from("abcdef", "utf8") 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -288,7 +289,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_1600
-     * @tc.desc 验证 ArrayBuffer.from(source, 2, 3) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc 验证 ArrayBuffer.from("abcdef", "utf8") 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -303,7 +304,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_1700
-     * @tc.desc 验证 ArrayBuffer.from(source, (source.byteLength as int) - 1, 1) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc 验证 ArrayBuffer.from("abcdef", "utf8") 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -318,7 +319,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_1800
-     * @tc.desc 验证 ArrayBuffer.from(source, (source.byteLength as int), 0) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc 验证 ArrayBuffer.from("abcdef", "utf8") 在当前场景执行成功，返回值的 byteLength 为 0。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -332,7 +333,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_1900
-     * @tc.desc 验证 ArrayBuffer.from(source, lastOff, 1) 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc 验证 ArrayBuffer.from("abcdef", "utf8") 在当前场景执行成功，返回值的 byteLength 为 1。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -349,7 +350,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_2000
-     * @tc.desc 验证 ArrayBuffer.from(source, source.byteLength, 0) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc 验证 ArrayBuffer.from("abcdef", "utf8") 在当前场景执行成功，返回值的 byteLength 为 0。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -403,7 +404,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_2300
-     * @tc.desc 验证 ArrayBuffer.from(source, Double.toInt(1.5), 1) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc 验证 ArrayBuffer.from("abcdef", "utf8") 在当前场景执行成功，实例类型判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -417,7 +418,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_2400
-     * @tc.desc 验证 ArrayBuffer.from(source, Double.toInt(1.5), 1) 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc 验证 ArrayBuffer.from("abcdef", "utf8") 在当前场景执行成功，返回值的 byteLength 为 1。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -432,7 +433,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_2500
-     * @tc.desc 验证 ArrayBuffer.from(source, 0, 0) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc 验证 ArrayBuffer.from("abcdef", "utf8") 在当前场景执行成功，返回值的 byteLength 为 0。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -446,7 +447,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_2600
-     * @tc.desc 验证 ArrayBuffer.from(source, 0, 1) 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc 验证 ArrayBuffer.from("abcdef", "utf8") 在当前场景执行成功，返回值的 byteLength 为 1。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -460,7 +461,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_2700
-     * @tc.desc 验证 ArrayBuffer.from(source, 1, 3) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc 验证 ArrayBuffer.from("abcdef", "utf8") 在当前场景执行成功，返回值的 byteLength 为 3。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -474,7 +475,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_2800
-     * @tc.desc 验证 ArrayBuffer.from(source, 2, (source.byteLength as int) - 2) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc 验证 ArrayBuffer.from("abcdef", "utf8") 在当前场景执行成功，返回值的 byteLength 为 4。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -488,7 +489,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_2900
-     * @tc.desc 验证 ArrayBuffer.from(source, 0, (source.byteLength as int)) 在当前场景执行成功，返回值的 byteLength 为 source.byteLength。
+     * @tc.desc 验证 ArrayBuffer.from("abcdef", "utf8") 在当前场景执行成功，返回值的 byteLength 为 source.byteLength。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -502,7 +503,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_3000
-     * @tc.desc 验证 ArrayBuffer.from(source, 0, source.byteLength) 在当前场景执行成功，返回值的 byteLength 为 source.byteLength。
+     * @tc.desc 验证 ArrayBuffer.from("abcdef", "utf8") 在当前场景执行成功，返回值的 byteLength 为 source.byteLength。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -516,7 +517,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_3100
-     * @tc.desc 验证 ArrayBuffer.from(source, 2, source.byteLength) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from("abcdef", "utf8") 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -558,7 +559,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_3300
-     * @tc.desc 验证 ArrayBuffer.from(source, 0, (null as ESObject) as int) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from("abcdef", "utf8") 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -566,7 +567,7 @@ export default function arrayBufferFromSixTest(): void {
     it('testArrayBufferFromSix0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const source = ArrayBuffer.from("abcdef", "utf8");
-        const result = ArrayBuffer.from(source, 0, (null as ESObject) as int);
+        const result = ArrayBuffer.from(source, 0, Utils.castToInt(null as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -578,7 +579,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_3400
-     * @tc.desc 验证 ArrayBuffer.from(source, 0, Double.toInt(2.5)) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc 验证 ArrayBuffer.from("abcdef", "utf8") 在当前场景执行成功，实例类型判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -592,7 +593,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0035
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_3500
-     * @tc.desc 验证 ArrayBuffer.from(source, 0, 2.5) 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc 验证 ArrayBuffer.from("abcdef", "utf8") 在当前场景执行成功，返回值的 byteLength 为 2。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -606,7 +607,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0036
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_3600
-     * @tc.desc 验证 ArrayBuffer.from(source, 3, 4) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc 验证 ArrayBuffer.from("abcdefghij", "utf8") 在当前场景执行成功，返回值的 byteLength 为 4。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -620,7 +621,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0037
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_3700
-     * @tc.desc 验证 ArrayBuffer.from(source, 0, (source.byteLength as int)) 在当前场景执行成功，返回值的 byteLength 为 sourceLen。
+     * @tc.desc 验证 ArrayBuffer.from("abcd", "utf8") 在当前场景执行成功，返回值的 byteLength 为 sourceLen。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -652,7 +653,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0039
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_3900
-     * @tc.desc 验证 ArrayBuffer.from(source, 0, 2) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc 验证 ArrayBuffer.from("abcd", "utf8") 在当前场景执行成功，实例类型判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -666,7 +667,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0040
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_4000
-     * @tc.desc 验证 ArrayBuffer.from(source, 0, 2) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc 验证 ArrayBuffer.from("abcd", "utf8") 在当前场景执行成功，实例类型判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -680,7 +681,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0041
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_4100
-     * @tc.desc 验证 ArrayBuffer.from(source, 0, 2) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc 验证 ArrayBuffer.from("abcd", "utf8") 在当前场景执行成功，实例类型判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -694,7 +695,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0042
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_4200
-     * @tc.desc 验证 ArrayBuffer.from(source, 1, 2) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc 验证 ArrayBuffer.from("abcd", "utf8") 在当前场景执行成功，实例类型判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -708,7 +709,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0043
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_4300
-     * @tc.desc 验证 ArrayBuffer.from(source, 1, 3) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc 验证 ArrayBuffer.from("abcdef", "utf8") 在当前场景执行成功，返回的数据内容与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -724,7 +725,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0044
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_4400
-     * @tc.desc 验证 ArrayBuffer.from(source, 1, 2) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc 验证 ArrayBuffer.from("abcdef", "utf8") 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -739,7 +740,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0045
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_4500
-     * @tc.desc 验证 ArrayBuffer.from(source, 0, (source.byteLength as int)) 在当前场景执行成功，返回的数据内容与预期一致。
+     * @tc.desc 验证 ArrayBuffer.from("hello world", "utf8") 在当前场景执行成功，返回的数据内容与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -755,7 +756,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0046
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_4600
-     * @tc.desc 验证 ArrayBuffer.from(source, 3, 4) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc 验证 ArrayBuffer.from("abcdefghij", "utf8") 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -770,7 +771,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0047
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_4700
-     * @tc.desc 验证 ArrayBuffer.from(source, 0, (source.byteLength as int)) 在当前场景执行成功，返回值的 byteLength 为 source.byteLength。
+     * @tc.desc 验证 ArrayBuffer.from("fullcopy", "utf8") 在当前场景执行成功，返回值的 byteLength 为 source.byteLength。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -786,7 +787,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0048
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_4800
-     * @tc.desc 验证 ArrayBuffer.from(source, 0, 0) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc 验证 ArrayBuffer.from("abcd", "utf8") 在当前场景执行成功，返回值的 byteLength 为 0。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -801,7 +802,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0049
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_4900
-     * @tc.desc 验证 ArrayBuffer.from(source, (source.byteLength as int), 0) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc 验证 ArrayBuffer.from("abcd", "utf8") 在当前场景执行成功，返回值的 byteLength 为 0。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -815,7 +816,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0050
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_5000
-     * @tc.desc 验证 ArrayBuffer.from(source, 0, 1) 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc 验证 ArrayBuffer.from("abcd", "utf8") 在当前场景执行成功，返回值的 byteLength 为 1。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -830,7 +831,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0051
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_5100
-     * @tc.desc 验证 ArrayBuffer.from(source, (source.byteLength as int) - 1, 1) 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc 验证 ArrayBuffer.from("abcd", "utf8") 在当前场景执行成功，返回值的 byteLength 为 1。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -862,7 +863,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0053
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_5300
-     * @tc.desc 验证 ArrayBuffer.from(source, 0, 1) 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc 验证 ArrayBuffer.from("x", "utf8") 在当前场景执行成功，返回值的 byteLength 为 1。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -877,14 +878,14 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0054
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_5400
-     * @tc.desc 验证 ArrayBuffer.from((null as ESObject) as ArrayBuffer, 0, 1) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToArrayBuffer(null as Object), 0, 1) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSix0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const result = ArrayBuffer.from((null as ESObject) as ArrayBuffer, 0, 1);
+        const result = ArrayBuffer.from(Utils.castToArrayBuffer(null as Object), 0, 1);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -896,14 +897,14 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0055
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_5500
-     * @tc.desc 验证 ArrayBuffer.from((undefined as ESObject) as ArrayBuffer, 0, 1) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToArrayBuffer(undefined as Object), 0, 1) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSix0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const result = ArrayBuffer.from((undefined as ESObject) as ArrayBuffer, 0, 1);
+        const result = ArrayBuffer.from(Utils.castToArrayBuffer(undefined as Object), 0, 1);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -915,7 +916,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0056
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_5600
-     * @tc.desc 验证 ArrayBuffer.from(source, (null as ESObject) as int, 1) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from("abcd", "utf8") 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -923,7 +924,7 @@ export default function arrayBufferFromSixTest(): void {
     it('testArrayBufferFromSix0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const source = ArrayBuffer.from("abcd", "utf8");
-        const result = ArrayBuffer.from(source, (null as ESObject) as int, 1);
+        const result = ArrayBuffer.from(source, Utils.castToInt(null as Object), 1);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -956,7 +957,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0058
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_5800
-     * @tc.desc 验证 ArrayBuffer.from(source, 0, (null as ESObject) as int) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from("abcd", "utf8") 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -964,7 +965,7 @@ export default function arrayBufferFromSixTest(): void {
     it('testArrayBufferFromSix0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const source = ArrayBuffer.from("abcd", "utf8");
-        const result = ArrayBuffer.from(source, 0, (null as ESObject) as int);
+        const result = ArrayBuffer.from(source, 0, Utils.castToInt(null as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -976,7 +977,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0059
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_5900
-     * @tc.desc 验证 ArrayBuffer.from(source, 0, undefined) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc 验证 ArrayBuffer.from("abcd", "utf8") 在当前场景执行成功，返回值的 byteLength 为 4。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -990,7 +991,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0060
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_6000
-     * @tc.desc 验证 ArrayBuffer.from(source, 0, 1000) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from("abcdef", "utf8") 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1010,7 +1011,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0061
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_6100
-     * @tc.desc 验证 ArrayBuffer.from(source, source.byteLength, 1) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from("abcdef", "utf8") 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1030,7 +1031,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0062
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_6200
-     * @tc.desc 验证 ArrayBuffer.from(source, source.byteLength + 10, 1) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from("abcdef", "utf8") 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1050,7 +1051,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0063
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_6300
-     * @tc.desc 验证 ArrayBuffer.from(source, -1, 2) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from("abcdef", "utf8") 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1070,7 +1071,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0064
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_6400
-     * @tc.desc 验证 ArrayBuffer.from(source, -100, 2) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from("abcdef", "utf8") 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1090,7 +1091,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0065
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_6500
-     * @tc.desc 验证 ArrayBuffer.from(source, 0, -1) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from("abcdef", "utf8") 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1110,7 +1111,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0066
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_6600
-     * @tc.desc 验证 ArrayBuffer.from(source, 0, -100) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from("abcdef", "utf8") 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1131,7 +1132,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0067
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_6700
-     * @tc.desc 验证 ArrayBuffer.from(source, -1, -1) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from("abcdef", "utf8") 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1151,7 +1152,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0068
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_6800
-     * @tc.desc 验证 ArrayBuffer.from((("not_arraybuffer" as Object) as ArrayBuffer), 0, 1) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from("abcdef", "utf8") 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1159,7 +1160,7 @@ export default function arrayBufferFromSixTest(): void {
     it('testArrayBufferFromSix0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = ArrayBuffer.from("abcdef", "utf8");
       try {
-        const result = ArrayBuffer.from((("not_arraybuffer" as Object) as ArrayBuffer), 0, 1);
+        const result = ArrayBuffer.from(Utils.castToArrayBuffer("not_arraybuffer" as Object), 0, 1);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -1171,14 +1172,14 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0069
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_6900
-     * @tc.desc 验证 ArrayBuffer.from(((true as Object) as ESObject) as ArrayBuffer, 0, 1) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToArrayBuffer(true as Object), 0, 1) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSix0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const result = ArrayBuffer.from(((true as Object) as ESObject) as ArrayBuffer, 0, 1);
+        const result = ArrayBuffer.from(Utils.castToArrayBuffer(true as Object), 0, 1);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -1190,7 +1191,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0070
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_7000
-     * @tc.desc 验证 ArrayBuffer.from(((new ArrayBufferFromSixPlainForMindmap() as Object) as ESObject) as A... 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToArrayBuffer(new ArrayBufferFromSixPlainForMindmap() as Object),... 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1198,7 +1199,7 @@ export default function arrayBufferFromSixTest(): void {
     it('testArrayBufferFromSix0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const result =
-          ArrayBuffer.from(((new ArrayBufferFromSixPlainForMindmap() as Object) as ESObject) as ArrayBuffer, 0, 1);
+          ArrayBuffer.from(Utils.castToArrayBuffer(new ArrayBufferFromSixPlainForMindmap() as Object), 0, 1);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -1210,7 +1211,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0071
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_7100
-     * @tc.desc 验证 ArrayBuffer.from(source, (("0" as Object) as ESObject) as int, 1) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from("abcd", "utf8") 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1218,7 +1219,7 @@ export default function arrayBufferFromSixTest(): void {
     it('testArrayBufferFromSix0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const source = ArrayBuffer.from("abcd", "utf8");
-        const result = ArrayBuffer.from(source, (("0" as Object) as ESObject) as int, 1);
+        const result = ArrayBuffer.from(source, Utils.castToInt("0" as Object), 1);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -1230,7 +1231,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0072
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_7200
-     * @tc.desc 验证 ArrayBuffer.from(source, ((true as Object) as ESObject) as int, 1) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from("abcd", "utf8") 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1238,7 +1239,7 @@ export default function arrayBufferFromSixTest(): void {
     it('testArrayBufferFromSix0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const source = ArrayBuffer.from("abcd", "utf8");
-        const result = ArrayBuffer.from(source, ((true as Object) as ESObject) as int, 1);
+        const result = ArrayBuffer.from(source, Utils.castToInt(true as Object), 1);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -1250,7 +1251,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0073
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_7300
-     * @tc.desc 验证 ArrayBuffer.from(source, 0, (("2" as Object) as ESObject) as int) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from("abcd", "utf8") 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1258,7 +1259,7 @@ export default function arrayBufferFromSixTest(): void {
     it('testArrayBufferFromSix0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const source = ArrayBuffer.from("abcd", "utf8");
-        const result = ArrayBuffer.from(source, 0, (("2" as Object) as ESObject) as int);
+        const result = ArrayBuffer.from(source, 0, Utils.castToInt("2" as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -1270,7 +1271,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0074
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_7400
-     * @tc.desc 验证 ArrayBuffer.from(source, 0, ((true as Object) as ESObject) as int) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from("abcd", "utf8") 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1278,7 +1279,7 @@ export default function arrayBufferFromSixTest(): void {
     it('testArrayBufferFromSix0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const source = ArrayBuffer.from("abcd", "utf8");
-        const result = ArrayBuffer.from(source, 0, ((true as Object) as ESObject) as int);
+        const result = ArrayBuffer.from(source, 0, Utils.castToInt(true as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -1298,7 +1299,7 @@ export default function arrayBufferFromSixTest(): void {
     it('testArrayBufferFromSix0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const source = ArrayBuffer.from("abcd", "utf8");
-        ArrayBuffer.from(source, 0, (("2" as Object) as ESObject) as int);
+        ArrayBuffer.from(source, 0, Utils.castToInt("2" as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -1318,7 +1319,7 @@ export default function arrayBufferFromSixTest(): void {
     it('testArrayBufferFromSix0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const source = ArrayBuffer.from("abcd", "utf8");
-        ArrayBuffer.from(source, 0, ((true as Object) as ESObject) as int);
+        ArrayBuffer.from(source, 0, Utils.castToInt(true as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);

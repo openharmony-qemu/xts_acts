@@ -356,7 +356,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_2300
-     * @tc.desc 验证 ArrayBuffer.from((null as ESObject) as string, "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToString(null as Object), "utf8") 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -364,7 +364,7 @@ export default function arrayBufferFromFiveTest(): void {
     it('testArrayBufferFromFive0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const badBool: boolean = true;
       try {
-        const buf = ArrayBuffer.from((null as ESObject) as string, "utf8");
+        const buf = ArrayBuffer.from(Utils.castToString(null as Object), "utf8");
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -376,14 +376,14 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_2400
-     * @tc.desc 验证 ArrayBuffer.from((undefined as ESObject) as string, "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToString(undefined as Object), "utf8") 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const buf = ArrayBuffer.from((undefined as ESObject) as string, "utf8");
+        const buf = ArrayBuffer.from(Utils.castToString(undefined as Object), "utf8");
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -395,7 +395,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_2500
-     * @tc.desc 验证 ArrayBuffer.from(((123 as number) as ESObject) as string, "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.numberAsString(_badNum2), "utf8") 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -406,7 +406,8 @@ export default function arrayBufferFromFiveTest(): void {
       badArr.pushOne(2);
       badArr.pushOne(3);
       try {
-        const buf = ArrayBuffer.from(((123 as number) as ESObject) as string, "utf8");
+        const _badNum2: number = 123;
+        const buf = ArrayBuffer.from(Utils.numberAsString(_badNum2), "utf8");
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -669,7 +670,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0042
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_4200
-     * @tc.desc 验证 ArrayBuffer.from("ABC", (null as ESObject) as string) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from("ABC", Utils.castToString(null as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -677,7 +678,7 @@ export default function arrayBufferFromFiveTest(): void {
     it('testArrayBufferFromFive0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const badEnc: number = 123;
       try {
-        const buf = ArrayBuffer.from("ABC", (null as ESObject) as string);
+        const buf = ArrayBuffer.from("ABC", Utils.castToString(null as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -689,7 +690,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0043
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_4300
-     * @tc.desc 验证 ArrayBuffer.from("ABC", (undefined as ESObject) as string) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from("ABC", Utils.castToString(undefined as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -697,7 +698,7 @@ export default function arrayBufferFromFiveTest(): void {
     it('testArrayBufferFromFive0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const badEnc: boolean = true;
       try {
-        const buf = ArrayBuffer.from("ABC", (undefined as ESObject) as string);
+        const buf = ArrayBuffer.from("ABC", Utils.castToString(undefined as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -709,14 +710,15 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0044
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_4400
-     * @tc.desc 验证 ArrayBuffer.from("ABC", ((123 as number) as ESObject) as string) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from("ABC", Utils.numberAsString(_badNum4)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const buf = ArrayBuffer.from("ABC", ((123 as number) as ESObject) as string);
+        const _badNum4: number = 123;
+        const buf = ArrayBuffer.from("ABC", Utils.numberAsString(_badNum4));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -1125,7 +1127,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0073
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_7300
-     * @tc.desc 验证 ArrayBuffer.from((null as ESObject) as string, "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToString(null as Object), "utf8") 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1133,7 +1135,7 @@ export default function arrayBufferFromFiveTest(): void {
     it('testArrayBufferFromFive0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text: string = "XY";
       try {
-        const buf = ArrayBuffer.from((null as ESObject) as string, "utf8");
+        const buf = ArrayBuffer.from(Utils.castToString(null as Object), "utf8");
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -1146,7 +1148,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0074
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_7400
-     * @tc.desc 验证 ArrayBuffer.from((undefined as ESObject) as string, "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToString(undefined as Object), "utf8") 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1154,7 +1156,7 @@ export default function arrayBufferFromFiveTest(): void {
     it('testArrayBufferFromFive0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text: string = "Z";
       try {
-        const buf = ArrayBuffer.from((undefined as ESObject) as string, "utf8");
+        const buf = ArrayBuffer.from(Utils.castToString(undefined as Object), "utf8");
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -1167,14 +1169,14 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0075
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_7500
-     * @tc.desc 验证 ArrayBuffer.from("ABC", (undefined as ESObject) as string) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from("ABC", Utils.castToString(undefined as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const buf = ArrayBuffer.from("ABC", (undefined as ESObject) as string);
+        const buf = ArrayBuffer.from("ABC", Utils.castToString(undefined as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -1186,14 +1188,14 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0076
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_7600
-     * @tc.desc 验证 ArrayBuffer.from((null as ESObject) as string, (null as ESObject) as string) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToString(null as Object), Utils.castToString(null as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const buf = ArrayBuffer.from((null as ESObject) as string, (null as ESObject) as string);
+        const buf = ArrayBuffer.from(Utils.castToString(null as Object), Utils.castToString(null as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -1205,14 +1207,14 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0077
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_7700
-     * @tc.desc 验证 ArrayBuffer.from((undefined as ESObject) as string, (undefined as ESObject) as string) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToString(undefined as Object), Utils.castToString(undefined as Ob... 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const buf = ArrayBuffer.from((undefined as ESObject) as string, (undefined as ESObject) as string);
+        const buf = ArrayBuffer.from(Utils.castToString(undefined as Object), Utils.castToString(undefined as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -1302,7 +1304,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0082
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_8200
-     * @tc.desc 验证 ArrayBuffer.from("ABC", " ") 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from("ABC", "   ") 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1322,7 +1324,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0083
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_8300
-     * @tc.desc 验证 ArrayBuffer.from(((123 as number) as ESObject) as string, "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.numberAsString(_badNum6), "utf8") 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1330,7 +1332,8 @@ export default function arrayBufferFromFiveTest(): void {
     it('testArrayBufferFromFive0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const badBool: boolean = false;
       try {
-        const buf = ArrayBuffer.from(((123 as number) as ESObject) as string, "utf8");
+        const _badNum6: number = 123;
+        const buf = ArrayBuffer.from(Utils.numberAsString(_badNum6), "utf8");
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -1342,14 +1345,14 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0084
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_8400
-     * @tc.desc 验证 ArrayBuffer.from((true as Object) as string, "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToString(true as Object), "utf8") 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const buf = ArrayBuffer.from((true as Object) as string, "utf8");
+        const buf = ArrayBuffer.from(Utils.castToString(true as Object), "utf8");
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -1381,7 +1384,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0086
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_8600
-     * @tc.desc 验证 ArrayBuffer.from((badArr as Object) as string, "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToString(badArr as Object), "utf8") 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1392,7 +1395,7 @@ export default function arrayBufferFromFiveTest(): void {
         badArr.pushOne(1);
         badArr.pushOne(2);
         badArr.pushOne(3);
-        const buf = ArrayBuffer.from((badArr as Object) as string, "utf8");
+        const buf = ArrayBuffer.from(Utils.castToString(badArr as Object), "utf8");
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -1404,7 +1407,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0087
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_8700
-     * @tc.desc 验证 ArrayBuffer.from(((new ArrayBuffer(10) as Object) as string), "utf8") 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToString(new ArrayBuffer(10) as Object), "utf8") 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1412,7 +1415,7 @@ export default function arrayBufferFromFiveTest(): void {
     it('testArrayBufferFromFive0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const badEnc: number = 789;
       try {
-        const buf = ArrayBuffer.from(((new ArrayBuffer(10) as Object) as string), "utf8");
+        const buf = ArrayBuffer.from(Utils.castToString(new ArrayBuffer(10) as Object), "utf8");
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -1425,7 +1428,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0088
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_8800
-     * @tc.desc 验证 ArrayBuffer.from("ABC", (true as Object) as string) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from("ABC", Utils.castToString(true as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1433,7 +1436,7 @@ export default function arrayBufferFromFiveTest(): void {
     it('testArrayBufferFromFive0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const badEnc: boolean = false;
       try {
-        const buf = ArrayBuffer.from("ABC", (true as Object) as string);
+        const buf = ArrayBuffer.from("ABC", Utils.castToString(true as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -1446,7 +1449,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0089
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_8900
-     * @tc.desc 验证 ArrayBuffer.from("ABC", (plainEnc as Object) as string) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from("ABC", Utils.castToString(plainEnc as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1455,7 +1458,7 @@ export default function arrayBufferFromFiveTest(): void {
       const plain = new ArrayBufferFromSixPlainForMindmap();
       try {
         const plainEnc = new ArrayBufferFromSixPlainForMindmap();
-        const buf = ArrayBuffer.from("ABC", (plainEnc as Object) as string);
+        const buf = ArrayBuffer.from("ABC", Utils.castToString(plainEnc as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -1468,14 +1471,14 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0090
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_9000
-     * @tc.desc 验证 ArrayBuffer.from("ABC", ((["utf8"] as Object) as string)) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from("ABC", Utils.castToString(["utf8"] as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const buf = ArrayBuffer.from("ABC", ((["utf8"] as Object) as string));
+        const buf = ArrayBuffer.from("ABC", Utils.castToString(["utf8"] as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -1487,14 +1490,16 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0091
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_9100
-     * @tc.desc 验证 ArrayBuffer.from(((123 as number) as ESObject) as string, ((456 as number) as ESObject)... 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.numberAsString(_badNum9), Utils.numberAsString(_badNum10)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const buf = ArrayBuffer.from(((123 as number) as ESObject) as string, ((456 as number) as ESObject) as string);
+        const _badNum9: number = 123;
+        const _badNum10: number = 456;
+        const buf = ArrayBuffer.from(Utils.numberAsString(_badNum9), Utils.numberAsString(_badNum10));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);

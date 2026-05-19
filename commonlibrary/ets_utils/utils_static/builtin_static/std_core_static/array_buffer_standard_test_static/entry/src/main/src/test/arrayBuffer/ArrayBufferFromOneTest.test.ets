@@ -618,14 +618,14 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0037
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_3700
-     * @tc.desc 验证 ArrayBuffer.from((null as ESObject) as ValueArray<byte>) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToValueArrayByte(null as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromOne0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        ArrayBuffer.from((null as ESObject) as ValueArray<byte>);
+        ArrayBuffer.from(Utils.castToValueArrayByte(null as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -637,14 +637,14 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0038
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_3800
-     * @tc.desc 验证 ArrayBuffer.from((undefined as ESObject) as ValueArray<byte>) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToValueArrayByte(undefined as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromOne0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        ArrayBuffer.from((undefined as ESObject) as ValueArray<byte>);
+        ArrayBuffer.from(Utils.castToValueArrayByte(undefined as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -656,14 +656,14 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0039
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_3900
-     * @tc.desc 验证 ArrayBuffer.from((null as ESObject) as ValueArray<byte>) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToValueArrayByte(null as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromOne0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        let result = ArrayBuffer.from((null as ESObject) as ValueArray<byte>);
+        let result = ArrayBuffer.from(Utils.castToValueArrayByte(null as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -675,14 +675,14 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0040
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_4000
-     * @tc.desc 验证 ArrayBuffer.from((undefined as ESObject) as ValueArray<byte>) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToValueArrayByte(undefined as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromOne0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        let result = ArrayBuffer.from((undefined as ESObject) as ValueArray<byte>);
+        let result = ArrayBuffer.from(Utils.castToValueArrayByte(undefined as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -694,14 +694,14 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0041
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_4100
-     * @tc.desc 验证 ArrayBuffer.from((("abc" as Object) as ValueArray<byte>)) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToValueArrayByte("abc" as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromOne0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        let result = ArrayBuffer.from((("abc" as Object) as ValueArray<byte>));
+        let result = ArrayBuffer.from(Utils.castToValueArrayByte("abc" as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -713,14 +713,15 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0042
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_4200
-     * @tc.desc 验证 ArrayBuffer.from((((42 as number) as ESObject) as ValueArray<byte>)) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToValueArrayByte(Utils.boxAsObject(_badNum2))) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromOne0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        let result = ArrayBuffer.from((((42 as number) as ESObject) as ValueArray<byte>));
+        const _badNum2: number = 42;
+        let result = ArrayBuffer.from(Utils.castToValueArrayByte(Utils.boxAsObject(_badNum2)));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -748,14 +749,14 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0044
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_4400
-     * @tc.desc 验证 ArrayBuffer.from(((true as Object) as ValueArray<byte>)) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToValueArrayByte(true as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromOne0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        let result = ArrayBuffer.from(((true as Object) as ValueArray<byte>));
+        let result = ArrayBuffer.from(Utils.castToValueArrayByte(true as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);

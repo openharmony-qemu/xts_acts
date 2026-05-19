@@ -43,7 +43,7 @@ export default function arrayBufferDetachedFieldTest(): void {
     /**
      * @tc.name testArrayBufferDetachedField0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_0100
-     * @tc.desc 验证 buffer.detached 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc 验证 buffer.resize(10) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -57,7 +57,7 @@ export default function arrayBufferDetachedFieldTest(): void {
     /**
      * @tc.name testArrayBufferDetachedField0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_0200
-     * @tc.desc 验证 buffer.detached 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc 验证 buffer.resize(10) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -71,7 +71,7 @@ export default function arrayBufferDetachedFieldTest(): void {
     /**
      * @tc.name testArrayBufferDetachedField0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_0300
-     * @tc.desc 验证 buffer.detached 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc 验证 buffer.resize(10) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -85,7 +85,7 @@ export default function arrayBufferDetachedFieldTest(): void {
     /**
      * @tc.name testArrayBufferDetachedField0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_0400
-     * @tc.desc 验证 buffer.detached 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc 验证 buffer.resize(10) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -100,7 +100,7 @@ export default function arrayBufferDetachedFieldTest(): void {
     /**
      * @tc.name testArrayBufferDetachedField0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_0500
-     * @tc.desc 验证 buffer.detached 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -114,7 +114,7 @@ export default function arrayBufferDetachedFieldTest(): void {
     /**
      * @tc.name testArrayBufferDetachedField0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_0600
-     * @tc.desc 验证 buffer.detached 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -128,7 +128,7 @@ export default function arrayBufferDetachedFieldTest(): void {
     /**
      * @tc.name testArrayBufferDetachedField0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_0700
-     * @tc.desc 验证 buffer.detached 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -289,7 +289,7 @@ export default function arrayBufferDetachedFieldTest(): void {
     /**
      * @tc.name testArrayBufferDetachedField0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_1800
-     * @tc.desc 验证 buffer.detached 在当前场景执行成功，等值关系判断符合预期。
+     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，等值关系判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -303,7 +303,7 @@ export default function arrayBufferDetachedFieldTest(): void {
     /**
      * @tc.name testArrayBufferDetachedField0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_1900
-     * @tc.desc 验证 new ArrayBuffer(0) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -316,7 +316,7 @@ export default function arrayBufferDetachedFieldTest(): void {
     /**
      * @tc.name testArrayBufferDetachedField0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_2000
-     * @tc.desc 验证 new ArrayBuffer(1) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -329,7 +329,7 @@ export default function arrayBufferDetachedFieldTest(): void {
     /**
      * @tc.name testArrayBufferDetachedField0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_2100
-     * @tc.desc 验证 new ArrayBuffer(1024) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -342,7 +342,7 @@ export default function arrayBufferDetachedFieldTest(): void {
     /**
      * @tc.name testArrayBufferDetachedField0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_2200
-     * @tc.desc 验证 new ArrayBuffer(4, 16) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -356,7 +356,7 @@ export default function arrayBufferDetachedFieldTest(): void {
     /**
      * @tc.name testArrayBufferDetachedField0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_2300
-     * @tc.desc 验证 new ArrayBuffer(4, 16) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc 验证 buffer.resize(16) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -370,7 +370,7 @@ export default function arrayBufferDetachedFieldTest(): void {
     /**
      * @tc.name testArrayBufferDetachedField0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_2400
-     * @tc.desc 验证 new ArrayBuffer(4, 16) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc 验证 buffer.resize(8) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -388,7 +388,7 @@ export default function arrayBufferDetachedFieldTest(): void {
     /**
      * @tc.name testArrayBufferDetachedField0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_2500
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc 验证 ArrayBuffer.from("x", "utf8") 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -404,7 +404,7 @@ export default function arrayBufferDetachedFieldTest(): void {
     /**
      * @tc.name testArrayBufferDetachedField0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_2600
-     * @tc.desc 验证 new ArrayBuffer(8, 16) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc 验证 ArrayBuffer.from("x", "utf8") 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -417,7 +417,7 @@ export default function arrayBufferDetachedFieldTest(): void {
     /**
      * @tc.name testArrayBufferDetachedField0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_2700
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc 验证 ArrayBuffer.from("x", "utf8") 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -431,7 +431,7 @@ export default function arrayBufferDetachedFieldTest(): void {
     /**
      * @tc.name testArrayBufferDetachedField0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_2800
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc 验证 ArrayBuffer.from("x", "utf8") 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -458,7 +458,7 @@ export default function arrayBufferDetachedFieldTest(): void {
     /**
      * @tc.name testArrayBufferDetachedField0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_3000
-     * @tc.desc 验证 new ArrayBuffer(2, 8) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc 验证 buffer.resize(4) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -472,7 +472,7 @@ export default function arrayBufferDetachedFieldTest(): void {
     /**
      * @tc.name testArrayBufferDetachedField0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_3100
-     * @tc.desc 验证 new ArrayBuffer(8, 16) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，返回值的 byteLength 为 0。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -487,7 +487,7 @@ export default function arrayBufferDetachedFieldTest(): void {
     /**
      * @tc.name testArrayBufferDetachedField0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_3200
-     * @tc.desc 验证 new ArrayBuffer(8, 16) 在当前场景执行成功，等值关系判断符合预期。
+     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，等值关系判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -503,7 +503,7 @@ export default function arrayBufferDetachedFieldTest(): void {
     /**
      * @tc.name testArrayBufferDetachedField0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_3300
-     * @tc.desc 验证 new ArrayBuffer(4, 16) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，返回值的 byteLength 为 0。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -518,7 +518,7 @@ export default function arrayBufferDetachedFieldTest(): void {
     /**
      * @tc.name testArrayBufferDetachedField0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_3400
-     * @tc.desc 验证 new ArrayBuffer(4, 16) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc 验证 buffer.resize(10) 在当前场景执行成功，返回值的 byteLength 为 0。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -534,7 +534,7 @@ export default function arrayBufferDetachedFieldTest(): void {
     /**
      * @tc.name testArrayBufferDetachedField0035
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_3500
-     * @tc.desc 验证 new ArrayBuffer(0, 8) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，返回值的 byteLength 为 0。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -549,7 +549,7 @@ export default function arrayBufferDetachedFieldTest(): void {
     /**
      * @tc.name testArrayBufferDetachedField0036
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_3600
-     * @tc.desc 验证 new ArrayBuffer(8, 16) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，返回值的 byteLength 为 0。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -568,7 +568,7 @@ export default function arrayBufferDetachedFieldTest(): void {
     /**
      * @tc.name testArrayBufferDetachedField0037
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_3700
-     * @tc.desc 验证 buffer.detached 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，实例类型判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

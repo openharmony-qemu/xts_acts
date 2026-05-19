@@ -208,7 +208,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_1100
-     * @tc.desc 验证 new Byte(Int.toByte(128))) 在当前场景下的行为符合用例预期。
+     * @tc.desc 验证 new Byte(Int.toByte(128)) 在当前场景下的行为符合用例预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -220,7 +220,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_1200
-     * @tc.desc 验证 new Byte(Int.toByte(-129))) 在当前场景下的行为符合用例预期。
+     * @tc.desc 验证 new Byte(Int.toByte(-129)) 在当前场景下的行为符合用例预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -232,7 +232,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_1300
-     * @tc.desc 验证 new Byte(Int.toByte(255))) 在当前场景下的行为符合用例预期。
+     * @tc.desc 验证 new Byte(Int.toByte(255)) 在当前场景下的行为符合用例预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -244,7 +244,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_1400
-     * @tc.desc 验证 new Byte((v as Object) as byte) 在当前场景下的行为符合用例预期。
+     * @tc.desc 验证 new Byte(Utils.castToByte(v as Object)) 在当前场景下的行为符合用例预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -252,14 +252,14 @@ export default function byteConstructorTwoTest(): void {
     it('testByteConstructorTwo0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => {
         const v: number = NaN;
-        return new Byte((v as Object) as byte);
+        return new Byte(Utils.castToByte(v as Object));
       })).assertTrue();
     });
 
     /**
      * @tc.name testByteConstructorTwo0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_1500
-     * @tc.desc 验证 new Byte(Int.toByte(128))) 在当前场景下的行为符合用例预期。
+     * @tc.desc 验证 new Byte(Int.toByte(128)) 在当前场景下的行为符合用例预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -271,7 +271,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_1600
-     * @tc.desc 验证 new Byte(Int.toByte(-129))) 在当前场景下的行为符合用例预期。
+     * @tc.desc 验证 new Byte(Int.toByte(-129)) 在当前场景下的行为符合用例预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -283,7 +283,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_1700
-     * @tc.desc 验证 new Byte(Double.toByte(0.5))) 在当前场景下的行为符合用例预期。
+     * @tc.desc 验证 new Byte(Double.toByte(0.5)) 在当前场景下的行为符合用例预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -295,7 +295,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_1800
-     * @tc.desc 验证 new Byte((v as Object) as byte) 在当前场景下的行为符合用例预期。
+     * @tc.desc 验证 new Byte(Utils.castToByte(v as Object)) 在当前场景下的行为符合用例预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -303,14 +303,14 @@ export default function byteConstructorTwoTest(): void {
     it('testByteConstructorTwo0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => {
         const v: number = NaN;
-        return new Byte((v as Object) as byte);
+        return new Byte(Utils.castToByte(v as Object));
       })).assertTrue();
     });
 
     /**
      * @tc.name testByteConstructorTwo0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_1900
-     * @tc.desc 验证 new Byte((v as Object) as byte) 在当前场景下的行为符合用例预期。
+     * @tc.desc 验证 new Byte(Utils.castToByte(v as Object)) 在当前场景下的行为符合用例预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -318,14 +318,14 @@ export default function byteConstructorTwoTest(): void {
     it('testByteConstructorTwo0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => {
         const v: number = Infinity;
-        return new Byte((v as Object) as byte);
+        return new Byte(Utils.castToByte(v as Object));
       })).assertTrue();
     });
 
     /**
      * @tc.name testByteConstructorTwo0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_2000
-     * @tc.desc 验证 new Byte((s as Object) as byte) 在当前场景下的行为符合用例预期。
+     * @tc.desc 验证 new Byte(Utils.castToByte(s as Object)) 在当前场景下的行为符合用例预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -333,14 +333,14 @@ export default function byteConstructorTwoTest(): void {
     it('testByteConstructorTwo0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => {
         const s: string = '64';
-        return new Byte((s as Object) as byte);
+        return new Byte(Utils.castToByte(s as Object));
       })).assertTrue();
     });
 
     /**
      * @tc.name testByteConstructorTwo0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_2100
-     * @tc.desc 验证 new Byte(Double.toByte(0.5))) 在当前场景下的行为符合用例预期。
+     * @tc.desc 验证 new Byte(Double.toByte(0.5)) 在当前场景下的行为符合用例预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -367,7 +367,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_2300
-     * @tc.desc 验证 new ByteCtorTwoObjectProbe023() 在当前场景下的行为符合用例预期。
+     * @tc.desc 验证 new Byte(Utils.castToByte(probe as Object)) 在当前场景下的行为符合用例预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -375,32 +375,32 @@ export default function byteConstructorTwoTest(): void {
     it('testByteConstructorTwo0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => {
         const probe = new ByteCtorTwoObjectProbe023();
-        return new Byte((probe as Object) as byte);
+        return new Byte(Utils.castToByte(probe as Object));
       })).assertTrue();
     });
 
     /**
      * @tc.name testByteConstructorTwo0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_2400
-     * @tc.desc 验证 new Byte((true as Object) as byte)) 在当前场景下的行为符合用例预期。
+     * @tc.desc 验证 new Byte(Utils.castToByte(true as Object)) 在当前场景下的行为符合用例预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testByteConstructorTwo0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => new Byte((true as Object) as byte))).assertTrue();
+      expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => new Byte(Utils.castToByte(true as Object)))).assertTrue();
     });
 
     /**
      * @tc.name testByteConstructorTwo0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_2500
-     * @tc.desc 验证 new Byte((false as Object) as byte)) 在当前场景下的行为符合用例预期。
+     * @tc.desc 验证 new Byte(Utils.castToByte(false as Object)) 在当前场景下的行为符合用例预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testByteConstructorTwo0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => new Byte((false as Object) as byte))).assertTrue();
+      expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => new Byte(Utils.castToByte(false as Object)))).assertTrue();
     });
 
     /**
@@ -611,7 +611,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0041
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_4100
-     * @tc.desc 验证 new Byte(Int.toByte(256))) 在当前场景下的行为符合用例预期。
+     * @tc.desc 验证 new Byte(Int.toByte(256)) 在当前场景下的行为符合用例预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -623,7 +623,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0042
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_4200
-     * @tc.desc 验证 new Byte(Int.toByte(-256))) 在当前场景下的行为符合用例预期。
+     * @tc.desc 验证 new Byte(Int.toByte(-256)) 在当前场景下的行为符合用例预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -635,7 +635,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0043
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_4300
-     * @tc.desc 验证 new Byte((digitPair as Object) as byte) 在当前场景下的行为符合用例预期。
+     * @tc.desc 验证 new Byte(Utils.castToByte(digitPair as Object)) 在当前场景下的行为符合用例预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -643,26 +643,26 @@ export default function byteConstructorTwoTest(): void {
     it('testByteConstructorTwo0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => {
         const digitPair: string = '64';
-        return new Byte((digitPair as Object) as byte);
+        return new Byte(Utils.castToByte(digitPair as Object));
       })).assertTrue();
     });
 
     /**
      * @tc.name testByteConstructorTwo0044
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_4400
-     * @tc.desc 验证 new Byte((true as Object) as byte)) 在当前场景下的行为符合用例预期。
+     * @tc.desc 验证 new Byte(Utils.castToByte(true as Object)) 在当前场景下的行为符合用例预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testByteConstructorTwo0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => new Byte((true as Object) as byte))).assertTrue();
+      expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => new Byte(Utils.castToByte(true as Object)))).assertTrue();
     });
 
     /**
      * @tc.name testByteConstructorTwo0045
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_4500
-     * @tc.desc 验证 new ByteCtorTwoObjectProbe023() 在当前场景下的行为符合用例预期。
+     * @tc.desc 验证 new Byte(Utils.castToByte(probe048 as Object)) 在当前场景下的行为符合用例预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -671,14 +671,14 @@ export default function byteConstructorTwoTest(): void {
       expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => {
         const probe048 = new ByteCtorTwoObjectProbe023();
         probe048.tag = 48;
-        return new Byte((probe048 as Object) as byte);
+        return new Byte(Utils.castToByte(probe048 as Object));
       })).assertTrue();
     });
 
     /**
      * @tc.name testByteConstructorTwo0046
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_4600
-     * @tc.desc 验证 new Byte((arr as Object) as byte) 在当前场景下的行为符合用例预期。
+     * @tc.desc 验证 new Byte(Utils.castToByte(arr as Object)) 在当前场景下的行为符合用例预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -687,21 +687,21 @@ export default function byteConstructorTwoTest(): void {
       expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => {
         const arr = new Array<number>();
         arr.pushOne(Int.toDouble(1));
-        return new Byte((arr as Object) as byte);
+        return new Byte(Utils.castToByte(arr as Object));
       })).assertTrue();
     });
 
     /**
      * @tc.name testByteConstructorTwo0047
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_4700
-     * @tc.desc 验证 new Byte((null as Object) as byte) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 new Byte(Utils.castToByte(null as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testByteConstructorTwo0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const b = new Byte((null as Object) as byte);
+        const b = new Byte(Utils.castToByte(null as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -733,7 +733,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0049
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_4900
-     * @tc.desc 验证 new Byte((byteBadNum as Object) as byte) 在当前场景下的行为符合用例预期。
+     * @tc.desc 验证 new Byte(Utils.castToByte(byteBadNum as Object)) 在当前场景下的行为符合用例预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -741,14 +741,14 @@ export default function byteConstructorTwoTest(): void {
     it('testByteConstructorTwo0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => {
         const byteBadNum: number = NaN;
-        return new Byte((byteBadNum as Object) as byte);
+        return new Byte(Utils.castToByte(byteBadNum as Object));
       })).assertTrue();
     });
 
     /**
      * @tc.name testByteConstructorTwo0050
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_5000
-     * @tc.desc 验证 new Byte((byteBadNum as Object) as byte) 在当前场景下的行为符合用例预期。
+     * @tc.desc 验证 new Byte(Utils.castToByte(byteBadNum as Object)) 在当前场景下的行为符合用例预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -756,7 +756,7 @@ export default function byteConstructorTwoTest(): void {
     it('testByteConstructorTwo0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ByteCtorTwoCatchHelper.checkErrorOrTruncate((): Byte => {
         const byteBadNum: number = Infinity;
-        return new Byte((byteBadNum as Object) as byte);
+        return new Byte(Utils.castToByte(byteBadNum as Object));
       })).assertTrue();
     });
     return;

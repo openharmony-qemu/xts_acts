@@ -318,7 +318,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_2000
-     * @tc.desc 验证 new ArrayBuffer(8, 8) 在当前场景执行成功，返回值的 byteLength 为 8。
+     * @tc.desc 验证 buffer.resize(4) 在当前场景执行成功，返回值的 byteLength 为 8。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -332,7 +332,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_2100
-     * @tc.desc 验证 new ArrayBuffer(1, 1) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc 验证 buffer.resize(4) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -345,7 +345,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_2200
-     * @tc.desc 验证 new ArrayBuffer(0, 1) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc 验证 buffer.resize(4) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -358,7 +358,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_2300
-     * @tc.desc 验证 new ArrayBuffer(1024, 4096) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc 验证 buffer.resize(4) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -371,7 +371,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_2400
-     * @tc.desc 验证 new ArrayBuffer(2, 8) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc 验证 buffer.resize(4) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -388,7 +388,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_2500
-     * @tc.desc 验证 new ArrayBuffer(0) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，返回值的 byteLength 为 0。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -402,7 +402,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_2600
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，空值有效性判断符合预期。
+     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，空值有效性判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -421,7 +421,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_2700
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -434,7 +434,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_2800
-     * @tc.desc 验证 new ArrayBuffer(2, 8) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -447,7 +447,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_2900
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -466,7 +466,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_3000
-     * @tc.desc 验证 new ArrayBuffer(2, 8) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -480,7 +480,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_3100
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -500,7 +500,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_3200
-     * @tc.desc 验证 new ArrayBuffer(2, 8) 在当前场景执行成功，属性状态判断符合预期。
+     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，属性状态判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

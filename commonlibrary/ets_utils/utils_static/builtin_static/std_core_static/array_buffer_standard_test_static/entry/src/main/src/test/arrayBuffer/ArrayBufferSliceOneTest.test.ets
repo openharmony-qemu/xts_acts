@@ -440,7 +440,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_2400
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 2。
+     * @tc.desc 验证 new Byte() 在当前场景执行成功，返回值的 byteLength 为 2。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -459,7 +459,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_2500
-     * @tc.desc 验证 new ArrayBuffer(6) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc 验证 new Byte() 在当前场景执行成功，返回值的 byteLength 为 3。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -479,7 +479,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_2600
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc 验证 new Byte() 在当前场景执行成功，实例类型判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -558,7 +558,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_3100
-     * @tc.desc 验证 new ArrayBuffer(4) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，返回值的 byteLength 为 4。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -580,7 +580,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_3200
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，返回值的 byteLength 为 0。
+     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，返回值的 byteLength 为 0。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -595,7 +595,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_3300
-     * @tc.desc 验证 new ArrayBuffer(1) 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，返回值的 byteLength 为 1。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -611,7 +611,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_3400
-     * @tc.desc 验证 new ArrayBuffer(1) 在当前场景执行成功，返回值的 byteLength 为 1。
+     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，返回值的 byteLength 为 1。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -627,7 +627,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0035
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_3500
-     * @tc.desc 验证 new ArrayBuffer(4, 8) 在当前场景执行成功，空值有效性判断符合预期。
+     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，空值有效性判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -648,7 +648,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0036
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_3600
-     * @tc.desc 验证 new ArrayBuffer(4, 8) 在当前场景执行成功，空值有效性判断符合预期。
+     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，空值有效性判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -669,7 +669,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0037
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_3700
-     * @tc.desc 验证 new ArrayBuffer(4, 8) 在当前场景执行成功，空值有效性判断符合预期。
+     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，空值有效性判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

@@ -255,7 +255,7 @@ export default function byteConstructorOneTest(): void {
     /**
      * @tc.name testByteConstructorOne0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_1700
-     * @tc.desc 验证 Byte.MIN_VALUE 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc 验证 new Byte(0) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -267,7 +267,7 @@ export default function byteConstructorOneTest(): void {
     /**
      * @tc.name testByteConstructorOne0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_1800
-     * @tc.desc 验证 Byte.MAX_VALUE 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc 验证 new Byte(0) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -292,14 +292,14 @@ export default function byteConstructorOneTest(): void {
     /**
      * @tc.name testByteConstructorOne0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_2000
-     * @tc.desc 验证 new Byte((("0" as Object) as byte)) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 new Byte(Utils.castToByte("0" as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testByteConstructorOne0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        let b: Byte = new Byte((("0" as Object) as byte))
+        let b: Byte = new Byte(Utils.castToByte("0" as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -311,14 +311,14 @@ export default function byteConstructorOneTest(): void {
     /**
      * @tc.name testByteConstructorOne0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_2100
-     * @tc.desc 验证 new Byte(((undefined as Object) as byte)) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 new Byte(Utils.castToByte(undefined as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testByteConstructorOne0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        let b: Byte = new Byte(((undefined as Object) as byte))
+        let b: Byte = new Byte(Utils.castToByte(undefined as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -330,14 +330,14 @@ export default function byteConstructorOneTest(): void {
     /**
      * @tc.name testByteConstructorOne0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_2200
-     * @tc.desc 验证 new Byte(((null as Object) as byte)) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 new Byte(Utils.castToByte(null as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testByteConstructorOne0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        let b: Byte = new Byte(((null as Object) as byte))
+        let b: Byte = new Byte(Utils.castToByte(null as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);

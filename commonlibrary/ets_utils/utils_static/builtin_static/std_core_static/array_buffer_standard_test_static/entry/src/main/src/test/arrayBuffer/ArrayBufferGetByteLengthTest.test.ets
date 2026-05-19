@@ -250,7 +250,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_1500
-     * @tc.desc 验证 new ArrayBuffer(0) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -263,7 +263,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_1600
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -276,7 +276,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_1700
-     * @tc.desc 验证 new ArrayBuffer(1024) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -289,7 +289,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_1800
-     * @tc.desc 验证 new ArrayBuffer(16) 在当前场景执行成功，返回值的 byteLength 为 6。
+     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，返回值的 byteLength 为 6。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -304,7 +304,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_1900
-     * @tc.desc 验证 new ArrayBuffer(4, 16) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc 验证 ArrayBuffer.from("ABC", "utf8") 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -330,7 +330,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_2100
-     * @tc.desc 验证 buffer.getByteLength() 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc 验证 buffer.resize(10) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -345,7 +345,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_2200
-     * @tc.desc 验证 buffer.getByteLength() 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc 验证 buffer.resize(2) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -360,7 +360,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_2300
-     * @tc.desc 验证 buffer.getByteLength() 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -375,7 +375,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_2400
-     * @tc.desc 验证 buffer.getByteLength() 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc 验证 buffer.resize(16) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -390,7 +390,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_2500
-     * @tc.desc 验证 new ArrayBuffer(4, 16) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc 验证 buffer.resize(8) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -408,7 +408,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_2600
-     * @tc.desc 验证 new ArrayBuffer(4, 16) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc 验证 buffer.resize(10) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -438,7 +438,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_2800
-     * @tc.desc 验证 buffer.getByteLength() 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -452,7 +452,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_2900
-     * @tc.desc 验证 buffer.getByteLength() 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -466,7 +466,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_3000
-     * @tc.desc 验证 buffer.getByteLength() 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -480,7 +480,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_3100
-     * @tc.desc 验证 buffer.getByteLength() 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -494,7 +494,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_3200
-     * @tc.desc 验证 buffer.getByteLength() 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -509,7 +509,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_3300
-     * @tc.desc 验证 new ArrayBuffer(8, 16) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -523,7 +523,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_3400
-     * @tc.desc 验证 new ArrayBuffer(8, 16) 在当前场景执行成功，等值关系判断符合预期。
+     * @tc.desc 验证 buffer.resize(0) 在当前场景执行成功，等值关系判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

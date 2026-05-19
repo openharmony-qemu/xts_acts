@@ -69,7 +69,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0020
-     * @tc.desc 验证 Utils.fromArrayBufferWithOffset(source, 3) 在当前场景执行成功，返回值的 byteLength 为 5。
+     * @tc.desc 验证 ArrayBuffer.from(source, 2, 4) 在当前场景执行成功，返回值的 byteLength 为 5。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -255,14 +255,14 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0130
-     * @tc.desc 验证 ArrayBuffer.from((null as ESObject) as ArrayBuffer, 0, 1) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToArrayBuffer(null as Object), 0, 1) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const result = ArrayBuffer.from((null as ESObject) as ArrayBuffer, 0, 1);
+        const result = ArrayBuffer.from(Utils.castToArrayBuffer(null as Object), 0, 1);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -274,14 +274,14 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0140
-     * @tc.desc 验证 ArrayBuffer.from((undefined as ESObject) as ArrayBuffer, 0, 1) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToArrayBuffer(undefined as Object), 0, 1) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const result = ArrayBuffer.from((undefined as ESObject) as ArrayBuffer, 0, 1);
+        const result = ArrayBuffer.from(Utils.castToArrayBuffer(undefined as Object), 0, 1);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -293,14 +293,14 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0150
-     * @tc.desc 验证 ArrayBuffer.from((("abcd" as Object) as ArrayBuffer), 0, 1) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToArrayBuffer("abcd" as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const result = ArrayBuffer.from((("abcd" as Object) as ArrayBuffer), 0, 1);
+        const result = ArrayBuffer.from(Utils.castToArrayBuffer("abcd" as Object), 0, 1);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -312,14 +312,14 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0160
-     * @tc.desc 验证 ArrayBuffer.from(((true as Object) as ArrayBuffer), 0, 1) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToArrayBuffer(true as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const result = ArrayBuffer.from(((true as Object) as ArrayBuffer), 0, 1);
+        const result = ArrayBuffer.from(Utils.castToArrayBuffer(true as Object), 0, 1);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -607,7 +607,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0310
-     * @tc.desc 验证 ArrayBuffer.from(source, (null as ESObject) as int, 1) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(source, Utils.castToInt(null as Object), 1) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -616,7 +616,7 @@ export default function arrayBufferFromSevenTest(): void {
       const source = new ArrayBuffer(8);
 
       try {
-        const result = ArrayBuffer.from(source, (null as ESObject) as int, 1);
+        const result = ArrayBuffer.from(source, Utils.castToInt(null as Object), 1);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -628,7 +628,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0320
-     * @tc.desc 验证 ArrayBuffer.from(source, (("1" as Object) as ESObject) as int, 1) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(source, Utils.castToInt("1" as Object), 1) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -637,7 +637,7 @@ export default function arrayBufferFromSevenTest(): void {
       const source = new ArrayBuffer(8);
 
       try {
-        const result = ArrayBuffer.from(source, (("1" as Object) as ESObject) as int, 1);
+        const result = ArrayBuffer.from(source, Utils.castToInt("1" as Object), 1);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -649,7 +649,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0330
-     * @tc.desc 验证 Utils.fromArrayBufferWithOffset(source, 2) 在当前场景执行成功，返回值的 byteLength 为 4。
+     * @tc.desc 验证 ArrayBuffer.from(source) 在当前场景执行成功，返回值的 byteLength 为 4。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -943,7 +943,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0049
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0490
-     * @tc.desc 验证 ArrayBuffer.from(source, 0, (null as ESObject) as int) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(source, 0, Utils.castToInt(null as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -952,7 +952,7 @@ export default function arrayBufferFromSevenTest(): void {
       const source = new ArrayBuffer(8);
 
       try {
-        const result = ArrayBuffer.from(source, 0, (null as ESObject) as int);
+        const result = ArrayBuffer.from(source, 0, Utils.castToInt(null as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -965,7 +965,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0050
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0500
-     * @tc.desc 验证 ArrayBuffer.from(source, 0, (("4" as Object) as ESObject) as int) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(source, 0, Utils.castToInt("4" as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -974,7 +974,7 @@ export default function arrayBufferFromSevenTest(): void {
       const source = new ArrayBuffer(8);
 
       try {
-        const result = ArrayBuffer.from(source, 0, (("4" as Object) as ESObject) as int);
+        const result = ArrayBuffer.from(source, 0, Utils.castToInt("4" as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -1022,7 +1022,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0053
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0530
-     * @tc.desc 验证 Utils.fromArrayBufferWithOffset(source, 5) 在当前场景执行成功，返回值的 byteLength 为 5。
+     * @tc.desc 验证 ArrayBuffer.from(source, 3, 4) 在当前场景执行成功，返回值的 byteLength 为 5。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1199,7 +1199,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0064
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0640
-     * @tc.desc 验证 Utils.fromArrayBufferWithOffset(source, 2) 在当前场景执行成功，实例类型判断符合预期。
+     * @tc.desc 验证 ArrayBuffer.from(source) 在当前场景执行成功，实例类型判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1237,7 +1237,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0066
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0660
-     * @tc.desc 验证 Utils.fromArrayBufferWithOffset(source, 3) 在当前场景执行成功，返回结果与预期一致。
+     * @tc.desc 验证 ArrayBuffer.from(source, 2, 5) 在当前场景执行成功，返回结果与预期一致。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1349,7 +1349,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0071
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0710
-     * @tc.desc 验证 Utils.fromArrayBufferWithOffset(source, off) 在当前场景执行成功，返回值的 byteLength 为 (source.byteLength as int。
+     * @tc.desc 验证 ArrayBuffer.from(source) 在当前场景执行成功，返回值的 byteLength 为 (source.byteLength as int。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1397,7 +1397,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0073
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0730
-     * @tc.desc 验证 Utils.fromArrayBufferWithOffset(source, 5) 在当前场景执行成功，返回值的 byteLength 为 3。
+     * @tc.desc 验证 ArrayBuffer.from(source, 0, (source.byteLength as int)) 在当前场景执行成功，返回值的 byteLength 为 3。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1415,7 +1415,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0074
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0740
-     * @tc.desc 验证 Utils.fromArrayBufferWithOffset(source, off) 在当前场景执行成功，返回值的 byteLength 为 (source.byteLength as int。
+     * @tc.desc 验证 ArrayBuffer.from(source, 0, (source.byteLength as int)) 在当前场景执行成功，返回值的 byteLength 为 (source.byteLength as int。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1597,14 +1597,14 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0085
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0850
-     * @tc.desc 验证 ArrayBuffer.from((undefined as ESObject) as ArrayBuffer) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToArrayBuffer(undefined as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const result = ArrayBuffer.from((undefined as ESObject) as ArrayBuffer);
+        const result = ArrayBuffer.from(Utils.castToArrayBuffer(undefined as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -1616,14 +1616,14 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0086
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0860
-     * @tc.desc 验证 ArrayBuffer.from((undefined as ESObject) as ArrayBuffer, 0, 2) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToArrayBuffer(undefined as Object), 0, 2) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const result = ArrayBuffer.from((undefined as ESObject) as ArrayBuffer, 0, 2);
+        const result = ArrayBuffer.from(Utils.castToArrayBuffer(undefined as Object), 0, 2);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -1635,7 +1635,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0087
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0870
-     * @tc.desc 验证 ArrayBuffer.from(source, (null as ESObject) as int, 1) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(source, Utils.castToInt(null as Object), 1) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1644,7 +1644,7 @@ export default function arrayBufferFromSevenTest(): void {
       const source = new ArrayBuffer(8);
 
       try {
-        const result = ArrayBuffer.from(source, (null as ESObject) as int, 1);
+        const result = ArrayBuffer.from(source, Utils.castToInt(null as Object), 1);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -1656,7 +1656,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0088
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0880
-     * @tc.desc 验证 ArrayBuffer.from(source, 0, (null as ESObject) as int) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(source, 0, Utils.castToInt(null as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1664,7 +1664,7 @@ export default function arrayBufferFromSevenTest(): void {
     it('testArrayBufferFromSeven0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new ArrayBuffer(8);
       try {
-        ArrayBuffer.from(source, 0, (null as ESObject) as int);
+        ArrayBuffer.from(source, 0, Utils.castToInt(null as Object));
         expect(true).assertFail();
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
@@ -1676,7 +1676,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0089
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0890
-     * @tc.desc 验证 ArrayBuffer.from(source, (null as ESObject) as int, (null as ESObject) as int) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(source, Utils.castToInt(null as Object), Utils.castToInt(null as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1684,7 +1684,7 @@ export default function arrayBufferFromSevenTest(): void {
     it('testArrayBufferFromSeven0089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new ArrayBuffer(8);
       try {
-        ArrayBuffer.from(source, (null as ESObject) as int, (null as ESObject) as int);
+        ArrayBuffer.from(source, Utils.castToInt(null as Object), Utils.castToInt(null as Object));
         expect(true).assertFail();
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
@@ -1696,7 +1696,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0090
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0900
-     * @tc.desc 验证 ArrayBuffer.from(source, 3, (null as ESObject) as int) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(source, 3, Utils.castToInt(null as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1704,7 +1704,7 @@ export default function arrayBufferFromSevenTest(): void {
     it('testArrayBufferFromSeven0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new ArrayBuffer(8);
       try {
-        const result = ArrayBuffer.from(source, 3, (null as ESObject) as int);
+        const result = ArrayBuffer.from(source, 3, Utils.castToInt(null as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -1776,7 +1776,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0094
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0940
-     * @tc.desc 验证 Utils.fromArrayBufferWithOffset(source, 10) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(source, Double.toInt(Number.NaN), 4) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1796,7 +1796,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0095
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0950
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，空值有效性判断符合预期。
+     * @tc.desc 验证 ArrayBuffer.from(source, Double.toInt(Number.NaN), 4) 在当前场景执行成功，空值有效性判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1836,7 +1836,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0097
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0970
-     * @tc.desc 验证 new ArrayBuffer(8) 在当前场景执行成功，空值有效性判断符合预期。
+     * @tc.desc 验证 ArrayBuffer.from(source, Double.toInt(Number.NaN), Double.toInt(Number.NaN)) 在当前场景执行成功，空值有效性判断符合预期。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1961,7 +1961,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0103
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_1030
-     * @tc.desc 验证 ArrayBuffer.from((("not_arraybuffer" as Object) as ArrayBuffer)) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToArrayBuffer("not_arraybuffer" as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1969,7 +1969,7 @@ export default function arrayBufferFromSevenTest(): void {
     it('testArrayBufferFromSeven0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new ArrayBuffer(16);
       try {
-        const result = ArrayBuffer.from((("not_arraybuffer" as Object) as ArrayBuffer));
+        const result = ArrayBuffer.from(Utils.castToArrayBuffer("not_arraybuffer" as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -2020,7 +2020,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0106
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_1060
-     * @tc.desc 验证 ArrayBuffer.from(((new ArrayBufferFromSevenPlainForMindmap() as Object) as ESObject) as... 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToArrayBuffer(new ArrayBufferFromSevenPlainForMindmap() as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2028,7 +2028,7 @@ export default function arrayBufferFromSevenTest(): void {
     it('testArrayBufferFromSeven0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const result =
-          ArrayBuffer.from(((new ArrayBufferFromSevenPlainForMindmap() as Object) as ESObject) as ArrayBuffer);
+          ArrayBuffer.from(Utils.castToArrayBuffer(new ArrayBufferFromSevenPlainForMindmap() as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -2040,7 +2040,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0107
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_1070
-     * @tc.desc 验证 ArrayBuffer.from(source, (("0" as Object) as ESObject) as int, 4) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(source, Utils.castToInt("0" as Object), 4) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2049,7 +2049,7 @@ export default function arrayBufferFromSevenTest(): void {
       const source = new ArrayBuffer(8);
 
       try {
-        const result = ArrayBuffer.from(source, (("0" as Object) as ESObject) as int, 4);
+        const result = ArrayBuffer.from(source, Utils.castToInt("0" as Object), 4);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -2061,7 +2061,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0108
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_1080
-     * @tc.desc 验证 ArrayBuffer.from(source, ((true as Object) as ESObject) as int, 4) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(source, Utils.castToInt(true as Object), 4) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2070,7 +2070,7 @@ export default function arrayBufferFromSevenTest(): void {
       const source = new ArrayBuffer(8);
 
       try {
-        const result = ArrayBuffer.from(source, ((true as Object) as ESObject) as int, 4);
+        const result = ArrayBuffer.from(source, Utils.castToInt(true as Object), 4);
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -2082,7 +2082,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0109
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_1090
-     * @tc.desc 验证 ArrayBuffer.from(source, 0, ((true as Object) as ESObject) as int) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(source, 0, Utils.castToInt(true as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2091,7 +2091,7 @@ export default function arrayBufferFromSevenTest(): void {
       const source = new ArrayBuffer(8);
 
       try {
-        const result = ArrayBuffer.from(source, 0, ((true as Object) as ESObject) as int);
+        const result = ArrayBuffer.from(source, 0, Utils.castToInt(true as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -2117,7 +2117,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0111
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_1110
-     * @tc.desc 验证 ArrayBuffer.from((dv as Object) as ArrayBuffer) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToArrayBuffer(dv as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2127,7 +2127,7 @@ export default function arrayBufferFromSevenTest(): void {
 
       try {
         const dv = new DataView(source);
-        const result = ArrayBuffer.from((dv as Object) as ArrayBuffer);
+        const result = ArrayBuffer.from(Utils.castToArrayBuffer(dv as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -2139,7 +2139,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0112
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_1120
-     * @tc.desc 验证 ArrayBuffer.from(source, 0, (("4" as Object) as ESObject) as int) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(source, 0, Utils.castToInt("4" as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2148,7 +2148,7 @@ export default function arrayBufferFromSevenTest(): void {
       const source = new ArrayBuffer(12);
 
       try {
-        ArrayBuffer.from(source, 0, (("4" as Object) as ESObject) as int);
+        ArrayBuffer.from(source, 0, Utils.castToInt("4" as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -2161,7 +2161,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0113
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_1130
-     * @tc.desc 验证 ArrayBuffer.from(source, 0, ((true as Object) as ESObject) as int) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(source, 0, Utils.castToInt(true as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2170,7 +2170,7 @@ export default function arrayBufferFromSevenTest(): void {
       const source = new ArrayBuffer(12);
 
       try {
-        ArrayBuffer.from(source, 0, ((true as Object) as ESObject) as int);
+        ArrayBuffer.from(source, 0, Utils.castToInt(true as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
@@ -2197,7 +2197,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0115
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_1150
-     * @tc.desc 验证 new DataView(source) 在当前入参场景下会抛出异常。
+     * @tc.desc 验证 ArrayBuffer.from(Utils.castToArrayBuffer(dv as Object)) 在当前入参场景下会抛出异常。
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2207,7 +2207,7 @@ export default function arrayBufferFromSevenTest(): void {
 
       try {
         const dv = new DataView(source);
-        ArrayBuffer.from((dv as Object) as ArrayBuffer);
+        ArrayBuffer.from(Utils.castToArrayBuffer(dv as Object));
       } catch (e) {
         expect(e !== null && e !== undefined).assertTrue();
         Utils.assertThrownErrorCodeIsNumber(e);
