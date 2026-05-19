@@ -17,7 +17,7 @@ import {IndexerAlign,FontWeight,AlphabetIndexer,Margin,StickyStyle,Color,TextAli
 import { State ,Link } from '@ohos.arkui.stateManagement'
 @Component
 export struct AlphabetIndexerView {
-  @Link _position: Position = {x:0,y:0};
+  public _position: Position = {x:0,y:0};
   private componentKey: string = '';
   private value: string[] = new Array<string>('#', 'A', 'B', 'C', 'D', 'E', 'F', 'G',
     'H', 'I', 'J', 'K', 'L', 'M', 'N',

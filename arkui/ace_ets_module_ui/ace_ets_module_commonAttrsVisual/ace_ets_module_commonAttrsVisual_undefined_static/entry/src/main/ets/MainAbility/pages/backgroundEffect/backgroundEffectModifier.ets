@@ -29,9 +29,9 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 @Observed
 export class MyBackgroundEffectModifier implements AttributeModifier<CommonAttribute> {
   public isChange: boolean = false;
-  @State public rad: number = 40;
-  @State public satVal: number = 0.8;
-  @State public briVal: number = 1.5;
+  public rad: number = 40;
+  public satVal: number = 0.8;
+  public briVal: number = 1.5;
 
   applyNormalAttribute(instance: CommonAttribute): void {
     if (this.isChange) {

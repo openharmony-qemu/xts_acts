@@ -20,7 +20,7 @@ export struct NavigationView {
   private arr: number[] = new Array<number>(0, 1, 2, 3)
   @State isActive: boolean = false
   @State dex: number = 0
-  @Link _position: Position={x:0,y:0};
+  public _position: Position={x:0,y:0};
   private componentKey: string='';
 
   build() {
