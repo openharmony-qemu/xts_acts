@@ -4846,7 +4846,7 @@ export default function WindowLifeCycleTest() {
               expect(text2 === null).assertTrue();
               await terminateAbility(caseName);
               done();
-            }).catch(async (err: Error): PromiseLike<void> | undefined => {
+            }).catch(async (err: Error): Promise<void> => {
               console.error(caseName + `Failed to create the Window. Cause code: ${err.code}, message: ${err.message}`);
               await terminateAbility(caseName);
               expect(false).assertTrue();
@@ -4859,7 +4859,7 @@ export default function WindowLifeCycleTest() {
               expect(count === 1).assertTrue();
               await terminateAbility(caseName);
               done();
-            }).catch(async (err: Error): PromiseLike<void> | undefined => {
+            }).catch(async (err: Error): Promise<void> => {
               console.error(caseName + `Failed to create the Window. Cause code: ${err.code}, message: ${err.message}`);
               await terminateAbility(caseName);
               expect(false).assertTrue();
