@@ -74,7 +74,7 @@ export default function FrameNodeProvideChildTest() {
     
     /**
      * @tc.name   FrameNodeProvideChildTest_0100
-     * @tc.number SUB_ArkUI_FrameNodeProvideChildTest_0100
+     * @tc.number SUB_ArkUI_Ace_FrameNodeProvideChildTest_0100
      * @tc.desc   add ArkUI static api
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

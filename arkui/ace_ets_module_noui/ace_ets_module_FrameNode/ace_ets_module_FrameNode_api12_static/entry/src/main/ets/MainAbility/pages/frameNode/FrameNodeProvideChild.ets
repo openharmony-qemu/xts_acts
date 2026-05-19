@@ -133,8 +133,8 @@ export class TestDataSource extends BasicDataSource {
   }
 }
 export class Params {
-  data: MyDataSource | null = null;
-  scroller: Scroller | null = null;
+  public data: MyDataSource | null = null;
+  public scroller: Scroller | null = null;
   constructor(data: MyDataSource, scroller: Scroller) {
     this.data = data;
     this.scroller = scroller;
@@ -169,7 +169,8 @@ export function buildData(params: Params):void {
       Row() {
         Text('1')
           .fontSize(100)
-      } }.id('N16')
+      } 
+    }.id('N16')
   }
   .cachedCount(5)
   .listDirection(Axis.Horizontal)
