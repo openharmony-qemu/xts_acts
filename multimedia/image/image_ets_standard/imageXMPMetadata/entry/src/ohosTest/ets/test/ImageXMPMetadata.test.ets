@@ -54,7 +54,7 @@ export default function imageXMPMetadata() {
 
     beforeAll(async () => {
       let formats = await image.getImageSourceSupportedFormats();
-      isSupportedTiff = formats.includes('image/avif');
+      isSupportedTiff = formats.includes('image/tiff');
       console.info('isSupportedTiff is ' + isSupportedTiff);
       console.info("beforeAll case");
     })
