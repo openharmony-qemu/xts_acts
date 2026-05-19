@@ -30,6 +30,7 @@ import {
   PointerMatrix
 } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
+import { ExpandMode, ChildrenCountMode } from '@kit.ArkUI';
 export default function FrameNodeProvideChildTest() {
   describe('FrameNodeProvideChildTest', () => {
     
