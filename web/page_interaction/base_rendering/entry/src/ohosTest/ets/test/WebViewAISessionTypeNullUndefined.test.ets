@@ -61,8 +61,8 @@ export default function WebViewAISessionTypeNullUndefinedSuite() {
 
 
     /**
-     * @tc.number     SUB_WEB_SESSION_OPTIONS_0100
-     * @tc.name       testWebViewLanguageModel01
+     * @tc.number     SUB_WEB_AI_SESSION_OPTIONS_0100
+     * @tc.name       testWebViewAiSessionOptions01
      * @tc.desc       aiSessionOptions
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -79,8 +79,8 @@ export default function WebViewAISessionTypeNullUndefinedSuite() {
 
 
     /**
-     * @tc.number     SUB_WEB_SESSION_OPTIONS_0200
-     * @tc.name       testWebViewLanguageModel02
+     * @tc.number     SUB_WEB_AI_SESSION_OPTIONS_0200
+     * @tc.name       testWebViewAiSessionOptions02
      * @tc.desc       aiSessionOptions
      * @tc.size       MediumTest
      * @tc.type       Function
@@ -97,8 +97,8 @@ export default function WebViewAISessionTypeNullUndefinedSuite() {
 
 
     /**
-     * @tc.number     SUB_WEB_SESSION_OPTIONS_0300
-     * @tc.name       testWebViewLanguageModel03
+     * @tc.number     SUB_WEB_AI_SESSION_OPTIONS_0300
+     * @tc.name       testWebViewAiSessionOptions03
      * @tc.desc       aiSessionOptions
      * @tc.size       MediumTest
      * @tc.type       Function
