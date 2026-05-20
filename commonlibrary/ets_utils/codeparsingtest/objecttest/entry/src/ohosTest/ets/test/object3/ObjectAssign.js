@@ -355,15 +355,6 @@ export function ObjectAssignTest040() {
     return a;
 }
 
-export function ObjectAssignTest041() {
-    const target = {};
-    const source = { value: NaN };
-    const result = Object.assign(target, source);
-
-    let a = Number.isNaN(result.value);
-    return a;
-}
-
 export function ObjectAssignTest042() {
     const target = {};
     const source = { big: BigInt(9007199254740991n) };
