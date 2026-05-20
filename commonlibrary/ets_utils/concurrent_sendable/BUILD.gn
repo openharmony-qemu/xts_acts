@@ -19,6 +19,9 @@ group("concurrent_sendable") {
     deps = [
       "sendableclasstest:ActsSendableClassTest",
       "sendable_containers:ActsSendableContainersTest",
+      "collections_array:ActsArrayTest",
+      "collections_map:ActsMapTest",
+      "collections_set:ActsSetTest"
     ]
   }
 }
