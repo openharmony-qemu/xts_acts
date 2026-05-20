@@ -10169,9 +10169,9 @@ export default function ConnectionPublicTest() {
         };
         connection.queryTraceRoute(destination, option).then((TraceRouteInfo: connection.TraceRouteInfo[]) => {
           console.info(`${caseName} TraceRouteInfo: ${JSON.stringify(TraceRouteInfo)}`);
-          ExpectTrue(TraceRouteInfo.length > 0);
-          console.info(`${caseName} TraceRouteInfo rtt: ${JSON.stringify(TraceRouteInfo[1].rtt)}`);
-          let rtt_max: number = TraceRouteInfo[1].rtt[2];
+          ExpectTrue(TraceRouteInfo.length > 1);
+          console.info(`${caseName} TraceRouteInfo rtt: ${JSON.stringify(TraceRouteInfo[TraceRouteInfo.length-1].rtt)}`);
+          let rtt_max: number = TraceRouteInfo[TraceRouteInfo.length-1].rtt[2];
           ExpectTrue(rtt_max === 1000);
           console.info(`${caseName}---End`);
           done();
