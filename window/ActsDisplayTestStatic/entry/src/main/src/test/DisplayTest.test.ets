@@ -1208,7 +1208,7 @@ export default function DisplayTest():void {
         });
 
         /**
-         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5190
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5200
          * @tc.name      testIsCapturedByBundleName_empty_array_static_0100
          * @tc.desc      check current device capture status with empty bundleName list input
          * @tc.size      MediumTest
@@ -1249,7 +1249,7 @@ export default function DisplayTest():void {
         });
 
         /**
-         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5190
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5210
          * @tc.name      testIsCapturedByBundleName_1400004_static_0100
          * @tc.desc      check current device capture status with bundleName list input which is over max size
          * @tc.size      MediumTest
@@ -3060,7 +3060,7 @@ export default function DisplayTest():void {
     })
 
     /**
-    * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5190
+    * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5220
     * @tc.name      testOnAdd_VirtualScreenCreate_static_0100
     * @tc.desc      testOnAdd returns screenId when create virtual screen
     * @tc.size      MediumTest
@@ -3145,7 +3145,7 @@ export default function DisplayTest():void {
     });
 
     /**
-    * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5200
+    * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5230
     * @tc.name      testOnRemove_VirtualScreenDestroy_static_0100
     * @tc.desc      testOnRemove returns screenId when destroy virtual screen
     * @tc.size      MediumTest
