@@ -920,6 +920,43 @@ it('testsetImageForRecent_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
     }
 })
 
+/**
+ * @tc.name   testsetImageForRecent_0700
+ * @tc.number SUB_BASIC_WMS_setImageForRecent_1100
+ * @tc.desc   testsetImageForRecent number success
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+it('testsetImageForRecent_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+  let caseName = 'testsetImageForRecent_0700';
+  console.log( caseName +' begin');
+  if (deviceInfo.deviceType == '2in1') {
+    let resourceId: number = $r("app.media.startIcon").id;
+    console.info(caseName + ' resourceId: ' + resourceId);
+
+    try {
+      let promise = windowStage.setImageForRecent(resourceId, ImageFit.Fill);
+      promise.then(() => {
+        console.info(caseName + ' Succeeded in setting image for recent');
+        done();
+      }).catch((err: BusinessError) => {
+        console.error(caseName + ' Failed to set image for recent. Cause code: ' + err.code + ', message: ' + err.message);
+        expect(false).assertTrue();
+        done();
+      });
+    } catch (exception) {
+      console.error(caseName + ' Failed to set image for recent. errcode: ' + exception.code + ', errmessage: ' + exception.message);
+      expect(false).assertTrue();
+      done();
+    }
+  } else {
+    console.info(caseName + ' Unsupported devices.');
+    done();
+  }
+});
+
+
 
   })
 }
