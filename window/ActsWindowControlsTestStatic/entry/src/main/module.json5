@@ -59,14 +59,7 @@
     "requestPermissions": [
       {
         "name": "ohos.permission.MANAGER_RECENT_SNAPSHOT"
-      },
-      {
- 	         "name": 'ohos.permission.CUSTOM_SCREEN_CAPTURE',
- 	         "reason": "$string:app_name",
- 	         "usedScene": {
- 	           "when": "always"
- 	         }
- 	    }
+      }
     ]
   }
 }
