@@ -201,7 +201,7 @@ export default function WindowControlsTest(): void {
                             hilog.info(domain, tag, msgStr + 'Succeeded in setting image for recent');
                             done()
                         }).catch((err: Error): PromiseLike<void> | undefined => {
-                            hilog.error(domain, tag, msgStr + 'Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}');
+                            hilog.error(domain, tag, msgStr + `Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}`);
                             expect(false).assertTrue();
                             done();
                         });
@@ -269,7 +269,7 @@ export default function WindowControlsTest(): void {
                         hilog.info(domain, tag, msgStr + 'Succeeded in setting image for recent');
                         done()
                     }).catch((err: Error): PromiseLike<void> | undefined => {
-                        hilog.error(domain, tag, msgStr + 'Failed to remove image for recent. Cause code: ${err.code}, message: ${err.message}');
+                        hilog.error(domain, tag, msgStr + `Failed to remove image for recent. Cause code: ${err.code}, message: ${err.message}`);
                         expect(false).assertTrue();
                         done();
                     });
@@ -323,7 +323,7 @@ export default function WindowControlsTest(): void {
                             done();
                         }
                     }).catch((err: Error): PromiseLike<void> | undefined => {
-                        hilog.error(domain, tag, msgStr + 'Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}');
+                        hilog.error(domain, tag, msgStr + `Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}`);
                         if (!canIUseRes) {
                             if (err.code === 801) {
                                 done();
@@ -379,7 +379,7 @@ export default function WindowControlsTest(): void {
                     }
                     done()
                 }).catch((err: Error): PromiseLike<void> | undefined => {
-                    hilog.error(domain, tag, msgStr + 'Failed to remove image for recent. Cause code: ${err.code}, message: ${err.message}');
+                    hilog.error(domain, tag, msgStr + `Failed to remove image for recent. Cause code: ${err.code}, message: ${err.message}`);
                     if (!canIUseRes) {
                         if (err.code === 801) {
                             done();
