@@ -14430,7 +14430,7 @@ export default function audioRendererTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_SAMPLE_RATE_STATIC_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_SAMPLE_RATE_STATIC_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: 8010,
         channels: audio.AudioChannel.CHANNEL_1,
