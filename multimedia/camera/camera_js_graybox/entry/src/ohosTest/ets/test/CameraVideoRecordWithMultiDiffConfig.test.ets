@@ -114,8 +114,8 @@ export default function CameraVideoRecordWithMultiDiffConfig() {
         let cameraOutputCapability = getCameraOutputCapability(cameraManager, camreId, camera.SceneMode.NORMAL_VIDEO);
         for (let videoProfile of cameraOutputCapability?.videoProfiles!) {
           for (let previewProfile of cameraOutputCapability?.previewProfiles!) {
-            if (previewProfile.size.height != videoProfile.size.height
-              || previewProfile.size.width != videoProfile.size.width
+            if (videoProfile.size.width * previewProfile.size.height !=
+              previewProfile.size.width * videoProfile.size.height
               || previewProfile.format != videoProfile.format) {
               continue;
             }
@@ -267,8 +267,8 @@ export default function CameraVideoRecordWithMultiDiffConfig() {
         let cameraOutputCapability = getCameraOutputCapability(cameraManager, camreId, camera.SceneMode.NORMAL_VIDEO);
         for (let videoProfile of cameraOutputCapability?.videoProfiles!) {
           for (let previewProfile of cameraOutputCapability?.previewProfiles!) {
-            if (previewProfile.size.height != videoProfile.size.height
-              || previewProfile.size.width != videoProfile.size.width
+            if (videoProfile.size.width * previewProfile.size.height !=
+              previewProfile.size.width * videoProfile.size.height
               || previewProfile.format != videoProfile.format) {
               continue;
             }
