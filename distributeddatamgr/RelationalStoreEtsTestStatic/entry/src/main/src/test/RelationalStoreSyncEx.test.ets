@@ -51,11 +51,9 @@ export default function RelationalStoreSyncExTest(): void {
     describe('RelationalStoreSyncExTest', () => {
         beforeAll(async (): Promise<void> => {
             console.info(TAG + 'beforeAll');
-            await abilityDelegator.startAbility({
-                bundleName: 'com.example.relationalstore',
-                abilityName: 'EntryAbility'
-            });
-            await Utils.msSleep(5000)
+            await Utils.msSleep(2000)
+            abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.relationalstore")
+            await Utils.msSleep(10000)
             context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
         });
 
