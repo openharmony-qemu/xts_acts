@@ -1,8 +1,17 @@
 /*
- * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the 'License');
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an 'AS IS' BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
-
 import { Level, Size, TestType, beforeAll, beforeEach, describe, it } from '../../../hypium/index';
 import Utils from './Utils.test';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -41,10 +50,11 @@ export default function EnableAdvancedSecurityModeTest() {
      */
     it('testEnableAdvancedSecurityModeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        await Utils.msSleep(1000);
-        Utils.registerEvent('testEnableAdvancedSecurityMode001', true, 210001, done);
+        await Utils.msSleep(2000);
         Utils.emitEvent('emitEnableAdvancedSecurityMode001', 10);
         await Utils.msSleep(2000);
+        Utils.registerEvent('testEnableAdvancedSecurityMode001', true, 210001, done);
+        await Utils.msSleep(3000);
         inspector.sendEventByKey('EnableAdvancedSecurityModeButton', 10, '');
         await Utils.msSleep(3000);
         done();
@@ -60,10 +70,11 @@ export default function EnableAdvancedSecurityModeTest() {
      */
     it('testEnableAdvancedSecurityModeStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        await Utils.msSleep(1000);
-        Utils.registerEvent('testEnableAdvancedSecurityMode002', true, 210002, done);
+        await Utils.msSleep(2000);
         Utils.emitEvent('emitEnableAdvancedSecurityMode002', 10);
         await Utils.msSleep(2000);
+        Utils.registerEvent('testEnableAdvancedSecurityMode002', true, 210002, done);
+        await Utils.msSleep(3000);
         inspector.sendEventByKey('EnableAdvancedSecurityModeButton', 10, '');
         await Utils.msSleep(3000);
         done();
@@ -79,10 +90,11 @@ export default function EnableAdvancedSecurityModeTest() {
      */
     it('testEnableAdvancedSecurityModeStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        await Utils.msSleep(1000);
-        Utils.registerEvent('testEnableAdvancedSecurityMode003', true, 210003, done);
+        await Utils.msSleep(2000);
         Utils.emitEvent('emitEnableAdvancedSecurityMode003', 10);
         await Utils.msSleep(2000);
+        Utils.registerEvent('testEnableAdvancedSecurityMode003', true, 210003, done);
+        await Utils.msSleep(3000);
         inspector.sendEventByKey('EnableAdvancedSecurityModeButton', 10, '');
         await Utils.msSleep(3000);
         done();
@@ -98,10 +110,11 @@ export default function EnableAdvancedSecurityModeTest() {
      */
     it('testEnableAdvancedSecurityModeStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        await Utils.msSleep(1000);
-        Utils.registerEvent('testEnableAdvancedSecurityMode004', true, 210004, done);
+        await Utils.msSleep(2000);
         Utils.emitEvent('emitEnableAdvancedSecurityMode004', 10);
         await Utils.msSleep(2000);
+        Utils.registerEvent('testEnableAdvancedSecurityMode004', true, 210004, done);
+        await Utils.msSleep(3000);
         inspector.sendEventByKey('EnableAdvancedSecurityModeButton', 10, '');
         await Utils.msSleep(3000);
         done();
@@ -117,10 +130,11 @@ export default function EnableAdvancedSecurityModeTest() {
      */
     it('testEnableAdvancedSecurityModeStatic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        await Utils.msSleep(1000);
-        Utils.registerEvent('testEnableAdvancedSecurityMode005', true, 210005, done);
+        await Utils.msSleep(2000);
         Utils.emitEvent('emitEnableAdvancedSecurityMode005', 10);
         await Utils.msSleep(2000);
+        Utils.registerEvent('testEnableAdvancedSecurityMode005', true, 210005, done);
+        await Utils.msSleep(3000);
         inspector.sendEventByKey('EnableAdvancedSecurityModeButton', 10, '');
         await Utils.msSleep(3000);
         done();
@@ -136,10 +150,11 @@ export default function EnableAdvancedSecurityModeTest() {
      */
     it('testEnableAdvancedSecurityModeStatic006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        await Utils.msSleep(1000);
-        Utils.registerEvent('testEnableAdvancedSecurityMode006', true, 210006, done);
+        await Utils.msSleep(2000);
         Utils.emitEvent('emitEnableAdvancedSecurityMode006', 10);
         await Utils.msSleep(2000);
+        Utils.registerEvent('testEnableAdvancedSecurityMode006', true, 210006, done);
+        await Utils.msSleep(3000);
         inspector.sendEventByKey('EnableAdvancedSecurityModeButton', 10, '');
         await Utils.msSleep(3000);
         done();
@@ -155,10 +170,11 @@ export default function EnableAdvancedSecurityModeTest() {
      */
     it('testEnableAdvancedSecurityModeStatic007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        await Utils.msSleep(1000);
-        Utils.registerEvent('testEnableAdvancedSecurityMode007', true, 210007, done);
+        await Utils.msSleep(2000);
         Utils.emitEvent('emitEnableAdvancedSecurityMode007', 10);
         await Utils.msSleep(2000);
+        Utils.registerEvent('testEnableAdvancedSecurityMode007', true, 210007, done);
+        await Utils.msSleep(3000);
         inspector.sendEventByKey('EnableAdvancedSecurityModeButton', 10, '');
         await Utils.msSleep(3000);
         done();
@@ -174,10 +190,11 @@ export default function EnableAdvancedSecurityModeTest() {
      */
     it('testEnableAdvancedSecurityModeStatic008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        await Utils.msSleep(1000);
-        Utils.registerEvent('testEnableAdvancedSecurityMode008', true, 210008, done);
+        await Utils.msSleep(2000);
         Utils.emitEvent('emitEnableAdvancedSecurityMode008', 10);
         await Utils.msSleep(2000);
+        Utils.registerEvent('testEnableAdvancedSecurityMode008', true, 210008, done);
+        await Utils.msSleep(3000);
         inspector.sendEventByKey('EnableAdvancedSecurityModeButton', 10, '');
         await Utils.msSleep(3000);
         done();
@@ -193,10 +210,11 @@ export default function EnableAdvancedSecurityModeTest() {
      */
     it('testEnableAdvancedSecurityModeStatic009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        await Utils.msSleep(1000);
-        Utils.registerEvent('testEnableAdvancedSecurityMode009', true, 210009, done);
+        await Utils.msSleep(2000);
         Utils.emitEvent('emitEnableAdvancedSecurityMode009', 10);
         await Utils.msSleep(2000);
+        Utils.registerEvent('testEnableAdvancedSecurityMode009', true, 210009, done);
+        await Utils.msSleep(3000);
         inspector.sendEventByKey('EnableAdvancedSecurityModeButton', 10, '');
         await Utils.msSleep(3000);
         done();
@@ -212,10 +230,11 @@ export default function EnableAdvancedSecurityModeTest() {
      */
     it('testEnableAdvancedSecurityModeStatic010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        await Utils.msSleep(1000);
-        Utils.registerEvent('testEnableAdvancedSecurityMode010', true, 210010, done);
+        await Utils.msSleep(2000);
         Utils.emitEvent('emitEnableAdvancedSecurityMode010', 10);
         await Utils.msSleep(2000);
+        Utils.registerEvent('testEnableAdvancedSecurityMode010', true, 210010, done);
+        await Utils.msSleep(3000);
         inspector.sendEventByKey('EnableAdvancedSecurityModeButton', 10, '');
         await Utils.msSleep(3000);
         done();
@@ -231,10 +250,12 @@ export default function EnableAdvancedSecurityModeTest() {
      */
     it('testEnableAdvancedSecurityModeStatic011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        await Utils.msSleep(1000);
-        Utils.registerEvent('testEnableAdvancedSecurityMode011', true, 210011, done);
+        await Utils.msSleep(2000);
+        
         Utils.emitEvent('emitEnableAdvancedSecurityMode011', 10);
         await Utils.msSleep(2000);
+        Utils.registerEvent('testEnableAdvancedSecurityMode011', true, 210011, done);
+        await Utils.msSleep(3000);
         inspector.sendEventByKey('EnableAdvancedSecurityModeButton', 10, '');
         await Utils.msSleep(3000);
         done();
@@ -250,10 +271,11 @@ export default function EnableAdvancedSecurityModeTest() {
      */
     it('testEnableAdvancedSecurityModeStatic012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        await Utils.msSleep(1000);
-        Utils.registerEvent('testEnableAdvancedSecurityMode012', true, 210012, done);
+        await Utils.msSleep(2000);
         Utils.emitEvent('emitEnableAdvancedSecurityMode012', 10);
         await Utils.msSleep(2000);
+        Utils.registerEvent('testEnableAdvancedSecurityMode012', true, 210012, done);
+        await Utils.msSleep(3000);
         inspector.sendEventByKey('EnableAdvancedSecurityModeButton', 10, '');
         await Utils.msSleep(3000);
         done();
@@ -269,10 +291,11 @@ export default function EnableAdvancedSecurityModeTest() {
      */
     it('testEnableAdvancedSecurityModeStatic013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        await Utils.msSleep(1000);
-        Utils.registerEvent('testEnableAdvancedSecurityMode013', true, 210013, done);
+        await Utils.msSleep(2000);
         Utils.emitEvent('emitEnableAdvancedSecurityMode013', 10);
         await Utils.msSleep(2000);
+        Utils.registerEvent('testEnableAdvancedSecurityMode013', true, 210013, done);
+        await Utils.msSleep(3000);
         inspector.sendEventByKey('EnableAdvancedSecurityModeButton', 10, '');
         await Utils.msSleep(3000);
         done();
@@ -288,10 +311,11 @@ export default function EnableAdvancedSecurityModeTest() {
      */
     it('testEnableAdvancedSecurityModeStatic014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        await Utils.msSleep(1000);
-        Utils.registerEvent('testEnableAdvancedSecurityMode014', true, 210014, done);
+        await Utils.msSleep(2000);
         Utils.emitEvent('emitEnableAdvancedSecurityMode014', 10);
         await Utils.msSleep(2000);
+        Utils.registerEvent('testEnableAdvancedSecurityMode014', true, 210014, done);
+        await Utils.msSleep(3000);
         inspector.sendEventByKey('EnableAdvancedSecurityModeButton', 10, '');
         await Utils.msSleep(3000);
         done();
@@ -307,10 +331,11 @@ export default function EnableAdvancedSecurityModeTest() {
      */
     it('testEnableAdvancedSecurityModeStatic015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        await Utils.msSleep(1000);
-        Utils.registerEvent('testEnableAdvancedSecurityMode015', true, 210015, done);
+        await Utils.msSleep(2000);
         Utils.emitEvent('emitEnableAdvancedSecurityMode015', 10);
         await Utils.msSleep(2000);
+        Utils.registerEvent('testEnableAdvancedSecurityMode015', true, 210015, done);
+        await Utils.msSleep(3000);
         inspector.sendEventByKey('EnableAdvancedSecurityModeButton', 10, '');
         await Utils.msSleep(3000);
         done();
@@ -326,10 +351,11 @@ export default function EnableAdvancedSecurityModeTest() {
      */
     it('testEnableAdvancedSecurityModeStatic016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        await Utils.msSleep(1000);
-        Utils.registerEvent('testEnableAdvancedSecurityMode016', true, 210016, done);
+        await Utils.msSleep(2000);
         Utils.emitEvent('emitEnableAdvancedSecurityMode016', 10);
         await Utils.msSleep(2000);
+        Utils.registerEvent('testEnableAdvancedSecurityMode016', true, 210016, done);
+        await Utils.msSleep(3000);
         inspector.sendEventByKey('EnableAdvancedSecurityModeButton', 10, '');
         await Utils.msSleep(3000);
         done();
@@ -345,10 +371,11 @@ export default function EnableAdvancedSecurityModeTest() {
      */
     it('testEnableAdvancedSecurityModeStatic017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        await Utils.msSleep(1000);
-        Utils.registerEvent('testEnableAdvancedSecurityMode017', true, 210017, done);
+        await Utils.msSleep(2000);
         Utils.emitEvent('emitEnableAdvancedSecurityMode017', 10);
         await Utils.msSleep(2000);
+        Utils.registerEvent('testEnableAdvancedSecurityMode017', true, 210017, done);
+        await Utils.msSleep(3000);
         inspector.sendEventByKey('EnableAdvancedSecurityModeButton', 10, '');
         await Utils.msSleep(3000);
         done();
@@ -364,10 +391,11 @@ export default function EnableAdvancedSecurityModeTest() {
      */
     it('testEnableAdvancedSecurityModeStatic018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        await Utils.msSleep(1000);
-        Utils.registerEvent('testEnableAdvancedSecurityMode018', true, 210018, done);
+        await Utils.msSleep(2000);
         Utils.emitEvent('emitEnableAdvancedSecurityMode018', 10);
         await Utils.msSleep(2000);
+        Utils.registerEvent('testEnableAdvancedSecurityMode018', true, 210018, done);
+        await Utils.msSleep(3000);
         inspector.sendEventByKey('EnableAdvancedSecurityModeButton', 10, '');
         await Utils.msSleep(3000);
         done();

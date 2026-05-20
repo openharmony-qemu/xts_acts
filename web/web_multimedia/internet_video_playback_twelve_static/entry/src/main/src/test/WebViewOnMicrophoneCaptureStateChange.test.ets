@@ -20,6 +20,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import { Driver, ON } from '@ohos.UiTest';
+import inspector from '@ohos.arkui.inspector';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { MicrophoneCaptureStateChangeInfo, MicrophoneCaptureState } from '@ohos.arkui.component';
 
@@ -61,6 +62,7 @@ export default function ActsAceWebViewOnMicrophoneCaptureStateChangeTest() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webViewOnMicrophoneCaptureStateChangeButton', 10, '');
       await Utils.msSleep(2000);
+      done();
     })
     /**
      * @tc.name   testOnMicrophoneCaptureStateChangeStatic002
@@ -78,6 +80,7 @@ export default function ActsAceWebViewOnMicrophoneCaptureStateChangeTest() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webViewOnMicrophoneCaptureStateChangeButton', 10, '');
       await Utils.msSleep(2000);
+      done();
     })
     /**
      * @tc.name   testOnMicrophoneCaptureStateChangeStatic003
@@ -95,6 +98,7 @@ export default function ActsAceWebViewOnMicrophoneCaptureStateChangeTest() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webViewOnMicrophoneCaptureStateChangeButton', 10, '');
       await Utils.msSleep(2000);
+      done();
     })
     /**
      * @tc.name   testOnMicrophoneCaptureStateChangeStatic004
@@ -112,6 +116,7 @@ export default function ActsAceWebViewOnMicrophoneCaptureStateChangeTest() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webViewOnMicrophoneCaptureStateChangeButton', 10, '');
       await Utils.msSleep(2000);
+      done();
     })
 
     /**
@@ -125,12 +130,13 @@ export default function ActsAceWebViewOnMicrophoneCaptureStateChangeTest() {
     it('testPauseMicrophoneStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
-      Utils.registerEvent('testPauseMicrophoneStatic001', true, 20260501, done);
-      await Utils.msSleep(2000);
       Utils.emitEvent("emitPauseMicrophoneStatic001", 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent('testPauseMicrophoneStatic001', true, 20260501, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webViewOnMicrophoneCaptureStateChangeButton', 10, '');
       await Utils.msSleep(4000);
+      done();
     })
 
   })

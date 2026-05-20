@@ -20,6 +20,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import { Driver, ON } from '@ohos.UiTest';
+import inspector from '@ohos.arkui.inspector';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
 let testAbilityContext:common.UIAbilityContext;
@@ -44,11 +45,13 @@ export default function SetBlanklessLoadingWithKey() {
      */
     it('testSetBlanklessLoadingWithKeyStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
-      Utils.registerEvent('testSetBlanklessLoadingWithKey001', 0, 148510, done);
       Utils.emitEvent('testSetBlanklessLoadingWithKey001', 10)
       await Utils.msSleep(3000);
+      Utils.registerEvent('testSetBlanklessLoadingWithKey001', 0, 148510, done); 
+      await Utils.msSleep(2000);
       inspector.sendEventByKey('setBlanklessLoadingWithKeyTestButton', 10, '');
       await Utils.msSleep(8000);
+      done();
     })
 
     /**
@@ -61,11 +64,13 @@ export default function SetBlanklessLoadingWithKey() {
      */
     it('testSetBlanklessLoadingWithKeyStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
-      Utils.registerEvent('testSetBlanklessLoadingWithKey002', -2, 148520, done);
       Utils.emitEvent('testSetBlanklessLoadingWithKey002', 10)
       await Utils.msSleep(3000);
+      Utils.registerEvent('testSetBlanklessLoadingWithKey002', -2, 148520, done); 
+      await Utils.msSleep(2000);
       inspector.sendEventByKey('setBlanklessLoadingWithKeyTestButton', 10, '');
       await Utils.msSleep(6000);
+      done();
     })
 
     /**
@@ -78,11 +83,13 @@ export default function SetBlanklessLoadingWithKey() {
      */
     it('testSetBlanklessLoadingWithKeyStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
-      Utils.registerEvent('testSetBlanklessLoadingWithKey003', -3, 148530, done);
       Utils.emitEvent('testSetBlanklessLoadingWithKey003', 10)
       await Utils.msSleep(3000);
+      Utils.registerEvent('testSetBlanklessLoadingWithKey003', -3, 148530, done); 
+      await Utils.msSleep(2000);
       inspector.sendEventByKey('setBlanklessLoadingWithKeyTestButton', 10, '');
       await Utils.msSleep(6000);
+      done();
     })
 
     /**
@@ -95,11 +102,13 @@ export default function SetBlanklessLoadingWithKey() {
      */
     it('testSetBlanklessLoadingWithKeyStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
-      Utils.registerEvent('testSetBlanklessLoadingWithKey004', -4, 148540, done);
       Utils.emitEvent('testSetBlanklessLoadingWithKey004', 10)
       await Utils.msSleep(3000);
+      Utils.registerEvent('testSetBlanklessLoadingWithKey004', -4, 148540, done); 
+      await Utils.msSleep(2000);
       inspector.sendEventByKey('setBlanklessLoadingWithKeyTestButton', 10, '');
       await Utils.msSleep(6000);
+      done();
     })
 
     /**
@@ -112,11 +121,13 @@ export default function SetBlanklessLoadingWithKey() {
      */
     it('testSetBlanklessLoadingWithKeyStatic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
-      Utils.registerEvent('testSetBlanklessLoadingWithKey005', -5, 148550, done);
       Utils.emitEvent('testSetBlanklessLoadingWithKey005', 10)
       await Utils.msSleep(3000);
+      Utils.registerEvent('testSetBlanklessLoadingWithKey005', -5, 148550, done); 
+      await Utils.msSleep(2000);
       inspector.sendEventByKey('setBlanklessLoadingWithKeyTestButton', 10, '');
       await Utils.msSleep(6000);
+      done();
     })
 
     /**
@@ -130,11 +141,13 @@ export default function SetBlanklessLoadingWithKey() {
     it('testClearBlanklessLoadingCacheNoArgsStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
-      Utils.registerEvent('testClearBlanklessLoadingCacheNoArgs001', true, 148560, done);
       Utils.emitEvent('testClearBlanklessLoadingCacheNoArgs001', 10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testClearBlanklessLoadingCacheNoArgs001', true, 148560, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('setBlanklessLoadingWithKeyTestButton', 10, '');
       await Utils.msSleep(4000);
+      done();
     })
 
     /**
@@ -148,8 +161,9 @@ export default function SetBlanklessLoadingWithKey() {
     it('testClearBlanklessLoadingCacheEmptyArrayStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
-      Utils.registerEvent('testClearBlanklessLoadingCacheEmptyArray001', true, 148570, done);
       Utils.emitEvent('testClearBlanklessLoadingCacheEmptyArray001', 10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testClearBlanklessLoadingCacheEmptyArray001', true, 148570, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('setBlanklessLoadingWithKeyTestButton', 10, '');
       await Utils.msSleep(4000);
