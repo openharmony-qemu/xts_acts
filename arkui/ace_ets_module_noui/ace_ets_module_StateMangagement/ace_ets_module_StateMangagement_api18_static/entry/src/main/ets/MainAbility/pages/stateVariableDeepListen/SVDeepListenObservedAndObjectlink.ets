@@ -17,7 +17,7 @@ import { Button, Column, Component, Entry, ObjectLink, Observed, State, Text, Te
 
 @Observed
 export class Book {
-  name: string;
+  public name: string;
 
   constructor(name: string) {
     this.name = name;
