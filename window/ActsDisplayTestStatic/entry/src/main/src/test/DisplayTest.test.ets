@@ -3029,7 +3029,7 @@ export default function DisplayTest() {
             hilog.info(0x0000, '[ANI]', msgStr + 'Success in createVirtualScreen, screendId : ' + vid);
             await Utils.msSleep(500);
             let displayInfo = display.getDisplayByIdSync(vid);
-            console.info(caseName + ' displayInfo: ' + JSON.stringify(displayInfo));20
+            console.info(caseName + ' displayInfo: ' + JSON.stringify(displayInfo));
             await Utils.msSleep(300);
             let roundedCorner = displayInfo.getRoundedCorner();
             console.info(caseName + ' roundedCorner: ' + JSON.stringify(roundedCorner));
