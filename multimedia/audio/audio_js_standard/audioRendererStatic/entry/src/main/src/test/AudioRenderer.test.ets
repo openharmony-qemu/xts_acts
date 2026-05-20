@@ -14334,7 +14334,7 @@ export default function audioRendererTest() {
      */
     it("SUB_MULTIMEDIA_AUDIO_SAMPLE_RATE_STATIC_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
-        samplingRate: SAMPLE_RATE_384000,
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_384000,
         channels: audio.AudioChannel.CHANNEL_1,
         sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
         encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
