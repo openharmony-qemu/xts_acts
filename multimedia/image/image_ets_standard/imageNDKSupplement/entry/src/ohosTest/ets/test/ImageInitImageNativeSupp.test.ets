@@ -180,7 +180,7 @@ export default function ImageInitImageNativeSuppTest() {
     /**
      * @tc.number  SUB_PIXELMAP_NATIVE_SET_METADATA_SUPP_003
      * @tc.name    SUB_PIXELMAP_NATIVE_SET_METADATA_SUPP_003
-     * @tc.desc    OH_PixelmapNative_SetMetadata-IMAGE_DMA_NOT_EXIST
+     * @tc.desc    OH_PixelmapNative_SetMetadata-IMAGE_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
