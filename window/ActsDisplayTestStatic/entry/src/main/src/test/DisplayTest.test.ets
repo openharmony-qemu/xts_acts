@@ -2237,7 +2237,7 @@ export default function DisplayTest():void {
                     })
                 })
             } catch (err) {
-
+                err = err as BusinessError;
                 hilog.info(domain, tag,caseName + 'error in createVirtualScreen, err : ' + JSON.stringify(err));
                 expect(err.code == 801).assertTrue();
                 done();
