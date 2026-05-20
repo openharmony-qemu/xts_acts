@@ -27,7 +27,7 @@ export default function hoveredTest() {
     });
 
     /**
-     * @tc.number   Hovered_UI_STATE_HOVERED
+     * @tc.number   SUB_ACE_ARKUI_HOVEREDTEST_0100
      * @tc.name     hoveredTest001
      * @tc.desc     testing UI_STATE_HOVERED enum value equals 16
      * @tc.size     MediumTest

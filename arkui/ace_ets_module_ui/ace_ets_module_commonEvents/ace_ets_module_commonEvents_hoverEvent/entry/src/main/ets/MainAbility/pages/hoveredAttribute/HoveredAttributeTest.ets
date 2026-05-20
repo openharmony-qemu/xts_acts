@@ -41,7 +41,7 @@ class MyNodeController extends NodeController {
     node.appendChild(column);
 
     let styleText = typeNode.createNode(uiContext, 'Text');
-    styleText.initialize("HoverTarget")
+    styleText.initialize('HoverTarget')
       .width('80%')
       .height('15%')
       .margin({ top: 5, bottom: 5 })
@@ -67,7 +67,7 @@ class MyNodeController extends NodeController {
     column.appendChild(styleText);
 
     let buttonRemove = typeNode.createNode(uiContext, 'Button');
-    buttonRemove.initialize("RemoveHover")
+    buttonRemove.initialize('RemoveHover')
       .width('80%')
       .height('15%')
       .id('frameNodeRemoveBtn')
@@ -104,7 +104,7 @@ struct HoveredAttributeTest {
           .fontColor(Color.Gray)
           .textAlign(TextAlign.Center)
 
-        Button("Modifier Hover")
+        Button('Modifier Hover')
           .id('modifierHoverBtn')
           .width('80%')
           .height('8%')
@@ -116,7 +116,7 @@ struct HoveredAttributeTest {
           .textAlign(TextAlign.Center)
           .margin({ top: '5%' })
 
-        Text("StateStyles Hover")
+        Text('StateStyles Hover')
           .id('stateHoverText')
           .width('80%')
           .height('8%')
