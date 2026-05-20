@@ -1167,7 +1167,7 @@ export default function DisplayTest() {
             let caseName: string = 'testIsCapturedByBundleName_default_static_0100';
             let msgStr: string = 'jsunittest ' + caseName + ' ';
             hilog.info(domain, tag, msgStr + 'begin');
-            let bundleList: Array = ["com.huawei.hmos.huaweicast", "com.huawei.hmos.screenrecorder", "com.example.actswindowtest.static"];
+            let bundleList: Array = ["com.example.actswindowtest.static"];
             try {
                 let status: boolean = display.isCaptured(bundleList);
                 hilog.info(domain, tag, msgStr + 'status:' + status);
@@ -1197,7 +1197,7 @@ export default function DisplayTest() {
         });
 
         /**
-         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5190
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5230
          * @tc.name      testIsCapturedByBundleName_empty_array_static_0100
          * @tc.desc      check current device capture status with empty bundleName list input
          * @tc.size      MediumTest
@@ -1238,7 +1238,7 @@ export default function DisplayTest() {
         });
     
         /**
-         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5190
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5210
          * @tc.name      testIsCapturedByBundleName_1400004_static_0100
          * @tc.desc      check current device capture status with bundleName list input which is over max size
          * @tc.size      MediumTest
@@ -3051,7 +3051,7 @@ export default function DisplayTest() {
             hilog.info(0x0000, '[ANI]', msgStr + 'Success in createVirtualScreen, screendId : ' + vid);
             await Utils.msSleep(500);
             let displayInfo = display.getDisplayByIdSync(vid);
-            console.info(caseName + ' displayInfo: ' + JSON.stringify(displayInfo));
+            console.info(caseName + ' displayInfo: ' + JSON.stringify(displayInfo));20
             await Utils.msSleep(300);
             let roundedCorner = displayInfo.getRoundedCorner();
             console.info(caseName + ' roundedCorner: ' + JSON.stringify(roundedCorner));
@@ -3071,7 +3071,7 @@ export default function DisplayTest() {
     })
 
     /**
-    * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5190
+    * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5220
     * @tc.name      testOnAdd_VirtualScreenCreate_static_0100
     * @tc.desc      testOnAdd returns screenId when create virtual screen
     * @tc.size      MediumTest
