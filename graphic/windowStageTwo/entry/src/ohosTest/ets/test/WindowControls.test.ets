@@ -708,6 +708,7 @@ it('testsetImageForRecent_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
                 let promise = windowStage.setImageForRecent(1, ImageFit.Fill);
                 promise.then(() => {
                     console.info(caseName +` Succeeded in setting image for recent`);
+                    expect(false).assertTrue();
                     done()
                 }).catch((err: BusinessError) => {
                     console.error(caseName +` Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}`);
@@ -756,6 +757,7 @@ it('testsetImageForRecent_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
                 let promise = windowStage.setImageForRecent(null, ImageFit.Fill);
                 promise.then(() => {
                     console.info(caseName +` Succeeded in setting image for recent`);
+                    expect(false).assertTrue();
                     done()
                 }).catch((err: BusinessError) => {
                     console.error(caseName +` Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}`);
@@ -804,6 +806,7 @@ it('testsetImageForRecent_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
                 let promise = windowStage.setImageForRecent(undefined, ImageFit.Fill);
                 promise.then(() => {
                     console.info(caseName +` Succeeded in setting image for recent`);
+                    expect(false).assertTrue();
                     done()
                 }).catch((err: BusinessError) => {
                     console.error(caseName +` Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}`);
@@ -853,6 +856,7 @@ it('testsetImageForRecent_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
                 let promise = windowStage.setImageForRecent(pixelMap, null);
                 promise.then(() => {
                     console.info(caseName +` Succeeded in setting image for recent`);
+                    expect(false).assertTrue();
                     done()
                 }).catch((err: BusinessError) => {
                     console.error(caseName +` Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}`);
@@ -902,6 +906,7 @@ it('testsetImageForRecent_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
                 let promise = windowStage.setImageForRecent(pixelMap, undefined);
                 promise.then(() => {
                     console.info(caseName +` Succeeded in setting image for recent`);
+                    expect(false).assertTrue();
                     done()
                 }).catch((err: BusinessError) => {
                     console.error(caseName +` Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}`);
