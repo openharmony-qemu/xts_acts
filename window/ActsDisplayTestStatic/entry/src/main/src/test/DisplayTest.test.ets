@@ -1178,7 +1178,7 @@ export default function DisplayTest():void {
             let caseName: string = 'testIsCapturedByBundleName_default_static_0100';
             let msgStr: string = 'jsunittest ' + caseName + ' ';
             hilog.info(domain, tag, msgStr + 'begin');
-            let bundleList: Array<string> = ["com.huawei.hmos.huaweicast", "com.huawei.hmos.screenrecorder", "com.example.actswindowtest.static"];
+            let bundleList: Array<string> = ["com.example.actswindowtest.static"];
             try {
                 let status: boolean = display.isCaptured(bundleList);
                 hilog.info(domain, tag, msgStr + 'status:' + status);
