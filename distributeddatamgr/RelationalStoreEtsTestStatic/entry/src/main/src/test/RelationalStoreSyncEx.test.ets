@@ -12,25 +12,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import {
-    describe,
-    beforeAll,
-    beforeEach,
-    afterEach,
-    afterAll,
-    it,
-    expect,
-    Level,
-    Size,
-    TestType
-} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll} from "../../../hypium/index";
 import relationalStore from '@ohos.data.relationalStore';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import Utils from './Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import hilog from '@ohos.hilog'
+import UIAbility from '@ohos.app.ability.UIAbility';
+import dataSharePredicates from '@ohos.data.dataSharePredicates';
 
 let context: common.UIAbilityContext | undefined;
 const TAG: string = "[RELATIONAL_STORE_SYNCEX_JSKITS_TEST]";
@@ -56,7 +47,6 @@ export default function RelationalStoreSyncExTest(): void {
             await Utils.msSleep(10000)
             context = AppStorage.get<common.UIAbilityContext>("abilityContextMainAbility2") as common.UIAbilityContext;
         });
-
         beforeEach(async (): Promise<void> => {
             console.info(TAG + 'beforeEach');
             rdbStore = await relationalStore.getRdbStore(context!, STORE_CONFIG);
@@ -65,16 +55,13 @@ export default function RelationalStoreSyncExTest(): void {
                 await rdbStore!.executeSql(CREATE_TABLE_TEST);
             }
         });
-
         afterEach(async (): Promise<void> => {
             console.info(TAG + 'afterEach');
             await relationalStore.deleteRdbStore(context!, STORE_CONFIG);
         });
-
         afterAll(async (): Promise<void> => {
             console.info(TAG + 'afterAll');
         });
-
         console.log(TAG + "*************Unit Test Begin*************");
 
         /**
