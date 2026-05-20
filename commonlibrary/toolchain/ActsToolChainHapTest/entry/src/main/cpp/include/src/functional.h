@@ -54,5 +54,6 @@ int DlopenTest();
 int DlopenNsTest();
 int DlopenWeaklinkTest();
 int EnvTest();
+int FscanfTest();
 
 #endif // SRC_FUNCTIONAL_H_H
