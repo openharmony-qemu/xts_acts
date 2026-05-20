@@ -93,6 +93,7 @@ export default function displayTest() {
     let deviceType: string = deviceInfo.deviceType;
     console.info(`deviceType: ${deviceType}`);
     let displayClass = display.getDefaultDisplaySync();
+    let isSyscapSessionManagerSupported = false;
     beforeAll(async () => {
       windowStage = AppStorage.get('windowStage') as window.WindowStage;
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -138,6 +139,8 @@ export default function displayTest() {
       await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
       await sleep(300);
       console.log(`beforeAll isSupportRotate: ${JSON.stringify(isSupportRotate)},Orientation1: ${JSON.stringify(Orientation1)},Orientation2: ${JSON.stringify(Orientation2)}`)
+      isSyscapSessionManagerSupported = canIUse('SystemCapability.Window.SessionManager');
+      console.info(`beforeAll isSyscapSessionManagerSupported: ` + isSyscapSessionManagerSupported);
     });
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
