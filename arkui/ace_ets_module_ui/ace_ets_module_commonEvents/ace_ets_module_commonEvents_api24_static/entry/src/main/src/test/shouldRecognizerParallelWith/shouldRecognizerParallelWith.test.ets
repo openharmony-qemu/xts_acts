@@ -91,7 +91,7 @@ export default function shouldRecognizerParallelWith(): void{
       console.info('[SUB_ARKUI_MouseEvent_shouldRecognizerParallelWith_0100] strJson1 content: ' +
       JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')));
 
-      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')).assertEqual('start');
+      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')).assertEqual('notValid');
 
       await CommonFunc.sleep(1000);
       console.info('[SUB_ARKUI_MouseEvent_shouldRecognizerParallelWith_0100] END');

@@ -24,7 +24,7 @@ export async function doKeyAgreement(algName: string, priKey: cryptoFramework.Pr
 
     return secret;
   } catch (error) {
-    console.error(`[XTS] doKeyAgreement ${error}, error code: ${error.code}`);
+    console.error(`[XTS] doKeyAgreement ${error}`);
     throw error as Error;
   }
 }

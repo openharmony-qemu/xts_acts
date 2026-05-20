@@ -3632,7 +3632,7 @@ export default function WindowPropertiesTest() {
                     console.info(caseName + 'Succeeded in calling setStartWindowBackgroundColor.');
                     expect(false).assertTrue();
                     done();
-                }).catch(async (err: Error):PromiseLike<void>|undefined => {
+                }).catch(async (err: Error):Promise<void> => {
                     console.error(caseName + 'Failed to call setStartWindowBackgroundColor. Cause: ' + JSON.stringify(err));
                     if (err.code === 801) {
                         expect(err.message !== null).assertTrue();

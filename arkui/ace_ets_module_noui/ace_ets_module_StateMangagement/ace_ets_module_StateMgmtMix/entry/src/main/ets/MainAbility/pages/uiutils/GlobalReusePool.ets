@@ -151,6 +151,8 @@ struct GlobalReusePool {
       .then(() => {
         this.onUIFullyLoaded = true;
       });
+    pool?.preRender(undefined, 1)
+    pool?.preRender(null, 1)
   }
   verifyPool(compName: string, comp: Function) {
     const pool = UIUtils.getCustomComponentContext(this).getReusePool();

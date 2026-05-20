@@ -311,7 +311,8 @@ export class KeyboardControllerStatic {
       data: 'FAILED'
     };
     try {
-      inputMethodAbility!.onPrivateCommand(async (record: Record<string, inputMethodEngine.CommandDataType>): void => {
+      inputMethodAbility!.onPrivateCommand(
+        (record: Record<string, inputMethodEngine.CommandDataType>): void => {
         console.info(`${TAG} ====>Sub_InputMethod_IME_PrivateDateTransferred_static_0600 onPrivateCommand into`);
         inputMethodAbility!.offPrivateCommand();
       });
@@ -334,7 +335,8 @@ export class KeyboardControllerStatic {
       data: 'FAILED'
     };
     try {
-      inputMethodAbility!.onPrivateCommand(async (record: Record<string, inputMethodEngine.CommandDataType>): void => {
+      inputMethodAbility!.onPrivateCommand(
+        (record: Record<string, inputMethodEngine.CommandDataType>): void => {
         console.info(`${TAG} ====>Sub_InputMethod_IME_PrivateDateTransferred_static_0700 onPrivateCommand into`);
         inputMethodAbility!.offPrivateCommand((): void => {});
       });
@@ -901,7 +903,8 @@ export class KeyboardControllerStatic {
         type: inputMethodEngine.PanelType.STATUS_BAR,
         flag: inputMethodEngine.PanelFlag.FLG_FLOATING
       };
-      inputMethodAbility!.createPanel(this.mContext!, panelInfo).then(async(inputPanel: inputMethodEngine.Panel | null):void => {
+      inputMethodAbility!.createPanel(this.mContext!, panelInfo).then(
+        async (inputPanel: inputMethodEngine.Panel | null): Promise<void> => {
         if (inputPanel) {
           let wid = Math.floor(this.displayInfo!.width * 0.4).toInt();
           let hei = Math.floor(this.displayInfo!.height * 0.5).toInt();
@@ -1236,7 +1239,7 @@ export class KeyboardControllerStatic {
           count += 1;
           console.info(TAG + '====>receive Sub_Misc_inputMethod_Panel_offShow_0190 off Show count: ' + count);
         });
-        setInterval(async (t1: int):void => {
+        setInterval(async (t1: int): Promise<void> => {
           await this.softKeyboardPanel!.show();
           await this.softKeyboardPanel!.hide();
           timeCount += 1;
@@ -1546,7 +1549,7 @@ export class KeyboardControllerStatic {
     });
 
     let loopCount = 0;
-    setInterval(async (t: int):void => {
+    setInterval(async (t: int): Promise<void> => {
       await this.InputClient!.insertText('tttt');
       console.info(TAG + '====>keyboardController.insertText count: ' + count);
       if (loopCount === 2) {
@@ -1604,7 +1607,7 @@ export class KeyboardControllerStatic {
     });
 
     let loopCount = 0;
-    setInterval(async (t: int):void => {
+    setInterval(async (t: int): Promise<void> => {
       await this.InputClient!.insertText('tttt');
       console.info(TAG + '====>keyboardController.insertText count: ' + count);
       if (loopCount === 2) {
@@ -2984,7 +2987,7 @@ export class KeyboardControllerStatic {
         if(InputClient == null) {
           console.info(`${TAG} ====>SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_static_0100 InputClient is null`); 
         } else {
-          setTimeout(async (): void => {
+          setTimeout(async (): Promise<void> => {
             InputClient.sendKeyFunction(0).then((result: boolean) => {
               if(result){
                 console.info(`${TAG} ====>SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_static_0100 InputClient success in key function`); 
@@ -3037,7 +3040,7 @@ export class KeyboardControllerStatic {
         if(InputClient == null) {
           console.info(`${TAG} ====>Sub_Misc_inputMethod_onDeleteLeft_static_0100 InputClient is null`); 
         } else {
-          setTimeout(async (): void => {
+          setTimeout(async (): Promise<void> => {
             try {
               let bool = await InputClient!.deleteForward(1);
               console.info(`${TAG} ====>Sub_Misc_inputMethod_onDeleteLeft_static_0100 deleteForward: ${bool}`);
@@ -4151,7 +4154,8 @@ export class KeyboardControllerStatic {
     console.info(TAG + '====>receive Sub_Misc_inputMethod_Panel_onSizeChange_static_0100 success');
     try {
       if (this.softKeyboardPanel !== null) {
-        this.softKeyboardPanel!.onSizeChange(async (size: window.Size, keyboardArea?: inputMethodEngine.KeyboardArea):void => {
+        this.softKeyboardPanel!.onSizeChange(
+          (size: window.Size, keyboardArea?: inputMethodEngine.KeyboardArea): void => {
           if (typeof (keyboardArea!.top) === 'int' && typeof (keyboardArea!.bottom) === 'int' && typeof (keyboardArea!.left) === 'int' && typeof (keyboardArea!.right) === 'int') {
             commonEventPublishData = {
                 data: 'SUCCESS'

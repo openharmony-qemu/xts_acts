@@ -2630,7 +2630,7 @@ export default function WindowPCTest() {
                     console.info(caseName + ' Succeeded in setting window support modes');
                     expect(false).assertTrue();
                     done();
-                }).catch(async (err: Error):PromiseLike<void>|undefined => {
+                }).catch(async (err: Error):Promise<void> => {
                     console.error(caseName + `Failed to set window support modes. Cause code: ${err.code}, message: ${err.message}`);
                     await terminateAbility(caseName);
                     if (err.code === 801) {
@@ -3004,14 +3004,15 @@ export default function WindowPCTest() {
         });
 
         /**
-         * @tc.number    SUB_WINDOW_PC_STATIC_ONWINDOWTITLEBUTTONRECTCHANGE_001
+         * @tc.number    SUB_WINDOW_PC_STATIC_ONWINDOWTITLEBUTTONRECTCHANGE_0001
          * @tc.name      testOnWindowTitleButtonRectChange001
          * @tc.desc      Test onWindowTitleButtonRectChange function.
          * @tc.size      MediumTest
          * @tc.type      Function
          * @tc.level     Level3
          */
-        it('testOnWindowTitleButtonRectChange001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): void => {
+        it('testOnWindowTitleButtonRectChange001',
+            TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             let caseName: string = 'testOnWindowTitleButtonRectChange001';
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(domain, tag, msgStr + 'begin');

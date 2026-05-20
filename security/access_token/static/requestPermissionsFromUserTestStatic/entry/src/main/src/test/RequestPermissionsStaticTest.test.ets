@@ -442,6 +442,38 @@ export default function requestPermissionsStaticTest() {
       }
     })
 
+    /**
+     * @tc.name   SUB_Access_Token_requestPermissionsFromUser_1200
+     * @tc.number SUB_Access_Token_requestPermissionsFromUser_1200
+     * @tc.desc   test requestPermissionsFromUser with system_grant permission.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Access_Token_requestPermissionsFromUser_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: ()=>void): Promise<void> => {
+      hilog.info(domain, tag, "SUB_Access_Token_requestPermissionsFromUser_1200 start");
+      let permissionList: Array<Permissions> = new Array<Permissions>('ohos.permission.USE_BLUETOOTH');
+      try {
+        atManager.requestPermissionsFromUser(testAbilityContext!, permissionList, (error: BusinessError<void>|null, data: PermissionRequestResult|undefined):void => {
+          if (error) {
+            hilog.info(domain, tag, "SUB_Access_Token_requestPermissionsFromUser_1200 error " + JSON.stringify(error));
+            expect(false).assertFail();
+            done();
+          } else {
+            hilog.info(domain, tag, `SUB_Access_Token_requestPermissionsFromUser_1200 data ${data} `);
+            expect(data?.permissions.length).assertEqual(permissionList.length);
+            expect(data?.authResults[0]).assertEqual(0); // 0: granted
+            expect(data?.dialogShownResults?.[0]).assertEqual(false);
+            done();
+          }
+        });
+      } catch (error) {
+        hilog.info(domain, tag, "SUB_Access_Token_requestPermissionsFromUser_1200 catch err" + JSON.stringify(error));
+        expect(false).assertFail();
+        done();
+      }
+    })
+
   })
   hilog.info(domain, tag, 'abilityTest end');
 }

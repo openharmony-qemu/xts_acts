@@ -1370,6 +1370,85 @@ export default function SevenPointZeroI18nStageTest() {
     })
 
     /**
+     * @tc.name test_SymbolDateTimeFormat_Format_0100
+     * @tc.number test_SymbolDateTimeFormat_Format_0100
+     * @tc.desc test SymbolDateTimeFormat with custom PM character
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolDateTimeFormat_Format_0100', Level.LEVEL2, () => {
+      let locale = new Intl.Locale("en-US", { "hourCycle": "h12" });
+      let symbolFormat = new i18n.SymbolDateTimeFormat(locale);
+      let dateFormat = symbolFormat.format(1773763200000);
+      console.log('test_SymbolDateTimeFormat_Format_0100 result:', dateFormat);
+      expect(dateFormat).assertEqual("3/18/2026");
+    })
+
+    /**
+     * @tc.name test_SymbolDateTimeFormat_FormatRange_0100
+     * @tc.number test_SymbolDateTimeFormat_FormatRange_0100
+     * @tc.desc test SymbolDateTimeFormat with custom AM character
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolDateTimeFormat_FormatRange_0100', Level.LEVEL2, () => {
+      let locale = new Intl.Locale("en-US", { "hourCycle": "h12" });
+      let customSymbol: i18n.SymbolDateTimeFormatOptions = { "amPMSymbol": ["test1", "test2"], "timeStyle": "full" };
+      let symbolFormat = new i18n.SymbolDateTimeFormat(locale, customSymbol)
+      let dateFormat = symbolFormat.formatRange(1773799680000, 1805335680000)
+      console.log('test_SymbolDateTimeFormat_FormatRange_0100 result:', dateFormat);
+      expect(dateFormat).assertEqual("3/18/2026, 10:08:00 AM Central Standard Time – 3/18/2027, 10:08:00 AM Central Standard Time");
+    })
+
+
+    /**
+     * @tc.name test_SymbolDateTimeFormat_FormatRangeToParts_0100
+     * @tc.number test_SymbolDateTimeFormat_FormatRangeToParts_0100
+     * @tc.desc test SymbolDateTimeFormat with custom AM character
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolDateTimeFormat_FormatRangeToParts_0100', Level.LEVEL2, () => {
+      let locale = new Intl.Locale("en-US", { "hourCycle": "h12" });
+      let customSymbol: i18n.SymbolDateTimeFormatOptions = { "amPMSymbol": ["test1", "test2"], "timeStyle": "full" };
+      let expectedValue: string[] = ["10", ":", "08", ":", "00", " ", "AM", " " ,"Central Standard Time"];
+      let expectedType: string[] = ["hour", "literal", "minute", "literal", "second", "literal", "dayPeriod", "literal" ,"timeZoneName"];
+      let symbolFormat = new i18n.SymbolDateTimeFormat(locale, customSymbol);
+      let dateFormat: Intl.DateTimeFormatPart[] = symbolFormat.formatRangeToParts(1773799680000, 1773799680000);
+      console.log('test_SymbolDateTimeFormat_FormatRangeToParts_0100 result:', JSON.stringify(dateFormat));
+      for (let i = 0; i < dateFormat.length; i++) {
+        expect(dateFormat[i].value).assertEqual(expectedValue[i]);
+        expect(dateFormat[i].type).assertEqual(expectedType[i]);
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolDateTimeFormat_FormatToParts_0100
+     * @tc.number test_SymbolDateTimeFormat_FormatToParts_0100
+     * @tc.desc test SymbolDateTimeFormat with custom AM character
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolDateTimeFormat_FormatToParts_0100', Level.LEVEL2, () => {
+      let locale = new Intl.Locale("en-US", { "hourCycle": "h12" });
+      let customSymbol: i18n.SymbolDateTimeFormatOptions = { "amPMSymbol": ["test1", "test2"], "timeStyle": "full" };
+      let date: Date = new Date(2026, 2, 18, 10, 8);
+      let expectedValue: string[] = ["10", ":", "08", ":", "00", " ", "test1", " " ,"Central Standard Time"];
+      let expectedType: string[] = ["hour", "literal", "minute", "literal", "second", "literal", "dayPeriod", "literal" ,"timeZoneName"];
+      let symbolFormat = new i18n.SymbolDateTimeFormat(locale, customSymbol);
+      let dateFormat: Intl.DateTimeFormatPart[] = symbolFormat.formatToParts(1773799680000);
+      console.log('test_SymbolDateTimeFormat_FormatToParts_0100 result:', JSON.stringify(dateFormat));
+      for (let i = 0; i < dateFormat.length; i++) {
+        expect(dateFormat[i].value).assertEqual(expectedValue[i]);
+        expect(dateFormat[i].type).assertEqual(expectedType[i]);
+      }
+    })
+
+    /**
      * @tc.name i18n_setAppDefaultTimeZoneById_test_0400
      * @tc.number SUB_GLOBAL_AppsSettingTimeZone_test_0400
      * @tc.desc test getAppDefaultTimeZone with Asia/Shanghai
