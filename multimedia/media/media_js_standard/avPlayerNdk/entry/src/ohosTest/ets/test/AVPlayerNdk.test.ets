@@ -2395,5 +2395,50 @@ export default function AVPlayerNdkTest() {
       expect(result).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.name   testOhAvPlayerSetPCMOutputCallback_0100
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_SET_PCM_OUTPUT_CALLBACK_0100
+     * @tc.desc   test OH_AVPlayer_SetPCMOutputCallback
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAvPlayerSetPCMOutputCallback_0100', Level.LEVEL0,async (done: Function) => {
+      let result: number = await avplayer.avPlayerSetPCMOutputCallback();
+      console.info(`testOhAvPlayerSetPCMOutputCallback_0100 result = ${result}`);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOhAvPlayerSetPCMOutputCallback_0200
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_SET_PCM_OUTPUT_CALLBACK_0200
+     * @tc.desc   test OH_AVPlayer_SetPCMOutputCallback
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAvPlayerSetPCMOutputCallback_0200', Level.LEVEL0,async (done: Function) => {
+      let result: number = avplayer.avPlayerSetPCMOutputCallbackErr();
+      console.info(`testOhAvPlayerSetPCMOutputCallback_0200 result = ${result}`);
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOhAvPlayerSetPCMOutputCallback_0300
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_SET_PCM_OUTPUT_CALLBACK_0300
+     * @tc.desc   test OH_AVPlayer_SetPCMOutputCallback
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testOhAvPlayerSetPCMOutputCallback_0300', Level.LEVEL0,async (done: Function) => {
+      let result: number = avplayer.avPlayerSetPCMOutputCallbackError();
+      console.info(`testOhAvPlayerSetPCMOutputCallback_0300 result = ${result}`);
+      expect(result).assertEqual(0);
+      done();
+    });
   })
 }
