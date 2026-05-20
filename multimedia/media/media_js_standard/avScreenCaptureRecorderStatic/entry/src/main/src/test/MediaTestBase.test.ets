@@ -268,6 +268,48 @@ export default class MediaTestBase {
         break;
       case 'setPickerMode':
         steps.shift();
+        await avScreenCaptureRecorder!!.setPickerMode(media.PickerMode.SCREEN_ONLY).then(() => {
+          console.info('avScreenCaptureRecorder setPickerMode success');
+          this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        }).catch((err: Error) => {
+          console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + err.message);
+          expect().assertFail();
+        })
+        await avScreenCaptureRecorder!!.setPickerMode(media.PickerMode.SCREEN_AND_WINDOW).then(() => {
+          console.info('avScreenCaptureRecorder setPickerMode success');
+          this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        }).catch((err: Error) => {
+          console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + err.message);
+          expect().assertFail();
+        })
+        await avScreenCaptureRecorder!!.setPickerMode(media.PickerMode.APP_ONLY).then(() => {
+          console.info('avScreenCaptureRecorder setPickerMode success');
+          this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        }).catch((err: Error) => {
+          console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + err.message);
+          expect().assertFail();
+        })
+        await avScreenCaptureRecorder!!.setPickerMode(media.PickerMode.WINDOW_AND_APP).then(() => {
+          console.info('avScreenCaptureRecorder setPickerMode success');
+          this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        }).catch((err: Error) => {
+          console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + err.message);
+          expect().assertFail();
+        })
+        await avScreenCaptureRecorder!!.setPickerMode(media.PickerMode.SCREEN_AND_APP).then(() => {
+          console.info('avScreenCaptureRecorder setPickerMode success');
+          this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        }).catch((err: Error) => {
+          console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + err.message);
+          expect().assertFail();
+        })
+        await avScreenCaptureRecorder!!.setPickerMode(media.PickerMode.SCREEN_WINDOW_AND_APP).then(() => {
+          console.info('avScreenCaptureRecorder setPickerMode success');
+          this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        }).catch((err: Error) => {
+          console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + err.message);
+          expect().assertFail();
+        })
         await avScreenCaptureRecorder!!.setPickerMode(media.PickerMode.WINDOW_ONLY).then(() => {
           console.info('avScreenCaptureRecorder setPickerMode success');
           this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
