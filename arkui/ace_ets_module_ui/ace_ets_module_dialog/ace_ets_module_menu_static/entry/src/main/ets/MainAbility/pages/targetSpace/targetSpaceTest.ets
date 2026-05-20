@@ -15,7 +15,7 @@
 
 'use static'
 import { Entry, Text, Column, Row, Component, Button, Marquee, Scroll, MarqueeUpdateStrategy } from '@kit.ArkUI';
-import { Entry, Text, Column, Component, Button,ClickEvent, Divider, Image, KeyEvent, Padding, $r, Flex,
+import { Entry, Text, Column, Component, Button, ClickEvent, Divider, Image, KeyEvent, Padding, $r, Flex,
   Color, FontWeight, KeyType, AxisModel, FocusAxisEvent, ButtonType, UIContext, TextAttribute, ButtonAttribute,
   Position, Placement, MenuElement, LocalizedPadding, Margin, TabsController, Tabs, Visibility,TextAlign,
   MenuOptions, BarState,  Menu, MenuItem, ResponseType, FlexAlign, ItemAlign, FlexDirection, CounterAttribute,
