@@ -1156,6 +1156,202 @@ export default function DisplayTest() {
             }
         });
         /**
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5190
+         * @tc.name      testIsCapturedByBundleName_default_static_0100
+         * @tc.desc      check current device capture status with bundleName list input
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 2
+         */
+        it('testIsCapturedByBundleName_default_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise => {
+            let caseName: string = 'testIsCapturedByBundleName_default_static_0100';
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag, msgStr + 'begin');
+            let bundleList: Array = ["com.huawei.hmos.huaweicast", "com.huawei.hmos.screenrecorder", "com.example.actswindowtest.static"];
+            try {
+                let status: boolean = display.isCaptured(bundleList);
+                hilog.info(domain, tag, msgStr + 'status:' + status);
+                expect(status).assertFalse();
+                let option: display.VirtualScreenConfig = {
+                    name: 'screen01',
+                    width: 1080,
+                    height: 2340,
+                    density: 2,
+                    surfaceId: '',
+                    supportsFocus: false
+            };
+            let screenId: long = await display.createVirtualScreen(option);
+            hilog.info(domain, tag, msgStr + 'Success in createVirtualScreen, screendId : ' + screenId);
+            await msSleep(1000);
+            status = display.isCaptured(bundleList);
+            hilog.info(domain, tag, msgStr + 'after createVirtualScreen status:' + status);
+            expect(status).assertTrue();
+            await display.destroyVirtualScreen(screenId);
+            hilog.info(domain, tag, msgStr + 'Success in destroyVirtualScreen');
+            done();
+        } catch (exception) {
+            hilog.error(domain, tag, msgStr + 'Failed. Code: ' + exception.code);
+            expect().assertFail();
+            done();
+            }
+        });
+
+        /**
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5190
+         * @tc.name      testIsCapturedByBundleName_empty_array_static_0100
+         * @tc.desc      check current device capture status with empty bundleName list input
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level0
+         */
+        it('testIsCapturedByBundleName_empty_array_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testIsCapturedByBundleName_empty_array_static_0100';
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag, msgStr + 'begin');
+            let bundleList: Array<string> = [];
+            try {
+                let status: boolean = display.isCaptured(bundleList);
+                hilog.info(domain, tag, msgStr + 'status:' + status);
+                expect(status).assertFalse();
+                let option: display.VirtualScreenConfig = {
+                    name: 'screen01',
+                    width: 1080,
+                    height: 2340,
+                    density: 2,
+                    surfaceId: '',
+                    supportsFocus: false
+                };
+                let screenId: long = await display.createVirtualScreen(option);
+                hilog.info(domain, tag, msgStr + 'Success in createVirtualScreen, screendId : ' + screenId);
+                await msSleep(1000);
+                status = display.isCaptured(bundleList);
+                hilog.info(domain, tag, msgStr + 'after createVirtualScreen status:' + status);
+                expect(status).assertFalse();
+                await display.destroyVirtualScreen(screenId);
+                hilog.info(domain, tag, msgStr + 'Success in destroyVirtualScreen');
+                done();
+            } catch (exception) {
+                hilog.error(domain, tag, msgStr + 'Failed. Code: ' + exception.code);
+                expect().assertFail();
+                done();
+            }
+        });
+    
+        /**
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5190
+         * @tc.name      testIsCapturedByBundleName_1400004_static_0100
+         * @tc.desc      check current device capture status with bundleName list input which is over max size
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level0
+         */
+        it('testIsCapturedByBundleName_1400004_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testIsCapturedByBundleName_1400004_static_0100';
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag, msgStr + 'begin');
+            let bundleList: Array<string> = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16',
+                '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36',
+                '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50', '51', '52', '53', '54', '55', '56',
+                '57', '58', '59', '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '70', '71', '72', '73', '74', '75', '76',
+                '77', '78', '79', '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '90', '91', '92', '93', '94', '95', '96', '97', '98', '99', '100', '101'];
+            try {
+                let status: boolean = display.isCaptured(bundleList);
+                hilog.info(domain, tag, msgStr + 'succeeded in calling isCapturedByBundleName');
+                expect().assertFail();
+                done();
+            } catch (error) {
+                hilog.error(domain, tag, msgStr + 'Failed. Code: ' + error.code);
+                expect(error.code).assertEqual(1400004);
+                done();
+            }
+        });
+    
+    
+        /**
+         * @tc.number    SUB_BASIC_WMS_ISCAPTURED_VIRTUALSCREEN_0100
+         * @tc.name      testIsCaptured_createDestroyVirtualScreen_static_0100
+         * @tc.desc      test isCaptured returns true when create virtual screen and false when destroy virtual screen
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level3
+         */
+        it('testIsCaptured_createDestroyVirtualScreen_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testIsCaptured_createDestroyVirtualScreen_static_0100';
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag, msgStr + 'begin');
+    
+            let captureStatus: boolean = false;
+            let callbackTriggered: boolean = false;
+            let callback: Callback<boolean> = (status: boolean) => {
+                hilog.info(domain, tag, msgStr + 'capture status: ' + status);
+                captureStatus = status;
+                callbackTriggered = true;
+            };
+    
+            let option: display.VirtualScreenConfig = {
+                name: 'screen01',
+                width: 100,
+                height: 2340,
+                density: 2,
+                surfaceId: ''
+            };
+    
+            try {
+                let vid: long = await display.createVirtualScreen(option);
+                hilog.info(domain, tag, msgStr + 'Success in createVirtualScreen, screendId : ' + vid);
+                await msSleep(3000);
+    
+                display.onCaptureStatusChange(callback);
+                hilog.info(domain, tag, msgStr + 'register onCaptureStatusChange success');
+                await msSleep(1000);
+    
+                await display.destroyVirtualScreen(vid);
+                hilog.info(domain, tag, msgStr + 'Success in destroyVirtualScreen');
+    
+                await msSleep(3000);
+                while (!callbackTriggered) {
+                    await msSleep(100);
+                }
+                hilog.info(domain, tag, msgStr + 'after destroyVirtualScreen, captureStatus: ' + captureStatus);
+                expect(captureStatus === false).assertTrue();
+    
+                display.offCaptureStatusChange(callback);
+                hilog.info(domain, tag, msgStr + 'offCaptureStatusChange success');
+    
+                done();
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.info(domain, tag, caseName + 'error in createVirtualScreen or destroyVirtualScreen, err : ' + err.code);
+                if (err.code === 801) {
+                    hilog.info(domain, tag, caseName + 'device not support createVirtualScreen');
+                }
+                expect(err.code === 801).assertTrue();
+                done();
+            }
+        });
+        /**
+         * @tc.number	SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0070
+         * @tc.name	    testDisplayState_Enum_Value_static_0100
+         * @tc.desc		To test the enum value of WindowDisplayState.
+         */
+        it('testDisplayState_Enum_Value_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            hilog.info(0x0000, '[ANI]','test the enum value of Window DisplayState begin');
+            try {
+                expect(0).assertEqual(display.DisplayState.STATE_UNKNOWN);
+                expect(1).assertEqual(display.DisplayState.STATE_OFF);
+                expect(2).assertEqual(display.DisplayState.STATE_ON);
+                expect(3).assertEqual(display.DisplayState.STATE_DOZE);
+                expect(4).assertEqual(display.DisplayState.STATE_DOZE_SUSPEND);
+                expect(5).assertEqual(display.DisplayState.STATE_VR);
+                expect(6).assertEqual(display.DisplayState.STATE_ON_SUSPEND);
+                done();
+            } catch (err) {
+                hilog.error(0x0000, '[ANI]','test enum value of windowDisplayState error ' + JSON.stringify(err));
+                expect().assertFail();
+                done();
+            }
+        })
+        /**
          * @tc.number	SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0070
          * @tc.name	    testDisplayState_Enum_Value_static_0100
          * @tc.desc		To test the enum value of WindowDisplayState.
@@ -2272,8 +2468,13 @@ export default function DisplayTest() {
                     done();
                 }).catch((err: Error) :PromiseLike<void>|undefined=> {
                     hilog.info(domain, tag,caseName + 'Failed to makeUnique, err: ' + JSON.stringify(err));
-
-                    done();
+                    if (!isSyscapSessionManagerSupported) {
+                        expect(err.code).assertEqual(801)
+                        done();
+                    } else {
+                        expect(err.code).assertEqual(1400001);
+                        done();
+                    }
                 })
             } catch (err) {
                 err = err as BusinessError;
