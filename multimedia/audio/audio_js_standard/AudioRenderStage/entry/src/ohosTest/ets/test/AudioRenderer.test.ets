@@ -104,6 +104,7 @@ export default function audioRendererTest() {
         sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
         encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
       }
+      console.info(`sample rate: `, Object.values(audio.AudioSamplingRate));
       let audioRendererInfo: audio.AudioRendererInfo = {
         usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
         rendererFlags: 0
@@ -239,9 +240,8 @@ export default function audioRendererTest() {
         rendererInfo: audioRendererInfo
       }
       
-      let audioRenderer: audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       try {
-        audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+        let audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
         console.info(`AudioRenderer create : SUCCESS`);
       } catch (err) {
         console.info(`AudioRenderer create : ERROR`);

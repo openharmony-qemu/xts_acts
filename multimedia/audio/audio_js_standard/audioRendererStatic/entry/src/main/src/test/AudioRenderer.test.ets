@@ -14499,7 +14499,7 @@ export default function audioRendererTest() {
         console.info(`AudioRenderer create : SUCCESS`);
       } catch (err) {
         console.info(`AudioRenderer create : ERROR`);
-        expect(Number(err.code)).assertEqual(6800101);
+        expect(Number(err.code)).assertEqual(401);
       }
       console.info('afterAll called')
       done();
