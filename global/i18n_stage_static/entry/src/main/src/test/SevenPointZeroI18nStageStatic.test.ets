@@ -1112,7 +1112,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
       let expectedValue: string[] = ["10", ":", "08", ":", "00", " ", "AM", " " ,"Central Standard Time"];
       let expectedType: string[] = ["hour", "literal", "minute", "literal", "second", "literal", "dayPeriod", "literal" ,"timeZoneName"];
       let symbolFormat = new i18n.SymbolDateTimeFormat(locale, customSymbol);
-      let dateFormat: Intl.DateTimeFormatPart[] = symbolFormat.formatRangeToParts(1773799680000, 1773799680000);
+      let dateFormat: Array<Intl.NumberRangeFormatPart> = symbolFormat.formatRangeToParts(1773799680000, 1773799680000);
       console.log('test_SymbolDateTimeFormat_FormatRangeToParts_Static_0100 result:', JSON.stringify(dateFormat));
       for (let i = 0; i < dateFormat.length; i++) {
         expect(dateFormat[i].value).assertEqual(expectedValue[i]);
