@@ -61,15 +61,18 @@ HWTEST_F(ActsVulkanPipelineLibrary4Test, TestVulkanPipelineTestCase004, Function
 
     // 解析 gpuName 中的版本号，例如 higpu.v300 -> 300
     int gpuVersion = 0;
-    size_t pos = gpuName.find(".v");
-    if (pos != std::string::npos) {
-        std::string versionStr = gpuName.substr(pos + 2);
+    const std::string gpuPrefix = "higpu.v";
+    size_t pos = gpuName.find(gpuPrefix);
+    // 判断 gpuName 是否以 higpu.v 开头
+    bool isHiGpu = (pos == 0);
+    if (isHiGpu) {
+        std::string versionStr = gpuName.substr(gpuPrefix.length());
         gpuVersion = std::atoi(versionStr.c_str());
     }
 
     if (canIUse("SystemCapability.Graphic.Vulkan")) {
-        // 只有当 gpuVersion >= 500 时，才追加 newCaseFile 内容
-        if (gpuVersion >= 500) {
+        // higpu.v500 及以上，或者不是 higpu.v 开头的 GPU，都追加 newCaseFile
+        if (gpuVersion >= 500 || !isHiGpu) {
             // 1. 检查 caseFile 最后一个字符
             std::ifstream checkFile(caseFile, std::ios::binary | std::ios::ate);
             bool needNewLine = false;
