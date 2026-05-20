@@ -18,7 +18,7 @@
 
 namespace ArkUICapiTest {
 
-static napi_value Hovered_UI_STATE_HOVERED(napi_env env, napi_callback_info info) 
+static napi_value Hovered_UI_STATE_HOVERED(napi_env env, napi_callback_info info)
 {
     NAPI_START(text, ARKUI_NODE_TEXT);
     ASSERT_EQ(UI_STATE_HOVERED, PARAM_16);

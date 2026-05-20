@@ -69,7 +69,7 @@ struct HoveredAttributeTestPage {
           .fontColor(Color.Gray)
           .textAlign(TextAlign.Center)
 
-        Button("Modifier Hover")
+        Button('Modifier Hover')
           .id('modifierHoverBtn')
           .width('80%')
           .height('8%')
@@ -81,7 +81,7 @@ struct HoveredAttributeTestPage {
           .textAlign(TextAlign.Center)
           .margin({ top: '5%' } as Margin)
 
-        Text("StateStyles Hover")
+        Text('StateStyles Hover')
           .id('stateHoverText')
           .width('80%')
           .height('8%')
@@ -97,7 +97,7 @@ struct HoveredAttributeTestPage {
           .textAlign(TextAlign.Center)
           .margin({ top: '5%' } as Margin)
 
-        Text("HoverTarget")
+        Text('HoverTarget')
           .id('frameNodeHoverText')
           .width('80%')
           .height('8%')
@@ -117,7 +117,7 @@ struct HoveredAttributeTestPage {
             }
           })
 
-        Button("RemoveHover")
+        Button('RemoveHover')
           .id('frameNodeRemoveBtn')
           .width('80%')
           .height('8%')
