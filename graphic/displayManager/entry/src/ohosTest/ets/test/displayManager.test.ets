@@ -1823,7 +1823,7 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
           done();
         }).catch((err: BusinessError) => {
           console.log(caseName + 'Failed to makeUnique, err: ' + JSON.stringify(err));
-          if (!isSyscapSessionManagerSupported) {
+          if (!isSyscapSessionManagerSupported || deviceType == 'wearable') {
               expect(err.code).assertEqual(801)
               done();
           } else {
