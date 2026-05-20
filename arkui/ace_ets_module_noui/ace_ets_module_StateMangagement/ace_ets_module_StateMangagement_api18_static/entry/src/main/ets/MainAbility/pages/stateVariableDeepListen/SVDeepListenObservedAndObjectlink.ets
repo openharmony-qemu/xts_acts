@@ -26,7 +26,7 @@ export class Book {
 
 @Observed
 export class Bag {
-  book: Book;
+  public book: Book;
 
   constructor(book: Book) {
     this.book = book;
@@ -42,12 +42,14 @@ struct BookCard {
       Text(`BookCard: ${this.book.name}`)
         .id('bookCardText')
         .width(320)
+        .height('5%')
         .margin(10)
         .textAlign(TextAlign.Center)
 
       Button('change book.name')
         .id('changeBookNameButton')
         .width(320)
+        .height('5%')
         .margin(10)
         .onClick((e) => {
           this.book.name = 'C++';
@@ -67,12 +69,14 @@ struct SVDeepListenObservedAndObjectlink {
       Text(`Index: ${this.bag.book.name}`)
         .id('indexText')
         .width(320)
+        .height('5%')
         .margin(10)
         .textAlign(TextAlign.Center)
 
       Button('change bag.book.name')
         .id('changeBagBookNameButton')
         .width(320)
+        .height('5%')
         .margin(10)
         .onClick((e) => {
           this.bag.book.name = 'TS';

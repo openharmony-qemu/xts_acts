@@ -52,15 +52,15 @@ export default function SVDeepListenObservedAndObjectlinkTest() {
     });
 
     /**
-     * @tc.name   SVDeepListenObservedAndObjectlinkTest_static_0100
-     * @tc.number SVDeepListenObservedAndObjectlinkTest_static_0100
+     * @tc.name   SUB_ARUI_SVDeepListenObservedAndObjectlinkTest_static_0100
+     * @tc.number SUB_ARUI_SVDeepListenObservedAndObjectlinkTest_static_0100
      * @tc.desc   Test @Observed and @ObjectLink deep listener - verify second level property change triggers UI update in both parent and child components
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SVDeepListenObservedAndObjectlinkTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[SVDeepListenObservedAndObjectlinkTest_static_0100] START');
+    it('SUB_ARUI_SVDeepListenObservedAndObjectlinkTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[SUB_ARUI_SVDeepListenObservedAndObjectlinkTest_static_0100] START');
 
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(2000);
@@ -69,7 +69,7 @@ export default function SVDeepListenObservedAndObjectlinkTest() {
       let strJson = inspector.getInspectorByKey('indexText');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('content')).assertEqual('Index: JS');
-      console.info('[SVDeepListenObservedAndObjectlinkTest_static_0100] Step1: Initial state verified - bag.book.name is JS');
+      console.info('[SUB_ARUI_SVDeepListenObservedAndObjectlinkTest_static_0100] Step1: Initial state verified - bag.book.name is JS');
 
       // Step2: Click changeBagBookNameButton to change second level property bag.book.name from 'JS' to 'TS'
       // This should trigger UI update in parent component (Index) due to deep listener
@@ -80,22 +80,22 @@ export default function SVDeepListenObservedAndObjectlinkTest() {
       strJson = inspector.getInspectorByKey('indexText');
       obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('content')).assertEqual('Index: TS');
-      console.info('[SVDeepListenObservedAndObjectlinkTest_static_0100] Step2: After click changeBagBookNameButton - bag.book.name changed to TS');
+      console.info('[SUB_ARUI_SVDeepListenObservedAndObjectlinkTest_static_0100] Step2: After click changeBagBookNameButton - bag.book.name changed to TS');
 
-      console.info('[SVDeepListenObservedAndObjectlinkTest_static_0100] END');
+      console.info('[SUB_ARUI_SVDeepListenObservedAndObjectlinkTest_static_0100] END');
       done();
     });
 
     /**
-     * @tc.name   SVDeepListenObservedAndObjectlinkTest_static_0200
-     * @tc.number SVDeepListenObservedAndObjectlinkTest_static_0200
+     * @tc.name   SUB_ARUI_SVDeepListenObservedAndObjectlinkTest_static_0200
+     * @tc.number SUB_ARUI_SVDeepListenObservedAndObjectlinkTest_static_0200
      * @tc.desc   Test @Observed and @ObjectLink deep listener - verify second level property change triggers UI update in child component (BookCard)
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SVDeepListenObservedAndObjectlinkTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[SVDeepListenObservedAndObjectlinkTest_static_0200] START');
+    it('SUB_ARUI_SVDeepListenObservedAndObjectlinkTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[SUB_ARUI_SVDeepListenObservedAndObjectlinkTest_static_0200] START');
 
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(2000);
@@ -114,15 +114,15 @@ export default function SVDeepListenObservedAndObjectlinkTest() {
       strJson = inspector.getInspectorByKey('bookCardText');
       obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('content')).assertEqual('BookCard: C++');
-      console.info('[SVDeepListenObservedAndObjectlinkTest_static_0200] Step2: After click changeBookNameButton - BookCard shows C++');
+      console.info('[SUB_ARUI_SVDeepListenObservedAndObjectlinkTest_static_0200] Step2: After click changeBookNameButton - BookCard shows C++');
 
       // Step3: Verify parent component (Index) also reflects this change since Book is shared reference
       strJson = inspector.getInspectorByKey('indexText');
       obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('content')).assertEqual('Index: C++');
-      console.info('[SVDeepListenObservedAndObjectlinkTest_static_0200] Step3: Parent Index component also updated to C++');
+      console.info('[SUB_ARUI_SVDeepListenObservedAndObjectlinkTest_static_0200] Step3: Parent Index component also updated to C++');
 
-      console.info('[SVDeepListenObservedAndObjectlinkTest_static_0200] END');
+      console.info('[SUB_ARUI_SVDeepListenObservedAndObjectlinkTest_static_0200] END');
       done();
     });
   });

@@ -34,16 +34,16 @@ struct SVDeepListenMakeObserved {
     Column() {
       Text(`allowDeep(true)info.name: ${this.person.info.name}`)
         .id('allowDeep_true_infoNameText')
-        .height("5%")
+        .height('5%')
       Button('change name')
-        .id("allowDeep_true_changNameButton")
-        .height("5%")
+        .id('allowDeep_true_changNameButton')
+        .height('5%')
         .onClick(() => {
           this.person.info.name = 'Jackson'; // 由于是深度观察，第二层属性变化也会触发刷新。
         })
       Button('replace info')
-        .id("replaceInfoButton")
-        .height("5%")
+        .id('replaceInfoButton')
+        .height('5%')
         .onClick(() => {
           this.person.info = { name: 'Tom', age: 25 } as Info; // 触发刷新，属于第一层属性变化
         })

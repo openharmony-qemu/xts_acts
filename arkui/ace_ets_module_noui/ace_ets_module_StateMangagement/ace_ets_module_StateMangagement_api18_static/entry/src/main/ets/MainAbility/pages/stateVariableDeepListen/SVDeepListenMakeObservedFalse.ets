@@ -34,10 +34,10 @@ struct SVDeepListenMakeObservedFalse {
     Column() {
       Text(`allowDeep(false)info.name: ${this.person.info.name}`)
         .id('allowDeep_false_infoNameText')
-        .height("5%")
+        .height('5%')
       Button('change name')
-        .id("allowDeep_false_changNameButton")
-        .height("5%")
+        .id('allowDeep_false_changNameButton')
+        .height('5%')
         .onClick(() => {
           this.person.info.name = 'Jackson'; // allowDeep为false,makeObserved仅观察一层属性变化，嵌套属性变化不触发刷新。
         })
