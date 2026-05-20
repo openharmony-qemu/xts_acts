@@ -331,7 +331,6 @@ export default function observerManagerSimStateTest1() {
           ExpectTrue(num !== 0);
           done();
         });
-        await sim.activateSim(slotId);
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}`);
         ExpectFail();
