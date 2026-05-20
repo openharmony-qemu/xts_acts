@@ -58,7 +58,7 @@
     ],
     "requestPermissions": [
       {
-        "name": "ohos.permission.MANAGER_RECENT_SNAPSHOT"
+        "name": "ohos.permission.MANAGE_RECENT_SNAPSHOT"
       }
     ]
   }
