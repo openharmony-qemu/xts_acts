@@ -3566,31 +3566,30 @@ export default function WindowLifecycle() {
       let subWindowClass: window.Window | undefined;
       let mainWindow = windowStage.getMainWindowSync();
       try {
-        const callback = async (res: window.WindowEventType) => {
-          console.log(caseName + ' windowEvent callback res: ' + res)
-          expect(res).assertEqual(window.WindowEventType.WINDOW_SHOWN);
-          mainWindow.off('windowEvent', callback)
-          await subWindowClass?.destroyWindow();
-          done()
-        }
         window.createWindow(config).then(async (data) => {
           subWindowClass = data;
           await subWindowClass.setUIContent('testability/pages/First/index2');
           await subWindowClass.showWindow();
           await subWindowClass.resize(800, 1200);
           await sleep(500);
-          if (canIUseRes && (deviceType == 'phone' || deviceType == 'tablet' || deviceType == '2in1')) {
-            console.log(`${caseName} minimize`);
+          if (canIUseRes) {
+            let mainWindowStatus = windowClass.getWindowStatus();
+            console.info(`${caseName} Succeeded in getting window status. Data: ${mainWindowStatus}`);
             await mainWindow.minimize();
+            console.log(`${caseName} minimize`);
             await sleep(500);
             let text = await driver.findComponent(ON.id('textId'))
             console.log(`${caseName} text: ${text}`);
             await sleep(1000);
             await text.click();
             await sleep(500);
-            mainWindow.on('windowEvent', callback);
             await subWindowClass.restoreMainWindow();
             await sleep(500);
+            let mainWindowStatus2 = windowClass.getWindowStatus();
+            console.info(`${caseName} Succeeded in getting window status2. Data: ${mainWindowStatus2}`);
+            expect(mainWindowStatus).assertEqual(mainWindowStatus2);
+            await subWindowClass?.destroyWindow();
+            done();
           } else {
             await subWindowClass?.destroyWindow();
             done();
@@ -3635,34 +3634,33 @@ export default function WindowLifecycle() {
       let subWindowClass: window.Window | undefined;
       let mainWindow = windowStage.getMainWindowSync();
       try {
-        const callback = async (res: window.WindowEventType) => {
-          console.log(caseName + ' windowEvent callback res: ' + res)
-          expect(res).assertEqual(window.WindowEventType.WINDOW_SHOWN);
-          mainWindow.off('windowEvent', callback)
-          await subWindowClass?.destroyWindow();
-          done();
-        }
         window.createWindow(config).then(async (data) => {
           subWindowClass = data;
           await subWindowClass.setUIContent('testability/pages/First/index2');
           await subWindowClass.showWindow();
           await subWindowClass.resize(800, 1200);
           await sleep(500);
-          if (canIUseRes && (deviceType == 'phone' || deviceType == 'tablet' || deviceType == '2in1')) {
-            console.log(`${caseName} minimize`);
+          if (canIUseRes) {
+            let mainWindowStatus = windowClass.getWindowStatus();
+            console.info(`${caseName} Succeeded in getting window status. Data: ${mainWindowStatus}`);
             await mainWindow.minimize();
+            console.log(`${caseName} minimize success`);
             await sleep(500);
             let text = await driver.findComponent(ON.id('textId'))
             console.log(`${caseName} text: ${text}`);
             await sleep(1000);
             await text.click();
             await sleep(500);
-            mainWindow.on('windowEvent', callback);
             let param: Record<string, Object> = {
               'info': 'restoreMainWindow',
             };
             await subWindowClass.restoreMainWindow(param);
             await sleep(500)
+            let mainWindowStatus2 = windowClass.getWindowStatus();
+            console.info(`${caseName} Succeeded in getting window status2. Data: ${mainWindowStatus2}`);
+            expect(mainWindowStatus).assertEqual(mainWindowStatus2);
+            await subWindowClass?.destroyWindow();
+            done();
           } else {
             await subWindowClass?.destroyWindow();
             done();
