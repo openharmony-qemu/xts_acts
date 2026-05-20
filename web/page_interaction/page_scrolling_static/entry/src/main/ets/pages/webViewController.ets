@@ -32,7 +32,7 @@ import {
   Web
 } from '@ohos.arkui.component'
 
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 
@@ -172,7 +172,7 @@ struct webViewController {
           }
         })
       }
-      Web({ src: 'resource://rawfile/index.html', controller: this.controller })
+      Web({ src: 'resource://rawfile/scrollEvent.html', controller: this.controller })
         .onOverScroll((event: OnOverScrollEvent): void => {
           if (event) {
             this.XTag = event.xOffset;
