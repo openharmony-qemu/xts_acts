@@ -2000,7 +2000,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_565;
       await createUnpremultipliedPixelMapPromiseTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2018,7 +2018,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.BGRA_8888;
       await createUnpremultipliedPixelMapPromiseTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(62980103);
+          expect(Number(error.code)).assertEqual(62980103);
         });
     })
 
@@ -2036,7 +2036,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_888;
       await createUnpremultipliedPixelMapPromiseTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2054,7 +2054,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.ALPHA_8;
       await createUnpremultipliedPixelMapPromiseTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2072,7 +2072,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_F16;
       await createUnpremultipliedPixelMapPromiseTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2090,7 +2090,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.NV21;
       await createUnpremultipliedPixelMapPromiseTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2108,7 +2108,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.NV12;
       await createUnpremultipliedPixelMapPromiseTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2126,7 +2126,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_1010102;
       await createUnpremultipliedPixelMapPromiseTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(62980103);
+          expect(Number(error.code)).assertEqual(62980103);
         });
     })
 
@@ -2144,7 +2144,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.YCBCR_P010;
       await createUnpremultipliedPixelMapPromiseTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2162,7 +2162,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.YCRCB_P010;
       await createUnpremultipliedPixelMapPromiseTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2180,7 +2180,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.UNKNOWN;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(62980103);
+          expect(Number(error.code)).assertEqual(62980103);
         });
     })
 
@@ -2198,7 +2198,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_565;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2216,7 +2216,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_8888;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(62980103);
+          expect(Number(error.code)).assertEqual(62980103);
         });
     })
 
@@ -2234,7 +2234,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.BGRA_8888;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(62980103);
+          expect(Number(error.code)).assertEqual(62980103);
         });
     })
 
@@ -2252,7 +2252,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_888;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2270,7 +2270,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.ALPHA_8;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2288,7 +2288,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_F16;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2306,7 +2306,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.NV21;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2324,7 +2324,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.NV12;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2342,7 +2342,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_1010102;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(62980103);
+          expect(Number(error.code)).assertEqual(62980103);
         });
     })
 
@@ -2360,7 +2360,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.YCBCR_P010;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2378,7 +2378,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.YCRCB_P010;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2396,7 +2396,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.ASTC_4x4;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(62980103);
+          expect(Number(error.code)).assertEqual(62980103);
         });
     })
 
@@ -2414,7 +2414,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.UNKNOWN;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2432,7 +2432,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_565;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2450,7 +2450,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_8888;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2468,7 +2468,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.BGRA_8888;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2486,7 +2486,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_888;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2504,7 +2504,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.ALPHA_8;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2522,7 +2522,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_F16;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2540,7 +2540,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.NV21;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2558,7 +2558,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.NV12;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2576,7 +2576,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_1010102;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2594,7 +2594,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.YCBCR_P010;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2612,7 +2612,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.YCRCB_P010;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2630,7 +2630,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.ASTC_4x4;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2648,7 +2648,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_565;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2666,7 +2666,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.BGRA_8888;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(62980103);
+          expect(Number(error.code)).assertEqual(62980103);
         });
     })
 
@@ -2684,7 +2684,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_888;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2702,7 +2702,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.ALPHA_8;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2720,7 +2720,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_F16;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2738,7 +2738,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.NV21;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2756,7 +2756,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.NV12;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2774,7 +2774,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_1010102;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(62980103);
+          expect(Number(error.code)).assertEqual(62980103);
         });
     })
 
@@ -2792,7 +2792,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.YCBCR_P010;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2810,7 +2810,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.YCRCB_P010;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2828,7 +2828,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.UNKNOWN;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(62980103);
+          expect(Number(error.code)).assertEqual(62980103);
         });
     })
 
@@ -2846,7 +2846,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_565;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2864,7 +2864,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_8888;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(62980103);
+          expect(Number(error.code)).assertEqual(62980103);
         });
     })
 
@@ -2882,7 +2882,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_888;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2900,7 +2900,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.ALPHA_8;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2918,7 +2918,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_F16;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2936,7 +2936,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.NV21;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2954,7 +2954,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.NV12;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -2972,7 +2972,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_1010102;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(62980103);
+          expect(Number(error.code)).assertEqual(62980103);
         });
     })
 
@@ -2990,7 +2990,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.YCBCR_P010;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3008,7 +3008,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.YCRCB_P010;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3026,7 +3026,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.ASTC_4x4;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(62980103);
+          expect(Number(error.code)).assertEqual(62980103);
         });
     })
 
@@ -3044,7 +3044,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.UNKNOWN;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3062,7 +3062,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_565;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(62980103);
+          expect(Number(error.code)).assertEqual(62980103);
         });
     })
 
@@ -3080,7 +3080,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_8888;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3098,7 +3098,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.BGRA_8888;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3116,7 +3116,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_888;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3134,7 +3134,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_F16;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3152,7 +3152,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.NV21;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3170,7 +3170,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.NV12;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3188,7 +3188,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_1010102;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3206,7 +3206,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.YCBCR_P010;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3224,7 +3224,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.YCRCB_P010;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3242,7 +3242,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.ASTC_4x4;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3260,7 +3260,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.UNKNOWN;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3278,7 +3278,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_565;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3296,7 +3296,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_8888;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3314,7 +3314,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.BGRA_8888;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3332,7 +3332,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_888;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3350,7 +3350,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.ALPHA_8;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3368,7 +3368,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_F16;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(62980103);
+          expect(Number(error.code)).assertEqual(62980103);
         });
     })
 
@@ -3386,7 +3386,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.NV21;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3404,7 +3404,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.NV12;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3422,7 +3422,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_1010102;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3440,7 +3440,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.YCBCR_P010;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3458,7 +3458,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.YCRCB_P010;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3476,7 +3476,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.ASTC_4x4;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3494,7 +3494,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.UNKNOWN;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3512,7 +3512,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_565;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3530,7 +3530,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_8888;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3548,7 +3548,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.BGRA_8888;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3566,7 +3566,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_888;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3584,7 +3584,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.ALPHA_8;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3602,7 +3602,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_F16;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3620,7 +3620,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.NV21;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3638,7 +3638,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.NV12;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3656,7 +3656,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_1010102;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3674,7 +3674,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.YCBCR_P010;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3692,7 +3692,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.YCRCB_P010;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3710,7 +3710,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.ASTC_4x4;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3728,7 +3728,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.UNKNOWN;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3746,7 +3746,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGB_565;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
@@ -3764,7 +3764,7 @@ export default function createUnpremultipliedPixelMapSyncTest(): void {
       let pixelFormatUnpre: image.PixelMapFormat = image.PixelMapFormat.RGBA_8888;
       await createUnpremultipliedPixelMapCallbackTest(done, testName, pixelFormatPre, pixelFormatUnpre,
         (error: BusinessError) => {
-          expect(error).assertEqual(401);
+          expect(Number(error.code)).assertEqual(401);
         });
     })
 
