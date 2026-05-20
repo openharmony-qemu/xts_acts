@@ -54,7 +54,7 @@ async function clickButtonDriver(){
 
 }
 
-export default function FloatingBallTest() {
+export default function FloatingBallTest(): void {
   describe('FloatingBallTest', (): void => {
     hilog.info(domain, tag, 'FloatingBallTest start');
     let abilityDelegator : abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
@@ -2580,6 +2580,7 @@ export default function FloatingBallTest() {
       try {
         let floatingBallController: floatingBall.FloatingBallController = await floatingBall.create(config);
         await floatingBallController.startFloatingBall(startParams);
+        await Utils.msSleep(200);
         try{
           floatingBallController.restoreMainWindow({} as Want).then(() => {
             console.info(CaseName+  ' Succeeded in restoring floating ball main window.');
@@ -2683,6 +2684,7 @@ export default function FloatingBallTest() {
       try {
         let floatingBallController: floatingBall.FloatingBallController = await floatingBall.create(config);
         await floatingBallController.startFloatingBall(startParams);
+        await Utils.msSleep(500);
         //点击闪控球
         let button: Component | null = await driver!.findComponent(ON.id('FloatingBallSimpleTemplate'));
         console.info(CaseName+ ' button: ' + button);
@@ -2741,6 +2743,7 @@ export default function FloatingBallTest() {
       try {
         floatingBallController = await floatingBall.create(config);
         await floatingBallController.startFloatingBall(startParams);
+        await Utils.msSleep(500);
         floatingBallController.restoreMainWindow(want).then(() => {
           console.info(CaseName+  ' Succeeded in restoring floating ball main window.');
           expect(false).assertTrue();
@@ -2926,6 +2929,7 @@ export default function FloatingBallTest() {
       try {
         let floatingBallController: floatingBall.FloatingBallController = await floatingBall.create(config);
         await floatingBallController.startFloatingBall(startParams);
+        await Utils.msSleep(500); 
         //点击闪控球
         let button: Component | null = await driver!.findComponent(ON.id('FloatingBallSimpleTemplate'));
         console.info(CaseName+ ' button: ' + button);
