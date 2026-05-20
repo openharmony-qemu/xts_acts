@@ -14320,7 +14320,7 @@ export default function audioRendererTest() {
         console.info(`AudioRenderer release :ERROR : ${err.message}`);
         expect(false).assertTrue();
       });
-      console.info('afterAll called')
+      console.info('AudioRenderer test case completed')
       done();
     })
     
@@ -14334,7 +14334,7 @@ export default function audioRendererTest() {
      */
     it("SUB_MULTIMEDIA_AUDIO_SAMPLE_RATE_STATIC_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
-        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_384000,
+        samplingRate: SAMPLE_RATE_384000,
         channels: audio.AudioChannel.CHANNEL_1,
         sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
         encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
@@ -14368,7 +14368,7 @@ export default function audioRendererTest() {
         console.info(`AudioRenderer release :ERROR : ${err.message}`);
         expect(false).assertTrue();
       });
-      console.info('afterAll called')
+      console.info('AudioRenderer test case completed')
       done();
     })
     
@@ -14417,7 +14417,7 @@ export default function audioRendererTest() {
         console.info(`AudioRenderer release :ERROR : ${err.message}`);
         expect(false).assertTrue();
       });
-      console.info('afterAll called')
+      console.info('AudioRenderer test case completed')
       done();
     })
     
@@ -14430,7 +14430,7 @@ export default function audioRendererTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_SAMPLE_RATE_STATIC_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_SAMPLE_RATE_STATIC_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: 8010,
         channels: audio.AudioChannel.CHANNEL_1,
@@ -14466,7 +14466,7 @@ export default function audioRendererTest() {
         console.info(`AudioRenderer release :ERROR : ${err.message}`);
         expect(false).assertTrue();
       });
-      console.info('afterAll called')
+      console.info('AudioRenderer test case completed')
       done();
     })
     
@@ -14495,13 +14495,18 @@ export default function audioRendererTest() {
       }
       let audioRenderer: audio.AudioRenderer | null = null;
       try {
-        audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
-        console.info(`AudioRenderer create : SUCCESS`);
-      } catch (err) {
-        console.info(`AudioRenderer create : ERROR`);
-        expect(Number(err.code)).assertEqual(401);
-      }
-      console.info('afterAll called')
+       audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+       console.info(`AudioRenderer create : SUCCESS`);
+       expect(false).assertTrue();
+       } catch (err) {
+         console.info(`AudioRenderer create : ERROR`);
+         expect(Number(err.code)).assertEqual(401);
+       } finally {
+         if (audioRenderer) {
+           await audioRenderer.release();
+         }
+       }
+      console.info('AudioRenderer test case completed')
       done();
     })
   })

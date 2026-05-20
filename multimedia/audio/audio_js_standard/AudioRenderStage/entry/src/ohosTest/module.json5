@@ -48,7 +48,7 @@
             {
                 "name": "ohos.permission.MICROPHONE",
                 "reason": "$string:TestAbility_desc"
-            },
+            }
         ]
     }
 }

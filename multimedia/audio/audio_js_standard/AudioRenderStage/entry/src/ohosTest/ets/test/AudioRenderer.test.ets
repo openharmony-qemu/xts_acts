@@ -15,9 +15,6 @@
 import hilog from '@ohos.hilog';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import audio from '@ohos.multimedia.audio';
-import fileio from '@ohos.fileio';
-import resourceManager from '@ohos.resourceManager';
-import featureAbility from '@ohos.ability.featureAbility'
 import {BusinessError} from '@ohos.base';
 
 export default function audioRendererTest() {
@@ -26,7 +23,7 @@ export default function audioRendererTest() {
     let TagFrmwk = "AudioFrameworkTest";
     let audioRenderer: audio.AudioRenderer;
     console.info(`${TagFrmwkRender}: Create AudioManger Object JS Framework`);
-    let sleep = (ms: number): Promise<ESObject> => {
+    let sleep = (ms: number): Promise<void> => {
       return new Promise(resolve => setTimeout(resolve, ms));
     }
 
@@ -55,7 +52,7 @@ export default function audioRendererTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_MULTIMEDIA_AUDIO_SAMPLE_RATE_0001", TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it("SUB_MULTIMEDIA_AUDIO_SAMPLE_RATE_0001", TestType.Function | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: 384000,
         channels: audio.AudioChannel.CHANNEL_1,
@@ -85,7 +82,7 @@ export default function audioRendererTest() {
         console.info(`AudioRenderer release :ERROR : ${err.message}`);
         expect(false).assertTrue();
       });
-      console.info('afterAll called')
+      console.info('AudioRenderer test case completed')
       done();
     })
     
@@ -128,7 +125,7 @@ export default function audioRendererTest() {
         console.info(`AudioRenderer release :ERROR : ${err.message}`);
         expect(false).assertTrue();
       });
-      console.info('afterAll called')
+      console.info('AudioRenderer test case completed')
       done();
     })
     
@@ -170,7 +167,7 @@ export default function audioRendererTest() {
         console.info(`AudioRenderer release :ERROR : ${err.message}`);
         expect(false).assertTrue();
       });
-      console.info('afterAll called')
+      console.info('AudioRenderer test case completed')
       done();
     })
     
@@ -212,7 +209,7 @@ export default function audioRendererTest() {
         console.info(`AudioRenderer release :ERROR : ${err.message}`);
         expect(false).assertTrue();
       });
-      console.info('afterAll called')
+      console.info('AudioRenderer test case completed')
       done();
     })
     
@@ -240,15 +237,21 @@ export default function audioRendererTest() {
         rendererInfo: audioRendererInfo
       }
       
-      try {
-        let audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
-        console.info(`AudioRenderer create : SUCCESS`);
-      } catch (err) {
-        console.info(`AudioRenderer create : ERROR`);
-        expect(Number(err.code)).assertEqual(6800101);
-      }
-      console.info('afterAll called')
-      done();
-    })
+     try {
+       let audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+       console.info(`AudioRenderer create : SUCCESS`);
+       expect(false).assertTrue();
+       await audioRenderer.release();
+     } catch (err) {
+       console.info(`AudioRenderer create : ERROR`);
+       expect(Number(err.code)).assertEqual(6800301);
+     } finally {
+         if (audioRenderer) {
+           await audioRenderer.release();
+         }
+       }
+     console.info('AudioRenderer test case completed')
+     done();
+   })
   })
 }
