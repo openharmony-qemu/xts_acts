@@ -2271,7 +2271,7 @@ export default function DisplayTest() {
                     done();
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(domain, tag,caseName + 'failed to destroyVirtualScreen, err : ' + JSON.stringify(err));
-                     expect(err.code).assertTrue();
+                    expect(err.code).assertTrue();
                     done();
                 })
             } catch (err) {
@@ -2468,7 +2468,7 @@ export default function DisplayTest() {
                     done();
                 }).catch((err: Error) :PromiseLike<void>|undefined=> {
                     hilog.info(domain, tag,caseName + 'Failed to makeUnique, err: ' + JSON.stringify(err));
-                    if (!isSyscapSessionManagerSupported) {
+                    if (!isSyscapSessionManagerSupported || deviceType == 'wearable') {
                         expect(err.code).assertEqual(801)
                         done();
                     } else {
