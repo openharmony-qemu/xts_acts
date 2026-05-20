@@ -3549,7 +3549,7 @@ static napi_value testUCNV_FROM_U_CALLBACK_ESCAPE(napi_env env, napi_callback_in
     }
     const void* oldContext = nullptr;
     UConverterFromUCallback oldAction = nullptr;
-    ucnv_setFromUCallBack(conv, UCNV_FROM_U_CALLBACK_ESCAPE, UCNV_ESCAPE_C,&oldAction, &oldContext, &err);
+    ucnv_setFromUCallBack(conv, UCNV_FROM_U_CALLBACK_ESCAPE, UCNV_ESCAPE_C, &oldAction, &oldContext, &err);
     UChar src[] = {0x0061, 0xd801, 0xdc01, 0x0062};
     int32_t srcLen = sizeof(src) / sizeof(UChar);
     char dest[200] = {0};
@@ -3980,22 +3980,22 @@ static napi_value Init(napi_env env, napi_value exports)
         {"testTimeArrayZoneRule_2600", nullptr, testTimeArrayZoneRule_2600, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"testOH_i18n_GetTimeZoneRules_2700", nullptr, testOH_i18n_GetTimeZoneRules_2700, nullptr, nullptr, nullptr,
-        napi_default, nullptr},
+         napi_default, nullptr},
         {"testOH_i18n_GetTimeZoneRules_2800", nullptr, testOH_i18n_GetTimeZoneRules_2800, nullptr, nullptr, nullptr,
          napi_default, nullptr},
-        { "testUCNV_FROM_U_CALLBACK_SUBSTITUTE", nullptr, testUCNV_FROM_U_CALLBACK_SUBSTITUTE, nullptr, nullptr,
+        {"testUCNV_FROM_U_CALLBACK_SUBSTITUTE", nullptr, testUCNV_FROM_U_CALLBACK_SUBSTITUTE, nullptr, nullptr,
          nullptr, napi_default, nullptr},
-        { "testUCNV_FROM_U_CALLBACK_STOP", nullptr, testUCNV_FROM_U_CALLBACK_STOP, nullptr, nullptr, nullptr,
+        {"testUCNV_FROM_U_CALLBACK_STOP", nullptr, testUCNV_FROM_U_CALLBACK_STOP, nullptr, nullptr, nullptr,
          napi_default, nullptr},
-        { "testUCNV_TO_U_CALLBACK_STOP", nullptr, testUCNV_TO_U_CALLBACK_STOP, nullptr, nullptr, nullptr,
+        {"testUCNV_TO_U_CALLBACK_STOP", nullptr, testUCNV_TO_U_CALLBACK_STOP, nullptr, nullptr, nullptr,
          napi_default, nullptr},
-        { "testUCNV_FROM_U_CALLBACK_SKIP", nullptr, testUCNV_FROM_U_CALLBACK_SKIP, nullptr, nullptr, nullptr,
+        {"testUCNV_FROM_U_CALLBACK_SKIP", nullptr, testUCNV_FROM_U_CALLBACK_SKIP, nullptr, nullptr, nullptr,
          napi_default, nullptr},
-        { "testUCNV_TO_U_CALLBACK_SKIP", nullptr, testUCNV_TO_U_CALLBACK_SKIP, nullptr, nullptr, nullptr,
+        {"testUCNV_TO_U_CALLBACK_SKIP", nullptr, testUCNV_TO_U_CALLBACK_SKIP, nullptr, nullptr, nullptr,
          napi_default, nullptr},
-        { "testUCNV_TO_U_CALLBACK_SUBSTITUTE", nullptr, testUCNV_TO_U_CALLBACK_SUBSTITUTE, nullptr, nullptr,
+        {"testUCNV_TO_U_CALLBACK_SUBSTITUTE", nullptr, testUCNV_TO_U_CALLBACK_SUBSTITUTE, nullptr, nullptr,
          nullptr, napi_default, nullptr},
-        { "testUCNV_FROM_U_CALLBACK_ESCAPE", nullptr, testUCNV_FROM_U_CALLBACK_ESCAPE, nullptr, nullptr, nullptr,
+        {"testUCNV_FROM_U_CALLBACK_ESCAPE", nullptr, testUCNV_FROM_U_CALLBACK_ESCAPE, nullptr, nullptr, nullptr,
          napi_default, nullptr}
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
