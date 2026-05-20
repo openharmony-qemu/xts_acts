@@ -83,7 +83,7 @@ export default function AccessPixelsSuppTest() {
     /**
      * @tc.number   SUB_IMAGE_PIXEL_MAP_NATIVE_GET_NATIVE_SUPP_0002
      * @tc.name     SUB_IMAGE_PIXEL_MAP_NATIVE_GET_NATIVE_SUPP_0002
-     * @tc.desc     OHPixelmapNativeGetNativeBuffer-IMAGE_DMA_NOT_EXIST
+     * @tc.desc     OHPixelmapNativeGetNativeBuffer-IMAGE_SUCCESS
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level 1
