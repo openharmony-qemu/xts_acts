@@ -676,7 +676,7 @@ supportsFocus ?: boolean = true;
   let caseName = 'testIsCapturedByBundleName_default';
   let msgStr = 'jsunittest ' + caseName + ' ';
   console.log(msgStr + 'begin');
-  let bundleList: Array<string> = ["com.huawei.hmos.huaweicast", "com.huawei.hmos.screenrecorder","com.example.displaymanager"];
+  let bundleList: Array<string> = ["com.example.displaymanager"];
   try {
     let status = display.isCaptured(bundleList);
     console.log(msgStr + 'status:' + status);
@@ -717,7 +717,7 @@ supportsFocus ?: boolean = true;
 });
 /**
  * @tc.name   testIsCapturedByBundleName_empty_array
- * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5190
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5210
  * @tc.desc   check current device capture status with empty bundleName list input
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -764,7 +764,7 @@ it('testIsCapturedByBundleName_empty_array', TestType.FUNCTION | Size.MEDIUMTEST
 });
 /**
  * @tc.name   testIsCapturedByBundleName_1400004
- * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5190
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5200
  * @tc.desc   check current device capture status with bundleName list input which is over max size
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
@@ -793,7 +793,7 @@ it('testIsCapturedByBundleName_1400004', TestType.FUNCTION | Size.MEDIUMTEST | L
 });
 /**
  * @tc.name      testIsCaptured_004
- * @tc.number    SUB_BASIC_DMS_ISCAPTURED_PARAM_001
+ * @tc.number    SUB_BASIC_DMS_ISCAPTURED_PARAM_0010
  * @tc.desc      Test isCaptured with undefined parameter (parameter error scenario).
  * @tc.type      FUNCTION
  * @tc.size      MEDIUMTEST
@@ -825,7 +825,7 @@ it('testIsCaptured_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
 
 /**
  * @tc.name      testIsCaptured_006
- * @tc.number    SUB_BASIC_DMS_ISCAPTURED_PARAM_002
+ * @tc.number    SUB_BASIC_DMS_ISCAPTURED_PARAM_0020
  * @tc.desc      Test isCaptured with null parameter (parameter error scenario).
  * @tc.type      FUNCTION
  * @tc.size      MEDIUMTEST
