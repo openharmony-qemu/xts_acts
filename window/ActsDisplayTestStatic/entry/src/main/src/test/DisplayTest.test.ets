@@ -35,6 +35,7 @@ import Want from '@ohos.app.ability.Want';
 import bundleManager from '@ohos.bundle.bundleManager';
 import StartOptions from '@ohos.app.ability.StartOptions'
 import deviceInfo from '@ohos.deviceInfo';
+import { canIUse } from '@internal.full.global'
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
@@ -42,6 +43,13 @@ let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner
 function isPositiveInteger(value:int) {
   //判断是否为正整数
   return Number.isInteger(value) && value > 0;
+}
+async function msSleep(count: int): Promise<int>{
+    return new Promise<int>((resolve,reject) => {
+        setTimeout(() =>{
+            resolve(0);
+        },count);
+    });
 }
 async function getPermision(): Promise<void> {
     let atManager:abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
@@ -72,7 +80,7 @@ async function clickButtonDriver(){
 
 }
 async function startAbility(caseName: string, context: common.UIAbilityContext, options?: StartOptions) : Promise<window.WindowStage> {
-  
+
     let want: Want = {
       bundleName: "com.example.actswindowtest.static",
       abilityName: 'StartAbility'
@@ -93,7 +101,7 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
     await Utils.msSleep(1000)
     let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
     return windowStageStart;
-  
+
 }
 
 async function terminateAbility(caseName: string) {
@@ -112,9 +120,10 @@ async function terminateAbility(caseName: string) {
   }
   await Utils.msSleep(1000)
 }
-export default function DisplayTest() {
+export default function DisplayTest():void {
 
     describe("DisplayTest", (): void => {
+        let isSyscapSessionManagerSupported = false;
         hilog.info(domain, tag, '%{public}s', 'describe start');
         hilog.info(domain, tag, 'DisplayTest start');
         let abilityDelegator : abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
@@ -134,6 +143,8 @@ export default function DisplayTest() {
         let context: common.UIAbilityContext | undefined;
         let isSupportRotate = false;
         beforeAll(async (): Promise<void> => {
+            isSyscapSessionManagerSupported = canIUse('SystemCapability.Window.SessionManager');
+            console.info(`beforeAll isSyscapSessionManagerSupported: ` + isSyscapSessionManagerSupported);
             hilog.info(domain, tag, 'beforeAll start');
             abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actswindowtest.static")
             hilog.info(domain, tag, 'beforeAll AbilityDelegator');
@@ -177,7 +188,7 @@ export default function DisplayTest() {
                 //     }
                 // }
             } catch (err) {
-                err = err as BusinessError;
+
                 hilog.info(domain, tag, 'jsUnittest beforeAll getDisplayCapability failed ' + err.code);
                 hilog.info(domain, tag, 'jsUnittest beforeAll code =' + code);
                 if(err.code == 801){
@@ -243,8 +254,8 @@ export default function DisplayTest() {
                 done();
             });
         });
-        
-        /**
+
+            /**
     * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0340
     * @tc.name        testGetDefaultDisplaySync_SyncFunction_static_0200
     * @tc.desc        To test the sync function of obtaining the target display by id
@@ -290,7 +301,7 @@ export default function DisplayTest() {
         let caseName : string = 'testCaptureStatusChange_VirtualScreenCreateDestroy_static_0100';
         let msgStr : string = 'jsunittest ' + caseName + ' ';
         hilog.info(0x0000, '[ANI]', msgStr + 'begin');
-        
+
         let captureStatus: boolean = false;
         let callbackTriggered:boolean = false;
         let callback : Callback<boolean> = (status: boolean) => {
@@ -298,7 +309,7 @@ export default function DisplayTest() {
             captureStatus = status;
             callbackTriggered = true;
         };
-        
+
         let option: display.VirtualScreenConfig = {
             name: 'screen01',
             width: 100,
@@ -306,13 +317,13 @@ export default function DisplayTest() {
             density: 2,
             surfaceId: ''
         };
-        
-        try {        
+
+        try {
             // 创建虚拟屏
             let vid = await display.createVirtualScreen(option);
             hilog.info(0x0000, '[ANI]', msgStr + 'Success in createVirtualScreen, screendId : ' + vid);
             await Utils.msSleep(3000);
-            
+
             // 注册监听
             display.onCaptureStatusChange(callback);
             hilog.info(0x0000, '[ANI]', msgStr + 'register onCaptureStatusChange success');
@@ -321,7 +332,7 @@ export default function DisplayTest() {
             // 销毁虚拟屏
             await display.destroyVirtualScreen(vid);
             hilog.info(0x0000, '[ANI]', msgStr + 'Success in destroyVirtualScreen');
-            
+
             // 验证销毁虚拟屏后返回false
             await Utils.msSleep(3000);
             while (!callbackTriggered) {
@@ -329,11 +340,11 @@ export default function DisplayTest() {
             }
             hilog.info(0x0000, '[ANI]', msgStr + 'after destroyVirtualScreen, captureStatus: ' + captureStatus);
             expect(captureStatus === false).assertTrue();
-            
+
             // 注销监听（传入callback参数）
             display.offCaptureStatusChange(callback);
             hilog.info(0x0000, '[ANI]', msgStr + 'offCaptureStatusChange success');
-            
+
             done();
         }
         catch (err) {
@@ -650,7 +661,7 @@ export default function DisplayTest() {
                 done()
             });
         })
-        
+
 
         /**
          * @tc.number      SUB_BASIC_WMS_FOLDSTATUS_0100
@@ -1161,13 +1172,13 @@ export default function DisplayTest() {
          * @tc.desc      check current device capture status with bundleName list input
          * @tc.size      MediumTest
          * @tc.type      Function
-         * @tc.level     Level 2
+         * @tc.level     Level0
          */
-        it('testIsCapturedByBundleName_default_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise => {
+        it('testIsCapturedByBundleName_default_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName: string = 'testIsCapturedByBundleName_default_static_0100';
             let msgStr: string = 'jsunittest ' + caseName + ' ';
             hilog.info(domain, tag, msgStr + 'begin');
-            let bundleList: Array = ["com.example.actswindowtest.static"];
+            let bundleList: Array<string> = ["com.huawei.hmos.huaweicast", "com.huawei.hmos.screenrecorder", "com.example.actswindowtest.static"];
             try {
                 let status: boolean = display.isCaptured(bundleList);
                 hilog.info(domain, tag, msgStr + 'status:' + status);
@@ -1179,25 +1190,25 @@ export default function DisplayTest() {
                     density: 2,
                     surfaceId: '',
                     supportsFocus: false
-            };
-            let screenId: long = await display.createVirtualScreen(option);
-            hilog.info(domain, tag, msgStr + 'Success in createVirtualScreen, screendId : ' + screenId);
-            await msSleep(1000);
-            status = display.isCaptured(bundleList);
-            hilog.info(domain, tag, msgStr + 'after createVirtualScreen status:' + status);
-            expect(status).assertTrue();
-            await display.destroyVirtualScreen(screenId);
-            hilog.info(domain, tag, msgStr + 'Success in destroyVirtualScreen');
-            done();
-        } catch (exception) {
-            hilog.error(domain, tag, msgStr + 'Failed. Code: ' + exception.code);
-            expect().assertFail();
-            done();
+                };
+                let screenId: long = await display.createVirtualScreen(option);
+                hilog.info(domain, tag, msgStr + 'Success in createVirtualScreen, screendId : ' + screenId);
+                await msSleep(1000);
+                status = display.isCaptured(bundleList);
+                hilog.info(domain, tag, msgStr + 'after createVirtualScreen status:' + status);
+                expect(status).assertTrue();
+                await display.destroyVirtualScreen(screenId);
+                hilog.info(domain, tag, msgStr + 'Success in destroyVirtualScreen');
+                done();
+            } catch (exception) {
+                hilog.error(domain, tag, msgStr + 'Failed. Code: ' + exception.code);
+                expect().assertFail();
+                done();
             }
         });
 
         /**
-         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5230
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5190
          * @tc.name      testIsCapturedByBundleName_empty_array_static_0100
          * @tc.desc      check current device capture status with empty bundleName list input
          * @tc.size      MediumTest
@@ -1236,9 +1247,9 @@ export default function DisplayTest() {
                 done();
             }
         });
-    
+
         /**
-         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5210
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5190
          * @tc.name      testIsCapturedByBundleName_1400004_static_0100
          * @tc.desc      check current device capture status with bundleName list input which is over max size
          * @tc.size      MediumTest
@@ -1265,8 +1276,8 @@ export default function DisplayTest() {
                 done();
             }
         });
-    
-    
+
+
         /**
          * @tc.number    SUB_BASIC_WMS_ISCAPTURED_VIRTUALSCREEN_0100
          * @tc.name      testIsCaptured_createDestroyVirtualScreen_static_0100
@@ -1279,7 +1290,7 @@ export default function DisplayTest() {
             let caseName: string = 'testIsCaptured_createDestroyVirtualScreen_static_0100';
             let msgStr: string = 'jsunittest ' + caseName + ' ';
             hilog.info(domain, tag, msgStr + 'begin');
-    
+
             let captureStatus: boolean = false;
             let callbackTriggered: boolean = false;
             let callback: Callback<boolean> = (status: boolean) => {
@@ -1287,7 +1298,7 @@ export default function DisplayTest() {
                 captureStatus = status;
                 callbackTriggered = true;
             };
-    
+
             let option: display.VirtualScreenConfig = {
                 name: 'screen01',
                 width: 100,
@@ -1295,29 +1306,29 @@ export default function DisplayTest() {
                 density: 2,
                 surfaceId: ''
             };
-    
+
             try {
                 let vid: long = await display.createVirtualScreen(option);
                 hilog.info(domain, tag, msgStr + 'Success in createVirtualScreen, screendId : ' + vid);
                 await msSleep(3000);
-    
+
                 display.onCaptureStatusChange(callback);
                 hilog.info(domain, tag, msgStr + 'register onCaptureStatusChange success');
                 await msSleep(1000);
-    
+
                 await display.destroyVirtualScreen(vid);
                 hilog.info(domain, tag, msgStr + 'Success in destroyVirtualScreen');
-    
+
                 await msSleep(3000);
                 while (!callbackTriggered) {
                     await msSleep(100);
                 }
                 hilog.info(domain, tag, msgStr + 'after destroyVirtualScreen, captureStatus: ' + captureStatus);
                 expect(captureStatus === false).assertTrue();
-    
+
                 display.offCaptureStatusChange(callback);
                 hilog.info(domain, tag, msgStr + 'offCaptureStatusChange success');
-    
+
                 done();
             } catch (err) {
                 err = err as BusinessError;
@@ -1983,7 +1994,7 @@ export default function DisplayTest() {
                 done();
             }
             catch (err) {
-                err = err as BusinessError;
+
                 hilog.error(0x0000, '[ANI]',msgStr + `Failed to obtain the default display object. Code: ${err.code}, message: ${err.message}`);
                 if (err.code == 801) {
                     hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -2096,7 +2107,7 @@ export default function DisplayTest() {
         expect(displayClass!.screenShape !=null ).assertTrue();
         expect(displayClass!.x).assertLargerOrEqual(0);
         expect(displayClass!.y).assertLargerOrEqual(0);
-        
+
         done();
       });
 
@@ -2153,7 +2164,7 @@ export default function DisplayTest() {
                     done();
                 }
             } catch (err) {
-                err = err as BusinessError;
+
                 hilog.info(domain, tag,caseName + ': fail:'+ err + ' '+err.code);
                 expect(false).assertTrue();
                 done();
@@ -2188,7 +2199,7 @@ export default function DisplayTest() {
                     done();
                 })
             } catch (err) {
-                err = err as BusinessError;
+
                 hilog.info(domain, tag,caseName + 'error in createVirtualScreen, err : ' + JSON.stringify(err));
                 if (err.code != 801) {
                     expect(false).assertTrue();
@@ -2199,7 +2210,7 @@ export default function DisplayTest() {
         /**
          * @tc.number    SUB_BASIC_WMS_CREATE_VIRTUALSCREEN_0100
          * @tc.name      test_CreateVirtualScreen01_static
-         * @tc.desc      test_CreateVirtualScreen01 
+         * @tc.desc      test_CreateVirtualScreen01
          * @tc.size      MediumTest
          * @tc.type      Function
          * @tc.level     Level 3
@@ -2226,7 +2237,7 @@ export default function DisplayTest() {
                     })
                 })
             } catch (err) {
-                err = err as BusinessError;
+
                 hilog.info(domain, tag,caseName + 'error in createVirtualScreen, err : ' + JSON.stringify(err));
                 expect(err.code == 801).assertTrue();
                 done();
@@ -2249,11 +2260,11 @@ export default function DisplayTest() {
                     done();
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(domain, tag,caseName + 'failed to destroyVirtualScreen, err : ' + JSON.stringify(err));
-                    expect(err.code).assertTrue();
+                     expect(err.code).assertTrue();
                     done();
                 })
             } catch (err) {
-                err = err as BusinessError;
+
                 hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
                 if (err.code === 801) {
                     done();
@@ -2299,14 +2310,14 @@ export default function DisplayTest() {
                         expect(false).assertTrue();
                         done();
                     })
-                    
+
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(domain, tag,caseName + 'failed to createVirtualScreen, err : ' + JSON.stringify(err));
                     expect(false).assertTrue();
                     done();
                 })
             } catch (err) {
-                err = err as BusinessError;
+
                 hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
                 expect(err.code == 801);
                 done();
@@ -2334,7 +2345,7 @@ export default function DisplayTest() {
                      done();
                  })
             } catch (err) {
-                err = err as BusinessError;
+
                 hilog.info(domain, tag,caseName + 'error in setVirtualScreenSurface, err : ' + JSON.stringify(err));
                 if (err.code === 801) {
                     done();
@@ -2374,7 +2385,7 @@ export default function DisplayTest() {
                      done();
                  })
             } catch (err) {
-                err = err as BusinessError;
+
                 hilog.info(domain, tag,caseName + 'error in setVirtualScreenSurface, err : ' + JSON.stringify(err));
                 if(err.code == 801){
                     expect(err.code == 801).assertTrue();
@@ -2383,7 +2394,7 @@ export default function DisplayTest() {
                     expect(false).assertTrue();
                     done();
                 }
-                
+
             }
         });
         /**
@@ -2407,7 +2418,7 @@ export default function DisplayTest() {
                     done();
                 })
             } catch (err) {
-                err = err as BusinessError;
+
                 hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
                 if (err.code === 801) {
                     done();
@@ -2446,16 +2457,16 @@ export default function DisplayTest() {
                     done();
                 }).catch((err: Error) :PromiseLike<void>|undefined=> {
                     hilog.info(domain, tag,caseName + 'Failed to makeUnique, err: ' + JSON.stringify(err));
-                    if (!isSyscapSessionManagerSupported || deviceType == 'wearable') {
-                        expect(err.code).assertEqual(801)
-                        done();
+                    if (!isSyscapSessionManagerSupported) {
+                      expect(err.code).assertEqual(801)
+                      done();
                     } else {
-                        expect(err.code).assertEqual(1400001);
-                        done();
+                      expect(err.code).assertEqual(1400001);
+                      done();
                     }
                 })
             } catch (err) {
-                err = err as BusinessError;
+
                 hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
                 expect(err.code == 801);
                 done();
@@ -2516,7 +2527,7 @@ export default function DisplayTest() {
                 });
 
             } catch (err) {
-                err = err as BusinessError;
+
                 hilog.info(domain, tag,caseName + ': fail:'+ err + ' '+err.code);
                 expect(false).assertTrue();
                 done();
@@ -2547,7 +2558,7 @@ export default function DisplayTest() {
                 expect(false).assertTrue();
                 done();
             } catch (e) {
-                e = e as BusinessError;
+
                 hilog.error(domain, tag,`${caseName} Failed. err: ${JSON.stringify(e)}`);
                 expect(e.code).assertEqual(1400004);
                 expect(e.message!=null).assertTrue();
@@ -2576,7 +2587,7 @@ export default function DisplayTest() {
                 expect(false).assertTrue();
                 done();
             } catch (e) {
-                e = e as BusinessError;
+
                 hilog.error(domain, tag,`${caseName} Failed. err: ${JSON.stringify(e)}`);
                 expect(e.code).assertEqual(1400004)
                 expect(e.message!=null).assertTrue();
@@ -2616,7 +2627,7 @@ export default function DisplayTest() {
                 expect(relativePosition.displayId).assertEqual(0)
                 done();
             } catch (e) {
-                e = e as BusinessError;
+
                 hilog.error(domain, tag,`${caseName} Failed2. err: ${JSON.stringify(e)}`);
                 if (e.code === 801) {
                     expect(e.message!=null).assertTrue();
@@ -2659,7 +2670,7 @@ export default function DisplayTest() {
                 expect(relativePosition.displayId).assertEqual(0)
                 done();
             } catch (e) {
-                e = e as BusinessError;
+
                 hilog.error(domain, tag,`${caseName} Failed2. err: ${JSON.stringify(e)}`);
                 if (e.code === 801) {
                     expect(e.message!=null).assertTrue();
@@ -2707,7 +2718,7 @@ export default function DisplayTest() {
                 }
                 done();
             } catch (e) {
-                e = e as BusinessError;
+
                 hilog.error(domain, tag,`${caseName} Failed2. err: ${JSON.stringify(e)}`);
                 if (e.code === 801) {
                     expect(e.message!=null).assertTrue();
@@ -2746,7 +2757,7 @@ export default function DisplayTest() {
             expect(false).assertTrue();
             done();
         } catch (e) {
-            e = e as BusinessError;
+
             console.error(`${caseName} Failed. err: ${JSON.stringify(e)}`);
             expect(e.code).assertEqual(1400004)
             done()
@@ -2770,7 +2781,7 @@ export default function DisplayTest() {
             expect(brightnessInfo.maxHeadroom).assertLarger(0);
             done();
         } catch (e) {
-            e = e as BusinessError;
+
             console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
             if (e.code == 801) {
                 done()
@@ -2852,7 +2863,7 @@ export default function DisplayTest() {
             await Utils.msSleep(100);
             done();
         } catch (e) {
-            e = e as BusinessError;
+
             console.error(`${caseName} Failed. Cause: ${e}`);
             if (e.code == 801) {
                 done()
@@ -2922,7 +2933,7 @@ export default function DisplayTest() {
                 }
             })
         } catch (e) {
-            e = e as BusinessError;
+
             console.error(`${caseName} Failed. Cause: ${e}`);
             await terminateAbility(caseName);
             expect(false).assertTrue();
@@ -3049,7 +3060,7 @@ export default function DisplayTest() {
     })
 
     /**
-    * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5220
+    * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5190
     * @tc.name      testOnAdd_VirtualScreenCreate_static_0100
     * @tc.desc      testOnAdd returns screenId when create virtual screen
     * @tc.size      MediumTest
@@ -3060,7 +3071,7 @@ export default function DisplayTest() {
         let caseName : string = 'testOnAdd_VirtualScreenCreate_static_0100';
         let msgStr : string = 'jsunittest ' + caseName + ' ';
         hilog.info(0x0000, '[ANI]', msgStr + 'begin');
-        
+
         let receivedScreenId: Long = -1;
         let callbackTriggered:boolean = false;
         let callback: Callback<Long> = (screenId: Long) => {
@@ -3068,7 +3079,7 @@ export default function DisplayTest() {
             hilog.info(0x0000, '[ANI]', msgStr + 'onAdd callback received. Data: ' + JSON.stringify(screenId));
             receivedScreenId = screenId;
         };
-        
+
         let option: display.VirtualScreenConfig = {
             name: 'screen01',
             width: 100,
@@ -3076,12 +3087,12 @@ export default function DisplayTest() {
             density: 2,
             surfaceId: ''
         };
-        
+
         try {
             // 注册监听
             display.onAdd(callback);
             hilog.info(0x0000, '[ANI]', msgStr + 'register onAdd success');
-            
+
             // 创建虚拟屏
             let vid = await display.createVirtualScreen(option);
             hilog.info(0x0000, '[ANI]', msgStr + 'Success in createVirtualScreen, screendId : ' + vid);
@@ -3104,21 +3115,21 @@ export default function DisplayTest() {
                         done();
                 }
             }
-            
+
             // 验证onAdd回调被触发，接收到有效的screenId（大于等于 1000）
             while (!callbackTriggered) {
                 await Utils.msSleep(100);
             }
             hilog.info(0x0000, '[ANI]', msgStr + 'receivedScreenId: ' + receivedScreenId);
             expect(receivedScreenId >= 1000).assertTrue();
-            
+
             // 注销监听
             display.offAdd(callback);
             hilog.info(0x0000, '[ANI]', msgStr + 'offAdd success');
-            
+
             // 清理：销毁创建的虚拟屏
             await display.destroyVirtualScreen(vid);
-            
+
             done();
         }
         catch (err) {
