@@ -45,15 +45,15 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.name   SUB_MUlTIMEDIA_VIDEO_DECODER_SYNC_S265_0100_TEST
-     * @tc.number SUB_MUlTIMEDIA_VIDEO_DECODER_SYNC_S265_0100_TEST
+     * @tc.name   SUB_MUlTIMEDIA_VIDEO_DECODER_SYNC_S265_0100
+     * @tc.number SUB_MUlTIMEDIA_VIDEO_DECODER_SYNC_S265_0100
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MUlTIMEDIA_VIDEO_DECODER_SYNC_S265_0100_TEST', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      TAG = 'SUB_MUlTIMEDIA_VIDEO_DECODER_SYNC_S265_0100_TEST';
+    it('SUB_MUlTIMEDIA_VIDEO_DECODER_SYNC_S265_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TAG = 'SUB_MUlTIMEDIA_VIDEO_DECODER_SYNC_S265_0100';
       try {
         let result: number = hevcswDecoderNapi.VideoDecodeSyncSs265Func0010Test();
         console.info(TAG + "test ret Result ===>" + result);
@@ -63,19 +63,18 @@ export default function abilityTest() {
         console.error("===> " + TAG + "err:" + err);
         done()
       }
-
-    })
+    });
 
     /**
-     * @tc.name   SUB_MUlTIMEDIA_VIDEO_DECODER_SYNC_S265_0200_TEST
-     * @tc.number SUB_MUlTIMEDIA_VIDEO_DECODER_SYNC_S265_0200_TEST
+     * @tc.name   SUB_MUlTIMEDIA_VIDEO_DECODER_SYNC_S265_0200
+     * @tc.number SUB_MUlTIMEDIA_VIDEO_DECODER_SYNC_S265_0200
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MUlTIMEDIA_VIDEO_DECODER_SYNC_S265_0200_TEST', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      TAG = 'SUB_MUlTIMEDIA_VIDEO_DECODER_SYNC_S265_0200_TEST';
+    it('SUB_MUlTIMEDIA_VIDEO_DECODER_SYNC_S265_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TAG = 'SUB_MUlTIMEDIA_VIDEO_DECODER_SYNC_S265_0200';
       try {
         let result: number = hevcswDecoderNapi.VideoDecodeSyncSs265Func0020Test();
         console.info(TAG + "test ret Result ===>" + result);
@@ -88,15 +87,15 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.name   SUB_MUlTIMEDIA_VIDEO_SWDEC_H265_BLAC_0300_TEST
-     * @tc.number SUB_MUlTIMEDIA_VIDEO_SWDEC_H265_BLAC_0300_TEST
+     * @tc.name   SUB_MUlTIMEDIA_VIDEO_SWDEC_H265_BLAC_0300
+     * @tc.number SUB_MUlTIMEDIA_VIDEO_SWDEC_H265_BLAC_0300
      * @tc.desc   function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MUlTIMEDIA_VIDEO_SWDEC_H265_BLAC_0300_TEST', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      TAG = 'SUB_MUlTIMEDIA_VIDEO_SWDEC_H265_BLAC_0300_TEST';
+    it('SUB_MUlTIMEDIA_VIDEO_SWDEC_H265_BLAC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TAG = 'SUB_MUlTIMEDIA_VIDEO_SWDEC_H265_BLAC_0300';
       try {
         let result: number = hevcswDecoderNapi.VideoSwdecH265BlankFrame0010Test();
         console.info(TAG + "test ret Result ===>" + result);
