@@ -21,6 +21,7 @@ import { priRsaCredData } from './utils/common/common_parameter';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "../../../hypium/index";
 import hilog from '@ohos.hilog';
 import { canIUse } from '@internal.full.global';
+import { GlobalContext } from '../testrunner/OpenHarmonyTestRunner';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
@@ -346,7 +347,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
      */
     it('SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0100 start');
-      const context: common.Context = getContext(this);
+      const context: common.Context = await GlobalContext.getContext();
       let certType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CREDENTIAL_USER;
       let certScope: certManagerDialog.CertificateScope = certManagerDialog.CertificateScope.GLOBAL_USER;
       let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
@@ -376,7 +377,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
      */
     it('SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0200 start');
-      const context: common.Context = getContext(this);
+      const context: common.Context = await GlobalContext.getContext();
       let certType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CREDENTIAL_APP;
       let certScope: certManagerDialog.CertificateScope = certManagerDialog.CertificateScope.CURRENT_USER;
       let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
@@ -406,7 +407,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
      */
     it('SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0300 start');
-      const context: common.Context = getContext(this);
+      const context: common.Context = await GlobalContext.getContext();
       let certType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CREDENTIAL_UKEY;
       let certScope: certManagerDialog.CertificateScope = certManagerDialog.CertificateScope.CURRENT_USER;
       let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
@@ -436,7 +437,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
      */
     it('SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0400 start');
-      const context: common.Context = getContext(this);
+      const context: common.Context = await GlobalContext.getContext();
       let certType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CREDENTIAL_SYSTEM;
       let certScope: certManagerDialog.CertificateScope = certManagerDialog.CertificateScope.GLOBAL_USER;
       let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
@@ -466,7 +467,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
      */
     it('SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_OpenInstallCertDialog_Func_Static_0500 start');
-      const context: common.Context = getContext(this);
+      const context: common.Context = await GlobalContext.getContext();
       let certType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CA_CERT;
       let certScope: certManagerDialog.CertificateScope = certManagerDialog.CertificateScope.NOT_SPECIFIED;
       let isSupport: boolean = certManagerDialog.supportsCACertDialog();
