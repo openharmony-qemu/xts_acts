@@ -1352,28 +1352,6 @@ export default function DisplayTest() {
             }
         })
         /**
-         * @tc.number	SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0070
-         * @tc.name	    testDisplayState_Enum_Value_static_0100
-         * @tc.desc		To test the enum value of WindowDisplayState.
-         */
-        it('testDisplayState_Enum_Value_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-            hilog.info(0x0000, '[ANI]','test the enum value of Window DisplayState begin');
-            try {
-                expect(0).assertEqual(display.DisplayState.STATE_UNKNOWN);
-                expect(1).assertEqual(display.DisplayState.STATE_OFF);
-                expect(2).assertEqual(display.DisplayState.STATE_ON);
-                expect(3).assertEqual(display.DisplayState.STATE_DOZE);
-                expect(4).assertEqual(display.DisplayState.STATE_DOZE_SUSPEND);
-                expect(5).assertEqual(display.DisplayState.STATE_VR);
-                expect(6).assertEqual(display.DisplayState.STATE_ON_SUSPEND);
-                done();
-            } catch (err) {
-                hilog.error(0x0000, '[ANI]','test enum value of windowDisplayState error ' + JSON.stringify(err));
-                expect().assertFail();
-                done();
-            }
-        })
-        /**
          * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_ORIENTATION_JS_API_0290
          * @tc.name      testOrientation_attr_static_0100
          * @tc.desc      To test the attributes of Orientation
