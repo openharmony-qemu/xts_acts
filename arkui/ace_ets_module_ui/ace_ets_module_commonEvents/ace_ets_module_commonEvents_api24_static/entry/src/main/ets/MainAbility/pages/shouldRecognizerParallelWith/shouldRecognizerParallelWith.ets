@@ -71,6 +71,7 @@ struct FatherControlChildTest1 {
   private childRecognizer: GestureRecognizer = new GestureRecognizer()
   private currentRecognizer: GestureRecognizer = new GestureRecognizer()
   private lastOffset: number = 0
+  private tempRecognizer: GestureRecognizer = new GestureRecognizer();
 
   build() {
     Column() {
@@ -146,19 +147,12 @@ struct FatherControlChildTest1 {
         console.info('Scroll stop')
       })
       .shouldRecognizerParallelWith((current: GestureRecognizer,
-        others: Array<GestureRecognizer>): GestureRecognizer => {
+        others: Array<GestureRecognizer>) => {
+        console.log("txy modifier2");
         for (let i = 0; i < others.length; i++) {
-          let pan = others[i] as PanRecognizer;
-          if (pan) {
-            console.log('zcb shouldBuiltInRecognizerParallelWith pan type',
-              pan.getType() + 'distance' + pan.getPanGestureOptions().getDirection());
-          }
           let target = others[i].getEventTargetInfo();
           if (target) {
-            let id = target.getId();
-            console.log('zcb parallelInlnerGestureTo other id' + id + 'isSystemGesture' + others[i].isBuiltIn() +
-              'type' + others[i].getType());
-            if (id == 'FatherControlChildTest1_inner' && others[i].isBuiltIn() &&
+            if (target.getId() == "inner" && others[i].isBuiltIn() &&
               others[i].getType() == GestureControl.GestureType.PAN_GESTURE) {
               this.currentRecognizer = current;
               this.childRecognizer = others[i];
@@ -166,7 +160,7 @@ struct FatherControlChildTest1 {
             }
           }
         }
-        return this.currentRecognizer;
+        return this.tempRecognizer;
       })
 
       .onGestureRecognizerJudgeBegin((event: BaseGestureEvent, current: GestureRecognizer,
