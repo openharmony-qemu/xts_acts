@@ -167,7 +167,7 @@ export default function StaticMethodIsPrivateTest(): void {
     it('testStaticMethodIsPrivate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass001>();
       let methods = cls.getStaticMethods();
-      // ArkTS 1.2: getStaticMethods() 不返回 private 方法
+      // 运行时实际: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(0);
     });
 
@@ -182,7 +182,7 @@ export default function StaticMethodIsPrivateTest(): void {
     it('testStaticMethodIsPrivate002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass002>();
       let methods = cls.getStaticMethods();
-      // ArkTS 1.2: getStaticMethods() 不返回 private 方法
+      // 运行时实际: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(0);
     });
 
@@ -213,7 +213,7 @@ export default function StaticMethodIsPrivateTest(): void {
     it('testStaticMethodIsPrivate004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass004>();
       let methods = cls.getStaticMethods();
-      // ArkTS 1.2: getStaticMethods() 不返回 protected 方法
+      // 运行时实际: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(0);
     });
 
@@ -227,7 +227,7 @@ export default function StaticMethodIsPrivateTest(): void {
      */
     it('testStaticMethodIsPrivate005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let methods = Class.from<MyClass005>().getStaticMethods();
-      // ArkTS 1.2: getStaticMethods() 不返回 private async 方法
+      // 运行时实际: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(0);
     });
 
@@ -241,7 +241,7 @@ export default function StaticMethodIsPrivateTest(): void {
      */
     it('testStaticMethodIsPrivate006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let methods = Class.from<MyClass006>().getStaticMethods();
-      // ArkTS 1.2: getStaticMethods() 不返回 private final 方法
+      // 运行时实际: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(0);
     });
 
@@ -255,7 +255,7 @@ export default function StaticMethodIsPrivateTest(): void {
      */
     it('testStaticMethodIsPrivate007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let methods = Class.from<AbstractClass007>().getStaticMethods();
-      // ArkTS 1.2: getStaticMethods() 不返回抽象类的 private 方法
+      // 运行时实际: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(0);
     });
 
@@ -269,7 +269,7 @@ export default function StaticMethodIsPrivateTest(): void {
      */
     it('testStaticMethodIsPrivate008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let methods = Class.from<FinalClass008>().getStaticMethods();
-      // ArkTS 1.2: getStaticMethods() 不返回 final 类的 private 方法
+      // 运行时实际: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(0);
     });
 
@@ -319,7 +319,7 @@ export default function StaticMethodIsPrivateTest(): void {
       let cls: Class = Class.from<MyClass011>();
       let method = cls.getStaticMethod('publicMethod');
       expect(method != undefined).assertTrue();
-      // ArkTS 1.2: getStaticMethods() 只返回 public 方法，用 public 方法验证互斥关系
+      // 运行时实际: getStaticMethods() 只返回 public 方法，用 public 方法验证互斥关系
       expect(!method!.isPrivate() && method!.isPublic()).assertTrue();
       expect(method!.isProtected()).assertFalse();
     });
@@ -335,7 +335,7 @@ export default function StaticMethodIsPrivateTest(): void {
     it('testStaticMethodIsPrivate012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass012>();
       let methods = cls.getStaticMethods();
-      // ArkTS 1.2: getStaticMethods() 不返回 private 方法
+      // 运行时实际: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(0);
     });
 
@@ -352,8 +352,8 @@ export default function StaticMethodIsPrivateTest(): void {
       let method = cls.getStaticMethod('defaultMethod');
       expect(method != undefined).assertTrue();
       let isPrivate: boolean = method!.isPrivate();
-      // 脑图: 默认访问级别行为取决于语言规范，无法断言具体 true/false
-      expect(typeof isPrivate).assertEqual('boolean');
+      // classes.md:835 — 无显式修饰符默认 public，此处应为 false
+      expect(isPrivate).assertFalse();
     });
 
     /**
@@ -387,7 +387,7 @@ export default function StaticMethodIsPrivateTest(): void {
      */
     it('testStaticMethodIsPrivate015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let methods = Class.from<MyClass015>().getStaticMethods();
-      // ArkTS 1.2: getStaticMethods() 不返回 private final 方法
+      // 运行时实际: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(0);
     });
 
@@ -401,7 +401,7 @@ export default function StaticMethodIsPrivateTest(): void {
      */
     it('testStaticMethodIsPrivate016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let methods = Class.from<MyClass016>().getStaticMethods();
-      // ArkTS 1.2: getStaticMethods() 不返回 private async 方法
+      // 运行时实际: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(0);
     });
 
@@ -415,7 +415,7 @@ export default function StaticMethodIsPrivateTest(): void {
      */
     it('testStaticMethodIsPrivate017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let methods = Class.from<MyClass017>().getStaticMethods();
-      // ArkTS 1.2: getStaticMethods() 不返回 private 方法
+      // 运行时实际: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(0);
     });
 
@@ -429,7 +429,7 @@ export default function StaticMethodIsPrivateTest(): void {
      */
     it('testStaticMethodIsPrivate018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let methods = Class.from<MyClass018>().getStaticMethods();
-      // ArkTS 1.2: getStaticMethods() 不返回 private async 方法
+      // 运行时实际: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(0);
     });
 
@@ -447,7 +447,8 @@ export default function StaticMethodIsPrivateTest(): void {
       expect(m1 != undefined).assertTrue();
       expect(m1!.isPrivate()).assertFalse();
       expect(m1!.isAsync()).assertTrue();
-      // ArkTS 1.2: 类有 public 方法时，getStaticMethods() 返回所有方法(含 private)
+      // arkts-sta-reflect.md:823 — getStaticMethods() 仅返回 public 方法
+      // 运行时实际: 类有 public 方法时连带返回 private，与规范不一致
       let methods = cls.getStaticMethods();
       expect(methods.length).assertEqual(2);
     });
@@ -461,7 +462,7 @@ export default function StaticMethodIsPrivateTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPrivate020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // ArkTS 1.2: getStaticMethods() 不返回 private 方法
+      // 运行时实际: getStaticMethods() 只返回 public 方法
       let m1Methods = Class.from<AbstractClass020>().getStaticMethods();
       let m2Methods = Class.from<FinalClass020>().getStaticMethods();
       let m3Methods = Class.from<NormalClass020>().getStaticMethods();
@@ -480,7 +481,7 @@ export default function StaticMethodIsPrivateTest(): void {
      */
     it('testStaticMethodIsPrivate021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let methods = Class.from<MyClass021>().getStaticMethods();
-      // ArkTS 1.2: getStaticMethods() 不返回 private 方法
+      // 运行时实际: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(0);
     });
 
@@ -494,7 +495,7 @@ export default function StaticMethodIsPrivateTest(): void {
      */
     it('testStaticMethodIsPrivate022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let methods = Class.from<MyClass022>().getStaticMethods();
-      // ArkTS 1.2: getStaticMethods() 不返回 private 方法
+      // 运行时实际: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(0);
     });
 
@@ -509,7 +510,7 @@ export default function StaticMethodIsPrivateTest(): void {
     it('testStaticMethodIsPrivate023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass023>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
-      // ArkTS 1.2: getStaticMethods() 只返回 public 方法
+      // 运行时实际: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(1);
       let privateCount: int = 0;
       for (let i: int = 0; i < methods.length; i++) {
@@ -548,7 +549,7 @@ export default function StaticMethodIsPrivateTest(): void {
     it('testStaticMethodIsPrivate025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass025>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
-      // ArkTS 1.2: getStaticMethods() 只返回 public 方法
+      // 运行时实际: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(1);
       let privateMethods: Array<reflect.StaticMethod> = [];
       for (let i: int = 0; i < methods.length; i++) {
@@ -570,7 +571,7 @@ export default function StaticMethodIsPrivateTest(): void {
     it('testStaticMethodIsPrivate026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass026>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
-      // ArkTS 1.2: getStaticMethods() 只返回 public 方法
+      // 运行时实际: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(2);
       let publicCount: int = 0;
       let privateCount: int = 0;

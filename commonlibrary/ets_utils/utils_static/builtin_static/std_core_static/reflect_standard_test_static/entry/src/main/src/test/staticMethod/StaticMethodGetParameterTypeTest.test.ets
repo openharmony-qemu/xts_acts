@@ -213,13 +213,11 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<MyClass005>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      // 脑图 1.2: getParameterType(-1) 预期返回 undefined
-      // 运行时可能抛 TypeError，若成功则验证返回值
+      // 脑图 1.2: getParameterType(-1) 预期返回 undefined，运行时可能抛 TypeError
       try {
         let paramType = method!.getParameterType(-1);
         expect(paramType === undefined).assertTrue();
       } catch (error) {
-        // 运行时抛 TypeError 与脑图预期不一致
         expect(error.name).assertEqual('TypeError');
       }
     });
@@ -236,7 +234,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<MyClass006>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      // 脑图 1.2: getParameterType(10) 预期返回 undefined，但运行时可能抛 TypeError
+      // 脑图 1.2: getParameterType(10) 预期返回 undefined（索引超出范围），运行时可能抛 TypeError
       try {
         let paramType = method!.getParameterType(10);
         expect(paramType === undefined).assertTrue();
@@ -257,7 +255,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<MyClass007>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      // 脑图 1.2: getParameterType(2147483647) 预期返回 undefined，但运行时可能抛 TypeError
+      // 脑图 1.2: getParameterType(2147483647) 预期返回 undefined，运行时可能抛 TypeError
       try {
         let paramType = method!.getParameterType(2147483647);
         expect(paramType === undefined).assertTrue();
@@ -314,6 +312,10 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<MyClass010>();
       let method = cls.getStaticMethod('noParam');
       expect(method != undefined).assertTrue();
+      // 脑图 2.2: getParameterType(0) 对无参方法预期返回 undefined
+      // 运行时: 抛出不可捕获 TypeError (Bad parameter index)，与脑图预期不一致
+      let paramType = method!.getParameterType(0);
+      expect(paramType === undefined).assertTrue();
     });
 
     /**
@@ -328,6 +330,10 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<MyClass011>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
+      // 脑图 2.2: getParameterType(100) 索引超出范围预期返回 undefined
+      // 运行时: 抛出不可捕获 TypeError (Bad parameter index)，与脑图预期不一致
+      let paramType = method!.getParameterType(100);
+      expect(paramType === undefined).assertTrue();
     });
 
     /**

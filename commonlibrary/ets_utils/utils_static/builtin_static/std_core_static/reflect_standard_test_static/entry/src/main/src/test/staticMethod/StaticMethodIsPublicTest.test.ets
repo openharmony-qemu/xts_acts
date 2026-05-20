@@ -221,8 +221,8 @@ export default function StaticMethodIsPublicTest(): void {
       let method = cls.getStaticMethod('defaultMethod');
       expect(method != undefined).assertTrue();
       let isPublic: boolean = method!.isPublic();
-      // 脑图: 默认访问级别行为取决于语言规范，无法断言具体 true/false
-      expect(typeof isPublic).assertEqual('boolean');
+      // classes.md:835 — 无显式修饰符默认 public
+      expect(isPublic).assertTrue();
     });
 
     /**

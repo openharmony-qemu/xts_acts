@@ -182,7 +182,7 @@ export default function StaticMethodIsProtectedTest(): void {
     it('testStaticMethodIsProtected001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass001>();
       let methods = cls.getStaticMethods();
-      // ArkTS 1.2: getStaticMethods() 不返回 protected 方法
+      // 运行时: getStaticMethods() 不返回 protected 方法
       expect(methods.length).assertEqual(0);
     });
 
@@ -197,7 +197,7 @@ export default function StaticMethodIsProtectedTest(): void {
     it('testStaticMethodIsProtected002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass002>();
       let methods = cls.getStaticMethods();
-      // ArkTS 1.2: getStaticMethods() 不返回 protected 方法
+      // 运行时: getStaticMethods() 不返回 protected 方法
       expect(methods.length).assertEqual(0);
     });
 
@@ -228,7 +228,7 @@ export default function StaticMethodIsProtectedTest(): void {
     it('testStaticMethodIsProtected004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass004>();
       let methods = cls.getStaticMethods();
-      // ArkTS 1.2: getStaticMethods() 不返回 private 方法
+      // 运行时: getStaticMethods() 不返回 private 方法
       expect(methods.length).assertEqual(0);
     });
 
@@ -242,7 +242,7 @@ export default function StaticMethodIsProtectedTest(): void {
      */
     it('testStaticMethodIsProtected005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let methods = Class.from<MyClass005>().getStaticMethods();
-      // ArkTS 1.2: getStaticMethods() 不返回 protected async 方法
+      // 运行时: getStaticMethods() 不返回 protected async 方法
       expect(methods.length).assertEqual(0);
     });
 
@@ -256,7 +256,7 @@ export default function StaticMethodIsProtectedTest(): void {
      */
     it('testStaticMethodIsProtected006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let methods = Class.from<MyClass006>().getStaticMethods();
-      // ArkTS 1.2: getStaticMethods() 不返回 protected final 方法
+      // 运行时: getStaticMethods() 不返回 protected final 方法
       expect(methods.length).assertEqual(0);
     });
 
@@ -270,7 +270,7 @@ export default function StaticMethodIsProtectedTest(): void {
      */
     it('testStaticMethodIsProtected007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let methods = Class.from<AbstractClass007>().getStaticMethods();
-      // ArkTS 1.2: getStaticMethods() 不返回抽象类的 protected 方法
+      // 运行时: getStaticMethods() 不返回抽象类的 protected 方法
       expect(methods.length).assertEqual(0);
     });
 
@@ -284,7 +284,7 @@ export default function StaticMethodIsProtectedTest(): void {
      */
     it('testStaticMethodIsProtected008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let methods = Class.from<FinalClass008>().getStaticMethods();
-      // ArkTS 1.2: getStaticMethods() 不返回 final 类的 protected 方法
+      // 运行时: getStaticMethods() 不返回 final 类的 protected 方法
       expect(methods.length).assertEqual(0);
     });
 
@@ -334,7 +334,7 @@ export default function StaticMethodIsProtectedTest(): void {
       let cls: Class = Class.from<MyClass011>();
       let method = cls.getStaticMethod('publicMethod');
       expect(method != undefined).assertTrue();
-      // ArkTS 1.2: getStaticMethods() 只返回 public 方法，用 public 方法验证互斥关系
+      // 运行时: getStaticMethods() 只返回 public 方法，用 public 方法验证互斥关系
       expect(!method!.isProtected() && method!.isPublic()).assertTrue();
       expect(method!.isPrivate()).assertFalse();
     });
@@ -350,7 +350,7 @@ export default function StaticMethodIsProtectedTest(): void {
     it('testStaticMethodIsProtected012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass012>();
       let methods = cls.getStaticMethods();
-      // ArkTS 1.2: getStaticMethods() 不返回 protected 方法
+      // 运行时: getStaticMethods() 不返回 protected 方法
       expect(methods.length).assertEqual(0);
     });
 
@@ -367,8 +367,8 @@ export default function StaticMethodIsProtectedTest(): void {
       let method = cls.getStaticMethod('defaultMethod');
       expect(method != undefined).assertTrue();
       let isProtected: boolean = method!.isProtected();
-      // 脑图: 默认访问级别行为取决于语言规范，无法断言具体 true/false
-      expect(typeof isProtected).assertEqual('boolean');
+      // classes.md:835 — 无显式修饰符默认 public，此处应为 false
+      expect(isProtected).assertFalse();
     });
 
     /**
@@ -380,7 +380,7 @@ export default function StaticMethodIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsProtected014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // ArkTS 1.2: getStaticMethods() 不返回 protected 方法，继承关系同理
+      // 运行时: getStaticMethods() 不返回 protected 方法，继承关系同理
       let parentMethods = Class.from<ParentClass014>().getStaticMethods();
       let childMethods = Class.from<ChildClass014>().getStaticMethods();
       expect(parentMethods.length).assertEqual(0);
@@ -418,7 +418,7 @@ export default function StaticMethodIsProtectedTest(): void {
      */
     it('testStaticMethodIsProtected016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let methods = Class.from<MyClass016>().getStaticMethods();
-      // ArkTS 1.2: getStaticMethods() 不返回 protected final 方法
+      // 运行时: getStaticMethods() 不返回 protected final 方法
       expect(methods.length).assertEqual(0);
     });
 
@@ -432,7 +432,7 @@ export default function StaticMethodIsProtectedTest(): void {
      */
     it('testStaticMethodIsProtected017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let methods = Class.from<MyClass017>().getStaticMethods();
-      // ArkTS 1.2: getStaticMethods() 不返回 protected async 方法
+      // 运行时: getStaticMethods() 不返回 protected async 方法
       expect(methods.length).assertEqual(0);
     });
 
@@ -446,7 +446,7 @@ export default function StaticMethodIsProtectedTest(): void {
      */
     it('testStaticMethodIsProtected018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let methods = Class.from<MyClass018>().getStaticMethods();
-      // ArkTS 1.2: getStaticMethods() 不返回 protected 方法
+      // 运行时: getStaticMethods() 不返回 protected 方法
       expect(methods.length).assertEqual(0);
     });
 
@@ -460,7 +460,7 @@ export default function StaticMethodIsProtectedTest(): void {
      */
     it('testStaticMethodIsProtected019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let methods = Class.from<MyClass019>().getStaticMethods();
-      // ArkTS 1.2: getStaticMethods() 不返回 protected async 方法
+      // 运行时: getStaticMethods() 不返回 protected async 方法
       expect(methods.length).assertEqual(0);
     });
 
@@ -478,7 +478,8 @@ export default function StaticMethodIsProtectedTest(): void {
       expect(m1 != undefined).assertTrue();
       expect(m1!.isProtected()).assertFalse();
       expect(m1!.isAsync()).assertTrue();
-      // ArkTS 1.2: 类有 public 方法时，getStaticMethods() 返回所有方法(含 protected)
+      // arkts-sta-reflect.md:823 — getStaticMethods() 仅返回 public 方法
+      // 运行时实际: 类有 public 方法时连带返回 protected，与规范不一致
       let methods = cls.getStaticMethods();
       expect(methods.length).assertEqual(2);
     });
@@ -492,7 +493,7 @@ export default function StaticMethodIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsProtected021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // ArkTS 1.2: getStaticMethods() 不返回 protected 方法
+      // 运行时: getStaticMethods() 不返回 protected 方法
       let m1Methods = Class.from<AbstractClass021>().getStaticMethods();
       let m2Methods = Class.from<FinalClass021>().getStaticMethods();
       let m3Methods = Class.from<NormalClass021>().getStaticMethods();
@@ -510,7 +511,7 @@ export default function StaticMethodIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsProtected022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // ArkTS 1.2: getStaticMethods() 不返回 protected 方法
+      // 运行时: getStaticMethods() 不返回 protected 方法
       let m1Methods = Class.from<MyClass022>().getStaticMethods();
       let m2Methods = Class.from<MyClass023>().getStaticMethods();
       expect(m1Methods.length).assertEqual(0);
@@ -528,7 +529,7 @@ export default function StaticMethodIsProtectedTest(): void {
     it('testStaticMethodIsProtected023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass024>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
-      // ArkTS 1.2: getStaticMethods() 只返回 public 方法
+      // 运行时: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(1);
       let protectedCount: int = 0;
       for (let i: int = 0; i < methods.length; i++) {
@@ -567,7 +568,7 @@ export default function StaticMethodIsProtectedTest(): void {
     it('testStaticMethodIsProtected025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass026>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
-      // ArkTS 1.2: getStaticMethods() 只返回 public 方法
+      // 运行时: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(1);
       let protectedMethods: Array<reflect.StaticMethod> = [];
       for (let i: int = 0; i < methods.length; i++) {
@@ -589,7 +590,7 @@ export default function StaticMethodIsProtectedTest(): void {
     it('testStaticMethodIsProtected026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass027>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
-      // ArkTS 1.2: getStaticMethods() 只返回 public 方法
+      // 运行时: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(2);
       let publicCount: int = 0;
       let privateCount: int = 0;
@@ -619,7 +620,7 @@ export default function StaticMethodIsProtectedTest(): void {
     it('testStaticMethodIsProtected027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass028>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
-      // ArkTS 1.2: getStaticMethods() 只返回 public 方法
+      // 运行时: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(1);
       for (let i: int = 0; i < methods.length; i++) {
         let method: reflect.StaticMethod = methods[i];

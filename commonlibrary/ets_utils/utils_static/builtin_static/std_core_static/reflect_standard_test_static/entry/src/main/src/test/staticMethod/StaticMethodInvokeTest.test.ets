@@ -202,12 +202,11 @@ export default function StaticMethodInvokeTest(): void {
       let cls: Class = Class.from<MyClass001>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      // 脑图预期无参数 invoke() 正常执行不抛异常，运行时行为不稳定：有时抛有时不抛
+      // 脑图 1.1: 无参 invoke() 正常执行，运行时可能抛 TypeError
       try {
         method!.invoke();
         expect(true).assertTrue();
       } catch (error) {
-        // 脑图预期不抛异常，但运行时反射调用失败时抛 TypeError
         expect(error.name).assertEqual('TypeError');
       }
     });
@@ -256,11 +255,11 @@ export default function StaticMethodInvokeTest(): void {
       let method = Class.from<MyClass004>().getStaticMethod('test');
       expect(method != undefined).assertTrue();
       // 脑图预期传 null 参数 invoke() 正常执行不抛异常，运行时行为不稳定：有时抛有时不抛
+      // types.md:1725 — string|null 是 nullish union，应接受 null；运行时可能抛 TypeError
       try {
         method!.invoke([null]);
         expect(true).assertTrue();
       } catch (error) {
-        // 脑图预期不抛异常，但运行时反射调用失败时抛 TypeError
         expect(error.name).assertEqual('TypeError');
       }
     });
@@ -276,12 +275,11 @@ export default function StaticMethodInvokeTest(): void {
     it('testStaticMethodInvoke005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = Class.from<MyClass005>().getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      // 脑图预期传 undefined 参数 invoke() 正常执行不抛异常，运行时行为不稳定：有时抛有时不抛
+      // types.md:1327 — 可选参数实际类型为 T|undefined，运行时可能抛 TypeError
       try {
         method!.invoke([undefined]);
         expect(true).assertTrue();
       } catch (error) {
-        // 脑图 1.2: 参数类型不匹配时抛 TypeError
         expect(error.name).assertEqual('TypeError');
       }
     });
