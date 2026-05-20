@@ -75,7 +75,7 @@ struct Monitor5 {
         Button(testSample.res2)
           .id('Monitor5_2')
           .onClick(():void => {
-            this.info.t3 += 'a'
+            this.info.t7 += 'a'
           })
       }
       .width('100%')
