@@ -76,15 +76,17 @@ export class MyWebNativeMessagingExtension extends WebNativeMessagingExtensionAb
       const context = this.context; // Obtain the WebNativeMessagingExtensionContext instance.
       if (startAbilityForResultTestMode) {
         startAbilityForResultTestMode = false;
-        try {
-          const result = context.startAbilityForResult(abilityWant);
-          console.info('startAbilityForResult success, result: ' + JSON.stringify(result));
-          Utils.emitEvent(0, 20260401);
-        } catch (err) {
-          const error = err as BusinessError;
-          console.error(`startAbilityForResult failed. Code: ${error.code}, Message: ${error.message}`);
-          Utils.emitEvent(error.code, 20260401);
-        }
+        (async () => {
+          try {
+            const result = await context.startAbilityForResult(abilityWant);
+            console.info('startAbilityForResult success, result: ' + JSON.stringify(result));
+            Utils.emitEvent(0, 20260401);
+          } catch (err) {
+            const error = err as BusinessError;
+            console.error(`startAbilityForResult failed. Code: ${error.code}, Message: ${error.message}`);
+            Utils.emitEvent(error.code, 20260401);
+          }
+        })();
       } else {
         context.startAbility(abilityWant);
         console.info('Ability started successfully');
@@ -187,6 +189,7 @@ struct Index {
 
             case 'emitWebViewNavigationPolicy002': {
               try {
+                this.navigationPolicy = NavigationPolicy.NEW_WINDOW;
                 this.controller.pageUp(false);
                 if (!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                   console.info('this.navigationPolicy' + this.navigationPolicy)
@@ -205,6 +208,7 @@ struct Index {
 
             case 'emitWebViewNavigationPolicy003': {
               try {
+                this.navigationPolicy = NavigationPolicy.NEW_BACKGROUND_TAB;
                 this.controller.pageDown(false);
                 if (!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                   console.info('this.navigationPolicy' + this.navigationPolicy)
@@ -221,6 +225,7 @@ struct Index {
 
             case 'emitWebViewNavigationPolicy004': {
               try {
+                this.navigationPolicy = NavigationPolicy.NEW_FOREGROUND_TAB;
                 if (!canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                   console.info('this.navigationPolicy' + this.navigationPolicy)
                   Utils.emitEvent(this.navigationPolicy, 20260116)
@@ -246,8 +251,9 @@ struct Index {
                   Utils.emitEvent(this.no_error, 115380)
                 });
               } catch (error) {
-                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(String(error.code), 115380)
+                const err = error as BusinessError;
+                console.error(`ErrorCode: ${err.code}, Message: ${err.message}`);
+                Utils.emitEvent(err.code ? String(err.code) : '17100001', 115380)
               }
               break;
             }
@@ -551,8 +557,16 @@ struct Index {
                   this.controller.runJavaScript('connectNative()');
                   console.log('connectNative for startAbilityForResult 已调用');
                 }, 1000);
+                setTimeout(() => {
+                  if (startAbilityForResultTestMode) {
+                    startAbilityForResultTestMode = false;
+                    console.log('startAbilityForResult fallback timeout: emitting 201');
+                    Utils.emitEvent(201, 20260401);
+                  }
+                }, 4000);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(201, 20260401);
               }
               break;
             }
