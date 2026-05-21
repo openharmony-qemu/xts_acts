@@ -556,7 +556,7 @@ export default function arrayBufferStringifyTest(): void {
      */
     it('testArrayBufferStringify0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const encoded = ArrayBuffer.from("ABCDEF", "utf8");
-      let result = ArrayBuffer.stringify(encoded, "utf8", (Double.toInt(1.5) as int), encoded.byteLength);
+      let result = ArrayBuffer.stringify(encoded, "utf8", (Double.toInt(1.5)), encoded.byteLength);
       expect(result).assertEqual("BCDEF");
     });
 
@@ -570,14 +570,14 @@ export default function arrayBufferStringifyTest(): void {
      */
     it('testArrayBufferStringify0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const encoded = ArrayBuffer.from("ABC", "utf8");
-      let result = ArrayBuffer.stringify(encoded, "utf8", (Double.toInt(Number.NaN) as int), encoded.byteLength);
+      let result = ArrayBuffer.stringify(encoded, "utf8", (Double.toInt(Double.NaN)), encoded.byteLength);
       expect(result).assertEqual("ABC");
     });
 
     /**
      * @tc.name testArrayBufferStringify0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0340
-     * @tc.desc Verify ArrayBuffer.stringify(encoded, "utf8", (Double.toInt(Number.POSITIVE_INFINITY) as int), encoded.byteLength) throws IllegalArgumentError
+     * @tc.desc Verify ArrayBuffer.stringify(encoded, "utf8", (Double.toInt(Double.POSITIVE_INFINITY)), encoded.byteLength) throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -585,7 +585,7 @@ export default function arrayBufferStringifyTest(): void {
     it('testArrayBufferStringify0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const encoded = ArrayBuffer.from("ABC", "utf8");
-        ArrayBuffer.stringify(encoded, "utf8", (Double.toInt(Number.POSITIVE_INFINITY) as int), encoded.byteLength);
+        ArrayBuffer.stringify(encoded, "utf8", (Double.toInt(Double.POSITIVE_INFINITY)), encoded.byteLength);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('IllegalArgumentError');
@@ -748,7 +748,7 @@ export default function arrayBufferStringifyTest(): void {
      */
     it('testArrayBufferStringify0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const encoded = ArrayBuffer.from("ABCDEF", "utf8");
-      let result = ArrayBuffer.stringify(encoded, "utf8", 0, (Double.toInt(2.7) as int));
+      let result = ArrayBuffer.stringify(encoded, "utf8", 0, (Double.toInt(2.7)));
       expect(result).assertEqual("AB");
     });
 
@@ -762,14 +762,14 @@ export default function arrayBufferStringifyTest(): void {
      */
     it('testArrayBufferStringify0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const encoded = ArrayBuffer.from("ABC", "utf8");
-      let result = ArrayBuffer.stringify(encoded, "utf8", 0, (Double.toInt(Number.NaN) as int));
+      let result = ArrayBuffer.stringify(encoded, "utf8", 0, (Double.toInt(Double.NaN)));
       expect(result).assertEqual("");
     });
 
     /**
      * @tc.name testArrayBufferStringify0046
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0460
-     * @tc.desc Verify ArrayBuffer.stringify(encoded, "utf8", 0, (Double.toInt(Number.POSITIVE_INFINITY) as int)) throws IllegalArgumentError
+     * @tc.desc Verify ArrayBuffer.stringify(encoded, "utf8", 0, (Double.toInt(Double.POSITIVE_INFINITY))) throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -777,7 +777,7 @@ export default function arrayBufferStringifyTest(): void {
     it('testArrayBufferStringify0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const encoded = ArrayBuffer.from("ABC", "utf8");
-        ArrayBuffer.stringify(encoded, "utf8", 0, (Double.toInt(Number.POSITIVE_INFINITY) as int));
+        ArrayBuffer.stringify(encoded, "utf8", 0, (Double.toInt(Double.POSITIVE_INFINITY)));
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('IllegalArgumentError');
@@ -982,13 +982,13 @@ export default function arrayBufferStringifyTest(): void {
     it('testArrayBufferStringify0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const encoded = ArrayBuffer.from("ABC", "utf8");
       let result = ArrayBuffer.stringify(encoded, "utf8", 0, encoded.byteLength);
-      expect(result != null).assertTrue();
+      expect(result !== null).assertTrue();
     });
 
     /**
      * @tc.name testArrayBufferStringify0061
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0610
-     * @tc.desc Verify result != undefined is true
+     * @tc.desc Verify result !== undefined is true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -996,7 +996,7 @@ export default function arrayBufferStringifyTest(): void {
     it('testArrayBufferStringify0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const encoded = ArrayBuffer.from("ABC", "utf8");
       let result = ArrayBuffer.stringify(encoded, "utf8", 0, encoded.byteLength);
-      expect(result != undefined).assertTrue();
+      expect(result !== undefined).assertTrue();
     });
 
     /**
@@ -2042,7 +2042,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0124
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1240
-     * @tc.desc Verify ArrayBuffer.stringify(encoded, "utf8", (Double.toInt(Number.POSITIVE_INFINITY) as int), encoded.byteLength) throws IllegalArgumentError
+     * @tc.desc Verify ArrayBuffer.stringify(encoded, "utf8", (Double.toInt(Double.POSITIVE_INFINITY)), encoded.byteLength) throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2050,7 +2050,7 @@ export default function arrayBufferStringifyTest(): void {
     it('testArrayBufferStringify0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const encoded = ArrayBuffer.from("ABC", "utf8");
-        ArrayBuffer.stringify(encoded, "utf8", (Double.toInt(Number.POSITIVE_INFINITY) as int), encoded.byteLength);
+        ArrayBuffer.stringify(encoded, "utf8", (Double.toInt(Double.POSITIVE_INFINITY)), encoded.byteLength);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('IllegalArgumentError');
@@ -2060,7 +2060,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0125
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1250
-     * @tc.desc Verify ArrayBuffer.stringify(encoded, "utf8", 0, (Double.toInt(Number.POSITIVE_INFINITY) as int)) throws IllegalArgumentError
+     * @tc.desc Verify ArrayBuffer.stringify(encoded, "utf8", 0, (Double.toInt(Double.POSITIVE_INFINITY))) throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2068,7 +2068,7 @@ export default function arrayBufferStringifyTest(): void {
     it('testArrayBufferStringify0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const encoded = ArrayBuffer.from("ABC", "utf8");
-        ArrayBuffer.stringify(encoded, "utf8", 0, (Double.toInt(Number.POSITIVE_INFINITY) as int));
+        ArrayBuffer.stringify(encoded, "utf8", 0, (Double.toInt(Double.POSITIVE_INFINITY)));
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('IllegalArgumentError');
@@ -2078,7 +2078,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0126
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1260
-     * @tc.desc Verify ArrayBuffer.stringify(encoded, "utf8", (Double.toInt(Number.NEGATIVE_INFINITY) as int), encoded.byteLength) throws IllegalArgumentError
+     * @tc.desc Verify ArrayBuffer.stringify(encoded, "utf8", (Double.toInt(Double.NEGATIVE_INFINITY)), encoded.byteLength) throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2086,7 +2086,7 @@ export default function arrayBufferStringifyTest(): void {
     it('testArrayBufferStringify0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const encoded = ArrayBuffer.from("ABC", "utf8");
-        ArrayBuffer.stringify(encoded, "utf8", (Double.toInt(Number.NEGATIVE_INFINITY) as int), encoded.byteLength);
+        ArrayBuffer.stringify(encoded, "utf8", (Double.toInt(Double.NEGATIVE_INFINITY)), encoded.byteLength);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('IllegalArgumentError');
@@ -2096,7 +2096,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0127
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1270
-     * @tc.desc Verify ArrayBuffer.stringify(encoded, "utf8", 0, (Double.toInt(Number.NEGATIVE_INFINITY) as int)) throws IllegalArgumentError
+     * @tc.desc Verify ArrayBuffer.stringify(encoded, "utf8", 0, (Double.toInt(Double.NEGATIVE_INFINITY))) throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -2104,7 +2104,7 @@ export default function arrayBufferStringifyTest(): void {
     it('testArrayBufferStringify0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const encoded = ArrayBuffer.from("ABC", "utf8");
-        ArrayBuffer.stringify(encoded, "utf8", 0, (Double.toInt(Number.NEGATIVE_INFINITY) as int));
+        ArrayBuffer.stringify(encoded, "utf8", 0, (Double.toInt(Double.NEGATIVE_INFINITY)));
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('IllegalArgumentError');
@@ -2121,7 +2121,7 @@ export default function arrayBufferStringifyTest(): void {
      */
     it('testArrayBufferStringify0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const encoded = ArrayBuffer.from("ABCDEF", "utf8");
-      let result = ArrayBuffer.stringify(encoded, "utf8", (Double.toInt(1.5) as int), encoded.byteLength);
+      let result = ArrayBuffer.stringify(encoded, "utf8", (Double.toInt(1.5)), encoded.byteLength);
       expect(result).assertEqual("BCDEF");
     });
 
@@ -2135,7 +2135,7 @@ export default function arrayBufferStringifyTest(): void {
      */
     it('testArrayBufferStringify0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const encoded = ArrayBuffer.from("ABCDEF", "utf8");
-      let result = ArrayBuffer.stringify(encoded, "utf8", 0, (Double.toInt(2.7) as int));
+      let result = ArrayBuffer.stringify(encoded, "utf8", 0, (Double.toInt(2.7)));
       expect(result).assertEqual("AB");
     });
 
