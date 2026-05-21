@@ -41,6 +41,17 @@ interface AudioHapticPlayerOptions {
   muteHaptics: boolean
 }
 
+enum SystemSoundManagerErrorCode {
+  PARAMETER_INCORRECT = 5400108,
+  CRASH_OR_BLOCKING_ERR = 5400105
+}
+
+enum SystemSoundTypeTest {
+  PHOTO_SHUTTER_TEST = 0,
+  VIDEO_RECORDING_BEGIN_TEST = 1,
+  VIDEO_RECORDING_END_TEST = 2
+}
+
 export default function AudioHapticTest() {
   describe('AudioHapticTest', (): void => {
     let filesDir: string | undefined | null;
