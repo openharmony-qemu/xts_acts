@@ -121,3 +121,6 @@ export const avFormatSetUintWithNull: (key:string, value:number) => number;
 export const avPlayerOnInfoTypeEnum: () => number;
 export const avPlayerOnInfoTypeEnum1: () => number;
 export const avPlayerBufferingTypeEnum: () => number;
+export const avPlayerSetPCMOutputCallback: () => Promise<number>;
+export const avPlayerSetPCMOutputCallbackErr: () => number;
+export const avPlayerSetPCMOutputCallbackError: () => number;
