@@ -10,6 +10,12 @@ import ImageAuxiliaryPictureGetMetadataStaticTest from "./image/AuxiliaryPicture
 import ImagePackerStaticTest from "./image/ImagePacker.test";
 import ImageMetadataTestStatic from "./image/imageSource/ImageMetadata.test";
 import createUnpremultipliedPixelMapSyncTest from "./testStatic/image/image/createUnpremultipliedPixelMap.test";
+import createAuxiliaryPictureTest from "./testStatic/image/image/createAuxiliaryPicture.test";
+import ImageCreateImageCreatorTestSupp from "./testStatic/image/image/createImageCreator.test";
+import createImagePackerTest from "./testStatic/image/image/createImagePacker.test";
+import createImageReceiverPackerTest from "./testStatic/image/image/createImageReceiver.test";
+import createImageSourceTest from "./testStatic/image/image/createImageSource.test";
+
 
 export default function testsuite(): void {
   metaDataStaticTest();
@@ -23,6 +29,10 @@ export default function testsuite(): void {
   CrateImageSourceTest();
   ImageGetComponentSupp();
   ImageMetadataTestStatic();
+  createAuxiliaryPictureTest();
+  ImageCreateImageCreatorTestSupp();
+  createImagePackerTest();
+  createImageReceiverPackerTest();
+  createImageSourceTest();
   createUnpremultipliedPixelMapSyncTest();
 }
-
