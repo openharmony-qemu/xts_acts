@@ -72,6 +72,11 @@ export default class MediaTestBase {
   };
   avScreenCaptureRecorder: media.AVScreenCaptureRecorder | null = null;
   avPlayer: media.AVPlayer | null = null;
+  isSucceeded: boolean = true;
+  
+  isTestSucceeded(): boolean {
+    return this.isSucceeded;
+  }
 
   setAVScreenCaptueCallback(avScreenCaptureRecorder: media.AVScreenCaptureRecorder | null, done: () => void) {
     // 状态机变化回调函数
