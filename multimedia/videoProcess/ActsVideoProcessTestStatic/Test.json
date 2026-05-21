@@ -10,7 +10,7 @@
     },
     "kits": [{
         "test-file-name": [
-            "ActsVideoProcessingEngineTest.hap"
+            "ActsVideoProcessTestStatic.hap"
         ],
         "type": "AppInstallKit",
         "cleanup-apps": true
