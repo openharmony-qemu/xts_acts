@@ -16,8 +16,8 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import { collections } from '@kit.ArkTS';
 import Utils from './Util.test';
 
-export default function BuiltinsMapClearTest() {
-  describe('BuiltinsMapClearTest', () => {
+export default function CollectionsMapClearTest() {
+  describe('CollectionsMapClearTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -40,28 +40,28 @@ export default function BuiltinsMapClearTest() {
     })
 
     /**
-     * @tc.name    builtinsMapClearTest0100
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_0100
+     * @tc.name    collectionsMapClearTest0100
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_0100
      * @tc.desc    Clear an empty ArkTS Map, check size is 0
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsMapClearTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('collectionsMapClearTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map: collections.Map<number, number> = new collections.Map<number, number>();
       map.clear();
       expect(map.size).assertEqual(0);
     });
 
     /**
-     * @tc.name    builtinsMapClearTest0200
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_0200
+     * @tc.name    collectionsMapClearTest0200
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_0200
      * @tc.desc    Clear a ArkTS Map with one element, check size is 0
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsMapClearTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('collectionsMapClearTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>();
       map.set('key', 'value');
       map.clear();
@@ -69,14 +69,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest0300
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_0300
+     * @tc.name    collectionsMapClearTest0300
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_0300
      * @tc.desc    Clear a ArkTS Map with multiple elements, check size is 0
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsMapClearTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('collectionsMapClearTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>();
       map.set(1, 'a');
       map.set(2, 'b');
@@ -86,14 +86,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest0400
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_0400
+     * @tc.name    collectionsMapClearTest0400
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_0400
      * @tc.desc    After clear, check if original key exists
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsMapClearTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('collectionsMapClearTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>();
       map.set('key', 'value');
       map.clear();
@@ -101,14 +101,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest0500
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_0500
+     * @tc.name    collectionsMapClearTest0500
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_0500
      * @tc.desc    After clear, check if get returns undefined for original key
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsMapClearTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('collectionsMapClearTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>();
       map.set('key', 'value');
       map.clear();
@@ -116,14 +116,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest0600
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_0600
+     * @tc.name    collectionsMapClearTest0600
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_0600
      * @tc.desc    Clear a ArkTS Map with number keys
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsMapClearTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('collectionsMapClearTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>();
       map.set(100, 'hundred');
       map.set(200, 'two hundred');
@@ -132,14 +132,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest0700
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_0700
+     * @tc.name    collectionsMapClearTest0700
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_0700
      * @tc.desc    Clear a ArkTS Map with boolean keys
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsMapClearTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('collectionsMapClearTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map: collections.Map<boolean, string> = new collections.Map<boolean, string>();
       map.set(true, 'yes');
       map.set(false, 'no');
@@ -148,14 +148,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest0800
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_0800
+     * @tc.name    collectionsMapClearTest0800
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_0800
      * @tc.desc    Clear a ArkTS Map with null key
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsMapClearTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('collectionsMapClearTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map: collections.Map<number | null, string> = new collections.Map<number | null, string>();
       map.set(null, 'null value');
       map.clear();
@@ -163,14 +163,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest0900
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_0900
+     * @tc.name    collectionsMapClearTest0900
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_0900
      * @tc.desc    Clear a ArkTS Map with undefined key
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsMapClearTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('collectionsMapClearTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map: collections.Map<number | undefined, string> = new collections.Map<number | undefined, string>();
       map.set(undefined, 'undefined value');
       map.clear();
@@ -178,14 +178,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest1000
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_1000
+     * @tc.name    collectionsMapClearTest1000
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_1000
      * @tc.desc    Clear a ArkTS Map and check entries iterator is empty
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsMapClearTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('collectionsMapClearTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>();
       map.set('a', 1);
       map.set('b', 2);
@@ -195,14 +195,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest1100
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_1100
+     * @tc.name    collectionsMapClearTest1100
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_1100
      * @tc.desc    Clear a ArkTS Map and check keys iterator is empty
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsMapClearTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('collectionsMapClearTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>();
       map.set('a', 1);
       map.set('b', 2);
@@ -212,14 +212,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest1200
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_1200
+     * @tc.name    collectionsMapClearTest1200
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_1200
      * @tc.desc    Clear a ArkTS Map and check values iterator is empty
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsMapClearTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsMapClearTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>();
       map.set('a', 1);
       map.set('b', 2);
@@ -229,14 +229,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest1300
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_1300
+     * @tc.name    collectionsMapClearTest1300
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_1300
      * @tc.desc    Call clear multiple times on the same ArkTS Map
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsMapClearTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsMapClearTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>();
       map.set('key', 'value');
       map.clear();
@@ -246,14 +246,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest1400
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_1400
+     * @tc.name    collectionsMapClearTest1400
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_1400
      * @tc.desc    Clear a ArkTS Map and then add new elements
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsMapClearTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsMapClearTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string,string> = new collections.Map<string, string>();
       map.set('old', 'value');
       map.clear();
@@ -262,14 +262,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest1500
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_1500
+     * @tc.name    collectionsMapClearTest1500
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_1500
      * @tc.desc    Clear a ArkTS Map created from an array of pairs
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsMapClearTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsMapClearTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const pairs: [string, number][] = [['a', 1], ['b', 2], ['c', 3]];
       const map: collections.Map<string, number> = new collections.Map<string, number>(pairs);
       map.clear();
@@ -277,14 +277,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest1600
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_1600
+     * @tc.name    collectionsMapClearTest1600
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_1600
      * @tc.desc    Clear a ArkTS Map created from another Map
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsMapClearTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsMapClearTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const original: collections.Map<string, number> = new collections.Map<string, number>();
       original.set('a', 1);
       const map: collections.Map<string, number> = new collections.Map<string, number>(Array.from(original.entries()));
@@ -293,14 +293,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest1700
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_1700
+     * @tc.name    collectionsMapClearTest1700
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_1700
      * @tc.desc    Clear a large ArkTS Map with 1000 elements
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsMapClearTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsMapClearTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, number> = new collections.Map<number, number>();
       for (let i: number = 0; i < 1000; i++) {
         map.set(i, i * 2);
@@ -310,14 +310,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest1800
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_1800
+     * @tc.name    collectionsMapClearTest1800
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_1800
      * @tc.desc    Clear a ArkTS Map and check forEach doesn't execute
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsMapClearTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsMapClearTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>();
       map.set('a', 1);
       map.clear();
@@ -329,14 +329,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest1900
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_1900
+     * @tc.name    collectionsMapClearTest1900
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_1900
      * @tc.desc    Clear a ArkTS Map with large integer keys
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsMapClearTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsMapClearTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>();
       map.set(9007199254740991, 'max safe integer');
       map.set(9007199254740992, 'beyond max safe integer');
@@ -345,14 +345,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest2000
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_2000
+     * @tc.name    collectionsMapClearTest2000
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_2000
      * @tc.desc    Clear a ArkTS Map and verify with has() for multiple keys
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsMapClearTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsMapClearTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>();
       const key1 = 'key1';
       const key2 = 'key2';
@@ -367,14 +367,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest2100
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_2100
+     * @tc.name    collectionsMapClearTest2100
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_2100
      * @tc.desc    Clear a ArkTS Map and check after setting same key again
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsMapClearTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsMapClearTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>();
       const key = 'key';
       map.set(key, 'old');
@@ -384,14 +384,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest2200
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_2200
+     * @tc.name    collectionsMapClearTest2200
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_2200
      * @tc.desc    Clear a ArkTS Map with Infinity as key
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsMapClearTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsMapClearTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>();
       map.set(Infinity, 'infinite');
       map.set(-Infinity, 'negative infinite');
@@ -400,14 +400,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest2300
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_2300
+     * @tc.name    collectionsMapClearTest2300
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_2300
      * @tc.desc    Clear a ArkTS Map with NaN as key
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsMapClearTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsMapClearTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>();
       map.set(NaN, 'not a number');
       map.clear();
@@ -415,14 +415,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest2400
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_2400
+     * @tc.name    collectionsMapClearTest2400
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_2400
      * @tc.desc    Clear a ArkTS Map and check if it's iterable (should be empty)
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsMapClearTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsMapClearTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const pairs: [number, string][] = [[1, 'a'], [2, 'b']];
       const map: collections.Map<number, string> = new collections.Map<number, string>(pairs);
       map.clear();
@@ -434,14 +434,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest2500
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_2500
+     * @tc.name    collectionsMapClearTest2500
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_2500
      * @tc.desc    Clear a ArkTS Map and check with JSON.stringify
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsMapClearTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsMapClearTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const pairs: [string, number][] = [['a', 1]];
       const map: collections.Map<string, number> = new collections.Map<string, number>(pairs);
       map.clear();
@@ -449,14 +449,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest2600
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_2600
+     * @tc.name    collectionsMapClearTest2600
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_2600
      * @tc.desc    Clear a ArkTS Map that's been assigned to another variable
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsMapClearTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsMapClearTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map1: collections.Map<string, string> = new collections.Map<string, string>();
       map1.set('key', 'value');
       const map2: collections.Map<string, string> = map1;
@@ -465,14 +465,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest2700
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_2700
+     * @tc.name    collectionsMapClearTest2700
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_2700
      * @tc.desc    Clear a ArkTS Map and check prototype methods still work
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsMapClearTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsMapClearTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>();
       map.set('a', 1);
       map.clear();
@@ -481,14 +481,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest2800
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_2800
+     * @tc.name    collectionsMapClearTest2800
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_2800
      * @tc.desc    Clear a ArkTS Map with elements added after previous clear
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsMapClearTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsMapClearTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, number> = new collections.Map<string, number>();
       map.set('first', 1);
       map.clear();
@@ -498,14 +498,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest2900
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_2900
+     * @tc.name    collectionsMapClearTest2900
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_2900
      * @tc.desc    Clear a ArkTS Map with Unicode string keys
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsMapClearTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsMapClearTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>();
       map.set('café', 'coffee');
       map.set('café', 'coffee');
@@ -514,14 +514,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest3000
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_3000
+     * @tc.name    collectionsMapClearTest3000
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_3000
      * @tc.desc    Clear a ArkTS Map with empty string key
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsMapClearTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsMapClearTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>();
       map.set('', 'empty string');
       map.clear();
@@ -529,14 +529,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest3100
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_3100
+     * @tc.name    collectionsMapClearTest3100
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_3100
      * @tc.desc    Clear a ArkTS Map with large integer keys
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsMapClearTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsMapClearTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>();
       map.set(9007199254740991, 'max safe integer');
       map.set(9007199254740992, 'beyond max safe integer');
@@ -545,14 +545,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest3200
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_3200
+     * @tc.name    collectionsMapClearTest3200
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_3200
      * @tc.desc    Clear a ArkTS Map with negative number keys
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsMapClearTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsMapClearTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>();
       map.set(-1, 'negative one');
       map.set(-100, 'negative hundred');
@@ -561,14 +561,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest3300
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_3300
+     * @tc.name    collectionsMapClearTest3300
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_3300
      * @tc.desc    Clear a ArkTS Map with floating point number keys
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsMapClearTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsMapClearTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: collections.Map<number, string> = new collections.Map<number, string>();
       map.set(3.14, 'pi');
       map.set(2.718, 'e');
@@ -577,14 +577,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest3400
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_3400
+     * @tc.name    collectionsMapClearTest3400
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_3400
      * @tc.desc    Clear a ArkTS Map and check if it's empty using Array.from
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsMapClearTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsMapClearTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const pairs: [number, string][] = [[1, 'a'], [2, 'b']];
       const map: collections.Map<number, string> = new collections.Map<number, string>(pairs);
       map.clear();
@@ -592,14 +592,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest3500
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_3500
+     * @tc.name    collectionsMapClearTest3500
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_3500
      * @tc.desc    Clear a ArkTS Map and then delete a key (should have no effect)
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsMapClearTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsMapClearTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const pairs: [string, string][] = [['key', 'value']];
       const map: collections.Map<string, string> = new collections.Map<string, string>(pairs);
       map.clear();
@@ -608,14 +608,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest3600
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_3600
+     * @tc.name    collectionsMapClearTest3600
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_3600
      * @tc.desc    Clear a ArkTS Map with a ArkTS Map as a value
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsMapClearTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsMapClearTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const innerMap = new collections.Map<string, string>([['inner', 'value']]);
       const outerMap = new collections.Map<string, collections.Map<string, string>>([['outer', innerMap]]);
       outerMap.clear();
@@ -623,14 +623,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest3700
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_3700
+     * @tc.name    collectionsMapClearTest3700
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_3700
      * @tc.desc    Clear a ArkTS Map and check with Map.prototype.keys.next()
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsMapClearTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsMapClearTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const pairs: [number, string][] = [[1, 'a'], [2, 'b']];
       const map: collections.Map<number, string> = new collections.Map<number, string>(pairs);
       map.clear();
@@ -638,14 +638,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest3800
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_3800
+     * @tc.name    collectionsMapClearTest3800
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_3800
      * @tc.desc    Clear a ArkTS Map and check with Map.prototype.values.next()
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsMapClearTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsMapClearTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const pairs: [number, string][] = [[1, 'a'], [2, 'b']];
       const map: collections.Map<number, string> = new collections.Map<number, string>(pairs);
       map.clear();
@@ -653,14 +653,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest3900
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_3900
+     * @tc.name    collectionsMapClearTest3900
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_3900
      * @tc.desc    Clear a ArkTS Map and check with Map.prototype.entries.next()
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsMapClearTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsMapClearTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const pairs: [number, string][] = [[1, 'a'], [2, 'b']];
       const map: collections.Map<number, string> = new collections.Map<number, string>(pairs);
       map.clear();
@@ -668,14 +668,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest4000
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_4000
+     * @tc.name    collectionsMapClearTest4000
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_4000
      * @tc.desc    Clear a ArkTS Map and then check with a for loop using keys
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsMapClearTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsMapClearTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const pairs: [number, string][] = [[1, 'a'], [2, 'b']];
       const map: collections.Map<number, string> = new collections.Map<number, string>(pairs);
       map.clear();
@@ -689,14 +689,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest4100
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_4100
+     * @tc.name    collectionsMapClearTest4100
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_4100
      * @tc.desc    Clear a ArkTS Map and then check with a for loop using values
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsMapClearTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsMapClearTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const pairs: [number, string][] = [[1, 'a'], [2, 'b']];
       const map: collections.Map<number, string> = new collections.Map<number, string>(pairs);
       map.clear();
@@ -710,14 +710,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest4200
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_4200
+     * @tc.name    collectionsMapClearTest4200
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_4200
      * @tc.desc    Clear a ArkTS Map and check with JSON.stringify after converting to array
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsMapClearTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsMapClearTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const pairs: [number, string][] = [[1, 'a'], [2, 'b']];
       const map: collections.Map<number, string> = new collections.Map<number, string>(pairs);
       map.clear();
@@ -725,14 +725,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest4300
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_4300
+     * @tc.name    collectionsMapClearTest4300
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_4300
      * @tc.desc    Clear a ArkTS Map and then check if the map is equal to a new empty map
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsMapClearTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsMapClearTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
 
       const map = new collections.Map<number, string>([[1, 'a']]);
       map.clear();
@@ -741,14 +741,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest4400
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_4400
+     * @tc.name    collectionsMapClearTest4400
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_4400
      * @tc.desc    Clear a ArkTS Map and check that the map is an instance of Map
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsMapClearTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsMapClearTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const pairs: [number, string][] = [[1, 'a']];
       const map: collections.Map<number, string> = new collections.Map<number, string>(pairs);
       map.clear();
@@ -756,14 +756,14 @@ export default function BuiltinsMapClearTest() {
     });
 
     /**
-     * @tc.name    builtinsMapClearTest4500
-     * @tc.number  SUB_BUILTINS_MAP_CLEAR_TEST_4500
+     * @tc.name    collectionsMapClearTest4500
+     * @tc.number  SUB_COLLECTIONS_MAP_CLEAR_TEST_4500
      * @tc.desc    Clear a ArkTS Map and check that the clear method still exists
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsMapClearTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsMapClearTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const pairs: [number, string][] = [[1, 'a']];
       const map: collections.Map<number, string> = new collections.Map<number, string>(pairs);
       map.clear();
