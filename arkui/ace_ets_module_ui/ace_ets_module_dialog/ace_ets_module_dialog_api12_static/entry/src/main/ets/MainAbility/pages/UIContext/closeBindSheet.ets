@@ -42,15 +42,7 @@
      Button('Update BindSheet')
        .fontSize(20)
        .onClick(():void => {
-         
-          // uiContext.updateBindSheet(contentNode!, {
-          //   backgroundColor: Color.Pink,
-          // }, true)
-          //   .then(() => {
-          //     console.info('updateBindSheet success');
-          //   })
-
-            console.info('updateBindSheet success');
+          console.info('updateBindSheet success');
          
        })
  
@@ -58,11 +50,6 @@
        .id('close')
        .fontSize(20)
        .onClick(():void => {
-         
-          // uiContext.closeBindSheet(contentNode!)
-          // .then(() => {
-          //   console.info('closeBindSheet success');
-          // })
           console.info('closeBindSheet success');
          
        })
@@ -76,7 +63,9 @@
    @State closeBindSheet: string = 'init';
  
    uiContext: UIContext = this.getUIContext()
-   contentNode: ComponentContent<Params> = new ComponentContent<Params>( this.uiContext, wrapBuilder<CustomBuilderT<Params>>(buildText), new Params(this.message));
+   contentNode: ComponentContent<Params> = 
+      new ComponentContent<Params>( this.uiContext, 
+        wrapBuilder<CustomBuilderT<Params>>(buildText), new Params(this.message));
    
    
    build() {
