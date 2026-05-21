@@ -451,7 +451,7 @@ export default function BuiltinsMapEntriesTest() {
     it('builtinsMapEntriesTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map: collections.Map<string, string> = new collections.Map<string, string>([
         ['emoji', '😊🎉'],
-        ['math', '\'∑∫∂'],
+        ['math', '∑∫∂'],
         ['cyrillic', 'привет']
       ]);
       const entries = Array.from(map.entries());
