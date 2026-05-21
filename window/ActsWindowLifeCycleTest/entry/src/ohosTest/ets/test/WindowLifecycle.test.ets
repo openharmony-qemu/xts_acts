@@ -3573,7 +3573,7 @@ export default function WindowLifecycle() {
           await subWindowClass.resize(800, 1200);
           await sleep(500);
           if (canIUseRes) {
-            let mainWindowStatus = windowClass.getWindowStatus();
+            let mainWindowStatus = mainWindow.getWindowStatus();
             console.info(`${caseName} Succeeded in getting window status. Data: ${mainWindowStatus}`);
             await mainWindow.minimize();
             console.log(`${caseName} minimize`);
@@ -3585,7 +3585,7 @@ export default function WindowLifecycle() {
             await sleep(500);
             await subWindowClass.restoreMainWindow();
             await sleep(500);
-            let mainWindowStatus2 = windowClass.getWindowStatus();
+            let mainWindowStatus2 = mainWindow.getWindowStatus();
             console.info(`${caseName} Succeeded in getting window status2. Data: ${mainWindowStatus2}`);
             expect(mainWindowStatus).assertEqual(mainWindowStatus2);
             await subWindowClass?.destroyWindow();
@@ -3641,7 +3641,7 @@ export default function WindowLifecycle() {
           await subWindowClass.resize(800, 1200);
           await sleep(500);
           if (canIUseRes) {
-            let mainWindowStatus = windowClass.getWindowStatus();
+            let mainWindowStatus = mainWindow.getWindowStatus();
             console.info(`${caseName} Succeeded in getting window status. Data: ${mainWindowStatus}`);
             await mainWindow.minimize();
             console.log(`${caseName} minimize success`);
@@ -3656,7 +3656,7 @@ export default function WindowLifecycle() {
             };
             await subWindowClass.restoreMainWindow(param);
             await sleep(500)
-            let mainWindowStatus2 = windowClass.getWindowStatus();
+            let mainWindowStatus2 = mainWindow.getWindowStatus();
             console.info(`${caseName} Succeeded in getting window status2. Data: ${mainWindowStatus2}`);
             expect(mainWindowStatus).assertEqual(mainWindowStatus2);
             await subWindowClass?.destroyWindow();
