@@ -34,10 +34,10 @@ import HttpRequestReuseConnectionsTest from './HttpRequestReuseConnections.test'
 import HttpInterceptorForSafeCheckTest from './HttpInterceptorForSafeCheck.test';
 import HttpRequestEnableAutoCookieTest from './HttpRequestEnableAutoCookie.test';
 import HttpRequestSocket5Test from './HttpRequestSocket5.test';
+import HttpRequestTlcpEnablePartialChainTest from './HttpRequestTlcpEnablePartialChain.test';
+import HttpRequestTlsEnablePartialChainTest from './HttpRequestTlsEnablePartialChain.test';
 import connection from '@ohos.net.connection';
-
 let netHandle = connection.getDefaultNetSync();
-
 export default function testsuite() {
   if (netHandle.netId != 0 && canIUse("SystemCapability.Communication.NetStack")) {
     HttpInterceptorForSafeCheckTest();
@@ -61,9 +61,8 @@ export default function testsuite() {
       HttpRequestReuseConnectionsTest();
       HttpRequestEnableAutoCookieTest();
       HttpRequestSocket5Test();
-	  HttpRequestTlcpEnablePartialChainTest();
-	  HttpRequestTlsEnablePartialChainTest();
-	  
+      HttpRequestTlcpEnablePartialChainTest();
+      HttpRequestTlsEnablePartialChainTest();
     } else {
       EmptyTest();
     }
