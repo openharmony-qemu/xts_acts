@@ -252,14 +252,14 @@ export default function arrayBufferFromSevenTest(): void {
      */
     it('testArrayBufferFromSeven0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new ArrayBuffer(8);
-      const result = ArrayBuffer.from(source, Double.toInt(Number.NaN), 4);
+      const result = ArrayBuffer.from(source, Double.toInt(Double.NaN), 4);
       expect(result.byteLength).assertEqual(4);
     });
 
     /**
      * @tc.name testArrayBufferFromSeven0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0130
-     * @tc.desc Verify ArrayBuffer.from(source, Number.POSITIVE_INFINITY, 4) throws IndexOutOfBoundsError
+     * @tc.desc Verify ArrayBuffer.from(source, Double.POSITIVE_INFINITY, 4) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -267,7 +267,7 @@ export default function arrayBufferFromSevenTest(): void {
     it('testArrayBufferFromSeven0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new ArrayBuffer(8);
       try {
-        ArrayBuffer.from(source, Number.POSITIVE_INFINITY, 4);
+        ArrayBuffer.from(source, Double.POSITIVE_INFINITY, 4);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('IndexOutOfBoundsError');
@@ -277,7 +277,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0140
-     * @tc.desc Verify ArrayBuffer.from(source, Number.NEGATIVE_INFINITY, 4) throws IndexOutOfBoundsError
+     * @tc.desc Verify ArrayBuffer.from(source, Double.NEGATIVE_INFINITY, 4) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -285,7 +285,7 @@ export default function arrayBufferFromSevenTest(): void {
     it('testArrayBufferFromSeven0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new ArrayBuffer(8);
       try {
-        ArrayBuffer.from(source, Number.NEGATIVE_INFINITY, 4);
+        ArrayBuffer.from(source, Double.NEGATIVE_INFINITY, 4);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('IndexOutOfBoundsError');
@@ -526,14 +526,14 @@ export default function arrayBufferFromSevenTest(): void {
      */
     it('testArrayBufferFromSeven0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new ArrayBuffer(8);
-      const result = ArrayBuffer.from(source, 0, Double.toInt(Number.NaN));
+      const result = ArrayBuffer.from(source, 0, Double.toInt(Double.NaN));
       expect(result.byteLength).assertEqual(0);
     });
 
     /**
      * @tc.name testArrayBufferFromSeven0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0290
-     * @tc.desc Verify ArrayBuffer.from(source, 0, Number.POSITIVE_INFINITY) throws IndexOutOfBoundsError
+     * @tc.desc Verify ArrayBuffer.from(source, 0, Double.POSITIVE_INFINITY) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -541,7 +541,7 @@ export default function arrayBufferFromSevenTest(): void {
     it('testArrayBufferFromSeven0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new ArrayBuffer(8);
       try {
-        ArrayBuffer.from(source, 0, Number.POSITIVE_INFINITY);
+        ArrayBuffer.from(source, 0, Double.POSITIVE_INFINITY);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('IndexOutOfBoundsError');
@@ -551,7 +551,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0300
-     * @tc.desc Verify ArrayBuffer.from(source, 0, Number.NEGATIVE_INFINITY) throws IndexOutOfBoundsError
+     * @tc.desc Verify ArrayBuffer.from(source, 0, Double.NEGATIVE_INFINITY) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -559,7 +559,7 @@ export default function arrayBufferFromSevenTest(): void {
     it('testArrayBufferFromSeven0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new ArrayBuffer(8);
       try {
-        ArrayBuffer.from(source, 0, Number.NEGATIVE_INFINITY);
+        ArrayBuffer.from(source, 0, Double.NEGATIVE_INFINITY);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('IndexOutOfBoundsError');
@@ -1143,8 +1143,8 @@ export default function arrayBufferFromSevenTest(): void {
      */
     it('testArrayBufferFromSeven0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new ArrayBuffer(8);
-      const nanOff: number = Double.toInt(Number.NaN);
-      const nanLen: number = Double.toInt(Number.NaN);
+      const nanOff: number = Double.toInt(Double.NaN);
+      const nanLen: number = Double.toInt(Double.NaN);
       const result = ArrayBuffer.from(source, nanOff, nanLen);
       expect(result.byteLength).assertEqual(0);
     });
