@@ -1758,7 +1758,7 @@ export default function AVMetadata() {
       avMetadataExtractor.fdSrc = AVFileDescriptor;
       // 获取元信息
       let timeoutMs = 3000;
-      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
         console.info(TAG, `fetchMetadata callback success, album: ${metadata.album}`);
         expect(metadata.album).assertEqual("media");
         avMetadataExtractor.release();
@@ -1783,7 +1783,7 @@ export default function AVMetadata() {
       avMetadataExtractor.fdSrc = AVFileDescriptor;
       // 获取元信息
       let timeoutMs = 3000;
-      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
         console.info(TAG, `fetchMetadata callback success, albumArtist: ${metadata.albumArtist}`);
         expect(metadata.albumArtist).assertEqual("media_test");
         avMetadataExtractor.release();
@@ -1808,7 +1808,7 @@ export default function AVMetadata() {
       avMetadataExtractor.fdSrc = AVFileDescriptor;
       // 获取元信息
       let timeoutMs = 3000;
-      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
         console.info(TAG, `fetchMetadata callback success, artist: ${metadata.artist}`);
         expect(metadata.artist).assertEqual("元数据测试");
       }).catch((error: BusinessError) => {
@@ -1832,7 +1832,7 @@ export default function AVMetadata() {
       avMetadataExtractor.fdSrc = AVFileDescriptor;
       // 获取元信息
       let timeoutMs = 3000;
-      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
         console.info(TAG, `fetchMetadata callback success, author: ${metadata.author}`);
         expect(metadata.author).assertEqual("media");
         avMetadataExtractor.release();
@@ -1857,7 +1857,7 @@ export default function AVMetadata() {
       avMetadataExtractor.fdSrc = AVFileDescriptor;
       // 获取元信息
       let timeoutMs = 3000;
-      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
         console.info(TAG, `fetchMetadata callback success, dateTime: ${metadata.dateTime}`);
         console.info(TAG, `fetchMetadata callback success, dateTimeFormat: ${metadata.dateTimeFormat}`);
         expect(metadata.dateTime).assertEqual("2015-11-23");
@@ -1883,7 +1883,7 @@ export default function AVMetadata() {
       avMetadataExtractor.fdSrc = AVFileDescriptor;
       // 获取元信息
       let timeoutMs = 3000;
-      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
         console.info(TAG, `fetchMetadata callback success video album :${metadata.album}}`);
         expect(metadata.album).assertEqual("media");
         avMetadataExtractor.release();
@@ -1908,7 +1908,7 @@ export default function AVMetadata() {
       avMetadataExtractor.fdSrc = AVFileDescriptor;
       // 获取元信息
       let timeoutMs = 3000;
-      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
         console.info(TAG, `fetchMetadata callback success, genre: ${metadata.composer}`);
         expect(metadata.composer).assertEqual("测试");
         avMetadataExtractor.release();
@@ -1933,7 +1933,7 @@ export default function AVMetadata() {
       avMetadataExtractor.fdSrc = AVFileDescriptor;
       // 获取元信息
       let timeoutMs = 3000;
-      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
         console.info(TAG, `fetchMetadata callback success, duration: ${metadata.duration}`);
         expect(metadata.duration).assertEqual("219600");
         avMetadataExtractor.release();
@@ -1958,7 +1958,7 @@ export default function AVMetadata() {
       avMetadataExtractor.fdSrc = AVFileDescriptor;
       // 获取元信息
       let timeoutMs = 3000;
-      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
         console.info(TAG, `fetchMetadata callback success, genre: ${metadata.genre}`);
         expect(metadata.genre).assertEqual("Lyrical");
         avMetadataExtractor.release();
@@ -1983,7 +1983,7 @@ export default function AVMetadata() {
       avMetadataExtractor.fdSrc = AVFileDescriptor;
       // 获取元信息
       let timeoutMs = 3000;
-      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
         console.info(TAG, `fetchMetadata callback success, hasAudio: ${metadata.hasAudio}`);
         expect(metadata.hasAudio).assertEqual("yes");
         avMetadataExtractor.release();
@@ -2008,7 +2008,7 @@ export default function AVMetadata() {
       avMetadataExtractor.fdSrc = AVFileDescriptor;
       // 获取元信息
       let timeoutMs = 3000;
-      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
         console.info(TAG, `fetchMetadata callback success, hasVideo: ${metadata.hasVideo}`);
         expect(metadata.hasVideo).assertEqual("");
         avMetadataExtractor.release();
@@ -2033,7 +2033,7 @@ export default function AVMetadata() {
       avMetadataExtractor.fdSrc = AVFileDescriptor;
       // 获取元信息
       let timeoutMs = 3000;
-      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
         console.info(TAG, `fetchMetadata callback success, mimeType: ${metadata.mimeType}`);
         expect(metadata.mimeType).assertEqual("audio/mpeg");
         avMetadataExtractor.release();
@@ -2058,7 +2058,7 @@ export default function AVMetadata() {
       avMetadataExtractor.fdSrc = AVFileDescriptor;
       // 获取元信息
       let timeoutMs = 3000;
-      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
         console.info(TAG, `fetchMetadata callback success, trackCount: ${metadata.trackCount}`);
         expect(metadata.trackCount).assertEqual("2");
         avMetadataExtractor.release();
@@ -2083,7 +2083,7 @@ export default function AVMetadata() {
       avMetadataExtractor.fdSrc = AVFileDescriptor;
       // 获取元信息
       let timeoutMs = 3000;
-      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
         console.info(TAG, `fetchMetadata callback success, sampleRate: ${metadata.sampleRate}`);
         expect(metadata.sampleRate).assertEqual('48000');
         avMetadataExtractor.release();
@@ -2108,7 +2108,7 @@ export default function AVMetadata() {
       avMetadataExtractor.fdSrc = AVFileDescriptor;
       // 获取元信息
       let timeoutMs = 3000;
-      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
         console.info(TAG, `fetchMetadata callback success, title: ${metadata.title}`);
         expect(metadata.title).assertEqual("test");
         avMetadataExtractor.release();
@@ -2133,7 +2133,7 @@ export default function AVMetadata() {
       avMetadataExtractor.fdSrc = AVFileDescriptor;
       // 获取元信息
       let timeoutMs = 3000;
-      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
         console.info(TAG, `fetchMetadata callback success, videoHeight: ${metadata.videoHeight}`);
         expect(metadata.videoHeight).assertEqual("1276");
         avMetadataExtractor.release();
@@ -2158,7 +2158,7 @@ export default function AVMetadata() {
       avMetadataExtractor.fdSrc = AVFileDescriptor;
       // 获取元信息
       let timeoutMs = 3000;
-      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
         console.info(TAG, `fetchMetadata callback success, videoWidth: ${metadata.videoWidth}`);
         expect(metadata.videoWidth).assertEqual("1702");
         avMetadataExtractor.release();
@@ -2183,7 +2183,7 @@ export default function AVMetadata() {
       avMetadataExtractor.fdSrc = AVFileDescriptor;
       // 获取元信息
       let timeoutMs = 3000;
-      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
         console.info(TAG, `fetchMetadata callback success, videoOrientation: ${metadata.videoOrientation}`);
         expect(metadata.videoOrientation).assertEqual("");
         avMetadataExtractor.release();
@@ -2208,7 +2208,7 @@ export default function AVMetadata() {
       avMetadataExtractor.fdSrc = AVFileDescriptor2;
       // 获取元信息
       let timeoutMs = 3000;
-      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
         console.info(TAG, `fetchMetadata callback success, album: ${metadata.album}`);
         expect(metadata.album).assertEqual("");
         avMetadataExtractor.release();
@@ -2233,7 +2233,7 @@ export default function AVMetadata() {
       avMetadataExtractor.fdSrc = AVFileDescriptor2;
       // 获取元信息
       let timeoutMs = 3000;
-      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
         console.info(TAG, `fetchMetadata callback success, albumArtist: ${metadata.albumArtist}`);
         expect(metadata.albumArtist).assertEqual("");
         avMetadataExtractor.release();
@@ -2258,7 +2258,7 @@ export default function AVMetadata() {
       avMetadataExtractor.fdSrc = AVFileDescriptor2;
       // 获取元信息
       let timeoutMs = 3000;
-      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
         console.info(TAG, `fetchMetadata callback success, artist: ${metadata.artist}`);
         expect(metadata.artist).assertEqual("");
         avMetadataExtractor.release();
@@ -2283,7 +2283,7 @@ export default function AVMetadata() {
       avMetadataExtractor.fdSrc = AVFileDescriptor2;
       // 获取元信息
       let timeoutMs = 3000;
-      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
         console.info(TAG, `fetchMetadata callback success, author: ${metadata.author}`);
         expect(metadata.author).assertEqual("");
         avMetadataExtractor.release();
@@ -2308,7 +2308,7 @@ export default function AVMetadata() {
       avMetadataExtractor.fdSrc = AVFileDescriptor2;
       // 获取元信息
       let timeoutMs = 3000;
-      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
         console.info(TAG, `fetchMetadata callback success video dateTime :${metadata.dateTime}}`);
         expect(metadata.dateTime).assertEqual("2017-08-05 19:28:32");
         avMetadataExtractor.release();
@@ -2333,7 +2333,7 @@ export default function AVMetadata() {
       avMetadataExtractor.fdSrc = AVFileDescriptor2;
       // 获取元信息
       let timeoutMs = 3000;
-      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
         console.info(TAG, `fetchMetadata callback success video composer :${metadata.composer}}`);
         expect(metadata.composer).assertEqual("");
         avMetadataExtractor.release();
@@ -2358,7 +2358,7 @@ export default function AVMetadata() {
       avMetadataExtractor.fdSrc = AVFileDescriptor2;
       // 获取元信息
       let timeoutMs = 3000;
-      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
         console.info(TAG, `fetchMetadata callback success video duration :${metadata.duration}}`);
         expect(metadata.duration).assertEqual("5826");
         avMetadataExtractor.release();
@@ -2383,7 +2383,7 @@ export default function AVMetadata() {
       avMetadataExtractor.fdSrc = AVFileDescriptor2;
       // 获取元信息
       let timeoutMs = 3000;
-      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
         console.info(TAG, `fetchMetadata callback success video genre :${metadata.genre}}`);
         expect(metadata.genre).assertEqual("");
         avMetadataExtractor.release();
@@ -2408,7 +2408,7 @@ export default function AVMetadata() {
       avMetadataExtractor.fdSrc = AVFileDescriptor2;
       // 获取元信息
       let timeoutMs = 3000;
-      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
         console.info(TAG, `fetchMetadata callback success video hasAudio :${metadata.hasAudio}}`);
         expect(metadata.hasAudio).assertEqual("yes");
         avMetadataExtractor.release();
@@ -2433,7 +2433,7 @@ export default function AVMetadata() {
       avMetadataExtractor.fdSrc = AVFileDescriptor2;
       // 获取元信息
       let timeoutMs = 3000;
-      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
         console.info(TAG, `fetchMetadata callback success video hasVideo :${metadata.hasVideo}}`);
         expect(metadata.hasVideo).assertEqual("yes");
         avMetadataExtractor.release();
@@ -2458,7 +2458,7 @@ export default function AVMetadata() {
       avMetadataExtractor.fdSrc = AVFileDescriptor2;
       // 获取元信息
       let timeoutMs = 3000;
-      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
         console.info(TAG, `fetchMetadata callback success video mimeType :${metadata.mimeType}}`);
         expect(metadata.mimeType).assertEqual("video/mp4");
         avMetadataExtractor.release();
@@ -2483,7 +2483,7 @@ export default function AVMetadata() {
       avMetadataExtractor.fdSrc = AVFileDescriptor2;
       // 获取元信息
       let timeoutMs = 3000;
-      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
         console.info(TAG, `fetchMetadata callback success video trackCount :${metadata.trackCount}}`);
         expect(metadata.trackCount).assertEqual("2");
         avMetadataExtractor.release();
@@ -2508,7 +2508,7 @@ export default function AVMetadata() {
       avMetadataExtractor.fdSrc = AVFileDescriptor2;
       // 获取元信息
       let timeoutMs = 3000;
-      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
         console.info(TAG, `fetchMetadata callback success video sampleRate :${metadata.sampleRate}}`);
         expect(metadata.sampleRate).assertEqual("48000");
         avMetadataExtractor.release();
@@ -2533,7 +2533,7 @@ export default function AVMetadata() {
       avMetadataExtractor.fdSrc = AVFileDescriptor2;
       // 获取元信息
       let timeoutMs = 3000;
-      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
         console.info(TAG, `fetchMetadata callback success video videoWidth :${metadata.videoWidth}}`);
         expect(metadata.videoHeight).assertEqual("480");
         avMetadataExtractor.release();
@@ -2558,7 +2558,7 @@ export default function AVMetadata() {
       avMetadataExtractor.fdSrc = AVFileDescriptor2;
       // 获取元信息
       let timeoutMs = 3000;
-      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
         console.info(TAG, `fetchMetadata callback success video videoWidth :${metadata.videoWidth}}`);
         expect(metadata.videoWidth).assertEqual("640");
         avMetadataExtractor.release();
@@ -2583,7 +2583,7 @@ export default function AVMetadata() {
       avMetadataExtractor.fdSrc = AVFileDescriptor2;
       // 获取元信息
       let timeoutMs = 3000;
-      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
         console.info(TAG, `fetchMetadata callback success video videoOrientation :${metadata.videoOrientation}}`);
         expect(metadata.videoOrientation).assertEqual("270");
         avMetadataExtractor.release();
